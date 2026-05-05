@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>THINKING. — 私立文系・学部別の、合格設計塾。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="THINKING. は、私立文系・学部別に特化した、オンライン合格設計塾。早慶上智ICU・MARCH・関関同立まで、志望学部ごとの専属コーチング。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-site.css" />
+  <link rel="stylesheet" href="styles-intro.css" />
+  <link rel="stylesheet" href="styles-hero-why.css" />
+  <link rel="stylesheet" href="styles-faculties-method.css" />
+  <link rel="stylesheet" href="styles-rest.css" />
+  <link rel="stylesheet" href="styles-line-cta.css" />
+  <link rel="stylesheet" href="styles-sticky-cta.css" />
+  <link rel="stylesheet" href="styles-voices.css" />
+  <link rel="stylesheet" href="styles-media.css" />
+  <link rel="stylesheet" href="styles-capacity.css" />
+</head>
+<body>
+  <template id="__bundler_thumbnail" data-bg-color="#0a0907">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#0a0907"/>
+      <g transform="translate(600 380)" fill="none" stroke="#c8a868" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <ellipse cx="0" cy="0" rx="180" ry="78" transform="rotate(35)" opacity="0.9"/>
+        <ellipse cx="0" cy="0" rx="180" ry="78" transform="rotate(-35)" opacity="0.9"/>
+        <circle cx="166" cy="-70" r="8" fill="#c8a868"/>
+        <circle cx="-166" cy="70" r="8" fill="#c8a868"/>
+        <path d="M0 -85 C -32 -100, -68 -88, -76 -56 C -94 -52, -104 -34, -96 -16 C -108 0, -100 22, -82 28 C -86 50, -64 68, -42 60 C -34 78, -6 82, 0 70" />
+        <path d="M0 -85 C 32 -100, 68 -88, 76 -56 C 94 -52, 104 -34, 96 -16 C 108 0, 100 22, 82 28 C 86 50, 64 68, 42 60 C 34 78, 6 82, 0 70" />
+        <path d="M0 -85 L 0 70" opacity="0.6"/>
+      </g>
+      <text x="600" y="600" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-weight="500" font-size="92" fill="#f5ead3" letter-spacing="14">THINKING<tspan fill="#c8a868">.</tspan></text>
+      <text x="600" y="660" text-anchor="middle" font-family="Cormorant Garamond, Georgia, serif" font-style="italic" font-size="22" fill="#c8a868" letter-spacing="6">Designed for Your Faculty.</text>
+    </svg>
+  </template>
+
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="components/SiteHeader.jsx"></script>
+  <script type="text/babel" src="components/SiteFooter.jsx"></script>
+  <script type="text/babel" src="components/PageHeader.jsx"></script>
+  <script type="text/babel" src="components/Intro.jsx"></script>
+  <script type="text/babel" src="components/Hero.jsx"></script>
+  <script type="text/babel" src="components/WhyFaculty.jsx"></script>
+  <script type="text/babel" src="components/Faculties.jsx"></script>
+  <script type="text/babel" src="components/Method.jsx"></script>
+  <script type="text/babel" src="components/Voices.jsx"></script>
+  <script type="text/babel" src="components/Media.jsx"></script>
+  <script type="text/babel" src="components/Capacity.jsx"></script>
+  <script type="text/babel" src="components/Founder.jsx"></script>
+  <script type="text/babel" src="components/FlowAndCTA.jsx"></script>
+  <script type="text/babel" src="components/StickyCTA.jsx"></script>
+
+  <script type="text/babel">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "accent": "#c8a868"
+    }/*EDITMODE-END*/;
+
+    // accent presets
+    const ACCENTS = {
+      "Gold (default)": "#c8a868",
+      "Champagne": "#d9bf85",
+      "Bronze": "#b08d52",
+      "Crimson": "#c97a6a",
+      "Sage": "#9bb091",
+      "Slate Blue": "#8ea5b8",
+    };
+
+    function App() {
+      const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+      // Apply accent globally
+      React.useEffect(() => {
+        const root = document.documentElement;
+        const accent = tweaks.accent || "#c8a868";
+        // derive bright/deep with simple math
+        const bright = lighten(accent, 0.12);
+        const deep = darken(accent, 0.18);
+        root.style.setProperty("--accent", accent);
+        root.style.setProperty("--accent-bright", bright);
+        root.style.setProperty("--accent-deep", deep);
+        root.style.setProperty("--gold", accent);
+        root.style.setProperty("--gold-bright", bright);
+        root.style.setProperty("--gold-deep", deep);
+      }, [tweaks.accent]);
+
+      // Reveal-on-scroll
+      React.useEffect(() => {
+        const els = document.querySelectorAll(".reveal");
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        els.forEach((el) => io.observe(el));
+        return () => io.disconnect();
+      }, []);
+
+      return (
+        <>
+          <Intro />
+          <SiteHeader current="" />
+          <Hero />
+          <Media />
+          <Voices />
+          <WhyFaculty />
+          <Faculties />
+          <Method />
+          <Capacity />
+          <Founder />
+          <FlowAndCTA />
+          <SiteFooter />
+          <StickyCTA />
+
+          <TweaksPanel title="Tweaks">
+            <TweakSection title="Accent Color">
+              <TweakColor
+                label="Accent"
+                value={tweaks.accent}
+                onChange={(v) => setTweak("accent", v)}
+              />
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6, marginTop: 10 }}>
+                {Object.entries(ACCENTS).map(([name, hex]) => (
+                  <button
+                    key={name}
+                    onClick={() => setTweak("accent", hex)}
+                    style={{
+                      padding: "10px 6px",
+                      border: tweaks.accent === hex ? `1px solid ${hex}` : "1px solid #2a2620",
+                      background: "#15120e",
+                      color: "#e8dcc0",
+                      fontSize: 11,
+                      fontFamily: "system-ui, sans-serif",
+                      cursor: "pointer",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 6,
+                      alignItems: "center",
+                    }}
+                  >
+                    <span style={{
+                      display: "block", width: "100%", height: 18, background: hex,
+                    }} />
+                    <span>{name}</span>
+                  </button>
+                ))}
+              </div>
+            </TweakSection>
+          </TweaksPanel>
+        </>
+      );
+    }
+
+    // simple hex lighten/darken
+    function lighten(hex, amt) { return mix(hex, "#ffffff", amt); }
+    function darken(hex, amt) { return mix(hex, "#000000", amt); }
+    function mix(a, b, t) {
+      const ca = parse(a), cb = parse(b);
+      const r = Math.round(ca[0] + (cb[0] - ca[0]) * t);
+      const g = Math.round(ca[1] + (cb[1] - ca[1]) * t);
+      const bl = Math.round(ca[2] + (cb[2] - ca[2]) * t);
+      return `#${r.toString(16).padStart(2,"0")}${g.toString(16).padStart(2,"0")}${bl.toString(16).padStart(2,"0")}`;
+    }
+    function parse(hex) {
+      const h = hex.replace("#", "");
+      return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>

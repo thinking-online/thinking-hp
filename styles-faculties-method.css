@@ -1,0 +1,333 @@
+/* Faculties */
+.faculties-section {
+  background: var(--bg-1);
+  position: relative;
+}
+
+/* Campus banner — placed between header and cards */
+.faculties-banner {
+  position: relative;
+  margin: 56px 0 32px;
+  height: clamp(220px, 32vw, 380px);
+  overflow: hidden;
+  border: 1px solid var(--line);
+}
+.faculties-banner-img {
+  position: absolute; inset: 0;
+  background-size: cover;
+  background-position: center 55%;
+  filter: saturate(0.92) brightness(0.78) contrast(1.04);
+  transform: scale(1.04);
+  transition: transform 1.6s var(--ease-out);
+}
+.faculties-banner:hover .faculties-banner-img { transform: scale(1.0); }
+.faculties-banner-overlay {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(10,9,7,0.05) 0%, rgba(10,9,7,0.45) 70%, rgba(10,9,7,0.85) 100%),
+    linear-gradient(90deg, rgba(10,9,7,0.5) 0%, rgba(10,9,7,0.1) 40%, rgba(10,9,7,0.05) 100%);
+}
+.faculties-banner-text {
+  position: absolute;
+  left: clamp(20px, 4vw, 48px);
+  bottom: clamp(20px, 3vw, 36px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+}
+.faculties-banner-en {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: clamp(13px, 1.4vw, 16px);
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  opacity: 0.92;
+}
+.faculties-banner-jp {
+  font-family: var(--serif-jp);
+  font-weight: 500;
+  font-size: clamp(20px, 2.6vw, 32px);
+  letter-spacing: 0.04em;
+  color: var(--ink-0);
+  line-height: 1.4;
+  text-shadow: 0 2px 20px rgba(0,0,0,0.4);
+}
+
+.faculties-section::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: url('assets/old-books.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.06;
+  pointer-events: none;
+  mix-blend-mode: luminosity;
+}
+.faculties-section::after {
+  content: "";
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(200, 168, 104, 0.04), transparent 70%);
+  pointer-events: none;
+}
+.faculties-section .section-inner { position: relative; z-index: 1; }
+/* Track — grid on PC, horizontal swipe on mobile */
+.faculties-track {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 48px;
+}
+.faculties-pagination,
+.faculties-hint { display: none; }
+.faculty-card {
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  padding: 28px 24px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.4s, transform 0.4s var(--ease), box-shadow 0.4s;
+}
+.faculty-card::before {
+  content: "";
+  position: absolute; left: 0; top: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0; transition: opacity 0.4s;
+}
+.faculty-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px -12px rgba(200, 168, 104, 0.2);
+}
+.faculty-card:hover::before { opacity: 1; }
+.faculty-card[data-tier="high"] { background: linear-gradient(180deg, var(--bg-3), var(--bg-2)); }
+.faculty-card-head {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-bottom: 20px;
+  font-family: var(--serif-en); font-style: italic;
+  font-size: 11px; letter-spacing: 0.15em; color: var(--ink-3);
+}
+.faculty-card-tier { color: var(--accent); }
+.faculty-card-title { margin: 0 0 18px; }
+.faculty-card-title .title-main {
+  display: block;
+  font-family: var(--serif-jp); font-weight: 500;
+  font-size: 28px; letter-spacing: 0.06em;
+  color: var(--ink-0); margin-bottom: 4px;
+}
+.faculty-card-title .title-sub {
+  display: block;
+  font-size: 11px; color: var(--ink-3); letter-spacing: 0.05em;
+}
+.faculty-card-tags {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.faculty-card-tags li {
+  font-size: 12px; color: var(--ink-2);
+  padding: 4px 10px; border: 1px solid var(--line);
+  border-radius: 2px;
+  transition: border-color 0.3s, color 0.3s;
+}
+.faculty-card:hover .faculty-card-tags li { border-color: var(--line-strong); }
+.faculty-card-foot {
+  margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line);
+  font-family: var(--serif-en); font-style: italic;
+  font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em;
+}
+.faculties-note {
+  text-align: center; margin-top: 36px;
+  font-size: 12px; color: var(--ink-3);
+}
+.section-lead .lead-hl {
+  color: var(--accent);
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .faculties-track { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Mobile — switch to horizontal swipe carousel */
+@media (max-width: 700px) {
+  .faculties-track {
+    display: flex;
+    grid-template-columns: none;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 8px clamp(20px, 5vw, 48px) 24px;
+    margin-left: calc(-1 * clamp(20px, 5vw, 48px));
+    margin-right: calc(-1 * clamp(20px, 5vw, 48px));
+    scroll-padding-left: clamp(20px, 5vw, 48px);
+  }
+  .faculties-track::-webkit-scrollbar { display: none; }
+  .faculty-card {
+    flex: 0 0 78vw;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    transform: scale(0.97);
+    opacity: 0.78;
+    transition: transform 0.4s var(--ease), opacity 0.4s, border-color 0.4s, box-shadow 0.4s;
+  }
+  .faculty-card.in-view,
+  .faculty-card:first-child {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .faculties-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .faculty-dot {
+    width: 24px;
+    height: 2px;
+    background: var(--line);
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background 0.4s, width 0.4s;
+  }
+  .faculty-dot.active {
+    background: var(--accent);
+    width: 36px;
+  }
+  .faculties-hint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+    font-family: var(--serif-en);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--ink-3);
+  }
+  .faculties-hint-arrow {
+    color: var(--accent);
+    animation: hintPulse 2s ease-in-out infinite;
+  }
+  .faculties-hint-arrow:last-child { animation-name: hintPulseRight; animation-delay: 1s; }
+}
+
+/* Method */
+.method-section { background: var(--bg-0); }
+.method-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-auto-rows: 220px;
+  gap: 16px;
+  margin-bottom: 96px;
+}
+.method-card {
+  grid-column: span 2;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  padding: 28px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s var(--ease), border-color 0.5s, background 0.5s;
+}
+.method-card:hover {
+  border-color: var(--accent);
+  background: var(--bg-3);
+  transform: translateY(-4px);
+}
+.method-card-lg {
+  grid-column: span 6;
+  background: linear-gradient(135deg, rgba(10,9,7,0.85) 0%, rgba(21,18,14,0.75) 100%), url('assets/notebook-pen.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.method-card-lg::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(90deg, var(--bg-2) 0%, transparent 60%);
+  pointer-events: none;
+}
+.method-card-lg > * { position: relative; z-index: 1; }
+.method-card-no {
+  display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px;
+}
+.method-card-no .no {
+  font-family: var(--serif-en); font-size: 38px;
+  color: var(--accent); letter-spacing: 0.05em;
+}
+.method-card-no .en {
+  font-family: var(--serif-en); font-style: italic;
+  font-size: 13px; color: var(--ink-3); letter-spacing: 0.15em;
+}
+.method-card-title {
+  font-family: var(--serif-jp); font-weight: 500;
+  font-size: 18px; line-height: 1.6; color: var(--ink-0);
+  margin: 0 0 12px; letter-spacing: 0.03em;
+}
+.method-card-lg .method-card-title { font-size: 28px; }
+.method-card-desc {
+  font-size: 13px; line-height: 1.9; color: var(--ink-2);
+  margin: 0;
+}
+.method-card-line {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 2px;
+  background: var(--accent);
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.6s var(--ease);
+}
+.method-card:hover .method-card-line { transform: scaleX(1); }
+
+/* Stats row */
+.stats-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 48px 24px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(0,0,0,0.3);
+}
+.stat-block {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  flex: 1; max-width: 220px;
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+.stats-row.in .stat-block { opacity: 1; transform: translateY(0); }
+.stat-num-big {
+  font-family: var(--serif-en); font-size: 56px;
+  color: var(--accent); letter-spacing: 0.04em;
+  line-height: 1;
+}
+.stat-label-en {
+  font-family: var(--serif-en); font-style: italic;
+  font-size: 13px; color: var(--ink-2); letter-spacing: 0.1em;
+}
+.stat-label-jp { font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em; }
+.stat-divider { width: 1px; height: 60px; background: var(--line); }
+
+@media (max-width: 900px) {
+  .method-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: auto; }
+  .method-card { grid-column: span 1; min-height: 200px; }
+  .method-card-lg { grid-column: span 2; }
+  .stats-row { flex-wrap: wrap; gap: 24px; }
+  .stat-divider { display: none; }
+  .stat-block { flex: 0 0 calc(50% - 12px); }
+  .stat-num-big { font-size: 42px; }
+}
+@media (max-width: 560px) {
+  .method-grid { grid-template-columns: 1fr; }
+  .method-card-lg { grid-column: span 1; }
+}

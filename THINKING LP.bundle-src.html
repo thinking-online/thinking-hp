@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>THINKING. — 私立文系・学部別の、合格設計塾。</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="THINKING. は、私立文系・学部別に特化した、オンライン合格設計塾。早慶上智ICU・MARCH・関関同立まで、志望学部ごとの専属コーチング。" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-intro.css" />
+  <link rel="stylesheet" href="styles-hero-why.css" />
+  <link rel="stylesheet" href="styles-faculties-method.css" />
+  <link rel="stylesheet" href="styles-rest.css" />
+
+  <!-- Resources referenced in JS code -->
+  <meta name="ext-resource-dependency" content="assets/student-male-1.jpg" data-resource-id="heroBg" />
+  <meta name="ext-resource-dependency" content="assets/student-male-1.jpg" data-resource-id="voice1" />
+  <meta name="ext-resource-dependency" content="assets/student-female-1.jpg" data-resource-id="voice2" />
+  <meta name="ext-resource-dependency" content="assets/student-male-2.jpg" data-resource-id="voice3" />
+  <meta name="ext-resource-dependency" content="assets/student-female-2.jpg" data-resource-id="voice4" />
+  <meta name="ext-resource-dependency" content="assets/mentor-writing.jpg" data-resource-id="voice5" />
+  <meta name="ext-resource-dependency" content="assets/hand-writing.jpg" data-resource-id="voice6" />
+  <meta name="ext-resource-dependency" content="assets/founder-asakura.jpg" data-resource-id="founderImg" />
+
+  <template id="__bundler_thumbnail" data-bg-color="#0a0907">
+    <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+      <rect width="1200" height="800" fill="#0a0907"/>
+      <text x="600" y="380" font-family="Cormorant Garamond, serif" font-size="120" font-weight="500" fill="#f5ecd9" text-anchor="middle" letter-spacing="20">THINKING</text>
+      <text x="940" y="380" font-family="Cormorant Garamond, serif" font-size="120" font-weight="500" fill="#c8a868" text-anchor="middle">.</text>
+      <text x="600" y="450" font-family="Cormorant Garamond, serif" font-style="italic" font-size="28" fill="#c8a868" text-anchor="middle" letter-spacing="6">Designed for Your Faculty.</text>
+      <line x1="540" y1="500" x2="660" y2="500" stroke="#c8a868" stroke-width="1"/>
+    </svg>
+  </template>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="tweaks-panel.jsx"></script>
+  <script type="text/babel" src="components/Intro.jsx"></script>
+  <script type="text/babel" src="components/Hero.jsx"></script>
+  <script type="text/babel" src="components/WhyFaculty.jsx"></script>
+  <script type="text/babel" src="components/Faculties.jsx"></script>
+  <script type="text/babel" src="components/Method.jsx"></script>
+  <script type="text/babel" src="components/Voices.jsx"></script>
+  <script type="text/babel" src="components/Founder.jsx"></script>
+  <script type="text/babel" src="components/FlowAndCTA.jsx"></script>
+
+  <script type="text/babel">
+    const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+      "accent": "#c8a868"
+    }/*EDITMODE-END*/;
+
+    // accent presets
+    const ACCENTS = {
+      "Gold (default)": "#c8a868",
+      "Champagne": "#d9bf85",
+      "Bronze": "#b08d52",
+      "Crimson": "#c97a6a",
+      "Sage": "#9bb091",
+      "Slate Blue": "#8ea5b8",
+    };
+
+    function App() {
+      const [tweaks, setTweak] = useTweaks(TWEAK_DEFAULTS);
+
+      // Apply accent globally
+      React.useEffect(() => {
+        const root = document.documentElement;
+        const accent = tweaks.accent || "#c8a868";
+        // derive bright/deep with simple math
+        const bright = lighten(accent, 0.12);
+        const deep = darken(accent, 0.18);
+        root.style.setProperty("--accent", accent);
+        root.style.setProperty("--accent-bright", bright);
+        root.style.setProperty("--accent-deep", deep);
+        root.style.setProperty("--gold", accent);
+        root.style.setProperty("--gold-bright", bright);
+        root.style.setProperty("--gold-deep", deep);
+      }, [tweaks.accent]);
+
+      // Reveal-on-scroll
+      React.useEffect(() => {
+        const els = document.querySelectorAll(".reveal");
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+              }
+            });
+          },
+          { threshold: 0.12 }
+        );
+        els.forEach((el) => io.observe(el));
+        return () => io.disconnect();
+      }, []);
+
+      return (
+        <>
+          <Intro />
+          <Hero />
+          <WhyFaculty />
+          <Faculties />
+          <Method />
+          <Voices />
+          <Founder />
+          <FlowAndCTA />
+
+          <TweaksPanel title="Tweaks">
+            <TweakSection title="Accent Color">
+              <TweakColor
+                label="Accent"
+                value={tweaks.accent}
+                onChange={(v) => setTweak("accent", v)}
+              />
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6, marginTop: 10 }}>
+                {Object.entries(ACCENTS).map(([name, hex]) => (
+                  <button
+                    key={name}
+                    onClick={() => setTweak("accent", hex)}
+                    style={{
+                      padding: "10px 6px",
+                      border: tweaks.accent === hex ? `1px solid ${hex}` : "1px solid #2a2620",
+                      background: "#15120e",
+                      color: "#e8dcc0",
+                      fontSize: 11,
+                      fontFamily: "system-ui, sans-serif",
+                      cursor: "pointer",
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 6,
+                      alignItems: "center",
+                    }}
+                  >
+                    <span style={{
+                      display: "block", width: "100%", height: 18, background: hex,
+                    }} />
+                    <span>{name}</span>
+                  </button>
+                ))}
+              </div>
+            </TweakSection>
+          </TweaksPanel>
+        </>
+      );
+    }
+
+    // simple hex lighten/darken
+    function lighten(hex, amt) { return mix(hex, "#ffffff", amt); }
+    function darken(hex, amt) { return mix(hex, "#000000", amt); }
+    function mix(a, b, t) {
+      const ca = parse(a), cb = parse(b);
+      const r = Math.round(ca[0] + (cb[0] - ca[0]) * t);
+      const g = Math.round(ca[1] + (cb[1] - ca[1]) * t);
+      const bl = Math.round(ca[2] + (cb[2] - ca[2]) * t);
+      return `#${r.toString(16).padStart(2,"0")}${g.toString(16).padStart(2,"0")}${bl.toString(16).padStart(2,"0")}`;
+    }
+    function parse(hex) {
+      const h = hex.replace("#", "");
+      return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+/* ============================================================
+   Sticky LINE CTA — bottom-right, persistent across scroll
+   ============================================================ */
+.sticky-cta {
+  position: fixed;
+  right: clamp(12px, 2vw, 24px);
+  bottom: clamp(12px, 2vw, 24px);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+  animation: stickyIn 0.7s var(--ease-out) both;
+}
+.sticky-cta.out {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+}
+.sticky-cta * { pointer-events: auto; }
+
+@keyframes stickyIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Open card ── */
+.sticky-cta-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 14px;
+  align-items: center;
+  width: clamp(280px, 24vw, 340px);
+  padding: 14px 20px 14px 14px;
+  background: linear-gradient(135deg, #15110b 0%, #0d0a07 100%);
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  box-shadow:
+    0 0 0 1px rgba(200, 168, 104, 0.15),
+    0 24px 60px -16px rgba(0, 0, 0, 0.7),
+    0 8px 20px -8px rgba(200, 168, 104, 0.25),
+    inset 0 1px 0 rgba(200, 168, 104, 0.08);
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.4s var(--ease), border-color 0.3s, box-shadow 0.4s;
+}
+.sticky-cta-card::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border: 1px solid rgba(200, 168, 104, 0.12);
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 0;
+}
+.sticky-cta-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent-bright, #d9bf85);
+  box-shadow:
+    0 0 0 1px rgba(200, 168, 104, 0.3),
+    0 32px 70px -16px rgba(0, 0, 0, 0.8),
+    0 12px 30px -8px rgba(200, 168, 104, 0.4);
+}
+
+.sticky-cta-icon {
+  position: relative;
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #06c755 0%, #04a749 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow:
+    0 0 0 2px rgba(6, 199, 85, 0.15),
+    0 6px 16px rgba(6, 199, 85, 0.35);
+}
+.sticky-cta-icon svg { width: 30px; height: 30px; }
+.sticky-cta-icon::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid #06c755;
+  opacity: 0.6;
+  animation: stickyPulse 2.4s ease-out infinite;
+}
+@keyframes stickyPulse {
+  0% { transform: scale(1); opacity: 0.6; }
+  70% { transform: scale(1.4); opacity: 0; }
+  100% { transform: scale(1.4); opacity: 0; }
+}
+
+.sticky-cta-text {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+.sticky-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+}
+.sticky-cta-eyebrow .dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #ff5252;
+  box-shadow: 0 0 8px rgba(255, 82, 82, 0.6);
+  animation: stickyDot 1.8s ease-in-out infinite;
+}
+@keyframes stickyDot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+.sticky-cta-title {
+  font-family: var(--serif-jp);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: var(--ink-0);
+  letter-spacing: 0.02em;
+}
+.sticky-cta-title em {
+  font-style: normal;
+  color: var(--accent);
+}
+.sticky-cta-sub {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 11px;
+  color: var(--ink-3);
+  letter-spacing: 0.06em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.sticky-cta-sub .arrow {
+  display: inline-block;
+  transition: transform 0.4s var(--ease);
+  color: var(--accent);
+}
+.sticky-cta-card:hover .sticky-cta-sub .arrow {
+  transform: translateX(4px);
+}
+
+.sticky-cta-shine {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(200, 168, 104, 0.08) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  pointer-events: none;
+}
+.sticky-cta-card:hover .sticky-cta-shine {
+  animation: stickyShine 1.4s var(--ease-out);
+}
+@keyframes stickyShine {
+  to { transform: translateX(120%); }
+}
+
+/* ── Close button (× outside the card) ── */
+.sticky-cta-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid var(--line-strong);
+  background: var(--bg-0);
+  color: var(--ink-2);
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+  transition: color 0.3s, border-color 0.3s, transform 0.3s;
+  font-family: var(--serif-en);
+  padding: 0;
+}
+.sticky-cta-close:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: rotate(90deg);
+}
+
+/* ── Closed mini state ── */
+.sticky-cta-mini {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.sticky-cta-mini-pulse {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  opacity: 0.5;
+  animation: stickyPulse 2.4s ease-out infinite;
+  pointer-events: none;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+  .sticky-cta-card {
+    width: calc(100vw - 24px);
+    max-width: 360px;
+    grid-template-columns: 48px 1fr;
+    gap: 12px;
+    padding: 12px 16px 12px 12px;
+  }
+  .sticky-cta-icon { width: 48px; height: 48px; }
+  .sticky-cta-icon svg { width: 26px; height: 26px; }
+  .sticky-cta-title { font-size: 13px; }
+}

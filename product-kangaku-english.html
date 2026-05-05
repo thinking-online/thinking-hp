@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>【2027年度最新版】関西学院大学2/1試験 英語 完全攻略マニュアル — THINKING.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="関学2/1試験英語の過去5年分を徹底分析。オリジナル問題集90題・頻出単語180・整序50題・総合模試1回分・個別相談会チケット付き。学部別合格設計 私立文系専門塾 THINKING." />
+  <meta property="og:title" content="【2027年度最新版】関西学院大学2/1試験 英語 完全攻略マニュアル" />
+  <meta property="og:description" content="過去5年分徹底分析・全4部構成・80ページ相当・個別相談会60分つき。早期割 ¥19,800（9月末まで）。" />
+  <meta property="og:image" content="assets/kangaku-hero.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles-site.css" />
+  <link rel="stylesheet" href="styles-line-cta.css" />
+  <link rel="stylesheet" href="styles-blog.css" />
+  <link rel="stylesheet" href="styles-product.css" />
+</head>
+<body>
+  <div id="root"></div>
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <script type="text/babel" src="components/SiteHeader.jsx"></script>
+  <script type="text/babel" src="components/SiteFooter.jsx"></script>
+  <script type="text/babel" src="components/ProductPage.jsx"></script>
+  <script type="text/babel" src="data/product-kangaku-english.jsx"></script>
+
+  <script type="text/babel">
+    function App() {
+      return (
+        <>
+          <SiteHeader current="products" />
+          <ProductPage data={window.productKangakuEnglishData} />
+          <SiteFooter />
+        </>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>

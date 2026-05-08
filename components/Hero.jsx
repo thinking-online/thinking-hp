@@ -75,12 +75,44 @@ const Hero = () => {
 
   return (
     <section className="hero" id="top">
+      {/* Mobile-only first view */}
+      <div className="hero-mobile-firstview">
+        <div className="hero-mobile-bg-wrap">
+          <img
+            className="hero-mobile-bg-image"
+            src="assets/hero-sse-mobile-student.png"
+            alt="勉強に集中する女子学生"
+          />
+        </div>
+        <div className="hero-mobile-overlay hero-mobile-overlay-left" />
+        <div className="hero-mobile-overlay hero-mobile-overlay-top" />
+        <div className="hero-mobile-overlay hero-mobile-overlay-bottom" />
+
+        <div className="hero-mobile-copy-panel" aria-label="志望学部から逆算する">
+          <span>志望学部から、</span>
+          <span>逆算する。</span>
+        </div>
+
+        <p className="hero-mobile-subcopy">
+          早慶上智ICU・MARCH・関関同立まで。<br />
+          <span>学部ごと</span>の出題傾向から<span>逆算</span>し、<br />
+          専属コーチが<span>一対一</span>で合格まで導きます。
+        </p>
+
+        <div className="hero-mobile-cta-area">
+          <a href="https://line.me/R/ti/p/@thinking" target="_blank" rel="noopener noreferrer" className="hero-mobile-cta-main">
+            公式LINEで無料相談に申し込む
+          </a>
+          <p className="hero-mobile-cta-note">受付中　月10名限定 / 60分・無料</p>
+        </div>
+      </div>
+
       {/* Desktop full-bleed photo (right half) */}
       <div className="hero-bg hero-bg-desktop-only">
         <div
           className="hero-bg-img hero-bg-img-desktop"
           style={{
-            backgroundImage: "url('assets/hero-male-new.png')",
+            backgroundImage: "url('assets/hero-sse-mobile-student.png')",
             transform: `translate3d(${mouseX * -4}px, calc(${scrollY * 0.2}px + ${mouseY * -3}px), 0) scale(1.02)`,
           }}
         />
@@ -99,8 +131,6 @@ const Hero = () => {
 
           {/* Concept block — shown on both desktop & mobile */}
           <div className="hero-concept">
-            <p className="hero-concept-q">志望学部、決まってる？</p>
-
             <h1 className="hero-concept-headline">
               <span className="hcl"><span className="hl">学部別</span>に設計された、</span>
               <span className="hcl"><span className="hl">最短ルート</span>の、</span>
@@ -122,7 +152,7 @@ const Hero = () => {
           <div className="hero-photo-mobile">
             <img src="assets/hero-male-new.png" alt="" />
             <div className="hero-photo-mobile-caption">
-              <span className="hp-eyebrow">本気の伴走、はじまる。</span>
+              <span className="hp-eyebrow">学部別の合格戦略を、可視化する。</span>
             </div>
           </div>
 

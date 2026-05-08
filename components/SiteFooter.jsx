@@ -98,7 +98,6 @@ const SiteFooter = () => {
             <li><a href="#">特定商取引法に基づく表記</a></li>
             <li><a href="#">利用規約</a></li>
           </ul>
-          <span style={{ fontSize: "12px" }}>テスト中</span>
           <span className="footer-mark"><i>Designed for Your Faculty.</i></span>
         </div>
       </div>

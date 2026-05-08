@@ -38,6 +38,11 @@
   font-weight: 500;
   letter-spacing: 0.18em;
   color: var(--ink-0);
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 .site-logo-en i {
   font-style: normal;
@@ -510,6 +515,11 @@
   color: var(--ink-0);
   margin-bottom: 18px;
   line-height: 1;
+  writing-mode: horizontal-tb;
+  text-orientation: mixed;
+  white-space: nowrap;
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 .footer-logo i {
   font-style: normal;

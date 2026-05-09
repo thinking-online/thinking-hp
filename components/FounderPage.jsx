@@ -33,7 +33,7 @@ const FounderPage = () => {
   const media = [
   { year: "2024", outlet: "新R25", topic: "ドS管理で、逆転合格へ。完全〝子〟別、人生を変えるオンライン塾。" },
   { year: "2023", outlet: "新R25", topic: "偏差値42→70早稲田大卒。最強の〝脳内インストール〟英語学習法。" },
-  { year: "2023", outlet: "Powered by TV", topic: "「元気ジャパン」放送回 — 受験指導の現場として出演。" }];
+  { year: "2023", outlet: "東京MX", topic: "首都圏・東京MXの番組で、私立文系向け個別指導の現場が紹介されました。" }];
 
 
   return (

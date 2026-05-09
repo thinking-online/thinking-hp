@@ -746,4 +746,36 @@
   .footer-grid { grid-template-columns: 1fr; gap: 36px; padding-bottom: 48px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .footer-legal { flex-wrap: wrap; gap: 12px; }
+
+  /* SNSリンク — スマホで全文・タップ領域が確実に効くように */
+  .footer-social {
+    max-width: none;
+    width: 100%;
+    gap: 8px;
+  }
+  .footer-social-item {
+    min-height: 48px;
+    padding: 12px;
+    align-items: center;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(200, 168, 104, 0.15);
+  }
+  .footer-social-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .footer-social-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .footer-social-name {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+  }
+  .footer-social-desc {
+    font-size: 11px;
+    line-height: 1.55;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
 }

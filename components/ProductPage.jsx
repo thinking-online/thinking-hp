@@ -39,6 +39,9 @@
 // }
 const ProductPage = ({ data }) => {
   const LINE_URL = "https://line.me/R/ti/p/@thinking";
+  const SNS_INSTAGRAM = "https://www.instagram.com/king_of_juken/?hl=ja";
+  const SNS_YOUTUBE_TETTA = "https://www.youtube.com/@tetta-waseda-channel";
+  const SNS_YOUTUBE_THINKING = "https://www.youtube.com/@all-day-thinking";
   const [stickyVisible, setStickyVisible] = React.useState(false);
   const [openFaq, setOpenFaq] = React.useState(0);
 
@@ -208,9 +211,27 @@ const ProductPage = ({ data }) => {
             ))}
             <span className="product-meta-spacer" />
             <div className="product-meta-share">
-              <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
-              <a href="#" aria-label="LINE"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M21 11c0 4-4 7-9 7-1 0-2-.1-3-.4L4 19l1-3c-1-1.3-2-3-2-5 0-4 4-7 9-7s9 3 9 7z"/></svg></a>
-              <a href="#" aria-label="リンクをコピー"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/></svg></a>
+              <a href={SNS_INSTAGRAM} target="_blank" rel="noopener noreferrer" aria-label="Instagram：受験の王様（フォロワー8.5万人以上）">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" /></svg>
+              </a>
+              <a href={SNS_YOUTUBE_TETTA} target="_blank" rel="noopener noreferrer" aria-label="YouTube：てった｜私立文系の勝ち方ch">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z" /></svg>
+              </a>
+              <a href={SNS_YOUTUBE_THINKING} target="_blank" rel="noopener noreferrer" aria-label="YouTube：オンライン塾THINKING・合格者対談チャンネル">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z" /></svg>
+              </a>
+              <a
+                href="#"
+                aria-label="このページのURLをコピー"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (typeof navigator !== "undefined" && navigator.clipboard?.writeText && typeof window !== "undefined") {
+                    navigator.clipboard.writeText(window.location.href).catch(() => {});
+                  }
+                }}
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M10 13a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1M14 11a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1" /></svg>
+              </a>
             </div>
           </div>
 

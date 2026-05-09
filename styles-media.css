@@ -2,6 +2,7 @@
 .media-section {
   background: var(--bg-0);
   position: relative;
+  scroll-margin-top: 88px;
 }
 .media-section::before {
   content: "";

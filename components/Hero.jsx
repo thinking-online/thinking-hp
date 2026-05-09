@@ -94,17 +94,10 @@ const Hero = () => {
         </div>
 
         <p className="hero-mobile-subcopy">
-          早慶上智ICU・MARCH・関関同立まで。<br />
-          <span>学部ごと</span>の出題傾向から<span>逆算</span>し、<br />
-          専属コーチが<span>一対一</span>で合格まで導きます。
+          早慶上智ICU・MARCH・関関同立まで、<br />
+          <span>学部ごと</span>に異なる出題傾向を、<br />
+          専属コーチが<span>一対一</span>で攻略します。
         </p>
-
-        <div className="hero-mobile-cta-area">
-          <a href="https://line.me/R/ti/p/@thinking" target="_blank" rel="noopener noreferrer" className="hero-mobile-cta-main">
-            公式LINEで無料相談に申し込む
-          </a>
-          <p className="hero-mobile-cta-note">受付中　月10名限定 / 60分・無料</p>
-        </div>
       </div>
 
       {/* Desktop full-bleed photo (right half) */}

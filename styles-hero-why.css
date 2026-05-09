@@ -276,9 +276,6 @@
 .hero-eyebrow { justify-content: flex-start; }
 .hero-ctas { justify-content: flex-start; }
 
-/* Hide mobile-only photo on desktop */
-.hero-photo-mobile { display: none; }
-
 /* ============================================================
    DESKTOP HERO CONCEPT BLOCK
    ============================================================ */
@@ -490,7 +487,14 @@
   }
   .hero-mobile-overlay-bottom {
     z-index: -1;
-    background: linear-gradient(180deg, transparent 56%, rgba(8, 10, 16, 0.2) 72%, rgba(8, 10, 16, 0.64) 88%, rgba(8, 10, 16, 0.88) 100%);
+    /* 下部は写真を見せずCTA帯をフラットに（LINEブラウザ下部UIとも干渉しにくい） */
+    background: linear-gradient(
+      180deg,
+      transparent 42%,
+      rgba(8, 10, 16, 0.55) 62%,
+      rgba(8, 10, 16, 0.92) 78%,
+      rgba(8, 10, 16, 0.97) 100%
+    );
   }
   .hero-mobile-copy-panel {
     position: absolute;
@@ -518,7 +522,7 @@
     position: absolute;
     left: clamp(16px, 4.8vw, 24px);
     right: clamp(16px, 4.8vw, 24px);
-    bottom: calc(126px + env(safe-area-inset-bottom, 0px));
+    bottom: calc(148px + env(safe-area-inset-bottom, 0px));
     margin: 0;
     z-index: 2;
     max-width: min(74vw, 326px);
@@ -542,6 +546,12 @@
     z-index: 3;
     display: grid;
     gap: 8px;
+    padding: 16px 14px 14px;
+    margin-bottom: 0;
+    border-radius: 16px;
+    background: rgba(10, 9, 7, 0.88);
+    border: 1px solid rgba(200, 168, 104, 0.22);
+    box-shadow: 0 -12px 40px rgba(0, 0, 0, 0.45);
   }
   .hero-mobile-cta-main {
     display: inline-flex;
@@ -610,49 +620,6 @@
     line-height: 1.95;
   }
 
-  .hero-photo-mobile {
-    display: block;
-    position: relative;
-    margin: 16px -20px 8px;
-    aspect-ratio: 4 / 3;
-    overflow: hidden;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    animation: fadeInUp 1s 0.25s var(--ease-out) both;
-  }
-  .hero-photo-mobile img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 60% 30%;
-    filter: saturate(0.92) contrast(1.04);
-    display: block;
-  }
-  .hero-photo-mobile::after {
-    content: "";
-    position: absolute; inset: 0;
-    background:
-      linear-gradient(180deg, transparent 50%, rgba(10, 9, 7, 0.55) 100%),
-      linear-gradient(90deg, rgba(10, 9, 7, 0.2), transparent 30%);
-    pointer-events: none;
-  }
-  .hero-photo-mobile-caption {
-    position: absolute;
-    left: 16px;
-    bottom: 14px;
-    z-index: 2;
-  }
-  .hp-eyebrow {
-    font-family: var(--serif-jp);
-    font-size: 12px;
-    color: var(--ink-0);
-    letter-spacing: 0.12em;
-    background: rgba(10, 9, 7, 0.6);
-    padding: 6px 12px;
-    border-left: 2px solid var(--accent);
-    backdrop-filter: blur(4px);
-  }
-
   /* Feature cards — mobile (3 columns, compact) */
   .hero-features {
     grid-template-columns: 1fr 1fr 1fr;
@@ -706,7 +673,7 @@
     .hero-mobile-subcopy {
       font-size: 11.5px;
       line-height: 1.8;
-      bottom: calc(120px + env(safe-area-inset-bottom, 0px));
+      bottom: calc(138px + env(safe-area-inset-bottom, 0px));
     }
     .hero-mobile-cta-main { min-height: 50px; font-size: 14px; }
     .hero-mobile-cta-note { font-size: 10px; }
@@ -750,17 +717,20 @@
 .stat-label { font-family: var(--serif-en); font-style: italic; font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em; }
 .stat-sep { width: 1px; height: 28px; background: var(--line); }
 
-.hero-scroll {
-  position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
-  z-index: 3;
-  display: flex; flex-direction: column; align-items: center; gap: 12px;
-  font-family: var(--serif-en); font-style: italic; font-size: 11px;
-  color: var(--ink-3); letter-spacing: 0.2em;
-}
-.hero-scroll-line {
-  width: 1px; height: 48px;
-  background: linear-gradient(180deg, var(--accent), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
+/* Scroll インジケータはデスクトップのみ（モバイルでは後続の .hero-scroll が display:flex で上書きされていた） */
+@media (min-width: 901px) {
+  .hero-scroll {
+    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    z-index: 3;
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    font-family: var(--serif-en); font-style: italic; font-size: 11px;
+    color: var(--ink-3); letter-spacing: 0.2em;
+  }
+  .hero-scroll-line {
+    width: 1px; height: 48px;
+    background: linear-gradient(180deg, var(--accent), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
 }
 
 @keyframes heroLineUp {

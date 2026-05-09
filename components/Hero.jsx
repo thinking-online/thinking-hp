@@ -148,14 +148,6 @@ const Hero = () => {
             </p>
           </div>
 
-          {/* Mobile-only photo (between concept and CTAs) */}
-          <div className="hero-photo-mobile">
-            <img src="assets/hero-male-new.png" alt="" />
-            <div className="hero-photo-mobile-caption">
-              <span className="hp-eyebrow">学部別の合格戦略を、可視化する。</span>
-            </div>
-          </div>
-
           <div className="hero-ctas">
             <a href="https://line.me/R/ti/p/@thinking" target="_blank" rel="noopener noreferrer" className="cta">
               <span>LINEで無料相談</span>
@@ -192,7 +184,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — desktop only (see styles-hero-why.css) */}
       <div className="hero-scroll">
         <span className="hero-scroll-text">Scroll</span>
         <span className="hero-scroll-line" />

@@ -543,13 +543,14 @@
   margin-bottom: 8px;
 }
 
-.footer-social {
+/* SNS（旧クラス footer-social はキャッシュ衝突回避のため廃止 → footer-sns） */
+.site-footer .footer-sns {
   display: flex;
   flex-direction: column;
   gap: 10px;
   max-width: 400px;
 }
-.footer-social-item {
+.site-footer .footer-sns-link {
   display: flex;
   align-items: flex-start;
   gap: 12px;
@@ -559,16 +560,19 @@
   color: var(--ink-2);
   text-decoration: none;
   transition: border-color 0.3s, color 0.3s, transform 0.3s, background 0.3s;
+  width: auto;
+  min-height: 0;
+  box-sizing: border-box;
 }
-.footer-social-item:hover {
+.site-footer .footer-sns-link:hover {
   border-color: var(--accent);
   background: rgba(200, 168, 104, 0.06);
   transform: translateY(-2px);
 }
-.footer-social-item:hover .footer-social-icon {
+.site-footer .footer-sns-link:hover .footer-sns-icon {
   color: var(--accent-bright);
 }
-.footer-social-icon {
+.site-footer .footer-sns-icon {
   flex-shrink: 0;
   width: 36px;
   height: 36px;
@@ -577,30 +581,31 @@
   justify-content: center;
   color: var(--accent);
 }
-.footer-social-icon svg {
+.site-footer .footer-sns-icon svg {
   width: 16px;
   height: 16px;
 }
-.footer-social-text {
+.site-footer .footer-sns-text {
   display: flex;
   flex-direction: column;
   gap: 4px;
   min-width: 0;
+  flex: 1;
 }
-.footer-social-name {
+.site-footer .footer-sns-name {
   font-family: var(--serif-en);
   font-size: 12px;
   letter-spacing: 0.14em;
   color: var(--ink-0);
 }
-.footer-social-desc {
+.site-footer .footer-sns-desc {
   font-family: var(--serif-jp);
   font-size: 12px;
   line-height: 1.55;
   letter-spacing: 0.03em;
   color: var(--ink-3);
 }
-.footer-social-item:hover .footer-social-name {
+.site-footer .footer-sns-link:hover .footer-sns-name {
   color: var(--accent);
 }
 
@@ -747,32 +752,31 @@
   .footer-bottom { flex-direction: column; align-items: flex-start; }
   .footer-legal { flex-wrap: wrap; gap: 12px; }
 
-  /* SNSリンク — スマホで全文・タップ領域が確実に効くように */
-  .footer-social {
+  /* SNS — スマホ：旧4アイコン行のキャッシュと無関係な .footer-sns のみ使用 */
+  .site-footer .footer-sns {
     max-width: none;
     width: 100%;
     gap: 8px;
   }
-  .footer-social-item {
+  .site-footer .footer-sns-link {
     min-height: 48px;
     padding: 12px;
     align-items: center;
-    box-sizing: border-box;
     -webkit-tap-highlight-color: rgba(200, 168, 104, 0.15);
   }
-  .footer-social-icon {
+  .site-footer .footer-sns-icon {
     width: 40px;
     height: 40px;
   }
-  .footer-social-icon svg {
+  .site-footer .footer-sns-icon svg {
     width: 18px;
     height: 18px;
   }
-  .footer-social-name {
+  .site-footer .footer-sns-name {
     font-size: 11px;
     letter-spacing: 0.12em;
   }
-  .footer-social-desc {
+  .site-footer .footer-sns-desc {
     font-size: 11px;
     line-height: 1.55;
     word-break: break-word;

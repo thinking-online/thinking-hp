@@ -36,47 +36,47 @@ const SiteFooter = () => {
               <span><i>Designed for Your Faculty.</i></span>
               私立文系・学部別の、合格設計塾。
             </p>
-            <div className="footer-social">
+            <div className="footer-sns" aria-label="公式SNS・チャンネル">
               <a
                 href="https://www.instagram.com/king_of_juken/?hl=ja"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer-social-item"
+                className="footer-sns-link"
               >
-                <span className="footer-social-icon" aria-hidden="true">
+                <span className="footer-sns-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
                 </span>
-                <span className="footer-social-text">
-                  <span className="footer-social-name">Instagram</span>
-                  <span className="footer-social-desc">自社運用「受験の王様」フォロワー8.5万人以上</span>
+                <span className="footer-sns-text">
+                  <span className="footer-sns-name">Instagram</span>
+                  <span className="footer-sns-desc">自社運用「受験の王様」フォロワー8.5万人以上</span>
                 </span>
               </a>
               <a
                 href="https://www.youtube.com/@tetta-waseda-channel"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer-social-item"
+                className="footer-sns-link"
               >
-                <span className="footer-social-icon" aria-hidden="true">
+                <span className="footer-sns-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
                 </span>
-                <span className="footer-social-text">
-                  <span className="footer-social-name">YouTube</span>
-                  <span className="footer-social-desc">てった｜私立文系の勝ち方ch</span>
+                <span className="footer-sns-text">
+                  <span className="footer-sns-name">YouTube</span>
+                  <span className="footer-sns-desc">てった｜私立文系の勝ち方ch</span>
                 </span>
               </a>
               <a
                 href="https://www.youtube.com/@all-day-thinking"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer-social-item"
+                className="footer-sns-link"
               >
-                <span className="footer-social-icon" aria-hidden="true">
+                <span className="footer-sns-icon" aria-hidden="true">
                   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
                 </span>
-                <span className="footer-social-text">
-                  <span className="footer-social-name">YouTube</span>
-                  <span className="footer-social-desc">オンライン塾THINKING・合格者対談チャンネル</span>
+                <span className="footer-sns-text">
+                  <span className="footer-sns-name">YouTube</span>
+                  <span className="footer-sns-desc">オンライン塾THINKING・合格者対談チャンネル</span>
                 </span>
               </a>
             </div>

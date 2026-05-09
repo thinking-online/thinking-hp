@@ -37,17 +37,47 @@ const SiteFooter = () => {
               私立文系・学部別の、合格設計塾。
             </p>
             <div className="footer-social">
-              <a href="#" aria-label="X (Twitter)">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              <a
+                href="https://www.instagram.com/king_of_juken/?hl=ja"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-item"
+              >
+                <span className="footer-social-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+                </span>
+                <span className="footer-social-text">
+                  <span className="footer-social-name">Instagram</span>
+                  <span className="footer-social-desc">自社運用「受験の王様」フォロワー8.5万人以上</span>
+                </span>
               </a>
-              <a href="#" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+              <a
+                href="https://www.youtube.com/@tetta-waseda-channel"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-item"
+              >
+                <span className="footer-social-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+                </span>
+                <span className="footer-social-text">
+                  <span className="footer-social-name">YouTube</span>
+                  <span className="footer-social-desc">てった｜私立文系の勝ち方ch</span>
+                </span>
               </a>
-              <a href="#" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
-              </a>
-              <a href="#" aria-label="LINE">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.4 4.6C17.5 2.6 14.9 1.5 12 1.5c-5.8 0-10.5 4-10.5 9 0 4.4 3.6 8.1 8.5 8.9.3 0 .5.1.6.4.1.2.1.5 0 .7l-.3 1.2c-.1.3.2.6.5.5 1.4-.5 6.6-3.6 8.6-6 1.6-2.1 2.1-3.6 2.1-5.7 0-2.1-.8-4.2-2.1-5.9zM8 13.6H5.4c-.2 0-.4-.2-.4-.4V8.7c0-.2.2-.4.4-.4s.4.2.4.4v4.1H8c.2 0 .4.2.4.4s-.2.4-.4.4zm1.6-.4c0 .2-.2.4-.4.4s-.4-.2-.4-.4V8.7c0-.2.2-.4.4-.4s.4.2.4.4zm5.5 0c0 .2-.1.3-.3.4h-.1c-.1 0-.2-.1-.3-.2l-2.4-3.2v3c0 .2-.2.4-.4.4s-.4-.2-.4-.4V8.7c0-.2.1-.3.3-.4h.1c.1 0 .2.1.3.2l2.4 3.2v-3c0-.2.2-.4.4-.4s.4.2.4.4zm3.4-2.6c.2 0 .4.2.4.4s-.2.4-.4.4h-1.7v1.4h1.7c.2 0 .4.2.4.4s-.2.4-.4.4h-2.1c-.2 0-.4-.2-.4-.4V8.7c0-.2.2-.4.4-.4h2.1c.2 0 .4.2.4.4s-.2.4-.4.4h-1.7v1.4z"/></svg>
+              <a
+                href="https://www.youtube.com/@all-day-thinking"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="footer-social-item"
+              >
+                <span className="footer-social-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 15.9 24 12 24 12s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6z"/></svg>
+                </span>
+                <span className="footer-social-text">
+                  <span className="footer-social-name">YouTube</span>
+                  <span className="footer-social-desc">オンライン塾THINKING・合格者対談チャンネル</span>
+                </span>
               </a>
             </div>
           </div>

@@ -20,10 +20,10 @@ const Media = () => {
     },
     {
       thumb: "assets/media-tv.png",
-      pub: "Powered by TV",
+      pub: "東京MX",
       kind: "TV BROADCAST",
-      title: "「元気ジャパン」放送回 — 受験指導の現場として出演。",
-      meta: "テレビ番組出演",
+      title: "首都圏・東京MXの番組で、私立文系向け個別指導の現場が紹介されました。",
+      meta: "地上波テレビ出演",
       url: "https://powered-by-tv.com/2023/08/12/powernews11/",
     },
   ];
@@ -43,17 +43,6 @@ const Media = () => {
             塾の指導理念・代表インタビューが取り上げられています。
           </p>
           <div className="ornament"><span className="ornament-mark" /></div>
-        </div>
-
-        {/* Press logos strip */}
-        <div className="media-logos reveal">
-          <span className="media-logo-item">新R25</span>
-          <span className="media-logo-sep" />
-          <span className="media-logo-item">Powered by TV</span>
-          <span className="media-logo-sep" />
-          <span className="media-logo-item">YouTube</span>
-          <span className="media-logo-sep" />
-          <span className="media-logo-item">SNS総フォロワー 5万人超</span>
         </div>
 
         {/* Featured */}

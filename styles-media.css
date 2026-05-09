@@ -16,31 +16,6 @@
 }
 .media-section .section-inner { position: relative; z-index: 1; }
 
-/* Logo strip */
-.media-logos {
-  display: flex; align-items: center; justify-content: center;
-  flex-wrap: wrap;
-  gap: 28px;
-  padding: 28px 32px;
-  margin: 0 auto 56px;
-  max-width: 920px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.media-logo-item {
-  font-family: var(--serif-en); font-style: italic;
-  font-size: 14px;
-  letter-spacing: 0.18em;
-  color: var(--ink-2);
-  white-space: nowrap;
-}
-.media-logo-sep {
-  width: 6px; height: 6px;
-  background: var(--accent);
-  transform: rotate(45deg);
-  opacity: 0.6;
-}
-
 /* Pub badge — sits over thumb */
 .media-pub-badge {
   position: absolute;
@@ -199,6 +174,4 @@
     margin-bottom: 40px;
   }
   .media-grid { grid-template-columns: 1fr; gap: 20px; }
-  .media-logos { gap: 16px; padding: 20px; }
-  .media-logo-item { font-size: 12px; }
 }

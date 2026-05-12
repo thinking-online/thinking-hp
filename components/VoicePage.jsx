@@ -1,6 +1,6 @@
 // Voice page — testimonials with YouTube interview videos + atmospheric backdrop
 const VoicePage = () => {
-  // 8 long-form interviews. Tabs let you switch the featured video.
+  // Long-form interviews. Tabs let you switch the featured video.
   const interviews = [
     {
       id: "Xid8x7UUJfE",
@@ -151,11 +151,11 @@ const VoicePage = () => {
         </div>
       </section>
 
-      {/* Featured interview videos — 8 talks via tabs */}
+      {/* Featured interview videos — long-form talks via tabs */}
       <section className="voice-featured">
         <div className="voice-featured-inner">
           <div className="voice-section-head">
-            <span className="eyebrow"><i>Long-form Interview · 8 Talks</i></span>
+            <span className="eyebrow"><i>{`Long-form Interview · ${interviews.length} Talks`}</i></span>
             <h2 className="voice-section-title">
               対談動画で、<em>合格までの道のり</em>を。
             </h2>
@@ -165,8 +165,8 @@ const VoicePage = () => {
             </p>
           </div>
 
-          {/* Tabs — 8 interviews */}
-          <div className="featured-tabs featured-tabs-8">
+          {/* Tabs */}
+          <div className="featured-tabs featured-tabs-many">
             {interviews.map((f, i) => (
               <button
                 key={f.id}

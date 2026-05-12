@@ -315,11 +315,11 @@
   border: 1px solid var(--line);
   margin-bottom: 32px;
 }
-.featured-tabs-8 {
+.featured-tabs-many {
   grid-template-columns: repeat(4, 1fr);
 }
 @media (max-width: 1100px) {
-  .featured-tabs-8 { grid-template-columns: repeat(2, 1fr); }
+  .featured-tabs-many { grid-template-columns: repeat(2, 1fr); }
 }
 .featured-tab {
   background: var(--bg-1);
@@ -732,7 +732,7 @@
   .voice-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 720px) {
-  .featured-tabs-8 { grid-template-columns: repeat(2, 1fr); }
+  .featured-tabs-many { grid-template-columns: repeat(2, 1fr); }
   .featured-tab { padding: 16px 14px; }
   .featured-tab-name { font-size: 14px; }
   .featured-tab-school { font-size: 11px; }

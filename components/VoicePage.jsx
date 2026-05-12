@@ -3,6 +3,28 @@ const VoicePage = () => {
   // 8 long-form interviews. Tabs let you switch the featured video.
   const interviews = [
     {
+      id: "Xid8x7UUJfE",
+      name: "卒業生 09",
+      en: "Interview 09",
+      school: "慶應義塾大学",
+      year: "現役合格",
+      tag: "偏差値60未満 / 非進学校",
+      quote: "偏差値60未満の環境からでも、学部別で正しく逆算すれば、合格は狙えると証明できた。",
+      story:
+        "学校内では上位ではなかったが、志望学部の出題傾向に絞って学習を再設計。対談では、迷っていた時期から合格までの道筋を振り返っている。",
+    },
+    {
+      id: "CcwIX4-j2Mo",
+      name: "卒業生 10",
+      en: "Interview 10",
+      school: "青山学院大学",
+      year: "現役合格",
+      tag: "E判定 / 学年ビリ / 高3秋まで部活",
+      quote: "E判定と学年ビリからでも、最後まで設計を崩さなければ逆転できる。",
+      story:
+        "高3の11月まで部活を続けながら、限られた時間で学習優先順位を徹底。対談では、逆転合格までの具体的な行動と心境の変化を話している。",
+    },
+    {
       id: "8R0aILkSbhc",
       name: "卒業生 01",
       en: "Interview 01",

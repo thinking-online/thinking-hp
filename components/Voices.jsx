@@ -2,6 +2,24 @@
 const Voices = () => {
   const voices = [
     {
+      thumb: "assets/thumb-keio-geneki.png",
+      headline: "非進学校から、慶應現役合格。",
+      result: "慶應義塾大学 現役合格",
+      meta: "偏差値60未満 / 逆転合格",
+      name: "受講生インタビュー",
+      duration: "対談動画",
+      url: "https://youtu.be/Xid8x7UUJfE",
+    },
+    {
+      thumb: "assets/thumb-aoyama-geneki.png",
+      headline: "E判定・学年ビリから、逆転現役合格。",
+      result: "青山学院大学 現役合格",
+      meta: "高3の11月まで部活",
+      name: "受講生インタビュー",
+      duration: "対談動画",
+      url: "https://youtu.be/CcwIX4-j2Mo",
+    },
+    {
       thumb: "assets/thumb-aboshi.png",
       headline: "最下位層から、学年3位。",
       result: "関西学院大学 現役合格",

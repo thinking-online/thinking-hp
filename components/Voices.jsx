@@ -140,7 +140,7 @@ const Voices = () => {
     const onMove = (e) => {
       if (!isDown) return;
       const dx = e.pageX - startX;
-      if (Math.abs(dx) > 5) moved = true;
+      if (Math.abs(dx) > 12) moved = true;
       el.scrollLeft = scrollStart - dx;
     };
     const onUp = () => {

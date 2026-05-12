@@ -119,13 +119,7 @@ const VoicePage = () => {
 
   // Featured tabs
   const [activeIdx, setActiveIdx] = React.useState(0);
-  const [playing, setPlaying] = React.useState(false);
   const active = interviews[activeIdx];
-
-  // Reset playing when tab switches
-  React.useEffect(() => {
-    setPlaying(false);
-  }, [activeIdx]);
 
   return (
     <>
@@ -190,47 +184,31 @@ const VoicePage = () => {
           <div className="featured-stage">
             <div className="featured-video">
               <div className="featured-video-frame">
-                {playing ? (
-                  <iframe
-                    key={active.id}
-                    className="featured-iframe"
-                    src={`https://www.youtube.com/embed/${active.id}?autoplay=1&rel=0&modestbranding=1`}
-                    title={`${active.name} interview`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
-                ) : (
-                  <a
-                    className="featured-video-thumb"
-                    href={`https://youtu.be/${active.id}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setPlaying(true);
-                    }}
-                    style={{
-                      backgroundImage: `url('https://i.ytimg.com/vi/${active.id}/hqdefault.jpg')`,
-                    }}
-                    aria-label={`${active.name}との対談を再生`}
-                  >
-                    <div className="featured-video-grain" />
-                    <button className="featured-play" aria-label="動画を再生" tabIndex={-1}>
-                      <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </button>
-                    <div className="featured-video-meta">
-                      <span className="featured-duration"><i>No. {String(activeIdx + 1).padStart(2, "0")}</i></span>
-                      <span className="featured-tag">{active.tag}</span>
-                    </div>
-                    <div className="featured-name-overlay">
-                      <span className="featured-en"><i>{active.en}</i></span>
-                      <span className="featured-name">{active.name}</span>
-                    </div>
-                  </a>
-                )}
+                <a
+                  className="featured-video-thumb"
+                  href={`https://youtu.be/${active.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    backgroundImage: `url('https://i.ytimg.com/vi/${active.id}/hqdefault.jpg')`,
+                  }}
+                  aria-label={`${active.name}との対談を再生`}
+                >
+                  <div className="featured-video-grain" />
+                  <button className="featured-play" aria-label="動画を再生" tabIndex={-1}>
+                    <svg viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </button>
+                  <div className="featured-video-meta">
+                    <span className="featured-duration"><i>No. {String(activeIdx + 1).padStart(2, "0")}</i></span>
+                    <span className="featured-tag">{active.tag}</span>
+                  </div>
+                  <div className="featured-name-overlay">
+                    <span className="featured-en"><i>{active.en}</i></span>
+                    <span className="featured-name">{active.name}</span>
+                  </div>
+                </a>
               </div>
             </div>
 

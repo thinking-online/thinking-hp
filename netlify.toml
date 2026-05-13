@@ -1,0 +1,16 @@
+# Netlify — static HTML + in-browser Babel (no npm build step)
+#
+# Dashboard checklist (in addition to this file):
+# - Site settings → Build & deploy → Continuous deployment: production branch = main
+# - After plan/billing fixes: run "Trigger deploy" → "Clear cache and deploy site" once
+# - Optional: Deploy notifications / build hooks for visibility
+
+[build]
+  publish = "."
+  command = "true"
+
+# JSX sources change often; avoid long-lived CDN cache on these paths after deploys.
+[[headers]]
+  for = "/components/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

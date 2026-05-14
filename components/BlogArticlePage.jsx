@@ -114,7 +114,7 @@ const BlogArticlePage = () => {
       <section className="blog-section">
         <div className="blog-section-inner">
           <p>記事を読み込めませんでした。記事一覧へ戻り、もう一度お試しください。</p>
-          <a href="blog.html" className="article-back">
+          <a href="/blog" className="article-back">
             <span>記事一覧へ戻る</span>
           </a>
         </div>
@@ -129,7 +129,7 @@ const BlogArticlePage = () => {
     <>
       <header className="article-header">
         <div className="article-header-inner">
-          <a href="blog.html" className="article-back">
+          <a href="/blog" className="article-back">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
@@ -248,7 +248,7 @@ const BlogArticlePage = () => {
           </div>
           <div className="article-related-grid">
             {related.map((r, i) => (
-              <a key={i} href={`blog-article.html?slug=${encodeURIComponent(r.slug)}`} className="article-related-card">
+              <a key={i} href={`/blog-article?slug=${encodeURIComponent(r.slug)}`} className="article-related-card">
                 <span className="blog-cat">{r.cat}</span>
                 <h3 className="article-related-title">{r.title}</h3>
                 <span className="blog-date">{r.date}</span>

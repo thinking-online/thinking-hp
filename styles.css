@@ -125,22 +125,7 @@ p, li, dd, blockquote, .text-wrap-pretty { text-wrap: pretty; }
     line-break: strict;
   }
 
-  /* ページ見出し内の装飾改行は狭い画面では自然折り返しに任せる */
-  .page-header-title br {
-    display: none;
-  }
-
-  .voice-hero-title br,
-  .voice-close-title br,
-  .strategy-claim-title br,
-  .strategy-compare-title br,
-  .strategy-sheet-title br,
-  .strategy-close-title br,
-  .price-section-title br {
-    display: none;
-  }
-
-  /* 見出し・大きいタイトル・カード見出し：単語途中の不自然な分割を抑える */
+  /* 見出し・大きいタイトル・カード見出し：はみ出し防止＋禁則（折り返しは html の line-break を継承） */
   .section-title,
   .page-header-title,
   .page-header-lead,
@@ -194,23 +179,27 @@ p, li, dd, blockquote, .text-wrap-pretty { text-wrap: pretty; }
   .products-selected-title,
   .voice-feature-title,
   .media-card-title,
-  .intro-jp,
-  .intro-brand,
-  .intro-tag,
   .sheet-process-title,
   .article-cta-title,
   .article-related-title,
   .callout-title,
   .sticky-cta-title,
   .track-title {
-    overflow-wrap: normal;
-    word-break: keep-all;
-    text-wrap: balance;
+    /* normal+keep-all は狭い枠では折り返せず overflow:hidden で見切れるため、
+       禁則は html の line-break: strict を継承し、必要なら文字間でも折る */
+    overflow-wrap: anywhere;
+    word-break: normal;
+    line-break: strict;
+    text-wrap: pretty;
   }
 
-  .hero-concept-sub br,
-  .hero-mobile-subcopy br {
-    display: none;
+  /* グリッド／フレックス内のテキスト列が内容幅で広がり続け、はみ出すのを防ぐ */
+  .blog-featured-link,
+  .blog-featured-body,
+  .blog-card-link,
+  .blog-card-body,
+  .page-header-inner {
+    min-width: 0;
   }
 }
 

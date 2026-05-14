@@ -17,21 +17,21 @@ const SiteHeader = ({ current = "" }) => {
   }, [open]);
 
   const nav = [
-    { key: "strategy", label: "学部別戦略", en: "Strategy", href: "strategy.html" },
-    { key: "support",  label: "サポート体制", en: "Support",  href: "support.html" },
-    { key: "voice",    label: "合格者の声",   en: "Voices",   href: "voice.html" },
-    { key: "price",    label: "料金・入塾",   en: "Pricing",  href: "price.html" },
-    { key: "products", label: "問題集",       en: "Manuals",  href: "products.html" },
-    { key: "faq",      label: "よくある質問", en: "FAQ",      href: "faq.html" },
-    { key: "founder",  label: "代表紹介",     en: "Founder",  href: "founder.html" },
-    { key: "blog",     label: "記事一覧",     en: "Journal",  href: "blog.html" },
+    { key: "strategy", label: "学部別戦略", en: "Strategy", href: "/strategy" },
+    { key: "support",  label: "サポート体制", en: "Support",  href: "/support" },
+    { key: "voice",    label: "合格者の声",   en: "Voices",   href: "/voice" },
+    { key: "price",    label: "料金・入塾",   en: "Pricing",  href: "/price" },
+    { key: "products", label: "問題集",       en: "Manuals",  href: "/products" },
+    { key: "faq",      label: "よくある質問", en: "FAQ",      href: "/faq" },
+    { key: "founder",  label: "代表紹介",     en: "Founder",  href: "/founder" },
+    { key: "blog",     label: "記事一覧",     en: "Journal",  href: "/blog" },
   ];
 
   return (
     <>
       <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
         <div className="site-header-inner">
-          <a href="index.html" className="site-logo" aria-label="THINKING トップへ">
+          <a href="/" className="site-logo" aria-label="THINKING トップへ">
             <span className="site-logo-en">THINKING</span>
             <span className="site-logo-jp">学部別・合格設計塾</span>
           </a>
@@ -76,7 +76,7 @@ const SiteHeader = ({ current = "" }) => {
           <span className="site-drawer-eyebrow"><i>Menu</i></span>
           <ul className="site-drawer-nav">
             <li className={current === "" ? "active" : ""}>
-              <a href="index.html" onClick={() => setOpen(false)}>
+              <a href="/" onClick={() => setOpen(false)}>
                 <span className="nav-jp">トップ</span>
                 <span className="nav-en">Home</span>
               </a>

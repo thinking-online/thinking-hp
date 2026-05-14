@@ -176,9 +176,9 @@ const ProductPage = ({ data }) => {
     <main className="product-page">
       {/* Breadcrumb */}
       <nav className="product-breadcrumb" aria-label="パンくず">
-        <a href="index.html">トップ</a>
+        <a href="/">トップ</a>
         <span className="sep">／</span>
-        <a href="products.html">問題集・教材</a>
+        <a href="/products">問題集・教材</a>
         <span className="sep">／</span>
         <span className="current">{data.breadcrumb}</span>
       </nav>

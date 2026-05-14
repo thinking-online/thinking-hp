@@ -159,7 +159,7 @@
             id: "kangaku-21-english",
             facultyJa: "2/1試験（英語）",
             status: "available",
-            href: "/product-kangaku-english",
+            href: "product-kangaku-english.html",
             img: "assets/kangaku-hero.png",
             tags: ["2027年度最新版", "販売中"],
             price: "¥19,800",

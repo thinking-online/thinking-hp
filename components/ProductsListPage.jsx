@@ -57,6 +57,28 @@ function ProductsManualCard({ uniName, m }) {
   );
 }
 
+function ProductsSeriesOverviewHero() {
+  return (
+    <section className="products-series-overview" aria-labelledby="products-series-overview-title">
+      <div className="products-series-overview-inner">
+        <p className="products-series-overview-eyebrow"><i>Series structure</i></p>
+        <h2 id="products-series-overview-title" className="products-series-overview-title">
+          シリーズの4部構成
+        </h2>
+        <figure className="products-series-overview-figure">
+          <img
+            className="products-series-overview-img"
+            src="assets/products-series-4parts-overview.png"
+            alt="学部別オリジナル問題集シリーズの全体像。①構造・出題データ分析、②頻出英単語・熟語帳、③オリジナル大問別疑似演習、④総合模試の4部で構成され、分析に基づき最短合格へ導く内容です。"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </section>
+  );
+}
+
 const ProductsListPage = () => {
   const catalog =
     typeof PRODUCTS_MANUAL_CATALOG !== "undefined" ? PRODUCTS_MANUAL_CATALOG : null;
@@ -129,6 +151,7 @@ const ProductsListPage = () => {
           bgImage="assets/products-manuals-hero.png"
           headerClassName="page-header--products-manuals"
         />
+        <ProductsSeriesOverviewHero />
         <section className="products-list-section">
           <div className="products-list-inner">
             <p className="products-list-intro">カタログの読み込みに失敗しました。ページを再読み込みしてください。</p>
@@ -148,6 +171,8 @@ const ProductsListPage = () => {
         bgImage="assets/products-manuals-hero.png"
         headerClassName="page-header--products-manuals"
       />
+
+      <ProductsSeriesOverviewHero />
 
       <section className="products-list-section" id="products-catalog">
         <div className="products-list-inner">

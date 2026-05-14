@@ -1,4 +1,5 @@
 # Netlify — static HTML + in-browser Babel (no npm build step)
+# サイト内リンクは *.html 相対（VS Code「Go Live」は netlify.toml を読まないため /faq が 404 になるのを避ける）。
 #
 # Dashboard checklist (in addition to this file):
 # - Site settings → Build & deploy → Continuous deployment: production branch = main

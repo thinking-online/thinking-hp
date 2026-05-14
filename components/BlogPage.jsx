@@ -122,7 +122,7 @@ const BlogPage = () => {
         <div className="blog-section-inner">
           {/* Featured article */}
           <article className="blog-featured">
-            <a href={`/blog-article?slug=${encodeURIComponent(featured.slug)}`} className="blog-featured-link">
+            <a href={`blog-article.html?slug=${encodeURIComponent(featured.slug)}`} className="blog-featured-link">
               <div className="blog-featured-image">
                 <div className="blog-image-placeholder featured">
                   <span className="image-placeholder-mark">{featured.catEn}</span>
@@ -174,7 +174,7 @@ const BlogPage = () => {
           <div className="blog-grid">
             {articles.map((a, i) => (
               <article key={i} className="blog-card">
-                <a href={`/blog-article?slug=${encodeURIComponent(a.slug)}`} className="blog-card-link">
+                <a href={`blog-article.html?slug=${encodeURIComponent(a.slug)}`} className="blog-card-link">
                   <div className="blog-card-image">
                     <div className="blog-image-placeholder">
                       <span className="image-placeholder-mark small">{a.catEn}</span>

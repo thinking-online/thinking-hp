@@ -122,7 +122,7 @@ const StrategyPage = () => {
         en="Strategy / Same University, Different Exam"
         eyebrow="学部別戦略・徹底分析"
         jp={<>同じ大学でも、<br />学部が違えば、<em>別の試験</em>。</>}
-        lead="明治大学 経営学部の英語と、明治大学 文学部の英語。同じ大学・同じ科目なのに、求められる力はまったく違います。THINKING. の学部別戦略は、ここから始まります。"
+        lead="明治大学 経営学部の英語と、明治大学 文学部の英語。同じ大学・同じ科目なのに、求められる力はまったく違います。THINKING の学部別戦略は、ここから始まります。"
         bgImage="assets/campus-01.png"
       />
 
@@ -209,7 +209,7 @@ const StrategyPage = () => {
           </header>
 
           <figure className="sheet-figure">
-            <img src="assets/kakomon-sheet.png" alt="THINKING. 過去問分析シート" />
+            <img src="assets/kakomon-sheet.png" alt="THINKING 過去問分析シート" />
             <figcaption>
               <span className="sheet-fig-label"><i>Sample / 過去問分析シート</i></span>
               <span className="sheet-fig-note">

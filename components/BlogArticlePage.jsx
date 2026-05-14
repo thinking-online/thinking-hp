@@ -103,7 +103,7 @@ const BlogArticlePage = () => {
 
   React.useEffect(() => {
     if (!article) return;
-    document.title = `${article.meta.title} — THINKING.`;
+    document.title = `${article.meta.title} — THINKING`;
     const desc = article.meta.lead.replace(/\*\*/g, "").replace(/\n/g, " ");
     const m = document.querySelector('meta[name="description"]');
     if (m) m.setAttribute("content", desc.slice(0, 200));
@@ -212,7 +212,7 @@ const BlogArticlePage = () => {
             ))}
 
             <p className="article-signature">
-              THINKING. 代表 — <em>朝倉 徹大</em>
+              THINKING 代表 — <em>朝倉 徹大</em>
             </p>
 
             <div className="article-cta">

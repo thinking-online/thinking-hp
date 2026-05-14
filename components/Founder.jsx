@@ -24,9 +24,9 @@ const Founder = () => {
           </div>
 
           <div className="founder-text reveal delay-2">
-            <p className="founder-en"><i>Tetta Asakura — Founder of THINKING.</i></p>
+            <p className="founder-en"><i>Tetta Asakura — Founder of THINKING</i></p>
             <p className="founder-name-jp">朝倉 徹大</p>
-            <p className="founder-role">THINKING. 創設者 / 代表 / ヘッドコーチ</p>
+            <p className="founder-role">THINKING 創設者 / 代表 / ヘッドコーチ</p>
 
             <div className="founder-bio">
               <p>
@@ -41,7 +41,7 @@ const Founder = () => {
                 <br />
                 "全員に同じ授業を受けさせる" 受験指導の限界を超えるために、
                 <span className="hl">学部別 × 完全個別</span>に振り切った塾——
-                THINKING. を創設した。
+                THINKING を創設した。
               </p>
               <p className="founder-quote">
                 「学習量で殴る指導は、もう終わりにしたい。<br />
@@ -64,7 +64,7 @@ const Founder = () => {
               </li>
               <li>
                 <span className="bullet" />
-                <span>第一志望合格率 82%（直近3年平均）</span>
+                <span>志望学部に沿った設計と、伴走にコミットする方針</span>
               </li>
             </ul>
           </div>

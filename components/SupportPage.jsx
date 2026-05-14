@@ -8,7 +8,7 @@ const SupportPage = () => {
         en="Support / Six Mechanisms"
         eyebrow="サポート体制"
         jp={<>合格を、<em>設計</em>する。<br /><em>6つの仕組み</em>のすべて。</>}
-        lead="THINKING. のサポートは、月1の面談で完結しません。戦略設計から日々の質問対応まで——合格までの全工程を6つの仕組みで支えます。このページでは、その一つひとつを徹底的に解説します。"
+        lead="THINKING のサポートは、月1の面談で完結しません。戦略設計から日々の質問対応まで——合格までの全工程を6つの仕組みで支えます。このページでは、その一つひとつを徹底的に解説します。"
         bgImage="assets/campus-04.png"
       />
 
@@ -57,7 +57,7 @@ const SupportIntro = () => {
           </h2>
           <p className="sup-intro-lead">
             「やる気を出して」「とにかく頑張ろう」で、合格はしない。<br />
-            THINKING. は、根性ではなく<em>仕組み</em>で生徒を支えます。<br />
+            THINKING は、根性ではなく<em>仕組み</em>で生徒を支えます。<br />
             戦略・計画・ロードマップ・質問・面談・言語化——<br />
             6つが噛み合って、初めて伴走と呼べます。
           </p>
@@ -238,7 +238,7 @@ const Mech02Curriculum = () => {
           en="Curriculum"
           jp="週次PDCA"
           title={<>1週間単位の精緻な計画と、<br /><em>月次の到達度レビュー</em>。</>}
-          lead="「今週、何をどこまでやるか」が曖昧なまま机に向かう生徒は、必ず迷子になります。THINKING. は週ごとにPDCAを回し、毎週月曜の朝、やるべきことが明確な状態でスタートさせます。"
+          lead="「今週、何をどこまでやるか」が曖昧なまま机に向かう生徒は、必ず迷子になります。THINKING は週ごとにPDCAを回し、毎週月曜の朝、やるべきことが明確な状態でスタートさせます。"
         />
 
         {/* PDCA loop */}
@@ -387,7 +387,7 @@ const Mech04Quality = () => {
           en="Quality"
           jp="24時間質問システム"
           title={<>「<em>分からない</em>」を、<br />24時間以内に消す。</>}
-          lead="独学の最大の敵は、分からないまま放置することです。THINKING. はチャットで講師に直接質問でき、最短即時、遅くとも24時間以内に回答。学習が、止まりません。"
+          lead="独学の最大の敵は、分からないまま放置することです。THINKING はチャットで講師に直接質問でき、最短即時、遅くとも24時間以内に回答。学習が、止まりません。"
         />
 
         {/* Response time matrix */}
@@ -410,7 +410,7 @@ const Mech04Quality = () => {
             <header className="chat-frame-head">
               <span className="chat-avatar" />
               <div className="chat-frame-meta">
-                <span className="chat-frame-name">THINKING. 質問チャット</span>
+                <span className="chat-frame-name">THINKING 質問チャット</span>
                 <span className="chat-frame-sub">担当：中山コーチ（早稲田 商）</span>
               </div>
               <span className="chat-frame-status">
@@ -474,7 +474,7 @@ const Mech05Mindset = () => {
           en="Mindset"
           jp="週次面談"
           title={<>毎週60分、<br /><em>迷う暇</em>を与えない。</>}
-          lead="独学を1年続けられる人は、ごくわずかです。THINKING. は毎週1on1の面談で進捗・悩み・モチベーションを丁寧に管理。一人で抱え込ませず、迷う暇を与えません。"
+          lead="独学を1年続けられる人は、ごくわずかです。THINKING は毎週1on1の面談で進捗・悩み・モチベーションを丁寧に管理。一人で抱え込ませず、迷う暇を与えません。"
         />
 
         <div className="mech-mindset-grid">
@@ -540,7 +540,7 @@ const Mech06Verbalize = () => {
           en="Verbalize"
           jp="言語化特訓"
           title={<>説明できない<em>理解</em>は、<br />理解じゃない。</>}
-          lead="「なんとなく解けた」は、本番で必ず崩れます。THINKING. は「なぜその答えか」を言葉にする訓練を徹底。理解の解像度を一段引き上げ、初見問題にも対応できる本物の力を育てます。"
+          lead="「なんとなく解けた」は、本番で必ず崩れます。THINKING は「なぜその答えか」を言葉にする訓練を徹底。理解の解像度を一段引き上げ、初見問題にも対応できる本物の力を育てます。"
         />
 
         {/* Before / After */}

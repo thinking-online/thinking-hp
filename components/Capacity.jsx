@@ -74,7 +74,7 @@ const Capacity = () => {
 
             <p className="capacity-quote">
               「<em>全員に同じ授業</em>」では、ひとりも見えなくなる。<br />
-              だからTHINKING.は、<em>見える人数</em>しか預かりません。
+              だから THINKING は、<em>見える人数</em>しか預かりません。
             </p>
           </div>
 

@@ -46,7 +46,7 @@ const WhyFaculty = () => {
 
           <div className="why-card why-card-new">
             <div className="why-card-label">
-              <span className="why-card-tag accent">THINKING.</span>
+              <span className="why-card-tag accent">THINKING</span>
               <span className="why-card-tag-jp">学部別設計</span>
             </div>
             <h3 className="why-card-title">
@@ -68,7 +68,7 @@ const WhyFaculty = () => {
         <div className="why-quote reveal delay-2">
           <span className="quote-mark">"</span>
           <p>
-            THINKING.は、「学習量」よりも「設計の質」を信じます。<br />
+            THINKING は、「学習量」よりも「設計の質」を信じます。<br />
             <span className="dim">志望学部に最短距離で届く道筋は、必ず存在する。</span>
           </p>
           <span className="quote-mark right">"</span>

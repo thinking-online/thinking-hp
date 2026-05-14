@@ -530,6 +530,9 @@
     letter-spacing: 0.05em;
     color: rgba(245, 236, 217, 0.9);
     text-shadow: 0 4px 14px rgba(0, 0, 0, 0.46);
+    overflow-wrap: normal;
+    word-break: keep-all;
+    text-wrap: pretty;
   }
   .hero-mobile-subcopy span {
     color: var(--accent);
@@ -565,6 +568,9 @@
     font-size: clamp(26px, 7.6vw, 34px);
     line-height: 1.45;
     margin-bottom: 14px;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    text-wrap: balance;
   }
   .hero-concept-headline .hl {
     background: linear-gradient(180deg, transparent 60%, rgba(196, 154, 90, 0.32) 60%, rgba(196, 154, 90, 0.32) 95%, transparent 95%);
@@ -574,6 +580,9 @@
   .hero-concept-sub {
     font-size: 13px;
     line-height: 1.95;
+    overflow-wrap: normal;
+    word-break: keep-all;
+    text-wrap: pretty;
   }
 
   /* Feature cards — mobile (3 columns, compact) */

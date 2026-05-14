@@ -30,7 +30,7 @@ const SiteFooter = () => {
         <div className="footer-grid">
           <div className="footer-brand">
             <a href="index.html" className="footer-logo">
-              THINKING<i>.</i>
+              THINKING
             </a>
             <p className="footer-tag">
               <span><i>Designed for Your Faculty.</i></span>
@@ -122,7 +122,7 @@ const SiteFooter = () => {
         </div>
 
         <div className="footer-bottom">
-          <span className="footer-copy">© {new Date().getFullYear()} THINKING. All Rights Reserved.</span>
+          <span className="footer-copy">© {new Date().getFullYear()} THINKING All Rights Reserved.</span>
           <ul className="footer-legal">
             <li><a href="#">プライバシーポリシー</a></li>
             <li><a href="#">特定商取引法に基づく表記</a></li>

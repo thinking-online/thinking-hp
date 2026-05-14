@@ -31,8 +31,8 @@ const SiteHeader = ({ current = "" }) => {
     <>
       <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
         <div className="site-header-inner">
-          <a href="index.html" className="site-logo" aria-label="THINKING. トップへ">
-            <span className="site-logo-en">THINKING<i>.</i></span>
+          <a href="index.html" className="site-logo" aria-label="THINKING トップへ">
+            <span className="site-logo-en">THINKING</span>
             <span className="site-logo-jp">学部別・合格設計塾</span>
           </a>
 
@@ -97,7 +97,7 @@ const SiteHeader = ({ current = "" }) => {
             </svg>
           </a>
           <div className="site-drawer-foot">
-            <span><i>THINKING.</i></span>
+            <span><i>THINKING</i></span>
             <span>Designed for Your Faculty.</span>
           </div>
         </div>

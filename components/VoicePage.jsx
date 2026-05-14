@@ -252,7 +252,7 @@ const VoicePage = () => {
                 <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
               </svg>
             </a>
-            <span className="voice-playlist-meta">YouTube · THINKING. 対談アーカイブ</span>
+            <span className="voice-playlist-meta">YouTube · THINKING 対談アーカイブ</span>
           </div>
         </div>
       </section>

@@ -73,7 +73,7 @@ const Intro = () => {
               </g>
             </svg>
           </span>
-          <span className="intro-brand-mark">THINKING<span className="intro-brand-dot">.</span></span>
+          <span className="intro-brand-mark">THINKING</span>
         </h1>
 
         <p className="intro-tag">

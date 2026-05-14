@@ -308,7 +308,7 @@ const productKangakuEnglishData = {
       <>このマニュアルを手にとってくれた人を、僕は本気で合格させたい。だから個別相談会も特典につけた。教材を読み込んで、それでも迷うことが出てきたら、僕に直接相談してほしい。最後のひと押しに、本気で付き合うつもりだ。</>,
       <em>合格して、上ヶ原で会おう。</em>,
     ],
-    signLine1: <>学部別合格設計 私立文系専門塾 <strong>THINKING.</strong></>,
+    signLine1: <>学部別合格設計 私立文系専門塾 <strong>THINKING</strong></>,
     signLine2: <>代表 — <strong>朝倉 徹大</strong></>,
   },
 

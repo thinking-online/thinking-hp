@@ -286,7 +286,7 @@ const Voices = () => {
               </svg>
             </span>
           </a>
-          <span className="voices-cta-meta">YouTube · THINKING. 対談アーカイブ</span>
+          <span className="voices-cta-meta">YouTube · THINKING 対談アーカイブ</span>
         </div>
       </div>
     </section>

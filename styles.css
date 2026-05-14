@@ -1,4 +1,4 @@
-/* THINKING. LP — base styles */
+/* THINKING LP — base styles */
 
 :root {
   --bg-0: #0a0907;
@@ -123,6 +123,94 @@ p, li, dd, blockquote, .text-wrap-pretty { text-wrap: pretty; }
   .founder-closing-body p, .essay-body p, .final-cta-lead, .voice-close-lead {
     text-wrap: pretty;
     line-break: strict;
+  }
+
+  /* ページ見出し内の装飾改行は狭い画面では自然折り返しに任せる */
+  .page-header-title br {
+    display: none;
+  }
+
+  .voice-hero-title br,
+  .voice-close-title br,
+  .strategy-claim-title br,
+  .strategy-compare-title br,
+  .strategy-sheet-title br,
+  .strategy-close-title br,
+  .price-section-title br {
+    display: none;
+  }
+
+  /* 見出し・大きいタイトル・カード見出し：単語途中の不自然な分割を抑える */
+  .section-title,
+  .page-header-title,
+  .page-header-lead,
+  .capacity-title,
+  .strategy-claim-title,
+  .strategy-compare-title,
+  .strategy-sheet-title,
+  .strategy-close-title,
+  .sup-intro-title,
+  .sup-interlock-title,
+  .mech-title,
+  .faq-category-title,
+  .faq-contact-title,
+  .faq-item-q,
+  .price-section-title,
+  .flow-step-title,
+  .price-line-title,
+  .plan-name,
+  .voice-hero-title,
+  .voice-section-title,
+  .voice-close-title,
+  .article-title,
+  .blog-featured-title,
+  .blog-featured-lead,
+  .blog-card-title,
+  .blog-card-lead,
+  .founder-essay-title,
+  .founder-section-title,
+  .belief-title,
+  .founder-closing-title,
+  .hero-concept-headline,
+  .hero-concept-sub,
+  .why-card-title,
+  .hf-title,
+  .flow-title,
+  .flow-section-title,
+  .line-cta-title,
+  .footer-cta-title,
+  .method-card-title,
+  .faculty-card-title,
+  .title-main,
+  .title-sub,
+  .product-headline,
+  .product-sublead,
+  .product-h2,
+  .product-h3,
+  .product-part-title,
+  .product-bonus-title,
+  .product-purchase-title,
+  .product-card-title,
+  .products-selected-title,
+  .voice-feature-title,
+  .media-card-title,
+  .intro-jp,
+  .intro-brand,
+  .intro-tag,
+  .sheet-process-title,
+  .article-cta-title,
+  .article-related-title,
+  .callout-title,
+  .sticky-cta-title,
+  .track-title {
+    overflow-wrap: normal;
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+
+  .hero-concept-sub br,
+  .hero-mobile-subcopy br {
+    display: none;
   }
 }
 

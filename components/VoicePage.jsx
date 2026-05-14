@@ -4,7 +4,7 @@ const VoicePage = () => {
   const interviews = [
     {
       id: "Xid8x7UUJfE",
-      name: "卒業生 09",
+      name: "合格者インタビュー",
       en: "Interview 09",
       school: "慶應義塾大学",
       year: "現役合格",
@@ -15,7 +15,7 @@ const VoicePage = () => {
     },
     {
       id: "CcwIX4-j2Mo",
-      name: "卒業生 10",
+      name: "合格者インタビュー",
       en: "Interview 10",
       school: "青山学院大学",
       year: "現役合格",
@@ -26,7 +26,7 @@ const VoicePage = () => {
     },
     {
       id: "8R0aILkSbhc",
-      name: "卒業生 01",
+      name: "合格者インタビュー",
       en: "Interview 01",
       school: "早稲田大学 法学部",
       year: "2025年度合格",
@@ -37,7 +37,7 @@ const VoicePage = () => {
     },
     {
       id: "Qp17tvgggOQ",
-      name: "卒業生 02",
+      name: "合格者インタビュー",
       en: "Interview 02",
       school: "慶應義塾大学 経済学部",
       year: "2025年度合格",
@@ -48,7 +48,7 @@ const VoicePage = () => {
     },
     {
       id: "e5OzmZKSe28",
-      name: "卒業生 03",
+      name: "合格者インタビュー",
       en: "Interview 03",
       school: "上智大学 国際教養学部",
       year: "2024年度合格",
@@ -59,7 +59,7 @@ const VoicePage = () => {
     },
     {
       id: "HP_5tDBODaY",
-      name: "卒業生 04",
+      name: "合格者インタビュー",
       en: "Interview 04",
       school: "明治大学 政治経済学部",
       year: "2024年度合格",
@@ -70,7 +70,7 @@ const VoicePage = () => {
     },
     {
       id: "NwrlH_tyukA",
-      name: "卒業生 05",
+      name: "合格者インタビュー",
       en: "Interview 05",
       school: "立教大学 異文化コミュニケーション",
       year: "2025年度合格",
@@ -81,7 +81,7 @@ const VoicePage = () => {
     },
     {
       id: "Rseh2QY53xQ",
-      name: "卒業生 06",
+      name: "合格者インタビュー",
       en: "Interview 06",
       school: "中央大学 法学部",
       year: "2024年度合格",
@@ -92,7 +92,7 @@ const VoicePage = () => {
     },
     {
       id: "6vRUDEt9aFc",
-      name: "卒業生 07",
+      name: "合格者インタビュー",
       en: "Interview 07",
       school: "青山学院大学 国際政治経済",
       year: "2025年度合格",
@@ -103,7 +103,7 @@ const VoicePage = () => {
     },
     {
       id: "bcYQYTCSs8o",
-      name: "卒業生 08",
+      name: "合格者インタビュー",
       en: "Interview 08",
       school: "法政大学 法学部",
       year: "2024年度合格",
@@ -192,7 +192,7 @@ const VoicePage = () => {
                   style={{
                     backgroundImage: `url('https://i.ytimg.com/vi/${active.id}/hqdefault.jpg')`,
                   }}
-                  aria-label={`${active.name}との対談を再生`}
+                  aria-label="合格者インタビュー動画をYouTubeで開く"
                 >
                   <div className="featured-video-grain" />
                   <button className="featured-play" aria-label="動画を再生" tabIndex={-1}>

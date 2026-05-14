@@ -169,6 +169,10 @@ const StrategyPage = () => {
             </p>
           </header>
 
+          <p className="compare-swipe-hint">
+            <span>左右にスワイプ</span>して、経営と文学を並べて比較できます。
+          </p>
+
           <div className="compare-grid">
             <CompareColumn data={compare.left} />
             <span className="compare-vs" aria-hidden="true">

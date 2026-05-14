@@ -1,21 +1,24 @@
 // 4 steps to enrollment + final CTA + footer
 const FlowAndCTA = () => {
   const steps = [
-    { no: "01", title: "LINEで友達追加", desc: "公式LINEから「無料相談希望」と一言。所要1分。" },
-    { no: "02", title: "日程調整 & 面談予約", desc: "担当コーチから日程候補をご返信。希望日時を選ぶだけ。" },
-    { no: "03", title: "60分のオンライン面談", desc: "現状の学力・志望学部・残り期間を整理。あなた専用ロードマップを、その場で提示します。" },
-    { no: "04", title: "ご納得いただけたら指導開始", desc: "強引な勧誘は一切なし。専属コーチとの伴走を、ご自身のペースでスタート。" },
+    { no: "01", title: "LINEで友だち追加", desc: "「無料相談希望」と一言。約1分。" },
+    { no: "02", title: "日程調整・面談予約", desc: "コーチから候補日を返信。希望を選ぶだけ。" },
+    { no: "03", title: "60分オンライン面談", desc: "学力・志望・残期間を整理し、その場でロードマップ提示。" },
+    { no: "04", title: "納得後に指導開始", desc: "勧誘なし。専属コーチの伴走をご自身のペースで。" },
   ];
 
   return (
     <>
       <section className="section flow-section" id="flow">
         <div className="section-inner">
-          <div className="section-head">
-            <span className="eyebrow"><i>4 Steps to Start</i></span>
-            <h2 className="section-title">
-              <em>LINE登録</em>から、<br className="mb-only" />指導開始まで。
+          <div className="section-head flow-section-head">
+            <span className="eyebrow"><i>4 Steps</i></span>
+            <h2 className="section-title flow-section-title">
+              <em>LINE登録</em>から指導開始まで
             </h2>
+            <p className="section-lead flow-section-lead">
+              無料相談の流れはシンプルです。4ステップで完了します。
+            </p>
             <div className="ornament"><span className="ornament-mark" /></div>
           </div>
 
@@ -48,13 +51,11 @@ const FlowAndCTA = () => {
             </span>
 
             <h2 className="line-cta-title">
-              <em>LINE登録</em>で、<br />
-              個別オンライン<br className="mb-only" />面談へ。
+              <em>LINE登録</em>で無料面談へ
             </h2>
 
             <p className="line-cta-lead">
-              志望学部までの最短ルートを、<br />
-              60分のオンライン面談で、ご一緒に整理します。
+              志望学部までの道筋を、60分のオンライン面談で整理します。
             </p>
 
             <a

@@ -1,7 +1,8 @@
 // Common page header (breadcrumb + title + lead) for sub-pages
-const PageHeader = ({ eyebrow, en, jp, lead, breadcrumbs = [], bgImage }) => {
+const PageHeader = ({ eyebrow, en, jp, lead, breadcrumbs = [], bgImage, headerClassName = "" }) => {
+  const extra = headerClassName ? ` ${headerClassName}` : "";
   return (
-    <section className={`page-header ${bgImage ? "has-bg-image" : ""}`}>
+    <section className={`page-header${bgImage ? " has-bg-image" : ""}${extra}`.trim()}>
       <div
         className="page-header-bg"
         style={bgImage ? { backgroundImage: `url('${bgImage}')` } : undefined}

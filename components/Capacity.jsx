@@ -115,7 +115,7 @@ const Capacity = () => {
                     <span className="pair-mark">中</span>
                   </div>
                   <span className="pair-name">中山 塁 コーチ</span>
-                  <span className="pair-meta">早稲田大学 商学部卒 / 指導歴8年</span>
+                  <span className="pair-meta">早稲田大学 商学部卒 / 指導歴9年</span>
                 </div>
               </div>
 

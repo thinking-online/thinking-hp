@@ -3,7 +3,7 @@
 
 .line-cta-section {
   position: relative;
-  min-height: clamp(560px, 72vh, 760px);
+  min-height: clamp(420px, 58vh, 640px);
   padding: 0;
   overflow: hidden;
   isolation: isolate;
@@ -51,7 +51,7 @@
   width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding: clamp(80px, 10vw, 140px) clamp(20px, 5vw, 64px);
+  padding: clamp(56px, 7vw, 100px) clamp(20px, 5vw, 64px);
 }
 
 .line-cta-text {
@@ -64,7 +64,7 @@
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 .line-cta-eyebrow-line {
   display: inline-block;
@@ -87,11 +87,11 @@
 .line-cta-title {
   font-family: var(--serif-jp);
   font-weight: 500;
-  font-size: clamp(36px, 5.6vw, 60px);
-  line-height: 1.45;
+  font-size: clamp(28px, 4.2vw, 48px);
+  line-height: 1.35;
   letter-spacing: 0.04em;
   color: var(--ink-0);
-  margin: 0 0 28px;
+  margin: 0 0 18px;
   text-shadow: 0 2px 24px rgba(0, 0, 0, 0.5);
 }
 .line-cta-title em {
@@ -103,20 +103,21 @@
 /* Lead */
 .line-cta-lead {
   font-family: var(--serif-jp);
-  font-size: clamp(15px, 1.3vw, 17px);
-  line-height: 2;
+  font-size: clamp(14px, 1.2vw, 16px);
+  line-height: 1.75;
   color: var(--ink-1);
-  margin: 0 0 44px;
+  margin: 0 0 28px;
   letter-spacing: 0.04em;
   text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
 }
+.line-cta-lead br { display: none; }
 
 /* LINE Button */
 .line-cta-button {
   display: inline-flex;
   align-items: center;
-  gap: 16px;
-  padding: 20px 32px 20px 22px;
+  gap: 14px;
+  padding: 16px 28px 16px 20px;
   background: linear-gradient(180deg, #06C755 0%, #04a647 100%);
   color: #fff;
   text-decoration: none;
@@ -184,7 +185,7 @@
   display: flex;
   align-items: center;
   gap: 14px;
-  margin: 28px 0 0;
+  margin: 18px 0 0;
   font-family: var(--serif-en);
   font-size: 11px;
   letter-spacing: 0.22em;
@@ -204,40 +205,60 @@
 .mb-only { display: none; }
 
 @media (max-width: 880px) {
+  /* Stack: fixed-height photo band + text (no tall empty viewport below step 04) */
   .line-cta-section {
-    min-height: clamp(620px, 90vh, 780px);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: min(44vw, 240px) auto;
+    min-height: 0;
+    align-items: stretch;
+    padding: 0;
   }
-  /* On mobile, photo zooms in on the subject; veil bottoms out instead of left */
+  .line-cta-photo {
+    position: relative;
+    grid-row: 1;
+    grid-column: 1;
+    min-height: min(44vw, 240px);
+  }
   .line-cta-photo img {
-    object-position: 78% 50%;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 72% 22%;
   }
   .line-cta-veil {
-    background:
-      linear-gradient(
-        180deg,
-        rgba(10, 9, 7, 0.55) 0%,
-        rgba(10, 9, 7, 0.55) 35%,
-        rgba(10, 9, 7, 0.92) 75%,
-        rgba(10, 9, 7, 0.96) 100%
-      );
+    background: linear-gradient(
+      180deg,
+      rgba(10, 9, 7, 0.2) 0%,
+      rgba(10, 9, 7, 0.75) 100%
+    );
   }
   .line-cta-inner {
-    display: flex;
-    align-items: flex-end;
-    min-height: inherit;
-    padding: 60px 22px 56px;
+    grid-row: 2;
+    grid-column: 1;
+    position: relative;
+    z-index: 1;
+    padding: 22px 22px 32px;
+    background: linear-gradient(180deg, rgba(12, 10, 8, 0.97) 0%, var(--bg-0) 18%);
+    margin-top: -1px;
   }
   .line-cta-text {
     max-width: 100%;
   }
   .line-cta-title {
-    font-size: clamp(30px, 7.5vw, 40px);
+    font-size: clamp(24px, 6.2vw, 32px);
+    text-shadow: none;
   }
-  .mb-only { display: inline; }
+  .line-cta-lead {
+    text-shadow: none;
+  }
+  .mb-only { display: none; }
   .line-cta-button {
     width: 100%;
     justify-content: center;
-    padding: 20px 24px;
+    padding: 16px 22px;
   }
   .line-cta-note {
     justify-content: flex-start;
@@ -249,7 +270,7 @@
 
 @media (max-width: 480px) {
   .line-cta-eyebrow-line { width: 32px; }
-  .line-cta-eyebrow { margin-bottom: 24px; }
-  .line-cta-title { margin-bottom: 20px; }
-  .line-cta-lead { margin-bottom: 32px; font-size: 14px; line-height: 1.95; }
+  .line-cta-eyebrow { margin-bottom: 14px; }
+  .line-cta-title { margin-bottom: 12px; }
+  .line-cta-lead { margin-bottom: 22px; font-size: 13px; line-height: 1.65; }
 }

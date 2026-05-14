@@ -30,10 +30,11 @@ const Founder = () => {
 
             <div className="founder-bio">
               <p>
-                早稲田大学商学部卒。大手予備校・個別指導塾で
-                <span className="hl">10年以上</span>
-                指導の最前線に立ち、
-                延べ<span className="hl">2000名以上</span>の私立文系受験生と向き合ってきた。
+                早稲田大学商学部卒。教育指導に携わって
+                <span className="hl">9年</span>、大手予備校・個別指導塾の最前線で
+                延べ<span className="hl">2,000名以上</span>の私立文系受験生と向き合ってきた。
+                早稲田・慶應への合格者は、指導を始めて以来
+                <span className="hl">毎年途切れなく</span>輩出している。
               </p>
               <p>
                 その過程で痛感したのは、 「同じ大学でも、学部が違えば、合格までの道は別物」という事実。
@@ -55,7 +56,7 @@ const Founder = () => {
               </li>
               <li>
                 <span className="bullet" />
-                <span>大手予備校／個別指導塾で10年以上の指導歴</span>
+                <span>私立文系の指導歴9年（早慶へ毎年連続で合格者を輩出）</span>
               </li>
               <li>
                 <span className="bullet" />

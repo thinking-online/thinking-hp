@@ -103,7 +103,6 @@ p, li, dd, blockquote, .text-wrap-pretty { text-wrap: pretty; }
   .price-form-note br,
   .plan-foot-note br,
   .faq-contact-lead br,
-  .blog-newsletter-lead br,
   .founder-closing-body br,
   .founder-quote br,
   .essay-body br,
@@ -120,7 +119,7 @@ p, li, dd, blockquote, .text-wrap-pretty { text-wrap: pretty; }
   .capacity-lead, .capacity-body, .footer-cta-sub, .strategy-claim-lead,
   .strategy-compare-lead, .strategy-sheet-lead, .strategy-close-lead,
   .support-section-lead, .price-section-lead, .price-form-lead,
-  .plan-foot-note, .faq-contact-lead, .blog-newsletter-lead,
+  .plan-foot-note, .faq-contact-lead,
   .founder-closing-body p, .essay-body p, .final-cta-lead, .voice-close-lead {
     text-wrap: pretty;
     line-break: strict;

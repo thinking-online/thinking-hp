@@ -122,7 +122,7 @@ const BlogPage = () => {
         <div className="blog-section-inner">
           {/* Featured article */}
           <article className="blog-featured">
-            <a href={`blog-article.html`} className="blog-featured-link">
+            <a href={`blog-article.html?slug=${encodeURIComponent(featured.slug)}`} className="blog-featured-link">
               <div className="blog-featured-image">
                 <div className="blog-image-placeholder featured">
                   <span className="image-placeholder-mark">{featured.catEn}</span>
@@ -174,7 +174,7 @@ const BlogPage = () => {
           <div className="blog-grid">
             {articles.map((a, i) => (
               <article key={i} className="blog-card">
-                <a href="blog-article.html" className="blog-card-link">
+                <a href={`blog-article.html?slug=${encodeURIComponent(a.slug)}`} className="blog-card-link">
                   <div className="blog-card-image">
                     <div className="blog-image-placeholder">
                       <span className="image-placeholder-mark small">{a.catEn}</span>
@@ -205,29 +205,6 @@ const BlogPage = () => {
                 <path d="M12 5v14M5 12l7 7 7-7" />
               </svg>
             </button>
-          </div>
-
-          {/* Newsletter */}
-          <div className="blog-newsletter">
-            <div className="blog-newsletter-inner">
-              <span className="eyebrow"><i>Newsletter</i></span>
-              <h3 className="blog-newsletter-title">
-                毎週金曜、<em>新着記事</em>をお届けします。
-              </h3>
-              <p className="blog-newsletter-lead">
-                受験戦略、学習法、メンタルケアまで。<br />
-                登録は無料、配信解除はいつでも可能です。
-              </p>
-              <form className="blog-newsletter-form" onSubmit={(e) => e.preventDefault()}>
-                <input type="email" placeholder="メールアドレス" />
-                <button type="submit" className="cta">
-                  登録する
-                  <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M5 12h14M13 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </form>
-            </div>
           </div>
         </div>
       </section>

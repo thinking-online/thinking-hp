@@ -1544,6 +1544,7 @@
   text-shadow: 0 1px 18px rgba(0, 0, 0, 0.4);
 }
 
+/* ----- 問題集一覧（products.html）— タブレット縦・スマホ ----- */
 @media (max-width: 768px) {
   .page-header.page-header--products-manuals.has-bg-image .page-header-bg {
     background-position: 56% 44%;
@@ -1559,12 +1560,180 @@
       ),
       linear-gradient(90deg, rgba(10, 9, 7, 0.75) 0%, transparent 55%);
   }
+
+  .page-header.page-header--products-manuals {
+    padding-top: max(96px, calc(env(safe-area-inset-top, 0px) + 72px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-bottom: 40px;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+  }
+  .page-header.page-header--products-manuals .page-header-inner {
+    max-width: none;
+    text-align: left;
+  }
+  .page-header.page-header--products-manuals .page-header-eyebrow {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .page-header.page-header--products-manuals .page-header-en::before,
+  .page-header.page-header--products-manuals .page-header-en::after {
+    width: 12px;
+    margin: 0 6px;
+  }
+  .page-header.page-header--products-manuals .page-header-title {
+    font-size: clamp(1.45rem, 6.2vw, 1.85rem);
+    line-height: 1.38;
+    letter-spacing: 0.045em;
+    margin-bottom: 16px;
+    text-align: left;
+  }
   .page-header.page-header--products-manuals .page-header-lead {
     max-width: none;
-    font-size: 14px;
-    line-height: 1.78;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: left;
+    font-size: 13px;
+    line-height: 1.72;
+    letter-spacing: 0.04em;
   }
+  .page-header.page-header--products-manuals .page-header-orn {
+    margin-top: 22px;
+    justify-content: flex-start;
+  }
+  .page-header.page-header--products-manuals .page-header-orn span:not(.page-header-orn-mark) {
+    width: 28px;
+  }
+
   .products-list-section {
-    padding: 56px 20px 80px;
+    padding: 40px max(16px, env(safe-area-inset-left, 0px)) 64px
+      max(16px, env(safe-area-inset-right, 0px));
+  }
+  .products-list-inner {
+    max-width: none;
+  }
+  .products-list-intro {
+    max-width: none;
+    font-size: 14px;
+    line-height: 1.75;
+    margin-bottom: 36px;
+    letter-spacing: 0.04em;
+  }
+
+  .products-catalog-toolbar {
+    margin-bottom: 32px;
+  }
+  .products-search-wrap {
+    margin-bottom: 20px;
+  }
+  .products-search-input {
+    max-width: none;
+    width: 100%;
+    min-height: 48px;
+    font-size: 16px;
+    padding: 12px 14px;
+  }
+  .products-group-wrap {
+    margin-bottom: 16px;
+  }
+  .products-group-scroll {
+    gap: 8px;
+    padding-bottom: 8px;
+    scroll-padding-inline: 16px;
+  }
+  .products-group-tab {
+    padding: 10px 14px;
+  }
+  .products-group-tab-ja {
+    font-size: 13px;
+  }
+  .products-uni-hint {
+    font-size: 12px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+
+  .products-uni-btn {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    padding: 14px 16px;
+    gap: 8px 12px;
+  }
+  .products-uni-btn-name {
+    flex: 1 1 calc(100% - 28px);
+    min-width: 0;
+    font-size: 15px;
+    line-height: 1.35;
+  }
+  .products-uni-btn-meta {
+    flex: 1 1 100%;
+    order: 3;
+  }
+  .products-uni-btn-arrow {
+    margin-left: auto;
+    line-height: 1;
+    padding-top: 2px;
+  }
+
+  .products-selected-head {
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+  }
+  .products-selected-title {
+    font-size: clamp(1.25rem, 5vw, 1.5rem);
+  }
+  .products-selected-lead {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+  .products-selected-dot {
+    display: none;
+  }
+
+  /* 2列のままだとカードが細長になるため 1 列に */
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .product-card-body {
+    padding: 18px 18px 22px;
+  }
+  .product-card-title {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  .product-card-lead {
+    font-size: 12px;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .product-card-image {
+    aspect-ratio: 16 / 9;
+  }
+  .product-card-image.placeholder .mark {
+    font-size: 26px;
+  }
+  .product-card-foot {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 10px 12px;
+    padding-top: 14px;
+  }
+  .product-card-arrow {
+    flex-wrap: wrap;
+    max-width: 100%;
+    line-height: 1.45;
+  }
+  .product-card-arrow svg {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .products-group-tab-en {
+    display: none;
   }
 }

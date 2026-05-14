@@ -115,6 +115,7 @@
           "地球社会共生学部",
         ]),
       },
+      chuo: {
         id: "chuo",
         name: "中央大学",
         searchKeys: "中央 chuo チュウオウ gmarch g march",

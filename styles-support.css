@@ -95,21 +95,219 @@ html {
   letter-spacing: 0.03em;
 }
 
-/* ─── Hero ─────────────────────────────────────────────── */
+/* ─── Hero（トップ — 夜の指導フォト＋スクリム、HPヒーローに寄せた構成） ─ */
 
 .sup-hero {
   position: relative;
-  min-height: clamp(420px, 72vh, 640px);
+  isolation: isolate;
+  min-height: min(92vh, 920px);
+  min-height: min(92svh, 920px);
   display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: clamp(108px, 16vh, 152px) 24px clamp(120px, 17vh, 168px);
+  color: var(--ink-0);
+  overflow: hidden;
+  scroll-margin-top: 72px;
+}
+
+.sup-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.sup-hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 6%;
+  transform: scale(1.02);
+}
+
+.sup-hero-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4, 6, 12, 0.94) 0%,
+      rgba(4, 6, 12, 0.72) 28%,
+      rgba(4, 6, 12, 0.35) 52%,
+      rgba(4, 6, 12, 0.2) 68%,
+      rgba(4, 6, 12, 0.75) 100%
+    ),
+    radial-gradient(ellipse 120% 80% at 50% 0%, rgba(201, 169, 97, 0.12), transparent 55%);
+}
+
+.sup-hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.45;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.2'/></svg>");
+}
+
+.sup-hero-inner {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.sup-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  margin: 0 0 16px;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  color: var(--sup-gold);
+  text-transform: none;
+}
+
+.sup-hero-eyebrow-line {
+  width: 32px;
+  height: 1px;
+  background: var(--sup-gold);
+  opacity: 0.75;
+}
+
+.sup-hero-eyebrow-text {
+  white-space: nowrap;
+}
+
+.sup-hero-tag {
+  font-family: var(--serif-jp);
+  font-size: 13px;
+  letter-spacing: 0.36em;
+  color: var(--ink-2);
+  margin: 0 0 20px;
+}
+
+.sup-hero-title {
+  font-family: var(--serif-jp);
+  font-weight: 500;
+  font-size: clamp(30px, 5vw, 52px);
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  margin: 0 0 28px;
+  text-shadow: 0 2px 28px rgba(0, 0, 0, 0.55);
+}
+
+.sup-hero-gold {
+  color: var(--sup-gold);
+}
+
+.sup-hero-pillars {
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background:
-    radial-gradient(ellipse 90% 70% at 50% 20%, rgba(201, 169, 97, 0.08), transparent 55%),
-    linear-gradient(180deg, var(--sup-navy) 0%, #050a14 100%);
-  color: var(--ink-0);
-  /* 固定ヘッダー下でタイトルが隠れないよう余白を確保 */
-  padding: clamp(128px, 20vh, 168px) 24px 100px;
-  scroll-margin-top: 72px;
+  gap: 12px 20px;
+  font-family: var(--serif-jp);
+  font-size: clamp(16px, 2vw, 20px);
+  letter-spacing: 0.14em;
+  color: #f0e8d8;
+  margin: 0 0 16px;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.45);
+}
+
+.sup-hero-pillar-div {
+  width: 1px;
+  height: 1.1em;
+  background: rgba(201, 169, 97, 0.45);
+}
+
+.sup-hero-sub {
+  font-family: var(--serif-jp);
+  font-size: clamp(15px, 1.8vw, 18px);
+  letter-spacing: 0.1em;
+  line-height: 1.85;
+  color: #e8e0d4;
+  margin: 0 0 16px;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.5);
+}
+
+.sup-hero-note {
+  font-family: var(--sans-jp);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: rgba(232, 226, 216, 0.72);
+  margin: 0 0 32px;
+  line-height: 1.7;
+}
+
+.sup-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 14px 16px;
+}
+
+.sup-hero-scroll {
+  position: absolute;
+  bottom: clamp(20px, 3.5vw, 36px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-size: 11px;
+  color: rgba(245, 240, 230, 0.45);
+  letter-spacing: 0.22em;
+  pointer-events: none;
+}
+
+.sup-hero-scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(180deg, var(--sup-gold), transparent);
+  animation: supHeroScrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes supHeroScrollPulse {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scaleY(0.85);
+    transform-origin: top;
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sup-hero-scroll-line {
+    animation: none;
+    opacity: 0.55;
+  }
+}
+
+@media (min-width: 1100px) {
+  .sup-hero-photo {
+    object-position: center 10%;
+  }
+}
+
+@media (max-width: 900px) {
+  .sup-hero-photo {
+    object-position: center top;
+  }
 }
 
 /* ─── ページ内ナビ ───────────────────────────────────────── */
@@ -150,73 +348,6 @@ html {
   color: var(--sup-gold);
   border-color: rgba(201, 169, 97, 0.45);
   background: rgba(21, 18, 14, 0.95);
-}
-.sup-hero-grid {
-  position: absolute;
-  inset: 0;
-  opacity: 0.12;
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
-  background-size: 48px 48px;
-  pointer-events: none;
-}
-.sup-hero-inner {
-  position: relative;
-  text-align: center;
-  max-width: 900px;
-}
-.sup-hero-eyebrow {
-  font-family: var(--serif-en);
-  font-style: italic;
-  font-size: 13px;
-  letter-spacing: 0.28em;
-  color: var(--sup-gold);
-  margin: 0 0 20px;
-  display: block;
-}
-.sup-hero-title {
-  font-family: var(--serif-jp);
-  font-weight: 500;
-  font-size: clamp(30px, 5vw, 52px);
-  letter-spacing: 0.08em;
-  line-height: 1.35;
-  margin: 0 0 32px;
-}
-.sup-hero-gold {
-  color: var(--sup-gold);
-}
-.sup-hero-pillars {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 12px 20px;
-  font-family: var(--serif-jp);
-  font-size: clamp(16px, 2vw, 20px);
-  letter-spacing: 0.14em;
-  color: #f0e8d8;
-  margin-bottom: 16px;
-}
-.sup-hero-pillar-div {
-  width: 1px;
-  height: 1.1em;
-  background: rgba(201, 169, 97, 0.45);
-}
-.sup-hero-sub {
-  font-family: var(--serif-jp);
-  font-size: clamp(15px, 1.8vw, 18px);
-  letter-spacing: 0.1em;
-  line-height: 1.85;
-  color: var(--ink-2);
-  margin: 0 0 24px;
-}
-.sup-hero-note {
-  font-family: var(--sans-jp);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--ink-3);
-  margin: 0;
 }
 
 /* ─── Method intro ─────────────────────────────────────── */
@@ -1152,8 +1283,24 @@ html {
     padding-right: 20px;
   }
   .sup-hero {
-    padding-top: clamp(104px, 18vh, 132px);
-    min-height: auto;
+    padding-top: clamp(96px, 14vh, 124px);
+    padding-bottom: clamp(88px, 14vh, 120px);
+    min-height: min(88svh, 860px);
+  }
+  .sup-hero-scroll {
+    display: none;
+  }
+  .sup-hero-ctas {
+    flex-direction: column;
+    width: 100%;
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sup-hero-ctas .cta,
+  .sup-hero-ctas .cta-ghost {
+    width: 100%;
+    justify-content: center;
   }
   .sup-hero-pillar-div {
     display: none;

@@ -2,6 +2,7 @@
 // 固有名: 合格設計図(Master Plan) / ステージ式ロードマップ(STEP Roadmap) / THINKING Method
 
 const ASSETS = {
+  heroCoaching: "assets/support-hero-coaching.jpg?v=20260515-hero",
   thinkingMethod: "assets/support-thinking-method.png?v=20260515-method",
   masterPlan: "assets/support-master-plan.png",
   workbook: "assets/products-series-4parts-overview.png",
@@ -32,9 +33,27 @@ const SupportPage = () => (
 
 const SupportHero = () => (
   <section className="sup-hero" aria-labelledby="sup-hero-title">
-    <div className="sup-hero-grid" aria-hidden="true" />
+    <div className="sup-hero-media">
+      <img
+        className="sup-hero-photo"
+        src={ASSETS.heroCoaching}
+        width={576}
+        height={1024}
+        alt="夜の自宅でオンライン指導を受けながら学習する受講生"
+        loading="eager"
+        decoding="async"
+      />
+      <div className="sup-hero-scrim" aria-hidden="true" />
+      <div className="sup-hero-grain" aria-hidden="true" />
+    </div>
     <div className="sup-hero-inner">
-      <p className="sup-hero-eyebrow">サポート体制</p>
+      <div className="sup-hero-eyebrow">
+        <span className="sup-hero-eyebrow-line" aria-hidden="true" />
+        <span className="sup-hero-eyebrow-text" lang="en">
+          Support System
+        </span>
+      </div>
+      <p className="sup-hero-tag">サポート体制</p>
       <h1 id="sup-hero-title" className="sup-hero-title">
         頑張る、では<span className="sup-hero-gold">合格</span>しない。
       </h1>
@@ -51,6 +70,29 @@ const SupportHero = () => (
       <p className="sup-hero-note">
         私立文系・学部別に特化した、合格設計型オンライン塾。
       </p>
+      <div className="sup-hero-ctas">
+        <a
+          href={window.THINKING_LINE_LIFF_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cta"
+        >
+          <span>LINEで無料相談</span>
+          <svg className="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
+          </svg>
+        </a>
+        <a href="#thinking-method" className="cta-ghost">
+          <span>THINKING Method を見る</span>
+          <span className="dot" aria-hidden="true">
+            ↓
+          </span>
+        </a>
+      </div>
+    </div>
+    <div className="sup-hero-scroll" aria-hidden="true">
+      <span className="sup-hero-scroll-text">Scroll</span>
+      <span className="sup-hero-scroll-line" />
     </div>
   </section>
 );

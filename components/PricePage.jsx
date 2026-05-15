@@ -1,66 +1,16 @@
-// Price page — plans + admission flow + payment FAQ
+// Price page — THINKINGサポート + admission flow + payment FAQ
 const PricePage = () => {
-  // Common base — applied to all plans
-  const baseRows = [
-    { label: "システム利用料", value: "月額 2,980円", muted: true },
-    { label: "対応科目", value: "全教科" },
-    { label: "個別コーチング", value: "月4回" },
-  ];
-
-  // Standard support items — the foundation every plan inherits
-  const standardSupport = [
-    "志望校\u201d学部別\u201d逆算コーチング",
-    "科目別ロードマップ",
-    "週末テスト",
-    "全体学習コーチング",
-    "英語読解特訓",
-    "24時間質問 manabo",
-    "オンライン自習室",
-  ];
-
-  const plans = [
-    {
-      key: "standard",
-      tier: "Standard",
-      jp: "スタンダード",
-      tag: "全教科対応・自走の基盤を作る",
-      price: { monthly: "55,000" },
-      lead: "受験勉強の土台を作る、すべてのプランの基準。学部別の逆算コーチングと、7つのサポートで自走を支えます。",
-      kind: "base",
-      base: standardSupport,
-      addons: [],
-      recommended: false,
-    },
-    {
-      key: "advance",
-      tier: "Advance",
-      jp: "逆転合格アドバンス",
-      tag: "過去問FB + TKメソッド月1",
-      price: { monthly: "72,000" },
-      lead: "夏以降、過去問演習にギアを入れる受講生の標準プラン。出題傾向への適応を、月次で固めます。",
-      kind: "addon",
-      base: standardSupport,
-      addons: [
-        { label: "過去問FB", desc: "志望校過去問の演習 → フィードバック → 再演習を、サイクルで回します。" },
-        { label: "月1回 TKメソッド指導", desc: "生徒一人一人、個別で、直接、答案再構築・思考プロセスの矯正を月1回。" },
-      ],
-      recommended: true,
-    },
-    {
-      key: "premium",
-      tier: "Premium",
-      jp: "逆転合格プレミアム",
-      tag: "過去問FB + TKメソッド月2",
-      price: { monthly: "85,000" },
-      lead: "難関学部・残り期間が短い受験生に。代表が直接見る回数を倍にし、合格までの最短距離を引きます。",
-      kind: "addon",
-      base: standardSupport,
-      addons: [
-        { label: "過去問FB", desc: "志望校過去問の演習 → フィードバック → 再演習を、サイクルで回します。" },
-        { label: "月2回 TKメソッド指導", desc: "生徒一人一人、個別で、直接、答案再構築・思考プロセスの矯正を月2回。" },
-      ],
-      recommended: false,
-    },
+  const supportItems = [
+    { label: "全体学習コーチング", freq: "週2回" },
+    { label: "英語言語化特訓", freq: "週1回" },
+    { label: "個別コーチング", freq: "週1回" },
+    { label: "合格設計図の作成" },
+    { label: "学部別特化サポート" },
+    { label: "ステージ式ロードマップ" },
+    { label: "1日単位のやることリスト" },
+    { label: "24時間質問サポート manabo" },
+    { label: "24時間オンライン自習室" },
+    { label: "週末テスト" },
   ];
 
   const flow = [
@@ -102,11 +52,12 @@ const PricePage = () => {
   ];
 
   const paymentFaqs = [
+    { q: "37,000円〜とは、どういう意味ですか？", a: "志望学部・残り期間・科目数によって最適な学習設計が変わるため、月額は37,000円からの目安です。無料相談でヒアリングしたうえで、あなたに必要なサポート内容と料金をその場でご提示します。料金表から選ぶ必要はありません。" },
+    { q: "1科目だけでも入塾できますか？", a: "可能です。英語のみ、数学のみなど、科目単位でのスタートにも対応しています。まずは無料相談で、現状と志望に合わせた設計をご提案します。" },
+    { q: "兄弟姉妹割引はありますか？", a: "ございます。同時受講の場合、2人目以降は月額料金から10,000円を割引します。詳細は無料相談時にご案内します。" },
     { q: "支払い方法は？", a: "クレジットカード（VISA / Mastercard / JCB / AMEX）、銀行振込のいずれか。月払いまたは年一括払いをお選びいただけます。" },
     { q: "途中解約はできますか？", a: "可能です。月単位での解約が可能で、違約金はかかりません。次月の引き落とし日の7日前までにご連絡ください。" },
-    { q: "兄弟姉妹割引はありますか？", a: "ございます。同時受講の場合、2人目以降は月額料金から10,000円を割引します。" },
     { q: "教育ローンは使えますか？", a: "提携教育ローン（オリコ・ジャックス）をご利用いただけます。年率は3.5%〜。詳細は無料相談時にご案内します。" },
-    { q: "途中でプラン変更できますか？", a: "可能です。月単位でアップグレード / ダウングレードが可能です。" },
   ];
 
   return (
@@ -114,118 +65,81 @@ const PricePage = () => {
       <PageHeader
         en="Pricing / How to Begin"
         eyebrow="料金・入塾まで"
-        jp={<>料金は、すべて<em>公開</em>します。</>}
-        lead="不透明な追加料金は一切ありません。3つのプランから、志望と学習スタイルに合わせてお選びいただけます。まずは無料相談で、あなたに合うプランを一緒に決めましょう。"
+        jp={<>私立文系合格に必要なことを、<em>すべて</em>詰め込みます。</>}
+        lead="料金表から選ぶのではなく、THINKINGサポートというひとつの設計で、合格まで伴走します。まずは無料相談で、あなたの志望と学習量に合わせたプランを一緒に組み立てましょう。"
         bgImage="assets/campus-02.png"
       />
 
-      {/* Plans */}
       <section className="price-plans">
         <div className="price-plans-inner">
           <div className="price-section-head">
-            <span className="eyebrow"><i>Plans</i></span>
+            <span className="eyebrow"><i>THINKING Support</i></span>
             <h2 className="price-section-title">
-              3つのプランから、<br />
-              <em>志望に合った設計</em>を。
+              ひとつのサポートに、<br />
+              <em>合格の仕組み</em>を。
             </h2>
             <p className="price-section-lead">
-              すべてのプランで、専属コーチ + 学部責任者 + 添削講師の<br />
-              「複数の目」体制は変わりません。違いは、伴走の頻度と深さです。
+              コーチング、英語特訓、設計図、自習室、質問対応まで。<br />
+              私立文系合格に必要なことを、ひとつにまとめました。
             </p>
           </div>
 
-          <div className="plan-grid">
-            {plans.map((p, i) => (
-              <article
-                key={p.key}
-                className={`plan-card ${p.recommended ? "recommended" : ""} kind-${p.kind}`}
-              >
-                {p.recommended && (
-                  <span className="plan-badge"><i>Most Popular</i></span>
-                )}
-                <header className="plan-head">
-                  <span className="plan-tier"><i>{p.tier}</i></span>
-                  <h3 className="plan-name">{p.jp}</h3>
-                  <p className="plan-tag">{p.tag}</p>
-                </header>
+          <article className="support-hub">
+            <div className="support-hub-intro">
+              <header className="support-hub-head">
+                <span className="support-hub-tier"><i>THINKING Support</i></span>
+                <h3 className="support-hub-name">THINKINGサポート</h3>
+                <p className="support-hub-tag">私立文系合格のために、必要なことをすべて。</p>
+              </header>
 
-                <div className="plan-price">
-                  <span className="plan-price-label">月額</span>
-                  <span className="plan-price-currency">¥</span>
-                  <span className="plan-price-num">{p.price.monthly}</span>
-                </div>
+              <div className="support-hub-price">
+                <span className="support-hub-price-label">月額</span>
+                <span className="support-hub-price-currency">¥</span>
+                <span className="support-hub-price-num">37,000</span>
+                <span className="support-hub-price-from">〜</span>
+              </div>
 
-                <ul className="plan-base-rows">
-                  {baseRows.map((r, j) => (
-                    <li key={j} className={r.muted ? "muted" : ""}>
-                      <span className="base-label">{r.label}</span>
-                      <span className="base-value">{r.value}</span>
-                    </li>
-                  ))}
-                </ul>
+              <p className="support-hub-lead">
+                志望学部・残り期間・科目数に合わせて設計します。
+                37,000円に「何が入っているか」を探すのではなく、
+                あなたの合格に必要なサポートを、最初からすべて含めます。
+              </p>
 
-                <p className="plan-lead">{p.lead}</p>
+              <ul className="support-hub-notes">
+                <li>1科目から入塾可能</li>
+                <li>兄弟姉妹割引あり（2人目以降 月額10,000円割引）</li>
+              </ul>
 
-                <div className="plan-divider" />
+              <a href="#apply" className="cta support-hub-cta">
+                無料相談で設計を聞く
+                <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M5 12h14M13 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
 
-                <span className="plan-support-label"><i>Support</i><em>サポート内容</em></span>
-
-                {p.kind === "base" ? (
-                  <ul className="plan-support-list">
-                    {p.base.map((f, j) => (
-                      <li key={j} className="support-pill">
-                        <span className="pill-no"><i>{String(j + 1).padStart(2, "0")}</i></span>
-                        <span className="pill-text">{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <div className="plan-support-stack">
-                    <div className="stack-block stack-base">
-                      <div className="stack-head">
-                        <span className="stack-en"><i>Standard Inclusive</i></span>
-                        <h4>スタンダードの内容</h4>
-                      </div>
-                      <p className="stack-base-note">上記スタンダードの全7サポートを、すべてそのまま含みます。</p>
-                    </div>
-                    <span className="stack-plus" aria-hidden="true">+</span>
-                    {p.addons.map((a, j) => (
-                      <React.Fragment key={j}>
-                        <div className="stack-block stack-addon">
-                          <div className="stack-head">
-                            <span className="stack-en"><i>Add-on {String(j + 1).padStart(2, "0")}</i></span>
-                            <h4>{a.label}</h4>
-                          </div>
-                          <p className="stack-addon-desc">{a.desc}</p>
-                        </div>
-                        {j < p.addons.length - 1 && <span className="stack-plus" aria-hidden="true">+</span>}
-                      </React.Fragment>
-                    ))}
-                  </div>
-                )}
-
-                <a
-                  href="#apply"
-                  className={p.recommended ? "cta plan-cta" : "cta-ghost plan-cta"}
-                >
-                  このプランで相談する
-                  <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M5 12h14M13 5l7 7-7 7" />
-                  </svg>
-                </a>
-              </article>
-            ))}
-          </div>
+            <div className="support-hub-body">
+              <span className="plan-support-label"><i>Included</i><em>含まれるサポート</em></span>
+              <ul className="support-hub-list">
+                {supportItems.map((item, i) => (
+                  <li key={i} className="support-hub-item">
+                    <span className="support-hub-item-no"><i>{String(i + 1).padStart(2, "0")}</i></span>
+                    <span className="support-hub-item-label">{item.label}</span>
+                    {item.freq && <span className="support-hub-item-freq">{item.freq}</span>}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
 
           <p className="plan-foot-note">
-            ※ 表示価格はすべて税込。<br />
-            ※ 全プラン共通：システム利用料 月額 2,980円が別途必要です。<br />
-            ※ 中学生・高1高2は別プラン（月額 38,000円〜）あり。詳細は無料相談で。
+            ※ 表示価格はすべて税込。月額37,000円〜は目安であり、志望・科目数により変動します。詳細は無料相談でご提示します。<br />
+            ※ システム利用料 月額2,980円が別途必要です。<br />
+            ※ 中学生・高1高2は別設計（月額38,000円〜）あり。詳細は無料相談で。
           </p>
         </div>
       </section>
 
-      {/* Flow */}
       <section className="price-flow" id="apply">
         <div className="price-flow-inner">
           <div className="price-section-head">
@@ -256,16 +170,15 @@ const PricePage = () => {
             ))}
           </ol>
 
-          {/* LINE CTA — replaces application form */}
-          <div className="price-line-cta" id="apply">
+          <div className="price-line-cta">
             <header className="price-line-head">
               <span className="eyebrow"><i>Online Consultation</i></span>
               <h3 className="price-line-title">
-                予約は、<em>LINE登録</em>から。
+                まずは、<em>一度相談</em>してみませんか。
               </h3>
               <p className="price-line-lead">
-                公式LINEに「無料相談希望」と一言。<br />
-                担当コーチから当日中に日程候補をお送りします。<br />
+                料金のこと、学習のこと、何でも構いません。<br />
+                公式LINEに「無料相談希望」と一言。担当コーチから当日中に日程候補をお送りします。<br />
                 <span className="dim">※ 強引な勧誘・自動応答は一切ありません。</span>
               </p>
             </header>
@@ -303,7 +216,6 @@ const PricePage = () => {
         </div>
       </section>
 
-      {/* Payment FAQ */}
       <section className="price-faq">
         <div className="price-faq-inner">
           <div className="price-section-head">

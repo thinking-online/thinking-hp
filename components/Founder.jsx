@@ -67,6 +67,10 @@ const Founder = () => {
                 <span>志望学部に沿った設計と、伴走にコミットする方針</span>
               </li>
             </ul>
+
+            <SectionLink href="/founder" en="Founder's Message" align="left" className="reveal delay-3">
+              創業者メッセージを読む
+            </SectionLink>
           </div>
         </div>
       </div>

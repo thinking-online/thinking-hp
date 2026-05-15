@@ -14,7 +14,7 @@ const ASSETS = {
   weekendTest: "assets/support-weekend-test.png",
 };
 
-const MANABO_VIDEO_URL = "https://utage-system.com/video/bxIu94uAdf1y";
+const MANABO_VIDEO_URL = "https://utage-system.com/video/klZo52F58vEt";
 
 const SupportPage = () => (
   <>

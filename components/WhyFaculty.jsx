@@ -73,6 +73,10 @@ const WhyFaculty = () => {
           </p>
           <span className="quote-mark right">"</span>
         </div>
+
+        <SectionLink href="/strategy" en="Faculty Strategy" className="reveal delay-3">
+          学部別戦略・合格設計を見る
+        </SectionLink>
       </div>
     </section>
   );

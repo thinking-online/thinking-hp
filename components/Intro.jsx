@@ -1,14 +1,35 @@
-// Intro splash — fades in/out before revealing main page
+// Intro splash — fades in/out before revealing main page (first visit only)
+const INTRO_SEEN_KEY = "thinking-intro-seen";
+
+const hasSeenIntro = () => {
+  try {
+    return window.localStorage.getItem(INTRO_SEEN_KEY) === "1";
+  } catch {
+    return false;
+  }
+};
+
+const markIntroSeen = () => {
+  try {
+    window.localStorage.setItem(INTRO_SEEN_KEY, "1");
+  } catch {
+    // private browsing / storage disabled
+  }
+};
+
 const Intro = () => {
-  const [phase, setPhase] = React.useState("entering"); // entering -> showing -> exiting -> done
+  const [phase, setPhase] = React.useState(() => (hasSeenIntro() ? "done" : "entering"));
 
   React.useEffect(() => {
+    if (hasSeenIntro()) return;
+
     // Block body scroll while intro is up
     document.body.style.overflow = "hidden";
 
     const t1 = setTimeout(() => setPhase("showing"), 100);
     const t2 = setTimeout(() => setPhase("exiting"), 4200);
     const t3 = setTimeout(() => {
+      markIntroSeen();
       setPhase("done");
       document.body.style.overflow = "";
       window.scrollTo(0, 0);

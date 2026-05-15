@@ -4,9 +4,16 @@ const StickyCTA = () => {
   const [hidden, setHidden] = React.useState(false);
   const [visible, setVisible] = React.useState(false);
 
-  // Show after intro completes (~5s)
+  // Show after intro completes (~5s), or immediately if intro was skipped
   React.useEffect(() => {
-    const t = setTimeout(() => setVisible(true), 5400);
+    let seen = false;
+    try {
+      seen = window.localStorage.getItem("thinking-intro-seen") === "1";
+    } catch {
+      seen = false;
+    }
+    const delay = seen ? 0 : 5400;
+    const t = setTimeout(() => setVisible(true), delay);
     return () => clearTimeout(t);
   }, []);
 

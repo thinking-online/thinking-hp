@@ -90,6 +90,11 @@ const VoicePage = () => {
                     style={thumbStyle}
                     aria-label={`${active.name}をYouTubeで開く`}
                   >
+                    <span className="featured-play" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M8 5v14l11-7z" />
+                      </svg>
+                    </span>
                     <div className="featured-video-grain" />
                   </a>
                 ) : (

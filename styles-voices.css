@@ -39,6 +39,9 @@
   scroll-padding-left: clamp(20px, 5vw, 48px);
 }
 .voices-track::-webkit-scrollbar { display: none; }
+.voices-track--desktop {
+  cursor: default;
+}
 .voices-track.dragging {
   cursor: grabbing;
   scroll-behavior: auto;
@@ -88,6 +91,24 @@
 .voice-card.is-pending:hover {
   transform: scale(0.97);
   box-shadow: none;
+}
+.voice-card--desktop {
+  cursor: default;
+}
+.voice-card--desktop:hover {
+  transform: scale(0.97);
+  opacity: 0.78;
+  border-color: var(--line);
+  box-shadow: none;
+}
+.voice-card--desktop.active:hover {
+  transform: scale(1);
+  opacity: 1;
+  border-color: var(--accent);
+  box-shadow:
+    0 0 0 1px rgba(200, 168, 104, 0.18),
+    0 24px 60px -20px rgba(0, 0, 0, 0.65),
+    0 8px 28px -8px rgba(200, 168, 104, 0.18);
 }
 .voice-thumb-placeholder {
   width: 100%;
@@ -253,6 +274,44 @@
 .voice-name {
   font-family: var(--serif-en);
   font-style: italic;
+}
+
+/* PC — explicit watch button (card is not a link) */
+.voice-watch-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 22px 24px;
+  padding: 12px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  background: linear-gradient(135deg, rgba(200, 168, 104, 0.06), rgba(200, 168, 104, 0.14));
+  color: var(--ink-0);
+  font-family: var(--serif-jp);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  transition: background 0.35s var(--ease), color 0.3s, border-color 0.3s, transform 0.3s var(--ease);
+}
+.voice-watch-btn svg {
+  width: 16px;
+  height: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
+  transition: color 0.3s;
+}
+.voice-watch-btn:hover {
+  background: var(--accent);
+  color: var(--bg-0);
+  transform: translateY(-1px);
+}
+.voice-watch-btn:hover svg {
+  color: var(--bg-0);
+}
+.voice-card--desktop.active .voice-watch-btn {
+  border-color: var(--accent-bright);
 }
 
 /* Arrow buttons (desktop) */

@@ -1,30 +1,77 @@
 // Voices — horizontal swipe carousel; each card opens its YouTube interview
 const Voices = () => {
-  const voices = window.VOICE_INTERVIEWS.map((v) => ({
-    thumb: v.thumb,
-    headline: v.headline,
-    result: `${v.school}${v.year ? ` ${v.year}` : ""}`,
-    meta: v.tag,
-    name: v.name,
-    duration: v.pending ? "準備中" : "対談動画",
-    url: v.pending ? null : `https://youtu.be/${v.id}`,
-    pending: v.pending,
-    no: v.no,
-  }));
+  const voices = React.useMemo(
+    () =>
+      window.VOICE_INTERVIEWS.map((v) => ({
+        thumb: v.thumb,
+        headline: v.headline,
+        result: `${v.school}${v.year ? ` ${v.year}` : ""}`,
+        meta: v.tag,
+        name: v.name,
+        duration: v.pending ? "準備中" : "対談動画",
+        url: v.pending ? null : `https://youtu.be/${v.id}`,
+        pending: v.pending,
+        no: v.no,
+      })),
+    []
+  );
+
+  const count = voices.length;
+  const loopedVoices = React.useMemo(() => {
+    if (!count) return [];
+    const wrap = (v, key) => ({ ...v, _key: key });
+    return [
+      wrap(voices[count - 1], "clone-start"),
+      ...voices.map((v, i) => wrap(v, `item-${i}`)),
+      wrap(voices[0], "clone-end"),
+    ];
+  }, [voices, count]);
 
   const trackRef = React.useRef(null);
-  const [activeIdx, setActiveIdx] = React.useState(0);
-  const [canPrev, setCanPrev] = React.useState(false);
-  const [canNext, setCanNext] = React.useState(true);
+  const jumpingRef = React.useRef(false);
+  const [activeDomIdx, setActiveDomIdx] = React.useState(1);
+  const [isDesktop, setIsDesktop] = React.useState(() =>
+    typeof window !== "undefined" && window.matchMedia("(min-width: 769px)").matches
+  );
 
-  const updateScrollState = React.useCallback(() => {
+  const realIdxFromDom = (domIdx) => {
+    if (domIdx <= 0) return count - 1;
+    if (domIdx >= count + 1) return 0;
+    return domIdx - 1;
+  };
+
+  const activeIdx = realIdxFromDom(activeDomIdx);
+
+  React.useEffect(() => {
+    const mq = window.matchMedia("(min-width: 769px)");
+    const onChange = () => setIsDesktop(mq.matches);
+    mq.addEventListener("change", onChange);
+    return () => mq.removeEventListener("change", onChange);
+  }, []);
+
+  const scrollToDom = React.useCallback((domIdx, smooth = true) => {
     const el = trackRef.current;
-    if (!el) return;
+    if (!el || !count) return;
+    const card = el.querySelectorAll(".voice-card")[domIdx];
+    if (!card) return;
+    el.scrollTo({ left: card.offsetLeft, behavior: smooth ? "smooth" : "auto" });
+  }, [count]);
+
+  const scrollToReal = React.useCallback(
+    (realIdx, smooth = true) => {
+      scrollToDom(realIdx + 1, smooth);
+    },
+    [scrollToDom]
+  );
+
+  const getNearestDomIdx = React.useCallback(() => {
+    const el = trackRef.current;
+    if (!el) return 1;
     const cards = el.querySelectorAll(".voice-card");
-    if (!cards.length) return;
+    if (!cards.length) return 1;
 
     const trackLeft = el.scrollLeft;
-    let nearestIdx = 0;
+    let nearestIdx = 1;
     let nearestDist = Infinity;
     cards.forEach((card, i) => {
       const dist = Math.abs(card.offsetLeft - trackLeft);
@@ -33,86 +80,99 @@ const Voices = () => {
         nearestIdx = i;
       }
     });
-    setActiveIdx(nearestIdx);
-    setCanPrev(el.scrollLeft > 4);
-    setCanNext(el.scrollLeft < el.scrollWidth - el.clientWidth - 4);
+    return nearestIdx;
   }, []);
+
+  const repositionIfOnClone = React.useCallback(() => {
+    const el = trackRef.current;
+    if (!el || !count || jumpingRef.current) return;
+
+    const domIdx = getNearestDomIdx();
+    if (domIdx !== 0 && domIdx !== count + 1) return;
+
+    jumpingRef.current = true;
+    const targetDom = domIdx === 0 ? count : 1;
+    el.style.scrollBehavior = "auto";
+    scrollToDom(targetDom, false);
+    el.style.scrollBehavior = "";
+    setActiveDomIdx(targetDom);
+    requestAnimationFrame(() => {
+      jumpingRef.current = false;
+    });
+  }, [count, getNearestDomIdx, scrollToDom]);
+
+  const updateScrollState = React.useCallback(() => {
+    if (jumpingRef.current || !count) return;
+
+    const domIdx = getNearestDomIdx();
+    setActiveDomIdx(domIdx);
+
+    if (domIdx === 0 || domIdx === count + 1) {
+      requestAnimationFrame(repositionIfOnClone);
+    }
+  }, [count, getNearestDomIdx, repositionIfOnClone]);
+
+  React.useEffect(() => {
+    if (!count) return;
+    scrollToDom(1, false);
+    setActiveDomIdx(1);
+  }, [count, scrollToDom]);
 
   React.useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
     updateScrollState();
     el.addEventListener("scroll", updateScrollState, { passive: true });
+    el.addEventListener("scrollend", repositionIfOnClone);
     window.addEventListener("resize", updateScrollState);
     return () => {
       el.removeEventListener("scroll", updateScrollState);
+      el.removeEventListener("scrollend", repositionIfOnClone);
       window.removeEventListener("resize", updateScrollState);
     };
-  }, [updateScrollState]);
-
-  const scrollToCard = (idx) => {
-    const el = trackRef.current;
-    if (!el) return;
-    const card = el.querySelectorAll(".voice-card")[idx];
-    if (!card) return;
-    el.scrollTo({ left: card.offsetLeft, behavior: "smooth" });
-  };
+  }, [updateScrollState, repositionIfOnClone]);
 
   const scrollByDir = (dir) => {
-    const next = Math.max(0, Math.min(voices.length - 1, activeIdx + dir));
-    scrollToCard(next);
+    if (!count) return;
+    // 端からループするときはクローン経由で「つながった」方向へ進む
+    if (dir === 1 && activeDomIdx === count) {
+      scrollToDom(count + 1, true);
+      return;
+    }
+    if (dir === -1 && activeDomIdx === 1) {
+      scrollToDom(0, true);
+      return;
+    }
+    const nextReal = (activeIdx + dir + count) % count;
+    scrollToReal(nextReal, true);
   };
 
-  React.useEffect(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    let isDown = false;
-    let startX = 0;
-    let scrollStart = 0;
-    let moved = false;
+  const PlayIcon = () => (
+    <span className="voice-thumb-play" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="32" cy="32" r="30" fill="rgba(10, 9, 7, 0.55)" stroke="currentColor" strokeWidth="1.2" />
+        <path d="M26 20v24l18-12-18-12z" fill="currentColor" />
+      </svg>
+    </span>
+  );
 
-    const onDown = (e) => {
-      if (e.pointerType !== "mouse") return;
-      isDown = true;
-      moved = false;
-      startX = e.pageX;
-      scrollStart = el.scrollLeft;
-      el.classList.add("dragging");
-    };
-    const onMove = (e) => {
-      if (!isDown) return;
-      const dx = e.pageX - startX;
-      if (Math.abs(dx) > 12) moved = true;
-      el.scrollLeft = scrollStart - dx;
-    };
-    const onUp = () => {
-      if (!isDown) return;
-      isDown = false;
-      el.classList.remove("dragging");
-      if (moved) {
-        const blockClick = (e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          window.removeEventListener("click", blockClick, true);
-        };
-        window.addEventListener("click", blockClick, true);
-      }
-    };
+  const WatchButton = ({ url, name }) => (
+    <a
+      href={url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="voice-watch-btn"
+      aria-label={`${name}の対談動画をYouTubeで開く`}
+    >
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M8 5v14l11-7z" />
+      </svg>
+      対談動画を見る
+    </a>
+  );
 
-    el.addEventListener("pointerdown", onDown);
-    window.addEventListener("pointermove", onMove);
-    window.addEventListener("pointerup", onUp);
-    window.addEventListener("pointercancel", onUp);
-    return () => {
-      el.removeEventListener("pointerdown", onDown);
-      window.removeEventListener("pointermove", onMove);
-      window.removeEventListener("pointerup", onUp);
-      window.removeEventListener("pointercancel", onUp);
-    };
-  }, []);
-
-  const renderCard = (v, i) => {
-    const cardClass = `voice-card ${i === activeIdx ? "active" : ""} ${v.pending ? "is-pending" : ""}`;
+  const renderCard = (v, domIdx) => {
+    const cardClass = `voice-card ${domIdx === activeDomIdx ? "active" : ""} ${v.pending ? "is-pending" : ""}`;
     const thumbInner = (
       <>
         <div className="voice-thumb">
@@ -121,6 +181,9 @@ const Voices = () => {
           ) : (
             <div className="voice-thumb-placeholder" aria-hidden="true" />
           )}
+          <span className="voice-index"><i>No. {v.no}</i></span>
+          <span className="voice-duration">{v.duration}</span>
+          {!v.pending && <PlayIcon />}
           <div className="voice-thumb-corners">
             <span className="corner tl" /><span className="corner tr" />
             <span className="corner bl" /><span className="corner br" />
@@ -141,19 +204,29 @@ const Voices = () => {
 
     if (v.pending) {
       return (
-        <div key={v.no} className={cardClass} aria-label={`${v.name}は準備中です`}>
+        <div key={v._key} className={cardClass} aria-label={`${v.name}は準備中です`} data-dom-idx={domIdx}>
           {thumbInner}
+        </div>
+      );
+    }
+
+    if (isDesktop) {
+      return (
+        <div key={v._key} className={`${cardClass} voice-card--desktop`} data-dom-idx={domIdx}>
+          {thumbInner}
+          <WatchButton url={v.url} name={v.name} />
         </div>
       );
     }
 
     return (
       <a
-        key={v.no}
+        key={v._key}
         href={v.url}
         target="_blank"
         rel="noopener noreferrer"
         className={cardClass}
+        data-dom-idx={domIdx}
       >
         {thumbInner}
       </a>
@@ -178,7 +251,7 @@ const Voices = () => {
         <div className="voices-carousel">
           <button
             type="button"
-            className={`voice-arrow voice-arrow-prev ${canPrev ? "" : "disabled"}`}
+            className="voice-arrow voice-arrow-prev"
             onClick={() => scrollByDir(-1)}
             aria-label="前へ"
           >
@@ -188,7 +261,7 @@ const Voices = () => {
           </button>
           <button
             type="button"
-            className={`voice-arrow voice-arrow-next ${canNext ? "" : "disabled"}`}
+            className="voice-arrow voice-arrow-next"
             onClick={() => scrollByDir(1)}
             aria-label="次へ"
           >
@@ -197,8 +270,11 @@ const Voices = () => {
             </svg>
           </button>
 
-          <div className="voices-track" ref={trackRef}>
-            {voices.map((v, i) => renderCard(v, i))}
+          <div
+            className={`voices-track${isDesktop ? " voices-track--desktop" : ""}`}
+            ref={trackRef}
+          >
+            {loopedVoices.map((v, i) => renderCard(v, i))}
           </div>
         </div>
 
@@ -208,7 +284,7 @@ const Voices = () => {
               key={i}
               type="button"
               className={`voice-dot ${i === activeIdx ? "active" : ""}`}
-              onClick={() => scrollToCard(i)}
+              onClick={() => scrollToReal(i, true)}
               aria-label={`${i + 1}番目`}
             />
           ))}
@@ -216,7 +292,7 @@ const Voices = () => {
 
         <div className="voices-hint">
           <span className="voices-hint-arrow">←</span>
-          <span>swipe</span>
+          <span>{isDesktop ? "矢印で切り替え" : "swipe"}</span>
           <span className="voices-hint-arrow">→</span>
         </div>
 

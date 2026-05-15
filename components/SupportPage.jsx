@@ -2,7 +2,7 @@
 // 固有名: 合格設計図(Master Plan) / ステージ式ロードマップ(STEP Roadmap) / THINKING Method
 
 const ASSETS = {
-  heroCoaching: "assets/support-hero-coaching.jpg?v=20260515-hero-mobile",
+  heroCoaching: "assets/support-hero-coaching.jpg?v=20260515-hero-mobile-v2",
   heroCoachingDesktop: "assets/support-hero-coaching-desktop.jpg?v=20260515-hero-pc",
   thinkingMethod: "assets/support-thinking-method.png?v=20260515-method",
   masterPlan: "assets/support-master-plan.png",
@@ -41,8 +41,8 @@ const SupportHero = () => (
           <img
             className="sup-hero-photo"
             src={ASSETS.heroCoaching}
-            width={576}
-            height={1024}
+            width={618}
+            height={712}
             alt="夜の自宅でオンライン指導を受けながら学習する受講生"
             loading="eager"
             decoding="async"
@@ -54,23 +54,25 @@ const SupportHero = () => (
       <div className="sup-hero-overlay sup-hero-overlay-bottom" aria-hidden="true" />
       <div className="sup-hero-grain" aria-hidden="true" />
 
-      <p className="sup-hero-kicker">サポート体制</p>
+      <div className="sup-hero-content">
+        <p className="sup-hero-kicker">サポート体制</p>
 
-      <div className="sup-hero-vertical-panel">
-        <h1 id="sup-hero-title" className="sup-hero-vertical-head">
-          <span className="sup-hero-vertical-line sup-hero-vertical-line--1">根性論はなし。</span>
-          <span className="sup-hero-vertical-line sup-hero-vertical-line--2">「再現性」のあるサポート</span>
+        <h1 id="sup-hero-title" className="sup-hero-headline">
+          <span className="sup-hero-headline-l1">根性論はなし。</span>
+          <span className="sup-hero-headline-l2">「再現性」のあるサポート</span>
         </h1>
-      </div>
 
-      <div className="sup-hero-bottom">
-        <p className="sup-hero-lead">
-          「<em className="sup-hero-lead-em">設計する。実行する。鍛える。</em>」
-          <br />
-          THINKING の<span className="sup-hero-accent">三層</span>
-          が、合格までの全体行程を一枚の設計図にし、日々の実行と思考力まで、同じロジックで整え続ける。
-        </p>
-        <div className="sup-hero-ctas">
+        <div className="sup-hero-bottom">
+          <p className="sup-hero-lead">
+            <span className="sup-hero-lead-pillars">
+              「<em className="sup-hero-lead-em">設計する。実行する。鍛える。</em>」
+            </span>
+            <span className="sup-hero-lead-body">
+              THINKING の<span className="sup-hero-accent">三層</span>
+              が、合格までの全体行程を一枚の合格設計図イメージにし、日々の実行と思考力まで、同じロジックで整え続ける。
+            </span>
+          </p>
+          <div className="sup-hero-ctas">
           <a
             href={window.THINKING_LINE_LIFF_URL}
             target="_blank"
@@ -88,6 +90,7 @@ const SupportHero = () => (
               ↓
             </span>
           </a>
+          </div>
         </div>
       </div>
     </div>
@@ -286,20 +289,20 @@ const SupportMasterPlanMedia = () => {
         >
           <img
             src={ASSETS.masterPlan}
-            alt="学習ナビゲーションマップ（合格設計図）のサンプル。科目別の工程・教材・週次ペースが時系列で一覧されている"
+            alt="学習ナビゲーションマップ（合格設計図イメージ）のサンプル。科目別の工程・教材・週次ペースが時系列で一覧されている"
             loading="lazy"
             decoding="async"
             className="sup-master-plan-img"
           />
         </button>
       </div>
-      <figcaption className="sup-cap">実際の合格設計図（英語・現代文・古文・漢文・日本史）</figcaption>
+      <figcaption className="sup-cap">合格設計図イメージ（英語・現代文・古文・漢文・日本史）</figcaption>
       {open && (
         <div
           className="sup-lightbox"
           role="dialog"
           aria-modal="true"
-          aria-label="合格設計図の拡大表示"
+          aria-label="合格設計図イメージの拡大表示"
         >
           <button type="button" className="sup-lightbox-close" onClick={() => setOpen(false)}>
             閉じる
@@ -853,7 +856,7 @@ const SupportFinalCta = () => (
       <h2 id="sup-cta-title" className="sup-final-cta-title">
         「頑張る」を、「合格する」に変える。
       </h2>
-      <p className="sup-final-cta-lead">合格までの設計図、まずは無料でお見せします。</p>
+      <p className="sup-final-cta-lead">合格までの設計図イメージ、まずは無料でお見せします。</p>
       <div className="sup-final-cta-btns">
         <a
           className="sup-cta-primary"

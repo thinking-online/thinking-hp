@@ -309,13 +309,10 @@ const StrategyPage = () => {
           </header>
 
           <figure className="sheet-figure">
-            <img src="assets/kakomon-sheet.png" alt="THINKING 過去問分析シート" />
-            <figcaption>
-              <span className="sheet-fig-label"><i>Sample / 過去問分析シート</i></span>
-              <span className="sheet-fig-note">
-                実際に運用している分析シート（一部）。志望校ごとに、過去問を解くたびに更新する「動く合格設計図」です。
-              </span>
-            </figcaption>
+            <img
+              src="assets/kakomon-sheet.png"
+              alt="THINKING 過去問分析シートのサンプル。大学情報・合格最低点・受験日カウントダウン・大問別の予測点・定量・定性分析などを一覧する運用用シート（一部）。志望校ごとに過去問を解くたびに更新する。"
+            />
           </figure>
 
           <ul className="sheet-cols">

@@ -555,42 +555,19 @@
 }
 
 .sheet-figure {
-  margin: 0 auto 64px;
-  max-width: 1280px;
+  margin: 0 auto 48px;
+  max-width: min(1280px, 100%);
   position: relative;
   border: 1px solid var(--line-strong);
   background: #f8f5ee;
-  padding: 18px;
-  box-shadow: 0 32px 80px -20px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  box-shadow: 0 24px 64px -24px rgba(0, 0, 0, 0.45);
 }
 .sheet-figure img {
   display: block;
   width: 100%;
   height: auto;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-}
-.sheet-figure figcaption {
-  margin-top: 14px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 24px;
-  padding: 4px 4px 0;
-}
-.sheet-fig-label i {
-  font-family: var(--serif-en);
-  font-style: italic;
-  font-size: 11px;
-  letter-spacing: 0.22em;
-  color: rgba(60, 50, 40, 0.7);
-}
-.sheet-fig-note {
-  font-family: var(--serif-jp);
-  font-size: 11.5px;
-  letter-spacing: 0.04em;
-  color: rgba(60, 50, 40, 0.7);
-  text-align: right;
-  flex: 1;
+  border: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .sheet-cols {
@@ -832,9 +809,9 @@
   .strategy-compare-inner {
     padding-inline: 0;
   }
+  /* スマホでは 2学部 / 7大問 / 100% のメタ行は非表示（本文で十分伝わる） */
   .strategy-claim-meta {
-    grid-template-columns: 1fr;
-    gap: 24px;
+    display: none;
   }
   .compare-grid-outer {
     margin: 0 -8px;
@@ -861,4 +838,24 @@
   .sheet-cols .sheet-col:last-child { border-bottom: none; }
   .sheet-process-list { grid-template-columns: 1fr; }
   .sheet-process-list li::before { display: none; }
+
+  /* 過去問分析シート：キャプション廃止に合わせ、余白を詰めて横幅いっぱいで閲覧しやすく */
+  .sheet-figure {
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 36px;
+    width: calc(100% + 40px);
+    max-width: none;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .sheet-figure img {
+    border: none;
+    border-radius: 0;
+  }
 }

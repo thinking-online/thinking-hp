@@ -1,77 +1,698 @@
-// Support page — exhaustive walkthrough of the 6 mechanisms
-// (Strategy / Curriculum / Roadmap / Quality / Mindset / Verbalize)
+// Support page — THINKING Method (三層) 完成版構成
+// 固有名: 合格設計図(Master Plan) / ステージ式ロードマップ(STEP Roadmap) / THINKING Method
 
-const SupportPage = () => {
+const ASSETS = {
+  thinkingMethod: "assets/support-thinking-method.png",
+  masterPlan: "assets/support-master-plan.png",
+  workbook: "assets/products-series-4parts-overview.png",
+  stepRoadmap: "assets/support-step-roadmap.png",
+  sheetWeekly: "assets/support-sheet-weekly-tasks.png",
+  sheetDaily: "assets/support-sheet-daily-time.png",
+  sheetSummary: "assets/support-sheet-weekly-summary.png",
+  sheetPeriod: "assets/support-sheet-period-tasks.png",
+};
+
+const SupportPage = () => (
+  <>
+    <SupportHero />
+    <SupportStickyNav />
+    <SupportMethodIntro />
+    <SupportLayerDesign />
+    <SupportLayerExecute />
+    <SupportLayerTrain />
+    <SupportWeekFlow />
+    <SupportStats />
+    <SupportFaq />
+    <SupportFinalCta />
+  </>
+);
+
+/* ─── Hero ───────────────────────────────────────────────── */
+
+const SupportHero = () => (
+  <section className="sup-hero" aria-labelledby="sup-hero-title">
+    <div className="sup-hero-grid" aria-hidden="true" />
+    <div className="sup-hero-inner">
+      <p className="sup-hero-eyebrow">サポート体制</p>
+      <h1 id="sup-hero-title" className="sup-hero-title">
+        頑張る、では<span className="sup-hero-gold">合格</span>しない。
+      </h1>
+      <div className="sup-hero-pillars" aria-label="三層のキーワード">
+        <span>設計する。</span>
+        <span className="sup-hero-pillar-div" aria-hidden="true" />
+        <span>実行する。</span>
+        <span className="sup-hero-pillar-div" aria-hidden="true" />
+        <span>鍛える。</span>
+      </div>
+      <p className="sup-hero-sub">
+        THINKING の三層が、合格までを<span className="sup-hero-gold">設計</span>する。
+      </p>
+      <p className="sup-hero-note">
+        私立文系・学部別に特化した、合格設計型オンライン塾。
+      </p>
+    </div>
+  </section>
+);
+
+/* ─── ページ内ナビ（固定ヘッダー直下にスティック） ───────────── */
+
+const SupportStickyNav = () => {
+  const links = [
+    { href: "#thinking-method", label: "Method" },
+    { href: "#layer-design", label: "設計" },
+    { href: "#layer-execute", label: "実行" },
+    { href: "#layer-train", label: "鍛錬" },
+    { href: "#week-flow", label: "1週間" },
+    { href: "#stats", label: "数字" },
+    { href: "#faq", label: "FAQ" },
+    { href: "#contact", label: "面談" },
+  ];
   return (
-    <>
-      <PageHeader
-        en="Support / Six Mechanisms"
-        eyebrow="サポート体制"
-        jp={<>合格を、<em>設計</em>する。<br /><em>6つの仕組み</em>のすべて。</>}
-        lead="THINKING のサポートは、月1の面談で完結しません。戦略設計から日々の質問対応まで——合格までの全工程を6つの仕組みで支えます。このページでは、その一つひとつを徹底的に解説します。"
-        bgImage="assets/campus-04.png"
-      />
-
-      {/* Intro / Index */}
-      <SupportIntro />
-
-      {/* The 6 mechanisms */}
-      <Mech01Strategy />
-      <Mech02Curriculum />
-      <Mech03Roadmap />
-      <Mech04Quality />
-      <Mech05Mindset />
-      <Mech06Verbalize />
-
-      {/* How they interlock */}
-      <SupportInterlock />
-
-      {/* Final LINE CTA — reuse the global section */}
-      <SupportLineCTA />
-    </>
+    <nav className="sup-toc" aria-label="ページ内のセクションへジャンプ">
+      <div className="sup-section-inner sup-toc-inner">
+        {links.map((l) => (
+          <a key={l.href} href={l.href} className="sup-toc-link">
+            {l.label}
+          </a>
+        ))}
+      </div>
+    </nav>
   );
 };
 
-/* =====================================================================
- *  Intro / 6 mechanism index
- * ===================================================================== */
+/* ─── THINKING Method 概念図 ───────────────────────────────── */
 
-const SupportIntro = () => {
-  const items = [
-    { no: "01", en: "Strategy", jp: "大学・学部別の完全カスタム戦略", anchor: "strategy" },
-    { no: "02", en: "Curriculum", jp: "週次の学習計画 / PDCA", anchor: "curriculum" },
-    { no: "03", en: "Roadmap", jp: "合格までの完全ロードマップ", anchor: "roadmap" },
-    { no: "04", en: "Quality", jp: "24時間質問システム", anchor: "quality" },
-    { no: "05", en: "Mindset", jp: "週次面談で、迷う暇を与えない", anchor: "mindset" },
-    { no: "06", en: "Verbalize", jp: "わかる→解ける、『言語化特訓』", anchor: "verbalize" },
-  ];
+const SupportMethodIntro = () => (
+  <section className="sup-method" id="thinking-method" aria-labelledby="sup-method-title">
+    <div className="sup-section-inner sup-method-inner">
+      <header className="sup-method-head">
+        <h2 id="sup-method-title" className="sup-h2">
+          THINKING Method <span className="sup-h2-sub">── 合格までの三層構造</span>
+        </h2>
+        <p className="sup-lead">
+          多くの塾は「実行」しか提供しない。
+          <br />
+          THINKING は、合格までを <em>設計 → 実行 → 鍛錬</em> の三層で組み立てる。
+          <br />
+          ひとつでも欠ければ、合格は遠ざかる。
+        </p>
+      </header>
+
+      <figure className="sup-method-figure">
+        <img
+          src={ASSETS.thinkingMethod}
+          alt="THINKING Method 三層サポートシステム：設計する・実行する・鍛えるのピラミッドと各層の説明"
+          width={1200}
+          height={675}
+          loading="eager"
+          decoding="async"
+          className="sup-method-img"
+        />
+      </figure>
+    </div>
+  </section>
+);
+
+/* ─── LAYER 01 設計 ───────────────────────────────────────── */
+
+const SupportLayerDesign = () => (
+  <section className="sup-layer sup-layer--design" id="layer-design" aria-labelledby="sup-layer-design-title">
+    <div className="sup-layer-band">
+      <div className="sup-section-inner sup-layer-band-inner">
+        <p className="sup-layer-kicker">LAYER 01 ── 設計する</p>
+        <p className="sup-layer-en" lang="en">
+          DESIGN
+        </p>
+        <h2 id="sup-layer-design-title" className="sup-layer-title">
+          「いつまでに、何を、どのくらい」
+        </h2>
+        <p className="sup-layer-lead">
+          それが決まっていない努力は、合格に向かわない。
+          <br />
+          THINKING は入塾後、最初に合格までの全行程を1枚の地図にする。
+          <br />
+          迷う時間を、ゼロにする。
+        </p>
+      </div>
+    </div>
+
+    <div className="sup-section-inner">
+      <article className="sup-block" id="master-plan" aria-labelledby="sup-master-plan-h">
+        <h3 id="sup-master-plan-h" className="sup-h3">
+          合格設計図<span className="sup-h3-paren">（Master Plan）</span>
+        </h3>
+        <p className="sup-tagline">入試本番から逆算した、あなただけの全行程図。</p>
+        <p className="sup-body">
+          入試本番日から逆算し、科目ごとに「いつ・何を・どれだけ」やるかを1枚の地図に描く。
+          英単語・英文法・解釈・長文・古文単語・漢文・日本史 ── すべての科目、すべての教材、すべてのマイルストーン。
+          受験までのすべてが、1枚で見える。
+        </p>
+        <ul className="sup-features sup-features--3">
+          <li>
+            <span className="sup-feat-no">01</span>
+            <strong>入試本番から逆算</strong>
+            <span>ゴール日（入試本番）を起点に、すべての教材の開始日・完了日が自動で決まる。</span>
+          </li>
+          <li>
+            <span className="sup-feat-no">02</span>
+            <strong>科目をまたいで俯瞰</strong>
+            <span>英語・国語・日本史 ── 全科目の進捗が1枚で見える。バランスが崩れない。</span>
+          </li>
+          <li>
+            <span className="sup-feat-no">03</span>
+            <strong>志望校変更にも対応</strong>
+            <span>コース切替によって設計図ごと組み替え可能。戦略の柔軟性を担保する。</span>
+          </li>
+        </ul>
+        <SupportMasterPlanMedia />
+      </article>
+
+      <article className="sup-block sup-block--tight" id="faculty-strategy" aria-labelledby="sup-faculty-h">
+        <h3 id="sup-faculty-h" className="sup-h3">
+          学部別戦略
+        </h3>
+        <p className="sup-tagline">私立文系専門だからこそ、ここまで深く分析できる。</p>
+        <p className="sup-body">
+          THINKING は私立文系の各大学・各学部の過去問を徹底的に分析している。
+          出題傾向、頻出テーマ、時間配分、頻出語彙 ── すべてを学部単位で言語化し、教材に落とし込む。
+          <br />
+          その分析を元に、オリジナル教材を内製している。
+        </p>
+        <ul className="sup-material-grid">
+          <li>
+            <span className="sup-mat-no">01</span>
+            <strong>構造・出題データ分析</strong>
+            <span>過去問を徹底分析し、出題傾向と時間配分を可視化。</span>
+          </li>
+          <li>
+            <span className="sup-mat-no">02</span>
+            <strong>頻出英単語熟語帳</strong>
+            <span>入試で差がつく頻出語彙を厳選。意味・同義語・例文まで網羅。</span>
+          </li>
+          <li>
+            <span className="sup-mat-no">03</span>
+            <strong>オリジナル大問別擬似演習教材</strong>
+            <span>入試本番を想定したオリジナル問題で、実戦力を鍛える。</span>
+          </li>
+          <li>
+            <span className="sup-mat-no">04</span>
+            <strong>総合模試</strong>
+            <span>本番さながらの総合模試で、実力を最終チェック。</span>
+          </li>
+        </ul>
+        <figure className="sup-figure sup-figure--book">
+          <img
+            src={ASSETS.workbook}
+            alt="学部別に内製したTHINKINGオリジナル教材の4部構成：構造分析・頻出語彙・大問別演習・総合模試"
+            width={1200}
+            height={800}
+            loading="lazy"
+            decoding="async"
+            className="sup-figure-img"
+          />
+          <figcaption className="sup-cap">学部別に内製している、THINKING オリジナル教材</figcaption>
+        </figure>
+      </article>
+    </div>
+  </section>
+);
+
+const SupportMasterPlanMedia = () => {
+  const [open, setOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!open) return undefined;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   return (
-    <section className="sup-intro">
-      <div className="sup-intro-inner">
-        <div className="sup-intro-head">
-          <span className="eyebrow"><i>Why It Works</i></span>
-          <h2 className="sup-intro-title">
-            <em>仕組み</em>がない伴走は、<br />
-            <em>気合い</em>で終わる。
-          </h2>
-          <p className="sup-intro-lead">
-            「やる気を出して」「とにかく頑張ろう」で、合格はしない。<br />
-            THINKING は、根性ではなく<em>仕組み</em>で生徒を支えます。<br />
-            戦略・計画・ロードマップ・質問・面談・言語化——<br />
-            6つが噛み合って、初めて伴走と呼べます。
-          </p>
+    <figure className="sup-figure sup-figure--scroll">
+      <div className="sup-scroll-hint">横スクロールで全体を表示 · 画像をタップで拡大</div>
+      <div className="sup-scroll-x">
+        <button
+          type="button"
+          className="sup-master-plan-btn"
+          onClick={() => setOpen(true)}
+          aria-haspopup="dialog"
+          aria-expanded={open}
+        >
+          <img
+            src={ASSETS.masterPlan}
+            alt="実際の合格設計図（学習ナビゲーションマップ）のサンプル。英語・現代文・古文・漢文・日本史の工程が一覧されている"
+            width={2400}
+            height={900}
+            loading="lazy"
+            decoding="async"
+            className="sup-master-plan-img"
+          />
+        </button>
+      </div>
+      <figcaption className="sup-cap">実際の合格設計図（英語・現代文・古文・漢文・日本史）</figcaption>
+      {open && (
+        <div
+          className="sup-lightbox"
+          role="dialog"
+          aria-modal="true"
+          aria-label="合格設計図の拡大表示"
+        >
+          <button type="button" className="sup-lightbox-close" onClick={() => setOpen(false)}>
+            閉じる
+          </button>
+          <button type="button" className="sup-lightbox-backdrop" onClick={() => setOpen(false)} aria-label="閉じる" />
+          <div className="sup-lightbox-body">
+            <img src={ASSETS.masterPlan} alt="" />
+          </div>
         </div>
+      )}
+    </figure>
+  );
+};
 
-        <ol className="sup-intro-index">
-          {items.map((it) => (
-            <li key={it.no}>
-              <a href={`#${it.anchor}`}>
-                <span className="sup-intro-no"><i>{it.no}</i></span>
-                <span className="sup-intro-en"><i>{it.en}</i></span>
-                <span className="sup-intro-jp">{it.jp}</span>
-                <span className="sup-intro-arrow" aria-hidden="true">↓</span>
-              </a>
+/* ─── LAYER 02 実行 ───────────────────────────────────────── */
+
+const SupportLayerExecute = () => (
+  <section className="sup-layer sup-layer--execute" id="layer-execute" aria-labelledby="sup-layer-exec-title">
+    <div className="sup-layer-band sup-layer-band--gold">
+      <div className="sup-section-inner sup-layer-band-inner">
+        <p className="sup-layer-kicker">LAYER 02 ── 実行する</p>
+        <p className="sup-layer-en" lang="en">
+          EXECUTE
+        </p>
+        <h2 id="sup-layer-exec-title" className="sup-layer-title">
+          設計図を、「今日のチェックリスト」まで落とし込む。
+        </h2>
+        <p className="sup-layer-lead">
+          設計図があっても、1日に何をやるかが曖昧なら手は止まる。
+          <br />
+          THINKING は、設計図を「今日のチェックリスト」まで落とし込む。
+          <br />
+          迷う時間を、ゼロにする。
+        </p>
+      </div>
+    </div>
+
+    <div className="sup-section-inner">
+      <article className="sup-block" id="step-roadmap" aria-labelledby="sup-step-h">
+        <h3 id="sup-step-h" className="sup-h3">
+          ステージ式ロードマップ<span className="sup-h3-paren">（STEP Roadmap）</span>
+        </h3>
+        <p className="sup-tagline">1ステップずつ、迷わず進める。</p>
+        <p className="sup-body">
+          合格設計図に沿って、各科目を1ステップごとに分解。
+          「次にやるべき1ステップ」だけが目の前にある状態をつくる。
+          <br />
+          各ステップには、何をどう進めるかの詳細解説がついている。
+          やり方で迷うことも、教材の使い方で迷うこともない。
+        </p>
+        <figure className="sup-figure">
+          <img
+            src={ASSETS.stepRoadmap}
+            alt="アプリ上のステージ式ロードマップ。STEP10英文法・不定詞からSTEP11への進行とチェックリストが表示されている"
+            width={800}
+            height={1400}
+            loading="lazy"
+            decoding="async"
+            className="sup-figure-img sup-figure-img--phone"
+          />
+          <figcaption className="sup-cap">各STEPには詳細解説とチェックリストがついている</figcaption>
+        </figure>
+      </article>
+
+      <article className="sup-block" id="weekly-sheet" aria-labelledby="sup-sheet-h">
+        <h3 id="sup-sheet-h" className="sup-h3">
+          週間・日次やること管理シート
+        </h3>
+        <p className="sup-tagline">今日やることが、1秒で分かる。</p>
+        <p className="sup-body">
+          毎週のコーチングで、次の1週間にやることを1日単位で決定する。
+          朝起きたら、今日のリストを開く。終わったらチェックする。それだけでいい。
+          <br />
+          進捗は自動で集計され、達成率まで可視化される。
+          うまくいった日・うまくいかなかった日が、数字で残る。
+          だから、振り返りができる。だから、改善できる。
+        </p>
+        <ul className="sup-features sup-features--3">
+          <li>
+            <span className="sup-feat-no">01</span>
+            <strong>1日単位で「やること」が確定</strong>
+            <span>毎週のコーチングで、次週の1日1日が決まる。</span>
+          </li>
+          <li>
+            <span className="sup-feat-no">02</span>
+            <strong>達成率が自動で集計</strong>
+            <span>学習時間・タスク達成率がリアルタイムで見える化。</span>
+          </li>
+          <li>
+            <span className="sup-feat-no">03</span>
+            <strong>数字に基づくPDCA</strong>
+            <span>感覚ではなく、数字で振り返り、数字で改善する。</span>
+          </li>
+        </ul>
+        <div className="sup-sheet-grid">
+          <figure className="sup-figure sup-figure--sheet">
+            <img src={ASSETS.sheetWeekly} alt="週間の日次タスク一覧シート" loading="lazy" decoding="async" />
+            <figcaption className="sup-cap">日次タスク</figcaption>
+          </figure>
+          <figure className="sup-figure sup-figure--sheet">
+            <img src={ASSETS.sheetPeriod} alt="期間中に完了させるタスクの一覧シート" loading="lazy" decoding="async" />
+            <figcaption className="sup-cap">週単位・期間タスク</figcaption>
+          </figure>
+          <figure className="sup-figure sup-figure--sheet">
+            <img src={ASSETS.sheetDaily} alt="日次の時間枠と実績・達成率の管理シート" loading="lazy" decoding="async" />
+            <figcaption className="sup-cap">時間管理</figcaption>
+          </figure>
+          <figure className="sup-figure sup-figure--sheet">
+            <img src={ASSETS.sheetSummary} alt="週次の目標時間・実績・達成率の結果サマリー" loading="lazy" decoding="async" />
+            <figcaption className="sup-cap">週次サマリー</figcaption>
+          </figure>
+        </div>
+      </article>
+
+      <article className="sup-block" id="weekend-test" aria-labelledby="sup-wt-h">
+        <h3 id="sup-wt-h" className="sup-h3">
+          週末テスト制度
+        </h3>
+        <p className="sup-tagline">「わかったつもり」を、毎週潰す。</p>
+        <p className="sup-body">
+          毎週末、その週に進めた範囲を週末テストで確認する。
+          一定ラインを突破しないと、次のステップに進めない。志望校の出願も認めない。
+          <br />
+          「やった」ではなく「できる」になっているか。
+          毎週、数字で証明する。緊張感が、習慣をつくる。
+        </p>
+        <div className="sup-weekend-visual" aria-hidden="true">
+          <div className="sup-weekend-paper">
+            <span className="sup-weekend-line" />
+            <span className="sup-weekend-line" />
+            <span className="sup-weekend-line short" />
+          </div>
+          <div className="sup-weekend-barwrap">
+            <div className="sup-weekend-bar">
+              <span className="sup-weekend-fill" style={{ width: "72%" }} />
+            </div>
+            <span className="sup-weekend-label">合格ライン</span>
+          </div>
+        </div>
+      </article>
+
+      <article className="sup-block" id="manabo" aria-labelledby="sup-manabo-h">
+        <h3 id="sup-manabo-h" className="sup-h3">
+          24時間質問対応 ── manabo
+        </h3>
+        <p className="sup-tagline">分からない、を5分以内に解決する。</p>
+        <p className="sup-body">
+          駿台グループのスポット指導サービス「manabo」と業務提携。
+          24時間いつでも、スマホで質問を送れば、最速1分で講師がオンライン指導を開始する。
+          1問あたり5分のショート指導で、分からないをその場で潰す。
+          <br />
+          指導するのは、東大・京大・早慶など難関大に在籍・卒業の実力講師。
+          あなたの志望校に在籍している講師の指名も可能。
+        </p>
+        <ul className="sup-manabo-grid">
+          <li>
+            <span className="sup-mat-no">01</span>
+            <strong>24時間365日対応</strong>
+            <span>深夜でも早朝でも、いつでも質問できる。</span>
+          </li>
+          <li>
+            <span className="sup-mat-no">02</span>
+            <strong>最速1分で指導開始</strong>
+            <span>質問を送って、ほぼ即時に指導が始まる。</span>
+          </li>
+          <li>
+            <span className="sup-mat-no">03</span>
+            <strong>5分のスポット指導</strong>
+            <span>1問完結。学習の流れを止めない。</span>
+          </li>
+          <li>
+            <span className="sup-mat-no">04</span>
+            <strong>難関大講師が直接対応</strong>
+            <span>東大・京大・早慶など、実力講師のみが指導。</span>
+          </li>
+        </ul>
+        <div className="sup-manabo-panel">
+          <div className="sup-manabo-flow" aria-hidden="true">
+            <div className="sup-manabo-step">
+              <span className="sup-manabo-step-no">1</span>
+              <span className="sup-manabo-step-tx">アプリから質問</span>
+            </div>
+            <span className="sup-manabo-arrow">→</span>
+            <div className="sup-manabo-step">
+              <span className="sup-manabo-step-no">2</span>
+              <span className="sup-manabo-step-tx">講師がマッチ</span>
+            </div>
+            <span className="sup-manabo-arrow">→</span>
+            <div className="sup-manabo-step">
+              <span className="sup-manabo-step-no">3</span>
+              <span className="sup-manabo-step-tx">ライブ指導 約5分</span>
+            </div>
+          </div>
+          <div className="sup-manabo-chat" aria-label="指導の流れイメージ">
+            <div className="sup-manabo-chat-head">
+              <span className="sup-manabo-dot" />
+              manabo スポット指導
+            </div>
+            <div className="sup-manabo-bubble sup-manabo-bubble--stu">
+              この関係詞の先行詞、本文だと2つありそうで…
+            </div>
+            <div className="sup-manabo-bubble sup-manabo-bubble--coach">
+              主節の主語に引きずられず、修飾のかかり先を印で切ってみよう。次は同じ構造を1分で説明して。
+            </div>
+            <div className="sup-manabo-meta">
+              <span>最速レスポンス</span>
+              <span className="sup-manabo-pill">1問完結</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+);
+
+/* ─── LAYER 03 鍛錬 ───────────────────────────────────────── */
+
+const SupportLayerTrain = () => (
+  <section className="sup-layer sup-layer--train" id="layer-train" aria-labelledby="sup-layer-train-title">
+    <div className="sup-layer-band sup-layer-band--crimson">
+      <div className="sup-section-inner sup-layer-band-inner">
+        <p className="sup-layer-kicker">LAYER 03 ── 鍛える</p>
+        <p className="sup-layer-en" lang="en">
+          TRAIN
+        </p>
+        <h2 id="sup-layer-train-title" className="sup-layer-title">
+          やり方を、根本から書き換える。
+        </h2>
+        <p className="sup-layer-lead">
+          設計通りに実行しても、伸びない子がいる。
+          原因は「やり方そのもの」にある。
+          <br />
+          THINKING は知識を教えない。
+          やり方を、根本から書き換える。
+          <br />
+          考える力・解決する力 ── 受験の先でも武器になる力を鍛える。
+        </p>
+      </div>
+    </div>
+
+    <div className="sup-section-inner">
+      <article className="sup-block" id="coaching" aria-labelledby="sup-coach-h">
+        <h3 id="sup-coach-h" className="sup-h3">
+          週1個別コーチング
+        </h3>
+        <p className="sup-tagline">「やったこと」ではなく「やり方」を直す。</p>
+        <p className="sup-body">
+          週1回、1対1のコーチングを実施する。
+          ただし、振り返りだけで終わらせない。
+          <br />
+          THINKING のコーチングが他と決定的に違うのは、知識を提供しないこと。
+          代わりに、その生徒が「どう読んだか・どう解いたか・なぜそう判断したか」を徹底的に言語化させる。
+          <br />
+          やり方の甘い部分・思考の抜け漏れを、そこで発見し、修正する。
+          書き換えるのは知識ではなく、思考のプロセスそのもの。
+        </p>
+        <ol className="sup-coach-steps">
+          <li>
+            <span className="sup-coach-step-label">STEP 1</span>
+            <strong>数字で振り返る</strong>
+            <span>ロードマップ進捗、自習室滞在時間、達成率 ── すべての数字を一緒に見る。</span>
+          </li>
+          <li>
+            <span className="sup-coach-step-label">STEP 2</span>
+            <strong>来週の計画を1日単位で決める</strong>
+            <span>合格設計図と現在地を照らし、来週やるべきことを1日ずつ確定させる。</span>
+          </li>
+          <li>
+            <span className="sup-coach-step-label">STEP 3</span>
+            <strong>やり方を点検し、書き換える</strong>
+            <span>解き方・読み方・覚え方 ── 思考のプロセスそのものを点検する。ここがTHINKING の核。</span>
+          </li>
+        </ol>
+        <aside className="sup-diff-box" aria-label="THINKINGの差別化">
+          <p className="sup-diff-title">THINKING の差別化ポイント</p>
+          <div className="sup-diff-rows">
+            <div>
+              <span className="sup-diff-label">他塾のコーチング</span>
+              <p>進捗確認と計画立て</p>
+            </div>
+            <div className="sup-diff-highlight">
+              <span className="sup-diff-label">THINKING のコーチング</span>
+              <p>
+                進捗確認 <span className="sup-diff-plus">+</span> 計画立て <span className="sup-diff-plus">+</span>{" "}
+                <em>思考プロセスの修正</em>
+              </p>
+            </div>
+          </div>
+        </aside>
+      </article>
+
+      <article className="sup-block" id="verbalize" aria-labelledby="sup-verb-h">
+        <h3 id="sup-verb-h" className="sup-h3">
+          言語化特訓
+        </h3>
+        <p className="sup-tagline">読めたつもりを、撃ち抜く。</p>
+        <p className="sup-body">
+          多くの生徒が成績を飛躍的に伸ばしてきた、THINKING の看板特訓。
+          <br />
+          英文を解くのではない。解説を聞くのでもない。
+          <br />
+          「どう読んだか・どう判断したか・なぜその選択肢を選んだか」
+          全選択肢に対して、生徒自身が言語化する。
+          甘い部分には、即座にフィードバックが入る。
+          <br />
+          複数の生徒が参加するLIVE形式。緊張感の中で、思考が磨かれる。
+        </p>
+        <ul className="sup-features sup-features--3">
+          <li>
+            <span className="sup-feat-no">01</span>
+            <strong>全選択肢に言語化</strong>
+            <span>「なんとなく」を許さない。すべての選択肢に根拠を持たせる。</span>
+          </li>
+          <li>
+            <span className="sup-feat-no">02</span>
+            <strong>LIVE形式で実施</strong>
+            <span>緊張感のある場で、思考力を鍛える。</span>
+          </li>
+          <li>
+            <span className="sup-feat-no">03</span>
+            <strong>徹底的な復習教材</strong>
+            <span>1つの英文を完全に理解するための解説資料がついてくる。</span>
+          </li>
+        </ul>
+        <a
+          className="sup-sample-card"
+          href="https://thinking-llcarc.github.io/english-lesson/okayama-rika-2023.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="sup-sample-eyebrow">Sample</span>
+          <span className="sup-sample-title">実際の復習用解説資料を見る</span>
+          <span className="sup-sample-arrow" aria-hidden="true">
+            →
+          </span>
+        </a>
+      </article>
+    </div>
+  </section>
+);
+
+/* ─── 1週間の流れ ───────────────────────────────────────── */
+
+const SupportWeekFlow = () => {
+  const days = [
+    {
+      day: "月曜日",
+      icon: "dialog",
+      text: "週次コーチング（60分）── 先週の数字を振り返り、今週の1日単位のタスクを確定。",
+    },
+    {
+      day: "火・水・木曜日",
+      icon: "check",
+      text: "ステージ式ロードマップに沿って学習。分からないは manabo で即解決（24時間対応）。日次シートで進捗を記録。",
+    },
+    {
+      day: "金曜日",
+      icon: "mic",
+      text: "言語化特訓（LIVE）── 緊張感のある場で、思考プロセスを鍛える。",
+    },
+    {
+      day: "土曜日",
+      icon: "pen",
+      text: "週末テスト ── 今週進めた範囲を、数字で証明する。",
+    },
+    {
+      day: "日曜日",
+      icon: "graph",
+      text: "1週間の振り返りシートを記入。来週のコーチングへ。",
+    },
+  ];
+  const icons = {
+    dialog: (
+      <svg viewBox="0 0 32 32" className="sup-wf-icon" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M6 8h20a2 2 0 012 2v10a2 2 0 01-2 2H12l-6 4v-4H6a2 2 0 01-2-2V10a2 2 0 012-2z"
+          opacity="0.9"
+        />
+      </svg>
+    ),
+    check: (
+      <svg viewBox="0 0 32 32" className="sup-wf-icon" aria-hidden="true">
+        <path fill="none" stroke="currentColor" strokeWidth="2" d="M8 16l6 6 10-14" />
+      </svg>
+    ),
+    mic: (
+      <svg viewBox="0 0 32 32" className="sup-wf-icon" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M16 4a4 4 0 014 4v8a4 4 0 11-8 0V8a4 4 0 014-4zm-8 12v2a8 8 0 007 7.93V28h2v-4.07A8 8 0 0024 18v-2h-2v2a6 6 0 11-12 0v-2H8z"
+        />
+      </svg>
+    ),
+    pen: (
+      <svg viewBox="0 0 32 32" className="sup-wf-icon" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M22 4l6 6-14 14H8v-6L22 4zm-2 4L10 18v4h4l10-10-4-4z"
+        />
+      </svg>
+    ),
+    graph: (
+      <svg viewBox="0 0 32 32" className="sup-wf-icon" aria-hidden="true">
+        <path fill="currentColor" d="M4 26h24v2H4zm4-8h3v6H8zm6-6h3v12h-3zm6-8h3v20h-3z" />
+      </svg>
+    ),
+  };
+  return (
+    <section className="sup-weekflow" id="week-flow" aria-labelledby="sup-wf-title">
+      <div className="sup-section-inner">
+        <header className="sup-wf-head">
+          <h2 id="sup-wf-title" className="sup-h2">
+            三層が、1週間でどう動くか。
+          </h2>
+          <p className="sup-lead">
+            設計 → 実行 → 鍛錬 が、実際の1週間でどう統合されるのか。
+            <br />
+            THINKING で過ごす、ある1週間。
+          </p>
+        </header>
+        <ol className="sup-wf-timeline">
+          {days.map((d, i) => (
+            <li key={d.day} className="sup-wf-item">
+              <div className="sup-wf-iconwrap">{icons[d.icon]}</div>
+              <div className="sup-wf-body">
+                <span className="sup-wf-day">{d.day}</span>
+                <p>{d.text}</p>
+              </div>
+              {i < days.length - 1 && <span className="sup-wf-connector" aria-hidden="true" />}
             </li>
           ))}
         </ol>
@@ -80,601 +701,112 @@ const SupportIntro = () => {
   );
 };
 
-/* =====================================================================
- *  Reusable section header for each mechanism
- * ===================================================================== */
+/* ─── 数字 ───────────────────────────────────────────────── */
 
-const MechHead = ({ no, en, jp, title, lead }) => (
-  <header className="mech-head">
-    <div className="mech-head-no">
-      <span className="mech-no"><i>{no}</i></span>
-      <span className="mech-no-line" />
-      <span className="mech-en"><i>{en}</i></span>
-    </div>
-    <span className="mech-jp-tag">{jp}</span>
-    <h2 className="mech-title">{title}</h2>
-    {lead && <p className="mech-lead">{lead}</p>}
-  </header>
-);
-
-/* placeholder image block */
-const ImgPH = ({ label, ratio = "16 / 10", note }) => (
-  <div className="img-ph" style={{ aspectRatio: ratio }}>
-    <div className="img-ph-frame">
-      <span className="img-ph-corner img-ph-tl" />
-      <span className="img-ph-corner img-ph-tr" />
-      <span className="img-ph-corner img-ph-bl" />
-      <span className="img-ph-corner img-ph-br" />
-      <div className="img-ph-body">
-        <span className="img-ph-tag"><i>Image</i></span>
-        <span className="img-ph-label">{label}</span>
-        {note && <span className="img-ph-note">{note}</span>}
-      </div>
-    </div>
-  </div>
-);
-
-/* =====================================================================
- *  01 — Strategy
- * ===================================================================== */
-
-const Mech01Strategy = () => {
-  const steps = [
-    {
-      no: "Step 01",
-      title: "ヒアリング（90分）",
-      desc: "志望学部・現状学力・通学・部活・性格・家庭環境まで。現状を360度から把握します。",
-    },
-    {
-      no: "Step 02",
-      title: "学力診断テスト",
-      desc: "英語・国語・選択科目を実施。模試の点数では見えない、単元別の穴・癖を特定。",
-    },
-    {
-      no: "Step 03",
-      title: "志望学部の合格点を分解",
-      desc: "学部別に「何点取れば受かるか」を明確化。配点・出題形式・時間配分まで分解します。",
-    },
-    {
-      no: "Step 04",
-      title: "個別戦略書の作成",
-      desc: "ギャップを埋める順序・教材・時間配分を、A4 4–6枚の戦略書に。本人と保護者にも共有。",
-    },
+const SupportStats = () => {
+  const stats = [
+    { num: "24", unit: "時間", line1: "質問対応", line2: "(manabo)" },
+    { num: "1", unit: "分", line1: "質問への最速", line2: "対応開始時間" },
+    { num: "1", unit: "回/週", line1: "個別コーチング", line2: "実施" },
+    { num: "毎週末", unit: "", line1: "週末テストで", line2: "弱点を可視化", numClass: "sup-stat-num--jp" },
+    { num: "100", unit: "%", line1: "オリジナル教材", line2: "内製比率（学部別）" },
+    { num: "1", unit: "枚", line1: "入塾時にお渡しする", line2: "合格設計図" },
   ];
-
-  const inputs = [
-    { label: "志望学部", value: "早稲田 商 / 慶應 経済 / 上智 経済" },
-    { label: "残り期間", value: "10ヶ月" },
-    { label: "現状偏差値", value: "英語 58 / 国語 52 / 日本史 49" },
-    { label: "1日学習可能時間", value: "平日 4h / 休日 9h" },
-    { label: "苦手単元", value: "英語長文・古文文法・近現代史" },
-    { label: "性格傾向", value: "完璧主義・先延ばし傾向" },
-  ];
-
   return (
-    <section className="mech-section mech-01" id="strategy">
-      <div className="mech-inner">
-        <MechHead
-          no="01"
-          en="Strategy"
-          jp="戦略設計"
-          title={<>大学・学部別の<br /><em>完全カスタム戦略</em>。</>}
-          lead="受験戦略は、人によってまるで違う。志望学部・現状学力・残り期間・性格——あらゆる変数から、合格点までの最短ルートを個別に設計します。テンプレートは使いません。"
-        />
-
-        {/* 4-step process */}
-        <div className="mech-block">
-          <h3 className="mech-h3">入塾後 14日間で、<em>戦略書</em>を完成させる。</h3>
-          <ol className="mech-steps">
-            {steps.map((s, i) => (
-              <li key={i} className="mech-step">
-                <span className="mech-step-no"><i>{s.no}</i></span>
-                <h4>{s.title}</h4>
-                <p>{s.desc}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-
-        {/* input → output diagram */}
-        <div className="mech-strategy-diag">
-          <div className="strategy-inputs">
-            <span className="strategy-col-label"><i>Inputs / 入力</i></span>
-            <ul>
-              {inputs.map((x, i) => (
-                <li key={i}>
-                  <span className="strategy-input-label">{x.label}</span>
-                  <span className="strategy-input-value">{x.value}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="strategy-arrow" aria-hidden="true">
-            <span className="strategy-arrow-line" />
-            <span className="strategy-arrow-tag"><i>Custom Design</i></span>
-            <span className="strategy-arrow-line" />
-          </div>
-
-          <div className="strategy-output">
-            <span className="strategy-col-label"><i>Output / 戦略書</i></span>
-            <ImgPH
-              label="個別戦略書（A4 4–6ページ）"
-              note="※ 後日、実際の戦略書サンプル画像を差し替え"
-              ratio="3 / 4"
-            />
-          </div>
-        </div>
-
-        <div className="mech-callout">
-          <span className="mech-callout-mark"><i>Quote</i></span>
-          <p>
-            「全範囲を完璧に」は、志望校が決まっていないときの言葉。<br />
-            <em>志望学部が決まった瞬間、やるべきことは半分以下になる。</em>
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* =====================================================================
- *  02 — Curriculum / PDCA
- * ===================================================================== */
-
-const Mech02Curriculum = () => {
-  const pdca = [
-    { letter: "P", en: "Plan", title: "計画", desc: "毎週日曜、翌週のタスクをコーチと一緒に設計。教材・ページ数・所要時間まで。" },
-    { letter: "D", en: "Do", title: "実行", desc: "平日は本人主導で実行。朝のタスク配信、夜の完了報告で進捗を可視化。" },
-    { letter: "C", en: "Check", title: "確認", desc: "週末に達成率・正答率・所要時間をレビュー。コーチが3観点で評価。" },
-    { letter: "A", en: "Act", title: "改善", desc: "未達タスクの原因を分析。翌週の計画に反映。同じ失敗を、二度繰り返させない。" },
-  ];
-
-  return (
-    <section className="mech-section mech-02" id="curriculum">
-      <div className="mech-inner">
-        <MechHead
-          no="02"
-          en="Curriculum"
-          jp="週次PDCA"
-          title={<>1週間単位の精緻な計画と、<br /><em>月次の到達度レビュー</em>。</>}
-          lead="「今週、何をどこまでやるか」が曖昧なまま机に向かう生徒は、必ず迷子になります。THINKING は週ごとにPDCAを回し、毎週月曜の朝、やるべきことが明確な状態でスタートさせます。"
-        />
-
-        {/* PDCA loop */}
-        <div className="mech-block">
-          <h3 className="mech-h3">毎週まわす、<em>4つの動作</em>。</h3>
-          <div className="pdca-grid">
-            {pdca.map((p, i) => (
-              <article key={i} className="pdca-card">
-                <span className="pdca-letter">{p.letter}</span>
-                <span className="pdca-en"><i>{p.en}</i></span>
-                <h4>{p.title}</h4>
-                <p>{p.desc}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        {/* Notion / sheet placeholder + sample numbers */}
-        <div className="mech-block mech-curriculum-grid">
-          <div className="mech-curriculum-img">
-            <ImgPH
-              label="進捗管理シート（Notion）"
-              note="※ 後日、実際の管理画面の画像をここに差し替え"
-              ratio="16 / 10"
-            />
-            <p className="mech-img-cap">
-              タスク・所要時間・達成率・コーチコメントを、1画面に集約。<br />
-              本人・コーチ・保護者の3者が、同じ画面を見ながら走ります。
-            </p>
-          </div>
-
-          <div className="mech-curriculum-stats">
-            <span className="mech-stats-label"><i>Real Numbers / ある生徒の1週間</i></span>
-            <ul className="mech-stats-list">
-              <li>
-                <span className="mech-stats-num">37<i>h</i></span>
-                <span className="mech-stats-jp">週間学習時間</span>
-              </li>
-              <li>
-                <span className="mech-stats-num">42<i>個</i></span>
-                <span className="mech-stats-jp">完了タスク数</span>
-              </li>
-              <li>
-                <span className="mech-stats-num">93<i>%</i></span>
-                <span className="mech-stats-jp">計画達成率</span>
-              </li>
-              <li>
-                <span className="mech-stats-num">4<i>件</i></span>
-                <span className="mech-stats-jp">未達 → 翌週繰越</span>
-              </li>
-            </ul>
-            <p className="mech-stats-note">
-              「やった / やってない」では終わらせない。<br />
-              数字で見続けることで、来週の計画は今週より確実に精緻になります。
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* =====================================================================
- *  03 — Roadmap
- * ===================================================================== */
-
-const Mech03Roadmap = () => {
-  const phases = [
-    { period: "4–6月", phase: "Phase 1", title: "基礎完成期", desc: "英単語・文法・古文単語・選択科目の基礎インプット。「全範囲を一周」が目標。" },
-    { period: "7–8月", phase: "Phase 2", title: "応用演習期", desc: "夏で一気に演習量を稼ぐ。長文・記述・整序問題を週2セットペース。" },
-    { period: "9–10月", phase: "Phase 3", title: "過去問導入期", desc: "第二志望校から過去問着手。出題傾向を体に入れ、戦略を再調整。" },
-    { period: "11–12月", phase: "Phase 4", title: "第一志望対策期", desc: "本命校の過去問を10年分以上。時間配分・捨て問判断まで体得。" },
-    { period: "1–2月", phase: "Phase 5", title: "実戦・本番期", desc: "私大入試→国公立2次の連戦。コンディション管理と最後のミスつぶし。" },
-  ];
-
-  return (
-    <section className="mech-section mech-03" id="roadmap">
-      <div className="mech-inner">
-        <MechHead
-          no="03"
-          en="Roadmap"
-          jp="完全ロードマップ"
-          title={<>合格までの、<br /><em>揺らがない設計図</em>。</>}
-          lead="全範囲をいつ終え、いつ過去問に入るか。受験本番から逆算した5フェーズのロードマップで、生徒は「次に何をやるか」を、いつでも遠くまで見渡せます。"
-        />
-
-        {/* Horizontal timeline */}
-        <div className="mech-block">
-          <h3 className="mech-h3">本番から逆算した、<em>5つのフェーズ</em>。</h3>
-          <div className="roadmap-rail">
-            <div className="roadmap-rail-line" />
-            <ol className="roadmap-phases">
-              {phases.map((p, i) => (
-                <li key={i} className="roadmap-phase" style={{ "--i": i }}>
-                  <span className="roadmap-dot" />
-                  <span className="roadmap-period"><i>{p.period}</i></span>
-                  <span className="roadmap-phase-tag"><i>{p.phase}</i></span>
-                  <h4>{p.title}</h4>
-                  <p>{p.desc}</p>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-
-        <div className="mech-block">
-          <ImgPH
-            label="ロードマップ全体図（科目別×月別）"
-            note="※ 後日、実際の生徒ロードマップ画像をここに差し替え"
-            ratio="21 / 9"
-          />
-          <p className="mech-img-cap">
-            科目ごと・週ごとに、教材と進度を全て可視化。<br />
-            「今、自分は受験全体のどこにいるか」が、一目で分かります。
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* =====================================================================
- *  04 — Quality / 24h Q&A
- * ===================================================================== */
-
-const Mech04Quality = () => {
-  const responseLevels = [
-    { plan: "Basic", time: "24時間以内", desc: "テキストでの返答。担当コーチが確実に対応。" },
-    { plan: "Premium", time: "平均30分", desc: "テキスト＋必要に応じて音声/動画解説。" },
-    { plan: "Elite", time: "即時", desc: "コーチに直電可。複雑な問題も画面共有で即解決。" },
-  ];
-
-  const chatLog = [
-    { from: "student", time: "21:43", text: "この英文の it が指すものが2つあって、どっち取るべきか分かりません…" },
-    { from: "student", time: "21:43", text: "（写真添付）", isImage: true },
-    { from: "coach", time: "22:07", name: "中山コーチ", text: "前文の \"the policy\" が正解。it の直前にある \"the proposal\" は同格で説明している節だから、主語の候補にはなりにくい。" },
-    { from: "coach", time: "22:08", name: "中山コーチ", text: "代名詞は「直前の名詞」じゃなく「直前の主語級の名詞」を取る、を原則にすると外しません。次に同じパターン来たら、構造図書いて送ってみて。" },
-    { from: "student", time: "22:11", text: "なるほど！主語級ですね。今日の長文でもう一度試します🙏" },
-  ];
-
-  return (
-    <section className="mech-section mech-04" id="quality">
-      <div className="mech-inner">
-        <MechHead
-          no="04"
-          en="Quality"
-          jp="24時間質問システム"
-          title={<>「<em>分からない</em>」を、<br />24時間以内に消す。</>}
-          lead="独学の最大の敵は、分からないまま放置することです。THINKING はチャットで講師に直接質問でき、最短即時、遅くとも24時間以内に回答。学習が、止まりません。"
-        />
-
-        {/* Response time matrix */}
-        <div className="mech-block">
-          <h3 className="mech-h3">プラン別、<em>レスポンス品質</em>。</h3>
-          <div className="quality-grid">
-            {responseLevels.map((r, i) => (
-              <article key={i} className="quality-card">
-                <span className="quality-plan"><i>{r.plan}</i></span>
-                <h4 className="quality-time">{r.time}</h4>
-                <p>{r.desc}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-
-        {/* Chat mockup */}
-        <div className="mech-block mech-quality-chat">
-          <div className="chat-frame">
-            <header className="chat-frame-head">
-              <span className="chat-avatar" />
-              <div className="chat-frame-meta">
-                <span className="chat-frame-name">THINKING 質問チャット</span>
-                <span className="chat-frame-sub">担当：中山コーチ（早稲田 商）</span>
-              </div>
-              <span className="chat-frame-status">
-                <span className="status-dot" />Online
-              </span>
-            </header>
-
-            <div className="chat-body">
-              {chatLog.map((m, i) => (
-                <div key={i} className={`chat-row chat-${m.from}`}>
-                  {m.from === "coach" && <span className="chat-name">{m.name}</span>}
-                  <div className={`chat-bubble ${m.isImage ? "is-image" : ""}`}>
-                    {m.isImage ? (
-                      <span className="chat-img-ph">
-                        <i>question_photo.jpg</i>
-                      </span>
-                    ) : (
-                      m.text
-                    )}
-                  </div>
-                  <span className="chat-time">{m.time}</span>
-                </div>
-              ))}
-            </div>
-
-            <footer className="chat-frame-foot">
-              <span className="chat-input-mock">質問を入力…</span>
-              <span className="chat-input-icons">
-                <span>📎</span><span>↗</span>
-              </span>
-            </footer>
-          </div>
-
-          <p className="mech-img-cap mech-img-cap-center">
-            ※ 実際のチャット画面のイメージ。質問数に上限はありません。
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* =====================================================================
- *  05 — Mindset / Weekly 1on1
- * ===================================================================== */
-
-const Mech05Mindset = () => {
-  const agenda = [
-    { time: "0–10分", title: "今週の振り返り", desc: "学習時間・達成率・つまずきポイントを、数字とエピソードの両面から確認。" },
-    { time: "10–25分", title: "つまずきの深掘り", desc: "「なぜ詰まったか」を構造的に分解。本人の言葉で再定義してもらう。" },
-    { time: "25–40分", title: "翌週の計画", desc: "Notion上で翌週タスクを一緒に組み直し。優先順位と所要時間を握る。" },
-    { time: "40–55分", title: "メンタル・体調・生活", desc: "睡眠・食事・部活・家庭関係まで。学習以外もコーチが把握しておく。" },
-    { time: "55–60分", title: "今週のひと言", desc: "コーチから一言メッセージ。Notionにも残し、必要な時に読み返せる形に。" },
-  ];
-
-  return (
-    <section className="mech-section mech-05" id="mindset">
-      <div className="mech-inner">
-        <MechHead
-          no="05"
-          en="Mindset"
-          jp="週次面談"
-          title={<>毎週60分、<br /><em>迷う暇</em>を与えない。</>}
-          lead="独学を1年続けられる人は、ごくわずかです。THINKING は毎週1on1の面談で進捗・悩み・モチベーションを丁寧に管理。一人で抱え込ませず、迷う暇を与えません。"
-        />
-
-        <div className="mech-mindset-grid">
-          {/* Zoom mock */}
-          <div className="mech-mindset-img">
-            <ImgPH
-              label="週次1on1（Zoom）"
-              note="※ 後日、面談の様子の写真をここに差し替え"
-              ratio="16 / 10"
-            />
-            <ul className="mindset-bullets">
-              <li><span className="mindset-bullet-dot" /> 録画は全て蓄積。後から見返し可能。</li>
-              <li><span className="mindset-bullet-dot" /> 議事録は Notion に自動保存。</li>
-              <li><span className="mindset-bullet-dot" /> 保護者の方も、月1回まで同席可。</li>
-            </ul>
-          </div>
-
-          {/* 60-min agenda */}
-          <div className="mech-mindset-agenda">
-            <span className="mindset-agenda-label"><i>60-min Agenda</i></span>
-            <ol className="mindset-agenda-list">
-              {agenda.map((a, i) => (
-                <li key={i}>
-                  <span className="mindset-agenda-time"><i>{a.time}</i></span>
-                  <div className="mindset-agenda-body">
-                    <h4>{a.title}</h4>
-                    <p>{a.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </div>
-        </div>
-
-        <div className="mech-callout">
-          <span className="mech-callout-mark"><i>Quote</i></span>
-          <p>
-            受験は、孤独な戦いです。<br />
-            でも、<em>毎週60分、隣に伴走者がいる</em>だけで、走り方は変わる。
-          </p>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* =====================================================================
- *  06 — Verbalize
- * ===================================================================== */
-
-const Mech06Verbalize = () => {
-  const steps = [
-    { no: "01", title: "解いた直後に、口に出す", desc: "「なぜこの選択肢か」を声に出して、コーチに10秒で説明する。" },
-    { no: "02", title: "詰まったら、書き出す", desc: "言葉にできなかった瞬間が、理解の穴。Notionに「説明できなかったこと」を記録。" },
-    { no: "03", title: "翌週、もう一度説明させる", desc: "1週間後、同じ問題をもう一度、口頭で説明。完全に言語化できれば、本物の理解。" },
-  ];
-
-  return (
-    <section className="mech-section mech-06" id="verbalize">
-      <div className="mech-inner">
-        <MechHead
-          no="06"
-          en="Verbalize"
-          jp="言語化特訓"
-          title={<>説明できない<em>理解</em>は、<br />理解じゃない。</>}
-          lead="「なんとなく解けた」は、本番で必ず崩れます。THINKING は「なぜその答えか」を言葉にする訓練を徹底。理解の解像度を一段引き上げ、初見問題にも対応できる本物の力を育てます。"
-        />
-
-        {/* Before / After */}
-        <div className="mech-block">
-          <h3 className="mech-h3"><em>Before / After</em>。同じ問題、同じ生徒。</h3>
-          <div className="verbalize-ba">
-            <article className="verbalize-card verbalize-before">
-              <span className="verbalize-tag"><i>Before</i></span>
-              <h4>「なんとなく、ウかな…」</h4>
-              <p>消去法で残った気がするから選んだ。説明はできない。次に同じパターンが出ても、また勘で答える。</p>
-              <span className="verbalize-meta">理解の解像度：<i>低</i></span>
-            </article>
-            <span className="verbalize-arrow" aria-hidden="true">→</span>
-            <article className="verbalize-card verbalize-after">
-              <span className="verbalize-tag"><i>After</i></span>
-              <h4>「主節の主語が筆者で、傍線部の it は前段落の policy。だからウ。」</h4>
-              <p>構造から答えを導けている。再現性がある。次に同じ構造の問題が来たら、同じ手順で必ず解ける。</p>
-              <span className="verbalize-meta">理解の解像度：<i>高</i></span>
-            </article>
-          </div>
-        </div>
-
-        {/* 3-step training */}
-        <div className="mech-block">
-          <h3 className="mech-h3">3ステップで、<em>言語化</em>を習慣にする。</h3>
-          <ol className="verbalize-steps">
-            {steps.map((s, i) => (
-              <li key={i}>
-                <span className="verbalize-step-no"><i>{s.no}</i></span>
-                <h4>{s.title}</h4>
-                <p>{s.desc}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-
-        <div className="mech-block">
-          <ImgPH
-            label="言語化ノートの実例"
-            note="※ 後日、生徒の実物のノート画像をここに差し替え"
-            ratio="16 / 10"
-          />
-        </div>
-      </div>
-    </section>
-  );
-};
-
-/* =====================================================================
- *  Interlock — how the 6 mechanisms reinforce each other
- * ===================================================================== */
-
-const SupportInterlock = () => {
-  return (
-    <section className="sup-interlock">
-      <div className="sup-interlock-inner">
-        <span className="eyebrow"><i>One System</i></span>
-        <h2 className="sup-interlock-title">
-          6つは、<em>独立していない</em>。<br />
-          噛み合って、<em>合格</em>を作る。
+    <section className="sup-stats" id="stats" aria-labelledby="sup-stats-title">
+      <div className="sup-section-inner">
+        <h2 id="sup-stats-title" className="sup-h2 sup-h2--center">
+          数字で見る、THINKING のサポート。
         </h2>
-
-        <ImgPH
-          label="6つの仕組みの相関図"
-          note="※ 後日、円環状の関係図を画像で差し替え予定"
-          ratio="16 / 8"
-        />
-
-        <p className="sup-interlock-lead">
-          戦略がなければ、計画は立たない。<br />
-          計画がなければ、ロードマップは描けない。<br />
-          質問できなければ、計画は止まる。<br />
-          面談がなければ、軌道修正できない。<br />
-          言語化がなければ、本番で再現できない。<br />
-          <em>6つ全てが揃ったとき、初めて「合格」は、設計可能になる。</em>
-        </p>
+        <ul className="sup-stats-grid">
+          {stats.map((s) => (
+            <li key={s.line1} className="sup-stat-card">
+              <span className={`sup-stat-num ${s.numClass || ""}`.trim()}>
+                {s.num}
+                {s.unit && <i className="sup-stat-unit">{s.unit}</i>}
+              </span>
+              <span className="sup-stat-lines">
+                <span>{s.line1}</span>
+                <span>{s.line2}</span>
+              </span>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );
 };
 
-/* =====================================================================
- *  Final LINE CTA — local section, mirrors FlowAndCTA
- * ===================================================================== */
+/* ─── FAQ ─────────────────────────────────────────────────── */
 
-const SupportLineCTA = () => (
-  <section className="section line-cta-section" id="contact">
-    <div className="line-cta-photo" aria-hidden="true">
-      <img src="assets/consult-hero.png" alt="" />
-      <div className="line-cta-veil" />
-    </div>
-
-    <div className="line-cta-inner">
-      <div className="line-cta-text">
-        <span className="line-cta-eyebrow">
-          <span className="line-cta-eyebrow-line" />
-          <i>Online Consultation</i>
-        </span>
-
-        <h2 className="line-cta-title">
-          6つの仕組みを、<br />
-          <em>あなたのために</em>動かす。
+const SupportFaq = () => {
+  const qa = [
+    {
+      q: "入塾後すぐに合格設計図はもらえますか?",
+      a: "はい。入塾後の最初の面談で、志望校・現在の学力・残り期間を踏まえて、専属コーチがあなた専用の合格設計図を作成します。最短で当日中、遅くとも1週間以内にお渡しします。",
+    },
+    {
+      q: "志望校を途中で変更したくなった場合は?",
+      a: "問題ありません。THINKING はコース切替制度を採用しており、志望校変更に応じて合格設計図そのものを組み替えます。途中変更で不利になることはありません。",
+    },
+    {
+      q: "オンラインだけで本当に成績は伸びますか?",
+      a: "THINKING は完全オンライン特化型の塾として設計されています。週1コーチング・言語化特訓（LIVE）・24時間質問対応・週末テストまで、すべてオンラインで完結する仕組みです。対面塾と同等以上の学習密度を実現しています。",
+    },
+    {
+      q: "部活動や学校行事との両立はできますか?",
+      a: "はい。合格設計図は生徒一人ひとりの生活リズムに合わせて作成します。部活引退時期や定期テスト期間も考慮した設計が可能です。",
+    },
+    {
+      q: "保護者への報告はありますか?",
+      a: "週次・月次で学習状況のレポートをお送りします。コーチングの内容、進捗状況、達成率まで透明に共有します。",
+    },
+    {
+      q: "体験面談ではどのようなことをしますか?",
+      a: "志望校・現状の学力・残り期間をヒアリングし、その場で合格までの簡易設計図をお見せします。THINKING の三層構造を、実際にイメージしていただけます。",
+    },
+  ];
+  return (
+    <section className="sup-faq" id="faq" aria-labelledby="sup-faq-title">
+      <div className="sup-section-inner sup-faq-inner">
+        <h2 id="sup-faq-title" className="sup-h2 sup-h2--center">
+          よくあるご質問
         </h2>
+        <div className="sup-faq-list">
+          {qa.map((item) => (
+            <details key={item.q} className="sup-faq-item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
 
-        <p className="line-cta-lead">
-          まずは60分の無料オンライン面談で、<br />
-          現状と志望学部に合わせた戦略の概要をお話しします。
-        </p>
+/* ─── CTA ─────────────────────────────────────────────────── */
 
+const SupportFinalCta = () => (
+  <section className="sup-final-cta" id="contact" aria-labelledby="sup-cta-title">
+    <div className="sup-final-cta-grid" aria-hidden="true" />
+    <div className="sup-section-inner sup-final-cta-inner">
+      <h2 id="sup-cta-title" className="sup-final-cta-title">
+        「頑張る」を、「合格する」に変える。
+      </h2>
+      <p className="sup-final-cta-lead">合格までの設計図、まずは無料でお見せします。</p>
+      <div className="sup-final-cta-btns">
         <a
-          className="line-cta-button"
+          className="sup-cta-primary"
           href={window.THINKING_LINE_LIFF_URL}
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span className="line-cta-button-icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M16 4C8.27 4 2 9.06 2 15.3c0 5.6 4.97 10.27 11.7 11.15.45.1 1.07.3 1.23.7.14.36.09.92.04 1.28l-.2 1.2c-.06.36-.28 1.4 1.23.76 1.5-.63 8.1-4.78 11.05-8.18C29.1 19.78 30 17.65 30 15.3 30 9.06 23.73 4 16 4Z"
-                fill="currentColor"
-              />
-            </svg>
-          </span>
-          <span className="line-cta-button-label">LINEで無料相談</span>
-          <svg className="arrow" viewBox="0 0 16 16" fill="none">
-            <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
-          </svg>
+          無料体験面談に申し込む
         </a>
-
-        <p className="line-cta-note">
-          <span><i>全国オンライン対応</i></span>
-          <span className="sep">/</span>
-          <span><i>初回相談 60分・無料</i></span>
-        </p>
+        <a className="sup-cta-secondary" href="/products">
+          資料を請求する
+        </a>
       </div>
     </div>
   </section>

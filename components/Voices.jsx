@@ -125,18 +125,6 @@ const Voices = () => {
             <span className="corner tl" /><span className="corner tr" />
             <span className="corner bl" /><span className="corner br" />
           </div>
-          {!v.pending && (
-            <div className="voice-thumb-play">
-              <svg viewBox="0 0 56 56" fill="none">
-                <circle cx="28" cy="28" r="27" stroke="currentColor" strokeWidth="1" fill="rgba(10,9,7,0.55)" />
-                <path d="M22 18v20l16-10z" fill="currentColor" />
-              </svg>
-            </div>
-          )}
-          <span className="voice-duration">{v.duration}</span>
-          <span className="voice-index">
-            <i>{v.no}</i> / {String(voices.length).padStart(2, "0")}
-          </span>
         </div>
         <div className="voice-info">
           <h4 className="voice-headline">{v.headline}</h4>

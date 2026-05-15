@@ -68,8 +68,9 @@ const SupportHero = () => (
               「<em className="sup-hero-lead-em">設計する。実行する。鍛える。</em>」
             </span>
             <span className="sup-hero-lead-body">
-              THINKING の<span className="sup-hero-accent">三層</span>
-              が、合格までの全体行程を一枚の合格設計図イメージにし、日々の実行と思考力まで、同じロジックで整え続ける。
+              THINKING の<span className="sup-hero-accent">三層</span>が、合格までの全体行程を
+              <br />
+              一枚の合格設計図イメージにし、日々の実行と思考力まで、同じロジックで整え続ける。
             </span>
           </p>
           <div className="sup-hero-ctas">

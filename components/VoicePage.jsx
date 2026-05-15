@@ -8,11 +8,18 @@ const VoicePage = () => {
   const [activeIdx, setActiveIdx] = React.useState(0);
   const active = interviews[activeIdx];
   const videoUrl = active.id ? `https://youtu.be/${active.id}` : null;
-  const thumbStyle = active.pending
-    ? { background: "var(--bg-2)" }
-    : {
-        backgroundImage: `url('${active.thumb || `https://i.ytimg.com/vi/${active.id}/hqdefault.jpg`}')`,
-      };
+  const thumbImage = active.thumb
+    ? `url('${active.thumb}')`
+    : active.id
+      ? `url('https://i.ytimg.com/vi/${active.id}/hqdefault.jpg')`
+      : null;
+  const thumbStyle = thumbImage
+    ? {
+        backgroundImage: thumbImage,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }
+    : { background: "var(--bg-2)" };
 
   return (
     <>
@@ -36,10 +43,10 @@ const VoicePage = () => {
             模試の朝、参考書を閉じた夜、誰にも言えなかった不安。<br />
             THINKINGを選んだ卒業生たちの、本当の言葉を聞いてください。
           </p>
-          <div className="voice-hero-scroll">
-            <span>Scroll</span>
-            <span className="voice-hero-scroll-line" />
-          </div>
+        </div>
+        <div className="voice-hero-scroll" aria-hidden="true">
+          <span>Scroll</span>
+          <span className="voice-hero-scroll-line" />
         </div>
       </section>
 
@@ -84,34 +91,23 @@ const VoicePage = () => {
                     aria-label={`${active.name}をYouTubeで開く`}
                   >
                     <div className="featured-video-grain" />
-                    <button className="featured-play" aria-label="動画を再生" tabIndex={-1}>
-                      <svg viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
-                    </button>
-                    <div className="featured-video-meta">
-                      <span className="featured-duration"><i>No. {active.no}</i></span>
-                      <span className="featured-tag">{active.tag}</span>
-                    </div>
-                    <div className="featured-name-overlay">
-                      <span className="featured-en"><i>{active.en}</i></span>
-                      <span className="featured-name">{active.name}</span>
-                    </div>
                   </a>
                 ) : (
-                  <div className="featured-video-thumb is-pending" style={thumbStyle} aria-label={`${active.name}は準備中です`}>
+                  <div
+                    className={`featured-video-thumb is-pending${active.thumb ? " has-thumb" : ""}`}
+                    style={thumbStyle}
+                    aria-label={`${active.name}は準備中です`}
+                  >
                     <div className="featured-video-grain" />
                     <div className="featured-pending-label">
-                      <span className="featured-pending-en"><i>Coming Soon</i></span>
-                      <span className="featured-pending-jp">公開準備中</span>
-                    </div>
-                    <div className="featured-video-meta">
-                      <span className="featured-duration"><i>No. {active.no}</i></span>
-                      <span className="featured-tag">{active.tag}</span>
-                    </div>
-                    <div className="featured-name-overlay">
-                      <span className="featured-en"><i>{active.en}</i></span>
-                      <span className="featured-name">{active.name}</span>
+                      {active.thumb ? (
+                        <span className="featured-pending-jp">動画公開準備中</span>
+                      ) : (
+                        <>
+                          <span className="featured-pending-en"><i>Coming Soon</i></span>
+                          <span className="featured-pending-jp">公開準備中</span>
+                        </>
+                      )}
                     </div>
                   </div>
                 )}

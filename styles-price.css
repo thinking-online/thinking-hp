@@ -155,35 +155,25 @@
   margin: 0 0 20px;
 }
 
-.support-hub-notes {
+.support-hub-highlights {
   list-style: none;
-  margin: 0 0 28px;
+  margin: 0 0 22px;
   padding: 0;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
 }
-.support-hub-notes li {
+.support-hub-highlights li {
   font-family: var(--serif-jp);
   font-size: 12px;
-  letter-spacing: 0.06em;
-  color: var(--ink-1);
-  padding: 10px 14px;
-  border: 1px solid var(--line-strong);
-  background: rgba(255, 255, 255, 0.02);
-  position: relative;
-  padding-left: 28px;
-}
-.support-hub-notes li::before {
-  content: "";
-  position: absolute;
-  left: 14px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--ink-0);
+  text-align: center;
+  padding: 14px 12px;
+  border: 1px solid rgba(200, 168, 104, 0.35);
+  background: rgba(200, 168, 104, 0.08);
+  line-height: 1.5;
 }
 
 .support-hub-cta {
@@ -634,6 +624,9 @@
     padding: 32px 24px;
   }
   .support-hub-list {
+    grid-template-columns: 1fr;
+  }
+  .support-hub-highlights {
     grid-template-columns: 1fr;
   }
   .price-form { padding: 32px 24px; }

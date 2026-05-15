@@ -2,8 +2,8 @@
 const PricePage = () => {
   const supportItems = [
     { label: "全体学習コーチング", freq: "週2回" },
-    { label: "英語言語化特訓", freq: "週1回" },
-    { label: "個別コーチング", freq: "週1回" },
+    { label: "英語言語化特訓", freq: "週1回〜" },
+    { label: "個別コーチング", freq: "週1回〜" },
     { label: "合格設計図の作成" },
     { label: "学部別特化サポート" },
     { label: "ステージ式ロードマップ" },
@@ -52,12 +52,11 @@ const PricePage = () => {
   ];
 
   const paymentFaqs = [
-    { q: "37,000円〜とは、どういう意味ですか？", a: "志望学部・残り期間・科目数によって最適な学習設計が変わるため、月額は37,000円からの目安です。無料相談でヒアリングしたうえで、あなたに必要なサポート内容と料金をその場でご提示します。料金表から選ぶ必要はありません。" },
-    { q: "1科目だけでも入塾できますか？", a: "可能です。英語のみ、数学のみなど、科目単位でのスタートにも対応しています。まずは無料相談で、現状と志望に合わせた設計をご提案します。" },
-    { q: "兄弟姉妹割引はありますか？", a: "ございます。同時受講の場合、2人目以降は月額料金から10,000円を割引します。詳細は無料相談時にご案内します。" },
+    { q: "37,000円〜とは、どういう意味ですか？", a: "志望学部・残り期間・科目数、強化したいサポートによって最適な学習設計が変わるため、月額は37,000円からの目安です。無料相談でヒアリングしたうえで、あなたに最適な内容と料金をご提案します。強引な勧誘は一切ありません。THINKINGは人数を絞り、一人ひとりに向き合うための塾です。" },
+    { q: "1科目だけでも入塾できますか？", a: "可能です。私立文系受験に合わせ、英語のみ、日本史のみなど、科目単位でのスタートにも対応しています。まずは無料相談で、現状と志望に合わせた設計をご提案します。" },
+    { q: "兄弟姉妹割引はありますか？", a: "ございます。同時受講の場合に適用されます。詳細は無料相談時にご案内します。" },
     { q: "支払い方法は？", a: "クレジットカード（VISA / Mastercard / JCB / AMEX）、銀行振込のいずれか。月払いまたは年一括払いをお選びいただけます。" },
-    { q: "途中解約はできますか？", a: "可能です。月単位での解約が可能で、違約金はかかりません。次月の引き落とし日の7日前までにご連絡ください。" },
-    { q: "教育ローンは使えますか？", a: "提携教育ローン（オリコ・ジャックス）をご利用いただけます。年率は3.5%〜。詳細は無料相談時にご案内します。" },
+    { q: "途中解約はできますか？", a: "可能です。契約書の規定に基づき、解約月の10日23:59までに所定のフォームへご回答をお願いしています。" },
   ];
 
   return (
@@ -66,7 +65,7 @@ const PricePage = () => {
         en="Pricing / How to Begin"
         eyebrow="料金・入塾まで"
         jp={<>私立文系合格に必要なことを、<em>すべて</em>詰め込みます。</>}
-        lead="料金表から選ぶのではなく、THINKINGサポートというひとつの設計で、合格まで伴走します。まずは無料相談で、あなたの志望と学習量に合わせたプランを一緒に組み立てましょう。"
+        lead="一人の生徒に担当コーチをつけて徹底的に伴走します。まずは無料相談で、あなたの志望と学習量に合わせたプランを一緒に組み立てましょう。"
         bgImage="assets/campus-02.png"
       />
 
@@ -80,7 +79,8 @@ const PricePage = () => {
             </h2>
             <p className="price-section-lead">
               コーチング、英語特訓、設計図、自習室、質問対応まで。<br />
-              私立文系合格に必要なことを、ひとつにまとめました。
+              現状の学力や志望校とのギャップ、強化したいサポートによって設計は変わります。<br />
+              まずはご気軽にご相談・お問い合わせください。
             </p>
           </div>
 
@@ -99,16 +99,15 @@ const PricePage = () => {
                 <span className="support-hub-price-from">〜</span>
               </div>
 
-              <p className="support-hub-lead">
-                志望学部・残り期間・科目数に合わせて設計します。
-                37,000円に「何が入っているか」を探すのではなく、
-                あなたの合格に必要なサポートを、最初からすべて含めます。
-              </p>
-
-              <ul className="support-hub-notes">
-                <li>1科目から入塾可能</li>
-                <li>兄弟姉妹割引あり（2人目以降 月額10,000円割引）</li>
+              <ul className="support-hub-highlights" aria-label="THINKINGサポートの特徴">
+                <li>1科目から始められる</li>
+                <li>私立文系専門サポート</li>
               </ul>
+
+              <p className="support-hub-lead">
+                現状の学力や志望校とのギャップ、強化したいサポートによって、
+                設計と料金は変わります。まずはご気軽にご相談・お問い合わせください。
+              </p>
 
               <a href="#apply" className="cta support-hub-cta">
                 無料相談で設計を聞く
@@ -198,10 +197,7 @@ const PricePage = () => {
                   <text x="16" y="17.5" textAnchor="middle" fontFamily="Helvetica, Arial, sans-serif" fontSize="6.5" fontWeight="700" fill="#0a0907" letterSpacing="0.05em">LINE</text>
                 </svg>
               </span>
-              <span className="line-cta-button-label">
-                <span className="line-cta-button-jp">LINEで無料相談</span>
-                <span className="line-cta-button-en"><i>Add Friend & Start</i></span>
-              </span>
+              <span className="line-cta-button-label">LINEで無料相談</span>
               <svg className="arrow" viewBox="0 0 16 16" fill="none">
                 <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
               </svg>

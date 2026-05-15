@@ -16,7 +16,7 @@ const SiteFooter = () => {
             志望学部 / 現状 / お悩みをお聞かせください。<br />
             60分のオンライン面談で、合格までの設計図をその場でお渡しします。
           </p>
-          <a href="https://line.me/R/ti/p/@thinking" target="_blank" rel="noopener noreferrer" className="cta footer-cta">
+          <a href={window.THINKING_LINE_LIFF_URL} target="_blank" rel="noopener noreferrer" className="cta footer-cta">
             LINEで無料相談
             <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M5 12h14M13 5l7 7-7 7" />
@@ -98,7 +98,7 @@ const SiteFooter = () => {
               <li><a href="founder.html">代表紹介</a></li>
               <li><a href="faq.html">よくある質問</a></li>
               <li><a href="blog.html">記事一覧</a></li>
-              <li><a href="https://line.me/R/ti/p/@thinking" target="_blank" rel="noopener noreferrer">無料相談予約</a></li>
+              <li><a href={window.THINKING_LINE_LIFF_URL} target="_blank" rel="noopener noreferrer">無料相談予約</a></li>
             </ul>
           </div>
 

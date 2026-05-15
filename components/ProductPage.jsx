@@ -38,7 +38,7 @@
 //   stickyPrice: <jsx>,
 // }
 const ProductPage = ({ data }) => {
-  const LINE_URL = "https://line.me/R/ti/p/@thinking";
+  const LINE_URL = window.THINKING_LINE_LIFF_URL;
   const SNS_INSTAGRAM = "https://www.instagram.com/king_of_juken/?hl=ja";
   const SNS_YOUTUBE_TETTA = "https://www.youtube.com/@tetta-waseda-channel";
   const SNS_YOUTUBE_THINKING = "https://www.youtube.com/@all-day-thinking";

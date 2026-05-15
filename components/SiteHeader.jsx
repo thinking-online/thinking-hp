@@ -52,7 +52,7 @@ const SiteHeader = ({ current = "" }) => {
           </nav>
 
           <div className="site-header-cta">
-            <a href="https://line.me/R/ti/p/@thinking" target="_blank" rel="noopener noreferrer" className="header-cta">
+            <a href={window.THINKING_LINE_LIFF_URL} target="_blank" rel="noopener noreferrer" className="header-cta">
               <span className="header-cta-en"><i>LINE</i></span>
               <span className="header-cta-jp">無料相談</span>
               <svg className="header-cta-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -92,7 +92,7 @@ const SiteHeader = ({ current = "" }) => {
               </li>
             ))}
           </ul>
-          <a href="https://line.me/R/ti/p/@thinking" target="_blank" rel="noopener noreferrer" className="cta site-drawer-cta" onClick={() => setOpen(false)}>
+          <a href={window.THINKING_LINE_LIFF_URL} target="_blank" rel="noopener noreferrer" className="cta site-drawer-cta" onClick={() => setOpen(false)}>
             LINEで無料相談
             <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M5 12h14M13 5l7 7-7 7" />

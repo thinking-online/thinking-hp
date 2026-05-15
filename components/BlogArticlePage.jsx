@@ -221,7 +221,7 @@ const BlogArticlePage = () => {
               </h3>
               <p className="article-cta-lead">30〜45分のオンライン面談で、その場でお渡しします。</p>
               <a
-                href="https://line.me/R/ti/p/@thinking"
+                href={window.THINKING_LINE_LIFF_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="cta cta-large"

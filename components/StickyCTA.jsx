@@ -42,7 +42,7 @@ const StickyCTA = () => {
       {open ? (
         <a
           className="sticky-cta-card"
-          href="https://line.me/R/ti/p/@thinking"
+          href={window.THINKING_LINE_LIFF_URL}
           target="_blank"
           rel="noopener noreferrer"
         >

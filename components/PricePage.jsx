@@ -272,7 +272,7 @@ const PricePage = () => {
 
             <a
               className="line-cta-button"
-              href="https://line.me/R/ti/p/@thinking"
+              href={window.THINKING_LINE_LIFF_URL}
               target="_blank"
               rel="noopener noreferrer"
             >

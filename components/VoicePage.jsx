@@ -270,7 +270,7 @@ const VoicePage = () => {
             「迷いながらも、毎日進み続けた」その記録です。<br />
             あなたの志望学部にも、同じ物語を。
           </p>
-          <a href="https://line.me/R/ti/p/@thinking" target="_blank" rel="noopener noreferrer" className="cta">
+          <a href={window.THINKING_LINE_LIFF_URL} target="_blank" rel="noopener noreferrer" className="cta">
             LINEで無料相談
             <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M5 12h14M13 5l7 7-7 7" />

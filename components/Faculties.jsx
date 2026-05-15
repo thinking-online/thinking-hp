@@ -127,8 +127,8 @@ const Faculties = () => {
           <div className="faculties-banner-img" style={{ backgroundImage: "url('assets/campus-04.png')" }} />
           <div className="faculties-banner-overlay" />
           <div className="faculties-banner-text">
-            <span className="faculties-banner-en">Where you walk, four years from now.</span>
-            <span className="faculties-banner-jp">あなたが、4年後に歩く場所。</span>
+            <span className="faculties-banner-en">First choice. Alma mater.</span>
+            <span className="faculties-banner-jp">第一志望を、母校に。</span>
           </div>
         </div>
 

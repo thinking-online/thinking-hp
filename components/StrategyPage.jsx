@@ -1,6 +1,72 @@
 // Strategy page — proves "same university, different exam" via real 大問 teardown,
 // then walks through THINKING's 過去問分析シート process.
+const STRATEGY_COMPARE_NUDGE_KEY = "thinking-strategy-compare-nudge-v1";
+
 const StrategyPage = () => {
+  const compareTrackRef = React.useRef(null);
+  const [compareActiveIdx, setCompareActiveIdx] = React.useState(0);
+
+  const updateCompareActive = React.useCallback(() => {
+    const track = compareTrackRef.current;
+    if (!track) return;
+    const cols = track.querySelectorAll(".compare-col");
+    if (cols.length < 2) return;
+    const gap = 14;
+    const w0 = cols[0].offsetWidth + gap;
+    const threshold = w0 * 0.45;
+    setCompareActiveIdx(track.scrollLeft > threshold ? 1 : 0);
+  }, []);
+
+  const scrollCompareTo = React.useCallback((idx) => {
+    const track = compareTrackRef.current;
+    if (!track) return;
+    const cols = track.querySelectorAll(".compare-col");
+    const target = cols[idx];
+    if (!target) return;
+    const pad = parseFloat(getComputedStyle(track).paddingLeft) || 0;
+    track.scrollTo({ left: target.offsetLeft - pad, behavior: "smooth" });
+  }, []);
+
+  React.useEffect(() => {
+    const track = compareTrackRef.current;
+    if (!track) return;
+    updateCompareActive();
+    track.addEventListener("scroll", updateCompareActive, { passive: true });
+    window.addEventListener("resize", updateCompareActive);
+    return () => {
+      track.removeEventListener("scroll", updateCompareActive);
+      window.removeEventListener("resize", updateCompareActive);
+    };
+  }, [updateCompareActive]);
+
+  /* モバイルのみ：初回だけごく短く横に動かし「スワイプできる」ことを示す（reduce 時は無効） */
+  React.useEffect(() => {
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+    let t0;
+    let t1;
+    let t2;
+    const schedule = () => {
+      const mq = window.matchMedia("(max-width: 1100px)");
+      const track = compareTrackRef.current;
+      if (!track || !mq.matches || reduce.matches) return;
+      if (track.scrollWidth <= track.clientWidth + 8) return;
+      if (window.sessionStorage.getItem(STRATEGY_COMPARE_NUDGE_KEY)) return;
+      const nudge = 36;
+      t1 = window.setTimeout(() => {
+        track.scrollBy({ left: nudge, behavior: "smooth" });
+      }, 900);
+      t2 = window.setTimeout(() => {
+        track.scrollBy({ left: -nudge, behavior: "smooth" });
+        window.sessionStorage.setItem(STRATEGY_COMPARE_NUDGE_KEY, "1");
+      }, 2200);
+    };
+    t0 = window.setTimeout(schedule, 200);
+    return () => {
+      window.clearTimeout(t0);
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+    };
+  }, []);
   // Side-by-side teardown: same uni (明治大), same subject (英語), totally different exam.
   const compare = {
     left: {
@@ -169,18 +235,52 @@ const StrategyPage = () => {
             </p>
           </header>
 
-          <p className="compare-swipe-hint">
-            <span>左右にスワイプ</span>して、経営と文学を並べて比較できます。
-          </p>
+          <div className="compare-grid-outer">
+            <p className="compare-swipe-hint">
+              <span className="compare-swipe-hint-chev compare-swipe-hint-chev--left" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M15 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+              <span className="compare-swipe-hint-text">
+                <strong>横にスワイプ</strong>
+                <span className="compare-swipe-hint-sub">右端に文学部が少し見えます</span>
+              </span>
+              <span className="compare-swipe-hint-chev compare-swipe-hint-chev--right" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+                  <path d="M9 6l6 6-6 6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </span>
+            </p>
 
-          <div className="compare-grid">
-            <CompareColumn data={compare.left} />
-            <span className="compare-vs" aria-hidden="true">
-              <span className="vs-line" />
-              <span className="vs-text">VS</span>
-              <span className="vs-line" />
-            </span>
-            <CompareColumn data={compare.right} />
+            <div className="compare-grid" ref={compareTrackRef}>
+              <CompareColumn data={compare.left} />
+              <span className="compare-vs" aria-hidden="true">
+                <span className="vs-line" />
+                <span className="vs-text">VS</span>
+                <span className="vs-line" />
+              </span>
+              <CompareColumn data={compare.right} />
+            </div>
+
+            <div className="compare-scroll-controls" role="group" aria-label="比較パネルの切替">
+              <button
+                type="button"
+                className={`compare-jump ${compareActiveIdx === 0 ? "active" : ""}`}
+                aria-pressed={compareActiveIdx === 0}
+                onClick={() => scrollCompareTo(0)}
+              >
+                経営学部
+              </button>
+              <button
+                type="button"
+                className={`compare-jump ${compareActiveIdx === 1 ? "active" : ""}`}
+                aria-pressed={compareActiveIdx === 1}
+                onClick={() => scrollCompareTo(1)}
+              >
+                文学部
+              </button>
+            </div>
           </div>
 
           <div className="compare-footnote">
@@ -272,7 +372,7 @@ const StrategyPage = () => {
             申込時に志望大学・学部をお知らせください。相談当日までに過去問を解析し、<br />
             「あなたが、いま、どの大問でどれだけ伸ばせるか」を、シートにしてお渡しします。
           </p>
-          <a href="https://line.me/R/ti/p/@thinking" target="_blank" rel="noopener noreferrer" className="cta">
+          <a href={window.THINKING_LINE_LIFF_URL} target="_blank" rel="noopener noreferrer" className="cta">
             無料相談で、自分の過去問を解体する
             <svg className="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
               <path d="M5 12h14M13 5l7 7-7 7" />

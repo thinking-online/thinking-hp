@@ -41,8 +41,28 @@
   scroll-padding-left: clamp(20px, 5vw, 48px);
 }
 .voices-track::-webkit-scrollbar { display: none; }
+.voices-track:not(.is-ready) {
+  visibility: hidden;
+}
+.voices-track.is-ready {
+  visibility: visible;
+}
 .voices-track--desktop {
   cursor: default;
+}
+
+/* PC — 1・2・3本目が同時に見える幅 */
+@media (min-width: 769px) {
+  .voices-track {
+    --voices-gap: clamp(16px, 2vw, 28px);
+    scroll-snap-type: proximity;
+    padding-right: calc(
+      100% - (100% - 2 * var(--voices-gap)) / 3 - clamp(20px, 5vw, 48px)
+    );
+  }
+  .voice-card {
+    flex: 0 0 calc((100% - 2 * var(--voices-gap)) / 3);
+  }
 }
 .voices-track.dragging {
   cursor: grabbing;

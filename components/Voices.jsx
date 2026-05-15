@@ -21,7 +21,6 @@ const Voices = () => {
     if (!count) return [];
     const wrap = (v, key) => ({ ...v, _key: key });
     return [
-      wrap(voices[count - 1], "clone-start"),
       ...voices.map((v, i) => wrap(v, `item-${i}`)),
       wrap(voices[0], "clone-end"),
     ];
@@ -29,16 +28,14 @@ const Voices = () => {
 
   const trackRef = React.useRef(null);
   const jumpingRef = React.useRef(false);
-  const [activeDomIdx, setActiveDomIdx] = React.useState(1);
+  const initializedRef = React.useRef(false);
+  const [trackReady, setTrackReady] = React.useState(false);
+  const [activeDomIdx, setActiveDomIdx] = React.useState(0);
   const [isDesktop, setIsDesktop] = React.useState(() =>
     typeof window !== "undefined" && window.matchMedia("(min-width: 769px)").matches
   );
 
-  const realIdxFromDom = (domIdx) => {
-    if (domIdx <= 0) return count - 1;
-    if (domIdx >= count + 1) return 0;
-    return domIdx - 1;
-  };
+  const realIdxFromDom = (domIdx) => (domIdx >= count ? 0 : domIdx);
 
   const activeIdx = realIdxFromDom(activeDomIdx);
 
@@ -59,27 +56,44 @@ const Voices = () => {
       Math.max(0, card.offsetLeft - pad),
       el.scrollWidth - el.clientWidth
     );
-    el.scrollTo({ left: target, behavior: smooth ? "smooth" : "auto" });
+    if (smooth) {
+      el.scrollTo({ left: target, behavior: "smooth" });
+    } else {
+      el.scrollLeft = target;
+    }
   }, [count]);
+
+  const initToStart = React.useCallback(() => {
+    const el = trackRef.current;
+    if (!el || !count) return false;
+    jumpingRef.current = true;
+    scrollToDom(0, false);
+    setActiveDomIdx(0);
+    initializedRef.current = true;
+    jumpingRef.current = false;
+    setTrackReady(true);
+    return true;
+  }, [count, scrollToDom]);
 
   const scrollToReal = React.useCallback(
     (realIdx, smooth = true) => {
-      scrollToDom(realIdx + 1, smooth);
+      scrollToDom(realIdx, smooth);
     },
     [scrollToDom]
   );
 
   const getNearestDomIdx = React.useCallback(() => {
     const el = trackRef.current;
-    if (!el) return 1;
+    if (!el) return 0;
     const cards = el.querySelectorAll(".voice-card");
-    if (!cards.length) return 1;
+    if (!cards.length) return 0;
 
+    const pad = parseFloat(getComputedStyle(el).scrollPaddingLeft) || 0;
     const trackLeft = el.scrollLeft;
-    let nearestIdx = 1;
+    let nearestIdx = 0;
     let nearestDist = Infinity;
     cards.forEach((card, i) => {
-      const dist = Math.abs(card.offsetLeft - trackLeft);
+      const dist = Math.abs(card.offsetLeft - pad - trackLeft);
       if (dist < nearestDist) {
         nearestDist = dist;
         nearestIdx = i;
@@ -90,43 +104,59 @@ const Voices = () => {
 
   const repositionIfOnClone = React.useCallback(() => {
     const el = trackRef.current;
-    if (!el || !count || jumpingRef.current) return;
+    if (!el || !count || jumpingRef.current || !initializedRef.current) return;
 
     const domIdx = getNearestDomIdx();
-    if (domIdx !== 0 && domIdx !== count + 1) return;
+    if (domIdx !== count) return;
 
     jumpingRef.current = true;
-    const targetDom = domIdx === 0 ? count : 1;
     el.style.scrollBehavior = "auto";
-    scrollToDom(targetDom, false);
+    scrollToDom(0, false);
     el.style.scrollBehavior = "";
-    setActiveDomIdx(targetDom);
+    setActiveDomIdx(0);
     requestAnimationFrame(() => {
       jumpingRef.current = false;
     });
   }, [count, getNearestDomIdx, scrollToDom]);
 
   const updateScrollState = React.useCallback(() => {
-    if (jumpingRef.current || !count) return;
+    if (jumpingRef.current || !count || !initializedRef.current) return;
 
     const domIdx = getNearestDomIdx();
     setActiveDomIdx(domIdx);
 
-    if (domIdx === 0 || domIdx === count + 1) {
+    if (domIdx === count) {
       requestAnimationFrame(repositionIfOnClone);
     }
   }, [count, getNearestDomIdx, repositionIfOnClone]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (!count) return;
-    scrollToDom(1, false);
-    setActiveDomIdx(1);
-  }, [count, scrollToDom]);
+    initializedRef.current = false;
+    setTrackReady(false);
+
+    const run = () => initToStart();
+    if (!run()) return;
+
+    const el = trackRef.current;
+    if (!el) return;
+
+    const ro = new ResizeObserver(() => {
+      if (!initializedRef.current) run();
+    });
+    ro.observe(el);
+
+    const imgs = el.querySelectorAll("img");
+    imgs.forEach((img) => {
+      if (!img.complete) img.addEventListener("load", run, { once: true });
+    });
+
+    return () => ro.disconnect();
+  }, [count, initToStart]);
 
   React.useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
-    updateScrollState();
     el.addEventListener("scroll", updateScrollState, { passive: true });
     el.addEventListener("scrollend", repositionIfOnClone);
     window.addEventListener("resize", updateScrollState);
@@ -142,22 +172,22 @@ const Voices = () => {
     const domIdx = getNearestDomIdx();
 
     if (dir === 1) {
-      if (domIdx >= count) {
+      if (domIdx >= count - 1) {
         const el = trackRef.current;
         const cards = el?.querySelectorAll(".voice-card");
-        const cloneEnd = cards?.[count + 1];
+        const cloneEnd = cards?.[count];
         if (el && cloneEnd) {
           const pad = parseFloat(getComputedStyle(el).scrollPaddingLeft) || 0;
           const cloneTarget = cloneEnd.offsetLeft - pad;
           const maxScroll = el.scrollWidth - el.clientWidth;
           if (cloneTarget <= maxScroll + 4) {
-            scrollToDom(count + 1, true);
+            scrollToDom(count, true);
             return;
           }
         }
         jumpingRef.current = true;
-        scrollToDom(1, false);
-        setActiveDomIdx(1);
+        scrollToDom(0, false);
+        setActiveDomIdx(0);
         requestAnimationFrame(() => {
           jumpingRef.current = false;
         });
@@ -167,8 +197,13 @@ const Voices = () => {
       return;
     }
 
-    if (domIdx <= 1) {
-      scrollToDom(0, true);
+    if (domIdx <= 0) {
+      jumpingRef.current = true;
+      scrollToDom(count - 1, false);
+      setActiveDomIdx(count - 1);
+      requestAnimationFrame(() => {
+        jumpingRef.current = false;
+      });
       return;
     }
     scrollToDom(domIdx - 1, true);
@@ -298,7 +333,7 @@ const Voices = () => {
           </button>
 
           <div
-            className={`voices-track${isDesktop ? " voices-track--desktop" : ""}`}
+            className={`voices-track${isDesktop ? " voices-track--desktop" : ""}${trackReady ? " is-ready" : ""}`}
             ref={trackRef}
           >
             {loopedVoices.map((v, i) => renderCard(v, i))}

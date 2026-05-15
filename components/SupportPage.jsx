@@ -6,11 +6,13 @@ const ASSETS = {
   masterPlan: "assets/support-master-plan.png",
   workbook: "assets/products-series-4parts-overview.png",
   stepRoadmap: "assets/support-step-roadmap.png",
-  sheetWeekly: "assets/support-sheet-weekly-tasks.png",
-  sheetDaily: "assets/support-sheet-daily-time.png",
+  sheetDaily: "assets/support-sheet-daily.png",
+  sheetWeeklyPeriod: "assets/support-sheet-weekly-period.png",
   sheetSummary: "assets/support-sheet-weekly-summary.png",
-  sheetPeriod: "assets/support-sheet-period-tasks.png",
+  weekendTest: "assets/support-weekend-test.png",
 };
+
+const MANABO_VIDEO_URL = "https://utage-system.com/video/bxIu94uAdf1y";
 
 const SupportPage = () => (
   <>
@@ -21,7 +23,6 @@ const SupportPage = () => (
     <SupportLayerExecute />
     <SupportLayerTrain />
     <SupportWeekFlow />
-    <SupportStats />
     <SupportFaq />
     <SupportFinalCta />
   </>
@@ -63,7 +64,6 @@ const SupportStickyNav = () => {
     { href: "#layer-execute", label: "実行" },
     { href: "#layer-train", label: "鍛錬" },
     { href: "#week-flow", label: "1週間" },
-    { href: "#stats", label: "数字" },
     { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "面談" },
   ];
@@ -247,9 +247,7 @@ const SupportMasterPlanMedia = () => {
         >
           <img
             src={ASSETS.masterPlan}
-            alt="実際の合格設計図（学習ナビゲーションマップ）のサンプル。英語・現代文・古文・漢文・日本史の工程が一覧されている"
-            width={2400}
-            height={900}
+            alt="学習ナビゲーションマップ（合格設計図）のサンプル。科目別の工程・教材・週次ペースが時系列で一覧されている"
             loading="lazy"
             decoding="async"
             className="sup-master-plan-img"
@@ -313,15 +311,13 @@ const SupportLayerExecute = () => (
           各ステップには、何をどう進めるかの詳細解説がついている。
           やり方で迷うことも、教材の使い方で迷うこともない。
         </p>
-        <figure className="sup-figure">
+        <figure className="sup-figure sup-figure--roadmap">
           <img
             src={ASSETS.stepRoadmap}
-            alt="アプリ上のステージ式ロードマップ。STEP10英文法・不定詞からSTEP11への進行とチェックリストが表示されている"
-            width={800}
-            height={1400}
+            alt="ステージ式ロードマップのアプリ画面。STEP10英文法・不定詞のタスク一覧と修了テスト、次のSTEP11への進行が表示されている"
             loading="lazy"
             decoding="async"
-            className="sup-figure-img sup-figure-img--phone"
+            className="sup-figure-img sup-figure-img--natural"
           />
           <figcaption className="sup-cap">各STEPには詳細解説とチェックリストがついている</figcaption>
         </figure>
@@ -359,19 +355,30 @@ const SupportLayerExecute = () => (
         </ul>
         <div className="sup-sheet-grid">
           <figure className="sup-figure sup-figure--sheet">
-            <img src={ASSETS.sheetWeekly} alt="週間の日次タスク一覧シート" loading="lazy" decoding="async" />
+            <img
+              src={ASSETS.sheetDaily}
+              alt="日次の学習目標・時間枠・タスク・達成率を記録する管理シート"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption className="sup-cap">日次タスク</figcaption>
           </figure>
           <figure className="sup-figure sup-figure--sheet">
-            <img src={ASSETS.sheetPeriod} alt="期間中に完了させるタスクの一覧シート" loading="lazy" decoding="async" />
-            <figcaption className="sup-cap">週単位・期間タスク</figcaption>
+            <img
+              src={ASSETS.sheetWeeklyPeriod}
+              alt="週間および期間中に完了させるタスクを管理するシート"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption className="sup-cap">週間タスク・期間中タスク</figcaption>
           </figure>
           <figure className="sup-figure sup-figure--sheet">
-            <img src={ASSETS.sheetDaily} alt="日次の時間枠と実績・達成率の管理シート" loading="lazy" decoding="async" />
-            <figcaption className="sup-cap">時間管理</figcaption>
-          </figure>
-          <figure className="sup-figure sup-figure--sheet">
-            <img src={ASSETS.sheetSummary} alt="週次の目標時間・実績・達成率の結果サマリー" loading="lazy" decoding="async" />
+            <img
+              src={ASSETS.sheetSummary}
+              alt="週次の目標時間・実績・達成率とタスク達成状況の結果サマリー"
+              loading="lazy"
+              decoding="async"
+            />
             <figcaption className="sup-cap">週次サマリー</figcaption>
           </figure>
         </div>
@@ -389,19 +396,15 @@ const SupportLayerExecute = () => (
           「やった」ではなく「できる」になっているか。
           毎週、数字で証明する。緊張感が、習慣をつくる。
         </p>
-        <div className="sup-weekend-visual" aria-hidden="true">
-          <div className="sup-weekend-paper">
-            <span className="sup-weekend-line" />
-            <span className="sup-weekend-line" />
-            <span className="sup-weekend-line short" />
-          </div>
-          <div className="sup-weekend-barwrap">
-            <div className="sup-weekend-bar">
-              <span className="sup-weekend-fill" style={{ width: "72%" }} />
-            </div>
-            <span className="sup-weekend-label">合格ライン</span>
-          </div>
-        </div>
+        <figure className="sup-figure sup-figure--weekend">
+          <img
+            src={ASSETS.weekendTest}
+            alt="週末テストの教材と、科目別得点率・理解度推移を示す結果ダッシュボード"
+            loading="lazy"
+            decoding="async"
+            className="sup-figure-img sup-figure-img--natural"
+          />
+        </figure>
       </article>
 
       <article className="sup-block" id="manabo" aria-labelledby="sup-manabo-h">
@@ -473,6 +476,12 @@ const SupportLayerExecute = () => (
             </div>
           </div>
         </div>
+        <p className="sup-manabo-video-wrap">
+          <a className="sup-manabo-video-btn" href={MANABO_VIDEO_URL} target="_blank" rel="noopener noreferrer">
+            指導風景のイメージを見る
+            <span className="sup-manabo-video-hint">（動画・別タブ）</span>
+          </a>
+        </p>
       </article>
     </div>
   </section>
@@ -696,42 +705,6 @@ const SupportWeekFlow = () => {
             </li>
           ))}
         </ol>
-      </div>
-    </section>
-  );
-};
-
-/* ─── 数字 ───────────────────────────────────────────────── */
-
-const SupportStats = () => {
-  const stats = [
-    { num: "24", unit: "時間", line1: "質問対応", line2: "(manabo)" },
-    { num: "1", unit: "分", line1: "質問への最速", line2: "対応開始時間" },
-    { num: "1", unit: "回/週", line1: "個別コーチング", line2: "実施" },
-    { num: "毎週末", unit: "", line1: "週末テストで", line2: "弱点を可視化", numClass: "sup-stat-num--jp" },
-    { num: "100", unit: "%", line1: "オリジナル教材", line2: "内製比率（学部別）" },
-    { num: "1", unit: "枚", line1: "入塾時にお渡しする", line2: "合格設計図" },
-  ];
-  return (
-    <section className="sup-stats" id="stats" aria-labelledby="sup-stats-title">
-      <div className="sup-section-inner">
-        <h2 id="sup-stats-title" className="sup-h2 sup-h2--center">
-          数字で見る、THINKING のサポート。
-        </h2>
-        <ul className="sup-stats-grid">
-          {stats.map((s) => (
-            <li key={s.line1} className="sup-stat-card">
-              <span className={`sup-stat-num ${s.numClass || ""}`.trim()}>
-                {s.num}
-                {s.unit && <i className="sup-stat-unit">{s.unit}</i>}
-              </span>
-              <span className="sup-stat-lines">
-                <span>{s.line1}</span>
-                <span>{s.line2}</span>
-              </span>
-            </li>
-          ))}
-        </ul>
       </div>
     </section>
   );

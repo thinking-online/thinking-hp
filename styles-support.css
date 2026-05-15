@@ -417,10 +417,10 @@ html {
 
   .sup-hero-photo {
     object-fit: cover;
-    object-position: 82% 38%;
-    transform: scale(1.32);
-    transform-origin: 78% 42%;
-    filter: saturate(0.98) brightness(0.94) contrast(1.05);
+    object-position: 64% 30%;
+    transform: scale(1.12);
+    transform-origin: 72% 48%;
+    filter: saturate(0.97) brightness(0.93) contrast(1.06);
   }
 
   .sup-hero-overlay-left {
@@ -530,9 +530,9 @@ html {
 
 @media (max-width: 380px) {
   .sup-hero-photo {
-    object-position: 84% 36%;
-    transform: scale(1.38);
-    transform-origin: 80% 40%;
+    object-position: 66% 28%;
+    transform: scale(1.16);
+    transform-origin: 74% 46%;
   }
 
   .sup-hero-headline {

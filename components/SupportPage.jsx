@@ -2,7 +2,7 @@
 // 固有名: 合格設計図(Master Plan) / ステージ式ロードマップ(STEP Roadmap) / THINKING Method
 
 const ASSETS = {
-  heroCoaching: "assets/support-hero-coaching.jpg?v=20260515-hero-mobile-v2",
+  heroCoaching: "assets/support-hero-coaching.jpg?v=20260515-hero-mobile-v3",
   heroCoachingDesktop: "assets/support-hero-coaching-desktop.jpg?v=20260515-hero-pc",
   thinkingMethod: "assets/support-thinking-method.png?v=20260515-method",
   masterPlan: "assets/support-master-plan.png",
@@ -41,8 +41,8 @@ const SupportHero = () => (
           <img
             className="sup-hero-photo"
             src={ASSETS.heroCoaching}
-            width={618}
-            height={712}
+            width={576}
+            height={1024}
             alt="夜の自宅でオンライン指導を受けながら学習する受講生"
             loading="eager"
             decoding="async"

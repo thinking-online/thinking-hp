@@ -79,6 +79,23 @@
   opacity: 1;
   border-color: var(--accent);
 }
+.voice-card.is-pending {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.62;
+}
+.voice-card.is-pending.active,
+.voice-card.is-pending:hover {
+  transform: scale(0.97);
+  box-shadow: none;
+}
+.voice-thumb-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background:
+    linear-gradient(145deg, rgba(24, 22, 18, 0.95), rgba(12, 11, 9, 0.9)),
+    var(--bg-1);
+}
 
 /* Thumbnail */
 .voice-thumb {

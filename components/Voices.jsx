@@ -1,84 +1,28 @@
 // Voices — horizontal swipe carousel; each card opens its YouTube interview
 const Voices = () => {
-  const voices = [
-    {
-      thumb: "assets/thumb-keio-geneki.png",
-      headline: "非進学校から、慶應現役合格。",
-      result: "慶應義塾大学 現役合格",
-      meta: "偏差値60未満 / 逆転合格",
-      name: "合格者インタビュー",
-      duration: "対談動画",
-      url: "https://youtu.be/Xid8x7UUJfE",
-    },
-    {
-      thumb: "assets/thumb-aoyama-geneki.png",
-      headline: "E判定・学年ビリから、逆転現役合格。",
-      result: "青山学院大学 現役合格",
-      meta: "高3の11月まで部活",
-      name: "合格者インタビュー",
-      duration: "対談動画",
-      url: "https://youtu.be/CcwIX4-j2Mo",
-    },
-    {
-      thumb: "assets/thumb-aboshi.png",
-      headline: "最下位層から、学年3位。",
-      result: "関西学院大学 現役合格",
-      meta: "週7部活 / 偏差値62",
-      name: "合格者インタビュー",
-      duration: "12:48",
-      url: "https://youtu.be/8R0aILkSbhc",
-    },
-    {
-      thumb: "assets/thumb-matsuyama.png",
-      headline: "高3秋・E判定から親子で号泣。",
-      result: "MARCH 全勝",
-      meta: "親子インタビュー",
-      name: "合格者インタビュー",
-      duration: "18:22",
-      url: "https://youtu.be/Qp17tvgggOQ",
-    },
-    {
-      thumb: "assets/thumb-march.png",
-      headline: "全落ちからの、奇跡のダブル合格。",
-      result: "関学・法政・中央 合格",
-      meta: "偏差値39 → 全勝",
-      name: "合格者インタビュー",
-      duration: "15:04",
-      url: "https://youtu.be/e5OzmZKSe28",
-    },
-    {
-      thumb: "assets/thumb-toyama.jpg",
-      headline: "高校受験失敗から、学年トップへ。",
-      result: "偏差値70超え",
-      meta: "英語・国語",
-      name: "合格者インタビュー",
-      duration: "14:11",
-      url: "https://youtu.be/HP_5tDBODaY",
-    },
-    {
-      thumb: "assets/thumb-nakamura.png",
-      headline: "日本史県内1位、英語48.2から逆転。",
-      result: "関西学院大学 合格",
-      meta: "苦手克服インタビュー",
-      name: "合格者インタビュー",
-      duration: "16:35",
-      url: "https://youtu.be/NwrlH_tyukA",
-    },
-  ];
+  const voices = window.VOICE_INTERVIEWS.map((v) => ({
+    thumb: v.thumb,
+    headline: v.headline,
+    result: `${v.school}${v.year ? ` ${v.year}` : ""}`,
+    meta: v.tag,
+    name: v.name,
+    duration: v.pending ? "準備中" : "対談動画",
+    url: v.pending ? null : `https://youtu.be/${v.id}`,
+    pending: v.pending,
+    no: v.no,
+  }));
 
   const trackRef = React.useRef(null);
   const [activeIdx, setActiveIdx] = React.useState(0);
   const [canPrev, setCanPrev] = React.useState(false);
   const [canNext, setCanNext] = React.useState(true);
 
-  // Track scroll position to update active index + button states
   const updateScrollState = React.useCallback(() => {
     const el = trackRef.current;
     if (!el) return;
     const cards = el.querySelectorAll(".voice-card");
     if (!cards.length) return;
 
-    // Find which card is closest to the left edge (snap point)
     const trackLeft = el.scrollLeft;
     let nearestIdx = 0;
     let nearestDist = Infinity;
@@ -119,7 +63,6 @@ const Voices = () => {
     scrollToCard(next);
   };
 
-  // Drag-to-scroll for desktop (mouse)
   React.useEffect(() => {
     const el = trackRef.current;
     if (!el) return;
@@ -129,7 +72,6 @@ const Voices = () => {
     let moved = false;
 
     const onDown = (e) => {
-      // Only left mouse button, ignore touch (touch uses native scroll)
       if (e.pointerType !== "mouse") return;
       isDown = true;
       moved = false;
@@ -147,7 +89,6 @@ const Voices = () => {
       if (!isDown) return;
       isDown = false;
       el.classList.remove("dragging");
-      // Suppress click if dragged
       if (moved) {
         const blockClick = (e) => {
           e.preventDefault();
@@ -170,6 +111,67 @@ const Voices = () => {
     };
   }, []);
 
+  const renderCard = (v, i) => {
+    const cardClass = `voice-card ${i === activeIdx ? "active" : ""} ${v.pending ? "is-pending" : ""}`;
+    const thumbInner = (
+      <>
+        <div className="voice-thumb">
+          {v.thumb ? (
+            <img src={v.thumb} alt={v.headline} className="voice-thumb-img" draggable="false" />
+          ) : (
+            <div className="voice-thumb-placeholder" aria-hidden="true" />
+          )}
+          <div className="voice-thumb-corners">
+            <span className="corner tl" /><span className="corner tr" />
+            <span className="corner bl" /><span className="corner br" />
+          </div>
+          {!v.pending && (
+            <div className="voice-thumb-play">
+              <svg viewBox="0 0 56 56" fill="none">
+                <circle cx="28" cy="28" r="27" stroke="currentColor" strokeWidth="1" fill="rgba(10,9,7,0.55)" />
+                <path d="M22 18v20l16-10z" fill="currentColor" />
+              </svg>
+            </div>
+          )}
+          <span className="voice-duration">{v.duration}</span>
+          <span className="voice-index">
+            <i>{v.no}</i> / {String(voices.length).padStart(2, "0")}
+          </span>
+        </div>
+        <div className="voice-info">
+          <h4 className="voice-headline">{v.headline}</h4>
+          <div className="voice-result-row">
+            <span className="voice-result">{v.result}</span>
+          </div>
+          <div className="voice-meta-row">
+            <span className="voice-meta-text">{v.meta}</span>
+            <span className="voice-name">— {v.name}</span>
+          </div>
+        </div>
+      </>
+    );
+
+    if (v.pending) {
+      return (
+        <div key={v.no} className={cardClass} aria-label={`${v.name}は準備中です`}>
+          {thumbInner}
+        </div>
+      );
+    }
+
+    return (
+      <a
+        key={v.no}
+        href={v.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cardClass}
+      >
+        {thumbInner}
+      </a>
+    );
+  };
+
   return (
     <section className="section voices-section" id="voices">
       <div className="section-inner">
@@ -185,9 +187,7 @@ const Voices = () => {
           <div className="ornament"><span className="ornament-mark" /></div>
         </div>
 
-        {/* Carousel */}
         <div className="voices-carousel">
-          {/* Prev / next buttons (PC only) */}
           <button
             type="button"
             className={`voice-arrow voice-arrow-prev ${canPrev ? "" : "disabled"}`}
@@ -210,47 +210,10 @@ const Voices = () => {
           </button>
 
           <div className="voices-track" ref={trackRef}>
-            {voices.map((v, i) => (
-              <a
-                key={i}
-                href={v.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`voice-card ${i === activeIdx ? "active" : ""}`}
-              >
-                <div className="voice-thumb">
-                  <img src={v.thumb} alt={v.headline} className="voice-thumb-img" draggable="false" />
-                  <div className="voice-thumb-corners">
-                    <span className="corner tl" /><span className="corner tr" />
-                    <span className="corner bl" /><span className="corner br" />
-                  </div>
-                  <div className="voice-thumb-play">
-                    <svg viewBox="0 0 56 56" fill="none">
-                      <circle cx="28" cy="28" r="27" stroke="currentColor" strokeWidth="1" fill="rgba(10,9,7,0.55)" />
-                      <path d="M22 18v20l16-10z" fill="currentColor" />
-                    </svg>
-                  </div>
-                  <span className="voice-duration">{v.duration}</span>
-                  <span className="voice-index">
-                    <i>{String(i + 1).padStart(2, "0")}</i> / {String(voices.length).padStart(2, "0")}
-                  </span>
-                </div>
-                <div className="voice-info">
-                  <h4 className="voice-headline">{v.headline}</h4>
-                  <div className="voice-result-row">
-                    <span className="voice-result">{v.result}</span>
-                  </div>
-                  <div className="voice-meta-row">
-                    <span className="voice-meta-text">{v.meta}</span>
-                    <span className="voice-name">— {v.name}</span>
-                  </div>
-                </div>
-              </a>
-            ))}
+            {voices.map((v, i) => renderCard(v, i))}
           </div>
         </div>
 
-        {/* Pagination dots */}
         <div className="voices-pagination">
           {voices.map((_, i) => (
             <button

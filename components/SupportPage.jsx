@@ -2,7 +2,7 @@
 // 固有名: 合格設計図(Master Plan) / ステージ式ロードマップ(STEP Roadmap) / THINKING Method
 
 const ASSETS = {
-  thinkingMethod: "assets/support-thinking-method.png",
+  thinkingMethod: "assets/support-thinking-method.png?v=20260515-method",
   masterPlan: "assets/support-master-plan.png",
   workbook: "assets/products-series-4parts-overview.png",
   stepRoadmap: "assets/support-step-roadmap.png",
@@ -102,8 +102,8 @@ const SupportMethodIntro = () => (
         <img
           src={ASSETS.thinkingMethod}
           alt="THINKING Method 三層サポートシステム：設計する・実行する・鍛えるのピラミッドと各層の説明"
-          width={1200}
-          height={675}
+          width={1024}
+          height={682}
           loading="eager"
           decoding="async"
           className="sup-method-img"

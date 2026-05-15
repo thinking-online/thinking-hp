@@ -2,7 +2,8 @@
 // 固有名: 合格設計図(Master Plan) / ステージ式ロードマップ(STEP Roadmap) / THINKING Method
 
 const ASSETS = {
-  heroCoaching: "assets/support-hero-coaching.jpg?v=20260515-hero",
+  heroCoaching: "assets/support-hero-coaching.jpg?v=20260515-hero-mobile",
+  heroCoachingDesktop: "assets/support-hero-coaching-desktop.jpg?v=20260515-hero-pc",
   thinkingMethod: "assets/support-thinking-method.png?v=20260515-method",
   masterPlan: "assets/support-master-plan.png",
   workbook: "assets/products-series-4parts-overview.png",
@@ -35,15 +36,18 @@ const SupportHero = () => (
   <section className="sup-hero" aria-labelledby="sup-hero-title">
     <div className="sup-hero-firstview">
       <div className="sup-hero-media">
-        <img
-          className="sup-hero-photo"
-          src={ASSETS.heroCoaching}
-          width={576}
-          height={1024}
-          alt="夜の自宅でオンライン指導を受けながら学習する受講生"
-          loading="eager"
-          decoding="async"
-        />
+        <picture>
+          <source media="(min-width: 901px)" srcSet={ASSETS.heroCoachingDesktop} />
+          <img
+            className="sup-hero-photo"
+            src={ASSETS.heroCoaching}
+            width={576}
+            height={1024}
+            alt="夜の自宅でオンライン指導を受けながら学習する受講生"
+            loading="eager"
+            decoding="async"
+          />
+        </picture>
       </div>
       <div className="sup-hero-overlay sup-hero-overlay-left" aria-hidden="true" />
       <div className="sup-hero-overlay sup-hero-overlay-top" aria-hidden="true" />
@@ -98,7 +102,7 @@ const SupportStickyNav = () => {
     { href: "#layer-design", label: "設計" },
     { href: "#layer-execute", label: "実行" },
     { href: "#layer-train", label: "鍛錬" },
-    { href: "#week-flow", label: "1週間" },
+    { href: "#week-flow", label: "週の流れ" },
     { href: "#faq", label: "FAQ" },
     { href: "#contact", label: "面談" },
   ];
@@ -425,7 +429,7 @@ const SupportLayerExecute = () => (
         </h3>
         <p className="sup-tagline">「わかったつもり」を、毎週潰す。</p>
         <p className="sup-body">
-          毎週末、その週に進めた範囲を週末テストで確認する。
+          毎週日曜日、その週に進めた範囲を週末テストで確認する。
           一定ラインを突破しないと、次のステップに進めない。志望校の出願も認めない。
           <br />
           「やった」ではなく「できる」になっているか。
@@ -651,31 +655,52 @@ const SupportLayerTrain = () => (
 /* ─── 1週間の流れ ───────────────────────────────────────── */
 
 const SupportWeekFlow = () => {
+  const weekStrip = [
+    { short: "月", tone: "design" },
+    { short: "火", tone: "execute" },
+    { short: "水", tone: "execute" },
+    { short: "木", tone: "execute" },
+    { short: "金", tone: "train" },
+    { short: "土", tone: "review" },
+    { short: "日", tone: "test" },
+  ];
+
   const days = [
     {
       day: "月曜日",
+      layer: "設計",
+      layerTone: "design",
       icon: "dialog",
-      text: "週次コーチング（60分）── 先週の数字を振り返り、今週の1日単位のタスクを確定。",
+      text: "週次コーチング（60分）── 先週の数字を振り返り、今週の1日単位のタスクを確定する。",
     },
     {
       day: "火・水・木曜日",
+      layer: "実行",
+      layerTone: "execute",
       icon: "check",
-      text: "ステージ式ロードマップに沿って学習。分からないは manabo で即解決（24時間対応）。日次シートで進捗を記録。",
+      text: "ステージ式ロードマップに沿って学習。分からない点は manabo で即解決（24時間）。日次シートで進捗を記録する。",
     },
     {
       day: "金曜日",
+      layer: "鍛錬",
+      layerTone: "train",
       icon: "mic",
-      text: "言語化特訓（LIVE）── 緊張感のある場で、思考プロセスを鍛える。",
+      text: "言語化特訓（LIVE）── 緊張感のある場で、思考プロセスそのものを鍛える。",
     },
     {
       day: "土曜日",
-      icon: "pen",
-      text: "週末テスト ── 今週進めた範囲を、数字で証明する。",
+      layer: "実行",
+      layerTone: "review",
+      icon: "graph",
+      text: "週次サマリーを確認し、1週間の振り返りシートを記入。日曜の週末テストに向けて仕上げる。",
     },
     {
       day: "日曜日",
-      icon: "graph",
-      text: "1週間の振り返りシートを記入。来週のコーチングへ。",
+      layer: "実行",
+      layerTone: "test",
+      icon: "pen",
+      highlight: true,
+      text: "週末テスト ── 今週進めた範囲を、数字で証明する。結果は理解度推移に記録され、月曜のコーチングへつながる。",
     },
   ];
   const icons = {
@@ -719,21 +744,47 @@ const SupportWeekFlow = () => {
     <section className="sup-weekflow" id="week-flow" aria-labelledby="sup-wf-title">
       <div className="sup-section-inner">
         <header className="sup-wf-head">
+          <p className="sup-wf-eyebrow" lang="en">
+            Weekly Flow
+          </p>
           <h2 id="sup-wf-title" className="sup-h2">
-            三層が、1週間でどう動くか。
+            1週間の動きイメージ
           </h2>
           <p className="sup-lead">
-            設計 → 実行 → 鍛錬 が、実際の1週間でどう統合されるのか。
+            設計 → 実行 → 鍛錬の三層が、月曜から日曜までこう連動する。
             <br />
-            THINKING で過ごす、ある1週間。
+            週末テストは<strong className="sup-wf-lead-strong">日曜日</strong>。数字で締め、月曜のコーチングへ戻る。
           </p>
         </header>
+
+        <div className="sup-wf-weekbar" aria-label="1週間の流れ（月曜から日曜）">
+          {weekStrip.map((cell) => (
+            <div
+              key={cell.short}
+              className={`sup-wf-weekcell sup-wf-weekcell--${cell.tone}`}
+            >
+              <span className="sup-wf-weekcell-day">{cell.short}</span>
+              {cell.tone === "test" && (
+                <span className="sup-wf-weekcell-tag">週末テスト</span>
+              )}
+            </div>
+          ))}
+        </div>
+
         <ol className="sup-wf-timeline">
           {days.map((d, i) => (
-            <li key={d.day} className="sup-wf-item">
+            <li
+              key={d.day}
+              className={`sup-wf-item${d.highlight ? " sup-wf-item--highlight" : ""}`}
+            >
               <div className="sup-wf-iconwrap">{icons[d.icon]}</div>
               <div className="sup-wf-body">
-                <span className="sup-wf-day">{d.day}</span>
+                <div className="sup-wf-meta">
+                  <span className="sup-wf-day">{d.day}</span>
+                  <span className={`sup-wf-layer sup-wf-layer--${d.layerTone}`}>
+                    {d.layer}
+                  </span>
+                </div>
                 <p>{d.text}</p>
               </div>
               {i < days.length - 1 && <span className="sup-wf-connector" aria-hidden="true" />}

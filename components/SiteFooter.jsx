@@ -29,7 +29,7 @@ const SiteFooter = () => {
         {/* Sitemap grid */}
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="index.html" className="footer-logo">
+            <a href="/" className="footer-logo">
               THINKING
             </a>
             <p className="footer-tag">
@@ -85,19 +85,19 @@ const SiteFooter = () => {
           <div className="footer-col">
             <h4 className="footer-col-title"><i>About</i><span>サービス</span></h4>
             <ul>
-              <li><a href="strategy.html">学部別戦略・合格設計</a></li>
-              <li><a href="support.html">サポート体制</a></li>
-              <li><a href="voice.html">合格者の声</a></li>
-              <li><a href="price.html">料金・入塾まで</a></li>
+              <li><a href="/strategy">学部別戦略・合格設計</a></li>
+              <li><a href="/support">サポート体制</a></li>
+              <li><a href="/voice">合格者の声</a></li>
+              <li><a href="/price">料金・入塾まで</a></li>
             </ul>
           </div>
 
           <div className="footer-col">
             <h4 className="footer-col-title"><i>Resource</i><span>情報</span></h4>
             <ul>
-              <li><a href="founder.html">代表紹介</a></li>
-              <li><a href="faq.html">よくある質問</a></li>
-              <li><a href="blog.html">記事一覧</a></li>
+              <li><a href="/founder">代表紹介</a></li>
+              <li><a href="/faq">よくある質問</a></li>
+              <li><a href="/blog">記事一覧</a></li>
               <li><a href={window.THINKING_LINE_LIFF_URL} target="_blank" rel="noopener noreferrer">無料相談予約</a></li>
             </ul>
           </div>

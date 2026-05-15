@@ -13,7 +13,7 @@ const PageHeader = ({ eyebrow, en, jp, lead, breadcrumbs = [], bgImage, headerCl
         {breadcrumbs.length > 0 && (
           <nav className="breadcrumb" aria-label="パンくずリスト">
             <ol>
-              <li><a href="index.html">Top</a></li>
+              <li><a href="/">Top</a></li>
               {breadcrumbs.map((b, i) => (
                 <li key={i}>
                   <span className="breadcrumb-sep">/</span>

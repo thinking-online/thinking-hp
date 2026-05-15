@@ -321,7 +321,7 @@ const PricePage = () => {
 
           <div className="price-faq-foot">
             <span>その他の質問は</span>
-            <a href="faq.html">よくある質問ページへ →</a>
+            <a href="/faq">よくある質問ページへ →</a>
           </div>
         </div>
       </section>

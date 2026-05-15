@@ -35,6 +35,8 @@
   scrollbar-width: none;
   -ms-overflow-style: none;
   padding: 8px clamp(20px, 5vw, 48px) 24px;
+  /* 末尾クローンがスナップ位置まで届く余白（右ループ用） */
+  padding-right: calc(100% - clamp(280px, 32vw, 420px) - clamp(20px, 5vw, 48px));
   cursor: grab;
   scroll-padding-left: clamp(20px, 5vw, 48px);
 }

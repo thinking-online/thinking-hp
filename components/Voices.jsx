@@ -54,7 +54,12 @@ const Voices = () => {
     if (!el || !count) return;
     const card = el.querySelectorAll(".voice-card")[domIdx];
     if (!card) return;
-    el.scrollTo({ left: card.offsetLeft, behavior: smooth ? "smooth" : "auto" });
+    const pad = parseFloat(getComputedStyle(el).scrollPaddingLeft) || 0;
+    const target = Math.min(
+      Math.max(0, card.offsetLeft - pad),
+      el.scrollWidth - el.clientWidth
+    );
+    el.scrollTo({ left: target, behavior: smooth ? "smooth" : "auto" });
   }, [count]);
 
   const scrollToReal = React.useCallback(
@@ -134,17 +139,39 @@ const Voices = () => {
 
   const scrollByDir = (dir) => {
     if (!count) return;
-    // 端からループするときはクローン経由で「つながった」方向へ進む
-    if (dir === 1 && activeDomIdx === count) {
-      scrollToDom(count + 1, true);
+    const domIdx = getNearestDomIdx();
+
+    if (dir === 1) {
+      if (domIdx >= count) {
+        const el = trackRef.current;
+        const cards = el?.querySelectorAll(".voice-card");
+        const cloneEnd = cards?.[count + 1];
+        if (el && cloneEnd) {
+          const pad = parseFloat(getComputedStyle(el).scrollPaddingLeft) || 0;
+          const cloneTarget = cloneEnd.offsetLeft - pad;
+          const maxScroll = el.scrollWidth - el.clientWidth;
+          if (cloneTarget <= maxScroll + 4) {
+            scrollToDom(count + 1, true);
+            return;
+          }
+        }
+        jumpingRef.current = true;
+        scrollToDom(1, false);
+        setActiveDomIdx(1);
+        requestAnimationFrame(() => {
+          jumpingRef.current = false;
+        });
+        return;
+      }
+      scrollToDom(domIdx + 1, true);
       return;
     }
-    if (dir === -1 && activeDomIdx === 1) {
+
+    if (domIdx <= 1) {
       scrollToDom(0, true);
       return;
     }
-    const nextReal = (activeIdx + dir + count) % count;
-    scrollToReal(nextReal, true);
+    scrollToDom(domIdx - 1, true);
   };
 
   const PlayIcon = () => (

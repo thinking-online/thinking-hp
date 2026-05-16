@@ -1,0 +1,106 @@
+/* Hero proof — copy + 2000 participants banner (below hero) */
+.hero-proof {
+  position: relative;
+  padding: clamp(28px, 5vw, 48px) 0 clamp(36px, 6vw, 56px);
+  background: var(--bg-0);
+  border-top: 1px solid var(--line);
+}
+
+.hero-proof::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 70% 80% at 50% 0%, rgba(200, 168, 104, 0.07), transparent 65%);
+  pointer-events: none;
+}
+
+.hero-proof-inner {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 48px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(20px, 4vw, 32px);
+}
+
+.hero-proof-copy {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(6px, 1.5vw, 10px);
+}
+
+.hero-proof-line {
+  margin: 0;
+  font-family: var(--serif-jp);
+  letter-spacing: 0.06em;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+
+.hero-proof-line-main {
+  font-size: clamp(22px, 5.2vw, 32px);
+  font-weight: 600;
+  color: var(--ink-0);
+}
+
+.hero-proof-line-main strong {
+  font-family: var(--serif-en);
+  font-size: 1.35em;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  margin: 0 0.06em;
+}
+
+.hero-proof-line:nth-child(2) {
+  font-size: clamp(15px, 3.8vw, 18px);
+  color: var(--ink-1);
+}
+
+.hero-proof-line-cta {
+  font-size: clamp(17px, 4.2vw, 22px);
+  font-weight: 500;
+  color: var(--ink-0);
+  margin-top: 4px;
+}
+
+.hero-proof-visual {
+  margin: 0;
+  width: 100%;
+  max-width: 920px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow:
+    0 20px 56px -20px rgba(0, 0, 0, 0.55),
+    0 0 0 1px rgba(200, 168, 104, 0.14);
+}
+
+.hero-proof-visual img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .hero-proof {
+    padding: 24px 0 32px;
+  }
+
+  .hero-proof-inner {
+    padding: 0 16px;
+    gap: 18px;
+  }
+
+  .hero-proof-line-main {
+    font-size: clamp(20px, 6vw, 26px);
+  }
+
+  .hero-proof-line-cta {
+    font-size: clamp(16px, 4.5vw, 19px);
+  }
+}

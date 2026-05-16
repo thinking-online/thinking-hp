@@ -460,12 +460,40 @@
 
 /* ===== MESSAGE ===== */
 .message-section { background: linear-gradient(180deg, var(--navy-900), var(--navy-950)); }
-.message-body { font-family: var(--serif); font-size: 17px; line-height: 2.1; color: var(--text-200); }
-.message-body p { margin: 0 0 24px; text-wrap: pretty; }
+.message-body { font-family: var(--serif); font-size: 16px; line-height: 2.05; color: var(--text-200); }
+.message-body p { margin: 0 0 20px; text-wrap: pretty; }
 .message-body em { font-style: normal; color: var(--gold-300); font-weight: 600; }
-.message-strong { color: var(--text-100) !important; font-size: 19px !important; padding: 24px; background: rgba(217,169,66,0.05); border-left: 3px solid var(--gold-400); }
+.message-lead {
+  font-size: 17px !important;
+  line-height: 2 !important;
+  color: var(--text-100) !important;
+  margin-bottom: 22px !important;
+}
+.message-strong {
+  color: var(--text-100) !important;
+  font-size: 17px !important;
+  line-height: 1.95 !important;
+  margin-bottom: 0 !important;
+  padding: 20px 22px;
+  background: rgba(217, 169, 66, 0.06);
+  border-left: 3px solid var(--gold-400);
+  border-radius: 0 6px 6px 0;
+}
 
-.message-sign { margin-top: 56px; display: flex; align-items: center; gap: 24px; }
+.message-sign { margin-top: 36px; display: flex; align-items: center; gap: 20px; }
+
+@media (min-width: 721px) {
+  .message-body { font-size: 17px; }
+  .message-lead { font-size: 18px !important; margin-bottom: 26px !important; }
+  .message-strong { font-size: 18px !important; padding: 22px 24px; }
+}
+
+@media (max-width: 720px) {
+  .message-body { font-size: 15px; line-height: 2; }
+  .message-lead { font-size: 16px !important; }
+  .message-sign { margin-top: 28px; }
+  .sign-en { font-size: 24px; }
+}
 .sign-line { flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold-500)); }
 .sign-name { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
 .sign-role { font-size: 12px; color: var(--text-400); font-family: var(--mono); letter-spacing: 0.05em; }

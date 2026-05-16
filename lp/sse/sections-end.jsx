@@ -197,40 +197,56 @@ function MessageSection() {
           </div>
         </div>
 
-        <div className="message-founder">
-          <img src="../../assets/founder-portrait.jpg" alt="朝倉 徹大" width="176" height="176" loading="lazy" />
-          <div className="message-founder-meta">
-            <h3>朝倉 徹大</h3>
-            <p>合同会社ARC 代表社員<br />難関私大専門オンライン塾 THINKING 代表</p>
-          </div>
-        </div>
+        <div className="message-layout">
+          <aside className="message-profile">
+            <figure className="message-photo">
+              <img
+                src="assets/founder-message.png"
+                alt="朝倉 徹大 — THINKING 代表"
+                width="1024"
+                height="683"
+                loading="lazy"
+              />
+            </figure>
+            <div className="message-profile-text">
+              <p className="message-profile-label">代表</p>
+              <h3 className="message-profile-name">朝倉 徹大</h3>
+              <p className="message-profile-role">
+                合同会社ARC 代表社員<br />
+                難関私大専門オンライン塾 THINKING 代表
+              </p>
+            </div>
+          </aside>
 
-        <div className="message-body">
-          <p>
-            なぜ、これだけ時間をかけて勉強しても、英語が伸びない高校生が、これほど多いのか。
-            それは、能力不足でも、努力不足でもありません。
-            ただ、「正しい読み方」を知らないまま、我流で走り続けているからです。
-          </p>
-          <p>
-            スポーツと同じく、間違ったフォームで何千回素振りをしても、悪い癖がつくだけで上達はしません。
-            それどころか、自信を失い、学ぶこと自体が嫌いになってしまう。これほど残酷なことはありません。
-          </p>
-          <p>
-            だからこそ私たちは、「知識」を教える前に、「知識を使いこなすための<em>型</em>」を徹底的にインストールします。
-            どこも教えてくれなかった「脳の使い方」を根本から解決する。
-          </p>
-          <p className="message-strong">
-            お子様に必要なのは、一時的な詰め込みではない。<br />
-            未来を自らの手で切り拓くための、本質的な解決策です。
-          </p>
-        </div>
+          <div className="message-content">
+            <div className="message-body">
+              <p className="message-lead">
+                なぜ、これだけ時間をかけて勉強しても、英語が伸びない高校生が、これほど多いのか。
+                それは、能力不足でも、努力不足でもありません。
+                ただ、「正しい読み方」を知らないまま、我流で走り続けているからです。
+              </p>
+              <p>
+                スポーツと同じく、間違ったフォームで何千回素振りをしても、悪い癖がつくだけで上達はしません。
+                それどころか、自信を失い、学ぶこと自体が嫌いになってしまう。これほど残酷なことはありません。
+              </p>
+              <p>
+                だからこそ私たちは、「知識」を教える前に、「知識を使いこなすための<em>型</em>」を徹底的にインストールします。
+                どこも教えてくれなかった「脳の使い方」を根本から解決する。
+              </p>
+              <p className="message-strong">
+                お子様に必要なのは、一時的な詰め込みではない。
+                未来を自らの手で切り拓くための、本質的な解決策です。
+              </p>
+            </div>
 
-        <div className="message-sign">
-          <div className="sign-line"></div>
-          <div className="sign-name">
-            <span className="sign-role">難関私大専門オンライン塾 THINKING 代表</span>
-            <span className="sign-en">Tetta Asakura</span>
-            <span className="sign-jp">朝倉 徹大</span>
+            <div className="message-sign">
+              <div className="sign-line" aria-hidden="true" />
+              <div className="sign-name">
+                <span className="sign-role">難関私大専門オンライン塾 THINKING 代表</span>
+                <span className="sign-en">Tetta Asakura</span>
+                <span className="sign-jp">朝倉 徹大</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>

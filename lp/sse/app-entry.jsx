@@ -4,20 +4,23 @@ function App() {
   return (
     <>
       <Hero />
+      <AuthoritySection />
+      <EmpathySection />
       <BrainCompareSection />
       <SelfCheckSection />
       <WhySection />
-      <OrderSection />
       <MethodSection />
-      <DaysSection />
-      <ResultsSection />
       <VoicesSection />
-      <MediaSection />
-      <MessageSection />
-      <GuaranteeSection />
-      <NotForSection />
-      <FAQSection />
+      <ResultsSection />
+      <RoadmapSection />
+      <DaysSection />
+      <RoutineSection />
+      <ProgramContentsSection />
       <PriceSection />
+      <GuaranteeSection />
+      <MessageSection />
+      <ApplyFlowSection />
+      <FAQSection />
       <FinalSection />
     </>
   );

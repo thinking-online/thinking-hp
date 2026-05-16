@@ -11,10 +11,10 @@ function MethodSection() {
           <div className="section-num">04</div>
           <div>
             <span className="eyebrow">SSE METHOD</span>
-            <h2 className="section-title">Smart Study Englishとは。<br /><em>45日で「読み方」を書き換える、矯正合宿。</em></h2>
+            <h2 className="section-title">45日間で、英語の読み方を<br /><em>根本から変える。</em></h2>
             <p className="section-lead">
-              一方的に講義を聞く受け身の授業ではありません。<br />
-              スポーツのフォーム矯正のように、根本の<strong>読み方</strong>を矯正する45日間の集中プログラムです。
+              延べ2000名以上が結果を出した、英語の読み方トレーニングプログラム。<br />
+              スポーツのフォーム矯正と同じ。まず「読み方のフォーム」を徹底的に矯正します。
             </p>
           </div>
         </div>
@@ -28,9 +28,9 @@ function MethodSection() {
                 <path d="M18 30 L 27 38 L 42 22" fill="none" stroke="#e9c267" strokeWidth="1.5" />
               </svg>
             </div>
-            <span className="method-card-tag">SCIENTIFIC</span>
-            <h3>「感覚」ではなく<br />「論理」で読む</h3>
-            <p>なんとなく単語を繋げる読み方を捨てる。なぜそう読むのか — その理由（ロジック）を脳に叩き込み、ネイティブと同じ思考回路をインストール。</p>
+            <span className="method-card-tag">PILLAR 01</span>
+            <h3>読み方を<br />「型」から学ぶ</h3>
+            <p>単語や文法の前に、英文をどう処理するかを徹底的に学ぶ。返り読みをなくし、英語を英語のまま理解する力を身につける。</p>
           </div>
 
           <div className="method-card">
@@ -43,9 +43,9 @@ function MethodSection() {
                 <line x1="20" y1="38" x2="40" y2="38" stroke="#e9c267" strokeWidth="1" opacity="0.6" />
               </svg>
             </div>
-            <span className="method-card-tag">DAILY</span>
-            <h3>オンラインだから<br />「毎日管理」できる</h3>
-            <p>週1回しか会わない通塾とは違う。45日間、毎朝SSEがあなたと繋がる。毎日の課題提出システムでサボれない設計。</p>
+            <span className="method-card-tag">PILLAR 02</span>
+            <h3>毎日のアウトプット<br />で定着</h3>
+            <p>毎日の課題提出で、その日のうちにフィードバック。「わかったつもり」を残さず、確実に身につける。</p>
           </div>
 
           <div className="method-card">
@@ -58,9 +58,9 @@ function MethodSection() {
                 <line x1="22" y1="14" x2="38" y2="14" stroke="#e9c267" strokeWidth="1.5" />
               </svg>
             </div>
-            <span className="method-card-tag">EFFICIENT</span>
-            <h3>「隙間時間」の<br />最大活用</h3>
-            <p>部活で忙しくても続けられる。通学時間や寝る前の15分で取り組める設計。忙しさを言い訳にさせない環境を作る。</p>
+            <span className="method-card-tag">PILLAR 03</span>
+            <h3>45日で自走できる<br />状態へ</h3>
+            <p>プログラム終了時には、誰かに教わらなくても自分で読めるように。ゴールは「依存」ではなく「自走」です。</p>
           </div>
         </div>
 

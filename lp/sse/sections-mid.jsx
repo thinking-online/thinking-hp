@@ -224,11 +224,11 @@ function WhySection() {
         <div className="section-head">
           <div className="section-num">02</div>
           <div>
-            <span className="eyebrow">DIAGNOSIS / なぜ伸びないのか</span>
-            <h2 className="section-title">努力量ではなく、<br /><em>処理フォームが崩れている。</em></h2>
+            <span className="eyebrow">WHY IT FAILS</span>
+            <h2 className="section-title">原因は、<br /><em>「読み方」にあります。</em></h2>
             <p className="section-lead">
-              多くの受験生が、間違った読み方のまま努力を重ねています。<br />
-              成果が出ない原因は、努力量ではなく <strong>フォーム</strong> の問題です。
+              英語が読めない最大の原因は、単語量でも文法力でも演習量でもありません。<br />
+              「読み方」そのものに、原因があります。
             </p>
           </div>
         </div>
@@ -297,22 +297,22 @@ function WhySection() {
               <li>
                 <span className="cause-num">01</span>
                 <div>
-                  <strong>日本語訳の介在</strong>
-                  <p>意味の理解が止まり、スピードが出ない。</p>
+                  <strong>単語を一つひとつ日本語に置き換える</strong>
+                  <p>情報がバラバラになり、文の意味がつながらない。</p>
                 </div>
               </li>
               <li>
                 <span className="cause-num">02</span>
                 <div>
-                  <strong>返り読みの習慣化</strong>
-                  <p>理解が分断され、時間内に読み切れない。</p>
+                  <strong>読み返す癖がついている</strong>
+                  <p>時間が足りなくなる。情報が頭に残らない。</p>
                 </div>
               </li>
               <li>
                 <span className="cause-num">03</span>
                 <div>
-                  <strong>文法依存で読む癖</strong>
-                  <p>難易度が上がるほど読解が止まる。</p>
+                  <strong>文法を「ルール」として暗記している</strong>
+                  <p>実際の長文では、ルールが使えない。</p>
                 </div>
               </li>
             </ol>
@@ -333,8 +333,8 @@ function WhySection() {
             <span>効率的とされる参考書を回す</span>
           </div>
           <p className="why-conclude-note">
-            これらすべては「正しい読み方の型」がある前提でしか効果が出ない。<br />
-            <strong>型がないまま続ければ、情報は穴から抜け落ちていく。</strong>
+            どれだけ単語を覚えても、読み方の穴が空いている限り、抜け落ち続けます。<br />
+            <strong>順番が逆。先に「読み方」の穴を塞ぐ必要があります。</strong>
           </p>
         </div>
       </div>

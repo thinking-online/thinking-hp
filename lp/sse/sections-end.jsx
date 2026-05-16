@@ -109,10 +109,10 @@ function VoicesSection() {
           <div className="section-num">07</div>
           <div>
             <span className="eyebrow">REAL VOICES</span>
-            <h2 className="section-title">手書きで残された、<br /><em>2,000名超のリアルな証言。</em></h2>
+            <h2 className="section-title">2000枚の手書き感想が、<br /><em>すべてを語る。</em></h2>
             <p className="section-lead">
-              SSEを完走した生徒たちが、自分の手で綴った45日間。<br />
-              ここに並ぶのは、ほんの一部です。
+              プログラムを終えた生徒たちが、自らの手で書いてくれた感想です。<br />
+              スマホで打てる時代に、わざわざ手書きで書いてくれる。それが、本物の変化の証明です。
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@ function VoicesSection() {
           </div>
           <div className="vstat-line"></div>
           <div className="vstat">
-            <span className="vstat-num">100<sub>枚+</sub></span>
+            <span className="vstat-num">2,000<sub>枚+</sub></span>
             <span className="vstat-label">手書き感想</span>
           </div>
           <div className="vstat-line"></div>
@@ -200,15 +200,23 @@ function MessageSection() {
           <div className="section-num">08</div>
           <div>
             <span className="eyebrow">MESSAGE FROM CEO</span>
-            <h2 className="section-title">「正しいやり方」を持たざる努力は、<br /><em>あまりにも残酷だ。</em></h2>
+            <h2 className="section-title">なぜ、このプログラムを<br /><em>作ったのか。</em></h2>
+          </div>
+        </div>
+
+        <div className="message-founder">
+          <img src="../../assets/founder-portrait.jpg" alt="朝倉 徹大" width="176" height="176" loading="lazy" />
+          <div className="message-founder-meta">
+            <h3>朝倉 徹大</h3>
+            <p>合同会社ARC 代表社員<br />難関私大専門オンライン塾 THINKING 代表</p>
           </div>
         </div>
 
         <div className="message-body">
           <p>
-            なぜ、どれだけ時間をかけて勉強しても、成績が伸びない子がこれほど多いのでしょうか？
-            それは、彼らが能力不足だからでも、努力不足だからでもありません。
-            ただ、「正しいフォーム（型）」を知らないまま、我流で走り続けているからです。
+            なぜ、これだけ時間をかけて勉強しても、英語が伸びない高校生が、これほど多いのか。
+            それは、能力不足でも、努力不足でもありません。
+            ただ、「正しい読み方」を知らないまま、我流で走り続けているからです。
           </p>
           <p>
             スポーツと同じく、間違ったフォームで何千回素振りをしても、悪い癖がつくだけで上達はしません。
@@ -392,55 +400,57 @@ function PriceSection() {
         <div className="section-head">
           <div className="section-num">11</div>
           <div>
-            <span className="eyebrow">INVESTMENT</span>
-            <h2 className="section-title">「知識」にお金を払うのではない。<br /><em>「土台」に、投資する。</em></h2>
+            <span className="eyebrow">MONITOR OFFER</span>
+            <h2 className="section-title">期間限定<br /><em>モニター募集</em></h2>
             <p className="section-lead">
-              受験終了まで、毎日の学習に乗り続ける読み方を、45日で。<br />
-              一度入れたら抜けない、積み上がっていく投資です。
+              先着30名様限定・2026年5月31日まで。<br />
+              リスクは私たちが負います。あなたは本気で取り組むことだけ。
             </p>
           </div>
         </div>
 
         <div className="price-card">
           <div className="price-card-head">
-            <span className="price-tag">特別プログラム</span>
+            <span className="price-tag">モニター募集</span>
             <h3>SSE 45日間 集中合宿</h3>
-            <span className="price-period">2026年期 募集　各期 上限 50名</span>
+            <span className="price-period">先着30名　2026年5月31日まで</span>
           </div>
 
           <div className="price-body">
             <div className="price-compare">
               <div className="compare-row">
-                <span className="compare-label">参考：年間VIPコース（直接指導）</span>
-                <span className="compare-old">¥700,000<span className="per">/年</span></span>
+                <span className="compare-label">通常価格</span>
+                <span className="compare-old">¥69,800</span>
               </div>
               <div className="compare-divider"></div>
               <div className="compare-row main">
-                <span className="compare-label">SSE 45日間集中合宿</span>
-                <span className="compare-prev">¥49,800</span>
+                <span className="compare-label">モニター価格</span>
+                <span className="compare-prev">¥69,800</span>
                 <span className="compare-new">
                   <span className="new-num">¥39,800</span>
-                  <span className="new-tax">税込43,780円〜</span>
+                  <span className="new-tax">税込43,780円</span>
                 </span>
               </div>
+              <p className="sse-price-off">約3万円OFF</p>
               <div className="price-perday">1日あたり <strong>約890円</strong> の投資で、一生モノの読み方を。</div>
             </div>
 
             <ul className="price-includes">
-              <li><span>✓</span>50本以上の映像講義（無期限閲覧）</li>
-              <li><span>✓</span>45日間 毎朝のミッション送付</li>
-              <li><span>✓</span>毎日の課題提出 / 個別フィードバック</li>
-              <li><span>✓</span>個別LINE質問サポート</li>
-              <li><span>✓</span>全額返金保証 制度適用</li>
+              <li><span>✓</span>動画講義（50本以上）・60の電子教材</li>
+              <li><span>✓</span>オリジナル教材・課題 + 模範解答</li>
+              <li><span>✓</span>LINE質問・受講生コミュニティ</li>
+              <li><span>✓</span>スタート / アフター面談（各45分）</li>
+              <li><span>✓</span>ライブ英語特訓参加権・修了証</li>
+              <li><span>✓</span>全額返金保証</li>
             </ul>
 
             <div className="price-cta">
               <a href="#apply" className="btn-primary big">
-                45日間集中合宿に申し込む
+                モニター生として参加する
                 <span className="arrow">→</span>
               </a>
               <div className="price-cta-meta">
-                <span>◇ クレジットカード／銀行振込 対応</span>
+                <span>◇ 銀行振込（三井住友銀行 / 合同会社ARC）</span>
                 <span>◇ スマホ・PCで受講可能</span>
               </div>
             </div>

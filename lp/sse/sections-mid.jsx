@@ -2,11 +2,42 @@
    SECTION: BRAIN COMPARE — Before(日本語脳) / After(英語脳)
 ===================================================== */
 function BrainCompareSection() {
+  const compareTrackRef = useRef(null);
+  const [compareActive, setCompareActive] = useState(0);
+
+  useEffect(() => {
+    const track = compareTrackRef.current;
+    if (!track) return undefined;
+
+    const updateActive = () => {
+      const w = track.clientWidth || 1;
+      const index = Math.round(track.scrollLeft / w);
+      setCompareActive(Math.min(1, Math.max(0, index)));
+    };
+
+    updateActive();
+    track.addEventListener("scroll", updateActive, { passive: true });
+    window.addEventListener("resize", updateActive);
+    return () => {
+      track.removeEventListener("scroll", updateActive);
+      window.removeEventListener("resize", updateActive);
+    };
+  }, []);
+
+  const scrollToCompare = (index) => {
+    const track = compareTrackRef.current;
+    const slide = track?.children[index];
+    if (slide) {
+      slide.scrollIntoView({ behavior: "smooth", inline: "start", block: "nearest" });
+    }
+    setCompareActive(index);
+  };
+
   return (
     <section id="compare" className="compare-section theme-paper" data-screen-label="02 Brain Compare">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">01</div>
+          <div className="section-num">03</div>
           <div>
             <span className="eyebrow">BEFORE / AFTER　脳内処理の比較</span>
             <h2 className="section-title">同じ英文を見た時、<br /><em>あなたの脳の中はどちらですか？</em></h2>
@@ -25,9 +56,33 @@ function BrainCompareSection() {
           </p>
         </div>
 
-        <p className="compare-swipe-hint" aria-hidden="true">← スワイプして見比べる</p>
+        <div className="compare-switcher">
+          <div className="compare-tabs" role="tablist" aria-label="脳内処理の比較">
+            <button
+              type="button"
+              role="tab"
+              aria-selected={compareActive === 0}
+              className={`compare-tab ${compareActive === 0 ? "is-active" : ""}`}
+              onClick={() => scrollToCompare(0)}
+            >
+              日本語脳
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={compareActive === 1}
+              className={`compare-tab ${compareActive === 1 ? "is-active" : ""}`}
+              onClick={() => scrollToCompare(1)}
+            >
+              英語脳
+            </button>
+          </div>
+          <p className="compare-swipe-hint">
+            {compareActive === 0 ? "→ スワイプ（タップ）で英語脳へ" : "← スワイプで日本語脳へ"}
+          </p>
+        </div>
         <div className="compare-swipe">
-          <div className="compare-swipe-track" role="list">
+          <div className="compare-swipe-track" ref={compareTrackRef} role="list">
           {/* BEFORE — 日本語脳 */}
           <div className="compare-col fail" role="listitem">
             <div className="compare-col-head">
@@ -102,6 +157,11 @@ function BrainCompareSection() {
           </div>
         </div>
 
+        <div className="compare-dots" aria-hidden="true">
+          <span className={compareActive === 0 ? "is-active" : ""} />
+          <span className={compareActive === 1 ? "is-active" : ""} />
+        </div>
+
         <div className="compare-conclude">
           <div className="conclude-line"></div>
           <p>同じ英文・同じ脳・同じ単語量。<br /><strong>違うのは「読み方の型」だけ。</strong></p>
@@ -124,7 +184,7 @@ function SelfCheckSection() {
     <section id="check" className="self-check" data-screen-label="02 Self Check">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">01</div>
+          <div className="section-num">04</div>
           <div>
             <span className="eyebrow">SELF CHECK</span>
             <h2 className="section-title">中学英単語の英文。<br /><em>あなたは、スラスラ読めますか？</em></h2>
@@ -185,7 +245,7 @@ function WhySection() {
     <section id="why" className="why-section theme-deep-crimson" data-screen-label="03 Why">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">02</div>
+          <div className="section-num">05</div>
           <div>
             <span className="eyebrow">WHY IT FAILS</span>
             <h2 className="section-title">原因は、<br /><em>「読み方」にあります。</em></h2>
@@ -313,7 +373,7 @@ function OrderSection() {
     <section id="order" className="order-section theme-deep-gold" data-screen-label="04 Order">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">03</div>
+          <div className="section-num">06</div>
           <div>
             <span className="eyebrow">THE ORDER OF EFFORT</span>
             <h2 className="section-title">努力は否定しない。<br /><em>順番だけを、変える。</em></h2>

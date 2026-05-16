@@ -25,7 +25,7 @@ function ResultsSection() {
     <section id="results" className="results-section" data-screen-label="07 Results">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">06</div>
+          <div className="section-num">08</div>
           <div>
             <span className="eyebrow">CASE STUDIES / 2,000+ STUDENTS</span>
             <h2 className="section-title">もはや、奇跡ではない。<br /><em>再現性のある「必然」。</em></h2>
@@ -190,7 +190,7 @@ function MessageSection() {
     <section className="message-section theme-deep-warm" data-screen-label="10 Message">
       <div className="wrap-narrow">
         <div className="section-head">
-          <div className="section-num">08</div>
+          <div className="section-num">15</div>
           <div>
             <span className="eyebrow">MESSAGE FROM CEO</span>
             <h2 className="section-title">なぜ、このプログラムを<br /><em>作ったのか。</em></h2>
@@ -345,7 +345,7 @@ function FAQSection() {
     <section id="faq" className="faq-section theme-paper" data-screen-label="13 FAQ">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">10</div>
+          <div className="section-num">17</div>
           <div>
             <span className="eyebrow">FAQ</span>
             <h2 className="section-title">よくあるご質問。</h2>
@@ -391,7 +391,7 @@ function PriceSection() {
     <section id="cta" className="price-section theme-paper-gold" data-screen-label="14 Price">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">11</div>
+          <div className="section-num">13</div>
           <div>
             <span className="eyebrow">MONITOR OFFER</span>
             <h2 className="section-title">期間限定<br /><em>モニター募集</em></h2>

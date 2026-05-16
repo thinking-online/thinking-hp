@@ -8,7 +8,7 @@ function MethodSection() {
     <section id="program" className="method-section theme-paper" data-screen-label="05 Method">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">04</div>
+          <div className="section-num">06</div>
           <div>
             <span className="eyebrow">SSE METHOD</span>
             <h2 className="section-title">45日間で、英語の読み方を<br /><em>根本から変える。</em></h2>
@@ -175,7 +175,7 @@ function DaysSection() {
     <section id="days" className="days-section theme-deep-gold" data-screen-label="06 45 Days">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">05</div>
+          <div className="section-num">10</div>
           <div>
             <span className="eyebrow">45 DAYS — DESIGN PHILOSOPHY</span>
             <h2 className="section-title">なぜ「45日」なのか。<br /><em>習慣化と定着の、ギリギリの設計。</em></h2>

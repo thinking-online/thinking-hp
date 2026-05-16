@@ -8,27 +8,24 @@ function sseLineUrl() {
    AUTHORITY — 権威性
 ===================================================== */
 function AuthoritySection() {
-  const operatingResults = [
+  const [achieveOpen, setAchieveOpen] = React.useState(false);
+
+  const mediaItems = [
     {
       thumb: "../../assets/media-r25-1.png",
       url: "https://r25.jp/companies/all-day-thinking/interview/1026804627472908290",
-      label: "新R25 塾代表インタビュー",
+      caption: "新R25でインタビュー掲載！",
     },
     {
       thumb: "../../assets/media-r25-2.png",
       url: "https://r25.jp/companies/all-day-thinking/interview/970960432984489985",
-      label: "新R25 英語指導インタビュー",
+      caption: "英語指導の手法が紹介！",
     },
     {
       thumb: "../../assets/media-tv.png",
       url: "https://powered-by-tv.com/2023/08/12/powernews11/",
-      label: "東京MX 地上波テレビ出演",
+      caption: "東京MXで指導が紹介！",
     },
-  ];
-
-  const trustPills = [
-    { label: "法人運営", sub: "合同会社ARC" },
-    { label: "2000名以上", sub: "指導実績" },
   ];
 
   const achievements = [
@@ -45,56 +42,68 @@ function AuthoritySection() {
         <div className="section-head">
           <div className="section-num">01</div>
           <div>
-            <span className="eyebrow">TRUST / AUTHORITY</span>
-            <h2 className="section-title">社会から認められた、<br /><em>確かな実績。</em></h2>
+            <span className="eyebrow">MEDIA / TRUST</span>
+            <h2 className="section-title">メディア掲載実績</h2>
             <p className="section-lead">
-              運営塾 <strong>THINKING</strong> のメディア掲載・取材実績です。タップで記事へ。
+              運営塾 <strong>THINKING</strong> が各メディアで取り上げられています。タップで記事へ。
             </p>
           </div>
         </div>
 
-        <div className="sse-operating-results">
-          <h3 className="sse-operating-label">運営塾の実績</h3>
-          <div className="sse-thumb-carousel">
-            <div className="sse-thumb-track" role="list">
-              {operatingResults.map((item, i) => (
-                <a
-                  key={i}
-                  href={item.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="sse-thumb-slide"
-                  role="listitem"
-                  aria-label={item.label}
-                >
-                  <img src={item.thumb} alt={item.label} width="640" height="360" loading="lazy" />
-                </a>
-              ))}
-            </div>
+        <div className="sse-media-gallery">
+          <div className="sse-media-track" role="list">
+            {mediaItems.map((item, i) => (
+              <a
+                key={i}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="sse-media-card"
+                role="listitem"
+              >
+                <div className="sse-media-thumb">
+                  <img src={item.thumb} alt="" width="640" height="360" loading="lazy" />
+                </div>
+                <p className="sse-media-caption">{item.caption}</p>
+              </a>
+            ))}
           </div>
         </div>
 
-        <ul className="sse-trust-pills">
-          {trustPills.map((t, i) => (
-            <li key={i}>
-              <strong>{t.label}</strong>
-              <span>{t.sub}</span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="sse-achieve-block">
-          <h3 className="sse-achieve-title">▼ 運営塾 THINKING の合格実績</h3>
-          <ul className="sse-achieve-list">
-            {achievements.map((a, i) => (
-              <li key={i}>{a}</li>
-            ))}
-          </ul>
+        <div className={`sse-achieve-accordion ${achieveOpen ? "is-open" : ""}`}>
+          <button
+            type="button"
+            className="sse-achieve-toggle"
+            onClick={() => setAchieveOpen((open) => !open)}
+            aria-expanded={achieveOpen}
+          >
+            <span className="sse-achieve-toggle-label">運営塾の実績</span>
+            <span className="sse-achieve-toggle-icon" aria-hidden="true">{achieveOpen ? "−" : "+"}</span>
+          </button>
+          {achieveOpen && (
+            <div className="sse-achieve-panel">
+              <p className="sse-achieve-intro">運営塾 THINKING 塾生の合格実績（一部）</p>
+              <ul className="sse-achieve-list">
+                {achievements.map((a, i) => (
+                  <li key={i}>{a}</li>
+                ))}
+              </ul>
+              <a
+                href="https://thinking-online.com/voice"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary sse-achieve-voice-btn"
+              >
+                合格実績・生の声を見る <span className="arrow">→</span>
+              </a>
+            </div>
+          )}
         </div>
       </div>
     </section>
   );
 }
+
 
 /* =====================================================
    EMPATHY — 共感
@@ -182,7 +191,7 @@ function RoadmapSection() {
     <section id="roadmap" className="sse-roadmap theme-deep-gold">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">—</div>
+          <div className="section-num">09</div>
           <div>
             <span className="eyebrow">45-DAY ROADMAP</span>
             <h2 className="section-title">45日間で、<br /><em>どう変わるのか。</em></h2>
@@ -231,7 +240,7 @@ function RoutineSection() {
     <section id="routine" className="sse-routine theme-paper">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">—</div>
+          <div className="section-num">11</div>
           <div>
             <span className="eyebrow">DAILY ROUTINE</span>
             <h2 className="section-title">1日たった30分。<br /><em>続けられる仕組み。</em></h2>
@@ -290,7 +299,7 @@ function ProgramContentsSection() {
     <section id="contents" className="sse-program-contents">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">—</div>
+          <div className="section-num">12</div>
           <div>
             <span className="eyebrow">PROGRAM</span>
             <h2 className="section-title">45日間に含まれる、<br /><em>すべて。</em></h2>
@@ -332,7 +341,7 @@ function ApplyFlowSection() {
     <section id="flow" className="sse-apply-flow theme-paper">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">—</div>
+          <div className="section-num">16</div>
           <div>
             <span className="eyebrow">HOW TO JOIN</span>
             <h2 className="section-title">申込みは、<br /><em>シンプル4ステップ。</em></h2>

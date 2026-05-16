@@ -65,6 +65,10 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
 .theme-paper .compare-source-label { color: #b88728; }
 .theme-paper .compare-source p { color: #0a1530; font-style: italic; }
 .theme-paper .compare-swipe-hint { color: #8a8676; }
+.theme-paper .compare-tab { color: #6b6750; }
+.theme-paper .compare-tab.is-active { background: #fff; color: #0a1530; }
+.theme-paper .compare-tabs .compare-tab:first-child.is-active { color: #c8364a; }
+.theme-paper .compare-tabs .compare-tab:last-child.is-active { color: #8a6618; }
 
 .theme-paper .compare-col.fail {
   background: linear-gradient(180deg, #fef4f5 0%, #ffffff 100%);

@@ -26,6 +26,13 @@
   gap: clamp(20px, 4vw, 32px);
 }
 
+/* Always visible — sits directly below hero (no reveal delay) */
+.hero-proof .hero-proof-copy,
+.hero-proof .hero-proof-visual {
+  opacity: 1;
+  transform: none;
+}
+
 .hero-proof-copy {
   text-align: center;
   display: flex;

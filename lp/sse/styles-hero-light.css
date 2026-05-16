@@ -376,3 +376,117 @@
 @media (min-width: 900px) {
   .hero-m { max-width: 480px; }
 }
+
+/* ===== HERO PROOF — 2000名実績（ヒーロー直下） ===== */
+.hero-m-proof {
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(180deg, #f0ebe0 0%, #fcfaf4 28%, #fcfaf4 100%);
+  border-top: 1px solid rgba(10, 21, 48, 0.08);
+  padding: clamp(22px, 5vw, 36px) 0 clamp(28px, 5vw, 40px);
+}
+
+.hero-m-proof-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(16px, 4vw, 24px);
+}
+
+.hero-m-proof-copy {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.hero-m-proof-line {
+  margin: 0;
+  font-family: var(--serif);
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  color: #3a4560;
+}
+
+.hero-m-proof-line-main {
+  font-size: clamp(20px, 5.4vw, 28px);
+  font-weight: 700;
+  color: #0a1530;
+}
+
+.hero-m-proof-line-main strong {
+  font-family: var(--display);
+  font-size: 1.32em;
+  font-style: italic;
+  color: #b88728;
+  font-weight: 700;
+}
+
+.hero-m-proof-line:nth-child(2) {
+  font-size: clamp(14px, 3.6vw, 16px);
+  color: #1e2a42;
+  font-weight: 600;
+}
+
+.hero-m-proof-line-cta {
+  font-size: clamp(16px, 4.2vw, 20px);
+  font-weight: 600;
+  color: #0a1530;
+  margin-top: 2px;
+}
+
+.hero-m-proof-visual {
+  margin: 0;
+  width: 100%;
+  max-width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 16px 40px -16px rgba(10, 21, 48, 0.35),
+    0 0 0 1px rgba(216, 169, 66, 0.25);
+}
+
+.hero-m-proof-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+/* モバイル：ヒーローが100vhのため、実績が少し見えるようヒーロー高さを調整 */
+@media (max-width: 540px) {
+  .hero-m {
+    min-height: auto;
+  }
+
+  .hero-m-inner {
+    min-height: auto;
+    min-height: unset;
+    padding-bottom: 12px;
+  }
+
+  .hero-m-script-wrap {
+    flex: 0 1 auto;
+    min-height: 100px;
+    margin: 4px 0;
+  }
+
+  .hero-m-proof {
+    scroll-margin-top: 12px;
+  }
+}
+
+@media (min-width: 541px) {
+  .hero-m-proof {
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .hero-m-proof {
+    max-width: 480px;
+  }
+}

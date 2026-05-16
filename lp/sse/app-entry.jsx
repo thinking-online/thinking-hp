@@ -4,6 +4,7 @@ function App() {
   return (
     <>
       <Hero />
+      <HeroProof />
       <AuthoritySection />
       <EmpathySection />
       <BrainCompareSection />

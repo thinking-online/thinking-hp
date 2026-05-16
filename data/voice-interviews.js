@@ -37,10 +37,10 @@
       en: "Interview 03",
       school: "早稲田文学部",
       year: "現役合格",
+      id: "Rj-lETyecvw",
       thumb: "assets/thumb-interview-03.png",
       headline: "早稲田文学部を、現役で掴む。",
-      pending: true,
-      tag: "動画公開準備中",
+      tag: "E判定 / 早稲田文学部",
       quote: "E判定からでも、学部別に正しく逆算すれば、早稲田文学部は狙える。",
       story:
         "高3の夏、過去問の正答率は30%未満だった。文学部志望に絞って学習を再設計し、現役で早稲田大学文学部に合格した。",

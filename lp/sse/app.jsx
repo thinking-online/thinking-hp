@@ -112,3 +112,34 @@ function Hero() {
 }
 
 window.Hero = Hero;
+
+/* =====================================================
+   HERO PROOF — 2000名実績（ヒーロー直下）
+===================================================== */
+function HeroProof() {
+  return (
+    <section className="hero-m-proof" aria-labelledby="hero-m-proof-heading">
+      <div className="wrap hero-m-proof-inner">
+        <div className="hero-m-proof-copy">
+          <p id="hero-m-proof-heading" className="hero-m-proof-line hero-m-proof-line-main">
+            累計<strong>2000</strong>名以上参加
+          </p>
+          <p className="hero-m-proof-line">受講生から高評価！</p>
+          <p className="hero-m-proof-line hero-m-proof-line-cta">次は、あなたが変わる番。</p>
+        </div>
+        <figure className="hero-m-proof-visual">
+          <img
+            src="assets/hero-proof-2000.png"
+            alt="参加者2000名・手書き感想多数の実績"
+            width="1024"
+            height="682"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </section>
+  );
+}
+
+window.HeroProof = HeroProof;

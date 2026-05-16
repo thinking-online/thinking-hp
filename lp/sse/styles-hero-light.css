@@ -122,10 +122,6 @@
 }
 
 .hero-m-title-row { display: block; }
-.hero-m-day {
-  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
-  font-size: 1.12em;
-}
 
 .hero-m-rule {
   width: min(100%, 280px);

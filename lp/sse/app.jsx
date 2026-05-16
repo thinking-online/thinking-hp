@@ -46,9 +46,7 @@ function Hero() {
 
         <div className="hero-m-copy">
           <h1 className="hero-m-title">
-            <span className="hero-m-title-row">
-              <span className="hero-m-day">45</span>日で、英語が
-            </span>
+            <span className="hero-m-title-row">45日で、英語が</span>
             <span className="hero-m-title-row">読めるようになる。</span>
           </h1>
 

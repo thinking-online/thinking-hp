@@ -459,4 +459,11 @@
   transition: transform .2s;
 }
 .sticky-cta:hover { transform: translateY(-2px); }
-@media (max-width: 720px) { .sticky-cta { font-size: 12px; padding: 12px 18px; bottom: 12px; right: 12px; } }
+@media (max-width: 720px) {
+  .sticky-cta {
+    font-size: 12px;
+    padding: 12px 18px;
+    bottom: max(12px, env(safe-area-inset-bottom));
+    right: max(12px, env(safe-area-inset-right));
+  }
+}

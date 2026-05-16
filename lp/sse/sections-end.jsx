@@ -92,10 +92,10 @@ function ResultsSection() {
 ===================================================== */
 function VoicesSection() {
   const voices = [
-    { img: "assets/testimonial-01.png", quote: "リーディング147点取れた！塾の先生にも褒められて嬉しい！", who: "高1 女子 Mさん", highlight: "3日坊主の私が、33日間も継続できた！" },
+    { img: "assets/testimonial-01.png", quote: "リーディング147点取れた！塾の先生にも褒められて嬉しい！", who: "高1 女子 Mさん", highlight: "3日坊主の私が、45日間も継続できた！" },
     { img: "assets/testimonial-02.png", quote: "読むスピードが速くなった！英作文まで得意になった！", who: "高1 女子 Kさん", highlight: "『自分を変えることができた』経験が自信に！" },
     { img: "assets/testimonial-03.png", quote: "学校の授業で自信持って答えを書けた！最後まで頑張れた！", who: "高2 女子 Nさん", highlight: "英語の苦手意識が消えて、苦に感じなくなった！" },
-    { img: "assets/testimonial-04.png", quote: "英語の世界が、変わった！学校でもこんなことを教えて欲しい…！", who: "高2 男子 Kくん", highlight: "33日間は一瞬でした！『やり切った』成功体験。" },
+    { img: "assets/testimonial-04.png", quote: "英語の世界が、変わった！学校でもこんなことを教えて欲しい…！", who: "高2 男子 Kくん", highlight: "45日間は一瞬でした！『やり切った』成功体験。" },
     { img: "assets/testimonial-05.png", quote: "基礎から学んだから、他の知識もどんどん入る！", who: "高2 女子 Nさん", highlight: "過去の自分に感謝！参加を許可してくれた親に感謝！" },
     { img: "assets/testimonial-06.png", quote: "毎日泣きそうになるくらい英語が嫌いでした。それが…", who: "高2 女子 Nさん", highlight: "人としても大きく成長できた！心の底から思う！" },
     { img: "assets/testimonial-07.png", quote: "学校で学ぶカリキュラムよりもわかりやすい！", who: "高1 女子 Kさん", highlight: "てったさんと『頑張り切れたこと』が大きな財産に！" },
@@ -111,7 +111,7 @@ function VoicesSection() {
             <span className="eyebrow">REAL VOICES</span>
             <h2 className="section-title">手書きで残された、<br /><em>2,000名超のリアルな証言。</em></h2>
             <p className="section-lead">
-              SSEを完走した生徒たちが、自分の手で綴った33日間。<br />
+              SSEを完走した生徒たちが、自分の手で綴った45日間。<br />
               ここに並ぶのは、ほんの一部です。
             </p>
           </div>
@@ -250,7 +250,7 @@ function GuaranteeSection() {
               <circle cx="60" cy="60" r="56" fill="none" stroke="#e9c267" strokeWidth="1.2" strokeDasharray="2 3" />
               <circle cx="60" cy="60" r="48" fill="none" stroke="#e9c267" strokeWidth="0.8" />
               <text x="60" y="48" textAnchor="middle" fontFamily="Cormorant Garamond" fontSize="11" fill="#e9c267" letterSpacing="2">FULL REFUND</text>
-              <text x="60" y="74" textAnchor="middle" fontFamily="Cormorant Garamond" fontSize="32" fontWeight="600" fill="#f5d98a">33</text>
+              <text x="60" y="74" textAnchor="middle" fontFamily="Cormorant Garamond" fontSize="32" fontWeight="600" fill="#f5d98a">45</text>
               <text x="60" y="92" textAnchor="middle" fontFamily="Cormorant Garamond" fontSize="11" fill="#e9c267" letterSpacing="2">DAYS</text>
             </svg>
           </div>
@@ -259,12 +259,12 @@ function GuaranteeSection() {
             <span className="eyebrow">FULL REFUND GUARANTEE</span>
             <h2>全額返金保証 — リスクは私たちが引き受ける。</h2>
             <p>
-              33日間のカリキュラムを全てやり遂げ、それでも変化を実感できなかった場合、
+              45日間のカリキュラムを全てやり遂げ、それでも変化を実感できなかった場合、
               頂いた参加費を <strong>全額返金</strong> いたします。
               金銭的なリスクは、親御様には一切負わせません。
             </p>
             <ul className="guarantee-conds">
-              <li>✓ 33日間の課題・提出をすべて指定時間内に実施</li>
+              <li>✓ 45日間の課題・提出をすべて指定時間内に実施</li>
               <li>✓ 指導側のフィードバックを反映</li>
               <li>✓ プログラム終了後のヒアリング面談に参加</li>
               <li>✓ 終了後7日以内に申請</li>
@@ -304,7 +304,7 @@ function NotForSection() {
           <div className="notfor-card">
             <span className="x">×</span>
             <h4>毎日の提出・振り返りができない方</h4>
-            <p>33日間、毎日の積み上げが前提です。継続意思のない方は対象外。</p>
+            <p>45日間、毎日の積み上げが前提です。継続意思のない方は対象外。</p>
           </div>
           <div className="notfor-card">
             <span className="x">×</span>
@@ -361,7 +361,7 @@ function FAQSection() {
             a={<>一般的なカリキュラムは「知識の積み上げ」が主で、「読み方の矯正」に特化した時間は確保されにくい構造です。SSEは既存の学習と競合せず、それらを<strong>加速させるための土台作り</strong>を行います。</>}
           />
           <FAQItem
-            q="本当に33日で変わるのか？"
+            q="本当に45日で変わるのか？"
             a={<>変えるのは膨大な「知識量」ではなく、脳の「処理フォーム（型）」です。スポーツのフォーム矯正と同様、集中的なトレーニングで短期間に根本的な読み方を書き換えることは十分に可能です。</>}
           />
           <FAQItem
@@ -374,7 +374,7 @@ function FAQSection() {
           />
           <FAQItem
             q="途中でどうしても用事があった場合は？"
-            a={<>事前にご連絡いただければ、提出ペースの調整が可能です。33日経過後もテキストや動画講義は<strong>無期限で</strong>閲覧いただけます。</>}
+            a={<>事前にご連絡いただければ、提出ペースの調整が可能です。45日経過後もテキストや動画講義は<strong>無期限で</strong>閲覧いただけます。</>}
           />
         </div>
       </div>
@@ -395,7 +395,7 @@ function PriceSection() {
             <span className="eyebrow">INVESTMENT</span>
             <h2 className="section-title">「知識」にお金を払うのではない。<br /><em>「土台」に、投資する。</em></h2>
             <p className="section-lead">
-              受験終了まで、毎日の学習に乗り続ける読み方を、33日で。<br />
+              受験終了まで、毎日の学習に乗り続ける読み方を、45日で。<br />
               一度入れたら抜けない、積み上がっていく投資です。
             </p>
           </div>
@@ -404,7 +404,7 @@ function PriceSection() {
         <div className="price-card">
           <div className="price-card-head">
             <span className="price-tag">特別プログラム</span>
-            <h3>SSE 33日間 集中合宿</h3>
+            <h3>SSE 45日間 集中合宿</h3>
             <span className="price-period">2026年期 募集　各期 上限 50名</span>
           </div>
 
@@ -416,19 +416,19 @@ function PriceSection() {
               </div>
               <div className="compare-divider"></div>
               <div className="compare-row main">
-                <span className="compare-label">SSE 33日間集中合宿</span>
-                <span className="compare-prev">¥24,800</span>
+                <span className="compare-label">SSE 45日間集中合宿</span>
+                <span className="compare-prev">¥49,800</span>
                 <span className="compare-new">
-                  <span className="new-num">¥33,000</span>
-                  <span className="new-tax">税込</span>
+                  <span className="new-num">¥39,800</span>
+                  <span className="new-tax">税込43,780円〜</span>
                 </span>
               </div>
-              <div className="price-perday">1日あたり <strong>約1,000円</strong> の投資で、一生モノの読み方を。</div>
+              <div className="price-perday">1日あたり <strong>約890円</strong> の投資で、一生モノの読み方を。</div>
             </div>
 
             <ul className="price-includes">
               <li><span>✓</span>50本以上の映像講義（無期限閲覧）</li>
-              <li><span>✓</span>33日間 毎朝のミッション送付</li>
+              <li><span>✓</span>45日間 毎朝のミッション送付</li>
               <li><span>✓</span>毎日の課題提出 / 個別フィードバック</li>
               <li><span>✓</span>個別LINE質問サポート</li>
               <li><span>✓</span>全額返金保証 制度適用</li>
@@ -436,7 +436,7 @@ function PriceSection() {
 
             <div className="price-cta">
               <a href="#apply" className="btn-primary big">
-                33日間集中合宿に申し込む
+                45日間集中合宿に申し込む
                 <span className="arrow">→</span>
               </a>
               <div className="price-cta-meta">
@@ -494,12 +494,12 @@ function FinalSection() {
 
         <p className="final-lead small">
           読み方を変えれば、英語の景色は本当に変わります。<br />
-          33日後、きっと「<em>やればできる自分</em>」と出会えます。
+          45日後、きっと「<em>やればできる自分</em>」と出会えます。
         </p>
 
         <div className="final-cta">
           <a href="#" className="btn-primary big" onClick={e => { e.preventDefault(); window.scrollTo({ top: document.getElementById("cta").offsetTop - 60, behavior: "smooth" }); }}>
-            33日間集中合宿に申し込む
+            45日間集中合宿に申し込む
             <span className="arrow">→</span>
           </a>
         </div>

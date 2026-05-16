@@ -107,7 +107,7 @@
 .hero-m-copy {
   flex-shrink: 0;
   padding-top: 4px;
-  padding-bottom: 14px;
+  padding-bottom: 10px;
 }
 
 .hero-m-title {
@@ -146,141 +146,113 @@
 }
 .hero-m-lead strong { color: #0a1530; font-weight: 800; }
 
-/* Cards on photo */
-.hero-m-cards {
-  flex-shrink: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
-  margin-bottom: 0;
-}
-
-.hero-m-card {
+/* Handwritten script — center of hero visual */
+.hero-m-script-wrap {
+  position: relative;
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 6px;
-  padding: 12px 6px 10px;
-  background: linear-gradient(165deg, rgba(15, 34, 72, 0.94) 0%, rgba(10, 21, 48, 0.96) 100%);
-  border: 1px solid rgba(232, 194, 103, 0.28);
-  border-radius: 10px;
-  box-shadow: 0 10px 28px -12px rgba(10, 21, 48, 0.65);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  min-height: 104px;
-}
-
-.hero-m-card-icon {
-  display: flex;
-  align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.08);
-  color: #e9c267;
+  align-items: flex-start;
+  min-height: clamp(140px, 34vw, 200px);
+  margin: 8px 0 4px;
+  padding: 12px 0 8px;
 }
 
-.hero-m-card-body {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  width: 100%;
-}
-
-.hero-m-card-label {
-  font-size: 9px;
-  letter-spacing: 0.06em;
-  color: rgba(247, 244, 234, 0.78);
-  font-weight: 600;
-  line-height: 1.3;
-}
-
-.hero-m-card-value {
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 1px;
-  margin: 1px 0;
-}
-
-.hero-m-card-value .num {
-  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
-  font-size: clamp(19px, 5.4vw, 26px);
-  font-weight: 700;
-  color: #f0d078;
-  line-height: 1;
-}
-
-.hero-m-card-value--date .num { font-size: clamp(21px, 5.8vw, 28px); }
-
-.hero-m-card-value .unit {
-  font-size: 11px;
-  color: #f0d078;
-  font-weight: 700;
-}
-
-.hero-m-card-sub {
-  font-size: 8px;
-  color: rgba(247, 244, 234, 0.58);
-  font-weight: 500;
-  line-height: 1.25;
-}
-
-/* Gold script — middle-left on photo */
 .hero-m-script {
   position: relative;
-  flex-shrink: 0;
-  margin: auto 0 0;
-  padding: 20px 0 16px;
-  max-width: 11.5em;
-  font-family: "Yuji Syuku", "Cormorant Garamond", "Hiragino Mincho ProN", serif;
-  font-size: clamp(28px, 7.8vw, 36px);
+  z-index: 1;
+  margin: 0;
+  padding: 0 4px;
+  max-width: 10.5em;
+  font-family: "Zen Kurenaido", "Yuji Syuku", "Hiragino Mincho ProN", serif;
+  font-size: clamp(34px, 9.5vw, 48px);
   font-weight: 400;
-  line-height: 1.28;
-  letter-spacing: 0.04em;
-  color: #b88728;
-  text-shadow:
-    0 0 1px rgba(255, 252, 240, 0.98),
-    0 1px 0 rgba(255, 255, 255, 0.7),
-    0 2px 20px rgba(255, 255, 255, 0.65),
-    0 0 36px rgba(232, 194, 103, 0.5);
-  transform: rotate(-2deg);
-  transform-origin: left bottom;
-}
-
-.hero-m-script-line { display: block; }
-.hero-m-script-em { color: #8a6618; font-size: 1.06em; }
-
-.hero-m-script-deco {
-  position: absolute;
-  left: -4px;
-  top: 54%;
-  width: 90%;
-  height: 3px;
-  background: linear-gradient(
-    90deg,
-    transparent 0%,
-    rgba(212, 175, 55, 0.8) 20%,
-    rgba(232, 194, 103, 1) 50%,
-    rgba(212, 175, 55, 0.45) 85%,
-    transparent 100%
-  );
-  border-radius: 99px;
+  line-height: 1.22;
+  letter-spacing: 0.06em;
   transform: rotate(-4deg);
+  transform-origin: left center;
+  background: linear-gradient(
+    145deg,
+    #7a5a12 0%,
+    #b88728 18%,
+    #e9c267 42%,
+    #fff4d2 52%,
+    #d4af37 68%,
+    #9a7018 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.95))
+    drop-shadow(0 3px 18px rgba(255, 255, 255, 0.55))
+    drop-shadow(0 0 28px rgba(232, 194, 103, 0.45));
 }
 
-.hero-m-script-deco::after {
-  content: "";
+.hero-m-script-line {
+  display: block;
+  padding-left: 0.06em;
+}
+
+.hero-m-script-em {
+  font-size: 1.1em;
+  letter-spacing: 0.1em;
+  padding-top: 0.08em;
+}
+
+.hero-m-script-stroke {
   position: absolute;
-  right: 2%;
-  top: -5px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #e9c267;
-  box-shadow: 0 0 10px rgba(233, 194, 103, 0.85);
+  left: 0;
+  bottom: 6%;
+  width: min(92%, 240px);
+  height: 20px;
+  opacity: 0.95;
+  transform: rotate(-5deg);
+  transform-origin: left center;
+  pointer-events: none;
+}
+
+/* Compact offer line (replaces 3 cards) */
+.hero-m-offer {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 12px;
+  padding: 10px 14px;
+  background: rgba(10, 21, 48, 0.72);
+  border: 1px solid rgba(232, 194, 103, 0.35);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 8px 28px -12px rgba(10, 21, 48, 0.5);
+}
+
+.hero-m-offer-main {
+  font-size: clamp(13px, 3.6vw, 14px);
+  color: #f7f4ea;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.hero-m-offer-main strong {
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  color: #f0d078;
+}
+
+.hero-m-offer-main small {
+  font-size: 0.82em;
+  color: rgba(247, 244, 234, 0.72);
+  margin-left: 2px;
+}
+
+.hero-m-offer-sub {
+  font-size: 11px;
+  color: rgba(247, 244, 234, 0.78);
+  letter-spacing: 0.04em;
 }
 
 /* CTAs */
@@ -332,7 +304,9 @@
   justify-content: center;
   gap: 10px;
   min-height: 50px;
-  padding: 14px 20px;
+  padding: 14px 16px;
+  font-size: clamp(12px, 3.4vw, 14px);
+  white-space: nowrap;
   background: rgba(255, 255, 255, 0.96);
   color: #06c755;
   border: 2px solid #06c755;

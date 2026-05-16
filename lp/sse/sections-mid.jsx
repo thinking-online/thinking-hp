@@ -25,9 +25,11 @@ function BrainCompareSection() {
           </p>
         </div>
 
-        <div className="compare-grid">
+        <p className="compare-swipe-hint" aria-hidden="true">← スワイプして見比べる</p>
+        <div className="compare-swipe">
+          <div className="compare-swipe-track" role="list">
           {/* BEFORE — 日本語脳 */}
-          <div className="compare-col fail">
+          <div className="compare-col fail" role="listitem">
             <div className="compare-col-head">
               <div className="compare-col-tag">
                 <span className="compare-icon-brain">⚠</span>
@@ -57,7 +59,7 @@ function BrainCompareSection() {
           </div>
 
           {/* AFTER — 英語脳 */}
-          <div className="compare-col clear">
+          <div className="compare-col clear" role="listitem">
             <div className="compare-col-head">
               <div className="compare-col-tag">
                 <span className="compare-icon-brain">◈</span>
@@ -97,6 +99,7 @@ function BrainCompareSection() {
               </div>
             </div>
           </div>
+          </div>
         </div>
 
         <div className="compare-conclude">
@@ -117,9 +120,6 @@ window.BrainCompareSection = BrainCompareSection;
    SECTION: SELF CHECK
 ===================================================== */
 function SelfCheckSection() {
-  const [revealed, setRevealed] = useState(false);
-  const [highlighted, setHighlighted] = useState(false);
-
   return (
     <section id="check" className="self-check" data-screen-label="02 Self Check">
       <div className="wrap">
@@ -144,53 +144,16 @@ function SelfCheckSection() {
 
           <div className="check-quote-mark">"</div>
 
-          <p className={`check-sentence ${highlighted ? "highlighted" : ""}`}>
-            <span className="ck-w">The baby</span>{" "}
-            <span className="ck-w">at first</span>{" "}
-            <span className="ck-w">doesn't realize</span>{" "}
-            <span className="ck-w">that</span>{" "}
-            <span className="ck-w">the sounds</span>{" "}
-            <span className="ck-w">he hears</span>{" "}
-            <span className="ck-w">are his own cries</span>{" "}
-            <span className="ck-w">or that</span>{" "}
-            <span className="ck-w">the moving thing</span>{" "}
-            <span className="ck-w">passing in front of his eyes</span>{" "}
-            <span className="ck-w">is his own hand</span>.
+          <p className="check-sentence">
+            The baby at first doesn't realize that the sounds he hears are his own cries
+            or that the moving thing passing in front of his eyes is his own hand.
           </p>
 
-          <div className="check-controls">
-            <button className="btn-ghost" onClick={() => setHighlighted(h => !h)}>
-              {highlighted ? "意味のかたまりを隠す" : "意味のかたまりを見せる"}
-            </button>
-            <button className="btn-ghost" onClick={() => setRevealed(r => !r)}>
-              {revealed ? "答えを隠す" : "答えを見る"}
-            </button>
+          <div className="check-stat">
+            <p className="check-stat-line">使ってる単語は</p>
+            <p className="check-stat-line">中学英単語なのに</p>
+            <p className="check-stat-line check-stat-em">9割がスラスラ読めない。</p>
           </div>
-
-          {revealed && (
-            <div className="check-reveal">
-              <div className="reveal-row">
-                <span className="reveal-tag">主語</span>
-                <span>The baby</span>
-                <span className="reveal-jp">赤ちゃんは</span>
-              </div>
-              <div className="reveal-row">
-                <span className="reveal-tag">動詞</span>
-                <span>doesn't realize that ~</span>
-                <span className="reveal-jp">~に気づいていない</span>
-              </div>
-              <div className="reveal-row">
-                <span className="reveal-tag">目的 A</span>
-                <span>the sounds he hears are his own cries</span>
-                <span className="reveal-jp">聞こえる音が自分の泣き声であること</span>
-              </div>
-              <div className="reveal-row">
-                <span className="reveal-tag">目的 B</span>
-                <span>the moving thing ... is his own hand</span>
-                <span className="reveal-jp">動いている物が自分の手であること</span>
-              </div>
-            </div>
-          )}
         </div>
 
         <div className="check-conclude">

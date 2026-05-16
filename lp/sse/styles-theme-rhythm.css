@@ -64,6 +64,7 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
 }
 .theme-paper .compare-source-label { color: #b88728; }
 .theme-paper .compare-source p { color: #0a1530; font-style: italic; }
+.theme-paper .compare-swipe-hint { color: #8a8676; }
 
 .theme-paper .compare-col.fail {
   background: linear-gradient(180deg, #fef4f5 0%, #ffffff 100%);
@@ -192,14 +193,9 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
 }
 .theme-paper .voices-stats {
   background: #ffffff;
-  border: 1px solid rgba(10,21,48,0.08);
+  border: 1px solid rgba(10, 21, 48, 0.08);
   border-top: 2px solid #d8a942;
 }
-.theme-paper .vstat-num { color: #b88728; }
-.theme-paper .vstat-num sub { color: #d8a942; }
-.theme-paper .vstat-num .of { color: #8a8676; }
-.theme-paper .vstat-label { color: #6b6750; }
-.theme-paper .vstat-line { background: rgba(10,21,48,0.15); }
 
 /* === Guarantee on paper === */
 .theme-paper.guarantee-section {

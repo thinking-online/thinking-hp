@@ -109,7 +109,7 @@ function VoicesSection() {
           <div className="section-num">07</div>
           <div>
             <span className="eyebrow">REAL VOICES</span>
-            <h2 className="section-title">2000枚の手書き感想が、<br /><em>すべてを語る。</em></h2>
+            <h2 className="section-title">手書き感想1000枚超が、<br /><em>すべてを語る。</em></h2>
             <p className="section-lead">
               プログラムを終えた生徒たちが、自らの手で書いてくれた感想です。<br />
               スマホで打てる時代に、わざわざ手書きで書いてくれる。それが、本物の変化の証明です。
@@ -136,20 +136,13 @@ function VoicesSection() {
         </div>
 
         <div className="voices-stats">
-          <div className="vstat">
-            <span className="vstat-num">2,000<sub>+</sub></span>
-            <span className="vstat-label">累計参加者</span>
-          </div>
-          <div className="vstat-line"></div>
-          <div className="vstat">
-            <span className="vstat-num">2,000<sub>枚+</sub></span>
-            <span className="vstat-label">手書き感想</span>
-          </div>
-          <div className="vstat-line"></div>
-          <div className="vstat">
-            <span className="vstat-num">★ 9.8<span className="of">/10</span></span>
-            <span className="vstat-label">平均評価</span>
-          </div>
+          <p className="voices-stats-bar">
+            <span className="vsb-item"><strong>2,000+</strong> 累計参加者</span>
+            <span className="vsb-sep" aria-hidden="true">·</span>
+            <span className="vsb-item"><strong>手書き感想1000枚超</strong></span>
+            <span className="vsb-sep" aria-hidden="true">·</span>
+            <span className="vsb-item"><strong>★9.8</strong>/10 平均評価</span>
+          </p>
         </div>
       </div>
     </section>

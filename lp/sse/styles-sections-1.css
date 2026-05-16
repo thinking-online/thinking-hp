@@ -261,8 +261,11 @@
   position: relative;
   background: rgba(255,255,255,0.02);
   border: 1px solid var(--navy-line);
-  padding: 60px 40px 40px;
-  margin-bottom: 48px;
+  padding: 48px 20px 28px;
+  margin-bottom: 28px;
+}
+@media (min-width: 641px) {
+  .check-frame { padding: 60px 40px 40px; margin-bottom: 40px; }
 }
 .check-frame-corner {
   position: absolute;
@@ -291,20 +294,32 @@
   text-align: center;
   letter-spacing: 0.005em;
 }
-.check-sentence .ck-w { transition: background 0.5s, color 0.5s; padding: 2px 1px; }
-.check-sentence.highlighted .ck-w:nth-child(odd) { background: rgba(217,169,66,0.18); }
-.check-sentence.highlighted .ck-w:nth-child(even) { background: rgba(76,195,138,0.14); }
-.check-controls { display: flex; gap: 12px; justify-content: center; margin-top: 32px; flex-wrap: wrap; }
-.check-reveal {
-  margin-top: 32px;
-  padding-top: 28px;
+.check-stat {
+  margin-top: 28px;
+  padding-top: 24px;
   border-top: 1px dashed var(--navy-line-strong);
-  display: grid;
-  gap: 12px;
+  text-align: center;
 }
-.reveal-row { display: grid; grid-template-columns: 110px 1fr 1fr; gap: 16px; align-items: baseline; font-size: 14px; }
-.reveal-tag { font-family: var(--mono); font-size: 11px; color: var(--gold-400); letter-spacing: 0.1em; }
-.reveal-jp { color: var(--text-300); }
+
+.check-stat-line {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(15px, 4.1vw, 18px);
+  line-height: 1.8;
+  color: var(--text-200);
+  letter-spacing: 0.08em;
+}
+
+.check-stat-em {
+  margin-top: 6px;
+  font-size: clamp(22px, 6vw, 30px);
+  font-weight: 700;
+  color: var(--gold-300);
+  letter-spacing: 0.04em;
+  background: linear-gradient(180deg, transparent 58%, rgba(217, 169, 66, 0.22) 58%);
+  padding: 0 6px;
+  display: inline-block;
+}
 
 .check-diag { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 56px; }
 .diag-col { padding: 28px; border-radius: 4px; }
@@ -322,7 +337,7 @@
 .diag-body b { color: var(--gold-300); font-weight: 600; }
 .diag-note { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--navy-line); font-size: 12px; color: var(--text-400); }
 
-.check-conclude { display: flex; align-items: center; gap: 24px; justify-content: center; text-align: center; margin-top: 24px; }
+.check-conclude { display: flex; align-items: center; gap: 16px; justify-content: center; text-align: center; margin-top: 8px; }
 .conclude-line { flex: 1; max-width: 120px; height: 1px; background: var(--gold-500); opacity: 0.5; }
 .check-conclude p { font-size: 18px; line-height: 1.7; }
 .check-conclude em { font-style: normal; color: var(--text-400); }

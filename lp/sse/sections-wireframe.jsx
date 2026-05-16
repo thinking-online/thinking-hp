@@ -8,11 +8,27 @@ function sseLineUrl() {
    AUTHORITY — 権威性
 ===================================================== */
 function AuthoritySection() {
-  const items = [
-    { icon: "🏢", title: "法人運営", desc: "合同会社ARC が運営する正規プログラム" },
-    { icon: "👥", title: "2000名以上の指導実績", desc: "延べ2000名以上の高校生が学んだ実証済みプログラム" },
-    { icon: "📺", title: "東京MX「Powered by TV」掲載", desc: "独自メソッドと伴走体制が番組で紹介されました" },
-    { icon: "📰", title: "新R25 特集インタビュー", desc: "代表・朝倉が単独インタビューを受けました" },
+  const operatingResults = [
+    {
+      thumb: "../../assets/media-r25-1.png",
+      url: "https://r25.jp/companies/all-day-thinking/interview/1026804627472908290",
+      label: "新R25 塾代表インタビュー",
+    },
+    {
+      thumb: "../../assets/media-r25-2.png",
+      url: "https://r25.jp/companies/all-day-thinking/interview/970960432984489985",
+      label: "新R25 英語指導インタビュー",
+    },
+    {
+      thumb: "../../assets/media-tv.png",
+      url: "https://powered-by-tv.com/2023/08/12/powernews11/",
+      label: "東京MX 地上波テレビ出演",
+    },
+  ];
+
+  const trustPills = [
+    { label: "法人運営", sub: "合同会社ARC" },
+    { label: "2000名以上", sub: "指導実績" },
   ];
 
   const achievements = [
@@ -31,21 +47,44 @@ function AuthoritySection() {
           <div>
             <span className="eyebrow">TRUST / AUTHORITY</span>
             <h2 className="section-title">社会から認められた、<br /><em>確かな実績。</em></h2>
+            <p className="section-lead">
+              運営塾 <strong>THINKING</strong> のメディア掲載・取材実績です。タップで記事へ。
+            </p>
           </div>
         </div>
 
-        <div className="sse-auth-grid">
-          {items.map((item, i) => (
-            <article key={i} className="sse-auth-card">
-              <span className="sse-auth-icon" aria-hidden="true">{item.icon}</span>
-              <h3>{item.title}</h3>
-              <p>{item.desc}</p>
-            </article>
-          ))}
+        <div className="sse-operating-results">
+          <h3 className="sse-operating-label">運営塾の実績</h3>
+          <div className="sse-thumb-carousel">
+            <div className="sse-thumb-track" role="list">
+              {operatingResults.map((item, i) => (
+                <a
+                  key={i}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="sse-thumb-slide"
+                  role="listitem"
+                  aria-label={item.label}
+                >
+                  <img src={item.thumb} alt={item.label} width="640" height="360" loading="lazy" />
+                </a>
+              ))}
+            </div>
+          </div>
         </div>
 
+        <ul className="sse-trust-pills">
+          {trustPills.map((t, i) => (
+            <li key={i}>
+              <strong>{t.label}</strong>
+              <span>{t.sub}</span>
+            </li>
+          ))}
+        </ul>
+
         <div className="sse-achieve-block">
-          <h3 className="sse-achieve-title">▼ 2026年度 合格実績（運営塾 THINKING 塾生）</h3>
+          <h3 className="sse-achieve-title">▼ 運営塾 THINKING の合格実績</h3>
           <ul className="sse-achieve-list">
             {achievements.map((a, i) => (
               <li key={i}>{a}</li>
@@ -71,18 +110,31 @@ function EmpathySection() {
 
   return (
     <section id="empathy" className="sse-empathy">
-      <div className="wrap">
-        <div className="section-head">
-          <div className="section-num">02</div>
-          <div>
-            <span className="eyebrow">EMPATHY</span>
-            <h2 className="section-title">なぜ、こんなに勉強してるのに<br /><em>英語が伸びないんだろう。</em></h2>
-            <p className="section-lead">
-              時間も労力もかけている。それなのに、思うように点数が上がらない。<br />
-              そう感じたことはありませんか？
-            </p>
+      <div className="sse-empathy-hero">
+        <div className="sse-empathy-visual">
+          <img
+            src="assets/empathy-student.png"
+            alt="勉強しているのに英語が伸び悩む高校生"
+            width="1024"
+            height="768"
+            loading="lazy"
+          />
+          <div className="sse-empathy-overlay">
+            <span className="sse-empathy-eyebrow">
+              <span className="sse-empathy-num">02</span> EMPATHY
+            </span>
+            <h2 className="sse-empathy-title">
+              なぜ、こんなに勉強してるのに<br />
+              <em>英語が伸びないんだろう。</em>
+            </h2>
           </div>
         </div>
+      </div>
+
+      <div className="sse-empathy-body wrap">
+        <p className="sse-empathy-lead">
+          時間も労力もかけている。それなのに、思うように点数が上がらない。そう感じたことはありませんか？
+        </p>
 
         <ul className="sse-pain-list">
           {pains.map((p, i) => (

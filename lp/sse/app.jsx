@@ -72,58 +72,27 @@ function Hero() {
           </p>
         </div>
 
-        <div className="hero-m-cards" role="list">
-          <article className="hero-m-card" role="listitem">
-            <div className="hero-m-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 28 28" width="18" height="18">
-                <path d="M3 24 V 14 H 8 V 24 M 12 24 V 8 H 17 V 24 M 21 24 V 16 H 26 V 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                <line x1="2" y1="24" x2="27" y2="24" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
-            </div>
-            <div className="hero-m-card-body">
-              <span className="hero-m-card-label">モニター価格</span>
-              <span className="hero-m-card-value"><span className="num">39,800</span><span className="unit">円〜</span></span>
-              <span className="hero-m-card-sub">税込43,780円〜</span>
-            </div>
-          </article>
-
-          <article className="hero-m-card" role="listitem">
-            <div className="hero-m-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 28 28" width="18" height="18">
-                <circle cx="10" cy="11" r="3.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
-                <circle cx="20" cy="12" r="2.5" fill="none" stroke="currentColor" strokeWidth="1.6" />
-                <path d="M3 24 C 3 19, 6 16, 10 16 C 14 16, 17 19, 17 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                <path d="M17 24 C 17 20, 19 18, 21 18 C 24 18, 26 20, 26 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
-            </div>
-            <div className="hero-m-card-body">
-              <span className="hero-m-card-label">先着</span>
-              <span className="hero-m-card-value"><span className="num">30</span><span className="unit">名</span></span>
-              <span className="hero-m-card-sub">限定募集</span>
-            </div>
-          </article>
-
-          <article className="hero-m-card" role="listitem">
-            <div className="hero-m-card-icon" aria-hidden="true">
-              <svg viewBox="0 0 28 28" width="18" height="18">
-                <rect x="3" y="5" width="22" height="20" rx="2" fill="none" stroke="currentColor" strokeWidth="1.6" />
-                <line x1="3" y1="10" x2="25" y2="10" stroke="currentColor" strokeWidth="1.6" />
-                <line x1="9" y1="3" x2="9" y2="7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-                <line x1="19" y1="3" x2="19" y2="7" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-              </svg>
-            </div>
-            <div className="hero-m-card-body">
-              <span className="hero-m-card-label">2026年</span>
-              <span className="hero-m-card-value hero-m-card-value--date"><span className="num">5/31</span></span>
-              <span className="hero-m-card-sub">まで</span>
-            </div>
-          </article>
+        <div className="hero-m-script-wrap">
+          <p className="hero-m-script" aria-label="読む力が、未来を変える。">
+            <span className="hero-m-script-line">読む力が、</span>
+            <span className="hero-m-script-line hero-m-script-em">未来を変える。</span>
+          </p>
+          <svg className="hero-m-script-stroke" viewBox="0 0 280 24" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="scriptStrokeGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stopColor="#d8a942" stopOpacity="0" />
+                <stop offset="30%" stopColor="#e9c267" />
+                <stop offset="70%" stopColor="#f5e6a8" />
+                <stop offset="100%" stopColor="#d8a942" stopOpacity="0.35" />
+              </linearGradient>
+            </defs>
+            <path d="M4 14 Q 72 5, 142 14 T 276 11" fill="none" stroke="url(#scriptStrokeGrad)" strokeWidth="2.2" strokeLinecap="round" />
+          </svg>
         </div>
 
-        <p className="hero-m-script" aria-label="読む力が、未来を変える。">
-          <span className="hero-m-script-deco" aria-hidden="true" />
-          <span className="hero-m-script-line">読む力が、</span>
-          <span className="hero-m-script-line hero-m-script-em">未来を変える。</span>
+        <p className="hero-m-offer">
+          <span className="hero-m-offer-main">モニター <strong>39,800円</strong><small>（税込43,780円）</small></span>
+          <span className="hero-m-offer-sub">先着30名 · 2026年5月31日まで</span>
         </p>
 
         <div className="hero-m-actions">
@@ -139,7 +108,6 @@ function Hero() {
             <span>LINEで個別相談する</span>
           </a>
         </div>
-
       </div>
     </header>
   );

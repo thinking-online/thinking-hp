@@ -1,0 +1,370 @@
+/* =========================================================
+   Smart Study English — Section Rhythm / Themes
+   Gives each numbered block its own identity so the page
+   doesn't feel like one long dark wall.
+========================================================= */
+
+/* ----- Base section refinements ----- */
+section { position: relative; }
+
+/* Decorative gold ornament dividers between themes */
+.theme-paper + section:not(.theme-paper):not(.theme-paper-gold)::before,
+section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
+.theme-paper-gold + section::before {
+  content: "";
+  position: absolute;
+  top: -1px; left: 50%;
+  width: 80px; height: 3px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, #d8a942, transparent);
+  z-index: 2;
+}
+
+/* =========================================================
+   THEME: PAPER  (cream/light)
+========================================================= */
+.theme-paper {
+  background: #f7f4ea !important;
+  color: #0a1530;
+  position: relative;
+  overflow: hidden;
+}
+.theme-paper::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(10,21,48,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.4;
+}
+.theme-paper > .wrap, .theme-paper > .wrap-narrow { position: relative; z-index: 2; }
+
+/* Section head */
+.theme-paper .section-num {
+  -webkit-text-stroke: 1px #d8a942;
+  color: rgba(217,169,66,0.15);
+}
+.theme-paper .eyebrow { color: #b88728; }
+.theme-paper .eyebrow::before { background: #b88728; }
+.theme-paper .section-title { color: #0a1530; }
+.theme-paper .section-title em {
+  background: linear-gradient(180deg, transparent 64%, rgba(217,169,66,0.45) 64%, rgba(217,169,66,0.45) 92%, transparent 92%);
+}
+.theme-paper .section-lead { color: #4a4d5e; }
+.theme-paper .section-lead strong { color: #0a1530; }
+
+/* === Brain Compare on paper === */
+.theme-paper.compare-section {
+  background: linear-gradient(180deg, #fbf9f0 0%, #f1ecdb 100%) !important;
+}
+.theme-paper.compare-section::before { display: none; }
+.theme-paper .compare-source {
+  background: #ffffff;
+  border: 1px solid rgba(10,21,48,0.08);
+  border-top: 2px solid #d8a942;
+  box-shadow: 0 16px 36px -22px rgba(10,21,48,0.2);
+}
+.theme-paper .compare-source-label { color: #b88728; }
+.theme-paper .compare-source p { color: #0a1530; font-style: italic; }
+
+.theme-paper .compare-col.fail {
+  background: linear-gradient(180deg, #fef4f5 0%, #ffffff 100%);
+  border: 1px solid rgba(200,54,74,0.2);
+  border-top: 2px solid #c8364a;
+  box-shadow: 0 12px 28px -20px rgba(200,54,74,0.25);
+}
+.theme-paper .compare-col.clear {
+  background: linear-gradient(180deg, #fdf7e3 0%, #ffffff 100%);
+  border: 1px solid rgba(217,169,66,0.3);
+  border-top: 2px solid #d8a942;
+  box-shadow: 0 12px 28px -20px rgba(217,169,66,0.3);
+}
+.theme-paper .compare-col-tag { color: #4a4d5e; }
+.theme-paper .compare-col.fail .compare-col-title { color: #c8364a; }
+.theme-paper .compare-col.clear .compare-col-title { color: #8a6618; }
+.theme-paper .compare-stage.fail {
+  background: #fef9fa;
+  border: 1px dashed rgba(200,54,74,0.3);
+}
+.theme-paper .compare-stage.clear {
+  background: #fffdf2;
+  border: 1px solid rgba(217,169,66,0.3);
+}
+.theme-paper .failed-fragments .frag {
+  background: white;
+  border-color: rgba(200,54,74,0.4);
+  color: #c8364a;
+}
+.theme-paper .compare-stage-note { background: #fff7d6; }
+.theme-paper .compare-stage-note p { color: #4a4d5e; }
+.theme-paper .compare-stage-note strong { color: #b88728; }
+.theme-paper .compare-col.fail .compare-stage-note { background: #fdeef0; }
+.theme-paper .compare-col.fail .compare-stage-note strong { color: #c8364a; }
+.theme-paper .cleared-stem {
+  background: #fdf7e3;
+  border-left: 2px solid #d8a942;
+}
+.theme-paper .stem-en { color: #0a1530; }
+.theme-paper .stem-jp { color: #6b6750; }
+.theme-paper .tree-conn::before { background: #d8a942; }
+.theme-paper .tree-or { background: #f7f4ea; border-color: #d8a942; color: #8a6618; }
+.theme-paper .tree-branch {
+  background: #fffdf2;
+  border-color: rgba(217,169,66,0.4);
+  box-shadow: 0 4px 12px -8px rgba(10,21,48,0.15);
+}
+.theme-paper .tree-branch::before { background: #d8a942; }
+.theme-paper .branch-tag { color: #b88728; }
+.theme-paper .branch-en { color: #0a1530; }
+.theme-paper .branch-jp { color: #6b6750; }
+.theme-paper .compare-conclude p { color: #0a1530; }
+.theme-paper .compare-conclude strong { color: #8a6618; }
+.theme-paper .compare-conclude .conclude-line { background: linear-gradient(90deg, transparent, rgba(217,169,66,0.5), transparent); }
+
+/* === Method on paper === */
+.theme-paper.method-section {
+  background: linear-gradient(180deg, #f7f4ea 0%, #f0ead8 100%) !important;
+}
+.theme-paper .method-card {
+  background: #ffffff;
+  border: 1px solid rgba(10,21,48,0.08);
+  border-top: 2px solid #d8a942;
+  box-shadow: 0 16px 32px -22px rgba(10,21,48,0.2);
+}
+.theme-paper .method-card-num { color: #d8a942; opacity: 0.3; }
+.theme-paper .method-card-tag { color: #b88728; }
+.theme-paper .method-card h3 { color: #0a1530; }
+.theme-paper .method-card p { color: #4a4d5e; }
+.theme-paper .method-card-icon svg circle,
+.theme-paper .method-card-icon svg path,
+.theme-paper .method-card-icon svg rect,
+.theme-paper .method-card-icon svg line { stroke: #d8a942; }
+
+.theme-paper .contents-title { color: #0a1530; }
+.theme-paper .contents-title em { background: linear-gradient(180deg, transparent 64%, rgba(217,169,66,0.4) 64%); }
+.theme-paper .contents-card {
+  background: #ffffff;
+  border: 1px solid rgba(10,21,48,0.08);
+  box-shadow: 0 12px 24px -18px rgba(10,21,48,0.18);
+}
+.theme-paper .contents-num { color: #b88728; }
+.theme-paper .contents-card h4 { color: #0a1530; }
+.theme-paper .contents-card p { color: #4a4d5e; }
+
+.theme-paper .support-row {
+  background: #fdf7e3;
+  border: 1px solid rgba(217,169,66,0.3);
+}
+.theme-paper .support-label { color: #b88728; }
+.theme-paper .support-items span { color: #2a3550; }
+
+.theme-paper .step-time {
+  background: #ffffff;
+  border: 1px solid #d8a942;
+  color: #8a6618;
+}
+.theme-paper .step-card {
+  background: #ffffff;
+  border: 1px solid rgba(10,21,48,0.08);
+  box-shadow: 0 12px 24px -18px rgba(10,21,48,0.2);
+}
+.theme-paper .step-card-icon { color: #d8a942; }
+.theme-paper .step-card-tag { color: #b88728; }
+.theme-paper .step-card h4 { color: #0a1530; }
+.theme-paper .step-card p { color: #4a4d5e; }
+.theme-paper .timeline-line { background: linear-gradient(90deg, transparent, rgba(217,169,66,0.5), transparent); }
+
+/* === Voices on paper === */
+.theme-paper.voices-section {
+  background: linear-gradient(180deg, #fbf9f0 0%, #f5f0dc 100%) !important;
+}
+.theme-paper .voice-card {
+  background: #ffffff;
+  border: 1px solid rgba(10,21,48,0.08);
+  box-shadow: 0 12px 28px -20px rgba(10,21,48,0.2);
+  transform: rotate(-1deg);
+}
+.theme-paper .voice-card:nth-child(2n) { transform: rotate(1deg); }
+.theme-paper .voice-card:nth-child(3n) { transform: rotate(-0.5deg); }
+.theme-paper .voice-who { color: #6b6750; }
+.theme-paper .voice-highlight {
+  background: #fdf7e3;
+  color: #8a6618;
+  border-left-color: #d8a942;
+}
+.theme-paper .voices-stats {
+  background: #ffffff;
+  border: 1px solid rgba(10,21,48,0.08);
+  border-top: 2px solid #d8a942;
+}
+.theme-paper .vstat-num { color: #b88728; }
+.theme-paper .vstat-num sub { color: #d8a942; }
+.theme-paper .vstat-num .of { color: #8a8676; }
+.theme-paper .vstat-label { color: #6b6750; }
+.theme-paper .vstat-line { background: rgba(10,21,48,0.15); }
+
+/* === Guarantee on paper === */
+.theme-paper.guarantee-section {
+  background: linear-gradient(180deg, #f7f4ea 0%, #fbf9f0 100%) !important;
+}
+.theme-paper .guarantee-card {
+  background: linear-gradient(135deg, #ffffff 0%, #fdf7e3 100%);
+  border: 1px solid rgba(217,169,66,0.4);
+  box-shadow: 0 20px 50px -28px rgba(10,21,48,0.25);
+}
+.theme-paper .guarantee-body h2 { color: #0a1530; }
+.theme-paper .guarantee-body p { color: #4a4d5e; }
+.theme-paper .guarantee-body strong { color: #b88728; }
+.theme-paper .guarantee-conds {
+  display: grid;
+}
+.theme-paper .guarantee-conds li {
+  background: #ffffff;
+  color: #2a3550;
+  border: 1px solid rgba(10,21,48,0.06);
+}
+.theme-paper .guarantee-note {
+  color: #6b6750 !important;
+  border-top-color: rgba(10,21,48,0.1);
+}
+
+/* === FAQ on paper === */
+.theme-paper.faq-section {
+  background: linear-gradient(180deg, #fbf9f0 0%, #f7f4ea 100%) !important;
+}
+.theme-paper .faq-item {
+  background: #ffffff;
+  border: 1px solid rgba(10,21,48,0.08);
+  box-shadow: 0 6px 16px -12px rgba(10,21,48,0.15);
+}
+.theme-paper .faq-item.open { border-color: #d8a942; box-shadow: 0 12px 28px -16px rgba(217,169,66,0.4); }
+.theme-paper .faq-q { color: #0a1530; }
+.theme-paper .faq-q-mark, .theme-paper .faq-toggle { color: #d8a942; }
+.theme-paper .faq-a-mark { color: #b88728; }
+.theme-paper .faq-a-text { color: #4a4d5e; }
+.theme-paper .faq-a-text strong { color: #b88728; }
+
+/* =========================================================
+   THEME: PAPER-GOLD  (premium cream with gold flourish)
+========================================================= */
+.theme-paper-gold {
+  background:
+    radial-gradient(ellipse at 50% 0%, #fff9e6 0%, transparent 50%),
+    linear-gradient(180deg, #f7f4ea 0%, #f0ead8 100%) !important;
+  color: #0a1530;
+  position: relative;
+  overflow: hidden;
+}
+.theme-paper-gold::after {
+  content: "";
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(217,169,66,0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+.theme-paper-gold > .wrap { position: relative; z-index: 2; }
+
+.theme-paper-gold .section-num {
+  -webkit-text-stroke: 1px #d8a942;
+  color: transparent;
+}
+.theme-paper-gold .eyebrow { color: #b88728; }
+.theme-paper-gold .eyebrow::before { background: #b88728; }
+.theme-paper-gold .section-title { color: #0a1530; }
+.theme-paper-gold .section-title em { background: linear-gradient(180deg, transparent 64%, rgba(217,169,66,0.5) 64%); }
+.theme-paper-gold .section-lead { color: #4a4d5e; }
+.theme-paper-gold .section-lead strong { color: #0a1530; }
+
+/* Price card on paper-gold */
+.theme-paper-gold .price-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fffaf0 100%);
+  border: 1px solid rgba(217,169,66,0.5);
+  box-shadow: 0 30px 60px -25px rgba(10,21,48,0.25), 0 0 0 8px rgba(255,255,255,0.6);
+}
+.theme-paper-gold .price-card-corner { border-color: #d8a942; }
+.theme-paper-gold .price-tag { background: #fff9e6; color: #b88728; border-color: #d8a942; }
+.theme-paper-gold .price-card-head h3 { color: #0a1530; }
+.theme-paper-gold .price-period { color: #6b6750; }
+.theme-paper-gold .price-card-head { border-bottom-color: rgba(217,169,66,0.3); }
+.theme-paper-gold .price-compare { background: #fdf7e3; }
+.theme-paper-gold .compare-label { color: #4a4d5e; }
+.theme-paper-gold .compare-row.main .compare-label { color: #0a1530; }
+.theme-paper-gold .compare-old { color: #8a8676; }
+.theme-paper-gold .compare-prev { color: #8a8676; }
+.theme-paper-gold .new-num { color: #b88728; }
+.theme-paper-gold .new-tax { color: #6b6750; }
+.theme-paper-gold .compare-divider { background: rgba(217,169,66,0.3); }
+.theme-paper-gold .price-perday { color: #4a4d5e; border-top-color: rgba(217,169,66,0.3); }
+.theme-paper-gold .price-perday strong { color: #b88728; }
+.theme-paper-gold .price-includes {
+  background: #ffffff;
+  border: 1px solid rgba(10,21,48,0.08);
+}
+.theme-paper-gold .price-includes li { color: #2a3550; }
+.theme-paper-gold .price-includes li span { color: #d8a942; }
+.theme-paper-gold .price-cta-meta { color: #6b6750; }
+
+/* =========================================================
+   THEME: DEEP-CRIMSON  (warning / problem mode)
+========================================================= */
+.theme-deep-crimson {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(200,54,74,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 100%, rgba(200,54,74,0.1) 0%, transparent 50%),
+    linear-gradient(180deg, #0a1530 0%, #060c1c 100%) !important;
+}
+.theme-deep-crimson .section-num {
+  -webkit-text-stroke: 1px #e05769;
+  color: rgba(200,54,74,0.1);
+}
+.theme-deep-crimson .eyebrow { color: #e05769; }
+.theme-deep-crimson .eyebrow::before { background: #e05769; }
+.theme-deep-crimson .section-title em {
+  background: linear-gradient(180deg, transparent 64%, rgba(200,54,74,0.4) 64%);
+}
+
+/* =========================================================
+   THEME: DEEP-GOLD  (premium night with gold)
+========================================================= */
+.theme-deep-gold {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(217,169,66,0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 60%, rgba(217,169,66,0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #0d1a3d 0%, #060c1c 100%) !important;
+}
+.theme-deep-gold::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(217,169,66,0.5), transparent);
+  z-index: 3;
+}
+.theme-deep-gold .section-num {
+  -webkit-text-stroke: 0;
+  color: #d8a942;
+  font-style: italic;
+}
+
+/* =========================================================
+   THEME: DEEP-WARM  (intimate / message)
+========================================================= */
+.theme-deep-warm {
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(217,169,66,0.06) 0%, transparent 60%),
+    linear-gradient(180deg, #11122a 0%, #060c1c 100%) !important;
+}
+.theme-deep-warm .section-num {
+  font-family: var(--display);
+  font-style: italic;
+  color: rgba(217,169,66,0.4);
+  -webkit-text-stroke: 0;
+}
+.theme-deep-warm .eyebrow { color: #f5d98a; }
+
+/* =========================================================
+   Section ornament dividers
+========================================================= */
+.section-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 28px 0;
+}
+.section-ornament .line { flex: 1; max-width: 200px; height: 1px; background: linear-gradient(90deg, transparent, rgba(217,169,66,0.5), transparent); }
+.section-ornament .mark { color: #d8a942; font-family: var(--display); font-style: italic; font-size: 14px; }

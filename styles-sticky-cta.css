@@ -149,6 +149,24 @@
   align-items: center;
   gap: 6px;
 }
+.sticky-cta-num {
+  font-family: var(--serif-en);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.45em;
+  line-height: 1;
+  color: var(--accent-bright, #d9bf85);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+  vertical-align: -0.05em;
+}
+.sticky-cta-eyebrow .sticky-cta-num {
+  font-size: 1.55em;
+}
+.sticky-cta-sub .sticky-cta-num {
+  font-size: 1.65em;
+  color: var(--accent);
+}
 .sticky-cta-sub .arrow {
   display: inline-block;
   transition: transform 0.4s var(--ease);
@@ -239,4 +257,6 @@
   .sticky-cta-icon { width: 48px; height: 48px; }
   .sticky-cta-icon svg { width: 26px; height: 26px; }
   .sticky-cta-title { font-size: 13px; }
+  .sticky-cta-eyebrow .sticky-cta-num { font-size: 1.7em; }
+  .sticky-cta-sub .sticky-cta-num { font-size: 1.85em; }
 }

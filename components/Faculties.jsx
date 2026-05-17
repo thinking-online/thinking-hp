@@ -20,8 +20,8 @@ const Faculties = () => {
     {
       group: "Group 03",
       tier: "Upper",
-      title: "MARCH",
-      sub: "明治・青山・立教・中央・法政",
+      title: "GMARCH",
+      sub: "学習院・明治・青山・立教・中央・法政",
       faculties: ["法", "経済", "経営", "商", "文", "国際", "社会", "総合政策"],
       accent: "mid",
     },
@@ -113,7 +113,7 @@ const Faculties = () => {
             私立文系の、<em>あらゆる学部</em>へ。
           </h2>
           <p className="section-lead">
-            早慶・上智ICU・MARCH・関関同立はもちろん、女子大も、その他の私立文系も。<br />
+            早慶・上智ICU・GMARCH・関関同立はもちろん、女子大も、その他の私立文系も。<br />
             私たちは、すべての学部の出題傾向と入試構造を徹底的に調べ上げています。<br />
             <span className="lead-hl">合格のために、一人ひとりに専属の個別担当を。</span>
           </p>

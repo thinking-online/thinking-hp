@@ -109,7 +109,7 @@
       year: "現役合格",
       id: "NwrlH_tyukA",
       thumb: "assets/thumb-interview-08.png",
-      headline: "定期テスト以外ゼロから、明治文学部へ。",
+      headline: "定期テスト以外「勉強」ゼロから、明治文学部へ。",
       tag: "MARCH全勝 / 文学部",
       quote: "勉強時間が少なくても、学部別に正しく設計すれば、明治大学文学部は狙える。",
       story:

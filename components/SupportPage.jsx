@@ -867,9 +867,6 @@ const SupportFinalCta = () => (
         >
           無料体験面談に申し込む
         </a>
-        <a className="sup-cta-secondary" href="/products">
-          資料を請求する
-        </a>
       </div>
     </div>
   </section>

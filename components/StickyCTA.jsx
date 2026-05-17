@@ -76,13 +76,14 @@ const StickyCTA = () => {
           <div className="sticky-cta-text">
             <span className="sticky-cta-eyebrow">
               <span className="dot" />
-              <span>受付中 — 月10名限定</span>
+              <span>受付中 — 月<span className="sticky-cta-num">10</span>名限定</span>
             </span>
             <span className="sticky-cta-title">
               私立文系の<em>個別戦略相談会</em>
             </span>
             <span className="sticky-cta-sub">
-              公式LINE追加 <span className="arrow">→</span> 60分・無料
+              公式LINE追加 <span className="arrow">→</span>{" "}
+              <span className="sticky-cta-num">60</span>分・無料
             </span>
           </div>
           <div className="sticky-cta-shine" />

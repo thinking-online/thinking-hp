@@ -10,22 +10,22 @@ function Hero() {
       <div className="hero-m-bg" aria-hidden="true">
         <img
           className="hero-m-bg-img"
-          src="assets/hero-student.png"
+          src="assets/hero-reading.png"
           alt=""
           width="576"
           height="1024"
           fetchPriority="high"
         />
       </div>
-      <div className="hero-m-scrim hero-m-scrim-top" aria-hidden="true" />
-      <div className="hero-m-scrim hero-m-scrim-left" aria-hidden="true" />
-      <div className="hero-m-scrim hero-m-scrim-bottom" aria-hidden="true" />
+      <div className="hero-m-overlay hero-m-overlay-top" aria-hidden="true" />
+      <div className="hero-m-overlay hero-m-overlay-left" aria-hidden="true" />
+      <div className="hero-m-overlay hero-m-overlay-bottom" aria-hidden="true" />
 
-      <div className="hero-m-inner wrap">
+      <div className="hero-m-inner">
         <div className="hero-m-header">
           <div className="brand-mark">
             <div className="brand-shield">
-              <svg viewBox="0 0 60 70" width="40" height="46" aria-hidden="true">
+              <svg viewBox="0 0 60 70" width="36" height="42" aria-hidden="true">
                 <defs>
                   <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
                     <stop offset="0%" stopColor="#0d1a3d" />
@@ -41,35 +41,16 @@ function Hero() {
           </div>
         </div>
 
-        <div className="hero-m-copy">
-          <h1 className="hero-m-title">
-            <span className="hero-m-title-row">45日で、英語が</span>
-            <span className="hero-m-title-row">読めるようになる。</span>
-          </h1>
+        <h1 className="hero-m-vertical-panel" aria-label="左から右にスラスラ、英語が読めるを。">
+          <span>左から右にスラスラ</span>
+          <span>英語が<em>「読める」</em>を。</span>
+        </h1>
 
-          <div className="hero-m-rule" aria-hidden="true">
-            <svg viewBox="0 0 320 20" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="heroRuleGrad" x1="0" y1="0" x2="1" y2="0">
-                  <stop offset="0%" stopColor="#d8a942" stopOpacity="0" />
-                  <stop offset="35%" stopColor="#d8a942" />
-                  <stop offset="100%" stopColor="#d8a942" stopOpacity="0.2" />
-                </linearGradient>
-              </defs>
-              <path d="M 4 12 Q 80 4, 160 11 T 316 12" stroke="url(#heroRuleGrad)" strokeWidth="1.4" fill="none" strokeLinecap="round" />
-              <circle cx="312" cy="12" r="1.8" fill="#d8a942" />
-            </svg>
-          </div>
-
-          <p className="hero-m-lead">
+        <div className="hero-m-foot">
+          <p className="hero-m-subcopy">
             <strong>2,000名</strong>が証明した「読み方」を、<br />
             個別面談付きで身につける<strong>45日間</strong>。
           </p>
-        </div>
-
-        <div className="hero-m-visual-spacer" aria-hidden="true" />
-
-        <div className="hero-m-actions">
           <a href="#cta" className="hero-m-cta-primary">
             <span>申し込みはコチラ</span>
             <span className="hero-m-cta-arrow" aria-hidden="true">→</span>

@@ -1,5 +1,5 @@
 /* =========================================================
-   Smart Study English — Hero (full-bleed bg + overlay)
+   Smart Study English — Hero (HP-style vertical copy)
 ========================================================= */
 
 .hero-m {
@@ -7,11 +7,12 @@
   isolation: isolate;
   min-height: 100svh;
   min-height: 100dvh;
-  color: #0a1530;
+  color: #f7f4ea;
   overflow: hidden;
+  background: #060c1c;
 }
 
-/* Background photo — edge to edge from top */
+/* Background photo */
 .hero-m-bg {
   position: absolute;
   inset: 0;
@@ -22,66 +23,64 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 62% 22%;
+  object-position: 72% center;
   display: block;
-  filter: saturate(0.98) brightness(1);
+  filter: saturate(0.94) brightness(0.95) contrast(1.04);
 }
 
-/* Scrim layers for legibility (HP-style) */
-.hero-m-scrim {
+/* Dark overlays — legibility for vertical + bottom copy */
+.hero-m-overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
   pointer-events: none;
 }
 
-.hero-m-scrim-top {
-  background: linear-gradient(
-    180deg,
-    rgba(252, 250, 244, 0.98) 0%,
-    rgba(252, 250, 244, 0.94) 8%,
-    rgba(252, 250, 244, 0.82) 18%,
-    rgba(252, 250, 244, 0.52) 32%,
-    rgba(252, 250, 244, 0.18) 48%,
-    transparent 62%
-  );
-}
-
-.hero-m-scrim-left {
+.hero-m-overlay-left {
   background: linear-gradient(
     90deg,
-    rgba(252, 250, 244, 0.72) 0%,
-    rgba(252, 250, 244, 0.38) 28%,
-    rgba(252, 250, 244, 0.12) 48%,
-    transparent 68%
+    rgba(0, 0, 0, 0.68) 0%,
+    rgba(6, 14, 26, 0.52) 36%,
+    rgba(6, 17, 31, 0.2) 68%,
+    rgba(6, 17, 31, 0.06) 100%
   );
 }
 
-.hero-m-scrim-bottom {
+.hero-m-overlay-top {
   background: linear-gradient(
     180deg,
-    transparent 50%,
-    rgba(252, 250, 244, 0.08) 68%,
-    rgba(252, 250, 244, 0.55) 88%,
-    rgba(252, 250, 244, 0.92) 100%
+    rgba(8, 8, 10, 0.78) 0%,
+    rgba(8, 8, 10, 0.48) 16%,
+    rgba(8, 8, 10, 0.12) 32%,
+    transparent 52%
   );
 }
 
-/* Foreground stack */
+.hero-m-overlay-bottom {
+  background: linear-gradient(
+    180deg,
+    transparent 44%,
+    rgba(8, 10, 16, 0.38) 68%,
+    rgba(8, 10, 16, 0.78) 100%
+  );
+}
+
+/* Foreground */
 .hero-m-inner {
   position: relative;
   z-index: 2;
-  display: flex;
-  flex-direction: column;
   min-height: 100svh;
   min-height: 100dvh;
-  padding-top: max(12px, env(safe-area-inset-top));
-  padding-bottom: max(20px, env(safe-area-inset-bottom));
+  padding:
+    max(14px, env(safe-area-inset-top))
+    max(16px, env(safe-area-inset-right))
+    max(16px, env(safe-area-inset-bottom))
+    max(16px, env(safe-area-inset-left));
 }
 
 .hero-m-header {
-  flex-shrink: 0;
-  padding-bottom: 8px;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-m .brand-mark {
@@ -89,67 +88,79 @@
   align-items: center;
   gap: 10px;
 }
+
 .hero-m .brand-product {
   margin: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(11px, 3vw, 12px);
-  letter-spacing: 0.24em;
-  color: #3a4560;
+  font-size: clamp(10px, 2.8vw, 11px);
+  letter-spacing: 0.26em;
+  color: rgba(247, 244, 234, 0.88);
   font-style: italic;
   text-transform: uppercase;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
-.hero-m-copy {
-  flex-shrink: 0;
-  padding-top: 4px;
-  padding-bottom: 6px;
-  max-width: 92%;
+/* Vertical headline — THINKING HP style */
+.hero-m-vertical-panel {
+  position: absolute;
+  left: clamp(14px, 4.6vw, 22px);
+  top: clamp(128px, 23svh, 210px);
+  z-index: 2;
+  margin: 0;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Noto Serif JP", "Yu Mincho", serif;
+  font-weight: 500;
+  font-size: clamp(28px, 8vw, 38px);
+  line-height: 1.62;
+  letter-spacing: 0.1em;
+  color: #f7f4ea;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.38), rgba(10, 8, 4, 0.55));
+  border-left: 1px solid rgba(216, 169, 66, 0.92);
+  padding: 14px 12px;
+  text-shadow: 0 6px 18px rgba(0, 0, 0, 0.42);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 
-.hero-m-title {
+.hero-m-vertical-panel span {
+  display: block;
+}
+
+.hero-m-vertical-panel em {
+  font-style: normal;
+  color: #f0d078;
+}
+
+/* Bottom copy + CTA */
+.hero-m-foot {
+  position: absolute;
+  left: clamp(16px, 4.8vw, 24px);
+  right: clamp(16px, 4.8vw, 24px);
+  bottom: max(20px, env(safe-area-inset-bottom));
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: min(92vw, 380px);
+}
+
+.hero-m-subcopy {
   margin: 0;
   font-family: "Noto Serif JP", "Yu Mincho", serif;
-  font-weight: 900;
-  font-size: clamp(30px, 8.6vw, 42px);
-  line-height: 1.22;
-  letter-spacing: -0.02em;
-  color: #0a1530;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+  font-size: clamp(12px, 3.3vw, 14px);
+  line-height: 1.9;
+  letter-spacing: 0.05em;
+  color: rgba(247, 244, 234, 0.92);
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.48);
+  overflow-wrap: anywhere;
+  word-break: normal;
+  line-break: strict;
 }
 
-.hero-m-title-row { display: block; }
-
-.hero-m-rule {
-  width: min(100%, 280px);
-  height: 18px;
-  margin: 10px 0 12px;
-}
-.hero-m-rule svg { width: 100%; height: 100%; display: block; }
-
-.hero-m-lead {
-  margin: 0;
-  font-family: "Noto Sans JP", sans-serif;
-  font-size: clamp(13px, 3.6vw, 15px);
-  line-height: 1.85;
-  color: #1e2a42;
-  font-weight: 500;
-  max-width: 36em;
-  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.75);
-}
-.hero-m-lead strong { color: #0a1530; font-weight: 800; }
-
-/* Photo breathing room — face stays visible between copy and CTA */
-.hero-m-visual-spacer {
-  flex: 1 1 auto;
-  min-height: clamp(180px, 42vw, 280px);
-}
-
-/* CTA pinned to bottom of hero */
-.hero-m-actions {
-  flex-shrink: 0;
-  margin-top: auto;
-  padding-top: 8px;
-  padding-bottom: 4px;
+.hero-m-subcopy strong {
+  font-weight: 700;
+  color: #f0d078;
 }
 
 .hero-m-cta-primary {
@@ -158,20 +169,24 @@
   justify-content: center;
   gap: 12px;
   width: 100%;
-  min-height: 54px;
-  padding: 16px 20px;
+  min-height: 52px;
+  padding: 15px 20px;
   background: linear-gradient(180deg, #ff9f4a 0%, #ee7a1f 55%, #e56c12 100%);
   color: #fff;
   border-radius: 999px;
+  font-family: "Noto Sans JP", sans-serif;
   font-size: clamp(14px, 3.9vw, 16px);
   font-weight: 800;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.04em;
   box-shadow:
-    0 14px 32px -10px rgba(238, 122, 31, 0.7),
+    0 14px 32px -10px rgba(238, 122, 31, 0.65),
+    0 4px 16px rgba(0, 0, 0, 0.35),
     inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
-.hero-m-cta-primary:active { transform: scale(0.98); }
+.hero-m-cta-primary:active {
+  transform: scale(0.98);
+}
 
 .hero-m-cta-arrow {
   display: inline-flex;
@@ -187,69 +202,43 @@
   font-size: 14px;
 }
 
-/* Trust */
-.hero-m-trust {
-  flex-shrink: 0;
-  margin-top: 16px;
-  padding-top: 14px;
-  border-top: 1px solid rgba(255, 255, 255, 0.35);
-  text-align: center;
-}
-
-.hero-m-trust-label {
-  display: block;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 9px;
-  letter-spacing: 0.28em;
-  color: rgba(247, 244, 234, 0.75);
-  margin-bottom: 8px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.35);
-}
-
-.hero-m-trust-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 10px 14px;
-}
-
-.hero-m-trust-list li {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  color: rgba(247, 244, 234, 0.92);
-  font-weight: 600;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.4);
-}
-
-.hero-m-trust-tag {
-  font-family: "JetBrains Mono", monospace;
-  font-size: 9px;
-  padding: 2px 6px;
-  background: rgba(10, 21, 48, 0.85);
-  color: #f5d98a;
-  border-radius: 2px;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
-
 /* Wider screens — phone-frame LP column */
 @media (min-width: 540px) {
   .hero-m {
     max-width: 520px;
     margin-left: auto;
     margin-right: auto;
-    box-shadow: 0 0 80px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0 80px rgba(0, 0, 0, 0.5);
   }
 }
 
 @media (min-width: 900px) {
-  .hero-m { max-width: 480px; }
+  .hero-m {
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-m-vertical-panel {
+    font-size: 26px;
+    top: clamp(118px, 20svh, 188px);
+    padding: 12px 10px;
+  }
+
+  .hero-m-subcopy {
+    font-size: 11.5px;
+    line-height: 1.82;
+  }
+
+  .hero-m-foot {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 430px) and (min-width: 390px) {
+  .hero-m-vertical-panel {
+    top: clamp(132px, 23svh, 208px);
+  }
 }
 
 /* ===== HERO PROOF — 2000名実績（ヒーロー直下） ===== */
@@ -327,27 +316,6 @@
   width: 100%;
   height: auto;
   vertical-align: top;
-}
-
-/* モバイル：ヒーローが100vhのため、実績が少し見えるようヒーロー高さを調整 */
-@media (max-width: 540px) {
-  .hero-m {
-    min-height: auto;
-  }
-
-  .hero-m-inner {
-    min-height: auto;
-    min-height: unset;
-    padding-bottom: 12px;
-  }
-
-  .hero-m-visual-spacer {
-    min-height: clamp(140px, 38vw, 200px);
-  }
-
-  .hero-m-proof {
-    scroll-margin-top: 12px;
-  }
 }
 
 @media (min-width: 541px) {

@@ -37,8 +37,19 @@
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
     line-break: strict;
-    overflow-wrap: anywhere;
-    word-break: normal;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+
+  /* 大見出し：句読点など自然な位置で折る（単語の途中で切らない） */
+  .hero-title,
+  .h2,
+  .program-title,
+  .step-title,
+  .final-cta-title {
+    word-break: keep-all;
+    overflow-wrap: normal;
+    text-wrap: pretty;
   }
   ::selection { background: var(--accent); color: var(--paper); }
 
@@ -119,7 +130,6 @@
     margin-bottom: 48px;
     opacity: 0;
     animation: fadeUp 1.2s 0.4s forwards;
-    text-wrap: balance;
   }
   .hero-title .accent {
     color: var(--accent);
@@ -215,6 +225,14 @@
     word-break: normal;
     hyphens: auto;
   }
+
+  /* 英文・長い英単語のみ任意位置で折る */
+  .specimen-text,
+  .anatomy-line,
+  .skeleton-eq {
+    word-break: normal;
+    overflow-wrap: break-word;
+  }
   .specimen-bottom {
     margin-top: 32px;
     padding-top: 24px;
@@ -296,7 +314,6 @@
     color: var(--ink);
     margin-bottom: 32px;
     letter-spacing: -0.01em;
-    text-wrap: balance;
   }
   .h2 .accent {
     color: var(--accent);
@@ -871,7 +888,30 @@
 
   /* スマホ：意図しない改行を防ぎ、自然な折り返しに */
   @media (max-width: 720px) {
-    .container { padding: 0 20px; }
+    .container { padding: 0 18px; }
+
+    .hero-title,
+    .h2,
+    .program-title,
+    .step-title,
+    .final-cta-title {
+      text-wrap: wrap;
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+
+    .lead,
+    .problem-list li,
+    .typewriter-card .quote-text,
+    .feature-desc,
+    .step-desc,
+    .audience-list li,
+    .insight-note,
+    .final-cta-desc,
+    .stat-label {
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
 
     .hero { padding: 32px 0 64px; }
     .hero-tag {
@@ -884,11 +924,7 @@
       line-height: 1.85;
     }
 
-    .hero-title br,
-    .h2 br,
-    .program-title br,
-    .step-title br,
-    .final-cta-title br,
+    /* 本文のみ：PC用の br を消す（見出しの br は句読点どおりで有効） */
     .lead br,
     .insight-note br,
     .final-cta-desc br,
@@ -897,14 +933,14 @@
     }
 
     .hero-title {
-      font-size: clamp(26px, 7.2vw, 34px);
-      line-height: 1.42;
+      font-size: clamp(24px, 6.4vw, 32px);
+      line-height: 1.48;
       margin-bottom: 32px;
     }
 
     .h2 {
-      font-size: clamp(22px, 6.4vw, 30px);
-      line-height: 1.42;
+      font-size: clamp(21px, 5.8vw, 28px);
+      line-height: 1.48;
       margin-bottom: 24px;
     }
 

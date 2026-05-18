@@ -51,8 +51,7 @@ function BrainCompareSection() {
         <div className="compare-source">
           <span className="compare-source-label">SOURCE TEXT　原文</span>
           <p>
-            <span>The baby at first doesn't realize that the sounds he hears are his own cries</span>
-            <span> or that the moving thing passing in front of his eyes is his own hand.</span>
+            The baby at first doesn't realize that the sounds he hears are his own cries or that the moving thing passing in front of his eyes is his own hand.
           </p>
         </div>
 
@@ -205,8 +204,7 @@ function SelfCheckSection() {
           <div className="check-quote-mark">"</div>
 
           <p className="check-sentence">
-            The baby at first doesn't realize that the sounds he hears are his own cries
-            or that the moving thing passing in front of his eyes is his own hand.
+            In the examples I am talking of the person continues to behave in what most people agree is a normal manner.
           </p>
 
           <div className="check-stat">

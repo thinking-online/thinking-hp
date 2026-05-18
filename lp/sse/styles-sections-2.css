@@ -45,7 +45,6 @@
 .compare-source { margin: 0 auto 48px; max-width: 920px; padding: 24px 28px; background: linear-gradient(90deg, rgba(0,0,0,0.5), rgba(217,169,66,0.06), rgba(0,0,0,0.5)); border: 1px solid var(--navy-line-strong); border-top: 2px solid var(--gold-500); border-radius: 4px; }
 .compare-source-label { font-family: var(--mono); font-size: 10px; letter-spacing: 0.25em; color: var(--gold-300); display: block; margin-bottom: 12px; }
 .compare-source p { margin: 0; font-family: 'Cormorant Garamond', var(--serif); font-size: 22px; line-height: 1.7; color: var(--text-100); font-style: italic; letter-spacing: 0.01em; }
-.compare-source p span { display: block; }
 
 .compare-switcher {
   margin-bottom: 12px;
@@ -428,14 +427,21 @@
 @keyframes voicesScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 .voice-card { width: 280px; flex-shrink: 0; padding: 20px; background: rgba(255,255,255,0.03); border: 1px solid var(--navy-line); border-radius: 4px; }
-.voice-bubble { position: relative; padding: 12px 14px; background: linear-gradient(180deg, #2b80d6, #1f6cbe); color: white; border-radius: 6px; margin-bottom: 14px; }
-.voice-bubble::after { content: ""; position: absolute; bottom: -8px; left: 24px; border: 8px solid transparent; border-top-color: #1f6cbe; border-bottom: 0; }
-.voice-bubble-tag { font-family: var(--mono); font-size: 9px; letter-spacing: 0.2em; opacity: 0.7; display: block; margin-bottom: 4px; }
-.voice-bubble p { margin: 0; font-size: 13px; line-height: 1.6; font-weight: 600; }
-.voice-img-wrap { position: relative; height: 200px; background: rgba(0,0,0,0.3); overflow: hidden; border-radius: 3px; margin-bottom: 12px; }
-.voice-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top; }
-.voice-who { font-size: 11px; color: var(--text-400); font-family: var(--mono); letter-spacing: 0.1em; margin-bottom: 8px; }
-.voice-highlight { font-size: 12px; padding: 8px 10px; background: rgba(245,217,138,0.15); color: var(--gold-100); border-left: 2px solid var(--gold-400); line-height: 1.6; font-weight: 600; }
+.voice-card--image {
+  width: clamp(220px, 62vw, 300px);
+  padding: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+}
+.voice-card--image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 12px 32px -16px rgba(0, 0, 0, 0.35);
+}
 
 .voices-stats {
   margin-top: 40px;

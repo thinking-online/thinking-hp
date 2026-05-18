@@ -83,20 +83,14 @@
   z-index: 3;
 }
 
-.hero-m .brand-mark {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.hero-m .brand-product {
+.hero-m-brand {
   margin: 0;
-  font-family: "Cormorant Garamond", serif;
-  font-size: clamp(10px, 2.8vw, 11px);
-  letter-spacing: 0.26em;
-  color: rgba(247, 244, 234, 0.88);
-  font-style: italic;
-  text-transform: uppercase;
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(13px, 3.6vw, 15px);
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: 0.14em;
+  color: rgba(247, 244, 234, 0.92);
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 

@@ -23,22 +23,7 @@ function Hero() {
 
       <div className="hero-m-inner">
         <div className="hero-m-header">
-          <div className="brand-mark">
-            <div className="brand-shield">
-              <svg viewBox="0 0 60 70" width="36" height="42" aria-hidden="true">
-                <defs>
-                  <linearGradient id="shieldGrad" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#0d1a3d" />
-                    <stop offset="100%" stopColor="#060c1c" />
-                  </linearGradient>
-                </defs>
-                <path d="M30 2 L 56 10 L 56 36 C 56 52, 44 64, 30 68 C 16 64, 4 52, 4 36 L 4 10 Z" fill="url(#shieldGrad)" stroke="#d8a942" strokeWidth="1" />
-                <text x="30" y="44" textAnchor="middle" fontFamily="Cormorant Garamond" fontSize="32" fontWeight="700" fill="#e9c267">T</text>
-                <circle cx="30" cy="13" r="1.6" fill="#e9c267" />
-              </svg>
-            </div>
-            <p className="brand-product">Smart Study English</p>
-          </div>
+          <p className="hero-m-brand">Smart Study English</p>
         </div>
 
         <h1 className="hero-m-vertical-panel" aria-label="左から右にスラスラ、英語が読めるを。">

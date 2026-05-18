@@ -181,19 +181,13 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
 .theme-paper.voices-section {
   background: linear-gradient(180deg, #fbf9f0 0%, #f5f0dc 100%) !important;
 }
-.theme-paper .voice-card {
-  background: #ffffff;
-  border: 1px solid rgba(10,21,48,0.08);
-  box-shadow: 0 12px 28px -20px rgba(10,21,48,0.2);
+.theme-paper .voice-card--image {
   transform: rotate(-1deg);
 }
-.theme-paper .voice-card:nth-child(2n) { transform: rotate(1deg); }
-.theme-paper .voice-card:nth-child(3n) { transform: rotate(-0.5deg); }
-.theme-paper .voice-who { color: #6b6750; }
-.theme-paper .voice-highlight {
-  background: #fdf7e3;
-  color: #8a6618;
-  border-left-color: #d8a942;
+.theme-paper .voice-card--image:nth-child(2n) { transform: rotate(1deg); }
+.theme-paper .voice-card--image:nth-child(3n) { transform: rotate(-0.5deg); }
+.theme-paper .voice-card--image img {
+  box-shadow: 0 16px 36px -18px rgba(10, 21, 48, 0.28);
 }
 .theme-paper .voices-stats {
   background: #ffffff;

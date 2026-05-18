@@ -92,14 +92,18 @@ function ResultsSection() {
 ===================================================== */
 function VoicesSection() {
   const voices = [
-    { img: "assets/testimonial-01.png", quote: "リーディング147点取れた！塾の先生にも褒められて嬉しい！", who: "高1 女子 Mさん", highlight: "3日坊主の私が、45日間も継続できた！" },
-    { img: "assets/testimonial-02.png", quote: "読むスピードが速くなった！英作文まで得意になった！", who: "高1 女子 Kさん", highlight: "『自分を変えることができた』経験が自信に！" },
-    { img: "assets/testimonial-03.png", quote: "学校の授業で自信持って答えを書けた！最後まで頑張れた！", who: "高2 女子 Nさん", highlight: "英語の苦手意識が消えて、苦に感じなくなった！" },
-    { img: "assets/testimonial-04.png", quote: "英語の世界が、変わった！学校でもこんなことを教えて欲しい…！", who: "高2 男子 Kくん", highlight: "45日間は一瞬でした！『やり切った』成功体験。" },
-    { img: "assets/testimonial-05.png", quote: "基礎から学んだから、他の知識もどんどん入る！", who: "高2 女子 Nさん", highlight: "過去の自分に感謝！参加を許可してくれた親に感謝！" },
-    { img: "assets/testimonial-06.png", quote: "毎日泣きそうになるくらい英語が嫌いでした。それが…", who: "高2 女子 Nさん", highlight: "人としても大きく成長できた！心の底から思う！" },
-    { img: "assets/testimonial-07.png", quote: "学校で学ぶカリキュラムよりもわかりやすい！", who: "高1 女子 Kさん", highlight: "てったさんと『頑張り切れたこと』が大きな財産に！" },
-    { img: "assets/testimonial-08.png", quote: "「やればできるじゃん！」と自分でもびっくり！", who: "高2 女子 Yさん", highlight: "終わってしまうのが心の底から寂しい…" },
+    "assets/testimonial-01.png",
+    "assets/testimonial-02.png",
+    "assets/testimonial-03.png",
+    "assets/testimonial-04.png",
+    "assets/testimonial-05.png",
+    "assets/testimonial-06.png",
+    "assets/testimonial-07.png",
+    "assets/testimonial-08.png",
+    "assets/testimonial-09.png",
+    "assets/testimonial-10.png",
+    "assets/testimonial-11.png",
+    "assets/testimonial-12.png",
   ];
 
   return (
@@ -119,17 +123,9 @@ function VoicesSection() {
 
         <div className="voices-strip">
           <div className="voices-track">
-            {voices.concat(voices).map((v, i) => (
-              <article key={i} className="voice-card">
-                <div className="voice-bubble">
-                  <span className="voice-bubble-tag">VOICE</span>
-                  <p>{v.quote}</p>
-                </div>
-                <div className="voice-img-wrap">
-                  <img src={v.img} alt="手書き感想" loading="lazy" />
-                </div>
-                <div className="voice-who">{v.who}</div>
-                <div className="voice-highlight">{v.highlight}</div>
+            {voices.concat(voices).map((src, i) => (
+              <article key={i} className="voice-card voice-card--image">
+                <img src={src} alt="受講生の手書き感想" loading="lazy" decoding="async" />
               </article>
             ))}
           </div>
@@ -197,26 +193,26 @@ function MessageSection() {
           </div>
         </div>
 
-        <div className="message-layout">
-          <aside className="message-profile">
+        <div className="message-card">
+          <div className="message-intro">
             <figure className="message-photo">
               <img
-                src="assets/founder-message.png"
+                src="assets/founder-portrait.png"
                 alt="朝倉 徹大 — THINKING 代表"
-                width="1024"
-                height="683"
+                width="400"
+                height="520"
                 loading="lazy"
+                decoding="async"
               />
             </figure>
-            <div className="message-profile-text">
-              <p className="message-profile-label">代表</p>
+            <div className="message-intro-copy">
+              <p className="message-profile-label">代表メッセージ</p>
               <h3 className="message-profile-name">朝倉 徹大</h3>
               <p className="message-profile-role">
-                合同会社ARC 代表社員<br />
-                難関私大専門オンライン塾 THINKING 代表
+                合同会社ARC 代表社員 / 難関私大専門オンライン塾 THINKING 代表
               </p>
             </div>
-          </aside>
+          </div>
 
           <div className="message-content">
             <div className="message-body">

@@ -2,8 +2,8 @@
 // 固有名: 合格設計図(Master Plan) / ステージ式ロードマップ(STEP Roadmap) / THINKING Method
 
 const ASSETS = {
-  heroCoaching: "assets/support-hero-coaching.jpg?v=20260515-hero-mobile-v3",
-  heroCoachingDesktop: "assets/support-hero-coaching-desktop.jpg?v=20260515-hero-pc",
+  heroMobile: "assets/support-hero-mobile-student.png",
+  heroDesktop: "assets/support-hero-desktop-student.png",
   thinkingMethod: "assets/support-thinking-method.png?v=20260515-method",
   masterPlan: "assets/support-master-plan.png",
   workbook: "assets/products-series-4parts-overview.png",
@@ -32,71 +32,133 @@ const SupportPage = () => (
 
 /* ─── Hero ───────────────────────────────────────────────── */
 
-const SupportHero = () => (
-  <section className="sup-hero" aria-labelledby="sup-hero-title">
-    <div className="sup-hero-firstview">
-      <div className="sup-hero-media">
-        <picture>
-          <source media="(min-width: 901px)" srcSet={ASSETS.heroCoachingDesktop} />
+const SupportHero = () => {
+  const [scrollY, setScrollY] = React.useState(0);
+  const [mouseX, setMouseX] = React.useState(0);
+  const [mouseY, setMouseY] = React.useState(0);
+
+  React.useEffect(() => {
+    const onScroll = () => setScrollY(window.scrollY);
+    const onMouse = (e) => {
+      setMouseX((e.clientX / window.innerWidth - 0.5) * 2);
+      setMouseY((e.clientY / window.innerHeight - 0.5) * 2);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("mousemove", onMouse);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("mousemove", onMouse);
+    };
+  }, []);
+
+  return (
+    <section className="sup-hero" aria-labelledby="sup-hero-title">
+      <div className="sup-hero-mobile-firstview">
+        <div className="sup-hero-mobile-bg-wrap">
           <img
-            className="sup-hero-photo"
-            src={ASSETS.heroCoaching}
+            className="sup-hero-mobile-bg-image"
+            src={ASSETS.heroMobile}
             width={576}
             height={1024}
-            alt="夜の自宅でオンライン指導を受けながら学習する受講生"
+            alt="夜のデスクで学習に集中する男子学生"
             loading="eager"
             decoding="async"
           />
-        </picture>
-      </div>
-      <div className="sup-hero-overlay sup-hero-overlay-left" aria-hidden="true" />
-      <div className="sup-hero-overlay sup-hero-overlay-top" aria-hidden="true" />
-      <div className="sup-hero-overlay sup-hero-overlay-bottom" aria-hidden="true" />
-      <div className="sup-hero-grain" aria-hidden="true" />
+        </div>
+        <div className="sup-hero-mobile-overlay sup-hero-mobile-overlay-left" aria-hidden="true" />
+        <div className="sup-hero-mobile-overlay sup-hero-mobile-overlay-top" aria-hidden="true" />
+        <div className="sup-hero-mobile-overlay sup-hero-mobile-overlay-bottom" aria-hidden="true" />
 
-      <div className="sup-hero-content">
-        <p className="sup-hero-kicker">サポート体制</p>
+        <div className="sup-hero-mobile-copy-panel" aria-label="根性論はなし。再現性にこだわる。">
+          <span>根性論はなし。</span>
+          <span><em>『再現性』</em>にこだわる。</span>
+        </div>
 
-        <h1 id="sup-hero-title" className="sup-hero-headline">
-          <span className="sup-hero-headline-l1">根性論はなし。</span>
-          <span className="sup-hero-headline-l2">「再現性」のあるサポート</span>
-        </h1>
-
-        <div className="sup-hero-bottom">
-          <p className="sup-hero-lead">
-            <span className="sup-hero-lead-pillars">
-              「<em className="sup-hero-lead-em">設計する。実行する。鍛える。</em>」
-            </span>
-            <span className="sup-hero-lead-body">
-              THINKING の<span className="sup-hero-accent">三層</span>が、合格までの全体行程を
-              <br />
-              一枚の合格設計図イメージにし、日々の実行と思考力まで、同じロジックで整え続ける。
-            </span>
+        <div className="sup-hero-mobile-foot">
+          <p className="sup-hero-mobile-subcopy">
+            「<span>設計する。実行する。鍛える。</span>」
+            <br />
+            THINKING の<span>三層</span>が、合格までの全体行程を
+            <br />
+            一枚の合格設計図にし、日々の実行と思考力まで、同じロジックで整え続ける。
           </p>
           <div className="sup-hero-ctas">
-          <a
-            href={window.THINKING_LINE_LIFF_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta"
-          >
-            <span>LINEで無料相談</span>
-            <svg className="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-              <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
-            </svg>
-          </a>
-          <a href="#thinking-method" className="cta-ghost">
-            <span>THINKING Method を見る</span>
-            <span className="dot" aria-hidden="true">
-              ↓
-            </span>
-          </a>
+            <a
+              href={window.THINKING_LINE_LIFF_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta"
+            >
+              <span>LINEで無料相談</span>
+              <svg className="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
+              </svg>
+            </a>
+            <a href="#thinking-method" className="cta-ghost">
+              <span>THINKING Method を見る</span>
+              <span className="dot" aria-hidden="true">↓</span>
+            </a>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-);
+
+      <div className="sup-hero-bg sup-hero-bg-desktop-only" aria-hidden="true">
+        <div
+          className="sup-hero-bg-img"
+          style={{
+            backgroundImage: `url('${ASSETS.heroDesktop}')`,
+            transform: `translate3d(${mouseX * -4}px, calc(${scrollY * 0.2}px + ${mouseY * -3}px), 0) scale(1.02)`,
+          }}
+        />
+        <div className="sup-hero-bg-vignette" />
+        <div className="sup-hero-bg-grain" />
+      </div>
+
+      <div className="sup-hero-content">
+        <div className="sup-hero-content-main">
+          <div className="sup-hero-eyebrow">
+            <span className="line" />
+            <span className="sup-hero-eyebrow-text">Support System</span>
+            <span className="line" />
+          </div>
+
+          <div className="sup-hero-concept">
+            <h1 id="sup-hero-title" className="sup-hero-headline" aria-label="根性論はなし。再現性にこだわる。">
+              根性論はなし。
+              <br />
+              <em>『再現性』にこだわる。</em>
+            </h1>
+
+            <p className="sup-hero-lead">
+              「<span className="sup-hero-accent">設計する。実行する。鍛える。</span>」
+              <br />
+              THINKING の<span className="sup-hero-accent">三層</span>が、合格までの全体行程を
+              一枚の合格設計図にし、日々の実行と思考力まで、同じロジックで整え続ける。
+            </p>
+          </div>
+
+          <div className="sup-hero-ctas">
+            <a
+              href={window.THINKING_LINE_LIFF_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cta"
+            >
+              <span>LINEで無料相談</span>
+              <svg className="arrow" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+                <path d="M2 8h12M9 3l5 5-5 5" stroke="currentColor" strokeWidth="1.4" />
+              </svg>
+            </a>
+            <a href="#thinking-method" className="cta-ghost">
+              <span>THINKING Method を見る</span>
+              <span className="dot" aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 /* ─── ページ内ナビ（固定ヘッダー直下にスティック） ───────────── */
 

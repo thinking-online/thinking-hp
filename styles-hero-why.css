@@ -417,26 +417,19 @@
     writing-mode: vertical-rl;
     text-orientation: mixed;
     font-family: var(--serif-jp);
-    font-weight: 600;
-    font-size: clamp(36px, 9.8vw, 48px);
-    line-height: 1.52;
-    letter-spacing: 0.1em;
+    font-weight: 500;
+    font-size: clamp(30px, 8.4vw, 40px);
+    line-height: 1.6;
+    letter-spacing: 0.08em;
     color: var(--ink-0);
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.38), rgba(10, 8, 4, 0.55));
-    border-left: 2px solid rgba(200, 168, 104, 0.95);
-    padding: 16px 13px;
-    text-shadow: 0 8px 22px rgba(0, 0, 0, 0.45);
+    border-left: 1px solid rgba(200, 168, 104, 0.9);
+    padding: 14px 12px;
+    text-shadow: 0 6px 18px rgba(0, 0, 0, 0.38);
     backdrop-filter: blur(2px);
     -webkit-backdrop-filter: blur(2px);
   }
-  .hero-mobile-copy-panel span {
-    display: inline;
-    white-space: nowrap;
-  }
-  .hero-mobile-copy-panel .hero-mobile-copy-accent {
-    color: #f0d078;
-    font-weight: 700;
-  }
+  .hero-mobile-copy-panel span { display: block; }
 
   .hero-mobile-subcopy {
     position: absolute;
@@ -469,9 +462,9 @@
   /* Smaller phones: tighten further */
   @media (max-width: 380px) {
     .hero-mobile-copy-panel {
-      font-size: 32px;
+      font-size: 27px;
       top: clamp(120px, 20svh, 190px);
-      padding: 14px 11px;
+      padding: 12px 10px;
     }
     .hero-mobile-subcopy {
       font-size: 11.5px;

@@ -110,7 +110,13 @@ const Faculties = () => {
         <div className="section-head">
           <span className="eyebrow"><i>Target Universities</i></span>
           <h2 className="section-title">
-            私立文系の、<em>あらゆる学部</em>へ。
+            <span className="faculties-title-desktop">
+              私立文系の、<em>あらゆる学部</em>へ。
+            </span>
+            <span className="faculties-title-mobile">
+              私立文系の、<br />
+              <em>あらゆる学部</em>に対応。
+            </span>
           </h2>
           <p className="section-lead">
             早慶・上智ICU・GMARCH・関関同立はもちろん、女子大も、その他の私立文系も。<br />
@@ -175,9 +181,18 @@ const Faculties = () => {
           <span className="faculties-hint-arrow">→</span>
         </div>
 
-        <p className="faculties-note reveal">
-          ※ ここに記載のない大学・学部でも、私立文系であれば対応可能です。お気軽にお問い合わせください。
-        </p>
+        <div className="faculties-foot">
+          <p className="faculties-note reveal">
+            ※ ここに記載のない大学・学部でも、私立文系であれば対応可能です。お気軽にお問い合わせください。
+          </p>
+          <SectionLink
+            href="https://thinking-online.com/products"
+            en="Original Workbooks"
+            className="reveal faculties-products-link"
+          >
+            各大学・学部別のオリジナル問題集はコチラ
+          </SectionLink>
+        </div>
       </div>
     </section>
   );

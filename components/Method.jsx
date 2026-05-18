@@ -37,7 +37,6 @@ const Method = () => {
       en: "Verbalize",
       title: "わかる→解ける、『言語化特訓』",
       desc: "説明できない理解は、理解じゃない。「なぜその答えか」を言葉にする訓練で、理解の解像度を一段引き上げる。",
-      link: { href: "/support#thinking-method", en: "Support System", label: "THINKING Method とは" },
     },
   ];
 
@@ -64,15 +63,18 @@ const Method = () => {
               </div>
               <h3 className="method-card-title">{m.title}</h3>
               <p className="method-card-desc">{m.desc}</p>
-              {m.link && (
-                <SectionLink href={m.link.href} en={m.link.en} compact className="method-card-link">
-                  {m.link.label}
-                </SectionLink>
-              )}
               <div className="method-card-line" />
             </article>
           ))}
         </div>
+
+        <SectionLink
+          href="/support#thinking-method"
+          en="Support System"
+          className="reveal method-support-link"
+        >
+          THINKING Method とは
+        </SectionLink>
 
         <Stats />
       </div>

@@ -135,13 +135,39 @@
   font-family: var(--serif-en); font-style: italic;
   font-size: 11px; color: var(--ink-3); letter-spacing: 0.1em;
 }
+.faculties-foot {
+  margin-top: 36px;
+  text-align: center;
+}
 .faculties-note {
-  text-align: center; margin-top: 36px;
-  font-size: 12px; color: var(--ink-3);
+  margin: 0;
+  font-size: 12px;
+  color: var(--ink-3);
+}
+.faculties-products-link.section-link {
+  margin-top: 20px;
+}
+.faculties-products-link .section-link-text > span {
+  font-size: clamp(13px, 3.6vw, 15px);
+}
+@media (max-width: 768px) {
+  .faculties-products-link .section-link-btn {
+    width: 100%;
+    max-width: 360px;
+    justify-content: center;
+    padding: 14px 20px 14px 24px;
+  }
 }
 .section-lead .lead-hl {
   color: var(--accent);
   font-weight: 500;
+}
+
+.faculties-title-mobile { display: none; }
+
+@media (max-width: 768px) {
+  .faculties-title-desktop { display: none; }
+  .faculties-title-mobile { display: block; }
 }
 
 @media (max-width: 900px) {
@@ -230,7 +256,7 @@
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: 220px;
   gap: 16px;
-  margin-bottom: 96px;
+  margin-bottom: 40px;
 }
 .method-card {
   grid-column: span 2;
@@ -289,13 +315,19 @@
   transition: transform 0.6s var(--ease);
 }
 .method-card:hover .method-card-line { transform: scaleX(1); }
-.method-card .section-link.method-card-link {
-  margin-top: auto;
-  padding-top: 18px;
+.method-support-link.section-link {
+  margin-top: 0;
+  margin-bottom: 72px;
 }
-.method-card .section-link--compact .section-link-btn {
-  width: 100%;
-  justify-content: space-between;
+.method-support-link .section-link-text > span {
+  font-size: clamp(14px, 3.8vw, 16px);
+}
+@media (max-width: 768px) {
+  .method-support-link .section-link-btn {
+    width: 100%;
+    max-width: 400px;
+    justify-content: center;
+  }
 }
 
 /* Stats row */

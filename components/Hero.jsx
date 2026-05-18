@@ -34,7 +34,8 @@ const Hero = () => {
         <div className="hero-mobile-overlay hero-mobile-overlay-bottom" />
 
         <div className="hero-mobile-copy-panel" aria-label="志望学部から逆算する">
-          志望学部から、<span className="hero-mobile-copy-accent">逆算する。</span>
+          <span>志望学部から、</span>
+          <span>逆算する。</span>
         </div>
 
         <p className="hero-mobile-subcopy">

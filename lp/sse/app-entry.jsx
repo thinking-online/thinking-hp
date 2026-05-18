@@ -3,6 +3,7 @@
 function App() {
   return (
     <>
+      <StickyLineCTA />
       <Hero />
       <HeroProof />
       <AuthoritySection />

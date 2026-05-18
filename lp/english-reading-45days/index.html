@@ -36,12 +36,11 @@
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
-    line-break: strict;
-    overflow-wrap: normal;
     word-break: keep-all;
+    overflow-wrap: normal;
   }
 
-  /* 大見出し：句読点など自然な位置で折る（単語の途中で切らない） */
+  /* 見出し：手動 br なし・句読点で自然に折る */
   .hero-title,
   .h2,
   .program-title,
@@ -49,11 +48,8 @@
   .final-cta-title {
     word-break: keep-all;
     overflow-wrap: normal;
+    line-break: strict;
   }
-
-  /* PCのみの改行（スマホでは自然折り返し） */
-  .br-pc { display: inline; }
-  .br-sm { display: none; }
   ::selection { background: var(--accent); color: var(--paper); }
 
   /* テクスチャ背景 */
@@ -127,26 +123,35 @@
     font-family: var(--serif-jp);
     font-weight: 900;
     font-size: clamp(28px, 6vw, 72px);
-    line-height: 1.35;
+    line-height: 1.4;
     letter-spacing: -0.01em;
     color: var(--ink);
     margin-bottom: 48px;
     opacity: 0;
     animation: fadeUp 1.2s 0.4s forwards;
+    max-width: 18em;
   }
-  .hero-title .accent {
+  .hero-title .accent,
+  .h2 .accent,
+  .program-title .accent,
+  .final-cta-title .accent {
     color: var(--accent);
     position: relative;
-    display: inline-block;
+    display: inline;
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
   }
-  .hero-title .accent::after {
+  .hero-title .accent::after,
+  .h2 .accent::after,
+  .program-title .accent::after,
+  .final-cta-title .accent::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 4px;
     width: 100%;
     height: 8px;
-    background: var(--accent);
+    background: currentColor;
     opacity: 0.15;
     z-index: -1;
   }
@@ -313,10 +318,11 @@
     font-family: var(--serif-jp);
     font-weight: 900;
     font-size: clamp(26px, 5vw, 56px);
-    line-height: 1.35;
+    line-height: 1.4;
     color: var(--ink);
     margin-bottom: 32px;
     letter-spacing: -0.01em;
+    max-width: 20em;
   }
   .h2 .accent {
     color: var(--accent);
@@ -448,6 +454,7 @@
   .reveal .eyebrow .jp { color: rgba(245, 239, 230, 0.6); }
   .reveal .h2 { color: var(--paper); }
   .reveal .h2 .accent { color: var(--accent-glow); }
+  .reveal .h2 .sub-muted { color: rgba(245, 239, 230, 0.5); }
   .reveal .lead { color: rgba(245, 239, 230, 0.8); }
   
   /* 骨格分解の図 */
@@ -899,31 +906,9 @@
     .problem-img .stat-num { font-size: 96px; }
   }
 
-  /* スマホ：見出しの型を整える（PC用 br 無効・幅いっぱいで自然折り返し） */
+  /* スマホ */
   @media (max-width: 720px) {
     .container { padding: 0 20px; }
-
-    .br-pc { display: none; }
-    .br-sm { display: inline; }
-
-    .hero-title,
-    .h2,
-    .program-title,
-    .step-title,
-    .final-cta-title {
-      width: 100%;
-      max-width: none;
-      word-break: keep-all;
-      overflow-wrap: normal;
-      letter-spacing: 0;
-    }
-
-    .hero-title .accent,
-    .h2 .accent,
-    .program-title .accent,
-    .final-cta-title .accent {
-      display: inline;
-    }
 
     .hero { padding: 36px 0 56px; }
     .hero-tag {
@@ -937,38 +922,51 @@
       margin-bottom: 28px;
     }
 
-    .lead br,
-    .insight-note br,
-    .final-cta-desc br,
-    .stat-label br {
-      display: none;
+    .hero-title,
+    .h2,
+    .final-cta-title {
+      max-width: none;
     }
 
     .hero-title {
-      font-size: 28px;
-      line-height: 1.55;
+      font-size: clamp(26px, 7.2vw, 32px);
+      line-height: 1.5;
       margin-bottom: 28px;
+      letter-spacing: 0;
     }
 
     .h2 {
-      font-size: 24px;
-      line-height: 1.55;
+      font-size: clamp(22px, 6.2vw, 28px);
+      line-height: 1.5;
       margin-bottom: 20px;
+      letter-spacing: 0;
     }
 
     .program-title {
-      font-size: 24px;
-      line-height: 1.55;
+      font-size: clamp(22px, 6.2vw, 28px);
+      line-height: 1.5;
+    }
+
+    .step-title {
+      font-size: 19px;
+      line-height: 1.5;
     }
 
     .final-cta-title {
-      font-size: 28px;
-      line-height: 1.55;
+      font-size: clamp(26px, 7.2vw, 32px);
+      line-height: 1.5;
+    }
+
+    .lead,
+    .insight-note,
+    .final-cta-desc,
+    .problem-list li,
+    .typewriter-card .quote-text {
+      font-size: 15px;
+      line-height: 1.85;
     }
 
     .lead {
-      font-size: 15px;
-      line-height: 1.85;
       margin-bottom: 36px;
     }
 
@@ -1167,11 +1165,7 @@
       <em>Reading English</em>
       <span class="hero-tag-jp">英文の本当の読み方</span>
     </div>
-    <h1 class="hero-title">
-      中学英単語だけで構成された、<br class="br-pc">
-      ある<span class="accent">東大の英文</span>です。<br class="br-sm">
-      あなたは、読めますか?
-    </h1>
+    <h1 class="hero-title">中学英単語だけで構成された、ある<span class="accent">東大の英文</span>です。あなたは、読めますか?</h1>
     <p class="hero-q">難しい単語は、ひとつもありません。それでも、読めない。なぜか?</p>
     
     <div class="specimen">
@@ -1205,18 +1199,15 @@
       <em>The Problem</em>
       <span class="jp">なぜ、読めないのか</span>
     </div>
-    <h2 class="h2">単語ひとつひとつの意味は分かる。<br class="br-pc">でも、<span class="accent">骨格</span>が見えていない。</h2>
+    <h2 class="h2">単語ひとつひとつの意味は分かる。でも、<span class="accent">骨格</span>が見えていない。</h2>
     
-    <p class="lead">
-      多くの受験生・英語学習者は、英文を「左から右へ単語の意味をつなげる」読み方をしています。<br>
-      でも、それでは絶対に複雑な英文は読めません。なぜなら、英文には<strong>「メイン(=骨格)」</strong>と<strong>「補足(=修飾)」</strong>があるから。
-    </p>
+    <p class="lead">多くの受験生・英語学習者は、英文を「左から右へ単語の意味をつなげる」読み方をしています。でも、それでは絶対に複雑な英文は読めません。なぜなら、英文には<strong>「メイン(=骨格)」</strong>と<strong>「補足(=修飾)」</strong>があるから。</p>
     
     <div class="problem-grid">
       <div class="problem-img">
         <div class="stat-box">
           <div class="stat-num">87<small>%</small></div>
-          <div class="stat-label">が、この東大の英文の<br class="br-pc"><strong>主語と動詞</strong>を正しく特定できない<br class="br-pc"><span class="stat-note">*THINKING独自調査・高校生100名対象</span></div>
+          <div class="stat-label">が、この東大の英文の<strong>主語と動詞</strong>を正しく特定できない<span class="stat-note">*THINKING独自調査・高校生100名対象</span></div>
         </div>
       </div>
       
@@ -1239,11 +1230,10 @@
       <em>The Reveal</em>
       <span class="jp">正解の見せ方</span>
     </div>
-    <h2 class="h2">英文を、<span class="accent">メイン</span>と<br class="br-pc"><span style="color: rgba(245, 239, 230, 0.5);">補足</span>に、分けて読む。</h2>
+    <h2 class="h2">英文を、<span class="accent">メイン</span>と<span class="sub-muted">補足</span>に、分けて読む。</h2>
     
     <p class="lead">
-      この東大の英文も、メイン(=骨格)と補足(=修飾)に分解すれば、瞬時に意味が浮かび上がります。<br>
-      下を見てください。同じ英文ですが、<strong style="color: var(--accent-glow);">オレンジが骨格</strong>、薄いグレーが補足です。
+      この東大の英文も、メイン(=骨格)と補足(=修飾)に分解すれば、瞬時に意味が浮かび上がります。下を見てください。同じ英文ですが、<strong style="color: var(--accent-glow);">オレンジが骨格</strong>、薄いグレーが補足です。
     </p>
     
     <div class="anatomy">
@@ -1280,10 +1270,7 @@
       </div>
       
       <p class="insight-note">
-        補足を全部とっぱらえば、骨格はたった<strong>「S + V」</strong>(=The person continues to behave)。<br>
-        前後の <span style="color: var(--accent-glow);">in the examples ~</span> や <span style="color: var(--accent-glow);">in what most people agree is ~</span> は、すべて「どこで?」「どんなふうに?」を説明する<strong>補足</strong>。<br>
-        <br>
-        この読み方さえ身につければ、<strong>東大の英文でも、慶應の英文でも、読める。</strong>
+        補足を全部とっぱらえば、骨格はたった<strong>「S + V」</strong>(=The person continues to behave)。前後の <span style="color: var(--accent-glow);">in the examples ~</span> や <span style="color: var(--accent-glow);">in what most people agree is ~</span> は、すべて「どこで?」「どんなふうに?」を説明する<strong>補足</strong>。この読み方さえ身につければ、<strong>東大の英文でも、慶應の英文でも、読める。</strong>
       </p>
     </div>
   </div>
@@ -1297,7 +1284,7 @@
       <em>The Voice</em>
       <span class="jp">あなたの心当たり、ありませんか?</span>
     </div>
-    <h2 class="h2">こんな読み方、<br class="br-pc"><span class="accent">していませんか?</span></h2>
+    <h2 class="h2">こんな読み方、<span class="accent">していませんか?</span></h2>
     
     <div class="typewriter-list">
       <div class="typewriter-card">
@@ -1354,16 +1341,15 @@
       <em>The Solution</em>
       <span class="jp">英文の読み方を、変える</span>
     </div>
-    <h2 class="h2">45日間で、<br class="br-pc">英文の読み方が<span class="accent">変わる</span>。</h2>
+    <h2 class="h2">45日間で、英文の読み方が<span class="accent">変わる</span>。</h2>
     
     <p class="lead">
-      THINKINGの英文解釈プログラムは、「メイン」と「補足」を見抜く読み方を、<strong>45日間で根本から</strong>身につけるプログラムです。<br>
-      表面的なテクニックや、暗記中心の英文解釈とは違います。「<strong>思考プロセス</strong>」をひとつずつ言語化し、無意識レベルで使えるようにします。
+      THINKINGの英文解釈プログラムは、「メイン」と「補足」を見抜く読み方を、<strong>45日間で根本から</strong>身につけるプログラムです。表面的なテクニックや、暗記中心の英文解釈とは違います。「<strong>思考プロセス</strong>」をひとつずつ言語化し、無意識レベルで使えるようにします。
     </p>
     
     <div class="program-card">
       <div class="program-mark"><em>The Program</em> ─ 英文解釈45日間プログラム</div>
-      <h3 class="program-title">「<span class="accent">読める</span>」を体感する、<br class="br-pc">45日間の集中指導。</h3>
+      <h3 class="program-title">「<span class="accent">読める</span>」を体感する、45日間の集中指導。</h3>
       <p class="program-sub">ENGLISH READING · 45 DAYS · ONLINE</p>
       
       <div class="program-features">
@@ -1400,13 +1386,13 @@
       <em>How it Works</em>
       <span class="jp">学び方の3ステップ</span>
     </div>
-    <h2 class="h2"><span class="accent">3つのステップ</span>で、<br class="br-pc">確実に読む力が身につく。</h2>
+    <h2 class="h2"><span class="accent">3つのステップ</span>で、確実に読む力が身につく。</h2>
     
     <div class="steps">
       <div class="step">
         <div class="step-num">01</div>
         <div class="step-label"><em>Read</em></div>
-        <h3 class="step-title">骨格を見抜く<br class="br-pc">(=Read for Structure)</h3>
+        <h3 class="step-title">骨格を見抜く（Read for Structure）</h3>
         <p class="step-desc">
           まず英文の骨格(=主語・動詞・目的語)を見抜く力を養います。長い修飾やコンマで惑わされず、文の核を瞬時に掴む。これが、すべての読解の土台になります。
         </p>
@@ -1414,7 +1400,7 @@
       <div class="step">
         <div class="step-num">02</div>
         <div class="step-label"><em>Analyze</em></div>
-        <h3 class="step-title">修飾の仕組みを分解<br class="br-pc">(=Analyze Modifiers)</h3>
+        <h3 class="step-title">修飾の仕組みを分解（Analyze Modifiers）</h3>
         <p class="step-desc">
           関係代名詞、分詞構文、不定詞、前置詞句 ─ どの要素がどこを修飾しているのかを、一つずつ整理します。「文法用語の暗記」ではなく「使えるツールとしての文法」を身につける。
         </p>
@@ -1422,7 +1408,7 @@
       <div class="step">
         <div class="step-num">03</div>
         <div class="step-label"><em>Translate</em></div>
-        <h3 class="step-title">自然な日本語に仕上げる<br class="br-pc">(=Translate Naturally)</h3>
+        <h3 class="step-title">自然な日本語に仕上げる（Translate Naturally）</h3>
         <p class="step-desc">
           直訳から自然な日本語へ。3段階に分けて訳を磨いていくことで、「英語の論理」と「日本語の論理」のギャップを埋める力が身につきます。
         </p>
@@ -1439,7 +1425,7 @@
       <em>For Whom</em>
       <span class="jp">こんな人に届けたい</span>
     </div>
-    <h2 class="h2">こんな<span class="accent">あなた</span>に、<br class="br-pc">このプログラムを届けたい。</h2>
+    <h2 class="h2">こんな<span class="accent">あなた</span>に、このプログラムを届けたい。</h2>
     
     <ul class="audience-list">
       <li>単語と文法は勉強したのに、<strong>英文を読む力が伸び悩んでいる</strong>受験生</li>
@@ -1457,13 +1443,10 @@
   <div class="container">
     <div class="final-cta-tag"><em>* Join the Program *</em></div>
     <h2 class="final-cta-title">
-      45日後、あなたの<br class="br-pc">
-      「<span class="accent">英文の見え方</span>」が<br class="br-sm">
-      まったく違うものになる。
+      45日後、あなたの「<span class="accent">英文の見え方</span>」がまったく違うものになる。
     </h2>
     <p class="final-cta-desc">
-      もし、興味があれば。<br>
-      参加表明は、下のボタンから。詳細は、追ってご案内します。
+      もし、興味があれば。参加表明は、下のボタンから。詳細は、追ってご案内します。
     </p>
     <a href="#" class="cta-button" id="lp-cta">参加に興味がある</a>
     <p class="cta-note"><em>* 参加表明後、詳細をご案内いたします。</em></p>

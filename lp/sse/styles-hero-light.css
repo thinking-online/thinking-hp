@@ -22,9 +22,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 58% 18%;
+  object-position: 62% 22%;
   display: block;
-  filter: saturate(0.96) brightness(0.98);
+  filter: saturate(0.98) brightness(1);
 }
 
 /* Scrim layers for legibility (HP-style) */
@@ -60,10 +60,10 @@
 .hero-m-scrim-bottom {
   background: linear-gradient(
     180deg,
-    transparent 42%,
-    rgba(10, 21, 48, 0.12) 58%,
-    rgba(10, 21, 48, 0.42) 78%,
-    rgba(10, 21, 48, 0.62) 100%
+    transparent 50%,
+    rgba(252, 250, 244, 0.08) 68%,
+    rgba(252, 250, 244, 0.55) 88%,
+    rgba(252, 250, 244, 0.92) 100%
   );
 }
 
@@ -84,22 +84,17 @@
   padding-bottom: 8px;
 }
 
-.hero-m .brand-mark { display: flex; align-items: center; gap: 10px; }
-.hero-m .brand-name-stack { display: flex; flex-direction: column; gap: 1px; }
-.hero-m .brand-corp {
-  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
-  font-size: clamp(15px, 4.2vw, 18px);
-  font-weight: 700;
-  color: #0a1530;
-  letter-spacing: 0.02em;
-  line-height: 1.15;
+.hero-m .brand-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-.hero-m .brand-corp .sep { color: #d8a942; margin: 0 3px; font-weight: 400; }
 .hero-m .brand-product {
+  margin: 0;
   font-family: "Cormorant Garamond", serif;
-  font-size: 9px;
-  letter-spacing: 0.22em;
-  color: #5a5648;
+  font-size: clamp(11px, 3vw, 12px);
+  letter-spacing: 0.24em;
+  color: #3a4560;
   font-style: italic;
   text-transform: uppercase;
 }
@@ -107,7 +102,8 @@
 .hero-m-copy {
   flex-shrink: 0;
   padding-top: 4px;
-  padding-bottom: 10px;
+  padding-bottom: 6px;
+  max-width: 92%;
 }
 
 .hero-m-title {
@@ -142,122 +138,18 @@
 }
 .hero-m-lead strong { color: #0a1530; font-weight: 800; }
 
-/* Handwritten script — center of hero visual */
-.hero-m-script-wrap {
-  position: relative;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: clamp(140px, 34vw, 200px);
-  margin: 8px 0 4px;
-  padding: 12px 0 8px;
+/* Photo breathing room — face stays visible between copy and CTA */
+.hero-m-visual-spacer {
+  flex: 1 1 auto;
+  min-height: clamp(180px, 42vw, 280px);
 }
 
-.hero-m-script {
-  position: relative;
-  z-index: 1;
-  margin: 0;
-  padding: 0 4px;
-  max-width: 10.5em;
-  font-family: "Zen Kurenaido", "Yuji Syuku", "Hiragino Mincho ProN", serif;
-  font-size: clamp(34px, 9.5vw, 48px);
-  font-weight: 400;
-  line-height: 1.22;
-  letter-spacing: 0.06em;
-  transform: rotate(-4deg);
-  transform-origin: left center;
-  background: linear-gradient(
-    145deg,
-    #7a5a12 0%,
-    #b88728 18%,
-    #e9c267 42%,
-    #fff4d2 52%,
-    #d4af37 68%,
-    #9a7018 100%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  filter:
-    drop-shadow(0 1px 0 rgba(255, 255, 255, 0.95))
-    drop-shadow(0 3px 18px rgba(255, 255, 255, 0.55))
-    drop-shadow(0 0 28px rgba(232, 194, 103, 0.45));
-}
-
-.hero-m-script-line {
-  display: block;
-  padding-left: 0.06em;
-}
-
-.hero-m-script-em {
-  font-size: 1.1em;
-  letter-spacing: 0.1em;
-  padding-top: 0.08em;
-}
-
-.hero-m-script-stroke {
-  position: absolute;
-  left: 0;
-  bottom: 6%;
-  width: min(92%, 240px);
-  height: 20px;
-  opacity: 0.95;
-  transform: rotate(-5deg);
-  transform-origin: left center;
-  pointer-events: none;
-}
-
-/* Compact offer line (replaces 3 cards) */
-.hero-m-offer {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  margin: 0 0 12px;
-  padding: 10px 14px;
-  background: rgba(10, 21, 48, 0.72);
-  border: 1px solid rgba(232, 194, 103, 0.35);
-  border-radius: 10px;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  box-shadow: 0 8px 28px -12px rgba(10, 21, 48, 0.5);
-}
-
-.hero-m-offer-main {
-  font-size: clamp(13px, 3.6vw, 14px);
-  color: #f7f4ea;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-}
-
-.hero-m-offer-main strong {
-  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
-  font-size: 1.15em;
-  font-weight: 700;
-  color: #f0d078;
-}
-
-.hero-m-offer-main small {
-  font-size: 0.82em;
-  color: rgba(247, 244, 234, 0.72);
-  margin-left: 2px;
-}
-
-.hero-m-offer-sub {
-  font-size: 11px;
-  color: rgba(247, 244, 234, 0.78);
-  letter-spacing: 0.04em;
-}
-
-/* CTAs */
+/* CTA pinned to bottom of hero */
 .hero-m-actions {
   flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  padding-top: 4px;
+  margin-top: auto;
+  padding-top: 8px;
+  padding-bottom: 4px;
 }
 
 .hero-m-cta-primary {
@@ -265,6 +157,7 @@
   align-items: center;
   justify-content: center;
   gap: 12px;
+  width: 100%;
   min-height: 54px;
   padding: 16px 20px;
   background: linear-gradient(180deg, #ff9f4a 0%, #ee7a1f 55%, #e56c12 100%);
@@ -292,24 +185,6 @@
   border-radius: 50%;
   font-weight: 800;
   font-size: 14px;
-}
-
-.hero-m-cta-line {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  min-height: 50px;
-  padding: 14px 16px;
-  font-size: clamp(12px, 3.4vw, 14px);
-  white-space: nowrap;
-  background: rgba(255, 255, 255, 0.96);
-  color: #06c755;
-  border: 2px solid #06c755;
-  border-radius: 999px;
-  font-size: clamp(13px, 3.6vw, 14px);
-  font-weight: 700;
-  box-shadow: 0 8px 24px -12px rgba(10, 21, 48, 0.35);
 }
 
 /* Trust */
@@ -466,10 +341,8 @@
     padding-bottom: 12px;
   }
 
-  .hero-m-script-wrap {
-    flex: 0 1 auto;
-    min-height: 100px;
-    margin: 4px 0;
+  .hero-m-visual-spacer {
+    min-height: clamp(140px, 38vw, 200px);
   }
 
   .hero-m-proof {

@@ -37,10 +37,7 @@ function Hero() {
                 <circle cx="30" cy="13" r="1.6" fill="#e9c267" />
               </svg>
             </div>
-            <div className="brand-name-stack">
-              <div className="brand-corp">合同会社ARC <span className="sep">/</span> THINKING</div>
-              <div className="brand-product">Smart Study English</div>
-            </div>
+            <p className="brand-product">Smart Study English</p>
           </div>
         </div>
 
@@ -70,40 +67,12 @@ function Hero() {
           </p>
         </div>
 
-        <div className="hero-m-script-wrap">
-          <p className="hero-m-script" aria-label="読む力が、未来を変える。">
-            <span className="hero-m-script-line">読む力が、</span>
-            <span className="hero-m-script-line hero-m-script-em">未来を変える。</span>
-          </p>
-          <svg className="hero-m-script-stroke" viewBox="0 0 280 24" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="scriptStrokeGrad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stopColor="#d8a942" stopOpacity="0" />
-                <stop offset="30%" stopColor="#e9c267" />
-                <stop offset="70%" stopColor="#f5e6a8" />
-                <stop offset="100%" stopColor="#d8a942" stopOpacity="0.35" />
-              </linearGradient>
-            </defs>
-            <path d="M4 14 Q 72 5, 142 14 T 276 11" fill="none" stroke="url(#scriptStrokeGrad)" strokeWidth="2.2" strokeLinecap="round" />
-          </svg>
-        </div>
-
-        <p className="hero-m-offer">
-          <span className="hero-m-offer-main">モニター <strong>39,800円</strong><small>（税込43,780円）</small></span>
-          <span className="hero-m-offer-sub">先着30名 · 2026年5月31日まで</span>
-        </p>
+        <div className="hero-m-visual-spacer" aria-hidden="true" />
 
         <div className="hero-m-actions">
           <a href="#cta" className="hero-m-cta-primary">
-            <span>モニター生として参加する</span>
+            <span>申し込みはコチラ</span>
             <span className="hero-m-cta-arrow" aria-hidden="true">→</span>
-          </a>
-          <a href={window.THINKING_LINE_LIFF_URL || "#"} target="_blank" rel="noopener noreferrer" className="hero-m-cta-line">
-            <svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true">
-              <rect x="2" y="2" width="28" height="28" rx="6" fill="#06C755" />
-              <text x="16" y="22" textAnchor="middle" fontFamily="Arial Black, sans-serif" fontSize="11" fontWeight="900" fill="white">LINE</text>
-            </svg>
-            <span>LINEで個別相談する</span>
           </a>
         </div>
       </div>

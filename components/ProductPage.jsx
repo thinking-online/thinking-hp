@@ -3,7 +3,7 @@
 // Schema (all fields optional except `slug`, `headline`, `pricing.early.amount`):
 //
 // {
-//   slug: "kangaku-english",                   // for sticky bar id
+//   slug: "kangaku-english",                   // sticky bar id + product-line-urls.js のキー
 //   breadcrumb: "関学2/1英語 完全攻略マニュアル",
 //   hero: { image, alt, tags: [{label, solid?}], stats: [{label, value}] },
 //   headline: <jsx>, sublead: <string>,
@@ -38,7 +38,9 @@
 //   stickyPrice: <jsx>,
 // }
 const ProductPage = ({ data }) => {
-  const LINE_URL = window.THINKING_LINE_LIFF_URL;
+  const LINE_URL =
+    (typeof window.getThinkingLineUrl === "function" && window.getThinkingLineUrl(data.slug)) ||
+    window.THINKING_LINE_LIFF_URL;
   const SNS_INSTAGRAM = "https://www.instagram.com/king_of_juken/?hl=ja";
   const SNS_YOUTUBE_TETTA = "https://www.youtube.com/@tetta-waseda-channel";
   const SNS_YOUTUBE_THINKING = "https://www.youtube.com/@all-day-thinking";

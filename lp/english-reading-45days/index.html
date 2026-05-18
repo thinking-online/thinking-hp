@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>45日間で、英文の読み方が変わる。 ─ 英文解釈プログラム by THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Noto+Serif+JP:wght@400;500;600;700;900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1714;
+    --ink-soft: #4a3f36;
+    --ink-mute: #8a7c6e;
+    --paper: #f5efe6;
+    --paper-soft: #ebe3d6;
+    --paper-deep: #e0d5c0;
+    --accent: #c8501c;
+    --accent-deep: #9b3e16;
+    --accent-glow: #e85a1a;
+    --aqua: #2d8a8a;
+    --line: #d4c7b3;
+    --highlight: #fff3a8;
+    --serif: 'EB Garamond', 'Noto Serif JP', serif;
+    --serif-jp: 'Noto Serif JP', serif;
+    --sans-jp: 'Zen Kaku Gothic New', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--serif-jp);
+    background: var(--paper);
+    color: var(--ink);
+    overflow-x: hidden;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    line-break: strict;
+    overflow-wrap: anywhere;
+    word-break: normal;
+  }
+  ::selection { background: var(--accent); color: var(--paper); }
+
+  /* テクスチャ背景 */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 20% 30%, rgba(200, 80, 28, 0.04) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(45, 138, 138, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ノイズテクスチャ */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  .container { 
+    max-width: 1100px; 
+    margin: 0 auto; 
+    padding: 0 32px; 
+    position: relative; 
+    z-index: 2;
+  }
+  
+  /* ========== HERO ========== */
+  .hero {
+    min-height: 100vh;
+    padding: 80px 0 120px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 1s 0.2s forwards;
+  }
+  .hero-tag::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--accent);
+  }
+  .hero-tag-jp {
+    font-family: var(--sans-jp);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    font-style: normal;
+  }
+  
+  .hero-title {
+    font-family: var(--serif-jp);
+    font-weight: 900;
+    font-size: clamp(28px, 6vw, 72px);
+    line-height: 1.35;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.4s forwards;
+    text-wrap: balance;
+  }
+  .hero-title .accent {
+    color: var(--accent);
+    position: relative;
+    display: inline-block;
+  }
+  .hero-title .accent::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 100%;
+    height: 8px;
+    background: var(--accent);
+    opacity: 0.15;
+    z-index: -1;
+  }
+  
+  .hero-q {
+    font-family: var(--sans-jp);
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 1.2s 0.6s forwards;
+  }
+
+  /* 例文ボックス */
+  .specimen {
+    background: linear-gradient(145deg, #fdfaf3, #f5efe6);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    padding: 56px 56px 48px;
+    position: relative;
+    box-shadow: 
+      0 1px 0 rgba(255,255,255,0.5) inset,
+      0 30px 60px -20px rgba(74, 63, 54, 0.15),
+      0 10px 30px -10px rgba(74, 63, 54, 0.1);
+    opacity: 0;
+    animation: fadeUp 1.4s 0.8s forwards;
+  }
+  .specimen::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: 16px;
+    bottom: 16px;
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    z-index: -1;
+    opacity: 0.3;
+  }
+  .specimen-label {
+    position: absolute;
+    top: -14px;
+    left: 32px;
+    background: var(--paper);
+    padding: 0 16px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .specimen-meta {
+    font-family: var(--sans-jp);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--ink-mute);
+    margin-bottom: 24px;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+  .specimen-meta span {
+    padding: 4px 10px;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+  }
+  .specimen-meta .badge-tokyo {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+  }
+  .specimen-text {
+    font-family: var(--serif);
+    font-size: clamp(17px, 2.8vw, 28px);
+    line-height: 1.7;
+    color: var(--ink);
+    font-weight: 500;
+    overflow-wrap: break-word;
+    word-break: normal;
+    hyphens: auto;
+  }
+  .specimen-bottom {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px dashed var(--line);
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    color: var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .specimen-bottom .you-read {
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 16px;
+  }
+  .scroll-hint {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-mute);
+    letter-spacing: 0.1em;
+    text-align: center;
+    margin-top: 80px;
+    opacity: 0;
+    animation: fadeUp 1.6s 1.4s forwards, bounce 2s 2.4s infinite;
+  }
+  
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+  
+  /* ========== セクション共通 ========== */
+  section.block {
+    padding: 120px 0;
+    position: relative;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+  }
+  .eyebrow .num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--accent);
+    padding: 3px 10px;
+    border: 1px solid var(--accent);
+    border-radius: 50%;
+  }
+  .eyebrow .jp {
+    color: var(--ink-soft);
+    font-style: normal;
+    font-family: var(--sans-jp);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+  }
+  
+  .h2 {
+    font-family: var(--serif-jp);
+    font-weight: 900;
+    font-size: clamp(26px, 5vw, 56px);
+    line-height: 1.35;
+    color: var(--ink);
+    margin-bottom: 32px;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  .h2 .accent {
+    color: var(--accent);
+  }
+  .lead {
+    font-family: var(--sans-jp);
+    font-size: 18px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    max-width: 700px;
+    margin-bottom: 48px;
+  }
+  
+  /* ========== 問題提起 ========== */
+  .problem {
+    background: linear-gradient(180deg, var(--paper) 0%, var(--paper-soft) 100%);
+    padding-bottom: 0;
+  }
+  .problem-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    margin-top: 64px;
+  }
+  .problem-img {
+    position: relative;
+  }
+  .problem-img .stat-box {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 40px;
+    text-align: center;
+    border-radius: 2px;
+    box-shadow: 0 10px 40px -15px rgba(74,63,54,0.15);
+    position: relative;
+  }
+  .problem-img .stat-num {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 120px;
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.04em;
+  }
+  .problem-img .stat-num small {
+    font-size: 50px;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .problem-img .stat-label {
+    margin-top: 16px;
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+  }
+  .problem-img .stat-box::after {
+    content: '*';
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-size: 24px;
+    color: var(--accent);
+  }
+  
+  .problem-list {
+    list-style: none;
+  }
+  .problem-list li {
+    padding: 24px 0 24px 48px;
+    position: relative;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--sans-jp);
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--ink);
+  }
+  .problem-list li:last-child { border-bottom: none; }
+  .problem-list li::before {
+    content: '✕';
+    position: absolute;
+    left: 0;
+    top: 24px;
+    width: 32px;
+    height: 32px;
+    background: var(--accent);
+    color: var(--paper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .problem-list strong {
+    color: var(--accent-deep);
+    font-weight: 700;
+  }
+  
+  /* ========== 答えの瞬間(=ピーク) ========== */
+  .reveal {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 160px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .reveal::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 30% 20%, rgba(232, 90, 26, 0.15) 0%, transparent 50%),
+      radial-gradient(circle at 70% 80%, rgba(45, 138, 138, 0.1) 0%, transparent 50%);
+  }
+  .reveal .eyebrow { color: var(--accent-glow); }
+  .reveal .eyebrow .num { border-color: var(--accent-glow); color: var(--accent-glow); }
+  .reveal .eyebrow .jp { color: rgba(245, 239, 230, 0.6); }
+  .reveal .h2 { color: var(--paper); }
+  .reveal .h2 .accent { color: var(--accent-glow); }
+  .reveal .lead { color: rgba(245, 239, 230, 0.8); }
+  
+  /* 骨格分解の図 */
+  .anatomy {
+    margin-top: 80px;
+    background: rgba(245, 239, 230, 0.03);
+    border: 1px solid rgba(245, 239, 230, 0.1);
+    padding: 64px;
+    border-radius: 2px;
+    position: relative;
+  }
+  .anatomy-label {
+    position: absolute;
+    top: -14px;
+    left: 32px;
+    background: var(--ink);
+    padding: 0 16px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent-glow);
+    letter-spacing: 0.05em;
+  }
+  
+  .anatomy-line {
+    font-family: var(--serif);
+    font-size: clamp(18px, 2.4vw, 26px);
+    line-height: 2;
+    margin-bottom: 48px;
+    color: var(--paper);
+    font-weight: 500;
+  }
+  .main-part {
+    color: var(--accent-glow);
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--accent-glow);
+  }
+  .sub-part {
+    color: rgba(245, 239, 230, 0.45);
+    font-style: italic;
+    font-weight: 400;
+  }
+  
+  .legend {
+    display: flex;
+    gap: 40px;
+    font-family: var(--sans-jp);
+    font-size: 13px;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+  .legend-item { display: flex; align-items: center; gap: 12px; }
+  .legend-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+  .legend-dot.main { background: var(--accent-glow); }
+  .legend-dot.sub { background: rgba(245, 239, 230, 0.3); }
+  
+  .skeleton {
+    background: rgba(232, 90, 26, 0.08);
+    border-left: 3px solid var(--accent-glow);
+    padding: 32px 40px;
+    margin-bottom: 32px;
+  }
+  .skeleton-label {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent-glow);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .skeleton-eq {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2.6vw, 28px);
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1.5;
+    letter-spacing: -0.01em;
+  }
+  .skeleton-meaning {
+    margin-top: 16px;
+    font-family: var(--serif-jp);
+    font-size: 18px;
+    color: rgba(245, 239, 230, 0.85);
+    font-weight: 500;
+  }
+  
+  .insight-note {
+    margin-top: 56px;
+    font-family: var(--serif-jp);
+    font-size: clamp(18px, 2.2vw, 24px);
+    line-height: 1.8;
+    color: var(--paper);
+    font-weight: 500;
+    padding-left: 32px;
+    border-left: 2px solid var(--accent-glow);
+  }
+  .insight-note strong {
+    color: var(--accent-glow);
+    font-weight: 700;
+  }
+  
+  /* ========== 共感パート ========== */
+  .empathy {
+    background: var(--paper-soft);
+  }
+  .typewriter-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 32px;
+    margin-top: 64px;
+  }
+  .typewriter-card {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    padding: 32px;
+    border-radius: 2px;
+    position: relative;
+    transition: transform 0.4s, box-shadow 0.4s;
+  }
+  .typewriter-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -20px rgba(74,63,54,0.2);
+  }
+  .typewriter-card .quote-mark {
+    font-family: var(--serif);
+    font-size: 60px;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.15;
+    position: absolute;
+    top: 16px;
+    right: 24px;
+    font-weight: 700;
+  }
+  .typewriter-card .quote-text {
+    font-family: var(--serif-jp);
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--ink);
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+  }
+  .typewriter-card .quote-tag {
+    margin-top: 20px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-mute);
+    border-top: 1px dashed var(--line);
+    padding-top: 16px;
+  }
+  
+  /* ========== ソリューション ========== */
+  .solution {
+    background: var(--paper);
+    padding: 160px 0;
+    position: relative;
+  }
+  .solution::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+  
+  .program-card {
+    background: linear-gradient(145deg, #fdfaf3 0%, #f0e8d8 100%);
+    border: 1px solid var(--line);
+    padding: 72px 80px;
+    border-radius: 2px;
+    margin-top: 64px;
+    position: relative;
+    overflow: hidden;
+  }
+  .program-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(200,80,28,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(60px, -60px);
+  }
+  .program-mark {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+  }
+  .program-title {
+    font-family: var(--serif-jp);
+    font-weight: 900;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.3;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .program-title .accent { color: var(--accent); }
+  .program-sub {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+  }
+  
+  .program-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 32px;
+    margin-top: 48px;
+    position: relative;
+    z-index: 1;
+  }
+  .feature {
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+  }
+  .feature-num {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 12px;
+  }
+  .feature-title {
+    font-family: var(--serif-jp);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .feature-desc {
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+  
+  /* ========== 学び方の3ステップ ========== */
+  .method {
+    background: var(--paper-soft);
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-top: 80px;
+  }
+  .step {
+    position: relative;
+    padding-top: 40px;
+  }
+  .step-num {
+    font-family: var(--serif);
+    font-weight: 700;
+    font-size: 120px;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.15;
+    position: absolute;
+    top: -32px;
+    left: -8px;
+    font-style: italic;
+  }
+  .step-label {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent);
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .step-title {
+    font-family: var(--serif-jp);
+    font-weight: 900;
+    font-size: 22px;
+    color: var(--ink);
+    margin-bottom: 16px;
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+  }
+  .step-desc {
+    font-family: var(--sans-jp);
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ========== 対象者 ========== */
+  .audience {
+    background: var(--paper);
+  }
+  .audience-list {
+    margin-top: 64px;
+    max-width: 800px;
+  }
+  .audience-list li {
+    list-style: none;
+    padding: 28px 0 28px 56px;
+    border-bottom: 1px solid var(--line);
+    font-family: var(--serif-jp);
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--ink);
+    position: relative;
+    font-weight: 500;
+  }
+  .audience-list li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    top: 28px;
+    color: var(--accent);
+    font-size: 14px;
+  }
+  
+  /* ========== 最終CTA ========== */
+  .final-cta {
+    background: linear-gradient(180deg, var(--ink) 0%, #2a221c 100%);
+    color: var(--paper);
+    padding: 160px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+      radial-gradient(circle at 50% 30%, rgba(232, 90, 26, 0.2) 0%, transparent 60%);
+  }
+  .final-cta-tag {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--accent-glow);
+    letter-spacing: 0.1em;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .final-cta-title {
+    font-family: var(--serif-jp);
+    font-weight: 900;
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 1.3;
+    color: var(--paper);
+    margin-bottom: 32px;
+    position: relative;
+  }
+  .final-cta-title .accent { color: var(--accent-glow); }
+  .final-cta-desc {
+    font-family: var(--sans-jp);
+    font-size: 18px;
+    line-height: 1.9;
+    color: rgba(245, 239, 230, 0.8);
+    max-width: 640px;
+    margin: 0 auto 48px;
+    position: relative;
+  }
+  
+  .cta-button {
+    display: inline-block;
+    padding: 24px 64px;
+    background: var(--accent-glow);
+    color: var(--ink);
+    font-family: var(--serif-jp);
+    font-weight: 900;
+    font-size: 18px;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    border-radius: 2px;
+    position: relative;
+    transition: all 0.3s;
+    box-shadow: 0 10px 30px -10px rgba(232, 90, 26, 0.5);
+  }
+  .cta-button:hover {
+    background: var(--paper);
+    transform: translateY(-3px);
+    box-shadow: 0 20px 40px -15px rgba(232, 90, 26, 0.6);
+  }
+  .cta-button::before {
+    content: '→';
+    margin-right: 16px;
+    font-family: var(--serif);
+  }
+  .cta-note {
+    margin-top: 24px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 14px;
+    color: rgba(245, 239, 230, 0.5);
+    position: relative;
+  }
+  
+  /* ========== フッター ========== */
+  footer {
+    background: var(--ink);
+    color: rgba(245, 239, 230, 0.5);
+    padding: 48px 0;
+    text-align: center;
+    font-family: var(--serif);
+    font-size: 14px;
+    letter-spacing: 0.05em;
+  }
+  footer .brand {
+    color: var(--accent-glow);
+    font-weight: 600;
+    font-style: italic;
+    margin-bottom: 8px;
+    display: block;
+    font-size: 18px;
+  }
+  
+  /* ========== レスポンシブ ========== */
+  @media (max-width: 900px) {
+    .problem-grid { grid-template-columns: 1fr; gap: 48px; }
+    .steps { grid-template-columns: 1fr; gap: 56px; }
+    .specimen, .program-card, .anatomy { padding: 40px 28px; }
+    section.block, .reveal, .solution, .final-cta { padding: 80px 0; }
+    .container { padding: 0 24px; }
+    .hero { padding: 40px 0 80px; min-height: auto; }
+    .specimen-text { font-size: 18px; }
+    .anatomy-line { font-size: 17px; line-height: 1.85; }
+    .skeleton-eq { font-size: 18px; }
+    .problem-img .stat-num { font-size: 96px; }
+  }
+
+  /* スマホ：意図しない改行を防ぎ、自然な折り返しに */
+  @media (max-width: 720px) {
+    .container { padding: 0 20px; }
+
+    .hero { padding: 32px 0 64px; }
+    .hero-tag {
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+    .hero-q {
+      font-size: 15px;
+      line-height: 1.85;
+    }
+
+    .hero-title br,
+    .h2 br,
+    .program-title br,
+    .step-title br,
+    .final-cta-title br,
+    .lead br,
+    .insight-note br,
+    .final-cta-desc br,
+    .stat-label br {
+      display: none;
+    }
+
+    .hero-title {
+      font-size: clamp(26px, 7.2vw, 34px);
+      line-height: 1.42;
+      margin-bottom: 32px;
+    }
+
+    .h2 {
+      font-size: clamp(22px, 6.4vw, 30px);
+      line-height: 1.42;
+      margin-bottom: 24px;
+    }
+
+    .lead {
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 36px;
+    }
+
+    section.block,
+    .reveal,
+    .solution,
+    .final-cta {
+      padding: 64px 0;
+    }
+
+    .reveal { padding: 72px 0; }
+
+    .specimen {
+      padding: 36px 20px 28px;
+    }
+    .specimen::before {
+      right: 8px;
+      bottom: 8px;
+    }
+    .specimen-label {
+      left: 16px;
+      font-size: 12px;
+    }
+    .specimen-meta {
+      flex-wrap: wrap;
+      gap: 8px;
+      font-size: 10px;
+    }
+    .specimen-meta span {
+      padding: 3px 8px;
+    }
+    .specimen-text {
+      font-size: 16px;
+      line-height: 1.75;
+    }
+    .specimen-bottom {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+    .specimen-bottom .you-read {
+      font-size: 15px;
+      line-height: 1.7;
+    }
+    .specimen-scroll-hint {
+      display: none;
+    }
+    .scroll-hint {
+      margin-top: 48px;
+    }
+
+    .problem-grid { gap: 40px; margin-top: 40px; }
+    .problem-img .stat-box { padding: 28px 20px; }
+    .problem-img .stat-num {
+      font-size: 72px;
+    }
+    .problem-img .stat-num small { font-size: 32px; }
+    .problem-img .stat-label {
+      font-size: 13px;
+      line-height: 1.75;
+    }
+    .problem-list li {
+      font-size: 15px;
+      padding: 20px 0 20px 44px;
+    }
+    .problem-list li::before {
+      top: 20px;
+      width: 28px;
+      height: 28px;
+      font-size: 12px;
+    }
+
+    .anatomy {
+      margin-top: 48px;
+      padding: 32px 18px 28px;
+    }
+    .anatomy-label {
+      left: 16px;
+      font-size: 11px;
+    }
+    .legend {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .anatomy-line {
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 32px;
+    }
+    .anatomy-line .main-part,
+    .anatomy-line .sub-part {
+      display: inline;
+    }
+    .skeleton {
+      padding: 24px 20px;
+    }
+    .skeleton-meaning {
+      font-size: 16px;
+    }
+    .insight-note {
+      margin-top: 36px;
+      padding-left: 18px;
+      font-size: 16px;
+      line-height: 1.85;
+    }
+
+    .typewriter-list {
+      grid-template-columns: 1fr;
+      gap: 20px;
+      margin-top: 40px;
+    }
+    .typewriter-card {
+      padding: 24px 20px;
+    }
+    .typewriter-card .quote-text {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .program-card {
+      padding: 36px 22px;
+      margin-top: 40px;
+    }
+    .program-title {
+      font-size: clamp(22px, 6vw, 28px);
+      line-height: 1.4;
+    }
+    .program-sub {
+      font-size: 15px;
+    }
+    .program-features {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    .steps {
+      gap: 48px;
+      margin-top: 48px;
+    }
+    .step-num {
+      font-size: 72px;
+      top: -20px;
+    }
+    .step-title {
+      font-size: 19px;
+    }
+    .step-desc {
+      font-size: 14px;
+    }
+
+    .audience-list {
+      margin-top: 40px;
+    }
+    .audience-list li {
+      font-size: 16px;
+      padding: 22px 0 22px 44px;
+    }
+    .audience-list li::before {
+      top: 24px;
+    }
+
+    .final-cta-title {
+      font-size: clamp(26px, 7vw, 36px);
+      line-height: 1.42;
+    }
+    .final-cta-desc {
+      font-size: 15px;
+      line-height: 1.85;
+      margin-bottom: 36px;
+    }
+    .cta-button {
+      display: flex;
+      width: 100%;
+      max-width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding: 18px 24px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== HERO ========== -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-tag">
+      <em>Reading English</em>
+      <span class="hero-tag-jp">英文の本当の読み方</span>
+    </div>
+    <h1 class="hero-title">
+      中学英単語だけで構成された、<br>
+      ある<span class="accent">東大の英文</span>です。<br>
+      あなたは、読めますか?
+    </h1>
+    <p class="hero-q">難しい単語は、ひとつもありません。それでも、読めない。なぜか?</p>
+    
+    <div class="specimen">
+      <div class="specimen-label"><em>The Sentence</em></div>
+      <div class="specimen-meta">
+        <span class="badge-tokyo">東京大学</span>
+        <span>中学英単語のみ</span>
+        <span>20語</span>
+      </div>
+      <p class="specimen-text">
+        In the examples I am talking of the person continues to behave in what most people agree is a normal manner.
+      </p>
+      <div class="specimen-bottom">
+        <div>
+          <div class="you-read">この英文の<u>骨格</u>を、3秒で答えられますか?</div>
+          <div style="margin-top: 6px; font-size: 13px; color: var(--ink-mute);">主語は?動詞は?どこからどこまでが何の修飾?</div>
+        </div>
+        <div class="specimen-scroll-hint" style="font-family: var(--serif); font-style: italic; font-size: 13px; color: var(--ink-mute);">↓ Scroll for the answer</div>
+      </div>
+    </div>
+    
+    <div class="scroll-hint">▼</div>
+  </div>
+</section>
+
+<!-- ========== PROBLEM ========== -->
+<section class="block problem">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="num">01</span>
+      <em>The Problem</em>
+      <span class="jp">なぜ、読めないのか</span>
+    </div>
+    <h2 class="h2">単語ひとつひとつの意味は分かる。<br>でも、<span class="accent">骨格</span>が見えていない。</h2>
+    
+    <p class="lead">
+      多くの受験生・英語学習者は、英文を「左から右へ単語の意味をつなげる」読み方をしています。<br>
+      でも、それでは絶対に複雑な英文は読めません。なぜなら、英文には<strong>「メイン(=骨格)」</strong>と<strong>「補足(=修飾)」</strong>があるから。
+    </p>
+    
+    <div class="problem-grid">
+      <div class="problem-img">
+        <div class="stat-box">
+          <div class="stat-num">87<small>%</small></div>
+          <div class="stat-label">が、この東大の英文の<br><strong style="color:var(--ink);">主語と動詞</strong>を正しく特定できない<br><span style="font-size:11px;color:var(--ink-mute);">*THINKING独自調査・高校生100名対象</span></div>
+        </div>
+      </div>
+      
+      <ul class="problem-list">
+        <li>単語の意味を1つずつ訳して、最後に<strong>「なんとなく」</strong>つなぎ合わせている</li>
+        <li>関係代名詞や挿入句で<strong>主語と動詞が離れる</strong>と、もう迷子になる</li>
+        <li>長文を読むと、<strong>「結局この文って何が言いたいの?」</strong>になる</li>
+        <li>単語と文法は覚えたのに、<strong>「英文を読む力」</strong>が伸びない</li>
+        <li>解説を見て「ああ、なるほど」と思っても、<strong>次は自力で読めない</strong></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========== REVEAL(=ピーク) ========== -->
+<section class="reveal block">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="num">02</span>
+      <em>The Reveal</em>
+      <span class="jp">正解の見せ方</span>
+    </div>
+    <h2 class="h2">英文を、<span class="accent">メイン</span>と<br><span style="color: rgba(245, 239, 230, 0.5);">補足</span>に、分けて読む。</h2>
+    
+    <p class="lead">
+      この東大の英文も、メイン(=骨格)と補足(=修飾)に分解すれば、瞬時に意味が浮かび上がります。<br>
+      下を見てください。同じ英文ですが、<strong style="color: var(--accent-glow);">オレンジが骨格</strong>、薄いグレーが補足です。
+    </p>
+    
+    <div class="anatomy">
+      <div class="anatomy-label"><em>The Anatomy of the Sentence</em></div>
+      
+      <div class="legend">
+        <div class="legend-item">
+          <span class="legend-dot main"></span>
+          <span style="color: var(--accent-glow); font-weight: 600;">メイン(=骨格・SVO)</span>
+        </div>
+        <div class="legend-item">
+          <span class="legend-dot sub"></span>
+          <span style="color: rgba(245, 239, 230, 0.6);">補足(=修飾・関係詞節)</span>
+        </div>
+      </div>
+      
+      <p class="anatomy-line">
+        <span class="sub-part">In the examples</span>
+        <span class="sub-part">(I am talking of)</span>
+        <span class="main-part">the person</span>
+        <span class="main-part">continues to behave</span>
+        <span class="sub-part">in</span>
+        <span class="sub-part">[what most people agree is a normal manner].</span>
+      </p>
+      
+      <div class="skeleton">
+        <div class="skeleton-label"><em>The Skeleton</em></div>
+        <div class="skeleton-eq">
+          <strong style="color: var(--accent-glow);">The person continues to behave.</strong>
+        </div>
+        <div class="skeleton-meaning">
+          → 「その人は、振る舞い続ける」
+        </div>
+      </div>
+      
+      <p class="insight-note">
+        補足を全部とっぱらえば、骨格はたった<strong>「S + V」</strong>(=The person continues to behave)。<br>
+        前後の <span style="color: var(--accent-glow);">in the examples ~</span> や <span style="color: var(--accent-glow);">in what most people agree is ~</span> は、すべて「どこで?」「どんなふうに?」を説明する<strong>補足</strong>。<br>
+        <br>
+        この読み方さえ身につければ、<strong>東大の英文でも、慶應の英文でも、読める。</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 共感パート ========== -->
+<section class="block empathy">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="num">03</span>
+      <em>The Voice</em>
+      <span class="jp">あなたの心当たり、ありませんか?</span>
+    </div>
+    <h2 class="h2">こんな読み方、<br><span class="accent">していませんか?</span></h2>
+    
+    <div class="typewriter-list">
+      <div class="typewriter-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">
+          辞書で単語の意味を全部調べて、それを順番につなげようとする。でも、最後にまとめると意味が通らない。
+        </p>
+        <div class="quote-tag"><em>— よくある悩み #01</em></div>
+      </div>
+      <div class="typewriter-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">
+          学校の授業や塾の解説を聞いて「なるほど」と思う。でも、いざ自分で別の英文を読むと、また同じ間違いを繰り返す。
+        </p>
+        <div class="quote-tag"><em>— よくある悩み #02</em></div>
+      </div>
+      <div class="typewriter-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">
+          英文を読むときに、「どこが主語で、どこが動詞なのか」を考える習慣がない。日本語の語順に頭の中で並べ替えてしまう。
+        </p>
+        <div class="quote-tag"><em>— よくある悩み #03</em></div>
+      </div>
+      <div class="typewriter-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">
+          関係代名詞や分詞構文を「文法書では分かる」のに、長い英文の中に出てくると、もう何が修飾しているのか分からなくなる。
+        </p>
+        <div class="quote-tag"><em>— よくある悩み #04</em></div>
+      </div>
+      <div class="typewriter-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">
+          単語帳や文法問題集はやりこんできた。模試の文法問題は解ける。でも、長文を読むスピードと精度が伸びない。
+        </p>
+        <div class="quote-tag"><em>— よくある悩み #05</em></div>
+      </div>
+      <div class="typewriter-card">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">
+          英文を最後まで読むと、最初の方の内容を忘れている。「結局なに?」になる。だから何度も読み返してしまう。
+        </p>
+        <div class="quote-tag"><em>— よくある悩み #06</em></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOLUTION ========== -->
+<section class="solution">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="num">04</span>
+      <em>The Solution</em>
+      <span class="jp">英文の読み方を、変える</span>
+    </div>
+    <h2 class="h2">45日間で、<br>英文の読み方が<span class="accent">変わる</span>。</h2>
+    
+    <p class="lead">
+      THINKINGの英文解釈プログラムは、「メイン」と「補足」を見抜く読み方を、<strong>45日間で根本から</strong>身につけるプログラムです。<br>
+      表面的なテクニックや、暗記中心の英文解釈とは違います。「<strong>思考プロセス</strong>」をひとつずつ言語化し、無意識レベルで使えるようにします。
+    </p>
+    
+    <div class="program-card">
+      <div class="program-mark"><em>The Program</em> ─ 英文解釈45日間プログラム</div>
+      <h3 class="program-title">「<span class="accent">読める</span>」を体感する、<br>45日間の集中指導。</h3>
+      <p class="program-sub">ENGLISH READING · 45 DAYS · ONLINE</p>
+      
+      <div class="program-features">
+        <div class="feature">
+          <div class="feature-num"><em>Feature 01</em></div>
+          <div class="feature-title">メイン/補足を見抜く読み方</div>
+          <div class="feature-desc">英文を「左から右へ」ではなく、骨格と修飾に分解して読む技術を、45日かけて反復習得します。</div>
+        </div>
+        <div class="feature">
+          <div class="feature-num"><em>Feature 02</em></div>
+          <div class="feature-title">思考プロセスを言語化</div>
+          <div class="feature-desc">「なんとなく」ではなく、「ここでこう考えるから、こう読める」という思考の手順を、ひとつずつ明示します。</div>
+        </div>
+        <div class="feature">
+          <div class="feature-num"><em>Feature 03</em></div>
+          <div class="feature-title">入門〜難関大レベルの素材</div>
+          <div class="feature-desc">基礎の60題からスタートし、難関大の英文まで段階的にステップアップ。挫折しない設計です。</div>
+        </div>
+        <div class="feature">
+          <div class="feature-num"><em>Feature 04</em></div>
+          <div class="feature-title">毎日の習慣化サポート</div>
+          <div class="feature-desc">1日約30分、毎日続けられる分量設計。45日後には「英文を見る目」が変わっていることを実感できます。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 学習方法の3ステップ ========== -->
+<section class="block method">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="num">05</span>
+      <em>How it Works</em>
+      <span class="jp">学び方の3ステップ</span>
+    </div>
+    <h2 class="h2"><span class="accent">3つのステップ</span>で、<br>確実に読む力が身につく。</h2>
+    
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-label"><em>Read</em></div>
+        <h3 class="step-title">骨格を見抜く<br>(=Read for Structure)</h3>
+        <p class="step-desc">
+          まず英文の骨格(=主語・動詞・目的語)を見抜く力を養います。長い修飾やコンマで惑わされず、文の核を瞬時に掴む。これが、すべての読解の土台になります。
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-label"><em>Analyze</em></div>
+        <h3 class="step-title">修飾の仕組みを分解<br>(=Analyze Modifiers)</h3>
+        <p class="step-desc">
+          関係代名詞、分詞構文、不定詞、前置詞句 ─ どの要素がどこを修飾しているのかを、一つずつ整理します。「文法用語の暗記」ではなく「使えるツールとしての文法」を身につける。
+        </p>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-label"><em>Translate</em></div>
+        <h3 class="step-title">自然な日本語に仕上げる<br>(=Translate Naturally)</h3>
+        <p class="step-desc">
+          直訳から自然な日本語へ。3段階に分けて訳を磨いていくことで、「英語の論理」と「日本語の論理」のギャップを埋める力が身につきます。
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 対象者 ========== -->
+<section class="block audience">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="num">06</span>
+      <em>For Whom</em>
+      <span class="jp">こんな人に届けたい</span>
+    </div>
+    <h2 class="h2">こんな<span class="accent">あなた</span>に、<br>このプログラムを届けたい。</h2>
+    
+    <ul class="audience-list">
+      <li>単語と文法は勉強したのに、<strong>英文を読む力が伸び悩んでいる</strong>受験生</li>
+      <li>長文問題で<strong>「時間が足りない」「精度が低い」</strong>と感じている人</li>
+      <li>これまで「<strong>なんとなく</strong>」で英文を読んできた、すべての学習者</li>
+      <li>大学入試・英検準1級〜1級・TOEICで、<strong>読解力を本気で伸ばしたい</strong>人</li>
+      <li>「<strong>英文を読む正しい型</strong>」を、根本から学び直したい人</li>
+      <li>独学・自己流に限界を感じ、<strong>体系的に英文解釈を学びたい</strong>人</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ========== FINAL CTA ========== -->
+<section class="final-cta">
+  <div class="container">
+    <div class="final-cta-tag"><em>* Join the Program *</em></div>
+    <h2 class="final-cta-title">
+      45日後、あなたの<br>
+      「<span class="accent">英文の見え方</span>」が<br>
+      まったく違うものになる。
+    </h2>
+    <p class="final-cta-desc">
+      もし、興味があれば。<br>
+      参加表明は、下のボタンから。詳細は、追ってご案内します。
+    </p>
+    <a href="#" class="cta-button" id="lp-cta">参加に興味がある</a>
+    <p class="cta-note"><em>* 参加表明後、詳細をご案内いたします。</em></p>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <span class="brand">THINKING</span>
+    オンライン進学塾 · 英文解釈45日間プログラム
+  </div>
+</footer>
+
+<script src="../../data/line-url.js"></script>
+<script>
+  (function () {
+    var cta = document.getElementById("lp-cta");
+    if (cta && window.THINKING_LINE_LIFF_URL) {
+      cta.href = window.THINKING_LINE_LIFF_URL;
+      cta.target = "_blank";
+      cta.rel = "noopener noreferrer";
+    }
+  })();
+</script>
+</body>
+</html>

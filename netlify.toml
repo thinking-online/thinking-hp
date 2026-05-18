@@ -108,3 +108,13 @@
   from = "/product-kangaku-english"
   to = "/product-kangaku-english.html"
   status = 200
+
+# LP: 末尾スラッシュなし → あり（正規URL）
+[[redirects]]
+  from = "/lp/english-reading-45days"
+  to = "/lp/english-reading-45days/"
+  status = 301
+[[redirects]]
+  from = "/lp/todai-english"
+  to = "/lp/english-reading-45days/"
+  status = 301

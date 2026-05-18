@@ -32,6 +32,19 @@ const SupportPage = () => (
 
 /* ─── Hero ───────────────────────────────────────────────── */
 
+const SupportHeroHeadline = ({ titleId }) => (
+  <h1
+    id={titleId}
+    className="sup-hero-headline"
+    aria-label="頑張りが、報われる。脱・根性論の合格設計。"
+  >
+    <span className="sup-hero-headline-line">頑張りが、報われる。</span>
+    <span className="sup-hero-headline-line">
+      <em>脱・根性論</em>の合格設計。
+    </span>
+  </h1>
+);
+
 const SupportHero = () => {
   const [scrollY, setScrollY] = React.useState(0);
   const [mouseX, setMouseX] = React.useState(0);
@@ -69,9 +82,8 @@ const SupportHero = () => {
         <div className="sup-hero-mobile-overlay sup-hero-mobile-overlay-top" aria-hidden="true" />
         <div className="sup-hero-mobile-overlay sup-hero-mobile-overlay-bottom" aria-hidden="true" />
 
-        <div className="sup-hero-mobile-copy-panel" aria-label="根性論はなし。再現性にこだわる。">
-          <span>根性論はなし。</span>
-          <span><em>『再現性』</em>にこだわる。</span>
+        <div className="sup-hero-mobile-top">
+          <SupportHeroHeadline />
         </div>
 
         <div className="sup-hero-mobile-foot">
@@ -123,11 +135,7 @@ const SupportHero = () => {
           </div>
 
           <div className="sup-hero-concept">
-            <h1 id="sup-hero-title" className="sup-hero-headline" aria-label="根性論はなし。再現性にこだわる。">
-              根性論はなし。
-              <br />
-              <em>『再現性』にこだわる。</em>
-            </h1>
+            <SupportHeroHeadline titleId="sup-hero-title" />
 
             <p className="sup-hero-lead">
               「<span className="sup-hero-accent">設計する。実行する。鍛える。</span>」

@@ -106,6 +106,59 @@ function VoicesSection() {
     "assets/testimonial-12.png",
   ];
 
+  const LOOP_SETS = 3;
+  const carouselRef = React.useRef(null);
+  const jumpingRef = React.useRef(false);
+  const loopItems = React.useMemo(
+    () => Array.from({ length: LOOP_SETS }, () => voices).flat(),
+    []
+  );
+
+  const syncLoopPosition = React.useCallback(() => {
+    const el = carouselRef.current;
+    if (!el || jumpingRef.current) return;
+
+    const setWidth = el.scrollWidth / LOOP_SETS;
+    if (setWidth <= 0) return;
+
+    if (el.scrollLeft < setWidth * 0.5) {
+      jumpingRef.current = true;
+      el.scrollLeft += setWidth;
+      jumpingRef.current = false;
+    } else if (el.scrollLeft >= setWidth * 2.5) {
+      jumpingRef.current = true;
+      el.scrollLeft -= setWidth;
+      jumpingRef.current = false;
+    }
+  }, []);
+
+  React.useEffect(() => {
+    const el = carouselRef.current;
+    if (!el) return undefined;
+
+    const jumpToMiddle = () => {
+      const setWidth = el.scrollWidth / LOOP_SETS;
+      if (setWidth > 0) {
+        el.scrollLeft = setWidth;
+      }
+    };
+
+    jumpToMiddle();
+    const t = window.setTimeout(jumpToMiddle, 120);
+    const t2 = window.setTimeout(jumpToMiddle, 600);
+
+    const onScroll = () => syncLoopPosition();
+    el.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", jumpToMiddle);
+
+    return () => {
+      window.clearTimeout(t);
+      window.clearTimeout(t2);
+      el.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", jumpToMiddle);
+    };
+  }, [syncLoopPosition]);
+
   return (
     <section id="voices" className="voices-section theme-paper" data-screen-label="08 Voices">
       <div className="wrap">
@@ -122,12 +175,21 @@ function VoicesSection() {
         </div>
 
         <div className="voices-strip">
-          <div className="voices-track">
-            {voices.concat(voices).map((src, i) => (
-              <article key={i} className="voice-card voice-card--image">
-                <img src={src} alt="受講生の手書き感想" loading="lazy" decoding="async" />
-              </article>
-            ))}
+          <p className="voices-swipe-hint" aria-hidden="true">← スワイプで他の感想を見る →</p>
+          <div
+            className="voices-carousel"
+            ref={carouselRef}
+            role="region"
+            aria-label="手書き感想ギャラリー"
+            tabIndex={0}
+          >
+            <div className="voices-track">
+              {loopItems.map((src, i) => (
+                <article key={`${src}-${i}`} className="voice-card voice-card--image">
+                  <img src={src} alt="受講生の手書き感想" loading="lazy" decoding="async" />
+                </article>
+              ))}
+            </div>
           </div>
         </div>
 

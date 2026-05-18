@@ -181,6 +181,12 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
 .theme-paper.voices-section {
   background: linear-gradient(180deg, #fbf9f0 0%, #f5f0dc 100%) !important;
 }
+.theme-paper .voices-swipe-hint {
+  color: #8a8676;
+}
+.theme-paper .voices-carousel {
+  cursor: grab;
+}
 .theme-paper .voice-card--image {
   transform: rotate(-1deg);
 }

@@ -421,10 +421,31 @@
 
 /* ===== VOICES ===== */
 .voices-section { background: linear-gradient(180deg, var(--navy-950), var(--navy-900)); overflow: hidden; }
-.voices-strip { margin: 0 -28px; padding: 20px 0; mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
-.voices-track { display: flex; gap: 20px; animation: voicesScroll 80s linear infinite; width: max-content; }
-.voices-track:hover { animation-play-state: paused; }
-@keyframes voicesScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.voices-strip { margin: 0 -28px; padding: 8px 0 20px; }
+.voices-swipe-hint {
+  margin: 0 0 12px;
+  padding: 0 28px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: var(--text-400);
+}
+.voices-carousel {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  padding: 4px 28px 8px;
+  mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+  cursor: grab;
+}
+.voices-carousel:active { cursor: grabbing; }
+.voices-carousel::-webkit-scrollbar { display: none; }
+.voices-track { display: flex; gap: 20px; width: max-content; }
 
 .voice-card { width: 280px; flex-shrink: 0; padding: 20px; background: rgba(255,255,255,0.03); border: 1px solid var(--navy-line); border-radius: 4px; }
 .voice-card--image {
@@ -434,6 +455,8 @@
   border: none;
   border-radius: 0;
   overflow: visible;
+  scroll-snap-align: center;
+  scroll-snap-stop: normal;
 }
 .voice-card--image img {
   display: block;

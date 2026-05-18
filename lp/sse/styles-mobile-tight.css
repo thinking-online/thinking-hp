@@ -122,6 +122,16 @@
     margin-top: 0;
   }
 
+  .voices-swipe-hint {
+    padding: 0 16px;
+    font-size: 10px;
+  }
+
+  .voices-carousel {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
   .voices-stats {
     margin-top: 24px;
     padding: 10px 12px;

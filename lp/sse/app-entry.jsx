@@ -13,7 +13,6 @@ function App() {
       <WhySection />
       <MethodSection />
       <VoicesSection />
-      <ResultsSection />
       <RoadmapSection />
       <DaysSection />
       <RoutineSection />

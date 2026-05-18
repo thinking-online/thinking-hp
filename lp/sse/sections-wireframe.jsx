@@ -191,7 +191,7 @@ function RoadmapSection() {
     <section id="roadmap" className="sse-roadmap theme-deep-gold">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">09</div>
+          <div className="section-num">08</div>
           <div>
             <span className="eyebrow">45-DAY ROADMAP</span>
             <h2 className="section-title">45日間で、<br /><em>どう変わるのか。</em></h2>

@@ -1,93 +1,6 @@
 /* Smart Study English — voices, media, guarantee, FAQ, price, final CTA */
 
 /* =====================================================
-   SECTION: RESULTS — 8 cases
-===================================================== */
-function ResultsSection() {
-  const cases = [
-    { score: "46→60", label: "偏差値", school: "九州大学 A判定", student: "高3 男子 Tくん", note: "「感覚読み」を捨て、論理的構造把握を半年で。E判定からの逆転。", tag: "国公立難関" },
-    { score: "45→65", label: "偏差値", school: "立教大学 合格", student: "高3 女子 Mさん", note: "週6〜7日のテニス部主将。隙間時間15分の積み重ねで現役合格。", tag: "MARCH" },
-    { score: "全国 1位", label: "河合塾全統模試", school: "早稲田大学 合格", student: "浪人 Nさん", note: "不登校・偏差値30台から「英語のフォーム」で霧が晴れ、奇跡の達成。", tag: "早慶上理" },
-    { score: "50→65", label: "偏差値", school: "国際教養大 現役", student: "高3 女子 Sさん", note: "部活に青春を捧げながら、英語の最高峰を文武両道で攻略。", tag: "難関国公立" },
-    { score: "下克上", label: "週7部活で底辺", school: "関西学院大 合格", student: "高3 男子 Yくん", note: "部活漬けで成績は底辺。誰も予想しなかった圧倒的下克上。", tag: "関関同立" },
-    { score: "70+", label: "偏差値連発", school: "国語もUP", student: "高2 女子 Kさん", note: "高校受験の悔しさが原動力。論理を鍛えて全教科に波及。", tag: "全教科波及" },
-    { score: "12月末まで", label: "全国大会", school: "国公立 現役合格", student: "高3 男子 Hくん", note: "受験の貯金は基礎の基礎。土台があれば現役合格は届く。", tag: "文武両道" },
-    { score: "+15", label: "3ヶ月で偏差値", school: "短期で爆発成長", student: "高2 女子 Aさん", note: "正しいフォームがあれば、短期間で爆発的成長が可能。", tag: "短期成長" },
-  ];
-
-  const trackRef = useRef(null);
-  const scroll = (dir) => {
-    if (!trackRef.current) return;
-    trackRef.current.scrollBy({ left: dir * 360, behavior: "smooth" });
-  };
-
-  return (
-    <section id="results" className="results-section" data-screen-label="07 Results">
-      <div className="wrap">
-        <div className="section-head">
-          <div className="section-num">08</div>
-          <div>
-            <span className="eyebrow">CASE STUDIES / 2,000+ STUDENTS</span>
-            <h2 className="section-title">もはや、奇跡ではない。<br /><em>再現性のある「必然」。</em></h2>
-            <p className="section-lead">
-              型を矯正したから、結果が変わった。「努力 × 順番」の方程式に、例外はありません。
-            </p>
-          </div>
-        </div>
-
-        <div className="results-bar">
-          <div className="results-bar-stats">
-            <div className="rb-stat"><span className="rb-num">2,000<sub>+</sub></span><span className="rb-label">累計参加者</span></div>
-            <div className="rb-sep"></div>
-            <div className="rb-stat"><span className="rb-num">94<sub>%</sub></span><span className="rb-label">完走率</span></div>
-            <div className="rb-sep"></div>
-            <div className="rb-stat"><span className="rb-num">+12.4</span><span className="rb-label">平均偏差値UP</span></div>
-          </div>
-          <div className="results-bar-nav">
-            <button onClick={() => scroll(-1)} aria-label="前へ" className="rb-btn">←</button>
-            <button onClick={() => scroll(1)} aria-label="次へ" className="rb-btn">→</button>
-          </div>
-        </div>
-
-        <div className="results-track-wrap">
-          <div className="results-track" ref={trackRef}>
-            {cases.map((c, i) => (
-              <article key={i} className="result-card">
-                <div className="result-card-top">
-                  <span className="case-num">CASE {String(i+1).padStart(2,"0")}</span>
-                  <span className="case-tag">{c.tag}</span>
-                </div>
-                <div className="result-card-school">
-                  <svg viewBox="0 0 40 40" width="22" height="22" className="school-mark">
-                    <path d="M20 6 L 34 14 L 20 22 L 6 14 Z" fill="none" stroke="#e9c267" strokeWidth="1.2" />
-                    <path d="M10 18 L 10 28 M 30 18 L 30 28 M 20 24 L 20 32" stroke="#e9c267" strokeWidth="1.2" />
-                  </svg>
-                  <span>{c.school}</span>
-                </div>
-                <div className="result-score">
-                  <span className="result-score-num">{c.score}</span>
-                  <span className="result-score-label">{c.label}</span>
-                </div>
-                <div className="result-card-student">{c.student}</div>
-                <p className="result-note">{c.note}</p>
-                <div className="result-card-corner tl"></div>
-                <div className="result-card-corner br"></div>
-              </article>
-            ))}
-            <article className="result-card more-card">
-              <span className="more-eyebrow">AND MORE</span>
-              <h4>2,000名 +<br />の合格事例</h4>
-              <p>これらは、ほんの一部です。<br />すべての事例に、共通する一つの構造があります。</p>
-              <a href="#cta" className="more-link">プログラムを見る →</a>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* =====================================================
    SECTION: VOICES — 手書き感想ギャラリー
 ===================================================== */
 function VoicesSection() {
@@ -601,7 +514,6 @@ function FinalSection() {
   );
 }
 
-window.ResultsSection = ResultsSection;
 window.VoicesSection = VoicesSection;
 window.MediaSection = MediaSection;
 window.MessageSection = MessageSection;

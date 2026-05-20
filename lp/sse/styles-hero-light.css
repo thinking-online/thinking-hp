@@ -65,10 +65,14 @@
   );
 }
 
-/* Foreground */
+/* Foreground — flex column prevents headline / foot overlap */
 .hero-m-inner {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: clamp(12px, 3vh, 20px);
   min-height: 100svh;
   min-height: 100dvh;
   padding:
@@ -81,6 +85,11 @@
 .hero-m-header {
   position: relative;
   z-index: 3;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .hero-m-brand {
@@ -94,18 +103,66 @@
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
 }
 
+/* 累計2000名突破 — hero badge */
+.hero-m-badge {
+  margin: 0;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+  padding: 7px 11px 8px;
+  border-radius: 6px;
+  background: linear-gradient(145deg, rgba(8, 12, 24, 0.88), rgba(20, 16, 8, 0.82));
+  border: 1px solid rgba(216, 169, 66, 0.65);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  line-height: 1;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.hero-m-badge-pre,
+.hero-m-badge-post {
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: clamp(9px, 2.4vw, 10px);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: rgba(247, 244, 234, 0.88);
+}
+
+.hero-m-badge-num {
+  font-family: "Cormorant Garamond", "Noto Serif JP", serif;
+  font-size: clamp(22px, 6vw, 26px);
+  font-weight: 700;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: #f0d078;
+  line-height: 0.9;
+}
+
+/* Headline block — vertical copy + horizontal tagline */
+.hero-m-headline-block {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(10px, 3vw, 16px);
+  min-height: 0;
+  margin-top: clamp(4px, 1.5vh, 12px);
+}
+
 /* Vertical headline — THINKING HP style */
 .hero-m-vertical-panel {
-  position: absolute;
-  left: clamp(14px, 4.6vw, 22px);
-  top: clamp(128px, 23svh, 210px);
+  position: relative;
+  left: auto;
+  top: auto;
   z-index: 2;
   margin: 0;
+  flex-shrink: 0;
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-family: "Noto Serif JP", "Yu Mincho", serif;
   font-weight: 500;
-  font-size: clamp(28px, 8vw, 38px);
+  font-size: clamp(26px, 7.2vw, 36px);
   line-height: 1.62;
   letter-spacing: 0.1em;
   color: #f7f4ea;
@@ -115,6 +172,20 @@
   text-shadow: 0 6px 18px rgba(0, 0, 0, 0.42);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
+}
+
+.hero-m-tagline {
+  margin: 0;
+  align-self: flex-end;
+  max-width: min(42vw, 148px);
+  font-family: "Noto Serif JP", "Yu Mincho", serif;
+  font-size: clamp(11px, 3vw, 13px);
+  font-weight: 500;
+  line-height: 1.75;
+  letter-spacing: 0.06em;
+  color: rgba(247, 244, 234, 0.9);
+  text-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  padding-bottom: 6px;
 }
 
 .hero-m-vertical-panel span {
@@ -128,15 +199,17 @@
 
 /* Bottom copy + CTA */
 .hero-m-foot {
-  position: absolute;
-  left: clamp(16px, 4.8vw, 24px);
-  right: clamp(16px, 4.8vw, 24px);
-  bottom: max(20px, env(safe-area-inset-bottom));
+  position: relative;
+  left: auto;
+  right: auto;
+  bottom: auto;
   z-index: 2;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
   gap: 14px;
   max-width: min(92vw, 380px);
+  padding-top: 4px;
 }
 
 .hero-m-subcopy {
@@ -214,9 +287,21 @@
 
 @media (max-width: 380px) {
   .hero-m-vertical-panel {
-    font-size: 26px;
-    top: clamp(118px, 20svh, 188px);
+    font-size: 24px;
     padding: 12px 10px;
+  }
+
+  .hero-m-tagline {
+    font-size: 10.5px;
+    max-width: 120px;
+  }
+
+  .hero-m-badge {
+    padding: 6px 9px 7px;
+  }
+
+  .hero-m-badge-num {
+    font-size: 20px;
   }
 
   .hero-m-subcopy {
@@ -227,11 +312,24 @@
   .hero-m-foot {
     gap: 12px;
   }
+
+  .hero-m-inner {
+    gap: 10px;
+  }
 }
 
-@media (max-width: 430px) and (min-width: 390px) {
+@media (max-height: 680px) {
   .hero-m-vertical-panel {
-    top: clamp(132px, 23svh, 208px);
+    font-size: clamp(22px, 6.5vw, 28px);
+    padding: 10px 9px;
+  }
+
+  .hero-m-headline-block {
+    margin-top: 0;
+  }
+
+  .hero-m-inner {
+    gap: 8px;
   }
 }
 
@@ -310,6 +408,13 @@
   width: 100%;
   height: auto;
   vertical-align: top;
+}
+
+.hero-m-proof-btn {
+  width: 100%;
+  max-width: min(100%, 360px);
+  justify-content: center;
+  margin-top: 4px;
 }
 
 @media (min-width: 541px) {

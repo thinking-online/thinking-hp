@@ -24,12 +24,20 @@ function Hero() {
       <div className="hero-m-inner">
         <div className="hero-m-header">
           <p className="hero-m-brand">Smart Study English</p>
+          <p className="hero-m-badge" aria-label="累計2000名突破">
+            <span className="hero-m-badge-pre">累計</span>
+            <span className="hero-m-badge-num">2000</span>
+            <span className="hero-m-badge-post">名突破</span>
+          </p>
         </div>
 
-        <h1 className="hero-m-vertical-panel" aria-label="左から右にスラスラ、英語が読めるを。">
-          <span>左から右にスラスラ</span>
-          <span>英語が<em>「読める」</em>を。</span>
-        </h1>
+        <div className="hero-m-headline-block">
+          <h1 className="hero-m-vertical-panel" aria-label="左から右にスラスラ、英語が読めるを。">
+            <span>左から右にスラスラ</span>
+            <span>英語が<em>「読める」</em>を。</span>
+          </h1>
+          <p className="hero-m-tagline">45日間で、英語の読み方の根本治療</p>
+        </div>
 
         <div className="hero-m-foot">
           <p className="hero-m-subcopy">
@@ -72,6 +80,14 @@ function HeroProof() {
             decoding="async"
           />
         </figure>
+        <a
+          href="https://assaaa-blog.com/post_lp/tsakansou/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="btn-primary hero-m-proof-btn"
+        >
+          お申し込みはこちら <span className="arrow">→</span>
+        </a>
       </div>
     </section>
   );

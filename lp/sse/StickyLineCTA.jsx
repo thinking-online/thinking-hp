@@ -35,6 +35,7 @@ function StickyLineCTA() {
           href={lineUrl}
           target="_blank"
           rel="noopener noreferrer"
+          aria-label="絶賛受付中 SSE質問・相談実施会 参加に迷う方は無料面談へ（LINE）"
         >
           <div className="sse-sticky-line-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -58,14 +59,15 @@ function StickyLineCTA() {
           </div>
           <div className="sse-sticky-line-text">
             <span className="sse-sticky-line-eyebrow">
-              <span className="dot" />
-              <span>受付中 — 先着30名</span>
+              <span className="dot" aria-hidden="true" />
+              <span>絶賛受付中</span>
             </span>
             <span className="sse-sticky-line-title">
-              SSE 45日間<em>個別相談</em>
+              SSE <em>質問・相談</em>実施会
             </span>
-            <span className="sse-sticky-line-sub">
-              公式LINE追加 <span className="arrow">→</span> 無料面談
+            <span className="sse-sticky-line-action">
+              参加に迷う方は、<strong>無料面談</strong>へ
+              <span className="arrow" aria-hidden="true">→</span>
             </span>
           </div>
           <span className="sse-sticky-line-shine" aria-hidden="true" />
@@ -75,7 +77,7 @@ function StickyLineCTA() {
           type="button"
           className="sse-sticky-line-mini"
           onClick={() => setOpen(true)}
-          aria-label="LINEで個別相談する"
+          aria-label="LINEでSSE質問・相談会・無料面談に申し込む"
         >
           <span className="sse-sticky-line-icon" aria-hidden="true">
             <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">

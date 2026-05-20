@@ -425,7 +425,15 @@ function PriceSection() {
             </ul>
 
             <div className="price-cta">
-              <a href="#apply" className="btn-primary big">
+              <a
+                href="#"
+                className="btn-primary big"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById("final");
+                  if (el) window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" });
+                }}
+              >
                 モニター生として参加する
                 <span className="arrow">→</span>
               </a>
@@ -451,7 +459,7 @@ function PriceSection() {
 ===================================================== */
 function FinalSection() {
   return (
-    <section id="apply" className="final-section" data-screen-label="15 Final">
+    <section id="final" className="final-section" data-screen-label="15 Final">
       <div className="final-bg">
         <div className="final-stars"></div>
       </div>

@@ -316,6 +316,26 @@
   padding: clamp(52px, 8vw, 88px) 0;
 }
 
+.sse-foundation-title {
+  text-align: center;
+}
+
+.sse-foundation-title-line {
+  display: inline;
+}
+
+.sse-foundation-title-line em {
+  font-style: normal;
+  background: linear-gradient(180deg, transparent 64%, rgba(217, 169, 66, 0.4) 64%);
+  padding: 0 2px;
+}
+
+@media (max-width: 720px) {
+  .sse-foundation-title-line {
+    display: block;
+  }
+}
+
 .sse-foundation-list {
   list-style: none;
   margin: clamp(20px, 4vw, 32px) 0 0;

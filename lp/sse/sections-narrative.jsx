@@ -69,9 +69,11 @@ function FoundationPitfallsSection() {
           <div className="section-num sse-narrative-num">III</div>
           <div>
             <span className="eyebrow">SHAKY BASE</span>
-            <h2 className="section-title">
-              基礎がグラグラなのに、<br />
-              <em>こんなことしてませんか？</em>
+            <h2 className="section-title sse-foundation-title">
+              <span className="sse-foundation-title-line">基礎がグラグラなのに、</span>
+              <span className="sse-foundation-title-line">
+                <em>こんなことしてませんか？</em>
+              </span>
             </h2>
             <p className="section-lead">
               中学英単語で構成された英文ですらスラスラ読めない状態で、闇雲に努力をしている生徒が多くいます。

@@ -76,14 +76,8 @@ function VoicesSection() {
     <section id="voices" className="voices-section theme-paper" data-screen-label="08 Voices">
       <div className="wrap">
         <div className="section-head">
-          <div className="section-num">07</div>
           <div>
-            <span className="eyebrow">REAL VOICES</span>
             <h2 className="section-title">手書き感想1000枚超が、<br /><em>すべてを語る。</em></h2>
-            <p className="section-lead">
-              プログラムを終えた生徒たちが、自らの手で書いてくれた感想です。<br />
-              スマホで打てる時代に、わざわざ手書きで書いてくれる。それが、本物の変化の証明です。
-            </p>
           </div>
         </div>
 
@@ -114,6 +108,17 @@ function VoicesSection() {
             <span className="vsb-sep" aria-hidden="true">·</span>
             <span className="vsb-item"><strong>★9.8</strong>/10 平均評価</span>
           </p>
+        </div>
+
+        <div className="voices-more-cta">
+          <a
+            href="https://assaaa-blog.com/post_lp/tsakansou/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            他の手書き感想を見てみる <span className="arrow">→</span>
+          </a>
         </div>
       </div>
     </section>

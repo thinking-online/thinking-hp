@@ -414,6 +414,15 @@
   vertical-align: top;
 }
 
+.hero-m-proof-note {
+  margin: -6px 0 2px;
+  width: 100%;
+  text-align: left;
+  font-size: clamp(13px, 3.3vw, 15px);
+  line-height: 1.8;
+  color: #2a3550;
+}
+
 .hero-m-proof-btn {
   width: 100%;
   max-width: min(100%, 360px);

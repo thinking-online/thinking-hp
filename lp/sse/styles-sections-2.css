@@ -637,6 +637,18 @@
   border-radius: 6px;
 }
 
+.voices-more-cta {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+.voices-more-cta .btn-primary {
+  width: 100%;
+  max-width: 360px;
+  justify-content: center;
+}
+
 /* ===== MEDIA ===== */
 .media-section { background: var(--navy-900); padding: 70px 0; }
 .media-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }

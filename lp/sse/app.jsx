@@ -80,14 +80,10 @@ function HeroProof() {
             decoding="async"
           />
         </figure>
-        <a
-          href="https://assaaa-blog.com/post_lp/tsakansou/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="btn-primary hero-m-proof-btn"
-        >
-          手書き感想を見てみる <span className="arrow">→</span>
-        </a>
+        <p className="hero-m-proof-note">
+          プログラムを終えた生徒たちが、自らの手で書いてくれた感想です。
+          スマホで打てる時代に、わざわざ手書きで書いてくれる。それが、本物の変化の証明です。
+        </p>
       </div>
     </section>
   );

@@ -26,6 +26,7 @@ function App() {
       <Hero />
       <HeroProof />
       <VoicesSection />
+      <MediaSection />
       <AuthoritySection />
       <EmpathySection />
       <BrainCompareSection />

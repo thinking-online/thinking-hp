@@ -435,6 +435,35 @@ function WhySection() {
 }
 
 /* =====================================================
+   SECTION: OFFER BRIDGE (オファー前の接続)
+===================================================== */
+function OfferBridgeSection() {
+  return (
+    <section id="offer-bridge" className="offer-bridge-section theme-deep-warm" data-screen-label="Offer Bridge">
+      <div className="wrap">
+        <div className="offer-bridge-card">
+          <p className="offer-bridge-catch">
+            努力すればするだけ<br />
+            ちゃんと報われる。<br />
+            <strong>努力家が勝てる世界に。</strong>
+          </p>
+
+          <div className="offer-bridge-divider" aria-hidden="true">
+            <span />
+          </div>
+
+          <p className="offer-bridge-copy">
+            こんな未来をつくるために、<br />
+            「英語の読み方」を根本から解決する。<br />
+            そんな企画が、ここで誕生しました。
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* =====================================================
    SECTION: ORDER (順番の論理)
 ===================================================== */
 function OrderSection() {
@@ -498,4 +527,5 @@ function OrderSection() {
 
 window.SelfCheckSection = SelfCheckSection;
 window.WhySection = WhySection;
+window.OfferBridgeSection = OfferBridgeSection;
 window.OrderSection = OrderSection;

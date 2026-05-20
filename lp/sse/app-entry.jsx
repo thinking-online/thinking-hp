@@ -32,6 +32,7 @@ function App() {
       <SelfCheckSection />
       <FoundationPitfallsSection />
       <WhySection />
+      <OfferBridgeSection />
       <MethodSection />
       <RoadmapSection />
       <DaysSection />

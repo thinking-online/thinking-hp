@@ -473,13 +473,27 @@ function WhySection() {
 ===================================================== */
 function OfferBridgeSection() {
   return (
-    <section id="offer-bridge" className="offer-bridge-section theme-deep-warm" data-screen-label="Offer Bridge">
-      <div className="wrap">
-        <div className="offer-bridge-card">
+    <section id="offer-bridge" className="offer-bridge-section" data-screen-label="Offer Bridge">
+      <div className="offer-bridge-bg" aria-hidden="true">
+        <img
+          src="assets/offer-bridge-sakura.png"
+          alt=""
+          width="1920"
+          height="1080"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="offer-bridge-overlay" />
+      </div>
+
+      <div className="wrap offer-bridge-wrap">
+        <div className="offer-bridge-panel">
           <p className="offer-bridge-catch">
-            努力すればするだけ<br />
-            ちゃんと報われる。<br />
-            <strong>努力家が勝てる世界に。</strong>
+            <span className="ob-line">努力すればするだけ</span>
+            <span className="ob-line">ちゃんと報われる。</span>
+            <span className="ob-line ob-line--gold">
+              <strong>努力家が勝てる世界に。</strong>
+            </span>
           </p>
 
           <div className="offer-bridge-divider" aria-hidden="true">
@@ -487,9 +501,9 @@ function OfferBridgeSection() {
           </div>
 
           <p className="offer-bridge-copy">
-            こんな未来をつくるために、<br />
-            「英語の読み方」を根本から解決する。<br />
-            そんな企画が、ここで誕生しました。
+            <span className="ob-line">こんな未来をつくるために、</span>
+            <span className="ob-line">「英語の読み方」を根本から解決する。</span>
+            <span className="ob-line">そんな企画が、ここで誕生しました。</span>
           </p>
         </div>
       </div>

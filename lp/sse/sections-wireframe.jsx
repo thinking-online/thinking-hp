@@ -230,12 +230,6 @@ function RoutineSection() {
     { time: "夜 22:30まで", icon: "📝", title: "提出 → フィードバック", desc: "その日の課題を提出。個別にコメント・フィードバックが返ってきます。" },
   ];
 
-  const supports = [
-    "LINE で質問し放題（24時間以内に返信）",
-    "受講生コミュニティで仲間と励まし合える",
-    "動画講義は何度でも見返せる",
-  ];
-
   return (
     <section id="routine" className="sse-routine theme-paper">
       <div className="wrap">
@@ -262,15 +256,16 @@ function RoutineSection() {
           ))}
         </div>
 
-        <div className="sse-routine-support">
-          <h3>▼ 支援体制</h3>
-          <ul>
-            {supports.map((s, i) => (
-              <li key={i}><span>✓</span>{s}</li>
-            ))}
-          </ul>
+        <div className="sse-routine-bridge">
+          <p className="sse-routine-bridge-lead">
+            タイムラインだけでは足りない。「続くかどうか」は<strong>不安の先回り</strong>で決まります。
+          </p>
+          <a href="#support-four" className="sse-routine-bridge-link">
+            4つの不安を、仕組みで潰す
+            <span className="arrow" aria-hidden="true">↓</span>
+          </a>
           <p className="sse-routine-note">
-            忙しい毎日でも、続けられる。そう設計されているから、<strong>2000名以上の生徒が完走</strong>してきました。
+            だから<strong>2000名以上</strong>が、このリズムで完走してきました。
           </p>
         </div>
       </div>

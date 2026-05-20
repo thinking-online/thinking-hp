@@ -31,19 +31,19 @@ function Hero() {
           </p>
         </div>
 
-        <div className="hero-m-headline-block">
-          <h1 className="hero-m-vertical-panel" aria-label="左から右にスラスラ、英語が読めるを。">
-            <span>左から右にスラスラ</span>
-            <span>英語が<em>「読める」</em>を。</span>
-          </h1>
-          <p className="hero-m-tagline">45日間で、英語の読み方の根本治療</p>
-        </div>
+        <h1 className="hero-m-vertical-panel" aria-label="左から右にスラスラ、英語が読めるを。">
+          <span>左から右にスラスラ</span>
+          <span>英語が<em>「読める」</em>を。</span>
+        </h1>
 
         <div className="hero-m-foot">
-          <p className="hero-m-subcopy">
-            <strong>2,000名</strong>が証明した「読み方」を、<br />
-            個別面談付きで身につける<strong>45日間</strong>。
-          </p>
+          <div className="hero-m-foot-copy">
+            <p className="hero-m-tagline">45日間で、英語の読み方の根本治療</p>
+            <p className="hero-m-subcopy">
+              <strong>2,000名</strong>が証明した「読み方」を、<br />
+              個別面談付きで身につける<strong>45日間</strong>。
+            </p>
+          </div>
           <a href="#cta" className="hero-m-cta-primary">
             <span>申し込みはコチラ</span>
             <span className="hero-m-cta-arrow" aria-hidden="true">→</span>

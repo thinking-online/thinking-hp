@@ -180,43 +180,98 @@ window.BrainCompareSection = BrainCompareSection;
 ===================================================== */
 function SelfCheckSection() {
   return (
-    <section id="check" className="self-check" data-screen-label="02 Self Check">
+    <section id="check" className="self-check sse-hook-section" data-screen-label="95 Reality Hook">
+      <div className="sse-hook-glow" aria-hidden="true" />
+
       <div className="wrap">
         <div className="section-head">
           <div className="section-num">04</div>
           <div>
-            <span className="eyebrow">SELF CHECK</span>
-            <h2 className="section-title">中学英単語の英文。<br /><em>あなたは、スラスラ読めますか？</em></h2>
+            <span className="eyebrow">95% REALITY CHECK</span>
+            <h2 className="section-title">
+              衝撃の事実。<br />
+              <em>高校生の約95％が、中学レベルの英文をスラスラ読めていない。</em>
+            </h2>
             <p className="section-lead">
-              一度、声に出して読んでみてください。<br />
-              もし途中で意味を見失ったり、戻って読み直したりしたら——<br />
-              それは「能力」の問題ではなく、「処理フォーム」の問題です。
+              使っている単語も文法も、すべて中学範囲。それでも意味が左からつながらない——それはあなたのせいではなく、
+              <strong>「読み方」が教えられてこなかった結果</strong>です。
             </p>
           </div>
         </div>
 
-        <div className="check-frame">
+        <div className="sse-hook-stat-hero">
+          <div className="sse-hook-ring-wrap" aria-hidden="true">
+            <svg className="sse-hook-ring-svg" viewBox="0 0 160 160">
+              <defs>
+                <linearGradient id="sseHookRingGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#f5d98a" />
+                  <stop offset="50%" stopColor="#d8a942" />
+                  <stop offset="100%" stopColor="#b88728" />
+                </linearGradient>
+              </defs>
+              <circle cx="80" cy="80" r="68" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="10" />
+              <circle
+                className="sse-hook-ring-arc"
+                cx="80"
+                cy="80"
+                r="68"
+                fill="none"
+                stroke="url(#sseHookRingGold)"
+                strokeWidth="10"
+                strokeLinecap="round"
+                strokeDasharray="427"
+                strokeDashoffset="21"
+                transform="rotate(-90 80 80)"
+              />
+            </svg>
+            <div className="sse-hook-ring-label">
+              <span className="sse-hook-ring-num">95</span>
+              <span className="sse-hook-ring-pct">%</span>
+            </div>
+          </div>
+
+          <div className="sse-hook-stat-copy">
+            <p className="sse-hook-stat-kicker">※指導・面談で見えてきた傾向の表現です</p>
+            <p className="sse-hook-stat-main">
+              中学＋高校で<strong>6年</strong>英語を学んでも、
+              <br />
+              <span className="sse-hook-stat-em">「読む処理」が未完成のまま</span>受験に突入しているケースが圧倒的多数。
+            </p>
+            <ul className="sse-hook-stat-bullets">
+              <li>単語帳は進むのに、長文の意味が取れない</li>
+              <li>読み返し・戻り読みが癖になっている</li>
+              <li>文法用語は知っているのに、並びを前から処理できない</li>
+            </ul>
+          </div>
+        </div>
+
+        <div className="check-frame sse-hook-frame">
           <div className="check-frame-corner tl"></div>
           <div className="check-frame-corner tr"></div>
           <div className="check-frame-corner bl"></div>
           <div className="check-frame-corner br"></div>
 
+          <p className="sse-hook-frame-label">中学英単語のみで書かれた、たった一文。</p>
           <div className="check-quote-mark">"</div>
 
           <p className="check-sentence">
             In the examples I am talking of the person continues to behave in what most people agree is a normal manner.
           </p>
 
-          <div className="check-stat">
-            <p className="check-stat-line">使ってる単語は</p>
-            <p className="check-stat-line">中学英単語なのに</p>
-            <p className="check-stat-line check-stat-em">9割がスラスラ読めない。</p>
+          <div className="check-stat sse-hook-check-stat">
+            <p className="check-stat-line">声に出して読んでみてください。</p>
+            <p className="check-stat-line">途中で意味が途切れたり、同じ行を何度も辿ったりしたら——</p>
+            <p className="check-stat-line check-stat-em">それは「95％側」の読み方です。</p>
           </div>
         </div>
 
         <div className="check-conclude">
           <div className="conclude-line"></div>
-          <p>これは <em>理解力</em> の差ではない。<br /><strong>処理フォーム</strong>の有無の差。</p>
+          <p>
+            これは <em>頭の良さ</em> の差ではない。
+            <br />
+            <strong>処理フォーム</strong>がインストールされているかどうかの差。
+          </p>
           <div className="conclude-line"></div>
         </div>
       </div>

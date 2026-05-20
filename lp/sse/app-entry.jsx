@@ -27,14 +27,16 @@ function App() {
       <HeroProof />
       <AuthoritySection />
       <EmpathySection />
-      <BrainCompareSection />
       <SelfCheckSection />
+      <ThreeReasonsSection />
+      <BrainCompareSection />
       <WhySection />
       <MethodSection />
       <VoicesSection />
       <RoadmapSection />
       <DaysSection />
       <RoutineSection />
+      <SupportFourSection />
       <ProgramContentsSection />
       <PriceSection />
       <GuaranteeSection />

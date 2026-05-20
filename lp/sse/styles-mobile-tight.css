@@ -161,6 +161,8 @@
 
   section.sse-authority,
   section.sse-empathy,
+  section.sse-three-reasons,
+  section.sse-support-four,
   .sse-roadmap,
   .sse-routine,
   .sse-program-contents,
@@ -173,8 +175,8 @@
     padding: 14px;
   }
 
-  .hero-m-inner {
-    padding-bottom: max(14px, env(safe-area-inset-bottom));
+  .sse-hook-stat-hero {
+    padding: 16px 14px;
   }
 
   .bucket-stage {

@@ -5,9 +5,37 @@ const LEARNING_SYSTEMS = [
     num: "01",
     title: "構造理解・文章講義",
     subtitle: "丸暗記ではなく、「核」で理解する。",
-    image: "assets/program-feature-lecture.png",
-    imageAlt: "文章講義の解析シート。英文の骨格と補足を色分けして可視化",
-    frame: "sheet",
+    frame: "blog",
+    thumb: "assets/program-feature-lecture.png",
+    articles: [
+      {
+        title: "前置詞の「核」イメージ",
+        tag: "文法の核",
+        meta: "約10分",
+      },
+      {
+        title: "関係詞は修飾の連鎖",
+        tag: "構造理解",
+        meta: "約10分",
+      },
+      {
+        title: "助動詞を確信度で読む",
+        tag: "読み方",
+        meta: "約10分",
+      },
+    ],
+    preview: {
+      label: "TEXT LECTURE",
+      date: "2026.05.20",
+      title: "前置詞の「核」イメージ",
+      lead:
+        "英文を左から読むための「型」を、テキストと図解で丁寧に解説。塾のノートのように、何度でも読み返せる文章講義です。",
+      excerpt: [
+        "なぜ in / on / at で意味が変わるのか。",
+        "丸暗記ではなく、イメージの「核」で整理する。",
+        "長文の中で迷わないための接続の見方。",
+      ],
+    },
     points: [
       { icon: "clock", label: "1本10分前後で要点だけ" },
       { icon: "chat", label: "なぜその訳になるか説明できる" },
@@ -32,9 +60,12 @@ const LEARNING_SYSTEMS = [
     title: "電子教材",
     subtitle: "英語が読める生徒の脳内を可視化。",
     badge: "実況中継のように、読むプロセスを見える化",
-    image: "assets/program-feature-ebook.png",
-    imageAlt: "電子教材の画面。タブレットとスマホで英文の構造解析を表示",
-    frame: "device",
+    frame: "ebook",
+    image: "assets/program-feature-ebook-diagram.png",
+    imageAlt: "電子教材の構造図。英文の骨格と補足を色分けして1枚にまとめた解析",
+    ebookCaption: "▼ ここまでの解析を1枚で見る",
+    ebookNote:
+      "6つのステップで、左から右へと考えてきたことを構造図にまとめると、こうなります。色分けで見ると、骨格（メイン）と補足の関係が一気にクリアになります。",
     points: [
       { icon: "brain", label: "脳内プロセスを見える化" },
       { icon: "structure", label: "構造で理解できる" },
@@ -429,19 +460,70 @@ function SupportFeatureCard({ item }) {
 }
 
 function LearningSystemCard({ item }) {
-  return (
-    <article className="learning-system-card">
-      <div className="learning-system-head">
-        <span className="learning-system-spark" aria-hidden="true" />
-        <h4 className="learning-system-title">{item.title}</h4>
-        <span className="learning-system-spark learning-system-spark--right" aria-hidden="true" />
+  let visual = null;
+
+  if (item.frame === "blog") {
+    visual = (
+      <div className="learning-system-blog">
+        <p className="learning-system-blog-label">テキスト講義一覧（イメージ）</p>
+        <div className="learning-system-blog-thumbs" role="list">
+          {item.articles.map((article) => (
+            <article key={article.title} className="learning-system-blog-thumb" role="listitem">
+              <div className="learning-system-blog-thumb-img">
+                <img
+                  src={item.thumb}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  aria-hidden="true"
+                />
+              </div>
+              <span className="learning-system-blog-thumb-tag">{article.tag}</span>
+              <h5>{article.title}</h5>
+              <span className="learning-system-blog-thumb-meta">{article.meta}</span>
+            </article>
+          ))}
+        </div>
+        <div className="learning-system-blog-preview" aria-label="文章講義の記事プレビュー">
+          <div className="learning-system-blog-preview-head">
+            <span>{item.preview.label}</span>
+            <time dateTime="2026-05-20">{item.preview.date}</time>
+          </div>
+          <h5 className="learning-system-blog-preview-title">{item.preview.title}</h5>
+          <p className="learning-system-blog-preview-lead">{item.preview.lead}</p>
+          <div className="learning-system-blog-preview-body">
+            <ul>
+              {item.preview.excerpt.map((line) => (
+                <li key={line}>{line}</li>
+              ))}
+            </ul>
+            <figure>
+              <img
+                src={item.thumb}
+                alt="文章講義のサムネイル。英文の構造を色分けした図解"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+          </div>
+          <p className="learning-system-blog-preview-more">続きを読む →</p>
+        </div>
       </div>
-      <p className="learning-system-subtitle">
-        <span className="learning-system-subline" aria-hidden="true" />
-        {item.subtitle}
-        <span className="learning-system-subline" aria-hidden="true" />
-      </p>
-      {item.badge ? <p className="learning-system-badge">{item.badge}</p> : null}
+    );
+  } else if (item.frame === "ebook") {
+    visual = (
+      <div className="learning-system-ebook">
+        <div className="learning-system-ebook-intro">
+          <p className="learning-system-ebook-caption">{item.ebookCaption}</p>
+          <p className="learning-system-ebook-note">{item.ebookNote}</p>
+        </div>
+        <div className="learning-system-visual learning-system-visual--ebook">
+          <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
+        </div>
+      </div>
+    );
+  } else {
+    visual = (
       <div className={`learning-system-visual learning-system-visual--${item.frame}`}>
         <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
         {item.frame === "video" ? (
@@ -454,6 +536,23 @@ function LearningSystemCard({ item }) {
           </div>
         ) : null}
       </div>
+    );
+  }
+
+  return (
+    <article className={`learning-system-card${item.frame === "blog" ? " learning-system-card--blog" : ""}${item.frame === "ebook" ? " learning-system-card--ebook" : ""}`}>
+      <div className="learning-system-head">
+        <span className="learning-system-spark" aria-hidden="true" />
+        <h4 className="learning-system-title">{item.title}</h4>
+        <span className="learning-system-spark learning-system-spark--right" aria-hidden="true" />
+      </div>
+      <p className="learning-system-subtitle">
+        <span className="learning-system-subline" aria-hidden="true" />
+        {item.subtitle}
+        <span className="learning-system-subline" aria-hidden="true" />
+      </p>
+      {item.badge ? <p className="learning-system-badge">{item.badge}</p> : null}
+      {visual}
       <ul className="learning-system-points">
         {item.points.map((point) => (
           <li key={point.label}>

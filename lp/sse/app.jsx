@@ -44,7 +44,12 @@ function Hero() {
               個別面談付きで身につける<strong>45日間</strong>。
             </p>
           </div>
-          <a href="#cta" className="hero-m-cta-primary">
+          <a
+            href={window.sseApplyUrl ? window.sseApplyUrl() : "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-m-cta-primary"
+          >
             <span>申し込みはコチラ</span>
             <span className="hero-m-cta-arrow" aria-hidden="true">→</span>
           </a>

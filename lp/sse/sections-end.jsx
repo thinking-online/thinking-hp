@@ -431,13 +431,10 @@ function PriceSection() {
 
             <div className="price-cta">
               <a
-                href="#"
+                href={window.sseApplyUrl ? window.sseApplyUrl() : "#"}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-primary big"
-                onClick={(e) => {
-                  e.preventDefault();
-                  const el = document.getElementById("final");
-                  if (el) window.scrollTo({ top: el.offsetTop - 60, behavior: "smooth" });
-                }}
               >
                 モニター生として参加する
                 <span className="arrow">→</span>
@@ -501,7 +498,12 @@ function FinalSection() {
         </p>
 
         <div className="final-cta">
-          <a href="#" className="btn-primary big" onClick={e => { e.preventDefault(); window.scrollTo({ top: document.getElementById("cta").offsetTop - 60, behavior: "smooth" }); }}>
+          <a
+            href={window.sseApplyUrl ? window.sseApplyUrl() : "#"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary big"
+          >
             45日間集中合宿に申し込む
             <span className="arrow">→</span>
           </a>

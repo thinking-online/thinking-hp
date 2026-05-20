@@ -298,11 +298,29 @@ function WhySection() {
     const el = bucketRef.current;
     if (!el) return undefined;
 
+    const prefersReduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReduced) {
+      setActive(true);
+      return undefined;
+    }
+
+    const isNarrow = window.matchMedia("(max-width: 900px)").matches;
+
     const obs = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) setActive(true);
+        if (!entry.isIntersecting) return;
+        setActive(true);
+        el.classList.add("is-active");
+        void el.offsetHeight;
+        obs.disconnect();
       },
-      { threshold: 0.28 }
+      {
+        threshold: isNarrow ? [0, 0.08, 0.18] : [0, 0.2, 0.35],
+        rootMargin: isNarrow ? "40px 0px 60px 0px" : "20px 0px 40px 0px",
+      }
     );
 
     obs.observe(el);
@@ -408,9 +426,11 @@ function WhySection() {
                 <line className="bucket-leak bucket-leak--b" x1="120" y1="152" x2="120" y2="248" />
                 <line className="bucket-leak bucket-leak--c" x1="144" y1="112" x2="144" y2="248" />
 
-                <circle className="bucket-drop bucket-drop--1" cx="98" cy="24" r="2.5" />
-                <circle className="bucket-drop bucket-drop--2" cx="110" cy="18" r="3" />
-                <circle className="bucket-drop bucket-drop--3" cx="122" cy="26" r="2" />
+                <g className="bucket-drops" aria-hidden="true">
+                  <circle className="bucket-drop bucket-drop--1" cx="98" cy="24" r="2.5" />
+                  <circle className="bucket-drop bucket-drop--2" cx="110" cy="18" r="3" />
+                  <circle className="bucket-drop bucket-drop--3" cx="122" cy="26" r="2" />
+                </g>
               </svg>
 
               <p className="bucket-hole-label">読み方の穴</p>

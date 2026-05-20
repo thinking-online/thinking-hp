@@ -197,6 +197,19 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
   border-color: rgba(72, 132, 188, 0.2);
 }
 .theme-paper .learning-system-point-icon { color: #2f6ea8; }
+.theme-paper .learning-system-blog-preview {
+  background: #fff;
+  border-color: rgba(72, 132, 188, 0.22);
+  box-shadow: inset 3px 0 0 #e67e51;
+}
+.theme-paper .learning-system-blog-thumb h5,
+.theme-paper .learning-system-blog-preview-title { color: #0a1530; }
+.theme-paper .learning-system-ebook-intro {
+  background: linear-gradient(180deg, #faf6ee 0%, #f3ebdc 100%);
+  border-color: rgba(230, 126, 81, 0.25);
+}
+.theme-paper .learning-system-ebook-caption { color: #9a4e28; }
+.theme-paper .learning-system-ebook-note { color: #4a4d5e; }
 
 .theme-paper .contents-card {
   background: #ffffff;

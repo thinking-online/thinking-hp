@@ -546,6 +546,207 @@
   min-height: 190px;
 }
 
+/* 文章講義 — ブログ記事風 */
+.learning-system-card--blog {
+  grid-column: 1 / -1;
+}
+
+.learning-system-blog-label {
+  position: relative;
+  z-index: 1;
+  margin: 14px 0 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: #5a7fa8;
+  text-align: center;
+}
+
+.learning-system-blog-thumbs {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.learning-system-blog-thumb {
+  margin: 0;
+  padding: 8px;
+  background: #fff;
+  border: 1px solid rgba(72, 132, 188, 0.22);
+  border-radius: 8px;
+  box-shadow: 0 8px 18px -14px rgba(10, 21, 48, 0.25);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.learning-system-blog-thumb:hover {
+  transform: translateY(-2px);
+  border-color: rgba(47, 110, 168, 0.45);
+}
+
+.learning-system-blog-thumb-img {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(72, 132, 188, 0.16);
+  aspect-ratio: 16 / 10;
+  background: #f8f3e8;
+}
+
+.learning-system-blog-thumb-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.learning-system-blog-thumb-tag {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 2px 8px;
+  font-size: 10px;
+  color: #1f4f86;
+  background: rgba(168, 210, 240, 0.35);
+  border-radius: 999px;
+}
+
+.learning-system-blog-thumb h5 {
+  margin: 6px 0 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #0a1530;
+  font-weight: 700;
+}
+
+.learning-system-blog-thumb-meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: #6a7a92;
+}
+
+.learning-system-blog-preview {
+  position: relative;
+  z-index: 1;
+  margin-top: 12px;
+  padding: 14px 16px 12px;
+  background: #fff;
+  border: 1px solid rgba(72, 132, 188, 0.22);
+  border-radius: 10px;
+  box-shadow: inset 3px 0 0 #e67e51;
+}
+
+.learning-system-blog-preview-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  color: #6a7a92;
+}
+
+.learning-system-blog-preview-title {
+  margin: 8px 0 0;
+  font-size: clamp(16px, 1.8vw, 19px);
+  color: #0a1530;
+  line-height: 1.4;
+}
+
+.learning-system-blog-preview-lead {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.75;
+  color: #3a4a62;
+}
+
+.learning-system-blog-preview-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 12px;
+  margin-top: 12px;
+  align-items: start;
+}
+
+.learning-system-blog-preview-body ul {
+  margin: 0;
+  padding-left: 1.1em;
+  display: grid;
+  gap: 6px;
+}
+
+.learning-system-blog-preview-body li {
+  font-size: 12px;
+  line-height: 1.65;
+  color: #2a3550;
+}
+
+.learning-system-blog-preview-body figure {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(72, 132, 188, 0.2);
+}
+
+.learning-system-blog-preview-body figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.learning-system-blog-preview-more {
+  margin: 10px 0 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #2f6ea8;
+  text-align: right;
+}
+
+/* 電子教材 — 構造図 */
+.learning-system-card--ebook .learning-system-visual {
+  border-color: rgba(230, 126, 81, 0.35);
+}
+
+.learning-system-ebook-intro {
+  position: relative;
+  z-index: 1;
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: linear-gradient(180deg, #faf6ee 0%, #f3ebdc 100%);
+  border: 1px solid rgba(230, 126, 81, 0.25);
+  border-radius: 8px 8px 0 0;
+}
+
+.learning-system-ebook-caption {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #9a4e28;
+  line-height: 1.5;
+}
+
+.learning-system-ebook-note {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.75;
+  color: #4a4d5e;
+}
+
+.learning-system-visual--ebook {
+  margin-top: 0;
+  border-radius: 0 0 10px 10px;
+  border-top: none;
+}
+
+.learning-system-visual--ebook img {
+  object-fit: contain;
+  object-position: top center;
+  min-height: 0;
+  background: #fff;
+}
+
 .learning-system-player {
   position: absolute;
   left: 0;
@@ -969,6 +1170,14 @@
 
   .learning-system-points li {
     font-size: 13px;
+  }
+
+  .learning-system-blog-thumbs {
+    grid-template-columns: 1fr;
+  }
+
+  .learning-system-blog-preview-body {
+    grid-template-columns: 1fr;
   }
 
   .support-feature-body {

@@ -2,7 +2,7 @@
 function StickyLineCTA() {
   const [open, setOpen] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
-  const lineUrl = window.THINKING_LINE_LIFF_URL || "#";
+  const lineUrl = window.sseConsultUrl ? window.sseConsultUrl() : window.SSE_LINE_CONSULT_URL || "#";
 
   React.useEffect(() => {
     const onScroll = () => {

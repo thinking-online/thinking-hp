@@ -1,7 +1,11 @@
 /* Smart Study English — wireframe sections */
 
 function sseLineUrl() {
-  return window.THINKING_LINE_LIFF_URL || "#";
+  return window.sseConsultUrl ? window.sseConsultUrl() : window.SSE_LINE_CONSULT_URL || "#";
+}
+
+function sseApplyLineUrl() {
+  return window.sseApplyUrl ? window.sseApplyUrl() : window.SSE_LINE_APPLY_URL || "#";
 }
 
 /* =====================================================
@@ -355,7 +359,14 @@ function ApplyFlowSection() {
         </div>
 
         <div className="sse-flow-cta">
-          <a href="#cta" className="btn-primary big">申込みフォームへ進む <span className="arrow">→</span></a>
+          <a
+            href={sseApplyLineUrl()}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary big"
+          >
+            申込みフォームへ進む <span className="arrow">→</span>
+          </a>
           <p className="sse-flow-line-lead">「自分に合うか不安…」「もう少し詳しく知りたい…」</p>
           <a href={sseLineUrl()} target="_blank" rel="noopener noreferrer" className="hero-m-cta-line sse-flow-line-btn">
             公式LINEで相談する

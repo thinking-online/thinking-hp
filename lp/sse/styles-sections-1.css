@@ -385,6 +385,8 @@
   width: 100%;
   height: auto;
   overflow: visible;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 /* 初期状態：アニメ停止 */
@@ -415,18 +417,24 @@
 .bucket-drop--3 { animation-delay: 0.9s; }
 
 @keyframes bucketDropFall {
-  0% { opacity: 0; transform: translateY(0); }
+  0% { opacity: 0; transform: translate3d(0, 0, 0); }
   12% { opacity: 0.9; }
-  55% { opacity: 0.7; transform: translateY(38px); }
-  100% { opacity: 0; transform: translateY(52px); }
+  55% { opacity: 0.7; transform: translate3d(0, 38px, 0); }
+  100% { opacity: 0; transform: translate3d(0, 52px, 0); }
+}
+
+.bucket-drops {
+  transform-box: fill-box;
 }
 
 /* バケツ内の水が減っていく（底基準で縮む） */
 .bucket-water-group {
+  transform-box: fill-box;
   transform-origin: 110px 194px;
   transform: scaleY(1);
   animation: bucketWaterDrain 4.8s ease-in forwards;
   animation-delay: 0.55s;
+  will-change: transform, opacity;
 }
 
 @keyframes bucketWaterDrain {
@@ -465,11 +473,13 @@
 /* 床の水たまり（漏れた分がたまる） */
 .bucket-puddle-svg {
   fill: rgba(168, 204, 232, 0.22);
+  transform-box: fill-box;
   transform-origin: 110px 248px;
   transform: scale(0.35);
   opacity: 0;
   animation: bucketPuddleGrow 4.5s ease-out forwards;
   animation-delay: 0.7s;
+  will-change: transform, opacity;
 }
 
 @keyframes bucketPuddleGrow {
@@ -512,7 +522,9 @@
     opacity: 0.45;
   }
 
-  .bucket-viz.is-active .bucket-water-group {
+  .bucket-viz.is-active .bucket-water-group,
+  .bucket-viz.is-active .bucket-water-body,
+  .bucket-viz.is-active .bucket-water-surface {
     transform: scaleY(0.1);
     opacity: 0.4;
   }
@@ -547,11 +559,45 @@
   }
 
   .bucket-viz {
-    width: min(200px, 88vw);
+    width: min(240px, 92vw);
   }
 
   .bucket-hole-label {
     font-size: 15px;
+  }
+
+  /* iOS/Android: g要素の scaleY が効かない端末向け（水面・本体を個別に縮小） */
+  .bucket-water-group {
+    animation: none !important;
+    transform: none !important;
+    opacity: 1;
+  }
+
+  .bucket-water-body,
+  .bucket-water-surface {
+    transform-box: fill-box;
+    transform-origin: 110px 190px;
+    transform: scaleY(1);
+    animation: bucketWaterDrain 4.8s ease-in forwards;
+    animation-delay: 0.55s;
+    animation-play-state: paused;
+  }
+
+  .bucket-viz.is-active .bucket-water-body,
+  .bucket-viz.is-active .bucket-water-surface {
+    animation-play-state: running;
+  }
+
+  .bucket-drop {
+    will-change: transform, opacity;
+  }
+
+  .bucket-leak {
+    will-change: stroke-dashoffset, opacity;
+  }
+
+  .bucket-puddle-svg {
+    will-change: transform, opacity;
   }
 }
 

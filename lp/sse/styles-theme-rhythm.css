@@ -143,6 +143,39 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
 .theme-paper .method-card-icon svg rect,
 .theme-paper .method-card-icon svg line { stroke: #d8a942; }
 
+.theme-paper .method-overview {
+  background: linear-gradient(180deg, #fffdf7 0%, #f7f1df 100%);
+  border: 1px solid rgba(10, 21, 48, 0.1);
+  box-shadow: 0 20px 36px -24px rgba(10, 21, 48, 0.2);
+}
+.theme-paper .method-overview-label { color: #9a741f; }
+.theme-paper .method-overview-copy { color: #0a1530; }
+.theme-paper .method-overview-highlight { color: #b88728; }
+.theme-paper .method-overview-project { color: #b88728; }
+.theme-paper .method-overview-voice { color: #2a3550; }
+.theme-paper .method-overview-pillars p {
+  color: #0a1530;
+  background: #fff;
+  border: 1px solid rgba(184, 135, 40, 0.28);
+}
+.theme-paper .method-overview-pillars span {
+  color: #8a6618;
+  border-color: rgba(184, 135, 40, 0.45);
+  background: rgba(184, 135, 40, 0.08);
+}
+.theme-paper .method-overview-guarantee { color: #0a1530; }
+.theme-paper .method-overview-figure {
+  background: #fff;
+  border: 1px solid rgba(10, 21, 48, 0.12);
+  box-shadow: 0 14px 28px -20px rgba(10, 21, 48, 0.28);
+}
+.theme-paper .method-overview-figure figcaption {
+  color: #0a1530;
+  background: linear-gradient(180deg, rgba(248, 242, 224, 0.96) 0%, rgba(242, 234, 210, 0.96) 100%);
+  border-top: 1px solid rgba(10, 21, 48, 0.08);
+}
+.theme-paper .method-overview-plus { color: #b88728; }
+
 .theme-paper .contents-title { color: #0a1530; }
 .theme-paper .contents-title em { background: linear-gradient(180deg, transparent 64%, rgba(217,169,66,0.4) 64%); }
 .theme-paper .contents-card {
@@ -153,6 +186,7 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
 .theme-paper .contents-num { color: #b88728; }
 .theme-paper .contents-card h4 { color: #0a1530; }
 .theme-paper .contents-card p { color: #4a4d5e; }
+.theme-paper .contents-points li { color: #2f3a54; }
 
 .theme-paper .support-row {
   background: #fdf7e3;

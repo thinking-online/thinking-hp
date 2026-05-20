@@ -25,6 +25,7 @@ function App() {
       <StickyLineCTA />
       <Hero />
       <HeroProof />
+      <VoicesSection />
       <AuthoritySection />
       <EmpathySection />
       <BrainCompareSection />
@@ -32,7 +33,6 @@ function App() {
       <FoundationPitfallsSection />
       <WhySection />
       <MethodSection />
-      <VoicesSection />
       <RoadmapSection />
       <DaysSection />
       <RoutineSection />

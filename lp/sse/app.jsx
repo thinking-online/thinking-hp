@@ -86,7 +86,7 @@ function HeroProof() {
           rel="noopener noreferrer"
           className="btn-primary hero-m-proof-btn"
         >
-          お申し込みはこちら <span className="arrow">→</span>
+          手書き感想を見てみる <span className="arrow">→</span>
         </a>
       </div>
     </section>

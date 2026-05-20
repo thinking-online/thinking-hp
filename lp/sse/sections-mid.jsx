@@ -180,68 +180,28 @@ window.BrainCompareSection = BrainCompareSection;
 ===================================================== */
 function SelfCheckSection() {
   return (
-    <section id="check" className="self-check sse-hook-section" data-screen-label="95 Reality Hook">
+    <section id="check" className="self-check sse-hook-section" data-screen-label="Diagnosis + 95 Hook">
       <div className="sse-hook-glow" aria-hidden="true" />
 
       <div className="wrap">
-        <div className="section-head">
-          <div className="section-num">04</div>
-          <div>
-            <span className="eyebrow">95% REALITY CHECK</span>
-            <h2 className="section-title">
-              衝撃の事実。<br />
-              <em>高校生の約95％が、中学レベルの英文をスラスラ読めていない。</em>
-            </h2>
-            <p className="section-lead">
-              使っている単語も文法も、すべて中学範囲。それでも意味が左からつながらない——それはあなたのせいではなく、
-              <strong>「読み方」が教えられてこなかった結果</strong>です。
-            </p>
+        <div className="sse-hook-quiz-intro">
+          <div className="sse-hook-quiz-badge" aria-hidden="true">
+            <span>!</span> 診断
           </div>
-        </div>
-
-        <div className="sse-hook-stat-hero">
-          <div className="sse-hook-ring-wrap" aria-hidden="true">
-            <svg className="sse-hook-ring-svg" viewBox="0 0 160 160">
-              <defs>
-                <linearGradient id="sseHookRingGold" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#f5d98a" />
-                  <stop offset="50%" stopColor="#d8a942" />
-                  <stop offset="100%" stopColor="#b88728" />
-                </linearGradient>
-              </defs>
-              <circle cx="80" cy="80" r="68" fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="10" />
-              <circle
-                className="sse-hook-ring-arc"
-                cx="80"
-                cy="80"
-                r="68"
-                fill="none"
-                stroke="url(#sseHookRingGold)"
-                strokeWidth="10"
-                strokeLinecap="round"
-                strokeDasharray="427"
-                strokeDashoffset="21"
-                transform="rotate(-90 80 80)"
-              />
-            </svg>
-            <div className="sse-hook-ring-label">
-              <span className="sse-hook-ring-num">95</span>
-              <span className="sse-hook-ring-pct">%</span>
+          <div className="section-head sse-hook-quiz-head">
+            <div className="section-num">04</div>
+            <div>
+              <span className="eyebrow">SUDDEN CHECK</span>
+              <h2 className="section-title">
+                ここで突然ですが、<br />
+                <em>英語力「その場」診断です。</em>
+              </h2>
+              <p className="section-lead">
+                次の一文、<strong>あなたはスラスラ読めますか？</strong>
+                <br />
+                声に出しても頭の中だけでもOK。止まらず、左から意味がつながるかだけ見てください。
+              </p>
             </div>
-          </div>
-
-          <div className="sse-hook-stat-copy">
-            <p className="sse-hook-stat-kicker">※指導・面談で見えてきた傾向の表現です</p>
-            <p className="sse-hook-stat-main">
-              中学＋高校で<strong>6年</strong>英語を学んでも、
-              <br />
-              <span className="sse-hook-stat-em">「読む処理」が未完成のまま</span>受験に突入しているケースが圧倒的多数。
-            </p>
-            <ul className="sse-hook-stat-bullets">
-              <li>単語帳は進むのに、長文の意味が取れない</li>
-              <li>読み返し・戻り読みが癖になっている</li>
-              <li>文法用語は知っているのに、並びを前から処理できない</li>
-            </ul>
           </div>
         </div>
 
@@ -259,9 +219,45 @@ function SelfCheckSection() {
           </p>
 
           <div className="check-stat sse-hook-check-stat">
-            <p className="check-stat-line">声に出して読んでみてください。</p>
-            <p className="check-stat-line">途中で意味が途切れたり、同じ行を何度も辿ったりしたら——</p>
-            <p className="check-stat-line check-stat-em">それは「95％側」の読み方です。</p>
+            <p className="check-stat-line">途中で意味が途切れたり、同じところを何度も辿ったりしたら——</p>
+            <p className="check-stat-line check-stat-em">それは「読み方の型」がまだ乗っていないサインです。</p>
+          </div>
+        </div>
+
+        <div className="sse-hook-reveal">
+          <span className="sse-hook-reveal-line" aria-hidden="true" />
+          <p className="sse-hook-reveal-kicker">では、数字でいいます。</p>
+          <h3 className="sse-hook-reveal-title">
+            実は、<strong>95％以上</strong>の中高生が
+            <br />
+            中学レベルの英文を<strong>スラスラ読めていません</strong>。
+          </h3>
+          <p className="sse-hook-reveal-note">※当社調べ（中高生対象）</p>
+        </div>
+
+        <div className="sse-hook-stat-hero">
+          <figure className="sse-hook-stat-visual">
+            <img
+              src="assets/hook-95-stat-banner.png"
+              alt="95%以上の中高生が、中学レベルの英文をスラスラ読めていません。※当社調べ・中高生対象"
+              width="1024"
+              height="576"
+              loading="lazy"
+              decoding="async"
+            />
+          </figure>
+
+          <div className="sse-hook-stat-copy">
+            <p className="sse-hook-stat-main">
+              中学＋高校で<strong>6年</strong>英語を学んでも、
+              <br />
+              <span className="sse-hook-stat-em">「読む処理」が未完成のまま</span>受験に突入しているケースが圧倒的多数。
+            </p>
+            <ul className="sse-hook-stat-bullets">
+              <li>単語帳は進むのに、長文の意味が取れない</li>
+              <li>読み返し・戻り読みが癖になっている</li>
+              <li>文法用語は知っているのに、並びを前から処理できない</li>
+            </ul>
           </div>
         </div>
 
@@ -270,7 +266,7 @@ function SelfCheckSection() {
           <p>
             これは <em>頭の良さ</em> の差ではない。
             <br />
-            <strong>処理フォーム</strong>がインストールされているかどうかの差。
+            <strong>処理フォーム</strong>が先に整っているかどうかの差。
           </p>
           <div className="conclude-line"></div>
         </div>
@@ -301,10 +297,15 @@ function WhySection() {
           <div className="section-num">05</div>
           <div>
             <span className="eyebrow">WHY IT FAILS</span>
-            <h2 className="section-title">原因は、<br /><em>「読み方」にあります。</em></h2>
+            <h2 className="section-title">
+              原因は、<br />
+              <em>「読み方」にあります。</em>
+            </h2>
             <p className="section-lead">
-              英語が読めない最大の原因は、単語量でも文法力でも演習量でもありません。<br />
-              「読み方」そのものに、原因があります。
+              英語が伸びない本丸は、才能でも根性でもありません。
+              <strong>前から意味をつなぐ型</strong>がないまま、単語・文法・講座へ時間も費用も重ねると、
+              <strong>回収できるはずの伸びが、本番の手前で散りやすく</strong>なります。塾や教材は悪くない。ただ
+              <strong>投入の順番</strong>を誤るほど、同じ投資でも体感は遠のきます。
             </p>
           </div>
         </div>

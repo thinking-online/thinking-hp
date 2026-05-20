@@ -27,9 +27,9 @@ function App() {
       <HeroProof />
       <AuthoritySection />
       <EmpathySection />
+      <BrainCompareSection />
       <SelfCheckSection />
       <ThreeReasonsSection />
-      <BrainCompareSection />
       <WhySection />
       <MethodSection />
       <VoicesSection />

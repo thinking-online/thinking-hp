@@ -3,12 +3,13 @@
 ========================================================= */
 
 #check,
+#compare,
 #three-reasons,
 #support-four {
   scroll-margin-top: 72px;
 }
 
-/* ----- 95% HOOK (extends .self-check) ----- */
+/* ----- 診断オープナー + 95% バナー（extends .self-check） ----- */
 .sse-hook-section {
   position: relative;
   overflow: hidden;
@@ -28,16 +29,129 @@
   opacity: 0.9;
 }
 
+.sse-hook-quiz-intro {
+  position: relative;
+  z-index: 2;
+  margin-bottom: clamp(8px, 2vh, 16px);
+}
+
+.sse-hook-quiz-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 6px 14px 6px 8px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  color: #0a1530;
+  background: linear-gradient(90deg, #f5d98a, #d8a942);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.sse-hook-quiz-badge span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #c8364a;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.sse-hook-quiz-head .section-head {
+  margin-bottom: 0;
+}
+
+.sse-hook-frame {
+  position: relative;
+  z-index: 2;
+  margin-bottom: clamp(28px, 4vw, 40px);
+}
+
+.sse-hook-frame .check-quote-mark {
+  opacity: 0.25;
+}
+
+.sse-hook-frame-label {
+  margin: 0 0 -8px;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  color: var(--gold-400);
+}
+
+.sse-hook-check-stat {
+  border-top-style: solid;
+  border-top-color: rgba(217, 169, 66, 0.25);
+}
+
+.sse-hook-reveal {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  margin-bottom: clamp(24px, 4vw, 36px);
+  padding: clamp(18px, 3vw, 26px) clamp(16px, 3vw, 28px);
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(217, 169, 66, 0.25);
+  border-radius: 8px;
+}
+
+.sse-hook-reveal-line {
+  display: block;
+  width: min(200px, 50%);
+  height: 1px;
+  margin: 0 auto 16px;
+  background: linear-gradient(90deg, transparent, rgba(217, 169, 66, 0.65), transparent);
+}
+
+.sse-hook-reveal-kicker {
+  margin: 0 0 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  color: var(--gold-400);
+}
+
+.sse-hook-reveal-title {
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: clamp(18px, 4.2vw, 24px);
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: 0.03em;
+  color: var(--text-100);
+}
+
+.sse-hook-reveal-title strong {
+  color: var(--gold-300);
+  font-weight: 800;
+}
+
+.sse-hook-reveal-note {
+  margin: 0;
+  font-size: 11px;
+  color: var(--text-400);
+  letter-spacing: 0.04em;
+}
+
 .sse-hook-stat-hero {
   position: relative;
   z-index: 2;
   display: grid;
-  grid-template-columns: minmax(140px, 200px) 1fr;
-  gap: clamp(20px, 4vw, 40px);
-  align-items: center;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 28px);
+  align-items: start;
   margin-bottom: clamp(28px, 5vw, 44px);
-  padding: clamp(20px, 4vw, 32px);
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.06) 0%, rgba(10, 21, 48, 0.5) 100%);
+  padding: clamp(16px, 2.5vw, 24px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(10, 21, 48, 0.55) 100%);
   border: 1px solid rgba(217, 169, 66, 0.28);
   border-radius: 8px;
   box-shadow:
@@ -45,79 +159,28 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-.sse-hook-ring-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 180px;
-  margin: 0 auto;
-  aspect-ratio: 1;
+.sse-hook-stat-visual {
+  margin: 0;
+  min-width: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow:
+    0 20px 50px -20px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(10, 21, 48, 0.06);
 }
 
-.sse-hook-ring-svg {
+.sse-hook-stat-visual img {
+  display: block;
   width: 100%;
   height: auto;
-  display: block;
-  filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.35));
-}
-
-.sse-hook-ring-arc {
-  animation: sseHookRingDraw 2s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-}
-
-@keyframes sseHookRingDraw {
-  from {
-    stroke-dashoffset: 427;
-  }
-  to {
-    stroke-dashoffset: 21.35;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .sse-hook-ring-arc {
-    animation: none;
-    stroke-dashoffset: 21.35;
-  }
-}
-
-.sse-hook-ring-label {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  font-family: var(--display);
-  line-height: 1;
-}
-
-.sse-hook-ring-num {
-  font-size: clamp(44px, 11vw, 56px);
-  font-weight: 700;
-  font-style: italic;
-  color: #f5d98a;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
-}
-
-.sse-hook-ring-pct {
-  font-size: clamp(22px, 5vw, 28px);
-  font-weight: 600;
-  color: var(--gold-400);
-  align-self: flex-start;
-  margin-top: 0.35em;
+  vertical-align: top;
+  object-fit: contain;
+  object-position: center top;
 }
 
 .sse-hook-stat-copy {
   min-width: 0;
-}
-
-.sse-hook-stat-kicker {
-  margin: 0 0 12px;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  color: var(--text-400);
-  text-transform: uppercase;
 }
 
 .sse-hook-stat-main {
@@ -157,37 +220,27 @@
   color: var(--gold-500);
 }
 
-.sse-hook-frame .check-quote-mark {
-  opacity: 0.25;
-}
-
-.sse-hook-frame-label {
-  margin: 0 0 -8px;
-  text-align: center;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  color: var(--gold-400);
-}
-
-.sse-hook-check-stat {
-  border-top-style: solid;
-  border-top-color: rgba(217, 169, 66, 0.25);
-}
-
-@media (max-width: 640px) {
+@media (min-width: 900px) {
   .sse-hook-stat-hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1.35fr) minmax(260px, 1fr);
+    align-items: center;
+  }
+
+  .sse-hook-stat-copy {
+    padding-left: clamp(8px, 1.5vw, 16px);
+  }
+}
+
+@media (max-width: 899px) {
+  .sse-hook-stat-hero {
     text-align: center;
   }
 
   .sse-hook-stat-bullets {
     text-align: left;
     display: inline-block;
-  }
-
-  .sse-hook-stat-copy {
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .sse-hook-stat-main br {

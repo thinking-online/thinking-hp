@@ -197,13 +197,10 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
   border-color: rgba(72, 132, 188, 0.2);
 }
 .theme-paper .learning-system-point-icon { color: #2f6ea8; }
-.theme-paper .learning-system-blog-preview {
+.theme-paper .learning-system-thumb {
+  border-color: rgba(72, 132, 188, 0.2);
   background: #fff;
-  border-color: rgba(72, 132, 188, 0.22);
-  box-shadow: inset 3px 0 0 #e67e51;
 }
-.theme-paper .learning-system-blog-thumb h5,
-.theme-paper .learning-system-blog-preview-title { color: #0a1530; }
 .theme-paper .learning-system-ebook-intro {
   background: linear-gradient(180deg, #faf6ee 0%, #f3ebdc 100%);
   border-color: rgba(230, 126, 81, 0.25);
@@ -221,19 +218,20 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
 .theme-paper .contents-card p { color: #4a4d5e; }
 .theme-paper .contents-points li { color: #2f3a54; }
 
-.theme-paper .method-support-lead { color: #4a4d5e; }
-.theme-paper .support-feature-card {
-  background: #ffffff;
-  border-color: rgba(72, 132, 188, 0.22);
+.theme-paper .method-support-catch-line { color: #c8364a; }
+.theme-paper .method-support-resolve { color: #c8364a; }
+.theme-paper .support-worry-card {
+  background: linear-gradient(180deg, #f4f6f8 0%, #e8edf2 100%);
+  border-color: rgba(47, 110, 168, 0.18);
 }
-.theme-paper .support-feature-title { color: #1f4f86; }
-.theme-paper .support-feature-subtitle,
-.theme-paper .support-feature-list p,
-.theme-paper .support-feature-foot,
-.theme-paper .support-feature-pillars p { color: #3a4a62; }
-.theme-paper .support-feature-list strong,
-.theme-paper .support-feature-foot strong,
-.theme-paper .support-feature-pillars strong { color: #1f4f86; }
+.theme-paper .support-worry-num { color: #2f6ea8; }
+.theme-paper .support-worry-text { color: #1a3358; }
+.theme-paper .support-worry-solution {
+  background: linear-gradient(180deg, #fdf5f7 0%, #f8e8ee 100%);
+  border-color: rgba(200, 54, 74, 0.2);
+}
+.theme-paper .support-worry-solution-title { color: #c8364a; }
+.theme-paper .support-worry-solution-copy { color: #2a3550; }
 
 .theme-paper .support-row {
   background: #fdf7e3;

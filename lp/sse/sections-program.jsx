@@ -5,37 +5,21 @@ const LEARNING_SYSTEMS = [
     num: "01",
     title: "構造理解・文章講義",
     subtitle: "丸暗記ではなく、「核」で理解する。",
-    frame: "blog",
-    thumb: "assets/program-feature-lecture.png",
-    articles: [
+    frame: "thumbs",
+    thumbnails: [
       {
-        title: "前置詞の「核」イメージ",
-        tag: "文法の核",
-        meta: "約10分",
+        src: "assets/lecture-thumb-causative.png",
+        alt: "使役動詞の核を完全理解（講義サムネイル）",
       },
       {
-        title: "関係詞は修飾の連鎖",
-        tag: "構造理解",
-        meta: "約10分",
+        src: "assets/lecture-thumb-infinitive.png",
+        alt: "不定詞と動名詞の見分け方（講義サムネイル）",
       },
       {
-        title: "助動詞を確信度で読む",
-        tag: "読み方",
-        meta: "約10分",
+        src: "assets/lecture-thumb-comparison.png",
+        alt: "比較の核（講義サムネイル）",
       },
     ],
-    preview: {
-      label: "TEXT LECTURE",
-      date: "2026.05.20",
-      title: "前置詞の「核」イメージ",
-      lead:
-        "英文を左から読むための「型」を、テキストと図解で丁寧に解説。塾のノートのように、何度でも読み返せる文章講義です。",
-      excerpt: [
-        "なぜ in / on / at で意味が変わるのか。",
-        "丸暗記ではなく、イメージの「核」で整理する。",
-        "長文の中で迷わないための接続の見方。",
-      ],
-    },
     points: [
       { icon: "clock", label: "1本10分前後で要点だけ" },
       { icon: "chat", label: "なぜその訳になるか説明できる" },
@@ -145,316 +129,147 @@ function LearningPointIcon({ type }) {
   }
 }
 
-const SUPPORT_SYSTEMS = [
+const SUPPORT_WORRY_FLOWS = [
   {
     num: "01",
-    title: "課題提出システム",
-    titleEm: "システム",
-    subtitle: "学んだ内容を、提出とフィードバックでしっかり定着。",
-    layout: "split",
-    image: "assets/program-support-assignment.png",
-    imageAlt: "課題提出システム。ノートパソコンで学習する生徒",
-    imageCrop: "left",
-    features: [
-      {
-        icon: "clipboard",
-        title: "提出で学習を習慣化",
-        desc: "課題の提出を通じて、学習のリズムをつくります。",
-      },
-      {
-        icon: "feedback",
-        title: "個別フィードバックで理解を深める",
-        desc: "一人ひとりに合わせたフィードバックで、つまずきを解消し、理解を深めます。",
-      },
-      {
-        icon: "chart",
-        title: "学習状況がひと目でわかる",
-        desc: "提出状況やフィードバック履歴を一覧で確認できます。",
-      },
-    ],
-    foot:
-      "学んだ内容をしっかり定着させるために、課題を提出。個別のフィードバックで理解を深めます。",
+    worry: "継続できるかな…",
+    worryImage: "assets/support-worry-01-continue.png",
+    worryAlt: "継続できるか不安な生徒。カレンダーを見て悩んでいるイラスト",
+    solutionTitle: "提出課題システム",
+    solutionCopy: (
+      <>
+        課題が決まった時間に届き、期限までに提出する必要があります。サボり癖があっても、
+        <mark className="support-worry-mark">半強制的にもやらざるを得ない状況</mark>
+        が生まれます。1日も続かなかった生徒が、
+        <mark className="support-worry-mark">1ヶ月以上続けられた</mark>
+        システムです。
+      </>
+    ),
+    image: "assets/support-solution-01-assignment.png",
+    imageAlt: "提出課題のワークシート。Day9の英文を色分け・手書きメモで解析している様子",
   },
   {
     num: "02",
-    title: "実践ワーク付き",
-    subtitle: "講義で学んだことを、すぐにアウトプット。",
-    layout: "centered",
-    image: "assets/program-support-workbook.png",
-    imageAlt: "実践ワーク。英文の穴埋めワークに取り組む様子",
-    imageCrop: "workbook",
-    points: [
-      { icon: "clipboard", lines: ["学んだ", "直後に", "演習できる"] },
-      { icon: "book", lines: ["解ける力", "を", "実践で身につける"] },
-      { icon: "target", lines: ["理解", "から", "定着までをつなぐ"] },
-    ],
-    foot: "講義で学んだことをすぐにアウトプット。実践的なワークで、解ける力を身につけます。",
+    worry: "ちゃんと理解できるかな…",
+    worryImage: "assets/support-worry-02-understand.png",
+    worryAlt: "理解できるか不安な生徒。複雑な構造に悩むイラスト",
+    solutionTitle: "実践ワーク付き",
+    solutionCopy: (
+      <>
+        講義で学んだ「核」を、その日のうちにワークで確認。頭の中がごちゃごちゃでも、
+        <mark className="support-worry-mark">手を動かすうちに構造が整理</mark>
+        され、
+        <mark className="support-worry-mark">ちゃんと理解できた</mark>
+        実感につながります。
+      </>
+    ),
+    image: "assets/support-solution-02-workbook.png",
+    imageAlt: "タブレットの教材とノートに書き込む実践ワークの学習風景",
   },
   {
     num: "03",
-    title: "モチベUPメッセージ",
-    subtitle: "やる気を支え、継続を後押しする。",
-    layout: "split-bubble",
-    image: "assets/program-support-motivation.png",
-    imageAlt: "モチベUPメッセージ。スマホを見て笑顔の生徒",
-    imageCrop: "left",
-    bubble: [
-      "よく頑張っていますね！",
-      "昨日より今日、また一歩前進しています！",
-      "その調子で、目標に向かって進んでいきましょう！ ✨",
-    ],
-    features: [
-      {
-        icon: "mail",
-        title: "定期的に応援メッセージが届く",
-        desc: "学習の進捗や取り組みに合わせて、温かいメッセージをお届けします。",
-      },
-      {
-        icon: "heart",
-        title: "努力を見てもらえるから続けやすい",
-        desc: "頑張りをしっかり認めてもらえるから、自信につながり、継続の力になります。",
-      },
-      {
-        icon: "trend",
-        title: "学習習慣を前向きにキープ",
-        desc: "やる気を引き出すメッセージで、前向きな気持ちを維持できます。",
-      },
-    ],
-    foot: (
+    worry: "わからない問題はどうすれば？",
+    worryImage: "assets/support-worry-03-stuck.png",
+    worryAlt: "わからない問題に困っている生徒のイラスト",
+    solutionTitle: "24hチャットシステム",
+    solutionCopy: (
       <>
-        学習の進捗や努力を応援するメッセージを定期的にお届け。
-        <strong>やる気をキープし、継続をサポートします。</strong>
+        一人で抱え込まなくてOK。いつでも質問でき、
+        <mark className="support-worry-mark">わからないをその場で解消</mark>
+        。つまずいて止まる前に、
+        <mark className="support-worry-mark">次の問題へ進める</mark>
+        環境です（目安：24時間以内に返信）。
       </>
     ),
+    image: "assets/support-solution-03-chat.png",
+    imageAlt: "24時間チャットで質問と回答のやり取り。スマホを見て安心する生徒",
   },
   {
     num: "04",
-    titleLead: "24",
-    titleMid: "hチャット",
-    titleEm: "システム",
-    subtitle: "疑問をすぐに解消できる、安心の質問環境。",
-    layout: "split",
-    image: "assets/program-support-chat.png",
-    imageAlt: "24時間チャットサポート。スマホで質問する様子",
-    imageCrop: "left",
-    features: [
-      {
-        icon: "headset",
-        title: "いつでも質問できる",
-        desc: "24時間いつでも質問OK。時間を気にせず相談できます。",
-      },
-      {
-        icon: "question",
-        title: "わからないをすぐ解消",
-        desc: "経験豊富なスタッフが丁寧に回答。疑問をその場でスッキリ解決します。",
-      },
-      {
-        icon: "bookcheck",
-        title: "学習が止まらない",
-        desc: "疑問をすぐに解消できるから、つまずかずに学習を続けられます。",
-      },
-    ],
-    foot: (
+    worry: "モチベが続かない、やる気の持続が心配…",
+    worryImage: "assets/support-worry-04-motivation.png",
+    worryAlt: "やる気が続かないと不安な生徒。バッテリーが切れたように疲れたイラスト",
+    solutionTitle: "モチベUPメッセージ",
+    solutionCopy: (
       <>
-        いつでも質問できるチャットシステムを完備。疑問をすぐに解消できるので、
-        <strong>学習が止まりません。</strong>
+        学習の進捗や努力を見て、温かい応援メッセージが届きます。一人で抱え込まず、
+        <mark className="support-worry-mark">やる気をキープ</mark>
+        しながら、
+        <mark className="support-worry-mark">45日間走り切れる</mark>
+        リズムをつくります。
       </>
     ),
+    image: "assets/support-solution-04-motivation.png",
+    imageAlt: "スマホの応援メッセージを見てやる気になった制服の女子生徒",
   },
 ];
 
-function SupportFeatureIcon({ type }) {
-  const common = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", "aria-hidden": true };
-  switch (type) {
-    case "clipboard":
-      return (
-        <svg {...common}>
-          <rect x="6" y="5" width="12" height="14" rx="2" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M9 5V4a3 3 0 0 1 6 0v1" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M9 11h6M9 14h4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        </svg>
-      );
-    case "feedback":
-      return (
-        <svg {...common}>
-          <path d="M6 7h12v9H11l-5 3V7z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
-          <circle cx="9" cy="11" r="0.8" fill="currentColor" />
-          <circle cx="12" cy="11" r="0.8" fill="currentColor" />
-          <circle cx="15" cy="11" r="0.8" fill="currentColor" />
-        </svg>
-      );
-    case "chart":
-      return (
-        <svg {...common}>
-          <path d="M6 18V10M11 18V6M16 18v-5M20 18H4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        </svg>
-      );
-    case "book":
-      return (
-        <svg {...common}>
-          <path d="M6 6h5v12H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M13 6h5a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-5V6z" stroke="currentColor" strokeWidth="1.7" />
-        </svg>
-      );
-    case "target":
-      return (
-        <svg {...common}>
-          <circle cx="12" cy="12" r="7" stroke="currentColor" strokeWidth="1.7" />
-          <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M12 5V3M19 12h2M12 19v2M3 12H1" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        </svg>
-      );
-    case "mail":
-      return (
-        <svg {...common}>
-          <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M4 8l8 5 8-5" stroke="currentColor" strokeWidth="1.7" />
-        </svg>
-      );
-    case "heart":
-      return (
-        <svg {...common}>
-          <circle cx="8" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M4 18c2-4 4-6 8-6s6 2 8 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        </svg>
-      );
-    case "trend":
-      return (
-        <svg {...common}>
-          <path d="M5 18V8M10 18V12M15 18V6M20 18H4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-          <path d="M14 8l3-2 3 3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-      );
-    case "headset":
-      return (
-        <svg {...common}>
-          <path d="M5 12a7 7 0 0 1 14 0v4a3 3 0 0 1-3 3h-1v-5" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M19 16a3 3 0 0 1-3 3h-1" stroke="currentColor" strokeWidth="1.7" />
-        </svg>
-      );
-    case "question":
-      return (
-        <svg {...common}>
-          <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M10 9a2 2 0 1 1 3.2 1.6c-.8.5-1.2 1.1-1.2 2.4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-          <circle cx="12" cy="17" r="0.8" fill="currentColor" />
-        </svg>
-      );
-    case "bookcheck":
-      return (
-        <svg {...common}>
-          <path d="M6 6h6v12H7a2 2 0 0 1-2-2V6z" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M12 6h6a2 2 0 0 1 2 2v7l-3 2-3-2V6z" stroke="currentColor" strokeWidth="1.7" />
-          <path d="M15 12l1.5 1.5L19 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        </svg>
-      );
-    default:
-      return null;
-  }
-}
+function SupportWorryFlow({ item }) {
+  const ref = React.useRef(null);
+  const [visible, setVisible] = React.useState(false);
 
-function SupportFeatureTitle({ item }) {
-  if (item.titleLead) {
-    return (
-      <>
-        <span className="support-feature-title-mark">{item.titleLead}</span>
-        {item.titleMid}
-        {item.titleEm ? <span className="support-feature-title-em">{item.titleEm}</span> : null}
-      </>
+  React.useEffect(() => {
+    const el = ref.current;
+    if (!el) return undefined;
+
+    const reduced =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (reduced) {
+      setVisible(true);
+      return undefined;
+    }
+
+    const narrow = window.matchMedia("(max-width: 900px)").matches;
+    const obs = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setVisible(true);
+        obs.disconnect();
+      },
+      {
+        threshold: narrow ? [0, 0.12] : [0, 0.2],
+        rootMargin: narrow ? "30px 0px 50px 0px" : "20px 0px 40px 0px",
+      }
     );
-  }
 
-  if (item.titleEm) {
-    const base = item.title.slice(0, item.title.indexOf(item.titleEm));
-    return (
-      <>
-        {base}
-        <span className="support-feature-title-em">{item.titleEm}</span>
-      </>
-    );
-  }
-
-  return item.title;
-}
-
-function SupportFeatureCard({ item }) {
-
-  if (item.layout === "centered") {
-    return (
-      <article className={`support-feature-card support-feature-card--${item.layout}`}>
-        <span className="support-feature-num">{item.num}</span>
-        <h4 className="support-feature-title">
-          <SupportFeatureTitle item={item} />
-        </h4>
-        <p className="support-feature-subtitle">
-          <span className="support-feature-subspark" aria-hidden="true" />
-          {item.subtitle}
-          <span className="support-feature-subspark support-feature-subspark--right" aria-hidden="true" />
-        </p>
-        <div
-          className={`support-feature-visual support-feature-visual--wide${
-            item.imageCrop ? ` support-feature-visual--${item.imageCrop}` : ""
-          }`}
-        >
-          <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
-        </div>
-        <ul className="support-feature-pillars">
-          {item.points.map((point) => (
-            <li key={point.lines.join("")}>
-              <span className="support-feature-pillar-icon">
-                <SupportFeatureIcon type={point.icon} />
-              </span>
-              <p>
-                <strong>{point.lines[0]}</strong>
-                {point.lines[1]}
-                <strong>{point.lines[2]}</strong>
-              </p>
-            </li>
-          ))}
-        </ul>
-        <p className="support-feature-foot">{item.foot}</p>
-      </article>
-    );
-  }
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
 
   return (
-    <article className={`support-feature-card support-feature-card--${item.layout}`}>
-      <span className="support-feature-num">{item.num}</span>
-      <h4 className="support-feature-title">
-        <SupportFeatureTitle item={item} />
-      </h4>
-      <p className="support-feature-subtitle">{item.subtitle}</p>
-      <div className="support-feature-body">
-        <div
-          className={`support-feature-visual${
-            item.imageCrop ? ` support-feature-visual--${item.imageCrop}` : ""
-          }`}
-        >
-          <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
-          {item.bubble ? (
-            <div className="support-feature-bubble" aria-hidden="true">
-              <span className="support-feature-bubble-icon">✉</span>
-              {item.bubble.map((line) => (
-                <p key={line}>{line}</p>
-              ))}
-            </div>
-          ) : null}
-        </div>
-        <ul className="support-feature-list">
-          {item.features.map((feature) => (
-            <li key={feature.title}>
-              <span className="support-feature-list-icon">
-                <SupportFeatureIcon type={feature.icon} />
-              </span>
-              <div>
-                <strong>{feature.title}</strong>
-                <p>{feature.desc}</p>
-              </div>
-            </li>
-          ))}
-        </ul>
+    <article
+      ref={ref}
+      className={`support-worry-flow${item.num === "03" ? " support-worry-flow--chat" : ""}${visible ? " is-visible" : ""}`}
+      aria-labelledby={`support-worry-${item.num}`}
+    >
+      <div className="support-worry-card">
+        <span className="support-worry-num">悩み{item.num}</span>
+        <p id={`support-worry-${item.num}`} className="support-worry-text">
+          {item.worry}
+        </p>
+        <figure className="support-worry-figure">
+          <img
+            src={item.worryImage}
+            alt={item.worryAlt}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
       </div>
-      <p className="support-feature-foot">{item.foot}</p>
+
+      <div className="support-worry-arrow" aria-hidden="true">
+        <span className="support-worry-arrow-icon">↓</span>
+      </div>
+
+      <div className="support-worry-solution">
+        <h4 className="support-worry-solution-title">{item.solutionTitle}</h4>
+        <p className="support-worry-solution-copy">{item.solutionCopy}</p>
+        <div className="support-worry-solution-visual">
+          <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
+        </div>
+      </div>
     </article>
   );
 }
@@ -462,52 +277,14 @@ function SupportFeatureCard({ item }) {
 function LearningSystemCard({ item }) {
   let visual = null;
 
-  if (item.frame === "blog") {
+  if (item.frame === "thumbs") {
     visual = (
-      <div className="learning-system-blog">
-        <p className="learning-system-blog-label">テキスト講義一覧（イメージ）</p>
-        <div className="learning-system-blog-thumbs" role="list">
-          {item.articles.map((article) => (
-            <article key={article.title} className="learning-system-blog-thumb" role="listitem">
-              <div className="learning-system-blog-thumb-img">
-                <img
-                  src={item.thumb}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  aria-hidden="true"
-                />
-              </div>
-              <span className="learning-system-blog-thumb-tag">{article.tag}</span>
-              <h5>{article.title}</h5>
-              <span className="learning-system-blog-thumb-meta">{article.meta}</span>
-            </article>
-          ))}
-        </div>
-        <div className="learning-system-blog-preview" aria-label="文章講義の記事プレビュー">
-          <div className="learning-system-blog-preview-head">
-            <span>{item.preview.label}</span>
-            <time dateTime="2026-05-20">{item.preview.date}</time>
-          </div>
-          <h5 className="learning-system-blog-preview-title">{item.preview.title}</h5>
-          <p className="learning-system-blog-preview-lead">{item.preview.lead}</p>
-          <div className="learning-system-blog-preview-body">
-            <ul>
-              {item.preview.excerpt.map((line) => (
-                <li key={line}>{line}</li>
-              ))}
-            </ul>
-            <figure>
-              <img
-                src={item.thumb}
-                alt="文章講義のサムネイル。英文の構造を色分けした図解"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-          </div>
-          <p className="learning-system-blog-preview-more">続きを読む →</p>
-        </div>
+      <div className="learning-system-thumbs" role="list" aria-label="文章講義のサムネイル">
+        {item.thumbnails.map((thumb) => (
+          <figure key={thumb.src} className="learning-system-thumb" role="listitem">
+            <img src={thumb.src} alt={thumb.alt} loading="lazy" decoding="async" />
+          </figure>
+        ))}
       </div>
     );
   } else if (item.frame === "ebook") {
@@ -540,7 +317,7 @@ function LearningSystemCard({ item }) {
   }
 
   return (
-    <article className={`learning-system-card${item.frame === "blog" ? " learning-system-card--blog" : ""}${item.frame === "ebook" ? " learning-system-card--ebook" : ""}`}>
+    <article className={`learning-system-card${item.frame === "ebook" ? " learning-system-card--ebook" : ""}`}>
       <div className="learning-system-head">
         <span className="learning-system-spark" aria-hidden="true" />
         <h4 className="learning-system-title">{item.title}</h4>
@@ -633,19 +410,24 @@ function MethodSection() {
           </div>
 
           <div className="method-support">
-            <div className="contents-head method-support-head">
+            <div className="method-support-intro">
               <span className="eyebrow">THOROUGH SUPPORT</span>
-              <h3 className="contents-title">
-                自走を支える、<em>徹底的なサポート体制</em>
+              <h3 className="method-support-catch">
+                <span className="method-support-catch-line">3日坊主でもやり切れる！</span>
+                <span className="method-support-catch-line method-support-catch-line--em">
+                  徹底的なサポート体制
+                </span>
               </h3>
-              <p className="method-support-lead">
-                学習が止まらない・続く・定着する。4つの仕組みで、45日間を一人にしません。
+              <p className="method-support-resolve">
+                あなたのその悩みや心配
+                <br />
+                <em>全部、解決します！</em>
               </p>
             </div>
 
-            <div className="support-systems-showcase">
-              {SUPPORT_SYSTEMS.map((item) => (
-                <SupportFeatureCard key={item.num} item={item} />
+            <div className="support-worry-flows">
+              {SUPPORT_WORRY_FLOWS.map((item) => (
+                <SupportWorryFlow key={item.num} item={item} />
               ))}
             </div>
           </div>

@@ -392,10 +392,46 @@ section.sse-empathy {
   margin: 8px 0 4px;
 }
 
-/* Message — greeting card (compact portrait + letter) */
+/* Message — heading → hero portrait → letter */
+.message-layout {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 4.5vw, 36px);
+}
+
+.message-section-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: clamp(10px, 2.5vw, 16px);
+  margin-bottom: 0;
+}
+
+.message-hero {
+  margin: 0;
+  width: 100%;
+  border-radius: clamp(10px, 2.2vw, 16px);
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(217, 169, 66, 0.28);
+  box-shadow:
+    0 28px 64px -32px rgba(0, 0, 0, 0.65),
+    0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+}
+
+.message-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center 22%;
+}
+
 .message-card {
-  margin-top: 8px;
-  padding: clamp(22px, 5vw, 32px);
+  margin-top: 0;
+  padding: clamp(22px, 5vw, 36px);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(217, 169, 66, 0.22);
   border-radius: 12px;
@@ -404,37 +440,11 @@ section.sse-empathy {
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
-.message-intro {
-  display: flex;
-  align-items: center;
-  gap: clamp(16px, 4vw, 24px);
-  padding-bottom: clamp(18px, 4vw, 24px);
-  margin-bottom: clamp(18px, 4vw, 24px);
+.message-byline {
+  text-align: center;
+  padding-bottom: clamp(18px, 4vw, 26px);
+  margin-bottom: clamp(18px, 4vw, 26px);
   border-bottom: 1px solid rgba(217, 169, 66, 0.2);
-}
-
-.message-photo {
-  flex-shrink: 0;
-  width: clamp(88px, 22vw, 112px);
-  margin: 0;
-  border-radius: 8px;
-  overflow: hidden;
-  background: #fff;
-  border: 1px solid rgba(217, 169, 66, 0.35);
-  box-shadow: 0 10px 28px -12px rgba(0, 0, 0, 0.45);
-}
-
-.message-photo img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: center 18%;
-}
-
-.message-intro-copy {
-  min-width: 0;
-  flex: 1;
 }
 
 .message-profile-label {
@@ -497,10 +507,27 @@ section.sse-empathy {
 
 @media (max-width: 640px) {
   .sse-auth-grid { grid-template-columns: 1fr; }
+  .message-layout {
+    gap: 16px;
+  }
+  .message-hero {
+    border-radius: 10px;
+  }
+  .message-hero img {
+    aspect-ratio: 4 / 3;
+    object-position: center 18%;
+  }
   .message-card {
     padding: 18px 16px 20px;
   }
-  .message-photo {
-    width: 80px;
+}
+
+@media (min-width: 721px) {
+  .message-hero {
+    max-width: 100%;
+  }
+  .message-hero img {
+    aspect-ratio: 16 / 10;
+    object-position: center 24%;
   }
 }

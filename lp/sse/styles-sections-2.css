@@ -1272,7 +1272,13 @@
 @media (max-width: 720px) { .media-grid { grid-template-columns: 1fr; } }
 
 /* ===== MESSAGE ===== */
-.message-section { background: linear-gradient(180deg, var(--navy-900), var(--navy-950)); }
+.message-section {
+  background: linear-gradient(180deg, var(--navy-900), var(--navy-950));
+  padding-bottom: clamp(56px, 10vw, 88px);
+}
+.message-section .section-head {
+  margin-bottom: 0;
+}
 .message-body { font-family: var(--serif); font-size: 16px; line-height: 2.05; color: var(--text-200); }
 .message-body p { margin: 0 0 20px; text-wrap: pretty; }
 .message-body em { font-style: normal; color: var(--gold-300); font-weight: 600; }

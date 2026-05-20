@@ -164,8 +164,8 @@ function MediaSection() {
 function MessageSection() {
   return (
     <section className="message-section theme-deep-warm" data-screen-label="10 Message">
-      <div className="wrap-narrow">
-        <div className="section-head">
+      <div className="wrap-narrow message-layout">
+        <div className="section-head message-section-head">
           <div className="section-num">15</div>
           <div>
             <span className="eyebrow">MESSAGE FROM CEO</span>
@@ -173,26 +173,25 @@ function MessageSection() {
           </div>
         </div>
 
+        <figure className="message-hero">
+          <img
+            src="assets/founder-message-hero.png"
+            alt="朝倉 徹大 — THINKING 代表"
+            width="1024"
+            height="683"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
         <div className="message-card">
-          <div className="message-intro">
-            <figure className="message-photo">
-              <img
-                src="assets/founder-portrait.png"
-                alt="朝倉 徹大 — THINKING 代表"
-                width="400"
-                height="520"
-                loading="lazy"
-                decoding="async"
-              />
-            </figure>
-            <div className="message-intro-copy">
-              <p className="message-profile-label">代表メッセージ</p>
-              <h3 className="message-profile-name">朝倉 徹大</h3>
-              <p className="message-profile-role">
-                合同会社ARC 代表社員 / 難関私大専門オンライン塾 THINKING 代表
-              </p>
-            </div>
-          </div>
+          <header className="message-byline">
+            <p className="message-profile-label">代表メッセージ</p>
+            <h3 className="message-profile-name">朝倉 徹大</h3>
+            <p className="message-profile-role">
+              合同会社ARC 代表社員 / 難関私大専門オンライン塾 THINKING 代表
+            </p>
+          </header>
 
           <div className="message-content">
             <div className="message-body">

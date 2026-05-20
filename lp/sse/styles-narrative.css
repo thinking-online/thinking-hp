@@ -96,6 +96,39 @@
   padding-bottom: 1px;
 }
 
+.sse-hook-result-bridge {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 14px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.sse-hook-result-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(217, 169, 66, 0.45);
+  color: var(--gold-300);
+  font-size: 18px;
+  line-height: 1;
+  background: rgba(6, 12, 28, 0.72);
+}
+
+.sse-hook-result-text {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(13px, 3.2vw, 15px);
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  color: var(--text-200);
+}
+
 @media (max-width: 380px) {
   .sse-hook-readsign-row {
     font-size: 16px;

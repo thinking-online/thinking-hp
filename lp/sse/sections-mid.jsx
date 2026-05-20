@@ -225,6 +225,13 @@ function SelfCheckSection() {
           </div>
         </div>
 
+        <div className="sse-hook-result-bridge" aria-hidden="true">
+          <span className="sse-hook-result-arrow">↓</span>
+          <p className="sse-hook-result-text">
+            結果はどうだったかというと・・・
+          </p>
+        </div>
+
         <div className="sse-hook-reveal">
           <span className="sse-hook-reveal-ornament" aria-hidden="true" />
           <p className="sse-hook-reveal-kicker">では、数字でいいます。</p>

@@ -32,37 +32,7 @@
 .sse-hook-quiz-intro {
   position: relative;
   z-index: 2;
-  margin-bottom: clamp(8px, 2vh, 16px);
-}
-
-.sse-hook-quiz-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 14px;
-  padding: 6px 14px 6px 8px;
-  border-radius: 999px;
-  font-family: var(--sans);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  color: #0a1530;
-  background: linear-gradient(90deg, #f5d98a, #d8a942);
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
-}
-
-.sse-hook-quiz-badge span {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #c8364a;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 900;
+  margin-bottom: clamp(16px, 2.5vh, 24px);
 }
 
 .sse-hook-quiz-head .section-head {
@@ -89,8 +59,48 @@
 }
 
 .sse-hook-check-stat {
-  border-top-style: solid;
-  border-top-color: rgba(217, 169, 66, 0.25);
+  border-top: 1px solid rgba(217, 169, 66, 0.28) !important;
+}
+
+/* 「読み方の型」締め文 — 折り返しを2行に制御 */
+.sse-hook-readsign .check-stat-line {
+  max-width: 36em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.sse-hook-readsign-result {
+  margin: 14px 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.sse-hook-readsign-row {
+  display: block;
+  font-family: var(--serif);
+  font-size: clamp(17px, 4.5vw, 22px);
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+  color: var(--gold-300);
+  text-wrap: balance;
+}
+
+.sse-hook-readsign-row strong {
+  font-weight: 800;
+  color: #f5d98a;
+}
+
+.sse-hook-readsign-tail {
+  border-bottom: 2px solid rgba(217, 169, 66, 0.45);
+  padding-bottom: 1px;
+}
+
+@media (max-width: 380px) {
+  .sse-hook-readsign-row {
+    font-size: 16px;
+    letter-spacing: 0.02em;
+  }
 }
 
 .sse-hook-reveal {
@@ -104,7 +114,7 @@
   border-radius: 8px;
 }
 
-.sse-hook-reveal-line {
+.sse-hook-reveal-ornament {
   display: block;
   width: min(200px, 50%);
   height: 1px;
@@ -122,15 +132,26 @@
 
 .sse-hook-reveal-title {
   margin: 0 0 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(2px, 1.2vw, 8px);
   font-family: var(--serif);
-  font-size: clamp(18px, 4.2vw, 24px);
   font-weight: 700;
-  line-height: 1.55;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.02em;
   color: var(--text-100);
 }
 
-.sse-hook-reveal-title strong {
+.sse-hook-reveal-title-row {
+  display: block;
+  width: 100%;
+  max-width: 19.5em;
+  font-size: clamp(16px, 4.65vw, 22px);
+  line-height: 1.42;
+  text-wrap: balance;
+}
+
+.sse-hook-reveal-title-row strong {
   color: var(--gold-300);
   font-weight: 800;
 }
@@ -251,6 +272,43 @@
 /* ----- THREE REASONS ----- */
 .sse-three-reasons {
   padding: clamp(52px, 8vw, 88px) 0;
+}
+
+.sse-three-hero-visual {
+  position: relative;
+  margin: 4px 0 clamp(22px, 4vw, 34px);
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow:
+    0 24px 58px -28px rgba(10, 21, 48, 0.35),
+    0 0 0 1px rgba(10, 21, 48, 0.08);
+}
+
+.sse-three-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sse-three-hero-caption {
+  margin: 0;
+  padding: 12px 14px;
+  font-family: var(--serif);
+  font-size: clamp(13px, 2.8vw, 15px);
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  color: #1e2a42;
+  background: linear-gradient(180deg, rgba(247, 244, 234, 0.98) 0%, rgba(241, 236, 219, 0.98) 100%);
+  border-top: 1px solid rgba(10, 21, 48, 0.08);
+}
+
+.sse-three-hero-caption strong {
+  color: #b88728;
+  font-weight: 800;
 }
 
 .sse-narrative-num {
@@ -396,6 +454,10 @@
 @media (max-width: 900px) {
   .sse-three-grid {
     grid-template-columns: 1fr;
+  }
+
+  .sse-three-hero-caption {
+    text-align: center;
   }
 
   .sse-three-bridge {

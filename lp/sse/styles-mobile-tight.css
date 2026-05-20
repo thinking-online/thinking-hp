@@ -105,6 +105,37 @@
     padding-top: 16px;
   }
 
+  .sse-hook-reveal {
+    padding: 16px 14px 18px;
+    margin-bottom: 20px;
+  }
+
+  .sse-hook-reveal-ornament {
+    margin-bottom: 12px;
+  }
+
+  .sse-hook-reveal-title {
+    gap: 2px;
+  }
+
+  .sse-hook-reveal-title-row {
+    font-size: clamp(15px, 4.85vw, 19px);
+    max-width: 100%;
+    line-height: 1.38;
+    letter-spacing: 0.012em;
+  }
+
+  .sse-hook-reveal-kicker {
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    margin-bottom: 8px;
+  }
+
+  .sse-hook-reveal-note {
+    font-size: 10px;
+    margin-top: 6px;
+  }
+
   .check-conclude {
     margin-top: 4px;
     gap: 10px;

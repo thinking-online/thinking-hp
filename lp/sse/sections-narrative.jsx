@@ -56,6 +56,21 @@ function ThreeReasonsSection() {
           </div>
         </div>
 
+        <figure className="sse-three-hero-visual">
+          <img
+            src="assets/three-reasons-hero.png"
+            alt="英語が読めず悩む女子学生"
+            width="1024"
+            height="576"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption className="sse-three-hero-caption">
+            読めないのは才能不足ではない。多くは、
+            <strong>設計ミス</strong>で起きています。
+          </figcaption>
+        </figure>
+
         <div className="sse-three-grid" role="list">
           {reasons.map((r) => (
             <article key={r.num} className="sse-three-card" role="listitem">

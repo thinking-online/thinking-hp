@@ -185,21 +185,19 @@ function SelfCheckSection() {
 
       <div className="wrap">
         <div className="sse-hook-quiz-intro">
-          <div className="sse-hook-quiz-badge" aria-hidden="true">
-            <span>!</span> 診断
-          </div>
           <div className="section-head sse-hook-quiz-head">
             <div className="section-num">04</div>
             <div>
-              <span className="eyebrow">SUDDEN CHECK</span>
+              <span className="eyebrow">READING CHECK</span>
               <h2 className="section-title">
-                ここで突然ですが、<br />
-                <em>英語力「その場」診断です。</em>
+                中学英単語で構成された文
+                <br />
+                <em>あなたはスラスラ読める？</em>
               </h2>
               <p className="section-lead">
-                次の一文、<strong>あなたはスラスラ読めますか？</strong>
+                声に出しても頭の中だけでもOK。
                 <br />
-                声に出しても頭の中だけでもOK。止まらず、左から意味がつながるかだけ見てください。
+                止まらず、左から意味がつながるかだけ見てください。
               </p>
             </div>
           </div>
@@ -218,19 +216,26 @@ function SelfCheckSection() {
             In the examples I am talking of the person continues to behave in what most people agree is a normal manner.
           </p>
 
-          <div className="check-stat sse-hook-check-stat">
+          <div className="check-stat sse-hook-check-stat sse-hook-readsign">
             <p className="check-stat-line">途中で意味が途切れたり、同じところを何度も辿ったりしたら——</p>
-            <p className="check-stat-line check-stat-em">それは「読み方の型」がまだ乗っていないサインです。</p>
+            <p className="sse-hook-readsign-result">
+              <span className="sse-hook-readsign-row">それは<strong>「読み方の型」</strong>が</span>
+              <span className="sse-hook-readsign-row">まだ乗っていない<span className="sse-hook-readsign-tail">サインです。</span></span>
+            </p>
           </div>
         </div>
 
         <div className="sse-hook-reveal">
-          <span className="sse-hook-reveal-line" aria-hidden="true" />
+          <span className="sse-hook-reveal-ornament" aria-hidden="true" />
           <p className="sse-hook-reveal-kicker">では、数字でいいます。</p>
           <h3 className="sse-hook-reveal-title">
-            実は、<strong>95％以上</strong>の中高生が
-            <br />
-            中学レベルの英文を<strong>スラスラ読めていません</strong>。
+            <span className="sse-hook-reveal-title-row">
+              実は<strong>95％以上</strong>の中高生が
+            </span>
+            <span className="sse-hook-reveal-title-row">中学レベルの英文ですら</span>
+            <span className="sse-hook-reveal-title-row">
+              <strong>スラスラ</strong>読めていません
+            </span>
           </h3>
           <p className="sse-hook-reveal-note">※当社調べ（中高生対象）</p>
         </div>
@@ -239,7 +244,7 @@ function SelfCheckSection() {
           <figure className="sse-hook-stat-visual">
             <img
               src="assets/hook-95-stat-banner.png"
-              alt="95%以上の中高生が、中学レベルの英文をスラスラ読めていません。※当社調べ・中高生対象"
+              alt="実は95％以上の中高生が、中学レベルの英文ですらスラスラ読めていません。※当社調べ・中高生対象"
               width="1024"
               height="576"
               loading="lazy"
@@ -298,14 +303,16 @@ function WhySection() {
           <div>
             <span className="eyebrow">WHY IT FAILS</span>
             <h2 className="section-title">
-              原因は、<br />
-              <em>「読み方」にあります。</em>
+              このままだと、<br />
+              <em>その投資、無駄になります。</em>
             </h2>
             <p className="section-lead">
-              英語が伸びない本丸は、才能でも根性でもありません。
-              <strong>前から意味をつなぐ型</strong>がないまま、単語・文法・講座へ時間も費用も重ねると、
-              <strong>回収できるはずの伸びが、本番の手前で散りやすく</strong>なります。塾や教材は悪くない。ただ
-              <strong>投入の順番</strong>を誤るほど、同じ投資でも体感は遠のきます。
+              ここを直さないまま単語・文法・講座にお金と時間を重ねるほど、
+              <strong>その投資は回収しづらくなります。</strong>
+              塾や教材が悪いのではありません。問題は、
+              <strong>前から意味をつなぐ型</strong>がないまま投入してしまう順番です。
+              穴の空いたバケツに注ぎ続ける状態では、努力も費用も
+              <strong>水の泡になりやすい</strong>のです。
             </p>
           </div>
         </div>
@@ -410,8 +417,8 @@ function WhySection() {
             <span>効率的とされる参考書を回す</span>
           </div>
           <p className="why-conclude-note">
-            どれだけ単語を覚えても、読み方の穴が空いている限り、抜け落ち続けます。<br />
-            <strong>順番が逆。先に「読み方」の穴を塞ぐ必要があります。</strong>
+            今のままでは、せっかく払った費用も、積み上げた勉強時間も、結果に変わり切らず流れ落ちます。<br />
+            <strong>だから最優先は「読み方」の穴埋め。ここを先に塞げば、同じ投資が生き始めます。</strong>
           </p>
         </div>
       </div>

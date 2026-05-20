@@ -1,6 +1,6 @@
 /* SSE LP — floating LINE CTA (homepage-style) */
 function StickyLineCTA() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);
   const lineUrl = window.THINKING_LINE_LIFF_URL || "#";
 

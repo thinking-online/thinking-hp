@@ -512,9 +512,9 @@ function FinalSection() {
         <div className="wrap footer-inner">
           <div>© 合同会社ARC / 難関私大専門オンライン塾 THINKING</div>
           <div className="footer-links">
-            <a href="./tokushoho.html">特定商取引法に基づく表記</a>
-            <a href="./privacy-policy.html">プライバシーポリシー</a>
-            <a href="#">運営会社</a>
+            <a href="./tokushoho/">特定商取引法に基づく表記</a>
+            <a href="./privacy-policy/">プライバシーポリシー</a>
+            <a href="https://thinking-online.com/" target="_blank" rel="noopener noreferrer">運営塾</a>
           </div>
         </div>
       </footer>

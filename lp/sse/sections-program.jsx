@@ -19,48 +19,61 @@ function MethodSection() {
           </div>
         </div>
 
-        <div className="method-grid">
-          <div className="method-card">
-            <div className="method-card-num">01</div>
-            <div className="method-card-icon">
-              <svg viewBox="0 0 60 60" width="44" height="44">
-                <circle cx="30" cy="30" r="22" fill="none" stroke="#e9c267" strokeWidth="1.2" />
-                <path d="M18 30 L 27 38 L 42 22" fill="none" stroke="#e9c267" strokeWidth="1.5" />
-              </svg>
-            </div>
-            <span className="method-card-tag">PILLAR 01</span>
-            <h3>読み方を<br />「型」から学ぶ</h3>
-            <p>単語や文法の前に、英文をどう処理するかを徹底的に学ぶ。返り読みをなくし、英語を英語のまま理解する力を身につける。</p>
+        <div className="method-overview">
+          <p className="method-overview-label">Smart Study Englishの概要</p>
+          <p className="method-overview-copy">
+            学校の授業で使う英文も<br />
+            模試で出題される初見の英文も<br />
+            受験で出題される難しい英文も
+          </p>
+          <p className="method-overview-highlight">
+            左から右へネイティブのように<br />
+            スラスラ英文を読めるようになる
+          </p>
+          <p className="method-overview-project">英語の0→1プロジェクト</p>
+          <p className="method-overview-voice">
+            「自分でも、英語が読めた！」<br />
+            英語嫌いから、英語を得点源に！
+          </p>
+
+          <div className="method-overview-pillars">
+            <p>
+              <span>1</span>「読む」に特化したカリキュラム
+            </p>
+            <p>
+              <span>2</span>徹底的なサポート体制
+            </p>
           </div>
 
-          <div className="method-card">
-            <div className="method-card-num">02</div>
-            <div className="method-card-icon">
-              <svg viewBox="0 0 60 60" width="44" height="44">
-                <rect x="14" y="14" width="32" height="32" fill="none" stroke="#e9c267" strokeWidth="1.2" />
-                <line x1="14" y1="24" x2="46" y2="24" stroke="#e9c267" strokeWidth="1" />
-                <line x1="20" y1="32" x2="40" y2="32" stroke="#e9c267" strokeWidth="1" opacity="0.6" />
-                <line x1="20" y1="38" x2="40" y2="38" stroke="#e9c267" strokeWidth="1" opacity="0.6" />
-              </svg>
-            </div>
-            <span className="method-card-tag">PILLAR 02</span>
-            <h3>毎日のアウトプット<br />で定着</h3>
-            <p>毎日の課題提出で、その日のうちにフィードバック。「わかったつもり」を残さず、確実に身につける。</p>
-          </div>
+          <p className="method-overview-guarantee">
+            この2つであなたの英語の読み方を<br />
+            基礎から徹底的に固めていくことを保証します！
+          </p>
 
-          <div className="method-card">
-            <div className="method-card-num">03</div>
-            <div className="method-card-icon">
-              <svg viewBox="0 0 60 60" width="44" height="44">
-                <circle cx="30" cy="32" r="18" fill="none" stroke="#e9c267" strokeWidth="1.2" />
-                <line x1="30" y1="32" x2="30" y2="20" stroke="#e9c267" strokeWidth="1.5" />
-                <line x1="30" y1="32" x2="40" y2="36" stroke="#e9c267" strokeWidth="1.5" />
-                <line x1="22" y1="14" x2="38" y2="14" stroke="#e9c267" strokeWidth="1.5" />
-              </svg>
+          <div className="method-overview-media">
+            <figure className="method-overview-figure">
+              <img
+                src="assets/program-learning-contents.png"
+                alt="3つの学習コンテンツ"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>学習コンテンツ</figcaption>
+            </figure>
+
+            <div className="method-overview-plus" aria-hidden="true">
+              ＋
             </div>
-            <span className="method-card-tag">PILLAR 03</span>
-            <h3>45日で自走できる<br />状態へ</h3>
-            <p>プログラム終了時には、誰かに教わらなくても自分で読めるように。ゴールは「依存」ではなく「自走」です。</p>
+
+            <figure className="method-overview-figure">
+              <img
+                src="assets/program-support-system.png"
+                alt="徹底的なサポート体制"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>徹底的なサポート体制</figcaption>
+            </figure>
           </div>
         </div>
 

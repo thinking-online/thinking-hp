@@ -1,112 +1,85 @@
-/* Smart Study English — 3つの理由 + サポート4点（ナラティブ強化） */
+/* Smart Study English — 基礎のグラグラ + サポート4点（ナラティブ） */
 
 /* =====================================================
-   THREE REASONS — 英語が読めない「構造的理由」
+   FOUNDATION PITFALLS — 基礎がグラグラなのに…
 ===================================================== */
-function ThreeReasonsSection() {
-  const reasons = [
+function FoundationPitfallsSection() {
+  const pitfalls = [
     {
-      num: "01",
-      tag: "VOCAB",
-      title: "単語を「英和＝一対一」で丸暗記している",
-      lead: "小テストでは通っても、英文を読む力にはつながらない。",
-      body:
-        "command＝「命じる」と覚えても、文中では command of English（運用力）や has the command of（〜を見渡す）で意味がつながらない。英語を「読む」ための語彙力は、和訳リストの暗記では育ちません。",
-      pull: "丸暗記のままでは、一文の中で単語が「生きている意味」を取りこぼす。",
+      line1: "ひたすら英単語を",
+      line2: "毎日暗記頑張ってる",
     },
     {
-      num: "02",
-      tag: "GRAMMAR",
-      title: "文法を「ルールの暗記」だと思い込んでいる",
-      lead: "用法の分類を覚えても、長文の処理速度は上がらない。",
-      body:
-        "不定詞の3用法、関係詞の識別… ラベル貼りの暗記は、試験本番の初見英文では使えません。ネイティブが頭の中でしているのは「ルール当て」ではなく、文の骨格と意味の流れの把握です。",
-      pull: "「理解」の伴わない丸暗記は、読解の現場では無力化します。",
+      line1: "文法問題集を解いて",
+      line2: "文法の知識を入れる",
     },
     {
-      num: "03",
-      tag: "READING",
-      title: "「左から右に読む」方法を、誰も最初から教えてくれない",
-      lead: "日本語は構造が違う。だから英語は「別の読み方」が必要なのに。",
-      body:
-        "難しい語彙がなくても、意味が取れるかどうかは「読み方の型」で決まります。学校でも予備校でも、知識は積み上げられても「処理のフォーム」は放置されがち。だから努力の割に伸びない状態が続きます。",
-      pull: "知識の前に、脳の使い方の順番が逆転しているのです。",
+      line1: "長文演習をして",
+      line2: "英文に慣れようとする",
+    },
+    {
+      line1: "塾に通い授業を",
+      line2: "たくさん受けようとする",
+    },
+    {
+      line1: "学校の授業についていけず",
+      line2: "英文の訳を書き写すだけ",
     },
   ];
 
   return (
     <section
-      id="three-reasons"
-      className="sse-three-reasons theme-paper"
-      data-screen-label="Three Reasons"
+      id="foundation-pitfalls"
+      className="sse-foundation theme-paper"
+      data-screen-label="Foundation pitfalls"
     >
       <div className="wrap">
         <div className="section-head">
           <div className="section-num sse-narrative-num">III</div>
           <div>
-            <span className="eyebrow">THREE STRUCTURAL TRAPS</span>
+            <span className="eyebrow">SHAKY BASE</span>
             <h2 className="section-title">
-              あなたは悪くない。<br />
-              <em>英語が読めない、3つの理由。</em>
+              基礎がグラグラなのに、<br />
+              <em>こんなことしてませんか？</em>
             </h2>
             <p className="section-lead">
-              努力不足でも、センスの問題でもありません。<br />
-              日本の英語学習で「そもそも育たない設計」になっているだけです。
+              中学英単語で構成された英文ですらスラスラ読めない状態で、闇雲に努力をしている生徒が多くいます。
             </p>
           </div>
         </div>
 
-        <figure className="sse-three-hero-visual">
-          <img
-            src="assets/three-reasons-hero.png"
-            alt="英語が読めず悩む女子学生"
-            width="1024"
-            height="576"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption className="sse-three-hero-caption">
-            読めないのは才能不足ではない。多くは、
-            <strong>設計ミス</strong>で起きています。
-          </figcaption>
-        </figure>
-
-        <div className="sse-three-grid" role="list">
-          {reasons.map((r) => (
-            <article key={r.num} className="sse-three-card" role="listitem">
-              <div className="sse-three-card-top">
-                <span className="sse-three-num" aria-hidden="true">
-                  {r.num}
-                </span>
-                <span className="sse-three-tag">{r.tag}</span>
+        <ul className="sse-foundation-list" role="list">
+          {pitfalls.map((p, i) => (
+            <li key={i} className="sse-foundation-item" role="listitem">
+              <span className="sse-foundation-item-mark" aria-hidden="true">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div className="sse-foundation-item-body">
+                <span className="sse-foundation-line1">{p.line1}</span>
+                <span className="sse-foundation-line2">{p.line2}</span>
               </div>
-              <h3 className="sse-three-title">{r.title}</h3>
-              <p className="sse-three-lead">{r.lead}</p>
-              <p className="sse-three-body">{r.body}</p>
-              <p className="sse-three-pull">
-                <span className="sse-three-pull-mark" aria-hidden="true">
-                  →
-                </span>
-                {r.pull}
-              </p>
-            </article>
+            </li>
           ))}
-        </div>
+        </ul>
 
-        <div className="sse-three-bridge">
-          <div className="sse-three-bridge-line" aria-hidden="true" />
-          <p>
-            SSE は、この3つを一度に解体し、<strong>「読める脳のフォーム」</strong>
-            から入り直す45日間です。
+        <p className="sse-foundation-warn">
+          このままだと正直、<strong>受験は相当危険</strong>。
+        </p>
+
+        <div className="sse-foundation-to-why">
+          <span className="sse-foundation-to-why-arrow" aria-hidden="true">
+            ↓
+          </span>
+          <p className="sse-foundation-to-why-text">
+            では、その先の<strong>時間とお金の投資</strong>は、どこに流れていくのか。
           </p>
-          <div className="sse-three-bridge-line" aria-hidden="true" />
         </div>
       </div>
     </section>
   );
 }
 
-window.ThreeReasonsSection = ThreeReasonsSection;
+window.FoundationPitfallsSection = FoundationPitfallsSection;
 
 /* =====================================================
    SUPPORT FOUR — 悩み × 仕組みで完走させる

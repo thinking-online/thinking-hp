@@ -3,57 +3,71 @@
 const LEARNING_SYSTEMS = [
   {
     num: "01",
-    title: "構造理解・文章講義",
-    subtitle: "丸暗記ではなく、「核」で理解する。",
-    frame: "thumbs",
-    thumbnails: [
+    title: "文章講義",
+    subtitle: "脱・丸暗記で、文法のコアをつかむ。",
+    frame: "showcase",
+    showcaseVariant: "lecture",
+    image: "assets/learning-lecture-bunsho-detail.png",
+    imageAlt:
+      "文章講義の詳細。視覚で理解するオリジナル講義と、使役動詞・不定詞などの図解サンプル、3つの学習メリット",
+    imageWidth: 1024,
+    imageHeight: 768,
+    features: [
       {
-        src: "assets/lecture-thumb-causative.png",
-        alt: "使役動詞の核を完全理解（講義サムネイル）",
+        icon: "bulb",
+        title: "丸暗記しないで文法のコアを掴む！",
+        desc: "イメージで理解するから、忘れない！本質をつかんで応用力が身につきます。",
       },
       {
-        src: "assets/lecture-thumb-infinitive.png",
-        alt: "不定詞と動名詞の見分け方（講義サムネイル）",
+        icon: "book",
+        title: "前置詞も英文法も脱丸暗記！",
+        desc: "イメージでつながる学習法で、苦手な文法もスッと理解できます。",
       },
       {
-        src: "assets/lecture-thumb-comparison.png",
-        alt: "比較の核（講義サムネイル）",
+        icon: "palette",
+        title: "オリジナルイラストで英語がどんどん好きに！",
+        desc: "思わずクスッとするイラストで楽しく学べる！理解が深まり、学ぶことがもっと楽しくなります。",
       },
-    ],
-    points: [
-      { icon: "clock", label: "1本10分前後で要点だけ" },
-      { icon: "chat", label: "なぜその訳になるか説明できる" },
-      { icon: "shield", label: "初見文でも崩れにくい土台" },
     ],
   },
   {
     num: "02",
     title: "動画解説講義",
-    subtitle: "図解で、核から理解する。",
-    image: "assets/program-feature-video.png",
-    imageAlt: "動画講義の画面。講師が5文型の図解を解説している様子",
-    frame: "video",
-    points: [
-      { icon: "bulb", label: "図解でわかる" },
-      { icon: "list", label: "短く要点整理" },
-      { icon: "replay", label: "何度でも見返せる" },
+    subtitle: "脱丸暗記で、核から理解する。",
+    frame: "showcase",
+    showcaseVariant: "video",
+    image: "assets/learning-video-lecture-detail.png",
+    imageAlt:
+      "動画解説講義の詳細。図解ベースの講義画面と、脱丸暗記・10分以内・要点復習・何度でも見返せるの4つの特徴",
+    imageWidth: 1024,
+    imageHeight: 768,
+    features: [
+      { icon: "bulb", title: "脱丸暗記", desc: "丸暗記ではなく、核から理解" },
+      { icon: "clock", title: "1本10分以内", desc: "短いからスキマ時間で見やすい" },
+      { icon: "list", title: "要点だけ確認", desc: "必要なポイントをサッと復習" },
+      { icon: "replay", title: "何度でも見返せる", desc: "わからない所を自分のペースで反復" },
     ],
   },
   {
     num: "03",
     title: "電子教材",
     subtitle: "英語が読める生徒の脳内を可視化。",
-    badge: "実況中継のように、読むプロセスを見える化",
-    frame: "ebook",
-    image: "assets/program-feature-ebook-diagram.png",
-    imageAlt: "電子教材の構造図。英文の骨格と補足を色分けして1枚にまとめた解析",
-    ebookCaption: "▼ ここまでの解析を1枚で見る",
-    ebookNote:
-      "6つのステップで、左から右へと考えてきたことを構造図にまとめると、こうなります。色分けで見ると、骨格（メイン）と補足の関係が一気にクリアになります。",
-    points: [
-      { icon: "brain", label: "脳内プロセスを見える化" },
-      { icon: "structure", label: "構造で理解できる" },
-      { icon: "phone", label: "スマホでも確認できる" },
+    frame: "showcase",
+    showcaseVariant: "ebook",
+    image: "assets/learning-ebook-brain-steps.png",
+    imageAlt:
+      "電子教材の詳細。英語を読む6つのステップ（骨格・補足・意味・構造・背景・要点）と脳内イメージ図",
+    imageWidth: 1024,
+    imageHeight: 682,
+    showcaseFoot:
+      "英語を「なんとなく」読むのではなく、正しい順番で、正しく処理する。この6つのステップを身につけることで、英文は驚くほどスラスラ読めるようになります。",
+    steps: [
+      { num: "01", title: "骨格をつかむ", desc: "S・V・O・Mなど、骨格を瞬時につかむ" },
+      { num: "02", title: "補足をつかむ", desc: "修飾・補足情報を理解し、意味をつなげる" },
+      { num: "03", title: "意味を理解する", desc: "直訳ではなく、文全体の意味をつかむ" },
+      { num: "04", title: "構造を整理する", desc: "情報を整理し、論理的な構造をつくる" },
+      { num: "05", title: "背景をイメージする", desc: "場面や状況をイメージして理解を深める" },
+      { num: "06", title: "要点をつかむ", desc: "筆者が伝えたいこと・結論をつかむ" },
     ],
   },
 ];
@@ -122,6 +136,26 @@ function LearningPointIcon({ type }) {
         <svg {...common}>
           <rect x="8" y="4" width="8" height="16" rx="2" stroke="currentColor" strokeWidth="1.8" />
           <circle cx="12" cy="17" r="0.8" fill="currentColor" />
+        </svg>
+      );
+    case "book":
+      return (
+        <svg {...common}>
+          <path d="M6 6h6a2 2 0 0 1 2 2v12H8a2 2 0 0 0-2 2V6z" stroke="currentColor" strokeWidth="1.8" />
+          <path d="M8 6h8a2 2 0 0 1 2 2v12" stroke="currentColor" strokeWidth="1.8" />
+        </svg>
+      );
+    case "palette":
+      return (
+        <svg {...common}>
+          <path
+            d="M12 4c-4 0-7 2.5-7 6.5 0 2.2 1.2 4 3 4.8.6.3 1 .9 1 1.6v.1c0 .8.7 1.5 1.5 1.5H11c1.4 0 2.5-1.1 2.5-2.5 0-.5.2-1 .5-1.3.3-.4.5-.9.5-1.4C17 6.5 14.5 4 12 4z"
+            stroke="currentColor"
+            strokeWidth="1.8"
+          />
+          <circle cx="9" cy="9" r="0.9" fill="currentColor" />
+          <circle cx="14" cy="8" r="0.9" fill="currentColor" />
+          <circle cx="15" cy="12" r="0.9" fill="currentColor" />
         </svg>
       );
     default:
@@ -287,59 +321,99 @@ function LearningSystemCard({ item }) {
         ))}
       </div>
     );
-  } else if (item.frame === "ebook") {
+  } else if (item.frame === "showcase") {
     visual = (
-      <div className="learning-system-ebook">
-        <div className="learning-system-ebook-intro">
-          <p className="learning-system-ebook-caption">{item.ebookCaption}</p>
-          <p className="learning-system-ebook-note">{item.ebookNote}</p>
-        </div>
-        <div className="learning-system-visual learning-system-visual--ebook">
-          <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
-        </div>
+      <div className={`learning-system-showcase learning-system-showcase--${item.showcaseVariant}`}>
+        <figure className="learning-system-showcase-figure">
+          <img
+            src={item.image}
+            alt={item.imageAlt}
+            width={item.imageWidth}
+            height={item.imageHeight}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+
+        {item.features ? (
+          <ul className="learning-system-features" aria-label={`${item.title}の特徴`}>
+            {item.features.map((feature) => (
+              <li key={feature.title}>
+                <span className="learning-system-feature-icon">
+                  <LearningPointIcon type={feature.icon} />
+                </span>
+                <span className="learning-system-feature-copy">
+                  <strong>{feature.title}</strong>
+                  <span>{feature.desc}</span>
+                </span>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+
+        {item.steps ? (
+          <ol className="learning-system-steps" aria-label="英語を読む6つのステップ">
+            {item.steps.map((step) => (
+              <li key={step.num}>
+                <span className="learning-system-step-num">{step.num}</span>
+                <span className="learning-system-step-copy">
+                  <strong>{step.title}</strong>
+                  <span>{step.desc}</span>
+                </span>
+              </li>
+            ))}
+          </ol>
+        ) : null}
+
+        {item.showcaseFoot ? (
+          <p className="learning-system-showcase-foot">{item.showcaseFoot}</p>
+        ) : null}
       </div>
     );
   } else {
     visual = (
       <div className={`learning-system-visual learning-system-visual--${item.frame}`}>
         <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
-        {item.frame === "video" ? (
-          <div className="learning-system-player" aria-hidden="true">
-            <span className="learning-system-play" />
-            <span className="learning-system-progress">
-              <span />
-            </span>
-            <span className="learning-system-time">06:18 / 14:35</span>
-          </div>
-        ) : null}
       </div>
     );
   }
 
+  const isShowcase = item.frame === "showcase";
+
   return (
-    <article className={`learning-system-card${item.frame === "ebook" ? " learning-system-card--ebook" : ""}`}>
-      <div className="learning-system-head">
-        <span className="learning-system-spark" aria-hidden="true" />
-        <h4 className="learning-system-title">{item.title}</h4>
-        <span className="learning-system-spark learning-system-spark--right" aria-hidden="true" />
-      </div>
-      <p className="learning-system-subtitle">
-        <span className="learning-system-subline" aria-hidden="true" />
-        {item.subtitle}
-        <span className="learning-system-subline" aria-hidden="true" />
-      </p>
-      {item.badge ? <p className="learning-system-badge">{item.badge}</p> : null}
+    <article
+      className={`learning-system-card${isShowcase ? ` learning-system-card--showcase learning-system-card--showcase-${item.showcaseVariant}` : ""}`}
+    >
+      {isShowcase ? (
+        <h4 className="learning-system-sr-only">{item.title}</h4>
+      ) : (
+        <>
+          <div className="learning-system-head">
+            <span className="learning-system-spark" aria-hidden="true" />
+            <h4 className="learning-system-title">{item.title}</h4>
+            <span className="learning-system-spark learning-system-spark--right" aria-hidden="true" />
+          </div>
+          <p className="learning-system-subtitle">
+            <span className="learning-system-subline" aria-hidden="true" />
+            {item.subtitle}
+            <span className="learning-system-subline" aria-hidden="true" />
+          </p>
+          {item.badge ? <p className="learning-system-badge">{item.badge}</p> : null}
+        </>
+      )}
       {visual}
-      <ul className="learning-system-points">
-        {item.points.map((point) => (
-          <li key={point.label}>
-            <span className="learning-system-point-icon">
-              <LearningPointIcon type={point.icon} />
-            </span>
-            <span>{point.label}</span>
-          </li>
-        ))}
-      </ul>
+      {item.points ? (
+        <ul className="learning-system-points">
+          {item.points.map((point) => (
+            <li key={point.label}>
+              <span className="learning-system-point-icon">
+                <LearningPointIcon type={point.icon} />
+              </span>
+              <span>{point.label}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </article>
   );
 }

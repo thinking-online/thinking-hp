@@ -260,18 +260,9 @@ function RoutineSection() {
           ))}
         </div>
 
-        <div className="sse-routine-bridge">
-          <p className="sse-routine-bridge-lead">
-            タイムラインだけでは足りない。「続くかどうか」は<strong>不安の先回り</strong>で決まります。
-          </p>
-          <a href="#support-four" className="sse-routine-bridge-link">
-            4つの不安を、仕組みで潰す
-            <span className="arrow" aria-hidden="true">↓</span>
-          </a>
-          <p className="sse-routine-note">
-            だから<strong>2000名以上</strong>が、このリズムで完走してきました。
-          </p>
-        </div>
+        <p className="sse-routine-note">
+          だから<strong>2000名以上</strong>が、このリズムで完走してきました。
+        </p>
       </div>
     </section>
   );

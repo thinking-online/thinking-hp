@@ -1,11 +1,10 @@
 /* =========================================================
-   SSE — 95% フック / 基礎の罠 / サポート4点
+   SSE — 95% フック / 基礎の罠
 ========================================================= */
 
 #check,
 #compare,
-#foundation-pitfalls,
-#support-four {
+#foundation-pitfalls {
   scroll-margin-top: 72px;
 }
 
@@ -591,168 +590,7 @@
   }
 }
 
-/* ----- ROUTINE → SUPPORT bridge ----- */
-.sse-routine-bridge {
-  margin-top: 8px;
-  padding: clamp(22px, 4vw, 28px);
+.sse-routine .sse-routine-note {
+  margin: clamp(24px, 4vw, 32px) 0 0;
   text-align: center;
-  background: linear-gradient(180deg, rgba(10, 21, 48, 0.04) 0%, rgba(217, 169, 66, 0.08) 100%);
-  border: 1px solid rgba(10, 21, 48, 0.08);
-  border-radius: 8px;
-}
-
-.sse-routine-bridge-lead {
-  margin: 0 0 12px;
-  font-size: 14px;
-  line-height: 1.75;
-  color: #2a3550;
-}
-
-.sse-routine-bridge-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 22px;
-  font-family: var(--sans);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: #1a1208;
-  background: linear-gradient(180deg, var(--gold-300) 0%, var(--gold-500) 100%);
-  border: 1px solid var(--gold-300);
-  border-radius: 999px;
-  box-shadow: 0 10px 28px -8px rgba(184, 135, 40, 0.45);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.sse-routine-bridge-link:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 14px 32px -8px rgba(184, 135, 40, 0.55);
-}
-
-.sse-routine-bridge-link .arrow {
-  font-size: 16px;
-  font-weight: 800;
-}
-
-.sse-routine-bridge + .sse-routine-note,
-.sse-routine-bridge .sse-routine-note {
-  margin-top: 16px;
-  margin-bottom: 0;
-}
-
-/* ----- SUPPORT FOUR ----- */
-.sse-support-four {
-  padding: clamp(52px, 8vw, 88px) 0;
-}
-
-.sse-support-four .section-title,
-.sse-support-four .section-lead {
-  color: var(--text-100);
-}
-
-.sse-support-four .section-lead {
-  color: var(--text-200);
-}
-
-.sse-support-four .section-lead strong {
-  color: var(--gold-300);
-}
-
-.sse-support-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(14px, 2vw, 20px);
-  margin-top: 8px;
-}
-
-.sse-support-card {
-  display: flex;
-  flex-direction: column;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(217, 169, 66, 0.22);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sse-support-card:hover {
-  border-color: rgba(245, 217, 138, 0.45);
-  box-shadow: 0 20px 50px -24px rgba(0, 0, 0, 0.45);
-}
-
-.sse-support-card-head {
-  padding: 12px 16px 10px;
-  background: linear-gradient(180deg, rgba(200, 54, 74, 0.2) 0%, rgba(10, 21, 48, 0.35) 100%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.sse-support-worry-label {
-  display: block;
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.16em;
-  color: var(--crimson-soft);
-  margin-bottom: 4px;
-}
-
-.sse-support-worry {
-  font-family: var(--serif);
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--text-100);
-  letter-spacing: 0.02em;
-}
-
-.sse-support-solution {
-  flex: 1;
-  padding: 18px 16px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.sse-support-icon-wrap {
-  color: var(--gold-400);
-  margin-bottom: 4px;
-}
-
-.sse-support-solution h3 {
-  font-size: clamp(16px, 2.4vw, 18px);
-  margin: 0;
-  color: var(--gold-300);
-  letter-spacing: 0.02em;
-}
-
-.sse-support-solution p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 1.75;
-  color: var(--text-300);
-}
-
-.sse-support-foot {
-  margin: clamp(28px, 4vw, 40px) 0 0;
-  text-align: center;
-  font-family: var(--serif);
-  font-size: clamp(15px, 3.2vw, 17px);
-  line-height: 1.8;
-  color: var(--text-200);
-}
-
-.sse-support-foot strong {
-  color: var(--gold-300);
-  font-weight: 700;
-}
-
-@media (max-width: 720px) {
-  .sse-support-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-.sse-support-four .section-title em {
-  font-style: normal;
-  color: var(--gold-300);
-  background: linear-gradient(180deg, transparent 62%, rgba(217, 169, 66, 0.35) 62%);
 }

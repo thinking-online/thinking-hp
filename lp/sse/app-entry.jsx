@@ -37,7 +37,6 @@ function App() {
       <RoadmapSection />
       <DaysSection />
       <RoutineSection />
-      <SupportFourSection />
       <ProgramContentsSection />
       <PriceSection />
       <GuaranteeSection />

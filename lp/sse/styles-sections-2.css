@@ -411,9 +411,10 @@
 /* 3つの学習コンテンツ（カード型） */
 .learning-systems-showcase {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 2vw, 22px);
-  margin-bottom: 28px;
+  grid-template-columns: 1fr;
+  gap: clamp(18px, 3vw, 28px);
+  max-width: 920px;
+  margin: 0 auto 28px;
 }
 
 .learning-system-card {
@@ -574,92 +575,197 @@
   object-position: center center;
 }
 
-/* 電子教材 — 構造図 */
-.learning-system-card--ebook .learning-system-visual {
-  border-color: rgba(230, 126, 81, 0.35);
+/* 詳細インフォグラフィック（電子教材・動画講義） */
+.learning-system-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.learning-system-ebook-intro {
+.learning-system-card--showcase {
+  padding: clamp(12px, 2vw, 18px);
+}
+
+.learning-system-card--showcase::before {
+  display: none;
+}
+
+.learning-system-showcase {
   position: relative;
   z-index: 1;
-  margin-top: 14px;
-  padding: 12px 14px;
-  background: linear-gradient(180deg, #faf6ee 0%, #f3ebdc 100%);
-  border: 1px solid rgba(230, 126, 81, 0.25);
-  border-radius: 8px 8px 0 0;
 }
 
-.learning-system-ebook-caption {
+.learning-system-showcase-figure {
   margin: 0;
-  font-size: 13px;
-  font-weight: 700;
-  color: #9a4e28;
-  line-height: 1.5;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid rgba(72, 132, 188, 0.2);
+  box-shadow: 0 14px 36px -22px rgba(10, 21, 48, 0.28);
 }
 
-.learning-system-ebook-note {
-  margin: 8px 0 0;
+.learning-system-showcase-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.learning-system-card--showcase-ebook .learning-system-showcase-figure {
+  border-color: rgba(230, 126, 81, 0.28);
+}
+
+.learning-system-features {
+  list-style: none;
+  margin: clamp(14px, 2.5vw, 20px) 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.learning-system-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 12px 11px;
+  background: #fff;
+  border: 1px solid rgba(72, 132, 188, 0.22);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px -16px rgba(31, 79, 134, 0.35);
+}
+
+.learning-system-feature-icon {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #2f6ea8;
+  background: linear-gradient(180deg, #e8f4fc, #d4e9f8);
+}
+
+.learning-system-feature-copy {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
   font-size: 12px;
-  line-height: 1.75;
+  line-height: 1.5;
+  color: #3a4a62;
+}
+
+.learning-system-feature-copy strong {
+  font-size: 13px;
+  font-weight: 800;
+  color: #1f4f86;
+  letter-spacing: 0.02em;
+}
+
+.learning-system-steps {
+  list-style: none;
+  margin: clamp(14px, 2.5vw, 20px) 0 0;
+  padding: 0;
+  display: none;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.learning-system-step-num {
+  flex: 0 0 auto;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #fff;
+  background: linear-gradient(135deg, #e67e51, #d35400);
+  border-radius: 6px;
+  padding: 4px 8px;
+  line-height: 1.2;
+}
+
+.learning-system-showcase--ebook .learning-system-step-num {
+  background: linear-gradient(135deg, #e67e51, #c0392b);
+}
+
+.learning-system-steps li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(230, 126, 81, 0.22);
+  border-radius: 8px;
+}
+
+.learning-system-step-copy {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.learning-system-step-copy strong {
+  font-size: 13px;
+  color: #9a4e28;
+  letter-spacing: 0.02em;
+}
+
+.learning-system-step-copy span {
+  font-size: 12px;
+  line-height: 1.6;
   color: #4a4d5e;
 }
 
-.learning-system-visual--ebook {
-  margin-top: 0;
-  border-radius: 0 0 10px 10px;
-  border-top: none;
+.learning-system-showcase-foot {
+  margin: clamp(14px, 2.5vw, 18px) 0 0;
+  padding: 12px 14px;
+  font-size: clamp(12px, 1.4vw, 14px);
+  line-height: 1.75;
+  color: #4a4d5e;
+  background: linear-gradient(180deg, #fff9e8 0%, #fff4d6 100%);
+  border: 1px solid rgba(230, 126, 81, 0.25);
+  border-radius: 10px;
 }
 
-.learning-system-visual--ebook img {
-  object-fit: contain;
-  object-position: top center;
-  min-height: 0;
-  background: #fff;
+.learning-system-showcase-foot::before {
+  content: "💡 ";
 }
 
-.learning-system-player {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 10px;
-  background: linear-gradient(180deg, transparent, rgba(8, 18, 40, 0.72));
+@media (min-width: 901px) {
+  .learning-system-showcase--video .learning-system-features {
+    display: none;
+  }
 }
 
-.learning-system-play {
-  width: 0;
-  height: 0;
-  border-top: 6px solid transparent;
-  border-bottom: 6px solid transparent;
-  border-left: 10px solid #fff;
-}
+@media (max-width: 720px) {
+  .learning-system-showcase-figure {
+    border-radius: 10px;
+  }
 
-.learning-system-progress {
-  display: block;
-  height: 4px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.25);
-  overflow: hidden;
-}
+  .learning-system-showcase--ebook .learning-system-steps {
+    display: grid;
+  }
 
-.learning-system-progress span {
-  display: block;
-  width: 42%;
-  height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #6eb5ea, #3f86c4);
-}
+  .learning-system-features {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
 
-.learning-system-time {
-  font-family: var(--mono);
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.9);
-  letter-spacing: 0.04em;
-  white-space: nowrap;
+  .learning-system-features li,
+  .learning-system-steps li {
+    padding: 11px 12px;
+  }
+
+  .learning-system-feature-copy,
+  .learning-system-step-copy span {
+    font-size: 13px;
+  }
 }
 
 .learning-system-points {
@@ -996,6 +1102,10 @@
   .learning-system-thumbs {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .learning-system-showcase--video .learning-system-features {
+    display: grid;
   }
 
   .support-worry-flows {

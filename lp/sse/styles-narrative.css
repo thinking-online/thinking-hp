@@ -326,6 +326,7 @@
 }
 
 .sse-foundation-item {
+  position: relative;
   display: flex;
   align-items: stretch;
   gap: clamp(14px, 2.5vw, 20px);
@@ -338,6 +339,128 @@
     0 16px 40px -24px rgba(10, 21, 48, 0.16),
     0 0 0 1px rgba(217, 169, 66, 0.1);
   border-left: 4px solid rgba(200, 54, 74, 0.55);
+  overflow: hidden;
+  transition:
+    opacity 0.45s ease,
+    filter 0.45s ease,
+    border-color 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.sse-foundation-item.is-crossed {
+  opacity: 0.78;
+  filter: grayscale(0.15);
+  border-left-color: rgba(200, 54, 74, 0.85);
+  box-shadow:
+    0 12px 28px -20px rgba(200, 54, 74, 0.28),
+    inset 0 0 0 1px rgba(200, 54, 74, 0.12);
+}
+
+.sse-foundation-item.is-crossed .sse-foundation-line1,
+.sse-foundation-item.is-crossed .sse-foundation-line2 {
+  opacity: 0.55;
+  text-decoration: line-through;
+  text-decoration-color: rgba(200, 54, 74, 0.55);
+  text-decoration-thickness: 2px;
+}
+
+.sse-foundation-item.is-crossed .sse-foundation-item-mark {
+  opacity: 0.45;
+}
+
+.sse-foundation-cross {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(200, 54, 74, 0.06) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(200, 54, 74, 0.08) 100%
+  );
+}
+
+.sse-foundation-item.is-crossed .sse-foundation-cross {
+  opacity: 1;
+  animation: sseFoundationCrossReveal 0.55s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+.sse-foundation-cross svg {
+  width: min(58%, 168px);
+  height: auto;
+  filter: drop-shadow(0 4px 14px rgba(200, 54, 74, 0.35));
+  transform: scale(0.72) rotate(-8deg);
+}
+
+.sse-foundation-item.is-crossed .sse-foundation-cross svg {
+  animation: sseFoundationCrossStamp 0.5s cubic-bezier(0.34, 1.45, 0.64, 1) forwards;
+}
+
+.sse-foundation-cross-line {
+  fill: none;
+  stroke: #c8364a;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 120;
+  stroke-dashoffset: 120;
+}
+
+.sse-foundation-item.is-crossed .sse-foundation-cross-line-a {
+  animation: sseFoundationCrossDraw 0.38s cubic-bezier(0.22, 0.61, 0.36, 1) 0.06s forwards;
+}
+
+.sse-foundation-item.is-crossed .sse-foundation-cross-line-b {
+  animation: sseFoundationCrossDraw 0.38s cubic-bezier(0.22, 0.61, 0.36, 1) 0.18s forwards;
+}
+
+@keyframes sseFoundationCrossReveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes sseFoundationCrossStamp {
+  0% {
+    transform: scale(1.35) rotate(-14deg);
+    opacity: 0;
+  }
+  55% {
+    transform: scale(0.94) rotate(-4deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(-6deg);
+    opacity: 1;
+  }
+}
+
+@keyframes sseFoundationCrossDraw {
+  to { stroke-dashoffset: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sse-foundation-item,
+  .sse-foundation-cross,
+  .sse-foundation-cross svg,
+  .sse-foundation-cross-line {
+    animation: none !important;
+    transition: none;
+  }
+
+  .sse-foundation-item.is-crossed .sse-foundation-cross {
+    opacity: 1;
+  }
+
+  .sse-foundation-item.is-crossed .sse-foundation-cross svg {
+    transform: scale(1) rotate(-6deg);
+  }
+
+  .sse-foundation-item.is-crossed .sse-foundation-cross-line {
+    stroke-dashoffset: 0;
+  }
 }
 
 .sse-foundation-item-mark {
@@ -422,6 +545,16 @@
   font-weight: 700;
 }
 
+@media (min-width: 721px) {
+  .sse-foundation-cross svg {
+    width: min(52%, 200px);
+  }
+
+  .sse-foundation-cross-line {
+    stroke-width: 11;
+  }
+}
+
 @media (max-width: 520px) {
   .sse-foundation-item {
     flex-wrap: wrap;
@@ -431,6 +564,10 @@
     width: 100%;
     text-align: left;
     align-self: flex-start;
+  }
+
+  .sse-foundation-cross svg {
+    width: min(64%, 140px);
   }
 }
 

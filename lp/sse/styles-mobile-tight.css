@@ -151,6 +151,9 @@
 
   .voices-strip {
     margin-top: 0;
+    margin-left: -16px;
+    margin-right: -16px;
+    width: calc(100% + 32px);
   }
 
   .voices-swipe-hint {

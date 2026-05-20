@@ -291,19 +291,52 @@ function SelfCheckSection() {
    SECTION: WHY (バケツの穴)
 ===================================================== */
 function WhySection() {
-  const [pour, setPour] = useState(false);
+  const [progress, setProgress] = useState(0);
+  const sectionRef = useRef(null);
   const bucketRef = useRef(null);
 
   useEffect(() => {
-    const obs = new IntersectionObserver(([e]) => {
-      if (e.isIntersecting) setPour(true);
-    }, { threshold: 0.3 });
-    if (bucketRef.current) obs.observe(bucketRef.current);
-    return () => obs.disconnect();
+    const update = () => {
+      const section = sectionRef.current;
+      const bucket = bucketRef.current;
+      if (!section || !bucket) return;
+
+      const sRect = section.getBoundingClientRect();
+      const bRect = bucket.getBoundingClientRect();
+      const vh = window.innerHeight;
+
+      const start = vh * 0.88;
+      const end = vh * 0.12;
+      const span = Math.max(1, start - end);
+      const anchor = bRect.top + bRect.height * 0.42;
+      const raw = (start - anchor) / span;
+      const p = Math.max(0, Math.min(1, raw));
+
+      setProgress(p);
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
   }, []);
 
+  const pour = progress > 0.04;
+  const overflow = progress > 0.52;
+  const waterH = Math.round(118 * progress);
+  const waterY = 198 - waterH;
+
   return (
-    <section id="why" className="why-section theme-deep-crimson" data-screen-label="03 Why">
+    <section
+      id="why"
+      ref={sectionRef}
+      className={`why-section theme-deep-crimson${overflow ? " is-overflowing" : ""}`}
+      data-screen-label="03 Why"
+      style={{ "--bucket-p": progress }}
+    >
       <div className="wrap">
         <div className="section-head">
           <div className="section-num">05</div>
@@ -344,39 +377,82 @@ function WhySection() {
               ))}
             </div>
 
-            <svg viewBox="0 0 220 220" className="bucket-svg">
+            <svg viewBox="0 0 220 220" className="bucket-svg" aria-hidden="true">
               <defs>
-                <linearGradient id="bucketBody" x1="0" y1="0" x2="0" y2="1">
+                <linearGradient id="whyBucketBody" x1="0" y1="0" x2="0" y2="1">
                   <stop offset="0%" stopColor="#1a2c66" />
                   <stop offset="100%" stopColor="#0a1530" />
                 </linearGradient>
+                <linearGradient id="whyBucketWater" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stopColor="rgba(76, 145, 220, 0.95)" />
+                  <stop offset="100%" stopColor="rgba(42, 95, 168, 0.9)" />
+                </linearGradient>
+                <clipPath id="whyBucketClip">
+                  <path d="M44 64 L 62 196 L 158 196 L 176 64 Z" />
+                </clipPath>
               </defs>
-              <path d="M40 60 L 60 200 L 160 200 L 180 60 Z"
-                fill="url(#bucketBody)"
+              <path
+                d="M40 60 L 60 200 L 160 200 L 180 60 Z"
+                fill="url(#whyBucketBody)"
                 stroke="rgba(232,194,103,0.6)"
-                strokeWidth="1.5" />
-              <ellipse cx="110" cy="60" rx="70" ry="10" fill="rgba(232,194,103,0.1)" stroke="rgba(232,194,103,0.6)" strokeWidth="1.5" />
-              {/* holes */}
+                strokeWidth="1.5"
+              />
+              <g clipPath="url(#whyBucketClip)">
+                {waterH > 0 && (
+                  <rect
+                    className="bucket-water-fill"
+                    x="52"
+                    y={waterY}
+                    width="116"
+                    height={waterH}
+                    fill="url(#whyBucketWater)"
+                  />
+                )}
+              </g>
+              <ellipse
+                cx="110"
+                cy="60"
+                rx="70"
+                ry="10"
+                fill="rgba(232,194,103,0.1)"
+                stroke="rgba(232,194,103,0.6)"
+                strokeWidth="1.5"
+              />
+              {overflow && (
+                <ellipse
+                  className="bucket-rim-bulge"
+                  cx="110"
+                  cy="58"
+                  rx={52 + progress * 18}
+                  ry={8 + progress * 5}
+                  fill="rgba(76, 145, 220, 0.55)"
+                />
+              )}
               <g className="hole-group">
                 <circle cx="80" cy="120" r="5" fill="#0a1530" stroke="#c8364a" strokeWidth="1.5" />
                 <circle cx="120" cy="150" r="5" fill="#0a1530" stroke="#c8364a" strokeWidth="1.5" />
                 <circle cx="145" cy="105" r="5" fill="#0a1530" stroke="#c8364a" strokeWidth="1.5" />
               </g>
-              {/* leaks */}
               {pour && (
                 <g className="leak-group">
-                  <line x1="80" y1="125" x2="80" y2="220" stroke="#c8364a" strokeWidth="1" strokeDasharray="2 3" opacity="0.7">
+                  <line x1="80" y1="125" x2="80" y2="220" stroke="#4a90d9" strokeWidth="2" strokeDasharray="3 4" opacity={0.5 + progress * 0.4}>
                     <animate attributeName="stroke-dashoffset" values="0;-10" dur="0.8s" repeatCount="indefinite" />
                   </line>
-                  <line x1="120" y1="155" x2="120" y2="220" stroke="#c8364a" strokeWidth="1" strokeDasharray="2 3" opacity="0.7">
+                  <line x1="120" y1="155" x2="120" y2="220" stroke="#4a90d9" strokeWidth="2" strokeDasharray="3 4" opacity={0.5 + progress * 0.4}>
                     <animate attributeName="stroke-dashoffset" values="0;-10" dur="0.9s" repeatCount="indefinite" />
                   </line>
-                  <line x1="145" y1="110" x2="145" y2="220" stroke="#c8364a" strokeWidth="1" strokeDasharray="2 3" opacity="0.6">
+                  <line x1="145" y1="110" x2="145" y2="220" stroke="#4a90d9" strokeWidth="2" strokeDasharray="3 4" opacity={0.45 + progress * 0.4}>
                     <animate attributeName="stroke-dashoffset" values="0;-10" dur="0.7s" repeatCount="indefinite" />
                   </line>
                 </g>
               )}
             </svg>
+
+            <div className="bucket-rim-overflow" aria-hidden="true">
+              <span className="bucket-overflow-stream bucket-overflow-stream--l" />
+              <span className="bucket-overflow-stream bucket-overflow-stream--c" />
+              <span className="bucket-overflow-stream bucket-overflow-stream--r" />
+            </div>
 
             <div className="bucket-label">
               <span>そのバケツ、<br />穴が空いている。</span>
@@ -409,6 +485,15 @@ function WhySection() {
               </li>
             </ol>
           </div>
+        </div>
+
+        <div className="bucket-spill-zone" aria-hidden="true">
+          <div className="bucket-cascade-main" />
+          {[0, 1, 2, 3, 4, 5].map((i) => (
+            <span key={i} className={`bucket-splash-drop bucket-splash-drop--${i + 1}`} />
+          ))}
+          <div className="bucket-puddle" />
+          <div className="bucket-puddle-ripple" />
         </div>
 
         <div className="why-conclude">

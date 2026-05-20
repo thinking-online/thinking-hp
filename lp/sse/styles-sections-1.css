@@ -421,15 +421,23 @@
   100% { opacity: 0; transform: translateY(52px); }
 }
 
-/* 水面のゆらぎ */
+/* バケツ内の水が減っていく（底基準で縮む） */
 .bucket-water-group {
-  animation: bucketWaterBob 2.6s ease-in-out infinite;
-  transform-origin: 110px 130px;
+  transform-origin: 110px 194px;
+  transform: scaleY(1);
+  animation: bucketWaterDrain 4.8s ease-in forwards;
+  animation-delay: 0.55s;
 }
 
-@keyframes bucketWaterBob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
+@keyframes bucketWaterDrain {
+  0% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(0.1);
+    opacity: 0.4;
+  }
 }
 
 /* 穴からの漏れ */
@@ -454,14 +462,14 @@
   100% { stroke-dashoffset: 0; opacity: 0.35; }
 }
 
-/* 床の水たまり */
+/* 床の水たまり（漏れた分がたまる） */
 .bucket-puddle-svg {
   fill: rgba(168, 204, 232, 0.22);
   transform-origin: 110px 248px;
   transform: scale(0.35);
   opacity: 0;
-  animation: bucketPuddleGrow 3s ease-out forwards;
-  animation-delay: 0.8s;
+  animation: bucketPuddleGrow 4.5s ease-out forwards;
+  animation-delay: 0.7s;
 }
 
 @keyframes bucketPuddleGrow {
@@ -479,7 +487,7 @@
   opacity: 0;
   transform: translateY(6px);
   animation: bucketLabelIn 0.7s ease forwards;
-  animation-delay: 2.2s;
+  animation-delay: 4.6s;
 }
 
 @keyframes bucketLabelIn {
@@ -502,6 +510,11 @@
   .bucket-viz.is-active .bucket-leak {
     stroke-dashoffset: 0;
     opacity: 0.45;
+  }
+
+  .bucket-viz.is-active .bucket-water-group {
+    transform: scaleY(0.1);
+    opacity: 0.4;
   }
 
   .bucket-viz.is-active .bucket-puddle-svg {

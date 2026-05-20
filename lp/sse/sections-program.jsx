@@ -1,5 +1,159 @@
 /* Smart Study English — program & 45-day design */
 
+const LEARNING_SYSTEMS = [
+  {
+    num: "01",
+    title: "構造理解・文章講義",
+    subtitle: "丸暗記ではなく、「核」で理解する。",
+    image: "assets/program-feature-lecture.png",
+    imageAlt: "文章講義の解析シート。英文の骨格と補足を色分けして可視化",
+    frame: "sheet",
+    points: [
+      { icon: "clock", label: "1本10分前後で要点だけ" },
+      { icon: "chat", label: "なぜその訳になるか説明できる" },
+      { icon: "shield", label: "初見文でも崩れにくい土台" },
+    ],
+  },
+  {
+    num: "02",
+    title: "動画解説講義",
+    subtitle: "図解で、核から理解する。",
+    image: "assets/program-feature-video.png",
+    imageAlt: "動画講義の画面。講師が5文型の図解を解説している様子",
+    frame: "video",
+    points: [
+      { icon: "bulb", label: "図解でわかる" },
+      { icon: "list", label: "短く要点整理" },
+      { icon: "replay", label: "何度でも見返せる" },
+    ],
+  },
+  {
+    num: "03",
+    title: "電子教材",
+    subtitle: "英語が読める生徒の脳内を可視化。",
+    badge: "実況中継のように、読むプロセスを見える化",
+    image: "assets/program-feature-ebook.png",
+    imageAlt: "電子教材の画面。タブレットとスマホで英文の構造解析を表示",
+    frame: "device",
+    points: [
+      { icon: "brain", label: "脳内プロセスを見える化" },
+      { icon: "structure", label: "構造で理解できる" },
+      { icon: "phone", label: "スマホでも確認できる" },
+    ],
+  },
+];
+
+function LearningPointIcon({ type }) {
+  const common = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", "aria-hidden": true };
+  switch (type) {
+    case "clock":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.8" />
+          <path d="M12 8v4l3 2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+      );
+    case "chat":
+      return (
+        <svg {...common}>
+          <path d="M6 8h12v8H10l-4 3V8z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+        </svg>
+      );
+    case "shield":
+      return (
+        <svg {...common}>
+          <path d="M12 4l7 3v5c0 4.2-3 6.8-7 8-4-1.2-7-3.8-7-8V7l7-3z" stroke="currentColor" strokeWidth="1.8" />
+        </svg>
+      );
+    case "bulb":
+      return (
+        <svg {...common}>
+          <path d="M9 18h6M10 21h4" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          <path d="M12 3a6 6 0 0 1 3.5 10.8V16H8.5v-2.2A6 6 0 0 1 12 3z" stroke="currentColor" strokeWidth="1.8" />
+        </svg>
+      );
+    case "list":
+      return (
+        <svg {...common}>
+          <path d="M8 7h11M8 12h11M8 17h11" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+          <circle cx="5" cy="7" r="1" fill="currentColor" />
+          <circle cx="5" cy="12" r="1" fill="currentColor" />
+          <circle cx="5" cy="17" r="1" fill="currentColor" />
+        </svg>
+      );
+    case "replay":
+      return (
+        <svg {...common}>
+          <path d="M8 8H5v3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M5 11a7 7 0 1 1 2 5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+        </svg>
+      );
+    case "brain":
+      return (
+        <svg {...common}>
+          <path d="M8 10a3 3 0 0 1 6 0 3 3 0 0 1 6 0c0 3-2 5-6 6-4-1-6-3-6-6z" stroke="currentColor" strokeWidth="1.8" />
+        </svg>
+      );
+    case "structure":
+      return (
+        <svg {...common}>
+          <rect x="5" y="5" width="6" height="6" rx="1" stroke="currentColor" strokeWidth="1.8" />
+          <rect x="13" y="5" width="6" height="6" rx="1" stroke="currentColor" strokeWidth="1.8" />
+          <rect x="9" y="13" width="6" height="6" rx="1" stroke="currentColor" strokeWidth="1.8" />
+        </svg>
+      );
+    case "phone":
+      return (
+        <svg {...common}>
+          <rect x="8" y="4" width="8" height="16" rx="2" stroke="currentColor" strokeWidth="1.8" />
+          <circle cx="12" cy="17" r="0.8" fill="currentColor" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
+function LearningSystemCard({ item }) {
+  return (
+    <article className="learning-system-card">
+      <div className="learning-system-head">
+        <span className="learning-system-spark" aria-hidden="true" />
+        <h4 className="learning-system-title">{item.title}</h4>
+        <span className="learning-system-spark learning-system-spark--right" aria-hidden="true" />
+      </div>
+      <p className="learning-system-subtitle">
+        <span className="learning-system-subline" aria-hidden="true" />
+        {item.subtitle}
+        <span className="learning-system-subline" aria-hidden="true" />
+      </p>
+      {item.badge ? <p className="learning-system-badge">{item.badge}</p> : null}
+      <div className={`learning-system-visual learning-system-visual--${item.frame}`}>
+        <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
+        {item.frame === "video" ? (
+          <div className="learning-system-player" aria-hidden="true">
+            <span className="learning-system-play" />
+            <span className="learning-system-progress">
+              <span />
+            </span>
+            <span className="learning-system-time">06:18 / 14:35</span>
+          </div>
+        ) : null}
+      </div>
+      <ul className="learning-system-points">
+        {item.points.map((point) => (
+          <li key={point.label}>
+            <span className="learning-system-point-icon">
+              <LearningPointIcon type={point.icon} />
+            </span>
+            <span>{point.label}</span>
+          </li>
+        ))}
+      </ul>
+    </article>
+  );
+}
+
 /* =====================================================
    SECTION: SSE METHOD (3要素)
 ===================================================== */
@@ -50,31 +204,15 @@ function MethodSection() {
             基礎から徹底的に固めていくことを保証します！
           </p>
 
-          <div className="method-overview-media">
-            <figure className="method-overview-figure">
-              <img
-                src="assets/program-learning-contents.png"
-                alt="3つの学習コンテンツ"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>学習コンテンツ</figcaption>
-            </figure>
-
-            <div className="method-overview-plus" aria-hidden="true">
-              ＋
-            </div>
-
-            <figure className="method-overview-figure">
-              <img
-                src="assets/program-support-system.png"
-                alt="徹底的なサポート体制"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>徹底的なサポート体制</figcaption>
-            </figure>
-          </div>
+          <figure className="method-overview-figure method-overview-figure--solo">
+            <img
+              src="assets/program-support-system.png"
+              alt="徹底的なサポート体制"
+              loading="lazy"
+              decoding="async"
+            />
+            <figcaption>徹底的なサポート体制</figcaption>
+          </figure>
         </div>
 
         {/* Program contents */}
@@ -84,46 +222,10 @@ function MethodSection() {
             <h3 className="contents-title">矯正のための<em>3要素</em>と、自走を支える<em>サポート体制</em></h3>
           </div>
 
-          <div className="contents-grid">
-            <div className="contents-card">
-              <span className="contents-num">▢ 01</span>
-              <h4>構造理解・文章講義</h4>
-              <p>
-                「単語の意味を足し算する読み方」を卒業し、英語を左から理解するための土台をつくる講義です。
-              </p>
-              <ul className="contents-points">
-                <li>1本10分前後。短時間で要点だけを吸収できる</li>
-                <li>前置詞・助動詞・不定詞・関係詞を丸暗記ではなく「核」で理解</li>
-                <li>「なぜその訳になるのか」が自分の言葉で説明できるようになる</li>
-                <li>文法知識が読解で使える知識に変わり、初見文でも崩れにくくなる</li>
-              </ul>
-            </div>
-            <div className="contents-card">
-              <span className="contents-num">▶ 02</span>
-              <h4>50本以上の映像講義</h4>
-              <p>
-                文章講義で学んだルールを、実際の英文で「どう処理するか」まで視覚的に落とし込むパートです。
-              </p>
-              <ul className="contents-points">
-                <li>中学レベルから入試レベルへ段階的にレベルアップ</li>
-                <li>主語・動詞・修飾のつながりを、画面で追いながら理解できる</li>
-                <li>直訳と意訳の切り替え方まで学べるので和訳力も伸びる</li>
-                <li>繰り返し視聴で読み方のフォームを体に定着させられる</li>
-              </ul>
-            </div>
-            <div className="contents-card">
-              <span className="contents-num">✏ 03</span>
-              <h4>電子教材・実践ワーク</h4>
-              <p>
-                スマホ/タブレットで進められる電子教材と提出ワークで、「わかったつもり」をゼロにします。
-              </p>
-              <ul className="contents-points">
-                <li>毎日の課題でインプット直後にアウトプットできる</li>
-                <li>提出で理解度が可視化され、弱点を放置しない</li>
-                <li>忙しい日でもスキマ時間で進められるから継続しやすい</li>
-                <li>講義と連動しているので、復習の迷子にならない</li>
-              </ul>
-            </div>
+          <div className="learning-systems-showcase">
+            {LEARNING_SYSTEMS.map((item) => (
+              <LearningSystemCard key={item.num} item={item} />
+            ))}
           </div>
 
           <div className="support-row">

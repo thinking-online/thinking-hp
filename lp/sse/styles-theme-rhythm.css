@@ -178,6 +178,26 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
 
 .theme-paper .contents-title { color: #0a1530; }
 .theme-paper .contents-title em { background: linear-gradient(180deg, transparent 64%, rgba(217,169,66,0.4) 64%); }
+
+.theme-paper .learning-system-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f4f9fd 100%);
+  border-color: rgba(72, 132, 188, 0.24);
+  box-shadow: 0 18px 36px -24px rgba(10, 21, 48, 0.22);
+}
+.theme-paper .learning-system-title { color: #1f4f86; }
+.theme-paper .learning-system-subtitle { color: #3a4a62; }
+.theme-paper .learning-system-badge {
+  color: #1f4f86;
+  background: rgba(168, 210, 240, 0.35);
+  border-color: rgba(72, 132, 188, 0.28);
+}
+.theme-paper .learning-system-points li {
+  color: #1a3358;
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(72, 132, 188, 0.2);
+}
+.theme-paper .learning-system-point-icon { color: #2f6ea8; }
+
 .theme-paper .contents-card {
   background: #ffffff;
   border: 1px solid rgba(10,21,48,0.08);

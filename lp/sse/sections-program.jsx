@@ -114,6 +114,320 @@ function LearningPointIcon({ type }) {
   }
 }
 
+const SUPPORT_SYSTEMS = [
+  {
+    num: "01",
+    title: "課題提出システム",
+    titleEm: "システム",
+    subtitle: "学んだ内容を、提出とフィードバックでしっかり定着。",
+    layout: "split",
+    image: "assets/program-support-assignment.png",
+    imageAlt: "課題提出システム。ノートパソコンで学習する生徒",
+    imageCrop: "left",
+    features: [
+      {
+        icon: "clipboard",
+        title: "提出で学習を習慣化",
+        desc: "課題の提出を通じて、学習のリズムをつくります。",
+      },
+      {
+        icon: "feedback",
+        title: "個別フィードバックで理解を深める",
+        desc: "一人ひとりに合わせたフィードバックで、つまずきを解消し、理解を深めます。",
+      },
+      {
+        icon: "chart",
+        title: "学習状況がひと目でわかる",
+        desc: "提出状況やフィードバック履歴を一覧で確認できます。",
+      },
+    ],
+    foot:
+      "学んだ内容をしっかり定着させるために、課題を提出。個別のフィードバックで理解を深めます。",
+  },
+  {
+    num: "02",
+    title: "実践ワーク付き",
+    subtitle: "講義で学んだことを、すぐにアウトプット。",
+    layout: "centered",
+    image: "assets/program-support-workbook.png",
+    imageAlt: "実践ワーク。英文の穴埋めワークに取り組む様子",
+    imageCrop: "workbook",
+    points: [
+      { icon: "clipboard", lines: ["学んだ", "直後に", "演習できる"] },
+      { icon: "book", lines: ["解ける力", "を", "実践で身につける"] },
+      { icon: "target", lines: ["理解", "から", "定着までをつなぐ"] },
+    ],
+    foot: "講義で学んだことをすぐにアウトプット。実践的なワークで、解ける力を身につけます。",
+  },
+  {
+    num: "03",
+    title: "モチベUPメッセージ",
+    subtitle: "やる気を支え、継続を後押しする。",
+    layout: "split-bubble",
+    image: "assets/program-support-motivation.png",
+    imageAlt: "モチベUPメッセージ。スマホを見て笑顔の生徒",
+    imageCrop: "left",
+    bubble: [
+      "よく頑張っていますね！",
+      "昨日より今日、また一歩前進しています！",
+      "その調子で、目標に向かって進んでいきましょう！ ✨",
+    ],
+    features: [
+      {
+        icon: "mail",
+        title: "定期的に応援メッセージが届く",
+        desc: "学習の進捗や取り組みに合わせて、温かいメッセージをお届けします。",
+      },
+      {
+        icon: "heart",
+        title: "努力を見てもらえるから続けやすい",
+        desc: "頑張りをしっかり認めてもらえるから、自信につながり、継続の力になります。",
+      },
+      {
+        icon: "trend",
+        title: "学習習慣を前向きにキープ",
+        desc: "やる気を引き出すメッセージで、前向きな気持ちを維持できます。",
+      },
+    ],
+    foot: (
+      <>
+        学習の進捗や努力を応援するメッセージを定期的にお届け。
+        <strong>やる気をキープし、継続をサポートします。</strong>
+      </>
+    ),
+  },
+  {
+    num: "04",
+    titleLead: "24",
+    titleMid: "hチャット",
+    titleEm: "システム",
+    subtitle: "疑問をすぐに解消できる、安心の質問環境。",
+    layout: "split",
+    image: "assets/program-support-chat.png",
+    imageAlt: "24時間チャットサポート。スマホで質問する様子",
+    imageCrop: "left",
+    features: [
+      {
+        icon: "headset",
+        title: "いつでも質問できる",
+        desc: "24時間いつでも質問OK。時間を気にせず相談できます。",
+      },
+      {
+        icon: "question",
+        title: "わからないをすぐ解消",
+        desc: "経験豊富なスタッフが丁寧に回答。疑問をその場でスッキリ解決します。",
+      },
+      {
+        icon: "bookcheck",
+        title: "学習が止まらない",
+        desc: "疑問をすぐに解消できるから、つまずかずに学習を続けられます。",
+      },
+    ],
+    foot: (
+      <>
+        いつでも質問できるチャットシステムを完備。疑問をすぐに解消できるので、
+        <strong>学習が止まりません。</strong>
+      </>
+    ),
+  },
+];
+
+function SupportFeatureIcon({ type }) {
+  const common = { width: 22, height: 22, viewBox: "0 0 24 24", fill: "none", "aria-hidden": true };
+  switch (type) {
+    case "clipboard":
+      return (
+        <svg {...common}>
+          <rect x="6" y="5" width="12" height="14" rx="2" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M9 5V4a3 3 0 0 1 6 0v1" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M9 11h6M9 14h4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        </svg>
+      );
+    case "feedback":
+      return (
+        <svg {...common}>
+          <path d="M6 7h12v9H11l-5 3V7z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" />
+          <circle cx="9" cy="11" r="0.8" fill="currentColor" />
+          <circle cx="12" cy="11" r="0.8" fill="currentColor" />
+          <circle cx="15" cy="11" r="0.8" fill="currentColor" />
+        </svg>
+      );
+    case "chart":
+      return (
+        <svg {...common}>
+          <path d="M6 18V10M11 18V6M16 18v-5M20 18H4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        </svg>
+      );
+    case "book":
+      return (
+        <svg {...common}>
+          <path d="M6 6h5v12H6a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M13 6h5a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-5V6z" stroke="currentColor" strokeWidth="1.7" />
+        </svg>
+      );
+    case "target":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="7" stroke="currentColor" strokeWidth="1.7" />
+          <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M12 5V3M19 12h2M12 19v2M3 12H1" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        </svg>
+      );
+    case "mail":
+      return (
+        <svg {...common}>
+          <rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M4 8l8 5 8-5" stroke="currentColor" strokeWidth="1.7" />
+        </svg>
+      );
+    case "heart":
+      return (
+        <svg {...common}>
+          <circle cx="8" cy="9" r="2.5" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M4 18c2-4 4-6 8-6s6 2 8 6" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        </svg>
+      );
+    case "trend":
+      return (
+        <svg {...common}>
+          <path d="M5 18V8M10 18V12M15 18V6M20 18H4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+          <path d="M14 8l3-2 3 3" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
+    case "headset":
+      return (
+        <svg {...common}>
+          <path d="M5 12a7 7 0 0 1 14 0v4a3 3 0 0 1-3 3h-1v-5" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M19 16a3 3 0 0 1-3 3h-1" stroke="currentColor" strokeWidth="1.7" />
+        </svg>
+      );
+    case "question":
+      return (
+        <svg {...common}>
+          <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M10 9a2 2 0 1 1 3.2 1.6c-.8.5-1.2 1.1-1.2 2.4" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+          <circle cx="12" cy="17" r="0.8" fill="currentColor" />
+        </svg>
+      );
+    case "bookcheck":
+      return (
+        <svg {...common}>
+          <path d="M6 6h6v12H7a2 2 0 0 1-2-2V6z" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M12 6h6a2 2 0 0 1 2 2v7l-3 2-3-2V6z" stroke="currentColor" strokeWidth="1.7" />
+          <path d="M15 12l1.5 1.5L19 11" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+        </svg>
+      );
+    default:
+      return null;
+  }
+}
+
+function SupportFeatureTitle({ item }) {
+  if (item.titleLead) {
+    return (
+      <>
+        <span className="support-feature-title-mark">{item.titleLead}</span>
+        {item.titleMid}
+        {item.titleEm ? <span className="support-feature-title-em">{item.titleEm}</span> : null}
+      </>
+    );
+  }
+
+  if (item.titleEm) {
+    const base = item.title.slice(0, item.title.indexOf(item.titleEm));
+    return (
+      <>
+        {base}
+        <span className="support-feature-title-em">{item.titleEm}</span>
+      </>
+    );
+  }
+
+  return item.title;
+}
+
+function SupportFeatureCard({ item }) {
+
+  if (item.layout === "centered") {
+    return (
+      <article className={`support-feature-card support-feature-card--${item.layout}`}>
+        <span className="support-feature-num">{item.num}</span>
+        <h4 className="support-feature-title">
+          <SupportFeatureTitle item={item} />
+        </h4>
+        <p className="support-feature-subtitle">
+          <span className="support-feature-subspark" aria-hidden="true" />
+          {item.subtitle}
+          <span className="support-feature-subspark support-feature-subspark--right" aria-hidden="true" />
+        </p>
+        <div
+          className={`support-feature-visual support-feature-visual--wide${
+            item.imageCrop ? ` support-feature-visual--${item.imageCrop}` : ""
+          }`}
+        >
+          <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
+        </div>
+        <ul className="support-feature-pillars">
+          {item.points.map((point) => (
+            <li key={point.lines.join("")}>
+              <span className="support-feature-pillar-icon">
+                <SupportFeatureIcon type={point.icon} />
+              </span>
+              <p>
+                <strong>{point.lines[0]}</strong>
+                {point.lines[1]}
+                <strong>{point.lines[2]}</strong>
+              </p>
+            </li>
+          ))}
+        </ul>
+        <p className="support-feature-foot">{item.foot}</p>
+      </article>
+    );
+  }
+
+  return (
+    <article className={`support-feature-card support-feature-card--${item.layout}`}>
+      <span className="support-feature-num">{item.num}</span>
+      <h4 className="support-feature-title">
+        <SupportFeatureTitle item={item} />
+      </h4>
+      <p className="support-feature-subtitle">{item.subtitle}</p>
+      <div className="support-feature-body">
+        <div
+          className={`support-feature-visual${
+            item.imageCrop ? ` support-feature-visual--${item.imageCrop}` : ""
+          }`}
+        >
+          <img src={item.image} alt={item.imageAlt} loading="lazy" decoding="async" />
+          {item.bubble ? (
+            <div className="support-feature-bubble" aria-hidden="true">
+              <span className="support-feature-bubble-icon">✉</span>
+              {item.bubble.map((line) => (
+                <p key={line}>{line}</p>
+              ))}
+            </div>
+          ) : null}
+        </div>
+        <ul className="support-feature-list">
+          {item.features.map((feature) => (
+            <li key={feature.title}>
+              <span className="support-feature-list-icon">
+                <SupportFeatureIcon type={feature.icon} />
+              </span>
+              <div>
+                <strong>{feature.title}</strong>
+                <p>{feature.desc}</p>
+              </div>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <p className="support-feature-foot">{item.foot}</p>
+    </article>
+  );
+}
+
 function LearningSystemCard({ item }) {
   return (
     <article className="learning-system-card">
@@ -204,15 +518,6 @@ function MethodSection() {
             基礎から徹底的に固めていくことを保証します！
           </p>
 
-          <figure className="method-overview-figure method-overview-figure--solo">
-            <img
-              src="assets/program-support-system.png"
-              alt="徹底的なサポート体制"
-              loading="lazy"
-              decoding="async"
-            />
-            <figcaption>徹底的なサポート体制</figcaption>
-          </figure>
         </div>
 
         {/* Program contents */}
@@ -228,12 +533,21 @@ function MethodSection() {
             ))}
           </div>
 
-          <div className="support-row">
-            <span className="support-label">SUPPORT　自走を支える</span>
-            <div className="support-items">
-              <span>✓ 毎日提出システム</span>
-              <span>✓ 個別LINE質問</span>
-              <span>✓ 講義・動画 無期限閲覧</span>
+          <div className="method-support">
+            <div className="contents-head method-support-head">
+              <span className="eyebrow">THOROUGH SUPPORT</span>
+              <h3 className="contents-title">
+                自走を支える、<em>徹底的なサポート体制</em>
+              </h3>
+              <p className="method-support-lead">
+                学習が止まらない・続く・定着する。4つの仕組みで、45日間を一人にしません。
+              </p>
+            </div>
+
+            <div className="support-systems-showcase">
+              {SUPPORT_SYSTEMS.map((item) => (
+                <SupportFeatureCard key={item.num} item={item} />
+              ))}
             </div>
           </div>
         </div>

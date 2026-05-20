@@ -208,6 +208,20 @@ section:not(.theme-paper):not(.theme-paper-gold) + .theme-paper::before,
 .theme-paper .contents-card p { color: #4a4d5e; }
 .theme-paper .contents-points li { color: #2f3a54; }
 
+.theme-paper .method-support-lead { color: #4a4d5e; }
+.theme-paper .support-feature-card {
+  background: #ffffff;
+  border-color: rgba(72, 132, 188, 0.22);
+}
+.theme-paper .support-feature-title { color: #1f4f86; }
+.theme-paper .support-feature-subtitle,
+.theme-paper .support-feature-list p,
+.theme-paper .support-feature-foot,
+.theme-paper .support-feature-pillars p { color: #3a4a62; }
+.theme-paper .support-feature-list strong,
+.theme-paper .support-feature-foot strong,
+.theme-paper .support-feature-pillars strong { color: #1f4f86; }
+
 .theme-paper .support-row {
   background: #fdf7e3;
   border: 1px solid rgba(217,169,66,0.3);

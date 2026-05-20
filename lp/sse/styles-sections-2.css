@@ -738,7 +738,8 @@
 }
 
 @media (min-width: 901px) {
-  .learning-system-showcase--video .learning-system-features {
+  .learning-system-showcase--video .learning-system-features,
+  .learning-system-showcase--lecture .learning-system-features {
     display: none;
   }
 }
@@ -1104,8 +1105,13 @@
     gap: 10px;
   }
 
-  .learning-system-showcase--video .learning-system-features {
+  .learning-system-showcase--video .learning-system-features,
+  .learning-system-showcase--lecture .learning-system-features {
     display: grid;
+  }
+
+  .learning-system-showcase--lecture .learning-system-features {
+    grid-template-columns: 1fr;
   }
 
   .support-worry-flows {

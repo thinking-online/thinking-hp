@@ -731,6 +731,26 @@
   }
   .proof-update .h2 {
     max-width: none;
+    margin-bottom: 28px;
+  }
+  .proof-update .sse-showcase {
+    margin: 0 0 32px;
+  }
+  .proof-support-lead {
+    font-family: var(--sans-jp);
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 0;
+    max-width: 720px;
+  }
+  .proof-social {
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 1px solid var(--line);
+  }
+  .proof-social .proof-lead {
+    margin-bottom: 28px;
   }
   .proof-lead {
     font-family: var(--sans-jp);
@@ -875,15 +895,32 @@
     font-size: 15px;
     line-height: 1.85;
     color: var(--ink-soft);
-    margin-bottom: 32px;
+    margin-bottom: 12px;
     max-width: 640px;
   }
-  .proof-media-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+  .proof-media-hint {
+    font-family: var(--sans-jp);
+    font-size: 13px;
+    color: var(--ink-mute);
+    margin-bottom: 16px;
   }
+  .proof-media-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 2px 12px;
+    margin: 0 -8px;
+    scrollbar-width: none;
+    scroll-padding-left: 8px;
+    scroll-padding-right: 8px;
+  }
+  .proof-media-scroll::-webkit-scrollbar { display: none; }
   .proof-media-card {
+    flex: 0 0 min(76vw, 300px);
+    scroll-snap-align: start;
     display: flex;
     flex-direction: column;
     background: var(--paper);
@@ -892,6 +929,7 @@
     border-top: 2px solid var(--accent);
     padding: 24px 26px;
     min-width: 0;
+    box-shadow: 0 10px 28px -16px rgba(74, 63, 54, 0.18);
   }
   .proof-media-card-img {
     margin: -24px -26px 18px;
@@ -944,6 +982,15 @@
   }
   .proof-media-link:hover {
     color: var(--accent-deep);
+  }
+
+  @media (min-width: 721px) {
+    .proof-media-card {
+      flex: 0 0 min(38vw, 340px);
+    }
+    .proof-media-hint {
+      display: none;
+    }
   }
 
   .proof-monitor {
@@ -1682,8 +1729,16 @@
     .typewriter-card[data-stamp-level="6"] { --stamp-size: 96px; }
 
     .proof-lead,
+    .proof-support-lead,
     .proof-monitor-lead {
       font-size: 15px;
+    }
+    .proof-update .sse-showcase {
+      margin-bottom: 28px;
+    }
+    .proof-social {
+      margin-top: 40px;
+      padding-top: 40px;
     }
     .proof-stats {
       flex-direction: column;
@@ -1704,9 +1759,16 @@
       font-size: 14px;
       padding: 16px 20px;
     }
-    .proof-media-grid {
-      grid-template-columns: 1fr;
-      gap: 16px;
+    .proof-media-scroll {
+      margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+      scroll-padding-left: max(16px, env(safe-area-inset-left, 0px));
+      scroll-padding-right: max(16px, env(safe-area-inset-right, 0px));
+      gap: 12px;
+    }
+    .proof-media-card {
+      flex: 0 0 min(78vw, 280px);
     }
     .proof-media-card-img {
       height: 140px;
@@ -2003,6 +2065,73 @@
     </div>
     <h2 class="h2">累計<strong>2000名以上</strong>の生徒が変化を実感した、英語の超人気企画が<span class="accent">大幅アップデート</span>。</h2>
 
+    <div class="sse-showcase" id="sse-showcase">
+      <div class="sse-showcase-intro">
+        <span class="sse-brand">Smart Study English</span>
+        <p class="sse-showcase-lead">
+          電子教材・文章講義・動画・演習ワーク・課題提出・24時間チャット・モチベUPまで。進化したサポート体制の全貌です。
+        </p>
+      </div>
+      <p class="sse-showcase-hint" aria-hidden="true">← スワイプで学習システムを見る →</p>
+      <div class="sse-showcase-scroll" id="sse-showcase-scroll" role="region" aria-label="Smart Study English 学習システム" tabindex="0">
+        <figure class="sse-slide">
+          <img src="assets/sse-ebook.png" alt="電子教材。英語が読める生徒の脳内を可視化し、読む流れ・考え方・構造を実況中継のように理解" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>01 · Digital Materials</em></div>
+            <p class="sse-slide-title">電子教材 — 英語が読める生徒の脳内を可視化</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-bunsho-lecture.png" alt="文章講義。脱丸暗記で文法のコアをつかむオリジナル講義" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>02 · Sentence Lectures</em></div>
+            <p class="sse-slide-title">文章講義 — 脱・丸暗記で、文法のコアをつかむ</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-video-lecture.png" alt="動画解説講義。図解ベースで核から理解する" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>03 · Video Lectures</em></div>
+            <p class="sse-slide-title">動画解説講義 — 図解ベースで、核から理解する</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-workbook.png" alt="演習ワーク。手を動かして理解を定着" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>04 · Exercise Work</em></div>
+            <p class="sse-slide-title">演習ワーク — 手を動かすから、理解が定着する</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-assignment.png" alt="課題提出システム。学んだ内容を提出課題で定着" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>05 · Assignments</em></div>
+            <p class="sse-slide-title">課題提出システム — 学んだ内容を、しっかり定着</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-chat.png" alt="24時間質問チャット。わからないをすぐに解決" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>06 · 24h Chat</em></div>
+            <p class="sse-slide-title">24時間質問チャット — わからないを、すぐに解決</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-motivation.png" alt="モチベUPメッセージ。LINEで届く一言がやる気のスイッチに" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>07 · Motivation</em></div>
+            <p class="sse-slide-title">モチベUPメッセージ — LINEで届く、やる気のスイッチ</p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="sse-showcase-dots" id="sse-showcase-dots" aria-label="スライドナビゲーション"></div>
+    </div>
+
+    <p class="proof-support-lead">
+      学習の「中身」だけでなく、続けられる仕組みまで含めてアップデートしました。わからないときに止まらない、毎日続けられる——それが、今回の Smart Study English です。
+    </p>
+
+    <div class="proof-social">
     <p class="proof-lead">
       プログラムを終えた生徒たちが、自らの手で書いてくれた感想です。スマホで打てる時代に、わざわざ手書きで書いてくれる。それが、本物の変化の証明です。
     </p>
@@ -2051,13 +2180,15 @@
         rel="noopener noreferrer"
       >他の手書き感想を見てみる <span class="arrow">→</span></a>
     </div>
+    </div>
 
     <div class="proof-media">
       <h3 class="proof-media-head">メディアでも取り上げられた、<span class="accent">英語の根本アプローチ法。</span></h3>
       <p class="proof-media-lead">
         テレビ・Webメディアでも、THINKINGの英語指導と「メイン／補足」で読む根本アプローチが紹介されています。
       </p>
-      <div class="proof-media-grid">
+      <p class="proof-media-hint" aria-hidden="true">← スワイプで3件を見る →</p>
+      <div class="proof-media-scroll" role="region" aria-label="メディア掲載実績" tabindex="0">
         <article class="proof-media-card">
           <div class="proof-media-card-img">
             <img
@@ -2116,68 +2247,6 @@
     <p class="lead">
       THINKINGの英文解釈プログラムは、「メイン」と「補足」を見抜く読み方を、<strong>45日間で根本から</strong>身につけるプログラムです。表面的なテクニックや、暗記中心の英文解釈とは違います。「<strong>思考プロセス</strong>」をひとつずつ言語化し、無意識レベルで使えるようにします。
     </p>
-
-    <div class="sse-showcase" id="sse-showcase">
-      <div class="sse-showcase-intro">
-        <span class="sse-brand">Smart Study English</span>
-        <p class="sse-showcase-lead">
-          電子教材・文章講義・動画・演習ワーク・課題提出・24時間チャット・モチベUPまで。英文の読み方が変わる、THINKINGの学習システム一式です。
-        </p>
-      </div>
-      <p class="sse-showcase-hint" aria-hidden="true">← スワイプで学習システムを見る →</p>
-      <div class="sse-showcase-scroll" id="sse-showcase-scroll" role="region" aria-label="Smart Study English 学習システム" tabindex="0">
-        <figure class="sse-slide">
-          <img src="assets/sse-ebook.png" alt="電子教材。英語が読める生徒の脳内を可視化し、読む流れ・考え方・構造を実況中継のように理解" loading="lazy" decoding="async" width="1024" height="576">
-          <figcaption class="sse-slide-caption">
-            <div class="sse-slide-tag"><em>01 · Digital Materials</em></div>
-            <p class="sse-slide-title">電子教材 — 英語が読める生徒の脳内を可視化</p>
-          </figcaption>
-        </figure>
-        <figure class="sse-slide">
-          <img src="assets/sse-bunsho-lecture.png" alt="文章講義。脱丸暗記で文法のコアをつかむオリジナル講義" loading="lazy" decoding="async" width="1024" height="576">
-          <figcaption class="sse-slide-caption">
-            <div class="sse-slide-tag"><em>02 · Sentence Lectures</em></div>
-            <p class="sse-slide-title">文章講義 — 脱・丸暗記で、文法のコアをつかむ</p>
-          </figcaption>
-        </figure>
-        <figure class="sse-slide">
-          <img src="assets/sse-video-lecture.png" alt="動画解説講義。図解ベースで核から理解する" loading="lazy" decoding="async" width="1024" height="576">
-          <figcaption class="sse-slide-caption">
-            <div class="sse-slide-tag"><em>03 · Video Lectures</em></div>
-            <p class="sse-slide-title">動画解説講義 — 図解ベースで、核から理解する</p>
-          </figcaption>
-        </figure>
-        <figure class="sse-slide">
-          <img src="assets/sse-workbook.png" alt="演習ワーク。手を動かして理解を定着" loading="lazy" decoding="async" width="1024" height="576">
-          <figcaption class="sse-slide-caption">
-            <div class="sse-slide-tag"><em>04 · Exercise Work</em></div>
-            <p class="sse-slide-title">演習ワーク — 手を動かすから、理解が定着する</p>
-          </figcaption>
-        </figure>
-        <figure class="sse-slide">
-          <img src="assets/sse-assignment.png" alt="課題提出システム。学んだ内容を提出課題で定着" loading="lazy" decoding="async" width="1024" height="576">
-          <figcaption class="sse-slide-caption">
-            <div class="sse-slide-tag"><em>05 · Assignments</em></div>
-            <p class="sse-slide-title">課題提出システム — 学んだ内容を、しっかり定着</p>
-          </figcaption>
-        </figure>
-        <figure class="sse-slide">
-          <img src="assets/sse-chat.png" alt="24時間質問チャット。わからないをすぐに解決" loading="lazy" decoding="async" width="1024" height="576">
-          <figcaption class="sse-slide-caption">
-            <div class="sse-slide-tag"><em>06 · 24h Chat</em></div>
-            <p class="sse-slide-title">24時間質問チャット — わからないを、すぐに解決</p>
-          </figcaption>
-        </figure>
-        <figure class="sse-slide">
-          <img src="assets/sse-motivation.png" alt="モチベUPメッセージ。LINEで届く一言がやる気のスイッチに" loading="lazy" decoding="async" width="1024" height="576">
-          <figcaption class="sse-slide-caption">
-            <div class="sse-slide-tag"><em>07 · Motivation</em></div>
-            <p class="sse-slide-title">モチベUPメッセージ — LINEで届く、やる気のスイッチ</p>
-          </figcaption>
-        </figure>
-      </div>
-      <div class="sse-showcase-dots" id="sse-showcase-dots" aria-label="スライドナビゲーション"></div>
-    </div>
     
     <div class="program-card">
       <div class="program-mark"><em>The Program</em> ─ 英文解釈45日間プログラム</div>

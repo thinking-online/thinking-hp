@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>45日間で、英文の読み方が変わる。 ─ 英文解釈プログラム by THINKING</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,11 +26,17 @@
     --sans-jp: 'Zen Kaku Gothic New', sans-serif;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+    width: 100%;
+    overflow-x: hidden;
+  }
   body {
     font-family: var(--serif-jp);
     background: var(--paper);
     color: var(--ink);
+    width: 100%;
+    max-width: 100%;
     overflow-x: hidden;
     line-height: 1.8;
     -webkit-font-smoothing: antialiased;
@@ -76,11 +82,18 @@
   }
 
   .container { 
+    width: 100%;
     max-width: 1100px; 
     margin: 0 auto; 
     padding: 0 32px; 
     position: relative; 
     z-index: 2;
+  }
+
+  section,
+  footer {
+    width: 100%;
+    max-width: 100%;
   }
   
   /* ========== HERO ========== */
@@ -569,7 +582,7 @@
   }
   .typewriter-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
     gap: 32px;
     margin-top: 64px;
   }
@@ -678,7 +691,7 @@
   
   .program-features {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
     gap: 32px;
     margin-top: 48px;
     position: relative;
@@ -896,6 +909,7 @@
   @media (max-width: 900px) {
     .problem-grid { grid-template-columns: 1fr; gap: 48px; }
     .steps { grid-template-columns: 1fr; gap: 56px; }
+    .typewriter-list { grid-template-columns: 1fr; }
     .specimen, .program-card, .anatomy { padding: 40px 28px; }
     section.block, .reveal, .solution, .final-cta { padding: 80px 0; }
     .container { padding: 0 24px; }
@@ -908,7 +922,49 @@
 
   /* スマホ */
   @media (max-width: 720px) {
-    .container { padding: 0 20px; }
+    html,
+    body {
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
+    body {
+      word-break: normal;
+      overflow-wrap: break-word;
+      line-break: loose;
+    }
+
+    .hero-title,
+    .h2,
+    .program-title,
+    .step-title,
+    .final-cta-title,
+    .lead,
+    .problem-list li,
+    .typewriter-card .quote-text,
+    .audience-list li,
+    .insight-note {
+      word-break: normal;
+      overflow-wrap: break-word;
+      line-break: loose;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 100%;
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+    }
+
+    .reveal,
+    .final-cta,
+    footer {
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+    }
 
     .hero { padding: 36px 0 56px; }
     .hero-tag {
@@ -983,9 +1039,33 @@
       padding: 36px 20px 28px;
     }
     .specimen::before {
-      right: 8px;
-      bottom: 8px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
     }
+
+    .specimen,
+    .anatomy,
+    .program-card,
+    .stat-box,
+    .typewriter-card {
+      min-width: 0;
+      max-width: 100%;
+    }
+
+    .problem-grid,
+    .typewriter-list,
+    .program-features,
+    .steps {
+      min-width: 0;
+    }
+
+    .lead,
+    .final-cta-desc {
+      max-width: none;
+    }
+
     .specimen-label {
       left: 16px;
       font-size: 12px;
@@ -1061,10 +1141,19 @@
       font-size: 15px;
       line-height: 1.9;
       margin-bottom: 32px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
     .anatomy-line .main-part,
     .anatomy-line .sub-part {
       display: inline;
+    }
+
+    .specimen-text,
+    .skeleton-eq {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+      hyphens: auto;
     }
     .skeleton {
       padding: 24px 20px;

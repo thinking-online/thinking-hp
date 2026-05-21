@@ -795,8 +795,45 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 8px;
-    margin-bottom: 56px;
+    margin-bottom: 24px;
     scrollbar-width: none;
+  }
+  .proof-voices-more {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 56px;
+  }
+  .proof-voices-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    max-width: 360px;
+    padding: 18px 28px;
+    background: var(--accent-glow);
+    color: var(--ink);
+    font-family: var(--sans-jp);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    border-radius: 2px;
+    border: 1px solid var(--accent);
+    box-shadow: 0 10px 28px -10px rgba(232, 90, 26, 0.45);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .proof-voices-btn:hover {
+    background: var(--paper);
+    transform: translateY(-2px);
+    box-shadow: 0 16px 36px -12px rgba(232, 90, 26, 0.5);
+  }
+  .proof-voices-btn .arrow {
+    font-family: var(--serif);
+    transition: transform 0.18s ease;
+  }
+  .proof-voices-btn:hover .arrow {
+    transform: translateX(4px);
   }
   .proof-voices-scroll::-webkit-scrollbar { display: none; }
   .proof-voice-card {
@@ -816,6 +853,99 @@
     width: 100%;
     height: auto;
   }
+
+  /* メディア実績 */
+  .proof-media {
+    margin-bottom: 56px;
+    padding-top: 48px;
+    border-top: 1px solid var(--line);
+  }
+  .proof-media-head {
+    font-family: var(--serif-jp);
+    font-weight: 900;
+    font-size: clamp(22px, 4.5vw, 32px);
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 12px;
+    max-width: none;
+  }
+  .proof-media-head .accent { color: var(--accent); }
+  .proof-media-lead {
+    font-family: var(--sans-jp);
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    margin-bottom: 32px;
+    max-width: 640px;
+  }
+  .proof-media-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .proof-media-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    border-top: 2px solid var(--accent);
+    padding: 24px 26px;
+    min-width: 0;
+  }
+  .proof-media-card-img {
+    margin: -24px -26px 18px;
+    height: 160px;
+    overflow: hidden;
+    background: var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+  .proof-media-card-img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .proof-media-tag {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .proof-media-card h4 {
+    font-family: var(--serif-jp);
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .proof-media-card p {
+    font-family: var(--sans-jp);
+    font-size: 13px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    margin: 0;
+    flex: 1;
+  }
+  .proof-media-link {
+    display: inline-block;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line);
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--accent);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+  }
+  .proof-media-link:hover {
+    color: var(--accent-deep);
+  }
+
   .proof-monitor {
     background: linear-gradient(145deg, #fdfaf3 0%, #f0e8d8 100%);
     border: 1px solid var(--line);
@@ -903,6 +1033,113 @@
     width: 100%;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  }
+
+  /* Smart Study English スワイプショーケース */
+  .sse-showcase {
+    margin: 40px 0 56px;
+  }
+  .sse-showcase-intro {
+    margin-bottom: 20px;
+  }
+  .sse-brand {
+    display: inline-block;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--aqua);
+    margin-bottom: 10px;
+  }
+  .sse-showcase-lead {
+    font-family: var(--sans-jp);
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--ink-soft);
+    max-width: 640px;
+    margin: 0;
+  }
+  .sse-showcase-hint {
+    font-family: var(--sans-jp);
+    font-size: 13px;
+    color: var(--ink-mute);
+    margin-bottom: 16px;
+  }
+  .sse-showcase-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 2px 12px;
+    margin: 0 -8px;
+    scrollbar-width: none;
+  }
+  .sse-showcase-scroll::-webkit-scrollbar { display: none; }
+  .sse-slide {
+    flex: 0 0 min(88vw, 720px);
+    scroll-snap-align: center;
+    margin: 0;
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 16px 40px -20px rgba(74, 63, 54, 0.22);
+  }
+  .sse-slide img {
+    display: block;
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+  .sse-slide-caption {
+    padding: 14px 18px 16px;
+    background: linear-gradient(180deg, #faf8f3 0%, var(--paper) 100%);
+    border-top: 1px solid var(--line);
+  }
+  .sse-slide-tag {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .sse-slide-title {
+    font-family: var(--serif-jp);
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--ink);
+    margin: 0;
+  }
+  .sse-showcase-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  .sse-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--line);
+    cursor: pointer;
+    transition: width 0.25s ease, background 0.25s ease, border-radius 0.25s ease;
+  }
+  .sse-dot.is-active {
+    width: 22px;
+    border-radius: 4px;
+    background: var(--accent);
+  }
+  .sse-dot:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
   }
   
   .program-card {
@@ -1462,11 +1699,52 @@
     .proof-voice-card {
       flex: 0 0 min(220px, 82vw);
     }
+    .proof-voices-btn {
+      max-width: 100%;
+      font-size: 14px;
+      padding: 16px 20px;
+    }
+    .proof-media-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+    .proof-media-card-img {
+      height: 140px;
+    }
+    .proof-media-head {
+      font-size: clamp(20px, 5.5vw, 26px);
+    }
+    .proof-media-lead {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
     .proof-monitor {
       padding: 32px 22px;
     }
     .proof-monitor-highlight {
       padding: 22px 20px;
+    }
+
+    .sse-showcase {
+      margin: 32px 0 40px;
+    }
+    .sse-showcase-scroll {
+      margin: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+      padding-left: max(16px, env(safe-area-inset-left, 0px));
+      padding-right: max(16px, env(safe-area-inset-right, 0px));
+      gap: 12px;
+    }
+    .sse-slide {
+      flex: 0 0 min(86vw, 100%);
+    }
+    .sse-showcase-lead {
+      font-size: 14px;
+    }
+    .sse-slide-caption {
+      padding: 12px 14px 14px;
+    }
+    .sse-slide-title {
+      font-size: 14px;
     }
 
     .program-card {
@@ -1765,6 +2043,53 @@
       <figure class="proof-voice-card"><img src="../sse/assets/testimonial-12.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
     </div>
 
+    <div class="proof-voices-more">
+      <a
+        href="https://assaaa-blog.com/post_lp/tsakansou/"
+        class="proof-voices-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+      >他の手書き感想を見てみる <span class="arrow">→</span></a>
+    </div>
+
+    <div class="proof-media">
+      <h3 class="proof-media-head">メディアでも取り上げられた、<span class="accent">英語の根本アプローチ法。</span></h3>
+      <p class="proof-media-lead">
+        テレビ・Webメディアでも、THINKINGの英語指導と「メイン／補足」で読む根本アプローチが紹介されています。
+      </p>
+      <div class="proof-media-grid">
+        <article class="proof-media-card">
+          <div class="proof-media-card-img">
+            <img
+              src="../sse/assets/media-mx.png"
+              alt="東京MX Powered by TV 元気ジャパン"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <span class="proof-media-tag">TV BROADCAST</span>
+          <h4>東京MX「Powered by TV」で紹介</h4>
+          <p>偏差値40台からの逆転を可能にする独自の英語メソッドと、生徒一人ひとりに寄り添う個別コーチング体制が評価され、番組で紹介されました。</p>
+          <a
+            href="https://powered-by-tv.com/2023/08/12/powernews11/"
+            class="proof-media-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >記事を読む →</a>
+        </article>
+        <article class="proof-media-card">
+          <span class="proof-media-tag">WEB MEDIA</span>
+          <h4>新R25 単独インタビュー掲載</h4>
+          <p>徹底的な数字分析に基づいた戦略と、再現性を担保する指導メソッドが評価され、代表・朝倉が単独インタビューを受けました。</p>
+        </article>
+        <article class="proof-media-card">
+          <span class="proof-media-tag">OPERATION</span>
+          <h4>法人運営 / 合同会社ARC</h4>
+          <p>個人の教材販売ではなく、法人が運営し社会的責任を持って提供する正規プログラム。代表 朝倉 徹大が責任を持って指導します。</p>
+        </article>
+      </div>
+    </div>
+
     <div class="proof-monitor">
       <span class="monitor-badge">先着30名限定</span>
       <h3 class="proof-monitor-title">大幅にサポートが進化したので、今回<span class="accent">30名限定</span>でモニター募集。</h3>
@@ -1791,6 +2116,68 @@
     <p class="lead">
       THINKINGの英文解釈プログラムは、「メイン」と「補足」を見抜く読み方を、<strong>45日間で根本から</strong>身につけるプログラムです。表面的なテクニックや、暗記中心の英文解釈とは違います。「<strong>思考プロセス</strong>」をひとつずつ言語化し、無意識レベルで使えるようにします。
     </p>
+
+    <div class="sse-showcase" id="sse-showcase">
+      <div class="sse-showcase-intro">
+        <span class="sse-brand">Smart Study English</span>
+        <p class="sse-showcase-lead">
+          電子教材・文章講義・動画・演習ワーク・課題提出・24時間チャット・モチベUPまで。英文の読み方が変わる、THINKINGの学習システム一式です。
+        </p>
+      </div>
+      <p class="sse-showcase-hint" aria-hidden="true">← スワイプで学習システムを見る →</p>
+      <div class="sse-showcase-scroll" id="sse-showcase-scroll" role="region" aria-label="Smart Study English 学習システム" tabindex="0">
+        <figure class="sse-slide">
+          <img src="assets/sse-ebook.png" alt="電子教材。英語が読める生徒の脳内を可視化し、読む流れ・考え方・構造を実況中継のように理解" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>01 · Digital Materials</em></div>
+            <p class="sse-slide-title">電子教材 — 英語が読める生徒の脳内を可視化</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-bunsho-lecture.png" alt="文章講義。脱丸暗記で文法のコアをつかむオリジナル講義" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>02 · Sentence Lectures</em></div>
+            <p class="sse-slide-title">文章講義 — 脱・丸暗記で、文法のコアをつかむ</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-video-lecture.png" alt="動画解説講義。図解ベースで核から理解する" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>03 · Video Lectures</em></div>
+            <p class="sse-slide-title">動画解説講義 — 図解ベースで、核から理解する</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-workbook.png" alt="演習ワーク。手を動かして理解を定着" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>04 · Exercise Work</em></div>
+            <p class="sse-slide-title">演習ワーク — 手を動かすから、理解が定着する</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-assignment.png" alt="課題提出システム。学んだ内容を提出課題で定着" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>05 · Assignments</em></div>
+            <p class="sse-slide-title">課題提出システム — 学んだ内容を、しっかり定着</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-chat.png" alt="24時間質問チャット。わからないをすぐに解決" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>06 · 24h Chat</em></div>
+            <p class="sse-slide-title">24時間質問チャット — わからないを、すぐに解決</p>
+          </figcaption>
+        </figure>
+        <figure class="sse-slide">
+          <img src="assets/sse-motivation.png" alt="モチベUPメッセージ。LINEで届く一言がやる気のスイッチに" loading="lazy" decoding="async" width="1024" height="576">
+          <figcaption class="sse-slide-caption">
+            <div class="sse-slide-tag"><em>07 · Motivation</em></div>
+            <p class="sse-slide-title">モチベUPメッセージ — LINEで届く、やる気のスイッチ</p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="sse-showcase-dots" id="sse-showcase-dots" aria-label="スライドナビゲーション"></div>
+    </div>
     
     <div class="program-card">
       <div class="program-mark"><em>The Program</em> ─ 英文解釈45日間プログラム</div>
@@ -1935,6 +2322,44 @@
       cards.forEach(function (card) {
         card.classList.add("is-stamped");
       });
+    }
+
+    var showcaseScroll = document.getElementById("sse-showcase-scroll");
+    var showcaseDots = document.getElementById("sse-showcase-dots");
+    if (showcaseScroll && showcaseDots) {
+      var slides = showcaseScroll.querySelectorAll(".sse-slide");
+      slides.forEach(function (slide, index) {
+        var dot = document.createElement("button");
+        dot.type = "button";
+        dot.className = "sse-dot" + (index === 0 ? " is-active" : "");
+        dot.setAttribute("aria-label", "スライド " + (index + 1));
+        dot.addEventListener("click", function () {
+          slide.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+        });
+        showcaseDots.appendChild(dot);
+      });
+
+      var dots = showcaseDots.querySelectorAll(".sse-dot");
+      var syncDots = function () {
+        var center = showcaseScroll.scrollLeft + showcaseScroll.clientWidth / 2;
+        var closest = 0;
+        var minDist = Infinity;
+        slides.forEach(function (slide, i) {
+          var slideCenter = slide.offsetLeft + slide.offsetWidth / 2;
+          var dist = Math.abs(slideCenter - center);
+          if (dist < minDist) {
+            minDist = dist;
+            closest = i;
+          }
+        });
+        dots.forEach(function (dot, i) {
+          dot.classList.toggle("is-active", i === closest);
+        });
+      };
+
+      showcaseScroll.addEventListener("scroll", syncDots, { passive: true });
+      window.addEventListener("resize", syncDots);
+      syncDots();
     }
   })();
 </script>

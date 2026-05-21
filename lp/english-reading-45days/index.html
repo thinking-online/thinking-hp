@@ -592,11 +592,107 @@
     padding: 32px;
     border-radius: 2px;
     position: relative;
-    transition: transform 0.4s, box-shadow 0.4s;
+    overflow: hidden;
+    transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
   }
-  .typewriter-card:hover {
+  .typewriter-card:not(.is-stamped):hover {
     transform: translateY(-4px);
     box-shadow: 0 20px 40px -20px rgba(74,63,54,0.2);
+  }
+  .typewriter-card.is-stamped {
+    border-color: rgba(200, 80, 28, 0.35);
+    box-shadow: 0 12px 32px -16px rgba(200, 80, 28, 0.2);
+  }
+  .typewriter-card.is-stamped .quote-text {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+  }
+  .typewriter-card.is-stamped .quote-mark {
+    opacity: 0.06;
+  }
+
+  /* 進むほど強くなるバツスタンプ */
+  .typewriter-card .x-stamp {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+  .typewriter-card.is-stamped .x-stamp {
+    opacity: var(--stamp-opacity, 0.5);
+  }
+  .x-stamp-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--stamp-size, 80px);
+    height: var(--stamp-size, 80px);
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--paper);
+    font-family: var(--sans-jp);
+    font-weight: 700;
+    font-size: calc(var(--stamp-size, 80px) * 0.42);
+    line-height: 1;
+    box-shadow: 0 10px 28px rgba(200, 80, 28, 0.4);
+    transform: scale(2) rotate(-18deg);
+    transition: transform 0.55s cubic-bezier(0.34, 1.45, 0.64, 1);
+  }
+  .typewriter-card.is-stamped .x-stamp-mark {
+    transform: scale(1) rotate(var(--stamp-rotate, -10deg));
+  }
+  .typewriter-card[data-stamp-level="1"] { --stamp-size: 56px; --stamp-opacity: 0.38; --stamp-rotate: -12deg; }
+  .typewriter-card[data-stamp-level="2"] { --stamp-size: 68px; --stamp-opacity: 0.48; --stamp-rotate: -10deg; }
+  .typewriter-card[data-stamp-level="3"] { --stamp-size: 80px; --stamp-opacity: 0.58; --stamp-rotate: -9deg; }
+  .typewriter-card[data-stamp-level="4"] { --stamp-size: 92px; --stamp-opacity: 0.7; --stamp-rotate: -8deg; }
+  .typewriter-card[data-stamp-level="5"] { --stamp-size: 104px; --stamp-opacity: 0.82; --stamp-rotate: -7deg; }
+  .typewriter-card[data-stamp-level="6"] { --stamp-size: 118px; --stamp-opacity: 0.94; --stamp-rotate: -6deg; }
+  .typewriter-card[data-stamp-level="5"] .x-stamp::before,
+  .typewriter-card[data-stamp-level="6"] .x-stamp::before {
+    content: '✕';
+    position: absolute;
+    top: 18%;
+    right: 14%;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(200, 80, 28, 0.25);
+    color: var(--accent-deep);
+    font-family: var(--sans-jp);
+    font-weight: 700;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(14deg);
+  }
+  .typewriter-card[data-stamp-level="6"] .x-stamp::after {
+    content: '✕';
+    position: absolute;
+    bottom: 16%;
+    left: 12%;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: rgba(200, 80, 28, 0.18);
+    color: var(--accent-deep);
+    font-family: var(--sans-jp);
+    font-weight: 700;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(-8deg);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .x-stamp-mark { transition: none; transform: scale(1) rotate(var(--stamp-rotate, -10deg)); }
+    .typewriter-card .x-stamp { transition: none; }
   }
   .typewriter-card .quote-mark {
     font-family: var(--serif);
@@ -628,6 +724,171 @@
     padding-top: 16px;
   }
   
+  /* ========== 実績・モニター ========== */
+  .proof-update {
+    background: var(--paper);
+    border-top: 1px solid var(--line);
+  }
+  .proof-update .h2 {
+    max-width: none;
+  }
+  .proof-lead {
+    font-family: var(--sans-jp);
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 40px;
+    max-width: 720px;
+  }
+  .proof-hero-visual {
+    margin: 0 0 28px;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    box-shadow: 0 20px 50px -24px rgba(74, 63, 54, 0.25);
+  }
+  .proof-hero-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .proof-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    align-items: center;
+    margin-bottom: 48px;
+    padding: 20px 24px;
+    background: var(--paper-soft);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+  .proof-stats strong {
+    color: var(--accent-deep);
+    font-weight: 700;
+  }
+  .proof-stats-sep {
+    color: var(--ink-mute);
+  }
+  .proof-voices-head {
+    font-family: var(--serif-jp);
+    font-weight: 900;
+    font-size: clamp(22px, 4.5vw, 32px);
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+  .proof-voices-head .accent { color: var(--accent); }
+  .proof-voices-note {
+    font-family: var(--sans-jp);
+    font-size: 14px;
+    color: var(--ink-mute);
+    margin-bottom: 20px;
+  }
+  .proof-voices-scroll {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    margin-bottom: 56px;
+    scrollbar-width: none;
+  }
+  .proof-voices-scroll::-webkit-scrollbar { display: none; }
+  .proof-voice-card {
+    flex: 0 0 min(260px, 78vw);
+    scroll-snap-align: start;
+    border-radius: 2px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    box-shadow: 0 8px 24px -12px rgba(74, 63, 54, 0.2);
+    transform: rotate(var(--voice-tilt, 0deg));
+  }
+  .proof-voice-card:nth-child(2n) { --voice-tilt: 1deg; }
+  .proof-voice-card:nth-child(3n) { --voice-tilt: -0.8deg; }
+  .proof-voice-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .proof-monitor {
+    background: linear-gradient(145deg, #fdfaf3 0%, #f0e8d8 100%);
+    border: 1px solid var(--line);
+    padding: 48px 56px;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+  }
+  .proof-monitor::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, rgba(200, 80, 28, 0.12) 0%, transparent 70%);
+    border-radius: 50%;
+    transform: translate(50px, -50px);
+  }
+  .monitor-badge {
+    display: inline-block;
+    font-family: var(--sans-jp);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--paper);
+    background: var(--accent);
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  .proof-monitor-title {
+    font-family: var(--serif-jp);
+    font-weight: 900;
+    font-size: clamp(22px, 4.2vw, 36px);
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .proof-monitor-title .accent { color: var(--accent); }
+  .proof-monitor-lead {
+    font-family: var(--sans-jp);
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--ink-soft);
+    margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .proof-monitor-highlight {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 28px 32px;
+    border-radius: 2px;
+    position: relative;
+    z-index: 1;
+  }
+  .proof-monitor-highlight p {
+    font-family: var(--serif-jp);
+    font-size: clamp(17px, 3.6vw, 22px);
+    line-height: 1.75;
+    font-weight: 600;
+    margin: 0;
+  }
+  .proof-monitor-highlight strong {
+    color: var(--accent-glow);
+    font-weight: 900;
+  }
+
   /* ========== ソリューション ========== */
   .solution {
     background: var(--paper);
@@ -1181,6 +1442,33 @@
       line-height: 1.8;
     }
 
+    .typewriter-card[data-stamp-level="6"] { --stamp-size: 96px; }
+
+    .proof-lead,
+    .proof-monitor-lead {
+      font-size: 15px;
+    }
+    .proof-stats {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 16px 18px;
+      margin-bottom: 36px;
+    }
+    .proof-stats-sep { display: none; }
+    .proof-voices-head {
+      font-size: clamp(20px, 5.5vw, 26px);
+    }
+    .proof-voice-card {
+      flex: 0 0 min(220px, 82vw);
+    }
+    .proof-monitor {
+      padding: 32px 22px;
+    }
+    .proof-monitor-highlight {
+      padding: 22px 20px;
+    }
+
     .program-card {
       padding: 36px 22px;
       margin-top: 40px;
@@ -1254,13 +1542,12 @@
       <em>Reading English</em>
       <span class="hero-tag-jp">英文の本当の読み方</span>
     </div>
-    <h1 class="hero-title">中学英単語だけで構成された、ある<span class="accent">東大の英文</span>です。あなたは、読めますか?</h1>
+    <h1 class="hero-title"><span class="accent">中学英単語だけ</span>で構成された英文。あなたは、読めますか?</h1>
     <p class="hero-q">難しい単語は、ひとつもありません。それでも、読めない。なぜか?</p>
     
     <div class="specimen">
       <div class="specimen-label"><em>The Sentence</em></div>
       <div class="specimen-meta">
-        <span class="badge-tokyo">東京大学</span>
         <span>中学英単語のみ</span>
         <span>20語</span>
       </div>
@@ -1295,8 +1582,8 @@
     <div class="problem-grid">
       <div class="problem-img">
         <div class="stat-box">
-          <div class="stat-num">87<small>%</small></div>
-          <div class="stat-label">が、この東大の英文の<strong>主語と動詞</strong>を正しく特定できない<span class="stat-note">*THINKING独自調査・高校生100名対象</span></div>
+          <div class="stat-num">95<small>%</small></div>
+          <div class="stat-label">が、この英文の<strong>主語と動詞</strong>を正しく特定できない<span class="stat-note">*THINKING独自調査・高校生100名対象</span></div>
         </div>
       </div>
       
@@ -1322,7 +1609,7 @@
     <h2 class="h2">英文を、<span class="accent">メイン</span>と<span class="sub-muted">補足</span>に、分けて読む。</h2>
     
     <p class="lead">
-      この東大の英文も、メイン(=骨格)と補足(=修飾)に分解すれば、瞬時に意味が浮かび上がります。下を見てください。同じ英文ですが、<strong style="color: var(--accent-glow);">オレンジが骨格</strong>、薄いグレーが補足です。
+      この英文も、メイン(=骨格)と補足(=修飾)に分解すれば、瞬時に意味が浮かび上がります。下を見てください。同じ英文ですが、<strong style="color: var(--accent-glow);">オレンジが骨格</strong>、薄いグレーが補足です。
     </p>
     
     <div class="anatomy">
@@ -1359,7 +1646,7 @@
       </div>
       
       <p class="insight-note">
-        補足を全部とっぱらえば、骨格はたった<strong>「S + V」</strong>(=The person continues to behave)。前後の <span style="color: var(--accent-glow);">in the examples ~</span> や <span style="color: var(--accent-glow);">in what most people agree is ~</span> は、すべて「どこで?」「どんなふうに?」を説明する<strong>補足</strong>。この読み方さえ身につければ、<strong>東大の英文でも、慶應の英文でも、読める。</strong>
+        補足を全部とっぱらえば、骨格はたった<strong>「S + V」</strong>(=The person continues to behave)。前後の <span style="color: var(--accent-glow);">in the examples ~</span> や <span style="color: var(--accent-glow);">in what most people agree is ~</span> は、すべて「どこで?」「どんなふうに?」を説明する<strong>補足</strong>。この読み方さえ身につければ、<strong>難しい長文でも、入試英文でも、読める。</strong>
       </p>
     </div>
   </div>
@@ -1375,48 +1662,117 @@
     </div>
     <h2 class="h2">こんな読み方、<span class="accent">していませんか?</span></h2>
     
-    <div class="typewriter-list">
-      <div class="typewriter-card">
+    <div class="typewriter-list" id="empathy-cards">
+      <div class="typewriter-card" data-stamp-level="1">
         <span class="quote-mark">"</span>
         <p class="quote-text">
           辞書で単語の意味を全部調べて、それを順番につなげようとする。でも、最後にまとめると意味が通らない。
         </p>
         <div class="quote-tag"><em>— よくある悩み #01</em></div>
+        <div class="x-stamp" aria-hidden="true"><span class="x-stamp-mark">✕</span></div>
       </div>
-      <div class="typewriter-card">
+      <div class="typewriter-card" data-stamp-level="2">
         <span class="quote-mark">"</span>
         <p class="quote-text">
           学校の授業や塾の解説を聞いて「なるほど」と思う。でも、いざ自分で別の英文を読むと、また同じ間違いを繰り返す。
         </p>
         <div class="quote-tag"><em>— よくある悩み #02</em></div>
+        <div class="x-stamp" aria-hidden="true"><span class="x-stamp-mark">✕</span></div>
       </div>
-      <div class="typewriter-card">
+      <div class="typewriter-card" data-stamp-level="3">
         <span class="quote-mark">"</span>
         <p class="quote-text">
           英文を読むときに、「どこが主語で、どこが動詞なのか」を考える習慣がない。日本語の語順に頭の中で並べ替えてしまう。
         </p>
         <div class="quote-tag"><em>— よくある悩み #03</em></div>
+        <div class="x-stamp" aria-hidden="true"><span class="x-stamp-mark">✕</span></div>
       </div>
-      <div class="typewriter-card">
+      <div class="typewriter-card" data-stamp-level="4">
         <span class="quote-mark">"</span>
         <p class="quote-text">
           関係代名詞や分詞構文を「文法書では分かる」のに、長い英文の中に出てくると、もう何が修飾しているのか分からなくなる。
         </p>
         <div class="quote-tag"><em>— よくある悩み #04</em></div>
+        <div class="x-stamp" aria-hidden="true"><span class="x-stamp-mark">✕</span></div>
       </div>
-      <div class="typewriter-card">
+      <div class="typewriter-card" data-stamp-level="5">
         <span class="quote-mark">"</span>
         <p class="quote-text">
           単語帳や文法問題集はやりこんできた。模試の文法問題は解ける。でも、長文を読むスピードと精度が伸びない。
         </p>
         <div class="quote-tag"><em>— よくある悩み #05</em></div>
+        <div class="x-stamp" aria-hidden="true"><span class="x-stamp-mark">✕</span></div>
       </div>
-      <div class="typewriter-card">
+      <div class="typewriter-card" data-stamp-level="6">
         <span class="quote-mark">"</span>
         <p class="quote-text">
           英文を最後まで読むと、最初の方の内容を忘れている。「結局なに?」になる。だから何度も読み返してしまう。
         </p>
         <div class="quote-tag"><em>— よくある悩み #06</em></div>
+        <div class="x-stamp" aria-hidden="true"><span class="x-stamp-mark">✕</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== 実績・モニター ========== -->
+<section class="block proof-update">
+  <div class="container">
+    <div class="eyebrow">
+      <span class="num">04</span>
+      <em>The Proof</em>
+      <span class="jp">実績と、今回の募集</span>
+    </div>
+    <h2 class="h2">累計<strong>2000名以上</strong>の生徒が変化を実感した、英語の超人気企画が<span class="accent">大幅アップデート</span>。</h2>
+
+    <p class="proof-lead">
+      プログラムを終えた生徒たちが、自らの手で書いてくれた感想です。スマホで打てる時代に、わざわざ手書きで書いてくれる。それが、本物の変化の証明です。
+    </p>
+
+    <figure class="proof-hero-visual">
+      <img
+        src="../sse/assets/hero-proof-2000.png"
+        alt="累計2000名以上参加・手書き感想多数の実績"
+        loading="lazy"
+        decoding="async"
+        width="1200"
+        height="675"
+      >
+    </figure>
+
+    <div class="proof-stats">
+      <span class="proof-stats-item"><strong>2,000+</strong> 累計参加者</span>
+      <span class="proof-stats-sep" aria-hidden="true">·</span>
+      <span class="proof-stats-item"><strong>手書き感想1000枚超</strong></span>
+      <span class="proof-stats-sep" aria-hidden="true">·</span>
+      <span class="proof-stats-item"><strong>★9.8</strong>/10 平均評価</span>
+    </div>
+
+    <h3 class="proof-voices-head">手書き感想1000枚超が、<span class="accent">すべてを語る。</span></h3>
+    <p class="proof-voices-note">← スワイプで他の感想を見る →</p>
+    <div class="proof-voices-scroll" role="region" aria-label="手書き感想ギャラリー" tabindex="0">
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-01.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-02.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-03.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-04.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-05.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-06.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-07.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-08.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-09.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-10.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-11.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+      <figure class="proof-voice-card"><img src="../sse/assets/testimonial-12.png" alt="受講生の手書き感想" loading="lazy" decoding="async"></figure>
+    </div>
+
+    <div class="proof-monitor">
+      <span class="monitor-badge">先着30名限定</span>
+      <h3 class="proof-monitor-title">大幅にサポートが進化したので、今回<span class="accent">30名限定</span>でモニター募集。</h3>
+      <p class="proof-monitor-lead">
+        累計2000名以上が体験してきた英語の読み方トレーニングを、さらに手厚い伴走体制へアップデートしました。今回だけの特別枠です。
+      </p>
+      <div class="proof-monitor-highlight">
+        <p>なんと今回は<strong>塾長自ら</strong>が、完全に<strong>一人ひとり個別</strong>で状態チェック。あなたのつまずきを見逃さず、<strong>徹底的に伴走</strong>します。</p>
       </div>
     </div>
   </div>
@@ -1426,7 +1782,7 @@
 <section class="solution">
   <div class="container">
     <div class="eyebrow">
-      <span class="num">04</span>
+      <span class="num">05</span>
       <em>The Solution</em>
       <span class="jp">英文の読み方を、変える</span>
     </div>
@@ -1471,7 +1827,7 @@
 <section class="block method">
   <div class="container">
     <div class="eyebrow">
-      <span class="num">05</span>
+      <span class="num">06</span>
       <em>How it Works</em>
       <span class="jp">学び方の3ステップ</span>
     </div>
@@ -1510,7 +1866,7 @@
 <section class="block audience">
   <div class="container">
     <div class="eyebrow">
-      <span class="num">06</span>
+      <span class="num">07</span>
       <em>For Whom</em>
       <span class="jp">こんな人に届けたい</span>
     </div>
@@ -1557,6 +1913,28 @@
       cta.href = window.THINKING_LINE_LIFF_URL;
       cta.target = "_blank";
       cta.rel = "noopener noreferrer";
+    }
+
+    var cards = document.querySelectorAll(".typewriter-card[data-stamp-level]");
+    if (cards.length && "IntersectionObserver" in window) {
+      var stampObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-stamped");
+              stampObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.4, rootMargin: "0px 0px -10% 0px" }
+      );
+      cards.forEach(function (card) {
+        stampObserver.observe(card);
+      });
+    } else {
+      cards.forEach(function (card) {
+        card.classList.add("is-stamped");
+      });
     }
   })();
 </script>

@@ -118,3 +118,13 @@
   from = "/lp/todai-english"
   to = "/lp/english-reading-45days/"
   status = 301
+
+# LP: 家勉部 — /study-room で公開（アドレスバーは /study-room のまま）
+[[redirects]]
+  from = "/study-room"
+  to = "/lp/study-room/index.html"
+  status = 200
+[[redirects]]
+  from = "/study-room/*"
+  to = "/lp/study-room/:splat"
+  status = 200

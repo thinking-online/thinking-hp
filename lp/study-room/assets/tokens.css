@@ -1,0 +1,101 @@
+/* 家勉部 — design tokens & base reset
+   Palette: white paper + deep navy + orange accent (matches brand mock & logo) */
+
+:root {
+  /* Paper (primary surfaces) */
+  --paper: #ffffff;
+  --paper-warm: #faf7f1;       /* very subtle warm off-white */
+  --paper-cool: #f4f6fb;       /* very subtle cool off-white */
+  --paper-rule: rgba(10, 35, 81, .10);
+  --paper-rule-strong: rgba(10, 35, 81, .22);
+  --paper-shadow: 0 30px 80px -30px rgba(10, 35, 81, .18);
+
+  /* Ink — deep navy (brand primary) */
+  --ink-900: #0a2351;          /* main navy from logo */
+  --ink-850: #102a5e;
+  --ink-800: #15326b;
+  --ink-700: #1f3e7a;
+  --ink-600: #34518f;
+  --ink-500: #4c69a3;
+  --ink-rule: rgba(255,255,255,.14);
+  --ink-rule-strong: rgba(255,255,255,.28);
+
+  /* Foregrounds — for paper bg */
+  --fg: #0a2351;               /* primary text = deep navy */
+  --fg-mute: rgba(10, 35, 81, .68);
+  --fg-faint: rgba(10, 35, 81, .42);
+  --fg-soft: rgba(10, 35, 81, .14);
+
+  /* Foregrounds — for dark ink sections (worldview / final) */
+  --on-ink: #ffffff;
+  --on-ink-mute: rgba(255,255,255,.74);
+  --on-ink-faint: rgba(255,255,255,.5);
+
+  /* Accent — orange (CTAs, highlights) */
+  --accent: #ed7c2c;
+  --accent-bright: #f59445;
+  --accent-deep: #c95f12;
+  --accent-soft: rgba(237, 124, 44, .12);
+
+  /* Type */
+  --f-mincho: "Shippori Mincho B1", "Noto Serif JP", "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --f-gothic: "Zen Kaku Gothic New", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Spacing */
+  --gutter: clamp(20px, 4vw, 56px);
+  --section-pad: clamp(80px, 11vw, 160px);
+
+  /* Motion */
+  --ease-out: cubic-bezier(.22,.61,.36,1);
+  --ease-in-out: cubic-bezier(.65,0,.35,1);
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+html {
+  background: var(--paper);
+  color: var(--fg);
+  font-family: var(--f-gothic);
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+body {
+  background: var(--paper);
+  color: var(--fg);
+  font-feature-settings: "palt" 1;
+  letter-spacing: .02em;
+  line-height: 1.85;
+  overflow-x: hidden;
+  font-weight: 500;
+}
+img, svg { display: block; max-width: 100%; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; text-decoration: none; }
+::selection { background: var(--accent); color: #fff; }
+
+/* Reveal primitives */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .9s var(--ease-out), transform 1.1s var(--ease-out); }
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-up { opacity: 0; transform: translateY(32px); transition: opacity 1s var(--ease-out), transform 1.2s var(--ease-out); }
+.reveal-up.in { opacity: 1; transform: translateY(0); }
+.reveal-slow { opacity: 0; transform: translateY(48px); transition: opacity 1.4s var(--ease-out), transform 1.5s var(--ease-out); }
+.reveal-slow.in { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-up, .reveal-slow { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* Section backgrounds for the light theme */
+.ink-bg { background: var(--paper); color: var(--fg); }
+.ink-bg-alt { background: var(--paper-warm); color: var(--fg); }
+.cool-bg { background: var(--paper-cool); color: var(--fg); }
+
+/* Dark "manifesto" sections (worldview + final) */
+.dark-bg { background: var(--ink-900); color: var(--on-ink); }
+.dark-bg .body-lg, .dark-bg .body { color: var(--on-ink-mute); }

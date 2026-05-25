@@ -602,7 +602,7 @@ section { position: relative; }
     align-content: space-between;
   }
   .hero__copy { align-self: start; text-align: left; max-width: 88%; }
-  .hero__action { align-self: end; text-align: left; grid-column: 1; }
+  .hero__action { display: none; }
   .hero__taglines {
     text-align: left;
     font-size: 13px;

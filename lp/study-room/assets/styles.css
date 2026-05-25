@@ -335,17 +335,6 @@ section { position: relative; }
 .hero__copy > * + * { margin-top: clamp(16px, 1.6vw, 24px); }
 .hero__copy > .hero__main { margin-top: clamp(8px, 1vw, 14px); }
 
-/* --- Quote line above headline --- */
-.hero__quote {
-  font-family: var(--f-gothic);
-  font-weight: 600;
-  font-size: clamp(14px, 1.05vw, 16px);
-  color: var(--fg-mute);
-  letter-spacing: .04em;
-  margin: 0 0 clamp(16px, 1.6vw, 22px);
-}
-.hero__quote .q-bracket { color: var(--accent); font-weight: 800; }
-
 /* --- Main headline --- */
 .hero__main {
   font-family: var(--f-gothic);
@@ -382,16 +371,15 @@ section { position: relative; }
   transform: translateY(.06em);
 }
 
-/* --- Taglines (visible mobile only) --- */
+/* --- Taglines (visible on both PC & mobile) --- */
 .hero__taglines {
-  display: none;
   font-family: var(--f-gothic);
-  font-weight: 600;
-  font-size: 14px;
-  line-height: 1.95;
-  color: var(--fg-mute);
-  margin: clamp(18px, 5vw, 28px) 0 0;
-  letter-spacing: .02em;
+  font-weight: 700;
+  font-size: clamp(15px, 1.35vw, 19px);
+  line-height: 2;
+  color: var(--fg);
+  margin: clamp(20px, 2.4vw, 32px) 0 0;
+  letter-spacing: .04em;
 }
 
 /* --- Welcome block (mobile only) --- */
@@ -429,19 +417,6 @@ section { position: relative; }
   margin: 14px 0 0;
   letter-spacing: .02em;
 }
-
-/* --- Sub copy (PC visible) --- */
-.hero__sub {
-  font-family: var(--f-gothic);
-  font-weight: 600;
-  font-size: clamp(15px, 1.18vw, 18px);
-  color: var(--fg-mute);
-  line-height: 2;
-  max-width: 560px;
-  margin: clamp(20px, 2vw, 28px) 0 clamp(28px, 3vw, 40px);
-  letter-spacing: .02em;
-}
-.hero__sub .accent { color: var(--accent); font-weight: 800; }
 
 /* --- CTA row --- */
 .hero__ctas { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
@@ -628,18 +603,13 @@ section { position: relative; }
   }
   .hero__copy { align-self: start; text-align: left; max-width: 88%; }
   .hero__action { align-self: end; text-align: left; grid-column: 1; }
-  .hero__quote { display: none; }
   .hero__taglines {
-    display: block;
     text-align: left;
-    font-weight: 700;
     font-size: 13px;
-    color: var(--fg);
     line-height: 1.85;
     margin: clamp(12px, 3vw, 18px) 0 0;
   }
   .hero__welcome { display: none; }
-  .hero__sub--pc { display: none; }
   .hero__main {
     font-size: clamp(28px, 8.6vw, 40px);
     line-height: 1.22;

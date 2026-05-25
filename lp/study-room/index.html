@@ -44,53 +44,135 @@
 <!-- 01 · HERO ============================================ -->
 <!-- ===================================================== -->
 <header class="hero" id="top">
-  <div class="hero__corner">
-    <span class="label-mono">家勉が当たり前になる</span>
-    <span class="num"><span class="count" data-target="90">0</span>日</span>
-    <span class="unit">で、人生が変わる。</span>
-  </div>
+  <div class="hero__container">
 
-  <div class="hero__grid">
     <div class="hero__copy">
-      <div class="hero__brand reveal" data-seq="1">
-        <img src="/study-room/images/logo-full.png" alt="THINKING 家勉部" class="hero__logo" />
-      </div>
-
-      <p class="hero__quote reveal" data-seq="2"><span class="q-bracket">「</span>家では集中できなくて……<span class="q-bracket">」</span></p>
-
-      <h1 class="hero__main reveal" data-seq="3">
-        家で勉強できる人が、<br class="br-pc" />
-        結局、<span class="em">合格</span>していく。
-      </h1>
-
-      <p class="hero__sub reveal" data-seq="4">
-        塾に行かなくても、家でも、誰に言われなくても机に向かえる人になる。<br class="br-pc" />
-        全国の戦友とつながって、家勉が当たり前になる<span class="accent">90日</span>。
+      <p class="hero__quote reveal-up">
+        <span class="q-bracket">「</span>家では集中できなくて……<span class="q-bracket">」</span>
       </p>
 
-      <div class="hero__ctas reveal" data-seq="5">
-        <a href="#enroll" class="btn">家勉部に入部する <span class="arrow"></span></a>
-      </div>
+      <h1 class="hero__main reveal" data-seq="1">
+        <span class="hero__main-line">家勉部<span class="kana">で、</span></span>
+        <span class="hero__main-line"><span class="em">勉強</span>が続く<span class="dot">。</span></span>
+      </h1>
+
+      <p class="hero__taglines reveal-up hero__taglines--mobile">
+        一緒だから、続けられる。<br />
+        一緒だから、伸びていける。
+      </p>
     </div>
 
     <div class="hero__visual" id="heroVisual">
-      <img src="/study-room/images/hero-pc.jpg" alt="家で集中して勉強する高校生" />
-      <div class="hero__live-badge" aria-hidden="true">
-        <span class="hero__live-dot"></span>
-        <span class="hero__live-text">LIVE</span>
-        <span class="hero__live-sep"></span>
-        <span class="hero__live-meta">全国の戦友、家勉中</span>
+      <picture>
+        <source media="(max-width: 1100px)" srcset="/study-room/images/hero-illust-sp.png" />
+        <img src="/study-room/images/hero-illust-pc.png" alt="戦友と一緒に勉強する家勉部のイラスト" />
+      </picture>
+    </div>
+
+    <div class="hero__action">
+      <div class="hero__welcome reveal-up">
+        <p class="hero__welcome-title">
+          ようこそ！<span class="brand">家勉部</span>へ。
+        </p>
+        <p class="hero__welcome-sub">毎日の積み重ねが、未来を変える。</p>
       </div>
-      <div class="hero__visual-stat" aria-hidden="true">
-        <span class="hero__visual-stat-num">2,000<span class="plus">+</span></span>
-        <span class="hero__visual-stat-label">名の指導実績</span>
+
+      <p class="hero__sub reveal-up hero__sub--pc">
+        一緒に頑張る戦友がいるから、<br class="br-pc" />
+        毎日の積み重ねが<span class="accent">未来を変える</span>。
+      </p>
+
+      <div class="hero__ctas reveal" data-seq="2">
+        <a href="#enroll" class="btn btn--pill">入部する <span class="arrow"></span></a>
+      </div>
+
+      <div class="hero__chips reveal" data-seq="3">
+        <div class="hero__chip">
+          <span class="hero__chip-ic" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="6.5" cy="7" r="2.6"/>
+              <circle cx="13.5" cy="7" r="2.6"/>
+              <path d="M2 16c.7-2.4 2.5-3.6 4.5-3.6S10.3 13.6 11 16M9 16c.7-2.4 2.5-3.6 4.5-3.6S17.3 13.6 18 16"/>
+            </svg>
+          </span>
+          <span class="hero__chip-text">
+            <span class="hero__chip-title">戦友とつながる</span>
+            <span class="hero__chip-sub">励まし合える仲間が見つかる。</span>
+          </span>
+        </div>
+        <div class="hero__chip">
+          <span class="hero__chip-ic" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="3" y="4.5" width="14" height="12.5" rx="1.6"/>
+              <path d="M3 8h14M7 3v3M13 3v3"/>
+            </svg>
+          </span>
+          <span class="hero__chip-text">
+            <span class="hero__chip-title">習慣が続く</span>
+            <span class="hero__chip-sub">学習記録で、今日の自分を更新。</span>
+          </span>
+        </div>
+        <div class="hero__chip">
+          <span class="hero__chip-ic" aria-hidden="true">
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 16h14M5 16V11M9 16V8M13 16V13M17 16V6M14 6h3v3"/>
+            </svg>
+          </span>
+          <span class="hero__chip-text">
+            <span class="hero__chip-title">成長を実感</span>
+            <span class="hero__chip-sub">小さな積み重ねが自信になる。</span>
+          </span>
+        </div>
       </div>
     </div>
+
   </div>
 
-  <div class="hero__scroll">
-    <div class="line"></div>
-    <span class="label-mono">SCROLL</span>
+  <div class="hero__stats">
+    <div class="hero__stats-inner">
+      <p class="hero__stats-tag">毎日の積み重ねが、未来を変える。</p>
+      <div class="hero__stats-grid">
+        <div class="hero__stat">
+          <span class="hero__stat-ic" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="7" cy="8" r="3"/>
+              <circle cx="15" cy="8" r="3"/>
+              <path d="M2 18c.8-2.7 2.9-4 5-4s4.2 1.3 5 4M10 18c.8-2.7 2.9-4 5-4s4.2 1.3 5 4"/>
+            </svg>
+          </span>
+          <div class="hero__stat-body">
+            <span class="hero__stat-label">累計指導実績</span>
+            <span class="hero__stat-num"><span class="count" data-target="2000" data-comma="1">0</span><span class="unit">+ 名</span></span>
+            <span class="hero__stat-note">塾長が指導してきた受験生</span>
+          </div>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-ic" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="5" width="16" height="14" rx="1.8"/>
+              <path d="M3 9h16M8 3v4M14 3v4"/>
+            </svg>
+          </span>
+          <div class="hero__stat-body">
+            <span class="hero__stat-label">Zoom 開放</span>
+            <span class="hero__stat-num"><span class="count" data-target="24">0</span><span class="unit">時間 / 365日</span></span>
+            <span class="hero__stat-note">いつ座っても戦友がいる</span>
+          </div>
+        </div>
+        <div class="hero__stat">
+          <span class="hero__stat-ic" aria-hidden="true">
+            <svg viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 18h16M6 18v-5M10 18v-9M14 18v-3M18 18V7M14.5 7H18v3.5"/>
+            </svg>
+          </span>
+          <div class="hero__stat-body">
+            <span class="hero__stat-label">10時間家勉チャレンジ</span>
+            <span class="hero__stat-num"><span class="count" data-target="4">0</span><span class="unit">回 / 月</span></span>
+            <span class="hero__stat-note">戦友と走り抜ける土曜日</span>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </header>
 

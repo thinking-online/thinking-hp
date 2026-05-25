@@ -121,14 +121,10 @@
   if (first) first.classList.add('is-open');
 
   // ===== Subtle parallax on hero photo =====
-  const heroImg = document.querySelector('#heroVisual img');
   const worldBg = document.querySelector('.world__bg');
   const finalBg = document.querySelector('.final__bg');
   function parallax() {
     const y = window.scrollY;
-    if (heroImg && y < window.innerHeight) {
-      heroImg.style.transform = `scale(1.08) translateY(${y * 0.12}px)`;
-    }
     if (worldBg) {
       const rect = worldBg.parentElement.getBoundingClientRect();
       const center = (rect.top + rect.height / 2) - (window.innerHeight / 2);

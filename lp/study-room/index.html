@@ -44,6 +44,14 @@
 <!-- 01 · HERO ============================================ -->
 <!-- ===================================================== -->
 <header class="hero" id="top">
+  <div class="hero__visual" id="heroVisual" aria-hidden="true">
+    <picture>
+      <source media="(max-width: 1100px)" srcset="/study-room/images/hero-illust-sp.png" />
+      <img src="/study-room/images/hero-illust-pc.png" alt="" loading="eager" />
+    </picture>
+    <div class="hero__visual-overlay"></div>
+  </div>
+
   <div class="hero__container">
 
     <div class="hero__copy">
@@ -60,13 +68,11 @@
         一緒だから、続けられる。<br />
         一緒だから、伸びていける。
       </p>
-    </div>
 
-    <div class="hero__visual" id="heroVisual">
-      <picture>
-        <source media="(max-width: 1100px)" srcset="/study-room/images/hero-illust-sp.png" />
-        <img src="/study-room/images/hero-illust-pc.png" alt="戦友と一緒に勉強する家勉部のイラスト" />
-      </picture>
+      <p class="hero__sub reveal-up hero__sub--pc">
+        一緒に頑張る戦友がいるから、<br class="br-pc" />
+        毎日の積み重ねが<span class="accent">未来を変える</span>。
+      </p>
     </div>
 
     <div class="hero__action">
@@ -76,11 +82,6 @@
         </p>
         <p class="hero__welcome-sub">毎日の積み重ねが、未来を変える。</p>
       </div>
-
-      <p class="hero__sub reveal-up hero__sub--pc">
-        一緒に頑張る戦友がいるから、<br class="br-pc" />
-        毎日の積み重ねが<span class="accent">未来を変える</span>。
-      </p>
 
       <div class="hero__ctas reveal" data-seq="2">
         <a href="#enroll" class="btn btn--pill">入部する <span class="arrow"></span></a>

@@ -43,13 +43,11 @@
     });
   }, { threshold: 0.14, rootMargin: '0px 0px -8% 0px' });
 
-  document.querySelectorAll('.reveal, .reveal-up, .reveal-slow, .line-wipe').forEach((el) => {
-    // skip hero items already controlled by data-seq stagger
+  document.querySelectorAll('.reveal, .reveal-up, .reveal-slow, .line-wipe, .reveal-bar').forEach((el) => {
     if (el.hasAttribute('data-seq')) return;
     io.observe(el);
   });
 
-  // Stagger inside .pain__list and .after__grid and .testi__track and .manifesto__rows
   function staggerChildren(parentSel, childSel, base = 80) {
     document.querySelectorAll(parentSel).forEach((parent) => {
       parent.querySelectorAll(childSel).forEach((child, i) => {
@@ -57,14 +55,15 @@
       });
     });
   }
-  staggerChildren('.pain__list', '.pain__item', 70);
-  staggerChildren('.after__grid', '.after__cell', 60);
-  staggerChildren('.testi__track', '.testi', 90);
-  staggerChildren('.manifesto__rows', '.manifesto__row', 110);
-  staggerChildren('.world__lines', '.world__line', 140);
-  staggerChildren('.rank__tops', '.rank__top', 120);
+  staggerChildren('.reasons__list', '.reason', 100);
+  staggerChildren('.changes__list', '.change', 80);
+  staggerChildren('.pain-mono__monologue', 'p', 90);
+  staggerChildren('.daily__grid', '.daily__card', 110);
+  staggerChildren('.schedule__grid', '.schedule__card', 110);
+  staggerChildren('.perks__grid', '.perk', 90);
+  staggerChildren('.conditions__list', '.cond', 110);
+  staggerChildren('.message__body', 'p', 140);
   staggerChildren('.faq__list', '.faq__item', 0);
-  staggerChildren('.fit__list', 'li', 80);
 
   // ===== Count-up =====
   const countIo = new IntersectionObserver((entries) => {
@@ -120,15 +119,19 @@
   const first = document.querySelector('.faq__item');
   if (first) first.classList.add('is-open');
 
-  // ===== Subtle parallax on hero photo =====
-  const worldBg = document.querySelector('.world__bg');
+  const apexBg = document.querySelector('.apex__bg');
+  const painBg = document.querySelector('.pain-mono__bg');
   const finalBg = document.querySelector('.final__bg');
   function parallax() {
-    const y = window.scrollY;
-    if (worldBg) {
-      const rect = worldBg.parentElement.getBoundingClientRect();
+    if (apexBg) {
+      const rect = apexBg.parentElement.getBoundingClientRect();
       const center = (rect.top + rect.height / 2) - (window.innerHeight / 2);
-      worldBg.style.transform = `scale(1.1) translateY(${center * -0.08}px)`;
+      apexBg.style.transform = `scale(1.08) translateY(${center * -0.07}px)`;
+    }
+    if (painBg) {
+      const rect = painBg.parentElement.getBoundingClientRect();
+      const center = (rect.top + rect.height / 2) - (window.innerHeight / 2);
+      painBg.style.transform = `translateY(${center * -0.05}px)`;
     }
     if (finalBg) {
       const rect = finalBg.parentElement.getBoundingClientRect();

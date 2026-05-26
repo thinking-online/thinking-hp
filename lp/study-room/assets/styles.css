@@ -152,17 +152,41 @@ section { position: relative; }
   padding: 12px var(--gutter);
 }
 .nav__brand {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+  color: var(--ink-900);
+  text-decoration: none;
+  transition: opacity .2s var(--ease-out);
 }
-.nav__brand-logo {
+.nav__brand:hover { opacity: .82; }
+
+.brand-mark-ic {
+  width: 36px;
   height: 36px;
-  width: auto;
-  display: block;
-  mix-blend-mode: multiply;
+  display: grid;
+  place-items: center;
+  color: var(--ink-900);
+  flex-shrink: 0;
+  transition: width .25s var(--ease-out), height .25s var(--ease-out);
 }
-.nav.is-scrolled .nav__brand-logo { height: 32px; }
+.brand-mark-ic svg { width: 100%; height: 100%; display: block; }
+.brand-mark-text {
+  font-family: var(--f-gothic);
+  font-weight: 900;
+  font-size: 19px;
+  letter-spacing: .06em;
+  color: var(--ink-900);
+  line-height: 1;
+  white-space: nowrap;
+}
+.brand-mark-em { color: var(--accent); }
+.nav.is-scrolled .brand-mark-ic { width: 32px; height: 32px; }
+.nav.is-scrolled .brand-mark-text { font-size: 17px; }
+@media (max-width: 720px) {
+  .brand-mark-ic { width: 32px; height: 32px; }
+  .brand-mark-text { font-size: 17px; }
+}
 .brand-mark {
   font-family: var(--f-gothic);
   font-weight: 900;
@@ -1756,6 +1780,16 @@ section { position: relative; }
   grid-template-columns: 1.4fr 1fr 1fr 1fr;
   gap: 40px;
 }
+.footer__brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+  color: var(--ink-900);
+  text-decoration: none;
+}
+.footer__brand-mark .brand-mark-ic { width: 38px; height: 38px; }
+.footer__brand-mark .brand-mark-text { font-size: 20px; }
 .footer__brand img { height: 40px; margin-bottom: 14px; mix-blend-mode: multiply; }
 .footer__brand p { font-family: var(--f-gothic); font-weight: 500; font-size: 13px; color: var(--fg-mute); margin: 0; max-width: 320px; line-height: 1.85; }
 .footer__col h5 { font-family: var(--f-gothic); font-weight: 800; font-size: 11px; letter-spacing: .2em; color: var(--accent); margin: 6px 0 16px; }

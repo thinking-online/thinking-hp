@@ -57,8 +57,21 @@
 <header class="hero" id="top">
   <div class="hero__visual" id="heroVisual" aria-hidden="true">
     <picture>
-      <source media="(max-width: 1100px)" srcset="/study-room/images/hero-illust-sp.png" />
-      <img src="/study-room/images/hero-illust-pc.png" alt="" loading="eager" />
+      <source
+        media="(max-width: 1100px)"
+        srcset="/study-room/images/hero-illust-sp.jpg"
+        width="576"
+        height="1024"
+      />
+      <img
+        src="/study-room/images/hero-illust-pc.jpg"
+        alt=""
+        width="1024"
+        height="576"
+        loading="eager"
+        decoding="sync"
+        fetchpriority="high"
+      />
     </picture>
     <div class="hero__visual-overlay"></div>
   </div>

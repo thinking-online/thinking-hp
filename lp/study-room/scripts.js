@@ -57,6 +57,7 @@
   }
   staggerChildren('.reasons__list', '.reason', 100);
   staggerChildren('.changes__list', '.change', 80);
+  staggerChildren('.rank__tops', '.rank__top', 110);
   staggerChildren('.pain-mono__monologue', 'p', 90);
   staggerChildren('.daily__grid', '.daily__card', 110);
   staggerChildren('.schedule__grid', '.schedule__card', 110);

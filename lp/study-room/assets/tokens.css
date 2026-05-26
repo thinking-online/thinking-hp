@@ -44,7 +44,7 @@
 
   /* Spacing */
   --gutter: clamp(20px, 4vw, 56px);
-  --section-pad: clamp(80px, 11vw, 160px);
+  --section-pad: clamp(56px, 7.5vw, 110px);
 
   /* Motion */
   --ease-out: cubic-bezier(.22,.61,.36,1);

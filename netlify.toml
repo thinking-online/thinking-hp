@@ -128,3 +128,13 @@
   from = "/study-room/*"
   to = "/lp/study-room/:splat"
   status = 200
+
+# LP: 家勉部（興味訴求）— /study-room-offer で公開
+[[redirects]]
+  from = "/study-room-offer"
+  to = "/lp/study-room-offer/index.html"
+  status = 200
+[[redirects]]
+  from = "/study-room-offer/*"
+  to = "/lp/study-room-offer/:splat"
+  status = 200

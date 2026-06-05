@@ -2,16 +2,17 @@
 // This is the canonical example. Other product data files should follow this shape.
 const productKangakuEnglishData = {
   slug: "kangaku-english",
-  breadcrumb: "関学2/1英語 完全攻略マニュアル",
+  breadcrumb: "関西学院大学 英語対策（2/1試験）",
   subject: "関学英語",
 
   hero: {
     image: "assets/kangaku-hero.png",
-    alt: "2027年度最新版 関西学院大学 2/1試験 英語 完全攻略",
+    alt: "【2027年最新版】関西学院大学 英語対策 学部別 問題集PDF 英単語帳 2/1試験",
     tags: [
-      { label: "2027年度最新版", solid: true },
-      { label: "関学 2/1試験" },
-      { label: "英語" },
+      { label: "2027年最新版", solid: true },
+      { label: "関西学院大学 2/1試験" },
+      { label: "英語対策" },
+      { label: "問題集PDF・英単語帳" },
     ],
     stats: [
       { value: "5", label: "年分徹底分析" },
@@ -21,9 +22,9 @@ const productKangakuEnglishData = {
     ],
   },
 
-  headline: (<>関学を本気で目指すあなたへ。<br />
-    <em>過去5年分</em>を徹底分析した、唯一の<em>合格設計マニュアル</em>。</>),
-  sublead: "書店の参考書は、東大京大早慶向けに作られている。関学の出題傾向に最適化されたものは、ほぼ存在しない。私立文系専門塾 THINKING の代表 朝倉徹大が、これまで関学に合格させてきた指導知見を総動員し、関学2/1試験の英語に特化した完全マニュアル4部構成にまとめた。",
+  headline: (<>【2027年最新版】関西学院大学 <em>英語対策</em><br />
+    学部別の<em>問題集PDF</em>・<em>英単語帳</em>・2/1試験</>),
+  sublead: "関西学院大学2月1日試験の英語対策に完全特化。【2027年最新版】で、学部別に設計した問題集PDF・英単語帳・総合模試まで1冊にまとめた。過去5年を大問別に分析。書店の参考書は東大京大早慶向けに作られており、関学の出題傾向に最適化された英語対策はほぼ存在しない。私立文系専門塾 THINKING の代表 朝倉徹大が、関学合格の指導知見を総動員した4部構成の完全マニュアル。",
 
   quickCtaText: (<>無料パートを最後まで読んでから、購入を判断してください。<br />
     <strong>本気で合格したい人は、まずこの記事を最後まで読み切ってほしい。</strong></>),

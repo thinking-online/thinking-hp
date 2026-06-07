@@ -88,20 +88,4 @@
   window.addEventListener("resize", onScroll);
   frame();
   window.addEventListener("load", frame);
-
-  var chips = document.getElementById("chips");
-  var replyValue = document.getElementById("replyValue");
-  var selected = new Set();
-
-  if (chips && replyValue) {
-    chips.addEventListener("click", function (e) {
-      var c = e.target.closest(".chip");
-      if (!c) return;
-      c.classList.toggle("on");
-      var label = c.textContent.trim();
-      if (c.classList.contains("on")) selected.add(label);
-      else selected.delete(label);
-      replyValue.textContent = selected.size ? Array.from(selected).join(" / ") : "未選択";
-    });
-  }
 })();

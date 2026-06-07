@@ -4,6 +4,52 @@
 (function () {
   "use strict";
 
+  /* ---- Opening splash (HP-style bloom) ---- */
+  var INTRO_KEY = "king-letter-202506-intro-seen";
+  var intro = document.getElementById("kingIntro");
+  var reduceMo = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  function hasSeenIntro() {
+    try {
+      return window.sessionStorage.getItem(INTRO_KEY) === "1";
+    } catch (e) {
+      return false;
+    }
+  }
+
+  function markIntroSeen() {
+    try {
+      window.sessionStorage.setItem(INTRO_KEY, "1");
+    } catch (e) {
+      /* private browsing */
+    }
+  }
+
+  function finishIntro() {
+    if (!intro) return;
+    intro.remove();
+    document.body.style.overflow = "";
+    window.scrollTo(0, 0);
+  }
+
+  if (intro && !reduceMo && !hasSeenIntro()) {
+    document.body.style.overflow = "hidden";
+    setTimeout(function () {
+      intro.classList.remove("king-intro--entering");
+      intro.classList.add("king-intro--showing");
+    }, 100);
+    setTimeout(function () {
+      intro.classList.remove("king-intro--showing");
+      intro.classList.add("king-intro--exiting");
+    }, 4200);
+    setTimeout(function () {
+      markIntroSeen();
+      finishIntro();
+    }, 5200);
+  } else if (intro) {
+    finishIntro();
+  }
+
   function countStats(scope) {
     if (scope.dataset.counted) return;
     scope.dataset.counted = "1";
@@ -45,7 +91,6 @@
   var hero = document.querySelector(".hero");
   var foot = document.querySelector(".foot");
   var pllEls = Array.prototype.slice.call(document.querySelectorAll("[data-pll]"));
-  var reduceMo = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var ticking = false;
 
   function frame() {

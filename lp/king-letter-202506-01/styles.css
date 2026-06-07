@@ -1018,3 +1018,223 @@ section {
     padding: 0;
   }
 }
+
+/* ============================================================
+   Opening splash — HP-style character bloom
+   ============================================================ */
+.king-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+  overflow: hidden;
+}
+
+.king-intro--entering {
+  opacity: 0;
+}
+
+.king-intro--showing {
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.king-intro--exiting {
+  opacity: 0;
+  transition: opacity 0.9s ease, transform 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+  transform: scale(1.02);
+  pointer-events: none;
+}
+
+.king-intro__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 65% 55% at 50% 45%, rgba(200, 163, 86, 0.14), transparent 70%),
+    radial-gradient(ellipse 100% 100% at 50% 50%, rgba(15, 46, 32, 0.5), transparent 80%),
+    linear-gradient(180deg, #0d2c1f 0%, #0a2318 100%);
+}
+
+.king-intro__grain {
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.18'/></svg>");
+  mix-blend-mode: overlay;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.king-intro__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 22px;
+  padding: 0 28px;
+  text-align: center;
+  max-width: 468px;
+}
+
+.king-intro__line-wrap {
+  height: 1px;
+  width: 0;
+  overflow: hidden;
+}
+
+.king-intro--showing .king-intro__line-wrap {
+  width: 72px;
+  transition: width 1.4s 0.15s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.king-intro__line {
+  display: block;
+  width: 72px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.king-intro__jp {
+  margin: 0;
+  font-family: "Shippori Mincho B1", serif;
+  font-weight: 600;
+  font-size: clamp(20px, 5.5vw, 26px);
+  letter-spacing: 0.22em;
+  color: var(--gold-light);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+}
+
+.king-intro__jp--2,
+.king-intro__jp--3 {
+  margin-top: -10px;
+}
+
+.king-intro__jp--3 {
+  font-size: clamp(18px, 5vw, 24px);
+  color: #fff;
+  letter-spacing: 0.18em;
+}
+
+.king-intro__jp .ch {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(8px);
+}
+
+.king-intro--showing .king-intro__jp .ch {
+  animation: kingIntroCh 0.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.king-intro--showing .king-intro__jp--1 .ch:nth-child(1) { animation-delay: 0.35s; }
+.king-intro--showing .king-intro__jp--1 .ch:nth-child(2) { animation-delay: 0.43s; }
+.king-intro--showing .king-intro__jp--1 .ch:nth-child(3) { animation-delay: 0.51s; }
+.king-intro--showing .king-intro__jp--1 .ch:nth-child(4) { animation-delay: 0.59s; }
+.king-intro--showing .king-intro__jp--1 .ch:nth-child(5) { animation-delay: 0.67s; }
+.king-intro--showing .king-intro__jp--1 .ch:nth-child(6) { animation-delay: 0.75s; }
+
+.king-intro--showing .king-intro__jp--2 .ch:nth-child(1) { animation-delay: 1.05s; }
+.king-intro--showing .king-intro__jp--2 .ch:nth-child(2) { animation-delay: 1.13s; }
+.king-intro--showing .king-intro__jp--2 .ch:nth-child(3) { animation-delay: 1.21s; }
+.king-intro--showing .king-intro__jp--2 .ch:nth-child(4) { animation-delay: 1.29s; }
+.king-intro--showing .king-intro__jp--2 .ch:nth-child(5) { animation-delay: 1.37s; }
+.king-intro--showing .king-intro__jp--2 .ch:nth-child(6) { animation-delay: 1.45s; }
+
+.king-intro--showing .king-intro__jp--3 .ch:nth-child(1) { animation-delay: 1.75s; }
+.king-intro--showing .king-intro__jp--3 .ch:nth-child(2) { animation-delay: 1.83s; }
+.king-intro--showing .king-intro__jp--3 .ch:nth-child(3) { animation-delay: 1.91s; }
+.king-intro--showing .king-intro__jp--3 .ch:nth-child(4) { animation-delay: 1.99s; }
+.king-intro--showing .king-intro__jp--3 .ch:nth-child(5) { animation-delay: 2.07s; }
+.king-intro--showing .king-intro__jp--3 .ch:nth-child(6) { animation-delay: 2.15s; }
+.king-intro--showing .king-intro__jp--3 .ch:nth-child(7) { animation-delay: 2.23s; }
+.king-intro--showing .king-intro__jp--3 .ch:nth-child(8) { animation-delay: 2.31s; }
+.king-intro--showing .king-intro__jp--3 .ch:nth-child(9) { animation-delay: 2.39s; }
+
+@keyframes kingIntroCh {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.king-intro__crown {
+  width: 44px;
+  height: 44px;
+  opacity: 0;
+  filter: blur(8px);
+  transform: translateY(16px);
+}
+
+.king-intro__crown svg {
+  width: 100%;
+  height: 100%;
+}
+
+.king-intro--showing .king-intro__crown {
+  animation: kingIntroCrown 1.2s 2.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes kingIntroCrown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.king-intro__corner {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--gold);
+  opacity: 0;
+}
+
+.king-intro--showing .king-intro__corner {
+  animation: kingIntroCorner 1s 2.9s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+}
+
+@keyframes kingIntroCorner {
+  to { opacity: 0.45; }
+}
+
+.king-intro__corner--tl {
+  top: 24px;
+  left: 24px;
+  border-right: none;
+  border-bottom: none;
+}
+
+.king-intro__corner--tr {
+  top: 24px;
+  right: 24px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.king-intro__corner--bl {
+  bottom: 24px;
+  left: 24px;
+  border-right: none;
+  border-top: none;
+}
+
+.king-intro__corner--br {
+  bottom: 24px;
+  right: 24px;
+  border-left: none;
+  border-top: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .king-intro {
+    display: none !important;
+  }
+}

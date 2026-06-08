@@ -417,6 +417,10 @@ section {
   color: #3a2c0e;
 }
 
+.toc-badge.vid {
+  background: linear-gradient(180deg, #27406e, var(--navy));
+}
+
 .toc-chev {
   flex: none;
   color: var(--gold-deep);
@@ -446,6 +450,7 @@ section {
 .contents[data-stagger].in a:nth-of-type(7) { transition-delay: 0.4s; }
 .contents[data-stagger].in a:nth-of-type(8) { transition-delay: 0.46s; }
 .contents[data-stagger].in a:nth-of-type(9) { transition-delay: 0.52s; }
+.contents[data-stagger].in a:nth-of-type(10) { transition-delay: 0.58s; }
 
 .cta-row {
   padding: 18px 18px 0;
@@ -516,6 +521,11 @@ section {
   display: grid;
   place-items: center;
   box-shadow: 0 2px 6px -1px rgba(6, 40, 20, 0.5);
+}
+
+.btn-gold .ic-circ--play {
+  background: #c4302b;
+  box-shadow: 0 2px 6px -1px rgba(120, 30, 20, 0.5);
 }
 
 .btn-line {
@@ -805,6 +815,10 @@ section {
 
 .aud-jhs {
   background: var(--gold-deep);
+}
+
+.aud-video {
+  background: linear-gradient(180deg, #27406e, var(--navy));
 }
 
 .bonus-no {

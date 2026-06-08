@@ -737,28 +737,6 @@ section {
   height: auto;
 }
 
-.gift-visual--manga {
-  min-height: 180px;
-  display: grid;
-  place-items: center;
-  background:
-    repeating-linear-gradient(135deg, #efe6cf 0 14px, #e7dcc0 14px 28px);
-  border-style: dashed;
-}
-
-.gift-visual__manga-cover {
-  font-family: "Shippori Mincho B1", serif;
-  font-weight: 800;
-  font-size: 22px;
-  color: var(--green);
-  letter-spacing: 0.08em;
-  padding: 24px 32px;
-  background: rgba(253, 250, 241, 0.88);
-  border-radius: 10px;
-  border: 1px solid var(--hairline);
-  box-shadow: var(--shadow-card);
-}
-
 .gift-points {
   list-style: none;
   margin: 16px 0 0;

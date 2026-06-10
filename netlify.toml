@@ -139,6 +139,16 @@
   to = "/lp/study-room-offer/:splat"
   status = 200
 
+# LP: 王様通信アーカイブ — /king-letter で公開
+[[redirects]]
+  from = "/king-letter"
+  to = "/lp/king-letter/index.html"
+  status = 200
+[[redirects]]
+  from = "/king-letter/*"
+  to = "/lp/king-letter/:splat"
+  status = 200
+
 # LP: 受験の王様通信 6月 vol.01 — /king-letter-202506-01 で公開
 [[redirects]]
   from = "/king-letter-202506-01"

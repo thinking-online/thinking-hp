@@ -1,0 +1,272 @@
+/* 受験の王様通信 — アーカイブ */
+
+:root {
+  --green: #15402e;
+  --green-deep: #0d2c1f;
+  --gold: #c8a356;
+  --gold-deep: #a9863f;
+  --gold-light: #e7d09a;
+  --ivory: #fbf6ea;
+  --cream: #fdfaf1;
+  --ink: #26302a;
+  --ink-soft: #5c655e;
+  --hairline: rgba(168, 134, 63, 0.32);
+  --shadow-card: 0 14px 34px -18px rgba(20, 52, 38, 0.55);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  margin: 0;
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(1200px 700px at 50% -8%, #1c5440 0%, rgba(28, 84, 64, 0) 60%),
+    linear-gradient(180deg, #0d2c1f 0%, #0a2318 100%);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.7;
+}
+
+.phone {
+  width: 100%;
+  max-width: 468px;
+  margin: 0 auto;
+  min-height: 100vh;
+  background:
+    radial-gradient(900px 500px at 50% 0%, #fffdf6 0%, rgba(255, 253, 246, 0) 55%),
+    linear-gradient(180deg, var(--cream) 0%, var(--ivory) 100%);
+  box-shadow: 0 40px 120px -40px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  padding-bottom: 48px;
+}
+
+.brandbar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  height: 48px;
+  background: linear-gradient(180deg, #123a29, #0e2f21);
+  color: var(--gold-light);
+  border-bottom: 1px solid rgba(200, 163, 86, 0.4);
+  font-family: "Shippori Mincho B1", serif;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  font-size: 13px;
+}
+
+.brandbar .crown {
+  width: 17px;
+  height: 17px;
+}
+
+.brandbar b {
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.list-section {
+  padding: 28px 18px 12px;
+}
+
+.list-head {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.list-head .eyebrow {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.list-head h2 {
+  margin: 0;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--green);
+}
+
+.list-head p {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+}
+
+.issue-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.issue-card {
+  display: flex;
+  gap: 14px;
+  align-items: stretch;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  box-shadow: var(--shadow-card);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.issue-card:active {
+  transform: scale(0.985);
+}
+
+.issue-card__thumb {
+  flex: 0 0 108px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(200, 163, 86, 0.25);
+  align-self: center;
+}
+
+.issue-card__thumb img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.issue-card__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2px 0;
+}
+
+.issue-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.issue-card__date {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gold-deep);
+  letter-spacing: 0.06em;
+}
+
+.issue-card__vol {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--green);
+  background: rgba(21, 64, 46, 0.08);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.issue-card__title {
+  margin: 0 0 4px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: var(--ink);
+}
+
+.issue-card__lead {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.55;
+}
+
+.issue-card__arrow {
+  flex: 0 0 20px;
+  align-self: center;
+  font-size: 22px;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+.list-note {
+  margin: 24px 0 0;
+  padding: 14px 16px;
+  background: rgba(21, 64, 46, 0.06);
+  border-radius: 10px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-align: center;
+  line-height: 1.65;
+}
+
+.foot {
+  margin-top: 32px;
+  padding: 28px 24px 20px;
+  text-align: center;
+  border-top: 1px solid var(--hairline);
+}
+
+.foot .mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Shippori Mincho B1", serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--green);
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+.foot .mark svg {
+  width: 18px;
+  height: 18px;
+}
+
+.foot p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--ink-soft);
+  line-height: 1.75;
+}
+
+.foot .links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 14px;
+}
+
+.foot .links a {
+  font-size: 12px;
+  color: var(--green);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(21, 64, 46, 0.25);
+}
+
+.foot .copy {
+  margin-top: 18px;
+  font-size: 11px;
+  opacity: 0.55;
+}

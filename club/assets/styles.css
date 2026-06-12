@@ -235,19 +235,7 @@ header.hero {
 .brandline {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-}
-
-.brand-logo {
-  width: 48px;
-  height: 48px;
-  object-fit: contain;
-  filter: drop-shadow(0 2px 8px rgba(61, 82, 64, 0.15));
+  justify-content: flex-end;
 }
 
 .status-pill {
@@ -641,29 +629,134 @@ main {
   color: #8f702e;
 }
 
-/* ---------- 部員ランク ---------- */
+/* ---------- 部員ランク · 成長の旅 ---------- */
 
-.rank-block {
-  margin-bottom: 18px;
-  padding-bottom: 16px;
-  border-bottom: 1px solid var(--line);
+.rank-journey {
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, #fff 0%, #f6f4ef 100%);
+  border: 1px solid rgba(200, 165, 90, 0.35);
+  box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  position: relative;
+  overflow: hidden;
 }
 
-.rank-card {
+.rank-journey::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #c8a55a, transparent);
+  opacity: 0.7;
+}
+
+.rank-journey--enter {
+  animation: rankCardIn 0.55s var(--ease) both;
+}
+
+.rank-journey--enter .rank-badge-wrap {
+  animation: rankBadgePop 0.65s var(--ease) 0.1s both;
+}
+
+@keyframes rankCardIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes rankBadgePop {
+  from { opacity: 0; transform: scale(0.82); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.rank-journey-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.rank-journey-eyebrow {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+.rank-member-status {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sage-deep);
+  background: var(--sage-pale);
+  border: 1px solid rgba(122, 139, 110, 0.3);
+  border-radius: 999px;
+  padding: 3px 10px;
+}
+
+.rank-level-tag {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #172642;
+  background: linear-gradient(135deg, #f7efdd, #ebe4d0);
+  border: 1px solid rgba(200, 165, 90, 0.45);
+  border-radius: 8px;
+  padding: 5px 10px;
+  letter-spacing: 0.06em;
+}
+
+.rank-hero {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-.rank-badge {
+.rank-badge-wrap {
+  position: relative;
   flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+}
+
+.rank-badge-ring {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(200, 165, 90, 0.45);
+  animation: rankRingPulse 2.8s ease-in-out infinite;
+}
+
+.rank-journey--hot .rank-badge-ring {
+  border-color: rgba(200, 165, 90, 0.85);
+  animation: rankRingPulseHot 1.4s ease-in-out infinite;
+}
+
+@keyframes rankRingPulse {
+  0%, 100% { transform: scale(1); opacity: 0.55; }
+  50% { transform: scale(1.06); opacity: 1; }
+}
+
+@keyframes rankRingPulseHot {
+  0%, 100% { transform: scale(1); opacity: 0.75; box-shadow: 0 0 0 0 rgba(200, 165, 90, 0.4); }
+  50% { transform: scale(1.08); opacity: 1; box-shadow: 0 0 20px 4px rgba(200, 165, 90, 0.35); }
+}
+
+.rank-badge {
+  position: relative;
   width: 96px;
   height: 96px;
+  margin: 2px;
   border-radius: 50%;
   border: 2px solid #c8a55a;
   overflow: hidden;
   background: #f6f4ef;
-  box-shadow: 0 4px 16px -4px rgba(200, 165, 90, 0.35);
+  box-shadow: 0 6px 20px -6px rgba(200, 165, 90, 0.45);
 }
 
 .rank-badge img {
@@ -679,45 +772,196 @@ main {
 }
 
 .rank-name {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
   color: #172642;
-  line-height: 1.35;
+  line-height: 1.3;
   letter-spacing: 0.02em;
 }
 
 .rank-days {
-  margin-top: 6px;
+  margin-top: 5px;
   font-size: 12px;
   color: var(--muted);
   font-weight: 500;
 }
 
+.rank-days .num {
+  font-size: 15px;
+  color: var(--sage-deep);
+}
+
+.rank-motto {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--sage-mid);
+  font-weight: 500;
+}
+
+.rank-ladder {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+  margin: 16px 2px 0;
+  padding: 0 2px;
+  position: relative;
+}
+
+.rank-ladder::before {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  top: 9px;
+  height: 2px;
+  background: var(--line);
+  z-index: 0;
+}
+
+.rank-step {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  flex: 1;
+}
+
+.rank-step-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--line);
+  transition: all 0.3s var(--ease);
+}
+
+.rank-step.done .rank-step-dot {
+  background: var(--sage-light);
+  border-color: var(--sage);
+}
+
+.rank-step.current .rank-step-dot {
+  background: linear-gradient(135deg, #e4c98a, #c8a55a);
+  border-color: #c8a55a;
+  box-shadow: 0 0 12px rgba(200, 165, 90, 0.55);
+  transform: scale(1.15);
+}
+
+.rank-step-num {
+  font-size: 9px;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.rank-step.current .rank-step-num {
+  color: #8f702e;
+}
+
 .rank-progress-wrap {
-  margin-top: 14px;
+  margin-top: 16px;
+}
+
+.rank-progress-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 8px;
+}
+
+.rank-progress-next {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #172642;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.rank-progress-pct {
+  flex-shrink: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #c8a55a;
 }
 
 .rank-progress-bar {
-  height: 6px;
+  height: 8px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.7);
   border: 1px solid var(--line-soft);
   overflow: hidden;
+  box-shadow: inset 0 1px 2px rgba(23, 38, 66, 0.06);
 }
 
 .rank-progress-fill {
+  position: relative;
   height: 100%;
   width: 0;
   border-radius: 999px;
-  background: #c8a55a;
-  transition: width 0.4s var(--ease);
+  background: linear-gradient(90deg, #b8944f, #c8a55a, #e4c98a);
+  transition: width 0.85s var(--ease);
+  overflow: hidden;
 }
 
-.rank-progress-label {
+.rank-journey--hot .rank-progress-fill {
+  animation: rankBarGlow 1.6s ease-in-out infinite;
+}
+
+@keyframes rankBarGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.12); }
+}
+
+.rank-progress-shine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  animation: rankShine 2.2s ease-in-out infinite;
+}
+
+@keyframes rankShine {
+  0% { left: -40%; }
+  100% { left: 140%; }
+}
+
+.rank-progress-countdown {
   margin-top: 8px;
-  font-size: 11px;
-  color: var(--muted);
-  letter-spacing: 0.02em;
+  font-size: 12px;
+  font-weight: 700;
+  color: #172642;
+  letter-spacing: 0.04em;
+}
+
+.rank-journey--hot .rank-progress-countdown {
+  color: #8f702e;
+}
+
+.rank-streak-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--sage-deep);
+}
+
+.rank-streak-row--gold {
+  color: #8f702e;
+}
+
+.rank-streak-row .num {
+  font-size: 15px;
 }
 
 /* ---------- 昇格オーバーレイ ---------- */
@@ -730,35 +974,92 @@ main {
   align-items: center;
   justify-content: center;
   padding: 24px;
-  background: rgba(23, 38, 66, 0.88);
+  background: rgba(23, 38, 66, 0.9);
   cursor: pointer;
 }
 
+.rank-up-burst {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(200, 165, 90, 0.25) 0%, transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(200, 165, 90, 0.2) 0%, transparent 35%);
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.rank-up-overlay.show .rank-up-burst {
+  opacity: 1;
+  animation: rankBurst 1.2s ease-out;
+}
+
+@keyframes rankBurst {
+  from { transform: scale(0.6); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
 .rank-up-inner {
+  position: relative;
   text-align: center;
   color: #fff;
   max-width: 300px;
+  z-index: 1;
 }
 
 .rank-up-title {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 700;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   color: #c8a55a;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.4s 0.1s, transform 0.4s 0.1s;
+}
+
+.rank-up-overlay.show .rank-up-title {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.rank-up-img-wrap {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto 22px;
+}
+
+.rank-up-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(200, 165, 90, 0.5);
+  animation: rankUpRing 1.8s ease-out infinite;
+}
+
+.rank-up-overlay.show .rank-up-ring {
+  animation: rankUpRing 1.8s ease-out infinite;
+}
+
+@keyframes rankUpRing {
+  0% { transform: scale(0.85); opacity: 1; }
+  100% { transform: scale(1.35); opacity: 0; }
 }
 
 .rank-up-img {
+  position: absolute;
+  top: 10px;
+  left: 10px;
   width: 160px;
   height: 160px;
-  margin: 0 auto 20px;
   border-radius: 50%;
   border: 3px solid #c8a55a;
   object-fit: cover;
   background: #f6f4ef;
-  transform: scale(0.72);
+  transform: scale(0.5);
   opacity: 0;
-  transition: transform 0.55s var(--ease), opacity 0.55s var(--ease);
+  transition: transform 0.65s cubic-bezier(0.22, 1.2, 0.36, 1), opacity 0.45s;
 }
 
 .rank-up-overlay.show .rank-up-img {
@@ -767,10 +1068,18 @@ main {
 }
 
 .rank-up-text {
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   line-height: 1.5;
   margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.45s 0.25s, transform 0.45s 0.25s;
+}
+
+.rank-up-overlay.show .rank-up-text {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .rank-up-hint {
@@ -780,14 +1089,31 @@ main {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .rank-journey--enter,
+  .rank-journey--enter .rank-badge-wrap,
+  .rank-badge-ring,
+  .rank-progress-shine,
+  .rank-journey--hot .rank-progress-fill,
+  .rank-up-ring,
+  .rank-up-burst {
+    animation: none;
+  }
+
   .rank-up-img {
     transition: none;
     transform: scale(1);
     opacity: 1;
   }
 
-  .rank-progress-fill {
+  .rank-up-title,
+  .rank-up-text {
+    opacity: 1;
+    transform: none;
     transition: none;
+  }
+
+  .rank-progress-fill {
+    transition: width 0.2s;
   }
 }
 

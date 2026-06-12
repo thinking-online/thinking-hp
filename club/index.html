@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>家勉部 部室</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#172642;
+  --navy-deep:#0F1A30;
+  --gold:#C8A55A;
+  --gold-dark:#8F702E;
+  --paper:#F6F4EF;
+  --card:#FFFFFF;
+  --ink:#1C2433;
+  --muted:#6B7280;
+  --line:#E6E2D8;
+  --radius:14px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:15px;
+  line-height:1.7;
+}
+.num{font-family:'Space Grotesk','Noto Sans JP',sans-serif;font-weight:700;letter-spacing:-0.01em}
+.wrap{max-width:480px;margin:0 auto;padding:0 16px 64px}
+
+/* ---------- 状態画面 ---------- */
+.state{
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:32px 24px;background:var(--navy);color:#fff;
+}
+.state .crest{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);font-size:13px;letter-spacing:0.3em;margin-bottom:16px}
+.state h1{font-size:20px;font-weight:700;margin-bottom:12px}
+.state p{font-size:14px;color:rgba(255,255,255,.78);max-width:300px}
+.spinner{width:34px;height:34px;border:3px solid rgba(255,255,255,.2);border-top-color:var(--gold);border-radius:50%;animation:spin 0.9s linear infinite;margin-bottom:20px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.idbox{
+  margin-top:20px;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);border-radius:10px;
+  padding:12px 14px;font-size:12px;word-break:break-all;
+  font-family:'Space Grotesk',monospace;max-width:300px;
+}
+.copybtn{
+  margin-top:14px;background:var(--gold);color:var(--navy-deep);
+  border:none;border-radius:999px;padding:11px 26px;
+  font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;
+}
+@media (prefers-reduced-motion:reduce){.spinner{animation:none}}
+
+/* ---------- ヘッダー ---------- */
+header.hero{
+  background:var(--navy);color:#fff;
+  padding:26px 16px 58px;
+}
+.hero-inner{max-width:480px;margin:0 auto}
+.brandline{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
+.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.28em;color:var(--gold)}
+.status-pill{
+  font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;
+  background:rgba(200,165,90,.16);color:var(--gold);border:1px solid rgba(200,165,90,.45);
+}
+.hello{font-size:15px;font-weight:500;color:rgba(255,255,255,.85)}
+.weekstat{display:flex;align-items:baseline;gap:10px;margin-top:6px}
+.weekstat .big{font-size:44px;line-height:1;color:#fff}
+.weekstat .unit{font-size:13px;color:rgba(255,255,255,.6)}
+.weekstat-label{font-size:12px;color:var(--gold);letter-spacing:0.08em;margin-top:4px}
+
+/* ---------- カード共通 ---------- */
+main{margin-top:-32px}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:18px 16px;margin-bottom:14px;
+}
+.card h2{
+  font-size:13px;font-weight:700;letter-spacing:0.12em;color:var(--navy);
+  display:flex;align-items:center;gap:8px;margin-bottom:14px;
+}
+.card h2::before{content:"";width:14px;height:2px;background:var(--gold)}
+
+/* ---------- 自習室 ---------- */
+.roombtn{
+  display:block;width:100%;text-align:center;text-decoration:none;
+  background:var(--navy);color:#fff;font-weight:700;font-size:15px;
+  border:none;border-radius:12px;padding:15px;font-family:inherit;
+}
+.roombtn:active{opacity:.85}
+.roombtn.disabled{background:#C7CBD4;pointer-events:none}
+.hours-note{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
+
+/* ---------- 記録 ---------- */
+.today-line{font-size:13px;color:var(--muted);margin-bottom:12px}
+.today-line b{color:var(--ink);font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
+.chip{
+  border:1px solid var(--line);background:#FBFAF7;color:var(--ink);
+  border-radius:999px;padding:8px 14px;font-size:13px;font-family:inherit;cursor:pointer;
+}
+.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.custom-row{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.custom-row select{
+  flex:1;font-family:inherit;font-size:15px;padding:10px;
+  border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);
+}
+.custom-row span{font-size:13px;color:var(--muted)}
+.recordbtn{
+  width:100%;background:var(--gold);color:var(--navy-deep);
+  border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;
+  font-family:inherit;cursor:pointer;
+}
+.recordbtn:disabled{opacity:.5}
+.recordbtn:active{opacity:.85}
+.record-done{
+  display:none;margin-top:12px;text-align:center;font-size:13px;
+  color:var(--gold-dark);font-weight:700;
+}
+
+/* ---------- テスト範囲 ---------- */
+.range-list{display:flex;flex-direction:column;gap:0}
+.range-item{
+  display:flex;gap:12px;padding:11px 2px;border-bottom:1px solid var(--line);
+  font-size:14px;align-items:baseline;
+}
+.range-item:last-child{border-bottom:none}
+.range-subject{min-width:84px;font-weight:700;color:var(--navy);font-size:13px;flex-shrink:0}
+.range-text{color:var(--ink)}
+.range-note{font-size:12px;color:var(--muted)}
+.empty-note{font-size:13px;color:var(--muted);padding:6px 2px}
+
+/* ---------- ランキング ---------- */
+.rk-row{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 8px;border-radius:10px;font-size:14px;
+}
+.rk-row.me{background:#FBF4E3;border:1px solid #EAD9AE}
+.rk-rank{min-width:30px;text-align:center;font-size:15px;color:var(--muted)}
+.rk-rank.r1{color:#C8A55A}.rk-rank.r2{color:#9AA3AF}.rk-rank.r3{color:#B5824C}
+.rk-name{flex:1;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rk-val{font-size:15px;color:var(--navy)}
+.myrank{
+  margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;
+  font-size:13px;color:var(--muted);text-align:center;
+}
+.myrank b{color:var(--gold-dark);font-size:15px}
+
+/* ---------- 科目タブ ---------- */
+.tabs{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px;
+  -webkit-overflow-scrolling:touch;scrollbar-width:none;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab{
+  flex-shrink:0;border:1px solid var(--line);background:#FBFAF7;
+  border-radius:999px;padding:7px 14px;font-size:12px;font-weight:500;
+  color:var(--ink);font-family:inherit;cursor:pointer;white-space:nowrap;
+}
+.tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
+.period{font-size:12px;color:var(--muted);margin-bottom:8px}
+
+/* ---------- コンテンツ ---------- */
+.content-item{
+  display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
+  padding:13px 4px;border-bottom:1px solid var(--line);font-size:14px;
+}
+.content-item:last-child{border-bottom:none}
+.content-cat{
+  flex-shrink:0;font-size:10px;font-weight:700;color:var(--gold-dark);
+  background:#F7EFDD;border-radius:6px;padding:3px 8px;
+}
+.content-title{flex:1;font-weight:500}
+.content-arrow{color:var(--gold);font-weight:700}
+.lock-note{font-size:13px;color:var(--muted);text-align:center;padding:10px 0}
+
+footer{
+  text-align:center;font-size:11px;color:var(--muted);
+  letter-spacing:0.2em;padding:28px 0 8px;
+  font-family:'Space Grotesk',sans-serif;
+}
+
+/* ---------- トースト ---------- */
+#toast{
+  position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);
+  background:var(--navy);color:#fff;font-size:13px;font-weight:500;
+  padding:11px 22px;border-radius:999px;opacity:0;pointer-events:none;
+  transition:opacity .25s, transform .25s;z-index:50;white-space:nowrap;
+}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.skeleton{color:var(--muted);font-size:13px;padding:4px 2px}
+</style>
+</head>
+<body>
+
+<div id="screen-loading" class="state">
+  <div class="spinner"></div>
+  <div class="crest">IEBENBU</div>
+  <h1>部室を開いています…</h1>
+</div>
+
+<div id="screen-gate" class="state" style="display:none">
+  <div class="crest">IEBENBU</div>
+  <h1 id="gate-title">このページは家勉部員専用です</h1>
+  <p id="gate-text"></p>
+  <div id="gate-idwrap" style="display:none">
+    <div class="idbox" id="gate-id"></div>
+    <button class="copybtn" id="gate-copy">IDをコピーする</button>
+  </div>
+</div>
+
+<div id="app" style="display:none">
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="brandline">
+        <div class="brand">IEBENBU</div>
+        <div class="status-pill" id="h-status"></div>
+      </div>
+      <div class="hello" id="h-name"></div>
+      <div class="weekstat">
+        <div class="big num" id="h-week">0</div>
+        <div class="unit">今週の勉強時間</div>
+      </div>
+      <div class="weekstat-label">一緒だから、続けられる。</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section class="card">
+      <h2>自習室</h2>
+      <a class="roombtn disabled" id="room-btn" href="#" target="_blank" rel="noopener">自習室に入室する</a>
+      <div class="hours-note" id="room-hours"></div>
+    </section>
+
+    <section class="card">
+      <h2>今日の勉強時間を記録</h2>
+      <div class="today-line">今日の記録: <b id="log-today">0分</b>（再送信すると上書きされます）</div>
+      <div class="chips" id="chips"></div>
+      <div class="custom-row">
+        <select id="sel-h"></select><span>時間</span>
+        <select id="sel-m"></select><span>分</span>
+      </div>
+      <button class="recordbtn" id="log-btn">この時間で記録する</button>
+      <div class="record-done" id="log-done">記録しました。積み上げ更新。</div>
+    </section>
+
+    <section class="card">
+      <h2>今週の小テスト範囲</h2>
+      <div class="range-list" id="weekly-list"><div class="skeleton">読み込み中…</div></div>
+    </section>
+
+    <section class="card">
+      <h2>勉強時間ランキング（今週）</h2>
+      <div id="time-ranking"><div class="skeleton">読み込み中…</div></div>
+      <div class="myrank" id="time-myrank" style="display:none"></div>
+    </section>
+
+    <section class="card">
+      <h2>小テストランキング</h2>
+      <div class="period" id="test-period"></div>
+      <div class="tabs" id="test-tabs"></div>
+      <div id="test-panel"><div class="skeleton">読み込み中…</div></div>
+    </section>
+
+    <section class="card">
+      <h2>会員限定コンテンツ</h2>
+      <div id="contents-list"><div class="skeleton">読み込み中…</div></div>
+    </section>
+
+    <footer>THINKING — IEBENBU</footer>
+  </main>
+</div>
+
+<div id="toast"></div>
+
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script>
+const API_URL = 'https://script.google.com/macros/s/AKfycbzRtEbxXA7ijb-grWU1x7FwLjomnXFYvkRQ8XQIvYhANcxR2824NneO0U5_PMchichKJQ/exec';
+const LIFF_ID = '2010378695-4j2cx38C';
+
+let idToken = '';
+let selMinutes = 0;
+
+const $ = (id) => document.getElementById(id);
+
+function fmtMin(min){
+  min = Number(min) || 0;
+  const h = Math.floor(min / 60), m = min % 60;
+  if (h === 0) return m + '分';
+  if (m === 0) return h + '時間';
+  return h + '時間' + m + '分';
+}
+
+function toast(msg){
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+async function api(action){
+  const res = await fetch(API_URL + '?action=' + action + '&token=' + encodeURIComponent(idToken));
+  return res.json();
+}
+
+function showGate(me){
+  $('screen-loading').style.display = 'none';
+  $('screen-gate').style.display = 'flex';
+  const reason = me && me.reason ? me.reason : '';
+  if (reason === 'not_member'){
+    $('gate-title').textContent = 'このページは家勉部員専用です';
+    $('gate-text').textContent = '入部手続き中の人は、下のIDをコピーして公式LINEのトークに送ってください。登録が完了するとこのページが開けるようになります。';
+    const decoded = liff.getDecodedIDToken();
+    const sub = decoded && decoded.sub ? decoded.sub : '取得できませんでした';
+    $('gate-id').textContent = sub;
+    $('gate-idwrap').style.display = 'block';
+    $('gate-copy').onclick = () => {
+      navigator.clipboard.writeText(sub).then(() => toast('コピーしました'));
+    };
+  } else if (reason === '休会'){
+    $('gate-title').textContent = 'ただいま休会中です';
+    $('gate-text').textContent = '復帰の際は公式LINEからご連絡ください。部室はいつでも待っています。';
+  } else if (reason === '退会'){
+    $('gate-title').textContent = '部員登録が見つかりません';
+    $('gate-text').textContent = '再入部を希望する場合は、公式LINEからご連絡ください。';
+  } else {
+    $('gate-title').textContent = '読み込みに失敗しました';
+    $('gate-text').textContent = '電波の良い場所でページを開き直してみてください。直らない場合は公式LINEへ。';
+  }
+}
+
+/* ---------- ヘッダー ---------- */
+function renderHeader(me){
+  $('h-name').textContent = me.member.display_name + ' さん';
+  $('h-status').textContent = '部員ステータス: ' + me.member.member_status;
+  $('h-week').textContent = fmtMin(me.week_minutes);
+  $('log-today').textContent = fmtMin(me.today_minutes);
+  presetSelectors(me.today_minutes);
+}
+
+/* ---------- 記録UI ---------- */
+const CHIP_DEFS = [30, 60, 90, 120, 180, 240, 300, 360];
+
+function buildChips(){
+  const box = $('chips');
+  CHIP_DEFS.forEach(min => {
+    const b = document.createElement('button');
+    b.className = 'chip';
+    b.textContent = fmtMin(min);
+    b.onclick = () => { setMinutes(min); };
+    b.dataset.min = min;
+    box.appendChild(b);
+  });
+  const selH = $('sel-h'), selM = $('sel-m');
+  for (let h = 0; h <= 16; h++){
+    const o = document.createElement('option');
+    o.value = h * 60; o.textContent = h;
+    selH.appendChild(o);
+  }
+  [0,10,20,30,40,50].forEach(m => {
+    const o = document.createElement('option');
+    o.value = m; o.textContent = ('0' + m).slice(-2);
+    selM.appendChild(o);
+  });
+  selH.onchange = selM.onchange = () => {
+    selMinutes = Number(selH.value) + Number(selM.value);
+    syncChips();
+  };
+}
+
+function setMinutes(min){
+  selMinutes = min;
+  $('sel-h').value = Math.floor(min / 60) * 60;
+  $('sel-m').value = min % 60;
+  syncChips();
+}
+
+function presetSelectors(todayMin){
+  if (todayMin > 0) setMinutes(roundToSelectable(todayMin));
+  else setMinutes(60);
+}
+
+function roundToSelectable(min){
+  const h = Math.floor(min / 60) * 60;
+  const m = Math.round((min % 60) / 10) * 10;
+  return Math.min(h + (m >= 60 ? 50 : m), 16 * 60);
+}
+
+function syncChips(){
+  document.querySelectorAll('.chip').forEach(c => {
+    c.classList.toggle('on', Number(c.dataset.min) === selMinutes);
+  });
+}
+
+async function submitLog(){
+  if (selMinutes < 1){ toast('時間を選んでください'); return; }
+  const btn = $('log-btn');
+  btn.disabled = true; btn.textContent = '記録中…';
+  try{
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'log_study', token: idToken, minutes: selMinutes })
+    });
+    const data = await res.json();
+    if (data.status === 'ok'){
+      $('log-today').textContent = fmtMin(data.today_minutes);
+      $('h-week').textContent = fmtMin(data.week_minutes);
+      $('log-done').style.display = 'block';
+      toast('今日の記録: ' + fmtMin(data.today_minutes));
+      loadTimeRanking();
+    } else {
+      toast('記録に失敗しました。もう一度どうぞ');
+    }
+  }catch(e){
+    toast('通信エラー。電波を確認してください');
+  }
+  btn.disabled = false; btn.textContent = 'この時間で記録する';
+}
+
+/* ---------- 週間情報 ---------- */
+async function loadWeekly(){
+  try{
+    const data = await api('weekly');
+    if (data.status !== 'ok') return;
+    if (data.room_url){
+      const b = $('room-btn');
+      b.href = data.room_url;
+      b.classList.remove('disabled');
+    }
+    if (data.hours) $('room-hours').textContent = '開放時間: ' + data.hours;
+    const list = $('weekly-list');
+    list.innerHTML = '';
+    if (!data.items || data.items.length === 0){
+      list.innerHTML = '<div class="empty-note">今週の範囲は準備中です。配信をお待ちください。</div>';
+      return;
+    }
+    data.items.forEach(it => {
+      const row = document.createElement('div');
+      row.className = 'range-item';
+      row.innerHTML = '<div class="range-subject"></div><div><div class="range-text"></div><div class="range-note"></div></div>';
+      row.querySelector('.range-subject').textContent = it.subject;
+      row.querySelector('.range-text').textContent = it.range;
+      const note = row.querySelector('.range-note');
+      if (it.note) note.textContent = it.note; else note.remove();
+      list.appendChild(row);
+    });
+  }catch(e){
+    $('weekly-list').innerHTML = '<div class="empty-note">読み込みに失敗しました</div>';
+  }
+}
+
+/* ---------- 勉強時間ランキング ---------- */
+function rankRow(rank, name, val, isMe){
+  const row = document.createElement('div');
+  row.className = 'rk-row' + (isMe ? ' me' : '');
+  const rk = document.createElement('div');
+  rk.className = 'rk-rank num' + (rank <= 3 ? ' r' + rank : '');
+  rk.textContent = rank;
+  const nm = document.createElement('div');
+  nm.className = 'rk-name';
+  nm.textContent = name + (isMe ? '（あなた）' : '');
+  const vl = document.createElement('div');
+  vl.className = 'rk-val num';
+  vl.textContent = val;
+  row.appendChild(rk); row.appendChild(nm); row.appendChild(vl);
+  return row;
+}
+
+async function loadTimeRanking(){
+  try{
+    const data = await api('ranking');
+    if (data.status !== 'ok') return;
+    const box = $('time-ranking');
+    box.innerHTML = '';
+    if (!data.ranking || data.ranking.length === 0){
+      box.innerHTML = '<div class="empty-note">今週はまだ記録がありません。一番乗りのチャンス。</div>';
+      $('time-myrank').style.display = 'none';
+      return;
+    }
+    data.ranking.forEach(r => {
+      box.appendChild(rankRow(r.rank, r.name, fmtMin(r.minutes), r.is_me));
+    });
+    const my = $('time-myrank');
+    if (data.my_rank){
+      my.innerHTML = 'あなたは現在 <b>' + data.my_rank + '位</b>｜今週 ' + fmtMin(data.my_minutes);
+      my.style.display = 'block';
+    } else {
+      my.innerHTML = '今日の記録を送ると、ランキングに参加できます';
+      my.style.display = 'block';
+    }
+  }catch(e){
+    $('time-ranking').innerHTML = '<div class="empty-note">読み込みに失敗しました</div>';
+  }
+}
+
+/* ---------- 小テストランキング ---------- */
+let testData = null;
+
+async function loadTestRanking(){
+  try{
+    const data = await api('test_ranking');
+    if (data.status !== 'ok'){
+      $('test-panel').innerHTML = '<div class="empty-note">ランキングは準備中です</div>';
+      return;
+    }
+    testData = data;
+    const tabs = $('test-tabs');
+    tabs.innerHTML = '';
+    data.subjects.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.className = 'tab' + (i === 0 ? ' on' : '');
+      b.textContent = s.subject;
+      b.onclick = () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+        b.classList.add('on');
+        renderTestPanel(i);
+      };
+      tabs.appendChild(b);
+    });
+    renderTestPanel(0);
+  }catch(e){
+    $('test-panel').innerHTML = '<div class="empty-note">読み込みに失敗しました</div>';
+  }
+}
+
+function renderTestPanel(i){
+  const panel = $('test-panel');
+  panel.innerHTML = '';
+  const s = testData.subjects[i];
+  if (!s || s.entries.length === 0){
+    panel.innerHTML = '<div class="empty-note">今週のデータはまだありません</div>';
+    return;
+  }
+  s.entries.slice(0, 7).forEach(e => {
+    panel.appendChild(rankRow(e.rank, e.name, e.rate + '%', e.is_me));
+  });
+}
+
+/* ---------- コンテンツ ---------- */
+async function loadContents(){
+  try{
+    const data = await api('contents');
+    const box = $('contents-list');
+    box.innerHTML = '';
+    if (data.status !== 'ok' || !data.items || data.items.length === 0){
+      box.innerHTML = '<div class="lock-note">コンテンツはこれから増えていきます。お楽しみに。</div>';
+      return;
+    }
+    data.items.forEach(it => {
+      const a = document.createElement('a');
+      a.className = 'content-item';
+      a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
+      const cat = document.createElement('span');
+      cat.className = 'content-cat';
+      cat.textContent = it.category || '教材';
+      const title = document.createElement('span');
+      title.className = 'content-title';
+      title.textContent = it.title;
+      const arrow = document.createElement('span');
+      arrow.className = 'content-arrow';
+      arrow.textContent = '→';
+      a.appendChild(cat); a.appendChild(title); a.appendChild(arrow);
+      box.appendChild(a);
+    });
+  }catch(e){
+    $('contents-list').innerHTML = '<div class="lock-note">読み込みに失敗しました</div>';
+  }
+}
+
+/* ---------- 起動 ---------- */
+async function main(){
+  buildChips();
+  $('log-btn').onclick = submitLog;
+  try{
+    await liff.init({ liffId: LIFF_ID });
+  }catch(e){
+    showGate(null);
+    return;
+  }
+  if (!liff.isLoggedIn()){
+    liff.login();
+    return;
+  }
+  idToken = liff.getIDToken();
+  let me;
+  try{
+    me = await api('me');
+  }catch(e){
+    showGate(null);
+    return;
+  }
+  if (!me || me.status !== 'ok'){
+    showGate(me);
+    return;
+  }
+  renderHeader(me);
+  $('screen-loading').style.display = 'none';
+  $('app').style.display = 'block';
+  loadWeekly();
+  loadTimeRanking();
+  loadTestRanking();
+  loadContents();
+}
+
+main();
+</script>
+</body>
+</html>

@@ -550,6 +550,150 @@ main {
   object-fit: cover;
 }
 
+/* ---------- Date chips ---------- */
+
+.datechips {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.dchip {
+  flex: 1;
+  border: 1px solid var(--line);
+  background: #fbfaf7;
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 9px 4px;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: center;
+  line-height: 1.35;
+  transition: all 0.2s var(--ease);
+}
+
+.dchip small {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.dchip.on {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: #fff;
+  box-shadow: 0 4px 12px -4px rgba(23, 38, 66, 0.4);
+}
+
+.dchip.on small {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* ---------- Streak ---------- */
+
+.streak-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 14px;
+  background: rgba(200, 165, 90, 0.14);
+  border: 1px solid rgba(200, 165, 90, 0.4);
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+
+.streak-pill .num {
+  font-size: 16px;
+  color: #fff;
+}
+
+.flame {
+  width: 9px;
+  height: 12px;
+  background: linear-gradient(to top, var(--gold), var(--gold-light));
+  display: inline-block;
+  border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+  box-shadow: 0 0 8px rgba(200, 165, 90, 0.5);
+}
+
+/* ---------- Gate form ---------- */
+
+.gform {
+  margin-top: 22px;
+  width: 100%;
+  max-width: 320px;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  padding: 20px 18px;
+  backdrop-filter: blur(10px);
+}
+
+.gform label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 14px 0 7px;
+}
+
+.gform label:first-of-type {
+  margin-top: 0;
+}
+
+.gform input,
+.gform select {
+  width: 100%;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--ink);
+}
+
+.applybtn {
+  margin-top: 20px;
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: var(--navy-deep);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  box-shadow: 0 8px 24px -6px rgba(200, 165, 90, 0.5);
+  transition: transform 0.2s var(--ease);
+}
+
+.applybtn:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.applybtn:disabled {
+  opacity: 0.5;
+}
+
+.gate-mini {
+  margin-top: 18px;
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.35);
+  word-break: break-all;
+  max-width: 320px;
+  font-family: "Space Grotesk", monospace;
+}
+
 /* ---------- Weekly range ---------- */
 
 .range-list {

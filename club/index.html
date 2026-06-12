@@ -3,274 +3,61 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#172642">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <title>家勉部 部室</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<style>
-:root{
-  --navy:#172642;
-  --navy-deep:#0F1A30;
-  --gold:#C8A55A;
-  --gold-dark:#8F702E;
-  --paper:#F6F4EF;
-  --card:#FFFFFF;
-  --ink:#1C2433;
-  --muted:#6B7280;
-  --line:#E6E2D8;
-  --radius:14px;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  font-family:'Noto Sans JP',sans-serif;
-  background:var(--paper);
-  color:var(--ink);
-  font-size:15px;
-  line-height:1.7;
-}
-.num{font-family:'Space Grotesk','Noto Sans JP',sans-serif;font-weight:700;letter-spacing:-0.01em}
-.wrap{max-width:480px;margin:0 auto;padding:0 16px 64px}
-
-/* ---------- 状態画面 ---------- */
-.state{
-  min-height:100vh;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;text-align:center;
-  padding:32px 24px;background:var(--navy);color:#fff;
-}
-.state .crest{font-family:'Space Grotesk',sans-serif;font-weight:700;color:var(--gold);font-size:13px;letter-spacing:0.3em;margin-bottom:16px}
-.state h1{font-size:20px;font-weight:700;margin-bottom:12px}
-.state p{font-size:14px;color:rgba(255,255,255,.78);max-width:300px}
-.spinner{width:34px;height:34px;border:3px solid rgba(255,255,255,.2);border-top-color:var(--gold);border-radius:50%;animation:spin 0.9s linear infinite;margin-bottom:20px}
-@keyframes spin{to{transform:rotate(360deg)}}
-.idbox{
-  margin-top:20px;background:rgba(255,255,255,.08);
-  border:1px solid rgba(255,255,255,.18);border-radius:10px;
-  padding:12px 14px;font-size:12px;word-break:break-all;
-  font-family:'Space Grotesk',monospace;max-width:300px;
-}
-.copybtn{
-  margin-top:14px;background:var(--gold);color:var(--navy-deep);
-  border:none;border-radius:999px;padding:11px 26px;
-  font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;
-}
-@media (prefers-reduced-motion:reduce){.spinner{animation:none}}
-
-/* ---------- ヘッダー ---------- */
-header.hero{
-  background:var(--navy);color:#fff;
-  padding:26px 16px 58px;
-}
-.hero-inner{max-width:480px;margin:0 auto}
-.brandline{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px}
-.brand{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;letter-spacing:0.28em;color:var(--gold)}
-.status-pill{
-  font-size:11px;font-weight:700;padding:4px 12px;border-radius:999px;
-  background:rgba(200,165,90,.16);color:var(--gold);border:1px solid rgba(200,165,90,.45);
-}
-.hello{font-size:15px;font-weight:500;color:rgba(255,255,255,.85)}
-.weekstat{display:flex;align-items:baseline;gap:10px;margin-top:6px}
-.weekstat .big{font-size:44px;line-height:1;color:#fff}
-.weekstat .unit{font-size:13px;color:rgba(255,255,255,.6)}
-.weekstat-label{font-size:12px;color:var(--gold);letter-spacing:0.08em;margin-top:4px}
-
-/* ---------- カード共通 ---------- */
-main{margin-top:-32px}
-.card{
-  background:var(--card);border:1px solid var(--line);
-  border-radius:var(--radius);padding:18px 16px;margin-bottom:14px;
-}
-.card h2{
-  font-size:13px;font-weight:700;letter-spacing:0.12em;color:var(--navy);
-  display:flex;align-items:center;gap:8px;margin-bottom:14px;
-}
-.card h2::before{content:"";width:14px;height:2px;background:var(--gold)}
-
-/* ---------- 自習室 ---------- */
-.roombtn{
-  display:block;width:100%;text-align:center;text-decoration:none;
-  background:var(--navy);color:#fff;font-weight:700;font-size:15px;
-  border:none;border-radius:12px;padding:15px;font-family:inherit;
-}
-.roombtn:active{opacity:.85}
-.roombtn.disabled{background:#C7CBD4;pointer-events:none}
-.hours-note{font-size:12px;color:var(--muted);text-align:center;margin-top:8px}
-
-/* ---------- 記録 ---------- */
-.today-line{font-size:13px;color:var(--muted);margin-bottom:12px}
-.today-line b{color:var(--ink);font-weight:700}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px}
-.chip{
-  border:1px solid var(--line);background:#FBFAF7;color:var(--ink);
-  border-radius:999px;padding:8px 14px;font-size:13px;font-family:inherit;cursor:pointer;
-}
-.chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
-.custom-row{display:flex;align-items:center;gap:8px;margin-bottom:16px}
-.custom-row select{
-  flex:1;font-family:inherit;font-size:15px;padding:10px;
-  border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);
-}
-.custom-row span{font-size:13px;color:var(--muted)}
-.recordbtn{
-  width:100%;background:var(--gold);color:var(--navy-deep);
-  border:none;border-radius:12px;padding:15px;font-size:15px;font-weight:700;
-  font-family:inherit;cursor:pointer;
-}
-.recordbtn:disabled{opacity:.5}
-.recordbtn:active{opacity:.85}
-.record-done{
-  display:none;margin-top:12px;text-align:center;font-size:13px;
-  color:var(--gold-dark);font-weight:700;
-}
-
-/* ---------- 日付選択 ---------- */
-.datechips{display:flex;gap:8px;margin-bottom:12px}
-.dchip{
-  flex:1;border:1px solid var(--line);background:#FBFAF7;color:var(--ink);
-  border-radius:10px;padding:7px 4px;font-size:13px;font-family:inherit;
-  cursor:pointer;text-align:center;line-height:1.35;
-}
-.dchip small{display:block;font-size:10px;color:var(--muted)}
-.dchip.on{background:var(--navy);border-color:var(--navy);color:#fff}
-.dchip.on small{color:rgba(255,255,255,.65)}
-
-/* ---------- ストリーク ---------- */
-.streak-pill{
-  display:inline-flex;align-items:center;gap:7px;margin-top:14px;
-  background:rgba(200,165,90,.14);border:1px solid rgba(200,165,90,.4);
-  color:var(--gold);font-size:12px;font-weight:700;border-radius:999px;padding:5px 14px;
-}
-.streak-pill .num{font-size:15px}
-.flame{
-  width:9px;height:12px;background:var(--gold);display:inline-block;
-  border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;
-}
-
-/* ---------- 入部申請フォーム ---------- */
-.gform{margin-top:22px;width:100%;max-width:300px;text-align:left}
-.gform label{display:block;font-size:12px;color:rgba(255,255,255,.75);margin:13px 0 6px}
-.gform input,.gform select{
-  width:100%;font-family:inherit;font-size:15px;padding:11px 12px;
-  border-radius:10px;border:1px solid rgba(255,255,255,.25);
-  background:rgba(255,255,255,.96);color:var(--ink);
-}
-.applybtn{
-  margin-top:22px;width:100%;background:var(--gold);color:var(--navy-deep);
-  border:none;border-radius:12px;padding:14px;font-size:15px;font-weight:700;
-  font-family:inherit;cursor:pointer;
-}
-.applybtn:disabled{opacity:.5}
-.gate-mini{margin-top:18px;font-size:10px;color:rgba(255,255,255,.35);word-break:break-all;max-width:300px}
-
-/* ---------- テスト範囲 ---------- */
-.range-list{display:flex;flex-direction:column;gap:0}
-.range-item{
-  display:flex;gap:12px;padding:11px 2px;border-bottom:1px solid var(--line);
-  font-size:14px;align-items:baseline;
-}
-.range-item:last-child{border-bottom:none}
-.range-subject{min-width:84px;font-weight:700;color:var(--navy);font-size:13px;flex-shrink:0}
-.range-text{color:var(--ink)}
-.range-note{font-size:12px;color:var(--muted)}
-.empty-note{font-size:13px;color:var(--muted);padding:6px 2px}
-
-/* ---------- ランキング ---------- */
-.rk-row{
-  display:flex;align-items:center;gap:10px;
-  padding:10px 8px;border-radius:10px;font-size:14px;
-}
-.rk-row.me{background:#FBF4E3;border:1px solid #EAD9AE}
-.rk-rank{min-width:30px;text-align:center;font-size:15px;color:var(--muted)}
-.rk-rank.r1{color:#C8A55A}.rk-rank.r2{color:#9AA3AF}.rk-rank.r3{color:#B5824C}
-.rk-name{flex:1;font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.rk-val{font-size:15px;color:var(--navy)}
-.myrank{
-  margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;
-  font-size:13px;color:var(--muted);text-align:center;
-}
-.myrank b{color:var(--gold-dark);font-size:15px}
-
-/* ---------- 科目タブ ---------- */
-.tabs{
-  display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:10px;
-  -webkit-overflow-scrolling:touch;scrollbar-width:none;
-}
-.tabs::-webkit-scrollbar{display:none}
-.tab{
-  flex-shrink:0;border:1px solid var(--line);background:#FBFAF7;
-  border-radius:999px;padding:7px 14px;font-size:12px;font-weight:500;
-  color:var(--ink);font-family:inherit;cursor:pointer;white-space:nowrap;
-}
-.tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
-.period{font-size:12px;color:var(--muted);margin-bottom:8px}
-
-/* ---------- コンテンツ ---------- */
-.content-item{
-  display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
-  padding:13px 4px;border-bottom:1px solid var(--line);font-size:14px;
-}
-.content-item:last-child{border-bottom:none}
-.content-cat{
-  flex-shrink:0;font-size:10px;font-weight:700;color:var(--gold-dark);
-  background:#F7EFDD;border-radius:6px;padding:3px 8px;
-}
-.content-title{flex:1;font-weight:500}
-.content-arrow{color:var(--gold);font-weight:700}
-.lock-note{font-size:13px;color:var(--muted);text-align:center;padding:10px 0}
-
-footer{
-  text-align:center;font-size:11px;color:var(--muted);
-  letter-spacing:0.2em;padding:28px 0 8px;
-  font-family:'Space Grotesk',sans-serif;
-}
-
-/* ---------- トースト ---------- */
-#toast{
-  position:fixed;left:50%;bottom:32px;transform:translateX(-50%) translateY(20px);
-  background:var(--navy);color:#fff;font-size:13px;font-weight:500;
-  padding:11px 22px;border-radius:999px;opacity:0;pointer-events:none;
-  transition:opacity .25s, transform .25s;z-index:50;white-space:nowrap;
-}
-#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-.skeleton{color:var(--muted);font-size:13px;padding:4px 2px}
-</style>
+<link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
 <div id="screen-loading" class="state">
-  <div class="spinner"></div>
-  <div class="crest">IEBENBU</div>
-  <h1>部室を開いています…</h1>
+  <div class="state-inner">
+    <img class="state-mascot" src="assets/mascot.png" alt="" width="120" height="120">
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="crest">IEBENBU</div>
+    <h1>部室を開いています…</h1>
+  </div>
 </div>
 
 <div id="screen-gate" class="state" style="display:none">
-  <div class="crest">IEBENBU</div>
-  <h1 id="gate-title">このページは家勉部員専用です</h1>
-  <p id="gate-text"></p>
-  <div class="gform" id="gate-form" style="display:none">
-    <label>氏名（本名）</label>
-    <input id="ap-name" type="text" maxlength="30" autocomplete="name" placeholder="例: 朝倉徹大">
-    <label>表示名（ランキングに載る名前）</label>
-    <input id="ap-disp" type="text" maxlength="20" placeholder="例: てった">
-    <label>学年</label>
-    <select id="ap-grade">
-      <option value="">選んでください</option>
-      <option>小学生</option><option>中1</option><option>中2</option><option>中3</option>
-      <option>高1</option><option>高2</option><option>高3</option>
-      <option>浪人</option><option>社会人</option>
-    </select>
-    <button class="applybtn" id="ap-btn">入部を申請する</button>
+  <div class="state-inner">
+    <img class="state-mascot" src="assets/mascot.png" alt="" width="100" height="100">
+    <div class="crest">IEBENBU</div>
+    <h1 id="gate-title">このページは家勉部員専用です</h1>
+    <p id="gate-text"></p>
+    <div class="gform" id="gate-form" style="display:none">
+      <label for="ap-name">氏名（本名）</label>
+      <input id="ap-name" type="text" maxlength="30" autocomplete="name" placeholder="例: 朝倉徹大">
+      <label for="ap-disp">表示名（ランキングに載る名前）</label>
+      <input id="ap-disp" type="text" maxlength="20" placeholder="例: てった">
+      <label for="ap-grade">学年</label>
+      <select id="ap-grade">
+        <option value="">選んでください</option>
+        <option>小学生</option><option>中1</option><option>中2</option><option>中3</option>
+        <option>高1</option><option>高2</option><option>高3</option>
+        <option>浪人</option><option>社会人</option>
+      </select>
+      <button class="applybtn" id="ap-btn" type="button">入部を申請する</button>
+    </div>
+    <div class="gate-mini" id="gate-mini"></div>
   </div>
-  <div class="gate-mini" id="gate-mini"></div>
 </div>
 
 <div id="app" style="display:none">
   <header class="hero">
-    <div class="hero-inner">
+    <div class="hero-top">
       <div class="brandline">
-        <div class="brand">IEBENBU</div>
+        <div class="brand">
+          <img class="brand-logo" src="assets/logo-iebenbu.png" alt="家勉部" width="44" height="44">
+        </div>
         <div class="status-pill" id="h-status"></div>
       </div>
+    </div>
+    <div class="hero-stats">
       <div class="hello" id="h-name"></div>
       <div class="weekstat">
         <div class="big num" id="h-week">0</div>
@@ -278,60 +65,94 @@ footer{
       </div>
       <div class="weekstat-label">一緒だから、続けられる。</div>
       <div class="streak-pill" id="streak-pill" style="display:none">
-        <span class="flame"></span>連続記録&nbsp;<span class="num" id="streak-num">0</span>&nbsp;日
+        <span class="flame" aria-hidden="true"></span>連続記録&nbsp;<span class="num" id="streak-num">0</span>&nbsp;日
       </div>
+    </div>
+    <div class="hero-banner">
+      <img src="assets/hero-study.png" alt="" width="1024" height="1024" loading="eager">
     </div>
   </header>
 
   <main class="wrap">
 
     <section class="card">
-      <h2>自習室</h2>
-      <a class="roombtn disabled" id="room-btn" href="#" target="_blank" rel="noopener">自習室に入室する</a>
-      <div class="hours-note" id="room-hours"></div>
-    </section>
-
-    <section class="card">
-      <h2>今日の勉強時間を記録</h2>
-      <div class="datechips" id="datechips"></div>
-      <div class="today-line">今日の記録: <b id="log-today">0分</b>（同じ日に再送信すると上書きされます）</div>
-      <div class="chips" id="chips"></div>
-      <div class="custom-row">
-        <select id="sel-h"></select><span>時間</span>
-        <select id="sel-m"></select><span>分</span>
+      <div class="card-head"><h2>自習室</h2></div>
+      <div class="card-visual">
+        <img src="assets/study-room.png" alt="" width="1024" height="819" loading="lazy">
       </div>
-      <button class="recordbtn" id="log-btn">この時間で記録する</button>
-      <div class="record-done" id="log-done">記録しました。積み上げ更新。</div>
+      <div class="card-body">
+        <a class="roombtn disabled" id="room-btn" href="#" target="_blank" rel="noopener">自習室に入室する</a>
+        <div class="hours-note" id="room-hours"></div>
+      </div>
     </section>
 
     <section class="card">
-      <h2>今週の小テスト範囲</h2>
-      <div class="range-list" id="weekly-list"><div class="skeleton">読み込み中…</div></div>
+      <div class="card-head"><h2>今日の勉強時間を記録</h2></div>
+      <div class="card-visual">
+        <img src="assets/study-log.png" alt="" width="1024" height="819" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="datechips" id="datechips"></div>
+        <div class="today-line">今日の記録: <b id="log-today">0分</b>（同じ日に再送信すると上書きされます）</div>
+        <div class="chips" id="chips"></div>
+        <div class="custom-row">
+          <select id="sel-h" aria-label="時間"></select><span>時間</span>
+          <select id="sel-m" aria-label="分"></select><span>分</span>
+        </div>
+        <button class="recordbtn" id="log-btn" type="button">この時間で記録する</button>
+        <div class="record-done" id="log-done">
+          <img src="assets/achievement.png" alt="" width="56" height="56" class="record-done-img">
+          記録しました。積み上げ更新。
+        </div>
+      </div>
     </section>
 
     <section class="card">
-      <h2>勉強時間ランキング（今週）</h2>
-      <div id="time-ranking"><div class="skeleton">読み込み中…</div></div>
-      <div class="myrank" id="time-myrank" style="display:none"></div>
+      <div class="card-head"><h2>今週の小テスト範囲</h2></div>
+      <div class="card-visual">
+        <img src="assets/weekly-quiz.png" alt="" width="1024" height="819" loading="lazy">
+      </div>
+      <div class="card-body">
+        <a class="planbtn" href="https://assaaa-blog.com/wp-content/uploads/2026/05/THINKING2026mini-test-planv02.pdf" target="_blank" rel="noopener">小テスト計画表を見る</a>
+        <div class="range-list" id="weekly-list"><div class="skeleton">読み込み中…</div></div>
+      </div>
     </section>
 
     <section class="card">
-      <h2>小テストランキング</h2>
-      <div class="period" id="test-period"></div>
-      <div class="tabs" id="test-tabs"></div>
-      <div id="test-panel"><div class="skeleton">読み込み中…</div></div>
+      <div class="card-head"><h2>勉強時間ランキング（今週）</h2></div>
+      <div class="card-visual">
+        <img src="assets/ranking.png" alt="" width="1024" height="819" loading="lazy">
+      </div>
+      <div class="card-body card-body--tight">
+        <div id="time-ranking"><div class="skeleton">読み込み中…</div></div>
+        <div class="myrank" id="time-myrank" style="display:none"></div>
+      </div>
     </section>
 
     <section class="card">
-      <h2>会員限定コンテンツ</h2>
-      <div id="contents-list"><div class="skeleton">読み込み中…</div></div>
+      <div class="card-head"><h2>小テストランキング</h2></div>
+      <div class="card-body">
+        <div class="period" id="test-period"></div>
+        <div class="tabs" id="test-tabs"></div>
+        <div id="test-panel"><div class="skeleton">読み込み中…</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-head"><h2>会員限定コンテンツ</h2></div>
+      <div class="card-visual">
+        <img src="assets/member-content.png" alt="" width="1024" height="819" loading="lazy">
+      </div>
+      <div class="card-body card-body--tight">
+        <div id="contents-list"><div class="skeleton">読み込み中…</div></div>
+      </div>
     </section>
 
     <footer>THINKING — IEBENBU</footer>
   </main>
 </div>
 
-<div id="toast"></div>
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script>
@@ -463,6 +284,7 @@ function buildDateChips(){
     const d = jdate(i);
     const b = document.createElement('button');
     b.className = 'dchip' + (i === 0 ? ' on' : '');
+    b.type = 'button';
     b.innerHTML = label + '<small>' + (d.getMonth() + 1) + '/' + d.getDate() + '</small>';
     b.onclick = () => { setDateOffset(i); };
     b.dataset.offset = i;
@@ -483,6 +305,7 @@ function buildChips(){
   CHIP_DEFS.forEach(min => {
     const b = document.createElement('button');
     b.className = 'chip';
+    b.type = 'button';
     b.textContent = fmtMin(min);
     b.onclick = () => { setMinutes(min); };
     b.dataset.min = min;
@@ -649,6 +472,7 @@ async function loadTestRanking(){
     data.subjects.forEach((s, i) => {
       const b = document.createElement('button');
       b.className = 'tab' + (i === 0 ? ' on' : '');
+      b.type = 'button';
       b.textContent = s.subject;
       b.onclick = () => {
         document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));

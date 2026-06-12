@@ -63,6 +63,23 @@
       </div>
       <div class="hero-stats">
         <div class="hello" id="h-name"></div>
+        <div id="rank-block" class="rank-block" style="display:none">
+          <div class="rank-card">
+            <div class="rank-badge">
+              <img id="rank-img" src="" alt="" width="96" height="96">
+            </div>
+            <div class="rank-meta">
+              <div class="rank-name" id="rank-name"></div>
+              <div class="rank-days" id="rank-days"></div>
+            </div>
+          </div>
+          <div class="rank-progress-wrap">
+            <div class="rank-progress-bar">
+              <div class="rank-progress-fill" id="rank-progress-fill"></div>
+            </div>
+            <div class="rank-progress-label" id="rank-progress-label"></div>
+          </div>
+        </div>
         <div class="weekstat">
           <div class="big num" id="h-week">0</div>
           <div class="unit">今週の勉強時間</div>
@@ -156,6 +173,15 @@
 
 <div id="toast" role="status" aria-live="polite"></div>
 
+<div id="rank-up-overlay" class="rank-up-overlay" style="display:none" role="dialog" aria-modal="true" aria-labelledby="rank-up-title">
+  <div class="rank-up-inner">
+    <div class="rank-up-title" id="rank-up-title">昇格!</div>
+    <img id="rank-up-img" class="rank-up-img" src="" alt="" width="160" height="160">
+    <div class="rank-up-text" id="rank-up-text"></div>
+    <div class="rank-up-hint">タップして閉じる</div>
+  </div>
+</div>
+
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script>
 const API_URL = 'https://script.google.com/macros/s/AKfycbzRtEbxXA7ijb-grWU1x7FwLjomnXFYvkRQ8XQIvYhANcxR2824NneO0U5_PMchichKJQ/exec';
@@ -164,6 +190,8 @@ const LIFF_ID = '2010378695-4j2cx38C';
 let idToken = '';
 let selMinutes = 0;
 let selDateOffset = 0;
+let currentRankLevel = 0;
+let currentRankStars = 0;
 
 function jdate(offset){
   const d = new Date();
@@ -258,6 +286,78 @@ async function submitApply(){
   btn.disabled = false; btn.textContent = '入部を申請する';
 }
 
+/* ---------- 部員ランク ---------- */
+function rankImgSrc(level){
+  return 'assets/rank' + level + '.png';
+}
+
+function rankStarsSuffix(stars){
+  if (!stars || stars < 1) return '';
+  var s = '';
+  for (var i = 0; i < stars; i++) s += '★';
+  return ' ' + s;
+}
+
+function isRankDataValid(data){
+  return data && typeof data.total_days === 'number' && data.rank && typeof data.rank.level === 'number';
+}
+
+function calcRankProgress(totalDays, rank){
+  var span = rank.next_threshold - rank.base;
+  if (span <= 0) return 100;
+  var p = ((totalDays - rank.base) / span) * 100;
+  return Math.max(0, Math.min(100, p));
+}
+
+function renderRank(data){
+  var block = $('rank-block');
+  if (!isRankDataValid(data)){
+    block.style.display = 'none';
+    return;
+  }
+  var rank = data.rank;
+  $('rank-img').src = rankImgSrc(rank.level);
+  $('rank-img').alt = rank.name;
+  $('rank-name').textContent = rank.name + rankStarsSuffix(rank.stars);
+  $('rank-days').textContent = '累計 ' + data.total_days + ' 日';
+  $('rank-progress-fill').style.width = calcRankProgress(data.total_days, rank) + '%';
+  $('rank-progress-label').textContent = rank.next_label + 'まで あと' + rank.days_to_next + '日';
+  block.style.display = 'block';
+  currentRankLevel = rank.level;
+  currentRankStars = rank.stars || 0;
+}
+
+function isRankPromotion(oldLevel, oldStars, newRank){
+  if (!newRank) return false;
+  var ns = newRank.stars || 0;
+  return newRank.level > oldLevel || (newRank.level === oldLevel && ns > oldStars);
+}
+
+function showRankUpOverlay(rank){
+  $('rank-up-img').src = rankImgSrc(rank.level);
+  $('rank-up-img').alt = rank.name;
+  $('rank-up-text').textContent = rank.name + rankStarsSuffix(rank.stars) + 'になりました';
+  var ov = $('rank-up-overlay');
+  ov.style.display = 'flex';
+  requestAnimationFrame(function(){
+    ov.classList.add('show');
+  });
+}
+
+function closeRankUpOverlay(){
+  var ov = $('rank-up-overlay');
+  ov.classList.remove('show');
+  ov.style.display = 'none';
+}
+
+function applyRankFromResponse(data){
+  if (!isRankDataValid(data)) return;
+  var wasVisible = $('rank-block').style.display !== 'none';
+  var promoted = wasVisible && isRankPromotion(currentRankLevel, currentRankStars, data.rank);
+  renderRank(data);
+  if (promoted) showRankUpOverlay(data.rank);
+}
+
 /* ---------- ヘッダー ---------- */
 function renderHeader(me){
   $('h-name').textContent = me.member.display_name + ' さん';
@@ -265,15 +365,28 @@ function renderHeader(me){
   $('h-week').textContent = fmtMin(me.week_minutes);
   $('log-today').textContent = fmtMin(me.today_minutes);
   setStreak(me.streak || 0);
+  renderRank(me);
   presetSelectors(me.today_minutes);
 }
 
 function setStreak(n){
+  var pill = $('streak-pill');
+  var flame = pill.querySelector('.flame');
   if (n > 0){
     $('streak-num').textContent = n;
-    $('streak-pill').style.display = 'inline-flex';
+    pill.style.display = 'inline-flex';
+    flame.classList.remove('flame-big', 'flame-gold');
+    pill.classList.remove('streak-gold');
+    if (n >= 30){
+      flame.classList.add('flame-big', 'flame-gold');
+      pill.classList.add('streak-gold');
+    } else if (n >= 7){
+      flame.classList.add('flame-big');
+    }
   } else {
-    $('streak-pill').style.display = 'none';
+    pill.style.display = 'none';
+    flame.classList.remove('flame-big', 'flame-gold');
+    pill.classList.remove('streak-gold');
   }
 }
 
@@ -368,6 +481,7 @@ async function submitLog(){
       $('log-today').textContent = fmtMin(data.today_minutes);
       $('h-week').textContent = fmtMin(data.week_minutes);
       if (typeof data.streak === 'number') setStreak(data.streak);
+      applyRankFromResponse(data);
       $('log-done').style.display = 'block';
       toast(DATE_LABELS[selDateOffset] + 'の記録: ' + fmtMin(data.minutes));
       loadTimeRanking();
@@ -538,6 +652,7 @@ async function main(){
   buildDateChips();
   buildChips();
   $('log-btn').onclick = submitLog;
+  $('rank-up-overlay').onclick = closeRankUpOverlay;
   try{
     await liff.init({ liffId: LIFF_ID });
   }catch(e){

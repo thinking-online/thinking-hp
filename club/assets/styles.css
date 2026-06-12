@@ -617,6 +617,178 @@ main {
   display: inline-block;
   border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
   box-shadow: 0 0 8px rgba(122, 139, 110, 0.4);
+  transition: width 0.25s var(--ease), height 0.25s var(--ease), box-shadow 0.25s var(--ease);
+}
+
+.flame.flame-big {
+  width: 12px;
+  height: 16px;
+}
+
+.flame.flame-gold {
+  background: linear-gradient(to top, #c8a55a, #e4c98a);
+  box-shadow: 0 0 10px rgba(200, 165, 90, 0.65);
+}
+
+.streak-pill.streak-gold {
+  background: rgba(200, 165, 90, 0.16);
+  border-color: rgba(200, 165, 90, 0.5);
+  color: #8f702e;
+  box-shadow: 0 0 16px rgba(200, 165, 90, 0.35);
+}
+
+.streak-pill.streak-gold .num {
+  color: #8f702e;
+}
+
+/* ---------- 部員ランク ---------- */
+
+.rank-block {
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.rank-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rank-badge {
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 2px solid #c8a55a;
+  overflow: hidden;
+  background: #f6f4ef;
+  box-shadow: 0 4px 16px -4px rgba(200, 165, 90, 0.35);
+}
+
+.rank-badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.rank-meta {
+  flex: 1;
+  min-width: 0;
+}
+
+.rank-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #172642;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+
+.rank-days {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.rank-progress-wrap {
+  margin-top: 14px;
+}
+
+.rank-progress-bar {
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--line-soft);
+  overflow: hidden;
+}
+
+.rank-progress-fill {
+  height: 100%;
+  width: 0;
+  border-radius: 999px;
+  background: #c8a55a;
+  transition: width 0.4s var(--ease);
+}
+
+.rank-progress-label {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* ---------- 昇格オーバーレイ ---------- */
+
+.rank-up-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(23, 38, 66, 0.88);
+  cursor: pointer;
+}
+
+.rank-up-inner {
+  text-align: center;
+  color: #fff;
+  max-width: 300px;
+}
+
+.rank-up-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: #c8a55a;
+  margin-bottom: 20px;
+}
+
+.rank-up-img {
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 3px solid #c8a55a;
+  object-fit: cover;
+  background: #f6f4ef;
+  transform: scale(0.72);
+  opacity: 0;
+  transition: transform 0.55s var(--ease), opacity 0.55s var(--ease);
+}
+
+.rank-up-overlay.show .rank-up-img {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.rank-up-text {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.rank-up-hint {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+  letter-spacing: 0.06em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rank-up-img {
+    transition: none;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  .rank-progress-fill {
+    transition: none;
+  }
 }
 
 /* ---------- Gate form ---------- */

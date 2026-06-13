@@ -61,6 +61,10 @@
       <div class="hero-stats">
         <div class="hello" id="h-name"></div>
         <div id="rank-block" class="rank-journey" style="display:none">
+          <div class="rank-welcome">
+            <div class="rank-welcome-label">現在のランク</div>
+            <div class="rank-welcome-msg" id="rank-welcome-msg">今日も頑張ろう！</div>
+          </div>
           <div class="rank-identity">
             <div class="rank-badge-wrap">
               <div class="rank-badge-ring" aria-hidden="true"></div>
@@ -331,6 +335,19 @@ function rankGoalText(rank){
   return '次は「' + rank.next_label + '」まで あと' + d + '日';
 }
 
+function rankWelcomeMessage(data, streak, todayMinutes){
+  var rank = data.rank;
+  if (rank.days_to_next <= 1) return 'あと1日。今日の記録で、昇格の射程に入る。';
+  if (rank.days_to_next <= 3) return 'ゴールが近い。今日も積み上げよう。';
+  if (streak >= 30) return '連続' + streak + '日。そのペース、止めない。';
+  if (streak >= 7) return '連続' + streak + '日。今日もその調子で。';
+  if (todayMinutes > 0) return '今日も記録済み。あと一歩、積み上げよう。';
+  var h = new Date().getHours();
+  if (h >= 21) return '今日の記録、忘れずに。';
+  if (h >= 5 && h < 11) return 'おはよう。今日も一歩ずつ。';
+  return '今日も頑張ろう！';
+}
+
 function pulseRankBar(){
   var bar = $('rank-progress-bar');
   bar.classList.remove('rank-progress-bar--pulse');
@@ -383,6 +400,13 @@ function renderRank(data, memberStatus, opts){
   $('rank-days-num').textContent = data.total_days;
   $('rank-progress-pct').textContent = Math.round(pct) + '%';
   $('rank-progress-goal').textContent = rankGoalText(rank);
+  if (opts.enter){
+    $('rank-welcome-msg').textContent = rankWelcomeMessage(
+      data,
+      opts.streak || 0,
+      opts.todayMinutes || 0
+    );
+  }
 
   block.classList.remove('rank-journey--hot', 'rank-journey--urgent');
   if (rank.days_to_next <= 2) block.classList.add('rank-journey--urgent');
@@ -457,7 +481,11 @@ function renderHeader(me){
   $('h-status').textContent = me.member.member_status;
   $('h-week').textContent = fmtMin(me.week_minutes);
   $('log-today').textContent = fmtMin(me.today_minutes);
-  renderRank(me, me.member.member_status, { enter: true });
+  renderRank(me, me.member.member_status, {
+    enter: true,
+    streak: me.streak || 0,
+    todayMinutes: me.today_minutes || 0
+  });
   setStreak(me.streak || 0);
   presetSelectors(me.today_minutes);
 }

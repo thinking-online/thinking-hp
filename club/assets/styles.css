@@ -741,6 +741,41 @@ main {
   height: 4px;
 }
 
+.rank-welcome {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px dashed var(--line);
+}
+
+.rank-welcome-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: var(--muted);
+  margin-bottom: 5px;
+}
+
+.rank-welcome-msg {
+  font-size: 15px;
+  font-weight: 700;
+  color: #172642;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.rank-journey--enter .rank-welcome-msg {
+  animation: welcomeIn 0.55s var(--ease) 0.05s both;
+}
+
+.rank-journey--urgent .rank-welcome-msg {
+  color: #8f702e;
+}
+
+@keyframes welcomeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 @keyframes rankCardIn {
   from { opacity: 0; transform: translateY(12px); }
   to { opacity: 1; transform: translateY(0); }
@@ -1111,6 +1146,7 @@ main {
   .rank-journey--urgent .rank-progress-fill,
   .rank-total-num--pop,
   .rank-progress-bar--pulse,
+  .rank-journey--enter .rank-welcome-msg,
   .rank-up-ring,
   .rank-up-burst {
     animation: none;

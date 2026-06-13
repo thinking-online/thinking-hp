@@ -682,13 +682,48 @@ async function loadWeekly(){
   }
 }
 
-/* ---------- 勉強時間ランキング ---------- */
+/* ---------- ランキング（同率は同じ順位番号） ---------- */
+function calcTiedRanks(entries, valueFn){
+  var ranks = [];
+  var r = 1;
+  for (var i = 0; i < entries.length; i++){
+    if (i > 0 && valueFn(entries[i]) !== valueFn(entries[i - 1])) r++;
+    ranks.push(r);
+  }
+  return ranks;
+}
+
+function myTiedRank(entries, valueFn, myValue){
+  if (!entries.length) return null;
+  var ranks = calcTiedRanks(entries, valueFn);
+  for (var i = 0; i < entries.length; i++){
+    if (entries[i].is_me) return ranks[i];
+  }
+  if (myValue == null) return null;
+  for (var i = 0; i < entries.length; i++){
+    if (valueFn(entries[i]) === myValue) return ranks[i];
+  }
+  var rank = 1;
+  var prev = null;
+  for (var i = 0; i < entries.length; i++){
+    var v = valueFn(entries[i]);
+    if (v > myValue && v !== prev){
+      rank++;
+      prev = v;
+    } else if (v > myValue){
+      prev = v;
+    }
+  }
+  return rank;
+}
+
 function rankRow(rank, name, val, isMe){
   const row = document.createElement('div');
   row.className = 'rk-row' + (isMe ? ' me' : '');
   const rk = document.createElement('div');
-  rk.className = 'rk-rank num' + (rank <= 3 ? ' r' + rank : '');
-  rk.textContent = rank;
+  var rankNum = Number(rank) || 0;
+  rk.className = 'rk-rank num' + (rankNum <= 3 ? ' r' + rankNum : '');
+  rk.textContent = rankNum;
   const nm = document.createElement('div');
   nm.className = 'rk-name';
   nm.textContent = name + (isMe ? '（あなた）' : '');
@@ -697,6 +732,18 @@ function rankRow(rank, name, val, isMe){
   vl.textContent = val;
   row.appendChild(rk); row.appendChild(nm); row.appendChild(vl);
   return row;
+}
+
+function testEntryRate(e){
+  var v = e.rate;
+  if (typeof v === 'number') return v;
+  return Number(String(v).replace('%', '').trim()) || 0;
+}
+
+function formatTestRate(rate){
+  if (typeof rate === 'number') return rate + '%';
+  var s = String(rate);
+  return s.indexOf('%') >= 0 ? s : s + '%';
 }
 
 async function loadTimeRanking(){
@@ -710,12 +757,15 @@ async function loadTimeRanking(){
       $('time-myrank').style.display = 'none';
       return;
     }
-    data.ranking.forEach(r => {
-      box.appendChild(rankRow(r.rank, r.name, fmtMin(r.minutes), r.is_me));
+    var ranking = data.ranking;
+    var ranks = calcTiedRanks(ranking, function(e){ return e.minutes; });
+    ranking.forEach(function(r, idx){
+      box.appendChild(rankRow(ranks[idx], r.name, fmtMin(r.minutes), r.is_me));
     });
     const my = $('time-myrank');
-    if (data.my_rank){
-      my.innerHTML = 'あなたは現在 <b>' + data.my_rank + '位</b>｜今週 ' + fmtMin(data.my_minutes);
+    var myRank = myTiedRank(ranking, function(e){ return e.minutes; }, data.my_minutes);
+    if (myRank){
+      my.innerHTML = 'あなたは現在 <b>' + myRank + '位</b>｜今週 ' + fmtMin(data.my_minutes);
       my.style.display = 'block';
     } else {
       my.innerHTML = '今日の記録を送ると、ランキングに参加できます';
@@ -765,8 +815,10 @@ function renderTestPanel(i){
     panel.innerHTML = '<div class="empty-note">今週のデータはまだありません</div>';
     return;
   }
-  s.entries.slice(0, 7).forEach(e => {
-    panel.appendChild(rankRow(e.rank, e.name, e.rate + '%', e.is_me));
+  var entries = s.entries.slice(0, 7);
+  var ranks = calcTiedRanks(entries, testEntryRate);
+  entries.forEach(function(e, idx){
+    panel.appendChild(rankRow(ranks[idx], e.name, formatTestRate(e.rate), e.is_me));
   });
 }
 

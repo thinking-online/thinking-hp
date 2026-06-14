@@ -110,6 +110,7 @@
     <nav class="quicknav" id="quicknav" aria-label="セクションへ移動">
       <div class="quicknav-track">
         <button type="button" class="quicknav-pill" data-target="sec-room">自習室</button>
+        <button type="button" class="quicknav-pill quicknav-pill--declare" data-target="sec-declare">宣言</button>
         <button type="button" class="quicknav-pill" data-target="sec-log">記録</button>
         <button type="button" class="quicknav-pill quicknav-pill--tournament" data-target="block-card">予選</button>
         <button type="button" class="quicknav-pill quicknav-pill--tournament" data-target="nationals-card">全国</button>
@@ -118,6 +119,44 @@
         <button type="button" class="quicknav-pill" data-target="sec-contents">コンテンツ</button>
       </div>
     </nav>
+
+    <section class="card declare-card" id="sec-declare" style="display:none">
+      <div class="card-head"><h2>今日の宣言</h2></div>
+      <div class="card-body card-body--tight">
+        <div class="declare-mine" id="declare-mine">
+          <div id="declare-form-wrap">
+            <textarea id="declare-text" class="declare-input" maxlength="50" rows="2" placeholder="今日やること"></textarea>
+            <div class="declare-goal-row">
+              <span class="declare-goal-label">目標時間（任意）</span>
+              <select id="declare-goal-h" aria-label="目標・時間"></select><span>時間</span>
+              <select id="declare-goal-m" aria-label="目標・分"></select><span>分</span>
+            </div>
+            <button type="button" class="declare-submit" id="declare-submit">宣言する</button>
+          </div>
+          <div id="declare-mine-view" hidden>
+            <div class="declare-mine-card">
+              <span class="declare-you">あなた</span>
+              <p class="declare-mine-text" id="declare-mine-text"></p>
+              <p class="declare-mine-goal" id="declare-mine-goal" hidden></p>
+            </div>
+            <button type="button" class="declare-edit" id="declare-edit">編集</button>
+          </div>
+        </div>
+
+        <div class="declare-heat">
+          <span class="declare-heat-pre">今日、全国で</span>
+          <span class="declare-heat-num num" id="declare-total">—</span>
+          <span class="declare-heat-suf">人が宣言中</span>
+        </div>
+
+        <div class="declare-tabs" id="declare-tabs">
+          <button type="button" class="declare-tab on" data-scope="league">戦友</button>
+          <button type="button" class="declare-tab" data-scope="all">全国</button>
+        </div>
+        <div id="declare-list"><div class="skeleton">読み込み中…</div></div>
+        <p class="declare-error" id="declare-error" hidden></p>
+      </div>
+    </section>
 
     <section class="card" id="sec-room">
       <div class="card-head"><h2>自習室</h2></div>
@@ -1085,7 +1124,7 @@ var quickNavObserver = null;
 function syncQuickNavObserver(){
   if (!quickNavObserver) return;
   quickNavObserver.disconnect();
-  ['sec-room', 'sec-log', 'block-card', 'nationals-card', 'ranking-fallback-card', 'sec-test', 'sec-contents'].forEach(function(id){
+  ['sec-declare', 'sec-room', 'sec-log', 'block-card', 'nationals-card', 'ranking-fallback-card', 'sec-test', 'sec-contents'].forEach(function(id){
     var el = $(id);
     if (!el) return;
     if (el.style.display === 'none') return;
@@ -1305,8 +1344,287 @@ async function main(){
   loadLeagueDisplay();
   loadTestRanking();
   loadContents();
+  await initDeclarations();
   initQuickNav();
   initCoach();
+}
+
+/* ---------- 今日の宣言 ---------- */
+var declareScope = 'league';
+var declareEditing = false;
+var declareSubmitting = false;
+var declareCheering = false;
+var lastDeclareData = null;
+
+async function fetchDeclarations(scope){
+  var res = await fetch(API_URL + '?action=declarations&token=' + encodeURIComponent(idToken) + '&scope=' + encodeURIComponent(scope));
+  return res.json();
+}
+
+function buildDeclareGoalSelectors(){
+  var h = $('declare-goal-h');
+  var m = $('declare-goal-m');
+  if (!h || !m) return;
+  h.innerHTML = '';
+  m.innerHTML = '';
+  for (var i = 0; i <= 8; i++){
+    var o = document.createElement('option');
+    o.value = i;
+    o.textContent = i;
+    h.appendChild(o);
+  }
+  for (var j = 0; j < 60; j += 10){
+    var om = document.createElement('option');
+    om.value = j;
+    om.textContent = j;
+    m.appendChild(om);
+  }
+}
+
+function setDeclareGoalMinutes(min){
+  min = Number(min) || 0;
+  if ($('declare-goal-h')) $('declare-goal-h').value = Math.floor(min / 60);
+  if ($('declare-goal-m')) $('declare-goal-m').value = Math.round((min % 60) / 10) * 10;
+}
+
+function readDeclareGoalMinutes(){
+  var gh = Number($('declare-goal-h').value) || 0;
+  var gm = Number($('declare-goal-m').value) || 0;
+  return gh * 60 + gm;
+}
+
+function showDeclareForm(data){
+  var form = $('declare-form-wrap');
+  var view = $('declare-mine-view');
+  var btn = $('declare-submit');
+  if (!form || !view) return;
+  form.hidden = false;
+  view.hidden = true;
+  if (data && data.i_declared){
+    $('declare-text').value = data.my_text || '';
+    setDeclareGoalMinutes(data.my_goal);
+    btn.textContent = '更新する';
+  } else {
+    if (!declareEditing) $('declare-text').value = '';
+    if (!declareEditing) setDeclareGoalMinutes(0);
+    btn.textContent = '宣言する';
+  }
+}
+
+function showDeclareView(data){
+  var form = $('declare-form-wrap');
+  var view = $('declare-mine-view');
+  if (!form || !view || !data) return;
+  form.hidden = true;
+  view.hidden = false;
+  declareEditing = false;
+  $('declare-mine-text').textContent = data.my_text || '';
+  var goalEl = $('declare-mine-goal');
+  if (data.my_goal != null && data.my_goal > 0){
+    goalEl.textContent = '目標 ' + fmtMin(data.my_goal);
+    goalEl.hidden = false;
+  } else {
+    goalEl.hidden = true;
+  }
+}
+
+function renderDeclareMine(data){
+  if (data.i_declared && !declareEditing){
+    showDeclareView(data);
+  } else {
+    showDeclareForm(data);
+  }
+}
+
+function renderDeclareHeat(data){
+  var n = typeof data.total_today === 'number' ? data.total_today : 0;
+  $('declare-total').textContent = n;
+}
+
+function createDeclareItem(d){
+  var row = document.createElement('div');
+  row.className = 'declare-item' + (d.is_me ? ' declare-item--me' : '');
+  var head = document.createElement('div');
+  head.className = 'declare-item-head';
+  var name = document.createElement('span');
+  name.className = 'declare-item-name';
+  name.textContent = d.name;
+  if (d.is_me){
+    var you = document.createElement('span');
+    you.className = 'declare-you';
+    you.textContent = 'あなた';
+    name.appendChild(you);
+  }
+  head.appendChild(name);
+  var text = document.createElement('p');
+  text.className = 'declare-item-text';
+  text.textContent = d.text;
+  var meta = document.createElement('div');
+  meta.className = 'declare-item-meta';
+  if (d.goal_minutes != null && d.goal_minutes > 0){
+    var goal = document.createElement('span');
+    goal.className = 'declare-item-goal num';
+    goal.textContent = '目標 ' + fmtMin(d.goal_minutes);
+    meta.appendChild(goal);
+  }
+  var cheerBtn = document.createElement('button');
+  cheerBtn.type = 'button';
+  cheerBtn.className = 'declare-cheer' + (d.cheered_by_me ? ' declare-cheer--on' : '');
+  cheerBtn.setAttribute('aria-pressed', d.cheered_by_me ? 'true' : 'false');
+  var count = document.createElement('span');
+  count.className = 'declare-cheer-count num';
+  count.textContent = d.cheers != null ? d.cheers : 0;
+  cheerBtn.innerHTML = '<span class="declare-cheer-icon" aria-hidden="true"></span><span class="declare-cheer-label">ファイト</span>';
+  cheerBtn.appendChild(count);
+  if (d.is_me){
+    cheerBtn.disabled = true;
+  } else {
+    cheerBtn.addEventListener('click', function(){
+      toggleDeclareCheer(d.target, cheerBtn, count);
+    });
+  }
+  meta.appendChild(cheerBtn);
+  row.appendChild(head);
+  row.appendChild(text);
+  row.appendChild(meta);
+  return row;
+}
+
+function renderDeclareList(data){
+  var list = $('declare-list');
+  var err = $('declare-error');
+  if (err) err.hidden = true;
+  list.innerHTML = '';
+  var items = data.declarations || [];
+  if (items.length === 0){
+    list.innerHTML = '<div class="declare-empty">まだ誰も宣言していません。一番乗りで宣言しよう。</div>';
+    return;
+  }
+  items.forEach(function(d){
+    list.appendChild(createDeclareItem(d));
+  });
+}
+
+function renderDeclarations(data){
+  lastDeclareData = data;
+  renderDeclareMine(data);
+  renderDeclareHeat(data);
+  renderDeclareList(data);
+}
+
+async function toggleDeclareCheer(target, btn, countEl){
+  if (declareCheering || !target) return;
+  declareCheering = true;
+  btn.disabled = true;
+  try{
+    var res = await fetch(API_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'cheer', token: idToken, target: target })
+    });
+    var data = await res.json();
+    if (data.status === 'ok'){
+      btn.classList.toggle('declare-cheer--on', !!data.cheered);
+      btn.setAttribute('aria-pressed', data.cheered ? 'true' : 'false');
+      countEl.textContent = data.count != null ? data.count : 0;
+    } else {
+      toast('ファイトを送れませんでした');
+    }
+  }catch(e){
+    toast('通信エラー。もう一度どうぞ');
+  }
+  declareCheering = false;
+  if (!btn.closest('.declare-item--me')) btn.disabled = false;
+}
+
+async function submitDeclare(){
+  if (declareSubmitting) return;
+  var text = $('declare-text').value.trim();
+  if (!text){
+    toast('宣言を入力してください');
+    return;
+  }
+  var goal = readDeclareGoalMinutes();
+  var btn = $('declare-submit');
+  declareSubmitting = true;
+  btn.disabled = true;
+  btn.textContent = '送信中…';
+  try{
+    var body = { action: 'declare', token: idToken, text: text };
+    if (goal > 0) body.goal_minutes = goal;
+    var res = await fetch(API_URL, { method: 'POST', body: JSON.stringify(body) });
+    var data = await res.json();
+    if (data.status === 'ok'){
+      declareEditing = false;
+      toast(lastDeclareData && lastDeclareData.i_declared ? '宣言を更新しました' : '宣言しました');
+      await reloadDeclarations();
+    } else {
+      toast('宣言に失敗しました');
+    }
+  }catch(e){
+    toast('通信エラー。もう一度どうぞ');
+  }
+  declareSubmitting = false;
+  btn.disabled = false;
+  btn.textContent = lastDeclareData && lastDeclareData.i_declared ? '更新する' : '宣言する';
+}
+
+async function reloadDeclarations(){
+  var err = $('declare-error');
+  $('declare-list').innerHTML = '<div class="skeleton">読み込み中…</div>';
+  try{
+    var data = await fetchDeclarations(declareScope);
+    if (data.status !== 'ok'){
+      if (err){
+        err.textContent = '読み込みに失敗しました';
+        err.hidden = false;
+      }
+      $('declare-list').innerHTML = '<div class="declare-empty">表示できませんでした</div>';
+      return;
+    }
+    renderDeclarations(data);
+  }catch(e){
+    if (err){
+      err.textContent = '通信エラー。しばらくしてから再度お試しください';
+      err.hidden = false;
+    }
+    $('declare-list').innerHTML = '<div class="declare-empty">表示できませんでした</div>';
+  }
+}
+
+function bindDeclareEvents(){
+  document.querySelectorAll('.declare-tab').forEach(function(tab){
+    tab.addEventListener('click', function(){
+      if (tab.classList.contains('on')) return;
+      document.querySelectorAll('.declare-tab').forEach(function(t){ t.classList.remove('on'); });
+      tab.classList.add('on');
+      declareScope = tab.getAttribute('data-scope') || 'league';
+      reloadDeclarations();
+    });
+  });
+  $('declare-submit').onclick = submitDeclare;
+  $('declare-edit').onclick = function(){
+    declareEditing = true;
+    showDeclareForm(lastDeclareData);
+  };
+}
+
+async function initDeclarations(){
+  var card = $('sec-declare');
+  if (!card) return;
+  buildDeclareGoalSelectors();
+  try{
+    var data = await fetchDeclarations('league');
+    if (!data || data.status !== 'ok'){
+      card.style.display = 'none';
+      return;
+    }
+    declareScope = 'league';
+    card.style.display = '';
+    bindDeclareEvents();
+    renderDeclarations(data);
+  }catch(e){
+    card.style.display = 'none';
+  }
 }
 
 /* ---------- 家勉くん AIコーチ ---------- */

@@ -193,6 +193,32 @@
 
     <footer>THINKING — IEBENBU</footer>
   </main>
+
+  <button type="button" class="coach-fab" id="coach-fab" aria-label="家勉くんと話す">
+    <img class="coach-fab-img" id="coach-fab-img" src="assets/rank1.png" alt="" width="52" height="52">
+    <span class="coach-fab-fallback" aria-hidden="true">💬</span>
+  </button>
+
+  <div id="coach-panel" class="coach-panel" aria-hidden="true">
+    <div class="coach-backdrop" id="coach-backdrop"></div>
+    <div class="coach-sheet" role="dialog" aria-modal="true" aria-labelledby="coach-title">
+      <header class="coach-header">
+        <div class="coach-header-main">
+          <img class="coach-header-avatar" src="assets/rank1.png" alt="" width="44" height="44">
+          <div>
+            <div class="coach-header-name" id="coach-title">家勉くん</div>
+            <div class="coach-header-sub">AIコーチ</div>
+          </div>
+        </div>
+        <button type="button" class="coach-close" id="coach-close" aria-label="閉じる">&times;</button>
+      </header>
+      <div class="coach-messages" id="coach-messages"></div>
+      <div class="coach-compose">
+        <textarea id="coach-input" class="coach-input" rows="1" placeholder="メッセージを入力…" maxlength="500"></textarea>
+        <button type="button" class="coach-send" id="coach-send">送信</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div id="toast" role="status" aria-live="polite"></div>
@@ -1103,6 +1129,139 @@ async function main(){
   loadLeagueDisplay();
   loadTestRanking();
   loadContents();
+  initCoach();
+}
+
+/* ---------- 家勉くん AIコーチ ---------- */
+var coachHistory = [];
+var coachGreeted = false;
+var coachSending = false;
+var COACH_GREETING = 'やっほー、家勉くんやで。今日の勉強の相談でも、ぐちでも、なんでも話してな。';
+var COACH_HISTORY_MAX = 12;
+var COACH_ERR_NETWORK = '通信がうまくいかへんかったわ。電波確認して、もう一回話しかけてな。';
+var COACH_ERR_FALLBACK = 'ごめんな、うまく返事できへんかった。もう一回試してみてや。';
+
+function initCoach(){
+  var fabImg = $('coach-fab-img');
+  if (fabImg){
+    fabImg.onerror = function(){
+      fabImg.style.display = 'none';
+      var fb = document.querySelector('.coach-fab-fallback');
+      if (fb) fb.style.display = 'block';
+    };
+  }
+  $('coach-fab').onclick = openCoachPanel;
+  $('coach-close').onclick = closeCoachPanel;
+  $('coach-backdrop').onclick = closeCoachPanel;
+  $('coach-send').onclick = sendCoachMessage;
+  $('coach-input').addEventListener('keydown', function(e){
+    if (e.key === 'Enter' && !e.shiftKey){
+      e.preventDefault();
+      sendCoachMessage();
+    }
+  });
+}
+
+function openCoachPanel(){
+  var panel = $('coach-panel');
+  panel.classList.add('coach-panel--open');
+  panel.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('coach-open');
+  if (!coachGreeted){
+    coachGreeted = true;
+    appendCoachBubble('assistant', COACH_GREETING);
+  }
+  scrollCoachToBottom();
+  setTimeout(function(){ $('coach-input').focus(); }, 280);
+}
+
+function closeCoachPanel(){
+  var panel = $('coach-panel');
+  panel.classList.remove('coach-panel--open');
+  panel.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('coach-open');
+}
+
+function appendCoachBubble(role, text){
+  var box = $('coach-messages');
+  var row = document.createElement('div');
+  row.className = 'coach-msg coach-msg--' + (role === 'user' ? 'user' : 'bot');
+  var bubble = document.createElement('div');
+  bubble.className = 'coach-bubble';
+  bubble.textContent = text;
+  row.appendChild(bubble);
+  box.appendChild(row);
+  scrollCoachToBottom();
+}
+
+function showCoachLoading(){
+  hideCoachLoading();
+  var row = document.createElement('div');
+  row.className = 'coach-msg coach-msg--bot coach-msg--loading';
+  row.id = 'coach-loading';
+  var bubble = document.createElement('div');
+  bubble.className = 'coach-bubble coach-bubble--loading';
+  bubble.innerHTML = '<span class="coach-loading-text">家勉くんが考え中</span><span class="coach-dots" aria-hidden="true"><i></i><i></i><i></i></span>';
+  row.appendChild(bubble);
+  $('coach-messages').appendChild(row);
+  scrollCoachToBottom();
+}
+
+function hideCoachLoading(){
+  var el = $('coach-loading');
+  if (el) el.remove();
+}
+
+function scrollCoachToBottom(){
+  var box = $('coach-messages');
+  if (box) box.scrollTop = box.scrollHeight;
+}
+
+function trimCoachHistory(){
+  while (coachHistory.length > COACH_HISTORY_MAX){
+    coachHistory.shift();
+  }
+}
+
+function setCoachBusy(busy){
+  coachSending = busy;
+  $('coach-input').disabled = busy;
+  $('coach-send').disabled = busy;
+}
+
+async function sendCoachMessage(){
+  if (coachSending) return;
+  var input = $('coach-input');
+  var text = input.value.trim();
+  if (!text) return;
+  setCoachBusy(true);
+  appendCoachBubble('user', text);
+  input.value = '';
+  var historyForApi = coachHistory.slice();
+  showCoachLoading();
+  try{
+    var res = await fetch(API_URL, {
+      method: 'POST',
+      body: JSON.stringify({
+        action: 'coach',
+        token: idToken,
+        message: text,
+        history: historyForApi
+      })
+    });
+    var data = await res.json();
+    hideCoachLoading();
+    var reply = (data && data.reply) ? data.reply : COACH_ERR_FALLBACK;
+    appendCoachBubble('assistant', reply);
+    coachHistory.push({ role: 'user', content: text });
+    coachHistory.push({ role: 'assistant', content: reply });
+    trimCoachHistory();
+  }catch(e){
+    hideCoachLoading();
+    appendCoachBubble('assistant', COACH_ERR_NETWORK);
+  }
+  setCoachBusy(false);
+  input.focus();
 }
 
 main();

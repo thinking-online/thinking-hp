@@ -149,10 +149,7 @@
           <span class="declare-heat-suf">人が宣言中</span>
         </div>
 
-        <div class="declare-tabs" id="declare-tabs">
-          <button type="button" class="declare-tab on" data-scope="league">戦友</button>
-          <button type="button" class="declare-tab" data-scope="all">全国</button>
-        </div>
+        <div class="declare-list-head">全国の宣言</div>
         <div id="declare-list"><div class="skeleton">読み込み中…</div></div>
         <p class="declare-error" id="declare-error" hidden></p>
       </div>
@@ -1350,14 +1347,13 @@ async function main(){
 }
 
 /* ---------- 今日の宣言 ---------- */
-var declareScope = 'league';
 var declareEditing = false;
 var declareSubmitting = false;
 var declareCheering = false;
 var lastDeclareData = null;
 
-async function fetchDeclarations(scope){
-  var res = await fetch(API_URL + '?action=declarations&token=' + encodeURIComponent(idToken) + '&scope=' + encodeURIComponent(scope));
+async function fetchDeclarations(){
+  var res = await fetch(API_URL + '?action=declarations&token=' + encodeURIComponent(idToken) + '&scope=all');
   return res.json();
 }
 
@@ -1367,7 +1363,7 @@ function buildDeclareGoalSelectors(){
   if (!h || !m) return;
   h.innerHTML = '';
   m.innerHTML = '';
-  for (var i = 0; i <= 8; i++){
+  for (var i = 0; i <= 16; i++){
     var o = document.createElement('option');
     o.value = i;
     o.textContent = i;
@@ -1383,8 +1379,11 @@ function buildDeclareGoalSelectors(){
 
 function setDeclareGoalMinutes(min){
   min = Number(min) || 0;
-  if ($('declare-goal-h')) $('declare-goal-h').value = Math.floor(min / 60);
-  if ($('declare-goal-m')) $('declare-goal-m').value = Math.round((min % 60) / 10) * 10;
+  var h = Math.min(Math.floor(min / 60), 16);
+  var m = Math.round((min % 60) / 10) * 10;
+  if (h >= 16) m = 0;
+  if ($('declare-goal-h')) $('declare-goal-h').value = h;
+  if ($('declare-goal-m')) $('declare-goal-m').value = m;
 }
 
 function readDeclareGoalMinutes(){
@@ -1572,7 +1571,7 @@ async function reloadDeclarations(){
   var err = $('declare-error');
   $('declare-list').innerHTML = '<div class="skeleton">読み込み中…</div>';
   try{
-    var data = await fetchDeclarations(declareScope);
+    var data = await fetchDeclarations();
     if (data.status !== 'ok'){
       if (err){
         err.textContent = '読み込みに失敗しました';
@@ -1592,15 +1591,6 @@ async function reloadDeclarations(){
 }
 
 function bindDeclareEvents(){
-  document.querySelectorAll('.declare-tab').forEach(function(tab){
-    tab.addEventListener('click', function(){
-      if (tab.classList.contains('on')) return;
-      document.querySelectorAll('.declare-tab').forEach(function(t){ t.classList.remove('on'); });
-      tab.classList.add('on');
-      declareScope = tab.getAttribute('data-scope') || 'league';
-      reloadDeclarations();
-    });
-  });
   $('declare-submit').onclick = submitDeclare;
   $('declare-edit').onclick = function(){
     declareEditing = true;
@@ -1613,12 +1603,11 @@ async function initDeclarations(){
   if (!card) return;
   buildDeclareGoalSelectors();
   try{
-    var data = await fetchDeclarations('league');
+    var data = await fetchDeclarations();
     if (!data || data.status !== 'ok'){
       card.style.display = 'none';
       return;
     }
-    declareScope = 'league';
     card.style.display = '';
     bindDeclareEvents();
     renderDeclarations(data);

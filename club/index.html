@@ -107,7 +107,18 @@
 
   <main class="wrap">
 
-    <section class="card">
+    <nav class="quicknav" id="quicknav" aria-label="セクションへ移動">
+      <div class="quicknav-track">
+        <button type="button" class="quicknav-pill" data-target="sec-log">記録</button>
+        <button type="button" class="quicknav-pill quicknav-pill--tournament" data-target="block-card">予選</button>
+        <button type="button" class="quicknav-pill quicknav-pill--tournament" data-target="nationals-card">全国</button>
+        <button type="button" class="quicknav-pill quicknav-pill--fallback" data-target="ranking-fallback-card" hidden>ランキング</button>
+        <button type="button" class="quicknav-pill" data-target="sec-test">小テスト</button>
+        <button type="button" class="quicknav-pill" data-target="sec-contents">コンテンツ</button>
+      </div>
+    </nav>
+
+    <section class="card" id="sec-room">
       <div class="card-head"><h2>自習室</h2></div>
       <div class="card-visual">
         <img src="assets/study-room.png" alt="" width="1024" height="819" loading="lazy">
@@ -118,7 +129,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card" id="sec-log">
       <div class="card-head"><h2>今日の勉強時間を記録</h2></div>
       <div class="card-visual">
         <img src="assets/study-log.png" alt="" width="1024" height="819" loading="lazy">
@@ -200,7 +211,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card" id="sec-test">
       <div class="card-head"><h2>小テストランキング</h2></div>
       <div class="card-body">
         <div class="period" id="test-period"></div>
@@ -209,7 +220,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card" id="sec-contents">
       <div class="card-head"><h2>会員限定コンテンツ</h2></div>
       <div class="card-visual">
         <img src="assets/member-content.png" alt="" width="1024" height="819" loading="lazy">
@@ -1058,12 +1069,62 @@ function showLeagueUI(){
   $('block-card').style.display = '';
   $('nationals-card').style.display = '';
   $('ranking-fallback-card').style.display = 'none';
+  updateQuickNavMode(true);
 }
 
 function showRankingFallback(){
   $('block-card').style.display = 'none';
   $('nationals-card').style.display = 'none';
   $('ranking-fallback-card').style.display = '';
+  updateQuickNavMode(false);
+}
+
+var quickNavObserver = null;
+
+function syncQuickNavObserver(){
+  if (!quickNavObserver) return;
+  quickNavObserver.disconnect();
+  ['sec-log', 'block-card', 'nationals-card', 'ranking-fallback-card', 'sec-test', 'sec-contents'].forEach(function(id){
+    var el = $(id);
+    if (!el) return;
+    if (el.style.display === 'none') return;
+    quickNavObserver.observe(el);
+  });
+}
+
+function updateQuickNavMode(isLeague){
+  document.querySelectorAll('.quicknav-pill--tournament').forEach(function(b){
+    b.hidden = !isLeague;
+  });
+  var fb = document.querySelector('.quicknav-pill--fallback');
+  if (fb) fb.hidden = isLeague;
+  syncQuickNavObserver();
+}
+
+function initQuickNav(){
+  var nav = $('quicknav');
+  if (!nav) return;
+  nav.querySelectorAll('.quicknav-pill').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var el = $(btn.getAttribute('data-target'));
+      if (!el || el.style.display === 'none') return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      nav.querySelectorAll('.quicknav-pill').forEach(function(p){ p.classList.remove('is-on'); });
+      btn.classList.add('is-on');
+    });
+  });
+  if (typeof IntersectionObserver !== 'undefined'){
+    quickNavObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        var id = entry.target.id;
+        nav.querySelectorAll('.quicknav-pill').forEach(function(p){
+          p.classList.toggle('is-on', p.getAttribute('data-target') === id);
+        });
+      });
+    }, { rootMargin: '-42% 0px -42% 0px', threshold: 0 });
+    syncQuickNavObserver();
+  }
 }
 
 async function loadTimeRankingFallback(){
@@ -1243,6 +1304,7 @@ async function main(){
   loadLeagueDisplay();
   loadTestRanking();
   loadContents();
+  initQuickNav();
   initCoach();
 }
 

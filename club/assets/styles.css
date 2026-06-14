@@ -147,6 +147,7 @@ img {
   vertical-align: middle;
 }
 
+#sec-room,
 #sec-log,
 #block-card,
 #nationals-card,
@@ -1724,11 +1725,11 @@ footer::before {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center center;
 }
 
 .league-visual--nat img {
-  object-position: center 38%;
+  object-position: center 40%;
 }
 
 .league-hero {

@@ -109,6 +109,7 @@
 
     <nav class="quicknav" id="quicknav" aria-label="セクションへ移動">
       <div class="quicknav-track">
+        <button type="button" class="quicknav-pill" data-target="sec-room">自習室</button>
         <button type="button" class="quicknav-pill" data-target="sec-log">記録</button>
         <button type="button" class="quicknav-pill quicknav-pill--tournament" data-target="block-card">予選</button>
         <button type="button" class="quicknav-pill quicknav-pill--tournament" data-target="nationals-card">全国</button>
@@ -1084,7 +1085,7 @@ var quickNavObserver = null;
 function syncQuickNavObserver(){
   if (!quickNavObserver) return;
   quickNavObserver.disconnect();
-  ['sec-log', 'block-card', 'nationals-card', 'ranking-fallback-card', 'sec-test', 'sec-contents'].forEach(function(id){
+  ['sec-room', 'sec-log', 'block-card', 'nationals-card', 'ranking-fallback-card', 'sec-test', 'sec-contents'].forEach(function(id){
     var el = $(id);
     if (!el) return;
     if (el.style.display === 'none') return;

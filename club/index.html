@@ -150,25 +150,53 @@
       </div>
     </section>
 
-    <section class="card tournament-card">
-      <div class="card-head"><h2>予選リーグ</h2></div>
+    <section class="card tournament-card block-card" id="block-card">
+      <div class="card-head"><h2>予選ブロック</h2></div>
+      <div class="card-visual league-visual">
+        <img src="assets/league-qualifier.png" alt="" width="1024" height="768" loading="lazy">
+        <div class="league-hero" id="block-hero" hidden>
+          <div class="league-hero-eyebrow">あなたの順位</div>
+          <div class="league-hero-rank num" id="block-my-rank">—</div>
+          <div class="league-hero-meta" id="block-hero-meta"></div>
+        </div>
+      </div>
+      <div class="card-body card-body--tight">
+        <div id="block-ui">
+          <p class="league-note">今週のブロック · 月曜にメンバーが変わります</p>
+          <div class="lg-list-head">ブロック内ランキング</div>
+          <div id="league-panel"><div class="skeleton">読み込み中…</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card tournament-card nationals-card" id="nationals-card">
+      <div class="card-head"><h2>全国大会</h2></div>
+      <div class="card-visual league-visual league-visual--nat">
+        <img src="assets/league-nationals.png" alt="" width="1024" height="768" loading="lazy">
+        <div class="league-hero league-hero--nat" id="nat-hero" hidden>
+          <div class="league-hero-eyebrow" id="nat-hero-eyebrow">全国</div>
+          <div class="league-hero-rank num" id="nat-hero-rank">—</div>
+          <div class="league-hero-meta" id="nat-hero-meta"></div>
+        </div>
+      </div>
+      <div class="card-body card-body--tight">
+        <div id="nationals-ui">
+          <p class="league-note">今週の頂点 · トップ5が公示</p>
+          <div class="lg-list-head">全国 TOP5</div>
+          <div id="nationals-panel"><div class="skeleton">読み込み中…</div></div>
+          <div class="nationals-chase" id="nationals-chase" style="display:none"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" id="ranking-fallback-card" style="display:none">
+      <div class="card-head"><h2>勉強時間ランキング（今週）</h2></div>
       <div class="card-visual">
         <img src="assets/ranking.png" alt="" width="1024" height="819" loading="lazy">
       </div>
       <div class="card-body card-body--tight">
-        <div id="league-ui">
-          <p class="league-note">今週のブロック · 月曜にメンバーが変わります</p>
-          <div id="league-panel"><div class="skeleton">読み込み中…</div></div>
-          <div class="tournament-divider" aria-hidden="true"></div>
-          <h3 class="nationals-heading">全国大会</h3>
-          <div id="nationals-panel"><div class="skeleton">読み込み中…</div></div>
-          <div class="nationals-chase" id="nationals-chase" style="display:none"></div>
-        </div>
-        <div id="ranking-fallback" style="display:none">
-          <p class="fallback-label">勉強時間ランキング（今週）</p>
-          <div id="time-ranking"></div>
-          <div class="myrank" id="time-myrank" style="display:none"></div>
-        </div>
+        <div id="time-ranking"></div>
+        <div class="myrank" id="time-myrank" style="display:none"></div>
       </div>
     </section>
 
@@ -788,6 +816,7 @@ function minutesValue(e){ return e.minutes; }
 function createLeagueRow(rank, name, minutes, isMe, maxMinutes){
   var row = document.createElement('div');
   row.className = 'lg-row' + (isMe ? ' lg-row--me' : '') + (rank === 1 ? ' lg-row--first' : '');
+  if (isMe) row.id = 'league-me-row';
   var head = document.createElement('div');
   head.className = 'lg-row-head';
   var rankEl = document.createElement('div');
@@ -827,11 +856,86 @@ function createLeagueRow(rank, name, minutes, isMe, maxMinutes){
   return row;
 }
 
+function getMyBlockRank(data){
+  if (data.assigned === false) return null;
+  var members = data.members || [];
+  if (!members.length) return null;
+  var ranks = calcTiedRanks(members, minutesValue);
+  for (var i = 0; i < members.length; i++){
+    if (members[i].is_me) return ranks[i];
+  }
+  return data.my_rank || null;
+}
+
+function renderBlockHero(data){
+  var hero = $('block-hero');
+  if (!hero) return;
+  if (data.assigned === false){
+    hero.hidden = true;
+    return;
+  }
+  var rank = getMyBlockRank(data);
+  if (rank == null){
+    hero.hidden = true;
+    return;
+  }
+  hero.hidden = false;
+  $('block-my-rank').innerHTML = rank + '<span class="league-hero-unit">位</span>';
+  var meta = [];
+  if (data.block_no) meta.push('ブロック ' + data.block_no);
+  if (data.block_size) meta.push(data.block_size + '人制');
+  var myMin = null;
+  (data.members || []).forEach(function(m){
+    if (m.is_me) myMin = m.minutes;
+  });
+  if (myMin != null) meta.push('今週 ' + fmtMin(myMin));
+  $('block-hero-meta').textContent = meta.join(' · ');
+}
+
+function renderNationalsHero(data, top){
+  var hero = $('nat-hero');
+  if (!hero) return;
+  var eyebrow = $('nat-hero-eyebrow');
+  var rankEl = $('nat-hero-rank');
+  var meta = $('nat-hero-meta');
+  if (!top.length){
+    hero.hidden = true;
+    return;
+  }
+  hero.hidden = false;
+  if (data.in_top){
+    var idx = -1;
+    for (var i = 0; i < top.length; i++){
+      if (top[i].is_me){ idx = i; break; }
+    }
+    var ranks = calcTiedRanks(top, minutesValue);
+    eyebrow.textContent = '全国 TOP5';
+    rankEl.innerHTML = (idx >= 0 ? ranks[idx] : '—') + '<span class="league-hero-unit">位</span>';
+    meta.textContent = '入賞圏内 — その調子';
+  } else if (data.mode === 'rank' && data.my_rank){
+    eyebrow.textContent = 'あなたの全国順位';
+    rankEl.innerHTML = data.my_rank + '<span class="league-hero-unit">位</span>';
+    meta.textContent = typeof data.my_minutes === 'number' ? '今週 ' + fmtMin(data.my_minutes) : '';
+  } else if (data.mode === 'hidden' && typeof data.above_count === 'number'){
+    eyebrow.textContent = 'トップ5の外';
+    rankEl.innerHTML = data.above_count + '<span class="league-hero-unit">人上</span>';
+    var gapText = '';
+    if (top.length > 0 && typeof data.my_minutes === 'number'){
+      var gap = top[top.length - 1].minutes - data.my_minutes;
+      if (gap > 0) gapText = '全国入りまであと約 ' + fmtMin(gap);
+    }
+    meta.textContent = gapText || (typeof data.my_minutes === 'number' ? '今週 ' + fmtMin(data.my_minutes) : '');
+  } else {
+    hero.hidden = true;
+  }
+}
+
 function renderLeaguePanel(data){
   var panel = $('league-panel');
   panel.innerHTML = '';
+  renderBlockHero(data);
   if (data.assigned === false){
-    panel.innerHTML = '<div class="league-pending">次回の月曜から予選リーグに参加します。<br>今週はブロックが割り当てられるまでお待ちください。</div>';
+    panel.innerHTML = '<div class="league-pending">次回の月曜から予選ブロックに参加します。<br>今週はブロックが割り当てられるまでお待ちください。</div>';
     return;
   }
   var members = data.members || [];
@@ -847,6 +951,10 @@ function renderLeaguePanel(data){
   members.forEach(function(m, idx){
     panel.appendChild(createLeagueRow(ranks[idx], m.name, m.minutes, m.is_me, maxMin));
   });
+  setTimeout(function(){
+    var me = $('league-me-row');
+    if (me) me.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+  }, 120);
 }
 
 function createPodiumSlot(entry, rank, place){
@@ -913,8 +1021,10 @@ function renderNationalsPanel(data){
   $('nationals-chase').style.display = 'none';
   $('nationals-chase').innerHTML = '';
   var top = data.top || [];
+  renderNationalsHero(data, top);
   if (top.length === 0){
     panel.innerHTML = '<div class="empty-note">今週はまだ記録がありません。</div>';
+    $('nat-hero').hidden = true;
     return;
   }
   var ranks = calcTiedRanks(top, minutesValue);
@@ -945,13 +1055,15 @@ function renderNationalsPanel(data){
 }
 
 function showLeagueUI(){
-  $('league-ui').style.display = 'block';
-  $('ranking-fallback').style.display = 'none';
+  $('block-card').style.display = '';
+  $('nationals-card').style.display = '';
+  $('ranking-fallback-card').style.display = 'none';
 }
 
 function showRankingFallback(){
-  $('league-ui').style.display = 'none';
-  $('ranking-fallback').style.display = 'block';
+  $('block-card').style.display = 'none';
+  $('nationals-card').style.display = 'none';
+  $('ranking-fallback-card').style.display = '';
 }
 
 async function loadTimeRankingFallback(){
@@ -990,6 +1102,8 @@ async function loadTimeRankingFallback(){
 
 async function loadLeagueDisplay(){
   showLeagueUI();
+  $('block-hero').hidden = true;
+  $('nat-hero').hidden = true;
   $('league-panel').innerHTML = '<div class="skeleton">読み込み中…</div>';
   $('nationals-panel').innerHTML = '<div class="skeleton">読み込み中…</div>';
   $('nationals-chase').style.display = 'none';

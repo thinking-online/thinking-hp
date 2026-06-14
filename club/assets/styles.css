@@ -1621,11 +1621,87 @@ footer::before {
   --t-paper: #f6f4ef;
 }
 
+.block-card {
+  border-top: 3px solid rgba(122, 139, 110, 0.45);
+}
+
+.nationals-card {
+  border-top: 3px solid rgba(200, 165, 90, 0.55);
+}
+
+.league-visual {
+  aspect-ratio: 4 / 3;
+  max-height: 220px;
+}
+
+.league-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.league-visual--nat img {
+  object-position: center 38%;
+}
+
+.league-hero {
+  position: absolute;
+  inset: auto 0 0;
+  padding: 28px 16px 14px;
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 26, 48, 0.55) 35%, rgba(15, 26, 48, 0.92) 100%);
+  color: #fff;
+  pointer-events: none;
+}
+
+.league-hero--nat {
+  background: linear-gradient(180deg, transparent 0%, rgba(15, 26, 48, 0.5) 30%, rgba(23, 38, 66, 0.94) 100%);
+}
+
+.league-hero-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+  margin-bottom: 2px;
+}
+
+.league-hero-rank {
+  font-size: 44px;
+  line-height: 1;
+  color: var(--t-gold);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+.league-hero-unit {
+  font-size: 16px;
+  margin-left: 2px;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.league-hero-meta {
+  margin-top: 4px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.78);
+  letter-spacing: 0.02em;
+}
+
 .league-note {
   font-size: 12px;
   color: var(--muted);
-  margin-bottom: 12px;
+  margin-bottom: 10px;
   letter-spacing: 0.02em;
+}
+
+.lg-list-head {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--t-navy);
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(23, 38, 66, 0.08);
 }
 
 .league-pending {
@@ -1640,24 +1716,15 @@ footer::before {
 }
 
 .tournament-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--line), transparent);
-  margin: 22px 0 18px;
+  display: none;
 }
 
 .nationals-heading {
-  font-size: 15px;
-  font-weight: 700;
-  color: var(--t-navy);
-  margin-bottom: 14px;
-  letter-spacing: 0.04em;
+  display: none;
 }
 
 .fallback-label {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--muted);
-  margin-bottom: 10px;
+  display: none;
 }
 
 .lg-row {
@@ -1670,8 +1737,10 @@ footer::before {
 
 .lg-row--me {
   background: linear-gradient(135deg, var(--t-gold-soft), rgba(246, 244, 239, 0.95));
-  border-color: rgba(200, 165, 90, 0.45);
-  box-shadow: 0 4px 16px -8px rgba(200, 165, 90, 0.35);
+  border-color: rgba(200, 165, 90, 0.55);
+  box-shadow: 0 4px 20px -8px rgba(200, 165, 90, 0.4), inset 0 0 0 1px rgba(200, 165, 90, 0.2);
+  scroll-margin-top: 12px;
+  scroll-margin-bottom: 12px;
 }
 
 .lg-row--first .lg-bar {
@@ -1831,7 +1900,7 @@ footer::before {
 }
 
 .nat-slot--me {
-  box-shadow: inset 0 0 0 2px rgba(200, 165, 90, 0.55);
+  box-shadow: inset 0 0 0 2px rgba(200, 165, 90, 0.65), 0 0 20px -4px rgba(200, 165, 90, 0.35);
 }
 
 .nat-slot-rank {
@@ -1912,6 +1981,7 @@ footer::before {
 
 .nat-row--me {
   background: var(--t-gold-soft);
+  box-shadow: inset 3px 0 0 var(--t-gold);
 }
 
 .nat-row-rank {

@@ -150,14 +150,25 @@
       </div>
     </section>
 
-    <section class="card">
-      <div class="card-head"><h2>勉強時間ランキング（今週）</h2></div>
+    <section class="card tournament-card">
+      <div class="card-head"><h2>予選リーグ</h2></div>
       <div class="card-visual">
         <img src="assets/ranking.png" alt="" width="1024" height="819" loading="lazy">
       </div>
       <div class="card-body card-body--tight">
-        <div id="time-ranking"><div class="skeleton">読み込み中…</div></div>
-        <div class="myrank" id="time-myrank" style="display:none"></div>
+        <div id="league-ui">
+          <p class="league-note">今週のブロック · 月曜にメンバーが変わります</p>
+          <div id="league-panel"><div class="skeleton">読み込み中…</div></div>
+          <div class="tournament-divider" aria-hidden="true"></div>
+          <h3 class="nationals-heading">全国大会</h3>
+          <div id="nationals-panel"><div class="skeleton">読み込み中…</div></div>
+          <div class="nationals-chase" id="nationals-chase" style="display:none"></div>
+        </div>
+        <div id="ranking-fallback" style="display:none">
+          <p class="fallback-label">勉強時間ランキング（今週）</p>
+          <div id="time-ranking"></div>
+          <div class="myrank" id="time-myrank" style="display:none"></div>
+        </div>
       </div>
     </section>
 
@@ -620,7 +631,7 @@ async function submitLog(){
       if (typeof data.streak === 'number') setStreak(data.streak);
       $('log-done').style.display = 'block';
       toast(DATE_LABELS[selDateOffset] + 'の記録: ' + fmtMin(data.minutes));
-      loadTimeRanking();
+      loadLeagueDisplay();
     } else if (data.reason === 'invalid_date'){
       toast('その日付には記録できません');
     } else {
@@ -746,24 +757,199 @@ function formatTestRate(rate){
   return s.indexOf('%') >= 0 ? s : s + '%';
 }
 
-async function loadTimeRanking(){
+function minutesValue(e){ return e.minutes; }
+
+function createLeagueRow(rank, name, minutes, isMe, maxMinutes){
+  var row = document.createElement('div');
+  row.className = 'lg-row' + (isMe ? ' lg-row--me' : '') + (rank === 1 ? ' lg-row--first' : '');
+  var head = document.createElement('div');
+  head.className = 'lg-row-head';
+  var rankEl = document.createElement('div');
+  rankEl.className = 'lg-rank num' + (rank <= 3 ? ' lg-rank--r' + rank : '');
+  if (rank === 1){
+    rankEl.innerHTML = '<span class="lg-crown" aria-hidden="true"></span>' + rank;
+  } else {
+    rankEl.textContent = rank;
+  }
+  var meta = document.createElement('div');
+  meta.className = 'lg-meta';
+  var nameEl = document.createElement('div');
+  nameEl.className = 'lg-name';
+  nameEl.textContent = name;
+  if (isMe){
+    var badge = document.createElement('span');
+    badge.className = 'lg-you';
+    badge.textContent = 'あなた';
+    nameEl.appendChild(badge);
+  }
+  var timeEl = document.createElement('div');
+  timeEl.className = 'lg-time num';
+  timeEl.textContent = fmtMin(minutes);
+  meta.appendChild(nameEl);
+  meta.appendChild(timeEl);
+  head.appendChild(rankEl);
+  head.appendChild(meta);
+  var barWrap = document.createElement('div');
+  barWrap.className = 'lg-bar-wrap';
+  var bar = document.createElement('div');
+  bar.className = 'lg-bar';
+  var pct = maxMinutes > 0 ? Math.round((minutes / maxMinutes) * 100) : 0;
+  bar.style.width = (minutes > 0 ? Math.max(pct, 4) : 0) + '%';
+  barWrap.appendChild(bar);
+  row.appendChild(head);
+  row.appendChild(barWrap);
+  return row;
+}
+
+function renderLeaguePanel(data){
+  var panel = $('league-panel');
+  panel.innerHTML = '';
+  if (data.assigned === false){
+    panel.innerHTML = '<div class="league-pending">次回の月曜から予選リーグに参加します。<br>今週はブロックが割り当てられるまでお待ちください。</div>';
+    return;
+  }
+  var members = data.members || [];
+  if (members.length === 0){
+    panel.innerHTML = '<div class="empty-note">今週はまだ記録がありません。記録を送るとランキングに載ります。</div>';
+    return;
+  }
+  var ranks = calcTiedRanks(members, minutesValue);
+  var maxMin = 1;
+  members.forEach(function(m){
+    if ((m.minutes || 0) > maxMin) maxMin = m.minutes;
+  });
+  members.forEach(function(m, idx){
+    panel.appendChild(createLeagueRow(ranks[idx], m.name, m.minutes, m.is_me, maxMin));
+  });
+}
+
+function createPodiumSlot(entry, rank, place){
+  var slot = document.createElement('div');
+  slot.className = 'nat-slot nat-slot--' + place + (entry.is_me ? ' nat-slot--me' : '');
+  var rk = document.createElement('div');
+  rk.className = 'nat-slot-rank num';
+  rk.textContent = rank;
+  var nm = document.createElement('div');
+  nm.className = 'nat-slot-name';
+  nm.textContent = entry.name;
+  var tm = document.createElement('div');
+  tm.className = 'nat-slot-time num';
+  tm.textContent = fmtMin(entry.minutes);
+  slot.appendChild(rk);
+  slot.appendChild(nm);
+  slot.appendChild(tm);
+  return slot;
+}
+
+function createNatRow(entry, rank){
+  var row = document.createElement('div');
+  row.className = 'nat-row' + (entry.is_me ? ' nat-row--me' : '');
+  var rk = document.createElement('div');
+  rk.className = 'nat-row-rank num';
+  rk.textContent = rank;
+  var nm = document.createElement('div');
+  nm.className = 'nat-row-name';
+  nm.textContent = entry.name;
+  var tm = document.createElement('div');
+  tm.className = 'nat-row-time num';
+  tm.textContent = fmtMin(entry.minutes);
+  row.appendChild(rk);
+  row.appendChild(nm);
+  row.appendChild(tm);
+  return row;
+}
+
+function renderNationalsChase(data, top){
+  var chase = $('nationals-chase');
+  chase.innerHTML = '';
+  chase.style.display = 'none';
+  if (data.in_top) return;
+  var parts = [];
+  if (data.mode === 'rank' && data.my_rank){
+    parts.push('<div class="nat-chase-rank num">全国 <b>' + data.my_rank + '</b> 位</div>');
+  } else if (data.mode === 'hidden' && typeof data.above_count === 'number'){
+    parts.push('<p class="nat-chase-text">あなたの上に あと <b class="num">' + data.above_count + '</b> 人</p>');
+    if (top.length > 0 && typeof data.my_minutes === 'number'){
+      var gap = top[top.length - 1].minutes - data.my_minutes;
+      if (gap > 0){
+        parts.push('<p class="nat-chase-gap">全国入りまであと約 <b class="num">' + fmtMin(gap) + '</b></p>');
+      }
+    }
+  }
+  if (parts.length === 0) return;
+  chase.innerHTML = parts.join('');
+  chase.style.display = 'block';
+}
+
+function renderNationalsPanel(data){
+  var panel = $('nationals-panel');
+  panel.innerHTML = '';
+  $('nationals-chase').style.display = 'none';
+  $('nationals-chase').innerHTML = '';
+  var top = data.top || [];
+  if (top.length === 0){
+    panel.innerHTML = '<div class="empty-note">今週はまだ記録がありません。</div>';
+    return;
+  }
+  var ranks = calcTiedRanks(top, minutesValue);
+  var podium = document.createElement('div');
+  podium.className = 'nat-podium';
+  if (top.length >= 3){
+    podium.appendChild(createPodiumSlot(top[1], ranks[1], 2));
+    podium.appendChild(createPodiumSlot(top[0], ranks[0], 1));
+    podium.appendChild(createPodiumSlot(top[2], ranks[2], 3));
+  } else if (top.length === 2){
+    podium.classList.add('nat-podium--duo');
+    podium.appendChild(createPodiumSlot(top[1], ranks[1], 2));
+    podium.appendChild(createPodiumSlot(top[0], ranks[0], 1));
+  } else {
+    podium.classList.add('nat-podium--solo');
+    podium.appendChild(createPodiumSlot(top[0], ranks[0], 1));
+  }
+  panel.appendChild(podium);
+  if (top.length > 3){
+    var rest = document.createElement('div');
+    rest.className = 'nat-rest';
+    for (var i = 3; i < top.length; i++){
+      rest.appendChild(createNatRow(top[i], ranks[i]));
+    }
+    panel.appendChild(rest);
+  }
+  renderNationalsChase(data, top);
+}
+
+function showLeagueUI(){
+  $('league-ui').style.display = 'block';
+  $('ranking-fallback').style.display = 'none';
+}
+
+function showRankingFallback(){
+  $('league-ui').style.display = 'none';
+  $('ranking-fallback').style.display = 'block';
+}
+
+async function loadTimeRankingFallback(){
+  var box = $('time-ranking');
+  var my = $('time-myrank');
+  box.innerHTML = '<div class="skeleton">読み込み中…</div>';
+  my.style.display = 'none';
   try{
-    const data = await api('ranking');
-    if (data.status !== 'ok') return;
-    const box = $('time-ranking');
+    var data = await api('ranking');
+    if (data.status !== 'ok'){
+      box.innerHTML = '<div class="empty-note">ランキングは準備中です</div>';
+      return;
+    }
     box.innerHTML = '';
     if (!data.ranking || data.ranking.length === 0){
       box.innerHTML = '<div class="empty-note">今週はまだ記録がありません。一番乗りのチャンス。</div>';
-      $('time-myrank').style.display = 'none';
       return;
     }
     var ranking = data.ranking;
-    var ranks = calcTiedRanks(ranking, function(e){ return e.minutes; });
+    var ranks = calcTiedRanks(ranking, minutesValue);
     ranking.forEach(function(r, idx){
       box.appendChild(rankRow(ranks[idx], r.name, fmtMin(r.minutes), r.is_me));
     });
-    const my = $('time-myrank');
-    var myRank = myTiedRank(ranking, function(e){ return e.minutes; }, data.my_minutes);
+    var myRank = myTiedRank(ranking, minutesValue, data.my_minutes);
     if (myRank){
       my.innerHTML = 'あなたは現在 <b>' + myRank + '位</b>｜今週 ' + fmtMin(data.my_minutes);
       my.style.display = 'block';
@@ -772,8 +958,36 @@ async function loadTimeRanking(){
       my.style.display = 'block';
     }
   }catch(e){
-    $('time-ranking').innerHTML = '<div class="empty-note">読み込みに失敗しました</div>';
+    box.innerHTML = '<div class="empty-note">読み込みに失敗しました</div>';
   }
+}
+
+async function loadLeagueDisplay(){
+  showLeagueUI();
+  $('league-panel').innerHTML = '<div class="skeleton">読み込み中…</div>';
+  $('nationals-panel').innerHTML = '<div class="skeleton">読み込み中…</div>';
+  $('nationals-chase').style.display = 'none';
+  $('nationals-chase').innerHTML = '';
+  var leagueData = null;
+  var nationalsData = null;
+  try{
+    leagueData = await api('league');
+  }catch(e){}
+  if (!leagueData || leagueData.status !== 'ok'){
+    showRankingFallback();
+    loadTimeRankingFallback();
+    return;
+  }
+  try{
+    nationalsData = await api('nationals');
+  }catch(e){}
+  if (!nationalsData || nationalsData.status !== 'ok'){
+    showRankingFallback();
+    loadTimeRankingFallback();
+    return;
+  }
+  renderLeaguePanel(leagueData);
+  renderNationalsPanel(nationalsData);
 }
 
 /* ---------- 小テストランキング ---------- */
@@ -886,7 +1100,7 @@ async function main(){
   $('app').style.display = 'block';
   renderRoomHours();
   loadWeekly();
-  loadTimeRanking();
+  loadLeagueDisplay();
   loadTestRanking();
   loadContents();
 }

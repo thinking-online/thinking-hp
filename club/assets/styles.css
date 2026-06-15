@@ -469,6 +469,76 @@ main {
 
 /* ---------- Study room ---------- */
 
+.room-name-box {
+  margin-bottom: 14px;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  background: #f6f4ef;
+  border: 1px solid rgba(23, 38, 66, 0.1);
+}
+
+.room-name-box--ready {
+  border-color: rgba(200, 165, 90, 0.45);
+  box-shadow: 0 4px 16px -8px rgba(200, 165, 90, 0.25);
+}
+
+.room-name-lead {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.55;
+  color: #172642;
+  margin-bottom: 10px;
+}
+
+.room-name-value {
+  display: block;
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: #fff;
+  border: 2px solid #c8a55a;
+  color: #172642;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  word-break: break-all;
+  text-align: center;
+}
+
+.room-name-copy {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #c8a55a, #a8883f);
+  color: #172642;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.room-name-copy:active {
+  transform: scale(0.98);
+}
+
+.room-name-hint {
+  margin-top: 10px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--muted);
+  text-align: center;
+}
+
+.room-name-pending {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
+  text-align: center;
+}
+
 .roombtn {
   display: flex;
   align-items: center;

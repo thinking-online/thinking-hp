@@ -171,6 +171,7 @@
         <img src="assets/study-room.png" alt="" width="1024" height="819" loading="lazy">
       </div>
       <div class="card-body">
+        <div id="room-name-box" class="room-name-box"></div>
         <a class="roombtn disabled" id="room-btn" href="#" target="_blank" rel="noopener">自習室に入室する</a>
         <div class="room-hours" id="room-hours"></div>
       </div>
@@ -398,17 +399,21 @@ function showGate(me){
 
 /* ---------- 入部申請 ---------- */
 
-function copyMatchCode(code){
-  if (!code) return;
+function copyClipboardText(text){
+  if (!text) return;
   if (navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(code).then(function(){
+    navigator.clipboard.writeText(text).then(function(){
       toast('コピーしました');
     }).catch(function(){
-      toast('コピーに失敗しました。コードを長押ししてコピーしてください');
+      toast('コピーに失敗しました。長押ししてコピーしてください');
     });
   } else {
-    toast('この端末では自動コピーできません。コードを長押ししてコピーしてください');
+    toast('この端末では自動コピーできません。長押ししてコピーしてください');
   }
+}
+
+function copyMatchCode(code){
+  copyClipboardText(code);
 }
 
 function showApplyComplete(matchCode){
@@ -648,6 +653,44 @@ function renderHeader(me){
   });
   setStreak(me.streak || 0);
   presetSelectors(me.today_minutes);
+  renderRoomName(me);
+}
+
+function renderRoomName(me){
+  var box = $('room-name-box');
+  if (!box) return;
+  box.innerHTML = '';
+  if (me.room_id_set && me.room_name){
+    var lead = document.createElement('p');
+    lead.className = 'room-name-lead';
+    lead.textContent = 'Zoom自習室では必ず以下の名前で入室してください';
+    var nameEl = document.createElement('div');
+    nameEl.className = 'room-name-value num';
+    nameEl.textContent = me.room_name;
+    var copyBtn = document.createElement('button');
+    copyBtn.type = 'button';
+    copyBtn.className = 'room-name-copy';
+    copyBtn.textContent = '名前をコピー';
+    copyBtn.addEventListener('click', function(){
+      copyClipboardText(me.room_name);
+    });
+    var hint = document.createElement('p');
+    hint.className = 'room-name-hint';
+    hint.textContent = 'この名前以外での入室は許可されない場合があります';
+    box.appendChild(lead);
+    box.appendChild(nameEl);
+    box.appendChild(copyBtn);
+    box.appendChild(hint);
+    box.classList.add('room-name-box--ready');
+    box.classList.remove('room-name-box--pending');
+  } else {
+    var pending = document.createElement('p');
+    pending.className = 'room-name-pending';
+    pending.textContent = '入室名がまだ発行されていません。運営が設定するまで少し待ってね。';
+    box.appendChild(pending);
+    box.classList.add('room-name-box--pending');
+    box.classList.remove('room-name-box--ready');
+  }
 }
 
 function applyFlameTier(flame, n){

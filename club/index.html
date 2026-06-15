@@ -41,7 +41,16 @@
         <option>高1</option><option>高2</option><option>高3</option>
         <option>既卒生</option><option>大学生</option><option>社会人</option>
       </select>
+      <label for="ap-verify">生年月日（本人確認用・任意・例 20080515）</label>
+      <input id="ap-verify" type="text" maxlength="20" inputmode="numeric" placeholder="例: 20080515">
       <button class="applybtn" id="ap-btn" type="button">入部を申請する</button>
+    </div>
+    <div class="gate-done" id="gate-done" style="display:none">
+      <p class="gate-done-lead">最後に、下の照合コードを公式LINEに送ってください。運営が確認して入部を承認します。</p>
+      <div class="gate-match-code num" id="gate-match-code"></div>
+      <button type="button" class="gate-copy-btn" id="gate-copy-btn">コードをコピー</button>
+      <a class="gate-line-btn" id="gate-line-btn" href="https://line.me/R/ti/p/@499yrupi" target="_blank" rel="noopener">公式LINEを開く</a>
+      <p class="gate-done-hint">コピーしたコードを、公式LINEのトークに貼り付けて送信してください</p>
     </div>
     <div class="gate-mini" id="gate-mini"></div>
   </div>
@@ -360,6 +369,8 @@ async function api(action){
 function showGate(me){
   $('screen-loading').style.display = 'none';
   $('screen-gate').style.display = 'flex';
+  $('gate-done').style.display = 'none';
+  $('gate-text').style.display = '';
   const reason = me && me.reason ? me.reason : '';
   if (reason === 'not_member'){
     $('gate-title').textContent = '家勉部へ、ようこそ。';
@@ -385,23 +396,58 @@ function showGate(me){
 }
 
 /* ---------- 入部申請 ---------- */
+
+function copyMatchCode(code){
+  if (!code) return;
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(code).then(function(){
+      toast('コピーしました');
+    }).catch(function(){
+      toast('コピーに失敗しました。コードを長押ししてコピーしてください');
+    });
+  } else {
+    toast('この端末では自動コピーできません。コードを長押ししてコピーしてください');
+  }
+}
+
+function showApplyComplete(matchCode){
+  $('gate-form').style.display = 'none';
+  $('gate-text').style.display = 'none';
+  $('gate-title').textContent = '申請を受け付けました';
+  $('gate-match-code').textContent = matchCode || '';
+  $('gate-done').style.display = 'block';
+  $('gate-copy-btn').onclick = function(){ copyMatchCode(matchCode); };
+}
+
 async function submitApply(){
   const name = $('ap-name').value.trim();
   const disp = $('ap-disp').value.trim();
   const grade = $('ap-grade').value;
-  if (!name || !disp || !grade){ toast('全ての項目を入力してください'); return; }
+  const verify = $('ap-verify').value.trim();
+  if (!name || !disp || !grade){ toast('氏名・表示名・学年を入力してください'); return; }
+  var lineName = '';
+  try{
+    const profile = await liff.getProfile();
+    if (profile && profile.displayName) lineName = profile.displayName;
+  }catch(e){}
   const btn = $('ap-btn');
   btn.disabled = true; btn.textContent = '送信中…';
   try{
     const res = await fetch(API_URL, {
       method: 'POST',
-      body: JSON.stringify({ action: 'apply', token: idToken, name: name, display_name: disp, grade: grade })
+      body: JSON.stringify({
+        action: 'apply',
+        token: idToken,
+        name: name,
+        display_name: disp,
+        grade: grade,
+        line_name: lineName,
+        verify: verify
+      })
     });
     const data = await res.json();
     if (data.status === 'ok' && data.applied){
-      $('gate-form').style.display = 'none';
-      $('gate-title').textContent = '申請を送りました';
-      $('gate-text').textContent = '受付完了です。運営が承認すると、このページが部室として開きます。承認の連絡をお待ちください。';
+      showApplyComplete(data.match_code || '');
       return;
     }
     if (data.status === 'ok' && !data.applied){

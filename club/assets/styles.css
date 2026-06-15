@@ -1345,6 +1345,80 @@ main {
   font-family: "Space Grotesk", monospace;
 }
 
+.gate-done {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+}
+
+.gate-done-lead {
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.88);
+  margin-bottom: 18px;
+}
+
+.gate-match-code {
+  display: block;
+  padding: 16px 14px;
+  margin-bottom: 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(246, 244, 239, 0.96);
+  border: 2px solid #c8a55a;
+  color: #172642;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  word-break: break-all;
+  box-shadow: 0 8px 28px -8px rgba(200, 165, 90, 0.45);
+}
+
+.gate-copy-btn {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 13px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #c8a55a, #a8883f);
+  color: #172642;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+
+.gate-copy-btn:active {
+  transform: scale(0.98);
+}
+
+.gate-line-btn {
+  display: block;
+  width: 100%;
+  margin-bottom: 14px;
+  padding: 13px;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, #172642, #0f1a30);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  box-shadow: 0 8px 24px -8px rgba(15, 26, 48, 0.45);
+}
+
+.gate-line-btn:active {
+  opacity: 0.9;
+}
+
+.gate-done-hint {
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.62);
+}
+
 /* ---------- Weekly range ---------- */
 
 .range-list {

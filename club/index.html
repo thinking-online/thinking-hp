@@ -173,6 +173,19 @@
       <div class="card-body">
         <div id="room-name-box" class="room-name-box"></div>
         <a class="roombtn disabled" id="room-btn" href="#" target="_blank" rel="noopener">自習室に入室する</a>
+        <div class="room-zoom-info">
+          <p class="room-zoom-lead">リンクから入れないときは、Zoomアプリから直接参加してください</p>
+          <div class="room-zoom-row">
+            <span class="room-zoom-label">ミーティングID</span>
+            <span class="room-zoom-value num" id="room-meeting-id">842 9666 0588</span>
+            <button type="button" class="room-zoom-copy" data-copy="84296660588">コピー</button>
+          </div>
+          <div class="room-zoom-row">
+            <span class="room-zoom-label">パスコード</span>
+            <span class="room-zoom-value num" id="room-passcode">tk</span>
+            <button type="button" class="room-zoom-copy" data-copy="tk">コピー</button>
+          </div>
+        </div>
         <div class="room-hours" id="room-hours"></div>
       </div>
     </section>
@@ -835,6 +848,14 @@ async function submitLog(){
   btn.disabled = false; btn.textContent = 'この時間で記録する';
 }
 
+function initRoomZoomCopy(){
+  document.querySelectorAll('.room-zoom-copy').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      copyClipboardText(btn.getAttribute('data-copy'));
+    });
+  });
+}
+
 /* ---------- 自習室スケジュール ---------- */
 function renderRoomHours(){
   var box = $('room-hours');
@@ -1427,6 +1448,7 @@ async function main(){
   $('screen-loading').style.display = 'none';
   $('app').style.display = 'block';
   renderRoomHours();
+  initRoomZoomCopy();
   loadWeekly();
   loadLeagueDisplay();
   loadTestRanking();

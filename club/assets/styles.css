@@ -579,6 +579,70 @@ main {
   display: none;
 }
 
+.room-zoom-info {
+  margin-top: 14px;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  background: var(--paper-warm);
+  border: 1px solid var(--line-soft);
+}
+
+.room-zoom-lead {
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.room-zoom-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.room-zoom-row:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+.room-zoom-label {
+  flex: 0 0 100%;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #172642;
+  margin-bottom: 2px;
+}
+
+.room-zoom-value {
+  flex: 1;
+  min-width: 0;
+  font-size: 17px;
+  font-weight: 700;
+  color: #172642;
+  letter-spacing: 0.04em;
+}
+
+.room-zoom-copy {
+  flex-shrink: 0;
+  padding: 6px 12px;
+  border: 1px solid rgba(23, 38, 66, 0.15);
+  border-radius: 8px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  color: #172642;
+  cursor: pointer;
+}
+
+.room-zoom-copy:active {
+  transform: scale(0.96);
+}
+
 .room-hours {
   margin-top: 14px;
   padding: 14px;

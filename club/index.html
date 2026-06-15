@@ -41,8 +41,9 @@
         <option>高1</option><option>高2</option><option>高3</option>
         <option>既卒生</option><option>大学生</option><option>社会人</option>
       </select>
-      <label for="ap-verify">生年月日（本人確認用・任意・例 20080515）</label>
-      <input id="ap-verify" type="text" maxlength="20" inputmode="numeric" placeholder="例: 20080515">
+      <label for="ap-verify">生年月日（本人確認用）</label>
+      <p class="gform-note">同姓同名の方がいる場合など、運営がご本人か照合させていただくために使います。</p>
+      <input id="ap-verify" type="text" maxlength="20" inputmode="numeric" placeholder="例: 20080515" required>
       <button class="applybtn" id="ap-btn" type="button">入部を申請する</button>
     </div>
     <div class="gate-done" id="gate-done" style="display:none">
@@ -424,7 +425,7 @@ async function submitApply(){
   const disp = $('ap-disp').value.trim();
   const grade = $('ap-grade').value;
   const verify = $('ap-verify').value.trim();
-  if (!name || !disp || !grade){ toast('氏名・表示名・学年を入力してください'); return; }
+  if (!name || !disp || !grade || !verify){ toast('氏名・表示名・学年・生年月日を入力してください'); return; }
   var lineName = '';
   try{
     const profile = await liff.getProfile();

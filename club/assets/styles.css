@@ -1300,6 +1300,13 @@ main {
   margin-top: 0;
 }
 
+.gform-note {
+  font-size: 11px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.58);
+  margin: -2px 0 8px;
+}
+
 .gform input,
 .gform select {
   width: 100%;

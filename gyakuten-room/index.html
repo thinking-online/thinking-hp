@@ -19,11 +19,11 @@
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;}
   .wrap{max-width:480px;margin:0 auto;padding:0 16px 72px;}
   header.page-hero{background:var(--bg);position:relative;overflow:hidden;}
-  .hero-cover{width:100%;max-width:480px;margin:0 auto;line-height:0;background:var(--lavender-bg);}
+  .hero-cover{width:100%;max-width:480px;margin:0 auto;line-height:0;background:var(--lavender-bg);position:relative;}
   .hero-cover-img{width:100%;height:auto;display:block;}
+  .hero-cover-kick{position:absolute;top:0;left:0;right:0;z-index:1;padding:calc(14px + env(safe-area-inset-top)) 16px 0;font-size:11px;letter-spacing:.16em;color:var(--purple-deep);font-weight:500;text-align:center;line-height:1.6;text-shadow:0 1px 8px rgba(240,240,248,.9);}
   .hero-panel{max-width:480px;margin:-28px auto 0;padding:18px 16px 20px;background:var(--bg);border-radius:var(--radius) var(--radius) 0 0;box-shadow:0 -8px 32px -8px rgba(46,42,94,.14);position:relative;z-index:2;}
-  .kick{font-size:11px;letter-spacing:.16em;color:var(--muted);}
-  .brandrow{display:flex;align-items:center;gap:9px;margin-top:3px;}
+  .brandrow{display:flex;align-items:center;gap:9px;}
   .crown{width:22px;height:22px;color:var(--purple-mid);flex:none;}
   .brandname{font-family:"Noto Serif JP",serif;font-weight:700;font-size:22px;color:var(--purple-deep);}
   .hero-tagline{margin-top:6px;font-size:13px;color:var(--purple-mid);letter-spacing:.06em;}
@@ -66,9 +66,31 @@
   .samplelink{color:var(--purple-mid);font-weight:500;text-decoration:none;cursor:pointer;}
   .reqhead{display:flex;align-items:center;justify-content:space-between;gap:10px;}
   .center{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:0 16px;}
+  .app-hidden{opacity:0;visibility:hidden;}
+  .app-reveal{animation:app-reveal .55s cubic-bezier(.22,.61,.36,1) forwards;}
+  @keyframes app-reveal{from{opacity:0;transform:scale(.96) translateY(10px);}to{opacity:1;transform:none;}}
+  .splash{position:fixed;inset:0;z-index:100;background:var(--lavender-bg);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+  .splash-content{position:relative;z-index:2;text-align:center;padding:0 28px;transition:opacity .35s ease,transform .45s cubic-bezier(.22,.61,.36,1);}
+  .splash-label{margin:0 0 10px;font-size:13px;letter-spacing:.22em;color:var(--muted);}
+  .splash-pct{margin:0;font-family:"Noto Serif JP",serif;font-size:58px;font-weight:700;color:var(--purple-deep);line-height:1;letter-spacing:-.02em;}
+  .splash-track{width:min(260px,72vw);height:7px;margin:22px auto 0;background:var(--line);border-radius:999px;overflow:hidden;}
+  .splash-fill{height:100%;width:0;background:linear-gradient(90deg,var(--purple-mid),var(--purple-deep));border-radius:999px;transition:width .12s ease-out;}
+  .splash-door{position:absolute;top:0;bottom:0;width:51%;z-index:4;background:linear-gradient(160deg,#353164 0%,var(--purple-deep) 45%,#1a1838 100%);transition:transform .72s cubic-bezier(.7,.02,.22,1);box-shadow:inset 0 0 60px rgba(0,0,0,.25);}
+  .splash-door-left{left:0;border-right:1px solid rgba(255,255,255,.08);}
+  .splash-door-right{right:0;border-left:1px solid rgba(255,255,255,.08);}
+  .splash.boom .splash-pct{animation:splash-boom .42s cubic-bezier(.22,.61,.36,1);}
+  .splash.boom .splash-content{animation:splash-shake .42s cubic-bezier(.22,.61,.36,1);}
+  .splash.boom::after{content:'';position:absolute;inset:0;z-index:5;background:radial-gradient(circle at center,rgba(240,240,248,.85) 0%,rgba(240,240,248,0) 68%);animation:splash-flash .45s ease-out;pointer-events:none;}
+  .splash.open .splash-door-left{transform:translateX(-102%);}
+  .splash.open .splash-door-right{transform:translateX(102%);}
+  .splash.open .splash-content{opacity:0;transform:scale(1.14);}
+  .splash.hide{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,visibility .2s;}
+  @keyframes splash-boom{0%{transform:scale(1);}35%{transform:scale(1.14);color:var(--purple-mid);}100%{transform:scale(1);}}
+  @keyframes splash-shake{0%,100%{transform:translateX(0);}20%{transform:translateX(-4px);}40%{transform:translateX(4px);}60%{transform:translateX(-3px);}80%{transform:translateX(2px);}}
+  @keyframes splash-flash{0%{opacity:0;}30%{opacity:1;}100%{opacity:0;}}
   .spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--purple-mid);border-radius:50%;animation:spin .9s linear infinite;}
   @keyframes spin{to{transform:rotate(360deg);}}
-  @media (prefers-reduced-motion:reduce){.spinner{animation:none;}}
+  @media (prefers-reduced-motion:reduce){.spinner{animation:none;}.splash,.splash-door,.splash-content,.splash-fill,.app-reveal{animation:none!important;transition:none!important;}}
   .lead{color:var(--purple-deep);font-size:17px;font-weight:700;margin:0;}
   .note{color:var(--muted);font-size:14px;line-height:1.8;margin:0;max-width:30em;}
   .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--purple-deep);color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:50;pointer-events:none;box-shadow:0 6px 24px rgba(46,42,94,.28);}
@@ -82,10 +104,16 @@
 </style>
 </head>
 <body>
-<div id="app" class="center">
-    <div class="spinner" aria-hidden="true"></div>
-    <p class="note">読み込んでいます…</p>
+<div id="splash" class="splash" aria-live="polite" aria-busy="true">
+  <div class="splash-content">
+    <p class="splash-label">合格まで</p>
+    <p class="splash-pct" id="splashPct">0%</p>
+    <div class="splash-track"><div class="splash-fill" id="splashFill"></div></div>
   </div>
+  <div class="splash-door splash-door-left" aria-hidden="true"></div>
+  <div class="splash-door splash-door-right" aria-hidden="true"></div>
+</div>
+<div id="app" class="app-hidden"></div>
 <div id="toast" class="toast"></div>
 <div id="applybg" class="modal-bg">
   <div class="modal">
@@ -107,7 +135,69 @@
 
   var PROFILE = null;
   var app = document.getElementById('app');
+  var splash = document.getElementById('splash');
   var CROWN = '<svg class="crown" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.5 7l4.2 4 5.3-7 5.3 7 4.2-4-2.1 12.5H4.6L2.5 7z"/></svg>';
+
+  function prefersReducedMotion(){
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  }
+
+  function hideSplash(){
+    if (!splash) return;
+    splash.classList.add('hide');
+    splash.setAttribute('aria-busy', 'false');
+  }
+
+  function setSplashPct(n){
+    var pctEl = document.getElementById('splashPct');
+    var fillEl = document.getElementById('splashFill');
+    if (pctEl) pctEl.textContent = n + '%';
+    if (fillEl) fillEl.style.width = n + '%';
+  }
+
+  function runSplashAnimation(loadPromise){
+    if (prefersReducedMotion()) return loadPromise.then(function(){ hideSplash(); });
+    return new Promise(function(resolve){
+      var dataReady = false;
+      var pct = 0;
+      var start = performance.now();
+      loadPromise.then(function(){ dataReady = true; }).catch(function(){ dataReady = true; });
+
+      function finish(){
+        setSplashPct(100);
+        splash.classList.add('boom');
+        setTimeout(function(){
+          splash.classList.add('open');
+          setTimeout(function(){
+            hideSplash();
+            resolve();
+          }, 720);
+        }, 360);
+      }
+
+      function frame(now){
+        var elapsed = now - start;
+        if (!dataReady){
+          var eased = 1 - Math.pow(1 - Math.min(elapsed / 2000, 1), 2.4);
+          var target = Math.min(92, Math.floor(eased * 92));
+          if (elapsed > 2000) target = Math.min(99, 92 + Math.floor((elapsed - 2000) / 350));
+          if (target > pct) pct = target;
+          setSplashPct(pct);
+          requestAnimationFrame(frame);
+        } else if (pct < 100){
+          pct = Math.min(100, pct + 5);
+          setSplashPct(pct);
+          if (pct < 100) requestAnimationFrame(frame);
+          else finish();
+        } else {
+          finish();
+        }
+      }
+
+      setSplashPct(0);
+      requestAnimationFrame(frame);
+    });
+  }
 
   function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];}); }
   function yen(n){ return '¥' + (Number(n)||0).toLocaleString('ja-JP'); }
@@ -123,9 +213,8 @@
   // ===== パーツ =====
   function headerHtml(){
     return '<header class="page-hero">'
-      + '<div class="hero-cover"><img class="hero-cover-img" src="assets/hero-top.png" alt="逆転設計室" width="1024" height="1024" loading="eager"></div>'
-      + '<div class="hero-panel"><div class="kick">学部別合格設計塾　THINKING</div>'
-      + '<div class="brandrow">' + CROWN + '<span class="brandname">逆転設計室</span></div>'
+      + '<div class="hero-cover"><div class="hero-cover-kick">学部別合格設計塾　THINKING</div><img class="hero-cover-img" src="assets/hero-top.png" alt="逆転設計室" width="1024" height="1024" loading="eager"></div>'
+      + '<div class="hero-panel"><div class="brandrow">' + CROWN + '<span class="brandname">逆転設計室</span></div>'
       + '<div class="hero-tagline">戦略で、未来をひっくり返す</div></div></header>';
   }
 
@@ -245,7 +334,7 @@
         + requestHtml();
     }
     html += footHtml();
-    app.className = '';
+    app.className = 'app-reveal';
     app.innerHTML = headerHtml() + '<div class="wrap">' + html + '</div>';
     bindDynamic();
   }
@@ -333,6 +422,7 @@
   }
 
   function showBlocked(){
+    hideSplash();
     app.className = 'center';
     app.innerHTML = '<p class="lead">読み込めませんでした</p>'
       + '<p class="note">お手数ですが、公式LINEのトーク画面から開き直してください。</p>'
@@ -341,12 +431,20 @@
 
   async function main(){
     try{
-      await liff.init({ liffId: LIFF_ID });
-      if (!liff.isLoggedIn()){ liff.login(); return; }
-      PROFILE = await liff.getProfile();
-      var data = await api('portal', {});
-      if (data.ok){ renderPortal(data); } else { showBlocked(); }
+      var loadPromise = (async function(){
+        await liff.init({ liffId: LIFF_ID });
+        if (!liff.isLoggedIn()){ liff.login(); return null; }
+        PROFILE = await liff.getProfile();
+        return await api('portal', {});
+      })();
+
+      await runSplashAnimation(loadPromise);
+      var data = await loadPromise;
+      if (!data) return;
+      if (data.ok){ renderPortal(data); }
+      else { showBlocked(); }
     }catch(err){
+      hideSplash();
       app.className = 'center';
       app.innerHTML = '<p class="note">読み込みに失敗しました。LINEから開き直してください。<br><span style="font-size:12px;color:#a39a82;">' + esc(String(err)) + '</span></p>';
     }

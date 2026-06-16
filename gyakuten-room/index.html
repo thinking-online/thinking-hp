@@ -2,68 +2,78 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2e2a5e">
 <title>逆転設計室｜学部別合格設計塾 THINKING</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--navy:#0f2747;--navy2:#1b3a63;--gold:#b8902f;--gold-bg:#f6efda;--verm:#cf4434;--ink:#262a31;--muted:#736c59;--line:#e8e1cd;--bg:#faf8f2;--card:#fff;--radius:14px;}
+  :root{
+    --purple-deep:#2e2a5e;--purple-mid:#6b63b5;--purple-light:#9b94d4;--purple-pale:#eceaf7;
+    --lavender-bg:#f0f0f8;--accent-warm:#d4a84b;--accent-glow:#f5e6c8;
+    --navy:var(--purple-deep);--navy2:#353164;--gold:var(--purple-mid);--gold-bg:var(--purple-pale);
+    --verm:#5a4a9e;--ink:#2a2848;--muted:#6a6689;--line:#dad6ec;--bg:var(--lavender-bg);--card:#fff;--radius:14px;
+  }
   *{box-sizing:border-box;}
   body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;}
-  .wrap{max-width:720px;margin:0 auto;padding:0 16px 72px;}
-  header.top{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0 12px;border-bottom:0.5px solid var(--line);margin-bottom:4px;}
+  .wrap{max-width:480px;margin:0 auto;padding:0 16px 72px;}
+  header.page-hero{background:var(--bg);position:relative;overflow:hidden;}
+  .hero-cover{width:100%;max-width:480px;margin:0 auto;line-height:0;background:var(--lavender-bg);}
+  .hero-cover-img{width:100%;height:auto;display:block;}
+  .hero-panel{max-width:480px;margin:-28px auto 0;padding:18px 16px 20px;background:var(--bg);border-radius:var(--radius) var(--radius) 0 0;box-shadow:0 -8px 32px -8px rgba(46,42,94,.14);position:relative;z-index:2;}
   .kick{font-size:11px;letter-spacing:.16em;color:var(--muted);}
   .brandrow{display:flex;align-items:center;gap:9px;margin-top:3px;}
-  .crown{width:22px;height:22px;color:var(--gold);flex:none;}
-  .brandname{font-family:"Noto Serif JP",serif;font-weight:700;font-size:22px;color:var(--navy);}
+  .crown{width:22px;height:22px;color:var(--purple-mid);flex:none;}
+  .brandname{font-family:"Noto Serif JP",serif;font-weight:700;font-size:22px;color:var(--purple-deep);}
+  .hero-tagline{margin-top:6px;font-size:13px;color:var(--purple-mid);letter-spacing:.06em;}
   section{margin-top:20px;}
-  .card{background:var(--card);border:0.5px solid var(--line);border-radius:var(--radius);padding:16px 18px;}
-  .hero{border:1.5px solid var(--gold);}
-  .kicker{font-size:11px;letter-spacing:.1em;color:var(--gold);font-weight:700;}
-  .h{font-size:17px;font-weight:700;color:var(--navy);margin:0;}
+  .card{background:var(--card);border:0.5px solid var(--line);border-radius:var(--radius);padding:16px 18px;box-shadow:0 4px 20px -8px rgba(46,42,94,.08);}
+  .pack-promo{border:1.5px solid var(--purple-mid);}
+  .kicker{font-size:11px;letter-spacing:.1em;color:var(--purple-mid);font-weight:700;}
+  .h{font-size:17px;font-weight:700;color:var(--purple-deep);margin:0;}
   .muted{color:var(--muted);}
-  .serif-title{font-family:"Noto Serif JP",serif;font-size:20px;font-weight:700;color:var(--navy);margin:3px 0 12px;}
-  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:500;font-family:inherit;cursor:pointer;text-decoration:none;}
+  .serif-title{font-family:"Noto Serif JP",serif;font-size:20px;font-weight:700;color:var(--purple-deep);margin:3px 0 12px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--purple-deep);color:#fff;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:500;font-family:inherit;cursor:pointer;text-decoration:none;}
   .btn:active{transform:scale(.985);}
-  .btn.gold{background:var(--gold);}
-  .btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--line);}
+  .btn.gold{background:var(--purple-mid);}
+  .btn.ghost{background:#fff;color:var(--purple-deep);border:1px solid var(--line);}
   .btn.sm{padding:8px 15px;font-size:13px;border-radius:9px;}
   input,select{width:100%;font-family:inherit;font-size:15px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);}
-  input:focus,select:focus{outline:2px solid var(--gold);outline-offset:1px;}
-  .count{font-size:40px;font-weight:700;color:var(--gold);font-family:"Noto Serif JP",serif;line-height:1;}
-  .ticket{border:1.5px solid var(--gold);}
-  .perk{background:var(--gold-bg);border-radius:12px;padding:13px 15px;display:flex;align-items:center;gap:10px;}
-  .perk .crown{color:var(--gold);width:20px;height:20px;}
-  .perktext{font-size:12.5px;color:#7a5e16;line-height:1.5;}
+  input:focus,select:focus{outline:2px solid var(--purple-mid);outline-offset:1px;}
+  .count{font-size:40px;font-weight:700;color:var(--purple-mid);font-family:"Noto Serif JP",serif;line-height:1;}
+  .ticket{border:1.5px solid var(--purple-mid);}
+  .perk{background:var(--gold-bg);border-radius:12px;padding:13px 15px;display:flex;align-items:center;gap:10px;border:0.5px solid var(--line);}
+  .perk .crown{color:var(--purple-mid);width:20px;height:20px;}
+  .perktext{font-size:12.5px;color:#4a4578;line-height:1.5;}
   .packimg{width:100%;aspect-ratio:16/9;border-radius:10px;object-fit:cover;display:block;margin-bottom:12px;border:0.5px solid var(--line);}
-  .placeholder{background:#f1ece0;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;}
+  .placeholder{background:var(--purple-pale);display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;}
   .swipe{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x proximity;}
   .swcard{scroll-snap-align:start;flex:0 0 auto;width:124px;background:var(--bg);border:0.5px solid var(--line);border-radius:12px;padding:13px;display:flex;flex-direction:column;gap:7px;cursor:pointer;text-align:left;font-family:inherit;}
   .swcard:active{transform:scale(.98);}
   .swcard.locked{opacity:.9;cursor:default;}
-  .swkind{font-size:10px;letter-spacing:.08em;color:var(--gold);font-weight:700;}
-  .freechip{font-size:10px;background:#fff;color:var(--gold);border:1px solid var(--gold);padding:1px 7px;border-radius:6px;align-self:flex-start;font-weight:700;}
+  .swkind{font-size:10px;letter-spacing:.08em;color:var(--purple-mid);font-weight:700;}
+  .freechip{font-size:10px;background:#fff;color:var(--purple-mid);border:1px solid var(--purple-mid);padding:1px 7px;border-radius:6px;align-self:flex-start;font-weight:700;}
   .swtitle{font-size:13px;font-weight:500;color:var(--ink);line-height:1.35;min-height:2.6em;}
   .swtitle.muted{font-weight:400;color:var(--muted);}
-  .swopen{font-size:11px;color:var(--navy);}
+  .swopen{font-size:11px;color:var(--purple-deep);}
   .swlocked{font-size:11px;color:var(--muted);}
   .swipehint{font-size:11px;color:var(--muted);margin-top:7px;}
   .catrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:0.5px solid var(--line);}
   .catrow:last-child{border-bottom:none;}
   .catname{font-size:14px;color:var(--ink);}
   .catmeta{font-size:12px;color:var(--muted);margin-top:1px;}
-  .samplelink{color:var(--gold);font-weight:500;text-decoration:none;cursor:pointer;}
+  .samplelink{color:var(--purple-mid);font-weight:500;text-decoration:none;cursor:pointer;}
   .reqhead{display:flex;align-items:center;justify-content:space-between;gap:10px;}
-  .center{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;}
-  .spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin .9s linear infinite;}
+  .center{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:0 16px;}
+  .spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--purple-mid);border-radius:50%;animation:spin .9s linear infinite;}
   @keyframes spin{to{transform:rotate(360deg);}}
   @media (prefers-reduced-motion:reduce){.spinner{animation:none;}}
-  .lead{color:var(--verm);font-size:17px;font-weight:700;margin:0;}
+  .lead{color:var(--purple-deep);font-size:17px;font-weight:700;margin:0;}
   .note{color:var(--muted);font-size:14px;line-height:1.8;margin:0;max-width:30em;}
-  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:50;pointer-events:none;box-shadow:0 6px 24px rgba(15,39,71,.25);}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--purple-deep);color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:50;pointer-events:none;box-shadow:0 6px 24px rgba(46,42,94,.28);}
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
-  .modal-bg{position:fixed;inset:0;background:rgba(15,39,71,.45);display:none;align-items:flex-end;justify-content:center;z-index:40;}
+  .modal-bg{position:fixed;inset:0;background:rgba(46,42,94,.45);display:none;align-items:flex-end;justify-content:center;z-index:40;}
   .modal-bg.show{display:flex;}
   .modal{background:#fff;width:100%;max-width:480px;border-radius:18px 18px 0 0;padding:20px 18px calc(22px + env(safe-area-inset-bottom));}
   .modal .x{float:right;font-size:22px;color:var(--muted);background:none;border:none;cursor:pointer;line-height:1;padding:0;}
@@ -72,12 +82,10 @@
 </style>
 </head>
 <body>
-<div class="wrap">
-  <div id="app" class="center">
+<div id="app" class="center">
     <div class="spinner" aria-hidden="true"></div>
     <p class="note">読み込んでいます…</p>
   </div>
-</div>
 <div id="toast" class="toast"></div>
 <div id="applybg" class="modal-bg">
   <div class="modal">
@@ -114,8 +122,11 @@
 
   // ===== パーツ =====
   function headerHtml(){
-    return '<header class="top"><div class="kick">学部別合格設計塾　THINKING</div>'
-      + '<div class="brandrow">' + CROWN + '<span class="brandname">逆転設計室</span></div></header>';
+    return '<header class="page-hero">'
+      + '<div class="hero-cover"><img class="hero-cover-img" src="assets/hero-top.png" alt="逆転設計室" width="1024" height="1024" loading="eager"></div>'
+      + '<div class="hero-panel"><div class="kick">学部別合格設計塾　THINKING</div>'
+      + '<div class="brandrow">' + CROWN + '<span class="brandname">逆転設計室</span></div>'
+      + '<div class="hero-tagline">戦略で、未来をひっくり返す</div></div></header>';
   }
 
   function welcomeHtml(student){
@@ -140,7 +151,7 @@
   function ticketHtml(student){
     return '<section class="card ticket"><div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">'
       + '<div><div class="kicker">購入者特典</div>'
-      + '<div style="font-size:15px;font-weight:700;color:var(--navy);margin-top:2px;">個別作戦会議チケット</div>'
+      + '<div style="font-size:15px;font-weight:700;color:var(--purple-deep);margin-top:2px;">個別作戦会議チケット</div>'
       + '<div class="muted" style="font-size:12px;margin-top:1px;">残り ' + (Number(student.tickets)||0) + ' 枚</div></div>'
       + '<button class="btn gold sm" onclick="lineBook()">LINEで予約</button></div></section>';
   }
@@ -182,7 +193,7 @@
     var f = null;
     for (var i=0;i<catalog.length;i++){ if (catalog[i].name === student.firstChoice){ f = catalog[i]; break; } }
     if (!f) f = catalog[0];
-    return '<section class="card hero"><div class="kicker">購入すると、この設計一式が解放されます</div>'
+    return '<section class="card pack-promo"><div class="kicker">購入すると、この設計一式が解放されます</div>'
       + '<div class="serif-title">' + esc(f.name) + '</div>'
       + '<div class="swipe">' + f.contents.map(previewCard).join('') + '</div>'
       + '<button class="btn gold" style="width:100%;margin-top:12px;" data-pack="' + esc(f.packId) + '" data-pname="' + esc(f.name) + '">このパックを解放（' + yen(f.price) + '）</button></section>';
@@ -218,7 +229,7 @@
   // ===== 描画 =====
   function renderPortal(data){
     var owner = data.owned.length > 0;
-    var html = headerHtml();
+    var html = '';
     if (owner){
       html += progressCard(data.student)
         + ticketHtml(data.student)
@@ -235,7 +246,7 @@
     }
     html += footHtml();
     app.className = '';
-    app.innerHTML = html;
+    app.innerHTML = headerHtml() + '<div class="wrap">' + html + '</div>';
     bindDynamic();
   }
 

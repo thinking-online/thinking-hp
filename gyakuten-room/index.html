@@ -84,7 +84,7 @@
   .exam-bar-fill{height:100%;width:0;background:linear-gradient(90deg,#e8a0a0,#d63c31);border-radius:999px;transition:width .45s cubic-bezier(.22,.61,.36,1);}
   .exam-row.checked .exam-bar-fill{width:var(--fill,80%);}
   .exam-score{font-size:12px;font-weight:700;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums;}
-  .exam-score::after{content:'点';font-size:9px;font-weight:500;color:var(--muted);margin-left:1px;}
+  .exam-row.checked .exam-score::after{content:'点';font-size:9px;font-weight:500;color:var(--muted);margin-left:1px;}
   .exam-mark{text-align:center;min-height:22px;line-height:1;}
   .exam-row.checked .exam-mark::after{content:'○';color:#d63c31;font-size:17px;font-weight:700;animation:mark-pop .32s cubic-bezier(.22,.61,.36,1);}
   .exam-total{position:relative;display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding-top:10px;border-top:2px solid var(--purple-deep);}
@@ -236,51 +236,62 @@
     splash.setAttribute('aria-busy', 'false');
   }
 
-  function clamp01(v){ return Math.max(0, Math.min(1, v)); }
+  var examRows = null;
+  var redPen = null;
+  var passStamp = null;
+  var examTotal = null;
+  var lastCheckedRow = -1;
 
-  var blueprintInited = false;
-  function initBlueprint(){
-    if (blueprintInited) return;
-    blueprintInited = true;
-    splash.querySelectorAll('#blueprintSvg path').forEach(function(path){
-      var len = path.getTotalLength();
-      if (len > 0){
-        path.dataset.bpLen = len;
-        path.style.strokeDasharray = len;
-        path.style.strokeDashoffset = len;
-      }
-    });
-    var nodes = document.getElementById('bp-nodes');
-    var labels = document.getElementById('bp-labels');
-    if (nodes) nodes.style.opacity = 0;
-    if (labels) labels.style.opacity = 0;
+  function moveRedPenToRow(row){
+    if (!redPen || !row) return;
+    var sheet = document.getElementById('examSheet');
+    var mark = row.querySelector('.exam-mark');
+    if (!sheet || !mark) return;
+    var sheetR = sheet.getBoundingClientRect();
+    var markR = mark.getBoundingClientRect();
+    redPen.classList.add('active');
+    redPen.style.left = (markR.left - sheetR.left + markR.width * 0.1) + 'px';
+    redPen.style.top = (markR.top - sheetR.top - 4) + 'px';
+    redPen.classList.remove('tap');
+    void redPen.offsetWidth;
+    redPen.classList.add('tap');
   }
 
-  function setPathDraw(el, progress){
-    if (!el || !el.dataset.bpLen) return;
-    var len = Number(el.dataset.bpLen);
-    el.style.strokeDashoffset = len * (1 - clamp01(progress));
-  }
-
-  function updateBlueprint(pct){
-    var p = pct / 100;
-    var guides = splash.querySelectorAll('.bp-guides path');
-    for (var i = 0; i < guides.length; i++){
-      var gStart = i * 0.028;
-      setPathDraw(guides[i], clamp01((p - gStart) / 0.2));
+  function updateExamSplash(pct){
+    if (!examRows){
+      examRows = splash.querySelectorAll('.exam-row');
+      redPen = document.getElementById('redPen');
+      passStamp = document.getElementById('passStamp');
+      examTotal = document.getElementById('examTotal');
     }
-    setPathDraw(document.getElementById('bp-route'), clamp01((p - 0.16) / 0.4));
-    setPathDraw(document.getElementById('bp-route-arrow'), clamp01((p - 0.5) / 0.1));
-    setPathDraw(document.getElementById('bp-ticks'), clamp01((p - 0.3) / 0.2));
-    var nodes = document.getElementById('bp-nodes');
-    var labels = document.getElementById('bp-labels');
-    var formula = document.getElementById('blueprintFormula');
-    if (nodes) nodes.style.opacity = clamp01((p - 0.36) / 0.3);
-    if (labels) labels.style.opacity = clamp01((p - 0.46) / 0.26);
-    if (formula) formula.classList.toggle('show', pct >= 80);
-    splash.classList.toggle('blueprint-live', pct > 4);
-    splash.classList.toggle('blueprint-mature', pct >= 68);
-    splash.classList.toggle('blueprint-solid', pct >= 96);
+    var sum = 0;
+    var checkedCount = 0;
+    for (var i = 0; i < examRows.length; i++){
+      var row = examRows[i];
+      var at = Number(row.dataset.at) || 0;
+      if (pct >= at - 4) row.classList.add('live');
+      if (pct >= at){
+        if (!row.classList.contains('checked')){
+          row.classList.add('checked');
+          var scoreEl = row.querySelector('.exam-score');
+          if (scoreEl) scoreEl.textContent = scoreEl.dataset.score;
+          if (i !== lastCheckedRow){
+            lastCheckedRow = i;
+            moveRedPenToRow(row);
+          }
+        }
+        sum += Number(row.querySelector('.exam-score').dataset.score) || 0;
+        checkedCount++;
+      }
+    }
+    if (examTotal && checkedCount === examRows.length && pct >= 78){
+      examTotal.innerHTML = sum + '<small>/1000</small>';
+      examTotal.classList.add('show');
+    }
+    if (passStamp) passStamp.classList.toggle('show', pct >= 94);
+    if (pct >= 94 && redPen) redPen.classList.remove('active');
+    var sub = splash.querySelector('.exam-head-sub');
+    if (sub && pct >= 94) sub.textContent = '採点完了';
   }
 
   function setSplashPct(n){
@@ -288,13 +299,12 @@
     var fillEl = document.getElementById('splashFill');
     if (pctEl) pctEl.textContent = n + '%';
     if (fillEl) fillEl.style.width = n + '%';
-    updateBlueprint(n);
+    updateExamSplash(n);
   }
 
   function runSplashAnimation(loadPromise){
-    var MIN_MS = 3200;
+    var MIN_MS = 3400;
     var reduceMotion = prefersReducedMotion();
-    initBlueprint();
     return new Promise(function(resolve){
       var dataReady = false;
       var finished = false;
@@ -317,13 +327,13 @@
           setTimeout(function(){
             hideSplash();
             resolve();
-          }, 780);
-        }, 420);
+          }, 800);
+        }, 480);
       }
 
       function frame(now){
         var elapsed = now - start;
-        var timePct = Math.min(100, Math.floor((1 - Math.pow(1 - Math.min(elapsed / MIN_MS, 1), 2.15)) * 100));
+        var timePct = Math.min(100, Math.floor((1 - Math.pow(1 - Math.min(elapsed / MIN_MS, 1), 2.1)) * 100));
         if (!dataReady) timePct = Math.min(timePct, 99);
         if (timePct > pct) pct = timePct;
         setSplashPct(pct);

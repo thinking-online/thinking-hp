@@ -180,6 +180,23 @@
   .date-pick-face.is-placeholder{color:var(--muted);}
   .date-pick-icon{color:var(--purple-mid);flex:none;}
   .date-pick.has-value .date-pick-face{border-color:var(--purple-mid);color:var(--ink);}
+  .showroom-intro{font-size:13px;line-height:1.75;color:var(--muted);margin:6px 0 14px;}
+  .showroom-gallery{display:flex;gap:12px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x proximity;}
+  .showroom-card{scroll-snap-align:start;flex:0 0 78%;max-width:320px;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 8px 28px -12px rgba(46,42,94,.14);}
+  .showroom-cover{aspect-ratio:4/3;background:var(--purple-pale);line-height:0;}
+  .showroom-cover img{width:100%;height:100%;object-fit:cover;display:block;}
+  .showroom-body{padding:12px 14px 14px;}
+  .showroom-kind{font-size:10px;letter-spacing:.12em;color:var(--purple-mid);font-weight:700;}
+  .showroom-name{font-family:"Noto Serif JP",serif;font-size:16px;font-weight:700;color:var(--purple-deep);margin-top:4px;line-height:1.35;}
+  .showroom-meta{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5;}
+  .showroom-actions{display:flex;gap:8px;margin-top:12px;}
+  .showroom-actions .btn{flex:1;}
+  .showroom-hint{font-size:11px;color:var(--muted);margin-top:8px;}
+  .showroom-chip{display:inline-block;font-size:10px;font-weight:700;padding:2px 7px;border-radius:6px;margin-top:8px;}
+  .showroom-chip-free{background:#fff;color:var(--purple-mid);border:1px solid var(--purple-mid);}
+  .showroom-chip-lock{background:var(--bg);color:var(--muted);border:1px solid var(--line);}
+  .showroom-search{margin:0 0 12px;}
+  .gimmick-lead{font-size:13px;line-height:1.75;color:var(--muted);margin:6px 0 12px;}
 </style>
 </head>
 <body>
@@ -250,7 +267,7 @@
 <div id="applybg" class="modal-bg">
   <div class="modal">
     <button class="x" onclick="closeApply()" aria-label="閉じる">×</button>
-    <div class="kicker">お申し込み</div>
+    <div class="kicker">合格設計見本の解放</div>
     <div id="applyName" class="serif-title" style="margin:4px 0 6px;"></div>
     <p class="muted" style="font-size:13px;margin:0 0 14px;line-height:1.7;">お振込のお名前をご記入のうえお申し込みください。お申し込み後、LINEに決済のご案内が届きます。</p>
     <input id="applyPayer" placeholder="お振込名義（例：ヤマダ タロウ）" style="margin-bottom:12px;">
@@ -407,6 +424,66 @@
       + '<div class="hero-tagline">戦略で、未来をひっくり返す</div></div></header>';
   }
 
+  var SHOWROOM_ITEMS = [
+    { name:'学習院大学 経済学部', img:'assets/showroom/gakushuin-keizai.png', keys:['学習院','経済'] },
+    { name:'早稲田大学 文化構想学部', img:'assets/showroom/waseda-bunka.png', keys:['早稲田','文化構想'] },
+    { name:'青山学院大学 法学部', img:'assets/showroom/aoyama-law.png', keys:['青山','法学'] },
+    { name:'中央大学 法学部', img:'assets/showroom/chuo-law.png', keys:['中央','法学'] },
+    { name:'早稲田大学 商学部', img:'assets/showroom/waseda-commerce.png', keys:['早稲田','商学'] },
+    { name:'明治大学 経営学部', img:'assets/showroom/meiji-business.png', keys:['明治','経営'] }
+  ];
+
+  function matchCatalogPack(item, catalog){
+    for (var i = 0; i < catalog.length; i++){
+      var c = catalog[i];
+      var text = (c.name || '') + (c.university || '') + (c.faculty || '');
+      var ok = true;
+      for (var j = 0; j < item.keys.length; j++){
+        if (text.indexOf(item.keys[j]) < 0){ ok = false; break; }
+      }
+      if (ok) return c;
+    }
+    return null;
+  }
+
+  function packFreeSample(pack){
+    if (!pack || !pack.contents) return null;
+    for (var i = 0; i < pack.contents.length; i++){
+      if (pack.contents[i].free && pack.contents[i].url) return pack.contents[i];
+    }
+    return null;
+  }
+
+  function showroomCardHtml(item, pack){
+    var free = pack ? packFreeSample(pack) : null;
+    var chip = free
+      ? '<span class="showroom-chip showroom-chip-free">見本あり</span>'
+      : '<span class="showroom-chip showroom-chip-lock">ショールーム展示</span>';
+    var meta = pack ? yen(pack.price) + ' · 購入で設計一式を解放' : '合格設計見本 · 近日受付開始';
+    var actions = '';
+    if (free){
+      actions += '<button class="btn ghost sm" data-url="' + esc(free.url) + '">見本を見る</button>';
+    }
+    if (pack){
+      actions += '<button class="btn gold sm" data-pack="' + esc(pack.packId) + '" data-pname="' + esc(pack.name) + '">解放する</button>';
+    } else {
+      actions += '<button class="btn ghost sm" onclick="toast(\'この見本は準備中です\')">詳細</button>';
+    }
+    return '<article class="showroom-card" data-name="' + esc(item.name) + '">'
+      + '<div class="showroom-cover"><img src="' + esc(item.img) + '" alt="' + esc(item.name) + '" loading="lazy"></div>'
+      + '<div class="showroom-body"><div class="showroom-kind">合格設計見本</div>'
+      + '<div class="showroom-name">' + esc(item.name) + '</div>' + chip
+      + '<div class="showroom-meta">' + meta + '</div>'
+      + '<div class="showroom-actions">' + actions + '</div></div></article>';
+  }
+
+  function showroomGalleryHtml(catalog){
+    var cards = SHOWROOM_ITEMS.map(function(item){
+      return showroomCardHtml(item, matchCatalogPack(item, catalog));
+    }).join('');
+    return '<div class="showroom-gallery" id="showroomGallery">' + cards + '</div>'
+      + '<div class="showroom-hint">← スワイプで他大学の見本を見る →</div>';
+  }
   function formatDateJa(iso){
     if (!iso) return '';
     var p = iso.split('-');
@@ -417,7 +494,7 @@
   function siteNavHtml(active){
     var items = [
       { id:'home', label:'ホーム' },
-      { id:'pack', label:'学部パック' },
+      { id:'pack', label:'ショールーム' },
       { id:'read', label:'読みもの' },
       { id:'meeting', label:'作戦会議' },
       { id:'mypage', label:'マイページ' },
@@ -437,7 +514,7 @@
       ? '<span class="room-badge room-command">司令室モード</span>'
       : '<span class="room-badge room-showroom">ショールーム</span>';
     var body = '<div class="welcome-name">' + esc(s.displayName || '') + 'さん、ようこそ</div>'
-      + '<div class="muted" style="font-size:13px;margin-top:4px;">' + (owner ? '合格設計の実行フェーズ。ここがあなたの司令室。' : '志望校の合格設計図を、ここで手に入れよう。') + '</div>';
+      + '<div class="muted" style="font-size:13px;margin-top:4px;">' + (owner ? '合格設計の実行フェーズ。ここがあなたの司令室。' : 'ショールームで合格設計見本をのぞき見。気に入ったら解放しよう。') + '</div>';
     if (s.examDate && s.firstChoice){
       body += '<div class="card" style="margin-top:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;">'
         + '<div><div class="muted" style="font-size:12px;">' + esc(s.firstChoice) + '　本番まで</div>'
@@ -445,7 +522,8 @@
         + '<div class="muted" style="font-size:12px;text-align:right;max-width:9em;">設計できる時間は、まだある。</div></div>';
     }
     if (!owner){
-      body += heroHtml(data.catalog, s) + perkHtml();
+      body += '<div class="kicker" style="margin-top:14px;">合格設計見本</div>'
+        + '<div style="margin-top:8px;">' + showroomGalleryHtml(data.catalog).replace('id="showroomGallery"','id="showroomGalleryHome"') + '</div>' + perkHtml();
     } else if (data.owned.length){
       body += '<div style="margin-top:14px;">' + data.owned.slice(0, 1).map(ownedPackHtml).join('') + '</div>';
     }
@@ -457,11 +535,13 @@
 
   function packSectionHtml(data){
     var html = '<section id="sec-pack" class="site-section">'
-      + '<span class="sec-tag sec-tag-pack">学部パック</span>'
-      + '<h2 class="h">学部パック</h2>'
-      + '<p class="muted" style="font-size:13px;margin:6px 0 14px;">解放と鍵・無料サンプル・検索</p>';
+      + '<span class="sec-tag sec-tag-pack">ショールーム</span>'
+      + '<h2 class="h">学部ショールーム</h2>'
+      + '<p class="showroom-intro">合格設計見本を並べたショールーム。見本をのぞいて、購入で設計一式を解放できます。</p>'
+      + '<input id="catsearch" class="showroom-search" placeholder="大学名・学部で見本を検索" oninput="filterShowroom()">'
+      + showroomGalleryHtml(data.catalog);
     if (data.owned.length > 1) html += data.owned.slice(1).map(ownedPackHtml).join('');
-    html += catalogHtml(data.catalog) + '</section>';
+    html += '</section>';
     return html;
   }
 
@@ -479,7 +559,7 @@
     var inner = owner
       ? ticketHtml(student)
       : '<div class="card"><div class="kicker">作戦会議</div>'
-        + '<p class="muted" style="font-size:13px;margin-top:6px;line-height:1.7;">学部パック購入で個別作戦会議チケットが付きます。合格設計を一緒に進めましょう。</p></div>';
+        + '<p class="muted" style="font-size:13px;margin-top:6px;line-height:1.7;">ショールームで見本を解放すると、個別作戦会議チケットが付きます。</p></div>';
     return '<section id="sec-meeting" class="site-section">'
       + '<span class="sec-tag sec-tag-meeting">作戦会議</span>'
       + '<h2 class="h">作戦会議</h2>'
@@ -529,7 +609,7 @@
 
   function perkHtml(){
     return '<div style="margin-top:14px;"><div class="perk">' + CROWN
-      + '<span class="perktext">どのパックにも、個別作戦会議チケットが1枚。買ったその日から、合格設計を一緒に始められます。</span></div></div>';
+      + '<span class="perktext">見本を解放すると、個別作戦会議チケットが1枚付きます。ショールームから、合格設計を一緒に始められます。</span></div></div>';
   }
 
   function ownedCard(c){
@@ -540,12 +620,17 @@
   }
 
   function ownedPackHtml(p){
-    var img = p.image
-      ? '<img class="packimg" src="' + esc(p.image) + '" alt="' + esc(p.name) + '">'
-      : '<div class="packimg placeholder"><span class="muted" style="font-size:12px;">大学の写真（packs の大学画像URLに設定）</span></div>';
+    var item = null;
+    for (var i = 0; i < SHOWROOM_ITEMS.length; i++){
+      if (matchCatalogPack(SHOWROOM_ITEMS[i], [p])){ item = SHOWROOM_ITEMS[i]; break; }
+    }
+    var img = item ? item.img : (p.image || '');
+    var cover = img
+      ? '<div class="showroom-cover" style="border-radius:10px;overflow:hidden;margin-bottom:12px;"><img src="' + esc(img) + '" alt="' + esc(p.name) + '"></div>'
+      : '<div class="packimg placeholder"><span class="muted" style="font-size:12px;">合格設計見本</span></div>';
     var hint = p.contents.length > 2 ? '<div class="swipehint">← スワイプで教材を切り替え →</div>' : '';
-    return '<div style="margin-top:14px;"><div class="kicker">合格設計 学部別パック</div>'
-      + '<div class="serif-title">' + esc(p.name) + '</div>' + img
+    return '<div style="margin-top:14px;"><div class="kicker">解放済み・合格設計見本</div>'
+      + '<div class="serif-title">' + esc(p.name) + '</div>' + cover
       + '<div class="swipe">' + p.contents.map(ownedCard).join('') + '</div>' + hint + '</div>';
   }
 
@@ -598,7 +683,7 @@
     return '<section id="sec-gimmick" class="site-section">'
       + '<span class="sec-tag sec-tag-gimmick">仕掛け</span>'
       + '<h2 class="h">仕掛け</h2>'
-      + '<p class="muted" style="font-size:13px;margin:6px 0 10px;">併願診断・受験カレンダー・学部リクエスト</p>'
+      + '<p class="gimmick-lead">合格設計を加速する、逆転設計室の仕掛け。診断・カレンダー・リクエストで、設計を自分ごとにします。</p>'
       + requestHtml()
       + '<div class="gimmick-grid">'
       + '<div class="gimmick-chip soon">併願診断</div>'
@@ -724,13 +809,15 @@
     var faculty = document.getElementById('reqFac').value.trim();
     if (!university){ toast('大学名を入力してください'); return; }
     var r = await api('request', { university: university, faculty: faculty });
-    if (r.ok){ document.getElementById('reqform').innerHTML = '<div class="muted" style="font-size:13px;line-height:1.8;">リクエストを受け付けました。作成でき次第、カタログに追加してお知らせします。</div>'; }
+    if (r.ok){ document.getElementById('reqform').innerHTML = '<div class="muted" style="font-size:13px;line-height:1.8;">リクエストを受け付けました。作成でき次第、ショールームに並べてお知らせします。</div>'; }
     else { toast('送信に失敗しました'); }
   }
 
-  function filterCatalog(){
-    var q = document.getElementById('catsearch').value.trim();
-    document.querySelectorAll('#catlist .catrow').forEach(function(el){
+  function filterShowroom(){
+    var input = document.getElementById('catsearch');
+    if (!input) return;
+    var q = input.value.trim();
+    document.querySelectorAll('#sec-pack .showroom-card').forEach(function(el){
       el.style.display = (el.dataset.name.indexOf(q) >= 0) ? '' : 'none';
     });
   }

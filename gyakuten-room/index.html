@@ -69,29 +69,59 @@
   .app-hidden{opacity:0;visibility:hidden;}
   .app-reveal{animation:app-reveal .55s cubic-bezier(.22,.61,.36,1) forwards;}
   @keyframes app-reveal{from{opacity:0;transform:scale(.96) translateY(10px);}to{opacity:1;transform:none;}}
-  .splash{position:fixed;inset:0;z-index:100;background:var(--lavender-bg);display:flex;align-items:center;justify-content:center;overflow:hidden;}
-  .splash-content{position:relative;z-index:10;text-align:center;padding:0 28px;transition:opacity .35s ease,transform .45s cubic-bezier(.22,.61,.36,1);}
-  .splash-label{margin:0 0 10px;font-size:14px;letter-spacing:.22em;color:var(--purple-deep);font-weight:500;}
-  .splash-pct{margin:0;font-family:"Noto Serif JP",serif;font-size:72px;font-weight:700;color:var(--purple-deep);line-height:1;letter-spacing:-.02em;min-width:2.6em;}
-  .splash-track{width:min(280px,78vw);height:8px;margin:24px auto 0;background:var(--line);border-radius:999px;overflow:hidden;box-shadow:inset 0 1px 3px rgba(46,42,94,.08);}
-  .splash-fill{height:100%;width:0;background:linear-gradient(90deg,var(--purple-mid),var(--purple-deep));border-radius:999px;transition:width .1s linear;}
-  .splash-door{position:absolute;top:0;bottom:0;width:51%;z-index:4;opacity:0;background:linear-gradient(160deg,#353164 0%,var(--purple-deep) 45%,#1a1838 100%);transition:opacity .15s ease,transform .72s cubic-bezier(.7,.02,.22,1);box-shadow:inset 0 0 60px rgba(0,0,0,.25);pointer-events:none;}
-  .splash-door-left{left:0;border-right:1px solid rgba(255,255,255,.08);}
-  .splash-door-right{right:0;border-left:1px solid rgba(255,255,255,.08);}
+  .splash{position:fixed;inset:0;z-index:100;background:#f5f4fc;display:flex;flex-direction:column;align-items:center;overflow:hidden;}
+  .splash-blueprint-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%;max-width:480px;padding:calc(12px + env(safe-area-inset-top)) 18px 8px;transition:opacity .35s ease,transform .5s ease;}
+  .blueprint-paper{position:relative;width:100%;background:#fff;border:1px solid #d4d0e8;border-radius:3px;padding:30px 10px 48px;box-shadow:0 10px 48px -14px rgba(46,42,94,.14);transition:box-shadow .4s ease,transform .4s ease;}
+  .blueprint-paper::before,.blueprint-paper::after{content:'';position:absolute;width:16px;height:16px;opacity:.45;pointer-events:none;}
+  .blueprint-paper::before{top:7px;left:7px;border-top:1.5px solid var(--purple-mid);border-left:1.5px solid var(--purple-mid);}
+  .blueprint-paper::after{bottom:7px;right:7px;border-bottom:1.5px solid var(--purple-mid);border-right:1.5px solid var(--purple-mid);}
+  .blueprint-title{position:absolute;top:9px;left:28px;font-size:9px;letter-spacing:.32em;color:var(--muted);font-weight:500;}
+  .blueprint-svg{display:block;width:100%;height:auto;}
+  .bp-guides path,#bp-route,#bp-route-arrow,#bp-ticks{stroke-dasharray:1200;stroke-dashoffset:1200;}
+  #bp-nodes,#bp-labels{opacity:0;}
+  .bp-guides path{stroke:#ccc8e4;stroke-width:.9;}
+  #bp-route{stroke:url(#bpRouteGrad);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+  #bp-route-arrow{stroke:var(--purple-deep);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+  #bp-ticks{stroke:var(--purple-mid);stroke-width:1;fill:none;opacity:.55;}
+  .bp-node{fill:#fff;stroke:var(--purple-mid);stroke-width:1.6;}
+  .bp-node-goal{fill:var(--purple-pale);stroke:var(--purple-deep);stroke-width:2;}
+  .bp-labels text{fill:var(--purple-deep);}
+  .bp-labels text:last-child{fill:var(--purple-deep);font-weight:700;}
+  .blueprint-formula{position:absolute;bottom:14px;left:0;right:0;margin:0;text-align:center;font-family:"Noto Serif JP",serif;font-size:14px;font-weight:700;color:var(--purple-deep);letter-spacing:.14em;opacity:0;transform:translateY(10px);transition:opacity .65s ease,transform .65s cubic-bezier(.22,.61,.36,1);}
+  .blueprint-formula.show{opacity:1;transform:none;}
+  .splash-hud{position:relative;z-index:10;width:100%;max-width:480px;text-align:center;padding:6px 28px calc(24px + env(safe-area-inset-bottom));transition:opacity .35s ease,transform .45s cubic-bezier(.22,.61,.36,1);}
+  .splash-label{margin:0 0 6px;font-size:13px;letter-spacing:.24em;color:var(--purple-mid);font-weight:500;}
+  .splash-pct{margin:0;font-family:"Noto Serif JP",serif;font-size:64px;font-weight:700;color:var(--purple-deep);line-height:1;letter-spacing:-.02em;min-width:2.4em;}
+  .splash-track{width:min(260px,76vw);height:6px;margin:16px auto 0;background:#e4e1f2;border-radius:999px;overflow:hidden;}
+  .splash-fill{height:100%;width:0;background:linear-gradient(90deg,var(--purple-light),var(--purple-deep));border-radius:999px;transition:width .1s linear;}
+  .splash-glow{position:absolute;inset:0;z-index:3;opacity:0;background:radial-gradient(circle at 50% 42%,rgba(155,148,212,.32) 0%,rgba(155,148,212,0) 62%);pointer-events:none;transition:opacity .35s ease;}
+  .splash.blueprint-live .blueprint-paper{box-shadow:0 12px 52px -12px rgba(46,42,94,.16);}
+  .splash.blueprint-mature .blueprint-paper{border-color:#b8b2dc;}
+  .splash.blueprint-solid .bp-guides path{stroke-dasharray:none!important;opacity:.35;}
+  .splash.blueprint-solid #bp-route{stroke-width:3;filter:drop-shadow(0 0 5px rgba(107,99,181,.45));}
+  .splash.blueprint-solid .bp-node-goal{fill:var(--purple-mid);stroke:#fff;stroke-width:2;}
+  .splash.boom .splash-glow{opacity:1;animation:splash-glow-pulse .55s ease-out;}
+  .splash.boom .blueprint-paper{animation:blueprint-seal .52s cubic-bezier(.22,.61,.36,1);}
+  .splash-door{position:absolute;top:0;bottom:0;width:51%;z-index:8;opacity:0;background:linear-gradient(165deg,#353164 0%,var(--purple-deep) 42%,#181632 100%);transition:opacity .15s ease,transform .78s cubic-bezier(.7,.02,.18,1);box-shadow:inset 0 0 80px rgba(0,0,0,.3);pointer-events:none;}
+  .splash-door-left{left:0;border-right:1px solid rgba(255,255,255,.07);}
+  .splash-door-right{right:0;border-left:1px solid rgba(255,255,255,.07);}
   .splash.boom .splash-door{opacity:1;}
+  .splash.boom .splash-hud{animation:splash-shake .42s cubic-bezier(.22,.61,.36,1);}
   .splash.boom .splash-pct{animation:splash-boom .42s cubic-bezier(.22,.61,.36,1);}
-  .splash.boom .splash-content{animation:splash-shake .42s cubic-bezier(.22,.61,.36,1);}
-  .splash.boom::after{content:'';position:absolute;inset:0;z-index:5;background:radial-gradient(circle at center,rgba(240,240,248,.85) 0%,rgba(240,240,248,0) 68%);animation:splash-flash .45s ease-out;pointer-events:none;}
+  .splash.boom::after{content:'';position:absolute;inset:0;z-index:9;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.92) 0%,rgba(240,240,248,0) 65%);animation:splash-flash .48s ease-out;pointer-events:none;}
   .splash.open .splash-door-left{transform:translateX(-102%);}
   .splash.open .splash-door-right{transform:translateX(102%);}
-  .splash.open .splash-content{opacity:0;transform:scale(1.14);}
-  .splash.hide{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .2s ease,visibility .2s;}
-  @keyframes splash-boom{0%{transform:scale(1);}35%{transform:scale(1.14);color:var(--purple-mid);}100%{transform:scale(1);}}
+  .splash.open .splash-hud{opacity:0;transform:scale(1.08);}
+  .splash.open .splash-blueprint-wrap{opacity:0;transform:scale(1.04);transition:opacity .35s ease,transform .5s ease;}
+  .splash.hide{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility .25s;}
+  @keyframes blueprint-seal{0%{transform:scale(1);}38%{transform:scale(1.028);}100%{transform:scale(1);}}
+  @keyframes splash-glow-pulse{0%{opacity:0;}25%{opacity:1;}100%{opacity:.6;}}
+  @keyframes splash-boom{0%{transform:scale(1);}35%{transform:scale(1.12);color:var(--purple-mid);}100%{transform:scale(1);}}
   @keyframes splash-shake{0%,100%{transform:translateX(0);}20%{transform:translateX(-4px);}40%{transform:translateX(4px);}60%{transform:translateX(-3px);}80%{transform:translateX(2px);}}
-  @keyframes splash-flash{0%{opacity:0;}30%{opacity:1;}100%{opacity:0;}}
+  @keyframes splash-flash{0%{opacity:0;}28%{opacity:1;}100%{opacity:0;}}
   .spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--purple-mid);border-radius:50%;animation:spin .9s linear infinite;}
   @keyframes spin{to{transform:rotate(360deg);}}
-  @media (prefers-reduced-motion:reduce){.spinner{animation:none;}.splash.boom .splash-pct,.splash.boom .splash-content,.splash.boom::after,.app-reveal{animation:none!important;}.splash-door{transition:opacity .1s ease,transform .3s ease!important;}}
+  @media (prefers-reduced-motion:reduce){.spinner{animation:none;}.splash.boom .splash-pct,.splash.boom .splash-hud,.splash.boom::after,.splash.boom .blueprint-paper,.splash.boom .splash-glow,.app-reveal{animation:none!important;}.splash-door{transition:opacity .1s ease,transform .3s ease!important;}.splash.open .splash-blueprint-wrap{opacity:0;transform:none;}}
   .lead{color:var(--purple-deep);font-size:17px;font-weight:700;margin:0;}
   .note{color:var(--muted);font-size:14px;line-height:1.8;margin:0;max-width:30em;}
   .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--purple-deep);color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:50;pointer-events:none;box-shadow:0 6px 24px rgba(46,42,94,.28);}
@@ -106,7 +136,55 @@
 </head>
 <body>
 <div id="splash" class="splash" aria-live="polite" aria-busy="true">
-  <div class="splash-content">
+  <div class="splash-glow" aria-hidden="true"></div>
+  <div class="splash-blueprint-wrap">
+    <div class="blueprint-paper" id="blueprintPaper">
+      <div class="blueprint-title">合格設計図</div>
+      <svg id="blueprintSvg" class="blueprint-svg" viewBox="0 0 300 310" aria-hidden="true">
+        <defs>
+          <pattern id="bpGrid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ebe9f4" stroke-width="0.6"/>
+          </pattern>
+          <linearGradient id="bpRouteGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#9b94d4"/>
+            <stop offset="55%" stop-color="#6b63b5"/>
+            <stop offset="100%" stop-color="#2e2a5e"/>
+          </linearGradient>
+        </defs>
+        <rect width="300" height="310" fill="url(#bpGrid)"/>
+        <g class="bp-guides" fill="none" stroke-dasharray="4 5">
+          <path id="bp-guide1" d="M 22 268 H 278"/>
+          <path id="bp-guide2" d="M 22 222 H 278"/>
+          <path id="bp-guide3" d="M 22 176 H 278"/>
+          <path id="bp-guide4" d="M 22 130 H 278"/>
+          <path id="bp-guide5" d="M 82 268 V 72"/>
+          <path id="bp-guide6" d="M 142 222 V 72"/>
+          <path id="bp-guide7" d="M 202 176 V 72"/>
+        </g>
+        <path id="bp-route" d="M 46 292 L 46 268 L 82 268 L 82 222 L 142 222 L 142 176 L 202 176 L 202 130 L 246 130 L 246 74"/>
+        <path id="bp-route-arrow" d="M 236 84 L 246 74 L 256 84"/>
+        <path id="bp-ticks" d="M 18 268 H 26 M 18 222 H 26 M 18 176 H 26 M 18 130 H 26"/>
+        <g id="bp-nodes">
+          <circle class="bp-node" cx="46" cy="292" r="5"/>
+          <circle class="bp-node" cx="82" cy="268" r="4.5"/>
+          <circle class="bp-node" cx="142" cy="222" r="4.5"/>
+          <circle class="bp-node" cx="202" cy="176" r="4.5"/>
+          <circle class="bp-node" cx="246" cy="130" r="4.5"/>
+          <circle class="bp-node bp-node-goal" cx="246" cy="74" r="7"/>
+        </g>
+        <g id="bp-labels" class="bp-labels" font-family="Noto Sans JP, sans-serif" font-size="10" font-weight="500">
+          <text x="54" y="296">現在</text>
+          <text x="90" y="262">基礎固め</text>
+          <text x="150" y="216">過去問</text>
+          <text x="210" y="170">模試</text>
+          <text x="254" y="125">直前</text>
+          <text x="224" y="68" font-size="12" font-weight="700">合格</text>
+        </g>
+      </svg>
+      <p class="blueprint-formula" id="blueprintFormula">戦略 × 努力 = 逆転</p>
+    </div>
+  </div>
+  <div class="splash-hud">
     <p class="splash-label">合格まで</p>
     <p class="splash-pct" id="splashPct">0%</p>
     <div class="splash-track"><div class="splash-fill" id="splashFill"></div></div>
@@ -149,16 +227,65 @@
     splash.setAttribute('aria-busy', 'false');
   }
 
+  function clamp01(v){ return Math.max(0, Math.min(1, v)); }
+
+  var blueprintInited = false;
+  function initBlueprint(){
+    if (blueprintInited) return;
+    blueprintInited = true;
+    splash.querySelectorAll('#blueprintSvg path').forEach(function(path){
+      var len = path.getTotalLength();
+      if (len > 0){
+        path.dataset.bpLen = len;
+        path.style.strokeDasharray = len;
+        path.style.strokeDashoffset = len;
+      }
+    });
+    var nodes = document.getElementById('bp-nodes');
+    var labels = document.getElementById('bp-labels');
+    if (nodes) nodes.style.opacity = 0;
+    if (labels) labels.style.opacity = 0;
+  }
+
+  function setPathDraw(el, progress){
+    if (!el || !el.dataset.bpLen) return;
+    var len = Number(el.dataset.bpLen);
+    el.style.strokeDashoffset = len * (1 - clamp01(progress));
+  }
+
+  function updateBlueprint(pct){
+    var p = pct / 100;
+    var guides = splash.querySelectorAll('.bp-guides path');
+    for (var i = 0; i < guides.length; i++){
+      var gStart = i * 0.028;
+      setPathDraw(guides[i], clamp01((p - gStart) / 0.2));
+    }
+    setPathDraw(document.getElementById('bp-route'), clamp01((p - 0.16) / 0.4));
+    setPathDraw(document.getElementById('bp-route-arrow'), clamp01((p - 0.5) / 0.1));
+    setPathDraw(document.getElementById('bp-ticks'), clamp01((p - 0.3) / 0.2));
+    var nodes = document.getElementById('bp-nodes');
+    var labels = document.getElementById('bp-labels');
+    var formula = document.getElementById('blueprintFormula');
+    if (nodes) nodes.style.opacity = clamp01((p - 0.36) / 0.3);
+    if (labels) labels.style.opacity = clamp01((p - 0.46) / 0.26);
+    if (formula) formula.classList.toggle('show', pct >= 80);
+    splash.classList.toggle('blueprint-live', pct > 4);
+    splash.classList.toggle('blueprint-mature', pct >= 68);
+    splash.classList.toggle('blueprint-solid', pct >= 96);
+  }
+
   function setSplashPct(n){
     var pctEl = document.getElementById('splashPct');
     var fillEl = document.getElementById('splashFill');
     if (pctEl) pctEl.textContent = n + '%';
     if (fillEl) fillEl.style.width = n + '%';
+    updateBlueprint(n);
   }
 
   function runSplashAnimation(loadPromise){
-    var MIN_MS = 2800;
+    var MIN_MS = 3200;
     var reduceMotion = prefersReducedMotion();
+    initBlueprint();
     return new Promise(function(resolve){
       var dataReady = false;
       var finished = false;
@@ -181,23 +308,18 @@
           setTimeout(function(){
             hideSplash();
             resolve();
-          }, 720);
-        }, 380);
+          }, 780);
+        }, 420);
       }
 
       function frame(now){
         var elapsed = now - start;
-        var timePct = Math.min(100, Math.floor((1 - Math.pow(1 - Math.min(elapsed / MIN_MS, 1), 2.2)) * 100));
+        var timePct = Math.min(100, Math.floor((1 - Math.pow(1 - Math.min(elapsed / MIN_MS, 1), 2.15)) * 100));
         if (!dataReady) timePct = Math.min(timePct, 99);
         if (timePct > pct) pct = timePct;
         setSplashPct(pct);
-
-        var canFinish = dataReady && elapsed >= MIN_MS && pct >= 100;
-        if (canFinish){
-          finish();
-        } else {
-          requestAnimationFrame(frame);
-        }
+        if (dataReady && elapsed >= MIN_MS && pct >= 100) finish();
+        else requestAnimationFrame(frame);
       }
 
       setSplashPct(0);

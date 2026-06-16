@@ -211,13 +211,16 @@
       </div>
     </section>
 
-    <section class="card">
-      <div class="card-head"><h2>今週の小テスト範囲</h2></div>
+    <section class="card" id="sec-weekly">
+      <div class="card-head"><h2>次回の小テスト範囲</h2></div>
       <div class="card-visual">
         <img src="assets/weekly-quiz.png" alt="" width="1024" height="819" loading="lazy">
       </div>
       <div class="card-body">
-        <a class="planbtn" href="https://assaaa-blog.com/wp-content/uploads/2026/05/THINKING2026mini-test-planv02.pdf" target="_blank" rel="noopener">小テスト計画表を見る</a>
+        <div class="weekly-date-bar" id="weekly-date-wrap" hidden>
+          <span class="weekly-date-label">次回テスト</span>
+          <span class="weekly-date num" id="weekly-date"></span>
+        </div>
         <div class="range-list" id="weekly-list"><div class="skeleton">読み込み中…</div></div>
       </div>
     </section>
@@ -885,10 +888,18 @@ async function loadWeekly(){
       b.classList.remove('disabled');
     }
     renderRoomHours();
+    const dateWrap = $('weekly-date-wrap');
+    const dateEl = $('weekly-date');
+    if (data.week && dateWrap && dateEl){
+      dateEl.textContent = data.week;
+      dateWrap.hidden = false;
+    } else if (dateWrap){
+      dateWrap.hidden = true;
+    }
     const list = $('weekly-list');
     list.innerHTML = '';
     if (!data.items || data.items.length === 0){
-      list.innerHTML = '<div class="empty-note">今週の範囲は準備中です。配信をお待ちください。</div>';
+      list.innerHTML = '<div class="empty-note">次回の範囲は準備中です。配信をお待ちください。</div>';
       return;
     }
     data.items.forEach(it => {
@@ -902,6 +913,8 @@ async function loadWeekly(){
       list.appendChild(row);
     });
   }catch(e){
+    var dw = $('weekly-date-wrap');
+    if (dw) dw.hidden = true;
     $('weekly-list').innerHTML = '<div class="empty-note">読み込みに失敗しました</div>';
   }
 }

@@ -69,59 +69,64 @@
   .app-hidden{opacity:0;visibility:hidden;}
   .app-reveal{animation:app-reveal .55s cubic-bezier(.22,.61,.36,1) forwards;}
   @keyframes app-reveal{from{opacity:0;transform:scale(.96) translateY(10px);}to{opacity:1;transform:none;}}
-  .splash{position:fixed;inset:0;z-index:100;background:#f5f4fc;display:flex;flex-direction:column;align-items:center;overflow:hidden;}
-  .splash-blueprint-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%;max-width:480px;padding:calc(12px + env(safe-area-inset-top)) 18px 8px;transition:opacity .35s ease,transform .5s ease;}
-  .blueprint-paper{position:relative;width:100%;background:#fff;border:1px solid #d4d0e8;border-radius:3px;padding:30px 10px 48px;box-shadow:0 10px 48px -14px rgba(46,42,94,.14);transition:box-shadow .4s ease,transform .4s ease;}
-  .blueprint-paper::before,.blueprint-paper::after{content:'';position:absolute;width:16px;height:16px;opacity:.45;pointer-events:none;}
-  .blueprint-paper::before{top:7px;left:7px;border-top:1.5px solid var(--purple-mid);border-left:1.5px solid var(--purple-mid);}
-  .blueprint-paper::after{bottom:7px;right:7px;border-bottom:1.5px solid var(--purple-mid);border-right:1.5px solid var(--purple-mid);}
-  .blueprint-title{position:absolute;top:9px;left:28px;font-size:9px;letter-spacing:.32em;color:var(--muted);font-weight:500;}
-  .blueprint-svg{display:block;width:100%;height:auto;}
-  .bp-guides path,#bp-route,#bp-route-arrow,#bp-ticks{stroke-dasharray:1200;stroke-dashoffset:1200;}
-  #bp-nodes,#bp-labels{opacity:0;}
-  .bp-guides path{stroke:#ccc8e4;stroke-width:.9;}
-  #bp-route{stroke:url(#bpRouteGrad);stroke-width:2.6;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-  #bp-route-arrow{stroke:var(--purple-deep);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-  #bp-ticks{stroke:var(--purple-mid);stroke-width:1;fill:none;opacity:.55;}
-  .bp-node{fill:#fff;stroke:var(--purple-mid);stroke-width:1.6;}
-  .bp-node-goal{fill:var(--purple-pale);stroke:var(--purple-deep);stroke-width:2;}
-  .bp-labels text{fill:var(--purple-deep);}
-  .bp-labels text:last-child{fill:var(--purple-deep);font-weight:700;}
-  .blueprint-formula{position:absolute;bottom:14px;left:0;right:0;margin:0;text-align:center;font-family:"Noto Serif JP",serif;font-size:14px;font-weight:700;color:var(--purple-deep);letter-spacing:.14em;opacity:0;transform:translateY(10px);transition:opacity .65s ease,transform .65s cubic-bezier(.22,.61,.36,1);}
-  .blueprint-formula.show{opacity:1;transform:none;}
-  .splash-hud{position:relative;z-index:10;width:100%;max-width:480px;text-align:center;padding:6px 28px calc(24px + env(safe-area-inset-bottom));transition:opacity .35s ease,transform .45s cubic-bezier(.22,.61,.36,1);}
-  .splash-label{margin:0 0 6px;font-size:13px;letter-spacing:.24em;color:var(--purple-mid);font-weight:500;}
-  .splash-pct{margin:0;font-family:"Noto Serif JP",serif;font-size:64px;font-weight:700;color:var(--purple-deep);line-height:1;letter-spacing:-.02em;min-width:2.4em;}
-  .splash-track{width:min(260px,76vw);height:6px;margin:16px auto 0;background:#e4e1f2;border-radius:999px;overflow:hidden;}
-  .splash-fill{height:100%;width:0;background:linear-gradient(90deg,var(--purple-light),var(--purple-deep));border-radius:999px;transition:width .1s linear;}
-  .splash-glow{position:absolute;inset:0;z-index:3;opacity:0;background:radial-gradient(circle at 50% 42%,rgba(155,148,212,.32) 0%,rgba(155,148,212,0) 62%);pointer-events:none;transition:opacity .35s ease;}
-  .splash.blueprint-live .blueprint-paper{box-shadow:0 12px 52px -12px rgba(46,42,94,.16);}
-  .splash.blueprint-mature .blueprint-paper{border-color:#b8b2dc;}
-  .splash.blueprint-solid .bp-guides path{stroke-dasharray:none!important;opacity:.35;}
-  .splash.blueprint-solid #bp-route{stroke-width:3;filter:drop-shadow(0 0 5px rgba(107,99,181,.45));}
-  .splash.blueprint-solid .bp-node-goal{fill:var(--purple-mid);stroke:#fff;stroke-width:2;}
+  .splash{position:fixed;inset:0;z-index:100;background:#eceaf4;display:flex;flex-direction:column;align-items:center;overflow:hidden;}
+  .splash-sheet-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%;max-width:480px;padding:calc(14px + env(safe-area-inset-top)) 18px 10px;transition:opacity .4s ease,transform .5s ease;}
+  .exam-sheet{position:relative;width:100%;background:#fffef8;border:1px solid #ddd6c8;border-radius:4px;padding:18px 16px 20px;box-shadow:0 14px 48px -14px rgba(46,42,94,.16);overflow:hidden;}
+  .exam-sheet::before{content:'';position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 27px,#f3f0e8 27px,#f3f0e8 28px);opacity:.55;pointer-events:none;}
+  .exam-head{position:relative;display:flex;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--purple-deep);padding-bottom:8px;margin-bottom:10px;}
+  .exam-head-title{margin:0;font-size:14px;font-weight:700;color:var(--purple-deep);letter-spacing:.06em;}
+  .exam-head-sub{margin:0;font-size:10px;color:#c0392b;letter-spacing:.12em;font-weight:500;}
+  .exam-colhead{position:relative;display:grid;grid-template-columns:3.4em 1fr 3.2em 2em;gap:4px;font-size:9px;color:var(--muted);letter-spacing:.08em;padding-bottom:6px;border-bottom:1px solid #e8e2d6;}
+  .exam-row{position:relative;display:grid;grid-template-columns:3.4em 1fr 3.2em 2em;gap:4px;align-items:center;padding:10px 0;border-bottom:1px dashed #ebe6dc;opacity:.35;transition:opacity .35s ease;}
+  .exam-row.live{opacity:1;}
+  .exam-subj{font-size:12px;font-weight:600;color:var(--ink);}
+  .exam-bar{height:5px;background:#edeae4;border-radius:999px;overflow:hidden;}
+  .exam-bar-fill{height:100%;width:0;background:linear-gradient(90deg,#e8a0a0,#d63c31);border-radius:999px;transition:width .45s cubic-bezier(.22,.61,.36,1);}
+  .exam-row.checked .exam-bar-fill{width:var(--fill,80%);}
+  .exam-score{font-size:12px;font-weight:700;color:var(--ink);text-align:right;font-variant-numeric:tabular-nums;}
+  .exam-score::after{content:'点';font-size:9px;font-weight:500;color:var(--muted);margin-left:1px;}
+  .exam-mark{text-align:center;min-height:22px;line-height:1;}
+  .exam-row.checked .exam-mark::after{content:'○';color:#d63c31;font-size:17px;font-weight:700;animation:mark-pop .32s cubic-bezier(.22,.61,.36,1);}
+  .exam-total{position:relative;display:flex;justify-content:space-between;align-items:baseline;margin-top:12px;padding-top:10px;border-top:2px solid var(--purple-deep);}
+  .exam-total-label{font-size:12px;font-weight:700;color:var(--purple-deep);letter-spacing:.1em;}
+  .exam-total-val{font-family:"Noto Serif JP",serif;font-size:26px;font-weight:700;color:var(--purple-deep);opacity:0;transform:translateY(6px);transition:opacity .4s ease,transform .4s ease;}
+  .exam-total-val.show{opacity:1;transform:none;}
+  .exam-total-val small{font-size:11px;font-weight:500;color:var(--muted);margin-left:2px;}
+  .pass-stamp{position:absolute;right:6%;bottom:14%;z-index:6;border:3px double #c0392b;color:#c0392b;font-family:"Noto Serif JP",serif;font-size:21px;font-weight:700;letter-spacing:.18em;padding:10px 18px;border-radius:5px;opacity:0;transform:scale(2.4) rotate(-8deg);pointer-events:none;background:rgba(255,254,248,.75);}
+  .pass-stamp.show{animation:stamp-slam .5s cubic-bezier(.22,.61,.36,1) forwards;}
+  .red-pen{position:absolute;z-index:7;width:30px;height:30px;opacity:0;pointer-events:none;transition:left .32s cubic-bezier(.22,.61,.36,1),top .32s cubic-bezier(.22,.61,.36,1),opacity .2s ease,transform .2s ease;filter:drop-shadow(1px 3px 3px rgba(0,0,0,.2));}
+  .red-pen.active{opacity:1;}
+  .red-pen.tap{transform:scale(.88) rotate(-6deg);}
+  .splash-hud{position:relative;z-index:10;width:100%;max-width:480px;text-align:center;padding:4px 28px calc(22px + env(safe-area-inset-bottom));transition:opacity .35s ease,transform .45s cubic-bezier(.22,.61,.36,1);}
+  .splash-label{margin:0 0 4px;font-size:12px;letter-spacing:.22em;color:var(--purple-mid);font-weight:500;}
+  .splash-pct{margin:0;font-family:"Noto Serif JP",serif;font-size:56px;font-weight:700;color:var(--purple-deep);line-height:1;letter-spacing:-.02em;min-width:2.4em;}
+  .splash-track{width:min(240px,74vw);height:5px;margin:14px auto 0;background:#e4e1f2;border-radius:999px;overflow:hidden;}
+  .splash-fill{height:100%;width:0;background:linear-gradient(90deg,#e07070,#c0392b);border-radius:999px;transition:width .1s linear;}
+  .splash-glow{position:absolute;inset:0;z-index:3;opacity:0;background:radial-gradient(circle at 50% 40%,rgba(214,60,49,.18) 0%,rgba(214,60,49,0) 58%);pointer-events:none;}
   .splash.boom .splash-glow{opacity:1;animation:splash-glow-pulse .55s ease-out;}
-  .splash.boom .blueprint-paper{animation:blueprint-seal .52s cubic-bezier(.22,.61,.36,1);}
+  .splash.boom .exam-sheet{animation:sheet-slam .48s cubic-bezier(.22,.61,.36,1);}
   .splash-door{position:absolute;top:0;bottom:0;width:51%;z-index:8;opacity:0;background:linear-gradient(165deg,#353164 0%,var(--purple-deep) 42%,#181632 100%);transition:opacity .15s ease,transform .78s cubic-bezier(.7,.02,.18,1);box-shadow:inset 0 0 80px rgba(0,0,0,.3);pointer-events:none;}
   .splash-door-left{left:0;border-right:1px solid rgba(255,255,255,.07);}
   .splash-door-right{right:0;border-left:1px solid rgba(255,255,255,.07);}
   .splash.boom .splash-door{opacity:1;}
   .splash.boom .splash-hud{animation:splash-shake .42s cubic-bezier(.22,.61,.36,1);}
   .splash.boom .splash-pct{animation:splash-boom .42s cubic-bezier(.22,.61,.36,1);}
-  .splash.boom::after{content:'';position:absolute;inset:0;z-index:9;background:radial-gradient(circle at 50% 45%,rgba(255,255,255,.92) 0%,rgba(240,240,248,0) 65%);animation:splash-flash .48s ease-out;pointer-events:none;}
+  .splash.boom::after{content:'';position:absolute;inset:0;z-index:9;background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.9) 0%,rgba(240,240,248,0) 62%);animation:splash-flash .48s ease-out;pointer-events:none;}
   .splash.open .splash-door-left{transform:translateX(-102%);}
   .splash.open .splash-door-right{transform:translateX(102%);}
-  .splash.open .splash-hud{opacity:0;transform:scale(1.08);}
-  .splash.open .splash-blueprint-wrap{opacity:0;transform:scale(1.04);transition:opacity .35s ease,transform .5s ease;}
+  .splash.open .splash-hud{opacity:0;transform:scale(1.06);}
+  .splash.open .splash-sheet-wrap{opacity:0;transform:scale(1.03);}
   .splash.hide{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility .25s;}
-  @keyframes blueprint-seal{0%{transform:scale(1);}38%{transform:scale(1.028);}100%{transform:scale(1);}}
-  @keyframes splash-glow-pulse{0%{opacity:0;}25%{opacity:1;}100%{opacity:.6;}}
-  @keyframes splash-boom{0%{transform:scale(1);}35%{transform:scale(1.12);color:var(--purple-mid);}100%{transform:scale(1);}}
+  @keyframes mark-pop{0%{transform:scale(0);opacity:0;}65%{transform:scale(1.25);}100%{transform:scale(1);opacity:1;}}
+  @keyframes stamp-slam{0%{opacity:0;transform:scale(2.6) rotate(-4deg);}55%{opacity:1;transform:scale(.9) rotate(-14deg);}75%{transform:scale(1.06) rotate(-11deg);}100%{opacity:.93;transform:scale(1) rotate(-12deg);}}
+  @keyframes sheet-slam{0%{transform:scale(1);}40%{transform:scale(1.02);}100%{transform:scale(1);}}
+  @keyframes splash-glow-pulse{0%{opacity:0;}25%{opacity:1;}100%{opacity:.5;}}
+  @keyframes splash-boom{0%{transform:scale(1);}35%{transform:scale(1.1);color:#c0392b;}100%{transform:scale(1);}}
   @keyframes splash-shake{0%,100%{transform:translateX(0);}20%{transform:translateX(-4px);}40%{transform:translateX(4px);}60%{transform:translateX(-3px);}80%{transform:translateX(2px);}}
   @keyframes splash-flash{0%{opacity:0;}28%{opacity:1;}100%{opacity:0;}}
   .spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--purple-mid);border-radius:50%;animation:spin .9s linear infinite;}
   @keyframes spin{to{transform:rotate(360deg);}}
-  @media (prefers-reduced-motion:reduce){.spinner{animation:none;}.splash.boom .splash-pct,.splash.boom .splash-hud,.splash.boom::after,.splash.boom .blueprint-paper,.splash.boom .splash-glow,.app-reveal{animation:none!important;}.splash-door{transition:opacity .1s ease,transform .3s ease!important;}.splash.open .splash-blueprint-wrap{opacity:0;transform:none;}}
+  @media (prefers-reduced-motion:reduce){.spinner{animation:none;}.splash.boom .splash-pct,.splash.boom .splash-hud,.splash.boom::after,.splash.boom .exam-sheet,.splash.boom .splash-glow,.pass-stamp.show,.exam-row.checked .exam-mark::after,.app-reveal{animation:none!important;}.splash-door{transition:opacity .1s ease,transform .3s ease!important;}.pass-stamp.show{opacity:.9;transform:scale(1) rotate(-12deg);}}
   .lead{color:var(--purple-deep);font-size:17px;font-weight:700;margin:0;}
   .note{color:var(--muted);font-size:14px;line-height:1.8;margin:0;max-width:30em;}
   .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--purple-deep);color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:50;pointer-events:none;box-shadow:0 6px 24px rgba(46,42,94,.28);}
@@ -137,51 +142,55 @@
 <body>
 <div id="splash" class="splash" aria-live="polite" aria-busy="true">
   <div class="splash-glow" aria-hidden="true"></div>
-  <div class="splash-blueprint-wrap">
-    <div class="blueprint-paper" id="blueprintPaper">
-      <div class="blueprint-title">合格設計図</div>
-      <svg id="blueprintSvg" class="blueprint-svg" viewBox="0 0 300 310" aria-hidden="true">
-        <defs>
-          <pattern id="bpGrid" width="20" height="20" patternUnits="userSpaceOnUse">
-            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#ebe9f4" stroke-width="0.6"/>
-          </pattern>
-          <linearGradient id="bpRouteGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#9b94d4"/>
-            <stop offset="55%" stop-color="#6b63b5"/>
-            <stop offset="100%" stop-color="#2e2a5e"/>
-          </linearGradient>
-        </defs>
-        <rect width="300" height="310" fill="url(#bpGrid)"/>
-        <g class="bp-guides" fill="none" stroke-dasharray="4 5">
-          <path id="bp-guide1" d="M 22 268 H 278"/>
-          <path id="bp-guide2" d="M 22 222 H 278"/>
-          <path id="bp-guide3" d="M 22 176 H 278"/>
-          <path id="bp-guide4" d="M 22 130 H 278"/>
-          <path id="bp-guide5" d="M 82 268 V 72"/>
-          <path id="bp-guide6" d="M 142 222 V 72"/>
-          <path id="bp-guide7" d="M 202 176 V 72"/>
-        </g>
-        <path id="bp-route" d="M 46 292 L 46 268 L 82 268 L 82 222 L 142 222 L 142 176 L 202 176 L 202 130 L 246 130 L 246 74"/>
-        <path id="bp-route-arrow" d="M 236 84 L 246 74 L 256 84"/>
-        <path id="bp-ticks" d="M 18 268 H 26 M 18 222 H 26 M 18 176 H 26 M 18 130 H 26"/>
-        <g id="bp-nodes">
-          <circle class="bp-node" cx="46" cy="292" r="5"/>
-          <circle class="bp-node" cx="82" cy="268" r="4.5"/>
-          <circle class="bp-node" cx="142" cy="222" r="4.5"/>
-          <circle class="bp-node" cx="202" cy="176" r="4.5"/>
-          <circle class="bp-node" cx="246" cy="130" r="4.5"/>
-          <circle class="bp-node bp-node-goal" cx="246" cy="74" r="7"/>
-        </g>
-        <g id="bp-labels" class="bp-labels" font-family="Noto Sans JP, sans-serif" font-size="10" font-weight="500">
-          <text x="54" y="296">現在</text>
-          <text x="90" y="262">基礎固め</text>
-          <text x="150" y="216">過去問</text>
-          <text x="210" y="170">模試</text>
-          <text x="254" y="125">直前</text>
-          <text x="224" y="68" font-size="12" font-weight="700">合格</text>
-        </g>
-      </svg>
-      <p class="blueprint-formula" id="blueprintFormula">戦略 × 努力 = 逆転</p>
+  <div class="splash-sheet-wrap">
+    <div class="exam-sheet" id="examSheet">
+      <div class="exam-head">
+        <p class="exam-head-title">模擬試験　成績表</p>
+        <p class="exam-head-sub">採点中…</p>
+      </div>
+      <div class="exam-colhead"><span>科目</span><span>得点率</span><span>得点</span><span>判定</span></div>
+      <div class="exam-row" data-at="12" data-fill="91" style="--fill:91%">
+        <span class="exam-subj">国語</span>
+        <div class="exam-bar"><div class="exam-bar-fill"></div></div>
+        <span class="exam-score" data-score="182">—</span>
+        <span class="exam-mark"></span>
+      </div>
+      <div class="exam-row" data-at="26" data-fill="83" style="--fill:83%">
+        <span class="exam-subj">数学</span>
+        <div class="exam-bar"><div class="exam-bar-fill"></div></div>
+        <span class="exam-score" data-score="166">—</span>
+        <span class="exam-mark"></span>
+      </div>
+      <div class="exam-row" data-at="40" data-fill="89" style="--fill:89%">
+        <span class="exam-subj">英語</span>
+        <div class="exam-bar"><div class="exam-bar-fill"></div></div>
+        <span class="exam-score" data-score="178">—</span>
+        <span class="exam-mark"></span>
+      </div>
+      <div class="exam-row" data-at="54" data-fill="86" style="--fill:86%">
+        <span class="exam-subj">理科</span>
+        <div class="exam-bar"><div class="exam-bar-fill"></div></div>
+        <span class="exam-score" data-score="172">—</span>
+        <span class="exam-mark"></span>
+      </div>
+      <div class="exam-row" data-at="68" data-fill="84" style="--fill:84%">
+        <span class="exam-subj">社会</span>
+        <div class="exam-bar"><div class="exam-bar-fill"></div></div>
+        <span class="exam-score" data-score="168">—</span>
+        <span class="exam-mark"></span>
+      </div>
+      <div class="exam-total">
+        <span class="exam-total-label">5教科合計</span>
+        <span class="exam-total-val" id="examTotal">—<small>/1000</small></span>
+      </div>
+      <div class="pass-stamp" id="passStamp">合格圏</div>
+      <div class="red-pen" id="redPen" aria-hidden="true">
+        <svg viewBox="0 0 32 32" width="30" height="30" fill="none">
+          <path d="M8 24 L22 10 L26 14 L12 28 Z" fill="#c0392b"/>
+          <path d="M22 10 L24 8 L28 12 L26 14 Z" fill="#e8a0a0"/>
+          <circle cx="10" cy="26" r="2" fill="#8b2020" opacity=".5"/>
+        </svg>
+      </div>
     </div>
   </div>
   <div class="splash-hud">

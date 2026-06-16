@@ -221,7 +221,10 @@
           <span class="weekly-date-label">次回テスト</span>
           <span class="weekly-date num" id="weekly-date"></span>
         </div>
-        <div class="range-list" id="weekly-list"><div class="skeleton">読み込み中…</div></div>
+        <div class="range-scroll-wrap" id="weekly-scroll-wrap">
+          <p class="range-scroll-hint" id="weekly-scroll-hint" hidden>← 横にスワイプして全科目を見る →</p>
+          <div class="range-scroll" id="weekly-list"><div class="skeleton">読み込み中…</div></div>
+        </div>
       </div>
     </section>
 
@@ -878,44 +881,143 @@ function renderRoomHours(){
 }
 
 /* ---------- 週間情報 ---------- */
+function formatWeeklyDateLabel(week, testDate){
+  if (week) return week;
+  if (!testDate) return '';
+  var p = String(testDate).split('-');
+  if (p.length !== 3) return testDate;
+  var d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+  if (isNaN(d.getTime())) return testDate;
+  var days = ['日', '月', '火', '水', '木', '金', '土'];
+  return (d.getMonth() + 1) + '/' + d.getDate() + '(' + days[d.getDay()] + ')';
+}
+
+function normalizeWeeklyItem(it){
+  if (it == null) return null;
+  if (typeof it !== 'object'){
+    var s = String(it).trim();
+    return s ? { subject: '', range: s, note: '' } : null;
+  }
+  var subject = String(it.subject || it.科目 || it.name || '').trim();
+  var range = String(it.range || it.範囲 || it.text || it.value || '').trim();
+  var note = String(it.note || it.備考 || '').trim();
+  if (!subject && !range) return null;
+  return { subject: subject, range: range, note: note };
+}
+
+function normalizeWeeklyItems(raw){
+  if (raw == null) return [];
+  if (typeof raw === 'string'){
+    try{ raw = JSON.parse(raw); }catch(e){ return []; }
+  }
+  if (Array.isArray(raw)){
+    var out = [];
+    raw.forEach(function(it){
+      var row = normalizeWeeklyItem(it);
+      if (row) out.push(row);
+    });
+    return out;
+  }
+  if (typeof raw === 'object'){
+    return Object.keys(raw).map(function(key){
+      return normalizeWeeklyItem({ subject: key, range: raw[key] });
+    }).filter(Boolean);
+  }
+  return [];
+}
+
+function parseWeeklyResponse(data){
+  if (!data || data.status !== 'ok') return data;
+  var src = data.schedule && typeof data.schedule === 'object' ? data.schedule : data;
+  var items = normalizeWeeklyItems(src.items || src.ranges || src.subjects || data.items || data.ranges);
+  return {
+    status: 'ok',
+    week: formatWeeklyDateLabel(src.week || data.week, src.test_date || data.test_date),
+    test_date: src.test_date || data.test_date,
+    items: items,
+    room_url: data.room_url,
+    hours: data.hours,
+    reason: data.reason
+  };
+}
+
+function setWeeklyEmptyNote(list, message){
+  var hint = $('weekly-scroll-hint');
+  if (hint) hint.hidden = true;
+  list.innerHTML = '';
+  var note = document.createElement('div');
+  note.className = 'empty-note';
+  note.textContent = message;
+  list.appendChild(note);
+}
+
+function weeklySubjectTone(subject){
+  var s = subject || '';
+  if (/英/.test(s)) return 'en';
+  if (/古文|現代文|漢文|国語/.test(s)) return 'jp';
+  if (/数学|算/.test(s)) return 'math';
+  if (/史|公民|地理|倫理|政経/.test(s)) return 'hist';
+  if (/理科|物理|化学|生物|地学/.test(s)) return 'sci';
+  return 'default';
+}
+
+function createRangeCard(it){
+  var card = document.createElement('article');
+  card.className = 'range-card range-card--' + weeklySubjectTone(it.subject);
+  var subj = document.createElement('div');
+  subj.className = 'range-card-subject';
+  subj.textContent = it.subject;
+  var text = document.createElement('div');
+  text.className = 'range-card-text';
+  text.textContent = it.range;
+  card.appendChild(subj);
+  card.appendChild(text);
+  if (it.note){
+    var note = document.createElement('div');
+    note.className = 'range-card-note';
+    note.textContent = it.note;
+    card.appendChild(note);
+  }
+  return card;
+}
+
 async function loadWeekly(){
+  var list = $('weekly-list');
+  var dateWrap = $('weekly-date-wrap');
+  var dateEl = $('weekly-date');
   try{
-    const data = await api('weekly');
-    if (data.status !== 'ok') return;
+    const res = await api('weekly');
+    const data = parseWeeklyResponse(res);
+    if (data.status !== 'ok'){
+      if (dateWrap) dateWrap.hidden = true;
+      setWeeklyEmptyNote(list, (res && res.reason) ? res.reason : '範囲を取得できませんでした');
+      return;
+    }
     if (data.room_url){
       const b = $('room-btn');
       b.href = data.room_url;
       b.classList.remove('disabled');
     }
     renderRoomHours();
-    const dateWrap = $('weekly-date-wrap');
-    const dateEl = $('weekly-date');
     if (data.week && dateWrap && dateEl){
       dateEl.textContent = data.week;
       dateWrap.hidden = false;
     } else if (dateWrap){
       dateWrap.hidden = true;
     }
-    const list = $('weekly-list');
     list.innerHTML = '';
-    if (!data.items || data.items.length === 0){
-      list.innerHTML = '<div class="empty-note">次回の範囲は準備中です。配信をお待ちください。</div>';
+    if (!data.items.length){
+      setWeeklyEmptyNote(list, data.reason || '次回の範囲は準備中です。配信をお待ちください。');
       return;
     }
-    data.items.forEach(it => {
-      const row = document.createElement('div');
-      row.className = 'range-item';
-      row.innerHTML = '<div class="range-subject"></div><div><div class="range-text"></div><div class="range-note"></div></div>';
-      row.querySelector('.range-subject').textContent = it.subject;
-      row.querySelector('.range-text').textContent = it.range;
-      const note = row.querySelector('.range-note');
-      if (it.note) note.textContent = it.note; else note.remove();
-      list.appendChild(row);
+    var hint = $('weekly-scroll-hint');
+    if (hint) hint.hidden = data.items.length < 2;
+    data.items.forEach(function(it){
+      list.appendChild(createRangeCard(it));
     });
   }catch(e){
-    var dw = $('weekly-date-wrap');
-    if (dw) dw.hidden = true;
-    $('weekly-list').innerHTML = '<div class="empty-note">読み込みに失敗しました</div>';
+    if (dateWrap) dateWrap.hidden = true;
+    setWeeklyEmptyNote(list, '読み込みに失敗しました');
   }
 }
 

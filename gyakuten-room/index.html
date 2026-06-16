@@ -70,14 +70,15 @@
   .app-reveal{animation:app-reveal .55s cubic-bezier(.22,.61,.36,1) forwards;}
   @keyframes app-reveal{from{opacity:0;transform:scale(.96) translateY(10px);}to{opacity:1;transform:none;}}
   .splash{position:fixed;inset:0;z-index:100;background:var(--lavender-bg);display:flex;align-items:center;justify-content:center;overflow:hidden;}
-  .splash-content{position:relative;z-index:2;text-align:center;padding:0 28px;transition:opacity .35s ease,transform .45s cubic-bezier(.22,.61,.36,1);}
-  .splash-label{margin:0 0 10px;font-size:13px;letter-spacing:.22em;color:var(--muted);}
-  .splash-pct{margin:0;font-family:"Noto Serif JP",serif;font-size:58px;font-weight:700;color:var(--purple-deep);line-height:1;letter-spacing:-.02em;}
-  .splash-track{width:min(260px,72vw);height:7px;margin:22px auto 0;background:var(--line);border-radius:999px;overflow:hidden;}
-  .splash-fill{height:100%;width:0;background:linear-gradient(90deg,var(--purple-mid),var(--purple-deep));border-radius:999px;transition:width .12s ease-out;}
-  .splash-door{position:absolute;top:0;bottom:0;width:51%;z-index:4;background:linear-gradient(160deg,#353164 0%,var(--purple-deep) 45%,#1a1838 100%);transition:transform .72s cubic-bezier(.7,.02,.22,1);box-shadow:inset 0 0 60px rgba(0,0,0,.25);}
+  .splash-content{position:relative;z-index:10;text-align:center;padding:0 28px;transition:opacity .35s ease,transform .45s cubic-bezier(.22,.61,.36,1);}
+  .splash-label{margin:0 0 10px;font-size:14px;letter-spacing:.22em;color:var(--purple-deep);font-weight:500;}
+  .splash-pct{margin:0;font-family:"Noto Serif JP",serif;font-size:72px;font-weight:700;color:var(--purple-deep);line-height:1;letter-spacing:-.02em;min-width:2.6em;}
+  .splash-track{width:min(280px,78vw);height:8px;margin:24px auto 0;background:var(--line);border-radius:999px;overflow:hidden;box-shadow:inset 0 1px 3px rgba(46,42,94,.08);}
+  .splash-fill{height:100%;width:0;background:linear-gradient(90deg,var(--purple-mid),var(--purple-deep));border-radius:999px;transition:width .1s linear;}
+  .splash-door{position:absolute;top:0;bottom:0;width:51%;z-index:4;opacity:0;background:linear-gradient(160deg,#353164 0%,var(--purple-deep) 45%,#1a1838 100%);transition:opacity .15s ease,transform .72s cubic-bezier(.7,.02,.22,1);box-shadow:inset 0 0 60px rgba(0,0,0,.25);pointer-events:none;}
   .splash-door-left{left:0;border-right:1px solid rgba(255,255,255,.08);}
   .splash-door-right{right:0;border-left:1px solid rgba(255,255,255,.08);}
+  .splash.boom .splash-door{opacity:1;}
   .splash.boom .splash-pct{animation:splash-boom .42s cubic-bezier(.22,.61,.36,1);}
   .splash.boom .splash-content{animation:splash-shake .42s cubic-bezier(.22,.61,.36,1);}
   .splash.boom::after{content:'';position:absolute;inset:0;z-index:5;background:radial-gradient(circle at center,rgba(240,240,248,.85) 0%,rgba(240,240,248,0) 68%);animation:splash-flash .45s ease-out;pointer-events:none;}
@@ -90,7 +91,7 @@
   @keyframes splash-flash{0%{opacity:0;}30%{opacity:1;}100%{opacity:0;}}
   .spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--purple-mid);border-radius:50%;animation:spin .9s linear infinite;}
   @keyframes spin{to{transform:rotate(360deg);}}
-  @media (prefers-reduced-motion:reduce){.spinner{animation:none;}.splash,.splash-door,.splash-content,.splash-fill,.app-reveal{animation:none!important;transition:none!important;}}
+  @media (prefers-reduced-motion:reduce){.spinner{animation:none;}.splash.boom .splash-pct,.splash.boom .splash-content,.splash.boom::after,.app-reveal{animation:none!important;}.splash-door{transition:opacity .1s ease,transform .3s ease!important;}}
   .lead{color:var(--purple-deep);font-size:17px;font-weight:700;margin:0;}
   .note{color:var(--muted);font-size:14px;line-height:1.8;margin:0;max-width:30em;}
   .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--purple-deep);color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:50;pointer-events:none;box-shadow:0 6px 24px rgba(46,42,94,.28);}
@@ -156,15 +157,24 @@
   }
 
   function runSplashAnimation(loadPromise){
-    if (prefersReducedMotion()) return loadPromise.then(function(){ hideSplash(); });
+    var MIN_MS = 2800;
+    var reduceMotion = prefersReducedMotion();
     return new Promise(function(resolve){
       var dataReady = false;
+      var finished = false;
       var pct = 0;
       var start = performance.now();
       loadPromise.then(function(){ dataReady = true; }).catch(function(){ dataReady = true; });
 
       function finish(){
+        if (finished) return;
+        finished = true;
         setSplashPct(100);
+        if (reduceMotion){
+          hideSplash();
+          resolve();
+          return;
+        }
         splash.classList.add('boom');
         setTimeout(function(){
           splash.classList.add('open');
@@ -172,25 +182,21 @@
             hideSplash();
             resolve();
           }, 720);
-        }, 360);
+        }, 380);
       }
 
       function frame(now){
         var elapsed = now - start;
-        if (!dataReady){
-          var eased = 1 - Math.pow(1 - Math.min(elapsed / 2000, 1), 2.4);
-          var target = Math.min(92, Math.floor(eased * 92));
-          if (elapsed > 2000) target = Math.min(99, 92 + Math.floor((elapsed - 2000) / 350));
-          if (target > pct) pct = target;
-          setSplashPct(pct);
-          requestAnimationFrame(frame);
-        } else if (pct < 100){
-          pct = Math.min(100, pct + 5);
-          setSplashPct(pct);
-          if (pct < 100) requestAnimationFrame(frame);
-          else finish();
-        } else {
+        var timePct = Math.min(100, Math.floor((1 - Math.pow(1 - Math.min(elapsed / MIN_MS, 1), 2.2)) * 100));
+        if (!dataReady) timePct = Math.min(timePct, 99);
+        if (timePct > pct) pct = timePct;
+        setSplashPct(pct);
+
+        var canFinish = dataReady && elapsed >= MIN_MS && pct >= 100;
+        if (canFinish){
           finish();
+        } else {
+          requestAnimationFrame(frame);
         }
       }
 

@@ -1,0 +1,346 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>逆転設計室｜学部別合格設計塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0f2747;--navy2:#1b3a63;--gold:#b8902f;--gold-bg:#f6efda;--verm:#cf4434;--ink:#262a31;--muted:#736c59;--line:#e8e1cd;--bg:#faf8f2;--card:#fff;--radius:14px;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans JP",system-ui,sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6;}
+  .wrap{max-width:720px;margin:0 auto;padding:0 16px 72px;}
+  header.top{position:sticky;top:0;z-index:5;background:var(--bg);padding:14px 0 12px;border-bottom:0.5px solid var(--line);margin-bottom:4px;}
+  .kick{font-size:11px;letter-spacing:.16em;color:var(--muted);}
+  .brandrow{display:flex;align-items:center;gap:9px;margin-top:3px;}
+  .crown{width:22px;height:22px;color:var(--gold);flex:none;}
+  .brandname{font-family:"Noto Serif JP",serif;font-weight:700;font-size:22px;color:var(--navy);}
+  section{margin-top:20px;}
+  .card{background:var(--card);border:0.5px solid var(--line);border-radius:var(--radius);padding:16px 18px;}
+  .hero{border:1.5px solid var(--gold);}
+  .kicker{font-size:11px;letter-spacing:.1em;color:var(--gold);font-weight:700;}
+  .h{font-size:17px;font-weight:700;color:var(--navy);margin:0;}
+  .muted{color:var(--muted);}
+  .serif-title{font-family:"Noto Serif JP",serif;font-size:20px;font-weight:700;color:var(--navy);margin:3px 0 12px;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--navy);color:#fff;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:500;font-family:inherit;cursor:pointer;text-decoration:none;}
+  .btn:active{transform:scale(.985);}
+  .btn.gold{background:var(--gold);}
+  .btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--line);}
+  .btn.sm{padding:8px 15px;font-size:13px;border-radius:9px;}
+  input,select{width:100%;font-family:inherit;font-size:15px;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);}
+  input:focus,select:focus{outline:2px solid var(--gold);outline-offset:1px;}
+  .count{font-size:40px;font-weight:700;color:var(--gold);font-family:"Noto Serif JP",serif;line-height:1;}
+  .ticket{border:1.5px solid var(--gold);}
+  .perk{background:var(--gold-bg);border-radius:12px;padding:13px 15px;display:flex;align-items:center;gap:10px;}
+  .perk .crown{color:var(--gold);width:20px;height:20px;}
+  .perktext{font-size:12.5px;color:#7a5e16;line-height:1.5;}
+  .packimg{width:100%;aspect-ratio:16/9;border-radius:10px;object-fit:cover;display:block;margin-bottom:12px;border:0.5px solid var(--line);}
+  .placeholder{background:#f1ece0;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px;}
+  .swipe{display:flex;gap:10px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x proximity;}
+  .swcard{scroll-snap-align:start;flex:0 0 auto;width:124px;background:var(--bg);border:0.5px solid var(--line);border-radius:12px;padding:13px;display:flex;flex-direction:column;gap:7px;cursor:pointer;text-align:left;font-family:inherit;}
+  .swcard:active{transform:scale(.98);}
+  .swcard.locked{opacity:.9;cursor:default;}
+  .swkind{font-size:10px;letter-spacing:.08em;color:var(--gold);font-weight:700;}
+  .freechip{font-size:10px;background:#fff;color:var(--gold);border:1px solid var(--gold);padding:1px 7px;border-radius:6px;align-self:flex-start;font-weight:700;}
+  .swtitle{font-size:13px;font-weight:500;color:var(--ink);line-height:1.35;min-height:2.6em;}
+  .swtitle.muted{font-weight:400;color:var(--muted);}
+  .swopen{font-size:11px;color:var(--navy);}
+  .swlocked{font-size:11px;color:var(--muted);}
+  .swipehint{font-size:11px;color:var(--muted);margin-top:7px;}
+  .catrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:0.5px solid var(--line);}
+  .catrow:last-child{border-bottom:none;}
+  .catname{font-size:14px;color:var(--ink);}
+  .catmeta{font-size:12px;color:var(--muted);margin-top:1px;}
+  .samplelink{color:var(--gold);font-weight:500;text-decoration:none;cursor:pointer;}
+  .reqhead{display:flex;align-items:center;justify-content:space-between;gap:10px;}
+  .center{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;}
+  .spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin .9s linear infinite;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  @media (prefers-reduced-motion:reduce){.spinner{animation:none;}}
+  .lead{color:var(--verm);font-size:17px;font-weight:700;margin:0;}
+  .note{color:var(--muted);font-size:14px;line-height:1.8;margin:0;max-width:30em;}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:11px 20px;border-radius:999px;font-size:14px;opacity:0;transition:.25s;z-index:50;pointer-events:none;box-shadow:0 6px 24px rgba(15,39,71,.25);}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  .modal-bg{position:fixed;inset:0;background:rgba(15,39,71,.45);display:none;align-items:flex-end;justify-content:center;z-index:40;}
+  .modal-bg.show{display:flex;}
+  .modal{background:#fff;width:100%;max-width:480px;border-radius:18px 18px 0 0;padding:20px 18px calc(22px + env(safe-area-inset-bottom));}
+  .modal .x{float:right;font-size:22px;color:var(--muted);background:none;border:none;cursor:pointer;line-height:1;padding:0;}
+  .foot{margin-top:32px;text-align:center;font-size:11px;color:var(--muted);letter-spacing:.08em;}
+  .welcome-name{font-size:16px;font-weight:500;color:var(--ink);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="app" class="center">
+    <div class="spinner" aria-hidden="true"></div>
+    <p class="note">読み込んでいます…</p>
+  </div>
+</div>
+<div id="toast" class="toast"></div>
+<div id="applybg" class="modal-bg">
+  <div class="modal">
+    <button class="x" onclick="closeApply()" aria-label="閉じる">×</button>
+    <div class="kicker">お申し込み</div>
+    <div id="applyName" class="serif-title" style="margin:4px 0 6px;"></div>
+    <p class="muted" style="font-size:13px;margin:0 0 14px;line-height:1.7;">お振込のお名前をご記入のうえお申し込みください。お申し込み後、LINEに決済のご案内が届きます。</p>
+    <input id="applyPayer" placeholder="お振込名義（例：ヤマダ タロウ）" style="margin-bottom:12px;">
+    <button class="btn gold" style="width:100%;" onclick="submitApply()">この内容で申し込む</button>
+  </div>
+</div>
+
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script>
+  // ===== 設定（ここを埋める）=====
+  var LIFF_ID     = 'ここにLIFF ID';
+  var GAS_URL     = 'ここにGASウェブアプリの /exec URL';
+  var LINE_OA_URL = 'https://lin.ee/ここに公式LINE';
+
+  var PROFILE = null;
+  var app = document.getElementById('app');
+  var CROWN = '<svg class="crown" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M2.5 7l4.2 4 5.3-7 5.3 7 4.2-4-2.1 12.5H4.6L2.5 7z"/></svg>';
+
+  function esc(s){ return String(s==null?'':s).replace(/[&<>"]/g,function(c){return({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'})[c];}); }
+  function yen(n){ return '¥' + (Number(n)||0).toLocaleString('ja-JP'); }
+  function daysUntil(iso){ var t=new Date(iso+'T00:00:00+09:00').getTime(); return Math.max(0, Math.ceil((t-Date.now())/86400000)); }
+  function toast(msg){ var t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(t._h); t._h=setTimeout(function(){t.classList.remove('show');},2600); }
+
+  async function api(action, payload){
+    var p = Object.assign({ action: action, idToken: liff.getIDToken(), displayName: PROFILE ? PROFILE.displayName : '' }, payload || {});
+    var res = await fetch(GAS_URL, { method:'POST', headers:{'Content-Type':'text/plain;charset=utf-8'}, body: JSON.stringify(p) });
+    return res.json();
+  }
+
+  // ===== パーツ =====
+  function headerHtml(){
+    return '<header class="top"><div class="kick">学部別合格設計塾　THINKING</div>'
+      + '<div class="brandrow">' + CROWN + '<span class="brandname">逆転設計室</span></div></header>';
+  }
+
+  function welcomeHtml(student){
+    return '<section><div class="welcome-name">' + esc(student.displayName || '') + 'さん、ようこそ</div>'
+      + '<div class="muted" style="font-size:13px;margin-top:2px;">志望校の合格設計図を、ここで手に入れよう。</div></section>';
+  }
+
+  function progressCard(student){
+    if (student.examDate){
+      return '<section class="card" style="display:flex;align-items:center;justify-content:space-between;gap:12px;">'
+        + '<div><div class="muted" style="font-size:12px;">' + esc(student.firstChoice || '第一志望') + '　本番まで</div>'
+        + '<div style="display:flex;align-items:baseline;gap:6px;margin-top:4px;"><span class="count">' + daysUntil(student.examDate) + '</span><span class="muted">日</span></div></div>'
+        + '<div class="muted" style="font-size:12px;text-align:right;max-width:9em;">設計できる時間は、まだある。</div></section>';
+    }
+    return '<section class="card"><div class="h" style="font-size:16px;">第一志望を登録する</div>'
+      + '<div class="muted" style="font-size:13px;margin:4px 0 12px;">登録すると、本番までのカウントダウンが出ます。</div>'
+      + '<input id="regChoice" placeholder="第一志望（例：明治大学 商学部）" style="margin-bottom:8px;">'
+      + '<input id="regDate" type="date" style="margin-bottom:10px;">'
+      + '<button class="btn" style="width:100%;" onclick="submitRegister()">登録する</button></section>';
+  }
+
+  function ticketHtml(student){
+    return '<section class="card ticket"><div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">'
+      + '<div><div class="kicker">購入者特典</div>'
+      + '<div style="font-size:15px;font-weight:700;color:var(--navy);margin-top:2px;">個別作戦会議チケット</div>'
+      + '<div class="muted" style="font-size:12px;margin-top:1px;">残り ' + (Number(student.tickets)||0) + ' 枚</div></div>'
+      + '<button class="btn gold sm" onclick="lineBook()">LINEで予約</button></div></section>';
+  }
+
+  function perkHtml(){
+    return '<section><div class="perk">' + CROWN
+      + '<span class="perktext">どのパックにも、個別作戦会議チケットが1枚。買ったその日から、合格設計を一緒に始められます。</span></div></section>';
+  }
+
+  function ownedCard(c){
+    return '<button class="swcard" data-url="' + esc(c.url) + '">'
+      + '<span class="swkind">' + esc(c.type || '教材') + '</span>'
+      + '<span class="swtitle">' + esc(c.title) + '</span>'
+      + '<span class="swopen">開く →</span></button>';
+  }
+
+  function ownedPackHtml(p){
+    var img = p.image
+      ? '<img class="packimg" src="' + esc(p.image) + '" alt="' + esc(p.name) + '">'
+      : '<div class="packimg placeholder"><span class="muted" style="font-size:12px;">大学の写真（packs の大学画像URLに設定）</span></div>';
+    var hint = p.contents.length > 2 ? '<div class="swipehint">← スワイプで教材を切り替え →</div>' : '';
+    return '<section><div class="kicker">合格設計 学部別パック</div>'
+      + '<div class="serif-title">' + esc(p.name) + '</div>' + img
+      + '<div class="swipe">' + p.contents.map(ownedCard).join('') + '</div>' + hint + '</section>';
+  }
+
+  function previewCard(c){
+    if (c.free && c.url){
+      return '<button class="swcard" data-url="' + esc(c.url) + '">'
+        + '<span class="freechip">無料</span><span class="swtitle">' + esc(c.title) + '</span>'
+        + '<span class="swopen">見てみる →</span></button>';
+    }
+    return '<div class="swcard locked"><span class="swtitle muted">' + esc(c.title) + '</span>'
+      + '<span class="swlocked">購入で解放</span></div>';
+  }
+
+  function heroHtml(catalog, student){
+    if (!catalog.length) return '';
+    var f = null;
+    for (var i=0;i<catalog.length;i++){ if (catalog[i].name === student.firstChoice){ f = catalog[i]; break; } }
+    if (!f) f = catalog[0];
+    return '<section class="card hero"><div class="kicker">購入すると、この設計一式が解放されます</div>'
+      + '<div class="serif-title">' + esc(f.name) + '</div>'
+      + '<div class="swipe">' + f.contents.map(previewCard).join('') + '</div>'
+      + '<button class="btn gold" style="width:100%;margin-top:12px;" data-pack="' + esc(f.packId) + '" data-pname="' + esc(f.name) + '">このパックを解放（' + yen(f.price) + '）</button></section>';
+  }
+
+  function catalogHtml(catalog){
+    var rows = catalog.map(function(p){
+      var free = null;
+      for (var i=0;i<p.contents.length;i++){ if (p.contents[i].free && p.contents[i].url){ free = p.contents[i]; break; } }
+      var sample = free ? '　<a class="samplelink" data-url="' + esc(free.url) + '">無料サンプル →</a>' : '';
+      return '<div class="catrow" data-name="' + esc(p.name + p.university + p.faculty) + '">'
+        + '<div><div class="catname">' + esc(p.name) + '</div><div class="catmeta">' + yen(p.price) + sample + '</div></div>'
+        + '<button class="btn sm" data-pack="' + esc(p.packId) + '" data-pname="' + esc(p.name) + '">申込</button></div>';
+    }).join('');
+    return '<section><h2 class="h">購入できる大学・学部</h2>'
+      + '<input id="catsearch" placeholder="大学名・学部で検索" oninput="filterCatalog()" style="margin:10px 0 12px;">'
+      + '<div class="card"><div id="catlist">' + (rows || '<div class="muted" style="font-size:13px;">現在、購入できる学部はありません。</div>') + '</div></div></section>';
+  }
+
+  function requestHtml(){
+    return '<section class="card"><div class="reqhead">'
+      + '<div><div class="h" style="font-size:16px;">受けたい学部がない?</div>'
+      + '<div class="muted" style="font-size:13px;">あなたの受ける学部、つくります。</div></div>'
+      + '<button class="btn ghost sm" onclick="toggleReq()">リクエスト</button></div>'
+      + '<div id="reqform" style="display:none;margin-top:14px;">'
+      + '<input id="reqUni" placeholder="大学名（例：上智大学）" style="margin-bottom:8px;">'
+      + '<input id="reqFac" placeholder="学部名（例：経済学部）" style="margin-bottom:10px;">'
+      + '<button class="btn gold" style="width:100%;" onclick="sendReq()">この学部をリクエストする</button></div></section>';
+  }
+
+  function footHtml(){ return '<div class="foot">逆転設計室　/　学部別合格設計塾 THINKING</div>'; }
+
+  // ===== 描画 =====
+  function renderPortal(data){
+    var owner = data.owned.length > 0;
+    var html = headerHtml();
+    if (owner){
+      html += progressCard(data.student)
+        + ticketHtml(data.student)
+        + data.owned.map(ownedPackHtml).join('')
+        + catalogHtml(data.catalog)
+        + requestHtml();
+    } else {
+      html += welcomeHtml(data.student)
+        + heroHtml(data.catalog, data.student)
+        + perkHtml()
+        + catalogHtml(data.catalog)
+        + progressCard(data.student)
+        + requestHtml();
+    }
+    html += footHtml();
+    app.className = '';
+    app.innerHTML = html;
+    bindDynamic();
+  }
+
+  function bindDynamic(){
+    document.querySelectorAll('[data-url]').forEach(function(el){
+      el.addEventListener('click', function(){ openContent(el.dataset.url); });
+    });
+    document.querySelectorAll('[data-pack]').forEach(function(el){
+      el.addEventListener('click', function(){ openApply(el.dataset.pack, el.dataset.pname); });
+    });
+  }
+
+  // ===== アクション =====
+  function openContent(url){
+    if (!url){ toast('準備中です'); return; }
+    liff.openWindow({ url: url, external: true });
+  }
+
+  async function lineContact(msg){
+    try{
+      if (liff.isInClient() && liff.isApiAvailable('sendMessages')){
+        await liff.sendMessages([{ type:'text', text: msg }]);
+        toast('LINEに送信しました。運営から折り返します。');
+        return;
+      }
+    }catch(e){}
+    liff.openWindow({ url: LINE_OA_URL, external: true });
+  }
+  function lineBook(){ lineContact('【個別作戦会議の予約希望】'); }
+
+  var APPLY_PACK = '';
+  function openApply(packId, name){
+    APPLY_PACK = packId;
+    document.getElementById('applyName').textContent = name;
+    document.getElementById('applyPayer').value = '';
+    document.getElementById('applybg').classList.add('show');
+  }
+  function closeApply(){ document.getElementById('applybg').classList.remove('show'); }
+  async function submitApply(){
+    var payer = document.getElementById('applyPayer').value.trim();
+    if (!payer){ toast('お振込名義を入力してください'); return; }
+    var r = await api('apply', { packId: APPLY_PACK, payerName: payer });
+    if (r.ok){
+      closeApply();
+      lineContact('#申込_' + APPLY_PACK);
+      toast('お申し込みを受け付けました。LINEに案内が届きます。');
+    } else {
+      toast('申し込みに失敗しました');
+    }
+  }
+
+  function toggleReq(){
+    var f = document.getElementById('reqform');
+    f.style.display = (f.style.display === 'none') ? 'block' : 'none';
+  }
+
+  async function submitRegister(){
+    var firstChoice = document.getElementById('regChoice').value.trim();
+    var examDate = document.getElementById('regDate').value;
+    if (!firstChoice || !examDate){ toast('第一志望と入試日を入力してください'); return; }
+    var r = await api('register', { firstChoice: firstChoice, examDate: examDate });
+    if (r.ok){ toast('登録しました'); refresh(); } else { toast('登録に失敗しました'); }
+  }
+
+  async function sendReq(){
+    var university = document.getElementById('reqUni').value.trim();
+    var faculty = document.getElementById('reqFac').value.trim();
+    if (!university){ toast('大学名を入力してください'); return; }
+    var r = await api('request', { university: university, faculty: faculty });
+    if (r.ok){ document.getElementById('reqform').innerHTML = '<div class="muted" style="font-size:13px;line-height:1.8;">リクエストを受け付けました。作成でき次第、カタログに追加してお知らせします。</div>'; }
+    else { toast('送信に失敗しました'); }
+  }
+
+  function filterCatalog(){
+    var q = document.getElementById('catsearch').value.trim();
+    document.querySelectorAll('#catlist .catrow').forEach(function(el){
+      el.style.display = (el.dataset.name.indexOf(q) >= 0) ? '' : 'none';
+    });
+  }
+
+  async function refresh(){
+    var data = await api('portal', {});
+    if (data.ok) renderPortal(data);
+  }
+
+  function showBlocked(){
+    app.className = 'center';
+    app.innerHTML = '<p class="lead">読み込めませんでした</p>'
+      + '<p class="note">お手数ですが、公式LINEのトーク画面から開き直してください。</p>'
+      + '<a class="btn" href="' + LINE_OA_URL + '">公式LINEへ</a>';
+  }
+
+  async function main(){
+    try{
+      await liff.init({ liffId: LIFF_ID });
+      if (!liff.isLoggedIn()){ liff.login(); return; }
+      PROFILE = await liff.getProfile();
+      var data = await api('portal', {});
+      if (data.ok){ renderPortal(data); } else { showBlocked(); }
+    }catch(err){
+      app.className = 'center';
+      app.innerHTML = '<p class="note">読み込みに失敗しました。LINEから開き直してください。<br><span style="font-size:12px;color:#a39a82;">' + esc(String(err)) + '</span></p>';
+    }
+  }
+  main();
+</script>
+</body>
+</html>

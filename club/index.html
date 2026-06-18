@@ -225,6 +225,13 @@
           <p class="range-scroll-hint" id="weekly-scroll-hint" hidden>← 横にスワイプして全科目を見る →</p>
           <div class="range-scroll" id="weekly-list"><div class="skeleton">読み込み中…</div></div>
         </div>
+        <div class="test-materials-wrap" id="test-materials-wrap">
+          <div class="test-materials-head">
+            <h3 class="test-materials-title">小テスト教材</h3>
+            <p class="test-materials-lead">いつでも確認できる、小テストで使う教材一覧です</p>
+          </div>
+          <div class="test-materials-list" id="test-materials-list"></div>
+        </div>
       </div>
     </section>
 
@@ -279,11 +286,14 @@
     </section>
 
     <section class="card" id="sec-test">
-      <div class="card-head"><h2>小テストランキング</h2></div>
+      <div class="card-head"><h2 id="test-section-title">小テストランキング</h2></div>
       <div class="card-body">
-        <div class="period" id="test-period"></div>
-        <div class="tabs" id="test-tabs"></div>
-        <div id="test-panel"><div class="skeleton">読み込み中…</div></div>
+        <div id="test-active-ui">
+          <div class="period" id="test-period"></div>
+          <div class="tabs" id="test-tabs"></div>
+          <div id="test-panel"><div class="skeleton">読み込み中…</div></div>
+        </div>
+        <div id="test-promo-ui" hidden></div>
       </div>
     </section>
 
@@ -346,6 +356,52 @@
 <script>
 const API_URL = 'https://script.google.com/macros/s/AKfycbzRtEbxXA7ijb-grWU1x7FwLjomnXFYvkRQ8XQIvYhANcxR2824NneO0U5_PMchichKJQ/exec';
 const LIFF_ID = '2010378695-4j2cx38C';
+
+const TEST_MATERIALS = [
+  {
+    subject: '英単語',
+    items: [{ title: '標準英単語1300', url: 'https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/eEtKkHlMWWKq3Cw8WLQDwDRvorohSN7OLJgXnymw.pdf' }]
+  },
+  {
+    subject: '英熟語',
+    items: [
+      { title: '入門英熟語500', url: 'https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/Ytozivum8C2UfWLeuvgJCht3HjgqSDylIvu0o0t0.pdf' },
+      { title: '標準英熟語700', url: 'https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/VVn63BMmSU2tK1J6yU0hRjJL5sU04SOlY0r8ruYx.pdf' }
+    ],
+    note: '入門の週もあれば標準の週もあります。今週のテスト範囲をよく確認してください。'
+  },
+  {
+    subject: '英文法',
+    noMaterial: true,
+    note: '指定教材なし。持っている英文法書で範囲を確認し、習得しておきましょう。'
+  },
+  {
+    subject: '古文単語',
+    items: [{ title: '必修古文単語300', url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/07zGL6XtjJRysv3P6V4GiQAXX.pdf' }]
+  },
+  {
+    subject: '古文法',
+    noMaterial: true,
+    note: '指定教材なし。持っている古文法書で範囲を確認し、習得しておきましょう。'
+  },
+  {
+    subject: '現代文読解',
+    items: [{ title: '現代文語彙リスト', url: 'https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/67zVFEyTueT8jocsIzJyefTgunn7m67PlOnNlLZZ.pdf' }],
+    note: '上記の語彙は重要なキーワードとなりますので、確認しておきましょう。'
+  },
+  {
+    subject: '数学1A',
+    noMaterial: true,
+    note: '指定教材なし。持っている教科書で範囲を確認し、習得しておきましょう。'
+  },
+  {
+    subject: '数学2B',
+    noMaterial: true,
+    note: '指定教材なし。持っている教科書で範囲を確認し、習得しておきましょう。'
+  }
+];
+
+let currentMemberStatus = '';
 
 let idToken = '';
 let selMinutes = 0;
@@ -661,6 +717,7 @@ function applyRankFromResponse(data){
 
 /* ---------- ヘッダー ---------- */
 function renderHeader(me){
+  currentMemberStatus = me.member.member_status || '';
   $('h-name').textContent = me.member.display_name + ' さん';
   $('h-status').textContent = me.member.member_status;
   $('h-week').textContent = fmtMin(me.week_minutes);
@@ -979,6 +1036,58 @@ function createRangeCard(it){
     card.appendChild(note);
   }
   return card;
+}
+
+function createMaterialPdfBtn(item){
+  var a = document.createElement('a');
+  a.className = 'material-pdf-btn';
+  a.href = item.url;
+  a.target = '_blank';
+  a.rel = 'noopener';
+  a.innerHTML = '<span class="material-pdf-icon" aria-hidden="true">PDF</span><span class="material-pdf-label">' + item.title + '</span><span class="material-pdf-arrow" aria-hidden="true">→</span>';
+  return a;
+}
+
+function createMaterialCard(mat){
+  var card = document.createElement('article');
+  card.className = 'material-card material-card--' + weeklySubjectTone(mat.subject);
+  var head = document.createElement('div');
+  head.className = 'material-card-head';
+  var subj = document.createElement('div');
+  subj.className = 'material-card-subject';
+  subj.textContent = mat.subject;
+  head.appendChild(subj);
+  if (mat.noMaterial){
+    var badge = document.createElement('span');
+    badge.className = 'material-card-badge';
+    badge.textContent = '指定教材なし';
+    head.appendChild(badge);
+  }
+  card.appendChild(head);
+  if (mat.items && mat.items.length){
+    var actions = document.createElement('div');
+    actions.className = 'material-card-actions';
+    mat.items.forEach(function(item){
+      actions.appendChild(createMaterialPdfBtn(item));
+    });
+    card.appendChild(actions);
+  }
+  if (mat.note){
+    var note = document.createElement('p');
+    note.className = 'material-card-note';
+    note.textContent = mat.note;
+    card.appendChild(note);
+  }
+  return card;
+}
+
+function renderTestMaterials(){
+  var list = $('test-materials-list');
+  if (!list) return;
+  list.innerHTML = '';
+  TEST_MATERIALS.forEach(function(mat){
+    list.appendChild(createMaterialCard(mat));
+  });
 }
 
 async function loadWeekly(){
@@ -1457,7 +1566,50 @@ async function loadLeagueDisplay(){
 /* ---------- 小テストランキング ---------- */
 let testData = null;
 
+function renderTestPromo(){
+  var title = $('test-section-title');
+  var active = $('test-active-ui');
+  var promo = $('test-promo-ui');
+  if (title) title.textContent = '小テスト';
+  if (active) active.hidden = true;
+  if (!promo) return;
+  promo.hidden = false;
+  promo.innerHTML =
+    '<div class="test-promo-hero">' +
+      '<div class="test-promo-eyebrow">仮入部期間</div>' +
+      '<div class="test-promo-title">毎週日曜、基礎力テストを実施</div>' +
+      '<p class="test-promo-lead">家勉部では週1回の小テストで、基礎の定着をチェックしています。仮入部中も、毎週日曜日に基礎力テストに挑戦できます。</p>' +
+    '</div>' +
+    '<div class="test-promo-steps">' +
+      '<div class="test-promo-step"><span class="test-promo-step-num num">1</span><span class="test-promo-step-text">今週の範囲を確認する</span></div>' +
+      '<div class="test-promo-step"><span class="test-promo-step-num num">2</span><span class="test-promo-step-text">教材で復習してから挑戦</span></div>' +
+      '<div class="test-promo-step"><span class="test-promo-step-num num">3</span><span class="test-promo-step-text">日曜に基礎力テストを受ける</span></div>' +
+    '</div>' +
+    '<div class="test-promo-future">' +
+      '<div class="test-promo-future-label">正式部員になったら</div>' +
+      '<p class="test-promo-future-text">毎週、基礎力を確認して<strong>苦手を発見 → 潰せる</strong>ようになります。ランキングで戦友と競い合いながら、着実にレベルアップしていきましょう。</p>' +
+    '</div>' +
+    '<button type="button" class="test-promo-link" id="test-promo-to-weekly">今週のテスト範囲・教材を見る</button>';
+  var linkBtn = $('test-promo-to-weekly');
+  if (linkBtn){
+    linkBtn.onclick = function(){
+      var el = $('sec-weekly');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+  }
+}
+
 async function loadTestRanking(){
+  if (currentMemberStatus === '仮入部'){
+    renderTestPromo();
+    return;
+  }
+  var title = $('test-section-title');
+  var active = $('test-active-ui');
+  var promo = $('test-promo-ui');
+  if (title) title.textContent = '小テストランキング';
+  if (active) active.hidden = false;
+  if (promo) promo.hidden = true;
   try{
     const data = await api('test_ranking');
     if (data.status !== 'ok'){
@@ -1564,6 +1716,7 @@ async function main(){
   $('app').style.display = 'block';
   renderRoomHours();
   initRoomZoomCopy();
+  renderTestMaterials();
   loadWeekly();
   loadLeagueDisplay();
   loadTestRanking();

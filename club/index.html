@@ -221,6 +221,11 @@
           <span class="weekly-date-label">次回テスト</span>
           <span class="weekly-date num" id="weekly-date"></span>
         </div>
+        <div class="weekly-breakout-note">
+          <div class="weekly-breakout-title">小テストは毎週 20:30 開始</div>
+          <p class="weekly-breakout-text">開始時間になったら、自習室のブレイクアウトルームへ移動して受験してください。</p>
+          <button type="button" class="weekly-breakout-btn" id="weekly-breakout-btn">自習室へ移動する</button>
+        </div>
         <div class="range-scroll-wrap" id="weekly-scroll-wrap">
           <p class="range-scroll-hint" id="weekly-scroll-hint" hidden>← 横にスワイプして全科目を見る →</p>
           <div class="range-scroll" id="weekly-list"><div class="skeleton">読み込み中…</div></div>
@@ -230,6 +235,7 @@
             <h3 class="test-materials-title">小テスト教材</h3>
             <p class="test-materials-lead">いつでも確認できる、小テストで使う教材一覧です</p>
           </div>
+          <p class="test-materials-hint" id="test-materials-hint" hidden>← 横にスワイプして教材を切り替え →</p>
           <div class="test-materials-list" id="test-materials-list"></div>
         </div>
       </div>
@@ -398,6 +404,14 @@ const TEST_MATERIALS = [
     subject: '数学2B',
     noMaterial: true,
     note: '指定教材なし。持っている教科書で範囲を確認し、習得しておきましょう。'
+  },
+  {
+    subject: '日本史',
+    items: [{ title: '一問一答 日本史 ターゲット 4000 三訂版', url: 'https://amzn.to/4a8DnDD' }]
+  },
+  {
+    subject: '世界史',
+    items: [{ title: '一問一答 世界史 ターゲット 4000 三訂版', url: 'https://amzn.to/4ePRu3e' }]
   }
 ];
 
@@ -1083,11 +1097,13 @@ function createMaterialCard(mat){
 
 function renderTestMaterials(){
   var list = $('test-materials-list');
+  var hint = $('test-materials-hint');
   if (!list) return;
   list.innerHTML = '';
   TEST_MATERIALS.forEach(function(mat){
     list.appendChild(createMaterialCard(mat));
   });
+  if (hint) hint.hidden = TEST_MATERIALS.length < 2;
 }
 
 async function loadWeekly(){
@@ -1689,6 +1705,13 @@ async function main(){
   buildChips();
   $('log-btn').onclick = submitLog;
   $('rank-up-overlay').onclick = closeRankUpOverlay;
+  var breakoutBtn = $('weekly-breakout-btn');
+  if (breakoutBtn){
+    breakoutBtn.onclick = function(){
+      var room = $('sec-room');
+      if (room) room.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+  }
   try{
     await liff.init({ liffId: LIFF_ID });
   }catch(e){

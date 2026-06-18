@@ -1588,6 +1588,47 @@ main {
   letter-spacing: 0.02em;
 }
 
+.weekly-breakout-note {
+  margin-bottom: 14px;
+  padding: 13px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(122, 139, 110, 0.35);
+  background: linear-gradient(180deg, rgba(122, 139, 110, 0.14), rgba(232, 237, 228, 0.62));
+}
+
+.weekly-breakout-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--sage-deep);
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+
+.weekly-breakout-text {
+  font-size: 12px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.weekly-breakout-btn {
+  margin-top: 10px;
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--sage);
+  border-radius: 10px;
+  background: #fff;
+  color: var(--sage-deep);
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.weekly-breakout-btn:active {
+  transform: scale(0.99);
+  background: var(--sage-pale);
+}
+
 .range-scroll-wrap {
   margin: 0 -18px;
 }
@@ -1747,11 +1788,30 @@ main {
 
 .test-materials-list {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 2px 0 8px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.test-materials-list::-webkit-scrollbar {
+  display: none;
+}
+
+.test-materials-hint {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
 }
 
 .material-card {
+  flex: 0 0 82%;
+  max-width: 320px;
+  scroll-snap-align: start;
   padding: 14px 14px 15px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--line-soft);

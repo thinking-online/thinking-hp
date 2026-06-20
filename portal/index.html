@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#1a2a44">
-<title>THINKING CAMPUS｜塾生ポータル</title> href="https://fonts.googleapis.com">
+<title>THINKING CAMPUS｜塾生ポータル</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
@@ -35,12 +36,59 @@
   .wrap{max-width:520px;margin:0 auto;padding:0 16px 64px}
   .serif{font-family:"Noto Serif JP",serif}
 
-  /* ---- 状態表示（読み込み/エラー）---- */
+  /* ---- スプラッシュ（読み込み）---- */
+  .splash{position:fixed;inset:0;z-index:200;background:var(--paper);display:flex;flex-direction:column;align-items:center;overflow:hidden}
+  .splash.hide{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .25s ease,visibility .25s}
+  .splash-glow{position:absolute;inset:0;z-index:1;opacity:0;background:radial-gradient(circle at 50% 38%,rgba(74,111,165,.18) 0%,rgba(74,111,165,0) 58%);pointer-events:none}
+  .splash-panel-wrap{flex:1;display:flex;align-items:center;justify-content:center;width:100%;max-width:520px;padding:calc(18px + env(safe-area-inset-top)) 20px 12px;transition:opacity .4s ease,transform .5s ease}
+  .roadmap-card{position:relative;width:100%;background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 16px 20px;box-shadow:var(--shadow)}
+  .roadmap-brand{position:absolute;top:10px;right:12px;font-size:8px;letter-spacing:.24em;color:var(--gold);font-weight:700;opacity:.85}
+  .roadmap-head{border-bottom:2px solid var(--navy);padding-bottom:10px;margin-bottom:14px}
+  .roadmap-title{margin:0;font-family:"Noto Serif JP",serif;font-size:16px;font-weight:700;color:var(--navy);letter-spacing:.06em}
+  .roadmap-sub{margin:4px 0 0;font-size:11px;color:var(--muted);letter-spacing:.08em}
+  .roadmap-track{display:flex;flex-direction:column;gap:0;position:relative;padding-left:8px}
+  .roadmap-track::before{content:"";position:absolute;left:15px;top:8px;bottom:8px;width:2px;background:var(--line);border-radius:999px}
+  .roadmap-node{position:relative;display:flex;align-items:center;gap:12px;padding:10px 0;opacity:.35;transition:opacity .35s ease}
+  .roadmap-node.live{opacity:1}
+  .roadmap-node.done .roadmap-dot{background:var(--gold);border-color:var(--gold);box-shadow:0 0 0 4px rgba(74,111,165,.15)}
+  .roadmap-node.done .roadmap-dot::after{content:"";position:absolute;inset:3px;background:#fff;border-radius:50%;opacity:.35}
+  .roadmap-dot{position:relative;z-index:1;width:16px;height:16px;border-radius:50%;border:2px solid var(--line);background:#fff;flex:none;transition:background .3s,border-color .3s,box-shadow .3s}
+  .roadmap-label{font-size:13px;font-weight:600;color:var(--navy);letter-spacing:.02em}
+  .roadmap-open{margin-top:14px;text-align:center;font-family:"Noto Serif JP",serif;font-size:13px;font-weight:700;letter-spacing:.28em;color:var(--gold);opacity:0;transform:translateY(6px);transition:opacity .4s ease,transform .4s ease}
+  .roadmap-open.show{opacity:1;transform:none}
+  .splash-hud{position:relative;z-index:10;width:100%;max-width:520px;text-align:center;padding:6px 28px calc(22px + env(safe-area-inset-bottom));transition:opacity .35s ease,transform .45s cubic-bezier(.22,.61,.36,1)}
+  .splash-label{margin:0 0 4px;font-size:11px;letter-spacing:.2em;color:var(--gold);font-weight:600}
+  .splash-pct{margin:0;font-family:"Noto Serif JP",serif;font-size:52px;font-weight:700;color:var(--navy);line-height:1;letter-spacing:-.02em;min-width:2.4em}
+  .splash-track{width:min(220px,70vw);height:5px;margin:12px auto 0;background:var(--line);border-radius:999px;overflow:hidden}
+  .splash-fill{height:100%;width:0;background:linear-gradient(90deg,var(--gold-light),var(--navy));border-radius:999px;transition:width .1s linear}
+  .splash-door{position:absolute;top:0;bottom:0;width:51%;z-index:8;opacity:0;background:linear-gradient(165deg,var(--navy-2) 0%,var(--navy) 42%,#0f1828 100%);transition:opacity .15s ease,transform .78s cubic-bezier(.7,.02,.18,1);box-shadow:inset 0 0 80px rgba(0,0,0,.28);pointer-events:none}
+  .splash-door-left{left:0;border-right:1px solid rgba(255,255,255,.07)}
+  .splash-door-right{right:0;border-left:1px solid rgba(255,255,255,.07)}
+  .splash.boom .splash-glow{opacity:1;animation:splash-glow .55s ease-out}
+  .splash.boom .roadmap-card{animation:card-pop .48s cubic-bezier(.22,.61,.36,1)}
+  .splash.boom .splash-hud{animation:splash-shake .42s cubic-bezier(.22,.61,.36,1)}
+  .splash.boom .splash-pct{animation:splash-boom .42s cubic-bezier(.22,.61,.36,1)}
+  .splash.boom::after{content:"";position:absolute;inset:0;z-index:9;background:radial-gradient(circle at 50% 42%,rgba(255,255,255,.85) 0%,rgba(238,241,246,0) 62%);animation:splash-flash .48s ease-out;pointer-events:none}
+  .splash.open .splash-door{opacity:1}
+  .splash.open .splash-door-left{transform:translateX(-102%)}
+  .splash.open .splash-door-right{transform:translateX(102%)}
+  .splash.open .splash-hud{opacity:0;transform:scale(1.05)}
+  .splash.open .splash-panel-wrap{opacity:0;transform:scale(1.03)}
+  @keyframes splash-glow{0%{opacity:0}25%{opacity:1}100%{opacity:.45}}
+  @keyframes card-pop{0%{transform:scale(1)}40%{transform:scale(1.02)}100%{transform:scale(1)}}
+  @keyframes splash-boom{0%{transform:scale(1)}35%{transform:scale(1.08);color:var(--gold)}100%{transform:scale(1)}}
+  @keyframes splash-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-4px)}40%{transform:translateX(4px)}60%{transform:translateX(-3px)}80%{transform:translateX(2px)}}
+  @keyframes splash-flash{0%{opacity:0}28%{opacity:1}100%{opacity:0}}
+
+  /* ---- 状態表示（エラー等）---- */
   .screen{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:24px}
-  .spinner{width:34px;height:34px;border:3px solid var(--line);border-top-color:var(--gold);border-radius:50%;animation:spin .9s linear infinite}
-  @keyframes spin{to{transform:rotate(360deg)}}
   .crest{font-family:"Noto Serif JP",serif;font-weight:700;letter-spacing:.12em;color:var(--navy)}
   .msg-sub{color:var(--muted);font-size:13px}
+
+  @media (prefers-reduced-motion:reduce){
+    .splash.boom .splash-pct,.splash.boom .splash-hud,.splash.boom::after,.splash.boom .roadmap-card,.splash.boom .splash-glow{animation:none!important}
+    .splash-door{transition:opacity .1s ease,transform .3s ease!important}
+  }
 
   /* ---- トップ画像 ---- */
   .hero{position:relative;margin:0 -16px;background:var(--illus-bg);overflow:hidden;line-height:0}
@@ -62,7 +110,6 @@
   .chip{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--line);
     border-radius:999px;padding:5px 12px;font-size:13px;font-weight:500}
   .chip b{font-weight:700;color:var(--navy);letter-spacing:.04em}
-  .chip.status{color:#1e6b3a;border-color:#b8dcc4;background:#edf7f0}
 
   /* ---- セクションの器（次フェーズ以降ここに積む）---- */
   .section{margin-top:22px}
@@ -106,7 +153,11 @@
   /* ---- 自習室 ---- */
   .sr-today{text-align:center;padding:2px 0 12px;border-bottom:1px dashed var(--line)}
   .sr-today-label{font-size:12px;color:var(--muted);letter-spacing:.08em}
-  .sr-today-time{font-family:"Noto Serif JP",serif;font-weight:700;font-size:30px;color:var(--navy);margin-top:4px}
+  .sr-today-time{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:8px 10px;margin-top:8px;line-height:1.35}
+  .sr-today-time .sr-slot{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:clamp(16px,4.2vw,22px);white-space:nowrap;letter-spacing:.02em}
+  .sr-today-time--single .sr-slot{font-size:clamp(22px,5.5vw,28px)}
+  .sr-today-time--multi .sr-slot{padding:7px 11px;background:var(--paper);border:1px solid var(--line);border-radius:9px}
+  .sr-today-time--empty{font-family:"Noto Sans JP",sans-serif;font-size:15px;font-weight:500;color:var(--muted)}
   .sr-streak{margin-top:12px;text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px;font-size:14px;color:var(--navy)}
   .sr-streak b{font-size:18px;color:var(--gold);margin:0 2px}
   .sr-week{margin-top:12px}
@@ -118,7 +169,7 @@
   .sr-week-list .col{padding:5px 0;border-radius:8px}
   .sr-week-list .col.today{background:var(--paper)}
   .sr-week-list .d{font-size:11px;color:var(--muted)}
-  .sr-week-list .t{font-size:11px;font-weight:700;color:var(--navy);margin-top:3px;min-height:14px}
+  .sr-week-list .t{font-size:10px;font-weight:700;color:var(--navy);margin-top:3px;min-height:14px;line-height:1.35;word-break:keep-all}
   .sr-checkin{margin-top:16px}
   .sr-name{text-align:center;font-weight:700;color:var(--navy);font-size:15px;margin-bottom:10px}
 
@@ -170,11 +221,33 @@
 </head>
 <body>
 
-<!-- 読み込み中 -->
-<div id="view-loading" class="screen">
-  <div class="spinner"></div>
-  <div class="crest">THINKING 塾生ポータル</div>
-  <div class="msg-sub">読み込んでいます…</div>
+<!-- 読み込みスプラッシュ -->
+<div id="view-splash" class="splash" aria-live="polite" aria-busy="true">
+  <div class="splash-glow" aria-hidden="true"></div>
+  <div class="splash-panel-wrap">
+    <div class="roadmap-card" id="roadmapCard">
+      <div class="roadmap-brand">THINKING CAMPUS</div>
+      <div class="roadmap-head">
+        <p class="roadmap-title">学習ロードマップ</p>
+        <p class="roadmap-sub" id="roadmapSub">あなたの学習設計を読み込み中…</p>
+      </div>
+      <div class="roadmap-track">
+        <div class="roadmap-node" data-at="14"><span class="roadmap-dot"></span><span class="roadmap-label">現在地</span></div>
+        <div class="roadmap-node" data-at="30"><span class="roadmap-dot"></span><span class="roadmap-label">次の課題</span></div>
+        <div class="roadmap-node" data-at="46"><span class="roadmap-dot"></span><span class="roadmap-label">今週の目標</span></div>
+        <div class="roadmap-node" data-at="62"><span class="roadmap-dot"></span><span class="roadmap-label">今月の目標</span></div>
+        <div class="roadmap-node" data-at="78"><span class="roadmap-dot"></span><span class="roadmap-label">到達目標</span></div>
+      </div>
+      <div class="roadmap-open" id="roadmapOpen">CAMPUS OPEN</div>
+    </div>
+  </div>
+  <div class="splash-hud">
+    <p class="splash-label">ロードマップ読込</p>
+    <p class="splash-pct" id="splashPct">0%</p>
+    <div class="splash-track"><div class="splash-fill" id="splashFill"></div></div>
+  </div>
+  <div class="splash-door splash-door-left" aria-hidden="true"></div>
+  <div class="splash-door splash-door-right" aria-hidden="true"></div>
 </div>
 
 <!-- LINEから開いてもらう案内 -->
@@ -223,7 +296,6 @@
     <div id="home-name" class="id-name">—</div>
     <div class="id-row">
       <span class="chip">識別番号 <b id="home-sid">—</b></span>
-      <span id="home-status" class="chip status" hidden></span>
     </div>
   </div>
 
@@ -317,7 +389,7 @@ var LINE_OA_URL = "https://lin.ee/yJ8MFVb";              // 公式LINE（①THIN
 
 var $ = function(id){ return document.getElementById(id); };
 function show(id){
-  ["view-loading","view-needline","view-bind","view-blocked","view-home"]
+  ["view-needline","view-bind","view-blocked","view-home"]
     .forEach(function(v){ $(v).hidden = (v !== id); });
 }
 function qs(name){
@@ -333,21 +405,105 @@ function api(params){
 var PROFILE = null;  // { userId, displayName }
 var CUR_SID = "";    // 解決済みの識別番号
 
+function prefersReducedMotion(){
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+function hideSplash(){
+  var s = $("view-splash");
+  if (!s) return;
+  s.classList.add("hide");
+  s.setAttribute("aria-busy", "false");
+}
+function updateRoadmapSplash(pct){
+  var nodes = document.querySelectorAll(".roadmap-node");
+  var sub = $("roadmapSub");
+  var open = $("roadmapOpen");
+  nodes.forEach(function(node){
+    var at = Number(node.dataset.at) || 0;
+    if (pct >= at - 4) node.classList.add("live");
+    if (pct >= at) node.classList.add("done");
+  });
+  if (sub && pct >= 78) sub.textContent = "設計を確認しました";
+  if (open){
+    if (pct >= 92){ open.hidden = false; open.classList.add("show"); }
+    else { open.classList.remove("show"); }
+  }
+}
+function setSplashPct(n){
+  var pctEl = $("splashPct");
+  var fillEl = $("splashFill");
+  if (pctEl) pctEl.textContent = n + "%";
+  if (fillEl) fillEl.style.width = n + "%";
+  updateRoadmapSplash(n);
+}
+function runSplashAnimation(loadPromise){
+  var MIN_MS = 3200;
+  var reduceMotion = prefersReducedMotion();
+  return loadPromise.then(function(res){ return { res: res, ready: true }; })
+    .catch(function(){ return { res: null, ready: true }; })
+    .then(function(payload){
+      return new Promise(function(resolve){
+        var finished = false;
+        var pct = 0;
+        var start = performance.now();
+        function finish(){
+          if (finished) return;
+          finished = true;
+          setSplashPct(100);
+          if (reduceMotion){
+            hideSplash();
+            resolve(payload.res);
+            return;
+          }
+          var splash = $("view-splash");
+          splash.classList.add("boom");
+          setTimeout(function(){
+            splash.classList.add("open");
+            setTimeout(function(){
+              hideSplash();
+              resolve(payload.res);
+            }, 780);
+          }, 460);
+        }
+        function frame(now){
+          var elapsed = now - start;
+          var timePct = Math.min(100, Math.floor((1 - Math.pow(1 - Math.min(elapsed / MIN_MS, 1), 2.1)) * 100));
+          if (!payload.ready) timePct = Math.min(timePct, 99);
+          if (timePct > pct) pct = timePct;
+          setSplashPct(pct);
+          if (payload.ready && elapsed >= MIN_MS && pct >= 100) finish();
+          else requestAnimationFrame(frame);
+        }
+        setSplashPct(0);
+        requestAnimationFrame(frame);
+      });
+    });
+}
+
 function start(){
   $("oa-link").href = LINE_OA_URL;
-  if (typeof liff === "undefined"){ show("view-needline"); return; }
 
-  liff.init({ liffId: LIFF_ID }).then(function(){
-    if (!liff.isLoggedIn()){ liff.login(); return; }
+  if (typeof liff === "undefined"){
+    runSplashAnimation(Promise.resolve(null)).then(function(){
+      show("view-needline");
+    });
+    return;
+  }
+
+  var loadPromise = liff.init({ liffId: LIFF_ID }).then(function(){
+    if (!liff.isLoggedIn()){ liff.login(); return null; }
     return liff.getProfile();
   }).then(function(profile){
-    if (!profile) return;
+    if (!profile) return null;
     PROFILE = { userId: profile.userId, displayName: profile.displayName || "" };
     return api({ action:"resolve", userId: PROFILE.userId });
-  }).then(function(res){
-    if (!res) return;
+  });
+
+  runSplashAnimation(loadPromise).then(function(res){
+    if (res === null) return;
     handleResolve(res);
-  }).catch(function(e){
+  }).catch(function(){
+    hideSplash();
     show("view-needline");
   });
 }
@@ -366,6 +522,7 @@ function handleResolve(res){
 
 /* ---- バインド画面 ---- */
 function openBind(errMsg){
+  hideSplash();
   show("view-bind");
   $("bind-err").textContent = errMsg || "";
   var pre = qs("sid") || qs("id");        // Lステップ個別リンクの ?sid= を自動入力
@@ -406,11 +563,6 @@ function renderHome(res){
   CUR_SID = res.sid || "";
   $("home-name").textContent = res.name || "塾生";
   $("home-sid").textContent  = res.sid || "—";
-  if (res.status){
-    var s = $("home-status");
-    s.textContent = res.status;
-    s.hidden = false;
-  }
   // 志望校・カウントダウン
   setGoal(res.aspire, res.examDate);
   // THINKINGシートボタン
@@ -516,12 +668,36 @@ function formatJp(s){
 }
 
 /* ---- 自習室 ---- */
+function parseTimeSlots(raw){
+  if (!raw) return null;
+  var s = String(raw).replace(/[～〜]/g, "~").trim();
+  if (!s || s === "登録なし") return null;
+  var parts = s.split(/\s+/).filter(Boolean);
+  return parts.length ? parts : null;
+}
+function renderTodayTime(el, raw){
+  el.className = "sr-today-time";
+  el.innerHTML = "";
+  var slots = parseTimeSlots(raw);
+  if (!slots){
+    el.classList.add("sr-today-time--empty");
+    el.textContent = raw || "登録なし";
+    return;
+  }
+  el.classList.add(slots.length === 1 ? "sr-today-time--single" : "sr-today-time--multi");
+  slots.forEach(function(slot){
+    var span = document.createElement("span");
+    span.className = "sr-slot";
+    span.textContent = slot;
+    el.appendChild(span);
+  });
+}
 function loadStudyroom(){
   $("sr-name").textContent = (PROFILE.displayName || "") + "｜" + CUR_SID;
   api({ action:"studyroom", userId:PROFILE.userId }).then(function(res){
     if (!res || !res.ok) return;
     $("sr-dow").textContent = res.weekday || "—";
-    $("sr-today-time").textContent = res.todayTime ? res.todayTime : "登録なし";
+    renderTodayTime($("sr-today-time"), res.todayTime ? res.todayTime : "登録なし");
     if (res.streak > 0){ $("sr-streak").hidden = false; $("sr-streak-n").textContent = res.streak; }
     var wl = $("sr-week-list"); wl.innerHTML = "";
     (res.week || []).forEach(function(w){

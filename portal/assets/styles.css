@@ -158,38 +158,20 @@ img {
   width: 100%;
   max-width: 480px;
   margin: 0 auto;
-  padding: calc(20px + env(safe-area-inset-top)) 20px 28px;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(200, 165, 90, 0.18) 0%, transparent 45%),
-    linear-gradient(165deg, var(--navy-deep) 0%, var(--navy) 55%, var(--navy-mid) 100%);
-  color: #fff;
-  text-align: center;
+  line-height: 0;
+  background: var(--paper);
+  position: relative;
 }
 
-.hero-kicker {
-  font-size: 10px;
-  letter-spacing: 0.22em;
-  color: var(--gold-light);
-  margin-bottom: 8px;
-}
-
-.hero-title {
-  font-size: 26px;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  line-height: 1.35;
-}
-
-.hero-tagline {
-  margin-top: 8px;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.78);
-  letter-spacing: 0.04em;
+.hero-cover-img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .hero-panel {
   max-width: 480px;
-  margin: -18px auto 0;
+  margin: -28px auto 0;
   padding: 16px 16px 18px;
   background: var(--paper);
   border-radius: var(--radius) var(--radius) 0 0;

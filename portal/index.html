@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#172642">
+<meta name="theme-color" content="#1a2a44">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<title>塾生ポータル｜THINKING</title>
+<title>THINKING CAMPUS｜塾生ポータル</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -17,14 +17,14 @@
 <div id="screen-loading" class="state">
   <div class="state-inner">
     <div class="spinner" aria-hidden="true"></div>
-    <div class="crest">THINKING</div>
+    <div class="crest">THINKING CAMPUS</div>
     <h1>ポータルを開いています…</h1>
   </div>
 </div>
 
 <div id="screen-gate" class="state" style="display:none">
   <div class="state-inner">
-    <div class="crest">THINKING</div>
+    <div class="crest">THINKING CAMPUS</div>
     <h1 id="gate-title">このページは塾生専用です</h1>
     <p id="gate-text"></p>
     <div class="gate-mini" id="gate-mini"></div>
@@ -35,12 +35,12 @@
 
 <div id="screen-register" class="state" style="display:none">
   <div class="state-inner">
-    <div class="crest">THINKING</div>
+    <div class="crest">THINKING CAMPUS</div>
     <h1>塾生登録</h1>
     <p id="reg-hello" class="muted"></p>
     <p class="muted">識別番号を入力して登録してください。</p>
     <input id="reg-input" inputmode="numeric" autocomplete="off" placeholder="識別番号"
-      style="width:100%;max-width:280px;padding:12px 14px;margin:12px auto 4px;display:block;border:1px solid #d8d3c7;border-radius:10px;font-size:16px;text-align:center;box-sizing:border-box;">
+      style="width:100%;max-width:280px;padding:12px 14px;margin:12px auto 4px;display:block;border:1px solid var(--line);border-radius:10px;font-size:16px;text-align:center;box-sizing:border-box;">
     <div id="reg-error" style="color:#c0392b;font-size:13px;min-height:18px;margin:6px 0"></div>
     <button type="button" class="gate-line-btn" id="reg-submit">登録する</button>
     <div class="gate-mini" id="reg-mini" style="margin-top:14px"></div>
@@ -53,78 +53,197 @@
       <img class="hero-cover-img" src="assets/hero-top.jpg" alt="THINKING CAMPUS 塾生専用ポータル" width="1024" height="1024" loading="eager">
     </div>
     <div class="hero-panel">
-      <div class="status-pill" id="h-status">塾生</div>
-      <div class="hello" id="h-name"></div>
-      <div class="hello-sub" id="h-sub"></div>
+      <div class="hero-top">
+        <div class="brandline">
+          <div class="status-pill" id="h-status"></div>
+        </div>
+      </div>
+      <div class="hero-stats">
+        <div class="hello" id="h-name"></div>
+        <div class="weekstat">
+          <div class="big num" id="h-week">0</div>
+          <div class="unit">今週の勉強時間</div>
+        </div>
+        <div class="weekstat-label">考える力で、未来を創る。</div>
+        <div class="streak-pill" id="streak-pill" style="display:none">
+          <span class="flame" aria-hidden="true"></span>連続記録&nbsp;<span class="num" id="streak-num">0</span>&nbsp;日
+        </div>
+      </div>
     </div>
   </header>
 
-  <div class="wrap">
-    <nav class="quicknav" aria-label="セクション">
+  <main class="wrap">
+    <nav class="quicknav" id="quicknav" aria-label="セクションへ移動">
       <div class="quicknav-track">
-        <a class="quicknav-pill is-active" href="#sec-home" data-nav="home">ホーム</a>
-        <a class="quicknav-pill" href="#sec-contents" data-nav="contents">コンテンツ</a>
-        <a class="quicknav-pill" href="#sec-mypage" data-nav="mypage">マイページ</a>
+        <button type="button" class="quicknav-pill" data-target="sec-room">自習室</button>
+        <button type="button" class="quicknav-pill" data-target="sec-log">記録</button>
+        <button type="button" class="quicknav-pill" data-target="sec-weekly">小テスト</button>
+        <button type="button" class="quicknav-pill" data-target="sec-test">ランキング</button>
+        <button type="button" class="quicknav-pill" data-target="sec-contents">コンテンツ</button>
       </div>
     </nav>
 
-    <section class="section" id="sec-home">
-      <div class="card">
-        <div class="kicker">HOME</div>
-        <h2 class="card-title">ようこそ</h2>
-        <p class="muted" id="home-lead">塾生向けの情報・コンテンツをここから確認できます。</p>
+    <section class="card" id="sec-room">
+      <div class="card-head"><h2>自習室</h2></div>
+      <div class="card-visual">
+        <img src="assets/study-room.png" alt="" width="1024" height="819" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div id="room-name-box" class="room-name-box"></div>
+        <a class="roombtn disabled" id="room-btn" href="#" target="_blank" rel="noopener">自習室に入室する</a>
+        <div class="room-zoom-info">
+          <p class="room-zoom-lead">リンクから入れないときは、Zoomアプリから直接参加してください</p>
+          <div class="room-zoom-row">
+            <span class="room-zoom-label">ミーティングID</span>
+            <span class="room-zoom-value num" id="room-meeting-id">842 9666 0588</span>
+            <button type="button" class="room-zoom-copy" data-copy="84296660588">コピー</button>
+          </div>
+          <div class="room-zoom-row">
+            <span class="room-zoom-label">パスコード</span>
+            <span class="room-zoom-value num" id="room-passcode">tk</span>
+            <button type="button" class="room-zoom-copy" data-copy="tk">コピー</button>
+          </div>
+        </div>
+        <div class="room-hours" id="room-hours"></div>
       </div>
     </section>
 
-    <section class="section" id="sec-contents">
-      <div class="card">
-        <div class="kicker">CONTENTS</div>
-        <h2 class="card-title">コンテンツ</h2>
-        <p class="muted">運用開始後、ここに塾生向け資料やリンクが並びます。</p>
-        <div class="placeholder-list" id="contents-list">
-          <div class="placeholder-item"><span class="placeholder-dot"></span>準備中</div>
+    <section class="card" id="sec-log">
+      <div class="card-head"><h2>今日の勉強時間を記録</h2></div>
+      <div class="card-visual">
+        <img src="assets/study-log.png" alt="" width="1024" height="819" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="datechips" id="datechips"></div>
+        <div class="today-line">今日の記録: <b id="log-today">0分</b>（同じ日に再送信すると上書きされます）</div>
+        <div class="chips" id="chips"></div>
+        <div class="custom-row">
+          <select id="sel-h" aria-label="時間"></select><span>時間</span>
+          <select id="sel-m" aria-label="分"></select><span>分</span>
+        </div>
+        <button class="recordbtn" id="log-btn" type="button">この時間で記録する</button>
+        <div class="record-done" id="log-done">
+          <img src="assets/achievement.png" alt="" width="56" height="56" class="record-done-img">
+          記録しました。積み上げ更新。
         </div>
       </div>
     </section>
 
-    <section class="section" id="sec-mypage">
-      <div class="card">
-        <div class="kicker">MY PAGE</div>
-        <h2 class="card-title">マイページ</h2>
-        <p class="muted" id="mypage-summary">登録情報を読み込み中…</p>
+    <section class="card" id="sec-weekly">
+      <div class="card-head"><h2>次回の小テスト範囲</h2></div>
+      <div class="card-visual">
+        <img src="assets/weekly-quiz.png" alt="" width="1024" height="819" loading="lazy">
+      </div>
+      <div class="card-body">
+        <div class="weekly-date-bar" id="weekly-date-wrap" hidden>
+          <span class="weekly-date-label">次回テスト</span>
+          <span class="weekly-date num" id="weekly-date"></span>
+        </div>
+        <div class="weekly-breakout-note">
+          <div class="weekly-breakout-title">小テストは毎週 20:30 開始</div>
+          <p class="weekly-breakout-text">開始時間になったら、自習室のブレイクアウトルームへ移動して受験してください。</p>
+          <button type="button" class="weekly-breakout-btn" id="weekly-breakout-btn">自習室へ移動する</button>
+        </div>
+        <div class="range-scroll-wrap" id="weekly-scroll-wrap">
+          <p class="range-scroll-hint" id="weekly-scroll-hint" hidden>← 横にスワイプして全科目を見る →</p>
+          <div class="range-scroll" id="weekly-list"><div class="skeleton">読み込み中…</div></div>
+        </div>
+        <div class="test-materials-wrap" id="test-materials-wrap">
+          <div class="test-materials-head">
+            <h3 class="test-materials-title">小テスト教材</h3>
+            <p class="test-materials-lead">いつでも確認できる、小テストで使う教材一覧です</p>
+          </div>
+          <p class="test-materials-hint" id="test-materials-hint" hidden>← 横にスワイプして教材を切り替え →</p>
+          <div class="test-materials-list" id="test-materials-list"></div>
+        </div>
       </div>
     </section>
 
-    <footer class="foot">THINKING — 塾生ポータル</footer>
-  </div>
+    <section class="card" id="sec-test">
+      <div class="card-head"><h2 id="test-section-title">小テストランキング</h2></div>
+      <div class="card-visual">
+        <img src="assets/ranking.png" alt="" width="1024" height="819" loading="lazy">
+      </div>
+      <div class="card-body card-body--tight">
+        <div id="test-active-ui">
+          <div class="period" id="test-period"></div>
+          <div class="tabs" id="test-tabs"></div>
+          <div id="test-panel"><div class="skeleton">読み込み中…</div></div>
+        </div>
+        <div id="test-promo-ui" hidden></div>
+      </div>
+    </section>
+
+    <section class="card" id="sec-contents">
+      <div class="card-head"><h2>塾生限定コンテンツ</h2></div>
+      <div class="card-visual">
+        <img src="assets/member-content.png" alt="" width="1024" height="819" loading="lazy">
+      </div>
+      <div class="card-body card-body--tight">
+        <div id="contents-list"><div class="skeleton">読み込み中…</div></div>
+      </div>
+    </section>
+
+    <footer>THINKING CAMPUS — 塾生ポータル</footer>
+  </main>
 </div>
 
-<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="toast" role="status" aria-live="polite"></div>
 
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <script>
 const API_URL = 'https://script.google.com/macros/s/AKfycbwNuxYxMqk5rv4LXBHmp9QnafbowzEdGgfJv0AcZUXNJoy3zn8pfbFqD_XG0E4f4lJm/exec';
 const LIFF_ID = '2010454771-l3vZsfjz';
-const LINE_OA_URL = 'https://lin.ee/yJ8MFVb';
 
+const TEST_MATERIALS = [
+  { subject: '英単語', items: [{ title: '標準英単語1300', url: 'https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/eEtKkHlMWWKq3Cw8WLQDwDRvorohSN7OLJgXnymw.pdf' }] },
+  { subject: '英熟語', items: [
+    { title: '入門英熟語500', url: 'https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/Ytozivum8C2UfWLeuvgJCht3HjgqSDylIvu0o0t0.pdf' },
+    { title: '標準英熟語700', url: 'https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/VVn63BMmSU2tK1J6yU0hRjJL5sU04SOlY0r8ruYx.pdf' }
+  ], note: '入門の週もあれば標準の週もあります。今週のテスト範囲をよく確認してください。' },
+  { subject: '英文法', noMaterial: true, note: '指定教材なし。持っている英文法書で範囲を確認し、習得しておきましょう。' },
+  { subject: '古文単語', items: [{ title: '必修古文単語300', url: 'https://d27rnpuamwvieu.cloudfront.net/pdf/07zGL6XtjJRysv3P6V4GiQAXX.pdf' }] },
+  { subject: '古文法', noMaterial: true, note: '指定教材なし。持っている古文法書で範囲を確認し、習得しておきましょう。' },
+  { subject: '現代文読解', items: [{ title: '現代文語彙リスト', url: 'https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/67zVFEyTueT8jocsIzJyefTgunn7m67PlOnNlLZZ.pdf' }], note: '上記の語彙は重要なキーワードとなりますので、確認しておきましょう。' },
+  { subject: '数学1A', noMaterial: true, note: '指定教材なし。持っている教科書で範囲を確認し、習得しておきましょう。' },
+  { subject: '数学2B', noMaterial: true, note: '指定教材なし。持っている教科書で範囲を確認し、習得しておきましょう。' },
+  { subject: '日本史', items: [{ title: '一問一答 日本史 ターゲット 4000 三訂版', url: 'https://amzn.to/4a8DnDD', kind: 'link' }] },
+  { subject: '世界史', items: [{ title: '一問一答 世界史 ターゲット 4000 三訂版', url: 'https://amzn.to/4ePRu3e', kind: 'link' }] }
+];
+
+let currentMemberStatus = '';
 let idToken = '';
+let selMinutes = 0;
+let selDateOffset = 0;
+let testData = null;
+let regBusy = false;
 
-function $(id){ return document.getElementById(id); }
+const DATE_LABELS = ['今日', '昨日', '一昨日'];
+const CHIP_DEFS = [30, 60, 90, 120, 180, 240, 300, 360];
+const $ = (id) => document.getElementById(id);
 
+function jdate(offset){
+  const d = new Date();
+  d.setDate(d.getDate() - offset);
+  return d;
+}
+function ymd(d){
+  return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+}
+function fmtMin(min){
+  min = Number(min) || 0;
+  const h = Math.floor(min / 60), m = min % 60;
+  if (h === 0) return m + '分';
+  if (m === 0) return h + '時間';
+  return h + '時間' + m + '分';
+}
 function toast(msg){
   const t = $('toast');
   t.textContent = msg;
   t.classList.add('show');
   clearTimeout(t._h);
-  t._h = setTimeout(function(){ t.classList.remove('show'); }, 2200);
+  t._h = setTimeout(() => t.classList.remove('show'), 2200);
 }
-
-function esc(s){
-  return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
-    return ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' })[c];
-  });
-}
-
 async function api(action, extra){
   let url = API_URL + '?action=' + action + '&token=' + encodeURIComponent(idToken);
   if (extra){
@@ -133,41 +252,36 @@ async function api(action, extra){
   const res = await fetch(url);
   return res.json();
 }
-
-function copyText(text){
+function copyClipboardText(text){
   if (!text) return;
   if (navigator.clipboard && navigator.clipboard.writeText){
-    navigator.clipboard.writeText(text).then(function(){
-      toast('コピーしました');
-    }).catch(function(){
-      toast('コピーに失敗しました');
-    });
+    navigator.clipboard.writeText(text).then(() => toast('コピーしました')).catch(() => toast('コピーに失敗しました'));
   } else {
     toast('長押ししてコピーしてください');
   }
+}
+function getQueryParam(k){
+  try { return new URLSearchParams(window.location.search).get(k) || ''; }
+  catch(e){ return ''; }
 }
 
 function showGate(me){
   $('screen-loading').style.display = 'none';
   $('screen-gate').style.display = 'flex';
-
   const reason = me && me.reason ? me.reason : '';
   const copyBtn = $('gate-copy-btn');
   const mini = $('gate-mini');
-  const decoded = liff.getDecodedIDToken();
-  const sub = decoded && decoded.sub ? decoded.sub : '';
-
+  let sub = '';
+  try {
+    const decoded = liff.getDecodedIDToken();
+    sub = decoded && decoded.sub ? decoded.sub : '';
+  } catch(e){}
   copyBtn.style.display = 'none';
   mini.textContent = '';
-
   if (reason === 'not_member'){
     $('gate-title').textContent = '塾生登録が見つかりません';
     $('gate-text').textContent = 'THINKINGの塾生として登録されているLINEアカウントで、公式LINEのトーク画面から開き直してください。';
-    if (sub){
-      mini.textContent = 'サポート用ID: ' + sub;
-      copyBtn.style.display = 'inline-block';
-      copyBtn.onclick = function(){ copyText(sub); };
-    }
+    if (sub){ mini.textContent = 'サポート用ID: ' + sub; copyBtn.style.display = 'inline-block'; copyBtn.onclick = () => copyClipboardText(sub); }
   } else if (reason === '休会'){
     $('gate-title').textContent = 'ただいま休会中です';
     $('gate-text').textContent = '復帰の際は公式LINEからご連絡ください。';
@@ -183,97 +297,32 @@ function showGate(me){
     if (sub) mini.textContent = 'サポート用ID: ' + sub;
   }
 }
-
-function renderContents(items){
-  const list = $('contents-list');
-  if (!items || !items.length){
-    list.innerHTML = '<div class="placeholder-item"><span class="placeholder-dot"></span>準備中</div>';
-    return;
-  }
-  list.innerHTML = items.map(function(item){
-    const url = item.url ? ' data-url="' + esc(item.url) + '"' : '';
-    return '<button type="button" class="placeholder-item"' + url + ' style="width:100%;text-align:left;border-style:solid;background:#fff;cursor:pointer;font-family:inherit;">'
-      + '<span class="placeholder-dot"></span>'
-      + '<span>' + esc(item.title || '無題') + '</span>'
-      + '</button>';
-  }).join('');
-  list.querySelectorAll('[data-url]').forEach(function(el){
-    el.addEventListener('click', function(){
-      const url = el.dataset.url;
-      if (!url){ toast('準備中です'); return; }
-      liff.openWindow({ url: url, external: true });
-    });
-  });
-}
-
-function renderPortal(me){
-  const member = me.member || {};
-  const name = member.display_name || member.name || '塾生';
-  $('h-name').textContent = name + ' さん';
-  $('h-sub').textContent = member.grade ? member.grade : '';
-  $('h-status').textContent = member.member_status || '塾生';
-
-  const summary = [];
-  if (member.grade) summary.push('学年: ' + member.grade);
-  if (member.plan) summary.push('プラン: ' + member.plan);
-  $('mypage-summary').textContent = summary.length ? summary.join(' / ') : '登録情報を確認できました。';
-
-  if (me.contents) renderContents(me.contents);
-}
-
-function bindQuickNav(){
-  const links = document.querySelectorAll('.quicknav-pill');
-  links.forEach(function(a){
-    a.addEventListener('click', function(){
-      links.forEach(function(x){ x.classList.remove('is-active'); });
-      a.classList.add('is-active');
-    });
-  });
-}
-
-function getQueryParam(k){
-  try { return new URLSearchParams(window.location.search).get(k) || ''; }
-  catch(e){ return ''; }
-}
-
 function showRegister(){
   $('screen-loading').style.display = 'none';
   $('screen-gate').style.display = 'none';
   $('screen-register').style.display = 'flex';
-
-  const decoded = liff.getDecodedIDToken();
-  const nm = decoded && decoded.name ? decoded.name : '';
+  let nm = '';
+  try {
+    const decoded = liff.getDecodedIDToken();
+    nm = decoded && decoded.name ? decoded.name : '';
+  } catch(e){}
   $('reg-hello').textContent = nm ? ('ようこそ、' + nm + ' さん') : '';
-
   const pre = getQueryParam('id');
   if (pre) $('reg-input').value = pre;
-
   $('reg-submit').onclick = doRegister;
-  $('reg-input').addEventListener('keydown', function(e){
-    if (e.key === 'Enter') doRegister();
-  });
+  $('reg-input').addEventListener('keydown', (e) => { if (e.key === 'Enter') doRegister(); });
 }
-
-let regBusy = false;
 async function doRegister(){
   if (regBusy) return;
   const id = ($('reg-input').value || '').trim();
   const err = $('reg-error');
   if (!id){ err.textContent = '識別番号を入力してください。'; return; }
-
   regBusy = true;
   err.textContent = '';
   $('reg-submit').textContent = '登録中…';
-
   let r;
-  try { r = await api('register', { identifier: id }); }
-  catch(e){ r = null; }
-
-  if (r && r.status === 'ok'){
-    window.location.reload();
-    return;
-  }
-
+  try { r = await api('register', { identifier: id }); } catch(e){ r = null; }
+  if (r && r.status === 'ok'){ window.location.reload(); return; }
   regBusy = false;
   $('reg-submit').textContent = '登録する';
   const reason = r && r.reason ? r.reason : '';
@@ -283,36 +332,523 @@ async function doRegister(){
   else err.textContent = '登録に失敗しました。電波の良い場所で再度お試しください。';
 }
 
+function renderHeader(me){
+  currentMemberStatus = (me.member && me.member.member_status) || '';
+  $('h-name').textContent = ((me.member && (me.member.display_name || me.member.name)) || '塾生') + ' さん';
+  $('h-status').textContent = currentMemberStatus || '塾生';
+  $('h-week').textContent = fmtMin(me.week_minutes || 0);
+  $('log-today').textContent = fmtMin(me.today_minutes || 0);
+  setStreak(me.streak || 0);
+  presetSelectors(me.today_minutes || 0);
+  renderRoomName(me);
+}
+function renderRoomName(me){
+  var box = $('room-name-box');
+  if (!box) return;
+  box.innerHTML = '';
+  if (me.room_id_set && me.room_name){
+    var lead = document.createElement('p');
+    lead.className = 'room-name-lead';
+    lead.textContent = 'Zoom自習室では必ず以下の名前で入室してください';
+    var nameEl = document.createElement('div');
+    nameEl.className = 'room-name-value num';
+    nameEl.textContent = me.room_name;
+    var copyBtn = document.createElement('button');
+    copyBtn.type = 'button';
+    copyBtn.className = 'room-name-copy';
+    copyBtn.textContent = '名前をコピー';
+    copyBtn.addEventListener('click', () => copyClipboardText(me.room_name));
+    var hint = document.createElement('p');
+    hint.className = 'room-name-hint';
+    hint.textContent = 'この名前以外での入室は許可されない場合があります';
+    box.appendChild(lead); box.appendChild(nameEl); box.appendChild(copyBtn); box.appendChild(hint);
+    box.classList.add('room-name-box--ready');
+    box.classList.remove('room-name-box--pending');
+  } else {
+    var pending = document.createElement('p');
+    pending.className = 'room-name-pending';
+    pending.textContent = '入室名がまだ発行されていません。運営が設定するまで少しお待ちください。';
+    box.appendChild(pending);
+    box.classList.add('room-name-box--pending');
+    box.classList.remove('room-name-box--ready');
+  }
+}
+function applyFlameTier(flame, n){
+  if (!flame) return;
+  flame.classList.remove('flame-big', 'flame-gold');
+  if (n >= 30) flame.classList.add('flame-big', 'flame-gold');
+  else if (n >= 7) flame.classList.add('flame-big');
+}
+function setStreak(n){
+  var pill = $('streak-pill');
+  var pillFlame = pill.querySelector('.flame');
+  $('streak-num').textContent = n;
+  if (n > 0){
+    pill.style.display = 'inline-flex';
+    applyFlameTier(pillFlame, n);
+    pill.classList.toggle('streak-gold', n >= 30);
+  } else {
+    pill.style.display = 'none';
+    applyFlameTier(pillFlame, 0);
+    pill.classList.remove('streak-gold');
+  }
+}
+
+function buildDateChips(){
+  const box = $('datechips');
+  DATE_LABELS.forEach((label, i) => {
+    const d = jdate(i);
+    const b = document.createElement('button');
+    b.className = 'dchip' + (i === 0 ? ' on' : '');
+    b.type = 'button';
+    b.innerHTML = label + '<small>' + (d.getMonth() + 1) + '/' + d.getDate() + '</small>';
+    b.onclick = () => setDateOffset(i);
+    b.dataset.offset = i;
+    box.appendChild(b);
+  });
+}
+function setDateOffset(i){
+  selDateOffset = i;
+  document.querySelectorAll('.dchip').forEach(c => c.classList.toggle('on', Number(c.dataset.offset) === i));
+  $('log-btn').textContent = i === 0 ? 'この時間で記録する' : DATE_LABELS[i] + 'の分として記録する';
+}
+function buildChips(){
+  const box = $('chips');
+  CHIP_DEFS.forEach(min => {
+    const b = document.createElement('button');
+    b.className = 'chip';
+    b.type = 'button';
+    b.textContent = fmtMin(min);
+    b.onclick = () => setMinutes(min);
+    b.dataset.min = min;
+    box.appendChild(b);
+  });
+  const selH = $('sel-h'), selM = $('sel-m');
+  for (let h = 0; h <= 16; h++){
+    const o = document.createElement('option');
+    o.value = h * 60; o.textContent = h;
+    selH.appendChild(o);
+  }
+  [0,10,20,30,40,50].forEach(m => {
+    const o = document.createElement('option');
+    o.value = m; o.textContent = ('0' + m).slice(-2);
+    selM.appendChild(o);
+  });
+  selH.onchange = selM.onchange = () => { selMinutes = Number(selH.value) + Number(selM.value); syncChips(); };
+}
+function setMinutes(min){
+  selMinutes = min;
+  $('sel-h').value = Math.floor(min / 60) * 60;
+  $('sel-m').value = min % 60;
+  syncChips();
+}
+function presetSelectors(todayMin){
+  if (todayMin > 0) setMinutes(roundToSelectable(todayMin));
+  else setMinutes(60);
+}
+function roundToSelectable(min){
+  const h = Math.floor(min / 60) * 60;
+  const m = Math.round((min % 60) / 10) * 10;
+  return Math.min(h + (m >= 60 ? 50 : m), 16 * 60);
+}
+function syncChips(){
+  document.querySelectorAll('.chip').forEach(c => c.classList.toggle('on', Number(c.dataset.min) === selMinutes));
+}
+async function submitLog(){
+  if (selMinutes < 1){ toast('時間を選んでください'); return; }
+  const btn = $('log-btn');
+  btn.disabled = true; btn.textContent = '記録中…';
+  try{
+    const res = await fetch(API_URL, {
+      method: 'POST',
+      body: JSON.stringify({ action: 'log_study', token: idToken, minutes: selMinutes, date: ymd(jdate(selDateOffset)) })
+    });
+    const data = await res.json();
+    if (data.status === 'ok'){
+      $('log-today').textContent = fmtMin(data.today_minutes);
+      $('h-week').textContent = fmtMin(data.week_minutes);
+      if (typeof data.streak === 'number') setStreak(data.streak);
+      $('log-done').style.display = 'block';
+      toast(DATE_LABELS[selDateOffset] + 'の記録: ' + fmtMin(data.minutes));
+    } else if (data.reason === 'invalid_date'){
+      toast('その日付には記録できません');
+    } else {
+      toast('記録に失敗しました。もう一度どうぞ');
+    }
+  }catch(e){
+    toast('通信エラー。電波を確認してください');
+  }
+  btn.disabled = false;
+  btn.textContent = selDateOffset === 0 ? 'この時間で記録する' : DATE_LABELS[selDateOffset] + 'の分として記録する';
+}
+function initRoomZoomCopy(){
+  document.querySelectorAll('.room-zoom-copy').forEach(btn => {
+    btn.addEventListener('click', () => copyClipboardText(btn.getAttribute('data-copy')));
+  });
+}
+function renderRoomHours(){
+  var box = $('room-hours');
+  if (!box) return;
+  var day = new Date().getDay();
+  var isWeekend = day === 0 || day === 6;
+  var todayHtml = isWeekend
+    ? '<div class="room-hours-today room-hours-today--challenge"><span class="room-hours-tag">TODAY</span>10時間チャレンジ</div>'
+    : '<div class="room-hours-today room-hours-today--boost"><span class="room-hours-tag">TODAY</span>20:30〜22:00 ブーストタイム</div>';
+  box.innerHTML =
+    '<div class="room-hours-open">24時間開放</div>' + todayHtml +
+    '<div class="room-hours-list">' +
+      '<div class="room-hours-item"><span class="room-hours-label">平日</span>20:30〜22:00 ブーストタイム</div>' +
+      '<div class="room-hours-item"><span class="room-hours-label">土日</span>10時間チャレンジ</div>' +
+    '</div>';
+}
+
+function formatWeeklyDateLabel(week, testDate){
+  if (week) return week;
+  if (!testDate) return '';
+  var p = String(testDate).split('-');
+  if (p.length !== 3) return testDate;
+  var d = new Date(Number(p[0]), Number(p[1]) - 1, Number(p[2]));
+  if (isNaN(d.getTime())) return testDate;
+  var days = ['日', '月', '火', '水', '木', '金', '土'];
+  return (d.getMonth() + 1) + '/' + d.getDate() + '(' + days[d.getDay()] + ')';
+}
+function normalizeWeeklyItem(it){
+  if (it == null) return null;
+  if (typeof it !== 'object'){
+    var s = String(it).trim();
+    return s ? { subject: '', range: s, note: '' } : null;
+  }
+  var subject = String(it.subject || it.科目 || it.name || '').trim();
+  var range = String(it.range || it.範囲 || it.text || it.value || '').trim();
+  var note = String(it.note || it.備考 || '').trim();
+  if (!subject && !range) return null;
+  return { subject, range, note };
+}
+function normalizeWeeklyItems(raw){
+  if (raw == null) return [];
+  if (typeof raw === 'string'){ try{ raw = JSON.parse(raw); }catch(e){ return []; } }
+  if (Array.isArray(raw)) return raw.map(normalizeWeeklyItem).filter(Boolean);
+  if (typeof raw === 'object'){
+    return Object.keys(raw).map(k => normalizeWeeklyItem({ subject: k, range: raw[k] })).filter(Boolean);
+  }
+  return [];
+}
+function parseWeeklyResponse(data){
+  if (!data || data.status !== 'ok') return data;
+  var src = data.schedule && typeof data.schedule === 'object' ? data.schedule : data;
+  var items = normalizeWeeklyItems(src.items || src.ranges || src.subjects || data.items || data.ranges);
+  return { status: 'ok', week: formatWeeklyDateLabel(src.week || data.week, src.test_date || data.test_date), test_date: src.test_date || data.test_date, items, room_url: data.room_url, hours: data.hours, reason: data.reason };
+}
+function setWeeklyEmptyNote(list, message){
+  var hint = $('weekly-scroll-hint');
+  if (hint) hint.hidden = true;
+  list.innerHTML = '';
+  var note = document.createElement('div');
+  note.className = 'empty-note';
+  note.textContent = message;
+  list.appendChild(note);
+}
+function weeklySubjectTone(subject){
+  var s = subject || '';
+  if (/英/.test(s)) return 'en';
+  if (/古文|現代文|漢文|国語/.test(s)) return 'jp';
+  if (/数学|算/.test(s)) return 'math';
+  if (/史|公民|地理|倫理|政経/.test(s)) return 'hist';
+  if (/理科|物理|化学|生物|地学/.test(s)) return 'sci';
+  return 'default';
+}
+function createRangeCard(it){
+  var card = document.createElement('article');
+  card.className = 'range-card range-card--' + weeklySubjectTone(it.subject);
+  var subj = document.createElement('div');
+  subj.className = 'range-card-subject';
+  subj.textContent = it.subject;
+  var text = document.createElement('div');
+  text.className = 'range-card-text';
+  text.textContent = it.range;
+  card.appendChild(subj); card.appendChild(text);
+  if (it.note){
+    var note = document.createElement('div');
+    note.className = 'range-card-note';
+    note.textContent = it.note;
+    card.appendChild(note);
+  }
+  return card;
+}
+function isMaterialPdf(item){
+  if (item.kind === 'link') return false;
+  if (item.kind === 'pdf') return true;
+  return /\.pdf(?:$|\?|#)/i.test(item.url || '');
+}
+function createMaterialPdfBtn(item){
+  var a = document.createElement('a');
+  a.className = 'material-pdf-btn';
+  a.href = item.url;
+  a.target = '_blank';
+  a.rel = 'noopener';
+  var iconHtml = isMaterialPdf(item) ? '<span class="material-pdf-icon" aria-hidden="true">PDF</span>' : '';
+  a.innerHTML = iconHtml + '<span class="material-pdf-label">' + item.title + '</span><span class="material-pdf-arrow" aria-hidden="true">→</span>';
+  return a;
+}
+function createMaterialCard(mat){
+  var card = document.createElement('article');
+  card.className = 'material-card material-card--' + weeklySubjectTone(mat.subject);
+  var head = document.createElement('div');
+  head.className = 'material-card-head';
+  var subj = document.createElement('div');
+  subj.className = 'material-card-subject';
+  subj.textContent = mat.subject;
+  head.appendChild(subj);
+  if (mat.noMaterial){
+    var badge = document.createElement('span');
+    badge.className = 'material-card-badge';
+    badge.textContent = '指定教材なし';
+    head.appendChild(badge);
+  }
+  card.appendChild(head);
+  if (mat.items && mat.items.length){
+    var actions = document.createElement('div');
+    actions.className = 'material-card-actions';
+    mat.items.forEach(item => actions.appendChild(createMaterialPdfBtn(item)));
+    card.appendChild(actions);
+  }
+  if (mat.note){
+    var note = document.createElement('p');
+    note.className = 'material-card-note';
+    note.textContent = mat.note;
+    card.appendChild(note);
+  }
+  return card;
+}
+function renderTestMaterials(){
+  var list = $('test-materials-list');
+  var hint = $('test-materials-hint');
+  if (!list) return;
+  list.innerHTML = '';
+  TEST_MATERIALS.forEach(mat => list.appendChild(createMaterialCard(mat)));
+  if (hint) hint.hidden = TEST_MATERIALS.length < 2;
+}
+async function loadWeekly(){
+  var list = $('weekly-list');
+  var dateWrap = $('weekly-date-wrap');
+  var dateEl = $('weekly-date');
+  try{
+    const res = await api('weekly');
+    const data = parseWeeklyResponse(res);
+    if (data.status !== 'ok'){
+      if (dateWrap) dateWrap.hidden = true;
+      setWeeklyEmptyNote(list, (res && res.reason) ? res.reason : '範囲を取得できませんでした');
+      return;
+    }
+    if (data.room_url){
+      const b = $('room-btn');
+      b.href = data.room_url;
+      b.classList.remove('disabled');
+    }
+    renderRoomHours();
+    if (data.week && dateWrap && dateEl){ dateEl.textContent = data.week; dateWrap.hidden = false; }
+    else if (dateWrap) dateWrap.hidden = true;
+    list.innerHTML = '';
+    if (!data.items.length){
+      setWeeklyEmptyNote(list, data.reason || '次回の範囲は準備中です。配信をお待ちください。');
+      return;
+    }
+    var hint = $('weekly-scroll-hint');
+    if (hint) hint.hidden = data.items.length < 2;
+    data.items.forEach(it => list.appendChild(createRangeCard(it)));
+  }catch(e){
+    if (dateWrap) dateWrap.hidden = true;
+    setWeeklyEmptyNote(list, '読み込みに失敗しました');
+  }
+}
+
+function calcTiedRanks(entries, valueFn){
+  var ranks = [], r = 1;
+  for (var i = 0; i < entries.length; i++){
+    if (i > 0 && valueFn(entries[i]) !== valueFn(entries[i - 1])) r++;
+    ranks.push(r);
+  }
+  return ranks;
+}
+function rankRow(rank, name, val, isMe){
+  const row = document.createElement('div');
+  row.className = 'rk-row' + (isMe ? ' me' : '');
+  const rk = document.createElement('div');
+  var rankNum = Number(rank) || 0;
+  rk.className = 'rk-rank num' + (rankNum <= 3 ? ' r' + rankNum : '');
+  rk.textContent = rankNum;
+  const nm = document.createElement('div');
+  nm.className = 'rk-name';
+  nm.textContent = name + (isMe ? '（あなた）' : '');
+  const vl = document.createElement('div');
+  vl.className = 'rk-val num';
+  vl.textContent = val;
+  row.appendChild(rk); row.appendChild(nm); row.appendChild(vl);
+  return row;
+}
+function testEntryRate(e){
+  var v = e.rate;
+  if (typeof v === 'number') return v;
+  return Number(String(v).replace('%', '').trim()) || 0;
+}
+function formatTestRate(rate){
+  if (typeof rate === 'number') return rate + '%';
+  var s = String(rate);
+  return s.indexOf('%') >= 0 ? s : s + '%';
+}
+function renderTestPromo(){
+  var title = $('test-section-title');
+  var active = $('test-active-ui');
+  var promo = $('test-promo-ui');
+  if (title) title.textContent = '小テスト';
+  if (active) active.hidden = true;
+  if (!promo) return;
+  promo.hidden = false;
+  promo.innerHTML =
+    '<div class="test-promo-hero">' +
+      '<div class="test-promo-eyebrow">基礎力チェック</div>' +
+      '<div class="test-promo-title">毎週日曜、基礎力テストを実施</div>' +
+      '<p class="test-promo-lead">THINKINGでは週1回の小テストで、基礎の定着をチェックしています。毎週日曜日に基礎力テストに挑戦できます。</p>' +
+    '</div>' +
+    '<div class="test-promo-steps">' +
+      '<div class="test-promo-step"><span class="test-promo-step-num num">1</span><span class="test-promo-step-text">今週の範囲を確認する</span></div>' +
+      '<div class="test-promo-step"><span class="test-promo-step-num num">2</span><span class="test-promo-step-text">教材で復習してから挑戦</span></div>' +
+      '<div class="test-promo-step"><span class="test-promo-step-num num">3</span><span class="test-promo-step-text">日曜に基礎力テストを受ける</span></div>' +
+    '</div>' +
+    '<button type="button" class="test-promo-link" id="test-promo-to-weekly">今週のテスト範囲・教材を見る</button>';
+  var linkBtn = $('test-promo-to-weekly');
+  if (linkBtn) linkBtn.onclick = () => { var el = $('sec-weekly'); if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
+}
+async function loadTestRanking(){
+  if (currentMemberStatus === '仮入部'){ renderTestPromo(); return; }
+  var title = $('test-section-title');
+  var active = $('test-active-ui');
+  var promo = $('test-promo-ui');
+  if (title) title.textContent = '小テストランキング';
+  if (active) active.hidden = false;
+  if (promo) promo.hidden = true;
+  try{
+    const data = await api('test_ranking');
+    if (data.status !== 'ok'){
+      $('test-panel').innerHTML = '<div class="empty-note">ランキングは準備中です</div>';
+      return;
+    }
+    testData = data;
+    if (data.period) $('test-period').textContent = data.period;
+    const tabs = $('test-tabs');
+    tabs.innerHTML = '';
+    data.subjects.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.className = 'tab' + (i === 0 ? ' on' : '');
+      b.type = 'button';
+      b.textContent = s.subject;
+      b.onclick = () => {
+        document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+        b.classList.add('on');
+        renderTestPanel(i);
+      };
+      tabs.appendChild(b);
+    });
+    renderTestPanel(0);
+  }catch(e){
+    $('test-panel').innerHTML = '<div class="empty-note">読み込みに失敗しました</div>';
+  }
+}
+function renderTestPanel(i){
+  const panel = $('test-panel');
+  panel.innerHTML = '';
+  const s = testData.subjects[i];
+  if (!s || s.entries.length === 0){
+    panel.innerHTML = '<div class="empty-note">今週のデータはまだありません</div>';
+    return;
+  }
+  var entries = s.entries.slice(0, 7);
+  var ranks = calcTiedRanks(entries, testEntryRate);
+  entries.forEach((e, idx) => panel.appendChild(rankRow(ranks[idx], e.name, formatTestRate(e.rate), e.is_me)));
+}
+async function loadContents(){
+  try{
+    const data = await api('contents');
+    const box = $('contents-list');
+    box.innerHTML = '';
+    if (data.status !== 'ok' || !data.items || data.items.length === 0){
+      box.innerHTML = '<div class="lock-note">コンテンツはこれから増えていきます。お楽しみに。</div>';
+      return;
+    }
+    data.items.forEach(it => {
+      const a = document.createElement('a');
+      a.className = 'content-item';
+      a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
+      const cat = document.createElement('span');
+      cat.className = 'content-cat';
+      cat.textContent = it.category || '教材';
+      const title = document.createElement('span');
+      title.className = 'content-title';
+      title.textContent = it.title;
+      const arrow = document.createElement('span');
+      arrow.className = 'content-arrow';
+      arrow.textContent = '→';
+      a.appendChild(cat); a.appendChild(title); a.appendChild(arrow);
+      box.appendChild(a);
+    });
+  }catch(e){
+    $('contents-list').innerHTML = '<div class="lock-note">読み込みに失敗しました</div>';
+  }
+}
+
+var quickNavObserver = null;
+function initQuickNav(){
+  var nav = $('quicknav');
+  if (!nav) return;
+  nav.querySelectorAll('.quicknav-pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      var el = $(btn.getAttribute('data-target'));
+      if (!el) return;
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      nav.querySelectorAll('.quicknav-pill').forEach(p => p.classList.remove('is-on'));
+      btn.classList.add('is-on');
+    });
+  });
+  if (typeof IntersectionObserver !== 'undefined'){
+    quickNavObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        var id = entry.target.id;
+        nav.querySelectorAll('.quicknav-pill').forEach(p => {
+          p.classList.toggle('is-on', p.getAttribute('data-target') === id);
+        });
+      });
+    }, { rootMargin: '-42% 0px -42% 0px', threshold: 0 });
+    ['sec-room', 'sec-log', 'sec-weekly', 'sec-test', 'sec-contents'].forEach(id => {
+      var el = $(id);
+      if (el) quickNavObserver.observe(el);
+    });
+  }
+}
+
 async function main(){
-  bindQuickNav();
+  buildDateChips();
+  buildChips();
+  $('log-btn').onclick = submitLog;
+  var breakoutBtn = $('weekly-breakout-btn');
+  if (breakoutBtn) breakoutBtn.onclick = () => { var room = $('sec-room'); if (room) room.scrollIntoView({ behavior: 'smooth', block: 'start' }); };
 
   if (!LIFF_ID || !API_URL){
     $('screen-loading').style.display = 'none';
     showGate(null);
     return;
   }
-
   try{
     await liff.init({ liffId: LIFF_ID });
   }catch(e){
     showGate(null);
     return;
   }
-
-  if (!liff.isLoggedIn()){
-    liff.login();
-    return;
-  }
-
+  if (!liff.isLoggedIn()){ liff.login(); return; }
   idToken = liff.getIDToken();
 
   let me;
-  try{
-    me = await api('me');
-  }catch(e){
-    showGate(null);
-    return;
-  }
+  try{ me = await api('me'); }catch(e){ showGate(null); return; }
 
   if (!me || me.status !== 'ok'){
     if (me && me.reason === 'not_member'){ showRegister(); return; }
@@ -320,9 +856,16 @@ async function main(){
     return;
   }
 
-  renderPortal(me);
+  renderHeader(me);
   $('screen-loading').style.display = 'none';
   $('app').style.display = 'block';
+  renderRoomHours();
+  initRoomZoomCopy();
+  renderTestMaterials();
+  loadWeekly();
+  loadTestRanking();
+  loadContents();
+  initQuickNav();
 }
 
 main();

@@ -33,6 +33,20 @@
   </div>
 </div>
 
+<div id="screen-register" class="state" style="display:none">
+  <div class="state-inner">
+    <div class="crest">THINKING</div>
+    <h1>塾生登録</h1>
+    <p id="reg-hello" class="muted"></p>
+    <p class="muted">識別番号を入力して登録してください。</p>
+    <input id="reg-input" inputmode="numeric" autocomplete="off" placeholder="識別番号"
+      style="width:100%;max-width:280px;padding:12px 14px;margin:12px auto 4px;display:block;border:1px solid #d8d3c7;border-radius:10px;font-size:16px;text-align:center;box-sizing:border-box;">
+    <div id="reg-error" style="color:#c0392b;font-size:13px;min-height:18px;margin:6px 0"></div>
+    <button type="button" class="gate-line-btn" id="reg-submit">登録する</button>
+    <div class="gate-mini" id="reg-mini" style="margin-top:14px"></div>
+  </div>
+</div>
+
 <div id="app" style="display:none">
   <header class="hero">
     <div class="hero-cover">
@@ -113,8 +127,12 @@ function esc(s){
   });
 }
 
-async function api(action){
-  const res = await fetch(API_URL + '?action=' + action + '&token=' + encodeURIComponent(idToken));
+async function api(action, extra){
+  let url = API_URL + '?action=' + action + '&token=' + encodeURIComponent(idToken);
+  if (extra){
+    for (const k in extra){ url += '&' + k + '=' + encodeURIComponent(extra[k]); }
+  }
+  const res = await fetch(url);
   return res.json();
 }
 
@@ -215,6 +233,58 @@ function bindQuickNav(){
   });
 }
 
+function getQueryParam(k){
+  try { return new URLSearchParams(window.location.search).get(k) || ''; }
+  catch(e){ return ''; }
+}
+
+function showRegister(){
+  $('screen-loading').style.display = 'none';
+  $('screen-gate').style.display = 'none';
+  $('screen-register').style.display = 'flex';
+
+  const decoded = liff.getDecodedIDToken();
+  const nm = decoded && decoded.name ? decoded.name : '';
+  $('reg-hello').textContent = nm ? ('ようこそ、' + nm + ' さん') : '';
+
+  const pre = getQueryParam('id');
+  if (pre) $('reg-input').value = pre;
+
+  $('reg-submit').onclick = doRegister;
+  $('reg-input').addEventListener('keydown', function(e){
+    if (e.key === 'Enter') doRegister();
+  });
+}
+
+let regBusy = false;
+async function doRegister(){
+  if (regBusy) return;
+  const id = ($('reg-input').value || '').trim();
+  const err = $('reg-error');
+  if (!id){ err.textContent = '識別番号を入力してください。'; return; }
+
+  regBusy = true;
+  err.textContent = '';
+  $('reg-submit').textContent = '登録中…';
+
+  let r;
+  try { r = await api('register', { identifier: id }); }
+  catch(e){ r = null; }
+
+  if (r && r.status === 'ok'){
+    window.location.reload();
+    return;
+  }
+
+  regBusy = false;
+  $('reg-submit').textContent = '登録する';
+  const reason = r && r.reason ? r.reason : '';
+  if (reason === 'identifier_not_found') err.textContent = 'この識別番号は見つかりませんでした。番号をご確認ください。';
+  else if (reason === 'already_taken') err.textContent = 'この識別番号は別のLINEで登録済みです。公式LINEへご連絡ください。';
+  else if (reason === 'left') err.textContent = 'この番号は退塾済みとして登録されています。在籍中の方は公式LINEへご連絡ください。';
+  else err.textContent = '登録に失敗しました。電波の良い場所で再度お試しください。';
+}
+
 async function main(){
   bindQuickNav();
 
@@ -247,6 +317,7 @@ async function main(){
   }
 
   if (!me || me.status !== 'ok'){
+    if (me && me.reason === 'not_member'){ showRegister(); return; }
     showGate(me);
     return;
   }

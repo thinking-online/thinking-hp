@@ -3,23 +3,25 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>THINKING 塾生ポータル</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="theme-color" content="#1a2a44">
+<title>THINKING CAMPUS｜塾生ポータル</title> href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <style>
   :root{
-    --navy:#0c2340;       /* 主役：濃紺 */
-    --navy-2:#12325c;
-    --gold:#c7a44a;       /* 差し色：金 */
-    --vermilion:#d8472b;  /* 強調：朱 */
-    --ink:#1b2330;
-    --paper:#f6f3ec;      /* 紙の地 */
-    --line:#e4ddcd;
-    --muted:#7a7466;
+    --navy:#1a2a44;
+    --navy-2:#243652;
+    --gold:#4a6fa5;
+    --gold-light:#8aaed4;
+    --vermilion:#c0392b;
+    --ink:#1a2433;
+    --paper:#eef1f6;
+    --line:#d4dae4;
+    --muted:#6b7280;
+    --illus-bg:#e4e9f0;
     --radius:16px;
-    --shadow:0 10px 30px rgba(12,35,64,.10);
+    --shadow:0 10px 30px rgba(26,42,68,.10);
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -41,8 +43,8 @@
   .msg-sub{color:var(--muted);font-size:13px}
 
   /* ---- トップ画像 ---- */
-  .hero{position:relative;margin:0 -16px;aspect-ratio:16/9;background:var(--navy);overflow:hidden}
-  .hero img{width:100%;height:100%;object-fit:cover;display:block}
+  .hero{position:relative;margin:0 -16px;background:var(--illus-bg);overflow:hidden;line-height:0}
+  .hero img{width:100%;height:auto;display:block;object-fit:contain;object-position:center top}
   .hero-fallback{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;
     background:radial-gradient(120% 120% at 50% -20%,var(--navy-2),var(--navy))}
   .hero-fallback .k{font-family:"Noto Serif JP",serif;font-weight:700;font-size:26px;letter-spacing:.16em}
@@ -60,7 +62,7 @@
   .chip{display:inline-flex;align-items:center;gap:6px;background:var(--paper);border:1px solid var(--line);
     border-radius:999px;padding:5px 12px;font-size:13px;font-weight:500}
   .chip b{font-weight:700;color:var(--navy);letter-spacing:.04em}
-  .chip.status{color:#15803d;border-color:#bfe3c6;background:#f0faf2}
+  .chip.status{color:#1e6b3a;border-color:#b8dcc4;background:#edf7f0}
 
   /* ---- セクションの器（次フェーズ以降ここに積む）---- */
   .section{margin-top:22px}
@@ -75,10 +77,10 @@
   .big-btn::after{content:"›";position:absolute;right:18px;top:50%;transform:translateY(-50%);
     font-size:28px;color:var(--gold);line-height:1}
   .big-btn .m{font-weight:700;font-size:16px;letter-spacing:.02em}
-  .big-btn .s{font-size:12px;color:#cdd6e4}
-  .big-btn.disabled{background:#cfc9bb;box-shadow:none;cursor:default;pointer-events:none}
+  .big-btn .s{font-size:12px;color:#b8c8dc}
+  .big-btn.disabled{background:#c5cdd8;box-shadow:none;cursor:default;pointer-events:none}
   .big-btn.disabled::after{color:#fff}
-  .big-btn.disabled .s{color:#efe9da}
+  .big-btn.disabled .s{color:#e8ecf2}
 
   /* ---- 志望校・カウントダウン ---- */
   .goal-card{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;
@@ -89,7 +91,7 @@
     display:flex;align-items:baseline;justify-content:center;gap:5px}
   #cd-days{font-size:64px;color:var(--gold);letter-spacing:.01em}
   #cd-unit{font-size:22px;color:#fff}
-  #cd-label{font-size:12px;color:#cdd6e4;letter-spacing:.18em;margin-top:6px}
+  #cd-label{font-size:12px;color:#b8c8dc;letter-spacing:.18em;margin-top:6px}
   .cd-date{font-size:13px;color:#fff;opacity:.92;margin-top:10px}
   .link-btn{background:none;border:none;color:var(--gold);font-family:inherit;font-size:12px;
     text-decoration:underline;cursor:pointer;margin-top:14px;padding:4px}
@@ -105,8 +107,8 @@
   .sr-today{text-align:center;padding:2px 0 12px;border-bottom:1px dashed var(--line)}
   .sr-today-label{font-size:12px;color:var(--muted);letter-spacing:.08em}
   .sr-today-time{font-family:"Noto Serif JP",serif;font-weight:700;font-size:30px;color:var(--navy);margin-top:4px}
-  .sr-streak{margin-top:12px;text-align:center;background:#fff7e6;border:1px solid #f0dca8;border-radius:10px;padding:8px;font-size:14px;color:#8a6d1f}
-  .sr-streak b{font-size:18px;color:var(--vermilion);margin:0 2px}
+  .sr-streak{margin-top:12px;text-align:center;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px;font-size:14px;color:var(--navy)}
+  .sr-streak b{font-size:18px;color:var(--gold);margin:0 2px}
   .sr-week{margin-top:12px}
   .sr-week summary{cursor:pointer;font-size:13px;color:var(--navy);font-weight:700;list-style:none}
   .sr-week summary::-webkit-details-marker{display:none}
@@ -128,7 +130,7 @@
   .quiz-body{flex:1}
   .quiz-range{font-size:13px;color:var(--ink)}
   .quiz-mat{font-size:12px;margin-top:3px}
-  .quiz-mat a{color:var(--vermilion);font-weight:700;text-decoration:none}
+  .quiz-mat a{color:var(--gold);font-weight:700;text-decoration:none}
   .quiz-mat .none{color:var(--muted)}
 
   /* ---- ランキング ---- */
@@ -144,8 +146,8 @@
   .rank-rate{font-weight:700;color:var(--navy);font-size:14px}
   .rank-klass{flex:0 0 auto;font-size:10px;font-weight:700;color:#fff;border-radius:5px;padding:2px 6px;margin-left:6px}
   .k-core{background:var(--gold)} .k-challenge{background:#1f6fd8} .k-master{background:var(--vermilion)}
-  .rank-row.you{background:#fff7e6;border-radius:8px;padding-left:6px;padding-right:6px}
-  .you-badge{font-size:10px;background:var(--vermilion);color:#fff;border-radius:5px;padding:1px 6px;margin-left:7px}
+  .rank-row.you{background:var(--paper);border-radius:8px;padding-left:6px;padding-right:6px}
+  .you-badge{font-size:10px;background:var(--gold);color:#fff;border-radius:5px;padding:1px 6px;margin-left:7px}
 
   /* ---- バインド画面 ---- */
   .bind{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 20px;margin-top:28px}
@@ -384,20 +386,21 @@ $("bind-go").addEventListener("click", function(){
     .then(function(){ btn.disabled = false; btn.textContent = "登録して入る"; });
 });
 
-/* ---- トップ画像（portalフォルダのファイルを読む）---- */
+/* ---- トップ画像 ---- */
 function setHero(){
   var img = $("hero-img");
-  var sources = ["hero.jpg", "hero.png", "hero.webp"];
+  var sources = ["assets/hero-top.jpg", "assets/hero-top.png", "assets/hero.jpg"];
   var i = 0;
   img.onload  = function(){ img.hidden = false; $("hero-fallback").hidden = true; };
   img.onerror = function(){ i++; if (i < sources.length) img.src = sources[i]; };
+  img.alt = "THINKING CAMPUS 塾生専用ポータル";
   img.src = sources[0];
 }
 
 /* ---- ホーム描画 ---- */
 function renderHome(res){
   var conf = res.config || {};   // 自習室Zoomや掲示板URLは後フェーズでここから使う
-  // トップ画像：portalフォルダに置いたファイルを直接読む（hero.jpg→png→webpの順に試す）
+  // トップ画像
   setHero();
   // 名前・識別番号・在籍
   CUR_SID = res.sid || "";

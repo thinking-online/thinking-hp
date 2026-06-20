@@ -64,9 +64,88 @@
 
   /* ---- セクションの器（次フェーズ以降ここに積む）---- */
   .section{margin-top:22px}
-  .section-h{display:flex;align-items:baseline;gap:10px;margin:0 2px 10px}
-  .section-h .no{font-family:"Noto Serif JP",serif;color:var(--gold);font-weight:700;font-size:13px}
-  .section-h .ti{font-weight:700;font-size:16px;color:var(--navy)}
+  .section-h{display:flex;align-items:center;gap:9px;margin:0 2px 12px}
+  .section-h::before{content:"";width:16px;height:2px;background:var(--gold);display:inline-block;border-radius:2px}
+  .section-h .ti{font-weight:700;font-size:15px;color:var(--navy);letter-spacing:.03em}
+
+  /* ---- 大ボタン（THINKINGシート等）---- */
+  .big-btn{display:flex;flex-direction:column;gap:3px;text-decoration:none;background:var(--navy);color:#fff;
+    border-radius:14px;padding:16px 44px 16px 18px;box-shadow:var(--shadow);position:relative;cursor:pointer}
+  .big-btn:active{transform:translateY(1px)}
+  .big-btn::after{content:"›";position:absolute;right:18px;top:50%;transform:translateY(-50%);
+    font-size:28px;color:var(--gold);line-height:1}
+  .big-btn .m{font-weight:700;font-size:16px;letter-spacing:.02em}
+  .big-btn .s{font-size:12px;color:#cdd6e4}
+  .big-btn.disabled{background:#cfc9bb;box-shadow:none;cursor:default;pointer-events:none}
+  .big-btn.disabled::after{color:#fff}
+  .big-btn.disabled .s{color:#efe9da}
+
+  /* ---- 志望校・カウントダウン ---- */
+  .goal-card{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;
+    border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow);text-align:center}
+  .goal-eyebrow{font-size:11px;letter-spacing:.24em;color:var(--gold);font-weight:700}
+  .goal-name{font-family:"Noto Serif JP",serif;font-weight:700;font-size:19px;margin:5px 0 14px;line-height:1.45}
+  .cd-num{font-family:"Noto Serif JP",serif;font-weight:700;line-height:1;
+    display:flex;align-items:baseline;justify-content:center;gap:5px}
+  #cd-days{font-size:64px;color:var(--gold);letter-spacing:.01em}
+  #cd-unit{font-size:22px;color:#fff}
+  #cd-label{font-size:12px;color:#cdd6e4;letter-spacing:.18em;margin-top:6px}
+  .cd-date{font-size:13px;color:#fff;opacity:.92;margin-top:10px}
+  .link-btn{background:none;border:none;color:var(--gold);font-family:inherit;font-size:12px;
+    text-decoration:underline;cursor:pointer;margin-top:14px;padding:4px}
+  .setdate{text-align:left}
+  .setdate label{display:block;font-size:13px;font-weight:700;margin-bottom:8px}
+  .setdate input[type=date]{width:100%;padding:12px 14px;font-size:16px;border:none;border-radius:10px;font-family:inherit;color:var(--ink)}
+
+  /* ---- 汎用カード ---- */
+  .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+  .loading-row{color:var(--muted);font-size:13px;text-align:center;padding:10px}
+
+  /* ---- 自習室 ---- */
+  .sr-today{text-align:center;padding:2px 0 12px;border-bottom:1px dashed var(--line)}
+  .sr-today-label{font-size:12px;color:var(--muted);letter-spacing:.08em}
+  .sr-today-time{font-family:"Noto Serif JP",serif;font-weight:700;font-size:30px;color:var(--navy);margin-top:4px}
+  .sr-streak{margin-top:12px;text-align:center;background:#fff7e6;border:1px solid #f0dca8;border-radius:10px;padding:8px;font-size:14px;color:#8a6d1f}
+  .sr-streak b{font-size:18px;color:var(--vermilion);margin:0 2px}
+  .sr-week{margin-top:12px}
+  .sr-week summary{cursor:pointer;font-size:13px;color:var(--navy);font-weight:700;list-style:none}
+  .sr-week summary::-webkit-details-marker{display:none}
+  .sr-week summary::before{content:"▸ ";color:var(--gold)}
+  .sr-week[open] summary::before{content:"▾ "}
+  .sr-week-list{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:10px;text-align:center}
+  .sr-week-list .col{padding:5px 0;border-radius:8px}
+  .sr-week-list .col.today{background:var(--paper)}
+  .sr-week-list .d{font-size:11px;color:var(--muted)}
+  .sr-week-list .t{font-size:11px;font-weight:700;color:var(--navy);margin-top:3px;min-height:14px}
+  .sr-checkin{margin-top:16px}
+  .sr-name{text-align:center;font-weight:700;color:var(--navy);font-size:15px;margin-bottom:10px}
+
+  /* ---- 小テスト範囲 ---- */
+  .quiz-date{font-weight:700;color:var(--navy);font-size:14px;margin-bottom:10px}
+  .quiz-item{display:flex;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+  .quiz-item:first-of-type{border-top:none}
+  .quiz-subj{flex:0 0 76px;font-weight:700;font-size:13px;color:var(--navy)}
+  .quiz-body{flex:1}
+  .quiz-range{font-size:13px;color:var(--ink)}
+  .quiz-mat{font-size:12px;margin-top:3px}
+  .quiz-mat a{color:var(--vermilion);font-weight:700;text-decoration:none}
+  .quiz-mat .none{color:var(--muted)}
+
+  /* ---- ランキング ---- */
+  .rank-period{font-size:12px;color:var(--muted);margin:0 2px 8px}
+  .rank-tabs{display:flex;gap:6px;overflow-x:auto;padding:0 2px 10px}
+  .rank-tab{flex:0 0 auto;border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 14px;
+    font-size:13px;font-weight:700;color:var(--muted);cursor:pointer;white-space:nowrap}
+  .rank-tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+  .rank-row{display:flex;align-items:center;gap:9px;padding:9px 0;border-top:1px solid var(--line)}
+  .rank-row:first-child{border-top:none}
+  .rank-rank{flex:0 0 26px;font-family:"Noto Serif JP",serif;font-weight:700;color:var(--gold);font-size:16px;text-align:center}
+  .rank-name{flex:1;font-size:14px;color:var(--ink);display:flex;align-items:center}
+  .rank-rate{font-weight:700;color:var(--navy);font-size:14px}
+  .rank-klass{flex:0 0 auto;font-size:10px;font-weight:700;color:#fff;border-radius:5px;padding:2px 6px;margin-left:6px}
+  .k-core{background:var(--gold)} .k-challenge{background:#1f6fd8} .k-master{background:var(--vermilion)}
+  .rank-row.you{background:#fff7e6;border-radius:8px;padding-left:6px;padding-right:6px}
+  .you-badge{font-size:10px;background:var(--vermilion);color:#fff;border-radius:5px;padding:1px 6px;margin-left:7px}
 
   /* ---- バインド画面 ---- */
   .bind{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 20px;margin-top:28px}
@@ -146,8 +225,83 @@
     </div>
   </div>
 
-  <!-- ③以降のセクションは次フェーズでここに積む -->
-  <!-- 志望校登録 / THINKINGシート / 自習室 / 小テスト / 掲示板 -->
+  <!-- ③ 志望校・カウントダウン -->
+  <div class="section" id="sec-goal">
+    <div class="goal-card">
+      <div class="goal-eyebrow">第一志望</div>
+      <div id="goal-name" class="goal-name">—</div>
+
+      <div id="goal-countdown" hidden>
+        <div class="cd-num"><span id="cd-days">—</span><span id="cd-unit">日</span></div>
+        <div id="cd-label">試験本番まで</div>
+        <div id="cd-date" class="cd-date"></div>
+        <button id="cd-edit" class="link-btn">試験日を変更する</button>
+      </div>
+
+      <div id="goal-setdate" class="setdate" hidden>
+        <label for="exam-date">第一志望の試験日を登録</label>
+        <input id="exam-date" type="date">
+        <button id="exam-save" class="btn btn-primary" style="margin-top:12px">登録する</button>
+        <div id="exam-err" class="err"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ THINKINGシート -->
+  <div class="section" id="sec-thinking">
+    <a id="thinking-btn" class="big-btn" href="#" rel="noopener">
+      <span class="m">THINKINGシートを開く</span>
+      <span class="s">あなたのロードマップ・やることリスト</span>
+    </a>
+  </div>
+
+  <!-- ⑤ 自習室 -->
+  <div class="section" id="sec-studyroom">
+    <div class="section-h"><span class="ti">自習室</span></div>
+    <div class="card">
+      <div class="sr-today">
+        <div class="sr-today-label">今日（<span id="sr-dow">—</span>）の入室予定</div>
+        <div id="sr-today-time" class="sr-today-time">—</div>
+      </div>
+
+      <div id="sr-streak" class="sr-streak" hidden>
+        🔥 連続入室 <b id="sr-streak-n">0</b> 日
+      </div>
+
+      <details class="sr-week">
+        <summary>今週の予定をみる</summary>
+        <div id="sr-week-list" class="sr-week-list"></div>
+      </details>
+
+      <div class="sr-checkin">
+        <div class="sr-name" id="sr-name">—</div>
+        <button id="sr-enter" class="btn btn-primary">入室する</button>
+        <div id="sr-msg" class="err"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑥ 小テスト範囲 -->
+  <div class="section" id="sec-quiz">
+    <div class="section-h"><span class="ti">小テスト範囲</span></div>
+    <div class="card" id="quiz-box"><div class="loading-row">読み込み中…</div></div>
+  </div>
+
+  <!-- ⑦ 小テストランキング -->
+  <div class="section" id="sec-ranking">
+    <div class="section-h"><span class="ti">小テストランキング</span></div>
+    <div id="rank-period" class="rank-period"></div>
+    <div id="rank-tabs" class="rank-tabs"></div>
+    <div class="card" id="rank-box"><div class="loading-row">読み込み中…</div></div>
+  </div>
+
+  <!-- ⑧ THINKING掲示板 -->
+  <div class="section" id="sec-board">
+    <a id="board-btn" class="big-btn" href="#" rel="noopener">
+      <span class="m">THINKING掲示板を開く</span>
+      <span class="s">お知らせ・ランキング掲示板</span>
+    </a>
+  </div>
 
   <div class="footnote">凡人でも、変われる。受験は根性じゃなく設計。</div>
 </div>
@@ -175,6 +329,7 @@ function api(params){
 }
 
 var PROFILE = null;  // { userId, displayName }
+var CUR_SID = "";    // 解決済みの識別番号
 
 function start(){
   $("oa-link").href = LINE_OA_URL;
@@ -245,6 +400,7 @@ function renderHome(res){
   // トップ画像：portalフォルダに置いたファイルを直接読む（hero.jpg→png→webpの順に試す）
   setHero();
   // 名前・識別番号・在籍
+  CUR_SID = res.sid || "";
   $("home-name").textContent = res.name || "塾生";
   $("home-sid").textContent  = res.sid || "—";
   if (res.status){
@@ -252,9 +408,240 @@ function renderHome(res){
     s.textContent = res.status;
     s.hidden = false;
   }
-  // 後フェーズ：ここで conf や res を使って各セクションを描画する
+  // 志望校・カウントダウン
+  setGoal(res.aspire, res.examDate);
+  // THINKINGシートボタン
+  setThinking(res.thinkingUrl);
+  // 掲示板ボタン
+  setBoard(conf);
+  // 画面を表示してから、重いセクションを順次読み込む
   show("view-home");
+  loadStudyroom();
+  loadQuiz();
+  loadRanking();
 }
+
+/* ---- THINKINGシートボタン ---- */
+function setThinking(url){
+  var btn = $("thinking-btn");
+  var m = btn.querySelector(".m"), s = btn.querySelector(".s");
+  if (url){
+    btn.classList.remove("disabled");
+    m.textContent = "THINKINGシートを開く";
+    s.textContent = "あなたのロードマップ・やることリスト";
+    btn.onclick = function(ev){ ev.preventDefault(); openExternal(url); };
+  } else {
+    btn.classList.add("disabled");
+    m.textContent = "THINKINGシート（準備中）";
+    s.textContent = "まだ割り当てられていません";
+    btn.onclick = function(ev){ ev.preventDefault(); };
+  }
+}
+
+/* ---- 外部ブラウザで開く（LIFF内だとGoogleシートが開きにくいため）---- */
+function openExternal(url){
+  try{
+    if (typeof liff !== "undefined" && liff.openWindow){
+      liff.openWindow({ url:url, external:true });
+      return;
+    }
+  }catch(e){}
+  window.open(url, "_blank");
+}
+
+/* ---- 志望校・カウントダウン ---- */
+function setGoal(aspire, examDate){
+  $("goal-name").textContent = aspire ? aspire : "志望校が未登録です（本部にて設定）";
+  if (examDate) showCountdown(examDate);
+  else          showSetDate("");
+}
+
+function showCountdown(examDate){
+  $("goal-setdate").hidden = true;
+  $("goal-countdown").hidden = false;
+  var d = daysUntil(examDate);
+  var days = $("cd-days"), unit = $("cd-unit"), label = $("cd-label");
+  if (d > 0){
+    days.textContent = d; unit.hidden = false; label.textContent = "試験本番まで";
+  } else if (d === 0){
+    days.textContent = "当日"; unit.hidden = true; label.textContent = "いよいよ本番";
+  } else {
+    days.textContent = "—"; unit.hidden = true; label.textContent = "試験日を更新してください";
+  }
+  $("cd-date").textContent = formatJp(examDate);
+  $("cd-edit").onclick = function(){ showSetDate(examDate); };
+}
+
+function showSetDate(prefill){
+  $("goal-countdown").hidden = true;
+  $("goal-setdate").hidden = false;
+  $("exam-err").textContent = "";
+  var inp = $("exam-date");
+  if (prefill) inp.value = prefill;
+}
+
+$("exam-save").addEventListener("click", function(){
+  var date = ($("exam-date").value || "").trim();
+  $("exam-err").textContent = "";
+  if (!date){ $("exam-err").textContent = "試験日を選んでください。"; return; }
+  this.disabled = true; this.textContent = "登録中…";
+  var btn = this;
+  api({ action:"school_set", userId:PROFILE.userId, date:date })
+    .then(function(res){
+      if (res && res.ok){ showCountdown(res.examDate); }
+      else { $("exam-err").textContent = (res && res.error) || "登録に失敗しました。"; }
+    })
+    .catch(function(){ $("exam-err").textContent = "通信に失敗しました。再度お試しください。"; })
+    .then(function(){ btn.disabled = false; btn.textContent = "登録する"; });
+});
+
+function daysUntil(s){
+  var p = String(s).split("-");
+  if (p.length < 3) return 0;
+  var target = new Date(+p[0], +p[1]-1, +p[2]);
+  var now = new Date();
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  return Math.round((target - today) / 86400000);
+}
+
+function formatJp(s){
+  var p = String(s).split("-");
+  if (p.length < 3) return s;
+  var dt = new Date(+p[0], +p[1]-1, +p[2]);
+  var w = "日月火水木金土".charAt(dt.getDay());
+  return p[0] + "年" + (+p[1]) + "月" + (+p[2]) + "日（" + w + "）";
+}
+
+/* ---- 自習室 ---- */
+function loadStudyroom(){
+  $("sr-name").textContent = (PROFILE.displayName || "") + "｜" + CUR_SID;
+  api({ action:"studyroom", userId:PROFILE.userId }).then(function(res){
+    if (!res || !res.ok) return;
+    $("sr-dow").textContent = res.weekday || "—";
+    $("sr-today-time").textContent = res.todayTime ? res.todayTime : "登録なし";
+    if (res.streak > 0){ $("sr-streak").hidden = false; $("sr-streak-n").textContent = res.streak; }
+    var wl = $("sr-week-list"); wl.innerHTML = "";
+    (res.week || []).forEach(function(w){
+      var col = document.createElement("div");
+      col.className = "col" + (w.day === res.weekday ? " today" : "");
+      col.innerHTML = '<div class="d">' + w.day + '</div><div class="t">' + (w.time ? escapeHtml(w.time) : "・") + '</div>';
+      wl.appendChild(col);
+    });
+  }).catch(function(){});
+}
+
+$("sr-enter").addEventListener("click", function(){
+  var btn = this; btn.disabled = true; btn.textContent = "記録中…";
+  var msg = $("sr-msg"); msg.style.color = ""; msg.textContent = "";
+  api({ action:"checkin", userId:PROFILE.userId, dname:PROFILE.displayName })
+    .then(function(res){
+      if (res && res.ok){
+        if (res.streak > 0){ $("sr-streak").hidden = false; $("sr-streak-n").textContent = res.streak; }
+        if (res.zoomUrl){
+          msg.style.color = "var(--muted)";
+          msg.textContent = "入室を記録しました。Zoomを開きます。";
+          openExternal(res.zoomUrl);
+        } else {
+          msg.textContent = "入室を記録しました（ZoomリンクがTHINKING側で未設定です）。";
+        }
+      } else {
+        msg.textContent = (res && res.error) || "記録に失敗しました。";
+      }
+    })
+    .catch(function(){ msg.textContent = "通信に失敗しました。"; })
+    .then(function(){ btn.disabled = false; btn.textContent = "入室する"; });
+});
+
+/* ---- 小テスト範囲 ---- */
+function loadQuiz(){
+  api({ action:"quiz_range" }).then(function(res){
+    var box = $("quiz-box");
+    if (!res || !res.ok || !res.items || !res.items.length){
+      box.innerHTML = '<div class="loading-row">範囲が取得できませんでした。</div>'; return;
+    }
+    var html = '<div class="quiz-date">' + escapeHtml(res.date) + ' の小テスト</div>';
+    res.items.forEach(function(it){
+      var mat = it.materialUrl
+        ? '<a href="#" data-url="' + escapeAttr(it.materialUrl) + '">教材を開く ›</a>'
+        : '<span class="none">' + escapeHtml(it.materialText || "指定教材なし") + '</span>';
+      html += '<div class="quiz-item"><div class="quiz-subj">' + escapeHtml(it.subject) + '</div>'
+            + '<div class="quiz-body"><div class="quiz-range">' + escapeHtml(it.range || "") + '</div>'
+            + '<div class="quiz-mat">' + mat + '</div></div></div>';
+    });
+    box.innerHTML = html;
+    Array.prototype.forEach.call(box.querySelectorAll("a[data-url]"), function(a){
+      a.addEventListener("click", function(ev){ ev.preventDefault(); openExternal(a.getAttribute("data-url")); });
+    });
+  }).catch(function(){ $("quiz-box").innerHTML = '<div class="loading-row">範囲が取得できませんでした。</div>'; });
+}
+
+/* ---- 小テストランキング ---- */
+var RANK_DATA = null;
+function loadRanking(){
+  api({ action:"ranking" }).then(function(res){
+    if (!res || !res.ok || !res.subjects || !res.subjects.length){
+      $("rank-box").innerHTML = '<div class="loading-row">ランキングが取得できませんでした。</div>'; return;
+    }
+    RANK_DATA = res;
+    if (res.period) $("rank-period").textContent = "計測期間 " + res.period;
+    var tabs = $("rank-tabs"); tabs.innerHTML = "";
+    res.subjects.forEach(function(s, i){
+      var b = document.createElement("button");
+      b.className = "rank-tab" + (i === 0 ? " active" : "");
+      b.textContent = s.name || ("科目" + (i + 1));
+      b.addEventListener("click", function(){
+        Array.prototype.forEach.call(tabs.children, function(c){ c.classList.remove("active"); });
+        b.classList.add("active"); renderRankSubject(i);
+      });
+      tabs.appendChild(b);
+    });
+    renderRankSubject(0);
+  }).catch(function(){ $("rank-box").innerHTML = '<div class="loading-row">ランキングが取得できませんでした。</div>'; });
+}
+
+function renderRankSubject(i){
+  var s = RANK_DATA.subjects[i], box = $("rank-box");
+  if (!s || !s.rows.length){ box.innerHTML = '<div class="loading-row">データなし</div>'; return; }
+  var html = "";
+  s.rows.forEach(function(r){
+    var you = (String(r.sid) === String(CUR_SID));
+    html += '<div class="rank-row' + (you ? " you" : "") + '">'
+          + '<div class="rank-rank">' + r.rank + '</div>'
+          + '<div class="rank-name">' + escapeHtml(r.name || "")
+          + (you ? '<span class="you-badge">あなた</span>' : '') + '</div>'
+          + '<div class="rank-rate">' + formatRate(r.rate) + '</div>'
+          + (r.klass ? '<span class="rank-klass ' + klassClass(r.klass) + '">' + escapeHtml(r.klass) + '</span>' : '')
+          + '</div>';
+  });
+  box.innerHTML = html;
+}
+
+function klassClass(k){
+  k = String(k || "").toUpperCase();
+  if (k.indexOf("CHALLENGE") >= 0) return "k-challenge";
+  if (k.indexOf("MASTER") >= 0)    return "k-master";
+  return "k-core";
+}
+function formatRate(v){
+  if (v === "" || v == null) return "";
+  var n = Number(v);
+  return isNaN(n) ? escapeHtml(String(v)) : (n + "%");
+}
+
+/* ---- 掲示板 ---- */
+var BOARD_URL_FALLBACK = "https://docs.google.com/spreadsheets/d/1fVYzT-DX6DlP2RbkDZXF8ZkZk6n6kCwblQvMgQPChyo/edit?gid=1180612025#gid=1180612025";
+function setBoard(conf){
+  var url = (conf && (conf["掲示板URL"] || conf["掲示板"])) || BOARD_URL_FALLBACK;
+  $("board-btn").onclick = function(ev){ ev.preventDefault(); openExternal(url); };
+}
+
+/* ---- 共通ヘルパー ---- */
+function escapeHtml(s){
+  return String(s == null ? "" : s).replace(/[&<>"]/g, function(c){
+    return { "&":"&amp;", "<":"&lt;", ">":"&gt;", '"':"&quot;" }[c];
+  });
+}
+function escapeAttr(s){ return escapeHtml(s).replace(/'/g, "&#39;"); }
 
 start();
 </script>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#172642">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>塾生ポータル｜THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div id="screen-loading" class="state">
+  <div class="state-inner">
+    <div class="spinner" aria-hidden="true"></div>
+    <div class="crest">THINKING</div>
+    <h1>ポータルを開いています…</h1>
+  </div>
+</div>
+
+<div id="screen-gate" class="state" style="display:none">
+  <div class="state-inner">
+    <div class="crest">THINKING</div>
+    <h1 id="gate-title">このページは塾生専用です</h1>
+    <p id="gate-text"></p>
+    <div class="gate-mini" id="gate-mini"></div>
+    <button type="button" class="gate-copy-btn" id="gate-copy-btn" style="display:none">LINE IDをコピー</button>
+    <a class="gate-line-btn" id="gate-line-btn" href="https://line.me/R/ti/p/@499yrupi" target="_blank" rel="noopener">公式LINEを開く</a>
+  </div>
+</div>
+
+<div id="app" style="display:none">
+  <header class="hero">
+    <div class="hero-cover">
+      <div class="hero-kicker">学部別合格設計塾</div>
+      <div class="hero-title">塾生ポータル</div>
+      <div class="hero-tagline">受験設計を、ここから。</div>
+    </div>
+    <div class="hero-panel">
+      <div class="status-pill" id="h-status">塾生</div>
+      <div class="hello" id="h-name"></div>
+      <div class="hello-sub" id="h-sub"></div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <nav class="quicknav" aria-label="セクション">
+      <div class="quicknav-track">
+        <a class="quicknav-pill is-active" href="#sec-home" data-nav="home">ホーム</a>
+        <a class="quicknav-pill" href="#sec-contents" data-nav="contents">コンテンツ</a>
+        <a class="quicknav-pill" href="#sec-mypage" data-nav="mypage">マイページ</a>
+      </div>
+    </nav>
+
+    <section class="section" id="sec-home">
+      <div class="card">
+        <div class="kicker">HOME</div>
+        <h2 class="card-title">ようこそ</h2>
+        <p class="muted" id="home-lead">塾生向けの情報・コンテンツをここから確認できます。</p>
+      </div>
+    </section>
+
+    <section class="section" id="sec-contents">
+      <div class="card">
+        <div class="kicker">CONTENTS</div>
+        <h2 class="card-title">コンテンツ</h2>
+        <p class="muted">運用開始後、ここに塾生向け資料やリンクが並びます。</p>
+        <div class="placeholder-list" id="contents-list">
+          <div class="placeholder-item"><span class="placeholder-dot"></span>準備中</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sec-mypage">
+      <div class="card">
+        <div class="kicker">MY PAGE</div>
+        <h2 class="card-title">マイページ</h2>
+        <p class="muted" id="mypage-summary">登録情報を読み込み中…</p>
+      </div>
+    </section>
+
+    <footer class="foot">THINKING — 塾生ポータル</footer>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<script>
+const API_URL = '';
+const LIFF_ID = '';
+const LINE_OA_URL = 'https://line.me/R/ti/p/@499yrupi';
+
+let idToken = '';
+
+function $(id){ return document.getElementById(id); }
+
+function toast(msg){
+  const t = $('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._h);
+  t._h = setTimeout(function(){ t.classList.remove('show'); }, 2200);
+}
+
+function esc(s){
+  return String(s == null ? '' : s).replace(/[&<>"]/g, function(c){
+    return ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;' })[c];
+  });
+}
+
+async function api(action){
+  const res = await fetch(API_URL + '?action=' + action + '&token=' + encodeURIComponent(idToken));
+  return res.json();
+}
+
+function copyText(text){
+  if (!text) return;
+  if (navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(function(){
+      toast('コピーしました');
+    }).catch(function(){
+      toast('コピーに失敗しました');
+    });
+  } else {
+    toast('長押ししてコピーしてください');
+  }
+}
+
+function showGate(me){
+  $('screen-loading').style.display = 'none';
+  $('screen-gate').style.display = 'flex';
+
+  const reason = me && me.reason ? me.reason : '';
+  const copyBtn = $('gate-copy-btn');
+  const mini = $('gate-mini');
+  const decoded = liff.getDecodedIDToken();
+  const sub = decoded && decoded.sub ? decoded.sub : '';
+
+  copyBtn.style.display = 'none';
+  mini.textContent = '';
+
+  if (reason === 'not_member'){
+    $('gate-title').textContent = '塾生登録が見つかりません';
+    $('gate-text').textContent = 'THINKINGの塾生として登録されているLINEアカウントで、公式LINEのトーク画面から開き直してください。';
+    if (sub){
+      mini.textContent = 'サポート用ID: ' + sub;
+      copyBtn.style.display = 'inline-block';
+      copyBtn.onclick = function(){ copyText(sub); };
+    }
+  } else if (reason === '休会'){
+    $('gate-title').textContent = 'ただいま休会中です';
+    $('gate-text').textContent = '復帰の際は公式LINEからご連絡ください。';
+  } else if (reason === '退会'){
+    $('gate-title').textContent = '登録が見つかりません';
+    $('gate-text').textContent = '再入会を希望する場合は、公式LINEからご連絡ください。';
+  } else if (!LIFF_ID || !API_URL){
+    $('gate-title').textContent = '準備中です';
+    $('gate-text').textContent = 'ポータルは現在セットアップ中です。しばらくお待ちください。';
+  } else {
+    $('gate-title').textContent = '読み込みに失敗しました';
+    $('gate-text').textContent = '電波の良い場所でページを開き直してみてください。直らない場合は公式LINEへ。';
+    if (sub) mini.textContent = 'サポート用ID: ' + sub;
+  }
+}
+
+function renderContents(items){
+  const list = $('contents-list');
+  if (!items || !items.length){
+    list.innerHTML = '<div class="placeholder-item"><span class="placeholder-dot"></span>準備中</div>';
+    return;
+  }
+  list.innerHTML = items.map(function(item){
+    const url = item.url ? ' data-url="' + esc(item.url) + '"' : '';
+    return '<button type="button" class="placeholder-item"' + url + ' style="width:100%;text-align:left;border-style:solid;background:#fff;cursor:pointer;font-family:inherit;">'
+      + '<span class="placeholder-dot"></span>'
+      + '<span>' + esc(item.title || '無題') + '</span>'
+      + '</button>';
+  }).join('');
+  list.querySelectorAll('[data-url]').forEach(function(el){
+    el.addEventListener('click', function(){
+      const url = el.dataset.url;
+      if (!url){ toast('準備中です'); return; }
+      liff.openWindow({ url: url, external: true });
+    });
+  });
+}
+
+function renderPortal(me){
+  const member = me.member || {};
+  const name = member.display_name || member.name || '塾生';
+  $('h-name').textContent = name + ' さん';
+  $('h-sub').textContent = member.grade ? member.grade : '';
+  $('h-status').textContent = member.member_status || '塾生';
+
+  const summary = [];
+  if (member.grade) summary.push('学年: ' + member.grade);
+  if (member.plan) summary.push('プラン: ' + member.plan);
+  $('mypage-summary').textContent = summary.length ? summary.join(' / ') : '登録情報を確認できました。';
+
+  if (me.contents) renderContents(me.contents);
+}
+
+function bindQuickNav(){
+  const links = document.querySelectorAll('.quicknav-pill');
+  links.forEach(function(a){
+    a.addEventListener('click', function(){
+      links.forEach(function(x){ x.classList.remove('is-active'); });
+      a.classList.add('is-active');
+    });
+  });
+}
+
+async function main(){
+  bindQuickNav();
+
+  if (!LIFF_ID || !API_URL){
+    $('screen-loading').style.display = 'none';
+    showGate(null);
+    return;
+  }
+
+  try{
+    await liff.init({ liffId: LIFF_ID });
+  }catch(e){
+    showGate(null);
+    return;
+  }
+
+  if (!liff.isLoggedIn()){
+    liff.login();
+    return;
+  }
+
+  idToken = liff.getIDToken();
+
+  let me;
+  try{
+    me = await api('me');
+  }catch(e){
+    showGate(null);
+    return;
+  }
+
+  if (!me || me.status !== 'ok'){
+    showGate(me);
+    return;
+  }
+
+  renderPortal(me);
+  $('screen-loading').style.display = 'none';
+  $('app').style.display = 'block';
+}
+
+main();
+</script>
+</body>
+</html>

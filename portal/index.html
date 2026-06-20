@@ -184,6 +184,8 @@
     white-space:nowrap;text-align:center;padding:9px 12px;background:#fff;border:1px solid var(--line);border-radius:9px}
   .sr-week-empty{font-size:13px;color:var(--muted);text-align:center;padding:10px 0}
   .sr-week-hint{font-size:10px;color:var(--muted);text-align:center;margin:8px 0 0;letter-spacing:.04em}
+  .sr-week-edit{text-align:center;margin-top:10px}
+  .sr-week-edit .link-btn{margin-top:0}
   .sr-checkin{margin-top:16px}
   .sr-name{text-align:center;font-weight:700;color:var(--navy);font-size:15px;margin-bottom:10px}
 
@@ -386,6 +388,9 @@
           <p class="sr-week-hint">← スワイプまたは曜日タブで切り替え →</p>
         </div>
       </details>
+      <p class="sr-week-edit">
+        <button type="button" id="sr-schedule-edit" class="link-btn">自習室入室時間登録の変更はこちら</button>
+      </p>
 
       <div class="sr-checkin">
         <div class="sr-name" id="sr-name">—</div>
@@ -425,6 +430,7 @@
 var LIFF_ID     = "2010454771-l3vZsfjz";                 // 既存のLIFF ID
 var GAS_URL     = "https://script.google.com/macros/s/AKfycbwNuxYxMqk5rv4LXBHmp9QnafbowzEdGgfJv0AcZUXNJoy3zn8pfbFqD_XG0E4f4lJm/exec";
 var LINE_OA_URL = "https://lin.ee/yJ8MFVb";              // 公式LINE（①THINKINGチャット）
+var SR_SCHEDULE_FORM_URL = "https://forms.gle/kbtgAaLP4tpZ3cuF8";
 /* ==================================================================== */
 
 var $ = function(id){ return document.getElementById(id); };
@@ -833,6 +839,11 @@ function loadStudyroom(){
     renderWeekSchedule(res.week || [], res.weekday || "");
   }).catch(function(){});
 }
+
+$("sr-schedule-edit").addEventListener("click", function(ev){
+  ev.preventDefault();
+  openExternal(SR_SCHEDULE_FORM_URL);
+});
 
 $("sr-enter").addEventListener("click", function(){
   var btn = this; btn.disabled = true; btn.textContent = "記録中…";

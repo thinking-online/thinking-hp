@@ -205,8 +205,8 @@
     background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 14px 16px;box-shadow:0 4px 16px -8px rgba(26,42,68,.08)}
   .quiz-card-subj{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.04em;padding:4px 10px;border-radius:999px;margin-bottom:10px;background:var(--paper);color:var(--navy)}
   .quiz-card-range{font-size:15px;font-weight:500;line-height:1.6;color:var(--ink);min-height:2.4em}
-  .quiz-card-mat{margin-top:10px;font-size:12px}
-  .quiz-card-mat a{color:var(--gold);font-weight:700;text-decoration:none}
+  .quiz-card-mat{display:flex;flex-direction:column;align-items:flex-start;gap:6px;margin-top:10px;font-size:12px}
+  .quiz-card-mat a{color:var(--gold);font-weight:700;text-decoration:none;line-height:1.45}
   .quiz-card-mat .none{color:var(--muted)}
   .quiz-card--en{border-top:3px solid #2a4a7f}.quiz-card--en .quiz-card-subj{color:#2a4a7f;background:rgba(42,74,127,.1)}
   .quiz-card--jp{border-top:3px solid #8b4a52}.quiz-card--jp .quiz-card-subj{color:#8b4a52;background:rgba(139,74,82,.1)}
@@ -868,6 +868,71 @@ $("sr-enter").addEventListener("click", function(){
 });
 
 /* ---- 小テスト範囲 ---- */
+function quizMaterialLabel(title, idx, total){
+  title = String(title || "").replace(/\s*›\s*$/, "").trim();
+  if (title && !/^https?:\/\//i.test(title)) return title;
+  return total > 1 ? ("教材" + (idx + 1)) : "教材を開く";
+}
+function quizMaterialItems(it){
+  if (Array.isArray(it.materials) && it.materials.length){
+    return it.materials.map(function(m, i, arr){
+      if (typeof m === "string") return { title: quizMaterialLabel("", i, arr.length), url: m };
+      return { title: quizMaterialLabel(m.title || m.label, i, arr.length), url: m.url };
+    }).filter(function(m){ return m.url; });
+  }
+  if (Array.isArray(it.materialUrls) && it.materialUrls.length){
+    return it.materialUrls.filter(Boolean).map(function(url, i, arr){
+      return { title: arr.length === 1 ? "教材を開く" : ("教材" + (i + 1)), url: url };
+    });
+  }
+  var pairs = [];
+  [["materialUrl", "materialTitle"], ["materialUrl2", "materialTitle2"]].forEach(function(keys){
+    if (it[keys[0]]) pairs.push({ title: it[keys[1]] || "", url: it[keys[0]] });
+  });
+  if (pairs.length){
+    return pairs.map(function(p, i, arr){
+      return { title: p.title || (arr.length === 1 ? "教材を開く" : ("教材" + (i + 1))), url: p.url };
+    });
+  }
+  var urls = quizSplitMaterialUrls(it.materialUrl);
+  if (urls.length){
+    return urls.map(function(url, i){
+      var title = "教材を開く";
+      if (urls.length > 1) title = "教材" + (i + 1);
+      else if (it.materialText && !/^指定教材なし/.test(it.materialText)) title = it.materialText;
+      return { title: title, url: url };
+    });
+  }
+  return [];
+}
+function quizSplitMaterialUrls(s){
+  if (!s) return [];
+  s = String(s).trim();
+  if (!s) return [];
+  if (/^https?:\/\/\S+$/.test(s)) return [s];
+  return s.split(/[\n,|]+/).map(function(u){ return u.trim(); }).filter(function(u){ return /^https?:\/\//.test(u); });
+}
+function appendQuizMaterials(parent, it){
+  var items = quizMaterialItems(it);
+  if (!items.length){
+    var span = document.createElement("span");
+    span.className = "none";
+    span.textContent = it.materialText || "指定教材なし";
+    parent.appendChild(span);
+    return;
+  }
+  items.forEach(function(item){
+    var a = document.createElement("a");
+    a.href = "#";
+    var label = item.title || "教材を開く";
+    a.textContent = /›/.test(label) ? label : (label + " ›");
+    a.addEventListener("click", function(ev){
+      ev.preventDefault();
+      openExternal(item.url);
+    });
+    parent.appendChild(a);
+  });
+}
 function quizSubjectTone(subject){
   var s = subject || "";
   if (/英/.test(s)) return "en";
@@ -962,21 +1027,7 @@ function renderQuizRange(res){
 
     var mat = document.createElement("div");
     mat.className = "quiz-card-mat";
-    if (it.materialUrl){
-      var a = document.createElement("a");
-      a.href = "#";
-      a.textContent = "教材を開く ›";
-      a.addEventListener("click", function(ev){
-        ev.preventDefault();
-        openExternal(it.materialUrl);
-      });
-      mat.appendChild(a);
-    } else {
-      var span = document.createElement("span");
-      span.className = "none";
-      span.textContent = it.materialText || "指定教材なし";
-      mat.appendChild(span);
-    }
+    appendQuizMaterials(mat, it);
     card.appendChild(mat);
     swipe.appendChild(card);
   });

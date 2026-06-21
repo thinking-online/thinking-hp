@@ -81,9 +81,19 @@
   @keyframes splash-flash{0%{opacity:0}28%{opacity:1}100%{opacity:0}}
 
   /* ---- 状態表示（エラー等）---- */
-  .screen{min-height:70vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:24px}
-  .crest{font-family:"Noto Serif JP",serif;font-weight:700;letter-spacing:.12em;color:var(--navy)}
-  .msg-sub{color:var(--muted);font-size:13px}
+  .screen{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;padding:24px;background:var(--paper)}
+  .screen::before{
+    content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:radial-gradient(120% 80% at 50% -10%, rgba(74,111,165,.14), transparent 55%), var(--paper);
+  }
+  .screen-brand{font-size:10px;letter-spacing:.28em;color:var(--gold);font-weight:700;margin-bottom:4px}
+  .crest{font-family:"Noto Serif JP",serif;font-weight:700;font-size:clamp(20px,5vw,24px);letter-spacing:.08em;color:var(--navy);line-height:1.45;max-width:18em}
+  .msg-sub{color:var(--muted);font-size:13px;line-height:1.75;max-width:22em}
+  .screen-card{
+    width:min(100%,320px);margin-top:8px;padding:18px 16px;background:#fff;border:1px solid var(--line);
+    border-radius:16px;box-shadow:var(--shadow);
+  }
+  .screen-card .btn{margin-top:0}
 
   @media (prefers-reduced-motion:reduce){
     .splash.boom .splash-pct,.splash.boom .splash-hud,.splash.boom::after,.splash.boom .roadmap-card,.splash.boom .splash-glow{animation:none!important}
@@ -239,9 +249,58 @@
   .you-badge{font-size:10px;background:var(--navy);color:#fff;border-radius:5px;padding:1px 7px;font-weight:700}
 
   /* ---- バインド画面 ---- */
-  .bind{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:24px 20px;margin-top:28px}
-  .bind h1{font-family:"Noto Serif JP",serif;font-size:20px;color:var(--navy);margin:0 0 6px}
-  .bind p{font-size:13px;color:var(--muted);margin:0 0 16px}
+  .bind-screen{
+    position:relative;min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;
+    padding:calc(20px + env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom));overflow:hidden;
+  }
+  .bind-bg{
+    position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(120% 80% at 50% -10%, rgba(74,111,165,.16), transparent 55%),
+      radial-gradient(80% 60% at 100% 100%, rgba(26,42,68,.06), transparent 50%),
+      var(--paper);
+  }
+  .bind-bg::after{
+    content:"";position:absolute;left:50%;top:18%;width:min(320px,88vw);aspect-ratio:1;
+    transform:translateX(-50%);border-radius:50%;
+    border:1px solid rgba(74,111,165,.12);opacity:.7;
+  }
+  .bind-inner{position:relative;z-index:1;width:100%;max-width:420px}
+  .bind-header{text-align:center;margin-bottom:22px}
+  .bind-brand{font-size:10px;letter-spacing:.28em;color:var(--gold);font-weight:700;margin:0 0 10px}
+  .bind-title{
+    margin:0;font-family:"Noto Serif JP",serif;font-size:clamp(24px,6vw,30px);font-weight:700;
+    color:var(--navy);letter-spacing:.06em;line-height:1.35;
+  }
+  .bind-lead{margin:10px 0 0;font-size:13px;color:var(--muted);line-height:1.75}
+  .bind-card{
+    background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);
+    padding:22px 20px 20px;
+  }
+  .bind-step{display:flex;align-items:center;gap:10px;margin-bottom:18px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+  .bind-step-num{
+    width:28px;height:28px;border-radius:999px;display:flex;align-items:center;justify-content:center;
+    background:var(--navy);color:#fff;font-size:11px;font-weight:700;letter-spacing:.04em;flex:none;
+  }
+  .bind-step-text{font-size:13px;font-weight:700;color:var(--navy);letter-spacing:.04em}
+  .bind-user{
+    display:flex;align-items:center;gap:8px;margin:-4px 0 14px;padding:10px 12px;
+    background:var(--paper);border:1px solid var(--line);border-radius:12px;
+  }
+  .bind-user-label{font-size:10px;font-weight:700;letter-spacing:.12em;color:var(--gold)}
+  .bind-user-name{font-size:13px;font-weight:500;color:var(--navy);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .bind-field label{display:block;font-size:11px;font-weight:700;color:var(--navy);margin-bottom:8px;letter-spacing:.12em}
+  .bind-input{
+    width:100%;padding:15px 16px;font-size:22px;font-weight:700;letter-spacing:.18em;text-align:center;
+    border:1.5px solid var(--line);border-radius:14px;background:#fff;font-family:"Noto Serif JP",serif;color:var(--navy);
+    transition:border-color .2s,box-shadow .2s;
+  }
+  .bind-input::placeholder{font-size:15px;letter-spacing:.08em;color:#b8c0cc;font-family:"Noto Sans JP",sans-serif;font-weight:500}
+  .bind-input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(74,111,165,.12)}
+  .bind-hint{margin:10px 0 0;font-size:11px;color:var(--muted);line-height:1.65;text-align:center}
+  .bind-submit{margin-top:18px}
+  .bind-err{text-align:center}
+  .bind-footnote{text-align:center;color:var(--muted);font-size:11px;letter-spacing:.08em;margin-top:28px;line-height:1.6}
   .field label{display:block;font-size:12px;font-weight:700;color:var(--navy);margin-bottom:6px;letter-spacing:.04em}
   .field input{width:100%;padding:13px 14px;font-size:16px;border:1.5px solid var(--line);border-radius:12px;background:#fff;font-family:inherit}
   .field input:focus{outline:none;border-color:var(--gold)}
@@ -255,9 +314,23 @@
 
   .footnote{text-align:center;color:var(--muted);font-size:11px;letter-spacing:.08em;margin-top:36px}
   [hidden]{display:none!important}
+
+  /* ---- プレビューバナー（?preview= 用）---- */
+  .preview-banner{
+    position:fixed;top:0;left:0;right:0;z-index:300;
+    padding:calc(6px + env(safe-area-inset-top)) 12px 6px;
+    background:rgba(26,42,68,.92);color:#eef1f6;text-align:center;
+    font-size:11px;font-weight:700;letter-spacing:.06em;
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  }
+  body.has-preview-banner .bind-screen{padding-top:calc(36px + env(safe-area-inset-top))}
+  body.has-preview-banner .wrap{padding-top:36px}
+  body.has-preview-banner .screen{padding-top:calc(36px + env(safe-area-inset-top))}
 </style>
 </head>
 <body>
+
+<div id="preview-banner" class="preview-banner" hidden>プレビューモード（見た目確認用・登録APIは動きません）</div>
 
 <!-- 読み込みスプラッシュ -->
 <div id="view-splash" class="splash" aria-live="polite" aria-busy="true">
@@ -290,28 +363,52 @@
 
 <!-- LINEから開いてもらう案内 -->
 <div id="view-needline" class="screen" hidden>
+  <p class="screen-brand">THINKING CAMPUS</p>
   <div class="crest">LINEから開いてください</div>
   <div class="msg-sub">このページはLINEアプリ内で開く必要があります。<br>下のボタンから公式LINEを開いて、もう一度アクセスしてください。</div>
-  <a id="oa-link" class="btn btn-line" style="max-width:280px" href="#">公式LINEを開く</a>
+  <div class="screen-card">
+    <a id="oa-link" class="btn btn-line" href="#">公式LINEを開く</a>
+  </div>
 </div>
 
 <!-- 識別番号の登録（自己バインド）-->
-<div id="view-bind" class="wrap" hidden>
-  <div class="bind">
-    <h1>はじめに、登録をします</h1>
-    <p>初回だけ、自分の識別番号を入力してください。次回からは自動で開きます。</p>
-    <div class="field">
-      <label for="sid">識別番号</label>
-      <input id="sid" inputmode="numeric" autocomplete="off" placeholder="例：1234">
+<div id="view-bind" class="bind-screen" hidden>
+  <div class="bind-bg" aria-hidden="true"></div>
+  <div class="bind-inner">
+    <header class="bind-header">
+      <p class="bind-brand">THINKING CAMPUS</p>
+      <h1 class="bind-title">初回登録</h1>
+      <p class="bind-lead">塾生専用ポータルを開くため、<br>識別番号を入力してください。</p>
+    </header>
+
+    <div class="bind-card">
+      <div class="bind-step">
+        <span class="bind-step-num">01</span>
+        <span class="bind-step-text">識別番号を入力</span>
+      </div>
+
+      <div id="bind-user" class="bind-user" hidden>
+        <span class="bind-user-label">LINE</span>
+        <span id="bind-dname" class="bind-user-name">—</span>
+      </div>
+
+      <div class="field bind-field">
+        <label for="sid">識別番号</label>
+        <input id="sid" class="bind-input" inputmode="numeric" autocomplete="off" placeholder="例：1234" maxlength="12">
+        <p class="bind-hint">THINKINGから案内された番号です。<br>登録後は次回から自動で開きます。</p>
+      </div>
+
+      <button id="bind-go" class="btn btn-primary bind-submit">登録して Campus を開く</button>
+      <div id="bind-err" class="err bind-err"></div>
     </div>
-    <button id="bind-go" class="btn btn-primary">登録して入る</button>
-    <div id="bind-err" class="err"></div>
+
+    <p class="bind-footnote">凡人でも、変われる。受験は根性じゃなく設計。</p>
   </div>
-  <div class="footnote">凡人でも、変われる。受験は根性じゃなく設計。</div>
 </div>
 
 <!-- 退塾済みなど -->
 <div id="view-blocked" class="screen" hidden>
+  <p class="screen-brand">THINKING CAMPUS</p>
   <div class="crest">ご利用ができません</div>
   <div class="msg-sub">現在このアカウントではポータルを開けません。<br>お心当たりがない場合はTHINKINGまでご連絡ください。</div>
 </div>
@@ -431,9 +528,67 @@ var LIFF_ID     = "2010454771-l3vZsfjz";                 // 既存のLIFF ID
 var GAS_URL     = "https://script.google.com/macros/s/AKfycbwNuxYxMqk5rv4LXBHmp9QnafbowzEdGgfJv0AcZUXNJoy3zn8pfbFqD_XG0E4f4lJm/exec";
 var LINE_OA_URL = "https://lin.ee/yJ8MFVb";              // 公式LINE（①THINKINGチャット）
 var SR_SCHEDULE_FORM_URL = "https://forms.gle/kbtgAaLP4tpZ3cuF8";
+var PREVIEW_KEY = "thinking-preview";
 /* ==================================================================== */
 
 var $ = function(id){ return document.getElementById(id); };
+function getPreview(){
+  var mode = qs("preview");
+  if (!mode || qs("key") !== PREVIEW_KEY) return null;
+  return {
+    mode: mode,
+    name: qs("name") || "テスト 太郎",
+    sid: qs("sid") || "1234",
+    err: qs("err") || "",
+    aspire: qs("aspire") || "○○大学 経済学部",
+    examDate: qs("exam") || "",
+    thinkingUrl: qs("sheet") || ""
+  };
+}
+function mockResolve_(pv){
+  return {
+    ok: true, bound: true, found: true,
+    sid: pv.sid, name: pv.name,
+    aspire: pv.aspire, examDate: pv.examDate,
+    thinkingUrl: pv.thinkingUrl, config: {}
+  };
+}
+function showPreviewBanner(){
+  document.body.classList.add("has-preview-banner");
+  $("preview-banner").hidden = false;
+}
+function startPreview_(pv){
+  PROFILE = { userId: "preview-user", displayName: pv.name };
+  showPreviewBanner();
+  if (pv.mode === "needline"){
+    hideSplash();
+    show("view-needline");
+    return;
+  }
+  if (pv.mode === "blocked"){
+    hideSplash();
+    show("view-blocked");
+    return;
+  }
+  if (pv.mode === "bind"){
+    hideSplash();
+    openBind(pv.err);
+    return;
+  }
+  if (pv.mode === "home"){
+    hideSplash();
+    renderHome(mockResolve_(pv));
+    return;
+  }
+  if (pv.mode === "splash"){
+    runSplashAnimation(Promise.resolve(null)).then(function(){
+      openBind(pv.err);
+    });
+    return;
+  }
+  hideSplash();
+  openBind("preview の値が不正です。bind / home / blocked / needline / splash のいずれかを指定してください。");
+}
 function show(id){
   ["view-needline","view-bind","view-blocked","view-home"]
     .forEach(function(v){ $(v).hidden = (v !== id); });
@@ -528,6 +683,8 @@ function runSplashAnimation(loadPromise){
 
 function start(){
   $("oa-link").href = LINE_OA_URL;
+  var pv = getPreview();
+  if (pv){ startPreview_(pv); return; }
 
   if (typeof liff === "undefined"){
     runSplashAnimation(Promise.resolve(null)).then(function(){
@@ -571,10 +728,27 @@ function openBind(errMsg){
   hideSplash();
   show("view-bind");
   $("bind-err").textContent = errMsg || "";
+  var userBox = $("bind-user");
+  var dname = PROFILE.displayName || "";
+  if (dname){
+    $("bind-dname").textContent = dname;
+    userBox.hidden = false;
+  } else {
+    userBox.hidden = true;
+  }
   var pre = qs("sid") || qs("id");        // Lステップ個別リンクの ?sid= を自動入力
-  if (pre) $("sid").value = pre;
+  var input = $("sid");
+  if (pre) input.value = pre;
+  setTimeout(function(){ input.focus(); }, 120);
 }
+$("sid").addEventListener("keydown", function(ev){
+  if (ev.key === "Enter"){ ev.preventDefault(); $("bind-go").click(); }
+});
 $("bind-go").addEventListener("click", function(){
+  if (getPreview()){
+    $("bind-err").textContent = "プレビューモードのため、登録APIは実行されません。";
+    return;
+  }
   var sid = ($("sid").value || "").trim();
   $("bind-err").textContent = "";
   if (!sid){ $("bind-err").textContent = "識別番号を入力してください。"; return; }
@@ -586,7 +760,7 @@ $("bind-go").addEventListener("click", function(){
       else { $("bind-err").textContent = (res && res.error) || "登録に失敗しました。"; }
     })
     .catch(function(){ $("bind-err").textContent = "通信に失敗しました。電波の良い場所で再度お試しください。"; })
-    .then(function(){ btn.disabled = false; btn.textContent = "登録して入る"; });
+    .then(function(){ btn.disabled = false; btn.textContent = "登録して Campus を開く"; });
 });
 
 /* ---- トップ画像 ---- */

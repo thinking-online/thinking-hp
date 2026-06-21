@@ -141,9 +141,11 @@
 
   /* ---- 志望校・カウントダウン ---- */
   .goal-card{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff;
-    border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow);text-align:center}
+    border-radius:var(--radius);padding:22px 20px;box-shadow:var(--shadow);text-align:center;overflow:hidden}
   .goal-eyebrow{font-size:11px;letter-spacing:.24em;color:var(--gold);font-weight:700}
-  .goal-name{font-family:"Noto Serif JP",serif;font-weight:700;font-size:19px;margin:5px 0 14px;line-height:1.45}
+  .goal-name{font-family:"Noto Serif JP",serif;font-weight:700;font-size:19px;margin:5px 0 14px;line-height:1.45;
+    word-break:break-word;overflow-wrap:anywhere}
+  .goal-name--muted{font-size:15px;opacity:.88;font-family:"Noto Sans JP",sans-serif;font-weight:500}
   .cd-num{font-family:"Noto Serif JP",serif;font-weight:700;line-height:1;
     display:flex;align-items:baseline;justify-content:center;gap:5px}
   #cd-days{font-size:64px;color:var(--gold);letter-spacing:.01em}
@@ -152,9 +154,23 @@
   .cd-date{font-size:13px;color:#fff;opacity:.92;margin-top:10px}
   .link-btn{background:none;border:none;color:var(--gold);font-family:inherit;font-size:12px;
     text-decoration:underline;cursor:pointer;margin-top:14px;padding:4px}
-  .setdate{text-align:left}
-  .setdate label{display:block;font-size:13px;font-weight:700;margin-bottom:8px}
-  .setdate input[type=date]{width:100%;padding:12px 14px;font-size:16px;border:none;border-radius:10px;font-family:inherit;color:var(--ink)}
+  .setdate{margin-top:2px;width:100%;max-width:100%;box-sizing:border-box}
+  .setdate-box{
+    width:100%;max-width:100%;box-sizing:border-box;text-align:left;
+    background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);
+    border-radius:14px;padding:16px 14px 14px;
+  }
+  .setdate-lead{margin:0 0 14px;font-size:12px;color:#b8c8dc;line-height:1.7}
+  .setdate label{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--gold);margin-bottom:8px}
+  .setdate input[type=date]{
+    display:block;width:100%;max-width:100%;min-width:0;box-sizing:border-box;
+    padding:12px 14px;font-size:16px;border:1.5px solid rgba(255,255,255,.22);
+    border-radius:12px;background:#fff;font-family:inherit;color:var(--ink);
+    -webkit-appearance:none;appearance:none;min-height:48px;
+  }
+  .setdate input[type=date]:focus{outline:none;border-color:var(--gold-light);box-shadow:0 0 0 3px rgba(138,174,212,.25)}
+  .setdate-submit{margin-top:12px}
+  .setdate-err{color:#fecaca;text-align:center;margin-top:10px;min-height:18px}
 
   /* ---- 汎用カード ---- */
   .card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
@@ -448,10 +464,13 @@
       </div>
 
       <div id="goal-setdate" class="setdate" hidden>
-        <label for="exam-date">第一志望の試験日を登録</label>
-        <input id="exam-date" type="date">
-        <button id="exam-save" class="btn btn-primary" style="margin-top:12px">登録する</button>
-        <div id="exam-err" class="err"></div>
+        <div class="setdate-box">
+          <p id="setdate-lead" class="setdate-lead">第一志望の試験日を登録すると、本番までのカウントダウンが表示されます。</p>
+          <label for="exam-date">試験日</label>
+          <input id="exam-date" type="date">
+          <button id="exam-save" class="btn btn-primary setdate-submit">試験日を登録する</button>
+          <div id="exam-err" class="err setdate-err"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -826,9 +845,16 @@ function openExternal(url){
 
 /* ---- 志望校・カウントダウン ---- */
 function setGoal(aspire, examDate){
-  $("goal-name").textContent = aspire ? aspire : "志望校が未登録です（本部にて設定）";
+  var nameEl = $("goal-name");
+  if (aspire){
+    nameEl.textContent = aspire;
+    nameEl.classList.remove("goal-name--muted");
+  } else {
+    nameEl.textContent = "志望校が未登録です（本部にて設定）";
+    nameEl.classList.add("goal-name--muted");
+  }
   if (examDate) showCountdown(examDate);
-  else          showSetDate("");
+  else          showSetDate("", false);
 }
 
 function showCountdown(examDate){
@@ -844,15 +870,21 @@ function showCountdown(examDate){
     days.textContent = "—"; unit.hidden = true; label.textContent = "試験日を更新してください";
   }
   $("cd-date").textContent = formatJp(examDate);
-  $("cd-edit").onclick = function(){ showSetDate(examDate); };
+  $("cd-edit").onclick = function(){ showSetDate(examDate, true); };
 }
 
-function showSetDate(prefill){
+function showSetDate(prefill, isEdit){
   $("goal-countdown").hidden = true;
   $("goal-setdate").hidden = false;
   $("exam-err").textContent = "";
+  var lead = $("setdate-lead");
+  if (lead){
+    lead.textContent = isEdit
+      ? "試験日を変更できます。保存するとカウントダウンが更新されます。"
+      : "第一志望の試験日を登録してください。登録すると、本番までのカウントダウンが表示されます。";
+  }
   var inp = $("exam-date");
-  if (prefill) inp.value = prefill;
+  inp.value = prefill || "";
 }
 
 $("exam-save").addEventListener("click", function(){
@@ -867,7 +899,7 @@ $("exam-save").addEventListener("click", function(){
       else { $("exam-err").textContent = (res && res.error) || "登録に失敗しました。"; }
     })
     .catch(function(){ $("exam-err").textContent = "通信に失敗しました。再度お試しください。"; })
-    .then(function(){ btn.disabled = false; btn.textContent = "登録する"; });
+    .then(function(){ btn.disabled = false; btn.textContent = "試験日を登録する"; });
 });
 
 function daysUntil(s){

@@ -158,3 +158,23 @@
   from = "/king-letter-202506-01/*"
   to = "/lp/king-letter-202506-01/:splat"
   status = 200
+
+# LP: THINKING保護者通信アーカイブ — /parent で公開
+[[redirects]]
+  from = "/parent"
+  to = "/lp/parent/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent/*"
+  to = "/lp/parent/:splat"
+  status = 200
+
+# LP: THINKING保護者通信 6月 vol.01 — /parent-202506-01 で公開
+[[redirects]]
+  from = "/parent-202506-01"
+  to = "/lp/parent-202506-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202506-01/*"
+  to = "/lp/parent-202506-01/:splat"
+  status = 200

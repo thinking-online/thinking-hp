@@ -178,3 +178,93 @@
   from = "/parent-202506-01/*"
   to = "/lp/parent-202506-01/:splat"
   status = 200
+
+# LP: THINKING保護者通信 7月〜5月（vol.02〜12）
+[[redirects]]
+  from = "/parent-202507-01"
+  to = "/lp/parent-202507-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202507-01/*"
+  to = "/lp/parent-202507-01/:splat"
+  status = 200
+[[redirects]]
+  from = "/parent-202508-01"
+  to = "/lp/parent-202508-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202508-01/*"
+  to = "/lp/parent-202508-01/:splat"
+  status = 200
+[[redirects]]
+  from = "/parent-202509-01"
+  to = "/lp/parent-202509-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202509-01/*"
+  to = "/lp/parent-202509-01/:splat"
+  status = 200
+[[redirects]]
+  from = "/parent-202510-01"
+  to = "/lp/parent-202510-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202510-01/*"
+  to = "/lp/parent-202510-01/:splat"
+  status = 200
+[[redirects]]
+  from = "/parent-202511-01"
+  to = "/lp/parent-202511-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202511-01/*"
+  to = "/lp/parent-202511-01/:splat"
+  status = 200
+[[redirects]]
+  from = "/parent-202512-01"
+  to = "/lp/parent-202512-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202512-01/*"
+  to = "/lp/parent-202512-01/:splat"
+  status = 200
+[[redirects]]
+  from = "/parent-202601-01"
+  to = "/lp/parent-202601-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202601-01/*"
+  to = "/lp/parent-202601-01/:splat"
+  status = 200
+[[redirects]]
+  from = "/parent-202602-01"
+  to = "/lp/parent-202602-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202602-01/*"
+  to = "/lp/parent-202602-01/:splat"
+  status = 200
+[[redirects]]
+  from = "/parent-202603-01"
+  to = "/lp/parent-202603-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202603-01/*"
+  to = "/lp/parent-202603-01/:splat"
+  status = 200
+[[redirects]]
+  from = "/parent-202604-01"
+  to = "/lp/parent-202604-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202604-01/*"
+  to = "/lp/parent-202604-01/:splat"
+  status = 200
+[[redirects]]
+  from = "/parent-202605-01"
+  to = "/lp/parent-202605-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent-202605-01/*"
+  to = "/lp/parent-202605-01/:splat"
+  status = 200

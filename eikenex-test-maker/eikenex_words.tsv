@@ -1,0 +1,1900 @@
+1	last
+2	affect
+3	claim
+4	ship
+5	issue
+6	purchase
+7	occur
+8	deal
+9	consume
+10	present
+11	fire
+12	regard
+13	fine
+14	transfer
+15	decline
+16	eliminate
+17	indicate
+18	ensure
+19	expand
+20	address
+21	identify
+22	construct
+23	invest
+24	obtain
+25	struggle
+26	counter
+27	associate
+28	register
+29	reveal
+30	species
+31	diet
+32	site
+33	cell
+34	facility
+35	practice
+36	resident
+37	option
+38	organ
+39	critic
+40	region
+41	tax
+42	access
+43	virus
+44	bill
+45	evidence
+46	attempt
+47	account
+48	theory
+49	factor
+50	stock
+51	chemical
+52	media
+53	income
+54	supply
+55	shortage
+56	poverty
+57	criminal
+58	budget
+59	authority
+60	genome
+61	atmosphere
+62	aid
+63	measure
+64	subject
+65	decade
+66	weapon
+67	nutrient
+68	expense
+69	structure
+70	adolescent
+71	procedure
+72	minimum
+73	fuel
+74	resource
+75	regulation
+76	contract
+77	insurance
+78	employment
+79	ban
+80	vehicle
+81	soil
+82	cargo
+83	aircraft
+84	current
+85	political
+86	significant
+87	effective
+88	military
+89	due
+90	essential
+91	illegal
+92	immune
+93	numerous
+94	extreme
+95	general
+96	agricultural
+97	overall
+98	additional
+99	entire
+100	severe
+101	alter
+102	adopt
+103	vote
+104	determine
+105	enable
+106	conduct
+107	direct
+108	absorb
+109	imply
+110	operate
+111	demonstrate
+112	boost
+113	prove
+114	monitor
+115	defeat
+116	protest
+117	target
+118	preserve
+119	oppose
+120	migrate
+121	analyze
+122	discourage
+123	confirm
+124	intend
+125	predict
+126	extend
+127	figure
+128	transportation
+129	institution
+130	theft
+131	candidate
+132	mammal
+133	economist
+134	protein
+135	immigrant
+136	property
+137	fund
+138	habitat
+139	symptom
+140	eruption
+141	quantity
+142	ad
+143	saving
+144	territory
+145	threat
+146	sufferer
+147	emission
+148	executive
+149	strategy
+150	riot
+151	district
+152	election
+153	medication
+154	breed
+155	conflict
+156	productivity
+157	organism
+158	representative
+159	warehouse
+160	refund
+161	tuition
+162	range
+163	victim
+164	dose
+165	mainland
+166	waterfall
+167	satellite
+168	evolution
+169	prey
+170	bystander
+171	creature
+172	civilization
+173	tribe
+174	permission
+175	barrier
+176	wage
+177	drone
+178	appearance
+179	embassy
+180	skeleton
+181	wildlife
+182	potential
+183	limited
+184	rural
+185	advanced
+186	beneficial
+187	genetic
+188	radical
+189	hostile
+190	fit
+191	long-term
+192	Arctic
+193	minor
+194	risky
+195	complex
+196	competitive
+197	immediate
+198	religious
+199	related
+200	affordable
+201	donate
+202	lessen
+203	manufacture
+204	commute
+205	exaggerate
+206	suspect
+207	acquire
+208	reintroduce
+209	reschedule
+210	adapt
+211	generate
+212	guarantee
+213	dump
+214	update
+215	classify
+216	acknowledge
+217	enforce
+218	renew
+219	overlook
+220	evaluate
+221	commit
+222	argument
+223	archaeologist
+224	reputation
+225	fossil
+226	status
+227	contrast
+228	workplace
+229	equality
+230	colleague
+231	assistance
+232	luxury
+233	outbreak
+234	council
+235	pottery
+236	assignment
+237	particle
+238	radiation
+239	priority
+240	content
+241	destination
+242	mine
+243	injury
+244	lottery
+245	feature
+246	labor
+247	diabetes
+248	bulb
+249	resume
+250	mud
+251	psychology
+252	corporation
+253	ecosystem
+254	promotion
+255	administration
+256	complaint
+257	debt
+258	requirement
+259	workforce
+260	preference
+261	refugee
+262	inhabitant
+263	subscription
+264	recipient
+265	shift
+266	vessel
+267	ingredient
+268	qualified
+269	widespread
+270	alternative
+271	harsh
+272	enormous
+273	specific
+274	artificial
+275	toxic
+276	flexible
+277	latest
+278	former
+279	capable
+280	practical
+281	mechanical
+282	federal
+283	aggressive
+284	adequate
+285	unexpected
+286	attractive
+287	sufficient
+288	costly
+289	eventually
+290	otherwise
+291	previously
+292	relatively
+293	consequently
+294	constantly
+295	typically
+296	barely
+297	despite
+298	per
+299	beneath
+300	whereas
+301	post
+302	reject
+303	consult
+304	obey
+305	engage
+306	restore
+307	colonize
+308	interact
+309	inspire
+310	sue
+311	estimate
+312	strengthen
+313	carve
+314	convince
+315	propose
+316	blame
+317	collapse
+318	import
+319	load
+320	pollute
+321	spot
+322	prescription
+323	duty
+324	union
+325	concept
+326	root
+327	survival
+328	maintenance
+329	formation
+330	educator
+331	kidney
+332	nutrition
+333	brand
+334	storage
+335	firm
+336	statistics
+337	toll
+338	tip
+339	CEO
+340	circumstance
+341	outsider
+342	reduction
+343	settlement
+344	divorce
+345	likelihood
+346	livestock
+347	possession
+348	plot
+349	category
+350	welfare
+351	moisture
+352	obesity
+353	grant
+354	layer
+355	secretary
+356	anxiety
+357	ownership
+358	foundation
+359	division
+360	establishment
+361	conservation
+362	murder
+363	presence
+364	paradox
+365	prisoner
+366	surgeon
+367	frequency
+368	port
+369	reception
+370	coworker
+371	rust
+372	athletics
+373	voyage
+374	ecologist
+375	soul
+376	isolated
+377	biased
+378	multiple
+379	critical
+380	remote
+381	encouraging
+382	underground
+383	stable
+384	domestic
+385	shallow
+386	willing
+387	superior
+388	profitable
+389	solid
+390	tremendous
+391	intellectual
+392	chief
+393	steady
+394	evil
+395	coastal
+396	dairy
+397	digestive
+398	loyal
+399	sensory
+400	fancy
+401	spoil
+402	stimulate
+403	distract
+404	bargain
+405	emerge
+406	browse
+407	define
+408	adjust
+409	deserve
+410	undergo
+411	contradict
+412	withdraw
+413	accompany
+414	infect
+415	rebel
+416	convert
+417	calculate
+418	utilize
+419	admit
+420	punish
+421	approve
+422	owe
+423	proceed
+424	navigate
+425	postpone
+426	swallow
+427	tailor
+428	overhear
+429	consequence
+430	application
+431	workout
+432	obstacle
+433	treaty
+434	deforestation
+435	infrastructure
+436	contribution
+437	congestion
+438	exposure
+439	blow
+440	participation
+441	crisis
+442	ancestor
+443	architect
+444	existence
+445	deposit
+446	finance
+447	awareness
+448	intake
+449	witness
+450	coverage
+451	lawsuit
+452	session
+453	means
+454	pioneer
+455	satisfaction
+456	basis
+457	element
+458	phenomenon
+459	scale
+460	journal
+461	grain
+462	continent
+463	headquarters
+464	globalization
+465	brochure
+466	inspection
+467	attendance
+468	copper
+469	dozen
+470	flu
+471	burial
+472	mold
+473	patch
+474	diagram
+475	placement
+476	shame
+477	wheelchair
+478	experienced
+479	initial
+480	mainstream
+481	appropriate
+482	fake
+483	alert
+484	fatal
+485	nutritious
+486	sophisticated
+487	automatic
+488	raw
+489	slight
+490	man-made
+491	aging
+492	spiritual
+493	endangered
+494	sticky
+495	fertile
+496	elsewhere
+497	altogether
+498	strictly
+499	beforehand
+500	likewise
+501	detect
+502	combat
+503	pose
+504	emphasize
+505	highlight
+506	resist
+507	exceed
+508	relocate
+509	disprove
+510	crawl
+511	foster
+512	harass
+513	magnify
+514	sneak
+515	stray
+516	worsen
+517	advocate
+518	evacuate
+519	verify
+520	abuse
+521	scatter
+522	endorse
+523	modify
+524	penetrate
+525	conform
+526	leave
+527	tissue
+528	gut
+529	lightning
+530	camel
+531	antioxidant
+532	disorder
+533	cattle
+534	oath
+535	monument
+536	heating
+537	germ
+538	legend
+539	auditorium
+540	therapy
+541	heritage
+542	invasion
+543	instruction
+544	extinction
+545	creativity
+546	plantation
+547	drought
+548	wealth
+549	reminder
+550	inquiry
+551	investigation
+552	boundary
+553	compartment
+554	substitute
+555	hybrid
+556	characteristic
+557	routine
+558	edge
+559	incident
+560	clue
+561	removal
+562	outcome
+563	altitude
+564	closure
+565	compound
+566	surplus
+567	vaccine
+568	reference
+569	obligation
+570	ritual
+571	mean
+572	coral
+573	novel
+574	relevant
+575	efficient
+576	fragile
+577	impressive
+578	offensive
+579	distinct
+580	temporary
+581	arrogant
+582	spacious
+583	reasonable
+584	substantial
+585	disabled
+586	straightforward
+587	tame
+588	mandatory
+589	edible
+590	outstanding
+591	deadly
+592	petty
+593	definitely
+594	roughly
+595	virtually
+596	apparently
+597	unfairly
+598	briefly
+599	aside
+600	legally
+601	resort
+602	submit
+603	originate
+604	regret
+605	cooperate
+606	revise
+607	restrict
+608	occupy
+609	fade
+610	relieve
+611	suppress
+612	starve
+613	scratch
+614	unite
+615	grip
+616	surrender
+617	twist
+618	remodel
+619	triple
+620	drown
+621	lean
+622	soak
+623	hover
+624	interrupt
+625	socialize
+626	termite
+627	microbe
+628	beverage
+629	paperwork
+630	descendant
+631	sculpture
+632	handout
+633	replacement
+634	minister
+635	stream
+636	predator
+637	observer
+638	commission
+639	committee
+640	junk
+641	departure
+642	description
+643	supervisor
+644	guidance
+645	landscape
+646	crew
+647	drain
+648	stereotype
+649	edition
+650	graphic
+651	pathway
+652	reunion
+653	cliff
+654	coordinator
+655	depth
+656	liver
+657	monopoly
+658	usage
+659	chart
+660	expectancy
+661	nowhere
+662	courthouse
+663	cove
+664	dock
+665	ministry
+666	inflammation
+667	cholesterol
+668	gender
+669	depression
+670	stem
+671	personnel
+672	controversy
+673	recognition
+674	applicant
+675	anthropologist
+676	sewage
+677	acceptable
+678	nuclear
+679	moral
+680	marine
+681	conventional
+682	awful
+683	consistent
+684	primitive
+685	mature
+686	unfamiliar
+687	impractical
+688	unpredictable
+689	misleading
+690	plentiful
+691	Mediterranean
+692	unsafe
+693	bare
+694	feeble
+695	horrible
+696	scenic
+697	supplementary
+698	nosy
+699	intermediate
+700	universal
+701	capture
+702	arise
+703	implement
+704	reproduce
+705	seize
+706	dominate
+707	complicate
+708	scan
+709	negotiate
+710	illustrate
+711	encounter
+712	confine
+713	transmit
+714	administer
+715	ease
+716	resume
+717	pursue
+718	decay
+719	shrink
+720	cherish
+721	launch
+722	accommodate
+723	withstand
+724	halt
+725	transform
+726	transplant
+727	retail
+728	abandon
+729	developer
+730	circulation
+731	appliance
+732	bond
+733	circuit
+734	innovation
+735	infant
+736	transaction
+737	celebrity
+738	checkup
+739	makeup
+740	respondent
+741	well-being
+742	flaw
+743	strain
+744	rivalry
+745	publicity
+746	consent
+747	addiction
+748	profession
+749	sacrifice
+750	nerve
+751	assumption
+752	context
+753	era
+754	trait
+755	voucher
+756	draft
+757	blaze
+758	currency
+759	stance
+760	fluid
+761	dispute
+762	counterpart
+763	perception
+764	custody
+765	venue
+766	dread
+767	incentive
+768	disgust
+769	province
+770	proponent
+771	commercial
+772	excessive
+773	vulnerable
+774	protective
+775	secure
+776	obvious
+777	reluctant
+778	confident
+779	intelligent
+780	barren
+781	epidemic
+782	reliable
+783	curious
+784	hasty
+785	behavioral
+786	bulky
+787	faulty
+788	hectic
+789	knowledgeable
+790	tense
+791	intact
+792	comprehensive
+793	hesitant
+794	scarce
+795	defensive
+796	permanently
+797	nonetheless
+798	primarily
+799	intentionally
+800	abruptly
+801	outsource
+802	applaud
+803	bribe
+804	replicate
+805	stroll
+806	swell
+807	uphold
+808	vomit
+809	expire
+810	recruit
+811	enhance
+812	accumulate
+813	designate
+814	conceal
+815	disregard
+816	accelerate
+817	revive
+818	enact
+819	exert
+820	leak
+821	jail
+822	reform
+823	declare
+824	outline
+825	annoy
+826	interfere
+827	nest
+828	founder
+829	biologist
+830	arrangement
+831	landfill
+832	trunk
+833	principle
+834	series
+835	independence
+836	exploration
+837	justice
+838	humanity
+839	involvement
+840	accounting
+841	discrimination
+842	inequality
+843	master
+844	millennium
+845	refusal
+846	wound
+847	absence
+848	distribution
+849	wilderness
+850	concentration
+851	craft
+852	crust
+853	basement
+854	janitor
+855	prejudice
+856	prosperity
+857	robbery
+858	warranty
+859	appetite
+860	bullet
+861	preparation
+862	citizenship
+863	stale
+864	disadvantaged
+865	ongoing
+866	sturdy
+867	unauthorized
+868	verbal
+869	weary
+870	equivalent
+871	intense
+872	consecutive
+873	noticeable
+874	crucial
+875	electrical
+876	steep
+877	civil
+878	supreme
+879	elite
+880	broad
+881	industrial
+882	allied
+883	external
+884	mere
+885	latter
+886	presidential
+887	ethical
+888	realistic
+889	harmless
+890	underlying
+891	urgent
+892	complimentary
+893	eager
+894	loudly
+895	accordingly
+896	occasionally
+897	smoothly
+898	frankly
+899	notably
+900	continuously
+901	compel
+902	distinguish
+903	heighten
+904	ruin
+905	equip
+906	export
+907	glance
+908	notify
+909	overdo
+910	pierce
+911	overestimate
+912	raid
+913	recall
+914	simplify
+915	wrinkle
+916	conspire
+917	imitate
+918	inhale
+919	overrate
+920	sympathize
+921	glide
+922	kidnap
+923	pretend
+924	simmer
+925	thaw
+926	unfold
+927	detain
+928	puncture
+929	strangle
+930	hygiene
+931	oppression
+932	collaboration
+933	harbor
+934	lawn
+935	pedestrian
+936	racism
+937	summit
+938	bug
+939	dirt
+940	maternity
+941	stroke
+942	tale
+943	certainty
+944	imbalance
+945	incidence
+946	pit
+947	texture
+948	thumb
+949	undergraduate
+950	wisdom
+951	bride
+952	dictator
+953	signature
+954	testament
+955	attachment
+956	bachelor
+957	blister
+958	blockade
+959	condo
+960	invoice
+961	leisure
+962	meditation
+963	procession
+964	unrest
+965	equator
+966	exhausted
+967	problematic
+968	desirable
+969	geological
+970	rash
+971	solitary
+972	uneven
+973	antique
+974	dense
+975	economical
+976	fictional
+977	gradual
+978	intimate
+979	lengthy
+980	ultimate
+981	victorious
+982	witty
+983	blurry
+984	exceptional
+985	finite
+986	on-the-job
+987	vacant
+988	cheery
+989	cowardly
+990	immeasurable
+991	impaired
+992	impassable
+993	inactive
+994	inconvenient
+995	superstitious
+996	unpleasant
+997	wicked
+998	ecological
+999	imaginary
+1000	ripe
+1001	disguise
+1002	curb
+1003	restrain
+1004	stumble
+1005	diminish
+1006	rotate
+1007	compress
+1008	decode
+1009	offset
+1010	bid
+1011	burst
+1012	overtake
+1013	retain
+1014	litter
+1015	prohibit
+1016	discipline
+1017	yield
+1018	sweep
+1019	dictate
+1020	inject
+1021	urge
+1022	mimic
+1023	roam
+1024	assess
+1025	boast
+1026	drag
+1027	repay
+1028	overthrow
+1029	fulfill
+1030	doom
+1031	affiliate
+1032	assault
+1033	testimony
+1034	errand
+1035	friction
+1036	coalition
+1037	influx
+1038	curse
+1039	app
+1040	visibility
+1041	fabric
+1042	collision
+1043	dioxide
+1044	orbit
+1045	trial
+1046	literacy
+1047	scheme
+1048	completion
+1049	expertise
+1050	diploma
+1051	livelihood
+1052	motive
+1053	recession
+1054	surrounding
+1055	fortune
+1056	token
+1057	trace
+1058	venture
+1059	physician
+1060	perspective
+1061	physics
+1062	legislation
+1063	barn
+1064	daring
+1065	transparent
+1066	tragic
+1067	sinister
+1068	striking
+1069	plural
+1070	vital
+1071	sensitive
+1072	remarkable
+1073	minimal
+1074	bankrupt
+1075	authentic
+1076	moderate
+1077	alien
+1078	prompt
+1079	random
+1080	decisive
+1081	inevitable
+1082	acid
+1083	climatic
+1084	incredible
+1085	precise
+1086	invaluable
+1087	stern
+1088	indifferent
+1089	charitable
+1090	massive
+1091	comparable
+1092	irrational
+1093	cynical
+1094	overly
+1095	literally
+1096	voluntarily
+1097	technically
+1098	wholly
+1099	approximately
+1100	uniquely
+1101	bewilder
+1102	clutch
+1103	discard
+1104	enlist
+1105	heed
+1106	liberate
+1107	overlap
+1108	reconstruct
+1109	shriek
+1110	sprain
+1111	resent
+1112	thrive
+1113	embrace
+1114	excel
+1115	enroll
+1116	retrieve
+1117	degrade
+1118	reconcile
+1119	contaminate
+1120	disrupt
+1121	divert
+1122	grumble
+1123	provoke
+1124	outweigh
+1125	crave
+1126	sustain
+1127	disclose
+1128	tempt
+1129	resign
+1130	dismiss
+1131	surpass
+1132	bounce
+1133	bureau
+1134	dependency
+1135	discomfort
+1136	drawback
+1137	feast
+1138	hydrogen
+1139	modernization
+1140	objective
+1141	poll
+1142	ration
+1143	revenue
+1144	scholarship
+1145	upbringing
+1146	compliment
+1147	excerpt
+1148	faith
+1149	segment
+1150	downturn
+1151	temper
+1152	fragment
+1153	intersection
+1154	anarchy
+1155	breakup
+1156	privilege
+1157	exemption
+1158	monarch
+1159	narrative
+1160	sensation
+1161	apprentice
+1162	chore
+1163	dehydration
+1164	questionable
+1165	outdated
+1166	forthcoming
+1167	gross
+1168	overdue
+1169	contemporary
+1170	drastic
+1171	conditional
+1172	subjective
+1173	exotic
+1174	intensive
+1175	obscure
+1176	tedious
+1177	exclusive
+1178	decent
+1179	considerate
+1180	durable
+1181	perpetual
+1182	proficient
+1183	acoustic
+1184	biographical
+1185	botanical
+1186	brutal
+1187	commendable
+1188	desperate
+1189	extravagant
+1190	filthy
+1191	serene
+1192	valid
+1193	inherent
+1194	merely
+1195	somehow
+1196	subsequently
+1197	deliberately
+1198	gently
+1199	via
+1200	alongside
+1201	portray
+1202	dispatch
+1203	quote
+1204	amend
+1205	betray
+1206	wither
+1207	omit
+1208	fabricate
+1209	violate
+1210	allege
+1211	integrate
+1212	underestimate
+1213	escort
+1214	facilitate
+1215	initiate
+1216	convey
+1217	populate
+1218	reinforce
+1219	attain
+1220	cheat
+1221	deceive
+1222	frustrate
+1223	subsidize
+1224	alternate
+1225	dedicate
+1226	endeavor
+1227	intrigue
+1228	soar
+1229	tease
+1230	confer
+1231	forbid
+1232	nod
+1233	oblige
+1234	discontent
+1235	disposal
+1236	exile
+1237	foe
+1238	itinerary
+1239	persecution
+1240	publication
+1241	riddle
+1242	sanitation
+1243	component
+1244	quota
+1245	cuisine
+1246	detour
+1247	inmate
+1248	fatigue
+1249	uproar
+1250	coincidence
+1251	correspondence
+1252	ballot
+1253	competence
+1254	enterprise
+1255	hazard
+1256	explosion
+1257	famine
+1258	acceptance
+1259	leftover
+1260	apprehension
+1261	wreck
+1262	landmark
+1263	dweller
+1264	geometry
+1265	standby
+1266	diversity
+1267	accuracy
+1268	tap
+1269	brick
+1270	bay
+1271	lenient
+1272	stubborn
+1273	clumsy
+1274	perilous
+1275	adverse
+1276	persistent
+1277	outrageous
+1278	skeptical
+1279	legitimate
+1280	corrupt
+1281	experimental
+1282	improper
+1283	spontaneous
+1284	unconditional
+1285	counterfeit
+1286	dizzy
+1287	sustainable
+1288	democratic
+1289	conservative
+1290	fundamental
+1291	ambitious
+1292	concrete
+1293	cruel
+1294	inferior
+1295	ample
+1296	inaccurate
+1297	inadequate
+1298	inappropriate
+1299	uncertain
+1300	vague
+1301	retreat
+1302	revolt
+1303	deflect
+1304	demote
+1305	despise
+1306	grasp
+1307	summon
+1308	expel
+1309	redeem
+1310	comprise
+1311	prevail
+1312	eject
+1313	falsify
+1314	obstruct
+1315	depict
+1316	tremble
+1317	confess
+1318	stare
+1319	ache
+1320	reflect
+1321	assert
+1322	impose
+1323	interpret
+1324	devote
+1325	deteriorate
+1326	contemplate
+1327	delegate
+1328	propel
+1329	recede
+1330	scrape
+1331	smash
+1332	scold
+1333	amuse
+1334	overhaul
+1335	herd
+1336	bait
+1337	petition
+1338	ransom
+1339	fragrance
+1340	insight
+1341	conquest
+1342	sincerity
+1343	tariff
+1344	sanction
+1345	sphere
+1346	outcast
+1347	affair
+1348	scandal
+1349	allergy
+1350	destruction
+1351	peasant
+1352	burden
+1353	faculty
+1354	tactics
+1355	fare
+1356	manner
+1357	correlation
+1358	weed
+1359	command
+1360	quarter
+1361	availability
+1362	caution
+1363	prevention
+1364	reptile
+1365	fate
+1366	inclination
+1367	scorn
+1368	contempt
+1369	domain
+1370	pillar
+1371	tender
+1372	awkward
+1373	fierce
+1374	peculiar
+1375	genuine
+1376	vigorous
+1377	gloomy
+1378	medieval
+1379	subtle
+1380	rigid
+1381	coarse
+1382	humble
+1383	slack
+1384	trivial
+1385	mutual
+1386	redundant
+1387	premature
+1388	attentive
+1389	integral
+1390	memorable
+1391	persuasive
+1392	prevalent
+1393	unaware
+1394	worthwhile
+1395	amazing
+1396	eligible
+1397	vicious
+1398	invisible
+1399	invalid
+1400	rotten
+1401	plague
+1402	sponsor
+1403	honor
+1404	remark
+1405	incorporate
+1406	resolve
+1407	sway
+1408	inherit
+1409	pile
+1410	renovate
+1411	maximize
+1412	uncover
+1413	mislead
+1414	opt
+1415	outnumber
+1416	presume
+1417	refine
+1418	stir
+1419	strive
+1420	thrill
+1421	tighten
+1422	arouse
+1423	buzz
+1424	converge
+1425	deduct
+1426	disconnect
+1427	gossip
+1428	wander
+1429	suck
+1430	dye
+1431	trespass
+1432	graze
+1433	entrust
+1434	peer
+1435	molecule
+1436	meantime
+1437	merit
+1438	prospect
+1439	chatter
+1440	funeral
+1441	methodology
+1442	bundle
+1443	burglar
+1444	canyon
+1445	duration
+1446	fountain
+1447	genius
+1448	grassland
+1449	interval
+1450	longevity
+1451	mode
+1452	needle
+1453	organizer
+1454	rehearsal
+1455	servant
+1456	sociology
+1457	spectacle
+1458	norm
+1459	certificate
+1460	vice
+1461	knot
+1462	rubber
+1463	asteroid
+1464	syndrome
+1465	detention
+1466	distress
+1467	ignition
+1468	esteem
+1469	hospitality
+1470	legacy
+1471	sane
+1472	doubtful
+1473	favorable
+1474	generous
+1475	hollow
+1476	internal
+1477	interpersonal
+1478	staple
+1479	tolerant
+1480	folk
+1481	furious
+1482	ironic
+1483	pale
+1484	pregnant
+1485	rewarding
+1486	sacred
+1487	terrific
+1488	abridged
+1489	dull
+1490	faint
+1491	irresponsible
+1492	notorious
+1493	recurrent
+1494	irresistible
+1495	binding
+1496	dejected
+1497	fictitious
+1498	gracious
+1499	upcoming
+1500	abundant
+1501	grind
+1502	archive
+1503	devise
+1504	precede
+1505	horrify
+1506	lodge
+1507	mediate
+1508	mingle
+1509	perspire
+1510	concede
+1511	hinder
+1512	waver
+1513	formulate
+1514	exhale
+1515	rebound
+1516	gratify
+1517	pledge
+1518	fasten
+1519	relay
+1520	align
+1521	ascend
+1522	gaze
+1523	adore
+1524	chill
+1525	curve
+1526	deflate
+1527	detach
+1528	enclose
+1529	fetch
+1530	proclaim
+1531	forge
+1532	outburst
+1533	dimension
+1534	swarm
+1535	sequel
+1536	artifact
+1537	mercy
+1538	successor
+1539	triumph
+1540	clause
+1541	analogy
+1542	downfall
+1543	fusion
+1544	fracture
+1545	menace
+1546	setback
+1547	empathy
+1548	tumble
+1549	diameter
+1550	momentum
+1551	troop
+1552	pharmacy
+1553	nightmare
+1554	slope
+1555	glacier
+1556	grief
+1557	misery
+1558	accent
+1559	ambassador
+1560	autopsy
+1561	blast
+1562	courtesy
+1563	deed
+1564	discourse
+1565	impulse
+1566	jar
+1567	sibling
+1568	enthusiasm
+1569	treasure
+1570	horizontal
+1571	indefinite
+1572	vulgar
+1573	resilient
+1574	aquatic
+1575	insistent
+1576	frantic
+1577	deceptive
+1578	illogical
+1579	elaborate
+1580	mellow
+1581	boundless
+1582	cordial
+1583	seasonal
+1584	sour
+1585	swift
+1586	cumulative
+1587	savage
+1588	admirable
+1589	informative
+1590	proportional
+1591	simultaneous
+1592	static
+1593	uneasy
+1594	unequal
+1595	autonomous
+1596	bold
+1597	pessimistic
+1598	repetitive
+1599	respiratory
+1600	coherent
+1601	account for ~	(割合・分量など)を占める、〜の理由を説明する
+1602	accuse A of B	AをBの罪で告訴する、AをBの理由で非難する
+1603	act on ~	(忠告・情報など)に従って行動する、〜に影響を及ぼす
+1604	act out ~	(物語・経験など)を身振りで実演する
+1605	add up to ~	(合計が)〜になる、結局〜ということになる
+1606	adhere to ~	(信念・規則など)を順守する、〜に固執する
+1607	air out ~	(部屋など)を換気する、(衣類など)を外気に当てる
+1608	all but	ほとんど
+1609	allow for ~	〜を考慮に入れる、〜を見込む
+1610	answer for ~	〜の責任を負う、〜の罰を受ける
+1611	aspire to do	〜することを熱望する
+1612	attribute A to B	AをBのせいと考える
+1613	back down	撤回する、非を認める
+1614	back off	手を引く、後退する
+1615	back up ~	〜を裏付ける、〜を支援する
+1616	bank on ~	〜を当てにする
+1617	be committed to ~	〜に献身している
+1618	be destined to do	〜する運命である
+1619	be free of ~	(料金・税金など)がない、免除されている
+1620	be obsessed with ~	〜に取りつかれている
+1621	be subject to ~	〜にかかりやすい、〜を受けやすい
+1622	blast off	打ち上げられる、発射される
+1623	blow up	かんかんに怒る、爆発する
+1624	bounce back	(打撃・病気などから)回復する、立ち直る
+1625	branch off	(話題が)変わる、(わき道に)それる
+1626	break away from ~	〜を断つ、〜から逃れる
+1627	break down	決裂する、失敗する、故障する
+1628	break off ~	〜を中断する、〜を急にやめる
+1629	break out	勃発する、(伝染病などが)発生する
+1630	bring about ~	〜を引き起こす、〜を招く
+1631	bring down ~	(人・政府など)を倒す
+1632	bring off ~	〜をやってのける、〜を成し遂げる
+1633	bring on ~	(災い・病気など)をもたらす
+1634	bring out ~	(才能・性質など)を引き出す
+1635	bump into ~	〜にばったり出会う
+1636	burn out ~	(人)を疲れ果てさせる
+1637	by means of ~	〜を用いて、〜によって
+1638	call for ~	〜を必要とする、〜を要求する
+1639	call off ~	〜を中止する
+1640	call on ~	〜を訪ねる、(人)に頼む
+1641	carry away ~	無我夢中になる、〜を持ち去る
+1642	carry through ~	〜を成し遂げる
+1643	catch up on ~	〜について新しい情報を知る、〜の遅れを取り戻す
+1644	check off ~	〜にチェックマークをつける
+1645	chip in ~	(金・労力など)を出し合う
+1646	clean out ~	〜の中をきれいにする、〜を空にする
+1647	clear out ~	〜の中身を出してきれいに片付ける
+1648	clear up	(誤解など)を解く、(問題など)を解明する、晴れる
+1649	close in on ~	〜を包囲する、〜に追ってくる
+1650	come after ~	〜の後をつける、〜を追跡する
+1651	come before ~	(問題などが)で審議される、に出頭する
+1652	come down to ~	要するに〜ということになる
+1653	come down with ~	(軽い病気)にかかる
+1654	come into ~	〜の状態になる
+1655	come off	結局〜になる、行われる
+1656	come through	要求に応える、伝えられる
+1657	comply with ~	(規則・基準など)に従う
+1658	contribute to ~	〜の一因となる、〜に貢献する
+1659	cope with ~	〜をうまく処理する、〜に対処する
+1660	count for ~	〜の価値がある
+1661	count on ~	〜を当てにする
+1662	cover for ~	〜の代わりを務める
+1663	cover up ~	〜を隠す、〜を秘密にする
+1664	crack up	神経が参る、大笑いする
+1665	cross out ~	〜を線を引いて消す
+1666	cut back on ~	〜を削減する
+1667	cut down on ~	〜を減らす
+1668	cut in on ~	(話などに)割り込む
+1669	deal in ~	(商品)を商う、(仕事など)に従事する
+1670	deprive A of B	AからBを奪う
+1671	die down	静まる、衰える
+1672	die out	絶滅する
+1673	dispose of ~	〜を処分する、〜を捨てる
+1674	do away with ~	〜を廃止する、〜を取り除く
+1675	drag on	(会議などが)だらだらと長引く
+1676	drag out ~	〜を必要以上に長引かせる
+1677	draw on ~	(技術・経験など)に頼る
+1678	draw up ~	(計画)を立てる、(報告書など)を作成する
+1679	dream up ~	(奇抜な考え・計画など)を思いつく
+1680	drive off ~	〜を追い払う
+1681	drive up ~	(価格など)を急速に上昇させる
+1682	drop back	後退する、順位が下がる
+1683	drop out of ~	(活動・集団から)身を引く、中途退学する
+1684	ease into ~	(仕事など)に徐々に慣れる
+1685	eat up ~	〜を使い果たす、〜を食べ尽くす
+1686	embark on ~	(事業など)に乗り出す、〜に着手する
+1687	endear A to B	AをBに慕わせる
+1688	even up ~	〜を等しくする、〜を均等にする
+1689	face off	対決する
+1690	fall away	減少する、弱まる、衰える
+1691	fall back on ~	〜を当てにする
+1692	fall for ~	(うまい話など)に乗せられる、〜に強く引きつけられる
+1693	fall off	(数・量が)減少する、(質が)低下する
+1694	fall on ~	(責任などが)〜に降りかかる、(記念日などが)〜に当たる
+1695	fall through	(計画などが)駄目になる、失敗する
+1696	fall under ~	(影響・監督など)を受ける
+1697	feel for ~	〜に同情する、〜を思いやる
+1698	figure out ~	〜を理解する、〜を解決する
+1699	fill out ~	(書類)に必要事項を記入する
+1700	fire up ~	〜を始動させる、〜に火をつける
+1701	fit into ~	〜に溶け込む、〜に収まる
+1702	fix up ~	〜を修理する、〜を改装する
+1703	for all ~	〜にもかかわらず
+1704	for the time being	当分の間は、さしあたり
+1705	force down ~	(感情など)を抑える
+1706	free up ~	〜を自由化する、〜を解放する
+1707	frown on ~	〜に難色を示す、〜に不賛成の意を表す
+1708	gear up	準備をする
+1709	get around ~	あちこち動き回る、〜をうまく避ける
+1710	get around to doing	〜をする余裕ができる
+1711	get away with ~	〜を罰を受けずにうまくやる
+1712	get by	何とかやっていく、通り抜ける
+1713	get down to ~	〜に本気で取りかかる
+1714	get in on ~	〜に参加する、〜に加わる
+1715	get into ~	(本・映画など)に夢中になる、ある状態になる
+1716	get on with ~	(仕事など)を続ける、(人)とうまくやっていく
+1717	give away ~	(秘密・答えなど)をばらす、〜をただで与える
+1718	give in to ~	〜に降参する、屈する
+1719	give off ~	(光・音・においなど)を発する
+1720	give A over to B	AをBに預ける、AをBに引き渡す
+1721	give rise to ~	〜の原因となる、(悪い事態)を生じさせる
+1722	go back on ~	(約束など)を破る
+1723	go for ~	〜を選ぶ
+1724	grow into ~	(成長して)(服など)を着られるようになる
+1725	grow on ~	(人)の気に入るようになる
+1726	grow out of ~	(成長して)(習慣など)から脱する、〜から生じる
+1727	hand down ~	(伝統など)を後世に伝える、(判決など)を言い渡す
+1728	hand off ~	〜を任せる、〜を引き渡す
+1729	hand out A to B	BにAを配る
+1730	hang around ~	〜をぶらつく、うろつく
+1731	hang on	少し待つ、電話を切らずにおく
+1732	hang up ~	電話を切る
+1733	head off ~	〜を阻止する、〜を回避する
+1734	head out	出かける、立ち去る
+1735	hold back ~	〜を抑えておく
+1736	hold off ~	〜を引き延ばす、〜を延期する
+1737	hold out ~	もちこたえる、〜を差し出す
+1738	hold over ~	続映される、〜を延期する
+1739	in a row	連続で
+1740	in favor of ~	〜に賛成して、〜を支持して
+1741	in response to ~	〜に応えて、〜に応じて
+1742	in terms of ~	〜の観点から
+1743	in the event of ~	(万一)〜の場合には
+1744	in vain	無駄に、効果なく
+1745	jump at ~	〜にすぐ飛びつく
+1746	keep track of ~	〜に注意している、〜の跡をたどる
+1747	keep up with ~	〜に遅れずについていく
+1748	kick around ~	(計画・提案など)をあれこれ検討する
+1749	kick in	(薬などが)効き始める、機能し始める
+1750	kick off A with B	BでAを開始する
+1751	kick A out of B	BからAを追い出す
+1752	knock down ~	〜を取り壊す、〜を殴り倒す
+1753	lay into ~	〜を厳しく非難する、〜を攻撃する
+1754	lay off ~	〜を解雇する
+1755	leave off ~	〜をやめる
+1756	let alone ~	まして〜、〜は言うまでもなく
+1757	let down ~	〜を失望させる、〜の期待を裏切る
+1758	let out ~	(声など)を出す、〜を外に出す
+1759	let up	手を緩める、(風雨などが)やむ
+1760	level off	横ばいになる、安定する
+1761	lift off	(飛行機などが)離陸する
+1762	live up to ~	(期待など)に応える
+1763	lock in ~	〜を固定する、〜を閉じ込める
+1764	look down on ~	〜を見下す、〜を軽蔑する
+1765	make ends meet	収入内で何とかやりくりする
+1766	make do with ~	(あり合わせのもの)で済ます
+1767	make it	間に合う、成功する、出席できる
+1768	make out ~	〜を理解する、うまくやる
+1769	make over ~	〜を作り変える、〜を変身させる
+1770	mark down ~	〜を値下げする、〜を書き留める
+1771	mark out ~	〜を区画する、〜を区切る
+1772	miss out on ~	(機会など)を逸する
+1773	narrow down ~	(範囲など)を制限する、〜を狭くする
+1774	on a ~ basis	〜の基準で、〜の原則で
+1775	on behalf of A	Aを代表して、Aに代わって
+1776	on the contrary	それどころか、まるで反対で
+1777	on the spot	その場で、即座に
+1778	on the verge of ~	〜の間際で、〜の寸前で
+1779	over the hump	難局を脱して、峠を越して
+1780	owing to ~	〜のために、〜の理由で
+1781	pack up	持ち物をまとめる、荷造りする
+1782	pass for ~	〜で通る、〜と見なされる
+1783	pass off A as B	AをBだと偽る
+1784	pass A on to B	A(もの・情報など)をBに伝える
+1785	pass out	気絶する
+1786	pay off ~	(借金など)を全部支払う
+1787	phase out ~	〜を段階的に廃止する
+1788	pick over ~	〜を念入りに調べて選ぶ
+1789	pick through ~	〜の中をくまなく探す
+1790	pile up	(仕事・借金などが)どんどんたまる
+1791	pin down ~	〜を押さえつける、〜を動けなくする
+1792	play down ~	〜を重要でないように見せようとする
+1793	play out	(状況が)展開する、徐々に進展する
+1794	play up ~	〜を誇張する、〜を強調する
+1795	point to ~	(証拠などが)〜を示す、(理由など)を指摘する
+1796	pull back	後退する、思いとどまる
+1797	pull in ~	(観客・客など)を引きつける、(利益など)を得る
+1798	pull off ~	(困難なこと)をやってのける
+1799	pull through ~	(病気・苦境など)を切り抜ける
+1800	push for ~	〜を要求する、〜を得ようと努める
+1801	push through ~	(議案など)を通す、〜を突き進む
+1802	put down ~	(金額)を手付金として払う、〜を書き留める
+1803	put forth ~	(力など)を発揮する、(計画など)を提出する
+1804	put forward ~	〜を提案する
+1805	put in ~	(設備など)を備え付ける、(金・時間など)をつぎ込む
+1806	put A through to B	Aの電話をBにつなぐ
+1807	read off ~	(リストなど)を読み上げる
+1808	refrain from doing	〜するのを控える
+1809	regardless of ~	〜にかかわらず、〜にかまわず
+1810	roll in	(金など)がたくさんある、転がり込む
+1811	roll up ~	〜をくるくると巻く、(そでなど)をまくり上げる
+1812	round off ~	〜を締めくくる、〜をうまく終える
+1813	round up ~	(散らばった人など)を集める、〜を逮捕する
+1814	rule out ~	〜を排除する、〜を除外する
+1815	run against ~	〜に不利になる
+1816	run down ~	〜をひく、〜のことを悪く言う
+1817	run through ~	ざっと〜に目を通す
+1818	scoop up ~	〜を抱き上げる、〜をすくい上げる
+1819	scratch out ~	〜を削除する、やっと(生計)を立てる
+1820	see about ~	〜を検討する、〜を手配する
+1821	see A off	(空港などで)Aを見送る
+1822	see through ~	〜を見抜く、〜を見破る
+1823	sell out	(期待を)裏切る、(ものが)売り切れる
+1824	send for ~	(人・助けなど)を呼ぶ
+1825	send out for ~	(食べ物)の出前を頼む
+1826	set aside ~	(時間・金など)をとっておく
+1827	set down ~	〜を書き留める
+1828	set in	(季節・好ましくないものなどが)始まる
+1829	set off	出発する、〜を引き起こす、〜を作動させる
+1830	set out to do	〜することに着手する、〜し始める
+1831	set up ~	(会合など)を準備する、〜を設置する
+1832	settle down	くつろぐ、落ち着く、定住する
+1833	settle up with ~	〜と精算する
+1834	shake up ~	〜を刷新する、〜を動揺させる
+1835	show off ~	いいところを見せる、〜を見せびらかす
+1836	show up	現れる、やってくる
+1837	sign up for ~	〜に参加する、(受講など)の届けを出す
+1838	single out ~	〜を特に選び出す
+1839	sink in	十分に理解される
+1840	sit back	手をこまねいている、くつろぐ
+1841	sit by	(悪い事態を)黙って見ている、傍観する
+1842	sit in	参加する、見学する、代理を務める
+1843	skim over ~	〜をざっと見る
+1844	slip by	(時・機会が)いつの間にか過ぎる
+1845	smooth over ~	(問題・困難など)を処理しやすくする
+1846	speak for ~	〜を代表して意見を述べる、〜を代弁する
+1847	split up	別れる、分裂する
+1848	spring from ~	〜から生じる
+1849	spring up	急に生まれる、急成長する
+1850	stand down	(公職など)を辞任する
+1851	stand for ~	〜の略である、〜を意味する、〜を支持する
+1852	stand up to ~	〜に抵抗する、〜に立ち向かう
+1853	stay off ~	〜を控える、〜に近づかない
+1854	step down	辞任する
+1855	stick around	そこらで待つ、帰らずにいる
+1856	stick to ~	(主義など)を堅持する、〜をやり続ける
+1857	stick up for ~	〜をあくまでも擁護する
+1858	stick with ~	〜を最後までやり抜く
+1859	stir in ~	〜を入れてかき混ぜる
+1860	stir up ~	(騒ぎなど)を引き起こす、(記憶など)をかき立てる
+1861	sum up ~	〜を要約する
+1862	take in ~	〜を摂取する、〜をだます、〜を理解する
+1863	take on ~	(きつい仕事・責任)を引き受ける
+1864	take over ~	〜を引き継ぐ、〜を買収する
+1865	take up ~	〜を趣味として始める、(問題など)を取り上げる
+1866	talk down to A	Aを見下した調子で話す
+1867	talk A into doing	Aを説得して〜させる
+1868	talk up ~	(人・もの)を実際以上に興味深く話す
+1869	tear down ~	〜を取り壊す、〜を解体する
+1870	tell on ~	〜のことを告げ口する、〜にこたえる
+1871	the other way around	(事情などが)逆に
+1872	throw off ~	(衣服など)をさっと脱ぐ、〜を払いのける
+1873	throw up	嘔吐する、(食べ物)を吐く
+1874	tidy up ~	(部屋など)を片付ける、〜を整理する
+1875	tie up ~	忙しくて身動きできない、〜を固く縛る
+1876	tip over	ひっくり返る、〜をひっくり返す
+1877	touch up ~	(絵・文章など)を手直しする
+1878	track down ~	〜を追跡して捕らえる、〜を追い詰める
+1879	trip up	つまずく、しくじる
+1880	try out ~	〜を試してみる、〜の効果を試す
+1881	tune in to ~	(局・番組などに)チャンネルを合わせる
+1882	tune up ~	(楽器)を調律する、(機械など)を整備する
+1883	turn around ~	(商売・経済など)を好転させる、〜の向きを変える
+1884	turn away ~	〜を追い払う、(客など)の入場を断る
+1885	turn in ~	〜を提出する、寝る
+1886	turn out	であることがわかる、集まる
+1887	turn to ~	〜に頼る、〜に取りかかる
+1888	walk off with ~	〜を盗む、(賞など)をあっさり手に入れる
+1889	wander off	はぐれる、(主題から)脱線する
+1890	want for ~	〜を欠いている
+1891	wash away ~	〜を洗い流す
+1892	wash down ~	(食べ物など)を流し込む、〜を洗い流す
+1893	watch over ~	〜の世話をする、〜を見守る
+1894	wear off	(薬効・痛みなどが)しだいに弱まる
+1895	wear out ~	〜を疲れ果てさせる
+1896	weigh on ~	〜に重くのしかかる、〜を圧迫する
+1897	win over ~	〜を説得する
+1898	wipe out ~	〜を消滅させる、〜を撲滅する
+1899	work out ~	(計画など)を練る、(問題)を解決する
+1900	wrap up ~	(仕事・交渉など)を滞りなく終える

@@ -1,0 +1,1001 @@
+No.,熟語,日本語,問題,選択肢1,選択肢2,選択肢3,選択肢4,答え,日本語訳
+1,a piece of ～,数えられない名詞に付けて1つ分を表す言い方,She offered me a useful (     ) advice before my job interview started.,deal of,couple of,piece of,number of,3,彼女は私の就職面接が始まる前に、役立つ助言を1つしてくれた。
+2,a couple of ～,2つ、または2、3個の少数を表す言い方,"I'll be back in a (     ) minutes, so please wait for me here.",couple of,great deal of,piece of,plenty of,1,2、3分で戻るので、ここで待っていてください。
+3,a number of ～,数えられる名詞に付けていくつもの、多くのを表す言い方,A (     ) students complained that the new timetable was far too tight.,number of,great deal of,piece of,plenty of,1,多くの学生が、新しい時間割は厳しすぎると不満を述べた。
+4,dozens of ～,数十もの、非常に多くの数を表す言い方,The popular singer received (     ) letters from fans every single day.,dozens of,a great deal of,a plenty of,a piece of,1,その人気歌手は毎日数十通ものファンレターを受け取っていた。
+5,plenty of ～,十分すぎるほどたくさんのという意味,Don't worry about the time; we still have (     ) of milk in the fridge.,a number,dozens,a couple,plenty,4,時間は心配いらない。冷蔵庫にはまだミルクがたっぷりある。
+6,a great deal of ～,数えられない名詞に付けてたくさんのを表す言い方,He spent a great (     ) of money repairing the roof after the storm.,number,piece,couple,deal,4,彼は嵐のあと屋根の修理にたくさんのお金を使った。
+7,at home,自分の家にいる、在宅している状態,I stayed (     ) home all weekend because the weather was terrible.,in,up,on,at,4,天気がひどかったので、週末はずっと家にいた。
+8,in time,締め切りや開始に遅れず、間に合ってという意味,"If we leave now, we will get to the station (     ) time for the train.",up,in,at,on,2,今出れば、電車に間に合うように駅に着くだろう。
+9,in fashion,その時に流行している状態,"Bright colors are (     ) fashion this spring, so many shops display them.",on,in,up,at,2,今年の春は明るい色が流行しているので、多くの店がそれを並べている。
+10,on time,決められた時刻ぴったりにという意味,The morning train almost always arrives exactly (     ) time at this station.,up,at,on,in,3,朝の電車はこの駅にほぼいつも時間通りに到着する。
+11,on duty,仕事の担当として勤務している状態,Two nurses are always (     ) duty at night in case of an emergency.,on,in,up,at,1,緊急時に備え、夜間は常に2人の看護師が勤務している。
+12,on schedule,前もって決めた予定どおりにという意味,"Despite the heavy rain, the construction work is still going (     ) schedule.",up,in,on,at,3,大雨にもかかわらず、建設工事は今も予定通りに進んでいる。
+13,up to date,情報や内容が最新の状態であること,Please keep your contact details (     ) to date so we can reach you.,up,at,in,on,1,連絡が取れるよう、連絡先を最新の状態にしておいてください。
+14,be aware of ～,あることの存在や事実に気づいている状態,Were you (     ) of the danger when you walked across that old bridge?,aware,composed,made,capable,1,あの古い橋を歩いて渡ったとき、危険に気づいていましたか。
+15,be made of ～,材料が見てわかる形で何かでできていること,This beautiful old table is (     ) of solid oak from a nearby forest.,sure,made,aware,capable,2,この美しい古いテーブルは近くの森の堅いオークでできている。
+16,be capable of ～,何かをする能力があるという意味,"With enough training, this dog is (     ) of finding people under snow.",made,capable,based,composed,2,十分な訓練を積めば、この犬は雪の下の人を見つけることができる。
+17,be afraid of ～,何かを怖がっている、恐れている状態,"My little brother is still (     ) of the dark, so he sleeps with a light.",composed,afraid,capable,made,2,弟はまだ暗闇を怖がるので、明かりをつけて寝る。
+18,be sure of ～,あることを確信している状態,"Are you absolutely (     ) of your answer, or do you want to check again?",made,capable,composed,sure,4,自分の答えに本当に確信があるのか、それとももう一度確認したいのか。
+19,be composed of ～,全体がいくつかの要素から構成されていること,"The committee is (     ) of teachers, parents, and two local business owners.",capable,composed,aware,made,2,その委員会は教師、保護者、そして2人の地元経営者から構成されている。
+20,be based on ～,何かを土台や根拠にしているという意味,This exciting movie is (     ) on a true story that happened many years ago.,aware,capable,composed,based,4,このわくわくする映画は、何年も前に起きた実話に基づいている。
+21,be different from ～,～とは違っている、相違がある,Life in the countryside is completely (     ) life in a big city.,different from,equal to,close to,similar to,1,田舎の暮らしは大都市の暮らしとはまったく違っている。
+22,be absent from ～,～を欠席する、休む,She was (     ) school for a week because she had a bad cold.,present at,absent from,late for,ready for,2,彼女はひどい風邪をひいたので一週間学校を欠席した。
+23,be engaged in ～,～に取り組んでいる、従事している,My uncle has been (     ) the import business for over twenty years.,ashamed of,afraid of,engaged in,tired of,3,私のおじは二十年以上も輸入業に従事している。
+24,be responsible for ～,～に対して責任を負っている,The manager is (     ) all the decisions made by his department.,grateful for,sorry for,responsible for,famous for,3,その部長は自分の部署が下したすべての決定に責任がある。
+25,be married to ～,～と結婚している,She has been happily (     ) a French architect for ten years now.,close to,used to,married to,related to,3,彼女はフランス人の建築家と結婚してもう十年、幸せに暮らしている。
+26,be satisfied with ～,～に満足している,The customers were highly (     ) the quick and polite service at the hotel.,busy with,bored with,angry with,satisfied with,4,客たちはホテルの迅速で丁寧なサービスに大いに満足していた。
+27,be curious about ～,～を知りたがる、興味津々である,Children are naturally (     ) the world and keep asking questions.,sure about,worried about,curious about,careful about,3,子どもは生まれつき世界を知りたがり、質問ばかりする。
+28,be well off,裕福である、暮らし向きがよい,"Although his family is quite (     ), he lives a very simple life.",well off,badly off,cut off,far off,1,彼の家はかなり裕福だが、彼はとても質素な暮らしをしている。
+29,be likely to do,…しそうである、…する可能性が高い,"According to the forecast, it is (     ) rain heavily this evening.",reluctant to,likely to,eager to,anxious to,2,予報によると、今晩は激しく雨が降りそうだ。
+30,be willing to do,…してもかまわないと思っている,"If you really need help, I am (     ) lend you the money right now.",unable to,willing to,forced to,supposed to,2,本当に助けが必要なら、私は今すぐそのお金を貸してもかまわない。
+31,be about to do,今にも…しようとしている,I was just (     ) leave the office when my boss called me back.,free to,likely to,about to,used to,3,私がちょうど会社を出ようとしたとき、上司が呼び戻した。
+32,lead to ～,～を引き起こす、～という結果になる,Eating too much sugar over the years can (     ) serious health problems.,stick to,object to,lead to,refer to,3,長年にわたって砂糖を取りすぎると深刻な健康問題を引き起こすことがある。
+33,refer to ～,～に言及する、～を引き合いに出す,"In her speech, the president often (     ) the achievements of her late father.",gave up,referred to,carried out,looked after,2,演説の中で、社長はしばしば亡き父の業績に言及した。
+34,contribute to ～,～の一因となる、～を助長する,Lack of sleep can greatly (     ) stress and poor concentration at work.,turn to,belong to,happen to,contribute to,4,睡眠不足は職場でのストレスや集中力の低下の大きな一因となりうる。
+35,amount to ～,総計～になる、合計で～に達する,The total cost of the repairs will (     ) nearly three thousand dollars.,appeal to,amount to,adjust to,attend to,2,修理費の総額は三千ドル近くになるだろう。
+36,depend on ～,～しだいである、～によって決まる,Whether we go hiking tomorrow will entirely (     ) the weather.,depend on,look on,insist on,carry on,1,明日ハイキングに行くかどうかは、まったく天気しだいだ。
+37,focus on ～,～に集中する、～に重点を置く,Please turn off your phone and try to (     ) the lecture for an hour.,focus on,give up,depend on,take over,1,携帯の電源を切って、一時間講義に集中するようにしてください。
+38,rely on ～,～を頼りにする、当てにする,"In a small town like this, people often (     ) their neighbors for help.",rely on,call off,run out,put off,1,このような小さな町では、人々は助けを求めてしばしば隣人を頼りにする。
+39,get on ～,～に乗る、乗り込む,"Hurry up, or we won't be able to (     ) the last train tonight.",get over,get on,get through,get off,2,急いで、さもないと今夜の最終電車に乗れなくなるよ。
+40,insist on ～,～を強く主張する、言い張る,He always (     ) paying the whole bill whenever we eat out together.,depends on,insists on,focuses on,relies on,2,私たちが一緒に外食するとき、彼はいつも勘定を全部払うと言い張る。
+41,concentrate on ～,集中して取り組む,"With the exam tomorrow, she shut off her phone so she could (     ) her studies.",deal in,concentrate on,consist of,boast about,2,明日が試験なので、彼女は勉強に集中できるよう携帯電話の電源を切った。
+42,look for ～,見つけようとして探す,"I've been looking everywhere, so could you help me (     ) my missing car keys?",look down on,look up to,look after,look for,4,あちこち探しているので、なくした車の鍵を探すのを手伝ってくれませんか。
+43,search for ～,求めて捜索する,Rescue teams used helicopters to (     ) the hikers lost on the snowy mountain.,care for,answer for,fall for,search for,4,救助隊はヘリコプターを使って雪山で遭難した登山者を捜索した。
+44,prepare for ～,事前に備える,Coastal residents boarded up their windows to (     ) the approaching typhoon.,object to,prepare for,depend on,refer to,2,沿岸の住民たちは、近づく台風に備えて窓を板でふさいだ。
+45,think of ～,頭に思い浮かべる、思いつく,I can't (     ) a single good reason why we should cancel such a successful project.,carry out,deal with,put off,think of,4,これほど成功しているプロジェクトを中止すべき理由を一つも思いつかない。
+46,consist of ～,構成要素から成る,"The committee will (     ) five teachers, two parents, and one student representative.",consist of,insist on,consist in,depend on,1,その委員会は教師5名、保護者2名、生徒代表1名から構成される予定だ。
+47,complain about ～,不満を口にする,Customers kept calling to (     ) the slow delivery and the damaged packaging.,boast about,care about,bring about,complain about,4,客は配達の遅さと破損した梱包について不平を言うために電話をかけ続けた。
+48,die of ～,病気などが原因で死ぬ,"Without clean water, thousands of villagers could (     ) cholera within weeks.",die of,suffer for,result in,care for,1,清潔な水がなければ、数千人の村人が数週間以内にコレラで死ぬ恐れがある。
+49,suffer from ～,病気や苦痛に悩まされる,Many office workers (     ) chronic back pain caused by sitting all day long.,refrain from,suffer from,differ from,benefit from,2,多くの会社員は、一日中座っていることが原因の慢性的な腰痛に苦しんでいる。
+50,result from ～,原因によって生じる,The flooding seems to (     ) the heavy rain that fell across the region last night.,bring about,lead to,result from,result in,3,その洪水は、昨夜この地域一帯に降った大雨が原因で起きたようだ。
+51,graduate from ～,学校を卒業する,"After he (     ) college, he spent a year traveling before starting his first job.",enrolled at,majored in,dropped out,graduated from,4,彼は大学を卒業したあと、最初の仕事に就く前に一年間旅をして過ごした。
+52,differ from ～,性質が違っている,"British English (     ) American English in spelling, vocabulary, and pronunciation.",depends on,results in,consists of,differs from,4,イギリス英語は、つづり、語彙、発音の点でアメリカ英語と異なる。
+53,recover from ～,病気や打撃から立ち直る,It took the athlete almost a year to fully (     ) the serious knee injury.,refrain from,suffer from,recover from,benefit from,3,その選手が深刻な膝の怪我から完全に立ち直るのに、ほぼ一年かかった。
+54,hear from ～,連絡をもらう,"I haven't (     ) my brother since he moved abroad, so I'm a little worried.",asked for,heard of,heard from,looked for,3,兄が海外へ引っ越してから連絡がないので、少し心配している。
+55,believe in ～,存在や正しさを信じる,"Even as an adult, my little sister still insists that she (     ) ghosts and spirits.",counts on,depends on,cares for,believes in,4,大人になっても、妹はいまだに幽霊や霊魂の存在を信じていると言い張る。
+56,succeed in ～,うまくやり遂げる,"After many failed attempts, the team finally (     ) launching the rocket safely.",succeeded in,resulted in,failed in,engaged in,1,何度も失敗したのち、チームはついにロケットを安全に打ち上げることに成功した。
+57,major in ～,大学で専門に学ぶ,She decided to (     ) economics because she wanted to work at an international bank.,engage in,believe in,major in,result in,3,彼女は国際的な銀行で働きたかったので、経済学を専攻することに決めた。
+58,abound in ～,豊富に存在する,This tropical region is famous because its forests (     ) rare birds and insects.,abound in,depend on,consist of,differ from,1,この熱帯地域は、森林が珍しい鳥や昆虫に富んでいることで有名だ。
+59,care about ～,気にかける、関心を持つ,He doesn't (     ) money at all; what matters to him is doing meaningful work.,care about,care for,boast about,bring about,1,彼はお金などまったく気にかけない。彼にとって大切なのは意義ある仕事をすることだ。
+60,bring about ～,結果として引き起こす,The new policy is expected to (     ) major changes in how schools are funded.,bring about,result from,differ from,care about,1,その新しい政策は、学校への資金提供のあり方に大きな変化を引き起こすと期待されている。
+61,deal with ～,～を処理する、対処する,The new manager was hired specifically to (     ) complaints from angry customers every day.,belong to,result in,deal with,consist of,3,その新任マネージャーは、毎日怒った客からの苦情に対処するためだけに雇われた。
+62,go through ～,～(つらい経験)を経験する,She managed to stay positive even while going (     ) the hardest period of her entire life.,across,through,without,against,2,彼女は人生で最もつらい時期を経験している間でさえ、前向きでいることができた。
+63,give up ～,～をあきらめる、断念する,"After failing the exam three times, he finally decided to (     ) his dream of becoming a pilot.",take over,carry on,give up,bring about,3,3回試験に落ちた後、彼はついにパイロットになる夢をあきらめる決心をした。
+64,grow up,成長して大人になる,My grandfather (     ) on a small farm in the countryside before moving to the city.,showed off,gave in,broke down,grew up,4,祖父は都市へ引っ越す前、田舎の小さな農場で育った。
+65,pick up ～,～を車に乗せる、迎えに行く,Could you (     ) the children from school this afternoon since I have a meeting?,put off,pick up,hand in,look into,2,午後に会議があるので、子どもたちを学校へ車で迎えに行ってもらえますか。
+66,set up ～,～を創設する、設立する,The two brothers managed to (     ) a successful software company in their parents' garage.,set up,put down,run out,take off,1,その兄弟は両親のガレージで成功するソフトウェア会社を設立することができた。
+67,wake up,眠りから目が覚める,"I usually (     ) at six o'clock, but this morning the alarm failed and I slept until nine.",turn down,give away,break out,wake up,4,私はたいてい6時に目が覚めるが、今朝は目覚ましが鳴らず9時まで寝てしまった。
+68,brush up on ～,～をやり直して磨きをかける,"Before her trip to Paris, she spent a month trying to (     ) her rusty French.",catch up with,run out of,come up with,brush up on,4,パリ旅行の前に、彼女は1か月かけて錆びついたフランス語に磨きをかけようとした。
+69,find out ～,～を知る、突き止める,It took the detective several weeks to (     ) who had actually committed the crime.,find out,look after,carry on,give back,1,その刑事が実際に誰が罪を犯したのかを突き止めるのに数週間かかった。
+70,carry out ～,～を実行する、遂行する,The research team will (     ) a series of experiments to test the new theory next month.,carry out,turn up,break down,run over,1,研究チームは来月、新しい理論を検証するための一連の実験を実行する予定だ。
+71,point out ～,～を指摘する,"During the meeting, she politely (     ) several errors in the budget report to her boss.",put off,pointed out,gave away,held back,2,会議中、彼女は予算報告書のいくつかの誤りを上司に丁寧に指摘した。
+72,figure out ～,～を理解する、解明する,I stared at the puzzle for an hour but still couldn't (     ) how to solve it.,care for,stand for,figure out,give in,3,私はそのパズルを1時間見つめたが、それでもどう解けばよいか理解できなかった。
+73,turn out ～,(結局)～であることが分かる,The man we suspected of stealing the money (     ) to be completely innocent.,turned out,came across,fell apart,broke down,1,私たちが金を盗んだと疑っていた男は、まったく無実であることが分かった。
+74,fill out ～,(用紙など)～に必要事項を書き込む,Please (     ) this application form carefully and return it to the front desk by Friday.,fill out,wear out,take after,call off,1,この申込用紙に注意して必要事項を記入し、金曜日までに受付に返却してください。
+75,pick out ～,～を選び出す,"From the dozens of paintings on display, she quickly (     ) the one she liked best.",picked out,gave up,used up,turned in,1,展示された何十もの絵の中から、彼女はすぐに一番気に入ったものを選び出した。
+76,put on ～,(衣服など)～を身につける,"It was getting cold outside, so he (     ) a thick coat before leaving the house.",put on,gave off,ran into,took up,1,外が寒くなってきたので、彼は家を出る前に厚いコートを着た。
+77,work on ～,～に取り組む,She has been (     ) her new novel for almost two years and still hasn't finished it.,getting over,coming about,looking into,working on,4,彼女は新しい小説に2年近く取り組んでいるが、まだ書き終えていない。
+78,try on ～,～を試着する,"Before buying the shoes, the customer asked if she could (     ) a smaller size.",try on,bring up,take off,cut off,1,その靴を買う前に、客はもっと小さいサイズを試着できるか尋ねた。
+79,turn on ～,(電気・ガスなど)～をつける,It was so dark in the room that she had to (     ) the lights before she could read.,put off,give out,turn on,take in,3,部屋がとても暗かったので、彼女は本を読む前に明かりをつけなければならなかった。
+80,turn off ～,(電気・ガスなど)～を消す,Remember to (     ) the television before you go to bed to save electricity.,hold on,turn off,break up,call on,2,電気を節約するため、寝る前にテレビを消すのを忘れないでください。
+81,take off ～,～を脱ぐ,Please (     ) your shoes before you step onto the tatami mats in this room.,look for,bring up,take off,put on,3,この部屋で畳に上がる前に靴を脱いでください。
+82,get along,人とうまくやっていく,She is friendly and seems to (     ) well with all of her new coworkers.,get along,get away,get through,get over,1,彼女は気さくで、新しい同僚全員とうまくやっているようだ。
+83,get together,集まる,Let's (     ) at the café next Sunday and plan our trip to Kyoto.,get around,get back,get together,get off,3,次の日曜にカフェに集まって京都旅行の計画を立てよう。
+84,calm down,落ち着く,Take a deep breath and try to (     ) before you give your speech on stage.,break down,calm down,let down,turn down,2,ステージでスピーチをする前に、深呼吸して落ち着くようにしなさい。
+85,think over ～,～をよく考える,I need a few days to (     ) your job offer before I make my final decision.,carry out,give up,turn off,think over,4,最終決定をする前に、あなたの仕事のオファーをよく考える数日が必要だ。
+86,keep doing,…し続ける,"Even though it was raining hard, the runners kept (     ) toward the finish line.",running,to run,run,ran,1,激しく雨が降っていたのに、ランナーたちはゴールに向かって走り続けた。
+87,take place,催される、起こる,The annual music festival will (     ) in the city park next weekend.,take part,take care,take turns,take place,4,その年に一度の音楽祭は来週末、市の公園で催される。
+88,play a role in ～,～で役割を果たす,Regular exercise plays an important (     ) keeping both your body and mind healthy.,care for,part of,turn at,role in,4,定期的な運動は心身ともに健康に保つうえで重要な役割を果たす。
+89,make sure,確かめる、確実にする,"Before you leave the house, please (     ) that all the windows are locked.",make sure,make up,make out,make sense,1,家を出る前に、すべての窓が施錠されているか確かめてください。
+90,make sense,意味をなす、道理にかなう,His explanation was so confusing that it didn't (     ) to anyone in the meeting.,make sense,make do,make sure,make way,1,彼の説明はとても分かりにくく、会議の誰にとっても意味をなさなかった。
+91,make a difference,違いが生じる、重要である,Even a small donation can (     ) in the lives of children who need help.,make a point,make a deal,make a fuss,make a difference,4,小さな寄付でも、助けを必要とする子どもたちの暮らしに違いを生み出すことができる。
+92,make a mistake,間違いをする,Don't be afraid to (     ); that is how everyone learns a new language.,make a mistake,make a living,catch a cold,have a break,1,間違いをすることを恐れてはいけない。誰もがそうやって新しい言語を学ぶのだ。
+93,make progress,進歩する,"After months of daily practice, she has finally begun to (     ) in playing the violin.",make progress,lose touch,take action,gain weight,1,何か月もの毎日の練習の末、彼女はついにバイオリン演奏で進歩し始めた。
+94,make up one's mind,決心する,He couldn't (     ) about which university to attend until the very last day.,lose his mind,cross his mind,speak his mind,make up his mind,4,彼はどの大学に通うか、最後の日までずっと決心できなかった。
+95,do one's best,最善を尽くす,"Even if we lose the game, I want every player to (     ) until the final whistle.",have their say,lose their cool,do their best,lose their way,3,たとえ試合に負けても、最後の笛が鳴るまで全選手に最善を尽くしてほしい。
+96,keep one's promise,約束を守る,A good leader must always (     ) and never let the team down.,break his promise,miss his promise,keep his promise,make his promise,3,よいリーダーは常に約束を守り、決してチームを失望させてはならない。
+97,get lost,道に迷う,"We didn't have a map, so it was easy to (     ) in the narrow streets of the old town.",get ready,get lost,get well,get even,2,地図がなかったので、旧市街の細い道で道に迷うのは簡単だった。
+98,enjoy oneself,楽しい時を過ごす,"Everyone at the party was dancing and laughing, clearly (     ) very much.",blaming themselves,helping themselves,seeing themselves,enjoying themselves,4,パーティーの全員が踊ったり笑ったりして、明らかにとても楽しい時を過ごしていた。
+99,take ～ off,～を休みとしてとる,"I'm exhausted, so I plan to take next Friday (     ) and relax at home all day.",off,out,on,over,1,へとへとなので、来週の金曜を休みにとって一日中家でくつろぐつもりだ。
+100,pay attention to ～,～に注意を払う,Students should (     ) the teacher's instructions before starting the difficult exam.,do away with,get rid of,run out of,pay attention to,4,生徒は難しい試験を始める前に、先生の指示に注意を払うべきだ。
+101,take care of ～,～の世話をする、面倒を見る,"While my sister is away on her business trip, I will (     ) her two cats.",get rid of,run out of,take care of,catch up with,3,姉が出張で留守の間、私が彼女の2匹の猫の世話をします。
+102,look forward to ～,～を楽しみに待つ,"After the long winter, all the children (     ) playing on the beach again.",put up with,look forward to,come up with,get along with,2,長い冬のあと、子どもたちはみんなまた浜辺で遊ぶのを楽しみにしている。
+103,ask for ～,～を求める、要求する,"If you do not understand the instructions, do not hesitate to (     ) help.",wait for,care for,ask for,stand for,3,指示が分からなければ、遠慮せずに助けを求めてください。
+104,get rid of ～,～を取り除く、処分する,It took me a whole weekend to (     ) all the junk in the garage.,get rid of,make use of,take care of,keep up with,1,ガレージのがらくたを全部処分するのに週末まるまるかかった。
+105,fall in love with ～,～を大好きになる、～と恋に落ちる,She (     ) the small seaside town the moment she stepped off the train.,fell in love with,kept track of,made fun of,was tired of,1,彼女は電車を降りた瞬間に、その小さな海辺の町が大好きになった。
+106,used to do,～したものだった、昔は～であった,"There (     ) be a small bookstore on this corner, but it closed years ago.",had to,ought to,came to,used to,4,この角には昔小さな書店があったものだが、何年も前に閉店した。
+107,had better do,…したほうがいい,"It is getting late, so you (     ) leave now if you want to catch the last train.",used to,may well,would rather,had better,4,もう遅いので、終電に乗りたいなら今出発したほうがいい。
+108,help A with B,AのBを手伝う,My older brother kindly helped me (     ) my math homework last night.,for,with,about,of,2,昨夜、兄が私の数学の宿題を親切に手伝ってくれた。
+109,prefer A to B,BよりAを好む,Most of my colleagues prefer working from home (     ) commuting to the office every day.,to,from,than,against,1,同僚の大半は、毎日会社へ通勤するより在宅勤務を好む。
+110,turn A into B,AをBに変える,The skilled chef managed to (     ) a few simple ingredients into a delicious meal.,take,turn,bring,put,2,その腕のいい料理人は、わずかな簡単な材料をおいしい食事に変えてみせた。
+111,prevent A from B,AがBするのを妨げる,The heavy snowfall (     ) the rescue team from reaching the stranded climbers.,protected,prohibited,prevented,preserved,3,大雪のせいで、救助隊は立ち往生した登山者のもとへたどり着けなかった。
+112,remind A of B,AにBを思い出させる,This old photograph always reminds me (     ) the summers I spent at my grandmother's house.,of,about,for,with,1,この古い写真を見ると、いつも祖母の家で過ごした夏を思い出す。
+113,regard A as B,AをBとみなす、考える,Many critics (     ) this novel as the finest work the author has ever written.,regard,remind,accuse,inform,1,多くの批評家がこの小説を、その作家が書いた最高傑作とみなしている。
+114,associate A with B,AをBと結びつけて考える,People often (     ) the color red with both danger and passion.,devote,attribute,associate,refer,3,人々はしばしば赤色を危険と情熱の両方と結びつけて考える。
+115,inform A of B,AにBを知らせる,The airline staff promptly informed the passengers (     ) the sudden change in the schedule.,to,for,of,with,3,航空会社の係員は、予定の急な変更を乗客に速やかに知らせた。
+116,after all,結局、やっぱり,"We were worried about the weather, but the picnic went perfectly well (     ).",above all,at all,after all,all over,3,私たちは天気を心配していたが、結局ピクニックは完璧にうまくいった。
+117,all the time,いつも、常に,"My little brother leaves the lights on (     ), and it drives our parents crazy.",in time,at times,on time,all the time,4,弟はいつも電気をつけっぱなしにするので、両親をいらいらさせている。
+118,all the way,ずっと、はるばる,She drove (     ) from Tokyo to Osaka just to attend her friend's wedding.,by the way,in the way,on the way,all the way,4,彼女は友人の結婚式に出席するためだけに、東京から大阪まではるばる車で行った。
+119,～ and so on,～など,"The store sells stationery such as pens, notebooks, erasers, (     ).",or else,as well as,and yet,and so on,4,その店ではペンやノート、消しゴムなどの文房具を売っている。
+120,and yet,それにも関わらず,"He had studied very hard for months, (     ) he failed the entrance examination.",as if,so that,even so,and yet,4,彼は何か月も猛勉強した、それにもかかわらず入学試験に落ちた。
+121,as ～ as possible,できる限り～,Please finish the report as quickly as (     ) so we can submit it before noon.,available,probable,capable,possible,4,正午前に提出できるよう、できる限り早くその報告書を仕上げてください。
+122,as a result of ～,～の結果として,"(     ) the heavy rain last night, several roads in the town are completely flooded.",For the sake of,In spite of,As a result of,On behalf of,3,昨夜の大雨の結果として、町のいくつかの道路が完全に水浸しになっている。
+123,as a whole,全体として,"Individual scores varied, but the class (     ) performed much better than last year.",in turn,as a whole,at random,by no means,2,個々の点数はばらついたが、クラス全体としては昨年よりずっと良い成績だった。
+124,as usual,いつものように,"He arrived at the office ten minutes late (     ), carrying his usual cup of coffee.",as if,in vain,as usual,at last,3,彼はいつものように10分遅れて、いつものコーヒーを片手に出社した。
+125,at best,よくても せいぜい,"Even with overtime, we can finish only half of the order by Friday (     ).",at heart,at hand,at best,at ease,3,残業しても、よくてもせいぜい金曜までに注文の半分しか仕上げられない。
+126,at least,少なくとも,"The repair will cost (     ) three hundred dollars, and possibly much more.",at length,at large,at first,at least,4,修理には少なくとも300ドルかかり、おそらくもっと高くつくだろう。
+127,at most,せいぜい 多くても,The whole meeting was very short and lasted (     ) fifteen minutes from start to finish.,at odds,at heart,at most,at will,3,その会議はとても短く、始めから終わりまでせいぜい15分しか続かなかった。
+128,at a time,一度に,The narrow staircase is so steep that only one person can go up (     ) safely.,at a loss,at a distance,at a glance,at a time,4,その狭い階段は急なので、一度に安全に上れるのは一人だけだ。
+129,at once,すぐに 同時に,The doctor told him to stop smoking (     ) before his health got any worse.,at first,at once,at length,at last,2,医者は彼に、健康がこれ以上悪くなる前にすぐにタバコをやめるよう言った。
+130,at all,まったく,"I waited an hour, but he did not show up (     ), so I finally went home alone.",at large,at hand,at all,at heart,3,1時間待ったが、彼はまったく現れなかったので、私はとうとう一人で帰宅した。
+131,at any rate,とにかく いずれにしても,"I'm not sure why she left early, but (     ), the meeting is over now.",on any account,at any rate,at any cost,by any chance,2,なぜ彼女が早く帰ったのか分からないが、とにかく会議はもう終わった。
+132,at random,無作為に 手当たり次第に,The teacher picked five names (     ) from the list to answer the first questions.,at large,at random,at length,at will,2,先生は最初の質問に答えさせるため、名簿から無作為に5人の名前を選んだ。
+133,more or less,多かれ少なかれ ほぼ,"The two plans are (     ) the same, differing only in a few minor details.",more or less,here and there,up and down,now and then,1,その二つの計画はほぼ同じで、わずかな細部が違うだけだ。
+134,at times,ときどき,"She is usually calm, but (     ) she gets surprisingly angry over small things.",at once,at most,at best,at times,4,彼女はふだん穏やかだが、ときどき些細なことで驚くほど怒る。
+135,between you and me,ここだけの話だが,"(     ), I think the new manager won't last more than a few months here.",Between you and me,Back and forth,Now and again,One after another,1,ここだけの話だが、新しい部長はここで数か月ともたないと思う。
+136,by hand,手で,"Since the machine was broken, the workers had to wash every dish (     ) all day.",by turns,by hand,by heart,by far,2,機械が壊れていたので、作業員は一日中すべての皿を手で洗わなければならなかった。
+137,by mistake,間違って,I took someone else's umbrella (     ) because it looked exactly like mine.,by nature,by force,by chance,by mistake,4,自分のとそっくりだったので、私は間違って他人の傘を持っていってしまった。
+138,by no means,全然～ない,"The exam was (     ) easy; in fact, most students struggled with the last section.",by and large,by no means,by far,by all means,2,その試験は全然簡単ではなく、実際ほとんどの学生が最後の問題に苦労した。
+139,by the way,ところで,"(     ), did you remember to send that email to the client this morning?",By the way,As a matter of fact,In the meantime,On the other hand,1,ところで、今朝クライアントにあのメールを送るのを覚えていましたか。
+140,far from ～,～からほど遠い ～どころではない,His explanation was (     ) clear; it actually left everyone more confused than before.,far from,apart from,next to,close to,1,彼の説明は明快とはほど遠く、実際みんなを以前より混乱させた。
+141,for a while,少しの間、しばらくの間,After lunch I sat on the bench and rested (     ) before going back to work.,by chance,at a loss,for a while,in vain,3,昼食後、仕事に戻る前に私はベンチに座ってしばらく休んだ。
+142,for example,例えば(具体例を挙げて),"Many fruits, (     ), apples and oranges, are rich in vitamin C.",for short,for example,for sure,for free,2,多くの果物、例えばリンゴやオレンジは、ビタミンCが豊富だ。
+143,for one thing,一つには(理由を挙げて),"I decided not to buy the car. (     ), it was too expensive for my budget.",By no means,At first hand,On purpose,For one thing,4,私はその車を買わないことに決めた。一つには、私の予算には高すぎたのだ。
+144,in a hurry,急いで、慌てて,She left the house (     ) and forgot to lock the front door behind her.,in a way,in a sense,in a hurry,in a row,3,彼女は急いで家を出て、玄関のドアに鍵をかけ忘れた。
+145,in addition to ～,～に加えて、～のほかに,"(     ) his salary, he earns extra money by teaching English on weekends.",Instead of,In addition to,In spite of,Regardless of,2,給料に加えて、彼は週末に英語を教えることで余分なお金を稼いでいる。
+146,in any case,とにかく、いずれにせよ,"I'm not sure if it will rain, but (     ) we should take an umbrella with us.",in no time,in turn,in vain,in any case,4,雨が降るかどうかわからないが、いずれにせよ私たちは傘を持っていくべきだ。
+147,in detail,詳細に、細かく,"The guide explained the history of the castle (     ), answering all our questions.",in short,in detail,in haste,in common,2,ガイドは私たちのすべての質問に答えながら、その城の歴史を詳細に説明した。
+148,in fact,実は、実際のところ,"He looks calm, but (     ) he is extremely nervous about tomorrow's interview.",in time,in fact,in case,in place,2,彼は落ち着いているように見えるが、実は明日の面接についてとても緊張している。
+149,in general,一般に、概して,"(     ), children learn foreign languages faster than adults do.",In general,In return,In advance,In secret,1,一般に、子供は大人よりも外国語を速く習得する。
+150,in other words,言い換えれば、つまり,"He is my mother's brother; (     ), he is my uncle.",at any rate,by any means,on the contrary,in other words,4,彼は私の母の兄だ。言い換えれば、私のおじだ。
+151,in public,人前で、公然と,"He is too shy to sing (     ), so he only practices alone in his room.",in detail,in person,in private,in public,4,彼は人前で歌うには内気すぎるので、自分の部屋で一人で練習するだけだ。
+152,in reality,実際には、現実には,"The movie seems realistic, but (     ) such events could never happen.",in addition,in reality,in advance,in theory,2,その映画は現実的に見えるが、実際にはそのような出来事は決して起こり得ない。
+153,in the end,結局は、最後には,"We argued for hours, but (     ) we agreed to follow her original plan.",in the open,in the least,in the dark,in the end,4,私たちは何時間も議論したが、結局は彼女の当初の計画に従うことで合意した。
+154,in the future,将来は、今後は,"Robots may do most of our housework (     ), giving us more free time.",in the distance,in the meantime,in the future,in the past,3,将来、ロボットが私たちの家事のほとんどをこなし、もっと自由な時間を与えてくれるかもしれない。
+155,in the long run,長い目で見れば、結局は,Buying quality shoes is cheaper (     ) because they last much longer.,on the spot,in the long run,by the way,for the time being,2,質の良い靴を買う方が、はるかに長持ちするので長い目で見れば安くつく。
+156,no doubt,おそらく、たぶん,"She studied very hard all year, so she will (     ) pass the entrance exam.",no wonder,no use,no matter,no doubt,4,彼女は一年中とても熱心に勉強したので、おそらく入学試験に合格するだろう。
+157,no longer ～,もはや～ない,"After the new road opened, the old bridge was (     ) used by drivers.",not nearly,no longer,no sooner,by far,2,新しい道路が開通した後、その古い橋はもはや運転手たちに使われなくなった。
+158,not always ～,必ずしも～ではない,Expensive products are (     ) better than cheaper ones in quality.,not once,not always,not yet,not even,2,高価な製品が品質において必ずしも安いものより良いとは限らない。
+159,on earth,一体全体(疑問を強調),What (     ) are you doing here so late at night all by yourself?,in turn,at hand,by chance,on earth,4,こんな夜遅くに一体全体ここで一人で何をしているのですか。
+160,on the other hand,他方では、これに対して,"Living in the city is convenient; (     ), it can be noisy and crowded.",on the other hand,for instance,as a result,in the same way,1,都会で暮らすのは便利だ。他方では、騒がしく混雑していることもある。
+161,so far,現在までのところ、今までの所,"The project has gone smoothly (     ), but the hardest stage is still ahead of us.",for good,by far,as yet,so far,4,プロジェクトは今までのところ順調だが、一番大変な段階はまだこれからだ。
+162,sooner or later,遅かれ早かれ、いつかは必ず,"If you keep ignoring the warning lights, the engine will break down (     ).",sooner or later,more or less,now and then,here and there,1,警告ランプを無視し続ければ、遅かれ早かれエンジンは故障するだろう。
+163,these days,近頃は、最近では,Fewer young people read printed newspapers (     ) because they get news online.,by then,these days,in time,at once,2,近頃は若者はオンラインでニュースを得るので、印刷された新聞を読む人が減っている。
+164,according to ～,～によれば、～が述べるところでは,"(     ) the weather forecast, heavy rain is expected to hit the region tomorrow afternoon.",Regardless of,Instead of,Because of,According to,4,天気予報によれば、明日の午後その地域を激しい雨が襲うと予想されている。
+165,owing to ～,～のために、～が原因で,The flight was delayed for three hours (     ) the sudden snowstorm over the airport.,thanks for,owing to,contrary to,prior to,2,空港上空の突然の吹雪のために、その便は3時間遅れた。
+166,thanks to ～,～のおかげで,"(     ) her careful planning, the whole event finished without a single problem.",In case,Thanks to,Apart of,Owing for,2,彼女の入念な計画のおかげで、イベント全体は一つの問題もなく終わった。
+167,in spite of ～,～にもかかわらず,"(     ) the heavy traffic, we still managed to arrive at the airport on time.",In need of,In favor of,In spite of,In honor of,3,激しい交通渋滞にもかかわらず、私たちはなんとか時間通りに空港に着いた。
+168,all over ～,～の至る所に、～中に,Fans of the band came from (     ) the country to attend the final concert.,all over,all out,all along,all but,1,そのバンドのファンは最終コンサートに参加するため国中の至る所からやって来た。
+169,apart from ～,～のほかに、～を除いては,"(     ) a few minor spelling mistakes, your essay is very well written.",Apart from,Free from,Far from,Away from,1,いくつかの小さなつづりの間違いを除けば、君のエッセイはとてもよく書けている。
+170,aside from ～,～を除いては、～のほかに,"(     ) the kitchen, every room in the house has already been cleaned.",Aside from,Aside of,Beside of,Outside from,1,台所を除いて、家のどの部屋もすでに掃除し終えている。
+171,ahead of ～,～より先に、～の前に,She arrived twenty minutes (     ) the others to set up the meeting room.,short of,ahead of,instead of,in front,2,彼女は会議室を準備するため、ほかの人より20分早く到着した。
+172,in search of ～,～を求めて、～を探して,The explorers traveled deep into the jungle (     ) the lost ancient temple.,in charge of,in spite of,in search of,in place of,3,探検家たちは失われた古代の寺院を求めてジャングルの奥深くへ進んだ。
+173,in preparation for ～,～の準備として、～に備えて,The athletes trained intensely for months (     ) the international championship.,in preparation for,in addition to,in exchange for,in response to,1,選手たちは国際選手権に備えて何か月も集中的に練習した。
+174,each other,お互い(を),The two sisters help (     ) with homework almost every evening after dinner.,by turns,in person,one way,each other,4,その二人の姉妹はほぼ毎晩夕食後に宿題でお互いを助け合っている。
+175,so ～ that ...,非常に～なので…する,The lecture was (     ) boring that half of the students fell asleep within minutes.,much,very,so,too,3,その講義は非常に退屈だったので、学生の半分が数分以内に眠ってしまった。
+176,A as well as B,BだけでなくAも,"She speaks fluent French as (     ) as Spanish, which helps her in her travels.",soon,good,well,far,3,彼女はスペイン語だけでなく流暢なフランス語も話し、それが旅行で役立っている。
+177,not only A but also B,AだけでなくBも,He is not only a talented painter (     ) also a gifted musician admired by many.,but,nor,yet,and,1,彼は才能ある画家であるだけでなく、多くの人に称賛される優れた音楽家でもある。
+178,as if ...,まるで…するように、あたかも…のように,"He spoke about the accident calmly, (     ) if nothing serious had happened at all.",only,as,so,but,2,彼はその事故についてまるで重大なことが全く起きなかったかのように冷静に話した。
+179,as soon as ...,…するやいなや、…するとすぐに,"(     ) soon as the bell rang, the children rushed out of the classroom into the yard.",Just,As,So,Too,2,ベルが鳴るやいなや、子どもたちは教室から庭へと飛び出していった。
+180,something is wrong with ～,～はどこか調子が悪い、故障している,Something is (     ) with this printer; it keeps jamming every time I try to use it.,bad,trouble,broken,wrong,4,このプリンターはどこか調子が悪い。使おうとするたびに紙詰まりを起こす。
+181,bring up ～,子どもを養い育てる,She was (     ) by her grandparents in a small village after her parents passed away.,brought out,brought about,brought up,broken down,3,彼女は両親が亡くなった後、小さな村で祖父母に育てられた。
+182,call off ～,予定していた催しを取りやめる,"Because of the heavy snowstorm, the organizers decided to (     ) the outdoor concert.",call off,call for,call on,call up,1,激しい吹雪のため、主催者は野外コンサートを中止することにした。
+183,carry on ～,作業や活動を中断せず続ける,"Despite the constant interruptions, the workers managed to (     ) their tasks until evening.",carry over,give up,take off,carry on,4,絶え間ない中断にもかかわらず、作業員たちは夕方まで仕事を続けることができた。
+184,come about,物事が生じる、発生する,Nobody really knows how this strange misunderstanding (     ) in the first place.,came about,came out,came along,came across,1,そもそもこの奇妙な誤解がどうして起きたのか、誰も本当には知らない。
+185,come by ～,努力や幸運によって手に入れる,Honest work is the only way he ever (     ) the money he needed for his studies.,came over,came off,came up,came by,4,彼が学費に必要なお金を手に入れた唯一の方法は、正直に働くことだった。
+186,come up with ～,アイデアや解決策を考え出す,The young engineer finally (     ) a clever solution to the long-standing problem.,came up with,put up with,got along with,came down with,1,その若い技術者はついに、長年の問題に対する巧妙な解決策を思いついた。
+187,do away with ～,不要なものを廃止する、なくす,The new government promised to (     ) all the outdated and unfair tax rules.,do without,catch up with,make up for,do away with,4,新政府は時代遅れで不公平な税制をすべて廃止すると約束した。
+188,find fault with ～,あら探しをして非難する,"No matter how hard I try, my supervisor always manages to (     ) my reports.",take after,come down with,find fault with,run out of,3,どんなに努力しても、上司はいつも私の報告書にけちをつけてくる。
+189,get over ～,困難や病気を乗り越える、立ち直る,It took her nearly a year to (     ) the shock of losing her childhood home.,get around,get on,get along,get over,4,幼い頃の家を失った衝撃から立ち直るのに、彼女はほぼ一年かかった。
+190,hand in ～,書類や課題を提出する,All students must (     ) their final essays before the deadline this Friday.,hand in,hand out,hand down,hand back,1,全学生は今週金曜日の締め切り前に、最終エッセイを提出しなければならない。
+191,learn ～ by heart,内容をすっかり覚え込む,The actor had to (     ) the entire script by heart within just two weeks.,recall,learn,realize,remind,2,その俳優はわずか二週間で台本全体を暗記しなければならなかった。
+192,look into ～,物事を詳しく調べる、調査する,The police promised to (     ) the mysterious disappearance of the local artist.,look up to,look forward to,look into,look after,3,警察は地元の芸術家の謎の失踪を調査すると約束した。
+193,look over ～,全体にざっと目を通す,Could you (     ) my application form quickly before I submit it to the office?,look up,look back,look over,look out,3,事務所に提出する前に、私の申請書にざっと目を通してもらえますか。
+194,pass away,人が亡くなる,Her beloved grandfather (     ) peacefully in his sleep last winter at the age of ninety.,passed away,passed by,passed out,passed up,1,彼女の最愛の祖父は昨年の冬、九十歳で眠るように安らかに亡くなった。
+195,put off ～,予定を後の日時に延ばす,We had to (     ) the picnic until next weekend because of the sudden rain.,put away,put down,put on,put off,4,突然の雨のため、私たちはピクニックを来週末まで延期しなければならなかった。
+196,put together ～,部品を組み立てる、まとめる,It took him several hours to (     ) the new bookshelf using only the printed instructions.,take apart,put together,break down,set aside,2,印刷された説明書だけを使って新しい本棚を組み立てるのに、彼は数時間かかった。
+197,put up ～,建物などを建てる,The company plans to (     ) a tall new office building right next to the station.,take up,put off,give up,put up,4,その会社は駅のすぐ隣に背の高い新しいオフィスビルを建てる計画だ。
+198,put up with ～,不快なことを我慢する,I simply cannot (     ) my neighbor's loud music late into the night any longer.,put up with,come up with,catch up with,get away with,1,夜遅くまで続く隣人の大音量の音楽に、私はもうこれ以上我慢できない。
+199,set about ～,仕事などに取りかかる,"As soon as the guests left, she (     ) cleaning the messy kitchen and living room.",set aside,set off,set about,set up,3,客が帰るとすぐに、彼女は散らかった台所と居間の掃除に取りかかった。
+200,set in,好ましくない状態が始まる,"As darkness (     ), the hikers realized they would not reach the cabin before night.",set up,set off,set out,set in,4,暗闇が訪れ始めると、登山者たちは夜になる前に小屋にたどり着けないと悟った。
+201,take after ～,顔つきや性質が親などに似ている,Everyone says the boy takes (     ) his father in both looks and stubborn personality.,off,over,after,up,3,みんなが言うには、その少年は見た目も頑固な性格も父親に似ている。
+202,of importance,重要な価値や意義がある,The witness gave the detective a piece of information that proved to be of great (     ).,importance,weight,length,height,1,その目撃者は刑事に、後に非常に重要だと判明する情報を伝えた。
+203,along with ～,～と一緒に、～に加えて,She sent the application form (     ) all the documents the office had requested.,thanks to,according to,along with,owing to,3,彼女は申込書を、事務所が要求したすべての書類と一緒に送付した。
+204,in connection with ～,～に関連して、～に関して,The police questioned several suspects (     ) the robbery that occurred last night.,in exchange for,in connection with,in contrast to,in return for,2,警察は昨夜起きた強盗事件に関連して数人の容疑者を尋問した。
+205,on board ～,乗り物に乗って、搭乗して,All the passengers were already on (     ) the plane when the engine suddenly failed.,foot,duty,board,sale,3,エンジンが突然故障したとき、乗客は全員すでに飛行機に搭乗していた。
+206,prior to ～,～より前で、～に先立って,You should turn off your mobile phone (     ) the start of the concert tonight.,next to,prior to,due to,thanks to,2,今夜はコンサートの開始より前に携帯電話の電源を切っておくべきだ。
+207,once in a while,頻繁ではないがときどき,My grandfather still enjoys going fishing at the lake once in a (     ).,hurry,row,sense,while,4,祖父は今でもときどき湖へ釣りに行くのを楽しんでいる。
+208,above all,いくつかある中でとりわけ、何よりも,"She is kind, clever, and, (     ) all, honest enough to admit her own mistakes.",without,among,against,above,4,彼女は優しく、賢く、そして何よりも、自分の過ちを認めるほど正直だ。
+209,all of a sudden,前触れなく突然に,We were walking quietly in the park when all of a (     ) it began to rain hard.,sudden,moment,minute,instant,1,私たちが公園を静かに歩いていると、突然激しく雨が降り始めた。
+210,all the same,そうではあってもやはり,"The plan sounds risky, but I think we should give it a try all the (     ).",most,same,least,best,2,その計画は危険そうだが、それでもやはり試してみるべきだと思う。
+211,as a rule,特別な場合を除いて普通は,"As a (     ), I get up at six and go for a short run before breakfast every morning.",habit,routine,reason,rule,4,普通は、私は毎朝6時に起きて朝食前に軽く走りに行く。
+212,as well,それに加えて～もまた,"If you are going to the bakery, could you buy some milk as (     ) while you're there?",well,much,also,too,1,パン屋に行くなら、ついでに牛乳も買ってきてくれませんか。
+213,before long,そう遠くない時期に間もなく,"Be patient; if you keep practicing every day, you will master the song before (     ).",here,now,long,then,3,我慢しなさい。毎日練習を続ければ、間もなくその曲を習得できるよ。
+214,by degrees,少しずつ徐々に,"The patient was very weak at first, but his strength returned by (     ) over the weeks.",turns,degrees,heart,halves,2,その患者は最初とても弱っていたが、数週間かけて徐々に体力を取り戻した。
+215,for good,これから先ずっと永久に,"After thirty years abroad, my uncle finally decided to come back home for (     ).",good,kind,plain,fair,1,30年の海外生活の後、おじはついに永久に故郷へ帰ることを決めた。
+216,for the most part,細部は別として大体は,"The instructions were confusing, but for the most (     ) I managed to assemble the desk.",part,time,while,half,1,説明書は分かりにくかったが、大体は何とか机を組み立てられた。
+217,from time to time,間隔をあけてときどき,"Even after moving to another city, she still visits her old school from time to (     ).",time,year,hour,day,1,別の街へ引っ越した後も、彼女は今でもときどき母校を訪ねている。
+218,in advance,事前に前もって,"If you want a good seat at the popular restaurant, you had better book a table in (     ).",common,total,return,advance,4,その人気レストランで良い席を取りたいなら、前もって予約しておいたほうがいい。
+219,in all,合計して全部で,"Counting the children and the adults, there were forty people in (     ) at the party.",part,many,all,half,3,子どもと大人を合わせると、パーティーには全部で40人いた。
+220,in particular,他と区別してとりわけ特に,"I enjoy all kinds of music, but I love jazz in (     ) on a quiet rainy evening.",reverse,plenty,vain,particular,4,私はあらゆる音楽が好きだが、静かな雨の夜には特にジャズが大好きだ。
+221,on occasion,ときどき、たまに,"She usually cooks at home, but (     ) she treats herself to dinner at a restaurant.",on duty,on average,on occasion,on purpose,3,彼女はふだん家で料理するが、たまにレストランでの夕食を自分にごほうびする。
+222,on purpose,わざと、故意に,He spilled the juice (     ) just to make his little sister cry.,at random,in vain,on purpose,by chance,3,彼は妹を泣かせるためだけにわざとジュースをこぼした。
+223,over and over again,何度も繰り返し,"To memorize the speech, she read it aloud (     ) until she knew every word.",now and then,over and over again,once and for all,sooner or later,2,そのスピーチを覚えるために、彼女は一語残らず頭に入るまで何度も繰り返し声に出して読んだ。
+224,right away,今すぐ、直ちに,"The doctor said the patient needed surgery (     ), so they rushed him to the operating room.",by and large,right away,on and off,after all,2,医者はその患者には直ちに手術が必要だと言ったので、彼らは彼を手術室へ急いで運んだ。
+225,agree to ～,～(提案・条件など)に同意する,"After long negotiations, both companies finally decided to (     ) the new contract terms.",attend to,object to,agree to,refer to,3,長い交渉の末、両社はついに新しい契約条件に同意することを決めた。
+226,agree with ～,～(人・意見)に同意する、～に合う,I completely (     ) you that we should postpone the trip until the weather improves.,agree with,agree to,insist on,depend on,1,天気が回復するまで旅行を延期すべきだという点で、私はあなたに全面的に同意する。
+227,apply for ～,～を申し込む、～に応募する,Hundreds of graduates rushed to (     ) the few positions the famous firm had advertised.,apply to,care for,apply for,call for,3,その有名企業が募集した数少ない職に、何百人もの卒業生が殺到して応募した。
+228,apply to ～,～に当てはまる、適用される,"These safety rules (     ) every visitor, regardless of age or nationality.",apply for,belong to,refer to,apply to,4,これらの安全規則は、年齢や国籍に関係なくすべての来訪者に当てはまる。
+229,remember doing,…したのを(過去に)覚えている,"I clearly (     ) the door before we left, so I don't know how the thief got in.",regret to lock,remember locking,remember to lock,forget to lock,2,私たちが出かける前にドアに鍵をかけたのははっきり覚えているので、どうやって泥棒が入ったのか分からない。
+230,remember to do,忘れずに…する,"Please (     ) the milk on your way home, because we've run out completely.",finish buying,avoid buying,remember to buy,remember buying,3,うちはすっかり牛乳を切らしているので、帰り道に忘れずに牛乳を買ってきてね。
+231,catch up with ～,～に追いつく,She walked so fast that I had to run to (     ) her before the corner.,put up with,come up with,keep up with,catch up with,4,彼女があまりに速く歩くので、私は角の手前で彼女に追いつくのに走らなければならなかった。
+232,keep pace with ～,～に遅れずについていく,Small shops struggle to (     ) the rapid changes in online shopping trends.,get rid of,make fun of,keep pace with,take pride in,3,小さな店は、オンラインショッピングの動向の急速な変化に遅れずについていくのに苦労している。
+233,keep up with ～,～に遅れずについていく、(知識などを)把握し続ける,He reads several journals every week to (     ) the latest research in his field.,look down on,run out of,break up with,keep up with,4,彼は自分の分野の最新の研究に遅れずついていくため、毎週いくつもの専門誌を読んでいる。
+234,leave ～ alone,～をそのままにしておく、～にかまわない,"The cat hissed at us, so Mom told us to (     ) it (     ) until it calmed down.",let ... alone,let ... go,leave ... behind,leave ... alone,4,その猫が私たちにシャーッと威嚇したので、母は落ち着くまで猫をそっとしておくよう言った。
+235,let alone ～,～は言うまでもなく、まして～ない,"The exhausted hiker could barely stand, (     ) climb the last steep slope.",rather than,let alone,as well as,leave alone,2,その疲れ切った登山者はかろうじて立っていられる程度で、最後の急な斜面を登るなど言うまでもなかった。
+236,correspond to ～,～に一致する、～に相当する,The numbers on this map (     ) the buildings listed in the guidebook's index.,correspond to,correspond with,attend to,contribute to,1,この地図上の番号は、ガイドブックの索引に載っている建物に対応している。
+237,correspond with ～,～と文通する、やりとりを交わす,For nearly ten years she has (     ) a pen pal she met during her trip to France.,corresponded to,complied with,corresponded with,coincided with,3,フランス旅行中に出会った文通相手と、彼女は十年近くやりとりを続けている。
+238,hit on ～,～(考えなど)を思いつく,"After staring at the problem for hours, she suddenly (     ) a clever solution.",hit at,hit on,hand in,hold on,2,何時間もその問題をにらんだ末、彼女は突然うまい解決策を思いついた。
+239,occur to ～,ふと～(人)の心に浮かぶ,It never (     ) me that the quiet boy next door might become a famous actor.,occurred to,occurred with,referred to,appealed to,1,隣のおとなしい少年が有名な俳優になるかもしれないなど、私の頭にはまったく浮かばなかった。
+240,dawn on ～,～(人)にわかり始める、合点がいく,"As she reread the letter, the truth slowly began to (     ) her.",fall on,lean on,dawn at,dawn on,4,その手紙を読み返すうちに、真実が彼女に徐々にわかり始めた。
+241,make the best of ～,不利な状況でできる限りのことをする,"The hotel room was tiny, but we decided to (     ) a bad situation and enjoy our trip anyway.",make sense of,make light of,make fun of,make the best of,4,ホテルの部屋は狭かったが、私たちは悪い状況の中でできる限りのことをして、とにかく旅行を楽しむことにした。
+242,make the most of ～,恵まれた機会や資源を最大限に活用する,"Since you only have one free day in Paris, you should (     ) it and visit as many sights as possible.",make up for,make do with,make away with,make the most of,4,パリで自由になる日は一日しかないのだから、それを最大限に活用してできるだけ多くの名所を訪れるべきだ。
+243,lay off ～,従業員を一時的に解雇する,"Because of falling sales, the factory had to (     ) more than two hundred workers last month.",put off,lay out,take off,lay off,4,売上の落ち込みのため、その工場は先月二百人を超える労働者を一時解雇しなければならなかった。
+244,lay out ～,物を見やすく並べて配置する,The shop assistant began to (     ) the new jewelry neatly in the glass display case.,lay out,turn out,carry out,lay off,1,店員は新しい宝飾品をガラスのショーケースの中にきれいに並べ始めた。
+245,be concerned about ～,物事の成り行きを気にかけて不安に思う,Many parents are deeply (     ) about the amount of time their children spend on smartphones.,familiar with,acquainted with,satisfied with,concerned about,4,多くの親は、子どもがスマートフォンに費やす時間の長さをとても心配している。
+246,be concerned with ～,ある事柄と関わりがある,This chapter is mainly (     ) with the economic history of nineteenth-century Britain.,concerned about,concerned with,nervous about,worried about,2,この章は主に十九世紀の英国の経済史を扱っている。
+247,be free from ～,好ましくないものが存在しない状態である,"After years of treatment, the patient was finally declared (     ) from the disease.",free to,free from,apart from,far from,2,何年もの治療の末、その患者はついにその病気から解放されたと診断された。
+248,be free to do,制約なく自分の意思で行動できる,"Once you finish the exam, you are (     ) leave the room whenever you like.",about to,free to,bound to,free from,2,試験を終えたら、好きなときにいつでも部屋を出てよい。
+249,be familiar to ～,ある人にとってよく知られている,"His face was (     ) to me, but I simply could not remember where we had met before.",close to,known by,familiar with,familiar to,4,彼の顔は私にはなじみがあったが、以前どこで会ったのかどうしても思い出せなかった。
+250,be familiar with ～,ある事柄について熟知している,"Before the interview, make sure you are (     ) with the company's main products and services.",familiar to,similar to,familiar with,filled with,3,面接の前に、その会社の主力製品やサービスをよく知っておきなさい。
+251,be true of ～,ある事柄に同じく当てはまる,"Prices have risen sharply this year, and the same is (     ) of food and fuel in particular.",true to,full of,due to,true of,4,今年は物価が急激に上昇しており、同じことが特に食料と燃料に当てはまる。
+252,be true to ～,信念や約束に忠実である,"Even when it cost him friends, he always remained (     ) to his own principles.",close of,true of,true to,loyal of,3,友人を失うことになってさえ、彼は常に自分の信念に忠実であり続けた。
+253,be tired from ～,労働や活動の結果として疲れる,She was completely (     ) from walking around the city all day in the summer heat.,tired of,tired from,free from,safe from,2,彼女は夏の暑さの中、一日中街を歩き回ったせいですっかり疲れていた。
+254,be tired of ～,同じことの繰り返しに飽きてうんざりする,I'm really (     ) of eating the same instant noodles for lunch every single day.,tired of,tired from,fond of,full of,1,私は毎日毎日昼食に同じインスタント麺を食べるのに本当に飽き飽きしている。
+255,be bound for ～,乗り物が特定の目的地へ向かっている,The train standing at platform three is (     ) for London and will depart in five minutes.,bound by,bound to,bound for,ready for,3,三番ホームに停車中の列車はロンドン行きで、五分後に発車する。
+256,be bound to do,ほぼ確実にそうなる見込みである,"If you keep practicing this hard every day, you are (     ) to pass the exam.",free for,about for,bound to,bound for,3,こんなに毎日一生懸命練習を続ければ、きっと試験に合格するだろう。
+257,be anxious about ～,結果がどうなるか気がかりで不安である,She was very (     ) about the results of her medical test and could hardly sleep.,eager to,anxious to,anxious about,proud of,3,彼女は健康診断の結果がとても心配で、ほとんど眠れなかった。
+258,be anxious to do,何かを強く望み、それをしたがる,The new employee was (     ) to impress his boss and volunteered for every project.,afraid of,anxious to,curious about,anxious about,2,その新入社員は上司に好印象を与えたくて、あらゆるプロジェクトに志願した。
+259,～ to come,これから先に訪れる、未来の,Scientists warn that the effects of climate change will be felt for generations (     ).,to come,to be,to go,to do,1,科学者たちは、気候変動の影響がこれから何世代にもわたって感じられるだろうと警告している。
+260,～ to go,目標までに残っている分の,We've finished most of the report; there are only two sections (     ) before the deadline.,to go,to be,to last,to come,1,報告書のほとんどは終えた。締め切りまでに残っているのはあと二つの節だけだ。
+261,anything but ～,決して～ではない、まったく～でない,The exam was (     ) easy; almost half of the students failed to pass it.,anything but,none but,nothing but,all but,1,その試験は決して簡単ではなかった。生徒のほぼ半数が合格できなかった。
+262,nothing but ～,ただ～だけ、～にすぎない,"Since he lost his job last month, he has done (     ) complain about his bad luck.",not to mention,other than,rather than,nothing but,4,先月仕事を失って以来、彼はただ自分の不運を嘆くばかりだ。
+263,at first,最初は、初めのうちは,"(     ) I disliked the new manager, but now I really respect him for his honesty.",At once,At last,At first,For the first time,3,最初は新しい部長が嫌いだったが、今では彼の誠実さを本当に尊敬している。
+264,for the first time,初めて,"When I traveled abroad (     ), I was amazed by how different everything looked.",in the first place,at first,by the time,for the first time,4,初めて海外を旅行したとき、何もかもがあまりに違って見えることに驚いた。
+265,in the way of ～,～の邪魔になって,Please move your bicycle; it is right (     ) the emergency exit and blocks the path.,in the way of,on the way to,in the form of,by way of,1,自転車を動かしてください。ちょうど非常口の邪魔になっていて通路をふさいでいます。
+266,on the way to ～,～へ行く途中で,I happened to meet an old friend (     ) the station this morning.,on the way to,out of the way,by way of,in the way of,1,今朝、駅へ行く途中で偶然旧友に会った。
+267,by now,今はもう、今頃はもう,"She left two hours ago, so she should have arrived home (     ).",by then,for now,just now,by now,4,彼女は2時間前に出発したので、今頃はもう家に着いているはずだ。
+268,for now,今のところは、差し当たり,"I have no other questions (     ), but I may contact you again later.",by now,from now,until now,for now,4,今のところほかに質問はありませんが、後でまた連絡するかもしれません。
+269,on the contrary,それどころか、とんでもない,"I was not bored by the lecture; (     ), I found it extremely interesting.",by contrast,to the contrary,on the contrary,in contrast,3,その講義に退屈したのではない。それどころか、とても面白いと思った。
+270,to the contrary,それと反対の、それに反する,"Unless you hear something (     ), assume the meeting will start at nine as planned.",to the contrary,on the contrary,by contrast,for the contrary,1,反対のことを聞かない限り、会議は予定通り9時に始まると思っていてください。
+271,in the air,未定で、宙に浮いて,Our plans for the summer trip are still (     ) because we cannot decide on a date.,up in arms,in the air,out of order,on the air,2,夏の旅行の計画は、日程を決められないのでまだ未定のままだ。
+272,on the air,放送中で,Please be quiet in the studio; the program is currently (     ) and listeners can hear you.,off the air,on the line,on the air,in the air,3,スタジオでは静かにしてください。番組は今放送中で、リスナーにあなたの声が聞こえます。
+273,by chance,偶然に、たまたま,I found this rare old book quite (     ) while cleaning out my grandfather's attic.,by heart,by turns,by far,by chance,4,祖父の屋根裏部屋を片づけているときに、この珍しい古書をまったく偶然に見つけた。
+274,by any chance,もしかして、ひょっとして,"Do you know, (     ), what time the next train to London leaves?",by no chance,by all means,by no means,by any chance,4,もしかして、次のロンドン行きの電車が何時に出るかご存じですか。
+275,as a matter of course,当然のこととして,"In this company, employees are expected to greet customers politely (     ).",as a rule of thumb,as a matter of fact,as a result,as a matter of course,4,この会社では、従業員が客に丁寧に挨拶するのは当然のこととされている。
+276,as a matter of fact,実を言うと、実際のところ,"""You look tired today."" ""(     ), I stayed up all night finishing the report.""",As a result,As a matter of course,As a matter of fact,As far as I know,3,「今日は疲れて見えるね」「実を言うと、徹夜で報告書を仕上げたんだ」
+277,at a distance,少し離れて、ある距離を置いて,"The painting looks blurry up close, but viewed (     ) it forms a clear image.",in the distance,at a distance,out of distance,by a distance,2,その絵は近くで見るとぼやけているが、少し離れて見るとはっきりした像になる。
+278,in the distance,遠くに、遠方に,We could see the lights of the harbor twinkling far (     ) as our ship sailed on.,on the distance,at a distance,in the distance,from a distance,3,船が進むにつれ、遠方に港の明かりがきらめいているのが見えた。
+279,inside out,裏返しに,You put your sweater on (     ); the seams and the label are showing on the outside.,back to front,head over heels,inside out,upside down,3,セーターを裏返しに着ているよ。縫い目とタグが外に出ている。
+280,upside down,逆さまに、さかさに,"The toddler was holding the picture book (     ), so all the animals appeared on their heads.",round and round,inside out,upside down,back to front,3,その幼児は絵本を逆さまに持っていたので、動物がみんな頭を下にして見えた。
+281,provide A with B,Aに必要なものを与える、供給する,The charity aims to (     ) every homeless family with warm clothing this winter.,provide,deliver,distribute,donate,1,その慈善団体はこの冬、すべてのホームレスの家族に暖かい衣類を供給することを目指している。
+282,supply A with B,Aに不足分を供給する,The new pipeline will (     ) the entire region with fresh drinking water all year round.,supply,donate,offer,deliver,1,その新しいパイプラインは一年中、地域全体に新鮮な飲料水を供給することになる。
+283,mistake A for B,Aを誤って別のBだと思う,In the dim light I (     ) my neighbor for a burglar and almost called the police.,took ～ as,mistook ～ for,confused ～ to,regarded ～ as,2,薄暗い明かりの中で私は隣人を泥棒と間違えて、危うく警察を呼ぶところだった。
+284,take A for B,Aを誤ってBだと思い込む,"Because of his fluent Japanese, people often (     ) him for a native speaker.",treat,take,consider,regard,2,彼の流暢な日本語のせいで、人々はよく彼を母語話者だと間違える。
+285,look on A as B,AをBという存在だと見なす,Most of his colleagues (     ) on him as the natural leader of the project team.,count,think,regard,look,4,同僚のほとんどは彼をそのプロジェクトチームの当然のリーダーと見なしている。
+286,think of A as B,AをBとして捉える、見なす,"I have always (     ) of this small town as my real home, even after moving abroad.",thought,regarded,viewed,looked,1,海外に引っ越したあとでさえ、私はずっとこの小さな町を自分の本当の故郷と見なしてきた。
+287,distinguish A from B,AとBの違いを見分ける,A skilled jeweler can easily (     ) a genuine diamond from a clever imitation.,notice,detect,recognize,distinguish,4,熟練した宝石商なら本物のダイヤモンドを巧妙な模造品と簡単に見分けられる。
+288,tell A from B,AとBを聞き分け・見分ける,The twins look so alike that even their teacher cannot (     ) one from the other.,say,tell,talk,speak,2,その双子はとても似ているので、先生でさえどちらがどちらか見分けられない。
+289,participate in ～,～に加わって活動する,More than two hundred students chose to (     ) in the annual volunteer cleanup last weekend.,participate,consist,take place,result,1,先週末、二百人を超える学生が毎年恒例のボランティア清掃に参加することを選んだ。
+290,take part in ～,～に参加する,"She was too nervous to (     ) part in the debate, so she just watched from the back.",have,take,give,make,2,彼女は緊張しすぎて討論に参加できず、ただ後ろから見ていた。
+291,compensate for ～,～の不足や損失を補う,Hard work alone cannot always (     ) for a complete lack of natural talent in sports.,compensate,call,apply,account,1,努力だけでは、スポーツにおける生まれつきの才能の完全な欠如を常に補えるわけではない。
+292,make up,いくつかの要素から成り立つ,Women now (     ) more than half of the students enrolled in the university's law school.,make up,bring up,take up,put up,1,今や女性がその大学のロースクールに在籍する学生の半数以上を構成している。
+293,care for ～,～の面倒をみる、世話する,She gave up her career to (     ) for her elderly parents during their long illness.,care,wait,call,look,1,彼女は長い闘病の間、年老いた両親の世話をするために仕事をあきらめた。
+294,look after ～,～の世話・管理をする,Could you (     ) after my dog for a few days while I am away on a business trip?,look,take,wait,care,1,出張で留守の間、数日間私の犬の世話をしてもらえませんか。
+295,show up,姿を見せる、来る,"We waited at the café for an hour, but our guest never (     ) up at all.",brought,showed,gave,turned in,2,私たちは一時間カフェで待ったが、招待客は結局まったく現れなかった。
+296,turn up,思いがけず姿を現す,"Just when we had given up hope, our missing cat suddenly (     ) up on the doorstep.",showed in,came up to,turned,broke,3,望みを捨てかけたちょうどそのとき、いなくなった猫が突然玄関先に現れた。
+297,consist in ～,～という点に本質がある,True happiness does not (     ) in wealth but in having people who truly care about you.,consist in,consist of,depend,result in,1,本当の幸福は富にあるのではなく、心から自分を気にかけてくれる人がいることにある。
+298,lie in ～,～のうちに存在する,The real strength of this team (     ) in its members' willingness to help one another.,results,lies,consists of,leads,2,このチームの本当の強さは、メンバーが互いに助け合おうとする意欲にある。
+299,give in,抵抗をやめて従う,"Despite all their pressure, the workers refused to (     ) and continued their strike.",give away,give in,give off,give out,2,あらゆる圧力にもかかわらず、労働者たちは屈服することを拒み、ストライキを続けた。
+300,give way to ～,～に負けて譲歩する,The old manager finally (     ) way to younger staff with fresher and bolder ideas.,broke,made,gave,took,3,年老いた経営者はついに、より新鮮で大胆な発想を持つ若手社員に道を譲った。
+301,stand out,周囲より目立つ、際立つ,Her bright red coat made her (     ) clearly in the crowd of office workers in gray suits.,give in,catch on,break down,stand out,4,彼女の鮮やかな赤いコートのおかげで、灰色のスーツを着た会社員の群衆の中で彼女ははっきりと目立った。
+302,stick out,外へ突き出る,"A few rusty nails (     ) of the old wooden fence, so be careful not to scratch your hand.",fall apart,take off,run over,stick out,4,古い木の柵から数本のさびた釘が突き出ているので、手を引っかかないように気をつけてください。
+303,cling to ～,～に固執する、しがみつく,"Even after the new evidence appeared, he stubbornly continued to (     ) his original theory.",bring about,call off,carry out,cling to,4,新しい証拠が出てきた後でさえ、彼は頑固に自分の当初の理論に固執し続けた。
+304,stick to ～,～を変えずに堅持する,"Once you have made a decision, you should (     ) your plan and not change it every day.",differ from,object to,laugh at,stick to,4,いったん決断したら、計画を堅持し、毎日それを変えるべきではない。
+305,count on ～,～を当てにする、頼りにする,"Whenever I am in serious trouble, I know I can always (     ) my old friend David for help.",run out of,count on,look down on,put up with,2,深刻な困難に陥ったとき、いつでも古い友人のデイビッドに助けを頼れると私はわかっている。
+306,rest on ～,～に基づいている,The entire argument of his essay seems to (     ) one questionable assumption about human nature.,break into,take after,rest on,give up,3,彼の小論文の論証全体が、人間の本性についての一つの疑わしい前提に基づいているようだ。
+307,look out for ～,～に気をつける、警戒する,"When you walk along this narrow mountain trail, please (     ) loose rocks that may slip under your feet.",come up with,make up for,get along with,look out for,4,この狭い山道を歩くときは、足元で滑るかもしれない緩んだ岩に気をつけてください。
+308,watch out for ～,～に注意する、用心する,The local guide warned us to (     ) poisonous snakes hiding in the tall grass near the river.,keep up with,look forward to,do away with,watch out for,4,地元のガイドは、川の近くの背の高い草に隠れている毒蛇に用心するよう私たちに警告した。
+309,hand over ～,～を引き渡す、手渡す,The defeated general was forced to (     ) all of his weapons to the victorious enemy commander.,put off,find out,bring up,hand over,4,敗れた将軍は、自分の武器をすべて勝利した敵の指揮官に引き渡すことを強いられた。
+310,turn over ～,～をひっくり返す,The cook used a wide spatula to carefully (     ) the large pancake without breaking it.,carry on,point out,turn over,hold on,3,料理人は大きなへらを使い、大きなパンケーキを壊さずに慎重にひっくり返した。
+311,date back to ～,～までさかのぼる,This magnificent stone bridge is said to (     ) the days of the ancient Roman Empire.,date back to,come down with,get away with,look up to,1,この壮麗な石橋は、古代ローマ帝国の時代までさかのぼると言われている。
+312,date from ～,～の時代から始まる、～以来存在する,Most of the beautiful paintings displayed in this quiet gallery (     ) the seventeenth century.,date from,consist of,depend on,refer to,1,この静かな画廊に展示されている美しい絵画のほとんどは、17世紀から存在する。
+313,put aside ～,～をわきに置く、一時保留する,Let us (     ) our personal differences for now and focus together on solving this urgent problem.,call for,take over,turn down,put aside,4,今は個人的な意見の相違をわきに置いて、この緊急の問題を解決することに一緒に集中しよう。
+314,set aside ～,～を蓄える、取っておく,She tries to (     ) a small amount of money every month so that she can travel abroad someday.,give away,break off,set aside,carry out,3,彼女はいつか海外旅行ができるように、毎月少額のお金を蓄えようとしている。
+315,sit up,上半身を起こす,"Feeling a little better, the patient slowly began to (     ) in bed to eat his breakfast.",sit up,pass away,break out,show off,1,少し気分が良くなり、その患者は朝食を食べるためにゆっくりとベッドで上半身を起こし始めた。
+316,stay up,寝ないで起きている,"My son often (     ) late at night playing video games, even when he has school the next morning.",calms down,stays up,drops by,gives in,2,息子は翌朝学校があるときでさえ、夜遅くまで起きてテレビゲームをしていることがよくある。
+317,hold back ～,～を制止する、抑える,The strong metal fence could barely (     ) the excited crowd rushing toward the famous singer.,go over,hold back,take in,put on,2,その丈夫な金属のフェンスは、有名な歌手に向かって殺到する興奮した群衆をかろうじて制止できた。
+318,keep back ～,～を隠す、伏せておく,"The witness seemed nervous, as if he were trying to (     ) some important information from the police.",bring about,turn up,keep back,fill in,3,その目撃者は、警察から重要な情報を隠そうとしているかのように、緊張しているようだった。
+319,feel sorry for ～,～を気の毒に思う,I really (     ) the stray dog shivering alone in the cold rain outside the station last night.,feel sorry for,take part in,make fun of,catch up with,1,昨夜、駅の外で冷たい雨の中ひとり震えていた野良犬を、私は本当に気の毒に思った。
+320,take pity on ～,～に同情する、哀れんで手を貸す,The kind farmer decided to (     ) the lost traveler and offered him a warm meal and a bed.,get rid of,catch sight of,make use of,take pity on,4,親切な農夫はその道に迷った旅人に同情して、温かい食事と寝床を提供することにした。
+321,sympathize with ～,相手のつらさを思いやり同情する,"I really (     ) you, but losing your job is no excuse for being so rude to everyone.",sympathize with,interfere with,compete with,part with,1,あなたには本当に同情するが、失業したからといってみんなにそんな失礼な態度を取っていい理由にはならない。
+322,take pride in ～,～を誇りに思う、自慢に思う,"The craftsmen here (     ) their work, polishing each wooden bowl by hand for hours.",make fun of,take charge of,take notice of,take pride in,4,ここの職人たちは自分の仕事を誇りに思っており、木製の椀を一つ一つ何時間も手で磨いている。
+323,pride oneself on ～,自分の長所や成果を誇りに思う,She (     ) herself on never having missed a single day of work in twenty years.,reminds,blames,boasts,prides,4,彼女は20年間一日も仕事を休んだことがないことを自慢に思っている。
+324,surrender to ～,抵抗をやめて屈する、降伏する,"After three weeks under siege, the exhausted defenders finally had to (     ) the enemy.",appeal to,surrender to,refer to,object to,2,3週間の包囲の末、疲れ果てた守備隊はついに敵に降伏せざるを得なかった。
+325,yield to ～,圧力や要求に屈する、譲る,"Despite the angry protests, the mayor refused to (     ) the demands of the crowd.",consist of,yield to,result in,amount to,2,激しい抗議にもかかわらず、市長は群衆の要求に屈することを拒んだ。
+326,be essential to ～,～にとって欠かせない、不可欠である,A steady supply of clean water (     ) the survival of every village in this region.,is famous for,is curious about,is similar to,is essential to,4,きれいな水の安定した供給は、この地域のすべての村の存続にとって不可欠である。
+327,be indispensable to ～,なくてはならないほど重要である,Years of field experience made her absolutely (     ) the success of the rescue team.,indispensable to,inferior to,exposed to,accustomed to,1,長年の現場経験により、彼女は救助隊の成功にとって絶対に欠かせない存在となった。
+328,be equal to ～,数量や程度が～に等しい,"In this recipe, one cup of this flour (     ) about one hundred and twenty grams.",is exposed to,is equal to,is subject to,is opposed to,2,このレシピでは、この小麦粉1カップは約120グラムに等しい。
+329,be equivalent to ～,価値や意味の点で～に相当する,Staying silent at that moment was (     ) admitting that he was guilty.,equivalent to,sensitive to,attached to,inferior to,1,あの瞬間に黙っていたことは、彼が有罪だと認めるのに等しかった。
+330,be apt to do,ついそうしてしまいがちである,Children who are tired and hungry (     ) cry over the smallest of things.,are bound by,are apt to,are about to,are eager to,2,疲れて空腹な子どもは、ほんの些細なことで泣きがちだ。
+331,be inclined to do,どちらかといえばそうする傾向がある,"Given how cloudy it looks, I (     ) cancel the picnic and stay indoors today.",am supposed by,am inclined to,am opposed to,am known to,2,こんなに曇っているのを見ると、私は今日のピクニックを中止して家にいたい気持ちになる。
+332,in a sense,見方によっては、ある意味では,"(     ), failing that exam was the best thing that ever happened to my career.",By chance,On purpose,In a sense,At length,3,ある意味では、あの試験に落ちたことは私のキャリアに起きた最良の出来事だった。
+333,in a way,ある観点から見れば、ある意味では,"I disagreed with him, but (     ) I could understand why he was so angry.",in vain,in person,in turn,in a way,4,私は彼に反対だったが、ある意味では彼がそんなに怒っている理由は理解できた。
+334,first of all,何よりもまず、最初に,"(     ), let me thank everyone who gave up their weekend to help with the move.",After all,All in all,First of all,All the same,3,まず第一に、引っ越しを手伝うために週末を返上してくれた皆さんにお礼を言わせてください。
+335,in the first place,そもそも、最初の段階で,"If you had read the instructions (     ), you would never have made that mistake.",in the first place,in the long run,in the meantime,in the end,1,そもそも説明書を読んでいれば、あんな間違いは決してしなかっただろうに。
+336,back and forth,前後に、行ったり来たり,The nervous lawyer kept pacing (     ) across the room while waiting for the verdict.,over and over,by and large,now and then,back and forth,4,その緊張した弁護士は、評決を待つ間ずっと部屋を行ったり来たり歩き回っていた。
+337,up and down,上下に、行ったり来たり,The excited puppy jumped (     ) at the door the moment it heard its owner's car.,up and down,side by side,off and on,more or less,1,その興奮した子犬は、飼い主の車の音を聞いた途端、ドアのところで飛び跳ねた。
+338,at present,今のところ、目下のところ,"The bridge is closed for repairs (     ), so please use the route along the river.",at ease,at random,at present,at heart,3,その橋は目下のところ修理のため閉鎖されているので、川沿いの道を使ってください。
+339,at the moment,ちょうど今、現在は,"I'm sorry, but the manager is on another call (     ); may I take a message?",at the latest,at the most,at the moment,at the rate,3,申し訳ありませんが、マネージャーはただ今別の電話に出ております。ご伝言を承りましょうか。
+340,in a word,要するに、ひとことで言えば,"The food was cold, the service was slow, and the music was too loud; (     ), it was a disaster.",on no account,by the way,word for word,in a word,4,料理は冷め、サービスは遅く、音楽はうるさすぎた。要するに、それはひどい有様だった。
+341,in short,つまり、要点を手短にまとめると,"He missed deadlines, ignored emails, and skipped meetings; (     ), he was fired.",in full,in case,in short,in vain,3,彼は締め切りを守らず、メールを無視し、会議を欠席した。つまり、彼はクビになった。
+342,generally speaking,一般論として言えば,"(     ), people who exercise regularly tend to live longer and healthier lives.",Generally speaking,Strictly speaking,Frankly speaking,Roughly speaking,1,一般的に言えば、定期的に運動する人はより長く健康的な人生を送る傾向がある。
+343,on the whole,細かい点は別として全体としては,"The performance had a few weak moments, but (     ) it was an impressive show.",on the spot,on the contrary,on the whole,on the other hand,3,その公演には弱い場面もいくつかあったが、全体としては見事なショーだった。
+344,all in all,あれこれ考え合わせると概して,"We had some rainy days during the trip, but (     ) it was a wonderful holiday.",one by one,here and there,all in all,now and then,3,旅行中は雨の日もあったが、全体的にはすばらしい休暇だった。
+345,in principle,基本方針としては(実際は別として),"They agreed (     ) to the merger, though the details still need to be worked out.",in person,in return,in principle,in advance,3,細部はまだ詰める必要があるが、彼らは原則的にはその合併に同意した。
+346,in theory,理屈の上では(現実は異なるかもしれない),"(     ), the plan should cut costs by half, but in practice it rarely works.",In theory,In time,In short,In place,1,理論上は、その計画で費用は半分に減るはずだが、実際にはめったにうまくいかない。
+347,at all costs,どんな犠牲を払ってでも何としても,The firefighters were determined to save the trapped children (     ).,at all events,at all times,at all ages,at all costs,4,消防士たちは、何としても閉じ込められた子どもたちを救おうと決意していた。
+348,by all means,相手の依頼を快く許可してどうぞぜひ,"""May I borrow your dictionary for a moment?"" ""(     ), go ahead.""",By the way,By no means,By and large,By all means,4,「ちょっと辞書をお借りしてもいいですか」「ぜひどうぞ、使ってください」
+349,as it were,正確ではないがいわば言ってみれば,"The old captain was, (     ), the father of everyone aboard the ship.",as it happens,as it were,as it is,as it stands,2,その年老いた船長は、いわば船に乗る全員の父親のような存在だった。
+350,so to speak,たとえて言えばいわば,"She is the brain of the company, (     ), guiding every major decision.",so far as,so much so,so as to,so to speak,4,彼女はいわばその会社の頭脳であり、あらゆる重要な決定を導いている。
+351,for one's part,自分に関して言えば自分としては,"For (     ) part, I see no reason to change a plan that is already working well.",myself,my,my own,mine,2,私としては、すでにうまくいっている計画を変える理由はないと思う。
+352,on one's part,その人の側からなされたものとして,The accident was caused by carelessness on the driver's (     ).,hand,side,part,turn,3,その事故は運転手の側の不注意によって引き起こされた。
+353,for the present,差し当たり今のところは,Let's leave the broken machine as it is for the (     ) and repair it next week.,instant,moment,occasion,present,4,壊れた機械は当分の間そのままにしておいて、来週修理しよう。
+354,for the time being,さしあたって当面の間は,I am staying at my uncle's house for the time (     ) until I find my own apartment.,passing,being,having,coming,2,自分のアパートが見つかるまで、当面の間は叔父の家に泊まっている。
+355,close at hand,手の届くすぐそばに,Keep a flashlight close at (     ) in case the power goes out during the storm.,head,hand,heart,foot,2,嵐の間に停電したときに備えて、懐中電灯をすぐ手元に置いておきなさい。
+356,around the corner,距離や時間がもうすぐそこに,Don't lose hope; a brighter future may be just around the (     ).,curve,turning,bend,corner,4,希望を失ってはいけない。より明るい未来はもうすぐそこまで来ているかもしれない。
+357,for all ～,～があるにもかかわらず,"(     ) all his wealth, he was a lonely man with very few real friends.",At,For,By,With,2,あれほどの富があるにもかかわらず、彼は本当の友人がほとんどいない孤独な男だった。
+358,with all ～,～がありながらもそれにもかかわらず,"(     ) all her talent, she never managed to win the top prize in the contest.",With,For,On,In,1,あれほどの才能がありながら、彼女はそのコンテストで一度も最優秀賞を取れなかった。
+359,as for ～,話題を転じて～について言えば,"I enjoyed the food very much. As (     ) the service, it could have been better.",with,to,for,of,3,料理はとても楽しめた。サービスについて言えば、もう少しよくてもよかった。
+360,as to ～,～に関しては～については,They are still arguing as (     ) whether the new policy is fair to everyone.,in,to,of,for,2,その新しい方針が皆にとって公平かどうかに関して、彼らはまだ議論している。
+361,not to mention ～,～は言うまでもなく,"She speaks French and German fluently, (     ) her perfect English.",not to bother,not to blame,not to mention,not to worry,3,彼女は完璧な英語は言うまでもなく、フランス語とドイツ語も流暢に話す。
+362,to say nothing of ～,～は言うまでもなく,"The trip was exhausting and expensive, (     ) the terrible weather we had.",to take care of,to make sure of,to get hold of,to say nothing of,4,その旅行は疲れるし費用もかかり、ひどい天気だったのは言うまでもなかった。
+363,be dependent on ～,～に依存している,Many small island nations are heavily (     ) imported food and fuel.,capable of,dependent on,fond of,independent of,2,多くの小さな島国は、輸入食料と燃料に大きく依存している。
+364,be independent of ～,～から独立している,"After getting a steady job, she became financially (     ) her parents.",jealous of,independent of,afraid of,proud of,2,安定した仕事に就いた後、彼女は経済的に両親から独立した。
+365,in order,整頓されて、順調で,"Before the inspection, he made sure all the documents were neatly (     ).",out of order,on purpose,in order,at random,3,検査の前に、彼はすべての書類がきちんと整頓されていることを確認した。
+366,out of order,故障して、順序が狂って,I had to take the stairs because the elevator was completely (     ) again.,out of stock,out of order,out of date,out of touch,2,エレベーターがまた完全に故障していたので、私は階段を使わなければならなかった。
+367,look down on ～,～を見下す,Some wealthy people unfairly (     ) those who earn less than they do.,look out for,look up to,look down on,look back on,3,裕福な人の中には、自分より収入の少ない人を不当に見下す者もいる。
+368,look up to ～,～を尊敬する,Young athletes often (     ) famous players and try to imitate their style.,look down on,look in on,look out for,look up to,4,若いアスリートはしばしば有名選手を尊敬し、その流儀を真似ようとする。
+369,do with ～,～を処理する,I don't know what to (     ) all these old magazines piling up in the closet.,do with,do in,do up,do over,1,クローゼットにたまっているこれらの古い雑誌をどう処理したらいいか分からない。
+370,do without ～,～なしですます,"When we went camping, we had to learn to (     ) electricity for a week.",do without,do with,do away,do over,1,キャンプに行ったとき、私たちは一週間電気なしですませることを覚えなければならなかった。
+371,in sight,見えて、視界に入って,"After hours of walking through the forest, the village finally came (     ).",out of sight,in sight,at hand,by chance,2,森を何時間も歩いた後、村がついに見えてきた。
+372,out of sight,見えなくて,She waved until the train was completely (     ) and then turned to leave.,out of breath,out of order,in sight,out of sight,4,彼女は電車が完全に見えなくなるまで手を振り、それから立ち去ろうと振り返った。
+373,at one's ease,くつろいで,The host was so friendly that all the guests felt completely (     ) at the party.,at their ease,on edge,ill at ease,out of place,1,主催者がとても親切だったので、客は皆パーティーですっかりくつろいだ気分になった。
+374,ill at ease,不安で、落ち着かないで,Speaking in front of such a large audience made the new teacher feel (     ).,ill at ease,full of joy,beside himself,at his ease,1,そんな大勢の聴衆の前で話すことは、新任の教師を不安にさせた。
+375,act on ～,～に従って行動する、～に作用する,"Instead of ignoring the warning, the manager decided to (     ) the advice at once.",act out,act up,act on,act for,3,その警告を無視するのではなく、部長はすぐに助言に従って行動することにした。
+376,break in,押し入る、口を挟む,"While I was telling the story, my little brother kept trying to (     ) with questions.",break up,break down,break in,break out,3,私が話をしている間、弟は質問を挟んで口を出そうとし続けた。
+377,break out,起こる、急にしだす,A huge fire suddenly (     ) in the old factory late at night.,broke off,broke in,broke out,broke up,3,夜遅く、古い工場で突然大きな火事が起こった。
+378,break up,解散する、別れる,The band decided to (     ) after more than ten years of touring together.,break in,break up,break out,break down,2,そのバンドは10年以上一緒にツアーをした後、解散することに決めた。
+379,call for ～,～を必要とする、～を求める,This delicate recipe (     ) fresh herbs and a great deal of patience.,calls up,calls for,calls on,calls off,2,この繊細なレシピは、新鮮なハーブと多大な忍耐を必要とする。
+380,call on ～,～を訪問する、～に要求する,"On my way home, I decided to (     ) an old friend at his apartment.",call on,call up,call off,call for,1,帰り道に、私は旧友のアパートを訪問することにした。
+381,come across ～,～を偶然見つける、見かける,"While cleaning the attic, I happened to (     ) an old photo of my grandparents.",come across,come round to,come down with,come up with,1,屋根裏を掃除しているとき、たまたま祖父母の古い写真を偶然見つけた。
+382,come to ～,（合計などが）～に達する,"After adding the tax and the delivery fee, the total bill came (     ) nearly two hundred dollars.",over,off,by,to,4,税金と配送料を加えると、請求総額は二百ドル近くに達した。
+383,give out,尽きる、なくなる,"Halfway up the mountain, our water supply began to (     ), so we had to turn back.",give out,give away,give in,give off,1,山を半分ほど登ったところで水が尽き始め、私たちは引き返さざるをえなかった。
+384,go by,（時が）たつ、過ぎる,"As the years (     ), she gradually forgot the painful memories of her childhood.",went over,went by,went off,went out,2,年月がたつにつれて、彼女は子ども時代のつらい記憶を次第に忘れていった。
+385,go off,（爆弾などが）爆発する、鳴る,The alarm clock suddenly (     ) at six in the morning and woke the whole house.,went with,went off,went over,went by,2,目覚まし時計が朝六時に突然鳴り、家じゅうの者を起こした。
+386,go on,（事が）起こる、続く,The teacher walked into the classroom and asked the students what was (     ).,going on,going over,going out,going by,1,先生は教室に入ってきて、生徒たちに何が起こっているのかと尋ねた。
+387,go out,（火・明かりが）消える,A strong gust of wind blew through the window and made all the candles (     ).,go off,go by,go out,go over,3,窓から強い突風が吹き込み、ろうそくがすべて消えた。
+388,go over ～,～に目を通す、～を見直す,"Before submitting the report, please (     ) it carefully to check for any mistakes.",go off,go over,go out,go by,2,報告書を提出する前に、間違いがないか丁寧に目を通してください。
+389,go with ～,～に似合う、～と調和する,"That bright red tie doesn't really (     ) your dark gray suit, in my opinion.",go off,go with,go out,go by,2,私の考えでは、あの真っ赤なネクタイはあなたの濃い灰色のスーツにはあまり似合わない。
+390,hold out,持ちこたえる、もつ,"Surrounded by enemy troops, the defenders managed to (     ) for three more days until reinforcements finally arrived.",hold out,hold down,hold in,hold back,1,敵兵に包囲されながらも、守備隊はついに援軍が到着するまで、あと三日間どうにか持ちこたえた。
+391,hold up ～,～を遅らせる、～を妨げる,A serious traffic accident on the highway (     ) thousands of commuters for over two hours.,held out,held on,held off,held up,4,高速道路での深刻な交通事故が、何千人もの通勤者を二時間以上も足止めした。
+392,live on ～,～を常食にする,"During the long expedition, the explorers had to (     ) dried meat and biscuits for weeks.",live on,live through,live out,live up,1,長い探検の間、探検家たちは何週間も干し肉とビスケットを常食にしなければならなかった。
+393,look to ～,～に頼る、～を当てにする,"Whenever she faces a difficult decision, she tends to (     ) her older brother for advice.",look out,look up,look over,look to,4,難しい決断に直面するといつも、彼女は助言を兄に頼りがちだ。
+394,look up ～,～を（辞書などで）調べる,"If you don't know what the word means, you should (     ) it in a dictionary.",look to,look into,look up,look out,3,その単語の意味がわからないなら、辞書で調べるべきだ。
+395,put out ～,～（火など）を消す,It took the firefighters several hours to completely (     ) the fire in the warehouse.,put on,put off,put up,put out,4,消防士たちが倉庫の火を完全に消すのに数時間かかった。
+396,settle down,落ち着く、定住する,"After years of traveling around the world, he finally decided to (     ) in a quiet town.",settle for,settle up,settle down,settle in,3,何年も世界中を旅した後、彼はついに静かな町に定住することを決めた。
+397,stand by ～,～を支持する、～の味方をする,"No matter what happens, a true friend will always (     ) you in times of trouble.",stand for,stand up,stand out,stand by,4,何が起ころうと、本当の友人は困ったときにいつもあなたの味方をしてくれる。
+398,stand for ～,～を意味する、～の略である,"Most people don't know that the letters ""UN"" actually (     ) the United Nations.",stand for,stand by,stand out,stand up,1,"ほとんどの人は、""UN"" という文字が実は国際連合を意味することを知らない。"
+399,take in ～,～を理解する、～を把握する,The lecture was so complicated that the students could hardly (     ) what was being said.,take over,take in,take up,take on,2,講義はあまりに複雑だったので、生徒たちは話されていることをほとんど理解できなかった。
+400,take on ～,～を引き受ける、（仕事などを）負う,"Although she was already busy, she agreed to (     ) extra responsibility for the difficult new project.",take after,take on,take in,take off,2,彼女はすでに忙しかったが、その難しい新しいプロジェクトの追加の責任を引き受けることに同意した。
+401,take to ～,～にふけるようになる、～が習慣になる,"After he retired, my grandfather (     ) gardening and now spends every morning in the yard.",took to,took off,took over,took in,1,祖父は退職後、ガーデニングにふけるようになり、今では毎朝庭で過ごしている。
+402,take up ～,（趣味・活動など）を始める,"Looking for a new hobby, she decided to (     ) painting and bought a set of brushes.",take out,take up,take after,take down,2,新しい趣味を探して、彼女は絵を描くことを始めることにし、筆のセットを買った。
+403,turn down ～,（申し出・要求など）を却下する、断る,The committee decided to (     ) his proposal because the budget was far too high.,turn out,turn up,turn down,turn over,3,予算があまりにも高すぎたため、委員会は彼の提案を却下することにした。
+404,turn in ～,（書類・課題など）を提出する,"Please (     ) your reports by Friday, or they will not be counted toward your grade.",turn off,turn in,turn up,turn on,2,金曜日までにレポートを提出してください。さもないと成績に算入されません。
+405,make for ～,～のほうへ進む、向かう,"As soon as the alarm rang, the workers (     ) the nearest exit without any panic.",made out,made off,made up,made for,4,警報が鳴るとすぐに、作業員たちは慌てることなく最寄りの出口へと向かった。
+406,make out ～,～を見分ける、（かろうじて）読み取る,It was so dark that I could barely (     ) the figure standing at the end of the hall.,make over,make up,make for,make out,4,とても暗かったので、廊下の端に立っている人影をかろうじて見分けることしかできなかった。
+407,meet with ～,（事故・困難など）を経験する、（反応・対応など）を受ける,Her bold plan to reform the company (     ) strong resistance from the older managers.,looked up,brought up,met up,met with,4,会社を改革しようという彼女の大胆な計画は、年配の管理職から強い抵抗を受けた。
+408,provide for ～,～を扶養する、養う,"With three children to (     ), he often worked two jobs to keep the family afloat.",call for,account for,stand for,provide for,4,養うべき子どもが三人いたので、彼は家計を支えるためにしばしば二つの仕事を掛け持ちした。
+409,put down ～,（反乱・暴動など）を鎮める、鎮圧する,Government troops were sent in to (     ) the rebellion before it spread to other cities.,put on,put up,put down,put off,3,反乱が他の都市に広がる前に鎮圧するため、政府軍が派遣された。
+410,run over ～,（車などが人・動物）をひく,The driver was charged after he failed to brake and (     ) a dog crossing the street.,ran over,ran up,ran off,ran out,1,運転手はブレーキをかけられず、道を横切る犬をひいたため起訴された。
+411,set out,出発する、旅立つ,"The explorers (     ) at dawn, hoping to reach the mountain base before nightfall.",set in,set about,set out,set up,3,探検家たちは夜になる前に山のふもとに着くことを願って、夜明けに出発した。
+412,be due to do,～する予定である,The new high-speed train (     ) begin service next spring after years of construction.,is willing to,is due to,is used to,is about to,2,その新しい高速列車は、長年の建設を経て、来春に運行を開始する予定だ。
+413,up to ～,～次第である、～の責任である,Whether we go ahead with the project or not is entirely (     ) the board of directors.,due to,up to,subject to,owing to,2,そのプロジェクトを進めるかどうかは、完全に取締役会次第である。
+414,at large,（犯人などが）逃走中で、捕まらないで,"Despite a week-long search, the escaped prisoner is still (     ) somewhere in the region.",at most,at hand,at once,at large,4,一週間にわたる捜索にもかかわらず、脱走した囚人はいまだにこの地域のどこかで逃走中だ。
+415,in effect,事実上、実質的には,"Although he holds no official title, he is (     ) the person who runs the entire company.",in vain,in turn,in time,in effect,4,彼は公式の肩書きを持っていないが、事実上、会社全体を動かしているのは彼だ。
+416,all but ～,ほとんど～,"By the time we arrived, the food was (     ) gone, with only a few crumbs left on the plate.",all out,all over,all along,all but,4,私たちが着いたころには、食べ物はほとんどなくなっていて、皿にはわずかなくずが残っているだけだった。
+417,at length,詳細に、長々と,"The professor spoke (     ) about the causes of the war, covering every detail in his lecture.",at random,at length,at heart,at once,2,その教授は戦争の原因について、講義の中であらゆる細部を扱いながら、詳細に語った。
+418,next to ～,ほとんど～（否定語の前で）,Finding a quiet seat on a Friday night in this café is next to (     ).,possible,certain,impossible,obvious,3,この金曜の夜のカフェで静かな席を見つけるのは、ほとんど不可能だ。
+419,on end,連続して、立て続けに,"During the heat wave, the air conditioner ran for days (     ) without ever shutting off.",on end,on time,on edge,on board,1,熱波の間、エアコンは一度も止まることなく何日も連続して稼働し続けた。
+420,by way of ～,～経由で、～を通って,"We flew to Rome (     ) Paris, since there were no direct flights available that day.",by means of,by virtue of,by dint of,by way of,4,その日は直行便がなかったので、私たちはパリ経由でローマへ飛んだ。
+421,add to ～,～を増やす、大きくする,The unexpected guests only (     ) the stress of organizing the wedding reception.,give up,add to,carry out,look after,2,予期せぬ客たちは、結婚披露宴を準備するストレスを増やすだけだった。
+422,adapt to ～,新しい環境などに順応する,It took the foreign students several months to fully (     ) the new school system.,refer to,consist of,adapt to,depend on,3,その留学生たちが新しい学校制度に完全に順応するには数か月かかった。
+423,object to ～,～に反対する、異議を唱える,Many residents strongly (     ) the plan to build a factory near the river.,result from,object to,apply for,result in,2,多くの住民は川の近くに工場を建てる計画に強く反対した。
+424,admit to ～,～を(悪事などと)認める,"After hours of questioning, the suspect finally (     ) stealing the money.",amounted to,resulted in,admitted to,consisted of,3,何時間もの尋問の後、容疑者はついに金を盗んだことを認めた。
+425,conform to ～,規則や基準と一致する、従う,All new buildings in this district must (     ) the strict safety regulations.,account for,conform to,interfere with,differ from,2,この地区のすべての新しい建物は、厳しい安全規則に従わなければならない。
+426,resort to ～,(やむを得ず)～に訴える、頼る,"When peaceful talks failed, the protesters decided to (     ) more aggressive tactics.",relate to,resort to,consist of,attend to,2,平和的な話し合いが失敗すると、抗議者たちはより攻撃的な手段に訴えることにした。
+427,keep to ～,道筋や規則から離れずに従う,The hikers were warned to (     ) the marked trail to avoid getting lost.,run out,part with,call off,keep to,4,ハイカーたちは道に迷わないよう、印のついた小道から離れないようにと注意された。
+428,get to ～,～に到着する,"If we leave now, we should (     ) the airport well before the flight departs.",take after,come across,get to,put off,3,今出発すれば、飛行機が出る十分前に空港に到着できるはずだ。
+429,adhere to ～,主義や規則に忠実に従う,The company insists that every employee strictly (     ) the code of conduct.,adhere to,differ from,cope with,hint at,1,その会社は、すべての従業員が行動規範に厳格に従うことを求めている。
+430,reflect on ～,～を熟考する、よく考える,"Before making such a big decision, you should take time to (     ) the consequences.",touch on,insist on,carry on,reflect on,4,そんな大きな決断をする前に、時間をかけてその結果をよく考えるべきだ。
+431,decide on ～,いくつかの中から～を決める,"After looking at many houses, the couple finally (     ) the one near the park.",looked into,came up,decided on,gave away,3,たくさんの家を見た後、その夫婦はついに公園の近くの家に決めた。
+432,fall on ～,責任や負担などが～に降りかかる,"With both parents working, the duty of caring for the children (     ) their grandmother.",gave in,fell on,ran out,broke down,2,両親とも働いていたので、子供たちの世話をする義務は祖母に降りかかった。
+433,feed on ～,動物が～を常食にする,Owls usually (     ) small animals such as mice and insects during the night.,feed on,give off,deal in,take in,1,フクロウはたいてい夜の間にネズミや昆虫などの小動物を常食にする。
+434,run into ～,～に偶然出会う,I happened to (     ) an old classmate while I was shopping downtown yesterday.,care for,wait on,run into,call off,3,昨日、繁華街で買い物をしているとき、偶然昔のクラスメートに出会った。
+435,break into ～,建物などに侵入する,"Burglars tried to (     ) the empty house, but the alarm scared them away.",fill in,turn down,break into,call for,3,強盗たちはその空き家に侵入しようとしたが、警報におびえて逃げ去った。
+436,enter into ～,契約や交渉などを取り結ぶ、始める,The two governments are expected to (     ) a new trade agreement next month.,consist of,enter into,result from,set off,2,両政府は来月、新しい貿易協定を結ぶと予想されている。
+437,burst into ～,急に～をしだす,"On hearing the sad news, the little girl suddenly (     ) tears in front of everyone.",cut down,passed by,handed in,burst into,4,その悲しい知らせを聞くと、その小さな女の子はみんなの前で急に泣きだした。
+438,dispose of ～,不要なものを処分する,You must (     ) old batteries properly instead of throwing them in the regular trash.,approve of,boast of,consist of,dispose of,4,古い電池は普通のごみに捨てるのではなく、適切に処分しなければならない。
+439,approve of ～,～に賛成する、よいと認める,Her parents did not (     ) her plan to quit school and travel around the world.,tire of,approve of,become of,consist of,2,彼女の両親は、学校をやめて世界中を旅するという彼女の計画に賛成しなかった。
+440,boast of ～,～を自慢する、誇らしげに言う,He never misses a chance to (     ) his son's success at the famous university.,smell of,beware of,die of,boast of,4,彼は有名大学での息子の成功を自慢する機会を決して逃さない。
+441,become of ～,～がその後どうなるか,I often wonder what will (     ) the children we taught years ago.,turn into,become of,result in,take after,2,私は何年も前に教えた子どもたちがこれからどうなるのだろうとよく思う。
+442,derive from ～,～が起源・出どころである,Many English words (     ) Latin and Greek roots used long ago.,consist of,suffer from,derive from,refrain from,3,多くの英単語は昔使われていたラテン語やギリシャ語の語根に由来している。
+443,aim at ～,～を達成しようと狙う,The new health campaign is (     ) reducing smoking among teenagers.,aimed at,based on,known for,used to,1,その新しい健康キャンペーンは十代の若者の喫煙を減らすことを狙ったものだ。
+444,interfere with ～,～の進行や働きを妨げる,Loud noise from the street can seriously (     ) my concentration while studying.,cope with,interfere with,comply with,deal with,2,通りからの大きな騒音は勉強中の私の集中をひどく妨げることがある。
+445,part with ～,惜しみつつ手放す,She loved the old piano so much that she could not (     ) it for any price.,wait on,catch up with,part with,keep up with,3,彼女はその古いピアノをとても気に入っていて、どんな値段でも手放すことができなかった。
+446,long for ～,心から強く望む,"After months at sea, the sailors began to (     ) the comfort of their own homes.",fall for,long for,stand for,account for,2,何か月も海上で過ごした後、船乗りたちは自分の家のくつろぎを切望し始めた。
+447,send for ～,来てもらうよう人を呼ぶ,"The patient suddenly grew worse, so the nurse hurried to (     ) the doctor.",call off,send for,put off,allow for,2,患者が突然悪化したので、看護師は急いで医者を呼んだ。
+448,go about ～,仕事や作業に取りかかる,I had no idea how to (     ) repairing the broken engine on my own.,go about,go for,go through,go without,1,私は壊れたエンジンを自分で直す作業にどう取りかかればいいのか見当もつかなかった。
+449,run across ～,偶然に見つけ出会う,"While cleaning the attic, I happened to (     ) some old letters from my grandfather.",run after,run out of,run over,run across,4,屋根裏を掃除しているとき、私は祖父からの古い手紙を偶然見つけた。
+450,end up,最終的にある状態に行き着く,"If you keep spending money so carelessly, you will (     ) deeply in debt.",bring up,take up,make up,end up,4,そんなに不注意にお金を使い続けると、君は最後には深い借金を抱えることになるよ。
+451,use up ～,残らず使って尽きさせる,"We have already (     ) all the paper, so I need to buy more before the meeting.",put off,used up,brought up,given away,2,私たちはもう紙を全部使い果たしたので、会議の前にもっと買う必要がある。
+452,sum up ～,要点を短くまとめる,"Before we close, let me (     ) the main points we discussed in today's lesson.",break down,sum up,put off,show off,2,終わる前に、今日の授業で話し合った要点を要約させてください。
+453,clear up ～,わからない点を解き明かす,The detective worked all night to (     ) the mystery surrounding the missing jewels.,give up,bring up,take up,clear up,4,探偵は消えた宝石を巡る謎を明らかにするために一晩中働いた。
+454,tie up ～,動けないようひもなどで縛る,The robbers (     ) the guard with thick rope before breaking into the safe.,tied up,kept up,grew up,showed up,1,強盗たちは金庫に押し入る前に、太いロープで警備員を縛り上げた。
+455,cheer up ～,気持ちを明るく元気にする,"I bought some flowers hoping to (     ) my sister, who has been ill in bed.",turn down,put off,cheer up,call off,3,私は病気で寝込んでいる妹を元気づけたくて花を買った。
+456,blow up ～,爆発させて破壊する,The army planned to (     ) the bridge to stop the enemy from advancing.,look up,bring up,give up,blow up,4,軍は敵の前進を止めるためにその橋を爆破する計画を立てた。
+457,call up ～,電話で連絡を取る,"If you have any questions about the order, please (     ) our office tomorrow morning.",call on,call off,call up,call for,3,注文について質問があれば、明日の朝、私たちの事務所に電話をかけてください。
+458,shut up,黙って話すのをやめる,The teacher told the noisy students to (     ) and listen carefully to the lecture.,set up,show up,sit up,shut up,4,先生は騒がしい生徒たちに、話をやめて講義を注意深く聞くように言った。
+459,step up ～,程度や活動を一段と高める,The company decided to (     ) production to meet the rapidly growing demand for its phones.,step up,step back,step on,step in,1,その会社は急速に伸びる携帯電話の需要に応えるため、生産を増やすことに決めた。
+460,cut down on ～,摂取量や使用量を減らす,My doctor advised me to (     ) sugar if I really want to lose some weight.,go in for,cut down on,catch up on,look down on,2,本当に体重を減らしたいのなら砂糖を減らすようにと医者は私に助言した。
+461,slow down,速度を落とす、ゆっくりする,The driver had to (     ) as he approached the sharp curve in the dark.,speed up,break in,turn up,slow down,4,運転手は暗闇の中で急カーブに近づくにつれ速度を落とさざるをえなかった。
+462,break down,故障する、(車などが)動かなくなる,"Our car suddenly began to (     ) on the highway, so we called for help.",break down,break in,break up,break out,1,私たちの車が高速道路で突然故障し始めたので、救援を呼んだ。
+463,hand down ～,～を後世に伝える、(子孫などに)残す,These ancient recipes have been (     ) from generation to generation for centuries.,handed in,handed down,handed out,handed over,2,これらの古いレシピは何世紀もの間、世代から世代へと伝えられてきた。
+464,take down ～,～を書き留める、メモする,The secretary quickly (     ) every word the manager said during the meeting.,took off,took down,took out,took up,2,秘書は会議中に部長が言ったすべての言葉を素早く書き留めた。
+465,burn down ～,～を全焼させる、焼け落ちる,A huge fire (     ) the historic theater to the ground last night.,burned down,burned off,burned up,burned out,1,昨夜、大火事がその歴史ある劇場を跡形もなく全焼させた。
+466,come out,(本などが)出版される、世に出る,Her long-awaited new novel will finally (     ) in bookstores next month.,come out,come along,come down,come over,1,待望の彼女の新作小説が、来月ついに書店で出版される。
+467,run out,使い果たす、尽きる,We had to stop the printer because we had (     ) of ink halfway through the job.,run out,run down,run over,run away,1,作業の途中でインクを使い果たしてしまったので、プリンターを止めなければならなかった。
+468,speak out,はっきり話す、堂々と意見を述べる,Many citizens were afraid to (     ) against the unfair new policy in public.,fall back,look down,speak up to,speak out,4,多くの市民は公の場で不公平な新政策に対してはっきり意見を述べることを恐れていた。
+469,drop out,中途退学する、脱落する,He decided to (     ) of college in his second year to start his own business.,drop out,drop by,drop off,drop in,1,彼は自分の事業を始めるため、二年生で大学を中途退学することを決めた。
+470,sort out ～,～を整理する、片づける,I spent the whole afternoon trying to (     ) the messy files on my desk.,sort with,hold back,sort out,carry on,3,私は机の上の散らかったファイルを整理しようと、午後いっぱいを費やした。
+471,wear out ～,～をすり減らす、使い古す,He had completely (     ) his old running shoes after years of daily training.,turned down,put away,worn out,worn off,3,彼は何年もの毎日の練習で、古いランニングシューズをすっかりすり減らしてしまった。
+472,roll out ～,～を発売する、(新製品などを)世に出す,The company plans to (     ) its newest smartphone in major markets this summer.,roll out,roll over,call off,carry out,1,その会社は今夏、主要市場で最新のスマートフォンを発売する予定だ。
+473,iron out ～,(問題などを)解決する、調整する,The two sides met for hours to (     ) the remaining differences in the contract.,iron over,take on,bring up,iron out,4,両者は契約の残された相違点を解決するため、何時間も会談した。
+474,set off,出発する、旅立つ,The hikers (     ) early in the morning to reach the summit before noon.,set off,take in,set in,go over,1,登山者たちは正午前に頂上に着くため、朝早くに出発した。
+475,show off ～,～を見せびらかす、誇示する,He couldn't wait to (     ) his expensive new watch to all of his friends.,show off,show up,give in,look up,1,彼は高価な新しい腕時計を友人全員に見せびらかすのが待ちきれなかった。
+476,keep off ～,～を近づけない、寄せつけない,She put up a tall fence to (     ) the deer that kept eating her vegetables.,keep off,take on,turn in,keep up,1,彼女は野菜を食べ続ける鹿を近づけないため、高い柵を立てた。
+477,give off ～,(光・においなどを)発する、放つ,"The old gas heater began to (     ) a strange smell, so we turned it off at once.",give off,put out,give in,take off,1,古いガスヒーターが奇妙なにおいを発し始めたので、私たちはすぐに電源を切った。
+478,break off ～,～を急にやめる、(関係などを)断つ,"After the bitter argument, she decided to (     ) all contact with her former partner.",break off,bring up,break out,call up,1,激しい口論の後、彼女は元交際相手とのすべての連絡を断つことを決めた。
+479,take over ～,～を引き継ぐ、(事業などを)継ぐ,"When the founder retired, his daughter agreed to (     ) the family business.",take off,take over,look up,hand in,2,創業者が引退したとき、彼の娘は家業を引き継ぐことに同意した。
+480,put in ～,(時間・労力)を注ぎ込む、費やす,She has (     ) countless hours of practice to become a professional pianist.,put in,put down,put off,put up,1,彼女はプロのピアニストになるため、数えきれないほどの練習時間を注ぎ込んできた。
+481,drop in,予告なしに気軽に立ち寄る,"If you're ever in the neighborhood, feel free to (     ) and have a cup of coffee with us.",drop in,drop out,drop off,drop down,1,近所に来ることがあれば、気軽に立ち寄って私たちとコーヒーでも飲んでいってください。
+482,cut in,会話や列に割り込む,"While we were discussing the budget, a junior staffer rudely tried to (     ) with his own opinion.",cut in,cut off,cut out,cut down,1,私たちが予算について話し合っているとき、若手の社員が自分の意見で無礼に割り込もうとした。
+483,pass on ～,受け取った情報を次の人に伝える,Could you please (     ) this message to your manager when she gets back from lunch?,pass out,take on,put off,pass on,4,昼食から戻ったら、このメッセージを部長に伝えていただけますか。
+484,give away ～,秘密や情報をうっかり漏らす,Be careful not to (     ) the ending of the movie to those who haven't seen it yet.,give away,give off,give in,give up,1,まだ見ていない人に、その映画の結末をうっかり漏らさないように気をつけて。
+485,adjust to ～,環境や状況に合わせて自分を順応させる,It took the new exchange student several months to fully (     ) life in a foreign country.,object to,refer to,adjust to,resort to,3,その新しい交換留学生が外国での生活に完全に順応するのに数か月かかった。
+486,compare A with B,二つのものを照らし合わせて違いを調べる,"Before deciding which laptop to buy, I always (     ) the new model with the older one carefully.",compare,replace,exchange,confuse,1,どのノートパソコンを買うか決める前に、私はいつも新しいモデルと古いモデルを慎重に比較する。
+487,expose A to B,危険や影響のあるものに人や物をさらす,Doctors warn that you should never (     ) your skin to strong sunlight for too long.,attach,expose,attribute,confine,2,医師は、肌を長時間強い日光にさらしてはいけないと警告している。
+488,leave A to B,判断や処理を他人に委ねて任せる,"I'm not good with numbers, so I'll just (     ) all the accounting to my business partner.",leave,forbid,liken,owe,1,私は数字が苦手なので、会計のことはすべて共同経営者に任せることにする。
+489,attach A to B,物を別の物にしっかり取りつける,Please (     ) this name tag to your jacket so the staff can identify you at the conference.,confine,attach,compare,expose,2,会議でスタッフがあなたを識別できるよう、この名札を上着に取りつけてください。
+490,attribute A to B,ある結果を特定の原因のせいだと考える,Experts (     ) the sudden rise in sea levels to the rapid melting of polar ice.,attach,attribute,expose,adjust,2,専門家たちは、海面の急上昇を極地の氷の急速な融解のせいだと考えている。
+491,owe A to B,成功や恩を相手のおかげとして負っている,She often says that she (     ) her success entirely to the support of her loyal fans.,confines,leaves,likens,owes,4,彼女は自分の成功は忠実なファンの支えのおかげだとよく言う。
+492,confine A to B,範囲や活動を一定の限界内に限定する,"To stay focused, the teacher asked us to (     ) our discussion to the topic on the slide.",attach,attribute,expose,confine,4,集中できるよう、先生は私たちに議論をスライドのテーマに限定するよう求めた。
+493,liken A to B,あるものを別のものになぞらえて説明する,The poet often (     ) human life to a brief candle that flickers and then goes out.,owes,likens,forbids,leaves,2,その詩人はしばしば人生を、揺らめいてやがて消える短いろうそくにたとえる。
+494,keep A from B,人があることをするのを妨げて防ぐ,Nothing could (     ) the determined climbers from reaching the summit before nightfall.,compare,keep,order,attach,2,何ものも、その意志の固い登山家たちが日没前に頂上に到達するのを妨げることはできなかった。
+495,discourage A from B,人を説得してある行動を思いとどまらせる,Her parents tried hard to (     ) her from quitting school during such a difficult time.,discourage,encourage,remind,inform,1,両親はこんな大変な時期に彼女が学校を辞めるのを思いとどまらせようと懸命に努めた。
+496,forbid A from B,権限をもって人にある行為を禁じる,The new library rules strictly (     ) visitors from bringing any food or drinks inside.,permit,forbid,allow,remind,2,新しい図書館の規則は、来館者が中に飲食物を持ち込むことを厳しく禁じている。
+497,prohibit A from B,規則や法律で人の行為を禁止する,Local laws (     ) drivers from using their phones while the car is in motion.,allow,advise,enable,prohibit,4,地域の法律は、運転手が車の走行中に電話を使うことを禁止している。
+498,order A from B,特定の店や相手に品物を注文する,I decided to (     ) the rare book directly from a small shop in London.,inform,remind,refer,order,4,私はその珍しい本を、ロンドンの小さな店から直接注文することにした。
+499,substitute A for B,あるものを別のものの代わりに用いる,"If you have no butter, you can (     ) olive oil for it in most baking recipes.",substitute,exchange,compare,confine,1,バターがない場合、たいていの焼き菓子のレシピではその代わりにオリーブオイルを使うことができる。
+500,exchange A for B,あるものを差し出して別のものと取り換える,The clerk kindly let me (     ) the shirt for a larger size without any extra charge.,substitute,exchange,confine,attribute,2,店員は追加料金なしで、そのシャツをより大きいサイズと親切に交換させてくれた。
+501,blame A for B,あることを理由に人を責める,The manager unfairly (     ) the new intern for the system crash that wasn't her fault.,blamed,praised,rewarded,thanked,1,その部長は、彼女のせいではないシステム障害のことで新人インターンを不当に責めた。
+502,punish A for B,悪い行いを理由に人に罰を与える,The teacher decided to (     ) the boys for cheating on the final examination.,advise,allow,encourage,punish,4,先生はその少年たちを期末試験でカンニングをしたことで罰することにした。
+503,forgive A for B,人の過ちを許す,She found it hard to (     ) him for breaking the promise he had made to her.,remind,forgive,accuse,suspect,2,彼女は、彼が自分にした約束を破ったことを許すのは難しいと感じた。
+504,deprive A of B,人から大切なものを取り上げる,The sudden flood (     ) thousands of families of their homes and belongings overnight.,supplied,presented,deprived,provided,3,突然の洪水が、一夜にして何千もの家族から家と所持品を奪った。
+505,rob A of B,人から無理やり物を奪い取る,The two masked men (     ) the elderly woman of her purse in broad daylight.,stole,robbed,took,reminded,2,覆面の二人組は白昼堂々と、その高齢の女性からハンドバッグを奪った。
+506,cure A of B,人の病気を治す,The new treatment finally (     ) the patient of the disease he had suffered from for years.,treated,examined,cured,recovered,3,その新しい治療法が、長年患っていた病気からついにその患者を治した。
+507,accuse A of B,あることを理由に人を責める・告発する,The prosecutor (     ) the businessman of hiding millions of dollars from the tax office.,charged,doubted,accused,blamed,3,検察官はその実業家を、税務署から数百万ドルを隠したとして告発した。
+508,suspect A of B,人があることをしたのではないかと疑う,The police began to (     ) the quiet neighbor of stealing cars from the parking lot.,blame,suspect,investigate,doubt,2,警察はその物静かな隣人が駐車場から車を盗んだのではないかと疑い始めた。
+509,assure A of B,人に対してあることを確約する,The director (     ) the worried staff of their job security despite the company merger.,promised,supported,encouraged,assured,4,取締役は、会社の合併にもかかわらず、不安がる職員に雇用の安定を保証した。
+510,transform A into B,あるものを別のものにすっかり変える,The architect managed to (     ) the old factory into a stylish modern apartment complex.,exchange,transform,replace,switch,2,その建築家は、古い工場をおしゃれで現代的なマンションに変えることに成功した。
+511,talk A into B,説得して人にあることをさせる,My friends finally (     ) me into joining the climbing club even though I was afraid of heights.,advised,talked,reminded,suggested,2,友人たちは、私が高所恐怖症であるにもかかわらず、ついに私を説得して登山クラブに入らせた。
+512,present A with B,人に物を贈る・授与する,"At the ceremony, the principal (     ) each graduate with a diploma and a small gift.",presented,offered,donated,contributed,1,式典で校長は、卒業生一人ひとりに卒業証書とちょっとした贈り物を授与した。
+513,diagnose A as B,医師が病状をある病気だと判断する,The specialist (     ) her persistent cough as a symptom of a rare lung condition.,suffered,diagnosed,recovered,cured,2,専門医は、彼女の長引く咳をまれな肺の病気の症状だと診断した。
+514,strike A as B,人にある印象を与える,His confident manner during the interview (     ) the panel as both honest and capable.,left,struck,made,gave,2,面接での彼の自信に満ちた態度は、審査員に正直で有能だという印象を与えた。
+515,congratulate A on B,おめでたい出来事を理由に人を祝う,Everyone in the office gathered to (     ) her on winning the prestigious design award.,congratulate,admire,celebrate,praise,1,オフィスの全員が集まって、彼女が名誉あるデザイン賞を受賞したことを祝った。
+516,name A after B,人や物にちなんで名をつける,They decided to (     ) their first son after the grandfather who had raised them.,raise,name,label,title,2,彼らは、自分たちを育ててくれた祖父にちなんで長男に名をつけることにした。
+517,make an effort,努力する・頑張る,"If you really want to pass the exam, you must (     ) to study every single day.",make a mistake,have a rest,take a break,make an effort,4,本当に試験に合格したいなら、毎日欠かさず勉強する努力をしなければならない。
+518,make way,通れるように場所をあける,The crowd quickly stepped aside to (     ) for the ambulance rushing to the hospital.,take place,give up,break down,make way,4,群衆は、病院へ急ぐ救急車のためにすばやく脇によけて道をあけた。
+519,lead a ～ life,ある種類の生活を送る,"After retiring to the countryside, my uncle now (     ) a quiet and peaceful life.",leads,takes,does,makes,1,田舎に引退して以来、おじは今、静かで穏やかな生活を送っている。
+520,make a living,生計を立てる,It is becoming harder for young artists to (     ) by selling their paintings alone.,make a point,take a chance,have a say,make a living,4,若い芸術家が絵を売ることだけで生計を立てるのはますます難しくなっている。
+521,take one's place,～に取って代わる、後を継ぐ,"When the old manager retired, a younger employee was hired to (     ).",lose his place,know his place,keep his place,take his place,4,前のマネージャーが退職したとき、後を継ぐために若い社員が雇われた。
+522,take turns,交代でする,"Since the drive was long, the three of us decided to (     ) at the wheel.",take turns,have turns,do turns,make turns,1,運転が長かったので、私たち3人は交代でハンドルを握ることにした。
+523,take a chance,思い切ってやってみる、賭けてみる,"He wasn't sure the plan would succeed, but he decided to (     ) anyway.",lose a chance,take a chance,miss a chance,give a chance,2,その計画が成功するか確信はなかったが、彼はとにかく思い切ってやってみることにした。
+524,take shape,形をとる、具体化する,"After months of planning, the new project finally began to (     ) last week.",take a seat,take shape,take a chance,take turns,2,何カ月もの計画を経て、新しいプロジェクトは先週ようやく具体化し始めた。
+525,take a seat,着席する,The receptionist asked us to (     ) and wait until the doctor was ready.,take a step,take a stand,take a seat,take a chance,3,受付係は私たちに着席して、医者の準備が整うまで待つように言った。
+526,take a risk,危険を冒す,Starting your own business means you have to be willing to (     ) at some point.,take a risk,run an errand,have a word,make a point,1,自分でビジネスを始めるということは、どこかで危険を冒すことをいとわなければならないということだ。
+527,shake hands,握手する,The two leaders smiled and stopped to (     ) in front of the cameras.,join hands,wash hands,wave hands,shake hands,4,2人の指導者はほほ笑み、カメラの前で立ち止まって握手をした。
+528,change hands,持ち主が変わる,The famous old restaurant has (     ) several times over the past decade.,changed hands,changed places,changed sides,changed minds,1,その有名な老舗レストランは、この10年で何度も持ち主が変わってきた。
+529,have a say in ～,～に発言権を持つ,"As a shareholder, she felt she should (     ) how the company was run.",have a go at,have a word with,have a say in,have a laugh at,3,株主として、彼女は会社の運営方法に発言権を持つべきだと感じていた。
+530,have one's own way,思い通りにする,The spoiled child cried until his parents finally let him (     ).,change his own way,break his own way,lose his own way,have his own way,4,その甘やかされた子どもは、両親がついに思い通りにさせてくれるまで泣き続けた。
+531,keep one's temper,冷静さを保つ、平静を保つ,"Even when the customer shouted at him, the clerk managed to (     ).",lose his temper,test his temper,show his temper,keep his temper,4,客に怒鳴られても、その店員はなんとか冷静さを保つことができた。
+532,take advantage of ～,～をうまく利用する,You should (     ) the good weather and go for a long walk today.,take advantage of,take hold of,take care of,take charge of,1,今日は良い天気をうまく利用して、長い散歩に出かけるべきだ。
+533,take control of ～,～を支配する、掌握する,The new captain quickly tried to (     ) the situation on board the ship.,take account of,take control of,take note of,take leave of,2,新しい船長は、船上の状況を素早く掌握しようとした。
+534,make use of ～,～を利用する、活用する,Students are encouraged to (     ) the library's free online resources.,make light of,make use of,make fun of,make sure of,2,学生たちは図書館の無料オンライン資料を活用するよう勧められている。
+535,make fun of ～,～をからかう、ばかにする,The other kids used to (     ) him because of his thick glasses.,make sure of,make use of,make sense of,make fun of,4,ほかの子どもたちは、彼の分厚い眼鏡のせいで彼をよくからかったものだった。
+536,make friends with ～,～と親しくなる、友達になる,She is very outgoing and finds it easy to (     ) new people.,make peace with,make friends with,make off with,make do with,2,彼女はとても社交的で、新しい人と簡単に親しくなれる。
+537,make much of ～,～を重要視する、もてはやす,"The critics didn't (     ) his first novel, but his second became a bestseller.",make do with,make much of,make sure of,make sense of,2,批評家たちは彼の最初の小説を重要視しなかったが、2作目はベストセラーになった。
+538,have difficulty doing,～するのに苦労する,Many tourists (     ) understanding the local dialect when they first arrive.,have no idea,have difficulty,have a chance,have a point,2,多くの観光客は、初めて来たとき地元の方言を理解するのに苦労する。
+539,have access to ～,～を利用できる、～に近づける,Only authorized staff (     ) the building's secure server room.,have access to,have demand for,have respect for,have hope for,1,許可された職員だけが、建物の安全なサーバー室を利用できる。
+540,have an influence on ～,～に影響を与える,His early teachers had a strong (     ) his decision to become a writer.,impact in,effect at,control of,influence on,4,彼の幼少期の先生たちは、彼が作家になるという決断に強い影響を与えた。
+541,have a liking for ～,～を好む、～が好きである,"Ever since childhood, she has had a strong (     ) classical music and old records.",search for,fondness of,liking for,longing at,3,子どものころからずっと、彼女はクラシック音楽と古いレコードが大好きだ。
+542,give rise to ～,～を引き起こす、～を生じさせる,The sudden tax increase gave (     ) widespread protests across the entire country.,place of,birth in,way for,rise to,4,突然の増税が国中で広範な抗議行動を引き起こした。
+543,give birth to ～,～を産む、～を生み出す,The young queen gave (     ) twin boys early on a cold winter morning.,way to,rise of,birth to,place to,3,若い女王は寒い冬の朝早くに双子の男の子を産んだ。
+544,find one's way to ～,～へ何とかたどり着く,"After hours of wandering in the dark forest, the hikers finally found their (     ) the village.",path of,way to,route for,road in,2,暗い森を何時間もさまよった末に、ハイカーたちはようやく村にたどり着いた。
+545,keep an eye on ～,～から目を離さない、～を見張る,Could you please keep an (     ) my luggage while I buy our train tickets?,ear to,eye on,head over,hand in,2,私が電車の切符を買う間、荷物を見ていてもらえますか。
+546,fall victim to ～,～の犠牲になる、～の被害に遭う,Many elderly people fall (     ) phone scams because the criminals sound so convincing.,prey on,subject of,short of,victim to,4,犯人がとても説得力のある話し方をするため、多くの高齢者が電話詐欺の被害に遭う。
+547,catch sight of ～,～をふと見つける、～を見かける,She suddenly caught (     ) an old friend standing alone at the crowded station.,glance to,look at,view on,sight of,4,彼女は混雑した駅で一人立っている旧友をふと見かけた。
+548,put emphasis on ～,～を強調する、～を重視する,Our new teacher puts great (     ) reading aloud rather than memorizing grammar rules.,focus of,emphasis on,stress to,weight in,2,新しい先生は文法規則を暗記することよりも音読することをとても重視している。
+549,be related to ～,～と関係がある、～と関連している,Scientists believe these headaches may be closely (     ) the lack of regular sleep.,reacted by,related to,referred at,reduced in,2,科学者たちは、これらの頭痛が規則正しい睡眠の不足と密接に関係しているかもしれないと考えている。
+550,be similar to ～,～に似ている、～と類似している,The taste of this fruit is surprisingly (     ) that of a sweet ripe peach.,similar to,equal of,close by,same as,1,この果物の味は驚くほど甘く熟したモモの味に似ている。
+551,be subject to ～,～を受けやすい、～の対象となる,All prices listed in this catalog are (     ) change without any prior notice to customers.,bound for,subject to,prone at,liable of,2,このカタログに記載されているすべての価格は、顧客への事前通知なしに変更される可能性がある。
+552,be superior to ～,～より優れている,Many critics insist that the original novel is far (     ) the recent film adaptation.,superior to,better as,greater of,higher of,1,多くの批評家は、原作の小説が最近の映画版よりはるかに優れていると主張している。
+553,be sensitive to ～,～に敏感である、～に影響を受けやすい,Newborn babies are extremely (     ) sudden changes in temperature and loud noises.,careful with,alert at,responsive at,sensitive to,4,新生児は気温の急な変化や大きな音にきわめて敏感である。
+554,be accustomed to ～,～に慣れている,"Having lived abroad for years, he is now well (     ) eating breakfast without any rice.",familiar of,trained at,skilled with,accustomed to,4,何年も海外で暮らしていたので、彼は今では米なしの朝食にすっかり慣れている。
+555,be contrary to ～,～に反している、～と相いれない,His careless behavior at the meeting was completely (     ) what we had all expected.,opposed by,against of,contrary to,reverse in,3,会議での彼の不注意な振る舞いは、私たち皆が予想していたこととまったく反するものだった。
+556,be indifferent to ～,～に無関心である,"Surprisingly, the manager seemed totally (     ) the complaints raised by his own staff.",neglectful at,indifferent to,ignorant at,unaware by,2,驚いたことに、その管理職は自分のスタッフから出された苦情にまったく無関心なようだった。
+557,be preferable to ～,～より好ましい、～より望ましい,"For a long trip, a slow but safe train is (     ) a fast yet dangerous flight.",preferable to,suitable with,favorable of,desirable for,1,長旅には、速いが危険な飛行機より、遅いが安全な列車のほうが好ましい。
+558,be dedicated to ～,～に打ち込んでいる、～に専念している,"Throughout her career, the doctor has been deeply (     ) helping poor children in rural areas.",devoting in,dedicated to,absorbed of,engaged of,2,その医師は経歴を通じて、地方の貧しい子どもたちを助けることに深く打ち込んできた。
+559,be peculiar to ～,～に特有である、～だけに見られる,This colorful little bird is (     ) the islands and cannot be found anywhere else.,native by,unique of,peculiar to,special at,3,この色鮮やかな小鳥はその島々に特有で、ほかのどこにも見られない。
+560,be prone to ～,～になりやすい、～しがちである,People who skip breakfast every day tend to be more (     ) feeling tired in the afternoon.,likely for,liable of,prone to,apt at,3,毎日朝食を抜く人は、午後に疲れを感じやすい傾向がある。
+561,be identical to ～,～とまったく同じである,The twins' handwriting is so similar that her signature is virtually (     ) his.,grateful to,opposed to,native to,identical to,4,その双子の筆跡はとても似ていて、彼女のサインは彼のものと実質的にまったく同じだ。
+562,be involved in ～,～に携わっている、関与している,"Several local companies are actively (     ) the project to build the new community center, contributing both money and labor.",indifferent to,involved in,resistant to,opposed to,2,いくつかの地元企業が、新しい公民館を建てる事業に積極的に携わり、資金と労力の両方を提供している。
+563,be absorbed in ～,～に夢中になっている,He was so (     ) his book that he didn't notice me come into the room.,absorbed in,afraid of,famous for,proud of,1,彼は本に夢中で、私が部屋に入ってきたことに気づかなかった。
+564,be lacking in ～,～に欠けている、不足している,"Although his essay is grammatically correct, it is sadly (     ) original ideas.",known for,proud of,satisfied with,lacking in,4,彼の小論文は文法的には正しいが、残念ながら独創的な発想に欠けている。
+565,be versed in ～,～に精通している、詳しい,"As a former diplomat, she is thoroughly (     ) the customs of several Asian countries.",curious about,versed in,puzzled by,worried about,2,元外交官として、彼女はいくつかのアジア諸国の習慣に十分精通している。
+566,be abundant in ～,～が豊富である,This remote mountain region is remarkably (     ) rare plants and wild animals.,fond of,proud of,careful of,abundant in,4,この人里離れた山岳地帯は、珍しい植物や野生動物が驚くほど豊富である。
+567,be busy with ～,～で忙しい,I'm afraid I can't join you tonight because I'm (     ) preparations for tomorrow's meeting.,delighted by,satisfied with,busy with,bored by,3,申し訳ないが、明日の会議の準備で忙しいので今夜は一緒に行けない。
+568,be popular with ～,～に人気がある,The young teacher's lively lessons made him extremely (     ) the students.,angry at,annoyed by,strict with,popular with,4,その若い教師の生き生きとした授業のおかげで、彼は生徒たちにとても人気があった。
+569,be equipped with ～,～を備えている、装備している,Every room in the new hotel is fully (     ) high-speed internet and a large flat-screen television.,puzzled by,bored with,satisfied with,equipped with,4,その新しいホテルの全室には、高速インターネットと大型の薄型テレビが完備されている。
+570,be content with ～,～に満足している,She isn't ambitious at all and seems perfectly (     ) her quiet life in the countryside.,content with,fed up with,bored with,furious with,1,彼女はまったく野心がなく、田舎での静かな暮らしにすっかり満足しているようだ。
+571,be confronted with ～,～に直面している,"On returning home, the family was suddenly (     ) the difficult task of rebuilding their flooded house.",blessed with,confronted with,delighted with,decorated with,2,帰宅すると、その家族は浸水した家を建て直すという困難な仕事に突然直面した。
+572,be acquainted with ～,～と知り合いである、～をよく知っている,"Having worked there for years, he is well (     ) all the staff in the marketing department.",disgusted with,impatient with,acquainted with,annoyed with,3,そこで何年も働いてきたので、彼はマーケティング部のスタッフ全員とよく知り合いである。
+573,be characteristic of ～,～に特有である、特徴的である,The bold use of bright colors is highly (     ) this painter's later works.,fond of,characteristic of,independent of,jealous of,2,鮮やかな色の大胆な使い方は、この画家の後期の作品にとても特徴的である。
+574,be worthy of ～,～に値する、ふさわしい,Her years of quiet dedication to the charity are surely (     ) public recognition.,worthy of,short of,fond of,tired of,1,その慈善活動への長年の地道な献身は、間違いなく世間の評価に値する。
+575,be ignorant of ～,～を知らない、無知である,Many tourists are completely (     ) the strict local rules and end up paying a fine.,jealous of,proud of,fond of,ignorant of,4,多くの観光客は厳しい地元の規則をまったく知らず、結局罰金を払うはめになる。
+576,be confident of ～,～を確信している,"After months of hard training, the runner is now fully (     ) winning the gold medal.",tired of,ashamed of,confident of,afraid of,3,何か月もの猛練習を経て、その走者は今や金メダル獲得を完全に確信している。
+577,be considerate of ～,～に思いやりがある、配慮する,Please be (     ) your neighbors and avoid playing loud music late at night.,critical of,envious of,considerate of,suspicious of,3,近所の人に配慮して、夜遅くに大音量で音楽をかけるのは控えてください。
+578,be guilty of ～,～について有罪である,The court found that he was clearly (     ) tax evasion over several years.,proud of,capable of,guilty of,fond of,3,裁判所は、彼が数年にわたる脱税について明らかに有罪であると認定した。
+579,be convinced of ～,～を確信している,"Despite the lack of clear evidence, the detective remained firmly (     ) the suspect's innocence.",unaware of,convinced of,doubtful of,scared of,2,明確な証拠がないにもかかわらず、その刑事は容疑者の無実を固く確信し続けた。
+580,be tolerant of ～,～に対して寛大である,A good leader should be (     ) honest mistakes while still expecting people to learn from them.,tolerant of,weary of,certain of,afraid of,1,優れた指導者は、正直な失敗には寛大であるべきだが、それでも人々がそこから学ぶことを期待すべきだ。
+581,be wary of ～,～に用心して警戒している,Experienced travelers (     ) strangers who offer unusually cheap taxi rides at the airport.,are fond of,are wary of,are proud of,are eager for,2,経験豊富な旅行者は、空港で異常に安いタクシーを持ちかけてくる見知らぬ人を警戒する。
+582,be suitable for ～,～にふさわしく適している,"This gentle, fragrance-free lotion is (     ) babies with very sensitive skin.",curious about,suitable for,jealous of,absent from,2,この優しく無香料のローションは、とても敏感な肌の赤ちゃんに適している。
+583,be grateful for ～,～をありがたく思っている,"After the long illness, she was deeply (     ) the support her neighbors gave her family.",ignorant of,annoyed at,careless about,grateful for,4,長い病気のあと、彼女は近所の人々が家族に与えてくれた支援を心から感謝していた。
+584,be particular about ～,～について好みがうるさい,"My grandfather is extremely (     ) his coffee, rejecting any cup that is even slightly too weak.",famous for,suitable for,grateful for,particular about,4,祖父はコーヒーについて非常にうるさく、少しでも薄いカップは断固として突き返す。
+585,come down with ～,病気にかかる,Half the office (     ) a nasty flu just before the busy holiday season began.,looked up to,got along with,came down with,came up with,3,忙しい休暇シーズンが始まる直前に、オフィスの半数がたちの悪いインフルエンザにかかった。
+586,come into being,出現する、生まれ出る,Many scientists wonder exactly how the universe first (     ) billions of years ago.,came down with,came across as,came into being,came in handy,3,多くの科学者は、宇宙が数十億年前にどのようにして最初に生まれ出たのかを正確に知りたがっている。
+587,come true,実現する,"After years of saving and training, her dream of running a marathon finally (     ) last spring.",came true,came over,came round,came apart,1,何年もの貯金と訓練のあと、マラソンを走るという彼女の夢はこの春ついに実現した。
+588,do ～ good,～のためになる、効き目がある,The doctor said a daily walk in the fresh air would (     ) her a lot of (     ).,take … apart,do … good,put … off,make … up,2,医者は、毎日の戸外での散歩は彼女の大いにためになるだろうと言った。
+589,get in touch with ～,～と連絡を取る,"If you have any questions about your order, please (     ) our support team by email.",get in touch with,get rid of,get over with,get away with,1,ご注文について何か質問があれば、メールで私たちのサポートチームに連絡を取ってください。
+590,go blind,失明する,"Without immediate treatment, the patient could (     ) in one eye within a matter of weeks.",go bad,go ahead,go blind,go off,3,すぐに治療を受けなければ、その患者は数週間のうちに片目を失明する恐れがある。
+591,have A in common with B,AをBと共通に持っている,"Surprisingly, the new student found she (     ) a lot (     ) her quiet, bookish roommate.",had … in common with,kept … in mind with,made … the most of,took … advantage with,1,驚いたことに、その新入生は物静かで読書好きのルームメイトと多くの共通点があるとわかった。
+592,keep ～ in mind,～を心に留めておく,Please (     ) the deadline (     ) when you plan how much time each section will take.,bring … to light,keep … in mind,take … into account,put … into practice,2,各セクションにどれだけ時間がかかるか計画するときは、締め切りを心に留めておいてください。
+593,look back on ～,～を回顧する,"Now that he has retired, my father loves to (     ) his early years as a young teacher.",look back on,look out for,look up to,look down on,1,退職した今、父は若い教師だった初期のころを振り返るのが大好きだ。
+594,make it,間に合う、成功する,"The train leaves in five minutes, so if we run right now we might just (     ).",make it,break it,take it,lose it,1,電車は5分後に出るので、今すぐ走ればちょうど間に合うかもしれない。
+595,put into practice,～を実行に移す,"It is easy to write good rules, but much harder to actually (     ) them (     ).",put … into practice,take … into account,bring … into being,keep … in mind,1,良い規則を書くのは簡単だが、実際にそれを実行に移すのははるかに難しい。
+596,sign up for ～,～に申し込む、加わる,Several of my classmates decided to (     ) the free evening cooking course at the community center.,look down on,run out of,sign up for,catch up on,3,クラスメートの何人かは、地域センターの無料の夜間料理講座に申し込むことにした。
+597,take ～ by surprise,～の不意を打つ、驚かす,The sudden announcement of the factory's closure (     ) the whole town completely (     ).,put … into practice,let … off the hook,took … by surprise,kept … in mind,3,工場閉鎖の突然の発表は、町全体の不意を完全に突いた。
+598,in terms of ～,～の観点から見て,"(     ) cost, the smaller car is cheaper, but the larger one offers far more space.",In need of,In terms of,In spite of,In place of,2,費用の観点では小さい車のほうが安いが、大きい車のほうがはるかに広い空間を提供する。
+599,in contrast to ～,～とは著しく対照的に,"(     ) his cheerful older brother, the boy was shy and rarely spoke in class.",In contrast to,In favor of,In addition to,In response to,1,陽気な兄とは著しく対照的に、その少年は内気で授業中めったに話さなかった。
+600,in danger of ～,～の危険があって,"Because of the rising sea levels, several low-lying islands are now (     ) disappearing entirely.",in search of,in charge of,in danger of,in honor of,3,海面の上昇のため、いくつかの低い島々は今や完全に消失する危険にある。
+601,in need of ～,～を必要としている状態で,"After the earthquake, thousands of families were left homeless and in desperate (     ) food and shelter.",charge of,response to,need of,favor of,3,地震の後、何千もの家族が家を失い、食料と避難所を切実に必要としていた。
+602,in response to ～,～に応えて、反応して,The company lowered its prices in (     ) growing complaints from loyal customers.,honor of,response to,place of,need of,2,その会社は忠実な顧客からの不満の高まりに応じて価格を下げた。
+603,in favor of ～,～に賛成して、～を支持して,Most members of the committee voted in (     ) the new recycling plan proposed last week.,favor of,charge of,honor of,face of,1,委員会のほとんどのメンバーが先週提案された新しいリサイクル計画に賛成票を投じた。
+604,in face of ～,～に直面して、立ち向かって,The young captain stayed remarkably calm in (     ) the sudden storm threatening the ship.,honor of,exchange for,face of,need of,3,その若い船長は船を脅かす突然の嵐に直面しても驚くほど冷静だった。
+605,in charge of ～,～を担当して、管理して,"During the manager's absence, the assistant was left in (     ) the entire department.",favor of,charge of,response to,need of,2,部長の不在中、その助手が部署全体を任されていた。
+606,in relation to ～,～に関連して、～との関係で,The lawyer asked several questions in (     ) the events that took place that night.,need of,charge of,favor of,relation to,4,その弁護士はその夜に起きた出来事に関連していくつかの質問をした。
+607,in place of ～,～の代わりに,"Because the teacher was ill, a substitute taught the class in (     ) her this morning.",place of,charge of,need of,favor of,1,先生が病気だったので、今朝は代理の先生が彼女の代わりに授業を行った。
+608,in the presence of ～,～の面前で、いる前で,The witness was asked to repeat her statement in the (     ) of both lawyers and the judge.,charge,favor,presence,response,3,その証人は両方の弁護士と裁判官の面前で供述を繰り返すよう求められた。
+609,in honor of ～,～に敬意を表して、～を祝って,The city held a grand parade in (     ) the soldiers who returned home safely.,charge of,honor of,face of,need of,2,その都市は無事に帰還した兵士たちに敬意を表して盛大なパレードを開催した。
+610,in light of ～,～を考慮して、～から見て,"In (     ) the recent budget cuts, the school decided to cancel several after-school programs.",need of,charge of,honor of,light of,4,最近の予算削減を考慮して、学校はいくつかの放課後プログラムを中止することにした。
+611,in harmony with ～,～と調和して、一致して,The new building was designed in (     ) the natural landscape surrounding the quiet village.,place of,need of,charge of,harmony with,4,その新しい建物は静かな村を取り囲む自然の景観と調和するように設計された。
+612,in exchange for ～,～と引き換えに、交換に,She agreed to help him with his homework in (     ) a ride to the station every morning.,exchange for,response to,charge of,need of,1,彼女は毎朝駅まで車で送ってもらうことと引き換えに彼の宿題を手伝うことに同意した。
+613,for the sake of ～,～のために、～を考えて,They decided to stay together for the (     ) of their children rather than divorce.,sake,favor,need,charge,1,彼らは離婚するよりも子供たちのために一緒にいることにした。
+614,for fear of ～,～を恐れて、心配して,She spoke very quietly for (     ) of waking the baby sleeping in the next room.,lack,sake,need,fear,4,彼女は隣の部屋で眠っている赤ちゃんを起こすのを恐れてとても静かに話した。
+615,for lack of ～,～がないために、不足のために,The promising project was finally abandoned for (     ) of sufficient funding and support.,fear,sake,lack,need,3,その有望な計画は十分な資金と支援が不足していたためについに中止された。
+616,at the expense of ～,～を犠牲にして、～に負担をかけて,He built a successful career at the (     ) of his health and his family life.,sight,expense,sake,mercy,2,彼は健康と家庭生活を犠牲にして成功した経歴を築いた。
+617,at the sight of ～,～を見て、見たとたんに,The frightened child began to cry loudly at the (     ) of the large barking dog.,mercy,expense,sight,need,3,その怯えた子供は大きな吠える犬を見て大声で泣き始めた。
+618,at the mercy of ～,～のなすがままになって、左右されて,The tiny boat drifted helplessly at the (     ) of the powerful waves and strong wind.,mercy,expense,sake,sight,1,その小さな船は強力な波と強風のなすがままに無力に漂った。
+619,as opposed to ～,～とは対照的に、～ではなく,"This report focuses on long-term trends, as (     ) to the daily changes in the market.",relation,opposed,response,exchange,2,この報告書は市場の日々の変化とは対照的に、長期的な傾向に焦点を当てている。
+620,by means of ～,～を用いて、～によって,The researchers measured the depth of the ocean by (     ) of advanced sound technology.,means,need,fear,sake,1,研究者たちは高度な音響技術を用いて海の深さを測定した。
+621,by virtue of ～,～のおかげで、～の理由で,She was granted free entry (     ) her status as a registered student.,in case of,for fear of,by virtue of,in spite of,3,登録学生という身分のおかげで、彼女は無料入場を認められた。
+622,on behalf of ～,～を代表して、～のために,"The lawyer spoke (     ) his client, who was too ill to attend the hearing.",by way of,in charge of,at the mercy of,on behalf of,4,弁護士は、病気で公聴会に出席できなかった依頼人に代わって発言した。
+623,on a charge of ～,～の容疑で,The man was arrested (     ) theft after the stolen goods were found in his car.,on a charge of,under the care of,at the cost of,in the event of,1,盗品が車内から見つかった後、その男は窃盗の容疑で逮捕された。
+624,with regard to ～,～に関して,I have nothing further to add (     ) the points we discussed at yesterday's meeting.,with regard to,in return for,by means of,in place of,1,昨日の会議で話し合った点に関しては、これ以上付け加えることはありません。
+625,in part,一部には、幾分かは,The team's success was (     ) due to the new coach's careful planning and training.,in line,in full,in vain,in part,4,そのチームの成功は、一部には新しいコーチの綿密な計画と訓練のおかげだった。
+626,in turn,次に、順番に,The teacher asked each student (     ) to read a paragraph aloud to the class.,in case,in common,in turn,in private,3,先生は生徒一人一人に順番に、段落を声に出してクラスに読むよう求めた。
+627,in place,あるべき場所に、用意ができて,Make sure every safety measure is firmly (     ) before the machine is switched on.,in question,in place,in demand,in doubt,2,機械の電源を入れる前に、すべての安全対策がしっかり整っていることを確認しなさい。
+628,in practice,実際には,"The plan sounds simple in theory, but (     ) it proved very difficult to carry out.",in short,in detail,in vain,in practice,4,その計画は理論上は簡単に思えるが、実際にはとても実行が難しいことがわかった。
+629,in demand,需要があって,"Skilled nurses are highly (     ) right now, so they can find work almost anywhere.",in order,in supply,in demand,in stock,3,熟練した看護師は今とても需要があるので、ほとんどどこででも仕事を見つけられる。
+630,in the meantime,その間に、一方で,"The new software will arrive next week; (     ), please keep using the old version.",in the meantime,on the contrary,for that matter,by no means,1,新しいソフトは来週届きます。その間は、引き続き古いバージョンをお使いください。
+631,in all likelihood,十中八九、おそらくほぼ確実に,"Given the dark clouds gathering overhead, the match will (     ) be cancelled today.",by all means,in all likelihood,at all costs,for all that,2,頭上に暗い雲が集まっているので、今日の試合は十中八九中止になるだろう。
+632,at work,仕事中で、作用して,Several hidden factors were (     ) behind the company's sudden rise in profits.,at ease,at large,at hand,at work,4,その会社の突然の利益増加の裏では、いくつかの隠れた要因が作用していた。
+633,at risk,危険な状態で,"Without immediate action, thousands of rare species will be (     ) of extinction.",at fault,at odds,at stake,at risk,4,早急な対策がなければ、何千もの希少種が絶滅の危機にさらされるだろう。
+634,at a loss,途方に暮れて,"Faced with so many conflicting reports, the detective was completely (     ) as to what to do next.",at a premium,at a distance,at a loss,at a glance,3,あまりに多くの矛盾した報告に直面し、刑事は次に何をすべきか全く途方に暮れていた。
+635,at first sight,一見したところでは、ひと目で,"(     ), the problem seemed easy, but it grew harder the more we examined it.",At first sight,At first hand,At long last,At all costs,1,一見したところ、その問題は簡単に思えたが、調べるほど難しくなっていった。
+636,at heart,心の底では、本当は,"Although he acts tough in public, he is a gentle and shy person (     ).",at length,at heart,at best,at random,2,彼は人前では強がるが、心の底では優しくて内気な人だ。
+637,at intervals,時折、間隔をおいて,Street lamps were placed (     ) along the dark road to guide late-night travelers.,at once,at times,at intervals,at hand,3,夜遅い旅人を導くため、暗い道沿いに一定間隔で街灯が設置されていた。
+638,on the average,平均して,"Workers here spend, (     ), about nine hours a day at their desks each weekday.",on the rise,on the average,on the move,on the spot,2,ここの労働者は、平均して、平日は一日約九時間を机に向かって過ごす。
+639,on a ～ basis,～の基準で、～の方式で,The two companies agreed to share all research findings on an equal (     ).,rate,standard,scale,basis,4,両社はすべての研究成果を対等な基準で共有することに合意した。
+640,on a ～ scale,～な規模で,The factory began producing electric cars on a massive (     ) to meet global demand.,scale,range,basis,degree,1,その工場は世界的な需要に応えるため、大規模に電気自動車の生産を始めた。
+641,on display,展示・陳列されている状態,The museum's rarest paintings are currently (     ) in the main exhibition hall.,on board,on edge,on duty,on display,4,その美術館の最も希少な絵画は現在、メインの展示ホールに陳列されている。
+642,on the increase,だんだん数や量が増えている状態,Reports of online fraud have been (     ) since the pandemic began.,on the spot,on the contrary,on the whole,on the increase,4,オンライン詐欺の報告は、パンデミックが始まって以来増加し続けている。
+643,on guard,危険に備えて用心している様子,Soldiers stood (     ) at the gate all night to watch for any intruders.,on hand,on call,on guard,on time,3,兵士たちは侵入者を見張るため、一晩中門のところで警戒して立っていた。
+644,to ～ extent,ある度合いまで物事が当てはまること,"I agree with your plan to some (     ), but I still have a few concerns.",measure,amount,scope,extent,4,あなたの計画にはある程度賛成だが、それでもいくつか懸念がある。
+645,to one's surprise,予想外で本人が驚いたという気持ち,"(     ) my surprise, the quiet new student won the national speech contest.",On,For,At,To,4,私が驚いたことに、あの物静かな転校生が全国スピーチ大会で優勝した。
+646,to the point,無駄がなく要点を押さえている様子,"Her report was short and (     ), so the busy directors read it at once.",off the point,to the point,beside the point,out of the point,2,彼女の報告書は短く要を得ていたので、多忙な重役たちはすぐに読んだ。
+647,to make matters worse,困った状況がさらに悪化することを示す表現,"We missed the last train, and (     ), it suddenly started to pour with rain.",to tell the truth,to be honest,to begin with,to make matters worse,4,私たちは終電を逃し、さらに悪いことに、突然土砂降りの雨が降り出した。
+648,to one's advantage,その人にとって得になり有利に働くこと,Knowing the local language will work (     ) your advantage during the negotiations.,to,on,in,for,1,その地の言葉を知っていることは、交渉の間あなたに有利に働くだろう。
+649,from ～ on,ある時点を境にそれ以降ずっと,"From next Monday (     ), the office will open an hour earlier than before.",off,over,out,on,4,来週月曜以降、そのオフィスはこれまでより一時間早く開くことになる。
+650,from ～ point of view,特定の立場や観点から物事を見ること,"From a parent's point of (     ), the new school schedule causes a lot of trouble.",sight,opinion,idea,view,4,親の視点から見ると、その新しい学校の時間割は多くの問題を引き起こす。
+651,for sure,疑いなく確実だと断言する気持ち,"I can't tell you the exact time yet, but I'll be there tomorrow for (     ).",sure,true,real,definite,1,正確な時間はまだ言えないが、明日は必ずそこに行くつもりだ。
+652,under way,計画や作業がすでに始まって進んでいること,Preparations for the city's summer festival are already (     ) at the town hall.,under fire,under way,under arrest,under control,2,その市の夏祭りの準備は、すでに市役所で進行中である。
+653,under construction,建物や道路が今まさに建設されている状態,"The new bridge is still (     ), so drivers must use the old route for now.",under pressure,under construction,under cover,under repair,2,その新しい橋はまだ建設中なので、運転手は当面は古い道を使わねばならない。
+654,of late,ここ最近の期間における様子,"She has been looking rather tired and pale (     ) late, so we worry about her.",at,by,of,in,3,彼女は最近かなり疲れて青白く見えるので、私たちは心配している。
+655,of one's own accord,誰にも言われず自分から進んで行うこと,Nobody told him to apologize; he did it of his own (     ) after thinking it over.,way,accord,sense,mind,2,誰も彼に謝れとは言わなかった。彼はよく考えた末、自分の意志でそうしたのだ。
+656,without fail,例外なく必ずそうなる・そうするということ,"Please submit the application by Friday (     ) fail, or your request will be rejected.",against,without,beyond,past,2,申請書を金曜までに必ず提出してください。さもないと要望は却下されます。
+657,behind the times,考えや方法が古くなって時代遅れな様子,His ideas about office work feel hopelessly (     ) the times in this digital age.,beyond,behind,below,beside,2,オフィスの仕事に関する彼の考えは、このデジタル時代には絶望的に時代遅れに感じる。
+658,beyond description,あまりにすごくて言葉で言い表せないこと,The beauty of the sunset over the ocean was simply (     ) description that evening.,against,beyond,under,without,2,その晩、海に沈む夕日の美しさは、まさに言葉では表現できないほどだった。
+659,out of breath,激しい運動などで呼吸が苦しくなった状態,"After running up the stairs, she was completely out of (     ) and could hardly speak.",reach,order,sight,breath,4,階段を駆け上がった後、彼女はすっかり息切れして、ほとんど話せなかった。
+660,out of character,その人の本来の性格らしくない言動,His rude reply was so out of (     ) that we wondered if something was wrong with him.,date,character,order,place,2,彼の無礼な返答はあまりに彼らしくなかったので、何か問題でもあるのかと思った。
+661,no matter how ...,どんなに…でも,"(     ) hard the exam is, she always manages to get a top score in her class.",As far as,No matter that,Even though,No matter how,4,その試験がどんなに難しくても、彼女はいつもクラスで最高点を取ることができる。
+662,what we call ～,いわゆる～,"He is (     ) a self-made man, having built his huge company from nothing.",what we call,that we know,which we mean,how we say,1,彼はいわゆるたたき上げの人で、巨大な会社を無一文から築き上げた。
+663,what ～ is,現在の～,The hard training during those years made him (     ) as a professional athlete.,which he is,that he was,what he is,how he is,3,あの頃の厳しい訓練が、プロ選手としての現在の彼を作り上げた。
+664,～ will do,～は役に立つ,I don't need anything fancy for the trip; any old backpack (     ) just fine.,will go,will make,will do,will take,3,旅行に高級なものは要らない。古いリュックなら何でも十分役に立つ。
+665,may well do,おそらく…するだろう,"Given how cold it has been all week, it (     ) snow heavily tonight.",might so,may as,would rather,may well,4,今週ずっと寒かったことを考えると、今夜はおそらく大雪になるだろう。
+666,might as well do,…するのも同じだ ～してもよい,"Since the last train has already gone, we (     ) walk home together.",would as well,had as well to,might as well,may as well as,3,終電がもう行ってしまったのだから、私たちは一緒に歩いて帰ってもいいだろう。
+667,cannot ～ too ...,いくら～してもしすぎることはない,"You (     ) too careful when you cross this busy street at night, so always stop and look both ways.",cannot being,cannot be,cannot to be,cannot been,2,夜にこの交通量の多い通りを渡るときは、いくら注意してもしすぎることはない。
+668,the last ～ to do,最も…しそうにない～,"Honest and loyal as he is, he is the (     ) person to betray his friends.",lastly,latest of,last,least to,3,彼は正直で忠実なので、友人を裏切るような最もありえない人物だ。
+669,have A to do with B,BとAの関係がある,The new policy has (     ) do with reducing traffic accidents in the city.,plenty in,a lot to,a part for,much in to,2,その新しい政策は、市内の交通事故を減らすことと大いに関係がある。
+670,to tell the truth,実を言えば,"(     ), I never really enjoyed that movie everyone keeps praising.",In true,By the truth,For telling truth,To tell the truth,4,実を言えば、みんながずっとほめているあの映画を私は全然楽しめなかった。
+671,needless to say,言うまでもなく,"(     ), arriving late on the very first day made a terrible impression.",Not to mention that,Needless to say,Without say,No need saying,2,言うまでもなく、初日にまさに遅刻したことはひどい印象を与えた。
+672,feel like doing,…したい気がする,"After such a long and tiring day, I just (     ) curling up with a good book.",feel like,feel as,feel for,feel to,1,こんなに長く疲れた一日のあとは、ただいい本を読んで丸くなりたい気分だ。
+673,be used to doing,…することに慣れている,"Having lived in the countryside for years, she (     ) waking up to birdsong.",used to be,is used for,is used to,is meant to,3,何年も田舎で暮らしてきたので、彼女は鳥のさえずりで目覚めることに慣れている。
+674,cannot help doing,…せずにはいられない,The comedy was so absurd that the whole audience (     ) laughing out loud.,could not stop to,had no help,could not help,did not help,3,その喜劇はあまりにばかばかしく、観客全員が声を出して笑わずにはいられなかった。
+675,come close to doing,もう少しで…しそうになる,On the icy road the car skidded and (     ) hitting the wall by the bridge.,came near at,came close to,got close on,came short of,2,凍った道で車が滑り、橋のそばの壁にもう少しでぶつかりそうになった。
+676,with a view to doing,…する目的で,She moved to the capital (     ) finding better opportunities in the arts.,with a view to,with a view of,by a view to,in view to,1,彼女は芸術分野でよりよい機会を見つける目的で首都へ移った。
+677,joking aside,冗談はさておき,"(     ), we really do need to finish this report before the deadline tomorrow.",Joke besides,Aside the joke,Jokes along,Joking aside,4,冗談はさておき、私たちは明日の締め切りまでにこの報告書を本当に仕上げる必要がある。
+678,catch ～ doing,～が…しているところを見つける,The teacher (     ) two students copying answers during the final exam.,was caught,catched,caught up,caught,4,先生は最終試験中に二人の生徒が答えを写しているところを見つけた。
+679,speaking of ～,～と言えば,"(     ) holidays, have you decided where you want to travel this summer?",Speaking of,Talking by,Said about,Spoken for,1,休暇と言えば、この夏どこへ旅行したいかもう決めた？
+680,judging from ～,～から判断すると,"(     ) the dark clouds gathering over the hills, a storm is coming very soon.",To judge of,Judging from,Judging with,Judged by that,2,丘の上に集まる黒い雲から判断すると、嵐がもうすぐやってくる。
+681,that is to say,すなわち、言い換えると,"She will arrive on the last day of the month, (     ), the thirtieth of June.",as it were,what is worse,that is to say,for all that,3,彼女は月の最終日、すなわち6月30日に到着する予定だ。
+682,in itself,それ自体としては、本来は,Money is not evil (     ); it depends on how people choose to use it.,for itself,in itself,on its own,by itself,2,お金はそれ自体が悪なのではなく、人々がそれをどう使うかにかかっている。
+683,to oneself,自分だけに、心の中に,He kept the surprising news (     ) until the official announcement was made.,by himself,to himself,for himself,of himself,2,彼は正式な発表があるまで、その驚くべき知らせを自分だけの胸にしまっておいた。
+684,one after another,次々と,"As the storm grew stronger, the old trees fell down (     ) along the road.",here and there,now and then,more or less,one after another,4,嵐が強まるにつれて、道沿いの古い木々が次々と倒れていった。
+685,none other than ～,ほかならぬ～,The man who saved the drowning child turned out to be (     ) the mayor himself.,none other than,not to mention,no less than,nothing but,1,おぼれていた子どもを救ったその男性は、ほかならぬ市長その人であることがわかった。
+686,would rather do,むしろ…したい,"I'm tired tonight, so I (     ) stay home and read than go out to the party.",used to,would rather,had better,may well,2,今夜は疲れているので、パーティーに出かけるよりむしろ家にいて読書したい。
+687,as many as ～,～もの数の,(     ) five hundred people gathered in the square to watch the festival parade.,As much as,As many as,As long as,As far as,2,500人もの人々が祭りのパレードを見ようと広場に集まった。
+688,as good as ～,～も同然で、ほとんど～,"The repair work is finished, so the old machine is now (     ) new again.",as soon as,as much as,as well as,as good as,4,修理作業が終わったので、その古い機械は今や新品も同然だ。
+689,as ～ as any,誰にも劣らず～,"Though she is still young, she is (     ) hardworking as any employee in the office.",that,too,so,as,4,彼女はまだ若いが、社内の誰にも劣らず勤勉だ。
+690,all the 比較級,ますます～、それだけいっそう～,"Because he apologized so sincerely, I liked him (     ) the more for his honesty.",much,far,even,all,4,彼がとても誠実に謝ったので、私はその正直さゆえに彼をますます好きになった。
+691,that much 比較級,それだけいっそう～,"If you finish the report today, your weekend will be that (     ) more relaxing.",much,very,many,more,1,今日その報告書を仕上げれば、週末はそれだけいっそうくつろげるだろう。
+692,much less ～,まして～はない,"He can hardly read simple English, (     ) write a long essay in it.",still better,even more,much less,no less,3,彼は簡単な英語さえほとんど読めず、ましてそれで長い小論文を書くことなどできない。
+693,what is more,さらに、おまけに,"The hotel was clean and comfortable, and (     ), the staff were extremely kind.",what is it,what is called,what is more,what is worse,3,そのホテルは清潔で快適で、おまけにスタッフがとても親切だった。
+694,know better than to do,…するほどばかではない,She is a careful driver and (     ) than to use her phone while driving.,goes further,thinks better,does worse,knows better,4,彼女は慎重な運転者で、運転中に電話を使うほど愚かではない。
+695,Couldn't be better,最高の状態だ,"""How are things going with your new job?"" ""(     )! I really love it here.""",Couldn't agree more,Couldn't be better,Couldn't care less,Couldn't be helped,2,「新しい仕事の調子はどう？」「最高だよ！ここが本当に気に入っているんだ。」
+696,worse still,さらに悪いことに,"We missed the last train, and (     ), it began to rain heavily outside.",less likely,worse still,better yet,more often,2,私たちは終電を逃し、さらに悪いことに、外では激しく雨が降り始めた。
+697,to the best of one's knowledge,～の知る限りでは,"(     ) my knowledge, no one in the company has ever seen the secret document.",To the point of,For the sake of,To the best of,In the face of,3,私の知る限りでは、社内で誰もその秘密文書を見たことがない。
+698,not in the least,まったく～ない,"I was not bothered (     ) by the noise; in fact, I slept soundly all night.",on the whole,at the most,in the least,for the best,3,私はその騒音にまったく悩まされず、それどころか一晩中ぐっすり眠った。
+699,to the full,心ゆくまで、十分に,"Now that he has retired, he intends to enjoy his free time (     ) every day.",to the full,to the spot,to the end,to the point,1,退職した今、彼は毎日その自由な時間を心ゆくまで楽しむつもりだ。
+700,by far,はるかに、ずっと,"Of all the candidates we interviewed, she was (     ) the most impressive one.",by far,by chance,by turns,by then,1,面接したすべての候補者の中で、彼女がはるかに最も印象的だった。
+701,provided that ...,…という条件で、もし…ならば,You may borrow my car (     ) you return it with a full tank of gas tonight.,even though,provided that,given that,now that,2,今夜ガソリンを満タンにして返してくれるなら、私の車を貸してあげてもいいよ。
+702,every time ...,…するたびに、…のたびに,"(     ) I visit my grandmother, she insists on cooking a huge meal for me.",As long as,By the time,In case,Every time,4,祖母を訪ねるたびに、彼女は私のために必ず大量の料理を作りたがる。
+703,the moment ...,…するとすぐに、…した瞬間に,"(     ) she heard the news of her son's safe return, she burst into tears of joy.",The fact,The moment,The reason,The way,2,息子が無事に帰ってきたという知らせを聞いた瞬間、彼女はうれし涙にくれた。
+704,when it comes to ～,～のこととなると、～に関しては,"He is a quiet man, but (     ) protecting his family, he becomes surprisingly fierce.",when it comes to,by means of,on behalf of,in spite of,1,彼は物静かな人だが、家族を守ることとなると、驚くほど激しくなる。
+705,as it is,実際のところは、今のままでは,"I had hoped to finish the report by noon, but (     ), I won't be done until evening.",as it were,as it is,as a rule,as such,2,昼までに報告書を仕上げたかったが、実際のところ夕方まで終わりそうにない。
+706,as far as ～ be concerned,～に関する限りは、～の意見では,"(     ) I am concerned, the new policy will only create more confusion among the staff.",As far as,As long as,As soon as,As well as,1,私に関する限り、その新しい方針は職員の間にさらなる混乱を生むだけだろう。
+707,as follows,次のとおりで,"The committee's main conclusions are (     ): cut spending, hire fewer staff, and delay the project.",as follows,as expected,as usual,as planned,1,委員会の主な結論は次のとおりである。支出を削減し、職員を減らし、計画を延期する。
+708,as is often the case with ～,～にはよくあることだが,"(     ) talented young athletes, he peaked too early and struggled to maintain his form.",As is often the case with,As far as it goes for,As long as it is for,As soon as it comes to,1,才能ある若い選手にはよくあることだが、彼はピークが早すぎて、調子を保つのに苦労した。
+709,as ～ go,～としては、世間一般の～と比べれば,"The hotel was cheap, but as budget rooms (     ), it was surprisingly clean and comfortable.",goes,gone,go,going,3,そのホテルは安かったが、格安の部屋としては驚くほど清潔で快適だった。
+710,if only ...,…でありさえすれば（よいのに）,"(     ) I had studied harder last year, I would be at a better university right now.",What if,As if,Even if,If only,4,去年もっと一生懸命勉強してさえいれば、今ごろもっといい大学にいるのに。
+711,if it were not for ～,もし～がなければ,"(     ) the support of my family, I could never have survived such a difficult year.",If it were not for,If it had not been,If only it were,If there were not,1,もし家族の支えがなければ、こんなにつらい一年を乗り越えることはできなかっただろう。
+712,the way ...,…するやり方で、…のように,I really admire (     ) she handles difficult customers without ever losing her temper.,the time,the way,the point,the case,2,彼女が一度もかんしゃくを起こさずに難しい客に対応するやり方を、私は本当に尊敬している。
+713,～ to death,死ぬほど～、ひどく～,"The children were bored (     ) during the long lecture, fidgeting and yawning the whole time.",to a point,to death,to the end,to the bone,2,子どもたちは長い講義の間、死ぬほど退屈して、ずっとそわそわしてあくびをしていた。
+714,with ease,容易に、楽々と,"Although the exam was meant to be challenging, she answered every question (     ).",with luck,with ease,with care,with reason,2,その試験は難しいはずだったが、彼女はすべての問題に楽々と答えた。
+715,believe it or not,まさかと思うだろうが、信じられないだろうが,"(     ), this tiny shop sells more coffee in a day than the huge chain across the street.",Believe you me that,Believe it or not,Now that you mention,Mark my words then,2,信じられないかもしれないが、この小さな店は通りの向かいの大手チェーンより一日に多くのコーヒーを売る。
+716,not all that ～,それほど～というわけではない,"People warned me the movie was scary, but honestly it was (     ) frightening.",no end of,not all that,no less than,none other than,2,その映画は怖いと人に言われたが、正直なところ、それほど怖くはなかった。
+717,"the 比較級, the 比較級",～すればするほど、ますます…だ,"The more you practice speaking English, (     ) confident you will become over time.",the more,the most,the many,the much,1,英語を話す練習をすればするほど、やがてあなたはより自信を持つようになる。
+718,"just as ～, so ...",ちょうど～であるように…だ,"Just as a garden needs constant care, (     ) does a friendship require regular attention.",so,as,thus,then,1,庭が絶え間ない世話を必要とするのとちょうど同じように、友情も定期的な気配りを必要とする。
+719,no wonder that ...,…なのも当然だ、…も不思議ではない,"She skipped lunch and worked through the night, so it's (     ) wonder she fainted at her desk.",no,any,not,some,1,彼女は昼食を抜いて徹夜で働いたのだから、机で倒れたのも当然だ。
+720,it happens that ...,たまたま…だ、偶然にも…だ,"It (     ) that I was passing your office, so I thought I would drop in and say hello.",arises,occurs,happens,comes,3,たまたまあなたの会社の前を通りかかったので、立ち寄って挨拶しようと思ったのです。
+721,chances are that ...,ひょっとしたら…だろう、たぶん…だ,"(     ) are that she has already left the office, so let's call her cell phone instead.",Doubts,Reasons,Chances,Wishes,3,ひょっとしたら彼女はもうオフィスを出ているだろうから、代わりに携帯に電話しよう。
+722,there is no doing,…することはできない,There is no (     ) what the weather will be like during our trip next week.,to predict,prediction,predicted,predicting,4,来週の旅行中に天気がどうなるかを予測することはできない。
+723,not so much A as B,AというよりむしろB,His success was not so much the result of talent (     ) the result of years of hard work.,for,as,but,than,2,彼の成功は才能の結果というよりむしろ長年の努力の結果だった。
+724,hardly ～ when ...,～するかしないかのうちに…する,She had hardly sat down at her desk (     ) the phone began to ring loudly.,when,as,until,than,1,彼女が机に座るか座らないかのうちに、電話が大きく鳴り始めた。
+725,never do without ～,…すれば必ず～する,She never travels abroad (     ) buying a small gift for each of her coworkers.,without,beyond,except,unless,1,彼女は海外旅行をすれば必ず同僚一人ひとりに小さな土産を買う。
+726,it goes without saying that ...,…なのは言うまでもない,It goes without (     ) that regular exercise is essential for maintaining good health.,speaking,saying,telling,talking,2,健康を保つには定期的な運動が不可欠なのは言うまでもない。
+727,"true ～, but ...",確かに～だが…だ,"(     ), the plan is expensive, but it will save us a great deal of time in the long run.",Although,True,Even,Despite,2,確かにその計画は費用がかかるが、長い目で見れば多くの時間を節約してくれる。
+728,it is not long before ...,間もなく…する,It was not long (     ) the children fell fast asleep after the exhausting day at the park.,that,so,since,before,4,公園での疲れる一日の後、間もなく子どもたちはぐっすり眠り込んだ。
+729,it is high time that ...,とっくに…してよいころだ,It is high (     ) that the government took serious action to reduce air pollution in the city.,period,time,moment,hour,2,政府がその都市の大気汚染を減らす本気の対策を取ってよいころだ。
+730,no sooner ～ than ...,～するやいなや…する,No sooner had I stepped out of the house (     ) it suddenly started to pour with rain.,than,when,that,as,1,私が家を一歩出るやいなや、突然激しく雨が降り出した。
+731,it is no use doing,…しても無駄である,It is no (     ) complaining about the weather; we simply have to wait for it to clear up.,use,help,need,doubt,1,天気に文句を言っても無駄だ。晴れるのを待つしかない。
+732,it is not until ～ that ...,～になって初めて…する,It was not (     ) she lost her job that she realized how much she had relied on it.,when,before,until,since,3,彼女は職を失って初めて、自分がいかにそれに頼っていたかに気づいた。
+733,A is to B what C is to D,AのBに対する関係はCのDに対する関係に等しい,"Reading is to the mind (     ) exercise is to the body, keeping it active and strong.",which,while,what,that,3,読書が精神に対して持つ関係は、運動が身体に対して持つ関係に等しく、精神を活発で強く保つ。
+734,not so much as do,…さえしない,He was so rude that he left the party without so (     ) as thanking the host.,well,much,far,long,2,彼はとても無礼で、主催者に礼を言いさえせずにパーティーを去った。
+735,nothing is more A than B,BほどAなものはない,Nothing is more (     ) than a good night's sleep when you are completely worn out.,refresh,refreshing,refreshment,refreshed,2,へとへとに疲れているとき、ぐっすり一晩眠るほど元気が出るものはない。
+736,"the former ～, the latter ...",前者は～ 後者は…,"I enjoy both tea and coffee; the former calms me down, while the (     ) wakes me up.",last,latest,later,latter,4,私は紅茶もコーヒーも好きだ。前者は私を落ち着かせ、後者は私の目を覚まさせる。
+737,"A is one thing, B is another",AとBとは別の物である,"Knowing the rules is one thing, but actually applying them in a real game is quite (     ).",others,other,the other,another,4,ルールを知っていることと、実際の試合でそれを使うことはまったく別の物だ。
+738,all one has to do is do,ただ…すればよい,"All you have to (     ) is press this button, and the machine will do the rest automatically.",doing,done,do,does,3,このボタンを押すだけでよく、あとは機械が自動的にやってくれる。
+739,suffice it to say that ...,…と言えば十分である,Suffice it to (     ) that the meeting did not go well and several clients walked out angrily.,say,speak,talk,tell,1,会議はうまくいかず、数人の客が怒って退席したと言えば十分だ。
+740,be to do,…することになっている、…すべきである,"The new manager is (     ) arrive next Monday, so please prepare the office before the weekend.",to,going,about,due,1,新しい部長は来週月曜に到着することになっているので、週末前にオフィスを整えてください。
+741,be forced to do,事情によりやむを得ず…する,"When the storm knocked out the power, we were (     ) cancel the outdoor concert that evening.",fond of,afraid of,capable of,forced to,4,嵐で停電したので、私たちはその晩の野外コンサートをやむなく中止せざるを得なかった。
+742,be supposed to do,…する決まり・約束になっている,"You are (     ) submit the report by Friday, so please don't forget the deadline.",capable of,fond of,afraid of,supposed to,4,あなたは金曜までにその報告書を提出することになっているので、締め切りを忘れないでください。
+743,be to blame for ～,…に対して責任・落ち度がある,The careless driver was clearly (     ) the accident that injured two pedestrians.,to blame for,to ask for,to long for,to care for,1,その不注意な運転手が、歩行者2人が負傷した事故に対して明らかに責任があった。
+744,be entitled to ～,…を受ける正当な資格がある,"After working here for ten years, employees are (     ) a full month of paid leave.",entitled to,exposed to,opposed to,addicted to,1,ここで10年間働けば、従業員はまるまる1か月の有給休暇を受ける資格がある。
+745,tend to do,…しがちである、…する傾向がある,People who skip breakfast (     ) feel tired and lose concentration by mid-morning.,refuse to,hesitate to,decline to,tend to,4,朝食を抜く人は、午前半ばまでに疲れを感じ集中力を失いがちだ。
+746,happen to do,たまたま・偶然…する,I (     ) meet an old classmate at the airport while I was waiting for my flight.,happened to,had to,meant to,used to,1,飛行機を待っている間に、空港で偶然昔の同級生に出会った。
+747,manage to do,困難の中なんとか…する,"Despite the heavy traffic, she (     ) arrive at the interview just five minutes early.",pretended to,failed to,managed to,refused to,3,ひどい渋滞にもかかわらず、彼女はなんとか面接にちょうど5分前に到着できた。
+748,can afford to do,金銭・時間的に…する余裕がある,"Now that he has paid off his loans, he can finally (     ) buy a new car.",afford to,object to,fail to,refuse to,1,ローンを完済した今、彼はようやく新車を買う余裕ができた。
+749,bother to do,わざわざ手間をかけて…する,He was in such a hurry that he didn't even (     ) lock the front door behind him.,refrain from,bother to,succeed in,care for,2,彼はとても急いでいたので、わざわざ玄関のドアに鍵をかけることすらしなかった。
+750,come to an end,続いていた物事が終わる,"After three long years of negotiations, the bitter dispute finally came (     ) last week.",to a head,to an end,to a point,to a halt,2,3年間に及ぶ長い交渉の末、その激しい争いは先週ついに終わりを迎えた。
+751,go so far as to do,極端に…までする、…しさえする,He was so angry that he went (     ) accuse his closest friend of lying to him.,so long as to,as soon as to,as well as to,so far as to,4,彼はとても怒っていたので、最も親しい友人が嘘をついたと非難しさえした。
+752,have no choice but to do,…するほかに選択肢がない,"With all the trains canceled, we had no (     ) but to walk home in the rain.",chance,doubt,choice,reason,3,電車が全部運休だったので、雨の中を歩いて帰宅するほかに仕方がなかった。
+753,spend ～ doing,…して(時間など)を費やす,She spent the entire afternoon (     ) old photographs to put into the family album.,sort,to sort,sorted,sorting,4,彼女は午後をまるまる、家族のアルバムに入れる古い写真を整理して過ごした。
+754,make a point of doing,努めて必ず…するようにする,My grandmother makes a (     ) of writing a thank-you note for every gift she receives.,fuss,habit,point,sense,3,祖母は受け取ったどんな贈り物にも、必ず礼状を書くようにしている。
+755,remain to be seen,結果がまだ分からず未定である,"The new policy sounds promising, but whether it will actually work remains to be (     ).",seen,see,seeing,saw,1,その新政策は有望に聞こえるが、実際にうまくいくかどうかはまだ未定である。
+756,bring oneself to do,気が進まないことを思い切って…する,"After the painful breakup, she could not bring (     ) to delete his number from her phone.",about,herself,herself off,it on,2,つらい別れの後、彼女は携帯から彼の番号を消す気持ちにどうしてもなれなかった。
+757,take the trouble to do,手間を惜しまずわざわざ…する,"Few customers take the (     ) to fill out the long survey, so we offer a small reward.",chance,notice,care,trouble,4,その長いアンケートにわざわざ記入してくれる客はほとんどいないので、ささやかな謝礼を用意している。
+758,leave nothing to be desired,非の打ちどころがなく申し分ない,The hotel's service was so attentive and flawless that it left (     ) to be desired.,everything,nothing,anything,something,2,そのホテルのサービスは行き届いていて完璧で、まったく申し分なかった。
+759,in order to do,…する目的で、…するために,She woke up two hours early (     ) finish packing before the taxi arrived.,by means of,in case of,in spite of,in order to,4,彼女はタクシーが来る前に荷造りを終えるために、2時間早く起きた。
+760,in that ...,…という点において,The new model is superior to the old one (     ) it uses far less electricity.,now that,in that,in case,so that,2,新型は旧型より、消費電力がはるかに少ないという点で優れている。
+761,as long as ...,…である限り、…でありさえすれば,You can borrow my car (     ) you fill the tank up before you bring it back.,as if,as well as,as long as,as far as,3,帰す前にガソリンを満タンにしてくれる限り、私の車を借りていいよ。
+762,see to it that ...,…するように取り計らう、手配する,Please (     ) the report is finished and on my desk before the meeting tomorrow.,look forward that,make sure of,take care that not,see to it that,4,明日の会議の前にその報告書を仕上げて私の机に置くように取り計らってください。
+763,so that ～ can do,～が…できるように,She spoke slowly and clearly (     ) the foreign visitors could understand her.,but that,so that,in that,now that,2,外国人の来客が理解できるように、彼女はゆっくりとはっきり話した。
+764,by the time ...,…までには（…するときまでに）,"(     ) we reached the station, the last train had already left the platform.",On time,By the time,In time,By the way,2,私たちが駅に着くまでには、最終電車はすでにホームを出てしまっていた。
+765,"～, so that ...",～だ、その結果…だ,"He had left his umbrella at home, (     ) he got completely soaked in the rain.",as if,so that,even if,in case,2,彼は傘を家に置いてきた、その結果、雨でずぶ濡れになった。
+766,now that ...,今はもう…なので,"(     ) you have graduated, you should start thinking seriously about your career.",In spite of,As long as,Now that,In case,3,もう卒業したのだから、君は真剣に自分の進路を考え始めるべきだ。
+767,in case ...,もし…ならば、…に備えて,Take an umbrella with you (     ) it starts raining on your way home this evening.,in case,in terms of,in spite of,instead of,1,今晩帰り道で雨が降り出すといけないから、傘を持っていきなさい。
+768,given that ...,…を考慮すれば、…なので,"(     ) she had only studied for one night, her exam results were surprisingly good.",Save that,But that,Given that,Except that,3,一晩しか勉強しなかったことを考慮すれば、彼女の試験結果は驚くほど良かった。
+769,even as ...,まさに…するときに,"(     ) the firefighters arrived, the roof of the old house collapsed into the flames.",Even now,Even as,Even if,Even so,2,消防士たちが到着するまさにそのとき、その古い家の屋根が炎の中に崩れ落ちた。
+770,if any,もしあるとしても,"There were very few mistakes, (     ), in the essay she submitted to her professor.",if any,if not,if ever,if only,1,彼女が教授に提出した小論文には、もしあったとしてもごくわずかしか間違いがなかった。
+771,on the condition that ...,…という条件で,He agreed to lend them the money (     ) they paid it all back within six months.,for the reason that,with the result that,on the condition that,to the extent that,3,彼は半年以内に全額返済するという条件で、彼らにお金を貸すことに同意した。
+772,lest ～ should ...,～が…しないように,She wrote down every detail (     ) she should forget anything important later on.,lest,unless,while,until,1,後で何か大事なことを忘れないように、彼女はすべての細部を書き留めた。
+773,what with A and B,AやらBやらで,"(     ) the noise and the heat, I could hardly get any sleep at the hotel last night.",What if,What with,What for,What about,2,騒音やら暑さやらで、昨夜はホテルでほとんど眠れなかった。
+774,"A, and B at that",Aだ、その上Bでもある,"He bought a brand-new car, and an expensive sports model (     ), on his small salary.",at that,for that,by that,to that,1,彼は安い給料で新車を、しかもその上高価なスポーツモデルを買った。
+775,inasmuch as ...,…だから、…である限り,The plan was rejected (     ) it would have cost far more than the company could afford.,so much as,as much as,inasmuch as,much as,3,その計画は、会社が負担できる額をはるかに超える費用がかかるという理由で却下された。
+776,just about,ほぼ、かろうじて,"We have (     ) finished cleaning the whole house, so let's take a short break now.",just about,just so,just as,just yet,1,家全体の掃除はほぼ終わったので、ここで少し休憩しよう。
+777,go ahead,先に行く、進む、（許可して）どうぞ,"""May I open the window?"" ""(     ), it's a little stuffy in here anyway.""",Go over,Go through,Go ahead,Go off,3,「窓を開けてもいいですか」「どうぞ、どのみちここは少し蒸し暑いので」
+778,check out ～,～を調べる、～を借り出す,Let me (     ) that new restaurant downtown before we decide where to have dinner.,check in,check up,check out,check off,3,夕食をどこで食べるか決める前に、街の新しいレストランを調べさせて。
+779,hold on,持ちこたえる、電話を切らずにいる,Could you (     ) for a moment while I find someone who can answer your question?,hold to,hold on,hold back,hold out,2,あなたの質問に答えられる人を探す間、少しの間電話を切らずにお待ちいただけますか。
+780,hang up,電話を切る、～を掛ける,She got so angry during the call that she decided to (     ) without saying goodbye.,hang over,hang up,hang out,hang on,2,電話中にあまりに腹が立ったので、彼女はさよならも言わずに電話を切ることにした。
+781,give ～ a try,気軽に試してみる,"The new sushi place looks interesting, so let's (     ) this weekend.",give it a try,make it up,give it back,call it off,1,あの新しいすし屋は面白そうだから、今週末に試してみよう。
+782,give ～ a hand,～に手を貸す、手伝う,"These boxes are really heavy, so could you please (     ) carrying them upstairs?",take my place,catch my eye,lose my mind,give me a hand,4,この箱は本当に重いので、2階まで運ぶのを手伝ってもらえますか。
+783,call back ～,～に折り返し電話する,"She's in a meeting right now, but I'll have her (     ) you as soon as she's free.",look into,break down,take after,call back,4,彼女は今会議中ですが、手が空き次第すぐにあなたに折り返し電話させます。
+784,from scratch,何もない状態から、最初から,"Instead of buying a cake, she decided to bake one (     ) using her grandmother's recipe.",on purpose,at random,from scratch,by heart,3,ケーキを買う代わりに、彼女は祖母のレシピを使って一から焼くことにした。
+785,see ～ off,出発する人を見送る,The whole family went to the airport early to (     ) their daughter before her long flight.,see off,call off,put off,show off,1,家族全員が長いフライトの前に娘を見送るため、早めに空港へ行った。
+786,hold one's breath,息を止める,The diver had to (     ) for almost two minutes while exploring the underwater cave.,lose his way,catch his eye,change his mind,hold his breath,4,そのダイバーは海中の洞窟を探検する間、2分近く息を止めていなければならなかった。
+787,at the wheel,車を運転して,Never use your phone while you are (     ); it puts everyone on the road in danger.,in the dark,at the wheel,on the spot,off the hook,2,運転中は決して携帯電話を使ってはいけない。道路上の全員を危険にさらすことになる。
+788,having said that,そうは言ったものの,"I really enjoyed the movie. (     ), I think the ending was a little too predictable.",In addition,For instance,Having said that,As a result,3,その映画は本当に楽しめた。そうは言ったものの、結末は少し予測しやすすぎたと思う。
+789,on the dot,時間ちょうどに、きっかり,"The train always leaves at nine o'clock (     ), so don't be even a minute late.",at length,on the dot,by chance,in a row,2,その電車はいつも9時きっかりに発車するので、1分たりとも遅れてはいけない。
+790,ask ～ a favor,～に頼みごとをする,"I hate to bother you, but may I (     )? I need someone to water my plants next week.",take your word,ask you a favor,do you justice,have your back,2,お手数をおかけして申し訳ないのですが、お願いがあります。来週、植物に水をやってくれる人が必要なのです。
+791,drive at ～,～と言おうとする、～を意図する,"I couldn't understand what my boss was (     ) during the meeting, so I asked him to explain.",falling for,getting over,driving at,running into,3,会議中に上司が何を言おうとしているのか分からなかったので、説明してくれるよう頼んだ。
+792,lose face,面目を失う、面子をつぶす,The politician was afraid he would (     ) if he admitted his mistake in front of the press.,take heart,hold court,break ground,lose face,4,その政治家は、記者団の前で自分の過ちを認めれば面目を失うのではないかと恐れた。
+793,before one knows it,あっという間に,"Time flew by during the vacation, and (     ), we were already packing to go home.",more or less,before we knew it,against all odds,now and then,2,休暇中は時間があっという間に過ぎ、気づけばもう帰宅の荷造りをしていた。
+794,stick around,その辺で待つ、居続ける,"If you (     ) after the concert, you might get a chance to meet the band backstage.",stick around,give in,pass out,break away,1,コンサートの後にその辺で待っていれば、舞台裏でバンドに会えるチャンスがあるかもしれない。
+795,call it a day,その日の仕事を切り上げる,"We've been working since dawn and everyone is exhausted, so let's (     ) and rest.",let it go,carry it out,have it out,call it a day,4,夜明けから働き続けて全員くたくただから、今日はこれで切り上げて休もう。
+796,have a good command of ～,～を自由に使いこなす,"To work as a translator here, you must (     ) both English and Japanese.",get the hang of,take a dim view of,have a good command of,make light of,3,ここで翻訳者として働くには、英語と日本語の両方を自由に使いこなせなければならない。
+797,keep one's fingers crossed,幸運を祈る,"I have my final exam tomorrow, so please (     ) that I pass it.",pull your weight,hold your horses,bite your tongue,keep your fingers crossed,4,明日が最終試験なので、合格するよう幸運を祈ってください。
+798,pay a visit to ～,～を訪問する,"While we were in Kyoto, we decided to (     ) the famous old temple on the hill.",take a toll on,turn a blind eye to,pay a visit to,lend an ear to,3,京都にいる間、私たちは丘の上にある有名な古い寺を訪れることにした。
+799,serve ～ right,自業自得である、当然の報いだ,"He never studied all semester, so it (     ) that he failed the final exam.",paid him back,got to him,served him right,came to him,3,彼は学期中ずっと勉強しなかったのだから、期末試験に落ちたのは当然の報いだ。
+800,go to the polls,投票に行く,Millions of citizens will (     ) next Sunday to elect their new president.,jump to conclusions,go to the polls,take to the streets,come to terms,2,来週の日曜日、何百万人もの市民が新しい大統領を選ぶために投票に行く。
+801,take office,公職に就く、就任する,The new mayor will (     ) next Monday and immediately begin reforming the city budget.,take place,take office,take part,take notice,2,新しい市長は来週の月曜日に就任し、すぐに市の予算改革に着手する。
+802,turn a blind eye to ～,不正などを意図的に無視する,The manager chose to (     ) the minor mistakes his loyal staff occasionally made.,turn a blind eye to,catch sight of,see eye to eye with,set eyes on,1,その部長は、忠実な部下がときどき犯す小さなミスを見て見ぬふりをすることにした。
+803,last but not least,最後に挙げるが重要さは劣らない,"I want to thank my parents, my friends, and, (     ), my wonderful teacher.",last but not least,for the most part,first of all,as a rule,1,両親と友人たち、そして最後になりましたが大切な、すばらしい恩師に感謝したい。
+804,know ～ by sight,顔は見て知っているが親しくはない,"I (     ) our new neighbor by sight, but we have never actually spoken to each other.",remember,greet,know,notice,3,新しい隣人とは顔は見て知っているが、実際に話したことは一度もない。
+805,pull ～'s leg,冗談で人をからかう,Don't take him seriously; he was just (     ) your leg when he said you won the prize.,raising,pulling,shaking,breaking,2,彼を本気にしないで。君が賞を取ったと言ったのはただからかっていただけだ。
+806,the bottom line,最も重要な要点、結論,Forget the small details for now and tell me (     ): can we finish the project by Friday?,the long run,the bottom line,the last word,the other way,2,細かいことは今は忘れて要点を教えてくれ。金曜までにこの計画を終えられるのか。
+807,have a look at ～,～にちょっと目を通す,Could you (     ) at my report and tell me whether the conclusion sounds convincing?,take a break,make a point,give a hand,have a look,4,私の報告書にちょっと目を通して、結論が説得力あるか教えてもらえますか。
+808,What ～ like?,～はどんな様子か尋ねる,"You stayed at that famous hotel last night, didn't you? What (     ) like?",did it,is it being,has it,was it,4,昨夜あの有名なホテルに泊まったんだよね。どんな感じだった?
+809,What ～ for?,何の目的で～するのか問う,You're carrying a huge ladder into the office. What on earth do you need it (     )?,with,about,to,for,4,会社に大きなはしごを運び込んでいるね。いったい何のために必要なの?
+810,have no idea,全く見当がつかない,"She asked me where the keys were, but I honestly (     ) where I had left them.",made no sense,had no idea,paid no attention,took no notice,2,彼女に鍵の場所を聞かれたが、正直どこに置いたのか全く見当がつかなかった。
+811,could use ～,～があるとありがたい、～が欲しい,"After working in the hot sun all afternoon, I (     ) a tall glass of cold water right now.",would refuse,should avoid,could use,would mind,3,午後ずっと炎天下で働いたので、今は冷たい水を一杯もらえるとありがたい。
+812,How come SV?,どうして…なのかと理由を問う,(     ) you didn't tell me about the meeting until it had already started this morning?,How come,How long,How about,How often,1,どうして今朝の会議が始まるまでそのことを教えてくれなかったの?
+813,take one's time,急がずゆっくりやる,"There's no rush at all, so please (     ) and check every figure carefully before you sign.",lose your way,speak your mind,take your time,change your mind,3,全く急ぐ必要はないので、署名する前にどうかゆっくりすべての数字を慎重に確認してください。
+814,take it easy,のんびりする、気楽に構える,"You've been studying nonstop for weeks, so (     ) this weekend and get some rest.",take it easy,take it up,take it over,take it back,1,何週間も休まず勉強してきたんだから、今週末はのんびりして少し休みなさい。
+815,My pleasure,礼に対する返答で「どういたしまして」,"""Thank you so much for driving me all the way to the airport."" ""(     ).""",My mistake,My word,My goodness,My pleasure,4,「空港までずっと送ってくれて本当にありがとう。」「どういたしまして。」
+816,make oneself understood,自分の意思を相手に通じさせる,"Although my French was poor, I somehow managed to (     ) at the small village station.",make up my mind,make myself understood,make a difference,make believe,2,フランス語は下手だったが、その小さな村の駅で何とか自分の意思を通じさせることができた。
+817,see much of ～,～と頻繁に会う,"Since he moved to another city last year, we don't (     ) him anymore.",be aware of,see much of,be fond of,keep abreast of,2,彼が去年別の街へ引っ越して以来、私たちはもう彼とあまり会わなくなった。
+818,think again,考え直す、再考する,"If you believe quitting school will solve your problems, I really think you should (     ).",think again,think back,think aloud,think ahead,1,学校をやめれば問題が解決すると思っているなら、本当に考え直すべきだと思う。
+819,help oneself to ～,～を自由に取って飲食する,"There are cookies and tea on the table, so please (     ) anything you like while you wait.",run out of,take care of,help yourself to,give rise to,3,テーブルにクッキーとお茶があるので、お待ちの間どうぞお好きなものをご自由にお取りください。
+820,I'm afraid not,残念ながらそうではないと答える,"""Is there any chance the shop is still open at this hour?"" ""(     ). It closed at six.""",I'm afraid not,I'd love to,I don't mind,I couldn't agree more,1,「この時間でもまだお店が開いている可能性はある?」「残念ながらないね。6時に閉まったよ。」
+821,treat A to B,AにBをおごる、ごちそうする,"After winning the contract, our boss decided to (     ) the whole team to a fancy dinner.",present,reward,supply,treat,4,契約を勝ち取った後、上司はチーム全員に豪華なディナーをおごることに決めた。
+822,be fed up with ～,～にうんざりしている、嫌気がさしている,I'm completely fed (     ) with his constant excuses and broken promises.,off,out,up,over,3,私は彼の絶え間ない言い訳と守られない約束に心底うんざりしている。
+823,come to think of it,そういえば、考えてみると,"Now that I (     ) to think of it, I haven't seen Tom at the office since last Monday.",begin,turn,come,start,3,そういえば、先週の月曜以来トムをオフィスで見かけていない。
+824,think highly of ～,～を高く評価する、尊敬する,All her colleagues think (     ) of her dedication and professional skills.,widely,strongly,deeply,highly,4,同僚は皆、彼女の献身ぶりと専門的な技術を高く評価している。
+825,legend has it that ...,伝説によると…ということだ,Legend (     ) it that a dragon once guarded the treasure hidden deep in the mountain.,tells,goes,says,has,4,伝説によると、かつて竜が山の奥深くに隠された宝を守っていたということだ。
+826,Here we are,さあ着いた、はい着いたよ,"""(     ) we are! This is the hotel where we'll be staying for the next three nights.""",Far,Now,Here,So,3,さあ着いた！ここがこれから3泊する予定のホテルだよ。
+827,hit it off with ～,～とすぐ仲良くなる、意気投合する,"From the very first meeting, she hit it (     ) with her new roommate.",out,off,up,on,2,最初の顔合わせから、彼女は新しいルームメイトとすぐに意気投合した。
+828,watch one's step,足元に注意する、用心する,Please (     ) your step; the stairs are wet and very slippery after the rain.,see,keep,watch,take,3,足元に注意してください。雨のあと階段が濡れていてとても滑りやすいので。
+829,give one's regards to ～,～によろしくと伝える,Please give my (     ) to your parents when you see them this weekend.,regards,words,manners,memories,1,今週末ご両親に会ったら、よろしくとお伝えください。
+830,You're kidding,冗談でしょう、うそでしょう,"""I passed the bar exam on my first try."" ""You're (     )! That's amazing news!""",kid,kidding,joke,fun,2,「司法試験に一発で合格したよ」「冗談でしょう！それはすごいニュースだね！」
+831,be susceptible to ～,～の影響を受けやすい、かかりやすい,Young children are especially (     ) to colds and other infections during winter.,susceptible,immune,resistant,allergic,1,幼い子どもは冬の間、特に風邪やその他の感染症にかかりやすい。
+832,be at odds with ～,～と食い違っている、対立している,His latest statement is clearly at (     ) with what he promised us last year.,odds,issue,stake,fault,1,彼の最新の発言は、昨年私たちに約束したこととは明らかに食い違っている。
+833,be committed to ～,～に献身する、専念する,Our company is firmly (     ) to reducing its carbon emissions over the next decade.,committed,inclined,exposed,subject,1,わが社は今後10年間で炭素排出量を削減することに固く専念している。
+834,be here to stay,定着している、根付いている,"Whether you like it or not, smartphones are clearly here to (     ) in modern society.",remain,stay,keep,last,2,好むと好まざるとにかかわらず、スマートフォンは現代社会に明らかに定着している。
+835,be liable to do,…しがちである、…する傾向がある,"If you skip breakfast every day, you are liable (     ) feel tired by noon.",for,to,with,on,2,毎日朝食を抜くと、昼ごろには疲れを感じがちだ。
+836,be intent on ～,～に懸命である、～しようと固く決意している,She was so (     ) on finishing the project that she worked through the entire night.,eager,fond,intent,proud,3,彼女はそのプロジェクトを終わらせようと固く決意していて、一晩中ぶっ通しで働いた。
+837,be no match for ～,とても～にはかなわない、相手にならない,"Despite his effort, the rookie was no (     ) for the experienced champion in the ring.",equal,match,rival,competitor,2,努力もむなしく、その新人はリングで経験豊富な王者にとてもかなわなかった。
+838,be vulnerable to ～,～に弱い、～の被害を受けやすい,Coastal towns are highly (     ) to flooding whenever a powerful storm hits the region.,vulnerable,durable,secure,stable,1,沿岸の町は、強力な嵐がその地域を襲うたびに洪水の被害を受けやすい。
+839,be eligible for ～,～の資格がある、～を受ける資格がある,"After working here for five years, you become (     ) for an extended paid vacation.",capable,suitable,eligible,available,3,ここで5年間働くと、長期の有給休暇を取得する資格が得られる。
+840,be worth doing,…する価値がある,This museum is definitely worth (     ) if you have a free afternoon in the city.,visited,visit,visiting,to visit,3,この街で午後に空き時間があるなら、この美術館は間違いなく訪れる価値がある。
+841,be out to do,…しようと狙っている、…しようと躍起になっている,The new company is clearly (     ) win as many young customers as possible this year.,thanks to,close to,due to,out to,4,その新会社は明らかに今年できるだけ多くの若い客を獲得しようと狙っている。
+842,be all ears,一心に耳を傾けている,Tell me everything about your trip to Peru — I'm (     ) and won't interrupt you.,all over,all thumbs,all ears,all smiles,3,ペルー旅行のこと全部聞かせて。じっくり耳を傾けるから、口は挟まないよ。
+843,be beside oneself,我を忘れる、取り乱す,"When she heard her son had won the gold medal, she was (     ) with joy.",for herself,by herself,beside herself,of herself,3,息子が金メダルを取ったと聞いて、彼女は喜びのあまり我を忘れた。
+844,be cut out to be ～,～に向いている、～の素質がある,"With his patience and warmth, he is really (     ) be a kindergarten teacher.",carried out to,worn out to,keen out to,cut out to,4,その忍耐強さと温かさで、彼は本当に幼稚園の先生に向いている。
+845,be all the rage,大流行している,"These chunky sneakers are (     ) among teenagers right now, selling out everywhere.",all the rage,all the same,all the way,all the time,1,このごついスニーカーは今ティーンの間で大流行していて、どこでも売り切れている。
+846,account for ～,～の理由を説明する、～を占める,Tourism alone is said to (     ) nearly a third of the small island's total income.,call for,account for,allow for,stand for,2,観光業だけでその小さな島の総収入の3分の1近くを占めると言われている。
+847,allow for ～,～を考慮に入れる,"When planning the journey, you should (     ) possible delays caused by heavy snow.",fall for,long for,answer for,allow for,4,その旅程を計画するときは、大雪による遅れの可能性を考慮に入れるべきだ。
+848,settle for ～,～で我慢する、不満ながら受け入れる,They wanted a house by the sea but had to (     ) a small flat downtown instead.,head for,search for,settle for,wish for,3,彼らは海辺の家がほしかったが、代わりに都心の小さなアパートで我慢するしかなかった。
+849,yearn for ～,～を恋しがる、～にあこがれる,"Living abroad for years, she began to (     ) the quiet streets of her hometown.",yearn for,allow for,charge for,vouch for,1,何年も海外で暮らすうち、彼女は故郷の静かな通りを恋しく思うようになった。
+850,count for ～,～の価値を持つ,"In this company, honesty seems to (     ) very little when promotions are decided.",go for,count for,pass for,make for,2,この会社では、昇進が決まるとき正直さはほとんど価値を持たないようだ。
+851,cope with ～,～をうまく処理する、対処する,New nurses must learn how to (     ) the heavy stress of emergency night shifts.,side with,part with,toy with,cope with,4,新人看護師は救急の夜勤の大きなストレスにうまく対処する方法を学ばねばならない。
+852,coincide with ～,～と一致する、～と同時に起こる,"Our anniversary happens to (     ) the national holiday, so we can travel together.",tamper with,coincide with,interfere with,dispense with,2,私たちの記念日はたまたま祝日と重なるので、一緒に旅行できる。
+853,comply with ～,～に従う、～を守る,All factories in this area must strictly (     ) the new safety regulations by April.,collide with,meddle with,comply with,tamper with,3,この地域の全工場は4月までに新しい安全規則に厳格に従わねばならない。
+854,dispense with ～,～なしですます、～を省く,"Thanks to the new software, we can now (     ) most of the paperwork entirely.",tinker with,grapple with,bear with,dispense with,4,新しいソフトのおかげで、今や書類仕事のほとんどを完全になしですますことができる。
+855,attend to ～,～を処理する、～の世話をする,Please wait a moment; the doctor will (     ) your injury as soon as she is free.,resort to,attend to,object to,confess to,2,少々お待ちください。先生は手が空き次第あなたのけがを処置します。
+856,aspire to ～,～を熱望する、～を目指す,"Ever since she was a child, Maria has (     ) become a professional violinist.",adjusted to,adhered to,amounted to,aspired to,4,子どものころからずっと、マリアはプロのバイオリニストになることを熱望してきた。
+857,submit to ～,～に屈する、～に従う,"Despite the pressure from his rivals, he refused to (     ) their unfair demands.",attribute to,object to,submit to,contribute to,3,ライバルからの圧力にもかかわらず、彼は彼らの不当な要求に屈するのを拒んだ。
+858,consent to ～,～に同意する、～を承諾する,Her parents finally (     ) the marriage after meeting and approving of her fiancé.,appealed to,resorted to,referred to,consented to,4,婚約者に会って認めたあと、彼女の両親はついにその結婚に同意した。
+859,deal in ～,～を取り扱う、商う,That old shop on the corner has (     ) rare coins and stamps for over fifty years.,dwelt on,looked on,dealt in,touched on,3,角のあの古い店は、50年以上にわたって珍しい硬貨や切手を取り扱ってきた。
+860,persist in ～,～に固執する、～をしつこく続ける,"Even after several warnings, he continued to (     ) breaking the company's rules.",take in,result in,fill in,persist in,4,何度も警告されたあとでさえ、彼は会社の規則を破り続けることに固執した。
+861,indulge in ～,快楽や欲望に思うままふける,"On vacation, she likes to (     ) long afternoon naps and rich desserts.",refrain from,indulge in,work out,abide by,2,休暇中、彼女は長い昼寝と濃厚なデザートにふけるのが好きだ。
+862,embark on ～,新しい事業や計画を始める、乗り出す,"After years of saving, the couple decided to (     ) an ambitious renovation of their old house.",shy away from,dwell on,embark on,tell on,3,何年もの貯金を経て、その夫婦は古い家の大がかりな改装に乗り出すことにした。
+863,dwell on ～,あることを長々と考え続けたり述べたりする,"Instead of moving forward, he kept dwelling (     ) his past mistakes for hours.",out,on,up,off,2,前に進む代わりに、彼は何時間も自分の過去の失敗をくよくよ考え続けた。
+864,tell on ～,健康や状態に悪い影響を及ぼす,Years of overwork and little sleep finally began to (     ) his health.,hang around,pass out,tell on,catch on,3,長年の働きすぎと睡眠不足がついに彼の健康に悪影響を及ぼし始めた。
+865,refrain from ～,したいことをあえて控える、慎む,Passengers are kindly asked to (     ) using mobile phones during the performance.,get away with,embark on,indulge in,refrain from,4,観客の皆様は公演中の携帯電話のご使用をお控えくださいますようお願いします。
+866,discriminate against ～,特定の人を不当に差別して扱う,The new law makes it illegal to (     ) employees because of their age or religion.,rule out,abide by,round up,discriminate against,4,新しい法律は、年齢や宗教を理由に従業員を差別することを違法としている。
+867,abide by ～,規則や決定に従って守る,All members must (     ) the club's rules or risk losing their membership.,dwell on,abide by,shy away from,miss out on,2,会員は全員クラブの規則を守らなければならず、さもなければ会員資格を失う恐れがある。
+868,work out ～,問題などをうまく解決する,Don't worry about the schedule conflict; we'll (     ) the details together tomorrow.,single out,work out,rule out,throw up,2,予定の重なりは心配しないで。明日一緒に細かい点を解決しよう。
+869,rule out ～,可能性や選択肢を排除する,The detective could not yet (     ) the possibility that the fire had been started deliberately.,catch on,rule out,work out,pull up,2,刑事はその火事が故意に起こされた可能性をまだ排除できなかった。
+870,single out ～,多くの中から特定のものを選び出す,The teacher decided to (     ) Maria for praise because of her outstanding essay.,single out,round up,rule out,wind up,1,先生はマリアの優れた作文を理由に、彼女を選んで褒めることにした。
+871,pass out,意識を失って気絶する,The marathon runner was so exhausted that he nearly (     ) at the finish line.,passed out,caught on,hung around,worked out,1,そのマラソン選手は疲れ果てて、ゴール地点で危うく気絶しそうになった。
+872,miss out on ～,よい機会や経験を逃す,"If you leave early, you'll (     ) the best part of the festival.",catch on,get away with,shy away from,miss out on,4,早く帰ったら、お祭りのいちばんいいところを逃してしまうよ。
+873,wind up ～,物事や活動を終わらせる、締めくくる,The chairman tried to (     ) the long meeting before everyone got too tired.,throw up,pull up,wind up,catch on,3,議長は皆が疲れすぎる前に、長い会議を終わらせようとした。
+874,pull up,車などが止まる,"A black taxi suddenly (     ) outside the hotel, and a man in a suit stepped out.",pulled up,hung around,caught on,passed out,1,一台の黒いタクシーがホテルの外に突然止まり、スーツ姿の男が降りてきた。
+875,throw up ～,食べたものを吐く、嘔吐する,The child felt seasick on the boat and began to (     ) over the side.,pull up,throw up,wind up,round up,2,その子は船で船酔いし、船べりから吐き始めた。
+876,round up ～,人や物を寄せ集める、検挙する,The police managed to (     ) all the suspects within twenty-four hours of the robbery.,round up,rule out,single out,work out,1,警察は強盗事件から24時間以内に容疑者全員を検挙することができた。
+877,catch on,新しいものが人気を得る、流行する,The new dance quickly began to (     ) among teenagers across the country.,hang around,pull up,pass out,catch on,4,その新しいダンスは国中の十代の若者の間ですぐに人気が出始めた。
+878,get away with ～,悪事をしても罰を逃れる、うまくやる,"He thought he could (     ) cheating on the exam, but the teacher caught him at once.",miss out on,indulge in,shy away from,get away with,4,彼は試験でカンニングをしても見逃されると思っていたが、先生にすぐ捕まった。
+879,shy away from ～,気が進まず避けようとする,Many students tend to (     ) asking questions because they are afraid of looking foolish.,abide by,shy away from,get away with,miss out on,2,多くの生徒は、ばかに見えるのを恐れて質問することを避けがちだ。
+880,hang around,特に目的もなくぶらつく,"After school, the boys would (     ) the park for hours doing nothing in particular.",hang around,pull up,pass out,catch on,1,放課後、少年たちは特に何をするでもなく何時間も公園をぶらついたものだった。
+881,get down to ～,～に真剣に着手する,"After a long chat over coffee, we finally decided to (     ) the real business of the meeting.",get away with,get down to,get over with,get along with,2,コーヒーを飲みながら長く雑談したあと、私たちはようやく会議の本題に真剣に取り掛かることにした。
+882,let down ～,～を失望させる,She practiced for months because she didn't want to (     ) her teammates in the final.,call off,let down,take in,put off,2,彼女は決勝でチームメイトを失望させたくなかったので、何カ月も練習した。
+883,pull off ～,～を見事にやってのける,"Nobody believed the small team could (     ) such a difficult project, but they did it perfectly.",take over,break down,pull off,put up,3,その小さなチームがそんな難しいプロジェクトをやってのけられるとは誰も思わなかったが、彼らは完璧にやり遂げた。
+884,follow through,最後までやり遂げる,"Many people make plans to exercise, but few actually (     ) and keep doing it for a year.",settle down,break away,follow through,turn around,3,運動する計画を立てる人は多いが、実際に最後までやり遂げて一年間続ける人はほとんどいない。
+885,find oneself ～,気がつくと～の状態にいる,"When the meeting ended late, I (     ) alone in the dark office without a key.",found myself,helped myself,made myself,saw myself,1,会議が遅くに終わると、気がつくと私は鍵もなく暗いオフィスに一人でいた。
+886,make do with ～,～で間に合わせる,"The campsite had no stove, so we had to (     ) a small fire to cook our dinner.",make do with,do away with,put up with,catch up with,1,キャンプ場にはコンロがなかったので、私たちは小さな焚き火で夕食を作って間に合わせるしかなかった。
+887,make good,成功する、出世する,He left his hometown with nothing and worked hard for years until he managed to (     ) in the city.,make good,make up,make believe,make sure,1,彼は無一文で故郷を出て、都会で成功するまで何年も懸命に働いた。
+888,make ends meet,収入の範囲でやりくりする,"After he lost his job, the family had to take on extra work just to (     ) each month.",make a fuss,make ends meet,make a point,make a difference,2,彼が職を失ったあと、その家族は毎月収入内でやりくりするためだけに余分な仕事を引き受けねばならなかった。
+889,make believe that ...,…というふりをして遊ぶ,The children would (     ) the sofa was a pirate ship sailing across a stormy sea.,make sure that,make believe that,take it that,take care that,2,子どもたちは、ソファが嵐の海を渡る海賊船だというふりをして遊ぶのだった。
+890,take ～ for granted,～を当然のことと思う,We tend to (     ) clean water for granted until a sudden shortage forces us to value it.,bring,take,put,hold,2,私たちは突然の不足によって価値を実感させられるまで、きれいな水を当然のことと思いがちだ。
+891,take ～ into account,～を考慮に入れる,A good judge must (     ) the criminal's background into account before deciding the sentence.,make,put,give,take,4,優れた裁判官は判決を下す前に、犯人の生い立ちを考慮に入れねばならない。
+892,take hold of ～,～をしっかりつかむ,"As the boat rocked violently, she quickly tried to (     ) the railing to keep her balance.",take charge of,take hold of,take leave of,take part in,2,ボートが激しく揺れたとき、彼女はバランスを保とうと素早く手すりをつかもうとした。
+893,take notice of ～,～に注目する、気に留める,Customers rarely (     ) the small print in a contract until a problem suddenly arises.,take leave of,make fun of,make light of,take notice of,4,客は問題が突然起こるまで、契約書の細かい文字にめったに注目しない。
+894,take effect,効力を生じる、効き始める,"The new traffic law will (     ) next month, so drivers must learn the rules now.",take shape,take effect,take turns,take place,2,新しい交通法は来月施行されるので、運転手は今のうちに規則を覚えなければならない。
+895,take pains,骨を折る、努力する,"The chef always (     ) to choose the freshest ingredients, even visiting the market himself.",takes shape,takes sides,takes turns,takes pains,4,そのシェフは最も新鮮な食材を選ぼうといつも骨を折り、自ら市場へ足を運ぶことさえある。
+896,keep track of ～,～の動きを把握する,"With so many passwords to remember, it is hard to (     ) which one belongs to each website.",keep pace with,keep up with,keep track of,keep clear of,3,覚えるべきパスワードがあまりに多く、どれがどのサイトのものか把握するのは難しい。
+897,keep ～ company,～と一緒にいて寂しさを紛らす,"My grandmother lives alone, so the little dog stays beside her to (     ) all day long.",give her hand,keep her company,take her place,make her day,2,祖母は一人暮らしなので、その小さな犬は一日中そばにいて彼女と一緒に過ごしている。
+898,keep abreast of ～,～に遅れずについていく,Doctors must read journals constantly to (     ) the latest advances in medical research.,keep aside from,keep away from,keep apart from,keep abreast of,4,医師は医学研究の最新の進歩に遅れずついていくため、絶えず学術誌を読まねばならない。
+899,let go of ～,～を手放す、放す,The child refused to (     ) her mother's hand as they pushed through the crowded station.,let down on,let off of,let up on,let go of,4,その子は混雑した駅をかき分けて進む間、母親の手を放そうとしなかった。
+900,live up to ～,～(期待・基準)に応える,The long-awaited sequel failed to (     ) the high expectations of its many devoted fans.,stand up for,live down to,look up to,live up to,4,待望の続編は、多くの熱心なファンの高い期待に応えられなかった。
+901,look ～ in the eye,相手の目をまっすぐ見る,She was so honest that she could (     ) anyone in the eye without feeling guilty.,glance,watch,look,stare,3,彼女はとても正直だったので、罪悪感を覚えることなく誰の目でもまっすぐ見ることができた。
+902,hold true,当てはまる、有効である,This old rule still holds (     ) even in today's rapidly changing business world.,true,off,back,tight,1,この古い規則は、今日の急速に変化するビジネスの世界においてもなお当てはまる。
+903,come to terms with ～,～を受け入れて折り合いをつける,"After months of grief, he finally came to (     ) with the loss of his beloved dog.",sides,terms,ends,blows,2,何か月もの悲しみの後、彼はついに愛犬を失ったことと折り合いをつけた。
+904,come to light,隠れていた事実が明るみに出る,"New evidence came to (     ) during the trial, completely changing the jury's opinion.",terms,mind,head,light,4,裁判の最中に新たな証拠が明るみに出て、陪審員の意見を完全に変えた。
+905,come of age,成人に達する,"In many countries, young people legally come of (     ) when they turn eighteen.",age,time,years,life,1,多くの国では、若者は18歳になると法的に成人になる。
+906,come in handy,いざというときに役立つ,Keep this small flashlight in your bag; it may come in (     ) during a power cut.,handy,ready,helpful,sight,1,この小さな懐中電灯をかばんに入れておきなさい。停電のときに役立つかもしれない。
+907,fall short of ～,基準や期待に達しない,"This year's sales fell short (     ) our target, despite the huge advertising campaign.",of,from,to,with,1,莫大な広告キャンペーンにもかかわらず、今年の売上は目標に達しなかった。
+908,go a long way to do,…するのに大いに役立つ,A few kind words from the manager will go a long (     ) to boost the team's morale.,way,road,path,route,1,上司からのほんの少しの優しい言葉が、チームの士気を高めるのに大いに役立つだろう。
+909,pave the way for ～,～が実現する下地を作る,Her groundbreaking research helped pave the (     ) for a new generation of scientists.,path,route,road,way,4,彼女の画期的な研究は、新しい世代の科学者たちへの道を開く一助となった。
+910,put ～ to use,～を活用する,He finally put his language skills to (     ) when he started working abroad.,use,duty,task,test,1,海外で働き始めたとき、彼はついに自分の語学力を活用した。
+911,stand to reason,理屈から考えて当然である,It stands to (     ) that prices will rise if demand keeps growing this fast.,logic,fact,reason,sense,3,需要がこれほど速く伸び続ければ価格が上がるのは、理屈から言って当然だ。
+912,do the sights of ～,～の観光名所を見て回る,"While in Rome, we spent three whole days doing the (     ) of the ancient city.",scenes,sights,looks,views,2,ローマにいる間、私たちは丸三日かけてその古都の観光をした。
+913,read between the lines,言外の意味を読み取る,"She didn't say she was upset, but I could read between the (     ) of her short reply.",letters,lines,pages,words,2,彼女は怒っているとは言わなかったが、私はその短い返事の行間を読み取ることができた。
+914,follow suit,他人にならって同じことをする,"When the leading bank lowered its interest rates, the smaller banks quickly followed (     ).",suite,track,trail,suit,4,大手銀行が金利を引き下げると、中小の銀行もすぐにそれにならった。
+915,play a joke on ～,～にいたずらをしてからかう,The children decided to play a (     ) on their teacher by hiding all the chalk.,game,jest,fool,joke,4,子どもたちはチョークを全部隠して先生にいたずらをすることにした。
+916,get on one's nerves,～をいらいらさせる,His constant tapping on the desk really gets on my (     ) during long meetings.,back,nerves,head,skin,2,彼が絶えず机を叩くのが、長い会議中に本当に私の神経にさわる。
+917,get the better of ～,～を打ち負かす、出し抜く,"Her curiosity finally got the (     ) of her, and she opened the mysterious letter.",worse,edge,better,upper,3,とうとう好奇心が彼女に打ち勝ち、彼女はその謎めいた手紙を開けた。
+918,get even with ～,～に仕返しをする,He swore he would get (     ) with the rival who had stolen his idea.,close,even,square,level,2,彼は自分のアイデアを盗んだライバルに仕返しをしてやると誓った。
+919,hold ～ in check,～を抑制してコントロールする,The new medicine helped hold the patient's high blood pressure in (     ) for years.,order,bounds,check,control,3,新しい薬は何年もの間、患者の高血圧を抑えるのに役立った。
+920,have an eye for ～,～を見分ける優れた目を持つ,"As a gallery owner, she has a keen eye (     ) talented young painters.",for,to,at,on,1,画廊のオーナーとして、彼女は才能ある若い画家を見分ける鋭い眼識を持っている。
+921,have ～ on one's mind,～が気になって頭から離れない,She seemed distracted all day because she had something serious (     ) her mind.,at,off,on,in,3,彼女は何か深刻なことが頭から離れず、一日中うわの空のようだった。
+922,have yet to do,今までまだ…していない,"Despite years of research, scientists have (     ) to find a cure for the disease.",already,never,ever,yet,4,何年もの研究にもかかわらず、科学者たちはまだその病気の治療法を見つけられていない。
+923,dare to do,恐れずに思い切って…する,"Nobody else spoke up, but she (     ) to challenge the manager's decision openly.",dared,resisted,avoided,denied,1,他の誰も声を上げなかったが、彼女は思い切って堂々とその部長の決定に異議を唱えた。
+924,impose A on B,AをBに押しつける、課す,The new government decided to (     ) higher taxes on imported luxury goods.,inform,assure,impose,convince,3,新政府は輸入された高級品により高い税を課すことを決定した。
+925,ascribe A to B,AをBが原因だと考える,Critics (     ) the company's sudden success to its bold marketing strategy.,accuse,suspect,blame,ascribe,4,批評家たちはその会社の突然の成功を大胆なマーケティング戦略のおかげだと考えている。
+926,bring A home to B,AをBにしみじみと痛感させる,The shocking documentary really brought (     ) to me how fragile our planet is.,home,up,about,back,1,その衝撃的なドキュメンタリーは、私たちの地球がいかに脆いかを私に痛感させた。
+927,a variety of ～,さまざまな種類の～,The new restaurant offers a (     ) of dishes from all over the world.,variety,several,various,many,1,その新しいレストランは世界中のさまざまな種類の料理を提供している。
+928,a handful of ～,ほんの少数の～,"Out of hundreds of applicants, only a (     ) of candidates were finally hired.",handful,quantity,deal,plenty,1,何百人もの応募者の中から、最終的にほんの一握りの候補者だけが採用された。
+929,a host of ～,非常に多くの～,The ambitious project faces a (     ) of technical problems that must be solved first.,deal,bit,host,piece,3,その野心的な計画は、まず解決しなければならない非常に多くの技術的問題に直面している。
+930,scores of ～,何十もの多くの～,"After the storm, (     ) of volunteers arrived to help clean up the flooded streets.",deal,scores,much,many,2,嵐の後、何十人ものボランティアが浸水した通りの片付けを手伝うためにやって来た。
+931,many a ～,数多くの～(単数扱い),(     ) a young writer has dreamed of one day publishing a best-selling novel.,Few,Many,Several,Much,2,数多くの若い作家が、いつかベストセラー小説を出版することを夢見てきた。
+932,quite a few ～,かなりたくさんの～,"Quite a (     ) students failed the exam, so the teacher decided to review the lesson.",number,bit,few,deal,3,かなり多くの生徒が試験に落ちたので、先生はその授業を復習することにした。
+933,all manner of ～,ありとあらゆる種類の～,"The old attic was filled with all (     ) of forgotten toys, books, and dusty boxes.",manner,means,form,way,1,その古い屋根裏部屋は、忘れられたおもちゃや本、ほこりだらけの箱などあらゆる種類のもので満たされていた。
+934,on one's own,誰の助けも借りず自分一人で,"After moving to the city, she had to learn to live entirely on her (     ).",single,self,own,alone,3,その都市へ引っ越した後、彼女は完全に自分一人で暮らすことを学ばなければならなかった。
+935,at issue,いま議論の的になっている,The point (     ) issue is whether the company knew about the defect before selling.,at,in,under,on,1,議論の的になっている点は、その会社が販売前に欠陥を知っていたかどうかだ。
+936,at one's disposal,自由に使える状態で,"As the new director, she had a large budget and a skilled team at her (     ).",leisure,disposal,mercy,whim,2,新しい責任者として、彼女は多額の予算と熟練したチームを自由に使えた。
+937,at stake,危険にさらされて、賭けられて,The negotiators worked through the night because thousands of jobs were at (     ).,danger,hazard,loss,stake,4,何千もの雇用が危機にさらされていたため、交渉担当者たちは徹夜で取り組んだ。
+938,enough ～ to go around,全員に行き渡るだけの～,"There weren't enough chairs to go (     ), so some guests had to stand during the speech.",about,along,around,across,3,全員に行き渡るだけの椅子がなかったので、何人かの客はスピーチの間立っていなければならなかった。
+939,every other ～,1つおきの～,"The book club meets every (     ) week, so we gather twice a month on Fridays.",another,next,few,other,4,その読書会は1週間おきに開かれるので、私たちは毎月2回、金曜日に集まる。
+940,for a rainy day,いざという時に備えて,My grandmother always told me to save a little money for a (     ) day.,cloudy,stormy,rainy,windy,3,祖母はいつも、いざという時に備えて少しお金を貯めておくようにと私に言っていた。
+941,in earnest,本格的に、真剣に,"After the holidays, construction on the new bridge finally began (     ) and progressed quickly.",in earnestly,in the earnest,in earnest,in earnings,3,休暇が終わると、新しい橋の工事がようやく本格的に始まり、急速に進んだ。
+942,in good shape,調子が良くて、健康で,"Despite his age, my grandfather is still (     ) and walks five kilometers every morning.",on the line,at a loss,out of order,in good shape,4,年齢にもかかわらず、祖父は今でも健康で、毎朝5キロ歩いている。
+943,in store for ～,～のために用意されて、待ち受けて,Nobody knew what surprises were (     ) them when they opened the mysterious old box.,in favor of,in charge of,in store for,in need of,3,その謎めいた古い箱を開けたとき、どんな驚きが彼らを待ち受けているのか誰も知らなかった。
+944,in the works,準備中で、進行中で,"The company hasn't announced it yet, but a brand-new smartphone model is already (     ).",in the mood,in the way,in the works,in the dark,3,会社はまだ発表していないが、まったく新しいスマートフォンの新機種がすでに準備中だ。
+945,nothing short of ～,まさしく～、～にほかならない,"Her recovery from such a serious illness was (     ) a miracle, the doctors agreed.",nothing short of,none other from,nothing less for,nothing but for,1,あれほど重い病からの彼女の回復は、まさしく奇跡だったと医師たちは口をそろえた。
+946,～ of one's own,自分自身の～,"After years of renting, the young couple finally bought a house (     ) in the suburbs.",by their own,of their own,of theirs own,for their own,2,何年も賃貸に住んだ後、その若い夫婦はついに郊外に自分たちの家を買った。
+947,of one's own doing,自分自身が招いた、自業自得の,"The mess he found himself in was entirely (     ), so he could blame no one else.",for his own sake,on his own terms,of his own doing,by his own hand,3,彼が陥った苦境は完全に自業自得だったので、他の誰のせいにもできなかった。
+948,on the move,移動中で、絶えず動いて,"As a touring musician, she is constantly (     ), rarely staying in one city for long.",in the move,on the move,at the move,by the move,2,ツアー中のミュージシャンとして、彼女は絶えず移動しており、一つの都市に長く留まることはめったにない。
+949,on the ～ side,～気味で,"These shoes feel a little (     ) side, so I might exchange them for a larger pair.",in the small,at the small,on the small,to the small,3,この靴は少し小さめなので、もっと大きいサイズに交換するかもしれない。
+950,out of hand,手に負えない、収拾がつかない,The peaceful protest gradually got (     ) and the police were called to restore order.,out of hand,out of touch,out of date,out of place,1,平和的な抗議は次第に手に負えなくなり、秩序を回復するために警察が呼ばれた。
+951,out of the question,あり得ない、問題外で,Lending you that much money right now is simply (     ); I have bills to pay myself.,off the question,out of question,out of the question,out of the questions,3,今あなたにそんな大金を貸すのは到底あり得ない。私自身も支払うべき請求書があるのだ。
+952,per capita,一人当たりの,This small country has one of the highest incomes (     ) in the entire world.,per diem,per capita,per chance,per usual,2,この小さな国は、一人当たりの所得が世界全体でも最も高い国の一つだ。
+953,right as rain,すっかり健康で,Don't worry about me; after a good night's sleep I'll be (     ) by tomorrow morning.,right as rain,fit as glass,clear as day,cold as ice,1,私のことは心配しないで。ぐっすり眠れば明日の朝にはすっかり元気になっているから。
+954,second to none,誰にも劣らない、随一の,"When it comes to fresh seafood, the restaurants in this port town are (     ).",first to none,second to none,second of none,next to none,2,新鮮な魚介類のことなら、この港町のレストランは誰にも劣らない。
+955,something of a ～,ちょっとした～,"Among his colleagues, the quiet engineer is (     ) legend for solving impossible problems.",somewhat of an,nothing of a,anything of a,something of a,4,同僚たちの間では、その物静かなエンジニアは不可能な問題を解決するちょっとした伝説的存在だ。
+956,upwards of ～,～以上の,"The charity concert attracted (     ) ten thousand fans, far more than the organizers expected.",upward to,toward of,upwards of,onward of,3,そのチャリティーコンサートは1万人以上のファンを集め、主催者の予想をはるかに上回った。
+957,regardless of ～,～にかかわらず,"The race will be held tomorrow (     ) the weather, so bring a raincoat just in case.",instead of,short of,ahead of,regardless of,4,レースは天候にかかわらず明日開催されるので、念のためレインコートを持ってきてください。
+958,in accordance with ～,～に従って、～に一致して,All employees must handle customer data strictly (     ) the new privacy regulations.,in contrast with,in comparison with,in company with,in accordance with,4,全従業員は、新しいプライバシー規則に厳密に従って顧客データを扱わなければならない。
+959,in proportion to ～,～に比例して,The amount of tax you pay rises (     ) the income you earn during the year.,in reference to,in addition to,in proportion to,in objection to,3,あなたが支払う税額は、その年に稼ぐ所得に比例して増える。
+960,in the wake of ～,～の結果として、～に続いて,"(     ) the massive earthquake, thousands of volunteers rushed to the region to help.",In the wake from,In the wake of,At the wake of,On the wake of,2,その大地震の結果として、何千人ものボランティアが援助のためにその地域へ駆けつけた。
+961,as of ～,～の時点で、～現在で,"(     ) this morning, the company had received over three thousand applications for the new position.",By means of,In case of,As of,On behalf of,3,今朝の時点で、その会社は新しい職への応募を三千件以上受け取っていた。
+962,but for ～,～がなかったら,"(     ) your timely advice, I would have made a serious mistake in the contract.",As for,But for,In spite of,Owing to,2,あなたの時宜を得た助言がなかったら、私は契約で重大なミスを犯していただろう。
+963,on ～ terms with ...,...と～の関係で,"Although they argued years ago, the two neighbors are now on good (     ) each other again.",sides of,par with,terms with,top of,3,何年も前に口論したものの、その二人の隣人は今ではまた互いに良好な関係にある。
+964,on the verge of ～,今にも～しそうで,"Faced with such constant pressure, the small company was on the (     ) of bankruptcy last spring.",limit,corner,verge,border,3,そのような絶え間ない圧力に直面し、その小さな会社は昨春、今にも倒産しそうだった。
+965,within walking distance of ～,～から歩いて行ける距離に,We chose this apartment because it is within walking (     ) of the train station and several shops.,range,reach,length,distance,4,私たちは駅やいくつかの店から歩いて行ける距離にあるので、このアパートを選んだ。
+966,to the effect that ...,…という趣旨の,The manager issued a statement (     ) the effect that all staff would receive a bonus this year.,for,to,with,by,2,その部長は、全職員が今年ボーナスを受け取るという趣旨の声明を出した。
+967,a case in point,適例、好例,"Many old buildings here need repair, and the crumbling town hall is a case in (     ).",point,hand,need,fact,1,ここの古い建物の多くは修理が必要で、崩れかけた町役場はその適例だ。
+968,the pros and cons,賛否両論、長所と短所,"Before deciding, we carefully discussed all the pros and (     ) of moving the office abroad.",against,cons,bads,goods,2,決める前に、私たちは事務所を海外に移すことの長所と短所をすべて慎重に話し合った。
+969,a white elephant,無用の長物,"The huge stadium, rarely used since the games ended, has become an expensive white (     ).",elephant,whale,sheep,horse,1,競技会が終わって以来ほとんど使われていないその巨大な競技場は、金のかかる無用の長物となっている。
+970,the elephant in the room,誰もが気づきながら触れない問題,"Everyone avoided mentioning the budget cuts, but they were clearly the elephant in the (     ).",room,corner,hall,house,1,誰もが予算削減に触れるのを避けたが、それは明らかに誰もが気づきながら触れない問題だった。
+971,part and parcel of ～,～の不可分の要素,Dealing with difficult customers is simply part and (     ) of working in retail.,parcel,package,piece,portion,1,気難しい客に対応することは、小売業で働くことの不可分な要素にすぎない。
+972,all along,最初からずっと,"I suspected he was lying, and it turned out he had known the truth all (     ).",about,through,over,along,4,私は彼が嘘をついていると疑っていたが、結局彼は最初からずっと真実を知っていたのだった。
+973,all too,あまりにも、まったく,"The pleasant holiday came to an end all (     ) quickly, and we had to return to work.",very,too,so,much,2,楽しい休暇はあまりにも早く終わってしまい、私たちは仕事に戻らねばならなかった。
+974,as such,そういうものとして、それ自体,"He is the founder of the company and, (     ) such, deserves our deepest respect.",for,as,by,in,2,彼はその会社の創立者であり、そういうものとして、私たちの最も深い敬意に値する。
+975,at first hand,直接に、じかに,"Reporters who visited the disaster area learned about the suffering at first (     ), not from rumors.",hand,line,step,touch,1,被災地を訪れた記者たちは、その苦しみについて噂からではなく直接に知った。
+976,at one's convenience,都合の良いときに,Please review the attached documents and reply to me at your (     ) sometime next week.,advantage,benefit,comfort,convenience,4,添付の書類に目を通し、来週のどこかご都合の良いときにご返信ください。
+977,at short notice,急に、直前の知らせで,The pianist agreed to perform at such short (     ) that we had no time to advertise the concert.,warning,notice,alarm,notification,2,そのピアニストはあまりに急に演奏を引き受けてくれたので、私たちはコンサートを宣伝する時間がなかった。
+978,at will,思いのままに、自由に,"With years of training, the skilled actor could cry at (     ) during any emotional scene.",length,once,will,large,3,何年もの訓練を積み、その熟練した俳優はどんな感動的な場面でも思いのままに泣くことができた。
+979,by and large,概して、全般的に見て,"There were a few minor problems, but (     ) and large the project was a great success.",for,by,on,at,2,いくつか小さな問題はあったが、概してそのプロジェクトは大成功だった。
+980,down the road,将来は、いずれは,"This decision may seem unimportant now, but it could cause serious trouble down the (     ) for our team.",path,road,street,lane,2,この決定は今は重要でないように思えるかもしれないが、いずれ私たちのチームに深刻な問題を引き起こしかねない。
+981,early on,早い段階で、初期のうちに,We realized (     ) in the project that our original budget was far too small.,by far,early on,at large,after all,2,私たちはプロジェクトの早い段階で、当初の予算がはるかに少なすぎることに気づいた。
+982,for a change,いつもと違って、気分転換に,Let's eat out tonight (     ) instead of cooking at home as we always do.,for good,for a while,for a change,for sure,3,いつも家で料理する代わりに、気分転換に今夜は外食しよう。
+983,for all I know,よくは知らないが、ひょっとすると,"I haven't seen him in years; (     ), he could be living abroad by now.",for the best,for that matter,for all I know,for one thing,3,何年も彼に会っていない。よくは知らないが、彼は今ごろ海外で暮らしているかもしれない。
+984,for nothing,無駄に、何の成果もなく,All our months of hard work were (     ) when the client suddenly canceled the deal.,for nothing,at length,on purpose,by chance,1,クライアントが突然取引を中止したので、私たちの数か月の苦労はすべて無駄になった。
+985,if anything,どちらかと言えば、むしろ,"His apology didn't help; (     ), it made the situation even more awkward than before.",if possible,if necessary,if anything,if only,3,彼の謝罪は役に立たなかった。どちらかと言えば、状況を以前よりさらに気まずくしてしまった。
+986,in a row,連続して、立て続けに,"Our team has won the championship five years (     ), and they aim for a sixth title.",in a row,in turn,in time,in part,1,私たちのチームは5年連続で優勝しており、6度目のタイトルを狙っている。
+987,in person,じかに、本人が直接,"Rather than emailing, she decided to deliver the bad news to her boss (     ).",in vain,in common,in person,in turn,3,メールではなく、彼女はその悪い知らせを上司にじかに伝えることにした。
+988,in retrospect,振り返ってみると、今思えば,"(     ), quitting that stable job to start my own business was the best decision I ever made.",At random,In retrospect,On average,By contrast,2,振り返ってみると、あの安定した仕事を辞めて起業したのは、私がした最善の決断だった。
+989,more often than not,たいてい、多くの場合,"(     ), the morning trains are so crowded that I can barely find space to stand.",Now and again,More often than not,Few and far between,Once in a while,2,たいてい、朝の電車はとても混んでいて、立つ場所をやっと見つけるほどだ。
+990,on second thought,考え直してみて、やはり,"I was going to drive there, but (     ), I think the train would be much faster.",for the time being,on second thought,at first sight,in the meantime,2,そこへ車で行くつもりだったが、考え直してみて、電車のほうがずっと速いと思う。
+991,on the face of it,見たところでは、一見すると,"(     ), the offer seems generous, but the hidden fees make it a surprisingly bad deal.",Out of the blue,On the face of it,In the long run,Behind the scenes,2,見たところでは、その申し出は気前がよさそうだが、隠れた手数料のせいで意外にひどい取引になる。
+992,on the spot,その場で、即座に,"Impressed by her quick thinking, the manager offered her the job (     ).",in due course,at any rate,on the spot,after a while,3,彼女の機転に感心して、その担当者はその場で彼女に仕事を持ちかけた。
+993,once for all,きっぱりと、これを最後に,Let's settle this argument (     ) so we never have to discuss the matter again.,once for all,now and then,time after time,here and there,1,二度とこの件を話し合わなくて済むよう、この口論をきっぱりと決着させよう。
+994,one of these days,そのうちに、近いうちに,"I keep putting it off, but (     ) I'm definitely going to learn how to play the piano.",out of the question,one of these days,against the clock,at the eleventh hour,2,私はずっと先延ばしにしているが、そのうちに必ずピアノの弾き方を習うつもりだ。
+995,once upon a time,昔々、昔あるところに,"(     ), there lived a kind old woodcutter deep in a forest with his loyal dog.",Time and again,All of a sudden,Once upon a time,Day after day,3,昔々、ある森の奥深くに、忠実な犬と暮らす心優しい年老いたきこりがいました。
+996,only too,とても、この上なく,"After the long flight, the tired travelers were (     ) glad to finally lie down in their beds.",only too,quite a few,none the less,in vain,1,長いフライトの後、疲れた旅行者たちはついにベッドに横になれることをこの上なくうれしく思った。
+997,sort of ～,ちょっと、なんとなく,"I don't dislike the new design, but it looks (     ) plain compared to the old one.",sort of,free of,short of,plenty of,1,新しいデザインが嫌いというわけではないが、古いものに比べてなんとなく地味に見える。
+998,such as it is,大したものではないが、こんなものだが,"You're welcome to use my office, (     ), while I'm away on the business trip next week.",come what may,be that as it may,such as it is,for that matter,3,大したものではないが、来週私が出張で留守の間、私のオフィスを自由に使ってください。
+999,the other way around,逆に、あべこべに,"I thought she was teaching him to dance, but it was actually (     ).",on the whole,the other way around,out of hand,beside the point,2,私は彼女が彼にダンスを教えていると思っていたが、実際はその逆だった。
+1000,to date,現在まで、今までのところ,"No one has solved this mathematical puzzle (     ), despite decades of dedicated effort.",at once,by then,to date,for now,3,何十年もの熱心な努力にもかかわらず、現在までこの数学のパズルを解いた者はいない。

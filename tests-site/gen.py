@@ -7,6 +7,7 @@ URL: /<slug>/1-50/  /<slug>/mix-1-100/  /<slug>/final-1/  と /<slug>/ (索引)
 import csv, html, os, random, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE = "test"  # 出力ベースフォルダ: /test/<slug>/<range>/
 
 BOOKS = {
     "leap":       {"title": "LEAP",            "csv": "leap-test-maker/LEAP_cloze_all.csv",        "label": "見出し語"},
@@ -118,7 +119,7 @@ def test_page(book, slug, rng_label, kind_label, rows):
  <div class="foot">THINKING 単語テスト ／ thinking-online.com</div>
 </div>
 </body></html>'''
-    out_dir = os.path.join(ROOT, slug)
+    out_dir = os.path.join(ROOT, BASE, slug)
     os.makedirs(out_dir, exist_ok=True)
     with open(os.path.join(out_dir, "index.html"), "w", encoding="utf-8") as f:
         f.write(body)
@@ -193,7 +194,7 @@ li a{{font-weight:700;color:var(--accent);text-decoration:none}} li .n{{color:#9
 <div class="grp"><h2>③ 全範囲 総合テスト（50問）</h2><ul>{links(items["final"])}</ul></div>
 <div class="foot">THINKING 単語テスト ／ thinking-online.com</div>
 </div></body></html>'''
-    with open(os.path.join(ROOT, slug, "index.html"), "w", encoding="utf-8") as f:
+    with open(os.path.join(ROOT, BASE, slug, "index.html"), "w", encoding="utf-8") as f:
         f.write(body)
 
 def write_master_index(done):
@@ -212,8 +213,8 @@ li a{{font-weight:700;font-size:18px;color:var(--accent);text-decoration:none}} 
 <ul>{cards}</ul>
 <div class="foot">THINKING ／ thinking-online.com</div>
 </div></body></html>'''
-    os.makedirs(os.path.join(ROOT, "tests"), exist_ok=True)
-    with open(os.path.join(ROOT, "tests", "index.html"), "w", encoding="utf-8") as f:
+    os.makedirs(os.path.join(ROOT, BASE), exist_ok=True)
+    with open(os.path.join(ROOT, BASE, "index.html"), "w", encoding="utf-8") as f:
         f.write(body)
 
 if __name__ == "__main__":

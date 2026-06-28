@@ -153,6 +153,11 @@ section {
   border-radius: 18px;
 }
 
+.banner--cover {
+  outline: none;
+  box-shadow: 0 8px 32px -12px rgba(26, 42, 68, 0.35);
+}
+
 .hero-stage {
   position: relative;
   border-radius: 18px;
@@ -686,6 +691,45 @@ section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+}
+
+.notice-list {
+  margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.notice-item {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow-card);
+}
+
+.notice-item__date {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--sage);
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.notice-item__title {
+  margin: 0 0 8px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.45;
+}
+
+.notice-item__body {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink-soft);
+  line-height: 1.75;
 }
 
 .tip-item {

@@ -144,12 +144,15 @@ body {
   overflow: hidden;
   border: 1px solid rgba(74, 111, 165, 0.2);
   align-self: center;
+  aspect-ratio: 1;
 }
 
 .issue-card__thumb img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 
 .issue-card__body {

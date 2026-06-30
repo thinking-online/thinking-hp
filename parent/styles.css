@@ -42,7 +42,11 @@ body {
     linear-gradient(180deg, var(--cream) 0%, var(--paper) 100%);
   box-shadow: 0 40px 120px -40px rgba(0, 0, 0, 0.85), 0 0 0 1px rgba(0, 0, 0, 0.18);
   overflow: hidden;
-  padding-bottom: 48px;
+  padding-bottom: 72px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 .brandbar {
@@ -61,6 +65,7 @@ body {
   font-weight: 600;
   letter-spacing: 0.16em;
   font-size: 13px;
+  text-decoration: none;
 }
 
 .brandbar .mark-icon {
@@ -273,4 +278,60 @@ body {
   margin-top: 18px;
   font-size: 11px;
   opacity: 0.55;
+}
+
+.quicknav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%) translateY(110%);
+  bottom: 0;
+  width: 100%;
+  max-width: 468px;
+  z-index: 60;
+  padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+  background: linear-gradient(180deg, rgba(253, 250, 245, 0) 0%, rgba(253, 250, 245, 0.95) 28%, #fdfaf5 100%);
+  border-top: 1px solid var(--hairline);
+  box-shadow: 0 -8px 24px -12px rgba(26, 42, 68, 0.2);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.quicknav.show,
+.quicknav--archive {
+  transform: translateX(-50%) translateY(0);
+}
+
+.quicknav__scroll {
+  display: flex;
+  gap: 7px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  justify-content: center;
+}
+
+.quicknav__scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.quicknav__btn {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-family: "Zen Kaku Gothic New", sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--navy);
+  background: #fff;
+  border: 1px solid var(--hairline);
+  white-space: nowrap;
+}
+
+.quicknav__btn--top {
+  background: linear-gradient(180deg, #5a82b5, #4a6fa5);
+  color: #fff;
+  border-color: #4a6fa5;
 }

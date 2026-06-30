@@ -1,5 +1,5 @@
 /**
- * THINKING保護者通信 6月 vol.01 — LP scripts
+ * THINKING保護者通信 — LP scripts
  */
 (function () {
   "use strict";
@@ -65,11 +65,39 @@
   }
 
   var progress = document.getElementById("progress");
-  var sticky = document.getElementById("sticky");
+  var quicknav = document.getElementById("quicknav");
   var hero = document.querySelector(".hero");
   var foot = document.querySelector(".foot");
   var pllEls = Array.prototype.slice.call(document.querySelectorAll("[data-pll]"));
+  var navBtns = quicknav
+    ? Array.prototype.slice.call(quicknav.querySelectorAll("[data-sec]"))
+    : [];
+  var sections = navBtns.map(function (btn) {
+    return document.getElementById(btn.dataset.sec);
+  });
   var ticking = false;
+
+  function setActiveNav(id) {
+    navBtns.forEach(function (btn) {
+      btn.classList.toggle("is-active", btn.dataset.sec === id);
+    });
+  }
+
+  function updateActiveSection(vh) {
+    if (!sections.length) return;
+    var marker = vh * 0.35;
+    var current = "contents";
+
+    sections.forEach(function (sec, i) {
+      if (!sec) return;
+      var r = sec.getBoundingClientRect();
+      if (r.top <= marker) {
+        current = navBtns[i].dataset.sec;
+      }
+    });
+
+    setActiveNav(current);
+  }
 
   function frame() {
     ticking = false;
@@ -82,12 +110,15 @@
     }
 
     revealCheck(vh);
+    updateActiveSection(vh);
 
-    if (sticky && hero && foot) {
+    if (quicknav && hero) {
       var heroBottom = hero.offsetTop + hero.offsetHeight;
-      var footTop = foot.offsetTop;
+      var footTop = foot ? foot.offsetTop : document.documentElement.scrollHeight;
       var viewBottom = sTop + vh;
-      sticky.classList.toggle("show", sTop > heroBottom * 0.7 && viewBottom < footTop + 120);
+      quicknav.classList.toggle("show", sTop > heroBottom * 0.5 && viewBottom < footTop + 80);
+    } else if (quicknav) {
+      quicknav.classList.toggle("show", sTop > 120);
     }
 
     if (!reduceMo) {

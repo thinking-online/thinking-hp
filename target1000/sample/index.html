@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#dc2626">
+<title>英熟語ターゲット1000 問題集｜サンプル｜THINKING</title>
+<meta name="description" content="英熟語ターゲット1000 問題集のサンプルページ。連番テスト・MIXテストを1回ずつ無料でお試しいただけます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #dc2626;
+    --teal-light: #ef4444;
+    --teal-pale: #fef2f2;
+    --teal-soft: #fef2f2;
+    --navy: #0f172a;
+    --navy-mid: #1e293b;
+    --ink: #1e293b;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --paper: #f8fafc;
+    --card: #ffffff;
+    --shadow: 0 8px 30px -10px rgba(15, 23, 42, 0.12);
+    --shadow-sm: 0 2px 12px -4px rgba(15, 23, 42, 0.08);
+    --radius: 16px;
+    --radius-sm: 12px;
+    --line-url: https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=r8Dm9l&liff_id=1656043253-rkMxPZMQ;
+    --teal-border: #fecaca;
+    --teal-banner-end: #b91c1c;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+  }
+
+  .sample-banner {
+    margin: 0 -16px;
+    padding: 10px 16px;
+    background: linear-gradient(90deg, var(--teal), var(--teal-banner-end));
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .06em;
+  }
+  .hero {
+    position: relative;
+    margin: 0 -16px;
+    background: #fff;
+    line-height: 0;
+  }
+  .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .hero-hotspots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5%;
+    padding: 0 5.5% 7.5%;
+    height: 22%;
+  }
+  .hero-hotspot {
+    display: block;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background .2s, box-shadow .2s;
+  }
+  .hero-hotspot:hover,
+  .hero-hotspot:focus-visible {
+    background: rgba(220, 38, 38, 0.08);
+    box-shadow: inset 0 0 0 2px rgba(220, 38, 38, 0.35);
+    outline: none;
+  }
+  .hero-hotspot span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  .sitenav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    margin: 0 -16px 20px;
+    padding: 10px 16px;
+    background: rgba(248, 250, 252, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .sitenav-track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sitenav-track::-webkit-scrollbar { display: none; }
+  .sitenav a {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .2s, border-color .2s, color .2s;
+  }
+  .sitenav a:hover,
+  .sitenav a.is-active {
+    background: var(--teal-soft);
+    border-color: var(--teal-light);
+    color: var(--teal);
+  }
+  .sitenav-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex: none;
+  }
+  .sitenav a[data-nav="serial"] .sitenav-dot { background: var(--teal); }
+  .sitenav a[data-nav="mix"] .sitenav-dot { background: #6366f1; }
+  .sitenav a[data-nav="final"] .sitenav-dot { background: #f59e0b; }
+  .sitenav a[data-nav="line"] .sitenav-dot { background: #06c755; }
+  .intro {
+    margin-top: 4px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 18px;
+    box-shadow: var(--shadow-sm);
+  }
+  .intro-kicker {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .intro h1 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: .02em;
+  }
+  .intro p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .intro-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .stat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background: var(--teal-soft);
+    border: 1px solid var(--teal-border);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--teal);
+  }
+  .stat-chip b {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--navy);
+  }
+  .section {
+    margin-top: 28px;
+    scroll-margin-top: 72px;
+  }
+  .section-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .section-num {
+    flex: none;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 900;
+    color: #fff;
+  }
+  .section-num--serial { background: linear-gradient(135deg, var(--teal), var(--teal-banner-end)); }
+  .section-num--mix { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+  .section-num--final { background: linear-gradient(135deg, #f59e0b, #d97706); }
+  .section-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.35;
+  }
+  .section-desc {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .jump-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .jump-btn {
+    padding: 6px 11px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .jump-btn:hover,
+  .jump-btn:focus-visible {
+    background: var(--teal-soft);
+    border-color: var(--teal-light);
+    color: var(--teal);
+    outline: none;
+  }
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  @media (min-width: 540px) {
+    .test-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  .test-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-sm);
+    transition: transform .15s, border-color .15s, box-shadow .15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .test-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--teal);
+    opacity: 0;
+    transition: opacity .15s;
+  }
+  .test-card--mix::before { background: #6366f1; }
+  .test-card--final::before { background: #f59e0b; }
+  .test-card:hover,
+  .test-card:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--teal-light);
+    box-shadow: var(--shadow);
+    outline: none;
+  }
+  .test-card:hover::before,
+  .test-card:focus-visible::before { opacity: 1; }
+  .test-card--mix:hover,
+  .test-card--mix:focus-visible { border-color: #818cf8; }
+  .test-card--final:hover,
+  .test-card--final:focus-visible { border-color: #fbbf24; }
+
+  .test-card--locked {
+    background: #f8fafc;
+    border-style: dashed;
+    border-color: #cbd5e1;
+    box-shadow: none;
+    cursor: default;
+    opacity: .88;
+  }
+  .test-card--locked::before { display: none; }
+  .test-card--locked:hover {
+    transform: none;
+    border-color: #cbd5e1;
+    box-shadow: none;
+  }
+  .test-card--sample {
+    border-color: var(--teal-border);
+    background: linear-gradient(180deg, #fff 0%, var(--teal-soft) 100%);
+  }
+  .test-card--sample::before { opacity: 1; }
+  .test-card--locked .test-card-no { color: var(--muted); }
+  .test-card--locked .test-card-range { color: var(--muted); }
+  .test-card--locked .test-card-action { color: #94a3b8; }
+  .sample-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    padding: 2px 7px;
+    border-radius: 6px;
+    background: var(--teal);
+    color: #fff;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .04em;
+  }
+  .stat-chip--sample {
+    background: #fff7ed;
+    border-color: #fed7aa;
+    color: #c2410c;
+  }
+  .purchase-note {
+    margin-top: 36px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .purchase-note h2 {
+    margin: 0 0 8px;
+    font-size: 16px;
+    font-weight: 900;
+    color: var(--navy);
+  }
+  .purchase-note p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .test-card-no {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--teal);
+  }
+  .test-card--mix .test-card-no { color: #6366f1; }
+  .test-card--final .test-card-no { color: #d97706; }
+  .test-card-range {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.35;
+  }
+  .test-card-action {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .test-card-action svg {
+    width: 14px;
+    height: 14px;
+    flex: none;
+  }
+  .test-card:hover .test-card-action,
+  .test-card:focus-visible .test-card-action { color: var(--teal); }
+  .test-card--mix:hover .test-card-action,
+  .test-card--mix:focus-visible .test-card-action { color: #6366f1; }
+  .test-card--final:hover .test-card-action,
+  .test-card--final:focus-visible .test-card-action { color: #d97706; }
+  .final-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 480px) {
+    .final-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .final-card {
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .final-card .test-card-range {
+    font-size: 16px;
+  }
+
+  .foot {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .08em;
+    line-height: 1.8;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .test-card:hover { transform: none; }
+    .btn-line:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="sample-banner">SAMPLE — お試し版（連番・MIX 各1回のみ開放）</div>
+
+  <header class="hero">
+    <img src="../assets/hero.png" alt="英熟語ターゲット1000 専用ポータル — 熟語学習を、最短で迷わず。" width="1200" height="800">
+    <nav class="hero-hotspots" aria-label="メインメニュー">
+      <a class="hero-hotspot" href="#serial"><span>単語学習（連番テスト）</span></a>
+      <a class="hero-hotspot" href="#mix"><span>復習（MIXテスト）</span></a>
+      <a class="hero-hotspot" href="#final"><span>確認テスト（総まとめ）</span></a>
+    </nav>
+  </header>
+
+  <nav class="sitenav" aria-label="ページ内ナビ">
+    <div class="sitenav-track">
+      <a href="#serial" data-nav="serial"><span class="sitenav-dot"></span>連番テスト</a>
+      <a href="#mix" data-nav="mix"><span class="sitenav-dot"></span>MIXテスト</a>
+      <a href="#final" data-nav="final"><span class="sitenav-dot"></span>総まとめ</a>
+    </div>
+  </nav>
+
+  <div class="intro">
+    <div class="intro-kicker">SAMPLE PORTAL</div>
+    <h1>英熟語ターゲット1000 問題集｜サンプル</h1>
+    <p>問題集の品質を確認いただけるサンプルページです。<strong>連番テスト No.1〜50</strong>と<strong>MIXテスト No.1〜100</strong>の2回分を無料でお試しいただけます。それ以外は購入者限定です。</p>
+    <div class="intro-stats">
+      <span class="stat-chip stat-chip--sample">無料 <b>2</b>回</span>
+      <span class="stat-chip">全収録 <b>33</b>回</span>
+    </div>
+  </div>
+
+  <section class="section" id="serial">
+    <div class="section-head">
+      <div class="section-num section-num--serial">①</div>
+      <div>
+        <h2 class="section-title">連番テスト</h2>
+        <p class="section-desc">50語ずつ／50語ずつ／読んだ範囲の確認用。英熟語ターゲット1000の並び順どおり。学校の週テスト対策や、覚えた直後の確認にどうぞ。</p>
+      </div>
+    </div>
+    <div class="jump-bar" id="serial-jump" aria-label="連番テスト ジャンプ"></div>
+    <div class="test-grid" id="serial-grid"></div>
+  </section>
+
+  <section class="section" id="mix">
+    <div class="section-head">
+      <div class="section-num section-num--mix">②</div>
+      <div>
+        <h2 class="section-title">MIXテスト</h2>
+        <p class="section-desc">100語ずつ／順番を混ぜた実力チェック。「並び順で覚えた気」を防ぎ、本当に定着しているかを炙り出します。模試前の総ざらいに最適。</p>
+      </div>
+    </div>
+    <div class="jump-bar" id="mix-jump" aria-label="MIXテスト ジャンプ"></div>
+    <div class="test-grid" id="mix-grid"></div>
+  </section>
+
+  <section class="section" id="final">
+    <div class="section-head">
+      <div class="section-num section-num--final">③</div>
+      <div>
+        <h2 class="section-title">総まとめテスト</h2>
+        <p class="section-desc">全範囲からのファイナルチェック。入試直前・模試直前の最終確認に。</p>
+      </div>
+    </div>
+    <div class="final-grid" id="final-grid"></div>
+  </section>
+
+  <section class="purchase-note">
+    <h2>全33回は購入者限定ポータルで</h2>
+    <p>ご購入いただいた方には、連番20回・MIX10回・総まとめ3回のすべてにアクセスできる専用ポータルをご案内しています。</p>
+  </section>
+  <footer class="foot">
+    英熟語ターゲット1000 問題集 サンプルページ<br>
+    合同会社ARC / THINKING
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var PDF_BASE = "/test/target1000/";
+
+  var IS_SAMPLE = true;
+
+  function isFreeTest(type, test) {
+    if (!IS_SAMPLE) return true;
+    if (type === "serial") return test.no === 1;
+    if (type === "mix") return test.no === 1;
+    return false;
+  }
+
+  var PDF_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>';
+  var LOCK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
+
+  var SERIAL_TESTS = [{"no": 1, "label": "No.1〜50", "file": "target1000_1-50.pdf", "anchor": "s-1"}, {"no": 2, "label": "No.51〜100", "file": "target1000_51-100.pdf", "anchor": "s-51"}, {"no": 3, "label": "No.101〜150", "file": "target1000_101-150.pdf", "anchor": "s-101"}, {"no": 4, "label": "No.151〜200", "file": "target1000_151-200.pdf", "anchor": "s-151"}, {"no": 5, "label": "No.201〜250", "file": "target1000_201-250.pdf", "anchor": "s-201"}, {"no": 6, "label": "No.251〜300", "file": "target1000_251-300.pdf", "anchor": "s-251"}, {"no": 7, "label": "No.301〜350", "file": "target1000_301-350.pdf", "anchor": "s-301"}, {"no": 8, "label": "No.351〜400", "file": "target1000_351-400.pdf", "anchor": "s-351"}, {"no": 9, "label": "No.401〜450", "file": "target1000_401-450.pdf", "anchor": "s-401"}, {"no": 10, "label": "No.451〜500", "file": "target1000_451-500.pdf", "anchor": "s-451"}, {"no": 11, "label": "No.501〜550", "file": "target1000_501-550.pdf", "anchor": "s-501"}, {"no": 12, "label": "No.551〜600", "file": "target1000_551-600.pdf", "anchor": "s-551"}, {"no": 13, "label": "No.601〜650", "file": "target1000_601-650.pdf", "anchor": "s-601"}, {"no": 14, "label": "No.651〜700", "file": "target1000_651-700.pdf", "anchor": "s-651"}, {"no": 15, "label": "No.701〜750", "file": "target1000_701-750.pdf", "anchor": "s-701"}, {"no": 16, "label": "No.751〜800", "file": "target1000_751-800.pdf", "anchor": "s-751"}, {"no": 17, "label": "No.801〜850", "file": "target1000_801-850.pdf", "anchor": "s-801"}, {"no": 18, "label": "No.851〜900", "file": "target1000_851-900.pdf", "anchor": "s-851"}, {"no": 19, "label": "No.901〜950", "file": "target1000_901-950.pdf", "anchor": "s-901"}, {"no": 20, "label": "No.951〜1000", "file": "target1000_951-1000.pdf", "anchor": "s-951"}];
+  var MIX_TESTS = [{"no": 1, "label": "MIX No.1〜100", "file": "target1000_mix-1-100.pdf", "anchor": "m-1"}, {"no": 2, "label": "MIX No.101〜200", "file": "target1000_mix-101-200.pdf", "anchor": "m-101"}, {"no": 3, "label": "MIX No.201〜300", "file": "target1000_mix-201-300.pdf", "anchor": "m-201"}, {"no": 4, "label": "MIX No.301〜400", "file": "target1000_mix-301-400.pdf", "anchor": "m-301"}, {"no": 5, "label": "MIX No.401〜500", "file": "target1000_mix-401-500.pdf", "anchor": "m-401"}, {"no": 6, "label": "MIX No.501〜600", "file": "target1000_mix-501-600.pdf", "anchor": "m-501"}, {"no": 7, "label": "MIX No.601〜700", "file": "target1000_mix-601-700.pdf", "anchor": "m-601"}, {"no": 8, "label": "MIX No.701〜800", "file": "target1000_mix-701-800.pdf", "anchor": "m-701"}, {"no": 9, "label": "MIX No.801〜900", "file": "target1000_mix-801-900.pdf", "anchor": "m-801"}, {"no": 10, "label": "MIX No.901〜1000", "file": "target1000_mix-901-1000.pdf", "anchor": "m-901"}];
+  var FINAL_TESTS = [{"no": 1, "label": "総まとめテスト 1", "file": "target1000_final-1.pdf", "anchor": "f-1"}, {"no": 2, "label": "総まとめテスト 2", "file": "target1000_final-2.pdf", "anchor": "f-2"}, {"no": 3, "label": "総まとめテスト 3", "file": "target1000_final-3.pdf", "anchor": "f-3"}];
+
+  function createTestCard(test, type) {
+    var free = isFreeTest(type, test);
+    var el;
+    var extraClass = type === "mix" ? " test-card--mix" : type === "final" ? " test-card--final final-card" : "";
+
+    if (free) {
+      el = document.createElement("a");
+      el.className = "test-card test-card--sample" + extraClass;
+      el.href = PDF_BASE + test.file;
+      el.target = "_blank";
+      el.rel = "noopener noreferrer";
+    } else {
+      el = document.createElement("div");
+      el.className = "test-card test-card--locked" + extraClass;
+      el.setAttribute("aria-disabled", "true");
+    }
+    el.id = test.anchor;
+
+    if (free) {
+      var badge = document.createElement("span");
+      badge.className = "sample-badge";
+      badge.textContent = "無料";
+      el.appendChild(badge);
+    }
+
+    var no = document.createElement("span");
+    no.className = "test-card-no";
+    no.textContent = type === "final" ? "FINAL" : ("TEST " + String(test.no).padStart(2, "0"));
+
+    var range = document.createElement("span");
+    range.className = "test-card-range";
+    range.textContent = test.label;
+
+    var action = document.createElement("span");
+    action.className = "test-card-action";
+    action.innerHTML = free
+      ? (PDF_ICON + " PDFを開く")
+      : (LOCK_ICON + " 購入者限定");
+
+    el.appendChild(no);
+    el.appendChild(range);
+    el.appendChild(action);
+    return el;
+  }
+
+  function renderJumpBar(container, tests, step) {
+    container.innerHTML = "";
+    for (var i = 0; i < tests.length; i += step) {
+      (function (test) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "jump-btn";
+        btn.textContent = test.label.replace(/^MIX /, "").replace(/^No\./, "");
+        btn.addEventListener("click", function () {
+          var target = document.getElementById(test.anchor);
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+        container.appendChild(btn);
+      })(tests[i]);
+    }
+  }
+
+  var serialGrid = document.getElementById("serial-grid");
+  SERIAL_TESTS.forEach(function (t) {
+    serialGrid.appendChild(createTestCard(t, "serial"));
+  });
+  renderJumpBar(document.getElementById("serial-jump"), SERIAL_TESTS, 5);
+
+  var mixGrid = document.getElementById("mix-grid");
+  MIX_TESTS.forEach(function (t) {
+    mixGrid.appendChild(createTestCard(t, "mix"));
+  });
+  renderJumpBar(document.getElementById("mix-jump"), MIX_TESTS, 3);
+
+  var finalGrid = document.getElementById("final-grid");
+  FINAL_TESTS.forEach(function (t) {
+    finalGrid.appendChild(createTestCard(t, "final"));
+  });
+
+  var sections = ["serial", "mix", "final"];
+  var navLinks = document.querySelectorAll(".sitenav a[href^='#']");
+  function updateNav() {
+    var scrollY = window.scrollY + 80;
+    var current = sections[0];
+    sections.forEach(function (id) {
+      var sectionEl = document.getElementById(id);
+      if (sectionEl && sectionEl.offsetTop <= scrollY) current = id;
+    });
+    navLinks.forEach(function (link) {
+      var href = link.getAttribute("href").slice(1);
+      link.classList.toggle("is-active", href === current);
+    });
+  }
+  window.addEventListener("scroll", updateNav, { passive: true });
+  updateNav();
+})();
+</script>
+</body>
+</html>

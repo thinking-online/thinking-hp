@@ -1,0 +1,596 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2563eb">
+<meta name="robots" content="noindex, nofollow">
+<title>システム英単語 専用ポータル｜THINKING 問題集</title>
+<meta name="description" content="システム英単語 問題集ご購入者専用。連番テスト・MIXテスト・総まとめテスト（全60回）のPDFにいつでもアクセスできます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #2563eb;
+    --teal-light: #3b82f6;
+    --teal-pale: #eff6ff;
+    --teal-soft: #eff6ff;
+    --navy: #0f172a;
+    --navy-mid: #1e293b;
+    --ink: #1e293b;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --paper: #f8fafc;
+    --card: #ffffff;
+    --shadow: 0 8px 30px -10px rgba(15, 23, 42, 0.12);
+    --shadow-sm: 0 2px 12px -4px rgba(15, 23, 42, 0.08);
+    --radius: 16px;
+    --radius-sm: 12px;
+    --line-url: https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=r8Dm9l&liff_id=1656043253-rkMxPZMQ;
+    --teal-border: #bfdbfe;
+    --teal-banner-end: #1d4ed8;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+  }
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+  }
+
+  .hero {
+    position: relative;
+    margin: 0 -16px;
+    background: #fff;
+    line-height: 0;
+  }
+  .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .hero-hotspots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5%;
+    padding: 0 5.5% 7.5%;
+    height: 22%;
+  }
+  .hero-hotspot {
+    display: block;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background .2s, box-shadow .2s;
+  }
+  .hero-hotspot:hover,
+  .hero-hotspot:focus-visible {
+    background: rgba(37, 99, 235, 0.08);
+    box-shadow: inset 0 0 0 2px rgba(37, 99, 235, 0.35);
+    outline: none;
+  }
+  .hero-hotspot span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+  .sitenav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    margin: 0 -16px 20px;
+    padding: 10px 16px;
+    background: rgba(248, 250, 252, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .sitenav-track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sitenav-track::-webkit-scrollbar { display: none; }
+  .sitenav a {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .2s, border-color .2s, color .2s;
+  }
+  .sitenav a:hover,
+  .sitenav a.is-active {
+    background: var(--teal-soft);
+    border-color: var(--teal-light);
+    color: var(--teal);
+  }
+  .sitenav-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex: none;
+  }
+  .sitenav a[data-nav="serial"] .sitenav-dot { background: var(--teal); }
+  .sitenav a[data-nav="mix"] .sitenav-dot { background: #6366f1; }
+  .sitenav a[data-nav="final"] .sitenav-dot { background: #f59e0b; }
+  .sitenav a[data-nav="line"] .sitenav-dot { background: #06c755; }
+  .intro {
+    margin-top: 4px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 18px;
+    box-shadow: var(--shadow-sm);
+  }
+  .intro-kicker {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .intro h1 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: .02em;
+  }
+  .intro p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .intro-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .stat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background: var(--teal-soft);
+    border: 1px solid var(--teal-border);
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--teal);
+  }
+  .stat-chip b {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--navy);
+  }
+  .section {
+    margin-top: 28px;
+    scroll-margin-top: 72px;
+  }
+  .section-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .section-num {
+    flex: none;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 900;
+    color: #fff;
+  }
+  .section-num--serial { background: linear-gradient(135deg, var(--teal), var(--teal-banner-end)); }
+  .section-num--mix { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+  .section-num--final { background: linear-gradient(135deg, #f59e0b, #d97706); }
+  .section-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.35;
+  }
+  .section-desc {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .jump-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .jump-btn {
+    padding: 6px 11px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .jump-btn:hover,
+  .jump-btn:focus-visible {
+    background: var(--teal-soft);
+    border-color: var(--teal-light);
+    color: var(--teal);
+    outline: none;
+  }
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  @media (min-width: 540px) {
+    .test-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  .test-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-sm);
+    transition: transform .15s, border-color .15s, box-shadow .15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .test-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--teal);
+    opacity: 0;
+    transition: opacity .15s;
+  }
+  .test-card--mix::before { background: #6366f1; }
+  .test-card--final::before { background: #f59e0b; }
+  .test-card:hover,
+  .test-card:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--teal-light);
+    box-shadow: var(--shadow);
+    outline: none;
+  }
+  .test-card:hover::before,
+  .test-card:focus-visible::before { opacity: 1; }
+  .test-card--mix:hover,
+  .test-card--mix:focus-visible { border-color: #818cf8; }
+  .test-card--final:hover,
+  .test-card--final:focus-visible { border-color: #fbbf24; }
+
+  .test-card-no {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--teal);
+  }
+  .test-card--mix .test-card-no { color: #6366f1; }
+  .test-card--final .test-card-no { color: #d97706; }
+  .test-card-range {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.35;
+  }
+  .test-card-action {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .test-card-action svg {
+    width: 14px;
+    height: 14px;
+    flex: none;
+  }
+  .test-card:hover .test-card-action,
+  .test-card:focus-visible .test-card-action { color: var(--teal); }
+  .test-card--mix:hover .test-card-action,
+  .test-card--mix:focus-visible .test-card-action { color: #6366f1; }
+  .test-card--final:hover .test-card-action,
+  .test-card--final:focus-visible .test-card-action { color: #d97706; }
+  .final-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 480px) {
+    .final-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .final-card {
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .final-card .test-card-range {
+    font-size: 16px;
+  }
+
+  .line-cta {
+    margin-top: 36px;
+    background: linear-gradient(145deg, #ecfdf5, #f0fdfa);
+    border: 1px solid #a7f3d0;
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .line-cta h2 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 900;
+    color: var(--navy);
+  }
+  .line-cta p {
+    margin: 0 0 16px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .btn-line {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: #06c755;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 20px -6px rgba(6, 199, 85, 0.5);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .btn-line:hover,
+  .btn-line:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px -6px rgba(6, 199, 85, 0.55);
+    outline: none;
+  }
+  .btn-line svg {
+    width: 22px;
+    height: 22px;
+    flex: none;
+  }
+  .foot {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .08em;
+    line-height: 1.8;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .test-card:hover { transform: none; }
+    .btn-line:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <img src="../assets/hero.png" alt="システム英単語 専用ポータル — 単語を、得点力へ。" width="1200" height="800">
+    <nav class="hero-hotspots" aria-label="メインメニュー">
+      <a class="hero-hotspot" href="#serial"><span>単語学習（連番テスト）</span></a>
+      <a class="hero-hotspot" href="#mix"><span>復習（MIXテスト）</span></a>
+      <a class="hero-hotspot" href="#final"><span>確認テスト（総まとめ）</span></a>
+    </nav>
+  </header>
+
+  <nav class="sitenav" aria-label="ページ内ナビ">
+    <div class="sitenav-track">
+      <a href="#serial" data-nav="serial"><span class="sitenav-dot"></span>連番テスト</a>
+      <a href="#mix" data-nav="mix"><span class="sitenav-dot"></span>MIXテスト</a>
+      <a href="#final" data-nav="final"><span class="sitenav-dot"></span>総まとめ</a>
+      <a href="#line" data-nav="line"><span class="sitenav-dot"></span>LINEで連絡</a>
+    </div>
+  </nav>
+
+  <div class="intro">
+    <div class="intro-kicker">PURCHASER PORTAL</div>
+    <h1>システム英単語 問題集｜収録テスト一覧</h1>
+    <p>ご購入ありがとうございます。このページから、全部で<strong>60回分</strong>のテスト（PDF）にいつでもアクセスできます。ブックマーク推奨です。今後、追加・改訂した分もこのページに反映されます。</p>
+    <div class="intro-stats">
+      <span class="stat-chip">連番 <b>38</b>回</span>
+      <span class="stat-chip">MIX <b>19</b>回</span>
+      <span class="stat-chip">総まとめ <b>3</b>回</span>
+      <span class="stat-chip">合計 <b>60</b>回</span>
+    </div>
+  </div>
+
+  <section class="section" id="serial">
+    <div class="section-head">
+      <div class="section-num section-num--serial">①</div>
+      <div>
+        <h2 class="section-title">連番テスト</h2>
+        <p class="section-desc">約50語ずつ／読んだ範囲の確認用。システム英単語の並び順どおり。学校の週テスト対策や、覚えた直後の確認にどうぞ。</p>
+      </div>
+    </div>
+    <div class="jump-bar" id="serial-jump" aria-label="連番テスト ジャンプ"></div>
+    <div class="test-grid" id="serial-grid"></div>
+  </section>
+
+  <section class="section" id="mix">
+    <div class="section-head">
+      <div class="section-num section-num--mix">②</div>
+      <div>
+        <h2 class="section-title">MIXテスト</h2>
+        <p class="section-desc">100語ずつ／順番を混ぜた実力チェック。「並び順で覚えた気」を防ぎ、本当に定着しているかを炙り出します。模試前の総ざらいに最適。</p>
+      </div>
+    </div>
+    <div class="jump-bar" id="mix-jump" aria-label="MIXテスト ジャンプ"></div>
+    <div class="test-grid" id="mix-grid"></div>
+  </section>
+
+  <section class="section" id="final">
+    <div class="section-head">
+      <div class="section-num section-num--final">③</div>
+      <div>
+        <h2 class="section-title">総まとめテスト</h2>
+        <p class="section-desc">全範囲からのファイナルチェック。入試直前・模試直前の最終確認に。</p>
+      </div>
+    </div>
+    <div class="final-grid" id="final-grid"></div>
+  </section>
+
+  <section class="line-cta" id="line">
+    <h2>ご要望・お問い合わせ</h2>
+    <p>問題の誤り、追加のご希望、その他リクエストがあれば<br>下のボタンからLINEでお気軽にどうぞ。</p>
+    <a class="btn-line" href="https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=r8Dm9l&liff_id=1656043253-rkMxPZMQ" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで連絡する
+    </a>
+  </section>
+  <footer class="foot">
+    システム英単語 問題集 購入者専用ポータル<br>
+    合同会社ARC / THINKING
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var PDF_BASE = "/test/sistan/";
+
+
+  var PDF_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>';
+  var LOCK_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
+
+  var SERIAL_TESTS = [{"no": 1, "label": "No.1〜51", "file": "sistan_1-51.pdf", "anchor": "s-1"}, {"no": 2, "label": "No.52〜101", "file": "sistan_52-101.pdf", "anchor": "s-52"}, {"no": 3, "label": "No.102〜151", "file": "sistan_102-151.pdf", "anchor": "s-102"}, {"no": 4, "label": "No.152〜203", "file": "sistan_152-203.pdf", "anchor": "s-152"}, {"no": 5, "label": "No.204〜254", "file": "sistan_204-254.pdf", "anchor": "s-204"}, {"no": 6, "label": "No.255〜307", "file": "sistan_255-307.pdf", "anchor": "s-255"}, {"no": 7, "label": "No.308〜370", "file": "sistan_308-370.pdf", "anchor": "s-308"}, {"no": 8, "label": "No.371〜422", "file": "sistan_371-422.pdf", "anchor": "s-371"}, {"no": 9, "label": "No.423〜474", "file": "sistan_423-474.pdf", "anchor": "s-423"}, {"no": 10, "label": "No.475〜526", "file": "sistan_475-526.pdf", "anchor": "s-475"}, {"no": 11, "label": "No.527〜576", "file": "sistan_527-576.pdf", "anchor": "s-527"}, {"no": 12, "label": "No.577〜627", "file": "sistan_577-627.pdf", "anchor": "s-577"}, {"no": 13, "label": "No.628〜678", "file": "sistan_628-678.pdf", "anchor": "s-628"}, {"no": 14, "label": "No.679〜730", "file": "sistan_679-730.pdf", "anchor": "s-679"}, {"no": 15, "label": "No.731〜781", "file": "sistan_731-781.pdf", "anchor": "s-731"}, {"no": 16, "label": "No.782〜835", "file": "sistan_782-835.pdf", "anchor": "s-782"}, {"no": 17, "label": "No.837〜890", "file": "sistan_837-890.pdf", "anchor": "s-837"}, {"no": 18, "label": "No.891〜942", "file": "sistan_891-942.pdf", "anchor": "s-891"}, {"no": 19, "label": "No.944〜994", "file": "sistan_944-994.pdf", "anchor": "s-944"}, {"no": 20, "label": "No.995〜1047", "file": "sistan_995-1047.pdf", "anchor": "s-995"}, {"no": 21, "label": "No.1048〜1100", "file": "sistan_1048-1100.pdf", "anchor": "s-1048"}, {"no": 22, "label": "No.1101〜1153", "file": "sistan_1101-1153.pdf", "anchor": "s-1101"}, {"no": 23, "label": "No.1154〜1208", "file": "sistan_1154-1208.pdf", "anchor": "s-1154"}, {"no": 24, "label": "No.1209〜1259", "file": "sistan_1209-1259.pdf", "anchor": "s-1209"}, {"no": 25, "label": "No.1260〜1310", "file": "sistan_1260-1310.pdf", "anchor": "s-1260"}, {"no": 26, "label": "No.1311〜1367", "file": "sistan_1311-1367.pdf", "anchor": "s-1311"}, {"no": 27, "label": "No.1368〜1419", "file": "sistan_1368-1419.pdf", "anchor": "s-1368"}, {"no": 28, "label": "No.1420〜1475", "file": "sistan_1420-1475.pdf", "anchor": "s-1420"}, {"no": 29, "label": "No.1476〜1528", "file": "sistan_1476-1528.pdf", "anchor": "s-1476"}, {"no": 30, "label": "No.1530〜1581", "file": "sistan_1530-1581.pdf", "anchor": "s-1530"}, {"no": 31, "label": "No.1582〜1634", "file": "sistan_1582-1634.pdf", "anchor": "s-1582"}, {"no": 32, "label": "No.1635〜1685", "file": "sistan_1635-1685.pdf", "anchor": "s-1635"}, {"no": 33, "label": "No.1686〜1739", "file": "sistan_1686-1739.pdf", "anchor": "s-1686"}, {"no": 34, "label": "No.1741〜1798", "file": "sistan_1741-1798.pdf", "anchor": "s-1741"}, {"no": 35, "label": "No.1799〜1859", "file": "sistan_1799-1859.pdf", "anchor": "s-1799"}, {"no": 36, "label": "No.1860〜1916", "file": "sistan_1860-1916.pdf", "anchor": "s-1860"}, {"no": 37, "label": "No.1917〜1975", "file": "sistan_1917-1975.pdf", "anchor": "s-1917"}, {"no": 38, "label": "No.1976〜2026", "file": "sistan_1976-2026.pdf", "anchor": "s-1976"}];
+  var MIX_TESTS = [{"no": 1, "label": "MIX No.1〜101", "file": "sistan_mix-1-101.pdf", "anchor": "m-1"}, {"no": 2, "label": "MIX No.102〜203", "file": "sistan_mix-102-203.pdf", "anchor": "m-102"}, {"no": 3, "label": "MIX No.204〜307", "file": "sistan_mix-204-307.pdf", "anchor": "m-204"}, {"no": 4, "label": "MIX No.308〜422", "file": "sistan_mix-308-422.pdf", "anchor": "m-308"}, {"no": 5, "label": "MIX No.423〜526", "file": "sistan_mix-423-526.pdf", "anchor": "m-423"}, {"no": 6, "label": "MIX No.527〜627", "file": "sistan_mix-527-627.pdf", "anchor": "m-527"}, {"no": 7, "label": "MIX No.628〜730", "file": "sistan_mix-628-730.pdf", "anchor": "m-628"}, {"no": 8, "label": "MIX No.731〜835", "file": "sistan_mix-731-835.pdf", "anchor": "m-731"}, {"no": 9, "label": "MIX No.837〜942", "file": "sistan_mix-837-942.pdf", "anchor": "m-837"}, {"no": 10, "label": "MIX No.944〜1047", "file": "sistan_mix-944-1047.pdf", "anchor": "m-944"}, {"no": 11, "label": "MIX No.1048〜1153", "file": "sistan_mix-1048-1153.pdf", "anchor": "m-1048"}, {"no": 12, "label": "MIX No.1154〜1259", "file": "sistan_mix-1154-1259.pdf", "anchor": "m-1154"}, {"no": 13, "label": "MIX No.1260〜1367", "file": "sistan_mix-1260-1367.pdf", "anchor": "m-1260"}, {"no": 14, "label": "MIX No.1368〜1475", "file": "sistan_mix-1368-1475.pdf", "anchor": "m-1368"}, {"no": 15, "label": "MIX No.1476〜1581", "file": "sistan_mix-1476-1581.pdf", "anchor": "m-1476"}, {"no": 16, "label": "MIX No.1582〜1685", "file": "sistan_mix-1582-1685.pdf", "anchor": "m-1582"}, {"no": 17, "label": "MIX No.1686〜1798", "file": "sistan_mix-1686-1798.pdf", "anchor": "m-1686"}, {"no": 18, "label": "MIX No.1799〜1916", "file": "sistan_mix-1799-1916.pdf", "anchor": "m-1799"}, {"no": 19, "label": "MIX No.1917〜2026", "file": "sistan_mix-1917-2026.pdf", "anchor": "m-1917"}];
+  var FINAL_TESTS = [{"no": 1, "label": "総まとめテスト 1", "file": "sistan_final-1.pdf", "anchor": "f-1"}, {"no": 2, "label": "総まとめテスト 2", "file": "sistan_final-2.pdf", "anchor": "f-2"}, {"no": 3, "label": "総まとめテスト 3", "file": "sistan_final-3.pdf", "anchor": "f-3"}];
+
+  function createTestCard(test, type) {
+    var a = document.createElement("a");
+    a.className = "test-card" + (type === "mix" ? " test-card--mix" : type === "final" ? " test-card--final final-card" : "");
+    a.href = PDF_BASE + test.file;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.id = test.anchor;
+
+    var no = document.createElement("span");
+    no.className = "test-card-no";
+    no.textContent = type === "final" ? "FINAL" : ("TEST " + String(test.no).padStart(2, "0"));
+
+    var range = document.createElement("span");
+    range.className = "test-card-range";
+    range.textContent = test.label;
+
+    var action = document.createElement("span");
+    action.className = "test-card-action";
+    action.innerHTML = PDF_ICON + " PDFを開く";
+
+    a.appendChild(no);
+    a.appendChild(range);
+    a.appendChild(action);
+    return a;
+  }
+
+  function renderJumpBar(container, tests, step) {
+    container.innerHTML = "";
+    for (var i = 0; i < tests.length; i += step) {
+      (function (test) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "jump-btn";
+        btn.textContent = test.label.replace(/^MIX /, "").replace(/^No\./, "");
+        btn.addEventListener("click", function () {
+          var target = document.getElementById(test.anchor);
+          if (target) target.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+        container.appendChild(btn);
+      })(tests[i]);
+    }
+  }
+
+  var serialGrid = document.getElementById("serial-grid");
+  SERIAL_TESTS.forEach(function (t) {
+    serialGrid.appendChild(createTestCard(t, "serial"));
+  });
+  renderJumpBar(document.getElementById("serial-jump"), SERIAL_TESTS, 5);
+
+  var mixGrid = document.getElementById("mix-grid");
+  MIX_TESTS.forEach(function (t) {
+    mixGrid.appendChild(createTestCard(t, "mix"));
+  });
+  renderJumpBar(document.getElementById("mix-jump"), MIX_TESTS, 3);
+
+  var finalGrid = document.getElementById("final-grid");
+  FINAL_TESTS.forEach(function (t) {
+    finalGrid.appendChild(createTestCard(t, "final"));
+  });
+
+  var sections = ["serial", "mix", "final", "line"];
+  var navLinks = document.querySelectorAll(".sitenav a[href^='#']");
+  function updateNav() {
+    var scrollY = window.scrollY + 80;
+    var current = sections[0];
+    sections.forEach(function (id) {
+      var sectionEl = document.getElementById(id);
+      if (sectionEl && sectionEl.offsetTop <= scrollY) current = id;
+    });
+    navLinks.forEach(function (link) {
+      var href = link.getAttribute("href").slice(1);
+      link.classList.toggle("is-active", href === current);
+    });
+  }
+  window.addEventListener("scroll", updateNav, { passive: true });
+  updateNav();
+})();
+</script>
+</body>
+</html>

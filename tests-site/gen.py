@@ -16,6 +16,8 @@ BOOKS = {
     "target1900": {"title": "ターゲット1900",  "csv": "target1900-test-maker/target1900_cloze_all.csv", "label": "見出し語"},
     "target1000": {"title": "ターゲット英熟語1000", "csv": "target-test-maker/target1000_cloze_all.csv", "label": "熟語"},
     "sokudoku":   {"title": "速読英熟語",      "csv": "sokudoku-test-maker/sokudoku_cloze_all.csv", "label": "熟語"},
+    "eiken1":     {"title": "英検準1級",       "csv": "eiken1-test-maker/eiken1_cloze_all.csv",     "label": "見出し"},
+    "eiken2":     {"title": "英検2級",         "csv": "eiken2-test-maker/eiken2_cloze_all.csv",     "label": "見出し"},
 }
 CIRC = {1: "①", 2: "②", 3: "③", 4: "④"}
 

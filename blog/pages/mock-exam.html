@@ -21,24 +21,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Noto+Sans+JP:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../../styles.css" />
-  <link rel="stylesheet" href="../../styles-site.css" />
-  <link rel="stylesheet" href="../../styles-line-cta.css" />
-  <link rel="stylesheet" href="../../styles-founder.css" />
-  <link rel="stylesheet" href="../../styles-blog.css" />
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="/styles-site.css" />
+  <link rel="stylesheet" href="/styles-line-cta.css" />
+  <link rel="stylesheet" href="/styles-founder.css" />
+  <link rel="stylesheet" href="/styles-blog.css?v=20260702-fix" />
 </head>
 <body>
-  <div id="root"></div>
+  <noscript>
+    <p style="margin:0;padding:120px 28px;font-family:sans-serif;color:#f5ecd9;background:#0a0907;line-height:1.8">
+      このページを表示するには JavaScript を有効にしてください。
+    </p>
+  </noscript>
+  <div id="root">
+    <p style="margin:0;padding:120px 28px;font-family:sans-serif;color:#e8dcc0;background:#0a0907">読み込み中…</p>
+  </div>
   <script>window.__BLOG_PRESET_SLUG__ = "mock-exam";</script>
   <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" crossorigin="anonymous"></script>
   <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" crossorigin="anonymous"></script>
-  <script src="../../data/line-url.js"></script>
-  <script src="../../data/blog-meta.js"></script>
-  <script type="text/babel" src="../../components/SiteHeader.jsx"></script>
-  <script type="text/babel" src="../../components/SiteFooter.jsx"></script>
-  <script src="../../data/blog-articles.js?v=20260702-share"></script>
-  <script type="text/babel" src="../../components/BlogArticlePage.jsx?v=20260702-share"></script>
+  <script src="/data/line-url.js"></script>
+  <script src="/data/blog-meta.js"></script>
+  <script type="text/babel" src="/components/SiteHeader.jsx"></script>
+  <script type="text/babel" src="/components/SiteFooter.jsx"></script>
+  <script src="/data/blog-articles.js?v=20260702-fix"></script>
+  <script type="text/babel" src="/components/BlogArticlePage.jsx?v=20260702-fix"></script>
   <script type="text/babel">
     function App() {
       return (

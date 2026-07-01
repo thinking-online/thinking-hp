@@ -94,6 +94,40 @@ BOOKS = [
         "serial_desc": "50語ずつ／読んだ範囲の確認用。鉄壁の並び順どおり。最難関語彙を深く確実に定着させるための確認にどうぞ。",
         "chunk_label": "50語ずつ",
     },
+    {
+        "slug": "eiken-pre1",
+        "pdf_prefix": "pre1",
+        "name": "英検準1級",
+        "title": "英検準1級 問題集",
+        "theme": "#7c3aed",
+        "theme_light": "#8b5cf6",
+        "theme_soft": "#f5f3ff",
+        "theme_border": "#ddd6fe",
+        "theme_banner_end": "#5b21b6",
+        "theme_rgb": "124, 58, 237",
+        "tagline": "英検準1級合格に必要な単語・熟語・表現を、効率よく確実にマスター。",
+        "secret": "47281936",
+        "hero_file": "EX__________-12587d56-bb9f-4ea8-941e-399902d4c674.png",
+        "serial_desc": "50語ずつ／読んだ範囲の確認用。英検準1級の並び順どおり。学校の週テスト対策や、覚えた直後の確認にどうぞ。",
+        "chunk_label": "50語ずつ",
+    },
+    {
+        "slug": "eiken-2",
+        "pdf_prefix": "eiken2",
+        "name": "英検2級",
+        "title": "英検2級 問題集",
+        "theme": "#2563eb",
+        "theme_light": "#3b82f6",
+        "theme_soft": "#eff6ff",
+        "theme_border": "#bfdbfe",
+        "theme_banner_end": "#1d4ed8",
+        "theme_rgb": "37, 99, 235",
+        "tagline": "英検2級合格に必要な単語・熟語を効率的に学べる実践型ポータル。",
+        "secret": "63847291",
+        "hero_file": "EX_________-c19b94d2-2399-4d90-b366-82ee88c786b2.png",
+        "serial_desc": "50語ずつ／読んだ範囲の確認用。英検2級の並び順どおり。学校の週テスト対策や、覚えた直後の確認にどうぞ。",
+        "chunk_label": "50語ずつ",
+    },
 ]
 
 LINE_URL = (
@@ -106,7 +140,8 @@ MIX_RE = re.compile(r"^(.+)_mix-(\d+)-(\d+)\.pdf$")
 FINAL_RE = re.compile(r"^(.+)_final-(\d+)\.pdf$")
 
 
-def parse_tests(slug: str) -> tuple[list[dict], list[dict], list[dict]]:
+def parse_tests(slug: str, pdf_prefix: str | None = None) -> tuple[list[dict], list[dict], list[dict]]:
+    prefix = pdf_prefix or slug
     test_dir = ROOT / "test" / slug
     serial: list[tuple[int, int, str]] = []
     mix: list[tuple[int, int, str]] = []
@@ -115,15 +150,15 @@ def parse_tests(slug: str) -> tuple[list[dict], list[dict], list[dict]]:
     for path in sorted(test_dir.glob("*.pdf")):
         name = path.name
         if m := SERIAL_RE.match(name):
-            if m.group(1) != slug:
+            if m.group(1) != prefix:
                 continue
             serial.append((int(m.group(2)), int(m.group(3)), name))
         elif m := MIX_RE.match(name):
-            if m.group(1) != slug:
+            if m.group(1) != prefix:
                 continue
             mix.append((int(m.group(2)), int(m.group(3)), name))
         elif m := FINAL_RE.match(name):
-            if m.group(1) != slug:
+            if m.group(1) != prefix:
                 continue
             final.append((int(m.group(2)), name))
 
@@ -1031,7 +1066,7 @@ def render_index(book: dict) -> str:
 def main() -> None:
     for book in BOOKS:
         slug = book["slug"]
-        serial, mix, final = parse_tests(slug)
+        serial, mix, final = parse_tests(slug, book.get("pdf_prefix"))
         book_dir = ROOT / slug
         assets_dir = book_dir / "assets"
         sample_dir = book_dir / "sample"

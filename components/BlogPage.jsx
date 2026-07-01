@@ -1,17 +1,26 @@
 // Blog index page — list of articles
 const BlogPage = () => {
   const featured = {
-    slug: "why-faculty-strategy",
-    cat: "戦略",
-    catEn: "Strategy",
-    title: "なぜ「学部別」でしか、難関大に受からないのか。",
-    lead: "早稲田法学部と慶應経済学部では、「合格に必要な力」がまったく違います。にもかかわらず、多くの予備校は『難関大文系』という大括りで指導を行っています——。",
-    date: "2025.04.18",
-    readTime: "8 min read",
+    slug: "leap-vocab-drills",
+    cat: "学習法",
+    catEn: "Method",
+    title: "必携英単語LEAPの覚え方・勉強法｜小テスト・問題集で本番に出る英単語力をつける",
+    lead: "LEAPを何周しても空所で出てこない原因は周回不足ではありません。覚え方・勉強の仕方、連番・MIXランダム小テストの使い方、週テスト前の回し方まで完全解説。",
+    date: "2026.07.01",
+    readTime: "12 min read",
     author: "朝倉 徹大",
   };
 
   const articles = [
+    {
+      slug: "why-faculty-strategy",
+      cat: "戦略",
+      catEn: "Strategy",
+      title: "なぜ「学部別」でしか、難関大に受からないのか。",
+      lead: "早稲田法学部と慶應経済学部では、「合格に必要な力」がまったく違います。にもかかわらず、多くの予備校は『難関大文系』という大括りで指導を行っています——。",
+      date: "2025.04.18",
+      readTime: "8 min",
+    },
     {
       slug: "june-strategy",
       cat: "学習法",
@@ -96,9 +105,9 @@ const BlogPage = () => {
   ];
 
   const categories = [
-    { key: "all", label: "すべて", count: 10 },
+    { key: "all", label: "すべて", count: 11 },
     { key: "strategy", label: "戦略", count: 3 },
-    { key: "method", label: "学習法", count: 2 },
+    { key: "method", label: "学習法", count: 3 },
     { key: "essay", label: "添削", count: 1 },
     { key: "coaching", label: "コーチング", count: 1 },
     { key: "mental", label: "メンタル", count: 1 },

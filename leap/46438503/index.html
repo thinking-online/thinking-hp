@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d9488">
+<meta name="robots" content="noindex, nofollow">
+<title>LEAP 専用ポータル｜THINKING 問題集</title>
+<meta name="description" content="LEAP 問題集ご購入者専用。連番テスト・MIXテスト・総まとめテスト（全72回）のPDFにいつでもアクセスできます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #0d9488;
+    --teal-light: #14b8a6;
+    --teal-pale: #ccfbf1;
+    --teal-soft: #f0fdfa;
+    --navy: #0f172a;
+    --navy-mid: #1e293b;
+    --ink: #1e293b;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --paper: #f8fafc;
+    --card: #ffffff;
+    --shadow: 0 8px 30px -10px rgba(15, 23, 42, 0.12);
+    --shadow-sm: 0 2px 12px -4px rgba(15, 23, 42, 0.08);
+    --radius: 16px;
+    --radius-sm: 12px;
+    --line-url: https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=r8Dm9l&liff_id=1656043253-rkMxPZMQ;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+  body {
+    margin: 0;
+    font-family: "Noto Sans JP", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.65;
+  }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 16px 80px;
+  }
+
+  /* ---- Hero ---- */
+  .hero {
+    position: relative;
+    margin: 0 -16px;
+    background: #fff;
+    line-height: 0;
+  }
+  .hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .hero-hotspots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5%;
+    padding: 0 5.5% 7.5%;
+    height: 22%;
+  }
+  .hero-hotspot {
+    display: block;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background .2s, box-shadow .2s;
+  }
+  .hero-hotspot:hover,
+  .hero-hotspot:focus-visible {
+    background: rgba(13, 148, 136, 0.08);
+    box-shadow: inset 0 0 0 2px rgba(13, 148, 136, 0.35);
+    outline: none;
+  }
+  .hero-hotspot span {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  /* ---- Sticky nav ---- */
+  .sitenav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    margin: 0 -16px 20px;
+    padding: 10px 16px;
+    background: rgba(248, 250, 252, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .sitenav-track {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .sitenav-track::-webkit-scrollbar { display: none; }
+  .sitenav a {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background .2s, border-color .2s, color .2s;
+  }
+  .sitenav a:hover,
+  .sitenav a.is-active {
+    background: var(--teal-soft);
+    border-color: var(--teal-light);
+    color: var(--teal);
+  }
+  .sitenav-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    flex: none;
+  }
+  .sitenav a[data-nav="serial"] .sitenav-dot { background: var(--teal); }
+  .sitenav a[data-nav="mix"] .sitenav-dot { background: #6366f1; }
+  .sitenav a[data-nav="final"] .sitenav-dot { background: #f59e0b; }
+  .sitenav a[data-nav="line"] .sitenav-dot { background: #06c755; }
+
+  /* ---- Intro ---- */
+  .intro {
+    margin-top: 4px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 18px;
+    box-shadow: var(--shadow-sm);
+  }
+  .intro-kicker {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .intro h1 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--navy);
+    letter-spacing: .02em;
+  }
+  .intro p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+  .intro-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .stat-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 12px;
+    background: var(--teal-soft);
+    border: 1px solid #99f6e4;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--teal);
+  }
+  .stat-chip b {
+    font-size: 15px;
+    font-weight: 900;
+    color: var(--navy);
+  }
+
+  /* ---- Sections ---- */
+  .section {
+    margin-top: 28px;
+    scroll-margin-top: 72px;
+  }
+  .section-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .section-num {
+    flex: none;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 900;
+    color: #fff;
+  }
+  .section-num--serial { background: linear-gradient(135deg, var(--teal), #0f766e); }
+  .section-num--mix { background: linear-gradient(135deg, #6366f1, #4f46e5); }
+  .section-num--final { background: linear-gradient(135deg, #f59e0b, #d97706); }
+  .section-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 900;
+    color: var(--navy);
+    line-height: 1.35;
+  }
+  .section-desc {
+    margin: 4px 0 0;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* ---- Jump grid (TOC) ---- */
+  .jump-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .jump-btn {
+    padding: 6px 11px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .jump-btn:hover,
+  .jump-btn:focus-visible {
+    background: var(--teal-soft);
+    border-color: var(--teal-light);
+    color: var(--teal);
+    outline: none;
+  }
+
+  /* ---- Test grid ---- */
+  .test-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  @media (min-width: 540px) {
+    .test-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
+  .test-card {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 12px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    color: inherit;
+    box-shadow: var(--shadow-sm);
+    transition: transform .15s, border-color .15s, box-shadow .15s;
+    position: relative;
+    overflow: hidden;
+  }
+  .test-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--teal);
+    opacity: 0;
+    transition: opacity .15s;
+  }
+  .test-card--mix::before { background: #6366f1; }
+  .test-card--final::before { background: #f59e0b; }
+  .test-card:hover,
+  .test-card:focus-visible {
+    transform: translateY(-2px);
+    border-color: var(--teal-light);
+    box-shadow: var(--shadow);
+    outline: none;
+  }
+  .test-card:hover::before,
+  .test-card:focus-visible::before { opacity: 1; }
+  .test-card--mix:hover,
+  .test-card--mix:focus-visible { border-color: #818cf8; }
+  .test-card--final:hover,
+  .test-card--final:focus-visible { border-color: #fbbf24; }
+  .test-card-no {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    color: var(--teal);
+  }
+  .test-card--mix .test-card-no { color: #6366f1; }
+  .test-card--final .test-card-no { color: #d97706; }
+  .test-card-range {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.35;
+  }
+  .test-card-action {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .test-card-action svg {
+    width: 14px;
+    height: 14px;
+    flex: none;
+  }
+  .test-card:hover .test-card-action,
+  .test-card:focus-visible .test-card-action { color: var(--teal); }
+  .test-card--mix:hover .test-card-action,
+  .test-card--mix:focus-visible .test-card-action { color: #6366f1; }
+  .test-card--final:hover .test-card-action,
+  .test-card--final:focus-visible .test-card-action { color: #d97706; }
+
+  .final-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  @media (min-width: 480px) {
+    .final-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .final-card {
+    padding: 20px 16px;
+    text-align: center;
+  }
+  .final-card .test-card-range {
+    font-size: 16px;
+  }
+
+  /* ---- LINE CTA ---- */
+  .line-cta {
+    margin-top: 36px;
+    background: linear-gradient(145deg, #ecfdf5, #f0fdfa);
+    border: 1px solid #a7f3d0;
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+  }
+  .line-cta h2 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 900;
+    color: var(--navy);
+  }
+  .line-cta p {
+    margin: 0 0 16px;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+  .btn-line {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    background: #06c755;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 20px -6px rgba(6, 199, 85, 0.5);
+    transition: transform .15s, box-shadow .15s;
+  }
+  .btn-line:hover,
+  .btn-line:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px -6px rgba(6, 199, 85, 0.55);
+    outline: none;
+  }
+  .btn-line svg {
+    width: 22px;
+    height: 22px;
+    flex: none;
+  }
+
+  .foot {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .08em;
+    line-height: 1.8;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .test-card:hover { transform: none; }
+    .btn-line:hover { transform: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <!-- Hero -->
+  <header class="hero">
+    <img src="../assets/hero.png" alt="LEAP 専用ポータル — 語彙力を、使える力へ。" width="1200" height="800">
+    <nav class="hero-hotspots" aria-label="メインメニュー">
+      <a class="hero-hotspot" href="#serial"><span>単語学習（連番テスト）</span></a>
+      <a class="hero-hotspot" href="#mix"><span>復習（MIXテスト）</span></a>
+      <a class="hero-hotspot" href="#final"><span>確認テスト（総まとめ）</span></a>
+    </nav>
+  </header>
+
+  <!-- Sticky nav -->
+  <nav class="sitenav" aria-label="ページ内ナビ">
+    <div class="sitenav-track">
+      <a href="#serial" data-nav="serial"><span class="sitenav-dot"></span>連番テスト</a>
+      <a href="#mix" data-nav="mix"><span class="sitenav-dot"></span>MIXテスト</a>
+      <a href="#final" data-nav="final"><span class="sitenav-dot"></span>総まとめ</a>
+      <a href="#line" data-nav="line"><span class="sitenav-dot"></span>LINEで連絡</a>
+    </div>
+  </nav>
+
+  <!-- Intro -->
+  <div class="intro">
+    <div class="intro-kicker">PURCHASER PORTAL</div>
+    <h1>LEAP 問題集｜収録テスト一覧</h1>
+    <p>ご購入ありがとうございます。このページから、全部で<strong>72回分</strong>のテスト（PDF）にいつでもアクセスできます。ブックマーク推奨です。今後、追加・改訂した分もこのページに反映されます。</p>
+    <div class="intro-stats">
+      <span class="stat-chip">連番 <b>46</b>回</span>
+      <span class="stat-chip">MIX <b>23</b>回</span>
+      <span class="stat-chip">総まとめ <b>3</b>回</span>
+      <span class="stat-chip">合計 <b>72</b>回</span>
+    </div>
+  </div>
+
+  <!-- ① 連番テスト -->
+  <section class="section" id="serial">
+    <div class="section-head">
+      <div class="section-num section-num--serial">①</div>
+      <div>
+        <h2 class="section-title">連番テスト</h2>
+        <p class="section-desc">50語ずつ／読んだ範囲の確認用。LEAPの並び順どおり。学校の週テスト対策や、覚えた直後の確認にどうぞ。</p>
+      </div>
+    </div>
+    <div class="jump-bar" id="serial-jump" aria-label="連番テスト ジャンプ"></div>
+    <div class="test-grid" id="serial-grid"></div>
+  </section>
+
+  <!-- ② MIXテスト -->
+  <section class="section" id="mix">
+    <div class="section-head">
+      <div class="section-num section-num--mix">②</div>
+      <div>
+        <h2 class="section-title">MIXテスト</h2>
+        <p class="section-desc">100語ずつ／順番を混ぜた実力チェック。「並び順で覚えた気」を防ぎ、本当に定着しているかを炙り出します。模試前の総ざらいに最適。</p>
+      </div>
+    </div>
+    <div class="jump-bar" id="mix-jump" aria-label="MIXテスト ジャンプ"></div>
+    <div class="test-grid" id="mix-grid"></div>
+  </section>
+
+  <!-- ③ 総まとめテスト -->
+  <section class="section" id="final">
+    <div class="section-head">
+      <div class="section-num section-num--final">③</div>
+      <div>
+        <h2 class="section-title">総まとめテスト</h2>
+        <p class="section-desc">全範囲からのファイナルチェック。入試直前・模試直前の最終確認に。</p>
+      </div>
+    </div>
+    <div class="final-grid" id="final-grid"></div>
+  </section>
+
+  <!-- LINE -->
+  <section class="line-cta" id="line">
+    <h2>ご要望・お問い合わせ</h2>
+    <p>問題の誤り、追加のご希望、その他リクエストがあれば<br>下のボタンからLINEでお気軽にどうぞ。</p>
+    <a class="btn-line" href="https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&amp;lp=r8Dm9l&amp;liff_id=1656043253-rkMxPZMQ" target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+      LINEで連絡する
+    </a>
+  </section>
+
+  <footer class="foot">
+    LEAP 問題集 購入者専用ポータル<br>
+    合同会社ARC / THINKING
+  </footer>
+
+</div>
+
+<script>
+(function () {
+  var PDF_BASE = "/test/leap/";
+
+  var PDF_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>';
+
+  function buildSerialTests() {
+    var tests = [];
+    for (var start = 1; start <= 2151; start += 50) {
+      var end = start + 49;
+      var file = "leap_" + start + "-" + end + ".pdf";
+      tests.push({ no: tests.length + 1, label: "No." + start + "〜" + end, file: file, anchor: "s-" + start });
+    }
+    tests.push({ no: tests.length + 1, label: "No.2201〜2250", file: "leap_2201-2250.pdf", anchor: "s-2201" });
+    tests.push({ no: tests.length + 1, label: "No.2251〜2299", file: "leap_2251-2299.pdf", anchor: "s-2251" });
+    return tests;
+  }
+
+  function buildMixTests() {
+    var ranges = [
+      [1, 100], [101, 200], [201, 300], [301, 400], [401, 500],
+      [501, 600], [601, 700], [701, 800], [801, 900], [901, 1000],
+      [1001, 1100], [1101, 1200], [1201, 1300], [1301, 1400], [1401, 1500],
+      [1501, 1600], [1601, 1700], [1701, 1800], [1801, 1900], [1901, 2000],
+      [2001, 2100], [2101, 2200], [2201, 2299]
+    ];
+    return ranges.map(function (r, i) {
+      return {
+        no: i + 1,
+        label: "MIX No." + r[0] + "〜" + r[1],
+        file: "leap_mix-" + r[0] + "-" + r[1] + ".pdf",
+        anchor: "m-" + r[0]
+      };
+    });
+  }
+
+  var FINAL_TESTS = [
+    { no: 1, label: "総まとめテスト 1", file: "leap_final-1.pdf", anchor: "f-1" },
+    { no: 2, label: "総まとめテスト 2", file: "leap_final-2.pdf", anchor: "f-2" },
+    { no: 3, label: "総まとめテスト 3", file: "leap_final-3.pdf", anchor: "f-3" }
+  ];
+
+  function createTestCard(test, type) {
+    var a = document.createElement("a");
+    a.className = "test-card" + (type === "mix" ? " test-card--mix" : type === "final" ? " test-card--final final-card" : "");
+    a.href = PDF_BASE + test.file;
+    a.target = "_blank";
+    a.rel = "noopener noreferrer";
+    a.id = test.anchor;
+
+    var no = document.createElement("span");
+    no.className = "test-card-no";
+    no.textContent = type === "final" ? "FINAL" : ("TEST " + String(test.no).padStart(2, "0"));
+
+    var range = document.createElement("span");
+    range.className = "test-card-range";
+    range.textContent = test.label;
+
+    var action = document.createElement("span");
+    action.className = "test-card-action";
+    action.innerHTML = PDF_ICON + " PDFを開く";
+
+    a.appendChild(no);
+    a.appendChild(range);
+    a.appendChild(action);
+    return a;
+  }
+
+  function renderJumpBar(container, tests, step) {
+    container.innerHTML = "";
+    for (var i = 0; i < tests.length; i += step) {
+      (function (test) {
+        var btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "jump-btn";
+        btn.textContent = test.label.replace(/^MIX /, "").replace(/^No\./, "");
+        btn.addEventListener("click", function () {
+          var el = document.getElementById(test.anchor);
+          if (el) el.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+        container.appendChild(btn);
+      })(tests[i]);
+    }
+  }
+
+  var serialTests = buildSerialTests();
+  var mixTests = buildMixTests();
+
+  var serialGrid = document.getElementById("serial-grid");
+  serialTests.forEach(function (t) {
+    serialGrid.appendChild(createTestCard(t, "serial"));
+  });
+  renderJumpBar(document.getElementById("serial-jump"), serialTests, 5);
+
+  var mixGrid = document.getElementById("mix-grid");
+  mixTests.forEach(function (t) {
+    mixGrid.appendChild(createTestCard(t, "mix"));
+  });
+  renderJumpBar(document.getElementById("mix-jump"), mixTests, 3);
+
+  var finalGrid = document.getElementById("final-grid");
+  FINAL_TESTS.forEach(function (t) {
+    finalGrid.appendChild(createTestCard(t, "final"));
+  });
+
+  /* Active nav highlight on scroll */
+  var sections = ["serial", "mix", "final", "line"];
+  var navLinks = document.querySelectorAll(".sitenav a[href^='#']");
+  function updateNav() {
+    var scrollY = window.scrollY + 80;
+    var current = sections[0];
+    sections.forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el && el.offsetTop <= scrollY) current = id;
+    });
+    navLinks.forEach(function (link) {
+      var href = link.getAttribute("href").slice(1);
+      link.classList.toggle("is-active", href === current);
+    });
+  }
+  window.addEventListener("scroll", updateNav, { passive: true });
+  updateNav();
+})();
+</script>
+</body>
+</html>

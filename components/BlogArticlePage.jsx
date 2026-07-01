@@ -1,31 +1,44 @@
 // Blog article — body from data/blog-articles.js (/blog/:slug)
 function blogArticleHref(slug) {
+  if (typeof window.blogArticleHref === "function") return window.blogArticleHref(slug);
   return "/blog/" + encodeURIComponent(slug);
 }
 
-var BLOG_SLUG_ALIASES = {
-  "leap-vocab-drills": "leap-oboeho-benkyoho",
-};
+function blogArticleCanonical(slug) {
+  if (typeof window.blogArticleCanonical === "function") return window.blogArticleCanonical(slug);
+  return "https://thinking-online.com" + blogArticleHref(slug);
+}
+
+function blogSlugAliases() {
+  return typeof BLOG_SLUG_ALIASES !== "undefined" ? BLOG_SLUG_ALIASES : {};
+}
 
 function blogResolveSlug(all) {
   if (!all) return "why-faculty-strategy";
+  var aliases = blogSlugAliases();
+  if (typeof window.__BLOG_PRESET_SLUG__ === "string" && all[window.__BLOG_PRESET_SLUG__]) {
+    return window.__BLOG_PRESET_SLUG__;
+  }
   var path = window.location.pathname.replace(/\/+$/, "");
   var pathMatch = path.match(/^\/blog\/([^/]+)$/);
   if (pathMatch) {
     var fromPath = decodeURIComponent(pathMatch[1]);
     if (all[fromPath]) return fromPath;
-    if (BLOG_SLUG_ALIASES[fromPath] && all[BLOG_SLUG_ALIASES[fromPath]]) {
-      return BLOG_SLUG_ALIASES[fromPath];
-    }
+    if (aliases[fromPath] && all[aliases[fromPath]]) return aliases[fromPath];
   }
   var slugParam = new URLSearchParams(window.location.search).get("slug");
   if (slugParam) {
     if (all[slugParam]) return slugParam;
-    if (BLOG_SLUG_ALIASES[slugParam] && all[BLOG_SLUG_ALIASES[slugParam]]) {
-      return BLOG_SLUG_ALIASES[slugParam];
-    }
+    if (aliases[slugParam] && all[aliases[slugParam]]) return aliases[slugParam];
   }
   return "why-faculty-strategy";
+}
+
+function blogMergedMeta(slug, article) {
+  if (!article) return null;
+  var base = article.meta;
+  var extra = typeof BLOG_META !== "undefined" && BLOG_META[slug] ? BLOG_META[slug] : {};
+  return Object.assign({}, base, extra);
 }
 function blogFormatInline(text, keyPrefix) {
   if (!text) return text;
@@ -282,32 +295,37 @@ function blogCollectFaq(sections) {
 
 function blogApplyArticleHead(slug, article) {
   if (!article) return;
-  const meta = article.meta;
+  const meta = blogMergedMeta(slug, article);
   const plain = (s) => (s || "").replace(/\*\*/g, "").replace(/\n/g, " ").trim();
-  const desc = plain(meta.seoDescription || meta.lead).slice(0, 160);
+  const seoDesc = plain(meta.seoDescription || meta.lead).slice(0, 160);
+  const shareDesc = plain(meta.shareDescription || meta.seoDescription || meta.lead).slice(0, 120);
   const title = meta.seoTitle || meta.title;
-  const canonical = `https://thinking-online.com${blogArticleHref(slug)}`;
+  const canonical = blogArticleCanonical(slug);
   const dateISO = meta.dateISO || "2026-01-01";
+  const ogImage = meta.ogImage || "https://thinking-online.com/assets/campus-03.png";
 
   document.title = `${title} — THINKING`;
-  blogEnsureMeta("description", desc);
+  blogEnsureMeta("description", seoDesc);
   if (meta.keywords) blogEnsureMeta("keywords", meta.keywords);
   blogEnsureProp("og:type", "article");
   blogEnsureProp("og:title", title);
-  blogEnsureProp("og:description", desc);
+  blogEnsureProp("og:description", shareDesc);
   blogEnsureProp("og:url", canonical);
+  blogEnsureProp("og:image", ogImage);
   blogEnsureProp("og:site_name", "THINKING");
   blogEnsureProp("og:locale", "ja_JP");
   blogEnsureMeta("twitter:card", "summary_large_image");
   blogEnsureMeta("twitter:title", title);
-  blogEnsureMeta("twitter:description", desc);
+  blogEnsureMeta("twitter:description", shareDesc);
+  blogEnsureMeta("twitter:image", ogImage);
   blogEnsureCanonical(canonical);
 
   blogEnsureJsonLd("blog-article-jsonld", {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: meta.title,
-    description: desc,
+    description: seoDesc,
+    image: ogImage,
     datePublished: dateISO,
     dateModified: dateISO,
     author: {
@@ -340,6 +358,41 @@ function blogApplyArticleHead(slug, article) {
   }
 }
 
+const ArticleShareBar = ({ slug, shareDescription }) => {
+  const [copied, setCopied] = React.useState(false);
+  const url = blogArticleCanonical(slug);
+
+  const onCopy = () => {
+    const done = () => {
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2000);
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(url).then(done).catch(() => {});
+    }
+  };
+
+  return (
+    <div className="article-share">
+      <div className="article-share-head">
+        <span className="article-share-label">この記事のリンク</span>
+        <a href={blogArticleHref(slug)} className="article-share-permalink">
+          {blogArticleHref(slug)}
+        </a>
+      </div>
+      {shareDescription ? (
+        <p className="article-share-preview">
+          <span className="article-share-preview-label">LINEで送るときの説明文</span>
+          {shareDescription}
+        </p>
+      ) : null}
+      <button type="button" className="article-share-copy" onClick={onCopy}>
+        {copied ? "コピーしました" : "リンクをコピー"}
+      </button>
+    </div>
+  );
+};
+
 const BlogArticlePage = () => {
   const all = typeof BLOG_ARTICLES !== "undefined" ? BLOG_ARTICLES : null;
   const slug = blogResolveSlug(all);
@@ -371,8 +424,13 @@ const BlogArticlePage = () => {
     );
   }
 
-  const { meta, toc, sections } = article;
-  const related = all ? blogPickRelated(slug, meta.catKey, all) : [];
+  const { meta: rawMeta, toc, sections } = article;
+  const meta = blogMergedMeta(slug, article);
+  const related = all ? blogPickRelated(slug, rawMeta.catKey, all) : [];
+  const shareDesc = (meta.shareDescription || meta.seoDescription || meta.lead || "")
+    .replace(/\*\*/g, "")
+    .replace(/\n/g, " ")
+    .trim();
 
   return (
     <>
@@ -386,38 +444,40 @@ const BlogArticlePage = () => {
           </a>
 
           <div className="article-meta-top">
-            <span className="article-cat">{meta.cat}</span>
+            <span className="article-cat">{rawMeta.cat}</span>
             <span className="blog-dot">·</span>
             <span className="article-cat-en">
-              <i>{meta.catEn}</i>
+              <i>{rawMeta.catEn}</i>
             </span>
           </div>
 
-          <h1 className="article-title">{meta.title}</h1>
+          <h1 className="article-title">{rawMeta.title}</h1>
 
-          <p className="article-lead">{blogParagraph(meta.lead)}</p>
+          <p className="article-lead">{blogParagraph(rawMeta.lead)}</p>
 
           <div className="article-meta-bottom">
             <div className="article-author">
               <span className="article-author-avatar">T</span>
               <div className="article-author-info">
-                <span className="article-author-name">{meta.author}</span>
-                <span className="article-author-role">{meta.authorRole}</span>
+                <span className="article-author-name">{rawMeta.author}</span>
+                <span className="article-author-role">{rawMeta.authorRole}</span>
               </div>
             </div>
             <div className="article-meta-stats">
-              <span className="article-date">{meta.date}</span>
+              <span className="article-date">{rawMeta.date}</span>
               <span className="blog-dot">·</span>
-              <span className="article-readtime">{meta.readTime}</span>
+              <span className="article-readtime">{rawMeta.readTime}</span>
             </div>
           </div>
+
+          <ArticleShareBar slug={slug} shareDescription={shareDesc} />
         </div>
       </header>
 
       <div className="article-hero">
         <div className="article-hero-inner">
           <div className="blog-image-placeholder hero">
-            <span className="image-placeholder-mark">{meta.catEn}</span>
+            <span className="image-placeholder-mark">{rawMeta.catEn}</span>
             <span className="image-placeholder-note">[ Article Hero Image ]</span>
           </div>
         </div>

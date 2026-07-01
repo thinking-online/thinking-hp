@@ -112,7 +112,7 @@
 # ジャーナル記事 — /blog/:slug（クエリなしのきれいなURL）
 [[redirects]]
   from = "/blog/:slug"
-  to = "/blog-article.html?slug=:slug"
+  to = "/blog/pages/:slug.html"
   status = 200
 
 # 旧URL（?slug=）→ 正規パスへ 301

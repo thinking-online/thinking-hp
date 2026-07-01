@@ -1,7 +1,11 @@
 // Blog index page — list of articles
+function blogArticleHref(slug) {
+  return "/blog/" + encodeURIComponent(slug);
+}
+
 const BlogPage = () => {
   const featured = {
-    slug: "leap-vocab-drills",
+    slug: "leap-oboeho-benkyoho",
     cat: "学習法",
     catEn: "Method",
     title: "必携英単語LEAPの覚え方・勉強法｜小テスト・問題集で本番に出る英単語力をつける",
@@ -131,7 +135,7 @@ const BlogPage = () => {
         <div className="blog-section-inner">
           {/* Featured article */}
           <article className="blog-featured">
-            <a href={`/blog-article?slug=${encodeURIComponent(featured.slug)}`} className="blog-featured-link">
+            <a href={blogArticleHref(featured.slug)} className="blog-featured-link">
               <div className="blog-featured-image">
                 <div className="blog-image-placeholder featured">
                   <span className="image-placeholder-mark">{featured.catEn}</span>
@@ -183,7 +187,7 @@ const BlogPage = () => {
           <div className="blog-grid">
             {articles.map((a, i) => (
               <article key={i} className="blog-card">
-                <a href={`/blog-article?slug=${encodeURIComponent(a.slug)}`} className="blog-card-link">
+                <a href={blogArticleHref(a.slug)} className="blog-card-link">
                   <div className="blog-card-image">
                     <div className="blog-image-placeholder">
                       <span className="image-placeholder-mark small">{a.catEn}</span>

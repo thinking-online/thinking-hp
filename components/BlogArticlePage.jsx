@@ -1,4 +1,32 @@
-// Blog article — body from data/blog-articles.js (?slug=…)
+// Blog article — body from data/blog-articles.js (/blog/:slug)
+function blogArticleHref(slug) {
+  return "/blog/" + encodeURIComponent(slug);
+}
+
+var BLOG_SLUG_ALIASES = {
+  "leap-vocab-drills": "leap-oboeho-benkyoho",
+};
+
+function blogResolveSlug(all) {
+  if (!all) return "why-faculty-strategy";
+  var path = window.location.pathname.replace(/\/+$/, "");
+  var pathMatch = path.match(/^\/blog\/([^/]+)$/);
+  if (pathMatch) {
+    var fromPath = decodeURIComponent(pathMatch[1]);
+    if (all[fromPath]) return fromPath;
+    if (BLOG_SLUG_ALIASES[fromPath] && all[BLOG_SLUG_ALIASES[fromPath]]) {
+      return BLOG_SLUG_ALIASES[fromPath];
+    }
+  }
+  var slugParam = new URLSearchParams(window.location.search).get("slug");
+  if (slugParam) {
+    if (all[slugParam]) return slugParam;
+    if (BLOG_SLUG_ALIASES[slugParam] && all[BLOG_SLUG_ALIASES[slugParam]]) {
+      return BLOG_SLUG_ALIASES[slugParam];
+    }
+  }
+  return "why-faculty-strategy";
+}
 function blogFormatInline(text, keyPrefix) {
   if (!text) return text;
   const pfx = keyPrefix || "em";
@@ -258,7 +286,7 @@ function blogApplyArticleHead(slug, article) {
   const plain = (s) => (s || "").replace(/\*\*/g, "").replace(/\n/g, " ").trim();
   const desc = plain(meta.seoDescription || meta.lead).slice(0, 160);
   const title = meta.seoTitle || meta.title;
-  const canonical = `https://thinking-online.com/blog-article?slug=${encodeURIComponent(slug)}`;
+  const canonical = `https://thinking-online.com${blogArticleHref(slug)}`;
   const dateISO = meta.dateISO || "2026-01-01";
 
   document.title = `${title} — THINKING`;
@@ -314,15 +342,20 @@ function blogApplyArticleHead(slug, article) {
 
 const BlogArticlePage = () => {
   const all = typeof BLOG_ARTICLES !== "undefined" ? BLOG_ARTICLES : null;
-  const slugParam = new URLSearchParams(window.location.search).get("slug");
-  const slug =
-    slugParam && all && all[slugParam]
-      ? slugParam
-      : "why-faculty-strategy";
+  const slug = blogResolveSlug(all);
   const article = all && all[slug] ? all[slug] : null;
 
   React.useEffect(() => {
     blogApplyArticleHead(slug, article);
+  }, [slug, article]);
+
+  React.useEffect(() => {
+    if (!slug || !article) return;
+    const pretty = blogArticleHref(slug);
+    const path = window.location.pathname.replace(/\/+$/, "");
+    if (path !== pretty && path.indexOf("/blog/") !== 0) {
+      window.history.replaceState(null, "", pretty);
+    }
   }, [slug, article]);
 
   if (!article) {
@@ -464,7 +497,7 @@ const BlogArticlePage = () => {
           </div>
           <div className="article-related-grid">
             {related.map((r, i) => (
-              <a key={i} href={`/blog-article?slug=${encodeURIComponent(r.slug)}`} className="article-related-card">
+              <a key={i} href={blogArticleHref(r.slug)} className="article-related-card">
                 <span className="blog-cat">{r.cat}</span>
                 <h3 className="article-related-title">{r.title}</h3>
                 <span className="blog-date">{r.date}</span>

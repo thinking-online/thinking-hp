@@ -109,6 +109,26 @@
   to = "/product-kangaku-english.html"
   status = 200
 
+# ジャーナル記事 — /blog/:slug（クエリなしのきれいなURL）
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog-article.html?slug=:slug"
+  status = 200
+
+# 旧URL（?slug=）→ 正規パスへ 301
+[[redirects]]
+  from = "/blog-article"
+  to = "/blog/:slug"
+  status = 301
+  query = {slug = ":slug"}
+  force = true
+
+# 旧スラッグ → 現行スラッグ（LEAP記事）
+[[redirects]]
+  from = "/blog/leap-vocab-drills"
+  to = "/blog/leap-oboeho-benkyoho"
+  status = 301
+
 # LP: 末尾スラッシュなし → あり（正規URL）
 [[redirects]]
   from = "/lp/english-reading-45days"

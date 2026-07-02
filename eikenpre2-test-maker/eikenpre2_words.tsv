@@ -1,0 +1,1500 @@
+1	let	～させる
+2	decide	を決心する
+3	train	を訓練する
+4	travel	を旅行する
+5	leave	を置き忘れる
+6	park	を駐車する
+7	order	を注文する
+8	lose	を失う
+9	move	を動かす
+10	pay	を支払う
+11	wait	待つ
+12	change	を変える
+13	check	を確かめる
+14	build	を建てる
+15	worry	心配する
+16	plant	を植える
+17	practice	を練習する
+18	care	気にかける
+19	describe	を描写する
+20	cost	費用がかかる
+21	turn	を曲げる
+22	join	に加わる
+23	grow	成長する
+24	save	を救う
+25	win	に勝つ
+26	pick	を選ぶ
+27	believe	を信じる
+28	report	を報告する
+29	forget	を忘れる
+30	hurt	を傷つける
+31	borrow	を借りる
+32	surprise	を驚かせる
+33	volunteer	ボランティアをする
+34	carry	を運ぶ
+35	set	を置く
+36	invite	を招待する
+37	happen	偶然起こる
+38	choose	を選ぶ
+39	guide	を案内する
+40	arrive	到着する
+41	offer	を提供する
+42	remember	を覚えている
+43	cancel	を中止する
+44	repair	を修理する
+45	excuse	言い訳
+46	internet	インターネット
+47	idea	考え
+48	information	情報
+49	honey	あなた
+50	fire	火
+51	vegetable	野菜
+52	situation	状況
+53	passage	一節
+54	event	出来事
+55	ma'am	奥様
+56	avocado	アボカド
+57	type	型
+58	bakery	パン屋
+59	future	将来
+60	exercise	運動
+61	bottle	ビン
+62	sign	合図
+63	service	サービス
+64	garbage	生ゴミ
+65	customer	顧客
+66	business	職業
+67	trouble	トラブル
+68	tour	周遊旅行
+69	race	競走
+70	environment	環境
+71	activity	活動
+72	other	他の
+73	different	違った
+74	important	重要な
+75	special	特別な
+76	enough	十分な
+77	expensive	高価な
+78	difficult	困難な
+79	few	ほとんど～ない
+80	another	別の
+81	close	接近した
+82	own	自分自身の
+83	local	地元の
+84	delicious	おいしい
+85	foreign	外国の
+86	however	しかしながら
+87	even	～でさえ
+88	online	オンラインで
+89	outside	屋外に
+90	instead	その代わりに
+91	far	遠くに
+92	probably	たぶん
+93	though	でも
+94	actually	実際に
+95	later	あとで
+96	yet	もう／まだ
+97	quickly	すぐに
+98	inside	屋内に
+99	anyway	とにかく
+100	while	～している間に
+101	taste	～の味がする
+102	fix	を修理する
+103	hold	を開催する
+104	collect	を集める
+105	paint	にペンキを塗る
+106	copy	の写しをとる
+107	guess	を推測する
+108	create	を創造する
+109	allow	～が…するのを許す
+110	return	帰る
+111	suggest	を提案する
+112	relax	くつろぐ
+113	add	を加える
+114	reserve	を予約する
+115	design	をデザインする
+116	follow	についていく
+117	attract	の心をとらえる
+118	pass	に合格する
+119	miss	～がいなくてさびしく思う
+120	recommend	を推薦する
+121	serve	を出す
+122	rent	を借りる
+123	wake	目を覚ます
+124	bake	を焼く
+125	prepare	を準備する
+126	damage	に損傷を与える
+127	bear	を我慢する
+128	seem	～のようだ
+129	explain	を説明する
+130	cause	を引き起こす
+131	fill	を満たす
+132	kill	を殺す
+133	dress	服を着る
+134	throw	を投げる
+135	notice	に気づく
+136	result	結果
+137	front	最前部
+138	recipe	調理法
+139	area	地域
+140	visitor	訪問者
+141	clothes	衣服
+142	plastic	プラスチック
+143	chance	機会
+144	sale	販売
+145	skill	技術
+146	presentation	発表
+147	flight	定期航空便
+148	wheel	車輪
+149	product	製品
+150	meal	食事
+151	seed	種
+152	land	陸地
+153	medicine	薬
+154	reservation	予約
+155	space	宇宙
+156	apartment	アパート
+157	insect	虫
+158	mall	ショッピングモール
+159	smartphone	スマートフォン
+160	grade	成績
+161	police	警察
+162	prize	賞
+163	market	市場
+164	fair	見本市
+165	section	欄
+166	price	価格
+167	fact	事実
+168	department	部
+169	rule	規則
+170	nature	自然
+171	island	島
+172	goods	商品
+173	firefighter	消防隊員
+174	person	人
+175	husband	夫
+176	item	品目
+177	neighbor	隣人
+178	orchestra	オーケストラ
+179	gate	門
+180	healthy	健康に良い
+181	true	本当の
+182	afraid	～ではないかと心配して
+183	dangerous	危険な
+184	wild	野生の
+185	safe	安全な
+186	past	過去の
+187	available	入手できる
+188	successful	成功した
+189	perfect	完全な
+190	less	より少なく
+191	easily	簡単に
+192	else	その他に
+193	abroad	海外で
+194	recently	最近
+195	nowadays	今日（こんにち）では
+196	somewhere	どこかに
+197	forward	先へ
+198	although	～だけれども
+199	without	～なしで
+200	through	～を通って
+201	exchange	を交換する
+202	drop	を落とす
+203	climb	を登る
+204	smell	～のにおいがする
+205	date	とデートする
+206	introduce	を紹介する
+207	recycle	を再生利用する
+208	perform	を上演する
+209	wish	を願う
+210	marry	と結婚する
+211	express	を表現する
+212	hide	隠れる
+213	protect	を保護する
+214	receive	を受け取る
+215	steal	を盗む
+216	interview	と面接する
+217	feed	～に食べ物を与える
+218	spread	広がる
+219	deliver	を配達する
+220	search	を探す
+221	bite	を噛む
+222	trade	を交換する
+223	announce	を発表する
+224	produce	を生産する
+225	share	を共有する
+226	draw	を描く
+227	wood	木材
+228	reason	理由
+229	experience	経験
+230	bill	請求書
+231	discount	割引
+232	form	用紙
+233	owner	所有者
+234	side	片側
+235	community	地域社会
+236	guest	客
+237	performance	演技
+238	tool	道具
+239	century	1世紀
+240	dessert	デザート
+241	poem	詩
+242	government	政府
+243	novel	小説
+244	professor	教授
+245	project	計画
+246	charity	慈善事業
+247	million	100万
+248	instrument	器具
+249	mistake	間違い
+250	earth	地球
+251	address	住所
+252	co-worker	同僚
+253	cleaner	クリーニング店
+254	match	試合
+255	fan	ファン
+256	grandparent	祖父／祖母
+257	president	大統領
+258	wallpaper	壁紙
+259	health	健康なこと
+260	Europe	ヨーロッパ
+261	technology	科学技術
+262	suit	スーツ
+263	note	覚え書き
+264	score	得点
+265	gift	才能
+266	rest	休み
+267	view	眺め
+268	crowd	群集
+269	jazz	ジャズ
+270	direction	方向
+271	topic	話題
+272	wallet	財布
+273	piece	1片
+274	package	小さな包み
+275	teammate	チームメート
+276	playground	遊び場
+277	planet	惑星
+278	salon	高級店
+279	accident	事故
+280	actor	俳優
+281	traditional	伝統的な
+282	Russian	ロシアの
+283	human	人間の
+284	cheap	安い
+285	either	どちらか一方の
+286	professional	プロの
+287	similar	類似した
+288	part-time	パートタイムの
+289	whole	全体の
+290	frozen	凍った
+291	central	中心部の
+292	loud	大きい
+293	magic	奇術の
+294	pretty	なかなか
+295	certainly	確かに
+296	finally	ついに
+297	alone	1人で
+298	therefore	それゆえに
+299	lately	最近
+300	might	もしかすると～かもしれない
+301	stand	を我慢する
+302	reach	に到着する
+303	promise	を約束する
+304	film	を撮影する
+305	fit	～にサイズがぴったり合う
+306	celebrate	を祝う
+307	stretch	ストレッチをする
+308	cover	を覆う
+309	develop	を開発する
+310	solve	を解決する
+311	discover	を発見する
+312	continue	を続ける
+313	face	に直面する
+314	shape	を形作る
+315	print	を印刷する
+316	lend	貸す
+317	realize	を実現する
+318	wonder	～かなと思う
+319	die	死ぬ
+320	pull	を引く
+321	push	を押す
+322	shake	を振る
+323	agree	賛成する
+324	mean	を意味する
+325	mind	を気にする
+326	improve	を改良する
+327	include	を含む
+328	enter	に入る
+329	communicate	意思を通じ合う
+330	tourist	観光客
+331	center	中心
+332	attention	注目
+333	couple	カップル
+334	license	免許証
+335	kid	子ども
+336	desert	砂漠
+337	invention	発明品
+338	chemistry	化学
+339	neighborhood	近所
+340	officer	警官
+341	moment	瞬間
+342	rock	岩
+343	cart	ショッピングカート
+344	grass	芝生
+345	traffic	交通量
+346	staff	スタッフ
+347	snake	ヘビ
+348	grocery	食糧雑貨
+349	fee	料金
+350	clothing	衣服
+351	training	訓練
+352	yoga	ヨガ
+353	truck	トラック
+354	forest	森林地帯
+355	flavor	味
+356	weight	重さ
+357	subway	地下鉄
+358	discovery	発見
+359	oven	オーブン
+360	ID	身分証明書
+361	beginner	初心者
+362	cough	せき
+363	firework	花火
+364	flag	旗
+365	housework	家事
+366	ant	アリ
+367	ground	地面
+368	schedule	予定表
+369	noise	騒音
+370	storm	嵐
+371	shelf	棚
+372	elevator	エレベーター
+373	Pacific	太平洋沿岸の
+374	careful	注意深い
+375	public	公共の
+376	British	英国の
+377	friendly	友好的な
+378	native	生まれた土地の
+379	excellent	優れた
+380	nearby	近くの
+381	huge	巨大な
+382	main	主な
+383	fresh	新鮮な
+384	usual	いつもの
+385	boring	退屈な
+386	colorful	色彩豊かな
+387	scary	恐ろしい
+388	spicy	ピリッとした
+389	nervous	緊張している
+390	convenient	便利な
+391	wide	幅が広い
+392	elementary	初等教育の
+393	once	1度
+394	anymore	これ以上
+395	almost	ほとんど
+396	carefully	注意して
+397	luckily	運よく
+398	outdoors	屋外で
+399	clearly	はっきりと
+400	against	～に反対して
+401	connect	をつなぐ
+402	suppose	～することになっている
+403	fail	失敗する
+404	display	を展示する
+405	compete	競争する
+406	explore	を探検する
+407	raise	を上げる
+408	contact	～と連絡をとる
+409	attend	出席する
+410	remove	を取り除く
+411	complete	を達成する
+412	gain	を得る
+413	balance	バランスをとる
+414	decorate	を飾る
+415	gather	を集める
+416	bother	～に迷惑をかける
+417	retire	引退する
+418	hate	を憎む
+419	hug	を抱きしめる
+420	support	を支持する
+421	touch	触れる
+422	scare	を怯えさせる
+423	hire	を雇う
+424	expect	を予期する
+425	publish	を出版する
+426	attack	を攻撃する
+427	measure	を測定する
+428	discuss	議論する
+429	examination	試験
+430	research	調査
+431	amount	量
+432	announcement	発表
+433	screen	画面
+434	advice	助言
+435	distance	距離
+436	shopper	買い物客
+437	director	監督
+438	technique	技術
+439	average	平均
+440	gallery	美術館
+441	convenience	便利
+442	application	申し込み
+443	state	国家
+444	amusement	娯楽
+445	sight	光景
+446	matter	問題
+447	sauce	ソース
+448	bottom	底
+449	corner	角
+450	principal	校長
+451	homestay	ホームステイ
+452	jellyfish	クラゲ
+453	percent	パーセント
+454	lifestyle	ライフスタイル
+455	career	職業
+456	goal	目標
+457	chef	シェフ
+458	fashion	流行
+459	relative	親戚
+460	credit	信用
+461	challenge	課題
+462	luck	幸運
+463	backyard	裏庭
+464	emergency	緊急事態
+465	favor	好意
+466	Olympics	国際オリンピック大会
+467	fever	熱
+468	campus	構内
+469	photographer	写真家
+470	bar	棒
+471	laundry	洗濯物
+472	refrigerator	冷蔵庫
+473	modern	現代の
+474	common	共通の
+475	extra	余分の
+476	national	国民の
+477	real	本当の
+478	comfortable	快適な
+479	possible	可能な
+480	recent	最近の
+481	least	最も少ない
+482	normal	普通の
+483	international	国際的な
+484	asleep	眠って
+485	active	活動的な
+486	lonely	寂しい
+487	regular	通常の
+488	bright	明るい
+489	correct	正しい
+490	relaxing	くつろがせる
+491	unfortunately	不幸にも
+492	downtown	街の中心部へ
+493	mostly	大部分は
+494	nearly	ほとんど
+495	heavily	激しく
+496	anytime	いつでも
+497	except	～を除いては
+498	behind	～の後ろに
+499	neither	どちらも～ない
+500	none	誰も～ない
+501	lay	を横たえる
+502	block	を邪魔する
+503	hunt	探し求める
+504	grill	を焼く
+505	count	を数える
+506	guard	を守る
+507	lift	を持ち上げる
+508	hit	を打つ
+509	pour	を注ぐ
+510	confuse	を混同する
+511	press	を押す
+512	broadcast	を放送する
+513	lie	うそをつく
+514	review	を復習する
+515	quit	をやめる
+516	remind	思い出させる
+517	separate	を分ける
+518	wipe	をふく
+519	rescue	を救助する
+520	translate	を翻訳する
+521	fight	戦う
+522	invitation	招待
+523	trash	ゴミ
+524	success	成功
+525	safety	安全
+526	tradition	伝統
+527	tournament	トーナメント
+528	spot	小さな点
+529	title	題名
+530	science fiction	空想科学小説
+531	weekday	平日
+532	spider	クモ
+533	sausage	ソーセージ
+534	seafood	シーフード
+535	boyfriend	男性の恋人
+536	diver	ダイバー
+537	trick	いたずら
+538	memory	思い出
+539	article	記事
+540	membership	会員であること
+541	factory	工場
+542	coupon	クーポン
+543	coach	コーチ
+544	battery	電池
+545	interest	興味
+546	knee	膝
+547	character	登場人物
+548	detail	詳細
+549	effort	努力
+550	climate	気候
+551	middle	真ん中
+552	purpose	目的
+553	danger	危険
+554	knowledge	知識
+555	brand	ブランド
+556	importance	重要性
+557	instruction	指示
+558	network	ネットワーク
+559	championship	選手権大会
+560	closet	クローゼット
+561	audience	観衆
+562	cash	現金
+563	photography	写真撮影
+564	headphone	ヘッドフォン
+565	journey	旅行
+566	debate	討論
+567	heater	暖房装置
+568	dentist	歯科医
+569	platform	プラットフォーム
+570	flour	小麦粉
+571	hero	英雄
+572	lobster	ロブスター
+573	makeup	化粧
+574	nut	木の実
+575	path	進路
+576	several	いくつかの
+577	valuable	貴重な
+578	scared	怖がっている
+579	ancient	古代の
+580	electronic	電子の
+581	elderly	年輩の
+582	certain	確信して
+583	harmful	有害な
+584	electric	電気の
+585	female	女性の
+586	daily	日常の
+587	cute	かわいい
+588	helpful	助けになる
+589	private	個人的な
+590	basic	基本的な
+591	Atlantic	大西洋の
+592	male	男性の
+593	advanced	進歩した
+594	additional	追加の
+595	especially	特に
+596	nicely	上手に
+597	indoors	屋内で
+598	afterward	後で
+599	deeply	深く
+600	whenever	～するときはいつでも
+601	control	を制御する
+602	belong	所属する
+603	destroy	を破壊する
+604	accept	を受け入れる
+605	disappoint	を失望させる
+606	greet	あいさつする
+607	disturb	を妨害する
+608	advise	忠告する
+609	breathe	呼吸する
+610	combine	を結びつける
+611	crash	衝突する
+612	earn	を稼ぐ
+613	hang	をつるす
+614	cheer	を励ます
+615	escape	逃げる
+616	waste	を浪費する
+617	lead	を導く
+618	replace	を取り替える
+619	require	を必要とする
+620	invent	を発明する
+621	organize	を組織する
+622	pack	を詰め込む
+623	upset	を動転させる
+624	respect	を尊敬する
+625	select	を選ぶ
+626	phrase	句
+627	sense	感覚
+628	stair	階段
+629	scarf	スカーフ
+630	risk	危険
+631	teenager	ティーンエイジャー
+632	strength	強さ
+633	semester	学期
+634	teamwork	チームワーク
+635	secret	秘密
+636	sunshine	日光
+637	silence	沈黙
+638	value	価値
+639	employee	従業員
+640	expert	専門家
+641	energy	エネルギー
+642	adult	大人
+643	author	著者
+644	athlete	運動選手
+645	Egypt	エジプト
+646	boss	上司
+647	equipment	設備
+648	advantage	利益
+649	airline	航空会社
+650	engine	エンジン
+651	ability	能力
+652	aisle	通路
+653	entrance	入り口
+654	conversation	会話
+655	custom	慣習
+656	button	ボタン
+657	choice	選択
+658	counter	カウンター
+659	discussion	討論
+660	adventure	冒険
+661	anniversary	記念日
+662	avenue	大通り
+663	explorer	冒険家
+664	essay	作文
+665	fitness	フィットネス
+666	aquarium	水族館
+667	headache	頭痛
+668	channel	チャンネル
+669	harvest	収穫
+670	bonus	ボーナス
+671	electronics	電子工学
+672	file	ファイル
+673	herb	ハーブ
+674	serious	重大な
+675	wealthy	裕福な
+676	terrible	恐ろしい
+677	quiet	静かな
+678	round	丸い
+679	crowded	混雑した
+680	amazing	驚くべき
+681	double	2倍の
+682	dental	歯の
+683	classical	古典の
+684	awake	目を覚まして
+685	equal	平等な
+686	alive	生きている
+687	audio	音声の
+688	brand-new	真新しい
+689	Christian	キリスト教の
+690	giant	巨大な
+691	rather	かなり
+692	twice	2回
+693	quite	かなり
+694	sometime	いつか
+695	ahead	前方に
+696	completely	完全に
+697	exactly	正確に
+698	forever	永久に
+699	whatever	～するものは何でも
+700	whoever	～する人は誰でも
+701	trust	を信頼する
+702	warn	～に警告する
+703	weigh	～の重さがある
+704	judge	を判断する
+705	ring	鳴る
+706	memorize	を暗記する
+707	reply	返事をする
+708	sail	航海する
+709	wave	手を振る
+710	imagine	を想像する
+711	shoot	を撃つ
+712	skip	を抜かす
+713	spell	をつづる
+714	swing	を揺らす
+715	wrap	を包む
+716	ignore	を無視する
+717	paste	を貼りつける
+718	knock	ノックする
+719	encourage	を励ます
+720	decrease	減少する
+721	access	～にアクセスする
+722	avoid	を避ける
+723	concern	～に関係する
+724	contain	を含む
+725	manage	を経営する
+726	approach	～に接近する
+727	beat	を負かす
+728	depend	頼る
+729	disappear	姿を消す
+730	act	を演じる
+731	castle	城
+732	salmon	サケ
+733	method	方法
+734	site	ウェブサイト
+735	tablet	タブレット
+736	opinion	意見
+737	instance	例
+738	instructor	指導者
+739	roll	ロールパン
+740	scene	場面
+741	style	様式
+742	policy	政策
+743	rush	突進
+744	sample	試供品
+745	partner	パートナー
+746	keyboard	キーボード
+747	tutor	家庭教師
+748	position	位置
+749	puzzle	パズル
+750	nation	国家
+751	scenery	風景
+752	highway	幹線道路
+753	lime	ライム
+754	objection	反対
+755	ketchup	ケチャップ
+756	rainbow	虹
+757	imagination	想像
+758	puppy	子犬
+759	row	列
+760	horn	角
+761	impression	印象
+762	leather	革
+763	lifeguard	監視員
+764	palace	宮殿
+765	photocopy	コピー
+766	pole	棒
+767	politician	政治家
+768	residence	住居
+769	spice	スパイス
+770	total	合計
+771	version	バージョン
+772	nephew	おい
+773	statue	像
+774	soldier	兵士
+775	patient	忍耐強い
+776	various	さまざまな
+777	laptop	ノートパソコンの
+778	violent	乱暴な
+779	noisy	騒々しい
+780	personal	個人の
+781	unique	独特の
+782	tight	きつい
+783	mixed	混じりあった
+784	typical	典型的な
+785	independent	自立した
+786	nonsmoking	禁煙の
+787	wooden	木製の
+788	narrow	狭い
+789	absent	欠席の
+790	sincerely	心から
+791	originally	最初は
+792	suddenly	突然
+793	poorly	下手に
+794	straight	まっすぐに
+795	upstairs	階上へ
+796	hopefully	願わくば
+797	physically	身体的に
+798	anywhere	どこにも～ない
+799	beyond	～を超えて
+800	below	～より下に
+801	chat	おしゃべりする
+802	advertise	を宣伝する
+803	appreciate	を感謝する
+804	exhibit	を展示する
+805	arrange	を取り決める
+806	freeze	凍る
+807	download	をダウンロードする
+808	handle	を扱う
+809	apologize	謝る
+810	cycle	自転車に乗る
+811	dislike	を嫌う
+812	exist	存在する
+813	float	浮かぶ
+814	flow	流れる
+815	arrest	を逮捕する
+816	bark	ほえる
+817	dig	を掘る
+818	divide	を分ける
+819	flash	ぴかっと光る
+820	babysit	子供を世話する
+821	force	～することを強いる
+822	increase	増加する
+823	reduce	を減らす
+824	prevent	を防げる
+825	lower	を下げる
+826	rise	昇る
+827	limit	を制限する
+828	recognize	を認める
+829	remain	～のままである
+830	promote	を促進する
+831	request	を要請する
+832	observe	を観察する
+833	overcome	を克服する
+834	astronaut	宇宙飛行士
+835	disease	病気
+836	chemical	化学製品
+837	education	教育
+838	biology	生物学
+839	ballet	バレエ
+840	generation	世代
+841	blanket	毛布
+842	gasoline	ガソリン
+843	clinic	診療所
+844	clerk	店員
+845	engineer	エンジニア
+846	boarding	搭乗
+847	document	文書
+848	emotion	感情
+849	congratulation	祝いの言葉
+850	ceremony	儀式
+851	billion	10億
+852	assistant	助手
+853	habit	癖
+854	fisherman	漁師
+855	atmosphere	雰囲気
+856	commercial	コマーシャル
+857	designer	デザイナー
+858	envelope	封筒
+859	figure	図
+860	beauty	美
+861	branch	枝
+862	diet	日常の食事
+863	edge	ふち
+864	enemy	敵
+865	graduation	卒業
+866	calculator	計算機
+867	attitude	態度
+868	disaster	災害
+869	forecast	予報
+870	furniture	家具
+871	angle	角度
+872	beetle	カブトムシ
+873	bookshelf	本棚
+874	comment	コメント
+875	happiness	幸福
+876	nationality	国籍
+877	fat	太った
+878	empty	空の
+879	confident	自信のある
+880	exact	正確な
+881	dead	死んだ
+882	curious	好奇心の強い
+883	familiar	よく知られた
+884	fantastic	素晴らしい
+885	alike	似ている
+886	calm	落ち着いた
+887	delicate	繊細な
+888	flat	平らな
+889	following	次の
+890	handsome	ハンサムな
+891	balanced	バランスの取れた
+892	brave	勇敢な
+893	careless	不注意な
+894	foolish	愚かな
+895	freezing	凍てつくように寒い
+896	gradually	徐々に
+897	eventually	結局
+898	besides	さらに
+899	apart	～から離れて
+900	hardly	ほとんど～ない
+901	insist	強く主張する
+902	refresh	～の気分をさわやかにする
+903	melt	溶ける
+904	seek	を探す
+905	slide	を滑らせる
+906	knit	を編む
+907	resemble	～に似ている
+908	suffer	苦しむ
+909	surf	を見て回る
+910	stick	くっつく
+911	trap	を罠でとらえる
+912	switch	を切り替える
+913	specialize	専門とする
+914	supply	を供給する
+915	survive	生き残る
+916	succeed	成功する
+917	tear	を裂く
+918	vote	投票する
+919	lock	～に鍵をかける
+920	harm	を傷つける
+921	award	を与える
+922	consider	～についてよく考える
+923	release	を解放する
+924	appear	出現する
+925	researcher	調査員
+926	metal	金属
+927	manager	管理者
+928	organization	組織
+929	mystery	ミステリー
+930	passenger	乗客
+931	population	人口
+932	image	イメージ
+933	level	レベル
+934	opportunity	機会
+935	mayor	市長
+936	quality	質
+937	signal	信号
+938	liquid	液体
+939	majority	大多数
+940	location	場所
+941	pain	苦痛
+942	reality	現実
+943	rental	レンタル料
+944	midnight	真夜中
+945	influence	影響
+946	restroom	トイレ
+947	shelter	避難所
+948	sheet	1枚
+949	operation	手術
+950	photograph	写真
+951	printer	プリンター
+952	rhythm	リズム
+953	shrimp	小エビ
+954	souvenir	記念品
+955	receipt	レシート
+956	lecture	講義
+957	rank	ランク
+958	horizon	地平線
+959	purse	ハンドバッグ
+960	harmony	調和
+961	lawyer	弁護士
+962	origin	起源
+963	pause	休止
+964	popularity	人気
+965	praise	称賛
+966	pride	プライド
+967	reaction	反応
+968	rumor	うわさ
+969	shadow	影
+970	smoker	喫煙者
+971	laughter	笑い
+972	miracle	奇跡
+973	niece	めい
+974	oyster	カキ
+975	pace	ペース
+976	penalty	罰
+977	prayer	祈り
+978	projector	プロジェクター
+979	sketch	スケッチ
+980	particular	特定の
+981	necessary	必要な
+982	natural	自然の
+983	smart	頭の良い
+984	negative	消極的な
+985	ordinary	普通の
+986	simple	簡単な
+987	salty	塩気のある
+988	polite	礼儀正しい
+989	pure	純粋な
+990	shy	恥ずかしがりの
+991	honest	正直な
+992	instant	即時の
+993	mad	狂気の
+994	hidden	隠された
+995	roast	焼いた
+996	immediately	直ちに
+997	naturally	自然に
+998	rarely	めったに～しない
+999	shortly	まもなく
+1000	seldom	めったに～ない
+1001	argue	～と主張する
+1002	concentrate	集中する
+1003	delay	を遅らせる
+1004	major	専攻する
+1005	achieve	を達成する
+1006	lack	欠けている
+1007	refer	言及する
+1008	burn	燃える
+1009	sink	沈む
+1010	consist	成る
+1011	spill	をこぼす
+1012	mention	～に言及する
+1013	admit	を認める
+1014	blow	吹く
+1015	pretend	～のふりをする
+1016	regret	を後悔する
+1017	treatment	治療
+1018	survey	調査
+1019	temple	寺
+1020	uniform	ユニフォーム
+1021	agency	代理店
+1022	temperature	気温
+1023	trend	流行
+1024	surface	表面
+1025	throat	のど
+1026	profit	利益
+1027	workplace	職場
+1028	symbol	シンボル
+1029	web	ウェブ
+1030	track	走路
+1031	task	仕事
+1032	spelling	つづり
+1033	summary	要約
+1034	thunderstorm	雷を伴う暴風雨
+1035	diamond	ダイヤモンド
+1036	manual	マニュアル
+1037	stomach	胃
+1038	theme	テーマ
+1039	thought	考え
+1040	victory	勝利
+1041	sword	剣
+1042	volume	音量
+1043	effect	影響
+1044	material	材料
+1045	statement	声明
+1046	coast	海岸
+1047	fear	恐れ
+1048	countryside	田舎
+1049	issue	発行
+1050	condition	状況
+1051	crime	犯罪
+1052	degree	度
+1053	sunlight	日光
+1054	capital	首都
+1055	behavior	行動
+1056	childhood	子供の頃
+1057	rate	割合
+1058	ancestor	祖先
+1059	earthquake	地震
+1060	freedom	自由
+1061	citizen	市民
+1062	entertainment	娯楽
+1063	frame	枠
+1064	fare	料金
+1065	fault	欠点
+1066	feature	特徴
+1067	honor	光栄
+1068	role	役
+1069	stressful	ストレスの原因となる
+1070	thin	薄い
+1071	worth	価値がある
+1072	tough	堅い
+1073	well-known	よく知られている
+1074	thick	太い
+1075	suitable	適した
+1076	square	正方形の
+1077	full-time	常勤の
+1078	unfriendly	不親切な
+1079	likely	～しそうである
+1080	official	公式の
+1081	clear	はっきりとした
+1082	ill	病気で
+1083	unusual	異常な
+1084	specific	特定の
+1085	opposite	反対の
+1086	pleasant	快い
+1087	awful	ひどい
+1088	direct	直接の
+1089	raw	生の
+1090	totally	完全に
+1091	surprisingly	驚くほど
+1092	wrongly	間違って
+1093	further	さらに
+1094	indeed	実は
+1095	extremely	極端に
+1096	perhaps	もしかすると
+1097	unless	～でない限り
+1098	unlike	～らしくない
+1099	within	～以内に
+1100	toward	～の方へ
+1101	take care of ～	～を世話する
+1102	take care	気をつける
+1103	a few ～	少数の～
+1104	used to do	以前は～であった
+1105	be used to doing	～するのに慣れている
+1106	these days	このごろ
+1107	too ～ to do	…するには～すぎる
+1108	the way ～	～のやり方
+1109	because of ～	～の理由で
+1110	get ～ to do	～に…させる
+1111	help ～ to do	～に…するのを助ける
+1112	pick up ～	～を取りに行く
+1113	pay for	～の費用を払う
+1114	such as ～	～のような
+1115	so ～ that …	とても～なので…
+1116	each other	お互い
+1117	at first	元は
+1118	do ～ good	～の役に立つ
+1119	thank ～ for …	～に…を感謝する
+1120	be worried about ～	～を心配する
+1121	in the past	昔は
+1122	live on ～	～を収入源として生活する
+1123	put out ～	～を消す
+1124	far away	遠くに
+1125	look like ～	～であるように見える
+1126	in fact	実際は
+1127	find out ～	～を見つけ出す
+1128	look up ～	～を調べる
+1129	clean up	すっかりきれいにする
+1130	take part in ～	～に参加する
+1131	keep on doing	～し続ける
+1132	put on ～	～を着用する
+1133	get married to ～	～と結婚する
+1134	be afraid of ～	～を恐れる
+1135	have time to do	～する時間を持つ
+1136	have enough ～ to do	…するのに十分な～を持っている
+1137	work for ～	～で働く
+1138	work on ～	～に取り組む
+1139	pick ～ up	～を車で迎えに行く
+1140	the first time ～	初めて～するとき
+1141	right away	直ちに
+1142	in order to	～するために
+1143	on time	時間通りに
+1144	see to it that ～	必ず～するように取り計らう
+1145	happen to do	たまたま～する
+1146	far from ～	～から遠い
+1147	be ready for ～	～の用意ができている
+1148	make a reservation	予約する
+1149	help ～ with …	～の…を手伝う
+1150	get lost	道に迷う
+1151	have a baby	赤ちゃんができる
+1152	what to do	何を～すべきか
+1153	the last ～ to do	最も…しそうにない～
+1154	instead of ～	～の代わりに
+1155	take ～ for …	～を…と間違える
+1156	as well	もまた
+1157	turn off ～	～を消す
+1158	come out	出る
+1159	next to ～	～の隣に
+1160	have fun	楽しむ
+1161	a piece of ～	1個の～
+1162	so that ～ can do	～が…できるように
+1163	on sale	売り出し中で
+1164	get better	上手になる
+1165	throw away ～	～を捨てる
+1166	do well	うまくいく
+1167	even if ～	たとえ～でも
+1168	one of the ～ …	最も～な…のうちの1つ
+1169	where to do	どこへで～すべきか
+1170	search ～ for …	…を求めて～を探す
+1171	thanks to ～	～のおかげで
+1172	be different from ～	～と異なる
+1173	sound like	～ようだ
+1174	on foot	徒歩で
+1175	except for ～	～を除いては
+1176	take off ～	～を脱ぐ
+1177	get ready for ～	～の準備をする
+1178	think about doing	～しようかなと思う
+1179	for free	無料で
+1180	a number of ～	たくさんの～
+1181	ask for ～	～を求める
+1182	set up ～	～を設計する
+1183	come up with ～	～を思いつく
+1184	at least	少なくとも
+1185	a variety of ～	さまざまな～
+1186	look after ～	～の世話をする
+1187	along with ～	～と一緒に
+1188	go into ～	～の中に入る
+1189	take place	行われる
+1190	give up ～	～をあきらめる
+1191	a couple of ～	2、3の～
+1192	translate ～ into …	～を…に翻訳する
+1193	on earth	一体全体
+1194	be in the hospital	入院している
+1195	decide on ～	～に決める
+1196	by oneself	独力で
+1197	try on ～	～を試着する
+1198	show ～ how to do	～に…する方法を教える
+1199	on one's way to ～	～へ行く途中で
+1200	spend ～ on …	…に～を使う
+1201	than usual	いつもより
+1202	walk around ～	～を歩き回る
+1203	up to ～	～次第である
+1204	be similar to ～	～と似ている
+1205	fall asleep	寝入る
+1206	so far	今までのところ
+1207	～ as well as …	…はもちろんのこと～も
+1208	be sure to do	必ず～する
+1209	graduate from ～	～を卒業する
+1210	be popular with ～	～に人気がある
+1211	in the end	結局
+1212	not ～ but …	～ではなく…
+1213	together with ～	～と一緒に
+1214	for the first time	初めて
+1215	feel like doing	～したい気がする
+1216	apply for ～	～に応募する
+1217	due to ～	～が原因で
+1218	make out ～	～を理解する
+1219	by the time ～	～するときまでに
+1220	check in	チェックインする
+1221	look over ～	～をざっと調べる
+1222	keep up with ～	～に遅れないでついていく
+1223	on the average	平均して
+1224	come down	降りてくる
+1225	go over ～	～を見直す
+1226	run after ～	～を追いかける
+1227	turn down ～	～を断る
+1228	introduce ～ to …	～を…に紹介する
+1229	get on ～	～に乗る
+1230	add ～ to …	～を…に加える
+1231	complain about ～	～について不平を言う
+1232	have time for ～	～のための時間を持つ
+1233	hear from ～	～から便りをもらう
+1234	line up	列を作る
+1235	take over ～	～を引き継ぐ
+1236	as soon as ～	～するとすぐに
+1237	call back	電話をかけ直す
+1238	go to the doctor	医者に診てもらう
+1239	in a group	グループで
+1240	not only ～ but also …	～ばかりではなく…もまた
+1241	shake hands	握手をする
+1242	tell ～ how to do	～に…する方法を教える
+1243	see if ～	～かどうか確かめる
+1244	for instance	例えば
+1245	fill out ～	～に書き込む
+1246	would like ～ to do	～に…してもらいたい
+1247	grow up to be ～	成長して～になる
+1248	by mistake	間違って
+1249	take a break	休憩する
+1250	as ～ as possible	できるだけ～
+1251	make sure that ～	～であることを確実にする
+1252	～ enough to do	…するのに十分～
+1253	prefer ～ to …	…より～を好む
+1254	go ahead	先に行く
+1255	the same ～ as …	…と同じ～
+1256	for fun	遊びで
+1257	stop by ～	～に立ち寄る
+1258	cut down ～	～を切り倒す
+1259	at a time	一度に
+1260	before long	まもなく
+1261	by chance	偶然に
+1262	exchange ～ for …	～と…を交換する
+1263	in addition to ～	～に加えて
+1264	make a mistake	間違える
+1265	in a hurry	急いで
+1266	in time for ～	～に間に合って
+1267	～	…, and so on,～や…など
+1268	be responsible for ～	～に対して責任がある
+1269	by nature	生まれつき
+1270	on purpose	わざと
+1271	at the moment	ちょうど今
+1272	send out ～	～を発送する
+1273	put down ～	～を書き留める
+1274	look forward to doing	～することを楽しみに待つ
+1275	be in trouble	困っている
+1276	all the year around	一年中
+1277	be about to do	まさに～するところである
+1278	be typical of ～	～に典型的である
+1279	by the side of ～	～のそばに
+1280	come to life	意識を回復する
+1281	compare ～ with …	～と…を比べる
+1282	cut off ～	～を切り離す
+1283	do ～ a favor	～に親切な行為をする
+1284	do the laundry	洗濯する
+1285	drop by ～	～にひょいっと立ち寄る
+1286	focus on ～	～に注意を集中する
+1287	go out	外出する
+1288	lose sight of ～	～を見失う
+1289	put off ～	～を延期する
+1290	show off ～	～を見せびらかす
+1291	stay away from ～	～に近づかないでいる
+1292	as you know	知っての通り
+1293	be over	終わっている
+1294	make friends with ～	～と友達になる
+1295	be made from ～	～で作られている
+1296	run away	逃げる
+1297	a pair of ～	1組の～
+1298	once a week	週に1度
+1299	fall down	落ちる
+1300	in a minute	すぐに
+1301	on one's way home	家に帰る途中で
+1302	across from ～	～の向こう側に
+1303	after a while	しばらくして
+1304	be away	留守にする
+1305	get out of ～	～から出る
+1306	have a chance to do	～する機会を待つ
+1307	run into ～	～と偶然出会う
+1308	sleep well	よく眠る
+1309	some other time	いつか別のときに
+1310	take ～ out of …	…から～を取り出す
+1311	suffer from ～	～に苦しむ
+1312	in particular	特に
+1313	be based on ～	～に基づいている
+1314	bring back ～	～を持ち帰る
+1315	no longer ～	もはや～でない
+1316	depend on ～	～に依存する
+1317	get rid of ～	～を取り除く
+1318	leave for ～	～に向けて出発する
+1319	turn on ～	～のスイッチを入れる
+1320	result in ～	結局～に終わる
+1321	be related to ～	～に関係がある
+1322	all the time	いつでも
+1323	for a while	しばらくの間
+1324	by the end of ～	～の終わりまでには
+1325	hold on	電話を切らないでおく
+1326	fill up ～	～を満たす
+1327	in other words	言い換えれば
+1328	in turn	順番に
+1329	point out ～	～を指摘する
+1330	after all	結局
+1331	for long	長い間
+1332	go wrong	うまくいかない
+1333	in line	整列して
+1334	in return for ～	～のお返しに
+1335	take a look at ～	～を見る
+1336	whether ～ or not	～であろうとなかろうと
+1337	be proud of ～	～を誇りに思う
+1338	be sold out	売り切れている
+1339	be full of ～	～でいっぱいである
+1340	get in ～	～に乗る
+1341	get together	集まる
+1342	by far	断然
+1343	for sure	確かに
+1344	let ～ down	～を失望させる
+1345	make up one's mind	決心する
+1346	take after ～	～に似ている
+1347	turn out to be	～であることがわかる
+1348	with luck	運がよければ
+1349	be against ～	～に反対である
+1350	check out	チェックアウトする
+1351	just in case	万が一に備えて
+1352	in public	人前で
+1353	look through ～	～にざっと目を通す
+1354	now that ～	今や～なので
+1355	of one's own	自分自身の
+1356	plenty of ～	たくさんの～
+1357	take one's time	ゆっくりやる
+1358	be sick in bed	病気で寝ている
+1359	give ～ a ride	～を車に乗せる
+1360	how far ～	どのくらい～
+1361	come true	実現する
+1362	at the end of ～	～の最後に
+1363	it takes ～ to do	～するのに…かかる
+1364	make a speech	演説をする
+1365	something ～ to do	何か…する～なもの
+1366	show ～ around …	～に…を案内する
+1367	against one's will	意思に反して
+1368	appeal to ～	～に訴える
+1369	at the most	最大でも
+1370	at length	ついに
+1371	at the risk of ～	～の危険を冒して
+1372	be capable of doing	～する能力がある
+1373	be free from ～	～から解放されている
+1374	be grateful for ～	～のことを感謝している
+1375	be independent of ～	～から独立している
+1376	be jealous of ～	～を妬んでいる
+1377	be out of order	故障している
+1378	be out of the question	あり得ない
+1379	be poor at ～	～が苦手である
+1380	be sick of ～	～にうんざりしている
+1381	be sure of ～	～を確信している
+1382	break up ～	～をばらばらにする
+1383	bring up ～	～を育てる
+1384	by heart	暗記して
+1385	care about ～	～を心配する
+1386	do without ～	～なしで済ます
+1387	feel at home	くつろぐ
+1388	feel sorry for ～	～のことですまないと思う
+1389	for a change	気分転換に
+1390	get away from ～	～から離れる
+1391	head for ～	～へ向かう
+1392	in a sense	ある意味では
+1393	in contrast	それとは対照的に
+1394	in shape	体調が良くて
+1395	keep an eye on ～	～から目を離さない
+1396	keep one's promise	約束を守る
+1397	look up to ～	～を尊敬する
+1398	lose control	自制を失う
+1399	lose one's balance	バランスを崩す
+1400	make oneself at home	くつろぐ
+1401	make sense	意味が通じる
+1402	none of one's business	～の知ったことではない
+1403	do nothing but do	～してばかりいる
+1404	on demand	要求があり次第
+1405	out of date	時代遅れの
+1406	participate in ～	～に参加する
+1407	pass by ～	～のそばを通る
+1408	reach out for ～	～を取ろうと手を伸ばす
+1409	separate ～ from …	～を…から分離する
+1410	speak up	はっきり言う
+1411	stand by ～	～を支援する
+1412	stand out	目立つ
+1413	succeed in ～	～に成功する
+1414	take a bite	一口食べる
+1415	The point is that ～	重要な点は～である
+1416	to the point	的を射た
+1417	with care	気をつけて
+1418	without fail	必ず
+1419	another ～ minutes	もう～分
+1420	as if ～	まるで～のように
+1421	be busy with ～	～で忙しい
+1422	be ready to do	～する準備ができている
+1423	be tired from ～	～で疲れている
+1424	dress up	正装する
+1425	eat out	外食する
+1426	either ～ or …	～か…のどちらか
+1427	for a minute	ちょっとの間
+1428	go on a tour	旅行に行く
+1429	go out of business	破産する
+1430	have a sore throat	のどが痛む
+1431	make an appointment with ～	～の予約をする
+1432	make sense of ～	～の意味を理解する
+1433	no more than ～	～にすぎない
+1434	on one's own	自身の力で
+1435	over and over again	何度も
+1436	put away ～	～を片付ける
+1437	see ～ off	～を見送る
+1438	stay in bed	寝ている
+1439	take a seat	座る
+1440	try one's best	全力を尽くして
+1441	when to do	いつ～すべきか
+1442	lead to ～	～に通じる
+1443	provide ～ with …	～に…を提供する
+1444	hand in ～	～を提出する
+1445	be aware of ～	～に気づいている
+1446	carry out ～	～を実行する
+1447	as a result of ～	～の結果として
+1448	as long as ～	～する限り
+1449	be involved in ～	～に関与する
+1450	break down	故障する
+1451	in conclusion	結論として
+1452	at the beginning of ～	～の初めに
+1453	on business	仕事で
+1454	all the way	はるばる
+1455	run out of ～	～がなくなる
+1456	be injured	けがをする
+1457	by accident	偶然に
+1458	come across ～	～に偶然出会う
+1459	in charge of ～	～を担当して
+1460	make an effort	努力する
+1461	pay attention to ～	～に注意する
+1462	rely on ～	～を頼る
+1463	be tired of ～	～に飽きる
+1464	change one's mind	気が変わる
+1465	a bunch of ～	一束の～
+1466	ahead of ～	～の前に
+1467	be expected to do	～するように期待されている
+1468	be impressed with ～	～に感銘を受ける
+1469	be in danger	危険にさらされている
+1470	be said to be ～	～であると言われている
+1471	be satisfied with ～	～に満足している
+1472	be unable to do	～することができない
+1473	catch up with ～	～に追いつく
+1474	from now on	今後ずっと
+1475	get along with ～	～とうまくやっていく
+1476	get over ～	～を克服する
+1477	go through ～	～を経験する
+1478	had better do	～した方がよい
+1479	hope for ～	～を願う
+1480	in advance	あらかじめ
+1481	in reality	実際は
+1482	in spite of ～	～にもかかわらず
+1483	in the long run	長い目で見れば
+1484	lead ～ to …	～を…に導く
+1485	leave ～ behind	～を置いていく
+1486	look out	用心する
+1487	make a difference	違いをもたらす
+1488	make up for ～	～の埋め合わせをする
+1489	mean to do	～するつもりである
+1490	on board	～に乗って
+1491	play an important role in ～	～で重要な役割を果たす
+1492	stand for ～	～を意味する
+1493	start with ～	～で始まる
+1494	take ～ back to …	～を…に返品する
+1495	to one's surprise	驚いたことに
+1496	watch out for ～	～に用心する
+1497	stay up late	夜更かしをする
+1498	as usual	いつものように
+1499	cheer ～ up	～を元気づける
+1500	name ～ after …	…にちなんで～を名付ける

@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>7月の勉強時間パーソナル診断｜受験の王様 × THINKING</title>
+<meta name="description" content="6問タップするだけで、あなた専用の7月の最低勉強時間（MIN）とタイプ別の戦い方がわかる無料診断。回答するたびに数字が絞り込まれます。">
+<meta property="og:title" content="7月の勉強時間パーソナル診断">
+<meta property="og:description" content="学年×部活×志望校で答えは全員違う。6問・約1分で、あなた専用のMINが出ます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1B2A4A;
+  --navy-deep:#12203B;
+  --gold:#C9A227;
+  --gold-light:#F3E7C3;
+  --vermilion:#D6452B;
+  --green:#2E7D4F;
+  --paper:#FBF8F1;
+  --ink:#26282E;
+  --line:#DDD6C6;
+  --serif:"Noto Serif JP",serif;
+  --sans:"Noto Sans JP",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+html{font-size:16px;}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:
+    linear-gradient(rgba(27,42,74,.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(27,42,74,.05) 1px, transparent 1px),
+    var(--paper);
+  background-size:22px 22px,22px 22px,auto;
+  min-height:100dvh;
+  line-height:1.75;
+}
+.app{
+  max-width:480px;
+  margin:0 auto;
+  min-height:100dvh;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+}
+
+/* ===== ヘッダー ===== */
+header{
+  padding:14px 20px 8px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  font-family:var(--serif);
+  font-weight:900;
+  color:var(--navy);
+  font-size:.95rem;
+  letter-spacing:.22em;
+}
+.brand small{
+  display:block;
+  font-family:var(--sans);
+  font-weight:500;
+  font-size:.6rem;
+  letter-spacing:.14em;
+  color:#8b8574;
+}
+.hozon{
+  background:var(--vermilion);
+  color:#fff;
+  font-weight:700;
+  font-size:.65rem;
+  letter-spacing:.12em;
+  padding:4px 10px 3px;
+  clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%);
+}
+
+/* ===== 進捗 ===== */
+.progress-wrap{padding:0 20px;height:26px;}
+.progress-row{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:.7rem;color:#8b8574;font-weight:500;letter-spacing:.08em;
+}
+.progress-row .back-btn{
+  background:none;border:none;color:var(--navy);
+  font-family:var(--sans);font-size:.75rem;font-weight:700;
+  cursor:pointer;padding:2px 4px;visibility:hidden;
+}
+.progress-row .back-btn.show{visibility:visible;}
+.pbar{
+  height:4px;background:#E7E1D1;border-radius:2px;overflow:hidden;margin-top:2px;
+}
+.pbar i{
+  display:block;height:100%;width:0%;
+  background:linear-gradient(90deg,var(--navy),var(--gold));
+  transition:width .45s cubic-bezier(.22,1,.36,1);
+}
+
+/* ===== 画面共通 ===== */
+main{flex:1;position:relative;overflow:hidden;padding-bottom:130px;}
+.screen{
+  position:absolute;inset:0;
+  padding:6px 20px 24px;
+  opacity:0;transform:translateX(28px);
+  pointer-events:none;
+  transition:opacity .32s ease,transform .32s cubic-bezier(.22,1,.36,1);
+  overflow-y:auto;
+}
+.screen.active{opacity:1;transform:translateX(0);pointer-events:auto;}
+
+/* ===== スタート画面 ===== */
+.start-frame{
+  border:1.5px solid var(--gold);
+  background:var(--navy-deep);
+  color:#fff;
+  padding:30px 22px 24px;
+  text-align:center;
+  margin-top:6px;
+  position:relative;
+}
+.start-kicker{
+  color:var(--gold);
+  font-size:.75rem;
+  letter-spacing:.38em;
+  margin-bottom:12px;
+  font-weight:500;
+}
+.start-title{
+  font-family:var(--serif);
+  font-weight:900;
+  font-size:1.9rem;
+  line-height:1.4;
+  letter-spacing:.03em;
+}
+.start-title em{font-style:normal;color:#FF6B4A;}
+.start-sub{
+  margin-top:12px;
+  font-size:.84rem;
+  color:#D8D2C2;
+  line-height:2;
+}
+.start-sub b{color:var(--gold);}
+.start-points{
+  display:flex;gap:8px;margin-top:20px;
+}
+.start-points div{
+  flex:1;border:1px solid rgba(255,255,255,.3);
+  padding:10px 4px;font-size:.68rem;line-height:1.5;color:#E8E2D2;
+}
+.start-points b{
+  display:block;color:var(--gold);
+  font-family:var(--serif);font-size:.95rem;margin-bottom:2px;
+}
+.countdown{
+  margin-top:16px;
+  font-size:.75rem;color:#C8C2B2;letter-spacing:.1em;
+}
+.countdown b{
+  font-family:var(--serif);color:#FF6B4A;font-size:1.15rem;padding:0 2px;
+}
+.start-note{
+  text-align:center;font-size:.72rem;color:#8b8574;margin-top:12px;
+}
+.btn-primary{
+  display:block;width:100%;
+  margin-top:18px;
+  background:var(--vermilion);
+  color:#fff;border:none;cursor:pointer;
+  font-family:var(--sans);font-weight:900;font-size:1.05rem;
+  letter-spacing:.14em;
+  padding:16px;
+  border-radius:4px;
+  box-shadow:0 4px 0 #A33017;
+  transition:transform .08s,box-shadow .08s;
+}
+.btn-primary:active{transform:translateY(3px);box-shadow:0 1px 0 #A33017;}
+
+/* ===== 質問画面 ===== */
+.q-eyebrow{
+  display:inline-block;
+  background:var(--navy);color:#fff;
+  font-family:var(--serif);font-weight:600;
+  font-size:.72rem;letter-spacing:.18em;
+  padding:3px 12px;margin-bottom:10px;
+}
+.q-text{
+  font-family:var(--serif);
+  font-weight:900;
+  font-size:1.26rem;
+  color:var(--navy);
+  line-height:1.55;
+  margin-bottom:6px;
+}
+.q-hint{font-size:.76rem;color:#8b8574;margin-bottom:14px;}
+.opts{display:flex;flex-direction:column;gap:10px;}
+.opt{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  width:100%;text-align:left;
+  background:#fff;
+  border:1.5px solid var(--line);
+  border-left:4px solid var(--navy);
+  border-radius:4px;
+  padding:13px 14px;
+  font-family:var(--sans);
+  font-size:.92rem;font-weight:700;color:var(--ink);
+  cursor:pointer;
+  transition:transform .1s,border-color .15s,background .15s;
+}
+.opt small{
+  display:block;font-weight:500;font-size:.72rem;color:#8b8574;line-height:1.5;
+}
+.opt .mark{
+  flex:none;width:22px;height:22px;border-radius:50%;
+  border:2px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-size:.7rem;color:transparent;
+  transition:all .15s;
+}
+.opt:active{transform:scale(.985);}
+.opt.selected{
+  border-color:var(--vermilion);
+  border-left-color:var(--vermilion);
+  background:#FDF3EF;
+}
+.opt.selected .mark{
+  border-color:var(--vermilion);
+  background:var(--vermilion);
+  color:#fff;
+}
+
+/* ===== ティザーチップ ===== */
+.teaser{
+  position:fixed;
+  bottom:118px;left:50%;
+  transform:translate(-50%,14px);
+  width:calc(100% - 40px);max-width:440px;
+  background:var(--navy);
+  border-left:4px solid var(--gold);
+  color:#fff;
+  font-size:.8rem;font-weight:700;
+  line-height:1.6;
+  padding:10px 14px;
+  border-radius:4px;
+  box-shadow:0 6px 18px rgba(18,32,59,.35);
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .25s ease,transform .25s cubic-bezier(.22,1,.36,1);
+  z-index:60;
+}
+.teaser.show{opacity:1;transform:translate(-50%,0);}
+.teaser .tz-icon{color:var(--gold);margin-right:6px;}
+
+/* ===== MINレンジメーター（固定フッター） ===== */
+.meter{
+  position:fixed;bottom:0;left:50%;transform:translateX(-50%);
+  width:100%;max-width:480px;
+  background:var(--navy-deep);
+  color:#fff;
+  padding:10px 20px 12px;
+  border-top:2px solid var(--gold);
+  z-index:50;
+  transition:transform .4s cubic-bezier(.22,1,.36,1);
+}
+.meter.hidden{transform:translate(-50%,110%);}
+.meter-label{
+  font-size:.62rem;letter-spacing:.2em;color:var(--gold);
+  text-align:center;font-weight:700;margin-bottom:6px;
+}
+.range-row{
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:6px;
+}
+.range-row .cap{
+  flex:none;width:2.4em;
+  font-size:.7rem;color:#C8C2B2;font-weight:700;
+}
+.range-track{
+  flex:1;height:12px;position:relative;
+  background:rgba(255,255,255,.12);
+  border-radius:6px;
+}
+.range-band{
+  position:absolute;top:0;height:100%;
+  background:linear-gradient(90deg,var(--gold),#E3C55A);
+  border-radius:6px;
+  transition:left .55s cubic-bezier(.22,1,.36,1),width .55s cubic-bezier(.22,1,.36,1),background .3s;
+  min-width:10px;
+}
+.range-band.locked{background:var(--vermilion);}
+.range-val{
+  flex:none;width:5.4em;text-align:right;
+  font-family:var(--serif);font-weight:900;font-size:.98rem;
+  color:#fff;white-space:nowrap;
+}
+.range-val small{font-size:.64rem;font-weight:500;color:#C8C2B2;}
+.range-val.locked{color:#FF8A6E;}
+.meter-note{
+  text-align:center;font-size:.6rem;color:#7d7a6e;letter-spacing:.06em;
+}
+.meter-note b{color:var(--gold);}
+
+/* ===== 計測中アニメ ===== */
+.calc-wrap{text-align:center;padding-top:64px;}
+.calc-ring{
+  width:84px;height:84px;margin:0 auto 20px;
+  border:3px solid #E7E1D1;
+  border-top-color:var(--vermilion);
+  border-radius:50%;
+  animation:spin 1s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg);}}
+.calc-text{
+  font-family:var(--serif);font-weight:900;color:var(--navy);
+  font-size:1.1rem;letter-spacing:.1em;
+}
+.calc-sub{font-size:.78rem;color:#8b8574;margin-top:6px;}
+
+/* ===== 結果画面 ===== */
+.result-head{text-align:center;margin:2px 0 12px;}
+.result-head .rk{
+  display:inline-block;
+  background:var(--navy);color:#fff;
+  font-family:var(--serif);font-size:.75rem;letter-spacing:.28em;
+  padding:4px 16px;
+}
+/* スクショフレーム */
+.shot-zone{
+  position:relative;
+  padding:14px 10px 12px;
+}
+.shot-zone::before,.shot-zone::after,
+.shot-zone .corner-b::before,.shot-zone .corner-b::after{
+  content:"";position:absolute;width:22px;height:22px;
+  border-color:var(--vermilion);border-style:solid;
+}
+.shot-zone::before{top:0;left:0;border-width:3px 0 0 3px;}
+.shot-zone::after{top:0;right:0;border-width:3px 3px 0 0;}
+.shot-zone .corner-b::before{bottom:0;left:0;border-width:0 0 3px 3px;}
+.shot-zone .corner-b::after{bottom:0;right:0;border-width:0 3px 3px 0;}
+.shot-tag{
+  position:absolute;top:-11px;left:50%;transform:translateX(-50%);
+  background:var(--vermilion);color:#fff;
+  font-size:.66rem;font-weight:900;letter-spacing:.14em;
+  padding:3px 14px;border-radius:20px;
+  white-space:nowrap;z-index:2;
+}
+.result-card{
+  background:#fff;
+  border:2.5px solid var(--navy);
+  border-radius:6px;
+  padding:20px 16px 14px;
+  position:relative;
+  text-align:center;
+  box-shadow:0 3px 0 rgba(27,42,74,.15);
+}
+.result-min-label{
+  font-size:.72rem;font-weight:700;color:var(--vermilion);
+  letter-spacing:.2em;margin-bottom:4px;
+}
+.result-nums{display:flex;justify-content:center;gap:8px;}
+.rnum{
+  flex:1;
+  border:1.5px dashed var(--line);
+  border-radius:4px;
+  padding:10px 4px 8px;
+}
+.rnum .cap{font-size:.72rem;color:#8b8574;font-weight:700;}
+.rnum .big{
+  font-family:var(--serif);font-weight:900;
+  font-size:2.6rem;line-height:1.15;
+  color:var(--navy);
+}
+.rnum.holiday .big{color:var(--vermilion);}
+.rnum .unit{font-size:.8rem;font-weight:700;color:#8b8574;}
+.type-line{
+  margin-top:10px;
+  font-size:.78rem;color:#555;
+}
+.type-line b{color:var(--vermilion);font-family:var(--serif);font-size:.9rem;}
+.stamp{
+  position:absolute;top:-14px;right:-4px;
+  width:78px;height:78px;
+  border:3px solid var(--vermilion);
+  border-radius:50%;
+  color:var(--vermilion);
+  font-family:var(--serif);font-weight:900;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:rgba(251,248,241,.92);
+  transform:rotate(9deg) scale(3);
+  opacity:0;
+  line-height:1.2;
+  z-index:3;
+}
+.stamp .tname{font-size:1.15rem;letter-spacing:.05em;}
+.stamp .tcap{font-size:.5rem;letter-spacing:.14em;}
+.stamp.on{
+  animation:stampIn .45s cubic-bezier(.34,1.4,.64,1) forwards;
+  animation-delay:.85s;
+}
+@keyframes stampIn{
+  0%{transform:rotate(9deg) scale(3);opacity:0;}
+  60%{transform:rotate(-6deg) scale(.94);opacity:1;}
+  100%{transform:rotate(-8deg) scale(1);opacity:1;}
+}
+.retire-note{
+  margin-top:10px;
+  background:var(--gold-light);
+  border-left:3px solid var(--gold);
+  font-size:.76rem;text-align:left;
+  padding:8px 12px;border-radius:2px;
+}
+.retire-note b{color:var(--navy);}
+
+/* 実現可能性バー */
+.feas{
+  margin-top:6px;
+  background:#fff;border:1.5px solid var(--line);border-radius:6px;
+  padding:13px 14px 11px;
+}
+.feas-title{
+  font-size:.8rem;font-weight:900;color:var(--navy);margin-bottom:8px;
+  letter-spacing:.04em;
+}
+.feas-bar{
+  height:22px;background:#EFEAD9;border-radius:4px;overflow:hidden;display:flex;
+}
+.feas-bar .seg{
+  height:100%;width:0%;
+  transition:width .9s cubic-bezier(.22,1,.36,1);
+  transition-delay:.3s;
+}
+.seg.desk{background:var(--navy);}
+.seg.gap-seg{background:repeating-linear-gradient(45deg,var(--vermilion),var(--vermilion) 5px,#E8836E 5px,#E8836E 10px);}
+.seg.slack{background:var(--green);}
+.feas-legend{
+  display:flex;gap:12px;flex-wrap:wrap;
+  font-size:.66rem;color:#666;margin-top:7px;
+}
+.feas-legend i{
+  display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:4px;vertical-align:-1px;
+}
+.feas-msg{margin-top:8px;font-size:.78rem;line-height:1.7;}
+.feas-msg.ok{color:var(--green);font-weight:700;}
+.feas-msg.warn{color:var(--vermilion);font-weight:700;}
+.feas-msg span{display:block;font-weight:500;color:#555;font-size:.74rem;}
+
+/* ポイント */
+.points{margin-top:8px;}
+.points-title{
+  font-family:var(--serif);font-weight:900;color:var(--navy);
+  font-size:1.02rem;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.points-title::after{content:"";flex:1;height:2px;background:var(--navy);}
+.point{
+  background:#fff;border:1.5px solid var(--line);border-radius:6px;
+  padding:12px 14px;margin-bottom:9px;
+  display:flex;gap:11px;align-items:flex-start;
+}
+.point .pn{
+  flex:none;
+  font-family:var(--serif);font-weight:900;
+  color:#fff;background:var(--vermilion);
+  width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.85rem;margin-top:2px;
+}
+.point .pt-body b{
+  display:block;font-size:.88rem;color:var(--navy);line-height:1.5;margin-bottom:2px;
+}
+.point .pt-body p{font-size:.78rem;color:#555;line-height:1.7;}
+
+/* CTA */
+.cta{
+  margin-top:20px;
+  background:var(--navy-deep);
+  border:1.5px solid var(--gold);
+  border-radius:6px;
+  color:#fff;
+  padding:22px 16px 18px;
+  text-align:center;
+}
+.cta-t{
+  font-family:var(--serif);font-weight:900;color:var(--gold);
+  font-size:1.12rem;letter-spacing:.05em;margin-bottom:10px;
+  line-height:1.6;
+}
+.cta p{font-size:.82rem;color:#E8E2D2;line-height:1.95;}
+.cta p b{color:#fff;}
+.cta-step{display:flex;gap:6px;margin-top:14px;}
+.cta-step div{
+  flex:1;border:1px solid rgba(255,255,255,.28);
+  font-size:.66rem;color:#D8D2C2;padding:9px 4px;line-height:1.55;
+}
+.cta-step b{display:block;color:var(--gold);font-size:.72rem;margin-bottom:2px;}
+.btn-line{
+  display:block;width:100%;margin-top:16px;
+  background:#06C755;color:#fff;text-decoration:none;
+  font-weight:900;font-size:.98rem;letter-spacing:.06em;
+  padding:15px 8px;border-radius:4px;
+  box-shadow:0 4px 0 #059B43;
+  line-height:1.5;
+}
+.btn-line small{display:block;font-weight:700;font-size:.68rem;opacity:.9;}
+.btn-line:active{transform:translateY(3px);box-shadow:0 1px 0 #059B43;}
+.btn-retry{
+  display:block;width:100%;margin-top:12px;
+  background:none;border:1.5px solid var(--line);border-radius:4px;
+  font-family:var(--sans);color:#8b8574;font-weight:700;font-size:.82rem;
+  padding:11px;cursor:pointer;
+}
+.result-footer{
+  text-align:center;font-size:.62rem;color:#a29a86;
+  letter-spacing:.14em;margin:22px 0 10px;line-height:2;
+}
+.philosophy-line{
+  font-family:var(--serif);font-weight:600;color:var(--navy);font-size:.8rem;letter-spacing:.12em;
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important;}
+}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header>
+    <div class="brand">受験の王様<small>オンライン塾 THINKING</small></div>
+    <div class="hozon">保存版</div>
+  </header>
+
+  <div class="progress-wrap">
+    <div class="progress-row">
+      <button class="back-btn" id="backBtn" type="button">← 前の質問へ</button>
+      <span id="progressText"></span>
+    </div>
+    <div class="pbar"><i id="pbarFill"></i></div>
+  </div>
+
+  <main id="main">
+
+    <!-- スタート -->
+    <section class="screen active" data-screen="start">
+      <div class="start-frame">
+        <div class="start-kicker">平均を信じた人から、落ちていく</div>
+        <h1 class="start-title">あなたの7月、<br>1日<em>何時間</em>が正解？</h1>
+        <p class="start-sub">学年 × 部活 × 志望校 × 今の偏差値。<br>組み合わせで答えは<b>全員違います。</b></p>
+        <div class="start-points">
+          <div><b>6問</b>タップだけ<br>約1分で完了</div>
+          <div><b>回答ごと</b>に<br>数字が絞られる</div>
+          <div><b>あなた専用</b>の<br>戦い方つき</div>
+        </div>
+        <div class="countdown" id="countdown"></div>
+      </div>
+      <button class="btn-primary" id="startBtn" type="button">自分の数字を出す →</button>
+      <p class="start-note">画面下に「予測レンジ」が出ます。答えるほど狭まり、最後の1問で確定します。</p>
+    </section>
+
+    <!-- 質問（JSで生成） -->
+
+    <!-- 計測中 -->
+    <section class="screen" data-screen="calc">
+      <div class="calc-wrap">
+        <div class="calc-ring"></div>
+        <div class="calc-text" id="calcText">あなたのMINを設計中…</div>
+        <p class="calc-sub" id="calcSub">基礎ライン × 4つの補正を計算しています</p>
+      </div>
+    </section>
+
+    <!-- 結果 -->
+    <section class="screen" data-screen="result">
+      <div class="result-head"><span class="rk">診 断 結 果</span></div>
+
+      <div class="shot-zone">
+        <span class="corner-b"></span>
+        <span class="shot-tag">📸 ここをスクショ</span>
+
+        <div class="result-card">
+          <div class="stamp" id="stamp">
+            <span class="tname" id="stampName"></span>
+            <span class="tcap">7月タイプ</span>
+          </div>
+          <div class="result-min-label">7月のあなたの最低ライン（MIN）</div>
+          <div class="result-nums">
+            <div class="rnum">
+              <div class="cap">平日</div>
+              <div class="big" id="rWeekday">0</div>
+              <div class="unit">時間／日</div>
+            </div>
+            <div class="rnum holiday">
+              <div class="cap">休日</div>
+              <div class="big" id="rHoliday">0</div>
+              <div class="unit">時間／日</div>
+            </div>
+          </div>
+          <div class="type-line" id="typeLine"></div>
+          <div class="retire-note" id="retireNote" style="display:none;"></div>
+        </div>
+      </div>
+
+      <div class="feas">
+        <div class="feas-title">📐 平日の実現可能性チェック</div>
+        <div class="feas-bar" id="feasBar">
+          <div class="seg desk" id="segDesk"></div>
+          <div class="seg slack" id="segSlack"></div>
+          <div class="seg gap-seg" id="segGap"></div>
+        </div>
+        <div class="feas-legend">
+          <span><i style="background:var(--navy)"></i>机に向かえる時間</span>
+          <span><i style="background:var(--green)"></i>すきま時間</span>
+          <span><i style="background:var(--vermilion)"></i>不足分</span>
+        </div>
+        <div class="feas-msg" id="feasMsg"></div>
+      </div>
+
+      <div class="points">
+        <div class="points-title">あなた専用・7月の戦い方</div>
+        <div id="pointsList"></div>
+      </div>
+
+      <div class="cta">
+        <div class="cta-t">この結果、スクショして<br>LINEで送ってください。</div>
+        <p>この夏、<b>本気で成績を伸ばしたい人</b>の相談に乗っていきます。<br>診断結果のスクショを送ってもらえれば、<br>あなたの時間の「中身」まで一緒に設計します。</p>
+        <div class="cta-step">
+          <div><b>STEP 1</b>上の結果を<br>スクショ保存</div>
+          <div><b>STEP 2</b>LINEを<br>友だち追加</div>
+          <div><b>STEP 3</b>スクショを送って<br>相談スタート</div>
+        </div>
+        <a class="btn-line" id="lineBtn" href="#" target="_blank" rel="noopener">LINEで結果を送る<small>友だち追加 → スクショ送信（無料）</small></a>
+      </div>
+
+      <button class="btn-retry" id="retryBtn" type="button">もう一度診断する</button>
+
+      <div class="result-footer">
+        <span class="philosophy-line">受験は根性じゃなく、設計。</span><br>
+        受験の王様 ｜ オンライン塾 THINKING
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ティザーチップ -->
+  <div class="teaser" id="teaser"></div>
+
+  <!-- MINレンジメーター -->
+  <div class="meter hidden" id="meter">
+    <div class="meter-label" id="meterLabel">あなたのMIN 予測レンジ</div>
+    <div class="range-row">
+      <span class="cap">平日</span>
+      <div class="range-track"><div class="range-band" id="bandWd"></div></div>
+      <span class="range-val" id="valWd">–</span>
+    </div>
+    <div class="range-row" style="margin-bottom:4px;">
+      <span class="cap">休日</span>
+      <div class="range-track"><div class="range-band" id="bandHd"></div></div>
+      <span class="range-val" id="valHd">–</span>
+    </div>
+    <div class="meter-note" id="meterNote">回答するほど、あなたの数字に絞り込まれます</div>
+  </div>
+
+</div>
+
+<script>
+/* ================= 設定 ================= */
+const LINE_URL = "https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=JDVkS9&liff_id=1656043253-rkMxPZMQ";
+const SUMMER_START = "2026-07-18"; // 夏休み初日の目安（毎年更新）
+const TRACK_MAX = 10;              // レンジバーの最大時間
+
+/* ================= 基礎ラインデータ ================= */
+const BASE = {
+  c2:  { none:[3,4], club:[1,3] },
+  c3:  { none:[4,5], club:[2,4] },
+  h1:  { none:[2,4], club:[2,3] },
+  h2:  { none:[3,5], club:[3,4] },
+  h3:  { none:[4,7], club:[3,5] },
+  top: { none:[5,8], club:[4,6] }
+};
+
+/* ================= 質問定義 ================= */
+const QUESTIONS = [
+  {
+    id:"grade",
+    eyebrow:"Q1 / 6",
+    text:()=>"いま、何年生ですか？",
+    hint:()=>"学年で基礎ラインが決まります",
+    options:()=>[
+      {label:"中学2年生", value:"c2"},
+      {label:"中学3年生（高校受験生）", value:"c3"},
+      {label:"高校1年生", value:"h1"},
+      {label:"高校2年生", value:"h2"},
+      {label:"高校3年生・既卒（大学受験生）", value:"h3"}
+    ],
+    teaser:{
+      c2:"中2の7月の貯金は、受験期に3倍になって返ってきます",
+      c3:"中3の夏を制した人から、合格圏に入っていきます",
+      h1:"高1の夏は「差がつく前」の最後のボーナス期間です",
+      h2:"高2の7月は、全学年で一番差がつく分岐点です…",
+      h3:"受験の夏。ここからの設計が合否を分けます"
+    }
+  },
+  {
+    id:"club",
+    eyebrow:"Q2 / 6",
+    text:()=>"部活の状況を教えてください",
+    hint:()=>"部活の負荷でスタート地点が変わります",
+    options:()=>[
+      {label:"部活なし・すでに引退した", value:"none"},
+      {label:"部活あり（週1〜3日）", sub:"ゆるめの活動", value:"light"},
+      {label:"部活あり（週4日以上）", sub:"ガチ勢。休日も練習あり", value:"heavy"},
+      {label:"7月中に引退する予定", sub:"引退後の数字も出します", value:"retire"}
+    ],
+    teaser:{
+      none:"時間がある分「置き場所」が勝負。結果で詳しく出します",
+      light:"週1〜3なら、平日の型さえ作れば十分戦えます",
+      heavy:"部活ガチ勢のカギは「朝」。理由は結果で…",
+      retire:"引退直後、実は一番危ない2週間があります…"
+    }
+  },
+  {
+    id:"target",
+    eyebrow:"Q3 / 6",
+    text:(a)=> isJHS(a) ? "志望している高校のレベルは？" : "志望している大学のレベルは？",
+    hint:()=>"現時点の第一志望でOK。あとで変えて大丈夫です",
+    options:(a)=> isJHS(a) ? [
+      {label:"地域トップ校・難関私立", value:"top"},
+      {label:"上位校", value:"upper"},
+      {label:"中堅校", value:"mid"},
+      {label:"まだ決めていない", sub:"あとで志望を上げられる状態を作ります", value:"undecided"}
+    ] : [
+      {label:"国公立・早慶上理レベル", value:"top"},
+      {label:"GMARCH・関関同立レベル", value:"upper"},
+      {label:"日東駒専・産近甲龍レベルなど", value:"mid"},
+      {label:"まだ決めていない", sub:"あとで志望を上げられる状態を作ります", value:"undecided"}
+    ],
+    teaser:{
+      top:"難関志望。基準が1段上がりました",
+      upper:"このラインは、夏の伸びがそのまま合否に直結します",
+      mid:"堅実な選択。だからこそ「確実に守る数字」を出します",
+      undecided:"未定の人ほど、今やるべきことがあります…"
+    }
+  },
+  {
+    id:"gap",
+    eyebrow:"Q4 / 6",
+    text:()=>"直近の模試の偏差値と、志望校の目安偏差値の差は？",
+    hint:()=>"だいたいの感覚でOKです",
+    options:()=>[
+      {label:"10以上足りない", sub:"逆転をねらうゾーン", value:"g10"},
+      {label:"5〜9くらい足りない", value:"g5"},
+      {label:"差は5未満／すでに届いている", value:"g0"},
+      {label:"模試をまだ受けていない", value:"gnone"}
+    ],
+    teaser:{
+      g10:"差10以上。逆転には「順番」があります。結果で必ず読んでください",
+      g5:"あと一歩。この夏で射程圏に入ります",
+      g0:"守りに入ると抜かれます。逃げ切りにも設計が要ります",
+      gnone:"現在地の測定、実は7月中が締切です…"
+    }
+  },
+  {
+    id:"desk",
+    eyebrow:"Q5 / 6",
+    text:()=>"平日、現実的に机に向かえる時間は？",
+    hint:()=>"理想ではなく「物理的に確保できる」時間で答えてください",
+    options:()=>[
+      {label:"1時間くらいが限界", value:1},
+      {label:"2時間はいける", value:2},
+      {label:"3時間はいける", value:3},
+      {label:"4時間以上いける", value:4.5}
+    ],
+    teaser:{
+      _all:"その時間が「足りているか」、次の質問で判定します…"
+    }
+  },
+  {
+    id:"slack",
+    eyebrow:"Q6 / 6",
+    text:()=>"最後の質問。平日の「すきま時間」は合計どのくらい？",
+    hint:()=>"通学の電車・朝の10分・昼休みなどの合計",
+    options:()=>[
+      {label:"合計60分以上ある", sub:"電車通学など", value:"s60"},
+      {label:"合計30〜59分くらい", value:"s30"},
+      {label:"ほとんどない", sub:"徒歩・自転車通学など", value:"s0"}
+    ],
+    teaser:{}
+  }
+];
+
+const OPTION_VALUES = {
+  grade:["c2","c3","h1","h2","h3"],
+  club:["none","light","heavy","retire"],
+  target:["top","upper","mid","undecided"],
+  gap:["g10","g5","g0","gnone"]
+  // desk/slack はMINに影響しないためレンジ計算から除外
+};
+
+function isJHS(a){ return a.grade==="c2"||a.grade==="c3"; }
+
+/* ================= 計算ロジック ================= */
+function calc(a){
+  const clubOn = (a.club==="light"||a.club==="heavy"||a.club==="retire");
+  const col = clubOn ? "club" : "none";
+  const useTopRow = (a.grade==="h3" && a.target==="top");
+  const row = useTopRow ? BASE.top : BASE[a.grade||"h2"];
+  let wd = row[col][0];
+  let hd = row[col][1];
+
+  let adj = 0, adjWd = 0, adjHd = 0;
+
+  if(a.target==="top" && !useTopRow){ adjWd+=1; adjHd+=1; adj+=1; }
+  else if(a.target==="upper"){ adjWd+=.5; adjHd+=.5; adj+=.5; }
+  else if(a.target==="undecided"){ adjWd+=.5; adjHd+=.5; adj+=.5; }
+  else if(a.target==="top" && useTopRow){ adj+=1; }
+
+  if(a.gap==="g10"){ adjWd+=1; adjHd+=1; adj+=1; }
+  else if(a.gap==="g5"||a.gap==="gnone"){ adjWd+=.5; adjHd+=.5; adj+=.5; }
+
+  if(a.club==="heavy"){ adjHd+=.5; adj+=.5; }
+
+  let minWd = round5(wd+adjWd);
+  let minHd = round5(hd+adjHd);
+  minHd = Math.min(minHd, 10);
+  if(minHd < minWd) minHd = minWd;
+
+  let afterRetire = null;
+  if(a.club==="retire"){
+    const r2 = useTopRow ? BASE.top : BASE[a.grade];
+    afterRetire = {
+      wd: round5(r2.none[0]+adjWd),
+      hd: Math.min(round5(r2.none[1]+adjHd),10)
+    };
+    if(afterRetire.hd < afterRetire.wd) afterRetire.hd = afterRetire.wd;
+  }
+
+  let type;
+  if(adj<=0.5) type={name:"貯金型",key:"savings",desc:"量より「継続日数」で勝つタイプ"};
+  else if(adj<=1.5) type={name:"標準型",key:"standard",desc:"休日の使い方で合否が分かれるタイプ"};
+  else type={name:"逆転型",key:"reversal",desc:"根性ではなく「順番」で勝つタイプ"};
+
+  const desk = a.desk ?? 0;
+  const slackH = a.slack==="s60" ? 1 : a.slack==="s30" ? .5 : 0;
+  const capacity = desk + slackH;
+  const shortage = Math.max(0, round5(minWd - capacity));
+
+  return {minWd,minHd,adj,type,afterRetire,desk,slackH,capacity,shortage,useTopRow};
+}
+function round5(x){ return Math.round(x*2)/2; }
+function fmt(x){ return (x%1===0) ? String(x) : x.toFixed(1); }
+
+/* ---- 予測レンジ：未回答の全組み合わせを列挙してmin/maxを取る ---- */
+function rangeEstimate(a){
+  const keys=Object.keys(OPTION_VALUES);
+  let combos=[{}];
+  for(const k of keys){
+    const vals = a[k]!==undefined ? [a[k]] : OPTION_VALUES[k];
+    const next=[];
+    for(const c of combos) for(const v of vals) next.push(Object.assign({},c,{[k]:v}));
+    combos=next;
+  }
+  let wMin=99,wMax=0,hMin=99,hMax=0;
+  for(const c of combos){
+    const r=calc(c);
+    if(r.minWd<wMin)wMin=r.minWd; if(r.minWd>wMax)wMax=r.minWd;
+    if(r.minHd<hMin)hMin=r.minHd; if(r.minHd>hMax)hMax=r.minHd;
+  }
+  return {wMin,wMax,hMin,hMax};
+}
+
+/* ================= ポイント生成 ================= */
+function buildPoints(a,r){
+  const P=[];
+  const jhs = isJHS(a);
+
+  if(r.shortage>0){
+    P.push({
+      t:`不足分の ${fmt(r.shortage)}時間 は「朝」と「休日」で回収する`,
+      d:`いまの生活のままだと平日MINに届きません。①起床を30分早めて朝学習に充てる ②すきま時間を発掘する ③残りは休日に上乗せして週間合計で追いつく。この順で埋めてください。夜ふかしでの回収は翌日が崩れるので禁止です。`
+    });
+  }
+  if(a.club==="heavy"){
+    P.push({
+      t:"部活ガチ勢は「朝が命」",
+      d:"放課後は体力が残っていない前提で設計します。朝30分の英単語を固定枠にして、帰宅後は科目を1つに絞って集中。休日+0.5時間は平日に増やせない分の回収です。"
+    });
+  }
+  if(a.club==="retire"){
+    P.push({
+      t:"引退の翌週から「部活なし」の数字に乗り換える",
+      d:"引退直後の1〜2週間は燃え尽きで一番危ない時期。引退したその週のうちに、部活に使っていた時間帯へそのまま勉強を置き換えると、空白なく移行できます。"
+    });
+  }
+  if(a.gap==="g10"){
+    P.push({
+      t:"7月は難問禁止。時間の6割を基礎に固定する",
+      d:`偏差値差10以上の逆転は、根性ではなく順番で決まります。${jhs?"英単語・計算・理社の一問一答":"英単語・英文法・数学の基礎問題"}に時間の6割を固定。基礎が固まる前に過去問や難問に手を出すのが、逆転失敗の最大パターンです。`
+    });
+  }
+  if(a.gap==="gnone"){
+    P.push({
+      t:"7月中に模試を1回受けて「現在地」を確定させる",
+      d:"現在地がわからない設計は、地図のない航海と同じです。結果が悪くても大丈夫。今の点数は「伸びしろの測定値」であって、あなたの評価ではありません。"
+    });
+  }
+  if(a.target==="undecided"){
+    P.push({
+      t:"志望が未定の今こそ、+0.5時間の貯金を作る",
+      d:"志望校は夏に決まることが多く、決まった瞬間に「もっとやっておけば」となりがち。先に貯金を作っておけば、どのレベルに志望を上げても対応できます。"
+    });
+  }
+  if(a.slack==="s60"){
+    P.push({
+      t:"すきま時間60分は、机の勉強1時間ぶんの資産",
+      d:"通学中の単語・一問一答は、正式にMINへカウントしてOK。机の時間を無理に増やすより、すでにある60分の質を上げるほうが確実です。"
+    });
+  }
+  if(r.type.key==="savings"){
+    P.push({
+      t:"あなたの勝ち筋は「量」より「継続日数」",
+      d:"位置的には余裕がありますが、夏は周りが一気に伸びる季節。MINを毎日守り切ることに全振りしてください。目標は31日中「守れた日20日」です。"
+    });
+  }
+  if(r.type.key==="standard"){
+    P.push({
+      t:"分かれ道は「休日」。土日どちらかが0時間の週を作らない",
+      d:"平日は学校のリズムで守れても、休日に崩れるのが標準型の典型パターン。休日は朝イチの30分から始めると、その日全体が崩れません。"
+    });
+  }
+  P.push({
+    t:"0時間の日を作らない・2日連続で落とさない",
+    d:"完璧主義は7月に一番いらないもの。15分でも「やった」にカウントし、1日のミスはノーカウント。ただし2日連続だけは絶対に避ける。習慣はこのルールで守れます。"
+  });
+
+  return P.slice(0,3);
+}
+
+/* ================= 状態 & 画面制御 ================= */
+const answers = {};
+let currentIdx = -1;
+const main = document.getElementById("main");
+const meter = document.getElementById("meter");
+const pbarFill = document.getElementById("pbarFill");
+const progressText = document.getElementById("progressText");
+const backBtn = document.getElementById("backBtn");
+const teaserEl = document.getElementById("teaser");
+document.getElementById("lineBtn").href = LINE_URL;
+
+/* カウントダウン */
+(function(){
+  const el=document.getElementById("countdown");
+  const days=Math.ceil((new Date(SUMMER_START+"T00:00:00")-new Date())/86400000);
+  if(days>0) el.innerHTML=`夏休みまで、あと <b>${days}</b> 日。始めた人から差がつきます`;
+  else el.innerHTML=`夏休みは<b>もう始まっています</b>。今日が一番早い日です`;
+})();
+
+/* 質問画面の器を生成 */
+QUESTIONS.forEach((q,i)=>{
+  const sec=document.createElement("section");
+  sec.className="screen";
+  sec.dataset.screen="q"+i;
+  main.insertBefore(sec, main.querySelector('[data-screen="calc"]'));
+});
+
+let advanceTimer=null, teaserTimer=null;
+
+function renderQuestion(i){
+  const q=QUESTIONS[i];
+  const sec=main.querySelector(`[data-screen="q${i}"]`);
+  const opts=q.options(answers).map(o=>`
+    <button class="opt${answers[q.id]===o.value?" selected":""}" type="button" data-val='${JSON.stringify(o.value)}'>
+      <span>${o.label}${o.sub?`<small>${o.sub}</small>`:""}</span>
+      <span class="mark">✓</span>
+    </button>`).join("");
+  sec.innerHTML=`
+    <span class="q-eyebrow">${q.eyebrow}</span>
+    <h2 class="q-text">${q.text(answers)}</h2>
+    <p class="q-hint">${q.hint(answers)}</p>
+    <div class="opts">${opts}</div>`;
+  sec.querySelectorAll(".opt").forEach(btn=>{
+    btn.addEventListener("click",()=>{
+      if(advanceTimer) return; // 連打防止
+      sec.querySelectorAll(".opt").forEach(b=>b.classList.remove("selected"));
+      btn.classList.add("selected");
+      const val=JSON.parse(btn.dataset.val);
+      answers[q.id]=val;
+      updateMeter();
+      showTeaser(q,val);
+      const wait = getTeaser(q,val) ? 1250 : 420;
+      advanceTimer=setTimeout(()=>{ advanceTimer=null; goTo(i+1); }, wait);
+    });
+  });
+}
+
+function getTeaser(q,val){
+  if(!q.teaser) return null;
+  return q.teaser[val] || q.teaser._all || null;
+}
+function showTeaser(q,val){
+  const msg=getTeaser(q,val);
+  if(!msg) return;
+  clearTimeout(teaserTimer);
+  teaserEl.innerHTML=`<span class="tz-icon">🔍</span>${msg}`;
+  teaserEl.classList.add("show");
+  teaserTimer=setTimeout(()=>teaserEl.classList.remove("show"), 1500);
+}
+
+function showScreen(name){
+  main.querySelectorAll(".screen").forEach(s=>{
+    s.classList.remove("active");
+    if(s.dataset.screen===name){ s.classList.add("active"); s.scrollTop=0; }
+  });
+}
+
+function goTo(i){
+  currentIdx=i;
+  if(i>=QUESTIONS.length){ startCalc(); return; }
+  renderQuestion(i);
+  showScreen("q"+i);
+  updateChrome();
+}
+
+function updateChrome(){
+  const total=QUESTIONS.length;
+  if(currentIdx>=0 && currentIdx<total){
+    pbarFill.style.width=(currentIdx/total*100)+"%";
+    progressText.textContent=`Q${currentIdx+1} / ${total}`;
+    backBtn.classList.toggle("show", currentIdx>0);
+    meter.classList.remove("hidden");
+  }else if(currentIdx>=total){
+    pbarFill.style.width="100%";
+    progressText.textContent="";
+    backBtn.classList.remove("show");
+  }else{
+    pbarFill.style.width="0%";
+    progressText.textContent="";
+    backBtn.classList.remove("show");
+    meter.classList.add("hidden");
+  }
+}
+
+/* ---- レンジメーター ---- */
+const bandWd=document.getElementById("bandWd");
+const bandHd=document.getElementById("bandHd");
+const valWd=document.getElementById("valWd");
+const valHd=document.getElementById("valHd");
+const meterNote=document.getElementById("meterNote");
+const meterLabel=document.getElementById("meterLabel");
+
+function updateMeter(){
+  const r=rangeEstimate(answers);
+  setBand(bandWd,valWd,r.wMin,r.wMax);
+  setBand(bandHd,valHd,r.hMin,r.hMax);
+  const wLocked=(r.wMin===r.wMax), hLocked=(r.hMin===r.hMax);
+  if(wLocked&&hLocked){
+    meterLabel.textContent="あなたのMIN 確定";
+    meterNote.innerHTML=`<b>数字が確定しました。</b>残りの質問で「実現できるか」を判定します`;
+  }else{
+    meterLabel.textContent="あなたのMIN 予測レンジ";
+    const remain=OPTION_VALUES && ["grade","club","target","gap"].filter(k=>answers[k]===undefined).length;
+    meterNote.innerHTML= remain>0
+      ? `あと <b>${remain}問</b> で数字が確定します`
+      : `<b>数字が確定しました。</b>残りの質問で「実現できるか」を判定します`;
+  }
+}
+function setBand(band,valEl,min,max){
+  const locked=(min===max);
+  const left=(min/TRACK_MAX)*100;
+  const width=Math.max(((max-min)/TRACK_MAX)*100, locked?0:4);
+  band.style.left=left+"%";
+  band.style.width=(locked?3.5:width)+"%";
+  band.classList.toggle("locked",locked);
+  valEl.classList.toggle("locked",locked);
+  valEl.innerHTML= locked
+    ? `${fmt(min)}<small>h 確定</small>`
+    : `${fmt(min)}〜${fmt(max)}<small>h</small>`;
+}
+function resetMeter(){
+  updateMeter();
+}
+
+/* ---- 計測 → 結果 ---- */
+const CALC_LINES=[
+  ["基礎ラインを確認中…","学年 × 部活の表と照合しています"],
+  ["4つの補正を計算中…","志望校レベルと現在地を反映しています"],
+  ["実現可能性を判定中…","あなたの生活時間と照合しています"]
+];
+function startCalc(){
+  showScreen("calc"); updateChrome();
+  const ct=document.getElementById("calcText"), cs=document.getElementById("calcSub");
+  let li=0;
+  ct.textContent=CALC_LINES[0][0]; cs.textContent=CALC_LINES[0][1];
+  const iv=setInterval(()=>{
+    li++;
+    if(li<CALC_LINES.length){ ct.textContent=CALC_LINES[li][0]; cs.textContent=CALC_LINES[li][1]; }
+    else{ clearInterval(iv); showResult(); }
+  },650);
+}
+
+function showResult(){
+  const r=calc(answers);
+  meter.classList.add("hidden");
+  teaserEl.classList.remove("show");
+  showScreen("result");
+
+  countUp(document.getElementById("rWeekday"), r.minWd);
+  countUp(document.getElementById("rHoliday"), r.minHd);
+
+  document.getElementById("typeLine").innerHTML=`あなたは <b>${r.type.name}</b> ── ${r.type.desc}`;
+
+  const stamp=document.getElementById("stamp");
+  document.getElementById("stampName").textContent=r.type.name;
+  stamp.classList.remove("on"); void stamp.offsetWidth; stamp.classList.add("on");
+
+  const rn=document.getElementById("retireNote");
+  if(r.afterRetire){
+    rn.style.display="block";
+    rn.innerHTML=`<b>📌 引退後のMIN：平日 ${fmt(r.afterRetire.wd)}時間 ／ 休日 ${fmt(r.afterRetire.hd)}時間</b><br>引退した翌週から、この数字に乗り換えてください。`;
+  }else rn.style.display="none";
+
+  const total=Math.max(r.minWd, r.capacity, 0.1);
+  const segDesk=document.getElementById("segDesk");
+  const segSlack=document.getElementById("segSlack");
+  const segGap=document.getElementById("segGap");
+  segDesk.style.width="0%"; segSlack.style.width="0%"; segGap.style.width="0%";
+  requestAnimationFrame(()=>{ requestAnimationFrame(()=>{
+    segDesk.style.width=(Math.min(r.desk,r.minWd)/total*100)+"%";
+    segSlack.style.width=(Math.min(r.slackH, Math.max(0,r.minWd-r.desk))/total*100)+"%";
+    segGap.style.width=(r.shortage/total*100)+"%";
+  });});
+  const fm=document.getElementById("feasMsg");
+  if(r.shortage<=0){
+    fm.className="feas-msg ok";
+    fm.innerHTML=`✅ いまの生活時間でMINは達成可能です。<span>あとは「いつやるか」を固定するだけ。下のポイントを読んでください。</span>`;
+  }else{
+    fm.className="feas-msg warn";
+    fm.innerHTML=`⚠️ このままだと平日 ${fmt(r.shortage)}時間 足りません。<span>ただし打ち手はあります。ポイント①が回収プランです。</span>`;
+  }
+
+  const pts=buildPoints(answers,r);
+  document.getElementById("pointsList").innerHTML=pts.map((p,i)=>`
+    <div class="point">
+      <span class="pn">${i+1}</span>
+      <div class="pt-body"><b>${p.t}</b><p>${p.d}</p></div>
+    </div>`).join("");
+
+  updateChrome();
+}
+
+function countUp(el,to){
+  const dur=900,t0=performance.now();
+  function tick(t){
+    const p=Math.min(1,(t-t0)/dur);
+    const e=1-Math.pow(1-p,3);
+    el.textContent=fmt(round5(to*e));
+    if(p<1) requestAnimationFrame(tick); else el.textContent=fmt(to);
+  }
+  requestAnimationFrame(tick);
+}
+
+/* ---- ナビ ---- */
+document.getElementById("startBtn").addEventListener("click",()=>{ resetMeter(); goTo(0); });
+backBtn.addEventListener("click",()=>{
+  if(advanceTimer){ clearTimeout(advanceTimer); advanceTimer=null; }
+  if(currentIdx>0) goTo(currentIdx-1);
+});
+document.getElementById("retryBtn").addEventListener("click",()=>{
+  Object.keys(answers).forEach(k=>delete answers[k]);
+  currentIdx=-1; showScreen("start"); updateChrome();
+  window.scrollTo(0,0);
+});
+</script>
+</body>
+</html>

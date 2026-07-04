@@ -205,4 +205,28 @@
   to = "/parent/202506-01/:splat"
   status = 301
 
+# ---------------------------------------------------------------------------
+# 英文読解 完全解説 — /reading-lesson（受講生向け・noindex）
+# フォルダ＋index.html 型。末尾スラッシュなしのきれいなURLで返す。
+# 例: /reading-lesson/chuo-law-2023 → /reading-lesson/chuo-law-2023/index.html
+# ---------------------------------------------------------------------------
+
+# 原典・参考解説の置き場（source/）は Web 非公開にする（照合用の内部ファイル）
+[[redirects]]
+  from = "/reading-lesson/*/source/*"
+  to = "/reading-lesson/"
+  status = 404
+
+# 一覧ページ
+[[redirects]]
+  from = "/reading-lesson"
+  to = "/reading-lesson/index.html"
+  status = 200
+
+# 各教材（末尾スラッシュなし）
+[[redirects]]
+  from = "/reading-lesson/:slug"
+  to = "/reading-lesson/:slug/index.html"
+  status = 200
+
 # 7月以降の号は準備でき次第、netlify.toml にリダイレクトを追加して公開

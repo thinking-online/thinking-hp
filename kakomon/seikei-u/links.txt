@@ -1,0 +1,15 @@
+成蹊大学 経営学部 英語 — PDFリンク一覧
+https://thinking-online.com/kakomon/seikei-u/
+
+--- 完全攻略マニュアル ---
+
+第1部 出題傾向の徹底分析と合格戦略
+https://thinking-online.com/kakomon/seikei-u/manual-p1.pdf
+
+（以下は制作予定）
+第2部 語彙・語法・テーマ対策大全   … manual-p2-vocab.pdf
+第3部 大問タイプ別攻略ドリル        … manual-p3-drill.pdf
+第4部 直前対策・完全模試            … mock-1.pdf / manual-p4-mock.pdf
+
+--- 内部資料（Web非公開 / netlify.toml で 404）---
+source/research_notes.md  … フェーズ0リサーチノート（大問構成・方式・要照合事項）

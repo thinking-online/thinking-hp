@@ -217,6 +217,12 @@
   to = "/reading-lesson/"
   status = 404
 
+# kakomon 配下の照合用内部資料（source/：リサーチノート・答案照合等）も Web 非公開
+[[redirects]]
+  from = "/kakomon/*/source/*"
+  to = "/kakomon/"
+  status = 404
+
 # 一覧ページ
 [[redirects]]
   from = "/reading-lesson"

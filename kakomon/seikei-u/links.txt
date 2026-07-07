@@ -6,9 +6,14 @@ https://thinking-online.com/kakomon/seikei-u/
 第1部 出題傾向の徹底分析と合格戦略
 https://thinking-online.com/kakomon/seikei-u/manual-p1.pdf
 
+--- 大問タイプ別攻略ドリル（第3部）---
+
+大問Ⅰ 会話文空所補充 徹底攻略ドリル
+https://thinking-online.com/kakomon/seikei-u/q1-dialogue-cloze.pdf
+
 （以下は制作予定）
 第2部 語彙・語法・テーマ対策大全   … manual-p2-vocab.pdf
-第3部 大問タイプ別攻略ドリル        … manual-p3-drill.pdf
+大問Ⅱ〜Ⅴ タイプ別ドリル           … q2-*.pdf 〜 q5-*.pdf
 第4部 直前対策・完全模試            … mock-1.pdf / manual-p4-mock.pdf
 
 --- 内部資料（Web非公開 / netlify.toml で 404）---

@@ -9,7 +9,6 @@
     el.href = LINE_URL;
   });
 
-  // Nav scroll
   const nav = document.getElementById('nav');
   const progress = document.getElementById('progress');
   const sticky = document.getElementById('stickyCta');
@@ -29,7 +28,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Reveal
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (e.isIntersecting) {
@@ -43,50 +41,31 @@
     io.observe(el);
   });
 
-  // Hero sequence
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('[data-seq]').forEach((el, i) => {
       setTimeout(() => el.classList.add('in'), 200 + i * 200);
     });
   });
 
-  // 300 hours bars
-  const barIo = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      e.target.querySelectorAll('.hours-viz__bar').forEach((bar, i) => {
-        setTimeout(() => {
-          bar.style.height = (60 + Math.random() * 40) + '%';
-        }, i * 30);
-      });
-      barIo.unobserve(e.target);
-    });
-  }, { threshold: 0.3 });
-  document.querySelectorAll('.hours-viz').forEach((el) => barIo.observe(el));
-
-  // Subject tabs
-  document.querySelectorAll('.subjects__tab').forEach((tab) => {
-    tab.addEventListener('click', () => {
-      const group = tab.closest('.subjects');
-      const target = tab.dataset.tab;
-      group.querySelectorAll('.subjects__tab').forEach((t) => t.classList.remove('is-active'));
-      group.querySelectorAll('.subjects__panel').forEach((p) => p.classList.remove('is-active'));
-      tab.classList.add('is-active');
-      const panel = group.querySelector('[data-panel="' + target + '"]');
-      if (panel) panel.classList.add('is-active');
+  // Calendar accordion
+  document.querySelectorAll('.cal-phase__head').forEach((head) => {
+    head.addEventListener('click', () => {
+      const body = head.nextElementSibling;
+      const isOpen = head.getAttribute('aria-expanded') === 'true';
+      head.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+      if (body) body.classList.toggle('is-open', !isOpen);
     });
   });
 
-  // Subject accordion
-  document.querySelectorAll('.subject-card__head').forEach((head) => {
-    head.addEventListener('click', () => {
-      const card = head.closest('.subject-card');
-      const wasOpen = card.classList.contains('is-open');
-      card.closest('.subjects__panel').querySelectorAll('.subject-card').forEach((c) => {
-        c.classList.remove('is-open');
-      });
-      if (!wasOpen) card.classList.add('is-open');
-    });
+  // Table scroll hint
+  document.querySelectorAll('[data-scroll-hint]').forEach((wrap) => {
+    const table = wrap.querySelector('table');
+    if (table && table.scrollWidth <= wrap.clientWidth) {
+      wrap.classList.add('no-hint');
+    }
+    wrap.addEventListener('scroll', () => {
+      wrap.classList.add('is-scrolled');
+    }, { passive: true });
   });
 
   // FAQ
@@ -98,27 +77,6 @@
       if (!wasOpen) item.classList.add('is-open');
     });
   });
-
-  // Checklist animation
-  const checkIo = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      const items = e.target.querySelectorAll('.checklist__item');
-      items.forEach((item, i) => {
-        setTimeout(() => item.classList.add('is-checked'), 300 + i * 180);
-      });
-      checkIo.unobserve(e.target);
-    });
-  }, { threshold: 0.2 });
-  document.querySelectorAll('.checklist').forEach((el) => checkIo.observe(el));
-
-  // Pricing mode from URL ?plan=standard | ?plan=dual (default: dual)
-  const pricing = document.getElementById('pricing');
-  if (pricing) {
-    const params = new URLSearchParams(window.location.search);
-    const mode = params.get('plan') === 'standard' ? 'standard' : 'dual';
-    pricing.dataset.pricingMode = mode;
-  }
 
   // Count-up
   const countIo = new IntersectionObserver((entries) => {

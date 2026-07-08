@@ -205,4 +205,14 @@
   to = "/parent/202506-01/:splat"
   status = 301
 
+# LP: 夏期特訓 SUMMER LOCK-ON — /summer で公開
+[[redirects]]
+  from = "/summer"
+  to = "/lp/summer/index.html"
+  status = 200
+[[redirects]]
+  from = "/summer/*"
+  to = "/lp/summer/:splat"
+  status = 200
+
 # 7月以降の号は準備でき次第、netlify.toml にリダイレクトを追加して公開

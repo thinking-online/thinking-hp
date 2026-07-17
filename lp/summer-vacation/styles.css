@@ -26,7 +26,6 @@ p, h1, h2, h3, a, span {
   overflow-wrap: break-word;
 }
 
-.message h1 span,
 .feature-heading h2 span,
 .closing h2 span {
   display: block;
@@ -110,7 +109,7 @@ p, h1, h2, h3, a, span {
 }
 .hero-meta i { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); }
 
-.message { padding: 54px 23px 24px; text-align: center; }
+.message { padding: 34px 23px 8px; text-align: center; }
 .eyebrow {
   margin: 0 0 9px;
   color: #9d7831;
@@ -132,20 +131,27 @@ p, h1, h2, h3, a, span {
   letter-spacing: .03em;
 }
 .message h1 em { color: #a78032; font-style: normal; }
+.message h1 { text-wrap: balance; }
 .ornament {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 11px;
-  margin: 17px 0 20px;
+  margin: 12px 0;
   color: var(--gold);
 }
 .ornament span { width: 50px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
 .ornament span:last-child { background: linear-gradient(90deg, var(--gold), transparent); }
-.message > p:not(.eyebrow) { margin: 13px 0 0; color: var(--muted); font-size: 13.5px; }
+.message > p:not(.eyebrow) {
+  max-width: 340px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 13.5px;
+  text-wrap: pretty;
+}
 
 .textbook {
-  margin: 30px 14px 0;
+  margin: 22px 14px 0;
   padding: 22px 14px 26px;
   border: 1px solid rgba(201, 162, 79, .45);
   border-radius: 24px;

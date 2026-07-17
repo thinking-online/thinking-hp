@@ -215,6 +215,16 @@
   to = "/lp/summer/:splat"
   status = 200
 
+# LP: 受験の王様 夏休み特別企画 — /summer-vacation で公開
+[[redirects]]
+  from = "/summer-vacation"
+  to = "/lp/summer-vacation/index.html"
+  status = 200
+[[redirects]]
+  from = "/summer-vacation/*"
+  to = "/lp/summer-vacation/:splat"
+  status = 200
+
 # ---------------------------------------------------------------------------
 # 英文読解 完全解説 — /reading-lesson（受講生向け・noindex）
 # フォルダ＋index.html 型。末尾スラッシュなしのきれいなURLで返す。

@@ -1,0 +1,191 @@
+[
+ {
+  "num": "026",
+  "severity": "other",
+  "issue": "実質は4択の訳選択問題だが type が written として収録されており、answer に選択肢番号と訳文が連結されている（「4この話は本当のはずがない。」）",
+  "fix": "正解表記を「4この話は本当のはずがない。」のまま提示し、解説内で他の3つの訳が誤りである理由も説明した",
+  "unit_index": 3
+ },
+ {
+  "num": "030",
+  "severity": "typo",
+  "issue": "語群の⑧のマーカーが「➇」（囲み数字の異体グリフ）になっており、他の丸数字①〜⑦と不統一",
+  "fix": "⑧get として扱い、解答数字列 52781436 の通りに完成文を作成した",
+  "unit_index": 3
+ },
+ {
+  "num": "023",
+  "severity": "typo",
+  "issue": "問題文「You(　　)」で You と括弧の間にスペースがなく、他問と表記が不統一",
+  "fix": "内容には影響しないためそのまま処理した",
+  "unit_index": 3
+ },
+ {
+  "num": "035",
+  "severity": "typo",
+  "issue": "正解選択肢1が「had better no」となっているが、正しくは「had better not」。not の t が脱落した誤植と思われる",
+  "fix": "「had better not」を前提に完成文・解説を書いた",
+  "unit_index": 4
+ },
+ {
+  "num": "050",
+  "severity": "typo",
+  "issue": "語群の番号⑤が「a」と「would」の2語に重複して付与されている（②haveの次が③で⑥が欠番）。「⑤would」は「⑥would」の誤植と思われ、その場合answerは 152453 ではなく 162453 が正しい数字列になる",
+  "fix": "完成文 I would have bought a new computer を前提に、answer 152453（wouldを1つ目の5、aを2つ目の5と解釈）のまま解説を執筆し、編集メモを付記した",
+  "unit_index": 5
+ },
+ {
+  "num": "051",
+  "severity": "other",
+  "issue": "answerフィールドが1つ目の空所分「86241」のみで、2つ目の空所「753」（could have been）が欠落。またquestion末尾に解答らしき文字列「86241 753」が混入している",
+  "fix": "正解を「86241 753」として完成文 Had I arrived five minutes earlier, I could have been in time for the train. で解説を執筆した",
+  "unit_index": 5
+ },
+ {
+  "num": "064",
+  "severity": "other",
+  "issue": "question 本文の末尾に解答の数字列「13425（43125）」が混入している。紙面にそのまま印刷されると解答が漏れる。①I と④I が同一語のため 43125 も同一英文になる旨の編集用メモと思われる",
+  "fix": "混入した数字列は問題文に含めず、answer の 13425 を正解として完成文・解説を執筆。①④が同一語で 43125 でも同文になる旨は組み立て欄に注記した",
+  "unit_index": 6
+ },
+ {
+  "num": "065",
+  "severity": "typo",
+  "issue": "語群の囲み数字⑧が「➇」という他と異なる字形（囲み数字ではなく別記号）になっている。また「①a/ ②bought」「③high/」などスラッシュ前の空白が不統一",
+  "fix": "解説では通常の⑧として扱い、38742165 を正解として執筆",
+  "unit_index": 6
+ },
+ {
+  "num": "089",
+  "severity": "typo",
+  "issue": "語群の丸数字8が ➇（囲み sans-serif 数字）になっており、①〜⑦（囲み serif 数字）と字形が不統一",
+  "fix": "⑧very として扱い、解答 54817623 のとおり解説を執筆した",
+  "unit_index": 8
+ },
+ {
+  "num": "084",
+  "severity": "other",
+  "issue": "選択肢4 was not to been は to の後に過去分詞が来る明白な非文で、ダミー選択肢としてやや不自然（原典どおりの可能性あり）",
+  "fix": "原稿のまま採用し、誤答チェックで非文である旨を説明した",
+  "unit_index": 8
+ },
+ {
+  "num": "102",
+  "severity": "wording",
+  "issue": "日本文「十分な椅子がなかった」(過去)に対し、英文の書き出しが There are not(現在形)で時制が一致していない。原文どおりなら日本文は「〜がない」、または英文を There were not とすべき",
+  "fix": "英文 There are not はそのまま尊重し、訳を「彼らが座るのに十分な椅子がない」と現在形で記載した",
+  "unit_index": 9
+ },
+ {
+  "num": "115",
+  "severity": "wording",
+  "issue": "placed the rug again はやや不自然な英語（自然には put the rug back / laid the rug again）。また swept up the floor も swept the floor の方が一般的",
+  "fix": "解答 sweeping 自体は正しいため、原文のまま完成文・解説を書いた",
+  "unit_index": 10
+ },
+ {
+  "num": "130",
+  "severity": "wording",
+  "issue": "are called sari は複数主語 (The traditional clothes) に対して単数形の補語でやや不自然。通例は are called saris または is called the sari。",
+  "fix": "原稿どおり sari のまま完成文・解説を書いた",
+  "unit_index": 12
+ },
+ {
+  "num": "140",
+  "severity": "other",
+  "issue": "問題文に「下線部と同じ用法の-ing」とあるが、データ上どの語に下線があるか示されていない。文中の -ing は Learning / entering / widening の3語で、正解 4（前置詞の目的語=動名詞）と整合するのはいずれも動名詞用法。",
+  "fix": "implies の目的語である entering（動名詞）を下線部と想定して解説を執筆し、編集メモを付記した。",
+  "unit_index": 13
+ },
+ {
+  "num": "150",
+  "severity": "wording",
+  "issue": "The work being done, they went for a walk. は文法的に成立するが、完了の意味では The work done, ... / The work having been done, ... の方が標準的。being done は「されている最中」とも読める。",
+  "fix": "原稿の解答 451263 を尊重し、受動の独立分詞構文としてそのまま解説した。",
+  "unit_index": 13
+ },
+ {
+  "num": "168",
+  "severity": "typo",
+  "issue": "問題文冒頭の \"l owe\" は \"I owe\" の誤植（大文字の I が小文字の l になっている）と思われる",
+  "fix": "I owe を前提に完成文・解説を書いた",
+  "unit_index": 15
+ },
+ {
+  "num": "191",
+  "severity": "typo",
+  "issue": "日本文「オーストラリアー周」は長音符「ー」が使われており、「オーストラリア一周」（漢字の「一」）の誤植と思われる",
+  "fix": "訳・解説では「オーストラリア一周」を前提に記述した",
+  "unit_index": 16
+ },
+ {
+  "num": "193",
+  "severity": "wording",
+  "issue": "exceptionally superior という強調表現はやや不自然（superior の強調は far / much / vastly superior が一般的）",
+  "fix": "解答 to は正しいため原文のまま完成文・解説を書いた",
+  "unit_index": 17
+ },
+ {
+  "num": "214",
+  "severity": "wording",
+  "issue": "B の応答 \"Twice or three times a year\" はやや不自然（通例は \"Two or three times a year\" または \"Twice a year or three times a year\"）",
+  "fix": "原文のまま完成文に採用し、解説は頻度の答えである点のみ扱った",
+  "unit_index": 18
+ },
+ {
+  "num": "220",
+  "severity": "typo",
+  "issue": "日本語指示文「\\[内の語を並べ替えなさい」は閉じ括弧が欠落しており「\\[ \\]内の語を並べ替えなさい」の誤植と思われる",
+  "fix": "解答・解説には影響しないため通常どおり執筆した",
+  "unit_index": 18
+ },
+ {
+  "num": "232",
+  "severity": "answer",
+  "issue": "解答の数字列「7245168」が7桁で、語群8項目のうち 3（are）が抜けている。完成文 There are many amusement parks, but not all of them are successful. には are が必須。",
+  "fix": "正しい数字列 72451683 を正解として完成文・解説を書いた",
+  "unit_index": 19
+ },
+ {
+  "num": "243",
+  "severity": "typo",
+  "issue": "問題文および answer_part の「l did」は小文字のエル（l）だが、大文字の代名詞 I の誤植（OCR由来）と思われる（正しくは「I did」）",
+  "fix": "I を前提に完成文・解説を作成した",
+  "unit_index": 20
+ },
+ {
+  "num": "244",
+  "severity": "typo",
+  "issue": "語群⑦の「l」は小文字のエルだが、代名詞 I の誤植（OCR由来）と思われる",
+  "fix": "I を前提に完成文・解説を作成した",
+  "unit_index": 20
+ },
+ {
+  "num": "242",
+  "severity": "other",
+  "issue": "a number of の数一致問題であり、本UNIT（倒置・強調構文・語順）の主題からやや外れる可能性がある",
+  "fix": "収録位置は原稿どおりとし、通常どおり解説を作成した",
+  "unit_index": 20
+ },
+ {
+  "num": "270",
+  "severity": "wording",
+  "issue": "整序の骨組みに主節主語 we が不足し完成文と不一致の可能性",
+  "fix": "完成文 Whether we like it or not, we will have to accept the fact. を前提に執筆",
+  "unit_index": 22
+ },
+ {
+  "num": "348",
+  "severity": "typo",
+  "issue": "語群の⑧が異体字「➇」(丸数字ではない囲み数字)で表記されている",
+  "fix": "⑧professional として扱い、完成文・解説を執筆した",
+  "unit_index": 28
+ },
+ {
+  "num": "?",
+  "severity": "other",
+  "issue": "語群の⑧のみ丸数字でなく「➇」の字形になっている（誤植の可能性）",
+  "fix": "",
+  "unit_index": 29
+ }
+]

@@ -1,0 +1,4865 @@
+# 英文法ポラリス1　完成問題集
+ 【 解 説 編 】
+
+> 全375問｜正解と、なぜそうなるかの詳しい解説。
+
+各問題は次の構成です：
+
+- **完成文**：正解を入れた英文（正解部分を太字）
+- **訳**：自然な日本語訳
+- **POINT**：その問題の急所を一言で
+- 解説本文と、選択肢を1つずつ潰す**誤答チェック**
+
+---
+
+
+# Chapter 1 動詞関連
+
+
+## UNIT 1 時制(1)
+
+#### 問 001 ｜ 正解 **1**
+
+**完成文** All the classmates knew that the Earth **is** round.
+**訳** クラスメート全員が、地球が丸いことを知っていた。
+**POINT** 不変の真理は時制の一致を受けない
+
+主節の動詞が knew と過去形なので、that 節の中も過去形にしたくなりますが、ここで問われているのは「時制の一致の例外」です。「地球が丸い」ことは昔も今も変わらない事実（不変の真理）なので、主節が過去形でも that 節の中は現在形のまま書きます。時制の一致とは「主節が過去なら従属節も過去側にそろえる」というルールですが、真理・ことわざ・現在も続く習慣などはその適用外です。したがって現在形の is が正解です。
+
+**誤答チェック**
+- 2 be：主語 the Earth に対して原形をそのまま置くことはできないため×
+- 3 was being：「一時的に丸くなっていた」という進行形にする理由がないため×
+- 4 were：時制の一致を機械的に適用した形。不変の真理は現在形で表すため×（そもそも単数主語に were も合わない）
+
+#### 問 002 ｜ 正解 **4**
+
+**完成文** A : What do you do?
+B: **I'm a photographer.**
+**訳** A：お仕事は何をされているのですか。 B：写真家です。
+**POINT** 現在形＝習慣。What do you do? は職業をたずねる表現
+
+What do you do? は直訳すると「あなたは（ふだん）何をしますか」ですが、現在形が「日常的・習慣的にしていること」を表すことから、職業をたずねる決まり文句になっています。現在形の核心は「今この瞬間」ではなく「昔も今もこれからも繰り返すこと」だという点がポイントです。職業を聞かれているのですから、職業を答えている 4 が正解です。今まさにしていることを聞くなら What are you doing? と進行形になる、という対比もあわせて覚えておきましょう。
+
+**誤答チェック**
+- 1 Please call me Ken.：名前の呼び方を伝える表現で、職業の質問への答えにならないため×
+- 2 I'm fine, thank you.：How are you? への応答であるため×
+- 3 Nice to meet you, too.：Nice to meet you. への応答であるため×
+
+#### 問 003 ｜ 正解 **4**
+
+**完成文** Everyone **knows** about his success in business.
+**訳** 彼が事業で成功したことは誰もが知っている。
+**POINT** everyone は単数扱い＋know は進行形にしない状態動詞
+
+まず主語の everyone（everybody も同様）は「みんな」という意味でも文法上は単数扱いなので、動詞には三単現の -s が必要です。次に know は「知っている」という状態を表す動詞（状態動詞）で、原則として進行形にしません。進行形は「途中の動作」を切り取る形なので、始まりも終わりもない状態には合わないのです。この2点から、三単現の knows が正解となります。
+
+**誤答チェック**
+- 1 is known：受動態にすると「みんなが知られている」となり意味が逆になるため×（「〜について知っている」は know about と能動で言う）
+- 2 is knowing：know は状態動詞で、原則進行形にしないため×
+- 3 know：everyone は単数扱いなので、三単現の -s がない形は置けないため×
+
+#### 問 004 ｜ 正解 **2**
+
+**完成文** I don't have any plans for this Sunday, but next Sunday **I am visiting** my aunt.
+**訳** 今度の日曜は何も予定がないが、次の日曜はおばを訪ねることになっている。
+**POINT** 現在進行形は「すでに決まっている近い未来の予定」を表せる
+
+前半で「今度の日曜は予定がない」と言い、but で「次の日曜は〜」と続けているので、空所には「すでに決まっている予定」を表す形が入ります。現在進行形には「今している最中」だけでなく、「手はずが整っている近い未来の予定」を表す用法があり、I am visiting my aunt で「おばを訪ねることになっている」という意味になります。plans（予定）という語との対応からも、この「予定の進行形」がぴったりです。
+
+**誤答チェック**
+- 1 I visit：単なる現在形は「習慣」を表し、特定の日曜1回の予定を述べる文に合わないため×
+- 3 I was visiting：過去進行形では next Sunday（未来）と矛盾するため×
+- 4 I'm going：go は自動詞なので直後に my aunt という目的語を置けず、I'm going to visit my aunt などの形が必要なため×
+
+#### 問 005 ｜ 正解 **3**
+
+**完成文** If you **take** my advice, you'll have nothing more to do with him.
+**訳** 私の助言に従えば、あなたはもう彼と関わることはないでしょう。
+**POINT** 条件の if 節は未来のことでも現在形＋take one's advice「助言に従う」
+
+if が導く「条件」の副詞節では、未来の内容でも will を使わず現在形で表します（時・条件の副詞節のルール）。主節に you'll があるからといって、if 節にまで will を入れてはいけません。さらに語彙の知識として、「助言に従う・受け入れる」は take one's advice という決まった言い方をします。do one's advice とは言わないので、この2つを満たす take が正解です。なお have nothing to do with 〜 は「〜と関わりがない」という重要熟語です。
+
+**誤答チェック**
+- 1 do：時制は正しいが、do one's advice という言い方はしないため×
+- 2 will do：条件の副詞節に will は置けず、語法的にも do advice とは言わないため×
+- 4 will take：語彙は正しいが、条件の副詞節では will を使えないため×
+
+#### 問 006 ｜ 正解 **1**
+
+**完成文** We'll be late unless we **leave** now.
+**訳** 今出発しないと、私たちは遅れてしまうだろう。
+**POINT** unless（〜しない限り）の節も条件の副詞節＝現在形
+
+unless は「もし〜しないなら（= if ... not）」という意味の接続詞で、if と同じく条件の副詞節を導きます。したがって未来の内容でも will は使わず現在形で表し、leave が正解です。もう一つの注意点は、unless 自体にすでに否定（not）の意味が含まれていることです。そこに don't を重ねると「出発しないのでなければ」と二重否定になってしまい、意味が壊れます。
+
+**誤答チェック**
+- 2 don't leave：unless に否定の意味が含まれているので、not を重ねると二重否定になるため×
+- 3 have left：「今出発する」という内容に完了形は合わないため×
+- 4 will leave：条件の副詞節では will を使えないため×
+
+#### 問 007 ｜ 正解 **2**
+
+**完成文** I will return your notes as soon as **I finish** copying them.
+**訳** コピーし終えたらすぐに、あなたのノートを返します。
+**POINT** as soon as（〜するとすぐに）の節は時の副詞節＝現在形
+
+as soon as は「〜するとすぐに」という「時」の副詞節を導く接続詞です。時・条件の副詞節では、未来のことでも will を使わず現在形で表すというルールがそのまま当てはまります。主節の I will return（未来）につられて if 節側にも will を入れないよう注意しましょう。したがって現在形の I finish が正解です。なお finish は動名詞（-ing 形）を目的語に取る動詞なので、finish copying という形も確認しておきましょう。
+
+**誤答チェック**
+- 1 I will finish：時の副詞節の中では will を使えないため×
+- 3 I finished：主節が未来の文で、まだ起きていないことに過去形は使えないため×
+- 4 my finishing：動名詞は接続詞 as soon as の後ろに SV の代わりとして置けないため×
+
+#### 問 008 ｜ 正解 **4**
+
+**完成文** If the homework is not done in a satisfactory way, you **will have to do** it again.
+**訳** 宿題が満足のいく形でできていなければ、もう一度やり直さなければならないだろう。
+**POINT** 現在形なのは if 節。主節には未来表現を置く
+
+問 005〜007 の逆パターンです。「時・条件の副詞節は現在形」というルールは、あくまで if 節・when 節などの中の話であって、主節は未来のことなら普通に will を使います。この文では if 節（is not done）がすでに現在形になっているので、空所の主節側には未来の will have to do（〜しなければならないだろう）を入れます。must には未来形がないため、will must とは言えず will have to で代用する点もポイントです。
+
+**誤答チェック**
+- 1 did：これから起こることに過去形は使えないため×
+- 2 have to be doing：「し続けていなければならない」という進行形にする理由がなく、未来の意味も出ないため×
+- 3 will have done：未来完了「してしまっているだろう」では「やり直す義務」の意味が出ないため×
+
+#### 問 009 ｜ 正解 **2**
+
+**完成文** You may go home if you **have finished** your report.
+**訳** レポートを仕上げてしまっているなら、帰宅してもよろしい。
+**POINT** 条件の副詞節では未来完了 will have finished の代わりに現在完了を使う
+
+時・条件の副詞節では「will → 現在形」で代用するのと同じように、「will have done（未来完了）→ 現在完了」で代用します。この文は「（その時点までに）レポートを終えてしまっていたら」という完了の意味を含むので、現在完了の have finished が正解です。単なる現在形 finish が選択肢にあればそれも可ですが、ここでは完了形が用意されています。will have finished を選ばないことが最大のポイントです。
+
+**誤答チェック**
+- 1 finishing：if の後ろには SV が必要で、-ing 形だけでは述語動詞になれないため×
+- 3 finished：過去形にすると「帰ってよい」という現在の許可と時制が合わないため×
+- 4 will have finished：条件の副詞節の中では will（未来完了含む）を使えないため×
+
+#### 問 010 ｜ 正解 **1**
+
+**完成文** I can't tell if it **will rain** tomorrow.
+**訳** 明日雨が降るかどうか、私には分からない。
+**POINT** 名詞節の if（〜かどうか）の中では未来のことは will で表す
+
+この if は「もし〜なら」ではなく、「〜かどうか」という意味で tell の目的語になる名詞節を導いています。「時・条件の副詞節は現在形」のルールが適用されるのは副詞節だけで、名詞節の中では未来のことは素直に will を使って表します。見分け方は、if 節を取り除くと文が成り立つか（副詞節）、取り除くと目的語が欠けて文が壊れるか（名詞節）です。ここでは tell の目的語が必要なので名詞節と分かり、will rain が正解です。
+
+**誤答チェック**
+- 2 rain：主語 it に対し原形は置けず、仮に rains でも「明日」の内容を名詞節で現在形にする理由がないため×
+- 3 has rained：tomorrow（未来）と現在完了は両立しないため×
+- 4 rained：tomorrow と過去形は矛盾するため×
+
+#### 問 011 ｜ 正解 **③**
+
+**完成文** Through hard work and determination, we usually **achieve** our goals.
+**訳** 懸命な努力と強い意志によって、私たちはたいてい目標を達成する。
+**POINT** 主語 we に三単現の -s は付かない
+
+文の骨格は we achieve our goals で、Through hard work and determination は「手段」を表す前置詞句です。usually（たいてい）があることから、この文は習慣的な内容を述べる現在形の文だと分かります。現在形自体は正しいのですが、-s が付くのは主語が三人称単数のときだけです。主語は we（複数）なので、achieves の -s は不要で、achieve が正しい形です。前置詞句が長く主語から動詞が離れているときほど、主語と動詞の一致（数の一致）を丁寧に確認しましょう。
+
+**訂正** ③ achieves → achieve
+
+#### 問 012 ｜ 正解 **②**
+
+**完成文** As I've got a new apartment, I'm **moving** in on Friday with the help of my colleagues.
+**訳** 新しいアパートを手に入れたので、金曜日に同僚たちの手を借りて引っ越す予定だ。
+**POINT** 決まっている予定は現在進行形 be -ing で表す（be + 過去分詞ではない）
+
+on Friday（金曜日に）とあるとおり、これからの「引っ越しの予定」を述べる文です。すでに段取りが決まっている近い未来の予定は、現在進行形 I'm moving in で表します（問 004 と同じ用法）。I'm moved と過去分詞にすると受動態「私は動かされる」となってしまい、自分の意志で引っ越す文意に合いません。move in は「入居する・引っ越してくる」という自動詞の句動詞なので、そもそも受動態にはできない点からも②が誤りと判断できます。
+
+**訂正** ② moved → moving
+
+#### 問 013 ｜ 正解 **①**
+
+**完成文** If this old car **needs** repair work, it will cost a lot of money.
+**訳** この古い車に修理が必要になれば、多額の費用がかかるだろう。
+**POINT** 条件の if 節では未来のことでも will を使わず現在形
+
+if が導く条件の副詞節の中では、未来の内容でも will を使わず現在形で表すのが原則です。主節側の it will cost は未来なので will のままで正しく、直すべきは if 節の中の①です。主語 this old car は三人称単数なので、needs と三単現の -s を付けた形にします。「主節は will、if 節は現在形」という役割分担を、問 005〜009 とセットで確認しておきましょう。
+
+**訂正** ① will need → needs
+
+
+## UNIT 2 時制(2)
+
+#### 問 014 ｜ 正解 **1**
+
+**完成文** She **had lived** in Germany for three years before she got a job in England.
+**訳** 彼女はイングランドで職を得る前に、3年間ドイツに住んでいました。
+**POINT** 過去のある時点までの継続は過去完了〈had+過去分詞〉
+
+before she got a job in England「イングランドで職を得る前に」という過去の基準点があり、その時点までの3年間の継続（住んでいた）を表す必要があります。「過去のある時点より前から、その時点までの継続」を表すのは過去完了〈had+過去分詞〉です。got（過去形）よりもさらに前からの継続であることを、had lived が示しています。for three years「3年間」という期間の表現と、before+過去形の節がそろっていることが着眼点です。
+
+**誤答チェック**
+- 2 lives：現在形では過去の話（before she got）と時制が合わないため×
+- 3 has lived：現在完了は「現在までの継続」を表し、過去の基準点までの継続には使えないため×
+- 4 would live：would は過去から見た未来などを表し、基準点までの継続を表せないため×
+
+#### 問 015 ｜ 正解 **3**
+
+**完成文** I really must go and see the dentist. One of my teeth **has been aching** for weeks.
+**訳** 本当に歯医者に行かなければなりません。歯が1本、何週間もずっと痛んでいるのです。
+**POINT** 現在までの動作の継続は現在完了進行形〈have been -ing〉
+
+for weeks「何週間もの間」という期間の表現があり、「過去のある時点から現在までずっと痛み続けている」ことを表す文です。ache「痛む」のような動作を表す動詞で「現在までの継続」を言うときは、現在完了進行形〈have been -ing〉を使います。主語 One of my teeth は単数（one が主語の中心）なので has been aching となります。「今も痛いから歯医者に行かなければ」という文脈も、現在とつながる時制を選ぶヒントになります。
+
+**誤答チェック**
+- 1 ached：過去形は過去の一時点の話で、現在まで続いている痛みを表せないため×
+- 2 aches：現在形は習慣や性質を表し、for weeks という継続期間と合わないため×
+- 4 is aching：現在進行形は「今この瞬間」の動作で、数週間の継続は表せないため×
+
+#### 問 016 ｜ 正解 **3**
+
+**完成文** Yuka and Megumi are very good friends. They **have known** each other since they entered college three years ago.
+**訳** ユカとメグミはとても仲の良い友達です。2人は3年前に大学に入学して以来の知り合いです。
+**POINT** 状態動詞 know は進行形にせず、継続は現在完了で表す
+
+since they entered college three years ago「3年前に大学に入って以来」とあるので、「その時から現在までの継続」を表す現在完了が必要です。ここで注意すべきは、know「知っている」が状態動詞（動作ではなく状態を表す動詞）であることです。状態動詞はそれ自体が継続の意味を含むため、原則として進行形にできません。したがって have been knowing ではなく、現在完了 have known で「ずっと知っている＝知り合いである」を表します。〈since+過去の文〉を見たら現在完了、そして動詞が状態動詞かどうかを確認する、という2段階が着眼点です。
+
+**誤答チェック**
+- 1 are knowing：状態動詞 know は進行形にできないため×
+- 2 have been knowing：現在完了進行形も進行形の一種なので、状態動詞には使えないため×
+- 4 know：現在形だけでは since ～「～以来」の継続の意味を表せないため×
+
+#### 問 017 ｜ 正解 **1**
+
+**完成文** It **has been** more than ten years since I left my hometown.
+**訳** 故郷を離れてから10年以上になります。
+**POINT** 経過時間は〈It has been[is]+期間+since+過去の文〉
+
+「～してから（期間）になる」という時間の経過は、〈It has been+期間+since S+過去形〉の形で表します（It is+期間+since ... も可）。since I left my hometown「故郷を離れて以来」の起点から現在までの経過なので、現在完了 has been が適切です。なお「時が経過する」という意味では〈期間+have passed since ...〉という言い方もありますが、その場合は More than ten years have passed ... のように期間そのものが主語になります。本問は主語が It なので、has passed は使えない点に注意しましょう。
+
+**誤答チェック**
+- 2 has passed：pass を使うなら期間（More than ten years）を主語にする必要があり、It を主語にはできないため×
+- 3 is passed：pass「経過する」は自動詞で受動態にできず、形として成り立たないため×
+- 4 was：過去形では「現在までの経過」を表せないため×
+
+#### 問 018 ｜ 正解 **4**
+
+**完成文** We have **been** there twice.
+**訳** 私たちはそこへ2回行ったことがあります。
+**POINT** 「行ったことがある」は have been、there の前に to は不要
+
+twice「2回」とあるので、「～したことがある」という経験を表す現在完了の文です。「行ったことがある」は have been to ～ で表しますが、本問で使われている there「そこへ」は副詞で、それ自体に「～へ」の意味が含まれています。したがって to を付けず have been there とするのが正しい形です。また、have gone to ～ は「行ってしまった（今ここにいない）」という結果の意味になり、経験の「行ったことがある」には原則使わない点も重要です。
+
+**誤答チェック**
+- 1 gone to：have gone to は「行ってしまった」の意味で経験に不適切な上、副詞 there に to は付けられないため×
+- 2 went：have went は形として誤り（go の過去分詞は gone）のため×
+- 3 been to：there は副詞なので to が不要となり、been to there とは言えないため×
+
+#### 問 019 ｜ 正解 **5741326**
+
+**完成文** The construction of the new **laboratory will have been finished by the time** the spring semester starts.
+**訳** 春学期が始まるまでに、新しい実験室の建設は終了しているでしょう。
+**POINT** 未来完了の受動態〈will have been+過去分詞〉＋ by the time SV
+
+まず The construction of the new に続けられる名詞は laboratory しかなく、これで主語 The construction of the new laboratory「新しい実験室の建設」が完成します。「（未来のある時点までに）～し終わっているだろう」は未来完了〈will have+過去分詞〉で表し、さらに建設は「終えられる」ものなので受動態と組み合わせて will have been finished となります。最後に by the time SV「SがVするまでに」という接続詞のかたまりを作り、the spring semester starts につなげます。なお by the time の節の中は、未来の内容でも現在形（starts）で表す点も確認しておきましょう。
+
+**組み立て**
+- The construction of the new に続く名詞 laboratory を置いて主語を確定
+- 「終了しているでしょう」→ will have been finished（未来完了の受動態）
+- by the time SV「～するまでに」で the spring semester starts に接続
+
+#### 問 020 ｜ 正解 **3241**
+
+**完成文** Everybody knows he **has driven a car since** he was 19.
+**訳** 彼が19歳のときから車を運転していることは、誰でも知っています。
+**POINT** 〈since+過去の文〉と結びつく現在完了の継続用法
+
+文末に he was 19 という過去形の節があるので、これを導く接続詞 since「～して以来」を直前に置きます。since ～ から現在までの継続を表すのは現在完了なので、has driven のかたまりを作り、目的語 a car を続けます。knows の後ろは接続詞 that が省略された名詞節で、he has driven a car since he was 19 という〈主語+現在完了+since+過去形〉の型が完成します。「since+過去形の節を見たら主節は現在完了」というセットで覚えておくのが着眼点です。
+
+**組み立て**
+- has driven（現在完了）を組み、目的語 a car を続ける
+- since を he was 19 の前に置いて「19歳のときから」を表す
+
+#### 問 021 ｜ 正解 **died**
+
+**完成文** It is five years since he **died**.
+**訳** 彼が亡くなってから5年になります。
+**POINT** He has been dead for ～ ＝ It is ～ since he died の書き換え
+
+He has been dead for five years. は、直訳すると「彼は5年間ずっと死んだ状態である」、つまり「彼が死んでから5年になる」という意味です。これを〈It is+期間+since S+過去形〉「Sが～してから（期間）になる」で書き換えます。since の後ろには「死んだ」という過去の一時点の出来事を過去形で置くので、die の過去形 died が正解です。「dead（形容詞：死んでいる状態）＋現在完了」と「died（動詞の過去形：死んだという出来事）＋since」の対応関係は、書き換え問題の定番として押さえておきましょう。
+
+
+## UNIT 3 助動詞(1)
+
+#### 問 022 ｜ 正解 **3**
+
+**完成文** I **had to** work overtime every day last week.
+**訳** 先週、私は毎日残業しなければなりませんでした。
+**POINT** 過去の義務は had to（must に過去形はない）
+
+文末に last week（先週）という過去を表す語句があるので、空所には過去の「〜しなければならなかった」を表す形が必要です。助動詞 must は「〜しなければならない」という義務を表しますが、must 自体には過去形が存在しません。そこで、同じ義務の意味を持つ have to の過去形 had to を使って過去の義務を表します。「過去の話なのに must は使えない」という点が最大の着眼点で、had to はこの穴を埋める定番の言い換え表現です。時を表す語句（last week, yesterday など）を見つけたら、まず時制との整合性を確認する習慣をつけましょう。
+
+**誤答チェック**
+- 1 might：「〜かもしれない」という推量の意味になり、「毎日残業した」という事実の文脈に合わないため×
+- 2 must：must には過去形がなく、last week と時制が合わないため×
+- 4 ought to：「〜すべきだ」という現在の助言・義務を表し、過去の文脈で使えないため×
+
+#### 問 023 ｜ 正解 **4**
+
+**完成文** You **do not have to** introduce me to the professor because we have already met.
+**訳** 私たちはすでに面識があるので、あなたは私をその教授に紹介する必要はありません。
+**POINT** don't have to 〜「〜する必要はない」（不必要）
+
+because 以下に「私たちはすでに会ったことがある（面識がある）」とあるので、前半は「紹介する必要はない」という意味になるはずです。「〜する必要はない」という「不必要」を表すのは do not have to（= need not）です。ここで注意したいのは、must not との違いです。must not は「〜してはいけない」という強い禁止を表すのに対し、do not have to は「〜しなくてもよい」という不必要を表します。否定文になると意味が大きく分かれるのが have to と must の重要な相違点で、入試でも頻出のポイントです。
+
+**誤答チェック**
+- 1 never：never は助動詞ではなく副詞なので、動詞の原形 introduce の前に単独で置くと文が成立しないため×（正しくは You never introduce のように一般動詞の文になるが、文意も不自然）
+- 2 are supposed to：「〜することになっている」という予定・義務の意味で、「すでに面識がある」という理由と噛み合わないため×
+- 3 should：「〜すべきだ」では「面識があるから紹介すべきだ」となり、because 以下の理由と論理がつながらないため×
+- 5 will：「〜するだろう／〜するつもりだ」では不必要の意味が出せず、文意が通らないため×
+
+#### 問 024 ｜ 正解 **2**
+
+**完成文** You **must** be a fast worker to have done so much in such a short time.
+**訳** こんなに短い時間でこれほど多くのことをやり終えたのだから、あなたは仕事が速い人に違いありません。
+**POINT** must be 〜「〜に違いない」（強い確信のある推量）
+
+この文の後半 to have done so much in such a short time は「こんなに短時間で多くのことをしたとは」という判断の根拠を表す不定詞です。つまり前半は「あなたは仕事が速い人に違いない」という話し手の推量になるはずです。must には「〜しなければならない」（義務）のほかに「〜に違いない」（強い確信）の意味があり、ここでは後者です。must + be のように状態動詞が続く場合は推量の意味になることが多い、という点も覚えておくと判断が速くなります。根拠を示す不定詞とセットで「must be = 〜に違いない」と押さえましょう。
+
+**誤答チェック**
+- 1 can：肯定文の can に「〜に違いない」の意味はなく（確信の推量は疑問文 Can 〜? や否定文 cannot で使う）、文意に合わないため×
+- 3 should：「〜のはずだ」という弱めの推量は可能だが、確実な根拠（実際に仕事を終えた事実）がある文脈では must の確信が適切なため×
+- 4 will：「〜だろう」という未来・意志の意味になり、目の前の事実に基づく推量として不自然なため×
+
+#### 問 025 ｜ 正解 **1**
+
+**完成文** **Can** it be true that he bought a sports car?
+**訳** 彼がスポーツカーを買ったというのは、いったい本当なのだろうか。
+**POINT** Can it be true 〜?「いったい本当だろうか」（可能性への強い疑い）
+
+空所の後ろが it be true と動詞の原形 be になっていることに注目します。原形が続くのは助動詞だけなので、この時点で選択肢は助動詞の Can に絞られます。助動詞 can は疑問文で使うと「いったい〜だろうか」という可能性への強い疑いを表し、Can it be true that 〜? は「〜というのは本当だろうか」という定番表現です。肯定文の must be（〜に違いない）、否定文の cannot be（〜のはずがない）、疑問文の Can 〜 be?（いったい〜だろうか）は推量の can/must のセットとしてまとめて覚えておきましょう。
+
+**誤答チェック**
+- 2 Had：Had it been true なら仮定法の倒置だが、ここでは原形 be が続いており形が合わないため×
+- 3 Has：Has の後ろには過去分詞（been）が必要で、原形 be は続けられないため×
+- 4 Did：Did の疑問文は一般動詞の文で使うもので、Did it be という形は文法的に成立しないため×
+
+#### 問 026 ｜ 正解 **4**
+
+**完成文** This story **cannot** be true.
+**訳** この話は本当のはずがない。
+**POINT** cannot be 〜「〜のはずがない」（強い否定の推量）
+
+cannot（can't）には「〜できない」という能力の否定のほかに、「〜のはずがない」という強い否定の推量の意味があります。この文では主語が This story（この話）で、動詞が be true（本当である）という状態を表しているため、「できない」ではなく「本当であるはずがない」という推量で訳すのが自然です。肯定の確信は must be（〜に違いない）、否定の確信は cannot be（〜のはずがない）と、対になる表現として覚えるのが鉄則です。1・2 の「実現させる」は make の意味を勝手に補った誤訳で、3 の「本当に違いない」は must be の訳なので、いずれも不適切です。
+
+#### 問 027 ｜ 正解 **256314**
+
+**完成文** I **have to make a speech at** my elder sister's wedding.
+**訳** 私は姉の結婚式でスピーチをしなくてはなりません。
+**POINT** have to do「〜しなければならない」＋ make a speech「スピーチをする」
+
+「〜しなくてはならない」は have to + 動詞の原形で表します。まず主語 I の直後に have to を置き、その後ろに「スピーチをする」にあたる make a speech を続けます。「スピーチをする」は do ではなく make を使うのが決まった言い方（コロケーション＝相性のよい語の組み合わせ）である点に注意しましょう。最後に場所を表す前置詞 at を置いて my elder sister's wedding につなげれば完成です。
+
+**組み立て**
+- 「しなくてはならない」→ have to を主語 I の直後に確定
+- 「スピーチをする」→ make a speech（make とセットで覚える）
+- 場所「結婚式で」→ at my elder sister's wedding
+
+#### 問 028 ｜ 正解 **416235**
+
+**完成文** I **used to play house with my** sister.
+**訳** 私はかつて妹とままごとをしたものです。
+**POINT** used to do「かつて〜したものだ」（過去の習慣）
+
+「かつて〜したものだ」という過去の習慣は used to + 動詞の原形で表します。主語 I の直後に used to を置き、動詞の原形 play を続けます。「ままごとをする」は play house という決まった表現で、冠詞をつけずに house をそのまま使う点がポイントです。最後に「妹と」を with my sister とまとめれば完成です。used to は「今はもうしていない」という現在との対比を含む表現であることも押さえておきましょう。
+
+**組み立て**
+- 「かつて〜したものだ」→ used to ＋原形を確定
+- 「ままごとをする」→ play house（無冠詞の決まり文句）
+- 「妹と」→ with my (sister)
+
+#### 問 029 ｜ 正解 **②**
+
+**完成文** Jogging used to **be** my main sport, but I've taken up swimming lately.
+**訳** かつてはジョギングが私の主なスポーツでしたが、最近は水泳を始めました。
+**POINT** used to の後ろは動詞の原形
+
+used to は「かつて〜だった」という過去の状態・習慣を表す表現で、to の後ろには必ず動詞の原形が続きます。②の being は動名詞（-ing 形）なのでここには置けず、原形の be に直すのが正解です。be used to -ing（〜に慣れている）という似た表現では -ing 形を使うため混同しやすいのですが、主語 Jogging の直後に used to が来ているこの文は「かつて〜だった」の used to do の形です。「used to の直後は原形、be/get used to の直後は -ing」と対比して整理しておきましょう。後半の taken up は take up（〜を始める）の現在完了で、こちらは正しい形です。
+
+**訂正** ② being → be
+
+#### 問 030 ｜ 正解 **52781436**
+
+**完成文** We **were able to get out of the difficult situation by acting** quickly.
+**訳** すばやく行動して、私たちはその難しい状況から逃れることができました。
+**POINT** was/were able to do「（実際に）〜できた」
+
+「〜することができた」と過去に実際に成功したことを表すときは、was/were able to + 動詞の原形を使います。主語 We の直後に were able to を置き、「〜から逃れる」get out of を続けて the difficult situation につなげます。そして「すばやく行動して」は手段を表す by -ing（〜することによって）を使い、by acting quickly とまとめます。could は「やろうと思えばできた」という能力を表すのに対し、was/were able to は「実際にできた」という一回の達成を表せる、という違いも重要ポイントです。
+
+**組み立て**
+- 「〜できた」→ were able to を主語 We の直後に確定
+- 「〜から逃れる」→ get out of the difficult situation
+- 手段「すばやく行動して」→ by acting (quickly)（by -ing）
+
+
+## UNIT 4 助動詞(2)
+
+#### 問 031 ｜ 正解 **1**
+
+**完成文** The road is wet. It **must have rained** last night.
+**訳** 道路が濡れている。昨夜、雨が降ったにちがいない。
+**POINT** must have + 過去分詞「〜したにちがいない」（過去のことへの確信のある推量）
+
+第1文「道路が濡れている」は現在の状況、第2文は last night（昨夜）という過去の出来事についての推量です。つまり「今見えている証拠から、過去のことを推測する」文だとまず見抜きます。助動詞は原則として過去のことを直接表せないので、「助動詞 + have + 過去分詞」の形を使い、must have rained で「雨が降ったにちがいない」という過去への推量を表します。空所の後ろに last night があれば「助動詞 + have + 過去分詞」を予想する、というのがこの問題の着眼点です。
+
+**誤答チェック**
+- 2 must be raining：「今雨が降っているにちがいない」という現在の推量になり、last night と合わないため×
+- 3 had to be rained：rain（雨が降る）は受動態にできない自動詞であり、形として成立しないため×
+- 4 had to rain：had to は「〜しなければならなかった」（過去の義務）で、推量の意味にならないため×
+
+#### 問 032 ｜ 正解 **1**
+
+**完成文** Jack has been in the hospital for two weeks, so you **cannot have seen** him walking in town yesterday.
+**訳** ジャックは2週間入院しているのだから、昨日あなたが彼が町を歩いているのを見たはずがない。
+**POINT** cannot have + 過去分詞「〜したはずがない」（過去のことへの否定的な推量）
+
+前半の「ジャックは2週間入院している」という事実が根拠になり、後半で yesterday（昨日）という過去の出来事を否定的に推量する流れです。「入院中なのだから、昨日町で見かけたはずがない」という意味にするには、cannot have + 過去分詞「〜したはずがない」を使います。これは問031の must have + 過去分詞「〜したにちがいない」のちょうど裏返しの表現で、セットで覚えるのが定石です。so（だから）の前後の論理関係と yesterday に注目できたかがポイントです。
+
+**誤答チェック**
+- 2 cannot see：現在形「見ることができない／見るはずがない」となり、yesterday という過去と合わないため×
+- 3 could be seen：受動態「見られることができた」となり、you が see の主語である文構造と合わないため×
+- 4 could have been seen：受動態で「あなたが見られたかもしれない」という意味になってしまい、文意が通らないため×
+
+#### 問 033 ｜ 正解 **2**
+
+**完成文** X : Your apartment is really compact.
+Y : You may **well** think this is small, but it's actually larger than average.
+**訳** X：君のアパート、本当にコンパクトだね。
+Y：ここが狭いと思うのももっともだけど、実は平均より広いんだよ。
+**POINT** may well do「〜するのももっともだ／たぶん〜だろう」
+
+may の直後に空所があり、その後に動詞 think が続く形です。ここに入れられるのは、助動詞と動詞の間に割り込める副詞だけです。may well do で「〜するのももっともだ」という熟語になり、「（見た目がコンパクトだから）狭いと思うのももっともだ」という会話の流れにぴったり合います。この well は「上手に」ではなく「十分に・当然に」という意味の副詞で、may の推量・当然性を強める働きをしています。but 以下で「でも実は平均より広い」と続くことからも、「そう思うのは無理もないが」という譲歩の意味が求められていると分かります。
+
+**誤答チェック**
+- 1 good：形容詞なので、助動詞 may と動詞 think の間に置けないため×
+- 3 better：比較級を入れる熟語は存在せず、比較対象もないため×
+- 4 best：may best think という形は熟語として存在しないため×
+
+#### 問 034 ｜ 正解 **2**
+
+**完成文** You **might as well** throw away your money as spend it in gambling.
+**訳** ギャンブルにお金を使うくらいなら、捨てたほうがましだ。
+**POINT** might as well A as B「BするくらいならAしたほうがましだ」
+
+空所の後ろに throw away（動詞の原形）があり、さらに文の後半に as spend it in gambling と別の as + 動詞の原形が続いていることに注目します。これは might as well A as B「BするくらいならAしたほうがましだ」の形です。「ギャンブルに使う（B）くらいなら、捨てる（A）ほうがましだ」つまり「ギャンブルはお金を捨てるのも同然だ」という強い皮肉を表します。as well の well は「同じくらいよく」という原級比較のイメージで、「Bするのと同じくらいAしてもよい＝Aのほうがましだ」と考えると腹落ちします。後半の as を見て might as well を選べるかが勝負の分かれ目です。
+
+**誤答チェック**
+- 1 might be well：be 動詞の後に動詞の原形 throw は続けられないため×
+- 3 might well：「〜するのももっともだ」の意味で、後半の as spend と呼応せず文意も通らないため×
+- 4 might well as：語順として存在しない形のため×
+
+#### 問 035 ｜ 正解 **1**
+
+**完成文** You **had better not** go to school because you have a slight fever.
+**訳** 微熱があるのだから、学校には行かないほうがいい。
+**POINT** had better の否定形は had better not do
+
+had better do「〜したほうがよい」の否定形が問われています。had better はひとまとまりの助動詞のように働くので、否定の not は had better の直後、つまり had better not do の語順になります。「had not better」のように not を had と better の間に入れるのは典型的な誤りなので注意しましょう。また、had better の後ろは to 不定詞ではなく動詞の原形が来ることも同時に確認しておきたいポイントです。「微熱がある→学校に行かないほうがいい」という文意からも否定形が必要だと分かります。
+
+**誤答チェック**
+- 2 had better not to：had better の後ろは動詞の原形であり、to は不要なため×
+- 3 had not better：not の位置が誤りで、正しくは had better not の語順のため×
+- 4 had not better to：not の位置と to の両方が誤りのため×
+
+#### 問 036 ｜ 正解 **6235147**
+
+**完成文** You **ought to have called my home before you** went there.
+**訳** あなたは、そこに行く前に私の家に電話をすべきでした。
+**POINT** ought to have + 過去分詞「〜すべきだったのに（しなかった）」
+
+「すべきでした」という過去への後悔・非難は、ought to have + 過去分詞で表します。これは should have + 過去分詞とほぼ同じ意味で、「実際にはしなかった」という含みを持つのが特徴です。まず主語 You の後に ought to have called と助動詞のかたまりを組み立て、目的語 my home を続けます。残った before と you は、文末の went there につながる接続詞節 before you went there「あなたがそこに行く前に」を作ると考えれば、すべての語が過不足なく収まります。
+
+**組み立て**
+- ought to have called（〜すべきだった）を骨格として確定
+- called の目的語に my home を置く
+- before you + went there で「そこに行く前に」の副詞節を作る
+
+#### 問 037 ｜ 正解 **53142**
+
+**完成文** I **should not have bought such** an expensive application.
+**訳** こんなに高いアプリを買うんじゃなかった。
+**POINT** should not have + 過去分詞「〜すべきではなかったのに（してしまった）」
+
+「買うんじゃなかった」という過去の行動への後悔は、should not have + 過去分詞「〜すべきではなかった」で表します。実際には買ってしまった、という含みがある表現です。語順は should → not → have → bought の順で、not は should の直後に置くのがルールです。残った such は、文末の an expensive application とつながって such an expensive application「こんなに高いアプリ」となります。such a[an] + 形容詞 + 名詞 の語順（such が冠詞の前に出る）も頻出ポイントなので、あわせて押さえておきましょう。
+
+**組み立て**
+- 「買うんじゃなかった」→ should not have bought を確定
+- such + an expensive application の語順（such は冠詞の前）で締める
+
+#### 問 038 ｜ 正解 **①**
+
+**完成文** You **cannot** be too careful when driving with your baby in a car.
+**訳** 赤ちゃんを車に乗せて運転しているときは、いくら注意してもしすぎることはない。
+**POINT** cannot be too ...「いくら〜してもしすぎることはない」
+
+日本文の「いくら注意してもしすぎることはない」に対応するのは、cannot ... too ~「いくら〜してもしすぎることはない」という重要構文です。直訳すると「注意しすぎる状態には決してなれない」、つまり「どれだけ注意しても足りないくらいだ」という意味になります。ところが問題文は You can be too careful となっており、これでは「注意しすぎることがありうる」という逆の意味になってしまいます。②の too careful だけを見て「too がおかしいのでは」と考えないよう注意しましょう。この構文では too はそのまま残し、can を cannot に直すのが正解です。なお、when driving は when you are driving の省略形（接続詞の後の主語 + be 動詞の省略）です。
+
+**訂正** ① can → cannot
+
+#### 問 039 ｜ 正解 **251643**
+
+**完成文** You **had better not climb mountains by** yourself in winter.
+**訳** 君は冬に一人で登山しないほうがよい。
+**POINT** had better not do「〜しないほうがよい」／ by oneself「一人で」
+
+「〜しないほうがよい」は had better not + 動詞の原形で表します。問035で確認したとおり、not は had better のかたまりの直後に置くのがポイントで、had not better としないよう注意しましょう。まず You had better not climb と骨格を組み、climb の目的語に mountains を置きます。残った by は、文末の yourself と結びついて by yourself「一人で」という熟語を作ります。「一人で」= by oneself を知っていれば、by の置き場所に迷わず最後まで組み立てられます。
+
+**組み立て**
+- had better not climb（not の位置に注意）を骨格として確定
+- climb の目的語に mountains
+- by + yourself で「一人で」を作り文末へ
+
+
+## UNIT 5 仮定法(1)
+
+#### 問 040 ｜ 正解 **3**
+
+**完成文** I think there are too many cars. If there were not so many cars, there **would not be** so much pollution.
+**訳** 車が多すぎると思います。もしこれほど多くの車がなければ、これほどの公害はないでしょうに。
+**POINT** 仮定法過去の帰結節は「would＋動詞の原形」
+
+if 節が there were not と過去形になっている点に注目しましょう。これは「現在の事実に反する仮定」を表す仮定法過去（形は過去形でも意味は現在の話）です。仮定法過去の基本形は「If S＋過去形, S would＋原形」なので、帰結節（結論を述べる側の節）には would not be が入ります。第1文で「実際には車が多すぎる」と現実を述べ、第2文でその逆を想像している、という流れをつかめれば形は自動的に決まります。
+
+**誤答チェック**
+- 1 is not：直説法（事実をそのまま述べる形）の現在形で、仮定法過去の帰結節には置けないため×
+- 2 will not be：if 節が仮定法過去（were）なのに帰結節だけ直説法未来にはできないため×
+- 4 must not have been：「〜だったはずがない」という過去への推量で、現在の仮定の帰結にならないため×
+
+#### 問 041 ｜ 正解 **2**
+
+**完成文** If I **knew** the truth, I would tell you.
+**訳** もし本当のことを知っていれば、あなたに話すのですが。
+**POINT** 仮定法過去の if 節には動詞の過去形
+
+帰結節が I would tell you と「would＋原形」になっているので、この文は仮定法過去だと分かります。仮定法過去は「今、実際はそうでない」ことを仮定する形で、if 節には動詞の過去形を使います。したがって knew が正解です。「（実際は知らないが）もし知っていたら」という現在の事実の裏返しを、過去形という"距離を置いた形"で表すのが仮定法のしくみです。
+
+**誤答チェック**
+- 1 know：現在形は直説法で、帰結節の would tell と形が合わないため×
+- 3 will know：条件を表す if 節に will は原則置けず、仮定法の形でもないため×
+- 4 have known：現在完了は仮定法過去の if 節の形ではないため×
+
+#### 問 042 ｜ 正解 **4**
+
+**完成文** If I had known your telephone number, I **would have called** you up.
+**訳** あなたの電話番号を知っていたら、電話をかけたのに。
+**POINT** 仮定法過去完了の帰結節は「would have＋過去分詞」
+
+if 節が had known と「had＋過去分詞」になっているので、「過去の事実に反する仮定」を表す仮定法過去完了です。基本形は「If S had＋過去分詞, S would have＋過去分詞」なので、帰結節は would have called となります。「（実際は知らなかったので電話しなかったが）知っていたらかけたのに」という過去への後悔・振り返りの文です。if 節の形を見て時制のペアを判断するのが着眼点です。
+
+**誤答チェック**
+- 1 had called：「had＋過去分詞」は if 節側の形で、帰結節には置けないため×
+- 2 will call：直説法未来で、過去の事実に反する仮定の帰結にならないため×
+- 3 might call：「might＋原形」は仮定法過去の帰結節の形で、「今〜するかもしれない」となり過去の話に合わないため×
+
+#### 問 043 ｜ 正解 **2**
+
+**完成文** I didn't go out yesterday. I would have gone out if I **hadn't been** so tired.
+**訳** 昨日は外出しませんでした。あんなに疲れていなければ、外出していたのですが。
+**POINT** 仮定法過去完了の if 節は「had＋過去分詞」
+
+この問題は if 節が後ろに置かれた形です。前半の帰結節が would have gone out と「would have＋過去分詞」なので仮定法過去完了と判断でき、if 節には「had＋過去分詞」を入れます。第1文から「実際は昨日、疲れていて外出しなかった」と分かるので、その逆の仮定「疲れていなかったら」には否定形の hadn't been が必要です。形だけでなく、現実との肯定・否定の反転までチェックするのがポイントです。
+
+**誤答チェック**
+- 1 haven't been：現在完了は仮定法過去完了の if 節の形ではないため×
+- 3 have been：同じく現在完了で形が合わず、否定でもないため×
+- 4 had been：形は正しいが「もしあんなに疲れていたら」となり、現実（疲れていた）の裏返しにならず意味が通らないため×
+
+#### 問 044 ｜ 正解 **3**
+
+**完成文** If I had eaten breakfast, I **wouldn't be** hungry now.
+**訳** 朝食を食べていれば、今お腹が空いていないでしょうに。
+**POINT** 混合仮定法：if 節は過去完了・帰結節は仮定法過去
+
+if 節の had eaten は「過去の事実（朝食を食べなかった）」に反する仮定なので仮定法過去完了の形です。ところが帰結節には now があり、「今空腹だ」という現在の状態の裏返しを述べています。このように「過去の仮定→現在の帰結」を組み合わせる形を混合仮定法と呼び、帰結節は仮定法過去の「would＋原形」、つまり wouldn't be を使います。文末の now を見落とさないことが最大の着眼点です。
+
+**誤答チェック**
+- 1 am not：直説法現在で、仮定の帰結節に置けないため×
+- 2 won't be：直説法未来で、仮定法の文に合わないため×
+- 4 wouldn't have been：「過去に〜でなかっただろう」となり、now（現在）と矛盾するため×
+
+#### 問 045 ｜ 正解 **2**
+
+**完成文** If she **had not left** there yesterday, she would not be here now.
+**訳** 彼女が昨日そこを発っていなかったら、今ここにはいないでしょう。
+**POINT** 混合仮定法の if 節は「had＋過去分詞」
+
+if 節には yesterday、帰結節には now が付いています。「昨日そこを出発した」という過去の事実に反する仮定なので、if 節は仮定法過去完了の「had＋過去分詞」、すなわち had not left が正解です。帰結節は would not be と仮定法過去の形で「今ここにいない（だろう）」という現在の帰結を表しており、問 044 と同じ混合仮定法の文です。yesterday と now という時のキーワードから、節ごとに時制を切り替えるのが解き方の手順です。
+
+**誤答チェック**
+- 1 did not leave：単なる過去形は仮定法過去（＝現在の仮定）の形で、過去の事実に反する仮定にならないため×
+- 3 has not left：現在完了は仮定法の if 節の形ではないため×
+- 4 would not leave：would は帰結節に使う助動詞で、原則 if 節には置けないため×
+
+#### 問 046 ｜ 正解 **1**
+
+**完成文** Even if the sun **were to** rise in the west, he would never stop loving his wife.
+**訳** たとえ太陽が西から昇るようなことがあっても、彼が妻を愛するのをやめることは決してないでしょう。
+**POINT** 「if S were to＋原形」＝実現可能性を問わない未来の仮定
+
+「太陽が西から昇る」というおよそ起こりえない未来のことを仮定するときは、「if S were to＋動詞の原形」を使います。were to は実現の可能性をいったん脇に置いて「仮に〜するようなことがあれば」と述べる形で、ここでは even（たとえ〜でも）が付いた even if の形になっています。帰結節が would never stop と仮定法の形であることも、空所に仮定法の were to が入る決め手になります。
+
+**誤答チェック**
+- 2 will：仮定法の文（帰結節が would）の if 節に will は置けないため×
+- 3 maybe：「たぶん」という副詞で、後ろの原形 rise とつながらず文法的に成立しないため×
+- 4 might：if 節に「might＋原形」を置く形はなく、ありえない未来の仮定は were to で表すため×
+- 5 was going：rise の前に to がなく was going rise では形が成立しないため×
+
+#### 問 047 ｜ 正解 **4**
+
+**完成文** **Had there been** a train station in the neighborhood at that time, Mr. and Mrs. Tanaka might have stayed in their old house.
+**訳** 当時、近所に鉄道の駅があったなら、田中夫妻は古い家に住み続けていたかもしれません。
+**POINT** if の省略と倒置：If there had been → Had there been
+
+帰結節が might have stayed と「助動詞の過去形＋have＋過去分詞」なので、過去の事実に反する仮定＝仮定法過去完了の文です。本来の if 節は If there had been a train station ですが、仮定法では if を省略し、代わりに主語と（助）動詞を倒置（疑問文の語順に）できます。there 構文では had が there の前に出て Had there been となります。at that time（当時）という過去のキーワードも仮定法過去完了を選ぶ根拠になります。
+
+**誤答チェック**
+- 1 There were：接続詞がないまま2つの文が並んでしまい、文がつながらないため×
+- 2 There had been：同じく接続詞がなく、条件節を作れないため×
+- 3 Were there：倒置形だが仮定法過去（現在の仮定）となり、at that time と帰結節の might have stayed に合わないため×
+
+#### 問 048 ｜ 正解 **3**
+
+**完成文** **Should** you need any more information, please call the information desk.
+**訳** さらに情報が必要でしたら、案内デスクにお電話ください。
+**POINT** if の省略と倒置：If you should need → Should you need
+
+「if S should＋原形」は「万一〜なら」と、起こる可能性が低い（または丁寧にぼかしたい）未来のことを仮定する形です。この should も if を省略して倒置でき、If you should need → Should you need となります。帰結節が please call と命令文になれるのも should 型の特徴で、案内文やビジネス文書で頻出の定型表現です。空所の後ろが「主語＋動詞の原形（you need）」という語順であることが、倒置された Should を選ぶ着眼点です。
+
+**誤答チェック**
+- 1 Do：Do you need は単なる疑問文になり、後半の命令文とつながらないため×
+- 2 Had：倒置なら Had you needed と過去分詞が必要で、原形 need とは形が合わないため×
+- 4 Would：would を文頭に倒置して条件節を作る用法はないため×
+
+#### 問 049 ｜ 正解 **32485176**
+
+**完成文** **If I were in your position, I would transfer to** New York.
+**訳** もし私があなたの立場なら、ニューヨークへ転勤するでしょう。
+**POINT** 仮定法過去の定番「If I were in your position」
+
+「もし私があなたなら」という現在の事実に反する仮定なので仮定法過去です。if 節は「If＋S＋過去形」で If I were in your position（仮定法では主語が I でも were を使うのが原則）、帰結節は「S＋would＋原形」で I would transfer to New York と組み立てます。If I were in your position [place / shoes] は「私があなたの立場なら」という頻出の定型表現なので、かたまりで覚えてしまいましょう。
+
+**組み立て** ③if＋②I were で条件節を開始 → ④in ➇your ⑤position（あなたの立場に）→ 帰結節 ①I ⑦would ⑥transfer to＋New York
+
+#### 問 050 ｜ 正解 **152453**
+
+**完成文** If I had had some extra money, **I would have bought a new computer**.
+**訳** お金に余裕があったら、新しいコンピューターを買ったのに。
+**POINT** 仮定法過去完了の帰結節「would have＋過去分詞」
+
+if 節が had had と「had＋過去分詞」（1つ目の had が助動詞、2つ目の had が「持っている」の過去分詞）なので、過去の事実に反する仮定＝仮定法過去完了です。帰結節は「S＋would have＋過去分詞」の語順と決まっているので、I would have bought とまず動詞のかたまりを作り、そのあとに目的語 a new computer を続けます。「実際はお金がなかったので買えなかった」という過去への残念な気持ちを表す文です。
+
+**組み立て** 主語 ①I を確定 → would have bought（仮定法過去完了の帰結節の動詞のかたまり）→ ⑤a ③new computer（目的語）
+
+#### 問 051 ｜ 正解 **86241 753**
+
+**完成文** **Had I arrived five minutes earlier**, I **could have been** in time for the train.
+**訳** 5分早く着いていたら、汽車に間に合っていたのに。
+**POINT** if の省略と倒置：If I had arrived → Had I arrived
+
+「（実際は間に合わなかったが）早く着いていたら間に合った」という過去の事実に反する仮定なので仮定法過去完了です。本来は If I had arrived five minutes earlier ですが、if を省略すると had が主語の前に出て Had I arrived という倒置の形になります。帰結節は「could have＋過去分詞」で could have been in time（間に合うことができたのに）。文頭に Had がきたら「if の省略では？」と疑うのが、この形を見抜く最大の着眼点です。
+
+**組み立て** if 省略の倒置 ➇Had ⑥I ②arrived → ④five minutes ①earlier → 帰結節は ⑦could ⑤have ③been＋in time for
+
+#### 問 052 ｜ 正解 **2341**
+
+**完成文** **Should anything new happen** in the meeting, please let me know.
+**訳** 会議で何か新しいことが起こったら、私に知らせてください。
+**POINT** should の倒置と「-thing＋形容詞」の語順
+
+「if S should＋原形（万一〜なら）」の if を省略した倒置形で、Should を文頭に置きます。主語は anything ですが、anything・something など -thing で終わる代名詞は形容詞を後ろに置くというルールがあるため、anything new（何か新しいこと）の語順になります。そのあとに動詞の原形 happen を続けて、Should anything new happen が完成です。帰結節が please let me know と命令文なのも、should 型の仮定法によくあるパターンです。
+
+**組み立て** ②Should を文頭に（if 省略の倒置）→ 主語 ③anything＋④new（-thing は形容詞が後置）→ 動詞の原形 ①happen
+
+
+## UNIT 6 仮定法(2)
+
+#### 問 053 ｜ 正解 **4**
+
+**完成文** I do not deny that your information was invaluable. **Without** it, I could never have formed our plan.
+**訳** あなたの情報が非常に貴重だったことは否定しません。それがなかったら、私たちは計画をまったく立てられなかったでしょう。
+**POINT** Without 〜 が仮定法の if 節の代わりになる
+
+第2文の後半に could never have formed という「助動詞の過去形 + have + 過去分詞」があるので、これは仮定法過去完了（過去の事実に反する仮定）の帰結節だとわかります。仮定法の文では、if 節の代わりに前置詞句が条件の意味を担うことがあり、Without 〜 は「〜がなかったら」を表す代表的な形です。第1文で「情報は貴重だった（＝実際にはあった）」と言っているので、「それが**なかったら**計画は立てられなかった」という流れになる Without が正解です。着眼点は、帰結節の形（仮定法過去完了）と、前後の文脈から「あり／なし」どちらの仮定なのかを見抜くことです。
+
+**誤答チェック**
+- 1 Far from：「〜どころか」の意味で、仮定の条件を表せないため×
+- 2 In spite of：「〜にもかかわらず」では「貴重だったのに計画が立てられなかった」となり第1文と矛盾するため×
+- 3 With：「それがあれば」となり、実際に情報はあったのだから仮定にならず、意味も逆になるため×
+
+#### 問 054 ｜ 正解 **2**
+
+**完成文** **With** a little more effort, he could have finished the job in time.
+**訳** もう少し努力していれば、彼は時間内に仕事を終えられたのに。
+**POINT** With 〜 が if 節の代わりになる「〜があれば」
+
+後半が could have finished（助動詞の過去形 + have + 過去分詞）なので仮定法過去完了、つまり「実際には終えられなかった」という過去への反実仮想です。if 節の代用として、With 〜 は「〜があれば・あったら」を表します。a little more effort「もう少しの努力」が**あったなら**終えられた、という文脈なので With が正解です。Without が「なかったら」、With が「あったら」とペアで覚えておくと、この型の問題は帰結節の形と意味の向きだけで即断できます。
+
+**誤答チェック**
+- 1 For：理由や交換の for に「〜があれば」という仮定の用法はないため×
+- 3 By：手段「〜によって」の by では仮定の条件を表せないため×
+- 4 As：「〜として」の as では意味が通らないため×
+
+#### 問 055 ｜ 正解 **4**
+
+**完成文** Makoto was very tired last night. Otherwise, he **would have gone** to see the movie.
+**訳** マコトは昨夜とても疲れていた。そうでなければ、映画を見に行っていただろう。
+**POINT** otherwise = 「もしそうでなかったら」（if 節の代用）
+
+otherwise は前の文の内容を受けて「もしそうでなかったら（= if he had not been very tired）」という仮定法の if 節の代わりを務める副詞です。前の文は last night と過去の話なので、「昨夜疲れていなかったら」という**過去の事実に反する仮定**になります。したがって帰結節は仮定法過去完了の「助動詞の過去形 + have + 過去分詞」、つまり would have gone が正解です。otherwise を見たら「直前の文を打ち消した仮定」と読み替え、時制（過去の話か現在の話か）から帰結節の形を決めるのが手順です。
+
+**誤答チェック**
+- 1 will go：直説法の未来形で、過去の事実に反する仮定を表せないため×
+- 2 have gone：助動詞がなく、単独の have gone では帰結節の形にならないため×
+- 3 will have gone：未来完了「〜してしまっているだろう」であり、過去への反実仮想ではないため×
+
+#### 問 056 ｜ 正解 **3**
+
+**完成文** Girls often wish they **were** boys.
+**訳** 女の子はよく、自分が男の子だったらいいのにと思う。
+**POINT** wish + 仮定法過去（現在の事実に反する願望）
+
+wish の後ろの that 節（ここでは that が省略）には仮定法を使い、「今〜だったらいいのに」という**現在の事実に反する願望**は過去形（仮定法過去）で表します。「女の子が男の子である」ことは現在の事実に反するので were が正解です。仮定法過去では主語が単数でも複数でも be 動詞は were を使うのが原則、という点もあわせて確認しておきましょう。主節の wish が現在形でも、that 節の中は「事実とのズレ」を示すために過去形になる、という感覚がポイントです。
+
+**誤答チェック**
+- 1 are：直説法の現在形では「事実」を述べることになり、事実に反する願望を表せないため×
+- 2 should be：wish の後ろに should を置く形は標準的でなく、ここでは意味も合わないため×
+- 4 will be：未来の予測を表す形で、wish の後ろの反実仮想には使えないため×
+
+#### 問 057 ｜ 正解 **1**
+
+**完成文** A : I didn't know that she was so troubled about money matters.
+B : I wish you **had sent** her some a couple of weeks earlier.
+**訳** A：彼女がお金のことでそんなに悩んでいたなんて知らなかったよ。
+B：2、3週間早く彼女にいくらか送ってあげていたらよかったのにね。
+**POINT** wish + 仮定法過去完了（過去の事実に反する後悔）
+
+a couple of weeks earlier「2、3週間早く」という語句から、これは**過去に実際はしなかったこと**への後悔だとわかります。「（あのとき）〜していたらよかったのに」と過去の事実に反する願望を述べるときは、wish の後ろに仮定法過去完了（had + 過去分詞）を使うので had sent が正解です。some は some money のことで、money matters を受けています。wish の問題は「今の話（→過去形）」か「過去の話（→ had + 過去分詞）」かを、earlier や yesterday のような時の表現で見分けるのが着眼点です。
+
+**誤答チェック**
+- 2 send：現在形では事実に反する願望を表せないため×
+- 3 sent：仮定法過去は「今〜ならいいのに」の意味になり、過去の一時点（2、3週間前）の話に合わないため×
+- 4 will send：未来の話になってしまい、過去への後悔を表せないため×
+
+#### 問 058 ｜ 正解 **3**
+
+**完成文** **But** for the doctor's great skill in the operation, he would not be alive now.
+**訳** 手術での医師の見事な腕前がなかったら、彼は今ごろ生きていないだろう。
+**POINT** But for 〜 = 「〜がなければ・なかったら」
+
+帰結節が would not be alive now（助動詞の過去形 + 動詞の原形 + now）なので、「今」の事実に反する仮定法の文です。「〜がなければ」を表す表現には Without 〜 のほかに But for 〜 があり、この問題では空所の**直後にすでに for がある**ので、But を入れて But for とするのが正解です。Without なら for は不要、But for なら for とセット、という形の違いがそのまま出題ポイントになっています。空所の後ろに何が残っているかを必ず確認する習慣をつけましょう。
+
+**誤答チェック**
+- 1 Without：Without 自体は「〜がなければ」を表せるが、直後の for と重複してしまうため×
+- 2 Unless：接続詞なので後ろに SV が必要で、名詞句 the doctor's great skill を続けられないため×
+- 4 Not：Not for 〜 という条件表現は存在しないため×
+
+#### 問 059 ｜ 正解 **1**
+
+**完成文** **Were it not for** birds, the world would be filled with insects.
+**訳** 鳥がいなければ、世界は昆虫であふれてしまうだろう。
+**POINT** If it were not for 〜 の if 省略・倒置 = Were it not for 〜
+
+帰結節が would be filled（助動詞の過去形 + 動詞の原形）なので仮定法過去、つまり**現在の事実に反する仮定**です。「（今）〜がなければ」は If it were not for 〜 で表し、if を省略すると主語と動詞が倒置されて Were it not for 〜 という形になります。鳥は現に存在しているので、「いないと仮定したら」という反実仮想にぴったり合う 1 が正解です。倒置形は見た目が疑問文のようで戸惑いやすいので、Were it not for / Had it not been for をそのまま熟語のように覚えてしまうのが実戦的です。
+
+**誤答チェック**
+- 2 If it had not been for：仮定法過去完了「〜がなかったら」で過去の話になり、帰結節の would be（現在）と合わないため×
+- 3 Had there been：「〜があったなら」と肯定の仮定になるうえ過去完了形で、意味も時制も合わないため×
+- 4 If there were：「もし鳥がいたら（昆虫だらけになる）」となり、意味が逆になるため×
+
+#### 問 060 ｜ 正解 **4**
+
+**完成文** Had it not been for our neighbors' kindness, we **wouldn't have been** able to find our dog.
+**訳** 近所の人たちの親切がなかったら、私たちは飼い犬を見つけられなかっただろう。
+**POINT** Had it not been for 〜（仮定法過去完了）の帰結節は would have + 過去分詞
+
+文頭の Had it not been for 〜 は If it had not been for 〜「〜がなかったら」の if 省略・倒置形で、**過去の事実に反する仮定**（仮定法過去完了）です。したがって帰結節は「助動詞の過去形 + have + 過去分詞」となり、wouldn't have been able to 〜 が正解です。条件節が過去完了なら帰結節は would have + 過去分詞、というセットを機械的に当てはめられるようにしておきましょう。実際には親切が「あった」から犬が「見つかった」、という事実の裏返しになっている点も確認できると理解が深まります。
+
+**誤答チェック**
+- 1 haven't been：直説法の現在完了で、反実仮想の帰結節にならないため×
+- 2 hadn't been：過去完了だけでは帰結節に必要な助動詞（would）がないため×
+- 3 wouldn't been：would の直後に過去分詞 been を置く形は文法的に存在しないため×（wouldn't be か wouldn't have been のどちらか）
+
+#### 問 061 ｜ 正解 **4**
+
+**完成文** It is time that you **went** to bed, Tom.
+**訳** トム、もう寝る時間ですよ。
+**POINT** It is time (that) S + 過去形「もう〜してもいい時間だ」
+
+It is time (that) 〜 の構文では、that 節の中に**仮定法過去**（動詞の過去形）を使い、「本当ならもう〜しているはずの時間なのに（まだしていない）」というニュアンスを表します。現在・未来のことなのに過去形を使うのは、「まだ寝ていない」という現実とのズレを仮定法で示しているからです。よって went が正解です。high や about を添えた It is high time / about time 〜 も同じく過去形をとる、という形で頻出なのでまとめて覚えておきましょう。
+
+**誤答チェック**
+- 1 gone：過去分詞単独では述語動詞になれないため×
+- 2 going：-ing 形単独では that 節の述語動詞になれないため×
+- 3 to go：It is time for you to go なら可能だが、that 節の中に to 不定詞は置けないため×
+
+#### 問 062 ｜ 正解 **1**
+
+**完成文** She talked to me **as if** she were my teacher.
+**訳** 彼女はまるで私の先生であるかのように私に話した。
+**POINT** as if + 仮定法過去「まるで〜であるかのように」
+
+空所の後ろが she were と、単数主語に were を使った**仮定法過去**になっていることが最大のヒントです。仮定法とセットで使い「まるで〜であるかのように」という意味を作る接続詞は as if（= as though）です。実際には彼女は私の先生ではないのに、そうであるかのように話した、という事実に反するたとえを表しています。空所補充では、後ろに仮定法（特に単数主語 + were）が見えたら as if をまず疑う、というのが着眼点です。
+
+**誤答チェック**
+- 2 because：「〜なので」では理由になり、仮定法 were を使う理由が説明できないため×
+- 3 that：talk は talk that 節という形をとらず、文法的に成立しないため×
+- 4 when：「〜のとき」では意味が通らず、仮定法 were とも合わないため×
+
+#### 問 063 ｜ 正解 **5642371**
+
+**完成文** She would still be on the team **if it had not been for the accident**.
+**訳** あの事故がなかったなら、彼女は今もチームにいるだろう。
+**POINT** if it had not been for 〜「（過去に）〜がなかったなら」
+
+「〜がなかったなら」という過去の事実に反する条件は if it had not been for 〜 で表します。この文では、条件は過去（事故が起きた）、帰結は現在（今もチームにいるだろう）なので、if 節が仮定法過去完了・主節が仮定法過去という**混合型**になっています。still「今も」が現在側の目印です。it は形式的な主語で特定の何かを指すわけではなく、if it had not been for 全体をひとかたまりの熟語として組み立てられるかが勝負です。
+
+**組み立て**
+- if it had not been for をひとかたまりで確定 → ⑤if ⑥it ④had not ②been ③for
+- 残りは「あの事故」→ ⑦the ①accident を for の目的語に置く
+
+#### 問 064 ｜ 正解 **13425**
+
+**完成文** **I wish I had** enough money to travel for a year.
+**訳** 1年間旅ができるだけのお金があればいいのですが。
+**POINT** I wish + S + 仮定法過去「〜があればいいのに」
+
+「（今）〜があればいいのに」という現在の事実に反する願望は、I wish の後ろに**仮定法過去**（動詞の過去形）を続けて表します。「お金がある」は have money なので、過去形にして I wish I had enough money となります。enough money の後ろに to travel for a year「1年間旅をするのに足りるだけの」という不定詞が続き、enough を後ろから修飾する形です。wish の後ろは that 節ですが、この that はふつう省略される点も確認しておきましょう。
+
+**組み立て**
+- I wish を文頭に確定 → ①I ③wish
+- その後ろに仮定法過去の SV → ④I ②had ⑤enough money
+- ※①と④はどちらも I なので、43125 の並びでも同じ英文になる
+
+#### 問 065 ｜ 正解 **38742165**
+
+**完成文** It is **high time that I bought a pair of** new shoes.
+**訳** もうそろそろ新しい靴を買わないといけない。
+**POINT** It is high time (that) S + 過去形「とっくに〜すべき時間だ」
+
+It is time 〜 に high がついた It is high time (that) 〜 は「もうとっくに〜すべき時だ」と、遅れているニュアンスを強めた表現です。that 節の中は**仮定法過去**なので、buy ではなく過去形の bought を使います。「靴（1足）」は two shoes とは言わず a pair of shoes と数えるので、bought の目的語は a pair of new shoes となります。high の位置は It is high time と time の直前に置くこと、that 節内が過去形になることの2点がこの問題の急所です。
+
+**組み立て**
+- It is high time that の骨組みを確定 → ③high ⑧time ⑦that
+- that 節に仮定法過去の SV → ④I ②bought
+- 目的語「新しい靴1足」→ ①a ⑥pair ⑤of + new shoes
+
+#### 問 066 ｜ 正解 **453612**
+
+**完成文** **Had it not been for your** help, he would have failed.
+**訳** あなたの援助がなかったら、彼は失敗していたでしょう。
+**POINT** If it had not been for 〜 の if 省略・倒置 = Had it not been for 〜
+
+「（過去に）〜がなかったら」は If it had not been for 〜 で表しますが、語群に if がないことに気づけるかがポイントです。if を省略すると助動詞 had が主語 it の前に出る**倒置**が起こり、Had it not been for 〜 という語順になります。このとき not は been の前（Had it not been）に置くのが正しい位置です。帰結節の would have failed（助動詞の過去形 + have + 過去分詞）が仮定法過去完了の目印で、「実際には援助があったから失敗しなかった」という過去の事実の裏返しを表しています。
+
+**組み立て**
+- 語群に if がない → 倒置形 Had it not been for を組む → ④had ⑤it ③not ⑥been ①for
+- for の目的語 → ②your + help
+
+
+## UNIT 7 受動態
+
+#### 問 067 ｜ 正解 **4**
+
+**完成文** The electric light **was invented** by Thomas Edison.
+**訳** 電灯はトーマス・エジソンによって発明された。
+**POINT** 「〜される」は受動態〈be動詞＋過去分詞〉
+
+主語は The electric light（電灯）で、空所の後ろに by Thomas Edison（エジソンによって）が続いています。電灯は「発明する」側ではなく「発明される」側なので、受動態〈be動詞＋過去分詞〉の形が必要です。受動態とは「〜される」という意味を表す形のことです。過去の出来事なので be動詞は過去形 was にして、was invented が正解となります。invent（発明する）と invite（招待する）はつづりが似ているので、ひっかけに注意しましょう。
+
+**誤答チェック**
+- 1 invented：能動態の過去形。「電灯が（何かを）発明した」となり意味が通らないため×
+- 2 invited：能動態のうえに invite は「招待する」で意味も合わないため×
+- 3 was invited：受動態の形は正しいが「電灯が招待された」となり意味が通らないため×
+
+#### 問 068 ｜ 正解 **1**
+
+**完成文** Let's go ahead and do it. Nothing **will be gained** by just waiting.
+**訳** さあ、思い切ってやろう。ただ待っているだけでは何も得られないよ。
+**POINT** 未来の受動態は〈will be＋過去分詞〉
+
+主語は Nothing（何も〜ない）で、gain は「〜を得る」という他動詞です。「何も得られないだろう」という意味にするには、Nothing が「得られる」側なので受動態が必要です。さらに「これからやろう」という文脈から未来のことを述べているとわかるので、未来の受動態〈will be＋過去分詞〉の形、will be gained が正解です。文末の by just waiting は「ただ待つことによって」という手段を表す表現です。
+
+**誤答チェック**
+- 2 will gain：能動態なので「何も（何かを）得ない」となり、gain の目的語がなく不成立のため×
+- 3 has gained：能動態の現在完了。目的語がないうえ、未来の話に合わないため×
+- 4 gains：能動態の現在形。同じく目的語がなく、受動の意味を表せないため×
+
+#### 問 069 ｜ 正解 **3**
+
+**完成文** The door is **being painted**.
+**訳** そのドアは今、ペンキを塗られているところだ。
+**POINT** 進行形の受動態は〈be動詞＋being＋過去分詞〉
+
+「今まさに〜されている最中だ」という意味は、進行形〈be動詞＋-ing〉と受動態〈be動詞＋過去分詞〉を組み合わせた〈be動詞＋being＋過去分詞〉で表します。この文では is が進行形のbe動詞、being painted が「塗られている」の部分にあたります。ドアは「塗る」側ではなく「塗られる」側なので、最後は必ず過去分詞 painted で終わることに注目すると、正解が being painted に絞れます。
+
+**誤答チェック**
+- 1 been painted：is been という形は存在しない（been は have/has/had の後にしか使えない）ため×
+- 2 been painting：同じく is been が不可能な形のため×
+- 4 being painting：painting では「ドアが塗っている」という能動の意味になってしまうため×
+
+#### 問 070 ｜ 正解 **4**
+
+**完成文** On her way home, Yumiko was **spoken to by** a stranger.
+**訳** 家に帰る途中、ユミコは見知らぬ人に話しかけられた。
+**POINT** 群動詞の受動態は前置詞をセットのまま残す
+
+「〜に話しかける」は speak to 〜 という群動詞（動詞＋前置詞でひとつの意味を表すかたまり）です。能動態は A stranger spoke to Yumiko. で、これを受動態にするときは speak to をひとかたまりの動詞として扱い、was spoken to とします。前置詞 to を落としてはいけません。さらに行為者「見知らぬ人によって」を示す by が続くので、was spoken to by a stranger と前置詞が2つ並ぶ形になります。見た目は不自然に感じますが、これが正しい形です。
+
+**誤答チェック**
+- 1 spoken to：行為者 a stranger につなぐ by がないため×
+- 2 spoken by：speak to の to が脱落しており「話しかける」の意味が壊れるため×
+- 3 spoken with：同じく to がなく、by もないため行為者につながらないため×
+
+#### 問 071 ｜ 正解 **1**
+
+**完成文** Mr. Tanaka was seen **to come** out of the supermarket.
+**訳** 田中さんはスーパーから出てくるところを見られた。
+**POINT** 知覚動詞の受動態では原形不定詞が to 不定詞に変わる
+
+see などの知覚動詞（見る・聞くなど五感を表す動詞）は、能動態では〈see＋O＋動詞の原形〉の形をとります（例: We saw Mr. Tanaka come out ...）。ところが、これを受動態にすると、原形だった部分が to 不定詞に変わり、〈be seen to do〉となるのがルールです。したがって was seen to come が正解です。「能動態では原形、受動態では to 不定詞」という変化は、使役動詞 make の受動態（問072）と共通する重要ポイントなので、セットで覚えましょう。
+
+**誤答チェック**
+- 2 to coming：to の後ろに -ing 形は続けられない形のため×
+- 3 come：原形が使えるのは能動態〈see＋O＋原形〉のときだけで、受動態では不可のため×
+- 4 came：過去形をここに置く文法的な余地がないため×
+
+#### 問 072 ｜ 正解 **4**
+
+**完成文** I was made **to work** till late at night.
+**訳** 私は夜遅くまで働かされた。
+**POINT** 使役動詞 make の受動態は〈be made to do〉
+
+make は「（人に）〜させる」という使役動詞で、能動態では〈make＋O＋動詞の原形〉の形をとります（例: They made me work.）。これを受動態にすると、原形だった work が to 不定詞に変わり、〈be made to do〉となります。したがって was made to work が正解です。問071の知覚動詞と同じく、「受動態になると to が現れる」パターンです。入試では「原形のまま」の選択肢を選ばせるひっかけが定番なので、確実に押さえておきましょう。
+
+**誤答チェック**
+- 1 work：原形は能動態〈make＋O＋原形〉のときのみで、受動態では to が必要なため×
+- 2 worked：過去分詞を続ける形はなく「働かされた」の意味を表せないため×
+- 3 working：be made doing という形は存在しないため×
+
+#### 問 073 ｜ 正解 **2**
+
+**完成文** I'm not satisfied **with** the result.
+**訳** 私はその結果に満足していない。
+**POINT** be satisfied with 〜「〜に満足している」
+
+受動態では行為者を by で表すのが基本ですが、感情や状態を表す受動態表現では by 以外の前置詞と結びつくものが多くあります。satisfy（〜を満足させる）の受動態 be satisfied は、満足の対象を with で示して be satisfied with 〜「〜に満足している」となります。これは熟語としてこの形ごと覚えるのが得策です。同じ仲間に be pleased with 〜（〜が気に入っている）、be covered with 〜（〜で覆われている）などがあります。
+
+**誤答チェック**
+- 1 in：be satisfied in という結びつきはないため×
+- 3 on：同じく satisfied と結びつかないため×
+- 4 for：同じく satisfied と結びつかないため×
+
+#### 問 074 ｜ 正解 **3**
+
+**完成文** Since she has been teaching Japanese at our primary school for 30 years, she is known **to** everyone in this town.
+**訳** 彼女は私たちの小学校で30年間国語を教えているので、この町の誰もが彼女のことを知っている。
+**POINT** be known to 〜「〜に知られている」
+
+know の受動態 be known は、後ろに続く前置詞によって意味が変わる重要表現です。「（人）に知られている」と知っている側の人を示すときは to を使い、be known to 〜 とします。ここでは「町のみんなに知られている」という意味なので to が正解です。by ではない点に注意しましょう。区別すべき仲間として、be known as 〜「〜として知られている」（肩書き・呼び名）、be known for 〜「〜で有名だ」（理由）があり、この3つの使い分けは頻出です。
+
+**誤答チェック**
+- 1 with：be known with という形はないため×
+- 2 as：「〜として知られている」の意味になり、everyone（人）が肩書きではないため×
+- 4 for：「〜という理由で有名だ」の意味になり、人を続けるのは不自然なため×
+
+#### 問 075 ｜ 正解 **founded**
+
+**完成文** Tsuda College was **founded** in 1900.
+**訳** 津田塾大学は1900年に設立された。
+**POINT** found–founded–founded「〜を設立する」と find の混同に注意
+
+ここでの found は find（見つける）の過去形ではなく、「〜を設立する」という意味の動詞 found（原形）です。活用は found–founded–founded と規則変化します。大学は「設立される」側なので受動態〈be動詞＋過去分詞〉にする必要があり、過去分詞 founded が正解です。find–found–found（見つける）と found–founded–founded（設立する）は形がまぎらわしく、入試で狙われる定番ポイントです。was found in 1900 とすると「1900年に発見された」という別の意味になってしまうことも確認しておきましょう。
+
+#### 問 076 ｜ 正解 **251346**
+
+**完成文** The **lecture will be followed by questions and discussion as usual**.
+**訳** 講演のあといつものように質問と討議が行われます。
+**POINT** A is followed by B「Aのあとに Bが続く」
+
+follow は「〜のあとに続く」という意味で、受動態 A is followed by B は直訳すると「Aは Bによってあとを追われる」、つまり「Aのあとに Bが続く」という順序関係を表します。日本文の「講演のあとに質問と討議」という順序から、A＝the lecture、B＝questions and discussion と決まります。未来のことなので will be followed by という未来の受動態にし、文末に as usual（いつものように）を添えれば完成です。by のあとに続くのが「あとから来るもの」だという点を取り違えないようにしましょう。
+
+**組み立て** The に続く主語を lecture に確定 → will be followed by（未来の受動態）→ questions and discussion → as usual で締める
+
+#### 問 077 ｜ 正解 **634215**
+
+**完成文** Your mail **has not been delivered by the** man yet.
+**訳** その男性は、あなたの郵便物をまだ配達していません。
+**POINT** 現在完了の受動態は〈have/has been＋過去分詞〉
+
+日本文は「その男性は〜配達していません」と能動の形ですが、英文の主語は Your mail なので「郵便物はまだ配達されていない」という受動態で組み立てます。「まだ〜していない」は現在完了の否定〈has not＋過去分詞〉で表し、受動態と組み合わせると〈has not been＋過去分詞〉という語順になります。not は has の直後に置くこと、been は has と過去分詞 delivered の間に入ることがポイントです。最後に行為者 by the man を続け、文末の yet（まだ）につなげます。
+
+**組み立て** 主語 Your mail を受けて has not been delivered（現在完了・受動態の否定）→ by the man（行為者）→ yet
+
+#### 問 078 ｜ 正解 **③**
+
+**完成文** The patient was **taken good care of** at the hospital.
+**訳** その患者は病院で手厚く世話をしてもらった。
+**POINT** take care of の受動態は of まで残す
+
+「〜の世話をする」は take care of 〜 という群動詞（複数の語でひとつの動詞の働きをするかたまり）です。能動態は They took good care of the patient. で、これを受動態にするときは take good care of をひとかたまりとして扱うため、文末の前置詞 of を絶対に落としてはいけません。正しくは was taken good care of at the hospital となります。③の taken good care は of が欠けているので誤りです。問070の be spoken to by と同じく、「群動詞の受動態では前置詞が残る」という頻出パターンです。
+
+**訂正** ③ taken good care → taken good care of
+
+
+# Chapter 2 準動詞
+
+
+## UNIT 1 不定詞(1)
+
+#### 問 079 ｜ 正解 **3**
+
+**完成文** Angela finally decided **to marry** Peter after graduating from college this June.
+**訳** アンジェラはこの6月に大学を卒業したら、ピーターと結婚することをついに決めた。
+**POINT** decide は to 不定詞を目的語にとる／marry は他動詞
+
+空所の直前にある decide は「これから〜することを決める」という未来志向の動詞で、目的語には動名詞ではなく to 不定詞をとります（decide to do）。さらに marry（〜と結婚する）は他動詞（前置詞なしで直接目的語をとる動詞）なので、日本語の「〜と」につられて with を付けてはいけません。この2つの知識を組み合わせると、decided to marry Peter という形が正しいと判断できます。「decide + to 不定詞」「marry + 人（前置詞なし）」の両方をセットで押さえておきましょう。
+
+**誤答チェック**
+- 1 marrying：decide は動名詞を目的語にとらないため×
+- 2 marrying with：動名詞である点に加え、他動詞 marry に with は不要なため×
+- 4 to marry with：to 不定詞は正しいが、marry に with を付ける点が×
+
+#### 問 080 ｜ 正解 **1**
+
+**完成文** The river **proved** to be more polluted than people had warned.
+**訳** その川は、人々が警告していた以上に汚染されていることが判明した。
+**POINT** turn out to be ＝ prove to be「〜だと判明する」
+
+turn out to be 〜 は「（結果として）〜だと判明する、わかる」という意味の重要表現です。これとほぼ同じ意味を表せるのが prove to be 〜「〜だと判明する」で、どちらも「実際に調べたり時間が経ったりした結果、〜だとわかる」という文脈で使われます。prove は「証明する」という他動詞の用法が有名ですが、この文のように自動詞として「（主語が）〜だと判明する」という使い方があることに注意しましょう。書き換え問題の定番なので、turn out to be ≒ prove to be はセットで暗記してください。
+
+**誤答チェック**
+- 2 went：go to be という形はなく、「判明する」の意味も表せないため×
+- 3 learned：learn は「（人が）学ぶ・知る」で、主語が「川」では意味が通らないため×
+- 4 claimed：claim to be は「〜であると主張する」で、「判明する」の意味にならないため×
+
+#### 問 081 ｜ 正解 **2**
+
+**完成文** Please don't **hesitate** to call me if you have any problems. I really don't mind being interrupted.
+**訳** 何か問題があれば、遠慮なく私に電話してください。作業を中断されても本当に構いませんから。
+**POINT** don't hesitate to do「遠慮なく〜する」
+
+hesitate to do は「〜するのをためらう」という意味で、Don't hesitate to do の形にすると「〜するのをためらわないで＝遠慮なく〜してください」という決まり文句になります。第2文の「中断されても本当に構わない」という内容から、「遠慮せず電話して」という流れになるのが自然です。bother も don't bother to do の形をとりますが、これは「わざわざ〜しなくてよい」と相手の行動を止める意味になり、文脈と正反対になってしまいます。「Don't hesitate to do ＝ 遠慮なくどうぞ」は会話問題でも頻出の表現です。
+
+**誤答チェック**
+- 1 bother：don't bother to call は「わざわざ電話しなくてよい」となり、第2文の内容と矛盾するため×
+- 3 refrain：refrain は refrain from -ing「〜を控える」の形をとり、to 不定詞を続けられないため×
+- 4 try：don't try to call は「電話しようとするな」となり、文脈に合わないため×
+
+#### 問 082 ｜ 正解 **2**
+
+**完成文** He never fails **to keep** his word with his friends.
+**訳** 彼は友人との約束を必ず守る。
+**POINT** never fail to do「必ず〜する」
+
+fail to do は「〜しない、〜しそこなう」という意味で、これに never を組み合わせた never fail to do は「〜しないことは決してない＝必ず〜する」という二重否定の重要表現です。fail の目的語は to 不定詞と決まっており、動名詞や前置詞句を続けることはできません。keep one's word は「約束を守る」という熟語で、これも合わせて覚えておきましょう。「never fail to do ＝ 必ず〜する」と意味ごと丸暗記しておくと、和訳問題でも役立ちます。
+
+**誤答チェック**
+- 1 on keeping：fail は前置詞 on と結びつかないため×
+- 3 keeping：fail は動名詞を目的語にとらないため×
+- 4 keep：fail の後に動詞の原形を直接置くことはできないため×
+
+#### 問 083 ｜ 正解 **2**
+
+**完成文** You **are** to start work early tomorrow.
+**訳** あなたは明日、早くから仕事を始めることになっています。
+**POINT** be to 不定詞（予定・義務）
+
+空所の後ろに to start という to 不定詞が続いていることに注目します。「be動詞 + to 不定詞」は、予定「〜することになっている」・義務「〜すべきだ」・可能・運命・意図などを表す重要構文です（be to 構文と呼ばれます）。この文は tomorrow があるので「明日〜することになっている」という予定（または上からの指示による義務）の意味です。主語が You で、tomorrow の予定を表すには現在形の are が適切です。be to 構文はそれ自体が予定・未来の意味を含むので、わざわざ will be とする必要はありません。
+
+**誤答チェック**
+- 1 was：主語 You に対して was は使えないため×
+- 3 will be：be to 構文自体に予定の意味があり、will be to do とは通例言わないため×
+- 4 have been：have been to do という形は「〜することになっている」の意味を表せないため×
+
+#### 問 084 ｜ 正解 **3**
+
+**完成文** Not a soul **was to be** seen in the classroom.
+**訳** 教室には人っ子一人見当たらなかった。
+**POINT** be to 不定詞（可能）：was to be seen「見られ得た」
+
+Not a soul は「ただの一人も〜ない」という強い否定の主語です（soul はここでは「人」の意味）。「be動詞 + to 不定詞」の be to 構文には可能「〜できる」の用法があり、特に否定文 + 受動態の形（be to be + 過去分詞）で「〜され得なかった＝〜できなかった」を表すのが典型パターンです。Not a soul was to be seen で「一人の姿も見られなかった＝誰も見当たらなかった」となります。主語の Not a soul（＝not a single person）は単数扱いなので、be動詞は was を使う点にも注意しましょう。
+
+**誤答チェック**
+- 1 were：主語 Not a soul は単数扱いで、さらに were seen だけでは文意も弱いため×
+- 2 were not：単数主語に were は不可で、Not a soul にさらに not を重ねると二重否定になるため×
+- 4 was not to been：to の後は原形（to be）が必要で、to been は文法的に成立しないため×
+
+#### 問 085 ｜ 正解 **1**
+
+**完成文** He was the only one **to survive** the accident.
+**訳** 彼はその事故で生き残ったただ一人の人だった。
+**POINT** the only one を修飾する不定詞の形容詞的用法
+
+空所以下は直前の名詞 the only one「ただ一人の人」を後ろから修飾する部分です。名詞を後ろから説明する to 不定詞（形容詞的用法）は、the first / the last / the only などの限定表現と非常に相性がよく、the only one to do で「〜した唯一の人」を表します（＝ the only one who survived と関係代名詞で書き換え可能）。また survive は「〜を生き延びる」という他動詞なので、survive the accident と直接目的語をとり、受動態にする必要はありません。「the only one + to 不定詞」の形をそのまま覚えておきましょう。
+
+**誤答チェック**
+- 2 to be survived：survive は「（人が）事故を生き延びる」という能動の関係なので受動態は×
+- 3 survived：過去分詞の後置修飾では「事故に生き残られた人」という受動の意味になり不自然なため×
+- 4 have survived：名詞を修飾するには to が必要で、have survived を直接続けられないため×
+
+#### 問 086 ｜ 正解 **2**
+
+**完成文** Kate didn't finish her homework by the next class because she lacks the **ability** to manage her time carefully.
+**訳** ケイトは自分の時間を注意深く管理する能力に欠けているので、次の授業までに宿題を終わらせられなかった。
+**POINT** the ability to do「〜する能力」（不定詞の形容詞的用法）
+
+空所の後ろに to manage という to 不定詞が続き、空所の名詞を修飾しています。to 不定詞と結びついて「〜する…」という意味のまとまりを作る名詞は決まっており、ability はその代表格で、the ability to do「〜する能力」という頻出の形を作ります。文意も「時間管理の能力を欠いているから宿題が終わらなかった」となり自然につながります。同じように不定詞を従える名詞には chance（機会）、decision（決定）、attempt（試み）などがあり、まとめて覚えておくと語法問題に強くなります。
+
+**誤答チェック**
+- 1 reality：「時間を管理する現実」では意味が通らず、reality to do という形も作らないため×
+- 3 quality：quality は「質・特質」で、the quality to manage one's time という言い方はしないため×
+- 4 majority：「大多数」は文意に全く合わないため×
+
+#### 問 087 ｜ 正解 **1**
+
+**完成文** New words are constantly invented **to describe** new concepts.
+**訳** 新しい概念を表現するために、新しい言葉が絶えず生み出されている。
+**POINT** 目的を表す不定詞の副詞的用法
+
+are constantly invented「絶えず発明されている」という文はそれだけで文型が完成しており、空所以下は「何のために発明されるのか」という目的を付け加える部分です。目的「〜するために」を表すのは to 不定詞の副詞的用法で、to describe new concepts「新しい概念を describe（描写・表現）するために」が正解です。空所の後ろに new concepts という名詞（目的語）が続いている点も、他動詞 describe の to 不定詞がぴったりはまる根拠になります。文がすでに完成しているところに動詞的要素を足すなら不定詞（目的）を疑う、というのが着眼点です。
+
+**誤答チェック**
+- 2 being described by：受動の分詞では「新語が新概念に描写されながら」となり意味が通らないため×
+- 3 they describe：接続詞なしに SV（they describe）を続けることはできないため×
+- 4 a description of：invented の直後に名詞句を置く文法的な働きがなく、文が成立しないため×
+
+#### 問 088 ｜ 正解 **4**
+
+**完成文** This bike is too big for Ted **to ride**.
+**訳** この自転車は大きすぎてテッドには乗れない。
+**POINT** too ... for A to do「…すぎてAには〜できない」
+
+too + 形容詞 + for A + to do は「…すぎてAには〜できない」という頻出構文です。for Ted は to 不定詞の意味上の主語（実際に「乗る」動作をする人）を表しており、for の後ろには必ず to 不定詞が続きます。もう一つ大事なのは、この構文では文の主語（This bike）が to ride の目的語を兼ねるため、to ride it のように目的語を繰り返さない点です。so ... that 構文で書き換えると This bike is so big that Ted can't ride it. となり、that 節の中では it が必要になる、という対比も入試で狙われます。
+
+**誤答チェック**
+- 1 ride：too ... for A の後は to 不定詞が必要で、原形は置けないため×
+- 2 riding：too ... for A to do の構文に動名詞は使えないため×
+- 3 rode：過去形の動詞をここに置く文法的な働きがないため×
+
+#### 問 089 ｜ 正解 **54817623**
+
+**完成文** Actually, **it is very difficult to master English** in a year.
+**訳** 実際のところ、英語を一年で習得するのはとても難しい。
+**POINT** 形式主語構文 it is ... to do
+
+「英語を習得するのは難しい」のように to 不定詞のかたまりが主語になる場合、英語では頭でっかちな文を避けるため、形式主語（仮主語）の it を先に置き、真主語の to 不定詞を後ろに回すのが普通です。It is 形容詞 to do「〜するのは…だ」という形式主語構文の型に当てはめ、it is very difficult までを先に組み立てます。次に真主語となる to master English「英語を習得すること」を続け、最後に文末の a year とつながるよう in を置けば完成です。master はここでは「〜を習得する」という他動詞である点も確認しておきましょう。
+
+**組み立て** 形式主語 it is very difficult を先に確定 → 真主語 to master English を続ける → in (a year) で「一年で」
+
+#### 問 090 ｜ 正解 **15234**
+
+**完成文** Recent rises in the price of land have meant that many people can no longer **afford to buy houses of** their own.
+**訳** 近年の地価の上昇によって、多くの人々はもはや自分自身の家を買う余裕がなくなってしまった。
+**POINT** afford to do「〜する（金銭的・時間的）余裕がある」
+
+助動詞 can の後ろなので、まず動詞の原形 afford を置きます。afford は can afford to do「〜する余裕がある」の形で使うのが基本で（通例 can't / can no longer など否定的な文脈で使われます）、目的語には to 不定詞をとります。よって afford to buy とつなぎ、buy の目的語に houses を置きます。最後に、文末の their own と結びつく of を houses の後ろに置けば、houses of one's own「自分自身の家」という所有を表す定番表現が完成します。can no longer afford to do「もはや〜する余裕がない」というかたまりで覚えておきましょう。
+
+**組み立て** can の後に原形 afford → afford to buy（afford + to 不定詞）→ houses of (their own)「自分自身の家」
+
+#### 問 091 ｜ 正解 **④**
+
+**完成文** I did everything I could to persuade him, **only** to fail.
+**訳** 私は彼を説得するためにできることはすべてしたが、結局失敗に終わった。
+**POINT** only to do「（〜したが）結局…しただけだった」（結果の不定詞）
+
+文の骨格は I did everything (that) I could「できることはすべてした」で、①②はここに問題なく収まり、③ to persuade him は目的「彼を説得するために」を表す正しい不定詞です。問題は④で、接続詞 but の後ろに to fail という不定詞だけを続けることはできません（but の後には主語+動詞、または前と対等な語句が必要です）。ここは結果を表す不定詞の慣用表現 only to do「〜したが、結局…する結果に終わった」を使い、only to fail とするのが正しい形です。「努力した→（それなのに）失敗した」という残念な結果を表す only to do は、コンマとセットで文末に置かれることが多い頻出表現です。
+
+**訂正** ④ but → only
+
+
+## UNIT 2 不定詞(2)
+
+#### 問 092 ｜ 正解 **1**
+
+**完成文** A : I was waiting for your call last night. B : I decided **not to call** you because you were busy.
+**訳** A:「昨夜、あなたの電話を待っていたのに」 B:「忙しそうだったから、電話しないことにしたんだ」
+**POINT** 不定詞の否定は not を to の直前に置く
+
+decide は decide to do「〜することに決める」の形で不定詞を目的語にとる動詞です。この不定詞を否定して「〜しないことに決める」と言うときは、否定語 not を to 不定詞のまとまりの直前に置き、decide not to do とします。「不定詞の否定は〈not + to do〉」という語順は準動詞の最重要ルールの一つで、to と動詞の間に not を割り込ませたり、後ろに置いたりはできません。したがって decided not to call you が正しい形になります。
+
+**誤答チェック**
+- 2 not call to：to が動詞の後ろに来ており、不定詞の形になっていないため×
+- 3 to call not：not は to の直前に置くルールに反するため×
+- 4 not call：decide は原形ではなく to 不定詞を目的語にとるため×
+
+#### 問 093 ｜ 正解 **3**
+
+**完成文** It was raining **so** hard that we couldn't go out.
+**訳** 雨がとても激しく降っていたので、私たちは外出できなかった。
+**POINT** so ~ that ... 「とても〜なので…」
+
+空所の後ろに副詞 hard があり、さらに that 節が続いている点に注目します。〈so + 形容詞/副詞 + that ...〉で「とても〜なので…」という程度・結果の意味を表す構文です。ここでは so hard that we couldn't go out で「あまりに激しく降っていたので外出できなかった」となり、文意が通ります。that 節と呼応して「それほど〜」という程度を示せるのは so だけ、というのが着眼点です。
+
+**誤答チェック**
+- 1 too：too は〈too ~ to do〉の形で不定詞と呼応し、that 節とは結びつかないため×
+- 2 very：very は程度を強めるだけで、後ろの that 節と呼応する用法がないため×
+- 4 such：such は〈such + (a) + 形容詞 + 名詞 + that ...〉のように名詞を伴う形で使うため、副詞 hard の前には置けず×
+
+#### 問 094 ｜ 正解 **1**
+
+**完成文** The young student stepped aside **so that** an elderly person could pass.
+**訳** その若い学生は、お年寄りが通れるように道を譲った。
+**POINT** 目的の so that S can/could V「Sが〜できるように」
+
+空所の後ろが an elderly person could pass という〈主語 + 動詞〉の節になっていることが決め手です。「〜するために・〜できるように」という目的を節で表すときは、接続詞のはたらきをする〈so that + S + can/could/will など〉を使います。so as to や in order to も目的を表しますが、これらは後ろに動詞の原形(不定詞)しか置けません。空所の後ろが節か不定詞かを見分けるのが、この種の問題の鉄則です。
+
+**誤答チェック**
+- 2 so as：so as の後ろは to 不定詞であり、〈S + V〉の節は続けられないため×
+- 3 in order to：to の後ろには動詞の原形が必要で、主語 an elderly person は置けないため×
+- 4 for that：「〜できるように」という目的を表す接続詞の用法がないため×
+
+#### 問 095 ｜ 正解 **1**
+
+**完成文** I left home early so **as** to be in time for the meeting.
+**訳** 会議に間に合うように、私は早めに家を出た。
+**POINT** so as to do「〜するために」
+
+空所の後ろに to be という不定詞が続いているので、目的を表す〈so as to do〉「〜するために」を完成させます。これは in order to do とほぼ同じ意味の表現で、単なる to 不定詞の副詞的用法(目的)をより明確にした形です。前問の so that S can V が「節」を続けるのに対し、so as to は「不定詞」を続けるという対比で覚えると整理しやすいでしょう。
+
+**誤答チェック**
+- 2 far：so far は「今のところ」という意味で、後ろに to 不定詞を従えて目的を表す用法はないため×
+- 3 much：so much to be という形は成立しないため×
+- 4 that：so that の後ろには〈S + V〉の節が必要で、to 不定詞は続けられないため×
+
+#### 問 096 ｜ 正解 **1**
+
+**完成文** The girl was so kind **as to take** me to the station.
+**訳** その女の子は親切にも私を駅まで連れて行ってくれた。
+**POINT** so ~ as to do「〜にも…する / …するほど〜だ」
+
+〈so + 形容詞 + as to do〉は「…するほど〜だ」という程度、そこから転じて「〜にも…してくれる」という意味を表す構文です。so kind as to take me to the station で「親切にも私を駅まで連れて行ってくれた」となります。空所の前に so kind があるのを見て、これと呼応できる形は as to do だと判断するのがポイントです。so ~ that ... と書き換えれば The girl was so kind that she took me to the station. とほぼ同じ意味になります。
+
+**誤答チェック**
+- 2 for taking：kind の後ろに for -ing を続けてこの意味を表す形はなく、so とも呼応しないため×
+- 3 in order to take：in order to は目的「〜するために」を表し、程度を表す so kind と呼応しないため×
+- 4 that it takes：so ~ that 構文なら that she took と主語・時制が合っている必要があり、it takes では文意が成立しないため×
+
+#### 問 097 ｜ 正解 **3**
+
+**完成文** You have to study hard **in** order to pass the exam.
+**訳** 試験に合格するためには、一生懸命勉強しなければならない。
+**POINT** in order to do「〜するために」
+
+空所の後ろの order to pass に注目します。〈in order to do〉で「〜するために」という目的を表す定型表現で、order の前に置ける前置詞は in だけです。単に to pass the exam と言うよりも目的の意味がはっきり伝わる形で、書き言葉やフォーマルな場面でよく使われます。so as to do との言い換えもセットで覚えておきましょう。
+
+**誤答チェック**
+- 1 by：by order to という形は存在しないため×
+- 2 for：for order to という形は存在しないため×
+- 4 of：of order to という形は存在しないため×
+
+#### 問 098 ｜ 正解 **3**
+
+**完成文** **Needless** to **say**, health is more important than money.
+**訳** 言うまでもなく、健康はお金よりも大切だ。
+**POINT** needless to say「言うまでもなく」（独立不定詞）
+
+文全体を修飾する慣用的な不定詞表現(独立不定詞)の問題です。needless to say は「言うまでもなく」という意味の定型表現で、文頭に置いてコンマで区切り、話し手のコメントを添えるはたらきをします。needless は「不必要な」という意味の形容詞で、直訳すると「言う必要もないことだが」となり、日本文の「言うまでもなく」にぴったり対応します。to say the least「控えめに言っても」、to tell the truth「実を言うと」など、他の独立不定詞もまとめて覚えておきましょう。
+
+**誤答チェック**
+- 1 Clearly―tell：Clearly to tell という慣用表現は存在しないため×
+- 2 Put―words：「言い換えれば」なら to put it in other words などの形であり、Put to words では文法的に成立しないため×
+- 4 Expression―say：Expression to say という表現は存在しないため×
+
+#### 問 099 ｜ 正解 **3**
+
+**完成文** A : "Thank you for inviting me for an interview today." B : "**To begin with**, please tell us about your strengths and weaknesses."
+**訳** A:「本日は面接にお招きいただきありがとうございます」 B:「まず初めに、あなたの長所と短所について教えてください」
+**POINT** to begin with「まず初めに」（独立不定詞）
+
+面接官が最初の質問を切り出す場面なので、「まず初めに」という意味の表現が入ります。to begin with は文頭に置いて「まず第一に・手始めに」と話を切り出す独立不定詞の定型表現で、to start with とも言い換えられます。with で終わる形のまま丸ごと覚えるのがポイントです。前問の needless to say と同様、慣用表現は形を変えると成立しないので、正確に暗記しておきましょう。
+
+**誤答チェック**
+- 1 To the begin：begin は動詞であり、the を付けて名詞のように使うことはできないため×
+- 2 On the beginning：「初めに」の意味なら in the beginning や at the beginning であり、on は使えないため×
+- 4 At beginning：at the beginning なら可だが、冠詞 the が欠けており×
+
+#### 問 100 ｜ 正解 **3**
+
+**完成文** She speaks French, to say **nothing** of English.
+**訳** 彼女は英語は言うまでもなく、フランス語も話す。
+**POINT** to say nothing of ~「〜は言うまでもなく」
+
+to say nothing of ~ は「〜は言うまでもなく」という意味の独立不定詞で、当然のことを引き合いに出して情報を付け加える表現です。直訳すると「〜については何も言わないとしても」となり、「英語が話せるのは当然として、フランス語まで話せる」という文意になります。not to mention ~ / not to speak of ~ もほぼ同じ意味の言い換え表現として頻出なので、セットで押さえておきましょう。
+
+**誤答チェック**
+- 1 anything：to say anything of という慣用表現は存在しないため×
+- 2 everything：to say everything of という慣用表現は存在しないため×
+- 4 something：to say something of という慣用表現は存在しないため×
+
+#### 問 101 ｜ 正解 **1**
+
+**完成文** His ambition to become a politician is **likely** to be realized.
+**訳** 政治家になるという彼の野望は、実現する可能性が高い。
+**POINT** be likely to do「〜しそうだ・〜する可能性が高い」
+
+空所の後ろに to be realized という不定詞が続いているのが決め手です。〈be likely to do〉で「〜しそうだ、〜する可能性が高い」という意味を表し、人・物のどちらも主語にできます。likely は -ly で終わりますが副詞ではなく形容詞である点にも注意しましょう。probable も「ありそうな」という意味ですが、〈人・物 + be probable to do〉という形では使えず、It is probable that ... の形をとるという違いが問われています。
+
+**誤答チェック**
+- 2 capable：capable は be capable of -ing の形をとり、to 不定詞は続けられないため×
+- 3 lovely：lovely は「愛らしい・すてきな」という意味で、不定詞と結びついて可能性を表す用法はないため×
+- 4 probable：probable は It is probable that ... の形で使い、〈S is probable to do〉とは言えないため×
+
+#### 問 102 ｜ 正解 **5361742**
+
+**完成文** There are not **enough chairs for them to sit on**.
+**訳** 彼らが座るのに十分な椅子がない。
+**POINT** 〈enough + 名詞 + for A + to do〉と、後ろに残る前置詞
+
+まず「十分な椅子」を enough chairs と組み立てます。enough が名詞を修飾するときは名詞の前に置けばよいので、There are not enough chairs までが骨組みです。次に「彼らが座るための」という不定詞の形容詞的用法を続けますが、不定詞の意味上の主語(実際に座る人)は〈for + 人〉で表すため、for them to sit とします。最後に、sit on the chairs という元の関係から、修飾される名詞 chairs が前置詞 on の目的語にあたるので、on を文末に残して to sit on とするのがポイントです。この「前置詞の残留」は something to write with などと同じ頻出パターンです。
+
+**組み立て** enough chairs を確定 → 意味上の主語 for them を to 不定詞の前に → sit on the chairs の関係から on を文末に残す
+
+#### 問 103 ｜ 正解 **416253**
+
+**完成文** **Someone seems to have forgotten their glasses**.
+**訳** 誰かが眼鏡を忘れていったようだ。
+**POINT** seem to have + 過去分詞（完了不定詞）
+
+まず主語 Someone と動詞 seems を確定し、〈S seem to do〉「Sは〜するように思われる」の骨組みを作ります。ここで「忘れていった」のは「〜ようだ」と判断している現在よりも前の出来事なので、不定詞を〈to have + 過去分詞〉という完了不定詞にして、述語動詞 seems より前の時を表します。つまり seems to have forgotten で「(すでに)忘れてしまったようだ」となります。It seems that someone has forgotten their glasses. と書き換えられることも確認しておきましょう。なお、someone を受ける代名詞として their を使うのは現代英語では標準的な用法です。
+
+**組み立て** 主語 Someone + seems を確定 → 「ようだ」より前の出来事なので to have forgotten(完了不定詞) → 目的語 their glasses
+
+#### 問 104 ｜ 正解 **4132**
+
+**完成文** All **you have to do** is to wait for him at the coffee shop.
+**訳** あなたは喫茶店で彼を待っているだけでよいです。
+**POINT** All you have to do is (to) do「〜しさえすればよい」
+
+All you have to do is (to) do ~ は「あなたがしなければならないすべては〜することだ」が直訳で、そこから「〜しさえすればよい」という意味になる頻出構文です。All の後ろには関係代名詞 that が省略されており、you have to do が All を後ろから修飾して「あなたがすべきことのすべて」という主語のかたまりを作ります。その後に be 動詞 is が続き、補語の to wait 以下が「すべき内容」を示すという構造です。All (that) S have to do is ... の語順をひとつの型として覚えてしまいましょう。
+
+**組み立て** All の直後に関係詞節 you have to do を続ける → All you have to do が主語 → is to wait ... が補語
+
+#### 問 105 ｜ 正解 **4532617**
+
+**完成文** You should **get up earlier so as** not **to be late for** school.
+**訳** 学校に遅刻しないように、もっと早く起きるべきだ。
+**POINT** so as not to do「〜しないように」
+
+まず主節を You should get up earlier「もっと早く起きるべきだ」と組み立てます。次に「〜しないように」という否定の目的を表すには、so as to do の否定形〈so as not to do〉を使います。not の位置があらかじめ問題文に固定されているので、その直前までに so as を置き、直後に to be late を続ければよいと逆算できるのがヒントです。最後に「学校に遅刻する」は be late for school という定型表現なので、for を to be late の後ろに置いて完成です。単独の to 不定詞では not to do の形で目的を表しにくいため、否定の目的には so as not to do / in order not to do を使う点を押さえましょう。
+
+**組み立て** You should get up earlier で主節を確定 → 固定された not の前後に so as / to be late を配置(so as not to do) → be late for school の for を補う
+
+
+## UNIT 3 動名詞(1)
+
+#### 問 106 ｜ 正解 **2**
+
+**完成文** We enjoyed **having** you with us tonight.
+**訳** 今夜はあなたとご一緒できて楽しかったです。
+**POINT** enjoy は動名詞のみを目的語にとる
+
+空所は動詞 enjoyed の目的語にあたる部分です。enjoy は「目的語に動名詞（-ing 形）をとり、不定詞はとらない」動詞の代表格で、enjoy doing の形しか許されません。megafeps（メガフェプス）と呼ばれる「動名詞のみをとる動詞」のグループ（mind / enjoy / give up / avoid / finish / escape / put off / stop）の一つとして覚えておきましょう。ここでは have you with us（あなたに一緒にいてもらう）を動名詞 having にした 2 が正解です。「enjoy を見たら後ろは -ing」と反射的に判断できるようにしておくことが着眼点です。
+
+**誤答チェック**
+- 1 have：enjoyed の直後に動詞の原形は置けないため×
+- 3 to have：enjoy は不定詞を目的語にとらないため×
+- 4 of having：enjoy は他動詞で、目的語の前に前置詞は不要なため×
+
+#### 問 107 ｜ 正解 **3**
+
+**完成文** Sam was used to **making** speeches in public.
+**訳** サムは公衆の前で演説をすることに慣れていた。
+**POINT** be used to -ing「～することに慣れている」の to は前置詞
+
+be used to ～は「～に慣れている」という意味の熟語で、この to は不定詞の to ではなく前置詞です。前置詞の後ろには名詞か動名詞（-ing 形）しか置けないので、making を選びます。used to do（昔は～したものだ）と形が似ているため混同しやすいのですが、直前に be 動詞（was）があるかどうかが見分けのポイントです。was used to とあれば「慣れている」の熟語で、後ろは動名詞と即断しましょう。
+
+**誤答チェック**
+- 1 make：前置詞 to の後ろに動詞の原形は置けないため×（used to make なら可だが、was があるので不成立）
+- 2 makes：前置詞の後ろに3単現の動詞は置けないため×
+- 4 made：前置詞の後ろに過去形は置けないため×
+
+#### 問 108 ｜ 正解 **1**
+
+**完成文** Michael **used to** play football for his school, but he doesn't now.
+**訳** マイケルは以前は学校のチームでサッカーをしていたが、今はしていない。
+**POINT** used to do「昔は～したものだ（今は違う）」
+
+空所の直後が動詞の原形 play である点にまず注目します。used to do は「昔は～したものだ」と過去の習慣を表し、後ろに動詞の原形をとります。さらに文末の but he doesn't now（今はしていない）が「過去と現在の対比」を示しており、「昔はしていたが今は違う」という used to の核心的な意味とぴったり一致します。一方、be used to / get used to は「～に慣れている／慣れる」という別の熟語で、後ろには動名詞か名詞が必要です。後ろの形（原形か -ing か）と文の意味の両面から 1 を選びます。
+
+**誤答チェック**
+- 2 got used to：「慣れた」の意味で、後ろは動名詞が必要。原形 play が続けられないため×
+- 3 was used to：「慣れていた」の意味で、後ろは動名詞が必要なため×
+- 4 is used to：「慣れている」の意味で、後ろは動名詞が必要。時制も文意も合わないため×
+
+#### 問 109 ｜ 正解 **3**
+
+**完成文** I don't mind **getting** up early during the weekend.
+**訳** 週末に早起きするのは構いません。
+**POINT** mind は動名詞のみを目的語にとる
+
+mind は「～するのを嫌がる、気にする」という意味の他動詞で、目的語には動名詞（-ing 形）しかとれません（megafeps の m にあたる動詞です）。don't mind doing で「～するのを気にしない＝～しても構わない」という頻出表現になります。ここでは get up early（早起きする）を動名詞にした getting が正解です。enjoy・finish・avoid などと同じ「動名詞専用の動詞」のグループとしてまとめて覚えるのが着眼点です。
+
+**誤答チェック**
+- 1 to get：mind は不定詞を目的語にとらないため×
+- 2 get：mind の直後に動詞の原形は置けないため×
+- 4 got：mind の直後に過去形は置けないため×
+
+#### 問 110 ｜ 正解 **2**
+
+**完成文** We all look forward to **seeing** you again in April.
+**訳** 私たちは皆、4月にまたあなたにお会いできるのを楽しみにしています。
+**POINT** look forward to -ing「～するのを楽しみに待つ」の to は前置詞
+
+look forward to ～は「～を楽しみに待つ」という熟語で、この to も前置詞です。したがって後ろには名詞か動名詞を置く必要があり、seeing が正解になります。to があると反射的に原形を続けたくなりますが、これは入試で最も狙われるひっかけの一つです。be used to -ing、object to -ing（～に反対する）などと並べて「to が前置詞の熟語」としてセットで覚えておきましょう。
+
+**誤答チェック**
+- 1 see：前置詞 to の後ろに動詞の原形は置けないため×
+- 3 be seen：原形（受動態の原形）は前置詞の後ろに置けず、「会われる」では意味も不成立のため×
+- 4 be seeing：原形で始まる形は前置詞の後ろに置けないため×
+
+#### 問 111 ｜ 正解 **2**
+
+**完成文** I don't like to eat chicken anymore, so stop **buying** it in the future.
+**訳** もう鶏肉を食べたくないから、今後は買うのをやめてね。
+**POINT** stop doing「～するのをやめる」／stop to do「～するために立ち止まる」
+
+stop は目的語に動名詞をとると「～するのをやめる」、不定詞が続くと「～するために立ち止まる（この to do は目的語ではなく副詞的用法）」と意味が大きく変わる要注意動詞です。この文は「もう鶏肉を食べたくない→だから買うのをやめて」という流れなので、「買うという行為を中止する」＝ stop buying が正解です。stop to buy とすると「買うために立ち止まる」となり、文意が通りません。stop の後ろは -ing か to かで意味がどう変わるかを必ずセットで押さえましょう。
+
+**誤答チェック**
+- 1 to buy：「買うために立ち止まる」の意味になり、文意に合わないため×
+- 3 bought：stop の直後に過去形・過去分詞は置けないため×
+- 4 being bought：受動の動名詞「買われるのをやめる」では意味が通らないため×
+
+#### 問 112 ｜ 正解 **2**
+
+**完成文** Have you finished **reading** the morning paper yet?
+**訳** 朝刊はもう読み終わりましたか。
+**POINT** finish は動名詞のみを目的語にとる
+
+finish も megafeps の一つで、目的語には動名詞しかとれない動詞です。finish doing で「～し終える」となり、ここでは finished reading（読み終えた）とします。「終える」対象は目の前で進行していた動作なので、完了形の動名詞 having read にする必要はなく、シンプルな reading で十分です。finish・enjoy・mind・avoid・give up・put off はまとめて「後ろは -ing」と機械的に処理できるようにしておくのが着眼点です。
+
+**誤答チェック**
+- 1 having read：完了動名詞にする理由がなく、finish doing の標準形から外れるため×
+- 3 to read：finish は不定詞を目的語にとらないため×
+- 4 to be reading：不定詞である時点で finish の目的語になれないため×
+
+#### 問 113 ｜ 正解 **3**
+
+**完成文** You should not put off **doing** your homework until the last minute.
+**訳** 宿題をぎりぎりまで先延ばしにすべきではありません。
+**POINT** put off は動名詞のみを目的語にとる（＝postpone）
+
+put off は「～を延期する、先延ばしにする」という意味の句動詞で、postpone と同様に目的語には動名詞のみをとります（megafeps の p にあたります）。put off doing で「～するのを先延ばしにする」となるので、doing が正解です。until the last minute（土壇場まで）という表現とも意味がかみ合います。「延期する」系の動詞（put off / postpone / delay）はどれも後ろが -ing になる、とグループで覚えるのが効率的です。
+
+**誤答チェック**
+- 1 to do：put off は不定詞を目的語にとらないため×
+- 2 having done：完了動名詞にする理由がない（「済ませたこと」を延期するのは意味不成立）ため×
+- 4 to have done：不定詞である時点で不可、意味も不成立のため×
+
+#### 問 114 ｜ 正解 **2**
+
+**完成文** Don't forget **to call** me when you get to the airport.
+**訳** 空港に着いたら、忘れずに私に電話してね。
+**POINT** forget to do「（これから）～するのを忘れる」／forget doing「（過去に）～したことを忘れる」
+
+forget は後ろに不定詞と動名詞のどちらもとれますが、意味が変わる動詞です。forget to do は「これから～するのを忘れる」、forget doing は「過去に～したことを忘れる」を表します。この文は when you get to the airport（空港に着いたら）とあるとおり、電話するのはこれから先の行為なので、未来指向の to call が正解です。Don't forget to do ～で「忘れずに～しなさい」という日常頻出の命令文として、このまま覚えてしまいましょう。不定詞は未来志向、動名詞は過去（済んだこと）志向、という対比が着眼点です。
+
+**誤答チェック**
+- 1 call：forget の直後に動詞の原形は置けないため×
+- 3 calling：「（過去に）電話したことを忘れる」となり、これからの行為を表す文意に合わないため×
+- 4 for calling：forget は前置詞 for を介さず目的語をとるため×
+
+#### 問 115 ｜ 正解 **sweeping**
+
+**完成文** After **sweeping** up the floor, Sally placed the rug again.
+**訳** 床を掃いた後で、サリーはラグを敷き直した。
+**POINT** 接続詞の後の SV は「前置詞＋動名詞」で書き換えられる
+
+上の文は After she swept up the floor という「接続詞 After＋主語＋動詞」の形です。これを空所のある文では After ( ) up the floor と、主語のない形に書き換えています。この After は後ろに名詞（相当語句）をとる前置詞として働くので、動詞 sweep は動名詞 sweeping にする必要があります。主節の主語 Sally と「掃く」動作の主語が同一なので、動名詞の意味上の主語を書き添える必要はありません。「接続詞＋SV ⇔ 前置詞＋動名詞」の書き換えは和文英訳や同意文完成で頻出のパターンです。
+
+#### 問 116 ｜ 正解 **③**
+
+**完成文** My little sister did everything she could to avoid **eating** carrots.
+**訳** 私の妹はニンジンを食べるのを避けるためにできることをすべてやった。
+**POINT** avoid は動名詞のみを目的語にとる
+
+文全体は did everything she could（できることはすべてした）に、目的を表す不定詞 to avoid ～（～を避けるために）が続く構造です。問題は avoid の目的語の形で、avoid は megafeps の一つとして目的語に動名詞のみをとり、不定詞は続けられません。したがって③ to eat が誤りで、avoid eating carrots と直します。直前の to avoid という不定詞につられて「また to か」と流してしまわず、avoid の語法そのものをチェックするのが着眼点です。①の everything と②の she could の間には目的格の関係代名詞が省略されており、こちらは正しい形です。
+
+**訂正** ③ to eat → eating
+
+#### 問 117 ｜ 正解 **③**
+
+**完成文** I clearly remember **posting** your letter yesterday.
+**訳** 昨日あなたの手紙を投函したことをはっきり覚えています。
+**POINT** remember doing「（過去に）～したことを覚えている」
+
+remember も forget と同じく、不定詞と動名詞で意味が変わる動詞です。remember to do は「これから～するのを忘れずにする」、remember doing は「過去に～したことを覚えている」を表します。この文には④ yesterday（昨日）があるので、投函はすでに済んだ過去の行為だと分かります。よって未来指向の③ to post が誤りで、過去の行為を表す動名詞 posting に直します。remember / forget / regret のような「to do と doing で意味が分かれる動詞」は、文中の時のヒント（yesterday、これからを表す when 節など）を探して判断するのが鉄則です。
+
+**訂正** ③ to post → posting
+
+
+## UNIT 4 動名詞(2)
+
+#### 問 118 ｜ 正解 **4**
+
+**完成文** Do you mind **my making a phone call** here?
+**訳** ここで電話をかけてもかまいませんか。
+**POINT** mind は動名詞を目的語にとる（動名詞の意味上の主語は所有格／目的格）
+
+mind（〜を気にする・嫌がる）は、目的語に不定詞ではなく動名詞をとる動詞です。ここでは「電話をかけるのは私」なので、動名詞 making の前に意味上の主語（動名詞の動作を行う人を示す語）を所有格 my で置き、my making a phone call とします。「Do you mind my doing 〜?」は直訳すると「私が〜するのをあなたは嫌がりますか」で、「〜してもいいですか」と許可を求める定番表現です。また「電話をかける」は make a phone call と表すのが自然な言い方です。答えを探すときは、まず mind の後ろの形（動名詞）を確定し、次に自然な表現かどうかで絞り込みましょう。
+
+**誤答チェック**
+- 1 me to get to call：mind は目的語に不定詞をとれず、get to call という表現も不自然なため×
+- 2 me to make a phone call：mind O to do の形は存在しないため×
+- 3 my getting to call：動名詞ではあるが、getting to call は「電話をかける」の表現として不自然なため×
+
+#### 問 119 ｜ 正解 **3**
+
+**完成文** On **leaving** school, he went into business.
+**訳** 学校を卒業するとすぐに、彼は実業界に入った。
+**POINT** on doing「〜するとすぐに」＝ as soon as SV
+
+上の文は「学校を出るとすぐに実業界に入った」という意味で、これを前置詞 on を使って書き換える問題です。on doing は「〜するとすぐに」という意味の重要表現で、接続詞 as soon as SV とほぼ同じ内容を表せます。on は前置詞なので、後ろには名詞または動名詞（動詞の -ing 形で名詞の働きをするもの）を置かなければなりません。したがって leaving が正解です。主語 he が leave する側（能動の関係）である点も確認しておきましょう。
+
+**誤答チェック**
+- 1 leave：前置詞 on の後ろに動詞の原形は置けないため×
+- 2 to leave：前置詞の後ろに不定詞は置けないため×
+- 4 being left：受動態では「彼が（学校に）残される」という意味になり、文意に合わないため×
+
+#### 問 120 ｜ 正解 **2**
+
+**完成文** If you feel like **seeing** the rest of our collection, please come to our next exhibition in December.
+**訳** 私どものコレクションの残りをご覧になりたければ、ぜひ12月の次回展示会にお越しください。
+**POINT** feel like doing「〜したい気がする」
+
+feel like doing は「〜したい気がする」という意味の慣用表現です。この like は動詞ではなく前置詞なので、後ろには動名詞を置きます。「コレクションの残りを見たい気があれば」という文意から、feel like seeing とするのが正解です。feel like の後ろに to 不定詞を続ける形はないこと、前置詞 like のすぐ後ろにさらに前置詞 for を重ねられないことを押さえておけば、機械的に解ける問題です。
+
+**誤答チェック**
+- 1 for seeing：前置詞 like の直後に別の前置詞 for は置けないため×
+- 3 to see：feel like to do という形は存在しないため×
+- 4 having seen：完了動名詞は「すでに見てしまったこと」を表し、これから見に来てもらう文意に合わないため×
+
+#### 問 121 ｜ 正解 **1**
+
+**完成文** **When** it comes to cooking, no one is better than my grandmother.
+**訳** 料理のこととなると、私の祖母より上手な人はいません。
+**POINT** when it comes to doing「〜のこととなると」
+
+when it comes to 〜 は「〜のこととなると・〜の話になると」という意味の慣用表現で、話題を提示するときに使います。ここで注意すべきは、この to が不定詞の to ではなく前置詞だという点です。だから後ろは cooking という動名詞（または名詞）になっています。「be used to doing（〜に慣れている）」「look forward to doing（〜を楽しみに待つ）」などと同じく、「to の後ろが -ing になる」表現のグループとしてまとめて覚えましょう。この表現の先頭は When で固定なので、それを知っているかどうかが問われています。
+
+**誤答チェック**
+- 2 Where：where it comes to という表現は存在しないため×
+- 3 Which：疑問詞・関係詞のいずれとしても文が成立しないため×
+- 4 While：「〜する間」では it comes to cooking と意味がつながらないため×
+
+#### 問 122 ｜ 正解 **1**
+
+**完成文** As I had left the map in the hotel room, I had a lot of trouble **finding** the museum.
+**訳** 地図をホテルの部屋に置いてきてしまったので、美術館を見つけるのにとても苦労した。
+**POINT** have trouble (in) doing「〜するのに苦労する」
+
+have trouble doing は「〜するのに苦労する」という意味の重要表現です。もともとは have trouble in doing の形でしたが、現代英語では前置詞 in を省略し、trouble の直後に動名詞を続けるのが普通です。ここでは「美術館を見つけるのに大いに苦労した」という文意なので、had a lot of trouble finding とします。同じ仲間に have difficulty (in) doing、spend 時間 (in) doing、be busy (in) doing などがあり、いずれも「in が消えて -ing が直接続く」形として頻出です。セットで覚えておきましょう。
+
+**誤答チェック**
+- 2 of finding：trouble の後ろに置く前置詞は本来 in であり、of は使えないため×
+- 3 to find：have trouble to do という形は存在しないため×
+- 4 with find：前置詞 with の後ろに動詞の原形は置けないため×
+
+#### 問 123 ｜ 正解 **4**
+
+**完成文** Sarah's interests lie in academics, so it's no **use** trying to persuade her to work for our firm.
+**訳** サラの関心は学問にあるので、彼女をうちの会社で働くよう説得しようとしても無駄です。
+**POINT** It is no use doing「〜しても無駄だ」
+
+It is no use doing は「〜しても無駄だ」という意味の動名詞の慣用表現です。この It は形式主語（後ろの動名詞句 trying 以下を指す仮の主語）で、真の主語は trying to persuade her 〜 です。use はここでは「役に立つこと・効用」という意味の名詞で、「説得しようとすることは何の役にも立たない」が直訳になります。use の代わりに good を使った It is no good doing も同じ意味で、あわせて覚えておくと効率的です。ことわざの It is no use crying over spilt milk（覆水盆に返らず）でも有名な表現です。
+
+**誤答チェック**
+- 1 meaning：it's no meaning doing という表現は存在しないため×
+- 2 purpose：it's no purpose doing という表現は存在しないため×
+- 3 time：it's no time doing という形はなく、「今は〜している場合ではない」なら This is no time to do などの形になるため×
+
+#### 問 124 ｜ 正解 **3**
+
+**完成文** There is **no telling** when an earthquake will happen.
+**訳** 地震がいつ起こるかは誰にも分からない。
+**POINT** There is no doing「〜することはできない」
+
+There is no doing は「〜することはできない・〜しようがない」という意味の動名詞の慣用表現で、It is impossible to do とほぼ同じ内容を表します。直訳すると「〜することは存在しない」となり、そこから「誰にも〜できない」という意味になります。上の文の It is impossible to tell（tell はここでは「分かる・見分ける」の意味）を書き換えるので、There is no telling が正解です。There is no accounting for tastes（人の好みは説明できない＝蓼食う虫も好き好き）のように、ことわざにも使われる形です。「There is no + 動名詞 = It is impossible to + 原形」という書き換えパターンとして必ず覚えましょう。
+
+**誤答チェック**
+- 1 nothing to tell：「伝えるべきことが何もない」という意味になり、「分からない」という文意に合わないため×
+- 2 not to tell：There is の後ろに不定詞の否定形を置くこの形は文法的に成立しないため×
+- 4 no teller：teller は「話す人・（銀行の）窓口係」で、「分からない」の意味を表せないため×
+
+#### 問 125 ｜ 正解 **3**
+
+**完成文** I cannot help **buying** a new iPad.
+**訳** 私は新しいiPadを買わずにはいられない。
+**POINT** cannot help doing「〜せずにはいられない」
+
+cannot help doing は「〜せずにはいられない・思わず〜してしまう」という意味の重要表現です。この help は「助ける」ではなく「避ける」という意味で、直訳すると「〜することを避けられない」となります。help のこの用法では目的語に動名詞をとるので、buying が正解です。同じ意味の表現に cannot help but do、cannot but do（いずれも後ろは原形）があり、「help の後ろは -ing、but の後ろは原形」という形の違いがよく問われます。セットで整理しておきましょう。
+
+**誤答チェック**
+- 1 buy：cannot help の直後に原形は置けない（原形が続くのは cannot help but の形）ため×
+- 2 from buying：keep A from doing などとの混同で、cannot help from doing という形は存在しないため×
+- 4 to buy：cannot help to do という形は「〜せずにはいられない」の意味では使えないため×
+
+#### 問 126 ｜ 正解 **7632451**
+
+**完成文** Yesterday, I was so **tired that I didn't feel like speaking a word**.
+**訳** 昨日あまりにも疲れていたので、私は一言も話す気になりませんでした。
+**POINT** so ... that SV「とても…なので〜」＋ feel like doing「〜する気がする」
+
+この問題は2つの表現の組み合わせです。まず、与えられた語群の直前に so があることに注目します。so の後ろに形容詞を置き、so tired that SV とすれば「あまりに疲れていたので〜」という因果関係を表せます（so ... that 構文）。that 節の中身は「一言も話す気になれなかった」なので、問120で学んだ feel like doing を否定文で使い、I didn't feel like speaking a word とします。like は前置詞なので後ろが動名詞 speaking になる点が最大のポイントです。
+
+**組み立て**
+- was so の後ろに形容詞 tired を置き、so tired that で「あまりに疲れていて〜」の骨格を作る
+- that 節の主語・動詞を I didn't feel と決める
+- feel like doing より feel like speaking a word（一言も話す気がしない）と続ける
+
+#### 問 127 ｜ 正解 **524631**
+
+**完成文** It **goes without saying that health is** above wealth.
+**訳** 健康が富に勝ることは言うまでもない。
+**POINT** It goes without saying that SV「〜は言うまでもない」
+
+It goes without saying that SV は「〜は言うまでもない」という意味の動名詞の慣用表現です。直訳すると「それは言うことなしに進む」、つまり「わざわざ言わなくても通用する」ということです。without は前置詞なので後ろは動名詞 saying になります。It は形式主語で、that 節が真の主語です。that 節の中は health is above wealth（健康は富の上にある＝健康は富に勝る）という文を組み立てます。この表現はこの語順のまま丸ごと覚えてしまうのが得策です。
+
+**組み立て**
+- It goes without saying that の定型表現をまず作る（goes → without → saying → that）
+- that 節の中に health is を置き、文末の above wealth につなげる
+
+#### 問 128 ｜ 正解 **3617524**
+
+**完成文** **What do you say to taking a** coffee break soon?
+**訳** しばらくしたらコーヒータイムにしてはいかがですか。
+**POINT** What do you say to doing?「〜してはどうですか」
+
+What do you say to doing? は「〜してはどうですか・〜しませんか」と相手を誘う慣用表現です。直訳は「〜することに対してあなたは何と言いますか」で、そこから提案の意味になります。ここでの to は不定詞の to ではなく前置詞なので、後ろには動名詞を置かなければなりません。したがって to taking という並びになるのがこの問題の最大のポイントです。「コーヒー休憩をとる」は take a coffee break と表すので、taking a (coffee break) と続けて完成です。同じ提案表現の How about doing? / Why don't you do? などとあわせて整理しておきましょう。
+
+**組み立て**
+- 疑問文の骨格 What do you say を作る（what → do → you → say）
+- to は前置詞なので to taking と動名詞を続ける
+- taking a coffee break で「コーヒー休憩をとる」を完成させる
+
+
+## UNIT 5 分詞(1)
+
+#### 問 129 ｜ 正解 **1**
+
+**完成文** The woman **standing** in front of the house is my wife.
+**訳** 家の前に立っている女性は、私の妻です。
+**POINT** 名詞を後ろから修飾する現在分詞(能動「〜している」)
+
+まず文の骨格をつかみましょう。主語は The woman、述語動詞は is で、「The woman (　) in front of the house」までがひとかたまりの主語です。つまり空所には、名詞 The woman を後ろから修飾する語(修飾語=名詞に説明を加える語)が入ります。動詞のままでは名詞を修飾できないので、分詞に形を変える必要があります。「女性が立っている」という能動の関係なので、現在分詞 standing が正解です。「名詞と分詞の関係が能動なら -ing、受動なら過去分詞」という視点で判断するのがコツです。
+
+**誤答チェック**
+- 2 stood：過去分詞は「〜される」という受動の意味。stand(立つ)は自動詞なので「立たれる女性」となり意味が成立しないため×
+- 3 stands：3人称単数現在形を入れると述語動詞が stands と is の2つになってしまうため×
+- 4 stand：動詞の原形はそのままでは名詞を修飾できないため×
+
+#### 問 130 ｜ 正解 **4**
+
+**完成文** The traditional clothes **worn** by women in India are called sari.
+**訳** インドの女性が身につけている伝統的な衣装は、サリーと呼ばれています。
+**POINT** 名詞を後ろから修飾する過去分詞(受動「〜される」)
+
+主語は The traditional clothes、述語動詞は are called で、空所から India までが主語の clothes を後ろから説明する修飾語句です。ここで clothes(衣装)と wear(着る)の関係を考えると、「衣装は女性によって着られる」という受動の関係ですね。直後に by women(女性によって)とあることも受動のサインです。したがって過去分詞 worn が正解です。分詞の問題は「修飾される名詞が『する』側か『される』側か」を必ず確認しましょう。
+
+**誤答チェック**
+- 1 wear：動詞の原形は名詞を修飾できず、述語動詞と考えても are called と衝突するため×
+- 2 wore：過去形は名詞を修飾する働きを持たないため×
+- 3 wearing：現在分詞では「衣装が(何かを)着ている」という能動の意味になり不自然なため×
+
+#### 問 131 ｜ 正解 **2**
+
+**完成文** I'm more **interested** in movies than in television.
+**訳** 私はテレビよりも映画のほうに興味があります。
+**POINT** 感情動詞の分詞は「人=過去分詞、物・事=現在分詞」
+
+interest はもともと「(人に)興味を持たせる」という意味の動詞です。このタイプの感情を表す動詞(surprise, excite, please など)は、分詞にするときの使い分けが決まっています。興味を「持たせられる」側、つまり感情を抱く人が主語なら過去分詞、興味を「持たせる」側の物・事なら現在分詞です。この文の主語は I(人)で、「私は映画に興味を持たせられている=興味がある」という受動の関係なので interested が正解です。be interested in 〜(〜に興味がある)は熟語としてそのまま覚えてしまいましょう。
+
+**誤答チェック**
+- 1 interesting：現在分詞は「(物・事が人に)興味を持たせる」の意味で、主語 I には不適なため×
+- 3 interest：動詞(または名詞)の形のままでは be動詞 + more の後に置けないため×
+- 4 to interest：不定詞では「興味がある」という状態を表せず、文が成立しないため×
+
+#### 問 132 ｜ 正解 **3**
+
+**完成文** It was an **exciting** game, wasn't it?
+**訳** わくわくする試合でしたね。
+**POINT** 感情動詞の分詞は「人=過去分詞、物・事=現在分詞」
+
+excite は「(人を)わくわくさせる」という意味の感情動詞です。修飾される名詞が game(試合)という「物・事」であることに注目しましょう。試合は人をわくわく「させる」側なので、能動を表す現在分詞 exciting が正解です。空所の直前が a ではなく an になっているのも、母音で始まる exciting・excited に絞り込むヒントになります。そのうえで「game は感情を与える側か、受け取る側か」を考えれば確実に選べます。
+
+**誤答チェック**
+- 1 excite：動詞の原形は名詞 game を修飾できないため×
+- 2 excited：過去分詞は「わくわくさせられた」の意味で、感情を抱けない game には不適なため×
+- 4 excitingly：副詞は名詞を修飾できない(副詞は動詞・形容詞などを修飾する語)ため×
+
+#### 問 133 ｜ 正解 **4**
+
+**完成文** The teacher looked **pleased** with the result.
+**訳** 先生は、その結果に満足そうでした。
+**POINT** be [look] pleased with 〜「〜に満足している[満足そうだ]」
+
+please は「(人を)喜ばせる」という意味の感情動詞です。look C(〜のように見える)の C(補語=主語の状態を説明する語)に入れる形を選びます。主語は The teacher(人)で、「先生は結果によって喜ばせられている=満足している」という受動の関係なので、過去分詞 pleased が正解です。be pleased with 〜/ look pleased with 〜「〜に満足している/満足そうだ」という形で覚えておくと、直後の with もヒントにできます。
+
+**誤答チェック**
+- 1 pleasant：「(物・事が)心地よい、感じのよい」という形容詞で、人の満足を表す with 〜 とは結びつかないため×
+- 2 please：動詞の原形は look の補語になれないため×
+- 3 pleasing：現在分詞は「(物・事が人を)喜ばせる」の意味で、主語 The teacher には不適なため×
+
+#### 問 134 ｜ 正解 **2**
+
+**完成文** He closed his eyes and listened to the music.
+=He listened to the music with **his eyes closed**.
+**訳** 彼は目を閉じて音楽を聴いた。
+**POINT** 付帯状況の with O C「Oを〜した状態で」
+
+with には「with + 名詞 + 分詞」の形で「〜を…した状態で」と、動作に付随する状況(付帯状況)を表す用法があります。ここでは上の文の「目を閉じて」という状況を with で言い換えます。ポイントは名詞 his eyes と close(閉じる)の関係です。close は「〜を閉じる」という他動詞なので、目は「閉じられる」側、つまり受動の関係です。したがって過去分詞を使った with his eyes closed が正解です。「with + 名詞 + 過去分詞」=「名詞が〜された状態で」とセットで覚えましょう。
+
+**誤答チェック**
+- 1 closing his eyes：with の直後に動名詞を置いても付帯状況の意味にはならず、この形は使えないため×
+- 3 his eyes closing：現在分詞では「目が(何かを)閉じている」という能動の意味になり、受動の関係に合わないため×
+- 4 his close eyes：形容詞 close は「近い」の意味で、「閉じた目」を表せないため×
+
+#### 問 135 ｜ 正解 **2**
+
+**完成文** David sat on the chair with his arms **folded**.
+**訳** デイビッドは腕を組んで椅子に座っていた。
+**POINT** 付帯状況の with O C(O と C が受動関係なら過去分詞)
+
+「with + 名詞 + 分詞」で「〜を…した状態で」を表す付帯状況の問題です。名詞 his arms と fold(〜を折りたたむ、組む)の関係を考えると、腕は「組まれる」側なので受動の関係です。したがって過去分詞 folded が正解で、with his arms folded で「腕を組んだ状態で=腕組みをして」となります。with one's arms folded(腕を組んで)、with one's legs crossed(脚を組んで)、with one's eyes closed(目を閉じて)は入試頻出の3点セットなので、まとめて覚えておきましょう。
+
+**誤答チェック**
+- 1 fold：動詞の原形は with O の後の補語になれないため×
+- 3 been folding：been は have とセットで使う形であり、単独でここに置くことはできないため×
+- 4 being folding：being と folding という2つの -ing 形を並べる形は文法的に成立しないため×
+
+#### 問 136 ｜ 正解 **4**
+
+**完成文** My sister was sitting on the chair, with her legs **crossed**.
+**訳** 姉[妹]は脚を組んで椅子に座っていた。
+**POINT** 付帯状況の with O C(O と C が受動関係なら過去分詞)
+
+これも「with + 名詞 + 分詞」の付帯状況の問題です。名詞 her legs と cross(〜を交差させる、組む)の関係に注目します。cross は他動詞なので、脚は「組まれる」側、つまり受動の関係です。したがって過去分詞 crossed が正解で、with her legs crossed で「脚を組んだ状態で」となります。問135の with his arms folded と同じ発想で解ける問題です。「with の後の名詞が、分詞の動作を『する』のか『される』のか」を毎回確認する習慣をつけましょう。
+
+**誤答チェック**
+- 1 cross：動詞の原形は with O の後の補語になれないため×
+- 2 crossing：現在分詞では「脚が(何かを)組む」という能動の意味になり不自然なため×
+- 3 to cross：不定詞は付帯状況の with O C の C には使えないため×
+
+#### 問 137 ｜ 正解 **4132**
+
+**完成文** The classes **taught by John are** very popular with the students.
+**訳** ジョンが教えている授業は、学生に大変人気がある。
+**POINT** 過去分詞句による名詞の後置修飾
+
+日本文の骨格は「授業は〜人気がある」なので、主語は The classes、述語動詞は are(②)で、are very popular with 〜(〜に大変人気がある)とつながります。次に「ジョンが教えている授業」の部分を英語にします。授業はジョンによって「教えられる」側なので、受動を表す過去分詞 taught(④)を使い、taught by John(①③)というまとまりで The classes を後ろから修飾させます。名詞の直後に過去分詞句を置いて「〜される名詞」と説明を加える、後置修飾の典型パターンです。
+
+**組み立て**
+- 主語 The classes を確定 → 「ジョンに教えられる」= taught by John(過去分詞の後置修飾)を直後に置く
+- 述語動詞 are を続け、are very popular with the students で締める
+
+#### 問 138 ｜ 正解 **3421**
+
+**完成文** Mary was listening to **the music with her eyes closed**.
+**訳** メアリーは、目を閉じて音楽を聴いていた。
+**POINT** 付帯状況の with O C「Oを〜した状態で」
+
+まず listening to の直後には目的語が必要なので、the music(③)を置きます。残りで「目を閉じて」を表しますが、これは「with + 名詞 + 過去分詞」の付帯状況で表現します。名詞 her eyes(②)と close の関係は「目が閉じられる」という受動なので、過去分詞 closed(①)を続け、with her eyes closed(④②①)とします。問134で学んだ書き換えと同じ形が、そのまま整序で問われた問題です。
+
+**組み立て**
+- listening to の目的語 the music を確定
+- 「目を閉じて」= with her eyes closed(付帯状況の with + O + 過去分詞)を文末に置く
+
+#### 問 139 ｜ 正解 **①**
+
+**完成文** Scientists **are excited** to see if this experiment can lead to a better understanding of animal behavior.
+**訳** 科学者たちは、この実験が動物の行動のより深い理解につながるかどうかを確かめることに胸を躍らせている。
+**POINT** 感情動詞の分詞は「人=過去分詞、物・事=現在分詞」
+
+excite は「(人を)わくわくさせる」という感情動詞なので、分詞の使い分けを確認します。①の主語は Scientists(人)で、科学者は実験によってわくわく「させられる」側ですから、現在分詞 exciting ではなく過去分詞 excited を使い、are excited とするのが正しい形です。be excited to do で「〜することにわくわくしている」という意味になります。②の see if 〜(〜かどうか確かめる)、③の lead to 〜(〜につながる)、④の a better understanding of 〜(〜のより深い理解)はいずれも正しい表現です。「人が主語なのに -ing 形になっていないか」は誤り指摘問題の定番の着眼点です。
+
+**訂正** ① are exciting → are excited
+
+
+## UNIT 6 分詞(2)
+
+#### 問 140 ｜ 正解 **4**
+
+**完成文** Next Tuesday is the deadline for **sending** in your application.
+**訳** 来週の火曜日が、申込書を送付する締め切りです。
+**POINT** 動名詞（名詞のはたらきをする -ing）を見分ける
+
+問題文の Learning a new language implies entering a new world では、下線部の entering は動詞 implies「〜を意味する」の目的語になっています。つまり「〜すること」という名詞のはたらきをする -ing、すなわち動名詞（動詞を名詞化した形）です。-ing 形の用法を見分けるときは、その語が文中で「名詞・形容詞・副詞」のどの役割を果たしているかに着目します。選択肢 4 の sending は前置詞 for の目的語であり、「送付すること」という名詞のはたらきをしているので、これが同じ動名詞の用法です。前置詞の直後に置ける動詞の形は動名詞だけ、という点も覚えておきましょう。
+
+**誤答チェック**
+- 1 singing：直前の名詞 The birds を修飾する現在分詞（形容詞のはたらき）のため×
+- 2 Looking：「〜しながら / 〜すると」を表す分詞構文（副詞のはたらき）のため×
+- 3 entertaining：be動詞 + -ing の現在進行形（ここでは近い未来の予定を表す用法）のため×
+
+※編集メモ: データ上、問題文のどの語に下線があるか示されていない。正解 4（動名詞）から逆算し、implies の目的語 entering（動名詞）を下線部と想定して解説を作成した。
+
+#### 問 141 ｜ 正解 **3**
+
+**完成文** **Walking** along the street, I found a new coffee shop that had just opened last week.
+**訳** 通りを歩いていると、先週開店したばかりの新しいコーヒーショップを見つけました。
+**POINT** 主語と能動関係なら現在分詞で始まる分詞構文
+
+カンマの後ろに I found という完全な文（SV）があるので、空所からカンマまでは文の主語 I を説明する副詞のカタマリ、つまり分詞構文（接続詞と主語を省略し、分詞で始める表現）です。分詞構文では、意味上の主語は主節の主語と一致します。ここでは「私が歩く」という能動の関係なので、現在分詞 Walking を選びます。When I was walking along the street, I found ... と書き換えられると考えると分かりやすいでしょう。
+
+**誤答チェック**
+- 1 Walk：動詞の原形は命令文になってしまい、後ろの I found とつながらないため×
+- 2 Walked：過去分詞は「歩かれる」という受動の意味になり、I との関係が不自然なため×
+- 4 To walk：文頭の to 不定詞は「〜するために」（目的）となり、「歩くために見つけた」では意味が通らないため×
+
+#### 問 142 ｜ 正解 **3**
+
+**完成文** **Used** economically, the bottle will last for at least two months.
+**訳** 節約して使えば、そのボトルは少なくとも2か月はもちます。
+**POINT** 主語と受動関係なら過去分詞で始まる分詞構文
+
+主節は the bottle will last ...「そのボトルはもつだろう」で、空所からカンマまでが分詞構文です。分詞構文の意味上の主語は主節の主語 the bottle ですから、「ボトルは（人によって）使われる」という受動の関係になります。受動の分詞構文は Being used の Being が省略された形で、過去分詞 Used から始めるのが正解です。If it is used economically, ... と接続詞を使って書き換えられます。分詞構文では「主節の主語との能動・受動関係」を必ず確認しましょう。
+
+**誤答チェック**
+- 1 To use：「使うために2か月もつ」となり意味が通らず、また use の目的語も欠けるため×
+- 2 Use：動詞の原形では命令文となり、後ろの主節と文法的につながらないため×
+- 4 Using：現在分詞では「ボトルが（何かを）使う」という能動の意味になり、目的語もないため×
+
+#### 問 143 ｜ 正解 **3**
+
+**完成文** **Seen** from the sky, the island looks like a turtle.
+**訳** 空から見ると、その島はカメのように見えます。
+**POINT** Seen from ~「〜から見ると」は受動の分詞構文の定番表現
+
+主節の主語は the island です。分詞構文の意味上の主語はこの the island なので、「島は（人によって）見られる」という受動の関係が成り立ちます。したがって過去分詞 Seen が正解です。When it is seen from the sky の it is が省略されたと考えれば構造がつかめます。Seen from ~「〜から見ると」はこの形のまま頻出する定番表現なので、丸ごと覚えてしまいましょう。
+
+**誤答チェック**
+- 1 Having seen：完了形の分詞構文はここでは能動「見てしまったので」の意味になり、主語 the island が「見る」側になってしまうため×
+- 2 Seeing：現在分詞では「島が見る」という能動の意味になり不自然なため×
+- 4 To see：「見るために島はカメのように見える」となり意味が通らないため×
+
+#### 問 144 ｜ 正解 **2**
+
+**完成文** The university, **founded** in 1851, was originally an institute for working-class people.
+**訳** その大学は1851年に設立され、もともとは労働者階級の人々のための学校でした。
+**POINT** found「設立する」の過去分詞 founded が名詞を修飾する
+
+カンマにはさまれた部分は、主語 The university を補足説明する分詞のカタマリです。which was founded in 1851 の which was が省略された形と考えると、「大学は設立される」という受動の関係なので過去分詞 founded を選びます。注意すべきは動詞の使い分けで、ここでの原形は find「見つける」ではなく found「設立する」（found - founded - founded）です。find の過去形 found と形が同じなので混同しやすい、入試頻出のひっかけポイントです。
+
+**誤答チェック**
+- 1 found：find「見つける」の過去分詞では「1851年に発見された」となり文意に合わず、また過去形と取っても文が二重になるため×
+- 3 founding：現在分詞では「大学が設立する」という能動の意味になり不自然なため×
+- 4 was founded：カンマの後ろに述語動詞 was がすでにあるため、動詞をもう1つ置くことはできず×
+
+#### 問 145 ｜ 正解 **2**
+
+**完成文** When Zachary saw me, he stood up, **waving** his hands wildly.
+**訳** ザカリーは私を見ると立ち上がり、両手を激しく振りました。
+**POINT** 文末の分詞構文は「〜しながら」（付帯状況）
+
+he stood up という完全な文の後ろにカンマを置き、そこに動詞の要素を続けるには、分詞構文を使います。文末に置かれた分詞構文は「〜しながら」「そして〜した」という付帯状況（動作が同時に行われている状況）を表すのが基本です。主語 he と wave「振る」は「彼が手を振る」という能動の関係なので、現在分詞 waving が正解です。..., and he waved his hands wildly と言い換えられると考えましょう。
+
+**誤答チェック**
+- 1 waved：接続詞なしで stood up と waved という2つの述語動詞を並べることはできないため×
+- 3 to wave：「手を振るために立ち上がった」という目的の意味は文脈上不自然で、付帯状況は表せないため×
+- 4 has waved：述語動詞がすでにあるので、接続詞なしに現在完了をつなげることはできないため×
+
+#### 問 146 ｜ 正解 **1**
+
+**完成文** **Not knowing** what to say, Tracy remained silent all through the meeting.
+**訳** 何と言えばよいのか分からず、トレイシーは会議の間ずっと黙っていました。
+**POINT** 分詞構文の否定は分詞の直前に Not を置く
+
+主節は Tracy remained silent という完全な文なので、空所から say までは分詞構文です。分詞構文を否定するときは、not や never を分詞の直前に置くのがルールです。主語 Tracy と know は「トレイシーが知っている」という能動の関係なので、Not + 現在分詞の Not knowing が正解となります。Because she did not know what to say, ... と書き換えて理解しましょう。「Not の位置は分詞の前」——これは整序問題でも狙われる重要ポイントです。
+
+**誤答チェック**
+- 2 Not known：過去分詞では「トレイシーが知られていない」という受動の意味になり、目的語 what to say も取れないため×
+- 3 Not to know：to 不定詞の否定形は分詞構文の代わりにはならず、「知らないために黙っていた」という目的の意味も成立しないため×
+- 4 Knowing no：no は名詞を否定する語であり、疑問詞のカタマリ what to say の前には置けないため×
+
+#### 問 147 ｜ 正解 **3**
+
+**完成文** **Having finished** my homework, I went to bed.
+**訳** 宿題を終えてから、私は寝ました。
+**POINT** 主節より前の時を表すのは完了形の分詞構文 Having + 過去分詞
+
+「宿題を終えた」のは「寝た」よりも前の出来事です。このように分詞構文の内容が主節の時よりも前であることを示すには、完了形の分詞構文 Having + 過去分詞を使います。主語 I と finish は能動の関係で、目的語 my homework もあるので、Having finished が正解です。After I had finished my homework, I went to bed. の書き換えと考えると、時間のズレがはっきり見えるでしょう。
+
+**誤答チェック**
+- 1 Finished：過去分詞の分詞構文は受動の意味になり、目的語 my homework を取ることができないため×
+- 2 To finish：「宿題を終えるために寝た」となり意味が通らないため×
+- 4 Finish：動詞の原形では命令文となり、後ろの主節とつながらないため×
+
+#### 問 148 ｜ 正解 **2**
+
+**完成文** All things **considered**, there is no doubt about it.
+**訳** すべてを考え合わせると、それについては疑いの余地がありません。
+**POINT** All things considered「すべてを考慮すると」は独立分詞構文の慣用表現
+
+この文では、分詞の意味上の主語 All things が主節の主語と異なるため、分詞の前に置かれています。これを独立分詞構文と呼びます。All things「すべての事柄」は「考慮される」側なので、受動を表す過去分詞 considered が正解です。If all things are considered「もしすべてが考慮されるなら」が元の形です。All things considered はこのまま慣用表現として頻出するので、ひとかたまりで暗記しておきましょう。
+
+**誤答チェック**
+- 1 considering：現在分詞では「物事が考慮する」という能動の意味になってしまうため×
+- 3 consideration：名詞を置くと All things との文法的なつながりがなくなるため×
+- 4 consider：動詞の原形は分詞構文に使えず、All things consider では文が成立しないため×
+
+#### 問 149 ｜ 正解 **7532681**
+
+**完成文** Studying **for the exam**, I **fell asleep with the light turned on**.
+**訳** 試験勉強をしていたら、電気をつけっぱなしのまま眠り込んでしまった。
+**POINT** 付帯状況の with + O + 過去分詞「Oが〜されたまま」
+
+前半の Studying は分詞構文なので、study for ~「〜に向けて勉強する」の形から Studying for the exam「試験勉強をしていたら」を作ります。後半の核は I fell asleep「眠り込んだ」です。「電気をつけっぱなしのまま」は、付帯状況の with + O + 分詞（Oが〜した / されたままで）で表します。the light「電気」は「つけられる」側なので過去分詞を使い、with the light turned on とすれば完成です。不要な語は 4 の in で、study in the exam という形は存在しません。
+
+**組み立て**
+- Studying に for the exam を続けて「試験勉強をしていたら」を作る
+- I fell asleep で主節を確定
+- with + the light + turned on（受動の付帯状況）を文末に置く／in が不要
+
+#### 問 150 ｜ 正解 **451263**
+
+**完成文** The **work being done**, **they went for** a walk.
+**訳** 仕事が終わると、彼らは散歩に出かけた。
+**POINT** 主語が異なるときは分詞の前に意味上の主語を置く（独立分詞構文）
+
+「仕事が終わる」の主語は work、「散歩に出かけた」の主語は they と、前半と後半で主語が異なります。このような場合は、分詞の前に意味上の主語をそのまま置く独立分詞構文を使います。The work「仕事」は「なされる」側なので受動の分詞 being done を続け、The work being done「仕事が終えられると」とします。後半は go for a walk「散歩に出かける」という熟語を使い、they went for a walk と組み立てれば完成です。
+
+**組み立て**
+- 意味上の主語 The work を分詞の前に置く → being done（受動）を続ける
+- 主節は they went for a walk（go for a walk「散歩に出かける」）
+
+#### 問 151 ｜ 正解 **3241**
+
+**完成文** **Strictly** speaking, this **article contains** a lot of ungrammatical **expressions**.
+**訳** 厳密に言えば、この記事には文法的に誤った表現が多数あります。
+**POINT** Strictly speaking「厳密に言えば」は分詞構文の慣用表現
+
+Strictly speaking「厳密に言えば」は、文全体を修飾する分詞構文の慣用表現です。generally speaking「一般的に言えば」、frankly speaking「率直に言えば」なども同じ仲間で、主節の主語と一致しなくても使える点が特徴です。後半は this article「この記事」を主語に、contains「〜を含む」を述語動詞として続けます。最後は a lot of ungrammatical expressions「多数の文法的に誤った表現」とまとめ、contain を使って「〜には…がある」を表す発想がポイントです。
+
+**組み立て**
+- Strictly speaking（慣用的な分詞構文）を文頭に置く
+- this article contains で SVO を確定 → ungrammatical expressions を目的語に
+
+
+# Chapter 3 構造系
+
+
+## UNIT 1 関係詞(1)
+
+#### 問 152 ｜ 正解 **4**
+
+**完成文** My sister told me about a class at her university, **which she's enjoying** very much.
+**訳** 姉は大学のある授業について私に話してくれたが、彼女はその授業をとても楽しんでいる。
+**POINT** コンマの後ろに置けるのは which（非制限用法）、that は不可
+
+空所の前にコンマがあり、先行詞 a class at her university に補足説明を加える形です。このように「コンマ＋関係詞」で先行詞に説明を付け足す使い方を非制限用法（継続用法）といいます。非制限用法で使えるのは which や who などで、that は使えません。また、関係代名詞 which はそれ自体が enjoy の目的語の働きをするので、節の中に it などの目的語を重複して置かないことにも注意しましょう。which she's enjoying で「彼女がそれを楽しんでいる」という説明が先行詞につながります。
+
+**誤答チェック**
+- 1 she's enjoying that：接続詞なしに2つの文をコンマだけでつなぐことはできず、この that は前の名詞と文をつなぐ働きを持たないため×
+- 2 she's to enjoy it：関係詞がなく文と文をつなげられないうえ、be to do（〜する予定だ）にする意味的な理由もないため×
+- 3 that she's to enjoy：関係代名詞 that はコンマ付きの非制限用法では使えないため×
+
+#### 問 153 ｜ 正解 **2**
+
+**完成文** Peter is the teacher **whom** we want to talk to.
+**訳** ピーターは、私たちが話をしたいと思っている先生です。
+**POINT** 先行詞が「人」で、関係詞節内の目的語が欠けていれば whom
+
+空所の後ろは we want to talk to と続き、前置詞 to の目的語が欠けています。つまり空所には「目的格の関係代名詞」が入ります。先行詞は the teacher という「人」なので、人・目的格の whom が正解です。もともと we want to talk to the teacher という文の the teacher が関係代名詞に変わって前に出た、と考えると構造がつかみやすいでしょう。なお、口語では whom の代わりに who や that を使ったり、関係代名詞を省略したりすることも可能です。
+
+**誤答チェック**
+- 1 why：関係副詞 why は先行詞が the reason のときに使うもので、節内の目的語の欠けを埋められないため×
+- 3 whose：所有格は直後に名詞が必要（whose+名詞）だが、後ろに名詞が続いていないため×
+- 4 which：which は先行詞が「モノ」のときに使う関係代名詞で、先行詞が人の the teacher には使えないため×
+
+#### 問 154 ｜ 正解 **3**
+
+**完成文** The boy **who** I thought was a friend of mine proved to be a stranger.
+**訳** 私の友人だと思っていたその少年は、見知らぬ人だと判明した。
+**POINT** 連鎖関係詞節：I thought は挿入と考え、was の主語が欠けていることを見抜く
+
+空所の後ろの I thought was a friend of mine がポイントです。これは I thought (that) he was a friend of mine の he が関係代名詞になった形で、「連鎖関係詞節」と呼ばれます。I thought をカッコに入れて取り除いてみると、(　) was a friend of mine となり、動詞 was の主語が欠けていることが分かります。つまり必要なのは主格の関係代名詞で、先行詞 The boy は「人」なので who が正解です。直後に I thought という「S＋V」が見えると目的格の whom を選びたくなりますが、欠けているのは thought の目的語ではなく was の主語である点に注意しましょう。
+
+**誤答チェック**
+- 1 what：what は先行詞を含む関係代名詞（〜すること・もの）で、先行詞 The boy がある文では使えないため×
+- 2 which：先行詞が「人」なので、モノに使う which は不可のため×
+- 4 whose：所有格は whose+名詞の形で使うが、直後に名詞がなく、節内で欠けているのは主語のため×
+- 5 why：関係副詞 why は先行詞 the reason 専用で、主語の欠けを埋められないため×
+
+#### 問 155 ｜ 正解 **4**
+
+**完成文** Last summer, I paid a visit to Athens, **which** is the capital of Greece.
+**訳** 昨年の夏、私はギリシャの首都であるアテネを訪れた。
+**POINT** コンマ＋which の非制限用法。that と it は不可
+
+空所の後ろは is the capital of Greece と動詞から始まっており、主語が欠けています。したがって主格の関係代名詞が必要です。先行詞は Athens という都市名（モノ扱い）で、しかも前にコンマがあるので、非制限用法で使える which が正解です。Athens のような固有名詞は「世界に一つしかない」ため、関係詞で限定する制限用法ではなく、コンマを打って補足説明する非制限用法を使うのが原則です。
+
+**誤答チェック**
+- 1 it：it は代名詞にすぎず、接続詞なしで2つの文をつなぐことができないため×
+- 2 that：関係代名詞 that はコンマ付きの非制限用法では使えないため×
+- 3 where：関係副詞 where の後ろは完全な文が続くはずだが、ここでは is の主語が欠けた不完全な文なので×
+
+#### 問 156 ｜ 正解 **3**
+
+**完成文** New Zealand is one of the countries **which** I would like to visit.
+**訳** ニュージーランドは、私が訪れてみたい国の一つです。
+**POINT** visit は他動詞。目的語が欠けていれば where ではなく which
+
+先行詞が the countries という「場所」なので反射的に where を選びたくなりますが、それがこの問題の狙いです。関係詞の選択は「先行詞の意味」ではなく「節の中で何が欠けているか」で決めます。visit は前置詞なしで目的語をとる他動詞（visit＋場所）なので、I would like to visit の後ろには目的語が欠けています。目的語の欠けを埋めるのは関係代名詞なので、モノ・目的格の which が正解です。where などの関係副詞は、後ろに「欠けのない完全な文」が続く場合にしか使えません。
+
+**誤答チェック**
+- 1 where：関係副詞の後ろは完全な文が続くはずだが、visit の目的語が欠けているため×
+- 2 wherever：「〜するところならどこでも」という複合関係副詞で、先行詞 the countries を修飾する用法はないため×
+- 4 whichever：「〜するどちらでも」という複合関係代名詞で、先行詞をとることができないため×
+
+#### 問 157 ｜ 正解 **4**
+
+**完成文** The place **where** we spent our vacation was really beautiful.
+**訳** 私たちが休暇を過ごした場所は本当に美しかった。
+**POINT** 節内が完全な文なら関係副詞 where
+
+空所の後ろを見ると、we spent our vacation は「S＋V＋O」がそろった完全な文です（spend A「Aを過ごす」の目的語 our vacation がすでにある）。欠けている名詞がないので関係代名詞は使えず、「その場所で」という場所の副詞の働きをする関係副詞 where が正解です。we spent our vacation there（そこで休暇を過ごした）の there が where に変わった、と考えると分かりやすいでしょう。問156とセットで、「先行詞が場所でも、節内に名詞の欠けがあれば which、完全な文なら where」という判別法を身につけてください。
+
+**誤答チェック**
+- 1 who：先行詞 The place は人ではなく、節内に主語・目的語の欠けもないため×
+- 2 what：what は先行詞を含む関係代名詞で、先行詞 The place がある文では使えないため×
+- 3 which：関係代名詞は節内の名詞の欠けを埋めるものだが、後ろは完全な文で欠けがないため×
+
+#### 問 158 ｜ 正解 **3**
+
+**完成文** This is **how** I learned to write a novel.
+**訳** このようにして私は小説の書き方を学んだ。
+**POINT** This is how S V「このようにして〜」。the way how とは言わない
+
+空所の後ろの I learned to write a novel は完全な文なので、関係副詞を選びます。「これが私が小説の書き方を学んだ方法だ→このようにして学んだ」という意味になる、方法を表す関係副詞 how が正解です。how は他の関係副詞と違って先行詞をとらず、This is how S V や That's how S V の形で「こうやって/そうやって〜する」という決まり文句のように使われます。「方法」を明示したいときは the way S V を使い、the way how S V とは言えないことも頻出ポイントです。
+
+**誤答チェック**
+- 1 that：This is that S V という形は成立せず、関係代名詞 that なら節内に名詞の欠けが必要だが完全な文のため×
+- 2 whom：人を先行詞とする目的格の関係代名詞だが、先行詞も目的語の欠けもないため×
+- 4 who：主格の関係代名詞だが、節内の主語は I でそろっており、欠けがないため×
+
+#### 問 159 ｜ 正解 **4**
+
+**完成文** I know the girl **whose** father is a famous musician.
+**訳** 私は、父親が有名な音楽家であるその女の子を知っている。
+**POINT** 空所＋名詞で「〜の…」となるなら所有格 whose
+
+空所の直後に father という名詞が続き、「その女の子の父親」という所有関係が成り立っています。このように「先行詞の〜」という意味で直後の名詞とセットになるのは、所有格の関係代名詞 whose です。もとの文で考えると、I know the girl. + Her father is a famous musician. の her が whose に変わって2文がつながった形です。whose は先行詞が人でもモノでも使える点も覚えておきましょう。
+
+**誤答チェック**
+- 1 who：主格だが、節内の主語は father としてすでに存在し、「彼女の父」という所有の意味を表せないため×
+- 2 whom：目的格だが、節内に目的語の欠けがなく、直後の名詞ともつながらないため×
+- 3 who's：who is の短縮形であり、who is father is... では文が成立しないため×（whose と音が同じなので狙われやすい）
+
+#### 問 160 ｜ 正解 **4**
+
+**完成文** The apartment **I live in** is really too large for just one person.
+**訳** 私が住んでいるアパートは、一人暮らしには本当に広すぎる。
+**POINT** 目的格の関係代名詞は省略できる。前置詞 in を残すのを忘れない
+
+The apartment (which/that) I live in の関係代名詞が省略された形です。live は自動詞なので「〜に住む」は live in ～ と前置詞が必要で、この in の目的語が関係代名詞となって省略されています。したがって節の最後に in が残った I live in が正解です。文全体の骨組みは The apartment ... is really too large で、I live in は先行詞を修飾するかたまりだと見抜きましょう。
+
+**誤答チェック**
+- 1 I live it：live は自動詞なので直接 it を目的語にとれず、関係詞省略の構造にもならないため×
+- 2 I living in：living では述語動詞にならず、節として成立しないため×
+- 3 in that I live：関係代名詞 that は前置詞の直後に置く「前置詞＋that」の形では使えないため×（in which なら可）
+- 5 living：The apartment living（アパートが住んでいる）となり意味が成立しないため×
+
+#### 問 161 ｜ 正解 **①**
+
+**完成文** The police officer **who** rescued the child was given a special award by the city.
+**訳** その子どもを救助した警察官は、市から特別な賞を与えられた。
+**POINT** 直後に動詞が続くなら主格 who。whom は目的格
+
+関係詞の格は節の中の欠けで決まります。①whom の直後には rescued the child と動詞が続いており、rescued の主語が欠けています。つまり必要なのは主格の関係代名詞 who であり、目的格の whom は誤りです。whom を使えるのは、節内で動詞や前置詞の目的語が欠けている場合だけです。文全体は The police officer ... was given a special award（警察官は賞を与えられた）という受動態の骨組みで、③was given（先行詞が単数なので単数受け）や④by the city に誤りはありません。
+
+**訂正** ① whom → who
+
+#### 問 162 ｜ 正解 **51423**
+
+**完成文** This is the house **in which William Shakespeare used to** live.
+**訳** こちらがウィリアム・シェイクスピアがかつて住んでいた家です。
+**POINT** 前置詞＋関係代名詞：live in ～ の in を which の前に置く
+
+「〜に住む」は live in ～ なので、もとの文は William Shakespeare used to live in the house です。この the house が関係代名詞 which になり、前置詞 in ごと前に出ると in which という「前置詞＋関係代名詞」の形になります。used to do は「かつて〜していた」という過去の習慣・状態を表す助動詞表現です。文末に live が置かれていることから、in を文末に残す形（which ... live in）ではなく、in which を先頭に置く形だと判断します。
+
+**組み立て** 文末の live に注目し live in の in を which の前へ → in which を作る → 主語 William Shakespeare ＋ used to を続けて in which William Shakespeare used to (live)
+
+#### 問 163 ｜ 正解 **3421**
+
+**完成文** 2020 is the year **when the Olympic Games will be** held in Tokyo.
+**訳** 2020年は、東京でオリンピックが開催される年です。
+**POINT** 先行詞が「時」＋節内が完全な文 → 関係副詞 when
+
+先行詞は the year という「時」を表す名詞です。関係詞節の中身を組み立てると、the Olympic Games will be held in Tokyo（オリンピックが東京で開催される）という受動態の完全な文ができあがります。名詞の欠けがない完全な文を「その年に」という意味でつなぐので、関係副詞 when を節の先頭に置きます。hold（〜を開催する）は「オリンピックは開催される側」なので受動態 will be held になる点にも注意しましょう。
+
+**組み立て** 関係副詞 when を先頭に → 主語 the Olympic Games → 未来の受動態 will be (held) と並べる
+
+#### 問 164 ｜ 正解 **①**
+
+**完成文** Rome is one of the places **which** I look forward to visiting during this seven-day trip to Europe.
+**訳** ローマは、今回の7日間のヨーロッパ旅行で訪れるのを楽しみにしている場所の一つです。
+**POINT** visiting の目的語が欠けている → where ではなく which
+
+先行詞が the places という「場所」なので①where は一見正しそうですが、節の中を見ると look forward to visiting（〜を訪れるのを楽しみにする）の visiting の目的語が欠けています。名詞の欠けを埋められるのは関係代名詞なので、where ではなく which（または that）が正しい形です。関係副詞 where が使えるのは後ろに完全な文が続くときだけ、という問156・157と同じ判別法で解けます。なお、look forward to の to は前置詞なので後ろが動名詞 visiting になっている点、②during this、③seven-day（ハイフンでつないだ形容詞は単数形）、④to Europe に誤りはありません。
+
+**訂正** ① where → which
+
+
+## UNIT 2 関係詞(2)
+
+#### 問 165 ｜ 正解 **2**
+
+**完成文** You must always do **what** you think is right.
+**訳** あなたは、自分が正しいと思うことを常に行わなければなりません。
+**POINT** 先行詞を含む関係代名詞 what ＋ 連鎖関係詞節
+
+do の目的語となる名詞のカタマリが必要ですが、空所の前に先行詞となる名詞がありません。そこで「〜すること・もの」という意味で、先行詞を自分の中に含む関係代名詞 what を選びます。what 節の中は you think (that) ... is right という構造で、what はもともと is の主語だったものが前に出た形です。このように「関係代名詞＋ S think ／ S believe など＋ V」と続く形を連鎖関係詞節と呼び、you think は挿入のように読み飛ばすと構造がつかめます。「what you think is right ＝あなたが正しいと思うこと」というカタマリで do の目的語になっています。
+
+**誤答チェック**
+- 1 that：接続詞 that の節は「〜ということ」で完結した文が続くはずだが、後ろは is の主語が欠けた不完全な文。また関係代名詞 that と取っても先行詞がないため×
+- 3 it：it を置くと you think is right が文中で機能できず、構造が成立しないため×
+- 4 which：関係代名詞 which には先行詞が必要だが、空所の前に先行詞がないため×
+
+#### 問 166 ｜ 正解 **4**
+
+**完成文** Never put off till tomorrow **what** you can do today.
+**訳** 今日できることを明日まで延ばしてはいけない。
+**POINT** 関係代名詞 what ＝「〜すること」（有名なことわざ）
+
+put off A till tomorrow「A を明日まで延期する」の目的語 A が、till tomorrow の後ろに回された形です（目的語が長いため後置されています）。その目的語にあたる名詞のカタマニを作れるのは、先行詞を含む関係代名詞 what だけです。what you can do today で「今日あなたができること」という名詞節になり、これが put off の目的語です。先行詞になる名詞が文中にない点に着目すれば、which や that は選べないと判断できます。「今日できることを明日に延ばすな」という有名なことわざとして、このまま覚えてしまいましょう。
+
+**誤答チェック**
+- 1 which：先行詞が必要な関係代名詞であり、直前に先行詞となる名詞がないため×
+- 2 that：関係代名詞 that も先行詞が必要。接続詞 that なら後ろに完全な文が必要だが、do の目的語が欠けているため×
+- 3 when：「〜する時」では put off の目的語として意味が通らず、また when 節と取っても文構造に合わないため×
+
+#### 問 167 ｜ 正解 **3**
+
+**完成文** **What** disappointed us most was his refusal to help us.
+**訳** 我々を最も失望させたのは、彼が我々を助けるのを拒んだことであった。
+**POINT** what 節が文全体の主語になる形
+
+この文の骨格は「（　）disappointed us most」＝ S、was ＝ V、his refusal ... ＝ C という第2文型です。was の前までが主語のカタマリになるので、「我々を最も失望させたこと」という名詞節を作れる語が必要です。先行詞を含む関係代名詞 what を置けば、What disappointed us most「我々を最も失望させたこと」という主語が完成します。what 節の中では what 自身が disappointed の主語の働きをしている点も確認しておきましょう。日本語訳の「〜したのは…だ」という形は、what 節を主語に立てた英文と相性がよい定番の対応です。
+
+**誤答チェック**
+- 1 That：接続詞 that なら後ろに完全な文が必要だが、disappointed の主語が欠けた不完全な文のため×
+- 2 Which：先行詞が必要な関係代名詞で、文頭に先行詞がないため×（疑問詞と取ると「どちらが」となり訳に合わない）
+- 4 Who：疑問詞なら「誰が我々を失望させたか」という疑問文的な意味になり、与えられた日本文と合わないため×
+
+#### 問 168 ｜ 正解 **2**
+
+**完成文** I owe **what** I am today to my high school teacher, Ms. Takemoto.
+**訳** 今日の私があるのは、高校時代の恩師である竹本先生のおかげです。
+**POINT** what I am today「今日の私（の姿）」
+
+owe A to B「A は B のおかげである」の A にあたる名詞のカタマリを作る問題です。先行詞なしで名詞節を作れるのは関係代名詞 what で、what I am today は直訳すると「今日私がそうであるところのもの」、つまり「現在の私・今日の私の姿」という意味の重要表現です。what 節の中では what が be 動詞 am の補語の働きをしています。what I used to be「昔の私」、what I was ten years ago「10年前の私」なども同じパターンなので、セットで覚えておきましょう。全体で「今日の私を竹本先生に負っている＝今の私があるのは先生のおかげだ」となります。
+
+**誤答チェック**
+- 1 that：関係代名詞 that には先行詞が必要で、接続詞 that なら完全な文が続くはずだが am の補語が欠けているため×
+- 3 when：「〜する時」では owe の目的語になれず、意味も通らないため×
+- 4 whom：先行詞（人）が必要な関係代名詞であり、直前に先行詞がないため×
+
+#### 問 169 ｜ 正解 **2**
+
+**完成文** Junko is a famous musician, and **what** is more, she is an excellent designer.
+**訳** ジュンコは有名な音楽家であり、さらにその上、優れたデザイナーでもあります。
+**POINT** what is more「さらに、その上」（what を使った慣用表現）
+
+and (　) is more で「さらに、その上」という意味の慣用表現 what is more を完成させる問題です。これは関係代名詞 what を使った決まり文句で、前に述べた内容に情報を付け加えるときの「つなぎ言葉」として働きます。what is worse「さらに悪いことに」、what is called「いわゆる」なども同じ what の慣用表現ファミリーです。文法的に分析するより、表現ごと暗記してしまうのが得点への近道です。ここでは「有名な音楽家である」ことに加えて「優れたデザイナーでもある」とプラスの情報を重ねています。
+
+**誤答チェック**
+- 1 who：who is more という慣用表現は存在せず、先行詞もないため×
+- 3 where：場所を表す関係副詞・疑問詞で、is の主語になれず意味も通らないため×
+- 4 how：how is more では「どのように」となり、文法的にも意味的にも成立しないため×
+
+#### 問 170 ｜ 正解 **3**
+
+**完成文** **Whoever** wants to come to the party must bring a present.
+**訳** パーティーに来たい人は誰でも、プレゼントを持ってこなければなりません。
+**POINT** 複合関係代名詞 whoever ＝ anyone who「〜する人は誰でも」
+
+文全体の動詞は must bring で、その前の「（　）wants to come to the party」が主語のカタマリです。つまり空所には、節の中で wants の主語になりつつ、節全体を名詞節にまとめる語が必要です。これができるのが複合関係代名詞 whoever で、anyone who「〜する人は誰でも」と言い換えられます。-ever のついた関係詞のうち、人を表して主語の働きができるのは whoever だけ、と考えれば即断できます。「パーティーに来たい人は誰でも」という名詞節が主語になった文です。
+
+**誤答チェック**
+- 1 Whenever：「〜するときはいつでも」と時を表す副詞節を作る語で、wants の主語になれないため×
+- 2 Wherever：「〜するところはどこでも」と場所を表す語で、主語の働きができないため×
+- 4 However：「どんなに〜でも」は However＋形容詞・副詞の形で使い、主語になれないため×
+
+#### 問 171 ｜ 正解 **2**
+
+**完成文** **Whatever** happens, don't forget to call your parents on your way home.
+**訳** 何が起きても、帰り道で両親に電話するのを忘れないでください。
+**POINT** 複合関係代名詞 whatever ＝ no matter what「たとえ何が〜しても」
+
+コンマの後ろに命令文の主節があるので、「（　）happens」は譲歩（〜しても）の副詞節です。空所には、節の中で happens の主語になれて、かつ「たとえ何が〜しても」という譲歩の意味を出せる語が必要です。これが複合関係代名詞 whatever で、no matter what happens と書き換えられます。happens という動詞の主語になれるのは「物・こと」を表す語なので、人を表す whoever や、副詞の働きしかできない however・wherever は入りません。「何が起きても電話は忘れるな」という自然な意味になります。
+
+**誤答チェック**
+- 1 However：However は直後に形容詞・副詞を伴う形（However busy ...）で使い、happens の主語になれないため×
+- 3 Wherever：「どこで〜しても」と場所を表す副詞節を作る語で、主語の働きができないため×
+- 4 Whoever：主語にはなれるが「誰が起こっても」となり、happens（物事が起きる）と意味が合わないため×
+
+#### 問 172 ｜ 正解 **2**
+
+**完成文** Mario has a habit of biting his fingernails **whenever** he is nervous.
+**訳** マリオは、緊張するといつも爪を噛む癖があります。
+**POINT** 複合関係副詞 whenever ＝「〜するときはいつでも」
+
+空所の後ろには he is nervous という「主語＋動詞」のそろった完全な文（節）が続いています。節を導けるのは接続詞の働きを持つ語なので、複合関係副詞 whenever「〜するときはいつでも」を選びます。whenever he is nervous で「彼が緊張するときはいつでも」という時の副詞節になり、「緊張するたびに爪を噛む癖がある」という自然な文が完成します。一方、during・by・throughout はいずれも前置詞なので、後ろには名詞しか置けず、節を続けることはできません。「後ろが節なら接続詞、名詞なら前置詞」という判別の基本を確認できる問題です。
+
+**誤答チェック**
+- 1 during：前置詞なので後ろに節（SV）を置けないため×
+- 3 by：前置詞であり、後ろに節を続けられないため×
+- 4 throughout：これも前置詞で、後ろには名詞が必要なため×
+
+#### 問 173 ｜ 正解 **4**
+
+**完成文** No matter **how** busy he is, he always calls his mother before going home.
+**訳** どんなに忙しくても、彼は帰宅する前に必ず母親に電話をします。
+**POINT** no matter how＋形容詞＋SV「どんなに〜でも」
+
+空所の直後に busy という形容詞が来ている点が最大のヒントです。「no matter how＋形容詞・副詞＋S＋V」で「どんなに〜でも」という譲歩の意味を表し、however busy he is と書き換えられます。形容詞・副詞の程度を尋ねたり強めたりできる疑問詞・関係詞は how だけなので、busy を直接従えられるのは how しかありません。no matter what は後ろに名詞か不完全な文、no matter when / where は完全な文が続く、という形の違いで区別しましょう。「どんなに忙しくても必ず母に電話する」という譲歩＋主節の構造です。
+
+**誤答チェック**
+- 1 what：no matter what の後ろに形容詞 busy を直接置く形は作れないため×
+- 2 when：「いつ〜しても」の意味で、直後に形容詞は続けられないため×
+- 3 where：「どこで〜しても」の意味で、busy を従える働きがないため×
+
+#### 問 174 ｜ 正解 **1**
+
+**完成文** **As is often the case with** Michael, he forgot to do his homework.
+**訳** マイケルにはよくあることだが、彼は宿題をするのを忘れてしまった。
+**POINT** as is often the case with A「A にはよくあることだが」
+
+関係代名詞 as を使った慣用表現 as is often the case with A「A にはよくあることだが」を問う問題です。この as は主節の内容（he forgot to do his homework）全体を先行詞とする特殊な関係代名詞で、as 節の中では is の主語の働きをしています。だから as の直後にいきなり動詞 is が来る語順になるのです。the case は「実情・よくあること」という意味で、is often the case という語順（be動詞＋副詞＋補語）が固定されています。語順を入れ替えた選択肢はすべて誤りなので、この形をフレーズごと暗記しておきましょう。
+
+**誤答チェック**
+- 2 As often with the case is：is が文末に来ており語順が崩れているため×
+- 3 As the case is often with：as の直後に主語 the case を置く語順は、この慣用表現では用いないため×
+- 4 As is the case often with：often は be動詞 is と補語 the case の間に置くのが正しく、the case の後ろでは不自然なため×
+
+#### 問 175 ｜ 正解 **316524**
+
+**完成文** Jimmy's **singing isn't what it used to be**.
+**訳** ジミーの歌は、昔のようではありません（昔ほどうまくありません）。
+**POINT** what S used to be「昔の S（の姿）」
+
+まず文頭の Jimmy's（ジミーの）に続く名詞として③ singing を置き、Jimmy's singing「ジミーの歌」という主語を作ります。動詞は① isn't で、その補語に「昔のジミーの歌」を表す名詞節⑥⑤②④ what it used to be を続けます。what S used to be は「S の昔の姿」という重要表現で、問168 の what I am today「今の私」と対になる形です。it は Jimmy's singing を受けており、直訳は「ジミーの歌は、それが昔そうであったものではない」、つまり「歌の腕が昔とは違う（衰えた）」という意味になります。
+
+**組み立て**
+- Jimmy's ＋ ③singing で主語を確定 → ①isn't を続ける
+- 補語に ⑥what ⑤it ②used ④to（＋文末の be）＝ what it used to be「昔の姿」
+
+#### 問 176 ｜ 正解 **53214**
+
+**完成文** He has a very large vocabulary. He is **what is called a "walking dictionary"**.
+**訳** 彼は語彙がとても豊富です。彼はいわゆる「歩く辞書」です。
+**POINT** what is called「いわゆる」
+
+第2文の He is の補語を作ります。核になるのは慣用表現⑤③② what is called「いわゆる」で、これは関係代名詞 what が節内で受動態 is called の主語になっている形です。その後ろに呼び名である①④ a "walking dictionary" を続ければ、He is what is called a "walking dictionary"「彼はいわゆる『歩く辞書』だ」が完成します。what is called ＝ what we call ＝ so-called「いわゆる」はどれも頻出の言い換えなので、まとめて覚えておきましょう。第1文の「語彙が豊富だ」という内容が、「歩く辞書」という比喩の根拠になっています。
+
+**組み立て**
+- 慣用表現 ⑤what ③is ②called「いわゆる」を先に固める
+- 呼び名 ①a ④"walking dictionary" を後ろに置く
+
+#### 問 177 ｜ 正解 **41352**
+
+**完成文** **No matter what they say**, I believe that she is telling the truth.
+**訳** 彼らが何と言おうと、私は彼女が本当のことを言っていると信じています。
+**POINT** no matter what ＝ whatever「たとえ何を〜しても」
+
+コンマの後ろに主節 I believe ... があるので、前半は譲歩の副詞節「たとえ何を〜しても」を作ればよいと分かります。まず④①③ no matter what「たとえ何が（を）〜しても」を組み、その後ろに⑤② they say「彼らが言う」を続けます。この what は say の目的語の働きをしているため、say の後ろに目的語がない「不完全な文」になっている点がポイントです。No matter what they say は Whatever they say と1語で書き換えられることも、あわせて押さえておきましょう。
+
+**組み立て**
+- ④no ①matter ③what で「たとえ何を〜しても」の枠を作る
+- ⑤they ②say を続ける（what は say の目的語）
+
+#### 問 178 ｜ 正解 **246153**
+
+**完成文** **Whoever lives in** this city **can use the** municipal swimming pool.
+**訳** この市に住んでいる人は誰でも、市営プールを利用できます。
+**POINT** 複合関係代名詞 whoever が作る名詞節が主語
+
+まず、文末の municipal swimming pool（市営プール）の前には冠詞が必要なので、3 the が文末側の空所の最後に入ると見当をつけます。主語は「この市に住む人は誰でも」なので、複合関係代名詞 2 whoever（＝ anyone who）を文頭に置き、4 lives、6 in を続けて Whoever lives in this city という名詞節を作ります。whoever は節の中で lives の主語の働きをしています。この長い名詞節全体が文の主語となり、動詞部分は 1 can、5 use、3 the と並べて can use the municipal swimming pool「市営プールを利用できる」となります。
+
+**組み立て**
+- ②whoever ④lives ⑥in ＋ this city で「この市に住む人は誰でも」という主語の名詞節を作る
+- 述語は ①can ⑤use ③the ＋ municipal swimming pool
+
+
+## UNIT 3 比較(1)
+
+#### 問 179 ｜ 正解 **1**
+
+**完成文** Ever since Steven changed jobs, he has not been as **happy** as he used to be.
+**訳** スティーブンは転職して以来、以前ほど幸せではなくなった。
+**POINT** as ～ as の間に入るのは原級（形容詞・副詞のもとの形）
+
+空所の前に as、後ろに as he used to be が見えるので、「as ～ as …（…と同じくらい～）」の原級比較の文だと判断します。ここでは not as ～ as となっているので「以前ほど～ではない」という否定の比較です。as ～ as の「～」の位置には、比較級や最上級ではなく必ず原級を置くのがルールです。したがって happy をそのまま入れた 1 が正解です。「空所の前後の as を見たら原級」という着眼点をまず身につけましょう。
+
+**誤答チェック**
+- 2 happier：比較級は as ～ as の間には置けないため×
+- 3 happiest：最上級も as ～ as の間には置けないため×
+- 4 too happy：too（～すぎる）は原級比較の構文と組み合わせられず、意味も通らないため×
+
+#### 問 180 ｜ 正解 **2**
+
+**完成文** Jeff and Jenny saved **as much money as** they could to visit their uncle in Hawaii.
+**訳** ジェフとジェニーは、ハワイのおじを訪ねるために、できる限り多くのお金を貯めた。
+**POINT** as much＋不可算名詞＋as one can「できるだけ多くの～」
+
+空所の後ろに they could があることから、「as ～ as one can[could]（できるだけ～）」の構文だと見抜きます。「多くのお金」のように名詞の量を比較するときは、as と as の間に「much＋不可算名詞」をはさんで as much money as の語順にします。money は数えられない名詞なので many ではなく much を使う点にも注意してください。よって 2 が正解です。a lot of は肯定文で便利な表現ですが、原級比較の as ～ as の間では使えず、much / many を用いるのが決まりです。
+
+**誤答チェック**
+- 1 as a lot of money as：as ～ as の間に a lot of は置けない（much を使う）ため×
+- 3 money as a lot as：名詞を as の外に出したうえ a lot を挟む語順は文法的に成立しないため×
+- 4 money as possible as：as ～ as possible の語順が崩れており、しかも they could と重複するため×
+
+#### 問 181 ｜ 正解 **3**
+
+**完成文** He is not so much a genius **as** a man of diligence.
+**訳** 彼は天才というより、むしろ努力の人だ。
+**POINT** not so much A as B「AというよりむしろB」
+
+not so much という並びを見たら、後ろに as を予想するのが定石です。not so much A as B は「AというよりむしろB」という意味の慣用表現で、直訳すると「Bであるほど A ではない」、つまり A よりも B の性質のほうが強いことを表します。この文では A＝a genius（天才）、B＝a man of diligence（努力の人）で、「天才というよりむしろ努力家」となります。よって 3 が正解です。比較級ではなく so much（原級系）が使われているので、than ではなく as で受けることに注意しましょう。
+
+**誤答チェック**
+- 1 above：前置詞 above ではこの慣用表現が成立しないため×
+- 2 that：so ～ that 構文と混同させる引っかけだが、意味・形ともに合わないため×
+- 4 than：than は比較級と組む語で、so much（原級）とは組めないため×
+
+#### 問 182 ｜ 正解 **3**
+
+**完成文** This box is **twice as large as** that one.
+**訳** この箱はあの箱の2倍の大きさだ。
+**POINT** 倍数表現は「倍数詞＋as＋原級＋as」の語順
+
+「X倍～だ」という倍数表現は、「倍数詞（twice, three times など）＋as＋原級＋as …」の語順で表します。ポイントは、倍数詞を必ず as ～ as のカタマリの前（外側）に置くことです。「as twice large as」のように as ～ as の内側に倍数詞を入れることはできません。したがって twice as large as とした 3 が正解です。なお「2倍」は two times ではなく twice を使うのが普通で、「半分」は half as ～ as となることもあわせて覚えておきましょう。
+
+**誤答チェック**
+- 1 as twice large as：倍数詞は as ～ as の前に置くので語順が×
+- 2 larger twice than：倍数詞は原則として比較級と組まず、twice の位置も誤りのため×
+- 4 twice larger as：比較級 larger と as の組み合わせは文法的に成立しないため×
+
+#### 問 183 ｜ 正解 **1**
+
+**完成文** Gabriela has five times **as many** bags as I do.
+**訳** ガブリエラは私の5倍の数のかばんを持っている。
+**POINT** 倍数詞＋as many＋可算名詞＋as「…のX倍の数の～」
+
+空所の前に five times（5倍）、後ろに bags as I do があるので、倍数表現「倍数詞＋as＋原級＋as」の形だと判断します。名詞の数を比較する場合は、as と as の間に「many＋可算名詞（数えられる名詞）」をはさんで as many bags as とします。bags は数えられる名詞なので much ではなく many です。よって 1 が正解です。問180の as much money as（量）とセットで、「数なら many、量なら much」と整理しておくと得点源になります。
+
+**誤答チェック**
+- 2 as more：as ～ as の間に比較級 more は置けないため×
+- 3 many：many だけでは前の five times と bags 後ろの as をつなぐ as が欠けるため×
+- 4 more：比較級 more は than と組む形であり、後ろの as と合わないため×
+
+#### 問 184 ｜ 正解 **3**
+
+**完成文** "What do you think of the new project?" "**It couldn't be better.**"
+**訳** 「新しいプロジェクトをどう思いますか」「最高ですよ」
+**POINT** couldn't be better「これ以上よくなりようがない＝最高だ」
+
+What do you think of ～? は「～をどう思いますか」と意見・感想を尋ねる疑問文なので、応答には自分の評価を述べる文がきます。It couldn't be better. は直訳すると「それはこれ以上よくなることはあり得ないだろう」で、つまり「今が最高の状態だ」という強い肯定を表す慣用表現です。否定語＋比較級で最上級の意味を表す重要パターンなので、形と意味をセットで覚えましょう。よって 3 が正解です。
+
+**誤答チェック**
+- 1 I think so, too.：相手はまだ意見を述べていないので、「私もそう思う」と同意する応答は成立しないため×
+- 2 Yes, I thought of it.：What で始まる疑問文に Yes / No では答えられないため×
+- 4 It was projected over there.：project を「映し出す」の意味に取り違えた応答で、会話がかみ合わないため×
+
+#### 問 185 ｜ 正解 **1**
+
+**完成文** James had better study **harder** if he wants to get an A in this class.
+**訳** ジェームズは、このクラスでAを取りたいのなら、もっと一生懸命勉強したほうがよい。
+**POINT** hard の比較級は harder（hardly との混同に注意）
+
+「Aを取りたいなら、もっと熱心に勉強すべきだ」という文脈なので、副詞 hard（一生懸命に）の比較級が入ります。hard のような1音節の語は -er を付けて比較級を作るので harder が正解です。注意すべきは hardly との区別で、hardly は「ほとんど～ない」という準否定の副詞であり、hard の副詞形ではありません。また、-er と more を重ねる二重比較（more harder）は誤りです。よって 1 が正解です。
+
+**誤答チェック**
+- 2 more hardly：hardly は「ほとんど～ない」という別の意味の副詞のため×
+- 3 more harder：比較級 harder に more を重ねる二重比較は誤りのため×
+- 4 more hard：hard は -er を付けて比較級にする語で、more とは組まないため×
+
+#### 問 186 ｜ 正解 **2**
+
+**完成文** He has **less** time than I to prepare for the interview.
+**訳** 彼には、面接の準備をする時間が私より少ない。
+**POINT** little の比較級は less（little－less－least）
+
+空所の後ろに than があるので比較級が必要です。time は数えられない名詞なので、「少ない」は little 系で表し、その比較級 less を使って less time than ～「～より少ない時間」とします。little－less－least という不規則変化は必ず暗記しておきましょう。よって 2 が正解です。few－fewer－fewest は可算名詞（数えられる名詞）用なので、time には使えない点が着眼点です。
+
+**誤答チェック**
+- 1 few：few は可算名詞に用いる語で、不可算名詞 time に使えず、原級なので than とも組めないため×
+- 3 lesser：lesser は「（価値・重要度が）より劣った」という意味の限定的な語で、量の比較には使わないため×
+- 4 little：原級のままでは後ろの than と組めないため×
+
+#### 問 187 ｜ 正解 **1**
+
+**完成文** Bob is **much** taller than John.
+**訳** ボブはジョンよりずっと背が高い。
+**POINT** 比較級の強調は much（very は不可）
+
+空所の後ろに比較級 taller があるので、比較級を強調して「ずっと～」という意味を加える語を選びます。比較級を強調できるのは much のほか、far / even / still / a lot などで、much taller で「ずっと背が高い」となります。よって 1 が正解です。very は原級（very tall）を強調する語で、比較級には使えないというのが最頻出の引っかけです。「比較級の強調＝much、原級の強調＝very」と対で覚えておきましょう。
+
+**誤答チェック**
+- 2 as：as は原級比較（as tall as）で使う語で、比較級 taller とは組めないため×
+- 3 more：taller がすでに比較級なので、more を重ねると二重比較になるため×
+- 4 very：very が強調できるのは原級であり、比較級 taller には使えないため×
+
+#### 問 188 ｜ 正解 **4**
+
+**完成文** This is the **very** best wine I've ever tasted.
+**訳** これは私が今まで味わった中でまさに最高のワインだ。
+**POINT** 最上級の強調は the very＋最上級
+
+空所の前後が the (　) best という形なので、最上級 best を強調する語を選びます。最上級を強調するときは「the very＋最上級」の語順で very を the の直後に置き、the very best で「まさに最高の」という意味になります。よって 4 が正解です。much も最上級を強調できますが、その場合は much the best のように much を the の前に置くので、この空所には入れられません。「the very＋最上級／much the＋最上級」と語順ごと覚えるのがポイントです。
+
+**誤答チェック**
+- 1 so：so は原級を強調する語で、最上級には使えないため×
+- 2 most：best がすでに最上級なので、most を重ねると二重最上級になるため×
+- 3 much：much で強調する場合は much the best の語順になり、the の後ろには置けないため×
+
+#### 問 189 ｜ 正解 **4361527**
+
+**完成文** **My memory is not as good as it used to** be.
+**訳** 私の記憶力は以前ほどよくない。
+**POINT** not as[so] ～ as …「…ほど～ではない」＋used to be「以前の状態」
+
+日本文「以前ほどよくない」から、否定の原級比較 not as ～ as を使うと判断します。まず主語 my memory と動詞 is を置き、not as good as と組み立てます。「以前」は it used to be（それが昔そうであった状態）で表し、比較対象として as の後ろに続けます。used to＋動詞の原形は「以前は～だった」という過去の状態を表す助動詞表現で、文末の be につながる点に注意しましょう。
+
+**組み立て**
+- 主語・動詞を確定：My memory is
+- 否定の原級比較を組む：not as good as
+- 比較対象は it used to (be)「以前のそれ」→ 文末の be に接続
+
+#### 問 190 ｜ 正解 **21345**
+
+**完成文** This air conditioner uses half as **much electricity as that one**.
+**訳** このエアコンの消費電力はあのエアコンの2分の1だ。
+**POINT** half as much＋不可算名詞＋as …「…の半分の～」
+
+「2分の1」は倍数表現の一種で、「half as＋原級＋as …」の形を使います。すでに文中に half as まで与えられているので、その後ろに「much＋不可算名詞」を続けて half as much electricity as とします。electricity（電気）は数えられない名詞なので much を使う点がポイントです。最後に比較対象の that one（あのエアコン）を as の後ろに置けば完成です。one は air conditioner の繰り返しを避ける代名詞です。
+
+**組み立て**
+- half as の後ろに much electricity（不可算名詞は much）
+- 2つ目の as を置く → 比較対象 that one で締める
+
+#### 問 191 ｜ 正解 **48176253**
+
+**完成文** I **want to take a trip around Australia as cheaply** as possible.
+**訳** 私はできるだけ安くオーストラリア一周旅行をしたい。
+**POINT** as＋副詞＋as possible「できるだけ～」
+
+まず「～したい」を want to＋動詞の原形で組み、「旅行をする」は take a trip とします。「オーストラリア一周」は a trip around Australia と、around（～をめぐって）で trip を後ろから修飾します。「できるだけ安く」は as ～ as possible の構文で、間には動詞 take を修飾する副詞 cheaply を入れて as cheaply as possible とします。形容詞 cheap ではなく副詞 cheaply を選ぶのは、名詞ではなく動作を修飾しているからです。
+
+**組み立て**
+- want to take a trip「旅行をしたい」を骨組みにする
+- a trip around Australia「オーストラリア一周旅行」
+- as cheaply（副詞）→ 文末の as possible に接続
+
+#### 問 192 ｜ 正解 **2167543**
+
+**完成文** The new stadium **is about three times the size of** the old one.
+**訳** 新しい競技場は古い物よりも3倍くらい大きい。
+**POINT** X times the size of …「…のX倍の大きさ」
+
+倍数表現には「X times as large as …」のほかに、「X times the size of …（…のX倍の大きさ）」という名詞を使った形があります。語群に as がなく、名詞 size と the、of があることから、こちらの形だと見抜きます。主語 the new stadium に is を続け、「3倍くらい」は about three times、その後ろに the size of を置いて比較対象 the old one につなげます。size のほかにも the length of（長さ）、the height of（高さ）などで同じ形が作れることを押さえておきましょう。
+
+**組み立て**
+- 語群に as がない → 「倍数詞＋the size of」型と判断
+- is about three times「約3倍」→ the size of → the old one に接続
+
+
+## UNIT 4 比較(2)
+
+#### 問 193 ｜ 正解 **4**
+
+**完成文** Ted's dancing skill is exceptionally superior **to** others'.
+**訳** テッドのダンスの技術は、他の人たちのものよりも並外れて優れている。
+**POINT** superior は than ではなく to をとるラテン比較級
+
+文の骨組みは「Ted's dancing skill is superior (　) others'」で、「テッドの技術が他の人の技術より優れている」という比較の文です。superior（〜より優れている）はラテン語由来の比較級（ラテン比較級）で、-er 型の比較級と違い、比較の相手を than ではなく前置詞 to で示すのがルールです。同じ仲間に inferior to（〜より劣る）、senior to（〜より年上）、junior to（〜より年下）、prior to（〜より前）があり、セットで覚えるのが定石です。文末の others' は others' skill（他の人たちの技術）の skill が省略された形で、技術どうしを比較しています。空所の前に superior を見つけた瞬間に to を選べるようにしておきましょう。
+
+**誤答チェック**
+- 1 as：as を使う比較は as ... as の同等比較で、superior とは結びつかないため×
+- 2 of：superior of という形は存在しないため×
+- 3 than：superior はラテン比較級なので than は使えないため×
+
+#### 問 194 ｜ 正解 **3**
+
+**完成文** Mark is expected to take over his father's business as he is **the older** boy of the two sons in his family.
+**訳** マークは家の2人の息子のうち年上のほうなので、父親の事業を継ぐことを期待されている。
+**POINT** 「2つ（2人）のうちで〜なほう」は the + 比較級 + of the two
+
+文末に of the two sons（2人の息子のうち）とあるのが最大のヒントです。比較の対象が「2つ（2人）」に限定されるときは、最上級ではなく「the + 比較級 + of the two」の形を使います。2人しかいなければ「年上のほう」は自動的に1人に決まるため、特定を表す the が比較級に付くのです。これは「3つ以上の中で一番」を表す最上級（the oldest of the three など）と対になるルールで、of the two が見えたら the + 比較級、と機械的に判断できます。したがって the older が正解です。なお、兄弟の年齢には older/oldest のほか elder/eldest も使われますが、本問では選択肢の形だけで判断できます。
+
+**誤答チェック**
+- 1 older：the がないと「2人のうちの1人」に特定できないため×
+- 2 oldest：最上級は原則3つ以上の比較で使い、さらに the も欠けているため×
+- 4 the oldest：of the two（2人の比較）では最上級は使えないため×
+
+#### 問 195 ｜ 正解 **3**
+
+**完成文** The more we practice for the concert, **the better** our performance will be.
+**訳** コンサートに向けて練習すればするほど、私たちの演奏はよくなるだろう。
+**POINT** The + 比較級 SV, the + 比較級 SV「〜すればするほど、ますます…」
+
+文頭が The more we practice ... で始まり、カンマの後に空所が続いています。これは「The + 比較級 + S V, the + 比較級 + S V」（〜すればするほど、ますます…）の構文です。前半に The more があるので、後半も the + 比較級で受けなければなりません。もとの文は our performance will be good ですが、この構文では比較級 better が the を伴って文頭に引っ張り出され、the better our performance will be という語順になります。形容詞や副詞が主語より前に出るこの独特の語順も、構文の目印として覚えておきましょう。
+
+**誤答チェック**
+- 1 so：The + 比較級で始まる文の後半を so で受ける形はないため×
+- 2 the best：この構文で使うのは比較級であり、最上級 best は使えないため×
+- 4 and：and では「the + 比較級」の呼応が成立せず、また good が消えた文になり意味も通らないため×
+
+#### 問 196 ｜ 正解 **2**
+
+**完成文** I am **no more** interested in this topic than you are.
+**訳** あなたと同じように、私はこの話題に興味がない。
+**POINT** no more ... than 〜「〜（が…でないの）と同様に…ない」
+
+空所の後ろに比較級を導く than you are があるので、than と呼応できる形が必要です。no more ... than 〜 は「〜が…でないのと同じように、…ない」という強い否定を表す構文で、いわゆる「クジラ構文」（A whale is no more a fish than a horse is.）と同じ形です。no は単なる否定ではなく「差がゼロ」であることを表し、「あなたが興味を持っていない、それと差がまったくない＝私も同じように興味がない」という意味になります。than 節の you are の後ろには interested in this topic が省略されています。「than があるのに not では受けられない」という点に着目すると、no more が選べます。
+
+**誤答チェック**
+- 1 fewer：fewer は数えられる名詞の数を比べる語で、形容詞 interested を修飾できないため×
+- 3 not very：「あまり興味がない」の意味になるが、比較級がなく than と呼応できないため×
+- 4 too much：「〜すぎる」の too much は比較級ではなく、than とつながらないため×
+
+#### 問 197 ｜ 正解 **1**
+
+**完成文** A whale is **no** less a mammal than a horse is.
+**訳** クジラは馬と同様に哺乳類である。
+**POINT** no less ... than 〜「〜と同様に…である」
+
+no less A than B は「B がそうであるのとまったく同じように A である」という肯定の強調表現です。問196の no more ... than（〜と同様に…ない）とペアで覚えましょう。less（より少なく）を no（差がゼロ）で打ち消すことで、「馬が哺乳類である度合いに少しも劣らず、クジラも哺乳類だ」という意味になります。ここで not less を選ぶと「馬に劣らないかもしれない」程度の弱い言い方になり、慣用表現としての「〜と同様に…だ」という断定の意味が出ません。no は「差がゼロ」と言い切る語、not は単に否定する語、という違いを押さえておくと選べます。
+
+**誤答チェック**
+- 2 not：not less than は「〜を下回らない」という単なる否定で、「〜と同様に…だ」という定型の意味にならないため×
+- 3 never：never は「決して〜ない」と頻度・時を否定する副詞で、less の前に置いてこの構文を作れないため×
+- 4 any：any less は否定文で「少しも〜ない」を作る形で、肯定の断定を表す本問には合わないため×
+
+#### 問 198 ｜ 正解 **2**
+
+**完成文** Jim is so rich that he always has **no less than** $1,000 in his wallet.
+**訳** ジムはとても金持ちなので、いつも財布に1,000ドルもの大金を入れている。
+**POINT** no less than + 数量「〜も（多くの）」＝ as much as
+
+so rich that ...（とても金持ちなので…）という文脈から、空所には「1,000ドルも持っている」と金額の多さを強調する表現が入るはずです。no less than + 数量は「〜も」という意味で、as much as と同じく「その数量が多い」という話し手の驚きを表します。no more than（＝only「たったの〜」）と意味が正反対になる点が最重要ポイントです。さらに、not less than（＝at least「少なくとも〜」）、not more than（＝at most「多くても〜」）との4点セットで整理しておきましょう。no は「差がゼロ」を強調して「まるまる〜も」、not は事実を控えめに否定して「少なくとも／多くても」となる、と理解すると暗記が楽になります。
+
+**誤答チェック**
+- 1 far less for：far less は「はるかに少ない」で金持ちの文脈と矛盾し、for も不要なため×
+- 3 much less in：much less も「ずっと少なく」の意味で文意に合わず、in $1,000 という形も作れないため×
+- 4 too less than：little の比較級は less であり too less という形自体が英語として存在しないため×
+
+#### 問 199 ｜ 正解 **2**
+
+**完成文** This book is the **least** interesting of all.
+**訳** この本はすべての中でいちばん面白くない。
+**POINT** the least + 原級「最も〜でない」
+
+空所の前に the、後ろに原級の interesting、文末に of all（すべての中で）があるので、最上級の文だと分かります。「最も〜だ」は the most interesting ですが、その逆の「最も〜でない」は the least + 原級で表します。least は little の最上級で、「〜の度合いが最も少ない」という意味です。most と least が対になっていること、そして least の後ろは比較級ではなく原級（interesting）が来ることを押さえましょう。of all という範囲を表す語句は最上級のサインなので、これを見て the least を選びます。
+
+**誤答チェック**
+- 1 few：few は数えられる名詞に付く語で、形容詞 interesting を修飾できず最上級でもないため×
+- 3 less：less は比較級なので than を伴うのが原則で、of all と呼応する最上級の文には合わないため×
+- 4 little：little は原級であり、the ... of all の最上級の枠組みに入れられないため×
+
+#### 問 200 ｜ 正解 **3**
+
+**完成文** This shopping mall is the second **largest** one in New York.
+**訳** このショッピングモールはニューヨークで2番目に大きい。
+**POINT** 「〜番目に…な」は the + 序数 + 最上級
+
+「〜番目に…な」は the + 序数（second, third など）+ 最上級で表します。本問はすでに空所の前に the second が置かれているので、空所には the の付かない最上級 largest を入れて the second largest one（2番目に大きいもの）とします。the はフレーズ全体の先頭に1回だけ付ければよく、最上級の前にもう一度 the を重ねることはできません。in New York という範囲を表す語句も最上級のサインです。「the second + 最上級」の形をひとかたまりの型として覚えておきましょう。
+
+**誤答チェック**
+- 1 large：原級では「2番目に大きい」という順位の意味が出ないため×
+- 2 larger：比較級は than を伴う2者比較の形で、序数 + 最上級の型に合わないため×
+- 4 the largest：すでに文中に the があり、the second the largest と冠詞が重複してしまうため×
+
+※編集メモ: 原稿では選択肢が3つのみだったため、第4の選択肢「the largest」を編集部で補った。
+
+#### 問 201 ｜ 正解 **2**
+
+**完成文** Korea's population is aging faster than **any** other nation in East Asia except Japan.
+**訳** 韓国の人口は、日本を除けば東アジアの他のどの国よりも速く高齢化している。
+**POINT** 比較級 + than any other + 単数名詞「他のどの〜よりも…」
+
+空所の前に比較級 faster than、後ろに other nation（単数形）があります。これは「比較級 + than any other + 単数名詞」（他のどの〜よりも…）という、比較級を使って最上級の内容を表す定番の型です。any は「どの〜でも」という意味で、「他のどの1国を取り出して比べても韓国のほうが速い」ことを示します。any other の後ろの名詞が複数形ではなく単数形（nation）になる点も頻出の注意点です。except Japan（日本を除いて）が付いているので、「日本以外では最速」という内容になります。
+
+**誤答チェック**
+- 1 some：some other nation は「どこか別の国」の意味で、「どの国よりも」という最上級相当の意味にならないため×
+- 3 one：one other nation は「もう1つの国」となり、比較の相手を網羅する意味が出ないため×
+- 4 few：few は複数名詞に付く語で、単数形 nation の前に置けず意味も通らないため×
+
+#### 問 202 ｜ 正解 **4**
+
+**完成文** The room we had was great. It was one of the **nicest** in the hotel.
+**訳** 私たちが泊まった部屋は素晴らしかった。そのホテルで最も素敵な部屋のひとつだった。
+**POINT** one of the + 最上級「最も〜なもののひとつ」
+
+第2文は It was one of the (　) in the hotel. で、「ホテルの中で最も…な部屋のひとつだった」という意味になるはずです。「最も〜なもののひとつ」は one of the + 最上級（+ 複数名詞）で表します。ここでは the nicest の後ろに rooms が省略されていますが、one of the nicest (rooms) という最上級の型は変わりません。in the hotel という範囲を示す語句と、直前の the が最上級を選ぶ決め手です。第1文の The room we had は、room の後ろに関係代名詞 that/which が省略された形（私たちが取った部屋）です。
+
+**誤答チェック**
+- 1 nice：原級には the も付かず、「最も〜なもののひとつ」の意味が出ないため×
+- 2 nicely：副詞は one of the の後ろに置けないため×
+- 3 nicer：比較級は than を伴う2者比較に使い、one of the ... in the hotel の型に合わないため×
+
+#### 問 203 ｜ 正解 **31542**
+
+**完成文** I like her **all the better for her** shyness.
+**訳** 彼女ははにかみ屋なので、それだけよけいに彼女が好きだ。
+**POINT** all the + 比較級 + for + 名詞「〜なのでそれだけいっそう…」
+
+「〜なので、それだけいっそう…」は all the + 比較級 + for + 名詞という慣用表現で表します。the は「その分だけ」という程度を表す副詞的な the で、for 以下がその理由を示します。all は the better を強めて「まさにその分だけ」というニュアンスを加える語です。理由の部分が節（SV）なら for の代わりに because SV を使うことも押さえておきましょう。ここでは理由が her shyness（彼女のはにかみ）という名詞なので for を使い、I like her all the better for her shyness. が完成します。
+
+**組み立て**
+- 核となる慣用句 all the better（③①⑤）をまず固める
+- 理由は名詞 shyness なので for + her shyness（④②）を続ける
+- I like her + all the better + for her + shyness の順に接続
+
+#### 問 204 ｜ 正解 **4213**
+
+**完成文** **No other mountain in** the world is higher than Mt. Everest.
+**訳** エベレストは世界で最も高い山です。
+**POINT** No other + 単数名詞 ... 比較級 than 〜 で最上級の内容を表す
+
+「エベレストは世界一高い」という最上級の内容を、比較級で言い換える問題です。No other + 単数名詞を主語にして「他のどの山もエベレストより高くない」とすれば、結果的に「エベレストが一番高い」ことを表せます。これは問201の「比較級 + than any other + 単数名詞」と並ぶ、最上級の書き換えの2大定番です。no other の後ろの名詞が単数形 mountain になる点に注意しましょう。範囲を表す in the world は主語 No other mountain の直後に置き、No other mountain in the world is higher than Mt. Everest. とします。
+
+**組み立て**
+- 主語を No other mountain（④②①）で固める
+- 範囲の in the world（③ + 与えられた the world）を主語に続ける
+- あとは既出の is higher than Mt. Everest につなぐ
+
+#### 問 205 ｜ 正解 **6142537**
+
+**完成文** That is the **best movie that I have ever seen**.
+**訳** それは私が今まで観た中でいちばんいい映画だ。
+**POINT** the + 最上級 + 名詞 + that S have ever + 過去分詞「今までで最も〜な…」
+
+「今まで〜した中でいちばん…な○○」は、the + 最上級 + 名詞 + that + S + have ever + 過去分詞という定番の型で表します。まず good の最上級 best を the の直後に置き、the best movie（いちばんいい映画）を作ります。その movie を関係代名詞 that 以下が後ろから修飾し、I have ever seen（私が今までに観た）と続けます。経験を表す現在完了 have seen に ever（今までに）を挟むのがポイントで、ever は have と過去分詞の間に置きます。先行詞に最上級が付くとき、関係代名詞は which より that が好まれることも覚えておきましょう。
+
+**組み立て**
+- the の後ろに最上級 + 名詞：best movie（⑥①）
+- 関係代名詞 that + S + 現在完了：that I have（④②⑤）
+- ever を過去分詞の前に挟んで ever seen（③⑦）で締める
+
+
+## UNIT 5 疑問
+
+#### 問 206 ｜ 正解 **4**
+
+**完成文** She asked me what **I was planning** to do next year.
+**訳** 彼女は私に、来年何をするつもりなのか尋ねた。
+**POINT** 間接疑問は「疑問詞＋SV（平叙文の語順）」＋時制の一致
+
+asked の目的語として what 以下が入り込んだ、いわゆる間接疑問文（文の中に疑問文が組み込まれた形）です。間接疑問では疑問文の語順（V＋S）ではなく、平叙文の語順「疑問詞＋S＋V」になるのが大原則です。さらに主節の動詞が asked と過去形なので、中の動詞も時制の一致を受けて過去形にそろえます。この2つの条件「S＋V の語順」かつ「過去形」を満たすのは I was planning だけです。語順と時制、2段階でチェックする習慣をつけましょう。
+
+**誤答チェック**
+- 1 am I planning：疑問文の語順（V＋S）になっており、さらに現在形で時制の一致にも反するため×
+- 2 was I planning：時制は正しいが、疑問文の語順のままなので×
+- 3 will I be planning：疑問文の語順で、かつ asked（過去）に対し will は時制の一致に反するため×
+
+#### 問 207 ｜ 正解 **1**
+
+**完成文** **What** do you think of the new teacher?
+**訳** 新しい先生のこと、どう思いますか。
+**POINT** 「どう思う?」は What do you think of [about] ~?
+
+「〜をどう思いますか」と意見を尋ねる定番表現は What do you think of [about] ~? です。日本語の「どう」につられて How を選びたくなりますが、think は「〜という内容を考える」という意味で目的語（名詞）を必要とする動詞です。その目的語を尋ねる疑問詞だから、名詞の働きをする What を使うのです。一方 How は「どのように」という様態を表す副詞なので、think の目的語にはなれません。「How なら How do you like ~? / How do you feel about ~?」とセットで覚えておくと確実です。
+
+**誤答チェック**
+- 2 Who：「誰」を尋ねる形になり、先生への評価を聞く文として意味が成り立たないため×
+- 3 When：「いつ」では文意が通らないため×
+- 4 How：think は目的語に名詞を取る動詞で、副詞の How は目的語になれないため×（How do you like ~? なら可）
+
+#### 問 208 ｜ 正解 **4**
+
+**完成文** A: Hey, I met this cute guy last night at the party. B: **What's he like?** A: He's really handsome and has a good sense of humor.
+**訳** A：ねえ、昨日の夜パーティーで素敵な男の子に会ったんだ。 B：どんな人？ A：すごくハンサムで、ユーモアのセンスもあるの。
+**POINT** What is S like? =「S はどんな人（もの）ですか」
+
+会話の流れから空所に入る発言を選ぶ問題です。B の発言のあとで A が「ハンサムでユーモアがある」と人柄・特徴を説明していることに注目します。人の性質や特徴を尋ねる決まり文句が What is S like? で、この like は「〜のような」という意味の前置詞です。直訳すると「彼は何のような人か」、つまり「どんな人？」となり、A の返答と完璧にかみ合います。会話問題では「空所の後の返答」が最大のヒントになることを覚えておきましょう。
+
+**誤答チェック**
+- 1 That's too bad.：「お気の毒に」は残念な話への相づちで、うれしい報告への返しとして不自然なため×
+- 2 I'm not sure about that.：「それはどうかな」では、続く A の人物描写につながらないため×
+- 3 Could you say hi to him for me?：「よろしく伝えて」は初対面の報告への返答として唐突で、A の返答ともかみ合わないため×
+
+#### 問 209 ｜ 正解 **3**
+
+**完成文** I want to know what our new next-door neighbor is **like**.
+**訳** 新しい隣人がどんな人か、知りたい。
+**POINT** what S is like =「S がどんな人（もの）か」（間接疑問）
+
+問 208 で見た What is S like? が、know の目的語として文中に組み込まれた間接疑問の形です。間接疑問では平叙文の語順になるので what our new neighbor is like と並びます。この like は前置詞「〜のような」で、本来 like の後ろにあるべき名詞が疑問詞 what になって前に出た、と考えると構造がつかめます。「like が文末に残る」のがこの表現の目印です。
+
+**誤答チェック**
+- 1 about：what S is about は「S（話・本など）が何についてのものか」という意味で、人柄を尋ねる文には合わないため×
+- 2 appearing：is appearing では「現れつつある」となり意味が通らないため×
+- 4 looking：「どんな見た目か」なら what S looks like と動詞 look＋like で表すため、looking 単独では×
+
+#### 問 210 ｜ 正解 **2**
+
+**完成文** The meeting starts at 10 o'clock, **doesn't** it?
+**訳** 会議は10時に始まりますよね？
+**POINT** 付加疑問は「主節の（助）動詞」に合わせて作る
+
+文末に「〜ですよね？」と確認を添える付加疑問文の問題です。付加疑問の作り方は機械的で、（1）主節が肯定文なら否定形、否定文なら肯定形にする、（2）主節の動詞の種類と時制に合わせた助動詞を使う、の2ステップです。主節は The meeting starts と一般動詞の現在形（3人称単数）の肯定文なので、否定形の doesn't を使って doesn't it? とします。be動詞や助動詞が主節にないのに is を選ばないよう、まず「主節の動詞は何か」を確認するのが着眼点です。
+
+**誤答チェック**
+- 1 do：主語 The meeting（＝it）は3人称単数なので do ではなく does の系列を使うべきで、さらに肯定形なので×
+- 3 is：主節の動詞は be動詞ではなく一般動詞 starts なので×
+- 4 isn't：否定形にした点はよいが、be動詞は主節に使われていないため×
+
+#### 問 211 ｜ 正解 **4**
+
+**完成文** "Don't you like eggs?" "**Yes, I do. I like fried eggs.**"
+**訳** 「卵は好きじゃないの？」「いや、好きだよ。目玉焼きが好きなんだ」
+**POINT** 否定疑問文への答えは「事実」基準：肯定の内容なら Yes、否定の内容なら No
+
+Don't you ~? のような否定疑問文への応答は、日本語の「はい／いいえ」と逆になることがある頻出ポイントです。英語では質問の形に関係なく、答えの内容が肯定（好き）なら Yes ＋肯定文、否定（好きではない）なら No ＋否定文、と必ずセットで対応させます。選択肢4は Yes, I do.（好きだ）と述べた上で I like fried eggs. と肯定の内容を続けており、Yes と中身が一致しています。「Yes の後に否定文」「No の後に肯定文」が来ていたら即アウト、という目で選択肢を切るのがコツです。
+
+**誤答チェック**
+- 1 Yes. I don't like them.：Yes（好き）と言いながら don't like（好きじゃない）と続き、矛盾するため×
+- 2 No. I love to eat one every morning.：No（好きじゃない）と言いながら「毎朝食べるのが大好き」と続き、矛盾するため×
+- 3 Sure. I don't have any.：Sure（もちろん）と肯定しておきながら「1つも持っていない」と話がかみ合わないため×
+
+#### 問 212 ｜ 正解 **2**
+
+**完成文** What are you following me **for**?
+**訳** なぜ私の後をつけてくるの。
+**POINT** What ~ for? = Why ~?「何のために、なぜ」
+
+理由・目的を尋ねる表現には Why のほかに What ~ for? があります。もともと for what「何のために」という〈前置詞＋疑問詞〉のかたまりだったものが、疑問詞 what だけが文頭に出て、前置詞 for が文末に取り残された形です。日本文の「なぜ」と文頭の What を見た瞬間に、「文末に for を置いて What ~ for? を完成させる」と反応できるようにしておきましょう。What are you following me for? = Why are you following me? と書き換えられます。
+
+**誤答チェック**
+- 1 in：in what では「何の中で」となり、理由を表せないため×
+- 3 at：at what では「何をめがけて」のような意味になり、文意に合わないため×
+- 4 on：on what では「何の上で」となり、理由の意味が出ないため×
+
+#### 問 213 ｜ 正解 **2**
+
+**完成文** X: How come you were late for school? Y: **My bus got caught in a traffic jam.**
+**訳** X：どうして学校に遅刻したの？ Y：バスが渋滞につかまったんだ。
+**POINT** How come S V ...? =「どうして〜なのか」（後ろは平叙文の語順）
+
+How come は Why と同じく理由を尋ねる口語表現ですが、後ろが疑問文の語順ではなく S＋V（平叙文の語順）になるのが最大の特徴です（Why were you late? = How come you were late?）。質問は「なぜ学校に遅刻したのか」と過去の理由を尋ねているので、答えも過去の理由「バスが渋滞につかまった」を述べる選択肢2が正解です。会話問題では、疑問文が「理由」「手段」「時」のどれを尋ねているかを見極めてから返答を選びます。
+
+**誤答チェック**
+- 1 My father will give me a ride.：「父が車で送ってくれる予定」と未来の話で、過去の遅刻の理由にならないため×
+- 3 School was over.：「学校は終わっていた」では遅刻の理由として意味が通らないため×
+- 4 By bus.：交通手段の答えで、How did you come ...? などへの返答であり、理由を尋ねる How come への答えにならないため×
+
+#### 問 214 ｜ 正解 **4**
+
+**完成文** A: **How often** do you go skiing? B: Twice or three times a year.
+**訳** A：どのくらいの頻度でスキーに行くの？ B：年に2、3回だよ。
+**POINT** 頻度を尋ねるのは How often ~?
+
+B が Twice or three times a year「年に2、3回」と回数・頻度で答えていることが決め手です。How ＋形容詞・副詞は「どのくらい〜か」と程度を尋ねる形で、何を聞くかは後ろに続く語で決まります。頻度なら How often、期間なら How long、距離なら How far、量・値段なら How much です。会話問題では答えの形（回数か、期間か、距離か）から逆算して疑問詞を選ぶのが最短ルートです。
+
+**誤答チェック**
+- 1 How long：期間を尋ねる表現で、答えは For two weeks. などになるため×
+- 2 How much：量や値段を尋ねる表現で、頻度の答えと合わないため×
+- 3 How far：距離を尋ねる表現で、頻度の答えと合わないため×
+
+#### 問 215 ｜ 正解 **4**
+
+**完成文** "How **soon** will the train leave?" "In ten minutes."
+**訳** 「あとどれくらいで電車は出ますか」「10分後です」
+**POINT** How soon ~? =「あとどれくらいで〜？」— 答えは in ~「〜後に」
+
+答えの In ten minutes. に注目します。この in は「〜の中に」ではなく「（今から）〜後に」という時の経過を表す用法です。「今からどれくらい先に起こるか」を尋ねるのが How soon ~? で、in ~ の答えと決まったペアになります。How long は「どれくらいの期間続くか」なので、答えは For two hours. のような for ~ になるはず、と答えの前置詞から区別するのがポイントです。
+
+**誤答チェック**
+- 1 long：継続期間を尋ねる表現で、答えは For ~ になるはずなので×
+- 2 much：量・値段を尋ねる表現で、時の答えと合わないため×
+- 3 often：頻度を尋ねる表現で、答えは Twice a day. などになるため×
+
+#### 問 216 ｜ 正解 **2**
+
+**完成文** A: **Who do you think** will win the annual best album award? B: The Bangles, for sure.
+**訳** A：年間ベストアルバム賞は誰が取ると思う？ B：絶対バングルスだね。
+**POINT** 疑問詞＋do you think ...? — Yes/No で答えられない疑問は疑問詞を文頭に
+
+do you think が絡む疑問文の語順問題です。この質問は「誰が勝つと思うか」を尋ねており、Yes/No では答えられません。このように具体的な情報を求める場合は、疑問詞を文頭に出して「疑問詞＋do you think＋（S）V」の語順にします。ここでは who がもともと will win の主語なので、Who do you think will win ...? と who の直後に do you think が割り込む形になります。B が The Bangles と固有名詞で答えていることも、「Yes/No 型ではなく疑問詞先頭型」を選ぶ根拠になります。
+
+**誤答チェック**
+- 1 Do you think who：疑問詞が文中に残っており、英語ではこの語順は不可のため×
+- 3 Who will you think：「思うか」と尋ねるのは現在のことなので think に will は不要で、後ろの will win と助動詞が重複するため×
+- 4 Who you think：do のない平叙文の語順で、疑問文として成立しないため×
+
+#### 問 217 ｜ 正解 **1**
+
+**完成文** A: **Do you know how many states** there are in the U.S.? B: Yes, I do. Fifty.
+**訳** A：アメリカに州がいくつあるか知ってる？ B：うん、知ってるよ。50州だね。
+**POINT** Yes/No で答えている → Do you know ＋間接疑問 の型
+
+問 216 とセットで押さえたい対比問題です。B が Yes, I do. と Yes/No で答えていることが最大のヒントで、Yes/No で答えられる質問は Do you know ...? のように普通の疑問文で始め、疑問詞のかたまり（how many states 以下）は間接疑問として文中に収めます。一方 think 型（Do you think ...?）は「思う内容」を具体的に答えさせる動詞なので、疑問詞を文頭に出す形しか取れません。「know なら Do you know＋疑問詞...」「think なら 疑問詞＋do you think...」と、動詞のタイプで型が決まることを整理しておきましょう。
+
+**誤答チェック**
+- 2 Do you think how many states：think は疑問詞を文中に残せない動詞で、How many states do you think ...? の語順にしなければならないため×
+- 3 How many states do you think：語順自体は正しいが、この形への答えは Yes/No ではなく数になるはずで、B の Yes, I do. とかみ合わないため×
+- 4 How many states do you wonder：wonder は「〜かなと思う」で人に尋ねる形として不自然な上、Yes/No の答えとも合わないため×
+
+#### 問 218 ｜ 正解 **③**
+
+**完成文** Could you tell me what **your name is**?
+**訳** お名前を教えていただけますか。
+**POINT** 間接疑問は「疑問詞＋S＋V」の平叙文の語順
+
+Could you tell me ~? の目的語として疑問文が組み込まれた間接疑問文です。独立した疑問文なら What is your name? と V＋S の語順ですが、文の中に埋め込まれた瞬間、語順は平叙文と同じ「疑問詞＋S＋V」に戻ります。したがって ③ の is your name は your name is としなければなりません。tell me / ask / know / wonder などの後に疑問詞が続いたら、「後ろは S＋V の語順か？」を必ず確認する習慣をつけましょう。
+
+**訂正** ③ is your name? → your name is?
+
+#### 問 219 ｜ 正解 **625431**
+
+**完成文** **What do you think I bought** yesterday?
+**訳** 昨日何を買ったと思う？
+**POINT** 疑問詞＋do you think＋S＋V の語順
+
+「何を買ったと思う？」は Yes/No では答えられず、買った物を具体的に答えさせる質問なので、疑問詞 what を文頭に置き、直後に do you think を挿入する型を使います。do you think の後ろは間接疑問と同じく平叙文の語順で I bought と続け、What do you think I bought yesterday? が完成します。Do you know 型との違い（問 217 参照）を意識しながら、「疑問詞 → do you think → S V」の順に機械的に組み立てられるようにしておきましょう。
+
+**組み立て** 疑問詞 what を文頭に確定 → do you think を挿入 → 残りは平叙文の語順で I bought ＋ yesterday
+
+#### 問 220 ｜ 正解 **4132**
+
+**完成文** Who **on earth told you** that?
+**訳** いったい誰がそのことをあなたに言ったのですか？
+**POINT** on earth =「いったい」— 疑問詞の直後に置いて強調
+
+on earth は疑問詞の直後に置いて「いったい（全体）」と疑問の気持ちを強める副詞句です（in the world も同じ働き）。Who on earth までがひとかたまりの主語で、この who は疑問文の主語なので、後ろは do などを使わずそのまま動詞を続けます。tell は「tell＋人＋事」の第4文型（目的語を2つ取る形）で使えるので、told you that「あなたにそのことを言った」と並べて完成です。
+
+**組み立て** 疑問詞 Who の直後に on earth（強調）→ who が主語なのでそのまま動詞 told → tell＋人＋事 の順で told you that
+
+
+## UNIT 6 否定
+
+#### 問 221 ｜ 正解 **2**
+
+**完成文** I told them to stop talking, but they didn't pay **any attention**.
+**訳** 私は彼らにおしゃべりをやめるように言ったが、彼らはまったく耳を貸さなかった。
+**POINT** not ... any で「まったく〜ない」（全否定）
+
+pay attention は「注意を払う」という重要熟語で、attention は数えられない名詞（不可算名詞）です。この文は didn't という否定文なので、「少しも〜ない」を表すには not ... any の形を使い、any attention とするのが正解です。not ... any は「ゼロであること」をはっきり示す全否定の表現で、didn't pay any attention 全体で「まったく注意を払わなかった」となります。否定文の中では some ではなく any を使うのが原則、という点も合わせて押さえましょう。
+
+**誤答チェック**
+- 1 an attention：attention は不可算名詞なので冠詞 an は付けられないため×
+- 3 attentions：不可算名詞は複数形にできないため×
+- 4 some attention：some は原則として肯定文で使い、否定文では any を使うため×
+
+#### 問 222 ｜ 正解 **2**
+
+**完成文** I cannot hear that song **without** thinking of my old friend.
+**訳** あの歌を聴くと、必ず昔の友人を思い出す。
+**POINT** cannot ... without -ing「〜すると必ず…する」（二重否定）
+
+cannot ... without -ing は直訳すると「…することなしには〜できない」ですが、否定を2つ重ねること（二重否定）で、結果的に「〜すれば必ず…する」という強い肯定の意味になる頻出表現です。この文では cannot hear と without thinking の2つの否定要素が組み合わさり、「あの歌を聴けば必ず昔の友人のことを考えてしまう」となります。空所の後ろが thinking という動名詞なので、前置詞が入ると見抜けるかどうかも着眼点です。訳すときは「〜せずには…できない」より「〜すると必ず…する」と処理したほうが自然な日本語になります。
+
+**誤答チェック**
+- 1 with：with thinking では「考えることと共に」となり意味を成さないため×
+- 3 which：先行詞 that song を受ける関係代名詞としても、後ろの thinking ... と文がつながらないため×
+- 4 whose：所有格の関係代名詞の後ろには名詞が必要で、thinking of ... と続けられないため×
+
+#### 問 223 ｜ 正解 **5**
+
+**完成文** Ben cannot speak German. Mary cannot, **either**.
+**訳** ベンはドイツ語が話せない。メアリーも話せない。
+**POINT** 否定文の「〜もまた…ない」は either
+
+「〜もまた」を表す語は、肯定文なら too や also を使いますが、否定文では文末に either を置く、という使い分けがポイントです。前の文 Ben cannot speak German. を受けて、「メアリーも（同じく）話せない」と否定の内容を重ねているので、Mary cannot, either. とします。neither を使って同じ内容を表すこともできますが、その場合は Neither can Mary. のように文頭に neither を置いて倒置（疑問文と同じ語順にすること）が必要です。「否定文＋either／Neither＋倒置」はセットで覚えておきましょう。
+
+**誤答チェック**
+- 1 too：too は肯定文で「〜もまた」を表す語で、否定文では使えないため×
+- 2 neither：neither を使うなら Neither can Mary. と文頭に置いて倒置する必要があるため×
+- 3 nor：nor も Nor can Mary. のように倒置を伴って文頭で使う語で、文末には置けないため×
+- 4 also：also は肯定文で使う語であり、否定文の文末には置けないため×
+
+#### 問 224 ｜ 正解 **1**
+
+**完成文** Not **every** person can be a pianist.
+**訳** すべての人がピアニストになれるわけではない。
+**POINT** not every 〜「すべてが〜とは限らない」（部分否定）
+
+not が every・all・always など「すべて・完全」を表す語と結びつくと、「すべてが〜というわけではない」という部分否定になります。この文は Not every person で「すべての人が〜できるわけではない」、つまり「なれる人もいれば、なれない人もいる」という意味です。着眼点は空所の直後の person が単数形であること。every は「every＋単数名詞」の形で使うので、単数の person と正しく結びつくのは every だけです。many や a few は複数名詞を続ける必要があるため、形の上でもアウトだと判断できます。
+
+**誤答チェック**
+- 2 much：much は不可算名詞に付く語で、可算名詞 person には使えないため×
+- 3 many：many の後ろは複数名詞（many people など）が必要で、単数の person に付けられないため×
+- 4 a few：a few も複数名詞を続ける語で、単数の person とは結びつかないため×
+
+#### 問 225 ｜ 正解 **4**
+
+**完成文** He would **be the last person to** deceive me into doing such a foolish thing.
+**訳** 彼は、私をだましてそんな愚かなことをさせるような人では決してない。
+**POINT** the last person to do「決して〜しない人」
+
+the last person to do は直訳すると「〜する最後の人」ですが、「（〜する順番が最後に来るくらい）最も〜しそうにない人＝決して〜しない人」という否定の意味を表す重要表現です。not を使わずに否定を表す表現として、否定の単元で必ず問われます。この文の構造を見ると、助動詞 would の後ろなので動詞の原形 be が必要で、さらに last person の後ろには不定詞 to deceive を続ける必要があります。したがって be と to の両方を含む4が正解です。deceive A into -ing は「Aをだまして〜させる」という熟語で、これも合わせて覚えておきましょう。
+
+**誤答チェック**
+- 1 the least person：would の後ろに動詞の原形 be がなく、また the least person という表現自体が存在しないため×
+- 2 be the last person：後ろの deceive とつなぐ to がないため×
+- 3 the least person to：would の直後に be がなく文が成立しないため×
+
+#### 問 226 ｜ 正解 **3**
+
+**完成文** The publishing firm expected his new novel to be a great hit, but it was **far** from being a success.
+**訳** 出版社は彼の新作小説が大ヒットすると期待していたが、それは成功とはほど遠いものだった。
+**POINT** far from 〜「決して〜ではない・〜にはほど遠い」
+
+far from 〜 は「〜から遠い」という距離の意味から転じて、「決して〜ではない」という否定の意味を表す熟語です。not を使わない否定表現の代表格で、from の後ろには名詞や動名詞が続きます。この文では far from being a success で「成功であることからほど遠い＝まったく成功とは言えない」となり、前半の「大ヒットを期待していた」との対比（but）が自然につながります。away・distant も「遠い」を表しますが、この否定の熟語を作れるのは far だけ、と形で覚えてしまうのが確実です。
+
+**誤答チェック**
+- 1 away：away from は物理的に「〜から離れて」の意味で、「決して〜ではない」の熟語にはならないため×
+- 2 opposite：opposite from という形は使わず、意味的にも「成功の反対側から」では文意が通らないため×
+- 4 distant：distant from は実際の距離が「遠い」の意味で、否定の慣用表現にはならないため×
+
+#### 問 227 ｜ 正解 **1**
+
+**完成文** That melon is anything **but** cheap.
+**訳** あのメロンは決して安くない。
+**POINT** anything but 〜「決して〜ではない」
+
+anything but 〜 は「〜以外なら何でも（ありうる）」が直訳で、そこから「決して〜ではない」という強い否定を表す熟語です。この but は接続詞の「しかし」ではなく、except と同じ「〜以外」という意味の前置詞である点に注意しましょう。この文は anything but cheap で「安いこと以外の何ものでもありうる＝まったく安くない」となります。not を使わない否定表現として、far from 〜 や the last ... to do と並んで頻出です。なお、似た形の nothing but 〜 は「〜以外の何ものでもない＝〜にすぎない（only）」とほぼ逆の意味になるので、セットで区別して覚えてください。
+
+**誤答チェック**
+- 2 and：anything and cheap では「何かと安い」となり意味を成さないため×
+- 3 or：anything or cheap も語のつながりとして成立しないため×
+- 4 however：however は副詞または接続詞的に使う語で、anything の直後に置いて熟語を作れないため×
+
+#### 問 228 ｜ 正解 **2**
+
+**完成文** The surgical operation is relatively free **from** danger.
+**訳** その外科手術には比較的危険がない。
+**POINT** free from 〜「〜がない」
+
+free from 〜 は「〜（悪いもの・好ましくないもの）がない」という意味の熟語で、not を使わずに「ない」ことを表す表現です。free の「自由な」という意味から、「〜から解放されている＝〜を免れている」とイメージすると覚えやすいでしょう。この文では free from danger で「危険がない」、relatively（比較的）が付いて「比較的安全だ」という内容になります。from の代わりに of を使う free of 〜 という形もありますが、選択肢にある with・about・on はいずれもこの熟語を作れません。
+
+**誤答チェック**
+- 1 with：free with では「〜がない」の意味にならないため×
+- 3 about：free about という熟語は存在しないため×
+- 4 on：free on も熟語として成立しないため×
+
+#### 問 229 ｜ 正解 **4**
+
+**完成文** It remains **to be seen** whether the economic stimulus package will make a significant impact on the economy.
+**訳** 景気刺激策が経済に大きな影響を与えるかどうかは、まだ分からない。
+**POINT** It remains to be seen whether ...「〜かどうかはまだ分からない」
+
+remain to be done は「まだ〜されないままである」という意味で、remain の後ろには不定詞の受動態（to be＋過去分詞）を続けます。It remains to be seen whether ... は「〜かどうかはまだこれから見られる（判明する）ことだ＝今はまだ分からない」という決まり文句で、It は whether 以下を指す形式主語です。「まだ結果が出ていない」ことを間接的に表す表現として、このまま丸ごと覚えてしまいましょう。文法的には、see の対象（結果）は「見られる」側なので、能動の to see ではなく受動の to be seen になる点が着眼点です。
+
+**誤答チェック**
+- 1 seeing：remain -ing の形では「まだ分からない」の意味を表せないため×
+- 2 seen：remain の後ろに過去分詞を直接置く形では文が成立しないため×
+- 3 to seen：to の直後に過去分詞は置けず、受動なら to be seen とする必要があるため×
+
+#### 問 230 ｜ 正解 **③**
+
+**完成文** When it comes to the question of euthanasia, **nobody can** find an easy solution.
+**訳** 安楽死の問題となると、誰も簡単な解決策を見つけることはできない。
+**POINT** anybody ... not の語順は不可。「誰も〜ない」は nobody（no one）で表す
+
+英語では、any- で始まる語（anybody / anything など）を主語にして、その後ろの動詞を not で否定する語順は使えない、という重要なルールがあります。「誰も〜できない」と言いたいときは、③の anybody cannot を nobody can（または no one can）に直し、否定の意味を主語に組み込みます。any- は「not より後ろで使う」（例：I cannot find anybody）のが原則で、否定語より前（主語の位置）には置けない、と覚えておきましょう。①の when it comes to 〜 は「〜のこととなると」という熟語で、to の後ろに名詞が続く正しい形です。
+
+**訂正** ③ anybody cannot → nobody can
+
+#### 問 231 ｜ 正解 **425136**
+
+**完成文** I **can't watch this movie without remembering my** school days.
+**訳** この映画を観るといつも学生時代を思い出す。
+**POINT** cannot ... without -ing「〜すると必ず…する」（二重否定）
+
+日本文の「観るといつも思い出す」を、cannot ... without -ing（…せずには〜できない→〜すれば必ず…する）という二重否定の形で表す問題です。まず主語 I の直後に can't watch this movie「この映画を観ることができない」を置き、次に「〜せずには」を表す without を続けます。without は前置詞なので後ろは動名詞 remembering となり、その目的語として my school days がつながります。問222で学んだ cannot hear ... without thinking と同じ型なので、「cannot＋動詞 ... without -ing」をひとつの公式として使えるようにしておきましょう。
+
+**組み立て**
+- can't watch this movie で骨組みを作る → without＋動名詞 remembering を続ける → my＋school days で締める
+
+#### 問 232 ｜ 正解 **72451683**
+
+**完成文** There are **many amusement parks**, **but not all of them are** successful.
+**訳** 遊園地はたくさんあるが、成功しているものは多くない。
+**POINT** not all 〜「すべてが〜とは限らない」（部分否定）
+
+前半は There are 構文なので、複数名詞 many amusement parks「たくさんの遊園地」を続けます。後半の「成功しているものは多くない（すべてが成功しているわけではない）」は、not が all と結びついた部分否定 not all of them「それらのすべてが〜というわけではない」で表します。接続詞 but を置いてから not all of them を主語のかたまりとして組み立て、動詞 are、補語 successful と続ければ完成です。not all は問224の not every と同じ部分否定の仲間で、「全部が〜なわけではない（一部はそうでない）」という含みを持つことを確認しておきましょう。
+
+**組み立て**
+- There are の後ろに many amusement parks を置く → but のあとに部分否定 not all of them を主語として作る → are (successful) で文を閉じる
+
+
+## UNIT 7 倒置・強調構文・語順
+
+#### 問 233 ｜ 正解 **1**
+
+**完成文** **Little did I dream** that such a thing would happen to all of the guests staying at the hotel.
+**訳** そのホテルに泊まっている客全員にそんなことが起こるとは、私は夢にも思わなかった。
+**POINT** 否定の副詞 little が文頭 → 疑問文の語順（倒置）
+
+この文は、否定的な意味を持つ副詞 little（少しも〜ない）が文頭に出た形です。never や little、hardly などの否定語（句）が文頭に置かれると、その後ろは「疑問文と同じ語順」、つまり倒置（主語と助動詞の順番が入れ替わる形）になるのがルールです。もとの文は I little dreamed that ... で、一般動詞 dream の文なので、疑問文を作るときと同じように助動詞 did を借りてきて Little did I dream ... とします。「Little ＋ did ＋ 主語 ＋ 動詞の原形」という並びを丸ごと覚えておきましょう。文頭に否定語を見たら「後ろは疑問文の語順」と反応できるかがこの問題の着眼点です。
+
+**誤答チェック**
+- 2 Little dream did I：did の後ろに主語 I、その後に動詞の原形 dream が来るべきで、語順が崩れているため×
+- 3 Little I did dream：倒置が起きておらず「主語＋助動詞」の平叙文の語順のままなので×
+- 4 Little dream I did：動詞 dream が主語より前に出ており、正しい倒置の形ではないため×
+
+#### 問 234 ｜ 正解 **2**
+
+**完成文** No sooner **had he finished** his meal than he drove to a nearby bookstore.
+**訳** 彼は食事を終えるとすぐに、近くの書店へ車で向かった。
+**POINT** No sooner had S 過去分詞 〜 than ...「〜するとすぐに…した」
+
+No sooner 〜 than ... は「〜するとすぐに…した」という意味の重要構文です。もとの形は He had no sooner finished his meal than ... で、「食事を終えた（過去完了）」のが「書店へ向かった（過去形）」より一瞬早いことを過去完了で表します。この no sooner という否定語が文頭に出ると、問233と同じく後ろは倒置になり、had と主語 he がひっくり返って No sooner had he finished 〜 という語順になります。「No sooner ＋ had ＋ S ＋ 過去分詞 〜 than S′＋過去形」をワンセットで覚えるのが最短ルートです。空所の後ろに than があることから、この構文だと即座に見抜きましょう。
+
+**誤答チェック**
+- 1 finishing：文の述語動詞（主語に対応する動詞）がなくなってしまうため×
+- 3 he had finished：文頭の否定語 No sooner の後ろは倒置が必要で、平叙文の語順は置けないため×
+- 4 he finished：語順が倒置になっていないうえ、時制も過去完了が必要なため×
+
+#### 問 235 ｜ 正解 **4**
+
+**完成文** Around the corner to the left **is** the place they are having the party.
+**訳** 角を曲がって左手に、彼らがパーティーを開いている場所があります。
+**POINT** 場所の副詞句が文頭 → 「場所＋V＋S」の倒置
+
+文頭の Around the corner to the left は「角を曲がって左に」という場所を表す副詞句です。場所や方向を表す副詞句が文頭に出ると、その後ろは「動詞＋主語」の語順（倒置）になることがあります。もとの文は The place they are having the party is around the corner to the left で、主語は the place（they are having the party は place を修飾する関係詞節。関係副詞 where が省略された形です）。場所の副詞句を前に出したことで、be動詞 is が主語より先に来て「Around the corner to the left is the place 〜」という形になっています。空所の後ろに主語になれる名詞のかたまり the place があることに注目し、「文全体の動詞が欠けている」と気づけるかがポイントです。
+
+**誤答チェック**
+- 1 and：接続詞を入れても文の述語動詞がなく、文が成立しないため×
+- 2 except：前置詞を入れても述語動詞がなく、文が成立しないため×
+- 3 on：前置詞では the place とつながっても文全体の動詞がないため×
+
+#### 問 236 ｜ 正解 **3**
+
+**完成文** I was born in Hokkaido. So **were my parents**.
+**訳** 私は北海道で生まれました。私の両親もそうです。
+**POINT** So V S「〜もそうだ」— 前の文の動詞の種類に合わせる
+
+「So ＋（助）動詞＋主語」は「〜もまた同じだ」という意味で、前の肯定文の内容を別の主語について繰り返す表現です。ここで大事なのは、So の後ろに置く動詞は前の文で使われた動詞の種類に合わせるという点です。前の文は I was born in Hokkaido と be動詞（was）の文なので、So の後ろも be動詞を使い、主語が my parents（複数）だから were にして So were my parents. とします。「So ＋ V ＋ S」という倒置の語順になることもセットで確認しましょう。前文が一般動詞なら So do/did S、be動詞なら So be動詞 S、と機械的に判断できるようにしておくのが着眼点です。
+
+**誤答チェック**
+- 1 my parents were：So my parents were. という語順では「〜もそうだ」の意味にならず、倒置の語順が必要なため×
+- 2 did my parents：前の文は be動詞（was born）の文であり、代動詞 did では受けられないため×
+- 4 my parents, too：So my parents, too. では動詞がなく文として成立しないため×
+
+#### 問 237 ｜ 正解 **3**
+
+**完成文** Tom does not work at the library on Saturday and neither **does Jane**.
+**訳** トムは土曜日に図書館で働かないし、ジェーンも働かない。
+**POINT** neither V S「〜もまた…ない」— 否定文を受ける倒置
+
+前の否定文の内容を「…もまた〜ない」と繰り返すときは「neither（または nor）＋（助）動詞＋主語」の倒置の形を使います。問236の So V S の否定版だと考えると整理しやすいでしょう。前の文は Tom does not work 〜 と一般動詞 work の否定文なので、neither の後ろは助動詞 does で受け、主語 Jane を続けて neither does Jane とします。neither 自体に否定の意味が含まれているので、後ろに not を重ねない点にも注意してください。前文の動詞が「一般動詞・現在形・三人称単数」だから does、という対応関係を確認するのが着眼点です。
+
+**誤答チェック**
+- 1 Jane does：neither の後ろは「V＋S」の倒置が必要で、平叙文の語順は不可のため×
+- 2 is Jane：前の文は一般動詞 work の文で、be動詞では受けられないため×
+- 4 Jane works：倒置になっていないうえ、neither の直後に一般動詞をそのまま置く形も誤りのため×
+
+#### 問 238 ｜ 正解 **3**
+
+**完成文** "I didn't make any mistakes in the math quiz!" "**Nor** did I."
+**訳** 「数学の小テストで1問もミスしなかったよ！」「私もしなかったよ」
+**POINT** Nor did I.「私も〜しなかった」— neither とほぼ同じ働き
+
+空所の後ろが did I という「助動詞＋主語」の倒置の語順になっていることに注目します。この倒置を引き起こせるのは、否定の意味を持つ語が文頭に来たときでした。前の発言が I didn't make any mistakes という否定文で、それを受けて「私もミスしなかった」と言うのですから、「neither/nor ＋ V ＋ S」の形が当てはまります。選択肢の中で倒置を導けるのは否定語の Nor だけなので、Nor did I. が正解です。Nor は Neither とほぼ同じ意味で、会話では Neither did I. / Nor did I. のどちらも「私も〜しなかった」として使われます。
+
+**誤答チェック**
+- 1 Also：否定語ではなく倒置を導けないため×（Also の場合は I didn't, either. などの形になる）
+- 2 But：接続詞で、直後に did I という倒置は続けられないため×
+- 4 Yet：「しかし」の意味の接続詞・副詞で、倒置を導く働きはないため×
+
+#### 問 239 ｜ 正解 **3**
+
+**完成文** **It** is Scotland that they are going to, not Ireland.
+**訳** 彼らが行こうとしているのはアイルランドではなくスコットランドだ。
+**POINT** It is X that 〜 の強調構文
+
+これは「It is X that 〜」で X を強調する強調構文（分裂文）です。もとの文 They are going to Scotland, not Ireland. の Scotland を It is と that の間に挟み込み、「彼らが行くのはほかでもないスコットランドだ」と際立たせています。強調構文の It は「それ」と訳す代名詞ではなく、形の上で置かれるだけの語なので訳しません。見分け方として、It is と that を取り除いて残りを並べ替えたとき（They are going to Scotland）に完全な文が成り立てば強調構文です。文末の not Ireland が「アイルランドではなく」と対比を作っていることも、Scotland が強調されているヒントになります。
+
+**誤答チェック**
+- 1 Their：所有格の後ろに is Scotland と続けることはできず、文が成立しないため×
+- 2 That：That is Scotland that 〜 とすると that が二重になり、強調構文の形にならないため×
+- 4 Which：疑問文でも関係詞節でもないこの文で Which を置く理由がないため×
+
+#### 問 240 ｜ 正解 **4**
+
+**完成文** It was because he was ill **that** we gave up traveling.
+**訳** 私たちが旅行をあきらめたのは、彼が病気だったからだ。
+**POINT** 強調構文は副詞節（because 〜）も強調できる
+
+これも It was 〜 that ... の強調構文ですが、今回強調されているのは名詞ではなく because he was ill という理由の副詞節です。強調構文は名詞だけでなく、副詞（句・節）も It is/was と that の間に挟んで強調できます。もとの文は We gave up traveling because he was ill. で、理由の部分を前に出して「旅行をやめたのは、まさに彼が病気だったからだ」と強調した形です。It was because 〜 と来たら、後ろは that で受けるのが定型だと覚えておきましょう。It was 〜 の後ろを見て「強調構文だから that」と即断できるかが着眼点です。
+
+**誤答チェック**
+- 1 as：強調構文の受けは that であり、as では形が成立しないため×
+- 2 for：接続詞 for（というのも〜だから）を置くと文構造が壊れるため×
+- 3 so：so では It was because 〜 とのつながりが作れず、文が成立しないため×
+
+#### 問 241 ｜ 正解 **1**
+
+**完成文** She leaves her toys all over the floor and I have to pick **them up**.
+**訳** 彼女は床じゅうにおもちゃを散らかすので、私がそれを拾い上げなければならない。
+**POINT** 「動詞＋副詞」の句動詞：目的語が代名詞なら必ず間に挟む
+
+pick up（拾い上げる）は「動詞＋副詞」型の句動詞です。このタイプは、目的語が名詞なら pick up the toys / pick the toys up のどちらの語順も可能ですが、目的語が代名詞（them, it など）の場合は必ず「動詞＋代名詞＋副詞」の語順、つまり pick them up としなければなりません。pick up them のように代名詞を後ろに置くのは誤りです。ここでは her toys を受ける代名詞 them が目的語なので、pick them up が正解になります。また、主語 I と目的語（おもちゃ＝彼女の物）は別のものを指すので、再帰代名詞 themselves（〜自身）を使う理由もありません。
+
+**誤答チェック**
+- 2 themselves up：再帰代名詞は主語と目的語が同一のときに使うもので、ここでは不適切なため×
+- 3 up them：代名詞の目的語を副詞 up の後ろに置く語順は認められないため×
+- 4 up themselves：語順も再帰代名詞の使い方も両方誤りのため×
+
+#### 問 242 ｜ 正解 **2**
+
+**完成文** **A** number of students are playing baseball.
+**訳** 多くの学生が野球をしている。
+**POINT** a number of ＋複数名詞「多くの〜」（複数扱い）
+
+a number of ＋複数名詞は「多くの〜、いくつもの〜」という意味の決まった表現で、意味の中心は後ろの複数名詞にあるため、動詞は複数で受けます。ここでは動詞が are と複数形になっていることから、主語は「多くの学生」でなければならず、A number of students が正解です。混同しやすいのが the number of ＋複数名詞「〜の数」で、こちらは意味の中心が number（数）という単数名詞なので動詞は単数（is）で受けます。「a number of は複数扱い、the number of は単数扱い」をセットで押さえ、動詞の形（are）から冠詞を逆算するのがこの問題の着眼点です。
+
+**誤答チェック**
+- 1 Some：some number of という言い方は通例用いられず、「多くの〜」の意味にならないため×
+- 3 The：the number of 〜 は「〜の数」の意味で単数扱いとなり、動詞 are と合わないため×
+- 4 Great：great number of とは言えず、a great number of のように冠詞 a が必要なため×
+
+#### 問 243 ｜ 正解 **①**
+
+**完成文** Never in my life **did I imagine** myself as the type of person who would enjoy watching tropical fish swim in an aquarium.
+**訳** 水槽の中で熱帯魚が泳ぐのを眺めて楽しむようなタイプの人間に自分がなるとは、これまでの人生で一度も想像したことがなかった。
+**POINT** Never が文頭 → 後ろは倒置（did I imagine）
+
+文頭に否定の副詞 Never in my life（人生で一度も〜ない）が置かれています。否定語句が文頭に出たら、その後ろは疑問文と同じ語順（倒置）にするのがルールでした。したがって I did imagine という平叙文の語順は誤りで、助動詞 did を主語 I の前に出して did I imagine としなければなりません。②の myself は imagine の目的語で主語 I と同一人物を指すので再帰代名詞で正しく、③の person は the type of person（〜のようなタイプの人）として自然、④の swim は知覚動詞 watch ＋ O ＋ 原形（Oが〜するのを見る）の形で正しい原形です。文頭の Never を見た瞬間に「倒置になっているか」を最初にチェックするのが着眼点です。
+
+**訂正** ① I did imagine → did I imagine
+※編集メモ: 原文の「①l did」は小文字のエル（l）になっているが、大文字の I の誤植（OCR由来）と判断して解説を作成。
+
+#### 問 244 ｜ 正解 **6354271**
+
+**完成文** It **was not until last week that I noticed** it.
+**訳** 私は先週はじめてそれに気がついた。
+**POINT** It is not until 〜 that ...「〜になってはじめて…する」
+
+「〜してはじめて…した」は、強調構文を使った It was not until 〜 that ... という定型表現で表します。直訳すると「…したのは〜になってからのことだった」で、not until 〜（〜まで…ない）の部分を It was と that で挟んで強調した形です。ここでは until の後ろに last week を置き、that 節の中に I noticed（気づいた）を続けて、It was not until last week that I noticed it. が完成します。語群に not / until / that がそろっていたら、まずこの構文を疑うのが鉄則です。
+
+**組み立て**
+- 語群の not・until・that から It was not until 〜 that ... の構文を想定
+- was not until last week までを組み立てる（⑥③⑤④）
+- that の後ろに主語＋動詞 I noticed を置き、文末の it につなげる（②⑦①）
+
+#### 問 245 ｜ 正解 **4312**
+
+**完成文** Who **is it that you** are talking about?
+**訳** あなたが話しているのはいったい誰のことですか。
+**POINT** 疑問詞を強調する強調構文：疑問詞＋ is it that 〜?
+
+疑問詞を強調構文で強調する形です。もとになるのは It is X that you are talking about.（あなたが話しているのは X だ）という強調構文で、この X を疑問詞 who に変えて文頭に出すと、疑問文なので is と it が倒置して Who is it that you are talking about? となります。「疑問詞＋ is it that ＋ S ＋ V?」は「いったい〜？」と疑問詞を強める定型の語順として丸ごと覚えてしまいましょう。文末に about の目的語が欠けていること（talking about の後ろが空所）も、who が that 節内から前に出た強調構文だと見抜くヒントになります。
+
+**組み立て**
+- 疑問詞の強調構文「疑問詞＋ is it that 〜?」を想定
+- Who の直後に is it that を置く（④③①）
+- that の後ろに主語 you を置き、are talking about? に接続（②）
+
+
+# Chapter 4 品詞系
+
+
+## UNIT 1 前置詞
+
+#### 問 246 ｜ 正解 **1**
+
+**完成文** A : Jake, what does ATM mean? / B : I think it **stands for** Automatic Teller Machine.
+**訳** A「ジェイク、ATMってどういう意味？」B「Automatic Teller Machine（現金自動預け払い機）の略だと思うよ。」
+**POINT** stand for 〜「〜を表す・〜の略語である」
+
+Aが「ATMはどういう意味か」と略語の意味を尋ねているので、Bの返答は「ATMは〜を表す（〜の略だ）」という内容になるはずです。ここで使うのが stand for 〜「〜を表す・〜の略語である」という熟語です。for には「〜の代わりに」という交換・代理のイメージがあり、「略語がフルスペルの代わりに立っている（stand）」と考えると覚えやすいでしょう。stand は前置詞・副詞との組み合わせで意味が大きく変わるので、セットで整理しておくことが大切です。
+
+**誤答チェック**
+- 2 stands up：「立ち上がる」の意味で、後ろに目的語を取れないため×
+- 3 stands in：stand in for 〜「〜の代役を務める」の形で使う表現で、「〜を表す」の意味はないため×
+- 4 stands back：「後ろに下がる」の意味で、文意に合わないため×
+
+#### 問 247 ｜ 正解 **2**
+
+**完成文** Do you think oolong tea is very different **from** green tea?
+**訳** ウーロン茶は緑茶とは大きく違うと思いますか。
+**POINT** be different from 〜「〜と異なる」
+
+different「異なっている」と相性のよい前置詞を選ぶ問題です。「AはBと異なる」は A is different from B と表し、from を使うのが原則です。from には「分離（〜から離れて）」のイメージがあり、「Bから離れている＝Bと違う」と考えると納得できます。動詞形の differ from 〜「〜と異なる」も同じ from を取るので、あわせて覚えておきましょう。different を見たら反射的に from を選べるようにしておきたい定番の組み合わせです。
+
+**誤答チェック**
+- 1 as：different as という結びつきはなく、「〜として」の意味も文意に合わないため×
+- 3 like：「〜のような」という類似を表す前置詞で、「異なる」という文意と逆方向のうえ different とも結びつかないため×
+- 4 too：「〜もまた」という副詞で、前置詞ではないため名詞 green tea の前に置けず×
+
+#### 問 248 ｜ 正解 **2**
+
+**完成文** Jennifer: Dinner's **on** me tonight. Order whatever you like. / Liz: Thanks, I think I'll have spaghetti.
+**訳** ジェニファー「今夜の夕食は私のおごりよ。好きなものを何でも注文して。」リズ「ありがとう。スパゲッティにしようかな。」
+**POINT** on 〜「〜のおごりで」（負担・依存の on）
+
+「好きなものを何でも注文して」という続きから、ジェニファーが「夕食は私が払う＝私のおごり」と言っている場面だと分かります。「〜のおごりで」は on を使い、Dinner's on me. で「夕食は私持ちです」という決まり文句になります。on には「接触」から発展した「依存・負担（〜に支えられて）」の用法があり、費用が me にのしかかっているイメージです。レストランで店が無料でふるまうときの It's on the house.「店のおごりです」も同じ用法なので、セットで押さえておきましょう。
+
+**誤答チェック**
+- 1 with：「〜と一緒に」の意味になり、「おごる」という文意を表せないため×
+- 3 for：Dinner's for me だと「夕食は私のためのもの」となり、支払いの意味が出ないため×
+- 4 to：「〜へ」という方向を表すだけで、費用の負担は表せないため×
+
+#### 問 249 ｜ 正解 **1**
+
+**完成文** The policeman took the criminal **by** the arm and brought him to the police station.
+**訳** 警察官は犯人の腕をつかみ、警察署へ連行した。
+**POINT** take 人 by the arm「人の腕をつかむ」（〈動詞＋人＋by the＋体の部位〉）
+
+英語では「人の体の一部をつかむ」とき、took his arm ではなく〈take＋人＋by the＋体の部位〉という形を好みます。まず took the criminal と「人」全体を目的語にし、そのあと by the arm で「腕のところを」と部位を特定する発想です。このとき体の部位には his などの所有格ではなく the を付けるのが最大の注意点です。catch 人 by the arm「人の腕をつかむ」、pull 人 by the hair「人の髪を引っぱる」など、動詞が変わっても同じパターンで使えます。空所の後ろに〈the＋体の部位〉が見えたら、この構文を思い出して by を選びましょう。
+
+**誤答チェック**
+- 2 along：「〜に沿って」の意味で、体の部位をつかむ表現には使えないため×
+- 3 with：「〜と一緒に・〜を使って」の意味となり、〈動詞＋人＋前置詞＋the＋体の部位〉の型に合わないため×
+- 4 of：took the criminal of the arm という形は存在せず、意味も成立しないため×
+
+#### 問 250 ｜ 正解 **4**
+
+**完成文** The coffee shop opens at 7:30 and serves breakfast **till** 10 o'clock.
+**訳** そのコーヒーショップは7時30分に開店し、10時まで朝食を提供している。
+**POINT** till（until）「〜までずっと」（継続）と by「〜までに」（期限）の区別
+
+serves breakfast「朝食を提供する」は、開店から10時までずっと続く動作です。このように「〜までずっと（動作・状態が続く）」という継続を表すのは till（＝until）です。一方 by は「〜までに（一度だけの動作が完了する）」という期限を表すので、finish や arrive のような完了を表す動詞と結びつきます。「提供し続ける」のか「し終える」のか、動詞の性質に注目して till と by を使い分けるのがこのタイプの問題の着眼点です。ここは「10時まで提供し続ける」なので till が正解です。
+
+**誤答チェック**
+- 1 within：「〜以内に」は within an hour のように期間の長さを表す語句と使うもので、10 o'clock という時刻とは使えないため×
+- 2 by：「〜までに」という期限を表し、serve という継続的な動作と合わないため×
+- 3 for：「〜の間」は for three hours のように期間の長さを続けるもので、時刻は続けられないため×
+
+#### 問 251 ｜ 正解 **4**
+
+**完成文** We will finish this work **by** 5 o'clock.
+**訳** 私たちは5時までにこの仕事を終えるつもりです。
+**POINT** by「〜までに」（期限）― 完了を表す動詞とセット
+
+finish「終える」は一瞬で完了する動作なので、「5時までずっと終え続ける」ことはできません。「5時までに（その時点までのどこかで）終える」という期限を表す by が正解です。前問（250）とは逆のパターンで、until（till）は「〜までずっと」という継続を表すため、finish のような完了動詞とは相性が悪いのです。by ＝期限（deadline）、until ＝継続、と日本語の「〜までに／〜まで」の違いとセットで覚えておくと、迷わず選べるようになります。
+
+**誤答チェック**
+- 1 since：「〜以来」は過去の起点を表し、現在完了などと使う語で、未来の文に合わないため×
+- 2 until：「〜までずっと」という継続を表し、完了動詞 finish と合わないため×
+- 3 for：「〜の間」は期間の長さを表し、5 o'clock という時刻を続けられないため×
+
+#### 問 252 ｜ 正解 **3**
+
+**完成文** I'll be back **in** a few minutes.
+**訳** 2、3分で戻ります。
+**POINT** 時の経過を表す in「（今から）〜経ったら・〜後に」
+
+未来の文で〈in＋時間〉を使うと、「（今から）その時間が経過したら」という意味になります。I'll be back in a few minutes. は「2、3分経ったら戻ります＝2、3分で戻ります」ということです。日本語の「〜以内に」につられて within を選びたくなりますが、in は「ちょうどそのくらい経ったら」、within は「その時間より前のどこかで」という違いがあります（この問題の選択肢に within はありませんが、区別として重要です）。「時間の経過＋未来の文＝ in」という組み合わせを押さえておきましょう。
+
+**誤答チェック**
+- 1 with：「〜と一緒に・〜を持って」の意味で、時間の経過を表せないため×
+- 2 into：「〜の中へ」という方向を表す前置詞で、時間表現には使えないため×
+- 4 before：「〜より前に」の意味だが、before a few minutes という言い方はできず、「2、3分で」の意味にならないため×
+
+#### 問 253 ｜ 正解 **3**
+
+**完成文** **Of** all the doctors in the hospital, Dr. Takahashi speaks English the best.
+**訳** その病院のすべての医師の中で、高橋先生が最も上手に英語を話す。
+**POINT** 〈Of all＋複数名詞〉「すべての〜の中で」― 最上級とセット
+
+後半に speaks English the best という最上級表現があることに注目します。最上級で「〜の中で」と比較の範囲を示すとき、all the doctors のような複数名詞には of を使います（場所や集団の名前なら in the hospital のように in）。特にこの問題のように〈Of all＋複数名詞, S＋最上級 ...〉と of のかたまりが文頭に出る形は入試頻出です。文頭の空所＋all＋複数名詞＋カンマ、そして後ろに最上級、という形が見えたら Of を選ぶ、と着眼点をパターン化しておきましょう。
+
+**誤答チェック**
+- 1 In：in は in Japan や in the hospital のように場所・集団名に使い、all the doctors という複数名詞には使えないため×
+- 2 Out：out は単独では前置詞としてこの形で使えず、「〜の中で」の意味も表せないため×
+- 4 As：「〜として」の意味になり、最上級の比較範囲を表せないため×
+
+#### 問 254 ｜ 正解 **3**
+
+**完成文** **To their delight,** they were finally married in 1946.
+**訳** 彼らが喜んだことに、1946年についに2人は結婚した。
+**POINT** to one's delight「(人)が喜んだことに」（感情の to）
+
+〈to one's＋感情名詞〉で「(人)が〜したことに」という意味を表す慣用表現です。to their delight なら「彼らが喜んだことに」となり、文全体を修飾して「その出来事の結果、喜びという感情に行き着いた」ことを示します。to には「到達（〜に至る）」のイメージがあり、出来事が感情に到達する、と考えると理解しやすいでしょう。to my surprise「私が驚いたことに」、to her disappointment「彼女ががっかりしたことに」など、感情名詞を入れ替えて多くの表現が作れるので、まとめて覚えるのが効率的です。
+
+**誤答チェック**
+- 1 In their delight：〈in＋感情名詞〉は「〜のあまり」という一時的な状態を表す別表現で、「〜したことに」の意味にはならないため×
+- 2 For their delight：for では「彼らの喜びのために」となり、慣用表現として成立しないため×
+- 4 On their delight：on にこの用法はなく、〈on＋感情名詞〉という慣用表現は存在しないため×
+
+#### 問 255 ｜ 正解 **④**
+
+**完成文** My flight was four hours late; therefore, I could have done some shopping **in** the city.
+**訳** 私のフライトは4時間遅れた。だから、市内で買い物をすることだってできたのに。
+**POINT** 「〜（の中）で」という場所は in ― do some shopping in the city
+
+まず文の構造を確認すると、do some shopping「買い物をする」のあとに「どこで」という場所の情報が続いています。「市内で」のように町・都市の内部での行為を表すときは、場所の前置詞 in を使って in the city とするのが正しい形です。④の of は「〜の」という所属・所有を表す前置詞なので、shopping of the city では「都市の買い物」という不自然な意味になってしまいます。①は〈数詞＋時間＋late〉「〜時間遅れて」、②の therefore はセミコロンの後で「それゆえ」と文をつなぐ副詞、③の could have done は「〜できただろうに（実際はしなかった可能性を含む）」という〈助動詞＋have＋過去分詞〉で、いずれも正しい形です。
+
+**訂正** ④ of → in
+
+#### 問 256 ｜ 正解 **2**
+
+**完成文** T.G.I.F. **stands for** Thank God It's Friday.
+**訳** T.G.I.F. は Thank God It's Friday（やっと金曜日だ）を表している。
+**POINT** represent ≒ stand for「〜を表す・〜の略語である」
+
+下線部 represents は「〜を表す・意味する」という動詞で、ここでは「T.G.I.F. という略語が Thank God It's Friday の略である」ことを述べています。これと同じ意味を表す熟語が stand for 〜「〜を表す・〜の略語である」です。問246で学んだ表現の言い換え問題で、〈略語＋stand for＋フルスペル〉という使い方をセットで覚えているかが問われています。stand はあとに続く前置詞・副詞によって意味がまったく変わるので、選択肢の4つをそれぞれ区別できるようにしておきましょう。
+
+**誤答チェック**
+- 1 stands against：「〜に反対する・立ち向かう」の意味で、「表す」の意味はないため×
+- 3 stands up：「立ち上がる」の意味で、目的語を続けることもできないため×
+- 4 stands by：「〜を支持する・〜のそばで待機する」の意味で、「〜の略である」の意味はないため×
+
+#### 問 257 ｜ 正解 **2**
+
+**完成文** She gradually came to **depend on** her friends, and stopped doing her homework herself.
+**訳** 彼女は次第に友達に頼るようになり、宿題を自分でやらなくなった。
+**POINT** rely on ≒ depend on「〜に頼る・依存する」
+
+下線部 rely on 〜は「〜に頼る・あてにする」という熟語です。これとほぼ同じ意味を表すのが depend on 〜「〜に頼る・〜次第である」で、どちらも「依存・支え」を表す前置詞 on を使う点が共通しています（問248で見た「負担・依存の on」と同じ発想です）。文の後半「宿題を自分でやらなくなった」からも、「友達に頼るようになった」という意味だと確認できます。count on 〜「〜を頼りにする」も同じ仲間なので、rely on ≒ depend on ≒ count on と3点セットで覚えておくと言い換え問題に強くなります。
+
+**誤答チェック**
+- 1 take advantage of：「〜を利用する・〜につけ込む」の意味で、「頼る」とは意味がずれるため×
+- 3 communicate with：「〜と連絡を取る・意思疎通する」の意味で、依存の意味はないため×
+- 4 dislike：「〜を嫌う」の意味で、文意と正反対のため×
+
+
+## UNIT 2 接続詞
+
+#### 問 258 ｜ 正解 **3**
+
+**完成文** Perhaps the company could further cut costs and **make** even more money after a solution has been found.
+**訳** おそらくその会社は、解決策が見つかった後には、さらにコストを削減し、いっそう多くの利益を上げることができるだろう。
+**POINT** 等位接続詞 and は文法的に同じ形どうしを結ぶ
+
+まず文の構造を確認しましょう。助動詞 could の後ろに cut costs と (  ) even more money が and で結ばれています。and のような等位接続詞（対等な要素どうしをつなぐ接続詞）は、文法的に同じ形を並べるのが大原則です。ここでは could cut と could (make) という形で、1つの could が2つの動詞にかかっていると考えます。助動詞の後ろは動詞の原形なので、cut（原形）と並ぶのは原形の make です。and の前後を見比べて「何と何が並んでいるか」を見抜くことが着眼点です。
+
+**誤答チェック**
+- 1 have made：could have made は「〜できただろうに（過去の推量・後悔）」となり、原形 cut との並列が崩れるため×
+- 2 made：過去形は助動詞 could の後ろに置けず、cut（原形）との並列にならないため×
+- 4 makes：3人称単数現在形は助動詞の後ろに置けないため×
+
+#### 問 259 ｜ 正解 **1**
+
+**完成文** Study hard, **and** you will pass the exam.
+**訳** 一生懸命勉強しなさい。そうすれば試験に合格しますよ。
+**POINT** 命令文, and 〜「…しなさい、そうすれば〜」
+
+文頭が動詞の原形 Study で始まる命令文で、カンマの後ろに you will pass という「良い結果」が続いています。「命令文, and 〜」は「…しなさい、そうすれば〜」、「命令文, or 〜」は「…しなさい、さもないと〜」という頻出の定型パターンです。後半の内容がプラス（合格する）かマイナスかで and と or を使い分けるのが着眼点です。ここでは「勉強すれば→合格する」という良い流れなので and が正解です。
+
+**誤答チェック**
+- 2 or：「さもないと」の意味になり、「勉強しないと合格する」という不自然な文になるため×
+- 3 if：if は従属接続詞で、命令文の直後にカンマを挟んでこの位置に置く形は成り立たないため×
+- 4 but：逆接では「勉強しなさい、しかし合格する」となり意味がつながらないため×
+
+#### 問 260 ｜ 正解 **3**
+
+**完成文** After a number of meetings, **both** the employers and the employees were satisfied.
+**訳** 何度も会議を重ねた後、雇用者側と従業員側の両方が満足した。
+**POINT** 相関接続詞 both A and B「AとBの両方」
+
+空所の後ろに the employers **and** the employees という「A and B」の形があることに注目します。and とセットで使える相関接続詞（2語がペアで働く接続詞）は both A and B「AとBの両方」です。ペアの相手が or なのか nor なのか and なのかを確認するのが着眼点で、either は or と、neither は nor と組むと機械的に整理しておきましょう。また both A and B は複数扱いなので、動詞が were になっている点とも一致します。
+
+**誤答チェック**
+- 1 either：either A or B の形で使い、and とは組めないため×
+- 2 neither：neither A nor B の形で使い、and とは組めないため×
+- 4 also：also は副詞で、not only A but also B の形以外で A and B と相関的に組む用法はないため×
+
+#### 問 261 ｜ 正解 **2**
+
+**完成文** **During** his trip through Scotland, Pete found that everyone was kind and helpful.
+**訳** スコットランド旅行の間、ピートは誰もが親切で頼りになると感じた。
+**POINT** 前置詞 during + 名詞／接続詞 while + SV
+
+空所の後ろを見ると his trip through Scotland という名詞のかたまりだけで、主語＋動詞（SV）がありません。名詞を後ろに置けるのは前置詞なので、「〜の間」を表す前置詞 during が正解です。一方 while や when は接続詞なので、後ろには while I was traveling のように SV を伴う節が必要です。「後ろが名詞なら前置詞、SVなら接続詞」という語法の区別は入試最頻出の着眼点なので、必ず後ろの形から判断しましょう。
+
+**誤答チェック**
+- 1 As：接続詞としては後ろに SV が必要。前置詞 as は「〜として」の意味になり文意に合わないため×
+- 3 While：接続詞なので後ろに SV が必要であり、名詞だけを続けられないため×
+- 4 When：接続詞なので後ろに SV が必要であり、名詞だけを続けられないため×
+
+#### 問 262 ｜ 正解 **4**
+
+**完成文** **In spite of** the heavy rain, my boyfriend came to my house just to say that he was sorry.
+**訳** 激しい雨にもかかわらず、彼はただ謝るためだけに私の家まで来てくれた。
+**POINT** in spite of + 名詞「〜にもかかわらず」
+
+空所の後ろは the heavy rain という名詞のかたまりで、SV がありません。したがって前置詞の働きをする語句を選びます。「〜にもかかわらず」という譲歩の意味を名詞の前で表せるのは群前置詞（2語以上で1つの前置詞として働く表現）の in spite of です。同じ意味の although は接続詞なので Although it rained heavily のように SV が必要、nevertheless は副詞なので名詞を目的語に取れません。「意味」と「品詞（後ろに置ける形）」の両方をチェックするのが着眼点です。
+
+**誤答チェック**
+- 1 Although：接続詞なので後ろに SV が必要であり、名詞だけを続けられないため×
+- 2 Nevertheless：「それにもかかわらず」という副詞で、名詞を後ろに取れないため×
+- 3 Instead of：「〜の代わりに」という意味になり、「雨の代わりに彼が来た」では文意が通らないため×
+
+#### 問 263 ｜ 正解 **2**
+
+**完成文** **Unless** Takeshi helps me, I cannot finish my homework for summer vacation.
+**訳** タケシが手伝ってくれない限り、私は夏休みの宿題を終えられない。
+**POINT** 接続詞 unless「〜しない限り」= if ... not
+
+空所の後ろに Takeshi helps という SV があるので、接続詞が必要です。選択肢の中で接続詞として SV を導けるのは unless だけです。unless は「〜しない限り、もし〜しなければ」という否定の条件を表し、Unless Takeshi helps me = If Takeshi does not help me と言い換えられます。「手伝ってくれなければ終えられない」となり文意も自然です。without も「〜なしで」と似た意味ですが前置詞なので、後ろには without his help のような名詞しか置けない点が決め手です。
+
+**誤答チェック**
+- 1 Without：前置詞なので SV を導けないため×
+- 3 Except：前置詞（〜を除いて）であり、単独で SV を導く接続詞の用法はないため×
+- 4 Outside：前置詞・副詞（〜の外で）であり、SV を導けず意味も合わないため×
+
+#### 問 264 ｜ 正解 **1**
+
+**完成文** **As** we went up the mountain, the air became thinner.
+**訳** 山を登るにつれて、空気がうすくなった。
+**POINT** 比例の as「〜するにつれて」
+
+与えられた日本語「〜につれて」がヒントです。接続詞 as には「〜するとき」「〜なので」など多くの意味がありますが、主節に became thinner のような変化を表す表現（比較級や get, become など）があるときは「〜するにつれて」という比例の意味になります。「登る」という変化と「うすくなる」という変化が同時に進行する関係を、as が結んでいるわけです。when は「〜したとき」という一時点を表すだけで、2つの変化が連動するニュアンスは出せません。主節・従属節の両方に変化の表現があれば比例の as を疑う、というのが着眼点です。
+
+**誤答チェック**
+- 2 During：前置詞なので後ろに SV（we went）を置けないため×
+- 3 When：「登ったとき」という一時点の意味になり、「〜につれて」という連動した変化を表せないため×
+- 4 Since：「〜して以来」「〜なので」の意味になり、日本文の「〜につれて」に合わないため×
+
+#### 問 265 ｜ 正解 **1**
+
+**完成文** **That women** are not good at driving is widely believed all over the world.
+**訳** 女性は運転が得意でないということが、世界中で広く信じられている。
+**POINT** 主語になる that 節「〜ということ」
+
+まず文全体の構造をつかみましょう。述語動詞を探すと are と is believed の2つがあります。動詞が2つあるということは、文のどこかに節（SVのかたまり）を作る接続詞が必要です。That women are not good at driving 全体を「女性は運転が得意でないということ」という名詞節（名詞の働きをするかたまり）にすれば、それが文全体の主語となり、is widely believed が述語動詞としてつながります。接続詞 that は「〜ということ」という名詞節を作れるのが最大の特徴で、when や if の副詞節は主語になれません。動詞の数を数えて文の骨格を見抜くのが着眼点です。
+
+**誤答チェック**
+- 2 When women：when 節は副詞節で文の主語になれず、is believed の主語が消えてしまうため×
+- 3 Women：Women are ... driving is believed と動詞が2つ続いてしまい、文が成立しないため×
+- 4 If women：「もし〜なら」の副詞節は主語になれないため×（名詞節の if は believe の目的語などに限られ、主語には原則使えません）
+
+#### 問 266 ｜ 正解 **3**
+
+**完成文** Could you advise me about **whether** I should apply to this school or not?
+**訳** この学校に出願すべきかどうか、アドバイスをいただけますか。
+**POINT** whether ... or not「〜かどうか」は前置詞の目的語になれる
+
+空所は前置詞 about の直後で、後ろには I should apply という SV、さらに文末に or not があります。「〜かどうか」という名詞節を作り、or not と呼応できるのは whether です。同じ「〜ということ」系の接続詞でも、that 節は前置詞の目的語になれないという重要な制限があります（× about that ...）。また、名詞節を作る if も前置詞の後ろでは使えません。「前置詞の後ろ＋or not とセット」という2つのサインから whether を選ぶのが着眼点です。
+
+**誤答チェック**
+- 1 that：that 節は前置詞の目的語になれず、or not とも呼応しないため×
+- 2 what：疑問詞 what の後ろは不完全な文（名詞の欠け）が必要だが、I should apply to this school は完結しているため×
+- 4 why：「なぜ出願すべきか」となり意味が通らず、or not とも呼応しないため×
+
+#### 問 267 ｜ 正解 **4**
+
+**完成文** **While** teaching in New England, Webster wrote The Dictionary of the American Language.
+**訳** ニューイングランドで教師をしている間に、ウェブスターは『アメリカ言語辞典』を著した。
+**POINT** 接続詞 + 分詞構文（while -ing）
+
+空所の後ろが teaching という -ing 形で、SV の形ではない点に注目します。これは While he was teaching の「主語 + be動詞」が省略された形で、接続詞の意味を残した分詞構文と呼ばれます（従属節の主語が主節の主語 Webster と同じとき、S + be を省略できます）。したがって接続詞 While が正解です。1 の It was while を選ぶと強調構文になりますが、強調構文なら It was while teaching ... **that** Webster wrote と that が必要で、この文には that がないため成立しません。「-ing の前に置ける接続詞」と「強調構文には that が必須」という2点が着眼点です。
+
+**誤答チェック**
+- 1 It was while：強調構文には後半に that が必要だが、この文にはないため×
+- 2 Whenever：「〜するときはいつでも」では、辞書を書いたという1回の出来事と意味が合わないため×
+- 3 When was：疑問文の語順であり、平叙文のこの位置には置けないため×
+
+#### 問 268 ｜ 正解 **case**
+
+**完成文** You must take an umbrella in **case** it should rain.
+**訳** 雨が降るといけないので、傘を持っていきなさい。
+**POINT** in case S should V「〜するといけないので、〜する場合に備えて」
+
+「雨が降るといけないので」という日本語と、空所の直前の in がヒントです。in case S V で「〜するといけないので、〜の場合に備えて」という意味の接続詞表現になります。in case の節の中では、「万一」のニュアンスを添える should がよく使われます（should を使わず in case it rains としても可）。似た表現の if は「もし降ったら（そのときに）持っていく」という条件ですが、in case は「降っても降らなくても、備えとして持っていく」という予防の意味である点が違いです。in とセットで熟語を完成させる問題では、直前の前置詞を見て定型表現を思い出すのが着眼点です。
+
+#### 問 269 ｜ 正解 **85634217**
+
+**完成文** **Your parents should be happy as long as** you are happy.
+**訳** あなたが幸せなら、ご両親も幸せでしょう。
+**POINT** as long as「〜しさえすれば、〜する限り」（条件）
+
+まず日本語から骨格を決めます。「ご両親も幸せでしょう」が主節なので、Your parents should be happy を組み立てます（この should は「〜のはずだ、きっと〜だろう」という推量の意味です)。次に「あなたが幸せなら」という条件は、接続詞 as long as「〜しさえすれば」で表し、as long as you are happy とします。語群では as long（②）と as（①）が分かれているので、②→①の順につないで as long as を完成させるのがポイントです。文末に与えられた are happy に you を接続すれば完成です。
+
+**組み立て**
+- 主節を確定：Your parents should be happy（⑧⑤⑥③④）
+- 条件の接続詞：as long as（②①）を1つのかたまりとして作る
+- 従属節：as long as you are happy（⑦ + 文末の are happy）
+
+#### 問 270 ｜ 正解 **41325**
+
+**完成文** **Whether** we **like it or not**, we **will have to** accept the fact.
+**訳** 好むと好まざるとにかかわらず、我々はその事実を受け入れなければならないだろう。
+**POINT** whether A or not「〜であろうとなかろうと」（譲歩の副詞節）
+
+「好むと好まざるとにかかわらず」は、譲歩（〜だとしても）を表す whether ... or not の副詞節で表します。whether we like it or not で「我々がそれを好もうと好むまいと」という決まり文句になるので、丸ごと覚えてしまいましょう（like の後ろの it を忘れないのが注意点です）。主節は「受け入れなければならないだろう」なので、未来の will と義務の have to を重ねて will have to accept とします。must には未来形がないため、will must とはできず will have to で代用する、という点も頻出です。
+
+**組み立て**
+- 譲歩の節を確定：whether（4）+ we + like it（1）+ or not（3）
+- 主節の助動詞：will（2）+ have to（5）→ will have to accept the fact
+- 「〜しなければならないだろう」= will have to（will must は不可）
+
+※編集メモ: 問題文の骨組み「\[ \] we \[ \] accept the fact.」では主節の主語 we が不足しており、完成文「Whether we like it or not, we will have to accept the fact.」と一致しない可能性があります。
+
+
+## UNIT 3 冠詞・名詞
+
+#### 問 271 ｜ 正解 **2**
+
+**完成文** A : Excuse me. Do you have the time? B : **It's four ten by my watch.**
+**訳** A：すみません、今何時かわかりますか。 B：私の時計では4時10分です。
+**POINT** Do you have the time? は「今何時ですか」
+
+Do you have the time? は、the がつくことで「今の時刻」という特定のものを指し、「今何時かわかりますか」と時刻を尋ねる決まり文句になります。冠詞 the は「お互いにわかる特定のもの」を指す働きがあるので、the time は「（今この瞬間の）時刻」を意味するのです。したがって応答としては時刻を答えている 2 の「私の時計では4時10分です」が自然です。ちなみに the のない Do you have time? は「（今）時間ありますか」と相手の都合を尋ねる表現で、意味がまったく変わる点に注意しましょう。
+
+**誤答チェック**
+- 1 Can you tell me yours?：「あなたのを教えて」では時刻を尋ねられた応答にならないため×
+- 3 No, I don't have one.：時刻を尋ねる質問に「持っていない」と答えるのは不自然（Do you have time? への応答とも合わない）ため×
+- 4 How about you?：「あなたはどう？」では質問に答えていないため×
+
+#### 問 272 ｜ 正解 **1**
+
+**完成文** Mark earns $100,000 **a** year.
+**訳** マークは年に10万ドル稼いでいる。
+**POINT** 「〜につき」の a（= per）
+
+この文は「1年につき10万ドル」という意味で、単位を表す名詞 year の前に置く冠詞が問われています。不定冠詞 a には「〜につき」（= per）という用法があり、three times a week（週に3回）、$10 an hour（1時間につき10ドル）のように、頻度・値段・速度などを「単位あたり」で表すときに使います。year は子音の音 [j] で始まるので、an ではなく a を選びます。earn $100,000 a year で「年収10万ドル」という自然な表現になります。
+
+**誤答チェック**
+- 2 an：year は発音が子音 [j] で始まるため an は不可で×
+- 3 the：「〜につき」の意味は不定冠詞の役割で、特定の年を指すわけではないため×
+- 4 無冠詞：単位を表す可算名詞 year を裸で置くことはできないため×
+
+#### 問 273 ｜ 正解 **2**
+
+**完成文** I wish he would give me **some information** about the college.
+**訳** その大学について、彼が何か情報をくれたらいいのに。
+**POINT** information は不可算名詞
+
+空所には「情報」を意味する語句が入りますが、information は数えられない名詞（不可算名詞）の代表格です。不可算名詞には a / an をつけられず、複数形の -s もつけられません。したがって、量を漠然と表す some をつけた some information が正解です。日本語では「情報が1つ、2つ」と数える感覚がありますが、英語の information は advice や furniture などと同じく「ひとかたまりの物質」のように扱う、と覚えておきましょう。数えたいときは a piece of information の形を使います。
+
+**誤答チェック**
+- 1 an information：不可算名詞に不定冠詞 an はつけられないため×
+- 3 many informations：複数形 informations が存在せず、many（数えられる名詞用）も使えないため×
+- 4 some more informations：複数形 informations が誤りのため×
+
+#### 問 274 ｜ 正解 **3**
+
+**完成文** The teacher gave us **some homework** to be handed in next Friday.
+**訳** 先生は私たちに、来週の金曜日に提出する宿題を出した。
+**POINT** homework は不可算名詞
+
+文の骨格は give A B「A に B を与える」の第4文型で、B にあたる「宿題」の形が問われています。homework は information と同様に不可算名詞なので、a をつけることも複数形にすることもできません。よって some homework が正解です。to be handed in next Friday は「来週金曜に提出されるべき」という不定詞の形容詞用法（受動態）で、homework を後ろから修飾しています。work 系の名詞（work, housework, homework）はすべて不可算、と押さえておくと応用が利きます。
+
+**誤答チェック**
+- 1 a homework：不可算名詞に a はつけられないため×
+- 2 homeworks：homework に複数形はないため×
+- 4 some homeworks：同じく複数形 homeworks が存在しないため×
+
+#### 問 275 ｜ 正解 **4**
+
+**完成文** There was not **much furniture** in the warehouse.
+**訳** その倉庫には家具はあまりなかった。
+**POINT** furniture は不可算 → much で量を表す
+
+furniture（家具）は、机やイスなどの集合を「ひとまとめ」にして捉える不可算名詞です。不可算名詞なので複数形 furnitures は存在せず、「多い・少ない」は数を表す many ではなく量を表す much で表現します。したがって much furniture が正解です。There was と be 動詞が単数形になっていることも、主語が不可算名詞であるヒントになっています。not much 〜 で「あまり〜ない」という部分否定的な言い回しになる点も確認しておきましょう。家具を数えるときは a piece of furniture / two pieces of furniture とします。
+
+**誤答チェック**
+- 1 many furnitures：複数形 furnitures が存在しないため×
+- 2 many furniture：many は可算名詞の複数形にしか使えないため×
+- 3 much furnitures：much 自体は正しいが furnitures という複数形がないため×
+
+#### 問 276 ｜ 正解 **3**
+
+**完成文** Let me give you **a piece** of advice.
+**訳** ひとつ忠告させてください。
+**POINT** 不可算名詞は a piece of 〜 で数える
+
+advice（忠告）は不可算名詞なので、an advice や advices とは言えません。不可算名詞を「1つ、2つ」と数えたいときは、a piece of 〜「1つの〜」という単位表現を使います。a piece of advice で「1つの忠告」、two pieces of advice で「2つの忠告」です。空所の直後に of advice が続いていることが最大のヒントで、of とセットで使えるのは a piece だけです。同じパターンは a piece of information / a piece of furniture / a sheet of paper など、頻出のものをまとめて覚えておきましょう。
+
+**誤答チェック**
+- 1 a few：a few は可算名詞の複数形につく語で、of advice に直接つながらないため×
+- 2 a little：a little advice なら可だが、a little of advice という形は作れないため×
+- 4 one：one of の後ろは the+複数形などの特定の複数名詞が必要なため×
+- 5 some：some of の後ろも特定の名詞（the advice など）が必要なため×
+- 6 that：that of advice という形は意味をなさないため×
+
+#### 問 277 ｜ 正解 **3**
+
+**完成文** Can I have another **slice** of bread?
+**訳** パンをもう1切れいただけますか。
+**POINT** bread は a slice of bread で数える
+
+bread（パン）は不可算名詞で、切り分ける前の「パンという物質」を指します。これを数えるときは、薄く切った1枚なら a slice of bread、かたまりなら a loaf of bread という単位表現を使います。本問は「もう1切れもらえますか」という場面なので、another slice of bread が正解です。単位を表す名詞は数えられるので、another（もう1つの）をつけることができます。このように「不可算名詞ごとに決まった単位の名詞」を選ばせる問題は頻出で、paper なら sheet、chalk なら piece など、組み合わせで覚えるのがコツです。
+
+**誤答チェック**
+- 1 one：one of bread という形は作れないため×
+- 2 sheet：sheet は紙など薄いもの（a sheet of paper）に使い、bread には用いないため×
+- 4 some：another some という並びが不可能なため×
+
+#### 問 278 ｜ 正解 **3**
+
+**完成文** She is charming. I want to make **friends** with her.
+**訳** 彼女は魅力的だ。彼女と友達になりたい。
+**POINT** make friends with 〜「〜と友達になる」
+
+make friends with 〜 は「〜と友達になる」という熟語で、friends が必ず複数形になるのがポイントです。友達関係は「自分と相手」の2人がいて初めて成立するため、複数形を使うと考えると納得できます。このように「相互関係」を表す表現では複数形を使うのがルールで、shake hands with 〜（〜と握手する）、change trains（電車を乗り換える）、take turns（交代でする）なども同じ発想です。「相互複数」と呼ばれるこのグループは入試で繰り返し狙われるので、セットで覚えてしまいましょう。
+
+**誤答チェック**
+- 1 a friend：相互関係を表すため単数形は不可で×
+- 2 friend：無冠詞単数の可算名詞は原則置けないため×
+- 4 the friend：特定の友人を指す形では熟語にならないため×
+
+#### 問 279 ｜ 正解 **3**
+
+**完成文** A : Oh no, there's only one computer available! B : That's okay, we can take **turns**. You go first, and I'll go when you've finished.
+**訳** A：ああ、使えるパソコンが1台しかない！ B：大丈夫、交代で使えばいいよ。先に使って、終わったら僕が使うから。
+**POINT** take turns「交代でする」
+
+take turns は「交代で行う」という意味の熟語で、turn（順番）が必ず複数形になります。「あなたの番」と「私の番」が入れかわるという相互関係を表すため、複数形を使うのです（相互複数）。B の発言の後半「先にどうぞ、終わったら僕がやる」という内容が「交代で使う」という文意を裏づけています。make friends with や shake hands と同じグループとして覚えておきましょう。なお take turns doing / take turns to do で「交代で〜する」と動作を続けることもできます。
+
+**誤答チェック**
+- 1 tests：take tests は「テストを受ける」で文意に合わないため×
+- 2 tries：take tries という熟語はなく（「試す」なら have a try など）×
+- 4 twice：twice は「2回」という副詞で take の目的語になれないため×
+
+#### 問 280 ｜ 正解 **3**
+
+**完成文** You have **egg** on your lower lip.
+**訳** 下の唇に卵の食べかすがついていますよ。
+**POINT** 可算の an egg は「卵1個」、無冠詞の egg は「卵という物質」
+
+egg は使い方で意味が変わる名詞です。an egg と数えられる形で使うと「（殻つきの）卵1個」という個体を指しますが、無冠詞・単数の egg は「卵という物質」、つまり調理された卵や食べかすのような「かたまりでない卵」を表します。唇についているのは卵1個そのものではなく「卵の食べかす」なので、物質名詞として無冠詞の egg を使うのが正解です。同じ発想で、chicken は「ニワトリ（可算）」と「鶏肉（不可算）」、glass は「コップ（可算）」と「ガラス（不可算）」を区別します。冠詞の有無で「個体か物質か」が変わる、と押さえましょう。
+
+**誤答チェック**
+- 1 an egg：「卵1個（丸ごと）」が唇についていることになり不自然なため×
+- 2 eggs：複数個の卵がついている意味になり不自然なため×
+- 4 some eggs：同じく「数個の卵」となってしまうため×
+
+#### 問 281 ｜ 正解 **②**
+
+**完成文** The website was created to provide **information** about the company's range of products.
+**訳** そのウェブサイトは、その会社の製品ラインナップに関する情報を提供するために作られた。
+**POINT** information に複数形はない
+
+まず文構造を確認すると、The website was created（ウェブサイトが作られた）という受動態に、to provide 〜（〜を提供するために）という目的を表す不定詞が続いています。②の informations が誤りで、information は不可算名詞のため複数形の -s をつけることができません。正しくは無冠詞の information です。日本語の感覚で「複数の情報」と考えて -s をつけたくなるところを狙った、誤り指摘問題の定番です。①の was created は受動態として正しく、③の company's は所有格、④の products は可算名詞の複数形でいずれも問題ありません。
+
+**訂正** ② informations → information
+
+#### 問 282 ｜ 正解 **②**
+
+**完成文** His father often gave him **much advice** when he was in trouble.
+**訳** 彼が困っているとき、父親はよく彼にたくさんの忠告をしてくれた。
+**POINT** advice は不可算 → many advices は二重の誤り
+
+②の many advices が誤りです。advice は不可算名詞なので、まず複数形 advices が存在せず、さらに数を表す many をつけることもできません。「たくさんの忠告」は much advice、または可算・不可算どちらにも使える a lot of advice で表します。数えたい場合は a piece of advice の形を使うのでした。①の often は gave の前という頻度副詞の定位置にあり、③の when he was、④の in trouble（困って）はいずれも正しい形です。information・advice・homework・furniture は「不可算名詞の四天王」としてまとめて覚えておきましょう。
+
+**訂正** ② many advices → much advice
+
+#### 問 283 ｜ 正解 **②**
+
+**完成文** You had better change **trains** at the next station.
+**訳** 次の駅で電車を乗り換えたほうがいいですよ。
+**POINT** change trains「電車を乗り換える」は複数形
+
+②の train が誤りで、正しくは複数形の trains です。「乗り換える」という動作は、今乗っている電車と次に乗る電車の「2本の電車」が関わるため、相互複数と呼ばれるルールで必ず複数形を使います。make friends with（友達になる）や shake hands with（握手する）と同じ発想です。①の had better は「〜したほうがよい」という助動詞相当表現で、後ろに動詞の原形 change が続いており正しい形です。③ at the と④ next station も「次の駅で」という自然な表現で問題ありません。change buses / change planes も同様に複数形を使います。
+
+**訂正** ② train → trains
+
+#### 問 284 ｜ 正解 **④**
+
+**完成文** When the game was over, players from both teams came to the center of the court and **shook hands**.
+**訳** 試合が終わると、両チームの選手たちがコートの中央に集まって握手を交わした。
+**POINT** shake hands「握手する」は複数形
+
+④の shook hand が誤りで、正しくは shook hands です。握手は自分の手と相手の手、2つの手を合わせる動作なので、相互複数のルールにより hand は必ず複数形にします。shake hands with 〜 で「〜と握手する」となり、本問では選手同士がお互いに握手したので with 以下は不要です。①の was over は「（試合が）終わった」という表現、②の from both teams は players を修飾する前置詞句、③の center of the court は「コートの中央」でいずれも正しい形です。make friends / change trains / take turns / shake hands の相互複数4点セットは、この UNIT の総まとめとして必ず覚えておきましょう。
+
+**訂正** ④ shook hand → shook hands
+
+
+## UNIT 4 代名詞
+
+#### 問 285 ｜ 正解 **3**
+
+**完成文** I have two brothers. One is a fireman and **the other** is a police officer.
+**訳** 私には兄弟が2人います。1人は消防士で、もう1人は警察官です。
+**POINT** 2つ（2人）のうち「残りの1つ」は the other
+
+まず第1文で two brothers「2人の兄弟」と全体の数が示されている点に注目します。2人のうち1人を One で受けたら、残りは自動的に「あと1人」に確定します。このように「残りが特定できる」ときは、特定を表す the を付けて the other と言うのがルールです。one 〜, the other ...「（2つのうち）一方は〜、もう一方は…」はセットで覚えておきましょう。
+
+**誤答チェック**
+- 1 others：others は「他の複数のもの」を指すため、残り1人の場面では×
+- 2 any：any は「どれでも」という不特定の意味で、特定の「残りの1人」を指せないため×
+- 4 another：another は「（数が特定されない中の）別のもう1つ」で、残りが1人に確定している場面では×
+
+#### 問 286 ｜ 正解 **2**
+
+**完成文** This photograph of my friend is not very good. Let me show you **another** one.
+**訳** この友人の写真はあまりよく撮れていません。別のを見せてあげましょう。
+**POINT** 不特定の「別のもう1つ」は another
+
+第1文で「この写真はよくない」と言い、第2文で「では代わりに別の1枚を」という流れです。友人の写真は何枚あるか特定されておらず、「（たくさんある中から）どれでもいいから別の1枚」を差し出す場面なので、an + other から成る another「もう1つの・別の」が正解です。another one で「別の1枚（= another photograph）」となります。another はもともと不定冠詞 an を含むため、不特定の単数名詞につく、と覚えておくと問285の the other との使い分けが明確になります。
+
+**誤答チェック**
+- 1 about：前置詞であり、one を修飾して名詞句を作れないため×
+- 3 simple：「単純な1枚」では「この写真はよくない→代わりを見せる」という文脈に合わないため×
+- 4 good：a good one なら可能だが、冠詞なしの good one は文法的に成り立たないため×
+
+#### 問 287 ｜ 正解 **3**
+
+**完成文** Some board members agreed with the president's proposal but **others** didn't.
+**訳** 役員の中には社長の提案に賛成した人もいたが、賛成しなかった人もいた。
+**POINT** some 〜, others ...「〜する人もいれば、…する人もいる」
+
+文頭の Some board members と対になる語を選ぶ問題です。役員全体の人数は特定されておらず、「賛成した人たち」以外の「賛成しなかった（複数の）人たち」も全員とは限りません。このように残りが特定されない複数を指すときは、the を付けない others を使います。some 〜, others ...「〜もいれば…もいる」は対比の定番表現として丸ごと覚えましょう。didn't の後ろには agree with the president's proposal が省略されています。
+
+**誤答チェック**
+- 1 another：単数扱いで動詞も didn't の後の複数的な対比に合わず、「別の1人」では文意も不成立のため×
+- 2 other：other は原則として形容詞的に使う語で、単独で主語になる代名詞用法がないため×
+- 4 the other：「残りの1人」の意味になり、全体数が特定されていないこの文脈では×
+
+#### 問 288 ｜ 正解 **2**
+
+**完成文** If you need an English dictionary, I will lend you **one**.
+**訳** 英語の辞書が必要なら、貸してあげますよ。
+**POINT** 同じ種類の不特定の1つ = one（a + 名詞の代用）
+
+前半の an English dictionary を受けて、「（私の持っている）英語の辞書を1冊」貸すという文です。ここで指しているのは「相手が必要としているまさにその辞書」ではなく、「英語の辞書というもの1冊」、つまり同じ種類の不特定の1つです。この場合は a/an + 名詞 の代わりになる代名詞 one を使います。one = a dictionary と置き換えて意味が通ることを確認しましょう。もし特定の「その辞書そのもの」を指すなら it を使いますが、この文脈では貸す辞書はまだ特定されていないので one が適切です。
+
+**誤答チェック**
+- 1 some：some は複数または不可算のものを漠然と指すため、単数可算の dictionary 1冊を受けられず×
+- 3 this：this は目の前の特定のものを指す語で、不特定の1冊を表せないため×
+- 4 any：肯定文の目的語で any を単独で使うと「どれでも」という不自然な強調になり、ここでは×
+
+#### 問 289 ｜ 正解 **1**
+
+**完成文** I bought a cookbook and gave **it** to my sister.
+**訳** 私は料理本を1冊買って、それを妹にあげました。
+**POINT** 前に出た「特定のそのもの」を指すのは it
+
+「料理本を買って、（買ったまさにその本を）妹にあげた」という文です。あげたのは前半で買った特定の1冊そのものなので、特定のものを受ける代名詞 it を使います。it = the cookbook（買ったその本）と置き換えられるのがポイントです。問288の one との対比で整理しましょう。one は「同じ種類の別の不特定の1つ」（= a cookbook）、it は「まさにそのもの」（= the cookbook）を指します。買った本をそのまま渡す文脈では it 一択です。
+
+**誤答チェック**
+- 2 one：one だと「（買った本とは別の）どれか1冊」の意味になり、文脈に合わないため×
+- 3 some：単数可算名詞 a cookbook を受けられないため×
+- 4 ones：複数形の名詞の代用であり、1冊の本を指せないため×
+
+#### 問 290 ｜ 正解 **2**
+
+**完成文** The population of Japan is smaller than **that** of China.
+**訳** 日本の人口は中国の人口より少ない。
+**POINT** 比較で名詞の反復を避ける that of 〜
+
+比較の文では、同じ名詞の繰り返しを避けるために代名詞を使います。ここでは the population（人口）を繰り返す代わりに置く語を選びます。「the + 単数名詞」の反復を受けるのは that で、that of China = the population of China です。名詞が複数（the + 複数名詞）なら those を使う、という単複の対応が最大の着眼点です。population は単数なので that が正解です。なお、人口の大小は large / small で表すことも合わせて確認しておきましょう。
+
+**誤答チェック**
+- 1 one：one は「a + 名詞」の代用で、the population のような特定の名詞の反復には使えず、また of 句を直接続ける形も不可のため×
+- 3 those：複数名詞を受ける形であり、単数の population に合わないため×
+- 4 these：「これら」と目の前の複数のものを指す語で、名詞の反復代用に使えないため×
+
+#### 問 291 ｜ 正解 **4**
+
+**完成文** The results of Experiment A are more reliable than **those** of Experiment B.
+**訳** 実験Aの結果は実験Bの結果よりも信頼できる。
+**POINT** the + 複数名詞の反復は those で受ける
+
+問290と同じく、比較の文で名詞の繰り返しを避ける問題です。今回受けるのは The results という複数名詞なので、that の複数形 those を使い、those of Experiment B = the results of Experiment B とします。動詞が are になっていることからも、主語も比較対象も複数だと確認できます。「単数なら that、複数なら those」——比較の文でこのペアを見たら、まず元の名詞の単複をチェックする習慣をつけましょう。
+
+**誤答チェック**
+- 1 ones：ones は不特定の複数を表し、the のついた特定名詞の代用として of 句を続ける形では使えないため×
+- 2 that：単数名詞を受ける形で、複数の results に合わないため×
+- 3 these：「これら」と目の前のものを指す語で、名詞の反復代用には使えないため×
+
+#### 問 292 ｜ 正解 **4**
+
+**完成文** Mr. Johnson did not choose any of the three ties because he found **none of them** attractive.
+**訳** ジョンソン氏は3本のネクタイのどれも選ばなかった。どれも魅力的だと思わなかったからだ。
+**POINT** 3つ以上の全否定は none／2つの全否定は neither
+
+まず the three ties「3本のネクタイ」と対象が3つである点を押さえます。「3つ以上のうちどれも〜ない」という全否定は none of 〜 で表します。found none of them attractive は find O C「OをCだと思う」の形で、「それらのどれも魅力的だと思わなかった」という意味です。both / either / neither は「2つ」のときにしか使えない語なので、対象の数を見た瞬間に候補から外せます。全否定の使い分けは「2つ → neither、3つ以上 → none」と数で判断するのが鉄則です。
+
+**誤答チェック**
+- 1 both of them：both は「2つとも」の意味で、3本のネクタイには使えないため×
+- 2 either of them：either も「2つのうちどちらか」を前提とする語で、3つには使えないため×
+- 3 neither of them：neither は「2つのうちどちらも〜ない」で、対象が3本のここでは×
+
+#### 問 293 ｜ 正解 **1**
+
+**完成文** **Most** students use LINE on a daily basis nowadays.
+**訳** 最近では、たいていの学生が毎日LINEを使っている。
+**POINT** 「たいていの〜」は Most + 名詞（Almost は不可）
+
+空所の直後に students という名詞が続いている点に注目します。名詞を直接修飾して「たいていの〜、大部分の〜」を表せるのは形容詞の Most です。Most students で「たいていの学生」となります。ひっかけの定番が Almost で、almost は「ほとんど、もう少しで」という意味の副詞なので、名詞を直接修飾できません。Almost を使いたければ Almost all (the) students のように all を挟む必要があります。「Almost + 名詞は不可」は入試最頻出のポイントです。
+
+**誤答チェック**
+- 2 None：None は代名詞で名詞を直接修飾できず、None of the students の形が必要なため×
+- 3 Almost：副詞なので students を直接修飾できないため×（Almost all students なら可）
+- 4 A lot：A lot だけでは名詞を修飾できず、A lot of students と of が必要なため×
+
+#### 問 294 ｜ 正解 **3**
+
+**完成文** **Most** of the members agreed with the leader's decision.
+**訳** メンバーの大半はリーダーの決定に賛成した。
+**POINT** 「〜の大半」は Most of the + 名詞
+
+今度は空所の後ろが of the members となっている形です。「the + 名詞」を of で受けて「〜の大部分」と言えるのは代名詞用法の Most で、Most of the members「メンバーの大半」となります。most は「Most + 名詞」（問293）と「Most of the + 名詞」の両方の形が使える便利な語です。一方、almost は副詞なので of 句を従えることができません。Almost all of the members のように all を補えば正しくなる、という点も問293とセットで押さえましょう。
+
+**誤答チェック**
+- 1 Almost：副詞であり of 句を直接続けられないため×（Almost all of the members なら可）
+- 2 Mostly：「主に、たいてい」という副詞で、主語になれないため×
+- 4 Nearly：「ほぼ」という副詞で、of 句を従えて主語になることはできないため×
+
+#### 問 295 ｜ 正解 **④**
+
+**完成文** My grandfather always said that jazz is superior to **other styles** of music.
+**訳** 祖父はいつも、ジャズは他のスタイルの音楽よりも優れていると言っていた。
+**POINT** another + 単数名詞／other + 複数名詞
+
+another は an + other からできた語なので、後ろには必ず単数名詞が来ます。ところが④では another styles と複数名詞 styles が続いており、ここが誤りです。「（ジャズ以外の）他の様々なスタイル」という複数の内容なので、複数名詞を修飾できる other を使って other styles とします。なお、①〜③に文法的な問題はありません。superior to 〜「〜より優れている」はラテン語由来の比較表現で than を使わない点、また said と過去形でも「ジャズが優れている」という話者の変わらぬ主張は is のままで表せる点も確認しておきましょう。
+
+**訂正** ④ another styles → other styles
+
+#### 問 296 ｜ 正解 **④**
+
+**完成文** I have four sons; one is a doctor, another is a teacher, and **the others** are students.
+**訳** 私には息子が4人いる。1人は医者、もう1人は教師で、残りの2人は学生だ。
+**POINT** 残り全部（複数）は the others
+
+全体が four sons「4人」と特定されているのがポイントです。one（1人目）、another（不特定のもう1人）と挙げていくと、残りは2人に確定します。「残り全部」は特定できるので the を付け、しかも2人（複数）なので複数形にして the others とします。④の other は、単独で主語になる代名詞用法がないうえ、「残りの特定の2人」を表せないため誤りです。整理すると、one → another →（残り全部・複数）the others という流れが定番パターンです。動詞が are である点も複数形 the others と一致します。
+
+**訂正** ④ other → the others
+
+#### 問 297 ｜ 正解 **④**
+
+**完成文** I have lost my cellular phone. I think I must buy **one** today.
+**訳** 携帯電話をなくしてしまった。今日、新しいのを買わなければと思う。
+**POINT** it は「そのもの」、one は「同じ種類の別の1つ」
+
+第1文は現在完了で「携帯をなくしてしまった（今も手元にない）」という意味です。すると④の it が誤りだと分かります。it は前に出た特定のものそのもの、つまり「なくしたその携帯」を指しますが、なくした本体を今日買うことはできません。買うのは「携帯電話という同種の別の1台」なので、a + 名詞 の代用である one（= a cellular phone）に直します。it と one の区別は問288・289でも扱った最重要ポイントで、「そのものなら it、同じ種類の別物なら one」と覚えましょう。
+
+**訂正** ④ it → one
+
+#### 問 298 ｜ 正解 **①**
+
+**完成文** **Most** students in Japanese high schools know at least one foreign language.
+**訳** 日本の高校のたいていの生徒は、少なくとも1つの外国語を知っている。
+**POINT** Almost は副詞なので名詞を直接修飾できない
+
+①の Almost が誤りです。almost は「ほとんど、もう少しで」という意味の副詞なので、students という名詞を直接修飾することはできません。「たいていの生徒」と言うには、形容詞として名詞を修飾できる Most を使って Most students とします。もし almost を残したいなら、Almost all students in Japanese high schools のように all を挟めば正しい文になります。問293で学んだ「Almost + 名詞は不可、Most + 名詞は可」がそのまま誤り探しの形で出題されたパターンです。②〜④に文法的な誤りはありません。
+
+**訂正** ① Almost → Most（Almost all students も可）
+
+
+## UNIT 5 形容詞
+
+#### 問 299 ｜ 正解 **2**
+
+**完成文** Mr. Arnold and his family moved to **a three-story house** in the suburbs last year.
+**訳** アーノルドさん一家は昨年、郊外の3階建ての家に引っ越した。
+**POINT** 「数詞＋名詞」がハイフンで結ばれて形容詞になるとき、名詞は単数形
+
+空所には moved to の目的語となる名詞のカタマリが入ります。「3階建ての家」のように「数詞＋名詞」をハイフンでつないで1つの形容詞（複合形容詞と呼びます）を作る場合、中の名詞は必ず単数形にするのがルールです。したがって three-stories ではなく three-story が正しい形です。さらに house は数えられる名詞の単数形なので、冠詞 a が必要です。「a＋three-story＋house」と、冠詞・複合形容詞・名詞の順に並べた 2 が正解です。
+
+**誤答チェック**
+- 1 a three-stories house：複合形容詞内の名詞 stories が複数形になっているため×
+- 3 three-stories house：stories が複数形である上に、単数名詞 house に冠詞がないため×
+- 4 three-story house：形容詞の形は正しいが、単数名詞 house に冠詞 a がないため×
+
+#### 問 300 ｜ 正解 **3**
+
+**完成文** The boy tends to be very **forgetful** of his teacher's warnings.
+**訳** その少年は先生の注意をすぐに忘れてしまいがちだ。
+**POINT** 紛らわしい形容詞の区別：forgetful「忘れっぽい」／forgettable「忘れられやすい」
+
+空所は be very (  ) of ～ の形で、of とセットで使える形容詞が入ります。be forgetful of ～ は「～を忘れがちだ・～に無頓着だ」という熟語的表現で、人の性質を表します。主語が The boy（人）で、「先生の警告を忘れがちだ」という文意にぴったり合うため 3 が正解です。-ful は「～の性質を持つ」、-able は「～されうる」という意味を作る接尾辞（単語の後ろに付く要素）で、同じ動詞 forget から派生していても意味がまったく違う点に注意しましょう。tend to do は「～する傾向がある」です。
+
+**誤答チェック**
+- 1 forgettable：「（物事が）忘れられやすい、印象に残らない」という意味で、人が主語の「忘れっぽい」には使えないため×
+- 2 unforgettable：「忘れられない、印象的な」という意味で文意が通らないため×
+- 4 forgetting：動詞の -ing 形であり、be very (  ) of の形容詞の位置に置いて「忘れっぽい」という性質を表す用法はないため×
+
+#### 問 301 ｜ 正解 **3**
+
+**完成文** The company requires employees to wear clean and **respectable** clothes at work.
+**訳** その会社は従業員に、職場では清潔できちんとした服装をするよう求めている。
+**POINT** respect の派生語の区別：respectable「ちゃんとした」／respective「それぞれの」
+
+空所は clean and (  ) clothes と、clean と並列で clothes を修飾する形容詞が入ります。respectable は「（人・服装・行いなどが）まともな、ちゃんとした、見苦しくない」という意味で、「清潔できちんとした服」という文意に合うため 3 が正解です。respect から派生した形容詞は複数あり、respectable「立派な・ちゃんとした」、respectful「敬意を示す（人の態度）」、respective「それぞれの」と意味が分かれます。入試頻出の区別なので、セットで覚えておきましょう。
+
+**誤答チェック**
+- 1 respecting：「～を尊重して」という分詞・前置詞的な用法で、服を修飾する形容詞にはならないため×
+- 2 respective：「それぞれの」という意味で、複数の対象に1つずつ対応する場面で使う語であり文意が通らないため×
+- 4 respected：「尊敬されている」という意味で人や機関に使う語であり、服の描写には不適切なため×
+
+#### 問 302 ｜ 正解 **4**
+
+**完成文** This local newspaper is **available** only in the Kansai region, so you can't buy it in Tokyo.
+**訳** この地方新聞は関西地方でしか手に入らないので、東京では買えない。
+**POINT** available は「入手できる・利用できる」を表す超頻出形容詞
+
+空所は This local newspaper is (  ) only in the Kansai region という補語の位置です。後半に「だから東京では買えない」とあるので、「関西でしか手に入らない」という意味になる形容詞を選びます。available は「（物が）入手できる、利用できる」「（人が）手が空いている」という意味の頻出形容詞で、be available in ～「～で手に入る」という形は商品や書籍の説明で非常によく使われます。文意が完全につながる 4 が正解です。
+
+**誤答チェック**
+- 1 active：「活動的な・活発な」で、新聞が「買える」という文意に合わないため×
+- 2 creative：「創造的な」で文意が通らないため×
+- 3 capable：「能力がある」という意味で、通例 be capable of ～ の形で人や組織に使い、文意にも合わないため×
+
+#### 問 303 ｜ 正解 **4**
+
+**完成文** It took more than two hours to get to the airport because **of the heavy traffic**.
+**訳** 交通量がひどく多かったので、空港に着くまで2時間以上かかった。
+**POINT** traffic は不可算名詞で、「交通量が多い」は heavy traffic
+
+「渋滞のせいで空港まで2時間以上かかった」という文です。まず traffic「交通（量）」は数えられない名詞（不可算名詞）なので、traffics と複数形にすることはできません。さらに「交通量が多い／少ない」は many/much ではなく heavy/light で表すのが決まった言い方（コロケーション＝語と語の相性）です。because of ～「～のせいで」という前置詞句を使い、because of the heavy traffic とした 4 が正解です。because の直後に名詞だけを続けることはできず、名詞を続けるなら because of が必要な点も確認しておきましょう。
+
+**誤答チェック**
+- 1 there were many traffics：traffic は不可算名詞なので複数形 traffics にできず、many も使えないため×
+- 2 of high traffic：交通量の多さは heavy で表すのが普通で、high traffic は標準的な言い方でないため×
+- 3 of the traffics：不可算名詞 traffic を複数形にしている時点で×
+
+#### 問 304 ｜ 正解 **2**
+
+**完成文** I didn't eat lunch since I had **little** money.
+**訳** お金がほとんどなかったので、私は昼食を食べなかった。
+**POINT** little＋不可算名詞＝「ほとんどない」（否定的）
+
+money は数えられない名詞（不可算名詞）なので、数えられる名詞に使う few / a few は使えません。残る little / a little の区別は、a が付くと「少しはある」(肯定的)、a が付かないと「ほとんどない」(否定的) です。この文は「昼食を食べなかった」理由を since 以下で述べているので、「お金がほとんどなかったから」という否定的な意味になる little が正解です。a little にすると「少しはお金があった」となり、食べなかった理由として不自然になります。few/little は「数か量か」と「a の有無」の2軸で判断するのがポイントです。
+
+**誤答チェック**
+- 1 a little：「少しはあった」という肯定的な意味になり、昼食を抜いた理由に合わないため×
+- 3 few：数えられる名詞の複数形に使う語で、不可算名詞 money には使えないため×
+- 4 a few：few と同様に可算名詞用であり、money に使えないため×
+
+#### 問 305 ｜ 正解 **4**
+
+**完成文** During our vacation in Hawaii, we saw quite **a few** whales.
+**訳** ハワイでの休暇中、私たちはかなりたくさんのクジラを見た。
+**POINT** quite a few＋複数名詞＝「かなり多くの」
+
+空所の直後に複数名詞 whales があり、直前に quite があることに注目します。quite a few ～ は「かなり多くの～」という意味の重要熟語で、few「ほとんどない」から連想される意味とは逆に、many に近い「多い」を表します。不可算名詞には quite a little「かなり多くの（量）」を使います。quite とセットで熟語を完成させられる 4 が正解です。「few なのに多い」という意外性から入試で狙われやすい表現なので、quite a few ≒ many と覚えてしまいましょう。
+
+**誤答チェック**
+- 1 a number：quite a number とするなら quite a number of whales と of が必要で、直接名詞を続けられないため×
+- 2 several：quite several という言い方は存在しないため×
+- 3 a lot：quite a lot なら quite a lot of whales と of が必要なため×
+
+#### 問 306 ｜ 正解 **4**
+
+**完成文** Everyone who becomes a doctor **takes** a course in human anatomy.
+**訳** 医師になる人は皆、人体解剖学の講座を受講する。
+**POINT** everyone は単数扱い。「講座を受ける」は take a course
+
+主語は Everyone who becomes a doctor で、who becomes a doctor は everyone を修飾する関係代名詞節です。everyone・everybody・each などは意味上「みんな」でも文法上は単数扱いなので、動詞には3人称単数の -s が必要です。また「講座・授業を受ける」は take a course という決まった言い方（コロケーション）を使います。単数形かつ take を用いた takes が正解です。関係詞節をカッコに入れて「Everyone ... (  ) a course」と主語と動詞の対応を見抜くのがコツです。
+
+**誤答チェック**
+- 1 studying：-ing 形では文の述語動詞になれないため×
+- 2 studies：単数形は正しいが、「講座を受講する」は study a course とは言わず take a course が正しいコロケーションのため×
+- 3 take：主語 everyone は単数扱いなので、3単現の -s がない take は使えないため×
+
+#### 問 307 ｜ 正解 **2**
+
+**完成文** Each of us **has** a room on the second floor at the hotel.
+**訳** 私たちはそれぞれ、そのホテルの2階に部屋を持っている。
+**POINT** each of＋複数（代）名詞は単数扱い
+
+主語は Each of us「私たちのそれぞれ」です。each は「一人ひとり」に注目する語なので、each of ～ の形でも文法上は単数扱いになり、動詞は3人称単数形にします。直後の us（複数）につられて have を選ばないよう注意しましょう。空所は文の述語動詞の位置なので、-ing 形や to 不定詞は入れられません。単数形の has が正解です。every・each・either・neither が主語に絡むときは単数扱い、というルールは問306の everyone とセットで押さえておきましょう。
+
+**誤答チェック**
+- 1 have：each of us は単数扱いなので複数形の have は不可のため×
+- 3 having：-ing 形は述語動詞になれないため×
+- 4 to have：to 不定詞も述語動詞になれないため×
+
+#### 問 308 ｜ 正解 **①**
+
+**完成文** We have a **nine-year-old** son in addition to two younger daughters.
+**訳** 私たちには、2人の妹（年下の娘）に加えて9歳の息子が1人いる。
+**POINT** 「数詞＋名詞＋形容詞」のハイフン複合形容詞では名詞は単数形
+
+「9歳の息子」のように、数詞と名詞をハイフンでつないで1つの形容詞を作る場合、中の名詞は単数形にするのがルールです（問299の three-story house と同じ原理です）。したがって nine-years-old ではなく nine-year-old が正しい形になります。He is nine years old. のように補語として使うときは years と複数形になるので、この違いが狙われます。「名詞の前に置く複合形容詞なら単数形、be動詞の後ろの述語なら複数形」と整理しておきましょう。②の in addition to ～「～に加えて」、④の younger は正しい用法です。
+
+**訂正** ① nine-years-old → nine-year-old
+
+#### 問 309 ｜ 正解 **①**
+
+**完成文** **Every boy and girl knows** that today's cities are quickly becoming much too crowded.
+**訳** 今日の都市があまりにも急速に過密になりつつあることを、少年少女は誰もが知っている。
+**POINT** every A and B は単数扱い
+
+every は「A も B もどの一人も」と一人ひとりを個別に指す語なので、every boy and girl のように and で2つの名詞が並んでいても、全体は単数扱いになります。したがって動詞は know ではなく3人称単数の knows が正しく、①が誤りです。each A and B も同様に単数扱いです。②以下は、that 節の中で today's cities（複数）に対して are が正しく対応しており、much too crowded の much は too crowded「あまりに混雑している」を強める副詞として正しい用法です。
+
+**訂正** ① Every boy and girl know → Every boy and girl knows
+
+#### 問 310 ｜ 正解 **③**
+
+**完成文** In order to improve efficiency, we must find a solution to each major **problem** in our school.
+**訳** 効率を上げるために、私たちは学校の主要な問題の一つひとつに解決策を見つけなければならない。
+**POINT** each の後ろの名詞は必ず単数形
+
+each は「それぞれの、一つひとつの」という意味で、一つずつを個別に指す語なので、直後の名詞は必ず単数形にします。each major problems と複数形になっている③が誤りで、each major problem が正しい形です。every の後ろも同様に単数形です。「意味は複数っぽいのに形は単数」という点で every/each は共通しており、本UNITの問306・307・309と同じ発想で解けます。①の in order to do「～するために」、②の find a solution to ～「～の解決策を見つける」（solution の後ろの前置詞は to）、④の in our school はいずれも正しい表現です。
+
+**訂正** ③ problems → problem
+
+
+## UNIT 6 副詞
+
+#### 問 311 ｜ 正解 **1**
+
+**完成文** Since I was a child, I've always wanted to study **abroad**.
+**訳** 子どものころから、私はずっと留学したいと思ってきました。
+**POINT** abroad は「外国で・外国へ」を1語で表す副詞（前置詞は不要）
+
+まず文の構造を確認すると、study という動詞のあとに「外国で」という場所の情報を置く形です。abroad は「外国で・外国へ」という意味をすでに含んだ副詞（動詞などを修飾する語）なので、前置詞（in や to など、名詞の前に置く語）を付けずにそのまま動詞の直後に置きます。日本語の「外国『へ』」「外国『で』」につられて to や in を補いたくなるところが最大の落とし穴です。study abroad（留学する）、go abroad（外国へ行く）はこのままの形で丸ごと覚えてしまいましょう。同じ仲間に home（家へ）、there（そこへ）などがあり、いずれも前置詞を付けません。
+
+**誤答チェック**
+- 2 for abroad：abroad は副詞であり前置詞 for の目的語になれないため×
+- 3 in abroad：「外国で」の意味は abroad 1語に含まれており in は不要のため×
+- 4 to abroad：「外国へ」の意味も abroad に含まれており to は不要のため×
+
+#### 問 312 ｜ 正解 **3**
+
+**完成文** Patricia was **as patient a teacher** as anyone could have had.
+**訳** パトリシアは、誰もが持ちえた中で一番と言えるほど辛抱強い先生でした。
+**POINT** as +形容詞+ a +名詞：as の後ろは〈形容詞→ a →名詞〉の語順
+
+文全体は as ~ as … の同等比較「…と同じくらい~」の形で、空所には「辛抱強い先生」という名詞のかたまりが入ります。通常なら a patient teacher の語順ですが、副詞 as は形容詞を直接修飾するため、as が形容詞 patient を引き寄せて〈as +形容詞+ a +名詞〉= as patient a teacher という特別な語順になります。冠詞 a が形容詞の後ろに回るのがポイントで、これは as のほか so / too / how でも起こる共通ルールです。文末の as anyone could have had は「誰が持ちえたどんな先生とも同じくらい」つまり「最高レベルに」という強調表現です。
+
+**誤答チェック**
+- 1 as patient teacher：可算名詞 teacher に必要な冠詞 a が抜けているため×
+- 2 as a patient teacher：as は形容詞を直接修飾する副詞なので、直後に冠詞 a は置けないため×
+- 4 as patient as teacher：as ~ as の2つ目の as は文末にすでにあり、二重になるうえ a も欠けるため×
+
+#### 問 313 ｜ 正解 **4**
+
+**完成文** Three months is **too short a** time to prepare for this project.
+**訳** 3か月というのは、このプロジェクトの準備をするにはあまりに短い時間です。
+**POINT** too +形容詞+ a +名詞：too の後ろも〈形容詞→ a →名詞〉の語順
+
+空所の後ろに名詞 time があり、「~するにはあまりに短い時間」という too ~ to … の構文だと見抜きます。副詞 too（あまりに~すぎる）は形容詞を直接修飾するため、名詞を伴うときは〈too +形容詞+ a +名詞〉の語順になり、too short a time が正解です。a too short time のように冠詞を先に置くことはできません。前問の as と同じく、as / so / too / how の後ろでは冠詞 a が形容詞の後ろに回る、とセットで覚えておくと整序問題でも迷いません。なお主語の Three months は「3か月という期間」を1つのまとまりと見て単数扱いし、動詞が is になっている点にも注目しておきましょう。
+
+**誤答チェック**
+- 1 a short too：too は形容詞 short の前に置く副詞であり、この語順は成立しないため×
+- 2 short too the：語順が完全に崩れており、the を使う理由もないため×
+- 3 the too short：too の後ろに冠詞+名詞を続ける形は the too short time でも不可のうえ、a が必要な文脈のため×
+
+#### 問 314 ｜ 正解 **3**
+
+**完成文** Last Sunday was **so beautiful a day** that we took a drive to the seashore.
+**訳** 先週の日曜日はとても天気のよい日だったので、私たちは海岸までドライブに出かけました。
+**POINT** so +形容詞+ a +名詞+ that …：so の後ろは〈形容詞→ a →名詞〉
+
+空所の後ろに that 節が続いているので、「とても~なので…」の so ~ that … 構文です。副詞 so は形容詞を直接修飾するため、名詞を伴う場合は〈so +形容詞+ a +名詞〉= so beautiful a day の語順になります。同じ内容は such を使って such a beautiful day とも表せますが、such は形容詞ではなく名詞のかたまり全体を修飾するので〈such + a +形容詞+名詞〉と冠詞の位置が変わります。この「so なら a が後ろ、such なら a が前」という対比が入試最頻出の狙いどころです。選択肢はこの2つの語順の混同を突いてきています。
+
+**誤答チェック**
+- 1 such beautiful a day：such は〈such + a +形容詞+名詞〉の語順で使うため×
+- 2 a such beautiful day：冠詞 a を such の前に出すことはできないため×
+- 4 a so beautiful day：so を使うなら〈so +形容詞+ a +名詞〉であり、a を先頭に置けないため×
+
+#### 問 315 ｜ 正解 **3**
+
+**完成文** It's amazing **how quickly time goes** when you're having fun.
+**訳** 楽しい時間を過ごしているときは、時間がたつのがなんと速いことか、驚くほどです。
+**POINT** 感嘆・間接疑問の how は〈how +副詞+ S + V〉の語順
+
+It's amazing のあとに「時間がどれほど速く過ぎるか」という節を続ける形です。程度を尋ねたり感嘆したりする how は、修飾する形容詞・副詞を直後に引き連れて節の先頭に立つため、〈how +副詞（quickly）+主語（time）+動詞（goes）〉の語順になります。quickly を文末に残した how time goes quickly は、この how の「形容詞・副詞を連れて前に出る」性質に反するので不可です。また節の中は疑問文の語順（倒置）にはせず、S + V の平叙文の語順を保つ点も重要です。how fast / how quickly + S + V はワンセットで処理しましょう。
+
+**誤答チェック**
+- 1 quickly how time goes：how は節の先頭に立つ語であり、quickly を how の前に出せないため×
+- 2 how time goes quickly：程度の how は副詞 quickly を直後に伴う必要があるため×
+- 4 how quickly goes time：節内は S + V の語順であり、goes time という倒置は不可のため×
+
+#### 問 316 ｜ 正解 **1**
+
+**完成文** Have you ever seen **such a beautiful** sight as this?
+**訳** これほど美しい景色を今までに見たことがありますか。
+**POINT** such + a +形容詞+名詞（+ as ~）：such は冠詞の前に置く
+
+空所の直後に名詞 sight があり、文末に as this（これほどの）が続いています。such ~ as … で「…のような~」という形を作れるので、〈such + a +形容詞+名詞〉の語順どおり such a beautiful sight が正解です。such は名詞のかたまり全体を外側から修飾する語なので、冠詞 a よりも前に置くのが鉄則です。一方 so や as を使う場合は so beautiful a sight / as beautiful a sight のように a が形容詞の後ろに回るため、選択肢2・4はいずれも a が抜けている時点でアウトだと判断できます。「such は a の前、so / as / too / how は a が後ろ」という対比をここで完全に固めておきましょう。
+
+**誤答チェック**
+- 2 as beautiful：as beautiful a sight なら可だが、冠詞 a が欠けているため×
+- 3 a so beautiful：so を使うなら so beautiful a の語順で、a を前に出せないため×
+- 4 so beautiful：so beautiful a sight なら可だが、冠詞 a が欠けているため×
+
+#### 問 317 ｜ 正解 **3**
+
+**完成文** Even though she wants to drive a car, Vanessa is not **old enough** to get a driver's license.
+**訳** 車を運転したいと思ってはいるものの、ヴァネッサは運転免許を取れる年齢に達していません。
+**POINT** enough は形容詞・副詞の「後ろ」に置く：形容詞+ enough + to do
+
+「免許を取るのに十分な年齢ではない」という内容で、〈形容詞+ enough + to do〉「~するのに十分…」の形を作ります。副詞 enough は very や too と違い、修飾する形容詞・副詞の後ろに置くという特殊な語順をとるため、old enough が正解です。enough old のように前に置くのは典型的な誤りで、この「enough は後置」というルールそのものが本問の狙いです。なお enough が名詞を修飾するときは enough sleep のように前に置けるので、「形容詞・副詞には後ろから、名詞には前から」と整理しておくと確実です。
+
+**誤答チェック**
+- 1 age old：age は名詞であり、old と並べても「十分な年齢」の意味を作れないため×
+- 2 enough old：enough は形容詞の後ろに置く副詞であり、前置は不可のため×
+- 4 older enough：enough to do の構文で比較級 older にする理由がないため×
+
+#### 問 318 ｜ 正解 **3**
+
+**完成文** They worked **very hard** to prepare for the piano competition.
+**訳** 彼らはピアノコンクールに備えて、とても懸命に練習しました。
+**POINT** hard は「懸命に」の副詞、hardly は「ほとんど~ない」の別の単語
+
+worked を修飾して「懸命に働いた（練習した）」とするには、副詞 hard を使います。hard は形容詞「難しい・熱心な」のほかに、同じ形のまま副詞「懸命に」としても使える語です。ここに -ly を付けた hardly は「懸命に」ではなく「ほとんど~ない」という準否定の副詞で、意味がまったく別物になる点が本問の核心です。They worked very hardly とすると「?」な英文になるどころか、hardly は very とも相性が悪く成立しません。同様の「-ly で意味が変わる副詞」は late（遅く）/ lately（最近）、near（近くに）/ nearly(ほとんど)などがあり、次問にもつながる頻出テーマです。
+
+**誤答チェック**
+- 1 very hardly：hardly は「ほとんど~ない」の意味で、「懸命に」の意味はないため×
+- 2 more hard：hard の比較級は harder であり、more hard とは言わないため×
+- 4 more hardly：hardly の意味が合わないうえ、比較級にする文脈でもないため×
+
+#### 問 319 ｜ 正解 **2**
+
+**完成文** Bob's job has been getting busier and busier, and he has not been getting enough sleep **lately**.
+**訳** ボブの仕事はますます忙しくなってきており、最近は十分な睡眠がとれていません。
+**POINT** lately は「最近」の副詞で、現在完了と相性がよい
+
+文末に置いて「最近」という時の意味を添える副詞を選びます。lately は「最近・近ごろ」を表す副詞で、has not been getting という現在完了進行形（過去から現在まで続く状況を表す形)と非常に相性がよく、これが正解です。もとの late は「遅く」という意味の副詞（形容詞も同形）で、-ly が付いた lately とは意味が別になる、前問 hard / hardly と同じパターンです。later は「あとで」、latter は「（二者のうち）後者の」という形容詞で、いずれも「最近」の意味はありません。late の派生語4つ(late / lately / later / latter)の意味の区別は頻出なので、ここでまとめて整理しておきましょう。
+
+**誤答チェック**
+- 1 late：「遅く」の意味であり、「最近」の意味では使えないため×
+- 3 later：「あとで・のちに」の意味で、現在までの状況を述べる本文に合わないため×
+- 4 latter：「後者の」という形容詞であり、文末で副詞的に使えないため×
+
+#### 問 320 ｜ 正解 **324156**
+
+**完成文** Last Sunday was **so beautiful a day that we** took a drive in the country.
+**訳** 先週の日曜日は天気がよかったので、田舎へドライブに出かけました。
+**POINT** so +形容詞+ a +名詞+ that S V：so ~ that 構文と冠詞の位置
+
+「とても~なので…」は so ~ that … の構文で表します。語群に so と a と that がそろっているので、〈so +形容詞+ a +名詞〉の語順を思い出し、so beautiful a day と組み立てます。副詞 so は形容詞 beautiful を直接修飾するため、冠詞 a が形容詞の後ろに回るのがポイントです（such なら such a beautiful day の順)。そのあとに that を置き、結果を表す節の主語 we を続ければ、took a drive in the country へ自然につながります。問314とまったく同じ知識を、今度は自分で並べて再現できるかを試す問題です。
+
+**組み立て**
+- 「とても~なので…」→ so ~ that S V の構文を選択
+- so beautiful a day（so の後ろは形容詞→ a →名詞の語順）
+- that we + took … と結果の節につなげる
+
+#### 問 321 ｜ 正解 **643521**
+
+**完成文** It **was such a hot day that** nobody wanted to go outside.
+**訳** とても暑い日だったので、誰も外に出たいと思いませんでした。
+**POINT** such + a +形容詞+名詞+ that S V：such は冠詞の前に置く
+
+主語 It に対してまず動詞 was を置き、「とても暑い日だったので…」を such ~ that … の構文で組み立てます。such は名詞のかたまり全体を修飾する語なので、〈such + a +形容詞+名詞〉= such a hot day の語順になり、冠詞 a は such の後ろ・形容詞 hot の前に置きます。最後に that を置けば、nobody wanted to go outside という結果の節につながります。前問の so beautiful a day と本問の such a hot day を並べて見比べ、「so は a が形容詞の後ろ、such は a が形容詞の前」という対比を体に染み込ませておきましょう。
+
+**組み立て**
+- It のあとに動詞 was を確定
+- such a hot day（such + a +形容詞+名詞の語順）
+- that + nobody wanted … と結果の節につなげる
+
+#### 問 322 ｜ 正解 **54132**
+
+**完成文** Bill is **rich enough to buy the car**.
+**訳** ビルはその車が買えるほど金持ちです。
+**POINT** 形容詞+ enough + to do：「~するのに十分…」
+
+「~できるほど…だ」は〈形容詞+ enough + to do〉で表します。まず補語となる形容詞 rich を置き、その後ろに副詞 enough を続けます。enough は修飾する形容詞の後ろに置くのが鉄則で、enough rich という語順は不可です（問317と同じルール)。そのあとに to buy と目的語 the car を続ければ、「その車を買うのに十分なほど金持ちだ」= rich enough to buy the car が完成します。同じ内容は so ~ that … でも書き換えられる（so rich that he can buy the car）ことも押さえておくと、和文英訳や書き換え問題で役立ちます。
+
+**組み立て**
+- Bill is の補語に形容詞 rich を置く
+- rich enough（enough は形容詞の後ろ）
+- to buy the car と不定詞を続ける
+
+#### 問 323 ｜ 正解 **51243**
+
+**完成文** She is **too nice a girl to do** a thing like that.
+**訳** 彼女はとてもいい娘なので、そんなことはしません。
+**POINT** too +形容詞+ a +名詞+ to do：「あまりに…なので~しない」
+
+「とても…だから~しない」は too ~ to do 構文「あまりに…なので~できない・~しない」で表せます。語群に too と a があるので、〈too +形容詞+ a +名詞〉の語順を適用し、too nice a girl と組み立てます。副詞 too は形容詞 nice を直接修飾するため、冠詞 a が形容詞の後ろに回る点は問313とまったく同じです。そのあとに to do を続け、文末の a thing like that（そんなこと）につなげれば完成です。too ~ to do は形の上では否定語がなくても「~しない」という否定の意味を含む、という点も訳すときの重要ポイントです。
+
+**組み立て**
+- 「とても…だから~しない」→ too ~ to do 構文を選択
+- too nice a girl（too の後ろは形容詞→ a →名詞の語順）
+- to do + a thing like that につなげる
+
+
+# Chapter 5 文型
+
+
+## UNIT 1 第1〜第3文型の語法
+
+#### 問 324 ｜ 正解 **3**
+
+**完成文** Because she was tired, Jane **lay** down to take a nap.
+**訳** 疲れていたので、ジェーンは昼寝をするために横になった。
+**POINT** lie（横になる）の過去形は lay
+
+空所の後ろに目的語がなく、down という副詞が続いているだけなので、ここに入るのは「横になる」という意味の自動詞（目的語をとらない動詞）lie です。文全体は過去の話なので、lie の過去形 lay を選びます。紛らわしいのは、lie – lay – lain（横になる／自動詞）、lay – laid – laid（〜を置く／他動詞）、lie – lied – lied（嘘をつく／自動詞）の3系列がある点です。「lie の過去形が、他動詞 lay の原形と同じ形」というのが最大のひっかけポイントなので、活用表ごとセットで覚えてしまいましょう。
+
+**誤答チェック**
+- 1 laid：他動詞 lay（〜を置く）の過去形。後ろに目的語がないため×
+- 2 lain：lie の過去分詞。had などの助動詞なしでは使えないため×
+- 4 lied：lie（嘘をつく）の過去形。「横になる」の意味にならないため×
+
+#### 問 325 ｜ 正解 **1**
+
+**完成文** My father had kindly **laid** the book on my desk before I came home yesterday.
+**訳** 昨日私が帰宅する前に、父が親切にもその本を机の上に置いておいてくれた。
+**POINT** lay（〜を置く）の過去分詞は laid
+
+空所の直後に the book という目的語があることに注目します。目的語をとるのは他動詞 lay（〜を置く）で、活用は lay – laid – laid です。さらに空所の前に had があるので、過去完了 had laid の形を作る過去分詞 laid が正解です。before I came home（私が帰宅する前に）という過去の基準時より前に「置いた」動作が完了していたことを、過去完了が表しています。問324と同じく、後ろに目的語があるかないかで lie と lay を見分けるのが鉄則です。
+
+**誤答チェック**
+- 2 lain：自動詞 lie（横になる）の過去分詞。目的語 the book をとれないため×
+- 3 lay：lay の原形（または lie の過去形）。had の後ろは過去分詞が必要なため×
+- 4 lied：lie（嘘をつく）の過去形・過去分詞。意味が通らず、目的語もとれないため×
+
+#### 問 326 ｜ 正解 **3**
+
+**完成文** I grew **up** in Fukushima and came here five years ago.
+**訳** 私は福島で育ち、5年前にここへ来ました。
+**POINT** 「育つ」は grow up（自動詞＋副詞）
+
+「福島で育って、5年前にここに来た」という文脈から、「育つ」を表す grow up を完成させます。grow up は〈自動詞＋副詞〉の句動詞で、「（人が）成長する・大人になる」という意味です。過去形 grew up の後ろに場所を表す in Fukushima が続く、ごく典型的な第1文型（S＋V）の文です。なお、grow 単独だと「（植物などが）育つ」「〜を栽培する」の意味が中心になるので、「人が育つ」は grow up とセットで覚えましょう。
+
+**誤答チェック**
+- 1 by：grow by では「育つ」の意味にならないため×
+- 2 to：grow to do（〜するようになる）の形はあるが、直後が in Fukushima で不成立のため×
+- 4 over：grow over という熟語はここでは成立しないため×
+
+#### 問 327 ｜ 正解 **1**
+
+**完成文** Although born in New York, his son was **brought up** in California.
+**訳** ニューヨークで生まれたものの、彼の息子はカリフォルニアで育てられた。
+**POINT** 「育てられる」は be brought up（bring up の受動態）
+
+空所の前に was があるので、受動態「育てられた」を作れる表現を選びます。「〜を育てる」は他動詞句 bring up で、受動態にすると be brought up（育てられる）となります。一方、問326で見た grow up は自動詞なので、そもそも受動態にできません。「grow up＝自ら育つ（能動のみ）」「bring up＝育てる（受動態で be brought up が可能）」という対比がこの問題の核心です。前半の Although born in New York は Although he was born in New York の he was が省略された形です。
+
+**誤答チェック**
+- 2 developed：develop は「発展させる」で、人を「育てる」の意味では使わないため×
+- 3 grown up：grow up は自動詞で受動態にできないため×
+- 4 matured：mature は「成熟する」という自動詞が中心で、was matured の形は不自然なため×
+
+#### 問 328 ｜ 正解 **1**
+
+**完成文** Let's discuss **the problem**.
+**訳** その問題について話し合いましょう。
+**POINT** discuss は他動詞。discuss about は×
+
+discuss は「〜について話し合う」という意味の他動詞なので、前置詞を挟まず直接目的語を続けます。日本語訳に「〜について」とあるため、つい about を入れたくなりますが、discuss about は誤りです。これは「他動詞なのに前置詞を付けてしまう」典型的なミスとして入試で繰り返し狙われます。同じ仲間に marry（〜と結婚する）、reach（〜に到着する）、approach（〜に近づく）などがあり、このUNITでまとめて出題されています。「discuss = talk about」と変換して覚えると、about が不要な理由も腹落ちしやすいでしょう。
+
+**誤答チェック**
+- 2 of the problem：discuss は前置詞 of を伴わないため×
+- 3 to the problem：discuss は前置詞 to を伴わないため×
+- 4 about the problem：discuss 自体に「〜について」の意味が含まれ、about は不要なため×
+
+#### 問 329 ｜ 正解 **1**
+
+**完成文** John **married** Nancy last year.
+**訳** ジョンは昨年ナンシーと結婚した。
+**POINT** marry は他動詞。marry with は×
+
+marry は「〜と結婚する」という意味の他動詞で、前置詞なしで直接目的語をとります。日本語の「〜と」につられて with を付けると誤りになる、discuss と並ぶ頻出パターンです。marry A で「Aと結婚する」、受動態を使った be married to A（Aと結婚している）、get married to A（Aと結婚する）も正しい形ですが、いずれも前置詞は to であって with ではない点に注意してください。本問は last year という過去の一時点の動作なので、単純に married Nancy とするのが最も自然です。
+
+**誤答チェック**
+- 2 married with：marry は他動詞で前置詞不要のため×
+- 3 married to：married to は be married to / get married to の形で使うもので、動詞 marry の直後に to は置けないため×
+- 4 got married with：get married の後の前置詞は to であり、with は誤りのため×
+
+#### 問 330 ｜ 正解 **3**
+
+**完成文** In order to **reach** the village, hikers need to be prepared for a narrow and rocky path.
+**訳** その村にたどり着くには、ハイカーは狭くて岩だらけの道に備えておく必要がある。
+**POINT** reach は他動詞。arrive at / get to との言い換えに注意
+
+空所の直後に the village という目的語が前置詞なしで続いているので、他動詞を選びます。「〜に到着する」を1語で表せる他動詞は reach です。同じ意味でも arrive は自動詞なので arrive at [in] the village、get も get to the village と前置詞が必要になります。つまり「reach＝arrive at＝get to」という言い換えセットのうち、前置詞なしで使えるのは reach だけ、というのが着眼点です。到着系の動詞は「他動詞か自動詞か」を軸に整理しておきましょう。
+
+**誤答チェック**
+- 1 arrive：自動詞なので arrive at the village と前置詞が必要なため×
+- 2 get：get to the village と to が必要なため×
+- 4 return：自動詞で return to the village と to が必要なうえ、「戻る」では文意にも合わないため×
+
+#### 問 331 ｜ 正解 **3**
+
+**完成文** There was a young girl **walking** alone on the road.
+**訳** 道を1人で歩いている少女がいた。
+**POINT** There is S doing（〜している S がいる）
+
+There was a young girl までで「1人の少女がいた」という文がすでに完成しています。その後ろに動詞の要素を続けるには、a young girl を修飾する分詞（動詞の -ing 形や -ed 形で形容詞の働きをするもの）を使い、There is S doing「〜している S がいる」の形にします。少女が「歩いている」という能動・進行の関係なので、現在分詞 walking が正解です。was walking を選ぶと1つの文に述語動詞が2つ（was と was walking）ある形になってしまう、という点が見抜きどころです。
+
+**誤答チェック**
+- 1 was walking：There was ですでに述語動詞があり、動詞を二重に置くことになるため×
+- 2 to walk：There is S to do は「〜すべき S がある」という別の意味合いになり、ここでは不自然なため×
+- 4 walked：過去分詞は受動の意味になり、「少女が歩かれる」となって不成立のため×
+
+#### 問 332 ｜ 正解 **2**
+
+**完成文** I do exercises to stay **healthy**.
+**訳** 私は健康を保つために運動をしています。
+**POINT** stay ＋ 形容詞（〜のままでいる）
+
+stay は「〜のままでいる」という意味では第2文型（S＋V＋C）の動詞で、補語 C には形容詞がきます。「I（S）＝ healthy（C）」の関係が成り立っていることを確認しましょう。日本語の「健康に保つ」の「〜に」につられて副詞 healthily を選ぶのが典型的なミスですが、副詞は補語になれません。stay のほかにも keep、remain など「〜のままでいる」系の動詞は後ろに形容詞をとる、とグループで覚えておくと応用が利きます。
+
+**誤答チェック**
+- 1 health：名詞では「私＝健康（という概念）」となり意味が通らないため×
+- 3 healthily：副詞は補語になれないため×
+- 4 a health：health は数えられない名詞で a を付けられず、名詞自体も補語として不適なため×
+
+#### 問 333 ｜ 正解 **1**
+
+**完成文** His voice sounded **strange** on the phone.
+**訳** 電話越しの彼の声は奇妙に聞こえた。
+**POINT** sound ＋ 形容詞（〜に聞こえる）
+
+sound は「〜に聞こえる」という意味の第2文型の動詞で、補語には形容詞をとります。His voice（S）＝ strange（C）という関係です。「奇妙に聞こえる」という日本語訳から副詞 strangely を選びたくなりますが、五感を表す動詞 look（〜に見える）、sound（〜に聞こえる）、smell（〜のにおいがする）、taste（〜の味がする）、feel（〜の感じがする）の後ろは形容詞、というのが大原則です。訳の「〜に」に惑わされず、SVC の構造で判断するのがポイントです。
+
+**誤答チェック**
+- 2 strangely：副詞は sound の補語になれないため×
+- 3 strangeness：名詞では「声＝奇妙さ」となり不自然なため×
+- 4 to strange：sound to do という形はなく、to の後に形容詞も置けないため×
+
+#### 問 334 ｜ 正解 **①**
+
+**完成文** I could **raise my awareness** about animal abuse in Japan and many other countries as a result of your wonderful research.
+**訳** あなたの素晴らしい研究のおかげで、私は日本や他の多くの国での動物虐待についての意識を高めることができました。
+**POINT** rise（自動詞）と raise（他動詞）の区別
+
+①の rise の直後に my awareness という目的語が続いている点に注目します。rise は「上がる」という自動詞（rise – rose – risen）で目的語をとれないため、ここでは「〜を上げる・高める」という他動詞 raise（raise – raised – raised）を使わなければなりません。raise my awareness about ...で「〜についての意識を高める」という意味になります。lie / lay の区別と同じく、「後ろに目的語があれば raise、なければ rise」という形で機械的に判定できるようにしておきましょう。
+
+**訂正** ① rise my awareness → raise my awareness
+
+#### 問 335 ｜ 正解 **③**
+
+**完成文** When is the best time to **approach** my employer about an increase in salary?
+**訳** 昇給について雇い主に話を持ちかけるのに最適な時期はいつでしょうか。
+**POINT** approach は他動詞。approach to は×
+
+approach は「〜に近づく・〜に話を持ちかける」という意味の他動詞で、前置詞なしで直接目的語をとります。③の approach to my employer は、日本語の「〜に近づく」の「〜に」につられて to を付けてしまった誤りで、正しくは approach my employer です。discuss（問328）、marry（問329）、reach（問330）と同じ「余計な前置詞を付けやすい他動詞」の代表格としてセットで押さえておきましょう。なお④の an increase in salary の in は「〜における増加」を表す正しい前置詞です。
+
+**訂正** ③ approach to → approach
+
+#### 問 336 ｜ 正解 **②**
+
+**完成文** I really like to **enjoy myself with** my friends at the weekend when we can get together and relax.
+**訳** 週末に友達と集まってくつろげるとき、一緒に楽しく過ごすのが大好きです。
+**POINT** enjoy は他動詞。目的語がなければ enjoy oneself
+
+enjoy は「〜を楽しむ」という他動詞で、必ず目的語が必要です。②の enjoy with my friends では enjoy の目的語がないため誤りで、「楽しく過ごす」と言いたいときは再帰代名詞（-self の形の代名詞）を使って enjoy oneself とします。ここでは主語が I なので enjoy myself with my friends（友達と楽しく過ごす）が正しい形です。enjoy の後ろには名詞のほか動名詞（enjoy doing）もきますが、いずれにせよ「目的語なしの enjoy は不可」と覚えておきましょう。at the weekend はイギリス英語で「週末に」を表す正しい表現です。
+
+**訂正** ② enjoy with → enjoy myself with
+
+#### 問 337 ｜ 正解 **③**
+
+**完成文** Although water is commonly used to keep our bodies clean, there **are** different techniques and attitudes toward bathing.
+**訳** 水は体を清潔に保つために広く使われているが、入浴に対する方法や考え方はさまざまである。
+**POINT** There is / are の動詞は後ろの名詞に一致させる
+
+There is / are の構文では、be動詞の形は直後に続く名詞（意味上の主語)に合わせます。③の後ろは different techniques and attitudes という複数名詞なので、is ではなく are が正しい形です。there という形式的な語に引きずられて単数の is を置いてしまうのが典型的なミスで、error-id 問題でも頻出です。①の keep our bodies clean は keep O C（OをCに保つ）の正しい形、④の toward bathing も「入浴に対する」を表す自然な表現なので、数の一致に的を絞って③を選びます。
+
+**訂正** ③ is → are
+
+
+## UNIT 2 第4文型の語法
+
+#### 問 338 ｜ 正解 **2**
+
+**完成文** He **gave** his sister a postcard and a stamp.
+**訳** 彼は妹にはがきと切手をあげた。
+
+**POINT** give A B（第4文型）＝「AにBを与える」
+
+空所の後ろに his sister（人）と a postcard and a stamp（物）という2つの名詞が並んでいることに注目しましょう。これは「人＋物」の順で目的語を2つとる第4文型（SVOO）の形です。give はこの型の代表的な動詞で、give A B で「AにBを与える」となります。主語 He は三人称単数ですが、文全体が過去の話なので過去形 gave を選べば数の心配も不要です。「動詞の後ろに名詞が2つ→第4文型を疑う」が着眼点です。
+
+**誤答チェック**
+- 1 was given：受動態にすると「彼が与えられた」となり、直後に his sister a postcard と目的語を2つ続けられないため×
+- 3 give：主語が三人称単数の He なので、現在形なら gives が必要。原形のままでは置けないため×
+- 4 has given of：give A B に前置詞 of は不要。has given his sister... なら可だが of が余分なため×
+
+#### 問 339 ｜ 正解 **1**
+
+**完成文** I bought some beautiful flowers **for** my mother yesterday.
+**訳** 私は昨日、母にきれいな花を買った。
+
+**POINT** buy A for B ＝「BのためにAを買う」（第3文型への書き換えは for）
+
+この文は buy＋物＋前置詞＋人 という第3文型の形です。第4文型 buy B A（＝I bought my mother some flowers）を第3文型に書き換えるとき、動詞によって使う前置詞が異なります。give や send のように「相手に届く」ことが前提の動詞は to を使いますが、buy・make・cook のように「相手のためにしてあげる」タイプの動詞は for を使います。花を買う行為は母がいなくても成立し、「母のために」という恩恵の意味が中心なので for が正解です。「to 型か for 型か」は動詞ごとに整理して覚えましょう。
+
+**誤答チェック**
+- 2 to：to を使うのは give / send / show など「相手に届ける」タイプの動詞。buy は for 型のため×
+- 3 of：of を使うのは ask A of B などごく一部の表現に限られ、buy には使えないため×
+- 4 by：by は「〜によって」（行為者・手段）を表し、「母のために買う」という意味にならないため×
+
+#### 問 340 ｜ 正解 **2**
+
+**完成文** May I ask **you a question**?
+**訳** ひとつ質問してもよろしいですか。
+
+**POINT** ask A B ＝「AにBを尋ねる」（人が先、物が後）
+
+ask は第4文型をとる動詞で、ask＋人＋物 の語順で「人に物を尋ねる」を表します。したがって ask you a question「あなたに質問をする」の順になる2が正解です。第4文型では必ず「人（間接目的語）→物（直接目的語）」の順に並ぶことを確認しましょう。なお、第3文型に書き換える場合、ask は特殊で ask a question of you のように of を使いますが、この語順は選択肢にありません。「ask は SVOO なら人が先、書き換えなら of」とセットで覚えるのがポイントです。
+
+**誤答チェック**
+- 1 a question you：「物→人」の順は第4文型の語順として誤り。前置詞もないため×
+- 3 you of a question：of を使うなら ask a question of you の語順。人＋of＋物 の並びは存在しないため×
+- 4 a question on you：ask の書き換えに使う前置詞は of であり、on は使えないため×
+
+#### 問 341 ｜ 正解 **4**
+
+**完成文** A change of air will **do** her good.
+**訳** 転地（環境を変えること）は彼女のためになるだろう。
+
+**POINT** do A good ＝「Aのためになる」
+
+空所の後ろが her（人）＋good（名詞「利益・ため」）という2つの目的語なので、第4文型の熟語表現を考えます。do A good で「Aに利益を与える、Aのためになる」という決まり文句で、反対の意味は do A harm「Aに害を与える」です。ここでの good は形容詞「良い」ではなく名詞「利益」である点に注意しましょう。主語 A change of air は「空気（環境）の変化＝転地」という意味で、「環境を変えることは彼女の健康に良いだろう」という文意にぴったり合います。do A good / do A harm / do A a favor は「第4文型をとる do の熟語」としてまとめて覚えてください。
+
+**誤答チェック**
+- 1 effect：effect は名詞「効果」が基本で、動詞でも「（変化など）を生じさせる」の意。effect A good という語法はないため×
+- 2 give：give her good とは言えない（give を使うなら give her a benefit などの名詞が必要）ため×
+- 3 allow：allow は allow A to do「Aが〜するのを許す」の形が基本で、allow her good という語法はないため×
+
+#### 問 342 ｜ 正解 **3**
+
+**完成文** Could you **do** me a favor and take out the garbage?
+**訳** お願いがあるんだけど、ゴミを出してくれない?
+
+**POINT** do A a favor ＝「Aの頼みを聞いてあげる」
+
+favor は「親切な行為、頼みごと」という意味の名詞で、do A a favor で「Aに親切な行為をしてあげる＝Aの頼みを聞く」という第4文型の熟語になります。Could you do me a favor? は「お願いを聞いてもらえますか」という依頼の定番フレーズで、ここでは and 以下で頼みの内容（ゴミ出し）が続いています。前問の do A good と同様、「do＋人＋名詞」の第4文型パターンとしてセットで押さえましょう。favor と組む動詞は do と決まっており、他の動詞では置き換えられないのが着眼点です。
+
+**誤答チェック**
+- 1 call：call me a favor という表現はない（call A B は「AをBと呼ぶ」の第5文型）ため×
+- 2 carry：carry は「運ぶ」で、favor と結びつく語法がないため×
+- 4 take：take a favor という言い方はなく、「頼みを聞く」は必ず do a favor と表すため×
+
+#### 問 343 ｜ 正解 **3**
+
+**完成文** It **took** him ten minutes to solve the problem.
+**訳** 彼がその問題を解くのに10分かかった。
+
+**POINT** It takes A 時間 to do ＝「Aが〜するのに（時間が）かかる」
+
+主語が It で、後ろに him（人）＋ten minutes（時間）＋to 不定詞と続く形を見たら、It takes A 時間 to do「Aが〜するのに…の時間がかかる」の構文だと見抜きましょう。この It は to solve the problem を指す形式主語的な働きをしており、take が「（時間を）必要とする」という意味で第4文型をつくっています。過去の出来事なので過去形 took が入ります。「時間がかかる」は take、「お金がかかる」は cost、と対で整理しておくと次の問題にもつながります。
+
+**誤答チェック**
+- 1 had：have には「It ＋ have ＋人＋時間＋to do」で時間の経過を表す用法がないため×
+- 2 went：go は自動詞で目的語を2つとれず、この構文では使えないため×
+- 4 came：come も自動詞であり、「時間がかかる」の意味は表せないため×
+
+#### 問 344 ｜ 正解 **4**
+
+**完成文** The damage from the disaster will **cost** us thousands of dollars.
+**訳** その災害による損害で、私たちは何千ドルも払うことになるだろう。
+
+**POINT** cost A B ＝「AにB（お金・犠牲）を負担させる」
+
+空所の後ろに us（人）＋thousands of dollars（金額）が並ぶ第4文型で、「人にお金を払わせる、費用がかかる」を表す動詞は cost です。cost A B で「AにBの費用を負わせる」となり、主語には物・事柄（ここでは災害の損害）がきます。前問の take（時間がかかる）と cost（お金がかかる）は、どちらも「物・事」を主語にとる第4文型としてペアで覚えましょう。「人が金を使う」なら spend ですが、主語の違い（spend は人が主語）に注意するのが着眼点です。
+
+**誤答チェック**
+- 1 charge：charge A B「AにB（料金）を請求する」は店や業者など「人」が主語になる動詞で、損害を主語にはできないため×
+- 2 spend：spend は「人 spend お金 on 物」の形で使い、物・事を主語にした第4文型はつくれないため×
+- 3 fare：fare は名詞「運賃」が基本で、「費用を負わせる」という他動詞の用法はないため×
+
+#### 問 345 ｜ 正解 **1**
+
+**完成文** I **owe** him more money than I'll ever be able to repay.
+**訳** 私は彼に、とても返しきれないほど多くのお金を借りている。
+
+**POINT** owe A B ＝「AにB（お金・恩義）を借りている、負っている」
+
+空所の後ろが him（人）＋more money（物）の第4文型で、文末に repay「返済する」があることから、「彼にお金を借りている」という意味だと分かります。owe A B は「AにBを借りている、AにBの恩がある」という状態を表す動詞で、owe him more money than...「彼に〜しきれないほどのお金を借りている」となる1が正解です。紛らわしい borrow は「（一時的に）借りる」という動作を表し、borrow money from A のように from を使うため、人を直接目的語に置く第4文型はつくれません。「owe＝借りている状態（SVOO可）、borrow＝借りる動作（from型）」の区別が着眼点です。
+
+**誤答チェック**
+- 2 borrow：borrow A from B「BからAを借りる」の形をとり、borrow him money という第4文型は不可のため×
+- 3 lend：lend A B は「AにBを貸す」。文意が「返済する（repay）」と矛盾する（貸した側は返済しない）ため×
+- 4 own：own は「所有する」で目的語は1つ。own him money とは言えず、owe との綴りの混同を狙ったひっかけのため×
+
+#### 問 346 ｜ 正解 **425136**
+
+**完成文** This **dictionary shows you how to write** letters in English using samples.
+**訳** この辞書では、英語の手紙の書き方が実例で示されています。
+
+**POINT** show A B の B に how to do（疑問詞＋to 不定詞）を置く形
+
+show A B「AにBを示す」の第4文型を組み立てる問題です。まず文頭の This に④dictionary をつなげて主語 This dictionary をつくり、動詞②shows を続けます。次に「人」の⑤you を置き、「物」にあたる部分には①how＋③to＋⑥write「書き方」という疑問詞＋to 不定詞のカタマリを置きます。日本語は「辞書で示されています」と受け身調ですが、英語では「辞書が示してくれる」と無生物を主語にした能動態で表す点にも注目しましょう。第4文型の直接目的語には、名詞だけでなく how to do のような句も置けることを押さえてください。
+
+**組み立て** This に dictionary を続けて主語を確定 → shows you（show＋人）→ how to write（「書き方」＝疑問詞＋to 不定詞）を「物」の位置に置く
+
+#### 問 347 ｜ 正解 **421356**
+
+**完成文** May **I ask a favor of you**?
+**訳** お願いしたいことがあるのですが。
+
+**POINT** ask a favor of A ＝「Aにお願いをする」（ask の書き換えは of）
+
+「Aに頼みごとをする」は第4文型なら ask A a favor、第3文型に書き換えると ask a favor of A となります。この問題では語群に前置詞⑤of が入っているので、第3文型の語順で組み立てると判断します。May の後ろに主語④I、動詞②ask を置き、目的語①a③favor、最後に⑤of⑥you を続ければ May I ask a favor of you?「お願いを聞いていただけますか」という丁寧な依頼文が完成します。give 型の to、buy 型の for に対し、ask だけは of を使うという例外がまさに問われているので、確実に覚えましょう。
+
+**組み立て** May I ask と疑問文の骨格を確定 → 語群に of があるので第3文型と判断 → a favor of you（ask A of B ではなく ask＋物＋of＋人）
+
+#### 問 348 ｜ 正解 **42516738**
+
+**完成文** It **took me many years to become a professional** pilot.
+**訳** 私はプロのパイロットになるのに、何年もかかりました。
+
+**POINT** It takes A 時間 to do ＝「Aが〜するのに（時間が）かかる」
+
+問343で学んだ It takes A 時間 to do の構文を、自分で組み立てる問題です。文頭の It を見たら、この形式主語の構文を予想して④took を直後に置き、人の②me、時間の⑤many①years と続けます。そのあとに「〜するのに」を表す⑥to⑦become を置き、become の補語として③a➇professional をつなげて、文末の pilot に接続すれば完成です。「It＋take＋人＋時間＋to do」という語順の型を丸ごと使えるようにしておくことが、整序問題攻略の近道です。
+
+**組み立て** It took me で「かかった」の骨格を確定 → many years（時間）→ to become a professional（to 不定詞）→ 文末の pilot へ接続
+
+#### 問 349 ｜ 正解 **6472513**
+
+**完成文** Taro's phone **call saved me the trouble of visiting** him.
+**訳** 太郎から電話があったので、訪問しないですみました。
+
+**POINT** save A the trouble of doing ＝「Aが〜する手間を省く」
+
+save には「AのB（手間・時間など）を省いてあげる」という第4文型の用法があります。まず文頭の Taro's phone に⑥call をつなげて主語 Taro's phone call「太郎からの電話」を完成させ、動詞④saved、人の⑦me を続けます。そして「手間」にあたる②the⑤trouble を置き、①of＋③visiting（動名詞）で「訪問するという手間」と説明を加え、文末の him に接続します。日本語の「〜しないですんだ」を、英語では「電話が私に手間を省いてくれた」と無生物主語で表現する発想の転換が、この問題の最大のポイントです。
+
+**組み立て** Taro's phone call で主語を確定 → saved me（save＋人）→ the trouble of visiting（save A the trouble of doing の型）→ 文末の him へ接続
+
+
+## UNIT 3 第5文型の語法(1)
+
+#### 問 350 ｜ 正解 **1**
+
+**完成文** I'll have my son **carry** the luggage for you.
+**訳** 息子にあなたの荷物を運ばせましょう。
+**POINT** 使役動詞 have は「have＋O＋原形」
+
+空所の前に have my son という「使役動詞＋目的語」の形があります。使役動詞（「〜させる」を表す make / have / let）は、目的語のあとに to のつかない原形不定詞（動詞の原形）を置くのがルールです。ここでは「息子が荷物を運ぶ」という能動の関係が成り立つので、原形の carry が正解です。have＋O＋原形は「（当然してもらえる立場の人に）〜してもらう・〜させる」というニュアンスで使われます。着眼点は「使役動詞を見たら、O とのあとの動詞の形（原形か過去分詞か）をチェックする」ことです。
+
+**誤答チェック**
+- 2 carries：三単現の形は述語動詞の位置にしか置けず、補語の位置には使えないため×
+- 3 carried：過去分詞だと「息子が運ばれる」という受動の関係になり意味が通らないため×
+- 4 to carry：have は to 不定詞を取らない（get＋O＋to do なら可）ため×
+
+#### 問 351 ｜ 正解 **2**
+
+**完成文** We're having our car **repaired** this week.
+**訳** 私たちは今週、車を修理してもらうことになっている。
+**POINT** have＋O＋過去分詞「O を〜してもらう」
+
+have＋O のあとに動詞を置くとき、O と動詞の意味関係を確認するのが鉄則です。原形なら「O が〜する」（能動）、過去分詞なら「O が〜される」（受動）の関係になります。ここでは目的語が our car で、「車は（誰かによって）修理される」という受動の関係ですから、過去分詞 repaired が正解です。have＋O＋過去分詞は「O を〜してもらう」（依頼）や「O を〜される」（被害）を表す頻出パターンで、車・髪・時計など「モノ」が目的語のときは過去分詞になることがほとんどです。
+
+**誤答チェック**
+- 1 repair：原形だと「車が修理する」という能動関係になり意味が通らないため×
+- 3 repairing：現在分詞だと「車が修理している最中」という能動の意味になるため×
+- 4 to repair：have は補語に to 不定詞を取らないため×
+
+#### 問 352 ｜ 正解 **3**
+
+**完成文** Paul can **make** himself understood in five languages.
+**訳** ポールは5か国語で自分の意思を伝えることができる。
+**POINT** make oneself understood「自分の言うことを理解してもらう」
+
+空所のあとが himself understood という「目的語＋過去分詞」の形になっている点に注目します。「自分自身が（相手に）理解される」という受動の関係を作れるのは、使役動詞 make を使った make oneself understood（自分の言うことをわかってもらう＝意思を通じさせる）という定型表現です。「〜語で話が通じる」と言いたいときの決まり文句として、このまま覚えてしまいましょう。同じ型の make oneself heard（自分の声を届かせる）もあわせて押さえておくと得点源になります。
+
+**誤答チェック**
+- 1 cause：cause は「cause＋O＋to do」の形を取り、過去分詞を補語に取る用法がないため×
+- 2 give：give は「give＋人＋物」の第4文型が基本で、O＋過去分詞の形を取らないため×
+- 4 try：try は try to do の形で使い、第5文型を作らないため×
+
+#### 問 353 ｜ 正解 **1**
+
+**完成文** I'm not going to let them **take** this government.
+**訳** 彼らにこの政府を乗っ取らせるつもりはない。
+**POINT** 使役動詞 let は「let＋O＋原形」
+
+let them (  ) という「使役動詞 let＋目的語」の形です。let は make / have と同じ使役動詞の仲間で、目的語のあとには必ず原形不定詞を置きます。let＋O＋原形は「O が〜するのを許す・〜させておく」という「許可・容認」の意味です。ここでは「彼らが政府を奪う」という能動の関係なので、原形の take が正解です。使役動詞の中でも let は「本人がしたがっていることを妨げない」ニュアンスだと覚えておくと、allow＋O＋to do との書き換えにも対応できます。
+
+**誤答チェック**
+- 2 to take：let は to 不定詞を取らない（allow＋O＋to do なら可）ため×
+- 3 taken：過去分詞だと「彼らが奪われる」という受動関係になり、直後の目的語 this government とつながらないため×
+- 4 on taking：let にこのような語法はないため×
+
+#### 問 354 ｜ 正解 **4**
+
+**完成文** Why don't you **let** Mark come to our year-end party?
+**訳** マークを私たちの年末パーティーに来させてあげたらどうですか。
+**POINT** 直後が「O＋原形」なら使役動詞を選ぶ
+
+空所のあとが Mark come という「目的語＋原形不定詞」の並びになっています。この形を取れるのは、選択肢の中では使役動詞の let だけです。let Mark come で「マークが来るのを許す＝マークを来させてあげる」という意味になります。この問題は「動詞の形を選ぶ」のではなく「あとに続く形から動詞を逆算する」タイプで、語法問題の典型です。invite / allow / tell はいずれも意味的には通りそうに見えるので、意味ではなく「O のあとの動詞の形」で機械的に判断するのがポイントです。
+
+**誤答チェック**
+- 1 invite：invite は「invite＋O＋to do」の形を取り、原形は続けられないため×
+- 2 allow：allow も「allow＋O＋to do」の形で、to が必要なため×
+- 3 tell：tell は「tell＋O＋to do」の形で、原形は続けられないため×
+
+#### 問 355 ｜ 正解 **1**
+
+**完成文** I just heard someone **call** my name.
+**訳** ちょうど誰かが私の名前を呼ぶのが聞こえた。
+**POINT** 知覚動詞 hear は「hear＋O＋原形」
+
+hear は「見る・聞く・感じる」を表す知覚動詞で、「hear＋O＋原形」の形で「O が〜するのを聞く」という第5文型を作ります。ここでは目的語 someone と call の間に「誰かが（名前を）呼ぶ」という能動の関係が成り立つので、原形の call が正解です。知覚動詞も使役動詞と同様、to のない原形不定詞を取るのが最大の特徴です。空所のあとに my name という目的語が続いていることからも、「呼ぶ」動作の主は someone だと確認できます。
+
+**誤答チェック**
+- 2 called：過去分詞だと「someone が呼ばれる」という受動関係になるが、直後の目的語 my name とつながらないため×
+- 3 calls：三単現の形は述語動詞の位置専用で、補語には置けないため×
+- 4 to be called：知覚動詞は to 不定詞を取らず、受動の意味も文に合わないため×
+
+#### 問 356 ｜ 正解 **3**
+
+**完成文** When I was in the park, I saw a girl **eating** an apple on a bench.
+**訳** 公園にいたとき、ベンチでリンゴを食べている女の子を見かけた。
+**POINT** 知覚動詞 see＋O＋現在分詞「O が〜しているのを見る」
+
+知覚動詞 see は「see＋O＋原形」のほかに「see＋O＋現在分詞（-ing）」の形も取ります。原形は動作の始めから終わりまでを見た場合、現在分詞は「〜している最中の一場面」を見た場合に使います。ここでは a girl と eat の間に「女の子が食べる」という能動の関係があり、公園で見かけた瞬間の情景（食べている途中）を述べているので、現在分詞 eating が正解です。選択肢に原形 eat がないため、能動関係を表せる形は eating しかない、という消去法でも解けます。
+
+**誤答チェック**
+- 1 eats：三単現の形は補語の位置に置けないため×
+- 2 to eat：知覚動詞は補語に to 不定詞を取らないため×
+- 4 ate：過去形も述語動詞専用の形で、補語には置けないため×
+
+#### 問 357 ｜ 正解 **2**
+
+**完成文** I heard my name **called** in the train.
+**訳** 電車の中で自分の名前が呼ばれるのが聞こえた。
+**POINT** 知覚動詞＋O＋過去分詞「O が〜されるのを聞く」
+
+問355と対になる問題です。今回は目的語が my name で、「名前は（誰かによって）呼ばれる」という受動の関係になっています。知覚動詞は「hear＋O＋過去分詞」の形で「O が〜されるのを聞く」を表せるので、過去分詞 called が正解です。知覚動詞・使役動詞の問題は、結局「O と動詞の関係が能動か受動か」の一点で決まります。O が人で動作主なら原形（または現在分詞）、O がモノで動作を受ける側なら過去分詞、とセットで整理しておきましょう。
+
+**誤答チェック**
+- 1 call：原形だと「名前が呼ぶ」という能動関係になり意味が通らないため×
+- 3 calling：現在分詞も「名前が呼んでいる」という能動の意味になるため×
+- 4 to be called：意味は受動でも、知覚動詞は補語に to 不定詞を取らないため×
+
+#### 問 358 ｜ 正解 **①**
+
+**完成文** Ms. Kato made her students **do** some work after school on Friday.
+**訳** 加藤先生は金曜日の放課後、生徒たちに課題をさせた。
+**POINT** 使役動詞 make は「make＋O＋原形」
+
+**訂正** ① to do → do
+
+made her students という「使役動詞 make＋目的語」の形に注目します。make は「（強制的に）〜させる」を表す使役動詞で、目的語のあとには to のつかない原形不定詞を置かなければなりません。①の to do は to 不定詞になっているのでここが誤りで、原形 do に直します。「生徒たちが課題をする」という能動の関係なので、過去分詞にする必要もありません。なお、受動態 be made to do になると to が復活する（Her students were made to do some work.）という点もあわせて覚えておくと、上位校の問題にも対応できます。
+
+#### 問 359 ｜ 正解 **②**
+
+**完成文** I want to make myself **understood**, so I will make my presentation as clear as possible.
+**訳** 自分の言いたいことを理解してもらいたいので、プレゼンをできるだけ分かりやすくするつもりだ。
+**POINT** make oneself understood は過去分詞が必須
+
+**訂正** ② understand → understood
+
+make myself のあとの動詞の形が問われています。myself（＝私自身）と understand の関係を考えると、「私が理解する」のではなく「私（の言うこと）が相手に理解される」という受動の関係です。したがって原形 understand は誤りで、過去分詞 understood に直し、make oneself understood（自分の言うことを分かってもらう）という定型表現にします。問352で選択肢として出た表現が、今度は誤り探しの形で問われている、という関係です。後半の as clear as possible（できるだけ明確に）は原級比較の正しい形で、③④に誤りはありません。
+
+#### 問 360 ｜ 正解 **82561374**
+
+**完成文** He **found it impossible to make himself understood in** English.
+**訳** 彼は英語を話してみたが、通じなかった（＝英語で自分の意思を伝えるのは不可能だと分かった）。
+**POINT** find it C to do（形式目的語）＋ make oneself understood
+
+まず述語動詞を決めます。主語 He のあとに置ける過去形は found だけなので、He found が文の骨格です。次に find は「find＋O＋C」（O が C だと分かる）の第5文型を作りますが、目的語が to 不定詞のときはそのまま置けず、形式目的語 it を先に立てて「find it C to do」の語順にします。これで found it impossible to ... が決まります。to のあとには make himself understood（自分の意思を通じさせる）という定型表現を置き、最後に in English（英語で）が文末の English につながるよう in で締めます。
+
+**組み立て** 述語動詞 found を確定 → find it impossible to do（形式目的語 it）→ to make himself understood（意思を通じさせる）→ in + English
+※編集メモ: 語群の⑧のみ丸数字でなく「➇」の字形になっている（誤植の可能性）
+
+#### 問 361 ｜ 正解 **③**
+
+**完成文** The witness reported that he had watched the suspect **leave** the bank ④carrying a black bag.
+**訳** 目撃者は、容疑者が黒いかばんを持って銀行を出て行くのを見たと証言した。
+**POINT** 知覚動詞 watch は「watch＋O＋原形」
+
+**訂正** ③ left → leave
+
+had watched the suspect という「知覚動詞 watch＋目的語」の形がポイントです。watch は see / hear と同じ知覚動詞で、「O が〜するのを見る」は「watch＋O＋原形」で表します。the suspect と leave は「容疑者が銀行を出る」という能動の関係なので、過去分詞 left は誤りで、原形 leave に直します。「本文全体が過去だから left」とつられないよう注意しましょう。時制は述語動詞（had watched）が担っており、補語の位置には原形を置くのがルールです。④の carrying は「〜を持ちながら」を表す分詞（付帯状況）で、正しい形です。
+
+
+## UNIT 4 第5文型の語法(2)
+
+#### 問 362 ｜ 正解 **4**
+
+**完成文** We arrived at the company at the appointed time, but they kept us **waiting** for an hour.
+**訳** 私たちは約束の時間に会社に着いたのに、1時間も待たされた。
+**POINT** keep O doing「Oを〜している状態のままにしておく」
+
+空所の前が kept us となっているので、keep O C（OをCの状態に保つ）の第5文型だと見抜きます。補語Cに動詞を置く場合、Oとの関係が能動（Oが〜する）なら現在分詞（doing）、受動（Oが〜される）なら過去分詞（done）を使うのが原則です。ここでは「私たち（us）が待つ」という能動関係なので、現在分詞 waiting を選びます。keep O waiting は「Oを待たせておく」という頻出表現で、そのまま覚えておくと便利です。
+
+**誤答チェック**
+- 1 have waited：keep の補語に動詞の原形（完了形）は置けないため×
+- 2 to wait：keep O to do という形は存在しないため×
+- 3 waited：us と wait は「私たちが待つ」という能動関係なので、受動を表す過去分詞は×
+
+#### 問 363 ｜ 正解 **2**
+
+**完成文** The dentist asked me to keep my mouth **open** because he needed to examine my teeth.
+**訳** 歯を診察する必要があったので、歯医者は私に口を開けたままにしておくように言った。
+**POINT** keep O C の補語に形容詞 open「開いている」
+
+keep my mouth ( ) は keep O C（OをCの状態に保つ）の形です。ポイントは、open には「開ける」という動詞のほかに「開いている」という状態を表す形容詞の用法があることです。「口が開いている状態を保つ」のですから、補語には形容詞の open を置くのが正解です。keep one's mouth open / keep one's eyes open（目を開けている）はセットで覚えておきましょう。
+
+**誤答チェック**
+- 1 be opened：補語の位置に動詞の原形は置けないため×
+- 3 opening：opening は「開くところだ」という動作の進行を表してしまい、「開いている状態」は形容詞 open で表すため×
+- 4 to open：keep O to do という形は存在しないため×
+
+#### 問 364 ｜ 正解 **3**
+
+**完成文** I got him **to fix** my camera.
+**訳** 私は彼にカメラを修理してもらった。
+**POINT** get O to do「Oに〜してもらう・させる」
+
+「〜させる・してもらう」を表す使役の動詞のうち、make・have・let は補語に原形不定詞（toなしの動詞の原形）を取りますが、get だけは to不定詞を取る、というのがこの問題の核心です。him と fix の関係は「彼が修理する」という能動なので、get O to do の形どおり to fix を選びます。get him fix としてしまうミスが非常に多いので、「get は to が要る」と強く意識しておきましょう。
+
+**誤答チェック**
+- 1 fix：原形不定詞を取れるのは make / have / let で、get は不可のため×
+- 2 be fixed：補語に動詞の原形は置けず、him との受動関係も成り立たないため×
+- 4 to be fixed：him と fix は「彼が修理する」という能動関係なので、受動の不定詞は×
+
+#### 問 365 ｜ 正解 **3**
+
+**完成文** I will have to get my homework **done** before I go to bed.
+**訳** 寝る前に宿題を終わらせてしまわなければならないだろう。
+**POINT** get O done「Oを〜してしまう・〜される」
+
+get O C の補語に動詞を置くときは、Oとの関係で形を決めます。my homework と do の関係は「宿題は（私によって）される」という受動なので、過去分詞 done が正解です。get O done は「（自分で）Oを済ませてしまう」「（他人に）Oを〜してもらう」の両方に使える重要表現で、ここでは前者の意味です。なお before I go to bed のように、時を表す副詞節の中は未来のことでも現在形で表す点も確認しておきましょう。
+
+**誤答チェック**
+- 1 do：homework と do は受動関係であり、補語に原形は置けないため×
+- 2 does：does は主語に対して使う定形動詞で、補語の位置には置けないため×
+- 4 will do：同じく補語の位置に「助動詞+動詞」は置けないため×
+
+#### 問 366 ｜ 正解 **5**
+
+**完成文** Please allow **me to introduce** myself.
+**訳** 自己紹介させてください。
+**POINT** allow O to do「Oが〜するのを許す」
+
+allow は allow O to do（Oが〜するのを許す）という語法で使う動詞です。文末に myself（私自身を）があるので、「私が自分自身を紹介する」つまり O は me、その後に to introduce が続く形にします。Please allow me to introduce myself. は自己紹介の決まり文句で、Let me introduce myself. と同じ意味ですが、let は原形不定詞（let me introduce）、allow は to不定詞（allow me to introduce）を取るという違いが最大の狙い目です。
+
+**誤答チェック**
+- 1 introduce：allow の直後に動詞の原形は置けないため×
+- 2 introducing：allow doing の形はあるが行為者が示せず、文末の myself と対応しないため×
+- 3 introducing me：「私を紹介すること」となり、直後の myself と意味が重複・矛盾するため×
+- 4 me introduce：原形不定詞を取るのは let であり、allow は to不定詞を取るため×
+- 6 to introduce me：allow to do という形はなく、me と myself も重複するため×
+
+#### 問 367 ｜ 正解 **4**
+
+**完成文** This workshop will enable **you to develop** your communication skills.
+**訳** このワークショップに参加すれば、コミュニケーション能力を伸ばすことができるでしょう。
+**POINT** enable O to do「Oが〜することを可能にする」
+
+enable は enable O to do（Oが〜するのを可能にする）という語法しか取らない、と割り切って覚えてよい動詞です。主語が This workshop という無生物主語なので、直訳の「このワークショップはあなたが〜を伸ばすことを可能にする」を、「このワークショップのおかげで〜できる」と自然な日本語に読み替えるのがコツです。allow / enable / cause / force などは「O to do を取る動詞」としてまとめて整理しておきましょう。
+
+**誤答チェック**
+- 1 of your developing：enable of doing という形は存在しないため×
+- 2 that you develop：enable は that 節を目的語に取れないため×
+- 3 to your developing：enable to doing という形は存在しないため×
+
+#### 問 368 ｜ 正解 **3**
+
+**完成文** I really hadn't expected the test **to be** so difficult.
+**訳** テストがそんなに難しいとは本当に思っていなかった。
+**POINT** expect O to do「Oが〜すると予想する」
+
+expect は expect O to do（Oが〜すると予想する・期待する）の形を取る動詞です。ここでは O が the test、その後に「（テストが）そんなに難しい」という内容を続けるので、to be so difficult とします。過去完了 hadn't expected は「（テストを受けて難しさが分かった時点より前に）予想していなかった」ことを表しています。expect A of B などと混同しないよう、expect O to do をひとかたまりで覚えましょう。
+
+**誤答チェック**
+- 1 be：expect の補語に原形不定詞は置けないため×
+- 2 of being：expect O of doing という形は存在しないため×
+- 4 to being：to不定詞の to の後ろは動詞の原形であり、動名詞 being は続かないため×
+
+#### 問 369 ｜ 正解 **1**
+
+**完成文** His irresponsibility caused him **to lose** her and the happiness she had brought him.
+**訳** 彼の無責任さのせいで、彼は彼女も、彼女がもたらしてくれた幸せも失うことになった。
+**POINT** cause O to do「Oに〜させる（Oが〜する原因となる）」
+
+cause は cause O to do（Oが〜する原因となる）という語法で使います。主語 His irresponsibility（彼の無責任さ）が無生物主語なので、「彼の無責任さが原因で、彼は〜を失った」と訳すと自然です。空所の後に her という目的語が続くことから、空所には目的語を取れる動詞 lose の to不定詞が必要だと判断できます。つづりの似た loose（ゆるい）との区別も定番のひっかけです。
+
+**誤答チェック**
+- 2 loose：「ゆるい」という意味の形容詞で、lose（失う）とはつづり違いの別単語のため×
+- 3 losing：cause O doing という形は存在しないため×
+- 4 loss：「損失」という名詞で、直後の her を目的語に取ることができないため×
+
+#### 問 370 ｜ 正解 **2**
+
+**完成文** He helped her **peel** the onions.
+**訳** 彼は彼女がタマネギの皮をむくのを手伝った。
+**POINT** help O (to) do —— help は原形不定詞もOK
+
+help は help O to do と help O do（原形不定詞）の両方が使える特別な動詞です。特に現代英語では to を省いた help O do の形が好まれます。her と peel の関係は「彼女が皮をむく」という能動なので、原形 peel が正解です。選択肢に to peel があればそれも正解になり得ますが、ここでは原形しかないので迷わず 2 を選びます。
+
+**誤答チェック**
+- 1 to have peeled：完了不定詞は「helped より前にむいた」ことになり時制が合わないため×
+- 3 peeling：help O doing という形は存在しないため×
+- 4 for peeling：help O for doing という形は存在しないため×
+
+#### 問 371 ｜ 正解 **4**
+
+**完成文** We look **upon** him as the best doctor in our town.
+**訳** 私たちは彼を町で一番の医者だとみなしている。
+**POINT** look upon[on] A as B「AをBとみなす」
+
+文末の as the best doctor に注目します。「Aを Bとみなす」は regard A as B が代表ですが、look upon A as B / look on A as B、think of A as B、see A as B なども同じ意味のグループです。as とセットで使える look の熟語は upon（または on）だけなので、4 が正解です。「みなす系は as を取る」とグループでまとめて覚えるのが最短の攻略法です。
+
+**誤答チェック**
+- 1 for：look for は「〜を探す」で、as と結びつかないため×
+- 2 after：look after は「〜の世話をする」で、as と結びつかないため×
+- 3 at：look at は「〜を見る」で、as と結びつかないため×
+
+#### 問 372 ｜ 正解 **354612**
+
+**完成文** **If you leave the door unlocked during** the night, burglars will break in.
+**訳** 夜中にドアに鍵をかけずにいると、泥棒が入りますよ。
+**POINT** leave O done「Oを〜されたままにしておく」
+
+「鍵をかけずにいると」は、leave O C（OをCのままに放置する）を使い、leave the door unlocked と組み立てます。the door と unlock（鍵を開ける）の関係は「ドアが鍵をかけられていない」という受動なので、補語には過去分詞 unlocked を置きます。文全体は「もし〜なら…だろう」という条件文なので、接続詞 if で始め、条件節の中は未来のことでも現在形 leave を使う点にも注意しましょう。
+
+**組み立て** if + 主語 you で条件節を開始 → leave the door unlocked（leave O 過去分詞）→ during the night「夜の間」
+
+#### 問 373 ｜ 正解 **24153**
+
+**完成文** The **computer enabled us to finish the work** in a short time.
+**訳** コンピューターのおかげで私たちはその作業を短時間で終わらせることができた。
+**POINT** 無生物主語 + enable O to do
+
+「〜のおかげで…できた」という日本語を見たら、無生物主語 + enable O to do（SはOが〜するのを可能にした）への言い換えを疑いましょう。文頭に The があるので、主語は The computer に決まります。あとは enabled us to finish（enable O to do）とつなぎ、finish の目的語に the work を置けば完成です。訳すときは「コンピューターが可能にした」ではなく「コンピューターのおかげで〜できた」と自然に訳すのがポイントです。
+
+**組み立て** The に続く主語を computer に確定 → enabled us to finish（enable O to do）→ finish の目的語 the work
+
+#### 問 374 ｜ 正解 **25341**
+
+**完成文** **Can you help me arrange** the room for our meeting?
+**訳** 会議のために部屋の準備をするのを手伝ってくれますか。
+**POINT** help O (to) do の原形不定詞
+
+Can で始まる依頼の疑問文なので、まず Can you を確定します。次に「手伝う」の help を置き、help O (to) do の形で help me arrange とつなぎます。help は to を省いた原形不定詞を取れるので、arrange（〜を整える・準備する）がそのまま続けられるのがポイントです。Can you help me do 〜? は「〜するのを手伝ってくれますか」という日常会話でも超頻出の型です。
+
+**組み立て** 疑問文の語順 Can you を確定 → help me（help O）→ 原形不定詞 arrange を続ける
+
+#### 問 375 ｜ 正解 **263514**
+
+**完成文** Shakespeare is an English poet and playwright, and is widely **regarded as the greatest writer in** the English language.
+**訳** シェイクスピアはイギリスの詩人・劇作家で、英語による最大の作家と広くみなされている。
+**POINT** regard A as B の受動態 A is regarded as B
+
+「AをBとみなす」の regard A as B を受動態にすると、A is regarded as B（AはBとみなされている）となります。is widely の後ろに過去分詞 regarded を置き、as の後ろに「最大の作家」を最上級で the greatest writer と組み立てます。最後に「英語による」を in the English language（英語という言語における）で表し、文末の the English language につなげれば完成です。受動態になっても as が残ることを見落とさないようにしましょう。
+
+**組み立て** is widely に受動態の過去分詞 regarded を接続 → as the greatest writer（regard A as B の as + 最上級）→ in + the English language
+
+
+---
+
+# 付録　編集チェック記録（原稿の気づき一覧）
+
+原稿を全問チェックする中で見つかった、誤植・不自然な英文・体裁の不統一などの記録です。**正解そのものが変わる重大なものは1件のみ**（問232）で、その他は表記や自然さのレベルです。解説はいずれも正しい内容に直したうえで執筆しています。
+
+
+### ⚠️要注意（解答に影響）（1件）
+
+| 問 | 内容 | 対応 |
+|---|---|---|
+| 232 | 解答の数字列「7245168」が7桁で、語群8項目のうち 3（are）が抜けている。完成文 There are many amusement parks, but not all of them are successful. には are が必須。 | 正しい数字列 72451683 を正解として完成文・解説を書いた |
+
+
+### 誤植（12件）
+
+| 問 | 内容 | 対応 |
+|---|---|---|
+| 023 | 問題文「You(　　)」で You と括弧の間にスペースがなく、他問と表記が不統一 | 内容には影響しないためそのまま処理した |
+| 030 | 語群の⑧のマーカーが「➇」（囲み数字の異体グリフ）になっており、他の丸数字①〜⑦と不統一 | ⑧get として扱い、解答数字列 52781436 の通りに完成文を作成した |
+| 035 | 正解選択肢1が「had better no」となっているが、正しくは「had better not」。not の t が脱落した誤植と思われる | 「had better not」を前提に完成文・解説を書いた |
+| 050 | 語群の番号⑤が「a」と「would」の2語に重複して付与されている（②haveの次が③で⑥が欠番）。「⑤would」は「⑥would」の誤植と思われ、その場合answerは 152453 ではなく 162453 が正しい数字列になる | 完成文 I would have bought a new computer を前提に、answer 152453（wouldを1つ目の5、aを2つ目の5と解釈）のまま解説を執筆し、編集メモを付記した |
+| 065 | 語群の囲み数字⑧が「➇」という他と異なる字形（囲み数字ではなく別記号）になっている。また「①a/ ②bought」「③high/」などスラッシュ前の空白が不統一 | 解説では通常の⑧として扱い、38742165 を正解として執筆 |
+| 089 | 語群の丸数字8が ➇（囲み sans-serif 数字）になっており、①〜⑦（囲み serif 数字）と字形が不統一 | ⑧very として扱い、解答 54817623 のとおり解説を執筆した |
+| 168 | 問題文冒頭の "l owe" は "I owe" の誤植（大文字の I が小文字の l になっている）と思われる | I owe を前提に完成文・解説を書いた |
+| 191 | 日本文「オーストラリアー周」は長音符「ー」が使われており、「オーストラリア一周」（漢字の「一」）の誤植と思われる | 訳・解説では「オーストラリア一周」を前提に記述した |
+| 220 | 日本語指示文「\[内の語を並べ替えなさい」は閉じ括弧が欠落しており「\[ \]内の語を並べ替えなさい」の誤植と思われる | 解答・解説には影響しないため通常どおり執筆した |
+| 243 | 問題文および answer_part の「l did」は小文字のエル（l）だが、大文字の代名詞 I の誤植（OCR由来）と思われる（正しくは「I did」） | I を前提に完成文・解説を作成した |
+| 244 | 語群⑦の「l」は小文字のエルだが、代名詞 I の誤植（OCR由来）と思われる | I を前提に完成文・解説を作成した |
+| 348 | 語群の⑧が異体字「➇」(丸数字ではない囲み数字)で表記されている | ⑧professional として扱い、完成文・解説を執筆した |
+
+
+### 英文・訳の自然さ（7件）
+
+| 問 | 内容 | 対応 |
+|---|---|---|
+| 102 | 日本文「十分な椅子がなかった」(過去)に対し、英文の書き出しが There are not(現在形)で時制が一致していない。原文どおりなら日本文は「〜がない」、または英文を There were not とすべき | 英文 There are not はそのまま尊重し、訳を「彼らが座るのに十分な椅子がない」と現在形で記載した |
+| 115 | placed the rug again はやや不自然な英語（自然には put the rug back / laid the rug again）。また swept up the floor も swept the floor の方が一般的 | 解答 sweeping 自体は正しいため、原文のまま完成文・解説を書いた |
+| 130 | are called sari は複数主語 (The traditional clothes) に対して単数形の補語でやや不自然。通例は are called saris または is called the sari。 | 原稿どおり sari のまま完成文・解説を書いた |
+| 150 | The work being done, they went for a walk. は文法的に成立するが、完了の意味では The work done, ... / The work having been done, ... の方が標準的。being done は「されている最中」とも読める。 | 原稿の解答 451263 を尊重し、受動の独立分詞構文としてそのまま解説した。 |
+| 193 | exceptionally superior という強調表現はやや不自然（superior の強調は far / much / vastly superior が一般的） | 解答 to は正しいため原文のまま完成文・解説を書いた |
+| 214 | B の応答 "Twice or three times a year" はやや不自然（通例は "Two or three times a year" または "Twice a year or three times a year"） | 原文のまま完成文に採用し、解説は頻度の答えである点のみ扱った |
+| 270 | 整序の骨組みに主節主語 we が不足し完成文と不一致の可能性 | 完成文 Whether we like it or not, we will have to accept the fact. を前提に執筆 |
+
+
+### その他・体裁（7件）
+
+| 問 | 内容 | 対応 |
+|---|---|---|
+| 026 | 実質は4択の訳選択問題だが type が written として収録されており、answer に選択肢番号と訳文が連結されている（「4この話は本当のはずがない。」） | 正解表記を「4この話は本当のはずがない。」のまま提示し、解説内で他の3つの訳が誤りである理由も説明した |
+| 051 | answerフィールドが1つ目の空所分「86241」のみで、2つ目の空所「753」（could have been）が欠落。またquestion末尾に解答らしき文字列「86241 753」が混入している | 正解を「86241 753」として完成文 Had I arrived five minutes earlier, I could have been in time for the train. で解説を執筆した |
+| 064 | question 本文の末尾に解答の数字列「13425（43125）」が混入している。紙面にそのまま印刷されると解答が漏れる。①I と④I が同一語のため 43125 も同一英文になる旨の編集用メモと思われる | 混入した数字列は問題文に含めず、answer の 13425 を正解として完成文・解説を執筆。①④が同一語で 43125 でも同文になる旨は組み立て欄に注記した |
+| 084 | 選択肢4 was not to been は to の後に過去分詞が来る明白な非文で、ダミー選択肢としてやや不自然（原典どおりの可能性あり） | 原稿のまま採用し、誤答チェックで非文である旨を説明した |
+| 140 | 問題文に「下線部と同じ用法の-ing」とあるが、データ上どの語に下線があるか示されていない。文中の -ing は Learning / entering / widening の3語で、正解 4（前置詞の目的語=動名詞）と整合するのはいずれも動名詞用法。 | implies の目的語である entering（動名詞）を下線部と想定して解説を執筆し、編集メモを付記した。 |
+| 242 | a number of の数一致問題であり、本UNIT（倒置・強調構文・語順）の主題からやや外れる可能性がある | 収録位置は原稿どおりとし、通常どおり解説を作成した |
+| ? | 語群の⑧のみ丸数字でなく「➇」の字形になっている（誤植の可能性） | 解説内で正しい形に修正のうえ執筆 |

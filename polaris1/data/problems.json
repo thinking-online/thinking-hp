@@ -1,0 +1,7951 @@
+[
+ {
+  "num": "001",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "choice4",
+  "question": "All the classmates knew that the Earth ( ) round.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "is"
+   },
+   {
+    "n": "2",
+    "text": "be"
+   },
+   {
+    "n": "3",
+    "text": "was being"
+   },
+   {
+    "n": "4",
+    "text": "were"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "002",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "choice4",
+  "question": "A : What do you do?\nB: ( ）",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Please call me Ken."
+   },
+   {
+    "n": "2",
+    "text": "I'm fine, thank you."
+   },
+   {
+    "n": "3",
+    "text": "Nice to meet you, too."
+   },
+   {
+    "n": "4",
+    "text": "I'm a photographer."
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "003",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "choice4",
+  "question": "Everyone ( ) about his success in business.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "is known"
+   },
+   {
+    "n": "2",
+    "text": "is knowing"
+   },
+   {
+    "n": "3",
+    "text": "know"
+   },
+   {
+    "n": "4",
+    "text": "knows"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "004",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "choice4",
+  "question": "I don't have any plans for this Sunday, but next Sunday ( 　) my aunt.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I visit"
+   },
+   {
+    "n": "2",
+    "text": "I am visiting"
+   },
+   {
+    "n": "3",
+    "text": "I was visiting"
+   },
+   {
+    "n": "4",
+    "text": "I'm going"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "005",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "choice4",
+  "question": "If you (　 ) my advice, you'll have nothing more to do with him.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "do"
+   },
+   {
+    "n": "2",
+    "text": "will do"
+   },
+   {
+    "n": "3",
+    "text": "take"
+   },
+   {
+    "n": "4",
+    "text": "will take"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "006",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "choice4",
+  "question": "We'll be late unless we ( ) now.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "leave"
+   },
+   {
+    "n": "2",
+    "text": "don't leave"
+   },
+   {
+    "n": "3",
+    "text": "have left"
+   },
+   {
+    "n": "4",
+    "text": "will leave"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "007",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "choice4",
+  "question": "I will return your notes as soon as (　 ) copying them.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I will finish"
+   },
+   {
+    "n": "2",
+    "text": "I finish"
+   },
+   {
+    "n": "3",
+    "text": "I finished"
+   },
+   {
+    "n": "4",
+    "text": "my finishing"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "008",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "choice4",
+  "question": "If the homework is not done in a satisfactory way, you ( 　) it again.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "did"
+   },
+   {
+    "n": "2",
+    "text": "have to be doing"
+   },
+   {
+    "n": "3",
+    "text": "will have done"
+   },
+   {
+    "n": "4",
+    "text": "will have to do"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "009",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "choice4",
+  "question": "You may go home if you ( 　) your report.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "finishing"
+   },
+   {
+    "n": "2",
+    "text": "have finished"
+   },
+   {
+    "n": "3",
+    "text": "finished"
+   },
+   {
+    "n": "4",
+    "text": "will have finished"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "010",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "choice4",
+  "question": "I can't tell if it (　 ) tomorrow.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "will rain"
+   },
+   {
+    "n": "2",
+    "text": "rain"
+   },
+   {
+    "n": "3",
+    "text": "has rained"
+   },
+   {
+    "n": "4",
+    "text": "rained"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "011",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "error-id",
+  "answer": "③",
+  "answer_part": "achieves",
+  "question": "①Through hard work and ②determination, we usually ③achieves our ④goals."
+ },
+ {
+  "num": "012",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "error-id",
+  "answer": "②",
+  "answer_part": "moved",
+  "question": "As I've ①got a new apartment, I'm ②moved in ③on Friday ④with the help of my colleagues."
+ },
+ {
+  "num": "013",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 1 時制(1)",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "①will need",
+  "question": "If this old car ①will need repair ②work, ③it will cost ④a lot of money."
+ },
+ {
+  "num": "014",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 2 時制(2)",
+  "type": "choice4",
+  "question": "She ( 　)in Germany for three years before she got a job in England.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "had lived"
+   },
+   {
+    "n": "2",
+    "text": "lives"
+   },
+   {
+    "n": "3",
+    "text": "has lived"
+   },
+   {
+    "n": "4",
+    "text": "would live"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "015",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 2 時制(2)",
+  "type": "choice4",
+  "question": "I really must go and see the dentist. One of my teeth ( 　) for weeks.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "ached"
+   },
+   {
+    "n": "2",
+    "text": "aches"
+   },
+   {
+    "n": "3",
+    "text": "has been aching"
+   },
+   {
+    "n": "4",
+    "text": "is aching"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "016",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 2 時制(2)",
+  "type": "choice4",
+  "question": "Yuka and Megumi are very good friends. They ( 　)each other since they entered college three years ago.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "are knowing"
+   },
+   {
+    "n": "2",
+    "text": "have been knowing"
+   },
+   {
+    "n": "3",
+    "text": "have known"
+   },
+   {
+    "n": "4",
+    "text": "know"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "017",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 2 時制(2)",
+  "type": "choice4",
+  "question": "It (  ) more than ten years since I left my hometown.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "has been"
+   },
+   {
+    "n": "2",
+    "text": "has passed"
+   },
+   {
+    "n": "3",
+    "text": "is passed"
+   },
+   {
+    "n": "4",
+    "text": "was"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "018",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 2 時制(2)",
+  "type": "choice4",
+  "question": "We have ( 　）there twice.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "gone to"
+   },
+   {
+    "n": "2",
+    "text": "went"
+   },
+   {
+    "n": "3",
+    "text": "been to"
+   },
+   {
+    "n": "4",
+    "text": "been"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "019",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 2 時制(2)",
+  "type": "reorder",
+  "answer": "5741326",
+  "question": "春学期が始まるまでに、新しい実験室の建設は終了しているでしょう。\nThe construction of the new \\[①been / ②by / ③finished / ④have / ⑤laboratory /\n⑥the time / ⑦will\\] the spring semester starts."
+ },
+ {
+  "num": "020",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 2 時制(2)",
+  "type": "reorder",
+  "answer": "3241",
+  "question": "彼が19歳のときから車を運転していることは、誰でも知っています。\nEverybody knows he \\[①since / ②driven / ③has / ④a car\\] he was 19."
+ },
+ {
+  "num": "021",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 2 時制(2)",
+  "type": "written",
+  "answer": "died",
+  "question": "次の2つの文がほぼ等しい意味になるように、空所に適切な語を書きなさい。\nHe has been dead for five years.\n\\= It is five years since he (　 ）"
+ },
+ {
+  "num": "022",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 3 助動詞(1)",
+  "type": "choice4",
+  "question": "I (　 ) work overtime every day last week.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "might"
+   },
+   {
+    "n": "2",
+    "text": "must"
+   },
+   {
+    "n": "3",
+    "text": "had to"
+   },
+   {
+    "n": "4",
+    "text": "ought to"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "023",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 3 助動詞(1)",
+  "type": "choice4",
+  "question": "You(　　) introduce me to the professor because we have already met.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "never"
+   },
+   {
+    "n": "2",
+    "text": "are supposed to"
+   },
+   {
+    "n": "3",
+    "text": "should"
+   },
+   {
+    "n": "4",
+    "text": "do not have to"
+   },
+   {
+    "n": "5",
+    "text": "will"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "024",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 3 助動詞(1)",
+  "type": "choice4",
+  "question": "You (  ) be a fast worker to have done so much in such a short time.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "can"
+   },
+   {
+    "n": "2",
+    "text": "must"
+   },
+   {
+    "n": "3",
+    "text": "should"
+   },
+   {
+    "n": "4",
+    "text": "will"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "025",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 3 助動詞(1)",
+  "type": "choice4",
+  "question": "(              ) it be true that he bought a sports car?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Can"
+   },
+   {
+    "n": "2",
+    "text": "Had"
+   },
+   {
+    "n": "3",
+    "text": "Has"
+   },
+   {
+    "n": "4",
+    "text": "Did"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "026",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 3 助動詞(1)",
+  "type": "choice4",
+  "answer": "4",
+  "question": "次の英文の訳として最も適当なものを選びなさい。\nThis story cannot be true.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "この話を実現させるべきだ。"
+   },
+   {
+    "n": "2",
+    "text": "この話を実現させてはいけない。"
+   },
+   {
+    "n": "3",
+    "text": "この話は本当に違いない。"
+   },
+   {
+    "n": "4",
+    "text": "この話は本当のはずがない。"
+   }
+  ]
+ },
+ {
+  "num": "027",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 3 助動詞(1)",
+  "type": "reorder",
+  "answer": "256314",
+  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\n私は姉の結婚式でスピーチをしなくてはならない。\nI \\[①speech / ②have / ③a / ④at / ⑤to / ⑥make\\] my elder sister's wedding."
+ },
+ {
+  "num": "028",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 3 助動詞(1)",
+  "type": "reorder",
+  "answer": "416235",
+  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\n私はかつて妹とままごとをしたものだ。\nI \\[①to/ ②house / ③with/ ④used / ⑤my / ⑥play\\] sister."
+ },
+ {
+  "num": "029",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 3 助動詞(1)",
+  "type": "error-id",
+  "answer": "②",
+  "answer_part": "being",
+  "question": "①Jogging used to ②being my main sport, but I've ③taken up ④swimming lately."
+ },
+ {
+  "num": "030",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 3 助動詞(1)",
+  "type": "reorder",
+  "answer": "52781436",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nすばやく行動して、私たちはその難しい状況から逃れることができた。\nWe \\[①out of / ②able / ③by / ④the difficult situation / ⑤were / ⑥acting / ⑦to / ➇get\\] quickly."
+ },
+ {
+  "num": "031",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 4 助動詞(2)",
+  "type": "choice4",
+  "question": "The road is wet. It ( ) last night.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "must have rained"
+   },
+   {
+    "n": "2",
+    "text": "must be raining"
+   },
+   {
+    "n": "3",
+    "text": "had to be rained"
+   },
+   {
+    "n": "4",
+    "text": "had to rain"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "032",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 4 助動詞(2)",
+  "type": "choice4",
+  "question": "Jack has been in the hospital for two weeks, so you ( ) him walking in town yesterday.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "cannot have seen"
+   },
+   {
+    "n": "2",
+    "text": "cannot see"
+   },
+   {
+    "n": "3",
+    "text": "could be seen"
+   },
+   {
+    "n": "4",
+    "text": "could have been seen"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "033",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 4 助動詞(2)",
+  "type": "choice4",
+  "question": "X : Your apartment is really compact.\nY : You may (  ) think this is small, but it's actually larger than average.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "good"
+   },
+   {
+    "n": "2",
+    "text": "well"
+   },
+   {
+    "n": "3",
+    "text": "better"
+   },
+   {
+    "n": "4",
+    "text": "best"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "034",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 4 助動詞(2)",
+  "type": "choice4",
+  "question": "You (   ) throw away your money as spend it in gambling.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "might be well"
+   },
+   {
+    "n": "2",
+    "text": "might as well"
+   },
+   {
+    "n": "3",
+    "text": "might well"
+   },
+   {
+    "n": "4",
+    "text": "might well as"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "035",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 4 助動詞(2)",
+  "type": "choice4",
+  "question": "You (  ) go to school because you have a slight fever.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "had better no"
+   },
+   {
+    "n": "2",
+    "text": "had better not to"
+   },
+   {
+    "n": "3",
+    "text": "had not better"
+   },
+   {
+    "n": "4",
+    "text": "had not better to"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "036",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 4 助動詞(2)",
+  "type": "reorder",
+  "answer": "6235147",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nあなたは、そこに行く前に私の家に電話をすべきでした。\nYou \\[①my home / ②to / ③have / ④before / ⑤called / ⑥ought / ⑦you\\] went there."
+ },
+ {
+  "num": "037",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 4 助動詞(2)",
+  "type": "reorder",
+  "answer": "53142",
+  "question": "日本語の意味になるように、［ ］内の語を並べ替えなさい。\nこんなに高いアプリを買うんじゃなかった。\nI \\[①have / ②such / ③not / ④bought / ⑤should\\] an expensive application."
+ },
+ {
+  "num": "038",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 4 助動詞(2)",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "can",
+  "question": "赤ちゃんを車に乗せて運転しているときは、いくら注意してもしすぎることはない。\nYou ①can be ②too careful when ③driving  ④with your baby in a car."
+ },
+ {
+  "num": "039",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 4 助動詞(2)",
+  "type": "reorder",
+  "answer": "251643",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\n君は冬に一人で登山しないほうがよい。\nYou \\[①not / ②had / ③by / ④mountains / ⑤better / ⑥climb\\] yourself in winter."
+ },
+ {
+  "num": "040",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "choice4",
+  "question": "I think there are too many cars. If there were not so many cars, there\n（ ) so much pollution.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "is not"
+   },
+   {
+    "n": "2",
+    "text": "will not be"
+   },
+   {
+    "n": "3",
+    "text": "would not be"
+   },
+   {
+    "n": "4",
+    "text": "must not have been"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "041",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "choice4",
+  "question": "If I (      ) the truth, I would tell you.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "know"
+   },
+   {
+    "n": "2",
+    "text": "knew"
+   },
+   {
+    "n": "3",
+    "text": "will know"
+   },
+   {
+    "n": "4",
+    "text": "have known"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "042",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "choice4",
+  "question": "If I had known your telephone number, I ( 　) you up.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "had called"
+   },
+   {
+    "n": "2",
+    "text": "will call"
+   },
+   {
+    "n": "3",
+    "text": "might call"
+   },
+   {
+    "n": "4",
+    "text": "would have called"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "043",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "choice4",
+  "question": "I didn't go out yesterday. I would have gone out if I ( 　 ) so tired.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "haven't been"
+   },
+   {
+    "n": "2",
+    "text": "hadn't been"
+   },
+   {
+    "n": "3",
+    "text": "have been"
+   },
+   {
+    "n": "4",
+    "text": "had been"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "044",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "choice4",
+  "question": "If I had eaten breakfast, I ( 　)hungry now.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "am not"
+   },
+   {
+    "n": "2",
+    "text": "won't be"
+   },
+   {
+    "n": "3",
+    "text": "wouldn't be"
+   },
+   {
+    "n": "4",
+    "text": "wouldn't have been"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "045",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "choice4",
+  "question": "If she (   ) there yesterday, she would not be here now.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "did not leave"
+   },
+   {
+    "n": "2",
+    "text": "had not left"
+   },
+   {
+    "n": "3",
+    "text": "has not left"
+   },
+   {
+    "n": "4",
+    "text": "would not leave"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "046",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "choice4",
+  "question": "Even if the sun ( ) rise in the west, he would never stop loving his wife.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "were to"
+   },
+   {
+    "n": "2",
+    "text": "will"
+   },
+   {
+    "n": "3",
+    "text": "maybe"
+   },
+   {
+    "n": "4",
+    "text": "might"
+   },
+   {
+    "n": "5",
+    "text": "was going"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "047",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "choice4",
+  "question": "（ 　）a train station in the neighborhood at that time, Mr. and Mrs.Tanaka might have stayed in their old house.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "There were"
+   },
+   {
+    "n": "2",
+    "text": "There had been"
+   },
+   {
+    "n": "3",
+    "text": "Were there"
+   },
+   {
+    "n": "4",
+    "text": "Had there been"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "048",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "choice4",
+  "question": "( 　) you need any more information, please call the information desk.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Do"
+   },
+   {
+    "n": "2",
+    "text": "Had"
+   },
+   {
+    "n": "3",
+    "text": "Should"
+   },
+   {
+    "n": "4",
+    "text": "Would"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "049",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "reorder",
+  "answer": "32485176",
+  "question": "もし私があなたの立場なら、ニューヨークへ転勤するでしょう。\n\\[ ①I / ②I were / ③if / ④in / ⑤position / ⑥transfer to /⑦ would / ➇your\\] New York."
+ },
+ {
+  "num": "050",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "reorder",
+  "answer": "152453",
+  "question": "お金に余裕があったら、新しいコンピューターを買ったのに。\nIf I had had some extra money, \\[ ①I / ②have / ③new computer/ ④bought / ⑤a / ⑤would \\]."
+ },
+ {
+  "num": "051",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "reorder",
+  "answer": "86241 753",
+  "question": "5分早く着いていたら汽車に間に合っていたのに。\n\\[   \\], I \\[   \\]in time for the train.\n\\[①earlier / ②arrived / ③been /④five minutes / ⑤have / ⑥I / ⑦could / ➇had\\]\n86241 753"
+ },
+ {
+  "num": "052",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 5 仮定法(1)",
+  "type": "reorder",
+  "answer": "2341",
+  "question": "\\[①happen /②should / ③anything / ④new\\] in the meeting, please let me know."
+ },
+ {
+  "num": "053",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "choice4",
+  "question": "I do not deny that your information was invaluable. (  ) it, I could never have formed our plan.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Far from"
+   },
+   {
+    "n": "2",
+    "text": "In spite of"
+   },
+   {
+    "n": "3",
+    "text": "With"
+   },
+   {
+    "n": "4",
+    "text": "Without"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "054",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "choice4",
+  "question": "( ) a little more effort, he could have finished the job in time.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "For"
+   },
+   {
+    "n": "2",
+    "text": "With"
+   },
+   {
+    "n": "3",
+    "text": "By"
+   },
+   {
+    "n": "4",
+    "text": "As"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "055",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "choice4",
+  "question": "Makoto was very tired last night. Otherwise, he ( 　) to see the movie.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "will go"
+   },
+   {
+    "n": "2",
+    "text": "have gone"
+   },
+   {
+    "n": "3",
+    "text": "will have gone"
+   },
+   {
+    "n": "4",
+    "text": "would have gone"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "056",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "choice4",
+  "question": "Girls often wish they (   ) boys.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "are"
+   },
+   {
+    "n": "2",
+    "text": "should be"
+   },
+   {
+    "n": "3",
+    "text": "were"
+   },
+   {
+    "n": "4",
+    "text": "will be"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "057",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "choice4",
+  "question": "A : I didn't know that she was so troubled about money matters.\nB : I wish you ( ) her some a couple of weeks earlier.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "had sent"
+   },
+   {
+    "n": "2",
+    "text": "send"
+   },
+   {
+    "n": "3",
+    "text": "sent"
+   },
+   {
+    "n": "4",
+    "text": "will send"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "058",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "choice4",
+  "question": "（  ) for the doctor's great skill in the operation, he would not be alive now.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Without"
+   },
+   {
+    "n": "2",
+    "text": "Unless"
+   },
+   {
+    "n": "3",
+    "text": "But"
+   },
+   {
+    "n": "4",
+    "text": "Not"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "059",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "choice4",
+  "question": "( ) birds, the world would be filled with insects.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Were it not for"
+   },
+   {
+    "n": "2",
+    "text": "If it had not been for"
+   },
+   {
+    "n": "3",
+    "text": "Had there been"
+   },
+   {
+    "n": "4",
+    "text": "If there were"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "060",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "choice4",
+  "question": "Had it not been for our neighbors' kindness, we ( 　) able to find our dog.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "haven't been"
+   },
+   {
+    "n": "2",
+    "text": "hadn't been"
+   },
+   {
+    "n": "3",
+    "text": "wouldn't been"
+   },
+   {
+    "n": "4",
+    "text": "wouldn't have been"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "061",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "choice4",
+  "question": "It is time that you ( 　) to bed, Tom.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "gone"
+   },
+   {
+    "n": "2",
+    "text": "going"
+   },
+   {
+    "n": "3",
+    "text": "to go"
+   },
+   {
+    "n": "4",
+    "text": "went"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "062",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "choice4",
+  "question": "She talked to me ( 　) she were my teacher.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "as if"
+   },
+   {
+    "n": "2",
+    "text": "because"
+   },
+   {
+    "n": "3",
+    "text": "that"
+   },
+   {
+    "n": "4",
+    "text": "when"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "063",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "reorder",
+  "answer": "5642371",
+  "question": "あの事故がなかったなら、彼女は今もチームにいるだろう。\nShe would still be on the team \\[①accident / ②been / ③for / ④had not / ⑤if / ⑥it / ⑦the\\]."
+ },
+ {
+  "num": "064",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "reorder",
+  "answer": "13425",
+  "question": "1年間旅ができるだけのお金があればいいのですが。\n\\[ ①I / ②had / ③wish / ④I / ⑤enough money\\] to travel for a year.\n13425（43125）"
+ },
+ {
+  "num": "065",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "reorder",
+  "answer": "38742165",
+  "question": "もうそろそろ新しい靴を買わないといけない。\nIt is \\[ ①a/ ②bought / ③high/ ④I / ⑤of / ⑥pair / ⑦that / ➇time\\] new shoes."
+ },
+ {
+  "num": "066",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 6 仮定法(2)",
+  "type": "reorder",
+  "answer": "453612",
+  "question": "あなたの援助がなかったら、彼は失敗していたでしょう。\n\\[①for / ②your / ③not / ④had / ⑤it / ⑥been\\] help, he would have failed."
+ },
+ {
+  "num": "067",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "choice4",
+  "question": "The electric light ( 　) by Thomas Edison.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "invented"
+   },
+   {
+    "n": "2",
+    "text": "invited"
+   },
+   {
+    "n": "3",
+    "text": "was invited"
+   },
+   {
+    "n": "4",
+    "text": "was invented"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "068",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "choice4",
+  "question": "Let's go ahead and do it. Nothing (  ) by just waiting.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "will be gained"
+   },
+   {
+    "n": "2",
+    "text": "will gain"
+   },
+   {
+    "n": "3",
+    "text": "has gained"
+   },
+   {
+    "n": "4",
+    "text": "gains"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "069",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "choice4",
+  "question": "The door is (  ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "been painted"
+   },
+   {
+    "n": "2",
+    "text": "been painting"
+   },
+   {
+    "n": "3",
+    "text": "being painted"
+   },
+   {
+    "n": "4",
+    "text": "being painting"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "070",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "choice4",
+  "question": "On her way home, Yumiko was ( 　) a stranger.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "spoken to"
+   },
+   {
+    "n": "2",
+    "text": "spoken by"
+   },
+   {
+    "n": "3",
+    "text": "spoken with"
+   },
+   {
+    "n": "4",
+    "text": "spoken to by"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "071",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "choice4",
+  "question": "Mr. Tanaka was seen ( 　) out of the supermarket.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "to come"
+   },
+   {
+    "n": "2",
+    "text": "to coming"
+   },
+   {
+    "n": "3",
+    "text": "come"
+   },
+   {
+    "n": "4",
+    "text": "came"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "072",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "choice4",
+  "question": "I was made (  ) till late at night.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "work"
+   },
+   {
+    "n": "2",
+    "text": "worked"
+   },
+   {
+    "n": "3",
+    "text": "working"
+   },
+   {
+    "n": "4",
+    "text": "to work"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "073",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "choice4",
+  "question": "I'm not satisfied ( 　) the result.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "in"
+   },
+   {
+    "n": "2",
+    "text": "with"
+   },
+   {
+    "n": "3",
+    "text": "on"
+   },
+   {
+    "n": "4",
+    "text": "for"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "074",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "choice4",
+  "question": "Since she has been teaching Japanese at our primary school for 30 years, she is known (　　) everyone in this town.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "with"
+   },
+   {
+    "n": "2",
+    "text": "as"
+   },
+   {
+    "n": "3",
+    "text": "to"
+   },
+   {
+    "n": "4",
+    "text": "for"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "075",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "written",
+  "answer": "founded",
+  "question": "次の文の意味が通るように、( )内の語を形を変えて空所を埋めなさい。\n(found)\nTsuda College was ( 　　) in 1900."
+ },
+ {
+  "num": "076",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "reorder",
+  "answer": "251346",
+  "question": "日本語の意味になるように、\\[  \\]内の語句を並べ替えなさい。\n講演のあといつものように質問と討議が行われます。\nThe \\[ ①followed by / ②lecture / ③questions / ④and discussion as / ⑤will be / ⑥usual\\]."
+ },
+ {
+  "num": "077",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "reorder",
+  "answer": "634215",
+  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\nその男性は、あなたの郵便物をまだ配達していません。\nYour mail \\[①by / ②delivered / ③not / ④been / ⑤the / ⑥has\\] man yet."
+ },
+ {
+  "num": "078",
+  "chapter": "Chapter 1 動詞関連",
+  "unit": "UNIT 7 受動態",
+  "type": "error-id",
+  "answer": "③",
+  "answer_part": "taken good care",
+  "question": "①The patient ②was ③taken good care ④at the hospital."
+ },
+ {
+  "num": "079",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nAngela finally decided ( 　) Peter after graduating from college this June.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "marrying"
+   },
+   {
+    "n": "2",
+    "text": "marrying with"
+   },
+   {
+    "n": "3",
+    "text": "to marry"
+   },
+   {
+    "n": "4",
+    "text": "to marry with"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "080",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "choice4",
+  "question": "次の下線部に最も近い意味を表すものを選択肢から1つ選びなさい。\nThe river turned out to be more polluted than people had warned.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "proved"
+   },
+   {
+    "n": "2",
+    "text": "went"
+   },
+   {
+    "n": "3",
+    "text": "learned"
+   },
+   {
+    "n": "4",
+    "text": "claimed"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "081",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nPlease don't ( 　　 ) to call me if you have any problems. I really don't mind being interrupted.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "bother"
+   },
+   {
+    "n": "2",
+    "text": "hesitate"
+   },
+   {
+    "n": "3",
+    "text": "refrain"
+   },
+   {
+    "n": "4",
+    "text": "try"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "082",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nHe never fails (  ) his word with his friends.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "on keeping"
+   },
+   {
+    "n": "2",
+    "text": "to keep"
+   },
+   {
+    "n": "3",
+    "text": "keeping"
+   },
+   {
+    "n": "4",
+    "text": "keep"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "083",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nYou( 　 ) to start work early tomorrow.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "was"
+   },
+   {
+    "n": "2",
+    "text": "are"
+   },
+   {
+    "n": "3",
+    "text": "will be"
+   },
+   {
+    "n": "4",
+    "text": "have been"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "084",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "choice4",
+  "question": "Not a soul ( 　) seen in the classroom.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "were"
+   },
+   {
+    "n": "2",
+    "text": "were not"
+   },
+   {
+    "n": "3",
+    "text": "was to be"
+   },
+   {
+    "n": "4",
+    "text": "was not to been"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "085",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "choice4",
+  "question": "He was the only one (  ) the accident.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "to survive"
+   },
+   {
+    "n": "2",
+    "text": "to be survived"
+   },
+   {
+    "n": "3",
+    "text": "survived"
+   },
+   {
+    "n": "4",
+    "text": "have survived"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "086",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "choice4",
+  "question": "Kate didn't finish her homework by the next class because she lacks the（ 　) to manage her time carefully.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "reality"
+   },
+   {
+    "n": "2",
+    "text": "ability"
+   },
+   {
+    "n": "3",
+    "text": "quality"
+   },
+   {
+    "n": "4",
+    "text": "majority"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "087",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "choice4",
+  "question": "New words are constantly invented (  )new concepts.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "to describe"
+   },
+   {
+    "n": "2",
+    "text": "being described by"
+   },
+   {
+    "n": "3",
+    "text": "they describe"
+   },
+   {
+    "n": "4",
+    "text": "a description of"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "088",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "choice4",
+  "question": "This bike is too big for Ted (  ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "ride"
+   },
+   {
+    "n": "2",
+    "text": "riding"
+   },
+   {
+    "n": "3",
+    "text": "rode"
+   },
+   {
+    "n": "4",
+    "text": "to ride"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "089",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "reorder",
+  "answer": "54817623",
+  "question": "日本語の意味になるように、\\[ \\]の語を並べ替えなさい。\n実際のところ、英語を一年で習得するのはとても難しい。\nActually, \\[ ①difficult / ②English / ③in / ④is / ⑤it / ⑥master / ⑦to / ➇very\\] a year."
+ },
+ {
+  "num": "090",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "reorder",
+  "answer": "15234",
+  "question": "\\[ \\]の語を並べ替えなさい。\nRecent rises in the price of land have meant that many people can no longer \\[ ①afford/ ②buy / ③houses / ④of / ⑤to\\] their own."
+ },
+ {
+  "num": "091",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 1 不定詞(1)",
+  "type": "error-id",
+  "answer": "④",
+  "answer_part": "but",
+  "question": "I did ①everything I ②could ③to persuade him, ④but to fail."
+ },
+ {
+  "num": "092",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "choice4",
+  "question": "A : I was waiting for your call last night.\nB : I decided (   ) you because you were busy.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "not to call"
+   },
+   {
+    "n": "2",
+    "text": "not call to"
+   },
+   {
+    "n": "3",
+    "text": "to call not"
+   },
+   {
+    "n": "4",
+    "text": "not call"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "093",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "choice4",
+  "question": "It was raining (   ) hard that we couldn't go out.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "too"
+   },
+   {
+    "n": "2",
+    "text": "very"
+   },
+   {
+    "n": "3",
+    "text": "so"
+   },
+   {
+    "n": "4",
+    "text": "such"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "094",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "choice4",
+  "question": "その若い学生は、お年寄りが通れるように道を譲った。\nThe young student stepped aside (  ) an elderly person could pass.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "so that"
+   },
+   {
+    "n": "2",
+    "text": "so as"
+   },
+   {
+    "n": "3",
+    "text": "in order to"
+   },
+   {
+    "n": "4",
+    "text": "for that"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "095",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "choice4",
+  "question": "I left home early so (   ) to be in time for the meeting.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "as"
+   },
+   {
+    "n": "2",
+    "text": "far"
+   },
+   {
+    "n": "3",
+    "text": "much"
+   },
+   {
+    "n": "4",
+    "text": "that"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "096",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "choice4",
+  "question": "The girl was so kind (  ) me to the station.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "as to take"
+   },
+   {
+    "n": "2",
+    "text": "for taking"
+   },
+   {
+    "n": "3",
+    "text": "in order to take"
+   },
+   {
+    "n": "4",
+    "text": "that it takes"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "097",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nYou have to study hard (  ) order to pass the exam.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "by"
+   },
+   {
+    "n": "2",
+    "text": "for"
+   },
+   {
+    "n": "3",
+    "text": "in"
+   },
+   {
+    "n": "4",
+    "text": "of"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "098",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "choice4",
+  "question": "日本語の意味を表す英文を作る場合、英文の空所(ア)、(イ)を補うのに最も適切な組み合わせを1つ選びなさい。\n言うまでもなく、健康はお金よりも大切だ。\n(ア ) to( ィ ),health is more important than money.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Clearlyーtell"
+   },
+   {
+    "n": "2",
+    "text": "Putーwords"
+   },
+   {
+    "n": "3",
+    "text": "Needlessーsay"
+   },
+   {
+    "n": "4",
+    "text": "Expressionーsay"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "099",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nA : \"Thank you for inviting me for an interview today.\"\nB : \"(   ), please tell us about your strengths and weaknesses.\"",
+  "choices": [
+   {
+    "n": "1",
+    "text": "To the begin"
+   },
+   {
+    "n": "2",
+    "text": "On the beginning"
+   },
+   {
+    "n": "3",
+    "text": "To begin with"
+   },
+   {
+    "n": "4",
+    "text": "At beginning"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "100",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nShe speaks French, to say (   ) of English.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "anything"
+   },
+   {
+    "n": "2",
+    "text": "everything"
+   },
+   {
+    "n": "3",
+    "text": "nothing"
+   },
+   {
+    "n": "4",
+    "text": "something"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "101",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nHis ambition to become a politician is ( 　　) to be realized.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "likely"
+   },
+   {
+    "n": "2",
+    "text": "capable"
+   },
+   {
+    "n": "3",
+    "text": "lovely"
+   },
+   {
+    "n": "4",
+    "text": "probable"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "102",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "reorder",
+  "answer": "5361742",
+  "question": "彼らが座るのに十分な椅子がなかった。\nThere are not \\[ ①them / ②on / ③chairs / ④sit / ⑤enough / ⑥for / ⑦to\\]."
+ },
+ {
+  "num": "103",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "reorder",
+  "answer": "416253",
+  "question": "誰かが眼鏡を忘れていったようだ。\n\\[ ①seems / ②have / ③their glasses / ④someone / ⑤forgotten / ⑥to\\]."
+ },
+ {
+  "num": "104",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "reorder",
+  "answer": "4132",
+  "question": "あなたは喫茶店で彼を待っているだけでよいです。\nAll \\[ ①have / ②do / ③to / ④you\\] is to wait for him at the coffee shop."
+ },
+ {
+  "num": "105",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 2 不定詞(2)",
+  "type": "reorder",
+  "answer": "4532617",
+  "question": "You should \\[   \\]not\\[  \\]school.\n1 be late\n2 as\n3 so\n4 get up\n5 earlier\n6 to\n7 for"
+ },
+ {
+  "num": "106",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "choice4",
+  "question": "We enjoyed (  ) you with us tonight.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "have"
+   },
+   {
+    "n": "2",
+    "text": "having"
+   },
+   {
+    "n": "3",
+    "text": "to have"
+   },
+   {
+    "n": "4",
+    "text": "of having"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "107",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "choice4",
+  "question": "サムは公衆の前で演説をすることに慣れていた。\nSam was used to (  ) speeches in public.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "make"
+   },
+   {
+    "n": "2",
+    "text": "makes"
+   },
+   {
+    "n": "3",
+    "text": "making"
+   },
+   {
+    "n": "4",
+    "text": "made"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "108",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "choice4",
+  "question": "Michael ( ) play football for his school, but he doesn't now.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "used to"
+   },
+   {
+    "n": "2",
+    "text": "got used to"
+   },
+   {
+    "n": "3",
+    "text": "was used to"
+   },
+   {
+    "n": "4",
+    "text": "is used to"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "109",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "choice4",
+  "question": "I don't mind (  ) up early during the weekend.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "to get"
+   },
+   {
+    "n": "2",
+    "text": "get"
+   },
+   {
+    "n": "3",
+    "text": "getting"
+   },
+   {
+    "n": "4",
+    "text": "got"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "110",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "choice4",
+  "question": "We all look forward to ( ) you again in April.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "see"
+   },
+   {
+    "n": "2",
+    "text": "seeing"
+   },
+   {
+    "n": "3",
+    "text": "be seen"
+   },
+   {
+    "n": "4",
+    "text": "be seeing"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "111",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "choice4",
+  "question": "I don't like to eat chicken anymore, so stop (  ) it in the future.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "to buy"
+   },
+   {
+    "n": "2",
+    "text": "buying"
+   },
+   {
+    "n": "3",
+    "text": "bought"
+   },
+   {
+    "n": "4",
+    "text": "being bought"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "112",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "choice4",
+  "question": "Have you finished (  ) the morning paper yet?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "having read"
+   },
+   {
+    "n": "2",
+    "text": "reading"
+   },
+   {
+    "n": "3",
+    "text": "to read"
+   },
+   {
+    "n": "4",
+    "text": "to be reading"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "113",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "choice4",
+  "question": "You should not put off (　　 　) your homework until the last minute.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "to do"
+   },
+   {
+    "n": "2",
+    "text": "having done"
+   },
+   {
+    "n": "3",
+    "text": "doing"
+   },
+   {
+    "n": "4",
+    "text": "to have done"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "114",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "choice4",
+  "question": "Don't forget (  ) me when you get to the airport.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "call"
+   },
+   {
+    "n": "2",
+    "text": "to call"
+   },
+   {
+    "n": "3",
+    "text": "calling"
+   },
+   {
+    "n": "4",
+    "text": "for calling"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "115",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "written",
+  "answer": "sweeping",
+  "question": "次の2つの英文がほぼ同じ意味になるように、空所に適切な1語を入れなさい。\nAfter she swept up the floor, Sally placed the rug again.\n\\= After (  )up the floor, Sally placed the rug again."
+ },
+ {
+  "num": "116",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "error-id",
+  "answer": "③",
+  "answer_part": "to eat",
+  "question": "My little sister did ①everything ②she could to avoid ③to eat ④carrots."
+ },
+ {
+  "num": "117",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 3 動名詞(1)",
+  "type": "error-id",
+  "answer": "③",
+  "answer_part": "to post",
+  "question": "I ①clearly ②remember ③to post your letter ④yesterday."
+ },
+ {
+  "num": "118",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "choice4",
+  "question": "Do you mind (   )here?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "me to get to call"
+   },
+   {
+    "n": "2",
+    "text": "me to make a phone call"
+   },
+   {
+    "n": "3",
+    "text": "my getting to call"
+   },
+   {
+    "n": "4",
+    "text": "my making a phone call"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "119",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "choice4",
+  "question": "As soon as he left school, he went into business.\n\\=On (   ) school, he went into business.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "leave"
+   },
+   {
+    "n": "2",
+    "text": "to leave"
+   },
+   {
+    "n": "3",
+    "text": "leaving"
+   },
+   {
+    "n": "4",
+    "text": "being left"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "120",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "choice4",
+  "question": "If you feel like ( ) the rest of our collection, please come to our next exhibition in December.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "for seeing"
+   },
+   {
+    "n": "2",
+    "text": "seeing"
+   },
+   {
+    "n": "3",
+    "text": "to see"
+   },
+   {
+    "n": "4",
+    "text": "having seen"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "121",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "choice4",
+  "question": "(  ) it comes to cooking, no one is better than my grandmother.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "When"
+   },
+   {
+    "n": "2",
+    "text": "Where"
+   },
+   {
+    "n": "3",
+    "text": "Which"
+   },
+   {
+    "n": "4",
+    "text": "While"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "122",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nAs I had left the map in the hotel room, I had a lot of trouble ( )the museum.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "finding"
+   },
+   {
+    "n": "2",
+    "text": "of finding"
+   },
+   {
+    "n": "3",
+    "text": "to find"
+   },
+   {
+    "n": "4",
+    "text": "with find"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "123",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nSarah's interests lie in academics, so it's no ( ) trying to persuade her to work for our firm.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "meaning"
+   },
+   {
+    "n": "2",
+    "text": "purpose"
+   },
+   {
+    "n": "3",
+    "text": "time"
+   },
+   {
+    "n": "4",
+    "text": "use"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "124",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "choice4",
+  "question": "次の2つの英文がほぼ同じ意味になるように、空所に入れるのに最も適当なものを選択肢から1つ選びなさい。\nIt is impossible to tell when an earthquake will occur.\n\\= There is (  ) when an earthquake will happen.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "nothing to tell"
+   },
+   {
+    "n": "2",
+    "text": "not to tell"
+   },
+   {
+    "n": "3",
+    "text": "no telling"
+   },
+   {
+    "n": "4",
+    "text": "no teller"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "125",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nI cannot help (   ) a new iPad.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "buy"
+   },
+   {
+    "n": "2",
+    "text": "from buying"
+   },
+   {
+    "n": "3",
+    "text": "buying"
+   },
+   {
+    "n": "4",
+    "text": "to buy"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "126",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "reorder",
+  "answer": "7632451",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\n昨日あまりにも疲れていたので、私は一言も話す気になりませんでした。\nYesterday, I was so \\[ ①a word / ②feel / ③I didn't / ④like / ⑤speaking / ⑥that / ⑦tired\\]."
+ },
+ {
+  "num": "127",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "reorder",
+  "answer": "524631",
+  "question": "\\[ \\]内の語を並べ替えなさい。\nIt \\[ ①is / ②without / ③health / ④saying / ⑤goes / ⑥that\\] above wealth."
+ },
+ {
+  "num": "128",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 4 動名詞(2)",
+  "type": "reorder",
+  "answer": "3617524",
+  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\nしばらくしたらコーヒータイムにしてはいかがですか。\n\\[ ①you / ②taking / ③what / ④a / ⑤to / ⑥do / ⑦say\\] coffee break soon?"
+ },
+ {
+  "num": "129",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "choice4",
+  "question": "The woman (  ) in front of the house is my wife.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "standing"
+   },
+   {
+    "n": "2",
+    "text": "stood"
+   },
+   {
+    "n": "3",
+    "text": "stands"
+   },
+   {
+    "n": "4",
+    "text": "stand"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "130",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "choice4",
+  "question": "The traditional clothes ( 　) by women in India are called sari.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "wear"
+   },
+   {
+    "n": "2",
+    "text": "wore"
+   },
+   {
+    "n": "3",
+    "text": "wearing"
+   },
+   {
+    "n": "4",
+    "text": "worn"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "131",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "choice4",
+  "question": "I'm more (   ) in movies than in television.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "interesting"
+   },
+   {
+    "n": "2",
+    "text": "interested"
+   },
+   {
+    "n": "3",
+    "text": "interest"
+   },
+   {
+    "n": "4",
+    "text": "to interest"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "132",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "choice4",
+  "question": "It was an ( 　) game, wasn't it?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "excite"
+   },
+   {
+    "n": "2",
+    "text": "excited"
+   },
+   {
+    "n": "3",
+    "text": "exciting"
+   },
+   {
+    "n": "4",
+    "text": "excitingly"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "133",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "choice4",
+  "question": "日本語の意味に合うように、空所に入る最も適切なものを選択肢から1つ選びなさい。\n先生は、その結果に満足そうでした。\nThe teacher looked (   ) with the result.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "pleasant"
+   },
+   {
+    "n": "2",
+    "text": "please"
+   },
+   {
+    "n": "3",
+    "text": "pleasing"
+   },
+   {
+    "n": "4",
+    "text": "pleased"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "134",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "choice4",
+  "question": "次の2つの英文が同じ意味になるように、空所に入る最も適切なものを1つ選びなさい。\nHe closed his eyes and listened to the music.\n\\=He listened to the music with ( 　).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "closing his eyes"
+   },
+   {
+    "n": "2",
+    "text": "his eyes closed"
+   },
+   {
+    "n": "3",
+    "text": "his eyes closing"
+   },
+   {
+    "n": "4",
+    "text": "his close eyes"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "135",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nDavid sat on the chair with his arms ( ）.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "fold"
+   },
+   {
+    "n": "2",
+    "text": "folded"
+   },
+   {
+    "n": "3",
+    "text": "been folding"
+   },
+   {
+    "n": "4",
+    "text": "being folding"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "136",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nMy sister was sitting on the chair, with her legs ( 　）.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "cross"
+   },
+   {
+    "n": "2",
+    "text": "crossing"
+   },
+   {
+    "n": "3",
+    "text": "to cross"
+   },
+   {
+    "n": "4",
+    "text": "crossed"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "137",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "reorder",
+  "answer": "4132",
+  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\nジョンが教えている授業は、学生に大変人気がある。\nThe classes \\[ ①by / ②are / ③John / ④taught\\] very popular with the students."
+ },
+ {
+  "num": "138",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "reorder",
+  "answer": "3421",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nメアリーは、目を閉じて音楽を聴いていた。\nMary was listening to \\[ ①closed / ②her eyes / ③the music / ④with\\]."
+ },
+ {
+  "num": "139",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 5 分詞(1)",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "are exciting",
+  "question": "Scientists ①are exciting to see ②if this experiment can ③lead to a ④better understanding of animal behavior."
+ },
+ {
+  "num": "140",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "choice4",
+  "question": "下線部と同じ用法の-ingを含む最も適切なものを,選択肢から1つ選びなさい。\nLearning a new language implies entering a new world, and it inevitably leads to a widening of intellectual experience.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "The birds singing in the trees filled the air with music."
+   },
+   {
+    "n": "2",
+    "text": "Looking down from the plane, I could see the east coast of the island."
+   },
+   {
+    "n": "3",
+    "text": "We are entertaining our neighbors this evening."
+   },
+   {
+    "n": "4",
+    "text": "Next Tuesday is the deadline for sending in your application."
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "141",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\n( ) along the street, I found a new coffee shop that had just opened last week.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Walk"
+   },
+   {
+    "n": "2",
+    "text": "Walked"
+   },
+   {
+    "n": "3",
+    "text": "Walking"
+   },
+   {
+    "n": "4",
+    "text": "To walk"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "142",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\n( ) economically, the bottle will last for at least two months.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "To use"
+   },
+   {
+    "n": "2",
+    "text": "Use"
+   },
+   {
+    "n": "3",
+    "text": "Used"
+   },
+   {
+    "n": "4",
+    "text": "Using"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "143",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\n( ) from the sky, the island looks like a turtle.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Having seen"
+   },
+   {
+    "n": "2",
+    "text": "Seeing"
+   },
+   {
+    "n": "3",
+    "text": "Seen"
+   },
+   {
+    "n": "4",
+    "text": "To see"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "144",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "choice4",
+  "question": "The university, (  ) in 1851, was originally an institute for working-class people.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "found"
+   },
+   {
+    "n": "2",
+    "text": "founded"
+   },
+   {
+    "n": "3",
+    "text": "founding"
+   },
+   {
+    "n": "4",
+    "text": "was founded"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "145",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "choice4",
+  "question": "When Zachary saw me, he stood up, ( ) his hands wildly.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "waved"
+   },
+   {
+    "n": "2",
+    "text": "waving"
+   },
+   {
+    "n": "3",
+    "text": "to wave"
+   },
+   {
+    "n": "4",
+    "text": "has waved"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "146",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "choice4",
+  "question": "( ) what to say, Tracy remained silent all through the meeting.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Not knowing"
+   },
+   {
+    "n": "2",
+    "text": "Not known"
+   },
+   {
+    "n": "3",
+    "text": "Not to know"
+   },
+   {
+    "n": "4",
+    "text": "Knowing no"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "147",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "choice4",
+  "question": "(  ) my homework, I went to bed.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Finished"
+   },
+   {
+    "n": "2",
+    "text": "To finish"
+   },
+   {
+    "n": "3",
+    "text": "Having finished"
+   },
+   {
+    "n": "4",
+    "text": "Finish"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "148",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "choice4",
+  "question": "All things ( 　), there is no doubt about it.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "considering"
+   },
+   {
+    "n": "2",
+    "text": "considered"
+   },
+   {
+    "n": "3",
+    "text": "consideration"
+   },
+   {
+    "n": "4",
+    "text": "consider"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "149",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "reorder",
+  "answer": "7532681",
+  "question": "試験勉強をしていたら、電気をつけっぱなしのまま眠り込んでしまった。【1つ不要】\nStudying \\[  \\],I \\[    \\]\n1 on\n2 with\n3 fell asleep\n4 in\n5 the exam\n6 the light\n7 for\n8 turned"
+ },
+ {
+  "num": "150",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "reorder",
+  "answer": "451263",
+  "question": "仕事が終わると、彼らは散歩に出かけた。\nThe \\[  \\],\\[   \\] a walk.\n1 done\n2 they\n3 for\n4 work\n5 being\n6 went"
+ },
+ {
+  "num": "151",
+  "chapter": "Chapter 2 準動詞",
+  "unit": "UNIT 6 分詞(2)",
+  "type": "reorder",
+  "answer": "3241",
+  "question": "厳密に言えば、この記事には文法的に誤った表現が多数あります。\n\\[ \\]speaking,this \\[  \\] a lot of ungrammatical \\[ \\].\n1 expressions\n2 article\n3 strictly\n4 contains"
+ },
+ {
+  "num": "152",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "choice4",
+  "question": "My sister told me about a class at her university, (  ) very much.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "she's enjoying that"
+   },
+   {
+    "n": "2",
+    "text": "she's to enjoy it"
+   },
+   {
+    "n": "3",
+    "text": "that she's to enjoy"
+   },
+   {
+    "n": "4",
+    "text": "which she's enjoying"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "153",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "choice4",
+  "question": "Peter is the teacher (  )we want to talk to.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "why"
+   },
+   {
+    "n": "2",
+    "text": "whom"
+   },
+   {
+    "n": "3",
+    "text": "whose"
+   },
+   {
+    "n": "4",
+    "text": "which"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "154",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "choice4",
+  "question": "The boy (  ) I thought was a friend of mine proved to be a stranger.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "what"
+   },
+   {
+    "n": "2",
+    "text": "which"
+   },
+   {
+    "n": "3",
+    "text": "who"
+   },
+   {
+    "n": "4",
+    "text": "whose"
+   },
+   {
+    "n": "5",
+    "text": "why"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "155",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "choice4",
+  "question": "Last summer, I paid a visit to Athens, ( 　) is the capital of Greece.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "it"
+   },
+   {
+    "n": "2",
+    "text": "that"
+   },
+   {
+    "n": "3",
+    "text": "where"
+   },
+   {
+    "n": "4",
+    "text": "which"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "156",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "choice4",
+  "question": "New Zealand is one of the countries ( ) I would like to visit.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "where"
+   },
+   {
+    "n": "2",
+    "text": "wherever"
+   },
+   {
+    "n": "3",
+    "text": "which"
+   },
+   {
+    "n": "4",
+    "text": "whichever"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "157",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "choice4",
+  "question": "The place (  ) we spent our vacation was really beautiful.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "who"
+   },
+   {
+    "n": "2",
+    "text": "what"
+   },
+   {
+    "n": "3",
+    "text": "which"
+   },
+   {
+    "n": "4",
+    "text": "where"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "158",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "choice4",
+  "question": "This is ( 　) I learned to write a novel.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "that"
+   },
+   {
+    "n": "2",
+    "text": "whom"
+   },
+   {
+    "n": "3",
+    "text": "how"
+   },
+   {
+    "n": "4",
+    "text": "who"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "159",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "choice4",
+  "question": "I know the girl ( 　) father is a famous musician.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "who"
+   },
+   {
+    "n": "2",
+    "text": "whom"
+   },
+   {
+    "n": "3",
+    "text": "who's"
+   },
+   {
+    "n": "4",
+    "text": "whose"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "160",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "choice4",
+  "question": "The apartment ( 　) is really too large for just one person.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I live it"
+   },
+   {
+    "n": "2",
+    "text": "I living in"
+   },
+   {
+    "n": "3",
+    "text": "in that I live"
+   },
+   {
+    "n": "4",
+    "text": "I live in"
+   },
+   {
+    "n": "5",
+    "text": "living"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "161",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "whom",
+  "question": "The police officer ①whom ②rescued the child ③was given a special award ④by the city."
+ },
+ {
+  "num": "162",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "reorder",
+  "answer": "51423",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nこちらがウィリアム・シェイクスピアがかつて住んでいた家です。\nThis is the house \\[①which / ②used / ③to / ④William Shakespeare / ⑤in\\] live."
+ },
+ {
+  "num": "163",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "reorder",
+  "answer": "3421",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\n2020年は、東京でオリンピックが開催される年です。\n2020 is the year \\[①be / ②will / ③when / ④the Olympic Games\\] held in Tokyo."
+ },
+ {
+  "num": "164",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 1 関係詞(1)",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "where",
+  "question": "Rome is one of the places ①where I look forward to visiting ②during this ③seven-day trip ④to Europe."
+ },
+ {
+  "num": "165",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "choice4",
+  "question": "You must always do (　 ) you think is right.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "that"
+   },
+   {
+    "n": "2",
+    "text": "what"
+   },
+   {
+    "n": "3",
+    "text": "it"
+   },
+   {
+    "n": "4",
+    "text": "which"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "166",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "choice4",
+  "question": "Never put off till tomorrow (  ) you can do today.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "which"
+   },
+   {
+    "n": "2",
+    "text": "that"
+   },
+   {
+    "n": "3",
+    "text": "when"
+   },
+   {
+    "n": "4",
+    "text": "what"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "167",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "choice4",
+  "question": "我々を最も失望させたのは、彼が我々を助けるのを拒んだことであった。\n（ ） disappointed us most was his refusal to help us.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "That"
+   },
+   {
+    "n": "2",
+    "text": "Which"
+   },
+   {
+    "n": "3",
+    "text": "What"
+   },
+   {
+    "n": "4",
+    "text": "Who"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "168",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "choice4",
+  "question": "l owe (  ) I am today to my high school teacher, Ms. Takemoto.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "that"
+   },
+   {
+    "n": "2",
+    "text": "what"
+   },
+   {
+    "n": "3",
+    "text": "when"
+   },
+   {
+    "n": "4",
+    "text": "whom"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "169",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "choice4",
+  "question": "Junko is a famous musician, and (  ) is more, she is an excellent designer.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "who"
+   },
+   {
+    "n": "2",
+    "text": "what"
+   },
+   {
+    "n": "3",
+    "text": "where"
+   },
+   {
+    "n": "4",
+    "text": "how"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "170",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "choice4",
+  "question": "（ 　） wants to come to the party must bring a present.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Whenever"
+   },
+   {
+    "n": "2",
+    "text": "Wherever"
+   },
+   {
+    "n": "3",
+    "text": "Whoever"
+   },
+   {
+    "n": "4",
+    "text": "However"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "171",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "choice4",
+  "question": "（ 　） happens, don't forget to call your parents on your way home.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "However"
+   },
+   {
+    "n": "2",
+    "text": "Whatever"
+   },
+   {
+    "n": "3",
+    "text": "Wherever"
+   },
+   {
+    "n": "4",
+    "text": "Whoever"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "172",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "choice4",
+  "question": "Mario has a habit of biting his fingernails ( 　 ) he is nervous.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "during"
+   },
+   {
+    "n": "2",
+    "text": "whenever"
+   },
+   {
+    "n": "3",
+    "text": "by"
+   },
+   {
+    "n": "4",
+    "text": "throughout"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "173",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "choice4",
+  "question": "No matter (  ) busy he is, he always calls his mother before going home.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "what"
+   },
+   {
+    "n": "2",
+    "text": "when"
+   },
+   {
+    "n": "3",
+    "text": "where"
+   },
+   {
+    "n": "4",
+    "text": "how"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "174",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "choice4",
+  "question": "（ 　） Michael, he forgot to do his homework.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "As is often the case with"
+   },
+   {
+    "n": "2",
+    "text": "As often with the case is"
+   },
+   {
+    "n": "3",
+    "text": "As the case is often with"
+   },
+   {
+    "n": "4",
+    "text": "As is the case often with"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "175",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "reorder",
+  "answer": "316524",
+  "question": "Jimmy's \\[①isn't / ②used / ③singing / ④to / ⑤it / ⑥what\\] be."
+ },
+ {
+  "num": "176",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "reorder",
+  "answer": "53214",
+  "question": "He has a very large vocabulary. He is \\[①a / ②called / ③is / ④\"walking dictionary\"/ ⑤what\\] ."
+ },
+ {
+  "num": "177",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "reorder",
+  "answer": "41352",
+  "question": "\\[①matter /②say / ③what / ④no / ⑤they\\], I believe that she is telling the truth."
+ },
+ {
+  "num": "178",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 2 関係詞(2)",
+  "type": "reorder",
+  "answer": "246153",
+  "question": "\\[  \\] this city \\[   \\] municipal swimming pool.\n1 can\n2 whoever\n3 the\n4 lives\n5 use\n6 in"
+ },
+ {
+  "num": "179",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "choice4",
+  "question": "Ever since Steven changed jobs, he has not been as ( 　) as he used to be.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "happy"
+   },
+   {
+    "n": "2",
+    "text": "happier"
+   },
+   {
+    "n": "3",
+    "text": "happiest"
+   },
+   {
+    "n": "4",
+    "text": "too happy"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "180",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "choice4",
+  "question": "Jeff and Jenny saved (  ) they could to visit their uncle in Hawaii.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "as a lot of money as"
+   },
+   {
+    "n": "2",
+    "text": "as much money as"
+   },
+   {
+    "n": "3",
+    "text": "money as a lot as"
+   },
+   {
+    "n": "4",
+    "text": "money as possible as"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "181",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "choice4",
+  "question": "He is not so much a genius (  ) a man of diligence.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "above"
+   },
+   {
+    "n": "2",
+    "text": "that"
+   },
+   {
+    "n": "3",
+    "text": "as"
+   },
+   {
+    "n": "4",
+    "text": "than"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "182",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "choice4",
+  "question": "This box is (  ) that one.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "as twice large as"
+   },
+   {
+    "n": "2",
+    "text": "larger twice than"
+   },
+   {
+    "n": "3",
+    "text": "twice as large as"
+   },
+   {
+    "n": "4",
+    "text": "twice larger as"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "183",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "choice4",
+  "question": "Gabriela has five times (    ) bags as I do.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "as many"
+   },
+   {
+    "n": "2",
+    "text": "as more"
+   },
+   {
+    "n": "3",
+    "text": "many"
+   },
+   {
+    "n": "4",
+    "text": "more"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "184",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "choice4",
+  "question": "次の英文に対する応答として最も適切なものを選択肢から1つ選びなさい。\nWhat do you think of the new project?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I think so, too."
+   },
+   {
+    "n": "2",
+    "text": "Yes, I thought of it."
+   },
+   {
+    "n": "3",
+    "text": "It couldn't be better."
+   },
+   {
+    "n": "4",
+    "text": "It was projected over there."
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "185",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nJames had better study (   　 ) if he wants to get an A in this class.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "harder"
+   },
+   {
+    "n": "2",
+    "text": "more hardly"
+   },
+   {
+    "n": "3",
+    "text": "more harder"
+   },
+   {
+    "n": "4",
+    "text": "more hard"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "186",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nHe has (  　)time than I to prepare for the interview.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "few"
+   },
+   {
+    "n": "2",
+    "text": "less"
+   },
+   {
+    "n": "3",
+    "text": "lesser"
+   },
+   {
+    "n": "4",
+    "text": "little"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "187",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nBob is (  　) taller than John.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "much"
+   },
+   {
+    "n": "2",
+    "text": "as"
+   },
+   {
+    "n": "3",
+    "text": "more"
+   },
+   {
+    "n": "4",
+    "text": "very"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "188",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "choice4",
+  "question": "空所に入る最も適切なものを選択肢から1つ選びなさい。\nThis is the (   ) best wine I've ever tasted.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "so"
+   },
+   {
+    "n": "2",
+    "text": "most"
+   },
+   {
+    "n": "3",
+    "text": "much"
+   },
+   {
+    "n": "4",
+    "text": "very"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "189",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "reorder",
+  "answer": "4361527",
+  "question": "私の記憶力は以前ほどよくない。\n\\[①as / ②it / ③is / ④my memory / ⑤good as / ⑥not / ⑦used to\\] be."
+ },
+ {
+  "num": "190",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "reorder",
+  "answer": "21345",
+  "question": "このエアコンの消費電力はあのエアコンの2分の1だ。\nThis air conditioner uses half as \\[①electricity / ②much / ③as / ④that / ⑤one\\]."
+ },
+ {
+  "num": "191",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "reorder",
+  "answer": "48176253",
+  "question": "私はできるだけ安くオーストラリアー周旅行をしたい。\nI \\[①take / ②Australia / ③cheaply / ④want / ⑤as / ⑥around / ⑦a trip / ➇to\\] as possible."
+ },
+ {
+  "num": "192",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 3 比較(1)",
+  "type": "reorder",
+  "answer": "2167543",
+  "question": "新しい競技場は古い物よりも3倍くらい大きい。\nThe new stadium \\[①about / ②is / ③of / ④size / ⑤the / ⑥three / ⑦times\\] the old one."
+ },
+ {
+  "num": "193",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "choice4",
+  "question": "Ted's dancing skill is exceptionally superior (  )others'.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "as"
+   },
+   {
+    "n": "2",
+    "text": "of"
+   },
+   {
+    "n": "3",
+    "text": "than"
+   },
+   {
+    "n": "4",
+    "text": "to"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "194",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "choice4",
+  "question": "Mark is expected to take over his father's business as he is (  ) boy of the two sons in his family.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "older"
+   },
+   {
+    "n": "2",
+    "text": "oldest"
+   },
+   {
+    "n": "3",
+    "text": "the older"
+   },
+   {
+    "n": "4",
+    "text": "the oldest"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "195",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "choice4",
+  "question": "The more we practice for the concert, (  ) our performance will be.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "so"
+   },
+   {
+    "n": "2",
+    "text": "the best"
+   },
+   {
+    "n": "3",
+    "text": "the better"
+   },
+   {
+    "n": "4",
+    "text": "and"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "196",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "choice4",
+  "question": "I am (   )interested in this topic than you are.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "fewer"
+   },
+   {
+    "n": "2",
+    "text": "no more"
+   },
+   {
+    "n": "3",
+    "text": "not very"
+   },
+   {
+    "n": "4",
+    "text": "too much"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "197",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "choice4",
+  "question": "A whale is (  ) less a mammal than a horse is.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "no"
+   },
+   {
+    "n": "2",
+    "text": "not"
+   },
+   {
+    "n": "3",
+    "text": "never"
+   },
+   {
+    "n": "4",
+    "text": "any"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "198",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "choice4",
+  "question": "Jim is so rich that he always has (  ) $1,000 in his wallet.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "far less for"
+   },
+   {
+    "n": "2",
+    "text": "no less than"
+   },
+   {
+    "n": "3",
+    "text": "much less in"
+   },
+   {
+    "n": "4",
+    "text": "too less than"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "199",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "choice4",
+  "question": "This book is the ( 　) interesting of all.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "few"
+   },
+   {
+    "n": "2",
+    "text": "least"
+   },
+   {
+    "n": "3",
+    "text": "less"
+   },
+   {
+    "n": "4",
+    "text": "little"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "200",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "choice4",
+  "question": "This shopping mall is the second (  ) one in New York.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "large"
+   },
+   {
+    "n": "2",
+    "text": "larger"
+   },
+   {
+    "n": "3",
+    "text": "largest"
+   },
+   {
+    "n": "4",
+    "text": "the largest"
+   }
+  ],
+  "answer": "3",
+  "editorial_note": "原稿では選択肢が3つのみだったため、第4の選択肢「the largest」を編集部で補った。"
+ },
+ {
+  "num": "201",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "choice4",
+  "question": "Korea's population is aging faster than ( 　　) other nation in East Asia except Japan.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "some"
+   },
+   {
+    "n": "2",
+    "text": "any"
+   },
+   {
+    "n": "3",
+    "text": "one"
+   },
+   {
+    "n": "4",
+    "text": "few"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "202",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "choice4",
+  "question": "The room we had was great. It was one of the (  ) in the hotel.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "nice"
+   },
+   {
+    "n": "2",
+    "text": "nicely"
+   },
+   {
+    "n": "3",
+    "text": "nicer"
+   },
+   {
+    "n": "4",
+    "text": "nicest"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "203",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "reorder",
+  "answer": "31542",
+  "question": "彼女ははにかみ屋なので、それだけよけいに彼女が好きだ。\nI like her \\[①the / ②her / ③all / ④for / ⑤better\\] shyness."
+ },
+ {
+  "num": "204",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "reorder",
+  "answer": "4213",
+  "question": "エベレストは世界で最も高い山です。\n\\[①mountain / ②other / ③in / ④no\\] the world is higher than Mt. Everest."
+ },
+ {
+  "num": "205",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 4 比較(2)",
+  "type": "reorder",
+  "answer": "6142537",
+  "question": "それは私が今まで観た中で一番いい映画だ。\nThat is the \\[①movie / ②I /③ever / ④that / ⑤have / ⑥best / ⑦seen\\]."
+ },
+ {
+  "num": "206",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "She asked me what (  ) to do next year.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "am I planning"
+   },
+   {
+    "n": "2",
+    "text": "was I planning"
+   },
+   {
+    "n": "3",
+    "text": "will I be planning"
+   },
+   {
+    "n": "4",
+    "text": "I was planning"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "207",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "(   ) do you think of the new teacher?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "What"
+   },
+   {
+    "n": "2",
+    "text": "Who"
+   },
+   {
+    "n": "3",
+    "text": "When"
+   },
+   {
+    "n": "4",
+    "text": "How"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "208",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "A : Hey, I met this cute guy last night at the party.\nB: (  ）\nA : He's really handsome and has a good sense of humor.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "That's too bad."
+   },
+   {
+    "n": "2",
+    "text": "I'm not sure about that."
+   },
+   {
+    "n": "3",
+    "text": "Could you say hi to him for me?"
+   },
+   {
+    "n": "4",
+    "text": "What's he like?"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "209",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "新しい隣人がどんな人か、知りたい。\nI want to know what our new next-door neighbor is (  ）.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "about"
+   },
+   {
+    "n": "2",
+    "text": "appearing"
+   },
+   {
+    "n": "3",
+    "text": "like"
+   },
+   {
+    "n": "4",
+    "text": "looking"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "210",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "The meeting starts at 10 o'clock, (  )it?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "do"
+   },
+   {
+    "n": "2",
+    "text": "doesn't"
+   },
+   {
+    "n": "3",
+    "text": "is"
+   },
+   {
+    "n": "4",
+    "text": "isn't"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "211",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "\"Don't you like eggs?\" \" (    ) .\"",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Yes. I don't like them."
+   },
+   {
+    "n": "2",
+    "text": "No. I love to eat one every morning."
+   },
+   {
+    "n": "3",
+    "text": "Sure. I don't have any."
+   },
+   {
+    "n": "4",
+    "text": "Yes, I do. I like fried eggs."
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "212",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "なぜ私の後をつけてくるの。\nWhat are you following me (   )?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "in"
+   },
+   {
+    "n": "2",
+    "text": "for"
+   },
+   {
+    "n": "3",
+    "text": "at"
+   },
+   {
+    "n": "4",
+    "text": "on"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "213",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "X : How come you were late for school?\nY:(  )",
+  "choices": [
+   {
+    "n": "1",
+    "text": "My father will give me a ride."
+   },
+   {
+    "n": "2",
+    "text": "My bus got caught in a traffic jam."
+   },
+   {
+    "n": "3",
+    "text": "School was over."
+   },
+   {
+    "n": "4",
+    "text": "By bus."
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "214",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "A : (   ) do you go skiing?\nB : Twice or three times a year.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "How long"
+   },
+   {
+    "n": "2",
+    "text": "How much"
+   },
+   {
+    "n": "3",
+    "text": "How far"
+   },
+   {
+    "n": "4",
+    "text": "How often"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "215",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "\"How (  ) will the train leave?\" \"In ten minutes.\"",
+  "choices": [
+   {
+    "n": "1",
+    "text": "long"
+   },
+   {
+    "n": "2",
+    "text": "much"
+   },
+   {
+    "n": "3",
+    "text": "often"
+   },
+   {
+    "n": "4",
+    "text": "soon"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "216",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "A : (   ) will win the annual best album award?\nB : The Bangles, for sure.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Do you think who"
+   },
+   {
+    "n": "2",
+    "text": "Who do you think"
+   },
+   {
+    "n": "3",
+    "text": "Who will you think"
+   },
+   {
+    "n": "4",
+    "text": "Who you think"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "217",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "choice4",
+  "question": "A : ( ) there are in the U.S.?\nB : Yes, I do. Fifty.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Do you know how many states"
+   },
+   {
+    "n": "2",
+    "text": "Do you think how many states"
+   },
+   {
+    "n": "3",
+    "text": "How many states do you think"
+   },
+   {
+    "n": "4",
+    "text": "How many states do you wonder"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "218",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "error-id",
+  "answer": "③",
+  "answer_part": "is your name?",
+  "question": "①Could you tell ②me what ③is your name?"
+ },
+ {
+  "num": "219",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "reorder",
+  "answer": "625431",
+  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\n昨日何を買ったと思う?\n\\[①bought / ②do / ③I / ④think / ⑤you/ ⑥what\\] yesterday?"
+ },
+ {
+  "num": "220",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 5 疑問",
+  "type": "reorder",
+  "answer": "4132",
+  "question": "日本語の意味になるように、\\[内の語を並べ替えなさい。\nいったい誰がそのことをあなたに言ったのですか?\nWho \\[①earth / ②you / ③told / ④on\\] that?"
+ },
+ {
+  "num": "221",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "choice4",
+  "question": "I told them to stop talking, but they didn't pay ( ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "an attention"
+   },
+   {
+    "n": "2",
+    "text": "any attention"
+   },
+   {
+    "n": "3",
+    "text": "attentions"
+   },
+   {
+    "n": "4",
+    "text": "some attention"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "222",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "choice4",
+  "question": "I cannot hear that song (   ) thinking of my old friend.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "with"
+   },
+   {
+    "n": "2",
+    "text": "without"
+   },
+   {
+    "n": "3",
+    "text": "which"
+   },
+   {
+    "n": "4",
+    "text": "whose"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "223",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "choice4",
+  "question": "Ben cannot speak German. Mary cannot, (  ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "too"
+   },
+   {
+    "n": "2",
+    "text": "neither"
+   },
+   {
+    "n": "3",
+    "text": "nor"
+   },
+   {
+    "n": "4",
+    "text": "also"
+   },
+   {
+    "n": "5",
+    "text": "either"
+   }
+  ],
+  "answer": "5"
+ },
+ {
+  "num": "224",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "choice4",
+  "question": "Not(   ) person can be a pianist.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "every"
+   },
+   {
+    "n": "2",
+    "text": "much"
+   },
+   {
+    "n": "3",
+    "text": "many"
+   },
+   {
+    "n": "4",
+    "text": "a few"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "225",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "choice4",
+  "question": "He would (  ) deceive me into doing such a foolish thing.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "the least person"
+   },
+   {
+    "n": "2",
+    "text": "be the last person"
+   },
+   {
+    "n": "3",
+    "text": "the least person to"
+   },
+   {
+    "n": "4",
+    "text": "be the last person to"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "226",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "choice4",
+  "question": "The publishing firm expected his new novel to be a great hit, but it was (  ) from being a success.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "away"
+   },
+   {
+    "n": "2",
+    "text": "opposite"
+   },
+   {
+    "n": "3",
+    "text": "far"
+   },
+   {
+    "n": "4",
+    "text": "distant"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "227",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "choice4",
+  "question": "That melon is anything (  ) cheap.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "but"
+   },
+   {
+    "n": "2",
+    "text": "and"
+   },
+   {
+    "n": "3",
+    "text": "or"
+   },
+   {
+    "n": "4",
+    "text": "however"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "228",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "choice4",
+  "question": "The surgical operation is relatively free ( ) danger.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "with"
+   },
+   {
+    "n": "2",
+    "text": "from"
+   },
+   {
+    "n": "3",
+    "text": "about"
+   },
+   {
+    "n": "4",
+    "text": "on"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "229",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "choice4",
+  "question": "It remains (   )whether the economic stimulus package will make a significant impact on the economy.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "seeing"
+   },
+   {
+    "n": "2",
+    "text": "seen"
+   },
+   {
+    "n": "3",
+    "text": "to seen"
+   },
+   {
+    "n": "4",
+    "text": "to be seen"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "230",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "error-id",
+  "answer": "③",
+  "answer_part": "anybody cannot",
+  "question": "①When it comes to the question ②of euthanasia, ③anybody cannot find\n④an easy solution."
+ },
+ {
+  "num": "231",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "reorder",
+  "answer": "425136",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nこの映画を観るといつも学生時代を思い出す。\nI \\[①without / ②watch / ③remembering / ④can't / ⑤this movie / ⑥my\\] school days."
+ },
+ {
+  "num": "232",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 6 否定",
+  "type": "reorder",
+  "answer": "72451683",
+  "question": "日本語の意味になるように、選択肢を並べ替えなさい。\n遊園地はたくさんあるが、成功しているものは多くない。\nThere are \\[  \\],\\[   \\]successful.\n1 all\n2 amusement parks\n3 are\n4 but\n5 not\n6 of\n7 many\n8 them"
+ },
+ {
+  "num": "233",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "choice4",
+  "question": "(  ) that such a thing would happen to all of the guests staying at the hotel.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Little did I dream"
+   },
+   {
+    "n": "2",
+    "text": "Little dream did I"
+   },
+   {
+    "n": "3",
+    "text": "Little I did dream"
+   },
+   {
+    "n": "4",
+    "text": "Little dream I did"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "234",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "choice4",
+  "question": "No sooner (  ) his meal than he drove to a nearby bookstore.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "finishing"
+   },
+   {
+    "n": "2",
+    "text": "had he finished"
+   },
+   {
+    "n": "3",
+    "text": "he had finished"
+   },
+   {
+    "n": "4",
+    "text": "he finished"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "235",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "choice4",
+  "question": "Around the corner to the left (  ) the place they are having the party.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "and"
+   },
+   {
+    "n": "2",
+    "text": "except"
+   },
+   {
+    "n": "3",
+    "text": "on"
+   },
+   {
+    "n": "4",
+    "text": "is"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "236",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "choice4",
+  "question": "I was born in Hokkaido. So (  ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "my parents were"
+   },
+   {
+    "n": "2",
+    "text": "did my parents"
+   },
+   {
+    "n": "3",
+    "text": "were my parents"
+   },
+   {
+    "n": "4",
+    "text": "my parents, too"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "237",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "choice4",
+  "question": "Tom does not work at the library on Saturday and neither (  ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Jane does"
+   },
+   {
+    "n": "2",
+    "text": "is Jane"
+   },
+   {
+    "n": "3",
+    "text": "does Jane"
+   },
+   {
+    "n": "4",
+    "text": "Jane works"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "238",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "choice4",
+  "question": "\"I didn't make any mistakes in the math quiz\\!\" \" (   ) did I.\"",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Also"
+   },
+   {
+    "n": "2",
+    "text": "But"
+   },
+   {
+    "n": "3",
+    "text": "Nor"
+   },
+   {
+    "n": "4",
+    "text": "Yet"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "239",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "choice4",
+  "question": "(  ) is Scotland that they are going to, not Ireland.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Their"
+   },
+   {
+    "n": "2",
+    "text": "That"
+   },
+   {
+    "n": "3",
+    "text": "It"
+   },
+   {
+    "n": "4",
+    "text": "Which"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "240",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "choice4",
+  "question": "It was because he was ill (  ) we gave up traveling.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "as"
+   },
+   {
+    "n": "2",
+    "text": "for"
+   },
+   {
+    "n": "3",
+    "text": "so"
+   },
+   {
+    "n": "4",
+    "text": "that"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "241",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "choice4",
+  "question": "She leaves her toys all over the floor and I have to pick (  ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "them up"
+   },
+   {
+    "n": "2",
+    "text": "themselves up"
+   },
+   {
+    "n": "3",
+    "text": "up them"
+   },
+   {
+    "n": "4",
+    "text": "up themselves"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "242",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "choice4",
+  "question": "（ ） number of students are playing baseball.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Some"
+   },
+   {
+    "n": "2",
+    "text": "A"
+   },
+   {
+    "n": "3",
+    "text": "The"
+   },
+   {
+    "n": "4",
+    "text": "Great"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "243",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "l did",
+  "question": "Never in my life ①l did imagine ②myself as the type of ③person who\nwould enjoy watching tropical fish ④swim in an aquarium."
+ },
+ {
+  "num": "244",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "reorder",
+  "answer": "6354271",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\n私は先週はじめてそれに気がついた。\nIt \\[①noticed / ②that / ③not / ④last week/ ⑤until / ⑥was / ⑦l \\] it."
+ },
+ {
+  "num": "245",
+  "chapter": "Chapter 3 構造系",
+  "unit": "UNIT 7 倒置・強調構文・語順",
+  "type": "reorder",
+  "answer": "4312",
+  "question": "\\[ \\]内の語を並べ替えなさい。\nWho \\[①that / ②you / ③it / ④is\\] are talking about?"
+ },
+ {
+  "num": "246",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "A : Jake, what does ATM mean?\nB : I think it (   ) Automatic Teller Machine.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "stands for"
+   },
+   {
+    "n": "2",
+    "text": "stands up"
+   },
+   {
+    "n": "3",
+    "text": "stands in"
+   },
+   {
+    "n": "4",
+    "text": "stands back"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "247",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "Do you think oolong tea is very different (  ) green tea?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "as"
+   },
+   {
+    "n": "2",
+    "text": "from"
+   },
+   {
+    "n": "3",
+    "text": "like"
+   },
+   {
+    "n": "4",
+    "text": "too"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "248",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "Jennifer: Dinner's (   ) me tonight. Order whatever you like.\nLiz: Thanks, I think I'll have spaghetti.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "with"
+   },
+   {
+    "n": "2",
+    "text": "on"
+   },
+   {
+    "n": "3",
+    "text": "for"
+   },
+   {
+    "n": "4",
+    "text": "to"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "249",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "The policeman took the criminal (  ) the arm and brought him to the police station.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "by"
+   },
+   {
+    "n": "2",
+    "text": "along"
+   },
+   {
+    "n": "3",
+    "text": "with"
+   },
+   {
+    "n": "4",
+    "text": "of"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "250",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "The coffee shop opens at 7:30 and serves breakfast (    ) 10 o'clock.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "within"
+   },
+   {
+    "n": "2",
+    "text": "by"
+   },
+   {
+    "n": "3",
+    "text": "for"
+   },
+   {
+    "n": "4",
+    "text": "till"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "251",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "We will finish this work (    ) 5 o'clock.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "since"
+   },
+   {
+    "n": "2",
+    "text": "until"
+   },
+   {
+    "n": "3",
+    "text": "for"
+   },
+   {
+    "n": "4",
+    "text": "by"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "252",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "2、3分で戻ります。\nI'll be back (  ) a few minutes.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "with"
+   },
+   {
+    "n": "2",
+    "text": "into"
+   },
+   {
+    "n": "3",
+    "text": "in"
+   },
+   {
+    "n": "4",
+    "text": "before"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "253",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "(    ) all the doctors in the hospital, Dr. Takahashi speaks English the best.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "In"
+   },
+   {
+    "n": "2",
+    "text": "Out"
+   },
+   {
+    "n": "3",
+    "text": "Of"
+   },
+   {
+    "n": "4",
+    "text": "As"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "254",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "(   ) they were finally married in 1946.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "In their delight"
+   },
+   {
+    "n": "2",
+    "text": "For their delight"
+   },
+   {
+    "n": "3",
+    "text": "To their delight"
+   },
+   {
+    "n": "4",
+    "text": "On their delight"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "255",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "error-id",
+  "answer": "④",
+  "answer_part": "of",
+  "question": "My flight was ①four hours late; ②therefore, I ③could have done some shopping ④of the city."
+ },
+ {
+  "num": "256",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "下線部の意味に最も近いものを選択肢から1つ選びなさい。\nT.G. I.F. represents Thank God It's Friday.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "stands against"
+   },
+   {
+    "n": "2",
+    "text": "stands for"
+   },
+   {
+    "n": "3",
+    "text": "stands up"
+   },
+   {
+    "n": "4",
+    "text": "stands by"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "257",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 1 前置詞",
+  "type": "choice4",
+  "question": "下線部の意味に最も近いものを選択肢から1つ選びなさい。\nShe gradually came to rely on her friends, and stopped doing her\nhomework herself.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "take advantage of"
+   },
+   {
+    "n": "2",
+    "text": "depend on"
+   },
+   {
+    "n": "3",
+    "text": "communicate with"
+   },
+   {
+    "n": "4",
+    "text": "dislike"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "258",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "choice4",
+  "question": "Perhaps the company could further cut costs and (  ) even more money after a solution has been found.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "have made"
+   },
+   {
+    "n": "2",
+    "text": "made"
+   },
+   {
+    "n": "3",
+    "text": "make"
+   },
+   {
+    "n": "4",
+    "text": "makes"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "259",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "choice4",
+  "question": "Study hard, (   ) you will pass the exam.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "and"
+   },
+   {
+    "n": "2",
+    "text": "or"
+   },
+   {
+    "n": "3",
+    "text": "if"
+   },
+   {
+    "n": "4",
+    "text": "but"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "260",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "choice4",
+  "question": "After a number of meetings, (  ) the employers and the employees were satisfied.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "either"
+   },
+   {
+    "n": "2",
+    "text": "neither"
+   },
+   {
+    "n": "3",
+    "text": "both"
+   },
+   {
+    "n": "4",
+    "text": "also"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "261",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "choice4",
+  "question": "(   ) his trip through Scotland, Pete found that everyone was kind and helpful.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "As"
+   },
+   {
+    "n": "2",
+    "text": "During"
+   },
+   {
+    "n": "3",
+    "text": "While"
+   },
+   {
+    "n": "4",
+    "text": "When"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "262",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "choice4",
+  "question": "(    ) the heavy rain, my boyfriend came to my house just to say that he was sorry.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Although"
+   },
+   {
+    "n": "2",
+    "text": "Nevertheless"
+   },
+   {
+    "n": "3",
+    "text": "Instead of"
+   },
+   {
+    "n": "4",
+    "text": "In spite of"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "263",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "choice4",
+  "question": "(   ) Takeshi helps me, I cannot finish my homework for summer vacation.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Without"
+   },
+   {
+    "n": "2",
+    "text": "Unless"
+   },
+   {
+    "n": "3",
+    "text": "Except"
+   },
+   {
+    "n": "4",
+    "text": "Outside"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "264",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "choice4",
+  "question": "山を登るにつれて、空気がうすくなった。\n(    ) we went up the mountain, the air became thinner.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "As"
+   },
+   {
+    "n": "2",
+    "text": "During"
+   },
+   {
+    "n": "3",
+    "text": "When"
+   },
+   {
+    "n": "4",
+    "text": "Since"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "265",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "choice4",
+  "question": "(  ) are not good at driving is widely believed all over the world.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "That women"
+   },
+   {
+    "n": "2",
+    "text": "When women"
+   },
+   {
+    "n": "3",
+    "text": "Women"
+   },
+   {
+    "n": "4",
+    "text": "If women"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "266",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "choice4",
+  "question": "Could you advise me about (      ) I should apply to this school or not?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "that"
+   },
+   {
+    "n": "2",
+    "text": "what"
+   },
+   {
+    "n": "3",
+    "text": "whether"
+   },
+   {
+    "n": "4",
+    "text": "why"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "267",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "choice4",
+  "question": "(    )teaching in New England, Webster wrote The Dictionary of the American Language.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "It was while"
+   },
+   {
+    "n": "2",
+    "text": "Whenever"
+   },
+   {
+    "n": "3",
+    "text": "When was"
+   },
+   {
+    "n": "4",
+    "text": "While"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "268",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "written",
+  "answer": "case",
+  "question": "次の日本語の意味になるように、英文の(  )内に適当な1語を入れなさい。\n雨が降るといけないので、傘を持っていきなさい。\nYou must take an umbrella in (  ) it should rain."
+ },
+ {
+  "num": "269",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "reorder",
+  "answer": "85634217",
+  "question": "日本語の意味になるように、\\[\\]内の語句を並べ替えなさい。\nあなたが幸せなら、ご両親も幸せでしょう。\n\\[①as / ②as long / ③be / ④happy / ⑤parents / ⑥should / ⑦you / ➇your\\] are happy."
+ },
+ {
+  "num": "270",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 2 接続詞",
+  "type": "reorder",
+  "answer": "41325",
+  "question": "日本語の意味になるように、選択肢を並べ替えなさい。\n好むと好まざるとにかかわらず、我々はその事実を受け入れなければならないだろう。\n\\[  \\] we \\[  \\] accept the fact.\n1 like it\n2 will\n3 or not\n4 whether\n5 have to"
+ },
+ {
+  "num": "271",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "choice4",
+  "question": "A : Excuse me. Do you have the time?\nB:(   )",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Can you tell me yours?"
+   },
+   {
+    "n": "2",
+    "text": "It's four ten by my watch."
+   },
+   {
+    "n": "3",
+    "text": "No, I don't have one."
+   },
+   {
+    "n": "4",
+    "text": "How about you?"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "272",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "choice4",
+  "question": "Mark earns $100,000 (   ) year.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "a"
+   },
+   {
+    "n": "2",
+    "text": "an"
+   },
+   {
+    "n": "3",
+    "text": "the"
+   },
+   {
+    "n": "4",
+    "text": "無冠詞"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "273",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "choice4",
+  "question": "I wish he would give me (    ) about the college.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "an information"
+   },
+   {
+    "n": "2",
+    "text": "some information"
+   },
+   {
+    "n": "3",
+    "text": "many informations"
+   },
+   {
+    "n": "4",
+    "text": "some more informations"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "274",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "choice4",
+  "question": "The teacher gave us (  ) to be handed in next Friday.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "a homework"
+   },
+   {
+    "n": "2",
+    "text": "homeworks"
+   },
+   {
+    "n": "3",
+    "text": "some homework"
+   },
+   {
+    "n": "4",
+    "text": "some homeworks"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "275",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "choice4",
+  "question": "There was not (  ) in the warehouse.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "many furnitures"
+   },
+   {
+    "n": "2",
+    "text": "many furniture"
+   },
+   {
+    "n": "3",
+    "text": "much furnitures"
+   },
+   {
+    "n": "4",
+    "text": "much furniture"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "276",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "choice4",
+  "question": "Let me give you (    ) of advice.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "a few"
+   },
+   {
+    "n": "2",
+    "text": "a little"
+   },
+   {
+    "n": "3",
+    "text": "a piece"
+   },
+   {
+    "n": "4",
+    "text": "one"
+   },
+   {
+    "n": "5",
+    "text": "some"
+   },
+   {
+    "n": "6",
+    "text": "that"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "277",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "choice4",
+  "question": "Can I have another (  ) of bread?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "one"
+   },
+   {
+    "n": "2",
+    "text": "sheet"
+   },
+   {
+    "n": "3",
+    "text": "slice"
+   },
+   {
+    "n": "4",
+    "text": "some"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "278",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "choice4",
+  "question": "She is charming. I want to make (    ) with her.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "a friend"
+   },
+   {
+    "n": "2",
+    "text": "friend"
+   },
+   {
+    "n": "3",
+    "text": "friends"
+   },
+   {
+    "n": "4",
+    "text": "the friend"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "279",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "choice4",
+  "question": "A : Oh no, there's only one computer available\\!\nB : That's okay, we can take (    ) . You go first, and I'll go when you've finished.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "tests"
+   },
+   {
+    "n": "2",
+    "text": "tries"
+   },
+   {
+    "n": "3",
+    "text": "turns"
+   },
+   {
+    "n": "4",
+    "text": "twice"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "280",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "choice4",
+  "question": "下の唇に卵の食べかすがついていますよ。\nYou have (     ) on your lower lip.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "an egg"
+   },
+   {
+    "n": "2",
+    "text": "eggs"
+   },
+   {
+    "n": "3",
+    "text": "egg"
+   },
+   {
+    "n": "4",
+    "text": "some eggs"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "281",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "error-id",
+  "answer": "②",
+  "answer_part": "informations",
+  "question": "The website was ①created to provide ②informations about the ③company's range of ④products."
+ },
+ {
+  "num": "282",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "error-id",
+  "answer": "②",
+  "answer_part": "many advices",
+  "question": "His father ①often gave him ②many advices ③when he was ④in trouble."
+ },
+ {
+  "num": "283",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "error-id",
+  "answer": "②",
+  "answer_part": "train",
+  "question": "You ①had better change ②train ③at the ④next station."
+ },
+ {
+  "num": "284",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 3 冠詞・名詞",
+  "type": "error-id",
+  "answer": "④",
+  "answer_part": "shook hand",
+  "question": "When the game ①was over, players ②from both teams came to the ③center of the court and ④shook hand."
+ },
+ {
+  "num": "285",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "choice4",
+  "question": "I have two brothers. One is a fireman and(  ) is a police officer.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "others"
+   },
+   {
+    "n": "2",
+    "text": "any"
+   },
+   {
+    "n": "3",
+    "text": "the other"
+   },
+   {
+    "n": "4",
+    "text": "another"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "286",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "choice4",
+  "question": "This photograph of my friend is not very good. Let me show you (  ) one.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "about"
+   },
+   {
+    "n": "2",
+    "text": "another"
+   },
+   {
+    "n": "3",
+    "text": "simple"
+   },
+   {
+    "n": "4",
+    "text": "good"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "287",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "choice4",
+  "question": "Some board members agreed with the president's proposal but (  ) didn't.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "another"
+   },
+   {
+    "n": "2",
+    "text": "other"
+   },
+   {
+    "n": "3",
+    "text": "others"
+   },
+   {
+    "n": "4",
+    "text": "the other"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "288",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "choice4",
+  "question": "If you need an English dictionary, I will lend you (     )",
+  "choices": [
+   {
+    "n": "1",
+    "text": "some"
+   },
+   {
+    "n": "2",
+    "text": "one"
+   },
+   {
+    "n": "3",
+    "text": "this"
+   },
+   {
+    "n": "4",
+    "text": "any"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "289",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "choice4",
+  "question": "I bought a cookbook and gave (    ) to my sister.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "it"
+   },
+   {
+    "n": "2",
+    "text": "one"
+   },
+   {
+    "n": "3",
+    "text": "some"
+   },
+   {
+    "n": "4",
+    "text": "ones"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "290",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "choice4",
+  "question": "The population of Japan is smaller than (     ) of China.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "one"
+   },
+   {
+    "n": "2",
+    "text": "that"
+   },
+   {
+    "n": "3",
+    "text": "those"
+   },
+   {
+    "n": "4",
+    "text": "these"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "291",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "choice4",
+  "question": "The results of Experiment A are more reliable than (  ) of Experiment B.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "ones"
+   },
+   {
+    "n": "2",
+    "text": "that"
+   },
+   {
+    "n": "3",
+    "text": "these"
+   },
+   {
+    "n": "4",
+    "text": "those"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "292",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "choice4",
+  "question": "Mr. Johnson did not choose any of the three ties because he found (     ) attractive.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "both of them"
+   },
+   {
+    "n": "2",
+    "text": "either of them"
+   },
+   {
+    "n": "3",
+    "text": "neither of them"
+   },
+   {
+    "n": "4",
+    "text": "none of them"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "293",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "choice4",
+  "question": "(    ) students use LINE on a daily basis nowadays.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Most"
+   },
+   {
+    "n": "2",
+    "text": "None"
+   },
+   {
+    "n": "3",
+    "text": "Almost"
+   },
+   {
+    "n": "4",
+    "text": "A lot"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "294",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "choice4",
+  "question": "(     ) of the members agreed with the leader's decision.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Almost"
+   },
+   {
+    "n": "2",
+    "text": "Mostly"
+   },
+   {
+    "n": "3",
+    "text": "Most"
+   },
+   {
+    "n": "4",
+    "text": "Nearly"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "295",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "error-id",
+  "answer": "④",
+  "answer_part": "another styles",
+  "question": "①My grandfather ②always said that jazz is ③superior to ④another styles of music."
+ },
+ {
+  "num": "296",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "error-id",
+  "answer": "④",
+  "answer_part": "other",
+  "question": "I have ①four sons; ②one is a doctor, ③another is a teacher, and ④other are students."
+ },
+ {
+  "num": "297",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "error-id",
+  "answer": "④",
+  "answer_part": "it",
+  "question": "I ①have lost my cellular phone. ②I think I ③must buy ④it today."
+ },
+ {
+  "num": "298",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 4 代名詞",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "Almost",
+  "question": "①Almost students ②in Japanese high schools ③know ④at least one foreign language."
+ },
+ {
+  "num": "299",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "choice4",
+  "question": "Mr. Arnold and his family moved to (   ) in the suburbs last year.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "a three-stories house"
+   },
+   {
+    "n": "2",
+    "text": "a three-story house"
+   },
+   {
+    "n": "3",
+    "text": "three-stories house"
+   },
+   {
+    "n": "4",
+    "text": "three-story house"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "300",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "choice4",
+  "question": "The boy tends to be very (  ) of his teacher's warnings.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "forgettable"
+   },
+   {
+    "n": "2",
+    "text": "unforgettable"
+   },
+   {
+    "n": "3",
+    "text": "forgetful"
+   },
+   {
+    "n": "4",
+    "text": "forgetting"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "301",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "choice4",
+  "question": "The company requires employees to wear clean and (     ) clothes at work.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "respecting"
+   },
+   {
+    "n": "2",
+    "text": "respective"
+   },
+   {
+    "n": "3",
+    "text": "respectable"
+   },
+   {
+    "n": "4",
+    "text": "respected"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "302",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "choice4",
+  "question": "This local newspaper is (     ) only in the Kansai region, so you can't buy it in Tokyo.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "active"
+   },
+   {
+    "n": "2",
+    "text": "creative"
+   },
+   {
+    "n": "3",
+    "text": "capable"
+   },
+   {
+    "n": "4",
+    "text": "available"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "303",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "choice4",
+  "question": "It took more than two hours to get to the airport because (  ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "there were many traffics"
+   },
+   {
+    "n": "2",
+    "text": "of high traffic"
+   },
+   {
+    "n": "3",
+    "text": "of the traffics"
+   },
+   {
+    "n": "4",
+    "text": "of the heavy traffic"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "304",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "choice4",
+  "question": "I didn't eat lunch since I had (  ) money.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "a little"
+   },
+   {
+    "n": "2",
+    "text": "little"
+   },
+   {
+    "n": "3",
+    "text": "few"
+   },
+   {
+    "n": "4",
+    "text": "a few"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "305",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "choice4",
+  "question": "During our vacation in Hawaii, we saw quite (   ) whales.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "a number"
+   },
+   {
+    "n": "2",
+    "text": "several"
+   },
+   {
+    "n": "3",
+    "text": "a lot"
+   },
+   {
+    "n": "4",
+    "text": "a few"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "306",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "choice4",
+  "question": "Everyone who becomes a doctor (  ) a course in human anatomy.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "studying"
+   },
+   {
+    "n": "2",
+    "text": "studies"
+   },
+   {
+    "n": "3",
+    "text": "take"
+   },
+   {
+    "n": "4",
+    "text": "takes"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "307",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "choice4",
+  "question": "Each of us (  ) a room on the second floor at the hotel.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "have"
+   },
+   {
+    "n": "2",
+    "text": "has"
+   },
+   {
+    "n": "3",
+    "text": "having"
+   },
+   {
+    "n": "4",
+    "text": "to have"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "308",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "nine-years-old",
+  "question": "We have a ①nine-years-old son ②in addition ③to two ④younger daughters."
+ },
+ {
+  "num": "309",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "Every boy and girl know",
+  "question": "①Every boy and girl know ②that today's cities ③are quickly becoming ④much too crowded."
+ },
+ {
+  "num": "310",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 5 形容詞",
+  "type": "error-id",
+  "answer": "③",
+  "answer_part": "problems",
+  "question": "In order ①to improve efficiency, we must ②find a solution to each major ③problems ④in our school."
+ },
+ {
+  "num": "311",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "choice4",
+  "question": "Since I was a child, I've always wanted to study (  ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "abroad"
+   },
+   {
+    "n": "2",
+    "text": "for abroad"
+   },
+   {
+    "n": "3",
+    "text": "in abroad"
+   },
+   {
+    "n": "4",
+    "text": "to abroad"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "312",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "choice4",
+  "question": "Patricia was (   ) as anyone could have had.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "as patient teacher"
+   },
+   {
+    "n": "2",
+    "text": "as a patient teacher"
+   },
+   {
+    "n": "3",
+    "text": "as patient a teacher"
+   },
+   {
+    "n": "4",
+    "text": "as patient as teacher"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "313",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "choice4",
+  "question": "Three months is (  )time to prepare for this project.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "a short too"
+   },
+   {
+    "n": "2",
+    "text": "short too the"
+   },
+   {
+    "n": "3",
+    "text": "the too short"
+   },
+   {
+    "n": "4",
+    "text": "too short a"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "314",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "choice4",
+  "question": "Last Sunday was (  ) that we took a drive to the seashore.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "such beautiful a day"
+   },
+   {
+    "n": "2",
+    "text": "a such beautiful day"
+   },
+   {
+    "n": "3",
+    "text": "so beautiful a day"
+   },
+   {
+    "n": "4",
+    "text": "a so beautiful day"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "315",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "choice4",
+  "question": "It's amazing (   ) when you're having fun.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "quickly how time goes"
+   },
+   {
+    "n": "2",
+    "text": "how time goes quickly"
+   },
+   {
+    "n": "3",
+    "text": "how quickly time goes"
+   },
+   {
+    "n": "4",
+    "text": "how quickly goes time"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "316",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "choice4",
+  "question": "Have you ever seen (  ) sight as this?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "such a beautiful"
+   },
+   {
+    "n": "2",
+    "text": "as beautiful"
+   },
+   {
+    "n": "3",
+    "text": "a so beautiful"
+   },
+   {
+    "n": "4",
+    "text": "so beautiful"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "317",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "choice4",
+  "question": "Even though she wants to drive a car, Vanessa is not (  ) to get a driver's license.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "age old"
+   },
+   {
+    "n": "2",
+    "text": "enough old"
+   },
+   {
+    "n": "3",
+    "text": "old enough"
+   },
+   {
+    "n": "4",
+    "text": "older enough"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "318",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "choice4",
+  "question": "They worked (  ) to prepare for the piano competition.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "very hardly"
+   },
+   {
+    "n": "2",
+    "text": "more hard"
+   },
+   {
+    "n": "3",
+    "text": "very hard"
+   },
+   {
+    "n": "4",
+    "text": "more hardly"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "319",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "choice4",
+  "question": "Bob's job has been getting busier and busier, and he has not been getting enough sleep ( ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "late"
+   },
+   {
+    "n": "2",
+    "text": "lately"
+   },
+   {
+    "n": "3",
+    "text": "later"
+   },
+   {
+    "n": "4",
+    "text": "latter"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "320",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "reorder",
+  "answer": "324156",
+  "question": "先週の日曜日は天気がよかったので田舎にドライブにでかけた。\nLast Sunday was \\[ ①day / ②beautiful / ③so / ④a / ⑤that / ⑥we\\] took a drive in the country."
+ },
+ {
+  "num": "321",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "reorder",
+  "answer": "643521",
+  "question": "とても暑い日だったので,だれも外に出たいと思いませんでした。\nIt \\[ ①that / ②day / ③a / ④such / ⑤hot / ⑥was\\] nobody wanted to go outside."
+ },
+ {
+  "num": "322",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "reorder",
+  "answer": "54132",
+  "question": "ビルはその車が買えるほど金持ちです。\nBill is \\[ ①to / ②the car / ③buy / ④enough / ⑤rich\\]."
+ },
+ {
+  "num": "323",
+  "chapter": "Chapter 4 品詞系",
+  "unit": "UNIT 6 副詞",
+  "type": "reorder",
+  "answer": "51243",
+  "question": "彼女はとってもいい娘だからそんなことはしない。\nShe is \\[ ①nice / ②a / ③to do / ④girl / ⑤too\\] a thing like that."
+ },
+ {
+  "num": "324",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "choice4",
+  "question": "Because she was tired, Jane ( ) down to take a nap.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "laid"
+   },
+   {
+    "n": "2",
+    "text": "lain"
+   },
+   {
+    "n": "3",
+    "text": "lay"
+   },
+   {
+    "n": "4",
+    "text": "lied"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "325",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "choice4",
+  "question": "My father had kindly (  ) the book on my desk before I came home yesterday.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "laid"
+   },
+   {
+    "n": "2",
+    "text": "lain"
+   },
+   {
+    "n": "3",
+    "text": "lay"
+   },
+   {
+    "n": "4",
+    "text": "lied"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "326",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "choice4",
+  "question": "I grew ( ) in Fukushima and came here five years ago.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "by"
+   },
+   {
+    "n": "2",
+    "text": "to"
+   },
+   {
+    "n": "3",
+    "text": "up"
+   },
+   {
+    "n": "4",
+    "text": "over"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "327",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "choice4",
+  "question": "Although born in New York, his son was (  ) in California.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "brought up"
+   },
+   {
+    "n": "2",
+    "text": "developed"
+   },
+   {
+    "n": "3",
+    "text": "grown up"
+   },
+   {
+    "n": "4",
+    "text": "matured"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "328",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "choice4",
+  "question": "Let's discuss (  ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "the problem"
+   },
+   {
+    "n": "2",
+    "text": "of the problem"
+   },
+   {
+    "n": "3",
+    "text": "to the problem"
+   },
+   {
+    "n": "4",
+    "text": "about the problem"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "329",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "choice4",
+  "question": "John (  ) Nancy last year.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "married"
+   },
+   {
+    "n": "2",
+    "text": "married with"
+   },
+   {
+    "n": "3",
+    "text": "married to"
+   },
+   {
+    "n": "4",
+    "text": "got married with"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "330",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "choice4",
+  "question": "In order to (  ) the village, hikers need to be prepared for a narrow and rocky path.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "arrive"
+   },
+   {
+    "n": "2",
+    "text": "get"
+   },
+   {
+    "n": "3",
+    "text": "reach"
+   },
+   {
+    "n": "4",
+    "text": "return"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "331",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "choice4",
+  "question": "There was a young girl ( ) alone on the road.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "was walking"
+   },
+   {
+    "n": "2",
+    "text": "to walk"
+   },
+   {
+    "n": "3",
+    "text": "walking"
+   },
+   {
+    "n": "4",
+    "text": "walked"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "332",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "choice4",
+  "question": "I do exercises to stay ( ).",
+  "choices": [
+   {
+    "n": "1",
+    "text": "health"
+   },
+   {
+    "n": "2",
+    "text": "healthy"
+   },
+   {
+    "n": "3",
+    "text": "healthily"
+   },
+   {
+    "n": "4",
+    "text": "a health"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "333",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "choice4",
+  "question": "His voice sounded (  ) on the phone.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "strange"
+   },
+   {
+    "n": "2",
+    "text": "strangely"
+   },
+   {
+    "n": "3",
+    "text": "strangeness"
+   },
+   {
+    "n": "4",
+    "text": "to strange"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "334",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "rise my awareness",
+  "question": "I could ①rise my awareness about ②animal abuse in Japan and many other countries ③as a result of your ④wonderful research."
+ },
+ {
+  "num": "335",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "error-id",
+  "answer": "③",
+  "answer_part": "approach to",
+  "question": "When is ①the best ②time to ③approach to my employer about an increase ④in salary?"
+ },
+ {
+  "num": "336",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "error-id",
+  "answer": "②",
+  "answer_part": "enjoy with",
+  "question": "I ①really like to ②enjoy with my friends at the ③weekend when we can ④get together and relax."
+ },
+ {
+  "num": "337",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 1 第1〜第3文型の語法",
+  "type": "error-id",
+  "answer": "③",
+  "answer_part": "is",
+  "question": "Although water is commonly used to ①keep our bodies ②clean, there ③is different techniques and attitudes toward ④bathing."
+ },
+ {
+  "num": "338",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "choice4",
+  "question": "He (  ) his sister a postcard and a stamp.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "was given"
+   },
+   {
+    "n": "2",
+    "text": "gave"
+   },
+   {
+    "n": "3",
+    "text": "give"
+   },
+   {
+    "n": "4",
+    "text": "has given of"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "339",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "choice4",
+  "question": "I bought some beautiful flowers (  ) my mother yesterday.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "for"
+   },
+   {
+    "n": "2",
+    "text": "to"
+   },
+   {
+    "n": "3",
+    "text": "of"
+   },
+   {
+    "n": "4",
+    "text": "by"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "340",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "choice4",
+  "question": "May I ask (   )?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "a question you"
+   },
+   {
+    "n": "2",
+    "text": "you a question"
+   },
+   {
+    "n": "3",
+    "text": "you of a question"
+   },
+   {
+    "n": "4",
+    "text": "a question on you"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "341",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "choice4",
+  "question": "A change of air will (  ) her good.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "effect"
+   },
+   {
+    "n": "2",
+    "text": "give"
+   },
+   {
+    "n": "3",
+    "text": "allow"
+   },
+   {
+    "n": "4",
+    "text": "do"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "342",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "choice4",
+  "question": "Could you (  ) me a favor and take out the garbage?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "call"
+   },
+   {
+    "n": "2",
+    "text": "carry"
+   },
+   {
+    "n": "3",
+    "text": "do"
+   },
+   {
+    "n": "4",
+    "text": "take"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "343",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "choice4",
+  "question": "It (  ) him ten minutes to solve the problem.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "had"
+   },
+   {
+    "n": "2",
+    "text": "went"
+   },
+   {
+    "n": "3",
+    "text": "took"
+   },
+   {
+    "n": "4",
+    "text": "came"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "344",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "choice4",
+  "question": "The damage from the disaster will (  ) us thousands of dollars.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "charge"
+   },
+   {
+    "n": "2",
+    "text": "spend"
+   },
+   {
+    "n": "3",
+    "text": "fare"
+   },
+   {
+    "n": "4",
+    "text": "cost"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "345",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "choice4",
+  "question": "I(  ) him more money than I'll ever be able to repay.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "owe"
+   },
+   {
+    "n": "2",
+    "text": "borrow"
+   },
+   {
+    "n": "3",
+    "text": "lend"
+   },
+   {
+    "n": "4",
+    "text": "own"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "346",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "reorder",
+  "answer": "425136",
+  "question": "この辞書では英語の手紙の書き方が実例で示されています。\nThis \\[①how / ②shows / ③to / ④dictionary / ⑤you / ⑥write\\] letters in English using samples."
+ },
+ {
+  "num": "347",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "reorder",
+  "answer": "421356",
+  "question": "お願いしたいことがあるのですが。\nMay \\[ ①a / ②ask / ③favor / ④I  / ⑤of / ⑥you\\]?"
+ },
+ {
+  "num": "348",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "reorder",
+  "answer": "42516738",
+  "question": "私はプロのパイロットになるのに、何年もかかりました。\nIt \\[ ①years / ②me / ③a/ ④took/ ⑤many / ⑥to / ⑦become/ ➇professional\\] pilot."
+ },
+ {
+  "num": "349",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 2 第4文型の語法",
+  "type": "reorder",
+  "answer": "6472513",
+  "question": "太郎から電話があったので、訪問しないですみました。\nTaro's phone \\[ ①of / ②the / ③visiting / ④saved / ⑤trouble / ⑥call / ⑦me\\] him."
+ },
+ {
+  "num": "350",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "choice4",
+  "question": "I'll have my son (  ) the luggage for you.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "carry"
+   },
+   {
+    "n": "2",
+    "text": "carries"
+   },
+   {
+    "n": "3",
+    "text": "carried"
+   },
+   {
+    "n": "4",
+    "text": "to carry"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "351",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "choice4",
+  "question": "We're having our car (  ) this week.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "repair"
+   },
+   {
+    "n": "2",
+    "text": "repaired"
+   },
+   {
+    "n": "3",
+    "text": "repairing"
+   },
+   {
+    "n": "4",
+    "text": "to repair"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "352",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "choice4",
+  "question": "Paul can (  ) himself understood in five languages.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "cause"
+   },
+   {
+    "n": "2",
+    "text": "give"
+   },
+   {
+    "n": "3",
+    "text": "make"
+   },
+   {
+    "n": "4",
+    "text": "try"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "353",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "choice4",
+  "question": "I'm not going to let them (  ) this government.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "take"
+   },
+   {
+    "n": "2",
+    "text": "to take"
+   },
+   {
+    "n": "3",
+    "text": "taken"
+   },
+   {
+    "n": "4",
+    "text": "on taking"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "354",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "choice4",
+  "question": "Why don't you (  ) Mark come to our year-end party?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "invite"
+   },
+   {
+    "n": "2",
+    "text": "allow"
+   },
+   {
+    "n": "3",
+    "text": "tell"
+   },
+   {
+    "n": "4",
+    "text": "let"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "355",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "choice4",
+  "question": "I just heard someone (   ) my name.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "call"
+   },
+   {
+    "n": "2",
+    "text": "called"
+   },
+   {
+    "n": "3",
+    "text": "calls"
+   },
+   {
+    "n": "4",
+    "text": "to be called"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "356",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "choice4",
+  "question": "When I was in the park, I saw a girl (  ) an apple on a bench.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "eats"
+   },
+   {
+    "n": "2",
+    "text": "to eat"
+   },
+   {
+    "n": "3",
+    "text": "eating"
+   },
+   {
+    "n": "4",
+    "text": "ate"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "357",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "choice4",
+  "question": "I heard my name (  ) in the train.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "call"
+   },
+   {
+    "n": "2",
+    "text": "called"
+   },
+   {
+    "n": "3",
+    "text": "calling"
+   },
+   {
+    "n": "4",
+    "text": "to be called"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "358",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "error-id",
+  "answer": "①",
+  "answer_part": "to do",
+  "question": "Ms. Kato made her students ①to do  ②some work ③after school on Friday."
+ },
+ {
+  "num": "359",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "error-id",
+  "answer": "②",
+  "answer_part": "understand",
+  "question": "I ①want to make myself ②understand, so I will make my presentation ③as ④clear as possible."
+ },
+ {
+  "num": "360",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "reorder",
+  "answer": "82561374",
+  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\n彼は英語を話してみたが、通じなかった。\nHe \\[ ①make / ②it / ③himself / ④in / ⑤impossible / ⑥to / ⑦understood / ➇found\\] English."
+ },
+ {
+  "num": "361",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 3 第5文型の語法(1)",
+  "type": "error-id",
+  "answer": "③",
+  "answer_part": "left",
+  "question": "The witness ①reported that he ②had watched the suspect ③left the bank ④carrying a black bag."
+ },
+ {
+  "num": "362",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "choice4",
+  "question": "We arrived at the company at the appointed time, but they kept us ( ) for an hour.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "have waited"
+   },
+   {
+    "n": "2",
+    "text": "to wait"
+   },
+   {
+    "n": "3",
+    "text": "waited"
+   },
+   {
+    "n": "4",
+    "text": "waiting"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "363",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "choice4",
+  "question": "The dentist asked me to keep my mouth (     ) because he needed to examine my teeth.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "be opened"
+   },
+   {
+    "n": "2",
+    "text": "open"
+   },
+   {
+    "n": "3",
+    "text": "opening"
+   },
+   {
+    "n": "4",
+    "text": "to open"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "364",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "choice4",
+  "question": "I got him (  ) my camera.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "fix"
+   },
+   {
+    "n": "2",
+    "text": "be fixed"
+   },
+   {
+    "n": "3",
+    "text": "to fix"
+   },
+   {
+    "n": "4",
+    "text": "to be fixed"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "365",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "choice4",
+  "question": "I will have to get my homework (  ) before I go to bed.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "do"
+   },
+   {
+    "n": "2",
+    "text": "does"
+   },
+   {
+    "n": "3",
+    "text": "done"
+   },
+   {
+    "n": "4",
+    "text": "will do"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "366",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "choice4",
+  "question": "Please allow (   ) myself.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "introduce"
+   },
+   {
+    "n": "2",
+    "text": "introducing"
+   },
+   {
+    "n": "3",
+    "text": "introducing me"
+   },
+   {
+    "n": "4",
+    "text": "me introduce"
+   },
+   {
+    "n": "5",
+    "text": "me to introduce"
+   },
+   {
+    "n": "6",
+    "text": "to introduce me"
+   }
+  ],
+  "answer": "5"
+ },
+ {
+  "num": "367",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "choice4",
+  "question": "This workshop will enable (  ) your communication skills.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "of your developing"
+   },
+   {
+    "n": "2",
+    "text": "that you develop"
+   },
+   {
+    "n": "3",
+    "text": "to your developing"
+   },
+   {
+    "n": "4",
+    "text": "you to develop"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "368",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "choice4",
+  "question": "I really hadn't expected the test (  ) so difficult.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "be"
+   },
+   {
+    "n": "2",
+    "text": "of being"
+   },
+   {
+    "n": "3",
+    "text": "to be"
+   },
+   {
+    "n": "4",
+    "text": "to being"
+   }
+  ],
+  "answer": "3"
+ },
+ {
+  "num": "369",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "choice4",
+  "question": "His irresponsibility caused him (  ) her and the happiness she had brought him.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "to lose"
+   },
+   {
+    "n": "2",
+    "text": "loose"
+   },
+   {
+    "n": "3",
+    "text": "losing"
+   },
+   {
+    "n": "4",
+    "text": "loss"
+   }
+  ],
+  "answer": "1"
+ },
+ {
+  "num": "370",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "choice4",
+  "question": "He helped her ( ) the onions.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "to have peeled"
+   },
+   {
+    "n": "2",
+    "text": "peel"
+   },
+   {
+    "n": "3",
+    "text": "peeling"
+   },
+   {
+    "n": "4",
+    "text": "for peeling"
+   }
+  ],
+  "answer": "2"
+ },
+ {
+  "num": "371",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "choice4",
+  "question": "We look (  ) him as the best doctor in our town.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "for"
+   },
+   {
+    "n": "2",
+    "text": "after"
+   },
+   {
+    "n": "3",
+    "text": "at"
+   },
+   {
+    "n": "4",
+    "text": "upon"
+   }
+  ],
+  "answer": "4"
+ },
+ {
+  "num": "372",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "reorder",
+  "answer": "354612",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\n夜中にドアに鍵をかけずにいると、泥棒が入りますよ。\n\\[ ①unlocked / ②during / ③if / ④leave/ ⑤you / ⑥the door\\] the night, burglars will break in."
+ },
+ {
+  "num": "373",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "reorder",
+  "answer": "24153",
+  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nコンピューターのおかげで私たちはその作業を短時間で終わらせることができ\nた。\nThe \\[ ①us to / ②computer/ ③the work / ④enabled / ⑤finish\\] in a short time."
+ },
+ {
+  "num": "374",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "reorder",
+  "answer": "25341",
+  "question": "\\[ \\]内の語を並べ替えなさい。\n\\[ ①arrange / ②can / ③help / ④me / ⑤you\\] the room for our meeting?"
+ },
+ {
+  "num": "375",
+  "chapter": "Chapter 5 文型",
+  "unit": "UNIT 4 第5文型の語法(2)",
+  "type": "reorder",
+  "answer": "263514",
+  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\nシェイクスピアはイギリスの詩人、劇作家で、英語による最大の作家と広くみなされている。\nShakespeare is an English poet and playwright, and is widely \\[ ①writer / ②regarded / ③the / ④in / ⑤greatest / ⑥as\\] the English language."
+ }
+]

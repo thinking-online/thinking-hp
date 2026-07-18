@@ -1,0 +1,37 @@
+{
+ "no": 34,
+ "en": "How much do you know about your dog? Have you ever heard his many different barks? Why do dogs bark? Are they trying to copy people's voices? Wild dogs don't bark.",
+ "ja": "あなたは自分の犬についてどれくらい知っているだろうか。犬のさまざまな鳴き声を聞いたことがあるだろうか。なぜ犬は吠えるのか。人間の声をまねしようとしているのだろうか。野生の犬は吠えないのだ。",
+ "questions": [
+  {
+   "tag": "用法識別(how much)",
+   "q": "本文の \"How much do you know about your dog?\" の \"How much\" と同じ使い方をしている文はどれか。",
+   "a": "How much is this watch at that store?",
+   "b": "How much milk do you need for the cake?",
+   "c": "How much does music help you when you study?",
+   "d": "How much money did you spend last weekend?",
+   "answer": "C",
+   "explanation": "本文の How much は名詞につく「どれだけの量の〜」ではなく、動詞 know にかかって「どの程度〜するか」を表す副詞的な使い方です。C も動詞 help にかかって「どの程度助けになるか」と程度を尋ねているので同じ用法です。A は値段、B と D は名詞(milk / money)の量を尋ねる使い方なので違います。"
+  },
+  {
+   "tag": "品詞識別(barks)",
+   "q": "本文の \"Have you ever heard his many different barks?\" の \"barks\" と同じ使い方(品詞)で \"barks\" が使われている文はどれか。",
+   "a": "Our dog always barks at the mail carrier in the morning.",
+   "b": "I can tell my dog's feelings from his short, sharp barks.",
+   "c": "My cat runs away every time the neighbor's dog barks.",
+   "d": "The little dog barks loudly whenever the doorbell rings.",
+   "answer": "B",
+   "explanation": "本文の barks は、所有格 his と形容詞 many different の後ろに置かれた「鳴き声」という意味の名詞の複数形です。B も his short, sharp という所有格+形容詞の後ろに来ていて「鳴き声」という名詞です。A・C・D の barks はどれも主語(dog)の直後にある動詞「吠える」の三人称単数形です。本文の barks を「吠える」という動詞だと思い込むのがありがちな誤読で、その読み方だと his many different の説明がつかなくなります。"
+  },
+  {
+   "tag": "論理関係(根拠の提示)",
+   "q": "本文の最後の \"Wild dogs don't bark.\" は、直前の \"Are they trying to copy people's voices?\" という問いかけに対してどのような働きをしているか。",
+   "a": "人間の声をまねるという考えを打ち消し、吠えるのは野生の本能だと示している。",
+   "b": "野生の犬のほうが飼い犬より静かで優れていると述べ、話題を切り替えている。",
+   "c": "犬はもともと吠えない動物なので、吠えるのはしつけの問題だと警告している。",
+   "d": "吠えることは人間と暮らすことから生まれたという考えを支える事実を示している。",
+   "answer": "D",
+   "explanation": "野生の犬(人間と暮らしていない犬)は吠えない、という事実は「吠えるのは犬が生まれつき持つ本能ではなく、人間との生活の中で生まれたものではないか」という直前の仮説を支える根拠になっています。A のように仮説を否定する文だと読むのがいちばん多い誤りですが、もし吠えるのが野生の本能なら野生の犬こそ吠えるはずなので、逆です。B や C のような新しい主張はこの文脈にはありません。"
+  }
+ ]
+}

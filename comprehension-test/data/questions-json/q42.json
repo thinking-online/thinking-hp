@@ -1,0 +1,37 @@
+{
+ "no": 42,
+ "en": "People around the world have had problems with water in many rivers. Some countries take water from the same river. If one country uses too much water from the river, the other countries can't get enough water for their everyday lives. They fight to take the water. People living around the rivers have to share water but they are \"rivals.\" A long time ago, the meaning of \"rival\" was a person disputing the water in a river.",
+ "ja": "世界中の人々は、多くの川の水をめぐって問題を抱えてきた。同じ川から水を取る国々がある。一つの国が川から水を使いすぎると、他の国々は日常生活に十分な水を得られない。彼らは水を奪い合って争う。川の周辺に住む人々は水を分け合わなければならないが、彼らは「ライバル」なのだ。昔、「rival」という語は、川の水をめぐって争う人を意味していた。",
+ "questions": [
+  {
+   "tag": "用法識別(to不定詞)",
+   "q": "本文の \"They fight to take the water.\" における to take と同じ使い方の to不定詞を含む文はどれか。",
+   "a": "I want to visit Kyoto some day.",
+   "b": "She went to the station to meet her uncle.",
+   "c": "I have a lot of homework to do today.",
+   "d": "I was happy to hear the news.",
+   "answer": "B",
+   "explanation": "to take は「水を取るために」と目的を表す副詞的用法で、配布訳の「奪い合って争う」は意訳です。B の to meet も「おじを迎えるために」という目的を表します。A は want の目的語になる名詞的用法、C は homework を修飾する形容詞的用法、D は感情の原因を表す用法なので違います。"
+  },
+  {
+   "tag": "語法(the other)",
+   "q": "本文の \"the other countries can't get enough water\" から仮に the を取って other countries とした場合、意味の変化として最も適切なものはどれか。",
+   "a": "「同じ川から水を取る国々のうちの残り全部」ではなく、漠然と「ほかのいくつかの国々」を指すようになる。",
+   "b": "the は形式的に付いているだけなので、意味はまったく変わらず、指す範囲も元の文と同じままである。",
+   "c": "「もう一つ別の国」という単数の意味に変わり、残っている国が一つだけであることを表すようになる。",
+   "d": "「お互いの国々」という意味に変わり、水を使いすぎた国自身もその範囲に含まれるようになる。",
+   "answer": "A",
+   "explanation": "the other + 複数名詞は「(その集団の)残り全部」を表し、本文では同じ川から水を取る国々のうち、使いすぎた一国を除いた残りの国すべてを指します。the を取ると範囲を限定する働きが消え、単に「ほかのいくつかの国々」という不特定の意味になります。B は the の限定の働きを見落とした誤り、C は another との混同、D は each other との混同で、いずれも誤りです。"
+  },
+  {
+   "tag": "用法識別(現在分詞)",
+   "q": "本文の \"the meaning of \"rival\" was a person disputing the water in a river\" における disputing と同じ使い方の -ing 形を含む文はどれか。",
+   "a": "My hobby is collecting old stamps.",
+   "b": "Turning left at that corner, you will see the park.",
+   "c": "Eating too much at night is bad for your health.",
+   "d": "The boy running over there is my brother.",
+   "answer": "D",
+   "explanation": "disputing は直前の名詞 a person を後ろから修飾する現在分詞で、「川の水をめぐって争う人」という意味のかたまりを作ります。D の running も the boy を後ろから修飾する同じ使い方です。A は補語になる動名詞、C は主語になる動名詞、B はいわゆる分詞構文なので用法が異なります。"
+  }
+ ]
+}

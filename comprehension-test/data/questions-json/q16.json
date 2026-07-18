@@ -1,0 +1,37 @@
+{
+ "no": 16,
+ "en": "I met him first on a summer day in 1936. I ran into his poor little shop because the heels of my shoes needed to be repaired. It didn't seem a difficult job, so I waited while he did it.",
+ "ja": "私が初めて彼に会ったのは、1936年のある夏の日だった。靴のかかとを修理する必要があったので、彼のみすぼらしい小さな店に駆け込んだのだ。難しい仕事には見えなかったので、彼が直してくれる間、私は待っていた。",
+ "questions": [
+  {
+   "tag": "用法識別(run into)",
+   "q": "本文の \"I ran into his poor little shop\" の \"ran into\" と同じ使い方をしているものを1つ選びなさい。",
+   "a": "I ran into an old friend at the station yesterday.",
+   "b": "The car ran into a tree on the icy road last night.",
+   "c": "She ran into the kitchen when she heard the strange noise.",
+   "d": "We ran into some big trouble during our school trip.",
+   "answer": "C",
+   "explanation": "本文の run into は「(場所に)走って入る・駆け込む」という文字通りの意味で、目的語は場所(his shop)です。同じ使い方はCの「台所に駆け込んだ」。Aは「偶然出会う」、Bは「衝突する」、Dは「(問題に)遭遇する」という慣用的な意味なので不適です。"
+  },
+  {
+   "tag": "構造(need to be done)",
+   "q": "本文の \"the heels of my shoes needed to be repaired\" と同じ構造(主語と to 以下の動詞の関係が同じもの)を1つ選びなさい。",
+   "a": "This letter needs to be sent to the office today.",
+   "b": "I need to finish all my homework by tomorrow.",
+   "c": "You do not need to come to school so early.",
+   "d": "He needs a friend to help him with his work.",
+   "answer": "A",
+   "explanation": "本文は「かかとが修理される必要がある」という need + 受動不定詞(to be done)の形で、主語は動作を受ける側です。同じ構造はAの「手紙が送られる必要がある」。BとCは主語が自分で動作をする能動の to 不定詞、Dは to help が直前の名詞 a friend を修飾する形なので構造が異なります。"
+  },
+  {
+   "tag": "用法識別(first)",
+   "q": "本文の \"I met him first on a summer day in 1936.\" の \"first\" と同じ使い方をしているものを1つ選びなさい。",
+   "a": "First, wash your hands before you eat lunch.",
+   "b": "I first heard this song when I was ten years old.",
+   "c": "Ken finished first in the marathon last month.",
+   "d": "For her, the health of her family comes first.",
+   "answer": "B",
+   "explanation": "本文の first は「初めて(= for the first time)」という意味の副詞で、Bの「10歳のときに初めてこの歌を聞いた」が同じ用法です。Aは「まず最初に」と手順を示す用法、Cは「1位で」、Dは「最優先である」という意味なので異なります。「最初に会った(順番)」と誤読しないことがポイントです。"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "no": 6,
+ "en": "You cannot learn about your dog's health from his nose. A better way is to look at his gums.",
+ "ja": "犬の健康状態は、鼻からはわからない。より良い方法は、歯茎を見ることだ。",
+ "questions": [
+  {
+   "tag": "用法識別(from)",
+   "q": "\"You cannot learn about your dog's health from his nose.\" の \"from\" と同じ使い方をしている from を含む文はどれか。",
+   "a": "She made this nice bag from her old jeans.",
+   "b": "I could tell from his voice that he was angry.",
+   "c": "The train from Osaka arrived ten minutes late this morning.",
+   "d": "My favorite singer is from a small town in Australia.",
+   "answer": "B",
+   "explanation": "本文の from は「〜から(の情報で)判断して」という判断の根拠・情報源を表す用法で、b の「声から(判断して)怒っているとわかった」と同じ。a は材料(〜から作る)、c は出発地点、d は出身を表す from であり、いずれも判断の根拠ではない。"
+  },
+  {
+   "tag": "用法識別(to不定詞)",
+   "q": "\"A better way is to look at his gums.\" の \"to look\" と同じ用法の to 不定詞を含む文はどれか。",
+   "a": "He went to the library to borrow some books.",
+   "b": "I want something cold to drink right now.",
+   "c": "Her job is to teach children English.",
+   "d": "I was surprised to see him at the station.",
+   "answer": "C",
+   "explanation": "本文は「主語 + be動詞 + to不定詞」で、to look 以下が「〜すること」という意味の補語になる名詞的用法。c の to teach も「彼女の仕事は教えることだ」と補語になっており同じ用法である。a は目的(〜するために)、b は名詞を修飾する形容詞的用法、d は感情の原因を表す副詞的用法なので異なる。"
+  },
+  {
+   "tag": "用法識別(learn)",
+   "q": "\"You cannot learn about your dog's health from his nose.\" の \"learn\" と同じ意味で使われている learn を含む文はどれか。",
+   "a": "We soon learned that the rumor was true.",
+   "b": "He learned to swim at the age of five.",
+   "c": "Students learn math and science at school.",
+   "d": "She learned the poem by heart for the contest.",
+   "answer": "A",
+   "explanation": "本文の learn は「(情報を得て)知る、わかる」という意味で、a の「うわさが本当だと知った」と同じ使い方。b は「(練習して)できるようになる」、c は「(教科を)学ぶ」、d は「暗記する」の意味であり、勉強・習得の learn と「知る」の learn を混同しないことがポイント。"
+  }
+ ]
+}

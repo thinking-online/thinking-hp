@@ -1,0 +1,37 @@
+{
+ "no": 7,
+ "en": "The first GPS satellite was sent into space in 1978 and seven years later eleven satellites were flying around the earth.",
+ "ja": "最初のGPS衛星は1978年に宇宙へ打ち上げられ、その7年後には11基の衛星が地球の周りを飛んでいた。",
+ "questions": [
+  {
+   "tag": "用法識別(過去進行形)",
+   "q": "本文の \"seven years later eleven satellites were flying around the earth\" における \"were flying\" と同じ動詞の使い方(be動詞+〜ing の働き)をしている文はどれか。",
+   "a": "His job is driving a big truck all day.",
+   "b": "At eight last night, Ken was taking a bath.",
+   "c": "That movie was boring, so I fell asleep.",
+   "d": "My hobby was collecting old stamps and coins.",
+   "answer": "B",
+   "explanation": "本文の were flying は「過去のある時点(1985年)に進行・継続していた」ことを表す過去進行形で、bの was taking(昨夜8時に入浴中だった)と同じ働き。aの driving と dの collecting は「〜すること」という動名詞(仕事・趣味の内容を説明する補語)で、dは was collecting と形は過去進行形とそっくりだが「趣味が収集中だった」では意味が通らない。cの boring は「退屈させるような」という意味の形容詞で、be+〜ing の形が似ていても進行形ではない。"
+  },
+  {
+   "tag": "構造識別(受動態)",
+   "q": "本文の \"The first GPS satellite was sent into space in 1978\" における \"was sent\" と同じ形・働き(be動詞+過去分詞の受動態)の文はどれか。",
+   "a": "My grandmother was reading a newspaper then.",
+   "b": "The door was open when I got home.",
+   "c": "He was happy to hear the news from her.",
+   "d": "This picture was painted by a famous artist.",
+   "answer": "D",
+   "explanation": "本文の was sent は「(人によって)送られた」という受動態で、dの was painted(描かれた)と同じ構造。bの open は過去分詞ではなく「開いている」という形容詞(過去分詞なら opened)、aは過去進行形、cは be+形容詞なので、いずれも受動態ではない点に注意。"
+  },
+  {
+   "tag": "用法識別(later)",
+   "q": "本文の \"seven years later\" における \"later\" と同じ使い方をしている文はどれか。",
+   "a": "She got married, and three years later she moved to Osaka.",
+   "b": "I'm busy right now, so I'll call you back later tonight.",
+   "c": "He arrived at the station a little later than usual today.",
+   "d": "See you later, and take care of yourself.",
+   "answer": "A",
+   "explanation": "本文の seven years later は「過去の出来事(1978年の打ち上げ)を基準に、そこから7年後」という使い方で、aの three years later(結婚した時点から3年後)と同じ。bとdは「今から後で」という意味、cは late の比較級「いつもより遅く」であり、過去の基準点から期間を数える用法ではない。"
+  }
+ ]
+}

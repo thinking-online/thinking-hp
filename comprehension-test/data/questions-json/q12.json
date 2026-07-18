@@ -1,0 +1,37 @@
+{
+ "no": 12,
+ "en": "Imagine yourself standing in the middle of an antique shop. Do you picture yourself surrounded by \"junk\" or by \"treasures\"? If you know something about antiques ― their period, their function, or their history ― then you see treasure in antique shops.",
+ "ja": "骨董品店の真ん中に立っている自分を想像してみてほしい。あなたは「がらくた」に囲まれた自分を思い浮かべるだろうか、それとも「宝物」に囲まれた自分だろうか。骨董品について何か――その時代、用途、あるいは歴史――を知っていれば、骨董品店の中に宝物が見えてくるのだ。",
+ "questions": [
+  {
+   "tag": "構造(imagine+O+doing)",
+   "q": "第1文 \"Imagine yourself standing in the middle of an antique shop.\" の \"standing\" と同じ使い方(働き)をしている -ing 形を含む文はどれか。",
+   "a": "Walking along the street, I met an old friend of mine.",
+   "b": "My hobby is collecting old coins from foreign countries.",
+   "c": "I saw a man crossing the street in a hurry.",
+   "d": "The man standing at the door is my uncle.",
+   "answer": "C",
+   "explanation": "原文は「imagine + 目的語(yourself) + -ing」で、『目的語が〜しているところ』を表す形。cの \"saw a man crossing\" も「見る + 目的語 + -ing」で同じ働きです。aは分詞構文、bは動名詞、dは名詞を後ろから修飾する現在分詞で、どれも『目的語の動作を述べる補語』ではありません。"
+  },
+  {
+   "tag": "構造(picture+O+過去分詞)",
+   "q": "第2文 \"Do you picture yourself surrounded by junk or by treasures?\" の \"surrounded\" と同じ使い方(働き)をしている過去分詞を含む文はどれか。",
+   "a": "The window was broken by the ball yesterday.",
+   "b": "I heard my name called from behind.",
+   "c": "This is a book written by a famous writer.",
+   "d": "She has already finished her homework.",
+   "answer": "B",
+   "explanation": "原文は「picture + 目的語(yourself) + 過去分詞」で、『目的語が〜される(されている)ところ』を表す形。bの \"heard my name called\" も「動詞 + 目的語 + 過去分詞」で同じ働きです。aはふつうの受動態、cは名詞を後ろから修飾する過去分詞、dは現在完了の一部なので、目的語の状態を述べる補語ではありません。"
+  },
+  {
+   "tag": "語法(some-any)",
+   "q": "第3文 \"If you know something about antiques ...\" では、if節なのに anything ではなく something が使われている。その理由の説明として最も適切なものはどれか。",
+   "a": "if節では any ではなく some を使うことが文法上の規則と決まっているから",
+   "b": "anything は not を含む否定文の中でしか使うことができない語だから",
+   "c": "know のような状態を表す動詞は any を目的語にとることができないから",
+   "d": "「実際に何かを知っている」場合のことを肯定的に想定して述べているから",
+   "answer": "D",
+   "explanation": "if節や疑問文では any を使うのが基本ですが、話し手が『実際にそうである場合』を前向きに想定しているときは some(something)を使います。この文は『知っている人なら宝物が見える』と、知っている場合を想定した文です。aは規則が逆で、bとcはそのような制限は存在しません(anything は疑問文や if節でも使えます)。"
+  }
+ ]
+}

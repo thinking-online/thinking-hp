@@ -1,0 +1,37 @@
+{
+ "no": 9,
+ "en": "There are different kinds of World Heritage Sites. Some places have natural beauty and other places have important histories.",
+ "ja": "世界遺産にはさまざまな種類がある。自然の美しさを持つ場所もあれば、重要な歴史を持つ場所もある。",
+ "questions": [
+  {
+   "tag": "用法識別(some-other)",
+   "q": "\"Some places have natural beauty and other places have important histories.\" における Some ~ , other ~ と同じ使い方をしている文はどれか。",
+   "a": "I need some money to buy the other ticket.",
+   "b": "Some of the students were late for the other class.",
+   "c": "Some children like dogs and other children like cats.",
+   "d": "She gave me some advice about other problems.",
+   "answer": "C",
+   "explanation": "本文の Some ~ , other ~ は「〜な場所もあれば、別の〜な場所もある」と2つのグループを並べて対比する使い方。Cも「犬が好きな子もいれば、猫が好きな子もいる」という同じ対比になっている。AやBにも some と other が出てくるが、単に「いくらかの」「その別の(特定の)」という意味で、グループ同士の対比を作っていない点に注意。"
+  },
+  {
+   "tag": "語義(different)",
+   "q": "\"There are different kinds of World Heritage Sites.\" の \"different\" と同じ意味で使われている文はどれか。",
+   "a": "He tried different jobs before he became a teacher.",
+   "b": "My answer was different from my brother's answer.",
+   "c": "The two teams wore different colors in the game.",
+   "d": "Life in the city is different from life in a small town.",
+   "answer": "A",
+   "explanation": "本文の different は何かと比べて「異なる」のではなく、複数名詞について「さまざまな・いろいろな」という意味を表す用法。Aの different jobs も「いろいろな仕事」で同じ使い方。BとDは different from で「〜と異なる」、Cは2チームが「互いに別々の」色という意味なので、比較の相手がある「違う」の用法である。"
+  },
+  {
+   "tag": "構造(andの結び)",
+   "q": "\"Some places have natural beauty and other places have important histories.\" では and が2つの文(主語+動詞のまとまり)を結んでいる。これと同じ結び方をしている文はどれか。",
+   "a": "Tom plays soccer and baseball with his friends on weekends.",
+   "b": "My sister likes music and she plays the piano every day.",
+   "c": "We visited the museum and the park near the station.",
+   "d": "He got up early and ran in the park yesterday.",
+   "answer": "B",
+   "explanation": "本文は Some places have ... と other places have ... という、主語と動詞のそろった文同士を and が結んでいる。同じように主語+動詞が and の後にも現れるのはBだけ。AとCは名詞と名詞、Dは動詞のまとまり同士を結んでいて、and の後ろに新しい主語がない。本文を natural beauty and other places と名詞同士のつながりに誤読しないことがポイント。"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "no": 10,
+ "en": "Pet owners should think about the environment such as parks, streets, mountains and rivers, and should not damage it.",
+ "ja": "ペットの飼い主は、公園、道路、山、川といった環境のことを考え、それを傷つけてはならない。",
+ "questions": [
+  {
+   "tag": "用法識別(should)",
+   "q": "\"Pet owners should think about the environment ...\" の should と同じ使い方をしている should を含む文はどれか。",
+   "a": "The train should arrive at Tokyo Station by noon.",
+   "b": "It is strange that she should know my name.",
+   "c": "If you should need any help, please call me.",
+   "d": "You should be careful when you use the Internet.",
+   "answer": "D",
+   "explanation": "本文の should は「〜すべきだ」という忠告・義務を表し、d の「気をつけるべきだ」と同じ用法。a は「〜するはずだ」という推量、c は「万一〜なら」という仮定の should で、意味がまったく異なる。b は感情を表す文で使われる特別な should なので、これも別物。"
+  },
+  {
+   "tag": "用法識別(such as)",
+   "q": "\"the environment such as parks, streets, mountains and rivers\" の such as と同じ使い方をしているものを含む文はどれか。",
+   "a": "She got up early so as to catch the first train.",
+   "b": "Countries such as France and Italy are famous for their food.",
+   "c": "His answer was such as I had expected before.",
+   "d": "As he was very tired, he went to bed early.",
+   "answer": "B",
+   "explanation": "本文の such as は直前の名詞 the environment の具体例(公園・道路・山・川)を挙げる用法で、b の「フランスやイタリアのような国々」と同じ働き。a の so as to は「〜するために」という目的、d の as は「〜なので」という理由を表す接続詞。c の such as は「予想していたようなもの」という別の用法で、例を並べているわけではない。"
+  }
+ ]
+}

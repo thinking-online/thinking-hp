@@ -1,0 +1,37 @@
+{
+ "no": 23,
+ "en": "Malala never stopped her campaign for equal education. The next April, in Africa, a group against equal education kidnapped more than 250 girls. Three months later, Malala stood up for those kidnapped girls. She said that the voices of these girls and their fathers and mothers were stronger than all the weapons in the world.",
+ "ja": "マララは、平等な教育を求める運動を決してやめなかった。翌年の4月、アフリカで、平等な教育に反対する集団が250人以上の少女を誘拐した。3か月後、マララは誘拐された少女たちのために立ち上がった。彼女は、この少女たちとその父母の声は、世界中のあらゆる武器よりも強いのだと語った。",
+ "questions": [
+  {
+   "tag": "用法識別(against)",
+   "q": "本文の \"a group against equal education kidnapped more than 250 girls\" における \"against\" と同じ使い方をしている文を、次の中から1つ選びなさい。",
+   "a": "He leaned his bike against the wall of the gym.",
+   "b": "We will play against a strong team next Sunday.",
+   "c": "The movement against the new rule spread all over the country.",
+   "d": "It is against the school rules to use phones in class.",
+   "answer": "C",
+   "explanation": "本文の against は直前の名詞 a group を後ろから修飾し、「〜に反対する(集団)」という意味を作っています。同じく名詞 the movement を修飾して「〜に反対する(運動)」となる C が正解です。A は「〜に立てかけて」、B は「〜を相手に(対戦して)」、D は「〜に違反して」という別の使い方です。"
+  },
+  {
+   "tag": "用法識別(過去分詞の修飾)",
+   "q": "本文の \"Malala stood up for those kidnapped girls.\" における \"kidnapped\" と同じ働きをしている -ed 形の語を含む文を、次の中から1つ選びなさい。",
+   "a": "He closed all the windows before the storm came.",
+   "b": "She ate some boiled eggs for breakfast this morning.",
+   "c": "The concert has just started, so please be quiet.",
+   "d": "The room was cleaned by the students after school.",
+   "answer": "B",
+   "explanation": "kidnapped は動詞の過去形ではなく、過去分詞が形容詞のように名詞 girls の前について「〜された…」と修飾する用法です。boiled が名詞 eggs を修飾する B が同じ働きです。A は単なる過去形、C は現在完了形の一部、D は受動態の文の一部で、「誘拐された」という訳から D の受動態を選ばないよう注意しましょう。"
+  },
+  {
+   "tag": "語法(時制の一致)",
+   "q": "本文の \"She said that the voices of these girls and their fathers and mothers were stronger than all the weapons in the world.\" で、be動詞が \"were\" になっている理由として最も適切なものを1つ選びなさい。",
+   "a": "彼女が発言した時点よりも前に起きた、すでに終わった過去の内容を述べているから",
+   "b": "実際には声は武器より強くないという、事実に反する想像を仮定法で表しているから",
+   "c": "that 節は彼女の言葉をそのまま引用したもので、彼女自身が were と発言したから",
+   "d": "主節の動詞 said が過去形なので、that 節の中の動詞もそれに合わせて過去形になっているから",
+   "answer": "D",
+   "explanation": "これは時制の一致というルールで、主節の said が過去形のため、that 節の中の be動詞も形の上で過去形 were になっています。マララが実際に口にした言葉は \"are stronger\"（今、強い）であり、過去に強かったという意味（A）ではありません。仮定法（B）でもなく、that 節は発言そのままの引用ではなく間接話法なので C も誤りです。"
+  }
+ ]
+}

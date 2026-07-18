@@ -1,0 +1,27 @@
+{
+ "no": 1,
+ "en": "Time flies.",
+ "ja": "時が経つのは早い。（光陰矢の如し。）",
+ "questions": [
+  {
+   "tag": "用法識別(flies)",
+   "q": "\"Time flies.\" の \"flies\" と同じ品詞・使い方をしているものを、次の英文から1つ選びなさい。",
+   "a": "Flies are small insects with wings.",
+   "b": "My uncle flies helicopters for his job.",
+   "c": "This bird flies across the sea every year.",
+   "d": "She hates flies and mosquitoes in summer.",
+   "answer": "C",
+   "explanation": "\"Time flies.\" の flies は「(ひとりでに)飛ぶ・速く過ぎる」という意味の自動詞で、後ろに目的語をとらない。Cの flies も「鳥が海を越えて飛ぶ」という自動詞で、後ろは前置詞句なので同じ使い方。AとDは名詞「ハエ」、Bは helicopters を目的語にとる「〜を操縦する」という他動詞なので、形は同じでも使い方が異なる。"
+  },
+  {
+   "tag": "構造(第1文型SV)",
+   "q": "\"Time flies.\" と同じ文構造(文型)を持つ文を、次の英文から1つ選びなさい。",
+   "a": "Ken likes dogs.",
+   "b": "The baby smiled.",
+   "c": "Time is money.",
+   "d": "She gave me sweets.",
+   "answer": "B",
+   "explanation": "\"Time flies.\" は主語+動詞だけで意味が完結する第1文型(SV)で、Bの The baby smiled. も同じくSVの文。Aは目的語をとるSVO、Dは目的語を2つとるSVOO。Cは同じ time を使ったことわざだが、is の後に補語がくるSVCなので構造が違う点に注意。"
+  }
+ ]
+}

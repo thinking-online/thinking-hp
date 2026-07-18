@@ -1,0 +1,37 @@
+{
+ "no": 31,
+ "en": "There was a time when women social activists asked men to fight for women's rights. But this time, we will do it by ourselves. I'm not telling men to stop speaking for women's rights.",
+ "ja": "かつて、女性の社会活動家が、女性の権利のために闘ってくれるよう男性に頼んだ時代があった。しかし今回は、私たちが自分たちの手でそれを行う。男性に、女性の権利のために発言するのをやめてほしいと言っているのではない。",
+ "questions": [
+  {
+   "tag": "用法識別(when)",
+   "q": "\"There was a time when women social activists asked men to fight for women's rights.\" の \"when\" と同じ使い方をしている文はどれか。",
+   "a": "When I was a child, I lived in a small town.",
+   "b": "When will the next bus come to this stop?",
+   "c": "I still remember the day when we first met.",
+   "d": "Please tell me when you will leave Japan.",
+   "answer": "C",
+   "explanation": "本文の when は直前の名詞 a time を説明する関係副詞で、「〜する時代」という意味のかたまりを作っている。C も the day という名詞を when 以下が説明しており同じ用法。A は「〜のとき」という接続詞、B は疑問詞、D は「いつ〜するか」という名詞のかたまりを作る用法で、いずれも直前の名詞を説明していない。"
+  },
+  {
+   "tag": "多義語(by)",
+   "q": "\"But this time, we will do it by ourselves.\" の \"by\" と同じ意味で使われている文はどれか。",
+   "a": "My little brother made this cake by himself.",
+   "b": "This novel was written by a famous author.",
+   "c": "You must hand in the report by next Friday.",
+   "d": "She goes to her office by train every day.",
+   "answer": "A",
+   "explanation": "本文の by ourselves は「自分たちだけの力で（誰の助けも借りずに）」という意味の by oneself の形。A の by himself も「彼一人の力で」という同じ使い方である。B は「〜によって」（動作をする人を表す）、C は「〜までに」（期限）、D は「〜で」（交通手段）の by で、意味が異なる。"
+  },
+  {
+   "tag": "構造識別(to不定詞)",
+   "q": "\"I'm not telling men to stop speaking for women's rights.\" の \"to stop\" と同じ形で使われている to不定詞を含む文はどれか。",
+   "a": "I got up early to catch the first train.",
+   "b": "He has a lot of homework to do today.",
+   "c": "Her dream is to work in a foreign country.",
+   "d": "My mother asked me to wash the dishes.",
+   "answer": "D",
+   "explanation": "本文は tell + 人 + to do 「人に〜するように言う」の形で、to stop は直前の men（人）がする動作を表している。D も ask + 人 + to do で、to wash は直前の me がする動作を表す同じ形である。A は「〜するために」（目的）、B は「〜すべき」（名詞を修飾）、C は「〜すること」（補語）の用法で、どれも「動詞 + 人 + to do」の形ではない。"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "no": 5,
+ "en": "All work and no play makes Jack a dull boy.",
+ "ja": "勉強ばかりで遊ばないと、ジャックはつまらない子になる。（よく学び、よく遊べ。）",
+ "questions": [
+  {
+   "tag": "構造（名詞句主語と単数一致）",
+   "q": "英文 \"All work and no play makes Jack a dull boy.\" で、動詞が make ではなく makes という形になっている理由として最も適切なものはどれか。",
+   "a": "主語が Jack で、三人称単数だから",
+   "b": "\"All work and no play\" 全体が一つの事柄として単数扱いされるから",
+   "c": "work と play の二つが主語だが、動詞は直前の \"no play\" に合わせるから",
+   "d": "補語の \"a dull boy\" が単数の名詞なので、それに動詞を合わせるから",
+   "answer": "B",
+   "explanation": "この文の主語は Jack ではなく、\"All work and no play\"（勉強ばかりで全く遊ばないこと）という名詞のまとまりです。A and B の形でも、全体で一つの状況を表すときは単数扱いになるので makes になります。訳文が「ジャックは…になる」となっていても、英文上の主語は Jack ではない点に注意しましょう。"
+  },
+  {
+   "tag": "用法識別（make O C）",
+   "q": "英文中の \"makes Jack a dull boy\" における make と同じ用法で make を使っている文はどれか。",
+   "a": "The news made her a famous singer.",
+   "b": "My mother made me a nice lunch.",
+   "c": "They make cars in that factory.",
+   "d": "The movie made the children laugh.",
+   "answer": "A",
+   "explanation": "原文の make は「OをCにする」という用法で、Jack = a dull boy の関係が成り立ちます。a も her = a famous singer が成り立つ同じ用法です。b は「私に昼食を作ってくれた」で me = a nice lunch は成り立たず（make + 人 + 物の第4文型）、c は「車を作る」という単純な「作る」の意味、d は動詞の原形が続く「Oに〜させる」という使役の用法なので、いずれも異なります。"
+  }
+ ]
+}

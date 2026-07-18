@@ -1,0 +1,37 @@
+{
+ "no": 28,
+ "en": "Of course, in America, we're all wearing our shoes in class and eating hamburgers and other American food in a cafeteria. However, there are two customs that Japanese schools have and that American schools don't: soji and nitchoku.",
+ "ja": "もちろんアメリカでは、私たちはみな教室で靴を履いたままで、カフェテリアでハンバーガーやその他のアメリカの食べ物を食べている。しかし、日本の学校にはあってアメリカの学校にはない習慣が2つある。「掃除」と「日直」である。",
+ "questions": [
+  {
+   "tag": "用法識別(that)",
+   "q": "本文の \"two customs that Japanese schools have\" における that と同じ使い方をしている that を含む文はどれか。",
+   "a": "I know that she likes music very much.",
+   "b": "The cake that he made was delicious.",
+   "c": "That question was too difficult for me.",
+   "d": "It was so cold that we stayed at home.",
+   "answer": "B",
+   "explanation": "本文の that は直前の名詞 customs を後ろから説明する関係代名詞（目的格）で、B の that も the cake を説明する関係代名詞。A は「〜ということ」を導く接続詞、C は「あの」という指示語、D は so ... that 構文の that なので、いずれも名詞を修飾する働きではない。"
+  },
+  {
+   "tag": "省略(代動詞don't)",
+   "q": "本文の \"and that American schools don't\" における don't と同じ働きをしている don't を含む文はどれか。",
+   "a": "Don't run in the hallway, please.",
+   "b": "I don't know his phone number.",
+   "c": "Why don't we take a break here?",
+   "d": "My brother gets up early, but I don't.",
+   "answer": "D",
+   "explanation": "本文の don't は、前に出た have (these two customs) の繰り返しを避けて動詞の代わりをする使い方で、don't の後ろが省略されている。D も don't の後ろに get up early が省略されており、同じ働き。A は否定の命令文、B は後ろに動詞が続くふつうの否定文、C は提案の決まり文句で、どれも省略の働きはしていない。"
+  },
+  {
+   "tag": "用法識別(現在進行形)",
+   "q": "本文の \"we're all wearing our shoes in class\" における進行形と同じ使い方をしている進行形を含む文はどれか。",
+   "a": "In India, people are eating with their hands at meals.",
+   "b": "Look! It is raining very hard outside right now.",
+   "c": "We are leaving for Osaka early tomorrow morning.",
+   "d": "I was doing my homework when you called me.",
+   "answer": "A",
+   "explanation": "本文の進行形は「今この瞬間にしている動作」ではなく、アメリカでのふだんの習慣・ようすを生き生きと描く使い方で、A の「インドでは（ふだん）手で食事をしている」も同じ習慣を表す用法。B は今まさに起きている動作、C は近い未来の予定、D は過去のある時点で進行中だった動作を表すので異なる。"
+  }
+ ]
+}

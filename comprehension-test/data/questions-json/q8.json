@@ -1,0 +1,37 @@
+{
+ "no": 8,
+ "en": "Richard and Elizabeth came to Kiyoyama by train and bus from Tokyo to experience real Japanese culture. Their first difficulty was at reception. After five minutes of trying to understand their names, the young receptionist gave up and went into a back office.",
+ "ja": "リチャードとエリザベスは、本物の日本文化を体験するために、東京から電車とバスでキヨヤマへやって来た。最初の困難は受付でのことだった。5分間、二人の名前を聞き取ろうとした末に、若い受付係はあきらめて奥の事務室へ入っていった。",
+ "questions": [
+  {
+   "tag": "用法識別(to不定詞)",
+   "q": "第1文の \"to experience real Japanese culture\" で使われている to 不定詞と、同じ用法・同じ意味で不定詞が使われている文はどれか。",
+   "a": "I got up early to catch the first bus.",
+   "b": "I have a lot of homework to do tonight.",
+   "c": "To speak English well is not easy for me.",
+   "d": "I was glad to hear the news from her.",
+   "answer": "A",
+   "explanation": "本文の to experience は「〜するために」と目的を表す副詞的用法で、a の to catch も「始発バスに乗るために」という目的を表すので同じ用法・同じ意味。b は直前の名詞 homework を修飾する形容詞的用法、c は文の主語になる名詞的用法。d は同じ副詞的用法でも glad という感情の「原因」(〜して嬉しい)を表すので、目的とは区別される。"
+  },
+  {
+   "tag": "語法(無冠詞の名詞)",
+   "q": "第2文 \"Their first difficulty was at reception.\" では、reception に a も the も付いていない。この reception と同じ考え方で名詞を使っている文はどれか。",
+   "a": "They bought a new bed for their son.",
+   "b": "I met her in front of the station.",
+   "c": "My father was still in bed when I called him.",
+   "d": "The school near my house has a large gym.",
+   "answer": "C",
+   "explanation": "本文の reception は特定の建物や物ではなく「受付(という場面・働き)」を表しているため無冠詞になっている。c の in bed も「ベッドという家具」ではなく「寝ている状態」を表す無冠詞の使い方で、同じ発想である。a は物としての一つのベッドなので a が付き、b と d は the で特定の建物・場所そのものを指しており、考え方が異なる。"
+  },
+  {
+   "tag": "構造(動名詞)",
+   "q": "第3文の \"After five minutes of trying to understand their names\" にある trying と同じ働きをしている -ing 形を含む文はどれか。",
+   "a": "The boy talking with our teacher is my cousin.",
+   "b": "She stood by the door, waiting for her friend.",
+   "c": "They were practicing tennis when it started to rain.",
+   "d": "He is good at making people laugh.",
+   "answer": "D",
+   "explanation": "本文の trying は前置詞 of の目的語になっている動名詞で、d の making も前置詞 at の目的語の動名詞なので同じ働きである。a は名詞 boy を後ろから修飾する現在分詞、b は「〜しながら」を表す分詞構文、c は過去進行形の一部。形は同じ -ing でも文中での役割が違う点に注意しよう。"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "no": 4,
+ "en": "I gave some presents to my sisters, and they gave me a very nice present back.",
+ "ja": "私は姉妹にプレゼントをいくつかあげ、彼女たちはお返しにとても素敵なプレゼントをくれた。",
+ "questions": [
+  {
+   "tag": "構造(第4文型)",
+   "q": "本文の \"they gave me a very nice present back\" と同じ文型(構造)で書かれている文はどれか。",
+   "a": "I sent an email to my teacher yesterday.",
+   "b": "My aunt bought me a new bike last month.",
+   "c": "The news made everyone very happy.",
+   "d": "He became a famous singer in Japan.",
+   "answer": "B",
+   "explanation": "元の文は「give + 人 + 物」の第4文型(SVOO)で、b の bought me a new bike も「動詞 + 人 + 物」の同じ型です。a は「sent + 物 + to + 人」の第3文型で、意味は似ていても構造が異なる点がひっかけです。c は SVOC、d は SVC で型が違います。"
+  },
+  {
+   "tag": "読解(a presentの数)",
+   "q": "\"they gave me a very nice present back\" の部分から読み取れる内容として最も適切なものはどれか。",
+   "a": "姉妹が全員でいっしょに1つのプレゼントをくれた",
+   "b": "姉妹がそれぞれ1つずつプレゼントをくれた",
+   "c": "姉妹がお返しに複数のプレゼントをくれた",
+   "d": "姉妹のうちの1人だけがプレゼントをくれた",
+   "answer": "A",
+   "explanation": "主語の they は姉妹全員を指しますが、目的語は a very nice present と単数なので、姉妹がまとめて1つのプレゼントをくれたと読み取れます。「それぞれ1つずつ」なら each を使い、複数なら presents と複数形になるはずです。単数の a を見落とすと b や c を選んでしまいます。"
+  },
+  {
+   "tag": "書き換え(give+to)",
+   "q": "本文の \"I gave some presents to my sisters\" を、意味を変えずに書き換えた文として正しいものはどれか。",
+   "a": "I gave some presents for my sisters.",
+   "b": "I gave to my sisters some presents.",
+   "c": "I gave my sisters some presents.",
+   "d": "I gave some presents my sisters.",
+   "answer": "C",
+   "explanation": "「give + 物 + to + 人」を書き換えるときは、to を取って「give + 人 + 物」の語順にします。c がその正しい形です。a は前置詞を for にした誤り(for を使うのは buy や make など)、b は to を残したまま人を前に出した誤り、d は to を落としただけで語順を変えていない誤りです。"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "no": 15,
+ "en": "On my way home I passed the little shop again. He was there, and still working. He saw me, and to my surprise he waved and smiled. This was the first day of our friendship.",
+ "ja": "帰り道、私は再びその小さな店の前を通った。彼はそこにいて、まだ働いていた。彼は私に気づき、驚いたことに、手を振ってほほえんでくれた。これが、私たちの友情の最初の日だった。",
+ "questions": [
+  {
+   "tag": "用法識別(to)",
+   "q": "本文の \"to my surprise he waved and smiled\" における to と同じ使い方をしている to を含む文はどれか。",
+   "a": "She walked to the library after school.",
+   "b": "The game was canceled, to our great disappointment.",
+   "c": "I got up early to make breakfast for my family.",
+   "d": "He was very kind to the little children.",
+   "answer": "B",
+   "explanation": "本文の to は感情を表す名詞(surprise)と結びつき、「〜したことに(は)」と文全体にかかる前置詞です。b の to our great disappointment(とてもがっかりしたことに)が同じ使い方です。c を選ぶと「私を驚かせるために」という目的の不定詞と混同した誤読になり、a は「〜へ」という方向、d は形容詞 kind の対象を示す to です。"
+  },
+  {
+   "tag": "用法識別(still)",
+   "q": "本文の \"He was there, and still working.\" における still と同じ使い方をしている文はどれか。",
+   "a": "Keep still while the doctor checks your eyes.",
+   "b": "The water of the lake was still and clear.",
+   "c": "It was very cold; still, they played outside.",
+   "d": "My sister still remembers her first teacher.",
+   "answer": "D",
+   "explanation": "本文の still は「(以前から)依然として、まだ」と動作の継続を表す副詞で、d の「今でも覚えている」が同じ用法です。a と b は「じっとした・静かな」という形容詞の still、c は「それでもなお」という逆接のつなぎ言葉で、意味がまったく異なります。形が似ていても働きが違う点に注意しましょう。"
+  },
+  {
+   "tag": "用法識別(home)",
+   "q": "本文の \"On my way home I passed the little shop again.\" における home と同じ使い方をしている文はどれか。",
+   "a": "After the party, everyone went home by bus.",
+   "b": "Their new home is near a beautiful lake.",
+   "c": "Australia is home to many rare animals.",
+   "d": "My mother was at home all day yesterday.",
+   "answer": "A",
+   "explanation": "on my way home の home は前置詞を付けずに「家へ」を表す副詞で、a の went home(家へ帰った)が同じ使い方です。b と c の home は名詞、d は前置詞 at の目的語になっている名詞です。「×go to home」「×on my way to home」としないのがポイントで、副詞の home は to を取りません。"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "no": 38,
+ "en": "In the case of middle hypothermia, the shivering becomes stronger and breathing becomes slower. The body temperature is around 32°C. This temperature makes a person too sick and sleepy to clearly understand what is happening.",
+ "ja": "中等度の低体温症の場合、震えはより強くなり、呼吸はより遅くなる。体温は32℃前後である。この体温になると、人はあまりに具合が悪く眠くなり、何が起きているのかをはっきり理解できなくなる。",
+ "questions": [
+  {
+   "tag": "用法識別(too〜to)",
+   "q": "本文の \"This temperature makes a person too sick and sleepy to clearly understand what is happening.\" における too は、後ろの to 〜 と結びついて使われている。この too と同じ使い方をしている文はどれか。",
+   "a": "I like tennis, and my brother likes it too.",
+   "b": "You eat too much and don't exercise at all.",
+   "c": "It is too bad that you couldn't join us.",
+   "d": "The box was too heavy for the child to carry.",
+   "answer": "D",
+   "explanation": "本文の too は「too + 形容詞 + to 〜」で「あまりに…なので〜できない」という程度・結果を表し、d の「重すぎて子どもには運べない」が同じ構文です。a は「〜もまた」、b は「食べすぎる(量が過度)」、c は「It is too bad(残念だ)」という決まり文句で、いずれも後ろの to 不定詞と結びついていません。too を見たら後ろに to 〜 が続くかどうかを必ず確認しましょう。"
+  },
+  {
+   "tag": "構造(make O C)",
+   "q": "本文の \"This temperature makes a person too sick and sleepy ...\" の makes と同じ使い方(意味と形)で make が使われている文はどれか。",
+   "a": "The teacher made us practice hard after school.",
+   "b": "My aunt made me a beautiful dress last month.",
+   "c": "The news of his success made his parents very happy.",
+   "d": "These toys are made in a small town in Germany.",
+   "answer": "C",
+   "explanation": "本文は「make + 人 + 形容詞」で「人を〜の状態にする」という意味で、c の「知らせが両親をとても幸せにした」が同じ使い方です。a は「make + 人 + 動詞の原形(人に〜させる)」、b は「make + 人 + 物(人に物を作ってあげる)」、d は受け身の「作られる」で、それぞれ形も意味も異なります。make の直後に「人 + 形容詞」が続いていたら「〜の状態にする」と読むのがポイントです。"
+  },
+  {
+   "tag": "用法識別(what節)",
+   "q": "本文の \"... to clearly understand what is happening\" における what は、understand の後ろに「何が起きているのか」という意味のかたまり(節)を作っている。この what と同じ使い方をしている文はどれか。",
+   "a": "What happened to your bike yesterday?",
+   "b": "I couldn't hear what the teacher said.",
+   "c": "What a beautiful view this is!",
+   "d": "What color do you like the best?",
+   "answer": "B",
+   "explanation": "本文の what is happening は「何が起きているのか」という名詞のかたまり(名詞節)を作り、understand の目的語になっています。b も what the teacher said が hear の目的語になる名詞節で、同じ使い方です。a と d は文全体が相手に直接たずねる疑問文、c は「なんて〜だろう」という感嘆文の what です。特に a は「what + 動詞」という形が本文とそっくりですが、動詞の目的語になっていない点が違います。"
+  }
+ ]
+}

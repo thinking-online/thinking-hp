@@ -1,0 +1,37 @@
+{
+ "no": 26,
+ "en": "When Jane was seven, her mother borrowed a book from the library near their house. It was The Story of Dr. Dolittle. This book is about a doctor who can talk to animals and who travels to Africa. Jane liked the story so much that she read it three times before she returned it.",
+ "ja": "ジェーンが7歳のとき、母親が家の近くの図書館から一冊の本を借りてきた。それは『ドリトル先生物語』だった。この本は、動物と話すことができ、アフリカへ旅をする医者についての物語である。ジェーンはその物語がとても気に入り、返却する前に3回も読んだ。",
+ "questions": [
+  {
+   "tag": "用法識別(so-that)",
+   "q": "\"Jane liked the story so much that she read it three times\" の so ... that ... と同じ使い方をしている文はどれか。",
+   "a": "I got up early so that I could catch the first train.",
+   "b": "The question was so difficult that no one could answer it.",
+   "c": "It began to rain, so we went home at once.",
+   "d": "This question is not so easy as that one.",
+   "answer": "B",
+   "explanation": "原文の so ... that ... は「とても〜なので…」という程度・結果を表す構文で、b の「とても難しかったので誰も答えられなかった」と同じ使い方。a の so that は「〜するために」という目的、c の so は「だから」という接続詞で、形が似ていても働きが違う点に注意。"
+  },
+  {
+   "tag": "構造(関係詞節の並列)",
+   "q": "\"a doctor who can talk to animals and who travels to Africa\" と同じ構造を持つ文はどれか。",
+   "a": "I know a girl who likes music and sings very well.",
+   "b": "I know a girl and a boy who sing very well.",
+   "c": "I know a girl who likes music and who sings very well.",
+   "d": "I know a girl who likes music, and she sings very well.",
+   "answer": "C",
+   "explanation": "原文は1つの先行詞 a doctor に「who can talk ...」と「who travels ...」という2つの関係詞節が and で並列にかかる形で、c がこれと同じ構造。a は who が1回だけで節の中の動詞2つを並べた形、d は関係詞節の後に独立した新しい文を and でつないだ形なので、意味は近くても構造が異なる。"
+  },
+  {
+   "tag": "時制(現在形の理由)",
+   "q": "この文章は過去の出来事を述べているのに、第3文 \"This book is about a doctor ...\" では動詞が is と現在形になっている。その理由として最も適切なものはどれか。",
+   "a": "本の内容は時がたっても変わらない事実として述べているから",
+   "b": "ジェーンが現在もその本を手元に置いて読み続けているから",
+   "c": "過去の場面を生き生きと表現する物語の特別な用法だから",
+   "d": "直前の文で使った was との単調な繰り返しを避けたいから",
+   "answer": "A",
+   "explanation": "本の内容や普遍的な事実は、過去の話の途中でも現在形で述べるのがふつうで、「この本は〜についての物語である」という内容は今も変わらないので is が使われている。ジェーンの行動(borrowed, liked, read)は過去の出来事なので過去形、という使い分けを読み取ろう。b は本文の \"before she returned it\"(返却した)と矛盾するので誤り。"
+  }
+ ]
+}

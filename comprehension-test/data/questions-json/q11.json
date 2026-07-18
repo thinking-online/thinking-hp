@@ -1,0 +1,37 @@
+{
+ "no": 11,
+ "en": "Coubertin wanted to realize three things through sports. First, he wanted people in the world to make their body and mind strong. Second, he wanted them to become friends. Third, he wanted them to build a peaceful world.",
+ "ja": "クーベルタンは、スポーツを通して3つのことを実現したいと考えていた。第一に、世界の人々に心身を強くしてほしかった。第二に、人々に友人になってほしかった。第三に、人々に平和な世界を築いてほしかった。",
+ "questions": [
+  {
+   "tag": "構造(want O to do)",
+   "q": "本文の \"he wanted them to become friends\" と同じ want の使い方(文型)をしている文はどれか。",
+   "a": "Our coach wants us to run every morning.",
+   "b": "I want to see that movie with my friends.",
+   "c": "She wants a quiet place to read books.",
+   "d": "Do you want anything from that new store?",
+   "answer": "A",
+   "explanation": "本文は「want + 目的語 + to 不定詞」で『(目的語)に〜してほしい』という形。aの wants us to run は us が run するという同じ形である。bは want to do で『自分が〜したい』となり、動作をするのが主語自身である点が異なる。cの to read は a quiet place を修飾する形容詞的用法の不定詞で、場所が読むわけではない。dは単に『〜がほしい』の want + 名詞である。"
+  },
+  {
+   "tag": "構造(make O C)",
+   "q": "本文の \"make their body and mind strong\" と同じ make の使い方(文型)をしている文はどれか。",
+   "a": "My mother made me a new bag for school.",
+   "b": "The news of his success made everyone happy.",
+   "c": "Our teacher made us practice the song again.",
+   "d": "They make fresh bread and sell it at the market.",
+   "answer": "B",
+   "explanation": "本文の make は「make + 目的語 + 形容詞」で『〜を…(の状態)にする』という第5文型。bの made everyone happy が同じ形である。aは「〜に…を作ってあげる」の第4文型、cは「〜に…させる」の使役(make + O + 動詞の原形)、dは単に「作る」の第3文型で、いずれも形が異なる。"
+  },
+  {
+   "tag": "用法識別(realize)",
+   "q": "本文の \"realize three things\" の realize と同じ意味で realize を使っている文はどれか。",
+   "a": "I suddenly realized that I had left my key at home.",
+   "b": "She didn't realize how dangerous the road was.",
+   "c": "Do you realize what time it is now?",
+   "d": "After years of effort, he realized his goal of opening a shop.",
+   "answer": "D",
+   "explanation": "本文の realize は『(計画・夢などを)実現する』という意味で、dの realized his goal(目標を実現した)が同じ用法。a・b・cはいずれも『〜に気づく・わかる』という別の語義である。realize を「気づく」の意味だけで覚えていると本文を誤読するので注意。"
+  }
+ ]
+}

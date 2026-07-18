@@ -1,0 +1,37 @@
+{
+ "no": 24,
+ "en": "Now I know if each of us has a sense of responsibility and gives our pets more attention, we can reduce the number of unhappy pets.",
+ "ja": "今では私はわかっている。私たち一人ひとりが責任感を持ち、ペットにもっと関心を向ければ、不幸なペットの数を減らすことができるのだ。",
+ "questions": [
+  {
+   "tag": "用法識別(ifの用法)",
+   "q": "\"Now I know if each of us has a sense of responsibility and gives our pets more attention, we can reduce the number of unhappy pets.\" の if と同じ使い方をしている文はどれか。",
+   "a": "I don't know if the news about the singer is true or not.",
+   "b": "She asked me if I had ever been to Kyoto before.",
+   "c": "If it is sunny tomorrow, we will go on a picnic by the river.",
+   "d": "I wonder if my grandmother will like this birthday present.",
+   "answer": "C",
+   "explanation": "この文は I know (that) のあとに「if の条件節 + we can reduce ...」という文全体が目的語として続く形で、if は「もし〜なら」という条件を表します。したがって同じ使い方なのは c です。a・b・d の if はどれも know / ask / wonder の目的語になる名詞節を作る「〜かどうか」の if で、使い方が異なります。この英文の if を「〜かどうか」と読むと、後半の we can reduce ... のつながりが説明できなくなります。"
+  },
+  {
+   "tag": "語法(each of usの単数扱い)",
+   "q": "\"if each of us has a sense of responsibility and gives our pets more attention\" で、動詞が have / give ではなく has / gives となっている理由として正しいものはどれか。",
+   "a": "主語の中心は each であり、「一人ひとり」を個別に指す語なので単数として扱われるから",
+   "b": "if 節の中では、時制の一致の決まりにより動詞をいつも3人称単数形にする必要があるから",
+   "c": "has の直後にある a sense of responsibility が単数名詞なので、動詞の形をそれに合わせるから",
+   "d": "us は目的格の代名詞であり、目的格のあとに続く動詞は自動的に s の付く形になるから",
+   "answer": "A",
+   "explanation": "each of us は「私たちの一人ひとり」という意味で、主語の中心は each です。each は個別の一人を指すため単数扱いとなり、動詞は3単現の has / gives になります。b のような決まりは存在せず、c のように動詞の形をあとに来る目的語に合わせることもありません。d の格は動詞の形とは無関係です。"
+  },
+  {
+   "tag": "構造(give A B の文型)",
+   "q": "\"gives our pets more attention\" と同じ構造(文型)で書かれている文はどれか。",
+   "a": "My aunt made me a member of the tennis club.",
+   "b": "Tom showed his passport to the officer at the airport.",
+   "c": "My parents named our new dog Shiro last week.",
+   "d": "Mr. Sato teaches us math at our junior high school.",
+   "answer": "D",
+   "explanation": "gives our pets more attention は「(人)に(物)を与える」という動詞+目的語2つの形(第4文型)で、d の teaches us math(私たちに数学を教える)が同じ構造です。a と c は「目的語 = 補語」の関係になる第5文型(me = a member、our new dog = Shiro)、b は to を使っているため目的語は1つで、意味が似ていても文型が異なります。"
+  }
+ ]
+}

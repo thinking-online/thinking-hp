@@ -1,0 +1,37 @@
+{
+ "no": 17,
+ "en": "Put a mirror in front of your dog. He may not look at it twice. He sees a dog in front of him, but he doesn't smell another dog. He can smell better than he can see, so he will believe his nose, not his eyes.",
+ "ja": "犬の前に鏡を置いてみよう。犬はそれを二度見しないかもしれない。目の前に犬が見えているのに、別の犬のにおいがしないからだ。犬は目よりも鼻のほうが優れているので、自分の目ではなく鼻を信じるのである。",
+ "questions": [
+  {
+   "tag": "用法識別(smell)",
+   "q": "本文の \"he doesn't smell another dog\" における smell と同じ使い方をしている smell を含む文はどれか。",
+   "a": "This soup smells really good.",
+   "b": "Her hair smelled of nice shampoo.",
+   "c": "I can smell fresh coffee in the kitchen.",
+   "d": "The old shoes smelled terrible after the rain.",
+   "answer": "C",
+   "explanation": "本文の smell は「〜のにおいを感じ取る」という知覚を表す動詞で、another dog という目的語を取っている。c も fresh coffee を目的語に取り「コーヒーのにおいを感じ取る」で同じ使い方。訳の「においがしない」という字面につられて、a・b・d のような「(主語自身が)においを発する・〜のにおいがする」型を選ばないよう注意。"
+  },
+  {
+   "tag": "構造(比較)",
+   "q": "\"He can smell better than he can see\" と、比較の構造(何と何を比べているか)が同じ文はどれか。",
+   "a": "Ken can swim much faster than his father can.",
+   "b": "Emi can read English better than she can speak it.",
+   "c": "I like playing tennis better than watching soccer.",
+   "d": "This math question is much easier than that one.",
+   "answer": "B",
+   "explanation": "本文は「同じ一匹の犬」が持つ嗅覚と視覚という二つの能力を比べており、b も同一人物の「読む力」と「話す力」の比較で構造が同じ。a は can ... than ... can と形はそっくりだが、「ケン」と「父」という別人どうしの比較なので誤り。c は好みの対象どうし、d は二つの物どうしの比較。"
+  },
+  {
+   "tag": "用法識別(will)",
+   "q": "本文の \"he will believe his nose, not his eyes\" における will と同じ用法の文はどれか。",
+   "a": "I will call you tonight.",
+   "b": "She will be sixteen next month.",
+   "c": "Will you open the window?",
+   "d": "Oil will float on water.",
+   "answer": "D",
+   "explanation": "この will は未来の予定ではなく、「(犬というものは)〜するものだ」という習性・性質を表す用法。d の「油は水に浮くものだ」という物の性質を述べる will と同じ。a は意志・予定、b は単純未来、c は依頼で、いずれも一般的な性質を述べる用法ではない。"
+  }
+ ]
+}

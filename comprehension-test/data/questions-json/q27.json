@@ -1,0 +1,37 @@
+{
+ "no": 27,
+ "en": "When you talk with people from foreign countries, you can learn some ideas which are different from yours. That may change your view.",
+ "ja": "外国の人々と話すと、自分とは異なる考えを学ぶことができる。それは、あなたのものの見方を変えるかもしれない。",
+ "questions": [
+  {
+   "tag": "指示語(That)",
+   "q": "第2文 \"That may change your view.\" の That が指す内容として最も適切なものはどれか。",
+   "a": "people who come to you from foreign countries",
+   "b": "the view that you have held for a long time",
+   "c": "coming to know ideas that you did not have",
+   "d": "visiting a lot of foreign countries yourself",
+   "answer": "C",
+   "explanation": "That は前文全体の内容、つまり「外国の人と話して自分にはない考えを知ること」を受けています。変えられる側である your view (b) や、直前に出てきた名詞 (a) を指すと考えるのが典型的な誤読です。「話す」ことを「訪れる」ことにすり替えた d にも注意しましょう。"
+  },
+  {
+   "tag": "所有代名詞(yours)",
+   "q": "\"...some ideas which are different from yours\" の yours が表すものとして最も適切なものはどれか。",
+   "a": "you",
+   "b": "your country",
+   "c": "foreign people's ideas",
+   "d": "your ideas",
+   "answer": "D",
+   "explanation": "yours は所有代名詞で、前に出た名詞を受けて your ideas の代わりをしています。つまり「あなたの考えとは異なる考え」という比較です。訳の「自分とは異なる」という字面につられて you (a) と取ると、名詞と代名詞の対応を見落としたことになります。"
+  },
+  {
+   "tag": "パラフレーズ(全体の論理)",
+   "q": "この2文全体の内容の言い換えとして最も適切な英文はどれか。",
+   "a": "Talks with people from abroad can lead you to see things in a different way.",
+   "b": "People from abroad will change their own views by talking with you.",
+   "c": "If you see things differently, foreign people will enjoy talking with you.",
+   "d": "You must accept every idea from abroad when you talk with foreign people.",
+   "answer": "A",
+   "explanation": "全体は「外国の人と話す→新しい考えを知る→あなたの見方が変わるかもしれない」という流れで、a がこれを言い換えています。見方が変わるのはあなた自身であって外国の人ではないので b は主語の取り違え、c は原因と結果が逆です。d は learn (知る) を「必ず受け入れる」にすり替えており、may の控えめな可能性とも合いません。"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "no": 39,
+ "en": "It is tough to live in Antarctica for a number of reasons. The biggest problem is that Antarctica is the coldest place on Earth, and about 98% is covered in ice.",
+ "ja": "南極大陸で暮らすのが厳しいのには、いくつもの理由がある。最大の問題は、南極が地球上で最も寒い場所であり、その約98％が氷に覆われていることだ。",
+ "questions": [
+  {
+   "tag": "用法識別(形式主語のit)",
+   "q": "\"It is tough to live in Antarctica for a number of reasons.\" の It と同じ使い方をしている it を含む文はどれか。",
+   "a": "It was raining when I left home.",
+   "b": "It is important to get up early every day.",
+   "c": "I have a new bike. It is very fast.",
+   "d": "It was Ken that broke the window.",
+   "answer": "B",
+   "explanation": "本文の It は形式主語で、本当の主語は後ろの to live 以下。B も It が形式主語で to get up 以下が本当の主語という同じ構造。A は天候を表す it、C は前の名詞 (a new bike) を指す代名詞、D は「〜したのはケンだった」という強調構文の it で、いずれも使い方が異なる。"
+  },
+  {
+   "tag": "用法識別(接続詞that)",
+   "q": "\"The biggest problem is that Antarctica is the coldest place on Earth\" の that と同じ使い方をしている that を含む文はどれか。",
+   "a": "I hear that you like music.",
+   "b": "This is the book that I bought yesterday.",
+   "c": "He ran so fast that I couldn't catch him.",
+   "d": "Do you know that man standing over there?",
+   "answer": "A",
+   "explanation": "本文の that は「〜ということ」という名詞のかたまり(名詞節)を作る接続詞で、A の that も「あなたが音楽を好きだということ」という名詞節を作る同じ用法。B は直前の名詞を説明する関係代名詞、C は so ... that 構文、D は「あの」という意味で名詞を指す that なので別の使い方。that の後ろに完全な文が続き、全体が「〜ということ」と訳せるかがポイント。"
+  },
+  {
+   "tag": "パラフレーズ(最上級)",
+   "q": "\"Antarctica is the coldest place on Earth\" の内容の言い換えとして最も適切な英文はどれか。",
+   "a": "Some places on Earth are colder than Antarctica.",
+   "b": "No place on Earth is warmer than Antarctica.",
+   "c": "Antarctica is not as cold as any other place on Earth.",
+   "d": "Antarctica is colder than any other place on Earth.",
+   "answer": "D",
+   "explanation": "最上級は「比較級 + than any other 〜(他のどの〜よりも…)」で書き換えられるので D が正解。B は「南極より暖かい場所はない」つまり南極が最も暖かいという逆の意味になる点に注意。A は南極より寒い場所があることになり、C も「他のどの場所ほども寒くない」という逆の内容で、いずれも本文と矛盾する。"
+  }
+ ]
+}

@@ -1,0 +1,27 @@
+{
+ "no": 2,
+ "en": "Some are wise and some are otherwise.",
+ "ja": "賢い人もいれば、そうでない人もいる。",
+ "questions": [
+  {
+   "tag": "用法識別(some)",
+   "q": "\"Some are wise and some are otherwise.\" の \"Some\" と同じ使い方をしている some を含む文はどれか。",
+   "a": "Would you like some coffee after lunch?",
+   "b": "Some student left this umbrella here.",
+   "c": "Some say that the rumor is not true.",
+   "d": "We waited at the door for some time.",
+   "answer": "C",
+   "explanation": "本文の Some は後ろに名詞を伴わず、それだけで「〜な人もいる」という意味の代名詞として主語になっている。C の Some も単独で「〜と言う人もいる」を表す同じ使い方。A は名詞 coffee につく「いくらかの」、B は「ある(一人の)」、D は「しばらくの間」で、いずれも名詞を修飾する形容詞的な用法である。"
+  },
+  {
+   "tag": "用法識別(otherwise)",
+   "q": "\"Some are wise and some are otherwise.\" の \"otherwise\" と同じ使い方をしている文はどれか。",
+   "a": "Start now, otherwise you will be late for school.",
+   "b": "The result of the game was quite otherwise.",
+   "c": "My teacher seems to think otherwise about it.",
+   "d": "The car is very old but otherwise it works fine.",
+   "answer": "B",
+   "explanation": "本文の otherwise は be動詞の後ろに置かれ、「それとは違う状態だ(=賢くない)」という補語の働きをしている。B も was の補語で「(結果は)まったく違っていた」となる同じ使い方。A は「さもなければ」という条件のつなぎ、C は think を修飾する「違ったふうに」、D は「それ以外の点では」で、いずれも be動詞の補語ではない。"
+  }
+ ]
+}

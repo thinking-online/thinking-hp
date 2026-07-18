@@ -1,0 +1,37 @@
+{
+ "no": 21,
+ "en": "When you pass through the door, look quickly behind you to see if anyone is following. If there is someone following, keep your hand on the door until the other person reaches it.",
+ "ja": "ドアを通り抜けるときは、誰かついて来ていないか、素早く後ろを確認しよう。もし誰かついて来ていたら、その人がドアに届くまで手を添えておこう。",
+ "questions": [
+  {
+   "tag": "語法(some-any)",
+   "q": "1文目では \"if anyone is following\"、2文目では \"If there is someone following\" と、日本語ではどちらも「誰か」にあたる語が使い分けられている。この使い分けの理由として最も適切なものを1つ選びなさい。",
+   "a": "1文目はついて来る人がいるかまだ分からない場面、2文目は実際にいる場合を想定した場面で使われているから。",
+   "b": "anyone は不特定の大勢の人を表し、someone は特定のただ1人の人を表す語だから。",
+   "c": "anyone は someone よりもていねいで、改まった固い言い方に使われる語だから。",
+   "d": "同じ単語の繰り返しを避けるための単なる言いかえで、二つの語に意味の違いはないから。",
+   "answer": "A",
+   "explanation": "any は「いるかいないか分からない」不確定の場面(疑問・否定・確認)で使い、some は「いる」ことを前提・想定した場面で使う。1文目は確かめる前なので anyone、2文目は実際にいる場合を想定した条件なので someone。単数・複数やていねいさの違いではない。"
+  },
+  {
+   "tag": "構造(命令文の主語)",
+   "q": "1文目の \"look\" と2文目の \"keep\" の動作を行うのは誰か。最も適切なものを1つ選びなさい。",
+   "a": "文中の anyone(ついて来ているかもしれない誰か)",
+   "b": "話し手と読み手を含む私たち(we)",
+   "c": "この文の読み手(聞き手)であるあなた(you)",
+   "d": "文中の the other person(ついて来ているその人)",
+   "answer": "C",
+   "explanation": "look も keep も動詞の原形で文が始まる命令文であり、動作を行うのは相手= you。配布訳の「〜しよう」は命令口調を和らげた訳し方にすぎず、Let's(=私たち)の意味ではない。"
+  },
+  {
+   "tag": "用法識別(if)",
+   "q": "1文目の \"to see if anyone is following\" で使われている if と同じ使い方の if を含む文を、次のA〜Dから1つ選びなさい。",
+   "a": "If you are tired, you should go to bed early.",
+   "b": "I'm not sure if this train stops at the next station.",
+   "c": "I will see my grandmother if she visits Tokyo next month.",
+   "d": "You can go outside if you finish your homework.",
+   "answer": "B",
+   "explanation": "本文の if は「もし」ではなく「〜かどうか」の意味で、see の目的語になる名詞のかたまりを作っている。同じ用法はB(止まるかどうか分からない)だけで、A・C・Dはすべて条件「もし〜なら」の if。配布訳の「ついて来ていないか」は not の訳ではなく、この「〜かどうか」を自然な日本語にした意訳。"
+  }
+ ]
+}

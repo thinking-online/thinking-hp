@@ -1,0 +1,37 @@
+{
+ "no": 43,
+ "en": "A few years ago, a 43-year-old shopkeeper named Rajesh Kumar visited the construction site of a railway station in New Delhi. He saw many children who were playing at the site instead of studying at school. When Rajesh asked their parents why they were not sending them to school, they all said there were no schools in the area and nobody cared.",
+ "ja": "数年前、ラジェシュ・クマールという43歳の店主が、ニューデリーの鉄道駅の建設現場を訪れた。彼は、学校で勉強する代わりにその現場で遊んでいる多くの子どもたちを目にした。ラジェシュが親たちに、なぜ子どもを学校に行かせないのかと尋ねると、彼らはみな、この地域には学校がなく、誰も気にかけていないのだと言った。",
+ "questions": [
+  {
+   "tag": "構造(過去分詞の後置修飾)",
+   "q": "英文中の \"a 43-year-old shopkeeper named Rajesh Kumar\" の \"named\" と同じ使い方をしている過去分詞を含む文はどれか。",
+   "a": "My father named our dog Shiro last year.",
+   "b": "This temple was built three hundred years ago.",
+   "c": "The language spoken in that country is French.",
+   "d": "I have already finished my homework today.",
+   "answer": "C",
+   "explanation": "本文の named Rajesh Kumar は、直前の名詞 shopkeeper を後ろから修飾する過去分詞(「ラジェシュ・クマールと名付けられた店主」)。Cの spoken in that country も名詞 the language を後ろから修飾する同じ使い方である。Aは動詞 name の過去形「名付けた」、Bは受動態の述語、Dは完了形の一部で、いずれも名詞を修飾していない。"
+  },
+  {
+   "tag": "時制の一致(there were)",
+   "q": "英文中の \"they all said there were no schools in the area\" における \"were\" の説明として最も適切なものはどれか。",
+   "a": "発言した時点よりさらに前の、昔の地域の状況を表す過去形である",
+   "b": "said が過去形なので合わせて過去形になっており、発言時点の状況を表す",
+   "c": "「もし学校があれば」という現実とは異なる想像を表す仮定法過去である",
+   "d": "schools が複数形だから were になっているだけで、時制とは関係がない",
+   "answer": "B",
+   "explanation": "英語では主節の動詞(said)が過去形だと、その中身の動詞も過去形にそろえる「時制の一致」が起こる。親たちが言ったのは「(今)この地域には学校がない」という発言時点の状況であり、昔の話でも仮定の話でもない。Dは主語との数の一致の話で、were が過去形である理由の説明になっていない。"
+  },
+  {
+   "tag": "用法識別(間接疑問のwhy)",
+   "q": "英文中の \"asked their parents why they were not sending them to school\" の \"why\" と同じ使い方をしている文はどれか。",
+   "a": "Why were you so angry at that time?",
+   "b": "That is why I got up early this morning.",
+   "c": "Why don't we play soccer after school?",
+   "d": "Nobody knows why she was crying then.",
+   "answer": "D",
+   "explanation": "本文の why は ask の目的語になる名詞のかたまり(間接疑問)を導き、〈why+主語+動詞〉の平叙文の語順になっている。Dも knows の目的語として why she was crying が入る同じ使い方である。Aは疑問文の語順の直接疑問、Bは「そういうわけで〜」の意味、Cは「〜しませんか」という提案表現で、いずれも使い方が異なる。"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "no": 3,
+ "en": "One child, one teacher, one textbook and one pen can change the world. Education is the only solution.",
+ "ja": "一人の子ども、一人の教師、一冊の教科書、そして一本のペンが世界を変えられる。教育こそが唯一の解決策なのだ。",
+ "questions": [
+  {
+   "tag": "用法識別(one)",
+   "q": "本文の \"One child, one teacher, one textbook and one pen\" における one と同じ使い方をしている文はどれか。",
+   "a": "One of my friends is good at playing the guitar.",
+   "b": "My cup is broken, so I need to buy a new one.",
+   "c": "One careless word may hurt your friend deeply.",
+   "d": "One day, a strange man visited our village.",
+   "answer": "C",
+   "explanation": "本文の one は名詞の前について「(たった)一つの〜」と数を示す使い方で、C の One careless word「一つの不注意な言葉」が同じ用法。A は「〜のうちの一人」、B は名詞 cup の代わりをする代名詞、D は「ある日」という意味で、どれも別の使い方。one を見たら、名詞につく数の意味か、代名詞か、「ある〜」かを区別しよう。"
+  },
+  {
+   "tag": "パラフレーズ(等位主語)",
+   "q": "\"One child, one teacher, one textbook and one pen can change the world.\" の内容の言い換えとして最も適切な英文はどれか。",
+   "a": "A child who has a teacher, a textbook and a pen is able to make the world different.",
+   "b": "If every child in the world gets a teacher, a textbook and a pen, the world will change.",
+   "c": "A child, a teacher, a textbook and a pen can each change the world by themselves.",
+   "d": "Only one special child in the world has the power to change it some day.",
+   "answer": "A",
+   "explanation": "この文では4つの名詞が and でひとまとまりの主語になっており、「子どもが教師・教科書・ペンとそろえば(=教育を受ければ)世界を変えられる」という意味。C のように「それぞれが単独で」変えるのではなく、組み合わせとして述べている。B の「世界中のすべての子どもが〜すれば」や、D の「世界でただ一人の特別な子どもだけ」は one の誤読で、本文はそこまで言っていない。"
+  },
+  {
+   "tag": "用法識別(only)",
+   "q": "本文 \"Education is the only solution.\" における only と同じ使い方をしている文はどれか。",
+   "a": "He is only fourteen, but he is taller than his father.",
+   "b": "This is the only key that can open the front door.",
+   "c": "She drinks only water when she does sports.",
+   "d": "I only wanted to ask you a simple question.",
+   "answer": "B",
+   "explanation": "本文の only は the only solution のように名詞の前について「唯一の〜」を表す形容詞の使い方で、B の the only key「唯一の鍵」が同じ。A は「まだほんの14歳」、C は「水だけ」、D は「ただ〜したかっただけ」で、いずれも動詞や数量を限定する副詞の使い方。the only + 名詞の形に注目して見分けよう。"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "no": 37,
+ "en": "My friend Tony is a professional magician, and he worked at a restaurant in New York to show his magic each evening for the guests as they ate their dinners.",
+ "ja": "私の友人のトニーはプロのマジシャンで、ニューヨークのレストランで働き、毎晩、客が夕食をとる間にマジックを披露していた。",
+ "questions": [
+  {
+   "tag": "用法識別(as)",
+   "q": "本文中の \"as they ate their dinners\" の as と同じ使い方をしている as を含む文は、次のうちどれか。",
+   "a": "As I was very tired, I went to bed early.",
+   "b": "Do as your teacher told you.",
+   "c": "The phone rang as I was taking a bath.",
+   "d": "As you know, Mr. Sato is a popular teacher.",
+   "answer": "C",
+   "explanation": "本文の as は「〜する間に・〜しているとき」という時を表す接続詞で、c の「私が入浴している間に電話が鳴った」と同じ使い方。a は「〜なので」という理由、b は「〜するとおりに」という様態、d は「ご存じのとおり」という慣用表現で、いずれも時の意味ではない。as は多義語なので、文の前後関係から意味を決める練習をしよう。"
+  },
+  {
+   "tag": "用法識別(to不定詞)",
+   "q": "本文中の \"to show his magic\" の to と同じ使い方をしている文は、次のうちどれか。",
+   "a": "He went to the station to get a good seat.",
+   "b": "I have a lot of homework to do this weekend.",
+   "c": "To play the piano well is not easy.",
+   "d": "She was sad to hear the news.",
+   "answer": "A",
+   "explanation": "本文は worked at a restaurant ... to show his magic で、「マジックを見せるために働いた」という目的を表す副詞的用法。a の「良い席を取るために駅へ行った」が同じ目的の用法である。b は名詞を修飾する形容詞的用法、c は主語になる名詞的用法、d は感情の原因を表す用法なので不適。訳文では「働き、〜披露していた」と並べて訳されているが、英文の構造上は to が目的を表している点に注意。"
+  },
+  {
+   "tag": "用法識別(for)",
+   "q": "本文中の \"for the guests\" の for と同じ使い方をしている文は、次のうちどれか。",
+   "a": "We have known each other for five years.",
+   "b": "The train for Osaka leaves at seven.",
+   "c": "Thank you for coming today.",
+   "d": "My mother bought a new bag for me.",
+   "answer": "D",
+   "explanation": "本文の for the guests は show his magic にかかり、「客のために（客に向けて）マジックを見せる」という受益・対象を表す for。d の「私のためにかばんを買ってくれた」が同じ使い方である。a は「5年間」という期間、b は「大阪行き」という行き先、c は「来てくれたことに対して」という理由・対象で、いずれも受益の意味ではない。"
+  }
+ ]
+}

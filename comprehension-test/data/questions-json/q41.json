@@ -1,0 +1,37 @@
+{
+ "no": 41,
+ "en": "Our junior high school tennis days have just finished, but I learned a lot from Takuya through tennis. One thing is for sure. Trying something and making mistakes is better than doing nothing. I will have chances to find something new if I try.",
+ "ja": "私たちの中学校でのテニスの日々は終わったばかりだが、私はテニスを通してタクヤから多くのことを学んだ。一つ確かなことがある。何かに挑戦して失敗するほうが、何もしないよりも良いということだ。挑戦すれば、何か新しいものを見つけるチャンスがあるだろう。",
+ "questions": [
+  {
+   "tag": "構造(動名詞句の主語)",
+   "q": "\"Trying something and making mistakes is better than doing nothing.\" では、trying と making という2つの動名詞が and で結ばれているのに、動詞が are ではなく is になっている。その理由として最も適切なものはどれか。",
+   "a": "trying から mistakes までの動名詞句の全体を、ひとつながりの1つの行為として主語にしているから。",
+   "b": "この文の本当の主語は単数の名詞 something であり、動詞はそれに合わせる必要があるから。",
+   "c": "英語では A and B の形の主語を受ける動詞は、内容に関係なく常に単数形にすると決まっているから。",
+   "d": "比較の相手である doing nothing が単数扱いなので、動詞の形をそちらにそろえる必要があるから。",
+   "answer": "A",
+   "explanation": "主語は Trying something and making mistakes という動名詞句全体で、「挑戦して失敗すること」という一続きの1つの行為とみなされるため単数扱いの is で受けています。b は something を主語と取り違えた誤り(something は trying の目的語)、c はそのような規則は存在せず、A and B が別々の2つの事柄なら複数扱いになります。d のように比較対象に動詞を合わせるという規則もありません。"
+  },
+  {
+   "tag": "用法識別(to不定詞)",
+   "q": "\"I will have chances to find something new if I try.\" の \"to find\" と同じ使い方をしている to 不定詞を含む文はどれか。",
+   "a": "I went to the park to play tennis with my friends.",
+   "b": "To get up early every day is good for your health.",
+   "c": "She was very sad to hear the news from him.",
+   "d": "I have a lot of things to do this weekend.",
+   "answer": "D",
+   "explanation": "to find は直前の名詞 chances を後ろから修飾する形容詞的用法で、d の to do も名詞 things を修飾する同じ用法です。a は「〜するために」という目的を表す副詞的用法、c は感情の原因を表す副詞的用法です。b は不定詞が文の主語になる名詞的用法なので、いずれも用法が異なります。"
+  },
+  {
+   "tag": "論理関係(条件文)",
+   "q": "\"I will have chances to find something new if I try.\" の内容と一致する英文はどれか。",
+   "a": "I will try something new every time I get a good chance.",
+   "b": "Unless I try, I will not get chances to discover new things.",
+   "c": "I have already discovered something new because I tried hard.",
+   "d": "New chances will come to me only after I find something new.",
+   "answer": "B",
+   "explanation": "元の文は「挑戦する」ことが条件で、その結果として「新しいものを見つけるチャンスが生まれる」という関係です。b は unless(〜しない限り)を使って同じ関係を裏返しに述べたもので、内容が一致します。a はチャンスがあれば挑戦するという条件と結果の向きが逆、c はこれからの話を過去の話にすり替えており、d は「見つける」ことを先の条件にしてしまっている点が誤りです。"
+  }
+ ]
+}

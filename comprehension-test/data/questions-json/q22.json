@@ -1,0 +1,37 @@
+{
+ "no": 22,
+ "en": "Many people say that blue, the color of the sky and the sea, calms them down. They also think that a blue pen is good for study and memory work. An experiment shows that people feel cool in blue light.",
+ "ja": "空や海の色である青は、気持ちを落ち着かせてくれると多くの人が言う。また、青いペンは勉強や暗記に良いとも考えられている。ある実験では、人は青い光の中で涼しく感じることが示されている。",
+ "questions": [
+  {
+   "tag": "構造(同格のカンマ)",
+   "q": "第1文の \"blue, the color of the sky and the sea, calms them down\" では、カンマで挟まれた部分が特別な働きをしている。これと同じカンマの使い方をしている文はどれか。",
+   "a": "I visited Kyoto, an old city in Japan, last spring.",
+   "b": "I visited Kyoto, and I ate delicious food there.",
+   "c": "I visited Kyoto, which I had wanted to see for years.",
+   "d": "I visited Kyoto, Osaka, and Nara during my holidays.",
+   "answer": "A",
+   "explanation": "原文の the color of the sky and the sea は、直前の blue を別の名詞句で言い直す「同格」で、a の an old city in Japan（= Kyoto の言い直し）と同じ働き。b は文と文をつなぐカンマ、c は関係代名詞の非制限用法（節であり、カンマで挟まれてもいない）、d は単なる並列の区切りなので異なる。カンマ部分を取り除いても文が成立し、名詞どうしがイコールの関係になるのが同格の目印。"
+  },
+  {
+   "tag": "指示語(They)",
+   "q": "第2文 \"They also think that a blue pen is good for study and memory work.\" の They が指すものとして最も適切なものはどれか。",
+   "a": "the scientists who did an experiment",
+   "b": "the sky and the sea in nature",
+   "c": "the many people in the first sentence",
+   "d": "the blue pens used for studying",
+   "answer": "C",
+   "explanation": "They は第1文の主語 Many people（青は落ち着くと言う多くの人々）を受けており、「その人たちはまた〜とも考えている」という流れになる。配布訳では「考えられている」と受身で訳されているため主語が見えないが、英文では say した人々と think する人々が同一である点がポイント。直前の名詞だからといって the sky and the sea や a blue pen を選ばないこと。また実験の話は第3文で初めて出るので a も誤り。"
+  },
+  {
+   "tag": "用法識別(that)",
+   "q": "第3文 \"An experiment shows that people feel cool in blue light.\" の that と同じ使い方をしている文はどれか。",
+   "a": "I know that boy playing soccer over there.",
+   "b": "She said that she was tired after school.",
+   "c": "This is the bag that I bought last week.",
+   "d": "It was so cold that we stayed at home.",
+   "answer": "B",
+   "explanation": "原文の that は「〜ということ」という名詞のかたまり（that節）を作る接続詞で、shows の目的語になっている。b の said that she was tired も同じく「〜ということを言った」で、動詞の目的語になる名詞節を導く接続詞 that。a は「あの」という指示形容詞、c は名詞を修飾する関係代名詞、d は so ... that 構文で結果を表す副詞節を導く that なので、いずれも用法が異なる。"
+  }
+ ]
+}

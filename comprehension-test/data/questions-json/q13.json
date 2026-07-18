@@ -1,0 +1,37 @@
+{
+ "no": 13,
+ "en": "Today, plastic things have made our life very convenient, but they are not able to return to soil easily.",
+ "ja": "今日、プラスチック製品は私たちの生活をとても便利にしてくれたが、それらは簡単には土に還ることができない。",
+ "questions": [
+  {
+   "tag": "構造(make O C)",
+   "q": "\"have made our life very convenient\" では make が「〜を…(の状態)にする」という形で使われている。次のうち、この make と同じ文の形(構造)で make が使われている文はどれか。",
+   "a": "My grandmother made me a warm sweater last winter.",
+   "b": "The students made a big poster for the school festival.",
+   "c": "That movie made the young actor very popular.",
+   "d": "This old desk is made of wood from the forest.",
+   "answer": "C",
+   "explanation": "原文は make + 目的語 + 補語(our life = very convenient という関係)の第5文型で、c の「その映画が俳優を人気にした」(the actor = popular)が同じ構造。a は「私にセーターを作ってくれた」という make + 人 + 物の第4文型で、形が似ているため混同しやすい。b は単なる第3文型、d は受動態の「〜でできている」で、いずれも O = C の関係がない。"
+  },
+  {
+   "tag": "時制(現在完了と過去形の違い)",
+   "q": "原文の \"have made\" を、もし過去形の \"made\" に変えて \"plastic things made our life very convenient\" とした場合、伝わる内容はどのように変わるか。最も適切なものを選べ。",
+   "a": "意味はまったく変わらず、単に少し改まった書き言葉らしい言い方になるだけである",
+   "b": "単なる過去の出来事の報告になり、その結果が現在に及んでいるという含みが弱まる",
+   "c": "出来事がさらに昔の「過去の過去」のことになり、時間関係が一段さかのぼる",
+   "d": "「〜の状態にした」ではなく「〜を製作した」という意味に変わってしまう",
+   "answer": "B",
+   "explanation": "have made は現在完了で、「過去に便利にした結果、今も生活が便利である」という現在とのつながりを含む。過去形 made にすると過去の一時点の出来事として述べるだけになり、現在への影響の含みが弱まる。日本語訳ではどちらも「便利にしてくれた」となりうるため a を選びやすいが、英語では形の違いが意味の違いになる。c は過去完了 had made との混同、d は make の語義の話で時制とは無関係である。"
+  },
+  {
+   "tag": "用法識別(return)",
+   "q": "\"they are not able to return to soil easily\" の \"return\" と同じ使い方をしている文はどれか。",
+   "a": "Please return these books to the library by Friday.",
+   "b": "You should return his call as soon as possible.",
+   "c": "I returned the shirt to the store because it was small.",
+   "d": "The birds return to this lake every winter.",
+   "answer": "D",
+   "explanation": "原文の return は目的語をとらず「(主語自身が)〜へ戻る」という自動詞の使い方で、d の「鳥が湖へ戻ってくる」が同じ。a と c は books や the shirt という目的語をとる他動詞「〜を返す・返品する」、b も his call を目的語にとる「折り返す」の意味である。to soil という前置詞句が続いていて目的語がない点に注目すると見分けられる。"
+  }
+ ]
+}

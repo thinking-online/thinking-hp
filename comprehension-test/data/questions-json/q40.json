@@ -1,0 +1,37 @@
+{
+ "no": 40,
+ "en": "What will theaters be like in the future? Anyway, they will still have to do what theaters have always done: provide a setting for people to watch actors performing live drama.",
+ "ja": "将来、劇場はどのようになるのだろうか。いずれにせよ、劇場は昔からずっとやってきたこと、すなわち、人々が俳優の生の演劇を観るための場を提供することを、これからもしなければならないだろう。",
+ "questions": [
+  {
+   "tag": "用法識別(what)",
+   "q": "本文の \"they will still have to do what theaters have always done\" における what と同じ使い方をしている what を含む文はどれか。",
+   "a": "What do you call this flower in English?",
+   "b": "I asked him what sport he liked the best.",
+   "c": "What a beautiful picture you took!",
+   "d": "What is important is to keep trying every day.",
+   "answer": "D",
+   "explanation": "本文の what は先行詞を含む関係代名詞で、what theaters have always done 全体が「劇場がずっとやってきたこと」という名詞のカタマリになっている。d の What is important（重要なこと）も同じ関係代名詞の what である。a は「何と」を尋ねる疑問詞、b は「何の〜」という疑問詞＋名詞、c は感嘆文の what なので働きが異なる。"
+  },
+  {
+   "tag": "用法識別(like)",
+   "q": "本文の \"What will theaters be like in the future?\" における like と同じ使い方をしている like を含む文はどれか。",
+   "a": "My brother swims like a fish in the river.",
+   "b": "Do you like this new song by that singer?",
+   "c": "I would like a glass of water, please.",
+   "d": "My sister doesn't like getting up early.",
+   "answer": "A",
+   "explanation": "本文の like は「〜のような」という意味の前置詞で、What ... like? の形で「どのような様子か」を尋ねている。a の like a fish（魚のように）も同じ前置詞の like である。b と d の like は動詞「好む」、c は would like（〜がほしい）という別の表現で、動詞の「好き」と思い込むのが典型的な落とし穴。"
+  },
+  {
+   "tag": "構造(watch+O+ing)",
+   "q": "本文の \"provide a setting for people to watch actors performing live drama\" における performing と同じ働きをしている 〜ing を含む文はどれか。",
+   "a": "My hobby is collecting old foreign stamps.",
+   "b": "My father was reading a newspaper when I got home.",
+   "c": "I saw my brother eating my cake in the kitchen.",
+   "d": "It suddenly began raining on my way home.",
+   "answer": "C",
+   "explanation": "本文は watch（知覚動詞）＋目的語＋〜ing の形で、「俳優たちが生の演劇を演じているところを観る」という〈目的語＝〜している〉の関係を表す。c の saw my brother eating（弟が食べているのを見た）も同じ知覚動詞の構文である。a と d は動名詞、b は過去進行形（be動詞＋〜ing）なので、形は似ていても文中での働きが異なる。"
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+{
+ "no": 36,
+ "en": "A knight's first son had the right to become a knight as well as to receive his father's land. If a man was from the king's family or was the son of someone with a title, he had the chance to become a knight. A man could also become a knight if he was very brave in battle.",
+ "ja": "騎士の長男には、父の土地を受け継ぐ権利だけでなく、騎士になる権利もあった。王の一族の出身であったり、爵位を持つ人の息子であったりすれば、騎士になる機会があった。また、戦いで非常に勇敢であれば、騎士になることもできた。",
+ "questions": [
+  {
+   "tag": "用法識別(as well as)",
+   "q": "本文の \"the right to become a knight as well as to receive his father's land\" における as well as と同じ使い方をしている文はどれか。",
+   "a": "This old camera still works as well as a new one.",
+   "b": "You may as well take a taxi in this heavy rain.",
+   "c": "Kumi bought a new bag as well as some shoes yesterday.",
+   "d": "Mike can sing as well as any professional singer.",
+   "answer": "C",
+   "explanation": "本文の as well as は to become a knight と to receive his father's land という2つの不定詞を並べて「Bだけでなく Aも」と付け加える用法。c も some shoes に a new bag を付け加えており同じ使い方である。a と d は「同じくらい上手に」という同等比較、b は may as well「〜したほうがよい」という別の熟語なので誤り。"
+  },
+  {
+   "tag": "用法識別(if+過去形)",
+   "q": "本文の \"If a man was from the king's family or was the son of someone with a title, he had the chance to become a knight.\" における if 節の動詞の過去形と同じ使い方をしている文はどれか。",
+   "a": "If I had a car, I would drive you to the station.",
+   "b": "If it rained, we practiced in the gym after school.",
+   "c": "If I were free today, I could help you with your homework.",
+   "d": "If he studied harder, he would pass the exam easily.",
+   "answer": "B",
+   "explanation": "本文の if 節の過去形は、過去に実際にあり得たことを述べる「現実の条件」で、主節も had という普通の過去形になっている。b も「雨が降った日は体育館で練習した」という過去の実際の習慣を表しており同じ使い方。a・c・d は主節に would / could があり、現在の事実に反する想像を述べる仮定法過去なので用法が異なる。"
+  },
+  {
+   "tag": "用法識別(with)",
+   "q": "本文の \"the son of someone with a title\" における with と同じ使い方をしている文はどれか。",
+   "a": "I talked with an old friend at the station yesterday.",
+   "b": "She opened the heavy box with a small key.",
+   "c": "With all the windows closed, the room soon got hot.",
+   "d": "He lives in a house with a large garden.",
+   "answer": "D",
+   "explanation": "本文の with は someone with a title「爵位を持っている人」のように、直前の名詞が何を持っているかを表す所有の用法。d も「大きな庭のある家」と家の持つものを表しており同じ使い方である。a は「〜と一緒に」、b は道具「〜を使って」、c は「〜の状態で」という付帯状況を表すので誤り。"
+  }
+ ]
+}

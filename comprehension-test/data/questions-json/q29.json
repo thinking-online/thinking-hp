@@ -1,0 +1,37 @@
+{
+ "no": 29,
+ "en": "Japanese employees are known around the world for overworking. They work a lot of extra hours, which are often unpaid. Further, workers rarely take the full amount of vacation time to which they have a legal right.",
+ "ja": "日本の会社員は、働きすぎることで世界中に知られている。彼らは多くの残業をするが、それはしばしば無給である。さらに、労働者は、法律上の権利として認められている休暇を全部取ることはめったにない。",
+ "questions": [
+  {
+   "tag": "用法識別(非制限which)",
+   "q": "\"They work a lot of extra hours, which are often unpaid.\" の \"which\" と同じ使い方をしている文はどれか。",
+   "a": "The book which I bought yesterday was very interesting.",
+   "b": "Which season do you like the best of the four?",
+   "c": "This is the house which was built a hundred years ago.",
+   "d": "I visited Kyoto, which is famous for its old temples.",
+   "answer": "D",
+   "explanation": "本文の which はコンマ付きの非制限用法で、前に出た名詞に説明を付け加える使い方。d も Kyoto に「そしてそこは古い寺で有名だ」と情報を足しており同じ用法である。a と c はコンマのない制限用法で名詞を限定しており、b は「どの〜」と尋ねる疑問詞なので用法が異なる。"
+  },
+  {
+   "tag": "用法識別(前置詞+関係代名詞)",
+   "q": "\"the full amount of vacation time to which they have a legal right\" の \"to which\" と同じ使い方をしている文はどれか。",
+   "a": "With which hand do you usually write your name?",
+   "b": "I did not know which way we should go next.",
+   "c": "That is the hospital in which my brother was born.",
+   "d": "The bike which he rides every day is very old.",
+   "answer": "C",
+   "explanation": "本文は have a legal right to the vacation time(その休暇に対して権利を持つ)の to が関係代名詞 which とセットで前に出た「前置詞+関係代名詞」。c も was born in the hospital の in が前に出た同じ形である。a は前置詞+which でも「どちらの手で」と尋ねる疑問詞であり、b は間接疑問の「どちらの」、d は関係代名詞だが前置詞を伴わないので別物。"
+  },
+  {
+   "tag": "構造(先行詞と動詞の一致)",
+   "q": "\"They work a lot of extra hours, which are often unpaid.\" で、be動詞が is ではなく are になっているのはなぜか。",
+   "a": "文全体の主語である複数形の They に動詞を合わせているから",
+   "b": "which の先行詞が複数形の名詞 (a lot of) extra hours だから",
+   "c": "which の先行詞が複数形の Japanese employees だから",
+   "d": "which が直前の文の内容全体を指すときは常に are を使うから",
+   "answer": "B",
+   "explanation": "この which が指すのは直前の複数名詞 extra hours(残業時間)なので、関係詞節内の動詞はそれに合わせて are になる。関係詞節内の動詞は主節の主語 They ではなく先行詞に一致するので a は誤り。無給なのは「時間」であって人ではなく、which はそもそも人を先行詞に取れないので c も誤り。また、which が文全体の内容を受ける場合は単数扱いで is になるため d も誤りである。"
+  }
+ ]
+}

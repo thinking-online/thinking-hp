@@ -1,0 +1,37 @@
+{
+ "no": 46,
+ "en": "In 1863, people from schools and clubs all over England met in a pub in London. They wanted to agree on the rules of football. For example, should running with the ball in their hands be allowed? After a lot of talking, the men who wanted to say yes to such a question walked out. They wanted to play rugby football.",
+ "ja": "1863年、イングランド中の学校やクラブの人々がロンドンのパブに集まった。彼らはフットボールのルールについて合意したかったのだ。たとえば、ボールを手に持って走ることは認められるべきか。長い議論の末、そうした問いにイエスと言いたい男たちは席を立って出て行った。彼らはラグビーフットボールをやりたかったのである。",
+ "questions": [
+  {
+   "tag": "用法識別(動名詞)",
+   "q": "本文の \"should running with the ball in their hands be allowed?\" の \"running\" と同じ使い方をしている -ing を含む文はどれか。",
+   "a": "The man is running to catch the train.",
+   "b": "Getting up early every day is not easy.",
+   "c": "Do you know the girl singing over there?",
+   "d": "There is a sleeping cat on the sofa.",
+   "answer": "B",
+   "explanation": "本文の running は「走ること」という名詞の働きをする動名詞で、疑問文全体の主語になっている。同じく Getting up early が主語の働きをしている B が正解。A は be動詞+ -ing の進行形、C と D は名詞を修飾する現在分詞なので、働きが異なる。"
+  },
+  {
+   "tag": "用法識別(付帯状況のwith)",
+   "q": "本文の \"running with the ball in their hands\" の \"with\" と同じ使い方をしている文はどれか。",
+   "a": "I cut the paper with a pair of scissors.",
+   "b": "She goes to school with her older sister.",
+   "c": "He was listening to music with his eyes closed.",
+   "d": "My father agreed with my idea at last.",
+   "answer": "C",
+   "explanation": "本文の with は「with + 名詞 (the ball) + 状態を表す語句 (in their hands)」の形で、「ボールが手の中にある状態で」という付帯状況を表す。同じく「with + his eyes + closed」で「目を閉じた状態で」を表す C が正解。A は「〜を使って」という道具、B は「〜と一緒に」という同伴、D は agree with という熟語の一部であり、いずれも with の後に「名詞 + 状態」の組み合わせが続いていない。"
+  },
+  {
+   "tag": "構造(関係詞節つき主語+動詞)",
+   "q": "本文の \"the men who wanted to say yes to such a question walked out\" と文全体の構造が同じものはどれか。",
+   "a": "The boy who practiced hard every day won the game.",
+   "b": "I thanked the woman who helped me at the station.",
+   "c": "He said that he wanted to go home.",
+   "d": "The men talked a lot and went out of the room.",
+   "answer": "A",
+   "explanation": "本文は「主語 the men + それを修飾する関係詞節 (who wanted ... question) + 動詞 walked out」という形で、A も「主語 The boy + 関係詞節 + 動詞 won」と同じ構造。B は関係詞節が目的語 the woman を修飾しており、C は that 節、D は関係詞節のない文。長い関係詞節の直後に出てくる walked out が文全体の動詞だと見抜けるかがポイント。"
+  }
+ ]
+}

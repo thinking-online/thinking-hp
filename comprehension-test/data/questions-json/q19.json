@@ -1,0 +1,37 @@
+{
+ "no": 19,
+ "en": "Scientists believe that around 50 million years ago Antarctica was warm, that it was covered in rainforest, and that many different kinds of animals lived there.",
+ "ja": "科学者たちは、約5000万年前の南極大陸は温暖で、熱帯雨林に覆われ、多くの異なる種類の動物がそこに生息していたと考えている。",
+ "questions": [
+  {
+   "tag": "パラフレーズ(全文)",
+   "q": "英文 \"Scientists believe that around 50 million years ago Antarctica was warm, that it was covered in rainforest, and that many different kinds of animals lived there.\" の内容の言い換えとして最も適切な英文はどれか。",
+   "a": "Scientists have thought for around 50 million years that Antarctica is a warm place with rainforests and many kinds of animals.",
+   "b": "According to scientists, Antarctica around 50 million years ago was a warm place with rainforests and many kinds of animals.",
+   "c": "Scientists say that Antarctica is now a warm place with rainforests and many kinds of animals living there.",
+   "d": "Scientists have proved that Antarctica became warm around 50 million years ago because rainforests and animals arrived there.",
+   "answer": "B",
+   "explanation": "\"around 50 million years ago\" は that 節の中にあり、「南極が温暖だった時期」を表す。a はこれを believe にかけて「5000万年前から考えている」と誤読した形、c は過去の話を現在の話と誤読した形。d は believe（考えている）を prove（証明した）にすり替え、原文にない因果関係まで加えている。"
+  },
+  {
+   "tag": "用法識別(that)",
+   "q": "\"Scientists believe that around 50 million years ago Antarctica was warm\" の \"that\" と同じ使い方をしている文はどれか。",
+   "a": "This is the most exciting movie that I have ever seen.",
+   "b": "Look at that tall building over there.",
+   "c": "The question was so difficult that nobody could answer it.",
+   "d": "Everyone knows that the earth goes around the sun.",
+   "answer": "D",
+   "explanation": "原文の that は believe の目的語となる名詞節（〜ということ）を導く接続詞で、d の knows that ... と同じ働き。a は movie を修飾する関係代名詞、b は「あの」という指示形容詞、c は so ... that 構文（とても〜なので）で、いずれも節を動詞の目的語にする働きではない。"
+  },
+  {
+   "tag": "構造識別(並列that節)",
+   "q": "この文は \"Scientists believe that ..., that ..., and that ....\" という形をしている。これと同じ構造を持つ文はどれか。",
+   "a": "I hope that the weather will be nice and that you will enjoy the trip.",
+   "b": "She bought a bag that was cheap and that had many pockets.",
+   "c": "The news that our team won the final game surprised everybody.",
+   "d": "He got up early so that he could catch the first train.",
+   "answer": "A",
+   "explanation": "原文は1つの動詞 believe が「that+節」を3つ並べてまとめて目的語にした構造で、a も hope が2つの that 節（接続詞）を並べて目的語にしている。b は見た目がそっくりだが that は bag を修飾する関係代名詞なので構造が違う。c は The news の内容を説明する同格の that、d は so that（〜するために）で、どちらも動詞の目的語ではない。"
+  }
+ ]
+}

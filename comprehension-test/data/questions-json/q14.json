@@ -1,0 +1,27 @@
+{
+ "no": 14,
+ "en": "You can learn many things through communication at school and in your daily life. That's very important.",
+ "ja": "学校や日常生活でのコミュニケーションを通して、多くのことを学ぶことができる。それはとても大切なことだ。",
+ "questions": [
+  {
+   "tag": "用法識別(through)",
+   "q": "\"through communication at school and in your daily life\" の through と同じ使い方をしている文はどれか。",
+   "a": "The train passed through a long tunnel.",
+   "b": "It kept raining all through the night.",
+   "c": "I got the news through a friend of mine.",
+   "d": "He walked through the door and sat down.",
+   "answer": "C",
+   "explanation": "本文の through は「〜を通して(〜によって)」という手段を表す。c の「友人を通してその知らせを知った」も同じ手段の用法。a と d は「〜を通り抜けて」という場所の通過、b は「〜の間ずっと」という期間の用法なので誤り。"
+  },
+  {
+   "tag": "パラフレーズ(第1文)",
+   "q": "第1文 \"You can learn many things through communication at school and in your daily life.\" の内容の言い換えとして最も適切な英文はどれか。",
+   "a": "By studying hard at school, you can learn how to communicate in daily life.",
+   "b": "If you talk with people at school and in daily life, you can learn a lot from it.",
+   "c": "You can learn many things at school and then use them in your daily life.",
+   "d": "You should communicate many things you learned at school to people around you.",
+   "answer": "B",
+   "explanation": "本文は「学校や日常生活での人とのやりとり(コミュニケーション)が手段となって、多くのことを学べる」という意味。a は手段と目的が逆(勉強によってコミュニケーションを学ぶ)、c は through を無視して「学校で学んで生活で使う」とすり替えており、d は communicate を「伝える」と誤読している。何が手段で何が学ばれる対象かを正しくつかむことがポイント。"
+  }
+ ]
+}

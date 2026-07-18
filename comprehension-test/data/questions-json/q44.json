@@ -1,0 +1,37 @@
+{
+  "no": 44,
+  "en": "In Japan, people developed a special kind of theater for performing the ancient drama called No. The masked actors entered the plain, square stage across a structure like a little bridge. There was no scenery.",
+  "ja": "日本では、「能」と呼ばれる古い演劇を上演するための特別な劇場が発達した。面をつけた役者たちは、小さな橋のような構造物を渡って、飾り気のない四角い舞台に登場した。舞台装置（背景）はなかった。",
+  "questions": [
+    {
+      "tag": "用法識別(called)",
+      "q": "本文の \"the ancient drama called No\" における called と同じ使い方をしている文はどれか。",
+      "a": "I called my grandmother last night to say thank you.",
+      "b": "My mother called me Ken when I was a little child.",
+      "c": "They visited a temple called Kinkaku-ji during the trip.",
+      "d": "The teacher called the students into the classroom.",
+      "answer": "C",
+      "explanation": "本文の called は過去分詞で、直前の名詞 the ancient drama を後ろから修飾し「能と呼ばれる古い演劇」という意味を作っている。c の \"a temple called Kinkaku-ji\"（金閣寺と呼ばれる寺）が同じ用法。b は「AをBと呼ぶ」という動詞の過去形（call A B）で、意味は似ているが名詞を修飾していない点が落とし穴。a と d は「電話する」「呼び入れる」という普通の動詞である。"
+    },
+    {
+      "tag": "用法識別(for+動名詞)",
+      "q": "本文の \"a special kind of theater for performing the ancient drama\" における for と同じ使い方をしている文はどれか。",
+      "a": "I have been studying English for about three years.",
+      "b": "This is a machine for washing vegetables quickly.",
+      "c": "Thank you so much for inviting me to the party.",
+      "d": "My father made a small chair for my little sister.",
+      "answer": "B",
+      "explanation": "本文の for は「for + 動名詞」で名詞（theater）の用途・目的を表し、「〜するための劇場」という意味。b の \"a machine for washing vegetables\"（野菜を洗うための機械）が同じ用法である。d は「妹のために」で日本語では同じ『ため』になるが、こちらは恩恵を受ける人を表す for なので注意。a は期間、c は感謝の理由を表す for である。"
+    },
+    {
+      "tag": "用法識別(like)",
+      "q": "本文の \"a structure like a little bridge\" における like と同じ使い方をしている文はどれか。",
+      "a": "Do you like traveling to foreign countries alone?",
+      "b": "Would you like another cup of hot tea now?",
+      "c": "He acts like he is the boss of our team.",
+      "d": "I want a bag like the one in that shop.",
+      "answer": "D",
+      "explanation": "本文の like は前置詞で、後ろに名詞を伴って直前の名詞を修飾し「小さな橋のような構造物」という意味を作る。d の \"a bag like the one\"（あれのようなかばん）が同じく〈名詞 + like + 名詞〉の形。c は like の後ろに主語と動詞のある文（節）が続く「まるで〜であるかのように」という使い方なので別物。a と b は「好む」「〜が欲しい」という動詞の like である。"
+    }
+  ]
+}

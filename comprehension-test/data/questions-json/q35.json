@@ -1,0 +1,37 @@
+{
+  "no": 35,
+  "en": "Japanese box lunches look beautiful and they are good for the health. I want to learn how to make them before I go back to America. I want to show them to my family in America.",
+  "ja": "日本のお弁当は見た目が美しく、健康にも良い。アメリカに帰る前に作り方を学びたい。アメリカの家族に見せたいのだ。",
+  "questions": [
+    {
+      "tag": "用法識別(look)",
+      "q": "\"Japanese box lunches look beautiful\" の look と同じ使い方をしている文はどれか。",
+      "a": "Please look at this map of the city.",
+      "b": "She is looking for her red pen now.",
+      "c": "That question on the test looks easy.",
+      "d": "He looked up at the sky and smiled.",
+      "answer": "C",
+      "explanation": "この look は後ろに形容詞をとって「〜に見える」を表す使い方(look+形容詞)で、looks easy「簡単そうに見える」が同じです。a・b・d の look は「視線を向ける」という動作の意味で、at / for / up などの語を伴って使われています。「見る」と「〜に見える」の区別がポイントです。"
+    },
+    {
+      "tag": "時制(時の副詞節)",
+      "q": "\"before I go back to America\" では、これから先のことなのに will を使わず go と現在形になっている。その理由として正しいものはどれか。",
+      "a": "帰国はすでに決まった予定なので、確定した予定を表す現在形を使っているから。",
+      "b": "before などが導く時を表す副詞節の中では、未来の内容でも現在形で表すから。",
+      "c": "主節の動詞 want が現在形なので、時制の一致で go も現在形になるから。",
+      "d": "この before は前置詞なので、後ろには動詞の原形を置く決まりがあるから。",
+      "answer": "B",
+      "explanation": "before / when / if などが導く「時・条件を表す副詞節」の中では、未来のことでも will を使わず現在形で表すのがルールです。c の「時制の一致」は伝聞などの名詞節に関わる話でここには当てはまりません。また、この before は後ろに I go という主語+動詞を従えているので接続詞であり、d のように前置詞と考えるのも誤りです。"
+    },
+    {
+      "tag": "指示語(them)",
+      "q": "\"I want to show them to my family in America.\" の them が指すものとして最も適切なのはどれか。",
+      "a": "the Japanese box lunches",
+      "b": "the ways to make box lunches",
+      "c": "the speaker's family members",
+      "d": "ways to stay healthy in Japan",
+      "answer": "A",
+      "explanation": "show A to B「AをBに見せる」のAが them で、この文章でずっと話題になっている日本のお弁当(自分が作れるようになったお弁当そのもの)を指します。見せたいのは b の「作り方」ではなく、作った実物である点に注意しましょう。家族は to my family として別に示されているので、c を選ぶと show them to my family が意味をなさなくなります。"
+    }
+  ]
+}

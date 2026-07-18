@@ -1,0 +1,37 @@
+{
+ "no": 18,
+ "en": "Long ago, people thought that their souls jumped out of their body when they sneezed. They said, \"Bless you,\" because they wanted the souls to return to their bodies. Now we don't think so, but we still say, \"Bless you.\"",
+ "ja": "昔、人々はくしゃみをすると魂が体から飛び出すと考えていた。魂に体へ戻ってきてほしかったので、「Bless you（お大事に）」と言ったのだ。今ではそうは考えないが、それでも私たちは「Bless you」と言う。",
+ "questions": [
+  {
+   "tag": "用法識別(that)",
+   "q": "本文の \"people thought that their souls jumped out of their body\" における that と同じ使い方をしている that を含む文はどれか。",
+   "a": "This is the watch that my uncle gave me last year.",
+   "b": "I didn't know that word before I read this book.",
+   "c": "She believes that her son will pass the exam.",
+   "d": "The box was so heavy that I couldn't carry it.",
+   "answer": "C",
+   "explanation": "本文の that は thought の目的語となる名詞のかたまり（〜ということ）を導く接続詞で、believes の後ろに「〜ということ」を続ける C と同じ用法。A は直前の名詞を説明する関係代名詞、B は「その〜」という意味で名詞につく that、D は so ... that 構文の that なので、いずれも働きが異なる。"
+  },
+  {
+   "tag": "指示語(so)",
+   "q": "本文の \"Now we don't think so\" における so が指す内容として最も適切なものはどれか。",
+   "a": "that sneezing makes the soul go out of the body",
+   "b": "that the souls of people long ago never came back",
+   "c": "that we should say \"Bless you\" after a sneeze",
+   "d": "that people sneeze because their souls want to leave",
+   "answer": "A",
+   "explanation": "so は第1文で述べられた昔の人の考え、つまり「くしゃみをすると魂が体から出ていく」という内容を受けている。直後に but we still say, \"Bless you.\" と続くことから、C のように「Bless you と言うべきだ」という内容を否定しているのではないと分かる。B は直前の文だけに引きずられた誤り、D は原因と結果を逆にした誤りである。"
+  },
+  {
+   "tag": "構造(want O to V)",
+   "q": "本文の \"they wanted the souls to return to their bodies\" と同じ構造（動詞の使い方）をもつ文はどれか。",
+   "a": "I want to visit my grandmother during the vacation.",
+   "b": "She wants a bag which has a lot of pockets.",
+   "c": "My father told me an interesting story last night.",
+   "d": "The coach asked the players to run in the park.",
+   "answer": "D",
+   "explanation": "本文は「動詞＋目的語＋to 不定詞」の形で、目的語（the souls）が to 以下の動作をする側になっている。asked the players to run も同じ形で、走るのは選手たちである。A は want のすぐ後に to 不定詞が来る形（したいのは主語自身）、B は want＋名詞、C は「人に物を」の第4文型なので構造が異なる。"
+  }
+ ]
+}

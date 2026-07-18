@@ -1,0 +1,37 @@
+{
+ "no": 30,
+ "en": "Ancient writing often has a different look from what we are used to reading today, with old punctuation, strange letters and outdated capitalization.",
+ "ja": "古代の文字は、古い句読法、見慣れない文字、時代遅れの大文字の使い方など、私たちが今日読み慣れているものとは異なる見た目をしていることが多い。",
+ "questions": [
+  {
+   "tag": "用法識別(be used to)",
+   "q": "本文の \"what we are used to reading today\" における used to と同じ使い方をしているものを、次の英文から1つ選びなさい。",
+   "a": "My grandfather used to take a walk before breakfast.",
+   "b": "This old building is used to store the school's books.",
+   "c": "Mika is used to speaking in front of many people.",
+   "d": "I used my dictionary to check the meaning of the word.",
+   "answer": "C",
+   "explanation": "本文は「be used to + 動名詞」で「〜することに慣れている」という意味。cも同じ形で「人前で話すことに慣れている」となる。aは「昔は〜したものだ」の used to、bは受動態「〜するために使われる」、dは動詞 use の過去形で、いずれも形が似ているだけの別の用法。to の後ろが動名詞(-ing)か動詞の原形かに注目しよう。"
+  },
+  {
+   "tag": "用法識別(関係代名詞what)",
+   "q": "本文の \"what we are used to reading today\" の what と同じ使い方をしているものを、次の英文から1つ選びなさい。",
+   "a": "What kind of movie do you like the best?",
+   "b": "Tell me what time the train leaves tomorrow.",
+   "c": "What a wonderful idea that is!",
+   "d": "What he said made everyone in the room happy.",
+   "answer": "D",
+   "explanation": "本文の what は「〜するもの・こと」を表す関係代名詞で、what 自体が reading の目的語になっている。d も「彼が言ったこと」というかたまりを作る同じ用法。aは「どんな〜」と名詞に付く疑問詞、bは間接疑問の「何時」、cは感嘆文の what で、どれも「〜するもの」という名詞のかたまりは作らない。"
+  },
+  {
+   "tag": "用法識別(付帯状況with)",
+   "q": "本文の \"with old punctuation, strange letters and outdated capitalization\" の with と同じ使い方をしているものを、次の英文から1つ選びなさい。",
+   "a": "The girl was singing with a big smile on her face.",
+   "b": "He often goes fishing with his father on weekends.",
+   "c": "Please cut the cake with this knife, not with that one.",
+   "d": "I have no problem with the plan you made for us.",
+   "answer": "A",
+   "explanation": "本文の with は「古い句読法や見慣れない文字などを持って(伴って)」と、様子の説明を付け加える付帯状況の用法。a も「大きな笑顔を浮かべて」と様子を添えており同じ使い方。b は「〜と一緒に」の同伴、c は「〜を使って」の道具、d は「〜について」の意味で、いずれも様子の説明ではない。"
+  }
+ ]
+}

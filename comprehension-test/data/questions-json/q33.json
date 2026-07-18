@@ -1,0 +1,37 @@
+{
+ "no": 33,
+ "en": "Language students often think they have a memory problem. They worry because they can't remember words. They think something is wrong with their brain. In fact, the problem is not their brain or their memory. The problem is the way they study.",
+ "ja": "語学を学ぶ学生は、自分には記憶力の問題があるとよく考える。単語を覚えられないので悩むのだ。自分の脳のどこかがおかしいと考える。実は、問題は脳でも記憶力でもない。問題は、勉強のやり方なのである。",
+ "questions": [
+  {
+   "tag": "用法識別(否定文のor)",
+   "q": "\"the problem is not their brain or their memory\" の or と同じ使い方をしている or を含む文はどれか。",
+   "a": "Would you like tea or coffee after lunch?",
+   "b": "Start walking now, or you will miss the train.",
+   "c": "My grandfather can't speak French or German.",
+   "d": "You may write your answers in pen or in pencil.",
+   "answer": "C",
+   "explanation": "否定文の中の or は「AもBも〜ない」と両方を打ち消す働きをする(not A or B = neither A nor B)。本文も「脳も記憶力も、どちらも問題ではない」の意味。a と d は「どちらか一方を選ぶ」or、b は「さもないと」の or で、「AかBのどちらか一方は問題かもしれない」と読むのがありがちな誤読。"
+  },
+  {
+   "tag": "構造(the way+接触節)",
+   "q": "\"the way they study\" を関係詞を使って書き換えるとき、正しい形はどれか。",
+   "a": "the way how they study",
+   "b": "the way in which they study",
+   "c": "the way what they study",
+   "d": "the way which they study",
+   "answer": "B",
+   "explanation": "way は「方法」を表す名詞で、後ろの節とは the way in which(または that)の形でつながり、本文ではそれが省略された接触節になっている。the way how は現代英語では誤りで、the way か how のどちらか一方だけを使う。which 単独では study との間に文法的なつながり(前置詞 in)が欠けてしまう。"
+  },
+  {
+   "tag": "用法識別(接続詞thatの省略)",
+   "q": "\"Language students often think they have a memory problem.\" では think の直後に語が1つ省略されている。これと同じ種類の省略が起きている文はどれか。",
+   "a": "The pictures he took in Kyoto were really beautiful.",
+   "b": "She is a singer everyone in my class knows well.",
+   "c": "The letter I received this morning made me happy.",
+   "d": "I'm sure you will pass the exam next month.",
+   "answer": "D",
+   "explanation": "本文で省略されているのは think の目的語となる名詞節を導く接続詞 that で、be sure の後の that も同じ種類の省略ができる。a〜c で省略されているのは、直前の名詞を修飾する目的格の関係代名詞(that/which/whom)であり、見た目は似ているが働きが異なる。「名詞のかたまり(〜という内容)」を作る that と「名詞を説明する」関係代名詞を区別しよう。"
+  }
+ ]
+}

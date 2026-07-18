@@ -1,0 +1,37 @@
+{
+ "no": 25,
+ "en": "Since the history of mankind began, we have worked very hard to make our lives better. We worked so hard that we damaged the environment without caring. Now the earth has many problems because of us.",
+ "ja": "人類の歴史が始まって以来、私たちは生活をより良くするために懸命に働いてきた。あまりに懸命に働いたので、気にもかけずに環境を傷つけてしまった。今、地球は私たちのせいで多くの問題を抱えている。",
+ "questions": [
+  {
+   "tag": "用法識別(since)",
+   "q": "英文中の \"Since the history of mankind began\" における \"Since\" と同じ使い方をしている文はどれか。",
+   "a": "Since it was very cold this morning, we didn't go outside.",
+   "b": "She has lived in this small town since she was born.",
+   "c": "Since you don't like fish, I will cook meat tonight.",
+   "d": "Since he is very busy now, he can't come to the party.",
+   "answer": "B",
+   "explanation": "この Since は「〜して以来」という時の起点を表す用法で、主節には現在完了(have worked)が使われている。b も「生まれてから今までずっと」という起点を表し、主節が現在完了になっている。a・c・d はすべて「〜なので」という理由を表す用法で、意味も主節の形も異なる。"
+  },
+  {
+   "tag": "用法識別(so-that)",
+   "q": "英文中の \"We worked so hard that we damaged the environment\" における \"so ... that\" と同じ使い方をしている文はどれか。",
+   "a": "I got up early so that I could catch the first train.",
+   "b": "He told me that he was hungry after the long game.",
+   "c": "She was so tired that she went to bed before dinner.",
+   "d": "It was very hot in the room, so I opened the window.",
+   "answer": "C",
+   "explanation": "so ... that は「とても〜なので…する(という結果になる)」という程度・結果を表す形で、c も「とても疲れていたので夕食前に寝た」という同じ構造である。a の so that は「〜するために」という目的、b の that は「〜ということ」というかたまりを作る用法、d の so は「だから」という接続詞で、どれも働きが違う。"
+  },
+  {
+   "tag": "用法識別(to不定詞)",
+   "q": "英文中の \"we have worked very hard to make our lives better\" における \"to make\" と同じ使い方をしている文はどれか。",
+   "a": "He saved money to buy a new bike.",
+   "b": "I have a lot of homework to do today.",
+   "c": "My dream is to be a science teacher.",
+   "d": "I was very glad to get a letter from her.",
+   "answer": "A",
+   "explanation": "この to make は「生活をより良くするために」と、動作の目的を表す副詞的用法である。a も「新しい自転車を買うために」お金を貯めた、という目的を表す。b は直前の名詞 homework を修飾する形容詞的用法、c は「〜すること」を表す名詞的用法、d は感情(glad)の原因を表す用法で、いずれも目的の意味にはならない。"
+  }
+ ]
+}

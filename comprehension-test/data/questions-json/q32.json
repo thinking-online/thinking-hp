@@ -1,0 +1,27 @@
+{
+ "no": 32,
+ "en": "According to WHO, the amount of water each person needs in everyday life is about 50L. Water is one of the most important things in our lives.",
+ "ja": "WHOによると、一人が日常生活で必要とする水の量は約50リットルである。水は、私たちの生活の中で最も大切なものの一つだ。",
+ "questions": [
+  {
+   "tag": "構造(接触節)",
+   "q": "英文中の \"the amount of water each person needs in everyday life\" では、\"water each person needs\" が特徴的な組み立てになっている。この部分と同じ文の組み立てを含む英文はどれか。",
+   "a": "I hear the new library opens next month.",
+   "b": "The pictures he took in Kyoto were beautiful.",
+   "c": "The girl singing on the stage is my classmate.",
+   "d": "She told me that the test was very difficult.",
+   "answer": "B",
+   "explanation": "\"water each person needs\" は、名詞の直後に主語+動詞が続き、関係代名詞が省略されて前の名詞を後ろから説明する形(接触節)です。bの \"The pictures he took in Kyoto\" が同じ形です。aとdは動詞の後ろに「〜ということ」を表すthat節が続く形(aはthatが省略されているだけ)、cは現在分詞が名詞を修飾する形で、どれも関係代名詞の省略ではありません。"
+  },
+  {
+   "tag": "語法(one of+複数形)",
+   "q": "英文中の \"one of the most important things\" と同じ規則に従っていて、文法的に正しい英文はどれか。",
+   "a": "Kyoto is one of the oldest city in all of Japan.",
+   "b": "Tokyo is one of biggest cities in the whole world.",
+   "c": "One of the computers in this room are broken.",
+   "d": "Soccer is one of the most popular sports in our school.",
+   "answer": "D",
+   "explanation": "one of の後ろは「the+最上級+複数名詞」の形にします。本文で things が複数形なのは、「大切なものは複数あり、水はその中の一つ」という意味だからです。aは city が単数形のまま、bは最上級に必要な the が抜けており、cは主語が one(単数)なのに動詞が are になっているので誤りです。"
+  }
+ ]
+}

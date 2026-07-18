@@ -1,0 +1,37 @@
+{
+ "no": 20,
+ "en": "When we go to the library, we read books, search for and share information and have a discussion with others.",
+ "ja": "図書館に行くと、私たちは本を読み、情報を探して共有し、他の人と議論をする。",
+ "questions": [
+  {
+   "tag": "構造(共有目的語)",
+   "q": "\"When we go to the library, we read books, search for and share information and have a discussion with others.\" の中の \"search for and share information\" と同じ構造を持つ文はどれか。",
+   "a": "He picked up the pen and wrote his name quickly.",
+   "b": "You should listen to and follow your coach's advice.",
+   "c": "She was looking for her lost key all morning.",
+   "d": "We sang and danced together at the festival.",
+   "answer": "B",
+   "explanation": "\"search for\" と \"share\" という2つの動詞が、and で結ばれて後ろの1つの目的語 information を共有しています。b も listen to と follow が advice という1つの目的語を共有する同じ構造です。a は動詞ごとに別の目的語 (the pen / his name) があり、c は動詞が1つだけ、d は目的語のない動詞を並べただけなので構造が異なります。"
+  },
+  {
+   "tag": "語法(search/search for)",
+   "q": "この文では \"search for ... information\"(情報を探す)のように search の後に for が置かれている。もし for を使わずに \"search the library\" と言った場合の意味として最も適切なものはどれか。",
+   "a": "図書館という建物の中を、何かを見つけようとくまなく調べる",
+   "b": "図書館がどこにあるかを探し求める",
+   "c": "図書館についての情報をインターネットなどで検索する",
+   "d": "図書館という言葉の意味を辞書で引いて調べる",
+   "answer": "A",
+   "explanation": "search for A は「A(それ自体)を探す」ですが、for のない search A は「A という場所の中を捜索する」という別の意味になります。だからこの文では information を「探す」ために for が必要なのです。b は search for the library の意味であり、c や d は日本語の「調べる」につられた誤りで、それぞれ別の英語表現 (search the internet for ... / look up ...) を使います。"
+  },
+  {
+   "tag": "用法識別(have)",
+   "q": "\"have a discussion with others\" の \"have\" と同じ使い方をしている文はどれか。",
+   "a": "My uncle has a large farm in Hokkaido.",
+   "b": "I have already finished my homework.",
+   "c": "She had a long talk with her mother last night.",
+   "d": "He had his bike repaired at the shop.",
+   "answer": "C",
+   "explanation": "have a discussion の have は「have + a + 動作を表す名詞」で「〜する」という動作を表す使い方で、have a discussion は discuss とほぼ同じ意味です。c の had a long talk も talked (長く話した) と同じ動作を表すので同じ用法です。a は「持っている」(所有)、b は現在完了形を作る助動詞、d は「〜してもらう」(使役)なので異なります。"
+  }
+ ]
+}

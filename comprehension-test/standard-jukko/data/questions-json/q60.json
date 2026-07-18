@@ -1,0 +1,52 @@
+{"no": 60, "en": "We take for granted satellites and trips to the moon, nuclear-powered submarines that stay underwater for months, aircrafts that travel faster than sound, factories operated by machines that run other machines, and computers that seem more intelligent than humans.", "ja": "私たちは、人工衛星や月への旅行、何か月も潜航し続ける原子力潜水艦、音速を超えて飛ぶ航空機、他の機械を動かす機械によって運転される工場、そして人間よりも賢く見えるコンピューターを、当たり前のものと思っている。", "questions": [
+  {
+   "tag": "目的語の後置(take ... for granted)",
+   "q": "この文で \"take for granted\"(~を当然のことと思う)の目的語(=当然だと思われているもの)はどれか。最も適切なものを1つ選びなさい。",
+   "a": "\"satellites\" だけ",
+   "b": "\"satellites and trips to the moon\" だけ",
+   "c": "\"satellites\" から \"computers ... than humans\" まで、列挙された名詞句すべて",
+   "d": "\"computers that seem more intelligent than humans\" だけ",
+   "answer": "C",
+   "explanation": "\"take ... for granted\" は「~を当然のことと思う」という熟語で、目的語が長いため for granted の後ろにまとめて置かれている(目的語の後置)。\"satellites\" から \"computers ... than humans\" まで、コンマで並べられた名詞句すべてがその目的語である。A・B・Dはいずれも目的語の一部だけを取り出しており、後置された目的語全体を捉えていない。"
+  },
+  {
+   "tag": "関係詞の先行詞(入れ子修飾)",
+   "q": "\"factories operated by machines that run other machines\" において、\"that run other machines\" が修飾している(先行詞となる)語はどれか。",
+   "a": "\"factories\"(工場)",
+   "b": "\"machines\"(機械)",
+   "c": "\"We\"(私たち)",
+   "d": "\"satellites\"(人工衛星)",
+   "answer": "B",
+   "explanation": "\"that run other machines\" の先行詞は直前の \"machines\" で、「他の機械を動かす機械」の意味。その機械によって \"operated\"(運転)される \"factories\" という入れ子構造になっている。Aのように \"factories\" にかけると「他の機械を動かす工場」となり文脈に合わない。"
+  },
+  {
+   "tag": "同一構造の識別(目的語の後置)",
+   "q": "この文と同じように「\"take ~ for granted\" の目的語を for granted の後ろに置く語順」になっている英文はどれか。1つ選びなさい。",
+   "a": "She took for granted the kindness and support of all her close friends.",
+   "b": "He took the new job for granted after the long, difficult interview.",
+   "c": "We were granted permission to enter the old building last night.",
+   "d": "They granted that the plan for the new project was far from perfect.",
+   "answer": "A",
+   "explanation": "原文は目的語が長いため for granted の後ろに置く「目的語の後置」。Aは目的語 \"the kindness and support of all her close friends\" を for granted の後に置いており、同じ構造。Bは目的語 \"the new job\" を take と for granted の間に置く通常語順で構造が異なる。C・Dの grant は「与える/認める」の意味で、take for granted とは別表現である。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "私たちは、人工衛星や月旅行などの技術は、いまだに実現できない夢にすぎないと考えている。",
+   "b": "人間より賢く見えるコンピューターだけは、私たちにとって今なお驚きの対象である。",
+   "c": "他の機械を動かす機械によって、多くの労働者が職を失いつつあると私たちは考えている。",
+   "d": "私たちは、人工衛星や月旅行、原子力潜水艦、超音速機、コンピューターといった科学技術の産物を、当たり前のものとして受け止めている。",
+   "answer": "D",
+   "explanation": "本文は \"take for granted\"(当然と思う)を用い、列挙された科学技術の産物をすべて当たり前と感じている、という趣旨なのでDが正しい。Aは take for granted を逆に取り「まだ夢だ」と誤読している。Bはコンピューターを例外扱いするが、それも当然視される対象の一つ。Cは \"that run other machines\" の係り先を取り違えており、本文にない労働者の失業に言及している。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "We are still amazed by satellites, moon trips, nuclear submarines, supersonic aircraft, automated factories, and highly intelligent computers.",
+   "b": "To us, satellites, moon trips, long-diving nuclear submarines, supersonic aircraft, self-running factory machines, and super-smart computers all seem perfectly ordinary.",
+   "c": "We doubt whether satellites, moon trips, nuclear submarines, and intelligent computers will ever become a normal part of daily life.",
+   "d": "We feel grateful to the scientists who created satellites, moon trips, nuclear submarines, and highly intelligent computers.",
+   "answer": "B",
+   "explanation": "\"take ... for granted\" は「当たり前と思う」の意で、Bの \"all seem perfectly ordinary\" が同義。Aは \"still amazed\"(いまだに驚いている)で意味が逆。Cは \"doubt whether ... will ever become normal\" と、まだ日常になっていないと誤読している。Dは \"granted\" を「感謝」と取り違え \"grateful\" としており、原文の意味からずれる。"
+  }
+ ]}

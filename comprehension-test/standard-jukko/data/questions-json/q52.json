@@ -1,0 +1,52 @@
+{"no": 52, "en": "The idea of girls attending school met strong opposition from adults in the village, where parents, unaware that urban societies encouraged girls' education and barely managing to survive, depended on their daughters to work.", "ja": "少女が学校に通うという考えは、村の大人たちの強い反対にあった。その村では、都会の社会が女子教育を奨励していることを知らず、しかもかろうじて暮らしを立てている親たちが、娘たちを働き手として当てにしていたのである。", "questions": [
+  {
+   "tag": "関係副詞（非制限用法）",
+   "q": "下線部を含む \", where parents ... depended on their daughters to work\" の \"where\" について、その先行詞と働きとして最も適切なものを1つ選びなさい。",
+   "a": "\"strong opposition\" を先行詞とする関係代名詞で、節内で目的語として働く",
+   "b": "\"the village\" を先行詞とする関係副詞で、非制限用法で「その村では」という意味を表す",
+   "c": "\"adults\" を先行詞とする関係代名詞で、節内で主語として働く",
+   "d": "\"the idea\" を先行詞とし、「〜するところの考え」という条件を表す",
+   "answer": "B",
+   "explanation": "\"where\" は場所を表す関係副詞で、直前の \"the village\" を先行詞とし、非制限用法（コンマ付き）で「その村では」と補足説明を加えている。節内は \"parents ... depended ...\" と主語・動詞・目的語がそろっており欠けがないので、目的語や主語の働きをする関係代名詞（A・C）ではありえない。Dの先行詞 \"the idea\" は場所でも条件でもなく誤り。"
+  },
+  {
+   "tag": "主語・動詞の特定",
+   "q": "\"where parents, unaware that ... and barely managing to survive, depended on their daughters to work\" において、主語 \"parents\" に対応する述語動詞はどれか。最も適切なものを1つ選びなさい。",
+   "a": "encouraged",
+   "b": "managing",
+   "c": "depended",
+   "d": "met",
+   "answer": "C",
+   "explanation": "\"parents\" を受ける述語動詞は \"depended\"（頼りにしていた）で、その間の \"unaware that ...\" と \"barely managing to survive\" は主語と動詞に挟まれた挿入的な分詞（形容詞）句。\"encouraged\" は that節内で主語 \"urban societies\" に対応する動詞、\"managing\" は挿入句内の分詞、\"met\" は文全体の主語 \"The idea\" に対応する動詞であり、いずれも \"parents\" の述語ではない。"
+  },
+  {
+   "tag": "分詞句の並列",
+   "q": "\"unaware that urban societies encouraged girls' education and barely managing to survive\" の中の \"and barely managing to survive\" は文中でどう働いているか。最も適切なものを1つ選びなさい。",
+   "a": "\"urban societies\" を主語とし、\"encouraged\" と並列する動詞句である",
+   "b": "\"girls' education\" の内容を具体的に説明する句である",
+   "c": "\"their daughters\" を意味上の主語とする分詞句である",
+   "d": "\"parents\" の状態を表す分詞句で、\"unaware that ...\" と並列して \"parents\" を修飾している",
+   "answer": "D",
+   "explanation": "\"and\" は \"unaware that ...\"（〜を知らず）と \"barely managing to survive\"（かろうじて生き延びていて）という、いずれも \"parents\" の状態を表す2つの句を並列でつないでいる。\"managing\" は -ing形の分詞であり、過去形 \"encouraged\" と並列にはならない（Aは不可）。生き延びようとしている主体は親であって娘ではない（Cは主客取り違え）。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "村の親たちは、都会で女子教育が奨励されていることを知らず、暮らしにも余裕がなかったため、娘を働き手として当てにしており、少女の就学に反対した。",
+   "b": "村の親たちは、都会で女子教育が奨励されていることを知っていたが、暮らしが苦しく、娘を働かせる必要から少女の就学をやむなくあきらめた。",
+   "c": "都会の大人たちは、村では女子教育が奨励されていないと知り、生活に困る娘たちを働かせるために、彼女たちを学校に通わせた。",
+   "d": "村の少女たちは、学校に通いたいという思いから、暮らしを支えるために働く親たちの方針に強く反対した。",
+   "answer": "A",
+   "explanation": "本文は、村の大人（親）が「都会で女子教育が奨励されていることを知らず（unaware that ...）」「かろうじて生活し（barely managing to survive）」「娘を働き手として当てにしていた（depended on their daughters to work）」ため就学に反対した、という流れ。Bは \"unaware\"（知らない）を「知っていた」と否定範囲を逆にしている。Cは反対した主体を「都会の大人」にすり替え、就学させたとする点も本文と逆。Dは反対したのは大人であり少女ではない点で主客が逆。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "The adults in the village encouraged girls to go to school, even though the parents knew that cities valued female education and could easily support themselves without their daughters' work.",
+   "b": "In the village, girls strongly objected to going to school, because their parents, who understood that cities promoted female education, forced them to work instead.",
+   "c": "In the village, adults strongly resisted letting girls attend school, since the parents there, ignorant that cities promoted female education and hardly able to make a living, needed their daughters to work.",
+   "d": "The adults in the village opposed girls' schooling, because the parents, aware that cities promoted female education but too poor to survive, still sent their daughters to work.",
+   "answer": "C",
+   "explanation": "原文は「大人が反対（met strong opposition）」「親は都会が女子教育を奨励していると知らず（unaware）」「かろうじて生きていて（barely managing to survive）」「娘の労働を当てにしていた（depended on their daughters to work）」で、Cの resisted / ignorant / hardly able to make a living / needed their daughters to work がすべて対応する。Aは encouraged・knew・easily support と各要素を反対にしている。Bは反対したのを girls にし、親を understood としており主客と否定が誤り。Dは \"aware\"（知っていた）が \"unaware\" と逆で、\"still sent their daughters to work\" も就学させた含みが出て原意とずれる。"
+  }
+]}

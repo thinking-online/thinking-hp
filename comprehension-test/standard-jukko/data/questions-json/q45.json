@@ -1,0 +1,52 @@
+{"no": 45, "en": "Constructive criticism can be offered in an indirect way. Asking someone who is very close to the person to be criticized to speak on your behalf is a thoughtful act.", "ja": "建設的な批判は、遠回しな形で伝えることもできる。批判しようとしている相手ととても親しい人に頼んで、自分に代わって話してもらうのは、思いやりのある行いである。", "questions": [
+ {
+  "tag": "主節の主部の特定",
+  "q": "第2文 \"Asking someone who is very close to the person to be criticized to speak on your behalf is a thoughtful act.\" で、主節の動詞 \"is\" の主部にあたるのはどれか。",
+  "a": "someone who is very close to the person to be criticized",
+  "b": "to speak on your behalf",
+  "c": "Asking someone who is very close to the person to be criticized to speak on your behalf",
+  "d": "Asking someone who is very close to the person to be criticized",
+  "answer": "C",
+  "explanation": "主節の動詞は \"is\"、その補語が \"a thoughtful act\" で、主部は動名詞 \"Asking\" が導く句全体である。この文は \"Asking O to do\"(Oに〜するよう頼むこと)の形なので、目的語 \"someone...\" と目的格補語 \"to speak on your behalf\" までを含む C が主部となる。D は補語 \"to speak on your behalf\" を欠き主部として不完全、A は目的語部分、B は補語部分にすぎない。"
+ },
+ {
+  "tag": "ask O to do の動作主の特定",
+  "q": "第2文の \"to speak on your behalf\"(あなたの代わりに話す)という動作を実際に行うのは誰か。",
+  "a": "批判しようとしている相手ととても親しい人",
+  "b": "批判される相手本人",
+  "c": "話し手である自分(you)",
+  "d": "建設的な批判を受ける人すべて",
+  "answer": "A",
+  "explanation": "\"ask O to do\"(Oに〜するよう頼む)の形で、頼まれて \"speak\" するのは目的語 \"someone who is very close to the person to be criticized\"、つまり批判したい相手と親しい人である。\"on your behalf\"(あなたの代わりに)が示すとおり話すのは自分ではないので C は誤り、B は話してもらう相手(親しい人)を批判対象本人と取り違えている。"
+ },
+ {
+  "tag": "受動態の不定詞による後置修飾",
+  "q": "第2文の \"the person to be criticized\" が指す内容として最も適切なものはどれか。",
+  "a": "これから相手を批判しようとしている、批判する側の人",
+  "b": "すでに批判を受け終えた相手",
+  "c": "批判される相手ととても親しくしている第三者",
+  "d": "これから批判されることになる相手",
+  "answer": "D",
+  "explanation": "受動態の不定詞 \"to be criticized\" が \"the person\" を後ろから修飾し、「(これから)批判される(ことになる)相手」を表す。A は受動を能動に読み違えて批判する側にしており、B は完了として時制を取り違え、C は別要素の \"someone who is very close to the person\"(相手と親しい人)と混同している。"
+ },
+ {
+  "tag": "内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "建設的な批判は遠回しに伝えるのを避け、必ず本人に直接伝えるのが望ましい。",
+  "b": "批判すべき相手と親しい人物に間に入ってもらい、自分の代わりに伝えてもらうのは、心づかいのある行為だといえる。",
+  "c": "批判すべき相手本人に頼んで、自分の代わりに別の人へ伝えてもらうのは、心づかいのある行為だといえる。",
+  "d": "自分と親しい人物を批判するよう、間に立つ第三者に代わりに頼むのは、心づかいのある行為だといえる。",
+  "answer": "B",
+  "explanation": "第1文は批判を \"in an indirect way\"(遠回しに)伝えられると述べ、第2文はその具体例として「相手と親しい人に自分の代わりに伝えてもらう」ことを挙げているので B が正しい。A は第1文と矛盾、C は頼む相手を批判対象「本人」と取り違え、D は「親しい」人と「批判される」相手を入れ替えている。"
+ },
+ {
+  "tag": "言い換え",
+  "q": "Which one is closest in meaning to the sentence \"Asking someone who is very close to the person to be criticized to speak on your behalf is a thoughtful act.\"?",
+  "a": "It is thoughtful to ask the person you want to criticize to pass your message on to a close friend.",
+  "b": "It is thoughtful to speak on behalf of a friend who is very close to the person being criticized.",
+  "c": "It is thoughtful to have a close friend of the person you want to criticize deliver the criticism in your place.",
+  "d": "It is thoughtful to criticize a close friend directly rather than through the person concerned.",
+  "answer": "C",
+  "explanation": "原文は \"ask O to speak on your behalf\"(自分の代わりに話してもらう)で、O は「批判したい相手と親しい人」。C は \"have a close friend ... deliver the criticism in your place\" と言い換えており同義。A は頼む相手を批判対象本人にしている点、B は自分が話す(かつ受益者が逆)点、D は直接批判を勧める点でそれぞれ意味がずれる。"
+ }
+]}

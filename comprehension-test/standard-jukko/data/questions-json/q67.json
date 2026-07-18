@@ -1,0 +1,52 @@
+{"no": 67, "en": "Famous people who appear frequently in the media tend to play the part that is expected of them and with practice learn to play it very well.", "ja": "メディアに頻繁に登場する有名人は、自分に期待される役割を演じる傾向があり、場数を踏むうちにそれをとても上手に演じられるようになる。", "questions": [
+{
+ "tag": "it指示内容",
+ "q": "文末の \"learn to play it very well\" の \"it\" が指すものとして最も適切なものを1つ選びなさい。",
+ "a": "メディア(the media)",
+ "b": "有名人(Famous people)",
+ "c": "自分に期待される役割(the part)",
+ "d": "練習・場数(practice)",
+ "answer": "C",
+ "explanation": "\"learn to play it very well\" の \"it\" は直前の \"play the part that is expected of them\" の \"the part\" を受ける。有名人が上手に演じられるようになるのは「役割」だからC。有名人(B)は演じる主体であって演じられる対象ではなく、メディア(A)は登場する場所、練習(D)はその手段にすぎない。"
+},
+{
+ "tag": "and並列",
+ "q": "この文で \"and\" が結び付けている二つの要素として最も適切なものを1つ選びなさい。",
+ "a": "\"appear\" と \"play\"",
+ "b": "\"play\" と \"learn\"",
+ "c": "\"expected\" と \"play\"",
+ "d": "\"practice\" と \"learn\"",
+ "answer": "B",
+ "explanation": "\"tend to\" が二つの不定詞句 \"play the part that is expected of them\" と \"(with practice) learn to play it very well\" を支配し、\"and\" はこの \"play\" と \"learn\" を結んでいる。\"appear\"(A)は関係詞節内で先行詞 \"Famous people\" を修飾する動詞にすぎず主節の並列には関与しない。\"expected\"(C)は関係詞節内の受け身で、\"practice\"(D)は前置詞 with の目的語である。"
+},
+{
+ "tag": "expected of them",
+ "q": "\"the part that is expected of them\" の解釈として最も適切なものを1つ選びなさい。",
+ "a": "有名人が世間に対してひそかに抱いている期待",
+ "b": "メディアが有名人に演じることを禁じている役割",
+ "c": "有名人が自分の意思で新たに作り出した役割",
+ "d": "世間やメディアが有名人に期待している役割",
+ "answer": "D",
+ "explanation": "\"be expected of ~\" は「~に期待される」の受け身で、期待するのは世間・メディアの側、\"them\"(=有名人)はその期待を向けられる側。よってD。Aは期待の方向を逆に取った誤り、Bは be expected(期待)を禁止と取り違えた誤り、Cは受け身を無視して有名人自身が作り出したと読んだ誤りである。"
+},
+{
+ "tag": "内容一致",
+ "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+ "a": "メディアに頻繁に登場する有名人は、周囲から期待される役柄を演じる傾向があり、経験を重ねるうちにそれを巧みに演じられるようになる。",
+ "b": "メディアに頻繁に登場する有名人は、自分がメディアに求める役柄を思い描くだけで、経験を重ねてもそれをうまく演じられないままである。",
+ "c": "メディアに頻繁に登場する有名人は、周囲の期待にあえて反する役柄を演じ、経験を重ねるほど自分らしさを失っていく。",
+ "d": "メディアに頻繁に登場する有名人は、周囲から期待される役柄に戸惑うばかりで、経験を積んでも演技には慣れないでいる。",
+ "answer": "A",
+ "explanation": "本文は「期待される役を演じる傾向があり(tend to play the part expected of them)」「場数を踏んでとても上手に演じられるようになる(with practice learn to play it very well)」と述べており、Aが一致する。Bは期待の方向を逆にし、かつ「うまく演じられない」と結末を否定に取り違えている。Cは \"expected\" を「期待に反する」と逆に読んでおり、Dは \"learn to play it very well\" を「演技に慣れない」と否定に取り違えている。"
+},
+{
+ "tag": "言い換え",
+ "q": "Which one is closest in meaning to the sentence above?",
+ "a": "Celebrities who often appear in the media usually take on the role that others expect of them, and through experience they come to perform it very skillfully.",
+ "b": "Celebrities who often appear in the media usually take on the role that they expect of the media, though even with experience they cannot perform it well.",
+ "c": "Celebrities who often appear in the media usually reject the role that others expect of them, and over time they lose the ability to perform naturally.",
+ "d": "Celebrities who often appear in the media usually take on whatever role they happen to like, and only rarely do they learn to perform it well.",
+ "answer": "A",
+ "explanation": "原文の \"play the part that is expected of them\"(他者が期待する役を演じる)と \"with practice learn to play it very well\"(経験を積んで上手に演じられるようになる)を、語彙・構造を変えつつ正確に保っているのはA。Bは期待の向きを逆(they expect of the media)にし結末も否定にしている。Cは take on を reject と正反対にし、Dは \"expected\" を \"whatever they like\" にすり替え、かつ \"very well\" を \"only rarely ... learn\" と否定に変えている。"
+}
+]}

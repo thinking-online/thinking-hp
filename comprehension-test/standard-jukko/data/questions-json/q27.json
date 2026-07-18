@@ -1,0 +1,52 @@
+{"no": 27, "en": "That Pluto is far smaller than any other planet in the solar system has been shown by the astronomers.", "ja": "冥王星が太陽系の他のどの惑星よりもはるかに小さいということは、天文学者たちによって明らかにされてきた。", "questions": [
+  {
+   "tag": "主語の特定（That名詞節）",
+   "q": "この文の動詞 \"has been shown\" に対する主語（何が示されてきたのか）はどれか。最も適切なものを1つ選びなさい。",
+   "a": "Pluto",
+   "b": "\"That Pluto is far smaller than any other planet in the solar system\" の全体",
+   "c": "the astronomers",
+   "d": "any other planet in the solar system",
+   "answer": "B",
+   "explanation": "文頭の \"That\" は「〜ということ」という名詞節を導く接続詞で、\"That Pluto ... solar system\" 全体が \"has been shown\" の主語になっている。\"Pluto\" はその名詞節内の主語にすぎず、文全体の主語ではない。\"the astronomers\" は by 以下の動作主で主語ではない。"
+  },
+  {
+   "tag": "比較（than any other＝最上級相当）",
+   "q": "\"far smaller than any other planet in the solar system\" が表す内容として正しいものはどれか。1つ選びなさい。",
+   "a": "冥王星と同じ大きさの惑星が太陽系にいくつか存在する",
+   "b": "冥王星は太陽系の一部の惑星よりも小さい",
+   "c": "冥王星は太陽系で最も大きな惑星である",
+   "d": "冥王星は太陽系で最も小さな惑星である",
+   "answer": "D",
+   "explanation": "「比較級＋than any other＋単数名詞」は「他のどの〜よりも…」で最上級と同じ意味を表すので、冥王星は太陽系で最も小さい惑星となる。bは「一部の惑星より」とする部分的な誤読で、any other（他のどの惑星も）の全体性を落としている。cは比較の方向を逆に取った誤り。"
+  },
+  {
+   "tag": "That節の識別（名詞節主語）",
+   "q": "この文の文頭の \"That\" と同じ働き（用法）をしている \"that/That\" を含む文を1つ選びなさい。",
+   "a": "That book on the top shelf belongs to my history teacher.",
+   "b": "This is the small house that we bought many years ago.",
+   "c": "That she passed the difficult entrance exam surprised all of us.",
+   "d": "The rumor that he had quietly quit his job proved to be false.",
+   "answer": "C",
+   "explanation": "本文の \"That\" は名詞節を作り文の主語になる接続詞。cの \"That she passed ...\" も同様に名詞節を作り \"surprised\" の主語になっており、用法が一致する。aの \"That\" は「あの本」を指す指示形容詞、bの \"that\" は関係代名詞、dの \"that\" は \"The rumor\" と同格を作る接続詞で、いずれも働きが異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "天文学者たちの研究によって、冥王星が太陽系の他のどの惑星と比べても格段に小さいことが確かめられてきた。",
+   "b": "天文学者たちの研究によって、冥王星が太陽系の他のどの惑星と比べても格段に大きいことが確かめられてきた。",
+   "c": "冥王星は、自らが太陽系の他のどの惑星よりも小さいことを天文学者たちに対して証明してみせた。",
+   "d": "天文学者たちの研究によって、冥王星が太陽系の一部の惑星よりも小さいことが確かめられてきた。",
+   "answer": "A",
+   "explanation": "文は「That節（冥王星が…はるかに小さいということ）＋has been shown by the astronomers」という受動態で、示した動作主は天文学者、示された内容は冥王星の小ささである。bは比較の方向を逆にした誤り。cは受動態を能動に取り違え、示す主体を冥王星にしてしまった誤読。dは「他のどの惑星よりも」を「一部の惑星より」と弱めた部分的誤読。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Astronomers have demonstrated that Pluto is smaller than some other planets in the solar system.",
+   "b": "Pluto has revealed to astronomers how small the other planets in the solar system really are.",
+   "c": "Astronomers have demonstrated that Pluto is the smallest planet in the solar system.",
+   "d": "Astronomers have demonstrated that Pluto is the largest planet in the solar system.",
+   "answer": "C",
+   "explanation": "「smaller than any other planet」は「他のどの惑星よりも小さい」＝最上級で、cの \"the smallest planet\" と同義。またby the astronomers を主語にした能動態への言い換えも正しい。aは「some other planets（いくつかの他の惑星より）」と範囲を狭めた誤り、bは示す主体を冥王星にした主客の逆転、dは大小関係を逆にした誤り。"
+  }
+]}

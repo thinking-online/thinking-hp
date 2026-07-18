@@ -1,0 +1,52 @@
+{"no": 65, "en": "Even in 2021, 100 years after the first and only tuberculosis vaccine was used, people still waited for a better treatment in Asian countries like Indonesia, and in African countries like Nigeria, while they all suffered from a continuing pandemic.", "ja": "最初にして唯一の結核ワクチンが使われてから100年が経った2021年になってもなお、インドネシアのようなアジアの国々や、ナイジェリアのようなアフリカの国々では、人々はより良い治療法をいまだに待ち続けていた。しかもその間ずっと、彼らは皆、続いているパンデミックに苦しんでいたのである。", "questions": [
+  {
+   "tag": "同格・時の把握",
+   "q": "下線部 \"100 years after the first and only tuberculosis vaccine was used\" が表す内容として最も適切なものを1つ選びなさい。",
+   "a": "2021年から100年後に、より良い結核の治療法が生まれるということ。",
+   "b": "2021年から数えて100年もの間、結核ワクチンが使われ続けたということ。",
+   "c": "結核ワクチンが最初に使われたのは、2021年のおよそ100年前だということ。",
+   "d": "結核ワクチンが使われるようになって、まだ100年もたっていないということ。",
+   "answer": "C",
+   "explanation": "この句は直前の \"2021\" を説明する同格で、「2021年はそのワクチンが使われてから100年後にあたる年だ」の意。よってワクチンが最初に使われたのは2021年のおよそ100年前(1921年頃)。Aは「100年後」と未来に取り違え、Dは経過した100年を否定していて本文と矛盾する。"
+  },
+  {
+   "tag": "接続詞while・代名詞they",
+   "q": "下線部 \"while they all suffered from a continuing pandemic\" の表す内容として最も適切なものを1つ選びなさい。",
+   "a": "アジアやアフリカの国々の人々は皆、その間ずっと、続いているパンデミックにも苦しんでいた。",
+   "b": "パンデミックが収束するまでは、人々はより良い治療法を待ち続けた。",
+   "c": "より良い治療法を待っていた一部の人々だけが、パンデミックに苦しんだ。",
+   "d": "パンデミックが長引いたために、人々はより良い治療法を待つのをやめた。",
+   "answer": "A",
+   "explanation": "\"they\" は前述のアジア・アフリカの国々の人々を指し、\"they all\" は「彼ら皆」の意。ここでの while は「~する間、同時に」を表し、より良い治療法を待ちつつ同時にパンデミックにも苦しんでいたことを述べる。Cの「一部だけ」は all と矛盾し、Dの「待つのをやめた」という因果は本文にない。"
+  },
+  {
+   "tag": "修飾関係・first and only",
+   "q": "下線部 \"the first and only tuberculosis vaccine\" の意味として最も適切なものを1つ選びなさい。",
+   "a": "2021年に初めて使われた、たった一つの結核ワクチン。",
+   "b": "「最初の結核ワクチン」と「唯一の結核ワクチン」という二つの異なるワクチン。",
+   "c": "数ある結核ワクチンのうち、最初に作られたもの。",
+   "d": "これまでに作られた結核ワクチンは、最初に作られたその一つだけだということ。",
+   "answer": "D",
+   "explanation": "\"first\" と \"only\" はともに vaccine を修飾し、「最初に作られ、しかもそれ以来ただ一つしかない結核ワクチン」を意味する。Bは二種類と取り違え、Cは「数ある」が only と矛盾する。Aは初めて使われた年を2021年とする点が誤り(使われたのは約100年前)。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "結核ワクチンが最初に使われてからの100年の間に、インドネシアやナイジェリアのような国々では何種類ものより良いワクチンが開発された。",
+   "b": "結核ワクチンが最初に使われてから100年たった2021年になっても、インドネシアやナイジェリアのような国々の人々は、より良い治療法をなお待ち望んでいた。",
+   "c": "結核ワクチンが最初に使われてから100年たった2021年には、インドネシアやナイジェリアのような国々で、より良い治療法がすでに広く行き渡っていた。",
+   "d": "続いていたパンデミックが終わったので、インドネシアやナイジェリアのような国々の人々は、より良い結核の治療法をもはや必要としなくなった。",
+   "answer": "B",
+   "explanation": "本文は \"people still waited for a better treatment\" と述べ、2021年になってもなお良い治療法を待っていたことを示す。Cの「すでに行き渡っていた」は still waited と矛盾し、Aの「何種類ものワクチン」は \"first and only\"(唯一)と矛盾、Dの「パンデミックが終わった」は \"a continuing pandemic\"(続いていた)ことと矛盾する。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "A century after the world's only tuberculosis vaccine had come into use, people in countries such as Indonesia and Nigeria were, as of 2021, still hoping for a better treatment while enduring an ongoing pandemic.",
+   "b": "By 2021, a hundred years after several tuberculosis vaccines had been developed, people in Indonesia and Nigeria had at last obtained an effective treatment despite an ongoing pandemic.",
+   "c": "In 2021, people in Asian and African countries gave up waiting for a tuberculosis treatment because a new pandemic demanded all of their attention.",
+   "d": "A hundred years before 2021, the only tuberculosis vaccine was invented in countries like Indonesia and Nigeria, where people were still suffering from a pandemic.",
+   "answer": "A",
+   "explanation": "Aは、唯一のワクチンが使われてから100年後の2021年時点でもなお良い治療法を望み、その間パンデミックに耐えていた、という原文と同義。Bは \"several vaccines\"・\"at last obtained\" が唯一性と still waited に反する。Cの \"gave up waiting\" は still waited と正反対。Dはワクチンが Indonesia/Nigeria で発明されたとする点が誤りで、そこは人々が治療法を待っていた国である。"
+  }
+ ]}

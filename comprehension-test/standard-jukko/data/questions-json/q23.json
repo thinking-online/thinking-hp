@@ -1,0 +1,52 @@
+{"no": 23, "en": "All the doctors and scientists in that country want to do is to prevent bird flu from spreading.", "ja": "その国の医者や科学者たちがしたいと思っているのは、鳥インフルエンザが広がるのを防ぐことだけである。", "questions": [
+  {
+   "tag": "主語・動詞の特定",
+   "q": "この文の動詞 \"is\" の主語として最も適切なものを1つ選びなさい。",
+   "a": "the doctors and scientists in that country",
+   "b": "to prevent bird flu from spreading",
+   "c": "All the doctors and scientists in that country want to do",
+   "d": "All the doctors and scientists in that country",
+   "answer": "C",
+   "explanation": "\"All (that) the doctors and scientists in that country want to do\" 全体が一つの名詞のかたまり(関係代名詞thatが省略された「〜することのすべて」)で、これが \"is\" の主語になる。Dは \"want to do\" を切り離しており、それだと文全体の述語動詞が消えてしまう。Aは \"All\" を落として節内の名詞句を主語と取った誤り、Bは \"is\" の後にくる補語(不定詞)を主語と取り違えたもの。"
+  },
+  {
+   "tag": "All...do isの意味把握",
+   "q": "\"All the doctors and scientists in that country want to do is ...\" の部分の意味に最も近いものを1つ選びなさい。",
+   "a": "その国のすべての医者と科学者が〜する必要がある",
+   "b": "その国の医者と科学者は全員が〜したいと思っている",
+   "c": "その国の医者と科学者が〜したいわけではない",
+   "d": "その国の医者と科学者がしたいのは、ただ〜することだけだ",
+   "answer": "D",
+   "explanation": "\"All (that) S want to do is ...\" は「Sがしたいことのすべては…だ」=「Sはただ…したいだけだ」という唯一・限定の意味を表す(All=the only thing)。Bは All を「全員」という数の意味に取り違えた誤読で、ここでの All は「唯一のこと」を指す。Cは否定、Aは need の意味を勝手に加えた誤り。"
+  },
+  {
+   "tag": "同用法識別",
+   "q": "下線部と同じ構造(\"All (that) S V is 〜\"=「Sがするのは…だけだ」)を含む文を1つ選びなさい。",
+   "a": "All she wanted to do was rest quietly after the long journey.",
+   "b": "All the students in the class passed the difficult exam last week.",
+   "c": "We saw all the animals that lived in that large forest.",
+   "d": "All of them agreed to help us with the heavy work.",
+   "answer": "A",
+   "explanation": "Aは \"All (that) she wanted to do was rest\" で、All が「唯一したいこと」を表し補語に不定詞が続く、本文と同じ疑似分裂文の構造。Bの All は名詞 students を修飾する数量詞「すべての生徒」。Cの all は saw の目的語で関係詞節が animals を修飾。Dの All of them は「彼ら全員」という数の意味で、いずれも本文の用法とは異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "その国の医者と科学者は全員が、鳥インフルエンザの拡大を防ぎたいと思っている。",
+   "b": "その国の医者と科学者が望んでいるのは、鳥インフルエンザの拡大を防ぐことだけである。",
+   "c": "その国の医者と科学者は、鳥インフルエンザを広めることだけを望んでいる。",
+   "d": "その国の医者と科学者が防ごうとしているのは、鳥インフルエンザだけではない。",
+   "answer": "B",
+   "explanation": "\"All ... want to do is to prevent bird flu from spreading\" は「彼らがしたいのは鳥インフルの拡大を防ぐことだけだ」の意味。Aは All を「全員」という数に取り違え「唯一したいこと」という限定の意味を落としている。Cは prevent A from spreading(広がるのを防ぐ)を「広めることを望む」と主客・意味を正反対に取った誤り。Dは All ... is を「〜だけではない」と範囲を取り違えている。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "The doctors and scientists in that country all hope to stop bird flu from spreading.",
+   "b": "The doctors and scientists in that country want to try everything to stop bird flu from spreading.",
+   "c": "The only thing the doctors and scientists in that country want to do is to stop bird flu from spreading.",
+   "d": "The doctors and scientists in that country are willing to let bird flu spread across the region.",
+   "answer": "C",
+   "explanation": "原文の \"All ... want to do is\" は「彼らがしたい唯一のことは〜だ」で、C の \"The only thing ... want to do is\" がその限定の意味を正確に保つ。Aは all を「全員が望む」とし「唯一のこと」という限定を失っている。Bは All(唯一のこと)を everything(あらゆること)に取り違えている。Dは prevent from spreading と反対に「広がるにまかせる」で意味が逆。"
+  }
+]}

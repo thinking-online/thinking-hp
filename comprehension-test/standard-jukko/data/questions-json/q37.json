@@ -1,0 +1,52 @@
+{"no": 37, "en": "Japanese people are so convinced that Japanese food is unique that they cannot believe that a foreigner can eat it, let alone enjoy it.", "ja": "日本人は日本食が独特なものだと固く信じ込んでいるので、外国人が日本食を食べられるということさえ信じられず、ましてやそれを楽しめるなどとは思いもよらない。", "questions": [
+  {
+   "tag": "so...that構文/that節の識別",
+   "q": "この英文には that が複数含まれる。\"so convinced\" の \"so\" と呼応して「非常に〜なので…」という結果を表す that 節はどれか。",
+   "a": "\"that Japanese food is unique\"(convinced の内容を示す名詞節)",
+   "b": "\"that they cannot believe that a foreigner can eat it\"(so と呼応する結果の副詞節)",
+   "c": "\"that a foreigner can eat it\"(believe の目的語の名詞節)",
+   "d": "三つの that はどれも結果を表さず、単なる強調である",
+   "answer": "B",
+   "explanation": "最初の \"that Japanese food is unique\" は形容詞 convinced の内容を示す名詞節(be convinced that 〜=〜だと確信している)。二番目の that が \"so\" と呼応する結果の副詞節で、「非常に〜なので…できない」の意味を作る。Aは確信の中身であって結果ではなく、Cはさらに内側の believe の目的語にすぎない。"
+  },
+  {
+   "tag": "let alone/否定の論理関係",
+   "q": "波線部 \"they cannot believe that a foreigner can eat it, let alone enjoy it\" が表す内容として最も適切なものはどれか。",
+   "a": "外国人が日本食を食べられるとは信じられず、楽しめることはなおさら信じられない。",
+   "b": "外国人が日本食を楽しめるとは信じられないが、食べられることは認めている。",
+   "c": "外国人は日本食を食べることも楽しむことも、実際にはできない。",
+   "d": "日本人は、外国人が日本食を食べて楽しむことを望んではいない。",
+   "answer": "A",
+   "explanation": "\"let alone 〜\" は「まして〜ない」で、直前に述べた否定をさらに強める働き。食べることさえ信じられないのだから、より程度の高い「楽しむ」はいっそう信じられない、という論理。Bはeatとenjoyを逆にした取り違え、Cは「信じられない」という主観を事実にすり替えており、Dはbelieveをwantと誤読している。"
+  },
+  {
+   "tag": "同一用法の識別(so...that)",
+   "q": "下線を引いた \"so convinced ... that they cannot believe ...\"(非常に〜なので…)と同じ用法の \"so ... that\" を含む文を1つ選びなさい。",
+   "a": "We arranged the meeting early so that everyone could attend.",
+   "b": "I had never seen so large a crowd at the stadium before.",
+   "c": "She was so tired after the trip that she fell asleep at her desk.",
+   "d": "He is not so much a scholar as a gifted classroom teacher.",
+   "answer": "C",
+   "explanation": "本文は「so+形容詞+that節(結果)」で「非常に〜なので…」を表す。Cの \"so tired that she fell asleep\" がこれと同型。Aの \"so that S could\" は目的(〜するために)、Bの \"so+形容詞+a+名詞\" は程度の強調で that を伴わず、Dの \"not so much A as B\" は「AというよりむしろB」で用法が異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "外国人は日本食を食べることはできても、楽しむことはできないと日本人は考えている。",
+   "b": "日本人は、外国人が日本食を楽しめるとは信じられるが、食べられるとは信じられないと思っている。",
+   "c": "日本食は独特なので、外国人には食べることも楽しむこともできないと科学的に証明されている。",
+   "d": "日本人は日本食が独特だと固く信じているため、外国人が日本食を食べられることさえ信じられず、まして楽しめるとは思えない。",
+   "answer": "D",
+   "explanation": "本文は「食べられるとさえ信じられない、ましてや楽しめるなどとは」という否定の強調(let alone)であり、Dが正確。Aは「食べられるが楽しめない」とeatとenjoyを取り違え、Bはさらにその二つを逆転させている。Cは日本人の思い込みを客観的事実(証明された)にすり替えており、本文の「cannot believe(信じられない)」という主観と矛盾する。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Japanese people are so sure their food is unique that no foreigner is permitted to eat it, and certainly not to enjoy it.",
+   "b": "Because Japanese people are firmly convinced their food is one of a kind, they find it impossible to imagine that a foreigner could even eat it, much less take pleasure in it.",
+   "c": "Since Japanese food is truly unique, foreigners are able to eat it but cannot enjoy it, just as Japanese people expect.",
+   "d": "Japanese people cannot believe that a foreigner enjoys their food, though they readily admit that a foreigner can eat it without difficulty.",
+   "answer": "B",
+   "explanation": "原文は「独特だと確信 → 外国人が食べられるとさえ信じられない → まして楽しめるとは」という構造で、Bが \"firmly convinced\"\"could even eat it, much less take pleasure in it\" と語彙・構造を変えつつ同義。Aは \"cannot believe\" を \"no foreigner is permitted\"(禁止)にすり替え、Cは思い込みを事実として述べつつeat/enjoyの関係を崩し、Dは「食べられるのは認めるが楽しめるとは信じない」とlet aloneの向きを逆にしている。"
+  }
+]}

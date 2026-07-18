@@ -1,0 +1,52 @@
+{"no": 15, "en": "What you see or hear is often defined by the character of the language through which you perceive it.", "ja": "あなたが見たり聞いたりするものは、あなたがそれを知覚する際に用いる言語の性質によって規定されることが多い。", "questions": [
+{
+ "tag": "前置詞+関係代名詞の先行詞と働き",
+ "q": "\"through which you perceive it\" における \"which\" について、先行詞と関係詞節内での働きの組み合わせとして正しいものを1つ選びなさい。",
+ "a": "先行詞は \"the character\" で、節内では \"perceive\" の主語を表す",
+ "b": "先行詞は \"the language\" で、節内では \"perceive\" の手段(それを通して知覚する媒体)を表す",
+ "c": "先行詞は \"the character of the language\" で、節内では \"perceive\" の目的語を表す",
+ "d": "先行詞は \"What you see or hear\" で、節内では知覚が行われる場所を表す",
+ "answer": "B",
+ "explanation": "\"through which\" は \"you perceive it through the language\" を関係詞化したもので、先行詞は直前の \"the language\"、節内では手段(それを通して知覚する媒体)を表す。よってB。AやCは先行詞を \"the character\" 側に取り違えており、Dは主節主語を先行詞と誤認している。"
+},
+{
+ "tag": "代名詞itの指示内容",
+ "q": "\"through which you perceive it\" の \"it\" が指す内容として最も適切なものを1つ選びなさい。",
+ "a": "\"the language\"",
+ "b": "\"the character of the language\"",
+ "c": "\"What you see or hear\"",
+ "d": "\"the character\"",
+ "answer": "C",
+ "explanation": "\"perceive it\"(それを知覚する)の目的語 \"it\" が指すのは、主節の主語であり文全体の話題である \"What you see or hear\"(見聞きするもの)。言語を通して知覚される対象はまさにこれである。AやBは知覚の媒体・要因であって知覚される対象ではないため不適。"
+},
+{
+ "tag": "前置詞+関係代名詞の同用法識別",
+ "q": "\"the language through which you perceive it\" の \"through which\"(前置詞+関係代名詞)と同じ用法を含む文を1つ選びなさい。",
+ "a": "I really wonder which of the tools the artist finally used.",
+ "b": "The artist clearly showed us which tool worked the best.",
+ "c": "Which tool the artist truly prefers is still unknown to us.",
+ "d": "This is the tool with which the artist created the sculpture.",
+ "answer": "D",
+ "explanation": "Dの \"with which\" は「前置詞+関係代名詞」で先行詞 \"the tool\" を修飾する形容詞節(created the sculpture with the tool)であり、原文の \"through which\" と同用法。A・B・Cの \"which\" はいずれも疑問詞で、名詞節(間接疑問)を作っており、前置詞+関係代名詞ではない。"
+},
+{
+ "tag": "内容一致(主客・因果の方向)",
+ "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+ "a": "人が何を見聞きするかは、それを知覚する際に用いる言語の性質によって左右されることが多い。",
+ "b": "言語の性質は、人がそれを通して何を見聞きするかによって決められることが多い。",
+ "c": "人は言語を通して知覚することで、見聞きするものをより正確に理解できるようになる。",
+ "d": "人が見聞きするものは、用いる言語の性質とは無関係にほとんど一定に定まる。",
+ "answer": "A",
+ "explanation": "原文は「見聞きするもの(主語)が言語の性質によって規定される」という受動関係なので、Aが正しい。Bは「言語の性質が見聞きによって決まる」と主客・因果の方向を逆転させている。Cの「より正確に理解できる」は本文にない内容、Dは \"defined by ... the language\" を否定して逆の意味にしている。"
+},
+{
+ "tag": "言い換え(同義判定)",
+ "q": "Which one is closest in meaning to the sentence above?",
+ "a": "The language a person uses is often shaped by whatever that person happens to see or hear.",
+ "b": "Whatever a person sees or hears stays the same no matter which language is used to perceive it.",
+ "c": "What a person sees or hears is frequently shaped by the nature of the language used to perceive it.",
+ "d": "A person can see or hear things far more clearly by choosing a language of richer character.",
+ "answer": "C",
+ "explanation": "原文は「見聞きするものが、それを知覚するのに用いる言語の性質によって規定される」の意で、\"defined\" を \"shaped\"、\"the character\" を \"the nature\" に言い換えたCが同義。Aは決定の方向を逆にしており、Bは \"defined by\" を否定して「言語に左右されない」と逆転、Dは本文にない「より鮮明に知覚できる」を加えている。"
+}
+]}

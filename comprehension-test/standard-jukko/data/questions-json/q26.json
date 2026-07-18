@@ -1,0 +1,57 @@
+{
+ "no": 26,
+ "en": "Karaoke machines are a wonderful invention. However, the trouble with them is that they only allow you to sing along with them.",
+ "ja": "カラオケ機は素晴らしい発明だ。しかし、その困った点は、それに合わせて歌うことしかできないという点である。",
+ "questions": [
+  {
+   "tag": "接続詞that・名詞節",
+   "q": "\"the trouble with them is that they only allow you to sing along with them\" における \"that\" の文法的な働きとして最も適切なものを選びなさい。",
+   "a": "\"the trouble\" を先行詞とする関係代名詞",
+   "b": "「~するので」という理由を表す副詞節を導く接続詞",
+   "c": "\"is\" の補語となる名詞節を導く接続詞",
+   "d": "\"the trouble\" と同格の名詞節を導く接続詞",
+   "answer": "C",
+   "explanation": "\"the trouble ... is that S V\" は「S is C(補語)」の形で、\"that\" 以下が \"is\" の補語となる名詞節を導く接続詞。that節は \"they only allow you to sing along with them\" と要素の欠けない完全文なので関係代名詞(A)ではない。同格(D)は \"the fact that ...\" のように名詞に直接続く形で、ここは \"is\" の後ろなので補語であり同格ではない。"
+  },
+  {
+   "tag": "指示語・主語の特定",
+   "q": "第2文 \"they only allow you to sing along with them\" の \"they\" が指すものとして最も適切なものを選びなさい。",
+   "a": "カラオケで一緒に歌う人々",
+   "b": "カラオケ機",
+   "c": "カラオケの歌詞",
+   "d": "カラオケ店の客",
+   "answer": "B",
+   "explanation": "\"they\" は前出の \"the trouble with them\"、さらにその前の \"Karaoke machines\" を受け、\"allow you to sing along\" の動作主(許可する側)。歌う主体は \"you\" であり \"they\" ではないので、歌う人々(A)や客(D)は取り違え。文末の \"with them\" も同じくカラオケ機を指す。"
+  },
+  {
+   "tag": "allow O to do・onlyの解釈",
+   "q": "\"they only allow you to sing along with them\" の解釈として最も適切なものを選びなさい。",
+   "a": "あなただけが、それらに合わせて歌うことを許される",
+   "b": "それらは、あなたが一人で自由に歌うことを可能にする",
+   "c": "あなたは、それらに歌ってもらうことしかできない",
+   "d": "それらは、あなたがそれらに合わせて歌うことだけを可能にする",
+   "answer": "D",
+   "explanation": "\"allow O to do\"(OがVするのを可能にする・許す)で、歌うのは \"you\"。\"only\" は「合わせて歌う」以外はできないという範囲を限定するので D が正しい。\"only\" を \"you\" にかけて「あなただけ」とするのは誤り(A)。\"sing along with them\"(それに合わせて歌う)を「一人で自由に」(B)や「機械に歌わせる」(C 主客逆転)と取るのも誤読。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "カラオケ機は素晴らしい発明だが、機械に合わせて歌うことしかできないのが難点だ。",
+   "b": "カラオケ機は素晴らしい発明なので、機械に合わせてさえ歌えば十分に楽しめる。",
+   "c": "カラオケ機の問題は、あなた一人だけしか一緒に歌えないようにできている点だ。",
+   "d": "カラオケ機は素晴らしい発明だが、うまく歌えるようにしてくれない点が難点だ。",
+   "answer": "A",
+   "explanation": "\"the trouble with them is that they only allow you to sing along with them\" は「困った点は、それに合わせて歌うことしかできないことだ」の意で A が正しい。b は \"trouble\"(難点)を肯定的な内容に取り違えている。c は \"only\" を「あなただけ」と誤読。d は \"sing along\"(合わせて歌う)を「うまく歌う」と取り違えており、本文にない内容。"
+  },
+  {
+   "tag": "言い換え(英語)",
+   "q": "Which one is closest in meaning to the sentence \"the trouble with them is that they only allow you to sing along with them\"?",
+   "a": "The problem with karaoke machines is that they will not let you sing along with the music.",
+   "b": "The good thing about karaoke machines is that they let you sing along however you like.",
+   "c": "The drawback of karaoke machines is that all you can do with them is sing along to the music.",
+   "d": "The trouble with karaoke machines is that only certain people are allowed to sing along.",
+   "answer": "C",
+   "explanation": "元の文は「合わせて歌うことしかできない」という限定の意味で、\"all you can do ... is sing along\" と言い換えた C が同義。a は「歌わせてくれない」と否定にしてしまい逆の意味。b は難点ではなく利点として述べ「自由に」も追加していて誤り。d は \"only\" を「一部の人だけ」と取り違えている。"
+  }
+ ]
+}

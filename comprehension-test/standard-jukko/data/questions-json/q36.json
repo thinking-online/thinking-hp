@@ -1,0 +1,52 @@
+{"no": 36, "en": "Some people seem so confident in their opinions about popular music that we tend to believe whatever they say, even though those opinions may often be completely mistaken.", "ja": "一部の人々は、流行音楽についての自分の意見にとても自信を持っているように見えるので、たとえその意見がしばしば完全に間違っている場合があるとしても、私たちは彼らの言うことを何でも信じてしまいがちだ。", "questions": [
+  {
+   "tag": "so...that構文(程度・結果)",
+   "q": "\"seem so confident in their opinions ... that we tend to believe whatever they say\" の構造の説明として最も適切なものはどれか。",
+   "a": "so は「そのように」の意味の副詞で、that 節は「〜する時」という時を表す副詞節である。",
+   "b": "so は「だから」という意味の接続詞で、that は先行詞 opinions を受ける関係代名詞である。",
+   "c": "so は形容詞 confident を強め、that 節は「とても〜なので、その結果…」という程度・結果を表す。",
+   "d": "so は形容詞 confident を強め、that 節は「〜ということ」という名詞節で seem の補語になっている。",
+   "answer": "C",
+   "explanation": "\"so + 形容詞 ... that S V\" は「とても〜なので…だ」という程度・結果を表す構文で、so は confident を強め、that は結果を導く接続詞。よって C が正しい。that 節は時(A)でも関係代名詞(B)でもなく、seem の補語となる名詞節(D)でもない。"
+  },
+  {
+   "tag": "複合関係代名詞whatever",
+   "q": "\"we tend to believe whatever they say\" の \"whatever they say\" の働きとして最も適切なものはどれか。",
+   "a": "「彼らが何を言おうとも」という譲歩を表し、動詞 believe を修飾する副詞節である。",
+   "b": "「彼らが言うことは何でも」という意味で、動詞 believe の目的語となる名詞節である。",
+   "c": "「彼らが言うのはどちらでも」という意味で、二つの選択肢のどちらかを示している。",
+   "d": "「彼らが言うとき」という時を表し、主節全体を修飾する副詞節である。",
+   "answer": "B",
+   "explanation": "whatever は複合関係代名詞で anything that(〜するものは何でも)の意味を持ち、ここでは believe の目的語となる名詞節を作っている。よって B。譲歩の副詞節「何を言おうとも」(A)なら believe の目的語が欠けてしまい、文が成立しない。"
+  },
+  {
+   "tag": "構文識別(so...that)",
+   "q": "本文の \"so confident ... that ...\" と同じ用法(程度・結果を表す so ... that)を含む文を1つ選べ。",
+   "a": "I ran fast so that I could catch the last train.",
+   "b": "She is not so young as she looks.",
+   "c": "He said so, and everyone believed him at once.",
+   "d": "The box was so heavy that I could not lift it by myself.",
+   "answer": "D",
+   "explanation": "本文の so ... that は「とても〜なので…」という程度・結果を表す。同じ構文は D の \"so heavy that ...\"。A は目的を表す \"so that\"、B は同等比較の否定 \"not so ... as\"、C は「そう」を意味する副詞 so で、いずれも用法が異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "私たち自身が流行音楽に強い自信を持っているために、他人がその話題について語ることを疑わずにそのまま受け入れてしまいやすい。",
+   "b": "自信ありげに意見を語る人の見解は実際に完全に正しいことが多いので、それをそのまま信じてしまうのはむしろ当然のことである。",
+   "c": "流行音楽についての意見に自信たっぷりに見える人がいるため、その意見が実際にはしばしば完全に誤っている場合でも、私たちは彼らの発言をそのまま信じてしまいやすい。",
+   "d": "私たちが彼らの流行音楽についての意見を信じて受け入れるからこそ、彼らはその意見にますます自信を持つようになる。",
+   "answer": "C",
+   "explanation": "本文は、自信ありげに見えるのは \"some people\" であり、\"even though those opinions may often be completely mistaken\" とその意見が誤っている可能性を認めつつ、私たちが信じがちだと述べている。よって C。自信の主語を we にする A、mistaken を「正しい」に反転させる B、信じることと自信の因果を逆転させる D はいずれも本文と矛盾する。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Because some people appear so sure of their views on pop music, we are inclined to accept anything they say, although such views may frequently be entirely wrong.",
+   "b": "Some people are so confident about pop music that they believe everything we say, even though we are often completely wrong.",
+   "c": "Some people seem so unsure of their opinions on pop music that we rarely believe what they say, even when they turn out to be right.",
+   "d": "We tend to trust people's opinions about pop music only when we are certain that those opinions are never mistaken.",
+   "answer": "A",
+   "explanation": "原文は「自信ありげに見える人がいる→彼らの言うことを何でも信じがち」「その意見はしばしば全く誤りかもしれない」の三点を含む。A はこれを sure / accept anything / frequently entirely wrong と語彙・構造を変えつつ保持している。B は「信じる」の主客を逆転(彼らが私たちを信じる)、C は confident を unsure に、believe を rarely believe に反転、D は「決して誤らないと確信したときだけ信じる」と条件を変えており、いずれも意味がずれる。"
+  }
+]}

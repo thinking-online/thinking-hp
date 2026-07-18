@@ -1,0 +1,52 @@
+{"no": 46, "en": "Workers in that factory should realize quite clearly that wearing protective clothing may help prevent injuries but will not fully guarantee their safety in all situations.", "ja": "その工場で働く人たちは、保護服を着ることはけがの防止に役立つかもしれないが、あらゆる状況で自分たちの安全を完全に保証してくれるわけではない、ということをはっきりと自覚すべきである。", "questions": [
+{
+"tag": "接続詞thatの働き",
+"q": "\"...should realize quite clearly that wearing protective clothing...\" の \"that\" の文中での働きとして最も適切なものを選びなさい。",
+"a": "直前の副詞 \"clearly\" を先行詞とする関係代名詞",
+"b": "文末の \"in all situations\" を導く副詞節を作る接続詞",
+"c": "動詞 \"realize\" の目的語となる名詞節を作る接続詞",
+"d": "直前の名詞の内容を説明する同格の接続詞",
+"answer": "C",
+"explanation": "\"realize\" は「〜を自覚する」という他動詞で、目的語が必要。\"that\" 以下 \"wearing ... situations\" 全体がその目的語となる名詞節を作っている。A は \"clearly\" が副詞で先行詞になれず誤り。D は \"that\" の前に内容を受ける名詞がないため同格とは取れない。"
+},
+{
+"tag": "節内主語の特定",
+"q": "\"that\" 節の中で、\"may help prevent\" と \"will not fully guarantee\" の主語にあたるものを選びなさい。",
+"a": "wearing protective clothing",
+"b": "Workers (in that factory)",
+"c": "their safety",
+"d": "protective clothing",
+"answer": "A",
+"explanation": "that 節内の主語は動名詞句 \"wearing protective clothing\"(保護服を着ること)で、これが \"may help\" と \"will not guarantee\" の共通主語。B の Workers は主節の \"should realize\" の主語であって that 節内の主語ではない。D は動名詞 wearing の目的語にすぎず、主語となるのは句全体である点で不正確。"
+},
+{
+"tag": "butが結ぶもの",
+"q": "\"...may help prevent injuries but will not fully guarantee their safety...\" の \"but\" が結んでいる二つの要素として最も適切なものを選びなさい。",
+"a": "\"should realize\" と \"will not fully guarantee\"",
+"b": "\"Workers\" と \"their safety\"",
+"c": "\"help\" と \"prevent\"",
+"d": "\"may help prevent injuries\" と \"will not fully guarantee their safety\"",
+"answer": "D",
+"explanation": "\"but\" は同じ主語 \"wearing protective clothing\" を共有する二つの述部、\"may help prevent injuries\"(けがを防ぐのに役立つかもしれない)と \"will not fully guarantee their safety\"(安全を完全には保証しない)を対比的に結んでいる。A は主節の動詞と that 節内の動詞をまたいでおり構造上結べない。C の help と prevent は \"help (to) prevent\" という一続きの表現で対比関係ではない。"
+},
+{
+"tag": "内容一致",
+"q": "この英文の内容として最も適切なものを1つ選びなさい。",
+"a": "保護服を着ればどんな状況でもけがを完全に防げるので、労働者は安心してよいということ。",
+"b": "保護服の着用はけがの防止に役立つことはあるが、あらゆる状況で安全を完全に保証するわけではない、と労働者ははっきり理解すべきだということ。",
+"c": "保護服を着てもけがを防ぐ役には立たず、安全もまったく守られないと労働者は知るべきだということ。",
+"d": "労働者は、保護服を着るかどうかにかかわらず、どんな状況でも自分は安全だと自覚すべきだということ。",
+"answer": "B",
+"explanation": "本文は \"may help prevent injuries but will not fully guarantee their safety in all situations\" と述べ、保護服はけが防止に役立つ「かもしれない」が、あらゆる状況で安全を「完全には保証しない」という部分否定を含む。B がこの二面性を正しく捉えている。A は will not guarantee を無視して逆の結論にしており、C は \"may help prevent\" を全否定に取り違えている。D は本文にない主張。"
+},
+{
+"tag": "英文言い換え",
+"q": "Which one is closest in meaning to the sentence above?",
+"a": "Workers in that factory should clearly see that protective clothing never helps to prevent injuries and cannot keep them safe in any situation.",
+"b": "Workers in that factory ought to know clearly that protective clothing prevents all injuries and fully protects them in every situation.",
+"c": "Workers in that factory need to understand clearly that, although protective clothing can reduce the risk of injury, it does not ensure complete safety under every circumstance.",
+"d": "Workers in that factory must realize clearly that wearing protective clothing is the only way to stay completely safe while at work.",
+"answer": "C",
+"explanation": "原文は「保護服はけが防止に役立ちうるが、あらゆる状況で安全を完全には保証しない」という趣旨で、C が \"can reduce the risk of injury\" と \"does not ensure complete safety under every circumstance\" で正確に言い換えている。A は \"never helps\" と防止効果を全否定して誤り。B は逆に「すべてのけがを防ぎ完全に守る」と過大に述べており、D は原文にない「唯一の方法」という主張を加えている。"
+}
+]}

@@ -1,0 +1,52 @@
+{"no": 50, "en": "Built more than four thousand years ago, the pyramids still remain nearly perfect.", "ja": "4000年以上も前に建てられたにもかかわらず、ピラミッドは今なおほぼ完璧なままである。", "questions": [
+{
+ "tag": "過去分詞の分詞構文:意味上の主語と態",
+ "q": "文頭の \"Built more than four thousand years ago\" について正しい説明を1つ選びなさい。",
+ "a": "意味上の主語は一般の人々で、「(人々が)建てた」という能動の関係を表す。",
+ "b": "意味上の主語は \"the pyramids\" で、「(ピラミッドが)建てられた」という受動の関係を表す。",
+ "c": "意味上の主語は \"the pyramids\" で、「(ピラミッドが)何かを建てた」という能動の関係を表す。",
+ "d": "意味上の主語は \"four thousand years\" で、時間の経過を表す。",
+ "answer": "B",
+ "explanation": "\"Built\" は過去分詞で、ピラミッドは「建てられる」側だから受動の関係を表し、意味上の主語は主節の主語 \"the pyramids\" に一致する。C は同じ主語を能動に取り違えた誤り、A は主語を「人々」と誤り、D は時を表す副詞句を主語と誤読している。"
+},
+{
+ "tag": "分詞句と主節の論理関係(譲歩)",
+ "q": "文頭の分詞句 \"Built more than four thousand years ago\" と主節との論理関係として最も適切なものを1つ選びなさい。",
+ "a": "時(4000年以上前に建てられた、そのときに完璧になった)",
+ "b": "理由(4000年以上前に建てられたので、今も完璧である)",
+ "c": "譲歩(4000年以上前に建てられたのに、今もほぼ完璧である)",
+ "d": "条件(もし4000年以上前に建てられたなら、今も完璧である)",
+ "answer": "C",
+ "explanation": "主節の \"still\"(それでもなお)が対比を示し、「大昔に建てられたのに今なおほぼ完璧だ」という譲歩の関係になる。B の理由だと「古いから完璧」という不自然な因果になり、A・D も \"still\" が示す対比の含みを説明できない。"
+},
+{
+ "tag": "同じ用法(文頭の過去分詞構文)の識別",
+ "q": "次のうち、文頭の \"Built more than four thousand years ago\" と同じ用法(受動の意味を持つ過去分詞で始まる分詞構文)を含む文を1つ選びなさい。",
+ "a": "Building a new house, they hired a famous architect.",
+ "b": "The man building the bridge is my uncle.",
+ "c": "To build a strong team, the coach trained them hard.",
+ "d": "Written in simple English, the book is easy for beginners to read.",
+ "answer": "D",
+ "explanation": "D の \"Written...\" は過去分詞で始まる分詞構文で、主語 \"the book\" が「書かれる」側という受動の関係になり、原文と同じ用法。A は現在分詞(能動)、B は名詞 \"The man\" を後ろから修飾する現在分詞、C は不定詞句で、いずれも受動の過去分詞構文ではない。"
+},
+{
+ "tag": "内容一致(残存状態の理解)",
+ "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+ "a": "ピラミッドは4000年以上前に建てられたが、今もほとんど完璧な状態を保っている。",
+ "b": "ピラミッドは建造に4000年以上を要し、ようやく完璧な状態に仕上がった。",
+ "c": "ピラミッドはかつては完璧だったが、4000年以上を経て今では崩れかけている。",
+ "d": "ピラミッドは4000年以上前に完璧に建てられたので、人々は今もそれを建て続けている。",
+ "answer": "A",
+ "explanation": "\"still remain nearly perfect\" は「今なおほぼ完璧なまま」の意で、A が正しい。B は \"more than four thousand years ago\"(4000年以上前に)を建造期間と誤読、C は \"still remain\" を逆に「もはや保っていない」と取り違え、D は \"remain\" を「建て続ける」と誤読している。"
+},
+{
+ "tag": "言い換え(譲歩・受動・残存の同義)",
+ "q": "Which one is closest in meaning to the sentence above?",
+ "a": "The pyramids took more than four thousand years to build, and they are almost complete now.",
+ "b": "Although they were built over four thousand years ago, the pyramids are still almost perfectly preserved.",
+ "c": "The pyramids were perfect when built, but after four thousand years they have fallen into ruin.",
+ "d": "People built the pyramids four thousand years ago and are still trying to make them perfect.",
+ "answer": "B",
+ "explanation": "原文は「大昔に建てられたのに今もほぼ完璧なまま」という譲歩+受動+残存の内容で、B がこれを正確に言い換えている。A は \"took ... to build\" で建造に4000年かかったと誤読、C は \"fallen into ruin\" で逆の崩壊を述べ、D は \"still trying to make them perfect\" で「今も完璧にしようとしている」と意味をずらしている。"
+}
+]}

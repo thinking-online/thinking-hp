@@ -1,0 +1,57 @@
+{
+ "no": 53,
+ "en": "The earthquake that struck early yesterday morning was strong, its tremors being felt hundreds of kilometers away.",
+ "ja": "昨日の早朝に襲った地震は強く、その揺れは数百キロ離れた場所でも感じられた。",
+ "questions": [
+  {
+   "tag": "構造解釈",
+   "q": "文末の \"its tremors being felt hundreds of kilometers away\" は独立分詞構文である。この分詞構文の意味上の主語と \"being felt\" の意味の組み合わせとして正しいものを1つ選びなさい。",
+   "a": "意味上の主語は \"its tremors\" で、揺れが数百キロ先で「感じられた」(受動)",
+   "b": "意味上の主語は \"The earthquake\" で、地震が数百キロ先を「感じた」(能動)",
+   "c": "意味上の主語は省略された \"we\" で、私たちが揺れを「感じた」(能動)",
+   "d": "意味上の主語は \"hundreds of kilometers\" で、距離が「感じられた」(受動)",
+   "answer": "A",
+   "explanation": "独立分詞構文は分詞の直前に主節と異なる意味上の主語を置く。ここでは \"its tremors\"(その揺れ)が主語で、\"being felt\" は be+過去分詞の受動なので「揺れが感じられた」となる。主節の主語 \"The earthquake\" を分詞の主語と取るBや、能動に読むC・Dは受動の being felt と矛盾する。"
+  },
+  {
+   "tag": "構造解釈",
+   "q": "分詞構文中の \"its tremors\" の \"its\" が指す内容として最も適切なものを1つ選びなさい。",
+   "a": "\"yesterday morning\"(昨日の朝)",
+   "b": "\"The earthquake\"(その地震)",
+   "c": "\"tremors\"(揺れそのもの)",
+   "d": "\"hundreds of kilometers\"(数百キロ)",
+   "answer": "B",
+   "explanation": "its は単数の所有格で、直前の文脈で単数の主役である \"The earthquake\" を指す。よって「その地震の揺れ」の意味になる。its が tremors 自身を指すことはなく(C)、時間表現の A や距離の D は所有される名詞 tremors の持ち主になり得ない。"
+  },
+  {
+   "tag": "構造解釈",
+   "q": "下線部の \"its tremors being felt hundreds of kilometers away\" と同じ構造(主節と異なる独自の主語を伴う分詞構文)を含む文を1つ選びなさい。",
+   "a": "\"Walking along the beach, we found a beautiful shell.\"",
+   "b": "\"The man standing near the gate is my uncle.\"",
+   "c": "\"The concert was wonderful, its final song being praised by everyone.\"",
+   "d": "\"I heard someone calling my name in the crowd.\"",
+   "answer": "C",
+   "explanation": "Cは \"its final song\" という主節(The concert)と異なる主語を分詞 being praised の前に置いた独立分詞構文で、本文と同型。Aは意味上の主語が主節の we と一致する通常の分詞構文、Bは名詞 The man を修飾する現在分詞、Dは知覚動詞 heard の目的語 someone を修飾する分詞で、いずれも独自の主語を持つ独立分詞構文ではない。"
+  },
+  {
+   "tag": "内容一致(日本語)",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "その地震は数百キロ離れた場所で発生し、震源の近くではあまり揺れを感じなかった。",
+   "b": "地震の揺れは震源付近では強かったが、数百キロ離れた地域までは及ばなかった。",
+   "c": "人々は地震が到達するより前に、数百キロ先の地点で前触れの揺れを感じ取った。",
+   "d": "その地震は強く、揺れは震源から数百キロ離れた場所でも感じられた。",
+   "answer": "D",
+   "explanation": "本文は「地震は強く(was strong)、その揺れが数百キロ離れた所でも感じられた」と述べており、Dが正しい。地震の発生場所を数百キロ先とするAは its(=その地震)の取り違え、揺れが遠方に及ばなかったとするBは felt hundreds of kilometers away と正反対、到達前に感じたとするCは時間関係の誤読で、いずれも本文と矛盾する。"
+  },
+  {
+   "tag": "言い換え(英語)",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "The earthquake that hit early yesterday morning was strong because its tremors had already been felt hundreds of kilometers away.",
+   "b": "The earthquake that hit early yesterday morning was so powerful that its shaking could be felt hundreds of kilometers away.",
+   "c": "The earthquake that hit early yesterday morning was strong, though its tremors were not felt more than a few kilometers away.",
+   "d": "The earthquake that hit early yesterday morning felt strong only to the people who were standing hundreds of kilometers away from it.",
+   "answer": "B",
+   "explanation": "独立分詞構文は主節の内容に付随する結果を表しており、「強かった→その結果、揺れが遠くでも感じられた」という論理をso...that...で言い換えたBが同義。Aは「揺れが感じられたから強かった」と因果を逆転させており誤り。Cは not...more than a few kilometers away で範囲を反転、Dは「遠くの人にだけ強く感じられた」と主客・修飾関係をずらしており原文とずれる。"
+  }
+ ]
+}

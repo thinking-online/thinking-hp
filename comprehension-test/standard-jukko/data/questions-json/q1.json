@@ -1,0 +1,52 @@
+{"no": 1, "en": "Our years of protest have finally brought about changes in the law.", "ja": "私たちの長年にわたる抗議が、ついに法律に変化をもたらした(=長年抗議を続けてきた結果、ついに法律が改正された)。", "questions": [
+ {
+  "tag": "主語の特定",
+  "q": "この文で動詞 \"have (finally brought about)\" が受けている主語の核(中心となる語)はどれか。",
+  "a": "\"Our\"",
+  "b": "\"years\"",
+  "c": "\"protest\"",
+  "d": "\"law\"",
+  "answer": "B",
+  "explanation": "主語 \"Our years of protest\" の核は複数形の \"years\" で、動詞 \"have\" はこれと数が一致している。\"of protest\" は \"years\" を後ろから説明する前置詞句にすぎず、\"protest\" は of の目的語なので主語の核ではない。"
+ },
+ {
+  "tag": "修飾の係り先",
+  "q": "\"brought about changes in the law\" の \"in the law\" は、文中で何を修飾しているか。",
+  "a": "\"brought about\"(どこでもたらしたかを説明)",
+  "b": "\"protest\"(どんな抗議かを説明)",
+  "c": "\"years\"(いつの年月かを説明)",
+  "d": "\"changes\"(どんな変化かを説明)",
+  "answer": "D",
+  "explanation": "\"changes in the law\" で \"in the law\" は直前の \"changes\" を修飾し、「法律における変化=法改正」という意味のまとまりを作る。動詞や \"years\" を修飾して「法律の中でもたらした」などと読むのは誤り。"
+ },
+ {
+  "tag": "句動詞の識別",
+  "q": "この文の \"brought about\" と最も近い意味・用法で使われている英文はどれか。",
+  "a": "The new policy brought about a major change in our daily lives.",
+  "b": "He brought about his laptop to show us the holiday photos.",
+  "c": "She suddenly brought about the subject of money during dinner.",
+  "d": "The staff brought about the guests to the main hall.",
+  "answer": "A",
+  "explanation": "\"bring about\" は「〜を引き起こす・もたらす」という意味の句動詞で、Aの「大きな変化をもたらした」が同じ用法。Bは単に「持ってきた」(bring)、Cは「話題を持ち出す」(bring up)、Dは「連れてくる」の意味で、いずれも「引き起こす」ではない。"
+ },
+ {
+  "tag": "内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "政府が独自に法律を改正したのであって、私たちの抗議は関係がなかった。",
+  "b": "法律が変わったことをきっかけに、私たちは長年の抗議を始めることになった。",
+  "c": "長年にわたって私たちが抗議を続けた結果、ついに法律が改正された。",
+  "d": "私たちは長年抗議を続けてきたが、法律はいまだに変わっていない。",
+  "answer": "C",
+  "explanation": "無生物主語 \"years of protest\" が原因、\"changes in the law\" が結果で、「長年の抗議の結果、ついに法律が変わった」を表す(正解C)。Bは因果関係が逆、Aは動作主・因果を取り違えており、Dは \"finally brought about\"(実際に変化が生じた)を否定していて本文と矛盾する。"
+ },
+ {
+  "tag": "言い換え",
+  "q": "Which one is closest in meaning to the sentence \"Our years of protest have finally brought about changes in the law.\"?",
+  "a": "The law was changed first, and that finally caused us to protest for years.",
+  "b": "Our years of protest will eventually bring about changes in the law.",
+  "c": "Even after years of protest, the law has still not been changed.",
+  "d": "Because we had protested for many years, the law was finally changed.",
+  "answer": "D",
+  "explanation": "原文は「長年の抗議が原因で、ついに法律が変わった(完了)」の意味で、因果と完了を正しく保つDが同義。Aは因果が逆、Bは未来(まだ実現していない)、Cは否定で「まだ変わっていない」となり、いずれも本文と意味がずれる。"
+ }
+]}

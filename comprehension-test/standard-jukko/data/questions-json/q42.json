@@ -1,0 +1,52 @@
+{"no": 42, "en": "For farmers to succeed in those areas where drought has become a problem, there must be a greater effort on the part of the government to ensure a stable water supply.", "ja": "干ばつが問題となっているような地域で農民がうまくやっていくためには、安定した水の供給を確保しようとする政府側のいっそう大きな努力がなければならない。", "questions": [
+  {
+   "tag": "for+意味上の主語+to do(目的)",
+   "q": "文頭の \"For farmers to succeed in those areas where drought has become a problem,\" の解釈として最も適切なものを1つ選びなさい。",
+   "a": "農民にとってそうした地域は成功しやすいので",
+   "b": "農民がそうした地域で成功するためには",
+   "c": "農民がそうした地域で成功したことによって",
+   "d": "農民がそうした地域で成功するかどうかは",
+   "answer": "B",
+   "explanation": "\"For farmers to succeed ...\" は「for+意味上の主語+to do」の形で、「農民が...成功するためには」という目的・条件を表す副詞句であり、主節は \"there must be ...\" である。Aは for を単なる「にとって」と読み根拠のない因果を加え、Cは「成功したことによって」と原因化、Dは「かどうか」と名詞節に取り違えており、いずれも for...to の目的の意味を外している。"
+  },
+  {
+   "tag": "関係副詞whereの先行詞と働き",
+   "q": "\"where drought has become a problem\" についての説明として最も適切なものを1つ選びなさい。",
+   "a": "関係代名詞whereが導く形容詞節で、\"drought\"(干ばつ)を修飾している",
+   "b": "疑問副詞whereが導く名詞節で、動詞の目的語になっている",
+   "c": "関係副詞whereが導く副詞節で、\"succeed\"(成功する)を修飾している",
+   "d": "関係副詞whereが導く形容詞節で、\"those areas\"(そうした地域)を修飾している",
+   "answer": "D",
+   "explanation": "where は先行詞 \"those areas\" を修飾する関係副詞で、「干ばつが問題になっている(地域)」という形容詞節を作る(where = in which)。Aは where を関係代名詞とし先行詞を drought と誤り、Bは名詞節(疑問副詞)と誤り、Cは副詞節としているが、ここでは areas を限定する形容詞節である。"
+  },
+  {
+   "tag": "不定詞の形容詞用法(係り先)",
+   "q": "文末の \"to ensure a stable water supply\" の働きとして最も適切なものを1つ選びなさい。",
+   "a": "直前の \"a greater effort\"(より大きな努力)を修飾し、その努力の目的・内容を表す",
+   "b": "\"the government\"(政府)を修飾し、どの政府なのかを説明している",
+   "c": "主節全体を修飾し、「その結果として」という結果を表す",
+   "d": "\"there must be\" の意味上の主語となっている",
+   "answer": "A",
+   "explanation": "\"to ensure a stable water supply\" は直前の名詞 \"a greater effort\" を修飾する形容詞用法の不定詞で(effort to do の型)、「安定した水供給を確保するための(努力)」と努力の内容・目的を示す。Cの結果用法、Dの主語、Bの government 修飾はいずれも係り先を取り違えている。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "政府が水の安定供給に大きく努力してきたおかげで、干ばつ地域でも農民は成功できている。",
+   "b": "干ばつが問題となっている地域の農民は、水の安定供給を確保するために、みずからより大きな努力をしなければならない。",
+   "c": "干ばつが問題となっている地域で農民がうまくやっていくには、水の安定供給を保証するための政府側のいっそうの努力が必要である。",
+   "d": "農民が努力しさえすれば、政府は干ばつ地域に安定した水供給を保証するだろう。",
+   "answer": "C",
+   "explanation": "文意は「干ばつ地域で農民がやっていくには、水の安定供給を確保しようとする政府のさらなる努力が必要だ」であり、努力の主体は \"on the part of the government\"(政府側)である。Bは努力の主体を農民に取り違え、Aは必要性を「〜のおかげで成功している」と既成事実・因果に逆転させ、Dは条件の主客を入れ替えている。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Farmers must make a greater effort themselves to secure a stable water supply if they want to succeed where drought is a problem.",
+   "b": "If farmers are to succeed in areas where drought has become a problem, the government must make a greater effort to secure a stable water supply.",
+   "c": "The government's greater effort to secure a stable water supply has allowed farmers to succeed in areas hit by drought.",
+   "d": "Wherever drought is a problem, the government should secure water supplies so that every farmer can succeed.",
+   "answer": "B",
+   "explanation": "原文は「農民が(干ばつ地域で)成功するには、政府側のより大きな努力がなければならない」であり、Bは条件・場所の限定・努力の主体(政府)・目的(安定供給の確保)をすべて保持する。Aは努力の主体を農民にすり替え、Cは必要性を達成済みの事実(has allowed)に変え、Dは wherever / every farmer と範囲を過度に一般化し greater effort の含意も落としている。"
+  }
+ ]}

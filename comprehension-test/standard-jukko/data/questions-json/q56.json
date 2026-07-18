@@ -1,0 +1,52 @@
+{"no": 56, "en": "Recent studies have made it clear that — contrary to popular belief — young boys are, on average, just as sensitive about their looks as young girls are.", "ja": "最近の研究によって、世間一般の考えに反して、男の子も平均すると、女の子と同じくらい自分の外見を気にしているということが明らかになった。", "questions": [
+{
+ "tag": "形式目的語のit",
+ "q": "\"made it clear that ...\" の \"it\" は何か。その説明として最も適切なものを1つ選びなさい。",
+ "a": "直前の \"Recent studies\" を受ける代名詞で、「それら(研究)を明確にした」という意味になる",
+ "b": "\"make O C\"(OをCにする)の形式目的語で、真の目的語は \"that\" 以下の名詞節全体である",
+ "c": "天候や時間を表すときと同じ、特に意味を持たない非人称の it である",
+ "d": "漠然と場の状況全体を指し、「事態を明らかにした」という意味を表す代名詞である",
+ "answer": "B",
+ "explanation": "\"make O C\" の O が長い that 節のため、仮の O として it を置き、真の目的語 \"that ... young girls are\" を後ろに回した形式目的語である。よってBが正解。Aは it が studies を指すとするが、複数名詞を単数の it で受けられず、意味も通らない。C・Dは非人称・状況の it とするが、ここでは後続の that 節という明確な内容を指しているので誤り。"
+},
+{
+ "tag": "as...as比較の省略",
+ "q": "文末の \"as young girls are\" の \"are\" の後には語句が省略されている。補うのに最も適切なものを1つ選びなさい。",
+ "a": "sensitive about their looks",
+ "b": "on average made clear",
+ "c": "contrary to popular belief",
+ "d": "recent studies about boys",
+ "answer": "A",
+ "explanation": "\"just as sensitive ... as young girls are\" は同等比較で、後半は繰り返しを避けて \"are (sensitive about their looks)\" が省略されている(their は girls を指す)。よってAが正解。B・C・Dはいずれも比較の対象(外見を気にする度合い)と無関係な語句で、are の補語にならない。"
+},
+{
+ "tag": "同用法の識別(形式目的語)",
+ "q": "\"made it clear that ...\" の \"it\" と同じ働きの it を含む文を1つ選びなさい。",
+ "a": "It is clear that she was right about the plan.",
+ "b": "I bought it at the small store near the station yesterday.",
+ "c": "I found it difficult to solve the problem quickly.",
+ "d": "It was raining very hard all through the night.",
+ "answer": "C",
+ "explanation": "本文の it は \"find/make O C\" の O を後ろの節・句に譲る形式目的語。Cの \"found it difficult to solve ...\" が同じく形式目的語で、真の目的語は to 不定詞句。よってCが正解。Aは that 節を受ける形式主語、Bは実際の物を指す代名詞、Dは天候の非人称 it で、いずれも用法が異なる。"
+},
+{
+ "tag": "内容一致",
+ "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+ "a": "研究によって、男の子は自分の外見を気にしないという世間一般の考えが正しいと確認された。",
+ "b": "男の子は平均すると、女の子よりも自分の外見を強く気にしていることが明らかになった。",
+ "c": "女の子は男の子ほど自分の外見を気にしないと、世間一般では信じられている。",
+ "d": "男の子が外見を気にする度合いは、平均すれば女の子とほぼ同程度であることが分かった。",
+ "answer": "D",
+ "explanation": "\"just as sensitive ... as young girls are\" は男の子と女の子が同程度であることを示す同等比較なのでDが正解。Aは \"contrary to popular belief\"(世間の考えに反して)を無視し、逆の内容を「確認された」としている点で誤り。Bは比較の方向を「女の子より上」と誤読している。Cは本文が述べる世間一般の考え(男の子は気にしない)とずれており、比較の主客も取り違えている。"
+},
+{
+ "tag": "言い換え",
+ "q": "Which one is closest in meaning to the sentence above?",
+ "a": "Research shows that, although many people think otherwise, boys care about their appearance about as much as girls do, on average.",
+ "b": "Research shows that boys, unlike girls, tend not to worry much about the way they look.",
+ "c": "Research confirms the common belief that girls care far more about their appearance than boys do.",
+ "d": "Research shows that boys worry about their looks even more than girls do, which surprised many people.",
+ "answer": "A",
+ "explanation": "原文は「世間の考えに反して、平均すると男子は女子と同程度に外見を気にする」という同等比較。Aは \"although many people think otherwise\" と \"about as much as girls do\" でこれを正確に言い換えており正解。Bは男子が気にしないとする逆の内容。Cは \"contrary to popular belief\" を無視し世間の考えを肯定しており、比較の方向も誤り。Dは \"even more than girls\" と同等でなく優位比較にしている点で意味がずれる。"
+}
+]}

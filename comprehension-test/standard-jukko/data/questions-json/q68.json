@@ -1,0 +1,52 @@
+{"no": 68, "en": "The Roman Empire became, and until the 5th century CE remained, the dominant power in the Western world.", "ja": "ローマ帝国は西洋世界における支配的な勢力となり、そして紀元5世紀まではその地位を保ち続けた。", "questions": [
+{
+ "tag": "共通補語の把握",
+ "q": "下線部の文で \"the dominant power in the Western world\"(西洋世界における支配的な勢力)は、どの動詞の補語になっているか、最も適切なものを選びなさい。",
+ "a": "\"became\" のみの補語",
+ "b": "\"remained\" のみの補語",
+ "c": "\"became\" と \"remained\" の両方に共通する補語",
+ "d": "\"became\" の主語",
+ "answer": "C",
+ "explanation": "この文は \"became, and ... remained, the dominant power ...\" という構造で、2つの動詞 \"became\"(〜になった)と \"remained\"(〜のままだった)が1つの補語 \"the dominant power in the Western world\" を共有している。\"and\" のあとに副詞句が挿入されているだけで補語は文末に一度だけ置かれるため、どちらか一方だけの補語とするA・Bは誤り。"
+},
+{
+ "tag": "副詞句の係り先",
+ "q": "\"until the 5th century CE\"(紀元5世紀まで)は、意味の上で主にどの動詞にかかっているか、最も適切なものを選びなさい。",
+ "a": "\"became\" にかかる",
+ "b": "\"remained\" にかかる",
+ "c": "\"became\" と \"remained\" の両方に等しくかかる",
+ "d": "どの動詞にもかからず、文全体を修飾する",
+ "answer": "B",
+ "explanation": "\"until the 5th century CE\" は \"remained\"(〜であり続けた)の直前に挿入され、その状態が続いた期限を示すので \"remained\" にかかる。\"became\"(なった)はある時点で起こる一回の変化を表し「〜まで」という継続の期限とは結び付かないため、AやCは誤り。"
+},
+{
+ "tag": "同一構造の識別",
+ "q": "下線部の文と同じ構造(2つの動詞が、あいだに副詞句をはさみつつ1つの補語を共有する)を持つ英文を1つ選びなさい。",
+ "a": "She opened the door and walked into the room quietly.",
+ "b": "The town was, and for many years had been, the center of trade in the region.",
+ "c": "He promised that he would help us, but in the end he never did.",
+ "d": "They finally built a bridge that connected the two small villages.",
+ "answer": "B",
+ "explanation": "Bは \"was, and ... had been, the center of trade in the region\" で、2つの動詞 \"was\" と \"had been\" が副詞句 \"for many years\" をはさんで1つの補語を共有しており、下線部と同じ構造。Aは2つの動詞がそれぞれ別の目的語をとり共有補語がない。Cは接続詞that節、Dは関係代名詞節で構造が異なる。"
+},
+{
+ "tag": "内容一致",
+ "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+ "a": "ローマ帝国は、紀元5世紀になってようやく西洋世界の支配的な勢力となった。",
+ "b": "ローマ帝国は西洋世界の支配的な勢力だったが、紀元5世紀にその地位を失い、その後取り戻した。",
+ "c": "ローマ帝国は紀元5世紀以降になって西洋世界の支配的な勢力となり、その地位を保った。",
+ "d": "ローマ帝国は西洋世界で最も有力な国家の地位につき、5世紀に至るまでその座を保った。",
+ "answer": "D",
+ "explanation": "\"became ... and ... remained ... the dominant power\" は「支配的勢力の地位につき、そのまま(5世紀まで)その座を保った」の意なのでDが正しい。Aは \"became\" の時期を5世紀に取り違えている。Cは \"until\"(〜まで)を「以降」と逆に読んでいる。Bは本文にない「地位を失い取り戻した」という誤読で、\"remained\"(保ち続けた)と矛盾する。"
+},
+{
+ "tag": "言い換え",
+ "q": "Which one is closest in meaning to the sentence above?",
+ "a": "The Roman Empire rose to be the leading power in the Western world and held that position until the 5th century CE.",
+ "b": "The Roman Empire became the leading power in the Western world only in the 5th century CE.",
+ "c": "The Roman Empire stayed the leading power in the Western world only after the 5th century CE.",
+ "d": "The Roman Empire was the leading power in the Western world but lost that status long before the 5th century CE.",
+ "answer": "A",
+ "explanation": "原文は「支配的勢力となり、5世紀までその地位を保ち続けた」の意で、\"rose to be ... and held that position until the 5th century\" と言い換えたAが同義。Bは支配的になった時期を5世紀に限定して \"became\" の時点を誤る。Cは \"until\" を \"after\" と逆にしている。Dは5世紀よりずっと前に地位を失ったとし、\"remained ... until the 5th century\" と矛盾する。"
+}
+]}

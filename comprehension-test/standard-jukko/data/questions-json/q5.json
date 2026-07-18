@@ -1,0 +1,52 @@
+{"no": 5, "en": "The issue of obesity, rarely discussed before, has attracted more public attention because of the documentary film.", "ja": "以前はめったに論じられることのなかった肥満の問題が、そのドキュメンタリー映画をきっかけに、より多くの世間の注目を集めるようになった。", "questions": [
+  {
+   "tag": "主語・動詞の特定",
+   "q": "この文の述語動詞 \"has attracted\" の主語にあたるものはどれか、最も適切なものを1つ選びなさい。",
+   "a": "obesity",
+   "b": "the documentary film",
+   "c": "The issue (of obesity)",
+   "d": "more public attention",
+   "answer": "C",
+   "explanation": "主語は \"The issue of obesity\"(肥満という問題)で、動詞は \"has attracted\"。間の \"rarely discussed before\" は主語を説明する挿入句にすぎず、ここを主語と取り違えないことが急所。\"obesity\" は of に導かれる修飾語、\"the documentary film\" は because of の目的語なので主語ではない。"
+  },
+  {
+   "tag": "挿入分詞句の働き",
+   "q": "文中の \"rarely discussed before\" の文法的な働きとして、最も適切なものを1つ選びなさい。",
+   "a": "直前の \"obesity\" だけを修飾し、「めったに論じられない肥満」という意味を表している",
+   "b": "\"attention\" を修飾し、世間の注目のされ方を説明している",
+   "c": "文全体の述語動詞であり、「(その問題は)以前はめったに論じられなかった」という文の中心の動作を表している",
+   "d": "\"The issue of obesity\" に説明を加える挿入的な過去分詞句で、「(その問題は)以前はめったに論じられなかった」という意味を添えている",
+   "answer": "D",
+   "explanation": "\"rarely discussed before\" は \"which was rarely discussed before\" が縮約された過去分詞句で、コンマで挟まれて主語 \"The issue of obesity\" 全体を非制限的に説明している。述語動詞は別に \"has attracted\" があるのでCは誤り。直前の一語 obesity だけや attention を修飾しているのではない。"
+  },
+  {
+   "tag": "同構造の識別",
+   "q": "\"rarely discussed before\" と同じ構造(主語の直後にコンマで挿入され、その主語を説明する過去分詞句)を含む文を1つ選びなさい。",
+   "a": "The man walking his dog by the lake waved cheerfully at us.",
+   "b": "The temple, built many centuries ago, still stands beside the river.",
+   "c": "Discussing the new plan, the members stayed at the office late.",
+   "d": "The novel that she wrote last year has become a bestseller.",
+   "answer": "B",
+   "explanation": "正解Bは \"The temple, built many centuries ago, ...\" のように主語の直後へコンマで過去分詞句を挿入し主語を説明する形で、本文と同じ構造。Aは現在分詞の制限用法(コンマなし)、Cは文頭に置かれた分詞構文(副詞的)、Dは関係代名詞節で、いずれも構造が異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "肥満の問題は以前はほとんど論じられなかったが、あるドキュメンタリー映画のおかげで、より多くの世間の注目を集めるようになった。",
+   "b": "肥満の問題が世間の注目を集めたことをきっかけに、それを扱うドキュメンタリー映画が新たに制作された。",
+   "c": "肥満の問題は昔から広く議論されてきたが、そのドキュメンタリー映画のせいで以前ほど注目されなくなった。",
+   "d": "そのドキュメンタリー映画は、肥満という深刻な問題をめったに取り上げようとはしなかった。",
+   "answer": "A",
+   "explanation": "本文は「以前はほとんど論じられなかった肥満の問題が、映画のおかげでより多くの注目を集めた」という内容で、Aが一致する。Bは因果が逆(注目→映画制作)。Cは \"rarely\" を「盛んに議論」と逆にとり、比較の方向も誤っている。Dは \"rarely discussed\" を映画の動作と取り違えている(実際は問題が論じられなかったの意)。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Obesity became such a widely discussed problem that someone finally produced a documentary film about it.",
+   "b": "Because obesity had often been debated in public, the documentary film about it attracted little notice.",
+   "c": "The documentary film seldom mentioned obesity, even though the public was paying close attention to it.",
+   "d": "The documentary film has drawn greater public attention to obesity, a problem that people had rarely talked about until then.",
+   "answer": "D",
+   "explanation": "Dは語彙と構造を変えつつ同義で、「映画が肥満への注目を高めた/その問題は以前はrarely talked about」という関係を正しく保っている。Aは因果が逆(問題が話題化→映画制作)。Bは \"rarely\" を \"often\" と逆にし、注目も減ったとする点で誤り。Cは \"rarely\" を「映画がめったに触れない」と主客・係り先を取り違えている。"
+  }
+]}

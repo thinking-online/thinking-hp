@@ -1,0 +1,52 @@
+{"no": 30, "en": "It is undeniable that one of the most remarkable social changes in recent decades is that people have become almost totally reliant on social media to communicate with friends and family members.", "ja": "ここ数十年で最も注目すべき社会的変化の一つが、人々が友人や家族と連絡を取るのにソーシャルメディアにほとんど全面的に頼るようになったことである、というのは否定できない。", "questions": [
+  {
+   "tag": "形式主語it/真主語",
+   "q": "文頭の \"It\" (\"It is undeniable that ...\") の説明として最も適切なものを選びなさい。",
+   "a": "形式主語であり、真の主語は後続の \"that\" が導く名詞節である",
+   "b": "前の文脈で述べられた内容全体を指し示す指示代名詞である",
+   "c": "直前に想定される話題を受けて「それ」と訳す代名詞で、\"changes\" を指す",
+   "d": "時間・状況などを漠然と表す非人称の it で、特定の内容を指さない",
+   "answer": "A",
+   "explanation": "\"It is undeniable that S V\" は形式主語構文で、It は仮の主語、真主語は直後の \"that one of the most ... is that ...\" 全体という名詞節。B・Cは前の文脈や特定語を指すとする誤読で、この it は文内の that 節を先取りしている。Dの非人称の it は「that 以下」という真主語を持たない点で誤り。"
+  },
+  {
+   "tag": "that節の働き(補語)",
+   "q": "\"... social changes in recent decades is that people have become almost totally reliant ...\" の二つ目の \"that\" が導く節の、文中での働きとして最も適切なものを選びなさい。",
+   "a": "\"It\" と同格で、形式主語構文の真の主語となる名詞節",
+   "b": "\"changes\" を先行詞とする関係代名詞節(形容詞節)",
+   "c": "\"is\" の補語となる名詞節(S is that S V の形)",
+   "d": "\"undeniable\" の理由を述べる副詞節",
+   "answer": "C",
+   "explanation": "この that 節は \"one of the most remarkable social changes ... is ___\" の be 動詞 is の補語(名詞節)で、「〜ということだ」と主語の内容を説明している。Aは形式主語 It の真主語を説明する語だが、それは一つ目の that 節の役割であり別物。Bは関係代名詞なら節内に欠けた要素が要るが that 節は完全文なので不可。Dの副詞節でもない。"
+  },
+  {
+   "tag": "主語・動詞の特定",
+   "q": "\"one of the most remarkable social changes in recent decades is that people have become ...\" の主語と、それに対応する動詞の組み合わせとして正しいものを選びなさい。",
+   "a": "主語 \"changes\" / 動詞 \"have become\"",
+   "b": "主語 \"one\" / 動詞 \"is\"",
+   "c": "主語 \"decades\" / 動詞 \"is\"",
+   "d": "主語 \"people\" / 動詞 \"is\"",
+   "answer": "B",
+   "explanation": "主語の中心は \"one\"(= one of the ... changes)で、動詞は単数に一致した \"is\"。\"of the most remarkable social changes in recent decades\" は one を修飾する句にすぎない。Aは修飾語 changes を主語と誤り、動詞も補語節内の have become を取り違えている。C・Dも前置詞句内の名詞や補語節内の主語を全体の主語と誤ったもの。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "ここ数十年で特に目立つ社会的変化の一つとして、人々が友人や家族との連絡をソーシャルメディアにほぼ全面的に依存するようになったことがあり、これは否定しようがない。",
+   "b": "人々がソーシャルメディアに頼るのは友人や家族と連絡を取るごく一部の場面に限られ、その依存度は依然として低いままであることは否定できない。",
+   "c": "ソーシャルメディアの普及は、ここ数十年で起きた唯一の注目すべき社会的変化であり、それが人々の生活を一変させたことは否定できない。",
+   "d": "連絡手段の変化を受けて、ソーシャルメディア各社が友人や家族向けの新機能を次々に開発してきたことは否定できない。",
+   "answer": "A",
+   "explanation": "\"almost totally reliant on social media to communicate with friends and family\" は「連絡を取るのにソーシャルメディアにほぼ全面的に依存」の意で、Aが正しい。Bは \"almost totally\"(ほぼ全面的)を「ごく一部・低い依存度」と部分否定的に誤読。Cは \"one of the most ...\"(最も〜の一つ)を「唯一の」と取り違え。Dは依存する主体(人々)を企業の開発活動にすり替えた誤り。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "It cannot be denied that, in recent decades, the single most notable change in society is that people have grown almost entirely dependent on social media for staying in touch with friends and family.",
+   "b": "It cannot be denied that, in recent decades, one of the most notable changes in society is that people have grown only partly dependent on social media for staying in touch with friends and family.",
+   "c": "It cannot be denied that, in recent decades, one of the most notable changes in society is that social media has grown almost entirely dependent on people for staying in touch with friends and family.",
+   "d": "It cannot be denied that, in recent decades, one of the most notable changes in society is that people have grown almost entirely dependent on social media for staying in touch with friends and family.",
+   "answer": "D",
+   "explanation": "原文は「最も顕著な変化の一つ」「ほぼ全面的に依存」「依存するのは人々」を満たすDが同義。Aは \"one of the most\" を \"the single most\"(唯一最大)に変えて数量を誤らせる。Bは \"almost totally\" を \"only partly\"(部分的)に変え程度を逆転。Cは依存の主客を入れ替え「ソーシャルメディアが人々に依存」としており意味がずれる。"
+  }
+ ]}

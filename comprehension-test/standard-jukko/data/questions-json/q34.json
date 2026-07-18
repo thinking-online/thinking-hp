@@ -1,0 +1,52 @@
+{"no": 34, "en": "Less than half of the expected number returned to the river, despite the fact that twice as many young salmon as usual were released the previous year.", "ja": "前年には例年の2倍もの数の若いサケが放流されたにもかかわらず、川に戻ってきたのは予想された数の半分にも満たなかった。", "questions": [
+  {
+   "tag": "比較(倍数表現 twice as ... as usual)",
+   "q": "\"twice as many young salmon as usual were released\" における \"twice as many young salmon as usual\" が表す内容として最も適切なものを選びなさい。",
+   "a": "例年放流されるのとほぼ同じ数の若いサケ",
+   "b": "例年放流される数の2倍の数の若いサケ",
+   "c": "例年川に戻ってくる数の2倍の数の若いサケ",
+   "d": "例年放流される数の半分の数の若いサケ",
+   "answer": "B",
+   "explanation": "\"twice as many A as B\" は「Bの2倍の数のA」を表す倍数比較で、ここでの \"as usual\" は \"as ... were released usually\"(例年放流される数)を受ける。動詞が \"were released\" である以上、比較の基準は「放流数」であって「戻ってくる数」ではないため、Cは基準を取り違えた誤り。AとDは倍数を無視している。"
+  },
+  {
+   "tag": "同格のthat(the fact that S V)",
+   "q": "\"the fact that twice as many young salmon as usual were released\" の \"that\" の働きとして最も適切なものを選びなさい。",
+   "a": "\"released\" の目的語となる名詞節を導く接続詞",
+   "b": "「〜するために」という目的を表す副詞節を導く接続詞",
+   "c": "直前の \"the fact\" の具体的な内容を説明する同格の接続詞",
+   "d": "\"the fact\" を先行詞とし、節内で主語の働きをする関係代名詞",
+   "answer": "C",
+   "explanation": "\"the fact that S V\"(=SがVするという事実)の \"that\" は、抽象名詞 \"the fact\" の中身を説明する同格の接続詞。that節内は \"salmon were released\" と主語・動詞がそろった完全文であり、名詞が欠けていないので関係代名詞(D)ではありえない。この \"the fact that ...\" 全体が、前置詞 \"despite\"(〜にもかかわらず)の目的語となる名詞句を作っている。"
+  },
+  {
+   "tag": "主語の特定(Less than half of ...)",
+   "q": "\"Less than half of the expected number returned to the river\" で、実際に「川に戻ってきた」のは何か。最も適切なものを選びなさい。",
+   "a": "前年に放流された若いサケのすべて",
+   "b": "例年の2倍にあたる数の若いサケ",
+   "c": "川で放流された、期待どおりの数のサケ",
+   "d": "予想されていた数の半分にも満たない数のサケ",
+   "answer": "D",
+   "explanation": "\"returned\" の主語は \"Less than half of the expected number\"(予想された数の半分未満)であり、戻った数はごくわずかだったという趣旨。BやAは「放流された数」を戻った数と取り違えた誤りで、放流を増やしたのに戻りは少なかったという \"despite\" の対比を読み損なっている。Cは \"less than half\" を無視している。"
+  },
+  {
+   "tag": "譲歩関係と数量の把握",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "前年の放流数を例年の2倍に増やしたにもかかわらず、川に戻った数は見込みの半分にも届かなかった。",
+   "b": "前年に若いサケの放流数を例年の半分に減らしたので、川に戻る数も予想を下回った。",
+   "c": "例年の2倍の若いサケが川に戻ってきたが、それでも予想された数の半分に過ぎなかった。",
+   "d": "前年に放流した若いサケの半分以上が川に戻り、期待を上回る好結果となった。",
+   "answer": "A",
+   "explanation": "放流数は「例年の2倍」に増やしたのに、戻った数は「予想の半分未満」だったという \"despite\" の対比が骨子で、Aがこれを正しく言い換えている。Bは倍数(twice)を「半分」と取り違え、Cは「2倍」を戻った数の方に付け替えた誤り。Dは \"Less than half\" を「半分以上」と逆に読み、結果の評価も逆転している。"
+  },
+  {
+   "tag": "英英言い換え(倍数・譲歩・数量)",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Because the usual number of young salmon had been released the previous year, only half of the expected number returned to the river.",
+   "b": "More than half of the expected number returned to the river, even though half as many young salmon as usual were released the previous year.",
+   "c": "Although twice the usual number of young salmon had been released the previous year, fewer than half of the anticipated number returned to the river.",
+   "d": "Twice as many young salmon as expected came back to the river, even though only the usual number had been released the previous year.",
+   "answer": "C",
+   "explanation": "原文は「例年の2倍を放流した(譲歩)のに、戻ったのは予想の半分未満」で、Cが \"twice the usual number ... released\" と \"fewer than half ... returned\" で同義に言い換えている。Aは \"because\" と \"the usual number\" で因果・数量を変え、Bは \"More than half\" と \"half as many\" で数量を逆にし、Dは \"twice\" を戻った数に付け替えている。"
+  }
+]}

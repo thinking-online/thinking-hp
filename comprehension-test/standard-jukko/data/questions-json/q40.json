@@ -1,0 +1,52 @@
+{"no": 40, "en": "Most inhabitants of the developed Western nations are aware by now that the demands that we are making on our planet are excessive and that our present course is unsustainable.", "ja": "発展した西洋諸国の住民のほとんどは、私たちが自分たちの惑星(地球)に課している要求が過大であり、また私たちの現在の進み方は持続不可能である、ということを、今ではもう自覚している。", "questions": [
+  {
+   "tag": "接続詞that・名詞節の並列",
+   "q": "本文中の2つ目の \"that\"(\"and that our present course is unsustainable\" の that)の働きとして最も適切なものを1つ選びなさい。",
+   "a": "\"are aware\" の目的語となる名詞節を導き、1つ目の \"that\" 節と並列している",
+   "b": "直前の \"our planet\" を先行詞とする関係代名詞節を導いている",
+   "c": "\"excessive\" の程度を表す結果の副詞節(so ... that)を導いている",
+   "d": "直前の \"the demands\" を修飾する関係代名詞節を導いている",
+   "answer": "A",
+   "explanation": "\"are aware that A and that B\" の形で、2つの that 節はともに \"are aware\" の内容を述べる名詞節であり、and で並列されている。Bは先行詞を \"our planet\"、Dは \"the demands\" と取り違えた誤り。Cは so ... that の結果構文の誤読で、本文に so はない。"
+  },
+  {
+   "tag": "主語の特定",
+   "q": "本文の1つ目の that 節内 \"the demands that we are making on our planet are excessive\" において、動詞 \"are excessive\" の主語として最も適切なものを1つ選びなさい。",
+   "a": "our planet",
+   "b": "we",
+   "c": "our present course",
+   "d": "the demands",
+   "answer": "D",
+   "explanation": "\"the demands\"(それを \"that we are making on our planet\" が修飾)が主語で、\"are excessive\" が述語動詞。\"we\" は関係詞節内 \"we are making\" の主語にすぎず、\"our planet\" は前置詞 on の目的語。\"our present course\" は2つ目の that 節の主語で別の節に属する。"
+  },
+  {
+   "tag": "関係代名詞thatの識別",
+   "q": "本文の \"the demands that we are making\" の \"that\" と同じ働きの \"that\" を含む文を1つ選びなさい。",
+   "a": "He said that he would come the next day.",
+   "b": "I was so tired that I fell asleep at once.",
+   "c": "This is the novel that I read last summer.",
+   "d": "The truth was that nobody knew the answer.",
+   "answer": "C",
+   "explanation": "本文の \"that\" は先行詞 \"the demands\" を受け、\"we are making\" の目的語となる目的格の関係代名詞。Cの \"that\" も先行詞 \"the novel\" を受け \"I read\" の目的語となる同じ用法。Aは名詞節を導く接続詞、Bは so ... that の副詞節、Dは補語の名詞節を導く接続詞で、いずれも関係代名詞ではない。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "発展した西洋諸国の住民のごく一部だけが、私たちが地球に課している要求は過大だと、ようやく気づき始めたところである。",
+   "b": "発展した西洋諸国の住民の大半は、私たちが地球に課している要求が過大であり、現在のやり方は続けられないと、今ではもう気づいている。",
+   "c": "発展した西洋諸国の住民の大半は、地球が私たちに課してくる要求は過大だが、現在のやり方はまだ持続できると考えている。",
+   "d": "発展した西洋諸国の住民の大半は、私たちの要求が過大にならないよう、現在のやり方を見直すべきだと主張している。",
+   "answer": "B",
+   "explanation": "本文は \"Most inhabitants ... are aware by now that ... are excessive and that ... is unsustainable\" で、大半の人が「要求が過大」「現在の進路は持続不可能」の両方を今では自覚している、という趣旨。Aは most を「ごく一部」、by now を「ようやく」と誤読。Cは \"the demands that we are making on our planet\"(我々が地球に課す要求)の主客を逆転させ、かつ unsustainable を「まだ持続できる」と反転させている。Dは aware(自覚している)を「主張している」に作り替えた誤り。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Most people in the developed West have recently begun to demand that our planet be treated less harshly and that our way of life be changed.",
+   "b": "Only a few people in the developed West understand that our planet is making excessive demands on us and that its future is uncertain.",
+   "c": "Most people in the developed West still refuse to admit that our demands on the planet are too great and that our present way of life must end.",
+   "d": "Most people in the developed West now realize that the demands we place on our planet are too great and that our current way of living cannot continue.",
+   "answer": "D",
+   "explanation": "原文は「大半の人が、地球への要求は過大で、現在の進路は持続不可能だと今では自覚している」。Dは are aware→now realize、excessive→too great、unsustainable→cannot continue と語句を変えつつ同義で、並列の2つの that 節も保っている。Aは aware を demand(要求する)に作り替え、Bは most→only a few とし \"our planet is making demands on us\" で主客を逆転、Cは refuse to admit で意味を否定に反転させている。"
+  }
+]}

@@ -1,0 +1,52 @@
+{"no": 64, "en": "The purpose of autobiographers should not be to inform us of all that they have done but to show us who they are and how their outlooks have been formed.", "ja": "自伝を書く人の目的は、自分がしてきたことのすべてを私たちに伝えることではなく、自分が何者であるのか、そして自分のものの見方がどのように形成されてきたのかを私たちに示すことであるべきだ。", "questions": [
+ {
+  "tag": "not A but B の対比の単位",
+  "q": "この文の \"should not be ... but ...\" が対比しているのは何と何か。最も適切なものを1つ選びなさい。",
+  "a": "\"to inform us of all that they have done\" と \"to show us who they are and how their outlooks have been formed\"",
+  "b": "\"inform\" と \"show\" という二つの動詞そのもの",
+  "c": "\"the purpose of autobiographers\" と \"all that they have done\"",
+  "d": "\"who they are\" と \"how their outlooks have been formed\"",
+  "answer": "A",
+  "explanation": "not A but B の A・B はいずれも be の補語となる to 不定詞句で、「〜を知らせることではなく…を示すことであるべきだ」と対比される。B は動詞だけを取り出しており補語全体の対比ではない。C は対比の単位を取り違えており、D は B(show us の目的語)の内部で並列する二節にすぎず、not/but の対比項ではない。"
+ },
+ {
+  "tag": "all + 関係代名詞 that",
+  "q": "\"all that they have done\" の解釈として最も適切なものを1つ選びなさい。",
+  "a": "彼らがすべてを成し遂げてしまったということ",
+  "b": "彼らにできることのすべて",
+  "c": "彼らがしてきたことのすべて",
+  "d": "すべての人が彼らに対してしたこと",
+  "answer": "C",
+  "explanation": "that は関係代名詞で先行詞は all、節内では done の目的語にあたり、全体は inform us of の of の目的語になる名詞句「彼らがしてきたことすべて」。A は that を「〜ということ」の接続詞と誤読したもの。B は have done(実際にしてきたこと)を can do と取り違えており、D は they を動作の受け手にすり替えている。"
+ },
+ {
+  "tag": "show us の直接目的語(第4文型)",
+  "q": "\"show us who they are and how their outlooks have been formed\" において、動詞 \"show\" が us に示す内容(直接目的語)にあたるのはどれか。1つ選びなさい。",
+  "a": "\"us\" だけ",
+  "b": "\"who they are and how their outlooks have been formed\" の全体",
+  "c": "\"who they are\" だけ",
+  "d": "\"their outlooks\" という名詞句",
+  "answer": "B",
+  "explanation": "show O1 O2 の第4文型で、us が間接目的語、直接目的語は \"who they are\" と \"how their outlooks have been formed\" という二つの疑問詞節(名詞節)であり、and で並列している。C は一方の節だけで不十分。A の us は「示す相手」であって「示す内容」ではなく、D は節の一部を抜き出したにすぎない。"
+ },
+ {
+  "tag": "内容一致(not A but B の把握)",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "自伝作者は、自分が成し遂げてきたことをすべて余さず読者に伝えることを第一の目的とすべきだ。",
+  "b": "読者は、自伝作者が何をしたかではなく、その人がどういう人物かによって評価を下すべきだ。",
+  "c": "自伝作者の目的は、自分の考え方がどう形成されたかを説明することにではなく、業績を列挙することにある。",
+  "d": "自伝作者が目指すべきなのは、自分の行いをすべて列挙することではなく、自分がどんな人間で、ものの見方がどう培われてきたかを読者に示すことだ。",
+  "answer": "D",
+  "explanation": "原文は not A but B で、目的は「してきたこと全ての報告」ではなく「自分が何者かと、ものの見方の形成過程を示すこと」であるべきだと述べている。A と C は not と but を逆にした誤り。B は主語を「読者」にすり替えているが、本文が論じているのは autobiographers(自伝作者)自身の目的である。"
+ },
+ {
+  "tag": "言い換え(構造・語彙変換)",
+  "q": "Which one is closest in meaning to the sentence above?",
+  "a": "Autobiographers ought to record everything they have accomplished, rather than reveal who they truly are or how they came to think as they do.",
+  "b": "Readers ought to value autobiographers not for what they have accomplished but for who they truly are and how they came to think as they do.",
+  "c": "Autobiographers ought to reveal who they truly are and how they came to think as they do, rather than merely list everything they have accomplished.",
+  "d": "Autobiographers ought both to record all that they have accomplished and to reveal who they truly are and how they came to think as they do.",
+  "answer": "C",
+  "explanation": "原文は not A but B(業績の列挙ではなく、自分が何者でどう考えるようになったかを示すべきだ)。C は \"rather than\" を使い、この対比と主語(autobiographers)を保ったまま言い換えている。A は not と but を逆転させ、B は主語を Readers にすり替え、D は not...but を both...and に変えて対比そのものを消している。"
+ }
+]}

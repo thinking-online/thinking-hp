@@ -1,0 +1,52 @@
+{"no": 41, "en": "It is never a mistake to answer honestly, and not omit any details, when questioned by a physician about the symptoms that you have been experiencing.", "ja": "医師から、あなたがこれまで経験してきた症状について尋ねられたときに、正直に答え、どんな細部も省かずに話すのは、決して間違ったことではない。", "questions": [
+  {
+   "tag": "形式主語・真主語",
+   "q": "この英文の \"It\" が指す内容として最も適切なものを1つ選びなさい。",
+   "a": "医師が患者の症状について正直に説明し、細部を省かないこと",
+   "b": "医師に症状について質問されたときに、正直に答え、どんな細部も省かないこと",
+   "c": "患者がこれまで経験してきた症状そのものの深刻さ",
+   "d": "医師に質問されたときに、答えるかどうかを患者自身が決めること",
+   "answer": "B",
+   "explanation": "\"It\" は形式主語で、真の主語は後ろの to 不定詞 \"to answer honestly, and not omit any details\"。正直に答え細部を省かないのは答える側(you=患者)なので、動作主を医師とした A は誤り。C は \"It\" を具体的な名詞と取り違え、D は本文にない \"whether(〜かどうか)\" を勝手に補った誤読。"
+  },
+  {
+   "tag": "接続詞+分詞(省略)",
+   "q": "\"when questioned by a physician\" が表す内容として最も適切なものを1つ選びなさい。",
+   "a": "あなたが医師から質問されるときに",
+   "b": "あなたが医師に質問するときに",
+   "c": "医師があなたに質問されるときに",
+   "d": "医師が誰かに質問しようとするときに",
+   "answer": "A",
+   "explanation": "\"when questioned\" は \"when (you are) questioned\" の主語+be動詞が省略された形で、questioned は受動、by a physician が質問する側を示す。よって「あなたが医師から質問される」= A が正しい。B は受動を能動に取り違え、C は「される」側と「する」側を逆転、D は動作主を医師とした誤読。"
+  },
+  {
+   "tag": "形式主語itの識別",
+   "q": "この英文の \"It\" と同じ用法の \"It / it\" を含む文を1つ選びなさい。",
+   "a": "It was in this hospital that she first met the famous doctor.",
+   "b": "I bought a new dictionary because it was highly recommended.",
+   "c": "It is difficult to master a foreign language without daily practice.",
+   "d": "It gets very cold here once the sun goes down.",
+   "answer": "C",
+   "explanation": "本文の \"It\" は後ろの to 不定詞を真主語とする形式主語。同じ形式主語構文は C の \"It is difficult to master ...\"。A は \"It is ... that\" の強調構文、B の it は前出の dictionary を指す代名詞、D は寒暖を表す非人称の it で、いずれも用法が異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "医師は患者の症状について、正直に、細部を省かずに患者へ説明すべきである。",
+   "b": "症状について医師に尋ねられたときは、細かい点は省いて要点だけを正直に答えるとよい。",
+   "c": "自分の症状を医師に正直に話すのは、ときに間違いとなることもあるので注意すべきだ。",
+   "d": "医師に自分の症状について尋ねられたら、正直に、どんな細部も省かずに答えてよい。",
+   "answer": "D",
+   "explanation": "\"It is never a mistake to answer honestly, and not omit any details\" は「正直に答え、細部も省かないことは決して間違いではない」の意で、これを言い換えた D が正解。A は答える動作主を医師と取り違え、B は \"not omit any details(省かない)\" を逆に「省く」と誤読、C は \"never a mistake\" の否定を見落とし「間違いとなることもある」と正反対にしている。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "A doctor never errs by explaining truthfully and in full detail the symptoms that a patient has been having.",
+   "b": "You do no wrong if you answer truthfully and leave nothing out when a doctor questions you about the symptoms you have been having.",
+   "c": "It is sometimes unwise to reply truthfully to a doctor about the symptoms you have been having, so choose your words with care.",
+   "d": "It is best to answer a doctor briefly and leave out any minor details about the symptoms you have been having.",
+   "answer": "B",
+   "explanation": "原文は「医師に症状を尋ねられたとき、正直に答え、細部を省かないことは決して間違いではない」。do no wrong / leave nothing out / when a doctor questions you と同義に置き換えた B が正解。A は答える主体を医師にした主客逆転、C は \"never a mistake\" を \"sometimes unwise\" と反対にし、D は \"not omit any details\" を \"leave out ... details\" と逆にしている。"
+  }
+]}

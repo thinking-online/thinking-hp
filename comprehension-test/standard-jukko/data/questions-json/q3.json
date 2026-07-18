@@ -1,0 +1,52 @@
+{"no": 3, "en": "The amount of paper produced and consumed in our country is increasing every year.", "ja": "私たちの国で生産され消費される紙の量は、年々増加している。", "questions": [
+{
+ "tag": "主語と動詞の特定",
+ "q": "この文 \"The amount of paper produced and consumed in our country is increasing every year.\" の、主語の中心となる語(主要部)と述語動詞の組み合わせとして正しいものを1つ選びなさい。",
+ "a": "主語 \"paper\" / 述語動詞 \"produced and consumed\"",
+ "b": "主語 \"paper\" / 述語動詞 \"is increasing\"",
+ "c": "主語 \"The amount\" / 述語動詞 \"is increasing\"",
+ "d": "主語 \"The amount\" / 述語動詞 \"produced and consumed\"",
+ "answer": "C",
+ "explanation": "主語の中心は \"The amount\"(量)で、述語動詞はそれに単数で一致する \"is increasing\"。動詞が are ではなく is である点からも、主語が複数の \"paper\" ではなく単数の \"The amount\" だと分かる。\"produced and consumed\" は動詞ではなく \"paper\" を修飾する過去分詞なので、A・Dは誤り。"
+},
+{
+ "tag": "過去分詞の後置修飾",
+ "q": "下線部 \"produced and consumed\" の文中での働きとして正しいものを1つ選びなさい。",
+ "a": "主語 \"The amount\" を後ろから修飾する過去分詞で、「増えていく量」を表す",
+ "b": "直前の \"paper\" を後ろから修飾する過去分詞で、「生産され消費される紙」を表す",
+ "c": "この文全体の述語動詞で、「(国が)紙を生産し消費する」ことを表す",
+ "d": "\"our country\" を修飾する過去分詞で、「紙が作られる国」を表す",
+ "answer": "B",
+ "explanation": "\"produced and consumed\" は直前の名詞 \"paper\" を後置修飾する過去分詞(受動の意味)で、「生産され消費される紙」となる。述語動詞は別に \"is increasing\" があるのでCは誤り。修飾しているのは \"The amount\" でも \"our country\" でもなく \"paper\" なので、A・Dも誤り。"
+},
+{
+ "tag": "同一構造の識別",
+ "q": "次の英文のうち、\"The amount of paper produced ... is increasing\" と同じく「〈名詞+of+名詞〉の前の名詞(主要部)に動詞が単数で一致し、後ろの名詞を過去分詞句が修飾する」構造を含むものを1つ選びなさい。",
+ "a": "The books produced in this factory are sold all over the world.",
+ "b": "The amount of energy has grown steadily over the decades.",
+ "c": "The rice grown in that region is exported to many countries.",
+ "d": "The number of books read by students varies from year to year.",
+ "answer": "D",
+ "explanation": "Dは主要部 \"The number\" に単数動詞 \"varies\" が一致し、\"read by students\" が後ろの \"books\" を修飾しており、本文と同型。Aは主語の中心が \"books\" で of 構造を持たない。Bは of 構造はあるが \"energy\" を修飾する過去分詞句がない。Cも主語の中心が \"rice\" で〈量・数+of〉の主要部を持たないため一致しない。"
+},
+{
+ "tag": "内容一致",
+ "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+ "a": "私たちの国で作られ使われる紙の量が、毎年増え続けている。",
+ "b": "私たちの国では、紙の生産量は増えているが、消費量はむしろ減っている。",
+ "c": "紙を生産し消費する国の数が、年々増えてきている。",
+ "d": "私たちの国では、紙の値段が毎年少しずつ上がっている。",
+ "answer": "A",
+ "explanation": "文は「生産され消費される紙の『量(the amount)』が年々増えている」と述べており、Aが正しい。\"produced and consumed\" は両方とも増加の対象なので、生産と消費を対立させたBは誤り。主要部は \"amount\"(量)であって国の「数」ではないためCは誤り、値段の話も本文にないためDも誤り。"
+},
+{
+ "tag": "言い換え",
+ "q": "Which one is closest in meaning to the sentence \"The amount of paper produced and consumed in our country is increasing every year.\"?",
+ "a": "Our country produces and consumes more paper than any other country each year.",
+ "b": "The paper made in our country is being used up more quickly every year.",
+ "c": "Year by year, our country produces and uses a greater and greater quantity of paper.",
+ "d": "Every year our country has to produce more paper because people keep wasting it.",
+ "answer": "C",
+ "explanation": "原文は「生産・消費される紙の量が年々増えている」という意味で、生産と使用の両方の量の増加を述べるCが最も近い。Aは「他のどの国よりも多く」という比較を勝手に加えている。Bは生産に触れず「より速く使い切られる」と消費の速度の話にすり替えている。Dは「人々が無駄にするから」という原因を付け足しており、いずれも意味がずれる。"
+}
+]}

@@ -1,0 +1,52 @@
+{"no": 12, "en": "For the first time in history, advances in science and technology have brought within reach what was once only a dream for hundreds of millions of people.", "ja": "歴史上初めて、科学技術の進歩によって、かつて何億もの人々にとって単なる夢にすぎなかったものが、手の届くところにもたらされた。", "questions": [
+  {
+   "tag": "目的語の特定",
+   "q": "\"have brought within reach what was once only a dream for hundreds of millions of people\" において、動詞 \"have brought\" の目的語にあたるのはどれか。",
+   "a": "within reach",
+   "b": "what was once only a dream for hundreds of millions of people",
+   "c": "advances in science and technology",
+   "d": "hundreds of millions of people",
+   "answer": "B",
+   "explanation": "本来の語順は \"have brought [what ... people] within reach\" で、目的語が長い名詞節のため \"within reach\"(手の届くところに)の後ろに後置されている。したがって目的語は \"what was once only a dream ...\" 全体。\"within reach\" は「どこへもたらしたか」を表す副詞句で目的語ではなく、\"advances\" は主語である。"
+  },
+  {
+   "tag": "whatの用法識別",
+   "q": "下線部の \"what was once only a dream for hundreds of millions of people\" の \"what\" と同じ用法の \"what\" を含む文を1つ選びなさい。",
+   "a": "I wonder what made him change his mind.",
+   "b": "What a beautiful view we saw from the hill!",
+   "c": "She finally achieved what she had always wanted.",
+   "d": "Tell me what time the meeting starts.",
+   "answer": "C",
+   "explanation": "本文の \"what\" は「〜するもの/こと」を表す関係代名詞で、それ自体が先行詞を含み名詞節を作る。Cの \"what she had always wanted\"(彼女がずっと望んでいたもの)がこれと同じ。Aは「何が」を尋ねる疑問詞、Bは感嘆文の what、Dは \"what time\"(何時)という疑問形容詞で、いずれも用法が異なる。"
+  },
+  {
+   "tag": "副詞onceの意味",
+   "q": "\"what was once only a dream\" の \"once\" の意味として最も適切なものを1つ選びなさい。",
+   "a": "一度だけ",
+   "b": "かつて(以前は)",
+   "c": "いったん〜すると",
+   "d": "すぐに",
+   "answer": "B",
+   "explanation": "ここでの \"once\" は過去の状態を表す副詞で「かつて・以前は」の意味。\"what was once only a dream\" は「かつては夢にすぎなかったもの」となり、今はそうではない(=実現可能になった)という対比を生む。Aの「一度だけ」やCの接続詞用法「いったん〜すると」と取り違えると文意が崩れる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "何億もの人々が科学技術の進歩を長年夢見てきて、歴史上初めてその夢がかなった。",
+   "b": "科学技術が進歩しすぎたために、かつて実現できていたことが、今や手の届かない夢になった。",
+   "c": "何億もの人々の夢は、科学技術の進歩によって史上初めて完全に打ち砕かれた。",
+   "d": "科学技術の進歩により、かつて何億もの人々にとって夢でしかなかったことが、史上初めて実現可能になった。",
+   "answer": "D",
+   "explanation": "\"brought within reach what was once only a dream\" は「かつて夢でしかなかったものを手の届くところにもたらした=実現可能にした」の意で、Dが正しい。Aは「夢見た対象」を科学技術の進歩そのものと取り違えている(夢だったのは進歩ではなく実現内容)。Bは \"within reach\" を「手の届かない」と逆に、Cは「もたらした」を「打ち砕いた」と誤読しており、いずれも本文と矛盾する。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Thanks to progress in science and technology, something that used to be no more than a dream for huge numbers of people has, for the first time ever, become attainable.",
+   "b": "For the first time, hundreds of millions of people have begun to dream of what science and technology might someday achieve.",
+   "c": "Science and technology have advanced so far that what people once achieved has now become only a distant dream for many.",
+   "d": "Advances in science and technology have at last forced hundreds of millions of people to abandon a dream they had long cherished.",
+   "answer": "A",
+   "explanation": "原文は「かつて夢でしかなかったものが手の届く範囲に来た=実現可能になった」の意で、\"become attainable\" と言い換えたAが同義。Bは「人々が科学技術の成果を夢見始めた」と主客・因果を逆転させている。Cは「実現していたことが夢になった」と方向を逆に、Dは「夢を捨てさせた」と正反対の内容で、いずれも意味が明確にずれる。"
+  }
+]}

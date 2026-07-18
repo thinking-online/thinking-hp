@@ -1,0 +1,52 @@
+{"no": 59, "en": "Global warming has been known about for a very long time, but only recently have its true dangers begun to be understood by the general public.", "ja": "地球温暖化については非常に長い間知られてきたが、その本当の危険性が一般の人々に理解され始めたのは、ごく最近になってのことである。", "questions": [
+  {
+   "tag": "倒置の主語・動詞の特定",
+   "q": "この英文の後半 \"only recently have its true dangers begun to be understood\" において、動詞 \"have begun\" の主語にあたるものはどれか。最も適切なものを1つ選びなさい。",
+   "a": "its true dangers",
+   "b": "the general public",
+   "c": "Global warming",
+   "d": "a very long time",
+   "answer": "A",
+   "explanation": "文頭に否定・限定の副詞句 \"only recently\"(ごく最近になって)が出たため、後ろが疑問文と同じ語順に倒置され、助動詞 \"have\" が主語の前に出ている。本来の語順は \"its true dangers have begun to be understood\" で、主語は \"its true dangers\"。\"the general public\" は \"by\" に続く動作主で主語ではなく、\"Global warming\" は前半の主語である。"
+  },
+  {
+   "tag": "倒置構文の識別",
+   "q": "この英文の \"only recently have its true dangers begun ...\" と同じ文法的仕組み(文頭の副詞句による倒置)が用いられている文を1つ選びなさい。",
+   "a": "We have only recently begun to understand the real danger.",
+   "b": "Only after many years did people accept the new idea.",
+   "c": "Only recently the scientists have proven the theory.",
+   "d": "People have only recently understood the true situation.",
+   "answer": "B",
+   "explanation": "本文は否定・限定の副詞句を文頭に置いたため、助動詞が主語の前に出る倒置が起きている。Bは \"Only after many years\" を文頭に出し \"did people accept\" と倒置しており同じ仕組み。A・Dは \"only recently\" が文中にあり普通の語順、Cは \"only recently\" を文頭に置きながら倒置していない誤った語順で、いずれも本文と同じ構造ではない。"
+  },
+  {
+   "tag": "指示語itの内容特定",
+   "q": "この英文中の \"its true dangers\" の \"its\" が指す内容として最も適切なものを1つ選びなさい。",
+   "a": "the general public",
+   "b": "a very long time",
+   "c": "the true dangers themselves",
+   "d": "Global warming",
+   "answer": "D",
+   "explanation": "\"its\"(それの)は前半の主語 \"Global warming\" を受けており、\"its true dangers\" は「地球温暖化がもたらす本当の危険性」の意味。\"the general public\" は危険性を理解する側、\"a very long time\" は期間を表す語であり、いずれも \"its\" の指示対象にはなり得ない。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "地球温暖化の危険性は以前からよく知られていたが、温暖化という現象そのものが確認されたのはごく最近である。",
+   "b": "一般の人々は長年にわたって、地球温暖化の危険性を社会に訴え続けてきた。",
+   "c": "地球温暖化は昔から知られていたが、その本当の危険性を一般の人々が理解し始めたのはごく最近のことである。",
+   "d": "ごく最近になって、専門家がようやく地球温暖化の存在に気づいた。",
+   "answer": "C",
+   "explanation": "本文は「温暖化の存在は長く知られていた(has been known about for a very long time)」が「その真の危険性が一般大衆に理解され始めたのはごく最近(only recently ... begun to be understood)」と述べており、Cが一致する。Aは知られた時期と理解された時期を逆にした誤り。Bは人々が「理解される側」ではなく「訴える側」にした動作主の取り違え。Dは存在が昔から知られていた点に反する。"
+  },
+  {
+   "tag": "英語言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Although global warming has long been recognized, only in recent years have ordinary people started to realize how dangerous it really is.",
+   "b": "Global warming was discovered only a short time ago, so most people still do not know about its real dangers.",
+   "c": "People have understood the real dangers of global warming for many years, but the problem itself has only recently appeared.",
+   "d": "Since global warming has been known for ages, its true dangers are now completely clear to everyone.",
+   "answer": "A",
+   "explanation": "原文は「温暖化は長く知られてきた」+「その危険性を一般大衆が理解し始めたのはごく最近」という二点で、Aが語彙・構造を変えつつ同義。Bは「最近発見された(discovered only a short time ago)」が「長く知られてきた」に矛盾。Cは理解した時期と現象が知られた時期を逆転させている。Dは「今や全員に完全に明らか(completely clear to everyone)」と因果関係を加えており、理解が始まったばかりという原文の程度からずれる。"
+  }
+]}

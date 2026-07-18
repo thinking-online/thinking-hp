@@ -1,0 +1,52 @@
+{"no": 43, "en": "What we want is for the government to provide an excellent public transportation system, especially a train system, so that people would be encouraged to drive less.", "ja": "私たちが望んでいるのは、政府が優れた公共交通機関、とりわけ鉄道網を整備し、それによって人々があまり車を運転しないよう促されることだ。", "questions": [
+ {
+  "tag": "主語・動詞の特定",
+  "q": "\"What we want is for the government to provide an excellent public transportation system ...\" において、この文全体の主語と動詞(述語動詞)の組み合わせとして正しいものを1つ選びなさい。",
+  "a": "主語は \"What we want\"、動詞は \"is\"",
+  "b": "主語は \"What\"、動詞は \"want\"",
+  "c": "主語は \"we\"、動詞は \"want\"",
+  "d": "主語は \"the government\"、動詞は \"provide\"",
+  "answer": "A",
+  "explanation": "\"What we want\"(私たちが望むもの)は関係代名詞whatの導く名詞節で、これが文全体の主語となり、述語動詞は \"is\"。\"want\" はwhat節の内部の動詞にすぎない。Bはwhat一語を主語と取り違え、C・Dは節内や補語内の名詞を主語と誤ったもの。"
+ },
+ {
+  "tag": "for to 不定詞",
+  "q": "\"is for the government to provide an excellent public transportation system\" について、\"provide\"(整備する)という動作を行う主体と、\"for the government to provide ...\" 全体の文中での働きの組み合わせとして正しいものを1つ選びなさい。",
+  "a": "動作主は \"we\" で、この部分は理由を表す副詞句",
+  "b": "動作主は \"people\" で、この部分は目的を表す副詞句",
+  "c": "動作主は \"the government\" で、この部分は \"is\" の補語(私たちが望むことの中身)",
+  "d": "動作主は \"the government\" で、この部分は \"want\" の目的語",
+  "answer": "C",
+  "explanation": "\"for + 意味上の主語(the government) + to不定詞\" の形で、provideするのは政府。この for句全体がisの補語となり「私たちが望むこと」の中身を表す。Aは動作主をweと誤り、Bはpeopleと誤って目的の副詞句と読み、Dはwantの目的語(実際の目的語はwhat節が既に担う)と取り違えている。"
+ },
+ {
+  "tag": "so that 目的",
+  "q": "\"... so that people would be encouraged to drive less\" の意味・働きとして最も適切なものを1つ選びなさい。",
+  "a": "「もし人々が促されるなら」という条件を表す",
+  "b": "「人々が車の運転を減らしたので」という理由を表す",
+  "c": "「とても優れているので人々が促される」という程度・結果を表す",
+  "d": "「人々が車の運転を減らすよう促されるように」という目的を表す",
+  "answer": "D",
+  "explanation": "\"so that S would ...\" は目的「〜するように」を表す。ここは \"so ... that\"(程度・結果)構文ではない点が急所で、soとthatの間に形容詞や副詞を挟んでいない。Cはso-that構文と混同、Bは理由、Aは条件と取り違えた誤り。"
+ },
+ {
+  "tag": "内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "私たちが望むのは、優れた公共交通機関を自分たちで整備し、政府に車の使用を減らすよう促すことだ。",
+  "b": "私たちが望むのは、政府が優れた公共交通機関、特に鉄道を整備し、それによって人々が車を運転する量を減らすよう促されることだ。",
+  "c": "人々が車の運転を減らしているので、政府は特に鉄道など優れた公共交通機関を整備しようとしている。",
+  "d": "政府が優れた公共交通機関を整備したとしても、人々が車の運転を減らすことはないだろう。",
+  "answer": "B",
+  "explanation": "整備する主体は政府で(for the government to provide)、その目的は人々が車の運転を減らすよう促されること(so that ... encouraged to drive less)であり、Bが正しい。Aはprovideの主体をweと取り違え、Cはso thatを理由と読んで因果を逆転させ、Dはdrive lessを否定して結果を逆にした誤り。"
+ },
+ {
+  "tag": "言い換え",
+  "q": "Which one is closest in meaning to the sentence \"What we want is for the government to provide an excellent public transportation system, especially a train system, so that people would be encouraged to drive less\"?",
+  "a": "We hope to build an excellent train system ourselves so that the government will spend less on public transport.",
+  "b": "What the government wants is to provide an excellent train system so that we would drive our cars more.",
+  "c": "We want the government to develop a fine public transport network, especially railways, so as to encourage people to drive less often.",
+  "d": "We want people to drive less so that the government will be persuaded to improve the train system.",
+  "answer": "C",
+  "explanation": "Cは整備の主体(the government)と目的(encourage people to drive less)をどちらも保っており同義。Aはbuild ourselvesで主体を誤り、Bは望む主体をthe governmentにすり替えたうえdrive moreと逆転させ、Dは目的関係を逆にして「人々が運転を減らすこと」を手段にしている点で意味がずれる。"
+ }
+]}

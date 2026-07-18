@@ -1,0 +1,52 @@
+{"no": 20, "en": "Knowing something about the techniques writers use to write more effectively helps readers to understand what they are trying to say in their works.", "ja": "作家がより効果的に文章を書くために用いる技法について何か知っておくことは、作家が作品の中で言おうとしていることを読者が理解する助けになる。", "questions": [
+  {
+   "tag": "主語・動詞の特定",
+   "q": "この文全体の述語動詞は \"helps\" である。その主語にあたるものを1つ選びなさい。",
+   "a": "\"the techniques writers use to write more effectively\"",
+   "b": "\"Knowing something about the techniques writers use to write more effectively\"",
+   "c": "\"writers\"",
+   "d": "\"readers\"",
+   "answer": "B",
+   "explanation": "\"helps\" の主語は動名詞句 \"Knowing ... more effectively\" 全体で、動名詞主語は単数扱いなので helps となる。Aは動名詞 Knowing の目的語の一部(about 以下)を切り取ったもので主語全体ではない。\"writers\" は関係節内の主語、\"readers\" は helps の目的語であり、いずれも主節の主語ではない。"
+  },
+  {
+   "tag": "指示語の特定",
+   "q": "\"what they are trying to say in their works\" の \"they\" が指す内容として最も適切なものを1つ選びなさい。",
+   "a": "\"readers\"",
+   "b": "\"the techniques\"",
+   "c": "\"writers\"",
+   "d": "\"their works\"",
+   "answer": "C",
+   "explanation": "作品(\"their works\")の中で何かを言おうとしているのは書き手、すなわち \"writers\" である。\"they\" を \"readers\" と取ると、理解する側と発言する側が入れ替わって主客が逆転してしまう。文意上、読者は writers の言おうとすることを理解する立場である。"
+  },
+  {
+   "tag": "関係代名詞の省略(接触節)",
+   "q": "\"the techniques writers use to write more effectively\" では \"techniques\" と \"writers\" の間に目的格の関係代名詞が省略されている。これと同じ構造(省略された目的格の関係代名詞)を含む文を1つ選びなさい。",
+   "a": "\"The novel she finished last summer won a major prize.\"",
+   "b": "\"The girl who lives next door plays the violin every evening.\"",
+   "c": "\"I finally learned the reason why he had left so early.\"",
+   "d": "\"The man standing quietly by the door is my new manager.\"",
+   "answer": "A",
+   "explanation": "Aは \"The novel (that) she finished\" で、finished の目的語にあたる目的格関係代名詞が省略されており、本文と同じ接触節。Bは主格の関係代名詞 who が明示され省略されていない。Cは関係副詞 why、Dは現在分詞 standing による修飾で、いずれも省略された目的格関係代名詞ではない。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "読者は、自分が作品の中で言おうとしていることを、作家の用いる技法を通して理解する。",
+   "b": "作家の技法を理解することは、読者に対してより効果的に書くよう促す。",
+   "c": "技法をすべて知り尽くさない限り、読者は作家の意図をまったく理解できない。",
+   "d": "作家がより効果的に書くために用いる技法を多少知っておくと、読者は作家が作品で伝えようとしていることを理解しやすくなる。",
+   "answer": "D",
+   "explanation": "本文は「作家の技法について何か知っておくことが、読者の理解を助ける」という趣旨で、Dが正しい言い換え。Aは言おうとする主体を readers にしており主客が逆。Bは help の対象(理解する側)を作家にすり替えている。Cは \"something\"(多少)を「すべて」に変え、助けを絶対条件の全否定にすり替えている。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Writers can better understand what readers want to say in their works if they learn some effective writing techniques.",
+   "b": "Unless readers master all the techniques that writers use, they cannot grasp what writers mean in their works.",
+   "c": "Readers can understand better what writers mean in their works when they know something about the techniques those writers use.",
+   "d": "Learning the techniques of effective writing helps writers to express more clearly what they wish to convey in their works.",
+   "answer": "C",
+   "explanation": "Cは、助けられる側=readers、意図を持つ側=writers という本文の関係を保ち、\"something about the techniques\" のニュアンスも維持しているので同義。Aは作家と読者を入れ替えている。Bは \"something\" を \"all\" に、help を否定条件 unless に変えて意味をずらしている。Dは助けられる側を writers にしており、本文と食い違う。"
+  }
+ ]}

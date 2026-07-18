@@ -1,0 +1,52 @@
+{"no": 8, "en": "When I asked the college student if he could talk about Japanese literature he was at a loss for an answer.", "ja": "私がその大学生に、日本文学について語れるかどうか尋ねると、彼は答えに窮してしまった。", "questions": [
+{
+ "tag": "ifの用法(名詞節/条件節)",
+ "q": "下線部を含む \"if he could talk about Japanese literature\" の節の働きと意味として最も適切なものを選びなさい。",
+ "a": "条件を表す副詞節で「もし彼が日本文学について語れるなら」の意味",
+ "b": "動詞 \"asked\" の目的語となる名詞節で「彼が日本文学について語れるかどうか」の意味",
+ "c": "直前の \"student\" を修飾する形容詞節で「日本文学について語れる(学生)」の意味",
+ "d": "主節 \"he was\" を修飾する副詞節で「たとえ語れるとしても」の意味",
+ "answer": "B",
+ "explanation": "\"ask O if ...\" は「Oに〜かどうか尋ねる」で、この if は \"asked\" の目的語となる名詞節を導き「〜できるかどうか」の意味。文末に \"he was at a loss for an answer\" という主節が別に立っていることからも、この if節は条件の副詞節ではなく asked の目的語だと分かる。"
+},
+{
+ "tag": "同用法のif識別",
+ "q": "本文の \"if\" と最も近い用法の \"if\" を含む文を選びなさい。",
+ "a": "I don't know if she will come to the party.",
+ "b": "If you heat ice, it turns into water.",
+ "c": "Even if it rains, we will go hiking as planned.",
+ "d": "If only I had studied harder for the final exam.",
+ "answer": "A",
+ "explanation": "正解Aの if は動詞 \"know\" の目的語となる名詞節で「〜かどうか」の意味であり、本文の \"asked ... if\" と同じ用法。Bは条件、Cは譲歩(たとえ〜でも)の副詞節、Dは願望を表す \"if only\" で、いずれも名詞節ではない。"
+},
+{
+ "tag": "主節の特定",
+ "q": "この英文の中心となる節(主節)の主語と動詞の組み合わせとして正しいものを選びなさい。",
+ "a": "主語は \"I\"、動詞は \"asked\"",
+ "b": "主語は \"the college student\"、動詞は \"could talk\"",
+ "c": "主語は \"I\"、動詞は \"was\"",
+ "d": "主語は \"he\"、動詞は \"was\"",
+ "answer": "D",
+ "explanation": "文頭の \"When I asked ...\" は時を表す副詞節であり、文の中心(主節)は \"he was at a loss for an answer\"。したがって主節の主語は he(=その大学生)、動詞は was。\"I asked\" は従属節内、\"could talk\" は if名詞節内の主語・動詞にすぎない。"
+},
+{
+ "tag": "内容一致",
+ "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+ "a": "大学生が私に、日本文学について語れるかと尋ねてきたので、私は返答に困ってしまった。",
+ "b": "私が大学生に、日本文学について語れるかどうか尋ねると、彼は即座に的確な答えを返した。",
+ "c": "私がその大学生に日本文学を論じられるかと問うと、彼はうまく返答できなかった。",
+ "d": "私が日本文学について話していると、その大学生はもし質問されたら困ると答えた。",
+ "answer": "C",
+ "explanation": "\"ask O if ...\" は「Oに〜かどうか尋ねる」で、尋ねた側は「私」、答えに窮したのは大学生(he=the college student)。Aは尋ねた人と困った人を取り違えている。Bは \"at a loss for an answer\"(答えに窮した)と正反対。Dは if を条件に誤読している。"
+},
+{
+ "tag": "英語言い換え",
+ "q": "Which one is closest in meaning to the sentence above?",
+ "a": "If the college student had been able to talk about Japanese literature, I would have asked him about it.",
+ "b": "When the college student asked me whether I could discuss Japanese literature, I could not answer him.",
+ "c": "When I asked the college student to talk about Japanese literature, he answered without any difficulty.",
+ "d": "When I asked the college student whether he could discuss Japanese literature, he did not know how to respond.",
+ "answer": "D",
+ "explanation": "原文は「私が大学生に〜できるかどうか尋ねた」→「彼は答えに窮した」。Dは \"whether he could discuss\"(=if he could talk)と \"did not know how to respond\"(=was at a loss for an answer)で同義。Aは if を仮定法条件に読み替えており誤り。Bは尋ねた人と答えられなかった人を入れ替えている。Cは \"answered without any difficulty\" が原文と正反対。"
+}
+]}

@@ -1,0 +1,52 @@
+{"no": 62, "en": "A stable society requires a set of laws that apply equally to both the rich and the poor, a respect for the rights of citizens of all religions and ethnic origins, and a strong desire to provide for the common welfare.", "ja": "安定した社会には、富める者にも貧しい者にも等しく適用される一連の法と、あらゆる宗教・民族的出自の市民の権利に対する尊重と、公共の福祉のために尽くそうとする強い意志とが必要である。", "questions": [
+ {
+  "tag": "主語・動詞・目的語の特定(並列)",
+  "q": "この文の動詞 \"requires\" の目的語について、正しく説明したものを選びなさい。",
+  "a": "目的語は \"a set of laws\" 一つだけで、残りの部分はすべてその修飾語である。",
+  "b": "目的語は \"a set of laws\" と \"a respect\" の二つで、最後の部分は独立した文である。",
+  "c": "目的語は \"a set of laws\"、\"a respect\"、\"a strong desire\" の三つが and で並列されている。",
+  "d": "目的語は \"laws\"、\"the rights\"、\"the common welfare\" の三つである。",
+  "answer": "C",
+  "explanation": "文全体は \"A stable society requires A, B, and C.\" の形で、requires の目的語は三つの名詞句 \"a set of laws...\"、\"a respect...\"、\"a strong desire...\" が and で結ばれている。A の「一つだけ」は残り二つのコンマ+and による並列を見落とした誤り。D は各名詞句の中心となる冠詞つきの名詞句をとらえておらず、\"laws\" などは関係詞や of 句の一部にすぎない。"
+ },
+ {
+  "tag": "関係代名詞の先行詞の特定",
+  "q": "\"a set of laws that apply equally to both the rich and the poor\" の関係代名詞 \"that\" の先行詞はどれか。動詞が \"apply\" となっている点に注目せよ。",
+  "a": "a stable society",
+  "b": "laws",
+  "c": "a set",
+  "d": "citizens",
+  "answer": "B",
+  "explanation": "関係詞節の動詞が複数形の \"apply\" であることから、先行詞は複数名詞 \"laws\"(法が富者にも貧者にも等しく適用される)。先行詞が単数の \"a set\" なら動詞は \"applies\" になるはずで、C は誤り。\"citizens\" はこの句より後の別の名詞句に現れる語で、ここでは修飾されていない。"
+ },
+ {
+  "tag": "語法・句動詞の意味",
+  "q": "\"a strong desire to provide for the common welfare\" の \"provide for\" の意味に最も近いものを選びなさい。",
+  "a": "〜を前もって予言する",
+  "b": "〜を条件として明文で定める",
+  "c": "〜の準備を事前に整えておく",
+  "d": "〜(人々の生活や必要)を支え、その面倒をみる",
+  "answer": "D",
+  "explanation": "\"provide for the common welfare\" は「公共の福祉(に必要なもの)を供給し支える」の意で、D が正解。\"provide for〜\" は「〜の必要を満たして養う」という句動詞。A・C は provide/prepare の語感からの連想による誤り、B は法律の文脈にひきずられた誤読で、ここでの目的語は「福祉」であり条文ではない。"
+ },
+ {
+  "tag": "内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "安定した社会には、貧富にかかわらず等しく適用される法、あらゆる宗教・民族の市民の権利の尊重、公共の福祉に尽くそうとする強い意志、の三つが必要である。",
+  "b": "安定した社会では、法律は富裕層と貧困層とに別々の基準で適用され、市民には宗教や民族ごとに異なる権利が認められる。",
+  "c": "安定した社会を築くには、市民が自らの宗教や民族的出自を捨てて、共通の福祉を何よりも優先することが求められる。",
+  "d": "安定した社会にとって最も重要なのは、富める者も貧しい者も同じ強い願望を分かち合うことである。",
+  "answer": "A",
+  "explanation": "本文は「安定した社会が必要とするもの」として、等しく適用される法・多様な市民の権利の尊重・福祉への強い意志の三つを並列している。A がその三点を正しくまとめている。B は \"apply equally\"(等しく適用)を「別々に適用」と正反対に読み違えている。C の「宗教・民族を捨てる」は本文になく、むしろ権利の尊重が説かれている。D は三つのうち一つ(desire)だけを取り出し内容もねじ曲げている。"
+ },
+ {
+  "tag": "言い換え",
+  "q": "Which one is closest in meaning to the sentence above?",
+  "a": "A stable society applies its laws more strictly to the poor than to the rich, though it still protects the rights of all its citizens.",
+  "b": "A society stays stable as long as the rich respect the poor and the two groups come to share one religion and one ethnic origin.",
+  "c": "For a society to be stable, it needs laws that treat the rich and the poor alike, respect for the rights of citizens of every religion and ethnic background, and a strong wish to serve the common good.",
+  "d": "What a stable society needs above all is a strong desire for wealth, shared equally by citizens of all religions and ethnic origins.",
+  "answer": "C",
+  "explanation": "原文は laws(貧富に等しく適用)、respect for the rights(あらゆる宗教・民族の市民の権利)、a strong desire(公共の福祉のため)の三点を必要条件として挙げており、C がその三点を語彙・構文を変えて正しく再現している。A は \"equally\" を「貧者に厳しく」と方向を変えた誤り。B は「同じ宗教・民族を共有する」という原文にない条件を作り出している。D は desire の目的語を「福祉」から「富」へすり替えている。"
+ }
+]}

@@ -1,0 +1,52 @@
+{"no": 48, "en": "Despite the fact that Finland has long and brutal winters, there are often news reports of that nation having ranked first in the world for the happiness of its people.", "ja": "フィンランドには長く厳しい冬があるという事実にもかかわらず、その国(フィンランド)が国民の幸福度で世界第一位にランクされた、という報道がしばしば見られる。", "questions": [
+ {
+  "tag": "同格名詞節を導くthat",
+  "q": "\"the fact that Finland has long and brutal winters\" における that の文法的な働きとして最も適切なものを選びなさい。",
+  "a": "\"winters\" を先行詞とする関係代名詞で、節内で目的語の働きをしている",
+  "b": "\"the fact\" の内容を説明する同格の名詞節を導いている",
+  "c": "「あの・その」という意味で \"fact\" を指し示す指示形容詞である",
+  "d": "直前の名詞を修飾する関係副詞で「〜する場所」を表している",
+  "answer": "B",
+  "explanation": "\"the fact\" の直後に欠けのない完全な文 (Finland has long and brutal winters) が続くので、この that は「〜という事実」という同格の名詞節を導いており、正解は b。関係代名詞(a)なら節内に主語や目的語の欠けが生じるはずだが、ここには欠けがない。直後に名詞がないので指示形容詞(c)でもなく、場所を表す関係副詞(d)でもない。"
+ },
+ {
+  "tag": "動名詞・意味上の主語・完了",
+  "q": "\"there are often news reports of that nation having ranked first in the world ...\" の解釈として最も適切なものを選びなさい。",
+  "a": "世界がその国を国民の幸福度で一位に選ぶべきだ、という報道がしばしばある",
+  "b": "その国の国民が世界一の幸福を報道機関に対して要求している、という記事がしばしばある",
+  "c": "その国が世界一になるために国民の幸福を利用している、と報じる声がしばしばある",
+  "d": "その国が国民の幸福度で世界一になった、という内容の報道がしばしばある",
+  "answer": "D",
+  "explanation": "\"news reports of ~\" の of は報道の「内容」を示し、\"having ranked\" は完了動名詞で、その意味上の主語は直前の \"that nation\" である。つまり「その国がすでに世界一にランクされたという報道」を表し、正解は d。a は義務(should 相当)を、b は動作主(要求する主体)を、c は主客と目的を取り違えている。"
+ },
+ {
+  "tag": "指示語itsの特定",
+  "q": "\"having ranked first in the world for the happiness of its people\" における \"its\" が指すものとして最も適切なものを選びなさい。",
+  "a": "\"that nation\"(=Finland)",
+  "b": "\"the world\"",
+  "c": "\"news reports\"",
+  "d": "\"long and brutal winters\"",
+  "answer": "A",
+  "explanation": "\"its people\" は「その国の国民」の意で、ランク付けの対象である \"that nation\"(=Finland)を受けている。having ranked の意味上の主語もこの国であり、its も同じ国を指すのが自然なので正解は a。b の世界、c の報道、d の冬を受けると意味が通らない。"
+ },
+ {
+  "tag": "譲歩・因果・内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "フィンランドは冬が短く穏やかなので、国民の幸福度で世界一になったと報じられている。",
+  "b": "フィンランドは冬が長く厳しいため、国民の幸福度は世界でも低いほうだと報じられている。",
+  "c": "フィンランドは冬が長く厳しいにもかかわらず、国民の幸福度で世界一だとしばしば報じられる。",
+  "d": "フィンランドの国民は、長く厳しい冬のせいで世界一の幸福を感じられないと訴えている。",
+  "answer": "C",
+  "explanation": "\"Despite the fact that ...\" は「〜という事実にもかかわらず」という譲歩で、厳しい冬という不利な条件にもかかわらず幸福度が世界一と報じられるという関係を表すので、正解は c。b は幸福度が低いと因果を逆転させ、a は \"long and brutal winters\" を「短く穏やか」と事実を誤り、d は動作主と否定を取り違えている。"
+ },
+ {
+  "tag": "英語言い換え・譲歩と頻度",
+  "q": "Which one is closest in meaning to the sentence above?",
+  "a": "Even though Finland's winters are long and harsh, it is frequently reported that the country has been ranked the happiest in the world.",
+  "b": "Because Finland's winters are long and harsh, it is rarely reported that the country has been ranked the happiest in the world.",
+  "c": "Although Finland is often reported to have the world's happiest people, its winters are neither long nor harsh.",
+  "d": "Finland's long and harsh winters are the very reason why the country has been ranked the happiest in the world.",
+  "answer": "A",
+  "explanation": "原文は \"Despite\"(譲歩)と \"often\"(頻繁な報道)を含み、厳しい冬にもかかわらず幸福度世界一と報じられることを述べる。a は譲歩を Even though、頻度を frequently で正しく写しており正解。b は Because + rarely で論理と頻度を逆転させ、c は冬の性質を否定に変え、d は冬を幸福の原因とする因果を捏造している。"
+ }
+]}

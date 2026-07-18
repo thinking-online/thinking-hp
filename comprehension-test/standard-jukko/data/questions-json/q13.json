@@ -1,0 +1,52 @@
+{"no": 13, "en": "Every author tries to convince us, their readers, that what they have to say is true and should be accepted as truth.", "ja": "どの著者も、読者である私たちに対して、自分の言いたいこと(言い分)は真実であり、真実として受け入れられるべきだ、と納得させようとするものだ。", "questions": [
+ {
+  "tag": "同格 (us = their readers)",
+  "q": "下線部を含む \"convince us, their readers,\" における \"their readers\" の働きとして最も適切なものを選びなさい。",
+  "a": "\"us\" と同格で、同じ人々(=読者である私たち)を言い換えている",
+  "b": "\"convince\" のもう一つの目的語で、「私たち」と「読者」という別々の相手を表す",
+  "c": "直前の \"author\" を言い換えた同格で、著者自身を指している",
+  "d": "\"us\" が所有する対象(私たちの読者)を表している",
+  "answer": "A",
+  "explanation": "\"us, their readers\" はコンマで挟まれた同格で、\"their readers\"(彼らの読者)は \"us\" の言い換え。つまり「私たち=読者」であって別々の二者ではないのでBは誤り。readers は著者ではなく私たちを指すのでCも誤り。所有関係ではないのでDも誤り。"
+ },
+ {
+  "tag": "名詞節を導く接続詞that",
+  "q": "\"... convince us ... that what they have to say is true ...\" の \"that\" の働きとして最も適切なものを選びなさい。",
+  "a": "直前の \"readers\" を先行詞とする関係代名詞",
+  "b": "\"what they have to say\" を先行詞とする関係代名詞",
+  "c": "\"convince us\" の内容(=何を納得させるか)を表す名詞節を導く接続詞",
+  "d": "\"true\" の程度を受け、結果を表す so ... that の \"that\"",
+  "answer": "C",
+  "explanation": "\"convince O that S V\"(OにSVだと納得させる)の型で、that は「〜ということ」を表す名詞節を導く接続詞。この節が納得させる中身を示す。関係代名詞なら直後に不完全な文が続くはずだが、that 以下は \"what ... is true and should be accepted\" と完全な文なのでA・Bは誤り。so ... that の呼応もないのでDも誤り。"
+ },
+ {
+  "tag": "what節=主語の特定",
+  "q": "\"that what they have to say is true and should be accepted as truth\" において、\"is true and should be accepted\" の主語にあたるものを選びなさい。",
+  "a": "us, their readers(読者である私たち)",
+  "b": "they(著者たち)",
+  "c": "every author(どの著者も)",
+  "d": "what they have to say(彼らの言い分)",
+  "answer": "D",
+  "explanation": "\"what they have to say\"(彼らが言いたいこと・言い分)が名詞節としてひとまとまりの主語となり、\"is true\" と \"should be accepted as truth\" という二つの述部を受ける。私たちや著者は主節側の要素であり、この従属節内の述語動詞の主語にはならないのでA・B・Cは誤り。"
+ },
+ {
+  "tag": "内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "一部の著者は自分の言い分が真実だと読者に信じ込ませようとするが、多くの著者はそうしない。",
+  "b": "読者は、著者の言うことが真実かどうかを自分で判断し、それを真実として受け入れる。",
+  "c": "どの著者も、自分の言い分は真実であり真実として受け入れられるべきだと、読者である私たちに納得させようとする。",
+  "d": "どの著者も、読者の言い分が真実であることを認め、それを受け入れようとする。",
+  "answer": "C",
+  "explanation": "本文は \"Every author tries to convince us ... that what they have to say is true ...\" で、動作主は著者、納得させる相手は読者、真実だと主張される内容は著者自身の言い分。Aは \"Every\"(どの著者も)を「一部」に狭めた誤り。Bは納得させる側(著者)と判断する側(読者)を逆にした主客の取り違え。Dは \"what they have to say\" を「読者の言い分」と取り違え、動作の向きも逆にしている。"
+ },
+ {
+  "tag": "英語言い換え",
+  "q": "Which one is closest in meaning to the sentence above?",
+  "a": "Each writer hopes that we, their readers, will decide whether what they say is really true and worth accepting.",
+  "b": "Each writer tries to make us, their readers, believe that their message is true and ought to be accepted as the truth.",
+  "c": "Each writer succeeds in persuading us, their readers, that everything they say is true and must be accepted as the truth.",
+  "d": "We readers try to persuade each writer that what we have to say is true and should be accepted as the truth.",
+  "answer": "B",
+  "explanation": "原文の \"tries to convince us ... that what they have to say is true and should be accepted as truth\" は「著者が、自分の言い分は真実で真実として受け入れられるべきだと読者に納得させようとする」。Bは convince を make ... believe、should be accepted を ought to be accepted と言い換えつつ同義。Aは「納得させようとする」を「読者に真偽を判断してほしいと望む」に変えており意味がずれる。Cは tries を succeeds(成功する)に変え、さらに everything と過度に強めており誤り。Dは主語を著者から読者に入れ替えた主客逆転。"
+ }
+]}

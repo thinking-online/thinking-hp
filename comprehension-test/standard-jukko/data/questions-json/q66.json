@@ -1,0 +1,52 @@
+{"no": 66, "en": "Of all the breakthroughs in medical science, none has changed the course of modern medicine more, or resulted in the saving of more lives, than the discovery of penicillin.", "ja": "医学における数々の飛躍的な進歩の中で、ペニシリンの発見ほど、現代医学の流れを大きく変え、そして、より多くの命を救うことにつながったものは、他に一つもない。", "questions": [
+  {
+   "tag": "比較(no...more...than=最上級相当)",
+   "q": "本文の \"none has changed the course of modern medicine more ... than the discovery of penicillin\" が表す内容として最も適切なものを1つ選びなさい。",
+   "a": "ペニシリンの発見は、現代医学の流れをほとんど変えなかった。",
+   "b": "ペニシリンの発見は、現代医学の流れを他のどの飛躍的進歩よりも大きく変えた。",
+   "c": "ペニシリンの発見ほど現代医学の流れを変えなかった進歩は、他に一つもない。",
+   "d": "ペニシリンの発見は、現代医学の流れを他のどの進歩とも同じ程度に変えた。",
+   "answer": "B",
+   "explanation": "\"none ... more ... than X\" は「Xほど…なものは(他に)ない」で、結果的にXが最上級であることを示す。したがってペニシリンの発見が他のどの進歩よりも大きく変えたというB。Aは変えた程度を否定しており誤り、Cは比較の向きを逆にしており誤り、Dは「同程度」で最上級の意味を打ち消しているため誤り。"
+  },
+  {
+   "tag": "等位接続orの範囲と否定",
+   "q": "本文の \"or resulted in the saving of more lives\" の \"or\" が結ぶものと、否定の及ぶ範囲について正しいものを1つ選びなさい。",
+   "a": "\"or\" は \"changed ... more\" と \"resulted in ... more lives\" という二つの述部を結び、そのどちらもが \"none\" の否定を受けている。",
+   "b": "\"or\" は \"modern medicine\" と \"more lives\" という二つの名詞を結んでいる。",
+   "c": "\"or\" は \"than the discovery of penicillin\" 以下を二者択一で結んでいる。",
+   "d": "\"or\" は \"none\" とは別の主語を新たに導き、後半は肯定の意味になる。",
+   "answer": "A",
+   "explanation": "主語 \"none\" に対し \"has changed ... more\" と \"(has) resulted in ... more lives\" の二つの述部が \"or\" で並列され、両方とも \"none\" の否定が及ぶ。ゆえに「ペニシリンほど流れを変え、かつ多くの命を救ったものはない」となる。Bは名詞同士、Cは比較対象、Dは新主語の追加とする点でいずれも構造を取り違えており誤り。"
+  },
+  {
+   "tag": "同用法識別(比較→最上級相当)",
+   "q": "本文の \"none has ... more ... than ...\" と同じく、比較の形を用いて最上級の意味を表している文を1つ選びなさい。",
+   "a": "She is more interested in music than in sports.",
+   "b": "This problem is more difficult than I expected.",
+   "c": "The harder he worked, the more he achieved.",
+   "d": "No other city in the country is more crowded than Tokyo.",
+   "answer": "D",
+   "explanation": "Dは「Tokyoより混雑した都市は他にない」=「Tokyoが最も混雑している」で、否定語+比較級+thanが最上級相当を表す本文と同じ用法。Aは一人の人物の二つの対象を比べる比較、Bは予想との比較、Cは「〜すればするほど」の相関構文で、いずれも最上級の意味にはならない。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "ペニシリンの発見より多くの命を救った医学的進歩が、いくつか存在する。",
+   "b": "医学の飛躍的進歩はどれも同程度に現代医学の流れを変え、命を救ってきた。",
+   "c": "医学の飛躍的進歩の中で、ペニシリンの発見は現代医学の流れを最も大きく変え、しかも最も多くの命を救った。",
+   "d": "ペニシリンの発見は現代医学の流れを変えた点では最も重要だが、救った命の数では他の進歩に劣る。",
+   "answer": "C",
+   "explanation": "\"none has changed ... more, or resulted in the saving of more lives, than the discovery of penicillin\" は、変化の大きさでも救った命の数でもペニシリンを上回るものはないという意味なので、両面で最上位とするCが正しい。Aは「上回る進歩が存在する」で本文と矛盾、Bは「同程度」で最上級を否定、Dは命を救った数で他に劣るとする点が本文に反する。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "No breakthrough in medical science has saved as many lives as the discovery of penicillin, though several have changed medicine even more.",
+   "b": "The discovery of penicillin has changed the course of modern medicine more, and saved more lives, than any other breakthrough in medical science.",
+   "c": "The discovery of penicillin was one of several breakthroughs that greatly changed modern medicine and saved many lives.",
+   "d": "Among all medical breakthroughs, the discovery of penicillin changed modern medicine less than it saved lives.",
+   "answer": "B",
+   "explanation": "原文の「no ... more ... than penicillin」は「penicillin が他のどれよりも上」を意味するので、\"more ... than any other breakthrough\" と言い換えたBが同義。Aは命の数では最上位としつつ「変化ではより大きい進歩がいくつかある」とする点が原文と食い違う。Cは「several のうちの一つ」で最上級性を失い、Dは二つの述部を比べる別の意味になっており誤り。"
+  }
+ ]}

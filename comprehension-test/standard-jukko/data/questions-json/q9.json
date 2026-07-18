@@ -1,0 +1,52 @@
+{"no": 9, "en": "Whether you can get a good job or not depends on how well you can express yourself at a job interview.", "ja": "良い仕事に就けるかどうかは、就職の面接でどれだけ上手に自分を表現できるかにかかっている。", "questions": [
+  {
+   "tag": "whether名詞節・主語",
+   "q": "下線部 \"Whether you can get a good job or not\" の文中での働きとして最も適切なものを選びなさい。",
+   "a": "「良い仕事に就いたとしても」という譲歩を表す副詞節である",
+   "b": "述語動詞 \"depends\" の目的語になる名詞節である",
+   "c": "「〜かどうか」という意味で、文全体の主語になる名詞節である",
+   "d": "「もし良い仕事に就けば」という条件を表す副詞節である",
+   "answer": "C",
+   "explanation": "文の述語動詞は \"depends\" で、その前にある \"Whether ... or not\" のかたまりが主語になっている。ここでの whether は「〜かどうか」という意味の名詞節を作る用法。譲歩(〜だとしても)や条件(もし〜なら)ではなく、また depends は自動詞で目的語を取らない(on 以下が続く)ので B も誤り。"
+  },
+  {
+   "tag": "how well間接疑問・前置詞の目的語",
+   "q": "下線部 \"on how well you can express yourself at a job interview\" における \"how well ...\" の働きとして最も適切なものを選びなさい。",
+   "a": "\"how\" は理由を表し、節全体が \"depends\" を修飾する副詞節である",
+   "b": "\"how\" は \"well\" を修飾する疑問副詞で、節全体が前置詞 \"on\" の目的語になっている",
+   "c": "\"how well\" は感嘆を表す表現で、話者の驚きを示している",
+   "d": "\"how\" は \"express\" を修飾し、節は \"job\" を先行詞とする関係詞節である",
+   "answer": "B",
+   "explanation": "depend on A で「A 次第である」という形が土台にあり、その A に相当するのが \"how well you can express yourself...\" という間接疑問(名詞節)である。how が副詞 well を修飾して「どれだけ上手に」となり、節全体が前置詞 on の目的語になる。理由・感嘆・関係詞節のいずれでもない。"
+  },
+  {
+   "tag": "whetherの用法識別",
+   "q": "下線部 \"Whether you can get a good job or not\" と同じ用法(「〜かどうか」の名詞節)で \"whether\" が使われている文を選びなさい。",
+   "a": "Whether it rains or shines, the game will be held as planned.",
+   "b": "We will go hiking this weekend whether or not the weather is nice.",
+   "c": "You should finish the work on time, whether you like it or not.",
+   "d": "Whether the new plan will succeed remains completely uncertain.",
+   "answer": "D",
+   "explanation": "本文の whether は「〜かどうか」の意味で主語(名詞節)を作る用法。D の \"Whether the new plan will succeed\" も remains の主語となる名詞節で同じ用法。A・B・C はいずれも「〜であろうと(なかろうと)」という譲歩を表す副詞節で、用法が異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "面接で自分をうまく表現できるかどうかは、良い仕事に就けるかどうかによって決まる。",
+   "b": "良い仕事に就けるかどうかは、面接で自分をどれだけうまく表現できるかによって決まる。",
+   "c": "面接では、良い仕事に就けるかどうかにかかわらず、自分をしっかり表現すべきだ。",
+   "d": "良い仕事に就くためには、面接で自分の考えをあまり表現しないほうがよい。",
+   "answer": "B",
+   "explanation": "主語は「良い仕事に就けるかどうか」、それが「面接での自己表現のうまさ」次第だ、という関係なので B が正しい。A は主語と条件を逆にした誤読。C は whether を「〜にかかわらず」の譲歩と取り違えた誤り。D は本文にない「表現しないほうがよい」という否定の意味を加えた誤り。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Whether or not you land a good job is determined by how effectively you can present yourself during a job interview.",
+   "b": "How well you present yourself at a job interview is determined by whether or not you land a good job.",
+   "c": "You can land a good job at an interview only when you avoid expressing your true self too openly.",
+   "d": "Even if you present yourself poorly at a job interview, whether you land a good job is purely a matter of luck.",
+   "answer": "A",
+   "explanation": "原文は「良い仕事に就けるか」が「面接での自己表現のうまさ」に左右される、という構造で、A がそれを別語彙で正確に言い換えている。B は主語と決定要因を入れ替えた逆転。C は「表現を控えたときだけ職を得られる」と意味を反転させている。D は「運次第」という原文にない要素を加え、因果関係を消してしまっている。"
+  }
+]}

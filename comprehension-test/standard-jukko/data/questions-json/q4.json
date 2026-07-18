@@ -1,0 +1,52 @@
+{"no": 4, "en": "In Australia, people called Aborigines regarded the rainbow snake as one of the creators of the earth.", "ja": "オーストラリアでは、アボリジニと呼ばれる人々は、虹の蛇を大地を創造したものの一つ(創造神の一柱)とみなしていた。", "questions": [
+  {
+   "tag": "主語・動詞の特定",
+   "q": "この文の主語(S)と述語動詞(V)の組み合わせとして正しいものを1つ選びなさい。",
+   "a": "S = \"people\"、V = \"called\"",
+   "b": "S = \"Aborigines\"、V = \"regarded\"",
+   "c": "S = \"people called Aborigines\"、V = \"regarded\"",
+   "d": "S = \"the rainbow snake\"、V = \"regarded\"",
+   "answer": "C",
+   "explanation": "\"called Aborigines\" は直前の \"people\" を修飾する過去分詞句で、これ全体が主語「アボリジニと呼ばれる人々」となる。述語動詞は後続の \"regarded\" である。A は \"called\" を述語動詞と取り違えた誤読、B・D は主語を取り違えている。"
+  },
+  {
+   "tag": "過去分詞の識別",
+   "q": "この文中の \"called\" の文法的な働きとして最も適切なものを1つ選びなさい。",
+   "a": "過去形の述語動詞で「人々がアボリジニを呼んだ」という意味を表す",
+   "b": "現在分詞で「呼んでいる最中の」という進行の意味を表す",
+   "c": "使役の過去分詞で「アボリジニに呼ばせた」という意味を表す",
+   "d": "直前の \"people\" を修飾する過去分詞で「アボリジニと呼ばれる人々」という意味を表す",
+   "answer": "D",
+   "explanation": "\"called\" は「(〜と)呼ばれる」という受動の意味の過去分詞で、\"people\" を後ろから修飾している。文の述語動詞は \"regarded\" なので、A のように \"called\" を述語動詞と見ると V が二つになり文が成立しない。B・C も語形・意味の両面で当てはまらない。"
+  },
+  {
+   "tag": "同用法の識別",
+   "q": "この文の \"called\"(直前の名詞を修飾する過去分詞)と同じ用法を含む文を1つ選びなさい。",
+   "a": "The book called \"Silent Spring\" changed how we see nature.",
+   "b": "She called her friend to share the good news.",
+   "c": "They called the meeting off because of the storm.",
+   "d": "He called out loudly when he saw the danger.",
+   "answer": "A",
+   "explanation": "A の \"called 'Silent Spring'\" は直前の \"The book\" を修飾する過去分詞で「『沈黙の春』と呼ばれる本」の意味となり、本文の \"people called Aborigines\" と同じ構造。B・C・D の \"called\" はいずれも文の述語動詞(過去形)であり、修飾語ではない。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "オーストラリアの人々は、アボリジニを大地の創造者の一人だと考えていた。",
+   "b": "虹の蛇は、アボリジニと呼ばれる人々を大地の創造者とみなしていた。",
+   "c": "アボリジニと呼ばれる人々は、虹の蛇を大地を創り出した存在の一つとみなしていた。",
+   "d": "アボリジニと呼ばれる人々は、虹の蛇こそが大地を創った唯一の存在だと信じていた。",
+   "answer": "C",
+   "explanation": "\"regarded the rainbow snake as one of the creators\" は「虹の蛇を創造者の一つとみなした」で、みなす主体は「アボリジニと呼ばれる人々」、みなされる対象は「虹の蛇」。A は目的語をAboriginesと取り違え、B は主体と対象を逆転させた誤り。D は \"one of the creators\"(複数いる創造者の一つ)を「唯一の存在」と誤読している。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "In Australia, some people called the Aborigines together and viewed the rainbow snake as a creator of the earth.",
+   "b": "In Australia, the people known as Aborigines viewed the rainbow snake as one of the beings that had created the earth.",
+   "c": "In Australia, the people known as Aborigines viewed the rainbow snake as the one being that had created the whole earth.",
+   "d": "In Australia, the rainbow snake was thought by the Aborigines to be one of the earth's earliest inhabitants.",
+   "answer": "B",
+   "explanation": "原文は「アボリジニと呼ばれる人々が、虹の蛇を大地を創った存在の一つとみなした」で、B が \"people known as Aborigines\" や「one of the beings that had created」と語彙・構造を変えつつ同義。A は \"called\" を述語動詞(呼び集めた)と誤読、C は \"one of\" を「唯一の創造者」に変えており、D は creators を inhabitants(住人)にすり替えて意味がずれている。"
+  }
+]}

@@ -1,0 +1,52 @@
+{"no": 44, "en": "Most of the work you are required to do in this course is understanding the contents of books and being able to explain to other students what the writers want to say.", "ja": "この授業であなたがするよう求められている作業のほとんどは、本の内容を理解し、その本の書き手が言おうとしていることを他の学生に説明できるようになることである。", "questions": [
+ {
+  "tag": "主語・動詞の特定",
+  "q": "この英文の主節の述語動詞(主語を直接受ける動詞)はどれか。",
+  "a": "\"are required\"",
+  "b": "\"to do\"",
+  "c": "\"is\"",
+  "d": "\"want\"",
+  "answer": "C",
+  "explanation": "主語は \"Most of the work ... in this course\" 全体で、その核となる名詞は \"work\"。\"you are required to do\" は \"work\" を先行詞とする関係詞節(目的格 that の省略)内の動詞にすぎない。長い主語を受ける主節の動詞は \"is\" で、\"Most of the work\"(不可算)に一致した単数形になっている。\"want\" は \"what the writers want to say\" 内の動詞。"
+ },
+ {
+  "tag": "動名詞(補語)の識別",
+  "q": "\"is understanding the contents of books and being able to explain ...\" における \"understanding\" と \"being\" の説明として最も適切なものはどれか。",
+  "a": "現在進行形で「今〜している最中だ」という動作の進行を表している",
+  "b": "動名詞で、主語(作業)の中身を言い換える補語(C)になっている",
+  "c": "分詞構文で「〜するので」という理由を表している",
+  "d": "現在分詞として直前の \"work\" を後ろから修飾している",
+  "answer": "B",
+  "explanation": "\"The work is understanding ... and being able to explain ...\" は「その作業とは(=)理解すること・説明できるようになることだ」という意味で、\"is\" は S=C を結ぶ動詞、二つの動名詞句が補語。進行形なら「作業が理解している最中」となり意味をなさない。and が二つの動名詞句を並列している点も補語である証拠。"
+ },
+ {
+  "tag": "what名詞節の働き",
+  "q": "\"explain to other students what the writers want to say\" の \"what the writers want to say\" の文中での働きとして最も適切なものはどれか。",
+  "a": "条件を表す副詞節",
+  "b": "直前の \"students\" を後ろから修飾する形容詞節",
+  "c": "「〜するもの」の意味で \"books\" を先行詞とする関係詞節",
+  "d": "動詞 \"explain\" の目的語となる名詞節",
+  "answer": "D",
+  "explanation": "\"explain\" の目的語がこの what 節で、\"to other students\"(相手)が動詞と目的語の間に割り込んだ形。what は先行詞を含む関係代名詞で「書き手が言おうとしていること」という名詞のかたまりを作る。\"books\" や \"students\" を修飾する形容詞節でも副詞節でもない。"
+ },
+ {
+  "tag": "内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "この授業であなたに求められる作業の大半は、本の内容を理解し、著者が言おうとしていることを他の学生に説明できるようになることである。",
+  "b": "この授業では、著者が言おうとしていることを他の学生があなたに説明してくれるので、あなたは本の内容を理解しさえすればよい。",
+  "c": "この授業であなたは、他の学生が本について言いたがっていることを理解し、それを著者に説明しなければならない。",
+  "d": "この授業で求められる作業の大半は本を読むことであり、他の学生に説明する作業はほとんど求められない。",
+  "answer": "A",
+  "explanation": "作業の中身は「本の内容を理解すること」と「著者の言いたいことを他の学生に説明できるようになること」の二つで、Aがこれを正しく言い換えている。Bは説明する主体を you から other students に取り違えている。Cは説明の相手(other students)と説明する内容(著者の言いたいこと)を入れ替えている。Dは二つの作業のうち説明を軽視しており、両方が求められている本文と矛盾する。"
+ },
+ {
+  "tag": "言い換え",
+  "q": "Which one is closest in meaning to the sentence above?",
+  "a": "In this course, most of your work is to read books aloud to other students and to explain to their authors what the students want to say.",
+  "b": "In this course, you are mostly required to understand what books contain and to learn to tell other students what the authors of those books intend to convey.",
+  "c": "Most of what you must do in this course is to memorize the contents of books so that other students can explain them to you.",
+  "d": "In this course, you are required to do little more than listen while other students explain the contents of books that their writers wrote.",
+  "answer": "B",
+  "explanation": "原文は「本の内容を理解する」+「著者の言いたいことを他の学生に説明できるようになる」で、Bが語彙と構造を変えつつ同義。Aは説明する相手を authors にし、read aloud を加えて意味をずらしている。Cは understand を memorize に変え、説明する側を students にしている。Dは受け身的に聞くだけの内容にすり替えている。"
+ }
+]}

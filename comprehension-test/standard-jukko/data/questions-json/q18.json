@@ -1,0 +1,52 @@
+{"no": 18, "en": "Questions of crime and punishment are frequently discussed as if they bore no relation to the social system in which the problems occur.", "ja": "犯罪と刑罰をめぐる問題は、あたかもそれらの問題が生じる社会制度とは何の関係もないかのように、しばしば論じられている。", "questions": [
+{
+ "tag": "前置詞+関係代名詞",
+ "q": "\"the social system in which the problems occur\" の \"in which\" について、最も適切な説明を選びなさい。",
+ "a": "先行詞は \"the problems\" で、\"in which\" は他動詞 \"occur\" の目的語として、問題が生じさせる対象を表している。",
+ "b": "先行詞は \"relation\" で、\"in which\" は \"bore\" の主語として、関係が社会制度の中で成り立つことを表している。",
+ "c": "先行詞は \"the social system\" で、\"in which\" は \"the problems occur in the social system\" の in にあたり、問題が生じる場を示す副詞的な働きをしている。",
+ "d": "先行詞は \"crime and punishment\" で、\"in which\" は \"discussed\" を修飾し、論じられる理由を示す副詞的な働きをしている。",
+ "answer": "C",
+ "explanation": "\"in which\" は前置詞 in と関係代名詞 which が結びついた形で、元は \"the problems occur in the social system\"。したがって先行詞は直前の \"the social system\" で、in which は節内で occur を修飾する副詞的な働きをする。occur は自動詞で目的語をとらないので A は誤り。relation や crime and punishment は位置的にも意味的にも先行詞になれず、bore の主語はすでに they なので B・D も誤り。"
+},
+{
+ "tag": "as if(仮定法)",
+ "q": "\"as if they bore no relation to the social system ...\" が表す含意として、最も適切なものを選びなさい。",
+ "a": "実際に関係がないことが判明したので、関係のないものとして論じられている。",
+ "b": "実際には関係があるのに、あたかも関係がないかのように論じられている、という含意。",
+ "c": "関係があるかどうか分からないので、とりあえず関係があるものとして論じられている。",
+ "d": "以前は関係があったが、今では関係がなくなったものとして論じられている。",
+ "answer": "B",
+ "explanation": "\"bore\" は動詞 bear(bear no relation to 〜=〜と何の関係も持たない)の仮定法過去で、現在の事実に反する内容を表す。つまり「本当は関係があるのに、まるで関係がないかのように」論じられているという含意になる。A は仮定法を事実として読み違えており、C・D も本文にない条件や時間の変化を勝手に加えているため誤り。"
+},
+{
+ "tag": "as if 識別問題",
+ "q": "本文の \"as if they bore no relation\" と同じ用法(仮定法過去で、事実に反する内容を述べる \"as if\")で使われている英文を選びなさい。",
+ "a": "It looks as if the train has already arrived at the platform.",
+ "b": "She raised her hand as if to ask the teacher a question.",
+ "c": "It seems as if the weather will improve by tomorrow morning.",
+ "d": "He speaks about the town as if he lived there, though he has never once set foot in it.",
+ "answer": "D",
+ "explanation": "D は「実際には住んでいないのに、まるで住んでいるかのように」という事実に反する内容で、as if のあとが仮定法過去 \"lived\"。これが本文の \"bore\"(仮定法過去)と同じ用法。A・C は as if のあとが直説法(現在完了・未来)で、見た目どおりの事実らしさを述べており仮定法ではない。B は \"as if to do\"(まるで〜しようとするかのように)の不定詞用法で構造が異なる。"
+},
+{
+ "tag": "内容一致",
+ "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+ "a": "犯罪と刑罰をめぐる問題は、それらの問題が生じる社会制度と本当は結びついているのに、あたかも無関係であるかのように論じられることが多い。",
+ "b": "犯罪と刑罰をめぐる問題は、社会制度とは無関係であることが明らかになったため、社会制度から切り離して論じられることが多い。",
+ "c": "犯罪と刑罰をめぐる問題は、それが社会制度とどう関係するかを重視しながら、慎重に論じられることが多い。",
+ "d": "社会制度は、犯罪と刑罰の問題とは無関係に成り立っているかのように、頻繁に論じられている。",
+ "answer": "A",
+ "explanation": "as if + 仮定法過去 \"bore\" は「本当は関係があるのに、まるで無関係であるかのように」という事実に反する扱いを表すので、A が正しい。B は仮定法を「無関係だと判明した」という事実として読み違えている。C は「関係を重視して論じる」と意味を逆にしており、本文と矛盾する。D は論じられている主題を \"the social system\" とする主客の取り違えで、実際に論じられているのは \"Questions of crime and punishment\"。"
+},
+{
+ "tag": "言い換え",
+ "q": "Which one is closest in meaning to the sentence above?",
+ "a": "People often discuss crime and punishment with close attention to how deeply these matters are linked to the society in which they arise.",
+ "b": "People rarely discuss crime and punishment without first examining the society in which these problems arise.",
+ "c": "People often discuss crime and punishment as though these matters had nothing to do with the society in which they arise, though in reality they do.",
+ "d": "People have clearly proved that crime and punishment have no real connection with the society in which they arise.",
+ "answer": "C",
+ "explanation": "原文は「本当は関係があるのに、まるで無関係であるかのように論じられる」という意味なので、as though + 仮定法(had nothing to do with)に加えて \"though in reality they do\" で実際には関係があると添える C が最も近い。A は「関係を重視して論じる」と逆の意味。B の \"rarely ... without\" は「必ず社会を検討してから論じる」となり原文と逆。D は「無関係だと証明した」と仮定法を事実に変えており誤り。"
+}
+]}

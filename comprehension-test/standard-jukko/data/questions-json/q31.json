@@ -1,0 +1,52 @@
+{"no": 31, "en": "Jessica is aware that when I feel lonely, I often spend time by the riverside.", "ja": "ジェシカは、私が寂しさを感じるときにはよく川辺で時間を過ごす、ということを知っている。", "questions": [
+  {
+   "tag": "thatの働き",
+   "q": "この文の \"that\" の働きとして最も適切なものを選びなさい。",
+   "a": "前の名詞 \"Jessica\" を先行詞とする関係代名詞で、形容詞節を導いている。",
+   "b": "\"aware\" という形容詞の内容(何を知っているのか)を説明する名詞節を導く接続詞である。",
+   "c": "「あの」という意味で後ろの名詞を指し示す指示形容詞である。",
+   "d": "「〜するように」という目的を表す副詞節を導く接続詞である。",
+   "answer": "B",
+   "explanation": "be aware that S V「〜ということを知っている・気づいている」で、この that は名詞節を導く接続詞であり、that 節全体が形容詞 aware の内容(目的語)にあたる。A のように関係代名詞なら that の後ろに主語や目的語の欠落が生じるが、\"when I feel lonely, I often spend time by the riverside\" は要素の欠けない完全な文なので誤り。"
+  },
+  {
+   "tag": "同用法の識別",
+   "q": "この文の \"that\" と同じ働きの \"that\" を含む文を選びなさい。",
+   "a": "The book that you lent me last week was really interesting.",
+   "b": "I was so tired that I fell asleep on the train home.",
+   "c": "We were glad that our team had won the championship.",
+   "d": "The house that stands on the hill belongs to my uncle.",
+   "answer": "C",
+   "explanation": "正解 C は \"be glad that S V\"「〜ということがうれしい」で、形容詞 glad の内容を表す名詞節を導く接続詞 that であり、本文の \"aware that\" と同じ用法。A と D は先行詞(book / house)を修飾する関係代名詞で、節内に目的語や主語の欠落がある。B は \"so ... that\" の結果を表す副詞節を導く that なので用法が異なる。"
+  },
+  {
+   "tag": "when節の範囲と主語",
+   "q": "\"when I feel lonely\" について正しく説明したものを選びなさい。",
+   "a": "私(話し手)が寂しく感じるときのことを述べ、that 節の内部で \"spend\" を修飾している。",
+   "b": "ジェシカが寂しく感じるときのことを述べ、\"is aware\" を修飾している。",
+   "c": "話し手が寂しく感じるときのことを述べ、that 節の外にある主節 \"Jessica is aware\" を修飾している。",
+   "d": "ジェシカが寂しく感じるときのことを述べ、that 節の内部で \"spend\" を修飾している。",
+   "answer": "A",
+   "explanation": "\"when I feel lonely\" の主語は I(話し手)であってジェシカではなく、この副詞節は that 節の内側にあって \"I often spend time by the riverside\" の \"spend\" を修飾する。つまり「私が寂しいときに川辺で過ごす」という習慣をジェシカが知っている、という入れ子構造。B・D は寂しく感じる主体をジェシカとする点で誤り。C は when 節が that 節の外の主節を修飾するとする点で誤り。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "ジェシカは寂しくなると、よく川辺で時間を過ごす。",
+   "b": "私は、ジェシカが寂しいときによく川辺で過ごすことを知っている。",
+   "c": "ジェシカは、私が寂しいときにはいつも川辺にいてほしいと思っている。",
+   "d": "私が寂しさを感じると川辺で過ごしがちだということを、ジェシカは分かっている。",
+   "answer": "D",
+   "explanation": "aware の主語は Jessica、寂しさを感じて川辺で過ごすのは I(話し手)であり、D はその関係を正しく言い換えている。A は寂しく過ごす主体をジェシカと取り違えている。B は「知っている」主語を私に逆転させている。C は「知っている(aware)」を「〜してほしいと願う」に変え、さらに often を「いつも」に強めている点でも誤り。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Jessica knows that I tend to spend time by the river whenever I feel lonely.",
+   "b": "I know that Jessica often goes to the riverside when she feels lonely.",
+   "c": "Jessica feels lonely, so she often spends time with me by the riverside.",
+   "d": "Jessica hopes that I will visit the riverside more often when I feel lonely.",
+   "answer": "A",
+   "explanation": "正解 A は aware を knows に、often を tend to に言い換えつつ、「ジェシカが知っている」「寂しいのも川辺で過ごすのも私」という関係を保っている。B は知っている主体と寂しく過ごす主体をジェシカに逆転させている。C はジェシカ自身が寂しくて一緒に過ごす、という別の意味に変えている。D は「知っている」を「〜してほしいと願う(hopes)」に変えており、事実の認識ではなく願望になっている。"
+  }
+]}

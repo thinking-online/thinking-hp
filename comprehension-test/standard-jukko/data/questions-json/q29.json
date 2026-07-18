@@ -1,0 +1,52 @@
+{"no": 29, "en": "I have come up with an excellent idea. The only trouble is that I do not have enough money to carry it out.", "ja": "私は素晴らしい考えを思いついた。唯一の問題は、それを実行するだけの十分なお金が(私に)ないということだ。", "questions": [
+{
+ "tag": "接続詞thatの働き",
+ "q": "第2文 \"The only trouble is that I do not have enough money to carry it out\" の \"that\" が導く節は、文中でどのような働きをしているか。最も適切なものを選びなさい。",
+ "a": "名詞 \"trouble\" と同格の名詞節",
+ "b": "名詞 \"trouble\" を先行詞とする関係代名詞節",
+ "c": "be動詞 \"is\" の補語となる名詞節",
+ "d": "理由を表す副詞節",
+ "answer": "C",
+ "explanation": "\"The only trouble is that ...\" の \"is\" の後ろに置かれた that節は「〜ということ」という意味の名詞節で、主語 \"The only trouble\" とイコールで結ばれる補語。同格(A)なら \"is\" を挟まず名詞に直結するはずで、関係代名詞(B)なら節内に欠けた要素があるはずだが、\"I do not have enough money\" は要素の欠けない完全な文なので当てはまらない。"
+},
+{
+ "tag": "itの指示内容",
+ "q": "第2文 \"to carry it out\" の \"it\" が指す内容として最も適切なものを選びなさい。",
+ "a": "唯一の問題 (the only trouble)",
+ "b": "話し手が思いついた素晴らしい考え (an excellent idea)",
+ "c": "実行に必要な十分なお金 (enough money)",
+ "d": "話し手が抱えているお金の悩み",
+ "answer": "B",
+ "explanation": "\"carry out\" は「(計画や考えなどを)実行する」という意味の句動詞で、\"it\" はその実行対象を指す。第1文の \"an excellent idea\"(思いついた素晴らしい考え)を受けており、「お金」や「問題」を実行すると読むと意味が通らない。"
+},
+{
+ "tag": "同用法の識別",
+ "q": "本文の \"The only trouble is that I do not have enough money\" の \"that\" と同じ用法の \"that\" を含む文を1つ選びなさい。",
+ "a": "The fact is that nobody knew the answer.",
+ "b": "The novel that he wrote became a bestseller.",
+ "c": "The rain was so heavy that the game was canceled.",
+ "d": "Look at that beautiful sunset over the sea.",
+ "answer": "A",
+ "explanation": "本文の \"that\" は be動詞の後で「〜ということ」という名詞節(補語)を導く接続詞。Aの \"The fact is that ...\" が同じ「be+that名詞節(補語)」の構造で一致する。Bは先行詞をとる関係代名詞、Cは \"so ... that\" の結果構文、Dは名詞を指す指示形容詞で、いずれも用法が異なる。"
+},
+{
+ "tag": "内容一致",
+ "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+ "a": "話し手は資金は十分にあるが、実行できるような良い考えが思いつかないのが悩みだ。",
+ "b": "話し手は素晴らしい考えを思いついたので、それを実行するお金は十分にある。",
+ "c": "話し手は素晴らしい考えを思いついたが、その考え自体に多くの問題点があると気づいた。",
+ "d": "話し手は素晴らしい考えを思いついたが、それを実現するための資金が足りないのが唯一の問題だ。",
+ "answer": "D",
+ "explanation": "第2文は「唯一の問題は、それを実行するだけのお金が足りないこと」という意味で、Dが正しい言い換え。Bはお金が足りないという本文と逆で、Aは「考えが思いつかない」、Cは「考えに問題点がある」と、いずれも本文の内容(問題は資金不足)を取り違えている。"
+},
+{
+ "tag": "言い換え",
+ "q": "Which one is closest in meaning to \"The only trouble is that I do not have enough money to carry it out\"?",
+ "a": "The only reason I need money is to make my idea better.",
+ "b": "The one thing standing in my way is a lack of money to put the idea into practice.",
+ "c": "My single problem is that carrying out the idea has already cost me too much money.",
+ "d": "What troubles me most is deciding whether the idea is worth the money.",
+ "answer": "B",
+ "explanation": "正解Bは \"standing in my way\"(妨げ)=trouble、\"a lack of money\"=do not have enough money、\"put the idea into practice\"=carry it out と、語句を変えつつ同義。Aはお金の目的を「考えをよくするため」とずらし、Cはまだ実行していないのに「すでに費用がかかった」ことにしており、Dは「考えに見合う価値かを判断する」という本文にない内容になっている。"
+}
+]}

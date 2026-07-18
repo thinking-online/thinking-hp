@@ -1,0 +1,52 @@
+{"no": 19, "en": "Your success as an architect depends on the extent to which you are able to absorb the best of traditional architecture, and make it your own.", "ja": "建築家としてのあなたの成功は、伝統的建築の最も優れたものをどれだけ吸収し、それを自分自身のものにできるかにかかっている。", "questions": [
+  {
+   "tag": "前置詞+関係代名詞 the extent to which",
+   "q": "\"the extent to which you are able to absorb the best of traditional architecture\" における \"to which\" について、先行詞と節内での働きの説明として最も適切なものを選びなさい。",
+   "a": "先行詞は \"architecture\" で、\"to which\" は関係詞節内で \"absorb\" の目的語の働きをしている。",
+   "b": "先行詞は \"your success\" で、\"to which\" は関係詞節内で \"depends\" の目的語の働きをしている。",
+   "c": "先行詞は \"the extent\" で、\"to which\" は関係詞節内で \"to the extent\"(その程度まで)という副詞的な働きをしている。",
+   "d": "先行詞は \"the extent\" で、\"to which\" は関係詞節内で主語の働きをしている。",
+   "answer": "C",
+   "explanation": "\"the extent to which S V\" は「Sが...する程度」を表し、to which の先行詞は直前の the extent、節内では absorb ... to the extent(その程度まで吸収する)という副詞的な働きをする。absorb の目的語は \"the best of traditional architecture\" であって to which ではないためAは誤り、depends の目的語は the extent 全体なのでBも誤りである。"
+  },
+  {
+   "tag": "it指示語・並列関係",
+   "q": "\"and make it your own\" の \"it\" が指す内容と、\"make\" が結びつく語の組み合わせとして正しいものを選びなさい。",
+   "a": "it は \"your success\" を指し、\"make\" は \"depends on\" と並列している。",
+   "b": "it は \"the best of traditional architecture\" を指し、\"make\" は \"are able to\" に続いて \"absorb\" と並列している。",
+   "c": "it は \"an architect\" を指し、\"make\" は主節の動詞 \"depends\" と並列している。",
+   "d": "it は \"the extent\" を指し、\"make\" は関係詞節の外にある独立した命令文の動詞である。",
+   "answer": "B",
+   "explanation": "\"you are able to absorb the best of traditional architecture, and make it your own\" は are able to のあとに absorb と make が並列した形で、it は absorb の目的語である \"the best of traditional architecture\" を受ける。make は depends とは無関係(Cは主節動詞との誤った並列)であり、命令文でもない(Dの誤り)。"
+  },
+  {
+   "tag": "関係詞節の訳出(程度)",
+   "q": "\"depends on the extent to which you are able to absorb the best of traditional architecture\" の意味として最も適切なものを選びなさい。",
+   "a": "あなたが伝統的建築の最良のものをどれだけ吸収できるかにかかっている。",
+   "b": "あなたが伝統的建築の最良のものを吸収できる場所にかかっている。",
+   "c": "あなたが伝統的建築の最良のものを吸収しようとする理由にかかっている。",
+   "d": "あなたが伝統的建築の最良のものを吸収できるとすれば、その時にかかっている。",
+   "answer": "A",
+   "explanation": "the extent to which は「どれだけ...するか、...する程度」を表すので「どれだけ吸収できるか」とするAが正しい。which を場所(where)、理由(why)、時・条件(when/if)と取り違えたB・C・Dは、先行詞 the extent(程度)を無視した誤読である。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "優れた伝統的建築こそが、建築家を成功へと導く唯一の要因である。",
+   "b": "建築家として成功するには、伝統を捨てて自分独自の様式を新たに生み出す必要がある。",
+   "c": "建築家として成功するには、伝統的建築のすべてを完全に習得し、それをそっくり後世に伝えなければならない。",
+   "d": "建築家として成功できるかどうかは、伝統的建築の最も優れた点をどれほど吸収して自分のものにできるかによって決まる。",
+   "answer": "D",
+   "explanation": "本文は「成功は伝統的建築の最良のものをどれだけ吸収し自分のものにできるかにかかっている」と述べており、程度を条件とするDが正しい。Cは the extent(程度)を「すべて完全に」と読み make it your own を「後世に伝える」と誤読、Aは成功の唯一の要因と断定しすぎ、Bは伝統を吸収せよという趣旨を「伝統を捨てよ」と正反対に取り違えている。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "You cannot succeed as an architect unless you completely master every style of traditional architecture and pass it on unchanged.",
+   "b": "To succeed as an architect, you must abandon traditional architecture and create a style entirely your own.",
+   "c": "How well you succeed as an architect depends on how much of the finest traditional architecture you can take in and make truly your own.",
+   "d": "The best of traditional architecture will make you a successful architect, no matter how little of it you absorb.",
+   "answer": "C",
+   "explanation": "原文の the extent to which you are able to absorb ... は「どれだけ吸収できるか」という程度を表すので、how much ... you can take in and make ... your own と言い換えたCが同義である。Aは程度を「完全習得」と絶対化し own を「そのまま伝える」と誤り、Bは伝統を捨てよという逆の主張、Dは吸収量に関係なく成功すると数量関係を逆転させている。"
+  }
+ ]}

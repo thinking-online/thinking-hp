@@ -1,0 +1,52 @@
+{"no": 2, "en": "The Japanese language has throughout its history accepted with comparative ease many words from other languages.", "ja": "日本語はその歴史を通じて、他の言語からの多くの語を比較的容易に受け入れてきた。", "questions": [
+ {
+  "tag": "述語動詞の特定(挿入による分断)",
+  "q": "\"has throughout its history accepted\" の構造の説明として最も適切なものを1つ選びなさい。",
+  "a": "\"has\" と \"accepted\" が現在完了の述語動詞を成し、その間に副詞句 \"throughout its history\" が割り込んでいる",
+  "b": "\"has\" が本動詞で \"throughout its history\" をその目的語にとり、\"accepted\" は独立した分詞である",
+  "c": "\"throughout its history\" が文の主語で、\"has accepted\" がその動詞である",
+  "d": "\"has ... accepted\" は過去完了であり、\"throughout its history\" は完了の起点を表している",
+  "answer": "A",
+  "explanation": "本来 \"has accepted\"(現在完了)という一続きの述語動詞の間に、副詞句 \"throughout its history\"(その歴史を通じて)が挿入されている形。Bは has が前置詞句を目的語にとれない点で誤り。Cは主語が \"The Japanese language\" である点、Dは had ではなく has なので現在完了である点で誤り。"
+ },
+ {
+  "tag": "副詞句の係り先(様態)",
+  "q": "\"with comparative ease\" は文中で何を修飾しているか、最も適切なものを1つ選びなさい。",
+  "a": "\"many words\" を修飾し、「比較しやすい語」という語の性質を表している",
+  "b": "\"accepted\" を修飾し、「比較的容易に受け入れた」という受け入れ方を表している",
+  "c": "\"history\" を修飾し、「比較的容易な歴史」という意味を表している",
+  "d": "\"other languages\" を修飾し、「比較しやすい他言語」という意味を表している",
+  "answer": "B",
+  "explanation": "\"with comparative ease\" は「比較的容易に」という様態を表す副詞句で、動詞 \"accepted\"(どのように受け入れたか)を修飾する。ここでの comparative は「比較的な=わりあいに」の意で、「比較しやすい」ではない。よってA・Dの名詞修飾の解釈は誤り、Cも係り先の取り違え。"
+ },
+ {
+  "tag": "代名詞itの指示内容",
+  "q": "\"its history\" の \"its\" が指す内容として最も適切なものを1つ選びなさい。",
+  "a": "many words",
+  "b": "other languages",
+  "c": "The Japanese language",
+  "d": "comparative ease",
+  "answer": "C",
+  "explanation": "\"its\" は単数の名詞を受ける所有格で、文の主語 \"The Japanese language\"(日本語)を指す。つまり「日本語のその歴史を通じて」の意。many words や other languages は複数で its と一致せず、また文脈上「歴史」を持つ主体は日本語であるから、A・B・Dは誤り。"
+ },
+ {
+  "tag": "内容一致(主客・程度・語義)",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "他の言語が、その歴史を通じて日本語から多くの語を比較的容易に取り入れてきた。",
+  "b": "日本語は、その歴史を通じて、他の言語からの多くの語を比較的たやすく受け入れてきた。",
+  "c": "日本語は歴史上、他の言語からの語を受け入れることにずっと強く抵抗してきた。",
+  "d": "日本語は、他の言語と比較することで、多くの外来語の意味を容易に理解してきた。",
+  "answer": "B",
+  "explanation": "受け入れる主体は「日本語」、受け入れられる対象は「他言語からの語」で、それを「比較的容易に」行ってきたという内容なのでBが正しい。Aは主体と対象を逆転させた誤り、Cは「容易に受け入れた」を否定に取り違えた誤り、Dは comparative を「比較して」と誤読し「理解した」にすり替えている。"
+ },
+ {
+  "tag": "英文言い換え(様態・数量・主客)",
+  "q": "Which one is closest in meaning to the sentence above?",
+  "a": "Many other languages have, over their history, borrowed a large number of words from Japanese with relative ease.",
+  "b": "Throughout its history, Japanese has had great difficulty in taking in words from other languages.",
+  "c": "Over its history, Japanese has accepted only a few foreign words, and only with considerable effort.",
+  "d": "Over the course of its history, Japanese has taken in many words from other languages without much difficulty.",
+  "answer": "D",
+  "explanation": "原文は「日本語が、その歴史を通じて、他言語からの多くの語を比較的容易に受け入れてきた」で、\"with comparative ease\" を without much difficulty と言い換えたDが同義。Aは借用の主客を逆にした誤り、Bは ease を difficulty に反転させた誤り、Cは数量(many→a few)と様態(容易→多大な努力)を逆にしている。"
+ }
+]}

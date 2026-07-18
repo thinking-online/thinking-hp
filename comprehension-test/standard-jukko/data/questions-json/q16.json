@@ -1,0 +1,52 @@
+{"no": 16, "en": "The historical clues in the Bible lead researchers to a knowledge of the ancient civilizations in which the Bible was written.", "ja": "聖書の中に残された歴史的な手がかりは、研究者たちを、その聖書が書かれた古代文明についての知識へと導いてくれる。", "questions": [
+ {
+  "tag": "前置詞+関係代名詞(先行詞)",
+  "q": "\"the ancient civilizations in which the Bible was written\" について、\"in which\" が導く関係詞節が直接説明している先行詞として最も適切なものを1つ選びなさい。",
+  "a": "\"the historical clues\"",
+  "b": "\"the Bible\"",
+  "c": "\"a knowledge\"",
+  "d": "\"the ancient civilizations\"",
+  "answer": "D",
+  "explanation": "\"in which the Bible was written\" は「その中で聖書が書かれた」という意味で、直前の \"the ancient civilizations\" を修飾する。\"the Bible\" や \"a knowledge\" を先行詞とすると「聖書の中で書かれた」「知識の中で書かれた」となり意味が通らない。手がかり(clues)は文全体の主語であって、この関係詞節の先行詞ではない。"
+ },
+ {
+  "tag": "関係詞節の復元",
+  "q": "\"in which the Bible was written\" の関係詞節を、\"which\" が指す語を元に戻して1つの平叙文で表したものとして最も適切なものを1つ選びなさい。",
+  "a": "The Bible was written about the ancient civilizations.",
+  "b": "The Bible was written by the ancient civilizations.",
+  "c": "The Bible was written in the ancient civilizations.",
+  "d": "The ancient civilizations were written in the Bible.",
+  "answer": "C",
+  "explanation": "\"in which\" は「前置詞 in + which(=the ancient civilizations)」なので、元に戻すと The Bible was written in the ancient civilizations となり、in は「〜の中で(その文明において)」を表す。about とすると「〜について書かれた」(of which の誤読)、by とすると「文明が聖書を書いた」(動作主の取り違え)、D は主語と目的語の入れ替わりで、いずれも本文の構造と異なる。"
+ },
+ {
+  "tag": "主語の特定",
+  "q": "動詞 \"lead\" の主語(何が研究者を導くのか)として最も適切なものを1つ選びなさい。",
+  "a": "\"The historical clues\"",
+  "b": "\"the Bible\"",
+  "c": "\"researchers\"",
+  "d": "\"the ancient civilizations\"",
+  "answer": "A",
+  "explanation": "文の骨組みは The historical clues ... lead researchers ... で、主語は \"The historical clues\"(in the Bible は clues を修飾する句)、複数形に一致して動詞が lead となっている。\"the Bible\" は動詞の直前にあるが前置詞 in の目的語にすぎず主語ではない。\"researchers\" は導かれる側(目的語)である。"
+ },
+ {
+  "tag": "内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "古代文明についての知識をあらかじめ得ておいて初めて、研究者は聖書の中の歴史的な手がかりを理解できる。",
+  "b": "聖書に残る歴史的な手がかりによって、研究者はその聖書が生まれた古代文明について知ることができる。",
+  "c": "研究者たちは古代文明を研究することで、聖書がいつ書かれたのかを示す歴史的な手がかりを見つける。",
+  "d": "聖書は、研究者たちが集めた古代文明についての歴史的な手がかりをもとにして書かれた。",
+  "answer": "B",
+  "explanation": "本文は「手がかりが研究者を知識へ導く」という向きで、手がかりが出発点、古代文明の知識が到達点である。B はその向きを正しく言い換えている。A は知識を前提条件と取り違え、C は研究者が手がかりを見つけると主客を逆転させ、D は聖書が手がかりをもとに書かれたと因果を逆転させており、いずれも本文と矛盾する。"
+ },
+ {
+  "tag": "言い換え",
+  "q": "Which one is closest in meaning to the sentence above?",
+  "a": "Researchers discovered historical clues about when the Bible was written by first studying the ancient civilizations.",
+  "b": "Researchers must fully understand the ancient civilizations before they are able to find the historical clues in the Bible.",
+  "c": "By examining the historical clues found in the Bible, researchers can come to understand the ancient civilizations in which it was written.",
+  "d": "The historical clues in the Bible show researchers that the ancient civilizations produced many other written works.",
+  "answer": "C",
+  "explanation": "原文は「聖書内の手がかりが研究者を、聖書が書かれた古代文明の知識へと導く」であり、C は studying clues → understand the civilizations という向きと内容を保った正しい言い換え。A は文明を調べて手がかりを得ると向きを逆転させ、B は文明の理解を手がかり発見の前提とし、D は「他の多くの著作を生んだ」という原文にない情報を加えており、いずれも意味がずれる。"
+ }
+]}

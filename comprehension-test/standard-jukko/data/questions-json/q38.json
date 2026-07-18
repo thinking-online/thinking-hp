@@ -1,0 +1,42 @@
+{"no": 38, "en": "Science has made such great progress, and education is so widespread, that we are all more or less familiar with the laws of nature.", "ja": "科学が非常に大きく進歩し、また教育も非常に広く普及しているので、私たちは皆、多かれ少なかれ(ある程度は)自然の法則になじみがある。", "questions": [
+  {
+   "tag": "such/so ... that(程度・結果)",
+   "q": "文末の \"that we are all more or less familiar with the laws of nature\" の that 節の働きとして最も適切なものを選びなさい。",
+   "a": "\"made\" の目的語 \"progress\" を先行詞とし、進歩の内容を説明する関係代名詞節である",
+   "b": "\"such great progress\" と \"so widespread\" の両方を受け、その程度の結果を表す副詞節である",
+   "c": "\"the laws of nature\" を言い換える、直前の名詞と同格の名詞節である",
+   "d": "\"we are all ... familiar\" を条件づける「〜するために」という目的の副詞節である",
+   "answer": "B",
+   "explanation": "この文は \"such great progress\" と \"so widespread\" が and で並列され、両者を共通に受ける結果節 \"that we are all ...\" が続く、such/so ... that の相関構文である。したがって「非常に〜なので…」という程度・結果を表す副詞節。A の関係詞でも、C の同格でも、D の目的でもない。"
+  },
+  {
+   "tag": "用法識別(so の識別)",
+   "q": "本文の \"education is so widespread, that ...\" と同じ用法(「非常に〜なので…」という程度・結果を表す so)を含む文を1つ選びなさい。",
+   "a": "She is not so tall as her sister.",
+   "b": "I think so, but I am not certain.",
+   "c": "The box was so heavy that I could not lift it alone.",
+   "d": "He was tired, so he went to bed early.",
+   "answer": "C",
+   "explanation": "本文の so は「so+形容詞+that+結果」で程度・結果を表す。同じ用法は C(非常に重かったので持ち上げられなかった)。A は not so ... as の比較、B は think so の so(前述内容の代用)、D は「それで」を表す接続詞の so で、いずれも用法が異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "科学の進歩は著しいが教育の普及が不十分なため、自然の法則を知る人はごく限られている。",
+   "b": "私たちが自然の法則に詳しくなったおかげで、科学が進歩し、教育も普及した。",
+   "c": "科学の進歩と教育の普及にもかかわらず、私たちは自然の法則をほとんど理解できていない。",
+   "d": "科学が大きく進歩し教育も広く普及した結果、私たちは皆ある程度は自然の法則に通じている。",
+   "answer": "D",
+   "explanation": "「科学の大きな進歩」と「教育の広い普及」という二つの原因が and で並び、共通の結果節「私たちは皆多かれ少なかれ自然の法則になじみがある」を導く。more or less は「多かれ少なかれ・ある程度」と肯定を和らげる表現なので D が正解。A は原因を教育不足にすり替え、B は因果を逆転させ、C は more or less を「ほとんど〜ない」と否定的に誤読している。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Because science has advanced greatly and education has spread so widely, almost all of us have at least some knowledge of the laws of nature.",
+   "b": "Science has advanced and education has spread, yet hardly anyone truly understands the laws of nature.",
+   "c": "Because we are familiar with the laws of nature, science has progressed and education has become widespread.",
+   "d": "Science has advanced so much that education has spread, and as a result we fully understand the laws of nature.",
+   "answer": "A",
+   "explanation": "原文は「科学の進歩」と「教育の普及」という二つの原因が共通の結果(私たちは皆多かれ少なかれ自然の法則になじみがある)を導く構造で、more or less familiar は「ある程度の知識がある」に等しいので A が同義。B は結果を hardly anyone と否定に変え、C は因果を逆転させ、D は education を science の結果として誤って連鎖させ、さらに more or less を fully(完全に)と誤っている。"
+  }
+]}

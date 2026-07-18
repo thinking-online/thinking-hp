@@ -1,0 +1,52 @@
+{"no": 24, "en": "The impression a child receives from his or her environment during the first years of life influences his or her intellectual development and character.", "ja": "子どもが人生の最初の数年間に周囲の環境から受ける印象は、その子の知的な発達と人格に影響を及ぼす。", "questions": [
+ {
+  "tag": "主語・動詞の特定",
+  "q": "この英文の主節の述語動詞(主語 \"The impression\" に対応する動詞)はどれか、最も適切なものを1つ選びなさい。",
+  "a": "\"influences\"",
+  "b": "\"receives\"",
+  "c": "\"development\"",
+  "d": "\"environment\"",
+  "answer": "A",
+  "explanation": "主語は長い名詞句 \"The impression ... life\" で、その核となる名詞は \"The impression\" である。これに対応する主節の動詞は三単現の s がついた \"influences\" である。\"receives\" は \"a child receives\" という接触節(関係代名詞省略)の中の動詞で \"impression\" を修飾しているにすぎず、\"development\" と \"environment\" はいずれも名詞なので動詞ではない。"
+ },
+ {
+  "tag": "関係代名詞の省略(接触節)の識別",
+  "q": "この英文の主語の中心である \"The impression a child receives\" は、名詞のあとに目的格の関係代名詞が省略されてS+Vが続く形である。これと同じ構造を含む文を1つ選びなさい。",
+  "a": "The train that leaves at noon is always crowded.",
+  "b": "The letter she wrote me arrived this morning.",
+  "c": "I believe that his story is completely true.",
+  "d": "This is the town where I was born.",
+  "answer": "B",
+  "explanation": "\"The impression a child receives\" は「名詞+S+V」で、目的格の関係代名詞(that/which)が省略された接触節である。Bの \"The letter she wrote me\" が同じ形で、letter が wrote の目的語にあたる。Aは主格の関係代名詞 that で省略できず、Cの that は名詞節を作る接続詞、Dは関係副詞 where であり、いずれも構造が異なる。"
+ },
+ {
+  "tag": "指示語の特定",
+  "q": "この英文中に2回現れる \"his or her\" が指すものとして最も適切なものを1つ選びなさい。",
+  "a": "\"environment\"(環境)",
+  "b": "\"The impression\"(印象)",
+  "c": "\"the first years of life\"(人生最初の数年)",
+  "d": "\"a child\"(子ども)",
+  "answer": "D",
+  "explanation": "\"his or her environment\" と \"his or her intellectual development\" の \"his or her\" は、いずれも文中で唯一「彼または彼女」と呼べる人物である \"a child\" を受けている。環境も知的発達もその子に属するもので、意味上「その子の」となる。印象や年月は人ではないので指示対象にならない。"
+ },
+ {
+  "tag": "内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "子どもの知的発達や人格が、その子が幼少期に環境から受ける印象を形づくっていく。",
+  "b": "幼い頃に周囲の環境から受け取る印象が、その子の知能の伸びや性格のあり方を左右する。",
+  "c": "環境から受ける印象は、幼少期よりもむしろ成長したあとの人格形成に強く影響する。",
+  "d": "子どもは幼少期に、自分の知的発達や人格に合わせて周囲の環境を選び取っていく。",
+  "answer": "B",
+  "explanation": "原文は「印象(主語)」が「知的発達と人格(目的語)」に影響を与える、という関係で、Bがこれを正しく言い換えている。Aは主語と目的語(影響する側とされる側)を逆にした誤読、Dは「子どもが環境を選ぶ」という原文にない取り違え、Cは影響が及ぶ時期を「成長後」にずらしている点で本文(the first years of life に受ける印象が影響する)と矛盾する。"
+ },
+ {
+  "tag": "言い換え",
+  "q": "Which one is closest in meaning to the sentence \"The impression a child receives from his or her environment during the first years of life influences his or her intellectual development and character.\"?",
+  "a": "How a child's mind and personality develop determines the impression it receives from its surroundings in its first years.",
+  "b": "The surroundings a child grows up in during its first years are shaped by its developing mind and personality.",
+  "c": "What a child perceives of its surroundings in its first years shapes how its mind and personality later develop.",
+  "d": "A child's first impression of its surroundings matters less to its later development than its personality does.",
+  "answer": "C",
+  "explanation": "原文は「幼少期に環境から受ける印象」が「知的発達と人格」に影響するという内容で、Cの「子どもが周囲について感じ取るものが、心と人格の発達のしかたを形づくる」が同義。Aは「発達が印象を決める」と影響の向きを逆にし、Bも「環境が発達によって形づくられる」と主客を逆転させている。Dは原文にない比較(less ... than)を持ち込み、印象と人格の重みを比べる別の主張になっている。"
+ }
+]}

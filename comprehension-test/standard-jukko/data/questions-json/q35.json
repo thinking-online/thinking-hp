@@ -1,0 +1,52 @@
+{"no": 35, "en": "The news suddenly reached our dormitory that the principal of our school was going to resign on the grounds of ill health.", "ja": "校長が健康上の理由で辞任するつもりだという知らせが、突然私たちの寮に届いた。", "questions": [
+  {
+   "tag": "同格that節/名詞節の識別",
+   "q": "下線部 \"that the principal of our school was going to resign on the grounds of ill health\" は、文中でどのような働きをしているか。最も適切なものを1つ選びなさい。",
+   "a": "直前の \"dormitory\" を先行詞とする関係代名詞節(形容詞節)",
+   "b": "離れた位置にある \"The news\" の内容を説明する同格の名詞節",
+   "c": "動詞 \"reached\" の目的語となる名詞節",
+   "d": "辞任の理由を表す副詞節",
+   "answer": "B",
+   "explanation": "that節はSVを完備した完全文で、名詞 \"The news\" が何であるかを言い換える同格節。本来 \"The news that...\" と続くべき同格節が、動詞句 \"suddenly reached our dormitory\" の後ろに後置されている。\"reached\" の目的語はすでに \"our dormitory\" なのでC不可、直前の \"dormitory\" は同格節の内容とは無関係なのでAも不可。"
+  },
+  {
+   "tag": "主語・動詞の特定",
+   "q": "この文の主節の主語(動詞 \"reached\" の主語)はどれか。最も適切なものを1つ選びなさい。",
+   "a": "\"our dormitory\"",
+   "b": "\"the principal of our school\"",
+   "c": "\"The news\"",
+   "d": "\"our school\"",
+   "answer": "C",
+   "explanation": "主節はSVで \"The news ... reached ...\"、主語は文頭の \"The news\"。\"the principal of our school\" は動詞 \"reached\" の直前近くに現れるが、これは後置された同格that節の中の主語(\"was going to resign\" の主語)であり、主節の主語ではない。\"our dormitory\" は \"reached\" の目的語。"
+  },
+  {
+   "tag": "同用法(同格that)の識別",
+   "q": "下線部の \"that\" と同じ働きの \"that\" を含む文を1つ選びなさい。",
+   "a": "A rumor spread through the office that the manager had been fired.",
+   "b": "The letter that she showed me last week was written in French.",
+   "c": "He was so nervous that he could not say a single word.",
+   "d": "I did not realize that she had already gone home.",
+   "answer": "A",
+   "explanation": "設問文の \"that\" は名詞 \"The news\" の内容を説明する同格節を導き、間に動詞句を挟んで後置されている。Aも名詞 \"A rumor\" の内容を説明する同格that節が \"spread through the office\" の後に後置されており同じ用法。Bは関係代名詞、Cはso〜that(結果)、Dは動詞realizeの目的語となる名詞節で、いずれも異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "校長が病気になったせいで、私たちが突然この寮を出ていくことになるという知らせが届いた。",
+   "b": "私たちの学校が、健康上の理由を口実にして校長を辞めさせるという知らせが寮に広まった。",
+   "c": "辞職を予定していた校長が、自らの病気について報告するために突然この寮を訪ねてきた。",
+   "d": "校長が体調不良を理由に校長職を退く意向であるという情報が、寮にいた私たちのもとへ突然もたらされた。",
+   "answer": "D",
+   "explanation": "同格that節の主語は \"the principal\"、\"was going to resign\" は「辞任するつもりだ」の意で、届いたのは辞任予定を伝える \"news\"。Aは辞めるのが私たち(主体取り違え)、Bは学校が校長を辞めさせる(能動関係の逆転)で誤り。Cは知らせが届いたのであって校長本人が訪ねてきたのではない(主節主語 \"The news\" の取り違え)。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "The principal of our school suddenly came to our dormitory to announce that he would resign because of his poor health.",
+   "b": "We suddenly heard in our dormitory that our school's principal intended to step down because of his poor health.",
+   "c": "We were suddenly told in our dormitory that our school's principal had already resigned because of his illness.",
+   "d": "News about our dormitory suddenly reached the principal, who was going to resign because of his poor health.",
+   "answer": "B",
+   "explanation": "元の文は「校長が健康上の理由で辞任予定だという知らせが寮に届いた」の意で、Bが \"step down\"=resign、\"intended to\"=was going to と語彙・構造を変えつつ同義。Aは校長本人が寮に来たことになり誤り、Cは \"had already resigned\"(完了)で「これから辞任する」という未来の含意とずれる、Dは主語と目的語を入れ替え「寮についての知らせが校長に届いた」となり原文と意味が逆転している。"
+  }
+]}

@@ -1,0 +1,52 @@
+{"no": 58, "en": "We saw a tall mountain in front of us. On the side of the mountain grew a forest of pine trees.", "ja": "私たちの前に高い山が見えた。その山の斜面には松の森が生い茂っていた。", "questions": [
+  {
+   "tag": "主語・動詞の特定",
+   "q": "第2文 \"On the side of the mountain grew a forest of pine trees.\" において、動詞 \"grew\" の主語にあたるものはどれか。",
+   "a": "the side of the mountain(山の斜面)",
+   "b": "a forest of pine trees(松の森)",
+   "c": "a tall mountain(高い山)",
+   "d": "the mountain(その山)",
+   "answer": "B",
+   "explanation": "場所を表す副詞句 \"On the side of the mountain\" が文頭に置かれた結果、主語と動詞が倒置され、動詞 \"grew\" の後ろに主語 \"a forest of pine trees\" が来ている。\"the side of the mountain\" は前置詞 On の目的語であって主語ではなく、\"a tall mountain\" は前の文の要素なので誤り。"
+  },
+  {
+   "tag": "構造把握(倒置)",
+   "q": "第2文 \"On the side of the mountain grew a forest of pine trees.\" の文構造の説明として最も適切なものを選びなさい。",
+   "a": "疑問文を作るために主語と動詞の語順が入れ替わっている。",
+   "b": "\"On the side of the mountain\" が文の主語で、\"grew\" がその動詞である。",
+   "c": "場所を表す副詞句が文頭に出たため、主語 \"a forest of pine trees\" と動詞 \"grew\" が倒置されている。",
+   "d": "\"grew\" は他動詞で、\"a forest of pine trees\" はその目的語である。",
+   "answer": "C",
+   "explanation": "場所の副詞句を文頭に出して情景を描くとき、〈場所の副詞句+自動詞+主語〉の語順になる倒置(場所句倒置)が起きる。疑問文ではないのでAは誤り、副詞句は主語になれずBも誤り、ここでの grow は「生えている」の自動詞で目的語をとらないためDも誤り。"
+  },
+  {
+   "tag": "同一構造の識別",
+   "q": "第2文 \"On the side of the mountain grew a forest of pine trees.\" と同じ倒置構造(場所の副詞句+動詞+主語)になっている文を選びなさい。",
+   "a": "Down the hill a path led to the village.",
+   "b": "Down the hill rolled the heavy stone.",
+   "c": "Down the hill, the boys rode their bikes.",
+   "d": "Down the hill we walked slowly together.",
+   "answer": "B",
+   "explanation": "Bだけが〈場所句 Down the hill+動詞 rolled+主語 the heavy stone〉の順で、動詞が主語の前に来る倒置になっている。A・C・Dはいずれも文頭に場所句があっても、その後ろは a path led / the boys rode / we walked と〈主語+動詞〉の通常語順であり倒置ではない。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "私たちが山の斜面に松の木を植えた。",
+   "b": "松の森の中に一つの高い山がそびえていた。",
+   "c": "山の斜面には松の木が一本だけ立っていた。",
+   "d": "山の斜面には松の森が生い茂っていた。",
+   "answer": "D",
+   "explanation": "第2文は「山の斜面に松の森が生えていた」という意味で、Dが正しい。植えたという動作主は本文になくA(植えた)は誤り、山と森の関係を逆にしたB(主客逆転)も誤り、\"a forest of pine trees\" は「森=多数」でありC(一本だけ)は数量の取り違えで誤り。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the second sentence: \"On the side of the mountain grew a forest of pine trees.\"?",
+   "a": "A forest of pine trees was growing on the mountainside.",
+   "b": "A forest of pine trees grew around the foot of the mountain.",
+   "c": "Someone had planted a forest of pine trees on the mountain.",
+   "d": "On the mountainside, the pine trees had been cut down to make a forest.",
+   "answer": "A",
+   "explanation": "倒置を元の語順に戻すと「松の森が山の斜面に生えていた」であり、Aが同義。Bは場所を「斜面(side)」から「ふもと(foot)」に変えていて位置がずれ、Cは本文にない動作主(誰かが植えた)を加えており、Dは「切り倒された」という反対の意味になるため、いずれも誤り。"
+  }
+]}

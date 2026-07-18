@@ -1,0 +1,57 @@
+{
+ "no": 10,
+ "en": "Whether at an elementary or high school level, one sign of a good teacher is whether he or she can find out a student who is in trouble and help that student get out of it.",
+ "ja": "小学校のレベルであれ高校のレベルであれ、良い教師である証の一つは、困っている生徒を見つけ出し、その生徒がそこ(困難)から抜け出す手助けができるかどうかということである。",
+ "questions": [
+  {
+   "tag": "接続詞whetherの識別(譲歩の副詞節)",
+   "q": "冒頭の \"Whether at an elementary or high school level\" は文中でどのような働きをしているか。最も適切なものを1つ選びなさい。",
+   "a": "「小学校のレベルなのか高校のレベルなのか」という名詞節で、\"is\" の補語になっている。",
+   "b": "「小学校のレベルであれ高校のレベルであれ」という意味の、譲歩を表す副詞節である。",
+   "c": "「もし小学校か高校のレベルであれば」という意味の、条件を表す副詞節である。",
+   "d": "直後の \"one sign\" を説明する形容詞節で、\"sign\" を修飾している。",
+   "answer": "B",
+   "explanation": "文頭の \"Whether A or B\" は「AであれBであれ」という譲歩の副詞節で、どちらの段階でも当てはまると後続の主節全体を修飾している。後ろに独立した主節 \"one sign ... is ...\" が続くので、主語や補語になる名詞節(a)ではない。cの「条件(もし〜なら)」ではなく、譲歩(どちらでも)を表す点に注意。"
+  },
+  {
+   "tag": "help O do と指示語 it の把握",
+   "q": "\"help that student get out of it\" の \"it\" が指す内容として最も適切なものを1つ選びなさい。",
+   "a": "a good teacher(良い教師)",
+   "b": "a student who is in trouble(困っている生徒)",
+   "c": "the trouble that the student is in(生徒が陥っている困難)",
+   "d": "one sign of a good teacher(良い教師である証)",
+   "answer": "C",
+   "explanation": "\"get out of it\" は「そこから抜け出す」で、抜け出す対象は直前の \"a student who is in trouble\" の \"trouble\"(困難)。よって it は困難を指す。bの「生徒」を対象と取ると、生徒が生徒から抜け出す意味になり不自然。\"help that student get out\" は help O do(原形)で「その生徒が抜け出すのを手助けする」という構造。"
+  },
+  {
+   "tag": "接続詞whetherの識別(名詞節・補語)",
+   "q": "\"one sign of a good teacher is whether he or she can find out ...\" の \"whether\" 節は文中でどのような働きをしているか。",
+   "a": "\"is\" の補語となる名詞節で、「〜かどうか」という意味を表す。",
+   "b": "「〜であれ…であれ」という意味の、譲歩を表す副詞節である。",
+   "c": "\"a good teacher\" を修飾する形容詞節である。",
+   "d": "「もし〜ならば」という意味の、条件を表す副詞節である。",
+   "answer": "A",
+   "explanation": "この \"whether\" は \"is\" の後に置かれ、「〜かどうか(ということ)」という名詞節を作って主語 \"one sign\" の補語(SVCのC)になっている。冒頭の譲歩の whether(b)とは働きが異なる。形容詞節(c)や条件(d)ではなく、「良い教師の証とは…できるかどうかだ」と主語の内容を説明している。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "良い教師であれば、小学校でも高校でも、困っている生徒を教師自身の力だけで確実に困難から救い出すことができる。",
+   "b": "困っている生徒を見つけ出せるかどうかは、高校の教師よりも小学校の教師にとってより重要な資質である。",
+   "c": "良い教師の証とは、生徒が誰の助けも借りずに自力で困難から抜け出すのを、そばで見守れるかどうかである。",
+   "d": "教育段階が小学校であれ高校であれ、良い教師である証の一つは、困っている生徒を見つけ出し、その生徒が困難から抜け出す手助けができるかどうかである。",
+   "answer": "D",
+   "explanation": "本文は「小学校であれ高校であれ(譲歩)」「良い教師の証の一つは…できるかどうか」「困っている生徒を見つけ、抜け出す手助けをする(help O do)」の3点から成り、dがこれを正しく言い換えている。aは \"help\"(手助け)を「自身の力だけで確実に救い出す」と誇張。bは冒頭の譲歩を段階間の比較と誤読。cは \"help ... get out\" を「見守る」と取り違え、教師が手助けする点を落としている。"
+  },
+  {
+   "tag": "言い換え(英語)",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "A good teacher, whether at an elementary or a high school, must choose whether to help a student in difficulty or to leave that student on his or her own.",
+   "b": "No matter whether the level is elementary or high school, one mark of a good teacher is being able to notice a student in difficulty and help that student escape from it.",
+   "c": "One sign of a good teacher is the ability to keep himself or herself out of difficulty, no matter whether he or she works at an elementary or a high school.",
+   "d": "Whether someone is a good teacher depends mainly on how many students in difficulty there are at the elementary or high school where he or she teaches.",
+   "answer": "B",
+   "explanation": "The original says that, regardless of the school level, a good teacher is marked by whether he or she can spot a troubled student and help that student out of the trouble; b keeps all of this. a wrongly adds the option of leaving the student alone. c misreads \"a student who is in trouble\" as the teacher's own trouble. d wrongly makes teaching quality depend on the number of struggling students rather than on the teacher's ability to help."
+  }
+ ]
+}

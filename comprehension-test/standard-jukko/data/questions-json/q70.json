@@ -1,0 +1,52 @@
+{"no": 70, "en": "Unfortunately the government seems to have tried to hide from young people the fact that nuclear weapons neither have promised nor will promise people security from an enemy's attack.", "ja": "残念ながら、政府は、核兵器が敵の攻撃から人々の安全をこれまで保証したことも一度もなく、これからも保証することはないという事実を、若者たちから隠そうとしてきたようだ。", "questions": [
+ {
+  "tag": "目的語の特定(重い目的語の後置)",
+  "q": "\"hide from young people the fact that nuclear weapons ...\" の動詞 \"hide\"(隠す)の目的語(=何を隠すのか)にあたるのはどれか。",
+  "a": "\"young people\"(若者たち)",
+  "b": "\"the fact that ...\" で始まる名詞のかたまり全体",
+  "c": "\"people security\"(人々の安全)",
+  "d": "\"an enemy's attack\"(敵の攻撃)",
+  "answer": "B",
+  "explanation": "\"hide\" は「hide A from B(BからAを隠す)」の形で、本来は hide the fact from young people の語順。目的語 \"the fact that ...\" が長いため \"from young people\" の後ろに置かれている。\"young people\" は前置詞 \"from\" の目的語(隠す相手)であって \"hide\" の目的語ではない。"
+ },
+ {
+  "tag": "同格のthatの識別",
+  "q": "下線部の \"the fact that nuclear weapons ...\" における \"that\" と文法上同じ働き(同格)をしている \"that\" を含む文はどれか。",
+  "a": "She showed me the letter that had arrived that morning.",
+  "b": "The weather was so cold that the lake froze completely.",
+  "c": "We could not accept the idea that machines might replace teachers.",
+  "d": "The car that he drives to work is quite old.",
+  "answer": "C",
+  "explanation": "本文の \"that\" は \"the fact\" の中身を説明する同格の that で、後ろに欠けのない完全な文が続く。C も \"the idea\" の内容を述べる同格の that で同じ。A と D は先行詞を修飾し節内で主語・目的語になる関係代名詞、B は「so ... that(結果)」であり働きが異なる。"
+ },
+ {
+  "tag": "neither ... nor と時制・否定の把握",
+  "q": "\"nuclear weapons neither have promised nor will promise people security\" が表す内容として正しいのはどれか。",
+  "a": "核兵器はこれまで安全を保証したこともなく、これからも保証しないだろう、という意味で、\"have promised\" と \"will promise\" を結んでいる。",
+  "b": "核兵器は人々を保証せず、敵も保証しない、という意味で、\"nuclear weapons\" と \"an enemy\" を結んでいる。",
+  "c": "核兵器はこれまで安全を保証してきたが、これからは保証しない、という意味で、過去と未来を対比している。",
+  "d": "政府は事実を隠さず、若者もそれを知らない、という意味で、二つの主語を結んでいる。",
+  "answer": "A",
+  "explanation": "\"neither A nor B\" は「AもBも〜ない」で、ここでは現在完了 \"have promised\" と未来 \"will promise\" を結び、過去から現在・未来まで一貫して否定している。C は前半を肯定にとる誤り(neither は両方を否定)、B・D は結ばれている要素の取り違え。"
+ },
+ {
+  "tag": "内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "政府は、核兵器こそが敵の攻撃から人々の安全を保証するという事実を、若い世代に広めようとしてきたらしい。",
+  "b": "若者たちは、核兵器が敵の攻撃から人々を守れないという事実を、政府から隠そうとしてきたらしい。",
+  "c": "政府は、核兵器がかつては安全を保証したが今後は保証しないという事実を、若者たちに伝えてきたらしい。",
+  "d": "政府は、核兵器が敵の攻撃から人々の安全を過去にも未来にも保証しないという事実を、若者たちに知られまいとしてきたらしい。",
+  "answer": "D",
+  "explanation": "隠されている「事実」は、核兵器が過去も未来も安全を保証しない(=役に立たない)ということで、これを隠すのは政府、隠される相手は若者。Dが一致。Aは否定を欠き意味が逆、Bは「隠す側」と「隠される側」を逆転、Cは前半を肯定にとり「隠す」を「伝える」に取り違えている。"
+ },
+ {
+  "tag": "言い換え",
+  "q": "Which one is closest in meaning to the sentence above?",
+  "a": "Sadly, it appears the government has attempted to keep young people from learning that nuclear weapons have never guaranteed, and never will guarantee, people's safety against an enemy's attack.",
+  "b": "Sadly, the government seems to have warned young people that nuclear weapons have never protected people from an enemy's attack, though they may well do so in the future.",
+  "c": "Sadly, young people appear to have tried to hide from the government the fact that nuclear weapons cannot protect anyone from an enemy's attack.",
+  "d": "Sadly, the government seems to have convinced young people that nuclear weapons will always guarantee their safety from any enemy's attack.",
+  "answer": "A",
+  "explanation": "原文は「政府が、核兵器は過去も未来も安全を保証しないという事実を若者から隠そうとした」。Aは keep O from learning で「隠す」を、never ... and never will で neither/nor を正確に言い換えている。Bは未来には保証しうると付け加え否定の範囲を崩し、Cは隠す主体を若者に逆転、Dは意味を正反対(保証すると信じ込ませた)にしている。"
+ }
+]}

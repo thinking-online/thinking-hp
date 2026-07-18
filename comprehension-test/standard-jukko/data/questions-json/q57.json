@@ -1,0 +1,52 @@
+{"no": 57, "en": "Women wearing trousers used to be an unusual sight; now it is completely normal.", "ja": "女性がズボンをはいている姿は、かつては珍しい光景だったが、今ではまったく当たり前のことである。", "questions": [
+  {
+   "tag": "分詞句の働き・主語の把握",
+   "q": "この文の \"wearing trousers\" の文法上の働きとして最も適切なものを1つ選びなさい。",
+   "a": "\"used to be\" の主語となる動名詞句である",
+   "b": "\"used\" とともに進行形をつくる動詞である",
+   "c": "直前の \"Women\" を修飾する現在分詞句である",
+   "d": "\"an unusual sight\" を後ろから修飾している",
+   "answer": "C",
+   "explanation": "\"wearing trousers\" は直前の \"Women\" を修飾する現在分詞句で、「ズボンをはいた女性」となり、\"Women wearing trousers\" 全体がこの文の主部を作る。補語が単数の \"an unusual sight\" である点も、この主部が一つの光景・事柄としてまとめて扱われていることを示す。動名詞や進行形と見ると主語・動詞の関係を取り違える。"
+  },
+  {
+   "tag": "used to の意味",
+   "q": "この文で \"used to be an unusual sight\" が表す意味として最も適切なものを1つ選びなさい。",
+   "a": "〜という光景に慣れていた",
+   "b": "かつては珍しい光景だったが今はそうではない",
+   "c": "珍しい光景を見るために使われていた",
+   "d": "これから珍しい光景になっていくだろう",
+   "answer": "B",
+   "explanation": "\"used to+動詞の原形\" は「以前は〜だった(が今は違う)」という過去の習慣・状態を表し、後半の \"now it is completely normal\"(今では完全に普通だ)との対比がこれを裏づける。A は \"be used to doing\"(〜に慣れている)との混同、C は受動態 \"be used to do\" との混同で、いずれも本文の構造とずれる。"
+  },
+  {
+   "tag": "指示語 it の指す内容",
+   "q": "後半の \"now it is completely normal\" の \"it\" が指す内容として最も適切なものを1つ選びなさい。",
+   "a": "女性がズボンをはいていること(その光景)",
+   "b": "かつての珍しい光景そのもの",
+   "c": "ズボンという衣服",
+   "d": "昔の時代",
+   "answer": "A",
+   "explanation": "\"it\" は前半の主部と同じ「女性がズボンをはいている(という光景・こと)」を受けており、それが今では完全に普通だ、と述べている。B の「珍しい光景」を指すと解すると「珍しい光景が今では普通だ」となり矛盾する。C や D は文脈上 \"it\" の受ける内容として不適切。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "女性は昔からズボンをはくのが当たり前で、今もそれは変わっていない。",
+   "b": "女性がズボンをはく姿は、以前は普通だったが、今では珍しくなっている。",
+   "c": "女性がズボンをはく姿は、以前は珍しかったが、今ではごく当たり前になっている。",
+   "d": "女性がズボンをはくことを、今でも珍しいと感じる人が多い。",
+   "answer": "C",
+   "explanation": "本文は「かつては珍しい光景(an unusual sight)だったが、今では完全に普通だ(now it is completely normal)」と、珍しい→普通への変化を述べているので C が正しい。A は「以前は珍しかった」という過去の状態を無視し、B と D は珍しさと普通さの方向を逆に取り違えており、いずれも本文と矛盾する。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Nowadays it is rare to see women in trousers, though it was once completely ordinary.",
+   "b": "Seeing women in trousers has always been ordinary, both in the past and nowadays.",
+   "c": "It was ordinary to see women in trousers before, but nowadays the sight is rare.",
+   "d": "In the past, it was rare to see women in trousers, but nowadays it is completely ordinary.",
+   "answer": "D",
+   "explanation": "原文は「昔は珍しかったが今は完全に普通」という時間的変化を表すので、rare(過去)→ ordinary(現在)の向きが一致する D が同義。他の二つの選択肢は珍しさと普通さの時期を逆にしており、残る一つは「昔も今も普通」と変化そのものを消してしまっている点で意味がずれる。"
+  }
+]}

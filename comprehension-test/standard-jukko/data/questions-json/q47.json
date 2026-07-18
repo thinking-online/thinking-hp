@@ -1,0 +1,52 @@
+{"no": 47, "en": "Recently, there have been news reports of supermarkets raising prices steeply on some products and many customers searching for less expensive brands.", "ja": "最近、スーパーマーケットが一部の商品の価格を急激に引き上げ、多くの客がより安いブランドを探し求めている、というニュース報道が相次いでいる。", "questions": [
+ {
+  "tag": "動名詞の意味上の主語",
+  "q": "本文の \"of supermarkets raising prices ... and many customers searching for less expensive brands\" について、\"raising\" と \"searching\" という動作をそれぞれ行っているのは何か。最も適切なものを1つ選びなさい。",
+  "a": "\"raising\" の動作主は \"supermarkets\"、\"searching\" の動作主は \"many customers\"",
+  "b": "\"raising\" も \"searching\" も動作主は \"news reports\"",
+  "c": "\"raising\" の動作主は \"many customers\"、\"searching\" の動作主は \"supermarkets\"",
+  "d": "\"raising\" も \"searching\" も動作主は \"supermarkets\"",
+  "answer": "A",
+  "explanation": "この of の後ろは「意味上の主語+動名詞」が2組並ぶ構造で、\"supermarkets raising ...\"(スーパーが値上げする)と \"many customers searching ...\"(多くの客が探す)がそれぞれ主語+動作の関係になっている。値上げするのはスーパー、探すのは客であり、両者を入れ替えたCや両方をsupermarketsにするDは本文の意味と矛盾する。"
+ },
+ {
+  "tag": "andが結ぶもの",
+  "q": "本文中の \"and\"(\"... on some products and many customers searching ...\" の and)は、何と何を結んでいるか。最も適切なものを1つ選びなさい。",
+  "a": "\"steeply\" と \"less expensive\" という2つの修飾語",
+  "b": "前置詞 \"of\" に続く「スーパーが値上げしている」という内容と「多くの客が安いブランドを探している」という内容の2つ",
+  "c": "\"prices\" と \"brands\" という2つの名詞",
+  "d": "\"there have been\" に続く2つの独立した文",
+  "answer": "B",
+  "explanation": "\"news reports of A and B\" の形で、A=\"supermarkets raising prices steeply on some products\"、B=\"many customers searching for less expensive brands\" という、いずれも前置詞 of の目的語となる動名詞のまとまりを and が並列している。andの直前の名詞 \"products\" と直後の \"brands\" を単純に結ぶわけではなく、Cのような名詞同士の並列ではない。"
+ },
+ {
+  "tag": "同一構造の識別",
+  "q": "本文の \"of supermarkets raising prices\" における \"supermarkets raising\"(前置詞の目的語となり、その意味上の主語を伴う動名詞)と同じ構造を含む文を1つ選びなさい。",
+  "a": "The boy raising his hand over there is my son.",
+  "b": "Raising a child in a big city can be expensive.",
+  "c": "She spent the whole afternoon raising money for charity.",
+  "d": "We are proud of our team winning the championship.",
+  "answer": "D",
+  "explanation": "Dの \"of our team winning\" は「前置詞of+意味上の主語(our team)+動名詞(winning)」で本文とまったく同じ構造。Aの \"raising\" は名詞 boy を修飾する現在分詞、Bは動名詞が文の主語、Cは \"spent ... raising\" の分詞で、いずれも直前に別個の意味上の主語となる名詞を伴っていない点で異なる。"
+ },
+ {
+  "tag": "内容一致",
+  "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+  "a": "最近、スーパーが一部の商品を大幅に値下げしたため、多くの客がより高価なブランドを買うようになったという報道が相次いでいる。",
+  "b": "最近、スーパーがすべての商品を大幅に値上げしたため、多くの客が買い物そのものをやめたという報道が相次いでいる。",
+  "c": "最近、一部の商品でスーパーが大きく値上げに動く一方、より安い銘柄を求める客が増えているという報道が続いている。",
+  "d": "最近、スーパーが一部の商品を大幅に値上げしたうえ、より安いブランドまで自ら探し始めたという報道が相次いでいる。",
+  "answer": "C",
+  "explanation": "本文は「スーパーの値上げ(raising prices steeply)」と「客がより安いブランドを探すこと(customers searching for less expensive brands)」という2つの内容を報じており、Cはこれを言い換えている。Aは raising を値下げ・less expensive を高価と取り違え、Bは some products を「すべての商品」とし後半を捏造、Dは searching の主語を客ではなくスーパーと取り違えている。"
+ },
+ {
+  "tag": "英語言い換え",
+  "q": "Which one is closest in meaning to the sentence above?",
+  "a": "Lately, the news has reported that some supermarkets have sharply raised prices on certain goods and that many shoppers are looking for cheaper brands.",
+  "b": "Lately, the news has reported that supermarkets sharply raised the prices of all their goods, so customers had to buy more expensive brands.",
+  "c": "Lately, the news has reported that many customers got supermarkets to lower the high prices they had set on some products.",
+  "d": "Lately, the news has reported that supermarkets which were looking for cheaper brands raised their prices on some products steeply.",
+  "answer": "A",
+  "explanation": "Aは「一部商品の急な値上げ」と「多くの客がより安い銘柄を探す」という2点を、語彙と構造を変えつつ正確に保っている。Bは some を all、cheaper を more expensive とし、Cは値上げを客が値下げさせたと主客・方向を逆転、Dは「探している」の主語を客ではなくスーパーに付け替えている点で意味がずれる。"
+ }
+]}

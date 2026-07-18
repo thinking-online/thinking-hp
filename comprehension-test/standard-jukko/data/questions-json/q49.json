@@ -1,0 +1,52 @@
+{"no": 49, "en": "At first, many young people were reluctant to receive the vaccine, feeling confident that, even if they were to become infected with the virus, they would not suffer any serious effects.", "ja": "当初、多くの若者はワクチンの接種に消極的だった。たとえ万が一そのウイルスに感染するようなことがあっても、深刻な影響を受けることは全くないだろう、と確信していたからである。", "questions": [
+  {
+   "tag": "分詞構文",
+   "q": "文中の \"feeling confident that ...\" という分詞構文について、意味上の主語と、主節 \"many young people were reluctant to receive the vaccine\" に対する意味関係の組み合わせとして最も適切なものはどれか。",
+   "a": "意味上の主語は \"many young people\" で、ワクチンをためらった「理由」を表している",
+   "b": "意味上の主語は \"the vaccine\" で、ワクチンをためらった「理由」を表している",
+   "c": "意味上の主語は \"many young people\" で、ためらった「結果」として生じたことを表している",
+   "d": "意味上の主語は \"the virus\" で、ためらいと「同時に」起きた出来事を表している",
+   "answer": "A",
+   "explanation": "分詞構文 \"feeling ...\" の意味上の主語は主節の主語 \"many young people\" に一致し、「深刻な影響は受けないと確信していたので接種をためらった」という理由を表す。意味上の主語を \"the vaccine\" や \"the virus\" とするB・Dは誤り。Cは「ためらった結果として確信した」という因果の逆転で、確信が先・ためらいが後という本文の論理に反する。"
+  },
+  {
+   "tag": "仮定法(were to)",
+   "q": "文中の \"even if they were to become infected with the virus\" における \"were to\" の意味・働きとして最も適切なものはどれか。",
+   "a": "過去に実際にウイルスに感染したという事実を表している",
+   "b": "ウイルスに感染することがすでに決まっている予定を表している",
+   "c": "これから先、万が一ウイルスに感染するようなことがあっても、という未来の仮定を表している",
+   "d": "ウイルスに感染しなければならないという義務を表している",
+   "answer": "C",
+   "explanation": "\"were to\" は仮定法未来で、これから起こる可能性の低い事柄を「万が一〜するようなことがあれば」と仮定する表現。帰結節が \"they would not suffer\" と would になっていることも仮定の目印。過去の事実(A)、確定した予定(B)、義務(D)のいずれでもない。"
+  },
+  {
+   "tag": "that名詞節",
+   "q": "\"feeling confident that ...\" の that が導く名詞節が表している「確信の内容」として最も適切なものはどれか。",
+   "a": "ウイルスに感染することは決してないだろうということ",
+   "b": "深刻な影響が出るかどうかは感染してみないと分からないということ",
+   "c": "ワクチンを接種すれば深刻な影響を避けられるということ",
+   "d": "たとえウイルスに感染しても深刻な影響は受けないだろうということ",
+   "answer": "D",
+   "explanation": "that節は \"even if they were to become infected ..., they would not suffer any serious effects\" 全体で、「感染しても重症化はしない」という確信の中身を表す。Aは「感染しない」という別内容への取り違え(本文はむしろ感染を想定している)。Cはワクチンの効果の話にすり替えており、Bは確信ではなく判断保留で、いずれも本文と矛盾する。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "多くの若者は当初、感染すれば必ず重症化すると考え、ワクチン接種をためらった。",
+   "b": "多くの若者は当初、感染しても重症化することはないと考え、ワクチン接種に消極的だった。",
+   "c": "多くの若者は当初、ワクチンを接種すればウイルスに感染しないと信じ、進んで接種を受けた。",
+   "d": "多くの若者は当初、感染を強く恐れていたため、自ら進んでワクチンを接種した。",
+   "answer": "B",
+   "explanation": "本文は「感染しても深刻な影響は受けないと確信していたので、接種に消極的だった」という内容なのでBが正しい。Aは確信の中身を逆にし(重症化すると考えた)、Cは「感染しない」という誤読、Dは「消極的だった(reluctant)」を「進んで接種した」と正反対にしており、いずれも本文と矛盾する。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "In the beginning, many young people refused the vaccine because they were sure that they would never catch the virus at all.",
+   "b": "In the beginning, many young people hesitated to get vaccinated, worried that catching the virus might cause them serious harm.",
+   "c": "In the beginning, many young people did not want to get vaccinated because they believed that catching the virus would not cause them any serious harm.",
+   "d": "In the beginning, many young people happily received the vaccine, confident that it would protect them from serious harm.",
+   "answer": "C",
+   "explanation": "原文は「感染しても深刻な影響はないと確信して接種をためらった」なので、confident that の中身を believed that catching the virus would not cause serious harm と言い換えたCが同義。Aは確信の中身を「感染しない」に変えた誤り、Bは confident を worried(逆の感情)にしており、Dは reluctant を happily received と正反対にしている。"
+  }
+ ]}

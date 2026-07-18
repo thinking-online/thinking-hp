@@ -1,0 +1,52 @@
+{"no": 55, "en": "There has been an increasing effort to find new ways of dealing with this disease, the conventional treatment having become less and less effective over the last ten years.", "ja": "この病気に対処する新しい方法を見つけようとする努力が、これまで以上に高まってきている。というのも、従来の治療法が、この十年の間にますます効果が薄れてきているからだ。", "questions": [
+  {
+   "tag": "独立分詞構文・意味上の主語",
+   "q": "文末の \"the conventional treatment having become less and less effective over the last ten years\" について、分詞 \"having become\" の意味上の主語(誰・何が効果を失ってきたのか)として正しいものを1つ選びなさい。",
+   "a": "an increasing effort(高まる努力)",
+   "b": "new ways(新しい方法)",
+   "c": "the conventional treatment(従来の治療法)",
+   "d": "this disease(この病気)",
+   "answer": "C",
+   "explanation": "この分詞構文は主節と別の主語を自前で持つ独立分詞構文で、\"having become\" の直前に置かれた \"the conventional treatment\" がその意味上の主語である。効果を失ってきたのは治療法であって、努力や病気ではない。AやDを選ぶのは、主節の主語や身近な名詞に引きずられた取り違え。"
+  },
+  {
+   "tag": "分詞構文の論理関係",
+   "q": "\"..., the conventional treatment having become less and less effective over the last ten years\" の分詞構文が主節に対して表している論理関係として最も適切なものを1つ選びなさい。",
+   "a": "従来の治療法が次第に効果を失ってきた「ので」(理由)",
+   "b": "従来の治療法が次第に効果を失ってきた「が」(譲歩)",
+   "c": "従来の治療法が次第に効果を失ってきた「とき」(時)",
+   "d": "従来の治療法が効果を失い「さえすれば」(条件)",
+   "answer": "A",
+   "explanation": "新しい対処法を探す努力が高まる、という主節に対し、この分詞構文は「従来の治療法の効果が薄れてきたから」という理由・原因を示している。努力が高まる流れと自然につながるのは理由であり、譲歩(B)や条件(D)では因果の向きが崩れて意味が通らない。"
+  },
+  {
+   "tag": "構造識別(独立分詞構文)",
+   "q": "下線部 \"the conventional treatment having become ... effective\" と同じ構造(主節とは別の主語を伴う独立分詞構文)を含む文を1つ選びなさい。",
+   "a": "Having finished the report, she quietly went home.",
+   "b": "She sat by the window, reading an old book.",
+   "c": "Walking along the beach, we found a beautiful shell.",
+   "d": "The sun having set, the temperature dropped quickly.",
+   "answer": "D",
+   "explanation": "本文と同じく、分詞の直前に主節とは異なる独立した主語を置く形が正解。Dは \"The sun\" が \"having set\" の主語で、主節の主語 \"the temperature\" と異なる独立分詞構文。A・B・Cはいずれも分詞の意味上の主語が主節の主語(she / we)と一致する通常の分詞構文で、独立した主語を持たない。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "新しい治療法が効果を失ってきたため、この病気には従来の治療法で対処しようとする動きが強まっている。",
+   "b": "従来の治療法がこの十年で次第に効果を失ってきたため、この病気に対処する新しい方法を探す努力が高まっている。",
+   "c": "従来の治療法がこの十年で次第に効果を高めてきたため、新しい方法を探そうとする努力は次第に弱まっている。",
+   "d": "この病気はこの十年で従来の治療法では治せないほど深刻化し、もはや対処する方法は残されていない。",
+   "answer": "B",
+   "explanation": "効果を失ってきたのは \"the conventional treatment\"(従来の治療法)で、そのために \"new ways of dealing with this disease\" を探す努力が増している、という因果が本文の骨格。Aは効果を失う主体と探す対象を取り違えた誤り。Cは \"less and less effective\"(効果が薄れる)と努力の増加を正反対にしている。Dは新しい対処法を探しているという本文と矛盾する。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "Because the usual treatment has grown steadily less effective over the past decade, people are trying harder and harder to discover new ways to treat this disease.",
+   "b": "Although the usual treatment has grown steadily more effective over the past decade, people are still trying hard to discover new ways to treat this disease.",
+   "c": "People have been making less and less effort to treat this disease, since the conventional treatment has stayed thoroughly reliable throughout the past ten years.",
+   "d": "As the conventional treatment has grown more and more effective over the past decade, fewer new ways of treating this disease are now being explored.",
+   "answer": "A",
+   "explanation": "原文は「従来の治療法の効果が年々薄れてきたので、新しい対処法を探す努力が増している」という因果関係で、Aがこれを理由節+主節で忠実に言い換えている。Bは効果を \"more effective\" と逆転させ譲歩でつなぐ点が、CとDは努力や新手法の探索を「減っている」と逆にする点が、それぞれ本文と明確にずれる。"
+  }
+]}

@@ -1,0 +1,52 @@
+{"no": 11, "en": "Jimmy sometimes makes me angry. The thing that annoys me is not what he says but the way he says it.", "ja": "ジミーには時々腹が立つ。私を苛立たせるのは、彼が言うこと(発言の中身)ではなく、その言い方なのだ。", "questions": [
+  {
+   "tag": "not A but B / 対比構造",
+   "q": "\"The thing that annoys me is not what he says but the way he says it.\" の \"not ... but ...\" が対比している二つの要素の組み合わせとして正しいものを選びなさい。",
+   "a": "\"The thing\"(その事柄)と \"what he says\"(彼が言うこと)",
+   "b": "\"the way\"(方法)と \"it\"(それ)",
+   "c": "\"what he says\"(彼が言うこと)と \"the way he says it\"(彼のその言い方)",
+   "d": "\"annoys me\"(私を苛立たせる)と \"he says\"(彼が言う)",
+   "answer": "C",
+   "explanation": "補語の位置で \"not A but B\"(AではなくB)が使われ、A=\"what he says\"(発言の内容)、B=\"the way he says it\"(その言い方)が対比されている。「内容」ではなく「言い方」が苛立ちの原因だという趣旨。Aの \"The thing\" は主語であって対比の一方ではなく、Cが正しい。"
+  },
+  {
+   "tag": "指示語 it の特定",
+   "q": "\"the way he says it\" の \"it\" が指す内容として最も適切なものを選びなさい。",
+   "a": "ジミーが言うこと、その発言の内容(= \"what he says\")",
+   "b": "私を苛立たせる言い方(= \"the way\")",
+   "c": "ジミー自身",
+   "d": "私が怒っているという事実",
+   "answer": "A",
+   "explanation": "\"the way he says it\" は「彼がそれを言うやり方」で、\"it\" は「彼が言う中身」すなわち直前の \"what he says\" が指す発言内容を受ける。Bの \"the way\" は「言い方」そのものであり \"it\" が言う対象になり得ず、Aが正しい。"
+  },
+  {
+   "tag": "関係代名詞 what の識別",
+   "q": "\"not what he says\" の \"what\"(「〜すること・もの」の意味で名詞節をつくる関係代名詞)と同じ働きの \"what\" を含む文を選びなさい。",
+   "a": "What a strange thing he said to me yesterday!",
+   "b": "This meal is exactly what I wanted to eat tonight.",
+   "c": "I asked the clerk what size the shirt was.",
+   "d": "What color do you like the best of all?",
+   "answer": "B",
+   "explanation": "\"what he says\" は「彼が言うこと(= the thing that he says)」で、後ろに名詞を伴わず単独で名詞節をつくる関係代名詞。Bの \"what I wanted to eat\" も「私が食べたかったもの」で同じ用法。Aは感嘆文の what、Cの \"what size\"・Dの \"what color\" は名詞を伴う疑問の what なので働きが異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "私が苛立つのは、ジミーが何を言うかであって、彼の言い方ではない。",
+   "b": "ジミーは何を言っても、いつも決まって私を怒らせる。",
+   "c": "私が苛立つのは、ジミーの発言の中身そのものではなく、彼のその物の言い方である。",
+   "d": "私が苛立つのは、ジミーの発言の中身と、その言い方の両方である。",
+   "answer": "C",
+   "explanation": "\"not what he says but the way he says it\" は「発言の内容ではなく言い方」の意で、苛立ちの原因は言い方だとするCが正しい。Aは not A but B を逆に取った誤り、Dは「〜ではなく」を「両方」と誤読、Bは \"sometimes\" を無視し内容と言い方の対比も捉えていない。"
+  },
+  {
+   "tag": "言い換え",
+   "q": "Which one is closest in meaning to \"The thing that annoys me is not what he says but the way he says it.\"?",
+   "a": "What irritates me is not how he speaks but the actual content of his words.",
+   "b": "Both the content of his words and his manner of speaking them irritate me equally.",
+   "c": "His words never irritate me, no matter how he chooses to say them.",
+   "d": "It is not the content of his words but his manner of saying them that irritates me.",
+   "answer": "D",
+   "explanation": "原文は「内容(what he says)ではなく言い方(the way he says it)が苛立たせる」で、Dが「言葉の中身ではなく言い方が苛立たせる」と同義。Aは内容と言い方を逆にしており、Bは「両方」と述べ not A but B に反し、Cは言い方も含めおよそ苛立たない、と全否定していて意味がずれる。"
+  }
+]}

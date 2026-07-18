@@ -1,0 +1,52 @@
+{"no": 21, "en": "I have always wondered at the passion people have to buy souvenirs when they are in tourist spots.", "ja": "私は、観光地にいるときに人々がお土産を買いたがる、その熱意(情熱)に、いつも驚かされてきた。", "questions": [
+  {
+   "tag": "have to の識別",
+   "q": "下線部 \"the passion people have to buy souvenirs\" における \"have\" と \"to buy souvenirs\" の関係について、最も適切なものを1つ選びなさい。",
+   "a": "\"have to buy\" が一続きで「買わなければならない」という義務の意味を表している。",
+   "b": "\"people have\" が \"the passion\" を修飾する(関係代名詞が省略された)節で、\"to buy souvenirs\" は \"the passion\" の内容を示す不定詞である。",
+   "c": "\"to buy souvenirs\" は動詞 \"have\" の目的語で、「お土産を買うことを持っている」という意味を表す。",
+   "d": "\"have\" は \"wondered\" と並ぶ主節の述語動詞で、\"to buy souvenirs\" はその目的を表す。",
+   "answer": "B",
+   "explanation": "\"the passion people have\" は「人々が持っている情熱」という接触節(which/that の省略)で、そこに名詞 passion を修飾する不定詞 \"to buy souvenirs\"(お土産を買いたいという)が付いた形。直前に名詞 passion がある以上、\"have to buy\" を「買わなければならない」と読む A は誤り。C・D も have の働きを取り違えている。"
+  },
+  {
+   "tag": "wonder at の意味",
+   "q": "この文の \"have always wondered at\" の意味として、最も適切なものを1つ選びなさい。",
+   "a": "「〜かどうかと、ずっと思案し続けてきた」",
+   "b": "「〜を、ずっと疑ってきた」",
+   "c": "「〜に、ずっと驚き(不思議に思い)続けてきた」",
+   "d": "「〜について、ずっと尋ね続けてきた」",
+   "answer": "C",
+   "explanation": "\"wonder at ~\" は前置詞 at を伴い「〜に驚く、〜を不思議に思う」の意味。前置詞のない \"wonder whether/if\"(〜かどうか思案する)とは異なるので A は誤り。B の「疑う(doubt)」、D の「尋ねる(ask)」も at を伴う wonder の意味ではない。"
+  },
+  {
+   "tag": "不定詞の同用法識別",
+   "q": "下線部 \"to buy souvenirs\" は直前の名詞 \"passion\" を修飾する不定詞である。これと同じ用法の不定詞を含む文を1つ選びなさい。",
+   "a": "She has the ability to solve difficult problems quickly.",
+   "b": "He worked very hard to pass the entrance examination.",
+   "c": "To master a foreign language takes many years of effort.",
+   "d": "I was very glad to hear such wonderful news from her.",
+   "answer": "A",
+   "explanation": "\"to buy souvenirs\" は名詞 passion を修飾する形容詞的用法。A の \"the ability to solve\" も同じく直前の名詞 ability を修飾する形容詞的用法。B は目的(〜するために)の副詞的用法、C は主語となる名詞的用法、D は感情の原因(〜して)の副詞的用法で、いずれも用法が異なる。"
+  },
+  {
+   "tag": "内容一致",
+   "q": "この英文の内容として最も適切なものを1つ選びなさい。",
+   "a": "筆者は、観光地に行くたびにお土産を買わなければならないことを、いつも面倒に思ってきた。",
+   "b": "筆者は、人々がお土産を買うべきかどうかを、いつも疑問に思って考え込んできた。",
+   "c": "筆者は、観光地で人々にお土産を買ってあげたいという情熱を、ずっと抱き続けてきた。",
+   "d": "筆者は、観光地を訪れた人々がお土産を熱心に買い求めようとする様子に、これまでずっと驚嘆してきた。",
+   "answer": "D",
+   "explanation": "正解 D は、\"wonder at\"(〜に驚く)と \"the passion people have to buy\"(人々が持つ、買いたいという熱意)を正しく捉えたもの。A は \"have to buy\" を「買わなければならない」と義務に誤読し、主語も筆者にすり替えている。B は \"wonder\" を「〜かどうか思案する」と誤読。C は情熱の持ち主(people)を筆者と取り違え、さらに「人々に買ってあげる」と対象も誤っている。"
+  },
+  {
+   "tag": "英文言い換え",
+   "q": "Which one is closest in meaning to the sentence above?",
+   "a": "I have always felt a strong urge to buy souvenirs myself whenever I visit tourist spots.",
+   "b": "I have always doubted whether people really ought to buy souvenirs at tourist spots.",
+   "c": "I have always been amazed at how eager people are to buy souvenirs when they are at tourist spots.",
+   "d": "I have always wondered whether people are forced to buy souvenirs when visiting tourist spots.",
+   "answer": "C",
+   "explanation": "原文は \"wonder at\"(〜に驚く)+ \"the passion people have to buy souvenirs\"(人々が持つ、買いたいという熱意)。C は \"be amazed at how eager people are to buy\" と言い換えており同義。A は熱意の主体を話者(myself)に取り違え、B は \"wonder\" を \"doubt whether\"、D は \"wonder whether\" + \"be forced to\"(義務)と変えており、驚きの意味も have to の読みもずれている。"
+  }
+]}

@@ -26,7 +26,7 @@
 const SHEET_NAME = 'questions';
 const OUTPUT_SHEET_NAME = 'forms';
 const SENTENCES_PER_FORM = 10;
-const MAX_QUESTIONS = 4;
+const MAX_QUESTIONS = 6;
 const FORM_TITLE_PREFIX = '英文解釈 確認テスト';
 const FORM_DESCRIPTION =
   'それぞれの英文について、本当の意味で理解できているかを確認するテストです。' +

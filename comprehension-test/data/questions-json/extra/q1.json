@@ -1,0 +1,4 @@
+{"no": 1, "questions": [
+ {"tag":"内容一致(日本語)","q":"この英文（Time flies.）の内容として最も適切なものを1つ選びなさい。","a":"ハエは時間とともに飛び去っていく。","b":"時間はあっという間に過ぎ去る。","c":"時間はゆっくりと流れていく。","d":"時間を無駄にしてはいけない。","answer":"B","explanation":"flies はここでは名詞の「ハエ」ではなく動詞「(時が)飛ぶように過ぎる」で、時間が速く過ぎることを表すのでBが正解。Aは flies を「ハエ」と読み違えたもの、Cは「速く過ぎる」という本文と正反対、Dは本文にない忠告を加えており、いずれも本文と矛盾します。"},
+ {"tag":"言い換え(英語)","q":"Which one has the closest meaning to the sentence above?","a":"Insects move through the air as time goes by.","b":"We must not waste any of our time.","c":"Time goes by very quickly.","d":"Time seems to pass very slowly.","answer":"C","explanation":"元の flies(過ぎ去る)を goes by very quickly と言い換えたCが同義で正解。Aは flies を「虫が飛ぶ」と取り違え、Bは本文にない忠告、Dは「ゆっくり過ぎる」で速さが逆になっており、いずれも意味がずれています。"}
+]}

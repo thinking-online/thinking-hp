@@ -1,0 +1,4 @@
+{"no": 6, "questions": [
+ {"tag":"内容一致(日本語)","q":"この英文の内容として最も適切なものを1つ選びなさい。","a":"犬の鼻の状態を確かめれば、その犬が健康かどうかを確実に見分けられる。","b":"犬の歯茎を調べるよりも、鼻を見るほうが健康状態の判断に向いている。","c":"犬の健康を知るには、鼻を見るよりも歯茎を確認するほうがよい。","d":"犬の健康状態は、鼻を見ても歯茎を見ても判断することはできない。","answer":"C","explanation":"本文は『鼻からは健康はわからない』『より良い方法は歯茎を見ること』と述べているので、鼻より歯茎がよいとするCが正解です。Aは『鼻でわかる』とする点で本文と矛盾し、Bは鼻と歯茎の優劣を逆にしており、Dは歯茎を『より良い方法』とする本文と食い違います。"},
+ {"tag":"言い換え(英語)","q":"Which one has the closest meaning to the sentences above?","a":"Your dog's nose shows its health more clearly than its gums do.","b":"Checking your dog's gums tells you more about its health than checking its nose does.","c":"Neither your dog's nose nor its gums can tell you how healthy your dog is.","d":"To keep your dog healthy, you should clean its nose instead of its gums.","answer":"B","explanation":"原文は『鼻では健康はわからず、歯茎を見るほうがよい』という内容なので、歯茎のほうが多くわかるとするBが同義です。Aは鼻と歯茎の優劣が逆、Cは歯茎も役立たないと言い切る点で本文と矛盾し、Dは『健康を知る方法』ではなく『鼻を掃除して健康に保つ』という別の話にすり替わっています。"}
+]}

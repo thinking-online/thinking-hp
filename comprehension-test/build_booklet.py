@@ -11,7 +11,14 @@ OUT = BASE / 'booklet.html'
 
 def esc(s): return html.escape(str(s))
 
-entries = [json.load(open(RES / f'q{n}.json', encoding='utf-8')) for n in range(1, 61)]
+def load_entry(n):
+    e = json.load(open(RES / f'q{n}.json', encoding='utf-8'))
+    ef = RES / 'extra' / f'q{n}.json'
+    if ef.exists():
+        e['questions'] = list(e['questions']) + json.load(open(ef, encoding='utf-8'))['questions']
+    return e
+
+entries = [load_entry(n) for n in range(1, 61)]
 
 CSS = """
 @page { size: A4; margin: 16mm 15mm 18mm; }
@@ -57,7 +64,7 @@ def render_choices(q, correct=None):
     out.append('</ol>')
     return '\n'.join(out)
 
-parts = [f'<style>{CSS}</style>']
+parts = ['<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">', f'<style>{CSS}</style>', '</head><body>']
 
 # cover
 parts.append("""
@@ -104,6 +111,7 @@ for e in entries:
     a.append('</div>')
     parts.append('\n'.join(a))
 
+parts.append('</body></html>')
 OUT.write_text('\n'.join(parts), encoding='utf-8')
 print('wrote', OUT, 'entries:', len(entries),
       'questions:', sum(len(e['questions']) for e in entries))

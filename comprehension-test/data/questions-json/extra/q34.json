@@ -1,0 +1,4 @@
+{"no": 34, "questions": [
+ {"tag":"内容一致(日本語)","q":"この英文の内容として最も適切なものを1つ選びなさい。","a":"人に飼われていない野生の犬は、吠えるということをしない。","b":"犬が吠えるのは人間の話し声をまねるためだと、本文ははっきり結論づけている。","c":"飼い犬の鳴き声はどれも同じで、種類による違いはない。","d":"筆者は自分の犬のことを完全に理解していると述べている。","answer":"A","explanation":"最後の文 Wild dogs don't bark. が「野生の犬は吠えない」と述べているのでAが正解。Bは Are they trying to copy people's voices? が疑問文（仮説の提示）であって断定ではないので誤り。Cは his many different barks（さまざまな鳴き声）と矛盾し、Dは冒頭で読者に How much do you know about your dog? と問いかけている点と矛盾する。"},
+ {"tag":"言い換え(英語)","q":"Which one has the closest meaning to the last sentence, \"Wild dogs don't bark.\"?","a":"Wild dogs bark, but less often than pet dogs do.","b":"Wild dogs bark only when they notice a person nearby.","c":"Dogs that live in the wild do not bark at all.","d":"Only wild dogs bark, while pet dogs make no sound.","answer":"C","explanation":"元の文は「野生の犬は吠えない」という意味なので、語句を変えて同じ内容を述べたCが正解。AとBは「吠える」ことを認めてしまっている（回数を減らす／条件をつける）点で意味がずれる。Dは主語を逆にして「野生の犬だけが吠える」と述べており、原文と正反対になる。"}
+]}

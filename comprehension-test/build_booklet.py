@@ -79,7 +79,6 @@ for e in entries:
     p = [f'<div class="page">']
     p.append(f'<div class="sec-head"><span class="no">No.{no}</span><span class="kind">問題</span></div>')
     p.append(f'<div class="passage en">{en}</div>')
-    p.append(f'<div class="yaku"><span class="lbl">訳:</span> {ja}</div>')
     for i, q in enumerate(qs, 1):
         p.append('<div class="q">')
         p.append(f'<div class="qhead">問{i}<span class="qtag">［{esc(q["tag"])}］</span></div>')
@@ -108,4 +107,3 @@ for e in entries:
 OUT.write_text('\n'.join(parts), encoding='utf-8')
 print('wrote', OUT, 'entries:', len(entries),
       'questions:', sum(len(e['questions']) for e in entries))
-EOF

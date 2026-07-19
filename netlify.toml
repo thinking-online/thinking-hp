@@ -225,6 +225,16 @@
   to = "/lp/summer-vacation/:splat"
   status = 200
 
+# LP: 英語オンライン合宿 SUMMER CORE — /summer-core で公開
+[[redirects]]
+  from = "/summer-core"
+  to = "/lp/summer-core/index.html"
+  status = 200
+[[redirects]]
+  from = "/summer-core/*"
+  to = "/lp/summer-core/:splat"
+  status = 200
+
 # ---------------------------------------------------------------------------
 # 英文読解 完全解説 — /reading-lesson（受講生向け・noindex）
 # フォルダ＋index.html 型。末尾スラッシュなしのきれいなURLで返す。

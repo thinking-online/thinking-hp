@@ -5,7 +5,6 @@
   var opening = document.getElementById("opening");
   var openingSkip = document.getElementById("openingSkip");
   var progress = document.getElementById("progress");
-  var sticky = document.getElementById("sticky");
   var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
   var openingSeen = false;
 
@@ -35,11 +34,6 @@
 
   if (openingSkip) openingSkip.addEventListener("click", closeOpening);
 
-  var lineUrl = window.THINKING_LINE_LIFF_URL || "#";
-  document.querySelectorAll("[data-line-cta]").forEach(function (link) {
-    link.setAttribute("href", lineUrl);
-  });
-
   if ("IntersectionObserver" in window && !reduceMotion) {
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -66,9 +60,6 @@
 
     if (progress) {
       progress.style.width = Math.min(100, y / Math.max(scrollable, 1) * 100) + "%";
-    }
-    if (sticky) {
-      sticky.classList.toggle("show", y > window.innerHeight * 0.75 && y < scrollable - 260);
     }
   }
 

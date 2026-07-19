@@ -30,6 +30,19 @@
 
   <div class="progress" id="progress"></div>
 
+  <aside class="page-index" id="pageIndex" aria-label="ページ目次">
+    <button class="page-index__toggle" id="indexToggle" type="button" aria-expanded="false" aria-controls="indexNav">目次</button>
+    <nav class="page-index__nav" id="indexNav">
+      <p>CONTENTS</p>
+      <a href="#proof"><span>01</span>実績</a>
+      <a href="#entry"><span>02</span>無料3Days</a>
+      <a href="#gift"><span>03</span>参加特典</a>
+      <a href="#program"><span>04</span>3日間の内容</a>
+      <a href="#textbook"><span>05</span>夏休みテキスト</a>
+      <a href="#consultation"><span>06</span>個別相談</a>
+    </nav>
+  </aside>
+
   <header class="hero" id="top">
     <img class="hero__image" src="/summer-core/assets/hero.png" alt="ビビるくらい英語が伸びる オキテ破りの英語合宿3Days" width="1024" height="576" fetchpriority="high">
     <div class="hero__shade"></div>
@@ -38,7 +51,7 @@
   </header>
 
   <main>
-    <section class="proof section">
+    <section class="proof section" id="proof">
       <div class="container">
         <p class="kicker reveal">WHY YOU CAN TRUST ME</p>
         <h1 class="proof__headline reveal">英語は、<br><em>俺に任せろ。</em></h1>
@@ -100,7 +113,7 @@
       </div>
     </section>
 
-    <section class="gift section">
+    <section class="gift section" id="gift">
       <div class="container">
         <p class="kicker reveal">DAY 01 &amp; DAY 02 SPECIAL GIFT</p>
         <h2 class="section-title reveal">参加するだけで、<br><em>500ページ超</em>の最強資料。</h2>
@@ -137,7 +150,7 @@
       </div>
     </section>
 
-    <section class="program section">
+    <section class="program section" id="program">
       <div class="container">
         <p class="kicker reveal">THE 3 DAYS</p>
         <h2 class="section-title reveal">常識が変わる。<br>勉強が変わる。<br><em>英語が変わる。</em></h2>
@@ -184,9 +197,7 @@
       <div class="container">
         <p class="kicker reveal">OUR MISSION</p>
         <h2 class="manifesto__title reveal">
-          本気で英語の基礎から固めて、<br>
-          <em>「読み方」</em>からフォーカスして、<br>
-          左から右にスラスラ読めて、<br>
+          本気で英語の基礎から固めて、<em>「読み方」</em>からフォーカスして、左から右にスラスラ読めて、
           点数が安定する方法を掴み取れ。
         </h2>
         <p class="manifesto__en reveal">READ. UNDERSTAND. BREAK THROUGH.</p>
@@ -211,7 +222,7 @@
       </div>
     </section>
 
-    <section class="closing section">
+    <section class="closing section" id="consultation">
       <div class="closing__glow"></div>
       <div class="container">
         <p class="kicker reveal">FINAL MESSAGE</p>
@@ -219,7 +230,11 @@
         <div class="closing__message reveal">
           <p>一人ひとり、今いる場所は違う。<br>苦手も、悩みも、目指している大学も違う。</p>
           <p>だからこそ、今の状態や悩みを聞かせてください。何を、どの順番で、どこまでやるべきか。あなたの状況に合わせて、本気で相談に乗ります。</p>
+          <p class="closing__request">LINEで、<strong>学年・志望校・今の悩み</strong>を教えてください。内容を確認して、一人ひとり個別に相談に乗っていきます。</p>
         </div>
+        <a class="cta closing__cta reveal" href="#" data-line-cta>
+          <span>LINEで個別相談する<small>学年・志望校・悩みを送ってください</small></span><b>→</b>
+        </a>
         <p class="closing__sign reveal">受験の王様　朝倉 徹大</p>
       </div>
     </section>
@@ -231,6 +246,7 @@
     <small>© THINKING Inc. 2026</small>
   </footer>
 
+  <script src="/data/line-url.js"></script>
   <script src="/summer-core/scripts.js"></script>
 </body>
 </html>

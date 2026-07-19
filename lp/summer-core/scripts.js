@@ -5,6 +5,9 @@
   var opening = document.getElementById("opening");
   var openingSkip = document.getElementById("openingSkip");
   var progress = document.getElementById("progress");
+  var pageIndex = document.getElementById("pageIndex");
+  var indexToggle = document.getElementById("indexToggle");
+  var indexLinks = Array.prototype.slice.call(document.querySelectorAll(".page-index__nav a"));
   var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
   var openingSeen = false;
 
@@ -34,6 +37,26 @@
 
   if (openingSkip) openingSkip.addEventListener("click", closeOpening);
 
+  var lineUrl = window.THINKING_LINE_LIFF_URL || "#";
+  document.querySelectorAll("[data-line-cta]").forEach(function (link) {
+    link.setAttribute("href", lineUrl);
+  });
+
+  if (indexToggle && pageIndex) {
+    indexToggle.addEventListener("click", function () {
+      var isOpen = pageIndex.classList.toggle("is-open");
+      indexToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+  }
+
+  indexLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+      if (!pageIndex || !indexToggle) return;
+      pageIndex.classList.remove("is-open");
+      indexToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
   if ("IntersectionObserver" in window && !reduceMotion) {
     var revealObserver = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
@@ -61,6 +84,9 @@
     if (progress) {
       progress.style.width = Math.min(100, y / Math.max(scrollable, 1) * 100) + "%";
     }
+    if (pageIndex) {
+      pageIndex.classList.toggle("show", y > window.innerHeight * 0.85);
+    }
   }
 
   function requestScrollUpdate() {
@@ -72,4 +98,20 @@
   window.addEventListener("scroll", requestScrollUpdate, { passive: true });
   window.addEventListener("resize", requestScrollUpdate);
   updateScroll();
+
+  if ("IntersectionObserver" in window) {
+    var sectionObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        indexLinks.forEach(function (link) {
+          link.classList.toggle("is-active", link.getAttribute("href") === "#" + entry.target.id);
+        });
+      });
+    }, { rootMargin: "-35% 0px -55% 0px", threshold: 0 });
+
+    indexLinks.forEach(function (link) {
+      var section = document.querySelector(link.getAttribute("href"));
+      if (section) sectionObserver.observe(section);
+    });
+  }
 })();

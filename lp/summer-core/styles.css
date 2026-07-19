@@ -91,9 +91,12 @@ button { font: inherit; }
 .proof__grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(201,166,76,.35); border-bottom: 1px solid rgba(201,166,76,.35); }
 .proof__item { padding: 34px clamp(14px, 3vw, 36px); border-right: 1px solid rgba(201,166,76,.2); }
 .proof__item:last-child { border: 0; }
+.proof__stat { min-height: 150px; }
 .proof__item strong { color: var(--gold-light); font: 700 clamp(42px, 7vw, 76px)/1 var(--serif); letter-spacing: -.03em; }
 .proof__item > span { margin-left: 4px; color: var(--gold-light); font-weight: 900; }
 .proof__item p { margin: 12px 0 0; color: rgba(255,255,255,.72); font-size: 14px; line-height: 1.65; }
+.proof__stat > span { margin-left: 4px; color: var(--gold-light); font-weight: 900; }
+.proof__item img { width: 100%; margin-top: 24px; aspect-ratio: 4/3; object-fit: cover; border: 1px solid rgba(201,166,76,.28); background: var(--cream); }
 .gallery-wrap { margin-top: 72px; }
 .gallery-head { display: flex; justify-content: space-between; align-items: end; margin-bottom: 20px; }
 .gallery-head span { color: var(--gold); font: 700 13px var(--serif); letter-spacing: .18em; }
@@ -236,10 +239,12 @@ footer p { margin: 7px 0; }
   .section-title { margin-bottom: 30px; font-size: clamp(28px, 8vw, 38px); line-height: 1.55; }
   .proof__headline { margin-bottom: 38px; }
   .proof__grid { grid-template-columns: 1fr; }
-  .proof__item { display: grid; grid-template-columns: auto auto 1fr; align-items: baseline; gap: 4px; padding: 23px 4px; border-right: 0; border-bottom: 1px solid rgba(201,166,76,.2); }
+  .proof__item { display: block; padding: 30px 4px; border-right: 0; border-bottom: 1px solid rgba(201,166,76,.2); }
   .proof__item:last-child { border-bottom: 0; }
+  .proof__stat { display: grid; grid-template-columns: auto auto 1fr; align-items: baseline; gap: 4px; min-height: 0; }
   .proof__item strong { font-size: 52px; }
   .proof__item p { align-self: center; margin: 0 0 0 14px; }
+  .proof__item img { margin-top: 20px; border-radius: 2px; }
   .gallery-wrap { margin-top: 52px; }
   .gallery-head { display: block; }
   .gallery-head p { margin-top: 7px; }

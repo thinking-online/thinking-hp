@@ -37,11 +37,6 @@
 
   if (openingSkip) openingSkip.addEventListener("click", closeOpening);
 
-  var lineUrl = window.THINKING_LINE_LIFF_URL || "#";
-  document.querySelectorAll("[data-line-cta]").forEach(function (link) {
-    link.setAttribute("href", lineUrl);
-  });
-
   if (indexToggle && pageIndex) {
     indexToggle.addEventListener("click", function () {
       var isOpen = pageIndex.classList.toggle("is-open");

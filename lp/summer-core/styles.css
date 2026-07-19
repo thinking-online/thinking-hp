@@ -202,9 +202,9 @@ button { font: inherit; }
 /* Textbook */
 .textbook { background: var(--paper); }
 .textbook__grid { display: grid; grid-template-columns: minmax(260px, 390px) 1fr; align-items: center; gap: clamp(50px, 9vw, 120px); }
-.textbook__cover { position: relative; display: block; filter: drop-shadow(0 28px 26px rgba(1,19,15,.23)); transition: transform .35s var(--ease); }
+.textbook__cover { position: relative; display: block; width: 100%; max-width: 390px; aspect-ratio: 723/1024; filter: drop-shadow(0 28px 26px rgba(1,19,15,.23)); transition: transform .35s var(--ease); }
 .textbook__cover:hover { transform: translateY(-8px) rotate(-1deg); }
-.textbook__cover img { position: relative; z-index: 1; }
+.textbook__cover img { position: relative; z-index: 1; width: 100%; height: 100%; object-fit: contain; }
 .textbook__cover > span { position: absolute; z-index: 2; right: 16px; bottom: 16px; padding: 8px 13px; color: #fff; background: var(--red); font: 700 10px var(--serif); letter-spacing: .12em; }
 .textbook__glow { position: absolute; inset: 12% -10%; border-radius: 50%; background: rgba(201,166,76,.28); filter: blur(50px); }
 .textbook__body > p:not(.kicker) { margin: 0 0 36px; color: rgba(9,43,35,.67); }
@@ -271,7 +271,7 @@ footer p { margin: 7px 0; }
   .day__image { min-height: 0; aspect-ratio: 4/5; }
   .day__body { padding: 27px 24px 32px; }
   .textbook__grid { grid-template-columns: 1fr; }
-  .textbook__cover { width: min(82%, 350px); margin-inline: auto; }
+  .textbook__cover { width: min(74%, 300px); margin-inline: auto; }
   .textbook__body { text-align: center; }
   .textbook__body .cta { text-align: left; }
   .manifesto__line { inset: 10px; }

@@ -233,6 +233,7 @@ button { font: inherit; }
   font-size: clamp(15px, 2vw, 17px); line-height: 2.1;
 }
 .strategy__body strong { color: var(--gold-light); }
+.strategy .cta { margin: 8px auto 0; text-align: left; max-width: 560px; }
 .strategy__sign {
   margin: 36px 0 0; color: var(--gold);
   font: 600 13px var(--mincho); letter-spacing: .1em;

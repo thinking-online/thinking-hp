@@ -235,6 +235,16 @@
   to = "/lp/summer-core/:splat"
   status = 200
 
+# LP: SUMMER CORE 特典配布 — /summer-core-gift で公開
+[[redirects]]
+  from = "/summer-core-gift"
+  to = "/lp/summer-core-gift/index.html"
+  status = 200
+[[redirects]]
+  from = "/summer-core-gift/*"
+  to = "/lp/summer-core-gift/:splat"
+  status = 200
+
 # ---------------------------------------------------------------------------
 # 英文読解 完全解説 — /reading-lesson（受講生向け・noindex）
 # フォルダ＋index.html 型。末尾スラッシュなしのきれいなURLで返す。

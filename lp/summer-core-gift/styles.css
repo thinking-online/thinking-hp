@@ -56,7 +56,7 @@ button { font: inherit; }
   display: grid; place-items: center;
   padding: 28px;
   color: var(--cream);
-  background: var(--green-black);
+  background: #07111f;
   transition: opacity .8s var(--ease), visibility .8s;
 }
 .opening::before {
@@ -112,27 +112,40 @@ button { font: inherit; }
 
 /* Hero */
 .hero {
-  padding: clamp(88px, 14vw, 140px) 0 clamp(56px, 8vw, 88px);
+  position: relative;
+  overflow: hidden;
+  background: #0a1628;
+}
+.hero__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1024 / 724;
+  object-fit: contain;
+  object-position: center top;
+  background: #0a1628;
+}
+.hero__bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
+  padding: 16px var(--gutter);
   color: var(--cream);
-  background:
-    radial-gradient(circle at 80% 0%, rgba(201,166,76,.16), transparent 42%),
-    linear-gradient(160deg, var(--green-deep), var(--green-black));
+  background: linear-gradient(90deg, #07111f, #13233a 55%, #0a1628);
+  border-top: 1px solid rgba(201,166,76,.35);
+  border-bottom: 1px solid rgba(201,166,76,.18);
 }
-.hero__brand {
-  display: flex; align-items: center; gap: 12px;
-  margin: 0 0 28px; font: 700 14px var(--mincho);
-}
-.hero__brand b {
+.hero__bar span { font: 700 14px var(--mincho); }
+.hero__bar b {
   padding-left: 12px; border-left: 1px solid var(--gold);
   color: var(--gold-light); font: 700 12px var(--serif); letter-spacing: .16em;
 }
-.hero h1 {
-  margin: 0 0 24px;
-  font: 800 clamp(34px, 7vw, 64px)/1.4 var(--mincho);
-  letter-spacing: -.02em;
+.hero__bar i {
+  display: none; width: 1px; height: 14px; background: rgba(255,255,255,.2);
 }
-.hero h1 em { color: var(--gold-light); font-style: normal; }
-.hero__lead { margin: 0; max-width: 540px; color: rgba(255,255,255,.72); font-size: 15px; }
+.hero__bar p {
+  margin: 0; color: rgba(255,255,255,.62); font-size: 12px; letter-spacing: .06em;
+}
 
 /* Gifts */
 .gifts { background: var(--cream); }
@@ -251,8 +264,8 @@ footer p { margin: 7px 0; }
     display: none; transform: translateY(-50%);
   }
   .page-index.is-open .page-index__nav { display: block; }
-  .hero { padding-top: 72px; }
-  .hero h1 { font-size: clamp(30px, 8.5vw, 42px); }
+  .hero__bar { padding: 14px 18px; gap: 8px 12px; }
+  .hero__bar p { width: 100%; font-size: 11px; }
   .gift { padding: 18px; margin-bottom: 36px; }
   .gift__image { width: min(100%, 340px); }
   .cta { padding: 16px 16px 16px 18px; font-size: 14px; }

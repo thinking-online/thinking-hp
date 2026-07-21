@@ -7,7 +7,7 @@
    */
   var GIFT_LINKS = {
     1: "https://utage-system.com/p/Sg4F8vwFh7N3",
-    2: "https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/RSMBEmPLBxLvi5XZLeSTjNhvc",
+    2: "https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/RSMBEmPLBxLvi5XZLeSTjNhvce4zErXiPQ0TVRhk.pdf",
     3: "https://utage-system.com/p/fJs9EA4BkhZJ",
     4: "https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/bbgo6R4uqCR0zEBIwdbsJb4pE",
     5: "https://utage-system.com/p/kjxKDsUDWubQ",

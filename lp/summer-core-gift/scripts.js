@@ -6,12 +6,12 @@
    * ここを更新すると各ボタンの飛び先が変わります。
    */
   var GIFT_LINKS = {
-    1: "#", // 英単語の核心
-    2: "#", // イラスト英単語帳
-    3: "#", // 英文法の核心
-    4: "#", // 助動詞をイメージ理解する解説教材
-    5: "#", // 英文解釈の核心
-    6: "#"  // 英文解釈の入門
+    1: "https://utage-system.com/p/Sg4F8vwFh7N3",
+    2: "https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/RSMBEmPLBxLvi5XZLeSTjNhvc",
+    3: "https://utage-system.com/p/fJs9EA4BkhZJ",
+    4: "https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/bbgo6R4uqCR0zEBIwdbsJb4pE",
+    5: "https://utage-system.com/p/kjxKDsUDWubQ",
+    6: "https://utagesystem.s3.ap-northeast-1.amazonaws.com/sdSLpQTmME5E/vNwDgw4syps740pp1P6VPPVZD"
   };
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

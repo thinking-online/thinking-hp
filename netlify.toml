@@ -245,6 +245,16 @@
   to = "/lp/summer-core-gift/:splat"
   status = 200
 
+# LP: CORE ENGLISH day03 英語完全ロードマップ — /core-english-day03 で公開
+[[redirects]]
+  from = "/core-english-day03"
+  to = "/lp/core-english-day03/index.html"
+  status = 200
+[[redirects]]
+  from = "/core-english-day03/*"
+  to = "/lp/core-english-day03/:splat"
+  status = 200
+
 # ---------------------------------------------------------------------------
 # 英文読解 完全解説 — /reading-lesson（受講生向け・noindex）
 # フォルダ＋index.html 型。末尾スラッシュなしのきれいなURLで返す。

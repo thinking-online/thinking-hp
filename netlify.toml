@@ -245,6 +245,16 @@
   to = "/lp/summer-core-gift/:splat"
   status = 200
 
+# LP: CORE ENGLISH 英語講座 販売LP — /core-english で公開
+[[redirects]]
+  from = "/core-english"
+  to = "/lp/core-english/index.html"
+  status = 200
+[[redirects]]
+  from = "/core-english/*"
+  to = "/lp/core-english/:splat"
+  status = 200
+
 # LP: CORE ENGLISH day03 英語完全ロードマップ — /core-english-day03 で公開
 [[redirects]]
   from = "/core-english-day03"

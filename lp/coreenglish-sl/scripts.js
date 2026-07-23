@@ -7,7 +7,6 @@
   var progress = document.getElementById("progress");
   var pageIndex = document.getElementById("pageIndex");
   var indexToggle = document.getElementById("indexToggle");
-  var sticky = document.getElementById("stickyCta");
   var indexLinks = Array.prototype.slice.call(document.querySelectorAll(".page-index__nav a"));
   var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
   var openingSeen = false;
@@ -74,7 +73,6 @@
       progress.style.width = Math.min(100, (y / Math.max(scrollable, 1)) * 100) + "%";
     }
     if (pageIndex) pageIndex.classList.toggle("show", y > window.innerHeight * 0.7);
-    if (sticky) sticky.classList.toggle("show", y > window.innerHeight * 1.1);
   }
   function requestScrollUpdate() {
     if (ticking) return;

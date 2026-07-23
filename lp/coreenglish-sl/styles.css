@@ -1,4 +1,4 @@
-/* Core English Sales Letter — SUMMER LOCK-ON */
+/* Core English Sales Letter */
 :root {
   --bg-0: #05010c;
   --bg-1: #12061f;
@@ -259,6 +259,18 @@ button { font: inherit; color: inherit; }
 .hero__media-logo .img-slot {
   width: min(160px, 42vw); margin: 0;
 }
+.hero__press {
+  display: inline-flex; align-items: center;
+  padding: 8px 14px;
+  border: 1px solid rgba(255,255,255,.2);
+  background: #fff;
+  color: #e60012;
+  font: 800 14px/1 "Noto Sans JP", sans-serif;
+  letter-spacing: .04em;
+  text-decoration: none;
+  transition: transform .2s var(--ease), box-shadow .2s;
+}
+.hero__press:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(0,0,0,.35); }
 
 /* CTA */
 .cta {
@@ -361,10 +373,35 @@ button { font: inherit; color: inherit; }
   border-bottom: 1px solid var(--gold-line);
 }
 .media-card:last-child { border: 0; padding-bottom: 0; }
+.media-card__link {
+  display: grid; gap: 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity .25s;
+}
+.media-card__link:hover { opacity: .92; }
+.media-card__link:hover h3 { color: var(--gold-bright); }
+.media-card__cta {
+  margin: 10px 0 0;
+  color: var(--gold-bright);
+  font-size: 13px;
+  letter-spacing: .06em;
+}
+.img-slot__frame--filled {
+  border-style: solid;
+  background: #000;
+}
+.img-slot__frame--filled img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 .media-card h3 {
   margin: 0 0 8px;
   font: 700 18px/1.55 var(--mincho);
   color: var(--cream);
+  transition: color .25s;
 }
 .media-card .meta { margin: 0; color: var(--gold); font-size: 12px; letter-spacing: .06em; }
 

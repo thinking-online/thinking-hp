@@ -449,6 +449,54 @@ button { font: inherit; color: inherit; }
   height: 100%;
   object-fit: cover;
 }
+.img-slot__frame--natural {
+  aspect-ratio: auto;
+  height: auto;
+  border-style: solid;
+  background: #f3f3f3;
+}
+.img-slot__frame--natural img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.method-visuals {
+  display: grid;
+  gap: 18px;
+  margin: 28px 0 8px;
+}
+.method-visuals .img-slot { margin: 0; }
+
+.gift-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin: 20px 0 28px;
+}
+.gift-link {
+  display: grid;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  transition: transform .25s var(--ease);
+}
+.gift-link:hover { transform: translateY(-3px); }
+.gift-link img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: 1px solid var(--gold-line);
+  background: #0a0014;
+  box-shadow: 0 14px 32px rgba(0,0,0,.28);
+}
+.gift-link span {
+  color: var(--gold-bright);
+  font: 700 13px/1.4 var(--mincho);
+  letter-spacing: .04em;
+  text-align: center;
+}
 .media-card h3 {
   margin: 0 0 8px;
   font: 700 18px/1.55 var(--mincho);
@@ -816,27 +864,6 @@ button { font: inherit; color: inherit; }
 }
 .feature-list strong { display: block; margin-bottom: 4px; color: var(--gold-bright); font-size: 14px; }
 
-/* Roadmap calendar */
-.calendar {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 6px;
-  margin: 28px 0;
-}
-.cal-day {
-  aspect-ratio: 1;
-  display: grid; place-content: center;
-  border: 1px solid rgba(212,175,55,.22);
-  background: rgba(212,175,55,.05);
-  font: 700 11px/1.2 var(--serif);
-  color: var(--ink-mute);
-  text-align: center;
-}
-.cal-day span { display: block; color: var(--gold-bright); font-size: 13px; }
-.cal-day--grammar { background: rgba(120,80,200,.18); }
-.cal-day--interp { background: rgba(212,175,55,.14); }
-.cal-day--reading { background: rgba(80,140,220,.16); }
-.cal-day--listen { border-color: rgba(249,226,125,.45); }
 .day-flow {
   margin: 24px 0; padding: 0; list-style: none;
   counter-reset: dayflow;
@@ -1166,7 +1193,6 @@ br.sp { display: inline; }
   }
   .order-flow { grid-template-columns: 1fr; }
   .order-arrow { transform: rotate(90deg); padding: 4px 0; }
-  .calendar { grid-template-columns: repeat(5, 1fr); }
   .support-card { grid-template-columns: 48px 1fr; gap: 12px; padding: 18px 14px; }
   .domain-nav {
     top: 0;
@@ -1202,12 +1228,8 @@ br.sp { display: inline; }
   .cta { width: 100%; max-width: none; min-height: 52px; font-size: 14px; }
   .cta-wrap { width: 100%; }
   .cta--block { max-width: none; }
-  .tv-feature__meta {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-    padding: 14px 14px 16px;
-  }
+  .gift-links { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .gift-link span { font-size: 12px; }
   .tv-feature__title { font-size: 15px; }
   .media-card h3 { font-size: 16px; }
   .video-card__cap { font-size: 13px; padding: 10px 12px; }
@@ -1243,7 +1265,6 @@ br.sp { display: inline; }
 
 @media (max-width: 520px) {
   .letters { grid-template-columns: repeat(2, 1fr); }
-  .calendar { grid-template-columns: repeat(4, 1fr); }
   .plan__ribbon { position: static; display: inline-block; margin-bottom: 12px; }
   .hours__box strong { font-size: 30px; }
   .compare__col, .vs-box { padding: 14px 12px; }

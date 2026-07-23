@@ -255,6 +255,16 @@
   to = "/lp/core-english-day03/:splat"
   status = 200
 
+# LP: Core English セールスレター — /coreenglish-sl で公開
+[[redirects]]
+  from = "/coreenglish-sl"
+  to = "/lp/coreenglish-sl/index.html"
+  status = 200
+[[redirects]]
+  from = "/coreenglish-sl/*"
+  to = "/lp/coreenglish-sl/:splat"
+  status = 200
+
 # ---------------------------------------------------------------------------
 # 英文読解 完全解説 — /reading-lesson（受講生向け・noindex）
 # フォルダ＋index.html 型。末尾スラッシュなしのきれいなURLで返す。

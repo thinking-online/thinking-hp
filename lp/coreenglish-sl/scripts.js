@@ -150,4 +150,54 @@
       btn.setAttribute("aria-expanded", open ? "true" : "false");
     });
   });
+
+  /* Letters infinite swipe (SSE-style) */
+  var lettersCarousel = document.getElementById("lettersCarousel");
+  if (lettersCarousel) {
+    var LOOP_SETS = 3;
+    var jumping = false;
+
+    function syncLoop() {
+      if (jumping) return;
+      var setWidth = lettersCarousel.scrollWidth / LOOP_SETS;
+      if (setWidth <= 0) return;
+      if (lettersCarousel.scrollLeft < setWidth * 0.5) {
+        jumping = true;
+        lettersCarousel.scrollLeft += setWidth;
+        jumping = false;
+      } else if (lettersCarousel.scrollLeft >= setWidth * 2.5) {
+        jumping = true;
+        lettersCarousel.scrollLeft -= setWidth;
+        jumping = false;
+      }
+    }
+
+    function jumpMiddle() {
+      var setWidth = lettersCarousel.scrollWidth / LOOP_SETS;
+      if (setWidth > 0) lettersCarousel.scrollLeft = setWidth;
+    }
+
+    jumpMiddle();
+    window.setTimeout(jumpMiddle, 120);
+    window.setTimeout(jumpMiddle, 600);
+    lettersCarousel.addEventListener("scroll", syncLoop, { passive: true });
+    window.addEventListener("resize", jumpMiddle);
+
+    /* drag to scroll on desktop */
+    var isDown = false;
+    var startX = 0;
+    var startScroll = 0;
+    lettersCarousel.addEventListener("mousedown", function (e) {
+      isDown = true;
+      startX = e.pageX;
+      startScroll = lettersCarousel.scrollLeft;
+    });
+    window.addEventListener("mouseup", function () { isDown = false; });
+    lettersCarousel.addEventListener("mouseleave", function () { isDown = false; });
+    lettersCarousel.addEventListener("mousemove", function (e) {
+      if (!isDown) return;
+      e.preventDefault();
+      lettersCarousel.scrollLeft = startScroll - (e.pageX - startX);
+    });
+  }
 })();

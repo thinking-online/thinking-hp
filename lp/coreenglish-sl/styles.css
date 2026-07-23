@@ -1045,8 +1045,22 @@ button { font: inherit; color: inherit; }
   border-radius: 4px;
   overflow: hidden;
 }
-.plan ul { margin: 0 0 22px; padding-left: 1.15em; color: var(--ink-dim); font-size: 14px; }
+.plan ul { margin: 0 0 16px; padding-left: 1.15em; color: var(--ink-dim); font-size: 14px; }
 .plan li { margin-bottom: .4em; }
+.plan__option {
+  margin: 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(212,175,55,.35);
+  background: rgba(212,175,55,.08);
+  color: var(--cream);
+  font: 700 14px/1.55 var(--mincho);
+}
+.plan__option small {
+  display: block;
+  margin-top: 6px;
+  color: var(--ink-mute);
+  font: 500 12.5px/1.6 var(--sans);
+}
 .plan--sub { opacity: .92; background: rgba(255,255,255,.03); }
 .todo-chip {
   display: inline-block; margin: 8px 0;
@@ -1146,6 +1160,20 @@ button { font: inherit; color: inherit; }
   font-size: 13px; line-height: 1.8;
 }
 .company a { color: var(--gold-bright); }
+.section--paper .company {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top-color: rgba(166,124,26,.28);
+  color: rgba(28,18,40,.72);
+}
+.section--paper .company a {
+  color: var(--gold-deep);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.section--paper#parents-2 {
+  padding-bottom: clamp(40px, 6vw, 64px);
+}
 
 /* Footer */
 .foot {

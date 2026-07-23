@@ -101,6 +101,25 @@ button { font: inherit; color: inherit; }
 .prose p { margin: 0 0 1.15em; }
 .prose p:last-child { margin-bottom: 0; }
 .section--paper .prose { color: rgba(28,18,40,.78); }
+.hl {
+  font-weight: 700;
+  color: var(--cream);
+  text-decoration: underline;
+  text-decoration-color: rgba(249,226,125,.85);
+  text-decoration-thickness: 2px;
+  text-underline-offset: .28em;
+  text-decoration-skip-ink: auto;
+}
+.section--paper .hl {
+  color: #1c1228;
+  text-decoration-color: rgba(166,124,26,.75);
+}
+.section--alt .hl { color: var(--cream); }
+.emphasis .hl {
+  color: inherit;
+  text-decoration-thickness: 2.5px;
+}
+.bridge .hl { color: inherit; }
 .emphasis {
   margin: 28px 0 0;
   padding: 22px 24px;

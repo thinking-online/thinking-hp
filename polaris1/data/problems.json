@@ -264,27 +264,84 @@
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 1 時制(1)",
   "type": "error-id",
-  "answer": "③",
+  "answer": "3",
   "answer_part": "achieves",
-  "question": "①Through hard work and ②determination, we usually ③achieves our ④goals."
+  "question": "①Through hard work and ②determination, we usually ③achieves our ④goals.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① Through hard work and"
+   },
+   {
+    "n": "2",
+    "text": "② determination, we usually"
+   },
+   {
+    "n": "3",
+    "text": "③ achieves our"
+   },
+   {
+    "n": "4",
+    "text": "④ goals"
+   }
+  ],
+  "answer_circled": "③"
  },
  {
   "num": "012",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 1 時制(1)",
   "type": "error-id",
-  "answer": "②",
+  "answer": "2",
   "answer_part": "moved",
-  "question": "As I've ①got a new apartment, I'm ②moved in ③on Friday ④with the help of my colleagues."
+  "question": "As I've ①got a new apartment, I'm ②moved in ③on Friday ④with the help of my colleagues.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① got a new apartment, I'm"
+   },
+   {
+    "n": "2",
+    "text": "② moved in"
+   },
+   {
+    "n": "3",
+    "text": "③ on Friday"
+   },
+   {
+    "n": "4",
+    "text": "④ with the help of my colleagues"
+   }
+  ],
+  "answer_circled": "②"
  },
  {
   "num": "013",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 1 時制(1)",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "①will need",
-  "question": "If this old car ①will need repair ②work, ③it will cost ④a lot of money."
+  "question": "If this old car ①will need repair ②work, ③it will cost ④a lot of money.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① will need repair"
+   },
+   {
+    "n": "2",
+    "text": "② work,"
+   },
+   {
+    "n": "3",
+    "text": "③ it will cost"
+   },
+   {
+    "n": "4",
+    "text": "④ a lot of money"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "014",
@@ -420,25 +477,83 @@
   "num": "019",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 2 時制(2)",
-  "type": "reorder",
-  "answer": "5741326",
-  "question": "春学期が始まるまでに、新しい実験室の建設は終了しているでしょう。\nThe construction of the new \\[①been / ②by / ③finished / ④have / ⑤laboratory /\n⑥the time / ⑦will\\] the spring semester starts."
+  "type": "choice4",
+  "answer": "4",
+  "question": "春学期が始まるまでに、新しい実験室の建設は終了しているでしょう。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "The construction of the new laboratory will have been finished by the time the spring semester will start."
+   },
+   {
+    "n": "2",
+    "text": "The construction of the new laboratory will been have finished by the time the spring semester starts."
+   },
+   {
+    "n": "3",
+    "text": "The construction of the new laboratory will have been finish by the time the spring semester starts."
+   },
+   {
+    "n": "4",
+    "text": "The construction of the new laboratory will have been finished by the time the spring semester starts."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "020",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 2 時制(2)",
-  "type": "reorder",
-  "answer": "3241",
-  "question": "彼が19歳のときから車を運転していることは、誰でも知っています。\nEverybody knows he \\[①since / ②driven / ③has / ④a car\\] he was 19."
+  "type": "choice4",
+  "answer": "1",
+  "question": "彼が19歳のときから車を運転していることは、誰でも知っています。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Everybody knows he has driven a car since he was 19."
+   },
+   {
+    "n": "2",
+    "text": "Everybody knows he had driven a car since he was 19."
+   },
+   {
+    "n": "3",
+    "text": "Everybody knows he has drive a car since he was 19."
+   },
+   {
+    "n": "4",
+    "text": "Everybody knows he driven has a car since he was 19."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "021",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 2 時制(2)",
-  "type": "written",
-  "answer": "died",
-  "question": "次の2つの文がほぼ等しい意味になるように、空所に適切な語を書きなさい。\nHe has been dead for five years.\n\\= It is five years since he (　 ）"
+  "type": "choice4",
+  "answer": "2",
+  "question": "He has been dead for five years.\n＝ It is five years since he （　）.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "dead"
+   },
+   {
+    "n": "2",
+    "text": "died"
+   },
+   {
+    "n": "3",
+    "text": "has died"
+   },
+   {
+    "n": "4",
+    "text": "dying"
+   }
+  ],
+  "converted_from": "written",
+  "editorial_note": "2つの文が同じ意味になるよう空所に入る語を選ぶ問題に変更"
  },
  {
   "num": "022",
@@ -578,34 +693,110 @@
   "num": "027",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 3 助動詞(1)",
-  "type": "reorder",
-  "answer": "256314",
-  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\n私は姉の結婚式でスピーチをしなくてはならない。\nI \\[①speech / ②have / ③a / ④at / ⑤to / ⑥make\\] my elder sister's wedding."
+  "type": "choice4",
+  "answer": "4",
+  "question": "私は姉の結婚式でスピーチをしなくてはなりません。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I have make to a speech at my elder sister's wedding."
+   },
+   {
+    "n": "2",
+    "text": "I have to made a speech at my elder sister's wedding."
+   },
+   {
+    "n": "3",
+    "text": "I to make have a speech at my elder sister's wedding."
+   },
+   {
+    "n": "4",
+    "text": "I have to make a speech at my elder sister's wedding."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "028",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 3 助動詞(1)",
-  "type": "reorder",
-  "answer": "416235",
-  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\n私はかつて妹とままごとをしたものだ。\nI \\[①to/ ②house / ③with/ ④used / ⑤my / ⑥play\\] sister."
+  "type": "choice4",
+  "answer": "1",
+  "question": "私はかつて妹とままごとをしたものです。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I used to play house with my sister."
+   },
+   {
+    "n": "2",
+    "text": "I used play to house with my sister."
+   },
+   {
+    "n": "3",
+    "text": "I use to play house with my sister."
+   },
+   {
+    "n": "4",
+    "text": "I used to played house with my sister."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "029",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 3 助動詞(1)",
   "type": "error-id",
-  "answer": "②",
+  "answer": "2",
   "answer_part": "being",
-  "question": "①Jogging used to ②being my main sport, but I've ③taken up ④swimming lately."
+  "question": "①Jogging used to ②being my main sport, but I've ③taken up ④swimming lately.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① Jogging used to"
+   },
+   {
+    "n": "2",
+    "text": "② being my main sport, but I've"
+   },
+   {
+    "n": "3",
+    "text": "③ taken up"
+   },
+   {
+    "n": "4",
+    "text": "④ swimming lately"
+   }
+  ],
+  "answer_circled": "②"
  },
  {
   "num": "030",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 3 助動詞(1)",
-  "type": "reorder",
-  "answer": "52781436",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nすばやく行動して、私たちはその難しい状況から逃れることができた。\nWe \\[①out of / ②able / ③by / ④the difficult situation / ⑤were / ⑥acting / ⑦to / ➇get\\] quickly."
+  "type": "choice4",
+  "answer": "3",
+  "question": "すばやく行動して、私たちはその難しい状況から逃れることができました。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "We were able get to out of the difficult situation by acting quickly."
+   },
+   {
+    "n": "2",
+    "text": "We were able to got out of the difficult situation by acting quickly."
+   },
+   {
+    "n": "3",
+    "text": "We were able to get out of the difficult situation by acting quickly."
+   },
+   {
+    "n": "4",
+    "text": "We able were to get out of the difficult situation by acting quickly."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "031",
@@ -741,34 +932,110 @@
   "num": "036",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 4 助動詞(2)",
-  "type": "reorder",
-  "answer": "6235147",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nあなたは、そこに行く前に私の家に電話をすべきでした。\nYou \\[①my home / ②to / ③have / ④before / ⑤called / ⑥ought / ⑦you\\] went there."
+  "type": "choice4",
+  "answer": "1",
+  "question": "あなたは、そこに行く前に私の家に電話をすべきでした。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "You ought to have called my home before you went there."
+   },
+   {
+    "n": "2",
+    "text": "You ought have to called my home before you went there."
+   },
+   {
+    "n": "3",
+    "text": "You ought to have call my home before you went there."
+   },
+   {
+    "n": "4",
+    "text": "You ought to called have my home before you went there."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "037",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 4 助動詞(2)",
-  "type": "reorder",
-  "answer": "53142",
-  "question": "日本語の意味になるように、［ ］内の語を並べ替えなさい。\nこんなに高いアプリを買うんじゃなかった。\nI \\[①have / ②such / ③not / ④bought / ⑤should\\] an expensive application."
+  "type": "choice4",
+  "answer": "2",
+  "question": "こんなに高いアプリを買うんじゃなかった。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I not should have bought such an expensive application."
+   },
+   {
+    "n": "2",
+    "text": "I should not have bought such an expensive application."
+   },
+   {
+    "n": "3",
+    "text": "I should not have buy such an expensive application."
+   },
+   {
+    "n": "4",
+    "text": "I should not bought have such an expensive application."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "038",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 4 助動詞(2)",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "can",
-  "question": "赤ちゃんを車に乗せて運転しているときは、いくら注意してもしすぎることはない。\nYou ①can be ②too careful when ③driving  ④with your baby in a car."
+  "question": "赤ちゃんを車に乗せて運転しているときは、いくら注意してもしすぎることはない。\nYou ①can be ②too careful when ③driving  ④with your baby in a car.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① can be"
+   },
+   {
+    "n": "2",
+    "text": "② too careful when"
+   },
+   {
+    "n": "3",
+    "text": "③ driving"
+   },
+   {
+    "n": "4",
+    "text": "④ with your baby in a car"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "039",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 4 助動詞(2)",
-  "type": "reorder",
-  "answer": "251643",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\n君は冬に一人で登山しないほうがよい。\nYou \\[①not / ②had / ③by / ④mountains / ⑤better / ⑥climb\\] yourself in winter."
+  "type": "choice4",
+  "answer": "4",
+  "question": "君は冬に一人で登山しないほうがよい。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "You had not better climb mountains by yourself in winter."
+   },
+   {
+    "n": "2",
+    "text": "You better had not climb mountains by yourself in winter."
+   },
+   {
+    "n": "3",
+    "text": "You had better not climbing mountains by yourself in winter."
+   },
+   {
+    "n": "4",
+    "text": "You had better not climb mountains by yourself in winter."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "040",
@@ -1012,33 +1279,109 @@
   "num": "049",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 5 仮定法(1)",
-  "type": "reorder",
-  "answer": "32485176",
-  "question": "もし私があなたの立場なら、ニューヨークへ転勤するでしょう。\n\\[ ①I / ②I were / ③if / ④in / ⑤position / ⑥transfer to /⑦ would / ➇your\\] New York."
+  "type": "choice4",
+  "answer": "2",
+  "question": "もし私があなたの立場なら、ニューヨークへ転勤するでしょう。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "If I were in your position, I transfer to would New York."
+   },
+   {
+    "n": "2",
+    "text": "If I were in your position, I would transfer to New York."
+   },
+   {
+    "n": "3",
+    "text": "If were I in your position, I would transfer to New York."
+   },
+   {
+    "n": "4",
+    "text": "If I was in your position, I would transfer to New York."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "050",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 5 仮定法(1)",
-  "type": "reorder",
-  "answer": "152453",
-  "question": "お金に余裕があったら、新しいコンピューターを買ったのに。\nIf I had had some extra money, \\[ ①I / ②have / ③new computer/ ④bought / ⑤a / ⑤would \\]."
+  "type": "choice4",
+  "answer": "3",
+  "question": "お金に余裕があったら、新しいコンピューターを買ったのに。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "If I had had some extra money, I would bought have a new computer."
+   },
+   {
+    "n": "2",
+    "text": "If I had had some extra money, I would have buy a new computer."
+   },
+   {
+    "n": "3",
+    "text": "If I had had some extra money, I would have bought a new computer."
+   },
+   {
+    "n": "4",
+    "text": "If I had had some extra money, I have would bought a new computer."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "051",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 5 仮定法(1)",
-  "type": "reorder",
-  "answer": "86241 753",
-  "question": "5分早く着いていたら汽車に間に合っていたのに。\n\\[   \\], I \\[   \\]in time for the train.\n\\[①earlier / ②arrived / ③been /④five minutes / ⑤have / ⑥I / ⑦could / ➇had\\]\n86241 753"
+  "type": "choice4",
+  "answer": "4",
+  "question": "5分早く着いていたら汽車に間に合っていたのに。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Had I arrived five minutes earlier, I could have be in time for the train."
+   },
+   {
+    "n": "2",
+    "text": "I had arrived five minutes earlier, I could have been in time for the train."
+   },
+   {
+    "n": "3",
+    "text": "Had I arrived earlier five minutes, I could have been in time for the train."
+   },
+   {
+    "n": "4",
+    "text": "Had I arrived five minutes earlier, I could have been in time for the train."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "052",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 5 仮定法(1)",
-  "type": "reorder",
-  "answer": "2341",
-  "question": "\\[①happen /②should / ③anything / ④new\\] in the meeting, please let me know."
+  "type": "choice4",
+  "answer": "1",
+  "question": "会議で何か新しいことが起こったら、私に知らせてください。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Should anything new happen in the meeting, please let me know."
+   },
+   {
+    "n": "2",
+    "text": "Should anything happen new in the meeting, please let me know."
+   },
+   {
+    "n": "3",
+    "text": "Should new anything happen in the meeting, please let me know."
+   },
+   {
+    "n": "4",
+    "text": "Anything new should happen in the meeting, please let me know."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "053",
@@ -1304,33 +1647,109 @@
   "num": "063",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 6 仮定法(2)",
-  "type": "reorder",
-  "answer": "5642371",
-  "question": "あの事故がなかったなら、彼女は今もチームにいるだろう。\nShe would still be on the team \\[①accident / ②been / ③for / ④had not / ⑤if / ⑥it / ⑦the\\]."
+  "type": "choice4",
+  "answer": "4",
+  "question": "あの事故がなかったなら、彼女は今もチームにいるだろう。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "She would still be on the team if it had been not for the accident."
+   },
+   {
+    "n": "2",
+    "text": "She would still be on the team if had it not been for the accident."
+   },
+   {
+    "n": "3",
+    "text": "She would still be on the team if it not had been for the accident."
+   },
+   {
+    "n": "4",
+    "text": "She would still be on the team if it had not been for the accident."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "064",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 6 仮定法(2)",
-  "type": "reorder",
-  "answer": "13425",
-  "question": "1年間旅ができるだけのお金があればいいのですが。\n\\[ ①I / ②had / ③wish / ④I / ⑤enough money\\] to travel for a year.\n13425（43125）"
+  "type": "choice4",
+  "answer": "1",
+  "question": "1年間旅ができるだけのお金があればいいのですが。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I wish I had enough money to travel for a year."
+   },
+   {
+    "n": "2",
+    "text": "I wish I have enough money to travel for a year."
+   },
+   {
+    "n": "3",
+    "text": "I wish had I enough money to travel for a year."
+   },
+   {
+    "n": "4",
+    "text": "I wish I have had enough money to travel for a year."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "065",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 6 仮定法(2)",
-  "type": "reorder",
-  "answer": "38742165",
-  "question": "もうそろそろ新しい靴を買わないといけない。\nIt is \\[ ①a/ ②bought / ③high/ ④I / ⑤of / ⑥pair / ⑦that / ➇time\\] new shoes."
+  "type": "choice4",
+  "answer": "2",
+  "question": "もうそろそろ新しい靴を買わないといけない。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "It is high time that I buy a pair of new shoes."
+   },
+   {
+    "n": "2",
+    "text": "It is high time that I bought a pair of new shoes."
+   },
+   {
+    "n": "3",
+    "text": "It is high time that I have bought a pair of new shoes."
+   },
+   {
+    "n": "4",
+    "text": "It is time high that I bought a pair of new shoes."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "066",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 6 仮定法(2)",
-  "type": "reorder",
-  "answer": "453612",
-  "question": "あなたの援助がなかったら、彼は失敗していたでしょう。\n\\[①for / ②your / ③not / ④had / ⑤it / ⑥been\\] help, he would have failed."
+  "type": "choice4",
+  "answer": "3",
+  "question": "あなたの援助がなかったら、彼は失敗していたでしょう。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Had it been not for your help, he would have failed."
+   },
+   {
+    "n": "2",
+    "text": "Had not it been for your help, he would have failed."
+   },
+   {
+    "n": "3",
+    "text": "Had it not been for your help, he would have failed."
+   },
+   {
+    "n": "4",
+    "text": "It had not been for your help, he would have failed."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "067",
@@ -1544,34 +1963,111 @@
   "num": "075",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 7 受動態",
-  "type": "written",
-  "answer": "founded",
-  "question": "次の文の意味が通るように、( )内の語を形を変えて空所を埋めなさい。\n(found)\nTsuda College was ( 　　) in 1900."
+  "type": "choice4",
+  "answer": "4",
+  "question": "Tsuda College was （　） in 1900.（設立された）",
+  "choices": [
+   {
+    "n": "1",
+    "text": "found"
+   },
+   {
+    "n": "2",
+    "text": "founding"
+   },
+   {
+    "n": "3",
+    "text": "establish"
+   },
+   {
+    "n": "4",
+    "text": "founded"
+   }
+  ],
+  "converted_from": "written",
+  "editorial_note": "( )内の語を適切な形にする問題を4択に変更"
  },
  {
   "num": "076",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 7 受動態",
-  "type": "reorder",
-  "answer": "251346",
-  "question": "日本語の意味になるように、\\[  \\]内の語句を並べ替えなさい。\n講演のあといつものように質問と討議が行われます。\nThe \\[ ①followed by / ②lecture / ③questions / ④and discussion as / ⑤will be / ⑥usual\\]."
+  "type": "choice4",
+  "answer": "1",
+  "question": "講演のあといつものように質問と討議が行われます。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "The lecture will be followed by questions and discussion as usual."
+   },
+   {
+    "n": "2",
+    "text": "The lecture will be following by questions and discussion as usual."
+   },
+   {
+    "n": "3",
+    "text": "The lecture will followed by questions and discussion as usual."
+   },
+   {
+    "n": "4",
+    "text": "The lecture will be followed questions and discussion by as usual."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "077",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 7 受動態",
-  "type": "reorder",
-  "answer": "634215",
-  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\nその男性は、あなたの郵便物をまだ配達していません。\nYour mail \\[①by / ②delivered / ③not / ④been / ⑤the / ⑥has\\] man yet."
+  "type": "choice4",
+  "answer": "2",
+  "question": "その男性は、あなたの郵便物をまだ配達していません。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Your mail has not been delivering by the man yet."
+   },
+   {
+    "n": "2",
+    "text": "Your mail has not been delivered by the man yet."
+   },
+   {
+    "n": "3",
+    "text": "Your mail has been not delivered by the man yet."
+   },
+   {
+    "n": "4",
+    "text": "Your mail not has been delivered by the man yet."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "078",
   "chapter": "Chapter 1 動詞関連",
   "unit": "UNIT 7 受動態",
   "type": "error-id",
-  "answer": "③",
+  "answer": "3",
   "answer_part": "taken good care",
-  "question": "①The patient ②was ③taken good care ④at the hospital."
+  "question": "①The patient ②was ③taken good care ④at the hospital.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① The patient"
+   },
+   {
+    "n": "2",
+    "text": "② was"
+   },
+   {
+    "n": "3",
+    "text": "③ taken good care"
+   },
+   {
+    "n": "4",
+    "text": "④ at the hospital"
+   }
+  ],
+  "answer_circled": "③"
  },
  {
   "num": "079",
@@ -1837,26 +2333,83 @@
   "num": "089",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 1 不定詞(1)",
-  "type": "reorder",
-  "answer": "54817623",
-  "question": "日本語の意味になるように、\\[ \\]の語を並べ替えなさい。\n実際のところ、英語を一年で習得するのはとても難しい。\nActually, \\[ ①difficult / ②English / ③in / ④is / ⑤it / ⑥master / ⑦to / ➇very\\] a year."
+  "type": "choice4",
+  "answer": "2",
+  "question": "実際のところ、英語を一年で習得するのはとても難しい。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Actually, it is very difficult master to English in a year."
+   },
+   {
+    "n": "2",
+    "text": "Actually, it is very difficult to master English in a year."
+   },
+   {
+    "n": "3",
+    "text": "Actually, it very is difficult to master English in a year."
+   },
+   {
+    "n": "4",
+    "text": "Actually, it is difficult very to master English in a year."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "090",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 1 不定詞(1)",
-  "type": "reorder",
-  "answer": "15234",
-  "question": "\\[ \\]の語を並べ替えなさい。\nRecent rises in the price of land have meant that many people can no longer \\[ ①afford/ ②buy / ③houses / ④of / ⑤to\\] their own."
+  "type": "choice4",
+  "answer": "3",
+  "question": "近年の地価の上昇によって、多くの人々はもはや自分自身の家を買う余裕がなくなってしまった。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Recent rises in the price of land have meant that many people can no longer afford buy to houses of their own."
+   },
+   {
+    "n": "2",
+    "text": "Recent rises in the price of land have meant that many people can no longer afford to buying houses of their own."
+   },
+   {
+    "n": "3",
+    "text": "Recent rises in the price of land have meant that many people can no longer afford to buy houses of their own."
+   },
+   {
+    "n": "4",
+    "text": "Recent rises in the price of land have meant that many people can no longer to afford buy houses of their own."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "091",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 1 不定詞(1)",
   "type": "error-id",
-  "answer": "④",
+  "answer": "4",
   "answer_part": "but",
-  "question": "I did ①everything I ②could ③to persuade him, ④but to fail."
+  "question": "I did ①everything I ②could ③to persuade him, ④but to fail.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① everything I"
+   },
+   {
+    "n": "2",
+    "text": "② could"
+   },
+   {
+    "n": "3",
+    "text": "③ to persuade him,"
+   },
+   {
+    "n": "4",
+    "text": "④ but to fail"
+   }
+  ],
+  "answer_circled": "④"
  },
  {
   "num": "092",
@@ -2122,33 +2675,109 @@
   "num": "102",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 2 不定詞(2)",
-  "type": "reorder",
-  "answer": "5361742",
-  "question": "彼らが座るのに十分な椅子がなかった。\nThere are not \\[ ①them / ②on / ③chairs / ④sit / ⑤enough / ⑥for / ⑦to\\]."
+  "type": "choice4",
+  "answer": "3",
+  "question": "彼らが座るのに十分な椅子がなかった。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "There are not enough chairs for they to sit on."
+   },
+   {
+    "n": "2",
+    "text": "There are not enough chairs on for them to sit."
+   },
+   {
+    "n": "3",
+    "text": "There are not enough chairs for them to sit on."
+   },
+   {
+    "n": "4",
+    "text": "There are not enough chairs for them on to sit."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "103",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 2 不定詞(2)",
-  "type": "reorder",
-  "answer": "416253",
-  "question": "誰かが眼鏡を忘れていったようだ。\n\\[ ①seems / ②have / ③their glasses / ④someone / ⑤forgotten / ⑥to\\]."
+  "type": "choice4",
+  "answer": "4",
+  "question": "誰かが眼鏡を忘れていったようだ。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Someone seems to have forget their glasses."
+   },
+   {
+    "n": "2",
+    "text": "Someone seems to forgotten have their glasses."
+   },
+   {
+    "n": "3",
+    "text": "Someone to have seems forgotten their glasses."
+   },
+   {
+    "n": "4",
+    "text": "Someone seems to have forgotten their glasses."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "104",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 2 不定詞(2)",
-  "type": "reorder",
-  "answer": "4132",
-  "question": "あなたは喫茶店で彼を待っているだけでよいです。\nAll \\[ ①have / ②do / ③to / ④you\\] is to wait for him at the coffee shop."
+  "type": "choice4",
+  "answer": "1",
+  "question": "あなたは喫茶店で彼を待っているだけでよいです。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "All you have to do is to wait for him at the coffee shop."
+   },
+   {
+    "n": "2",
+    "text": "All you do have to is to wait for him at the coffee shop."
+   },
+   {
+    "n": "3",
+    "text": "All you to do have is to wait for him at the coffee shop."
+   },
+   {
+    "n": "4",
+    "text": "All you have do to is to wait for him at the coffee shop."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "105",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 2 不定詞(2)",
-  "type": "reorder",
-  "answer": "4532617",
-  "question": "You should \\[   \\]not\\[  \\]school.\n1 be late\n2 as\n3 so\n4 get up\n5 earlier\n6 to\n7 for"
+  "type": "choice4",
+  "answer": "2",
+  "question": "学校に遅刻しないように、もっと早く起きるべきだ。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "You should get up earlier as so not to be late for school."
+   },
+   {
+    "n": "2",
+    "text": "You should get up earlier so as not to be late for school."
+   },
+   {
+    "n": "3",
+    "text": "You should get up earlier so as not to late be for school."
+   },
+   {
+    "n": "4",
+    "text": "You should get up earlier so not as to be late for school."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "106",
@@ -2388,27 +3017,85 @@
   "num": "115",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 3 動名詞(1)",
-  "type": "written",
-  "answer": "sweeping",
-  "question": "次の2つの英文がほぼ同じ意味になるように、空所に適切な1語を入れなさい。\nAfter she swept up the floor, Sally placed the rug again.\n\\= After (  )up the floor, Sally placed the rug again."
+  "type": "choice4",
+  "answer": "4",
+  "question": "After she swept up the floor, Sally placed the rug again.\n＝ After （　） up the floor, Sally placed the rug again.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "swept"
+   },
+   {
+    "n": "2",
+    "text": "sweep"
+   },
+   {
+    "n": "3",
+    "text": "to sweep"
+   },
+   {
+    "n": "4",
+    "text": "sweeping"
+   }
+  ],
+  "converted_from": "written",
+  "editorial_note": "空所に入る適切な形を選ぶ問題に変更"
  },
  {
   "num": "116",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 3 動名詞(1)",
   "type": "error-id",
-  "answer": "③",
+  "answer": "3",
   "answer_part": "to eat",
-  "question": "My little sister did ①everything ②she could to avoid ③to eat ④carrots."
+  "question": "My little sister did ①everything ②she could to avoid ③to eat ④carrots.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① everything"
+   },
+   {
+    "n": "2",
+    "text": "② she could to avoid"
+   },
+   {
+    "n": "3",
+    "text": "③ to eat"
+   },
+   {
+    "n": "4",
+    "text": "④ carrots"
+   }
+  ],
+  "answer_circled": "③"
  },
  {
   "num": "117",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 3 動名詞(1)",
   "type": "error-id",
-  "answer": "③",
+  "answer": "3",
   "answer_part": "to post",
-  "question": "I ①clearly ②remember ③to post your letter ④yesterday."
+  "question": "I ①clearly ②remember ③to post your letter ④yesterday.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① clearly"
+   },
+   {
+    "n": "2",
+    "text": "② remember"
+   },
+   {
+    "n": "3",
+    "text": "③ to post your letter"
+   },
+   {
+    "n": "4",
+    "text": "④ yesterday"
+   }
+  ],
+  "answer_circled": "③"
  },
  {
   "num": "118",
@@ -2622,25 +3309,82 @@
   "num": "126",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 4 動名詞(2)",
-  "type": "reorder",
-  "answer": "7632451",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\n昨日あまりにも疲れていたので、私は一言も話す気になりませんでした。\nYesterday, I was so \\[ ①a word / ②feel / ③I didn't / ④like / ⑤speaking / ⑥that / ⑦tired\\]."
+  "type": "choice4",
+  "answer": "3",
+  "question": "昨日あまりにも疲れていたので、私は一言も話す気になりませんでした。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Yesterday, I was so tired that I didn't like feel speaking a word."
+   },
+   {
+    "n": "2",
+    "text": "Yesterday, I was so that tired I didn't feel like speaking a word."
+   },
+   {
+    "n": "3",
+    "text": "Yesterday, I was so tired that I didn't feel like speaking a word."
+   },
+   {
+    "n": "4",
+    "text": "Yesterday, I was so tired that I didn't feel like spoken a word."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "127",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 4 動名詞(2)",
-  "type": "reorder",
-  "answer": "524631",
-  "question": "\\[ \\]内の語を並べ替えなさい。\nIt \\[ ①is / ②without / ③health / ④saying / ⑤goes / ⑥that\\] above wealth."
+  "type": "choice4",
+  "answer": "4",
+  "question": "健康が富に勝ることは言うまでもない。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "It goes saying without that health is above wealth."
+   },
+   {
+    "n": "2",
+    "text": "It that goes without saying health is above wealth."
+   },
+   {
+    "n": "3",
+    "text": "It goes without saying health that is above wealth."
+   },
+   {
+    "n": "4",
+    "text": "It goes without saying that health is above wealth."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "128",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 4 動名詞(2)",
-  "type": "reorder",
-  "answer": "3617524",
-  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\nしばらくしたらコーヒータイムにしてはいかがですか。\n\\[ ①you / ②taking / ③what / ④a / ⑤to / ⑥do / ⑦say\\] coffee break soon?"
+  "type": "choice4",
+  "answer": "1",
+  "question": "しばらくしたらコーヒータイムにしてはいかがですか。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "What do you say to taking a coffee break soon?"
+   },
+   {
+    "n": "2",
+    "text": "What you do say to taking a coffee break soon?"
+   },
+   {
+    "n": "3",
+    "text": "What do you say taking to a coffee break soon?"
+   },
+   {
+    "n": "4",
+    "text": "What do you to say taking a coffee break soon?"
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "129",
@@ -2854,26 +3598,83 @@
   "num": "137",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 5 分詞(1)",
-  "type": "reorder",
-  "answer": "4132",
-  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\nジョンが教えている授業は、学生に大変人気がある。\nThe classes \\[ ①by / ②are / ③John / ④taught\\] very popular with the students."
+  "type": "choice4",
+  "answer": "2",
+  "question": "ジョンが教えている授業は、学生に大変人気がある。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "The classes are taught by John very popular with the students."
+   },
+   {
+    "n": "2",
+    "text": "The classes taught by John are very popular with the students."
+   },
+   {
+    "n": "3",
+    "text": "The classes taught John by are very popular with the students."
+   },
+   {
+    "n": "4",
+    "text": "The classes by John taught are very popular with the students."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "138",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 5 分詞(1)",
-  "type": "reorder",
-  "answer": "3421",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nメアリーは、目を閉じて音楽を聴いていた。\nMary was listening to \\[ ①closed / ②her eyes / ③the music / ④with\\]."
+  "type": "choice4",
+  "answer": "3",
+  "question": "メアリーは、目を閉じて音楽を聴いていた。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Mary was listening to the music with closed her eyes."
+   },
+   {
+    "n": "2",
+    "text": "Mary was listening to her eyes with the music closed."
+   },
+   {
+    "n": "3",
+    "text": "Mary was listening to the music with her eyes closed."
+   },
+   {
+    "n": "4",
+    "text": "Mary was listening to the music closed with her eyes."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "139",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 5 分詞(1)",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "are exciting",
-  "question": "Scientists ①are exciting to see ②if this experiment can ③lead to a ④better understanding of animal behavior."
+  "question": "Scientists ①are exciting to see ②if this experiment can ③lead to a ④better understanding of animal behavior.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① are exciting to see"
+   },
+   {
+    "n": "2",
+    "text": "② if this experiment can"
+   },
+   {
+    "n": "3",
+    "text": "③ lead to a"
+   },
+   {
+    "n": "4",
+    "text": "④ better understanding of animal behavior"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "140",
@@ -3113,25 +3914,82 @@
   "num": "149",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 6 分詞(2)",
-  "type": "reorder",
-  "answer": "7532681",
-  "question": "試験勉強をしていたら、電気をつけっぱなしのまま眠り込んでしまった。【1つ不要】\nStudying \\[  \\],I \\[    \\]\n1 on\n2 with\n3 fell asleep\n4 in\n5 the exam\n6 the light\n7 for\n8 turned"
+  "type": "choice4",
+  "answer": "2",
+  "question": "試験勉強をしていたら、電気をつけっぱなしのまま眠り込んでしまった。【1つ不要】\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Studying for the exam, I fell asleep with the light turned in."
+   },
+   {
+    "n": "2",
+    "text": "Studying for the exam, I fell asleep with the light turned on."
+   },
+   {
+    "n": "3",
+    "text": "Studying in the exam, I fell asleep with the light turned on."
+   },
+   {
+    "n": "4",
+    "text": "Studying for the exam, I fell asleep with turned the light on."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "150",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 6 分詞(2)",
-  "type": "reorder",
-  "answer": "451263",
-  "question": "仕事が終わると、彼らは散歩に出かけた。\nThe \\[  \\],\\[   \\] a walk.\n1 done\n2 they\n3 for\n4 work\n5 being\n6 went"
+  "type": "choice4",
+  "answer": "3",
+  "question": "仕事が終わると、彼らは散歩に出かけた。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Being done the work, they went for a walk."
+   },
+   {
+    "n": "2",
+    "text": "The work done being, they went for a walk."
+   },
+   {
+    "n": "3",
+    "text": "The work being done, they went for a walk."
+   },
+   {
+    "n": "4",
+    "text": "The work is being done, they went for a walk."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "151",
   "chapter": "Chapter 2 準動詞",
   "unit": "UNIT 6 分詞(2)",
-  "type": "reorder",
-  "answer": "3241",
-  "question": "厳密に言えば、この記事には文法的に誤った表現が多数あります。\n\\[ \\]speaking,this \\[  \\] a lot of ungrammatical \\[ \\].\n1 expressions\n2 article\n3 strictly\n4 contains"
+  "type": "choice4",
+  "answer": "4",
+  "question": "厳密に言えば、この記事には文法的に誤った表現が多数あります。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Strictly speaking, this expressions contains a lot of ungrammatical article."
+   },
+   {
+    "n": "2",
+    "text": "Strictly speaking, this article contain a lot of ungrammatical expressions."
+   },
+   {
+    "n": "3",
+    "text": "Strict speaking, this article contains a lot of ungrammatical expressions."
+   },
+   {
+    "n": "4",
+    "text": "Strictly speaking, this article contains a lot of ungrammatical expressions."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "152",
@@ -3380,34 +4238,110 @@
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 1 関係詞(1)",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "whom",
-  "question": "The police officer ①whom ②rescued the child ③was given a special award ④by the city."
+  "question": "The police officer ①whom ②rescued the child ③was given a special award ④by the city.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① whom"
+   },
+   {
+    "n": "2",
+    "text": "② rescued the child"
+   },
+   {
+    "n": "3",
+    "text": "③ was given a special award"
+   },
+   {
+    "n": "4",
+    "text": "④ by the city"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "162",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 1 関係詞(1)",
-  "type": "reorder",
-  "answer": "51423",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nこちらがウィリアム・シェイクスピアがかつて住んでいた家です。\nThis is the house \\[①which / ②used / ③to / ④William Shakespeare / ⑤in\\] live."
+  "type": "choice4",
+  "answer": "3",
+  "question": "こちらがウィリアム・シェイクスピアがかつて住んでいた家です。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "This is the house which William Shakespeare used to in live."
+   },
+   {
+    "n": "2",
+    "text": "This is the house in which William Shakespeare to used live."
+   },
+   {
+    "n": "3",
+    "text": "This is the house in which William Shakespeare used to live."
+   },
+   {
+    "n": "4",
+    "text": "This is the house which in William Shakespeare used to live."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "163",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 1 関係詞(1)",
-  "type": "reorder",
-  "answer": "3421",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\n2020年は、東京でオリンピックが開催される年です。\n2020 is the year \\[①be / ②will / ③when / ④the Olympic Games\\] held in Tokyo."
+  "type": "choice4",
+  "answer": "4",
+  "question": "2020年は、東京でオリンピックが開催される年です。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "2020 is the year when the Olympic Games be will held in Tokyo."
+   },
+   {
+    "n": "2",
+    "text": "2020 is the year when will be the Olympic Games held in Tokyo."
+   },
+   {
+    "n": "3",
+    "text": "2020 is the year the Olympic Games when will be held in Tokyo."
+   },
+   {
+    "n": "4",
+    "text": "2020 is the year when the Olympic Games will be held in Tokyo."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "164",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 1 関係詞(1)",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "where",
-  "question": "Rome is one of the places ①where I look forward to visiting ②during this ③seven-day trip ④to Europe."
+  "question": "Rome is one of the places ①where I look forward to visiting ②during this ③seven-day trip ④to Europe.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① where I look forward to visiting"
+   },
+   {
+    "n": "2",
+    "text": "② during this"
+   },
+   {
+    "n": "3",
+    "text": "③ seven-day trip"
+   },
+   {
+    "n": "4",
+    "text": "④ to Europe"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "165",
@@ -3673,33 +4607,109 @@
   "num": "175",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 2 関係詞(2)",
-  "type": "reorder",
-  "answer": "316524",
-  "question": "Jimmy's \\[①isn't / ②used / ③singing / ④to / ⑤it / ⑥what\\] be."
+  "type": "choice4",
+  "answer": "4",
+  "question": "ジミーの歌は、昔のようではありません（昔ほどうまくありません）。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Jimmy's singing isn't it what used to be."
+   },
+   {
+    "n": "2",
+    "text": "Jimmy's singing isn't what used it to be."
+   },
+   {
+    "n": "3",
+    "text": "Jimmy's singing what isn't it used to be."
+   },
+   {
+    "n": "4",
+    "text": "Jimmy's singing isn't what it used to be."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "176",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 2 関係詞(2)",
-  "type": "reorder",
-  "answer": "53214",
-  "question": "He has a very large vocabulary. He is \\[①a / ②called / ③is / ④\"walking dictionary\"/ ⑤what\\] ."
+  "type": "choice4",
+  "answer": "1",
+  "question": "彼は語彙がとても豊富です。彼はいわゆる「歩く辞書」です。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "He has a very large vocabulary. He is what is called a \"walking dictionary\"."
+   },
+   {
+    "n": "2",
+    "text": "He is what a is called a \"walking dictionary\"."
+   },
+   {
+    "n": "3",
+    "text": "He is called what is a \"walking dictionary\"."
+   },
+   {
+    "n": "4",
+    "text": "He is what is a called \"walking dictionary\"."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "177",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 2 関係詞(2)",
-  "type": "reorder",
-  "answer": "41352",
-  "question": "\\[①matter /②say / ③what / ④no / ⑤they\\], I believe that she is telling the truth."
+  "type": "choice4",
+  "answer": "2",
+  "question": "彼らが何と言おうと、私は彼女が本当のことを言っていると信じています。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "No what matter they say, I believe that she is telling the truth."
+   },
+   {
+    "n": "2",
+    "text": "No matter what they say, I believe that she is telling the truth."
+   },
+   {
+    "n": "3",
+    "text": "No matter they say what, I believe that she is telling the truth."
+   },
+   {
+    "n": "4",
+    "text": "What no matter they say, I believe that she is telling the truth."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "178",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 2 関係詞(2)",
-  "type": "reorder",
-  "answer": "246153",
-  "question": "\\[  \\] this city \\[   \\] municipal swimming pool.\n1 can\n2 whoever\n3 the\n4 lives\n5 use\n6 in"
+  "type": "choice4",
+  "answer": "3",
+  "question": "この市に住んでいる人は誰でも、市営プールを利用できます。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Whoever in lives this city can use the municipal swimming pool."
+   },
+   {
+    "n": "2",
+    "text": "Whoever lives in this city use can the municipal swimming pool."
+   },
+   {
+    "n": "3",
+    "text": "Whoever lives in this city can use the municipal swimming pool."
+   },
+   {
+    "n": "4",
+    "text": "Lives whoever in this city can use the municipal swimming pool."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "179",
@@ -3965,33 +4975,109 @@
   "num": "189",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 3 比較(1)",
-  "type": "reorder",
-  "answer": "4361527",
-  "question": "私の記憶力は以前ほどよくない。\n\\[①as / ②it / ③is / ④my memory / ⑤good as / ⑥not / ⑦used to\\] be."
+  "type": "choice4",
+  "answer": "2",
+  "question": "私の記憶力は以前ほどよくない。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "My memory is not as good as used to it be."
+   },
+   {
+    "n": "2",
+    "text": "My memory is not as good as it used to be."
+   },
+   {
+    "n": "3",
+    "text": "My memory not is as good as it used to be."
+   },
+   {
+    "n": "4",
+    "text": "My memory is as not good as it used to be."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "190",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 3 比較(1)",
-  "type": "reorder",
-  "answer": "21345",
-  "question": "このエアコンの消費電力はあのエアコンの2分の1だ。\nThis air conditioner uses half as \\[①electricity / ②much / ③as / ④that / ⑤one\\]."
+  "type": "choice4",
+  "answer": "3",
+  "question": "このエアコンの消費電力はあのエアコンの2分の1だ。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "This air conditioner uses half as much as electricity that one."
+   },
+   {
+    "n": "2",
+    "text": "This air conditioner uses half as electricity much as that one."
+   },
+   {
+    "n": "3",
+    "text": "This air conditioner uses half as much electricity as that one."
+   },
+   {
+    "n": "4",
+    "text": "This air conditioner uses half as much electricity as one that."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "191",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 3 比較(1)",
-  "type": "reorder",
-  "answer": "48176253",
-  "question": "私はできるだけ安くオーストラリアー周旅行をしたい。\nI \\[①take / ②Australia / ③cheaply / ④want / ⑤as / ⑥around / ⑦a trip / ➇to\\] as possible."
+  "type": "choice4",
+  "answer": "4",
+  "question": "私はできるだけ安くオーストラリアー周旅行をしたい。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I want to take a trip around Australia as cheap as possible."
+   },
+   {
+    "n": "2",
+    "text": "I want take a trip around Australia as cheaply as possible."
+   },
+   {
+    "n": "3",
+    "text": "I want to take around Australia a trip as cheaply as possible."
+   },
+   {
+    "n": "4",
+    "text": "I want to take a trip around Australia as cheaply as possible."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "192",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 3 比較(1)",
-  "type": "reorder",
-  "answer": "2167543",
-  "question": "新しい競技場は古い物よりも3倍くらい大きい。\nThe new stadium \\[①about / ②is / ③of / ④size / ⑤the / ⑥three / ⑦times\\] the old one."
+  "type": "choice4",
+  "answer": "1",
+  "question": "新しい競技場は古い物よりも3倍くらい大きい。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "The new stadium is about three times the size of the old one."
+   },
+   {
+    "n": "2",
+    "text": "The new stadium is about three times of the size the old one."
+   },
+   {
+    "n": "3",
+    "text": "The new stadium is three times about the size of the old one."
+   },
+   {
+    "n": "4",
+    "text": "The new stadium is about the size of three times the old one."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "193",
@@ -4258,25 +5344,82 @@
   "num": "203",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 4 比較(2)",
-  "type": "reorder",
-  "answer": "31542",
-  "question": "彼女ははにかみ屋なので、それだけよけいに彼女が好きだ。\nI like her \\[①the / ②her / ③all / ④for / ⑤better\\] shyness."
+  "type": "choice4",
+  "answer": "4",
+  "question": "彼女ははにかみ屋なので、それだけよけいに彼女が好きだ。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I like her the all better for her shyness."
+   },
+   {
+    "n": "2",
+    "text": "I like her all the better her for shyness."
+   },
+   {
+    "n": "3",
+    "text": "I like her all better the for her shyness."
+   },
+   {
+    "n": "4",
+    "text": "I like her all the better for her shyness."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "204",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 4 比較(2)",
-  "type": "reorder",
-  "answer": "4213",
-  "question": "エベレストは世界で最も高い山です。\n\\[①mountain / ②other / ③in / ④no\\] the world is higher than Mt. Everest."
+  "type": "choice4",
+  "answer": "1",
+  "question": "エベレストは世界で最も高い山です。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "No other mountain in the world is higher than Mt. Everest."
+   },
+   {
+    "n": "2",
+    "text": "Other no mountain in the world is higher than Mt. Everest."
+   },
+   {
+    "n": "3",
+    "text": "No mountain other in the world is higher than Mt. Everest."
+   },
+   {
+    "n": "4",
+    "text": "No other in mountain the world is higher than Mt. Everest."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "205",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 4 比較(2)",
-  "type": "reorder",
-  "answer": "6142537",
-  "question": "それは私が今まで観た中で一番いい映画だ。\nThat is the \\[①movie / ②I /③ever / ④that / ⑤have / ⑥best / ⑦seen\\]."
+  "type": "choice4",
+  "answer": "2",
+  "question": "それは私が今まで観た中で一番いい映画だ。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "That is the best movie that I have seen ever."
+   },
+   {
+    "n": "2",
+    "text": "That is the best movie that I have ever seen."
+   },
+   {
+    "n": "3",
+    "text": "That is the best movie that I have ever seeing."
+   },
+   {
+    "n": "4",
+    "text": "That is the movie best that I have ever seen."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "206",
@@ -4595,25 +5738,78 @@
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 5 疑問",
   "type": "error-id",
-  "answer": "③",
+  "answer": "3",
   "answer_part": "is your name?",
-  "question": "①Could you tell ②me what ③is your name?"
+  "question": "①Could you tell ②me what ③is your name?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① Could you tell"
+   },
+   {
+    "n": "2",
+    "text": "② me what"
+   },
+   {
+    "n": "3",
+    "text": "③ is your name?"
+   }
+  ],
+  "answer_circled": "③"
  },
  {
   "num": "219",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 5 疑問",
-  "type": "reorder",
-  "answer": "625431",
-  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\n昨日何を買ったと思う?\n\\[①bought / ②do / ③I / ④think / ⑤you/ ⑥what\\] yesterday?"
+  "type": "choice4",
+  "answer": "4",
+  "question": "昨日何を買ったと思う？\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "What you do think I bought yesterday?"
+   },
+   {
+    "n": "2",
+    "text": "Do you think what I bought yesterday?"
+   },
+   {
+    "n": "3",
+    "text": "What do you think bought I yesterday?"
+   },
+   {
+    "n": "4",
+    "text": "What do you think I bought yesterday?"
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "220",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 5 疑問",
-  "type": "reorder",
-  "answer": "4132",
-  "question": "日本語の意味になるように、\\[内の語を並べ替えなさい。\nいったい誰がそのことをあなたに言ったのですか?\nWho \\[①earth / ②you / ③told / ④on\\] that?"
+  "type": "choice4",
+  "answer": "1",
+  "question": "いったい誰がそのことをあなたに言ったのですか？\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Who on earth told you that?"
+   },
+   {
+    "n": "2",
+    "text": "Who told on earth you that?"
+   },
+   {
+    "n": "3",
+    "text": "Who on earth you told that?"
+   },
+   {
+    "n": "4",
+    "text": "Who earth on told you that?"
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "221",
@@ -4858,25 +6054,82 @@
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 6 否定",
   "type": "error-id",
-  "answer": "③",
+  "answer": "3",
   "answer_part": "anybody cannot",
-  "question": "①When it comes to the question ②of euthanasia, ③anybody cannot find\n④an easy solution."
+  "question": "①When it comes to the question ②of euthanasia, ③anybody cannot find\n④an easy solution.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① When it comes to the question"
+   },
+   {
+    "n": "2",
+    "text": "② of euthanasia,"
+   },
+   {
+    "n": "3",
+    "text": "③ anybody cannot find"
+   },
+   {
+    "n": "4",
+    "text": "④ an easy solution"
+   }
+  ],
+  "answer_circled": "③"
  },
  {
   "num": "231",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 6 否定",
-  "type": "reorder",
-  "answer": "425136",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nこの映画を観るといつも学生時代を思い出す。\nI \\[①without / ②watch / ③remembering / ④can't / ⑤this movie / ⑥my\\] school days."
+  "type": "choice4",
+  "answer": "4",
+  "question": "この映画を観るといつも学生時代を思い出す。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "I watch can't this movie without remembering my school days."
+   },
+   {
+    "n": "2",
+    "text": "I can't watch this movie remembering without my school days."
+   },
+   {
+    "n": "3",
+    "text": "I can't watch without this movie remembering my school days."
+   },
+   {
+    "n": "4",
+    "text": "I can't watch this movie without remembering my school days."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "232",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 6 否定",
-  "type": "reorder",
-  "answer": "72451683",
-  "question": "日本語の意味になるように、選択肢を並べ替えなさい。\n遊園地はたくさんあるが、成功しているものは多くない。\nThere are \\[  \\],\\[   \\]successful.\n1 all\n2 amusement parks\n3 are\n4 but\n5 not\n6 of\n7 many\n8 them"
+  "type": "choice4",
+  "answer": "1",
+  "question": "遊園地はたくさんあるが、成功しているものは多くない。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "There are many amusement parks, but not all of them are successful."
+   },
+   {
+    "n": "2",
+    "text": "There are many amusement parks, but all not of them are successful."
+   },
+   {
+    "n": "3",
+    "text": "There are many amusement parks, but not of all them are successful."
+   },
+   {
+    "n": "4",
+    "text": "There are amusement parks many, but not all of them are successful."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "233",
@@ -5143,25 +6396,82 @@
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 7 倒置・強調構文・語順",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "l did",
-  "question": "Never in my life ①l did imagine ②myself as the type of ③person who\nwould enjoy watching tropical fish ④swim in an aquarium."
+  "question": "Never in my life ①l did imagine ②myself as the type of ③person who\nwould enjoy watching tropical fish ④swim in an aquarium.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① l did imagine"
+   },
+   {
+    "n": "2",
+    "text": "② myself as the type of"
+   },
+   {
+    "n": "3",
+    "text": "③ person who\nwould enjoy watching tropical fish"
+   },
+   {
+    "n": "4",
+    "text": "④ swim in an aquarium"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "244",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 7 倒置・強調構文・語順",
-  "type": "reorder",
-  "answer": "6354271",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\n私は先週はじめてそれに気がついた。\nIt \\[①noticed / ②that / ③not / ④last week/ ⑤until / ⑥was / ⑦l \\] it."
+  "type": "choice4",
+  "answer": "1",
+  "question": "私は先週はじめてそれに気がついた。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "It was not until last week that I noticed it."
+   },
+   {
+    "n": "2",
+    "text": "It was until not last week that I noticed it."
+   },
+   {
+    "n": "3",
+    "text": "It not was until last week that I noticed it."
+   },
+   {
+    "n": "4",
+    "text": "It was not that last week until I noticed it."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "245",
   "chapter": "Chapter 3 構造系",
   "unit": "UNIT 7 倒置・強調構文・語順",
-  "type": "reorder",
-  "answer": "4312",
-  "question": "\\[ \\]内の語を並べ替えなさい。\nWho \\[①that / ②you / ③it / ④is\\] are talking about?"
+  "type": "choice4",
+  "answer": "2",
+  "question": "あなたが話しているのはいったい誰のことですか。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Who it is that you are talking about?"
+   },
+   {
+    "n": "2",
+    "text": "Who is it that you are talking about?"
+   },
+   {
+    "n": "3",
+    "text": "Who is that it you are talking about?"
+   },
+   {
+    "n": "4",
+    "text": "Who that it is you are talking about?"
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "246",
@@ -5402,9 +6712,28 @@
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 1 前置詞",
   "type": "error-id",
-  "answer": "④",
+  "answer": "4",
   "answer_part": "of",
-  "question": "My flight was ①four hours late; ②therefore, I ③could have done some shopping ④of the city."
+  "question": "My flight was ①four hours late; ②therefore, I ③could have done some shopping ④of the city.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① four hours late;"
+   },
+   {
+    "n": "2",
+    "text": "② therefore, I"
+   },
+   {
+    "n": "3",
+    "text": "③ could have done some shopping"
+   },
+   {
+    "n": "4",
+    "text": "④ of the city"
+   }
+  ],
+  "answer_circled": "④"
  },
  {
   "num": "256",
@@ -5722,25 +7051,83 @@
   "num": "268",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 2 接続詞",
-  "type": "written",
-  "answer": "case",
-  "question": "次の日本語の意味になるように、英文の(  )内に適当な1語を入れなさい。\n雨が降るといけないので、傘を持っていきなさい。\nYou must take an umbrella in (  ) it should rain."
+  "type": "choice4",
+  "answer": "1",
+  "question": "雨が降るといけないので、傘を持っていきなさい。\nYou must take an umbrella in （　） it should rain.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "case"
+   },
+   {
+    "n": "2",
+    "text": "order"
+   },
+   {
+    "n": "3",
+    "text": "spite"
+   },
+   {
+    "n": "4",
+    "text": "addition"
+   }
+  ],
+  "converted_from": "written",
+  "editorial_note": "空所補充を4択に変更（in case「〜するといけないので」）"
  },
  {
   "num": "269",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 2 接続詞",
-  "type": "reorder",
-  "answer": "85634217",
-  "question": "日本語の意味になるように、\\[\\]内の語句を並べ替えなさい。\nあなたが幸せなら、ご両親も幸せでしょう。\n\\[①as / ②as long / ③be / ④happy / ⑤parents / ⑥should / ⑦you / ➇your\\] are happy."
+  "type": "choice4",
+  "answer": "2",
+  "question": "あなたが幸せなら、ご両親も幸せでしょう。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Your parents should happy be as long as you are happy."
+   },
+   {
+    "n": "2",
+    "text": "Your parents should be happy as long as you are happy."
+   },
+   {
+    "n": "3",
+    "text": "Your parents should be happy as long you are happy."
+   },
+   {
+    "n": "4",
+    "text": "As long as should your parents be happy, you are happy."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "270",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 2 接続詞",
-  "type": "reorder",
-  "answer": "41325",
-  "question": "日本語の意味になるように、選択肢を並べ替えなさい。\n好むと好まざるとにかかわらず、我々はその事実を受け入れなければならないだろう。\n\\[  \\] we \\[  \\] accept the fact.\n1 like it\n2 will\n3 or not\n4 whether\n5 have to"
+  "type": "choice4",
+  "answer": "3",
+  "question": "好むと好まざるとにかかわらず、我々はその事実を受け入れなければならないだろう。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Whether we or not like it, we will have to accept the fact."
+   },
+   {
+    "n": "2",
+    "text": "Or not we like it whether, we will have to accept the fact."
+   },
+   {
+    "n": "3",
+    "text": "Whether we like it or not, we will have to accept the fact."
+   },
+   {
+    "n": "4",
+    "text": "Whether we like it or not, we have to will accept the fact."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "271",
@@ -6015,36 +7402,112 @@
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 3 冠詞・名詞",
   "type": "error-id",
-  "answer": "②",
+  "answer": "2",
   "answer_part": "informations",
-  "question": "The website was ①created to provide ②informations about the ③company's range of ④products."
+  "question": "The website was ①created to provide ②informations about the ③company's range of ④products.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① created to provide"
+   },
+   {
+    "n": "2",
+    "text": "② informations about the"
+   },
+   {
+    "n": "3",
+    "text": "③ company's range of"
+   },
+   {
+    "n": "4",
+    "text": "④ products"
+   }
+  ],
+  "answer_circled": "②"
  },
  {
   "num": "282",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 3 冠詞・名詞",
   "type": "error-id",
-  "answer": "②",
+  "answer": "2",
   "answer_part": "many advices",
-  "question": "His father ①often gave him ②many advices ③when he was ④in trouble."
+  "question": "His father ①often gave him ②many advices ③when he was ④in trouble.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① often gave him"
+   },
+   {
+    "n": "2",
+    "text": "② many advices"
+   },
+   {
+    "n": "3",
+    "text": "③ when he was"
+   },
+   {
+    "n": "4",
+    "text": "④ in trouble"
+   }
+  ],
+  "answer_circled": "②"
  },
  {
   "num": "283",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 3 冠詞・名詞",
   "type": "error-id",
-  "answer": "②",
+  "answer": "2",
   "answer_part": "train",
-  "question": "You ①had better change ②train ③at the ④next station."
+  "question": "You ①had better change ②train ③at the ④next station.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① had better change"
+   },
+   {
+    "n": "2",
+    "text": "② train"
+   },
+   {
+    "n": "3",
+    "text": "③ at the"
+   },
+   {
+    "n": "4",
+    "text": "④ next station"
+   }
+  ],
+  "answer_circled": "②"
  },
  {
   "num": "284",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 3 冠詞・名詞",
   "type": "error-id",
-  "answer": "④",
+  "answer": "4",
   "answer_part": "shook hand",
-  "question": "When the game ①was over, players ②from both teams came to the ③center of the court and ④shook hand."
+  "question": "When the game ①was over, players ②from both teams came to the ③center of the court and ④shook hand.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① was over, players"
+   },
+   {
+    "n": "2",
+    "text": "② from both teams came to the"
+   },
+   {
+    "n": "3",
+    "text": "③ center of the court and"
+   },
+   {
+    "n": "4",
+    "text": "④ shook hand"
+   }
+  ],
+  "answer_circled": "④"
  },
  {
   "num": "285",
@@ -6311,36 +7774,112 @@
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 4 代名詞",
   "type": "error-id",
-  "answer": "④",
+  "answer": "4",
   "answer_part": "another styles",
-  "question": "①My grandfather ②always said that jazz is ③superior to ④another styles of music."
+  "question": "①My grandfather ②always said that jazz is ③superior to ④another styles of music.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① My grandfather"
+   },
+   {
+    "n": "2",
+    "text": "② always said that jazz is"
+   },
+   {
+    "n": "3",
+    "text": "③ superior to"
+   },
+   {
+    "n": "4",
+    "text": "④ another styles of music"
+   }
+  ],
+  "answer_circled": "④"
  },
  {
   "num": "296",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 4 代名詞",
   "type": "error-id",
-  "answer": "④",
+  "answer": "4",
   "answer_part": "other",
-  "question": "I have ①four sons; ②one is a doctor, ③another is a teacher, and ④other are students."
+  "question": "I have ①four sons; ②one is a doctor, ③another is a teacher, and ④other are students.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① four sons;"
+   },
+   {
+    "n": "2",
+    "text": "② one is a doctor,"
+   },
+   {
+    "n": "3",
+    "text": "③ another is a teacher, and"
+   },
+   {
+    "n": "4",
+    "text": "④ other are students"
+   }
+  ],
+  "answer_circled": "④"
  },
  {
   "num": "297",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 4 代名詞",
   "type": "error-id",
-  "answer": "④",
+  "answer": "4",
   "answer_part": "it",
-  "question": "I ①have lost my cellular phone. ②I think I ③must buy ④it today."
+  "question": "I ①have lost my cellular phone. ②I think I ③must buy ④it today.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① have lost my cellular phone"
+   },
+   {
+    "n": "2",
+    "text": "② I think I"
+   },
+   {
+    "n": "3",
+    "text": "③ must buy"
+   },
+   {
+    "n": "4",
+    "text": "④ it today"
+   }
+  ],
+  "answer_circled": "④"
  },
  {
   "num": "298",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 4 代名詞",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "Almost",
-  "question": "①Almost students ②in Japanese high schools ③know ④at least one foreign language."
+  "question": "①Almost students ②in Japanese high schools ③know ④at least one foreign language.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① Almost students"
+   },
+   {
+    "n": "2",
+    "text": "② in Japanese high schools"
+   },
+   {
+    "n": "3",
+    "text": "③ know"
+   },
+   {
+    "n": "4",
+    "text": "④ at least one foreign language"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "299",
@@ -6581,27 +8120,84 @@
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 5 形容詞",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "nine-years-old",
-  "question": "We have a ①nine-years-old son ②in addition ③to two ④younger daughters."
+  "question": "We have a ①nine-years-old son ②in addition ③to two ④younger daughters.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① nine-years-old son"
+   },
+   {
+    "n": "2",
+    "text": "② in addition"
+   },
+   {
+    "n": "3",
+    "text": "③ to two"
+   },
+   {
+    "n": "4",
+    "text": "④ younger daughters"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "309",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 5 形容詞",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "Every boy and girl know",
-  "question": "①Every boy and girl know ②that today's cities ③are quickly becoming ④much too crowded."
+  "question": "①Every boy and girl know ②that today's cities ③are quickly becoming ④much too crowded.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① Every boy and girl know"
+   },
+   {
+    "n": "2",
+    "text": "② that today's cities"
+   },
+   {
+    "n": "3",
+    "text": "③ are quickly becoming"
+   },
+   {
+    "n": "4",
+    "text": "④ much too crowded"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "310",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 5 形容詞",
   "type": "error-id",
-  "answer": "③",
+  "answer": "3",
   "answer_part": "problems",
-  "question": "In order ①to improve efficiency, we must ②find a solution to each major ③problems ④in our school."
+  "question": "In order ①to improve efficiency, we must ②find a solution to each major ③problems ④in our school.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① to improve efficiency, we must"
+   },
+   {
+    "n": "2",
+    "text": "② find a solution to each major"
+   },
+   {
+    "n": "3",
+    "text": "③ problems"
+   },
+   {
+    "n": "4",
+    "text": "④ in our school"
+   }
+  ],
+  "answer_circled": "③"
  },
  {
   "num": "311",
@@ -6841,33 +8437,109 @@
   "num": "320",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 6 副詞",
-  "type": "reorder",
-  "answer": "324156",
-  "question": "先週の日曜日は天気がよかったので田舎にドライブにでかけた。\nLast Sunday was \\[ ①day / ②beautiful / ③so / ④a / ⑤that / ⑥we\\] took a drive in the country."
+  "type": "choice4",
+  "answer": "1",
+  "question": "先週の日曜日は天気がよかったので田舎にドライブにでかけた。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Last Sunday was so beautiful a day that we took a drive in the country."
+   },
+   {
+    "n": "2",
+    "text": "Last Sunday was so a beautiful day that we took a drive in the country."
+   },
+   {
+    "n": "3",
+    "text": "Last Sunday was a so beautiful day that we took a drive in the country."
+   },
+   {
+    "n": "4",
+    "text": "Last Sunday was such beautiful a day that we took a drive in the country."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "321",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 6 副詞",
-  "type": "reorder",
-  "answer": "643521",
-  "question": "とても暑い日だったので,だれも外に出たいと思いませんでした。\nIt \\[ ①that / ②day / ③a / ④such / ⑤hot / ⑥was\\] nobody wanted to go outside."
+  "type": "choice4",
+  "answer": "2",
+  "question": "とても暑い日だったので,だれも外に出たいと思いませんでした。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "It was so a hot day that nobody wanted to go outside."
+   },
+   {
+    "n": "2",
+    "text": "It was such a hot day that nobody wanted to go outside."
+   },
+   {
+    "n": "3",
+    "text": "It was such hot a day that nobody wanted to go outside."
+   },
+   {
+    "n": "4",
+    "text": "It was a such hot day that nobody wanted to go outside."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "322",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 6 副詞",
-  "type": "reorder",
-  "answer": "54132",
-  "question": "ビルはその車が買えるほど金持ちです。\nBill is \\[ ①to / ②the car / ③buy / ④enough / ⑤rich\\]."
+  "type": "choice4",
+  "answer": "3",
+  "question": "ビルはその車が買えるほど金持ちです。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Bill is enough rich to buy the car."
+   },
+   {
+    "n": "2",
+    "text": "Bill is rich to buy enough the car."
+   },
+   {
+    "n": "3",
+    "text": "Bill is rich enough to buy the car."
+   },
+   {
+    "n": "4",
+    "text": "Bill is rich enough the car to buy."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "323",
   "chapter": "Chapter 4 品詞系",
   "unit": "UNIT 6 副詞",
-  "type": "reorder",
-  "answer": "51243",
-  "question": "彼女はとってもいい娘だからそんなことはしない。\nShe is \\[ ①nice / ②a / ③to do / ④girl / ⑤too\\] a thing like that."
+  "type": "choice4",
+  "answer": "4",
+  "question": "彼女はとってもいい娘だからそんなことはしない。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "She is a too nice girl to do a thing like that."
+   },
+   {
+    "n": "2",
+    "text": "She is too a nice girl to do a thing like that."
+   },
+   {
+    "n": "3",
+    "text": "She is too nice girl a to do a thing like that."
+   },
+   {
+    "n": "4",
+    "text": "She is too nice a girl to do a thing like that."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "324",
@@ -7134,36 +8806,112 @@
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 1 第1〜第3文型の語法",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "rise my awareness",
-  "question": "I could ①rise my awareness about ②animal abuse in Japan and many other countries ③as a result of your ④wonderful research."
+  "question": "I could ①rise my awareness about ②animal abuse in Japan and many other countries ③as a result of your ④wonderful research.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① rise my awareness about"
+   },
+   {
+    "n": "2",
+    "text": "② animal abuse in Japan and many other countries"
+   },
+   {
+    "n": "3",
+    "text": "③ as a result of your"
+   },
+   {
+    "n": "4",
+    "text": "④ wonderful research"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "335",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 1 第1〜第3文型の語法",
   "type": "error-id",
-  "answer": "③",
+  "answer": "3",
   "answer_part": "approach to",
-  "question": "When is ①the best ②time to ③approach to my employer about an increase ④in salary?"
+  "question": "When is ①the best ②time to ③approach to my employer about an increase ④in salary?",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① the best"
+   },
+   {
+    "n": "2",
+    "text": "② time to"
+   },
+   {
+    "n": "3",
+    "text": "③ approach to my employer about an increase"
+   },
+   {
+    "n": "4",
+    "text": "④ in salary?"
+   }
+  ],
+  "answer_circled": "③"
  },
  {
   "num": "336",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 1 第1〜第3文型の語法",
   "type": "error-id",
-  "answer": "②",
+  "answer": "2",
   "answer_part": "enjoy with",
-  "question": "I ①really like to ②enjoy with my friends at the ③weekend when we can ④get together and relax."
+  "question": "I ①really like to ②enjoy with my friends at the ③weekend when we can ④get together and relax.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① really like to"
+   },
+   {
+    "n": "2",
+    "text": "② enjoy with my friends at the"
+   },
+   {
+    "n": "3",
+    "text": "③ weekend when we can"
+   },
+   {
+    "n": "4",
+    "text": "④ get together and relax"
+   }
+  ],
+  "answer_circled": "②"
  },
  {
   "num": "337",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 1 第1〜第3文型の語法",
   "type": "error-id",
-  "answer": "③",
+  "answer": "3",
   "answer_part": "is",
-  "question": "Although water is commonly used to ①keep our bodies ②clean, there ③is different techniques and attitudes toward ④bathing."
+  "question": "Although water is commonly used to ①keep our bodies ②clean, there ③is different techniques and attitudes toward ④bathing.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① keep our bodies"
+   },
+   {
+    "n": "2",
+    "text": "② clean, there"
+   },
+   {
+    "n": "3",
+    "text": "③ is different techniques and attitudes toward"
+   },
+   {
+    "n": "4",
+    "text": "④ bathing"
+   }
+  ],
+  "answer_circled": "③"
  },
  {
   "num": "338",
@@ -7377,33 +9125,109 @@
   "num": "346",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 2 第4文型の語法",
-  "type": "reorder",
-  "answer": "425136",
-  "question": "この辞書では英語の手紙の書き方が実例で示されています。\nThis \\[①how / ②shows / ③to / ④dictionary / ⑤you / ⑥write\\] letters in English using samples."
+  "type": "choice4",
+  "answer": "3",
+  "question": "この辞書では英語の手紙の書き方が実例で示されています。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "This dictionary shows you how write to letters in English using samples."
+   },
+   {
+    "n": "2",
+    "text": "This dictionary shows how you to write letters in English using samples."
+   },
+   {
+    "n": "3",
+    "text": "This dictionary shows you how to write letters in English using samples."
+   },
+   {
+    "n": "4",
+    "text": "This dictionary you shows how to write letters in English using samples."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "347",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 2 第4文型の語法",
-  "type": "reorder",
-  "answer": "421356",
-  "question": "お願いしたいことがあるのですが。\nMay \\[ ①a / ②ask / ③favor / ④I  / ⑤of / ⑥you\\]?"
+  "type": "choice4",
+  "answer": "4",
+  "question": "お願いしたいことがあるのですが。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "May I ask you a favor of?"
+   },
+   {
+    "n": "2",
+    "text": "May I ask of you a favor?"
+   },
+   {
+    "n": "3",
+    "text": "May I a favor ask of you?"
+   },
+   {
+    "n": "4",
+    "text": "May I ask a favor of you?"
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "348",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 2 第4文型の語法",
-  "type": "reorder",
-  "answer": "42516738",
-  "question": "私はプロのパイロットになるのに、何年もかかりました。\nIt \\[ ①years / ②me / ③a/ ④took/ ⑤many / ⑥to / ⑦become/ ➇professional\\] pilot."
+  "type": "choice4",
+  "answer": "1",
+  "question": "私はプロのパイロットになるのに、何年もかかりました。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "It took me many years to become a professional pilot."
+   },
+   {
+    "n": "2",
+    "text": "It took me many years to become professional a pilot."
+   },
+   {
+    "n": "3",
+    "text": "It took to me many years become a professional pilot."
+   },
+   {
+    "n": "4",
+    "text": "It me took many years to become a professional pilot."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "349",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 2 第4文型の語法",
-  "type": "reorder",
-  "answer": "6472513",
-  "question": "太郎から電話があったので、訪問しないですみました。\nTaro's phone \\[ ①of / ②the / ③visiting / ④saved / ⑤trouble / ⑥call / ⑦me\\] him."
+  "type": "choice4",
+  "answer": "2",
+  "question": "太郎から電話があったので、訪問しないですみました。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Taro's phone call saved the trouble me of visiting him."
+   },
+   {
+    "n": "2",
+    "text": "Taro's phone call saved me the trouble of visiting him."
+   },
+   {
+    "n": "3",
+    "text": "Taro's phone call saved me the trouble visiting of him."
+   },
+   {
+    "n": "4",
+    "text": "Taro's phone call saved me the trouble of visit him."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "350",
@@ -7618,35 +9442,107 @@
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 3 第5文型の語法(1)",
   "type": "error-id",
-  "answer": "①",
+  "answer": "1",
   "answer_part": "to do",
-  "question": "Ms. Kato made her students ①to do  ②some work ③after school on Friday."
+  "question": "Ms. Kato made her students ①to do  ②some work ③after school on Friday.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① to do"
+   },
+   {
+    "n": "2",
+    "text": "② some work"
+   },
+   {
+    "n": "3",
+    "text": "③ after school on Friday"
+   }
+  ],
+  "answer_circled": "①"
  },
  {
   "num": "359",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 3 第5文型の語法(1)",
   "type": "error-id",
-  "answer": "②",
+  "answer": "2",
   "answer_part": "understand",
-  "question": "I ①want to make myself ②understand, so I will make my presentation ③as ④clear as possible."
+  "question": "I ①want to make myself ②understand, so I will make my presentation ③as ④clear as possible.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① want to make myself"
+   },
+   {
+    "n": "2",
+    "text": "② understand, so I will make my presentation"
+   },
+   {
+    "n": "3",
+    "text": "③ as"
+   },
+   {
+    "n": "4",
+    "text": "④ clear as possible"
+   }
+  ],
+  "answer_circled": "②"
  },
  {
   "num": "360",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 3 第5文型の語法(1)",
-  "type": "reorder",
-  "answer": "82561374",
-  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\n彼は英語を話してみたが、通じなかった。\nHe \\[ ①make / ②it / ③himself / ④in / ⑤impossible / ⑥to / ⑦understood / ➇found\\] English."
+  "type": "choice4",
+  "answer": "1",
+  "question": "彼は英語を話してみたが、通じなかった（＝英語で自分の意思を伝えるのは不可能だと分かった）。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "He found it impossible to make himself understood in English."
+   },
+   {
+    "n": "2",
+    "text": "He found impossible it to make himself understood in English."
+   },
+   {
+    "n": "3",
+    "text": "He found it impossible to make understood himself in English."
+   },
+   {
+    "n": "4",
+    "text": "He found it impossible to himself make understood in English."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "361",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 3 第5文型の語法(1)",
   "type": "error-id",
-  "answer": "③",
+  "answer": "3",
   "answer_part": "left",
-  "question": "The witness ①reported that he ②had watched the suspect ③left the bank ④carrying a black bag."
+  "question": "The witness ①reported that he ②had watched the suspect ③left the bank ④carrying a black bag.",
+  "choices": [
+   {
+    "n": "1",
+    "text": "① reported that he"
+   },
+   {
+    "n": "2",
+    "text": "② had watched the suspect"
+   },
+   {
+    "n": "3",
+    "text": "③ left the bank"
+   },
+   {
+    "n": "4",
+    "text": "④ carrying a black bag"
+   }
+  ],
+  "answer_circled": "③"
  },
  {
   "num": "362",
@@ -7920,32 +9816,108 @@
   "num": "372",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 4 第5文型の語法(2)",
-  "type": "reorder",
-  "answer": "354612",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\n夜中にドアに鍵をかけずにいると、泥棒が入りますよ。\n\\[ ①unlocked / ②during / ③if / ④leave/ ⑤you / ⑥the door\\] the night, burglars will break in."
+  "type": "choice4",
+  "answer": "1",
+  "question": "夜中にドアに鍵をかけずにいると、泥棒が入りますよ。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "If you leave the door unlocked during the night, burglars will break in."
+   },
+   {
+    "n": "2",
+    "text": "If you leave unlocked the door during the night, burglars will break in."
+   },
+   {
+    "n": "3",
+    "text": "If you leave the door during unlocked the night, burglars will break in."
+   },
+   {
+    "n": "4",
+    "text": "During if you leave the door unlocked the night, burglars will break in."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "373",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 4 第5文型の語法(2)",
-  "type": "reorder",
-  "answer": "24153",
-  "question": "日本語の意味になるように、\\[ \\]内の語句を並べ替えなさい。\nコンピューターのおかげで私たちはその作業を短時間で終わらせることができ\nた。\nThe \\[ ①us to / ②computer/ ③the work / ④enabled / ⑤finish\\] in a short time."
+  "type": "choice4",
+  "answer": "2",
+  "question": "コンピューターのおかげで私たちはその作業を短時間で終わらせることができた。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "The computer enabled us to the work finish in a short time."
+   },
+   {
+    "n": "2",
+    "text": "The computer enabled us to finish the work in a short time."
+   },
+   {
+    "n": "3",
+    "text": "The computer us to enabled finish the work in a short time."
+   },
+   {
+    "n": "4",
+    "text": "The computer enable us to finish the work in a short time."
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "374",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 4 第5文型の語法(2)",
-  "type": "reorder",
-  "answer": "25341",
-  "question": "\\[ \\]内の語を並べ替えなさい。\n\\[ ①arrange / ②can / ③help / ④me / ⑤you\\] the room for our meeting?"
+  "type": "choice4",
+  "answer": "3",
+  "question": "会議のために部屋の準備をするのを手伝ってくれますか。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Can you help me arranged the room for our meeting?"
+   },
+   {
+    "n": "2",
+    "text": "Can you help arrange me the room for our meeting?"
+   },
+   {
+    "n": "3",
+    "text": "Can you help me arrange the room for our meeting?"
+   },
+   {
+    "n": "4",
+    "text": "Can help you me arrange the room for our meeting?"
+   }
+  ],
+  "converted_from": "reorder"
  },
  {
   "num": "375",
   "chapter": "Chapter 5 文型",
   "unit": "UNIT 4 第5文型の語法(2)",
-  "type": "reorder",
-  "answer": "263514",
-  "question": "日本語の意味になるように、\\[ \\]内の語を並べ替えなさい。\nシェイクスピアはイギリスの詩人、劇作家で、英語による最大の作家と広くみなされている。\nShakespeare is an English poet and playwright, and is widely \\[ ①writer / ②regarded / ③the / ④in / ⑤greatest / ⑥as\\] the English language."
+  "type": "choice4",
+  "answer": "4",
+  "question": "シェイクスピアはイギリスの詩人・劇作家で、英語による最大の作家と広くみなされている。\n日本語の意味に合う英文として最も適切なものを選びなさい。",
+  "choices": [
+   {
+    "n": "1",
+    "text": "Shakespeare is an English poet and playwright, and is widely regarded as the writer greatest in the English language."
+   },
+   {
+    "n": "2",
+    "text": "Shakespeare is an English poet and playwright, and is widely as regarded the greatest writer in the English language."
+   },
+   {
+    "n": "3",
+    "text": "Shakespeare is an English poet and playwright, and is widely regarding as the greatest writer in the English language."
+   },
+   {
+    "n": "4",
+    "text": "Shakespeare is an English poet and playwright, and is widely regarded as the greatest writer in the English language."
+   }
+  ],
+  "converted_from": "reorder"
  }
 ]

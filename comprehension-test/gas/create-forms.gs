@@ -18,14 +18,17 @@
 
 // ===== 設定 =====================================================
 // タブ名 → { フォルダID, フォームのタイトル }
+// titlePrefix の後ろに通し番号(01, 02, …)が付く。
+//   例)【入門レベル】英文解釈実践テスト01
+// 番号は英文の位置から決まるので、SENTENCES_PER_FORM=1 なら No.と一致(01〜60 / 01〜70)。
 var CONFIG = {
   '入門60': {
     folderId: '1-HUnBaaRudxmpuYvGlzxA4wEffiRGIJe',
-    formTitle: '【夏期特訓】英文解釈 確認テスト 入門60',
+    titlePrefix: '【入門レベル】英文解釈実践テスト',
   },
   '英文熟考': {
     folderId: '1QfxnyZ82NSpgdWiEygjHpMiKrcnZD7TF',
-    formTitle: '【夏期特訓】英文解釈 確認テスト 英文熟考70',
+    titlePrefix: '【基礎レベル】英文解釈実践テスト',
   },
 };
 
@@ -90,12 +93,11 @@ function runTab_(tabName, silent) {
     if (new Date().getTime() - start > TIME_LIMIT_MS) { remaining += chunk.length; stopped = true; continue; }
 
     var first = chunk[0].no, last = chunk[chunk.length - 1].no;
-    var suffix, target;
-    if (chunk.length === 1) { suffix = '(No.' + first + ')'; target = String(first); }
-    else if (chunkSize < sentences.length) { suffix = '(No.' + first + '〜' + last + ')'; target = first + '〜' + last; }
-    else { suffix = ''; target = first + '〜' + last; }
+    var formIndex = Math.floor(i / chunkSize) + 1;        // 位置から決まる通し番号(再開してもずれない)
+    var title = conf.titlePrefix + pad2_(formIndex);      // 例)【入門レベル】英文解釈実践テスト01
+    var target = (chunk.length === 1) ? String(first) : (first + '〜' + last);
 
-    var info = buildForm_(conf.formTitle + suffix, chunk, folder);
+    var info = buildForm_(title, chunk, folder);
     appendLink_(linkSheet, tabName, target, folder, info); // 1件ごとに追記(途中で止まっても進捗が残る)
     createdCount++;
   }
@@ -110,6 +112,9 @@ function runTab_(tabName, silent) {
   if (!silent) SpreadsheetApp.getUi().alert(msg);
   return msg;
 }
+
+/** 2桁ゼロ埋め(1→"01"、60→"60"、100→"100") */
+function pad2_(n) { return (n < 10 ? '0' : '') + n; }
 
 /** シートを 1行=1英文 として読み取る */
 function readSentences_(sheet, tabName) {

@@ -6,8 +6,8 @@
    * ここを更新すると各ボタンの飛び先が変わります。
    */
   var GIFT_LINKS = {
-    words300: "",
-    schedule1000: ""
+    words300: "/pdfs/summer300_wordlist.pdf",
+    schedule1000: "/pdfs/plan30_schedule.pdf"
   };
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

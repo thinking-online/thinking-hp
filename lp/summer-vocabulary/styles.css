@@ -479,6 +479,129 @@ p, h1, h2, h3, a, span {
   letter-spacing: .02em;
 }
 
+.method-panel {
+  margin-top: 18px;
+  padding: 18px 16px 16px;
+  border: 1px solid rgba(201, 162, 79, .42);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 100% 0, rgba(240, 217, 154, .18), transparent 36%),
+    rgba(255, 253, 247, .94);
+  box-shadow: 0 16px 34px -24px rgba(5, 48, 35, .55);
+}
+
+.method-lead {
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(201, 162, 79, .28);
+  text-align: center;
+}
+
+.method-lead p {
+  margin: 0;
+  color: var(--green);
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.7;
+}
+
+.method-lead p + p { margin-top: 4px; }
+
+.method-lead strong {
+  color: #a78032;
+  font-weight: 800;
+}
+
+.method-block + .method-block {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(201, 162, 79, .24);
+}
+
+.method-block h3 {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0 0 10px;
+  color: var(--green);
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.method-block ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.method-block li + li {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(201, 162, 79, .28);
+}
+
+.method-block li b {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--green);
+  font-size: 13.5px;
+  font-weight: 800;
+}
+
+.method-block li p,
+.method-steps p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.75;
+  text-wrap: pretty;
+}
+
+.method-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.method-steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 10px 11px;
+  border-radius: 12px;
+  background: rgba(7, 61, 45, .04);
+}
+
+.method-steps span {
+  flex: none;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: #fff;
+  background: var(--green);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  line-height: 1.6;
+}
+
+.method-note {
+  margin: 16px 0 0;
+  padding: 11px 12px;
+  border-radius: 12px;
+  color: #7a5a18;
+  background: linear-gradient(180deg, rgba(255, 234, 167, .55), rgba(215, 172, 80, .28));
+  text-align: center;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.6;
+}
+
 .media-card {
   position: relative;
   display: block;

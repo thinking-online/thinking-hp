@@ -2,11 +2,12 @@
   "use strict";
 
   /**
-   * 300単語特典の配布リンク
-   * ここを更新するとボタン／スティッキーCTAの飛び先が変わります。
+   * 特典配布リンク
+   * ここを更新すると各ボタンの飛び先が変わります。
    */
   var GIFT_LINKS = {
-    words300: ""
+    words300: "",
+    schedule1000: ""
   };
 
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

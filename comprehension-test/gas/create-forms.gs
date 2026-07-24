@@ -176,9 +176,9 @@ function buildForm_(title, sentences, folder) {
 
   sentences.forEach(function (s, si) {
     if (si > 0) form.addPageBreakItem().setTitle('No.' + s.no);
+    // 英文のみ表示(訳は答えのヒントになるためフォームには出さない)
     form.addSectionHeaderItem()
-      .setTitle('【No.' + s.no + '】 ' + s.en)
-      .setHelpText('訳:' + s.ja);
+      .setTitle('【No.' + s.no + '】 ' + s.en);
     s.questions.forEach(function (q) {
       var item = form.addMultipleChoiceItem();
       item.setTitle(q.title).setRequired(true).setPoints(1);

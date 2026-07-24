@@ -26,7 +26,7 @@ var CONFIG = {
   INCLUDE_EXPLANATION: true,                   // フィードバックに解説を載せる
   SHUFFLE: false,                              // 問題の順番をシャッフル
   COLLECT_EMAIL: false,                        // 回答者メールの収集
-  TITLE_PREFIX: '英文法ポラリス1｜'             // フォームのタイトル接頭辞
+  TITLE_PREFIX: '基礎英文法テスト｜'            // フォームのタイトル接頭辞（例: 基礎英文法テスト｜UNIT 1 時制(1)）
 };
 
 var COL = {
@@ -176,7 +176,7 @@ function buildForm_(unitName, rows) {
   var title = CONFIG.TITLE_PREFIX + unitName;
   var form = FormApp.create(title);
   form.setTitle(title);
-  form.setDescription((chapter ? chapter + '\n' : '') + unitName + '（全 ' + rows.length + ' 問）\n英文法ポラリス1 完成問題集より');
+  form.setDescription((chapter ? chapter + '\n' : '') + unitName + '（全 ' + rows.length + ' 問）');
   form.setIsQuiz(true);
   form.setCollectEmail(CONFIG.COLLECT_EMAIL);
   form.setShuffleQuestions(CONFIG.SHUFFLE);

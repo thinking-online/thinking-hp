@@ -1,11 +1,20 @@
 {
   "timeZone": "Asia/Tokyo",
-  "dependencies": {},
+  "dependencies": {
+    "enabledAdvancedServices": [
+      {
+        "userSymbol": "Forms",
+        "serviceId": "forms",
+        "version": "v1"
+      }
+    ]
+  },
   "exceptionLogging": "STACKDRIVER",
   "runtimeVersion": "V8",
   "oauthScopes": [
     "https://www.googleapis.com/auth/spreadsheets.currentonly",
     "https://www.googleapis.com/auth/forms",
+    "https://www.googleapis.com/auth/forms.body",
     "https://www.googleapis.com/auth/drive"
   ]
 }

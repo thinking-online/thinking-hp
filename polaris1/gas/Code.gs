@@ -24,6 +24,7 @@ var CONFIG = {
   LIST_SHEET: 'フォーム一覧',  // 作成したフォームのURLを書き出すシート名
   POINTS: 1,               // 1問あたりの配点
   INCLUDE_EXPLANATION: true, // フィードバックに解説を載せる
+  TEXT_AUTOGRADE: true,    // 整序・記述も自動採点する（Forms API 高度なサービスが必要）
   SHUFFLE: false,          // 問題の順番をシャッフルする
   COLLECT_EMAIL: false,    // 回答者のメール収集
   TITLE_PREFIX: '英文法ポラリス1｜'  // フォームのタイトル接頭辞
@@ -199,10 +200,14 @@ function buildForm_(unitName, rows) {
   form.setShuffleQuestions(CONFIG.SHUFFLE);
   form.setProgressBar(true);
 
+  var gradeQueue = []; // 整序・記述の後処理用（自動採点）
   rows.forEach(function(row){
-    try { addItem_(form, row); }
+    try { addItem_(form, row, gradeQueue); }
     catch (e) { form.addSectionHeaderItem().setTitle('⚠ 問' + row[COL.num] + ' の作成に失敗: ' + e); }
   });
+
+  // 記述系の採点を適用（Forms API があれば自動採点、無ければ解説フィードバックのみ）
+  applyTextGrading_(form.getId(), gradeQueue);
 
   moveToFolder_(form);
   return {
@@ -211,15 +216,14 @@ function buildForm_(unitName, rows) {
   };
 }
 
-function addItem_(form, row) {
+function addItem_(form, row, gradeQueue) {
   var type = row[COL.type];
-  var no = row[COL.num];
   if (type === '空所補充') {
     addChoice_(form, row);
   } else if (type === '誤文訂正') {
     addErrorId_(form, row);
   } else {
-    addText_(form, row); // 整序・記述・その他
+    addText_(form, row, gradeQueue); // 整序・記述・その他
   }
 }
 
@@ -260,15 +264,103 @@ function addErrorId_(form, row) {
   applyFeedback_(item, row);
 }
 
-function addText_(form, row) {
+function addText_(form, row, gradeQueue) {
+  var isReorder = (row[COL.type] === '整序');
+  var base = String(row[COL.answer]).trim();     // 整序=数字列, 記述=解答語
+  var answers = buildAnswerVariants_(row[COL.type], base);
+  var hint = isReorder
+    ? ((/[ 　]/.test(base))
+        ? '（〔　〕内を並べ替え、選んだ順に番号を入力。空所が2つある場合は間を半角スペースで区切る）'
+        : '（〔　〕内を並べ替え、選んだ順に番号を続けて入力。例: 3241）')
+    : '（英語で記入。スペル・大文字小文字はできるだけ正確に）';
+
   var item = form.addTextItem();
-  var hint = (row[COL.type] === '整序') ? '（〔　〕内を並べ替え、番号の順で回答。例: 5741326）' : '（英語で回答）';
   item.setTitle('問' + row[COL.num] + '　' + row[COL.question] + '\n' + hint);
-  item.setPoints(CONFIG.POINTS);
-  var ans = row[COL.answerText] || row[COL.answer] || row[COL.kanseibun];
-  var fb = '【正解】' + ans + (CONFIG.INCLUDE_EXPLANATION ? '\n' + explanationText_(row) : '');
-  var built = makeFeedback_(fb);
-  if (built) item.setGeneralFeedback(built);
+
+  var ans = row[COL.answerText] || base;         // フィードバックには完成文/解答を表示
+  var fbText = '【正解】' + ans + (CONFIG.INCLUDE_EXPLANATION ? '\n' + explanationText_(row) : '');
+  fbText = trimFeedback_(fbText);
+
+  // 自動採点は Forms API で後付け。API が無ければ後処理で points＋一般フィードバックを設定
+  gradeQueue.push({
+    num: row[COL.num], item: item, answers: answers, feedbackText: fbText, points: CONFIG.POINTS
+  });
+}
+
+/** 記述系の正解キーを適用。Forms API（高度なサービス）があれば自動採点、無ければフィードバックのみ。 */
+function applyTextGrading_(formId, queue) {
+  if (!queue || !queue.length) return;
+
+  var useApi = false;
+  if (CONFIG.TEXT_AUTOGRADE) {
+    try { useApi = (typeof Forms !== 'undefined' && Forms.Forms && typeof Forms.Forms.get === 'function'); }
+    catch (e) { useApi = false; }
+  }
+
+  if (!useApi) {
+    // フォールバック：自動採点なし。配点＋解答/解説フィードバックだけ付ける
+    queue.forEach(function(e){
+      try {
+        e.item.setPoints(e.points);
+        var fb = makeFeedback_(e.feedbackText);
+        if (fb) e.item.setGeneralFeedback(fb);
+      } catch (err) {}
+    });
+    return;
+  }
+
+  // Forms API で正解キー（correctAnswers）＋配点＋一般フィードバックをまとめて設定
+  var form = Forms.Forms.get(formId);
+  var items = form.items || [];
+  var byNum = {};
+  for (var i = 0; i < items.length; i++) {
+    var it = items[i];
+    var m = String(it.title || '').match(/問\s*(\d{3})/);
+    if (m && it.questionItem && it.questionItem.question) {
+      byNum[m[1]] = { index: i, itemId: it.itemId, questionId: it.questionItem.question.questionId };
+    }
+  }
+
+  var requests = [];
+  queue.forEach(function(e){
+    var info = byNum[e.num];
+    if (!info) return;
+    var grading = {
+      pointValue: e.points,
+      correctAnswers: { answers: e.answers.map(function(v){ return { value: v }; }) }
+    };
+    if (e.feedbackText) grading.generalFeedback = { text: e.feedbackText };
+    requests.push({
+      updateItem: {
+        item: {
+          itemId: info.itemId,
+          questionItem: { question: { questionId: info.questionId, grading: grading } }
+        },
+        location: { index: info.index },
+        updateMask: 'questionItem.question.grading'
+      }
+    });
+  });
+  if (requests.length) Forms.Forms.batchUpdate({ requests: requests }, formId);
+}
+
+/** 正解の表記ゆれを吸収して受理する解答リストを作る（完全一致・複数許容） */
+function buildAnswerVariants_(type, base) {
+  base = String(base).trim();
+  var set = [];
+  function add(v){ v = String(v).trim(); if (v && set.indexOf(v) < 0) set.push(v); }
+  if (type === '整序') {
+    add(base);
+    if (/[ 　]/.test(base)) {
+      add(base.replace(/[　]/g, ' ').replace(/\s+/g, ' ')); // 全角→半角・連続空白を1つに
+      add(base.replace(/[\s　]+/g, ''));                    // 空白なしでもOK
+    }
+  } else {
+    add(base);
+    add(base.toLowerCase());
+    add(base.charAt(0).toUpperCase() + base.slice(1).toLowerCase());
+  }
+  return set.length ? set : [base];
 }
 
 // ===== フィードバック ===============================================
@@ -294,10 +386,15 @@ function explanationText_(row) {
 }
 
 function makeFeedback_(text) {
-  text = String(text || '').trim();
+  text = trimFeedback_(text);
   if (!text) return null;
-  if (text.length > 1450) text = text.substring(0, 1430) + '…（続きは解説編を参照）';
   return FormApp.createFeedback().setText(text).build();
+}
+
+function trimFeedback_(text) {
+  text = String(text || '').trim();
+  if (text.length > 1450) text = text.substring(0, 1430) + '…（続きは解説編を参照）';
+  return text;
 }
 
 // ===== 誤文訂正：下線セグメント解析 =================================

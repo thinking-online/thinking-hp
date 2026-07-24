@@ -10,6 +10,8 @@
     schedule1000: "/pdfs/plan30_schedule.pdf"
   };
 
+  var LINE_URL = "https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=JDVkS9&liff_id=1656043253-rkMxPZMQ";
+
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   var opening = document.getElementById("opening");
   var openingSkip = document.getElementById("openingSkip");
@@ -17,14 +19,20 @@
   var progress = document.getElementById("progress");
   var sticky = document.getElementById("sticky");
   var wordsSection = document.getElementById("words300");
+  var lineSection = document.getElementById("line");
+  var lineFloat = document.getElementById("lineFloat");
+  var lineFloatClose = document.getElementById("lineFloatClose");
   var footer = document.querySelector("footer");
   var ticking = false;
   var openingSeen = false;
+  var lineFloatDismissed = false;
 
   try {
     openingSeen = sessionStorage.getItem("summer-vocabulary-opening-seen") === "1";
+    lineFloatDismissed = sessionStorage.getItem("summer-vocabulary-line-float-dismissed") === "1";
   } catch (error) {
     openingSeen = false;
+    lineFloatDismissed = false;
   }
 
   var openingCount = document.getElementById("openingCount");
@@ -88,6 +96,31 @@
     }
   });
 
+  document.querySelectorAll("[data-line-link]").forEach(function (link) {
+    link.setAttribute("href", LINE_URL);
+  });
+
+  function dismissLineFloat() {
+    lineFloatDismissed = true;
+    if (lineFloat) {
+      lineFloat.classList.remove("show");
+      lineFloat.hidden = true;
+    }
+    try {
+      sessionStorage.setItem("summer-vocabulary-line-float-dismissed", "1");
+    } catch (error) {
+      // Storage may be unavailable.
+    }
+  }
+
+  if (lineFloatClose) {
+    lineFloatClose.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      dismissLineFloat();
+    });
+  }
+
   function update() {
     ticking = false;
 
@@ -107,13 +140,30 @@
       }
     }
 
+    var stickyVisible = false;
     if (sticky && wordsSection && footer) {
       var sectionTop = wordsSection.offsetTop;
       var footerTop = footer.offsetTop;
-      sticky.classList.toggle(
-        "show",
-        scrollTop > sectionTop * 0.45 && scrollTop + viewportHeight < footerTop + 100
-      );
+      stickyVisible =
+        scrollTop > sectionTop * 0.45 && scrollTop + viewportHeight < footerTop + 100;
+      sticky.classList.toggle("show", stickyVisible);
+    }
+
+    if (lineFloat && !lineFloatDismissed) {
+      var nearLineSection = false;
+      if (lineSection) {
+        var lineRect = lineSection.getBoundingClientRect();
+        nearLineSection = lineRect.top < viewportHeight * 0.72 && lineRect.bottom > 80;
+      }
+
+      var shouldShowFloat =
+        scrollTop > viewportHeight * 0.55 &&
+        !nearLineSection &&
+        scrollTop + viewportHeight < (footer ? footer.offsetTop + 40 : Infinity);
+
+      lineFloat.hidden = false;
+      lineFloat.classList.toggle("show", shouldShowFloat);
+      lineFloat.classList.toggle("is-lifted", shouldShowFloat && stickyVisible);
     }
   }
 

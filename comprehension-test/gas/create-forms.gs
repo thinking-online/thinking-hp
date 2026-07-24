@@ -30,10 +30,15 @@ var CONFIG = {
 };
 
 var MAX_QUESTIONS = 6;
-// 1つのフォームに入れる英文(行)の数。0 なら「そのタブ全体を1つのフォーム」にする。
-// 例: 10 にすると 10 英文ごとにフォームを分割する(入門60 なら 6 フォーム)。
-var SENTENCES_PER_FORM = 10;
+// 1つのフォームに入れる英文(行)の数。
+//   1  … 1英文ごとに1フォーム(入門60→60フォーム / 英文熟考→70フォーム)
+//   10 … 10英文ごとに1フォーム(入門60→6フォーム)
+//   0  … そのタブ全体を1つのフォームに
+var SENTENCES_PER_FORM = 1;
 var LINK_SHEET = 'フォームリンク';
+// 1回の実行で使う最大時間(ミリ秒)。GASの6分制限より手前で安全に中断する。
+// 中断しても、もう一度同じメニューを実行すれば「続きから」再開できる(作成済みはスキップ)。
+var TIME_LIMIT_MS = 5 * 60 * 1000;
 var FORM_DESCRIPTION =
   'それぞれの英文について、本当に理解できているかを確認するテストです。' +
   '訳の暗記ではなく、英文そのものを読んで答えてください。';
@@ -57,7 +62,7 @@ function createAll() {
   SpreadsheetApp.getUi().alert(msgs.join('\n\n'));
 }
 
-/** 指定タブからフォームを生成する本体 */
+/** 指定タブからフォームを生成する本体(再開・時間切れ対応) */
 function runTab_(tabName, silent) {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var conf = CONFIG[tabName];
@@ -69,19 +74,39 @@ function runTab_(tabName, silent) {
   var sentences = readSentences_(sheet, tabName);
   if (sentences.length === 0) throw new Error('タブ「' + tabName + '」にデータ行がありません。');
 
+  var linkSheet = getLinkSheet_(ss);
+  var done = doneNoSet_(linkSheet, tabName); // すでに作成済みの No. 集合
+
   var chunkSize = SENTENCES_PER_FORM > 0 ? SENTENCES_PER_FORM : sentences.length;
-  var created = [];
+  var start = new Date().getTime();
+  var createdCount = 0, skipped = 0, remaining = 0, stopped = false;
+
   for (var i = 0; i < sentences.length; i += chunkSize) {
     var chunk = sentences.slice(i, i + chunkSize);
-    var suffix = (chunkSize < sentences.length)
-      ? '(No.' + chunk[0].no + '〜' + chunk[chunk.length - 1].no + ')' : '';
+    // このかたまりが全て作成済みならスキップ(再開時の重複防止)
+    var allDone = chunk.every(function (s) { return done[s.no]; });
+    if (allDone) { skipped += chunk.length; continue; }
+    // 時間切れが近ければ中断(次回の実行で続きから)
+    if (new Date().getTime() - start > TIME_LIMIT_MS) { remaining += chunk.length; stopped = true; continue; }
+
+    var first = chunk[0].no, last = chunk[chunk.length - 1].no;
+    var suffix, target;
+    if (chunk.length === 1) { suffix = '(No.' + first + ')'; target = String(first); }
+    else if (chunkSize < sentences.length) { suffix = '(No.' + first + '〜' + last + ')'; target = first + '〜' + last; }
+    else { suffix = ''; target = first + '〜' + last; }
+
     var info = buildForm_(conf.formTitle + suffix, chunk, folder);
-    created.push(info);
+    appendLink_(linkSheet, tabName, target, folder, info); // 1件ごとに追記(途中で止まっても進捗が残る)
+    createdCount++;
   }
 
-  writeLinks_(ss, tabName, folder, created);
-  var msg = 'タブ「' + tabName + '」から ' + created.length + ' 件のフォームを作成し、' +
-    'フォルダ「' + folder.getName() + '」に保存しました。\nリンクは「' + LINK_SHEET + '」シートに書き込みました。';
+  var msg = 'タブ「' + tabName + '」: ' + createdCount + ' 件のフォームを作成しました' +
+    (skipped ? '(作成済み ' + skipped + ' 英文はスキップ)' : '') + '。\n' +
+    'フォルダ「' + folder.getName() + '」に保存し、リンクを「' + LINK_SHEET + '」シートに記録しました。';
+  if (stopped) {
+    msg += '\n\n⚠ 実行時間の上限が近づいたため ' + remaining + ' 英文を残して中断しました。' +
+      'もう一度同じメニューを実行すると、続きから再開します。';
+  }
   if (!silent) SpreadsheetApp.getUi().alert(msg);
   return msg;
 }
@@ -181,18 +206,40 @@ function buildForm_(title, sentences, folder) {
   };
 }
 
-/** 生成結果を「フォームリンク」シートに追記する */
-function writeLinks_(ss, tabName, folder, created) {
+/** 「フォームリンク」シートを取得(なければ作成しヘッダーを付ける) */
+function getLinkSheet_(ss) {
   var out = ss.getSheetByName(LINK_SHEET);
   if (!out) out = ss.insertSheet(LINK_SHEET);
   if (out.getLastRow() === 0) {
-    out.appendRow(['作成日時', 'タブ', 'タイトル', '英文数', '設問数', '回答用URL', '編集用URL', '保存フォルダ']);
-    out.getRange(1, 1, 1, 8).setFontWeight('bold');
+    out.appendRow(['作成日時', 'タブ', '対象No.', 'タイトル', '英文数', '設問数', '回答用URL', '編集用URL', '保存フォルダ']);
+    out.getRange(1, 1, 1, 9).setFontWeight('bold');
   }
-  var now = new Date();
-  created.forEach(function (f) {
-    out.appendRow([now, tabName, f.title, f.numSentences, f.numQuestions, f.liveUrl, f.editUrl, folder.getUrl()]);
+  return out;
+}
+
+/** 既に作成済みの No. の集合を作る(再開時の重複防止)。"5" や "1〜10" を展開して取り込む */
+function doneNoSet_(linkSheet, tabName) {
+  var done = {};
+  if (linkSheet.getLastRow() < 2) return done;
+  var values = linkSheet.getRange(2, 2, linkSheet.getLastRow() - 1, 2).getValues(); // B列(タブ),C列(対象No.)
+  values.forEach(function (r) {
+    if (String(r[0]).trim() !== tabName) return;
+    var t = String(r[1]).trim();
+    if (t.indexOf('〜') >= 0) {
+      var parts = t.split('〜');
+      var a = parseInt(parts[0], 10), b = parseInt(parts[1], 10);
+      if (!isNaN(a) && !isNaN(b)) { for (var k = a; k <= b; k++) done[String(k)] = true; }
+    } else if (t) {
+      done[t] = true;
+    }
   });
+  return done;
+}
+
+/** 生成した1フォームの情報を追記する */
+function appendLink_(linkSheet, tabName, target, folder, f) {
+  linkSheet.appendRow([new Date(), tabName, target, f.title, f.numSentences, f.numQuestions,
+    f.liveUrl, f.editUrl, folder.getUrl()]);
 }
 
 /** ヘッダー行の列名から列番号を引く(CSVのヘッダーと同一) */

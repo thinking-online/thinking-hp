@@ -185,11 +185,12 @@ function buildForm_(title, sentences, folder) {
       item.setChoices(['A', 'B', 'C', 'D'].map(function (L) {
         return item.createChoice(L + '. ' + q.choices[L], L === q.answer);
       }));
-      if (q.explanation) {
-        var fb = FormApp.createFeedback().setText(q.explanation).build();
-        item.setFeedbackForCorrect(fb);
-        item.setFeedbackForIncorrect(fb);
-      }
+      // 正解時: 解説のみ / 不正解時: 「正解: X」+解説(Google側の「正解を表示」設定に関わらず答えが届く)
+      var exp = q.explanation || '';
+      var correctText = exp || '正解です。';
+      var incorrectText = '正解: ' + q.answer + (exp ? '\n\n' + exp : '');
+      item.setFeedbackForCorrect(FormApp.createFeedback().setText(correctText).build());
+      item.setFeedbackForIncorrect(FormApp.createFeedback().setText(incorrectText).build());
     });
   });
 

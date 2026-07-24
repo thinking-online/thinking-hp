@@ -26,7 +26,9 @@ var CONFIG = {
   INCLUDE_EXPLANATION: true,                   // フィードバックに解説を載せる
   SHUFFLE: false,                              // 問題の順番をシャッフル
   COLLECT_EMAIL: false,                        // 回答者メールの収集
-  TITLE_PREFIX: '基礎英文法テスト｜'            // フォームのタイトル接頭辞（例: 基礎英文法テスト｜UNIT 1 時制(1)）
+  TITLE_PREFIX: '基礎英文法テスト｜',           // フォームのタイトル接頭辞（例: 基礎英文法テスト｜UNIT 1 時制(1)）
+  AUTO_CONTINUE: true,                         // 一括作成が時間切れになったら約1分後に自動で続きを作成する
+  MAX_RUNTIME_MS: 300000                       // 1回の実行で作業する上限（5分）。GASの6分制限より手前で安全停止
 };
 
 var COL = {
@@ -45,7 +47,8 @@ function onOpen() {
     .addItem('単元名を指定して作成', 'createFormForNamedUnit')
     .addSeparator()
     .addItem('チャプターを指定して一括作成', 'createFormsForChapter')
-    .addItem('全単元を一括作成（30単元）', 'createAllForms')
+    .addItem('全単元を一括作成（続きから再開）', 'createAllForms')
+    .addItem('自動作成を停止', 'stopAutoContinue')
     .addSeparator()
     .addItem('データの読み込みを確認', 'previewData')
     .addToUi();
@@ -98,14 +101,69 @@ function previewData() {
 }
 
 // ===== エントリーポイント ===========================================
+/**
+ * 全単元を一括作成（レジューム対応）。
+ * ・1件ずつ作成して、その都度「フォーム一覧」シートに追記（途中で止まっても進捗が残る）
+ * ・すでに作成済みの単元はスキップ（＝続きから再開）
+ * ・GASの実行時間制限にかかる手前で安全停止
+ * ・CONFIG.AUTO_CONTINUE=true なら約1分後に自動で続きを作成し、全部終わると自動停止
+ */
 function createAllForms() {
+  var start = Date.now();
   var groups = groupByUnit_(getData_());
-  var results = groups.order.map(function(u){
-    try { return buildForm_(u, groups.map[u]); }
-    catch (e) { return { unit: u, error: String(e) }; }
+  var total = groups.order.length;
+  var sh = ensureListSheet_();
+  var doneSet = getDoneTitles_(sh);
+
+  var remaining = groups.order.filter(function(u){ return !doneSet[CONFIG.TITLE_PREFIX + u]; });
+  if (!remaining.length) {
+    removeContinueTriggers_();
+    toast_('全 ' + total + ' 単元、すでに作成済みです。');
+    return;
+  }
+
+  for (var i = 0; i < remaining.length; i++) {
+    if (Date.now() - start > CONFIG.MAX_RUNTIME_MS) break;  // 時間切れ手前で停止
+    var u = remaining[i];
+    var res;
+    try { res = buildForm_(u, groups.map[u]); }
+    catch (e) { res = { unit: u, title: CONFIG.TITLE_PREFIX + u, error: String(e), tab: getSheet_().getName() }; }
+    writeOne_(sh, res);        // 1件ずつ即追記（途中終了でも進捗が残る）
+  }
+
+  var doneNow = getDoneTitles_(sh);
+  var left = groups.order.filter(function(u){ return !doneNow[CONFIG.TITLE_PREFIX + u]; }).length;
+  var doneCount = total - left;
+
+  if (left > 0) {
+    if (CONFIG.AUTO_CONTINUE) {
+      scheduleContinue_();
+      toast_('作成中… ' + doneCount + '/' + total + ' 完了。約1分後に自動で続きを作成します。（残り ' + left + ' 単元）', 10);
+    } else {
+      toast_(doneCount + '/' + total + ' 完了。残り ' + left + ' 単元。もう一度「全単元を一括作成」を実行すると続きから作成します。', 12);
+    }
+  } else {
+    removeContinueTriggers_();
+    toast_('🎉 全 ' + total + ' 単元のフォーム作成が完了しました！', 12);
+  }
+}
+
+// 自動継続トリガー（時間ベース）を1つだけ張り直す
+function scheduleContinue_() {
+  removeContinueTriggers_();
+  ScriptApp.newTrigger('createAllForms').timeBased().after(60 * 1000).create();
+}
+
+function removeContinueTriggers_() {
+  ScriptApp.getProjectTriggers().forEach(function(t){
+    if (t.getHandlerFunction() === 'createAllForms') ScriptApp.deleteTrigger(t);
   });
-  writeList_(results);
-  toast_(groups.order.length + ' 単元のフォームを作成しました。「' + CONFIG.LIST_SHEET + '」シートにURLを出力しました。');
+}
+
+// 中断した自動継続を止めたいとき用（メニューからも呼べる）
+function stopAutoContinue() {
+  removeContinueTriggers_();
+  toast_('自動作成を停止しました。');
 }
 
 function createFormsForChapter() {
@@ -278,30 +336,51 @@ function getFolder_() {
 }
 
 var LIST_HEADER = ['作成日時', 'タブ', '対象No.', 'タイトル', '英文数', '設問数', '回答用URL', '編集用URL', '保存フォルダ'];
+var COL_TITLE = 4;   // タイトル列（1始まり）
+var COL_LIVE  = 7;   // 回答用URL列（1始まり）
 
-function writeList_(results) {
+// 「フォーム一覧」シートを用意し、見出し行を整える
+function ensureListSheet_() {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sh = ss.getSheetByName(CONFIG.LIST_SHEET);
   if (!sh) sh = ss.insertSheet(CONFIG.LIST_SHEET);
-  // 見出し行を常に整える（列構成のズレを防ぐ）
   sh.getRange(1, 1, 1, LIST_HEADER.length).setValues([LIST_HEADER]).setFontWeight('bold');
   sh.setFrozenRows(1);
+  return sh;
+}
 
+// すでに作成済み（＝回答用URLが入っている）フォームのタイトル集合を返す
+function getDoneTitles_(sh) {
+  var last = sh.getLastRow();
+  var done = {};
+  if (last < 2) return done;
+  var titles = sh.getRange(2, COL_TITLE, last - 1, 1).getValues();
+  var urls = sh.getRange(2, COL_LIVE, last - 1, 1).getValues();
+  for (var i = 0; i < titles.length; i++) {
+    var t = String(titles[i][0]).trim();
+    var u = String(urls[i][0]).trim();
+    if (t && /^https?:\/\//.test(u)) done[t] = true;  // URL付きの行だけ「完了」扱い（エラー行は再挑戦）
+  }
+  return done;
+}
+
+// 1件を追記
+function writeOne_(sh, r) {
   var now = new Date();
-  results.forEach(function(r){
-    if (r.error) {
-      sh.appendRow([now, r.tab || '', r.numRange || '', r.title || (r.unit || ''), '', 'エラー', r.error, '', '']);
-      return;
-    }
-    var folderCell = r.folderUrl
-      ? '=HYPERLINK("' + r.folderUrl + '","' + (r.folderName || 'フォルダ').replace(/"/g, '""') + '")'
-      : (r.folderName || '');
-    sh.appendRow([
-      now, r.tab, r.numRange, r.title,
-      r.englishCount, r.questionCount,
-      r.liveUrl, r.editUrl, folderCell
-    ]);
-  });
+  if (r.error) {
+    sh.appendRow([now, r.tab || '', r.numRange || '', r.title || (r.unit || ''), '', 'エラー', r.error, '', '']);
+    return;
+  }
+  var folderCell = r.folderUrl
+    ? '=HYPERLINK("' + r.folderUrl + '","' + String(r.folderName || 'フォルダ').replace(/"/g, '""') + '")'
+    : (r.folderName || '');
+  sh.appendRow([now, r.tab, r.numRange, r.title, r.englishCount, r.questionCount, r.liveUrl, r.editUrl, folderCell]);
+}
+
+// 単発・チャプター用（少数件をまとめて追記）
+function writeList_(results) {
+  var sh = ensureListSheet_();
+  results.forEach(function(r){ writeOne_(sh, r); });
   sh.autoResizeColumns(1, LIST_HEADER.length);
 }
 
@@ -311,6 +390,6 @@ function uniq_(arr) {
   return out;
 }
 
-function toast_(msg) {
-  SpreadsheetApp.getActiveSpreadsheet().toast(msg, '完了', 8);
+function toast_(msg, sec) {
+  SpreadsheetApp.getActiveSpreadsheet().toast(msg, '完了', sec || 8);
 }

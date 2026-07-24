@@ -32,7 +32,7 @@ var CONFIG = {
   },
 };
 
-var MAX_QUESTIONS = 6;
+var MAX_QUESTIONS = 5; // 1英文あたりの最大設問数(問題01〜問題05)。実際の列数は自動検出する。
 // 1つのフォームに入れる英文(行)の数。
 //   1  … 1英文ごとに1フォーム(入門60→60フォーム / 英文熟考→70フォーム)
 //   10 … 10英文ごとに1フォーム(入門60→6フォーム)
@@ -120,13 +120,14 @@ function pad2_(n) { return (n < 10 ? '0' : '') + n; }
 function readSentences_(sheet, tabName) {
   var rows = sheet.getDataRange().getValues();
   var header = rows.shift().map(function (h) { return String(h).trim(); });
-  var col = indexColumns_(header, tabName);
+  var indexed = indexColumns_(header, tabName);
+  var col = indexed.col, maxQ = indexed.maxQ;
   var out = [];
   rows.forEach(function (row, ri) {
     var no = String(row[col.no]).trim();
     if (!no) return; // 空行スキップ
     var questions = [];
-    for (var qi = 1; qi <= MAX_QUESTIONS; qi++) {
+    for (var qi = 1; qi <= maxQ; qi++) {
       var stem = String(row[col['q' + qi]] || '').trim();
       if (!stem) continue; // 設問文が空 = その番号の設問なし
       questions.push(buildQuestion_(row, col, stem, no, qi, ri + 2));
@@ -247,25 +248,42 @@ function appendLink_(linkSheet, tabName, target, folder, f) {
     f.liveUrl, f.editUrl, folder.getUrl()]);
 }
 
-/** ヘッダー行の列名から列番号を引く(CSVのヘッダーと同一) */
+/**
+ * ヘッダー行の列名から列番号を引く(CSVのヘッダーと同一)。
+ * 設問ブロック(問題01〜)は実際に存在する分だけ読み取る。
+ * 返り値: { col: 列マップ, maxQ: 検出した最大設問番号 }
+ */
 function indexColumns_(header, tabName) {
-  var map = { no: '問題No', en: '問題', ja: '訳' };
-  for (var i = 1; i <= MAX_QUESTIONS; i++) {
-    map['q' + i] = '問題0' + i;
-    map['ch' + i + 'A'] = '問題0' + i + '選択肢A';
-    map['ch' + i + 'B'] = '問題0' + i + '選択肢B';
-    map['ch' + i + 'C'] = '問題0' + i + '選択肢C';
-    map['ch' + i + 'D'] = '問題0' + i + '選択肢D';
-    map['a' + i] = '問題0' + i + 'の答え';
-    map['e' + i] = '問題0' + i + 'の解説';
-  }
   var col = {};
-  Object.keys(map).forEach(function (key) {
-    var idx = header.indexOf(map[key]);
-    if (idx === -1) {
-      throw new Error('タブ「' + tabName + '」のヘッダー行に列「' + map[key] + '」がありません。');
-    }
+  ['no', 'en', 'ja'].forEach(function (key, k) {
+    var name = ['問題No', '問題', '訳'][k];
+    var idx = header.indexOf(name);
+    if (idx === -1) throw new Error('タブ「' + tabName + '」のヘッダー行に列「' + name + '」がありません。');
     col[key] = idx;
   });
-  return col;
+
+  var maxQ = 0;
+  for (var i = 1; i <= MAX_QUESTIONS; i++) {
+    var stemName = '問題0' + i;
+    if (header.indexOf(stemName) === -1) break; // 設問文の列が無ければ、それ以降の設問は無いとみなす
+    var block = {
+      ['q' + i]: '問題0' + i,
+      ['ch' + i + 'A']: '問題0' + i + '選択肢A',
+      ['ch' + i + 'B']: '問題0' + i + '選択肢B',
+      ['ch' + i + 'C']: '問題0' + i + '選択肢C',
+      ['ch' + i + 'D']: '問題0' + i + '選択肢D',
+      ['a' + i]: '問題0' + i + 'の答え',
+      ['e' + i]: '問題0' + i + 'の解説',
+    };
+    Object.keys(block).forEach(function (key) {
+      var idx = header.indexOf(block[key]);
+      if (idx === -1) {
+        throw new Error('タブ「' + tabName + '」に列「' + block[key] + '」がありません(問題0' + i + 'の列が不完全です)。');
+      }
+      col[key] = idx;
+    });
+    maxQ = i;
+  }
+  if (maxQ === 0) throw new Error('タブ「' + tabName + '」に設問の列(問題01…)が見つかりません。');
+  return { col: col, maxQ: maxQ };
 }

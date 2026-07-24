@@ -19,7 +19,8 @@
 // ===== 設定 =========================================================
 var CONFIG = {
   SHEET_NAME: '',                              // 問題データのシート名。空なら「問題」または先頭シート
-  FOLDER_NAME: '英文法ポラリス1_単元フォーム',   // 作成先の Drive フォルダ名
+  FOLDER_ID: '1LlK8Ns9ounNfBMkYYtVhYayNJRfkOZxu', // 作成フォームの保存先フォルダID（空なら下のFOLDER_NAMEで作成）
+  FOLDER_NAME: '英文法ポラリス1_単元フォーム',   // FOLDER_IDが空のときに作る/使うフォルダ名
   LIST_SHEET: 'フォーム一覧',                   // 作成フォームのURL出力先シート
   POINTS: 1,                                   // 1問あたりの配点
   INCLUDE_EXPLANATION: true,                   // フィードバックに解説を載せる
@@ -181,15 +182,28 @@ function buildForm_(unitName, rows) {
   form.setShuffleQuestions(CONFIG.SHUFFLE);
   form.setProgressBar(true);
 
+  var made = 0;
   rows.forEach(function(row){
-    try { addChoice_(form, row); }
+    try { addChoice_(form, row); made++; }
     catch (e) { form.addSectionHeaderItem().setTitle('⚠ 問' + row[COL.num] + ' の作成に失敗: ' + e); }
   });
 
-  moveToFolder_(form);
+  var folder = getFolder_();
+  moveToFolder_(form, folder);
+
+  var nums = rows.map(function(r){ return String(r[COL.num]).trim(); })
+                 .filter(function(x){ return x; });
+  var numRange = nums.length ? (nums[0] + '〜' + nums[nums.length - 1]) : '';
+
   return {
-    unit: unitName, chapter: chapter, count: rows.length, title: title,
-    editUrl: form.getEditUrl(), liveUrl: form.getPublishedUrl()
+    tab: getSheet_().getName(),          // データのタブ名
+    numRange: numRange,                  // 対象No.（例: 001〜013）
+    unit: unitName, chapter: chapter,
+    englishCount: rows.length,           // 英文数
+    questionCount: made,                 // 設問数（実際に作成できた数）
+    title: title,
+    editUrl: form.getEditUrl(), liveUrl: form.getPublishedUrl(),
+    folderName: folder.getName(), folderUrl: folder.getUrl()
   };
 }
 
@@ -236,9 +250,8 @@ function makeFeedback_(text) {
 }
 
 // ===== 出力・ユーティリティ =========================================
-function moveToFolder_(form) {
+function moveToFolder_(form, folder) {
   var file = DriveApp.getFileById(form.getId());
-  var folder = getFolder_();
   folder.addFile(file);
   var root = DriveApp.getRootFolder();
   var parents = file.getParents();
@@ -248,26 +261,48 @@ function moveToFolder_(form) {
   }
 }
 
+var _folderCache = null;
 function getFolder_() {
+  if (_folderCache) return _folderCache;
+  if (CONFIG.FOLDER_ID) {
+    try {
+      _folderCache = DriveApp.getFolderById(CONFIG.FOLDER_ID);
+      return _folderCache;
+    } catch (e) {
+      throw new Error('保存先フォルダ（FOLDER_ID）にアクセスできません。IDが正しいか、フォルダの共有権限を確認してください。\n' + e);
+    }
+  }
   var it = DriveApp.getFoldersByName(CONFIG.FOLDER_NAME);
-  return it.hasNext() ? it.next() : DriveApp.createFolder(CONFIG.FOLDER_NAME);
+  _folderCache = it.hasNext() ? it.next() : DriveApp.createFolder(CONFIG.FOLDER_NAME);
+  return _folderCache;
 }
+
+var LIST_HEADER = ['作成日時', 'タブ', '対象No.', 'タイトル', '英文数', '設問数', '回答用URL', '編集用URL', '保存フォルダ'];
 
 function writeList_(results) {
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sh = ss.getSheetByName(CONFIG.LIST_SHEET);
-  if (!sh) {
-    sh = ss.insertSheet(CONFIG.LIST_SHEET);
-    sh.appendRow(['作成日時', 'チャプター', '単元', '問題数', 'タイトル', '回答用URL', '編集用URL']);
-    sh.getRange(1, 1, 1, 7).setFontWeight('bold');
-    sh.setFrozenRows(1);
-  }
+  if (!sh) sh = ss.insertSheet(CONFIG.LIST_SHEET);
+  // 見出し行を常に整える（列構成のズレを防ぐ）
+  sh.getRange(1, 1, 1, LIST_HEADER.length).setValues([LIST_HEADER]).setFontWeight('bold');
+  sh.setFrozenRows(1);
+
   var now = new Date();
   results.forEach(function(r){
-    if (r.error) sh.appendRow([now, r.unit || '', r.unit || '', '', 'エラー', r.error, '']);
-    else sh.appendRow([now, r.chapter, r.unit, r.count, r.title, r.liveUrl, r.editUrl]);
+    if (r.error) {
+      sh.appendRow([now, r.tab || '', r.numRange || '', r.title || (r.unit || ''), '', 'エラー', r.error, '', '']);
+      return;
+    }
+    var folderCell = r.folderUrl
+      ? '=HYPERLINK("' + r.folderUrl + '","' + (r.folderName || 'フォルダ').replace(/"/g, '""') + '")'
+      : (r.folderName || '');
+    sh.appendRow([
+      now, r.tab, r.numRange, r.title,
+      r.englishCount, r.questionCount,
+      r.liveUrl, r.editUrl, folderCell
+    ]);
   });
-  sh.autoResizeColumns(1, 5);
+  sh.autoResizeColumns(1, LIST_HEADER.length);
 }
 
 function uniq_(arr) {

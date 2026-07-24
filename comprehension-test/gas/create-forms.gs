@@ -212,6 +212,9 @@ function buildForm_(title, sentences, folder) {
     });
   });
 
+  // 公開して回答を受け付ける状態にする(新旧どちらの公開モデルにも対応)
+  publishForm_(form);
+
   // 新規作成した場合のみ指定フォルダへ移動(複製版は既にフォルダ内にある)
   if (!TEMPLATE_FORM_ID) {
     var file = DriveApp.getFileById(form.getId());
@@ -230,6 +233,16 @@ function buildForm_(title, sentences, folder) {
     numSentences: sentences.length,
     numQuestions: sentences.reduce(function (n, s) { return n + s.questions.length; }, 0),
   };
+}
+
+/** フォームを公開し、回答を受け付ける状態にする(メソッドが無い環境でも落ちないよう try/catch) */
+function publishForm_(form) {
+  // 新しい公開モデル(2024〜): 明示的に「公開」が必要
+  try { if (typeof form.setPublished === 'function') form.setPublished(true); } catch (e) {}
+  // 回答の受付を開始(従来からのAPI)
+  try { form.setAcceptingResponses(true); } catch (e) {}
+  // 公開直後の「回答者アクセス」制限をなるべく広げる(環境により未対応=無視)
+  try { if (typeof form.setRequireLogin === 'function') form.setRequireLogin(false); } catch (e) {}
 }
 
 /** 「フォームリンク」シートを取得(なければ作成しヘッダーを付ける) */

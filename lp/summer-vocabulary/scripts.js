@@ -26,8 +26,12 @@
     openingSeen = false;
   }
 
+  var openingCount = document.getElementById("openingCount");
+  var countFrame = 0;
+
   function closeOpening() {
     if (!opening || opening.classList.contains("is-hidden")) return;
+    if (countFrame) window.cancelAnimationFrame(countFrame);
     opening.classList.add("is-hidden");
     document.body.classList.remove("is-locked");
     try {
@@ -37,12 +41,35 @@
     }
   }
 
+  function animateCount(durationMs) {
+    if (!openingCount) return;
+    var start = null;
+
+    function tick(now) {
+      if (start === null) start = now;
+      var progress = Math.min(1, (now - start) / durationMs);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      openingCount.textContent = String(Math.round(eased * 300));
+      if (progress < 1) {
+        countFrame = window.requestAnimationFrame(tick);
+      } else {
+        openingCount.textContent = "300";
+      }
+    }
+
+    countFrame = window.requestAnimationFrame(tick);
+  }
+
   if (opening) {
     if (openingSeen || reduceMotion) {
       opening.classList.add("is-hidden");
+      if (openingCount) openingCount.textContent = "300";
     } else {
       document.body.classList.add("is-locked");
-      window.setTimeout(closeOpening, 3200);
+      window.setTimeout(function () {
+        animateCount(2200);
+      }, 900);
+      window.setTimeout(closeOpening, 4800);
     }
   }
 

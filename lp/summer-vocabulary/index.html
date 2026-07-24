@@ -20,11 +20,35 @@
 </head>
 <body>
   <div class="opening" id="opening" aria-label="オープニングメッセージ">
+    <div class="opening__sky" aria-hidden="true">
+      <i class="opening__sun"></i>
+      <i class="opening__wave"></i>
+      <i class="opening__wave opening__wave--2"></i>
+    </div>
     <div class="opening__grain" aria-hidden="true"></div>
-    <p class="opening__copy">
-      <span>夏休み期間で</span>
-      <span class="opening__accent">英単語完成👑</span>
-    </p>
+    <div class="opening__words" aria-hidden="true">
+      <span>achieve</span>
+      <span>foundation</span>
+      <span>commit</span>
+      <span>progress</span>
+      <span>master</span>
+      <span>focus</span>
+      <span>retain</span>
+      <span>summer</span>
+    </div>
+    <div class="opening__stage">
+      <div class="opening__cards" aria-hidden="true">
+        <i></i><i></i><i></i>
+      </div>
+      <div class="opening__count" aria-hidden="true">
+        <b id="openingCount">0</b><span>/ 300</span>
+      </div>
+      <p class="opening__copy">
+        <span>夏休み期間で</span>
+        <span class="opening__accent">英単語完成👑</span>
+      </p>
+      <p class="opening__sub">夏の努力が、語彙力になる。</p>
+    </div>
     <button class="opening__skip" id="openingSkip" type="button">SKIP</button>
   </div>
 

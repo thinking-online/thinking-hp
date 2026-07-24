@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>理系単元 作戦盤 ｜ THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#16263f;
+    --navy-deep:#0f1b2e;
+    --gold:#b8954a;
+    --gold-soft:#d4b876;
+    --vermilion:#c8431f;
+    --paper:#f7f5f0;
+    --paper-2:#efe9dc;
+    --ink:#16263f;
+    --slate:#5c6b7d;
+    --slate-soft:#8593a2;
+    --line:rgba(22,38,63,.12);
+    --line-d:rgba(255,255,255,.10);
+    --jp:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
+    --tac:'Space Grotesk','Noto Sans JP',sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--jp);
+    background:var(--navy-deep);
+    color:var(--ink);
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--gold);color:var(--navy)}
+
+  .app{display:flex;min-height:100vh;background:var(--paper)}
+
+  /* ---------- SIDEBAR ---------- */
+  .sidebar{
+    width:268px;flex-shrink:0;
+    background:var(--navy);
+    position:sticky;top:0;height:100vh;
+    display:flex;flex-direction:column;
+    border-right:1px solid var(--line-d);
+    overflow-y:auto;
+  }
+  .brand{padding:26px 24px 22px;border-bottom:1px solid var(--line-d)}
+  .brand-mark{
+    font-family:var(--tac);font-weight:700;font-size:11px;letter-spacing:.28em;
+    color:var(--gold);text-transform:uppercase;
+  }
+  .brand-title{
+    color:#fff;font-weight:900;font-size:21px;line-height:1.3;margin-top:9px;letter-spacing:.01em;
+  }
+  .brand-sub{
+    font-family:var(--tac);font-size:10px;letter-spacing:.22em;color:var(--slate-soft);
+    text-transform:uppercase;margin-top:7px;
+  }
+  .nav{padding:14px 12px;flex:1}
+  .nav-eyebrow{
+    font-family:var(--tac);font-size:9.5px;letter-spacing:.24em;color:var(--slate-soft);
+    text-transform:uppercase;padding:12px 12px 8px;
+  }
+  .nav-item{
+    display:flex;align-items:baseline;gap:11px;width:100%;text-align:left;
+    background:transparent;border:none;cursor:pointer;
+    padding:10px 12px;border-radius:9px;color:rgba(255,255,255,.62);
+    font-family:var(--jp);transition:background .18s,color .18s;
+    border-left:2px solid transparent;
+  }
+  .nav-item:hover{background:rgba(255,255,255,.05);color:#fff}
+  .nav-item.active{background:rgba(184,149,74,.14);color:#fff;border-left-color:var(--gold)}
+  .nav-item .ni-code{
+    font-family:var(--tac);font-size:9.5px;font-weight:600;letter-spacing:.12em;
+    color:var(--slate-soft);min-width:26px;
+  }
+  .nav-item.active .ni-code{color:var(--gold-soft)}
+  .nav-item .ni-name{font-size:14.5px;font-weight:500}
+  .brand-foot{
+    padding:18px 24px 22px;border-top:1px solid var(--line-d);
+    font-size:12px;color:var(--slate-soft);line-height:1.6;
+  }
+  .brand-foot b{color:var(--gold-soft);font-weight:700;display:block;margin-bottom:3px;letter-spacing:.02em}
+
+  /* ---------- CONTENT ---------- */
+  .content{flex:1;min-width:0}
+  .panel{display:none;animation:fade .4s ease both}
+  .panel.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+  .hero{
+    background:var(--navy);color:#fff;
+    padding:52px 56px 46px;position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;
+    border:1px solid rgba(184,149,74,.16);border-radius:50%;
+  }
+  .hero::before{
+    content:"";position:absolute;right:10px;top:10px;width:120px;height:120px;
+    border:1px solid rgba(184,149,74,.12);border-radius:50%;
+  }
+  .hero-eyebrow{
+    font-family:var(--tac);font-size:11px;font-weight:600;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--gold-soft);
+    display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+  }
+  .hero-eyebrow .ctx{
+    color:rgba(255,255,255,.55);font-family:var(--jp);letter-spacing:.06em;
+    font-size:12px;font-weight:400;text-transform:none;
+    padding-left:14px;border-left:1px solid rgba(255,255,255,.2);
+  }
+  .hero h1{font-size:38px;font-weight:900;margin:16px 0 22px;letter-spacing:.01em;position:relative;z-index:1}
+  .mission{
+    display:flex;align-items:flex-start;gap:15px;position:relative;z-index:1;max-width:680px;
+  }
+  .mission-label{
+    font-family:var(--tac);font-size:10px;font-weight:600;letter-spacing:.16em;
+    color:var(--vermilion);background:rgba(200,67,31,.14);
+    padding:6px 10px;border-radius:5px;white-space:nowrap;margin-top:6px;text-transform:uppercase;
+    border:1px solid rgba(200,67,31,.35);
+  }
+  .mission-text{font-size:20px;font-weight:700;line-height:1.55;color:#fff}
+  .hero-note{
+    margin-top:20px;padding:14px 18px;background:rgba(255,255,255,.055);
+    border-left:2px solid var(--gold);border-radius:0 8px 8px 0;
+    font-size:13.5px;color:rgba(255,255,255,.78);line-height:1.7;max-width:680px;position:relative;z-index:1;
+  }
+
+  .body{padding:40px 56px 72px;background:var(--paper);max-width:1080px}
+
+  /* ---------- TIERS ---------- */
+  .tier{margin-bottom:38px}
+  .tier-head{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+  .tier-badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--tac);font-weight:700;font-size:13px;letter-spacing:.08em;
+    padding:7px 14px 7px 11px;border-radius:7px;color:#fff;
+  }
+  .tier-badge svg{display:block}
+  .tier-s .tier-badge{background:var(--vermilion)}
+  .tier-a .tier-badge{background:var(--gold)}
+  .tier-b .tier-badge{background:var(--slate)}
+  .tier-title{font-size:16px;font-weight:700;color:var(--navy)}
+  .tier-title span{color:var(--slate);font-weight:400;font-size:13px;margin-left:8px}
+  .tier-count{
+    margin-left:auto;font-family:var(--tac);font-size:12px;font-weight:600;
+    color:var(--slate-soft);letter-spacing:.05em;
+  }
+  .tier-rule{flex:1;height:1px;background:var(--line);max-width:60px}
+
+  .unit{
+    background:#fff;border:1px solid var(--line);border-radius:12px;
+    padding:22px 24px 22px 26px;margin-bottom:14px;position:relative;overflow:hidden;
+    transition:transform .16s,box-shadow .16s;
+  }
+  .unit::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+  .tier-s .unit::before{background:var(--vermilion)}
+  .tier-a .unit::before{background:var(--gold)}
+  .tier-b .unit::before{background:var(--slate-soft)}
+  .unit:hover{transform:translateX(3px);box-shadow:0 6px 22px rgba(22,38,63,.08)}
+  .unit-name{font-size:17.5px;font-weight:700;color:var(--navy);margin-bottom:9px;letter-spacing:.01em}
+  .unit-why{font-size:14px;color:#3a4757;line-height:1.78}
+  .unit-target{
+    display:flex;align-items:baseline;gap:11px;margin-top:15px;
+    background:var(--navy);border-radius:8px;padding:11px 15px;
+  }
+  .ut-label{
+    font-family:var(--tac);font-size:9.5px;font-weight:600;letter-spacing:.12em;
+    color:var(--gold-soft);white-space:nowrap;text-transform:uppercase;flex-shrink:0;padding-top:2px;
+  }
+  .ut-text{font-size:13.5px;font-weight:500;color:#fff;line-height:1.55}
+
+  /* ---------- METHODOLOGY ---------- */
+  .m-intro{font-size:16px;color:#3a4757;line-height:1.85;margin-bottom:34px;max-width:720px}
+  .m-intro b{color:var(--vermilion);font-weight:700}
+  .m-section-label{
+    font-family:var(--tac);font-size:11px;font-weight:600;letter-spacing:.18em;
+    color:var(--gold);text-transform:uppercase;margin-bottom:18px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .m-section-label::after{content:"";flex:1;height:1px;background:var(--line)}
+  .axes{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:46px}
+  .axis{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;position:relative}
+  .axis-num{
+    font-family:var(--tac);font-size:12px;font-weight:700;color:#fff;
+    background:var(--navy);width:26px;height:26px;border-radius:6px;
+    display:flex;align-items:center;justify-content:center;margin-bottom:13px;
+  }
+  .axis-name{font-size:15.5px;font-weight:700;color:var(--navy);margin-bottom:7px}
+  .axis-desc{font-size:13px;color:#4a5766;line-height:1.7}
+
+  .legend{display:flex;flex-direction:column;gap:12px;margin-bottom:46px}
+  .leg{display:flex;align-items:flex-start;gap:16px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px 22px;position:relative;overflow:hidden}
+  .leg::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px}
+  .leg-s::before{background:var(--vermilion)}
+  .leg-a::before{background:var(--gold)}
+  .leg-b::before{background:var(--slate-soft)}
+  .leg-badge{
+    font-family:var(--tac);font-weight:700;font-size:13px;color:#fff;
+    padding:7px 13px 7px 10px;border-radius:7px;white-space:nowrap;flex-shrink:0;
+    display:inline-flex;align-items:center;gap:7px;letter-spacing:.06em;
+  }
+  .leg-s .leg-badge{background:var(--vermilion)}
+  .leg-a .leg-badge{background:var(--gold)}
+  .leg-b .leg-badge{background:var(--slate)}
+  .leg-body b{font-size:15px;color:var(--navy);font-weight:700;display:block;margin-bottom:4px}
+  .leg-body span{font-size:13.5px;color:#4a5766;line-height:1.7}
+
+  .caveat{
+    background:var(--navy);border-radius:14px;padding:28px 32px;color:#fff;position:relative;overflow:hidden;
+  }
+  .caveat::after{content:"";position:absolute;right:-60px;bottom:-60px;width:200px;height:200px;border:1px solid rgba(200,67,31,.2);border-radius:50%}
+  .caveat-title{
+    font-family:var(--tac);font-size:11px;font-weight:600;letter-spacing:.16em;color:var(--vermilion);
+    text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;gap:10px;
+  }
+  .caveat-title::before{content:"";width:7px;height:7px;background:var(--vermilion);border-radius:50%}
+  .caveat ul{list-style:none;display:flex;flex-direction:column;gap:13px;position:relative;z-index:1}
+  .caveat li{font-size:14px;line-height:1.7;color:rgba(255,255,255,.85);padding-left:20px;position:relative}
+  .caveat li::before{content:"";position:absolute;left:0;top:11px;width:8px;height:1px;background:var(--gold)}
+  .caveat li b{color:var(--gold-soft);font-weight:700}
+
+  /* crosshair icon */
+  .xh{width:14px;height:14px}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:900px){
+    .app{flex-direction:column}
+    .sidebar{width:100%;height:auto;position:sticky;top:0;z-index:20;flex-direction:column}
+    .brand{padding:16px 18px 12px;text-align:center}
+    .brand-title{font-size:17px}
+    .brand-sub,.brand-foot{display:none}
+    .nav{padding:0;display:flex;overflow-x:auto;gap:4px;padding:8px 10px;-webkit-overflow-scrolling:touch}
+    .nav-eyebrow{display:none}
+    .nav-item{flex-direction:column;align-items:center;gap:2px;white-space:nowrap;border-left:none;border-bottom:2px solid transparent;border-radius:7px;padding:7px 12px}
+    .nav-item.active{border-left:none;border-bottom-color:var(--gold)}
+    .nav-item .ni-name{font-size:13px}
+    .hero{padding:34px 22px 30px}
+    .hero h1{font-size:27px}
+    .mission-text{font-size:17px}
+    .body{padding:28px 20px 56px}
+    .unit{padding:18px 18px 18px 22px}
+    .axes{grid-template-columns:1fr}
+    .caveat{padding:22px 20px}
+  }
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  }
+  .nav-item:focus-visible,.unit:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark">Summer Lock-On</div>
+      <div class="brand-title">理系単元 作戦盤</div>
+      <div class="brand-sub">Target &amp; Solve</div>
+    </div>
+    <nav class="nav" id="nav" aria-label="科目ナビ"></nav>
+    <div class="brand-foot">
+      <b>THINKING</b>
+      受験は根性じゃなく、設計。
+    </div>
+  </aside>
+  <main class="content" id="content"></main>
+</div>
+
+<script>
+const XH = '<svg class="xh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="7"/><line x1="12" y1="1" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="1" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="23" y2="12"/><circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/></svg>';
+
+const METHOD = {
+  id:'method', code:'PLAN', name:'優先順位の設計図'
+};
+
+const SUBJECTS = [
+  {
+    id:'math3', code:'M-III', name:'数学Ⅲ',
+    ctx:'二次試験専用 ／ 共通テスト範囲外',
+    mission:'微分で形を掴み、積分で面積を取る。',
+    note:'',
+    tiers:{
+      S:[
+        {name:'積分法とその応用', why:'二次数Ⅲの最頻出・最大配点。面積・体積・区分求積は毎年どこかで必ず出る。テクニックがドリルで固まるので、努力がそのまま得点になる単元。', target:'定積分による面積・回転体の体積を計算できる'},
+        {name:'微分法とその応用', why:'積分応用の前提。関数の増減・最大最小・グラフが描けなければ、積分の設定そのものができない。ここを飛ばすと積分も崩れる。', target:'増減表を作り、関数のグラフが描ける'}
+      ],
+      A:[
+        {name:'関数の極限', why:'微分係数の定義そのもの。はさみうち・不定形の処理は短時間で習得でき、微積分の入口を開く。', target:'不定形の極限とはさみうちの原理が使える'},
+        {name:'数列の極限', why:'無限級数・漸化式の極限。計算パターンが決まっており、覚えれば安定して得点できる。', target:'無限等比級数の和と収束条件を判断できる'}
+      ],
+      B:[
+        {name:'式と曲線', why:'二次曲線・媒介変数・極座標。出題頻度の大学差が非常に大きい。志望校が使うなら一気に最優先へ格上げする。', target:'志望校の出題実績を確認し、あれば媒介変数・極座標を固める'}
+      ]
+    }
+  },
+  {
+    id:'chembasic', code:'CH-B', name:'化学基礎',
+    ctx:'共通テスト ／ 文系理科の主力',
+    mission:'モルを制する者が、化学基礎を制す。',
+    note:'',
+    tiers:{
+      S:[
+        {name:'物質量と化学反応式（モル計算）', why:'すべての定量計算の「言語」。ここが甘いと中和も酸化還元も連鎖で崩れる。ドリル適性が全単元で最も高く、夏に固めるべき一丁目一番地。', target:'mol ⇄ 質量 ⇄ 体積 ⇄ 粒子数 を自在に変換できる'},
+        {name:'酸と塩基（中和滴定）', why:'共通テスト最頻出の計算単元。濃度・中和点・pHは配点が厚く、モル計算が固まっていれば得点源になる。', target:'中和の量的関係から未知濃度を求められる'},
+        {name:'酸化還元反応', why:'頻出。酸化数・酸化剤還元剤・電池電気分解の基礎まで、計算で確実に取れる。', target:'酸化数の増減で電子の授受を追える'}
+      ],
+      A:[
+        {name:'物質の構成粒子', why:'原子構造・電子配置・周期表。計算単元の土台であり、知識問題としても直接問われる。', target:'電子配置と周期表の位置づけを説明できる'},
+        {name:'物質と化学結合', why:'イオン・共有・金属結合と結晶。知識で確実に取れる守りの単元。', target:'結合の種類と結晶の性質を区別できる'}
+      ],
+      B:[
+        {name:'物質の研究（分離・精製）', why:'蒸留・ろ過・再結晶・クロマトグラフィー。純粋な暗記で即得点でき、取りこぼしが最ももったいない。', target:'分離操作の名称と適用場面を即答できる'}
+      ]
+    }
+  },
+  {
+    id:'chem', code:'CHEM', name:'化学',
+    ctx:'二次 ／ 理系。理論・無機・有機の三本柱',
+    mission:'無機は夏に殴り、理論は平衡で稼ぎ、有機は構造で決める。',
+    note:'三分野は「性質」が違う。理論＝理解、無機＝暗記、有機＝暗記＋型。攻め方を分けることが、そのまま設計になる。',
+    tiers:{
+      S:[
+        {name:'理論化学：気体・溶液・化学平衡', why:'計算の核。状態方程式、希薄溶液（沸点上昇・凝固点降下・浸透圧）、平衡定数・電離平衡・溶解度積。出題頻度が最高で、思考が他問にも転用できる。', target:'状態方程式と平衡定数を使いこなせる'},
+        {name:'無機化学（全般）', why:'純粋な暗記ROI。0から安定得点まで夏に一気に持っていける唯一の分野。系統分析・気体の製法・工業的製法。時間のある夏こそ殴り切る。', target:'陽イオンの系統分析を、沈殿の色まで言える'},
+        {name:'有機化学：構造決定', why:'二次頻出の「型」。元素分析→分子式→構造の流れは、訓練すれば誰でも解けるようになる。差がつく高配点問題。', target:'元素分析データから構造式を決定できる'}
+      ],
+      A:[
+        {name:'理論：酸化還元・電池・電気分解／熱化学', why:'ファラデーの計算とヘスの法則。パターンが決まっており、固めれば安定した得点になる。', target:'ファラデー計算とヘスの法則で数値を出せる'},
+        {name:'有機：官能基の反応・芳香族', why:'構造決定の周辺知識。官能基の検出反応と芳香族の置換反応は頻出。', target:'官能基ごとの検出反応と芳香族の置換を整理できる'}
+      ],
+      B:[
+        {name:'理論：反応速度', why:'出題比重は小さめ。反応速度式と半減期を押さえれば十分。深追いは不要。', target:'反応速度式と濃度依存性を理解する'},
+        {name:'有機：高分子化合物（天然・合成）', why:'出題校の差が大きい。志望校が扱うなら格上げして、暗記で取り切る。', target:'志望校の出題を確認し、あれば代表的高分子を暗記する'}
+      ]
+    }
+  },
+  {
+    id:'physbasic', code:'PH-B', name:'物理基礎',
+    ctx:'共通テスト ／ 文系理科。力学が主役',
+    mission:'運動方程式とエネルギー保存、この2枚で半分取れる。',
+    note:'',
+    tiers:{
+      S:[
+        {name:'物体の運動 ＋ 力と運動', why:'力学の土台。等加速度運動の式と運動方程式（F=ma）が全ての起点。ここが立てられないと後続が全滅する、外せない二単元。', target:'運動方程式を立てて加速度を求められる'},
+        {name:'仕事と力学的エネルギー', why:'エネルギー保存は頻出かつ計算で確実に取れる。運動と組み合わせて出題される定番。', target:'力学的エネルギー保存で速度・高さを求められる'}
+      ],
+      A:[
+        {name:'電気とエネルギー', why:'オームの法則・電力量・ジュール熱・交流の実効値。公式運用で安定して得点できる。', target:'回路の電流・電圧・消費電力を計算できる'},
+        {name:'熱と物質', why:'熱量計算 Q=mcΔT と比熱。範囲が狭く、短時間で仕上がるコスパ単元。', target:'熱量保存から温度変化を計算できる'}
+      ],
+      B:[
+        {name:'波の性質と音', why:'v=fλ、弦・気柱の共鳴、うなり。基本式と共鳴条件を押さえれば知識で取れる。', target:'波の基本式と共鳴条件を使える'}
+      ]
+    }
+  },
+  {
+    id:'phys', code:'PHYS', name:'物理',
+    ctx:'二次 ／ 理系。力学と電磁気が二本柱',
+    mission:'力学は単振動まで、電磁気は電磁誘導まで解ききる。',
+    note:'力学＋電磁気で二次全体の6〜7割。この二本柱を「ボス単元」まで解けるようにすることが、夏の最優先事項。',
+    tiers:{
+      S:[
+        {name:'力学（運動の法則→力学的エネルギー→運動量保存→円運動→単振動）', why:'全物理の土台であり最大配点。特に単振動（ばね・単振り子）は二次の主役で毎年出る。運動量保存の衝突問題も頻出。ここを単振動まで解ききれるかが勝負。', target:'ばね・単振り子の単振動を運動方程式から解ける'},
+        {name:'電磁気（コンデンサー→直流回路→電磁誘導）', why:'第二の柱。電磁誘導（導体棒・誘導起電力）は最高配点帯。コンデンサーと直流回路はその前提として順に固める。', target:'導体棒の誘導起電力と回路電流を求められる'}
+      ],
+      A:[
+        {name:'熱力学（状態方程式・状態変化・p-V図・熱効率）', why:'気体の状態変化とp-V図は公式で解ける。夏の期間で十分固めきれる。', target:'p-V図から仕事・熱・内部エネルギー変化を出せる'},
+        {name:'波動（特にドップラー効果・光波の干渉）', why:'ドップラー効果、ヤングの実験、薄膜干渉は頻出パターン。型を覚えれば安定得点。', target:'ドップラー効果と干渉条件を立式できる'}
+      ],
+      B:[
+        {name:'原子（光電効果・原子核・半減期・X線）', why:'出題校は限られるが、出るなら暗記寄りで最も易しく拾える。出題校では捨てると差をつけられる。', target:'志望校の出題を確認し、あれば光電効果と半減期を固める'}
+      ]
+    }
+  },
+  {
+    id:'biobasic', code:'BI-B', name:'生物基礎',
+    ctx:'共通テスト ／ 文系理科。知識・理解型（計算少なめ）',
+    mission:'体内環境とDNA、この2単元で半分。まず「ヒトの体」を固める。',
+    note:'',
+    tiers:{
+      S:[
+        {name:'環境変化への対応（体内環境・恒常性・免疫）', why:'出題量が最多で、詳細ゆえ失点しやすい。自律神経・ホルモン・血糖体温調節・免疫・肝臓腎臓。覚えれば確実に取れる、最大の得点源。', target:'血糖調節と免疫（自然・獲得）の流れを図で説明できる'},
+        {name:'遺伝情報（DNA）', why:'頻出。複製・転写・翻訳・細胞周期。塩基の割合など計算も少しあり、理解で差がつく。', target:'DNAの複製と転写・翻訳の流れを追える'}
+      ],
+      A:[
+        {name:'生物の多様性と生態系', why:'植生の遷移・バイオーム・物質循環（炭素・窒素）。暗記で安定して取れる。', target:'遷移の過程とバイオームの分布を説明できる'}
+      ],
+      B:[
+        {name:'生物の特徴 ＋ エネルギーの利用', why:'細胞小器官・原核真核・酵素・ATP・光合成呼吸の大枠。知識問題で確実に取り切る。', target:'細胞小器官の働きとATPの役割を説明できる'}
+      ]
+    }
+  },
+  {
+    id:'bio', code:'BIO', name:'生物',
+    ctx:'二次 ／ 理系。「考察力」で差がつく',
+    mission:'分子生物学と代謝を核に、神経の計算で差をつける。',
+    note:'生物二次は暗記より考察（データ解釈）で決まる。夏は分子生物と代謝の反応系を固め、計算単元で取りこぼさないのが設計。',
+    tiers:{
+      S:[
+        {name:'遺伝情報の発現（分子生物学・バイオテクノロジー）', why:'現代二次の中心。転写翻訳・発現調節・PCR・遺伝子組換え。考察問題の定番で、出題頻度が最も高い。', target:'遺伝子発現の実験考察を読み解ける'},
+        {name:'代謝（呼吸・光合成の反応系）', why:'詳細だが頻出。解糖系・クエン酸回路・電子伝達系・カルビン回路・ATP収支。反応経路の理解が問われる。', target:'呼吸・光合成の反応経路とATP収支を説明できる'},
+        {name:'生物の環境応答（神経・興奮の伝導）', why:'計算問題があり差がつく。静止電位・活動電位・伝導速度・筋収縮・植物ホルモン。', target:'興奮の伝導速度を計算できる'}
+      ],
+      A:[
+        {name:'生殖と発生（発生の考察）', why:'減数分裂・発生・誘導・形成体。発生実験の考察が頻出。', target:'誘導と形成体の実験考察を追える'},
+        {name:'生物の体内環境（免疫を深く）', why:'基礎より詳細な免疫・血液・腎臓。論述で問われる。', target:'抗体産生と免疫記憶の仕組みを説明できる'},
+        {name:'生物の進化と系統（ハーディ・ワインベルグ）', why:'HW法則は計算で確実に取れる。分子進化・系統分類も知識で拾える。', target:'ハーディ・ワインベルグ平衡で遺伝子頻度を計算できる'}
+      ],
+      B:[
+        {name:'細胞 ＋ 生態系と生物の多様性', why:'細胞小器官・生体膜／個体群・物質循環。知識で取る。標識再捕の計算は押さえておく。', target:'標識再捕法で個体群密度を計算できる'}
+      ]
+    }
+  }
+];
+
+const TIER_META = {
+  S:{label:'ロックオン', sub:'何が何でも解けるようにする', cls:'tier-s', badge:'TIER S'},
+  A:{label:'確保',       sub:'Sの次に確実に取り切る',   cls:'tier-a', badge:'TIER A'},
+  B:{label:'保留',       sub:'出題校・余力次第で格上げ', cls:'tier-b', badge:'TIER B'}
+};
+
+function unitHTML(u){
+  return `<div class="unit" tabindex="0">
+    <div class="unit-name">${u.name}</div>
+    <div class="unit-why">${u.why}</div>
+    <div class="unit-target">
+      <span class="ut-label">解ければOK</span>
+      <span class="ut-text">${u.target}</span>
+    </div>
+  </div>`;
+}
+
+function tierHTML(key, units){
+  if(!units || !units.length) return '';
+  const m = TIER_META[key];
+  const badge = key==='S' ? `${XH}${m.badge}` : m.badge;
+  return `<section class="tier ${m.cls}">
+    <div class="tier-head">
+      <span class="tier-badge">${badge}</span>
+      <span class="tier-title">${m.label}<span>${m.sub}</span></span>
+      <span class="tier-count">${units.length} 単元</span>
+    </div>
+    ${units.map(unitHTML).join('')}
+  </section>`;
+}
+
+function subjectPanel(s){
+  const note = s.note ? `<div class="hero-note">${s.note}</div>` : '';
+  return `<div class="panel" id="panel-${s.id}" role="tabpanel">
+    <div class="hero">
+      <div class="hero-eyebrow">${s.code}<span class="ctx">${s.ctx}</span></div>
+      <h1>${s.name}</h1>
+      <div class="mission">
+        <span class="mission-label">Mission</span>
+        <span class="mission-text">${s.mission}</span>
+      </div>
+      ${note}
+    </div>
+    <div class="body">
+      ${tierHTML('S', s.tiers.S)}
+      ${tierHTML('A', s.tiers.A)}
+      ${tierHTML('B', s.tiers.B)}
+    </div>
+  </div>`;
+}
+
+function methodPanel(){
+  const axes = [
+    ['1','出題頻度','どれだけ出るか。出ない単元に貴重な夏の時間は張らない。'],
+    ['2','基盤性','他単元の土台か。土台が崩れると、連鎖して失点が広がる。'],
+    ['3','レバレッジ','1時間あたりの得点貢献。同じ努力で最も点が伸びる単元へ寄せる。'],
+    ['4','独学適性','夏に独りで仕上がるか。暗記系は夏向き、理解系は伴走が前提。'],
+    ['5','単元独立性','その単元だけ切り出して得点できるか。独立して稼げる単元を優先。']
+  ];
+  const legs = [
+    ['leg-s','TIER S','ロックオン','頻度 × レバレッジ × 独立性が最高。何が何でも解けるようにする、夏の主戦場。'],
+    ['leg-a','TIER A','確保','高価値。Sを固めた上で、確実に取り切りにいく。'],
+    ['leg-b','TIER B','保留','出題校・余力次第。志望校が使うなら、迷わず格上げする。']
+  ];
+  return `<div class="panel active" id="panel-method" role="tabpanel">
+    <div class="hero">
+      <div class="hero-eyebrow">PLAN<span class="ctx">単元優先順位の考え方</span></div>
+      <h1>優先順位の設計図</h1>
+      <div class="mission">
+        <span class="mission-label">Doctrine</span>
+        <span class="mission-text">全部やるな。狙って溶かせ。</span>
+      </div>
+    </div>
+    <div class="body">
+      <p class="m-intro">「全単元を完璧に」は、夏では終わらない。だからこそ <b>“何が何でも解く”単元を狙い撃つ</b>。その選定を感覚でやらないための、5つの軸がこれ。</p>
+
+      <div class="m-section-label">選定の5軸</div>
+      <div class="axes">
+        ${axes.map(a=>`<div class="axis"><div class="axis-num">${a[0]}</div><div class="axis-name">${a[1]}</div><div class="axis-desc">${a[2]}</div></div>`).join('')}
+      </div>
+
+      <div class="m-section-label">3段階の格付け</div>
+      <div class="legend">
+        ${legs.map(l=>`<div class="leg ${l[0]}"><span class="leg-badge">${l[0]==='leg-s'?XH:''}${l[1]}</span><div class="leg-body"><b>${l[2]}</b><span>${l[3]}</span></div></div>`).join('')}
+      </div>
+
+      <div class="caveat">
+        <div class="caveat-title">設計の前提 ／ 必ず確認</div>
+        <ul>
+          <li><b>化学基礎・物理基礎・生物基礎</b> は共通テスト前提で設計。文系理科の主力科目として、計算と頻出知識に絞っている。</li>
+          <li><b>数Ⅲ・化学・物理・生物</b> は二次（記述）前提で設計。共通テストのみ狙いなら、比重が変わるので要調整。</li>
+          <li><b>Tier B（式と曲線・原子・高分子・進化と系統 など）</b> は志望校で出題有無を必ず確認。出るなら S / A へ格上げする。</li>
+          <li>この盤は<b>「型」</b>。生徒の志望校・現状の完成度に合わせて、朝倉 徹大がロジックを足せば、その生徒専用の作戦盤になる。</li>
+        </ul>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ---- Build nav ----
+const nav = document.getElementById('nav');
+const content = document.getElementById('content');
+
+let navHTML = `<div class="nav-eyebrow">Strategy</div>
+  <button class="nav-item active" data-target="method">
+    <span class="ni-code">△</span><span class="ni-name">優先順位の設計図</span>
+  </button>
+  <div class="nav-eyebrow">Subjects</div>`;
+navHTML += SUBJECTS.map(s=>`<button class="nav-item" data-target="${s.id}">
+    <span class="ni-code">${s.code}</span><span class="ni-name">${s.name}</span>
+  </button>`).join('');
+nav.innerHTML = navHTML;
+
+content.innerHTML = methodPanel() + SUBJECTS.map(subjectPanel).join('');
+
+// ---- Interaction ----
+const items = [...nav.querySelectorAll('.nav-item')];
+const panels = [...content.querySelectorAll('.panel')];
+items.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const t = btn.dataset.target;
+    items.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    panels.forEach(p=>p.classList.remove('active'));
+    const panel = document.getElementById('panel-'+t);
+    if(panel){panel.classList.add('active');}
+    content.scrollTop = 0;
+    window.scrollTo({top:0});
+  });
+});
+</script>
+</body>
+</html>

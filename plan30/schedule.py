@@ -43,40 +43,42 @@ CSS = """
 :root{--navy:#16233f;--navy2:#22345c;--ink:#1c2331;--sub:#5b6373;--gold:#c79a3b;--gold-d:#a97f26;
 --line:#e6e2d6;--tint:#faf8f2;--tint2:#f2f5fb;}
 *{box-sizing:border-box}
-html,body{margin:0;color:var(--ink);font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",IPAGothic,Meiryo,sans-serif;-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.en{font-family:Georgia,serif}
+html,body{margin:0;color:var(--ink);font-family:"Noto Sans CJK JP","Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,sans-serif;font-weight:500;letter-spacing:.01em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.mincho{font-family:"Noto Serif CJK JP","Hiragino Mincho ProN","Yu Mincho",serif}
+.en{font-family:Georgia,"Times New Roman","Noto Serif CJK JP",serif;font-feature-settings:"tnum" 1}
 .page{width:210mm;height:297mm;overflow:hidden;padding:14mm 14mm;position:relative;background:#fff}
 .page+.page{page-break-before:always}
 @page{size:A4;margin:0}
 /* cover/method */
 .hero{background:linear-gradient(160deg,#16233f,#22345c 60%,#2c4374);color:#fff;border-radius:16px;padding:26px 30px;margin-bottom:16px}
 .hero .k{letter-spacing:.42em;font-size:11px;color:var(--gold);font-weight:700}
-.hero h1{font-size:34px;margin:8px 0 6px;font-weight:800}
+.hero h1{font-family:"Noto Serif CJK JP","Hiragino Mincho ProN",serif;font-size:37px;margin:10px 0 8px;font-weight:900;letter-spacing:.04em}
 .hero h1 .a{color:#f2d492}
-.hero p{font-size:12.5px;color:#dbe1ee;line-height:1.85;margin:6px 0 0;max-width:165mm}
+.hero p{font-size:12.5px;color:#e3e8f2;line-height:1.95;margin:8px 0 0;max-width:165mm;font-weight:400}
+.hero p b{font-weight:700}
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:14px 0 6px}
 .card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:var(--tint)}
-.card .n{font-family:Georgia,serif;font-size:22px;font-weight:800;color:var(--navy)}
-.card .t{font-size:11px;color:var(--sub);margin-top:2px;font-weight:700}
-.card .d{font-size:10.5px;color:var(--sub);margin-top:4px;line-height:1.6}
-h2.sec{font-size:15px;color:var(--navy);border-left:5px solid var(--gold);padding-left:9px;margin:14px 0 8px}
+.card .n{font-family:Georgia,serif;font-size:23px;font-weight:800;color:var(--navy)}
+.card .t{font-size:11.5px;color:var(--navy);margin-top:2px;font-weight:700}
+.card .d{font-size:10.5px;color:#4a5262;margin-top:4px;line-height:1.65;font-weight:500}
+h2.sec{font-family:"Noto Serif CJK JP","Hiragino Mincho ProN",serif;font-size:16px;font-weight:700;color:var(--navy);border-left:5px solid var(--gold);padding-left:10px;margin:16px 0 9px;letter-spacing:.02em}
 .flow{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:6px}
 .step{border:1px solid var(--line);border-radius:10px;padding:10px 12px}
-.step .s{font-family:Georgia,serif;color:var(--gold-d);font-weight:800;font-size:13px}
-.step .h{font-weight:800;font-size:12.5px;margin:2px 0}
-.step .b{font-size:10.5px;color:var(--sub);line-height:1.6}
-.note{font-size:10.5px;color:var(--sub);line-height:1.7;background:var(--tint2);border-radius:8px;padding:8px 10px;margin-top:6px}
+.step .s{font-family:Georgia,serif;color:var(--gold-d);font-weight:800;font-size:13px;letter-spacing:.05em}
+.step .h{font-weight:700;font-size:13px;margin:3px 0;color:var(--navy)}
+.step .b{font-size:10.5px;color:#4a5262;line-height:1.65;font-weight:500}
+.note{font-size:11px;color:#454c5c;line-height:1.8;background:var(--tint2);border-radius:8px;padding:9px 12px;margin-top:6px;font-weight:500}
 /* table */
-.thead{font-size:15px;color:var(--navy);font-weight:800;margin:0 0 8px;display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--navy);padding-bottom:6px}
-.thead .ph{font-size:11px;color:#fff;background:var(--navy);border-radius:14px;padding:3px 12px}
-table{width:100%;border-collapse:collapse;font-size:11px}
-th{background:var(--navy);color:#fff;font-weight:700;font-size:10.5px;padding:6px 8px;text-align:left}
-td{padding:5.5px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+.thead{font-family:"Noto Serif CJK JP","Hiragino Mincho ProN",serif;font-size:17px;color:var(--navy);font-weight:700;margin:0 0 8px;display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--navy);padding-bottom:7px;letter-spacing:.02em}
+.thead .ph{font-family:"Noto Sans CJK JP",sans-serif;font-size:11px;font-weight:700;color:#fff;background:var(--navy);border-radius:14px;padding:3px 12px;letter-spacing:.06em}
+table{width:100%;border-collapse:collapse;font-size:12px}
+th{background:var(--navy);color:#fff;font-weight:700;font-size:11px;padding:8px 9px;text-align:left;letter-spacing:.04em}
+td{padding:6.6px 9px;border-bottom:1px solid var(--line);vertical-align:middle;font-weight:500}
 tr:nth-child(even) td{background:var(--tint)}
-.day{font-family:Georgia,serif;font-weight:800;color:var(--navy);white-space:nowrap}
-.new{font-family:Georgia,serif;font-weight:700;color:var(--ink)}
-.rev{color:var(--sub)}
-.tst{color:#0a4d8c;font-size:10.5px}
+.day{font-family:Georgia,serif;font-weight:700;color:var(--navy);white-space:nowrap;font-size:12.5px}
+.new{font-family:Georgia,serif;font-weight:700;color:var(--ink);font-size:12.5px;white-space:nowrap}
+.rev{color:#454c5c;font-size:11.5px;line-height:1.5}
+.tst{color:#0b3a6b;font-size:11px;font-weight:500;line-height:1.5}
 .chk{width:12px;height:12px;border:1.4px solid #9aa1b0;border-radius:3px;display:inline-block}
 .foot{position:absolute;left:14mm;right:14mm;bottom:8mm;display:flex;justify-content:space-between;font-size:10px;color:#b3b8c2;border-top:1px solid var(--line);padding-top:5px}
 .foot .b{letter-spacing:.28em;font-weight:700;color:#9aa1b0}
@@ -93,7 +95,7 @@ def table_html(sub, title, ph, part):
     return f'''<div class="page">
  <div class="thead"><span>30日1000単語暗記法　{esc(title)}</span><span class="ph">{esc(ph)}</span></div>
  <p style="font-size:11px;color:#5b6373;margin:0 0 8px">{esc(sub)}</p>
- <table><thead><tr><th style="width:64px">日</th><th style="width:88px">新規(50語)</th><th>復習</th><th style="width:210px">確認テスト</th><th style="width:34px">済</th></tr></thead>
+ <table><thead><tr><th style="width:62px">日</th><th style="width:104px">新規(50語)</th><th>復習</th><th style="width:212px">確認テスト</th><th style="width:34px">済</th></tr></thead>
  <tbody>{trs}</tbody></table>
  <div class="foot"><span class="b">THINKING</span><span>30日1000単語暗記法 &nbsp;/&nbsp; thinking-online.com</span></div>
 </div>'''

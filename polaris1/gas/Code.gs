@@ -47,7 +47,7 @@ function onOpen() {
     .addItem('全単元を一括作成（30単元）', 'createAllForms')
     .addSeparator()
     .addItem('データの読み込みを確認', 'previewData')
-    .create();
+    .addToUi();
 }
 
 // ===== データ読み込み ================================================

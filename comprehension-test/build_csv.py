@@ -1,61 +1,59 @@
 #!/usr/bin/env python3
-"""results/q{n}.json (検証済み) を横持ちCSVに組み上げる。
-
-列: 問題No, 問題, 訳, 問題01, 問題01の答え, 問題01の解説, ... 問題04の解説
-問題0X セル = 設問文 + 改行 + "A. .." 〜 "D. .." (セル内改行)
+"""基礎編(60文): results/q{n}.json + results/extra/q{n}.json を横持ちCSVに組む。
+新形式: 問題文・選択肢A/B/C/D・正解・解説をそれぞれ別セルに分ける(フォーム生成の安全化)。
 """
-import csv
-import json
-import sys
+import csv, json, sys
 from pathlib import Path
 
 BASE = Path('/tmp/claude-0/-home-user-thinking-hp/5f12d2a1-7df4-5ffd-924b-ed23125eba30/scratchpad')
-RESULTS = BASE / 'results'
 SENTS = json.load(open(BASE / 'sentences60.json'))
 OUT = Path(sys.argv[1]) if len(sys.argv) > 1 else BASE / 'questions-60.csv'
+MERGE_EXTRA = BASE / 'results' / 'extra'
 MAXQ = 6
-MERGE_EXTRA = (BASE / 'results' / 'extra')  # 追加問題(内容一致・英語言い換え)を末尾に結合
 
-errors = []
-rows = []
-for s in SENTS:
-    n = s['no']
-    f = RESULTS / f'q{n}.json'
+def qcols(i):
+    return [f'問題0{i}', f'問題0{i}選択肢A', f'問題0{i}選択肢B',
+            f'問題0{i}選択肢C', f'問題0{i}選択肢D', f'問題0{i}の答え', f'問題0{i}の解説']
+
+header = ['問題No', '問題', '訳']
+for i in range(1, MAXQ + 1):
+    header += qcols(i)
+
+errors, rows = [], []
+for e in SENTS:
+    n = e['no']
+    f = BASE / 'results' / f'q{n}.json'
     if not f.exists():
-        errors.append(f'No.{n}: 結果ファイルなし')
-        continue
+        errors.append(f'No.{n}: 結果ファイルなし'); continue
     try:
         data = json.loads(f.read_text(encoding='utf-8'))
-    except Exception as e:
-        errors.append(f'No.{n}: JSONパース失敗 ({e})')
-        continue
+    except Exception as ex:
+        errors.append(f'No.{n}: JSONパース失敗 ({ex})'); continue
     qs = list(data.get('questions', []))
-    # 追加問題(内容一致・英語言い換え)を末尾に結合
     ef = MERGE_EXTRA / f'q{n}.json'
     if ef.exists():
         try:
             qs += json.loads(ef.read_text(encoding='utf-8')).get('questions', [])
-        except Exception as e:
-            errors.append(f'No.{n}: extra JSONパース失敗 ({e})')
+        except Exception as ex:
+            errors.append(f'No.{n}: extra JSONパース失敗 ({ex})')
     if not (2 <= len(qs) <= MAXQ):
         errors.append(f'No.{n}: 問題数が範囲外 ({len(qs)})')
-    row = {'問題No': n, '問題': s['en'], '訳': s['ja']}
+    row = {'問題No': n, '問題': e['en'], '訳': e['ja']}
     for i, q in enumerate(qs[:MAXQ], 1):
         for k in ('q', 'a', 'b', 'c', 'd', 'answer', 'explanation'):
             if not str(q.get(k, '')).strip():
                 errors.append(f'No.{n} 問{i}: フィールド {k} が空')
         if str(q.get('answer', '')).strip().upper() not in ('A', 'B', 'C', 'D'):
             errors.append(f'No.{n} 問{i}: answer が不正 ({q.get("answer")})')
-        cell = q['q'].strip() + '\n' + '\n'.join(
-            f'{L}. {q[l].strip()}' for L, l in zip('ABCD', 'abcd'))
-        row[f'問題0{i}'] = cell
-        row[f'問題0{i}の答え'] = str(q['answer']).strip().upper()
-        row[f'問題0{i}の解説'] = q['explanation'].strip()
+        c = qcols(i)
+        row[c[0]] = q['q'].strip()
+        row[c[1]] = q['a'].strip()
+        row[c[2]] = q['b'].strip()
+        row[c[3]] = q['c'].strip()
+        row[c[4]] = q['d'].strip()
+        row[c[5]] = str(q['answer']).strip().upper()
+        row[c[6]] = q['explanation'].strip()
     rows.append(row)
-
-header = ['問題No', '問題', '訳']
-for i in range(1, MAXQ + 1):
-    header += [f'問題0{i}', f'問題0{i}の答え', f'問題0{i}の解説']
 
 with open(OUT, 'w', newline='', encoding='utf-8-sig') as fp:
     w = csv.DictWriter(fp, fieldnames=header)
@@ -63,16 +61,11 @@ with open(OUT, 'w', newline='', encoding='utf-8-sig') as fp:
     for row in rows:
         w.writerow({k: row.get(k, '') for k in header})
 
-print(f'書き出し: {OUT} ({len(rows)}行)')
 qcount = sum(1 for r in rows for i in range(1, MAXQ + 1) if r.get(f'問題0{i}'))
-print(f'設問総数: {qcount}')
-# 正解記号の分布(偏りチェック)
 from collections import Counter
 dist = Counter(r[f'問題0{i}の答え'] for r in rows for i in range(1, MAXQ + 1) if r.get(f'問題0{i}の答え'))
+print(f'書き出し: {OUT} ({len(rows)}行, {len(header)}列) / 設問総数: {qcount}')
 print('正解分布:', dict(sorted(dist.items())))
 if errors:
-    print('\n== 要確認 ==')
-    for e in errors:
-        print(' -', e)
-    sys.exit(1)
+    print('\n== 要確認 =='); [print(' -', e) for e in errors]; sys.exit(1)
 print('検証OK: 全行完全')

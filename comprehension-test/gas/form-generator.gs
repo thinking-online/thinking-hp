@@ -48,9 +48,9 @@ function createFormsFromSheet() {
     if (!no) return; // 空行スキップ
     const questions = [];
     for (let qi = 1; qi <= MAX_QUESTIONS; qi++) {
-      const qCell = String(row[col['q' + qi]] || '').trim();
-      if (!qCell) continue;
-      questions.push(parseQuestionCell_(qCell, String(row[col['a' + qi]] || ''), String(row[col['e' + qi]] || ''), no, qi, ri + 2));
+      const stem = String(row[col['q' + qi]] || '').trim();
+      if (!stem) continue; // 設問文が空 = その番号の設問なし
+      questions.push(buildQuestion_(row, col, stem, no, qi, ri + 2));
     }
     if (questions.length === 0) {
       throw new Error('行 ' + (ri + 2) + '(問題No ' + no + ')に設問がありません。');
@@ -80,41 +80,30 @@ function createFormsFromSheet() {
 }
 
 /**
- * 「問題0X」セルを設問文+選択肢A〜Dに分解し、答え・解説と合わせて検証する。
- * 期待形式: 設問文(複数行可)のあとに "A. " 〜 "D. " で始まる行が各1つ。
+ * 1問分を、分割された各列(設問文・選択肢A〜D・答え・解説)から組み立てる。
+ * 列構成: 問題0X / 問題0X選択肢A〜D / 問題0Xの答え / 問題0Xの解説
  */
-function parseQuestionCell_(qCell, answerCell, explanation, no, qi, rowNum) {
-  const lines = qCell.split('\n');
-  const questionLines = [];
-  const choices = { A: null, B: null, C: null, D: null };
-  let seenChoice = false;
-  lines.forEach(function (line) {
-    const m = line.match(/^([A-D])[.．]\s*(.*)$/);
-    if (m) {
-      seenChoice = true;
-      choices[m[1]] = (choices[m[1]] ? choices[m[1]] + '\n' : '') + m[2];
-    } else if (!seenChoice) {
-      questionLines.push(line);
-    } else if (line.trim()) {
-      // 選択肢の折り返し行(前の選択肢の続き)
-      const lastLetter = ['D', 'C', 'B', 'A'].find(function (L) { return choices[L] !== null; });
-      choices[lastLetter] += '\n' + line;
-    }
+function buildQuestion_(row, col, stem, no, qi, rowNum) {
+  const choices = {};
+  const missing = [];
+  ['A', 'B', 'C', 'D'].forEach(function (L) {
+    const v = String(row[col['ch' + qi + L]] || '').trim();
+    if (!v) missing.push(L);
+    choices[L] = v;
   });
-
-  const missing = ['A', 'B', 'C', 'D'].filter(function (L) { return !choices[L]; });
   if (missing.length) {
-    throw new Error('行 ' + rowNum + ' 問題0' + qi + ': 選択肢 ' + missing.join(',') + ' が見つかりません。セル内で "A. " 形式の行になっているか確認してください。');
+    throw new Error('行 ' + rowNum + ' 問題0' + qi + ': 選択肢 ' + missing.join(',') +
+      ' の列が空です(列「問題0' + qi + '選択肢' + missing.join('」「問題0' + qi + '選択肢') + '」を確認)。');
   }
-  const answer = String(answerCell).trim().charAt(0).toUpperCase();
+  const answer = String(row[col['a' + qi]] || '').trim().charAt(0).toUpperCase();
   if (['A', 'B', 'C', 'D'].indexOf(answer) === -1) {
-    throw new Error('行 ' + rowNum + ' 問題0' + qi + 'の答えが A〜D ではありません: "' + answerCell + '"');
+    throw new Error('行 ' + rowNum + ' 問題0' + qi + 'の答えが A〜D ではありません: "' + row[col['a' + qi]] + '"');
   }
   return {
-    title: '【英文' + no + '-問' + qi + '】 ' + questionLines.join('\n').trim(),
+    title: '【英文' + no + '-問' + qi + '】 ' + stem,
     choices: choices,
     answer: answer,
-    explanation: String(explanation).trim(),
+    explanation: String(row[col['e' + qi]] || '').trim(),
   };
 }
 
@@ -164,9 +153,13 @@ function indexColumns_(header) {
     ja: '訳',
   };
   for (let i = 1; i <= MAX_QUESTIONS; i++) {
-    map['q' + i] = '問題0' + i;
-    map['a' + i] = '問題0' + i + 'の答え';
-    map['e' + i] = '問題0' + i + 'の解説';
+    map['q' + i] = '問題0' + i;                     // 設問文
+    map['ch' + i + 'A'] = '問題0' + i + '選択肢A';   // 選択肢(各セル)
+    map['ch' + i + 'B'] = '問題0' + i + '選択肢B';
+    map['ch' + i + 'C'] = '問題0' + i + '選択肢C';
+    map['ch' + i + 'D'] = '問題0' + i + '選択肢D';
+    map['a' + i] = '問題0' + i + 'の答え';           // 正解(A/B/C/D)
+    map['e' + i] = '問題0' + i + 'の解説';           // 解説
   }
   const col = {};
   Object.keys(map).forEach(function (key) {

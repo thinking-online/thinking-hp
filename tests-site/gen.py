@@ -18,6 +18,7 @@ BOOKS = {
     "sokudoku":   {"title": "速読英熟語",      "csv": "sokudoku-test-maker/sokudoku_cloze_all.csv", "label": "熟語"},
     "eiken1":     {"title": "英検準1級",       "csv": "eiken1-test-maker/eiken1_cloze_all.csv",     "label": "見出し"},
     "eiken2":     {"title": "英検2級",         "csv": "eiken2-test-maker/eiken2_cloze_all.csv",     "label": "見出し"},
+    "summer300":  {"title": "夏休み英単語300", "csv": "summer300/summer300_cloze_all.csv",          "label": "重要語"},
 }
 CIRC = {1: "①", 2: "②", 3: "③", 4: "④"}
 

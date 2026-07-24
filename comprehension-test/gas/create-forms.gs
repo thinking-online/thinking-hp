@@ -32,6 +32,12 @@ var CONFIG = {
   },
 };
 
+// 「送信直後に採点・各問フィードバック表示」のテンプレフォームのID(下の手順で用意)。
+// このテンプレを複製して各フォームを作るので、テンプレのテスト設定(成績の発表=送信直後、
+// 回答者の設定3つ=オン)がすべてのフォームに引き継がれる。
+// 空文字のままだと、設定なしの通常フォームを新規作成する(採点表示は手動設定が必要になる)。
+var TEMPLATE_FORM_ID = '';
+
 var MAX_QUESTIONS = 5; // 1英文あたりの最大設問数(問題01〜問題05)。実際の列数は自動検出する。
 // 1つのフォームに入れる英文(行)の数。
 //   1  … 1英文ごとに1フォーム(入門60→60フォーム / 英文熟考→70フォーム)
@@ -165,13 +171,25 @@ function buildQuestion_(row, col, stem, no, qi, rowNum) {
   };
 }
 
-/** フォームを1つ生成し、指定フォルダに移動する */
+/** フォームを1つ生成し、指定フォルダに保存する */
 function buildForm_(title, sentences, folder) {
-  var form = FormApp.create(title);
+  var form;
+  if (TEMPLATE_FORM_ID) {
+    // テンプレを複製 → テスト設定(送信直後採点・各問フィードバック表示)を引き継ぐ
+    var copy = DriveApp.getFileById(TEMPLATE_FORM_ID).makeCopy(title, folder);
+    form = FormApp.openById(copy.getId());
+    // テンプレに入っている見本の質問をすべて削除
+    var items = form.getItems();
+    for (var k = items.length - 1; k >= 0; k--) form.deleteItem(items[k]);
+    form.setTitle(title);
+    // ※ 複製版では setIsQuiz を呼ばない(テストの表示設定がリセットされるのを防ぐため)
+  } else {
+    // テンプレ未設定: 通常のテストフォームを新規作成(採点の表示は各フォームで手動設定が必要)
+    form = FormApp.create(title);
+    form.setIsQuiz(true);
+  }
   form.setDescription(FORM_DESCRIPTION);
-  form.setIsQuiz(true);
   form.setProgressBar(true);
-  form.setCollectEmail(false); // 運用に合わせて変更可
   form.setShuffleQuestions(false);
 
   sentences.forEach(function (s, si) {
@@ -194,14 +212,15 @@ function buildForm_(title, sentences, folder) {
     });
   });
 
-  // 生成したフォーム(Driveファイル)を指定フォルダへ移動
-  var file = DriveApp.getFileById(form.getId());
-  try {
-    file.moveTo(folder);
-  } catch (e) {
-    // 古い環境向けフォールバック
-    folder.addFile(file);
-    DriveApp.getRootFolder().removeFile(file);
+  // 新規作成した場合のみ指定フォルダへ移動(複製版は既にフォルダ内にある)
+  if (!TEMPLATE_FORM_ID) {
+    var file = DriveApp.getFileById(form.getId());
+    try {
+      file.moveTo(folder);
+    } catch (e) {
+      folder.addFile(file);
+      DriveApp.getRootFolder().removeFile(file);
+    }
   }
 
   return {

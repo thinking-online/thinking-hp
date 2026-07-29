@@ -1157,3 +1157,173 @@ section {
   font-weight: 700;
   letter-spacing: 0.06em;
 }
+
+/* ── img-pair（画像並び）── */
+.img-pair {
+  margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.img-pair__item {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-card);
+  background: #fff;
+}
+
+.img-pair__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.img-pair__item figcaption {
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-align: center;
+  background: #f8f9fc;
+  border-top: 1px solid var(--hairline);
+}
+
+/* ── steps-grid / step-card ── */
+.steps-grid {
+  margin: 16px 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-card {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 18px 16px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--sage-light), var(--sage));
+}
+
+.step-card__num {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--sage);
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+
+.step-card__title {
+  margin: 0 0 8px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.45;
+}
+
+.step-card__text {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+/* ── スマホ全体の見切れ防止 ── */
+.phone * {
+  box-sizing: border-box;
+}
+
+/* reading-card の横幅が画面から出ないように */
+.reading-cards {
+  overflow: hidden;
+}
+
+.reading-card {
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.reading-card__title {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* link-chip-row のはみ出し防止 */
+.link-chip-row {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.link-chip {
+  max-width: 100%;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+/* stat-card の数値が小さい画面でも崩れないように */
+.stat-card__num {
+  font-size: clamp(42px, 14vw, 58px);
+}
+
+/* philosophy-box のテキスト */
+.philosophy-box {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* column-card のはみ出し防止 */
+.column-card__title,
+.column-card__text {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* summary-list のはみ出し防止 */
+.summary-list li {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* notice-item */
+.notice-item__title,
+.notice-item__body {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* sec-title の長い文字列 */
+.sec-title {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* hero-lead の改行 */
+.hero-lead {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 全体のスクロール横方向を封じる */
+body {
+  overflow-x: hidden;
+}

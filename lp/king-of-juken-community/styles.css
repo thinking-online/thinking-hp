@@ -1,4 +1,4 @@
-/* 王様の夏休み 追い込みチャレンジ */
+/* 受験の王様コミュニティ */
 
 :root {
   --green: #15402e;
@@ -313,9 +313,286 @@ p, h1, h2, h3, a, span {
 }
 
 /* ── Sections ── */
+.opcha,
 .study-room,
-.request-box {
+.report-system,
+.event-schedule,
+.request-box,
+.sticky-opcha {
   padding: 34px 18px 8px;
+}
+
+.schedule-empty {
+  margin: 0 0 4px;
+  padding: 18px 16px;
+  text-align: center;
+  background: linear-gradient(180deg, #fffef9, #f7f1e3);
+  border: 1.5px dashed rgba(168, 134, 63, 0.55);
+  border-radius: 14px;
+}
+
+.schedule-empty__badge {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 3px 10px;
+  background: var(--green);
+  color: var(--gold-light);
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  border-radius: 6px;
+}
+
+.schedule-empty__title {
+  margin: 0 0 8px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.04em;
+}
+
+.schedule-empty__body {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+.sticky-opcha {
+  padding-top: 18px;
+  padding-bottom: 0;
+}
+
+.section-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0 0 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(200, 163, 86, 0.5);
+  box-shadow: 0 16px 36px -18px rgba(13, 44, 31, 0.55);
+}
+
+.section-lead strong {
+  color: var(--green);
+  font-weight: 700;
+}
+
+.section-note {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  background: rgba(21, 64, 46, 0.06);
+  border-radius: 10px;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+
+.how-box {
+  margin: 0 0 18px;
+  padding: 14px 14px 12px;
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+}
+
+.how-box__title {
+  margin: 0 0 10px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.06em;
+}
+
+.how-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.how-steps li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.how-steps span {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--gold-light);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.thread-card {
+  display: flex;
+  gap: 12px;
+  margin: 0 0 14px;
+  padding: 14px 14px 12px;
+  background: linear-gradient(180deg, #fffef9, #f7f1e3);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+}
+
+.thread-card__num {
+  flex: none;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gold-deep);
+  line-height: 1.2;
+  padding-top: 2px;
+}
+
+.thread-card__body h3 {
+  margin: 0 0 6px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--green);
+  letter-spacing: 0.04em;
+}
+
+.thread-card__body > p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.75;
+  color: var(--ink-soft);
+}
+
+.example-list__label {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold-deep);
+}
+
+.example-list ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 6px;
+}
+
+.example-list li {
+  position: relative;
+  padding: 8px 10px 8px 28px;
+  background: #fff;
+  border: 1px solid rgba(200, 163, 86, 0.28);
+  border-radius: 8px;
+  font-size: 12.5px;
+  color: var(--ink);
+  line-height: 1.55;
+}
+
+.example-list li::before {
+  content: "▸";
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  color: var(--gold);
+  font-size: 11px;
+}
+
+.template-box {
+  margin: 18px 0 14px;
+  padding: 16px 14px 14px;
+  background: #123a29;
+  border-radius: 14px;
+  border: 1px solid rgba(200, 163, 86, 0.4);
+  box-shadow: 0 16px 36px -18px rgba(13, 44, 31, 0.65);
+}
+
+.template-box--entry {
+  margin-top: 12px;
+  background: #1a4a34;
+}
+
+.template-box__head {
+  margin-bottom: 12px;
+}
+
+.template-box__eyebrow {
+  margin: 0 0 4px;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  color: var(--gold-light);
+  text-transform: uppercase;
+}
+
+.template-box__head h3 {
+  margin: 0 0 6px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.06em;
+}
+
+.template-box__head p {
+  margin: 0;
+  font-size: 12px;
+  color: rgba(231, 208, 154, 0.85);
+  line-height: 1.6;
+}
+
+.template-box__text {
+  margin: 0 0 12px;
+  padding: 14px 14px;
+  background: rgba(255, 253, 246, 0.96);
+  border-radius: 10px;
+  border: 1px solid rgba(200, 163, 86, 0.35);
+  font-family: "Zen Kaku Gothic New", "Noto Sans JP", sans-serif;
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--ink);
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
+.copy-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 14px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #e7d09a, #c8a356);
+  color: var(--green-deep);
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+
+.copy-btn:active {
+  transform: scale(0.985);
+}
+
+.copy-btn.is-copied {
+  background: linear-gradient(180deg, #08d463, #06c755);
+  color: #fff;
 }
 
 .section-head {

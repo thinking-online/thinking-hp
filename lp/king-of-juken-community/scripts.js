@@ -1,10 +1,10 @@
 /**
- * 王様の夏休み 追い込みチャレンジ
+ * 受験の王様コミュニティ
  */
 (function () {
   "use strict";
 
-  var INTRO_KEY = "king-summer-boost-intro-seen";
+  var INTRO_KEY = "king-of-juken-community-intro-seen";
   var intro = document.getElementById("boostIntro");
   var reduceMo = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -84,4 +84,49 @@
   window.addEventListener("scroll", onScroll, { passive: true });
   window.addEventListener("resize", onScroll, { passive: true });
   onScroll();
+
+  function copyText(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    return new Promise(function (resolve, reject) {
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.left = "-9999px";
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand("copy");
+        resolve();
+      } catch (err) {
+        reject(err);
+      } finally {
+        document.body.removeChild(ta);
+      }
+    });
+  }
+
+  Array.prototype.forEach.call(document.querySelectorAll(".copy-btn"), function (btn) {
+    btn.addEventListener("click", function () {
+      var targetId = btn.getAttribute("data-target");
+      var el = targetId ? document.getElementById(targetId) : null;
+      if (!el) return;
+      var idle = btn.querySelector(".copy-btn__idle");
+      var done = btn.querySelector(".copy-btn__done");
+      copyText(el.textContent.replace(/^\n+|\n+$/g, "")).then(function () {
+        btn.classList.add("is-copied");
+        if (idle) idle.hidden = true;
+        if (done) done.hidden = false;
+        setTimeout(function () {
+          btn.classList.remove("is-copied");
+          if (idle) idle.hidden = false;
+          if (done) done.hidden = true;
+        }, 1800);
+      }).catch(function () {
+        /* ignore */
+      });
+    });
+  });
 })();

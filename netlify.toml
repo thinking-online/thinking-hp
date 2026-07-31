@@ -179,6 +179,16 @@
   to = "/lp/king-letter-202506-01/:splat"
   status = 200
 
+# LP: 王様の夏休み 追い込みチャレンジ — /king-summer-boost で公開
+[[redirects]]
+  from = "/king-summer-boost"
+  to = "/lp/king-summer-boost/index.html"
+  status = 200
+[[redirects]]
+  from = "/king-summer-boost/*"
+  to = "/lp/king-summer-boost/:splat"
+  status = 200
+
 # THINKING保護者通信 — /parent で公開
 [[redirects]]
   from = "/parent"

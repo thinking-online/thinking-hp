@@ -36,15 +36,15 @@
     setTimeout(function () {
       intro.classList.remove("boost-intro--entering");
       intro.classList.add("boost-intro--showing");
-    }, 100);
+    }, 60);
     setTimeout(function () {
       intro.classList.remove("boost-intro--showing");
       intro.classList.add("boost-intro--exiting");
-    }, 4800);
+    }, 1600);
     setTimeout(function () {
       markIntroSeen();
       finishIntro();
-    }, 5600);
+    }, 2100);
   } else if (intro) {
     finishIntro();
   }
@@ -63,7 +63,21 @@
   }
 
   var progress = document.getElementById("progress");
+  var quicknav = document.getElementById("quicknav");
+  var navBtns = quicknav
+    ? Array.prototype.slice.call(quicknav.querySelectorAll("[data-sec]"))
+    : [];
+  var sections = navBtns.map(function (btn) {
+    return document.getElementById(btn.getAttribute("data-sec"));
+  });
   var ticking = false;
+
+  function setActiveNav(id) {
+    for (var i = 0; i < navBtns.length; i++) {
+      var on = navBtns[i].getAttribute("data-sec") === id;
+      navBtns[i].classList.toggle("is-active", on);
+    }
+  }
 
   function onScroll() {
     if (ticking) return;
@@ -76,6 +90,18 @@
         var max = doc.scrollHeight - doc.clientHeight;
         var pct = max > 0 ? (window.scrollY / max) * 100 : 0;
         progress.style.width = Math.min(100, Math.max(0, pct)) + "%";
+      }
+      if (navBtns.length) {
+        var active = "top";
+        var mark = vh * 0.35;
+        for (var i = 0; i < sections.length; i++) {
+          var sec = sections[i];
+          if (!sec) continue;
+          if (sec.getBoundingClientRect().top <= mark) {
+            active = navBtns[i].getAttribute("data-sec");
+          }
+        }
+        setActiveNav(active);
       }
       ticking = false;
     });

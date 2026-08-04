@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>英語設計診断｜受験の王様</title>
+<meta name="description" content="学年別・全14問。語彙／文法／構造／読解の4分野からあなたの英語の弱点タイプを診断し、志望校合格への設計図の入口をつくります。">
+<meta property="og:title" content="英語設計診断｜受験の王様">
+<meta property="og:description" content="学年別・全14問・約5分。語彙/文法/構造/読解の4分野で、あなたの弱点タイプと今やるべき順番がわかります。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2239;
+  --navy-deep:#071829;
+  --grid:rgba(126,170,255,.07);
+  --gold:#E3B04B;
+  --gold-deep:#C39432;
+  --gold-soft:rgba(227,176,75,.14);
+  --paper:#FAF7EF;
+  --paper-line:#E5DEC9;
+  --ink:#182433;
+  --ink-sub:#5C6775;
+  --line-green:#06C755;
+  --radius:10px;
+  --font-body:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
+  --font-display:'Shippori Mincho','Hiragino Mincho ProN',serif;
+  --font-num:'Oswald','Noto Sans JP',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:16px}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:
+    linear-gradient(rgba(7,24,41,.55),rgba(7,24,41,.55)),
+    repeating-linear-gradient(0deg,transparent 0 31px,var(--grid) 31px 32px),
+    repeating-linear-gradient(90deg,transparent 0 31px,var(--grid) 31px 32px),
+    var(--navy);
+  min-height:100vh;
+  line-height:1.7;
+}
+.wrap{max-width:480px;margin:0 auto;padding:20px 16px 64px}
+
+/* ===== 共通パーツ ===== */
+.card{
+  background:var(--paper);
+  border:1px solid rgba(0,0,0,.08);
+  border-radius:var(--radius);
+  box-shadow:0 10px 30px rgba(0,0,0,.35);
+  padding:26px 20px;
+  animation:rise .35s ease both;
+}
+@keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.eyebrow{
+  font-size:.68rem;letter-spacing:.22em;font-weight:700;
+  color:var(--gold-deep);text-transform:uppercase;
+}
+h1.title{
+  font-family:var(--font-display);
+  font-weight:800;font-size:1.9rem;line-height:1.4;
+  margin:.4em 0 .3em;letter-spacing:.04em;
+}
+.lead{color:var(--ink-sub);font-size:.92rem}
+.chips{display:flex;gap:8px;margin:16px 0 4px;flex-wrap:wrap}
+.chip{
+  font-size:.75rem;font-weight:700;color:var(--ink);
+  border:1px solid var(--paper-line);background:#fff;
+  padding:4px 12px;border-radius:999px;
+}
+.btn{
+  display:block;width:100%;border:none;cursor:pointer;
+  font-family:var(--font-body);font-weight:700;font-size:1rem;
+  border-radius:var(--radius);padding:16px;
+  transition:transform .12s ease,box-shadow .12s ease,background .12s ease;
+  text-align:center;text-decoration:none;color:var(--ink);
+}
+.btn:active{transform:scale(.985)}
+.btn-primary{
+  background:linear-gradient(180deg,var(--gold),var(--gold-deep));
+  color:#231a05;box-shadow:0 6px 16px rgba(227,176,75,.35);
+  letter-spacing:.06em;
+}
+.btn-line{background:var(--line-green);color:#fff;box-shadow:0 6px 16px rgba(6,199,85,.3)}
+.btn-ghost{background:transparent;border:1px solid var(--paper-line);color:var(--ink-sub);font-weight:500;font-size:.88rem;padding:12px}
+.stack{display:grid;gap:12px;margin-top:20px}
+.step-label{
+  display:flex;align-items:baseline;gap:10px;margin-bottom:14px;
+}
+.step-num{font-family:var(--font-num);font-size:.8rem;font-weight:600;color:var(--gold-deep);letter-spacing:.1em}
+.step-q{font-weight:900;font-size:1.1rem}
+.grid-btns{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.grid-btns .btn{padding:14px 6px;background:#fff;border:1.5px solid var(--paper-line);font-size:.98rem}
+.grid-btns .btn.wide{grid-column:1/-1}
+.grid-btns .btn:active,.opt:active{border-color:var(--gold-deep);background:var(--gold-soft)}
+.group-label{font-size:.72rem;font-weight:700;color:var(--ink-sub);letter-spacing:.14em;margin:14px 0 8px}
+.group-label:first-of-type{margin-top:0}
+input.text{
+  width:100%;border:1.5px solid var(--paper-line);border-radius:var(--radius);
+  padding:14px;font-size:1rem;font-family:var(--font-body);background:#fff;
+}
+input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+
+/* ===== クイズ ===== */
+.quiz-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.qcount{font-family:var(--font-num);font-weight:600;font-size:1rem;color:var(--ink)}
+.qcount small{font-size:.72rem;color:var(--ink-sub);font-weight:500;letter-spacing:.06em}
+.qtotal{font-size:.72rem;color:var(--ink-sub);letter-spacing:.1em}
+.progress{height:6px;background:var(--paper-line);border-radius:99px;overflow:hidden;margin-bottom:18px}
+.progress i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-deep));border-radius:99px;transition:width .3s ease}
+.section-tag{
+  display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.14em;
+  color:var(--gold-deep);border:1px solid var(--gold-deep);border-radius:4px;
+  padding:2px 8px;margin-bottom:10px;
+}
+.qtext{font-weight:700;font-size:1.02rem;line-height:1.8;margin-bottom:6px;overflow-wrap:anywhere}
+.qtext .en{font-size:1.08rem}
+.passage{
+  background:#fff;border:1px solid var(--paper-line);border-left:3px solid var(--gold-deep);
+  border-radius:0 8px 8px 0;padding:12px 14px;margin:10px 0 4px;
+  font-size:.98rem;line-height:1.8;overflow-wrap:anywhere;
+}
+.qnote{font-size:.8rem;color:var(--ink-sub);margin-bottom:6px}
+.opts{display:grid;gap:10px;margin-top:16px}
+.opt{
+  display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  background:#fff;border:1.5px solid var(--paper-line);border-radius:var(--radius);
+  padding:13px 14px;font-size:.95rem;font-weight:500;cursor:pointer;
+  font-family:var(--font-body);line-height:1.6;color:var(--ink);
+  transition:border-color .12s,background .12s;overflow-wrap:anywhere;
+}
+.opt .key{
+  flex:0 0 26px;height:26px;border:1.5px solid var(--gold-deep);border-radius:6px;
+  font-family:var(--font-num);font-size:.8rem;font-weight:600;color:var(--gold-deep);
+  display:flex;align-items:center;justify-content:center;
+}
+.opt.selected{border-color:var(--gold-deep);background:var(--gold-soft)}
+.opt.selected .key{background:var(--gold-deep);color:#fff}
+.opt:disabled{cursor:default;opacity:.9}
+
+/* ===== 分析中 ===== */
+.analyzing{min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
+.spinner{
+  width:52px;height:52px;border-radius:50%;
+  border:3px solid var(--paper-line);border-top-color:var(--gold-deep);
+  animation:spin .9s linear infinite;
+}
+@keyframes spin{to{transform:rotate(360deg)}}
+.ana-line{font-size:.9rem;color:var(--ink-sub);font-weight:500;min-height:1.7em}
+
+/* ===== 結果シート ===== */
+.sheet{
+  border:2px solid var(--ink);border-radius:8px;position:relative;
+  background:var(--paper);
+  box-shadow:0 12px 34px rgba(0,0,0,.4);
+  animation:rise .4s ease both;
+}
+.sheet::before{
+  content:"";position:absolute;inset:6px;border:1px solid rgba(24,36,51,.28);
+  border-radius:5px;pointer-events:none;
+}
+.sheet-inner{padding:22px 20px 24px;position:relative}
+.titleblock{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  border-bottom:1.5px solid var(--ink);padding-bottom:12px;margin-bottom:18px;gap:10px;
+}
+.tb-left .eyebrow{color:var(--gold-deep)}
+.tb-left h2{font-family:var(--font-display);font-weight:800;font-size:1.28rem;letter-spacing:.05em;line-height:1.3}
+.tb-right{text-align:right;font-size:.66rem;color:var(--ink-sub);letter-spacing:.08em;line-height:1.9;white-space:nowrap}
+.tb-right b{display:block;font-family:var(--font-num);font-size:.78rem;color:var(--ink);font-weight:600}
+.profile-row{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--ink-sub);margin-bottom:18px}
+.profile-row b{color:var(--ink);font-weight:700}
+.scorebox{display:flex;align-items:flex-end;justify-content:center;gap:14px;margin:6px 0 4px}
+.score{font-family:var(--font-num);font-weight:600;font-size:4.4rem;line-height:1;color:var(--ink)}
+.score small{font-size:1.1rem;color:var(--ink-sub);font-weight:500;margin-left:4px}
+.lvl{
+  font-family:var(--font-num);font-weight:600;font-size:1.05rem;color:#231a05;
+  background:linear-gradient(180deg,var(--gold),var(--gold-deep));
+  border-radius:8px;padding:6px 12px;margin-bottom:10px;letter-spacing:.08em;
+}
+.typebox{text-align:center;margin:16px 0 6px}
+.typebox .cap{font-size:.7rem;letter-spacing:.24em;color:var(--ink-sub);font-weight:700}
+.typename{
+  font-family:var(--font-display);font-weight:800;font-size:1.75rem;
+  letter-spacing:.06em;margin:.15em 0 .35em;
+  border-bottom:3px double var(--gold-deep);display:inline-block;padding:0 .3em .1em;
+}
+.typedesc{font-size:.88rem;color:var(--ink);text-align:left;background:#fff;border:1px solid var(--paper-line);border-radius:8px;padding:14px}
+.fields{margin:20px 0 4px;display:grid;gap:10px}
+.frow{display:grid;grid-template-columns:3.2em 1fr 3em;align-items:center;gap:10px;font-size:.82rem}
+.frow .fname{font-weight:700}
+.frow .fbar{height:9px;background:var(--paper-line);border-radius:99px;overflow:hidden}
+.frow .fbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-deep));border-radius:99px}
+.frow .fpct{font-family:var(--font-num);font-weight:600;text-align:right}
+.weak{margin-top:16px}
+.weak .cap,.comment .cap,.gift .cap,.rx .cap{font-size:.7rem;letter-spacing:.2em;color:var(--ink-sub);font-weight:700;margin-bottom:8px}
+.weak-chips{display:flex;flex-wrap:wrap;gap:8px}
+.wchip{font-size:.8rem;font-weight:700;border:1.5px solid var(--ink);border-radius:6px;padding:4px 10px;background:#fff}
+.comment{margin-top:18px;font-size:.88rem;background:#fff;border-left:3px solid var(--gold-deep);padding:12px 14px;border-radius:0 8px 8px 0}
+.rx{margin-top:18px}
+.rx ol{list-style:none;display:grid;gap:8px}
+.rx li{
+  display:flex;gap:10px;align-items:flex-start;
+  background:#fff;border:1px solid var(--paper-line);border-radius:8px;
+  padding:10px 12px;font-size:.85rem;line-height:1.65;
+}
+.rx li .n{
+  flex:0 0 22px;height:22px;margin-top:2px;
+  background:var(--ink);color:var(--paper);border-radius:50%;
+  font-family:var(--font-num);font-size:.72rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+}
+.gap-line{
+  margin-top:18px;text-align:center;font-family:var(--font-display);
+  font-weight:600;font-size:.95rem;line-height:2;
+  border-top:1px dashed var(--paper-line);padding-top:16px;
+}
+.gift{
+  margin-top:18px;border:2px dashed var(--gold-deep);border-radius:var(--radius);
+  background:var(--gold-soft);padding:16px;font-size:.86rem;
+}
+.gift .cap{color:var(--gold-deep)}
+.gift b{font-weight:900}
+.cta{margin-top:20px;display:grid;gap:12px}
+.cta-note{text-align:center;font-size:.78rem;color:var(--ink-sub)}
+.copied{
+  display:none;text-align:center;font-size:.85rem;font-weight:700;color:#0a7a3d;
+  background:#eafaf0;border:1px solid #bfe8cf;border-radius:8px;padding:10px;
+}
+.copied.show{display:block;animation:rise .25s ease both}
+.retry{text-align:center;margin-top:22px}
+.retry a{color:rgba(250,247,239,.65);font-size:.8rem;text-decoration:underline;cursor:pointer}
+.foot{
+  text-align:center;margin-top:26px;color:rgba(250,247,239,.5);
+  font-size:.68rem;letter-spacing:.18em;
+}
+.start-note{font-size:.75rem;color:var(--ink-sub);text-align:center;margin-top:12px}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
+@media (max-width:360px){
+  h1.title{font-size:1.6rem}
+  .score{font-size:3.6rem}
+  .typename{font-size:1.45rem}
+}
+</style>
+</head>
+<body>
+<main class="wrap"><div id="app"></div><div class="foot">受験の王様｜学部別合格設計塾 THINKING</div></main>
+
+<script>
+/* ============================================================
+   ★ 差し替えポイント（運用前に必ず確認）
+   ① LINE_URL   … 公式LINEのURL
+   ② GIFT_TEXT  … 送信特典の文言
+   ③ QUIZZES    … 問題データ（設計ポリシーは同フォルダの README.md 参照）
+   ④ TYPES      … タイプ名・説明文・夏の処方箋
+============================================================ */
+const LINE_URL  = "https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=JDVkS9&liff_id=1656043253-rkMxPZMQ"; // ★①
+const GIFT_TEXT = "この結果をLINEに送ってくれた人限定で、学年別「夏の英語設計シート」をプレゼント。さらに希望者は、無料の英語設計面談へご案内します。"; // ★②
+
+/* ---------- 学年（アンケートは7分岐 / テストは6セット） ---------- */
+const GRADES = [
+  {id:"j1", label:"中1", quiz:"j1", group:"中学生"},
+  {id:"j2", label:"中2", quiz:"j2", group:"中学生"},
+  {id:"j3", label:"中3", quiz:"j3", group:"中学生"},
+  {id:"h1", label:"高1", quiz:"h1", group:"高校生"},
+  {id:"h2", label:"高2", quiz:"h2", group:"高校生"},
+  {id:"h3", label:"高3", quiz:"h3", group:"高校生"},
+  {id:"rn", label:"既卒・浪人", quiz:"h3", group:"既卒", wide:true}
+];
+
+const DEV_BANDS = ["〜45","45〜52","52〜58","58〜65","65〜","模試未受験・わからない"];
+
+/* ============================================================
+   問題データ ★③
+   ・各学年14問＝語彙4／文法4／構造3／読解3
+   ・語彙は「意味当て」ではなく文脈選択（丸暗記では解けない）
+   ・誤答の選択肢は、それぞれ典型的なつまずきに対応させる
+   ・出題範囲は「その学年の8月時点で既習」の内容に限定
+   ・f: vocab / grammar / structure / reading
+   ・u: 弱点単元名（結果とLINE送信テキストに表示される）
+   ・p: 読解の英文パッセージ（読解のみ）
+   ・a: 正解のインデックス（表示時に選択肢はシャッフルされる）
+============================================================ */
+const QUIZZES = {
+/* ---------- 中1（be動詞・一般動詞・疑問文・否定文・can まで） ---------- */
+j1:[
+ {f:"vocab",u:"語彙：基本単語",q:"I get up at seven in the morning and eat（　）.",c:["breakfast","dinner","lunch","night"],a:0},
+ {f:"vocab",u:"語彙：基本単語",q:"A: What（　）do you like?<br>B: I like blue.",c:["color","sport","food","animal"],a:0},
+ {f:"vocab",u:"語彙：基本単語",q:"A: Are you a（　）?<br>B: Yes. I work at a hospital and help sick people.",c:["doctor","teacher","driver","farmer"],a:0},
+ {f:"vocab",u:"語彙：基本単語",q:"I like music. I（　）the guitar every day.",c:["play","listen","eat","go"],a:0},
+ {f:"grammar",u:"文法：be動詞",q:"I（　）a student at Minami Junior High School.",c:["am","is","are","do"],a:0},
+ {f:"grammar",u:"文法：一般動詞の疑問文",q:"（　）you like English?",c:["Do","Are","Does","Is"],a:0},
+ {f:"grammar",u:"文法：be動詞と主語",q:"Ken and I（　）in the tennis club.",c:["are","am","is","do"],a:0},
+ {f:"grammar",u:"文法：代名詞",q:"This is Yuki.（　）is my sister.",c:["She","Her","Hers","He"],a:0},
+ {f:"structure",u:"構造：語順（SVO）",q:"「私は毎日、英語を勉強します」<br>正しい英文は？",c:["I study English every day.","I every day study English.","I English study every day.","Study I English every day."],a:0},
+ {f:"structure",u:"構造：疑問文の語順",q:"「あなたのお母さんは医者ですか？」<br>正しい英文は？",c:["Is your mother a doctor?","Are your mother a doctor?","Does your mother a doctor?","Is a doctor your mother?"],a:0},
+ {f:"structure",u:"構造：否定文",q:"「私はサッカーファンではありません」<br>正しい英文は？",c:["I am not a soccer fan.","I don't a soccer fan.","I am a not soccer fan.","I not am a soccer fan."],a:0},
+ {f:"reading",u:"読解：内容一致",p:"This is my friend Emma. She is from Australia. She can play the piano very well, but she can't play tennis.",q:"エマが「できること」は？",c:["ピアノを上手に弾くこと","テニスをすること","日本語を話すこと","歌を歌うこと"],a:0},
+ {f:"reading",u:"読解：内容一致",p:"I am Taku. I like summer. I swim in the sea with my brother every August.",q:"タクが8月に毎年することは？",c:["兄弟と海で泳ぐ","山に登る","図書館で勉強する","サッカーをする"],a:0},
+ {f:"reading",u:"読解：指示語（it）",p:"A: Do you like this song?<br>B: Yes! I listen to it every day.",q:"Bの言う「it」が指しているものは？",c:["この歌","Aさん","毎日","ラジオ"],a:0}
+],
+/* ---------- 中2（過去形・未来・不定詞・接続詞 まで／比較・受動態は出さない） ---------- */
+j2:[
+ {f:"vocab",u:"語彙：基本動詞",q:"The train（　）at Tokyo Station at ten in the morning.",c:["arrives","practices","invites","borrows"],a:0},
+ {f:"vocab",u:"語彙：基本動詞",q:"This question is too difficult. I can't（　）it.",c:["answer","open","visit","listen"],a:0},
+ {f:"vocab",u:"語彙：基本名詞",q:"Let's watch the（　）report before we go camping tomorrow.",c:["weather","winter","water","wall"],a:0},
+ {f:"vocab",u:"語彙：borrow / lend",q:"Can I（　）your dictionary? I left mine at home.",c:["borrow","lend","give","sell"],a:0},
+ {f:"grammar",u:"文法：不規則動詞の過去形",q:"I（　）to the library last Sunday and read some books.",c:["went","go","goed","gone"],a:0},
+ {f:"grammar",u:"文法：未来（will＋be）",q:"My sister（　）fifteen years old next month.",c:["will be","will","is going","will is"],a:0},
+ {f:"grammar",u:"文法：不定詞（目的）",q:"I went to the park（　）soccer with my friends.",c:["to play","play","playing","played"],a:0},
+ {f:"grammar",u:"文法：接続詞when",q:"（　）I got home, my mother was cooking dinner.",c:["When","If","That","Or"],a:0},
+ {f:"structure",u:"構造：be動詞の過去形",q:"「私は昨夜、とても疲れていました」<br>正しい英文は？",c:["I was very tired last night.","I very tired last night.","I did very tired last night.","I were very tired last night."],a:0},
+ {f:"structure",u:"構造：want to＋動詞",q:"「私はあなたにまた会いたいです」<br>正しい英文は？",c:["I want to see you again.","I want see you again.","I want seeing you again.","I want to seeing you again."],a:0},
+ {f:"structure",u:"構造：if節の時制",q:"「もし明日晴れたら、私は釣りに行きます」<br>正しい英文は？",c:["If it is sunny tomorrow, I will go fishing.","If it will be sunny tomorrow, I will go fishing.","If it is sunny tomorrow, I went fishing.","If it sunny tomorrow, I will go fishing."],a:0},
+ {f:"reading",u:"読解：話の流れ（but / so）",p:"Last Saturday, Mika went shopping with her mother. She wanted a blue T-shirt, but the shop didn't have one. So she bought a white one.",q:"ミカが買ったものは？",c:["白いTシャツ","青いTシャツ","何も買わなかった","帽子"],a:0},
+ {f:"reading",u:"読解：理由の把握",p:"Tom is going to visit Japan next month. He is studying Japanese every day because he wants to talk with people in Japanese.",q:"トムが毎日日本語を勉強している理由は？",c:["日本語で人と話したいから","日本のアニメが好きだから","学校のテストがあるから","先生に言われたから"],a:0},
+ {f:"reading",u:"読解：指示語（it）",p:"Our school has a music festival in November. Many students practice hard for it after school.",q:"「it」が指しているものは？",c:["音楽祭","学校","11月","放課後"],a:0}
+],
+/* ---------- 中3（現在完了・受動態・不定詞応用 まで／分詞・関係代名詞は出さない） ---------- */
+j3:[
+ {f:"vocab",u:"語彙：受験基礎単語",q:"Studying abroad was a great（　）for me. I learned a lot from it.",c:["experience","accident","examination","habit"],a:0},
+ {f:"vocab",u:"語彙：受験基礎単語",q:"We must protect the（　）for children in the future.",c:["environment","entrance","experiment","opinion"],a:0},
+ {f:"vocab",u:"語彙：受験基礎単語",q:"The number of foreign visitors to Japan is（　）every year.",c:["increasing","arriving","borrowing","inviting"],a:0},
+ {f:"vocab",u:"語彙：受験基礎単語",q:"My brother lives（　）now. He studies English in Canada.",c:["abroad","early","suddenly","carefully"],a:0},
+ {f:"grammar",u:"文法：現在完了（経験）",q:"I have（　）this movie three times.",c:["seen","see","saw","seeing"],a:0},
+ {f:"grammar",u:"文法：受動態（過去）",q:"These pictures（　）by my grandfather fifty years ago.",c:["were taken","took","are taken","was taken"],a:0},
+ {f:"grammar",u:"文法：It is … for 人 to",q:"It is important（　）us to read many books.",c:["for","of","at","with"],a:0},
+ {f:"grammar",u:"文法：現在完了（継続）",q:"Ken and I（　）friends since we were children.",c:["have been","are","were","have"],a:0},
+ {f:"structure",u:"構造：受動態の疑問文",q:"「この部屋は毎日そうじされていますか？」<br>正しい英文は？",c:["Is this room cleaned every day?","Does this room clean every day?","Is this room cleaning every day?","Does this room cleaned every day?"],a:0},
+ {f:"structure",u:"構造：現在完了（never）",q:"「私は一度も納豆を食べたことがありません」<br>正しい英文は？",c:["I have never eaten natto.","I have never eat natto.","I don't have eaten natto.","I was never eaten natto."],a:0},
+ {f:"structure",u:"構造：how to〜",q:"「駅への行き方を教えてくれませんか？」<br>正しい英文は？",c:["Could you tell me how to get to the station?","Could you tell me how to the station get?","Could you tell me what to get to the station?","Could you tell me how getting to the station?"],a:0},
+ {f:"reading",u:"読解：きっかけの把握",p:"Aya has wanted to be a nurse since she visited her grandmother in the hospital. Now she studies science hard every day.",q:"アヤが看護師になりたいと思ったきっかけは？",c:["入院中の祖母を訪ねたこと","理科が得意だったこと","母が看護師だったこと","テレビ番組を見たこと"],a:0},
+ {f:"reading",u:"読解：内容一致",p:"Many people think that tomatoes are vegetables, but in science class, we learned that they are actually a kind of fruit.",q:"この文章の内容と合うものは？",c:["トマトは科学的には果物の一種だ","トマトは野菜の一種だと授業で習った","トマトは人気がない","理科の授業でトマトを育てた"],a:0},
+ {f:"reading",u:"読解：指示語（it）",p:"Riku practices judo every day. His dream is to win the national tournament. To make it come true, he also runs five kilometers every morning.",q:"「it」が指している内容は？",c:["全国大会で優勝するという夢","毎日の柔道の練習","5キロ走ること","毎朝早く起きること"],a:0}
+],
+/* ---------- 高1（5文型・時制・助動詞・受動態 まで／関係詞・仮定法は出さない） ---------- */
+h1:[
+ {f:"vocab",u:"語彙：高校基礎単語",q:"This website（　）useful information about studying abroad.",c:["provides","invents","solves","celebrates"],a:0},
+ {f:"vocab",u:"語彙：高校基礎単語",q:"Don't miss this（　）to talk with students from other countries.",c:["opportunity","ability","memory","custom"],a:0},
+ {f:"vocab",u:"語彙：高校基礎単語",q:"Reading English every day will（　）your vocabulary.",c:["improve","apologize","graduate","disappear"],a:0},
+ {f:"vocab",u:"語彙：高校基礎単語",q:"I（　）with your idea. Let's think of a different plan.",c:["disagree","agree","argue","answer"],a:0},
+ {f:"grammar",u:"文法：SVOC（make O C）",q:"The news made us（　）.",c:["happy","happily","to happy","happiness"],a:0},
+ {f:"grammar",u:"文法：過去形vs現在完了",q:"I（　）Kyoto two years ago.",c:["visited","have visited","have been to","was visited"],a:0},
+ {f:"grammar",u:"文法：助動詞の推量",q:"Kenta（　）be tired. He ran twenty kilometers today.",c:["must","can't","may not","shall"],a:0},
+ {f:"grammar",u:"文法：受動態",q:"This library（　）fifty years ago.",c:["was built","built","is built","was building"],a:0},
+ {f:"structure",u:"構造：文型（SVOO）",q:"次の文の文型は？<br><span class='en'>My uncle gave me this watch.</span>",c:["第4文型（SVOO）","第3文型（SVO）","第5文型（SVOC）","第2文型（SVC）"],a:0},
+ {f:"structure",u:"構造：SVC（補語）",q:"His idea sounded（　）to everyone.",c:["strange","strangely","strangeness","to strange"],a:0},
+ {f:"structure",u:"構造：that節の働き",q:"<span class='en'>I think that this plan will work.</span><br>「that this plan will work」のはたらきは？",c:["動詞thinkの目的語","文全体の主語","補語","planの修飾"],a:0},
+ {f:"reading",u:"読解：However（逆接）",p:"More and more high school students in Japan are using online learning apps. However, some teachers say that studying only with apps is not enough to build writing skills.",q:"一部の先生たちの意見は？",c:["アプリだけの学習ではライティング力を伸ばすには不十分だ","アプリ学習は最も効果的な方法だ","生徒はアプリを使うべきではない","紙の辞書は必要ない"],a:0},
+ {f:"reading",u:"読解：内容一致",p:"Emi wants to study abroad, so she is saving money by working part-time at a convenience store. She also takes an online English lesson twice a week.",q:"エミについて正しいものは？",c:["留学のためにアルバイトでお金を貯めている","週に2回コンビニで働いている","すでに海外で勉強している","英語の先生になった"],a:0},
+ {f:"reading",u:"読解：指示語（This）",p:"Our brains need sleep to organize new information. This is why studying all night before a test often doesn't work well.",q:"「This」が指している内容は？",c:["脳は新しい情報を整理するために睡眠を必要とするということ","テスト前の徹夜がうまくいかないこと","テストが難しすぎること","覚える情報が多すぎること"],a:0}
+],
+/* ---------- 高2（関係詞・比較・動名詞/不定詞・仮定法過去 まで／分詞構文は出さない） ---------- */
+h2:[
+ {f:"vocab",u:"語彙：入試頻出単語",q:"The teacher（　）the importance of reading aloud every day.",c:["emphasized","declined","postponed","obeyed"],a:0},
+ {f:"vocab",u:"語彙：入試頻出単語",q:"The number of children in this town has been（　）for twenty years.",c:["declining","emphasizing","exchanging","admiring"],a:0},
+ {f:"vocab",u:"語彙：入試頻出単語",q:"This service is（　）to all students for free.",c:["available","harmful","absent","equal"],a:0},
+ {f:"vocab",u:"語彙：入試頻出単語",q:"Volunteers（　）to the local community by cleaning the river every month.",c:["contribute","object","apologize","refer"],a:0},
+ {f:"grammar",u:"文法：関係代名詞vs関係副詞",q:"Kamakura is a city（　）many tourists love.",c:["which","where","when","what"],a:0},
+ {f:"grammar",u:"文法：forget to／-ing",q:"Don't forget（　）the door when you leave home.",c:["to lock","locking","lock","locked"],a:0},
+ {f:"grammar",u:"文法：仮定法過去",q:"If I（　）more time, I would learn another language.",c:["had","have","will have","had had"],a:0},
+ {f:"grammar",u:"文法：倍数表現",q:"The new stadium is three times（　）the old one.",c:["as large as","larger","as larger as","largest of"],a:0},
+ {f:"structure",u:"構造：関係代名詞の省略",q:"<span class='en'>The book I borrowed from Ken was really exciting.</span><br>「I borrowed from Ken」のはたらきは？",c:["The bookを後ろから説明している","文全体の主語","wasの補語","excitingの修飾"],a:0},
+ {f:"structure",u:"構造：形式目的語it",q:"<span class='en'>I found it difficult to keep a diary in English.</span><br>この「it」が指すものは？",c:["to keep a diary in English","a diary","English","前の文の内容"],a:0},
+ {f:"structure",u:"構造：what節が主語",q:"<span class='en'>What she said at the meeting changed my mind.</span><br>この文の主語は？",c:["What she said at the meeting","she","the meeting","my mind"],a:0},
+ {f:"reading",u:"読解：However（逆接）",p:"Some people say that listening to music while studying helps them concentrate. However, research suggests that music with lyrics often lowers reading comprehension.",q:"研究が示していることは？",c:["歌詞のある音楽は文章の理解度を下げることが多い","音楽は集中力を高める","音楽なしでは勉強できない","クラシック音楽が最も良い"],a:0},
+ {f:"reading",u:"読解：具体例→主張",p:"Convenience stores in Japan offer many services: you can pay bills, send packages, and even buy concert tickets. They are no longer just places to buy food.",q:"筆者が最も言いたいことは？",c:["コンビニはもはや食品を買うだけの場所ではない","コンビニの食品は値段が高い","コンビニの数は減っている","海外にはコンビニがない"],a:0},
+ {f:"reading",u:"読解：内容の言い換え",p:"Studying with friends has one big advantage. When you explain something to others, you understand it more deeply yourself.",q:"「one big advantage」の内容は？",c:["人に説明することで自分自身の理解が深まること","友達が増えること","勉強時間を減らせること","テスト範囲を教えてもらえること"],a:0}
+],
+/* ---------- 高3・既卒（全範囲・入試レベル） ---------- */
+h3:[
+ {f:"vocab",u:"語彙：入試上級単語",q:"He didn't break the vase（　）— it was just an accident.",c:["deliberately","accidentally","gradually","previously"],a:0},
+ {f:"vocab",u:"語彙：入試上級単語",q:"There is no（　）for hard work — no tool can take its place.",c:["substitute","obstacle","prejudice","compliment"],a:0},
+ {f:"vocab",u:"語彙：入試上級単語",q:"She（　）major surgery in June, and it took her two months to recover.",c:["underwent","performed","avoided","delayed"],a:0},
+ {f:"vocab",u:"語彙：入試上級単語",q:"The aging of the population is an（　）trend in many developed countries — no policy can completely stop it.",c:["inevitable","incredible","invisible","innumerable"],a:0},
+ {f:"grammar",u:"文法：仮定法（if省略の倒置）",q:"（　）I known about the meeting, I would have attended it.",c:["Had","If","Should","Were"],a:0},
+ {f:"grammar",u:"文法：関係代名詞what",q:"The movie was different from（　）I had expected.",c:["what","that","which","whom"],a:0},
+ {f:"grammar",u:"文法：否定語句の倒置",q:"Little（　）that this small decision would change his life.",c:["did he know","he knew","he did know","knew he"],a:0},
+ {f:"grammar",u:"文法：前置詞vs接続詞",q:"（　）the heavy rain, the game continued.",c:["Despite","Although","However","Because"],a:0},
+ {f:"structure",u:"構造：that節が主語",q:"<span class='en'>That he passed the exam without any preparation surprised everyone.</span><br>この文の主語は？",c:["That he passed the exam without any preparation","he","everyone","the exam"],a:0},
+ {f:"structure",u:"構造：副詞節内の省略",q:"<span class='en'>While（　）in Canada, she made many friends from different countries.</span><br>カッコに省略されている語は？",c:["she was","it was","there was","they were"],a:0},
+ {f:"structure",u:"構造：挿入とSVの把握",q:"<span class='en'>The ability to ask good questions, many researchers say, matters more than the ability to give quick answers.</span><br>この文の中心となる主語（S）と動詞（V）は？",c:["S：The ability to ask good questions ／ V：matters","S：many researchers ／ V：say","S：The ability ／ V：say","S：good questions ／ V：matters"],a:0},
+ {f:"reading",u:"読解：主張の把握",p:"Many people believe that talent determines success. However, recent studies suggest that how long and how well you practice matters far more than any innate gift.",q:"この文章の主張に最も近いものは？",c:["才能よりも練習の量と質のほうがはるかに重要だ","成功は生まれつきの才能で決まる","練習しても才能には勝てない","成功の要因はまだ解明されていない"],a:0},
+ {f:"reading",u:"読解：具体例の役割",p:"First impressions are hard to change. For example, in one experiment, interviewers made their decisions within the first five minutes of a thirty-minute interview.",q:"実験の例は、何を示すために挙げられている？",c:["第一印象は変わりにくいということ","面接は30分行うのが最適だということ","面接官には訓練が必要だということ","5分で人の能力を正確に測れるということ"],a:0},
+ {f:"reading",u:"読解：In other words（言い換え）",p:"Online reviews strongly influence what we buy. Yet studies show that a small number of users write most of the reviews. In other words, the \"voice of the customer\" may represent only a tiny part of all customers.",q:"筆者が示唆していることは？",c:["ネットのレビューは全顧客のごく一部の意見にすぎない可能性がある","レビューを書く人の意見は信頼できる","レビューは購買にほとんど影響しない","レビューの数は年々減っている"],a:0}
+]
+};
+
+/* ---------- タイプ判定 ★④ ---------- */
+const TYPES = {
+ vocab:{name:"単語迷子型",desc:"文法や構造は見えているのに、単語で止まって迷子になるタイプ。語彙の「量」と「回し方」を設計し直すだけで、読めるスピードが一気に変わります。",
+  rx:["1冊の単語帳を決めて「見出し語を見て1秒で意味が言える」まで同じ範囲を周回する","派生語や細かい語法より、まず頻出1000語の完全定着を優先する","長文で出会った知らない単語は、その場で単語帳の該当ページに戻って確認する"]},
+ grammar:{name:"文法穴あき型",desc:"全体はできているのに、特定の単元にだけ穴があるタイプ。穴の場所はすでに特定できているので、埋める順番さえ設計すれば最短で伸びます。",
+  rx:["今回の診断で出た「弱点単元」だけをピンポイントで復習する（全部やり直さない）","問題集は「なぜその答えになるか」を口で説明できたら次に進む","1単元につき例文3文を暗唱して仕上げにする"]},
+ structure:{name:"構造ブラックボックス型",desc:"単語も文法も知っているのに、文になると「なんとなく読み」になるタイプ。SVOCと修飾関係のつかみ方を入れると、長文が別物になります。",
+  rx:["1日1文でいいので、SVOCを振ってから和訳する「構文解釈」を習慣にする","訳せない文は「どこからどこまでが主語か」を特定するところから始める","音読はSVOCのカタマリを意識しながら1文5回"]},
+ reading:{name:"読解失速型",desc:"一文一文は読めるのに、文章になると内容が頭に残らないタイプ。「なんとなく読み」を「論理で読む」に変えると、得点が一気に安定します。",
+  rx:["段落ごとに「一言要約」をメモしながら読む練習をする","However / For example などの論理マーカーに印をつけて読む","設問に答えるときは、本文中の根拠に必ず下線を引いてから選ぶ"]},
+ kiso:{name:"基礎再設計型",desc:"複数の分野に穴がある状態。逆に言えば、正しい順番で積み直せば伸び幅が最も大きいタイプです。根性ではなく、順番の問題です。",
+  rx:["この夏やることを「単語＋診断で出た弱点単元」の2つに絞る","1つ前の学年の範囲に戻る勇気を持つ（それが実は最短ルート）","毎日同じ時間に英語30分を固定して、継続を仕組み化する"]},
+ jissen:{name:"実戦設計型",desc:"基礎はすでに完成レベル。ここからは志望校の出題形式に合わせて、過去問と実戦演習をどう配置するかの「実戦設計」フェーズです。",
+  rx:["志望校の過去問を1年分、時間を測って解いてみる","落とした問題を「語彙／文法／構造／読解」に分類して原因を特定する","出題形式（長文・英作文・リスニング）ごとの対策配分を決める"]}
+};
+
+const FIELD_LABEL = {vocab:"語彙",grammar:"文法",structure:"構造",reading:"読解"};
+const SECTION_TAG = {vocab:"第1問｜文脈語彙",grammar:"第2問｜文法",structure:"第3問｜構造",reading:"第4問｜読解"};
+
+const GRADE_COMMENT = {
+ j1:"中1の夏は、英語の「型」を身につける最初の分岐点。",
+ j2:"中2の夏は、過去・未来・不定詞で一気に差がつく時期。",
+ j3:"中3の夏は、受験英語の土台が固まるかどうかの分かれ目。",
+ h1:"高1の夏は、文型と時制という英語の骨格をつくる時期。",
+ h2:"高2の夏は、文法を完成させて「解釈」に入れるかの分岐点。",
+ h3:"この夏は、基礎の穴を埋めて過去問に接続する最重要期。"
+};
+
+const LEVEL_COMMENT = {
+ 5:"この時期として非常に高い完成度です。あとは志望校に向けた実戦設計だけ。",
+ 4:"土台はほぼ完成しています。残りの弱点を埋めれば、得点は一気に安定します。",
+ 3:"いま最も伸びしろが大きいゾーンです。弱点の埋め方＝設計しだいで結果が大きく変わります。",
+ 2:"基礎に複数の穴があるサインです。今から正しい順番で埋めれば、まだ十分に間に合います。",
+ 1:"焦る必要はありません。土台からの再設計が、実は合格への最短ルートです。"
+};
+
+/* ============================================================ */
+const app = document.getElementById("app");
+let S = {};
+
+function resetState(){
+  S = {gradeId:null, gradeLabel:"", quizKey:"", school:"", dev:"", qIndex:0, items:[], answers:[], code:""};
+}
+
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+
+function makeCode(){
+  const d = new Date();
+  const mmdd = String(d.getMonth()+1).padStart(2,"0") + String(d.getDate()).padStart(2,"0");
+  const chars = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
+  let r = "";
+  for(let i=0;i<4;i++) r += chars[Math.floor(Math.random()*chars.length)];
+  return "TH-" + mmdd + "-" + r;
+}
+
+/* ---------- 画面：スタート ---------- */
+function renderStart(){
+  resetState();
+  app.innerHTML = `
+  <div class="card" style="text-align:center">
+    <div class="eyebrow">受験の王様 監修</div>
+    <h1 class="title">英語設計診断</h1>
+    <p class="lead">あなたの英語、どこから設計し直す？<br>語彙・文法・構造・読解の4分野から<br>弱点タイプと今やるべき順番がわかります。</p>
+    <div class="chips" style="justify-content:center">
+      <span class="chip">学年別・全14問</span><span class="chip">約5分</span><span class="chip">無料</span>
+    </div>
+    <div class="stack">
+      <button class="btn btn-primary" id="start">診断をはじめる</button>
+    </div>
+    <p class="start-note">結果はその場で表示。スクショ不要、そのままLINEに送れます。</p>
+  </div>`;
+  document.getElementById("start").onclick = renderGrade;
+}
+
+/* ---------- 画面：学年 ---------- */
+function renderGrade(){
+  const groups = ["中学生","高校生","既卒"];
+  let html = `<div class="card">
+    <div class="step-label"><span class="step-num">STEP 1 / 3</span><span class="step-q">学年を選んでください</span></div>
+    <p class="qnote">学年に合わせて、出題される問題が変わります。</p>`;
+  groups.forEach(g=>{
+    const items = GRADES.filter(x=>x.group===g);
+    if(g!=="既卒") html += `<div class="group-label">${g}</div>`;
+    else html += `<div class="group-label">高校卒業後</div>`;
+    html += `<div class="grid-btns" style="margin-bottom:4px">`;
+    items.forEach(x=>{
+      html += `<button class="btn ${x.wide?"wide":""}" data-g="${x.id}">${x.label}</button>`;
+    });
+    html += `</div>`;
+  });
+  html += `</div>`;
+  app.innerHTML = html;
+  app.querySelectorAll("[data-g]").forEach(b=>{
+    b.onclick = ()=>{
+      const g = GRADES.find(x=>x.id===b.dataset.g);
+      S.gradeId = g.id; S.gradeLabel = g.label; S.quizKey = g.quiz;
+      renderSchool();
+    };
+  });
+}
+
+/* ---------- 画面：志望校 ---------- */
+function renderSchool(){
+  const isJr = S.quizKey.startsWith("j");
+  const ph = isJr ? "例：〇〇高校" : "例：早稲田大学 商学部";
+  app.innerHTML = `
+  <div class="card">
+    <div class="step-label"><span class="step-num">STEP 2 / 3</span><span class="step-q">志望校を教えてください</span></div>
+    <input class="text" id="school" type="text" placeholder="${ph}" autocomplete="off">
+    <div class="stack">
+      <button class="btn btn-primary" id="next">次へ</button>
+      <button class="btn btn-ghost" id="undecided">まだ決めていない</button>
+    </div>
+  </div>`;
+  const input = document.getElementById("school");
+  document.getElementById("next").onclick = ()=>{
+    S.school = input.value.trim() || "未定";
+    renderDev();
+  };
+  document.getElementById("undecided").onclick = ()=>{ S.school = "未定"; renderDev(); };
+}
+
+/* ---------- 画面：偏差値 ---------- */
+function renderDev(){
+  let html = `<div class="card">
+    <div class="step-label"><span class="step-num">STEP 3 / 3</span><span class="step-q">英語の偏差値は？（直近の模試）</span></div>
+    <div class="grid-btns" style="grid-template-columns:1fr 1fr">`;
+  DEV_BANDS.forEach((d,i)=>{
+    const wide = (i===DEV_BANDS.length-1) ? "wide" : "";
+    html += `<button class="btn ${wide}" data-d="${d}">${d}</button>`;
+  });
+  html += `</div></div>`;
+  app.innerHTML = html;
+  app.querySelectorAll("[data-d]").forEach(b=>{
+    b.onclick = ()=>{ S.dev = b.dataset.d; startQuiz(); };
+  });
+}
+
+/* ---------- クイズ ---------- */
+function startQuiz(){
+  const src = QUIZZES[S.quizKey];
+  S.items = src.map(q=>{
+    const order = shuffle(q.c.map((_,i)=>i));
+    return {f:q.f, u:q.u, q:q.q, p:q.p||null, choices:order.map(i=>q.c[i]), correct:order.indexOf(q.a)};
+  });
+  S.qIndex = 0; S.answers = [];
+  renderQuiz();
+}
+
+function renderQuiz(){
+  const item = S.items[S.qIndex];
+  const total = S.items.length;
+  const keys = ["A","B","C","D"];
+  let html = `<div class="card">
+    <div class="quiz-head">
+      <span class="qcount">Q ${S.qIndex+1}<small> / ${total}</small></span>
+      <span class="qtotal">英語設計診断</span>
+    </div>
+    <div class="progress"><i style="width:${(S.qIndex/total)*100}%"></i></div>
+    <span class="section-tag">${SECTION_TAG[item.f]}</span>
+    ${item.p ? `<div class="qnote">次の英文を読んで答えてください。</div><div class="passage">${item.p}</div>` : ``}
+    <div class="qtext">${item.q}</div>
+    <div class="opts">`;
+  item.choices.forEach((c,i)=>{
+    html += `<button class="opt" data-i="${i}"><span class="key">${keys[i]}</span><span>${c}</span></button>`;
+  });
+  html += `</div></div>`;
+  app.innerHTML = html;
+
+  let locked = false;
+  app.querySelectorAll(".opt").forEach(b=>{
+    b.onclick = ()=>{
+      if(locked) return;
+      locked = true;
+      b.classList.add("selected");
+      app.querySelectorAll(".opt").forEach(x=>x.disabled = true);
+      const i = Number(b.dataset.i);
+      S.answers.push({f:item.f, u:item.u, ok: i===item.correct});
+      setTimeout(()=>{
+        S.qIndex++;
+        if(S.qIndex < S.items.length) renderQuiz();
+        else renderAnalyzing();
+      }, 350);
+    };
+  });
+}
+
+/* ---------- 分析中 ---------- */
+function renderAnalyzing(){
+  app.innerHTML = `
+  <div class="card analyzing">
+    <div class="spinner"></div>
+    <div class="ana-line" id="ana"></div>
+  </div>`;
+  const lines = ["回答を集計しています…","語彙・文法・構造・読解の正答率を計算しています…","弱点単元を特定しています…","診断タイプを判定しています…"];
+  const el = document.getElementById("ana");
+  let i = 0;
+  el.textContent = lines[0];
+  const t = setInterval(()=>{
+    i++;
+    if(i < lines.length){ el.textContent = lines[i]; }
+    else { clearInterval(t); renderResult(); }
+  }, 600);
+}
+
+/* ---------- 判定ロジック ---------- */
+function calcResult(){
+  const total = S.answers.length;
+  const correct = S.answers.filter(a=>a.ok).length;
+  const score = Math.round(correct/total*100);
+  let level;
+  if(score>=90) level=5; else if(score>=75) level=4; else if(score>=58) level=3; else if(score>=40) level=2; else level=1;
+
+  const fields = ["vocab","grammar","structure","reading"];
+  const rate = {};
+  fields.forEach(f=>{
+    const fs = S.answers.filter(a=>a.f===f);
+    rate[f] = fs.length ? fs.filter(a=>a.ok).length/fs.length : 0;
+  });
+
+  let typeKey;
+  const lowCount = fields.filter(f=>rate[f]<0.5).length;
+  if(fields.every(f=>rate[f]>=0.75)) typeKey = "jissen";
+  else if(lowCount>=2) typeKey = "kiso";
+  else {
+    typeKey = fields.reduce((min,f)=> rate[f] < rate[min] ? f : min, fields[0]);
+  }
+
+  const weakUnits = [...new Set(S.answers.filter(a=>!a.ok).map(a=>a.u))].slice(0,4);
+  const marks = S.answers.map(a=>a.ok?"○":"×").join("");
+  return {score, level, rate, typeKey, weakUnits, marks};
+}
+
+/* ---------- コピー用テキスト ---------- */
+function buildCopyText(r){
+  const pct = f => Math.round(r.rate[f]*100) + "％";
+  const weak = r.weakUnits.length ? r.weakUnits.join("／") : "なし（全問正解）";
+  return [
+    "━━━━━━━━━━━━",
+    "【英語設計診断 結果】",
+    "学年：" + S.gradeLabel,
+    "志望校：" + S.school,
+    "英語偏差値：" + S.dev,
+    "────────────",
+    "スコア：" + r.score + "／100（Lv." + r.level + "）",
+    "タイプ：" + TYPES[r.typeKey].name,
+    "語彙 " + pct("vocab") + "｜文法 " + pct("grammar"),
+    "構造 " + pct("structure") + "｜読解 " + pct("reading"),
+    "弱点単元：" + weak,
+    "正誤：" + r.marks,
+    "診断コード：" + S.code,
+    "━━━━━━━━━━━━",
+    "↑このまま送信してください！"
+  ].join("\n");
+}
+
+/* ---------- 画面：結果 ---------- */
+function renderResult(){
+  const r = calcResult();
+  S.code = makeCode();
+  const type = TYPES[r.typeKey];
+  const today = new Date();
+  const dateStr = today.getFullYear() + "." + String(today.getMonth()+1).padStart(2,"0") + "." + String(today.getDate()).padStart(2,"0");
+  const pct = f => Math.round(r.rate[f]*100);
+  const weakHtml = r.weakUnits.length
+    ? r.weakUnits.map(u=>`<span class="wchip">${u}</span>`).join("")
+    : `<span class="wchip">なし（全問正解！）</span>`;
+  const gapSchool = S.school==="未定" ? "あなたの志望校" : "『"+escapeHtml(S.school)+"』";
+
+  app.innerHTML = `
+  <div class="sheet"><div class="sheet-inner">
+    <div class="titleblock">
+      <div class="tb-left">
+        <div class="eyebrow">DIAGNOSIS SHEET</div>
+        <h2>英語設計診断 結果</h2>
+      </div>
+      <div class="tb-right">DATE ${dateStr}<b>${S.code}</b></div>
+    </div>
+
+    <div class="profile-row">
+      <span>学年：<b>${S.gradeLabel}</b></span>
+      <span>志望校：<b>${escapeHtml(S.school)}</b></span>
+      <span>英語偏差値：<b>${S.dev}</b></span>
+    </div>
+
+    <div class="scorebox">
+      <div class="score">${r.score}<small>/100</small></div>
+      <div class="lvl">Lv.${r.level}</div>
+    </div>
+
+    <div class="typebox">
+      <div class="cap">あなたの診断タイプ</div>
+      <div class="typename">${type.name}</div>
+      <div class="typedesc">${type.desc}</div>
+    </div>
+
+    <div class="fields">
+      ${["vocab","grammar","structure","reading"].map(f=>`
+      <div class="frow">
+        <span class="fname">${FIELD_LABEL[f]}</span>
+        <span class="fbar"><i style="width:${pct(f)}%"></i></span>
+        <span class="fpct">${pct(f)}%</span>
+      </div>`).join("")}
+    </div>
+
+    <div class="weak">
+      <div class="cap">弱点単元</div>
+      <div class="weak-chips">${weakHtml}</div>
+    </div>
+
+    <div class="comment">${GRADE_COMMENT[S.quizKey]}<br>${LEVEL_COMMENT[r.level]}</div>
+
+    <div class="rx">
+      <div class="cap">この夏の処方箋（${type.name}）</div>
+      <ol>
+        ${type.rx.map((t,i)=>`<li><span class="n">${i+1}</span><span>${t}</span></li>`).join("")}
+      </ol>
+    </div>
+
+    <div class="gap-line">${gapSchool}までの「具体的な設計」は、<br>ここから先の面談でつくります。</div>
+
+    <div class="gift">
+      <div class="cap">送信特典</div>
+      ${GIFT_TEXT}
+    </div>
+
+    <div class="cta">
+      <button class="btn btn-primary" id="copy">結果をコピーする</button>
+      <div class="copied" id="copied">コピーしました！LINEを開いて、そのまま貼り付けて送信してください。</div>
+      <a class="btn btn-line" href="${LINE_URL}" target="_blank" rel="noopener">LINEを開いて送る</a>
+      <p class="cta-note">①「結果をコピーする」→ ②「LINEを開いて送る」→ ③トークに貼り付けて送信</p>
+    </div>
+  </div></div>
+  <div class="retry"><a id="retry">もう一度診断する</a></div>`;
+
+  const copyText = buildCopyText(r);
+  document.getElementById("copy").onclick = ()=> doCopy(copyText);
+  document.getElementById("retry").onclick = renderStart;
+}
+
+function doCopy(text){
+  const done = ()=>{
+    const el = document.getElementById("copied");
+    el.classList.add("show");
+    const btn = document.getElementById("copy");
+    btn.textContent = "コピーしました ✓";
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done));
+  } else {
+    fallbackCopy(text, done);
+  }
+}
+
+function fallbackCopy(text, done){
+  const ta = document.createElement("textarea");
+  ta.value = text;
+  ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta);
+  ta.focus(); ta.select();
+  try{ document.execCommand("copy"); done(); }
+  catch(e){ alert("コピーできませんでした。結果画面をスクショして送ってください。"); }
+  document.body.removeChild(ta);
+}
+
+function escapeHtml(s){
+  return s.replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
+}
+
+renderStart();
+</script>
+</body>
+</html>

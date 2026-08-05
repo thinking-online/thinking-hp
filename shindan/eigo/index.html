@@ -359,6 +359,9 @@ body.has-sticky .wrap{padding-bottom:150px}
    ④ TYPES      … タイプ名・説明文・夏の処方箋
 ============================================================ */
 const LINE_URL  = "https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=JDVkS9&liff_id=1656043253-rkMxPZMQ"; // ★①
+/* ★①' 診断コード（全員共通の固定値。Lステップの自動応答トリガーとして
+   コピー文面に必ず含まれる。変更したらLステップ側のキーワードも合わせること） */
+const DIAG_CODE = "TH-ENG-A8BK";
 /* ★② 結果送信のリターン（結果画面の一等地に出る文言） */
 const SEND_RETURN = "この結果をコピーして、そのままLINEで送ってください。受験の王様が結果を見て、<b>今の状態と「やるべきこと」をあなた個別に整理して返します。</b>";
 /* ★②' キャンプ告知（結果画面下部のバナー） */
@@ -537,15 +540,6 @@ function shuffle(arr){
     [a[i],a[j]] = [a[j],a[i]];
   }
   return a;
-}
-
-function makeCode(){
-  const d = new Date();
-  const mmdd = String(d.getMonth()+1).padStart(2,"0") + String(d.getDate()).padStart(2,"0");
-  const chars = "ABCDEFGHJKMNPQRSTUVWXYZ23456789";
-  let r = "";
-  for(let i=0;i<4;i++) r += chars[Math.floor(Math.random()*chars.length)];
-  return "TH-" + mmdd + "-" + r;
 }
 
 /* ---------- 画面：スタート ---------- */
@@ -816,7 +810,7 @@ function buildCopyText(r){
 /* ---------- 画面：結果 ---------- */
 function renderResult(){
   const r = calcResult();
-  S.code = makeCode();
+  S.code = DIAG_CODE;
   const type = TYPES[r.typeKey];
   const today = new Date();
   const dateStr = today.getFullYear() + "." + String(today.getMonth()+1).padStart(2,"0") + "." + String(today.getDate()).padStart(2,"0");

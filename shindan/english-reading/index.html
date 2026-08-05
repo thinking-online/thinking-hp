@@ -41,8 +41,9 @@ body{
     var(--navy);
   min-height:100vh;
   line-height:1.7;
+  overflow-x:hidden;
 }
-.wrap{max-width:480px;margin:0 auto;padding:20px 16px 64px}
+.wrap{max-width:480px;margin:0 auto;padding:20px 16px 64px;box-sizing:border-box}
 
 /* ===== 共通パーツ ===== */
 .card{
@@ -53,6 +54,8 @@ body{
   padding:26px 20px;
   animation:rise .35s ease both;
 }
+.card--start{padding:0;overflow:hidden}
+.card-body{padding:18px 20px 26px}
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .eyebrow{
   font-size:.68rem;letter-spacing:.22em;font-weight:700;
@@ -182,11 +185,28 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   background:rgba(227,176,75,.12);border:1px solid rgba(227,176,75,.45);
   border-radius:8px;padding:8px 10px;margin-bottom:12px;
 }
-.result-cover{
-  display:block;width:100%;border-radius:10px;margin-bottom:14px;
-  border:2px solid var(--ink);
+.result-cover-frame{
+  width:100%;
+  max-width:100%;
+  margin:0 0 14px;
+  border-radius:10px;
+  overflow:hidden;
+  background:#F8F4E9;
   box-shadow:0 10px 26px rgba(0,0,0,.35);
+  line-height:0;
   animation:rise .35s ease both;
+}
+.result-cover{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  margin:0;
+  border:0;
+  border-radius:0;
+  object-fit:contain;
+  object-position:center center;
+  vertical-align:top;
 }
 .sheet{
   border:2px solid var(--ink);border-radius:8px;position:relative;
@@ -337,10 +357,26 @@ body.has-sticky .wrap{padding-bottom:150px}
   font-size:.68rem;letter-spacing:.18em;
 }
 .start-note{font-size:.75rem;color:var(--ink-sub);text-align:center;margin-top:12px}
-.cover{
-  display:block;width:calc(100% + 40px);margin:-26px -20px 18px;
-  border-radius:var(--radius) var(--radius) 0 0;
+.cover-frame{
+  width:100%;
+  max-width:100%;
+  background:#F8F4E9;
+  line-height:0;
 }
+.cover{
+  display:block;
+  width:100%;
+  max-width:100%;
+  height:auto;
+  margin:0;
+  border:0;
+  border-radius:0;
+  object-fit:contain;
+  object-position:center top;
+  vertical-align:top;
+}
+img{max-width:100%;height:auto}
+.wrap,.card,.sheet{min-width:0}
 
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -349,6 +385,7 @@ body.has-sticky .wrap{padding-bottom:150px}
   h1.title{font-size:1.6rem}
   .score{font-size:3.6rem}
   .typename{font-size:1.45rem}
+  .wrap{padding:12px 10px 64px}
 }
 </style>
 </head>
@@ -608,10 +645,13 @@ function shuffle(arr){
 function renderStart(){
   resetState();
   app.innerHTML = `
-  <div class="card" style="text-align:center">
-    <img class="cover" src="cover.jpg" alt="英語力診断｜あなたの“読む”力を一発判定"
-      width="819" height="1024"
-      onerror="this.remove();document.getElementById('fallback-title').style.display='block'">
+  <div class="card card--start" style="text-align:center">
+    <div class="cover-frame">
+      <img class="cover" src="cover.jpg" alt="英語力診断｜あなたの“読む”力を一発判定"
+        width="819" height="1024" decoding="async"
+        onerror="this.closest('.cover-frame')?.remove();document.getElementById('fallback-title').style.display='block'">
+    </div>
+    <div class="card-body">
     <div id="fallback-title" style="display:none">
       <div class="eyebrow">受験の王様 監修</div>
       <h1 class="title">英語設計診断</h1>
@@ -629,6 +669,7 @@ function renderStart(){
       <button class="btn btn-primary" id="start">診断をはじめる</button>
     </div>
     <p class="start-note">結果はその場で表示。スクショ不要、そのままLINEに送れます。</p>
+    </div>
   </div>`;
   document.getElementById("start").onclick = renderGrade;
 }
@@ -890,7 +931,9 @@ function renderResult(){
 
   app.innerHTML = `
   ${S.restored ? `<div class="restored-note">保存済みの診断結果を表示しています（診断日 ${dateStr}）</div>` : ``}
-  <img class="result-cover" src="result-header.jpg" alt="あなたの診断結果" width="1024" height="576" onerror="this.remove()">
+  <div class="result-cover-frame">
+    <img class="result-cover" src="result-header.jpg" alt="あなたの診断結果" width="1024" height="576" decoding="async" onerror="this.closest('.result-cover-frame')?.remove()">
+  </div>
   <div class="sheet"><div class="sheet-inner">
     <div class="titleblock">
       <div class="tb-left">

@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>英語設計診断｜受験の王様</title>
+<title>英語読解力診断｜受験の王様</title>
 <meta name="description" content="学年別・全10問。「英語の読み方」ができているかを、構造把握・言い換え・論理の3分野で本質から診断します。1問ごとに制限時間つき。">
-<meta property="og:title" content="英語設計診断｜受験の王様">
+<meta property="og:title" content="英語読解力診断｜受験の王様">
 <meta property="og:description" content="学年別・全10問・制限時間つき。なんとなく読みでは解けない「英語の読み方」診断。構造把握/言い換え/論理の3分野で弱点タイプと今やるべき順番がわかります。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -178,8 +178,7 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 
 /* ===== 結果シート ===== */
 .result-cover{
-  display:block;width:100%;border-radius:10px;margin-bottom:14px;
-  border:2px solid var(--ink);
+  display:block;width:100%;height:auto;border-radius:10px;margin-bottom:14px;
   box-shadow:0 10px 26px rgba(0,0,0,.35);
   animation:rise .35s ease both;
 }
@@ -335,6 +334,7 @@ body.has-sticky .wrap{padding-bottom:150px}
 .cover{
   display:block;width:calc(100% + 40px);margin:-26px -20px 18px;
   border-radius:var(--radius) var(--radius) 0 0;
+  height:auto;
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -547,11 +547,12 @@ function renderStart(){
   resetState();
   app.innerHTML = `
   <div class="card" style="text-align:center">
-    <img class="cover" src="cover.png" alt="英語力診断｜あなたの“読む”力を一発判定"
+    <img class="cover" src="cover.jpg" alt="英語読解力診断｜あなたの“読む”力を一発判定"
+      width="819" height="1024"
       onerror="this.remove();document.getElementById('fallback-title').style.display='block'">
     <div id="fallback-title" style="display:none">
       <div class="eyebrow">受験の王様 監修</div>
-      <h1 class="title">英語設計診断</h1>
+      <h1 class="title">英語読解力診断</h1>
     </div>
     <p class="lead">あなたの英語、「なんとなく」で読んでいませんか？<br>構造把握・言い換え・論理の3分野から<br>「英語の読み方」を本質から診断します。</p>
     <div class="chips" style="justify-content:center">
@@ -655,7 +656,7 @@ function renderQuiz(){
   let html = `<div class="card">
     <div class="quiz-head">
       <span class="qcount">Q ${S.qIndex+1}<small> / 10</small></span>
-      <span class="qtotal">英語設計診断</span>
+      <span class="qtotal">英語読解力診断</span>
     </div>
     <div class="progress"><i style="width:${(S.qIndex/10)*100}%"></i></div>
     <div class="timer-row">
@@ -790,7 +791,7 @@ function buildCopyText(r){
   const weak = r.weakUnits.length ? r.weakUnits.join("／") : "なし（全問正解）";
   return [
     "━━━━━━━━━━━━",
-    "【英語設計診断 結果】",
+    "【英語読解力診断 結果】",
     "学年：" + S.gradeLabel,
     "志望校：" + S.school,
     "英語偏差値：" + S.dev,
@@ -821,12 +822,12 @@ function renderResult(){
   const gapSchool = S.school==="未定" ? "あなたの志望校" : "『"+escapeHtml(S.school)+"』";
 
   app.innerHTML = `
-  <img class="result-cover" src="result-header.png" alt="あなたの診断結果" onerror="this.remove()">
+  <img class="result-cover" src="result-header.jpg" alt="英語読解力診断｜診断結果" width="1024" height="576" onerror="this.remove()">
   <div class="sheet"><div class="sheet-inner">
     <div class="titleblock">
       <div class="tb-left">
         <div class="eyebrow">DIAGNOSIS SHEET</div>
-        <h2>英語設計診断 結果</h2>
+        <h2>英語読解力診断 結果</h2>
       </div>
       <div class="tb-right">DATE ${dateStr}<b>${S.code}</b></div>
     </div>

@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>英語設計診断｜受験の王様</title>
-<meta name="description" content="学年別・全14問の二段階適応型テスト。語彙／文法／構造／読解の4分野からあなたの英語の弱点タイプを診断し、志望校合格への設計図の入口をつくります。">
+<meta name="description" content="学年別・全10問。「英語の読み方」ができているかを、構造把握・言い換え・論理の3分野で本質から診断します。1問ごとに制限時間つき。">
 <meta property="og:title" content="英語設計診断｜受験の王様">
-<meta property="og:description" content="学年別・全14問・約5分。前半の成績で後半の問題が変わる二段階方式。語彙/文法/構造/読解の4分野で、あなたの弱点タイプと今やるべき順番がわかります。">
+<meta property="og:description" content="学年別・全10問・制限時間つき。なんとなく読みでは解けない「英語の読み方」診断。構造把握/言い換え/論理の3分野で弱点タイプと今やるべき順番がわかります。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
@@ -23,6 +23,7 @@
   --ink:#182433;
   --ink-sub:#5C6775;
   --line-green:#06C755;
+  --red:#a1252c;
   --radius:10px;
   --font-body:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
   --font-display:'Shippori Mincho','Hiragino Mincho ProN',serif;
@@ -101,34 +102,46 @@ input.text{
   padding:14px;font-size:1rem;font-family:var(--font-body);background:#fff;
 }
 input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
+.rulebox{
+  margin-top:16px;text-align:left;background:#fff;border:1px solid var(--paper-line);
+  border-radius:8px;padding:14px;font-size:.82rem;color:var(--ink);
+}
+.rulebox b{font-weight:900}
+.rulebox .rl{display:flex;gap:8px;align-items:flex-start;margin-top:6px}
+.rulebox .rl:first-of-type{margin-top:0}
+.rulebox .ri{flex:0 0 auto}
 
 /* ===== クイズ ===== */
-.quiz-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+.quiz-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px}
 .qcount{font-family:var(--font-num);font-weight:600;font-size:1rem;color:var(--ink)}
 .qcount small{font-size:.72rem;color:var(--ink-sub);font-weight:500;letter-spacing:.06em}
 .qtotal{font-size:.72rem;color:var(--ink-sub);letter-spacing:.1em}
-.progress{height:6px;background:var(--paper-line);border-radius:99px;overflow:hidden;margin-bottom:18px}
+.progress{height:6px;background:var(--paper-line);border-radius:99px;overflow:hidden;margin-bottom:12px}
 .progress i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-deep));border-radius:99px;transition:width .3s ease}
+.timer-row{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.timer-bar{flex:1;height:8px;background:var(--paper-line);border-radius:99px;overflow:hidden}
+.timer-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-deep));border-radius:99px}
+.timer-bar i.hurry{background:var(--red)}
+.timer-num{font-family:var(--font-num);font-weight:600;font-size:.95rem;min-width:3.2em;text-align:right;color:var(--ink)}
+.timer-num.hurry{color:var(--red)}
 .section-tag{
   display:inline-block;font-size:.68rem;font-weight:700;letter-spacing:.14em;
   color:var(--gold-deep);border:1px solid var(--gold-deep);border-radius:4px;
   padding:2px 8px;margin-bottom:10px;
 }
-.section-tag.hard{color:#a1252c;border-color:#a1252c}
 .qtext{font-weight:700;font-size:1.02rem;line-height:1.8;margin-bottom:6px;overflow-wrap:anywhere}
-.qtext .en{font-size:1.08rem}
 .passage{
   background:#fff;border:1px solid var(--paper-line);border-left:3px solid var(--gold-deep);
   border-radius:0 8px 8px 0;padding:12px 14px;margin:10px 0 4px;
-  font-size:.98rem;line-height:1.8;overflow-wrap:anywhere;
+  font-size:.98rem;line-height:1.85;overflow-wrap:anywhere;
 }
 .qnote{font-size:.8rem;color:var(--ink-sub);margin-bottom:6px}
 .opts{display:grid;gap:10px;margin-top:16px}
 .opt{
   display:flex;align-items:center;gap:12px;width:100%;text-align:left;
   background:#fff;border:1.5px solid var(--paper-line);border-radius:var(--radius);
-  padding:13px 14px;font-size:.95rem;font-weight:500;cursor:pointer;
-  font-family:var(--font-body);line-height:1.6;color:var(--ink);
+  padding:13px 14px;font-size:.92rem;font-weight:500;cursor:pointer;
+  font-family:var(--font-body);line-height:1.65;color:var(--ink);
   transition:border-color .12s,background .12s;overflow-wrap:anywhere;
 }
 .opt .key{
@@ -139,18 +152,19 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .opt.selected{border-color:var(--gold-deep);background:var(--gold-soft)}
 .opt.selected .key{background:var(--gold-deep);color:#fff}
 .opt:disabled{cursor:default;opacity:.9}
-
-/* ===== ブリッジ（後半分岐） ===== */
-.bridge{text-align:center;padding:34px 20px}
-.bridge .mark{
-  width:56px;height:56px;margin:0 auto 16px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.5rem;
-  background:var(--gold-soft);border:2px solid var(--gold-deep);
+.opt.opt-idk{border-style:dashed;color:var(--ink-sub)}
+.opt.opt-idk .key{border-color:var(--ink-sub);color:var(--ink-sub)}
+.opt.opt-idk.selected{border-color:var(--ink-sub);background:#f0efe9}
+.opt.opt-idk.selected .key{background:var(--ink-sub);color:#fff}
+.timeup{
+  position:fixed;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(7,24,41,.55);z-index:50;
 }
-.bridge .mark.hard{background:rgba(161,37,44,.08);border-color:#a1252c}
-.bridge h3{font-family:var(--font-display);font-weight:800;font-size:1.3rem;letter-spacing:.05em;margin-bottom:10px}
-.bridge p{font-size:.88rem;color:var(--ink-sub)}
+.timeup span{
+  background:var(--paper);color:var(--red);font-weight:900;font-size:1.2rem;
+  border:2px solid var(--red);border-radius:10px;padding:14px 28px;
+  animation:rise .2s ease both;
+}
 
 /* ===== 分析中 ===== */
 .analyzing{min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:22px}
@@ -184,12 +198,6 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .tb-right b{display:block;font-family:var(--font-num);font-size:.78rem;color:var(--ink);font-weight:600}
 .profile-row{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:.8rem;color:var(--ink-sub);margin-bottom:18px}
 .profile-row b{color:var(--ink);font-weight:700}
-.setbadge{
-  display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.06em;
-  border-radius:999px;padding:3px 12px;margin-bottom:14px;
-}
-.setbadge.hard{color:#a1252c;background:rgba(161,37,44,.08);border:1.5px solid #a1252c}
-.setbadge.easy{color:var(--gold-deep);background:var(--gold-soft);border:1.5px solid var(--gold-deep)}
 .scorebox{display:flex;align-items:flex-end;justify-content:center;gap:14px;margin:6px 0 4px}
 .score{font-family:var(--font-num);font-weight:600;font-size:4.4rem;line-height:1;color:var(--ink)}
 .score small{font-size:1.1rem;color:var(--ink-sub);font-weight:500;margin-left:4px}
@@ -207,11 +215,20 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 }
 .typedesc{font-size:.88rem;color:var(--ink);text-align:left;background:#fff;border:1px solid var(--paper-line);border-radius:8px;padding:14px}
 .fields{margin:20px 0 4px;display:grid;gap:10px}
-.frow{display:grid;grid-template-columns:3.2em 1fr 3em;align-items:center;gap:10px;font-size:.82rem}
+.frow{display:grid;grid-template-columns:4.6em 1fr 3em;align-items:center;gap:10px;font-size:.82rem}
 .frow .fname{font-weight:700}
 .frow .fbar{height:9px;background:var(--paper-line);border-radius:99px;overflow:hidden}
 .frow .fbar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--gold-deep));border-radius:99px}
 .frow .fpct{font-family:var(--font-num);font-weight:600;text-align:right}
+.quality{
+  margin-top:18px;background:#fff;border:1px solid var(--paper-line);border-radius:8px;padding:12px 14px;
+}
+.quality .cap{font-size:.7rem;letter-spacing:.2em;color:var(--ink-sub);font-weight:700;margin-bottom:8px}
+.qgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;text-align:center}
+.qcell{background:var(--paper);border:1px solid var(--paper-line);border-radius:6px;padding:7px 2px}
+.qcell b{display:block;font-family:var(--font-num);font-weight:600;font-size:1.15rem;line-height:1.2}
+.qcell span{font-size:.66rem;color:var(--ink-sub);font-weight:700}
+.qinsight{margin-top:10px;font-size:.8rem;color:var(--ink)}
 .weak{margin-top:16px}
 .weak .cap,.comment .cap,.gift .cap,.rx .cap{font-size:.7rem;letter-spacing:.2em;color:var(--ink-sub);font-weight:700;margin-bottom:8px}
 .weak-chips{display:flex;flex-wrap:wrap;gap:8px}
@@ -294,249 +311,149 @@ const GRADES = [
 const DEV_BANDS = ["〜45","45〜52","52〜58","58〜65","65〜","模試未受験・わからない"];
 
 /* ============================================================
-   問題データ ★③ — 二段階適応方式
-   ・std  : 標準セット8問（全員共通。語彙2/文法2/構造2/読解2）
-   ・easy : 基礎確認セット6問（標準で5問以下の正解 → 弱点をさらに特定）
-   ・hard : 挑戦セット6問（標準で6問以上の正解 → 上位層を弁別する
-            「既習範囲なのに正答率が低い」問題。満点はここを全問
-            正解しないと出ない）
-   ・語彙は「意味当て」ではなく文脈選択（丸暗記では解けない）
-   ・誤答の選択肢は、それぞれ典型的なつまずきに対応させる
-   ・出題範囲は「その学年の8月時点で既習」の内容に限定
-   ・f: vocab / grammar / structure / reading
-   ・u: 弱点単元名（結果とLINE送信テキストに表示される）
-   ・p: 読解の英文パッセージ（読解のみ）
-   ・a: 正解のインデックス（表示時に選択肢はシャッフルされる）
+   問題データ ★③ — 「英語の読み方」診断
+   全問が共通の問い：「この英文を、正しく読めたか？」
+   ・f: str（構造把握＝誰が何をしたか・主節はどれか・修飾はどこに掛かるか）
+        para（言い換え＝内容を正しく言い換えた選択肢を選べるか。
+              誤答は主客反転・肯否反転・因果反転・時系列ずらしで作る）
+        logic（論理・文脈＝接続詞・指示語・譲歩・具体例の役割）
+   ・s: 対象の英文（すべての問題に英文がつく）
+   ・q: 設問（日本語）
+   ・c: 選択肢4つ（c[0]が正解。表示時シャッフル。
+        これに加えて「わからない」が全問に自動でつく）
+   ・d: 難度 1/2/3（配点 8/10/12。各学年 d1×3+d2×4+d3×3＝100点満点。
+        満点は最難問3問を含む全問正解でのみ出る）
+   ・t: 制限時間（秒）。切れたら未回答として自動で次へ
+   ・u: 弱点単元名（結果とLINE送信テキストに表示）
+   ・出題範囲は「その学年の8月時点で既習」の文法に限定。
+     学年が上がるほど、文が長く・節が深く・言い換えが精密になる。
 ============================================================ */
 const QUIZZES = {
-/* ---------- 中1（be動詞・一般動詞・疑問文・否定文・can まで） ---------- */
-j1:{
-std:[
- {f:"vocab",u:"語彙：基本単語",q:"A: What（　）do you like?<br>B: I like blue.",c:["color","sport","food","animal"],a:0},
- {f:"vocab",u:"語彙：基本単語",q:"I like music. I（　）the guitar every day.",c:["play","listen","eat","go"],a:0},
- {f:"grammar",u:"文法：一般動詞の疑問文",q:"（　）you like English?",c:["Do","Are","Does","Is"],a:0},
- {f:"grammar",u:"文法：be動詞と主語",q:"Ken and I（　）in the tennis club.",c:["are","am","is","do"],a:0},
- {f:"structure",u:"構造：疑問文の語順",q:"「あなたのお母さんは医者ですか？」<br>正しい英文は？",c:["Is your mother a doctor?","Are your mother a doctor?","Does your mother a doctor?","Is a doctor your mother?"],a:0},
- {f:"structure",u:"構造：否定文",q:"「私はサッカーファンではありません」<br>正しい英文は？",c:["I am not a soccer fan.","I don't a soccer fan.","I am a not soccer fan.","I not am a soccer fan."],a:0},
- {f:"reading",u:"読解：内容一致",p:"I am Taku. I like summer. I swim in the sea with my brother every August.",q:"タクが8月に毎年することは？",c:["兄弟と海で泳ぐ","山に登る","図書館で勉強する","サッカーをする"],a:0},
- {f:"reading",u:"読解：指示語（it）",p:"A: Do you like this song?<br>B: Yes! I listen to it every day.",q:"Bの言う「it」が指しているものは？",c:["この歌","Aさん","毎日","ラジオ"],a:0}
+/* ---------- 中1（be動詞・一般動詞・can・疑問詞の範囲） ---------- */
+j1:[
+ {f:"str",d:1,t:45,u:"構造：修飾語と主語",s:"The boy by the window is my brother Ken.",q:"「私の兄」なのは誰？",c:["窓のそばにいる男の子","ケンの友達","窓のそばにいる女の子","この文を書いた人の父"],a:0},
+ {f:"logic",d:1,t:45,u:"論理：butのつながり",s:"Tom's dog is very big, but my dog is small.",q:"小さいのは、どちらの犬？",c:["「私」の犬","トムの犬","両方の犬","どちらの犬でもない"],a:0},
+ {f:"para",d:1,t:50,u:"言い換え：できる／できない",s:"Ken can't swim fast, but he can swim very far.",q:"この文の内容に最も近いものは？",c:["ケンは速くは泳げないが、とても遠くまで泳げる","ケンは速く泳げるが、遠くへは泳げない","ケンはまったく泳げない","ケンは速くも遠くも泳げる"],a:0},
+ {f:"str",d:2,t:50,u:"構造：withがつなぐ相手",s:"My sister and I play tennis with our father every Sunday.",q:"毎週日曜日にテニスをしているのは、全部で誰？",c:["姉と私と父","姉と私だけ","私と父だけ","父だけ"],a:0},
+ {f:"para",d:2,t:55,u:"言い換え：onlyの範囲",s:"I don't play video games on school days. I play them only on weekends.",q:"この文の内容に最も近いものは？",c:["学校がある日はゲームをせず、週末だけゲームをする","週末はゲームをしない","毎日ゲームをしている","学校の中でだけゲームをする"],a:0},
+ {f:"logic",d:2,t:55,u:"論理：文と文の関係（理由）",s:"I like dogs very much, but I can't have one at home. My house is very small.",q:"「私」が家で犬を飼えない理由として、この文章から読み取れるものは？",c:["家がとても小さいから","犬が好きではないから","家族が反対しているから","犬の世話が大変だから"],a:0},
+ {f:"str",d:2,t:55,u:"構造：否定と代名詞",s:"That tall girl with long hair is not Yuki. She is Emi, Yuki's sister.",q:"背が高くて髪の長い女の子は、誰？",c:["エミ","ユキ","ユキの友達","エミの母"],a:0},
+ {f:"para",d:3,t:60,u:"言い換え：対比の整理",s:"Mika is not a good singer, but she is a very good dancer. Her brother is a good singer, but he can't dance.",q:"この文章の内容に合うものは？",c:["ミカは歌が苦手でダンスが得意、兄は歌が得意でダンスができない","ミカも兄も歌が得意だ","ミカは歌もダンスも得意だ","兄はダンスがとても得意だ"],a:0},
+ {f:"logic",d:3,t:60,u:"論理：会話の意図",s:"A: Do you want this red pen?<br>B: No, thank you. I have three red pens in my bag.",q:"Bがペンを断った理由として最も自然なものは？",c:["赤ペンはもう十分に持っているから","赤い色が好きではないから","かばんが小さくて入らないから","Aのペンは書きにくいから"],a:0},
+ {f:"para",d:3,t:70,u:"言い換え：複数文の整理",s:"We all like Mr. Sato very much, but he is not our English teacher. Our English teacher is Ms. Brown. She is from Canada, and her Japanese is very good.",q:"この文章の内容に合うものは？",c:["英語の先生はカナダ出身のブラウン先生で、日本語がとても上手だ","サトウ先生はこのクラスの英語の先生だ","ブラウン先生は日本語がうまく話せない","クラスのみんなはサトウ先生が好きではない"],a:0}
 ],
-easy:[
- {f:"vocab",u:"語彙：基本単語",q:"I get up at seven in the morning and eat（　）.",c:["breakfast","dinner","lunch","night"],a:0},
- {f:"vocab",u:"語彙：基本単語",q:"A: Are you a（　）?<br>B: Yes. I work at a hospital and help sick people.",c:["doctor","teacher","driver","farmer"],a:0},
- {f:"grammar",u:"文法：be動詞",q:"I（　）a student at Minami Junior High School.",c:["am","is","are","do"],a:0},
- {f:"grammar",u:"文法：代名詞",q:"This is Yuki.（　）is my sister.",c:["She","Her","Hers","He"],a:0},
- {f:"structure",u:"構造：語順（SVO）",q:"「私は毎日、英語を勉強します」<br>正しい英文は？",c:["I study English every day.","I every day study English.","I English study every day.","Study I English every day."],a:0},
- {f:"reading",u:"読解：内容一致",p:"This is my friend Emma. She is from Australia. She can play the piano very well, but she can't play tennis.",q:"エマが「できること」は？",c:["ピアノを上手に弾くこと","テニスをすること","日本語を話すこと","歌を歌うこと"],a:0}
+/* ---------- 中2（過去形・未来・不定詞・接続詞の範囲） ---------- */
+j2:[
+ {f:"str",d:1,t:50,u:"構造：前置詞句の整理",s:"The bag under the desk is not mine. Mine is on the chair by the door.",q:"「私」のかばんは、どこにある？",c:["ドアのそばの椅子の上","机の下","ドアの上","机の上"],a:0},
+ {f:"para",d:1,t:50,u:"言い換え：因果の把握",s:"Tom studied Japanese hard last year, so now he can read easy Japanese books.",q:"この文の内容に最も近いものは？",c:["トムは去年一生懸命勉強したので、今は簡単な日本語の本を読める","トムはこれから日本語を勉強するつもりだ","トムは難しい日本語の本も読める","トムは日本語の勉強をあきらめた"],a:0},
+ {f:"logic",d:1,t:50,u:"論理：so（だから）の関係",s:"It was raining hard yesterday morning, so our soccer game started in the afternoon.",q:"試合が午後に始まった理由は？",c:["午前中は激しい雨だったから","午後の方が観客が多いから","選手たちが遅れて来たから","朝は気温が低すぎたから"],a:0},
+ {f:"str",d:2,t:55,u:"構造：従属節と主節の主語",s:"When my mother came home, I was cooking dinner for my sister.",q:"夕食を作っていたのは誰？",c:["私","母","妹","母と私"],a:0},
+ {f:"para",d:2,t:60,u:"言い換え：時と回数の整理",s:"I'm going to visit Okinawa next month. I went there five years ago, so this will be my second time.",q:"この文章の内容に最も近いものは？",c:["私が沖縄に行くのは、来月で2回目になる","私は来月、初めて沖縄に行く","私は5年前から沖縄に住んでいる","私はもう沖縄に2回行ったことがある"],a:0},
+ {f:"logic",d:2,t:55,u:"論理：指示語（it）",s:"Last week, our class talked about a plan to clean the park near the station. Many students liked it very much.",q:"「it」が指しているものは？",c:["駅の近くの公園を掃除する計画","駅","先週の授業","公園の近くの店"],a:0},
+ {f:"para",d:2,t:60,u:"言い換え：譲歩の整理",s:"My brother doesn't like soccer, but he watches soccer games on TV when our father watches them.",q:"この文の内容に合うものは？",c:["兄はサッカーが好きではないが、父が見ているときはテレビで試合を見る","兄はサッカーが大好きで、毎日試合を見る","兄はサッカーの試合を決して見ない","父はサッカーの試合を見ない"],a:0},
+ {f:"str",d:3,t:70,u:"構造：だれが何をしたか",s:"Ken didn't go to school yesterday because he was sick, so Mika visited him after school to give the homework to him.",q:"昨日の放課後に起きたこととして正しいものは？",c:["ミカが、宿題を渡すためにケンのところを訪ねた","ケンが、宿題を渡すためにミカのところを訪ねた","ミカが病気で学校を休んだ","ケンが放課後にみんなの宿題を集めた"],a:0},
+ {f:"para",d:3,t:70,u:"言い換え：時間の変化の整理",s:"When I was a child, I wanted to be a pilot. But now I want to be a doctor because I want to help sick children in poor countries.",q:"この文章の内容に最も近いものは？",c:["昔の夢はパイロットだったが、今は貧しい国の病気の子どもを助けるために医者になりたい","今もパイロットになりたいと思っている","子どもの頃から医者になることが夢だった","貧しい国でパイロットとして働きたい"],a:0},
+ {f:"logic",d:3,t:70,u:"論理：予想と結果",s:"Everyone said, \"Aki will win the speech contest.\" But the winner was Rio, a quiet girl. Aki said to her, \"Your speech was wonderful. I need to practice more.\"",q:"この文章の内容に合うものは？",c:["みんなの予想に反してリオが優勝し、アキはリオのスピーチをたたえた","予想どおりアキが優勝した","リオはアキに「もっと練習が必要だ」と言った","アキは結果に不満を持っている"],a:0}
 ],
-hard:[
- {f:"vocab",u:"語彙：文脈判断（挑戦）",q:"A: How many（　）do you have in your family?<br>B: Four. My father, my mother, my brother, and me.",c:["people","pets","rooms","books"],a:0},
- {f:"grammar",u:"文法：canと動詞の形（挑戦）",q:"Emi can（　）very fast.",c:["run","runs","running","to run"],a:0},
- {f:"grammar",u:"文法：疑問文への答え方（挑戦）",q:"A: Are you and Ken good friends?<br>B: Yes,（　）are.",c:["we","you","they","I"],a:0},
- {f:"structure",u:"構造：副詞の位置（挑戦）",q:"「あなたはとても上手にピアノを弾きますね」<br>正しい英文は？",c:["You play the piano very well.","You play very well the piano.","You very well play the piano.","You play the very well piano."],a:0},
- {f:"structure",u:"構造：疑問文とor（挑戦）",q:"A: Is your school big（　）small?<br>B: It's big.",c:["or","and","but","so"],a:0},
- {f:"reading",u:"読解：情報の整理（挑戦）",p:"I am Riko. I am in the art club. I can't draw people well, but I can draw animals and flowers. My friend Jun can draw people very well. We sometimes draw pictures together in the park.",q:"この文章の内容と合うものは？",c:["リコとジュンは、時々いっしょに公園で絵を描く","リコは人の絵を描くのが得意だ","ジュンは動物の絵を描くのが得意だ","リコは音楽部に入っている"],a:0}
+/* ---------- 中3（現在完了・受動態・不定詞応用の範囲） ---------- */
+j3:[
+ {f:"str",d:1,t:55,u:"構造：受動態と主語",s:"This temple was built about four hundred years ago and is visited by many people every year.",q:"この文の内容に合うものは？",c:["この寺は約400年前に建てられ、今も毎年多くの人が訪れる","この寺は建てるのに400年かかった","人々は今、この寺を建てているところだ","この寺を訪れる人は年々減っている"],a:0},
+ {f:"para",d:1,t:55,u:"言い換え：butの範囲",s:"Sushi is loved by people all over the world, but some popular sushi in other countries is different from sushi in Japan.",q:"この文の内容に最も近いものは？",c:["寿司は世界中で愛されているが、海外で人気の寿司には日本の寿司と違うものもある","海外の寿司は日本の寿司と全く同じだ","寿司は日本以外では人気がない","日本の寿司は海外の寿司より人気がない"],a:0},
+ {f:"logic",d:1,t:55,u:"論理：指示語（This）",s:"Many people use plastic bags only once and throw them away. This is a big problem for the sea and its animals.",q:"「This」が指している内容は？",c:["ビニール袋を一度だけ使って捨てること","海の動物が増えていること","ビニール袋を作ること","人々が海へ行くこと"],a:0},
+ {f:"str",d:2,t:60,u:"構造：形式主語とfor＋人",s:"It is difficult for my little brother to read this book, but it is easy for me.",q:"この本を読むのが難しいのは誰？",c:["弟","私","私と弟の両方","この家族の全員"],a:0},
+ {f:"logic",d:2,t:60,u:"論理：具体例の役割",s:"Learning a language takes a long time. For example, my uncle has studied Chinese for ten years, but he still finds it difficult.",q:"おじの例は、何を示すために挙げられている？",c:["言語を学ぶには長い時間がかかるということ","中国語は世界で一番難しいということ","おじの勉強のやり方が悪いということ","10年学べば言語は完成するということ"],a:0},
+ {f:"para",d:2,t:65,u:"言い換え：経験と理由",s:"I have never seen snow because I have lived in Okinawa since I was born. So I want to visit Hokkaido in winter someday.",q:"この文章の内容に最も近いものは？",c:["生まれてからずっと沖縄に住んでいて雪を見たことがないので、いつか冬の北海道に行ってみたい","私は北海道で初めて雪を見た","私は雪を何度も見たことがある","私は冬の沖縄で雪を見たい"],a:0},
+ {f:"logic",d:2,t:65,u:"論理：理由の特定",s:"Robots are often used in factories in Japan. However, using robots in homes is not easy because homes are all different and full of many things.",q:"家庭でロボットを使うのが簡単ではない理由は？",c:["家はそれぞれ違っていて、物も多いから","家は工場より広いから","ロボットの値段が高すぎるから","日本には工場が多すぎるから"],a:0},
+ {f:"str",d:3,t:70,u:"構造：節をまたぐ主語と目的語",s:"Mr. Tanaka has taught English at our school since my mother was a student here, so everyone in this town knows him.",q:"この文の内容に合うものは？",c:["田中先生は母が生徒だった頃からこの学校で教えていて、町のみんなが先生を知っている","田中先生は町のみんなのことをよく知っている","母は田中先生のことを知らない","田中先生は最近この学校に来たばかりだ"],a:0},
+ {f:"para",d:3,t:80,u:"言い換え：英語での言い換え",s:"Kota practiced the guitar every day, but he was not able to play well in front of people because he was too nervous.",q:"上の英文に最も近い意味の英文は？",c:["Kota practiced the guitar every day, but he could not play well in front of people because he was very nervous.","Kota could play very well in front of people because he practiced every day.","Kota did not practice every day, so he could not play the guitar well.","Kota stopped practicing the guitar because he was very nervous."],a:0},
+ {f:"para",d:3,t:80,u:"言い換え：誰がどう思っているか",s:"Emi has wanted to study art in France since she saw a famous painting in Tokyo, but her parents want her to study science in Japan.",q:"この文の内容に合うものは？",c:["エミは東京で名画を見て以来フランスで美術を学びたいと思っているが、両親は日本で理科系の勉強をしてほしいと思っている","エミの両親は、エミの留学に賛成している","エミはフランスで有名な絵を見た","エミは理科を学ぶために日本に残ると決めた"],a:0}
+],
+/* ---------- 高1（5文型・時制・助動詞・受動態の範囲） ---------- */
+h1:[
+ {f:"str",d:1,t:55,u:"構造：不定詞の修飾とSVOC",s:"My plan to study abroad next year made my parents worried.",q:"心配しているのは誰？",c:["両親","私","来年の担任の先生","留学先の家族"],a:0},
+ {f:"para",d:1,t:65,u:"言い換え：対比",s:"Kenji looks quiet at school, but at home he talks a lot with his family.",q:"上の英文に最も近い意味の英文は？",c:["Kenji seems quiet at school and talkative at home.","Kenji talks a lot both at school and at home.","Kenji is quiet at home because he talks a lot at school.","Kenji's family thinks he is too quiet at home."],a:0},
+ {f:"logic",d:1,t:60,u:"論理：As a result（因果）",s:"More and more people are shopping online. As a result, many small shops in my town have closed.",q:"この2文の関係として正しいものは？",c:["ネットで買い物をする人が増えたことが、町の小さな店が閉店した原因になっている","小さな店が閉店したので、ネットで買う人が増えた","2つの文は関係のない事実を並べている","町の店はネット販売を始めた"],a:0},
+ {f:"str",d:2,t:65,u:"構造：主語になる不定詞とit",s:"To get up early every day is not easy, but it has changed my mornings completely.",q:"「it」が指しているものは？",c:["毎日早起きをすること","朝の時間","私の生活すべて","早起きが簡単だということ"],a:0},
+ {f:"para",d:2,t:75,u:"言い換え：否定の理由",s:"Mari didn't tell her best friend about her problem because she didn't want to make her worried.",q:"上の英文に最も近い意味の英文は？",c:["Mari kept her problem secret because she didn't want her best friend to worry.","Mari told her best friend everything about her problem.","Mari's best friend refused to listen to her problem.","Mari was worried because her best friend had a problem."],a:0},
+ {f:"para",d:2,t:80,u:"言い換え：予定の変更",s:"The school festival was going to be held outside, but the plan was changed at the last minute because of the rain, and it was held in the gym instead.",q:"上の英文に最も近い意味の英文は？",c:["The festival took place in the gym because the rain changed the original plan to hold it outside.","The festival was held outside in the rain.","The festival was canceled because of the rain.","The gym was closed, so the festival was held outside."],a:0},
+ {f:"logic",d:2,t:70,u:"論理：However（逆接の範囲）",s:"Eating vegetables is important for our health. However, just eating a lot of them is not enough — we also need enough sleep and exercise.",q:"Howeverの後で筆者が言いたいことは？",c:["野菜は大切だが、それだけでは健康には不十分だ","野菜は健康に良くない","野菜をたくさん食べれば健康になれる","睡眠より野菜の方が大切だ"],a:0},
+ {f:"str",d:3,t:75,u:"構造：挿入とSVの把握",s:"The best way to learn a new word, my teacher always says, is to use it in your own sentence.",q:"この文の中心となる主語（S）と動詞（V）は？",c:["S：The best way to learn a new word ／ V：is","S：my teacher ／ V：says","S：a new word ／ V：is","S：my teacher ／ V：is"],a:0},
+ {f:"para",d:3,t:85,u:"言い換え：譲歩と行動",s:"Although he was told by his doctor to rest for a week, Sam went back to work after three days because his team needed him.",q:"上の英文に最も近い意味の英文は？",c:["Sam's doctor told him to rest for a week, but he returned to work earlier than that because his team needed him.","Sam rested for a full week, just as his doctor said.","Sam's team told him to rest for a week at home.","Sam went back to work because his doctor said it was OK."],a:0},
+ {f:"logic",d:3,t:75,u:"論理：譲歩（Of course... But）",s:"Of course, making mistakes in English class is embarrassing. But every mistake shows you one thing to practice next. In this way, mistakes help you improve.",q:"筆者の主張に最も近いものは？",c:["ミスは次に練習すべきことを教えてくれるので、上達の役に立つ","ミスは恥ずかしいので、できるだけ避けるべきだ","ミスをしない人だけが英語がうまくなる","英語の授業ではミスをしてはいけない"],a:0}
+],
+/* ---------- 高2（関係詞・比較・準動詞・仮定法過去の範囲） ---------- */
+h2:[
+ {f:"str",d:1,t:65,u:"構造：関係詞のネストとSV",s:"The scientist who discovered the medicine that saved thousands of children received an international prize.",q:"賞を受け取ったのは？",c:["その薬を発見した科学者","数千人の子どもたち","子どもたちを救った薬","国際的な団体"],a:0},
+ {f:"para",d:1,t:70,u:"言い換え：few（否定）",s:"Few people knew the singer's real name before the TV show, but now almost everyone in this country knows it.",q:"上の英文に最も近い意味の英文は？",c:["Before the TV show, almost no one knew the singer's real name, but now nearly everyone in this country does.","Many people knew the singer's real name before the TV show.","Even now, only a few people know the singer's real name.","The singer has never told anyone his real name."],a:0},
+ {f:"logic",d:1,t:65,u:"論理：Therefore（因果）",s:"Reading novels lets you experience many different lives. Therefore, people who read a lot often understand other people's feelings well.",q:"Thereforeが結んでいる関係として正しいものは？",c:["小説で多様な人生を体験できることが、読書家が他人の気持ちをよく理解できる理由になっている","他人の気持ちがわかる人ほど、小説を読むようになるという順序で述べている","2つの文は無関係な事実を並べている","小説より実体験の方が大切だと述べている"],a:0},
+ {f:"str",d:2,t:75,u:"構造：接触節と前置詞句の連鎖",s:"The restaurant my uncle opened last year in a small town near the sea is now famous for its fish dishes.",q:"「今では魚料理で有名」なのは？",c:["おじが海の近くの小さな町に開いたレストラン","おじ本人","海の近くの小さな町","おじに料理を教えた人"],a:0},
+ {f:"para",d:2,t:80,u:"言い換え：仮定法の含意",s:"If I had enough money, I would buy the house whose windows face the sea.",q:"上の英文に最も近い意味の英文は？",c:["I can't buy the house whose windows face the sea because I don't have enough money.","I have enough money, so I will buy the house by the sea.","I bought the house whose windows face the sea.","The house I bought doesn't have windows facing the sea."],a:0},
+ {f:"para",d:2,t:85,u:"言い換え：否定比較とso...that",s:"The movie was not as boring as I expected; in fact, it was so moving that I went to see it again the next day.",q:"上の英文に最も近い意味の英文は？",c:["I expected the movie to be boring, but it actually moved me so much that I watched it again.","The movie was just as boring as I expected.","I expected a moving movie, but it turned out to be boring.","I saw the movie again because I missed the first half."],a:0},
+ {f:"logic",d:2,t:75,u:"論理：In other words（言い換え）",s:"Sleep is the time when the brain organizes the day's information. In other words, if you cut down on sleep to study more, you may actually remember less.",q:"In other words以下が述べていることは？",c:["睡眠を削って勉強量を増やすと、かえって覚えられなくなる可能性がある","勉強すればするほど記憶は定着する","睡眠中は脳が完全に休んでいる","勉強の後は運動をするべきだ"],a:0},
+ {f:"str",d:3,t:85,u:"構造：節の切れ目と因果",s:"The letter she was waiting for arrived on the very morning she left for London, so no one was at home to receive it.",q:"この文の内容に合うものは？",c:["待っていた手紙は、彼女がロンドンへ出発したまさにその朝に届いたため、受け取る人が家にいなかった","彼女は手紙を受け取ってからロンドンへ出発した","手紙はロンドンから届いた","彼女は手紙を待って、ずっと家にいた"],a:0},
+ {f:"para",d:3,t:95,u:"言い換え：反対要素の見抜き",s:"The plan to build a large factory near the lake met strong opposition from the people of the town, who feared that the water they drank every day would no longer be safe.",q:"上の英文に最も近い意味の英文は？",c:["The townspeople strongly opposed the factory plan because they were afraid their drinking water would become unsafe.","The townspeople welcomed the factory because it would make their water cleaner.","The factory was built quickly because nobody opposed the plan.","The people feared the lake would dry up, so they supported the factory plan."],a:0},
+ {f:"logic",d:3,t:85,u:"論理：譲歩からの主張",s:"It is true that memorizing model answers can raise your test scores quickly. However, students who rely only on memorization often fail when questions are asked in unfamiliar ways, because they have never learned to think from the basics.",q:"筆者の主張に最も近いものは？",c:["暗記だけに頼ると、見慣れない問われ方をされたときに対応できないことが多い","模範解答の暗記は、点数を上げる最良の方法だ","見慣れない問題は入試には出ない","基礎から考える生徒は点数が伸びにくい"],a:0}
+],
+/* ---------- 高3・既卒（全範囲） ---------- */
+h3:[
+ {f:"str",d:1,t:70,u:"構造：倒置（Not until）",s:"Not until the results were announced did the players realize how close the game had been.",q:"この文の内容に合うものは？",c:["結果が発表されて初めて、選手たちは試合がどれほど接戦だったかを知った","選手たちは試合中から接戦だと感じていた","結果はまだ発表されていない","選手たちが結果を発表した"],a:0},
+ {f:"para",d:1,t:70,u:"言い換え：Despite（譲歩）",s:"Despite months of careful preparation, the school trip was canceled just two days before departure.",q:"この文の内容に最も近いものは？",c:["何か月も入念に準備されたにもかかわらず、修学旅行は出発のわずか2日前に中止された","修学旅行は2日間だけ行われた","準備不足のため、修学旅行は延期された","修学旅行は出発の2日後に中止された"],a:0},
+ {f:"logic",d:1,t:75,u:"論理：howeverの対比",s:"Many companies now allow their employees to work from home. This shift, however, has blurred the line between work and rest, leaving some workers more exhausted than before.",q:"howeverの前後の関係として正しいものは？",c:["在宅勤務の広がりという変化に対して、仕事と休みの境界が曖昧になり、かえって疲れる人もいるという負の側面を対比している","在宅勤務の利点を2つ並べて紹介している","会社側の視点から従業員の視点へ話題を変えている","在宅勤務が広がった原因を説明している"],a:0},
+ {f:"para",d:2,t:85,u:"言い換え：far from（否定）",s:"Far from solving the problem, the new policy made matters worse by encouraging the very behavior it was designed to prevent.",q:"上の英文に最も近い意味の英文は？",c:["The new policy not only failed to solve the problem but actually made it worse by promoting the behavior it was supposed to stop.","The new policy solved the problem more quickly than expected.","The policy successfully prevented the harmful behavior.","The policy was designed to encourage new behavior, and it worked well."],a:0},
+ {f:"para",d:2,t:85,u:"言い換え：Only whenの含意",s:"Only when we lose something do we realize its true value — a lesson everyone knows, yet few truly learn until it is too late.",q:"上の英文に最も近い意味の英文は？",c:["We understand the real value of things only after we lose them; everyone knows this lesson, but few people truly learn it before it is too late.","We should lose things on purpose to learn their value.","Everyone learns the value of things early enough.","Losing things has nothing to do with understanding their value."],a:0},
+ {f:"logic",d:2,t:85,u:"論理：Ironically（逆説）",s:"The more information we can access, the harder it becomes to decide what deserves our attention. Ironically, the age of information may be making us less informed.",q:"筆者が示唆していることは？",c:["情報が増えるほど取捨選択が難しくなり、情報の時代がかえって人々を「知らない」状態にしているかもしれない","情報が増えれば増えるほど、人々は賢くなっていく","情報の時代には注意力は不要になる","情報へのアクセスは制限されるべきだ"],a:0},
+ {f:"logic",d:2,t:90,u:"論理：譲歩と筆者の主張",s:"Admittedly, AI can already write essays that pass for human work. But to conclude that learning to write is pointless is to mistake the product for the process: we write not merely to produce text, but to discover what we actually think.",q:"筆者の主張に最も近いものは？",c:["書く学びの目的は文章という成果物だけでなく、自分の考えを発見する過程にあるので、AIが書けても書く学習は無意味にならない","AIが書けるようになった以上、書く学習はもう不要だ","AIの文章は人間の文章より必ず劣っている","文章を書く目的は、良い成果物を作ることだけだ"],a:0},
+ {f:"str",d:3,t:110,u:"構造：長文の主節の特定",s:"Although the blue whale has been protected for over 30 years and its numbers are increasing, especially in the North Pacific, where whale hunting has been banned, it is still at risk of extinction as its habitat is being polluted by waste from oil tankers and its main food, the plankton, is being killed off by harmful rays from the sun, which can penetrate the earth's atmosphere because there is a huge hole in the ozone layer over Antarctica.",q:"この文全体の中心となる主張（主節）は？",c:["シロナガスクジラは、今もなお絶滅の危機にある","シロナガスクジラは30年以上保護されてきた","北太平洋では捕鯨が禁止されている","南極上空のオゾン層に巨大な穴がある"],a:0},
+ {f:"str",d:3,t:95,u:"構造：同格節と挿入",s:"The belief that hard work alone guarantees success, widespread though it is, ignores the role that luck and environment play in our lives.",q:"この文の中心となる主語（S）と動詞（V）は？",c:["S：The belief（努力だけが成功を保証するという信念）／ V：ignores","S：hard work ／ V：guarantees","S：luck and environment ／ V：play","S：it ／ V：is"],a:0},
+ {f:"para",d:3,t:120,u:"言い換え：全要素の対応",s:"The idea of girls attending school met strong opposition from adults in the village, where parents, unaware that urban societies encouraged girls' education and barely managing to survive, depended on their daughters to work.",q:"上の英文に最も近い意味の英文は？",c:["In the village, adults strongly resisted letting girls attend school, since the parents there, ignorant that cities promoted female education and hardly able to make a living, needed their daughters to work.","The adults in the village encouraged girls to go to school, even though the parents knew that cities valued female education and could easily support themselves without their daughters' work.","In the village, girls strongly objected to going to school, because their parents, who understood that cities promoted female education, forced them to work instead.","The adults in the village opposed girls' schooling, because the parents, aware that cities promoted female education but too poor to survive, still sent their daughters to work."],a:0}
 ]
-},
-/* ---------- 中2（過去形・未来・不定詞・接続詞 まで／比較・受動態は出さない） ---------- */
-j2:{
-std:[
- {f:"vocab",u:"語彙：基本動詞",q:"This question is too difficult. I can't（　）it.",c:["answer","open","visit","listen"],a:0},
- {f:"vocab",u:"語彙：borrow / lend",q:"Can I（　）your dictionary? I left mine at home.",c:["borrow","lend","give","sell"],a:0},
- {f:"grammar",u:"文法：未来（will＋be）",q:"My sister（　）fifteen years old next month.",c:["will be","will","is going","will is"],a:0},
- {f:"grammar",u:"文法：接続詞when",q:"（　）I got home, my mother was cooking dinner.",c:["When","If","That","Or"],a:0},
- {f:"structure",u:"構造：want to＋動詞",q:"「私はあなたにまた会いたいです」<br>正しい英文は？",c:["I want to see you again.","I want see you again.","I want seeing you again.","I want to seeing you again."],a:0},
- {f:"structure",u:"構造：if節の時制",q:"「もし明日晴れたら、私は釣りに行きます」<br>正しい英文は？",c:["If it is sunny tomorrow, I will go fishing.","If it will be sunny tomorrow, I will go fishing.","If it is sunny tomorrow, I went fishing.","If it sunny tomorrow, I will go fishing."],a:0},
- {f:"reading",u:"読解：理由の把握",p:"Tom is going to visit Japan next month. He is studying Japanese every day because he wants to talk with people in Japanese.",q:"トムが毎日日本語を勉強している理由は？",c:["日本語で人と話したいから","日本のアニメが好きだから","学校のテストがあるから","先生に言われたから"],a:0},
- {f:"reading",u:"読解：指示語（it）",p:"Our school has a music festival in November. Many students practice hard for it after school.",q:"「it」が指しているものは？",c:["音楽祭","学校","11月","放課後"],a:0}
-],
-easy:[
- {f:"vocab",u:"語彙：基本動詞",q:"The train（　）at Tokyo Station at ten in the morning.",c:["arrives","practices","invites","borrows"],a:0},
- {f:"vocab",u:"語彙：基本名詞",q:"Let's watch the（　）report before we go camping tomorrow.",c:["weather","winter","water","wall"],a:0},
- {f:"grammar",u:"文法：不規則動詞の過去形",q:"I（　）to the library last Sunday and read some books.",c:["went","go","goed","gone"],a:0},
- {f:"grammar",u:"文法：不定詞（目的）",q:"I went to the park（　）soccer with my friends.",c:["to play","play","playing","played"],a:0},
- {f:"structure",u:"構造：be動詞の過去形",q:"「私は昨夜、とても疲れていました」<br>正しい英文は？",c:["I was very tired last night.","I very tired last night.","I did very tired last night.","I were very tired last night."],a:0},
- {f:"reading",u:"読解：話の流れ（but / so）",p:"Last Saturday, Mika went shopping with her mother. She wanted a blue T-shirt, but the shop didn't have one. So she bought a white one.",q:"ミカが買ったものは？",c:["白いTシャツ","青いTシャツ","何も買わなかった","帽子"],a:0}
-],
-hard:[
- {f:"vocab",u:"語彙：文脈判断（挑戦）",q:"It（　）a lot last night, so the ground is wet this morning.",c:["rained","cried","climbed","waited"],a:0},
- {f:"grammar",u:"文法：感情の原因の不定詞（挑戦）",q:"I was very happy（　）the good news from my teacher.",c:["to hear","hear","heard","to hearing"],a:0},
- {f:"grammar",u:"文法：have toの過去形（挑戦）",q:"I（　）finish my homework yesterday, so I couldn't watch TV.",c:["had to","must","have to","will"],a:0},
- {f:"structure",u:"構造：語順（不定詞＋副詞）（挑戦）",q:"「私の兄は昨日、宿題をするために早く家に帰りました」<br>正しい英文は？",c:["My brother came home early to do his homework yesterday.","My brother came early home to do his homework yesterday.","My brother came home early do to his homework yesterday.","My brother to do his homework came home early yesterday."],a:0},
- {f:"structure",u:"構造：How many＋疑問文（挑戦）",q:"「あなたの町には図書館がいくつありますか？」<br>正しい英文は？",c:["How many libraries are there in your town?","How many libraries there are in your town?","How many are there libraries in your town?","There are how many libraries in your town?"],a:0},
- {f:"reading",u:"読解：時系列の把握（挑戦）",p:"Yesterday was Ken's birthday. His mother wanted to make a cake for him, but she didn't have any eggs. So she went to the store. When she came home, Ken was making a cake with his father.",q:"ケンの母親が店から帰ってきたとき、何が起きていましたか？",c:["ケンが父親とケーキを作っていた","母親がケーキを作り始めた","ケンが卵を買いに行った","誕生日パーティーが終わっていた"],a:0}
-]
-},
-/* ---------- 中3（現在完了・受動態・不定詞応用 まで／分詞・関係代名詞は出さない） ---------- */
-j3:{
-std:[
- {f:"vocab",u:"語彙：受験基礎単語",q:"We must protect the（　）for children in the future.",c:["environment","entrance","experiment","opinion"],a:0},
- {f:"vocab",u:"語彙：受験基礎単語",q:"The number of foreign visitors to Japan is（　）every year.",c:["increasing","arriving","borrowing","inviting"],a:0},
- {f:"grammar",u:"文法：受動態（過去）",q:"These pictures（　）by my grandfather fifty years ago.",c:["were taken","took","are taken","was taken"],a:0},
- {f:"grammar",u:"文法：現在完了（継続）",q:"Ken and I（　）friends since we were children.",c:["have been","are","were","have"],a:0},
- {f:"structure",u:"構造：受動態の疑問文",q:"「この部屋は毎日そうじされていますか？」<br>正しい英文は？",c:["Is this room cleaned every day?","Does this room clean every day?","Is this room cleaning every day?","Does this room cleaned every day?"],a:0},
- {f:"structure",u:"構造：how to〜",q:"「駅への行き方を教えてくれませんか？」<br>正しい英文は？",c:["Could you tell me how to get to the station?","Could you tell me how to the station get?","Could you tell me what to get to the station?","Could you tell me how getting to the station?"],a:0},
- {f:"reading",u:"読解：内容一致",p:"Many people think that tomatoes are vegetables, but in science class, we learned that they are actually a kind of fruit.",q:"この文章の内容と合うものは？",c:["トマトは科学的には果物の一種だ","トマトは野菜の一種だと授業で習った","トマトは人気がない","理科の授業でトマトを育てた"],a:0},
- {f:"reading",u:"読解：指示語（it）",p:"Riku practices judo every day. His dream is to win the national tournament. To make it come true, he also runs five kilometers every morning.",q:"「it」が指している内容は？",c:["全国大会で優勝するという夢","毎日の柔道の練習","5キロ走ること","毎朝早く起きること"],a:0}
-],
-easy:[
- {f:"vocab",u:"語彙：受験基礎単語",q:"Studying abroad was a great（　）for me. I learned a lot from it.",c:["experience","accident","examination","habit"],a:0},
- {f:"vocab",u:"語彙：受験基礎単語",q:"My brother lives（　）now. He studies English in Canada.",c:["abroad","early","suddenly","carefully"],a:0},
- {f:"grammar",u:"文法：現在完了（経験）",q:"I have（　）this movie three times.",c:["seen","see","saw","seeing"],a:0},
- {f:"grammar",u:"文法：It is … for 人 to",q:"It is important（　）us to read many books.",c:["for","of","at","with"],a:0},
- {f:"structure",u:"構造：現在完了（never）",q:"「私は一度も納豆を食べたことがありません」<br>正しい英文は？",c:["I have never eaten natto.","I have never eat natto.","I don't have eaten natto.","I was never eaten natto."],a:0},
- {f:"reading",u:"読解：きっかけの把握",p:"Aya has wanted to be a nurse since she visited her grandmother in the hospital. Now she studies science hard every day.",q:"アヤが看護師になりたいと思ったきっかけは？",c:["入院中の祖母を訪ねたこと","理科が得意だったこと","母が看護師だったこと","テレビ番組を見たこと"],a:0}
-],
-hard:[
- {f:"vocab",u:"語彙：fewの否定的意味（挑戦）",q:"Every student answered the first question, but（　）students could answer the last one — it was too difficult.",c:["few","many","most","all"],a:0},
- {f:"grammar",u:"文法：have gone / have been（挑戦）",q:"A: Where is Mr. Brown?<br>B: He（　）to Australia. He will come back next month.",c:["has gone","has been","has come","was"],a:0},
- {f:"grammar",u:"文法：want 人 to（挑戦）",q:"My mother wants me（　）a doctor in the future.",c:["to be","be","being","to being"],a:0},
- {f:"structure",u:"構造：It is … for 人 to の語順（挑戦）",q:"「私にとって朝早く起きることは簡単ではありません」<br>正しい英文は？",c:["It is not easy for me to get up early in the morning.","It is not easy of me to get up early in the morning.","It is not easy for I to get up early in the morning.","It is not easy for me to getting up early in the morning."],a:0},
- {f:"structure",u:"構造：tell 人 not to（挑戦）",q:"「トムは私に、彼のコンピュータを使わないように言いました」<br>正しい英文は？",c:["Tom told me not to use his computer.","Tom told me don't use his computer.","Tom said me not to use his computer.","Tom told to me not use his computer."],a:0},
- {f:"reading",u:"読解：因果関係の把握（挑戦）",p:"Hikari City started a new bus service last month. Since then, the number of cars in the city center has decreased, and the air has become cleaner. The city is now planning to add more buses next year.",q:"この文章からわかることは？",c:["新しいバスの運行開始後、中心部の車の数が減った","来年、バスの数は減らされる予定だ","空気は以前より汚れてしまった","バスの料金は無料である"],a:0}
-]
-},
-/* ---------- 高1（5文型・時制・助動詞・受動態 まで／関係詞・仮定法は出さない） ---------- */
-h1:{
-std:[
- {f:"vocab",u:"語彙：高校基礎単語",q:"Don't miss this（　）to talk with students from other countries.",c:["opportunity","ability","memory","custom"],a:0},
- {f:"vocab",u:"語彙：高校基礎単語",q:"I（　）with your idea. Let's think of a different plan.",c:["disagree","agree","argue","answer"],a:0},
- {f:"grammar",u:"文法：過去形vs現在完了",q:"I（　）Kyoto two years ago.",c:["visited","have visited","have been to","was visited"],a:0},
- {f:"grammar",u:"文法：助動詞の推量",q:"Kenta（　）be tired. He ran twenty kilometers today.",c:["must","can't","may not","shall"],a:0},
- {f:"structure",u:"構造：SVC（補語）",q:"His idea sounded（　）to everyone.",c:["strange","strangely","strangeness","to strange"],a:0},
- {f:"structure",u:"構造：that節の働き",q:"<span class='en'>I think that this plan will work.</span><br>「that this plan will work」のはたらきは？",c:["動詞thinkの目的語","文全体の主語","補語","planの修飾"],a:0},
- {f:"reading",u:"読解：内容一致",p:"Emi wants to study abroad, so she is saving money by working part-time at a convenience store. She also takes an online English lesson twice a week.",q:"エミについて正しいものは？",c:["留学のためにアルバイトでお金を貯めている","週に2回コンビニで働いている","すでに海外で勉強している","英語の先生になった"],a:0},
- {f:"reading",u:"読解：指示語（This）",p:"Our brains need sleep to organize new information. This is why studying all night before a test often doesn't work well.",q:"「This」が指している内容は？",c:["脳は新しい情報を整理するために睡眠を必要とするということ","テスト前の徹夜がうまくいかないこと","テストが難しすぎること","覚える情報が多すぎること"],a:0}
-],
-easy:[
- {f:"vocab",u:"語彙：高校基礎単語",q:"This website（　）useful information about studying abroad.",c:["provides","invents","solves","celebrates"],a:0},
- {f:"vocab",u:"語彙：高校基礎単語",q:"Reading English every day will（　）your vocabulary.",c:["improve","apologize","graduate","disappear"],a:0},
- {f:"grammar",u:"文法：SVOC（make O C）",q:"The news made us（　）.",c:["happy","happily","to happy","happiness"],a:0},
- {f:"grammar",u:"文法：受動態",q:"This library（　）fifty years ago.",c:["was built","built","is built","was building"],a:0},
- {f:"structure",u:"構造：文型（SVOO）",q:"次の文の文型は？<br><span class='en'>My uncle gave me this watch.</span>",c:["第4文型（SVOO）","第3文型（SVO）","第5文型（SVOC）","第2文型（SVC）"],a:0},
- {f:"reading",u:"読解：However（逆接）",p:"More and more high school students in Japan are using online learning apps. However, some teachers say that studying only with apps is not enough to build writing skills.",q:"一部の先生たちの意見は？",c:["アプリだけの学習ではライティング力を伸ばすには不十分だ","アプリ学習は最も効果的な方法だ","生徒はアプリを使うべきではない","紙の辞書は必要ない"],a:0}
-],
-hard:[
- {f:"vocab",u:"語彙：文脈判断（挑戦）",q:"Their tastes in music are quite（　）: one loves jazz, and the other listens only to rock.",c:["opposite","alike","common","typical"],a:0},
- {f:"grammar",u:"文法：現在完了進行形（挑戦）",q:"It（　）raining since last night.",c:["has been","is","was","has"],a:0},
- {f:"grammar",u:"文法：時の副詞節の時制（挑戦）",q:"Please call me when you（　）at the station tomorrow.",c:["arrive","will arrive","arrived","will be arriving"],a:0},
- {f:"structure",u:"構造：SVOCの判別（挑戦）",q:"次のうち、第5文型（SVOC）の文は？",c:["Mary found the movie boring.","Mary found her key under the sofa.","Mary found a good restaurant near the station.","Mary found me a good seat."],a:0},
- {f:"structure",u:"構造：主語の中心の把握（挑戦）",q:"<span class='en'>The pictures on the wall of the music room are very old.</span><br>この文の主語の中心となる語は？",c:["The pictures","the wall","the music room","very old"],a:0},
- {f:"reading",u:"読解：理由の特定（挑戦）",p:"In one study, some students took notes by hand, and others typed them on computers. The handwriting group remembered the ideas better. Typing is fast, so students often copy the teacher's words without thinking. Writing by hand is slower, but it makes students choose and summarize important points.",q:"手書きのノートの方が記憶に残りやすい理由として本文が挙げているのは？",c:["書くのが遅い分、重要な点を選んで要約せざるを得ないから","手を動かす運動が脳を活性化するから","タイピングより速く書けるから","教師の言葉をそのまま正確に写せるから"],a:0}
-]
-},
-/* ---------- 高2（関係詞・比較・動名詞/不定詞・仮定法過去 まで／分詞構文は出さない） ---------- */
-h2:{
-std:[
- {f:"vocab",u:"語彙：入試頻出単語",q:"This service is（　）to all students for free.",c:["available","harmful","absent","equal"],a:0},
- {f:"vocab",u:"語彙：入試頻出単語",q:"Volunteers（　）to the local community by cleaning the river every month.",c:["contribute","object","apologize","refer"],a:0},
- {f:"grammar",u:"文法：関係代名詞vs関係副詞",q:"Kamakura is a city（　）many tourists love.",c:["which","where","when","what"],a:0},
- {f:"grammar",u:"文法：forget to／-ing",q:"Don't forget（　）the door when you leave home.",c:["to lock","locking","lock","locked"],a:0},
- {f:"structure",u:"構造：形式目的語it",q:"<span class='en'>I found it difficult to keep a diary in English.</span><br>この「it」が指すものは？",c:["to keep a diary in English","a diary","English","前の文の内容"],a:0},
- {f:"structure",u:"構造：what節が主語",q:"<span class='en'>What she said at the meeting changed my mind.</span><br>この文の主語は？",c:["What she said at the meeting","she","the meeting","my mind"],a:0},
- {f:"reading",u:"読解：However（逆接）",p:"Some people say that listening to music while studying helps them concentrate. However, research suggests that music with lyrics often lowers reading comprehension.",q:"研究が示していることは？",c:["歌詞のある音楽は文章の理解度を下げることが多い","音楽は集中力を高める","音楽なしでは勉強できない","クラシック音楽が最も良い"],a:0},
- {f:"reading",u:"読解：内容の言い換え",p:"Studying with friends has one big advantage. When you explain something to others, you understand it more deeply yourself.",q:"「one big advantage」の内容は？",c:["人に説明することで自分自身の理解が深まること","友達が増えること","勉強時間を減らせること","テスト範囲を教えてもらえること"],a:0}
-],
-easy:[
- {f:"vocab",u:"語彙：入試頻出単語",q:"The teacher（　）the importance of reading aloud every day.",c:["emphasized","declined","postponed","obeyed"],a:0},
- {f:"vocab",u:"語彙：入試頻出単語",q:"The number of children in this town has been（　）for twenty years.",c:["declining","emphasizing","exchanging","admiring"],a:0},
- {f:"grammar",u:"文法：仮定法過去",q:"If I（　）more time, I would learn another language.",c:["had","have","will have","had had"],a:0},
- {f:"grammar",u:"文法：倍数表現",q:"The new stadium is three times（　）the old one.",c:["as large as","larger","as larger as","largest of"],a:0},
- {f:"structure",u:"構造：関係代名詞の省略",q:"<span class='en'>The book I borrowed from Ken was really exciting.</span><br>「I borrowed from Ken」のはたらきは？",c:["The bookを後ろから説明している","文全体の主語","wasの補語","excitingの修飾"],a:0},
- {f:"reading",u:"読解：具体例→主張",p:"Convenience stores in Japan offer many services: you can pay bills, send packages, and even buy concert tickets. They are no longer just places to buy food.",q:"筆者が最も言いたいことは？",c:["コンビニはもはや食品を買うだけの場所ではない","コンビニの食品は値段が高い","コンビニの数は減っている","海外にはコンビニがない"],a:0}
-],
-hard:[
- {f:"vocab",u:"語彙：文脈判断（挑戦）",q:"His explanation was so（　）that even the first-year students understood it easily.",c:["clear","complicated","narrow","rapid"],a:0},
- {f:"grammar",u:"文法：関係代名詞whose（挑戦）",q:"I have a friend（　）father is a pilot.",c:["whose","who","whom","which"],a:0},
- {f:"grammar",u:"文法：I wish＋仮定法（挑戦）",q:"I wish I（　）speak French like you.",c:["could","can","will","would"],a:0},
- {f:"grammar",u:"文法：forget＋動名詞（挑戦）",q:"I'll never forget（　）the Grand Canyon with my family last summer.",c:["seeing","to see","see","to seeing"],a:0},
- {f:"structure",u:"構造：比較の言い換え（挑戦）",q:"<span class='en'>Nothing is more important than sleep for your brain.</span><br>この文と同じ内容を表すのは？",c:["Sleep is the most important thing for your brain.","Sleep is not important for your brain.","Something is more important than sleep for your brain.","Your brain is more important than sleep."],a:0},
- {f:"reading",u:"読解：抽象論の把握（挑戦）",p:"We often think that memory works like a video camera. However, psychologists say that every time we recall an event, we rebuild the memory — and small details can change without our noticing. In other words, remembering is closer to creating than to replaying.",q:"筆者の主張に最も近いものは？",c:["思い出すことは「再生」よりも「作り直し」に近い","記憶はビデオカメラのように正確に残る","人は重要な出来事だけを忘れる","記憶力は訓練すれば伸ばせる"],a:0}
-]
-},
-/* ---------- 高3・既卒（全範囲・入試レベル） ---------- */
-h3:{
-std:[
- {f:"vocab",u:"語彙：入試上級単語",q:"He didn't break the vase（　）— it was just an accident.",c:["deliberately","accidentally","gradually","previously"],a:0},
- {f:"vocab",u:"語彙：入試上級単語",q:"The aging of the population is an（　）trend in many developed countries — no policy can completely stop it.",c:["inevitable","incredible","invisible","innumerable"],a:0},
- {f:"grammar",u:"文法：仮定法（if省略の倒置）",q:"（　）I known about the meeting, I would have attended it.",c:["Had","If","Should","Were"],a:0},
- {f:"grammar",u:"文法：否定語句の倒置",q:"Little（　）that this small decision would change his life.",c:["did he know","he knew","he did know","knew he"],a:0},
- {f:"structure",u:"構造：that節が主語",q:"<span class='en'>That he passed the exam without any preparation surprised everyone.</span><br>この文の主語は？",c:["That he passed the exam without any preparation","he","everyone","the exam"],a:0},
- {f:"structure",u:"構造：挿入とSVの把握",q:"<span class='en'>The ability to ask good questions, many researchers say, matters more than the ability to give quick answers.</span><br>この文の中心となる主語（S）と動詞（V）は？",c:["S：The ability to ask good questions ／ V：matters","S：many researchers ／ V：say","S：The ability ／ V：say","S：good questions ／ V：matters"],a:0},
- {f:"reading",u:"読解：具体例の役割",p:"First impressions are hard to change. For example, in one experiment, interviewers made their decisions within the first five minutes of a thirty-minute interview.",q:"実験の例は、何を示すために挙げられている？",c:["第一印象は変わりにくいということ","面接は30分行うのが最適だということ","面接官には訓練が必要だということ","5分で人の能力を正確に測れるということ"],a:0},
- {f:"reading",u:"読解：In other words（言い換え）",p:"Online reviews strongly influence what we buy. Yet studies show that a small number of users write most of the reviews. In other words, the \"voice of the customer\" may represent only a tiny part of all customers.",q:"筆者が示唆していることは？",c:["ネットのレビューは全顧客のごく一部の意見にすぎない可能性がある","レビューを書く人の意見は信頼できる","レビューは購買にほとんど影響しない","レビューの数は年々減っている"],a:0}
-],
-easy:[
- {f:"vocab",u:"語彙：入試上級単語",q:"There is no（　）for hard work — no tool can take its place.",c:["substitute","obstacle","prejudice","compliment"],a:0},
- {f:"vocab",u:"語彙：入試上級単語",q:"She（　）major surgery in June, and it took her two months to recover.",c:["underwent","performed","avoided","delayed"],a:0},
- {f:"grammar",u:"文法：関係代名詞what",q:"The movie was different from（　）I had expected.",c:["what","that","which","whom"],a:0},
- {f:"grammar",u:"文法：前置詞vs接続詞",q:"（　）the heavy rain, the game continued.",c:["Despite","Although","However","Because"],a:0},
- {f:"structure",u:"構造：副詞節内の省略",q:"<span class='en'>While（　）in Canada, she made many friends from different countries.</span><br>カッコに省略されている語は？",c:["she was","it was","there was","they were"],a:0},
- {f:"reading",u:"読解：主張の把握",p:"Many people believe that talent determines success. However, recent studies suggest that how long and how well you practice matters far more than any innate gift.",q:"この文章の主張に最も近いものは？",c:["才能よりも練習の量と質のほうがはるかに重要だ","成功は生まれつきの才能で決まる","練習しても才能には勝てない","成功の要因はまだ解明されていない"],a:0}
-],
-hard:[
- {f:"vocab",u:"語彙：文脈判断（挑戦）",q:"The politician's answer was deliberately（　）: he wanted to avoid giving a clear yes or no.",c:["vague","precise","generous","durable"],a:0},
- {f:"grammar",u:"文法：混合仮定法（挑戦）",q:"If I had taken your advice then, I（　）in trouble now.",c:["would not be","would not have been","am not","had not been"],a:0},
- {f:"grammar",u:"文法：独立分詞構文there（挑戦）",q:"（　）nothing more to discuss, the meeting ended earlier than expected.",c:["There being","Being","There was","It being"],a:0},
- {f:"structure",u:"構造：強調構文の判別（挑戦）",q:"<span class='en'>It is not what you say but how you say it that matters.</span><br>この文の構造として正しいのは？",c:["「not A but B」の部分を強調する強調構文","that以下を真の主語とする形式主語構文","itは前の文の内容を指す代名詞","天候・状況を表すit"],a:0},
- {f:"structure",u:"構造：only句の倒置（挑戦）",q:"Only after failing many times（　）what patience really means.",c:["did I understand","I understood","I did understand","understood I"],a:0},
- {f:"reading",u:"読解：抽象論の把握（挑戦）",p:"It is tempting to treat scientific findings as final answers. Yet science moves forward precisely because its conclusions remain open to revision: a theory earns trust not by being unquestionable, but by surviving repeated attempts to prove it wrong. Ironically, then, doubt is not the enemy of scientific knowledge but its engine.",q:"筆者の主張として最も適切なものは？",c:["疑うことこそが科学の知を前進させる原動力である","科学の結論は最終的な答えとして扱うべきだ","理論は疑問の余地がないからこそ信頼される","科学は誤りを証明する試みを避けるべきだ"],a:0}
-]
-}
 };
 
 /* ---------- タイプ判定 ★④ ---------- */
 const TYPES = {
- vocab:{name:"単語迷子型",desc:"文法や構造は見えているのに、単語で止まって迷子になるタイプ。語彙の「量」と「回し方」を設計し直すだけで、読めるスピードが一気に変わります。",
-  rx:["1冊の単語帳を決めて「見出し語を見て1秒で意味が言える」まで同じ範囲を周回する","派生語や細かい語法より、まず頻出1000語の完全定着を優先する","長文で出会った知らない単語は、その場で単語帳の該当ページに戻って確認する"]},
- grammar:{name:"文法穴あき型",desc:"全体はできているのに、特定の単元にだけ穴があるタイプ。穴の場所はすでに特定できているので、埋める順番さえ設計すれば最短で伸びます。",
-  rx:["今回の診断で出た「弱点単元」だけをピンポイントで復習する（全部やり直さない）","問題集は「なぜその答えになるか」を口で説明できたら次に進む","1単元につき例文3文を暗唱して仕上げにする"]},
- structure:{name:"構造ブラックボックス型",desc:"単語も文法も知っているのに、文になると「なんとなく読み」になるタイプ。SVOCと修飾関係のつかみ方を入れると、長文が別物になります。",
-  rx:["1日1文でいいので、SVOCを振ってから和訳する「構文解釈」を習慣にする","訳せない文は「どこからどこまでが主語か」を特定するところから始める","音読はSVOCのカタマリを意識しながら1文5回"]},
- reading:{name:"読解失速型",desc:"一文一文は読めるのに、文章になると内容が頭に残らないタイプ。「なんとなく読み」を「論理で読む」に変えると、得点が一気に安定します。",
-  rx:["段落ごとに「一言要約」をメモしながら読む練習をする","However / For example などの論理マーカーに印をつけて読む","設問に答えるときは、本文中の根拠に必ず下線を引いてから選ぶ"]},
+ str:{name:"構造ブラックボックス型",desc:"単語は知っているのに、文が長くなると「誰が・何を・どうした」が崩れるタイプ。SVOCの切り方と修飾のかかり先のつかみ方を入れると、長文が別物になります。",
+  rx:["1日1文でいいので、SVOCを振ってから意味を言う「構文解釈」を習慣にする","読めない文は「主語はどこからどこまでか」を特定するところから始める","音読はSVOCのカタマリを意識しながら1文5回"]},
+ para:{name:"読み違い型",desc:"読めている「つもり」になりやすいタイプ。肯定と否定、誰が誰に、原因と結果——1つの取り違えで文全体の意味が反転します。「なんとなく合ってそう」で選ぶクセを直すと一気に伸びます。",
+  rx:["読んだ文を「誰が・どうした・なぜ」の3点で自分の言葉で言い直す練習をする","選択肢を選ぶ前に、本文の対応箇所と1つずつ突き合わせて「ズレ」を探す","not A but B / far from など「意味が反転する表現」をストックする"]},
+ logic:{name:"論理迷子型",desc:"一文一文は読めるのに、文と文のつながり（因果・逆接・指示語）で流れを見失うタイプ。論理マーカーを読む技術を入れると、長い文章でも得点が安定します。",
+  rx:["However / so / for example などの論理マーカーに印をつけて読む","指示語（it / this / one）が出たら、その場で指す内容を言ってから先に進む","段落ごとに「一言要約」をメモしながら読む"]},
+ kan:{name:"感覚読み型",desc:"「わからない」を選ばずに誤答している＝根拠がないまま雰囲気で選んでいるサイン。実はいちばん危険で、いちばん早く変えられるタイプです。「なんとなく」を「根拠」に変える読み方から始めましょう。",
+  rx:["答えを選ぶ前に、根拠になる箇所を本文の中で必ず指でおさえる","根拠が指させないときは「わからない」と認める（それが精読のスタート）","1日1文、SVOCを振ってから意味を言う練習で「読めた」の基準を作り直す"]},
  kiso:{name:"基礎再設計型",desc:"複数の分野に穴がある状態。逆に言えば、正しい順番で積み直せば伸び幅が最も大きいタイプです。根性ではなく、順番の問題です。",
-  rx:["この夏やることを「単語＋診断で出た弱点単元」の2つに絞る","1つ前の学年の範囲に戻る勇気を持つ（それが実は最短ルート）","毎日同じ時間に英語30分を固定して、継続を仕組み化する"]},
- jissen:{name:"実戦設計型",desc:"挑戦セットまで含めて高い完成度。ここからは志望校の出題形式に合わせて、過去問と実戦演習をどう配置するかの「実戦設計」フェーズです。",
-  rx:["志望校の過去問を1年分、時間を測って解いてみる","落とした問題を「語彙／文法／構造／読解」に分類して原因を特定する","出題形式（長文・英作文・リスニング）ごとの対策配分を決める"]}
+  rx:["この夏やることを「単語＋短い文のSVOC」の2つに絞る","1つ前の学年の英文に戻る勇気を持つ（それが実は最短ルート）","毎日同じ時間に英語30分を固定して、継続を仕組み化する"]},
+ jissen:{name:"実戦設計型",desc:"制限時間つきでも正確に読めています。読み方の土台は完成レベル。ここからは志望校の出題形式に合わせて、過去問と実戦演習をどう配置するかの「実戦設計」フェーズです。",
+  rx:["志望校の過去問を1年分、時間を測って解いてみる","落とした問題を「構造／言い換え／論理」に分類して原因を特定する","出題形式（長文・英作文・リスニング）ごとの対策配分を決める"]}
 };
 
-const FIELD_LABEL = {vocab:"語彙",grammar:"文法",structure:"構造",reading:"読解"};
-const SECTION_TAG = {vocab:"文脈語彙",grammar:"文法",structure:"構造",reading:"読解"};
+const FIELD_LABEL = {str:"構造把握",para:"言い換え",logic:"論理・文脈"};
+const SECTION_TAG = {str:"構造把握",para:"内容の言い換え",logic:"論理・文脈"};
+const PT = {1:8, 2:10, 3:12};
 
 const GRADE_COMMENT = {
  j1:"中1の夏は、英語の「型」を身につける最初の分岐点。",
- j2:"中2の夏は、過去・未来・不定詞で一気に差がつく時期。",
+ j2:"中2の夏は、文が長くなり始めて一気に差がつく時期。",
  j3:"中3の夏は、受験英語の土台が固まるかどうかの分かれ目。",
  h1:"高1の夏は、文型と時制という英語の骨格をつくる時期。",
- h2:"高2の夏は、文法を完成させて「解釈」に入れるかの分岐点。",
- h3:"この夏は、基礎の穴を埋めて過去問に接続する最重要期。"
+ h2:"高2の夏は、「解釈」に入れるかどうかの分岐点。",
+ h3:"この夏は、読み方を仕上げて過去問に接続する最重要期。"
 };
 
 const LEVEL_COMMENT = {
- 5:"挑戦セットまで高得点。この時期として最高水準の完成度です。あとは志望校に向けた実戦設計だけ。",
- 4:"土台はほぼ完成しています。挑戦セットで落とした部分を埋めれば、上位帯で得点が安定します。",
- 3:"いま最も伸びしろが大きいゾーンです。弱点の埋め方＝設計しだいで結果が大きく変わります。",
- 2:"基礎に複数の穴があるサインです。今から正しい順番で埋めれば、まだ十分に間に合います。",
- 1:"焦る必要はありません。土台からの再設計が、実は合格への最短ルートです。"
+ 5:"制限時間内でも精密に読めています。この時期として最高水準の完成度。あとは志望校に向けた実戦設計だけ。",
+ 4:"読み方の土台はほぼ完成しています。落とした問題の分野を埋めれば、上位帯で得点が安定します。",
+ 3:"いま最も伸びしろが大きいゾーンです。「読み方」の入れ方しだいで結果が大きく変わります。",
+ 2:"英文を「なんとなく」で処理しているサインが出ています。読み方のルールを入れれば、まだ十分に間に合います。",
+ 1:"焦る必要はありません。短い文のSVOCから積み直す再設計が、実は合格への最短ルートです。"
 };
-
-/* ============================================================
-   二段階適応方式の判定パラメータ
-   ・標準8問中 BRANCH_MIN 問以上正解 → 挑戦セット / 未満 → 基礎確認セット
-   ・配点：標準8点×8＋挑戦6点×6＝100（挑戦ルート）
-           標準8点×8＋基礎確認4点×6（基礎確認ルートの上限は64）
-   ・満点100は「標準8問＋挑戦6問」全問正解でしか出ない
-============================================================ */
-const BRANCH_MIN = 6;
-const PT_STD = 8, PT_HARD = 6, PT_EASY = 4;
 
 /* ============================================================ */
 const app = document.getElementById("app");
 let S = {};
+let timerId = null;
 
 function resetState(){
-  S = {gradeId:null, gradeLabel:"", quizKey:"", school:"", dev:"", qIndex:0, items:[], answers:[], path:"", code:""};
+  if(timerId){ clearInterval(timerId); timerId = null; }
+  S = {gradeId:null, gradeLabel:"", quizKey:"", school:"", dev:"", qIndex:0, items:[], answers:[], code:""};
 }
 
 function shuffle(arr){
@@ -564,11 +481,15 @@ function renderStart(){
   <div class="card" style="text-align:center">
     <div class="eyebrow">受験の王様 監修</div>
     <h1 class="title">英語設計診断</h1>
-    <p class="lead">あなたの英語、どこから設計し直す？<br>語彙・文法・構造・読解の4分野から<br>弱点タイプと今やるべき順番がわかります。</p>
+    <p class="lead">あなたの英語、「なんとなく」で読んでいませんか？<br>構造把握・言い換え・論理の3分野から<br>「英語の読み方」を本質から診断します。</p>
     <div class="chips" style="justify-content:center">
-      <span class="chip">学年別・全14問</span><span class="chip">約5分</span><span class="chip">無料</span>
+      <span class="chip">学年別・全10問</span><span class="chip">約7分</span><span class="chip">無料</span>
     </div>
-    <p class="start-note" style="margin-top:14px">前半8問の成績で、後半の問題が変わる二段階方式。<br>満点は「挑戦セット」を突破しないと出ません。</p>
+    <div class="rulebox">
+      <div class="rl"><span class="ri">⏱</span><span><b>1問ごとに制限時間</b>があります。時間切れは未回答になります。</span></div>
+      <div class="rl"><span class="ri">🤔</span><span>勘で選ばないでください。根拠が持てないときは<b>「わからない」</b>を選ぶ——それも大事な診断データです。</span></div>
+      <div class="rl"><span class="ri">📐</span><span>単語や文法の暗記クイズは出ません。<b>「英文を正しく読めたか」</b>だけを問います。</span></div>
+    </div>
     <div class="stack">
       <button class="btn btn-primary" id="start">診断をはじめる</button>
     </div>
@@ -582,7 +503,7 @@ function renderGrade(){
   const groups = ["中学生","高校生","既卒"];
   let html = `<div class="card">
     <div class="step-label"><span class="step-num">STEP 1 / 3</span><span class="step-q">学年を選んでください</span></div>
-    <p class="qnote">学年に合わせて、出題される問題が変わります。</p>`;
+    <p class="qnote">学年に合わせて、英文のレベルが変わります。診断の方針は全学年共通です。</p>`;
   groups.forEach(g=>{
     const items = GRADES.filter(x=>x.group===g);
     if(g!=="既卒") html += `<div class="group-label">${g}</div>`;
@@ -642,81 +563,95 @@ function renderDev(){
 }
 
 /* ---------- クイズ ---------- */
-function prepItems(list, stage){
-  return list.map(q=>{
-    const order = shuffle(q.c.map((_,i)=>i));
-    return {f:q.f, u:q.u, q:q.q, p:q.p||null, stage:stage, choices:order.map(i=>q.c[i]), correct:order.indexOf(q.a)};
-  });
-}
-
 function startQuiz(){
   const src = QUIZZES[S.quizKey];
-  S.items = prepItems(src.std, "std");
-  S.qIndex = 0; S.answers = []; S.path = "";
+  S.items = src.map(q=>{
+    const order = shuffle(q.c.map((_,i)=>i));
+    return {f:q.f, u:q.u, d:q.d, t:q.t, s:q.s, q:q.q, choices:order.map(i=>q.c[i]), correct:order.indexOf(q.a)};
+  });
+  S.qIndex = 0; S.answers = [];
   renderQuiz();
+}
+
+function pushAnswer(item, st){
+  S.answers.push({f:item.f, u:item.u, d:item.d, st:st});
 }
 
 function renderQuiz(){
   const item = S.items[S.qIndex];
   const keys = ["A","B","C","D"];
-  const isHard = item.stage === "hard";
   let html = `<div class="card">
     <div class="quiz-head">
-      <span class="qcount">Q ${S.qIndex+1}<small> / 14</small></span>
+      <span class="qcount">Q ${S.qIndex+1}<small> / 10</small></span>
       <span class="qtotal">英語設計診断</span>
     </div>
-    <div class="progress"><i style="width:${(S.qIndex/14)*100}%"></i></div>
-    <span class="section-tag ${isHard?"hard":""}">${isHard?"挑戦｜":""}${SECTION_TAG[item.f]}</span>
-    ${item.p ? `<div class="qnote">次の英文を読んで答えてください。</div><div class="passage">${item.p}</div>` : ``}
+    <div class="progress"><i style="width:${(S.qIndex/10)*100}%"></i></div>
+    <div class="timer-row">
+      <div class="timer-bar"><i id="tbar" style="width:100%"></i></div>
+      <span class="timer-num" id="tnum">${item.t}秒</span>
+    </div>
+    <span class="section-tag">${SECTION_TAG[item.f]}</span>
+    <div class="qnote">次の英文を読んで答えてください。</div>
+    <div class="passage">${item.s}</div>
     <div class="qtext">${item.q}</div>
     <div class="opts">`;
   item.choices.forEach((c,i)=>{
     html += `<button class="opt" data-i="${i}"><span class="key">${keys[i]}</span><span>${c}</span></button>`;
   });
+  html += `<button class="opt opt-idk" data-i="idk"><span class="key">？</span><span>わからない（勘では選ばない）</span></button>`;
   html += `</div></div>`;
   app.innerHTML = html;
 
   let locked = false;
+  const finish = (st)=>{
+    if(locked) return;
+    locked = true;
+    if(timerId){ clearInterval(timerId); timerId = null; }
+    app.querySelectorAll(".opt").forEach(x=>x.disabled = true);
+    pushAnswer(item, st);
+  };
+  const next = ()=>{
+    S.qIndex++;
+    if(S.qIndex < S.items.length) renderQuiz();
+    else renderAnalyzing();
+  };
+
+  /* 制限時間 */
+  const t0 = Date.now();
+  const total = item.t * 1000;
+  const tbar = document.getElementById("tbar");
+  const tnum = document.getElementById("tnum");
+  timerId = setInterval(()=>{
+    const left = total - (Date.now() - t0);
+    if(left <= 0){
+      finish("to");
+      const ov = document.createElement("div");
+      ov.className = "timeup";
+      ov.innerHTML = "<span>⏱ 時間切れ</span>";
+      document.body.appendChild(ov);
+      setTimeout(()=>{ ov.remove(); next(); }, 850);
+      return;
+    }
+    const ratio = left/total;
+    tbar.style.width = (ratio*100) + "%";
+    const secs = Math.ceil(left/1000);
+    tnum.textContent = secs + "秒";
+    if(ratio < 0.2){ tbar.classList.add("hurry"); tnum.classList.add("hurry"); }
+  }, 150);
+
   app.querySelectorAll(".opt").forEach(b=>{
     b.onclick = ()=>{
       if(locked) return;
-      locked = true;
       b.classList.add("selected");
-      app.querySelectorAll(".opt").forEach(x=>x.disabled = true);
-      const i = Number(b.dataset.i);
-      S.answers.push({f:item.f, u:item.u, stage:item.stage, ok: i===item.correct});
-      setTimeout(()=>{
-        S.qIndex++;
-        if(S.qIndex === 8 && !S.path) renderBridge();
-        else if(S.qIndex < S.items.length) renderQuiz();
-        else renderAnalyzing();
-      }, 350);
+      if(b.dataset.i === "idk"){
+        finish("idk");
+      } else {
+        const i = Number(b.dataset.i);
+        finish(i === item.correct ? "ok" : "ng");
+      }
+      setTimeout(next, 350);
     };
   });
-}
-
-/* ---------- 画面：後半分岐（ブリッジ） ---------- */
-function renderBridge(){
-  const stdCorrect = S.answers.filter(a=>a.ok).length;
-  const src = QUIZZES[S.quizKey];
-  const toHard = stdCorrect >= BRANCH_MIN;
-  S.path = toHard ? "hard" : "easy";
-  S.items = S.items.concat(prepItems(toHard ? src.hard : src.easy, S.path));
-
-  app.innerHTML = toHard ? `
-  <div class="card bridge">
-    <div class="mark hard">🔥</div>
-    <h3>挑戦セットに進みます</h3>
-    <p>前半8問の基準をクリアしました。<br>ここからの6問は、同じ既習範囲なのに<br><b>正答率がガクッと下がる</b>問題だけを集めています。<br>満点は、この6問を突破しないと出ません。</p>
-    <div class="stack"><button class="btn btn-primary" id="go">挑戦する</button></div>
-  </div>` : `
-  <div class="card bridge">
-    <div class="mark">🔍</div>
-    <h3>基礎確認セットに進みます</h3>
-    <p>ここからの6問で、<br>どの単元から積み直すのが最短かを<br>さらに細かく特定します。</p>
-    <div class="stack"><button class="btn btn-primary" id="go">続ける</button></div>
-  </div>`;
-  document.getElementById("go").onclick = renderQuiz;
 }
 
 /* ---------- 分析中 ---------- */
@@ -726,7 +661,7 @@ function renderAnalyzing(){
     <div class="spinner"></div>
     <div class="ana-line" id="ana"></div>
   </div>`;
-  const lines = ["回答を集計しています…","語彙・文法・構造・読解の正答率を計算しています…","弱点単元を特定しています…","診断タイプを判定しています…"];
+  const lines = ["回答を集計しています…","構造把握・言い換え・論理の正答率を計算しています…","回答の質（誤答／わからない／時間切れ）を分析しています…","診断タイプを判定しています…"];
   const el = document.getElementById("ana");
   let i = 0;
   el.textContent = lines[0];
@@ -739,37 +674,48 @@ function renderAnalyzing(){
 
 /* ---------- 判定ロジック ---------- */
 function calcResult(){
-  const stdOk  = S.answers.filter(a=>a.stage==="std"  && a.ok).length;
-  const st2Ok  = S.answers.filter(a=>a.stage!=="std" && a.ok).length;
-  const score = stdOk*PT_STD + st2Ok*(S.path==="hard" ? PT_HARD : PT_EASY);
+  const score = S.answers.reduce((sum,a)=> sum + (a.st==="ok" ? PT[a.d] : 0), 0);
   let level;
-  if(score>=88) level=5; else if(score>=66) level=4; else if(score>=46) level=3; else if(score>=28) level=2; else level=1;
+  if(score>=88) level=5; else if(score>=70) level=4; else if(score>=50) level=3; else if(score>=30) level=2; else level=1;
 
-  const fields = ["vocab","grammar","structure","reading"];
+  const nOk = S.answers.filter(a=>a.st==="ok").length;
+  const nNg = S.answers.filter(a=>a.st==="ng").length;
+  const nIdk = S.answers.filter(a=>a.st==="idk").length;
+  const nTo = S.answers.filter(a=>a.st==="to").length;
+
+  const fields = ["str","para","logic"];
   const rate = {};
   fields.forEach(f=>{
     const fs = S.answers.filter(a=>a.f===f);
-    rate[f] = fs.length ? fs.filter(a=>a.ok).length/fs.length : 0;
+    rate[f] = fs.length ? fs.filter(a=>a.st==="ok").length/fs.length : 0;
   });
 
   let typeKey;
   const lowCount = fields.filter(f=>rate[f]<0.5).length;
-  if(S.path==="hard" && fields.every(f=>rate[f]>=0.75)) typeKey = "jissen";
+  if(score>=85 && fields.every(f=>rate[f]>=0.7)) typeKey = "jissen";
+  else if(nNg>=4 && (nIdk+nTo)<=1 && score<75) typeKey = "kan";
   else if(lowCount>=2) typeKey = "kiso";
   else {
     typeKey = fields.reduce((min,f)=> rate[f] < rate[min] ? f : min, fields[0]);
   }
 
-  const weakUnits = [...new Set(S.answers.filter(a=>!a.ok).map(a=>a.u))].slice(0,4);
-  const marks = S.answers.map(a=>a.ok?"○":"×").join("");
-  return {score, level, rate, typeKey, weakUnits, marks};
+  const weakUnits = [...new Set(S.answers.filter(a=>a.st!=="ok").map(a=>a.u))].slice(0,4);
+  const marks = S.answers.map(a=> a.st==="ok"?"○" : a.st==="ng"?"×" : a.st==="idk"?"？" : "−").join("");
+  return {score, level, rate, typeKey, weakUnits, marks, nOk, nNg, nIdk, nTo};
+}
+
+function qualityInsight(r){
+  if(r.nNg>=4 && (r.nIdk+r.nTo)<=1) return "「わからない」を選ばずに外した誤答が多め。根拠のない“感覚読み”のサインです。";
+  if(r.nIdk>=4) return "「わからない」を正直に選べています。伸ばすべき場所がはっきり見えている状態です。";
+  if(r.nTo>=3) return "時間切れが多め。読むスピードより先に、「読み方の手順」を固めるのが近道です。";
+  if(r.nNg===0 && r.nTo===0 && r.nIdk===0) return "全問、根拠を持って正解。お見事です。";
+  return "誤答・わからない・時間切れのバランスから、読み方のクセを面談でさらに深掘りできます。";
 }
 
 /* ---------- コピー用テキスト ---------- */
 function buildCopyText(r){
   const pct = f => Math.round(r.rate[f]*100) + "％";
   const weak = r.weakUnits.length ? r.weakUnits.join("／") : "なし（全問正解）";
-  const setName = S.path==="hard" ? "標準8問＋挑戦6問" : "標準8問＋基礎確認6問";
   return [
     "━━━━━━━━━━━━",
     "【英語設計診断 結果】",
@@ -778,12 +724,11 @@ function buildCopyText(r){
     "英語偏差値：" + S.dev,
     "────────────",
     "スコア：" + r.score + "／100（Lv." + r.level + "）",
-    "出題：" + setName,
     "タイプ：" + TYPES[r.typeKey].name,
-    "語彙 " + pct("vocab") + "｜文法 " + pct("grammar"),
-    "構造 " + pct("structure") + "｜読解 " + pct("reading"),
+    "構造把握 " + pct("str") + "｜言い換え " + pct("para") + "｜論理 " + pct("logic"),
+    "回答の質：正解" + r.nOk + "・誤答" + r.nNg + "・わからない" + r.nIdk + "・時間切れ" + r.nTo,
     "弱点単元：" + weak,
-    "正誤：" + r.marks,
+    "正誤：" + r.marks + "（○正解 ×誤答 ？わからない −時間切れ）",
     "診断コード：" + S.code,
     "━━━━━━━━━━━━",
     "↑このまま送信してください！"
@@ -802,9 +747,6 @@ function renderResult(){
     ? r.weakUnits.map(u=>`<span class="wchip">${u}</span>`).join("")
     : `<span class="wchip">なし（全問正解！）</span>`;
   const gapSchool = S.school==="未定" ? "あなたの志望校" : "『"+escapeHtml(S.school)+"』";
-  const setBadge = S.path==="hard"
-    ? `<span class="setbadge hard">出題：標準8問＋挑戦6問（上位帯）</span>`
-    : `<span class="setbadge easy">出題：標準8問＋基礎確認6問</span>`;
 
   app.innerHTML = `
   <div class="sheet"><div class="sheet-inner">
@@ -821,7 +763,6 @@ function renderResult(){
       <span>志望校：<b>${escapeHtml(S.school)}</b></span>
       <span>英語偏差値：<b>${S.dev}</b></span>
     </div>
-    ${setBadge}
 
     <div class="scorebox">
       <div class="score">${r.score}<small>/100</small></div>
@@ -835,12 +776,23 @@ function renderResult(){
     </div>
 
     <div class="fields">
-      ${["vocab","grammar","structure","reading"].map(f=>`
+      ${["str","para","logic"].map(f=>`
       <div class="frow">
         <span class="fname">${FIELD_LABEL[f]}</span>
         <span class="fbar"><i style="width:${pct(f)}%"></i></span>
         <span class="fpct">${pct(f)}%</span>
       </div>`).join("")}
+    </div>
+
+    <div class="quality">
+      <div class="cap">回答の質</div>
+      <div class="qgrid">
+        <div class="qcell"><b>${r.nOk}</b><span>正解</span></div>
+        <div class="qcell"><b>${r.nNg}</b><span>誤答</span></div>
+        <div class="qcell"><b>${r.nIdk}</b><span>わからない</span></div>
+        <div class="qcell"><b>${r.nTo}</b><span>時間切れ</span></div>
+      </div>
+      <div class="qinsight">${qualityInsight(r)}</div>
     </div>
 
     <div class="weak">

@@ -285,6 +285,16 @@
   to = "/lp/coreenglish-sl/:splat"
   status = 200
 
+# 診断: 英語設計診断 — /english-reading で公開
+[[redirects]]
+  from = "/english-reading"
+  to = "/shindan/english-reading/index.html"
+  status = 200
+[[redirects]]
+  from = "/english-reading/*"
+  to = "/shindan/english-reading/:splat"
+  status = 200
+
 # ---------------------------------------------------------------------------
 # 英文読解 完全解説 — /reading-lesson（受講生向け・noindex）
 # フォルダ＋index.html 型。末尾スラッシュなしのきれいなURLで返す。

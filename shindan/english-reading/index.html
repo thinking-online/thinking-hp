@@ -276,6 +276,23 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .pulse{animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
 .cta-note{text-align:center;font-size:.78rem;color:var(--ink-sub)}
+.codebox{
+  display:flex;align-items:center;justify-content:space-between;gap:10px;
+  background:#fff;border:1.5px dashed var(--gold-deep);border-radius:10px;
+  padding:12px 14px;margin-bottom:12px;cursor:pointer;
+}
+.codebox .code-label{font-size:.68rem;letter-spacing:.14em;font-weight:700;color:var(--ink-sub)}
+.codebox .code-val{
+  font-family:var(--font-num);font-weight:600;font-size:1.35rem;
+  letter-spacing:.12em;color:var(--ink);line-height:1.2;
+}
+.codebox .code-meta{text-align:left}
+.codebox .code-tap{
+  flex:0 0 auto;border:none;cursor:pointer;
+  font-family:var(--font-body);font-weight:700;font-size:.78rem;
+  background:var(--ink);color:var(--paper);border-radius:8px;
+  padding:10px 12px;white-space:nowrap;
+}
 
 /* ===== キャンプ告知 ===== */
 .camp{
@@ -360,10 +377,10 @@ body.has-sticky .wrap{padding-bottom:150px}
 ============================================================ */
 const LINE_URL  = "https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=JDVkS9&liff_id=1656043253-rkMxPZMQ"; // ★①
 /* ★①' 診断コード（全員共通の固定値。Lステップの自動応答トリガーとして
-   コピー文面に必ず含まれる。変更したらLステップ側のキーワードも合わせること） */
+   結果画面でコピーできるようにする。変更したらLステップ側のキーワードも合わせること） */
 const DIAG_CODE = "TH-ENG-A8BK";
 /* ★② 結果送信のリターン（結果画面の一等地に出る文言） */
-const SEND_RETURN = "この結果をコピーして、そのままLINEで送ってください。受験の王様が結果を見て、<b>今の状態と「やるべきこと」をあなた個別に整理して返します。</b>";
+const SEND_RETURN = "結果画面をスクショして、診断コードと一緒にLINEで送ってください。受験の王様が結果を見て、<b>今の状態と「やるべきこと」をあなた個別に整理して返します。</b>";
 /* ★②' キャンプ告知（結果画面下部のバナー） */
 const CAMP = {
   badge: "Instagramフォロワー9万人突破記念",
@@ -371,7 +388,7 @@ const CAMP = {
   title: "英語読解力キャンプ",
   sub:   "モニター募集｜最初で最後の企画",
   body:  "受験の王様が5日間付きっきり。あなたの英語力をつけ切るために、全てを捧げます。",
-  cta:   "参加したい人は、診断結果と一緒に「<b>キャンプ希望</b>」とLINEで送ってください。"
+  cta:   "参加したい人は、結果のスクショと診断コードと一緒に「<b>キャンプ希望</b>」とLINEで送ってください。"
 };
 
 /* ---------- 学年（アンケートは7分岐 / テストは6セット） ---------- */
@@ -566,7 +583,7 @@ function renderStart(){
     <div class="stack">
       <button class="btn btn-primary" id="start">診断をはじめる</button>
     </div>
-    <p class="start-note">結果はその場で表示。スクショ不要、そのままLINEに送れます。</p>
+    <p class="start-note">結果はその場で表示。スクショと診断コードをLINEに送ってください。</p>
   </div>`;
   document.getElementById("start").onclick = renderGrade;
 }
@@ -785,29 +802,6 @@ function qualityInsight(r){
   return "誤答・わからない・時間切れのバランスから、読み方のクセを面談でさらに深掘りできます。";
 }
 
-/* ---------- コピー用テキスト ---------- */
-function buildCopyText(r){
-  const pct = f => Math.round(r.rate[f]*100) + "％";
-  const weak = r.weakUnits.length ? r.weakUnits.join("／") : "なし（全問正解）";
-  return [
-    "━━━━━━━━━━━━",
-    "【英語読解力診断 結果】",
-    "学年：" + S.gradeLabel,
-    "志望校：" + S.school,
-    "英語偏差値：" + S.dev,
-    "────────────",
-    "スコア：" + r.score + "／100（Lv." + r.level + "）",
-    "タイプ：" + TYPES[r.typeKey].name,
-    "構造把握 " + pct("str") + "｜言い換え " + pct("para") + "｜論理 " + pct("logic"),
-    "回答の質：正解" + r.nOk + "・誤答" + r.nNg + "・わからない" + r.nIdk + "・時間切れ" + r.nTo,
-    "弱点単元：" + weak,
-    "正誤：" + r.marks + "（○正解 ×誤答 ？わからない −時間切れ）",
-    "診断コード：" + S.code,
-    "━━━━━━━━━━━━",
-    "↑このまま送信してください！"
-  ].join("\n");
-}
-
 /* ---------- 画面：結果 ---------- */
 function renderResult(){
   const r = calcResult();
@@ -852,12 +846,19 @@ function renderResult(){
     <div class="cta-hero">
       <div class="cap">＼ この結果、ここで終わらせない ／</div>
       <div class="msg">${SEND_RETURN}</div>
-      <div class="grid">
-        <div class="stepline"><span class="stepnum">1</span><button class="btn btn-primary pulse" id="copy">結果をコピーする</button></div>
-        <div class="copied" id="copied">コピーしました！あとはLINEに貼り付けて送信するだけ。</div>
-        <div class="stepline"><span class="stepnum">2</span><a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">LINEを開いて、そのまま送信</a></div>
+      <div class="codebox" id="codebox">
+        <div class="code-meta">
+          <div class="code-label">DIAGNOSIS CODE</div>
+          <div class="code-val">${DIAG_CODE}</div>
+        </div>
+        <button type="button" class="code-tap" id="copy-code-chip">タップでコピー</button>
       </div>
-      <p class="cta-note" style="margin-top:10px">貼り付けて送るだけ。10秒で終わります。</p>
+      <div class="grid">
+        <div class="stepline"><span class="stepnum">1</span><button class="btn btn-primary pulse" id="copy">診断コードをコピー</button></div>
+        <div class="copied" id="copied">コピーしました！結果をスクショして、LINEに貼り付けて送ってください。</div>
+        <div class="stepline"><span class="stepnum">2</span><a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">結果をスクショしてLINEで送る</a></div>
+      </div>
+      <p class="cta-note" style="margin-top:10px">スクショ＋診断コードを送るだけ。10秒で終わります。</p>
     </div>
 
     <div class="fields">
@@ -900,15 +901,19 @@ function renderResult(){
   </div></div>
   <div class="retry"><a id="retry">もう一度診断する</a></div>
   <div class="stickybar" id="stickybar"><div class="inner">
-    <button class="btn btn-primary" id="copy2">① 結果をコピー</button>
-    <a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">② LINEで送る</a>
+    <button class="btn btn-primary" id="copy2">① コードをコピー</button>
+    <a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">② スクショして送る</a>
   </div></div>`;
 
-  const copyText = buildCopyText(r);
-  const copyBoth = ()=> doCopy(copyText);
+  const copyBoth = ()=> doCopy(DIAG_CODE);
   document.getElementById("copy").onclick = copyBoth;
   document.getElementById("copy2").onclick = copyBoth;
-  /* LINEボタンを押した瞬間にも自動コピー（コピーを飛ばした人の保険） */
+  document.getElementById("copy-code-chip").onclick = copyBoth;
+  document.getElementById("codebox").onclick = (e)=>{
+    if(e.target.id === "copy-code-chip") return;
+    copyBoth();
+  };
+  /* LINEボタンを押した瞬間にも自動コピー（コードコピーを飛ばした人の保険） */
   app.querySelectorAll(".line-go").forEach(a=>{ a.addEventListener("click", copyBoth); });
   document.getElementById("stickybar").classList.add("show");
   document.body.classList.add("has-sticky");
@@ -927,6 +932,8 @@ function doCopy(text){
     if(btn) btn.textContent = "コピーしました ✓";
     const btn2 = document.getElementById("copy2");
     if(btn2) btn2.textContent = "コピー済み ✓";
+    const chip = document.getElementById("copy-code-chip");
+    if(chip) chip.textContent = "コピー済み ✓";
   };
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done));
@@ -942,7 +949,7 @@ function fallbackCopy(text, done){
   document.body.appendChild(ta);
   ta.focus(); ta.select();
   try{ document.execCommand("copy"); done(); }
-  catch(e){ alert("コピーできませんでした。結果画面をスクショして送ってください。"); }
+  catch(e){ alert("コピーできませんでした。診断コード「" + DIAG_CODE + "」を手入力して、結果画面のスクショと一緒に送ってください。"); }
   document.body.removeChild(ta);
 }
 

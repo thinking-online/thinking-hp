@@ -177,6 +177,12 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .ana-line{font-size:.9rem;color:var(--ink-sub);font-weight:500;min-height:1.7em}
 
 /* ===== 結果シート ===== */
+.result-cover{
+  display:block;width:100%;border-radius:10px;margin-bottom:14px;
+  border:2px solid var(--ink);
+  box-shadow:0 10px 26px rgba(0,0,0,.35);
+  animation:rise .35s ease both;
+}
 .sheet{
   border:2px solid var(--ink);border-radius:8px;position:relative;
   background:var(--paper);
@@ -821,6 +827,7 @@ function renderResult(){
   const gapSchool = S.school==="未定" ? "あなたの志望校" : "『"+escapeHtml(S.school)+"』";
 
   app.innerHTML = `
+  <img class="result-cover" src="result-header.png" alt="あなたの診断結果" onerror="this.remove()">
   <div class="sheet"><div class="sheet-inner">
     <div class="titleblock">
       <div class="tb-left">

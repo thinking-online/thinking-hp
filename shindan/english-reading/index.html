@@ -56,6 +56,15 @@ body{
 }
 .card--start{padding:0;overflow:hidden}
 .card-body{padding:18px 20px 26px}
+.cover-frame,.result-cover-frame{
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  width:100%;
+  max-width:100%;
+  background:#F8F4E9;
+  line-height:0;
+}
 @keyframes rise{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
 .eyebrow{
   font-size:.68rem;letter-spacing:.22em;font-weight:700;
@@ -186,26 +195,20 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   border-radius:8px;padding:8px 10px;margin-bottom:12px;
 }
 .result-cover-frame{
-  width:100%;
-  max-width:100%;
   margin:0 0 14px;
   border-radius:10px;
   overflow:hidden;
-  background:#F8F4E9;
   box-shadow:0 10px 26px rgba(0,0,0,.35);
-  line-height:0;
   animation:rise .35s ease both;
 }
 .result-cover{
   display:block;
-  width:100%;
-  max-width:100%;
+  width:auto;
   height:auto;
+  max-width:100%;
   margin:0;
   border:0;
   border-radius:0;
-  object-fit:contain;
-  object-position:center center;
   vertical-align:top;
 }
 .sheet{
@@ -358,21 +361,16 @@ body.has-sticky .wrap{padding-bottom:150px}
 }
 .start-note{font-size:.75rem;color:var(--ink-sub);text-align:center;margin-top:12px}
 .cover-frame{
-  width:100%;
-  max-width:100%;
-  background:#F8F4E9;
-  line-height:0;
+  border-radius:0;
 }
 .cover{
   display:block;
-  width:100%;
-  max-width:100%;
+  width:auto;
   height:auto;
+  max-width:100%;
   margin:0;
   border:0;
   border-radius:0;
-  object-fit:contain;
-  object-position:center top;
   vertical-align:top;
 }
 img{max-width:100%;height:auto}

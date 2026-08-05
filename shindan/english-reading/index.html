@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>英語読解力診断｜受験の王様</title>
+<title>英語設計診断｜受験の王様</title>
 <meta name="description" content="学年別・全10問。「英語の読み方」ができているかを、構造把握・言い換え・論理の3分野で本質から診断します。1問ごとに制限時間つき。">
-<meta property="og:title" content="英語読解力診断｜受験の王様">
+<meta property="og:title" content="英語設計診断｜受験の王様">
 <meta property="og:description" content="学年別・全10問・制限時間つき。なんとなく読みでは解けない「英語の読み方」診断。構造把握/言い換え/論理の3分野で弱点タイプと今やるべき順番がわかります。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -177,8 +177,14 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .ana-line{font-size:.9rem;color:var(--ink-sub);font-weight:500;min-height:1.7em}
 
 /* ===== 結果シート ===== */
+.restored-note{
+  text-align:center;font-size:.78rem;font-weight:700;color:var(--gold);
+  background:rgba(227,176,75,.12);border:1px solid rgba(227,176,75,.45);
+  border-radius:8px;padding:8px 10px;margin-bottom:12px;
+}
 .result-cover{
-  display:block;width:100%;height:auto;border-radius:10px;margin-bottom:14px;
+  display:block;width:100%;border-radius:10px;margin-bottom:14px;
+  border:2px solid var(--ink);
   box-shadow:0 10px 26px rgba(0,0,0,.35);
   animation:rise .35s ease both;
 }
@@ -276,23 +282,6 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .pulse{animation:pulse 1.6s ease-in-out infinite}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
 .cta-note{text-align:center;font-size:.78rem;color:var(--ink-sub)}
-.codebox{
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-  background:#fff;border:1.5px dashed var(--gold-deep);border-radius:10px;
-  padding:12px 14px;margin-bottom:12px;cursor:pointer;
-}
-.codebox .code-label{font-size:.68rem;letter-spacing:.14em;font-weight:700;color:var(--ink-sub)}
-.codebox .code-val{
-  font-family:var(--font-num);font-weight:600;font-size:1.35rem;
-  letter-spacing:.12em;color:var(--ink);line-height:1.2;
-}
-.codebox .code-meta{text-align:left}
-.codebox .code-tap{
-  flex:0 0 auto;border:none;cursor:pointer;
-  font-family:var(--font-body);font-weight:700;font-size:.78rem;
-  background:var(--ink);color:var(--paper);border-radius:8px;
-  padding:10px 12px;white-space:nowrap;
-}
 
 /* ===== キャンプ告知 ===== */
 .camp{
@@ -351,7 +340,6 @@ body.has-sticky .wrap{padding-bottom:150px}
 .cover{
   display:block;width:calc(100% + 40px);margin:-26px -20px 18px;
   border-radius:var(--radius) var(--radius) 0 0;
-  height:auto;
 }
 
 @media (prefers-reduced-motion:reduce){
@@ -377,10 +365,17 @@ body.has-sticky .wrap{padding-bottom:150px}
 ============================================================ */
 const LINE_URL  = "https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=JDVkS9&liff_id=1656043253-rkMxPZMQ"; // ★①
 /* ★①' 診断コード（全員共通の固定値。Lステップの自動応答トリガーとして
-   結果画面でコピーできるようにする。変更したらLステップ側のキーワードも合わせること） */
+   コピー文面に必ず含まれる。変更したらLステップ側のキーワードも合わせること） */
 const DIAG_CODE = "TH-ENG-A8BK";
+/* ★①'' LINEログイン連携（LIFF）
+   LINE DevelopersでLIFFアプリを作成し、そのLIFF ID（例 "1234567890-abcdefgh"）を
+   設定すると、開いた瞬間にLINEログインが走り、生徒のLINE表示名が
+   結果シートとコピー文面に自動で入る。空文字のままなら連携なしで動作。 */
+const LIFF_ID = "";
+/* 結果の保存キー（診断を一度受けたら、次回以降は保存済みの結果を即表示） */
+const STORE_KEY = "thinking_eigo_shindan_v1";
 /* ★② 結果送信のリターン（結果画面の一等地に出る文言） */
-const SEND_RETURN = "結果画面をスクショして、診断コードと一緒にLINEで送ってください。受験の王様が結果を見て、<b>今の状態と「やるべきこと」をあなた個別に整理して返します。</b>";
+const SEND_RETURN = "この結果をコピーして、そのままLINEで送ってください。受験の王様が結果を見て、<b>今の状態と「やるべきこと」をあなた個別に整理して返します。</b>";
 /* ★②' キャンプ告知（結果画面下部のバナー） */
 const CAMP = {
   badge: "Instagramフォロワー9万人突破記念",
@@ -388,7 +383,7 @@ const CAMP = {
   title: "英語読解力キャンプ",
   sub:   "モニター募集｜最初で最後の企画",
   body:  "受験の王様が5日間付きっきり。あなたの英語力をつけ切るために、全てを捧げます。",
-  cta:   "参加したい人は、結果のスクショと診断コードと一緒に「<b>キャンプ希望</b>」とLINEで送ってください。"
+  cta:   "参加したい人は、診断結果と一緒に「<b>キャンプ希望</b>」とLINEで送ってください。"
 };
 
 /* ---------- 学年（アンケートは7分岐 / テストは6セット） ---------- */
@@ -544,10 +539,60 @@ const LEVEL_COMMENT = {
 const app = document.getElementById("app");
 let S = {};
 let timerId = null;
+let USER_NAME = ""; // LIFFログイン時のLINE表示名（未連携時は空）
 
 function resetState(){
   if(timerId){ clearInterval(timerId); timerId = null; }
-  S = {gradeId:null, gradeLabel:"", quizKey:"", school:"", dev:"", qIndex:0, items:[], answers:[], code:""};
+  S = {gradeId:null, gradeLabel:"", quizKey:"", school:"", dev:"", qIndex:0, items:[], answers:[], code:"", restored:false, dateStr:""};
+}
+
+/* ---------- 結果の保存・復元 ---------- */
+function saveSnapshot(){
+  try{
+    localStorage.setItem(STORE_KEY, JSON.stringify({
+      v:1, date:S.dateStr, gradeId:S.gradeId, gradeLabel:S.gradeLabel,
+      quizKey:S.quizKey, school:S.school, dev:S.dev, name:USER_NAME, answers:S.answers
+    }));
+  }catch(e){}
+}
+function loadSnapshot(){
+  try{
+    const d = JSON.parse(localStorage.getItem(STORE_KEY));
+    if(d && d.v===1 && Array.isArray(d.answers) && d.answers.length===10 && QUIZZES[d.quizKey]) return d;
+  }catch(e){}
+  return null;
+}
+function clearSnapshot(){ try{ localStorage.removeItem(STORE_KEY); }catch(e){} }
+
+/* ---------- 起動（LIFF→保存結果の復元→スタート） ---------- */
+function boot(){
+  const go = ()=>{
+    const snap = loadSnapshot();
+    if(snap){
+      resetState();
+      S.gradeId = snap.gradeId; S.gradeLabel = snap.gradeLabel; S.quizKey = snap.quizKey;
+      S.school = snap.school; S.dev = snap.dev; S.answers = snap.answers;
+      S.dateStr = snap.date; S.restored = true;
+      if(!USER_NAME && snap.name) USER_NAME = snap.name;
+      renderResult();
+    } else {
+      renderStart();
+    }
+  };
+  if(LIFF_ID){
+    const sc = document.createElement("script");
+    sc.src = "https://static.line-scdn.net/liff/edge/2/sdk.js";
+    sc.onload = ()=>{
+      liff.init({liffId:LIFF_ID}).then(()=>{
+        if(!liff.isLoggedIn()){ liff.login(); return; }
+        return liff.getProfile().then(p=>{ USER_NAME = p.displayName || ""; }).catch(()=>{});
+      }).catch(()=>{}).then(go);
+    };
+    sc.onerror = go;
+    document.head.appendChild(sc);
+  } else {
+    go();
+  }
 }
 
 function shuffle(arr){
@@ -564,12 +609,11 @@ function renderStart(){
   resetState();
   app.innerHTML = `
   <div class="card" style="text-align:center">
-    <img class="cover" src="cover.jpg" alt="英語読解力診断｜あなたの“読む”力を一発判定"
-      width="819" height="1024"
+    <img class="cover" src="cover.png" alt="英語力診断｜あなたの“読む”力を一発判定"
       onerror="this.remove();document.getElementById('fallback-title').style.display='block'">
     <div id="fallback-title" style="display:none">
       <div class="eyebrow">受験の王様 監修</div>
-      <h1 class="title">英語読解力診断</h1>
+      <h1 class="title">英語設計診断</h1>
     </div>
     <p class="lead">あなたの英語、「なんとなく」で読んでいませんか？<br>構造把握・言い換え・論理の3分野から<br>「英語の読み方」を本質から診断します。</p>
     <div class="chips" style="justify-content:center">
@@ -583,7 +627,7 @@ function renderStart(){
     <div class="stack">
       <button class="btn btn-primary" id="start">診断をはじめる</button>
     </div>
-    <p class="start-note">結果はその場で表示。スクショと診断コードをLINEに送ってください。</p>
+    <p class="start-note">結果はその場で表示。スクショ不要、そのままLINEに送れます。</p>
   </div>`;
   document.getElementById("start").onclick = renderGrade;
 }
@@ -673,7 +717,7 @@ function renderQuiz(){
   let html = `<div class="card">
     <div class="quiz-head">
       <span class="qcount">Q ${S.qIndex+1}<small> / 10</small></span>
-      <span class="qtotal">英語読解力診断</span>
+      <span class="qtotal">英語設計診断</span>
     </div>
     <div class="progress"><i style="width:${(S.qIndex/10)*100}%"></i></div>
     <div class="timer-row">
@@ -802,13 +846,41 @@ function qualityInsight(r){
   return "誤答・わからない・時間切れのバランスから、読み方のクセを面談でさらに深掘りできます。";
 }
 
+/* ---------- コピー用テキスト ---------- */
+function buildCopyText(r){
+  const pct = f => Math.round(r.rate[f]*100) + "％";
+  const weak = r.weakUnits.length ? r.weakUnits.join("／") : "なし（全問正解）";
+  return [
+    "━━━━━━━━━━━━",
+    "【英語設計診断 結果】",
+    ...(USER_NAME ? ["名前：" + USER_NAME] : []),
+    "学年：" + S.gradeLabel,
+    "志望校：" + S.school,
+    "英語偏差値：" + S.dev,
+    "────────────",
+    "スコア：" + r.score + "／100（Lv." + r.level + "）",
+    "タイプ：" + TYPES[r.typeKey].name,
+    "構造把握 " + pct("str") + "｜言い換え " + pct("para") + "｜論理 " + pct("logic"),
+    "回答の質：正解" + r.nOk + "・誤答" + r.nNg + "・わからない" + r.nIdk + "・時間切れ" + r.nTo,
+    "弱点単元：" + weak,
+    "正誤：" + r.marks + "（○正解 ×誤答 ？わからない −時間切れ）",
+    "診断コード：" + S.code,
+    "━━━━━━━━━━━━",
+    "↑このまま送信してください！"
+  ].join("\n");
+}
+
 /* ---------- 画面：結果 ---------- */
 function renderResult(){
   const r = calcResult();
   S.code = DIAG_CODE;
   const type = TYPES[r.typeKey];
-  const today = new Date();
-  const dateStr = today.getFullYear() + "." + String(today.getMonth()+1).padStart(2,"0") + "." + String(today.getDate()).padStart(2,"0");
+  if(!S.dateStr){
+    const today = new Date();
+    S.dateStr = today.getFullYear() + "." + String(today.getMonth()+1).padStart(2,"0") + "." + String(today.getDate()).padStart(2,"0");
+  }
+  const dateStr = S.dateStr;
+  if(!S.restored) saveSnapshot();
   const pct = f => Math.round(r.rate[f]*100);
   const weakHtml = r.weakUnits.length
     ? r.weakUnits.map(u=>`<span class="wchip">${u}</span>`).join("")
@@ -816,17 +888,19 @@ function renderResult(){
   const gapSchool = S.school==="未定" ? "あなたの志望校" : "『"+escapeHtml(S.school)+"』";
 
   app.innerHTML = `
-  <img class="result-cover" src="result-header.jpg" alt="英語読解力診断｜診断結果" width="1024" height="576" onerror="this.remove()">
+  ${S.restored ? `<div class="restored-note">保存済みの診断結果を表示しています（診断日 ${dateStr}）</div>` : ``}
+  <img class="result-cover" src="result-header.png" alt="あなたの診断結果" onerror="this.remove()">
   <div class="sheet"><div class="sheet-inner">
     <div class="titleblock">
       <div class="tb-left">
         <div class="eyebrow">DIAGNOSIS SHEET</div>
-        <h2>英語読解力診断 結果</h2>
+        <h2>英語設計診断 結果</h2>
       </div>
       <div class="tb-right">DATE ${dateStr}<b>${S.code}</b></div>
     </div>
 
     <div class="profile-row">
+      ${USER_NAME ? `<span>名前：<b>${escapeHtml(USER_NAME)}</b></span>` : ``}
       <span>学年：<b>${S.gradeLabel}</b></span>
       <span>志望校：<b>${escapeHtml(S.school)}</b></span>
       <span>英語偏差値：<b>${S.dev}</b></span>
@@ -846,19 +920,12 @@ function renderResult(){
     <div class="cta-hero">
       <div class="cap">＼ この結果、ここで終わらせない ／</div>
       <div class="msg">${SEND_RETURN}</div>
-      <div class="codebox" id="codebox">
-        <div class="code-meta">
-          <div class="code-label">DIAGNOSIS CODE</div>
-          <div class="code-val">${DIAG_CODE}</div>
-        </div>
-        <button type="button" class="code-tap" id="copy-code-chip">タップでコピー</button>
-      </div>
       <div class="grid">
-        <div class="stepline"><span class="stepnum">1</span><button class="btn btn-primary pulse" id="copy">診断コードをコピー</button></div>
-        <div class="copied" id="copied">コピーしました！結果をスクショして、LINEに貼り付けて送ってください。</div>
-        <div class="stepline"><span class="stepnum">2</span><a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">結果をスクショしてLINEで送る</a></div>
+        <div class="stepline"><span class="stepnum">1</span><button class="btn btn-primary pulse" id="copy">結果をコピーする</button></div>
+        <div class="copied" id="copied">コピーしました！あとはLINEに貼り付けて送信するだけ。</div>
+        <div class="stepline"><span class="stepnum">2</span><a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">LINEを開いて、そのまま送信</a></div>
       </div>
-      <p class="cta-note" style="margin-top:10px">スクショ＋診断コードを送るだけ。10秒で終わります。</p>
+      <p class="cta-note" style="margin-top:10px">貼り付けて送るだけ。10秒で終わります。</p>
     </div>
 
     <div class="fields">
@@ -899,25 +966,23 @@ function renderResult(){
       </div>
     </div>
   </div></div>
-  <div class="retry"><a id="retry">もう一度診断する</a></div>
+  <div class="retry"><a id="retry">診断をやり直す（前回の記録は消えます）</a></div>
   <div class="stickybar" id="stickybar"><div class="inner">
-    <button class="btn btn-primary" id="copy2">① コードをコピー</button>
-    <a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">② スクショして送る</a>
+    <button class="btn btn-primary" id="copy2">① 結果をコピー</button>
+    <a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">② LINEで送る</a>
   </div></div>`;
 
-  const copyBoth = ()=> doCopy(DIAG_CODE);
+  const copyText = buildCopyText(r);
+  const copyBoth = ()=> doCopy(copyText);
   document.getElementById("copy").onclick = copyBoth;
   document.getElementById("copy2").onclick = copyBoth;
-  document.getElementById("copy-code-chip").onclick = copyBoth;
-  document.getElementById("codebox").onclick = (e)=>{
-    if(e.target.id === "copy-code-chip") return;
-    copyBoth();
-  };
-  /* LINEボタンを押した瞬間にも自動コピー（コードコピーを飛ばした人の保険） */
+  /* LINEボタンを押した瞬間にも自動コピー（コピーを飛ばした人の保険） */
   app.querySelectorAll(".line-go").forEach(a=>{ a.addEventListener("click", copyBoth); });
   document.getElementById("stickybar").classList.add("show");
   document.body.classList.add("has-sticky");
   document.getElementById("retry").onclick = ()=>{
+    if(!confirm("前回の診断結果を消して、もう一度診断しますか？")) return;
+    clearSnapshot();
     document.getElementById("stickybar")?.remove();
     document.body.classList.remove("has-sticky");
     renderStart();
@@ -932,8 +997,6 @@ function doCopy(text){
     if(btn) btn.textContent = "コピーしました ✓";
     const btn2 = document.getElementById("copy2");
     if(btn2) btn2.textContent = "コピー済み ✓";
-    const chip = document.getElementById("copy-code-chip");
-    if(chip) chip.textContent = "コピー済み ✓";
   };
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done));
@@ -949,7 +1012,7 @@ function fallbackCopy(text, done){
   document.body.appendChild(ta);
   ta.focus(); ta.select();
   try{ document.execCommand("copy"); done(); }
-  catch(e){ alert("コピーできませんでした。診断コード「" + DIAG_CODE + "」を手入力して、結果画面のスクショと一緒に送ってください。"); }
+  catch(e){ alert("コピーできませんでした。結果画面をスクショして送ってください。"); }
   document.body.removeChild(ta);
 }
 
@@ -957,7 +1020,7 @@ function escapeHtml(s){
   return s.replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
 }
 
-renderStart();
+boot();
 </script>
 </body>
 </html>

@@ -247,19 +247,73 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   font-family:var(--font-num);font-size:.72rem;font-weight:600;
   display:flex;align-items:center;justify-content:center;
 }
-.gap-line{
-  margin-top:18px;text-align:center;font-family:var(--font-display);
-  font-weight:600;font-size:.95rem;line-height:2;
-  border-top:1px dashed var(--paper-line);padding-top:16px;
+/* ===== 送信CTA（一等地） ===== */
+.cta-hero{
+  margin:20px -8px 4px;padding:18px 16px;
+  border:2.5px solid var(--gold-deep);border-radius:12px;
+  background:linear-gradient(180deg,#fff,var(--gold-soft));
+  box-shadow:0 6px 18px rgba(227,176,75,.25);
 }
-.gift{
-  margin-top:18px;border:2px dashed var(--gold-deep);border-radius:var(--radius);
-  background:var(--gold-soft);padding:16px;font-size:.86rem;
+.cta-hero .cap{
+  text-align:center;font-size:.72rem;letter-spacing:.18em;font-weight:900;
+  color:var(--gold-deep);margin-bottom:8px;
 }
-.gift .cap{color:var(--gold-deep)}
-.gift b{font-weight:900}
-.cta{margin-top:20px;display:grid;gap:12px}
+.cta-hero .msg{font-size:.9rem;line-height:1.8;margin-bottom:14px}
+.cta-hero .msg b{font-weight:900;background:linear-gradient(transparent 62%,rgba(227,176,75,.45) 62%)}
+.cta-hero .stepline{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.cta-hero .stepnum{
+  flex:0 0 24px;height:24px;border-radius:50%;background:var(--ink);color:var(--paper);
+  font-family:var(--font-num);font-size:.75rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+}
+.cta-hero .btn{padding:15px}
+.cta-hero .grid{display:grid;gap:10px}
+.pulse{animation:pulse 1.6s ease-in-out infinite}
+@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
 .cta-note{text-align:center;font-size:.78rem;color:var(--ink-sub)}
+
+/* ===== キャンプ告知 ===== */
+.camp{
+  margin-top:20px;border-radius:12px;overflow:hidden;
+  border:2px solid var(--ink);background:var(--navy);color:var(--paper);
+  box-shadow:0 8px 22px rgba(0,0,0,.3);
+}
+.camp-inner{padding:18px 16px;text-align:center}
+.camp .badge{
+  display:inline-block;font-size:.68rem;font-weight:900;letter-spacing:.12em;
+  color:#231a05;background:linear-gradient(180deg,var(--gold),var(--gold-deep));
+  border-radius:999px;padding:4px 14px;margin-bottom:10px;
+}
+.camp .dates{font-family:var(--font-num);font-weight:600;font-size:.9rem;letter-spacing:.14em;color:var(--gold)}
+.camp h3{
+  font-family:var(--font-display);font-weight:800;font-size:1.5rem;
+  letter-spacing:.06em;margin:.15em 0 .1em;color:#fff;
+}
+.camp .sub{
+  font-size:.78rem;font-weight:700;letter-spacing:.1em;color:var(--gold);
+  border-top:1px solid rgba(227,176,75,.4);border-bottom:1px solid rgba(227,176,75,.4);
+  display:inline-block;padding:4px 10px;margin:8px 0 12px;
+}
+.camp .body{font-size:.86rem;line-height:1.9;color:rgba(250,247,239,.92)}
+.camp .camp-cta{
+  margin-top:12px;font-size:.84rem;background:rgba(227,176,75,.12);
+  border:1.5px dashed var(--gold);border-radius:8px;padding:10px 12px;
+  color:#fff;
+}
+.camp .camp-cta b{color:var(--gold);font-weight:900}
+
+/* ===== 追従バー ===== */
+.stickybar{
+  position:fixed;left:0;right:0;bottom:0;z-index:40;
+  padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(7,24,41,.92);backdrop-filter:blur(6px);
+  border-top:1px solid rgba(227,176,75,.35);
+  display:none;
+}
+.stickybar.show{display:block;animation:rise .3s ease both}
+body.has-sticky .wrap{padding-bottom:150px}
+.stickybar .inner{max-width:480px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.stickybar .btn{padding:13px 8px;font-size:.9rem}
 .copied{
   display:none;text-align:center;font-size:.85rem;font-weight:700;color:#0a7a3d;
   background:#eafaf0;border:1px solid #bfe8cf;border-radius:8px;padding:10px;
@@ -299,7 +353,17 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
    ④ TYPES      … タイプ名・説明文・夏の処方箋
 ============================================================ */
 const LINE_URL  = "https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=JDVkS9&liff_id=1656043253-rkMxPZMQ"; // ★①
-const GIFT_TEXT = "この結果をLINEに送ってくれた人限定で、学年別「夏の英語設計シート」をプレゼント。さらに希望者は、無料の英語設計面談へご案内します。"; // ★②
+/* ★② 結果送信のリターン（結果画面の一等地に出る文言） */
+const SEND_RETURN = "この結果をコピーして、そのままLINEで送ってください。受験の王様が結果を見て、<b>今の状態と「やるべきこと」をあなた個別に整理して返します。</b>";
+/* ★②' キャンプ告知（結果画面下部のバナー） */
+const CAMP = {
+  badge: "Instagramフォロワー9万人突破記念",
+  dates: "8月9日スタート｜5日間",
+  title: "英語読解力キャンプ",
+  sub:   "モニター募集｜最初で最後の企画",
+  body:  "受験の王様が5日間付きっきり。あなたの英語力をつけ切るために、全てを捧げます。",
+  cta:   "参加したい人は、診断結果と一緒に「<b>キャンプ希望</b>」とLINEで送ってください。"
+};
 
 /* ---------- 学年（アンケートは7分岐 / テストは6セット） ---------- */
 const GRADES = [
@@ -783,6 +847,17 @@ function renderResult(){
       <div class="typedesc">${type.desc}</div>
     </div>
 
+    <div class="cta-hero">
+      <div class="cap">＼ この結果、ここで終わらせない ／</div>
+      <div class="msg">${SEND_RETURN}</div>
+      <div class="grid">
+        <div class="stepline"><span class="stepnum">1</span><button class="btn btn-primary pulse" id="copy">結果をコピーする</button></div>
+        <div class="copied" id="copied">コピーしました！あとはLINEに貼り付けて送信するだけ。</div>
+        <div class="stepline"><span class="stepnum">2</span><a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">LINEを開いて、そのまま送信</a></div>
+      </div>
+      <p class="cta-note" style="margin-top:10px">貼り付けて送るだけ。10秒で終わります。</p>
+    </div>
+
     <div class="fields">
       ${["str","para","logic"].map(f=>`
       <div class="frow">
@@ -808,42 +883,48 @@ function renderResult(){
       <div class="weak-chips">${weakHtml}</div>
     </div>
 
-    <div class="comment">${GRADE_COMMENT[S.quizKey]}<br>${LEVEL_COMMENT[r.level]}</div>
+    <div class="comment">${GRADE_COMMENT[S.quizKey]}<br>${LEVEL_COMMENT[r.level]}<br>${gapSchool}までの具体的な話は、結果を送ってくれた人と個別に進めます。</div>
 
-    <div class="rx">
-      <div class="cap">この夏の処方箋（${type.name}）</div>
-      <ol>
-        ${type.rx.map((t,i)=>`<li><span class="n">${i+1}</span><span>${t}</span></li>`).join("")}
-      </ol>
-    </div>
-
-    <div class="gap-line">${gapSchool}までの「具体的な設計」は、<br>ここから先の面談でつくります。</div>
-
-    <div class="gift">
-      <div class="cap">送信特典</div>
-      ${GIFT_TEXT}
-    </div>
-
-    <div class="cta">
-      <button class="btn btn-primary" id="copy">結果をコピーする</button>
-      <div class="copied" id="copied">コピーしました！LINEを開いて、そのまま貼り付けて送信してください。</div>
-      <a class="btn btn-line" href="${LINE_URL}" target="_blank" rel="noopener">LINEを開いて送る</a>
-      <p class="cta-note">①「結果をコピーする」→ ②「LINEを開いて送る」→ ③トークに貼り付けて送信</p>
+    <div class="camp">
+      <div class="camp-inner">
+        <span class="badge">${CAMP.badge}</span>
+        <div class="dates">${CAMP.dates}</div>
+        <h3>${CAMP.title}</h3>
+        <div class="sub">${CAMP.sub}</div>
+        <div class="body">${CAMP.body}</div>
+        <div class="camp-cta">${CAMP.cta}</div>
+      </div>
     </div>
   </div></div>
-  <div class="retry"><a id="retry">もう一度診断する</a></div>`;
+  <div class="retry"><a id="retry">もう一度診断する</a></div>
+  <div class="stickybar" id="stickybar"><div class="inner">
+    <button class="btn btn-primary" id="copy2">① 結果をコピー</button>
+    <a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">② LINEで送る</a>
+  </div></div>`;
 
   const copyText = buildCopyText(r);
-  document.getElementById("copy").onclick = ()=> doCopy(copyText);
-  document.getElementById("retry").onclick = renderStart;
+  const copyBoth = ()=> doCopy(copyText);
+  document.getElementById("copy").onclick = copyBoth;
+  document.getElementById("copy2").onclick = copyBoth;
+  /* LINEボタンを押した瞬間にも自動コピー（コピーを飛ばした人の保険） */
+  app.querySelectorAll(".line-go").forEach(a=>{ a.addEventListener("click", copyBoth); });
+  document.getElementById("stickybar").classList.add("show");
+  document.body.classList.add("has-sticky");
+  document.getElementById("retry").onclick = ()=>{
+    document.getElementById("stickybar")?.remove();
+    document.body.classList.remove("has-sticky");
+    renderStart();
+  };
 }
 
 function doCopy(text){
   const done = ()=>{
     const el = document.getElementById("copied");
-    el.classList.add("show");
+    if(el) el.classList.add("show");
     const btn = document.getElementById("copy");
-    btn.textContent = "コピーしました ✓";
+    if(btn) btn.textContent = "コピーしました ✓";
+    const btn2 = document.getElementById("copy2");
+    if(btn2) btn2.textContent = "コピー済み ✓";
   };
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done));

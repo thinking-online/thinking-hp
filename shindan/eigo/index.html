@@ -272,6 +272,10 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   font-size:.68rem;letter-spacing:.18em;
 }
 .start-note{font-size:.75rem;color:var(--ink-sub);text-align:center;margin-top:12px}
+.cover{
+  display:block;width:calc(100% + 40px);margin:-26px -20px 18px;
+  border-radius:var(--radius) var(--radius) 0 0;
+}
 
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
@@ -479,8 +483,12 @@ function renderStart(){
   resetState();
   app.innerHTML = `
   <div class="card" style="text-align:center">
-    <div class="eyebrow">受験の王様 監修</div>
-    <h1 class="title">英語設計診断</h1>
+    <img class="cover" src="cover.png" alt="英語力診断｜あなたの“読む”力を一発判定"
+      onerror="this.remove();document.getElementById('fallback-title').style.display='block'">
+    <div id="fallback-title" style="display:none">
+      <div class="eyebrow">受験の王様 監修</div>
+      <h1 class="title">英語設計診断</h1>
+    </div>
     <p class="lead">あなたの英語、「なんとなく」で読んでいませんか？<br>構造把握・言い換え・論理の3分野から<br>「英語の読み方」を本質から診断します。</p>
     <div class="chips" style="justify-content:center">
       <span class="chip">学年別・全10問</span><span class="chip">約7分</span><span class="chip">無料</span>

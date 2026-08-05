@@ -177,6 +177,11 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .ana-line{font-size:.9rem;color:var(--ink-sub);font-weight:500;min-height:1.7em}
 
 /* ===== 結果シート ===== */
+.restored-note{
+  text-align:center;font-size:.78rem;font-weight:700;color:var(--gold);
+  background:rgba(227,176,75,.12);border:1px solid rgba(227,176,75,.45);
+  border-radius:8px;padding:8px 10px;margin-bottom:12px;
+}
 .result-cover{
   display:block;width:100%;border-radius:10px;margin-bottom:14px;
   border:2px solid var(--ink);
@@ -362,6 +367,13 @@ const LINE_URL  = "https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%4049
 /* ★①' 診断コード（全員共通の固定値。Lステップの自動応答トリガーとして
    コピー文面に必ず含まれる。変更したらLステップ側のキーワードも合わせること） */
 const DIAG_CODE = "TH-ENG-A8BK";
+/* ★①'' LINEログイン連携（LIFF）
+   LINE DevelopersでLIFFアプリを作成し、そのLIFF ID（例 "1234567890-abcdefgh"）を
+   設定すると、開いた瞬間にLINEログインが走り、生徒のLINE表示名が
+   結果シートとコピー文面に自動で入る。空文字のままなら連携なしで動作。 */
+const LIFF_ID = "";
+/* 結果の保存キー（診断を一度受けたら、次回以降は保存済みの結果を即表示） */
+const STORE_KEY = "thinking_eigo_shindan_v1";
 /* ★② 結果送信のリターン（結果画面の一等地に出る文言） */
 const SEND_RETURN = "この結果をコピーして、そのままLINEで送ってください。受験の王様が結果を見て、<b>今の状態と「やるべきこと」をあなた個別に整理して返します。</b>";
 /* ★②' キャンプ告知（結果画面下部のバナー） */
@@ -527,10 +539,60 @@ const LEVEL_COMMENT = {
 const app = document.getElementById("app");
 let S = {};
 let timerId = null;
+let USER_NAME = ""; // LIFFログイン時のLINE表示名（未連携時は空）
 
 function resetState(){
   if(timerId){ clearInterval(timerId); timerId = null; }
-  S = {gradeId:null, gradeLabel:"", quizKey:"", school:"", dev:"", qIndex:0, items:[], answers:[], code:""};
+  S = {gradeId:null, gradeLabel:"", quizKey:"", school:"", dev:"", qIndex:0, items:[], answers:[], code:"", restored:false, dateStr:""};
+}
+
+/* ---------- 結果の保存・復元 ---------- */
+function saveSnapshot(){
+  try{
+    localStorage.setItem(STORE_KEY, JSON.stringify({
+      v:1, date:S.dateStr, gradeId:S.gradeId, gradeLabel:S.gradeLabel,
+      quizKey:S.quizKey, school:S.school, dev:S.dev, name:USER_NAME, answers:S.answers
+    }));
+  }catch(e){}
+}
+function loadSnapshot(){
+  try{
+    const d = JSON.parse(localStorage.getItem(STORE_KEY));
+    if(d && d.v===1 && Array.isArray(d.answers) && d.answers.length===10 && QUIZZES[d.quizKey]) return d;
+  }catch(e){}
+  return null;
+}
+function clearSnapshot(){ try{ localStorage.removeItem(STORE_KEY); }catch(e){} }
+
+/* ---------- 起動（LIFF→保存結果の復元→スタート） ---------- */
+function boot(){
+  const go = ()=>{
+    const snap = loadSnapshot();
+    if(snap){
+      resetState();
+      S.gradeId = snap.gradeId; S.gradeLabel = snap.gradeLabel; S.quizKey = snap.quizKey;
+      S.school = snap.school; S.dev = snap.dev; S.answers = snap.answers;
+      S.dateStr = snap.date; S.restored = true;
+      if(!USER_NAME && snap.name) USER_NAME = snap.name;
+      renderResult();
+    } else {
+      renderStart();
+    }
+  };
+  if(LIFF_ID){
+    const sc = document.createElement("script");
+    sc.src = "https://static.line-scdn.net/liff/edge/2/sdk.js";
+    sc.onload = ()=>{
+      liff.init({liffId:LIFF_ID}).then(()=>{
+        if(!liff.isLoggedIn()){ liff.login(); return; }
+        return liff.getProfile().then(p=>{ USER_NAME = p.displayName || ""; }).catch(()=>{});
+      }).catch(()=>{}).then(go);
+    };
+    sc.onerror = go;
+    document.head.appendChild(sc);
+  } else {
+    go();
+  }
 }
 
 function shuffle(arr){
@@ -791,6 +853,7 @@ function buildCopyText(r){
   return [
     "━━━━━━━━━━━━",
     "【英語設計診断 結果】",
+    ...(USER_NAME ? ["名前：" + USER_NAME] : []),
     "学年：" + S.gradeLabel,
     "志望校：" + S.school,
     "英語偏差値：" + S.dev,
@@ -812,8 +875,12 @@ function renderResult(){
   const r = calcResult();
   S.code = DIAG_CODE;
   const type = TYPES[r.typeKey];
-  const today = new Date();
-  const dateStr = today.getFullYear() + "." + String(today.getMonth()+1).padStart(2,"0") + "." + String(today.getDate()).padStart(2,"0");
+  if(!S.dateStr){
+    const today = new Date();
+    S.dateStr = today.getFullYear() + "." + String(today.getMonth()+1).padStart(2,"0") + "." + String(today.getDate()).padStart(2,"0");
+  }
+  const dateStr = S.dateStr;
+  if(!S.restored) saveSnapshot();
   const pct = f => Math.round(r.rate[f]*100);
   const weakHtml = r.weakUnits.length
     ? r.weakUnits.map(u=>`<span class="wchip">${u}</span>`).join("")
@@ -821,6 +888,7 @@ function renderResult(){
   const gapSchool = S.school==="未定" ? "あなたの志望校" : "『"+escapeHtml(S.school)+"』";
 
   app.innerHTML = `
+  ${S.restored ? `<div class="restored-note">保存済みの診断結果を表示しています（診断日 ${dateStr}）</div>` : ``}
   <img class="result-cover" src="result-header.png" alt="あなたの診断結果" onerror="this.remove()">
   <div class="sheet"><div class="sheet-inner">
     <div class="titleblock">
@@ -832,6 +900,7 @@ function renderResult(){
     </div>
 
     <div class="profile-row">
+      ${USER_NAME ? `<span>名前：<b>${escapeHtml(USER_NAME)}</b></span>` : ``}
       <span>学年：<b>${S.gradeLabel}</b></span>
       <span>志望校：<b>${escapeHtml(S.school)}</b></span>
       <span>英語偏差値：<b>${S.dev}</b></span>
@@ -897,7 +966,7 @@ function renderResult(){
       </div>
     </div>
   </div></div>
-  <div class="retry"><a id="retry">もう一度診断する</a></div>
+  <div class="retry"><a id="retry">診断をやり直す（前回の記録は消えます）</a></div>
   <div class="stickybar" id="stickybar"><div class="inner">
     <button class="btn btn-primary" id="copy2">① 結果をコピー</button>
     <a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">② LINEで送る</a>
@@ -912,6 +981,8 @@ function renderResult(){
   document.getElementById("stickybar").classList.add("show");
   document.body.classList.add("has-sticky");
   document.getElementById("retry").onclick = ()=>{
+    if(!confirm("前回の診断結果を消して、もう一度診断しますか？")) return;
+    clearSnapshot();
     document.getElementById("stickybar")?.remove();
     document.body.classList.remove("has-sticky");
     renderStart();
@@ -949,7 +1020,7 @@ function escapeHtml(s){
   return s.replace(/[&<>"']/g, m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[m]));
 }
 
-renderStart();
+boot();
 </script>
 </body>
 </html>

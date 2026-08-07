@@ -265,6 +265,16 @@
   to = "/lp/summer-vocabulary/:splat"
   status = 200
 
+# LP: 英語読解力キャンプ — /english-reading-camp で公開
+[[redirects]]
+  from = "/english-reading-camp"
+  to = "/lp/english-reading-camp/index.html"
+  status = 200
+[[redirects]]
+  from = "/english-reading-camp/*"
+  to = "/lp/english-reading-camp/:splat"
+  status = 200
+
 # LP: CORE ENGLISH day03 英語完全ロードマップ — /core-english-day03 で公開
 [[redirects]]
   from = "/core-english-day03"

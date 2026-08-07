@@ -1,8 +1,8 @@
 (function () {
   "use strict";
 
-  // 審査フォームURL（確定したらここだけ差し替え）
-  var FORM_URL = "https://forms.gle/REPLACE_ME";
+  // 審査フォームURL（LINE公式アカウント経由）
+  var FORM_URL = "https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=fnK0MJ&liff_id=1656043253-rkMxPZMQ";
 
   var DEADLINE = new Date("2026-08-08T22:00:00+09:00").getTime();
   var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

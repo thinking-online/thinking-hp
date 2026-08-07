@@ -49,10 +49,10 @@ body {
   -webkit-font-smoothing: antialiased;
   padding-top: var(--sticky-top);
   padding-bottom: var(--sticky-bottom);
-  /* 日本語：単語途中で切れにくく、変な位置での分割を抑える */
+  /* 日本語の自然な折り返し。anywhere は数字・助詞の孤立を起こすので使わない */
   line-break: strict;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 body.is-closed { --sticky-bottom: 0px; }
 
@@ -75,10 +75,9 @@ button { font: inherit; cursor: pointer; border: 0; background: none; }
   font-family: var(--sans) !important;
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum" 1;
-  word-break: normal;
 }
 
-/* 途中で折られたくない語 */
+/* 途中で折られたくない語・数字を含む短い塊 */
 .nowrap { white-space: nowrap; }
 
 .container {
@@ -365,6 +364,10 @@ body.is-closed .sticky-cta { display: none; }
 }
 .stack span {
   display: block;
+  white-space: nowrap;
+}
+@media (max-width: 360px) {
+  .stack span { white-space: normal; }
 }
 
 .beat {

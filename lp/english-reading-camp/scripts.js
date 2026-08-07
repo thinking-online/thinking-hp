@@ -109,4 +109,57 @@
   }, { passive: true });
 
   onScroll();
+
+  /* 5日後カード：スワイプで見えるものから順にチェック */
+  var outcomeTrack = document.getElementById("outcomeTrack");
+  var outcomeCards = Array.prototype.slice.call(document.querySelectorAll("[data-outcome]"));
+  var outcomeCount = document.querySelector("[data-outcome-count]");
+  var outcomeBar = document.querySelector("[data-outcome-bar]");
+  var outcomeTotal = outcomeCards.length;
+
+  function updateOutcomeProgress() {
+    var checked = outcomeCards.filter(function (card) {
+      return card.classList.contains("is-checked");
+    }).length;
+    if (outcomeCount) outcomeCount.textContent = String(checked);
+    if (outcomeBar) {
+      outcomeBar.style.width = outcomeTotal
+        ? Math.round((checked / outcomeTotal) * 100) + "%"
+        : "0%";
+    }
+  }
+
+  function markOutcome(card) {
+    if (card.classList.contains("is-checked")) return;
+    card.classList.add("is-checked");
+    updateOutcomeProgress();
+  }
+
+  if (outcomeTrack && outcomeCards.length) {
+    if ("IntersectionObserver" in window) {
+      var outcomeObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          markOutcome(entry.target);
+        });
+      }, {
+        root: outcomeTrack,
+        threshold: 0.55,
+        rootMargin: "0px"
+      });
+
+      outcomeCards.forEach(function (card) {
+        outcomeObserver.observe(card);
+      });
+    }
+
+    // 最初のカードは表示直後にチェック
+    window.setTimeout(function () {
+      if (outcomeCards[0]) markOutcome(outcomeCards[0]);
+    }, reduceMotion ? 0 : 280);
+
+    if (reduceMotion) {
+      outcomeCards.forEach(markOutcome);
+    }
+  }
 })();

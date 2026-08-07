@@ -98,7 +98,7 @@
       }
       var show = pastIntro && !finalInView;
       stickyCta.classList.toggle("is-visible", show);
-      document.body.style.setProperty("--sticky-bottom", show ? "78px" : "0px");
+      document.body.style.setProperty("--sticky-bottom", show ? "70px" : "0px");
     }
   }
 

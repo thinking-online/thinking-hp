@@ -15,22 +15,35 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho+B1:wght@600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/english-reading-camp/styles.css">
 </head>
 <body>
   <div class="progress" id="progress" aria-hidden="true"></div>
 
   <div class="deadline-bar" role="status" aria-live="polite" data-countdown>
-    <p class="deadline-bar__label">申込期限 <span>2026/08/08 22:00</span></p>
-    <div class="deadline-bar__timer" aria-label="締め切りまでの残り時間">
-      <div class="deadline-bar__unit"><strong data-unit="days">00</strong><small>日</small></div>
-      <span class="deadline-bar__sep">:</span>
-      <div class="deadline-bar__unit"><strong data-unit="hours">00</strong><small>時間</small></div>
-      <span class="deadline-bar__sep">:</span>
-      <div class="deadline-bar__unit"><strong data-unit="mins">00</strong><small>分</small></div>
-      <span class="deadline-bar__sep">:</span>
-      <div class="deadline-bar__unit"><strong data-unit="secs">00</strong><small>秒</small></div>
+    <p class="deadline-bar__label">申込期限<span>2026/08/08 22:00</span></p>
+    <div class="countdown" aria-label="締め切りまでの残り時間">
+      <span class="countdown__prefix">あと</span>
+      <div class="countdown__unit">
+        <span class="countdown__value" data-unit="days">00</span>
+        <span class="countdown__label">日</span>
+      </div>
+      <span class="countdown__sep" aria-hidden="true">:</span>
+      <div class="countdown__unit">
+        <span class="countdown__value" data-unit="hours">00</span>
+        <span class="countdown__label">時間</span>
+      </div>
+      <span class="countdown__sep" aria-hidden="true">:</span>
+      <div class="countdown__unit">
+        <span class="countdown__value" data-unit="mins">00</span>
+        <span class="countdown__label">分</span>
+      </div>
+      <span class="countdown__sep" aria-hidden="true">:</span>
+      <div class="countdown__unit">
+        <span class="countdown__value" data-unit="secs">00</span>
+        <span class="countdown__label">秒</span>
+      </div>
     </div>
     <p class="deadline-bar__closed">募集は締め切りました</p>
   </div>
@@ -38,11 +51,10 @@
   <header class="hero" id="top">
     <div class="container container--wide hero__inner">
       <div class="reveal">
-        <p class="hero__brand">受験の王様 ／ ENGLISH READING CAMP</p>
+        <p class="hero__brand">受験の王様｜英語読解力キャンプ</p>
         <span class="hero__ribbon">前代未聞の徹底伴走企画</span>
         <h1 class="hero__title">
-          英語が<span class="gold">「読める」</span>中高生の脳内を<br>
-          見える化して<span class="accent">覚醒</span>させる。<br>
+          英語が<span class="gold">「読める」</span>中高生の脳内を見える化して<span class="accent">覚醒</span>させる。<br class="br">
           <span class="accent">5日間</span>・英語読解力キャンプ
         </h1>
         <p class="hero__sub">英語覚醒モニター募集</p>
@@ -60,7 +72,7 @@
         </a>
         <p class="hero__deadline">申込期限｜<b>2026年8月8日（金）22:00</b>（日本時間）</p>
       </div>
-      <div class="art art--flush reveal" style="padding:0">
+      <div class="art art--flush reveal">
         <figure>
           <img src="/english-reading-camp/assets/hero.png" width="1024" height="1024" alt="5日間の英語読解力キャンプ。英語が読める中高生の脳内を見える化して覚醒させる。申込期限2026年8月8日22時。" fetchpriority="high">
         </figure>
@@ -87,7 +99,7 @@
     <!-- 必読ゲート -->
     <section class="section section--paper" id="gate">
       <div class="container prose reveal">
-        <p class="kicker">MUST READ</p>
+        <p class="kicker">必読</p>
         <h2 class="h2">これは<span class="mark">「誰でも参加できる企画」</span>ではありません。</h2>
         <p>先に言っておきます。</p>
         <p>モニター参加は<strong>無料</strong>です。ただし、誰でも彼でも参加できるものではありません。</p>
@@ -104,14 +116,14 @@
     <!-- 王様紹介 -->
     <section class="section section--dark" id="king">
       <div class="container prose reveal">
-        <p class="kicker">WHO LEADS</p>
-        <h2 class="h2">受験の王様が、5日間だけ<br>「読む」に<span class="gold">全振り</span>します。</h2>
+        <p class="kicker">指導者</p>
+        <h2 class="h2">受験の王様が、5日間だけ「読む」に<span class="gold">全振り</span>します。</h2>
         <p>東大現役合格、早慶・難関大合格者多数。累計2,000名以上の人生を動かしてきた男が、5日間だけ「読む」に全振りします。</p>
         <p>Instagram9万人突破。TV・メディアからも取材を受ける、国内トップクラスの受験系アカウント。</p>
         <p>その運営者である「受験の王様」本人が、5日間、英語の「読む」だけに特化したイベントを実施します。</p>
         <p>動画を配って終わり、ではありません。<strong>5日間、みっちり指導します。</strong></p>
         <div class="callout">
-          <p>目的はただ一つ。<br>あなたの「基準値」を、根こそぎ塗り替えること。</p>
+          <p>目的はただ一つ。あなたの「基準値」を、根こそぎ塗り替えること。</p>
         </div>
       </div>
       <div class="art stack-gap reveal">
@@ -124,8 +136,8 @@
     <!-- 当たり前 -->
     <section class="section section--paper" id="standard">
       <div class="container reveal">
-        <p class="kicker">RAISE THE BAR</p>
-        <h2 class="h2 text-center">あなたの「当たり前」は、<br>どこにありますか？</h2>
+        <p class="kicker">基準値</p>
+        <h2 class="h2 text-center">あなたの「当たり前」は、どこにありますか？</h2>
         <div class="questions">
           <div class="questions__item">1日 <b>10時間</b> で当たり前？</div>
           <div class="questions__item">毎日 <b>長文1題</b> で当たり前？</div>
@@ -148,7 +160,7 @@
     <!-- なぜ読むに全振り -->
     <section class="section section--dark" id="why">
       <div class="container prose reveal">
-        <p class="kicker">WHY READING</p>
+        <p class="kicker">なぜ「読む」か</p>
         <h2 class="h2">なぜ、「読む」に全振りするのか。</h2>
         <p>英語で伸び悩んでいる中高生の相談を、僕は毎日のように受けています。そこで見えてくる共通点があります。</p>
         <p>単語も覚えている。文法も、聞かれれば答えられる。授業もちゃんと受けている。<strong>なのに、長文になった瞬間に崩れる。</strong></p>
@@ -180,7 +192,7 @@
     <!-- 5日間で変わる -->
     <section class="section section--paper" id="transform">
       <div class="container reveal">
-        <p class="kicker">TRANSFORM</p>
+        <p class="kicker">5日後の変化</p>
         <h2 class="h2">5日間で、あなたはここまで変わる。</h2>
         <div class="prose">
           <p>5日間、最後までついてきて、「知った」で終わらせず「実践」までしてくれたら。5日後のあなたは、こうなっています。</p>
@@ -200,7 +212,7 @@
           <li>大学に入っても、社会に出ても使える「読む力」が武器として残る</li>
         </ul>
         <div class="callout">
-          <p>一時的な点数アップの話をしているのではありません。<br>一生モノの武器の話をしています。</p>
+          <p>一時的な点数アップの話をしているのではありません。一生モノの武器の話をしています。</p>
         </div>
       </div>
       <div class="art stack-gap reveal">
@@ -213,8 +225,8 @@
     <!-- デメリット -->
     <section class="section section--dark" id="demerit">
       <div class="container reveal">
-        <p class="kicker">THE HARD TRUTH</p>
-        <h2 class="h2">参加のデメリット。<br>決して、楽ではない。</h2>
+        <p class="kicker">デメリット</p>
+        <h2 class="h2">参加のデメリット。決して、楽ではない。</h2>
         <div class="prose">
           <p>はっきり断言します。これまでのあなたの基準に比べて、相当高いものを要求します。だから、きついです。</p>
           <p>「参加するだけで○○大学に合格できますか？」「参加すれば成績って伸びますか？」——そんなに甘くありません。</p>
@@ -245,20 +257,20 @@
     <!-- プログラム -->
     <section class="section section--paper" id="program">
       <div class="container reveal">
-        <p class="kicker">5-DAY PROGRAM</p>
+        <p class="kicker">プログラム</p>
         <h2 class="h2">5日間で、具体的に何をやるのか。</h2>
-        <div class="pillars" style="color: var(--ink);">
-          <article class="pillar" style="background: var(--paper); border-color: var(--line);">
+        <div class="pillars pillars--light">
+          <article class="pillar">
             <span class="pillar__num">01</span>
             <h3>読解力向上ワークショップ</h3>
             <p>構造の掴み方、段落のつなぎ方、主張の見抜き方、迷子からの復帰。「できる人の脳内」を言語化して渡します。聞いて終わりにはさせません。その場で読ませて、その場で処理させます。</p>
           </article>
-          <article class="pillar" style="background: var(--paper); border-color: var(--line);">
+          <article class="pillar">
             <span class="pillar__num">02</span>
             <h3>グループ言語化アウトプット</h3>
             <p>読解力が最速で伸びるのは、「読めた」ときではなく「なぜそう読めたかを説明できた」とき。説明できなければ、理解していない。ここで一気に穴が見えます。</p>
           </article>
-          <article class="pillar" style="background: var(--paper); border-color: var(--line);">
+          <article class="pillar">
             <span class="pillar__num">03</span>
             <h3>オンライン自習室</h3>
             <p>「やる気が出たらやる」から「開いたらやる」へ。同じ熱量の人間が画面の向こうにいる状態を、5日間キープします。</p>
@@ -275,7 +287,7 @@
     <!-- 特典 -->
     <section class="section section--dark" id="benefits">
       <div class="container reveal">
-        <p class="kicker">BONUS</p>
+        <p class="kicker">参加者限定特典</p>
         <h2 class="h2">参加者限定の特典</h2>
         <div class="prose">
           <p>5日間後も、一人で伸び続けるための武器を渡します。</p>
@@ -308,7 +320,7 @@
     <!-- 審査 -->
     <section class="section section--paper" id="screening">
       <div class="container reveal">
-        <p class="kicker">SELECTION</p>
+        <p class="kicker">審査制</p>
         <h2 class="h2">完全審査制。<span class="mark">人数限定</span>です。</h2>
         <div class="prose">
           <p>今回のモニター参加は審査制です。誰でも彼でもOK、というものではありません。</p>
@@ -336,8 +348,8 @@
     <!-- 学校批判 -->
     <section class="section section--dark" id="system">
       <div class="container prose reveal">
-        <p class="kicker">THE REAL PROBLEM</p>
-        <h2 class="h2">いい加減、気づいてください。<br>学校や塾では、一生モノの武器は手に入りません。</h2>
+        <p class="kicker">本質</p>
+        <h2 class="h2">いい加減、気づいてください。学校や塾では、一生モノの武器は手に入りません。</h2>
         <p>学校の先生や塾の先生には怒られるかもしれません。それでも書きます。</p>
         <p>学校や塾に通っていても、受験が終わった後にも通用する武器は手に入りません。一番大事な「勉強のやり方」を、どこも指導していないからです。</p>
         <p>今の偏差値も、通っている学校のレベルも、正直まったく関係ありません。どこを目指すにしても、最初にやるべきは<strong>「あなたの勉強のやり方のアップデート」</strong>です。</p>
@@ -345,7 +357,7 @@
         <p>教育のプロが長い年月をかけて作った参考書があれば十分だし、自分のレベルとゴールに合わせて必要なものだけに絞って進められます。<strong>参考書×AIの学習設計のほうが、何倍も速い。</strong></p>
         <p>僕の教え子たちが圧倒している理由は、シンプルです。ついていくべき人を見つけて、ゴールからの逆算戦略に乗って、最速最強の参考書×AI学習で伸びて、「勉強のやり方」そのものを手に入れたから。</p>
         <div class="callout">
-          <p>正直に言えば、受験なんてヌルゲーです。<br>でも社会に出たら、問いも正解も無限です。<br>社会に出る前の、最後の練習試合——ここですら結果を出せない人が、社会で結果を出せるはずがない。</p>
+          <p>正直に言えば、受験なんてヌルゲーです。でも社会に出たら、問いも正解も無限です。社会に出る前の、最後の練習試合——ここですら結果を出せない人が、社会で結果を出せるはずがない。</p>
         </div>
         <p>僕は今年、コーチング生たちと、周りが恐怖を感じるレベルの結果と成長率で革命を起こします。その最初の一歩を、この5日間に置きました。</p>
       </div>
@@ -354,39 +366,51 @@
     <!-- 最終CTA -->
     <section class="final" id="apply">
       <div class="container reveal">
-        <div class="art" style="margin-bottom: 36px;">
+        <div class="final__art">
           <figure>
             <img src="/english-reading-camp/assets/dream.png" width="1024" height="1024" alt="夢を見る側で終わるか。実現する側に成るか。この5日間で、圧倒的に勝つ人の脳内へ。" loading="lazy" decoding="async">
           </figure>
         </div>
         <h2 class="final__title">
-          <span class="gold">夢</span>を「見続ける」人生にするのか、<br>
-          「<span class="gold">実現</span>させる」人生にするのか。
+          <span class="gold">夢</span>を「見続ける」人生にするのか、<br class="br">「<span class="gold">実現</span>させる」人生にするのか。
         </h2>
         <p class="final__lead">
-          「また次回」「テストが終わってから」「今は忙しい」——こうやってチャンスを見送る人は、今後どれだけチャンスが転がっていても気づけません。<br>
-          参加したモニター生には、もう追いつけないと思ってください。
+          「また次回」「テストが終わってから」「今は忙しい」——こうやってチャンスを見送る人は、今後どれだけチャンスが転がっていても気づけません。参加したモニター生には、もう追いつけないと思ってください。
         </p>
-        <div class="final__timer" data-countdown>
-          <div class="deadline-bar__unit"><strong data-unit="days">00</strong><small>日</small></div>
-          <span class="deadline-bar__sep">:</span>
-          <div class="deadline-bar__unit"><strong data-unit="hours">00</strong><small>時間</small></div>
-          <span class="deadline-bar__sep">:</span>
-          <div class="deadline-bar__unit"><strong data-unit="mins">00</strong><small>分</small></div>
-          <span class="deadline-bar__sep">:</span>
-          <div class="deadline-bar__unit"><strong data-unit="secs">00</strong><small>秒</small></div>
+        <div class="final__countdown" data-countdown>
+          <p class="final__countdown-label">募集終了まで</p>
+          <div class="countdown">
+            <div class="countdown__unit">
+              <span class="countdown__value" data-unit="days">00</span>
+              <span class="countdown__label">日</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__unit">
+              <span class="countdown__value" data-unit="hours">00</span>
+              <span class="countdown__label">時間</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__unit">
+              <span class="countdown__value" data-unit="mins">00</span>
+              <span class="countdown__label">分</span>
+            </div>
+            <span class="countdown__sep" aria-hidden="true">:</span>
+            <div class="countdown__unit">
+              <span class="countdown__value" data-unit="secs">00</span>
+              <span class="countdown__label">秒</span>
+            </div>
+          </div>
         </div>
         <p class="final__note">申込期限｜2026年8月8日（金）22:00（日本時間）</p>
         <div class="stack-gap">
           <a class="final__btn" data-form-link href="#" target="_blank" rel="noopener noreferrer">
-            ♛ 審査フォームはこちら →
+            審査フォームはこちら →
           </a>
         </div>
         <p class="final__closed">本募集は締め切りました。次回があるかどうかは未定です。</p>
-        <p class="final__lead stack-gap mb-0">
-          本気のあなたを。<br>
-          変わる覚悟を決めた、本気のあなたを待っています。<br><br>
-          <strong style="color: var(--gold-light);">受験の王様</strong>
+        <p class="final__sign">
+          本気のあなたを。<br class="br">変わる覚悟を決めた、本気のあなたを待っています。
+          <strong>受験の王様</strong>
         </p>
       </div>
     </section>

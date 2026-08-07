@@ -90,13 +90,13 @@
     }
 
     if (stickyCta && !document.body.classList.contains("is-closed")) {
-      var show = false;
+      var pastIntro = y > Math.min(520, window.innerHeight * 0.7);
+      var finalInView = false;
       if (heroCta) {
         var rect = heroCta.getBoundingClientRect();
-        show = rect.bottom < 0;
-      } else {
-        show = y > 480;
+        finalInView = rect.top < window.innerHeight - 40 && rect.bottom > 0;
       }
+      var show = pastIntro && !finalInView;
       stickyCta.classList.toggle("is-visible", show);
       document.body.style.setProperty("--sticky-bottom", show ? "78px" : "0px");
     }

@@ -10,16 +10,43 @@
   var stickyCta = document.getElementById("stickyCta");
   var heroCta = document.getElementById("heroCta");
   var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  var formLinks = Array.prototype.slice.call(document.querySelectorAll("[data-form-link]"));
+  var closedApplied = false;
 
-  document.querySelectorAll("[data-form-link]").forEach(function (el) {
-    el.setAttribute("href", FORM_URL);
-    if (FORM_URL.indexOf("REPLACE") !== -1) {
+  function bindFormLinks() {
+    formLinks.forEach(function (el) {
+      el.setAttribute("href", FORM_URL);
+      if (FORM_URL.indexOf("REPLACE") !== -1) {
+        el.addEventListener("click", function (event) {
+          event.preventDefault();
+          window.alert("審査フォームのURLを設置してください（scripts.js の FORM_URL）。");
+        });
+      }
+    });
+  }
+
+  function disableFormLinks() {
+    formLinks.forEach(function (el) {
+      el.removeAttribute("href");
+      el.removeAttribute("target");
+      el.setAttribute("aria-disabled", "true");
+      el.setAttribute("tabindex", "-1");
       el.addEventListener("click", function (event) {
         event.preventDefault();
-        window.alert("審査フォームのURLを設置してください（scripts.js の FORM_URL）。");
       });
-    }
-  });
+    });
+  }
+
+  function applyClosedState() {
+    if (closedApplied) return;
+    closedApplied = true;
+    document.body.classList.add("is-closed");
+    document.body.style.setProperty("--sticky-bottom", "72px");
+    if (stickyCta) stickyCta.classList.remove("is-visible");
+    disableFormLinks();
+  }
+
+  bindFormLinks();
 
   function pad(n) {
     return n < 10 ? "0" + n : String(n);
@@ -33,11 +60,15 @@
   function updateCountdown() {
     var now = Date.now();
     var diff = DEADLINE - now;
-    var closed = diff <= 0;
 
-    if (closed) {
-      document.body.classList.add("is-closed");
-      document.body.style.setProperty("--sticky-bottom", "0px");
+    if (diff <= 0) {
+      applyClosedState();
+      document.querySelectorAll("[data-countdown]").forEach(function (root) {
+        setUnit(root, "days", 0);
+        setUnit(root, "hours", 0);
+        setUnit(root, "mins", 0);
+        setUnit(root, "secs", 0);
+      });
       return false;
     }
 

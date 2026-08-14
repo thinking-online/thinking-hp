@@ -242,7 +242,7 @@ function GuaranteeSection() {
               <circle cx="60" cy="60" r="56" fill="none" stroke="#e9c267" strokeWidth="1.2" strokeDasharray="2 3" />
               <circle cx="60" cy="60" r="48" fill="none" stroke="#e9c267" strokeWidth="0.8" />
               <text x="60" y="48" textAnchor="middle" fontFamily="Cormorant Garamond" fontSize="11" fill="#e9c267" letterSpacing="2">FULL REFUND</text>
-              <text x="60" y="74" textAnchor="middle" fontFamily="Cormorant Garamond" fontSize="32" fontWeight="600" fill="#f5d98a">45</text>
+              <text x="60" y="74" textAnchor="middle" fontFamily="Cormorant Garamond" fontSize="32" fontWeight="600" fill="#f5d98a">33</text>
               <text x="60" y="92" textAnchor="middle" fontFamily="Cormorant Garamond" fontSize="11" fill="#e9c267" letterSpacing="2">DAYS</text>
             </svg>
           </div>
@@ -251,14 +251,13 @@ function GuaranteeSection() {
             <span className="eyebrow">FULL REFUND GUARANTEE</span>
             <h2>全額返金保証 — リスクは私たちが引き受ける。</h2>
             <p>
-              45日間のカリキュラムを全てやり遂げ、それでも変化を実感できなかった場合、
+              33日間のカリキュラムを全てやり遂げ、それでも変化を実感できなかった場合、
               頂いた参加費を <strong>全額返金</strong> いたします。
               金銭的なリスクは、親御様には一切負わせません。
             </p>
             <ul className="guarantee-conds">
-              <li>✓ 45日間の課題・提出をすべて指定時間内に実施</li>
+              <li>✓ 33日間の課題・提出をすべて指定時間内に実施</li>
               <li>✓ 指導側のフィードバックを反映</li>
-              <li>✓ プログラム終了後のヒアリング面談に参加</li>
               <li>✓ 終了後7日以内に申請</li>
             </ul>
             <p className="guarantee-note">
@@ -296,7 +295,7 @@ function NotForSection() {
           <div className="notfor-card">
             <span className="x">×</span>
             <h4>毎日の提出・振り返りができない方</h4>
-            <p>45日間、毎日の積み上げが前提です。継続意思のない方は対象外。</p>
+            <p>33日間、毎日の積み上げが前提です。継続意思のない方は対象外。</p>
           </div>
           <div className="notfor-card">
             <span className="x">×</span>
@@ -353,7 +352,7 @@ function FAQSection() {
             a={<>一般的なカリキュラムは「知識の積み上げ」が主で、「読み方の矯正」に特化した時間は確保されにくい構造です。SSEは既存の学習と競合せず、それらを<strong>加速させるための土台作り</strong>を行います。</>}
           />
           <FAQItem
-            q="本当に45日で変わるのか？"
+            q="本当に33日で変わるのか？"
             a={<>変えるのは膨大な「知識量」ではなく、脳の「処理フォーム（型）」です。スポーツのフォーム矯正と同様、集中的なトレーニングで短期間に根本的な読み方を書き換えることは十分に可能です。</>}
           />
           <FAQItem
@@ -366,7 +365,7 @@ function FAQSection() {
           />
           <FAQItem
             q="途中でどうしても用事があった場合は？"
-            a={<>事前にご連絡いただければ、提出ペースの調整が可能です。45日経過後もテキストや動画講義は<strong>無期限で</strong>閲覧いただけます。</>}
+            a={<>事前にご連絡いただければ、提出ペースの調整が可能です。33日経過後もテキストや動画講義は<strong>無期限で</strong>閲覧いただけます。</>}
           />
         </div>
       </div>
@@ -396,7 +395,7 @@ function PriceSection() {
         <div className="price-card">
           <div className="price-card-head">
             <span className="price-tag">モニター募集</span>
-            <h3>SSE 45日間 集中合宿</h3>
+            <h3>SSE 33日間 集中合宿</h3>
             <span className="price-period">先着30名　2026年5月31日まで</span>
           </div>
 
@@ -416,15 +415,15 @@ function PriceSection() {
                 </span>
               </div>
               <p className="sse-price-off">約3万円OFF</p>
-              <div className="price-perday">1日あたり <strong>約890円</strong> の投資で、一生モノの読み方を。</div>
+              <div className="price-perday">1日あたり <strong>約1,210円</strong> の投資で、一生モノの読み方を。</div>
             </div>
 
             <ul className="price-includes">
               <li><span>✓</span>動画講義（50本以上）・60の電子教材</li>
               <li><span>✓</span>オリジナル教材・課題 + 模範解答</li>
               <li><span>✓</span>LINE質問・受講生コミュニティ</li>
-              <li><span>✓</span>スタート / アフター面談（各45分）</li>
-              <li><span>✓</span>ライブ英語特訓参加権・修了証</li>
+              <li><span>✓</span>塾生限定ライブ英語特訓参加権</li>
+              <li><span>✓</span>修了テスト + 修了証</li>
               <li><span>✓</span>全額返金保証</li>
             </ul>
 
@@ -493,7 +492,7 @@ function FinalSection() {
 
         <p className="final-lead small">
           読み方を変えれば、英語の景色は本当に変わります。<br />
-          45日後、きっと「<em>やればできる自分</em>」と出会えます。
+          33日後、きっと「<em>やればできる自分</em>」と出会えます。
         </p>
 
         <div className="final-cta">
@@ -503,7 +502,7 @@ function FinalSection() {
             rel="noopener noreferrer"
             className="btn-primary big"
           >
-            45日間集中合宿に申し込む
+            33日間集中合宿に申し込む
             <span className="arrow">→</span>
           </a>
         </div>

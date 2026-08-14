@@ -165,29 +165,19 @@ function EmpathySection() {
 }
 
 /* =====================================================
-   ROADMAP — 45日間の流れ
+   ROADMAP — 33日間の流れ
 ===================================================== */
 function RoadmapSection() {
   const steps = [
     {
       tag: "STEP 1",
-      title: "スタート面談（Day 0）",
-      body: "あなたの現在の状況・目標を確認し、45日後のゴールを一緒に設計します。",
-    },
-    {
-      tag: "STEP 2",
-      title: "集中トレーニング期（Day 1〜33）",
+      title: "集中トレーニング期（Day 1〜24）",
       body: "毎日の動画講義 + 課題提出 + フィードバック。朝ミッション配信、日中に取り組み、夜に提出。読み方が確実に変わっていきます。",
     },
     {
-      tag: "STEP 3",
-      title: "定着・応用期（Day 34〜45）",
+      tag: "STEP 2",
+      title: "定着・応用期（Day 25〜33）",
       body: "身につけた読み方を過去問や実践問題で完成。「読める」から「使える」への移行です。",
-    },
-    {
-      tag: "STEP 4",
-      title: "アフター面談（Day 45以降）",
-      body: "45日間で身についた力を一緒に確認。これからの学習の指針を明確にします。",
     },
   ];
 
@@ -197,10 +187,10 @@ function RoadmapSection() {
         <div className="section-head">
           <div className="section-num">08</div>
           <div>
-            <span className="eyebrow">45-DAY ROADMAP</span>
-            <h2 className="section-title">45日間で、<br /><em>どう変わるのか。</em></h2>
+            <span className="eyebrow">33-DAY ROADMAP</span>
+            <h2 className="section-title">33日間で、<br /><em>どう変わるのか。</em></h2>
             <p className="section-lead">
-              段階的に「読み方」を変えていく、45日間のロードマップです。
+              段階的に「読み方」を変えていく、33日間のロードマップです。
             </p>
           </div>
         </div>
@@ -216,8 +206,8 @@ function RoadmapSection() {
         </div>
 
         <p className="sse-roadmap-summary">
-          スタート面談 → <strong>33日集中</strong> → <strong>12日定着</strong> → アフター面談<br />
-          この45日間で、英語の読み方は完全に変わります。
+          <strong>24日集中</strong> → <strong>9日定着</strong><br />
+          この33日間で、英語の読み方は完全に変わります。
         </p>
       </div>
     </section>
@@ -279,10 +269,8 @@ function ProgramContentsSection() {
     { icon: "✏️", title: "課題と模範解答", desc: "毎日の課題で確実に身につける。個別フィードバック付き。" },
     { icon: "💬", title: "LINE質問サポート", desc: "24時間以内に返信。「わからない」を残しません。" },
     { icon: "👥", title: "受講生コミュニティ", desc: "仲間と一緒に頑張れる環境。モチベーション維持にも。" },
-    { icon: "🎤", title: "スタート面談（45分）", desc: "あなただけの学習計画を作成。" },
-    { icon: "🎤", title: "アフター面談（45分）", desc: "45日後、身についた力を確認。" },
-    { icon: "⭐", title: "塾生限定ライブ英語特訓", desc: "THINKING 塾生だけが参加できる週1ライブ特訓にモニター生として特別招待（45日間で6〜7回）。" },
-    { icon: "📜", title: "修了テスト + 修了証", desc: "45日後の到達点を確認。" },
+    { icon: "⭐", title: "塾生限定ライブ英語特訓参加権", desc: "THINKING 塾生だけが参加できる週1ライブ特訓にモニター生として特別招待（33日間で4〜5回）。" },
+    { icon: "📜", title: "修了テスト + 修了証", desc: "33日後の到達点を確認。" },
   ];
 
   return (
@@ -292,9 +280,9 @@ function ProgramContentsSection() {
           <div className="section-num">12</div>
           <div>
             <span className="eyebrow">PROGRAM</span>
-            <h2 className="section-title">45日間に含まれる、<br /><em>すべて。</em></h2>
+            <h2 className="section-title">33日間に含まれる、<br /><em>すべて。</em></h2>
             <p className="section-lead">
-              スタート面談から、修了テストまで。<br />
+              動画講義から、修了テストまで。<br />
               読み方を変えるために必要な、すべてを揃えました。
             </p>
           </div>
@@ -324,7 +312,7 @@ function ApplyFlowSection() {
     { num: "01", title: "申込みフォーム入力", desc: "下のボタンから申込みフォームへ。3分で完了。" },
     { num: "02", title: "スタート日の決定", desc: "申込み後、スタート日のご案内をお送りします。ご都合に合わせて開始日を選べます。" },
     { num: "03", title: "お支払い", desc: "銀行振込にてお支払いください。（三井住友銀行 / 合同会社ARC法人口座）入金確認後、プログラムスタート。" },
-    { num: "04", title: "プログラム開始", desc: "スタート日から、45日間のプログラムが始まります。全力でサポートします。" },
+    { num: "04", title: "プログラム開始", desc: "スタート日から、33日間のプログラムが始まります。全力でサポートします。" },
   ];
 
   return (

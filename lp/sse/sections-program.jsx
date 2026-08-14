@@ -1,4 +1,4 @@
-/* Smart Study English — program & 45-day design */
+/* Smart Study English — program & 33-day design */
 
 const LEARNING_SYSTEMS = [
   {
@@ -229,7 +229,7 @@ const SUPPORT_WORRY_FLOWS = [
         学習の進捗や努力を見て、温かい応援メッセージが届きます。一人で抱え込まず、
         <mark className="support-worry-mark">やる気をキープ</mark>
         しながら、
-        <mark className="support-worry-mark">45日間走り切れる</mark>
+        <mark className="support-worry-mark">33日間走り切れる</mark>
         リズムをつくります。
       </>
     ),
@@ -429,7 +429,7 @@ function MethodSection() {
           <div className="section-num">06</div>
           <div>
             <span className="eyebrow">SSE METHOD</span>
-            <h2 className="section-title">45日間で、英語の読み方を<br /><em>根本から変える。</em></h2>
+            <h2 className="section-title">33日間で、英語の読み方を<br /><em>根本から変える。</em></h2>
             <p className="section-lead">
               延べ2000名以上が結果を出した、英語の読み方トレーニングプログラム。<br />
               スポーツのフォーム矯正と同じ。まず「読み方のフォーム」を徹底的に矯正します。
@@ -554,7 +554,7 @@ function MethodSection() {
 }
 
 /* =====================================================
-   SECTION: 45 DAYS DESIGN — 積み上がる視覚化
+   SECTION: 33 DAYS DESIGN — 積み上がる視覚化
 ===================================================== */
 function DaysSection() {
   const ref = useRef(null);
@@ -577,33 +577,33 @@ function DaysSection() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const filledDays = Math.floor(progress * 45);
+  const filledDays = Math.floor(progress * 33);
 
   return (
-    <section id="days" className="days-section theme-deep-gold" data-screen-label="06 45 Days">
+    <section id="days" className="days-section theme-deep-gold" data-screen-label="06 33 Days">
       <div className="wrap">
         <div className="section-head">
           <div className="section-num">10</div>
           <div>
-            <span className="eyebrow">45 DAYS — DESIGN PHILOSOPHY</span>
-            <h2 className="section-title">なぜ「45日」なのか。<br /><em>習慣化と定着の、ギリギリの設計。</em></h2>
+            <span className="eyebrow">33 DAYS — DESIGN PHILOSOPHY</span>
+            <h2 className="section-title">なぜ「33日」なのか。<br /><em>習慣化と定着の、ギリギリの設計。</em></h2>
             <p className="section-lead">
               短すぎれば癖に戻る。長すぎれば中だるみが起きる。<br />
-              <strong>45日</strong>は、依存ではなく<strong>自走</strong>へ移行するための、最短かつ現実的な期間です。
+              <strong>33日</strong>は、依存ではなく<strong>自走</strong>へ移行するための、最短かつ現実的な期間です。
             </p>
           </div>
         </div>
 
-        {/* 45 day grid + progress */}
+        {/* 33 day grid + progress */}
         <div className="days-grid-wrap" ref={ref}>
           <div className="days-grid-head">
-            <span>DAY 01 → DAY 45　毎日の積み上げ</span>
+            <span>DAY 01 → DAY 33　毎日の積み上げ</span>
             <span className="days-progress-text">完走率 <strong>{Math.round(progress * 100)}%</strong></span>
           </div>
           <div className="days-grid">
-            {[...Array(45)].map((_, i) => {
+            {[...Array(33)].map((_, i) => {
               const filled = i < filledDays;
-              const phase = i < 15 ? "phase-1" : i < 30 ? "phase-2" : "phase-3";
+              const phase = i < 11 ? "phase-1" : i < 22 ? "phase-2" : "phase-3";
               return (
                 <div key={i} className={`day-cell ${filled ? "filled" : ""} ${phase}`}>
                   <span className="day-num">{i + 1}</span>
@@ -614,17 +614,17 @@ function DaysSection() {
           </div>
           <div className="days-phases">
             <div className="phase-bar phase-1">
-              <span className="phase-tag">Phase 1 / Day 1–15</span>
+              <span className="phase-tag">Phase 1 / Day 1–11</span>
               <strong>理解 — 正しい型を論理的に</strong>
               <p>感覚読みを排除し、構造的に読むためのルールを脳にインプット。</p>
             </div>
             <div className="phase-bar phase-2">
-              <span className="phase-tag">Phase 2 / Day 16–30</span>
+              <span className="phase-tag">Phase 2 / Day 12–22</span>
               <strong>矯正 — 反復で無意識レベルへ</strong>
               <p>間違った読み方の癖を修正し、正しいフォームを定着させる。</p>
             </div>
             <div className="phase-bar phase-3">
-              <span className="phase-tag">Phase 3 / Day 31–45</span>
+              <span className="phase-tag">Phase 3 / Day 23–33</span>
               <strong>自走 — 一人で積み上げられる状態</strong>
               <p>指導者なしで自分で気づき・修正できる「自走」の完成形へ。</p>
             </div>
@@ -637,7 +637,7 @@ function DaysSection() {
             <span className="eyebrow">COMPOUND VALUE</span>
             <h3 className="contents-title">SSEは「使い切り」ではない。<br /><em>受験終了まで、積み上がり続ける。</em></h3>
             <p className="section-lead" style={{ marginBottom: 32 }}>
-              SSEの45日は、塾で高いお金を払って消費する「知識」ではない。<br />
+              SSEの33日は、塾で高いお金を払って消費する「知識」ではない。<br />
               受験が終わるまで、<strong>毎日の学習に乗り続ける土台</strong>です。
             </p>
           </div>
@@ -646,7 +646,7 @@ function DaysSection() {
             <div className="stack-bars">
               <div className="stack-bar bar-base">
                 <div className="bar-content">
-                  <span className="bar-label">SSE 45日 / 読み方の土台</span>
+                  <span className="bar-label">SSE 33日 / 読み方の土台</span>
                   <span className="bar-sub">一度入れたら、抜けない</span>
                 </div>
               </div>

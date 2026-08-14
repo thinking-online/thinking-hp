@@ -38,10 +38,10 @@ function Hero() {
 
         <div className="hero-m-foot">
           <div className="hero-m-foot-copy">
-            <p className="hero-m-tagline">45日間で、英語の読み方の根本治療</p>
+            <p className="hero-m-tagline">33日間で、英語の読み方の根本治療</p>
             <p className="hero-m-subcopy">
               <strong>2,000名</strong>が証明した「読み方」を、<br />
-              個別面談付きで身につける<strong>45日間</strong>。
+              英語の読み方を根本から身につける<strong>33日間</strong>。
             </p>
           </div>
           <a

@@ -306,7 +306,7 @@
   status = 200
 
 # 英語合格設計プラン（料金シミュレーション）
-# お客様用: /thinking-plan ／ 営業用（見積発行）: /thinking-plan/sales
+# お客様用: /thinking-plan ／ 見積もり発行: /thinking-plan/sales
 [[redirects]]
   from = "/thinking-plan"
   to = "/price/thinking-plan.html"

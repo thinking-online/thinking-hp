@@ -10,7 +10,7 @@
   var sales=/\/thinking-plan\/sales\/?$/.test(location.pathname)||/(?:^|[?&])sales(?:[=&]|$)/.test(location.search);
   window.PLAN_MODE=sales?'sales':'customer';
   document.documentElement.dataset.mode=window.PLAN_MODE;
-  if(sales) document.title='THINKING｜見積発行（営業用）';
+  if(sales) document.title='THINKING｜見積もり発行';
 })();
 </script>
 <style>
@@ -289,7 +289,7 @@
 
 <header>
   <div class="wrap">
-    <div class="sales-only sales-badge">営業用 ｜ 見積発行</div>
+    <div class="sales-only sales-badge">見積もり発行</div>
     <div class="brand">THINKING ｜ 学部別合格設計塾</div>
     <h1>英語 合格設計プラン</h1>
     <p class="customer-only">いまのあなたに必要なところから、無理なく。選んでいくと「あなた専用の合格プラン」と合計金額が見えます。</p>

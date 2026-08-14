@@ -186,6 +186,8 @@
   .upsell-save{background:var(--verm); color:var(--white); font-size:11.5px; font-weight:700; padding:3px 12px; border-radius:14px;}
   .upsell-btn{background:var(--navy); color:var(--white); border:none; border-radius:7px; padding:11px 22px; font-size:13.5px; font-weight:700; cursor:pointer; font-family:inherit; transition:all .15s;}
   .upsell-btn:hover{background:var(--navy-2);}
+  .alacarte-cat{margin-bottom:14px;}
+  .alacarte-cat-name{font-size:12px; font-weight:700; color:var(--muted); margin-bottom:8px;}
 
   .addon-title{font-size:13px; font-weight:700; color:var(--navy); margin:24px 0 10px; display:flex; align-items:center; gap:8px;}
   .addon-title::before{content:""; width:4px; height:14px; background:var(--gold); border-radius:1px;}
@@ -365,6 +367,11 @@
       <div class="sec-desc">絞り込んだ内容が、いちばんお得に揃うプランはこちらです。</div>
       <div id="recoArea"></div>
       <div id="upsellArea"></div>
+      <div id="alaCarteWrap">
+        <div class="addon-title">必要なものだけ足す</div>
+        <div class="addon-sub">パックにまとめなくても、講座単位で足せます。同じジャンルをまとめるなら、上のパックの方がお得です。</div>
+        <div id="alaCarteArea"></div>
+      </div>
       <div class="addon-title">志望校・大学別対策</div>
       <div class="addon-sub">志望校が決まっている方はこちら。過去問ベースの実践演習です。</div>
       <div class="items" id="univCourses"></div>
@@ -662,6 +669,7 @@ const state = {
   genres:new Set(),         // 選択したジャンル
   reco:null,
   removed:new Set(),        // パックから外した講座id
+  extraCore:new Set(),       // パックに入っていない英語講座を単品追加
   extraUniv:new Set(),
   extraEiken:new Set(),
   extraOther:new Set(),
@@ -818,7 +826,8 @@ function toggleConfirmItem(id){
 function lockPlan(){
   // 決定 → おすすめ確定 → 結果フェーズへ
   state.reco=decidePacks();
-  renderReco(); renderUpsell(); renderUniv(); renderEiken(); renderSubjTabs(); renderOther();
+  pruneExtraCore();
+  renderReco(); renderUpsell(); renderAlaCarte(); renderUniv(); renderEiken(); renderSubjTabs(); renderOther();
   document.getElementById('phaseConfirm').style.display='none';
   document.getElementById('phaseResult').style.display='block';
   window.scrollTo({top:0, behavior:'smooth'});
@@ -990,6 +999,46 @@ function renderUpsell(){
     '<button class="upsell-btn" onclick="upgradeAdd(\''+up.addGenres.join(',')+'\')">'+addName+'を足す（+¥'+yen(diff)+'）</button></div>';
 }
 
+function packOwnedIds(){
+  const ids=new Set();
+  if(!state.reco||!state.reco.packs) return ids;
+  state.reco.packs.forEach(p=>packCoursesOf(p).forEach(id=>ids.add(id)));
+  return ids;
+}
+function pruneExtraCore(){
+  const owned=packOwnedIds();
+  [...state.extraCore].forEach(id=>{ if(owned.has(id)) state.extraCore.delete(id); });
+}
+function renderAlaCarte(){
+  const wrap=document.getElementById('alaCarteWrap');
+  const area=document.getElementById('alaCarteArea');
+  if(!wrap||!area) return;
+  const owned=packOwnedIds();
+  const available=courses.filter(c=>!owned.has(c.id));
+  if(!available.length){ wrap.style.display='none'; return; }
+  wrap.style.display='';
+  const byGenre={};
+  available.forEach(c=>{(byGenre[c.g]=byGenre[c.g]||[]).push(c);});
+  let html='';
+  genres.forEach(gr=>{
+    const list=byGenre[gr.g];
+    if(!list) return;
+    html+='<div class="alacarte-cat"><div class="alacarte-cat-name">'+gr.name+'</div><div class="items">';
+    list.forEach(c=>{
+      const on=state.extraCore.has(c.id);
+      html+='<div class="item'+(on?' on':'')+'" onclick="toggleExtraCore(\''+c.id+'\')"><div class="cbox">'+svg+'</div>'+
+        '<div class="item-body"><div class="item-name">'+c.name+'</div>'+(c.meta?'<div class="item-meta">'+c.meta+'</div>':'')+'</div>'+
+        '<div class="item-price">¥'+yen(c.price)+'</div></div>';
+    });
+    html+='</div></div>';
+  });
+  area.innerHTML=html;
+}
+function toggleExtraCore(id){
+  if(state.extraCore.has(id)) state.extraCore.delete(id); else state.extraCore.add(id);
+  renderAlaCarte(); updateSummary();
+}
+
 // 指定ファミリー集合でdecidePacksを試算(state非依存)
 function decidePacksFor(fams){
   const core=[...fams].filter(f=>['goi','bunpo','kaishaku','chobun','lis'].includes(f));
@@ -1008,7 +1057,8 @@ function upgradeToFull(){
   ['goi','bunpo_in','bunpo_solve','kaishaku_read','kaishaku_solve','chobun','lis'].forEach(g=>state.genres.add(g));
   state.removed.clear();
   state.reco=decidePacks();
-  renderReco(); renderUpsell(); renderUniv(); renderEiken(); renderOther();
+  pruneExtraCore();
+  renderReco(); renderUpsell(); renderAlaCarte(); renderUniv(); renderEiken(); renderOther();
   updateSummary(); showToast('フルパックにアップグレードしました');
   window.scrollTo({top:0, behavior:'smooth'});
 }
@@ -1016,7 +1066,8 @@ function upgradeAdd(genresStr){
   genresStr.split(',').forEach(g=>state.genres.add(g));
   state.removed.clear();
   state.reco=decidePacks();
-  renderReco(); renderUpsell(); renderUniv(); renderEiken(); renderOther();
+  pruneExtraCore();
+  renderReco(); renderUpsell(); renderAlaCarte(); renderUniv(); renderEiken(); renderOther();
   updateSummary(); showToast('プランをアップグレードしました');
   window.scrollTo({top:0, behavior:'smooth'});
 }
@@ -1081,6 +1132,7 @@ function calc(){
       buyLines.push({name:'（外した講座の調整）', price:-removedSum, qty:1});
     }
   }
+  state.extraCore.forEach(id=>{const c=C(id); if(c){oneTime+=c.price; buyLines.push({name:c.name, price:c.price, qty:1});}});
   state.extraUniv.forEach(id=>{const u=univCourses.find(x=>x.id===id); if(u){oneTime+=u.price; buyLines.push({name:u.name, price:u.price, qty:1});}});
   state.extraEiken.forEach(id=>{const e=eikenCourses.find(x=>x.id===id); if(e){oneTime+=e.price; buyLines.push({name:e.name, price:e.price, qty:1});}});
   state.extraOther.forEach(id=>{const o=allOtherFlat().find(x=>x.id===id); if(o){oneTime+=o.price; buyLines.push({name:o.name, price:o.price, qty:1});}});
@@ -1121,7 +1173,7 @@ function goStep(n){
 }
 function resetAll(){
   state.grade=null; state.today=null; state.exam=null; state.monthsLeft=null; state.timeMode=null;
-  state.genres.clear(); state.removed.clear(); state.extraUniv.clear();
+  state.genres.clear(); state.removed.clear(); state.extraCore.clear(); state.extraUniv.clear();
   state.extraEiken.clear(); state.extraOther.clear(); state.env.clear(); state.reco=null;
   document.getElementById('pfToday').value=''; document.getElementById('pfExam').value='';
   document.getElementById('pfResult').className='pf-result';

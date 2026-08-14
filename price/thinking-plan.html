@@ -7,15 +7,23 @@
 <title>THINKING｜英語合格設計プラン</title>
 <script>
 (function(){
-  var sales=/\/thinking-plan\/sales\/?$/.test(location.pathname)||/(?:^|[?&])sales(?:[=&]|$)/.test(location.search);
-  window.PLAN_MODE=sales?'sales':'customer';
+  var path=location.pathname, q=location.search;
+  var sales=/\/thinking-plan\/sales\/?$/.test(path)||/(?:^|[?&])sales(?:[=&]|$)/.test(q);
+  var catalog=/\/thinking-plan\/list\/?$/.test(path)||/(?:^|[?&])list(?:[=&]|$)/.test(q);
+  window.PLAN_MODE=sales?'sales':catalog?'catalog':'customer';
   document.documentElement.dataset.mode=window.PLAN_MODE;
   if(sales) document.title='THINKING｜見積もり発行';
+  else if(catalog) document.title='THINKING｜講座一覧';
 })();
 </script>
 <style>
   html[data-mode="customer"] .sales-only,
-  html[data-mode="sales"] .customer-only{display:none!important;}
+  html[data-mode="customer"] .catalog-only,
+  html[data-mode="sales"] .customer-only,
+  html[data-mode="sales"] .catalog-only,
+  html[data-mode="catalog"] .sales-only,
+  html[data-mode="catalog"] .customer-only,
+  html[data-mode="catalog"] .pack-only{display:none!important;}
   :root{
     --navy:#16263f; --navy-2:#22405f; --gold:#b8954a; --gold-2:#d4b877;
     --verm:#c8431f; --paper:#f7f4ee; --paper-2:#efe9dd; --ink:#1a1714;
@@ -292,19 +300,26 @@
 <header>
   <div class="wrap">
     <div class="sales-only sales-badge">見積もり発行</div>
+    <div class="catalog-only sales-badge">講座から選ぶ</div>
     <div class="brand">THINKING ｜ 学部別合格設計塾</div>
     <h1>英語 合格設計プラン</h1>
     <p class="customer-only">いまのあなたに必要なところから、無理なく。選んでいくと「あなた専用の合格プラン」と合計金額が見えます。</p>
     <p class="sales-only">お客様の前で、お名前を入力しながらその場で見積書を発行できます。</p>
+    <p class="catalog-only">パックにはまとめません。講座一覧から、必要なものだけ選んで合計を出せます。</p>
   </div>
 </header>
 
 <div class="wrap">
-  <div class="steps">
+  <div class="steps pack-only">
     <div class="step active" id="stepTab0"><span class="n">1</span>あなたのこと</div>
     <div class="step" id="stepTab1"><span class="n">2</span>必要なものを選ぶ</div>
     <div class="step" id="stepTab2"><span class="n">3</span>プランを決める</div>
     <div class="step" id="stepTab3"><span class="n">4</span>学習環境</div>
+  </div>
+  <div class="steps catalog-only">
+    <div class="step active" id="catTab0"><span class="n">1</span>あなたのこと</div>
+    <div class="step" id="catTab1"><span class="n">2</span>講座を選ぶ</div>
+    <div class="step" id="catTab2"><span class="n">3</span>学習環境</div>
   </div>
 
   <!-- STEP1 -->
@@ -329,7 +344,8 @@
     </div>
     <div class="step-nav">
       <span></span>
-      <button class="btn btn-primary" id="toStep1" onclick="goStep(1)" disabled>次へ：必要なものを選ぶ →</button>
+      <button class="btn btn-primary pack-only" id="toStep1" onclick="goStep(1)" disabled>次へ：必要なものを選ぶ →</button>
+      <button class="btn btn-primary catalog-only" id="toStep1Cat" onclick="goStep(1)" disabled>次へ：講座を選ぶ →</button>
     </div>
   </div>
 
@@ -363,13 +379,17 @@
 
     <!-- フェーズB: 結果(金額バーン + アップセル) -->
     <div id="phaseResult" style="display:none;">
-      <div class="sec-title">あなたへのおすすめプラン</div>
-      <div class="sec-desc">絞り込んだ内容が、いちばんお得に揃うプランはこちらです。</div>
-      <div id="recoArea"></div>
-      <div id="upsellArea"></div>
+      <div class="sec-title pack-only">あなたへのおすすめプラン</div>
+      <div class="sec-desc pack-only">絞り込んだ内容が、いちばんお得に揃うプランはこちらです。</div>
+      <div class="sec-title catalog-only">講座一覧</div>
+      <div class="sec-desc catalog-only">パックにはまとめません。必要な講座だけ、1つずつ選んで合計を出せます。価格はすべて税込です。</div>
+      <div id="recoArea" class="pack-only"></div>
+      <div id="upsellArea" class="pack-only"></div>
       <div id="alaCarteWrap">
-        <div class="addon-title">必要なものだけ足す</div>
-        <div class="addon-sub">パックにまとめなくても、講座単位で足せます。同じジャンルをまとめるなら、上のパックの方がお得です。</div>
+        <div class="addon-title pack-only">必要なものだけ足す</div>
+        <div class="addon-sub pack-only">パックにまとめなくても、講座単位で足せます。同じジャンルをまとめるなら、上のパックの方がお得です。</div>
+        <div class="addon-title catalog-only">英語講座</div>
+        <div class="addon-sub catalog-only">ジャンルごとに並んでいます。必要なものだけ選んでください。</div>
         <div id="alaCarteArea"></div>
       </div>
       <div class="addon-title">志望校・大学別対策</div>
@@ -382,8 +402,10 @@
       <div class="subj-tabs" id="subjTabs"></div>
       <div class="items" id="otherCourses"></div>
       <div class="step-nav">
-        <button class="btn btn-back" onclick="backToConfirm()">← 内容を調整する</button>
-        <button class="btn btn-primary" onclick="goStep(3)">環境・お支払いへ →</button>
+        <button class="btn btn-back pack-only" onclick="backToConfirm()">← 内容を調整する</button>
+        <button class="btn btn-back catalog-only" onclick="goStep(0)">← 戻る</button>
+        <button class="btn btn-primary pack-only" onclick="goStep(3)">環境・お支払いへ →</button>
+        <button class="btn btn-primary catalog-only" onclick="goStep(2)">環境・お支払いへ →</button>
       </div>
     </div>
   </div>
@@ -399,8 +421,10 @@
       <div class="env-opts" id="envOpts"></div>
     </div>
     <div class="step-nav">
-      <button class="btn btn-back" onclick="goStep(2)">← 戻る</button>
+      <button class="btn btn-back pack-only" onclick="goStep(2)">← 戻る</button>
+      <button class="btn btn-back catalog-only" onclick="goStep(1)">← 戻る</button>
       <button class="btn btn-primary customer-only" onclick="openDoc()">シミュレーション結果を見る →</button>
+      <button class="btn btn-primary catalog-only" onclick="openDoc()">シミュレーション結果を見る →</button>
       <button class="btn btn-primary sales-only" onclick="openDoc()">見積書を発行する →</button>
     </div>
   </div>
@@ -416,6 +440,7 @@
     <div class="sum-btns">
       <button class="btn btn-ghost" onclick="resetAll()">クリア</button>
       <button class="btn btn-gold customer-only" id="sumDocBtnCustomer" onclick="openDoc()" style="display:none;">結果を見る</button>
+      <button class="btn btn-gold catalog-only" id="sumDocBtnCatalog" onclick="openDoc()" style="display:none;">結果を見る</button>
       <button class="btn btn-gold sales-only" id="sumDocBtnSales" onclick="openDoc()" style="display:none;">見積書を発行</button>
     </div>
   </div>
@@ -425,6 +450,7 @@
   <div class="qm">
     <div class="qm-bar">
       <div class="qm-bar-title customer-only">シミュレーション結果</div>
+      <div class="qm-bar-title catalog-only">シミュレーション結果</div>
       <div class="qm-in sales-only">
         <label>宛名 <input type="text" id="cName" placeholder="お客様のお名前" oninput="buildDoc()"></label>
         <label>発行日 <input type="date" id="iDate" oninput="buildDoc()"></label>
@@ -721,12 +747,17 @@ function monthsBetween(d1,d2){
   const days=(b-a)/(1000*60*60*24);
   return days>0 ? Math.max(0, Math.round(days/30.4)) : 0;
 }
+function setProfileNext(disabled){
+  const a=document.getElementById('toStep1');
+  const b=document.getElementById('toStep1Cat');
+  if(a) a.disabled=disabled;
+  if(b) b.disabled=disabled;
+}
 function onProfileChange(){
   const today=document.getElementById('pfToday').value;
   const exam=document.getElementById('pfExam').value;
   state.today=today; state.exam=exam;
   const res=document.getElementById('pfResult');
-  const btn=document.getElementById('toStep1');
 
   if(state.grade && today && exam){
     const m=monthsBetween(today,exam);
@@ -735,7 +766,7 @@ function onProfileChange(){
       state.monthsLeft=null; state.timeMode=null;
       res.className='pf-result show poor';
       res.innerHTML='<div class="pf-result-msg">受験本番の日付は、今日より後の日付を入れてください。</div>';
-      btn.disabled=true;
+      setProfileNext(true);
       return;
     }
     // time判定
@@ -753,11 +784,11 @@ function onProfileChange(){
     state.timeMode=mode;
     res.className='pf-result show '+cls;
     res.innerHTML='<div class="pf-result-months">受験本番まで、あと<b>'+m+'</b>ヶ月</div><div class="pf-result-msg">'+msg+'</div>';
-    btn.disabled=false;
+    setProfileNext(false);
   } else {
     state.monthsLeft=null; state.timeMode=null;
     res.className='pf-result'; res.innerHTML='';
-    btn.disabled=true;
+    setProfileNext(true);
   }
 }
 
@@ -1149,6 +1180,33 @@ function updateSummary(){
 
 // ============ ステップ ============
 function goStep(n){
+  const isCatalog=window.PLAN_MODE==='catalog';
+  if(isCatalog){
+    if(n===1){
+      state.reco=null;
+      document.getElementById('phaseConfirm').style.display='none';
+      document.getElementById('phaseResult').style.display='block';
+      renderAlaCarte(); renderUniv(); renderEiken(); renderSubjTabs(); renderOther();
+    }
+    if(n===2) renderEnv();
+    state.step=n;
+    const map={0:'panel0',1:'panel2',2:'panel3'};
+    ['panel0','panel1','panel2','panel3'].forEach(id=>{
+      document.getElementById(id).classList.toggle('show', map[n]===id);
+    });
+    [0,1,2].forEach(i=>{
+      const tab=document.getElementById('catTab'+i);
+      if(!tab) return;
+      tab.classList.toggle('active', i===n);
+      tab.classList.toggle('done', i<n);
+    });
+    window.scrollTo({top:0, behavior:'smooth'});
+    const showDoc=(n===2);
+    const catBtn=document.getElementById('sumDocBtnCatalog');
+    if(catBtn) catBtn.style.display=showDoc?'':'none';
+    updateSummary();
+    return;
+  }
   // STEP2(ジャンル選択→プラン)に入る = n===2 に入る時、確認フェーズから
   if(n===2){
     state.removed.clear();
@@ -1178,12 +1236,13 @@ function resetAll(){
   document.getElementById('pfToday').value=''; document.getElementById('pfExam').value='';
   document.getElementById('pfResult').className='pf-result';
   renderGradeTabs(); renderFlow(); goStep(0);
-  document.getElementById('toStep1').disabled=true;
+  setProfileNext(true);
   updateSummary(); showToast('入力をクリアしました');
 }
 
 // ============ 結果 / 見積書 ============
 const IS_SALES = window.PLAN_MODE==='sales';
+const IS_CATALOG = window.PLAN_MODE==='catalog';
 function fmtDate(d){ if(!d)return''; const dt=new Date(d); if(isNaN(dt))return''; return dt.getFullYear()+'年'+(dt.getMonth()+1)+'月'+dt.getDate()+'日'; }
 function issueDate(){
   const iso=d=>d.toISOString().slice(0,10);
@@ -1237,7 +1296,9 @@ function buildDoc(){
     html=
       '<div class="d-head"><div><div class="d-title d-title-sim">シミュレーション結果</div></div>'+
         '<div class="d-meta"><div>'+fmtDate(issue)+'</div></div></div>'+
-      '<div class="d-intro">いまのあなたに合わせて組んだプランです。必要なものだけに絞った内容と、合計金額を確認できます。</div>'+
+      '<div class="d-intro">'+(IS_CATALOG
+        ?'選んだ講座の合計です。必要なものだけ、単品の価格で積み上げています。'
+        :'いまのあなたに合わせて組んだプランです。必要なものだけに絞った内容と、合計金額を確認できます。')+'</div>'+
       total+table+envBlock+
       '<div class="d-foot"><div class="d-notes">※ 表示価格はすべて税込です。<br>※ 学習環境（月額）は、ご利用月数分が毎月発生します。<br>※ この画面はシミュレーション結果です。ご不明点はスタッフまでお気軽にご相談ください。</div>'+
         '<div class="d-issuer"><div class="nm">学部別合格設計塾 THINKING</div></div></div>';

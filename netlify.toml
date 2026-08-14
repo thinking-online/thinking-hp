@@ -306,13 +306,17 @@
   status = 200
 
 # 英語合格設計プラン（料金シミュレーション）
-# お客様用: /thinking-plan ／ 見積もり発行: /thinking-plan/sales
+# お客様用: /thinking-plan ／ 見積もり発行: /thinking-plan/sales ／ 講座一覧: /thinking-plan/list
 [[redirects]]
   from = "/thinking-plan"
   to = "/price/thinking-plan.html"
   status = 200
 [[redirects]]
   from = "/thinking-plan/sales"
+  to = "/price/thinking-plan.html"
+  status = 200
+[[redirects]]
+  from = "/thinking-plan/list"
   to = "/price/thinking-plan.html"
   status = 200
 

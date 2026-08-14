@@ -403,7 +403,6 @@
       <div class="qm-in">
         <label>宛名 <input type="text" id="cName" placeholder="お客様のお名前" oninput="buildDoc()"></label>
         <label>発行日 <input type="date" id="iDate" oninput="buildDoc()"></label>
-        <label>有効期限 <input type="date" id="eDate" oninput="buildDoc()"></label>
       </div>
       <div class="qm-actions">
         <button class="btn btn-ghost-d btn-sm" onclick="closeDoc()">閉じる</button>
@@ -1115,18 +1114,17 @@ function fmtDate(d){ if(!d)return''; const dt=new Date(d); if(isNaN(dt))return''
 function openDoc(){
   const {oneTime, monthly}=calc();
   if(oneTime===0&&monthly===0){ showToast('項目を選択してください'); return; }
-  const today=new Date(), exp=new Date(); exp.setDate(exp.getDate()+14);
+  const today=new Date();
   const iso=d=>d.toISOString().slice(0,10);
   // プロフィールで今日を入れていればそれを発行日に
   if(!document.getElementById('iDate').value) document.getElementById('iDate').value=state.today||iso(today);
-  if(!document.getElementById('eDate').value) document.getElementById('eDate').value=iso(exp);
   buildDoc(); document.getElementById('qo').classList.add('open'); document.body.style.overflow='hidden';
 }
 function closeDoc(){ document.getElementById('qo').classList.remove('open'); document.body.style.overflow=''; }
 function buildDoc(){
   const {oneTime, monthly, buyLines, envLines}=calc();
   const name=document.getElementById('cName').value.trim();
-  const issue=document.getElementById('iDate').value, expire=document.getElementById('eDate').value;
+  const issue=document.getElementById('iDate').value;
   const qno='TQ-'+(issue?issue.replace(/-/g,''):'00000000');
   let rows='<tr class="sect"><td colspan="3">講座一覧</td></tr>';
   buyLines.forEach(l=>{ rows+='<tr><td>'+l.name+'</td><td class="num">'+l.qty+'</td><td class="num">¥'+yen(l.price)+'</td></tr>'; });
@@ -1140,14 +1138,14 @@ function buildDoc(){
   }
   document.getElementById('doc').innerHTML=
     '<div class="d-head"><div><div class="d-title">御 見 積 書</div></div>'+
-      '<div class="d-meta"><div class="no">No. '+qno+'</div><div>発行日：'+fmtDate(issue)+'</div><div>有効期限：'+fmtDate(expire)+'</div></div></div>'+
+      '<div class="d-meta"><div class="no">No. '+qno+'</div><div>発行日：'+fmtDate(issue)+'</div></div></div>'+
     '<div><span class="d-client">'+(name||'　')+'<span class="sfx">様</span></span></div>'+
     '<div class="d-intro">この度はTHINKINGをご検討いただき、誠にありがとうございます。下記の通りお見積もり申し上げます。</div>'+
     '<div class="d-total"><div class="d-total-label">全講義 合計金額（税込）</div><div class="d-total-val"><span class="yen">¥</span>'+yen(oneTime)+'</div></div>'+
     (monthly>0?'<div class="d-oneshot-note">＋ 学習環境の月額 ¥'+yen(monthly)+' /月（別途）</div>':'<div style="height:12px"></div>')+
     '<table class="dt"><thead><tr><th>項目</th><th class="num">数量</th><th class="num">金額</th></tr></thead><tbody>'+rows+'</tbody></table>'+
     envBlock+
-    '<div class="d-foot"><div class="d-notes">※ 表示価格はすべて税込です。<br>※ 学習環境（月額）は、ご利用月数分が毎月発生します。<br>※ お支払い方法につきましては、別途ご案内いたします。<br>※ 本見積もりの有効期限は上記記載の通りです。</div>'+
+    '<div class="d-foot"><div class="d-notes">※ 表示価格はすべて税込です。<br>※ 学習環境（月額）は、ご利用月数分が毎月発生します。<br>※ お支払い方法につきましては、別途ご案内いたします。</div>'+
       '<div class="d-issuer"><div class="nm">学部別合格設計塾 THINKING</div>合同会社ARC<br>〒180-0022<br>東京都武蔵野市境2-2-23<br>武蔵境ペペロッソ3F</div></div>';
 }
 function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(window._tt); window._tt=setTimeout(()=>t.classList.remove('show'),1900); }

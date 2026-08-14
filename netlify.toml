@@ -305,9 +305,14 @@
   to = "/shindan/english-reading/:splat"
   status = 200
 
-# 英語合格設計プラン（料金シミュレーション）— /thinking-plan で公開（生徒配布用・noindex）
+# 英語合格設計プラン（料金シミュレーション）
+# お客様用: /thinking-plan ／ 営業用（見積発行）: /thinking-plan/sales
 [[redirects]]
   from = "/thinking-plan"
+  to = "/price/thinking-plan.html"
+  status = 200
+[[redirects]]
+  from = "/thinking-plan/sales"
   to = "/price/thinking-plan.html"
   status = 200
 

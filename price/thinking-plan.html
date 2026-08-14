@@ -5,7 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>THINKING｜英語合格設計プラン</title>
+<script>
+(function(){
+  var sales=/\/thinking-plan\/sales\/?$/.test(location.pathname)||/(?:^|[?&])sales(?:[=&]|$)/.test(location.search);
+  window.PLAN_MODE=sales?'sales':'customer';
+  document.documentElement.dataset.mode=window.PLAN_MODE;
+  if(sales) document.title='THINKING｜見積発行（営業用）';
+})();
+</script>
 <style>
+  html[data-mode="customer"] .sales-only,
+  html[data-mode="sales"] .customer-only{display:none!important;}
   :root{
     --navy:#16263f; --navy-2:#22405f; --gold:#b8954a; --gold-2:#d4b877;
     --verm:#c8431f; --paper:#f7f4ee; --paper-2:#efe9dd; --ink:#1a1714;
@@ -238,6 +248,9 @@
   .doc{padding:44px 48px; color:var(--ink); font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;}
   .d-head{display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:26px;}
   .d-title{font-family:"Yu Mincho",serif; font-size:28px; font-weight:700; letter-spacing:.24em; color:var(--navy); border-bottom:3px solid var(--navy); padding-bottom:8px;}
+  .d-title-sim{letter-spacing:.08em; font-size:24px;}
+  .qm-bar-title{font-size:13px; font-weight:700; color:var(--gold-2); letter-spacing:.06em;}
+  .sales-badge{display:inline-block; font-size:10px; font-weight:700; letter-spacing:.12em; color:var(--navy); background:var(--gold); padding:3px 9px; border-radius:3px; margin-bottom:10px;}
   .d-meta{text-align:right; font-size:11.5px; color:var(--muted); line-height:1.9;} .d-meta .no{font-weight:700; color:var(--ink);}
   .d-client{font-size:19px; font-weight:700; border-bottom:1px solid var(--line); padding-bottom:8px; min-width:280px; display:inline-block; margin-bottom:16px;}
   .d-client .sfx{font-size:13px; font-weight:400; margin-left:8px;}
@@ -276,9 +289,11 @@
 
 <header>
   <div class="wrap">
+    <div class="sales-only sales-badge">営業用 ｜ 見積発行</div>
     <div class="brand">THINKING ｜ 学部別合格設計塾</div>
     <h1>英語 合格設計プラン</h1>
-    <p>いまのあなたに必要なところから、無理なく。3ステップで「あなた専用の合格プラン」が完成します。</p>
+    <p class="customer-only">いまのあなたに必要なところから、無理なく。選んでいくと「あなた専用の合格プラン」と合計金額が見えます。</p>
+    <p class="sales-only">お客様の前で、お名前を入力しながらその場で見積書を発行できます。</p>
   </div>
 </header>
 
@@ -378,7 +393,8 @@
     </div>
     <div class="step-nav">
       <button class="btn btn-back" onclick="goStep(2)">← 戻る</button>
-      <button class="btn btn-primary" onclick="openDoc()">見積書を作成する →</button>
+      <button class="btn btn-primary customer-only" onclick="openDoc()">シミュレーション結果を見る →</button>
+      <button class="btn btn-primary sales-only" onclick="openDoc()">見積書を発行する →</button>
     </div>
   </div>
 </div>
@@ -392,7 +408,8 @@
     </div>
     <div class="sum-btns">
       <button class="btn btn-ghost" onclick="resetAll()">クリア</button>
-      <button class="btn btn-gold" id="sumDocBtn" onclick="openDoc()" style="display:none;">見積書を作成</button>
+      <button class="btn btn-gold customer-only" id="sumDocBtnCustomer" onclick="openDoc()" style="display:none;">結果を見る</button>
+      <button class="btn btn-gold sales-only" id="sumDocBtnSales" onclick="openDoc()" style="display:none;">見積書を発行</button>
     </div>
   </div>
 </div>
@@ -400,7 +417,8 @@
 <div class="qo" id="qo">
   <div class="qm">
     <div class="qm-bar">
-      <div class="qm-in">
+      <div class="qm-bar-title customer-only">シミュレーション結果</div>
+      <div class="qm-in sales-only">
         <label>宛名 <input type="text" id="cName" placeholder="お客様のお名前" oninput="buildDoc()"></label>
         <label>発行日 <input type="date" id="iDate" oninput="buildDoc()"></label>
       </div>
@@ -1094,8 +1112,11 @@ function goStep(n){
     tab.classList.toggle('active', i===n); tab.classList.toggle('done', i<n);
   });
   window.scrollTo({top:0, behavior:'smooth'});
-  // 見積書ボタンは学習環境(STEP4=step3)でのみ表示
-  document.getElementById('sumDocBtn').style.display = (n===3) ? '' : 'none';
+  const showDoc = (n===3);
+  const custBtn=document.getElementById('sumDocBtnCustomer');
+  const salesBtn=document.getElementById('sumDocBtnSales');
+  if(custBtn) custBtn.style.display = showDoc ? '' : 'none';
+  if(salesBtn) salesBtn.style.display = showDoc ? '' : 'none';
   updateSummary();
 }
 function resetAll(){
@@ -1109,23 +1130,27 @@ function resetAll(){
   updateSummary(); showToast('入力をクリアしました');
 }
 
-// ============ 見積書 ============
+// ============ 結果 / 見積書 ============
+const IS_SALES = window.PLAN_MODE==='sales';
 function fmtDate(d){ if(!d)return''; const dt=new Date(d); if(isNaN(dt))return''; return dt.getFullYear()+'年'+(dt.getMonth()+1)+'月'+dt.getDate()+'日'; }
+function issueDate(){
+  const iso=d=>d.toISOString().slice(0,10);
+  const el=document.getElementById('iDate');
+  if(el && el.value) return el.value;
+  return state.today || iso(new Date());
+}
 function openDoc(){
   const {oneTime, monthly}=calc();
   if(oneTime===0&&monthly===0){ showToast('項目を選択してください'); return; }
-  const today=new Date();
-  const iso=d=>d.toISOString().slice(0,10);
-  // プロフィールで今日を入れていればそれを発行日に
-  if(!document.getElementById('iDate').value) document.getElementById('iDate').value=state.today||iso(today);
+  if(IS_SALES){
+    const el=document.getElementById('iDate');
+    if(el && !el.value) el.value=issueDate();
+  }
   buildDoc(); document.getElementById('qo').classList.add('open'); document.body.style.overflow='hidden';
 }
 function closeDoc(){ document.getElementById('qo').classList.remove('open'); document.body.style.overflow=''; }
-function buildDoc(){
+function buildDocRows(){
   const {oneTime, monthly, buyLines, envLines}=calc();
-  const name=document.getElementById('cName').value.trim();
-  const issue=document.getElementById('iDate').value;
-  const qno='TQ-'+(issue?issue.replace(/-/g,''):'00000000');
   let rows='<tr class="sect"><td colspan="3">講座一覧</td></tr>';
   buyLines.forEach(l=>{ rows+='<tr><td>'+l.name+'</td><td class="num">'+l.qty+'</td><td class="num">¥'+yen(l.price)+'</td></tr>'; });
   rows+='<tr class="dt-sub"><td>全講義 合計（税込）</td><td class="num"></td><td class="num">¥'+yen(oneTime)+'</td></tr>';
@@ -1136,17 +1161,36 @@ function buildDoc(){
       '<div class="d-env-total"><span>月額 合計</span><span>¥'+yen(monthly)+' /月</span></div>'+
       '<div style="font-size:10.5px;color:var(--muted);margin-top:8px">※ ご利用月数分が毎月発生します。受験まで必要な期間だけご利用いただけます。</div></div>';
   }
-  document.getElementById('doc').innerHTML=
-    '<div class="d-head"><div><div class="d-title">御 見 積 書</div></div>'+
-      '<div class="d-meta"><div class="no">No. '+qno+'</div><div>発行日：'+fmtDate(issue)+'</div></div></div>'+
-    '<div><span class="d-client">'+(name||'　')+'<span class="sfx">様</span></span></div>'+
-    '<div class="d-intro">この度はTHINKINGをご検討いただき、誠にありがとうございます。下記の通りお見積もり申し上げます。</div>'+
-    '<div class="d-total"><div class="d-total-label">全講義 合計金額（税込）</div><div class="d-total-val"><span class="yen">¥</span>'+yen(oneTime)+'</div></div>'+
-    (monthly>0?'<div class="d-oneshot-note">＋ 学習環境の月額 ¥'+yen(monthly)+' /月（別途）</div>':'<div style="height:12px"></div>')+
-    '<table class="dt"><thead><tr><th>項目</th><th class="num">数量</th><th class="num">金額</th></tr></thead><tbody>'+rows+'</tbody></table>'+
-    envBlock+
-    '<div class="d-foot"><div class="d-notes">※ 表示価格はすべて税込です。<br>※ 学習環境（月額）は、ご利用月数分が毎月発生します。<br>※ お支払い方法につきましては、別途ご案内いたします。</div>'+
-      '<div class="d-issuer"><div class="nm">学部別合格設計塾 THINKING</div>合同会社ARC<br>〒180-0022<br>東京都武蔵野市境2-2-23<br>武蔵境ペペロッソ3F</div></div>';
+  const table='<table class="dt"><thead><tr><th>項目</th><th class="num">数量</th><th class="num">金額</th></tr></thead><tbody>'+rows+'</tbody></table>';
+  const total='<div class="d-total"><div class="d-total-label">全講義 合計金額（税込）</div><div class="d-total-val"><span class="yen">¥</span>'+yen(oneTime)+'</div></div>'+
+    (monthly>0?'<div class="d-oneshot-note">＋ 学習環境の月額 ¥'+yen(monthly)+' /月（別途）</div>':'<div style="height:12px"></div>');
+  return {oneTime, monthly, table, total, envBlock};
+}
+function buildDoc(){
+  const {table, total, envBlock}=buildDocRows();
+  const issue=issueDate();
+  let html;
+  if(IS_SALES){
+    const name=(document.getElementById('cName').value||'').trim();
+    const qno='TQ-'+(issue?issue.replace(/-/g,''):'00000000');
+    html=
+      '<div class="d-head"><div><div class="d-title">御 見 積 書</div></div>'+
+        '<div class="d-meta"><div class="no">No. '+qno+'</div><div>発行日：'+fmtDate(issue)+'</div></div></div>'+
+      '<div><span class="d-client">'+(name||'　')+'<span class="sfx">様</span></span></div>'+
+      '<div class="d-intro">この度はTHINKINGをご検討いただき、誠にありがとうございます。下記の通りお見積もり申し上げます。</div>'+
+      total+table+envBlock+
+      '<div class="d-foot"><div class="d-notes">※ 表示価格はすべて税込です。<br>※ 学習環境（月額）は、ご利用月数分が毎月発生します。<br>※ お支払い方法につきましては、別途ご案内いたします。</div>'+
+        '<div class="d-issuer"><div class="nm">学部別合格設計塾 THINKING</div>合同会社ARC<br>〒180-0022<br>東京都武蔵野市境2-2-23<br>武蔵境ペペロッソ3F</div></div>';
+  } else {
+    html=
+      '<div class="d-head"><div><div class="d-title d-title-sim">シミュレーション結果</div></div>'+
+        '<div class="d-meta"><div>'+fmtDate(issue)+'</div></div></div>'+
+      '<div class="d-intro">いまのあなたに合わせて組んだプランです。必要なものだけに絞った内容と、合計金額を確認できます。</div>'+
+      total+table+envBlock+
+      '<div class="d-foot"><div class="d-notes">※ 表示価格はすべて税込です。<br>※ 学習環境（月額）は、ご利用月数分が毎月発生します。<br>※ この画面はシミュレーション結果です。ご不明点はスタッフまでお気軽にご相談ください。</div>'+
+        '<div class="d-issuer"><div class="nm">学部別合格設計塾 THINKING</div></div></div>';
+  }
+  document.getElementById('doc').innerHTML=html;
 }
 function showToast(msg){ const t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); clearTimeout(window._tt); window._tt=setTimeout(()=>t.classList.remove('show'),1900); }
 

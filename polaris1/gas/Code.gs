@@ -28,7 +28,9 @@ var CONFIG = {
   COLLECT_EMAIL: false,                        // 回答者メールの収集
   TITLE_PREFIX: '基礎英文法テスト｜',           // フォームのタイトル接頭辞（例: 基礎英文法テスト｜UNIT 1 時制(1)）
   AUTO_CONTINUE: true,                         // 一括作成が時間切れになったら約1分後に自動で続きを作成する
-  MAX_RUNTIME_MS: 300000                       // 1回の実行で作業する上限（5分）。GASの6分制限より手前で安全停止
+  MAX_RUNTIME_MS: 300000,                      // 1回の実行で作業する上限（5分）。GASの6分制限より手前で安全停止
+  FINAL_COUNT: 50,                             // 修了テストの問題数
+  FINAL_TITLE: '基礎英文法テスト｜修了テスト'    // 修了テストのフォームタイトル
 };
 
 var COL = {
@@ -49,6 +51,8 @@ function onOpen() {
     .addItem('チャプターを指定して一括作成', 'createFormsForChapter')
     .addItem('全単元を一括作成（続きから再開）', 'createAllForms')
     .addItem('自動作成を停止', 'stopAutoContinue')
+    .addSeparator()
+    .addItem('修了テストを作成（' + CONFIG.FINAL_COUNT + '問・ランダム網羅）', 'createFinalTest')
     .addSeparator()
     .addItem('データの読み込みを確認', 'previewData')
     .addToUi();
@@ -164,6 +168,88 @@ function removeContinueTriggers_() {
 function stopAutoContinue() {
   removeContinueTriggers_();
   toast_('自動作成を停止しました。');
+}
+
+/**
+ * 修了テストを作成（全単元を網羅しつつランダムに FINAL_COUNT 問）。
+ * ・各単元から最低1問（＝全単元網羅）＋残りを単元の問題数に応じて配分
+ * ・実行するたびに毎回ランダムに選び直す（別バージョンが作れる）
+ * ・問題順もシャッフル。作成結果は「フォーム一覧」に記録
+ */
+function createFinalTest() {
+  var groups = groupByUnit_(getData_());
+  var order = groups.order, total = 0;
+  order.forEach(function(u){ total += groups.map[u].length; });
+  var N = Math.min(CONFIG.FINAL_COUNT, total);
+  var U = order.length;
+
+  // 配分：各単元1問→残りを問題数比で最大剰余配分→在庫上限でクリップ
+  var alloc = {};
+  order.forEach(function(u){ alloc[u] = 1; });
+  var rem = Math.max(0, N - U);
+  var shares = {}, floors = {}, sumFloor = 0;
+  order.forEach(function(u){
+    shares[u] = (groups.map[u].length / total) * rem;
+    floors[u] = Math.floor(shares[u]);
+    alloc[u] += floors[u];
+    sumFloor += floors[u];
+  });
+  var left = rem - sumFloor;
+  order.slice().sort(function(a, b){ return (shares[b] - floors[b]) - (shares[a] - floors[a]); })
+    .forEach(function(u){ if (left > 0) { alloc[u]++; left--; } });
+  order.forEach(function(u){ if (alloc[u] > groups.map[u].length) alloc[u] = groups.map[u].length; });
+
+  // 各単元からランダム抽出→全体をシャッフル
+  var picked = [];
+  order.forEach(function(u){ picked = picked.concat(sample_(groups.map[u], alloc[u])); });
+  shuffle_(picked);
+
+  // フォーム作成
+  var form = FormApp.create(CONFIG.FINAL_TITLE);
+  form.setTitle(CONFIG.FINAL_TITLE);
+  form.setDescription('全 ' + U + ' 単元から出題（全 ' + picked.length + ' 問）\nマーク式・自動採点');
+  form.setIsQuiz(true);
+  form.setCollectEmail(CONFIG.COLLECT_EMAIL);
+  form.setShuffleQuestions(false); // すでにシャッフル済み
+  form.setProgressBar(true);
+
+  var made = 0;
+  picked.forEach(function(row){
+    try { addChoice_(form, row); made++; }
+    catch (e) { form.addSectionHeaderItem().setTitle('⚠ 問' + row[COL.num] + ' の作成に失敗: ' + e); }
+  });
+
+  var folder = getFolder_();
+  moveToFolder_(form, folder);
+
+  var sh = ensureListSheet_();
+  writeOne_(sh, {
+    tab: getSheet_().getName(),
+    numRange: 'ランダム' + picked.length + '問',
+    title: CONFIG.FINAL_TITLE,
+    englishCount: picked.length, questionCount: made,
+    liveUrl: form.getPublishedUrl(), editUrl: form.getEditUrl(),
+    folderName: folder.getName(), folderUrl: folder.getUrl()
+  });
+  toast_('修了テスト（' + made + '問）を作成しました。「フォーム一覧」にURLを記録しました。', 10);
+}
+
+function sample_(arr, k) {
+  var a = arr.slice(), out = [];
+  k = Math.min(k, a.length);
+  for (var i = 0; i < k; i++) {
+    var j = Math.floor(Math.random() * a.length);
+    out.push(a.splice(j, 1)[0]);
+  }
+  return out;
+}
+
+function shuffle_(a) {
+  for (var i = a.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
 }
 
 function createFormsForChapter() {

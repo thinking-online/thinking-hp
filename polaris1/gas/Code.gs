@@ -29,8 +29,10 @@ var CONFIG = {
   TITLE_PREFIX: '基礎英文法テスト｜',           // フォームのタイトル接頭辞（例: 基礎英文法テスト｜UNIT 1 時制(1)）
   AUTO_CONTINUE: true,                         // 一括作成が時間切れになったら約1分後に自動で続きを作成する
   MAX_RUNTIME_MS: 300000,                      // 1回の実行で作業する上限（5分）。GASの6分制限より手前で安全停止
-  FINAL_COUNT: 50,                             // 修了テストの問題数
-  FINAL_TITLE: '基礎英文法テスト｜修了テスト'    // 修了テストのフォームタイトル
+  FINAL_COUNT: 50,                             // 修了テスト（ランダム版）の問題数
+  FINAL_TITLE: '基礎英文法テスト｜修了テスト',   // 修了テストのフォームタイトル
+  // 確定版の修了テストで出す問題番号（この順で出題）。空にするとメニューの確定版は使えません
+  FINAL_FIXED_NUMS: ['100','194','311','004','072','332','120','152','244','200','108','159','017','340','098','273','061','291','266','044','209','305','234','287','069','140','169','360','258','116','216','172','028','283','006','180','373','085','033','055','222','141','135','251','088','326','368','321','052','183']
 };
 
 var COL = {
@@ -52,7 +54,8 @@ function onOpen() {
     .addItem('全単元を一括作成（続きから再開）', 'createAllForms')
     .addItem('自動作成を停止', 'stopAutoContinue')
     .addSeparator()
-    .addItem('修了テストを作成（' + CONFIG.FINAL_COUNT + '問・ランダム網羅）', 'createFinalTest')
+    .addItem('修了テストを作成（確定版・この' + CONFIG.FINAL_FIXED_NUMS.length + '問）', 'createFinalTestFixed')
+    .addItem('修了テストを作成（' + CONFIG.FINAL_COUNT + '問・毎回ランダム）', 'createFinalTest')
     .addSeparator()
     .addItem('データの読み込みを確認', 'previewData')
     .addToUi();
@@ -171,6 +174,34 @@ function stopAutoContinue() {
 }
 
 /**
+ * 修了テストを作成（確定版）。
+ * CONFIG.FINAL_FIXED_NUMS に並べた問題番号を、その順番どおりに出題する固定テスト。
+ * 「毎回同じ問題」を生徒に配りたいとき用（確認済みの50問がそのまま出ます）。
+ */
+function createFinalTestFixed() {
+  var nums = CONFIG.FINAL_FIXED_NUMS || [];
+  if (!nums.length) { SpreadsheetApp.getUi().alert('CONFIG.FINAL_FIXED_NUMS が空です。出題する問題番号を設定してください。'); return; }
+
+  var rows = getData_();
+  var byNum = {};
+  rows.forEach(function(r){ byNum[String(r[COL.num]).trim()] = r; });
+
+  var picked = [], missing = [];
+  nums.forEach(function(n){
+    var r = byNum[String(n).trim()];
+    if (r) picked.push(r); else missing.push(n);
+  });
+  if (!picked.length) { SpreadsheetApp.getUi().alert('指定した問題番号がデータに見つかりませんでした。'); return; }
+
+  var res = buildTestForm_(CONFIG.FINAL_TITLE, picked, '確定版' + picked.length + '問');
+  var sh = ensureListSheet_();
+  writeOne_(sh, res);
+  var msg = '修了テスト（確定版・' + res.questionCount + '問）を作成しました。「フォーム一覧」にURLを記録しました。';
+  if (missing.length) msg += '\n※見つからなかった番号: ' + missing.join(', ');
+  toast_(msg, 10);
+}
+
+/**
  * 修了テストを作成（全単元を網羅しつつランダムに FINAL_COUNT 問）。
  * ・各単元から最低1問（＝全単元網羅）＋残りを単元の問題数に応じて配分
  * ・実行するたびに毎回ランダムに選び直す（別バージョンが作れる）
@@ -204,13 +235,20 @@ function createFinalTest() {
   order.forEach(function(u){ picked = picked.concat(sample_(groups.map[u], alloc[u])); });
   shuffle_(picked);
 
-  // フォーム作成
-  var form = FormApp.create(CONFIG.FINAL_TITLE);
-  form.setTitle(CONFIG.FINAL_TITLE);
-  form.setDescription('全 ' + U + ' 単元から出題（全 ' + picked.length + ' 問）\nマーク式・自動採点');
+  var res = buildTestForm_(CONFIG.FINAL_TITLE, picked, 'ランダム' + picked.length + '問');
+  var sh = ensureListSheet_();
+  writeOne_(sh, res);
+  toast_('修了テスト（ランダム・' + res.questionCount + '問）を作成しました。「フォーム一覧」にURLを記録しました。', 10);
+}
+
+/** 与えられた問題配列からテスト用フォームを1つ作る（修了テスト共通） */
+function buildTestForm_(title, picked, numRangeLabel) {
+  var form = FormApp.create(title);
+  form.setTitle(title);
+  form.setDescription('全 ' + picked.length + ' 問／マーク式・自動採点');
   form.setIsQuiz(true);
   form.setCollectEmail(CONFIG.COLLECT_EMAIL);
-  form.setShuffleQuestions(false); // すでにシャッフル済み
+  form.setShuffleQuestions(false); // 出題順はこちらで確定済み
   form.setProgressBar(true);
 
   var made = 0;
@@ -221,17 +259,14 @@ function createFinalTest() {
 
   var folder = getFolder_();
   moveToFolder_(form, folder);
-
-  var sh = ensureListSheet_();
-  writeOne_(sh, {
+  return {
     tab: getSheet_().getName(),
-    numRange: 'ランダム' + picked.length + '問',
-    title: CONFIG.FINAL_TITLE,
+    numRange: numRangeLabel,
+    title: title,
     englishCount: picked.length, questionCount: made,
     liveUrl: form.getPublishedUrl(), editUrl: form.getEditUrl(),
     folderName: folder.getName(), folderUrl: folder.getUrl()
-  });
-  toast_('修了テスト（' + made + '問）を作成しました。「フォーム一覧」にURLを記録しました。', 10);
+  };
 }
 
 function sample_(arr, k) {

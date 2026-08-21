@@ -17,10 +17,12 @@
  */
 
 // ===== 設定 =====================================================
-// タブ名 → { フォルダID, フォームのタイトル }
-// titlePrefix の後ろに通し番号(01, 02, …)が付く。
-//   例)【入門レベル】英文解釈実践テスト01
-// 番号は英文の位置から決まるので、SENTENCES_PER_FORM=1 なら No.と一致(01〜60 / 01〜70)。
+// タブ名 → { folderId, titlePrefix, perForm? }
+//   titlePrefix の後ろに通し番号(01, 02, …)が付く。例)【入門レベル】英文解釈実践テスト01
+//   番号は行の位置から決まる(perForm=1 なら No.と一致)。
+//   folderId … 保存先フォルダ。空文字ならマイドライブ直下に作成。
+//   perForm  … 1フォームに入れる行数(省略時は下の SENTENCES_PER_FORM を使用)。
+//              1=1行ごと / 0=そのタブ全体を1フォーム。
 var CONFIG = {
   '入門60': {
     folderId: '1-HUnBaaRudxmpuYvGlzxA4wEffiRGIJe',
@@ -29,6 +31,11 @@ var CONFIG = {
   '英文熟考': {
     folderId: '1QfxnyZ82NSpgdWiEygjHpMiKrcnZD7TF',
     titlePrefix: '【基礎レベル】英文解釈実践テスト',
+  },
+  '言い換え30': {
+    folderId: '',                       // ← 保存したいフォルダIDを入れる(空ならマイドライブ直下)
+    titlePrefix: '【実践】本文と同じ意味を選ぶ 言い換え30',
+    perForm: 0,                          // 30問すべてを1つのフォームにまとめる
   },
 };
 
@@ -58,16 +65,18 @@ function onOpen() {
     .createMenu('フォーム作成')
     .addItem('入門60 を作成', 'createFor_Nyumon60')
     .addItem('英文熟考 を作成', 'createFor_Jukko')
+    .addItem('言い換え30 を作成', 'createFor_Paraphrase30')
     .addSeparator()
-    .addItem('両方まとめて作成', 'createAll')
+    .addItem('両方(入門60+英文熟考)まとめて作成', 'createAll')
     .addToUi();
 }
 
 function createFor_Nyumon60() { runTab_('入門60'); }
 function createFor_Jukko() { runTab_('英文熟考'); }
+function createFor_Paraphrase30() { runTab_('言い換え30'); }
 function createAll() {
   var msgs = [];
-  Object.keys(CONFIG).forEach(function (tab) { msgs.push(runTab_(tab, true)); });
+  ['入門60', '英文熟考'].forEach(function (tab) { msgs.push(runTab_(tab, true)); });
   SpreadsheetApp.getUi().alert(msgs.join('\n\n'));
 }
 
@@ -78,7 +87,7 @@ function runTab_(tabName, silent) {
   if (!conf) throw new Error('CONFIG にタブ「' + tabName + '」の設定がありません。');
   var sheet = ss.getSheetByName(tabName);
   if (!sheet) throw new Error('タブ「' + tabName + '」が見つかりません。');
-  var folder = DriveApp.getFolderById(conf.folderId); // フォルダIDが無効ならここでエラー
+  var folder = conf.folderId ? DriveApp.getFolderById(conf.folderId) : DriveApp.getRootFolder();
 
   var sentences = readSentences_(sheet, tabName);
   if (sentences.length === 0) throw new Error('タブ「' + tabName + '」にデータ行がありません。');
@@ -86,7 +95,9 @@ function runTab_(tabName, silent) {
   var linkSheet = getLinkSheet_(ss);
   var done = doneNoSet_(linkSheet, tabName); // すでに作成済みの No. 集合
 
-  var chunkSize = SENTENCES_PER_FORM > 0 ? SENTENCES_PER_FORM : sentences.length;
+  // このタブの1フォームあたりの行数(perForm 優先、無ければ全体の SENTENCES_PER_FORM)
+  var per = (conf.perForm !== undefined) ? conf.perForm : SENTENCES_PER_FORM;
+  var chunkSize = per > 0 ? per : sentences.length;
   var start = new Date().getTime();
   var createdCount = 0, skipped = 0, remaining = 0, stopped = false;
 

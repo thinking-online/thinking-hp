@@ -386,8 +386,8 @@
       <div id="recoArea" class="pack-only"></div>
       <div id="upsellArea" class="pack-only"></div>
       <div id="alaCarteWrap">
-        <div class="addon-title pack-only">必要なものだけ足す</div>
-        <div class="addon-sub pack-only">パックにまとめなくても、講座単位で足せます。同じジャンルをまとめるなら、上のパックの方がお得です。</div>
+        <div class="addon-title pack-only">選んでいない講座を足す</div>
+        <div class="addon-sub pack-only">リスニングや速読など、今選んでいないものはここで1講座ずつ足せます。ジャンルごとまとめるなら、上の提案の方がお得です。あとから単品で足すと定価になります。</div>
         <div class="addon-title catalog-only">英語講座</div>
         <div class="addon-sub catalog-only">ジャンルごとに並んでいます。必要なものだけ選んでください。</div>
         <div id="alaCarteArea"></div>
@@ -470,33 +470,33 @@
 // ============ 英語コア講座 ============
 const courses = [
   // 語彙力
-  {id:'tango', g:'goi', name:'英単語 実践', meta:'単語帳の4択問題演習', price:3800},
-  {id:'jukugo', g:'goi', name:'英熟語 実践', meta:'熟語帳の4択問題演習', price:3800},
-  {id:'goi_jissen', g:'goi', name:'語彙問題 実践演習', meta:'過去問ベースの語彙演習', price:5800},
+  {id:'tango', g:'goi', name:'英単語 実践', meta:'単語帳の4択問題演習', price:4800},
+  {id:'jukugo', g:'goi', name:'英熟語 実践', meta:'熟語帳の4択問題演習', price:4800},
+  {id:'goi_jissen', g:'goi', name:'語彙問題 実践演習', meta:'過去問ベースの語彙演習', price:6800},
   // 読むための文法(インプット)
-  {id:'bunpo_in', g:'bunpo_in', name:'英文法 講座（100テーマ）', meta:'インプット授業＋各5問', price:48000},
+  {id:'bunpo_in', g:'bunpo_in', name:'英文法 講座（100テーマ）', meta:'インプット授業＋各5問', price:52800},
   // 読んで解くための文法(演習)
-  {id:'bunpo_kiso', g:'bunpo_solve', name:'基礎英文法 演習', meta:'', price:9800},
-  {id:'bunpo_hyo', g:'bunpo_solve', name:'標準問題 演習', meta:'', price:9800},
-  {id:'bunpo_hin', g:'bunpo_solve', name:'頻出語法 演習', meta:'', price:9800},
-  {id:'bunpo_seigo', g:'bunpo_solve', name:'正誤問題 講座', meta:'', price:8800},
-  {id:'bunpo_seijo', g:'bunpo_solve', name:'整序問題 講座', meta:'', price:8800},
+  {id:'bunpo_kiso', g:'bunpo_solve', name:'基礎英文法 演習', meta:'', price:11800},
+  {id:'bunpo_hyo', g:'bunpo_solve', name:'標準問題 演習', meta:'', price:11800},
+  {id:'bunpo_hin', g:'bunpo_solve', name:'頻出語法 演習', meta:'', price:11800},
+  {id:'bunpo_seigo', g:'bunpo_solve', name:'正誤問題 講座', meta:'', price:10800},
+  {id:'bunpo_seijo', g:'bunpo_solve', name:'整序問題 講座', meta:'', price:10800},
   // 読むための英文解釈
-  {id:'kaishaku_nyu', g:'kaishaku_read', name:'入門 英文解釈', meta:'構文把握の第一歩', price:14800},
-  {id:'kaishaku_kiso', g:'kaishaku_read', name:'基礎 英文解釈', meta:'', price:14800},
+  {id:'kaishaku_nyu', g:'kaishaku_read', name:'入門 英文解釈', meta:'構文把握の第一歩', price:16800},
+  {id:'kaishaku_kiso', g:'kaishaku_read', name:'基礎 英文解釈', meta:'', price:16800},
   // 読んで解くための英文解釈
-  {id:'kaishaku_nyu_j', g:'kaishaku_solve', name:'入門英文解釈 実践演習', meta:'', price:11800},
-  {id:'kaishaku_kiso_j', g:'kaishaku_solve', name:'基礎英文解釈 実践演習', meta:'', price:11800},
+  {id:'kaishaku_nyu_j', g:'kaishaku_solve', name:'入門英文解釈 実践演習', meta:'', price:13800},
+  {id:'kaishaku_kiso_j', g:'kaishaku_solve', name:'基礎英文解釈 実践演習', meta:'', price:13800},
   // 長文読解(全員必須イメージ)
-  {id:'cho_nyu1', g:'chobun', name:'長文読解｜STEP1（5文）', meta:'1講座5文の実戦', price:12800},
-  {id:'cho_nyu2', g:'chobun', name:'長文読解｜STEP2（5文）', meta:'1講座5文の実戦', price:12800},
-  {id:'cho_kiso1', g:'chobun', name:'長文読解｜STEP3（5文）', meta:'1講座5文の実戦', price:13800},
-  {id:'cho_kiso2', g:'chobun', name:'長文読解｜STEP4（5文）', meta:'1講座5文の実戦', price:13800},
+  {id:'cho_nyu1', g:'chobun', name:'長文読解｜STEP1（5文）', meta:'1講座5文の実戦', price:14800},
+  {id:'cho_nyu2', g:'chobun', name:'長文読解｜STEP2（5文）', meta:'1講座5文の実戦', price:14800},
+  {id:'cho_kiso1', g:'chobun', name:'長文読解｜STEP3（5文）', meta:'1講座5文の実戦', price:15800},
+  {id:'cho_kiso2', g:'chobun', name:'長文読解｜STEP4（5文）', meta:'1講座5文の実戦', price:15800},
   // リスニング
-  {id:'lis_hatsu', g:'lis', name:'リスニング 発音法則講義', meta:'', price:9800},
-  {id:'lis_kiso', g:'lis', name:'リスニング 基礎実践', meta:'', price:12800},
+  {id:'lis_hatsu', g:'lis', name:'リスニング 発音法則講義', meta:'', price:12800},
+  {id:'lis_kiso', g:'lis', name:'リスニング 基礎実践', meta:'', price:16800},
   // 速読
-  {id:'sokudoku', g:'soku', name:'15日で固める速読実践講座', meta:'', price:16800},
+  {id:'sokudoku', g:'soku', name:'15日で固める速読実践講座', price:22800},
 ];
 
 // STEP1で見せるジャンル
@@ -627,36 +627,32 @@ const FAM_PACK = {
   lis:      {id:'p_lis', name:'リスニング パック', price:19800, tagline:'発音法則から基礎実践まで。', fams:['lis']},
   soku:     {id:'p_soku', name:'速読 実践講座', price:16800, tagline:'15日で速読力を固める。', fams:['soku']},
 };
-// 読解系の組み合わせパック（bunpo/kaishaku/chobunの組み合わせ）
+// 読解系の組み合わせパック（大きい組み合わせから適用）
 const COMBO_PACK = [
+  {key:['goi','bunpo','kaishaku','chobun'], id:'p_gokaku', name:'合格設計パック', price:179800, tagline:'語彙・文法・解釈・長文。合格の中核を、いちばんお得に。', fams:['goi','bunpo','kaishaku','chobun']},
   {key:['bunpo','kaishaku','chobun'], id:'p_dokkai_kansei', name:'読解完成パック', price:168000, tagline:'文法・解釈・長文で読解を完成。', fams:['bunpo','kaishaku','chobun']},
   {key:['bunpo','kaishaku'], id:'p_dokkai_kiso', name:'読解基礎パック', price:119800, tagline:'文法＋解釈で「読める土台」を完成。', fams:['bunpo','kaishaku']},
   {key:['kaishaku','chobun'], id:'p_dokkai_jissen', name:'読解実践パック', price:84800, tagline:'解釈＋長文で「解ける力」へ。', fams:['kaishaku','chobun']},
   {key:['bunpo','chobun'], id:'p_bunpo_chobun', name:'文法＋長文パック', price:119800, tagline:'文法の土台と長文演習をセットで。', fams:['bunpo','chobun']},
 ];
 const DOKKAI_FAMS=['bunpo','kaishaku','chobun'];
+const ALL_EN_FAMS=['goi','bunpo','kaishaku','chobun','lis','soku'];
 
-// 選択ファミリー → パックのリスト（積み上げ）
-function decidePacks(){
-  const fams=selectedFamilies();
-  const core=[...fams].filter(f=>['goi','bunpo','kaishaku','chobun','lis'].includes(f));
-  // FULL: コア全部(5) or 読解3本柱+コア4つ以上
-  const dokkaiSel=DOKKAI_FAMS.filter(f=>fams.has(f));
-  if(core.length>=5) return {type:'full', packs:[FULL_PACK]};
-  if(dokkaiSel.length===3 && core.length>=4) return {type:'full', packs:[FULL_PACK]};
-
+// 選んだジャンルだけのパック。リスニング・速読を選んでいないのにフルへ入れない。
+function decidePacks(){ return decidePacksFor(selectedFamilies()); }
+function decidePacksFor(fams){
+  // フルパックは、リスニングも速読も含めて英語を全部選んだときだけ
+  if(ALL_EN_FAMS.every(f=>fams.has(f))) return {type:'full', packs:[FULL_PACK]};
   const result=[];
   const remaining=new Set(fams);
-  // 読解系の組み合わせパックを優先適用(大きい組み合わせから)
   for(const cp of COMBO_PACK){
     if(cp.key.every(f=>remaining.has(f))){
       result.push(cp);
       cp.key.forEach(f=>remaining.delete(f));
-      break; // 1つ適用したら残りは単品へ
+      break;
     }
   }
-  // 残りを単品パックで(順序固定)
-  ['goi','bunpo','kaishaku','chobun','lis','soku'].forEach(f=>{
+  ALL_EN_FAMS.forEach(f=>{
     if(remaining.has(f)){ result.push(FAM_PACK[f]); remaining.delete(f); }
   });
   return {type:'multi', packs:result};
@@ -684,6 +680,25 @@ function packSingleTotal(pack){
     (FULL_PACK.otherIds||[]).forEach(id=>{const o=allOtherFlat().find(x=>x.id===id); if(o)sum+=o.price;});
   }
   return sum;
+}
+// 外した講座の減額は「パック内価格」（まとめ割引後）。後から単品で足すと定価になり、差分だけ高くなる。
+function packRemoveCredit(pack, removedSet){
+  const owned=new Set(packCoursesOf(pack));
+  let list=0;
+  removedSet.forEach(id=>{ if(owned.has(id)){ const c=C(id); if(c) list+=c.price; }});
+  if(!list) return 0;
+  const orig=packSingleTotal(pack);
+  if(!orig) return 0;
+  const credit=Math.round(list*(pack.price/orig)/10)*10;
+  return Math.min(credit, pack.price);
+}
+function totalRemoveCredit(){
+  if(!state.reco||!state.reco.packs) return 0;
+  let c=0; state.reco.packs.forEach(p=>c+=packRemoveCredit(p, state.removed));
+  return c;
+}
+function removedListTotal(){
+  let s=0; state.removed.forEach(id=>{const c=C(id); if(c)s+=c.price;}); return s;
 }
 
 const state = {
@@ -884,10 +899,10 @@ function renderReco(){
   let origTotal=0; reco.packs.forEach(p=>origTotal+=packSingleTotal(p));
   const save=origTotal-totalPackPrice;
 
-  // 外した分
-  let removedSum=0; state.removed.forEach(id=>{const c=C(id); if(c)removedSum+=c.price;});
+  // 外した分（パック内価格で減額。単品定価ではない）
+  const credit=totalRemoveCredit();
   const removedCount=state.removed.size;
-  const effective=totalPackPrice-removedSum;
+  const effective=totalPackPrice-credit;
 
   // ヒーロー(複数パックなら「まとめ」表示)
   const mainName = reco.packs.length===1 ? reco.packs[0].name : 'あなた専用プラン（'+reco.packs.length+'パック）';
@@ -908,7 +923,7 @@ function renderReco(){
 
   // 中身: パックごとにセクション表示
   let comps='<div class="breakdown"><div class="breakdown-title">プランの中身</div>'+
-    '<div class="breakdown-hint">不要なものは外せます。ただし、まとめ払いで割引済み。外すほどお得感は小さくなります。</div>';
+    '<div class="breakdown-hint">不要なものは外せます。ただし外した講座を後から単品で足すと定価になり、今パックに残すより少し高くなります。</div>';
   reco.packs.forEach(p=>{
     comps+='<div class="pack-section"><div class="pack-section-head"><span class="pack-section-name">'+p.name+'</span><span class="pack-section-price">¥'+yen(p.price)+'</span></div>';
     const ids=packCoursesOf(p);
@@ -939,12 +954,8 @@ function renderReco(){
 
   let nudge='';
   if(removedCount>0){
-    if(removedCount>=2){
-      nudge='<div class="nudge nudge-warn show"><span class="nudge-icon">⚠</span><span>'+removedCount+'つ外すと、単品で買うのとほとんど変わらなくなります。まとめ払いの割引メリットが薄れるので、パックのままがお得なことが多いです。</span></div>';
-    }else{
-      const c=C([...state.removed][0]);
-      nudge='<div class="nudge nudge-pack show"><span class="nudge-icon">◎</span><span>「'+(c?c.name:'')+'」を外しました。パックはまとめ払いで割引済みなので、残しておいた方がトータルではお得です。迷ったら付けておくのがおすすめ。</span></div>';
-    }
+    const laterExtra=removedListTotal()-credit;
+    nudge='<div class="nudge nudge-warn show"><span class="nudge-icon">⚠</span><span>今外した講座を後から単品で足すと定価になります。パックに残しておく場合より、合計で <b>¥'+yen(laterExtra)+'</b> 高くなります。様子を見てから、というときも、今残しておく方がお得です。</span></div>';
     nudge+='<div class="switch-pack"><span class="switch-pack-txt">やっぱり全部そろえておきますか？</span><button class="btn btn-primary btn-sm" onclick="restorePack()">全部そろえる（元に戻す）</button></div>';
   }
   area.innerHTML=hero+comps+nudge;
@@ -977,10 +988,19 @@ function nextUpsell(){
   }
   // 語彙のみ → 文法へ
   if(core.length===1 && has('goi')) return {add:'bunpo', addGenres:['bunpo_in','bunpo_solve'], reason:'語彙が固まったら、次は文法です。単語が読めても文の構造がわからないと長文は解けません。文法まで入れて「読める土台」を作りましょう。'};
-  // 読解3本柱が揃っている → フルへ
-  if(dokkai.length===3 && core.length<5) return {toFull:true, reason:'読解の3本柱（文法・解釈・長文）は完璧です。あとは語彙・リスニング・大学別対策まで含めた「フルパック」にすれば、英語で合格に必要なすべてが揃います。'};
-  // コア4つ揃った → フルへ
-  if(core.length===4) return {toFull:true, reason:'あと一歩で全部そろいます。フルパックにすれば、抜けなく英語を仕上げられます。'};
+  // 読解の中核が揃ったら、選んでいないものだけ提案（フルに勝手に入れない）
+  if(dokkai.length===3){
+    const wouldComplete=add=>{ const f=new Set(fams); f.add(add); return ALL_EN_FAMS.every(x=>f.has(x)); };
+    if(!has('goi')) return {add:'goi', addGenres:['goi'], reason:'読解の3本柱は揃っています。語彙を足すと、長文で詰まらなくなります。合格の中核が「合格設計パック」にまとまります。'};
+    if(!has('lis')){
+      if(wouldComplete('lis')) return {toFull:true, reason:'リスニングまで足すと英語講座が全部そろいます。フルパックにすると、過去問分析シートと合格逆算シートも付きます。'};
+      return {add:'lis', addGenres:['lis'], reason:'リスニングは、今は様子見でも大丈夫です。ただ、あとから単品で足すと定価になります。必要になりそうなら、今まとめておく方がお得です。'};
+    }
+    if(!has('soku')){
+      if(wouldComplete('soku')) return {toFull:true, reason:'速読まで足すと英語講座が全部そろいます。フルパックにすると、過去問分析シートと合格逆算シートも付きます。'};
+      return {add:'soku', addGenres:['soku'], reason:'速読も、今は様子見でも大丈夫です。あとから単品で足すと定価になるので、必要になりそうなら今足しておく方がお得です。'};
+    }
+  }
   return null;
 }
 
@@ -1009,7 +1029,7 @@ function renderUpsell(){
   }
 
   // ファミリー追加 → 追加後のプランを計算
-  const addFamNames={goi:'語彙',bunpo:'文法',kaishaku:'英文解釈',chobun:'長文読解',lis:'リスニング'};
+  const addFamNames={goi:'語彙',bunpo:'文法',kaishaku:'英文解釈',chobun:'長文読解',lis:'リスニング',soku:'速読'};
   const addName=addFamNames[up.add]||'';
   // 追加後の合計を試算
   const futureFams=new Set(selectedFamilies()); futureFams.add(up.add);
@@ -1070,22 +1090,8 @@ function toggleExtraCore(id){
   renderAlaCarte(); updateSummary();
 }
 
-// 指定ファミリー集合でdecidePacksを試算(state非依存)
-function decidePacksFor(fams){
-  const core=[...fams].filter(f=>['goi','bunpo','kaishaku','chobun','lis'].includes(f));
-  const dokkaiSel=DOKKAI_FAMS.filter(f=>fams.has(f));
-  if(core.length>=5) return {type:'full', packs:[FULL_PACK]};
-  if(dokkaiSel.length===3 && core.length>=4) return {type:'full', packs:[FULL_PACK]};
-  const result=[]; const remaining=new Set(fams);
-  for(const cp of COMBO_PACK){
-    if(cp.key.every(f=>remaining.has(f))){ result.push(cp); cp.key.forEach(f=>remaining.delete(f)); break; }
-  }
-  ['goi','bunpo','kaishaku','chobun','lis','soku'].forEach(f=>{ if(remaining.has(f)){ result.push(FAM_PACK[f]); remaining.delete(f);} });
-  return {type:'multi', packs:result};
-}
-
 function upgradeToFull(){
-  ['goi','bunpo_in','bunpo_solve','kaishaku_read','kaishaku_solve','chobun','lis'].forEach(g=>state.genres.add(g));
+  ['goi','bunpo_in','bunpo_solve','kaishaku_read','kaishaku_solve','chobun','lis','soku'].forEach(g=>state.genres.add(g));
   state.removed.clear();
   state.reco=decidePacks();
   pruneExtraCore();
@@ -1156,11 +1162,11 @@ function calc(){
   let oneTime=0, monthly=0; const buyLines=[], envLines=[];
   const reco=state.reco;
   if(reco&&reco.packs&&reco.packs.length){
-    let removedSum=0; state.removed.forEach(id=>{const c=C(id); if(c)removedSum+=c.price;});
+    const credit=totalRemoveCredit();
     reco.packs.forEach(p=>{ oneTime+=p.price; buyLines.push({name:p.name, price:p.price, qty:1}); });
-    if(removedSum>0){
-      oneTime-=removedSum;
-      buyLines.push({name:'（外した講座の調整）', price:-removedSum, qty:1});
+    if(credit>0){
+      oneTime-=credit;
+      buyLines.push({name:'（外した講座の減額・パック内価格）', price:-credit, qty:1});
     }
   }
   state.extraCore.forEach(id=>{const c=C(id); if(c){oneTime+=c.price; buyLines.push({name:c.name, price:c.price, qty:1});}});

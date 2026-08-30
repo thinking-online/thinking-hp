@@ -205,6 +205,26 @@
   to = "/parent/202506-01/:splat"
   status = 200
 
+# THINKING保護者通信 7月 vol.01
+[[redirects]]
+  from = "/parent/202507-01"
+  to = "/parent/202507-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent/202507-01/*"
+  to = "/parent/202507-01/:splat"
+  status = 200
+
+# THINKING保護者通信 8月 vol.01
+[[redirects]]
+  from = "/parent/202508-01"
+  to = "/parent/202508-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/parent/202508-01/*"
+  to = "/parent/202508-01/:splat"
+  status = 200
+
 # 旧URL → 新URL（ブックマーク用）
 [[redirects]]
   from = "/parent-202506-01"

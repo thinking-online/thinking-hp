@@ -211,6 +211,42 @@ const R = {
         .join("")}</tbody>
     </table>`,
 
+  /** 配点の比重を横バーで見せる（max を指定しないと最大値を基準にする） */
+  bars: (b) => {
+    const max = b.max ?? Math.max(...b.rows.map((r) => Number(r.value)));
+    const total = b.total ?? b.rows.reduce((a, r) => a + Number(r.value), 0);
+    return `<div class="bars">${b.rows
+      .map((r) => {
+        const pct = (Number(r.value) / max) * 100;
+        const share = r.pct ?? (Number(r.value) / total) * 100;
+        return `<div class="bar-row${r.style ? " is-" + r.style : ""}">
+          <div class="bar-l"><b>${md(r.label)}</b>${r.note ? `<span>${esc(r.note)}</span>` : ""}</div>
+          <div class="bar-t"><div class="bar-f" style="width:${pct.toFixed(1)}%"></div></div>
+          <div class="bar-v">${fmt(r.value)}<i>${esc(b.unit || "点")}</i></div>
+          <div class="bar-p">${share.toFixed(1)}<i>%</i></div>
+        </div>`;
+      })
+      .join("")}</div>`;
+  },
+
+  /** 例題（英文・設問・選択肢と、その判定根拠） */
+  exam: (b) =>
+    `<div class="exam">
+      <div class="exam-passage">${esc(b.passage)}</div>
+      <div class="exam-q"><em>Q</em><span>${esc(b.question)}</span></div>
+      <div class="exam-choices">${b.choices
+        .map(
+          (c) => `<div class="exam-choice${c.ok ? " is-ok" : ""}">
+            <div class="ec-k">${esc(c.k)}</div>
+            <div class="ec-b">
+              <div class="ec-t">${esc(c.text)}</div>
+              ${c.why ? `<div class="ec-w"><b>${c.ok ? "○" : "✕"}</b>${md(c.why)}</div>` : ""}
+            </div>
+          </div>`
+        )
+        .join("")}</div>
+    </div>`,
+
   /** 面談〜運用の流れを横並びで見せる帯 */
   flow: (b) =>
     `<div class="flow">${b.items

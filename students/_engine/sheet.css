@@ -171,7 +171,7 @@ ol.num li::before,.pf-no,.runner .r-left,.cover-contents .cc-no{
 }
 
 .cover-eyebrow{
-  margin-top:26mm;
+  margin-top:19mm;
   font-size:8.4pt;letter-spacing:.34em;color:var(--gold);
   display:flex;align-items:center;gap:10px;
 }
@@ -220,7 +220,7 @@ ol.num li::before,.pf-no,.runner .r-left,.cover-contents .cc-no{
 }
 
 .cover-contents{
-  margin-top:9mm;
+  margin-top:7mm;
   display:grid;grid-template-columns:1fr 1fr;gap:0 9mm;
 }
 .cover-contents .cc-label{
@@ -517,6 +517,92 @@ table.plain tr:nth-child(even) td{background:rgba(22,35,58,.022);}
 table.plain td b{color:var(--navy);}
 table.plain td.tc{text-align:center;}
 .nowrap{white-space:nowrap;}
+
+/* ---------- SAMPLE 表示 ---------- */
+/* 見本であることを、資料のどこを見ても分かる状態にしておくための表示 */
+.cover-badge{
+  position:absolute;
+  top:9mm;right:9mm;
+  transform:translate(-6mm,6mm);
+  border:1px solid rgba(200,165,90,.75);
+  color:var(--gold-light);
+  font-family:var(--en);
+  font-size:9.5pt;font-weight:600;letter-spacing:.34em;
+  padding:1.8mm 4mm 1.8mm 4.34mm;
+  background:rgba(200,165,90,.08);
+  z-index:3;
+}
+.r-sample{
+  font-family:var(--en);
+  font-size:8.5pt;font-weight:600;letter-spacing:.28em;
+  color:var(--gold-deep);
+  border:1px solid rgba(200,165,90,.55);
+  padding:.3mm 1.8mm .3mm 2.1mm;
+  margin-right:3mm;
+}
+.cover-note{
+  margin-top:5mm;
+  max-width:120mm;
+  padding-left:3.5mm;
+  border-left:1.5px solid rgba(200,165,90,.5);
+  font-size:7.8pt;line-height:1.75;letter-spacing:.03em;
+  color:rgba(243,239,230,.58);
+}
+.cover-note strong{color:var(--gold-light);font-weight:500;}
+
+/* ---------- プロセス帯（面談〜運用の流れ） ---------- */
+.flow{display:flex;align-items:stretch;gap:0;}
+.flow-item{
+  flex:1;min-width:0;
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-right:0;
+  padding:3.4mm 3mm 3.6mm;
+  position:relative;
+}
+.flow-item:last-child{border-right:1px solid var(--rule);}
+.flow-item.is-key{background:#fdf8ec;border-color:rgba(200,165,90,.5);}
+.flow-item + .flow-item::before{
+  content:"";position:absolute;left:-3.2px;top:50%;
+  width:6px;height:6px;margin-top:-3px;
+  border-top:1.4px solid var(--gold);border-right:1.4px solid var(--gold);
+  transform:rotate(45deg);
+  background:var(--cream);
+  z-index:2;
+}
+.flow-no{
+  font-family:var(--en);font-size:13pt;font-weight:600;color:var(--gold);line-height:1;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+.flow-t{
+  font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  margin-top:1.6mm;line-height:1.45;
+}
+.flow-d{font-size:7.6pt;line-height:1.65;color:var(--ink-2);margin-top:1.2mm;}
+
+/* ---------- 問い合わせ導線 ---------- */
+.cta{
+  background:
+    radial-gradient(120% 140% at 12% 0%, #2b3f60 0%, rgba(43,63,96,0) 60%),
+    linear-gradient(160deg,#16233a 0%,#0c1424 100%);
+  border:1px solid rgba(200,165,90,.35);
+  padding:5mm 6mm;
+  display:flex;align-items:center;justify-content:space-between;gap:6mm;
+}
+.cta-l{min-width:0;}
+.cta-t{
+  font-family:var(--mincho);font-size:12pt;font-weight:600;letter-spacing:.06em;
+  color:var(--gold-light);margin-bottom:1.6mm;
+}
+.cta-b{font-size:8.6pt;line-height:1.8;color:rgba(243,239,230,.82);}
+.cta-b strong{color:#fff;}
+.cta-r{flex:0 0 auto;text-align:right;border-left:1px solid rgba(200,165,90,.28);padding-left:6mm;}
+.cta-r .cr-l{font-size:7.2pt;letter-spacing:.2em;color:rgba(230,211,166,.7);}
+.cta-r .cr-v{
+  font-family:var(--en);font-size:14pt;font-weight:600;color:#fff;line-height:1.35;
+  letter-spacing:.04em;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
 
 /* ---------- メモ欄（手書き用） ---------- */
 .memo{

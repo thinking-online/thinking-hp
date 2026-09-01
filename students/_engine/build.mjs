@@ -211,6 +211,30 @@ const R = {
         .join("")}</tbody>
     </table>`,
 
+  /** 面談〜運用の流れを横並びで見せる帯 */
+  flow: (b) =>
+    `<div class="flow">${b.items
+      .map(
+        (f, i) => `<div class="flow-item${f.key ? " is-key" : ""}">
+          <div class="flow-no">${String(f.no ?? i + 1).padStart(2, "0")}</div>
+          <div class="flow-t">${md(f.title)}</div>
+          ${f.desc ? `<div class="flow-d">${md(f.desc)}</div>` : ""}
+        </div>`
+      )
+      .join("")}</div>`,
+
+  /** 問い合わせ導線 */
+  cta: (b) =>
+    `<div class="cta">
+      <div class="cta-l">
+        <div class="cta-t">${md(b.title)}</div>
+        <div class="cta-b">${md(b.body)}</div>
+      </div>
+      <div class="cta-r">
+        ${b.contacts.map((c) => `<div class="cr-l">${esc(c.label)}</div><div class="cr-v">${esc(c.value)}</div>`).join("")}
+      </div>
+    </div>`,
+
   memo: (b) =>
     `<div class="memo">
       ${b.title ? `<div class="mm-t">${esc(b.title)}</div>` : ""}
@@ -242,6 +266,7 @@ function coverPage(d) {
   const c = d.cover;
   return `<section class="page cover">
     <div class="cover-frame"></div>
+    ${d.meta.sample ? `<div class="cover-badge">SAMPLE</div>` : ""}
     <div class="cover-inner">
       <div class="cover-brand">
         <div class="cb-en">THINK<i>I</i>NG</div>
@@ -250,6 +275,7 @@ function coverPage(d) {
       <div class="cover-eyebrow">${esc(c.eyebrow)}</div>
       <h1 class="cover-title">${md(c.title)}<em>${esc(c.subtitle)}</em></h1>
       <p class="cover-sub">${md(c.lead)}</p>
+      ${d.meta.note ? `<div class="cover-note">${md(d.meta.note)}</div>` : ""}
       <div class="cover-name">
         <div class="cn-label">生徒</div>
         <div class="cn-value">${esc(d.meta.student)}</div>
@@ -274,18 +300,18 @@ function coverPage(d) {
         )
         .join("")}</div>
       <div class="cover-foot">
-        <span>${esc(d.meta.date)} 作成／${esc(d.meta.advisor)}</span>
-        <span>CONFIDENTIAL — ${esc(d.meta.student)} 様専用</span>
+        <span>${esc(d.meta.date)}／${esc(d.meta.advisor)}</span>
+        <span>${d.meta.sample ? "SAMPLE — 営業・説明用の見本" : `CONFIDENTIAL — ${esc(d.meta.student)} 様専用`}</span>
       </div>
     </div>
   </section>`;
 }
 
-function contentPage(p, i, total) {
+function contentPage(p, i, total, meta = {}) {
   return `<section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">${esc(p.runner || "個別戦略シート")}</span>
+      <span class="r-right">${meta.sample ? `<span class="r-sample">SAMPLE</span>` : ""}${esc(p.runner || "個別戦略シート")}</span>
     </div>
     <div class="page-body">
       ${
@@ -310,7 +336,7 @@ function contentPage(p, i, total) {
 }
 
 function buildHtml(d, css) {
-  const pages = [coverPage(d), ...d.pages.map((p, i) => contentPage(p, i + 1, d.pages.length))];
+  const pages = [coverPage(d), ...d.pages.map((p, i) => contentPage(p, i + 1, d.pages.length, d.meta))];
   return `<!doctype html>
 <html lang="ja">
 <head>
@@ -346,7 +372,7 @@ ${pages.join("\n")}
   if(!/[?&]qa=1/.test(location.search)) return;
   var out = [];
   document.querySelectorAll('.page').forEach(function(el,i){
-    var b = el.querySelector('.page-body');
+    var b = el.querySelector('.cover-inner') || el.querySelector('.page-body');
     var over = b ? Math.round(b.scrollHeight - b.clientHeight) : 0;
     var slack = b ? Math.round(b.clientHeight - (b.lastElementChild ? b.lastElementChild.getBoundingClientRect().bottom - b.getBoundingClientRect().top : 0)) : 0;
     out.push('PAGE ' + String(i).padStart(2,'0') + '  h=' + el.offsetHeight + 'px  bodyH=' + (b?b.clientHeight:0) + 'px  overflow=' + over + 'px  slack=' + slack + 'px');

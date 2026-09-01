@@ -128,7 +128,6 @@ PAGE 05  h=1123px  bodyH=1012px  overflow=102px slack=-102px   ← はみ出し�
 | `weight` | 配点構造の帯グラフ | `segs[{label,value,cls}]`, `legend[{color,text}]` |
 | `table` | 一般の表 | `head[]`, `rows[[]]`, `widths[]` |
 | `memo` | 手書き用の罫線メモ欄 | `title`, `lines` |
-| `sign` | 署名欄 | `items[]` |
 | `space` | 余白 | `h`（例 `"4mm"`） |
 | `fill` | **残り高さを吸収**し、次のブロックをページ下端へ | — |
 | `row` | 2〜3カラムに入れ子 | `cols`, `items[[block…],[block…]]` |
@@ -163,7 +162,7 @@ PAGE 05  h=1123px  bodyH=1012px  overflow=102px slack=-102px   ← はみ出し�
 | 08 | 共テ底上げ | 落とさない科目のまとめ |
 | 09 | 環境ルールと運用 | 自習室・数字での判断・チェックする指標 |
 | 10 | ロードマップ | 本番までの月別の動き |
-| 11 | 最初の30日 | チェックリスト・メモ欄・署名 |
+| 11 | 最初の30日 | チェックリスト・メモ欄 |
 
 **書くときの原則**
 

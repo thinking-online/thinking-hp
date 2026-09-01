@@ -38,7 +38,9 @@
 
   --sans:"Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",system-ui,sans-serif;
   --mincho:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN",serif;
-  --en:"Cormorant Garamond","Cormorant",serif;
+  /* 数値まわりの欧文書体。CJK を持たないので日本語フォントを必ず後ろに置く
+     （「約」「点」「ヶ月」等が別書体に落ちるのを防ぐ） */
+  --en:"Cormorant Garamond","Cormorant","Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",sans-serif;
 
   --pad-x:15mm;
   --pad-y:14mm;
@@ -540,14 +542,6 @@ table.plain td.tc{text-align:center;}
 .memo .mm-t::before{content:"";width:3px;height:13px;background:var(--gold);flex:0 0 auto;}
 .memo .mm-line{border-bottom:1px solid var(--rule-soft);height:7.5mm;}
 .memo .mm-line:last-child{border-bottom-color:var(--rule);}
-
-/* ---------- 署名欄 ---------- */
-.sign{
-  display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:4mm;
-}
-.sign-box{border:1px solid var(--rule);padding:3.5mm 4mm 9mm;}
-.sign-box .sg-l{font-size:7.6pt;letter-spacing:.18em;color:var(--ink-3);}
-.sign-box .sg-line{margin-top:7mm;border-bottom:1px solid var(--rule);}
 
 </style>
 </head>
@@ -1359,10 +1353,8 @@ table.plain td.tc{text-align:center;}
 <div style="height:4mm"></div>
 <div class="memo">
       <div class="mm-t">面談メモ／今週決めたこと</div>
-      <div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div>
+      <div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div>
     </div>
-<div class="pb-fill"></div>
-<div class="sign"><div class="sign-box"><div class="sg-l">生徒 確認サイン</div><div class="sg-line"></div></div><div class="sign-box"><div class="sg-l">担当 確認サイン</div><div class="sg-line"></div></div></div>
     </div>
     <div class="page-foot">
       <span>田中 麻由里 様｜初回戦略シート</span>

@@ -217,13 +217,6 @@ const R = {
       ${Array.from({ length: b.lines || 5 }, () => `<div class="mm-line"></div>`).join("")}
     </div>`,
 
-  sign: (b) =>
-    `<div class="sign">${b.items
-      .map(
-        (s) => `<div class="sign-box"><div class="sg-l">${esc(s)}</div><div class="sg-line"></div></div>`
-      )
-      .join("")}</div>`,
-
   row: (b) =>
     `<div class="${b.cols === 3 ? "grid3" : "grid2"}"${b.style ? ` style="${b.style}"` : ""}>${b.items
       .map((col) => `<div class="stack-gap">${col.map(render).join("")}</div>`)

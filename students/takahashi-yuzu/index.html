@@ -1,0 +1,1252 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>高橋 柚珠｜初回戦略シート｜THINKING</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THINKING 個別戦略シート — 印刷（A4）用スタイルシート
+   engine version: 1.0
+   ============================================================ */
+
+@font-face{font-family:"Zen Kaku Gothic New";font-weight:400;src:local("Zen Kaku Gothic New")}
+@font-face{font-family:"Shippori Mincho B1";font-weight:600;src:local("Shippori Mincho B1")}
+
+:root{
+  --navy:#16233a;
+  --navy-deep:#0c1424;
+  --navy-soft:#24354f;
+  --gold:#c8a55a;
+  --gold-deep:#a07d38;
+  --gold-light:#e6d3a6;
+  --ivory:#faf8f4;
+  --cream:#fffdf9;
+  --paper:#f0ece4;
+  --ink:#18212f;
+  --ink-2:#4c586a;
+  --ink-3:#8b93a1;
+  --rule:rgba(22,35,58,.14);
+  --rule-soft:rgba(22,35,58,.07);
+  --good:#2c7a5d;
+  --mid:#c08a2e;
+  --bad:#b23f3f;
+
+  --sans:"Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",system-ui,sans-serif;
+  --mincho:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN",serif;
+  /* 数値まわりの欧文書体。CJK を持たないので日本語フォントを必ず後ろに置く
+     （「約」「点」「ヶ月」等が別書体に落ちるのを防ぐ） */
+  --en:"Cormorant Garamond","Cormorant","Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",sans-serif;
+
+  --pad-x:15mm;
+  --pad-y:14mm;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:#5b6472;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+  line-height:1.75;
+}
+body,.page,.page *{
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+/* 欧文フォントの数字は既定でオールドスタイル（1 が I に見える）。
+   数値を読ませる箇所はライニング＋等幅数字に統一する。 */
+.cover-brand .cb-en,.cover-kpi .k-value,.kpi .k-v,.sec-no,.sec-en,
+.s-num,.s-pct,.s-tgt,.s-gap,.wish-rank,.wseg .w-v,.step-no,
+ol.num li::before,.pf-no,.runner .r-left,.cover-contents .cc-no{
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+}
+
+/* ---------- ページの器 ---------- */
+@page{ size:A4 portrait; margin:0; }
+
+.page{
+  position:relative;
+  width:210mm;
+  height:297mm;
+  overflow:hidden;
+  margin:0 auto;
+  background:var(--cream);
+  color:var(--ink);
+  page-break-after:always;
+  break-after:page;
+  display:flex;
+  flex-direction:column;
+}
+.page:last-child{page-break-after:auto;break-after:auto;}
+.page-body{
+  flex:1;
+  min-height:0;
+  padding:var(--pad-y) var(--pad-x) 0;
+  display:flex;
+  flex-direction:column;
+}
+.page-body > *{flex:0 0 auto;}
+.pb-fill{flex:1 1 auto !important;min-height:0;}
+
+/* 画面表示時だけページを浮かせる */
+@media screen{
+  body{padding:24px 0;}
+  .page{box-shadow:0 24px 60px -24px rgba(0,0,0,.6);margin-bottom:24px;}
+}
+
+/* ---------- 走り書きヘッダー / フッター ---------- */
+.runner{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  padding:7mm var(--pad-x) 0;
+  font-size:8pt;
+  letter-spacing:.14em;
+  color:var(--ink-3);
+}
+.runner .r-left{font-family:var(--en);font-size:10pt;letter-spacing:.22em;color:var(--gold-deep);}
+.runner .r-right{font-weight:500;}
+.page-foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:0 var(--pad-x) 8mm;
+  font-size:7.6pt;
+  letter-spacing:.1em;
+  color:var(--ink-3);
+  border-top:0;
+}
+.page-foot .pf-rule{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,var(--rule),rgba(200,165,90,.5));
+}
+.page-foot .pf-no{
+  font-family:var(--en);
+  font-size:13pt;
+  letter-spacing:.06em;
+  color:var(--gold-deep);
+  font-weight:600;
+}
+
+/* ============================================================
+   表紙
+   ============================================================ */
+.cover{
+  background:
+    radial-gradient(120% 80% at 50% -10%, #2b3f60 0%, rgba(43,63,96,0) 62%),
+    linear-gradient(175deg,#16233a 0%,#0c1424 100%);
+  color:#f3efe6;
+}
+.cover .page-body{padding:0;}
+.cover-frame{
+  position:absolute;
+  inset:9mm;
+  border:1px solid rgba(200,165,90,.4);
+}
+.cover-frame::before,.cover-frame::after{
+  content:"";position:absolute;background:rgba(200,165,90,.85);
+}
+.cover-frame::before{left:-1px;top:-1px;width:18mm;height:2px;}
+.cover-frame::after{right:-1px;bottom:-1px;width:18mm;height:2px;}
+
+.cover-inner{
+  position:relative;
+  z-index:2;
+  height:100%;
+  padding:22mm 20mm 16mm;
+  display:flex;
+  flex-direction:column;
+}
+.cover-brand{
+  display:flex;flex-direction:column;gap:3px;
+}
+.cover-brand .cb-en{
+  font-family:var(--en);
+  font-size:19pt;letter-spacing:.34em;color:#efe7d6;font-weight:500;
+}
+.cover-brand .cb-en i{font-style:normal;color:var(--gold);}
+.cover-brand .cb-jp{
+  font-family:var(--mincho);
+  font-size:7.6pt;letter-spacing:.4em;color:rgba(230,211,166,.72);
+}
+
+.cover-eyebrow{
+  margin-top:19mm;
+  font-size:8.4pt;letter-spacing:.34em;color:var(--gold);
+  display:flex;align-items:center;gap:10px;
+}
+.cover-eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(200,165,90,.6),transparent);}
+
+.cover-title{
+  font-family:var(--mincho);
+  font-size:34pt;
+  font-weight:600;
+  line-height:1.32;
+  letter-spacing:.09em;
+  margin:5mm 0 0;
+  color:#fbf8f1;
+}
+.cover-title em{
+  font-style:normal;
+  color:var(--gold-light);
+  display:block;
+  font-size:15pt;
+  letter-spacing:.22em;
+  margin-top:5mm;
+}
+.cover-sub{
+  margin-top:4mm;
+  font-size:9.6pt;
+  line-height:2;
+  color:rgba(243,239,230,.78);
+  max-width:118mm;
+}
+
+.cover-name{
+  margin-top:12mm;
+  padding:6mm 0 0;
+  border-top:1px solid rgba(200,165,90,.32);
+  display:flex;align-items:flex-end;gap:6mm;flex-wrap:wrap;
+}
+.cover-name .cn-label{
+  font-size:8pt;letter-spacing:.3em;color:rgba(230,211,166,.75);padding-bottom:3mm;
+}
+.cover-name .cn-value{
+  font-family:var(--mincho);
+  font-size:26pt;letter-spacing:.14em;color:#fff;line-height:1.2;
+}
+.cover-name .cn-meta{
+  padding-bottom:3mm;font-size:8.6pt;color:rgba(243,239,230,.62);letter-spacing:.08em;
+}
+
+.cover-contents{
+  margin-top:7mm;
+  display:grid;grid-template-columns:1fr 1fr;gap:0 9mm;
+}
+.cover-contents .cc-label{
+  grid-column:1 / -1;
+  font-size:7.6pt;letter-spacing:.32em;color:var(--gold);
+  display:flex;align-items:center;gap:8px;margin-bottom:2mm;
+}
+.cover-contents .cc-label::after{content:"";flex:1;height:1px;background:rgba(200,165,90,.28);}
+.cover-contents .cc-item{
+  display:flex;gap:3.5mm;align-items:baseline;
+  font-size:8.2pt;letter-spacing:.05em;color:rgba(243,239,230,.7);
+  padding:1.15mm 0;border-bottom:1px solid rgba(200,165,90,.12);
+}
+.cover-contents .cc-no{
+  font-family:var(--en);font-size:9.5pt;font-weight:600;color:var(--gold);flex:0 0 5.5mm;
+}
+
+.cover-kpis{
+  margin-top:auto;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border:1px solid rgba(200,165,90,.3);
+  background:rgba(255,255,255,.035);
+}
+.cover-kpi{padding:6mm 5mm;border-right:1px solid rgba(200,165,90,.22);}
+.cover-kpi:last-child{border-right:0;}
+.cover-kpi .k-label{font-size:7.6pt;letter-spacing:.2em;color:rgba(230,211,166,.8);}
+.cover-kpi .k-value{
+  font-family:var(--en);font-size:30pt;font-weight:600;line-height:1.05;margin-top:2mm;color:#fff;
+}
+.cover-kpi .k-value small{font-size:13pt;letter-spacing:.02em;margin-left:2px;}
+.cover-kpi.is-gap .k-value{color:var(--gold-light);}
+.cover-kpi .k-note{font-size:7.6pt;color:rgba(243,239,230,.6);margin-top:1mm;letter-spacing:.04em;}
+
+.cover-foot{
+  margin-top:6mm;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:7.6pt;letter-spacing:.16em;color:rgba(243,239,230,.5);
+}
+
+/* ============================================================
+   セクション見出し
+   ============================================================ */
+.sec{
+  display:flex;align-items:flex-start;gap:5mm;
+  padding-bottom:3.5mm;
+  border-bottom:1px solid var(--rule);
+  margin-bottom:5mm;
+}
+.sec-no{
+  flex:0 0 auto;
+  font-family:var(--en);
+  font-size:26pt;font-weight:600;line-height:1;
+  color:var(--gold);
+  letter-spacing:.02em;
+  padding-top:1mm;
+}
+.sec-txt{flex:1;min-width:0;}
+.sec-title{
+  font-family:var(--mincho);
+  font-size:16pt;font-weight:600;letter-spacing:.06em;line-height:1.35;
+  margin:0;color:var(--navy);
+}
+.sec-en{
+  font-family:var(--en);
+  font-size:9pt;letter-spacing:.26em;color:var(--ink-3);margin-top:1mm;text-transform:uppercase;
+}
+.sec-lead{
+  font-size:9.4pt;line-height:1.85;color:var(--ink-2);margin:0 0 5mm;
+}
+.sec-lead strong{color:var(--navy);font-weight:700;}
+
+h3.blk{
+  font-family:var(--mincho);
+  font-size:11.5pt;font-weight:600;letter-spacing:.06em;color:var(--navy);
+  margin:0 0 2.5mm;display:flex;align-items:center;gap:2.5mm;
+}
+h3.blk::before{
+  content:"";width:3px;height:14px;background:var(--gold);flex:0 0 auto;
+}
+
+/* ============================================================
+   汎用パーツ
+   ============================================================ */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm;}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;}
+.stack-gap{display:flex;flex-direction:column;gap:4.5mm;}
+.mt-auto{margin-top:auto;}
+
+.card{
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-radius:2px;
+  padding:4.5mm 5mm;
+}
+.card.is-dark{background:var(--navy);border-color:var(--navy);color:#f1ede4;}
+.card.is-dark .c-title{color:var(--gold-light);}
+.card.is-dark .c-body{color:rgba(241,237,228,.86);}
+.card.is-gold{background:#fdf8ec;border-color:rgba(200,165,90,.45);}
+.c-kicker{
+  font-size:7.4pt;letter-spacing:.22em;color:var(--gold-deep);margin-bottom:1.5mm;font-weight:500;
+}
+.c-title{
+  font-family:var(--mincho);
+  font-size:11pt;font-weight:600;letter-spacing:.04em;color:var(--navy);margin:0 0 2mm;line-height:1.5;
+}
+.c-body{font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin:0;}
+.c-body strong{color:var(--navy);font-weight:700;}
+
+.pill{
+  display:inline-block;
+  font-size:7.4pt;letter-spacing:.12em;font-weight:500;
+  padding:.9mm 2.4mm;border-radius:1px;
+  border:1px solid currentColor;
+}
+.pill.p-core{color:var(--gold-deep);background:rgba(200,165,90,.1);}
+.pill.p-base{color:var(--navy-soft);background:rgba(36,53,79,.07);}
+.pill.p-risk{color:var(--bad);background:rgba(178,63,63,.07);}
+.pill.p-ok{color:var(--good);background:rgba(44,122,93,.08);}
+
+/* ---------- 志望校リスト ---------- */
+.wish{border-top:1px solid var(--rule);}
+.wish-row{
+  display:flex;align-items:center;gap:4mm;
+  padding:2.6mm 1mm;
+  border-bottom:1px solid var(--rule-soft);
+}
+.wish-rank{
+  flex:0 0 9mm;
+  font-family:var(--en);font-size:15pt;font-weight:600;color:var(--gold);line-height:1;text-align:center;
+}
+.wish-main{flex:1;min-width:0;}
+.wish-univ{font-size:10pt;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.45;}
+.wish-fac{font-size:8.2pt;color:var(--ink-2);letter-spacing:.02em;line-height:1.5;}
+.wish-tag{flex:0 0 auto;}
+
+/* ---------- 得点テーブル ---------- */
+table.score{
+  width:100%;border-collapse:collapse;font-size:8.6pt;
+}
+table.score th{
+  font-size:7.4pt;letter-spacing:.12em;font-weight:500;color:var(--ink-3);
+  text-align:right;padding:0 1.5mm 1.8mm;border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+table.score th.t-name{text-align:left;}
+table.score th.t-bar{text-align:left;}
+table.score td{
+  padding:1.55mm 1.5mm;border-bottom:1px solid var(--rule-soft);text-align:right;vertical-align:middle;
+}
+table.score tr.is-sum td{
+  border-top:1.4px solid var(--navy);border-bottom:0;padding-top:2.2mm;font-weight:700;color:var(--navy);
+}
+table.score tr.is-sub td{background:rgba(22,35,58,.028);}
+.s-name{text-align:left;line-height:1.35;}
+.s-name b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;}
+.s-name span{display:block;font-size:7.2pt;color:var(--ink-3);letter-spacing:.02em;}
+.s-num{font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);white-space:nowrap;}
+.s-num i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.s-pct{font-family:var(--en);font-size:12pt;font-weight:600;white-space:nowrap;}
+.s-pct i{font-style:normal;font-size:7.6pt;font-family:var(--sans);margin-left:1px;color:var(--ink-3);}
+.s-pct.lv-hi{color:var(--good);}
+.s-pct.lv-mid{color:var(--mid);}
+.s-pct.lv-lo{color:var(--bad);}
+.s-tgt{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--ink-2);}
+.s-gap{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--gold-deep);white-space:nowrap;}
+.s-bar{width:34%;}
+
+.track{
+  position:relative;height:7px;background:var(--paper);border-radius:1px;overflow:visible;
+}
+.track .fill{
+  position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,var(--navy-soft),var(--navy));
+}
+.track.lv-hi .fill{background:linear-gradient(90deg,#3d9273,var(--good));}
+.track.lv-mid .fill{background:linear-gradient(90deg,#d9a94a,var(--mid));}
+.track.lv-lo .fill{background:linear-gradient(90deg,#cd6767,var(--bad));}
+.track .tick{
+  position:absolute;top:-3px;bottom:-3px;width:1.6px;background:var(--gold-deep);
+}
+.track .tick::after{
+  content:"";position:absolute;top:-2.5px;left:-2.2px;
+  border-left:3px solid transparent;border-right:3px solid transparent;border-top:3.4px solid var(--gold-deep);
+}
+
+/* ---------- KPI 帯 ---------- */
+.kpirow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);background:var(--ivory);}
+.kpirow.k3{grid-template-columns:repeat(3,1fr);}
+.kpi{padding:3.6mm 4mm;border-right:1px solid var(--rule);}
+.kpi:last-child{border-right:0;}
+.kpi .k-l{font-size:7.4pt;letter-spacing:.16em;color:var(--ink-3);}
+.kpi .k-v{font-family:var(--en);font-size:24pt;font-weight:600;line-height:1.1;color:var(--navy);margin-top:.8mm;}
+.kpi .k-v small{font-size:11pt;margin-left:1px;}
+.kpi .k-n{font-size:7.4pt;color:var(--ink-3);margin-top:.5mm;}
+.kpi.acc .k-v{color:var(--gold-deep);}
+.kpi.bad .k-v{color:var(--bad);}
+.kpi.good .k-v{color:var(--good);}
+
+/* ---------- 配点構造バー ---------- */
+.weight{margin:0;}
+.weight-bar{display:flex;height:15mm;border:1px solid var(--rule);overflow:hidden;}
+.wseg{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  color:#fff;text-align:center;gap:.6mm;padding:0 1mm;border-right:1px solid rgba(255,255,255,.28);
+}
+.wseg:last-child{border-right:0;}
+.wseg .w-t{font-size:7.6pt;letter-spacing:.06em;font-weight:500;line-height:1.2;}
+.wseg .w-v{font-family:var(--en);font-size:13pt;font-weight:600;line-height:1;}
+.wseg.w1{background:var(--navy);}
+.wseg.w2{background:var(--navy-soft);}
+.wseg.w3{background:var(--gold-deep);}
+.wseg.w4{background:#a8afba;}
+.weight-legend{
+  display:flex;flex-wrap:wrap;gap:1.5mm 5mm;margin-top:2.5mm;font-size:7.8pt;color:var(--ink-2);
+}
+.weight-legend span{display:flex;align-items:center;gap:1.8mm;}
+.weight-legend i{width:8px;height:8px;display:inline-block;border-radius:1px;}
+
+/* ---------- ステップ（①②③④） ---------- */
+.steps{display:flex;flex-direction:column;gap:2.6mm;}
+.step{
+  display:flex;gap:3.5mm;align-items:flex-start;
+  padding:3mm 3.5mm;background:var(--ivory);border-left:2.5px solid var(--gold);
+}
+.step-no{
+  flex:0 0 auto;width:6.5mm;height:6.5mm;border-radius:50%;
+  background:var(--navy);color:var(--gold-light);
+  font-family:var(--en);font-size:11pt;font-weight:600;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+.step-txt{flex:1;min-width:0;}
+.step-t{font-size:9.6pt;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.5;}
+.step-d{font-size:8.4pt;line-height:1.75;color:var(--ink-2);margin-top:.6mm;}
+.step-d strong{color:var(--navy);}
+
+/* ---------- 箇条書き ---------- */
+ul.bul{margin:0;padding:0;list-style:none;}
+ul.bul li{
+  position:relative;padding-left:4.2mm;font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin-bottom:.8mm;
+}
+ul.bul li::before{
+  content:"";position:absolute;left:.4mm;top:.62em;width:4.5px;height:4.5px;background:var(--gold-deep);border-radius:50%;
+}
+ul.bul li strong{color:var(--navy);font-weight:700;}
+ul.bul.tight li{margin-bottom:.2mm;line-height:1.7;}
+
+ol.num{margin:0;padding:0;list-style:none;counter-reset:n;}
+ol.num li{
+  position:relative;padding-left:6.5mm;font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin-bottom:1.2mm;counter-increment:n;
+}
+ol.num li::before{
+  content:counter(n);position:absolute;left:0;top:.15em;
+  width:4.4mm;height:4.4mm;border:1px solid var(--gold-deep);color:var(--gold-deep);
+  font-family:var(--en);font-size:9pt;font-weight:600;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+
+/* ---------- チェックリスト ---------- */
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:1.6mm 5mm;}
+.check{display:flex;align-items:flex-start;gap:2.4mm;font-size:8.6pt;line-height:1.65;color:var(--ink-2);}
+.check .box{
+  flex:0 0 auto;width:3.4mm;height:3.4mm;border:1.2px solid var(--navy-soft);margin-top:.9mm;background:#fff;
+}
+.check b{color:var(--navy);font-weight:700;}
+
+/* ---------- コールアウト ---------- */
+.callout{
+  border:1px solid rgba(200,165,90,.5);
+  background:linear-gradient(180deg,#fdf8ec,#fbf4e3);
+  padding:4mm 5mm;position:relative;
+}
+.callout .co-t{
+  font-family:var(--mincho);font-size:10.5pt;font-weight:600;color:var(--gold-deep);
+  letter-spacing:.06em;margin-bottom:1.5mm;
+}
+.callout .co-b{font-size:8.8pt;line-height:1.85;color:var(--ink-2);}
+.callout .co-b strong{color:var(--navy);}
+.callout.is-navy{background:var(--navy);border-color:var(--navy);}
+.callout.is-navy .co-t{color:var(--gold-light);}
+.callout.is-navy .co-b{color:rgba(241,237,228,.88);}
+.callout.is-navy .co-b strong{color:#fff;}
+
+/* ---------- 週次テーブル ---------- */
+table.plain{width:100%;border-collapse:collapse;font-size:8.4pt;}
+table.plain th{
+  background:var(--navy);color:var(--gold-light);font-weight:500;font-size:7.6pt;letter-spacing:.12em;
+  padding:1.8mm 2.5mm;text-align:left;
+}
+table.plain td{
+  padding:1.9mm 2.5mm;border-bottom:1px solid var(--rule-soft);color:var(--ink-2);line-height:1.65;vertical-align:top;
+}
+table.plain tr:nth-child(even) td{background:rgba(22,35,58,.022);}
+table.plain td b{color:var(--navy);}
+table.plain td.tc{text-align:center;}
+.nowrap{white-space:nowrap;}
+
+/* ---------- SAMPLE 表示 ---------- */
+/* 見本であることを、資料のどこを見ても分かる状態にしておくための表示 */
+.cover-badge{
+  position:absolute;
+  top:9mm;right:9mm;
+  transform:translate(-6mm,6mm);
+  border:1px solid rgba(200,165,90,.75);
+  color:var(--gold-light);
+  font-family:var(--en);
+  font-size:9.5pt;font-weight:600;letter-spacing:.34em;
+  padding:1.8mm 4mm 1.8mm 4.34mm;
+  background:rgba(200,165,90,.08);
+  z-index:3;
+}
+.r-sample{
+  font-family:var(--en);
+  font-size:8.5pt;font-weight:600;letter-spacing:.28em;
+  color:var(--gold-deep);
+  border:1px solid rgba(200,165,90,.55);
+  padding:.3mm 1.8mm .3mm 2.1mm;
+  margin-right:3mm;
+}
+.cover-note{
+  margin-top:5mm;
+  max-width:120mm;
+  padding-left:3.5mm;
+  border-left:1.5px solid rgba(200,165,90,.5);
+  font-size:7.8pt;line-height:1.75;letter-spacing:.03em;
+  color:rgba(243,239,230,.58);
+}
+.cover-note strong{color:var(--gold-light);font-weight:500;}
+
+/* ---------- 配点比重バー ---------- */
+.bars{display:flex;flex-direction:column;gap:2.1mm;}
+.bar-row{display:flex;align-items:center;gap:3mm;}
+.bar-l{flex:0 0 33mm;min-width:0;}
+.bar-l b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;line-height:1.3;display:block;}
+.bar-l span{display:block;font-size:7.1pt;color:var(--ink-3);line-height:1.35;}
+.bar-t{flex:1;height:9px;background:var(--paper);position:relative;border-radius:1px;}
+.bar-f{position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,#4a5b78,var(--navy));}
+.bar-row.is-key .bar-f{background:linear-gradient(90deg,var(--gold),var(--gold-deep));}
+.bar-row.is-mute .bar-f{background:linear-gradient(90deg,#c2c8d1,#a8afba);}
+.bar-v{flex:0 0 19mm;text-align:right;font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-v i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.bar-p{flex:0 0 16mm;text-align:right;font-family:var(--en);font-size:11.5pt;font-weight:600;color:var(--ink-2);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-row.is-key .bar-p,.bar-row.is-key .bar-v{color:var(--gold-deep);}
+.bar-p i{font-style:normal;font-family:var(--sans);font-size:7.2pt;color:var(--ink-3);margin-left:1px;}
+
+/* ---------- 例題（英文＋設問＋選択肢） ---------- */
+.exam-passage{
+  background:#fff;border:1px solid var(--rule);border-left:2.5px solid var(--gold);
+  padding:3.4mm 4.5mm;font-size:9.4pt;line-height:1.95;color:var(--ink);letter-spacing:.004em;
+}
+.exam-q{
+  margin-top:3mm;font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:2.5mm;
+}
+.exam-q em{font-style:normal;font-family:var(--en);font-size:8.4pt;letter-spacing:.18em;color:var(--gold-deep);}
+.exam-choices{margin-top:2.4mm;display:flex;flex-direction:column;gap:1.5mm;}
+.exam-choice{
+  display:flex;gap:2.8mm;align-items:flex-start;
+  padding:2.1mm 3mm;background:var(--ivory);border:1px solid var(--rule-soft);
+}
+.exam-choice.is-ok{border-color:rgba(200,165,90,.6);background:#fdf8ec;}
+.ec-k{
+  flex:0 0 auto;width:5mm;height:5mm;display:flex;align-items:center;justify-content:center;
+  font-family:var(--en);font-size:9.5pt;font-weight:600;line-height:1;
+  border:1px solid var(--ink-3);color:var(--ink-2);background:#fff;
+}
+.exam-choice.is-ok .ec-k{background:var(--gold);border-color:var(--gold);color:#fff;}
+.ec-b{flex:1;min-width:0;}
+.ec-t{font-size:8.2pt;line-height:1.65;color:var(--ink-2);}
+.ec-w{font-size:7.7pt;line-height:1.6;margin-top:.8mm;color:var(--ink-3);}
+.ec-w b{font-weight:700;color:var(--bad);margin-right:1mm;}
+.exam-choice.is-ok .ec-w b{color:var(--good);}
+
+/* ---------- プロセス帯（面談〜運用の流れ） ---------- */
+.flow{display:flex;align-items:stretch;gap:0;}
+.flow-item{
+  flex:1;min-width:0;
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-right:0;
+  padding:3.4mm 3mm 3.6mm;
+  position:relative;
+}
+.flow-item:last-child{border-right:1px solid var(--rule);}
+.flow-item.is-key{background:#fdf8ec;border-color:rgba(200,165,90,.5);}
+.flow-item + .flow-item::before{
+  content:"";position:absolute;left:-3.2px;top:50%;
+  width:6px;height:6px;margin-top:-3px;
+  border-top:1.4px solid var(--gold);border-right:1.4px solid var(--gold);
+  transform:rotate(45deg);
+  background:var(--cream);
+  z-index:2;
+}
+.flow-no{
+  font-family:var(--en);font-size:13pt;font-weight:600;color:var(--gold);line-height:1;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+.flow-t{
+  font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  margin-top:1.6mm;line-height:1.45;
+}
+.flow-d{font-size:7.6pt;line-height:1.65;color:var(--ink-2);margin-top:1.2mm;}
+
+/* ---------- 問い合わせ導線 ---------- */
+.cta{
+  background:
+    radial-gradient(120% 140% at 12% 0%, #2b3f60 0%, rgba(43,63,96,0) 60%),
+    linear-gradient(160deg,#16233a 0%,#0c1424 100%);
+  border:1px solid rgba(200,165,90,.35);
+  padding:5mm 6mm;
+  display:flex;align-items:center;justify-content:space-between;gap:6mm;
+}
+.cta-l{min-width:0;}
+.cta-t{
+  font-family:var(--mincho);font-size:12pt;font-weight:600;letter-spacing:.06em;
+  color:var(--gold-light);margin-bottom:1.6mm;
+}
+.cta-b{font-size:8.6pt;line-height:1.8;color:rgba(243,239,230,.82);}
+.cta-b strong{color:#fff;}
+.cta-r{flex:0 0 auto;text-align:right;border-left:1px solid rgba(200,165,90,.28);padding-left:6mm;}
+.cta-r .cr-l{font-size:7.2pt;letter-spacing:.2em;color:rgba(230,211,166,.7);}
+.cta-r .cr-v{
+  font-family:var(--en);font-size:14pt;font-weight:600;color:#fff;line-height:1.35;
+  letter-spacing:.04em;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+
+/* ---------- メモ欄（手書き用） ---------- */
+.memo{
+  border:1px solid var(--rule);
+  background:var(--ivory);
+  padding:3.5mm 5mm 4mm;
+}
+.memo .mm-t{
+  font-family:var(--mincho);font-size:10pt;font-weight:600;color:var(--navy);
+  letter-spacing:.06em;margin-bottom:2.5mm;display:flex;align-items:center;gap:2.5mm;
+}
+.memo .mm-t::before{content:"";width:3px;height:13px;background:var(--gold);flex:0 0 auto;}
+.memo .mm-line{border-bottom:1px solid var(--rule-soft);height:7.5mm;}
+.memo .mm-line:last-child{border-bottom-color:var(--rule);}
+
+</style>
+</head>
+<body>
+<section class="page cover">
+    <div class="cover-frame"></div>
+    
+    <div class="cover-inner">
+      <div class="cover-brand">
+        <div class="cb-en">THINK<i>I</i>NG</div>
+        <div class="cb-jp">シンキング</div>
+      </div>
+      <div class="cover-eyebrow">2027 ENTRANCE EXAM STRATEGY</div>
+      <h1 class="cover-title">個別戦略シート<em>残り153日の、勝ち方を決める</em></h1>
+      <p class="cover-sub">時間は正直に足りない。だからこそ、<strong>やることを絞り切ること</strong>が最大の戦略になる。<br>この1枚が、これから本番までの判断基準になる。迷ったら、ここに戻る。</p>
+      
+      <div class="cover-name">
+        <div class="cn-label">生徒</div>
+        <div class="cn-value">高橋 柚珠</div>
+        <div class="cn-meta">高校3年／私大文系／英語・国語・世界史</div>
+      </div>
+      <div class="cover-contents">
+        <div class="cc-label">CONTENTS</div>
+        <div class="cc-item"><span class="cc-no">01</span><span>ゴールの確認と、現在地の直視</span></div><div class="cc-item"><span class="cc-no">02</span><span>残された時間を、数字で突きつける</span></div><div class="cc-item"><span class="cc-no">03</span><span>やる科目と、やらない科目を決める</span></div><div class="cc-item"><span class="cc-no">04</span><span>英語 ― 半年でここまで持っていく</span></div><div class="cc-item"><span class="cc-no">05</span><span>英語は、解釈を徹底的に極める</span></div><div class="cc-item"><span class="cc-no">06</span><span>世界史 ― やった量が、そのまま結果になる</span></div><div class="cc-item"><span class="cc-no">07</span><span>古文で落とさない。現代文は切り上げる</span></div><div class="cc-item"><span class="cc-no">08</span><span>受験校の設計と、判断のタイミング</span></div><div class="cc-item"><span class="cc-no">09</span><span>環境ルールと、数字で判断する運用</span></div><div class="cc-item"><span class="cc-no">10</span><span>4科目を、横並びで見る</span></div><div class="cc-item"><span class="cc-no">11</span><span>最初の1ヶ月でやり切ること</span></div>
+      </div>
+      <div class="cover-kpis"><div class="cover-kpi">
+            <div class="k-label">本番まで</div>
+            <div class="k-value">153<small>日</small></div>
+            <div class="k-note">2027年2月1日まで／約22週</div>
+          </div><div class="cover-kpi">
+            <div class="k-label">基礎固めの期限</div>
+            <div class="k-value">60<small>日</small></div>
+            <div class="k-note">10月31日まで＝全体の39.2%</div>
+          </div><div class="cover-kpi is-gap">
+            <div class="k-label">第1関門まで</div>
+            <div class="k-value">44<small>日</small></div>
+            <div class="k-note">10月15日／単語1500・英文法完成</div>
+          </div></div>
+      <div class="cover-foot">
+        <span>2026年9月1日／THINKING 進路戦略</span>
+        <span>CONFIDENTIAL — 高橋 柚珠 様専用</span>
+      </div>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">01 ゴールと現在地</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">01</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">ゴールの確認と、現在地の直視</h2>
+                <div class="sec-en">Target &amp; Reality</div>
+              </div>
+            </div>
+      <p class="sec-lead">志望校は青山学院大学と東洋大学。使う科目は<strong>英語・国語・世界史の3科目</strong>。まず、いま自分がどこに立っているのかを、目をそらさずに確認するところから始める。</p>
+<h3 class="blk">志望校 ― 現在の候補</h3>
+<div class="wish"><div class="wish-row">
+          <div class="wish-rank">1</div>
+          <div class="wish-main">
+            <div class="wish-univ">青山学院大学</div>
+            <div class="wish-fac">経営学部 マーケティング学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-core">チャレンジ</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">2</div>
+          <div class="wish-main">
+            <div class="wish-univ">青山学院大学</div>
+            <div class="wish-fac">文学部 比較芸術学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-core">チャレンジ</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">3</div>
+          <div class="wish-main">
+            <div class="wish-univ">青山学院大学</div>
+            <div class="wish-fac">総合文化政策学部 総合文化政策学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-core">チャレンジ</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">4</div>
+          <div class="wish-main">
+            <div class="wish-univ">東洋大学</div>
+            <div class="wish-fac">経営学部 マーケティング学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-ok">主戦場</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">5</div>
+          <div class="wish-main">
+            <div class="wish-univ">東洋大学</div>
+            <div class="wish-fac">社会学部 メディアコミュニケーション学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-ok">主戦場</span></div>
+        </div></div>
+<div style="height:3mm"></div>
+<div class="callout">
+      <div class="co-t">最初にやること ― THINKING実力診断テストを受ける</div>
+      <div class="co-b">8月末日に実施した<strong>THINKING実力診断テスト</strong>を、<strong>英語・世界史・現代文・古文の4科目すべて</strong>受ける。<br>このテストは<strong>日東駒専・産近甲龍の実際の過去問から抽出</strong>して作ってある。つまり、<strong>受けた瞬間に「志望校レベルの問題で今どれだけ取れるのか」が数字で出る。</strong><br><strong>この結果が出るまで、現在地は推測でしかない。</strong>まずここを最優先で埋める。</div>
+    </div>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">現状を、正直に共有しておく</div>
+      <div class="co-b"><strong>これまで本当の基礎の基礎を固めてきていない状態。</strong>だからこそ、これからやるのは小手先ではなく、<strong>基礎の基礎を本気でがっつり固め切る</strong>動きになる。<br>基礎を固め切ったうえで、<strong>日東駒専に半年で合格するというだけでも、相当に厳しい戦い</strong>になる。それが事実。<br><strong>だから、無駄なことをやっている場合ではない。そして、基準値を一気にぶち上げる必要がある。</strong>やることさえ間違えなければ、道はある。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>高橋 柚珠 様｜初回戦略シート</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">01</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">02 残り153日</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">02</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">残された時間を、数字で突きつける</h2>
+                <div class="sec-en">153 Days Left</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">感覚で「まだ半年ある」と思うのと、<strong>153日と数字で見る</strong>のとでは、動き方がまったく変わる。まずここを正確に把握する。</p>
+<div class="kpirow"><div class="kpi bad">
+          <div class="k-l">本番まで</div>
+          <div class="k-v">153<small>日</small></div>
+          <div class="k-n">2027年2月1日</div>
+        </div><div class="kpi">
+          <div class="k-l">週 に 換 算</div>
+          <div class="k-v">22<small>週</small></div>
+          <div class="k-n">土日は44日しかない</div>
+        </div><div class="kpi acc">
+          <div class="k-l">基礎期に使えるのは</div>
+          <div class="k-v">60<small>日</small></div>
+          <div class="k-n">9/1 〜 10/31</div>
+        </div><div class="kpi">
+          <div class="k-l">過去問期</div>
+          <div class="k-v">32<small>日</small></div>
+          <div class="k-n">1/1 〜 本番</div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">153日の内訳</h3>
+<div class="weight">
+      <div class="weight-bar"><div class="wseg w3" style="width:39.22%">
+            <div class="w-t">基礎期 9/1〜10/31</div>
+            <div class="w-v">39.2%</div>
+          </div><div class="wseg w1" style="width:39.87%">
+            <div class="w-t">演習期 11/1〜12/31</div>
+            <div class="w-v">39.9%</div>
+          </div><div class="wseg w4" style="width:20.92%">
+            <div class="w-t">過去問期 1/1〜本番</div>
+            <div class="w-v">20.9%</div>
+          </div></div>
+      <div class="weight-legend"><span><i style="background:#a07d38"></i><strong>基礎期 60日</strong> ― 単語・文法・解釈・通史・古文単語と文法を固め切る</span><span><i style="background:#16233a"></i><strong>演習期 61日</strong> ― 解釈130・長文20・正誤特訓・ポラリス／日東駒専レベルの総合演習</span><span><i style="background:#a8afba"></i><strong>過去問期 32日</strong> ― 志望校の過去問と、形式別の演習</span></div>
+    </div>
+<div style="height:4mm"></div>
+<h3 class="blk">関門スケジュール</h3>
+<table class="plain">
+      <thead><tr><th style="width:13%">関門</th><th style="width:11%">期日</th><th style="width:10%">残り</th><th style="width:66%">ここまでに終わっていないといけないこと</th></tr></thead>
+      <tbody><tr><td><strong>第1関門</strong></td><td><strong>10/15</strong></td><td><strong>44日</strong></td><td>英語：ターゲット1900を<strong>1500語まで</strong>／英文法の基礎問題を<strong>完全完成</strong></td></tr><tr><td><strong>第2関門</strong></td><td><strong>10/31</strong></td><td><strong>60日</strong></td><td>世界史：<strong>通史を完全クリア</strong>／古文：<strong>単語1冊＋文法の基礎を完全クリア</strong></td></tr><tr><td><strong>第3関門</strong></td><td><strong>11/30</strong></td><td><strong>90日</strong></td><td>英語：ターゲット完全クリア・解釈130・長文20／世界史：時代と流れ＋正誤特訓を半分／古文：ポラリス①</td></tr><tr><td><strong>第4関門</strong></td><td><strong>12/31</strong></td><td><strong>121日</strong></td><td>日東駒専レベルの総合演習で合格ボーダーへ／世界史：正誤特訓を完全クリア／古文：ポラリス②</td></tr><tr><td><strong>第5関門</strong></td><td><strong>1/31</strong></td><td><strong>152日</strong></td><td>過去問中心。志望順位の高い大学＋<strong>滑り止めを確実に取り切る</strong></td></tr><tr><td><strong>本 番</strong></td><td>2月〜</td><td><strong>153日〜</strong></td><td>試験形式別の演習で、確実に取り切る</td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">最初の60日が、この半年の全てを決める</div>
+      <div class="co-b">基礎に使えるのは<strong>最初の60日＝全体の39.2%</strong>だけ。<strong>ここで基礎が終わらなければ、演習期が削られる。演習期が削られれば、過去問期が削られる。</strong><br>1日サボると全体の<strong>0.65%</strong>、1週間サボると<strong>4.6%</strong>が消える。153日という数字の前では、「明日から本気出す」は成立しない。<br><strong>基準値を一気に上げるのは、今日から。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>2026年9月1日 → 2027年2月1日</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">02</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">03 何をやり、何をやらないか</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">03</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">やる科目と、やらない科目を決める</h2>
+                <div class="sec-en">What To Cut</div>
+              </div>
+            </div>
+      <p class="sec-lead">153日で全部はできない。<strong>やることを絞り切ることが、この半年で最大の戦略になる。</strong>「どれも大事だから全部やる」が、一番負ける動き方。</p>
+<table class="plain">
+      <thead><tr><th style="width:14%">科目</th><th style="width:17%">半年での伸びやすさ</th><th style="width:45%">理由</th><th style="width:24%">今回の扱い</th></tr></thead>
+      <tbody><tr><td><strong>英語</strong></td><td><strong>◎ 最優先</strong></td><td>どの大学・どの方式を受けるとしても必ず使う。解釈が固まれば、全ての志望校に同時に効く</td><td><strong>極める</strong></td></tr><tr><td><strong>世界史</strong></td><td><strong>◎ 最優先</strong></td><td><strong>やった量がそのまま結果になる。</strong>範囲が有限で、努力の効き方が最も読める科目</td><td><strong>極める</strong></td></tr><tr><td><strong>古文</strong></td><td><strong>○ 高い</strong></td><td>単語と文法という<strong>範囲が限定された土台</strong>を固めれば、落とさない状態を作れる</td><td><strong>極める（落とさない）</strong></td></tr><tr><td>現代文</td><td>△ 読みにくい</td><td><strong>1から時間をかけて解けるようになる科目ではない。</strong>最もコントロールが難しい</td><td><strong>切り上げる</strong></td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<div class="grid2"><div class="card is-gold">
+          <div class="c-kicker">極める3科目</div>
+          <div class="c-title">英語・世界史・古文に、時間をフルで置く</div>
+          <p class="c-body">この3科目は<strong>徹底的にトレーニングする対象</strong>。特に英語と世界史は、やった分だけ返ってくる。<br>古文も、<strong>単語と文法だけは絶対に落とさない状態</strong>まで持っていく。範囲が限られているぶん、確実に仕上げ切れる。</p>
+        </div><div class="card">
+          <div class="c-kicker">切り上げる1科目</div>
+          <div class="c-title">現代文は「1から作りにいかない」</div>
+          <p class="c-body">捨てるのではなく、<strong>時間をかけて1から作りにいかない</strong>という判断をするだけ。<br>余力がある範囲で、<strong>「読み方・解き方」の部分だけ</strong>を短時間で入れる。教材が難しければ<strong>動画でおすすめを指定する</strong>ので、それを使う。</p>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">3科目への時間の寄せ方</h3>
+<ul class="bul tight"><li><strong>英語は毎日。</strong>単語・文法・解釈のどれかに必ず触れる。<strong>空白の日を作らない。</strong></li><li><strong>世界史は「まとまった時間」を確保する日を作る。</strong>通史は細切れより一気に進めたほうが繋がる。休日は世界史に寄せる。</li><li><strong>古文は毎日少量。</strong>単語と文法は、英単語と同じ<strong>毎日のメンテナンス科目</strong>として扱う。まとめてやろうとしない。</li><li><strong>現代文は、余力が出た週だけ。</strong>最初から予定に組み込まない。組み込むと、必ず英語か世界史を削ることになる。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">「やらないことを決める」のが、この半年で一番大事な判断</div>
+      <div class="co-b">限られた153日で合格確率を最大にするには、<strong>伸びる科目に時間を寄せる</strong>しかない。<br>全科目を平等にやると、<strong>どれも中途半端で終わる。</strong>それが半年しかない受験で一番起こりやすい失敗。<br><strong>英語と世界史に時間をフルで置く。</strong>この判断を、最後までブラさない。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>3科目主義／時間の置き場所を決める</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">03</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">04 英語①</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">04</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">英語 ― 半年でここまで持っていく</h2>
+                <div class="sec-en">English Schedule</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">英語は<strong>どの大学・どの方式を受けるとしても必ず使う。</strong>ここが崩れれば、全ての志望校が同時に消える。最優先で、かつ最も時間をかける科目。</p>
+<div class="kpirow"><div class="kpi bad">
+          <div class="k-l">第1関門まで</div>
+          <div class="k-v">44<small>日</small></div>
+          <div class="k-n">10月15日</div>
+        </div><div class="kpi acc">
+          <div class="k-l">1500語までの必要ペース</div>
+          <div class="k-v">34<small>語/日</small></div>
+          <div class="k-n">新規に入れる語数</div>
+        </div><div class="kpi">
+          <div class="k-l">ターゲット完全クリア</div>
+          <div class="k-v">90<small>日</small></div>
+          <div class="k-n">11月30日まで</div>
+        </div><div class="kpi">
+          <div class="k-l">残り400語のペース</div>
+          <div class="k-v">9<small>語/日</small></div>
+          <div class="k-n">10/16 〜 11/30</div>
+        </div></div>
+<div style="height:4mm"></div>
+<table class="plain">
+      <thead><tr><th style="width:13%">期限</th><th style="width:11%">残り</th><th style="width:76%">ここまでに到達しているべき状態</th></tr></thead>
+      <tbody><tr><td><strong>10月15日</strong></td><td><strong>44日</strong></td><td>・ターゲット1900を<strong>1500語くらいまで「完全に頭に入った」と言える状態</strong>にする<br>・<strong>英文法の基礎問題は完全完成</strong>へ（以降は過去問を解きながら埋める状態に持っていく）<br>・英文解釈に着手し、<strong>精読の型</strong>を作り始める</td></tr><tr><td><strong>11月30日</strong></td><td><strong>90日</strong></td><td>・<strong>ターゲット1900を完全クリア</strong><br>・『英文解釈の問題130』の<strong>内容言い換え問題を、根拠を持って解き切れる</strong>状態にする<br>・<strong>長文問題20を完全クリア</strong></td></tr><tr><td><strong>12月31日</strong></td><td><strong>121日</strong></td><td>・<strong>日東駒専レベルの問題で総合演習。</strong>合格ボーダーに向けて最終調整をしながら、基礎知識の漏れを潰す</td></tr><tr><td><strong>1月中</strong></td><td><strong>152日</strong></td><td>・その時の状態によって変わるが、基本は<strong>志望順位の高いところの過去問演習が中心</strong><br>・<strong>滑り止めをちゃんと取り切る</strong>流れへ</td></tr><tr><td><strong>2月</strong></td><td>本番</td><td>・試験本番まで<strong>形式別の練習問題を解きまくる。</strong>形式に合わせた勉強で、確実に取り切る</td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">単語の「34語/日」をどう読むか</div>
+      <div class="co-b">1500語 ÷ 44日 ＝ <strong>1日34語</strong>。これは<strong>「新規に頭に入れる」ペース</strong>であって、1日に触れる語数ではない。<br>既習分の反復と合わせれば、<strong>実際に毎日目を通す語数はこれよりずっと多くなる。</strong><br>このペースが崩れた時点で第1関門が遅れ、その後の全予定がずれる。<strong>単語だけは、何があっても毎日。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>最優先科目／半年のスケジュール</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">04</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">05 英語②</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">05</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">英語は、解釈を徹底的に極める</h2>
+                <div class="sec-en">Precision Reading</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm"><strong>「基礎の基礎を固める」とは、具体的にはこういうこと。</strong>なんとなく読めた気がする、で終わらせない。下の5段階を全部言葉にできる状態を、この半年で作る。</p>
+<ol class="num"><li><strong>文章の構造をちゃんと掴む</strong> ― 主語・動詞・修飾関係・並列を、正確に取れる。</li><li><strong>直訳をちゃんとできる状態にする</strong> ― 雰囲気ではなく、構造どおりに日本語にできる。</li><li><strong>咀嚼して「つまりどういうことか」理解できる</strong> ― 直訳をかみ砕いて、内容として説明できる。</li><li><strong>選択肢を分解して理解できる</strong> ― 選択肢の英文も、本文と同じ精度で読める。</li><li><strong>選択肢それぞれについて、なぜ答えか／なぜ不正解かを全て言語化できる</strong> ― ここまでで、ようやく「読めた」。</li></ol>
+<div style="height:4mm"></div>
+<h3 class="blk">到達点はこのレベル</h3>
+<div class="exam">
+      <div class="exam-passage">A stable society requires a set of laws that apply equally to both the rich and the poor, a respect for the rights of citizens of all religions and ethnic origins, and a strong desire to provide for the common welfare.</div>
+      <div class="exam-q"><em>Q</em><span>Which one is closest in meaning to the sentence above?</span></div>
+      <div class="exam-choices"><div class="exam-choice">
+            <div class="ec-k">A</div>
+            <div class="ec-b">
+              <div class="ec-t">A stable society applies its laws more strictly to the poor than to the rich, though it still protects the rights of all its citizens.</div>
+              <div class="ec-w"><b>✕</b>本文は laws that <strong>apply equally to both</strong> the rich and the poor。「貧しい人により厳しく適用する」は逆の内容。</div>
+            </div>
+          </div><div class="exam-choice">
+            <div class="ec-k">B</div>
+            <div class="ec-b">
+              <div class="ec-t">A society stays stable as long as the rich respect the poor and the two groups come to share one religion and one ethnic origin.</div>
+              <div class="ec-w"><b>✕</b>本文は <strong>all religions and ethnic origins</strong> の権利を尊重するという内容。「一つの宗教・民族を共有する」は正反対。</div>
+            </div>
+          </div><div class="exam-choice is-ok">
+            <div class="ec-k">C</div>
+            <div class="ec-b">
+              <div class="ec-t">For a society to be stable, it needs laws that treat the rich and the poor alike, respect for the rights of citizens of every religion and ethnic background, and a strong wish to serve the common good.</div>
+              <div class="ec-w"><b>○</b>requires に続く<strong>3つの並列（法の平等・権利の尊重・共通の福祉への意志）がすべて言い換えられている。</strong></div>
+            </div>
+          </div><div class="exam-choice">
+            <div class="ec-k">D</div>
+            <div class="ec-b">
+              <div class="ec-t">What a stable society needs above all is a strong desire for wealth, shared equally by citizens of all religions and ethnic origins.</div>
+              <div class="ec-w"><b>✕</b>本文は desire to provide for the common <strong>welfare</strong>（共通の福祉）。<strong>wealth（富）</strong> への欲求ではない。1語のすり替え。</div>
+            </div>
+          </div></div>
+    </div>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">「正解できたか」ではなく「全選択肢を説明できたか」で判断する</div>
+      <div class="co-b">Cが正解だと分かるだけでは足りない。<strong>A・B・Dがなぜ違うのかを、本文のどの語句と食い違っているかまで言葉にできて、初めて「解けた」。</strong><br><strong>1題をここまで言語化するほうが、10題を「答え合わせ」で流すよりはるかに効く。</strong>時間がないからこそ、1題の密度を上げる。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>解釈を極める／精読の到達点</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">05</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">06 世界史</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">06</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">世界史 ― やった量が、そのまま結果になる</h2>
+                <div class="sec-en">World History</div>
+              </div>
+            </div>
+      <p class="sec-lead">世界史は、<strong>量を多くやり、努力をすればするだけ結果に繋がっていく科目。</strong>範囲が有限で、努力の効き方が最も読める。<strong>残り153日で、最も確実に得点源にできるのがここ。</strong></p>
+<table class="plain">
+      <thead><tr><th style="width:13%">期限</th><th style="width:11%">残り</th><th style="width:76%">ここまでに到達しているべき状態</th></tr></thead>
+      <tbody><tr><td><strong>10月31日</strong></td><td><strong>60日</strong></td><td>・<strong>通史を完全クリア</strong>（細部より、まず全体を通し切ることを優先する）</td></tr><tr><td><strong>11月30日</strong></td><td><strong>90日</strong></td><td>・『時代と流れで覚える』を<strong>クリア</strong><br>・<strong>正誤特訓シートを半分クリア</strong></td></tr><tr><td><strong>12月31日</strong></td><td><strong>121日</strong></td><td>・<strong>正誤特訓シートを完全クリア</strong><br>・過去問演習をしながら、<strong>知識補充を繰り返す</strong></td></tr><tr><td><strong>1月中</strong></td><td><strong>152日</strong></td><td>・<strong>過去問中心で総合演習。</strong>解いたら、すぐにその場で知識を埋めていく</td></tr><tr><td><strong>2月</strong></td><td>本番</td><td>・過去問</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">進め方の原則</h3>
+<ul class="bul"><li><strong>まず通史を一周し切る。</strong>細かい知識から入らない。全体像が通っていない状態で細部を詰めても、知識が繋がらない。<strong>10月末までに通し切る。</strong></li><li><strong>正誤特訓シートで「判断できる知識」に変える。</strong>覚えているだけでは点にならない。正誤で問われて初めて、知識が使える形になる。<strong>ここが世界史の得点を決める工程。</strong></li><li><strong>過去問を解いたら、その場で知識を埋める。</strong>解きっぱなしにしない。「この知識はこう出題されるのか」を確認しながら、穴をその場で潰していく。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">世界史は、裏切らない科目</div>
+      <div class="co-b">英語は、やっても伸びを感じにくい時期がある。現代文は、やっても点が安定しないことがある。<br><strong>世界史は違う。やった分だけ返ってくる。</strong>範囲は決まっていて、覚えて、正誤で判断できるようにして、問題で確認する。<strong>この3工程を繰り返すだけで確実に上がる。</strong><br><strong>きつい時期に、自分を支えてくれるのはこの科目。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>最優先科目／努力が最も読める科目</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">06</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">07 古文と現代文</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">07</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">古文で落とさない。現代文は切り上げる</h2>
+                <div class="sec-en">Classical &amp; Modern Japanese</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">国語は、<strong>古文で確実に取り、現代文は深追いしない</strong>という設計にする。古文は範囲が限定されているぶん、この期間でも確実に仕上げ切れる。</p>
+<h3 class="blk">古文 ― 単語と文法を徹底的にトレーニングする</h3>
+<table class="plain">
+      <thead><tr><th style="width:13%">期限</th><th style="width:11%">残り</th><th style="width:76%">ここまでに到達しているべき状態</th></tr></thead>
+      <tbody><tr><td><strong>10月31日</strong></td><td><strong>60日</strong></td><td>・<strong>古文単語 1冊をクリア</strong><br>・<strong>古文法も基礎を完全クリア</strong></td></tr><tr><td><strong>11月30日</strong></td><td><strong>90日</strong></td><td>・<strong>ポラリス①を徹底的にやり込む</strong></td></tr><tr><td><strong>12月31日</strong></td><td><strong>121日</strong></td><td>・<strong>ポラリス②を徹底的にやり込む。</strong>終わり次第、過去問を解きながら復習<br>・<strong>この時期には、単語と文法を落とさない状態ができている必要がある</strong></td></tr><tr><td><strong>1月中</strong></td><td><strong>152日</strong></td><td>・基本は過去問。現代文とのバランスを見て総合判断</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">現代文 ― 深追いしない</h3>
+<ul class="bul"><li><strong>基本は、英語と世界史を極めることに時間をフルで使う。</strong>現代文に時間を取られて、伸びる科目が止まるのが最悪のパターン。</li><li><strong>時間的にいけそうなら、「読み方・解き方」の部分だけを入れる。</strong>教材を回す余裕がなければ、<strong>おすすめの動画を指定する</strong>のでそれを使う。ここは最低限で構わない。</li><li><strong>過去問演習で解いた問題は、英語読解特訓と同じように徹底的に言語化する。</strong>問題を増やすのではなく、<strong>解いた1題を深く扱う。</strong>現代文にかけられる時間が少ないからこそ、密度で取り返す。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">古文単語と古文法は、絶対に落とさない</div>
+      <div class="co-b">古文は、<strong>単語と文法という「範囲が限定された土台」</strong>さえ固まれば、そこから先が一気に読めるようになる。<strong>逆に、ここが抜けたまま読解に入っても点にならない。</strong><br><strong>10月末までに単語1冊と文法の基礎を完全クリア。</strong>ここは何があっても守る。12月の時点で「単語と文法は落とさない」状態ができていることが、1月以降の過去問の前提になる。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>落とさない科目と、切り上げる科目</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">07</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">08 受験校の設計</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">08</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">受験校の設計と、判断のタイミング</h2>
+                <div class="sec-en">Where To Apply</div>
+              </div>
+            </div>
+      <p class="sec-lead"><strong>行きたい大学はもちろん大事。ただし、進学をしっかりすることを考えると、受験校の組み立ては避けて通れない。</strong>現時点の候補は2大学のみ。この状態はリスクが大きすぎる。</p>
+<table class="plain">
+      <thead><tr><th style="width:18%">層</th><th style="width:34%">現在の候補</th><th style="width:30%">位置づけ</th><th style="width:18%">状態</th></tr></thead>
+      <tbody><tr><td><strong>チャレンジ</strong><br><span style="color:var(--ink-3)">MARCH</span></td><td>青山学院大学（経営・文・総合文化政策）</td><td>挑戦枠。ここを取れたら最高</td><td>3学部</td></tr><tr><td><strong>実力相応</strong><br><span style="color:var(--ink-3)">日東駒専</span></td><td>東洋大学（経営・社会）</td><td><strong>実質の主戦場。</strong>まずここを確実に取り切る</td><td>2学部</td></tr><tr><td><strong>押 さ え</strong></td><td><strong>なし</strong></td><td><strong>進学先を確実に作るための枠</strong></td><td><strong>未定</strong></td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">決めるべき3つのこと</h3>
+<ol class="num"><li><strong>押さえの受験校を、12月までに決める。</strong>基礎を固め切ったうえで日東駒専に半年で合格するというだけでも相当に厳しい。<strong>その1段下を用意していない状態は、リスクが大きすぎる。</strong></li><li><strong>受験校を組み替える判断のタイミングを、先に決めておく。</strong>過去問の得点差を見て、どこに時間を割くかを決める。<strong>全部が崩れてから動くのでは遅い。早めに決めるほど、対策に使える時間が残る。</strong></li><li><strong>日程と受験料の物理的な制約を先に確認する。</strong>受験できる日程には限りがある。<strong>この確認だけは、成績と関係なく今すぐできる。</strong></li></ol>
+<div style="height:4mm"></div>
+<h3 class="blk">判断のタイミング</h3>
+<ul class="bul tight"><li><strong>11月末</strong> ― 演習の状況を見て、押さえの候補を洗い出す。</li><li><strong>12月末</strong> ― 日東駒専レベルの総合演習の得点で、<strong>受験校の組み合わせを確定させる。</strong></li><li><strong>1月中</strong> ― 過去問の得点差を見て、<strong>2月にどの大学の対策へ時間を割くかを最終決定する。</strong></li></ul>
+<div style="height:4mm"></div>
+<h3 class="blk">押さえを選ぶときの3つの観点</h3>
+<ul class="bul tight"><li><strong>確実に取れる水準か。</strong>12月末の総合演習の得点を基準に判断する。<strong>「たぶん大丈夫」では押さえにならない。</strong></li><li><strong>本当に進学してもいいと思えるか。</strong>受かっても行かない大学は、押さえとして機能しない。学部・立地・費用まで含めて考える。</li><li><strong>日程が主戦場とぶつからないか。</strong>東洋や青学の受験日と重なると、そもそも受けられない。<strong>日程は成績と関係なく今すぐ確認できる。</strong></li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">早く決めるほど、勝率は上がる</div>
+      <div class="co-b">受験校を絞ることは、諦めることではない。<strong>取れる大学に、残りの時間を集中させるということ。</strong><br>2月に入ってから慌てて考えるのと、12月末に数字を見て決めておくのとでは、<strong>直前期に使える時間がまったく違う。</strong><br><strong>数字を見て、早めに決める。</strong>それが、確実に進学するための一番現実的な方法。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>進学先を、確実に作る</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">08</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">09 環境と運用</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">09</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">環境ルールと、数字で判断する運用</h2>
+                <div class="sec-en">Rules &amp; Operation</div>
+              </div>
+            </div>
+      <p class="sec-lead">153日しかない以上、<strong>勉強時間の最大化が全ての前提</strong>になる。学習の質は意思ではなく<strong>仕組み</strong>で決まる。面談で決めたルールを固定化して、<strong>日々の判断に思考を使わない状態</strong>を作る。</p>
+<div class="grid2"><div class="card is-gold">
+          <div class="c-kicker">環境</div>
+          <div class="c-title">自習室ルールをマジで徹底する</div>
+          <p class="c-body">面談で決めた<strong>入る時間・抜ける時間のルールを固定</strong>する。基本の時間を決めておいて、<strong>例外がある時だけ連絡する</strong>という形にする。<br>「今日どうするか」を毎日考えなくて済む状態を作ることで、<strong>思考をブラさずに済む。</strong>まずは机に向かう時間そのものを最大化する。</p>
+        </div><div class="card">
+          <div class="c-kicker">判断</div>
+          <div class="c-title">全て「数字」で判断する</div>
+          <p class="c-body"><strong>過去問シート</strong>を使って、志望校に対して<strong>実際にどれだけの差があるのか</strong>を毎回数字で出す。<br>「手応えがあった／なかった」では次の一手が決まらない。<strong>点数化して初めて、次にやることと、受験校の組み立てが決まる。</strong></p>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">運用の4原則</h3>
+<ol class="num"><li><strong>決めた時間に自習室に入り、決めた時間に出る。</strong>例外は事前連絡のみ。連絡すれば例外はOK、連絡なしの例外はナシ。</li><li><strong>単語だけは、何があっても毎日。</strong>体調が悪い日も、時間がない日も、ここだけは止めない。止めた瞬間に第1関門が遅れる。</li><li><strong>詰まったら抱え込まず、その場で質問する。</strong>解説を見ても分からない問題で止まっている時間が、一番もったいない。manabo をすぐ使う。</li><li><strong>迷ったらこのシートに戻る。</strong>優先順位はここに書いてある通り。<strong>新しい教材や周りの動きに振り回されない。</strong></li></ol>
+<div style="height:4mm"></div>
+<h3 class="blk">毎週チェックする数字</h3>
+<ul class="bul tight"><li><strong>単語の到達語数</strong> ― 目標ペース（1日34語）に対して、今どこまで来ているか。</li><li><strong>世界史の進捗</strong> ― 通史はどこまで／正誤特訓シートは何割終わったか。</li><li><strong>過去問の得点と、志望校との差</strong> ― 過去問シートに必ず点数で落とす。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">最初の1〜2ヶ月が、一番きつい時期になる</div>
+      <div class="co-b">最初の1〜2ヶ月は、<strong>基礎の部分を徹底的に固める期間</strong>になる。<strong>やっている実感のわりに、点数が動きにくい時期。</strong>ここが本当に大変。<br><strong>でも、ここを越えないと何も始まらない。</strong>基準値を一気に上げるのは、まさにこの時期。<br><strong>数字が動いていないなら、やり方を変える。数字が動いているなら、不安でも続ける。</strong>判断の材料は、それだけ。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>基準値を一気に上げる</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">09</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">10 全体ロードマップ</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">10</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">4科目を、横並びで見る</h2>
+                <div class="sec-en">Full Roadmap</div>
+              </div>
+            </div>
+      <p class="sec-lead">科目ごとの予定を、同じ時間軸に並べたもの。<strong>どの時期に何が重なるのかを把握して、前もって時間を空けておく。</strong>特に11月末は3科目の期限が集中する。</p>
+<table class="plain">
+      <thead><tr><th style="width:14%">時期</th><th style="width:25%">英語</th><th style="width:22%">世界史</th><th style="width:22%">古文</th><th style="width:17%">現代文</th></tr></thead>
+      <tbody><tr><td><strong>〜10/15</strong><br><span style="color:var(--ink-3)">44日</span></td><td><strong>単語1500語／英文法の基礎を完全完成</strong>／解釈に着手</td><td>通史を進める</td><td>単語・文法を進める</td><td>—</td></tr><tr><td><strong>〜10/31</strong><br><span style="color:var(--ink-3)">60日</span></td><td>解釈のトレーニングを継続</td><td><strong>通史を完全クリア</strong></td><td><strong>単語1冊＋文法の基礎を完全クリア</strong></td><td>—</td></tr><tr><td><strong>〜11/30</strong><br><span style="color:var(--ink-3)">90日</span></td><td><strong>ターゲット完全クリア／解釈130／長文20</strong></td><td><strong>時代と流れ／正誤特訓を半分</strong></td><td><strong>ポラリス①をやり込む</strong></td><td>余力があれば読み方・解き方</td></tr><tr><td><strong>〜12/31</strong><br><span style="color:var(--ink-3)">121日</span></td><td><strong>日東駒専レベルの総合演習</strong>／漏れを潰す</td><td><strong>正誤特訓を完全クリア</strong>／過去問＋知識補充</td><td><strong>ポラリス②</strong>／過去問で復習</td><td>余力があれば</td></tr><tr><td><strong>1月</strong><br><span style="color:var(--ink-3)">152日</span></td><td>志望順位の高い過去問中心／<strong>滑り止めを取り切る</strong></td><td>過去問中心／解いたらすぐ知識補充</td><td>基本は過去問</td><td>バランスを見て総合判断</td></tr><tr><td><strong>2月</strong><br><span style="color:var(--ink-3)">本番</span></td><td><strong>形式別の演習を解きまくる</strong></td><td>過去問</td><td>過去問</td><td>—</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">各期限の直後に必ず確認すること</h3>
+<ul class="bul"><li><strong>10月15日</strong> ― 単語1500と英文法は本当に終わったか。<strong>ここが遅れているなら、10月後半の予定をその場で組み直す。</strong></li><li><strong>10月31日</strong> ― 世界史の通史と、古文の単語・文法が終わったか。<strong>基礎期はここで終わり。</strong>残っているものは演習期に食い込む。</li><li><strong>12月31日</strong> ― 日東駒専レベルの総合演習で、合格ボーダーとの差はどれだけか。<strong>この数字で受験校の組み合わせを確定させる。</strong></li></ul>
+<div style="height:4mm"></div>
+<h3 class="blk">11月末の山を、どう越えるか</h3>
+<ul class="bul tight"><li><strong>11月30日に、英語（ターゲット完全クリア・解釈130・長文20）・世界史（時代と流れ＋正誤特訓半分）・古文（ポラリス①）の期限が同時に来る。</strong>この半年で最も密度が高い月になる。</li><li><strong>10月末までの基礎期が予定どおり終わっていれば、この山は越えられる。</strong>逆に基礎期が押していると、11月にすべてが崩れる。<strong>11月の山は、10月の走り方で決まる。</strong></li><li><strong>11月がきつくなる前提で、10月のうちに生活のリズムを作っておく。</strong>自習室の時間を固定しておけば、量が増えても回し切れる。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">このロードマップで最も守るべき1点</div>
+      <div class="co-b"><strong>10月31日までに、基礎を固め切ること。</strong>英語の単語と文法、世界史の通史、古文の単語と文法。<br>この4つはどれも<strong>一度やり切れば以降が一気に軽くなる</strong>タイプの工程で、逆に長引かせると<strong>最後まで足を引っ張り続ける。</strong><br><strong>他の何を後回しにしてでも、この60日で落とし切る。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>4科目 × 153日</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">10</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">11 最初の1ヶ月</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">11</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">最初の1ヶ月でやり切ること</h2>
+                <div class="sec-en">First 30 Days</div>
+              </div>
+            </div>
+      <p class="sec-lead">この半年は、最初の1ヶ月の動き出しで決まる。<strong>上から順に潰していく。</strong>終わったらチェックを入れて、面談で一緒に確認する。</p>
+<div class="checks"><div class="check"><span class="box"></span><span><strong>診断</strong>：THINKING実力診断テストを<strong>4科目すべて</strong>受ける（英語・世界史・現代文・古文）</span></div><div class="check"><span class="box"></span><span><strong>診断</strong>：結果を過去問シートに落として、<strong>現在地を数字で確定させる</strong></span></div><div class="check"><span class="box"></span><span><strong>英語</strong>：ターゲット1900の毎日のペース（34語/日）を決めて、回し始める</span></div><div class="check"><span class="box"></span><span><strong>英語</strong>：英文法の基礎問題の教材と期限を決めて、着手する</span></div><div class="check"><span class="box"></span><span><strong>英語</strong>：英文法の基礎を一周やり切る（以降は過去問を解きながら埋める形へ）</span></div><div class="check"><span class="box"></span><span><strong>英語</strong>：英文解釈に着手し、精読の5段階を1題やって全部言語化してみる</span></div><div class="check"><span class="box"></span><span><strong>世界史</strong>：通史の教材と1日の進度を決めて、走り始める</span></div><div class="check"><span class="box"></span><span><strong>世界史</strong>：正誤特訓シートの使い方を確認しておく</span></div><div class="check"><span class="box"></span><span><strong>古文</strong>：古文単語1冊の毎日のペースを決めて、回し始める</span></div><div class="check"><span class="box"></span><span><strong>古文</strong>：古文法の基礎を進める（読解より先に、単語と文法）</span></div><div class="check"><span class="box"></span><span><strong>受験校</strong>：受験できる日程と受験料の制約を確認する</span></div><div class="check"><span class="box"></span><span><strong>受験校</strong>：押さえの候補を洗い出し始める（決定は12月末）</span></div><div class="check"><span class="box"></span><span><strong>環境</strong>：自習室に入る時間・抜ける時間を固定して運用開始</span></div><div class="check"><span class="box"></span><span><strong>環境</strong>：詰まったら manabo に質問する流れを1回試しておく</span></div></div>
+<div style="height:4mm"></div>
+<div class="callout is-navy">
+      <div class="co-t">153日で、どこまで行けるか</div>
+      <div class="co-b"><strong>基礎が固まっていない状態から、半年で日東駒専に合格する。</strong>これは、はっきり言って相当に厳しい戦い。それを承知のうえで走る。<br>ただし、<strong>やることは絞れている。</strong>英語・世界史・古文。この3科目に時間をフルで置いて、10月末までに基礎を固め切る。それさえできれば、11月からの93日は演習と過去問に丸ごと使える。<br><strong>基準値を一気に上げるのは、今日から。やることは全部このシートに書いてある。あとは、決めた通りに動くだけ。</strong></div>
+    </div>
+<div style="height:4mm"></div>
+<div class="memo">
+      <div class="mm-t">面談メモ／今週決めたこと</div>
+      <div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>高橋 柚珠 様｜初回戦略シート</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">11</span>
+    </div>
+  </section>
+<script>
+/* ?only=N でそのページだけ表示（レイアウト検証用） */
+(function(){
+  var m = /[?&]only=(\d+)/.exec(location.search);
+  if(!m) return;
+  var n = parseInt(m[1],10);
+  document.querySelectorAll('.page').forEach(function(el,i){
+    if(i !== n) el.style.display='none';
+  });
+  document.body.style.padding='0';
+  var sh = /[?&]shift=(d+)/.exec(location.search);
+  if(sh) document.querySelectorAll('.page')[n].style.marginTop = '-' + sh[1] + 'px';
+})();
+
+/* ?qa=1 で各ページのはみ出し量を出力（--dump-dom で回収する） */
+(function(){
+  if(!/[?&]qa=1/.test(location.search)) return;
+  var out = [];
+  document.querySelectorAll('.page').forEach(function(el,i){
+    var b = el.querySelector('.cover-inner') || el.querySelector('.page-body');
+    var over = b ? Math.round(b.scrollHeight - b.clientHeight) : 0;
+    var slack = b ? Math.round(b.clientHeight - (b.lastElementChild ? b.lastElementChild.getBoundingClientRect().bottom - b.getBoundingClientRect().top : 0)) : 0;
+    out.push('PAGE ' + String(i).padStart(2,'0') + '  h=' + el.offsetHeight + 'px  bodyH=' + (b?b.clientHeight:0) + 'px  overflow=' + over + 'px  slack=' + slack + 'px');
+  });
+  document.querySelectorAll('.page').forEach(function(el){ el.style.display='none'; });
+  var pre = document.createElement('pre');
+  pre.id = 'qa-report';
+  pre.style.cssText = 'font:16px/1.7 monospace;color:#111;background:#fff;padding:24px;margin:0;white-space:pre;';
+  pre.textContent = out.join(String.fromCharCode(10));
+  document.body.style.padding = '0';
+  document.body.appendChild(pre);
+})();
+</script>
+</body>
+</html>

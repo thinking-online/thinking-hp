@@ -1,0 +1,2 @@
+# フォント実体（合計50MB超）はコミットしない。_engine/setup-fonts.sh で取得する。
+_build/

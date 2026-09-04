@@ -365,3 +365,16 @@
   status = 200
 
 # 7月以降の号は準備でき次第、netlify.toml にリダイレクトを追加して公開
+
+# ---------------------------------------------------------------------------
+# 実力テスト 結果・講評ハンドブック — /jitsuryoku-02（受講生向け・noindex）
+# 第2回（日東駒専・産近甲龍レベル）
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/jitsuryoku-02"
+  to = "/handbook/jitsuryoku-02/index.html"
+  status = 200
+[[redirects]]
+  from = "/jitsuryoku-02/*"
+  to = "/handbook/jitsuryoku-02/:splat"
+  status = 200

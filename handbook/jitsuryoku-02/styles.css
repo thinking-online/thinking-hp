@@ -30,10 +30,10 @@
   --bad:  #a8443b;
   --bad-bg:#f9ecea;
 
-  --mincho: "Shippori Mincho B1", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  --mincho: "Zen Old Mincho", "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", serif;
   --gothic: "Zen Kaku Gothic New", "Noto Sans JP", system-ui, sans-serif;
-  --en:     "Cormorant Garamond", "Times New Roman", serif;
-  --enread: -apple-system, "Segoe UI", "Zen Kaku Gothic New", "Helvetica Neue", sans-serif;
+  --en:     "Lora", Georgia, "Times New Roman", serif;
+  --enread: "Lora", Georgia, "Times New Roman", serif;
 }
 
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
@@ -62,7 +62,7 @@ body {
   color: var(--sage-light);
   border-bottom: 1px solid rgba(138,174,212,.32);
   font-family: var(--mincho); font-weight: 600;
-  letter-spacing: .14em; font-size: 12px;
+  letter-spacing: .04em; font-size: 12.5px;
 }
 .topbar b { color: #fff; font-weight: 700; }
 .topbar .mark { width: 16px; height: 16px; flex: none; }
@@ -101,23 +101,23 @@ body {
   display: flex; align-items: baseline; justify-content: space-between; gap: 10px;
   border-bottom: 1px solid var(--hair);
   padding-bottom: 8px; margin-bottom: 20px;
-  font-size: .68em; letter-spacing: .16em; color: var(--ink-soft);
+  font-size: .70em; letter-spacing: .04em; color: var(--ink-soft);
 }
 .p-head .l { font-weight: 700; color: var(--navy); }
-.p-head .r { font-family: var(--en); letter-spacing: .3em; }
+.p-head .r { font-family: var(--en); letter-spacing: .14em; }
 .p-foot {
   position: absolute; left: 20px; right: 20px; bottom: 16px;
   display: flex; align-items: baseline; justify-content: space-between;
   border-top: 1px solid var(--hair); padding-top: 7px;
-  font-size: .62em; letter-spacing: .16em; color: var(--ink-soft);
+  font-size: .64em; letter-spacing: .04em; color: var(--ink-soft);
 }
-.p-foot .num { font-family: var(--en); letter-spacing: .22em; color: var(--navy); font-weight: 600; }
+.p-foot .num { font-family: var(--en); letter-spacing: .1em; color: var(--navy); font-weight: 600; }
 
 /* ------------------------------------------------------------ typography */
 .kicker {
   display: flex; align-items: center; gap: 9px;
   font-family: var(--en); font-size: .78em; font-weight: 600;
-  letter-spacing: .3em; color: var(--gold-deep); text-transform: uppercase;
+  letter-spacing: .14em; color: var(--gold-deep); text-transform: uppercase;
   margin: 0 0 8px;
 }
 .kicker .no {
@@ -129,7 +129,7 @@ body {
 h1.title {
   font-family: var(--mincho); font-weight: 800;
   font-size: clamp(23px, 5.6vw, 30px); line-height: 1.42;
-  letter-spacing: .01em; margin: 0 0 14px; color: var(--navy-deep);
+  letter-spacing: .005em; margin: 0 0 14px; color: var(--navy-deep);
 }
 h1.title em { font-style: normal; color: var(--gold-deep); }
 h1.title .u {
@@ -144,11 +144,11 @@ h2.sec {
   font-family: var(--mincho); font-weight: 700; font-size: 1.06em;
   color: var(--navy); margin: 22px 0 10px;
   padding-left: 11px; border-left: 3px solid var(--gold);
-  letter-spacing: .04em;
+  letter-spacing: .01em;
 }
 h3.sub {
   font-family: var(--gothic); font-weight: 700; font-size: .9em;
-  letter-spacing: .1em; color: var(--navy-soft); margin: 18px 0 8px;
+  letter-spacing: .02em; color: var(--navy-soft); margin: 18px 0 8px;
 }
 p { margin: 0 0 12px; }
 strong { font-weight: 700; }
@@ -175,7 +175,7 @@ strong { font-weight: 700; }
 }
 .card .cn {
   font-family: var(--en); font-size: .78em; font-weight: 700;
-  letter-spacing: .2em; color: var(--gold-deep); display: block; margin-bottom: 4px;
+  letter-spacing: .12em; color: var(--gold-deep); display: block; margin-bottom: 4px;
 }
 .card .ct {
   font-family: var(--mincho); font-weight: 700; font-size: .98em;
@@ -190,8 +190,8 @@ strong { font-weight: 700; }
   padding: 13px 15px; margin: 16px 0 0;
 }
 .callout .ch {
-  font-family: var(--mincho); font-weight: 700; font-size: .92em;
-  letter-spacing: .14em; color: var(--navy); margin: 0 0 6px;
+  font-family: var(--mincho); font-weight: 700; font-size: .95em;
+  letter-spacing: .01em; color: var(--navy); margin: 0 0 6px;
 }
 .callout p { font-size: .85em; line-height: 1.85; color: var(--ink-mid); margin: 0; }
 
@@ -216,7 +216,7 @@ strong { font-weight: 700; }
 .vs { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--hair-strong); }
 .vs > div { padding: 12px 13px; }
 .vs > div + div { border-left: 1px solid var(--hair-strong); }
-.vs .vh { font-family: var(--mincho); font-weight: 700; font-size: .95em; letter-spacing: .1em; margin-bottom: 8px; }
+.vs .vh { font-family: var(--mincho); font-weight: 700; font-size: .98em; letter-spacing: .01em; margin-bottom: 8px; }
 .vs .bad-side { background: var(--bad-bg); } .vs .bad-side .vh { color: var(--bad); }
 .vs .ok-side  { background: var(--ok-bg); }  .vs .ok-side .vh  { color: var(--ok); }
 .vs ul { margin: 0; padding-left: 1.1em; }
@@ -246,7 +246,7 @@ table.tbl th, table.tbl td {
 }
 table.tbl thead th {
   background: var(--navy); color: #fff; font-weight: 700;
-  letter-spacing: .08em; font-size: .92em; line-height: 1.4;
+  letter-spacing: .02em; font-size: .92em; line-height: 1.4;
 }
 table.tbl thead th small { display: block; font-weight: 400; font-size: .78em; color: var(--sage-light); letter-spacing: .04em; }
 table.tbl tbody th {
@@ -263,7 +263,7 @@ table.tbl td.must .big { color: var(--bad); }
 /* -------------------------------------------------------------- bar plot */
 .bars { display: grid; gap: 7px; margin: 4px 0 0; }
 .bars .row { display: grid; grid-template-columns: 5.4em 1fr 3.1em; gap: 8px; align-items: center; }
-.bars .lb { font-size: .76em; font-weight: 700; color: var(--navy); letter-spacing: .04em; }
+.bars .lb { font-size: .76em; font-weight: 700; color: var(--navy); letter-spacing: .01em; }
 .bars .track { display: block; position: relative; height: 15px; background: var(--ivory); border: 1px solid var(--hair); }
 .bars .fill { display: block; height: 100%; background: linear-gradient(90deg, var(--navy-soft), var(--sage)); }
 .bars .rec-mark { position: absolute; top: -3px; bottom: -3px; width: 0; border-left: 2px dashed var(--gold-deep); }
@@ -287,12 +287,12 @@ table.tbl td.must .big { color: var(--bad); }
   border-left: 4px solid var(--gold);
 }
 .en-box .en-label {
-  font-family: var(--en); font-size: .74em; letter-spacing: .28em;
+  font-family: var(--en); font-size: .78em; letter-spacing: .14em;
   color: var(--gold-light); margin-bottom: 7px;
 }
 .en-box .en-text {
-  font-family: var(--enread); font-size: .96em; line-height: 2.0;
-  letter-spacing: .01em; color: #fff;
+  font-family: var(--enread); font-size: 1.02em; line-height: 1.95;
+  letter-spacing: .005em; color: #fff;
 }
 .en-box .en-text .s  { border-bottom: 2px solid #7fb2ff; }
 .en-box .en-text .v  { border-bottom: 2px solid #ffb45e; }
@@ -313,7 +313,7 @@ table.tbl td.must .big { color: var(--bad); }
 .struct .r { display: grid; grid-template-columns: 3.6em 1fr; gap: 9px; align-items: baseline;
   border-bottom: 1px dotted var(--hair-strong); padding-bottom: 6px; }
 .struct .k {
-  font-family: var(--en); font-weight: 700; font-size: .8em; letter-spacing: .12em;
+  font-family: var(--en); font-weight: 700; font-size: .82em; letter-spacing: .06em;
   color: #fff; background: var(--navy-soft); text-align: center; padding: 1px 0;
 }
 .struct .k.o { background: var(--gold-deep); }
@@ -324,7 +324,7 @@ table.tbl td.must .big { color: var(--bad); }
 .trans {
   background: var(--ivory); border: 1px solid var(--hair); padding: 12px 14px; margin-top: 10px;
 }
-.trans .tl { font-size: .72em; letter-spacing: .18em; color: var(--gold-deep); font-weight: 700; margin-bottom: 5px; }
+.trans .tl { font-size: .74em; letter-spacing: .08em; color: var(--gold-deep); font-weight: 700; margin-bottom: 5px; }
 .trans p { font-size: .87em; line-height: 1.9; margin: 0; color: var(--ink); }
 
 /* 選択肢 */
@@ -341,7 +341,7 @@ table.tbl td.must .big { color: var(--bad); }
 .opt .ob .why { font-size: .8em; line-height: 1.8; color: var(--ink-mid); margin: 0; }
 .opt .ob .why b { color: var(--navy-deep); }
 .opt .type {
-  display: inline-block; font-size: .68em; font-weight: 700; letter-spacing: .1em;
+  display: inline-block; font-size: .70em; font-weight: 700; letter-spacing: .02em;
   padding: 1px 7px; margin-bottom: 5px;
 }
 .opt.ng { border-color: rgba(168,68,59,.5); }
@@ -384,27 +384,27 @@ table.sheet td.j { letter-spacing: .3em; color: var(--ink-soft); font-size: 1.05
   display: flex; flex-direction: column; justify-content: center; align-items: center;
   padding: 46px 22px; min-height: 74vh;
 }
-.cover .brand { font-family: var(--en); font-size: .74em; letter-spacing: .42em; color: var(--sage-light); margin-bottom: 4px; }
-.cover .brand2 { font-family: var(--en); font-size: .66em; letter-spacing: .34em; color: rgba(138,174,212,.7); margin-bottom: 28px; }
+.cover .brand { font-family: var(--en); font-size: .78em; letter-spacing: .24em; color: var(--sage-light); margin-bottom: 4px; }
+.cover .brand2 { font-family: var(--en); font-size: .7em; letter-spacing: .2em; color: rgba(138,174,212,.7); margin-bottom: 28px; }
 .cover .vol-line {
   display: inline-flex; align-items: center; gap: 11px;
-  font-family: var(--en); font-size: .82em; letter-spacing: .26em; color: var(--gold-light);
+  font-family: var(--en); font-size: .86em; letter-spacing: .16em; color: var(--gold-light);
   border-top: 1px solid rgba(200,165,90,.5); border-bottom: 1px solid rgba(200,165,90,.5);
   padding: 7px 16px; margin-bottom: 26px;
 }
 .cover h1 {
   font-family: var(--mincho); font-weight: 800;
-  font-size: clamp(27px, 7.4vw, 40px); line-height: 1.42; letter-spacing: .05em;
+  font-size: clamp(27px, 7.4vw, 40px); line-height: 1.5; letter-spacing: .02em;
   margin: 0 0 10px;
 }
-.cover h1 span { display: block; font-size: .56em; letter-spacing: .18em; color: var(--gold-light); margin-top: 12px; font-weight: 600; }
+.cover h1 span { display: block; font-size: .56em; letter-spacing: .04em; color: var(--gold-light); margin-top: 12px; font-weight: 600; }
 .cover .catch {
   font-family: var(--mincho); font-size: clamp(15px, 3.8vw, 18px); line-height: 1.9;
-  color: rgba(255,255,255,.9); letter-spacing: .1em; margin: 26px 0 0;
+  color: rgba(255,255,255,.9); letter-spacing: .02em; margin: 26px 0 0;
 }
 .cover .catch em { font-style: normal; color: var(--gold-light); }
 .cover .rule { width: 46px; height: 1px; background: var(--gold); margin: 26px auto; }
-.cover .foot { font-family: var(--en); font-size: .66em; letter-spacing: .3em; color: rgba(255,255,255,.55); line-height: 2.1; }
+.cover .foot { font-size: .72em; letter-spacing: .1em; color: rgba(255,255,255,.55); line-height: 2.1; }
 
 /* PART 扉 */
 .part {
@@ -416,10 +416,10 @@ table.sheet td.j { letter-spacing: .3em; color: var(--ink-soft); font-size: 1.05
   font-family: var(--en); font-size: clamp(48px, 15vw, 74px); font-weight: 700;
   line-height: 1; color: rgba(200,165,90,.36); margin-bottom: 4px;
 }
-.part .pk { font-family: var(--en); font-size: .74em; letter-spacing: .3em; color: var(--gold-light); margin-bottom: 14px; }
+.part .pk { font-family: var(--en); font-size: .78em; letter-spacing: .16em; color: var(--gold-light); margin-bottom: 14px; }
 .part h1 {
   font-family: var(--mincho); font-weight: 800; font-size: clamp(21px, 5.4vw, 27px);
-  line-height: 1.55; letter-spacing: .04em; margin: 0 0 16px;
+  line-height: 1.62; letter-spacing: .01em; margin: 0 0 16px;
 }
 .part .plead { font-size: .86em; line-height: 2; color: rgba(255,255,255,.78); margin: 0 0 24px; }
 .part .plist { display: grid; gap: 0; border-top: 1px solid rgba(255,255,255,.16); }
@@ -427,9 +427,9 @@ table.sheet td.j { letter-spacing: .3em; color: var(--ink-soft); font-size: 1.05
   display: grid; grid-template-columns: 2.6em 1fr auto; gap: 10px; align-items: baseline;
   padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,.16);
 }
-.part .plist .pi .i { font-family: var(--en); font-weight: 700; color: var(--gold); font-size: .9em; letter-spacing: .1em; }
+.part .plist .pi .i { font-family: var(--en); font-weight: 700; color: var(--gold); font-size: .92em; letter-spacing: .04em; }
 .part .plist .pi .n { font-size: .88em; font-weight: 500; }
-.part .plist .pi .s { font-size: .72em; color: rgba(255,255,255,.55); letter-spacing: .06em; }
+.part .plist .pi .s { font-size: .74em; color: rgba(255,255,255,.55); letter-spacing: .01em; }
 
 /* レベル帯ヘッダ */
 .lv-head {
@@ -442,15 +442,15 @@ table.sheet td.j { letter-spacing: .3em; color: var(--ink-soft); font-size: 1.05
 }
 .lv-head .lv small { display: block; font-size: .5em; letter-spacing: .18em; }
 .lv-head .lv b { font-size: 1.5em; }
-.lv-head .lt { font-family: var(--mincho); font-weight: 700; font-size: 1.06em; letter-spacing: .04em; margin: 0 0 3px; }
-.lv-head .ls { font-size: .7em; color: rgba(255,255,255,.66); line-height: 1.6; margin: 0; letter-spacing: .04em; }
+.lv-head .lt { font-family: var(--mincho); font-weight: 700; font-size: 1.08em; letter-spacing: .01em; margin: 0 0 3px; }
+.lv-head .ls { font-size: .72em; color: rgba(255,255,255,.66); line-height: 1.6; margin: 0; letter-spacing: .01em; }
 .lv-uni { font-size: .74em; color: var(--ink-soft); line-height: 1.7; margin: -8px 0 14px; letter-spacing: .02em; }
 
 .total-badge {
   display: flex; align-items: center; justify-content: center; gap: 12px;
   background: var(--ivory); border: 1px solid var(--gold); padding: 11px 12px; margin-bottom: 12px;
 }
-.total-badge .tb-l { font-size: .78em; font-weight: 700; letter-spacing: .16em; color: var(--navy); }
+.total-badge .tb-l { font-size: .82em; font-weight: 700; letter-spacing: .02em; color: var(--navy); font-family: var(--mincho); }
 .total-badge .tb-v { font-family: var(--en); font-weight: 700; font-size: 1.9em; line-height: 1; color: var(--gold-deep); }
 .total-badge .tb-s { font-size: .72em; color: var(--ink-soft); }
 
@@ -458,7 +458,7 @@ table.sheet td.j { letter-spacing: .3em; color: var(--ink-soft); font-size: 1.05
 .danger {
   border: 2px solid var(--bad); background: var(--bad-bg); padding: 13px 14px;
 }
-.danger .dh { font-family: var(--mincho); font-weight: 800; font-size: 1.02em; color: var(--bad); margin: 0 0 7px; letter-spacing: .06em; }
+.danger .dh { font-family: var(--mincho); font-weight: 800; font-size: 1.06em; color: var(--bad); margin: 0 0 7px; letter-spacing: .01em; }
 .danger p { font-size: .84em; line-height: 1.8; color: var(--ink-mid); margin: 0 0 8px; }
 .danger p:last-child { margin-bottom: 0; }
 
@@ -468,16 +468,16 @@ table.sheet td.j { letter-spacing: .3em; color: var(--ink-soft); font-size: 1.05
   text-align: center; padding: 52px 22px; min-height: 62vh;
   display: flex; flex-direction: column; justify-content: center;
 }
-.closing .ck { font-family: var(--en); font-size: .72em; letter-spacing: .34em; color: var(--gold-light); margin-bottom: 20px; }
-.closing h1 { font-family: var(--mincho); font-weight: 800; font-size: clamp(22px, 5.8vw, 30px); line-height: 1.62; letter-spacing: .06em; margin: 0 0 22px; }
-.closing .big-q { font-family: var(--mincho); font-weight: 800; font-size: clamp(19px, 5vw, 25px); color: var(--gold-light); letter-spacing: .12em; margin: 0 0 22px; }
+.closing .ck { font-family: var(--en); font-size: .78em; letter-spacing: .18em; color: var(--gold-light); margin-bottom: 20px; }
+.closing h1 { font-family: var(--mincho); font-weight: 800; font-size: clamp(22px, 5.8vw, 30px); line-height: 1.7; letter-spacing: .02em; margin: 0 0 22px; }
+.closing .big-q { font-family: var(--mincho); font-weight: 800; font-size: clamp(19px, 5vw, 25px); color: var(--gold-light); letter-spacing: .04em; margin: 0 0 22px; }
 .closing p { font-size: .86em; line-height: 2.05; color: rgba(255,255,255,.8); margin: 0 auto; max-width: 34em; }
-.closing .sig { margin-top: 30px; font-family: var(--en); font-size: .68em; letter-spacing: .3em; color: rgba(255,255,255,.55); line-height: 2.2; }
+.closing .sig { margin-top: 30px; font-size: .74em; letter-spacing: .08em; color: rgba(255,255,255,.55); line-height: 2.2; }
 
 /* 印刷ボタン（画面のみ） */
 .tools { display: flex; justify-content: center; gap: 10px; padding: 4px 0 10px; }
 .tools button, .tools a {
-  font-family: var(--gothic); font-size: 12px; font-weight: 700; letter-spacing: .12em;
+  font-family: var(--gothic); font-size: 12px; font-weight: 700; letter-spacing: .04em;
   color: var(--sage-light); background: rgba(255,255,255,.06);
   border: 1px solid rgba(138,174,212,.4); padding: 8px 16px; border-radius: 2px;
   cursor: pointer; text-decoration: none;
@@ -538,6 +538,6 @@ table.sheet td.j { letter-spacing: .3em; color: var(--ink-soft); font-size: 1.05
   .page.tight .opts { gap: 8px; }
 }
 @media screen and (min-width: 880px), print {
-  .page.tight.tighter { font-size: 9.8pt; line-height: 1.7; }
+  .page.tight.tighter { font-size: 10.1pt; line-height: 1.72; }
   .page.tight.tighter h1.title { font-size: 25px; }
 }

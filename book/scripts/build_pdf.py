@@ -73,8 +73,8 @@ def md_to_html(text, accent=""):
                 last_h3 = txt
                 key = re.sub(r'\d+$', '', txt)
                 LBL = {"Q": "q", "HINT": "hint", "法則": "law", "結論": "concl",
-                       "状況文": "situ", "伸びない人の答え": "bad", "あの子の答え": "good",
-                       "他の場面で": "other", "隅の図": "corner"}
+                       "状況文": "situ", "伸びない人の答え": "bad", "伸びる人の答え": "good",
+                       "他の場面で": "other", "隅の図": "corner", "分かれ道": "vs"}
                 if key in LBL:
                     out.append(f'<div class="lbl lbl-{LBL[key]}">{esc(txt)}</div>')
                     i += 1
@@ -94,13 +94,19 @@ def md_to_html(text, accent=""):
                 rows.append(lines[i].strip())
                 i += 1
             body = []
+            head_cells = None
             for r_i, r in enumerate(rows):
                 cells = [c.strip() for c in r.strip("|").split("|")]
                 if all(re.fullmatch(r':?-{2,}:?', c) for c in cells):
                     continue
+                if head_cells is None:
+                    head_cells = cells
                 tag = "th" if r_i == 0 else "td"
                 body.append("<tr>" + "".join(f"<{tag}>{inline(c)}</{tag}>" for c in cells) + "</tr>")
-            out.append('<table>' + "".join(body) + '</table>')
+            tcls = ""
+            if head_cells and len(head_cells) == 3 and head_cells[1] == "伸びない人" and head_cells[2] == "伸びる人":
+                tcls = f' class="vs {accent}"'
+            out.append(f'<table{tcls}>' + "".join(body) + '</table>')
             continue
         # 箇条書き
         if re.match(r'^\s*-\s+', line):
@@ -148,7 +154,7 @@ def md_to_html(text, accent=""):
             cls = ' class="situ"'
         elif last_h3 == "隅の図":
             cls = ' class="cornerfig"'
-        elif last_h3 in ("伸びない人の答え", "あの子の答え"):
+        elif last_h3 in ("伸びない人の答え", "伸びる人の答え"):
             cls = ' class="ans"'
         elif len(joined) <= 2 and all(re.match(r'^(捨てる力|突き止める力|つなげる力|取り出す力|さかのぼる力|回す力)\s|^場面タグ', l) for l in joined):
             cls = ' class="rubric"'
@@ -161,15 +167,15 @@ def md_to_html(text, accent=""):
     return doc
 
 CSS = """
-@page { size: A5; margin: 15mm 15mm 13mm 15mm; }
+@page { size: A5; margin: 13mm 14mm 11mm 14mm; }
 @page :first { margin: 0; }
 html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 9.6pt; line-height: 1.8;
+body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 9.1pt; line-height: 1.72;
        color: #1c1c1c; margin: 0; }
-p { margin: 0 0 0.8em 0; }
+p { margin: 0 0 0.72em 0; }
 code { font-size: 0.9em; color: #666; background: #f2f2f2; padding: 0 .25em; border-radius: 2px; }
 hr.rule { border: 0; border-top: 1px solid #ddd; margin: 1.6em 0; }
-h1 { font-size: 16.5pt; line-height: 1.5; margin: 0 0 1.1em 0; padding-bottom: .5em;
+h1 { font-size: 15.5pt; line-height: 1.45; margin: 0 0 .95em 0; padding-bottom: .5em;
      border-bottom: 2px solid #1c1c1c; page-break-before: always; page-break-after: avoid; }
 h2 { font-size: 12.5pt; margin: 2.0em 0 .8em 0; page-break-after: avoid; }
 h3 { font-size: 10.4pt; margin: 1.5em 0 .5em 0; color: #444; page-break-after: avoid; }
@@ -180,6 +186,21 @@ table { border-collapse: collapse; width: 100%; font-size: 8.4pt; margin: 1em 0;
 th, td { border: 1px solid #ccc; padding: .38em .5em; text-align: left; vertical-align: top; }
 th { background: #f4f4f4; }
 .indent { margin: 0 0 1em 0; white-space: pre-wrap; font-size: 9.2pt; line-height: 1.85; }
+.vs { font-size: 8.2pt; margin: .28em 0 .85em 0; }
+.vs th, .vs td { padding: .3em .5em; line-height: 1.45; }
+.vs th:first-child, .vs td:first-child { width: 21%; font-size: 7.8pt; color: #8a8a8a;
+                                          background: #fafafa; white-space: nowrap; }
+.vs th:nth-child(2), .vs td:nth-child(2) { width: 39.5%; color: #5a5a5a; }
+.vs th:nth-child(3), .vs td:nth-child(3) { width: 39.5%; }
+.vs th { background: #f2f2f2; color: #444; font-size: 8pt; }
+.vs th:nth-child(3) { color: #1c1c1c; }
+.vs td:nth-child(3) { background: #f4f4f4; }
+.vs.f1 td:nth-child(3), .vs.f1 th:nth-child(3) { background: #eef4fb; }
+.vs.f2 td:nth-child(3), .vs.f2 th:nth-child(3) { background: #eef6f1; }
+.vs.f3 td:nth-child(3), .vs.f3 th:nth-child(3) { background: #faf4e6; }
+.vs.f4 td:nth-child(3), .vs.f4 th:nth-child(3) { background: #fdf0f5; }
+.vs.f5 td:nth-child(3), .vs.f5 th:nth-child(3) { background: #fbeeec; }
+.vs.f6 td:nth-child(3), .vs.f6 th:nth-child(3) { background: #f5eefa; }
 .frows { margin: .6em 0 1.2em 0; }
 .frow { display: flex; align-items: baseline; gap: .5em; padding: .42em 0; }
 .frow .fl { white-space: nowrap; }
@@ -187,24 +208,24 @@ th { background: #f4f4f4; }
 .frow .fu { white-space: nowrap; color: #777; font-size: 8.6pt; }
 .figbox { border: 1px dashed #b0b0b0; color: #777; text-align: center; padding: 1.5em .8em;
           margin: 1.1em 0; font-size: 8.6pt; border-radius: 3px; background: #fafafa; }
-.pagelabel { font-size: 7.6pt; letter-spacing: .18em; color: #8a8a8a; border-bottom: 1px solid #e2e2e2;
+.pagelabel { font-size: 7.3pt; letter-spacing: .18em; color: #8a8a8a; border-bottom: 1px solid #e2e2e2;
              padding-bottom: .35em; margin: 0 0 1.1em 0; page-break-after: avoid; }
 .newpage { page-break-before: always; }
 .pagebreak { page-break-before: always; height: 0; }
 h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
-.lbl { font-size: 7.6pt; letter-spacing: .16em; color: #9a9a9a; margin: 1.05em 0 .3em 0; page-break-after: avoid; }
-.qtext { font-size: 13pt; line-height: 1.6; margin: 0 0 1.1em 0; }
+.lbl { font-size: 7.3pt; letter-spacing: .16em; color: #9a9a9a; margin: .72em 0 .22em 0; page-break-after: avoid; }
+.qtext { font-size: 12.5pt; line-height: 1.55; margin: 0 0 1em 0; }
 .situ { margin: 0 0 1.1em 0; }
-.hintbox { background: #f6f6f2; border-left: 3px solid #c9c2a6; padding: .7em .9em; margin: 0 0 1em 0; font-size: 9.2pt; }
-.lawbox { font-size: 11.5pt; line-height: 1.5; padding: .6em .9em; margin: .15em 0 .9em 0;
+.hintbox { background: #f6f6f2; border-left: 3px solid #c9c2a6; padding: .6em .85em; margin: 0 0 .9em 0; font-size: 8.9pt; }
+.lawbox { font-size: 11pt; line-height: 1.45; padding: .5em .85em; margin: .1em 0 .75em 0;
           border-left: 4px solid #1c1c1c; background: #f7f7f7; }
 .lbl-bad, .lbl-good { color: #6a6a6a; }
 .lbl-good { border-left: 3px solid #1c1c1c; padding-left: .5em; margin-left: -.65em; }
-.ans { margin: 0 0 .85em 0; }
-.cornerfig { font-size: 8.4pt; color: #8a8a8a; line-height: 1.75; border-top: 1px dotted #dcdcdc;
+.ans { margin: 0 0 .6em 0; }
+.cornerfig { font-size: 7.8pt; color: #8a8a8a; line-height: 1.75; border-top: 1px dotted #dcdcdc;
              padding-top: .55em; margin: 0; }
-.rubric { font-size: 8.4pt; color: #8a8a8a; letter-spacing: .04em; line-height: 1.7; margin: 0 0 1.3em 0; }
-.conclbox { border-top: 1px solid #ddd; padding-top: .7em; margin: 0 0 1em 0; }
+.rubric { font-size: 8pt; color: #8a8a8a; letter-spacing: .04em; line-height: 1.7; margin: 0 0 1.3em 0; }
+.conclbox { border-top: 1px solid #ddd; padding-top: .55em; margin: 0 0 .8em 0; }
 .lawbox.f1 { border-left-color: #2f6fb0; } .lawbox.f2 { border-left-color: #2e8b57; }
 .lawbox.f3 { border-left-color: #a8791b; } .lawbox.f4 { border-left-color: #cc3d78; }
 .lawbox.f5 { border-left-color: #c0392b; } .lawbox.f6 { border-left-color: #7b3fa0; }

@@ -1,13 +1,13 @@
 <!doctype html><html lang='ja'><head><meta charset='utf-8'><title>企画書</title><style>
-@page { size: A5; margin: 15mm 15mm 13mm 15mm; }
+@page { size: A5; margin: 13mm 14mm 11mm 14mm; }
 @page :first { margin: 0; }
 html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 9.6pt; line-height: 1.8;
+body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 9.1pt; line-height: 1.72;
        color: #1c1c1c; margin: 0; }
-p { margin: 0 0 0.8em 0; }
+p { margin: 0 0 0.72em 0; }
 code { font-size: 0.9em; color: #666; background: #f2f2f2; padding: 0 .25em; border-radius: 2px; }
 hr.rule { border: 0; border-top: 1px solid #ddd; margin: 1.6em 0; }
-h1 { font-size: 16.5pt; line-height: 1.5; margin: 0 0 1.1em 0; padding-bottom: .5em;
+h1 { font-size: 15.5pt; line-height: 1.45; margin: 0 0 .95em 0; padding-bottom: .5em;
      border-bottom: 2px solid #1c1c1c; page-break-before: always; page-break-after: avoid; }
 h2 { font-size: 12.5pt; margin: 2.0em 0 .8em 0; page-break-after: avoid; }
 h3 { font-size: 10.4pt; margin: 1.5em 0 .5em 0; color: #444; page-break-after: avoid; }
@@ -18,6 +18,21 @@ table { border-collapse: collapse; width: 100%; font-size: 8.4pt; margin: 1em 0;
 th, td { border: 1px solid #ccc; padding: .38em .5em; text-align: left; vertical-align: top; }
 th { background: #f4f4f4; }
 .indent { margin: 0 0 1em 0; white-space: pre-wrap; font-size: 9.2pt; line-height: 1.85; }
+.vs { font-size: 8.2pt; margin: .28em 0 .85em 0; }
+.vs th, .vs td { padding: .3em .5em; line-height: 1.45; }
+.vs th:first-child, .vs td:first-child { width: 21%; font-size: 7.8pt; color: #8a8a8a;
+                                          background: #fafafa; white-space: nowrap; }
+.vs th:nth-child(2), .vs td:nth-child(2) { width: 39.5%; color: #5a5a5a; }
+.vs th:nth-child(3), .vs td:nth-child(3) { width: 39.5%; }
+.vs th { background: #f2f2f2; color: #444; font-size: 8pt; }
+.vs th:nth-child(3) { color: #1c1c1c; }
+.vs td:nth-child(3) { background: #f4f4f4; }
+.vs.f1 td:nth-child(3), .vs.f1 th:nth-child(3) { background: #eef4fb; }
+.vs.f2 td:nth-child(3), .vs.f2 th:nth-child(3) { background: #eef6f1; }
+.vs.f3 td:nth-child(3), .vs.f3 th:nth-child(3) { background: #faf4e6; }
+.vs.f4 td:nth-child(3), .vs.f4 th:nth-child(3) { background: #fdf0f5; }
+.vs.f5 td:nth-child(3), .vs.f5 th:nth-child(3) { background: #fbeeec; }
+.vs.f6 td:nth-child(3), .vs.f6 th:nth-child(3) { background: #f5eefa; }
 .frows { margin: .6em 0 1.2em 0; }
 .frow { display: flex; align-items: baseline; gap: .5em; padding: .42em 0; }
 .frow .fl { white-space: nowrap; }
@@ -25,24 +40,24 @@ th { background: #f4f4f4; }
 .frow .fu { white-space: nowrap; color: #777; font-size: 8.6pt; }
 .figbox { border: 1px dashed #b0b0b0; color: #777; text-align: center; padding: 1.5em .8em;
           margin: 1.1em 0; font-size: 8.6pt; border-radius: 3px; background: #fafafa; }
-.pagelabel { font-size: 7.6pt; letter-spacing: .18em; color: #8a8a8a; border-bottom: 1px solid #e2e2e2;
+.pagelabel { font-size: 7.3pt; letter-spacing: .18em; color: #8a8a8a; border-bottom: 1px solid #e2e2e2;
              padding-bottom: .35em; margin: 0 0 1.1em 0; page-break-after: avoid; }
 .newpage { page-break-before: always; }
 .pagebreak { page-break-before: always; height: 0; }
 h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
-.lbl { font-size: 7.6pt; letter-spacing: .16em; color: #9a9a9a; margin: 1.05em 0 .3em 0; page-break-after: avoid; }
-.qtext { font-size: 13pt; line-height: 1.6; margin: 0 0 1.1em 0; }
+.lbl { font-size: 7.3pt; letter-spacing: .16em; color: #9a9a9a; margin: .72em 0 .22em 0; page-break-after: avoid; }
+.qtext { font-size: 12.5pt; line-height: 1.55; margin: 0 0 1em 0; }
 .situ { margin: 0 0 1.1em 0; }
-.hintbox { background: #f6f6f2; border-left: 3px solid #c9c2a6; padding: .7em .9em; margin: 0 0 1em 0; font-size: 9.2pt; }
-.lawbox { font-size: 11.5pt; line-height: 1.5; padding: .6em .9em; margin: .15em 0 .9em 0;
+.hintbox { background: #f6f6f2; border-left: 3px solid #c9c2a6; padding: .6em .85em; margin: 0 0 .9em 0; font-size: 8.9pt; }
+.lawbox { font-size: 11pt; line-height: 1.45; padding: .5em .85em; margin: .1em 0 .75em 0;
           border-left: 4px solid #1c1c1c; background: #f7f7f7; }
 .lbl-bad, .lbl-good { color: #6a6a6a; }
 .lbl-good { border-left: 3px solid #1c1c1c; padding-left: .5em; margin-left: -.65em; }
-.ans { margin: 0 0 .85em 0; }
-.cornerfig { font-size: 8.4pt; color: #8a8a8a; line-height: 1.75; border-top: 1px dotted #dcdcdc;
+.ans { margin: 0 0 .6em 0; }
+.cornerfig { font-size: 7.8pt; color: #8a8a8a; line-height: 1.75; border-top: 1px dotted #dcdcdc;
              padding-top: .55em; margin: 0; }
-.rubric { font-size: 8.4pt; color: #8a8a8a; letter-spacing: .04em; line-height: 1.7; margin: 0 0 1.3em 0; }
-.conclbox { border-top: 1px solid #ddd; padding-top: .7em; margin: 0 0 1em 0; }
+.rubric { font-size: 8pt; color: #8a8a8a; letter-spacing: .04em; line-height: 1.7; margin: 0 0 1.3em 0; }
+.conclbox { border-top: 1px solid #ddd; padding-top: .55em; margin: 0 0 .8em 0; }
 .lawbox.f1 { border-left-color: #2f6fb0; } .lawbox.f2 { border-left-color: #2e8b57; }
 .lawbox.f3 { border-left-color: #a8791b; } .lawbox.f4 { border-left-color: #cc3d78; }
 .lawbox.f5 { border-left-color: #c0392b; } .lawbox.f6 { border-left-color: #7b3fa0; }
@@ -186,7 +201,11 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p>第1章で「なぜ数が多いのか」の答えとして使います。<br>定義には混ぜません。定義は測れるもの、比喩は腹落ち用です。</p>
 <h1>7　目次</h1>
 <p>形式　問いから入る本。はじめに（1問）、章扉（6問）、見開き（45問）の三層。</p>
-<p>各見開きは、右ページが問い（Q＋状況＋HINT）、<br>めくった左ページが答え（伸びない人の答え／あの子の答え／法則／他の場面で／図の位置）。</p>
+<p>各見開きは、右ページが問い（Q＋状況＋HINT）、めくった左ページが答え。</p>
+<p>左ページの入口に「分かれ道」を置きます。伸びない人と伸びる人を、4行で並べた対比表です。</p>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>解説を読んで次へ進む</td><td>解説を閉じて白紙に解き直す</td></tr><tr><td>数えているもの</td><td>わかった、の回数</td><td>白紙に出せた数</td></tr><tr><td>図の上では</td><td>わかっているの箱で止まる</td><td>判定を通ってできるへ</td></tr><tr><td>試験の日に</td><td>解説なしで初めて解く</td><td>一度出したものを、もう一度出す</td></tr></table>
+<p>4行は45法則すべてで固定です。<br>2行目が序章の診断と7つの型に、4行目が定義の「期限までに」に、毎回つながります。<br>この45枚分の1行目だけを抜き出したものが、まとめの「45の分かれ道」の一覧になり、<br>そのまま購入特典のポスターになります。</p>
+<p>表の下に、伸びない人の答え、伸びる人の答え、法則、他の場面で、結論、を置きます。</p>
 <h2>全体</h2>
 <div class="indent">　はじめに　4ページ<br>　序章　あなたは、何を数えている？　見開き2つ<br>　第1章　あの子の頭のなかでは、何が起きているのか　法則1〜3<br>　第2章　あの子には「捨てる力」がある　法則4〜10<br>　第3章　あの子には「突き止める力」がある　法則11〜17<br>　第4章　あの子には「つなげる力」がある　法則18〜24<br>　第5章　あの子には「取り出す力」がある　法則25〜31<br>　第6章　あの子には「さかのぼる力」がある　法則32〜38<br>　第7章　あの子には「回す力」がある　法則39〜45<br>　まとめ　45の法則を、そのままパクる<br>　この本を読んだ子の、親へ<br>　付録<br>　おわりに　偏差値42の僕も、時間を数えていた</div>
 <h2>45法則のQと法則文</h2>

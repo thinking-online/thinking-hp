@@ -51,11 +51,11 @@ def render_v(path, accent=""):
     return md_to_html_v(head + "\n\n" + body, accent)
 
 CSS = """
-@page { size: A5; margin: 17mm 15mm 15mm 15mm; }
+@page { size: A5; margin: 15mm 13mm 13mm 13mm; }
 @page :first { margin: 0; }
 html { -webkit-print-color-adjust: exact; print-color-adjust: exact;
        writing-mode: vertical-rl; text-orientation: mixed; }
-body { font-family: "Noto Serif CJK JP","IPA明朝",serif; font-size: 9.5pt; line-height: 1.7;
+body { font-family: "Noto Serif CJK JP","IPA明朝",serif; font-size: 9.5pt; line-height: 1.64;
        color: #1a1a1a; margin: 0; }
 p { margin: 0 0 .8em 0; text-indent: 0; }
 .tcy { text-combine-upright: all; }
@@ -101,10 +101,10 @@ table { border-collapse: collapse; font-size: 8pt; margin: .3em 0 1.4em 0; line-
 th, td { border: 1px solid #ccc; padding: .45em .35em; vertical-align: top; text-align: start; }
 th { background: #f2f2f2; font-family: "Noto Sans CJK JP",sans-serif; font-weight: 700; }
 .vs { font-size: 7.6pt; float: inline-start; margin: 0 0 .9em 1.1em; clear: both; }
-.vs th, .vs td { height: 40mm; }
+.vs th, .vs td { height: 36mm; }
 .vs tr:first-child th { background: #f2f2f2; color: #8a8a8a; font-size: 7.6pt; }
 .vs tr:first-child th:nth-child(2), .vs tr:first-child th:nth-child(3) { color: #333; font-size: 8pt; }
-.vs td:first-child, .vs th:first-child { background: #fafafa; color: #8a8a8a; font-size: 6.8pt; height: 17mm; }
+.vs td:first-child, .vs th:first-child { background: #fafafa; color: #8a8a8a; font-size: 6.8pt; height: 18mm; }
 .vs td:nth-child(3) { background: #f4f4f4; }
 .vs.f1 td:nth-child(3), .vs.f1 th:nth-child(3) { background: #eef4fb; }
 .vs.f2 td:nth-child(3), .vs.f2 th:nth-child(3) { background: #eef6f1; }

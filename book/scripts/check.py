@@ -173,7 +173,18 @@ for c,v in VOICE.items():
         bad("生の声", f"第{c}章の扉に {v} がない")
 if "答えは同じ1つ" not in haj: bad("生の声", "はじめに に「7つとも、答えは同じ1つ」の引きがない")
 
-print(f"検査項目 21 / 不合格 {len(ng)} 件")
+
+# 22 Qが生徒の言葉か（著者が作った選択肢の言い方になっていないか）
+AUTHOR_STYLE = re.compile(r'(？|\?)$')
+for n,t in laws.items():
+    q = re.search(r'#+ Q\n\n(.*?)\n', t, re.S).group(1).strip()
+    if re.search(r'[、。]\s*[^、。]{0,6}(する|やる|買う|開く|writes)?[？?]$', q) and "ですか" not in q and "ますか" not in q:
+        bad("Q", f"法則{n} のQが選択肢の言い方に見える: {q}")
+    if not re.search(r'(ですか|ますか|んです|ません|ないです|ですけど|ました|ます|でした|ください)', q):
+        bad("Q", f"法則{n} のQが話し言葉になっていない: {q}")
+    if len(q) > 30: bad("Q", f"法則{n} のQが{len(q)}字（30字以内。大きな文字で入る長さに）")
+
+print(f"検査項目 22 / 不合格 {len(ng)} 件")
 cat = {}
 for c,m in ng: cat.setdefault(c, []).append(m)
 for c in cat:

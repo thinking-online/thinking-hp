@@ -36,7 +36,7 @@ def md_to_html_v(text, accent=""):
     # 章扉の「問題ページ／答えページ」の見出しは、改ページに置き換える
     h = re.sub(r'<h2>問題ページ</h2>', '', h)
     h = re.sub(r'<h2>答えページ</h2>', '<div class="pagebreak"></div>', h)
-    h = re.sub(r'<h2>(左ページ上|右ページ下|左ページ|右ページ|45)</h2>', '', h)
+    h = re.sub(r'<h[23]>(左ページ上|右ページ下|左ページ|右ページ|45)</h[23]>', '', h)
     h = re.sub(r'<h2>[0-9]+ページ目</h2>', '<div class="pagebreak"></div>', h)
     h = re.sub(r'<h2><span class="tcy">[0-9]+</span>ページ目</h2>', '<div class="pagebreak"></div>', h)
     h = re.sub(r'<div class="sep"></div>\s*(?=<div class="pagebreak">)', '', h)
@@ -56,7 +56,7 @@ CSS = """
 html { -webkit-print-color-adjust: exact; print-color-adjust: exact;
        writing-mode: vertical-rl; text-orientation: mixed; }
 body { font-family: "Noto Serif CJK JP","IPA明朝",serif; font-size: 9.5pt; line-height: 1.7;
-       color: #1a1a1a; margin: 0; font-feature-settings: "vert" 1, "vpal" 1; }
+       color: #1a1a1a; margin: 0; }
 p { margin: 0 0 .8em 0; text-indent: 0; }
 .tcy { text-combine-upright: all; }
 .upr { text-orientation: upright; letter-spacing: -.05em; }
@@ -123,8 +123,8 @@ th { background: #f2f2f2; font-family: "Noto Sans CJK JP",sans-serif; font-weigh
 .frow .fd { flex: 1; border-bottom: 1px solid #cfcfcf; height: .85em; }
 .frow .fu { white-space: nowrap; color: #777; font-size: 8pt; }
 /* 扉 */
-.cover { writing-mode: horizontal-tb; width: 148mm; height: 210mm; box-sizing: border-box;
-         padding: 44mm 20mm 20mm 20mm; page-break-after: always;
+.cover { writing-mode: horizontal-tb; box-sizing: border-box;
+         padding: 46mm 20mm 24mm 20mm; page-break-after: always;
          font-family: "Noto Serif CJK JP",serif; }
 .cover .kicker { font-size: 8pt; color: #888; letter-spacing: .1em; }
 .cover .t { font-size: 17pt; line-height: 1.6; margin: 1.3em 0 .7em 0; font-weight: 700; }
@@ -143,6 +143,7 @@ th { background: #f2f2f2; font-family: "Noto Sans CJK JP",sans-serif; font-weigh
 .part.f3 .bar { background: #a8791b; } .part.f4 .bar { background: #cc3d78; }
 .part.f5 .bar { background: #c0392b; } .part.f6 .bar { background: #7b3fa0; }
 .toc { page-break-after: always; }
+.toc h1 { page-break-before: avoid; }
 .toc .row { font-size: 9pt; padding: .45em 0; border-right: 1px dotted #e0e0e0; }
 .toc .grp { font-family: "Noto Sans CJK JP",sans-serif; font-size: 7.6pt;
             letter-spacing: .16em; color: #9a9a9a; margin-right: 1.2em; }
@@ -153,27 +154,27 @@ def build(outpath):
     P = []
     P.append("""<div class="cover">
 <div class="kicker">縦組み　読者版　（2026年9月8日時点）</div>
-<div class="t">「やればやるだけ伸びる」あの子が、<br>勉強中に絶対にやらないこと</div>
+<div class="t">あの子が、<br>勉強中に絶対にやらないこと</div>
 <div class="s">マネするだけで伸びる、あの子の勉強法則45</div>
-<div class="obi">やっているのに、伸びない。<br>昨日、何個できるようになった？<br>勉強時間は、1分も増やしません。</div>
+<div class="obi">やっているのに、伸びない。<br>あの子は、やればやるだけ伸びる。<br>違いは、昨日、何個できるようになったか。<br>勉強時間は、1分も増やしません。</div>
 <div class="au">朝倉 徹大</div>
 <div class="note">A5・縦組み。編集用の注記は外してあります。<br>
 表は日本語の本の通例に従って横組みで置いています。図は入る位置のみ。<br>
 柱とノンブルは、実際の紙面ではデザイン側で入ります。</div>
 </div>""")
 
-    ch_titles = {1:"あの子の頭のなかでは、何が起きているのか",
-                 2:"あの子には「捨てる力」がある", 3:"あの子には「突き止める力」がある",
-                 4:"あの子には「つなげる力」がある", 5:"あの子には「取り出す力」がある",
-                 6:"あの子には「さかのぼる力」がある", 7:"あの子には「回す力」がある"}
+    ch_titles = {1:"【考え方】同じ参考書、同じ3時間。なぜ差がつくのか",
+                 2:"【決め方】何をやらないかを、先に決める", 3:"【見つけ方】「全部わからない」を、1行に絞る",
+                 4:"【覚え方】1つ覚えて、10動かす", 5:"【確かめ方】わかった、を、できる、に変える",
+                 6:"【直し方】間違いを、次の1個に変える", 7:"【続け方】試験の日まで、数を落とさない"}
     toc = ['<div class="toc"><h1>目次</h1>', '<div class="grp">前付</div>']
-    for t in ["はじめに", "あの子が、絶対にやらない45のこと", "序章　あなたは、何を数えている？"]:
+    for t in ["はじめに　毎日5時間やって、伸びない子がいた", "あの子が、絶対にやらない45のこと", "序章　あなたは、何を数えている？"]:
         toc.append(f'<div class="row">{inline_v(t)}</div>')
     toc.append('<div class="grp">本文</div>')
     for c in range(1, 8):
         toc.append(f'<div class="row">第{c}章　{inline_v(ch_titles[c])}</div>')
     toc.append('<div class="grp">後付</div>')
-    for t in ["まとめ　45の法則を、そのままパクる", "この本を読んだ子の、親へ", "付録",
+    for t in ["まとめ　45の法則を、そのままパクる", "この本を読んだ子の、親へ", "付録　できないノート／最初の1週間",
               "おわりに　偏差値42の僕も、時間を数えていた"]:
         toc.append(f'<div class="row">{inline_v(t)}</div>')
     toc.append("</div>")

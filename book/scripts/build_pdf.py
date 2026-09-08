@@ -65,14 +65,14 @@ def md_to_html(text, accent=""):
         m = re.match(r'^(#{1,4})\s+(.*)$', line)
         if m:
             level, txt = len(m.group(1)), m.group(2).strip()
-            if level == 2 and txt in ("右ページ", "左ページ"):
+            if level in (2, 3) and txt in ("右ページ", "左ページ"):
                 cls = "pagelabel" + (" newpage" if txt == "左ページ" else "")
                 label = "右ページ　問い" if txt == "右ページ" else "左ページ　答え"
                 out.append(f'<div class="{cls}">{esc(label)}</div>')
                 last_h3 = ""
                 i += 1
                 continue
-            if level == 3:
+            if level in (3, 4):
                 last_h3 = txt
                 key = re.sub(r'\d+$', '', txt)
                 LBL = {"Q": "q", "HINT": "hint", "法則": "law", "結論": "concl",
@@ -301,10 +301,10 @@ def strip_meta(text):
 
 def split_chapter_end(text):
     """章扉ファイルを、扉の部分と章末ページに割る。章末は章の最後に置くため。"""
-    m = re.search(r'\n---\n\n## 章末ページ\n\n(.*)$', text, re.S)
+    m = re.search(r'\n---\n\n## 章末ページ', text, re.S)
     if not m:
         return text, ""
-    return text[:m.start()], m.group(1).strip()
+    return text[:m.start()], text[m.start():].lstrip('\n-').lstrip()
 
 
 def render_file(path, accent=""):
@@ -321,10 +321,9 @@ def build_daihon(outpath):
     parts = []
     parts.append(f"""<div class="cover">
 <div class="kicker">商業出版　通し台本　（2026年9月8日時点）</div>
-<div class="t">「やればやるだけ伸びる」あの子が、<br>勉強中に絶対にやらないこと</div>
+<div class="t">あの子が、<br>勉強中に絶対にやらないこと</div>
 <div class="s">マネするだけで伸びる、あの子の勉強法則45</div>
-<div class="obi">やっているのに、伸びない。そのあなたへ。<br>
-秘密は、才能でも時間でもなく、数え方にある。</div>
+<div class="obi">やっているのに、伸びない。<br>あの子は、やればやるだけ伸びる。<br>違いは、昨日、何個できるようになったか。<br>勉強時間は、1分も増やしません。</div>
 <div class="au">朝倉 徹大</div>
 <div class="note">この PDF は編集用のプレビューです。実際の紙面は見開き2ページ組で、<br>
 右ページに問い、めくった左ページに答えが入ります。<br>
@@ -335,17 +334,17 @@ def build_daihon(outpath):
     # 目次
     toc = ['<div class="toc"><h1>目次</h1>']
     toc.append('<div class="grp">前付</div>')
-    for t in ["はじめに", "あの子が、絶対にやらない45のこと", "序章　あなたは、何を数えている？"]:
+    for t in ["はじめに　毎日5時間やって、伸びない子がいた", "あの子が、絶対にやらない45のこと", "序章　あなたは、何を数えている？"]:
         toc.append(f'<div class="row"><span>{esc(t)}</span></div>')
     toc.append('<div class="grp">本文</div>')
     ch_titles = {
-        1: "第1章　あの子の頭のなかでは、何が起きているのか",
-        2: "第2章　あの子には「捨てる力」がある",
-        3: "第3章　あの子には「突き止める力」がある",
-        4: "第4章　あの子には「つなげる力」がある",
-        5: "第5章　あの子には「取り出す力」がある",
-        6: "第6章　あの子には「さかのぼる力」がある",
-        7: "第7章　あの子には「回す力」がある",
+        1: "第1章【考え方】同じ参考書、同じ3時間。なぜ差がつくのか",
+        2: "第2章【決め方】何をやらないかを、先に決める",
+        3: "第3章【見つけ方】「全部わからない」を、1行に絞る",
+        4: "第4章【覚え方】1つ覚えて、10動かす",
+        5: "第5章【確かめ方】わかった、を、できる、に変える",
+        6: "第6章【直し方】間違いを、次の1個に変える",
+        7: "第7章【続け方】試験の日まで、数を落とさない",
     }
     laws = {}
     for c in range(2, 8):
@@ -358,7 +357,7 @@ def build_daihon(outpath):
         a, b = CH[c]
         toc.append(f'<div class="row"><span>{esc(ch_titles[c])}</span><span class="r">法則{a}〜{b}</span></div>')
     toc.append('<div class="grp">後付</div>')
-    for t in ["まとめ　45の法則を、そのままパクる", "この本を読んだ子の、親へ", "付録",
+    for t in ["まとめ　45の法則を、そのままパクる", "この本を読んだ子の、親へ", "付録　できないノート／最初の1週間",
               "おわりに　偏差値42の僕も、時間を数えていた"]:
         toc.append(f'<div class="row"><span>{esc(t)}</span></div>')
     toc.append("</div>")
@@ -405,7 +404,7 @@ def build_kikakusho(outpath):
     send = open(os.path.join(M, "企画書", "送付文.md"), encoding="utf-8").read()
     cover = """<div class="cover">
 <div class="kicker">企画書　2026年9月　学研　杉浦さん宛</div>
-<div class="t">「やればやるだけ伸びる」あの子が、<br>勉強中に絶対にやらないこと</div>
+<div class="t">あの子が、<br>勉強中に絶対にやらないこと</div>
 <div class="s">マネするだけで伸びる、あの子の勉強法則45</div>
 <div class="au">朝倉 徹大（受験の王様）</div>
 <div class="note">合同会社ARC代表／学部別合格設計塾THINKING運営</div>

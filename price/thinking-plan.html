@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>THINKING｜英語合格設計プラン</title>
+<title>THINKING｜あなた専用の合格プラン</title>
 <script>
 (function(){
   var path=location.pathname, q=location.search;
@@ -55,7 +55,6 @@
   .sec-title{font-family:"Yu Mincho",serif; font-size:21px; font-weight:700; color:var(--navy); margin:30px 0 4px;}
   .sec-desc{font-size:13.5px; color:var(--muted); margin-bottom:20px;}
 
-  /* プロフィールフォーム(STEP0) */
   .profile-form{background:var(--white); border:1px solid var(--line); border-radius:12px; padding:24px 26px; margin-bottom:6px;}
   .pf-row{margin-bottom:20px;}
   .pf-row:last-of-type{margin-bottom:0;}
@@ -78,7 +77,6 @@
   .pf-result-months b{font-family:"Yu Mincho",serif; font-size:22px; color:var(--gold); margin:0 3px;}
   .pf-result-msg{font-size:12.5px; color:var(--ink); line-height:1.7;}
 
-  /* Step1 - genre picker (no prices) */
   .flow{position:relative;}
   .flow-line{position:absolute; left:19px; top:14px; bottom:14px; width:2px; background:var(--line);}
   .gblock{position:relative; margin-bottom:12px; padding-left:52px;}
@@ -103,12 +101,6 @@
   .gcard-desc{font-size:12px; color:var(--muted); margin-top:8px; padding-left:34px;}
   .gcard-contents{font-size:11px; color:var(--gold); margin-top:4px; padding-left:34px; font-weight:600;}
 
-  .goal-tabs{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:18px;}
-  .goal-tab{font-size:12.5px; font-weight:700; padding:8px 16px; border-radius:20px; border:1.5px solid var(--line);
-    background:var(--white); color:var(--muted); cursor:pointer; transition:all .14s;}
-  .goal-tab:hover{border-color:var(--gold);}
-  .goal-tab.on{background:var(--navy); color:var(--white); border-color:var(--navy);}
-
   .step-nav{display:flex; justify-content:space-between; gap:12px; margin:26px 0 10px;}
   .btn{border:none; border-radius:7px; padding:13px 24px; font-size:14px; font-weight:700; cursor:pointer; transition:all .15s; font-family:inherit;}
   .btn-primary{background:var(--gold); color:var(--navy);} .btn-primary:hover{background:var(--gold-2);}
@@ -116,7 +108,6 @@
   .btn-back{background:transparent; color:var(--muted); border:1.5px solid var(--line);} .btn-back:hover{border-color:var(--muted);}
   .btn-sm{padding:8px 16px; font-size:12.5px; border-radius:6px;}
 
-  /* Step2 */
   .reco-hero{background:linear-gradient(135deg,var(--navy),var(--navy-2)); color:var(--white); border-radius:12px;
     padding:26px 28px; margin-bottom:20px; position:relative; overflow:hidden;}
   .reco-hero::after{content:""; position:absolute; right:-30px; top:-30px; width:140px; height:140px; border-radius:50%; background:rgba(184,149,74,.14);}
@@ -156,13 +147,11 @@
 
   .nudge{border-radius:8px; padding:13px 16px; margin-top:16px; font-size:13px; font-weight:600; display:none; align-items:flex-start; gap:10px;}
   .nudge.show{display:flex;}
-  .nudge-pack{background:#eef5ee; border:1px solid #b9d4b3; color:#2f5028;}
   .nudge-warn{background:#fdf1e5; border:1px solid #e8c79a; color:#8a5a12;}
   .nudge-icon{font-size:16px; line-height:1.3;}
   .switch-pack{background:var(--paper-2); border-radius:8px; padding:14px 16px; margin-top:14px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;}
   .switch-pack-txt{font-size:12.5px; color:var(--navy); font-weight:600;}
 
-  /* 確認フェーズ */
   .confirm-cat{background:var(--white); border:1px solid var(--line); border-radius:10px; padding:16px 20px; margin-bottom:12px;}
   .confirm-cat-name{font-size:13px; font-weight:700; color:var(--navy); letter-spacing:.04em; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
   .confirm-cat-name::before{content:""; width:4px; height:15px; background:var(--gold); border-radius:1px;}
@@ -182,7 +171,6 @@
   .confirm-count .big{font-family:"Yu Mincho",serif; font-size:20px; font-weight:800; color:var(--gold-2); margin:0 4px;}
   .confirm-note{font-size:11.5px; color:var(--muted); margin-bottom:16px; padding:10px 14px; background:#fbfaf6; border-left:3px solid var(--gold); border-radius:0 6px 6px 0;}
 
-  /* アップセル */
   .upsell{background:linear-gradient(135deg,#fdf6e9,#faf0dc); border:1.5px solid var(--gold); border-radius:12px; padding:20px 24px; margin-bottom:18px; position:relative;}
   .upsell-eyebrow{font-size:11px; letter-spacing:.15em; color:var(--verm); font-weight:700; margin-bottom:8px;}
   .upsell-title{font-size:16px; font-weight:700; color:var(--navy); margin-bottom:6px;}
@@ -196,6 +184,35 @@
   .upsell-btn:hover{background:var(--navy-2);}
   .alacarte-cat{margin-bottom:14px;}
   .alacarte-cat-name{font-size:12px; font-weight:700; color:var(--muted); margin-bottom:8px;}
+
+  /* 個別サポート プラン カード */
+  .tier{border:2px solid var(--line); border-radius:12px; overflow:hidden; margin-bottom:14px; background:var(--white); transition:all .18s;}
+  .tier:hover{border-color:var(--gold);}
+  .tier.on{border-color:var(--navy); box-shadow:0 0 0 3px rgba(184,149,74,.26);}
+  .tier-head{background:var(--paper-2); padding:18px 22px; display:flex; justify-content:space-between; align-items:flex-start; gap:14px; flex-wrap:wrap;}
+  .tier.on .tier-head{background:linear-gradient(135deg,var(--navy),var(--navy-2)); color:var(--white);}
+  .tier-h-l{flex:1; min-width:190px;}
+  .tier-name{font-family:"Yu Mincho",serif; font-size:20px; font-weight:700; color:var(--navy); display:flex; align-items:center; gap:10px; flex-wrap:wrap;}
+  .tier.on .tier-name{color:var(--white);}
+  .tier-badge{font-size:10.5px; font-weight:700; background:var(--verm); color:var(--white); padding:3px 11px; border-radius:12px; font-family:inherit; letter-spacing:.04em;}
+  .tier-tag{font-size:12.5px; color:var(--muted); margin-top:4px;}
+  .tier.on .tier-tag{color:#c9d3e0;}
+  .tier-price{font-family:"Yu Mincho",serif; font-size:26px; font-weight:800; color:var(--navy); white-space:nowrap;}
+  .tier.on .tier-price{color:var(--gold-2);}
+  .tier-price .u{font-size:11.5px; color:var(--muted); font-weight:600; font-family:"Hiragino Kaku Gothic ProN",sans-serif;}
+  .tier.on .tier-price .u{color:#9fb0c4;}
+  .tier-body{padding:20px 22px;}
+  .tier-btn{width:100%; border:none; border-radius:8px; padding:13px; font-size:14px; font-weight:700; cursor:pointer;
+    font-family:inherit; background:var(--gold); color:var(--navy); transition:all .15s;}
+  .tier-btn:hover{background:var(--gold-2);}
+  .tier-btn.on{background:var(--navy); color:var(--white);}
+  .tier-none{display:flex; align-items:center; gap:12px; border:1.5px solid var(--line); border-radius:8px; padding:14px 18px;
+    cursor:pointer; transition:all .14s; user-select:none; font-size:13px; font-weight:600; color:var(--muted); background:var(--white);}
+  .tier-none:hover{border-color:var(--gold);}
+  .tier-none.on{border-color:var(--navy); background:#fbfaf6; color:var(--ink); box-shadow:inset 3px 0 0 var(--gold);}
+  .tier-none.on .cbox{background:var(--navy); border-color:var(--navy);}
+  .tier-none.on .cbox svg{opacity:1;}
+  .env-foot-note{font-size:11px; color:var(--muted); margin-top:14px; line-height:1.8;}
 
   .addon-title{font-size:13px; font-weight:700; color:var(--navy); margin:24px 0 10px; display:flex; align-items:center; gap:8px;}
   .addon-title::before{content:""; width:4px; height:14px; background:var(--gold); border-radius:1px;}
@@ -215,20 +232,40 @@
     background:var(--white); color:var(--muted); cursor:pointer; transition:all .14s;}
   .subj-tab.on{background:var(--navy); color:var(--white); border-color:var(--navy);}
 
-  .env-block{background:var(--white); border:1.5px solid var(--gold); border-radius:10px; padding:20px 22px; margin-top:20px;}
-  .env-head{display:flex; align-items:center; gap:10px; margin-bottom:6px;}
-  .env-title{font-size:15px; font-weight:700; color:var(--navy);}
-  .env-badge{font-size:10.5px; font-weight:700; background:var(--gold); color:var(--navy); padding:2px 10px; border-radius:12px;}
-  .env-desc{font-size:12.5px; color:var(--muted); margin-bottom:14px;}
-  .env-opts{display:grid; grid-template-columns:1fr 1fr; gap:8px;}
-  @media(max-width:640px){.env-opts{grid-template-columns:1fr;}}
-  .env-opt{display:flex; align-items:center; gap:11px; border:1px solid var(--line); border-radius:6px; padding:12px 14px; cursor:pointer; transition:all .14s; user-select:none;}
-  .env-opt:hover{border-color:var(--gold);} .env-opt.on{border-color:var(--navy); background:#fbfaf6; box-shadow:inset 3px 0 0 var(--gold);}
-  .env-opt-body{flex:1;}
-  .env-opt-name{font-size:13px; font-weight:700; color:var(--navy);}
-  .env-opt-desc{font-size:11px; color:var(--muted);}
-  .env-opt-price{font-size:14px; font-weight:800; color:var(--navy); white-space:nowrap;}
-  .env-opt-price .u{font-size:10.5px; color:var(--muted); font-weight:600;}
+  /* 個別サポート 共通 */
+  .env-feats{display:grid; grid-template-columns:1fr 1fr; gap:10px 20px; margin-bottom:18px;}
+  @media(max-width:640px){.env-feats{grid-template-columns:1fr;}}
+  .env-feat{display:flex; gap:10px; align-items:flex-start;}
+  .env-feat-ic{width:20px; height:20px; border-radius:50%; background:var(--navy); flex-shrink:0; display:flex; align-items:center; justify-content:center; margin-top:2px;}
+  .env-feat-ic svg{width:11px; height:11px;}
+  .env-feat-b{flex:1;}
+  .env-feat-n{font-size:13px; font-weight:700; color:var(--navy);}
+  .env-feat-d{font-size:11.5px; color:var(--muted); line-height:1.6;}
+  .tier-lead{font-size:12.5px; line-height:1.8; color:var(--ink); background:var(--paper); border-left:3px solid var(--gold); border-radius:0 6px 6px 0; padding:12px 14px; margin-bottom:16px;}
+  .tier-compare{font-size:11.5px; color:var(--muted); background:#fbfaf6; border:1px dashed var(--line); border-radius:6px; padding:10px 13px; margin-bottom:14px;}
+
+  .env-note{font-size:11.5px; color:var(--muted); margin-bottom:12px;}
+  .env-ref{font-size:11.5px; color:var(--muted); margin-top:10px; text-align:right;}
+
+  .env-months{margin-top:20px; padding:20px 22px; border:1.5px solid var(--gold); border-radius:12px; background:#fdfbf6; display:none;}
+  .env-months.show{display:block;}
+  .env-months-label{font-size:12.5px; font-weight:700; color:var(--navy); margin-bottom:10px;}
+  .env-mo{font-size:12.5px; font-weight:700; padding:7px 12px; border-radius:8px; border:1.5px solid var(--line);
+    background:var(--white); color:var(--muted); cursor:pointer; transition:all .14s; font-family:inherit; position:relative;
+    min-width:58px; text-align:center; line-height:1.25;}
+  .env-mo.rec{border-color:var(--gold);}
+  .env-mo .mo-n{font-family:"Yu Mincho",serif; font-size:17px; font-weight:800;}
+  .env-mo .mo-u{font-size:10.5px; margin-left:1px;}
+  .env-mo:hover{border-color:var(--gold);}
+  .env-mo.on{background:var(--navy); color:var(--white); border-color:var(--navy);}
+  .env-mo .off{display:block; font-size:10px; color:var(--verm); font-weight:700; margin-top:1px;}
+  .env-mo.on .off{color:var(--gold-2);}
+  .env-total{background:var(--paper); border-radius:8px; padding:14px 18px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap;}
+  .env-total-l{font-size:12.5px; color:var(--navy); font-weight:700;}
+  .env-total-r{text-align:right;}
+  .env-total-v{font-family:"Yu Mincho",serif; font-size:24px; font-weight:800; color:var(--navy);}
+  .env-total-s{font-size:11px; color:var(--muted);}
+  .env-total-s del{color:var(--muted);}
 
   .summary{position:fixed; bottom:0; left:0; width:100%; background:var(--navy); color:var(--white); z-index:50; box-shadow:0 -6px 24px rgba(0,0,0,.22);}
   .summary-inner{max-width:1040px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; gap:18px; flex-wrap:wrap;}
@@ -245,7 +282,6 @@
     color:var(--white); padding:12px 24px; border-radius:30px; font-size:13px; font-weight:600; opacity:0; transition:all .3s; z-index:100; pointer-events:none;}
   .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
 
-  /* 見積書 */
   .qo{display:none; position:fixed; inset:0; background:rgba(15,22,35,.78); z-index:200; overflow-y:auto; padding:24px 16px;}
   .qo.open{display:block;}
   .qm{max-width:800px; margin:0 auto; background:var(--white); border-radius:8px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,.4);}
@@ -302,7 +338,7 @@
     <div class="sales-only sales-badge">見積もり発行</div>
     <div class="catalog-only sales-badge">講座から選ぶ</div>
     <div class="brand">THINKING ｜ 学部別合格設計塾</div>
-    <h1>英語 合格設計プラン</h1>
+    <h1>あなた専用の合格プラン</h1>
     <p class="customer-only">いまのあなたに必要なところから、無理なく。選んでいくと「あなた専用の合格プラン」と合計金額が見えます。</p>
     <p class="sales-only">お客様の前で、お名前を入力しながらその場で見積書を発行できます。</p>
     <p class="catalog-only">パックにはまとめません。講座一覧から、必要なものだけ選んで合計を出せます。</p>
@@ -314,15 +350,14 @@
     <div class="step active" id="stepTab0"><span class="n">1</span>あなたのこと</div>
     <div class="step" id="stepTab1"><span class="n">2</span>必要なものを選ぶ</div>
     <div class="step" id="stepTab2"><span class="n">3</span>プランを決める</div>
-    <div class="step" id="stepTab3"><span class="n">4</span>学習環境</div>
+    <div class="step" id="stepTab3"><span class="n">4</span>個別サポート</div>
   </div>
   <div class="steps catalog-only">
     <div class="step active" id="catTab0"><span class="n">1</span>あなたのこと</div>
     <div class="step" id="catTab1"><span class="n">2</span>講座を選ぶ</div>
-    <div class="step" id="catTab2"><span class="n">3</span>学習環境</div>
+    <div class="step" id="catTab2"><span class="n">3</span>個別サポート</div>
   </div>
 
-  <!-- STEP1 -->
   <!-- STEP1: あなたのこと -->
   <div class="panel show" id="panel0">
     <div class="sec-title">まず、あなたのことを教えてください</div>
@@ -362,7 +397,6 @@
 
   <!-- STEP3: プランを決める -->
   <div class="panel" id="panel2">
-    <!-- フェーズA: 確認(金額は控えめ) -->
     <div id="phaseConfirm">
       <div class="sec-title">この内容で合っていますか？</div>
       <div class="sec-desc">あなたが選んだジャンルに必要な講座です。「これは今はいらない」というものがあれば外してください。合格から逆算して、本当に必要なものだけに絞りましょう。</div>
@@ -377,7 +411,6 @@
       </div>
     </div>
 
-    <!-- フェーズB: 結果(金額バーン + アップセル) -->
     <div id="phaseResult" style="display:none;">
       <div class="sec-title pack-only">あなたへのおすすめプラン</div>
       <div class="sec-desc pack-only">絞り込んだ内容が、いちばんお得に揃うプランはこちらです。</div>
@@ -398,28 +431,25 @@
       <div class="addon-title">英検対策</div>
       <div class="items" id="eikenCourses"></div>
       <div class="addon-title">他科目も追加できます</div>
-      <div class="addon-sub">英語以外は「固めるべき問題」を再構成した演習シートです。上から順に固めていけます。</div>
+      <div class="addon-sub">英語以外は「固めるべき問題」だけを再構成した演習教材です。上から順に固めていけます。</div>
       <div class="subj-tabs" id="subjTabs"></div>
       <div class="items" id="otherCourses"></div>
       <div class="step-nav">
         <button class="btn btn-back pack-only" onclick="backToConfirm()">← 内容を調整する</button>
         <button class="btn btn-back catalog-only" onclick="goStep(0)">← 戻る</button>
-        <button class="btn btn-primary pack-only" onclick="goStep(3)">環境・お支払いへ →</button>
-        <button class="btn btn-primary catalog-only" onclick="goStep(2)">環境・お支払いへ →</button>
+        <button class="btn btn-primary pack-only" onclick="goStep(3)">個別サポート・お支払いへ →</button>
+        <button class="btn btn-primary catalog-only" onclick="goStep(2)">個別サポート・お支払いへ →</button>
       </div>
     </div>
   </div>
 
-  <!-- STEP3 -->
-  <!-- STEP4: 学習環境 -->
+  <!-- STEP4: 個別サポート -->
   <div class="panel" id="panel3">
-    <div class="sec-title">学習環境サポート（月額）</div>
-    <div class="sec-desc">講座を進める間、質問し放題・自習室で伴走します。受験まで必要な期間だけ、月額でご利用いただけます。お支払い方法は別途ご案内いたします。</div>
-    <div class="env-block">
-      <div class="env-head"><span class="env-title">学習環境サポート</span><span class="env-badge">月額・任意</span></div>
-      <div class="env-desc">「一人にしない」ための伴走。わからないをすぐ解決し、続けられる環境を。フルで月15,980円、受験まで6ヶ月なら約95,880円分の伴走です。</div>
-      <div class="env-opts" id="envOpts"></div>
-    </div>
+    <div class="sec-title">個別サポートを選ぶ</div>
+    <div class="sec-desc">講座は「何をやるか」を決めるもの。ここは「ちゃんと進むか」を支えるものです。受験まで必要な期間だけご利用いただけます。</div>
+    <div id="envTiers"></div>
+    <div class="env-months" id="envMonths"></div>
+    <div class="env-foot-note">※ 質問対応は1日あたりの目安をご案内しています。極端に集中したご利用の場合のみ、別途ご相談いたします。<br>※ 合格設計サポートは担当コーチがつくため、定員に達し次第、受付を終了いたします。<br>※ 個別サポートは月額制です。開始・停止のタイミングはご相談いただけます。</div>
     <div class="step-nav">
       <button class="btn btn-back pack-only" onclick="goStep(2)">← 戻る</button>
       <button class="btn btn-back catalog-only" onclick="goStep(1)">← 戻る</button>
@@ -433,7 +463,7 @@
 <div class="summary">
   <div class="summary-inner">
     <div class="sum-left">
-      <div class="sum-label">全講義 合計金額</div>
+      <div class="sum-label">講座 合計金額</div>
       <div class="sum-total"><span id="gTotal">0</span><span class="yen"> 円</span></div>
       <div class="sum-sub" id="gSub">まずは必要なものを選んでください</div>
     </div>
@@ -469,37 +499,28 @@
 <script>
 // ============ 英語コア講座 ============
 const courses = [
-  // 語彙力
   {id:'tango', g:'goi', name:'英単語 実践', meta:'単語帳の4択問題演習', price:4800},
   {id:'jukugo', g:'goi', name:'英熟語 実践', meta:'熟語帳の4択問題演習', price:4800},
   {id:'goi_jissen', g:'goi', name:'語彙問題 実践演習', meta:'過去問ベースの語彙演習', price:6800},
-  // 読むための文法(インプット)
   {id:'bunpo_in', g:'bunpo_in', name:'英文法 講座（100テーマ）', meta:'インプット授業＋各5問', price:52800},
-  // 読んで解くための文法(演習)
   {id:'bunpo_kiso', g:'bunpo_solve', name:'基礎英文法 演習', meta:'', price:11800},
   {id:'bunpo_hyo', g:'bunpo_solve', name:'標準問題 演習', meta:'', price:11800},
   {id:'bunpo_hin', g:'bunpo_solve', name:'頻出語法 演習', meta:'', price:11800},
   {id:'bunpo_seigo', g:'bunpo_solve', name:'正誤問題 講座', meta:'', price:10800},
   {id:'bunpo_seijo', g:'bunpo_solve', name:'整序問題 講座', meta:'', price:10800},
-  // 読むための英文解釈
   {id:'kaishaku_nyu', g:'kaishaku_read', name:'入門 英文解釈', meta:'構文把握の第一歩', price:16800},
   {id:'kaishaku_kiso', g:'kaishaku_read', name:'基礎 英文解釈', meta:'', price:16800},
-  // 読んで解くための英文解釈
   {id:'kaishaku_nyu_j', g:'kaishaku_solve', name:'入門英文解釈 実践演習', meta:'', price:13800},
   {id:'kaishaku_kiso_j', g:'kaishaku_solve', name:'基礎英文解釈 実践演習', meta:'', price:13800},
-  // 長文読解(全員必須イメージ)
   {id:'cho_nyu1', g:'chobun', name:'長文読解｜STEP1（5文）', meta:'1講座5文の実戦', price:14800},
   {id:'cho_nyu2', g:'chobun', name:'長文読解｜STEP2（5文）', meta:'1講座5文の実戦', price:14800},
   {id:'cho_kiso1', g:'chobun', name:'長文読解｜STEP3（5文）', meta:'1講座5文の実戦', price:15800},
   {id:'cho_kiso2', g:'chobun', name:'長文読解｜STEP4（5文）', meta:'1講座5文の実戦', price:15800},
-  // リスニング
   {id:'lis_hatsu', g:'lis', name:'リスニング 発音法則講義', meta:'', price:12800},
   {id:'lis_kiso', g:'lis', name:'リスニング 基礎実践', meta:'', price:16800},
-  // 速読
-  {id:'sokudoku', g:'soku', name:'15日で固める速読実践講座', price:22800},
+  {id:'sokudoku', g:'soku', name:'15日で固める速読実践講座', meta:'', price:22800},
 ];
 
-// STEP1で見せるジャンル
 const genres = [
   {g:'goi', name:'語彙力（単語・熟語）', tag:'t-goi', tagtext:'語彙',
     desc:'すべての土台。単語・熟語・語彙問題をまとめて固めます。', contents:'英単語 / 英熟語 / 語彙問題実践'},
@@ -519,7 +540,6 @@ const genres = [
     desc:'限られた時間で読み切るための速読力を15日で。', contents:'15日で固める速読実践講座'},
 ];
 
-// 大学別
 const univCourses = [
   {id:'u_nittokomasen', name:'日東駒専（4講）', price:24000},
   {id:'u_sankinkoryu', name:'産近甲龍（4講）', price:24000},
@@ -528,11 +548,10 @@ const univCourses = [
   {id:'u_gmarch', name:'GMARCH（6講）', price:34000},
   {id:'u_chihokoku', name:'地方国公立（5講）', price:29000},
   {id:'u_chuken', name:'中堅国公立（5講）', price:29000},
-  {id:'u_order', name:'あなたの志望校｜全大問解説', price:79800},
+  {id:'u_order', name:'あなたの志望校｜全大問解説', price:128000},
   {id:'u_kyotsu', name:'共通テストR', price:18000},
 ];
 
-// 英検
 const eikenCourses = [
   {id:'ei_3', name:'英検3級 対策', price:19140},
   {id:'ei_p2', name:'英検準2級 対策', price:19140},
@@ -541,61 +560,84 @@ const eikenCourses = [
   {id:'ei_p1', name:'英検準1級 対策', price:19140},
 ];
 
-// 他科目(シート・低単価)
+// 他科目（改定後）
 const otherSubjects = {
   '国語':[
-    {id:'o_gendai', name:'現代文 ロードマップ', price:11800},
-    {id:'o_kobun', name:'古文 ロードマップ', price:11800},
-    {id:'o_kanbun', name:'漢文 ロードマップ', price:9800},
+    {id:'o_gendai', name:'現代文 ロードマップ', price:16800},
+    {id:'o_kobun', name:'古文 ロードマップ', price:16800},
+    {id:'o_kanbun', name:'漢文 ロードマップ', price:14800},
   ],
   '社会':[
-    {id:'o_sekaishi', name:'世界史 ロードマップ', price:12800},
-    {id:'o_sekaishi_s', name:'世界史 正誤問題特化演習', price:9800},
-    {id:'o_nihonshi', name:'日本史 ロードマップ', price:12800},
-    {id:'o_nihonshi_s', name:'日本史 正誤問題特化演習', price:9800},
-    {id:'o_seikei', name:'政治経済 ロードマップ', price:11800},
-    {id:'o_seikei_s', name:'政治経済 正誤問題特化演習', price:8800},
-    {id:'o_chiri', name:'地理 ロードマップ', price:11800},
-    {id:'o_chiri_s', name:'地理 正誤問題特化演習', price:8800},
+    {id:'o_sekaishi', name:'世界史 ロードマップ', price:18800},
+    {id:'o_sekaishi_s', name:'世界史 正誤問題特化演習', price:14800},
+    {id:'o_nihonshi', name:'日本史 ロードマップ', price:18800},
+    {id:'o_nihonshi_s', name:'日本史 正誤問題特化演習', price:14800},
+    {id:'o_seikei', name:'政治経済 ロードマップ', price:16800},
+    {id:'o_seikei_s', name:'政治経済 正誤問題特化演習', price:12800},
+    {id:'o_chiri', name:'地理 ロードマップ', price:16800},
+    {id:'o_chiri_s', name:'地理 正誤問題特化演習', price:12800},
   ],
   '数学':[
-    {id:'o_math1a', name:'数学1A これだけ極めろ問題パック', price:12800},
-    {id:'o_math1a_m', name:'数学1A マーク式演習シート', price:6800},
-    {id:'o_math2bc', name:'数学2BC これだけ極めろ問題パック', price:12800},
-    {id:'o_math2bc_m', name:'数学2BC マーク式演習シート', price:6800},
-    {id:'o_math3', name:'数学3 これだけ極めろ問題パック', price:12800},
-    {id:'o_math3_m', name:'数学3 マーク式演習シート', price:6800},
+    {id:'o_math1a', name:'数学1A これだけ極めろ問題パック', price:16800},
+    {id:'o_math1a_m', name:'数学1A マーク式演習', price:9800},
+    {id:'o_math2bc', name:'数学2BC これだけ極めろ問題パック', price:16800},
+    {id:'o_math2bc_m', name:'数学2BC マーク式演習', price:9800},
+    {id:'o_math3', name:'数学3 これだけ極めろ問題パック', price:16800},
+    {id:'o_math3_m', name:'数学3 マーク式演習', price:9800},
   ],
   '理科':[
-    {id:'o_seibutsuk', name:'生物基礎 これだけ極めろ問題パック', price:10800},
-    {id:'o_seibutsuk_m', name:'生物基礎 マーク式演習シート', price:5800},
-    {id:'o_seibutsu', name:'生物 これだけ極めろ問題パック', price:10800},
-    {id:'o_seibutsu_m', name:'生物 マーク式演習シート', price:5800},
-    {id:'o_kagakuk', name:'化学基礎 これだけ極めろ問題パック', price:10800},
-    {id:'o_kagakuk_m', name:'化学基礎 マーク式演習シート', price:5800},
-    {id:'o_kagaku', name:'化学 これだけ極めろ問題パック', price:10800},
-    {id:'o_kagaku_m', name:'化学 マーク式演習シート', price:5800},
-    {id:'o_butsurik', name:'物理基礎 これだけ極めろ問題パック', price:10800},
-    {id:'o_butsurik_m', name:'物理基礎 マーク式演習シート', price:5800},
-    {id:'o_butsuri', name:'物理 これだけ極めろ問題パック', price:10800},
-    {id:'o_butsuri_m', name:'物理 マーク式演習シート', price:5800},
-    {id:'o_chigakuk', name:'地学基礎 これだけ極めろ問題パック', price:10800},
-    {id:'o_chigakuk_m', name:'地学基礎 マーク式演習シート', price:5800},
+    {id:'o_seibutsuk', name:'生物基礎 これだけ極めろ問題パック', price:16800},
+    {id:'o_seibutsuk_m', name:'生物基礎 マーク式演習', price:9800},
+    {id:'o_seibutsu', name:'生物 これだけ極めろ問題パック', price:16800},
+    {id:'o_seibutsu_m', name:'生物 マーク式演習', price:9800},
+    {id:'o_kagakuk', name:'化学基礎 これだけ極めろ問題パック', price:16800},
+    {id:'o_kagakuk_m', name:'化学基礎 マーク式演習', price:9800},
+    {id:'o_kagaku', name:'化学 これだけ極めろ問題パック', price:16800},
+    {id:'o_kagaku_m', name:'化学 マーク式演習', price:9800},
+    {id:'o_butsurik', name:'物理基礎 これだけ極めろ問題パック', price:16800},
+    {id:'o_butsurik_m', name:'物理基礎 マーク式演習', price:9800},
+    {id:'o_butsuri', name:'物理 これだけ極めろ問題パック', price:16800},
+    {id:'o_butsuri_m', name:'物理 マーク式演習', price:9800},
+    {id:'o_chigakuk', name:'地学基礎 これだけ極めろ問題パック', price:16800},
+    {id:'o_chigakuk_m', name:'地学基礎 マーク式演習', price:9800},
   ],
   'ツール':[
-    {id:'o_kakomon', name:'過去問分析シート', price:8500},
-    {id:'o_gyakusan', name:'合格逆算シート', price:8500},
+    {id:'o_kakomon', name:'過去問分析シート', price:12800},
+    {id:'o_gyakusan', name:'合格逆算シート', price:12800},
   ],
 };
 
-// 環境サブスク
-const envOptions = [
-  {id:'env_jishu', name:'オンライン自習室', price:5980, desc:'集中できる学習環境を online で'},
-  {id:'env_qa', name:'質問・添削サポート', price:10000, desc:'わからないをその場で解決'},
+// ============ 個別サポート（2プラン） ============
+const ENV_TIERS = [
+  {
+    id:'env_std', name:'完全個別サポート', price:34800,
+    tagline:'質問できる相手が、いつも同じ人でいる。',
+    lead:'わからないを溜めないための環境です。質問に答えるのは、あなたを担当するコーチだけ。毎回説明し直す必要がありません。',
+    feats:[
+      {n:'24時間送信できる質問・修正フォーム', d:'時間を気にせず送信。夜でも早朝でも、詰まったその場で出せます。'},
+      {n:'いつでも受けられる個別解説・個別授業', d:'つまずいた単元を、その都度マンツーマンで解きほぐします。'},
+      {n:'オンライン自習室', d:'朝から深夜まで開放。一人で机に向かえない日をつくらせません。'},
+      {n:'担当コーチ制', d:'質問に対応するのは、あなたを担当するコーチだけ。志望校も苦手も、毎回説明し直す必要がありません。'},
+      {n:'週1回の小テスト', d:'毎週の到達度を数値化。自分がいまどこにいるかが、点数で見えます。'},
+      {n:'読解特訓への参加', d:'定期開催の読解特訓に参加できます。実際に手を動かして読む時間を確保します。'},
+    ],
+  },
+  {
+    id:'env_vip', name:'合格設計サポート', price:59800,
+    tagline:'担当コーチと、定期的に設計そのものを見直す。',
+    badge:'定員10名',
+    lead:'完全個別サポートに、個別面談と過去問のフィードバックが加わります。質問に答えるだけでなく、いま何をやるべきかの設計そのものを、担当コーチと一緒に定期的に組み直します。',
+    feats:[
+      {n:'完全個別サポートの全機能', d:'質問フォーム・個別解説・自習室・担当コーチ制・小テスト・読解特訓をすべて含みます。'},
+      {n:'個別面談の実施', d:'担当コーチと1対1で現状を確認し、次の期間の計画を組み直します。'},
+      {n:'過去問の分析フィードバック', d:'解いた過去問を提出すると、失点の原因を分類し、次にやるべきことを返します。'},
+      {n:'設計シートの個別添削', d:'提出した計画シートに、担当コーチが直接コメントを返します。'},
+      {n:'保護者への学習レポート', d:'学習状況・小テストの推移・志望校までの残り点数を、保護者の方にもお届けします。'},
+    ],
+  },
 ];
-const ENV_MONTHS = 6;
 
-// フルパック（英語コア全部 + 特典2シート）※共通R/GMARCHは志望校対策として別途追加
+// ============ パック定義 ============
 const FULL_PACK = {
   id:'p_full', name:'合格設計フルパック', price:248000,
   tagline:'英語で合格に必要な講座を、いちばんお得に。',
@@ -603,22 +645,18 @@ const FULL_PACK = {
   otherIds:['o_kakomon','o_gyakusan'],
 };
 
-// ジャンル → ファミリー正規化
 function genreFamily(g){
   if(g==='bunpo_in'||g==='bunpo_solve') return 'bunpo';
   if(g==='kaishaku_read'||g==='kaishaku_solve') return 'kaishaku';
-  return g; // goi, chobun, lis, soku
+  return g;
 }
 function selectedFamilies(){
   const f=new Set(); state.genres.forEach(g=>f.add(genreFamily(g))); return f;
 }
-// ファミリー → 含まれる元ジャンル
 const FAMILY_GENRES = {
   goi:['goi'], bunpo:['bunpo_in','bunpo_solve'], kaishaku:['kaishaku_read','kaishaku_solve'],
   chobun:['chobun'], lis:['lis'], soku:['soku'],
 };
-
-// 単一ファミリーパック
 const FAM_PACK = {
   goi:      {id:'p_goi', name:'語彙 完全パック', price:11800, tagline:'単語・熟語・語彙問題をまとめて。', fams:['goi']},
   bunpo:    {id:'p_bunpo', name:'英文法 完全パック', price:82000, tagline:'インプット100テーマ＋演習を丸ごと。', fams:['bunpo']},
@@ -627,7 +665,6 @@ const FAM_PACK = {
   lis:      {id:'p_lis', name:'リスニング パック', price:19800, tagline:'発音法則から基礎実践まで。', fams:['lis']},
   soku:     {id:'p_soku', name:'速読 実践講座', price:16800, tagline:'15日で速読力を固める。', fams:['soku']},
 };
-// 読解系の組み合わせパック（大きい組み合わせから適用）
 const COMBO_PACK = [
   {key:['goi','bunpo','kaishaku','chobun'], id:'p_gokaku', name:'合格設計パック', price:179800, tagline:'語彙・文法・解釈・長文。合格の中核を、いちばんお得に。', fams:['goi','bunpo','kaishaku','chobun']},
   {key:['bunpo','kaishaku','chobun'], id:'p_dokkai_kansei', name:'読解完成パック', price:168000, tagline:'文法・解釈・長文で読解を完成。', fams:['bunpo','kaishaku','chobun']},
@@ -638,10 +675,8 @@ const COMBO_PACK = [
 const DOKKAI_FAMS=['bunpo','kaishaku','chobun'];
 const ALL_EN_FAMS=['goi','bunpo','kaishaku','chobun','lis','soku'];
 
-// 選んだジャンルだけのパック。リスニング・速読を選んでいないのにフルへ入れない。
 function decidePacks(){ return decidePacksFor(selectedFamilies()); }
 function decidePacksFor(fams){
-  // フルパックは、リスニングも速読も含めて英語を全部選んだときだけ
   if(ALL_EN_FAMS.every(f=>fams.has(f))) return {type:'full', packs:[FULL_PACK]};
   const result=[];
   const remaining=new Set(fams);
@@ -662,17 +697,13 @@ const svg='<svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke
 function yen(n){return n.toLocaleString('ja-JP');}
 function C(id){return courses.find(x=>x.id===id);}
 function allOtherFlat(){ return Object.values(otherSubjects).flat(); }
-function findAny(id){
-  return C(id) || univCourses.find(x=>x.id===id) || eikenCourses.find(x=>x.id===id) || allOtherFlat().find(x=>x.id===id);
-}
-// パック(単品/コンボ/フル)に含まれる講座idリスト
+
 function packCoursesOf(pack){
   if(pack.id==='p_full') return courses.map(c=>c.id);
   const ids=[];
   (pack.fams||[]).forEach(f=>{ (FAMILY_GENRES[f]||[]).forEach(g=>{ courses.filter(c=>c.g===g).forEach(c=>ids.push(c.id)); }); });
   return ids;
 }
-// パックの単品合計(お得表示用)
 function packSingleTotal(pack){
   let sum=0; packCoursesOf(pack).forEach(id=>{const c=C(id); if(c)sum+=c.price;});
   if(pack.id==='p_full'){
@@ -681,7 +712,6 @@ function packSingleTotal(pack){
   }
   return sum;
 }
-// 外した講座の減額は「パック内価格」（まとめ割引後）。後から単品で足すと定価になり、差分だけ高くなる。
 function packRemoveCredit(pack, removedSet){
   const owned=new Set(packCoursesOf(pack));
   let list=0;
@@ -703,62 +733,49 @@ function removedListTotal(){
 
 const state = {
   step:0,
-  grade:null,               // 学年
-  today:null, exam:null,    // 日付
-  monthsLeft:null,          // 受験までの月数
-  timeMode:null,            // 'rich' | 'mid' | 'poor'
-  genres:new Set(),         // 選択したジャンル
+  grade:null, today:null, exam:null,
+  monthsLeft:null, timeMode:null,
+  genres:new Set(),
   reco:null,
-  removed:new Set(),        // パックから外した講座id
-  extraCore:new Set(),       // パックに入っていない英語講座を単品追加
+  removed:new Set(),
+  extraCore:new Set(),
   extraUniv:new Set(),
   extraEiken:new Set(),
   extraOther:new Set(),
-  env:new Set(),
+  envTier:null,
   activeSubjTab:'国語',
 };
 
-// ============ STEP0: プロフィール ============
+// ============ STEP0 ============
 const GRADES=['高1','高2','高3','既卒・浪人','その他'];
 function renderGradeTabs(){
   const el=document.getElementById('gradeTabs');
   el.innerHTML=GRADES.map(g=>
     '<button class="grade-tab'+(state.grade===g?' on':'')+'" onclick="selectGrade(\''+g+'\')">'+g+'</button>').join('');
 }
-// 学年から受験本番日(次の1月末)を推定
 function estimateExamDate(grade){
   const today=state.today?new Date(state.today):new Date();
   const y=today.getFullYear();
-  const m=today.getMonth(); // 0=1月
-  // 「直近の受験(1月末)」の年を求める: 2月以降なら翌年の1月、1月なら当年
-  let baseYear = (m>=1) ? y+1 : y; // 2月(idx1)以降は翌年1月末が直近
+  const m=today.getMonth();
+  let baseYear = (m>=1) ? y+1 : y;
   let addYears=0;
   if(grade==='高1') addYears=2;
   else if(grade==='高2') addYears=1;
   else if(grade==='高3') addYears=0;
   else if(grade==='既卒・浪人') addYears=0;
-  else return null; // その他は自動入力しない
-  const examYear=baseYear+addYears;
-  // 1月末=1月31日
-  const iso=(examYear)+'-01-31';
-  return iso;
+  else return null;
+  return (baseYear+addYears)+'-01-31';
 }
 function selectGrade(g){
   state.grade=g;
   renderGradeTabs();
-  // 本番日を自動セット(その他はクリアして手入力を促す)
   const est=estimateExamDate(g);
-  if(est){ document.getElementById('pfExam').value=est; }
-  else { document.getElementById('pfExam').value=''; }
+  document.getElementById('pfExam').value = est ? est : '';
   onProfileChange();
 }
-
 function monthsBetween(d1,d2){
   const a=new Date(d1), b=new Date(d2);
   if(isNaN(a)||isNaN(b)) return null;
-  let m=(b.getFullYear()-a.getFullYear())*12+(b.getMonth()-a.getMonth());
-  // 日数の端数を月に反映
-  if(b.getDate()>=a.getDate()) m+=0; else m-=0;
   const days=(b-a)/(1000*60*60*24);
   return days>0 ? Math.max(0, Math.round(days/30.4)) : 0;
 }
@@ -784,7 +801,6 @@ function onProfileChange(){
       setProfileNext(true);
       return;
     }
-    // time判定
     let mode, msg, cls;
     if(m>=12){
       mode='rich'; cls='rich';
@@ -794,9 +810,10 @@ function onProfileChange(){
       msg='合格に必要な英語を、計画的に進めれば十分間に合う時期です。やるべきことを絞って、着実に積み上げましょう。';
     } else {
       mode='poor'; cls='poor';
-      msg='本番まで残りわずか。回り道している時間はありません。合格から逆算して「やるべきことだけ」を、この一つに凝縮してお届けします。最短ルートで仕上げましょう。';
+      msg='本番まで残りわずか。回り道している時間はありません。いま必要なのは「量を増やすこと」ではなく、「何を捨てるかを決めること」です。合格から逆算して、やるべきことだけに絞り込みましょう。';
     }
     state.timeMode=mode;
+    // 一括プランの初期値を残り月数に合わせる
     res.className='pf-result show '+cls;
     res.innerHTML='<div class="pf-result-months">受験本番まで、あと<b>'+m+'</b>ヶ月</div><div class="pf-result-msg">'+msg+'</div>';
     setProfileNext(false);
@@ -807,7 +824,7 @@ function onProfileChange(){
   }
 }
 
-// ============ STEP1: ジャンル選択 ============
+// ============ STEP1 ============
 function renderFlow(){
   const flow=document.getElementById('flow');
   flow.innerHTML='<div class="flow-line"></div>';
@@ -832,11 +849,7 @@ function toggleGenre(g){
   renderFlow(); updateSummary();
 }
 
-// ============ おすすめ決定 ============
-// decidePacks() は上部で定義済み。state.reco = {type, packs:[...]}
-
-// ============ STEP2 フェーズA: 確認 ============
-// 選択ジャンルに含まれる全講座（削る前の候補）
+// ============ STEP2 確認 ============
 function candidateCourseIds(){
   const ids=[];
   state.genres.forEach(g=>{ courses.filter(c=>c.g===g).forEach(c=>ids.push(c.id)); });
@@ -845,7 +858,6 @@ function candidateCourseIds(){
 function renderConfirm(){
   const area=document.getElementById('confirmArea');
   const ids=candidateCourseIds();
-  // ジャンルごとにまとめる
   const byGenre={};
   ids.forEach(id=>{const c=C(id); if(!c)return;(byGenre[c.g]=byGenre[c.g]||[]).push(c);});
   let html='<div class="confirm-note">▸ ここでは金額はまだ気にしなくてOK。「合格に必要かどうか」だけで判断してください。あとでいちばんお得な形にまとめます。</div>';
@@ -869,11 +881,14 @@ function toggleConfirmItem(id){
   if(state.removed.has(id)) state.removed.delete(id); else state.removed.add(id);
   renderConfirm();
 }
+function renderAllResult(){
+  renderReco(); renderUpsell(); renderAlaCarte();
+  renderUniv(); renderEiken(); renderSubjTabs(); renderOther();
+}
 function lockPlan(){
-  // 決定 → おすすめ確定 → 結果フェーズへ
   state.reco=decidePacks();
   pruneExtraCore();
-  renderReco(); renderUpsell(); renderAlaCarte(); renderUniv(); renderEiken(); renderSubjTabs(); renderOther();
+  renderAllResult();
   document.getElementById('phaseConfirm').style.display='none';
   document.getElementById('phaseResult').style.display='block';
   window.scrollTo({top:0, behavior:'smooth'});
@@ -887,7 +902,7 @@ function backToConfirm(){
   updateSummary();
 }
 
-// ============ STEP2 フェーズB: 結果 ============
+// ============ STEP2 結果 ============
 function renderReco(){
   const area=document.getElementById('recoArea');
   const reco=state.reco;
@@ -895,19 +910,14 @@ function renderReco(){
 
   const isFull=(reco.type==='full');
   const totalPackPrice=reco.packs.reduce((s,p)=>s+p.price,0);
-  // 単品合計(お得表示)
   let origTotal=0; reco.packs.forEach(p=>origTotal+=packSingleTotal(p));
   const save=origTotal-totalPackPrice;
-
-  // 外した分（パック内価格で減額。単品定価ではない）
   const credit=totalRemoveCredit();
   const removedCount=state.removed.size;
   const effective=totalPackPrice-credit;
 
-  // ヒーロー(複数パックなら「まとめ」表示)
   const mainName = reco.packs.length===1 ? reco.packs[0].name : 'あなた専用プラン（'+reco.packs.length+'パック）';
   const mainTag = reco.packs.length===1 ? reco.packs[0].tagline : reco.packs.map(p=>p.name).join(' ＋ ');
-  // 月単価(time-rich/midのみ表示。poorは出さない)
   let perMonthHtml='';
   const shownPrice=removedCount>0?effective:totalPackPrice;
   if((state.timeMode==='rich'||state.timeMode==='mid') && state.monthsLeft && state.monthsLeft>0){
@@ -921,7 +931,6 @@ function renderReco(){
     (save>0&&removedCount===0?'<span class="reco-orig">¥'+yen(origTotal)+'</span><span class="reco-save">'+yen(save)+'円お得</span>':'')+'</div>'+
     perMonthHtml+'</div>';
 
-  // 中身: パックごとにセクション表示
   let comps='<div class="breakdown"><div class="breakdown-title">プランの中身</div>'+
     '<div class="breakdown-hint">不要なものは外せます。ただし外した講座を後から単品で足すと定価になり、今パックに残すより少し高くなります。</div>';
   reco.packs.forEach(p=>{
@@ -940,12 +949,11 @@ function renderReco(){
           '<button class="comp-remove" onclick="togglePackItem(\''+c.id+'\')">'+(rm?'戻す':'外す')+'</button></div>';
       });
     });
-    // フル特典
     if(p.id==='p_full'){
       comps+='<div class="comp-group">パック特典（付属）</div>';
-      (FULL_PACK.univIds||[]).forEach(id=>{const u=univCourses.find(x=>x.id===id);
+      (FULL_PACK.univIds||[]).forEach(id=>{const u=univCourses.find(x=>x.id===id); if(!u)return;
         comps+='<div class="comp"><div class="comp-toggle" style="background:var(--gold);border-color:var(--gold)">'+svg+'</div><div class="comp-body"><div class="comp-name">'+u.name+'</div></div><div class="comp-price">¥'+yen(u.price)+'</div><span class="comp-fixed">付属</span></div>';});
-      (FULL_PACK.otherIds||[]).forEach(id=>{const o=allOtherFlat().find(x=>x.id===id);
+      (FULL_PACK.otherIds||[]).forEach(id=>{const o=allOtherFlat().find(x=>x.id===id); if(!o)return;
         comps+='<div class="comp"><div class="comp-toggle" style="background:var(--gold);border-color:var(--gold)">'+svg+'</div><div class="comp-body"><div class="comp-name">'+o.name+'</div></div><div class="comp-price">¥'+yen(o.price)+'</div><span class="comp-fixed">付属</span></div>';});
     }
     comps+='</div>';
@@ -964,31 +972,23 @@ function togglePackItem(id){ if(state.removed.has(id))state.removed.delete(id); 
 function restorePack(){ state.removed.clear(); renderReco(); renderUpsell(); updateSummary(); showToast('元に戻しました'); }
 
 // ============ アップセル ============
-// 次に足すべきファミリーと理由（読解の階段 + フル）
 function nextUpsell(){
   const fams=selectedFamilies();
   const core=[...fams].filter(f=>['goi','bunpo','kaishaku','chobun','lis'].includes(f));
   const has=f=>fams.has(f);
-  // すでにフルなら提案なし
   if(state.reco && state.reco.type==='full') return null;
-
-  // 読解の階段を優先
   const dokkai=DOKKAI_FAMS.filter(f=>fams.has(f));
-  // 文法のみ → 解釈を足して読解基礎
   if(dokkai.length===1){
     if(has('bunpo')) return {add:'kaishaku', addGenres:['kaishaku_read','kaishaku_solve'], reason:'文法の知識を「実際に英文を読む力」に変えるのが解釈です。文法だけだと知識止まりになりがち。解釈まで入れると、一気に長文が読めるようになります。'};
     if(has('kaishaku')) return {add:'chobun', addGenres:['chobun'], reason:'解釈で身につけた読み方を、長文で「入試レベル」に仕上げましょう。解釈だけだと実戦経験が足りません。長文まで入れて得点力へ。'};
     if(has('chobun')) return {add:'kaishaku', addGenres:['kaishaku_read','kaishaku_solve'], reason:'長文が読めない原因の多くは「一文が正確に読めない」こと。解釈を足すと、長文の精度が一段上がります。'};
   }
-  // 読解2本柱 → 3本目を足して読解完成
   if(dokkai.length===2){
     if(!has('chobun')) return {add:'chobun', addGenres:['chobun'], reason:'文法と解釈で土台はバッチリ。あとは長文で実戦です。長文まで入れれば、読解に必要なものが完成します。'};
     if(!has('bunpo')) return {add:'bunpo', addGenres:['bunpo_in','bunpo_solve'], reason:'解釈と長文はいい選択。ただ、文法の抜けがあると失点します。文法も入れて土台から固めると盤石です。'};
     if(!has('kaishaku')) return {add:'kaishaku', addGenres:['kaishaku_read','kaishaku_solve'], reason:'文法と長文の間をつなぐのが「解釈」です。ここが抜けると長文で伸び悩みがち。解釈を足すと読解が完成します。'};
   }
-  // 語彙のみ → 文法へ
   if(core.length===1 && has('goi')) return {add:'bunpo', addGenres:['bunpo_in','bunpo_solve'], reason:'語彙が固まったら、次は文法です。単語が読めても文の構造がわからないと長文は解けません。文法まで入れて「読める土台」を作りましょう。'};
-  // 読解の中核が揃ったら、選んでいないものだけ提案（フルに勝手に入れない）
   if(dokkai.length===3){
     const wouldComplete=add=>{ const f=new Set(fams); f.add(add); return ALL_EN_FAMS.every(x=>f.has(x)); };
     if(!has('goi')) return {add:'goi', addGenres:['goi'], reason:'読解の3本柱は揃っています。語彙を足すと、長文で詰まらなくなります。合格の中核が「合格設計パック」にまとまります。'};
@@ -1003,14 +1003,12 @@ function nextUpsell(){
   }
   return null;
 }
-
 function renderUpsell(){
   const area=document.getElementById('upsellArea');
   const reco=state.reco;
   if(!reco){ area.innerHTML=''; return; }
   const up=nextUpsell();
   if(!up){ area.innerHTML=''; return; }
-
   const nowTotal=reco.packs.reduce((s,p)=>s+p.price,0);
 
   if(up.toFull){
@@ -1027,11 +1025,8 @@ function renderUpsell(){
       '<button class="upsell-btn" onclick="upgradeToFull()">フルパックにする'+(diff>0?'（+¥'+yen(diff)+'）':'')+'</button></div>';
     return;
   }
-
-  // ファミリー追加 → 追加後のプランを計算
   const addFamNames={goi:'語彙',bunpo:'文法',kaishaku:'英文解釈',chobun:'長文読解',lis:'リスニング',soku:'速読'};
   const addName=addFamNames[up.add]||'';
-  // 追加後の合計を試算
   const futureFams=new Set(selectedFamilies()); futureFams.add(up.add);
   const futurePacks=decidePacksFor(futureFams);
   const futureTotal=futurePacks.packs.reduce((s,p)=>s+p.price,0);
@@ -1089,13 +1084,12 @@ function toggleExtraCore(id){
   if(state.extraCore.has(id)) state.extraCore.delete(id); else state.extraCore.add(id);
   renderAlaCarte(); updateSummary();
 }
-
 function upgradeToFull(){
   ['goi','bunpo_in','bunpo_solve','kaishaku_read','kaishaku_solve','chobun','lis','soku'].forEach(g=>state.genres.add(g));
   state.removed.clear();
   state.reco=decidePacks();
   pruneExtraCore();
-  renderReco(); renderUpsell(); renderAlaCarte(); renderUniv(); renderEiken(); renderOther();
+  renderAllResult();
   updateSummary(); showToast('フルパックにアップグレードしました');
   window.scrollTo({top:0, behavior:'smooth'});
 }
@@ -1104,7 +1098,7 @@ function upgradeAdd(genresStr){
   state.removed.clear();
   state.reco=decidePacks();
   pruneExtraCore();
-  renderReco(); renderUpsell(); renderAlaCarte(); renderUniv(); renderEiken(); renderOther();
+  renderAllResult();
   updateSummary(); showToast('プランをアップグレードしました');
   window.scrollTo({top:0, behavior:'smooth'});
 }
@@ -1146,20 +1140,58 @@ function toggleU(id){ if(state.extraUniv.has(id))state.extraUniv.delete(id); els
 function toggleE(id){ if(state.extraEiken.has(id))state.extraEiken.delete(id); else state.extraEiken.add(id); renderEiken(); updateSummary(); }
 function toggleO(id){ if(state.extraOther.has(id))state.extraOther.delete(id); else state.extraOther.add(id); renderOther(); updateSummary(); }
 
-function renderEnv(){
-  const el=document.getElementById('envOpts');
-  el.innerHTML=envOptions.map(e=>{
-    const on=state.env.has(e.id);
-    return '<div class="env-opt'+(on?' on':'')+'" onclick="toggleEnv(\''+e.id+'\')"><div class="cbox">'+svg+'</div>'+
-      '<div class="env-opt-body"><div class="env-opt-name">'+e.name+'</div><div class="env-opt-desc">'+e.desc+'</div></div>'+
-      '<div class="env-opt-price">¥'+yen(e.price)+'<span class="u">/月</span></div></div>';
-  }).join('');
+// ============ 個別サポート（2プラン） ============
+function envTierObj(){ return ENV_TIERS.find(t=>t.id===state.envTier) || null; }
+function envCalc(){
+  const t=envTierObj();
+  if(!t) return {monthly:0, name:'', tier:null};
+  return {monthly:t.price, name:t.name, tier:t.id};
 }
-function toggleEnv(id){ if(state.env.has(id))state.env.delete(id); else state.env.add(id); renderEnv(); updateSummary(); }
+function renderEnv(){
+  const html = ENV_TIERS.map(t=>{
+    const on=(state.envTier===t.id);
+    const feats=t.feats.map(f=>
+      '<div class="env-feat"><div class="env-feat-ic">'+svg+'</div><div class="env-feat-b">'+
+      '<div class="env-feat-n">'+f.n+'</div><div class="env-feat-d">'+f.d+'</div></div></div>').join('');
+    return '<div class="tier'+(on?' on':'')+'">'+
+      '<div class="tier-head">'+
+        '<div class="tier-h-l"><div class="tier-name">'+t.name+
+          (t.badge?'<span class="tier-badge">'+t.badge+'</span>':'')+'</div>'+
+        '<div class="tier-tag">'+t.tagline+'</div></div>'+
+        '<div class="tier-price">¥'+yen(t.price)+'<span class="u">/月</span></div>'+
+      '</div>'+
+      '<div class="tier-body">'+
+      (t.lead?'<div class="tier-lead">'+t.lead+'</div>':'')+
+      '<div class="env-feats">'+feats+'</div>'+
+      (t.compare?'<div class="tier-compare">'+t.compare+'</div>':'')+
+      '<button class="tier-btn'+(on?' on':'')+'" onclick="setEnvTier(\''+t.id+'\')">'+
+        (on?'選択中':'このプランにする')+'</button></div></div>';
+  }).join('');
+  const none='<div class="tier-none'+(state.envTier===null?' on':'')+'" onclick="setEnvTier(null)">'+
+    '<div class="cbox">'+svg+'</div><div>個別サポートはつけない（講座のみ）</div></div>';
+  document.getElementById('envTiers').innerHTML = html + none;
+
+  const mo=document.getElementById('envMonths');
+  if(!state.envTier){ mo.className='env-months'; mo.innerHTML=''; return; }
+  mo.className='env-months show';
+  const e=envCalc();
+  let note='';
+  if(state.monthsLeft) note='<div class="env-note">受験本番まで、あと'+state.monthsLeft+'ヶ月。ご利用は月ごとで、必要な期間だけお続けいただけます。</div>';
+  const ref='';
+  mo.innerHTML='<div class="env-months-label">'+e.name+'</div>'+note+
+    '<div class="env-total"><div class="env-total-l">月額（毎月のお支払い）</div>'+
+    '<div class="env-total-r"><div class="env-total-v">¥'+yen(e.monthly)+'<span style="font-size:13px;font-weight:600"> /月</span></div></div></div>'+ref;
+}
+function setEnvTier(id){
+  state.envTier = (state.envTier===id) ? null : id;
+  renderEnv(); updateSummary();
+  const t=envTierObj();
+  if(t) showToast(t.name+'を選択しました');
+}
 
 // ============ 集計 ============
 function calc(){
-  let oneTime=0, monthly=0; const buyLines=[], envLines=[];
+  let oneTime=0; const buyLines=[];
   const reco=state.reco;
   if(reco&&reco.packs&&reco.packs.length){
     const credit=totalRemoveCredit();
@@ -1173,15 +1205,21 @@ function calc(){
   state.extraUniv.forEach(id=>{const u=univCourses.find(x=>x.id===id); if(u){oneTime+=u.price; buyLines.push({name:u.name, price:u.price, qty:1});}});
   state.extraEiken.forEach(id=>{const e=eikenCourses.find(x=>x.id===id); if(e){oneTime+=e.price; buyLines.push({name:e.name, price:e.price, qty:1});}});
   state.extraOther.forEach(id=>{const o=allOtherFlat().find(x=>x.id===id); if(o){oneTime+=o.price; buyLines.push({name:o.name, price:o.price, qty:1});}});
-  state.env.forEach(id=>{const e=envOptions.find(x=>x.id===id); if(e){monthly+=e.price; envLines.push({name:e.name, price:e.price});}});
-  return {oneTime, monthly, buyLines, envLines};
+
+  const e=envCalc();
+  return {oneTime, buyLines, env:e, grand:oneTime};
 }
 function updateSummary(){
-  const {oneTime, monthly}=calc();
-  document.getElementById('gTotal').textContent=yen(oneTime);
+  const r=calc();
+  document.getElementById('gTotal').textContent=yen(r.grand);
   const sub=document.getElementById('gSub');
-  if(oneTime===0&&monthly===0){ sub.textContent=state.step===0?'まずは必要なものを選んでください':'項目を選択してください'; }
-  else{ let t='講義 '+yen(oneTime)+'円'; if(monthly>0)t+='　＋　環境 月額 '+yen(monthly)+'円/月'; sub.textContent=t; }
+  if(r.grand===0 && !r.env.monthly){ sub.textContent=state.step===0?'まずは必要なものを選んでください':'項目を選択してください'; }
+  else{
+    let parts=[];
+    if(r.oneTime>0) parts.push('講座 '+yen(r.oneTime)+'円');
+    if(r.env.monthly>0) parts.push(r.env.name+' 月額'+yen(r.env.monthly)+'円');
+    sub.textContent=parts.join('　＋　');
+  }
 }
 
 // ============ ステップ ============
@@ -1207,13 +1245,11 @@ function goStep(n){
       tab.classList.toggle('done', i<n);
     });
     window.scrollTo({top:0, behavior:'smooth'});
-    const showDoc=(n===2);
     const catBtn=document.getElementById('sumDocBtnCatalog');
-    if(catBtn) catBtn.style.display=showDoc?'':'none';
+    if(catBtn) catBtn.style.display=(n===2)?'':'none';
     updateSummary();
     return;
   }
-  // STEP2(ジャンル選択→プラン)に入る = n===2 に入る時、確認フェーズから
   if(n===2){
     state.removed.clear();
     renderConfirm();
@@ -1238,7 +1274,8 @@ function goStep(n){
 function resetAll(){
   state.grade=null; state.today=null; state.exam=null; state.monthsLeft=null; state.timeMode=null;
   state.genres.clear(); state.removed.clear(); state.extraCore.clear(); state.extraUniv.clear();
-  state.extraEiken.clear(); state.extraOther.clear(); state.env.clear(); state.reco=null;
+  state.extraEiken.clear(); state.extraOther.clear(); state.reco=null;
+  state.envTier=null;
   document.getElementById('pfToday').value=''; document.getElementById('pfExam').value='';
   document.getElementById('pfResult').className='pf-result';
   renderGradeTabs(); renderFlow(); goStep(0);
@@ -1246,7 +1283,7 @@ function resetAll(){
   updateSummary(); showToast('入力をクリアしました');
 }
 
-// ============ 結果 / 見積書 ============
+// ============ 見積書 ============
 const IS_SALES = window.PLAN_MODE==='sales';
 const IS_CATALOG = window.PLAN_MODE==='catalog';
 function fmtDate(d){ if(!d)return''; const dt=new Date(d); if(isNaN(dt))return''; return dt.getFullYear()+'年'+(dt.getMonth()+1)+'月'+dt.getDate()+'日'; }
@@ -1257,8 +1294,8 @@ function issueDate(){
   return state.today || iso(new Date());
 }
 function openDoc(){
-  const {oneTime, monthly}=calc();
-  if(oneTime===0&&monthly===0){ showToast('項目を選択してください'); return; }
+  const r=calc();
+  if(r.grand===0 && !r.env.monthly){ showToast('項目を選択してください'); return; }
   if(IS_SALES){
     const el=document.getElementById('iDate');
     if(el && !el.value) el.value=issueDate();
@@ -1267,21 +1304,23 @@ function openDoc(){
 }
 function closeDoc(){ document.getElementById('qo').classList.remove('open'); document.body.style.overflow=''; }
 function buildDocRows(){
-  const {oneTime, monthly, buyLines, envLines}=calc();
-  let rows='<tr class="sect"><td colspan="3">講座一覧</td></tr>';
-  buyLines.forEach(l=>{ rows+='<tr><td>'+l.name+'</td><td class="num">'+l.qty+'</td><td class="num">¥'+yen(l.price)+'</td></tr>'; });
-  rows+='<tr class="dt-sub"><td>全講義 合計（税込）</td><td class="num"></td><td class="num">¥'+yen(oneTime)+'</td></tr>';
-  let envBlock='';
-  if(envLines.length){
-    let el=''; envLines.forEach(l=>{ el+='<div class="d-env-line"><span>'+l.name+'</span><span>¥'+yen(l.price)+' /月</span></div>'; });
-    envBlock='<div class="d-env"><div class="d-env-title">学習環境サポート <span class="d-env-badge">月額・毎月</span></div>'+el+
-      '<div class="d-env-total"><span>月額 合計</span><span>¥'+yen(monthly)+' /月</span></div>'+
-      '<div style="font-size:10.5px;color:var(--muted);margin-top:8px">※ ご利用月数分が毎月発生します。受験まで必要な期間だけご利用いただけます。</div></div>';
+  const r=calc();
+  let rows='';
+  if(r.buyLines.length){
+    rows+='<tr class="sect"><td colspan="3">講座</td></tr>';
+    r.buyLines.forEach(l=>{ rows+='<tr><td>'+l.name+'</td><td class="num">'+l.qty+'</td><td class="num">¥'+yen(l.price)+'</td></tr>'; });
   }
+  rows+='<tr class="dt-sub"><td>合計（税込）</td><td class="num"></td><td class="num">¥'+yen(r.grand)+'</td></tr>';
   const table='<table class="dt"><thead><tr><th>項目</th><th class="num">数量</th><th class="num">金額</th></tr></thead><tbody>'+rows+'</tbody></table>';
-  const total='<div class="d-total"><div class="d-total-label">全講義 合計金額（税込）</div><div class="d-total-val"><span class="yen">¥</span>'+yen(oneTime)+'</div></div>'+
-    (monthly>0?'<div class="d-oneshot-note">＋ 学習環境の月額 ¥'+yen(monthly)+' /月（別途）</div>':'<div style="height:12px"></div>');
-  return {oneTime, monthly, table, total, envBlock};
+  let envBlock='';
+  if(r.env.monthly>0){
+    envBlock='<div class="d-env"><div class="d-env-title">'+r.env.name+' <span class="d-env-badge">月額・毎月</span></div>'+
+      '<div class="d-env-line"><span>月額</span><span>¥'+yen(r.env.monthly)+' /月</span></div>'+
+      '<div style="font-size:10.5px;color:var(--muted);margin-top:8px">※ ご利用月数分が毎月発生します。必要な期間だけご利用いただけます。</div></div>';
+  }
+  const total='<div class="d-total"><div class="d-total-label">講座 合計金額（税込）</div><div class="d-total-val"><span class="yen">¥</span>'+yen(r.grand)+'</div></div>'+
+    (r.env.monthly>0?'<div class="d-oneshot-note">＋ '+r.env.name+' 月額 ¥'+yen(r.env.monthly)+' /月（別途）</div>':'<div style="height:12px"></div>');
+  return {r, table, total, envBlock};
 }
 function buildDoc(){
   const {table, total, envBlock}=buildDocRows();
@@ -1296,7 +1335,7 @@ function buildDoc(){
       '<div><span class="d-client">'+(name||'　')+'<span class="sfx">様</span></span></div>'+
       '<div class="d-intro">この度はTHINKINGをご検討いただき、誠にありがとうございます。下記の通りお見積もり申し上げます。</div>'+
       total+table+envBlock+
-      '<div class="d-foot"><div class="d-notes">※ 表示価格はすべて税込です。<br>※ 学習環境（月額）は、ご利用月数分が毎月発生します。<br>※ お支払い方法につきましては、別途ご案内いたします。</div>'+
+      '<div class="d-foot"><div class="d-notes">※ 表示価格はすべて税込です。<br>※ 個別サポートは月額制です。ご利用月数分が毎月発生します。<br>※ お支払い方法につきましては、別途ご案内いたします。</div>'+
         '<div class="d-issuer"><div class="nm">学部別合格設計塾 THINKING</div>合同会社ARC<br>〒180-0022<br>東京都武蔵野市境2-2-23<br>武蔵境ペペロッソ3F</div></div>';
   } else {
     html=
@@ -1306,7 +1345,7 @@ function buildDoc(){
         ?'選んだ講座の合計です。必要なものだけ、単品の価格で積み上げています。'
         :'いまのあなたに合わせて組んだプランです。必要なものだけに絞った内容と、合計金額を確認できます。')+'</div>'+
       total+table+envBlock+
-      '<div class="d-foot"><div class="d-notes">※ 表示価格はすべて税込です。<br>※ 学習環境（月額）は、ご利用月数分が毎月発生します。<br>※ この画面はシミュレーション結果です。ご不明点はスタッフまでお気軽にご相談ください。</div>'+
+      '<div class="d-foot"><div class="d-notes">※ 表示価格はすべて税込です。<br>※ 個別サポートは月額制です。ご利用月数分が毎月発生します。<br>※ この画面はシミュレーション結果です。ご不明点はスタッフまでお気軽にご相談ください。</div>'+
         '<div class="d-issuer"><div class="nm">学部別合格設計塾 THINKING</div></div></div>';
   }
   document.getElementById('doc').innerHTML=html;
@@ -1316,7 +1355,6 @@ function showToast(msg){ const t=document.getElementById('toast'); t.textContent
 // ============ 初期化 ============
 (function init(){
   renderGradeTabs();
-  // 今日の日付をデフォルト入力
   const iso=d=>d.toISOString().slice(0,10);
   document.getElementById('pfToday').value=iso(new Date());
   state.today=iso(new Date());

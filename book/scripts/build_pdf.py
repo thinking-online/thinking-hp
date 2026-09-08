@@ -234,7 +234,7 @@ th { background: #f4f4f4; }
 .newpage { page-break-before: always; }
 .pagebreak { page-break-before: always; height: 0; }
 h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
-.front p { font-size: 10.2pt; line-height: 1.9; margin: 0 0 1.05em 0; }
+.front p { font-size: 9.8pt; line-height: 1.85; margin: 0 0 .95em 0; }
 .front .indent { font-size: 11pt; line-height: 2.0; }
 .lbl { font-size: 7.3pt; letter-spacing: .16em; color: #9a9a9a; margin: .72em 0 .22em 0; page-break-after: avoid; }
 .qtext { font-size: 12.5pt; line-height: 1.55; margin: 0 0 1em 0; }

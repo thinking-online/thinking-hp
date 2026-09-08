@@ -158,7 +158,22 @@ for c,(a,b) in CH.items():
             if w in laws[n]: subj.add(w)
     if len(subj) < 3: bad("科目", f"第{c}章に出てくる科目が {len(subj)}種類（3種類以上にする）")
 
-print(f"検査項目 20 / 不合格 {len(ng)} 件")
+
+# 21 生徒の言葉　はじめにの7つと、各章扉の1行
+VOICE = {1:"「何時間やればいいんですか」",2:"「どの参考書がいいですか」",
+         3:"「わからないところが、わからないんです」",4:"「暗記が苦手なんです」",
+         5:"「解説を読んだらわかるのに、テストだと解けない」",
+         6:"「解き直したのに、また同じところを間違えた」",
+         7:"「家に帰ると、やる気が出ないんです」"}
+haj = open(f"{M}/はじめに.md", encoding="utf-8").read()
+for c,v in VOICE.items():
+    if v not in haj: bad("生の声", f"はじめに に {v} がない")
+    f = f"{M}/第1章.md" if c == 1 else f"{M}/第{c}章_扉.md"
+    if v not in open(f, encoding="utf-8").read():
+        bad("生の声", f"第{c}章の扉に {v} がない")
+if "答えは同じ1つ" not in haj: bad("生の声", "はじめに に「7つとも、答えは同じ1つ」の引きがない")
+
+print(f"検査項目 21 / 不合格 {len(ng)} 件")
 cat = {}
 for c,m in ng: cat.setdefault(c, []).append(m)
 for c in cat:

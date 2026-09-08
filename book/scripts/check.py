@@ -109,7 +109,19 @@ if len(re.findall(r'　\s*\d+　□', yaranai)) != 45:
 matome = open(f"{M}/まとめ.md", encoding="utf-8").read()
 if "45の分かれ道" not in matome: bad("販売", "まとめに「45の分かれ道」がない（表紙の約束の3回目の回収）")
 hajime = open(f"{M}/はじめに.md", encoding="utf-8").read()
-if "1分も増やしません" not in hajime: bad("販売", "帯の「勉強時間は、1分も増やしません」が本文で回収されていない")
+yomumae = open(f"{M}/読む前に.md", encoding="utf-8").read()
+if "1分も増やしません" not in hajime + yomumae:
+    bad("販売", "帯の「勉強時間は、1分も増やしません」が本文で回収されていない")
+# 24 導入　書店で最初に読まれる4ページ。責めないこと、才能を否定すること、
+#        バケツで「増やす」を止めること、タイトルの「やらない」を宣言すること
+for k, msg in [("あなたのせいではありません", "読者を責めない一文がない"),
+               ("バケツ", "バケツの問いがない"),
+               ("絶対にやらないこと", "タイトルの約束が宣言されていない"),
+               ("才能", "才能の話に触れていない")]:
+    if k not in yomumae: bad("導入", f"読む前に に {msg}")
+if len(re.findall(r"^## \d+ページ目$", yomumae, re.M)) != 4:
+    bad("導入", "読む前に が4ページになっていない")
+if len(yomumae) > 4500: bad("導入", "読む前に が長い。立ち読みで読み切れない")
 oya = open(f"{M}/親へ.md", encoding="utf-8").read()
 if "何時間やったの" not in oya: bad("販売", "帯裏の保護者への一行が、親向け章で回収されていない")
 
@@ -194,7 +206,7 @@ for n,t in laws.items():
     if row and row.group(1).strip() != m.group(1).strip():
         bad("空欄", f"法則{n} の空欄クイズと分かれ道の「すること」がずれている")
 
-print(f"検査項目 23 / 不合格 {len(ng)} 件")
+print(f"検査項目 24 / 不合格 {len(ng)} 件")
 cat = {}
 for c,m in ng: cat.setdefault(c, []).append(m)
 for c in cat:

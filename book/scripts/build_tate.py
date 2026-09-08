@@ -85,6 +85,9 @@ li { margin-bottom: .4em; }
        margin: .95em 0 .3em 0; letter-spacing: .08em; page-break-after: avoid;
        text-orientation: upright; }
 .lbl-good { border-right: 2px solid #1a1a1a; padding-right: .45em; margin-right: -.6em; }
+/* 巻頭の4ページ。書店で最初に読まれるので、文字を大きく、行間を広く取る */
+.front p { font-size: 10.5pt; line-height: 1.95; margin: 0 0 1.25em 0; }
+.front .indent { font-size: 10.5pt; line-height: 1.95; }
 .orn { color: #b0b0b0; font-size: 8pt; margin: 1.6em 0; text-align: center;
        page-break-after: avoid; }
 .qtext { font-family: "Noto Sans CJK JP",sans-serif; font-size: 12.5pt; font-weight: 700;
@@ -176,7 +179,8 @@ def build(outpath):
                  4:"【覚え方】1つ覚えて、10動かす", 5:"【確かめ方】わかった、を、できる、に変える",
                  6:"【直し方】間違いを、次の1個に変える", 7:"【続け方】試験の日まで、数を落とさない"}
     toc = ['<div class="toc"><h1>目次</h1>', '<div class="grp">前付</div>']
-    for t in ["はじめに　毎日5時間やって、伸びない子がいた", "あの子が、絶対にやらない45のこと", "序章　あなたは、何を数えている？"]:
+    for t in ["読む前に　あなたは、サボっていません",
+              "はじめに　毎日5時間やって、伸びない子がいた", "あの子が、絶対にやらない45のこと", "序章　あなたは、何を数えている？"]:
         toc.append(f'<div class="row">{inline_v(t)}</div>')
     toc.append('<div class="grp">本文</div>')
     for c in range(1, 8):
@@ -188,6 +192,7 @@ def build(outpath):
     toc.append("</div>")
     P.append("\n".join(toc))
 
+    P.append('<div class="front">' + render_v("読む前に.md") + "</div>")
     P.append(render_v("はじめに.md"))
     h = render_v("やらない45.md")
     h = re.sub(r'(<h3>第1章</h3>)(.*?)(?=<div class="pagebreak">|$)',

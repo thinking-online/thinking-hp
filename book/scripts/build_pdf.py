@@ -234,6 +234,8 @@ th { background: #f4f4f4; }
 .newpage { page-break-before: always; }
 .pagebreak { page-break-before: always; height: 0; }
 h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
+.front p { font-size: 10.2pt; line-height: 1.9; margin: 0 0 1.05em 0; }
+.front .indent { font-size: 11pt; line-height: 2.0; }
 .lbl { font-size: 7.3pt; letter-spacing: .16em; color: #9a9a9a; margin: .72em 0 .22em 0; page-break-after: avoid; }
 .qtext { font-size: 12.5pt; line-height: 1.55; margin: 0 0 1em 0; }
 .situ { margin: 0 0 1.1em 0; }
@@ -334,7 +336,8 @@ def build_daihon(outpath):
     # 目次
     toc = ['<div class="toc"><h1>目次</h1>']
     toc.append('<div class="grp">前付</div>')
-    for t in ["はじめに　毎日5時間やって、伸びない子がいた", "あの子が、絶対にやらない45のこと", "序章　あなたは、何を数えている？"]:
+    for t in ["読む前に　あなたは、サボっていません",
+              "はじめに　毎日5時間やって、伸びない子がいた", "あの子が、絶対にやらない45のこと", "序章　あなたは、何を数えている？"]:
         toc.append(f'<div class="row"><span>{esc(t)}</span></div>')
     toc.append('<div class="grp">本文</div>')
     ch_titles = {
@@ -363,6 +366,7 @@ def build_daihon(outpath):
     toc.append("</div>")
     parts.append("\n".join(toc))
 
+    parts.append('<div class="front">' + render_file("読む前に.md") + "</div>")
     parts.append(render_file("はじめに.md"))
     h = render_file("やらない45.md")
     h = re.sub(r'(<h2>45</h2>)(.*?)(?=<div class="pagebreak">)',

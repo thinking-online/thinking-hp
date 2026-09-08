@@ -5,6 +5,7 @@ PDF 化は headless chromium の --print-to-pdf で行う。"""
 import os, re, html, sys
 
 M = "manuscript"
+HR_AS_PAGEBREAK = True   # 縦組み版（build_tate.py）は False にする
 
 CH = {2: (4, 10), 3: (11, 17), 4: (18, 24), 5: (25, 31), 6: (32, 38), 7: (39, 45)}
 FORCE_OF_CH = {2: "捨てる力", 3: "突き止める力", 4: "つなげる力",
@@ -54,7 +55,9 @@ def md_to_html(text, accent=""):
             continue
         # 水平線 = 区切り
         if re.fullmatch(r'-{3,}', line.strip()):
-            if out and not out[-1].startswith('<div class="pagebreak"'):
+            if not HR_AS_PAGEBREAK:
+                out.append('<div class="sep"></div>')
+            elif out and not out[-1].startswith('<div class="pagebreak"'):
                 out.append('<div class="pagebreak"></div>')
             i += 1
             continue
@@ -296,6 +299,14 @@ def strip_meta(text):
         return head, "\n".join(rest[j:]), "<br>".join(esc(x) for x in note)
     return head, "\n".join(rest), ""
 
+def split_chapter_end(text):
+    """章扉ファイルを、扉の部分と章末ページに割る。章末は章の最後に置くため。"""
+    m = re.search(r'\n---\n\n## 章末ページ\n\n(.*)$', text, re.S)
+    if not m:
+        return text, ""
+    return text[:m.start()], m.group(1).strip()
+
+
 def render_file(path, accent=""):
     raw = read(path)
     head, body, note = strip_meta(raw)
@@ -368,10 +379,18 @@ def build_daihon(outpath):
         cls = CLASS_OF_FORCE[force]
         parts.append(f'<div class="part {cls}"><div class="num">第 {c} 章</div>'
                      f'<div class="ttl">あの子には<br>「{force}」がある</div><div class="bar"></div></div>')
-        parts.append(render_file(f"第{c}章_扉.md", cls))
+        raw = read(f"第{c}章_扉.md")
+        tobira, chap_end = split_chapter_end(raw)
+        head, body, note = strip_meta(tobira)
+        h = md_to_html(head + "\n\n" + body, cls)
+        if note:
+            h = re.sub(r'(</h1>)', r'\1\n<div class="meta">' + note + '</div>', h, count=1)
+        parts.append(h)
         a, b = CH[c]
         for nnum in range(a, b + 1):
             parts.append(render_file(f"法則{nnum}.md", cls))
+        if chap_end:
+            parts.append('<div class="pagebreak"></div><h2>章末ページ</h2>' + md_to_html(chap_end, cls))
     for f in ["まとめ.md", "親へ.md", "付録.md", "おわりに.md"]:
         parts.append(render_file(f))
 

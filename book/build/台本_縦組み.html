@@ -1,0 +1,1921 @@
+<!doctype html><html lang='ja'><head><meta charset='utf-8'><title>台本 縦組み</title><style>
+@page { size: A5; margin: 17mm 15mm 15mm 15mm; }
+@page :first { margin: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact;
+       writing-mode: vertical-rl; text-orientation: mixed; }
+body { font-family: "Noto Serif CJK JP","IPA明朝",serif; font-size: 9.5pt; line-height: 1.7;
+       color: #1a1a1a; margin: 0; font-feature-settings: "vert" 1, "vpal" 1; }
+p { margin: 0 0 .8em 0; text-indent: 0; }
+.tcy { text-combine-upright: all; }
+.upr { text-orientation: upright; letter-spacing: -.05em; }
+code { font-size: .9em; color: #666; }
+hr.rule { border: 0; border-right: 1px solid #ddd; margin: 0 1.4em; }
+h1 { font-family: "Noto Sans CJK JP",sans-serif; font-size: 13pt; font-weight: 700;
+     line-height: 1.5; margin: 0 0 1.8em 0; padding-right: .7em;
+     border-right: 3px solid #1a1a1a; page-break-before: always; page-break-after: avoid; }
+h2 { font-family: "Noto Sans CJK JP",sans-serif; font-size: 11pt; font-weight: 700;
+     margin: 2.2em 0 1.1em 0; page-break-after: avoid; }
+h3 { font-family: "Noto Sans CJK JP",sans-serif; font-size: 9.8pt; font-weight: 700;
+     margin: 1.7em 0 .7em 0; page-break-after: avoid; }
+h4 { font-family: "Noto Sans CJK JP",sans-serif; font-size: 9.4pt; margin: 1.4em 0 .6em 0; }
+ul { margin: 0 0 1em 0; padding: 0 1.1em 0 0; }
+li { margin-bottom: .4em; }
+.pagebreak { page-break-before: always; width: 0; }
+.sep { height: 0; margin: 0 1.2em 0 0; border-right: 1px solid #e6e6e6; }
+/* 小見出しラベル */
+.lbl { font-family: "Noto Sans CJK JP",sans-serif; font-size: 7.6pt; color: #8a8a8a;
+       margin: .95em 0 .3em 0; letter-spacing: .08em; page-break-after: avoid;
+       text-orientation: upright; }
+.lbl-good { border-right: 2px solid #1a1a1a; padding-right: .45em; margin-right: -.6em; }
+.qtext { font-family: "Noto Sans CJK JP",sans-serif; font-size: 12.5pt; font-weight: 700;
+         line-height: 1.55; margin: 0 0 1.4em 0; }
+.hintbox { background: #f5f4ef; border-right: 3px solid #c9c2a6; padding: .6em .6em .6em 0;
+           margin: 0 0 1em 0; font-size: 8.6pt; }
+.lawbox { font-family: "Noto Sans CJK JP",sans-serif; font-size: 10.8pt; font-weight: 700;
+          line-height: 1.45; padding: .6em .6em .6em 0; margin: .15em 0 .85em 0;
+          border-right: 4px solid #1a1a1a; background: #f6f6f6; }
+.lawbox.f1 { border-right-color: #2f6fb0; } .lawbox.f2 { border-right-color: #2e8b57; }
+.lawbox.f3 { border-right-color: #a8791b; } .lawbox.f4 { border-right-color: #cc3d78; }
+.lawbox.f5 { border-right-color: #c0392b; } .lawbox.f6 { border-right-color: #7b3fa0; }
+.conclbox { border-right: 1px solid #ddd; padding-right: .65em; margin: 0 0 .8em 0; }
+.rubric { font-family: "Noto Sans CJK JP",sans-serif; font-size: 7.6pt; color: #8a8a8a;
+          line-height: 1.65; margin: 0 0 1.2em 0; }
+.ans { margin: 0 0 .8em 0; }
+.indent { margin: 0 0 1em 0; white-space: pre-wrap; font-size: 9pt; }
+.figbox { border: 1px dashed #b5b5b5; color: #777; padding: .9em 1.4em; margin: 1.2em 0;
+          font-size: 8.4pt; background: #fafafa; text-align: center; }
+/* 分かれ道は縦の表にする（右の列から左へ読む。日本語の本の作法） */
+table { border-collapse: collapse; font-size: 8pt; margin: .3em 0 1.4em 0; line-height: 1.6; }
+th, td { border: 1px solid #ccc; padding: .45em .35em; vertical-align: top; text-align: start; }
+th { background: #f2f2f2; font-family: "Noto Sans CJK JP",sans-serif; font-weight: 700; }
+.vs { font-size: 7.6pt; float: inline-start; margin: 0 0 .9em 1.1em; clear: both; }
+.vs th, .vs td { height: 40mm; }
+.vs tr:first-child th { background: #f2f2f2; color: #8a8a8a; font-size: 7.6pt; }
+.vs tr:first-child th:nth-child(2), .vs tr:first-child th:nth-child(3) { color: #333; font-size: 8pt; }
+.vs td:first-child, .vs th:first-child { background: #fafafa; color: #8a8a8a; font-size: 6.8pt; height: 17mm; }
+.vs td:nth-child(3) { background: #f4f4f4; }
+.vs.f1 td:nth-child(3), .vs.f1 th:nth-child(3) { background: #eef4fb; }
+.vs.f2 td:nth-child(3), .vs.f2 th:nth-child(3) { background: #eef6f1; }
+.vs.f3 td:nth-child(3), .vs.f3 th:nth-child(3) { background: #faf4e6; }
+.vs.f4 td:nth-child(3), .vs.f4 th:nth-child(3) { background: #fdf0f5; }
+.vs.f5 td:nth-child(3), .vs.f5 th:nth-child(3) { background: #fbeeec; }
+.vs.f6 td:nth-child(3), .vs.f6 th:nth-child(3) { background: #f5eefa; }
+.cklist { margin: 0 0 1.2em 0; }
+.ck { display: flex; align-items: flex-start; gap: .45em; padding: .17em 0; font-size: 8.2pt; }
+.ck .n { width: 1.6em; text-align: right; color: #9a9a9a; font-size: 7.4pt; padding-top: .15em; }
+.ck .box { width: .8em; height: .8em; border: 1px solid #9a9a9a; flex: none; margin-top: .3em; }
+.ck .t { flex: 1; line-height: 1.5; }
+.frows { writing-mode: horizontal-tb; width: 70mm; margin: 0 0 1.3em 0; }
+.frow { display: flex; align-items: baseline; gap: .5em; padding: .45em 0; font-size: 8.6pt; }
+.frow .fl { white-space: nowrap; }
+.frow .fd { flex: 1; border-bottom: 1px solid #cfcfcf; height: .85em; }
+.frow .fu { white-space: nowrap; color: #777; font-size: 8pt; }
+/* 扉 */
+.cover { writing-mode: horizontal-tb; width: 148mm; height: 210mm; box-sizing: border-box;
+         padding: 44mm 20mm 20mm 20mm; page-break-after: always;
+         font-family: "Noto Serif CJK JP",serif; }
+.cover .kicker { font-size: 8pt; color: #888; letter-spacing: .1em; }
+.cover .t { font-size: 17pt; line-height: 1.6; margin: 1.3em 0 .7em 0; font-weight: 700; }
+.cover .s { font-size: 10.5pt; color: #333; margin-bottom: 4em; }
+.cover .obi { font-size: 8.8pt; line-height: 1.95; border-top: 1px solid #ccc;
+              border-bottom: 1px solid #ccc; padding: 1em 0; margin-bottom: 3em; }
+.cover .au { font-size: 10.5pt; }
+.cover .note { font-size: 7.6pt; color: #999; margin-top: 3em; line-height: 1.8; }
+.part { page-break-before: always; page-break-after: always; padding-right: 30mm; }
+.part .num { font-family: "Noto Sans CJK JP",sans-serif; font-size: 8pt;
+             letter-spacing: .2em; color: #999; }
+.part .ttl { font-family: "Noto Sans CJK JP",sans-serif; font-size: 16pt; font-weight: 700;
+             line-height: 1.6; margin-right: .9em; }
+.part .bar { width: 3px; height: 34mm; background: #1a1a1a; margin-right: 1.6em; }
+.part.f1 .bar { background: #2f6fb0; } .part.f2 .bar { background: #2e8b57; }
+.part.f3 .bar { background: #a8791b; } .part.f4 .bar { background: #cc3d78; }
+.part.f5 .bar { background: #c0392b; } .part.f6 .bar { background: #7b3fa0; }
+.toc { page-break-after: always; }
+.toc .row { font-size: 9pt; padding: .45em 0; border-right: 1px dotted #e0e0e0; }
+.toc .grp { font-family: "Noto Sans CJK JP",sans-serif; font-size: 7.6pt;
+            letter-spacing: .16em; color: #9a9a9a; margin-right: 1.2em; }
+</style></head><body>
+<div class="cover">
+<div class="kicker">縦組み　読者版　（2026年9月8日時点）</div>
+<div class="t">「やればやるだけ伸びる」あの子が、<br>勉強中に絶対にやらないこと</div>
+<div class="s">マネするだけで伸びる、あの子の勉強法則45</div>
+<div class="obi">やっているのに、伸びない。<br>昨日、何個できるようになった？<br>勉強時間は、1分も増やしません。</div>
+<div class="au">朝倉 徹大</div>
+<div class="note">A5・縦組み。編集用の注記は外してあります。<br>
+表は日本語の本の通例に従って横組みで置いています。図は入る位置のみ。<br>
+柱とノンブルは、実際の紙面ではデザイン側で入ります。</div>
+</div>
+<div class="toc"><h1>目次</h1>
+<div class="grp">前付</div>
+<div class="row">はじめに</div>
+<div class="row">あの子が、絶対にやらない<span class="tcy">45</span>のこと</div>
+<div class="row">序章　あなたは、何を数えている？</div>
+<div class="grp">本文</div>
+<div class="row">第1章　あの子の頭のなかでは、何が起きているのか</div>
+<div class="row">第2章　あの子には「捨てる力」がある</div>
+<div class="row">第3章　あの子には「突き止める力」がある</div>
+<div class="row">第4章　あの子には「つなげる力」がある</div>
+<div class="row">第5章　あの子には「取り出す力」がある</div>
+<div class="row">第6章　あの子には「さかのぼる力」がある</div>
+<div class="row">第7章　あの子には「回す力」がある</div>
+<div class="grp">後付</div>
+<div class="row">まとめ　<span class="tcy">45</span>の法則を、そのままパクる</div>
+<div class="row">この本を読んだ子の、親へ</div>
+<div class="row">付録</div>
+<div class="row">おわりに　偏差値<span class="tcy">42</span>の僕も、時間を数えていた</div>
+</div>
+<h1>はじめに</h1>
+<div class="pagebreak"></div>
+<p>ここに、ひとりの中学生がいます。</p>
+<p>毎日<span class="tcy">5</span>時間、勉強しています。</p>
+<p>嘘ではありません。記録も見ました。本当に<span class="tcy">5</span>時間やっています。<br>それでも、成績が上がりません。</p>
+<p>時間は、もう増やせません。これ以上は寝る時間が削れます。<br>参考書も変えられません。塾も変えられません。<br>やる気も、性格も、頭の良さも、今日は変えられません。</p>
+<p>変えていいものは、ひとつだけ。</p>
+<p>あなたなら、何を変えますか。</p>
+<p>（答えは、めくった先に）</p>
+<div class="pagebreak"></div>
+<p>たぶん、こう考えたと思います。</p>
+<p>やり方を教える。<br>復習のさせ方を変える。<br>ノートの取り方を直す。<br>参考書の使い方を教える。</p>
+<p>どれも、まともな答えです。私も最初はそう考えました。</p>
+<p>でも、その子の勉強は、ひとつも変わりませんでした。<br>教材も、時間も、順番も、そのまま。</p>
+<p>変わったのは、たったひとつ。</p>
+<p>その子が毎週、聞かれる質問でした。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>その子は、毎週、こう聞かれていました。</p>
+<p>「今週、何時間やった？」</p>
+<p>ある週から、質問がこう変わりました。</p>
+<p>「今週、何個できるようになった？」</p>
+<p>その日、その子は答えられませんでした。</p>
+<p><span class="tcy">5</span>時間の話はできるんです。何ページ進んだかも言える。何周目かも言える。<br>でも、「何個」だけが出てこない。</p>
+<p><span class="tcy">1</span>週間後、また同じことを聞かれました。</p>
+<p>「<span class="tcy">3</span>つです」</p>
+<p><span class="tcy">1</span>ヶ月後。その子の勉強のやり方が、勝手に変わっていました。</p>
+<p>解説を読んだあと、閉じてもう一度解くようになった。<br>間違えた問題を、次の日にもう一度出すようになった。<br>できない問題を、飛ばさなくなった。</p>
+<p>誰も、教えていません。</p>
+<p>数を答えなければいけなくなったから、数が増える勉強に、自分で変わったんです。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>人は、数えているものを増やそうとします。</p>
+<p>時間を数えている人は、時間を増やします。<br>ページ数を数えている人は、ページを増やします。<br>周回数を数えている人は、周を増やします。</p>
+<p>そして、できるようになった数を数えている人だけが、できるようになった数を増やします。</p>
+<p>成績が伸びるのは、最後の人です。</p>
+<p>やってもやっても伸びない人は、サボっていません。<br>才能がないわけでもありません。<br>数えているものが、成績と関係ないだけです。</p>
+<p>この本は、勉強のやり方を教える本ではありません。<br>勉強時間も、<span class="tcy">1</span>分も増やしません。</p>
+<p>やることは、ひとつだけ。<br>さっきの質問を、あなたの頭のなかに置きます。</p>
+<p>やり方は、そのあとで、勝手に変わります。あの子みたいに。</p>
+<p>だから、最初に一度だけ聞かせてください。</p>
+<p>昨日、何個できるようになりましたか。</p>
+<h1>あの子が、絶対にやらない<span class="tcy">45</span>のこと</h1>
+<p>見開き<span class="tcy">1</span>枚。はじめにの直後、序章の前に置く。<br>表紙の約束（絶対にやらないこと）を、本の入口で先に返すためのページ。<br>番号とチェック欄と<span class="tcy">1</span>行だけ。説明も図も入れない。<br>この<span class="tcy">45</span>行は、各見開きの左ページ「分かれ道」の左列に、<span class="tcy">1</span>対<span class="tcy">1</span>で対応する。<br><span class="tcy">6</span>つの力の名前は、ここではまだ出さない（章番号だけ）。</p>
+<div class="sep"></div>
+
+<p>この本の表紙には、あの子が絶対にやらないこと、と書いてあります。</p>
+<p>先に、その<span class="tcy">45</span>個を出します。</p>
+<p>説明はしません。まだ、しなくていいと思います。<br>上から読んで、自分がやっているものに、チェックを入れてください。</p>
+<p><span class="tcy">1</span>分で終わります。</p>
+<div class="sep"></div>
+<h2><span class="tcy">45</span></h2>
+<h3>第<span class="tcy">1</span>章</h3>
+<div class="cklist"><div class="ck"><span class="n">1</span><span class="box"></span><span class="t">勉強した？と聞かれて、時間で答える</span></div><div class="ck"><span class="n">2</span><span class="box"></span><span class="t">授業でわかったから、その単元は復習しない</span></div><div class="ck"><span class="n">3</span><span class="box"></span><span class="t">解けなかった問題を、もう一度そのまま解く</span></div></div>
+<h3>第<span class="tcy">2</span>章</h3>
+<div class="cklist"><div class="ck"><span class="n">4</span><span class="box"></span><span class="t">過去問を、実力がつくまで開かない</span></div><div class="ck"><span class="n">5</span><span class="box"></span><span class="t"><span class="tcy">3</span>冊が途中のまま、<span class="tcy">4</span>冊目を買う</span></div><div class="ck"><span class="n">6</span><span class="box"></span><span class="t">テスト前に、ワークの<span class="tcy">1</span>ページ目から順にやる</span></div><div class="ck"><span class="n">7</span><span class="box"></span><span class="t"><span class="tcy">5</span>つの苦手を、<span class="tcy">1</span>日ずつ順ぐりに回す</span></div><div class="ck"><span class="n">8</span><span class="box"></span><span class="t">模試を、点数と判定だけ見て片づける</span></div><div class="ck"><span class="n">9</span><span class="box"></span><span class="t">まだいない自分を基準に、計画を立てる</span></div><div class="ck"><span class="n">10</span><span class="box"></span><span class="t">範囲の全部に、一度ずつ手をつける</span></div></div>
+<h3>第<span class="tcy">3</span>章</h3>
+<div class="cklist"><div class="ck"><span class="n">11</span><span class="box"></span><span class="t">問題文の途中で、わかった気になって解き始める</span></div><div class="ck"><span class="n">12</span><span class="box"></span><span class="t">何を聞かれているか決めないまま、本文を読み直す</span></div><div class="ck"><span class="n">13</span><span class="box"></span><span class="t">板書を、全部そのまま写す</span></div><div class="ck"><span class="n">14</span><span class="box"></span><span class="t">「ここ、全部わからないです」と言う</span></div><div class="ck"><span class="n">15</span><span class="box"></span><span class="t">難しいと感じて、参考書を最初から読み直す</span></div><div class="ck"><span class="n">16</span><span class="box"></span><span class="t">図に描かずに、文章のまま頭で考える</span></div><div class="ck"><span class="n">17</span><span class="box"></span><span class="t">長文を、本文の<span class="tcy">1</span>行目から読み始める</span></div></div>
+<h3>第<span class="tcy">4</span>章</h3>
+<div class="cklist"><div class="ck"><span class="n">18</span><span class="box"></span><span class="t">初めて見る問題を、ゼロから考え続ける</span></div><div class="ck"><span class="n">19</span><span class="box"></span><span class="t">なぜを持たずに、語呂だけで覚える</span></div><div class="ck"><span class="n">20</span><span class="box"></span><span class="t">単語を、<span class="tcy">1</span>語<span class="tcy">10</span>回ずつ書いて覚える</span></div><div class="ck"><span class="n">21</span><span class="box"></span><span class="t">同じ内容を、科目の数だけ覚え直す</span></div><div class="ck"><span class="n">22</span><span class="box"></span><span class="t">似ている<span class="tcy">3</span>つを、それぞれ丸ごと覚える</span></div><div class="ck"><span class="n">23</span><span class="box"></span><span class="t">出てこなかったら、すぐ答えをめくる</span></div><div class="ck"><span class="n">24</span><span class="box"></span><span class="t">教科書を見ながら、まとめノートを作る</span></div></div>
+<h3>第<span class="tcy">5</span>章</h3>
+<div class="cklist"><div class="ck"><span class="n">25</span><span class="box"></span><span class="t">解説を読んで納得したら、次の問題へ進む</span></div><div class="ck"><span class="n">26</span><span class="box"></span><span class="t">わかった、をテストの日まで信じる</span></div><div class="ck"><span class="n">27</span><span class="box"></span><span class="t">解答を横に置いたまま、○をつける</span></div><div class="ck"><span class="n">28</span><span class="box"></span><span class="t">説明できないのは、説明が下手なだけだと思う</span></div><div class="ck"><span class="n">29</span><span class="box"></span><span class="t">時間を測らずに解いて、解けたと数える</span></div><div class="ck"><span class="n">30</span><span class="box"></span><span class="t">解けない問題に印をつけて、先へ進む</span></div><div class="ck"><span class="n">31</span><span class="box"></span><span class="t">全部は解けないから、白紙のまま飛ばす</span></div></div>
+<h3>第<span class="tcy">6</span>章</h3>
+<div class="cklist"><div class="ck"><span class="n">32</span><span class="box"></span><span class="t">間違えた問題に、赤で正解を写す</span></div><div class="ck"><span class="n">33</span><span class="box"></span><span class="t">ケアレスミス、次は気をつける、で終える</span></div><div class="ck"><span class="n">34</span><span class="box"></span><span class="t"><span class="tcy">3</span>回間違えた問題の、<span class="tcy">4</span>回目をやる</span></div><div class="ck"><span class="n">35</span><span class="box"></span><span class="t">間違いノートに、問題と正解を写す</span></div><div class="ck"><span class="n">36</span><span class="box"></span><span class="t"><span class="tcy">10</span>個の間違いを、<span class="tcy">10</span>問とも順に直す</span></div><div class="ck"><span class="n">37</span><span class="box"></span><span class="t">わからなかった解説を、最初から読み直す</span></div><div class="ck"><span class="n">38</span><span class="box"></span><span class="t">点が下がったら、自分を責める</span></div></div>
+<h3>第<span class="tcy">7</span>章</h3>
+<div class="cklist"><div class="ck"><span class="n">39</span><span class="box"></span><span class="t">やる気が出るのを待つ</span></div><div class="ck"><span class="n">40</span><span class="box"></span><span class="t">机に座ってから、何をやるか決める</span></div><div class="ck"><span class="n">41</span><span class="box"></span><span class="t">勉強した時間を記録する</span></div><div class="ck"><span class="n">42</span><span class="box"></span><span class="t">解けないまま、その日を終える</span></div><div class="ck"><span class="n">43</span><span class="box"></span><span class="t">計画が崩れてから、作り直す</span></div><div class="ck"><span class="n">44</span><span class="box"></span><span class="t">忘れてから、最初から覚え直す</span></div><div class="ck"><span class="n">45</span><span class="box"></span><span class="t">毎晩、明日の計画を立て直す</span></div></div>
+<div class="sep"></div>
+
+<p>いくつ、チェックがつきましたか。</p>
+<p><span class="tcy">0</span>個だった人は、この本を閉じて大丈夫です。あなたはもう、やっています。</p>
+<p><span class="tcy">1</span>個以上だった人へ。<br>その<span class="tcy">1</span>個が、そのまま、あなたの伸びしろです。</p>
+<p>ここに並んでいるのは、全部、頑張っている人の行動です。<br>サボっている人は、単語を<span class="tcy">10</span>回書きません。付箋も貼りません。計画も立て直しません。<br><span class="tcy">5</span>時間の記録も、残っていません。</p>
+<p>だから、この<span class="tcy">45</span>個をやめてください、とは言いません。<br>やめられるものではないし、やめる必要もありません。</p>
+<p>かわりに何をするか。<br>それだけを、これから<span class="tcy">45</span>回、見ていきます。</p>
+<p>チェックのついた番号を、覚えておいてください。<br>そこが、あなたの本です。</p>
+<h1>序章　あなたは、何を数えている？</h1>
+<h1>見開き<span class="tcy">1</span>　数える診断</h1>
+<div class="pagebreak"></div>
+<h3>導入</h3>
+<p>サボっている人は、この本を読んでいません。<br>書店でこのページを開いている時点で、あなたはやっています。</p>
+<p>だから、やる気の話はしません。</p>
+<p>かわりに、ひとつだけ確かめさせてください。<br>あなたが、何を数えているか。</p>
+<p>昨日の勉強を思い出してください。<br>書ける数だけ、全部書いてください。書けないものは、空欄のままで大丈夫です。</p>
+<h3>昨日のあなた</h3>
+<div class="frows"><div class="frow"><span class="fl"><span class="tcy">1</span> 昨日、勉強した時間</span><span class="fd"></span><span class="fu">時間  分</span></div></div>
+<div class="frows"><div class="frow"><span class="fl"><span class="tcy">2</span> 昨日、進んだページ</span><span class="fd"></span><span class="fu">ページ</span></div></div>
+<div class="frows"><div class="frow"><span class="fl"><span class="tcy">3</span> 昨日、解いた問題</span><span class="fd"></span><span class="fu">問</span></div></div>
+<div class="frows"><div class="frow"><span class="fl"><span class="tcy">4</span> 昨日、覚えた単語や公式</span><span class="fd"></span><span class="fu">個</span></div></div>
+<div class="frows"><div class="frow"><span class="fl"><span class="tcy">5</span> 今の問題集は、何周目</span><span class="fd"></span><span class="fu">周目</span></div></div>
+<div class="frows"><div class="frow"><span class="fl"><span class="tcy">6</span> この<span class="tcy">1</span>週間で、立て直した計画</span><span class="fd"></span><span class="fu">回</span></div></div>
+<h3>最後の<span class="tcy">1</span>つ</h3>
+<p><span class="tcy">7</span>　昨日、新しく「できる」ようになったこと</p>
+<div class="frows"><div class="frow"><span class="fl">  <span class="tcy">1</span></span><span class="fd"></span><span class="fu"></span></div></div>
+<div class="frows"><div class="frow"><span class="fl">  <span class="tcy">2</span></span><span class="fd"></span><span class="fu"></span></div></div>
+<div class="frows"><div class="frow"><span class="fl">  <span class="tcy">3</span></span><span class="fd"></span><span class="fu"></span></div></div>
+<div class="sep"></div>
+
+<h3>上段　結果を読む</h3>
+<p>上の<span class="tcy">6</span>つは、書けたと思います。</p>
+<p>最後の<span class="tcy">3</span>つは、どうでしたか。</p>
+<p>書けなかった人へ。<br>それは、あなたが何も身につけていないという意味ではありません。<br>数えていないから、思い出せないだけです。</p>
+<p>人は、数えていないものを覚えていません。<br>そして、覚えていないものは、増やせません。</p>
+<p>もう一度、<span class="tcy">1</span>から<span class="tcy">6</span>を見てください。<br>一番はっきり書けたものに、印をつけてください。<br>迷わずに数字が出てきたもの。人に言えるもの。ちょっと誇らしいもの。</p>
+<p>それが、あなたのカウンターです。</p>
+<div class="indent">　<span class="tcy">1</span>に印　　→　今日は<span class="tcy">6</span>時間型　　　　　第<span class="tcy">1</span>章から読む<br>　<span class="tcy">2</span>に印　　→　参考書ルート型　　　　　第<span class="tcy">2</span>章から読む<br>　<span class="tcy">3</span>に印　　→　あとで付箋型　　　　　　第<span class="tcy">6</span>章から読む<br>　<span class="tcy">4</span>に印　　→　<span class="tcy">10</span>回書く型　　　　　　　第<span class="tcy">4</span>章から読む<br>　<span class="tcy">5</span>に印　　→　あーね型　　　　　　　　第<span class="tcy">5</span>章から読む<br>　<span class="tcy">6</span>に印　　→　計画表に<span class="tcy">1</span>時間型　　　　 第<span class="tcy">7</span>章から読む</div>
+<p>型は<span class="tcy">7</span>つあります。ここに出てこない型が、<span class="tcy">1</span>つだけあります。<br>数え方ではなく、場所の見つけ方で決まる型です。次の<span class="tcy">3</span>問目で出てきます。</p>
+<h3>下段　場面で確かめる<span class="tcy">3</span>問</h3>
+<p>直感で選んでください。正解は伏せません。全部、下に並んでいます。</p>
+<p>問<span class="tcy">1</span>　数学の解説を読み終えた。次にすることは。</p>
+<div class="indent">　　ア　なるほど、と思って次の問題へ<br>　　イ　「あとで解き直す」の付箋を貼って次の問題へ<br>　　ウ　解説を閉じて、白紙に解き直す</div>
+<p>問<span class="tcy">2</span>　これから勉強を始める。最初にすることは。</p>
+<div class="indent">　　ア　昨日の続きのページを開く<br>　　イ　崩れた計画を立て直す<br>　　ウ　配点の大きいところから、できないを<span class="tcy">1</span>つ選ぶ</div>
+<p>問<span class="tcy">3</span>　わからない問題がある。先生に何と言うか。</p>
+<div class="indent">　　ア　「ここ、全部わからないです」<br>　　イ　「ここまでは知ってるけど、ここから先が出てこないです」</div>
+<div class="indent">　　　問<span class="tcy">1</span>でア　→　あーね型（第<span class="tcy">5</span>章）<br>　　　問<span class="tcy">1</span>でイ　→　あとで付箋型（第<span class="tcy">6</span>章）<br>　　　問<span class="tcy">2</span>でア　→　参考書ルート型（第<span class="tcy">2</span>章）<br>　　　問<span class="tcy">2</span>でイ　→　計画表に<span class="tcy">1</span>時間型（第<span class="tcy">7</span>章）<br>　　　問<span class="tcy">3</span>でア　→　全部わからない型（第<span class="tcy">3</span>章）</div>
+<div class="indent">　　　問<span class="tcy">1</span>でウ、問<span class="tcy">2</span>でウ、問<span class="tcy">3</span>でイ　→　これが、あの子の答えです</div>
+<h3>下の一行</h3>
+<p>型が<span class="tcy">2</span>つ以上出た人へ。それが普通です。<br>一番はっきり数えられたものが、主の型。あとは副の型。<br>主の型の章から読んでください。</p>
+<h1>見開き<span class="tcy">2</span>　<span class="tcy">7</span>つのカウンター</h1>
+<h2>左ページ上　この見開きの一行</h2>
+<p>伸びない人は、何も数えていないのではありません。<br>できるようになった数の、かわりに、別の何かを数えています。</p>
+<p><span class="tcy">7</span>つとも、頑張っている人の型です。<br>サボっている人は、そもそもカウンターを持っていません。</p>
+<div class="sep"></div>
+<h2><span class="tcy">7</span>つのカウンター</h2>
+<h3><span class="tcy">1</span>　今日は<span class="tcy">6</span>時間型　→　第<span class="tcy">1</span>章</h3>
+<p>カウンターの数字　<span class="tcy">6</span>:<span class="tcy">00</span></p>
+<p>本人のセリフ<br>「今日は<span class="tcy">6</span>時間やった。昨日より<span class="tcy">1</span>時間多い」</p>
+<p>まわりから見えている姿<br>自習室に一番長くいる。勉強アプリのタイマーを止め忘れると、本気で悔しがる。<br>週の終わりに、合計時間のスクリーンショットを撮っている。</p>
+<p>頭のなかで起きていること<br>箱の中にいた時間を数えている。<br>矢印を<span class="tcy">1</span>本も通っていない日でも、<span class="tcy">6</span>時間は<span class="tcy">6</span>時間として記録に残る。<br>だから、記録は増え続けるのに、できるは増えない。</p>
+<h3><span class="tcy">2</span>　参考書ルート型　→　第<span class="tcy">2</span>章</h3>
+<p>カウンターの数字　冊数</p>
+<p>本人のセリフ<br>「この参考書、評判いいらしい。次はこれをやろうと思ってる」</p>
+<p>まわりから見えている姿<br>参考書の話が一番くわしい。持っている冊数も一番多い。<br>どれも半分まで進んでいる。新しい<span class="tcy">1</span>冊を買った日が、一番やる気がある。</p>
+<p>頭のなかで起きていること<br>入口の漏斗がない。<br>全部のできないが、そのまま流れ込んでくる。<br>入ってくる量が多すぎるので、<span class="tcy">1</span>つも最後まで通らない。</p>
+<h3><span class="tcy">3</span>　全部わからない型　→　第<span class="tcy">3</span>章</h3>
+<p>カウンターの数字　？</p>
+<p>本人のセリフ<br>「ここ、全部わからないです」</p>
+<p>まわりから見えている姿<br>質問には来る。それも、ちゃんと来る。<br>でも、どこがわからないかを聞くと、もう一度「全部です」と言う。<br>説明が終わると「わかりました」と言って帰り、次の週も同じ問題で止まっている。</p>
+<p>頭のなかで起きていること<br>自分がどの箱にいるかを、間違えている。<br>知らないだけの場所を、わかっていないと思っている。<br>場所がずれているので、戻る先もずれる。</p>
+<h3><span class="tcy">4</span>　<span class="tcy">10</span>回書く型　→　第<span class="tcy">4</span>章</h3>
+<p>カウンターの数字　個</p>
+<p>本人のセリフ<br>「単語、今日<span class="tcy">30</span>個やった。<span class="tcy">1</span>個<span class="tcy">10</span>回ずつ書いた」</p>
+<p>まわりから見えている姿<br>ノートが真っ黒。手が一番疲れている。<br>書いた量は誰よりも多いのに、小テストの点が上がらない。</p>
+<p>頭のなかで起きていること<br><span class="tcy">1</span>つの箱の中で、同じところを往復している。<br>次の箱へ渡す矢印を、通っていない。<br>書いた回数は増えるが、つながっていないので、翌週には戻っている。</p>
+<h3><span class="tcy">5</span>　あーね型　→　第<span class="tcy">5</span>章</h3>
+<p>カウンターの数字　わかった、の回数</p>
+<p>本人のセリフ<br>「あーね。そういうことか。次いこ」</p>
+<p>まわりから見えている姿<br>解説の読み方がうまい。理解が速い。飲み込みもいい。<br>問題集は<span class="tcy">2</span>周も<span class="tcy">3</span>周もしている。なのに、本番でだけ手が止まる。</p>
+<p>頭のなかで起きていること<br>わかっているの箱まで来て、そこで止まっている。<br>そこがゴールだと思っている。<br>最後の矢印を通っていないので、本番で自力では出てこない。</p>
+<h3><span class="tcy">6</span>　あとで付箋型　→　第<span class="tcy">6</span>章</h3>
+<p>カウンターの数字　付箋の枚数</p>
+<p>本人のセリフ<br>「これはあとで解き直す。付箋貼っとこ」</p>
+<p>まわりから見えている姿<br>問題集の上から付箋がはみ出している。<br>その付箋は、日に日に増えている。減った日を、見たことがない。</p>
+<p>頭のなかで起きていること<br>うまくいかなかった印はついている。<br>でも、そこから戻る矢印を<span class="tcy">1</span>本も引いていない。<br>印は記録であって、変化ではない。</p>
+<h3><span class="tcy">7</span>　計画表に<span class="tcy">1</span>時間型　→　第<span class="tcy">7</span>章</h3>
+<p>カウンターの数字　立て直した回数</p>
+<p>本人のセリフ<br>「計画がずれたから、今日は立て直す日にする」</p>
+<p>まわりから見えている姿<br>計画表がきれい。色分けもしてある。<br>ずれるたびに作り直すので、いつも最新版がある。<br>最新版を作った日は、勉強していない。</p>
+<p>頭のなかで起きていること<br>図が、回っていない。<br>今日から試験日までの線の上を、<span class="tcy">1</span>日も進んでいない。<br>計画は増えるが、線の上の位置は動かない。</p>
+<div class="sep"></div>
+<h2>右ページ右端　あの子のカウンター</h2>
+<h3>あの子</h3>
+<p>カウンターの数字　できるようになった数</p>
+<p>本人のセリフ<br>「昨日は<span class="tcy">3</span>つ。今日はまだ<span class="tcy">1</span>つ」</p>
+<p>まわりから見えている姿<br>特別なことをしていない。<br>参考書も、みんなが持っているものと同じ。時間も、そんなに長くない。<br>なのに、次のテストでまた上がっている。</p>
+<p>頭のなかで起きていること<br>矢印を、何度も通っている。<br>うまくいかなかったら戻る。戻ってからもう一度通る。<br>通り切ったものだけを、<span class="tcy">1</span>つ、と数える。</p>
+<p>あの子には、型がありません。<br>癖がないことが、あの子の型です。</p>
+<div class="sep"></div>
+<h2>下段</h2>
+<h3><span class="tcy">7</span>つとも、頑張っている人の型です</h3>
+<p><span class="tcy">6</span>時間やるのは、しんどいことです。<br>参考書を調べるのは、まじめだからです。<br><span class="tcy">10</span>回書くのは、覚えたいからです。<br>付箋を貼るのは、飛ばしたくないからです。<br>計画を立て直すのは、諦めていないからです。</p>
+<p>どれも、やっていない人にはできません。</p>
+<p>だから、この本は、あなたの努力を減らしません。<br>カウンターを<span class="tcy">1</span>つ、付け替えるだけです。</p>
+<h3>この本の読み方</h3>
+<p>自分の型の章から読んでかまいません。</p>
+<p>ただし、第<span class="tcy">1</span>章だけは先に読んでください。<br>そこに、この本の全部が入っています。あとの<span class="tcy">6</span>章は、その分解です。</p>
+<div class="part"><div class="num">第 1 章</div><div class="ttl">あの子の頭のなかでは、<br>何が起きているのか</div><div class="bar"></div></div>
+<h1>第<span class="tcy">1</span>章　あの子の頭のなかでは、何が起きているのか</h1>
+<p>この章に、この本の全部が入っています。<br>第<span class="tcy">2</span>章から第<span class="tcy">7</span>章までは、この章の分解です。</p>
+<div class="sep"></div>
+<h2>章扉</h2>
+<h3>問題ページ</h3>
+<p>同じ参考書。同じ<span class="tcy">3</span>時間。同じ日。</p>
+<p>ふたりの生徒が、同じ範囲を勉強しました。<br>片方は次のテストで上がり、片方は変わりませんでした。</p>
+<p>サボっていたほうが変わらなかった、という話ではありません。<br>どちらも<span class="tcy">3</span>時間、机に向かっています。</p>
+<p>何が違ったのでしょうか。</p>
+<p>（めくってください）</p>
+<h3>答えページ</h3>
+<p>違ったのは、<span class="tcy">3</span>時間のあいだに通った回数です。</p>
+<p>片方は、できないをできるに変える道を、<span class="tcy">7</span>回通りました。<br>もう片方は、<span class="tcy">1</span>回も通りませんでした。</p>
+<p><span class="tcy">3</span>時間は、どちらも本当です。<br><span class="tcy">7</span>と<span class="tcy">0</span>が、違っただけです。</p>
+<h3>原理</h3>
+<p>同じ時間の中で、何回通ったか。それが成績になる。</p>
+<h3>この章で出てくる法則</h3>
+<div class="indent">　法則<span class="tcy">1</span>　成績は、時間ではなく「できない」を「できる」に変えた数で決まる<br>　法則<span class="tcy">2</span>　「わかっている」と「できる」は、別の段階<br>　法則<span class="tcy">3</span>　解けなかったら、×の場所ではなく、最後にできていた場所に戻る</div>
+<div class="sep"></div>
+<h2>この本の<span class="tcy">2</span>人</h2>
+<p>この本には、<span class="tcy">2</span>人しか出てきません。</p>
+<p>ひとりは、あの子。<br>やればやるだけ伸びる人です。</p>
+<p>もうひとりは、伸びない人。<br>やっても伸びない人です。</p>
+<p>大事なことを、先に言います。</p>
+<p>どちらも、勉強しています。</p>
+<p>あの子は、サボっている人に勝っているのではありません。<br>同じだけやっている人に、勝っています。</p>
+<p>だから、この本には「まず机に向かおう」という話は出てきません。<br>あなたはもう向かっています。</p>
+<p>これから先、本文では「伸びない人」と「伸びる人」で書きます。<br>伸びる人が、あの子です。<br>伸びない人は、やっても伸びない人です。サボっている人ではありません。</p>
+<p>この本の<span class="tcy">45</span>の法則は、全部、この<span class="tcy">2</span>人の分かれ道でできています。<br>同じ場面に、<span class="tcy">2</span>人が立っています。同じ教材、同じ時間、同じ疲れ方。<br>そこで片方が右に行き、もう片方が左に行く。</p>
+<p>その分かれ目だけを、<span class="tcy">45</span>回、見ていきます。<br>だから、読むときに探してほしいのは、正解ではありません。<br>自分がいつも、どっちに行っているかです。</p>
+<div class="sep"></div>
+<h2>「頭がいい人」ではなく「伸びる人」の話をする</h2>
+<p>この本は、頭がいい人の本ではありません。</p>
+<p>頭がいい、は状態です。<br>今その人がどこにいるか、という話です。</p>
+<p>伸びる、は変化です。<br>昨日と今日で、どれだけ動いたか、という話です。</p>
+<p>状態は、比べると苦しくなります。<br>自分より前にいる人はいつでもいるし、その差は、今日どうにかできるものではありません。</p>
+<p>変化は、数えられます。<br>そして、数えられるものは、増やせます。</p>
+<p>だからこの本は、ずっと変化の話をします。<br>今どこにいるかは、一度も聞きません。</p>
+<div class="sep"></div>
+<h2>法則<span class="tcy">1</span></h2>
+<h3>右ページ</h3>
+<p>法則<span class="tcy">1</span></p>
+<p class="rubric">場面タグ　家で、聞かれたとき</p>
+<h4>Q</h4>
+<p>「今日、勉強した？」と聞かれた。何と答える？</p>
+<h4>状況文</h4>
+<p>夜の<span class="tcy">10</span>時。中学<span class="tcy">2</span>年生。<br>今日は学校から帰って、ごはんの前に<span class="tcy">1</span>時間、そのあと<span class="tcy">2</span>時間半、数学のワークを進めた。<br>リビングを通ったとき、「今日、勉強した？」と聞かれた。<br>本当にやったので、堂々と答えられる。</p>
+<h4>HINT</h4>
+<p>聞かれたことに答えるのは、簡単。<br>その答えを、自分の手帳に書き写せる形にできますか。</p>
+<h3>左ページ</h3>
+<h4>分かれ道</h4>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>「<span class="tcy">3</span>時間半やった」と答える</td><td>「これができるようになった」と答える</td></tr><tr><td>数えているもの</td><td>机にいた時間</td><td>変わったものの数</td></tr><tr><td>図の上では</td><td>箱の中に留まっている</td><td>矢印を<span class="tcy">1</span>本通っている</td></tr><tr><td>試験の日に</td><td>やった時間だけ思い出せる</td><td>出せるものが手元にある</td></tr></table>
+<h4>伸びない人の答え</h4>
+<p>「<span class="tcy">3</span>時間半やった」と答える。<br>嘘ではないし、実際にしんどかったので、言う権利がある。<br>明日は<span class="tcy">4</span>時間にしよう、と思う。翌日も、時間だけが増えていく。</p>
+<h4>伸びる人の答え</h4>
+<p>「連立方程式の、速さの文章題ができるようになった」と答える。<br>時間を聞かれているのに、数で答える。<br>答えるためには、今日やったことの中から、朝はできなくて夜はできるようになったものを、<br>探さなければいけません。探すために、伸びる人は寝る前に、必ず一度それを探しています。</p>
+<h4>法則<span class="tcy">1</span></h4>
+<p>成績は、時間ではなく「できない」を「できる」に変えた数で決まる</p>
+<h4>他の場面で</h4>
+<p>英語。今日は単語を<span class="tcy">50</span>個見た、ではなく、昨日出てこなかった単語のうち<span class="tcy">3</span>個が出るようになった、と数える。<br>定期テスト前。今日は<span class="tcy">5</span>時間やった、ではなく、ワークの中でできない印がついていた問題を<span class="tcy">4</span>問つぶした、と数える。</p>
+<h4>結論</h4>
+<p>同じ<span class="tcy">30</span>分で、伸びない人は同じ×を<span class="tcy">3</span>回やり、伸びる人は崩れていた<span class="tcy">1</span>つを見つける。</p>
+<h4>隅の図</h4>
+<p>完全版を小さく置く。完全版を小さく置く。完全版を小さく置く。伸びない人の道は灰色で、灰色で、灰色で、箱の中に留まったまま。伸びる人の道は黒で、黒で、黒で、矢印を<span class="tcy">1</span>本通っている。</p>
+<div class="sep"></div>
+<h2>図<span class="tcy">1</span>　勉強とは、この矢印のこと</h2>
+<div class="figbox">（図<span class="tcy">1</span>を挿入。箱<span class="tcy">2</span>つ、矢印<span class="tcy">1</span>本）</div>
+<div class="indent">　　できない　→　できる</div>
+<p>勉強とは、この矢印を通ることです。</p>
+<p>机に向かうことでも、時間を使うことでも、ページをめくることでもありません。<br>矢印を<span class="tcy">1</span>本通ったら、<span class="tcy">1</span>つ。通らなかったら、<span class="tcy">0</span>です。</p>
+<p>そして、この本の定義は、これだけです。</p>
+<h3>定義　正式版</h3>
+<p>成績が伸びる人とは、必要な「できない」を、期限までに「できる」に変えた数が多い人。</p>
+<h3>定義　短縮版</h3>
+<p>必要な「できない」を「できる」に変えた数が多い人。</p>
+<p>この一文しか、この本にはありません。<br><span class="tcy">6</span>つの力も、<span class="tcy">7</span>つの型も、<span class="tcy">45</span>の法則も、全部この一文から出てきます。</p>
+<p>読み飛ばした人のために、もう一度だけ書いておきます。</p>
+<p>必要な「できない」を「できる」に変えた数が多い人。</p>
+<div class="sep"></div>
+<h2><span class="tcy">3</span>つの言葉</h2>
+<p>この一文には、はっきり決めておかないといけない言葉が<span class="tcy">3</span>つあります。</p>
+<h3>「必要な」とは</h3>
+<p>試験に出ることです。</p>
+<p>出ないことをできるようにしても、この本では数えません。<br><span class="tcy">0</span>個です。厳しく聞こえますが、逆に言うと、出ないことをやっていないのは、サボりではありません。</p>
+<p>だから、あの子は勉強を始める前に、必ず何かを捨てています。<br>（第<span class="tcy">2</span>章）</p>
+<h3>「できる」とは</h3>
+<p>本番で、自力で出せることです。</p>
+<p>読んでわかった、は、できるではありません。<br>授業で理解した、も、できるではありません。<br>家で解説を見ながら解けた、も、できるではありません。<br>昨日解けた、も、今日出せなければ、できるではありません。</p>
+<p>出せて、はじめて<span class="tcy">1</span>つです。<br>（第<span class="tcy">5</span>章）</p>
+<h3>「数」とは</h3>
+<p>変わったものの個数です。</p>
+<p>ただし、<span class="tcy">1</span>つ変えたら<span class="tcy">10</span>変わることがあります。<br>公式を<span class="tcy">1</span>つ、なぜそうなるかまで含めて変えたら、その公式を使う問題が全部変わることがあります。<br>そういうときは、変わった分を全部数えます。</p>
+<p>だから、あの子は重いものを先に変えます。<br>軽いものを<span class="upr">100</span>個変えるより、そのほうが数が増えるからです。<br>（第<span class="tcy">4</span>章）</p>
+<div class="sep"></div>
+<h2>法則<span class="tcy">2</span></h2>
+<h3>右ページ</h3>
+<p>法則<span class="tcy">2</span></p>
+<p class="rubric">場面タグ　授業が終わったあと</p>
+<h4>Q</h4>
+<p>授業でわかった。この単元、もう復習しなくていい？</p>
+<h4>状況文</h4>
+<p>中学<span class="tcy">3</span>年生。理科の授業で、天体の動きをやった。<br>先生の説明がうまくて、地球が回っているから星が動いて見える、というところまで、はっきりわかった。<br>黒板の図も、意味がわかった状態で写せた。<br>家に帰って、今日の分をどうするか考えている。</p>
+<h4>HINT</h4>
+<p>わかった、と言えるようになったのは、いつからですか。<br>授業の前と後で、増えたのは何ですか。</p>
+<h3>左ページ</h3>
+<h4>分かれ道</h4>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>わかったので復習しない</td><td>教科書を閉じて白紙に描く</td></tr><tr><td>数えているもの</td><td>わかった、の回数</td><td>白紙に出せた数</td></tr><tr><td>図の上では</td><td>わかっているの箱で止まる</td><td>判定を通ってできるへ</td></tr><tr><td>試験の日に</td><td>白紙の前で手が止まる</td><td>一度出したものを、もう一度出す</td></tr></table>
+<h4>伸びない人の答え</h4>
+<p>復習しない。今日はわかったので、わかっている単元だと判断する。<br>授業中に手応えがあったのは本当です。わかった単元をもう一度読むのは、時間の無駄に思えます。<br><span class="tcy">1</span>ヶ月後のテストで、図を白紙に描けと言われて、手が止まる。</p>
+<h4>伸びる人の答え</h4>
+<p>家で、教科書とノートを閉じて、白紙に今日の図を描いてみる。<br>描けたところと、描けなかったところが出ます。<br>授業でわかったのは本当で、その上で、まだ出せない部分があった、というだけです。<br>描けなかったところに印をつけて、そこだけをもう一度読む。</p>
+<h4>法則<span class="tcy">2</span></h4>
+<p>「わかっている」と「できる」は、別の段階</p>
+<h4>他の場面で</h4>
+<p>数学。解説を読んで納得した直後に、その問題を白紙で解き直す。<br>社会。用語の意味を説明できても、その用語を答えにする問題が解けるとは限らない。問題の形で確かめる。</p>
+<h4>結論</h4>
+<p>伸びない人は、わかったを、できると数える。伸びる人は、出せたものだけを数える。<br>この差で、テストの日に残っている数が変わる。</p>
+<h4>隅の図</h4>
+<p>伸びない人の道は、わかっているの箱で止まる。伸びる人の道は、判定を通ってできるへ進む。</p>
+<div class="sep"></div>
+<h2>図<span class="tcy">2</span>　「できない」は<span class="tcy">1</span>つではない</h2>
+<div class="figbox">（図<span class="tcy">2</span>を挿入。箱<span class="tcy">4</span>つ、判定<span class="tcy">1</span>つ、上に「できない」の括り線）</div>
+<div class="indent">　　知らない　→　知っている　→　わかっている　→〔解いてみる　○／×〕→　できる</div>
+<p>図<span class="tcy">1</span>では、箱は<span class="tcy">2</span>つでした。<br>でも実際には、できないの中に、<span class="tcy">3</span>つの場所があります。</p>
+<p>知らない。<br>　その言葉を、見たこともない。</p>
+<p>知っている。<br>　言葉は知っている。意味も言える。でも、なぜそうなるかは説明できない。</p>
+<p>わかっている。<br>　なぜそうなるかまで説明できる。読めばわかる。人の解説にうなずける。</p>
+<p>この<span class="tcy">3</span>つは、どれもまだ、できないです。</p>
+<p>そして、わかっているとできるのあいだには、<span class="tcy">1</span>つ関門があります。<br>解いてみる、です。</p>
+<p>自分で解いて、○が出たときだけ、できるの箱に入ります。</p>
+<h3>この図が、この本のメッセージです</h3>
+<p>「わかっている」と「できる」は、違う段階です。</p>
+<p>やっているのに伸びない人のほとんどは、わかっているの箱で止まっています。<br>そして、そこがゴールだと思っています。</p>
+<p>サボっているわけではありません。<br>むしろ、わかっているまで来るのは大変なことです。ちゃんと勉強した人しか、そこにいません。</p>
+<p>あと<span class="tcy">1</span>つ、矢印が残っているだけです。</p>
+<div class="sep"></div>
+<h2>法則<span class="tcy">3</span></h2>
+<h3>右ページ</h3>
+<p>法則<span class="tcy">3</span></p>
+<p class="rubric">場面タグ　答え合わせのとき</p>
+<h4>Q</h4>
+<p>解けなかった。どこに戻る？</p>
+<h4>状況文</h4>
+<p>中学<span class="tcy">2</span>年生。数学のワークで、応用問題が解けなかった。<br>解説を読んだら、途中まではわかるけれど、後半で使っている変形が、どこから出てきたのかわからない。<br>その前のページの基本問題は、全部○がついている。<br>時間は、あと<span class="tcy">30</span>分ある。</p>
+<h4>HINT</h4>
+<p>○がついている問題は、本当に○ですか。</p>
+<h3>左ページ</h3>
+<h4>分かれ道</h4>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>×の問題をもう一度解く</td><td>手前の○を解説なしで解く</td></tr><tr><td>数えているもの</td><td>やり直した回数</td><td>崩れていた場所の数</td></tr><tr><td>図の上では</td><td>×の場所で往復する</td><td>戻る矢印を<span class="tcy">1</span>本通る</td></tr><tr><td>試験の日に</td><td>同じところでまた止まる</td><td>その手前ごと変わっている</td></tr></table>
+<h4>伸びない人の答え</h4>
+<p>解けなかった応用問題を、もう一度解く。<br>できなかったところをやり直す。これ以上に素直な復習の仕方は、思いつきません。<br>でも、その問題が解けない原因が手前にあると、何回やっても同じところで止まります。<br>やり直した回数は増えて、できるは増えない。</p>
+<h4>伸びる人の答え</h4>
+<p>○がついている手前の基本問題に戻って、解説を見ずに解き直す。<br>そこで、解けないものが出てきます。<br>ワークをやったときは解説を見ながら解いていたので、○がついていただけでした。<br>崩れていた場所は、×の問題ではなく、その手前です。そこを直すと、応用も動きます。</p>
+<h4>法則<span class="tcy">3</span></h4>
+<p>解けなかったら、×の場所ではなく、最後にできていた場所に戻る</p>
+<h4>他の場面で</h4>
+<p>英語。長文が読めないとき、長文をもう一度読むのではなく、その文に出てくる文法の基本例文に戻る。<br>理科。計算問題を間違えたとき、計算の前の、公式の意味の説明に戻る。</p>
+<h4>結論</h4>
+<p>伸びない人は、×の場所で足踏みする。伸びる人は、崩れた場所まで戻ってから登り直す。<br>この差で、同じ<span class="tcy">30</span>分で変わる数が変わる。</p>
+<h4>隅の図</h4>
+<p>伸びない人の道は、×の場所で往復する。伸びる人の道は、戻る矢印を通って手前の箱へ。</p>
+<div class="sep"></div>
+<h2>図<span class="tcy">3</span>　うまくいかないときは、さかのぼる。しかも、忘れる</h2>
+<div class="figbox">（図<span class="tcy">3</span>を挿入。×から<span class="tcy">3</span>方向へ戻る矢印、できるから知っているへの点線）</div>
+<p>解いてみるで×が出たとき、戻る先は<span class="tcy">3</span>つあります。</p>
+<p>知らないに戻る。<br>　そもそも用語や公式を知らなかった。</p>
+<p>知っているに戻る。<br>　言葉は知っていたが、なぜそうなるかがなかった。</p>
+<p>わかっているに戻る。<br>　わかってはいたが、自分の手では出せなかった。</p>
+<p>×は<span class="tcy">1</span>種類でも、原因は<span class="tcy">3</span>種類です。<br>どこに戻るかを間違えると、正しい努力が空振りします。<br>（第<span class="tcy">6</span>章）</p>
+<p>そして、もう<span class="tcy">1</span>本、点線の矢印があります。</p>
+<p>できるから、知っているへ戻る線です。<br>これが、忘れるです。</p>
+<p>さかのぼるは、自分の意思で戻ります。<br>忘れるは、勝手に戻ります。</p>
+<p>だから、できるの数は、放っておくと減ります。<br>増やすだけでなく、戻ったものを拾い直す日が要ります。<br>（第<span class="tcy">7</span>章）</p>
+<div class="sep"></div>
+<h2>伸びると、受かるは違う</h2>
+<p>ここまでずっと、伸びるの話をしてきました。<br>受かるの話を、一度だけします。</p>
+<p>伸びるは、数が多いこと。<br>受かるは、期限までに必要な数が揃うこと。</p>
+<p>数が多くても、試験日までに揃わなければ受かりません。<br>逆に、数が少なくても、必要なものだけが揃えば受かります。</p>
+<p>だから、正式版の定義には「期限までに」が入っています。</p>
+<p>そしてこれが、勉強に締め切りがある理由です。<br>締め切りのない勉強は、この本の対象外です。この本は、試験がある勉強の本です。</p>
+<div class="sep"></div>
+<h2>あの子の頭のなかには、先生がいる</h2>
+<p>ここまでの話には、まだ答えていないことが<span class="tcy">1</span>つあります。</p>
+<p>どうして、あの子は数が多いのか。</p>
+<p>同じ時間、同じ教材で、なぜ通った回数が<span class="tcy">7</span>回と<span class="tcy">0</span>回に分かれるのか。</p>
+<p>観察していて、こう思ったことがあります。</p>
+<p>あの子の頭のなかには、先生がいます。<br>伸びない人の頭のなかには、生徒しかいません。</p>
+<p>あの子が問題を解いているとき、頭のなかで<span class="tcy">2</span>人が働いています。<br>解いている生徒と、それを見ている先生です。</p>
+<p>先生のほうは、こういうことを言っています。</p>
+<div class="indent">　これはテストに出るのか。出ないなら、やらなくていい。<br>　今どこで止まった。全部じゃなくて、どの<span class="tcy">1</span>行だ。<br>　これは、前にやったあれと同じ形だな。<br>　じゃあ、閉じて自分で出してみろ。<br>　出なかったな。どこまでは出た。そこから先だ。<br>　明日も、これをもう一度出させよう。</div>
+<p>伸びない人の頭のなかには、この声がありません。<br>だから、外に先生がいるときだけ伸びて、ひとりになると止まります。</p>
+<p>この本がやろうとしているのは、あなたの頭のなかに、この先生を<span class="tcy">1</span>人置くことです。</p>
+<p>先生の仕事は、<span class="tcy">6</span>つあります。</p>
+<div class="sep"></div>
+<h2>図<span class="tcy">4</span>　完全版</h2>
+<div class="figbox">（図<span class="tcy">4</span>を挿入。漏斗、<span class="tcy">4</span>つの箱、判定、戻る矢印<span class="tcy">3</span>本、忘れる点線、できるの数のカウンター、今日から試験日の線、<span class="tcy">6</span>色の凡例）</div>
+<p>タイトル　成績が伸びる人とは、必要な「できない」を、期限までに「できる」に変えた数が多い人。</p>
+<p>これが、この本の全体です。</p>
+<p>左の漏斗に、できないがたくさん入ってきます。<br>通るのは、必要なできないだけ。通らなかったものは、下に落ちます。</p>
+<p>通ったものが、知らない、知っている、わかっている、と進みます。<br>解いてみるで○が出たら、できるへ。右端のカウンターが、<span class="tcy">1</span>つ増えます。</p>
+<p>×が出たら、<span class="tcy">3</span>本の矢印のどれかで戻ります。<br>できるに入ったものも、点線でこっそり戻ります。</p>
+<p>そして全体が、今日から試験日までの線の上に乗っています。</p>
+<div class="sep"></div>
+<h2><span class="tcy">6</span>つの力は、この図を回す先生の<span class="tcy">6</span>つの仕事</h2>
+<p>定義の言葉を、<span class="tcy">1</span>つずつ分解します。</p>
+<div class="indent">　「必要な」を決める　　　　　　→　捨てる力　　　　入口の漏斗　　　　　　　　第<span class="tcy">2</span>章<br>　「できない」の場所を見つける　→　突き止める力　　<span class="tcy">3</span>つの箱を見渡す虫眼鏡　　 第<span class="tcy">3</span>章<br>　「できる」に変える　　　　　　→　つなげる力　　　知っている→わかっている　第<span class="tcy">4</span>章<br>　「できる」を本番で出す　　　　→　取り出す力　　　解いてみるの判定　　　　　第<span class="tcy">5</span>章<br>　変わらなかったとき　　　　　　→　さかのぼる力　　×から戻る<span class="tcy">3</span>本の矢印　　　 第<span class="tcy">6</span>章<br>　「期限までに」揃える　　　　　→　回す力　　　　　今日→試験日の線　　　　　第<span class="tcy">7</span>章</div>
+<p>定義にない力はありません。<br>定義の言葉で、力になっていないものもありません。<br>だから、<span class="tcy">6</span>つです。</p>
+<p>順番は、勉強の時系列です。<br>始める前に捨てる。問題をつかむ。知識をつなげる。本番で取り出す。失敗したらさかのぼる。期限まで回す。</p>
+<p>そして、この<span class="tcy">6</span>つには、共通の性格があります。</p>
+<p>どれも、何かを増やす力ではありません。<br>やることを増やさない。教えない。渡さない。やらせない。<br><span class="tcy">1</span>つ変えるだけです。</p>
+<div class="sep"></div>
+<h2>次の<span class="tcy">6</span>章の、入口について</h2>
+<p>ここから先、各章の入口で、あなたに問題を<span class="tcy">1</span>つずつ出します。<br>どれも、私が実際に生徒の前に座って考えた場面です。</p>
+<p>そのとき、あなたには、先生の側に座ってもらいます。</p>
+<p>理由は<span class="tcy">1</span>つです。<br>自分のことは、外からは見えません。人のことなら、見えます。<br>先に人で見えるようになったものが、あとから自分にも見えるようになる。</p>
+<p>だから、<span class="tcy">6</span>つの入口では、あなたが先生です。<br>頭のなかに<span class="tcy">1</span>人置くはずの先生を、そこで<span class="tcy">6</span>回、練習することになります。</p>
+<div class="sep"></div>
+<h2><span class="tcy">7</span>つの型を、図の上に置く</h2>
+<p>序章で出した<span class="tcy">7</span>つの型を、この図の上に置くと、こうなります。</p>
+<div class="indent">　今日は<span class="tcy">6</span>時間型　　　　知っているの箱に溜まっていて、解いてみるを通っていない<br>　参考書ルート型　　　　漏斗がない。入口で何も落ちていない<br>　全部わからない型　　　自分がどの箱にいるかを、間違えている<br>　<span class="tcy">10</span>回書く型　　　　　　知っている→わかっているの矢印がない<br>　あーね型　　　　　　　わかっているで止まって、そこをできるだと思っている<br>　あとで付箋型　　　　　×のあと、戻る矢印を引いていない<br>　計画表に<span class="tcy">1</span>時間型　　　 図が回っていない。線の上を進んでいない</div>
+<p><span class="tcy">7</span>つとも、図のどこかが<span class="tcy">1</span>箇所だけ抜けています。<br>全部が抜けている人は、ひとりもいません。</p>
+<p>あの子は、全部を持っているのではありません。<br>抜けたところに気づいたら、そこに戻れる、というだけです。</p>
+<p>次の章から、<span class="tcy">1</span>つずつ埋めていきます。</p>
+<p>自分の型の章から読んでかまいません。</p>
+<div class="part f1"><div class="num">第 2 章</div><div class="ttl">あの子には<br>「捨てる力」がある</div><div class="bar"></div></div>
+<h1>第<span class="tcy">2</span>章　あの子には「捨てる力」がある</h1>
+<div class="sep"></div>
+
+<p>高校<span class="tcy">2</span>年生が、英語の長文の問題集を<span class="tcy">1</span>冊、買ってきました。</p>
+<p>「長文が、全然読めません」</p>
+<p>模試の結果も見ました。たしかに長文の失点が一番大きい。<br>本人もそこを気にしていて、長文の問題集を買ってきています。</p>
+<p>あなたは、長文の練習をさせますか。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>させませんでした。</p>
+<p>かわりに、志望校の過去問を開かせて、こう言いました。</p>
+<p>「配点を、数えてみて」</p>
+<p>その子は、電卓を出して数えました。</p>
+<p>長文の配点より、文法と語彙の配点のほうが大きかった。<br>本人が一番気にしていた場所は、その学部で一番配点が小さい場所でした。</p>
+<p>長文を捨てたわけではありません。<br>順番を、後ろに回しただけです。</p>
+<p>その子はその日から、文法と語彙をやりました。<br><span class="tcy">2</span>ヶ月後、長文の点も上がっていました。<br>読めなかった原因の半分は、語彙だったからです。</p>
+<div class="sep"></div>
+<h2>原理</h2>
+<p>苦手を減らすより先に、どの苦手を減らすかを決める。</p>
+<div class="sep"></div>
+<h2>この章で出てくる<span class="tcy">7</span>つの法則</h2>
+<div class="indent">　法則<span class="tcy">4</span>　　過去問は、解くためではなく捨てるために、最初に開く<br>　法則<span class="tcy">5</span>　　買う前に、終わらせる<span class="tcy">1</span>冊を決める<br>　法則<span class="tcy">6</span>　　<span class="tcy">1</span>ページ目ではなく、配点の大きい「できない」から始める<br>　法則<span class="tcy">7</span>　　苦手は、順番を決めてから<span class="tcy">1</span>つずつ<br>　法則<span class="tcy">8</span>　　模試は、捨てていい単元を見つけるために見る<br>　法則<span class="tcy">9</span>　　計画は、今の自分からしか立てられない<br>　法則<span class="tcy">10</span>　 捨てた単元を言えるのが、設計した証拠</div>
+<h1>法則<span class="tcy">4</span>　捨てる力</h1>
+
+<p class="rubric">捨てる力　<span class="tcy">4</span><br>場面タグ　本棚の前で</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">志望校の過去問、まだ解けない。開く？</p>
+
+<p class="situ">高校<span class="tcy">3</span>年生の<span class="tcy">6</span>月。志望校の赤本を買った。<br>買った日にパラパラめくって、<span class="tcy">1</span>問も解けなかったので、そのまま本棚に立てている。<br>夏が終わって力がついてから、腕試しとして解こうと思っている。<br>今は、基礎の参考書を進めている最中。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">過去問は、問題が載っているページだけの本ですか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f1"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>実力がつくまで開かない</td><td>解かずに開いて配点を数える</td></tr><tr><td>数えているもの</td><td>まだ早い、という感覚</td><td>出ない分野の数</td></tr><tr><td>図の上では</td><td>漏斗がないまま流れ込む</td><td>入口で落とすものが決まる</td></tr><tr><td>試験の日に</td><td>出ない分野に時間を使った</td><td>出る分野だけ厚くなっている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">開かない。今やっても解けないし、貴重な過去問を実力がつく前に使ってしまうのはもったいない。<br>腕試しは、力がついてからのほうが正確に測れます。過去問は数が限られていて、使い切りたくない。<br><span class="tcy">11</span>月に開いて、この学部にほとんど出ない分野に、<span class="tcy">3</span>ヶ月使っていたことに気づく。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">解かずに、開く。<br>問題は解かない。かわりに、大問の数、それぞれの配点、出てくる分野だけを紙に書き出す。<br>書き出したものと、今持っている参考書の目次を並べる。<br>過去問に一度も出ていない分野に、線を引く。それが今日から手をつけないもの。</p>
+<div class="lbl lbl-law">法則4</div>
+<p class="lawbox f1">過去問は、解くためではなく捨てるために、最初に開く</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>定期テスト。範囲表と、先生が授業中に「ここ出すぞ」と言った回数のメモを、先に並べる。<br>高校受験。志望校の過去<span class="tcy">3</span>年分で、毎年出ている単元と、一度も出ていない単元に分ける。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>年で、伸びない人は出ないものにも数を使い、伸びる人は出るものだけに使う。</p>
+
+<h1>法則<span class="tcy">5</span>　捨てる力</h1>
+
+<p class="rubric">捨てる力　<span class="tcy">5</span><br>場面タグ　書店の参考書コーナー</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">参考書<span class="tcy">3</span>冊やって伸びない。<span class="tcy">4</span>冊目、買う？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。英文法の参考書を<span class="tcy">3</span>冊持っている。<br>どれも前半は書き込みでいっぱいで、後ろ半分は新品のまま。<br>模試の文法は、去年から点が変わっていない。<br>SNSで評判のいい<span class="tcy">4</span>冊目を見つけて、今、書店でそれを手に取っている。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox"><span class="tcy">3</span>冊の、後ろ半分だけを見比べてみると。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f1"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td><span class="tcy">4</span>冊目を買う</td><td><span class="tcy">3</span>冊の目次を並べる</td></tr><tr><td>数えているもの</td><td>持っている冊数</td><td>最後まで通した数</td></tr><tr><td>図の上では</td><td>入口が<span class="tcy">3</span>つで全部途中</td><td>入口が<span class="tcy">1</span>つ</td></tr><tr><td>試験の日に</td><td>どれも半分で止まっている</td><td><span class="tcy">1</span>冊が最後まで入っている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">買う。<span class="tcy">3</span>冊やって伸びていないなら、その<span class="tcy">3</span>冊が自分に合っていなかった可能性が高い。<br>合う教材を探すのは大事なことなので、この推論はまともです。<br><span class="tcy">4</span>冊目も、前半だけ黒くなって止まる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">買う前に、<span class="tcy">3</span>冊の目次を横に並べて、やっていない単元に印をつける。<br><span class="tcy">3</span>冊とも、止まっているのが同じ場所だった。関係詞と、仮定法。<br>合わなかったのは本ではなく、その単元です。<br><span class="tcy">3</span>冊のうち解説が一番読みやすい<span class="tcy">1</span>冊を選んで、その単元から最後までやる。</p>
+<div class="lbl lbl-law">法則5</div>
+<p class="lawbox f1">買う前に、終わらせる<span class="tcy">1</span>冊を決める</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>数学。学校のワークと塾のテキストの、両方に載っている単元だけをやる。<br>単語帳。<span class="tcy">2</span>冊目を買う前に、<span class="tcy">1</span>冊目の後ろ半分だけをテストしてみる。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">3</span>ヶ月で、伸びない人は<span class="tcy">4</span>冊を半分ずつ、伸びる人は<span class="tcy">1</span>冊を最後まで。残るのは、通り切ったほうだけ。</p>
+
+<h1>法則<span class="tcy">6</span>　捨てる力</h1>
+
+<p class="rubric">捨てる力　<span class="tcy">6</span><br>場面タグ　テスト<span class="tcy">1</span>週間前の机</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">今日、何から始める？<span class="tcy">1</span>ページ目？</p>
+
+<p class="situ">中学<span class="tcy">2</span>年生。定期テストまであと<span class="tcy">1</span>週間。<br>数学のワークは、テスト範囲が<span class="tcy">30</span>ページある。今日使えるのは<span class="tcy">2</span>時間。<br>とりあえず、<span class="tcy">1</span>ページ目を開いた。<span class="tcy">1</span>問目は、計算問題。<br>これは解ける。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">範囲表ではなく、前回のテスト用紙を出してみると。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f1"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td><span class="tcy">1</span>ページ目から順にやる</td><td>配点の重いできないから始める</td></tr><tr><td>数えているもの</td><td>進んだページ数</td><td>減らした失点</td></tr><tr><td>図の上では</td><td>本の順に漏斗へ入れる</td><td>配点の重い順に入れる</td></tr><tr><td>試験の日に</td><td>手つかずの後半から出る</td><td>重いところが終わっている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans"><span class="tcy">1</span>ページ目から、順番にやる。<br>抜けが出ないし、前から順にやるのが一番確実なのは本当です。<br><span class="tcy">2</span>時間で<span class="tcy">8</span>ページ進んだ。残りの<span class="tcy">22</span>ページに、配点の大きい単元が全部入っていた。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">前回の同じ科目のテスト用紙を出して、大問ごとの配点を見る。<br>計算問題は全部で<span class="tcy">15</span>点。後半の「一次関数の利用」だけで<span class="tcy">20</span>点ある。<br><span class="tcy">30</span>ページのうち、その単元は<span class="tcy">5</span>ページ。<br>その<span class="tcy">5</span>ページの中で、今できない問題だけに印をつけて、そこから始める。</p>
+<div class="lbl lbl-law">法則6</div>
+<p class="lawbox f1"><span class="tcy">1</span>ページ目ではなく、配点の大きい「できない」から始める</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。教科書の音読より先に、配点の大きい並べ替えと英作文の、できない問題から。<br>理科。用語の一問一答より先に、大問になっている計算のところから。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">2</span>時間で、伸びない人は軽い<span class="tcy">8</span>ページ、伸びる人は重い<span class="tcy">5</span>ページ。点になる数が違う。</p>
+
+<h1>法則<span class="tcy">7</span>　捨てる力</h1>
+
+<p class="rubric">捨てる力　<span class="tcy">7</span><br>場面タグ　受験まで<span class="tcy">4</span>ヶ月</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">苦手が<span class="tcy">5</span>つある。全部つぶす？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。高校受験まで<span class="tcy">4</span>ヶ月。<br>数学の苦手を書き出したら、関数、図形の証明、確率、資料の活用、方程式の文章題、の<span class="tcy">5</span>つになった。<br>どれも入試に出る。全部やらないと間に合わない気がする。<br>とりあえず、月曜は関数、火曜は証明、と割り振ってみた。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox"><span class="tcy">5</span>つのうち、他の<span class="tcy">4</span>つに顔を出しているものはありますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f1"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td><span class="tcy">5</span>つを<span class="tcy">1</span>日ずつ回す</td><td><span class="tcy">1</span>つを<span class="tcy">5</span>日続ける</td></tr><tr><td>数えているもの</td><td>手をつけた分野の数</td><td>通り切った分野の数</td></tr><tr><td>図の上では</td><td><span class="tcy">5</span>本とも途中で止まる</td><td><span class="tcy">1</span>本が最後まで通る</td></tr><tr><td>試験の日に</td><td><span class="tcy">5</span>つとも苦手のまま</td><td><span class="tcy">1</span>つずつ消えている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans"><span class="tcy">5</span>つを<span class="tcy">1</span>日ずつ、ローテーションでやる。<br><span class="tcy">5</span>つとも入試に出ます。<span class="tcy">1</span>つでも手をつけない日があると、そこが不安になる。<br>ただ、<span class="tcy">1</span>つあたりが<span class="tcy">5</span>日に<span class="tcy">1</span>回になる。次に回ってきたときには、前回やった分が戻っている。<br><span class="tcy">5</span>つとも、ずっと苦手のまま残ります。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans"><span class="tcy">5</span>つを紙に書いて、過去<span class="tcy">3</span>年の入試での配点順に並べる。<br>一番上の関数だけを、<span class="tcy">5</span>日連続でやる。<br><span class="tcy">5</span>日目には、解説なしで解けるようになる。そこで<span class="tcy">1</span>つ、数が増える。<br>それから<span class="tcy">2</span>番目へ。<span class="tcy">4</span>ヶ月で、<span class="tcy">5</span>つとも順番に終わる。</p>
+<div class="lbl lbl-law">法則7</div>
+<p class="lawbox f1">苦手は、順番を決めてから<span class="tcy">1</span>つずつ</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。文法と単語と長文とリスニングを同時にやらず、単語だけを<span class="tcy">2</span>週間。<br>定期テスト前。<span class="tcy">5</span>教科を毎日少しずつではなく、点の伸び幅が一番大きい<span class="tcy">1</span>教科から。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">25</span>回で、伸びない人は<span class="tcy">5</span>つとも途中、伸びる人は<span class="tcy">1</span>つを通り切る。</p>
+
+<h1>法則<span class="tcy">8</span>　捨てる力</h1>
+
+<p class="rubric">捨てる力　<span class="tcy">8</span><br>場面タグ　模試が返ってきた日</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">模試が返ってきた。まず見るのは、点数？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。県の模試の結果が返ってきた。<br>判定はC。前回よりは少し上がっている。<br>友達と見せ合って、点数と判定の話をして、その日は終わった。<br>封筒の中には、答案のほかにも何枚か紙が入っている。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">封筒の中の、判定が書いていないほうの紙。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f1"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>点数と判定を見る</td><td>単元別の正答率を見る</td></tr><tr><td>数えているもの</td><td>判定の記号</td><td>捨てる単元と拾う単元</td></tr><tr><td>図の上では</td><td>模試の前後で漏斗が同じ</td><td>模試のあと漏斗の目が変わる</td></tr><tr><td>試験の日に</td><td>次も同じ判定が出る</td><td>拾った分だけ上がる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">点数と判定を見て、もっと量を増やそうと決める。<br>判定が足りないのだから量を増やす、というのは自然な結論です。<br>ただ、どの単元を、どうするかは、何も決まっていない。次の模試も同じCになる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">単元別の正答率が載っている表を見る。<br>自分が×で、受験者全体の正答率が<span class="tcy">20</span>%以下の問題に、線を引く。これは今回は捨てる。<br>自分が×で、全体の正答率が<span class="tcy">60</span>%以上の問題に、丸をつける。ここだけを今週やる。<br><span class="tcy">5</span>問あった。<span class="tcy">1</span>週間で<span class="tcy">5</span>個変える。</p>
+<div class="lbl lbl-law">法則8</div>
+<p class="lawbox f1">模試は、捨てていい単元を見つけるために見る</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>定期テスト。クラス平均が高いのに自分が落とした問題だけを、直す。<br>高校の実力テスト。分野別の得点表で、伸びしろが一番大きい分野を<span class="tcy">1</span>つだけ選ぶ。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>枚の模試から、伸びない人は判定を<span class="tcy">1</span>つ、伸びる人は今週変える<span class="tcy">5</span>つを持ち帰る。</p>
+
+<h1>法則<span class="tcy">9</span>　捨てる力</h1>
+
+<p class="rubric">捨てる力　<span class="tcy">9</span><br>場面タグ　新しいノートの<span class="tcy">1</span>ページ目</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">計画、理想の自分で立てる？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生の春。<span class="tcy">1</span>年後の受験に向けて、年間計画を立てた。<br>平日<span class="tcy">6</span>時間、休日<span class="tcy">10</span>時間。英単語は毎日<span class="upr">100</span>個、数学は毎日<span class="tcy">3</span>時間。<br>書き上げたときは、気持ちがよかった。<br>先週の自分は、平日<span class="tcy">2</span>時間しかやっていない。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">先週のあなたは、何時間できましたか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f1"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>理想の自分で立てる</td><td>先週の実績で立てる</td></tr><tr><td>数えているもの</td><td>立てた計画の数</td><td>実行できた日の数</td></tr><tr><td>図の上では</td><td>線の上に乗っていない</td><td>線の上にいる</td></tr><tr><td>試験の日に</td><td>崩れた計画が<span class="tcy">20</span>枚残る</td><td>予定どおり揃っている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">理想の計画で始める。<br>高い目標を立てたほうが伸びる、というのは、間違ってはいません。<br><span class="tcy">3</span>日で崩れて、立て直して、また崩れる。<span class="tcy">1</span>年で、計画だけが<span class="tcy">20</span>枚たまる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">先週の勉強時間を、曜日ごとに書き出す。月<span class="tcy">2</span>時間、火<span class="tcy">2</span>時間、水<span class="tcy">0</span>、木<span class="tcy">2</span>時間、金<span class="tcy">1</span>時間、土<span class="tcy">4</span>時間、日<span class="tcy">3</span>時間。<br>この<span class="tcy">14</span>時間で、<span class="tcy">1</span>年分の計画を立てる。<br>足りない分は、時間を増やして埋めない。何をやらないかを決めて埋める。<br>やらないものを決めたら、<span class="tcy">14</span>時間で入るところまで入った。</p>
+<div class="lbl lbl-law">法則9</div>
+<p class="lawbox f1">計画は、今の自分からしか立てられない</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>定期テスト。残り日数と、先週の実績時間をかけて総量を出してから、範囲を切る。<br>部活のある時期。引退までは今の時間で組み、引退後の分は別の計画として、あとで組む。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>年で、伸びない人には計画が<span class="tcy">20</span>枚たまり、伸びる人には通した数がたまる。</p>
+
+<h1>法則<span class="tcy">10</span>　捨てる力</h1>
+
+<p class="rubric">捨てる力　<span class="tcy">10</span><br>場面タグ　受験<span class="tcy">1</span>ヶ月前の面談</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">「全部やった」と言える？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。受験まで<span class="tcy">1</span>ヶ月。<br>面談で「今まで何をやってきた？」と聞かれた。<br>「全部やりました」と答えた。実際、参考書もワークも、一通り終わっている。<br>先生は、うなずかずに、もう<span class="tcy">1</span>つ質問をした。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">やらなかったことを、<span class="tcy">3</span>つ言えますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f1"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>全部に一度ずつ触る</td><td>やらないものを先に決める</td></tr><tr><td>数えているもの</td><td>やった範囲</td><td>捨てた単元</td></tr><tr><td>図の上では</td><td>落ちたものが<span class="tcy">1</span>つもない</td><td>落ちたものが見えている</td></tr><tr><td>試験の日に</td><td>どれも一度しか通っていない</td><td>残したものを何度も通った</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">全部やった、と答える。一通り触っているので、嘘ではありません。<br>やり残しがないのは、まじめにやってきた証拠でもあります。<br>ただ、全部に均等に触れたということは、どれも一度しか通っていないということです。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">「これとこれとこれは、やっていません」と答える。理由も言える。<br>過去<span class="tcy">5</span>年で<span class="tcy">1</span>回も出ていないから。配点が<span class="tcy">2</span>点だから。他が終わってからにすると決めたから。<br>捨てたものを言えるということは、残したものを自分で選んだということです。<br>選んだ分だけ、残ったものを何度も通れた。</p>
+<div class="lbl lbl-law">法則10</div>
+<p class="lawbox f1">捨てた単元を言えるのが、設計した証拠</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>定期テスト前。範囲表に、今回やらない単元を先に消してから始める。<br>英語。志望校に出ない形式を、いつまで手をつけないかを決めておく。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ範囲を、伸びない人は全部に一度ずつ、伸びる人は残した分だけ何度も通る。できるになるのは、何度も通ったほう。</p>
+
+<div class="pagebreak"></div><p>捨てるとは、数を「必要な数」にすること。</p>
+<p>できないは、無限にあります。<br>時間は、有限です。</p>
+<p>全部やろうとした人は、全部に少しずつ触って、<span class="tcy">1</span>つも通り切りません。<br>捨てた人だけが、通り切ります。</p>
+<p>漏斗を通さなかった分は、負けではありません。<br>その分だけ、通ったものが増えます。</p>
+<div class="part f2"><div class="num">第 3 章</div><div class="ttl">あの子には<br>「突き止める力」がある</div><div class="bar"></div></div>
+<h1>第<span class="tcy">3</span>章　あの子には「突き止める力」がある</h1>
+<div class="sep"></div>
+
+<p>「これ、全部わからないです」</p>
+<p>中学<span class="tcy">3</span>年生が、数学のプリントを机に置きました。</p>
+<p>ページを見ると、たしかに手がついていません。<span class="tcy">1</span>行も書いていない。<br>本人は、基礎ができていないからだと思っています。<br>中<span class="tcy">1</span>の内容からやり直したい、と言っています。</p>
+<p>あなたは、基礎からやり直させますか。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>やり直させませんでした。</p>
+<p>かわりに、問題文を<span class="tcy">1</span>文ずつ、声に出して日本語に言い換えさせました。</p>
+<p>「AさんはBさんより毎分<span class="tcy">20</span>m速く歩く」　言えた。<br>「<span class="tcy">2</span>人は同時に反対方向に出発する」　言えた。<br>「<span class="tcy">12</span>分後に<span class="tcy">2</span>人の間の距離が<span class="upr">1200</span>mになった」　ここで止まりました。</p>
+<p>「〜になった」が、いつの話なのかが、わからなかった。</p>
+<p>わからなかったのは、数学ではありませんでした。<br><span class="tcy">3</span>文目の日本語です。</p>
+<p>そこだけを言い換えたら、式は自分で立てました。<br>中<span class="tcy">1</span>に戻る必要は、ありませんでした。</p>
+<div class="sep"></div>
+<h2>原理</h2>
+<p>全部わからない、は存在しない。止まっている<span class="tcy">1</span>行がある。</p>
+<div class="sep"></div>
+<h2>この章で出てくる<span class="tcy">7</span>つの法則</h2>
+<div class="indent">　法則<span class="tcy">11</span>　問題文は、最後まで読んでから解く<br>　法則<span class="tcy">12</span>　解く前に、設問を自分の言葉で言い換える<br>　法則<span class="tcy">13</span>　板書は写さず、先生の話を<span class="tcy">1</span>行に要約する<br>　法則<span class="tcy">14</span>　全部ではなく、止まった<span class="tcy">1</span>行を指さす<br>　法則<span class="tcy">15</span>　知らないと、わかっていないを分けてから動く<br>　法則<span class="tcy">16</span>　図に描き直せないものは、まだつかめていない<br>　法則<span class="tcy">17</span>　設問を先に読んで、本文に探しに行く</div>
+<h1>法則<span class="tcy">11</span>　突き止める力</h1>
+
+<p class="rubric">突き止める力　<span class="tcy">11</span><br>場面タグ　文章題を読んでいる途中</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">問題文の途中で、パターンがわかった。解き始める？</p>
+
+<p class="situ">中学<span class="tcy">2</span>年生。数学の文章題。<br>「Aさんは毎分<span class="tcy">60</span>mで歩き、Bさんは毎分<span class="tcy">90</span>mで歩く」まで読んだところで、<br>あ、これ速さの問題だ、とわかった。前に似た問題をやった記憶がある。<br>式の形も浮かんでいる。手を動かしたい。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">最後の<span class="tcy">1</span>文には、何が書いてありますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>わかった所で解き始める</td><td>最後まで読んでから解く</td></tr><tr><td>数えているもの</td><td>見覚えのある形の数</td><td>式にできない条件の数</td></tr><tr><td>図の上では</td><td>どの箱にいるか確かめない</td><td>止まる場所を先に見つける</td></tr><tr><td>試験の日に</td><td>条件を<span class="tcy">1</span>つ落として失点</td><td>条件の抜けに気づける</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">そこから解き始める。<br>形がわかった時点で解き始めるのは速いし、実際、前半の式は合っています。<br>最後の<span class="tcy">1</span>文の「BさんはAさんの<span class="tcy">5</span>分後に出発した」を読んでいないので、答えだけがずれる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">最後まで読んでから、手を動かす。<br>読み終えるまで<span class="tcy">10</span>秒。その<span class="tcy">10</span>秒で、条件が<span class="tcy">3</span>つ、求めるものが<span class="tcy">1</span>つだと確かめる。<br>そのうえで、条件のうち式にできないものに印をつける。<br>式にできなかった条件が、自分が止まっている場所です。</p>
+<div class="lbl lbl-law">法則11</div>
+<p class="lawbox f2">問題文は、最後まで読んでから解く</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語の並べ替え。全部の語を見てから、動詞を<span class="tcy">1</span>つ決める。<br>理科。実験の手順を最後まで読んでから、何を変えて何を変えなかったのかを確かめる。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>問で、伸びない人は最後の<span class="tcy">1</span>文を落とし、伸びる人は落としかけた条件を<span class="tcy">1</span>つ拾う。</p>
+
+<h1>法則<span class="tcy">12</span>　突き止める力</h1>
+
+<p class="rubric">突き止める力　<span class="tcy">12</span><br>場面タグ　設問を見た直後</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">何を聞かれているか、言える？</p>
+
+<p class="situ">高校<span class="tcy">1</span>年生。現代文の問題。<br>「傍線部について、筆者の考えを<span class="tcy">70</span>字以内で説明せよ」<br>本文はさっき読んだ。意味も、だいたい取れた。<br>でも、何を書けばいいかがわからないので、本文をもう一度読み返している。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">答えの形は、本文ではなく、設問文のほうに書いてあります。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>本文を読み直す</td><td>設問を自分の言葉に直す</td></tr><tr><td>数えているもの</td><td>読んだ回数</td><td>探すものの数</td></tr><tr><td>図の上では</td><td><span class="tcy">3</span>つの箱を行き来する</td><td><span class="tcy">1</span>箇所を見に行く</td></tr><tr><td>試験の日に</td><td>読み返す時間で足りなくなる</td><td><span class="tcy">1</span>往復で解き終わる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">本文をもう一度読む。<br>答えは本文の中にあります。<span class="tcy">1</span>回目で読み落としたのかもしれないので、もう一度読む。<br>ただ、探すものが決まっていないので、<span class="tcy">3</span>回読んでも見つからない。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">読むのをやめて、設問を自分の言葉に直す。<br>「筆者が、この話について、どう思っているか。それと、そう思う理由。合わせて<span class="tcy">70</span>字」<br>言い換えた瞬間に、探すものが<span class="tcy">2</span>つに決まる。筆者の意見と、その理由。<br>それから本文に戻る。戻る目的が決まっているので、<span class="tcy">1</span>回で見つかる。</p>
+<div class="lbl lbl-law">法則12</div>
+<p class="lawbox f2">解く前に、設問を自分の言葉で言い換える</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>数学。「〜となるようなaの値の範囲を求めよ」を「aがどこからどこまでなら成り立つか」に直す。<br>理科。「〜の理由を答えよ」を「何が起きたから、何が起きたか」に直す。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>問に、伸びない人は<span class="tcy">3</span>回読む時間を使い、伸びる人は<span class="tcy">1</span>回で終えて、残りを次の<span class="tcy">1</span>つに回す。</p>
+
+<h1>法則<span class="tcy">13</span>　突き止める力</h1>
+
+<p class="rubric">突き止める力　<span class="tcy">13</span><br>場面タグ　授業中</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">授業中、板書を写す？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。社会の授業。<br>先生が黒板に書くのが速くて、写すだけで精一杯。<br>消される前に写し終えるのに必死で、先生が何を話しているかは、耳に入っていない。<br>ノートは、きれいに埋まっていく。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">授業のあとに残るものが<span class="tcy">2</span>つあるとしたら、ノートと、あと<span class="tcy">1</span>つは何ですか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>板書を全部写す</td><td>話を<span class="tcy">1</span>行にまとめる</td></tr><tr><td>数えているもの</td><td>埋まったページ数</td><td>まとめられなかった箇所</td></tr><tr><td>図の上では</td><td>授業中に矢印を通らない</td><td>止まった箱に印がつく</td></tr><tr><td>試験の日に</td><td>ノートは残るが出せない</td><td>授業で見つけた分が出せる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">全部写す。<br>写しておけば、家で見返せます。消される前に写し終えないと、その分が丸ごと消える。<br>写しているあいだ、頭は動いていません。授業中に一度も止まらないので、<br>どこがわからないかも、わからないまま終わる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">板書は、教科書に載っていないところだけ写す。<br>かわりに、先生が話したことを、<span class="tcy">1</span>行にまとめてノートの端に書く。<br><span class="tcy">1</span>行にまとめようとすると、まとめられないところが出ます。<br>そこに印をつける。授業が終わった時点で、家でやることが決まっている。</p>
+<div class="lbl lbl-law">法則13</div>
+<p class="lawbox f2">板書は写さず、先生の話を<span class="tcy">1</span>行に要約する</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>数学の授業。式は写さず、「なぜこの式が出てきたか」を<span class="tcy">1</span>行で書く。<br>塾の解説。解き方ではなく、「最初に何に気づけばよかったか」を<span class="tcy">1</span>行で書く。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">50</span>分の授業から、伸びない人はノート<span class="tcy">1</span>ページ、伸びる人は家で変える場所を<span class="tcy">1</span>つ持ち帰る。</p>
+
+<h1>法則<span class="tcy">14</span>　突き止める力</h1>
+
+<p class="rubric">突き止める力　<span class="tcy">14</span><br>場面タグ　質問に行く直前</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">「全部わからない」と言いそうになった</p>
+
+<p class="situ">中学<span class="tcy">2</span>年生。数学の、三角形の合同の証明。<br>プリントを開いて<span class="tcy">15</span>分たったが、<span class="tcy">1</span>行も書けていない。<br>先生のところへ聞きに行こうと立ち上がった。口から出そうになっているのは、<br>「これ、全部わからないです」。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">本当に、問題文の<span class="tcy">1</span>行目からわかりませんか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>「全部わからない」と言う</td><td>止まった<span class="tcy">1</span>行を指さす</td></tr><tr><td>数えているもの</td><td>わからない、という状態</td><td>止まった行の数</td></tr><tr><td>図の上では</td><td><span class="tcy">3</span>つの箱をまとめて扱う</td><td>箱の境目に印がつく</td></tr><tr><td>試験の日に</td><td>同じところでまた止まる</td><td>その<span class="tcy">1</span>行だけ変わっている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">「全部わからない」と言う。<br>手が<span class="tcy">1</span>行も動いていないので、本人の実感としては本当のことです。<br>先生は最初から説明する。説明されればわかる。次の週、また同じところで止まる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">問題文を、指でなぞりながら上から読む。<br>「三角形ABCと三角形DEFにおいて」わかる。「AB=DE」わかる。「∠BAC=∠EDF」わかる。<br>「よって」　ここで指が止まった。そこを指さして聞く。<br>「ここまでは出せます。ここから先が出ません」</p>
+<div class="lbl lbl-law">法則14</div>
+<p class="lawbox f2">全部ではなく、止まった<span class="tcy">1</span>行を指さす</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語の長文。意味の取れた文に線を引いて、線が切れたところを指す。<br>理科の計算。式のどこまで書けたかを、書いてから聞く。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ「わからない」から、伸びない人は説明を<span class="tcy">1</span>回もらい、伸びる人は変える場所を<span class="tcy">1</span>つ手に入れる。</p>
+
+<h1>法則<span class="tcy">15</span>　突き止める力</h1>
+
+<p class="rubric">突き止める力　<span class="tcy">15</span><br>場面タグ　難しい、と思った瞬間</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">難しい、と思った。知らない？わかっていない？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。物理の、力学的エネルギー保存の問題。<br>問題文を読んで、難しい、と思った。<br>基礎ができていないんだと思って、参考書のその単元を最初から読み直そうとしている。<br>これから<span class="tcy">3</span>時間かかる。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">出てくる言葉の意味を、口に出して全部言えますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>参考書を最初から読み直す</td><td>言葉を<span class="tcy">1</span>つずつ言ってみる</td></tr><tr><td>数えているもの</td><td>読み直した時間</td><td>知らない語と、出ない理由</td></tr><tr><td>図の上では</td><td><span class="tcy">3</span>つの箱をまとめて戻る</td><td>どの箱かを決めて戻る</td></tr><tr><td>試験の日に</td><td><span class="tcy">3</span>時間かけて同じ場所</td><td><span class="tcy">20</span>分で<span class="tcy">1</span>つ動いている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">参考書を最初から読み直す。<br>難しいと感じたということは、土台のどこかが抜けている。だから、土台から埋め直す。<br>ただ、最初から読むと、すでに知っている部分も全部読むことになる。<br><span class="tcy">3</span>時間かけて読み終えても、止まっていた場所は最初と同じままです。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">問題に出てくる言葉を、<span class="tcy">1</span>つずつ声に出して説明してみる。<br>「位置エネルギー」　言える。<br>「保存力」　言えない。これは、知らない。<br>「なぜ摩擦があると保存されないのか」　言えない。これは、わかっていない。<br>知らないものは調べる。わかっていないものは、なぜを<span class="tcy">1</span>つ足す。手当てが違う。</p>
+<div class="lbl lbl-law">法則15</div>
+<p class="lawbox f2">知らないと、わかっていないを分けてから動く</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。単語の意味が出てこないのか、文の構造が取れないのかを分ける。<br>社会。用語を知らないのか、出来事のつながりがわかっていないのかを分ける。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ「難しい」から、伸びない人は<span class="tcy">3</span>時間を使い、伸びる人は<span class="tcy">20</span>分で<span class="tcy">1</span>つ変える。</p>
+
+<h1>法則<span class="tcy">16</span>　突き止める力</h1>
+
+<p class="rubric">突き止める力　<span class="tcy">16</span><br>場面タグ　問題文とにらめっこ</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">文章のまま考えている</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。理科の、電熱線を並列につないだときの電流の問題。<br>問題文を<span class="tcy">3</span>回読んだ。頭の中で、なんとなく回路を思い浮かべながら考えている。<br>考えているうちに、さっき思い浮かべた形と、今の形が違う気がしてきた。<br>答えは出ていない。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">紙の上に、線は何本要りますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>文章のまま考え続ける</td><td>読むのをやめて紙に描く</td></tr><tr><td>数えているもの</td><td>読んだ回数</td><td>描けなかった箇所</td></tr><tr><td>図の上では</td><td>箱の中で往復する</td><td>出せない<span class="tcy">1</span>点に印がつく</td></tr><tr><td>試験の日に</td><td>頭の中の絵がずれる</td><td>描いてから解き始められる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">文章のまま考え続ける。<br>必要なことは全部書いてあるのだから、読んで考えるのは正しいやり方です。<br>ただ、頭の中の絵は、読むたびに少しずつ変わります。変わったことに気づけないので、<br>どこが違っているかが、いつまでも見つからない。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">読むのをやめて、回路を紙に描く。<br>描こうとすると、電熱線が<span class="tcy">2</span>本なのか<span class="tcy">3</span>本なのかで手が止まる。<br>そこが、読み取れていなかった場所です。<br>文章に戻って、その<span class="tcy">1</span>文だけを読む。描けたら、あとは計算だけになる。</p>
+<div class="lbl lbl-law">法則16</div>
+<p class="lawbox f2">図に描き直せないものは、まだつかめていない</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>数学の文章題。線分図か表に直す。直せない条件が、読み取れていない条件。<br>英語の長文。段落どうしの関係を矢印で描く。描けない段落が、読めていない段落。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ問題文から、伸びない人は読んだ回数を、伸びる人は描けなかった<span class="tcy">1</span>点を取り出す。</p>
+
+<h1>法則<span class="tcy">17</span>　突き止める力</h1>
+
+<p class="rubric">突き止める力　<span class="tcy">17</span><br>場面タグ　模試の長文</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">長文、本文から読む？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。模試の英語。<br>毎回、最後の大問が白紙のまま提出になる。時間が足りない。<br>今回こそはと思って、長文の<span class="tcy">1</span>行目から丁寧に読み始めた。<br>読み終えて設問を見たら、また本文に戻ることになった。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">探すものは、本文の前と後ろ、どちらに書いてありますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>本文の<span class="tcy">1</span>行目から読む</td><td>設問を先に読む</td></tr><tr><td>数えているもの</td><td>読んだ行数</td><td>見つけた答えの数</td></tr><tr><td>図の上では</td><td>全部を通ろうとする</td><td><span class="tcy">3</span>点だけ見に行く</td></tr><tr><td>試験の日に</td><td>最後の大問が白紙になる</td><td>最後まで手が届く</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">本文を最初から読む。<br>全部読まないと内容はわかりません。書いてある順に読むのが、いちばん取りこぼしがない。<br>読み終えてから設問を見て、また本文に戻る。<span class="tcy">2</span>往復したところで時間切れになる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">設問だけを先に読む。何が聞かれているかを、<span class="tcy">3</span>つ頭に入れる。<br>それから本文を読む。読みながら、聞かれていたものが出てきた場所に印をつける。<br><span class="tcy">1</span>往復で終わる。<br>設問に関係のない段落で意味が取れなくても、そこは今日は放っておく。</p>
+<div class="lbl lbl-law">法則17</div>
+<p class="lawbox f2">設問を先に読んで、本文に探しに行く</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>国語。設問を先に読んでから、本文に入る。<br>理科と社会の資料問題。問いを読んでから、グラフや表を見る。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ試験時間で、伸びない人は本文を<span class="tcy">2</span>周し、伸びる人は問題を<span class="tcy">1</span>つ多く通す。</p>
+
+<div class="pagebreak"></div><p>突き止めるとは、「できない」の場所を<span class="tcy">1</span>点に絞ること。</p>
+<p>範囲が広いと、戻る距離も長くなります。<br>中<span class="tcy">1</span>まで戻ると、<span class="tcy">3</span>ヶ月かかります。<span class="tcy">3</span>文目まで戻ると、<span class="tcy">3</span>分です。</p>
+<p>同じ「わからない」でも、場所が<span class="tcy">1</span>点に絞れているかどうかで、<br>そこから変えられる数が、まったく変わります。</p>
+<div class="part f3"><div class="num">第 4 章</div><div class="ttl">あの子には<br>「つなげる力」がある</div><div class="bar"></div></div>
+<h1>第<span class="tcy">4</span>章　あの子には「つなげる力」がある</h1>
+<div class="sep"></div>
+
+<p>机の上に、単語帳が置かれています。最初の<span class="upr">200</span>語だけが、真っ黒です。</p>
+<p>高校<span class="tcy">1</span>年生が言いました。「この単語帳、合ってない気がします。全然覚えられない」</p>
+<p>見ると、最初の<span class="upr">200</span>語だけが真っ黒になっています。<br>何周もした跡があります。それでも、小テストは半分しか取れていません。<br>本人は、別の単語帳に変えたいと言っています。</p>
+<p>あなたは、単語帳を変えさせますか。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>変えさせませんでした。</p>
+<p>かわりに、単語帳の日本語のほうを隠して、テストしました。</p>
+<p>英語ではなく、日本語です。</p>
+<p>「相互の」「一貫した」「潜在的な」「客観的な」</p>
+<p>半分、答えられませんでした。<br>意味を聞いても、説明できない。</p>
+<p>覚えられなかったのは、英語ではありませんでした。<br>つなげる先の、日本語がなかったんです。</p>
+<p>日本語のほうを、その子が知っている言葉で言い直しました。<br>「潜在的な」は「まだ表に出てないけど、中にある」。</p>
+<p>それから同じ単語帳をやったら、その<span class="upr">200</span>語は<span class="tcy">1</span>週間で入りました。</p>
+<div class="sep"></div>
+<h2>原理</h2>
+<p>新しいものは、知っているものにしかつながらない。</p>
+<div class="sep"></div>
+<h2>この章で出てくる<span class="tcy">7</span>つの法則</h2>
+<div class="indent">　法則<span class="tcy">18</span>　解く前に、前に見た形を探す<br>　法則<span class="tcy">19</span>　覚える前に「なぜ」を<span class="tcy">1</span>つつける<br>　法則<span class="tcy">20</span>　<span class="tcy">1</span>つの例文で、<span class="tcy">10</span>個覚える<br>　法則<span class="tcy">21</span>　覚えたものは、別の科目で<span class="tcy">1</span>回使う<br>　法則<span class="tcy">22</span>　似たものは、違いだけで覚える<br>　法則<span class="tcy">23</span>　覚えるとは、見ることではなく思い出すこと<br>　法則<span class="tcy">24</span>　まとめは紙ではなく、頭のなかに作る</div>
+<h1>法則<span class="tcy">18</span>　つなげる力</h1>
+
+<p class="rubric">つなげる力　<span class="tcy">18</span><br>場面タグ　初めて見る問題の前で</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">新しい問題。ゼロから考える？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。模試の直しをしている。<br>大問<span class="tcy">3</span>が、見たことのない形だった。解説を見る前に、自力で考えようと決めた。<br><span class="tcy">5</span>分たった。まだ何も浮かばない。<br>自力で考えるのが大事だと言われているので、もう少し粘るつもりでいる。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">本当に、初めて見る形ですか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>ゼロから考え続ける</td><td>ノートをさかのぼる</td></tr><tr><td>数えているもの</td><td>考えた時間</td><td>前の問題との違いの数</td></tr><tr><td>図の上では</td><td>知らないの箱から始める</td><td>知っているの箱から始める</td></tr><tr><td>試験の日に</td><td>毎回、初見の顔で止まる</td><td>見たことのある形が増える</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">ゼロから考え続ける。<br>初見の問題を自力で考えるのは力になる、というのは本当のことです。<br><span class="tcy">20</span>分粘って、何も出なかった。解説を見たら、先月やった問題の数字違いでした。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans"><span class="tcy">5</span>分で手が止まったら、考えるのをやめて、ノートをさかのぼる。<br>同じ単元でやった問題を<span class="tcy">3</span>つ見返して、条件の形が一番近いものを<span class="tcy">1</span>つ選ぶ。<br>選んだら、その問題と今の問題で、同じところと違うところを書き出す。<br>違うのは<span class="tcy">1</span>箇所だけだった。その<span class="tcy">1</span>箇所だけを考える。</p>
+<div class="lbl lbl-law">法則18</div>
+<p class="lawbox f3">解く前に、前に見た形を探す</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。初めて見る構文は、知っている構文のどれに一番近いかを先に決める。<br>理科。新しい実験は、教科書の基本実験のどれの変形かを探す。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">20</span>分で、伸びない人はゼロから考え、伸びる人は前にやった<span class="tcy">1</span>つを、今の<span class="tcy">1</span>つに変える。</p>
+
+<h1>法則<span class="tcy">19</span>　つなげる力</h1>
+
+<p class="rubric">つなげる力　<span class="tcy">19</span><br>場面タグ　歴史の年号を覚えている</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">覚える前に、なぜ、を持ってる？</p>
+
+<p class="situ">中学<span class="tcy">2</span>年生。社会の歴史。承久の乱、<span class="upr">1221</span>年。<br>語呂合わせを見つけたので、それで覚えることにした。<br>このやり方で、今日は<span class="tcy">20</span>個の年号を覚えるつもりでいる。<br>語呂は覚えやすい。実際、その場ではすぐ入る。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">その出来事の、前の年には何がありましたか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>語呂で覚える</td><td>覚える前になぜを<span class="tcy">1</span>つつける</td></tr><tr><td>数えているもの</td><td>覚えた個数</td><td>一緒に動いた数</td></tr><tr><td>図の上では</td><td>知っているに単品で積む</td><td>わかっているへの矢印を通る</td></tr><tr><td>試験の日に</td><td>年号は出るが理由が出ない</td><td>前後ごと出てくる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">語呂で覚える。<br>語呂は入りやすい。<span class="tcy">20</span>個を<span class="tcy">1</span>時間で入れるなら、これより速い方法は思いつきません。<br><span class="tcy">1</span>つ覚えて、<span class="tcy">1</span>つ増える。それだけです。<br>年号を聞かれれば答えられる。なぜ起きたかを聞かれると、答えられない。<br><span class="tcy">1</span>ヶ月後には、語呂のほうも消えている。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">覚える前に、なぜを<span class="tcy">1</span>つつける。<br>承久の乱が起きたのは、その前に源氏の将軍が絶えたから。<br>なぜを<span class="tcy">1</span>つつけると、その前の出来事と、そのあとに置かれた六波羅探題が、<br>一緒にくっついてくる。<span class="tcy">1</span>つ覚えると、<span class="tcy">3</span>つ動く。</p>
+<div class="lbl lbl-law">法則19</div>
+<p class="lawbox f3">覚える前に「なぜ」を<span class="tcy">1</span>つつける</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>数学。公式は、なぜその形になるかを<span class="tcy">1</span>回だけ自分で導いてから覚える。<br>英単語。接頭辞の意味を<span class="tcy">1</span>つ知ると、同じ接頭辞の単語が一緒に動く。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ暗記の時間で、伸びない人は<span class="tcy">1</span>つ覚えて<span class="tcy">1</span>つ増え、伸びる人は<span class="tcy">1</span>つ覚えて<span class="tcy">3</span>つ動く。</p>
+
+<h1>法則<span class="tcy">20</span>　つなげる力</h1>
+
+<p class="rubric">つなげる力　<span class="tcy">20</span><br>場面タグ　単語の小テスト前日</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">単語<span class="tcy">10</span>個、<span class="tcy">10</span>回ずつ書く？</p>
+
+<p class="situ">高校<span class="tcy">1</span>年生。明日、英単語の小テストがある。範囲は<span class="tcy">50</span>語。<br>ノートに、<span class="tcy">1</span>語につき<span class="tcy">10</span>回ずつ書いている。全部で<span class="upr">500</span>回書くことになる。<br><span class="tcy">1</span>時間はかかる。手も疲れる。<br>でも、書いた分だけ覚えられる気がする。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox"><span class="tcy">10</span>個を、<span class="tcy">1</span>つの場面に置けませんか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td><span class="tcy">1</span>語を<span class="tcy">10</span>回ずつ書く</td><td><span class="tcy">10</span>語を<span class="tcy">1</span>つの文にする</td></tr><tr><td>数えているもの</td><td>書いた回数</td><td>つながった語の数</td></tr><tr><td>図の上では</td><td><span class="tcy">10</span>個が別々に並ぶ</td><td><span class="tcy">10</span>個が<span class="tcy">1</span>本でつながる</td></tr><tr><td>試験の日に</td><td>翌週には半分に戻る</td><td><span class="tcy">1</span>語出れば残りも出る</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans"><span class="tcy">10</span>回ずつ書く。<br>書けば覚えるのは本当だし、手を動かした量は裏切らない気がします。<br>ただ、書いているあいだ、英語と日本語が並んでいるだけで、どこにもつながっていない。<br>明日のテストは取れて、翌週には半分が戻っている。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans"><span class="tcy">50</span>語をざっと見て、同じ場面で使えそうな<span class="tcy">10</span>語を選ぶ。<br>その<span class="tcy">10</span>語を全部使った、短い<span class="tcy">1</span>文か<span class="tcy">2</span>文を作る。無理やりでいい。変な文でいい。<br><span class="tcy">1</span>つの場面につながった<span class="tcy">10</span>語は、<span class="tcy">1</span>語思い出すと、残りが引っ張られて出てくる。<br>残りの<span class="tcy">40</span>語も、同じように<span class="tcy">4</span>つの場面に分ける。</p>
+<div class="lbl lbl-law">法則20</div>
+<p class="lawbox f3"><span class="tcy">1</span>つの例文で、<span class="tcy">10</span>個覚える</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>古文単語。<span class="tcy">1</span>つの場面の話の中に置いて、まとめて覚える。<br>理科の用語。<span class="tcy">1</span>つの実験の流れの中に、用語を順番に並べる。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>時間で、伸びない人は<span class="upr">500</span>回書き、伸びる人は<span class="tcy">50</span>語を<span class="tcy">5</span>つの場面に留める。翌週に残る数が違う。</p>
+
+<h1>法則<span class="tcy">21</span>　つなげる力</h1>
+
+<p class="rubric">つなげる力　<span class="tcy">21</span><br>場面タグ　理科の計算問題</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">覚えたもの、別の科目で使った？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。理科で、食塩水の濃度の計算をやっている。<br>何度やっても、式を立てるところで止まる。<br>数学では、割合の計算はできる。先週の小テストも満点だった。<br>同じ日に、数学のノートと理科のノートが、両方カバンに入っている。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">その<span class="tcy">2</span>冊を、机の上に並べてみると。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>科目の数だけ覚え直す</td><td>数学の式を理科で使う</td></tr><tr><td>数えているもの</td><td>覚えた項目の数</td><td>引き出しの数</td></tr><tr><td>図の上では</td><td>同じ矢印を<span class="tcy">2</span>本引く</td><td><span class="tcy">1</span>本を<span class="tcy">2</span>回通る</td></tr><tr><td>試験の日に</td><td>どちらも思い出しにくい</td><td>片方から両方出る</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">理科の計算として、もう一度覚え直す。<br>科目が違うのだから別のものとして覚える、というのは自然な考え方です。<br>数学の割合と、理科の濃度が、別々の引き出しに入る。<br>引き出しが<span class="tcy">2</span>つあるので、どちらも思い出しにくくなる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">数学でやった割合の式を、そのまま理科の問題に当てはめてみる。<br>くらべる量ともとにする量。同じ形でした。<br>同じものだとわかった瞬間、片方を思い出せば、もう片方も出てくるようになる。<br>引き出しが<span class="tcy">1</span>つになって、両方が出しやすくなる。</p>
+<div class="lbl lbl-law">法則21</div>
+<p class="lawbox f3">覚えたものは、別の科目で<span class="tcy">1</span>回使う</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>社会の資料の読み取りと、数学のグラフ。同じ読み方を試してみる。<br>英語の文の構造と、国語の主語と述語。同じ線を引いてみる。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>つの知識から、伸びない人は<span class="tcy">1</span>科目分、伸びる人は<span class="tcy">2</span>科目分の数を得る。</p>
+
+<h1>法則<span class="tcy">22</span>　つなげる力</h1>
+
+<p class="rubric">つなげる力　<span class="tcy">22</span><br>場面タグ　似た用語が<span class="tcy">3</span>つ並んだページ</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">似たもの、それぞれ覚える？</p>
+
+<p class="situ">中学<span class="tcy">2</span>年生。理科の、蒸散、蒸発、気化。<br>似ていて、テストのたびに混ざる。<br>今回は、<span class="tcy">3</span>つとも教科書の説明文を丸ごと書き写して、覚えることにした。<br><span class="tcy">3</span>回ずつ書けば、さすがに混ざらないはず。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox"><span class="tcy">3</span>つの説明文の、同じところに線を引いてみると。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td><span class="tcy">3</span>つを丸ごと覚える</td><td>同じ所を消して違いを覚える</td></tr><tr><td>数えているもの</td><td>覚えた語数</td><td>違いの数</td></tr><tr><td>図の上では</td><td><span class="tcy">3</span>つが同じ箱で重なる</td><td><span class="tcy">3</span>つが分かれて並ぶ</td></tr><tr><td>試験の日に</td><td>似たもの同士が混ざる</td><td>混ざらずに出る</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans"><span class="tcy">3</span>つの説明を、それぞれ丸ごと覚える。<br>混ざるのは、覚え方が足りないからだ。もう<span class="tcy">3</span>回ずつ書けば、さすがに分かれるはずです。<br>ただ、似たものを別々に覚えると、思い出すときにお互いが邪魔をする。<br>覚えた量が増えるほど、混ざりやすくなります。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans"><span class="tcy">3</span>つを<span class="tcy">1</span>行ずつ並べて、共通しているところに線を引いて、消す。<br>残ったのが、違いです。葉から出ていくのか、水面から出ていくのか、液体が気体になること全部か。<br>覚えるのは、その違いだけ。<br>覚える量が<span class="tcy">3</span>分の<span class="tcy">1</span>になって、しかも混ざらなくなる。</p>
+<div class="lbl lbl-law">法則22</div>
+<p class="lawbox f3">似たものは、違いだけで覚える</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。似た意味の単語は、使う場面の違いだけを覚える。<br>社会。似た制度は、いつ、誰が、の違いだけを覚える。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">3</span>つの用語に、伸びない人は<span class="tcy">3</span>つ分の記憶を使い、伸びる人は違い<span class="tcy">2</span>つ分で済ませる。</p>
+
+<h1>法則<span class="tcy">23</span>　つなげる力</h1>
+
+<p class="rubric">つなげる力　<span class="tcy">23</span><br>場面タグ　赤シートの前で</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">覚えるとき、見る？思い出す？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。英単語を、赤シートで隠して覚えている。<br>出てこなかったら、すぐシートをずらして答えを見る。<br><span class="tcy">1</span>周<span class="tcy">30</span>分で回せるので、今日はもう<span class="tcy">3</span>周した。明日の小テストは、たぶん取れる。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">隠してから、めくるまでの時間は、何秒ですか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>出なければすぐめくる</td><td><span class="tcy">5</span>秒待ってからめくる</td></tr><tr><td>数えているもの</td><td>回した周回数</td><td>自分で出せた数</td></tr><tr><td>図の上では</td><td>目で箱を移動するだけ</td><td>矢印を自力で<span class="tcy">1</span>本通る</td></tr><tr><td>試験の日に</td><td>見た記憶だけが残る</td><td>引っ張った線が太い</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">出てこなかったら、すぐめくる。<br>すぐ確認したほうが速いし、その分たくさん回せます。回した数だけ入るはずです。<br>ただ、めくるまでが<span class="tcy">1</span>秒だと、頭の中で探す作業が起きていません。見た回数が増えるだけです。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">隠したら、<span class="tcy">5</span>秒待つ。出てこなくても、<span class="tcy">5</span>秒は待つ。<br>この<span class="tcy">5</span>秒で、その単語につながっている線を引っ張る作業が起きます。<br>引っ張って出てきた線は、太くなる。<br>出てこなかったものにだけ印をつけて、そこだけもう一度。<span class="tcy">1</span>周は倍かかるが、<span class="tcy">1</span>周で済む。</p>
+<div class="lbl lbl-law">法則23</div>
+<p class="lawbox f3">覚えるとは、見ることではなく思い出すこと</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>数学。ノートを開く前に、白紙に公式を書いてみる。<br>社会。教科書を閉じて、今日の範囲で言えることを口に出してから、開く。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">30</span>分で、伸びない人は<span class="tcy">3</span>周見て、伸びる人は<span class="tcy">1</span>周引っ張り出す。太くなった線の数が違う。</p>
+
+<h1>法則<span class="tcy">24</span>　つなげる力</h1>
+
+<p class="rubric">つなげる力　<span class="tcy">24</span><br>場面タグ　テスト<span class="tcy">3</span>日前の夜</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">まとめノート、作る？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。定期テストまで<span class="tcy">3</span>日。<br>理科の教科書の内容を、きれいなまとめノートにしている。色ペンを<span class="tcy">3</span>本使っている。<br>ここまでで<span class="tcy">2</span>時間。範囲の、まだ半分。<br>書いていると、頭が整理されていく感じがする。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">そのノートを、いつ読み返す予定ですか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>教科書をノートに写す</td><td>閉じて白紙に書き出す</td></tr><tr><td>数えているもの</td><td>まとめたページ数</td><td>出てこなかった箇所</td></tr><tr><td>図の上では</td><td>箱が動かない</td><td>出す矢印を通る</td></tr><tr><td>試験の日に</td><td>きれいなノートが残る</td><td>白紙に出せる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">まとめノートを作る。<br>まとめると整理されるのは本当です。しかも、作ったノートは形に残ります。<br>ただ、写しているあいだ、情報は目と手を通っているだけで、頭の中でつながっていません。<br><span class="tcy">3</span>日後、白紙の前で出てこない。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">ノートは作らない。<br>教科書を閉じて、白紙に、今日の範囲で思い出せる言葉を書けるだけ書き出す。<br>書き出したものの間に、線を引いて、関係をつなぐ。<br>つながらなかったところと、出てこなかったところだけ、教科書を開いて確かめる。<span class="tcy">20</span>分で終わる。</p>
+<div class="lbl lbl-law">法則24</div>
+<p class="lawbox f3">まとめは紙ではなく、頭のなかに作る</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。文法のまとめを写さず、例文を<span class="tcy">1</span>つ書いて、そこから思い出せる規則を書き足す。<br>数学。公式一覧を写さず、白紙に思い出せる公式を書いてから、抜けを教科書で埋める。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">2</span>時間で、伸びない人はノートを<span class="tcy">1</span>冊作り、伸びる人は出せない場所を全部見つける。</p>
+
+<div class="pagebreak"></div><p>つなげるとは、<span class="tcy">1</span>つ変えて、<span class="tcy">10</span>変えること。</p>
+<p><span class="tcy">1</span>つずつ覚えていく人は、覚えた数だけしか増えません。<br>つないだ人は、<span class="tcy">1</span>つ入れると、そこにぶら下がっていたものが一緒に動きます。</p>
+<p>同じ<span class="tcy">1</span>時間で入る数が違うのは、この差です。<br>記憶力の差ではありません。つないだ先の数の差です。</p>
+<div class="part f4"><div class="num">第 5 章</div><div class="ttl">あの子には<br>「取り出す力」がある</div><div class="bar"></div></div>
+<h1>第<span class="tcy">5</span>章　あの子には「取り出す力」がある</h1>
+<div class="sep"></div>
+
+<p>中学<span class="tcy">3</span>年生の数学のワークが、目の前にあります。</p>
+<p>「<span class="tcy">2</span>周しました」</p>
+<p>本当です。全部のページに書き込みがあります。○も×もついている。<br><span class="tcy">2</span>周目の日付も入っています。ちゃんとやっている。<br>でも、先週の実力テストは、前回より下がっていました。</p>
+<p>本当に解けているのかどうか。<br>あなたは、何を見ますか。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>別冊の解答を、見せてもらいました。</p>
+<p>本体より、解答冊子のほうがボロボロでした。</p>
+<p>角が丸くなって、開き癖がついている。<br>本体のページより、解答のページのほうが手垢が濃い。</p>
+<p>解きながら、見ていたんです。</p>
+<p>本人にその自覚はありませんでした。<br>少し考えて、出てこないから、ちらっと見る。見たら、わかる。わかったから、書ける。書けたから、○。</p>
+<p><span class="tcy">2</span>周分の「わかった」が積み上がっていて、<br>「できる」は、<span class="tcy">1</span>つも積み上がっていませんでした。</p>
+<div class="sep"></div>
+<h2>原理</h2>
+<p>できるかどうかは、解説を閉じたときにしかわからない。</p>
+<div class="sep"></div>
+<h2>この章で出てくる<span class="tcy">7</span>つの法則</h2>
+<div class="indent">　法則<span class="tcy">25</span>　解説を閉じて、白紙に解き直す<br>　法則<span class="tcy">26</span>　わかった、は出せるまで信じない<br>　法則<span class="tcy">27</span>　白紙に出せるかで判定する<br>　法則<span class="tcy">28</span>　説明できないものは、まだできていない<br>　法則<span class="tcy">29</span>　本番と同じ時間で解けて、はじめてできる<br>　法則<span class="tcy">30</span>　解けない問題は、隠さず集める<br>　法則<span class="tcy">31</span>　途中までを自力で書く。そこができないの境目</div>
+<h1>法則<span class="tcy">25</span>　取り出す力</h1>
+
+<p class="rubric">取り出す力　<span class="tcy">25</span><br>場面タグ　解説を読んだあと</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">解説を読んで、納得した。次、どうする？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。数学の問題集。<br>解けなかった問題の解説を読んで、なるほど、と思った。理解できた。<br>今日はあと<span class="tcy">3</span>問やる予定がある。時計を見ると、あと<span class="tcy">40</span>分。<br>このペースなら、ちょうど終わる。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">解説を「読む」以外の使い方があるとしたら。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>解説を読んで次へ進む</td><td>解説を閉じて白紙に解き直す</td></tr><tr><td>数えているもの</td><td>わかった、の回数</td><td>白紙に出せた数</td></tr><tr><td>図の上では</td><td>わかっているの箱で止まる</td><td>判定を通ってできるへ</td></tr><tr><td>試験の日に</td><td>解説なしで初めて解く</td><td>一度出したものを、もう一度出す</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">次の問題へ進む。理解できたし、残り<span class="tcy">40</span>分で<span class="tcy">3</span>問という予定も決まっています。<br>でも、わかっているの箱から出ていません。<br>次に同じ問題が本番で出たとき、解説がない状態で初めて解くことになる。そのとき、出てこない。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">解説を閉じて、白紙に、もう一度解く。<br>閉じた瞬間に、消える部分があります。<br>そこが、わかっていたけれど、できていなかった場所です。<br>白紙に出せたところまでが、できる。出せなかったところが、次に変えるできない。</p>
+<div class="lbl lbl-law">法則25</div>
+<p class="lawbox f4">解説を閉じて、白紙に解き直す</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語の長文。全訳を読んで納得したら、全訳を閉じて、もう一度自分で訳す。<br>定期テストのワーク。解答を見ながら埋めた問題は、解答を閉じてもう一度。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">40</span>分で、伸びない人は<span class="tcy">3</span>問読み、伸びる人は<span class="tcy">1</span>個増やすか、次に変える<span class="tcy">1</span>つを見つける。</p>
+
+<h1>法則<span class="tcy">26</span>　取り出す力</h1>
+
+<p class="rubric">取り出す力　<span class="tcy">26</span><br>場面タグ　授業でわかった直後</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">「わかった」と思った。信じる？</p>
+
+<p class="situ">中学<span class="tcy">2</span>年生。英語の授業で、不定詞をやった。<br>先生の説明がわかりやすくて、to不定詞の<span class="tcy">3</span>つの使い方が、はっきりわかった。<br>ノートもきれいに取れている。<br>家に帰って、今日は英語をやらなくてもいいかな、と思っている。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">その「わかった」は、いつ間違いだとわかりますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>わかったので今日は終える</td><td>例文を<span class="tcy">1</span>つ英語にしてみる</td></tr><tr><td>数えているもの</td><td>わかった、の回数</td><td><span class="tcy">30</span>秒で出せた数</td></tr><tr><td>図の上では</td><td>わかっているで立ち止まる</td><td>その場で判定を<span class="tcy">1</span>回通る</td></tr><tr><td>試験の日に</td><td>わかったに裏切られる</td><td>裏切りは前の日に済んでいる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">信じる。<br>わかったという感覚は、自分の中で一番確かなものです。<br>それを疑いにいくのは、時間の無駄に思えます。<br>そのわかったが間違いだったと判明するのは、テストの日です。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">わかった、と思ったところで、教科書の例文を<span class="tcy">1</span>つだけ隠して、日本語から英語にしてみる。<br><span class="tcy">30</span>秒で終わる。<br>出せたら、わかったは本当だった。出せなかったら、わかったは思い込みだった。<br>どちらでも、<span class="tcy">30</span>秒で決着します。</p>
+<div class="lbl lbl-law">法則26</div>
+<p class="lawbox f4">わかった、は出せるまで信じない</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>数学。わかったと思ったら、その場で類題を<span class="tcy">1</span>問だけ解く。<br>社会。わかったと思ったら、教科書を閉じて、<span class="tcy">1</span>分で誰かに説明してみる。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">30</span>秒で、伸びない人は何もせず、伸びる人はそのわかったが本物かどうかを決める。</p>
+
+<h1>法則<span class="tcy">27</span>　取り出す力</h1>
+
+<p class="rubric">取り出す力　<span class="tcy">27</span><br>場面タグ　ワークの<span class="tcy">2</span>周目</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">できたかどうか、何で判定する？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。数学のワークの<span class="tcy">2</span>周目。<br><span class="tcy">1</span>周目に×がついた問題を、やり直している。<br>解答を横に置いて、詰まったところだけ少し見て、また書く。<br>最後まで書けたので、○をつけた。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">判定するとき、机の上に<span class="tcy">1</span>つ、多くありませんか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>解答を横に置いて○にする</td><td>解答をどけてから判定する</td></tr><tr><td>数えているもの</td><td>○をつけた問題の数</td><td>助けなしで書けた数</td></tr><tr><td>図の上では</td><td>判定を通らずできるへ入る</td><td>判定を通ってできるへ入る</td></tr><tr><td>試験の日に</td><td>手元の○が本番で×になる</td><td>手元の○がそのまま出る</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">最後まで書けたので、○にする。<br>答えも合っているし、自分で書いた部分のほうが多い。判定としてまともです。<br>ただ、本番の机の上には、解答冊子がありません。その<span class="tcy">1</span>問は、本番では×になります。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">判定する前に、机の上から解答をどける。白紙とペンだけにする。<br>その状態で最後まで書けたら○、途中で止まったら×。<br>○の数は、減ります。<br>減った分は、失われたのではありません。今日、見つかっただけです。</p>
+<div class="lbl lbl-law">法則27</div>
+<p class="lawbox f4">白紙に出せるかで判定する</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。教科書を閉じて、白紙に和訳を書けるかで判定する。<br>理科。図を見ずに、白紙に描けるかで判定する。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">2</span>周目で、伸びない人は○を増やし、伸びる人は本番でも残る○だけを数える。</p>
+
+<h1>法則<span class="tcy">28</span>　取り出す力</h1>
+
+<p class="rubric">取り出す力　<span class="tcy">28</span><br>場面タグ　休み時間の教室</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">友達に説明して、と言われた</p>
+
+<p class="situ">中学<span class="tcy">2</span>年生。休み時間に、友達から「ここ、どうやるの」と聞かれた。<br>自分は解けた問題なので、教えてあげようと思った。<br>話し始めたら、言葉が出てこない。<br>「えーっと、こうやって、こうやると、こうなる」で終わってしまった。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">出てこなかったのは、言葉ですか。それとも、理由ですか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>説明が下手なだけだと思う</td><td>言えなかった所をメモする</td></tr><tr><td>数えているもの</td><td>解けた問題の数</td><td>理由を言えた数</td></tr><tr><td>図の上では</td><td>手順だけが箱に入る</td><td>理由の線がつながる</td></tr><tr><td>試験の日に</td><td>数字が変わると解けない</td><td>形が変わっても解ける</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">説明が下手なだけだと思って、そのままにする。<br>自分は解けているのだから、できていないわけではない。<br>説明がうまい人と、そうでない人がいる。それだけの話に見えます。<br>テストで数字だけ変えた問題が出たとき、解けない。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">説明できなかった箇所を、そのままノートにメモする。<br>「なぜ、ここで足すのか」が言えなかった。<br>解けていたのは、手順を覚えていたからで、理由は持っていなかった。<br>理由を<span class="tcy">1</span>つ足す。足したら、数字が変わっても解けるようになる。</p>
+<div class="lbl lbl-law">法則28</div>
+<p class="lawbox f4">説明できないものは、まだできていない</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。なぜこの時制になるのかを、友達に<span class="tcy">1</span>文で言えるか試す。<br>社会。なぜその政策が行われたのかを、教科書を見ずに言えるか試す。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>問から、伸びない人は解けたを<span class="tcy">1</span>つ、伸びる人は形が変わっても解ける<span class="tcy">1</span>つを得る。</p>
+
+<h1>法則<span class="tcy">29</span>　取り出す力</h1>
+
+<p class="rubric">取り出す力　<span class="tcy">29</span><br>場面タグ　過去問演習</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">制限時間、つける？</p>
+
+<p class="situ">高校<span class="tcy">3</span>年生。数学の過去問演習。<br>大問<span class="tcy">1</span>つに、じっくり向き合って考えた。<span class="tcy">30</span>分かかったが、最後まで解けた。<br>解けたので、○をつけた。<br>本番の試験時間から計算すると、この大問に使えるのは<span class="tcy">15</span>分。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">本番のあなたには、何分ありますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>時間を測らずに解く</td><td>本番と同じ分数で測る</td></tr><tr><td>数えているもの</td><td>解けた問題の数</td><td>時間内に出せた数</td></tr><tr><td>図の上では</td><td>判定に時間の条件がない</td><td>本番と同じ条件で判定する</td></tr><tr><td>試験の日に</td><td><span class="tcy">30</span>分の問題が解けない</td><td>手元の数がそのまま点になる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">時間を測らずに解く。<br>じっくり考えるのは力になります。時間を気にしながら解くと、雑になる。<br>ただ、本番では<span class="tcy">15</span>分で切られます。<span class="tcy">30</span>分で解けた問題は、本番では解けません。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">解く前に、タイマーを<span class="tcy">15</span>分にセットする。<br><span class="tcy">15</span>分で解けたら○。解けなかったら、そこで止めて、どこで時間を使ったかを見る。<br>手が止まっていた場所と、書くのが遅かった場所は、別の問題です。<br>前の場所は突き止め直す。後ろの場所は、手順を決めて速くする。</p>
+<div class="lbl lbl-law">法則29</div>
+<p class="lawbox f4">本番と同じ時間で解けて、はじめてできる</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語の長文。本番と同じ分数を測って、<span class="tcy">1</span>題だけ解く。<br>定期テスト前。ワークの大問を、テストと同じ時間配分でやってみる。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>問を、伸びない人は<span class="tcy">30</span>分かけて解けると数え、伸びる人は<span class="tcy">15</span>分で出せた分だけ数える。</p>
+
+<h1>法則<span class="tcy">30</span>　取り出す力</h1>
+
+<p class="rubric">取り出す力　<span class="tcy">30</span><br>場面タグ　問題集の途中</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">解けない問題、どこに置く？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。物理の問題集を進めている。<br>解けない問題が出ると、ページの端に印をつけて、先へ進むことにしている。<br>印は、問題集のあちこちに散らばっている。<br>今、印のついた問題が何問あるかは、わからない。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">散らばっているものを<span class="tcy">1</span>箇所に集めると、何が見えますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>印をつけて先へ進む</td><td><span class="tcy">1</span>冊に番号だけ集める</td></tr><tr><td>数えているもの</td><td>進んだページ数</td><td>残っている問題の数</td></tr><tr><td>図の上では</td><td>×が図の外に散らばる</td><td>×が<span class="tcy">1</span>箇所に集まる</td></tr><tr><td>試験の日に</td><td>何が残っているかわからない</td><td>残りが数で見えている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">印をつけて、そのままにする。<br>あとで戻れるように印は残しているし、先へ進むのも間違いではありません。<br>印は増え続ける。増え続けているので、だんだん見たくなくなる。見なくなると、戻らなくなる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">解けなかった問題を、<span class="tcy">1</span>冊のノートに、問題番号だけ書き写して集める。<br>解けるようになったら、線を引いて消す。<br>集めると、数が見えます。今日は<span class="tcy">12</span>問。<span class="tcy">3</span>日後には<span class="tcy">7</span>問。<br>減っていくのが見えると、戻るのが嫌でなくなる。</p>
+<div class="lbl lbl-law">法則30</div>
+<p class="lawbox f4">解けない問題は、隠さず集める</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。出てこなかった単語だけを、<span class="tcy">1</span>枚の紙に集める。<br>定期テスト。ワークの×だけを<span class="tcy">1</span>枚に写して、前日はそれだけをやる。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">12</span>個の×から、伸びない人は見たくない印を作り、伸びる人は減っていく数を作る。</p>
+
+<h1>法則<span class="tcy">31</span>　取り出す力</h1>
+
+<p class="rubric">取り出す力　<span class="tcy">31</span><br>場面タグ　入試問題の大問</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">途中までしかわからない。手を止める？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。入試の過去問。数学の大問<span class="tcy">4</span>。<br>(<span class="tcy">1</span>)は解けた。(<span class="tcy">2</span>)を読んだが、方針が浮かばない。<br>全部は解けそうにないので、飛ばして次の大問に行こうとしている。<br>残り時間は、まだある。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">何も書かない、と、全部書く、のあいだに、何がありますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>解けないので飛ばす</td><td>出せる所まで書いて線を引く</td></tr><tr><td>数えているもの</td><td>解けた問題の数</td><td>できるとできないの境目</td></tr><tr><td>図の上では</td><td>×だけが残る</td><td>×の中に境目が引かれる</td></tr><tr><td>試験の日に</td><td>部分点も取れない</td><td>書ける所は必ず書ける</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">飛ばす。<br>全部解けないなら書いても点にならない。その時間を、解ける大問に回したほうがいい。<br>本番でなら、そのほうが点は伸びます。<br>ただ、家での勉強で同じことをすると、自分がどこまでできるのかが、いつまでもわからない。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">出せるところまで書く。図を描く。わかっている条件を式にする。<br>そこで止まったら、止まった場所に線を引く。<br>線までが、できる。線から先が、次に変えるできない。<br>飛ばした問題は<span class="tcy">0</span>個ですが、線を引いた問題は、材料が<span class="tcy">1</span>つ手に入っている。</p>
+<div class="lbl lbl-law">法則31</div>
+<p class="lawbox f4">途中までを自力で書く。そこができないの境目</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語の和訳。わかる部分だけ日本語にして、訳せなかった箇所に線を引く。<br>理科の記述。書ける言葉だけ書いて、続かなくなった場所を見る。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ解けない<span class="tcy">1</span>問から、伸びない人は<span class="tcy">0</span>個、伸びる人は次に変える<span class="tcy">1</span>つを取り出す。</p>
+
+<div class="pagebreak"></div><p>取り出せて初めて、「できる」と数える。</p>
+<p>この章は、いちばん厳しい章です。<br>今まで数えていたものが、たぶん半分に減ります。</p>
+<p>でも、減ったのは数字だけで、実力は減っていません。<br>むしろ、本番で減るはずだった分を、先に減らしただけです。</p>
+<p>本番で減るか、今日減るか。<br>どちらかしかありません。</p>
+<div class="part f5"><div class="num">第 6 章</div><div class="ttl">あの子には<br>「さかのぼる力」がある</div><div class="bar"></div></div>
+<h1>第<span class="tcy">6</span>章　あの子には「さかのぼる力」がある</h1>
+<div class="sep"></div>
+
+<p><span class="tcy">1</span>回目、<span class="tcy">2</span>回目、<span class="tcy">3</span>回目。</p>
+<p>高校<span class="tcy">2</span>年生が、同じ問題を<span class="tcy">3</span>回間違えました。</p>
+<p><span class="tcy">1</span>回目は解けなかった。解説を読んで、わかった。<br><span class="tcy">2</span>回目、また間違えた。もう一度読んで、今度こそわかった。<br><span class="tcy">3</span>回目、また間違えた。</p>
+<p>本人は落ち込んでいます。<br>「もう<span class="tcy">1</span>回やります」と言っています。</p>
+<p>あなたは、<span class="tcy">4</span>回目を解かせますか。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>解かせませんでした。</p>
+<p>かわりに、その<span class="tcy">1</span>つ前の問題を出しました。<br><span class="tcy">1</span>回目からずっと、○がついていた問題です。</p>
+<p>「解説なしで、解いてみて」</p>
+<p>解けませんでした。</p>
+<p>○は、まぐれでした。<br>選択肢が<span class="tcy">4</span>つで、なんとなく選んだら当たっていた。当たったので、そのまま先へ進んだ。</p>
+<p>崩れていたのは、<span class="tcy">3</span>回間違えた問題ではありませんでした。<br>正解していた問題のほうです。</p>
+<p>そこを直したら、<span class="tcy">4</span>回目の問題は、解説なしで解けました。</p>
+<div class="sep"></div>
+<h2>原理</h2>
+<p>戻る場所は、×の場所ではない。最後に本当にできていた場所。</p>
+<div class="sep"></div>
+<h2>この章で出てくる<span class="tcy">7</span>つの法則</h2>
+<div class="indent">　法則<span class="tcy">32</span>　正解より先に、どこで崩れたかを探す<br>　法則<span class="tcy">33</span>　ケアレスミスと言った瞬間、原因は消える。なぜ、を<span class="tcy">3</span>回<br>　法則<span class="tcy">34</span>　<span class="tcy">4</span>回目より、<span class="tcy">1</span>つ前のできていた問題を解き直す<br>　法則<span class="tcy">35</span>　間違いノートには、正解ではなく原因を書く<br>　法則<span class="tcy">36</span>　間違いは数えず、種類で分ける<br>　法則<span class="tcy">37</span>　解説は、どこから読めなくなったかだけ探す<br>　法則<span class="tcy">38</span>　下がったら、自分ではなく、変えたことを見る</div>
+<h1>法則<span class="tcy">32</span>　さかのぼる力</h1>
+
+<p class="rubric">さかのぼる力　<span class="tcy">32</span><br>場面タグ　テストが返ってきた日</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">間違えた。まず見るのは、正解？</p>
+
+<p class="situ">中学<span class="tcy">2</span>年生。数学の小テストが返ってきた。<span class="tcy">3</span>問間違えていた。<br>答えの欄に、赤ペンで正しい答えを書き写している。<br><span class="tcy">3</span>問とも、正解を書いたら終わり。<br><span class="tcy">5</span>分で直しが終わる。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">赤で書き写す前に、自分の字を<span class="tcy">1</span>回、読みましたか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>赤で正解を写す</td><td>自分の答案をもう一度読む</td></tr><tr><td>数えているもの</td><td>直した問題の数</td><td>原因の数</td></tr><tr><td>図の上では</td><td>×に正解を上書きする</td><td>×から戻る矢印を引く</td></tr><tr><td>試験の日に</td><td>同じ間違いがまた出る</td><td><span class="tcy">3</span>問分が<span class="tcy">1</span>つで直っている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">正解を赤で写す。<br>正しい答えを知るのは、復習の基本です。赤で書いておけば、ノートも見やすくなる。<br>ただ、正解を知っても、自分がなぜその答えを書いたかは残りません。次も同じ答えを書く。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">正解を見る前に、自分の答案をもう一度読む。<br>どこまでは合っていて、どの行から違ったのかを探す。<br><span class="tcy">3</span>問とも、<span class="tcy">2</span>行目までは合っていた。<span class="tcy">3</span>行目で、同じ符号のミスをしていた。<br><span class="tcy">3</span>つの間違いが、<span class="tcy">1</span>つの原因に集まった。直すのは<span class="tcy">3</span>つではなく、<span class="tcy">1</span>つです。</p>
+<div class="lbl lbl-law">法則32</div>
+<p class="lawbox f5">正解より先に、どこで崩れたかを探す</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。誤答を消す前に、なぜその選択肢を選んだのかを<span class="tcy">1</span>行書く。<br>理科の記述。模範解答を写す前に、自分の文のどこまでが合っているかに線を引く。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">3</span>つの×から、伸びない人は<span class="tcy">3</span>つの正解を、伸びる人は<span class="tcy">1</span>つの原因を持ち帰る。</p>
+
+<h1>法則<span class="tcy">33</span>　さかのぼる力</h1>
+
+<p class="rubric">さかのぼる力　<span class="tcy">33</span><br>場面タグ　答案を見ながら</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">「ケアレスミス」と言いそう</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。実力テストで、計算ミスで<span class="tcy">5</span>点落とした。<br>解き方はわかっていた。式も合っていた。最後の符号だけ間違えた。<br>「ケアレスミスだから、次は気をつける」<br>そう言って、直しを終えようとしている。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">「気をつける」を、明日の行動に書き換えられますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>次は気をつける、で終える</td><td>なぜを<span class="tcy">3</span>回聞く</td></tr><tr><td>数えているもの</td><td>ケアレスミスの回数</td><td>明日変えられる場所の数</td></tr><tr><td>図の上では</td><td>戻る矢印が引けない</td><td>戻る箱が決まる</td></tr><tr><td>試験の日に</td><td>また同じ<span class="tcy">5</span>点を落とす</td><td>その<span class="tcy">5</span>点が残る</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">ケアレスミスとして処理する。<br>実際に解き方はわかっていたし、本質的な弱点ではない。この整理はまともです。<br>ラベルを貼った瞬間に、原因を探す作業は終わります。来月も、同じ<span class="tcy">5</span>点を落とす。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">なぜ、を<span class="tcy">3</span>回聞く。<br>なぜ間違えた。　符号を書き写し間違えた。<br>なぜ書き写し間違えた。　途中式を暗算で飛ばした。<br>なぜ飛ばした。　時間が足りないと思って焦った。<br>原因は不注意ではなく、時間の配り方でした。明日変えるのは、注意力ではなく、解く順番。</p>
+<div class="lbl lbl-law">法則33</div>
+<p class="lawbox f5">ケアレスミスと言った瞬間、原因は消える。なぜ、を<span class="tcy">3</span>回</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。スペルミスに、なぜを<span class="tcy">3</span>回。書き慣れていないのか、覚えた形が違っていたのか。<br>理科。単位の書き間違いに、なぜを<span class="tcy">3</span>回。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">5</span>点の失点から、伸びない人は名前を<span class="tcy">1</span>つ、伸びる人は明日変える場所を<span class="tcy">1</span>つ得る。</p>
+
+<h1>法則<span class="tcy">34</span>　さかのぼる力</h1>
+
+<p class="rubric">さかのぼる力　<span class="tcy">34</span><br>場面タグ　<span class="tcy">3</span>回間違えた問題の前で</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">同じ問題を、<span class="tcy">3</span>回間違えた。<span class="tcy">4</span>回目、やる？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。化学の、molの計算問題。<br><span class="tcy">1</span>回目、解けなかった。解説を読んで、わかった。<br><span class="tcy">2</span>回目、また間違えた。もう一度読んで、今度こそわかった。<br><span class="tcy">3</span>回目、また間違えた。今、<span class="tcy">4</span>回目をやろうとしている。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">崩れているのは、その問題……？</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td><span class="tcy">4</span>回目を解く</td><td>手前の○を解説なしで解く</td></tr><tr><td>数えているもの</td><td>やり直した回数</td><td>崩れていた場所の数</td></tr><tr><td>図の上では</td><td>×の場所で往復する</td><td>手前の箱まで戻る</td></tr><tr><td>試験の日に</td><td><span class="tcy">5</span>回目でも解けない</td><td>手前ごと解けている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans"><span class="tcy">4</span>回目を解く。<br><span class="tcy">3</span>回間違えた問題をできるようにする、というのは当然の判断です。<br>読めばわかるのに解けないのは、その問題の手前が崩れているからです。<br><span class="tcy">4</span>回目も、同じところで止まる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans"><span class="tcy">1</span>つ前の、正解していた問題を、解説なしで解き直す。<br>正解は、まぐれだったかもしれない。<br>実際、解けなかった。崩れていた場所は、×の問題ではなく、その手前にありました。<br>手前を直したら、<span class="tcy">4</span>回目の問題は、解説なしで解けた。</p>
+<div class="lbl lbl-law">法則34</div>
+<p class="lawbox f5"><span class="tcy">4</span>回目より、<span class="tcy">1</span>つ前のできていた問題を解き直す</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。長文が読めないとき、その文で使われている文法の、基本例文に戻る。<br>数学。応用問題が解けないとき、直前の基本問題を解説なしで解いてみる。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>問に、伸びない人は<span class="tcy">4</span>回目を使い、伸びる人は手前の<span class="tcy">1</span>回を使う。動く数が違う。</p>
+
+<h1>法則<span class="tcy">35</span>　さかのぼる力</h1>
+
+<p class="rubric">さかのぼる力　<span class="tcy">35</span><br>場面タグ　新しいノートの<span class="tcy">1</span>ページ目</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">間違いノート、何を書く？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。先生に言われて、間違いノートを作り始めた。<br>問題を書き写して、その下に正しい解き方を書き写している。<br><span class="tcy">1</span>問あたり<span class="tcy">10</span>分かかる。今日は<span class="tcy">3</span>問で<span class="tcy">30</span>分。<br>このペースだと、<span class="tcy">3</span>日でやめそうな気がしている。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">そのノートを見返すとき、目はどこへ行きますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>問題と正解を写す</td><td>原因を<span class="tcy">1</span>行だけ書く</td></tr><tr><td>数えているもの</td><td>作ったページ数</td><td>同じ原因が並んだ数</td></tr><tr><td>図の上では</td><td>×の隣に正解が並ぶ</td><td>×から戻る先が書いてある</td></tr><tr><td>試験の日に</td><td>そうだった、で終わる</td><td>前に直した原因は出ない</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">問題と、正しい解き方を写す。<br>間違いノートとは、そういうものだと教わりました。見返せば、解き方を思い出せます。<br>ただ、書いてあるのが正解だけだと、見返しても「そうだった」で終わる。<br>何を変えればいいかが、どこにも書いていません。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">問題は写さない。教材名とページ番号だけ書く。<br>書くのは<span class="tcy">1</span>行だけ。なぜ間違えたか。<br>符号を飛ばした。設問を読み違えた。公式の使える条件を忘れた。<br><span class="tcy">1</span>問<span class="tcy">30</span>秒で終わる。<span class="tcy">1</span>週間分を見返すと、同じ原因が<span class="tcy">3</span>つ並んでいることに気づく。</p>
+<div class="lbl lbl-law">法則35</div>
+<p class="lawbox f5">間違いノートには、正解ではなく原因を書く</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語。間違えた文を写さず、「なぜその選択肢を選んだか」を<span class="tcy">1</span>行だけ書く。<br>定期テストのあと。点数ではなく、落とした原因を<span class="tcy">3</span>行だけ書く。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">10</span>問の直しに、伸びない人は正解を<span class="tcy">10</span>個写し、伸びる人は原因を<span class="tcy">10</span>行積む。次に効くのは、行のほう。</p>
+
+<h1>法則<span class="tcy">36</span>　さかのぼる力</h1>
+
+<p class="rubric">さかのぼる力　<span class="tcy">36</span><br>場面タグ　模試の直しを始める前</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">間違いが<span class="tcy">10</span>個。数える？分ける？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。模試が返ってきた。英語で<span class="tcy">10</span>問間違えていた。<br><span class="tcy">10</span>問を、<span class="tcy">1</span>問目から順番に解き直そうとしている。<br>全部やると、<span class="tcy">3</span>時間かかりそう。<br>今日は日曜で、時間はある。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox"><span class="tcy">10</span>個の間違いに、<span class="tcy">10</span>種類の原因がありますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td><span class="tcy">10</span>問を順番に直す</td><td><span class="tcy">10</span>問を<span class="tcy">3</span>種類に分ける</td></tr><tr><td>数えているもの</td><td>直した問題の数</td><td>原因の種類の数</td></tr><tr><td>図の上では</td><td><span class="tcy">10</span>本の×から<span class="tcy">10</span>本戻る</td><td><span class="tcy">3</span>つの箱に<span class="tcy">3</span>本戻る</td></tr><tr><td>試験の日に</td><td>また同じ<span class="tcy">10</span>問分を落とす</td><td><span class="tcy">3</span>種類ごと消えている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans"><span class="tcy">10</span>問を順番に直す。<br><span class="tcy">10</span>問とも間違えたのだから、<span class="tcy">10</span>問とも直す。<span class="tcy">1</span>問でも飛ばすと、そこがまた出る気がします。<br><span class="tcy">3</span>時間かけて<span class="tcy">10</span>問直したが、同じ種類のものを何度も直していた。次の模試でも、同じ<span class="tcy">10</span>問分を落とす。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">直す前に、<span class="tcy">10</span>問を原因の種類で分ける。<br>知らなかったもの、<span class="tcy">3</span>問。わかっていたのに出せなかったもの、<span class="tcy">5</span>問。読み違えたもの、<span class="tcy">2</span>問。<br>種類ごとに、手当てが違います。<br>知らないものは覚える。出せないものは白紙で解き直す。読み違いは、読む手順を決める。<br><span class="tcy">3</span>つ直せば、<span class="tcy">10</span>問が動く。</p>
+<div class="lbl lbl-law">法則36</div>
+<p class="lawbox f5">間違いは数えず、種類で分ける</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>定期テスト。教科ごとではなく、原因の種類ごとに並べ直す。<br>英語。間違いを、単語・文法・読み方の<span class="tcy">3</span>つに分けてから手をつける。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">3</span>時間で、伸びない人は<span class="tcy">10</span>問を直し、伸びる人は<span class="tcy">10</span>問の元になった<span class="tcy">3</span>つを直す。</p>
+
+<h1>法則<span class="tcy">37</span>　さかのぼる力</h1>
+
+<p class="rubric">さかのぼる力　<span class="tcy">37</span><br>場面タグ　長い解説の前で</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">解説、最初から読み直す？</p>
+
+<p class="situ">高校<span class="tcy">3</span>年生。数学の解説。<br><span class="tcy">1</span>回読んだが、わからなかった。<span class="tcy">1</span>ページ分ある長い解説で、読むのに<span class="tcy">10</span>分かかる。<br>もう一度、最初から丁寧に読もうとしている。<br>今日、あと<span class="tcy">2</span>問直す予定がある。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox"><span class="tcy">1</span>回目に読んだとき、どこまでは追えていましたか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>最初から読み直す</td><td>追えた所まで線を引く</td></tr><tr><td>数えているもの</td><td>読んだ回数</td><td>切れた<span class="tcy">1</span>行</td></tr><tr><td>図の上では</td><td><span class="tcy">3</span>つの箱を全部通り直す</td><td>切れた箱だけに戻る</td></tr><tr><td>試験の日に</td><td>直しが終わっていない</td><td>同じ時間で<span class="tcy">3</span>倍直せた</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">最初から読み直す。<br>わからなかったのだから、もう一度読む。自然な行動です。<br>ただ、最初のほうは<span class="tcy">1</span>回目でわかっているので、<span class="tcy">2</span>回目もわかります。<br>わかっているところを読んでいる時間のほうが、長くなる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">読み直す前に、<span class="tcy">1</span>回目に追えたところまで、指でなぞって線を引く。<br>線が止まったところが、読めなくなった場所です。<br>その<span class="tcy">1</span>行だけを見る。そこで使われていた変形が、知らないものだった。<br>そこだけを調べる。<span class="tcy">10</span>分が<span class="tcy">2</span>分になる。</p>
+<div class="lbl lbl-law">法則37</div>
+<p class="lawbox f5">解説は、どこから読めなくなったかだけ探す</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英語の解説。訳がわからなくなった<span class="tcy">1</span>文だけを探す。<br>理科。計算の途中で、初めて出てきた式を<span class="tcy">1</span>つだけ探す。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">10</span>分で、伸びない人は解説をもう<span class="tcy">1</span>回読み、伸びる人は原因を<span class="tcy">1</span>つ見つけて次へ行く。</p>
+
+<h1>法則<span class="tcy">38</span>　さかのぼる力</h1>
+
+<p class="rubric">さかのぼる力　<span class="tcy">38</span><br>場面タグ　模試の結果を見た夜</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">点数が下がった。自分を責める？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。模試の点数が、前回より<span class="tcy">30</span>点下がった。<br>この<span class="tcy">1</span>ヶ月、勉強時間はむしろ増やしていた。<br>机には向かっていた。サボってはいない。<br>それでも下がった。自分は向いていないのかもしれない、と思っている。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">前回と今回のあいだで、変えたことが<span class="tcy">1</span>つあるはずです。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>自分を責める</td><td>先月から変えた事を書き出す</td></tr><tr><td>数えているもの</td><td>下がった点数</td><td>先月から変えたことの数</td></tr><tr><td>図の上では</td><td>図の外から自分を見る</td><td>図の中に戻る場所を探す</td></tr><tr><td>試験の日に</td><td>次も同じ理由で下がる</td><td>配分を戻した分だけ上がる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">自分を責める。<br>頑張ったのに下がったのだから、自分の力を疑うのは、自然な流れです。<br>ただ、自分の力は今日変えられません。だから、明日やることが<span class="tcy">1</span>つも決まらない。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">前回と今回で、何を変えたかを書き出す。<br>勉強時間は増えていた。かわりに、解き直しの時間が減っていた。<br>新しい問題を解く時間ばかりが増えて、白紙に出す時間がゼロになっていた。<br>責めるのは自分ではなく、時間の配分のほうです。それなら、明日変えられる。</p>
+<div class="lbl lbl-law">法則38</div>
+<p class="lawbox f5">下がったら、自分ではなく、変えたことを見る</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>定期テスト。順位ではなく、前回から変えた勉強の中身を<span class="tcy">1</span>つ挙げる。<br>部活との両立。やる気ではなく、勉強する場所と時間帯を<span class="tcy">1</span>つだけ変える。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ下がった<span class="tcy">30</span>点から、伸びない人は疑う相手を<span class="tcy">1</span>つ、伸びる人は明日変える場所を<span class="tcy">1</span>つ得る。</p>
+
+<div class="pagebreak"></div><p>さかのぼるとは、失敗を数に変えること。</p>
+<p>×は、それ自体では<span class="tcy">0</span>個です。<br>でも、その×がどこから来たかを<span class="tcy">1</span>点まで突き止めると、変えるべき場所が<span class="tcy">1</span>つ手に入ります。</p>
+<p>だから、この章を持っている人にとって、間違いは損ではありません。<br>まだ数えられていない数が、そこに置いてあるだけです。</p>
+<div class="part f6"><div class="num">第 7 章</div><div class="ttl">あの子には<br>「回す力」がある</div><div class="bar"></div></div>
+<h1>第<span class="tcy">7</span>章　あの子には「回す力」がある</h1>
+<div class="sep"></div>
+
+<p>帰り際、中学<span class="tcy">2</span>年生が、カバンを持ったまま立ち止まりました。</p>
+<p>「家に帰ると、やる気が出ないんです」</p>
+<p>嘘ではありません。塾では<span class="tcy">2</span>時間、ちゃんとやっています。<br>家に帰ると、机の前に座るまでに<span class="tcy">1</span>時間かかって、座ってから何をやるか考えて、また<span class="tcy">30</span>分たつ。</p>
+<p>あなたは、やる気の出し方を教えますか。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>教えませんでした。</p>
+<p>かわりに、帰る前に、こう言いました。</p>
+<p>「明日やる<span class="tcy">1</span>問だけ、開いたまま机に置いて帰って」</p>
+<p>その子は、ワークの<span class="tcy">1</span>問を開いて、そのページを上にして帰りました。</p>
+<p>翌日。</p>
+<p>家に帰って、机に座った時点で、やることが決まっていました。<br>考える時間がゼロだったので、そのまま解き始めました。</p>
+<p>やる気は、要りませんでした。<br>やる気が必要だったのは、何をやるか決まっていない<span class="tcy">30</span>分のほうでした。</p>
+<div class="sep"></div>
+<h2>原理</h2>
+<p>やる気を出すのではなく、やる気がいらない状態を作る。</p>
+<div class="sep"></div>
+<h2>この章で出てくる<span class="tcy">7</span>つの法則</h2>
+<div class="indent">　法則<span class="tcy">39</span>　やる気は、計画に入れない<br>　法則<span class="tcy">40</span>　最初の<span class="tcy">10</span>分は、毎日同じことにする<br>　法則<span class="tcy">41</span>　時間ではなく、できた数を記録する<br>　法則<span class="tcy">42</span>　今日できた<span class="tcy">1</span>つ、で終える<br>　法則<span class="tcy">43</span>　崩れる日は、最初から計画に入れておく<br>　法則<span class="tcy">44</span>　どうせ忘れる。戻る日を、先に決める<br>　法則<span class="tcy">45</span>　計画は、週に<span class="tcy">1</span>回だけ直す</div>
+<h1>法則<span class="tcy">39</span>　回す力</h1>
+
+<p class="rubric">回す力　<span class="tcy">39</span><br>場面タグ　日曜の午後</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">やる気が出ない。待つ？</p>
+
+<p class="situ">中学<span class="tcy">2</span>年生。日曜の午後<span class="tcy">2</span>時。<br>今日は<span class="tcy">5</span>時間やると決めていた。まだ<span class="tcy">1</span>分も始めていない。<br>やる気が出たら始めようと思って、ベッドでスマホを見ている。<br>決めてから、もう<span class="tcy">1</span>時間たった。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">前にやる気が出た日、その直前に何をしていましたか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>やる気が出るまで待つ</td><td>昨日の<span class="tcy">1</span>問を解き直す</td></tr><tr><td>数えているもの</td><td>待っている時間</td><td>今日通った矢印の数</td></tr><tr><td>図の上では</td><td>線の上で止まっている</td><td><span class="tcy">1</span>目盛り進んでいる</td></tr><tr><td>試験の日に</td><td>やらなかった日が積もる</td><td>やった日が積もる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">やる気が出るのを待つ。<br>やる気がないときに無理にやっても、頭に入りません。これは、何度も経験しています。<br>やる気は、待っていても来ません。来るときは、たいてい始めたあとに来ます。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">やる気の話をやめて、机に座って、昨日やった問題を<span class="tcy">1</span>問だけ解き直す。<br>昨日の問題なので、考えなくていい。手が勝手に動く。<br><span class="tcy">1</span>問終わると、次の問題が目に入る。<br>やる気が出たから始めたのではなく、始めたからやる気が出た。計画表に、やる気の欄はない。</p>
+<div class="lbl lbl-law">法則39</div>
+<p class="lawbox f6">やる気は、計画に入れない</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>朝。起きてすぐ、昨日の単語を<span class="tcy">10</span>個だけ確かめる。<br>部活のあと。帰ってすぐ、カバンから<span class="tcy">1</span>冊だけ出して開く。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ日曜に、伸びない人は矢印を<span class="tcy">0</span>本、伸びる人は少なくとも<span class="tcy">1</span>本通る。</p>
+
+<h1>法則<span class="tcy">40</span>　回す力</h1>
+
+<p class="rubric">回す力　<span class="tcy">40</span><br>場面タグ　机に座った直後</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">今日、何から始める？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。机に座った。今日は<span class="tcy">3</span>時間使える。<br>数学の続きか、英語の単語か、昨日できなかった分か。<br>どれからやるかを考えていたら、<span class="tcy">15</span>分たっていた。<br>毎日、この<span class="tcy">15</span>分がある。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">決めなくていいことにすると、何分浮きますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>毎日、何からやるか決める</td><td>最初の<span class="tcy">10</span>分を固定する</td></tr><tr><td>数えているもの</td><td>決めた計画の数</td><td>座ってから始まるまでの時間</td></tr><tr><td>図の上では</td><td>線に乗るまで時間がかかる</td><td>座った時点で線の上にいる</td></tr><tr><td>試験の日に</td><td>週に<span class="upr">105</span>分が消えていた</td><td>その分だけ数が多い</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">その日の気分と状況で決める。<br>日によって残っている課題も体力も違うので、その日に合わせるのは合理的です。<br>ただ、決める作業を毎日やると、毎日<span class="tcy">15</span>分が消えます。<span class="tcy">1</span>週間で<span class="upr">105</span>分。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">最初の<span class="tcy">10</span>分を、固定する。<br>毎日、単語<span class="tcy">30</span>個。何があっても、そこから始める。<br>決めることがないので、座った瞬間に始まる。<br><span class="tcy">10</span>分終わったころには、頭が勉強のかたちになっている。その日の中身を決めるのは、そのあと。</p>
+<div class="lbl lbl-law">法則40</div>
+<p class="lawbox f6">最初の<span class="tcy">10</span>分は、毎日同じことにする</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>定期テスト前。最初の<span class="tcy">10</span>分は、必ず前日に×だった問題から。<br>朝の登校前。毎朝、同じ教材の同じ<span class="tcy">1</span>ページを。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">3</span>時間から、伸びない人は毎日<span class="tcy">15</span>分を落とし、伸びる人はその<span class="tcy">15</span>分も数に変える。</p>
+
+<h1>法則<span class="tcy">41</span>　回す力</h1>
+
+<p class="rubric">回す力　<span class="tcy">41</span><br>場面タグ　寝る前のスマホ</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">勉強、何を記録する？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。勉強記録のアプリを使っている。<br>今日は<span class="tcy">4</span>時間<span class="tcy">30</span>分。週の合計が出るのが、毎週楽しみになっている。<br>先週より<span class="tcy">30</span>分多い。記録は<span class="tcy">3</span>ヶ月続いている。<br>成績は、先月から変わっていない。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">そのアプリの数字を、テストの点数の隣に並べてみると。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>勉強した時間を記録する</td><td>できるようになった数を書く</td></tr><tr><td>数えているもの</td><td>合計時間</td><td>できた数</td></tr><tr><td>図の上では</td><td>進んだ距離を測っていない</td><td>右端のカウンターを見ている</td></tr><tr><td>試験の日に</td><td>記録は増えて点は同じ</td><td>記録と点が一緒に動く</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">時間を記録する。<br>記録が積み上がると、続けやすくなります。実際、このアプリで<span class="tcy">3</span>ヶ月続いています。<br>時間は、増やそうと思えば増やせます。だから増える。<br>でも成績は別のところで決まっているので、動かない。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">同じアプリのメモ欄に、今日できるようになったことを書く。<br>連立方程式の速さの問題、<span class="tcy">1</span>つ。不定詞の副詞的用法、<span class="tcy">1</span>つ。<br>書けるのは、たいてい<span class="tcy">1</span>つか<span class="tcy">2</span>つです。時間よりずっと小さい数字。<br>でも、その数字だけが、成績と一緒に動く。</p>
+<div class="lbl lbl-law">法則41</div>
+<p class="lawbox f6">時間ではなく、できた数を記録する</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>週の終わり。今週の合計時間ではなく、今週増えた数を数える。<br>家で聞かれたとき。何時間やったかではなく、今日の<span class="tcy">1</span>つを言う。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ記録の習慣で、伸びない人は増やそうと思えば増やせる数字を増やし、伸びる人は成績と一緒に動く数字を増やす。</p>
+
+<h1>法則<span class="tcy">42</span>　回す力</h1>
+
+<p class="rubric">回す力　<span class="tcy">42</span><br>場面タグ　夜<span class="tcy">11</span>時の机</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">今日、何で終える？</p>
+
+<p class="situ">中学<span class="tcy">2</span>年生。夜<span class="tcy">11</span>時。今日の勉強を終える時間。<br>最後にやっていたのは、数学の応用問題。解けないまま時間になった。<br>解説を読む気力もない。眠い。<br>ノートを閉じて、寝ようとしている。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">最後の<span class="tcy">3</span>分に、何を置きますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>解けないまま閉じる</td><td>今日できた<span class="tcy">1</span>つを出して閉じる</td></tr><tr><td>数えているもの</td><td>できなかった、という感覚</td><td>できた、の数</td></tr><tr><td>図の上では</td><td>×で<span class="tcy">1</span>日が終わる</td><td>できるの箱を通って終わる</td></tr><tr><td>試験の日に</td><td>机に向かうのが重くなる</td><td>その<span class="tcy">1</span>つが残っている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">解けないまま閉じる。<br>時間が来たら終わりにする。眠い頭で続けても、どうせ入りません。<br>頭のなかに最後に残るのは、解けなかった、という感覚。<br>その感覚が、明日また机に向かうときの記憶になります。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">最後の<span class="tcy">3</span>分で、今日できるようになった<span class="tcy">1</span>つを、もう一度だけ出す。<br>今日覚えた公式でもいいし、単語<span class="tcy">5</span>個でもいい。<br>出せることを確かめてから、閉じる。<br>最後に残るのが、できた、という感覚になる。しかも、その<span class="tcy">1</span>つが明日にも残りやすくなる。</p>
+<div class="lbl lbl-law">法則42</div>
+<p class="lawbox f6">今日できた<span class="tcy">1</span>つ、で終える</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>テスト前日の夜。新しい問題を解かず、今日できた分を確かめてから寝る。<br>塾から帰った日。帰ってすぐ、その日にできた<span class="tcy">1</span>つだけを出してみる。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>日の終わりに、伸びない人はできなかったを持ち越し、伸びる人はできた<span class="tcy">1</span>つを持ち越す。</p>
+
+<h1>法則<span class="tcy">43</span>　回す力</h1>
+
+<p class="rubric">回す力　<span class="tcy">43</span><br>場面タグ　木曜の朝、計画表の前</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">崩れた日。計画を捨てる？</p>
+
+<p class="situ">高校<span class="tcy">2</span>年生。日曜に、<span class="tcy">1</span>週間の計画を立てた。<br>水曜、部活の遠征で丸一日つぶれた。その日の分は、まるごと残っている。<br>木曜の朝に計画表を見たら、全部がずれている。<br>作り直そうと思って、新しい紙を出した。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">来週の水曜にも、たぶん何かありますよ。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>崩れてから作り直す</td><td>予備日を先に<span class="tcy">1</span>日空ける</td></tr><tr><td>数えているもの</td><td>立て直した回数</td><td>取り返した日の数</td></tr><tr><td>図の上では</td><td>線が切れるたび引き直す</td><td>線に最初から余白がある</td></tr><tr><td>試験の日に</td><td>計画だけが<span class="tcy">20</span>枚たまる</td><td>予定どおり揃っている</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">計画を作り直す。<br>ずれた計画のままでは、何を見ればいいかわからない。実態に合わせて作り直すしかない。<br>作り直した計画も、来週また崩れます。<br>崩れるたびに作り直すので、作り直すことのほうが習慣になる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">計画を立てるときに、何も入れない日を週に<span class="tcy">1</span>日作っておく。予備日。<br>崩れなかった週は、そこで先に進める。<br>崩れた週は、そこで取り返す。<br>木曜の朝にやることは、水曜の分を予備日に移すだけ。作り直しは<span class="tcy">0</span>回。</p>
+<div class="lbl lbl-law">法則43</div>
+<p class="lawbox f6">崩れる日は、最初から計画に入れておく</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>定期テスト前。前日を予備日にして、その前日までで一度終わる計画にする。<br><span class="tcy">1</span>ヶ月の計画。<span class="tcy">4</span>週のうち<span class="tcy">1</span>週を、まるごと調整の週にしておく。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ崩れた<span class="tcy">1</span>日から、伸びない人は作り直す時間を作り、伸びる人は取り返す時間を作る。</p>
+
+<h1>法則<span class="tcy">44</span>　回す力</h1>
+
+<p class="rubric">回す力　<span class="tcy">44</span><br>場面タグ　模試のあと</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">忘れた。自分を責める？</p>
+
+<p class="situ">高校<span class="tcy">3</span>年生。模試で、古文単語が出てこなかった。<br>先月、その単語帳を<span class="tcy">3</span>周した。覚えたはずだった。<br>あんなにやったのに出てこないのは、記憶力が悪いからだと思っている。<br>今日から、また最初から覚え直すつもりでいる。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">忘れたのは、いつですか。覚えた翌日には、出せましたか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>忘れてから覚え直す</td><td>戻る日を<span class="tcy">3</span>回書き込む</td></tr><tr><td>数えているもの</td><td>覚え直した回数</td><td>拾い直した数</td></tr><tr><td>図の上では</td><td>点線で戻ったのに気づかない</td><td>点線の先に予定がある</td></tr><tr><td>試験の日に</td><td><span class="tcy">3</span>周したのに出てこない</td><td><span class="tcy">1</span>周でも出てくる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">自分の記憶力のせいにして、もう一度最初から覚え直す。<br>忘れたなら覚え直す、というのは正しい行動です。<br>ただ、同じやり方で覚え直すと、同じように忘れます。<span class="tcy">3</span>回目も、<span class="tcy">4</span>回目も来る。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">覚えた日に、次に戻る日を決めておく。翌日、<span class="tcy">1</span>週間後、<span class="tcy">1</span>ヶ月後。<br>カレンダーに<span class="tcy">3</span>回だけ書き込む。それだけ。<br>忘れるのは能力ではなく、時間がたてば全員に起きることです。<br>図の上でも、できるから知っているへ、点線の矢印が引いてあります。勝手に戻る分を、予定で拾う。</p>
+<div class="lbl lbl-law">法則44</div>
+<p class="lawbox f6">どうせ忘れる。戻る日を、先に決める</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>英単語。覚えた日、その翌日、<span class="tcy">1</span>週間後の<span class="tcy">3</span>回だけ、同じ範囲に戻る。<br>数学。解けるようになった問題を、<span class="tcy">1</span>週間後にもう一度だけ白紙で解く。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">3</span>周から、伸びない人は模試で<span class="tcy">0</span>個、伸びる人は覚えた分をそのまま持ち込む。</p>
+
+<h1>法則<span class="tcy">45</span>　回す力</h1>
+
+<p class="rubric">回す力　<span class="tcy">45</span><br>場面タグ　寝る前の<span class="tcy">10</span>分</p>
+<div class="lbl lbl-q">Q</div>
+<p class="qtext">計画、いつ直す？</p>
+
+<p class="situ">中学<span class="tcy">3</span>年生。毎晩、寝る前に翌日の計画を立て直している。<br>今日できなかった分を明日に足すので、明日の予定は毎日ふくらんでいく。<br><span class="tcy">1</span>日<span class="tcy">15</span>分かかる。<br>今日も、明日の予定が<span class="tcy">3</span>時間分オーバーしている。</p>
+<div class="lbl lbl-hint">HINT</div>
+<p class="hintbox">直す回数を減らすと、何が増えますか。</p>
+<div class="pagebreak"></div>
+<div class="lbl lbl-vs">分かれ道</div>
+<table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>毎晩、立て直す</td><td>日曜の夜だけ直す</td></tr><tr><td>数えているもの</td><td>立て直した回数</td><td>今週できた数</td></tr><tr><td>図の上では</td><td>毎日止まって書き直す</td><td>週に<span class="tcy">1</span>回だけ止まる</td></tr><tr><td>試験の日に</td><td>計画に週<span class="upr">105</span>分を使った</td><td>その分だけ進んでいる</td></tr></table>
+<div class="lbl lbl-bad">伸びない人の答え</div>
+<p class="ans">毎日直す。<br>ずれをすぐ直すのが、いちばん正確です。放っておくと、次の日にはもっとずれる。<br>毎日<span class="tcy">15</span>分で、<span class="tcy">1</span>週間に<span class="upr">105</span>分。しかも毎日足していくので、計画は日ごとに重くなる。<br>重くなるほど、崩れる。</p>
+<div class="lbl lbl-good">伸びる人の答え</div>
+<p class="ans">直すのは、日曜の夜だけ。<br>平日は、ずれてもそのまま進む。できなかった分は、明日に足さない。<br>日曜に<span class="tcy">1</span>回だけ、今週できた数を数えて、来週を組み直す。<br><span class="tcy">15</span>分が<span class="tcy">7</span>回だったものが、<span class="tcy">15</span>分<span class="tcy">1</span>回になる。浮いた<span class="tcy">90</span>分は、そのまま勉強に変わる。</p>
+<div class="lbl lbl-law">法則45</div>
+<p class="lawbox f6">計画は、週に<span class="tcy">1</span>回だけ直す</p>
+<div class="lbl lbl-other">他の場面で</div>
+<p>定期テスト前。<span class="tcy">2</span>週間の計画を、<span class="tcy">1</span>週目の終わりに<span class="tcy">1</span>回だけ見直す。<br>受験の年間計画。模試が返ってきたときに、<span class="tcy">1</span>回だけ直す。</p>
+<div class="lbl lbl-concl">結論</div>
+<p class="conclbox">同じ<span class="tcy">1</span>週間で、伸びない人は<span class="upr">105</span>分を計画に使い、伸びる人は<span class="tcy">15</span>分で済ませて、<span class="tcy">90</span>分を数に変える。</p>
+
+<div class="pagebreak"></div><p>回すとは、期限までに数を揃えること。</p>
+<p><span class="tcy">1</span>日にいくつ変えられるかは、そんなに変わりません。<br>差がつくのは、何日続いたかです。</p>
+<p>続けるのは、根性の話ではありません。<br>続かない日が来ることを、先に計画に入れてあるかどうかの話です。</p>
+<p>崩れない人はいません。<br>戻ってこられる人が、揃えます。</p>
+<h1>まとめ　<span class="tcy">45</span>の法則を、そのままパクる</h1>
+<div class="sep"></div>
+<h2><span class="tcy">1</span>　勉強法則<span class="tcy">45</span>　一覧</h2>
+<p>見開き<span class="tcy">1</span>枚。切り取って机に貼れる形。<br>法則文だけを並べる。説明は入れない。番号と、力の色だけ。</p>
+<h3>第<span class="tcy">1</span>章　この本の背骨</h3>
+<div class="indent">　<span class="tcy">1</span>　成績は、時間ではなく「できない」を「できる」に変えた数で決まる<br>　<span class="tcy">2</span>　「わかっている」と「できる」は、別の段階<br>　<span class="tcy">3</span>　解けなかったら、×の場所ではなく、最後にできていた場所に戻る</div>
+<h3>捨てる力</h3>
+<div class="indent">　<span class="tcy">4</span>　過去問は、解くためではなく捨てるために、最初に開く<br>　<span class="tcy">5</span>　買う前に、終わらせる<span class="tcy">1</span>冊を決める<br>　<span class="tcy">6</span>　<span class="tcy">1</span>ページ目ではなく、配点の大きい「できない」から始める<br>　<span class="tcy">7</span>　苦手は、順番を決めてから<span class="tcy">1</span>つずつ<br>　<span class="tcy">8</span>　模試は、捨てていい単元を見つけるために見る<br>　<span class="tcy">9</span>　計画は、今の自分からしか立てられない<br>　<span class="tcy">10</span>　捨てた単元を言えるのが、設計した証拠</div>
+<h3>突き止める力</h3>
+<div class="indent">　<span class="tcy">11</span>　問題文は、最後まで読んでから解く<br>　<span class="tcy">12</span>　解く前に、設問を自分の言葉で言い換える<br>　<span class="tcy">13</span>　板書は写さず、先生の話を<span class="tcy">1</span>行に要約する<br>　<span class="tcy">14</span>　全部ではなく、止まった<span class="tcy">1</span>行を指さす<br>　<span class="tcy">15</span>　知らないと、わかっていないを分けてから動く<br>　<span class="tcy">16</span>　図に描き直せないものは、まだつかめていない<br>　<span class="tcy">17</span>　設問を先に読んで、本文に探しに行く</div>
+<h3>つなげる力</h3>
+<div class="indent">　<span class="tcy">18</span>　解く前に、前に見た形を探す<br>　<span class="tcy">19</span>　覚える前に「なぜ」を<span class="tcy">1</span>つつける<br>　<span class="tcy">20</span>　<span class="tcy">1</span>つの例文で、<span class="tcy">10</span>個覚える<br>　<span class="tcy">21</span>　覚えたものは、別の科目で<span class="tcy">1</span>回使う<br>　<span class="tcy">22</span>　似たものは、違いだけで覚える<br>　<span class="tcy">23</span>　覚えるとは、見ることではなく思い出すこと<br>　<span class="tcy">24</span>　まとめは紙ではなく、頭のなかに作る</div>
+<h3>取り出す力</h3>
+<div class="indent">　<span class="tcy">25</span>　解説を閉じて、白紙に解き直す<br>　<span class="tcy">26</span>　わかった、は出せるまで信じない<br>　<span class="tcy">27</span>　白紙に出せるかで判定する<br>　<span class="tcy">28</span>　説明できないものは、まだできていない<br>　<span class="tcy">29</span>　本番と同じ時間で解けて、はじめてできる<br>　<span class="tcy">30</span>　解けない問題は、隠さず集める<br>　<span class="tcy">31</span>　途中までを自力で書く。そこができないの境目</div>
+<h3>さかのぼる力</h3>
+<div class="indent">　<span class="tcy">32</span>　正解より先に、どこで崩れたかを探す<br>　<span class="tcy">33</span>　ケアレスミスと言った瞬間、原因は消える。なぜ、を<span class="tcy">3</span>回<br>　<span class="tcy">34</span>　<span class="tcy">4</span>回目より、<span class="tcy">1</span>つ前のできていた問題を解き直す<br>　<span class="tcy">35</span>　間違いノートには、正解ではなく原因を書く<br>　<span class="tcy">36</span>　間違いは数えず、種類で分ける<br>　<span class="tcy">37</span>　解説は、どこから読めなくなったかだけ探す<br>　<span class="tcy">38</span>　下がったら、自分ではなく、変えたことを見る</div>
+<h3>回す力</h3>
+<div class="indent">　<span class="tcy">39</span>　やる気は、計画に入れない<br>　<span class="tcy">40</span>　最初の<span class="tcy">10</span>分は、毎日同じことにする<br>　<span class="tcy">41</span>　時間ではなく、できた数を記録する<br>　<span class="tcy">42</span>　今日できた<span class="tcy">1</span>つ、で終える<br>　<span class="tcy">43</span>　崩れる日は、最初から計画に入れておく<br>　<span class="tcy">44</span>　どうせ忘れる。戻る日を、先に決める<br>　<span class="tcy">45</span>　計画は、週に<span class="tcy">1</span>回だけ直す</div>
+<div class="sep"></div>
+<h2><span class="tcy">2</span>　<span class="tcy">45</span>の分かれ道</h2>
+<p>見開き<span class="tcy">1</span>枚。切り取って机に貼れる形。</p>
+<p>この本の最初に、「あの子が、絶対にやらない<span class="tcy">45</span>のこと」というページがありました。<br>チェックを入れたページです。</p>
+<p>あれが、この表の左の列です。</p>
+<p>右の列は、そのとき伏せてありました。ここで出します。<br>同じ場面に立ったとき、自分がどちらへ行っているかを見る表です。</p>
+<h3>第<span class="tcy">1</span>章　この本の背骨</h3>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td><span class="tcy">1</span></td><td>「<span class="tcy">3</span>時間半やった」と答える</td><td>「これができるようになった」と答える</td></tr><tr><td><span class="tcy">2</span></td><td>わかったので復習しない</td><td>教科書を閉じて白紙に描く</td></tr><tr><td><span class="tcy">3</span></td><td>×の問題をもう一度解く</td><td>手前の○を解説なしで解く</td></tr></table>
+<h3>捨てる力</h3>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td><span class="tcy">4</span></td><td>実力がつくまで開かない</td><td>解かずに開いて配点を数える</td></tr><tr><td><span class="tcy">5</span></td><td><span class="tcy">4</span>冊目を買う</td><td><span class="tcy">3</span>冊の目次を並べる</td></tr><tr><td><span class="tcy">6</span></td><td><span class="tcy">1</span>ページ目から順にやる</td><td>配点の重いできないから始める</td></tr><tr><td><span class="tcy">7</span></td><td><span class="tcy">5</span>つを<span class="tcy">1</span>日ずつ回す</td><td><span class="tcy">1</span>つを<span class="tcy">5</span>日続ける</td></tr><tr><td><span class="tcy">8</span></td><td>点数と判定を見る</td><td>単元別の正答率を見る</td></tr><tr><td><span class="tcy">9</span></td><td>理想の自分で立てる</td><td>先週の実績で立てる</td></tr><tr><td><span class="tcy">10</span></td><td>全部に一度ずつ触る</td><td>やらないものを先に決める</td></tr></table>
+<h3>突き止める力</h3>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td><span class="tcy">11</span></td><td>わかった所で解き始める</td><td>最後まで読んでから解く</td></tr><tr><td><span class="tcy">12</span></td><td>本文を読み直す</td><td>設問を自分の言葉に直す</td></tr><tr><td><span class="tcy">13</span></td><td>板書を全部写す</td><td>話を<span class="tcy">1</span>行にまとめる</td></tr><tr><td><span class="tcy">14</span></td><td>「全部わからない」と言う</td><td>止まった<span class="tcy">1</span>行を指さす</td></tr><tr><td><span class="tcy">15</span></td><td>参考書を最初から読み直す</td><td>言葉を<span class="tcy">1</span>つずつ言ってみる</td></tr><tr><td><span class="tcy">16</span></td><td>文章のまま考え続ける</td><td>読むのをやめて紙に描く</td></tr><tr><td><span class="tcy">17</span></td><td>本文の<span class="tcy">1</span>行目から読む</td><td>設問を先に読む</td></tr></table>
+<h3>つなげる力</h3>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td><span class="tcy">18</span></td><td>ゼロから考え続ける</td><td>ノートをさかのぼる</td></tr><tr><td><span class="tcy">19</span></td><td>語呂で覚える</td><td>覚える前になぜを<span class="tcy">1</span>つつける</td></tr><tr><td><span class="tcy">20</span></td><td><span class="tcy">1</span>語を<span class="tcy">10</span>回ずつ書く</td><td><span class="tcy">10</span>語を<span class="tcy">1</span>つの文にする</td></tr><tr><td><span class="tcy">21</span></td><td>科目の数だけ覚え直す</td><td>数学の式を理科で使う</td></tr><tr><td><span class="tcy">22</span></td><td><span class="tcy">3</span>つを丸ごと覚える</td><td>同じ所を消して違いを覚える</td></tr><tr><td><span class="tcy">23</span></td><td>出なければすぐめくる</td><td><span class="tcy">5</span>秒待ってからめくる</td></tr><tr><td><span class="tcy">24</span></td><td>教科書をノートに写す</td><td>閉じて白紙に書き出す</td></tr></table>
+<h3>取り出す力</h3>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td><span class="tcy">25</span></td><td>解説を読んで次へ進む</td><td>解説を閉じて白紙に解き直す</td></tr><tr><td><span class="tcy">26</span></td><td>わかったので今日は終える</td><td>例文を<span class="tcy">1</span>つ英語にしてみる</td></tr><tr><td><span class="tcy">27</span></td><td>解答を横に置いて○にする</td><td>解答をどけてから判定する</td></tr><tr><td><span class="tcy">28</span></td><td>説明が下手なだけだと思う</td><td>言えなかった所をメモする</td></tr><tr><td><span class="tcy">29</span></td><td>時間を測らずに解く</td><td>本番と同じ分数で測る</td></tr><tr><td><span class="tcy">30</span></td><td>印をつけて先へ進む</td><td><span class="tcy">1</span>冊に番号だけ集める</td></tr><tr><td><span class="tcy">31</span></td><td>解けないので飛ばす</td><td>出せる所まで書いて線を引く</td></tr></table>
+<h3>さかのぼる力</h3>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td><span class="tcy">32</span></td><td>赤で正解を写す</td><td>自分の答案をもう一度読む</td></tr><tr><td><span class="tcy">33</span></td><td>次は気をつける、で終える</td><td>なぜを<span class="tcy">3</span>回聞く</td></tr><tr><td><span class="tcy">34</span></td><td><span class="tcy">4</span>回目を解く</td><td>手前の○を解説なしで解く</td></tr><tr><td><span class="tcy">35</span></td><td>問題と正解を写す</td><td>原因を<span class="tcy">1</span>行だけ書く</td></tr><tr><td><span class="tcy">36</span></td><td><span class="tcy">10</span>問を順番に直す</td><td><span class="tcy">10</span>問を<span class="tcy">3</span>種類に分ける</td></tr><tr><td><span class="tcy">37</span></td><td>最初から読み直す</td><td>追えた所まで線を引く</td></tr><tr><td><span class="tcy">38</span></td><td>自分を責める</td><td>先月から変えた事を書き出す</td></tr></table>
+<h3>回す力</h3>
+<table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td><span class="tcy">39</span></td><td>やる気が出るまで待つ</td><td>昨日の<span class="tcy">1</span>問を解き直す</td></tr><tr><td><span class="tcy">40</span></td><td>毎日、何からやるか決める</td><td>最初の<span class="tcy">10</span>分を固定する</td></tr><tr><td><span class="tcy">41</span></td><td>勉強した時間を記録する</td><td>できるようになった数を書く</td></tr><tr><td><span class="tcy">42</span></td><td>解けないまま閉じる</td><td>今日できた<span class="tcy">1</span>つを出して閉じる</td></tr><tr><td><span class="tcy">43</span></td><td>崩れてから作り直す</td><td>予備日を先に<span class="tcy">1</span>日空ける</td></tr><tr><td><span class="tcy">44</span></td><td>忘れてから覚え直す</td><td>戻る日を<span class="tcy">3</span>回書き込む</td></tr><tr><td><span class="tcy">45</span></td><td>毎晩、立て直す</td><td>日曜の夜だけ直す</td></tr></table>
+<p>最初のページでチェックを入れた番号を、思い出してください。<br>その番号の右側が、あなたが今日から変える<span class="tcy">1</span>つです。</p>
+<p>この<span class="tcy">45</span>行のうち、右の列を<span class="tcy">1</span>つずつ自分の側に移していく。それだけの本です。</p>
+<p><span class="tcy">45</span>個ぜんぶを今日から動かさないでください。<br>序章で出た自分の型の<span class="tcy">7</span>つから、さらに<span class="tcy">1</span>つだけ選んで、<span class="tcy">1</span>週間やる。それで足ります。</p>
+<div class="sep"></div>
+<h2><span class="tcy">3</span>　完全版の図に、<span class="tcy">45</span>の法則を置いた<span class="tcy">1</span>枚</h2>
+<div class="figbox">（図<span class="tcy">4</span>の完全版に、<span class="tcy">45</span>の法則番号を配置した図を挿入）</div>
+<p>漏斗のまわりに、<span class="tcy">4</span>から<span class="tcy">10</span>。<br><span class="tcy">3</span>つの箱を囲む枠のところに、<span class="tcy">11</span>から<span class="tcy">17</span>。<br>知っているからわかっているへの矢印に、<span class="tcy">18</span>から<span class="tcy">24</span>。<br>解いてみるの判定に、<span class="tcy">25</span>から<span class="tcy">31</span>。<br>×から戻る<span class="tcy">3</span>本の矢印に、<span class="tcy">32</span>から<span class="tcy">38</span>。<br>今日から試験日までの線の上に、<span class="tcy">39</span>から<span class="tcy">45</span>。<br>図の真ん中に、<span class="tcy">1</span>と<span class="tcy">2</span>と<span class="tcy">3</span>。</p>
+<p><span class="tcy">45</span>の法則は、<span class="tcy">45</span>個のバラバラなコツではありません。<br><span class="tcy">1</span>枚の図の、どこを直すかの話です。</p>
+<p>自分の勉強が止まったとき、どの法則を使えばいいかわからなくなったら、<br>この図の上で、自分が今どこにいるかだけ探してください。<br>その場所に書いてある番号が、今日使う法則です。</p>
+<div class="sep"></div>
+<h2><span class="tcy">4</span>　序章の診断に戻る</h2>
+<p>序章で、あなたのカウンターを<span class="tcy">1</span>つ選びました。<br>その型に効く法則を、<span class="tcy">7</span>つずつ並べます。</p>
+<p>まず、この<span class="tcy">7</span>つから始めてください。<br><span class="tcy">45</span>全部を今日からやろうとすると、この本自体が、あなたを止めます。</p>
+<h3>今日は<span class="tcy">6</span>時間型に効く<span class="tcy">7</span>つ</h3>
+<div class="indent">　<span class="tcy">1</span>　成績は、時間ではなく「できない」を「できる」に変えた数で決まる<br>　<span class="tcy">25</span>　解説を閉じて、白紙に解き直す<br>　<span class="tcy">26</span>　わかった、は出せるまで信じない<br>　<span class="tcy">27</span>　白紙に出せるかで判定する<br>　<span class="tcy">29</span>　本番と同じ時間で解けて、はじめてできる<br>　<span class="tcy">41</span>　時間ではなく、できた数を記録する<br>　<span class="tcy">42</span>　今日できた<span class="tcy">1</span>つ、で終える</div>
+<h3>参考書ルート型に効く<span class="tcy">7</span>つ</h3>
+<div class="indent">　<span class="tcy">4</span>　過去問は、解くためではなく捨てるために、最初に開く<br>　<span class="tcy">5</span>　買う前に、終わらせる<span class="tcy">1</span>冊を決める<br>　<span class="tcy">6</span>　<span class="tcy">1</span>ページ目ではなく、配点の大きい「できない」から始める<br>　<span class="tcy">7</span>　苦手は、順番を決めてから<span class="tcy">1</span>つずつ<br>　<span class="tcy">8</span>　模試は、捨てていい単元を見つけるために見る<br>　<span class="tcy">10</span>　捨てた単元を言えるのが、設計した証拠<br>　<span class="tcy">30</span>　解けない問題は、隠さず集める</div>
+<h3>全部わからない型に効く<span class="tcy">7</span>つ</h3>
+<div class="indent">　<span class="tcy">11</span>　問題文は、最後まで読んでから解く<br>　<span class="tcy">12</span>　解く前に、設問を自分の言葉で言い換える<br>　<span class="tcy">14</span>　全部ではなく、止まった<span class="tcy">1</span>行を指さす<br>　<span class="tcy">15</span>　知らないと、わかっていないを分けてから動く<br>　<span class="tcy">16</span>　図に描き直せないものは、まだつかめていない<br>　<span class="tcy">31</span>　途中までを自力で書く。そこができないの境目<br>　<span class="tcy">37</span>　解説は、どこから読めなくなったかだけ探す</div>
+<h3><span class="tcy">10</span>回書く型に効く<span class="tcy">7</span>つ</h3>
+<div class="indent">　<span class="tcy">18</span>　解く前に、前に見た形を探す<br>　<span class="tcy">19</span>　覚える前に「なぜ」を<span class="tcy">1</span>つつける<br>　<span class="tcy">20</span>　<span class="tcy">1</span>つの例文で、<span class="tcy">10</span>個覚える<br>　<span class="tcy">21</span>　覚えたものは、別の科目で<span class="tcy">1</span>回使う<br>　<span class="tcy">22</span>　似たものは、違いだけで覚える<br>　<span class="tcy">23</span>　覚えるとは、見ることではなく思い出すこと<br>　<span class="tcy">24</span>　まとめは紙ではなく、頭のなかに作る</div>
+<h3>あーね型に効く<span class="tcy">7</span>つ</h3>
+<div class="indent">　<span class="tcy">2</span>　「わかっている」と「できる」は、別の段階<br>　<span class="tcy">24</span>　まとめは紙ではなく、頭のなかに作る<br>　<span class="tcy">25</span>　解説を閉じて、白紙に解き直す<br>　<span class="tcy">26</span>　わかった、は出せるまで信じない<br>　<span class="tcy">27</span>　白紙に出せるかで判定する<br>　<span class="tcy">28</span>　説明できないものは、まだできていない<br>　<span class="tcy">29</span>　本番と同じ時間で解けて、はじめてできる</div>
+<h3>あとで付箋型に効く<span class="tcy">7</span>つ</h3>
+<div class="indent">　<span class="tcy">3</span>　解けなかったら、×の場所ではなく、最後にできていた場所に戻る<br>　<span class="tcy">30</span>　解けない問題は、隠さず集める<br>　<span class="tcy">32</span>　正解より先に、どこで崩れたかを探す<br>　<span class="tcy">33</span>　ケアレスミスと言った瞬間、原因は消える。なぜ、を<span class="tcy">3</span>回<br>　<span class="tcy">34</span>　<span class="tcy">4</span>回目より、<span class="tcy">1</span>つ前のできていた問題を解き直す<br>　<span class="tcy">35</span>　間違いノートには、正解ではなく原因を書く<br>　<span class="tcy">36</span>　間違いは数えず、種類で分ける</div>
+<h3>計画表に<span class="tcy">1</span>時間型に効く<span class="tcy">7</span>つ</h3>
+<div class="indent">　<span class="tcy">9</span>　計画は、今の自分からしか立てられない<br>　<span class="tcy">39</span>　やる気は、計画に入れない<br>　<span class="tcy">40</span>　最初の<span class="tcy">10</span>分は、毎日同じことにする<br>　<span class="tcy">41</span>　時間ではなく、できた数を記録する<br>　<span class="tcy">43</span>　崩れる日は、最初から計画に入れておく<br>　<span class="tcy">44</span>　どうせ忘れる。戻る日を、先に決める<br>　<span class="tcy">45</span>　計画は、週に<span class="tcy">1</span>回だけ直す</div>
+<div class="sep"></div>
+<h2><span class="tcy">5</span>　英語で答え合わせ</h2>
+<p>付録扱い。<span class="tcy">1</span>つの科目だけで、<span class="tcy">45</span>の法則が全部使えることを確かめる。<br><span class="tcy">1</span>人の高校<span class="tcy">2</span>年生の、<span class="tcy">2</span>週間を追う形にする。<span class="tcy">10</span>ページ以内。</p>
+<h3>場面</h3>
+<p>高校<span class="tcy">2</span>年生。次の模試まで<span class="tcy">2</span>週間。英語の偏差値は、去年から動いていない。<br>単語帳は<span class="tcy">3</span>周した。文法の参考書は<span class="tcy">3</span>冊持っている。長文は毎回、時間が足りない。</p>
+<h3><span class="tcy">1</span>日目　捨てる</h3>
+<p>志望校の過去問を開く。解かない。配点だけ数える。（<span class="tcy">4</span>）<br>長文の配点より、文法と語彙のほうが大きかった。（<span class="tcy">8</span>を先取り）<br>文法の参考書<span class="tcy">3</span>冊の目次を並べて、<span class="tcy">3</span>冊とも止まっている単元を見つける。<span class="tcy">1</span>冊に絞る。（<span class="tcy">5</span>）<br>配点の大きい単元から始めると決める。（<span class="tcy">6</span>）<br>やらない単元を<span class="tcy">3</span>つ、紙に書く。（<span class="tcy">10</span>）<br>先週の実際の勉強時間で、<span class="tcy">2</span>週間の計画を組む。予備日を<span class="tcy">1</span>日入れる。（<span class="tcy">9</span>、<span class="tcy">43</span>）</p>
+<h3><span class="tcy">2</span>日目から<span class="tcy">4</span>日目　突き止める</h3>
+<p>長文を解く。設問を先に読んでから、本文に入る。（<span class="tcy">17</span>）<br>読めなかった段落で、「全部わからない」と言わずに、意味の切れた文を指さす。（<span class="tcy">14</span>）<br>その<span class="tcy">1</span>文で、単語を知らないのか、構造が取れないのかを分ける。（<span class="tcy">15</span>）<br>設問を自分の言葉に言い換えてから、本文に探しに行く。（<span class="tcy">12</span>）<br>文の構造を、線と矢印で紙に描く。描けなかったところが、つかめていないところ。（<span class="tcy">16</span>）<br>問題文を最後まで読んでから解く。（<span class="tcy">11</span>）<br>授業では、板書ではなく先生の説明を<span class="tcy">1</span>行にまとめる。（<span class="tcy">13</span>）</p>
+<h3><span class="tcy">5</span>日目から<span class="tcy">8</span>日目　つなげる</h3>
+<p>覚えていなかった単語を<span class="tcy">50</span>個集める。<span class="tcy">1</span>語<span class="tcy">10</span>回書くのをやめる。（<span class="tcy">20</span>の前）<br><span class="tcy">10</span>語ずつ、<span class="tcy">1</span>つの場面の文にまとめる。<span class="tcy">5</span>つの文で<span class="tcy">50</span>語。（<span class="tcy">20</span>）<br>接頭辞の意味を<span class="tcy">1</span>つ調べる。同じ接頭辞の単語が一緒に動く。（<span class="tcy">19</span>）<br>似た意味の単語は、違いだけ覚える。（<span class="tcy">22</span>）<br>赤シートを隠したら、<span class="tcy">5</span>秒待ってからめくる。（<span class="tcy">23</span>）<br>新しい構文が出たら、知っている構文のどれに近いかを先に決める。（<span class="tcy">18</span>）<br>文法のまとめノートを作るのをやめて、白紙に思い出せる規則を書き出す。（<span class="tcy">24</span>）<br>覚えた単語を、国語の評論の語彙とつなげてみる。（<span class="tcy">21</span>）</p>
+<h3><span class="tcy">9</span>日目から<span class="tcy">11</span>日目　取り出す</h3>
+<p>長文の全訳を読んで納得したら、全訳を閉じて、もう一度自分で訳す。（<span class="tcy">25</span>）<br>授業でわかったと思ったら、その場で例文を<span class="tcy">1</span>つ英語にしてみる。（<span class="tcy">26</span>）<br>判定するときは、机の上から解答をどける。（<span class="tcy">27</span>）<br>文法問題は、なぜその答えになるかを友達に説明してみる。（<span class="tcy">28</span>）<br>長文は、本番と同じ分数を測って解く。（<span class="tcy">29</span>）<br>出てこなかった単語だけを、<span class="tcy">1</span>枚の紙に集める。（<span class="tcy">30</span>）<br>訳せなかったところは、訳せた部分まで書いて、境目に線を引く。（<span class="tcy">31</span>）</p>
+<h3><span class="tcy">12</span>日目　さかのぼる</h3>
+<p>模試の直しをする。正解を写す前に、自分の答案のどこから崩れたかを探す。（<span class="tcy">32</span>）<br>スペルミスに、なぜを<span class="tcy">3</span>回聞く。（<span class="tcy">33</span>）<br><span class="tcy">3</span>回間違えた文法問題は、<span class="tcy">4</span>回目をやらずに、正解していた<span class="tcy">1</span>つ前の問題を解説なしで解く。（<span class="tcy">34</span>）<br>間違いノートには、問題を写さず、原因を<span class="tcy">1</span>行だけ書く。（<span class="tcy">35</span>）<br><span class="tcy">10</span>問の間違いを、単語・文法・読み方の<span class="tcy">3</span>種類に分ける。（<span class="tcy">36</span>）<br>解説は、読めなくなった<span class="tcy">1</span>行だけを探す。（<span class="tcy">37</span>）<br>点数が下がっていたら、自分ではなく、先月からの時間の使い方を見る。（<span class="tcy">38</span>）</p>
+<h3><span class="tcy">13</span>日目、<span class="tcy">14</span>日目　回す</h3>
+<p>やる気を待たずに、座って昨日の長文を<span class="tcy">1</span>文だけ訳し直す。（<span class="tcy">39</span>）<br>最初の<span class="tcy">10</span>分は、毎日、単語<span class="tcy">30</span>個で固定する。（<span class="tcy">40</span>）<br>記録するのは、時間ではなく、今日出せるようになった数。（<span class="tcy">41</span>）<br><span class="tcy">1</span>日の最後は、今日できた<span class="tcy">1</span>つを出してから閉じる。（<span class="tcy">42</span>）<br>予備日で、崩れた分を取り返す。（<span class="tcy">43</span>）<br>覚えた日、翌日、<span class="tcy">1</span>週間後に戻る日をカレンダーに書く。（<span class="tcy">44</span>）<br>計画を直すのは、日曜の夜だけ。（<span class="tcy">45</span>）</p>
+<h3><span class="tcy">2</span>週間後</h3>
+<p>英語の勉強時間は、増えていません。<br>むしろ、計画を直す時間と、参考書を探す時間が減った分、少し減っています。</p>
+<p>変わったのは、<span class="tcy">2</span>週間で出せるようになった数です。</p>
+<p>そして最後に、この<span class="tcy">2</span>週間でやったことを見返してください。<br><span class="tcy">1</span>つの科目で、<span class="tcy">45</span>が全部使えました。</p>
+<p>つまり、あなたの得意科目でも、苦手科目でも、同じことができます。</p>
+<div class="sep"></div>
+<h2><span class="tcy">6</span>　あの子について</h2>
+<p>最後に、ひとつだけ。</p>
+<p>この本の表紙にいる、あの子のことです。</p>
+<p>あの子は、特別な頭を持っていたわけではありません。<br>才能の話も、根性の話も、この本には一度も出てきませんでした。</p>
+<p>あの子がやっていたのは、<span class="tcy">45</span>行の右側です。<br>それだけです。</p>
+<p>そして、右側は全部、行動でした。<br>解説を閉じる。配点を数える。<span class="tcy">5</span>秒待つ。指で<span class="tcy">1</span>行を指す。予備日を<span class="tcy">1</span>日空ける。<br>どれも、今日できます。今日できないものは、<span class="tcy">1</span>つも入れませんでした。</p>
+<p>あの子の頭のなかは、もう全部見ました。<br>あとは、そのままパクるだけです。</p>
+<div class="sep"></div>
+<h2><span class="tcy">7</span>　最後に、<span class="tcy">1</span>行だけ</h2>
+<p>この図は、勉強の外でも回っています。</p>
+<h1>この本を読んだ子の、親へ</h1>
+<p>ここから<span class="tcy">6</span>ページは、本人ではなく、保護者の方に向けて書いています。<br>本人が読んでもかまいません。むしろ、読んでいる前提で書きます。</p>
+<div class="sep"></div>
+<h2><span class="tcy">1</span>　「何時間やったの？」を「何個できるようになった？」に変える</h2>
+<p>この本は、たった<span class="tcy">1</span>つの質問から始まりました。</p>
+<div class="indent">　「今週、何時間やった？」を、<br>　「今週、何個できるようになった？」に変える。</div>
+<p>この本の中では、子ども本人のカウンターを付け替える話をしてきました。</p>
+<p>ただ、正直に書きます。<br>子どもが自分でカウンターを付け替えるより、外から聞かれる質問が変わるほうが、ずっと速いです。</p>
+<p>人は、聞かれることに答えられるように、行動を変えるからです。</p>
+<p>だから、お願いがあります。</p>
+<p>聞くのは、<span class="tcy">1</span>週間に<span class="tcy">1</span>回でかまいません。<br>そのとき、時間ではなく、数を聞いてください。</p>
+<div class="indent">　何時間やったの　→　何個できるようになった<br>　どこまで進んだの　→　昨日できなかったことで、今日できたことは<br>　ちゃんとやってるの　→　今週は、いくつ増えた</div>
+<p>最初の何回かは、答えられないと思います。<br>それは、サボっているからではありません。数えていないからです。</p>
+<p>数えていないものは、思い出せません。<br>思い出せないものは、増やせません。</p>
+<p>答えられなかったことを責めないでください。<br>「じゃあ、来週また聞くね」で十分です。</p>
+<p>来週までに、子どもは数えるようになります。<br>数え始めた瞬間から、勉強のやり方のほうが、勝手に変わっていきます。</p>
+<div class="sep"></div>
+<h2><span class="tcy">2</span>　うちの子は、何型か</h2>
+<p>型の名前は仮です（<code>docs/08</code> の未確定<span class="tcy">1</span>）。</p>
+<p>本のなかでは、子ども本人が診断します。<br>ただ、本人より先に、家から見えている姿でわかることがあります。</p>
+<p><span class="tcy">7</span>つのうち、思い当たるものはありますか。<br><span class="tcy">1</span>つに決まらなくてかまいません。一番強く思い当たるものが、主の型です。</p>
+<h3><span class="tcy">1</span>　今日は<span class="tcy">6</span>時間型</h3>
+<p>家で見えている姿<br>　部屋の電気が、遅くまでついている。何時間やったかを、聞かなくても言ってくる。<br>　勉強アプリの合計時間を、見せてくることがある。</p>
+<p>かける一言<br>　「今日は、何ができるようになった？」</p>
+<h3><span class="tcy">2</span>　参考書ルート型</h3>
+<p>家で見えている姿<br>　新しい参考書がほしい、と言う回数が多い。<br>　本棚に、途中まで進んだ本が並んでいる。買った日がいちばん機嫌がいい。</p>
+<p>かける一言<br>　「今持ってる本のうち、どれを最後まで終わらせる？」</p>
+<h3><span class="tcy">3</span>　全部わからない型</h3>
+<p>家で見えている姿<br>　わからない、とは言う。どこが、と聞くと「全部」と返ってくる。<br>　教えるとその場でわかる。次の週、同じところで止まっている。</p>
+<p>かける一言<br>　「どこまでは、わかった？」</p>
+<h3><span class="tcy">4</span>　<span class="tcy">10</span>回書く型</h3>
+<p>家で見えている姿<br>　机に向かっているあいだ、ずっと手が動いている。ノートが真っ黒。<br>　書いた量は誰よりも多いのに、小テストの点が動かない。</p>
+<p>かける一言<br>　「それ、書かないで言える？」</p>
+<h3><span class="tcy">5</span>　あーね型</h3>
+<p>家で見えている姿<br>　説明を聞くと、すぐ「わかった」と言う。飲み込みは、たしかに速い。<br>　問題集も<span class="tcy">2</span>周、<span class="tcy">3</span>周している。なのに、テストの点だけが動かない。</p>
+<p>かける一言<br>　「教科書を閉じても、出せる？」</p>
+<h3><span class="tcy">6</span>　あとで付箋型</h3>
+<p>家で見えている姿<br>　問題集から、付箋がたくさんはみ出している。<br>　その数が、減っていかない。</p>
+<p>かける一言<br>　「その付箋、いま何枚ある？」</p>
+<h3><span class="tcy">7</span>　計画表に<span class="tcy">1</span>時間型</h3>
+<p>家で見えている姿<br>　計画表がきれい。色分けもしてある。いつも最新版がある。<br>　最新版を作った日は、たいてい勉強していない。</p>
+<p>かける一言<br>　「今週、いくつ増えた？」</p>
+<h3><span class="tcy">7</span>つの一言について</h3>
+<p>どれも、教える言葉ではありません。全部、質問です。</p>
+<p>答えるのは子どもです。<br>親が答えを持っている必要はありません。持っていないほうが、うまくいきます。</p>
+<p>そして<span class="tcy">7</span>つとも、聞いていることは同じです。<br>時間ではなく、数を聞いています。</p>
+<div class="sep"></div>
+<h2><span class="tcy">3</span>　子どもが止まっている箱を、図で指さす</h2>
+<p>この本には、<span class="tcy">1</span>枚の図が出てきます。（図<span class="tcy">2</span>を再掲）</p>
+<div class="indent">　知らない　→　知っている　→　わかっている　→〔解いてみる〕→　できる</div>
+<p>子どもが「わからない」と言ったとき、この<span class="tcy">4</span>つのどこにいるかで、必要なものが違います。</p>
+<div class="indent">　知らない　　　　　　まだ見たことがない。教える。調べさせる。<br>　知っている　　　　　言葉は知っているが、理由がない。なぜ、を<span class="tcy">1</span>つ足す。<br>　わかっている　　　　説明は聞ける。でも自力では出せない。閉じて出させる。<br>　できる　　　　　　　本番で自力で出せる。ここまで来て、はじめて<span class="tcy">1</span>つ。</div>
+<p>やっているのに伸びない子のほとんどは、<span class="tcy">3</span>つ目の「わかっている」にいます。</p>
+<p>ここにいる子は、勉強していないわけではありません。<br>むしろ、ここまで来るのは大変です。ちゃんとやった子しか、ここにいません。</p>
+<p>あと<span class="tcy">1</span>つ、矢印が残っているだけです。</p>
+<p>だから、声をかけるときは、こう聞いてみてください。</p>
+<div class="indent">　「それ、教科書閉じても出せる？」</div>
+<p>これだけです。<br>答えを教える必要も、やり方を直す必要もありません。</p>
+<div class="sep"></div>
+<h2><span class="tcy">4</span>　箱を間違えた声かけが、子どもを戻す</h2>
+<p>一番もったいないのは、いる箱と、かけた言葉がずれているときです。</p>
+<p>わかっているの箱にいる子に、「もっと理解しなさい」と言うと、<br>その子はもう一度、解説を読み直します。すでにわかっているところを、また読む。<br>時間だけが減って、数は増えません。</p>
+<p>知らないの箱にいる子に、「ちゃんと考えなさい」と言うと、<br>その子は、知らないことを考え続けます。出てこないものは、考えても出てきません。<br>考える力の問題ではなく、材料がないだけです。</p>
+<p>そして、どの箱にいる子にも一番効かないのが、この<span class="tcy">2</span>つです。</p>
+<div class="indent">　「もっと時間をかけなさい」<br>　「やる気を出しなさい」</div>
+<p>時間を増やしても、通る矢印が<span class="tcy">0</span>本なら、増えるのは疲れだけです。<br>やる気は、始めたあとに出てくるものなので、始める前に出せと言われても出ません。</p>
+<p>かわりに使えるのは、この<span class="tcy">3</span>つです。</p>
+<div class="indent">　「今、どこで止まってる？」　　　　　場所を<span class="tcy">1</span>点に絞らせる<br>　「それ、閉じても出せる？」　　　　　わかっているとできるを分ける<br>　「昨日、何個できるようになった？」　カウンターを付け替える</div>
+<p><span class="tcy">3</span>つとも、答えるのは子どもです。<br>親が何かを教える必要は、ありません。</p>
+<div class="sep"></div>
+<h2><span class="tcy">5</span>　この本の渡し方</h2>
+<p>最後に、この本の渡し方を書いておきます。</p>
+<p>まず、全部読ませようとしないでください。<br><span class="tcy">45</span>の法則を今日から全部やらせようとすると、この本自体が、その子を止めます。</p>
+<p>やることは、<span class="tcy">2</span>つだけです。</p>
+<h3>ひとつめ　序章の診断だけ、一緒にやる</h3>
+<p>序章の見開き<span class="tcy">1</span>に、昨日の勉強を思い出して書き込むページがあります。<br>そこだけ、隣に座って一緒にやってください。<span class="tcy">5</span>分で終わります。</p>
+<p>一緒にやる理由は<span class="tcy">2</span>つあります。</p>
+<p><span class="tcy">1</span>つは、その子がどの型かを、親のほうも知っておくためです。<br>型がわかると、かける言葉が変わります。</p>
+<p>もう<span class="tcy">1</span>つは、そのページには、答えられない質問が<span class="tcy">1</span>つ入っているからです。<br>そこで子どもが答えられなかったとき、隣にいてほしいんです。<br>ひとりで答えられなかったら、たぶん本を閉じます。</p>
+<h3>ふたつめ　あとは、本人に渡す</h3>
+<p>診断が終わったら、本を渡して、離れてください。</p>
+<p>その子は、自分の型の章から読み始めます。<br>そう書いてあります。</p>
+<p>進み具合を確認しないでください。<br>かわりに、<span class="tcy">1</span>週間後に<span class="tcy">1</span>回だけ、こう聞いてください。</p>
+<div class="indent">　「今週、何個できるようになった？」</div>
+<p>それだけで、この本は動き始めます。</p>
+<h1>付録</h1>
+<div class="sep"></div>
+<h2>付録<span class="tcy">1</span>　できた数カレンダー</h2>
+<h3>使い方</h3>
+<p><span class="tcy">1</span>日の終わりに、今日できるようになったことを書くだけ。<br>書くのは、本番で自力で出せるようになったものだけ。<br>「わかった」は書かない。「読んだ」も書かない。（法則<span class="tcy">26</span>、<span class="tcy">27</span>）</p>
+<p>書けない日は、<span class="tcy">0</span>と書く。<span class="tcy">0</span>を書くのも記録です。<br><span class="tcy">0</span>が<span class="tcy">3</span>日続いたら、その<span class="tcy">3</span>日で何を数えていたかを見返してください。</p>
+<h3>書き方の例</h3>
+<div class="indent">　<span class="tcy">9</span>月<span class="tcy">1</span>日　　<span class="tcy">2</span>　　連立方程式の速さ／不定詞の副詞的用法<br>　<span class="tcy">9</span>月<span class="tcy">2</span>日　　<span class="tcy">0</span><br>　<span class="tcy">9</span>月<span class="tcy">3</span>日　　<span class="tcy">1</span>　　蒸散と蒸発の違い<br>　<span class="tcy">9</span>月<span class="tcy">4</span>日　　<span class="tcy">3</span>　　単語 consist・consider・constant／because ofの使い分け<br>　<span class="tcy">9</span>月<span class="tcy">5</span>日　　<span class="tcy">1</span>　　三角形の合同条件を白紙で書けた</div>
+<h3><span class="tcy">1</span>ヶ月の枠</h3>
+<p>（<span class="tcy">1</span>ヶ月分の枠。各日に、数字の欄<span class="tcy">1</span>つと、<span class="tcy">1</span>行の記入欄）</p>
+<div class="indent">　日付　　数　　できるようになったこと</div>
+<h3>月の終わりに</h3>
+<div class="indent">　今月の合計　　　　　　個<br>　一番数が増えた週　　　第　　週<br>　その週にやっていたこと　　　　　　　　　　　　　　　　　　</div>
+<p>合計を、先月と比べてください。<br>時間ではなく、この数字を先月と比べる。それだけで、次の月の勉強が変わります。</p>
+<div class="sep"></div>
+<h2>付録<span class="tcy">2</span>　自分の型の<span class="tcy">7</span>法則シート</h2>
+<h3>使い方</h3>
+<p>序章の診断で出た自分の型の<span class="tcy">7</span>法則を、ここに書き写す。<br>書き写すのは自分の手で。まとめのページから写してください。（法則<span class="tcy">24</span>の逆を、あえてここでやります。<br>これは覚えるための紙ではなく、机に貼るための紙なので）</p>
+<p><span class="tcy">7</span>つのうち、今週やるものに<span class="tcy">1</span>つだけ丸をつける。<br>できた日にチェックを入れる。</p>
+<h3>シート</h3>
+<div class="frows"><div class="frow"><span class="fl"> わたしの型</span><span class="fd"></span><span class="fu">型</span></div></div>
+<div class="frows"><div class="frow"><span class="fl"> 今週やる法則  法則</span><span class="fd"></span><span class="fu"></span></div></div>
+<div class="indent">　　　　　　　　　　　　　　月　火　水　木　金　土　日</div>
+<div class="indent">　法則　　　　　　　　　　　□　□　□　□　□　□　□<br>　法則　　　　　　　　　　　□　□　□　□　□　□　□<br>　法則　　　　　　　　　　　□　□　□　□　□　□　□<br>　法則　　　　　　　　　　　□　□　□　□　□　□　□<br>　法則　　　　　　　　　　　□　□　□　□　□　□　□<br>　法則　　　　　　　　　　　□　□　□　□　□　□　□<br>　法則　　　　　　　　　　　□　□　□　□　□　□　□</div>
+<div class="frows"><div class="frow"><span class="fl"> 今週できるようになった数</span><span class="fd"></span><span class="fu">個</span></div></div>
+<h3><span class="tcy">1</span>週間たったら</h3>
+<p>チェックの数は見なくていいです。<br>見るのは、一番下の数だけ。</p>
+<p>先週より増えていたら、その法則は効いています。続けてください。<br>増えていなかったら、丸をつける法則を、次の<span class="tcy">1</span>つに変えてください。</p>
+<div class="sep"></div>
+<h2>付録<span class="tcy">3</span>　特典</h2>
+<p>LINEで受け取れるもの。</p>
+<ul><li><span class="tcy">45</span>法則の一覧ポスター（A<span class="tcy">3</span>、机に貼れる形）</li><li>図<span class="tcy">2</span>と完全版の図のポスター</li><li>できた数カレンダーの配布版（<span class="tcy">3</span>ヶ月分）</li><li>自分の型の<span class="tcy">7</span>法則シートの配布版</li><li>診断の詳細版　各型<span class="tcy">7</span>問、主の型と副の型を点数で出す</li><li><span class="tcy">6</span>つの力の解説動画</li></ul>
+<p>（受け取り方法とQRコードは、実物では奥付前のページに入れる。<br>書店で購入した人向けの導線は <code>docs/07</code> の購入特典の設計に従う）</p>
+<h1>おわりに　偏差値<span class="tcy">42</span>の僕も、時間を数えていた</h1>
+<p>以下は構成の骨組みと、原稿の下書きです。<br>〔　〕でくくった部分は、著者の実際の記憶に差し替える箇所です（<code>docs/08</code> に未確定として記録）。</p>
+<div class="sep"></div>
+<h2><span class="tcy">1</span>　時間を数えていたころ</h2>
+<p>偏差値<span class="tcy">42</span>でした。</p>
+<p>高校〔　年生の　　月　〕、模試の判定はE。<br>言い訳のしようがないのは、勉強していなかったからではないところです。</p>
+<p>やっていました。</p>
+<p>〔当時の<span class="tcy">1</span>日の勉強時間と、その内訳。使っていた教材の種類。<br>記録していたもの（ノートの周回数、時間、ページ数など）を、具体的に<span class="tcy">1</span>つ〕</p>
+<p>そのころの僕が、毎日数えていたのは、時間でした。</p>
+<p>今日は何時間やった。昨日より多い。今週は何時間になった。<br>数字は、たしかに増えていました。増えていたので、正しい方向に進んでいると思っていました。</p>
+<p>模試の点は、動きませんでした。</p>
+<p>一番きつかったのは、点が悪かったことではありません。<br>やっているのに動かないと、次にどうすればいいかが、わからなくなることです。</p>
+<p>やり方が悪いのか。<br>量が足りないのか。<br>それとも、もともと向いていないのか。</p>
+<p>〔このころの具体的な場面を<span class="tcy">1</span>つ。誰かに言われた言葉、あるいは自分で気づいた瞬間の景色〕</p>
+<div class="sep"></div>
+<h2><span class="tcy">2</span>　数え方が変わった日</h2>
+<div class="frows"><div class="frow"><span class="fl">変わったきっかけは、〔</span><span class="fd"></span><span class="fu">〕でした。</span></div></div>
+<p>〔きっかけの出来事。人から言われた質問、自分で始めた記録、失敗した経験など。<br>この本の「はじめに」に出てくる先生の質問と、同じ構造で書けると一番いい〕</p>
+<p>そこから、記録するものを変えました。</p>
+<p>時間を書くのをやめて、今日できるようになったことを書くようにしました。</p>
+<p>最初の日は、書けませんでした。<br><span class="tcy">5</span>時間やった日なのに、<span class="tcy">1</span>つも書けなかった。</p>
+<p>〔その日のことを、覚えている範囲で〕</p>
+<p>書けなかったので、次の日から、書けるようにするための勉強に変わりました。</p>
+<p>解説を読んだら、閉じて解き直すようになった。<br>できなかった問題を、飛ばさなくなった。<br>何をやるかを決める前に、何をやらないかを決めるようになった。</p>
+<p>誰かに教わったわけではありません。<br>数を書かなければいけなくなったから、数が増える勉強に、勝手に変わっていっただけです。</p>
+<p>〔このあとの経過。偏差値がどう動いたか、いつ動いたか。<br>最初に動いた科目と、その理由がわかっているなら、それを書く〕</p>
+<p>そして、早稲田に受かりました。</p>
+<div class="sep"></div>
+<h2><span class="tcy">3</span>　<span class="tcy">9</span>万人と、この本</h2>
+<p>今は、〔THINKINGでの指導と、Instagramでの発信について。<br>学部別合格設計塾という形をとっている理由を、この本の言葉で<span class="tcy">1</span>段落〕</p>
+<p>生徒を見ていて、はっきりわかったことがあります。</p>
+<p>伸びない子は、サボっていません。<br>むしろ、僕が高校生のころより、ずっとちゃんとやっている子ばかりです。</p>
+<p>ただ、数えているものが、成績とつながっていない。</p>
+<p>時間を数えている子。<br>参考書の冊数を数えている子。<br>周回数を数えている子。<br>付箋の枚数を数えている子。</p>
+<p>全員、頑張っています。全員、増やしています。<br>増やしているものが、成績と別のところにあるだけです。</p>
+<p>〔生徒の実例を<span class="tcy">1</span>つ。名前は出さず、学年と科目と、変わった瞬間だけ。<br>「はじめに」の生徒と重複しないもの〕</p>
+<p>この本に書いた<span class="tcy">45</span>は、その子たちに実際に言ってきたことです。<br>新しく考えたものは、<span class="tcy">1</span>つもありません。</p>
+<div class="sep"></div>
+<h2><span class="tcy">4</span>　最後に</h2>
+<p>この本を読んで、明日から<span class="tcy">45</span>全部をやろうとしないでください。</p>
+<p>やることは<span class="tcy">1</span>つです。</p>
+<p>今日の終わりに、こう自分に聞いてください。</p>
+<div class="indent">　今日、何個できるようになった？</div>
+<p>最初は、<span class="tcy">0</span>かもしれません。<br><span class="tcy">0</span>で大丈夫です。<span class="tcy">0</span>と書いた日から、数え始めたことになります。</p>
+<p>数え始めた人は、増やし始めます。<br>そういうふうにできています。</p>
+<p>〔最後の<span class="tcy">1</span>行。読者に向けた、著者自身の言葉。<br>「やればやるだけ伸びる」あの子は、才能でも時間でもなく、数え方が違っただけだ、<br>という趣旨を、著者の言葉で〕</p>
+<div class="indent">　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　朝倉 徹大</div>
+<div class="sep"></div>
+<h2>著者プロフィール（奥付前）</h2>
+<p>朝倉 徹大（あさくら てつひろ）</p>
+<p>合同会社ARC代表。学部別合格設計塾THINKING運営。<br>偏差値<span class="tcy">42</span>から早稲田大学へ。Instagramを中心に、のべ<span class="tcy">9</span>万人が学ぶ「受験の王様」として、<br>中学生・高校生とその保護者に向けて勉強法を発信している。本書が初の著書。</p>
+<p>〔経歴の詳細、資格、実績数値は著者確認〕</p>
+</body></html>

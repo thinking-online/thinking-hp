@@ -138,6 +138,14 @@ def md_to_html(text, accent=""):
                 for a, b in rows)
             out.append(f'<div class="frows">{body}</div>')
             continue
+        if all(re.match(r'^　\s*\d+　□　', l) for l in joined):
+            items = []
+            for l in joined:
+                m2 = re.match(r'^　\s*(\d+)　□　(.*)$', l)
+                items.append(f'<div class="ck"><span class="n">{m2.group(1)}</span>'
+                             f'<span class="box"></span><span class="t">{inline(m2.group(2))}</span></div>')
+            out.append('<div class="cklist">' + "".join(items) + "</div>")
+            continue
         if all(l.startswith("　") for l in joined):
             out.append('<div class="indent">' + "<br>".join(inline(l) for l in joined) + "</div>")
             continue
@@ -201,6 +209,16 @@ th { background: #f4f4f4; }
 .vs.f4 td:nth-child(3), .vs.f4 th:nth-child(3) { background: #fdf0f5; }
 .vs.f5 td:nth-child(3), .vs.f5 th:nth-child(3) { background: #fbeeec; }
 .vs.f6 td:nth-child(3), .vs.f6 th:nth-child(3) { background: #f5eefa; }
+.cklist { margin: .25em 0 .7em 0; }
+.cols2 { column-count: 2; column-gap: 7mm; margin-top: .2em; }
+.cols2 h3 { margin: .55em 0 .3em 0; font-size: 8.6pt; color: #666; break-after: avoid; }
+.cols2 h3:first-child { margin-top: 0; }
+.cols2 .ck { break-inside: avoid; padding: .16em 0; }
+.ck { display: flex; align-items: flex-start; gap: .5em; padding: .2em 0; font-size: 8.8pt; }
+.ck .n { width: 1.6em; text-align: right; color: #9a9a9a; font-size: 7.8pt; padding-top: .18em; }
+.ck .box { width: .78em; height: .78em; border: 1px solid #9a9a9a; border-radius: 1px;
+           display: inline-block; flex: none; margin-top: .32em; }
+.ck .t { flex: 1; }
 .frows { margin: .6em 0 1.2em 0; }
 .frow { display: flex; align-items: baseline; gap: .5em; padding: .42em 0; }
 .frow .fl { white-space: nowrap; }
@@ -306,7 +324,7 @@ def build_daihon(outpath):
     # 目次
     toc = ['<div class="toc"><h1>目次</h1>']
     toc.append('<div class="grp">前付</div>')
-    for t in ["はじめに", "序章　あなたは、何を数えている？"]:
+    for t in ["はじめに", "あの子が、絶対にやらない45のこと", "序章　あなたは、何を数えている？"]:
         toc.append(f'<div class="row"><span>{esc(t)}</span></div>')
     toc.append('<div class="grp">本文</div>')
     ch_titles = {
@@ -336,6 +354,12 @@ def build_daihon(outpath):
     parts.append("\n".join(toc))
 
     parts.append(render_file("はじめに.md"))
+    h = render_file("やらない45.md")
+    h = re.sub(r'(<h2>45</h2>)(.*?)(?=<div class="pagebreak">)',
+               lambda m: m.group(1) + '<div class="cols2">' + m.group(2) + '</div>', h, flags=re.S)
+    # 導入とリストを同じページに置く（見開きの左ページに相当）
+    h = h.replace('<div class="pagebreak"></div>\n<h2>45</h2>', '<h2>45</h2>')
+    parts.append(h)
     parts.append(render_file("序章.md"))
     parts.append(f'<div class="part"><div class="num">第 1 章</div><div class="ttl">あの子の頭のなかでは、<br>何が起きているのか</div><div class="bar"></div></div>')
     parts.append(render_file("第1章.md"))

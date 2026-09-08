@@ -33,6 +33,16 @@ th { background: #f4f4f4; }
 .vs.f4 td:nth-child(3), .vs.f4 th:nth-child(3) { background: #fdf0f5; }
 .vs.f5 td:nth-child(3), .vs.f5 th:nth-child(3) { background: #fbeeec; }
 .vs.f6 td:nth-child(3), .vs.f6 th:nth-child(3) { background: #f5eefa; }
+.cklist { margin: .25em 0 .7em 0; }
+.cols2 { column-count: 2; column-gap: 7mm; margin-top: .2em; }
+.cols2 h3 { margin: .55em 0 .3em 0; font-size: 8.6pt; color: #666; break-after: avoid; }
+.cols2 h3:first-child { margin-top: 0; }
+.cols2 .ck { break-inside: avoid; padding: .16em 0; }
+.ck { display: flex; align-items: flex-start; gap: .5em; padding: .2em 0; font-size: 8.8pt; }
+.ck .n { width: 1.6em; text-align: right; color: #9a9a9a; font-size: 7.8pt; padding-top: .18em; }
+.ck .box { width: .78em; height: .78em; border: 1px solid #9a9a9a; border-radius: 1px;
+           display: inline-block; flex: none; margin-top: .32em; }
+.ck .t { flex: 1; }
 .frows { margin: .6em 0 1.2em 0; }
 .frow { display: flex; align-items: baseline; gap: .5em; padding: .42em 0; }
 .frow .fl { white-space: nowrap; }
@@ -104,6 +114,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="toc"><h1>目次</h1>
 <div class="grp">前付</div>
 <div class="row"><span>はじめに</span></div>
+<div class="row"><span>あの子が、絶対にやらない45のこと</span></div>
 <div class="row"><span>序章　あなたは、何を数えている？</span></div>
 <div class="grp">本文</div>
 <div class="row"><span>第1章　あの子の頭のなかでは、何が起きているのか</span><span class="r">法則1〜3</span></div>
@@ -120,14 +131,13 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="row"><span>おわりに　偏差値42の僕も、時間を数えていた</span></div>
 </div>
 <h1>はじめに</h1>
-<div class="meta">形式　1ページ1問。余白を広く。答えはめくった先。<br>（`docs/03` の設計に従う。エレベーター本の導入と同じ三層）</div>
+<div class="meta">形式　1ページ1問。余白を広く。答えはめくった先。<br>（`docs/03` の設計に従う。エレベーター本の導入と同じ三層）<br>1ページ目で読者に役を振らない。問題だけを渡す。</div>
 <div class="pagebreak"></div>
 <h2>1ページ目</h2>
-<p>あなたは、塾の先生です。</p>
-<p>生徒がひとり、相談に来ました。</p>
-<p>「毎日5時間やってるのに、上がりません」</p>
-<p>嘘ではありません。記録も見ました。本当に5時間やっています。</p>
-<p>でも、時間はもう増やせません。これ以上は寝る時間が削れます。<br>参考書も変えられません。塾も変えられません。<br>生徒のやる気も、性格も、頭の良さも、あなたには変えられません。</p>
+<p>ここに、ひとりの中学生がいます。</p>
+<p>毎日5時間、勉強しています。</p>
+<p>嘘ではありません。記録も見ました。本当に5時間やっています。<br>それでも、成績が上がりません。</p>
+<p>時間は、もう増やせません。これ以上は寝る時間が削れます。<br>参考書も変えられません。塾も変えられません。<br>やる気も、性格も、頭の良さも、今日は変えられません。</p>
 <p>変えていいものは、ひとつだけ。</p>
 <p>あなたなら、何を変えますか。</p>
 <p>（答えは、めくった先に）</p>
@@ -136,21 +146,21 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p>たぶん、こう考えたと思います。</p>
 <p>やり方を教える。<br>復習のさせ方を変える。<br>ノートの取り方を直す。<br>参考書の使い方を教える。</p>
 <p>どれも、まともな答えです。私も最初はそう考えました。</p>
-<p>でも、その先生は、そのどれもしませんでした。</p>
-<p>生徒の勉強を、ひとつも変えなかった。<br>教材も、時間も、順番も、そのまま。</p>
-<p>変えたのは、自分の質問でした。</p>
+<p>でも、その子の勉強は、ひとつも変わりませんでした。<br>教材も、時間も、順番も、そのまま。</p>
+<p>変わったのは、たったひとつ。</p>
+<p>その子が毎週、聞かれる質問でした。</p>
 <p>（めくってください）</p>
 <div class="pagebreak"></div>
 <h2>3ページ目</h2>
-<p>その先生は、毎週こう聞いていました。</p>
+<p>その子は、毎週、こう聞かれていました。</p>
 <p>「今週、何時間やった？」</p>
-<p>その週から、質問をこう変えました。</p>
+<p>ある週から、質問がこう変わりました。</p>
 <p>「今週、何個できるようになった？」</p>
-<p>その日、生徒は答えられませんでした。</p>
+<p>その日、その子は答えられませんでした。</p>
 <p>5時間の話はできるんです。何ページ進んだかも言える。何周目かも言える。<br>でも、「何個」だけが出てこない。</p>
-<p>1週間後、また同じことを聞きました。</p>
+<p>1週間後、また同じことを聞かれました。</p>
 <p>「3つです」</p>
-<p>1ヶ月後。生徒の勉強のやり方が、勝手に変わっていました。</p>
+<p>1ヶ月後。その子の勉強のやり方が、勝手に変わっていました。</p>
 <p>解説を読んだあと、閉じてもう一度解くようになった。<br>間違えた問題を、次の日にもう一度出すようになった。<br>できない問題を、飛ばさなくなった。</p>
 <p>誰も、教えていません。</p>
 <p>数を答えなければいけなくなったから、数が増える勉強に、自分で変わったんです。</p>
@@ -162,10 +172,43 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p>そして、できるようになった数を数えている人だけが、できるようになった数を増やします。</p>
 <p>成績が伸びるのは、最後の人です。</p>
 <p>やってもやっても伸びない人は、サボっていません。<br>才能がないわけでもありません。<br>数えているものが、成績と関係ないだけです。</p>
-<p>この本は、勉強のやり方を教える本ではありません。<br>あなたのカウンターを、付け替える本です。</p>
-<p>やり方は、そのあとで、勝手に変わります。あの生徒みたいに。</p>
+<p>この本は、勉強のやり方を教える本ではありません。<br>勉強時間も、1分も増やしません。</p>
+<p>やることは、ひとつだけ。<br>さっきの質問を、あなたの頭のなかに置きます。</p>
+<p>やり方は、そのあとで、勝手に変わります。あの子みたいに。</p>
 <p>だから、最初に一度だけ聞かせてください。</p>
 <p>昨日、何個できるようになりましたか。</p>
+<h1>あの子が、絶対にやらない45のこと</h1>
+<p>見開き1枚。はじめにの直後、序章の前に置く。<br>表紙の約束（絶対にやらないこと）を、本の入口で先に返すためのページ。<br>番号とチェック欄と1行だけ。説明も図も入れない。<br>この45行は、各見開きの左ページ「分かれ道」の左列に、1対1で対応する。<br>6つの力の名前は、ここではまだ出さない（章番号だけ）。</p>
+<div class="pagebreak"></div>
+<h2>左ページ上</h2>
+<p>この本の表紙には、あの子が絶対にやらないこと、と書いてあります。</p>
+<p>先に、その45個を出します。</p>
+<p>説明はしません。まだ、しなくていいと思います。<br>上から読んで、自分がやっているものに、チェックを入れてください。</p>
+<p>1分で終わります。</p>
+<h2>45</h2><div class="cols2">
+<h3>第1章</h3>
+<div class="cklist"><div class="ck"><span class="n">1</span><span class="box"></span><span class="t">勉強した？と聞かれて、時間で答える</span></div><div class="ck"><span class="n">2</span><span class="box"></span><span class="t">授業でわかったから、その単元は復習しない</span></div><div class="ck"><span class="n">3</span><span class="box"></span><span class="t">解けなかった問題を、もう一度そのまま解く</span></div></div>
+<h3>第2章</h3>
+<div class="cklist"><div class="ck"><span class="n">4</span><span class="box"></span><span class="t">過去問を、実力がつくまで開かない</span></div><div class="ck"><span class="n">5</span><span class="box"></span><span class="t">3冊が途中のまま、4冊目を買う</span></div><div class="ck"><span class="n">6</span><span class="box"></span><span class="t">テスト前に、ワークの1ページ目から順にやる</span></div><div class="ck"><span class="n">7</span><span class="box"></span><span class="t">5つの苦手を、1日ずつ順ぐりに回す</span></div><div class="ck"><span class="n">8</span><span class="box"></span><span class="t">模試を、点数と判定だけ見て片づける</span></div><div class="ck"><span class="n">9</span><span class="box"></span><span class="t">まだいない自分を基準に、計画を立てる</span></div><div class="ck"><span class="n">10</span><span class="box"></span><span class="t">範囲の全部に、一度ずつ手をつける</span></div></div>
+<h3>第3章</h3>
+<div class="cklist"><div class="ck"><span class="n">11</span><span class="box"></span><span class="t">問題文の途中で、わかった気になって解き始める</span></div><div class="ck"><span class="n">12</span><span class="box"></span><span class="t">何を聞かれているか決めないまま、本文を読み直す</span></div><div class="ck"><span class="n">13</span><span class="box"></span><span class="t">板書を、全部そのまま写す</span></div><div class="ck"><span class="n">14</span><span class="box"></span><span class="t">「ここ、全部わからないです」と言う</span></div><div class="ck"><span class="n">15</span><span class="box"></span><span class="t">難しいと感じて、参考書を最初から読み直す</span></div><div class="ck"><span class="n">16</span><span class="box"></span><span class="t">図に描かずに、文章のまま頭で考える</span></div><div class="ck"><span class="n">17</span><span class="box"></span><span class="t">長文を、本文の1行目から読み始める</span></div></div>
+<h3>第4章</h3>
+<div class="cklist"><div class="ck"><span class="n">18</span><span class="box"></span><span class="t">初めて見る問題を、ゼロから考え続ける</span></div><div class="ck"><span class="n">19</span><span class="box"></span><span class="t">なぜを持たずに、語呂だけで覚える</span></div><div class="ck"><span class="n">20</span><span class="box"></span><span class="t">単語を、1語10回ずつ書いて覚える</span></div><div class="ck"><span class="n">21</span><span class="box"></span><span class="t">同じ内容を、科目の数だけ覚え直す</span></div><div class="ck"><span class="n">22</span><span class="box"></span><span class="t">似ている3つを、それぞれ丸ごと覚える</span></div><div class="ck"><span class="n">23</span><span class="box"></span><span class="t">出てこなかったら、すぐ答えをめくる</span></div><div class="ck"><span class="n">24</span><span class="box"></span><span class="t">教科書を見ながら、まとめノートを作る</span></div></div>
+<h3>第5章</h3>
+<div class="cklist"><div class="ck"><span class="n">25</span><span class="box"></span><span class="t">解説を読んで納得したら、次の問題へ進む</span></div><div class="ck"><span class="n">26</span><span class="box"></span><span class="t">わかった、をテストの日まで信じる</span></div><div class="ck"><span class="n">27</span><span class="box"></span><span class="t">解答を横に置いたまま、○をつける</span></div><div class="ck"><span class="n">28</span><span class="box"></span><span class="t">説明できないのは、説明が下手なだけだと思う</span></div><div class="ck"><span class="n">29</span><span class="box"></span><span class="t">時間を測らずに解いて、解けたと数える</span></div><div class="ck"><span class="n">30</span><span class="box"></span><span class="t">解けない問題に印をつけて、先へ進む</span></div><div class="ck"><span class="n">31</span><span class="box"></span><span class="t">全部は解けないから、白紙のまま飛ばす</span></div></div>
+<h3>第6章</h3>
+<div class="cklist"><div class="ck"><span class="n">32</span><span class="box"></span><span class="t">間違えた問題に、赤で正解を写す</span></div><div class="ck"><span class="n">33</span><span class="box"></span><span class="t">ケアレスミス、次は気をつける、で終える</span></div><div class="ck"><span class="n">34</span><span class="box"></span><span class="t">3回間違えた問題の、4回目をやる</span></div><div class="ck"><span class="n">35</span><span class="box"></span><span class="t">間違いノートに、問題と正解を写す</span></div><div class="ck"><span class="n">36</span><span class="box"></span><span class="t">10個の間違いを、10問とも順に直す</span></div><div class="ck"><span class="n">37</span><span class="box"></span><span class="t">わからなかった解説を、最初から読み直す</span></div><div class="ck"><span class="n">38</span><span class="box"></span><span class="t">点が下がったら、自分を責める</span></div></div>
+<h3>第7章</h3>
+<div class="cklist"><div class="ck"><span class="n">39</span><span class="box"></span><span class="t">やる気が出るのを待つ</span></div><div class="ck"><span class="n">40</span><span class="box"></span><span class="t">机に座ってから、何をやるか決める</span></div><div class="ck"><span class="n">41</span><span class="box"></span><span class="t">勉強した時間を記録する</span></div><div class="ck"><span class="n">42</span><span class="box"></span><span class="t">解けないまま、その日を終える</span></div><div class="ck"><span class="n">43</span><span class="box"></span><span class="t">計画が崩れてから、作り直す</span></div><div class="ck"><span class="n">44</span><span class="box"></span><span class="t">忘れてから、最初から覚え直す</span></div><div class="ck"><span class="n">45</span><span class="box"></span><span class="t">毎晩、明日の計画を立て直す</span></div></div>
+</div><div class="pagebreak"></div>
+<h2>右ページ下</h2>
+<p>いくつ、チェックがつきましたか。</p>
+<p>0個だった人は、この本を閉じて大丈夫です。あなたはもう、やっています。</p>
+<p>1個以上だった人へ。<br>その1個が、そのまま、あなたの伸びしろです。</p>
+<p>ここに並んでいるのは、全部、頑張っている人の行動です。<br>サボっている人は、単語を10回書きません。付箋も貼りません。計画も立て直しません。<br>5時間の記録も、残っていません。</p>
+<p>だから、この45個をやめてください、とは言いません。<br>やめられるものではないし、やめる必要もありません。</p>
+<p>かわりに何をするか。<br>それだけを、これから45回、見ていきます。</p>
+<p>チェックのついた番号を、覚えておいてください。<br>そこが、あなたの本です。</p>
 <h1>序章　あなたは、何を数えている？</h1>
 <div class="meta">7つの型の名前は仮です。Instagramの質問箱で集めた行動で差し替える予定（`docs/08` の未確定1）。<br>構造と、各型が「何を数えているか」は確定です。</div>
 <h1>見開き1　数える診断</h1>
@@ -363,15 +406,6 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p>ただし、1つ変えたら10変わることがあります。<br>公式を1つ、なぜそうなるかまで含めて変えたら、その公式を使う問題が全部変わることがあります。<br>そういうときは、変わった分を全部数えます。</p>
 <p>だから、あの子は重いものを先に変えます。<br>軽いものを100個変えるより、そのほうが数が増えるからです。<br>（第4章）</p>
 <div class="pagebreak"></div>
-<h2>反対の例が、3つあります</h2>
-<p>この定義に、こう言いたくなる人がいるはずです。ここで先に片づけておきます。</p>
-<h3>「勉強していないのに成績がいい人がいる」</h3>
-<p>います。でも、この本の話とは別です。<br>この本の主語は「勉強ができる人」ではなく「伸びる人」だからです。<br>その人が今どこにいるかではなく、その人が今週いくつ変えたか、の話をしています。</p>
-<h3>「10個より、1個変えて一気に伸びた人がいる」</h3>
-<p>います。その1個は、10個分として数えます。<br>「数」の意味を、変わったものの個数、と決めたのはそのためです。</p>
-<h3>「たくさん変えたけど、試験に出なかった人がいる」</h3>
-<p>その場合、この本では数が少ないと判定します。<br>「必要な」の意味を、試験に出ること、と決めたのはそのためです。</p>
-<div class="pagebreak"></div>
 <h2>法則2</h2>
 <h3>右ページ</h3>
 <p>法則2</p>
@@ -386,7 +420,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <h4>分かれ道</h4>
 <table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>わかったので復習しない</td><td>教科書を閉じて白紙に描く</td></tr><tr><td>数えているもの</td><td>わかった、の回数</td><td>白紙に出せた数</td></tr><tr><td>図の上では</td><td>わかっているの箱で止まる</td><td>判定を通ってできるへ</td></tr><tr><td>試験の日に</td><td>白紙の前で手が止まる</td><td>一度出したものを、もう一度出す</td></tr></table>
 <h4>伸びない人の答え</h4>
-<p>復習しない。今日はわかったので、わかっている単元だと判断する。<br>授業中に手応えがあったのは本当なので、この判断はまともです。<br>1ヶ月後のテストで、図を白紙に描けと言われて、手が止まる。</p>
+<p>復習しない。今日はわかったので、わかっている単元だと判断する。<br>授業中に手応えがあったのは本当です。わかった単元をもう一度読むのは、時間の無駄に思えます。<br>1ヶ月後のテストで、図を白紙に描けと言われて、手が止まる。</p>
 <h4>伸びる人の答え</h4>
 <p>家で、教科書とノートを閉じて、白紙に今日の図を描いてみる。<br>描けたところと、描けなかったところが出ます。<br>授業でわかったのは本当で、その上で、まだ出せない部分があった、というだけです。<br>描けなかったところに印をつけて、そこだけをもう一度読む。</p>
 <h4>法則2</h4>
@@ -428,7 +462,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <h4>分かれ道</h4>
 <table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>×の問題をもう一度解く</td><td>手前の○を解説なしで解く</td></tr><tr><td>数えているもの</td><td>やり直した回数</td><td>崩れていた場所の数</td></tr><tr><td>図の上では</td><td>×の場所で往復する</td><td>戻る矢印を1本通る</td></tr><tr><td>試験の日に</td><td>同じところでまた止まる</td><td>その手前ごと変わっている</td></tr></table>
 <h4>伸びない人の答え</h4>
-<p>解けなかった応用問題を、もう一度解く。<br>できなかったところをやり直すのは、まっとうな判断です。<br>でも、その問題が解けない原因が手前にあると、何回やっても同じところで止まります。<br>やり直した回数は増えて、できるは増えない。</p>
+<p>解けなかった応用問題を、もう一度解く。<br>できなかったところをやり直す。これ以上に素直な復習の仕方は、思いつきません。<br>でも、その問題が解けない原因が手前にあると、何回やっても同じところで止まります。<br>やり直した回数は増えて、できるは増えない。</p>
 <h4>伸びる人の答え</h4>
 <p>○がついている手前の基本問題に戻って、解説を見ずに解き直す。<br>そこで、解けないものが出てきます。<br>ワークをやったときは解説を見ながら解いていたので、○がついていただけでした。<br>崩れていた場所は、×の問題ではなく、その手前です。そこを直すと、応用も動きます。</p>
 <h4>法則3</h4>
@@ -489,6 +523,12 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p>そして、この6つには、共通の性格があります。</p>
 <p>どれも、何かを増やす力ではありません。<br>やることを増やさない。教えない。渡さない。やらせない。<br>1つ変えるだけです。</p>
 <div class="pagebreak"></div>
+<h2>次の6章の、入口について</h2>
+<p>ここから先、各章の入口で、あなたに問題を1つずつ出します。<br>どれも、私が実際に生徒の前に座って考えた場面です。</p>
+<p>そのとき、あなたには、先生の側に座ってもらいます。</p>
+<p>理由は1つです。<br>自分のことは、外からは見えません。人のことなら、見えます。<br>先に人で見えるようになったものが、あとから自分にも見えるようになる。</p>
+<p>だから、6つの入口では、あなたが先生です。<br>頭のなかに1人置くはずの先生を、そこで6回、練習することになります。</p>
+<div class="pagebreak"></div>
 <h2>7つの型を、図の上に置く</h2>
 <p>序章で出した7つの型を、この図の上に置くと、こうなります。</p>
 <div class="indent">　今日は6時間型　　　　知っているの箱に溜まっていて、解いてみるを通っていない<br>　参考書ルート型　　　　漏斗がない。入口で何も落ちていない<br>　全部わからない型　　　自分がどの箱にいるかを、間違えている<br>　10回書く型　　　　　　知っている→わかっているの矢印がない<br>　あーね型　　　　　　　わかっているで止まって、そこをできるだと思っている<br>　あとで付箋型　　　　　×のあと、戻る矢印を引いていない<br>　計画表に1時間型　　　 図が回っていない。線の上を進んでいない</div>
@@ -501,9 +541,8 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="meta">章扉の問題は、現在は作り話です（`docs/08` の未確定2）。<br>著者の実話に差し替えられる筆頭が、この章です。THINKINGの学部別設計そのものなので。</div>
 <div class="pagebreak"></div>
 <h2>問題ページ</h2>
-<p>あなたは、塾の先生です。</p>
-<p>高校2年生が来て、こう言いました。</p>
-<p>「英語の長文が、全然読めません」</p>
+<p>高校2年生が、英語の長文の問題集を1冊、買ってきました。</p>
+<p>「長文が、全然読めません」</p>
 <p>模試の結果も見ました。たしかに長文の失点が一番大きい。<br>本人もそこを気にしていて、長文の問題集を買ってきています。</p>
 <p>あなたは、長文の練習をさせますか。</p>
 <p>（めくってください）</p>
@@ -521,7 +560,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p>苦手を減らすより先に、どの苦手を減らすかを決める。</p>
 <div class="pagebreak"></div>
 <h2>この章で出てくる7つの法則</h2>
-<div class="indent">　法則4　　過去問は、解くためではなく捨てるために、最初に開く<br>　法則5　　買う前に、終わらせる1冊を決める<br>　法則6　　1ページ目ではなく、配点の大きい「できない」から始める<br>　法則7　　苦手は、順番を決めてから1つずつ<br>　法則8　　模試は、捨てていい単元を見つけるために見る<br>　法則9　　計画は、今の自分からしか逆算できない<br>　法則10　 捨てた単元を言えるのが、設計した証拠</div>
+<div class="indent">　法則4　　過去問は、解くためではなく捨てるために、最初に開く<br>　法則5　　買う前に、終わらせる1冊を決める<br>　法則6　　1ページ目ではなく、配点の大きい「できない」から始める<br>　法則7　　苦手は、順番を決めてから1つずつ<br>　法則8　　模試は、捨てていい単元を見つけるために見る<br>　法則9　　計画は、今の自分からしか立てられない<br>　法則10　 捨てた単元を言えるのが、設計した証拠</div>
 <div class="pagebreak"></div>
 <h2>章末ページ</h2>
 <p>捨てるとは、数を「必要な数」にすること。</p>
@@ -541,7 +580,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f1"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>実力がつくまで開かない</td><td>解かずに開いて配点を数える</td></tr><tr><td>数えているもの</td><td>まだ早い、という感覚</td><td>出ない分野の数</td></tr><tr><td>図の上では</td><td>漏斗がないまま流れ込む</td><td>入口で落とすものが決まる</td></tr><tr><td>試験の日に</td><td>出ない分野に時間を使った</td><td>出る分野だけ厚くなっている</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">開かない。今やっても解けないし、貴重な過去問を実力がつく前に使ってしまうのはもったいない。<br>腕試しは、力がついてからやるほうが正確に測れる。ここまでは、まっとうな判断です。<br>11月に開いて、この学部にほとんど出ない分野に、3ヶ月使っていたことに気づく。</p>
+<p class="ans">開かない。今やっても解けないし、貴重な過去問を実力がつく前に使ってしまうのはもったいない。<br>腕試しは、力がついてからのほうが正確に測れます。過去問は数が限られていて、使い切りたくない。<br>11月に開いて、この学部にほとんど出ない分野に、3ヶ月使っていたことに気づく。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">解かずに、開く。<br>問題は解かない。かわりに、大問の数、それぞれの配点、出てくる分野だけを紙に書き出す。<br>書き出したものと、今持っている参考書の目次を並べる。<br>過去問に一度も出ていない分野に、線を引く。それが今日から手をつけないもの。</p>
 <div class="lbl lbl-law">法則4</div>
@@ -613,7 +652,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f1"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>5つを1日ずつ回す</td><td>1つを5日続ける</td></tr><tr><td>数えているもの</td><td>手をつけた分野の数</td><td>通り切った分野の数</td></tr><tr><td>図の上では</td><td>5本とも途中で止まる</td><td>1本が最後まで通る</td></tr><tr><td>試験の日に</td><td>5つとも苦手のまま</td><td>1つずつ消えている</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">5つを1日ずつ、ローテーションでやる。<br>全部が入試に出るのだから全部やる、というのは正しい判断です。<br>ただ、1つあたりが5日に1回になる。次に回ってきたときには、前回やった分が戻っている。<br>5つとも、ずっと苦手のまま残ります。</p>
+<p class="ans">5つを1日ずつ、ローテーションでやる。<br>5つとも入試に出ます。1つでも手をつけない日があると、そこが不安になる。<br>ただ、1つあたりが5日に1回になる。次に回ってきたときには、前回やった分が戻っている。<br>5つとも、ずっと苦手のまま残ります。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">5つを紙に書いて、過去3年の入試での配点順に並べる。<br>一番上の関数だけを、5日連続でやる。<br>5日目には、解説なしで解けるようになる。そこで1つ、数が増える。<br>それから2番目へ。4ヶ月で、5つとも順番に終わる。</p>
 <div class="lbl lbl-law">法則7</div>
@@ -665,7 +704,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">先週の勉強時間を、曜日ごとに書き出す。月2時間、火2時間、水0、木2時間、金1時間、土4時間、日3時間。<br>この14時間で、1年分の計画を立てる。<br>足りない分は、時間を増やして埋めない。何をやらないかを決めて埋める。<br>やらないものを決めたら、14時間で入るところまで入った。</p>
 <div class="lbl lbl-law">法則9</div>
-<p class="lawbox f1">計画は、今の自分からしか逆算できない</p>
+<p class="lawbox f1">計画は、今の自分からしか立てられない</p>
 <div class="lbl lbl-other">他の場面で</div>
 <p>定期テスト。残り日数と、先週の実績時間をかけて総量を出してから、範囲を切る。<br>部活のある時期。引退までは今の時間で組み、引退後の分は別の計画として、あとで組む。</p>
 <div class="lbl lbl-concl">結論</div>
@@ -701,9 +740,8 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="meta">章扉の問題は、現在は作り話です（`docs/08` の未確定2）。</div>
 <div class="pagebreak"></div>
 <h2>問題ページ</h2>
-<p>あなたは、塾の先生です。</p>
-<p>中学3年生が、数学のプリントを持ってきました。</p>
 <p>「これ、全部わからないです」</p>
+<p>中学3年生が、数学のプリントを机に置きました。</p>
 <p>ページを見ると、たしかに手がついていません。1行も書いていない。<br>本人は、基礎ができていないからだと思っています。<br>中1の内容からやり直したい、と言っています。</p>
 <p>あなたは、基礎からやり直させますか。</p>
 <p>（めくってください）</p>
@@ -763,7 +801,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>本文を読み直す</td><td>設問を自分の言葉に直す</td></tr><tr><td>数えているもの</td><td>読んだ回数</td><td>探すものの数</td></tr><tr><td>図の上では</td><td>3つの箱を行き来する</td><td>1箇所を見に行く</td></tr><tr><td>試験の日に</td><td>読み返す時間で足りなくなる</td><td>1往復で解き終わる</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">本文をもう一度読む。<br>答えは本文の中にあるのだから、本文を読み直すのはまっとうな行動です。<br>ただ、探すものが決まっていないので、3回読んでも見つからない。</p>
+<p class="ans">本文をもう一度読む。<br>答えは本文の中にあります。1回目で読み落としたのかもしれないので、もう一度読む。<br>ただ、探すものが決まっていないので、3回読んでも見つからない。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">読むのをやめて、設問を自分の言葉に直す。<br>「筆者が、この話について、どう思っているか。それと、そう思う理由。合わせて70字」<br>言い換えた瞬間に、探すものが2つに決まる。筆者の意見と、その理由。<br>それから本文に戻る。戻る目的が決まっているので、1回で見つかる。</p>
 <div class="lbl lbl-law">法則12</div>
@@ -787,7 +825,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>板書を全部写す</td><td>話を1行にまとめる</td></tr><tr><td>数えているもの</td><td>埋まったページ数</td><td>まとめられなかった箇所</td></tr><tr><td>図の上では</td><td>授業中に矢印を通らない</td><td>止まった箱に印がつく</td></tr><tr><td>試験の日に</td><td>ノートは残るが出せない</td><td>授業で見つけた分が出せる</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">全部写す。<br>写しておけば家で見返せるし、写していないと不安になる。この判断は自然です。<br>写しているあいだ、頭は動いていません。授業中に一度も止まらないので、<br>どこがわからないかも、わからないまま終わる。</p>
+<p class="ans">全部写す。<br>写しておけば、家で見返せます。消される前に写し終えないと、その分が丸ごと消える。<br>写しているあいだ、頭は動いていません。授業中に一度も止まらないので、<br>どこがわからないかも、わからないまま終わる。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">板書は、教科書に載っていないところだけ写す。<br>かわりに、先生が話したことを、1行にまとめてノートの端に書く。<br>1行にまとめようとすると、まとめられないところが出ます。<br>そこに印をつける。授業が終わった時点で、家でやることが決まっている。</p>
 <div class="lbl lbl-law">法則13</div>
@@ -835,7 +873,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>参考書を最初から読み直す</td><td>言葉を1つずつ言ってみる</td></tr><tr><td>数えているもの</td><td>読み直した時間</td><td>知らない語と、出ない理由</td></tr><tr><td>図の上では</td><td>3つの箱をまとめて戻る</td><td>どの箱かを決めて戻る</td></tr><tr><td>試験の日に</td><td>3時間かけて同じ場所</td><td>20分で1つ動いている</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">参考書を最初から読み直す。<br>難しいのだから基礎からやり直す、というのはまっとうな判断です。<br>ただ、最初から読むと、すでに知っている部分も全部読むことになる。<br>3時間かけて読み終えても、止まっていた場所は最初と同じままです。</p>
+<p class="ans">参考書を最初から読み直す。<br>難しいと感じたということは、土台のどこかが抜けている。だから、土台から埋め直す。<br>ただ、最初から読むと、すでに知っている部分も全部読むことになる。<br>3時間かけて読み終えても、止まっていた場所は最初と同じままです。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">問題に出てくる言葉を、1つずつ声に出して説明してみる。<br>「位置エネルギー」　言える。<br>「保存力」　言えない。これは、知らない。<br>「なぜ摩擦があると保存されないのか」　言えない。これは、わかっていない。<br>知らないものは調べる。わかっていないものは、なぜを1つ足す。手当てが違う。</p>
 <div class="lbl lbl-law">法則15</div>
@@ -883,7 +921,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f2"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>本文の1行目から読む</td><td>設問を先に読む</td></tr><tr><td>数えているもの</td><td>読んだ行数</td><td>見つけた答えの数</td></tr><tr><td>図の上では</td><td>全部を通ろうとする</td><td>3点だけ見に行く</td></tr><tr><td>試験の日に</td><td>最後の大問が白紙になる</td><td>最後まで手が届く</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">本文を最初から読む。<br>全部読まないと内容がわからないし、順番に読むのが自然です。<br>読み終えてから設問を見て、また本文に戻る。2往復したところで時間切れになる。</p>
+<p class="ans">本文を最初から読む。<br>全部読まないと内容はわかりません。書いてある順に読むのが、いちばん取りこぼしがない。<br>読み終えてから設問を見て、また本文に戻る。2往復したところで時間切れになる。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">設問だけを先に読む。何が聞かれているかを、3つ頭に入れる。<br>それから本文を読む。読みながら、聞かれていたものが出てきた場所に印をつける。<br>1往復で終わる。<br>設問に関係のない段落で意味が取れなくても、そこは今日は放っておく。</p>
 <div class="lbl lbl-law">法則17</div>
@@ -899,9 +937,8 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="meta">章扉の問題は、現在は作り話です（`docs/08` の未確定2）。</div>
 <div class="pagebreak"></div>
 <h2>問題ページ</h2>
-<p>あなたは、塾の先生です。</p>
-<p>高校1年生が、単語帳を持って相談に来ました。</p>
-<p>「この単語帳、合ってない気がします。全然覚えられない」</p>
+<p>机の上に、単語帳が置かれています。最初の200語だけが、真っ黒です。</p>
+<p>高校1年生が言いました。「この単語帳、合ってない気がします。全然覚えられない」</p>
 <p>見ると、最初の200語だけが真っ黒になっています。<br>何周もした跡があります。それでも、小テストは半分しか取れていません。<br>本人は、別の単語帳に変えたいと言っています。</p>
 <p>あなたは、単語帳を変えさせますか。</p>
 <p>（めくってください）</p>
@@ -963,7 +1000,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>語呂で覚える</td><td>覚える前になぜを1つつける</td></tr><tr><td>数えているもの</td><td>覚えた個数</td><td>一緒に動いた数</td></tr><tr><td>図の上では</td><td>知っているに単品で積む</td><td>わかっているへの矢印を通る</td></tr><tr><td>試験の日に</td><td>年号は出るが理由が出ない</td><td>前後ごと出てくる</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">語呂で覚える。<br>語呂は入りやすいし、短時間でたくさん覚えられる。まっとうなやり方です。<br>1つ覚えて、1つ増える。それだけです。<br>年号を聞かれれば答えられる。なぜ起きたかを聞かれると、答えられない。<br>1ヶ月後には、語呂のほうも消えている。</p>
+<p class="ans">語呂で覚える。<br>語呂は入りやすい。20個を1時間で入れるなら、これより速い方法は思いつきません。<br>1つ覚えて、1つ増える。それだけです。<br>年号を聞かれれば答えられる。なぜ起きたかを聞かれると、答えられない。<br>1ヶ月後には、語呂のほうも消えている。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">覚える前に、なぜを1つつける。<br>承久の乱が起きたのは、その前に源氏の将軍が絶えたから。<br>なぜを1つつけると、その前の出来事と、そのあとに置かれた六波羅探題が、<br>一緒にくっついてくる。1つ覚えると、3つ動く。</p>
 <div class="lbl lbl-law">法則19</div>
@@ -1035,7 +1072,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>3つを丸ごと覚える</td><td>同じ所を消して違いを覚える</td></tr><tr><td>数えているもの</td><td>覚えた語数</td><td>違いの数</td></tr><tr><td>図の上では</td><td>3つが同じ箱で重なる</td><td>3つが分かれて並ぶ</td></tr><tr><td>試験の日に</td><td>似たもの同士が混ざる</td><td>混ざらずに出る</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">3つの説明を、それぞれ丸ごと覚える。<br>混ざるのは覚え方が足りないからだと考えるのは、まっとうです。<br>ただ、似たものを別々に覚えると、思い出すときにお互いが邪魔をする。<br>覚えた量が増えるほど、混ざりやすくなります。</p>
+<p class="ans">3つの説明を、それぞれ丸ごと覚える。<br>混ざるのは、覚え方が足りないからだ。もう3回ずつ書けば、さすがに分かれるはずです。<br>ただ、似たものを別々に覚えると、思い出すときにお互いが邪魔をする。<br>覚えた量が増えるほど、混ざりやすくなります。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">3つを1行ずつ並べて、共通しているところに線を引いて、消す。<br>残ったのが、違いです。葉から出ていくのか、水面から出ていくのか、液体が気体になること全部か。<br>覚えるのは、その違いだけ。<br>覚える量が3分の1になって、しかも混ざらなくなる。</p>
 <div class="lbl lbl-law">法則22</div>
@@ -1059,7 +1096,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>出なければすぐめくる</td><td>5秒待ってからめくる</td></tr><tr><td>数えているもの</td><td>回した周回数</td><td>自分で出せた数</td></tr><tr><td>図の上では</td><td>目で箱を移動するだけ</td><td>矢印を自力で1本通る</td></tr><tr><td>試験の日に</td><td>見た記憶だけが残る</td><td>引っ張った線が太い</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">出てこなかったら、すぐめくる。<br>すぐ確認したほうが効率がいいし、その分たくさん回せる。まっとうなやり方です。<br>ただ、めくるまでが1秒だと、頭の中で探す作業が起きていません。見た回数が増えるだけです。</p>
+<p class="ans">出てこなかったら、すぐめくる。<br>すぐ確認したほうが速いし、その分たくさん回せます。回した数だけ入るはずです。<br>ただ、めくるまでが1秒だと、頭の中で探す作業が起きていません。見た回数が増えるだけです。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">隠したら、5秒待つ。出てこなくても、5秒は待つ。<br>この5秒で、その単語につながっている線を引っ張る作業が起きます。<br>引っ張って出てきた線は、太くなる。<br>出てこなかったものにだけ印をつけて、そこだけもう一度。1周は倍かかるが、1周で済む。</p>
 <div class="lbl lbl-law">法則23</div>
@@ -1083,7 +1120,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f3"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>教科書をノートに写す</td><td>閉じて白紙に書き出す</td></tr><tr><td>数えているもの</td><td>まとめたページ数</td><td>出てこなかった箇所</td></tr><tr><td>図の上では</td><td>箱が動かない</td><td>出す矢印を通る</td></tr><tr><td>試験の日に</td><td>きれいなノートが残る</td><td>白紙に出せる</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">まとめノートを作る。<br>まとめると整理されるのは本当だし、作ったものは形に残ります。まっとうな判断です。<br>ただ、写しているあいだ、情報は目と手を通っているだけで、頭の中でつながっていません。<br>3日後、白紙の前で出てこない。</p>
+<p class="ans">まとめノートを作る。<br>まとめると整理されるのは本当です。しかも、作ったノートは形に残ります。<br>ただ、写しているあいだ、情報は目と手を通っているだけで、頭の中でつながっていません。<br>3日後、白紙の前で出てこない。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">ノートは作らない。<br>教科書を閉じて、白紙に、今日の範囲で思い出せる言葉を書けるだけ書き出す。<br>書き出したものの間に、線を引いて、関係をつなぐ。<br>つながらなかったところと、出てこなかったところだけ、教科書を開いて確かめる。20分で終わる。</p>
 <div class="lbl lbl-law">法則24</div>
@@ -1099,8 +1136,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="meta">章扉の問題は、現在は作り話です（`docs/08` の未確定2）。<br>別冊解答がボロボロだった光景は、著者の実話に差し替えられる筆頭です。</div>
 <div class="pagebreak"></div>
 <h2>問題ページ</h2>
-<p>あなたは、塾の先生です。</p>
-<p>中学3年生が、数学のワークを持ってきました。</p>
+<p>中学3年生の数学のワークが、目の前にあります。</p>
 <p>「2周しました」</p>
 <p>本当です。全部のページに書き込みがあります。○も×もついている。<br>2周目の日付も入っています。ちゃんとやっている。<br>でも、先週の実力テストは、前回より下がっていました。</p>
 <p>本当に解けているのかどうか。<br>あなたは、何を見ますか。</p>
@@ -1139,7 +1175,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>解説を読んで次へ進む</td><td>解説を閉じて白紙に解き直す</td></tr><tr><td>数えているもの</td><td>わかった、の回数</td><td>白紙に出せた数</td></tr><tr><td>図の上では</td><td>わかっているの箱で止まる</td><td>判定を通ってできるへ</td></tr><tr><td>試験の日に</td><td>解説なしで初めて解く</td><td>一度出したものを、もう一度出す</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">次の問題へ進む。理解できたし、残り時間も決まっている。先へ進むのは正しい判断です。<br>でも、わかっているの箱から出ていません。<br>次に同じ問題が本番で出たとき、解説がない状態で初めて解くことになる。そのとき、出てこない。</p>
+<p class="ans">次の問題へ進む。理解できたし、残り40分で3問という予定も決まっています。<br>でも、わかっているの箱から出ていません。<br>次に同じ問題が本番で出たとき、解説がない状態で初めて解くことになる。そのとき、出てこない。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">解説を閉じて、白紙に、もう一度解く。<br>閉じた瞬間に、消える部分があります。<br>そこが、わかっていたけれど、できていなかった場所です。<br>白紙に出せたところまでが、できる。出せなかったところが、次に変えるできない。</p>
 <div class="lbl lbl-law">法則25</div>
@@ -1163,7 +1199,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>わかったので今日は終える</td><td>例文を1つ英語にしてみる</td></tr><tr><td>数えているもの</td><td>わかった、の回数</td><td>30秒で出せた数</td></tr><tr><td>図の上では</td><td>わかっているで立ち止まる</td><td>その場で判定を1回通る</td></tr><tr><td>試験の日に</td><td>わかったに裏切られる</td><td>裏切りは前の日に済んでいる</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">信じる。<br>わかったという感覚は、自分の中で一番確かなものです。わかったのに疑うのは時間の無駄。<br>まっとうな判断です。<br>そのわかったが間違いだったと判明するのは、テストの日です。</p>
+<p class="ans">信じる。<br>わかったという感覚は、自分の中で一番確かなものです。<br>それを疑いにいくのは、時間の無駄に思えます。<br>そのわかったが間違いだったと判明するのは、テストの日です。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">わかった、と思ったところで、教科書の例文を1つだけ隠して、日本語から英語にしてみる。<br>30秒で終わる。<br>出せたら、わかったは本当だった。出せなかったら、わかったは思い込みだった。<br>どちらでも、30秒で決着します。</p>
 <div class="lbl lbl-law">法則26</div>
@@ -1211,7 +1247,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>説明が下手なだけだと思う</td><td>言えなかった所をメモする</td></tr><tr><td>数えているもの</td><td>解けた問題の数</td><td>理由を言えた数</td></tr><tr><td>図の上では</td><td>手順だけが箱に入る</td><td>理由の線がつながる</td></tr><tr><td>試験の日に</td><td>数字が変わると解けない</td><td>形が変わっても解ける</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">説明が下手なだけだと思って、そのままにする。<br>自分は解けているのだから、できていないわけではない。説明が苦手な人はいます。<br>この判断は自然です。<br>テストで数字だけ変えた問題が出たとき、解けない。</p>
+<p class="ans">説明が下手なだけだと思って、そのままにする。<br>自分は解けているのだから、できていないわけではない。<br>説明がうまい人と、そうでない人がいる。それだけの話に見えます。<br>テストで数字だけ変えた問題が出たとき、解けない。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">説明できなかった箇所を、そのままノートにメモする。<br>「なぜ、ここで足すのか」が言えなかった。<br>解けていたのは、手順を覚えていたからで、理由は持っていなかった。<br>理由を1つ足す。足したら、数字が変わっても解けるようになる。</p>
 <div class="lbl lbl-law">法則28</div>
@@ -1235,7 +1271,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>時間を測らずに解く</td><td>本番と同じ分数で測る</td></tr><tr><td>数えているもの</td><td>解けた問題の数</td><td>時間内に出せた数</td></tr><tr><td>図の上では</td><td>判定に時間の条件がない</td><td>本番と同じ条件で判定する</td></tr><tr><td>試験の日に</td><td>30分の問題が解けない</td><td>手元の数がそのまま点になる</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">時間を測らずに解く。<br>じっくり考えるのは力になるし、時間を気にすると雑になります。まっとうな理由です。<br>ただ、本番では15分で切られます。30分で解けた問題は、本番では解けません。</p>
+<p class="ans">時間を測らずに解く。<br>じっくり考えるのは力になります。時間を気にしながら解くと、雑になる。<br>ただ、本番では15分で切られます。30分で解けた問題は、本番では解けません。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">解く前に、タイマーを15分にセットする。<br>15分で解けたら○。解けなかったら、そこで止めて、どこで時間を使ったかを見る。<br>手が止まっていた場所と、書くのが遅かった場所は、別の問題です。<br>前の場所は突き止め直す。後ろの場所は、手順を決めて速くする。</p>
 <div class="lbl lbl-law">法則29</div>
@@ -1283,7 +1319,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f4"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>解けないので飛ばす</td><td>出せる所まで書いて線を引く</td></tr><tr><td>数えているもの</td><td>解けた問題の数</td><td>できるとできないの境目</td></tr><tr><td>図の上では</td><td>×だけが残る</td><td>×の中に境目が引かれる</td></tr><tr><td>試験の日に</td><td>部分点も取れない</td><td>書ける所は必ず書ける</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">飛ばす。<br>全部解けないなら書いても点にならないし、時間がもったいない。<br>本番の判断としては、まっとうです。<br>ただ、家での勉強で同じことをすると、自分がどこまでできるのかが、いつまでもわからない。</p>
+<p class="ans">飛ばす。<br>全部解けないなら書いても点にならない。その時間を、解ける大問に回したほうがいい。<br>本番でなら、そのほうが点は伸びます。<br>ただ、家での勉強で同じことをすると、自分がどこまでできるのかが、いつまでもわからない。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">出せるところまで書く。図を描く。わかっている条件を式にする。<br>そこで止まったら、止まった場所に線を引く。<br>線までが、できる。線から先が、次に変えるできない。<br>飛ばした問題は0個ですが、線を引いた問題は、材料が1つ手に入っている。</p>
 <div class="lbl lbl-law">法則31</div>
@@ -1299,7 +1335,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="meta">章扉の問題は、現在は作り話です（`docs/08` の未確定2）。</div>
 <div class="pagebreak"></div>
 <h2>問題ページ</h2>
-<p>あなたは、塾の先生です。</p>
+<p>1回目、2回目、3回目。</p>
 <p>高校2年生が、同じ問題を3回間違えました。</p>
 <p>1回目は解けなかった。解説を読んで、わかった。<br>2回目、また間違えた。もう一度読んで、今度こそわかった。<br>3回目、また間違えた。</p>
 <p>本人は落ち込んでいます。<br>「もう1回やります」と言っています。</p>
@@ -1319,7 +1355,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p>戻る場所は、×の場所ではない。最後に本当にできていた場所。</p>
 <div class="pagebreak"></div>
 <h2>この章で出てくる7つの法則</h2>
-<div class="indent">　法則32　正解より先に、どこで崩れたかを探す<br>　法則33　ケアレスミスと言った瞬間、原因は消える。なぜ、を3回<br>　法則34　4回目より、1つ前のできていた問題を解き直す<br>　法則35　間違いノートには、正解ではなく原因を書く<br>　法則36　間違いは数えず、種類で分ける<br>　法則37　解説は、どこから読めなくなったかだけ探す<br>　法則38　下がったら、自分ではなく工程を見る</div>
+<div class="indent">　法則32　正解より先に、どこで崩れたかを探す<br>　法則33　ケアレスミスと言った瞬間、原因は消える。なぜ、を3回<br>　法則34　4回目より、1つ前のできていた問題を解き直す<br>　法則35　間違いノートには、正解ではなく原因を書く<br>　法則36　間違いは数えず、種類で分ける<br>　法則37　解説は、どこから読めなくなったかだけ探す<br>　法則38　下がったら、自分ではなく、変えたことを見る</div>
 <div class="pagebreak"></div>
 <h2>章末ページ</h2>
 <p>さかのぼるとは、失敗を数に変えること。</p>
@@ -1338,7 +1374,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>赤で正解を写す</td><td>自分の答案をもう一度読む</td></tr><tr><td>数えているもの</td><td>直した問題の数</td><td>原因の数</td></tr><tr><td>図の上では</td><td>×に正解を上書きする</td><td>×から戻る矢印を引く</td></tr><tr><td>試験の日に</td><td>同じ間違いがまた出る</td><td>3問分が1つで直っている</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">正解を赤で写す。<br>正しい答えを知るのは復習の基本だし、ノートも整います。まっとうなやり方です。<br>ただ、正解を知っても、自分がなぜその答えを書いたかは残りません。次も同じ答えを書く。</p>
+<p class="ans">正解を赤で写す。<br>正しい答えを知るのは、復習の基本です。赤で書いておけば、ノートも見やすくなる。<br>ただ、正解を知っても、自分がなぜその答えを書いたかは残りません。次も同じ答えを書く。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">正解を見る前に、自分の答案をもう一度読む。<br>どこまでは合っていて、どの行から違ったのかを探す。<br>3問とも、2行目までは合っていた。3行目で、同じ符号のミスをしていた。<br>3つの間違いが、1つの原因に集まった。直すのは3つではなく、1つです。</p>
 <div class="lbl lbl-law">法則32</div>
@@ -1360,17 +1396,17 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p class="hintbox">「気をつける」を、明日の行動に書き換えられますか。</p>
 <div class="pagelabel newpage">左ページ　答え</div>
 <div class="lbl lbl-vs">分かれ道</div>
-<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>次は気をつける、で終える</td><td>なぜを3回聞く</td></tr><tr><td>数えているもの</td><td>ケアレスミスの回数</td><td>変えられる工程の数</td></tr><tr><td>図の上では</td><td>戻る矢印が引けない</td><td>戻る箱が決まる</td></tr><tr><td>試験の日に</td><td>また同じ5点を落とす</td><td>その5点が残る</td></tr></table>
+<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>次は気をつける、で終える</td><td>なぜを3回聞く</td></tr><tr><td>数えているもの</td><td>ケアレスミスの回数</td><td>明日変えられる場所の数</td></tr><tr><td>図の上では</td><td>戻る矢印が引けない</td><td>戻る箱が決まる</td></tr><tr><td>試験の日に</td><td>また同じ5点を落とす</td><td>その5点が残る</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
 <p class="ans">ケアレスミスとして処理する。<br>実際に解き方はわかっていたし、本質的な弱点ではない。この整理はまともです。<br>ラベルを貼った瞬間に、原因を探す作業は終わります。来月も、同じ5点を落とす。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
-<p class="ans">なぜ、を3回聞く。<br>なぜ間違えた。　符号を書き写し間違えた。<br>なぜ書き写し間違えた。　途中式を暗算で飛ばした。<br>なぜ飛ばした。　時間が足りないと思って焦った。<br>原因は不注意ではなく、時間配分だった。明日変えるのは、注意力ではなく、解く順番。</p>
+<p class="ans">なぜ、を3回聞く。<br>なぜ間違えた。　符号を書き写し間違えた。<br>なぜ書き写し間違えた。　途中式を暗算で飛ばした。<br>なぜ飛ばした。　時間が足りないと思って焦った。<br>原因は不注意ではなく、時間の配り方でした。明日変えるのは、注意力ではなく、解く順番。</p>
 <div class="lbl lbl-law">法則33</div>
 <p class="lawbox f5">ケアレスミスと言った瞬間、原因は消える。なぜ、を3回</p>
 <div class="lbl lbl-other">他の場面で</div>
 <p>英語。スペルミスに、なぜを3回。書き慣れていないのか、覚えた形が違っていたのか。<br>理科。単位の書き間違いに、なぜを3回。</p>
 <div class="lbl lbl-concl">結論</div>
-<p class="conclbox">同じ5点の失点から、伸びない人はラベルを1つ、伸びる人は明日変える工程を1つ得る。</p>
+<p class="conclbox">同じ5点の失点から、伸びない人は名前を1つ、伸びる人は明日変える場所を1つ得る。</p>
 <div class="lbl lbl-corner">隅の図</div>
 <p class="cornerfig">完全版を小さく置く。伸びない人の道は灰色で、×から戻る矢印が引けない。伸びる人の道は赤で、3つの箱のどこへ戻るかが決まる。</p>
 <h1>法則34　さかのぼる力</h1>
@@ -1411,7 +1447,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>問題と正解を写す</td><td>原因を1行だけ書く</td></tr><tr><td>数えているもの</td><td>作ったページ数</td><td>同じ原因が並んだ数</td></tr><tr><td>図の上では</td><td>×の隣に正解が並ぶ</td><td>×から戻る先が書いてある</td></tr><tr><td>試験の日に</td><td>そうだった、で終わる</td><td>前に直した原因は出ない</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">問題と、正しい解き方を写す。<br>間違いノートとはそういうものだし、見返せば思い出せます。まっとうな作り方です。<br>ただ、書いてあるのが正解だけだと、見返しても「そうだった」で終わる。<br>何を変えればいいかが、どこにも書いていません。</p>
+<p class="ans">問題と、正しい解き方を写す。<br>間違いノートとは、そういうものだと教わりました。見返せば、解き方を思い出せます。<br>ただ、書いてあるのが正解だけだと、見返しても「そうだった」で終わる。<br>何を変えればいいかが、どこにも書いていません。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">問題は写さない。教材名とページ番号だけ書く。<br>書くのは1行だけ。なぜ間違えたか。<br>符号を飛ばした。設問を読み違えた。公式の使える条件を忘れた。<br>1問30秒で終わる。1週間分を見返すと、同じ原因が3つ並んでいることに気づく。</p>
 <div class="lbl lbl-law">法則35</div>
@@ -1435,7 +1471,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>10問を順番に直す</td><td>10問を3種類に分ける</td></tr><tr><td>数えているもの</td><td>直した問題の数</td><td>原因の種類の数</td></tr><tr><td>図の上では</td><td>10本の×から10本戻る</td><td>3つの箱に3本戻る</td></tr><tr><td>試験の日に</td><td>また同じ10問分を落とす</td><td>3種類ごと消えている</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">10問を順番に直す。<br>全部間違えたのだから全部直す、というのは正しい判断です。<br>3時間かけて10問直したが、同じ種類のものを何度も直していた。次の模試でも、同じ10問分を落とす。</p>
+<p class="ans">10問を順番に直す。<br>10問とも間違えたのだから、10問とも直す。1問でも飛ばすと、そこがまた出る気がします。<br>3時間かけて10問直したが、同じ種類のものを何度も直していた。次の模試でも、同じ10問分を落とす。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">直す前に、10問を原因の種類で分ける。<br>知らなかったもの、3問。わかっていたのに出せなかったもの、5問。読み違えたもの、2問。<br>種類ごとに、手当てが違います。<br>知らないものは覚える。出せないものは白紙で解き直す。読み違いは、読む手順を決める。<br>3つ直せば、10問が動く。</p>
 <div class="lbl lbl-law">法則36</div>
@@ -1481,17 +1517,17 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p class="hintbox">前回と今回のあいだで、変えたことが1つあるはずです。</p>
 <div class="pagelabel newpage">左ページ　答え</div>
 <div class="lbl lbl-vs">分かれ道</div>
-<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>自分を責める</td><td>先月から変えた事を書き出す</td></tr><tr><td>数えているもの</td><td>下がった点数</td><td>変えた工程の数</td></tr><tr><td>図の上では</td><td>図の外から自分を見る</td><td>図の中に戻る場所を探す</td></tr><tr><td>試験の日に</td><td>次も同じ理由で下がる</td><td>配分を戻した分だけ上がる</td></tr></table>
+<table class="vs f5"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>自分を責める</td><td>先月から変えた事を書き出す</td></tr><tr><td>数えているもの</td><td>下がった点数</td><td>先月から変えたことの数</td></tr><tr><td>図の上では</td><td>図の外から自分を見る</td><td>図の中に戻る場所を探す</td></tr><tr><td>試験の日に</td><td>次も同じ理由で下がる</td><td>配分を戻した分だけ上がる</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
 <p class="ans">自分を責める。<br>頑張ったのに下がったのだから、自分の力を疑うのは、自然な流れです。<br>ただ、自分の力は今日変えられません。だから、明日やることが1つも決まらない。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
-<p class="ans">前回と今回で、何を変えたかを書き出す。<br>勉強時間は増えていた。かわりに、解き直しの時間が減っていた。<br>新しい問題を解く時間ばかりが増えて、白紙に出す時間がゼロになっていた。<br>責める相手は自分ではなく、時間の配分です。それは、明日変えられる。</p>
+<p class="ans">前回と今回で、何を変えたかを書き出す。<br>勉強時間は増えていた。かわりに、解き直しの時間が減っていた。<br>新しい問題を解く時間ばかりが増えて、白紙に出す時間がゼロになっていた。<br>責めるのは自分ではなく、時間の配分のほうです。それなら、明日変えられる。</p>
 <div class="lbl lbl-law">法則38</div>
-<p class="lawbox f5">下がったら、自分ではなく工程を見る</p>
+<p class="lawbox f5">下がったら、自分ではなく、変えたことを見る</p>
 <div class="lbl lbl-other">他の場面で</div>
-<p>定期テスト。順位ではなく、前回と変えた勉強の中身を1つ挙げる。<br>部活との両立。やる気ではなく、勉強する場所と時間帯を1つだけ変える。</p>
+<p>定期テスト。順位ではなく、前回から変えた勉強の中身を1つ挙げる。<br>部活との両立。やる気ではなく、勉強する場所と時間帯を1つだけ変える。</p>
 <div class="lbl lbl-concl">結論</div>
-<p class="conclbox">同じ下がった30点から、伸びない人は疑う相手を1つ、伸びる人は明日変える工程を1つ得る。</p>
+<p class="conclbox">同じ下がった30点から、伸びない人は疑う相手を1つ、伸びる人は明日変える場所を1つ得る。</p>
 <div class="lbl lbl-corner">隅の図</div>
 <p class="cornerfig">完全版を小さく置く。伸びない人の道は灰色で、図の外に出て自分を見ている。伸びる人の道は赤で、図の中に戻る場所を探している。</p>
 <div class="part f6"><div class="num">第 7 章</div><div class="ttl">あの子には<br>「回す力」がある</div><div class="bar"></div></div>
@@ -1499,8 +1535,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="meta">章扉の問題は、現在は作り話です（`docs/08` の未確定2）。</div>
 <div class="pagebreak"></div>
 <h2>問題ページ</h2>
-<p>あなたは、塾の先生です。</p>
-<p>中学2年生が、帰り際にこう言いました。</p>
+<p>帰り際、中学2年生が、カバンを持ったまま立ち止まりました。</p>
 <p>「家に帰ると、やる気が出ないんです」</p>
 <p>嘘ではありません。塾では2時間、ちゃんとやっています。<br>家に帰ると、机の前に座るまでに1時間かかって、座ってから何をやるか考えて、また30分たつ。</p>
 <p>あなたは、やる気の出し方を教えますか。</p>
@@ -1519,7 +1554,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p>やる気を出すのではなく、やる気がいらない状態を作る。</p>
 <div class="pagebreak"></div>
 <h2>この章で出てくる7つの法則</h2>
-<div class="indent">　法則39　やる気は、計画に入れない<br>　法則40　最初の10分は、毎日同じことにする<br>　法則41　時間ではなく、できた数を記録する<br>　法則42　今日できた1つ、で終える<br>　法則43　崩れる日は、最初から計画に入れておく<br>　法則44　忘れる前提で、戻る日を先に決める<br>　法則45　計画は、週に1回だけ直す</div>
+<div class="indent">　法則39　やる気は、計画に入れない<br>　法則40　最初の10分は、毎日同じことにする<br>　法則41　時間ではなく、できた数を記録する<br>　法則42　今日できた1つ、で終える<br>　法則43　崩れる日は、最初から計画に入れておく<br>　法則44　どうせ忘れる。戻る日を、先に決める<br>　法則45　計画は、週に1回だけ直す</div>
 <div class="pagebreak"></div>
 <h2>章末ページ</h2>
 <p>回すとは、期限までに数を揃えること。</p>
@@ -1539,7 +1574,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>やる気が出るまで待つ</td><td>昨日の1問を解き直す</td></tr><tr><td>数えているもの</td><td>待っている時間</td><td>今日通った矢印の数</td></tr><tr><td>図の上では</td><td>線の上で止まっている</td><td>1目盛り進んでいる</td></tr><tr><td>試験の日に</td><td>やらなかった日が積もる</td><td>やった日が積もる</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">やる気が出るのを待つ。<br>やる気がないときに無理にやっても頭に入らない、というのは経験から出た正しい判断です。<br>やる気は、待っていても来ません。来るときは、たいてい始めたあとに来ます。</p>
+<p class="ans">やる気が出るのを待つ。<br>やる気がないときに無理にやっても、頭に入りません。これは、何度も経験しています。<br>やる気は、待っていても来ません。来るときは、たいてい始めたあとに来ます。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">やる気の話をやめて、机に座って、昨日やった問題を1問だけ解き直す。<br>昨日の問題なので、考えなくていい。手が勝手に動く。<br>1問終わると、次の問題が目に入る。<br>やる気が出たから始めたのではなく、始めたからやる気が出た。計画表に、やる気の欄はない。</p>
 <div class="lbl lbl-law">法則39</div>
@@ -1587,7 +1622,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>勉強した時間を記録する</td><td>できるようになった数を書く</td></tr><tr><td>数えているもの</td><td>合計時間</td><td>できた数</td></tr><tr><td>図の上では</td><td>進んだ距離を測っていない</td><td>右端のカウンターを見ている</td></tr><tr><td>試験の日に</td><td>記録は増えて点は同じ</td><td>記録と点が一緒に動く</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">時間を記録する。<br>記録が積み上がると続けやすくなるし、実際に3ヶ月続いています。まっとうです。<br>時間は、増やそうと思えば増やせます。だから増える。<br>でも成績は別のところで決まっているので、動かない。</p>
+<p class="ans">時間を記録する。<br>記録が積み上がると、続けやすくなります。実際、このアプリで3ヶ月続いています。<br>時間は、増やそうと思えば増やせます。だから増える。<br>でも成績は別のところで決まっているので、動かない。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">同じアプリのメモ欄に、今日できるようになったことを書く。<br>連立方程式の速さの問題、1つ。不定詞の副詞的用法、1つ。<br>書けるのは、たいてい1つか2つです。時間よりずっと小さい数字。<br>でも、その数字だけが、成績と一緒に動く。</p>
 <div class="lbl lbl-law">法則41</div>
@@ -1611,7 +1646,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>解けないまま閉じる</td><td>今日できた1つを出して閉じる</td></tr><tr><td>数えているもの</td><td>できなかった、という感覚</td><td>できた、の数</td></tr><tr><td>図の上では</td><td>×で1日が終わる</td><td>できるの箱を通って終わる</td></tr><tr><td>試験の日に</td><td>机に向かうのが重くなる</td><td>その1つが残っている</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">解けないまま閉じる。<br>時間が来たら終わりにするのは当然だし、無理にやっても頭に入らない。まっとうです。<br>頭のなかに最後に残るのは、解けなかった、という感覚。<br>その感覚が、明日また机に向かうときの記憶になります。</p>
+<p class="ans">解けないまま閉じる。<br>時間が来たら終わりにする。眠い頭で続けても、どうせ入りません。<br>頭のなかに最後に残るのは、解けなかった、という感覚。<br>その感覚が、明日また机に向かうときの記憶になります。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">最後の3分で、今日できるようになった1つを、もう一度だけ出す。<br>今日覚えた公式でもいいし、単語5個でもいい。<br>出せることを確かめてから、閉じる。<br>最後に残るのが、できた、という感覚になる。しかも、その1つが明日にも残りやすくなる。</p>
 <div class="lbl lbl-law">法則42</div>
@@ -1635,7 +1670,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>崩れてから作り直す</td><td>予備日を先に1日空ける</td></tr><tr><td>数えているもの</td><td>立て直した回数</td><td>取り返した日の数</td></tr><tr><td>図の上では</td><td>線が切れるたび引き直す</td><td>線に最初から余白がある</td></tr><tr><td>試験の日に</td><td>計画だけが20枚たまる</td><td>予定どおり揃っている</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">計画を作り直す。<br>ずれた計画のままでは進めないので、実態に合わせて作り直すのは正しい判断です。<br>作り直した計画も、来週また崩れます。<br>崩れるたびに作り直すので、作り直すことのほうが習慣になる。</p>
+<p class="ans">計画を作り直す。<br>ずれた計画のままでは、何を見ればいいかわからない。実態に合わせて作り直すしかない。<br>作り直した計画も、来週また崩れます。<br>崩れるたびに作り直すので、作り直すことのほうが習慣になる。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">計画を立てるときに、何も入れない日を週に1日作っておく。予備日。<br>崩れなかった週は、そこで先に進める。<br>崩れた週は、そこで取り返す。<br>木曜の朝にやることは、水曜の分を予備日に移すだけ。作り直しは0回。</p>
 <div class="lbl lbl-law">法則43</div>
@@ -1663,7 +1698,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">覚えた日に、次に戻る日を決めておく。翌日、1週間後、1ヶ月後。<br>カレンダーに3回だけ書き込む。それだけ。<br>忘れるのは能力ではなく、時間がたてば全員に起きることです。<br>図の上でも、できるから知っているへ、点線の矢印が引いてあります。勝手に戻る分を、予定で拾う。</p>
 <div class="lbl lbl-law">法則44</div>
-<p class="lawbox f6">忘れる前提で、戻る日を先に決める</p>
+<p class="lawbox f6">どうせ忘れる。戻る日を、先に決める</p>
 <div class="lbl lbl-other">他の場面で</div>
 <p>英単語。覚えた日、その翌日、1週間後の3回だけ、同じ範囲に戻る。<br>数学。解けるようになった問題を、1週間後にもう一度だけ白紙で解く。</p>
 <div class="lbl lbl-concl">結論</div>
@@ -1683,7 +1718,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="lbl lbl-vs">分かれ道</div>
 <table class="vs f6"><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>すること</td><td>毎晩、立て直す</td><td>日曜の夜だけ直す</td></tr><tr><td>数えているもの</td><td>立て直した回数</td><td>今週できた数</td></tr><tr><td>図の上では</td><td>毎日止まって書き直す</td><td>週に1回だけ止まる</td></tr><tr><td>試験の日に</td><td>計画に週105分を使った</td><td>その分だけ進んでいる</td></tr></table>
 <div class="lbl lbl-bad">伸びない人の答え</div>
-<p class="ans">毎日直す。<br>ずれをすぐ直すのが一番正確だし、放っておくとどんどんずれていきます。まっとうです。<br>毎日15分で、1週間に105分。しかも毎日足していくので、計画は日ごとに重くなる。<br>重くなるほど、崩れる。</p>
+<p class="ans">毎日直す。<br>ずれをすぐ直すのが、いちばん正確です。放っておくと、次の日にはもっとずれる。<br>毎日15分で、1週間に105分。しかも毎日足していくので、計画は日ごとに重くなる。<br>重くなるほど、崩れる。</p>
 <div class="lbl lbl-good">伸びる人の答え</div>
 <p class="ans">直すのは、日曜の夜だけ。<br>平日は、ずれてもそのまま進む。できなかった分は、明日に足さない。<br>日曜に1回だけ、今週できた数を数えて、来週を組み直す。<br>15分が7回だったものが、15分1回になる。浮いた90分は、そのまま勉強に変わる。</p>
 <div class="lbl lbl-law">法則45</div>
@@ -1701,7 +1736,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <h3>第1章　この本の背骨</h3>
 <div class="indent">　1　成績は、時間ではなく「できない」を「できる」に変えた数で決まる<br>　2　「わかっている」と「できる」は、別の段階<br>　3　解けなかったら、×の場所ではなく、最後にできていた場所に戻る</div>
 <h3>捨てる力</h3>
-<div class="indent">　4　過去問は、解くためではなく捨てるために、最初に開く<br>　5　買う前に、終わらせる1冊を決める<br>　6　1ページ目ではなく、配点の大きい「できない」から始める<br>　7　苦手は、順番を決めてから1つずつ<br>　8　模試は、捨てていい単元を見つけるために見る<br>　9　計画は、今の自分からしか逆算できない<br>　10　捨てた単元を言えるのが、設計した証拠</div>
+<div class="indent">　4　過去問は、解くためではなく捨てるために、最初に開く<br>　5　買う前に、終わらせる1冊を決める<br>　6　1ページ目ではなく、配点の大きい「できない」から始める<br>　7　苦手は、順番を決めてから1つずつ<br>　8　模試は、捨てていい単元を見つけるために見る<br>　9　計画は、今の自分からしか立てられない<br>　10　捨てた単元を言えるのが、設計した証拠</div>
 <h3>突き止める力</h3>
 <div class="indent">　11　問題文は、最後まで読んでから解く<br>　12　解く前に、設問を自分の言葉で言い換える<br>　13　板書は写さず、先生の話を1行に要約する<br>　14　全部ではなく、止まった1行を指さす<br>　15　知らないと、わかっていないを分けてから動く<br>　16　図に描き直せないものは、まだつかめていない<br>　17　設問を先に読んで、本文に探しに行く</div>
 <h3>つなげる力</h3>
@@ -1709,12 +1744,15 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <h3>取り出す力</h3>
 <div class="indent">　25　解説を閉じて、白紙に解き直す<br>　26　わかった、は出せるまで信じない<br>　27　白紙に出せるかで判定する<br>　28　説明できないものは、まだできていない<br>　29　本番と同じ時間で解けて、はじめてできる<br>　30　解けない問題は、隠さず集める<br>　31　途中までを自力で書く。そこができないの境目</div>
 <h3>さかのぼる力</h3>
-<div class="indent">　32　正解より先に、どこで崩れたかを探す<br>　33　ケアレスミスと言った瞬間、原因は消える。なぜ、を3回<br>　34　4回目より、1つ前のできていた問題を解き直す<br>　35　間違いノートには、正解ではなく原因を書く<br>　36　間違いは数えず、種類で分ける<br>　37　解説は、どこから読めなくなったかだけ探す<br>　38　下がったら、自分ではなく工程を見る</div>
+<div class="indent">　32　正解より先に、どこで崩れたかを探す<br>　33　ケアレスミスと言った瞬間、原因は消える。なぜ、を3回<br>　34　4回目より、1つ前のできていた問題を解き直す<br>　35　間違いノートには、正解ではなく原因を書く<br>　36　間違いは数えず、種類で分ける<br>　37　解説は、どこから読めなくなったかだけ探す<br>　38　下がったら、自分ではなく、変えたことを見る</div>
 <h3>回す力</h3>
-<div class="indent">　39　やる気は、計画に入れない<br>　40　最初の10分は、毎日同じことにする<br>　41　時間ではなく、できた数を記録する<br>　42　今日できた1つ、で終える<br>　43　崩れる日は、最初から計画に入れておく<br>　44　忘れる前提で、戻る日を先に決める<br>　45　計画は、週に1回だけ直す</div>
+<div class="indent">　39　やる気は、計画に入れない<br>　40　最初の10分は、毎日同じことにする<br>　41　時間ではなく、できた数を記録する<br>　42　今日できた1つ、で終える<br>　43　崩れる日は、最初から計画に入れておく<br>　44　どうせ忘れる。戻る日を、先に決める<br>　45　計画は、週に1回だけ直す</div>
 <div class="pagebreak"></div>
 <h2>2　45の分かれ道</h2>
-<p>見開き1枚。切り取って机に貼れる形。<br>各見開きの左ページの、いちばん上の1行だけを45個ならべたもの。<br>同じ場面に立ったとき、自分がどちらへ行っているかを見る表です。</p>
+<p>見開き1枚。切り取って机に貼れる形。</p>
+<p>この本の最初に、「あの子が、絶対にやらない45のこと」というページがありました。<br>チェックを入れたページです。</p>
+<p>あれが、この表の左の列です。</p>
+<p>右の列は、そのとき伏せてありました。ここで出します。<br>同じ場面に立ったとき、自分がどちらへ行っているかを見る表です。</p>
 <h3>第1章　この本の背骨</h3>
 <table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>1</td><td>「3時間半やった」と答える</td><td>「これができるようになった」と答える</td></tr><tr><td>2</td><td>わかったので復習しない</td><td>教科書を閉じて白紙に描く</td></tr><tr><td>3</td><td>×の問題をもう一度解く</td><td>手前の○を解説なしで解く</td></tr></table>
 <h3>捨てる力</h3>
@@ -1729,6 +1767,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>32</td><td>赤で正解を写す</td><td>自分の答案をもう一度読む</td></tr><tr><td>33</td><td>次は気をつける、で終える</td><td>なぜを3回聞く</td></tr><tr><td>34</td><td>4回目を解く</td><td>手前の○を解説なしで解く</td></tr><tr><td>35</td><td>問題と正解を写す</td><td>原因を1行だけ書く</td></tr><tr><td>36</td><td>10問を順番に直す</td><td>10問を3種類に分ける</td></tr><tr><td>37</td><td>最初から読み直す</td><td>追えた所まで線を引く</td></tr><tr><td>38</td><td>自分を責める</td><td>先月から変えた事を書き出す</td></tr></table>
 <h3>回す力</h3>
 <table class="vs "><tr><th></th><th>伸びない人</th><th>伸びる人</th></tr><tr><td>39</td><td>やる気が出るまで待つ</td><td>昨日の1問を解き直す</td></tr><tr><td>40</td><td>毎日、何からやるか決める</td><td>最初の10分を固定する</td></tr><tr><td>41</td><td>勉強した時間を記録する</td><td>できるようになった数を書く</td></tr><tr><td>42</td><td>解けないまま閉じる</td><td>今日できた1つを出して閉じる</td></tr><tr><td>43</td><td>崩れてから作り直す</td><td>予備日を先に1日空ける</td></tr><tr><td>44</td><td>忘れてから覚え直す</td><td>戻る日を3回書き込む</td></tr><tr><td>45</td><td>毎晩、立て直す</td><td>日曜の夜だけ直す</td></tr></table>
+<p>最初のページでチェックを入れた番号を、思い出してください。<br>その番号の右側が、あなたが今日から変える1つです。</p>
 <p>この45行のうち、右の列を1つずつ自分の側に移していく。それだけの本です。</p>
 <p>45個ぜんぶを今日から動かさないでください。<br>序章で出た自分の型の7つから、さらに1つだけ選んで、1週間やる。それで足ります。</p>
 <div class="pagebreak"></div>
@@ -1754,7 +1793,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <h3>あとで付箋型に効く7つ</h3>
 <div class="indent">　3　解けなかったら、×の場所ではなく、最後にできていた場所に戻る<br>　30　解けない問題は、隠さず集める<br>　32　正解より先に、どこで崩れたかを探す<br>　33　ケアレスミスと言った瞬間、原因は消える。なぜ、を3回<br>　34　4回目より、1つ前のできていた問題を解き直す<br>　35　間違いノートには、正解ではなく原因を書く<br>　36　間違いは数えず、種類で分ける</div>
 <h3>計画表に1時間型に効く7つ</h3>
-<div class="indent">　9　計画は、今の自分からしか逆算できない<br>　39　やる気は、計画に入れない<br>　40　最初の10分は、毎日同じことにする<br>　41　時間ではなく、できた数を記録する<br>　43　崩れる日は、最初から計画に入れておく<br>　44　忘れる前提で、戻る日を先に決める<br>　45　計画は、週に1回だけ直す</div>
+<div class="indent">　9　計画は、今の自分からしか立てられない<br>　39　やる気は、計画に入れない<br>　40　最初の10分は、毎日同じことにする<br>　41　時間ではなく、できた数を記録する<br>　43　崩れる日は、最初から計画に入れておく<br>　44　どうせ忘れる。戻る日を、先に決める<br>　45　計画は、週に1回だけ直す</div>
 <div class="pagebreak"></div>
 <h2>5　英語で答え合わせ</h2>
 <p>付録扱い。1つの科目だけで、45の法則が全部使えることを確かめる。<br>1人の高校2年生の、2週間を追う形にする。10ページ以内。</p>
@@ -1789,7 +1828,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <h2>7　最後に、1行だけ</h2>
 <p>この図は、勉強の外でも回っています。</p>
 <h1>この本を読んだ子の、親へ</h1>
-<p>ここから4ページは、本人ではなく、保護者の方に向けて書いています。<br>本人が読んでもかまいません。むしろ、読んでいる前提で書きます。</p>
+<p>ここから6ページは、本人ではなく、保護者の方に向けて書いています。<br>本人が読んでもかまいません。むしろ、読んでいる前提で書きます。</p>
 <div class="pagebreak"></div>
 <h2>1　「何時間やったの？」を「何個できるようになった？」に変える</h2>
 <p>この本は、たった1つの質問から始まりました。</p>
@@ -1805,7 +1844,37 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <p>答えられなかったことを責めないでください。<br>「じゃあ、来週また聞くね」で十分です。</p>
 <p>来週までに、子どもは数えるようになります。<br>数え始めた瞬間から、勉強のやり方のほうが、勝手に変わっていきます。</p>
 <div class="pagebreak"></div>
-<h2>2　子どもが止まっている箱を、図で指さす</h2>
+<h2>2　うちの子は、何型か</h2>
+<p>型の名前は仮です（<code>docs/08</code> の未確定1）。</p>
+<p>本のなかでは、子ども本人が診断します。<br>ただ、本人より先に、家から見えている姿でわかることがあります。</p>
+<p>7つのうち、思い当たるものはありますか。<br>1つに決まらなくてかまいません。一番強く思い当たるものが、主の型です。</p>
+<h3>1　今日は6時間型</h3>
+<p>家で見えている姿<br>　部屋の電気が、遅くまでついている。何時間やったかを、聞かなくても言ってくる。<br>　勉強アプリの合計時間を、見せてくることがある。</p>
+<p>かける一言<br>　「今日は、何ができるようになった？」</p>
+<h3>2　参考書ルート型</h3>
+<p>家で見えている姿<br>　新しい参考書がほしい、と言う回数が多い。<br>　本棚に、途中まで進んだ本が並んでいる。買った日がいちばん機嫌がいい。</p>
+<p>かける一言<br>　「今持ってる本のうち、どれを最後まで終わらせる？」</p>
+<h3>3　全部わからない型</h3>
+<p>家で見えている姿<br>　わからない、とは言う。どこが、と聞くと「全部」と返ってくる。<br>　教えるとその場でわかる。次の週、同じところで止まっている。</p>
+<p>かける一言<br>　「どこまでは、わかった？」</p>
+<h3>4　10回書く型</h3>
+<p>家で見えている姿<br>　机に向かっているあいだ、ずっと手が動いている。ノートが真っ黒。<br>　書いた量は誰よりも多いのに、小テストの点が動かない。</p>
+<p>かける一言<br>　「それ、書かないで言える？」</p>
+<h3>5　あーね型</h3>
+<p>家で見えている姿<br>　説明を聞くと、すぐ「わかった」と言う。飲み込みは、たしかに速い。<br>　問題集も2周、3周している。なのに、テストの点だけが動かない。</p>
+<p>かける一言<br>　「教科書を閉じても、出せる？」</p>
+<h3>6　あとで付箋型</h3>
+<p>家で見えている姿<br>　問題集から、付箋がたくさんはみ出している。<br>　その数が、減っていかない。</p>
+<p>かける一言<br>　「その付箋、いま何枚ある？」</p>
+<h3>7　計画表に1時間型</h3>
+<p>家で見えている姿<br>　計画表がきれい。色分けもしてある。いつも最新版がある。<br>　最新版を作った日は、たいてい勉強していない。</p>
+<p>かける一言<br>　「今週、いくつ増えた？」</p>
+<h3>7つの一言について</h3>
+<p>どれも、教える言葉ではありません。全部、質問です。</p>
+<p>答えるのは子どもです。<br>親が答えを持っている必要はありません。持っていないほうが、うまくいきます。</p>
+<p>そして7つとも、聞いていることは同じです。<br>時間ではなく、数を聞いています。</p>
+<div class="pagebreak"></div>
+<h2>3　子どもが止まっている箱を、図で指さす</h2>
 <p>この本には、1枚の図が出てきます。（図2を再掲）</p>
 <div class="indent">　知らない　→　知っている　→　わかっている　→〔解いてみる〕→　できる</div>
 <p>子どもが「わからない」と言ったとき、この4つのどこにいるかで、必要なものが違います。</p>
@@ -1817,7 +1886,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="indent">　「それ、教科書閉じても出せる？」</div>
 <p>これだけです。<br>答えを教える必要も、やり方を直す必要もありません。</p>
 <div class="pagebreak"></div>
-<h2>3　箱を間違えた声かけが、子どもを戻す</h2>
+<h2>4　箱を間違えた声かけが、子どもを戻す</h2>
 <p>一番もったいないのは、いる箱と、かけた言葉がずれているときです。</p>
 <p>わかっているの箱にいる子に、「もっと理解しなさい」と言うと、<br>その子はもう一度、解説を読み直します。すでにわかっているところを、また読む。<br>時間だけが減って、数は増えません。</p>
 <p>知らないの箱にいる子に、「ちゃんと考えなさい」と言うと、<br>その子は、知らないことを考え続けます。出てこないものは、考えても出てきません。<br>考える力の問題ではなく、材料がないだけです。</p>
@@ -1828,7 +1897,7 @@ h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
 <div class="indent">　「今、どこで止まってる？」　　　　　場所を1点に絞らせる<br>　「それ、閉じても出せる？」　　　　　わかっているとできるを分ける<br>　「昨日、何個できるようになった？」　カウンターを付け替える</div>
 <p>3つとも、答えるのは子どもです。<br>親が何かを教える必要は、ありません。</p>
 <div class="pagebreak"></div>
-<h2>4　この本の渡し方</h2>
+<h2>5　この本の渡し方</h2>
 <p>最後に、この本の渡し方を書いておきます。</p>
 <p>まず、全部読ませようとしないでください。<br>45の法則を今日から全部やらせようとすると、この本自体が、その子を止めます。</p>
 <p>やることは、2つだけです。</p>

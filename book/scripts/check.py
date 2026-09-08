@@ -184,7 +184,17 @@ for n,t in laws.items():
         bad("Q", f"法則{n} のQが話し言葉になっていない: {q}")
     if len(q) > 30: bad("Q", f"法則{n} のQが{len(q)}字（30字以内。大きな文字で入る長さに）")
 
-print(f"検査項目 22 / 不合格 {len(ng)} 件")
+
+# 23 めくる前に（問いのページの空欄クイズ）
+for n,t in laws.items():
+    if "めくる前に" not in t: bad("空欄", f"法則{n} に「めくる前に」がない")
+    m = re.search(r'#+ めくる前に\n\n伸びない人は、(.*?)。\n伸びる人は、', t, re.S)
+    if not m: bad("空欄", f"法則{n} の空欄クイズの形が違う"); continue
+    row = re.search(r'\| すること \| (.*?) \|', t)
+    if row and row.group(1).strip() != m.group(1).strip():
+        bad("空欄", f"法則{n} の空欄クイズと分かれ道の「すること」がずれている")
+
+print(f"検査項目 23 / 不合格 {len(ng)} 件")
 cat = {}
 for c,m in ng: cat.setdefault(c, []).append(m)
 for c in cat:

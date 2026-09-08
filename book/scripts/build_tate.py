@@ -33,12 +33,18 @@ def md_to_html_v(text, accent=""):
     # 隅の図（デザイナー向けの作図指示）と、状況文のラベルを落とす
     h = re.sub(r'<div class="lbl lbl-corner">.*?</div>\s*<p class="cornerfig">.*?</p>', '', h, flags=re.S)
     h = h.replace('<div class="lbl lbl-situ">状況文</div>', '')
+    # 縦組みでは欧文4文字のラベルが縦に積まれて読みにくいので、和語に置き換える
+    h = h.replace('<div class="lbl lbl-hint">HINT</div>',
+                  '<div class="lbl lbl-hint">ヒント</div>')
     # 章扉の「問題ページ／答えページ」の見出しは、改ページに置き換える
     h = re.sub(r'<h2>問題ページ</h2>', '', h)
     h = re.sub(r'<h2>答えページ</h2>', '<div class="pagebreak"></div>', h)
     h = re.sub(r'<h[23]>(左ページ上|右ページ下|左ページ|右ページ|45)</h[23]>', '', h)
     h = re.sub(r'<h2>[0-9]+ページ目</h2>', '<div class="pagebreak"></div>', h)
     h = re.sub(r'<h2><span class="tcy">[0-9]+</span>ページ目</h2>', '<div class="pagebreak"></div>', h)
+    # 数字だけの中見出しは区切り記号でしかないので、読者版では飾りに置き換える
+    h = re.sub(r'<h2>(?:<span class="tcy">)?[0-9]+(?:</span>)?</h2>',
+               '<div class="orn">＊</div>', h)
     h = re.sub(r'<div class="sep"></div>\s*(?=<div class="pagebreak">)', '', h)
     h = re.sub(r'<div class="sep"></div>\s*(?=<h1)', '', h)
     h = re.sub(r'^\s*<div class="pagebreak"></div>', '', h)
@@ -79,6 +85,8 @@ li { margin-bottom: .4em; }
        margin: .95em 0 .3em 0; letter-spacing: .08em; page-break-after: avoid;
        text-orientation: upright; }
 .lbl-good { border-right: 2px solid #1a1a1a; padding-right: .45em; margin-right: -.6em; }
+.orn { color: #b0b0b0; font-size: 8pt; margin: 1.6em 0; text-align: center;
+       page-break-after: avoid; }
 .qtext { font-family: "Noto Sans CJK JP",sans-serif; font-size: 12.5pt; font-weight: 700;
          line-height: 1.55; margin: 0 0 1.4em 0; }
 .hintbox { background: #f5f4ef; border-right: 3px solid #c9c2a6; padding: .6em .6em .6em 0;

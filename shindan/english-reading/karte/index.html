@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>読み方カルテ 完全版｜英語設計診断｜受験の王様</title>
+<meta name="description" content="英語設計診断を受けた人のための攻略書。6つのタイプ別に「なぜそうなるのか」「どう直すのか」を実演つきで解説し、最終章で英語の登り方（Core）を整理します。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2239;
+  --grid:rgba(126,170,255,.07);
+  --gold:#E3B04B;
+  --gold-deep:#C39432;
+  --gold-soft:rgba(227,176,75,.14);
+  --paper:#FAF7EF;
+  --paper-line:#E5DEC9;
+  --ink:#182433;
+  --ink-sub:#5C6775;
+  --line-green:#06C755;
+  --red:#a1252c;
+  --radius:10px;
+  --font-body:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
+  --font-display:'Shippori Mincho','Hiragino Mincho ProN',serif;
+  --font-num:'Oswald','Noto Sans JP',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:16px}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:
+    linear-gradient(rgba(7,24,41,.55),rgba(7,24,41,.55)),
+    repeating-linear-gradient(0deg,transparent 0 31px,var(--grid) 31px 32px),
+    repeating-linear-gradient(90deg,transparent 0 31px,var(--grid) 31px 32px),
+    var(--navy);
+  min-height:100vh;
+  line-height:1.85;
+}
+.wrap{max-width:480px;margin:0 auto;padding:20px 16px 64px}
+.sheet{
+  border:2px solid var(--ink);border-radius:8px;position:relative;
+  background:var(--paper);box-shadow:0 12px 34px rgba(0,0,0,.4);
+}
+.sheet::before{
+  content:"";position:absolute;inset:6px;border:1px solid rgba(24,36,51,.28);
+  border-radius:5px;pointer-events:none;
+}
+.inner{padding:24px 20px 28px;position:relative}
+.eyebrow{font-size:.68rem;letter-spacing:.22em;font-weight:700;color:var(--gold-deep);text-transform:uppercase}
+h1{
+  font-family:var(--font-display);font-weight:800;font-size:1.65rem;line-height:1.45;
+  margin:.3em 0 .25em;letter-spacing:.04em;
+}
+.lead{color:var(--ink-sub);font-size:.9rem}
+.hr{border:none;border-top:1.5px solid var(--ink);margin:18px 0}
+
+/* 目次 */
+.toc-cap{font-size:.72rem;letter-spacing:.2em;font-weight:900;color:var(--ink-sub);margin:4px 0 10px}
+.toc{display:grid;gap:8px}
+.toc a{
+  display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);
+  background:#fff;border:1.5px solid var(--paper-line);border-radius:var(--radius);
+  padding:12px 14px;font-size:.95rem;font-weight:700;
+}
+.toc a:active{border-color:var(--gold-deep);background:var(--gold-soft)}
+.toc .no{
+  flex:0 0 26px;height:26px;border:1.5px solid var(--gold-deep);border-radius:6px;
+  font-family:var(--font-num);font-size:.78rem;font-weight:600;color:var(--gold-deep);
+  display:flex;align-items:center;justify-content:center;
+}
+.toc a.final{border:1.5px solid var(--ink);background:var(--ink);color:var(--paper)}
+.toc a.final .no{border-color:var(--gold);color:var(--gold)}
+.toc-note{font-size:.78rem;color:var(--ink-sub);margin-top:10px}
+
+/* タイプ章 */
+.tsec{margin-top:22px;scroll-margin-top:14px}
+.tsec .sheet{border-width:2px}
+.thead{border-bottom:1.5px solid var(--ink);padding-bottom:12px;margin-bottom:14px}
+.thead .no{font-family:var(--font-num);font-weight:600;font-size:.8rem;color:var(--gold-deep);letter-spacing:.16em}
+.thead h2{
+  font-family:var(--font-display);font-weight:800;font-size:1.4rem;letter-spacing:.05em;line-height:1.4;
+}
+.thead h2 span{border-bottom:3px double var(--gold-deep);padding:0 .1em .05em}
+.thead .one{font-size:.84rem;color:var(--ink-sub);margin-top:4px}
+h3{
+  font-family:var(--font-display);font-weight:800;font-size:1.02rem;letter-spacing:.05em;
+  margin:20px 0 8px;padding-left:10px;border-left:4px solid var(--gold-deep);
+}
+p{font-size:.9rem;margin-bottom:10px}
+b{font-weight:900}
+.marker{background:linear-gradient(transparent 62%,rgba(227,176,75,.45) 62%)}
+.box{
+  background:#fff;border:1px solid var(--paper-line);border-left:3px solid var(--gold-deep);
+  border-radius:0 8px 8px 0;padding:12px 14px;margin:12px 0;font-size:.88rem;
+}
+.box.bad{border-left-color:var(--red)}
+.box .cap{font-size:.68rem;letter-spacing:.18em;font-weight:700;color:var(--ink-sub);margin-bottom:4px}
+.box.bad .cap{color:var(--red)}
+.en{
+  background:#fff;border:1.5px solid var(--ink);border-radius:8px;padding:13px;
+  font-size:.98rem;line-height:1.9;margin:12px 0;overflow-wrap:anywhere;
+}
+.steps{counter-reset:st;display:grid;gap:8px;margin:12px 0}
+.steps .st{
+  background:#fff;border:1px solid var(--paper-line);border-radius:8px;padding:11px 13px;
+  font-size:.86rem;position:relative;padding-left:42px;
+}
+.steps .st::before{
+  counter-increment:st;content:counter(st);
+  position:absolute;left:11px;top:11px;width:22px;height:22px;
+  background:var(--gold-deep);color:#fff;border-radius:50%;
+  font-family:var(--font-num);font-size:.74rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+}
+.rx{
+  margin-top:14px;border:2px dashed var(--gold-deep);border-radius:var(--radius);
+  background:var(--gold-soft);padding:13px 14px;font-size:.86rem;
+}
+.rx .cap{font-size:.68rem;letter-spacing:.2em;font-weight:900;color:var(--gold-deep);margin-bottom:6px}
+.rx ul{list-style:none;display:grid;gap:6px}
+.rx li{padding-left:1.3em;position:relative}
+.rx li::before{content:"◎";position:absolute;left:0;color:var(--gold-deep);font-weight:900}
+.backline{display:flex;justify-content:space-between;align-items:center;margin-top:16px;font-size:.78rem}
+.backline a{color:var(--gold-deep);font-weight:700;text-decoration:none}
+.slogan{
+  text-align:center;font-family:var(--font-display);font-weight:800;font-size:1.15rem;
+  letter-spacing:.1em;margin:16px 0 4px;
+}
+.slogan small{display:block;font-family:var(--font-body);font-weight:500;font-size:.68rem;color:var(--ink-sub);letter-spacing:.14em;margin-top:2px}
+
+/* 最終章 */
+.stairs{display:grid;gap:6px;margin:12px 0}
+.stair{
+  display:flex;align-items:center;gap:10px;background:#fff;
+  border:1px solid var(--paper-line);border-radius:8px;padding:9px 12px;font-size:.85rem;
+}
+.stair .lv{font-family:var(--font-num);font-weight:600;font-size:.7rem;color:var(--ink-sub);flex:0 0 3.2em}
+.stair:nth-child(2){margin-left:10px}
+.stair:nth-child(3){margin-left:20px}
+.stair:nth-child(4){margin-left:30px}
+.use5{width:100%;border-collapse:collapse;font-size:.82rem;margin:12px 0;background:#fff}
+.use5 th,.use5 td{border:1px solid var(--paper-line);padding:8px 10px;text-align:left;vertical-align:top}
+.use5 th{background:var(--gold-soft);font-family:var(--font-num);font-weight:600;white-space:nowrap;font-size:.76rem}
+.gap-line{
+  margin-top:20px;text-align:center;font-family:var(--font-display);
+  font-weight:600;font-size:.94rem;line-height:2;
+  border-top:1px dashed var(--paper-line);padding-top:16px;
+}
+.foot{text-align:center;margin-top:26px;color:rgba(250,247,239,.5);font-size:.68rem;letter-spacing:.18em}
+.totop{
+  position:fixed;right:14px;bottom:14px;z-index:30;
+  width:44px;height:44px;border-radius:50%;border:1.5px solid var(--gold);
+  background:rgba(7,24,41,.85);color:var(--gold);font-size:.7rem;font-weight:900;
+  display:flex;align-items:center;justify-content:center;text-decoration:none;
+}
+@media (max-width:360px){h1{font-size:1.4rem}.thead h2{font-size:1.2rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+<!-- ===== 表紙・目次 ===== -->
+<div class="sheet"><div class="inner">
+  <div class="eyebrow">KING'S READING KARTE — COMPLETE EDITION</div>
+  <h1>読み方カルテ 完全版</h1>
+  <p class="lead">英語設計診断を受けたあなたへ。まず<b>自分のタイプの章</b>を読んでください。そして最後に、全員共通の最終章<b>「英語の登り方」</b>まで必ずたどり着いてください。この1ページに、診断の答え合わせと直し方をすべて置いておきます。</p>
+  <hr class="hr">
+  <div class="toc-cap">─ 目次｜自分のタイプへ飛ぶ ─</div>
+  <nav class="toc">
+    <a href="#kankaku"><span class="no">01</span>感覚読み型 — 当てるな、指させ</a>
+    <a href="#yomichigai"><span class="no">02</span>読み違い型 — 1点の反転で全部が逆になる</a>
+    <a href="#kouzou"><span class="no">03</span>構造ブラックボックス型 — 骨格から読め</a>
+    <a href="#ronri"><span class="no">04</span>論理迷子型 — 文と文は「つなぎ」で読む</a>
+    <a href="#kiso"><span class="no">05</span>基礎再設計型 — 戻る勇気が最短ルート</a>
+    <a href="#jissen"><span class="no">06</span>実戦設計型 — 落とした1問を解剖する</a>
+    <a href="#core" class="final"><span class="no">終</span>英語の登り方 — 問題を解くだけでは仕上がらない</a>
+  </nav>
+  <p class="toc-note">※診断の結果画面は保存されています。自分のタイプを忘れたら、診断ページを開き直せばいつでも確認できます。</p>
+</div></div>
+
+<!-- ===== 01 感覚読み型 ===== -->
+<section class="tsec" id="kankaku"><div class="sheet"><div class="inner">
+  <div class="thead">
+    <div class="no">TYPE 01</div>
+    <h2><span>感覚読み型</span></h2>
+    <p class="one">「わからない」を選ばずに、誤答が多かったあなたへ。</p>
+  </div>
+
+  <h3>あなたに起きていること</h3>
+  <p>根拠を持てない問題でも、あなたは選択肢を<b>選んで、外して</b>いました。これは性格でも運でもなく読み方のクセです。知っている単語だけを拾う → それっぽい意味を組み立てる → 一番近い選択肢を選ぶ。この読み方は<span class="marker">易しい文なら正解できてしまう</span>ので、今まで表面化しませんでした。</p>
+
+  <h3>診断の種明かし</h3>
+  <p>診断の誤答の選択肢は、<b>雰囲気で読むと選びたくなるようにわざと作ってあります</b>。本文の単語をそのまま使いながら、「誰が・誰に」を入れ替えたり、肯定と否定をひっくり返したり。つまりあなたは単語力不足で落ちたのではなく、<b>単語は拾えているのに組み立てで落ちています</b>。単語帳を増やしても、この失点は止まりません。</p>
+
+  <h3>直す型 —「根拠読み」の実演</h3>
+  <div class="steps">
+    <div class="st">訳す前に、<b>動詞（V）に印</b>をつけて「誰が・どうした」を先に確定させる</div>
+    <div class="st">答えを選ぶ前に、<b>根拠になる場所を本文で指でおさえる</b></div>
+    <div class="st">指させないなら「わかっていない」。<b>当てずに戻って読み直す</b></div>
+  </div>
+  <div class="en">The bag under the desk is not mine. Mine is on the chair by the door.</div>
+  <div class="box bad"><div class="cap">感覚読み</div>「bag…desk…mine…chair…机のところの私のカバン？」→ 単語は全部知っているのに位置関係が組み立てられず、それっぽい選択肢に吸い込まれる。</div>
+  <div class="box"><div class="cap">根拠読み</div>① 動詞は is。その前の <b>The bag under the desk</b> までがまるごと主語。「机の下のカバンは、私のではない」。<br>② 2文目の主語は <b>Mine</b>（＝my bag）。「私のは、ドアのそばの椅子の上」。<br>③ 「私のカバンはどこ？」→ <b>on the chair by the door</b> を指でおさえて答える。</div>
+  <p>文が中1レベルでも高3レベルでも、やることは同じ。<b>カタマリで切って、Vから確定させて、根拠を指でおさえる。</b>長い文はこの型の「回数」が増えるだけです。</p>
+
+  <div class="rx"><div class="cap">今週の処方（1日10分）</div>
+    <ul>
+      <li>1日3文、動詞に印→主語のカタマリに線→和訳</li>
+      <li>問題を解くときは、根拠に下線を引いてから答える。引けなければ保留して読み直す</li>
+      <li>診断で間違えた英文を、根拠読みでもう一度読み直す</li>
+    </ul>
+  </div>
+  <div class="slogan">「当てるな、指させ」<small>TYPE 01 SLOGAN</small></div>
+  <div class="backline"><a href="#top">▲ 目次へ</a><a href="#core">最終章「英語の登り方」へ →</a></div>
+</div></div></section>
+
+<!-- ===== 02 読み違い型 ===== -->
+<section class="tsec" id="yomichigai"><div class="sheet"><div class="inner">
+  <div class="thead">
+    <div class="no">TYPE 02</div>
+    <h2><span>読み違い型</span></h2>
+    <p class="one">読めている「つもり」なのに、選ぶと違う。そんなあなたへ。</p>
+  </div>
+
+  <h3>あなたに起きていること</h3>
+  <p>あなたは文を最後まで読めています。単語も取れている。それなのに失点する理由はただ1つ——<b>「誰が・誰に・肯定か否定か」のどれか1点を取り違えている</b>から。英語は1点の反転で文全体の意味が逆になります。not を1つ見落とせば、賛成が反対になる。主語と目的語を入れ替えれば、助けた人が助けられた人になる。</p>
+
+  <h3>診断の種明かし</h3>
+  <p>診断であなたが引っかかった誤答は、<b>本文の単語をほぼ全部使いながら、たった1か所だけ反転させた選択肢</b>です。「単語の一致度」で選ぶと必ず捕まる設計でした。入試の選択肢も全く同じ思想で作られています。あなたに必要なのは速く読むことではなく、<span class="marker">反転ポイントを検問する読み方</span>です。</p>
+
+  <h3>直す型 —「3点確認」の実演</h3>
+  <div class="en">Mari didn't tell her best friend about her problem because she didn't want to make her worried.</div>
+  <div class="box bad"><div class="cap">読み違い</div>「マリ…親友…問題…心配…」→ 「マリは心配で親友に相談した」と読んでしまう。didn't が2つあることも、worried になるのが誰かも通過してしまっている。</div>
+  <div class="box"><div class="cap">3点確認</div>① <b>誰が</b>：Mari が（didn't tell＝言わなかった）<br>② <b>誰に</b>：her best friend に。make <b>her</b> worried の her ＝親友<br>③ <b>なぜ</b>：親友を心配させたくなかったから<br>→「マリは親友を心配させたくなくて、自分の悩みを<b>言わなかった</b>」。否定2つと her の中身を検問して、初めて確定する。</div>
+  <div class="steps">
+    <div class="st">読み終えたら、<b>「誰が・どうした・なぜ」の3点</b>で自分の言葉に言い直す</div>
+    <div class="st">選択肢を選ぶ前に、本文と<b>1要素ずつ突き合わせて「ズレ」を探す</b>（合っている所ではなく、違う所を探す）</div>
+    <div class="st">not / few / unaware など<b>意味を反転させる語に必ず印</b>をつける</div>
+  </div>
+
+  <div class="rx"><div class="cap">今週の処方（1日10分）</div>
+    <ul>
+      <li>解いた問題の誤答選択肢について「どこが本文とズレているか」を1つずつ言語化する</li>
+      <li>1日3文、「誰が・どうした・なぜ」の3点言い直し</li>
+      <li>否定語・数量詞（not / no / few / only）に○をつける習慣をつける</li>
+    </ul>
+  </div>
+  <div class="slogan">「合ってる探しをやめて、ズレ探しをしろ」<small>TYPE 02 SLOGAN</small></div>
+  <div class="backline"><a href="#top">▲ 目次へ</a><a href="#core">最終章「英語の登り方」へ →</a></div>
+</div></div></section>
+
+<!-- ===== 03 構造ブラックボックス型 ===== -->
+<section class="tsec" id="kouzou"><div class="sheet"><div class="inner">
+  <div class="thead">
+    <div class="no">TYPE 03</div>
+    <h2><span>構造ブラックボックス型</span></h2>
+    <p class="one">短い文は読めるのに、長くなると誰が何をしたか崩れるあなたへ。</p>
+  </div>
+
+  <h3>あなたに起きていること</h3>
+  <p>単語も文法も知っている。でも文が長くなると、頭の中で<b>「誰が・何を・どうした」の骨格が組めなくなる</b>。原因ははっきりしています。あなたは文を「単語の列」として左から処理していて、<span class="marker">カタマリ（句・節）として切る技術</span>がまだ入っていない。だから修飾語が2つ3つ重なった瞬間、文がブラックボックスになります。</p>
+
+  <h3>診断の種明かし</h3>
+  <p>診断の構造問題は、<b>主語に長い修飾がぶら下がった文</b>ばかり出しました。誤答は「近くにある名詞を主語だと思う」「挿入された節を主節だと思う」という、構造が切れない人が必ずする読み方をそのまま選択肢にしたものです。</p>
+
+  <h3>直す型 —「骨格読み」の実演</h3>
+  <div class="en">The restaurant my uncle opened last year in a small town near the sea is now famous for its fish dishes.</div>
+  <div class="box bad"><div class="cap">ブラックボックス読み</div>「レストラン…おじが開いた…海の近くの町…」→ 動詞らしきものが opened と is の2つ見えて、どっちの話か分からなくなる。</div>
+  <div class="box"><div class="cap">骨格読み</div>① V候補に全部印：<b>opened</b> / <b>is</b><br>② The restaurant のあとに「my uncle opened…」と<b>SVがもう1組</b>続いている→これは The restaurant を説明するカタマリ（おじが去年開いた～）<br>③ 文全体の骨格は <b>The restaurant … is now famous</b>。「そのレストランは、今では有名だ」<br>④ 骨格が立ってから、修飾（去年／海の近くの小さな町で／魚料理で）を肉付けする。</div>
+  <div class="steps">
+    <div class="st">動詞の候補<b>すべてに印</b>をつける（Vが2つ以上見えたら構造のサイン）</div>
+    <div class="st"><b>主語のカタマリはどこで終わるか</b>を決めてから訳す</div>
+    <div class="st">まず<b>骨格（SV）だけで一度訳す</b>。修飾はあとから足す</div>
+  </div>
+
+  <div class="rx"><div class="cap">今週の処方（1日10分）</div>
+    <ul>
+      <li>1日1文、SVOCを振ってから和訳する「構文解釈」を習慣にする</li>
+      <li>訳せない文は「主語はどこからどこまでか」の特定から始める</li>
+      <li>音読はカタマリごとに区切って1文5回（スラッシュを入れてよい）</li>
+    </ul>
+  </div>
+  <div class="slogan">「肉を削げ、骨で読め」<small>TYPE 03 SLOGAN</small></div>
+  <div class="backline"><a href="#top">▲ 目次へ</a><a href="#core">最終章「英語の登り方」へ →</a></div>
+</div></div></section>
+
+<!-- ===== 04 論理迷子型 ===== -->
+<section class="tsec" id="ronri"><div class="sheet"><div class="inner">
+  <div class="thead">
+    <div class="no">TYPE 04</div>
+    <h2><span>論理迷子型</span></h2>
+    <p class="one">一文一文は読めるのに、文章になると内容が残らないあなたへ。</p>
+  </div>
+
+  <h3>あなたに起きていること</h3>
+  <p>あなたの失点は文の中ではなく、<b>文と文のあいだ</b>で起きています。1文ずつは訳せるのに、読み終わると「で、何の話だった？」となる。原因は、文章を<span class="marker">「文の集まり」ではなく「つながり」で読む技術</span>がまだ入っていないこと。筆者は However や For example といった「つなぎ」で話の設計図を見せてくれているのに、そこを素通りしています。</p>
+
+  <h3>診断の種明かし</h3>
+  <p>診断の論理問題の誤答は、「1文だけ読めば正しく見えるが、<b>つながりを無視すると選んでしまう</b>」ものを置きました。譲歩（Of course…But…）の前半を筆者の主張だと思う、具体例を結論だと思う——どれも、つなぎを読んでいない人の典型パターンです。</p>
+
+  <h3>直す型 —「つなぎ読み」の実演</h3>
+  <div class="en">Some people say that listening to music while studying helps them concentrate. <b>However</b>, research suggests that music with lyrics often lowers reading comprehension.</div>
+  <div class="box bad"><div class="cap">迷子読み</div>1文目を読んで「音楽は集中に良いのか」と記憶 → 2文目も読んだのに、結局「音楽は良い」というイメージだけが残る。</div>
+  <div class="box"><div class="cap">つなぎ読み</div>① <b>However に○</b>。ここで話が反転すると宣言されている<br>② 前＝「一般の人の意見（集中に役立つ）」／後＝「研究の指摘（理解度を下げる）」<br>③ 筆者が立っているのは<b>常に「つなぎの後ろ側」</b>。この文章の主役は研究の方。<br>→ 設問が「研究が示すことは？」でも「筆者の考えは？」でも、根拠は2文目から取る。</div>
+  <div class="steps">
+    <div class="st">However / But / For example / In other words / so に<b>必ず印</b>をつける</div>
+    <div class="st">it / this / one が出たら、<b>指す内容をその場で言ってから</b>先へ進む</div>
+    <div class="st">段落を読み終えるごとに<b>「一言要約」</b>をメモする（長くて10字）</div>
+  </div>
+
+  <div class="rx"><div class="cap">今週の処方（1日10分）</div>
+    <ul>
+      <li>手持ちの長文1段落を「つなぎに印→一言要約」で読み直す</li>
+      <li>「筆者の主張はつなぎの後ろ側」を合言葉に、主張文に線を引く練習</li>
+      <li>指示語が出るたびに中身を口で言う（言えなければ前に戻る）</li>
+    </ul>
+  </div>
+  <div class="slogan">「文を読むな、つながりを読め」<small>TYPE 04 SLOGAN</small></div>
+  <div class="backline"><a href="#top">▲ 目次へ</a><a href="#core">最終章「英語の登り方」へ →</a></div>
+</div></div></section>
+
+<!-- ===== 05 基礎再設計型 ===== -->
+<section class="tsec" id="kiso"><div class="sheet"><div class="inner">
+  <div class="thead">
+    <div class="no">TYPE 05</div>
+    <h2><span>基礎再設計型</span></h2>
+    <p class="one">複数の分野にまたがって失点があったあなたへ。実は一番伸びるタイプです。</p>
+  </div>
+
+  <h3>あなたに起きていること</h3>
+  <p>構造・言い換え・論理のうち2つ以上で失点がある。これは「英語のセンスがない」のではなく、<b>積み上げの順番が崩れているだけ</b>です。英語は 単語→文法→解釈→長文 の階段構造なので、下の段が抜けたまま上の段の問題を解いても、努力が得点に変換されません。逆に言えば、<span class="marker">順番さえ直せば、いま一番伸び幅が大きいのはあなた</span>です。</p>
+
+  <h3>診断の種明かし</h3>
+  <p>診断の問題は、学年ごとに「その学年の8月までに習った文法だけ」で作ってあります。つまりあなたが落とした問題は「まだ習っていないから解けなかった」のではなく、<b>習った範囲の使い方がまだ入っていない</b>ということ。攻める場所は新しい単元ではなく、足元です。</p>
+
+  <h3>直す型 — 範囲を絞って「1文を確定させる」実演</h3>
+  <p>まずはこのレベルの文を、雰囲気ではなく<b>確定</b>で読めるようにします。</p>
+  <div class="en">When my mother came home, I was cooking dinner for my sister.</div>
+  <div class="box"><div class="cap">確定読み</div>① 動詞に印：<b>came</b> / <b>was cooking</b> → Vが2つ＝文が2つある<br>② When のカタマリ（母が帰ってきたとき）と、本体（<b>私が</b>妹のために夕食を作っていた）を分ける<br>③ 「作っていたのは誰？」→ 本体の主語 <b>I</b>。母ではない。<br>この「Vに印→カタマリを分ける→主語を確定」が全部の土台です。長い文はこれの繰り返しにすぎません。</div>
+  <div class="steps">
+    <div class="st">この夏〜秋にやることを<b>「単語」と「短い文のSVOC」の2つに絞る</b>（あれこれ広げない）</div>
+    <div class="st">教材は<b>1学年下に戻る勇気</b>を持つ。それが最短ルート（誰にも見せなくていい）</div>
+    <div class="st"><b>毎日同じ時間に30分</b>。気合いではなく時間割で続ける</div>
+  </div>
+
+  <div class="rx"><div class="cap">今週の処方（1日15分）</div>
+    <ul>
+      <li>単語帳を1日30語、「見出し語→1秒で意味」まで同じ範囲を周回（新しい範囲に進むより定着優先）</li>
+      <li>1日3文、上の「確定読み」の手順で読む（学校のワークの文でOK）</li>
+      <li>できた日はカレンダーに○をつける。○を切らさないことだけを目標にする</li>
+    </ul>
+  </div>
+  <div class="slogan">「順番が実力。戻る者が勝つ」<small>TYPE 05 SLOGAN</small></div>
+  <div class="backline"><a href="#top">▲ 目次へ</a><a href="#core">最終章「英語の登り方」へ →</a></div>
+</div></div></section>
+
+<!-- ===== 06 実戦設計型 ===== -->
+<section class="tsec" id="jissen"><div class="sheet"><div class="inner">
+  <div class="thead">
+    <div class="no">TYPE 06</div>
+    <h2><span>実戦設計型</span></h2>
+    <p class="one">制限時間つきでも正確に読めていたあなたへ。ここからは配分の勝負です。</p>
+  </div>
+
+  <h3>あなたに起きていること</h3>
+  <p>読み方の土台はできています。おめでとう——ではなく、ここからが本題です。このタイプの生徒が一番やりがちな失敗は、<b>「できるから」と長文をただ量産して、伸びが止まる</b>こと。土台がある人の次の課題は量ではなく、<span class="marker">落とす1問の原因を特定して、そこだけを潰す精度</span>です。</p>
+
+  <h3>診断の種明かし</h3>
+  <p>診断で満点でなかったなら、落とした問題の分野（構造／言い換え／論理）が<b>あなた専用の弱点タグ</b>です。結果画面の正誤（○×？−）を見てください。どの分野の、どの難度で落ちたか——それが次にやることの全てです。満点だった人は、制限時間を2/3にして同じ精度が出るかが次の壁です。</p>
+
+  <h3>直す型 —「1問解剖」の実演</h3>
+  <div class="box"><div class="cap">1問解剖の手順</div>① 過去問・模試を<b>時間を測って</b>解く（測定）<br>② 落とした問題を「<b>構造で落ちた／言い換えで落ちた／論理で落ちた</b>」に分類する<br>③ 「なぜその誤答を選んだか」を1行で言語化する（例：「本文の単語が多い選択肢を選んだ」＝読み違い系）<br>④ 同じ落ち方を2回したら、その分野のこのカルテの章に戻って型をやり直す</div>
+  <p>これを10問分やると、自分の失点が<b>2〜3パターンに集約される</b>ことに気づくはずです。入試までにやるべきことは、その2〜3パターンの反復だけです。</p>
+  <div class="steps">
+    <div class="st">演習は<b>解きっぱなし禁止</b>。解いた時間と同じ時間を分析に使う</div>
+    <div class="st">分野別の失点タグを記録する（ノートの端でいい）</div>
+    <div class="st">志望校の出題形式（長文・英作文・リスニング）ごとに<b>時間配分を決めてから</b>解く</div>
+  </div>
+
+  <div class="rx"><div class="cap">今週の処方</div>
+    <ul>
+      <li>志望校（または実力相応校）の過去問を1年分、時間を測って解く</li>
+      <li>落とした全問に「構造／言い換え／論理」のタグをつける</li>
+      <li>一番多かったタグの章をこのカルテで読み直し、型を適用して解き直す</li>
+    </ul>
+  </div>
+  <div class="slogan">「量で殴るな、原因を刺せ」<small>TYPE 06 SLOGAN</small></div>
+  <div class="backline"><a href="#top">▲ 目次へ</a><a href="#core">最終章「英語の登り方」へ →</a></div>
+</div></div></section>
+
+<!-- ===== 最終章 ===== -->
+<section class="tsec" id="core"><div class="sheet"><div class="inner">
+  <div class="thead">
+    <div class="no">FINAL CHAPTER — 全タイプ共通</div>
+    <h2><span>英語の登り方</span></h2>
+    <p class="one">問題を解くだけでは、長文は仕上がらない。</p>
+  </div>
+
+  <h3>英語は階段でできている</h3>
+  <div class="stairs">
+    <div class="stair"><span class="lv">STEP1</span><span><b>英単語</b> — 拾える語を増やす。「見て1秒で意味」が基準</span></div>
+    <div class="stair"><span class="lv">STEP2</span><span><b>英文法</b> — カタマリを作るルール。問題が解けるより「例文で使える」</span></div>
+    <div class="stair"><span class="lv">STEP3</span><span><b>英文解釈</b> — SVOCで1文を確定させる。ここが読み方の心臓</span></div>
+    <div class="stair"><span class="lv">STEP4</span><span><b>英語長文</b> — 文と文を論理でつなぐ。最後に仕上がる場所</span></div>
+  </div>
+  <p>大事なのは、<b>長文はこの階段の一番上にある</b>ということ。単語・文法・解釈は、長文のために存在します。そして多くの受験生が、下の段を飛ばして一番上だけを毎日ガンガン叩いています。</p>
+
+  <h3>「解く」は測定、「読み方を入れる」が治療</h3>
+  <p>長文問題を解くことは、<b>体温を測ること</b>に似ています。今の実力が数字で出る。でも、<span class="marker">体温計を1日10回見ても熱は下がらない</span>。診断であなたのタイプが分かったように、測定のあとには治療——つまり自分のタイプの「型」を読み方に入れる時間が必要です。演習量が同じでも、ここで差がつきます。</p>
+
+  <h3>長文が仕上がる人の「1問の使い方」</h3>
+  <p>伸びる人は、同じ1問を5回使います。</p>
+  <table class="use5">
+    <tr><th>1回目</th><td><b>解く</b>（時間を測る＝測定）</td></tr>
+    <tr><th>2回目</th><td>採点後、<b>全選択肢の根拠とズレ</b>を本文で確認する（ここが本番）</td></tr>
+    <tr><th>3回目</th><td>読めなかった文に<b>SVOCを振って</b>確定させる</td></tr>
+    <tr><th>4回目</th><td>カタマリを意識して<b>音読5回</b></td></tr>
+    <tr><th>5回目</th><td>数日後、<b>何も見ずに読み直す</b>。スラスラ読めたら卒業</td></tr>
+  </table>
+  <p>10題を1回ずつ解く人と、2題を5回ずつ使う人なら、<b>後者が勝ちます</b>。「問題だけを解けばいい」が通用しないのは、これが理由です。</p>
+
+  <h3>最後に</h3>
+  <p>あなたのタイプの章に書いた「型」は、今日から1人で始められるものだけを選びました。まずは1週間、自分の処方をやり切ってみてください。読み方は才能ではなく、<b>手順</b>です。手順は、入れ替えられます。</p>
+  <div class="gap-line">このカルテは何度でも読み返せます。<br>続きの企画・最新情報はLINEで届きます。</div>
+  <div class="backline"><a href="#top">▲ 目次へ戻る</a><span></span></div>
+</div></div></section>
+
+<div class="foot">受験の王様｜学部別合格設計塾 THINKING</div>
+</main>
+<a class="totop" href="#top" aria-label="目次へ戻る">目次</a>
+<script>
+/* ページ最上部アンカー */
+document.body.insertAdjacentHTML("afterbegin", '<span id="top"></span>');
+/* 初回のアンカージャンプは瞬間移動、ページ内のタップだけスムースに */
+requestAnimationFrame(()=>{ document.documentElement.style.scrollBehavior = "smooth"; });
+</script>
+</body>
+</html>

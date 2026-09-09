@@ -418,7 +418,24 @@ def build_kikakusho(outpath):
     open(outpath, "w", encoding="utf-8").write(doc)
     return outpath
 
+def build_copy(outpath):
+    body = open(os.path.join(M, "企画書", "コピー案.md"), encoding="utf-8").read()
+    cover = """<div class="cover">
+<div class="kicker">コピー案　2026年9月9日　中身を詰める前の、言葉だけの案</div>
+<div class="t">タイトル・帯・目次</div>
+<div class="s">あの子が、勉強中に絶対にやらないこと</div>
+<div class="au">朝倉 徹大（受験の王様）</div>
+<div class="note">確定は docs/00。ここはそれに対する提案で、まだ確定ではありません。</div>
+</div>"""
+    doc = ("<!doctype html><html lang='ja'><head><meta charset='utf-8'>"
+           f"<title>コピー案</title><style>{CSS}</style></head><body>\n"
+           + cover + md_to_html(body) + "\n</body></html>")
+    open(outpath, "w", encoding="utf-8").write(doc)
+    return outpath
+
+
 if __name__ == "__main__":
     os.makedirs("build", exist_ok=True)
     print(build_daihon("build/台本.html"))
     print(build_kikakusho("build/企画書.html"))
+    print(build_copy("build/コピー案.html"))

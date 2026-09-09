@@ -1,0 +1,236 @@
+<!doctype html><html lang='ja'><head><meta charset='utf-8'><title>コピー案</title><style>
+@page { size: A5; margin: 13mm 14mm 11mm 14mm; }
+@page :first { margin: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 9.1pt; line-height: 1.72;
+       color: #1c1c1c; margin: 0; }
+p { margin: 0 0 0.72em 0; }
+code { font-size: 0.9em; color: #666; background: #f2f2f2; padding: 0 .25em; border-radius: 2px; }
+hr.rule { border: 0; border-top: 1px solid #ddd; margin: 1.6em 0; }
+h1 { font-size: 15.5pt; line-height: 1.45; margin: 0 0 .95em 0; padding-bottom: .5em;
+     border-bottom: 2px solid #1c1c1c; page-break-before: always; page-break-after: avoid; }
+h2 { font-size: 12.5pt; margin: 2.0em 0 .8em 0; page-break-after: avoid; }
+h3 { font-size: 10.4pt; margin: 1.5em 0 .5em 0; color: #444; page-break-after: avoid; }
+h4 { font-size: 9.8pt; margin: 1.2em 0 .4em 0; color: #555; page-break-after: avoid; }
+ul { margin: 0 0 1em 0; padding-left: 1.2em; }
+li { margin-bottom: .35em; }
+table { border-collapse: collapse; width: 100%; font-size: 8.4pt; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: .38em .5em; text-align: left; vertical-align: top; }
+th { background: #f4f4f4; }
+.indent { margin: 0 0 1em 0; white-space: pre-wrap; font-size: 9.2pt; line-height: 1.85; }
+.vs { font-size: 8.2pt; margin: .28em 0 .85em 0; }
+.vs th, .vs td { padding: .3em .5em; line-height: 1.45; }
+.vs th:first-child, .vs td:first-child { width: 21%; font-size: 7.8pt; color: #8a8a8a;
+                                          background: #fafafa; white-space: nowrap; }
+.vs th:nth-child(2), .vs td:nth-child(2) { width: 39.5%; color: #5a5a5a; }
+.vs th:nth-child(3), .vs td:nth-child(3) { width: 39.5%; }
+.vs th { background: #f2f2f2; color: #444; font-size: 8pt; }
+.vs th:nth-child(3) { color: #1c1c1c; }
+.vs td:nth-child(3) { background: #f4f4f4; }
+.vs.f1 td:nth-child(3), .vs.f1 th:nth-child(3) { background: #eef4fb; }
+.vs.f2 td:nth-child(3), .vs.f2 th:nth-child(3) { background: #eef6f1; }
+.vs.f3 td:nth-child(3), .vs.f3 th:nth-child(3) { background: #faf4e6; }
+.vs.f4 td:nth-child(3), .vs.f4 th:nth-child(3) { background: #fdf0f5; }
+.vs.f5 td:nth-child(3), .vs.f5 th:nth-child(3) { background: #fbeeec; }
+.vs.f6 td:nth-child(3), .vs.f6 th:nth-child(3) { background: #f5eefa; }
+.cklist { margin: .25em 0 .7em 0; }
+.cols2 { column-count: 2; column-gap: 7mm; margin-top: .2em; }
+.cols2 h3 { margin: .55em 0 .3em 0; font-size: 8.6pt; color: #666; break-after: avoid; }
+.cols2 h3:first-child { margin-top: 0; }
+.cols2 .ck { break-inside: avoid; padding: .16em 0; }
+.ck { display: flex; align-items: flex-start; gap: .5em; padding: .2em 0; font-size: 8.8pt; }
+.ck .n { width: 1.6em; text-align: right; color: #9a9a9a; font-size: 7.8pt; padding-top: .18em; }
+.ck .box { width: .78em; height: .78em; border: 1px solid #9a9a9a; border-radius: 1px;
+           display: inline-block; flex: none; margin-top: .32em; }
+.ck .t { flex: 1; }
+.frows { margin: .6em 0 1.2em 0; }
+.frow { display: flex; align-items: baseline; gap: .5em; padding: .42em 0; }
+.frow .fl { white-space: nowrap; }
+.frow .fd { flex: 1 1 auto; border-bottom: 1px solid #cfcfcf; height: .85em; }
+.frow .fu { white-space: nowrap; color: #777; font-size: 8.6pt; }
+.figbox { border: 1px dashed #b0b0b0; color: #777; text-align: center; padding: 1.5em .8em;
+          margin: 1.1em 0; font-size: 8.6pt; border-radius: 3px; background: #fafafa; }
+.pagelabel { font-size: 7.3pt; letter-spacing: .18em; color: #8a8a8a; border-bottom: 1px solid #e2e2e2;
+             padding-bottom: .35em; margin: 0 0 1.1em 0; page-break-after: avoid; }
+.newpage { page-break-before: always; }
+.pagebreak { page-break-before: always; height: 0; }
+h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
+.front p { font-size: 9.8pt; line-height: 1.85; margin: 0 0 .95em 0; }
+.front .indent { font-size: 11pt; line-height: 2.0; }
+.lbl { font-size: 7.3pt; letter-spacing: .16em; color: #9a9a9a; margin: .72em 0 .22em 0; page-break-after: avoid; }
+.qtext { font-size: 12.5pt; line-height: 1.55; margin: 0 0 1em 0; }
+.situ { margin: 0 0 1.1em 0; }
+.hintbox { background: #f6f6f2; border-left: 3px solid #c9c2a6; padding: .6em .85em; margin: 0 0 .9em 0; font-size: 8.9pt; }
+.lawbox { font-size: 11pt; line-height: 1.45; padding: .5em .85em; margin: .1em 0 .75em 0;
+          border-left: 4px solid #1c1c1c; background: #f7f7f7; }
+.lbl-bad, .lbl-good { color: #6a6a6a; }
+.lbl-good { border-left: 3px solid #1c1c1c; padding-left: .5em; margin-left: -.65em; }
+.ans { margin: 0 0 .6em 0; }
+.cornerfig { font-size: 7.8pt; color: #8a8a8a; line-height: 1.75; border-top: 1px dotted #dcdcdc;
+             padding-top: .55em; margin: 0; }
+.rubric { font-size: 8pt; color: #8a8a8a; letter-spacing: .04em; line-height: 1.7; margin: 0 0 1.3em 0; }
+.conclbox { border-top: 1px solid #ddd; padding-top: .55em; margin: 0 0 .8em 0; }
+.lawbox.f1 { border-left-color: #2f6fb0; } .lawbox.f2 { border-left-color: #2e8b57; }
+.lawbox.f3 { border-left-color: #a8791b; } .lawbox.f4 { border-left-color: #cc3d78; }
+.lawbox.f5 { border-left-color: #c0392b; } .lawbox.f6 { border-left-color: #7b3fa0; }
+/* 扉 */
+.cover { height: 210mm; width: 148mm; box-sizing: border-box; padding: 42mm 20mm 20mm 20mm;
+         page-break-after: always; }
+.cover .kicker { font-size: 9pt; color: #777; letter-spacing: .1em; }
+.cover .t { font-size: 18.5pt; line-height: 1.6; margin: 1.2em 0 .6em 0; }
+.cover .s { font-size: 12pt; color: #333; margin-bottom: 3.5em; }
+.cover .obi { font-size: 9.4pt; line-height: 1.9; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;
+              padding: 1em 0; margin-bottom: 3em; }
+.cover .au { font-size: 11pt; }
+.cover .note { font-size: 8pt; color: #999; margin-top: 3.5em; line-height: 1.8; }
+/* 目次 */
+.toc { page-break-after: always; }
+.toc h1 { page-break-before: avoid; }
+.toc .row { display: flex; justify-content: space-between; font-size: 9.4pt; padding: .28em 0;
+            border-bottom: 1px dotted #e0e0e0; }
+.toc .row .r { color: #999; font-size: 8.6pt; }
+.toc .grp { margin-top: 1.4em; font-size: 8pt; letter-spacing: .16em; color: #9a9a9a; }
+/* 中扉 */
+.part { page-break-before: always; padding-top: 55mm; page-break-after: always; }
+.part .num { font-size: 8.4pt; letter-spacing: .22em; color: #999; }
+.part .ttl { font-size: 18pt; line-height: 1.55; margin-top: .8em; }
+.part .bar { width: 34mm; height: 3px; background: #1c1c1c; margin-top: 1.6em; }
+.part.f1 .bar { background: #2f6fb0; } .part.f2 .bar { background: #2e8b57; }
+.part.f3 .bar { background: #a8791b; } .part.f4 .bar { background: #cc3d78; }
+.part.f5 .bar { background: #c0392b; } .part.f6 .bar { background: #7b3fa0; }
+.meta { font-size: 8pt; color: #a0a0a0; border: 1px solid #eee; background: #fbfbfb;
+        padding: .5em .7em; margin: 0 0 1.1em 0; line-height: 1.7; }
+</style></head><body>
+<div class="cover">
+<div class="kicker">コピー案　2026年9月9日　中身を詰める前の、言葉だけの案</div>
+<div class="t">タイトル・帯・目次</div>
+<div class="s">あの子が、勉強中に絶対にやらないこと</div>
+<div class="au">朝倉 徹大（受験の王様）</div>
+<div class="note">確定は docs/00。ここはそれに対する提案で、まだ確定ではありません。</div>
+</div><h1>コピー案　タイトル・帯・目次</h1>
+<p>2026年9月9日。中身をこれから詰めるための、言葉だけの案。<br>確定しているのは <code>docs/00</code>。ここはそれに対する提案で、まだ確定ではない。</p>
+<div class="pagebreak"></div>
+<h2>1　タイトル</h2>
+<h3>現行（<code>00</code> で確定しているもの）</h3>
+<div class="indent">　　あの子が、勉強中に絶対にやらないこと<br>　　　マネするだけで伸びる、あの子の勉強法則45</div>
+<p>現行を推す理由は3つ。<br>　1　「やらないこと」は棚で珍しい。勉強法の棚は、増やす本で埋まっている<br>　2　「あの子」で、読者が誰のことか一瞬でわかる。クラスに1人はいる<br>　3　参入障壁が低い。やめるだけなら、今日できる</p>
+<h3>代案A　もっと問いを立てる</h3>
+<div class="indent">　　あの子は、なぜ3時間で終わるのか<br>　　　やればやるだけ伸びる人の、勉強法則45</div>
+<p>弱くなる点　「やらない」が消えるので、本の中身と表紙がずれる。</p>
+<h3>代案B　もっと言い切る</h3>
+<div class="indent">　　勉強、やめていいことが45個あります<br>　　　あの子が絶対にやらない、伸びない勉強</div>
+<p>弱くなる点　「あの子」が副題に落ちる。主語が本ではなく著者になる。</p>
+<p>結論　現行のままでいい。ただし副題は下の案も見てほしい。</p>
+<h3>副題の代案</h3>
+<div class="indent">　　現行　　マネするだけで伸びる、あの子の勉強法則45<br>　　案1　　やればやるだけ伸びる人の、45の分かれ道<br>　　案2　　勉強時間を増やさずに、点だけ変える45のこと<br>　　案3　　伸びる人と伸びない人が、毎日分かれる45の場面</div>
+<p>案3が、二項対立という中身の構造をいちばん正確に言っている。</p>
+<div class="pagebreak"></div>
+<h2>2　帯</h2>
+<p><code>docs/08</code> で出した論点。本文が「順番の本」になったので、帯もそれに合わせるかどうか。</p>
+<h3>案A　現行</h3>
+<div class="indent">　　やっているのに、伸びない。<br>　　あの子は、やればやるだけ伸びる。<br>　　違いは、昨日、何個できるようになったか。<br>　　勉強時間は、1分も増やしません。</div>
+<p>いちばん障壁が低い。ただし「量は要らない本」と誤読されうる。</p>
+<h3>案B　順番を出す</h3>
+<div class="indent">　　勉強を増やす前に、<br>　　やめることが45個あります。</div>
+<div class="indent">　　同じ教科書。同じ3時間。<br>　　それでも点が違うのは、<br>　　順番が逆だからです。</div>
+<p>本文と完全に一致する。フックはAより弱い。</p>
+<h3>案C　実演をそのまま帯に置く　　推奨</h3>
+<div class="indent">　　1　4　9　1　6　2　5　3　6　4　9</div>
+<div class="indent">　　この11個を、10秒で覚えてください。<br>　　たぶん、途中で止まります。</div>
+<div class="indent">　　では、1つだけ。<br>　　これは1、4、9、16、25、36、49です。</div>
+<div class="indent">　　いま、あなたの記憶力は<br>　　1ミリも変わっていません。</div>
+<p>書店で帯だけ読んだ人が、その場で1回失敗して、その場で成功する。<br>勉強法の棚で、帯が体験になっている本は、たぶんない。</p>
+<h3>帯裏（3案共通）</h3>
+<div class="indent">　　「今日、何時間やったの？」<br>　　　その質問を、変えるだけでした。</div>
+<div class="indent">　　　　　　　　　　　　　　　　　　　保護者の方へ</div>
+<div class="pagebreak"></div>
+<h2>3　カバー袖（表1そで）</h2>
+<div class="indent">　　クラスに1人はいる、あの子。<br>　　部活にも行って、家でそんなに長くやっている様子もないのに、<br>　　テストになると点を取ってくる。</div>
+<div class="indent">　　同じ教科書。同じ先生。同じ授業。<br>　　勉強した時間は、こちらのほうが長いくらいです。</div>
+<div class="indent">　　差は、才能ではありませんでした。<br>　　あの子が「やっていること」でもありませんでした。</div>
+<div class="indent">　　あの子が、やっていないこと。<br>　　それが45個あります。</div>
+<div class="indent">　　6年間で2000人以上を1人ずつ見てきて、<br>　　伸びた子が最初にやったのは、いつも同じでした。<br>　　増やすことではなく、やめることです。</div>
+<div class="pagebreak"></div>
+<h2>4　目次</h2>
+<h3>見せ方</h3>
+<p>1行につき2段。上が「あの子がやらないこと」、下が「かわりにやっていること」。<br>表紙の約束を、目次で45回くり返すことになる。</p>
+<p>目次の冒頭に、1行だけ置く。</p>
+<div class="indent">　　上が、あの子が絶対にやらないこと。<br>　　下が、かわりにやっていることです。</div>
+<h3>前付</h3>
+<div class="indent">　　読む前に　あなたは、サボっていません<br>　　はじめに　毎日5時間やって、伸びない子がいた<br>　　巻頭　　　あの子が、絶対にやらない45のこと（チェック欄）<br>　　序章　　　あなたは、何を数えている？</div>
+<h3>第1章【考え方】同じ参考書、同じ3時間。なぜ差がつくのか</h3>
+<div class="indent">　「何時間やればいいんですか」への答え</div>
+<div class="indent">　01　勉強した？と聞かれて、時間で答える<br>　　　　成績は、時間ではなく、できるに変えた数で決まる</div>
+<div class="indent">　02　授業でわかったから、その単元は復習しない<br>　　　　「わかっている」と「できる」は、別の段階</div>
+<div class="indent">　03　解けなかった問題を、もう一度そのまま解く<br>　　　　×の場所ではなく、最後にできていた場所に戻る</div>
+<h3>第2章【決め方】やることを増やす前に、捨てる</h3>
+<div class="indent">　「どの参考書がいいですか」への答え</div>
+<div class="indent">　04　実力がつくまで、過去問を開かない<br>　　　　過去問は、解くためではなく、捨てるために最初に開く</div>
+<div class="indent">　05　3冊が途中のまま、4冊目を買う<br>　　　　買う前に、終わらせる1冊を決める</div>
+<div class="indent">　06　テスト前に、ワークの1ページ目から始める<br>　　　　1ページ目ではなく、配点の大きい「できない」から始める</div>
+<div class="indent">　07　5つの苦手を、1日ずつ順ぐりに回す<br>　　　　苦手は、順番を決めてから1つずつ</div>
+<div class="indent">　08　模試を、点数と判定だけ見て片づける<br>　　　　模試は、捨てていい単元を見つけるために見る</div>
+<div class="indent">　09　まだいない自分を基準に、計画を立てる<br>　　　　計画は、今の自分からしか立てられない</div>
+<div class="indent">　10　範囲の全部に、一度ずつ手をつける<br>　　　　捨てた単元を言えるのが、設計した証拠</div>
+<h3>第3章【見つけ方】「全部わからない」を、1行に変える</h3>
+<div class="indent">　「わからないところが、わからないんです」への答え</div>
+<div class="indent">　11　問題文の途中で、わかった気になって解き始める<br>　　　　問題文は、最後まで読んでから解く</div>
+<div class="indent">　12　何を聞かれているか決めないまま、本文を読み直す<br>　　　　解く前に、設問を自分の言葉で言い換える</div>
+<div class="indent">　13　板書を、全部そのまま写す<br>　　　　板書は写さず、先生の話を1行に要約する</div>
+<div class="indent">　14　「ここ、全部わからないです」と言う<br>　　　　全部ではなく、止まった1行を指さす</div>
+<div class="indent">　15　難しいと感じて、参考書を最初から読み直す<br>　　　　知らないと、わかっていないを分けてから動く</div>
+<div class="indent">　16　図に描かずに、文章のまま頭で考える<br>　　　　図に描き直せないものは、まだつかめていない</div>
+<div class="indent">　17　長文を、本文の1行目から読み始める<br>　　　　設問を先に読んで、本文に探しに行く</div>
+<h3>第4章【覚え方】1つ覚えて、10動かす</h3>
+<div class="indent">　「暗記が苦手なんです」への答え</div>
+<div class="indent">　18　初めて見る問題を、ゼロから考え続ける<br>　　　　解く前に、前に見た形を探す</div>
+<div class="indent">　19　なぜを持たずに、語呂だけで覚える<br>　　　　覚える前に「なぜ」を1つつける</div>
+<div class="indent">　20　単語を、1語10回ずつ書いて覚える<br>　　　　1つの例文で、10個覚える</div>
+<div class="indent">　21　同じ内容を、科目の数だけ覚え直す<br>　　　　覚えたものは、別の科目で1回使う</div>
+<div class="indent">　22　似ている3つを、それぞれ丸ごと覚える<br>　　　　似たものは、違いだけで覚える</div>
+<div class="indent">　23　出てこなかったら、すぐ答えをめくる<br>　　　　覚えるとは、見ることではなく思い出すこと</div>
+<div class="indent">　24　教科書を見ながら、まとめノートを作る<br>　　　　まとめは紙ではなく、頭のなかに作る</div>
+<h3>第5章【確かめ方】「わかった」を、信じない</h3>
+<div class="indent">　「解説を読んだらわかるのに、テストだと解けない」への答え</div>
+<div class="indent">　25　解説を読んで納得したら、次の問題へ進む<br>　　　　解説を閉じて、白紙に解き直す</div>
+<div class="indent">　26　「わかった」を、テストの日まで信じる<br>　　　　わかった、は出せるまで信じない</div>
+<div class="indent">　27　解答を横に置いたまま、○をつける<br>　　　　白紙に出せるかで判定する</div>
+<div class="indent">　28　説明できないのは、説明が下手なだけだと思う<br>　　　　説明できないものは、まだできていない</div>
+<div class="indent">　29　時間を測らずに解いて、解けたと数える<br>　　　　本番と同じ時間で解けて、はじめてできる</div>
+<div class="indent">　30　解けない問題に印をつけて、先へ進む<br>　　　　解けない問題は、隠さず集める</div>
+<div class="indent">　31　全部は解けないから、白紙のまま飛ばす<br>　　　　途中までを自力で書く。そこが、できないの境目</div>
+<h3>第6章【直し方】間違いを、次の1個に変える</h3>
+<div class="indent">　「解き直したのに、また同じところを間違えた」への答え</div>
+<div class="indent">　32　間違えた問題に、赤で正解を写す<br>　　　　正解より先に、どこで崩れたかを探す</div>
+<div class="indent">　33　ケアレスミス、次は気をつける、で終える<br>　　　　ケアレスミスと言った瞬間、原因は消える</div>
+<div class="indent">　34　3回間違えた問題の、4回目をやる<br>　　　　4回目より、1つ前のできていた問題を解き直す</div>
+<div class="indent">　35　間違いノートに、問題と正解を写す<br>　　　　間違いノートには、正解ではなく原因を書く</div>
+<div class="indent">　36　10個の間違いを、10問とも順に直す<br>　　　　間違いは数えず、種類で分ける</div>
+<div class="indent">　37　わからなかった解説を、最初から読み直す<br>　　　　解説は、どこから読めなくなったかだけ探す</div>
+<div class="indent">　38　点が下がったら、自分を責める<br>　　　　下がったら、自分ではなく、変えたことを見る</div>
+<h3>第7章【続け方】やる気を、計画に入れない</h3>
+<div class="indent">　「家に帰ると、やる気が出ないんです」への答え</div>
+<div class="indent">　39　やる気が出るのを待つ<br>　　　　やる気は、計画に入れない</div>
+<div class="indent">　40　机に座ってから、何をやるか決める<br>　　　　最初の10分は、毎日同じことにする</div>
+<div class="indent">　41　勉強した時間を記録する<br>　　　　時間ではなく、できた数を記録する</div>
+<div class="indent">　42　解けないまま、その日を終える<br>　　　　今日できた1つ、で終える</div>
+<div class="indent">　43　計画が崩れてから、作り直す<br>　　　　崩れる日は、最初から計画に入れておく</div>
+<div class="indent">　44　忘れてから、最初から覚え直す<br>　　　　どうせ忘れる。戻る日を、先に決める</div>
+<div class="indent">　45　毎晩、明日の計画を立て直す<br>　　　　計画は、週に1回だけ直す</div>
+<h3>巻末</h3>
+<div class="indent">　　まとめ　　　45を1枚にする<br>　　保護者の方へ　「何時間やったの？」を、変えるだけでした<br>　　付録　　　　できないノートの作り方<br>　　おわりに　　1日14時間やって、偏差値42だった</div>
+<div class="pagebreak"></div>
+<h2>5　章タイトルを変えた箇所</h2>
+<table><tr><th></th><th>現行</th><th>案</th><th>理由</th></tr><tr><td>第2章</td><td>何をやらないかを、先に決める</td><td>やることを増やす前に、捨てる</td><td>巻頭の順番（1やめる 2覚える 3増やす）と語をそろえた</td></tr><tr><td>第3章</td><td>「全部わからない」を、1行に絞る</td><td>「全部わからない」を、1行に変える</td><td>「絞る」は作業、「変える」は結果</td></tr><tr><td>第5章</td><td>わかった、を、できる、に変える</td><td>「わかった」を、信じない</td><td>やらない形にすると表紙とそろう。中身も同じ</td></tr><tr><td>第7章</td><td>試験の日まで、数を落とさない</td><td>やる気を、計画に入れない</td><td>章のいちばん強い1行を、そのまま章タイトルにした</td></tr></table>
+<p>第1・4・6章は現行のままがいい。</p>
+<div class="pagebreak"></div>
+<h2>6　内容紹介文（書店・ネット書店用　400字）</h2>
+<p>やっているのに、伸びない。<br>クラスに1人はいる「あの子」は、部活にも行って、家でそんなに長くやっている様子もないのに、テストになると点を取ってくる。同じ教科書、同じ先生、同じ授業。勉強した時間は、こちらのほうが長いくらいなのに。</p>
+<p>差は、才能ではありません。あの子が「やっていること」でもありません。<br>あの子が「やっていないこと」です。</p>
+<p>スポーツなら、うまい人の動きは目に見えます。でも勉強は、頭のなかが見えない。何をしているのか、そして何をしていないのかが、誰にも見えない。だから誰も教えてくれませんでした。</p>
+<p>本書は、6年間で2000人以上を1人ずつ見てきた著者が、伸びる子が絶対にやらないことを45個、そのまま並べた本です。1つの見開きに1つ。左に伸びない人、右に伸びる人。今日からやめるのは、そのうちの3つか4つ。</p>
+<p>勉強時間は、1分も増やしません。増やすのは、いちばん最後です。</p>
+<div class="pagebreak"></div>
+<h2>7　決めてほしいこと</h2>
+<p>1　帯は、A・B・Cのどれか。Cを推す<br>2　副題は現行か、案3（伸びる人と伸びない人が、毎日分かれる45の場面）か<br>3　章タイトル4本の差し替えを入れるか<br>4　目次を2段にするか、法則文の1段だけにするか。2段は約6ページ使う</p>
+</body></html>

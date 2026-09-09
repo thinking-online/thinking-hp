@@ -52,6 +52,15 @@ def law_title(n):
     m2 = re.match(r'^# 法則\d+\s+(\S+)', raw)
     return t, (m2.group(1) if m2 else "")
 
+def yaranai_lines():
+    """巻頭のチェックリストから、法則番号ごとの「やらないこと」を拾う。"""
+    raw = open(os.path.join(M, "やらない45.md"), encoding="utf-8").read()
+    return {int(m.group(1)): m.group(2).strip()
+            for m in re.finditer(r'^　\s*(\d+)　□　(.+)$', raw, re.M)}
+
+YARANAI = None
+
+
 def render_flow(path, accent=""):
     """流し込みの節（前付・章・巻末）。編集用の注記は落とす。"""
     head, body = body_of(path)
@@ -127,7 +136,7 @@ def build_blocks():
              f'<div class="dtag">【{tag1}】</div>'
              f'<div class="dttl">{bt.inline_v(ttl1)}</div><div class="dbar"></div></div>')
     B.append(Block("ch1door", door1, even=True, numbered=False,
-                   toc=(f"第1章　{ttl1}", 0), run=f"第1章　{ttl1}"))
+                   toc=(f"第1章【{tag1}】{ttl1}", 0), run=f"第1章　{ttl1}"))
     h1 = render_flow("第1章.md")
     h1 = re.sub(r'<h1>.*?</h1>', '', h1, flags=re.S)
     B.append(Block("ch1", h1, run=f"第1章　{ttl1}"))
@@ -137,7 +146,7 @@ def build_blocks():
         door, inner, end = render_tobira(c)
         run = f"第{c}章　{ttl}"
         B.append(Block(f"ch{c}door", door, even=True, numbered=False,
-                       toc=(f"第{c}章　{ttl}", 0), run=run))
+                       toc=(f"第{c}章【{tag}】{ttl}", 0), run=run))
         B.append(Block(f"ch{c}q", inner, run=run))
         a, b = CH_RANGE[c]
         for n in range(a, b + 1):
@@ -189,16 +198,28 @@ def assemble(blocks, blanks, pages):
             + "\n".join(parts) + "\n</body></html>")
 
 def make_toc(blocks, pages):
-    rows = ['<div class="toc"><div class="tocttl">目次</div>']
+    """目次。法則は2段にする。
+    上が「あの子がやらないこと」、下が「かわりにやっていること」。
+    表紙の約束を、目次で45回くり返すことになる。"""
+    rows = ['<div class="toc"><div class="tocttl">目次</div>',
+            '<div class="tocnote">上が、あの子が絶対にやらないこと。<br>'
+            '下が、かわりにやっていることです。</div>']
     for b in blocks:
         if not b.toc:
             continue
         label, lv = b.toc
         p = pages.get(b.bid)
         num = bt.inline_v(str(p)) if p else "　"
-        cls = "trow" if lv == 0 else "trow sub"
-        rows.append(f'<div class="{cls}"><span class="tl">{bt.inline_v(label)}</span>'
-                    f'<span class="td"></span><span class="tp">{num}</span></div>')
+        if lv == 0:
+            rows.append(f'<div class="trow"><span class="tl">{bt.inline_v(label)}</span>'
+                        f'<span class="td"></span><span class="tp">{num}</span></div>')
+            continue
+        n = int(b.bid[3:])
+        no = bt.inline_v(f"{n:02d}")
+        rows.append(f'<div class="trow sub"><span class="tl">'
+                    f'<span class="tn">{no}</span>{bt.inline_v(YARANAI.get(n, ""))}</span>'
+                    f'<span class="td"></span><span class="tp">{num}</span></div>'
+                    f'<div class="tsub">→　{bt.inline_v(label.split("　", 1)[-1])}</div>')
     rows.append("</div>")
     return "".join(rows)
 
@@ -348,6 +369,8 @@ def main():
     os.makedirs("build", exist_ok=True)
     bp.HR_AS_PAGEBREAK = False
     bp.inline = bt.inline_v
+    global YARANAI
+    YARANAI = yaranai_lines()
     blocks = build_blocks()
     blanks, pages, total = solve(blocks)
     real, rtotal = page_map("build/_work.pdf", blocks)

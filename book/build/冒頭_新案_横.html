@@ -1,0 +1,240 @@
+<!doctype html><html lang='ja'><head><meta charset='utf-8'><title>冒頭 新案 横組み</title><style>
+@page { size: A5; margin: 13mm 14mm 11mm 14mm; }
+@page :first { margin: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 9.1pt; line-height: 1.72;
+       color: #1c1c1c; margin: 0; }
+p { margin: 0 0 0.72em 0; }
+code { font-size: 0.9em; color: #666; background: #f2f2f2; padding: 0 .25em; border-radius: 2px; }
+hr.rule { border: 0; border-top: 1px solid #ddd; margin: 1.6em 0; }
+h1 { font-size: 15.5pt; line-height: 1.45; margin: 0 0 .95em 0; padding-bottom: .5em;
+     border-bottom: 2px solid #1c1c1c; page-break-before: always; page-break-after: avoid; }
+h2 { font-size: 12.5pt; margin: 2.0em 0 .8em 0; page-break-after: avoid; }
+h3 { font-size: 10.4pt; margin: 1.5em 0 .5em 0; color: #444; page-break-after: avoid; }
+h4 { font-size: 9.8pt; margin: 1.2em 0 .4em 0; color: #555; page-break-after: avoid; }
+ul { margin: 0 0 1em 0; padding-left: 1.2em; }
+li { margin-bottom: .35em; }
+table { border-collapse: collapse; width: 100%; font-size: 8.4pt; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: .38em .5em; text-align: left; vertical-align: top; }
+th { background: #f4f4f4; }
+.indent { margin: 0 0 1em 0; white-space: pre-wrap; font-size: 9.2pt; line-height: 1.85; }
+.vs { font-size: 8.2pt; margin: .28em 0 .85em 0; }
+.vs th, .vs td { padding: .3em .5em; line-height: 1.45; }
+.vs th:first-child, .vs td:first-child { width: 21%; font-size: 7.8pt; color: #8a8a8a;
+                                          background: #fafafa; white-space: nowrap; }
+.vs th:nth-child(2), .vs td:nth-child(2) { width: 39.5%; color: #5a5a5a; }
+.vs th:nth-child(3), .vs td:nth-child(3) { width: 39.5%; }
+.vs th { background: #f2f2f2; color: #444; font-size: 8pt; }
+.vs th:nth-child(3) { color: #1c1c1c; }
+.vs td:nth-child(3) { background: #f4f4f4; }
+.vs.f1 td:nth-child(3), .vs.f1 th:nth-child(3) { background: #eef4fb; }
+.vs.f2 td:nth-child(3), .vs.f2 th:nth-child(3) { background: #eef6f1; }
+.vs.f3 td:nth-child(3), .vs.f3 th:nth-child(3) { background: #faf4e6; }
+.vs.f4 td:nth-child(3), .vs.f4 th:nth-child(3) { background: #fdf0f5; }
+.vs.f5 td:nth-child(3), .vs.f5 th:nth-child(3) { background: #fbeeec; }
+.vs.f6 td:nth-child(3), .vs.f6 th:nth-child(3) { background: #f5eefa; }
+.cklist { margin: .25em 0 .7em 0; }
+.cols2 { column-count: 2; column-gap: 7mm; margin-top: .2em; }
+.cols2 h3 { margin: .55em 0 .3em 0; font-size: 8.6pt; color: #666; break-after: avoid; }
+.cols2 h3:first-child { margin-top: 0; }
+.cols2 .ck { break-inside: avoid; padding: .16em 0; }
+.ck { display: flex; align-items: flex-start; gap: .5em; padding: .2em 0; font-size: 8.8pt; }
+.ck .n { width: 1.6em; text-align: right; color: #9a9a9a; font-size: 7.8pt; padding-top: .18em; }
+.ck .box { width: .78em; height: .78em; border: 1px solid #9a9a9a; border-radius: 1px;
+           display: inline-block; flex: none; margin-top: .32em; }
+.ck .t { flex: 1; }
+.frows { margin: .6em 0 1.2em 0; }
+.frow { display: flex; align-items: baseline; gap: .5em; padding: .42em 0; }
+.frow .fl { white-space: nowrap; }
+.frow .fd { flex: 1 1 auto; border-bottom: 1px solid #cfcfcf; height: .85em; }
+.frow .fu { white-space: nowrap; color: #777; font-size: 8.6pt; }
+.figbox { border: 1px dashed #b0b0b0; color: #777; text-align: center; padding: 1.5em .8em;
+          margin: 1.1em 0; font-size: 8.6pt; border-radius: 3px; background: #fafafa; }
+.pagelabel { font-size: 7.3pt; letter-spacing: .18em; color: #8a8a8a; border-bottom: 1px solid #e2e2e2;
+             padding-bottom: .35em; margin: 0 0 1.1em 0; page-break-after: avoid; }
+.newpage { page-break-before: always; }
+.pagebreak { page-break-before: always; height: 0; }
+h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
+.front p { font-size: 9.8pt; line-height: 1.85; margin: 0 0 .95em 0; }
+.front .indent { font-size: 11pt; line-height: 2.0; }
+.lbl { font-size: 7.3pt; letter-spacing: .16em; color: #9a9a9a; margin: .72em 0 .22em 0; page-break-after: avoid; }
+.qtext { font-size: 12.5pt; line-height: 1.55; margin: 0 0 1em 0; }
+.situ { margin: 0 0 1.1em 0; }
+.hintbox { background: #f6f6f2; border-left: 3px solid #c9c2a6; padding: .6em .85em; margin: 0 0 .9em 0; font-size: 8.9pt; }
+.lawbox { font-size: 11pt; line-height: 1.45; padding: .5em .85em; margin: .1em 0 .75em 0;
+          border-left: 4px solid #1c1c1c; background: #f7f7f7; }
+.lbl-bad, .lbl-good { color: #6a6a6a; }
+.lbl-good { border-left: 3px solid #1c1c1c; padding-left: .5em; margin-left: -.65em; }
+.ans { margin: 0 0 .6em 0; }
+.cornerfig { font-size: 7.8pt; color: #8a8a8a; line-height: 1.75; border-top: 1px dotted #dcdcdc;
+             padding-top: .55em; margin: 0; }
+.rubric { font-size: 8pt; color: #8a8a8a; letter-spacing: .04em; line-height: 1.7; margin: 0 0 1.3em 0; }
+.conclbox { border-top: 1px solid #ddd; padding-top: .55em; margin: 0 0 .8em 0; }
+.lawbox.f1 { border-left-color: #2f6fb0; } .lawbox.f2 { border-left-color: #2e8b57; }
+.lawbox.f3 { border-left-color: #a8791b; } .lawbox.f4 { border-left-color: #cc3d78; }
+.lawbox.f5 { border-left-color: #c0392b; } .lawbox.f6 { border-left-color: #7b3fa0; }
+/* 扉 */
+.cover { height: 210mm; width: 148mm; box-sizing: border-box; padding: 42mm 20mm 20mm 20mm;
+         page-break-after: always; }
+.cover .kicker { font-size: 9pt; color: #777; letter-spacing: .1em; }
+.cover .t { font-size: 18.5pt; line-height: 1.6; margin: 1.2em 0 .6em 0; }
+.cover .s { font-size: 12pt; color: #333; margin-bottom: 3.5em; }
+.cover .obi { font-size: 9.4pt; line-height: 1.9; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;
+              padding: 1em 0; margin-bottom: 3em; }
+.cover .au { font-size: 11pt; }
+.cover .note { font-size: 8pt; color: #999; margin-top: 3.5em; line-height: 1.8; }
+/* 目次 */
+.toc { page-break-after: always; }
+.toc h1 { page-break-before: avoid; }
+.toc .row { display: flex; justify-content: space-between; font-size: 9.4pt; padding: .28em 0;
+            border-bottom: 1px dotted #e0e0e0; }
+.toc .row .r { color: #999; font-size: 8.6pt; }
+.toc .grp { margin-top: 1.4em; font-size: 8pt; letter-spacing: .16em; color: #9a9a9a; }
+/* 中扉 */
+.part { page-break-before: always; padding-top: 55mm; page-break-after: always; }
+.part .num { font-size: 8.4pt; letter-spacing: .22em; color: #999; }
+.part .ttl { font-size: 18pt; line-height: 1.55; margin-top: .8em; }
+.part .bar { width: 34mm; height: 3px; background: #1c1c1c; margin-top: 1.6em; }
+.part.f1 .bar { background: #2f6fb0; } .part.f2 .bar { background: #2e8b57; }
+.part.f3 .bar { background: #a8791b; } .part.f4 .bar { background: #cc3d78; }
+.part.f5 .bar { background: #c0392b; } .part.f6 .bar { background: #7b3fa0; }
+.meta { font-size: 8pt; color: #a0a0a0; border: 1px solid #eee; background: #fbfbfb;
+        padding: .5em .7em; margin: 0 0 1.1em 0; line-height: 1.7; }
+
+@page { size: A5; margin: 16mm 15mm 15mm 15mm; }
+body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 10.4pt; line-height: 1.95; }
+p { margin: 0 0 1.15em 0; }
+h1 { font-size: 15pt; margin: 0 0 1.6em 0; padding-bottom: .5em;
+     border-bottom: 2px solid #1a1a1a; page-break-after: avoid; }
+.pnum { font-size: 7.6pt; letter-spacing: .22em; color: #a8a8a8; margin: 0 0 1.1em 0;
+        page-break-before: always; page-break-after: avoid; }
+.pnum:first-of-type { page-break-before: avoid; }
+.indent { white-space: pre-wrap; font-size: 11pt; letter-spacing: .12em;
+          margin: .4em 0 1.3em 0; }
+.sep { border: 0; border-top: 1px solid #ececec; margin: 1.4em 0; height: 0; }
+</style></head><body><div class="front"><h1>はじめに　1分で、証明します</h1>
+<div class="pnum">1ページ目</div>
+<p>いきなりですが、10秒だけ、付き合ってください。</p>
+<p>次の11個の数字を、10秒で覚えてください。</p>
+<p>声に出しても、指で追ってもかまいません。</p>
+<div class="indent">　　1　4　9　1　6　2　5　3　6　4　9</div>
+<p>はい、10秒。</p>
+<div class="indent">　　　……</div>
+<p>本を伏せて、言えますか。</p>
+<p>たぶん、6個目か7個目で、あやしくなったはずです。</p>
+<p>それが普通です。</p>
+<p>（めくってください）</p>
+<div class="pnum">2ページ目</div>
+<p>では、1つだけ、教えます。</p>
+<p>この並びの正体は、これです。</p>
+<div class="indent">　　1　4　9　16　25　36　49</div>
+<p>1×1、2×2、3×3、4×4、5×5、6×6、7×7。</p>
+<p>この法則を知ってしまうと、もう、さっきまでの見え方には戻れません。</p>
+<p>もう一度、見てください。</p>
+<div class="indent">　　1　4　9　1　6　2　5　3　6　4　9</div>
+<p>10秒も、いりませんよね。</p>
+<p>というより、しばらく忘れられません。</p>
+<p>（めくってください）</p>
+<div class="pnum">3ページ目</div>
+<p>いま、何が起きたか。</p>
+<p>さっきと今で、あなたの記憶力は変わっていません。<br>集中力も、やる気も、1分前と同じです。</p>
+<p>必死に覚えようとして声に出すことも、書いて覚えることも、していません。</p>
+<p>努力の量は、むしろ減りました。</p>
+<p>変わったのは、数字の見方だけです。</p>
+<p>（めくってください）</p>
+<div class="pnum">4ページ目</div>
+<p>「頭がいい」という言葉があります。</p>
+<p>たいてい、生まれつきのものとして使われます。<br>あの子は頭がいい。自分は、そうじゃない。</p>
+<p>でも、さっきの11個は、どうでしたか。</p>
+<p>あなたは1分前より、確実に多く覚えられるようになりました。<br>生まれつきのものは、1ミリも変わっていないのに。</p>
+<p>頭が良くなる、というのは、こういうことです。</p>
+<p>見方を1つ知る。それだけで、同じ時間で入る量が変わる。</p>
+<p>この本は、それを45回やります。</p>
+<p>（めくってください）</p>
+<div class="pnum">5ページ目</div>
+<p>その前に、1つ聞かせてください。</p>
+<p>「ちゃんと勉強してるの？」</p>
+<p>言われたこと、ありますか。</p>
+<p>テストが返ってきた日。点数を見た親に。あるいは、先生に。</p>
+<p>そのときのことを、思い出してください。</p>
+<p>あなたは、本当に、勉強していなかったのでしょうか。</p>
+<p>そんなわけがない。</p>
+<p>授業は受けています。課題も出しています。<br>テスト前は、机に向かっています。<br>部活でへとへとになった日も、やってはいたはずです。</p>
+<p>勉強のやり方の本を、わざわざ開く人が、<br>勉強していないということは、ありません。</p>
+<p>（めくってください）</p>
+<div class="pnum">6ページ目</div>
+<p>やっている。それなのに、点が違う。</p>
+<p>同じ教科書。同じ先生。同じ授業。<br>勉強した時間は、こちらのほうが長いくらいです。</p>
+<p>それでも、クラスに1人はいる「あの子」は、点を取ってきます。</p>
+<div class="indent">　　部活に行っているのに、成績がいい。</div>
+<div class="indent">　　塾に行っていないのに、成績がいい。</div>
+<div class="indent">　　勉強している様子がないのに、成績がいい。</div>
+<p>なぜですか。</p>
+<p>やっぱり才能ですか。結局、地頭ですか。</p>
+<p>一度は、そう思ってあきらめかけたかもしれません。</p>
+<p>（めくってください）</p>
+<div class="pnum">7ページ目</div>
+<p>私は、高校3年のとき、1日14時間、勉強していました。</p>
+<p>偏差値は42でした。受けた10校は、全部落ちました。</p>
+<p>勉強しているのに伸びない人の、日本代表みたいなものでした。</p>
+<p>だから、才能のせいにしたくなる気持ちは、よくわかります。<br>そのほうが、ラクだからです。</p>
+<p>でも、そのあと6年で2000人以上を1人ずつ見てきて、<br>才能でしか説明できない子は、1人もいませんでした。</p>
+<p>（めくってください）</p>
+<div class="pnum">8ページ目</div>
+<p>質問を、もう1つだけ。</p>
+<p>バケツに、穴が空いています。水を溜めたい。まず、何をしますか。</p>
+<div class="indent">　　ア　注ぐ水の量を、増やす</div>
+<div class="indent">　　イ　そのまま、注ぎ続ける</div>
+<div class="indent">　　ウ　先に、穴をふさぐ</div>
+<p>ウ、ですよね。</p>
+<p>では、勉強のときは、どうでしょうか。</p>
+<div class="indent">　　点が足りない　　→　勉強時間を増やす</div>
+<div class="indent">　　覚えられない　　→　もう1回、書く</div>
+<div class="indent">　　終わらない　　　→　参考書を、もう1冊</div>
+<p>ほとんどの人が、アを選んでいます。私も、そうでした。</p>
+<p>（めくってください）</p>
+<div class="pnum">9ページ目</div>
+<p>さっきの11個の数字を、思い出してください。</p>
+<p>あそこで、いちばんやってはいけなかったのは、何でしたか。</p>
+<p>時間を増やすこと。何回も書くこと。何回も見返すこと。</p>
+<p>見方を知らないまま、量だけを増やすことです。</p>
+<p>順番があります。</p>
+<div class="indent">　　1　やってはいけないことを、やめる</div>
+<div class="indent">　　2　結果を出している人の、やり方を知る</div>
+<div class="indent">　　3　その正しいやり方で、量をやる</div>
+<p>多くの人は、3から始めます。1と2を飛ばして、量だけを増やします。</p>
+<p>量が足りないのではありません。順番が、逆なのです。</p>
+<p>（めくってください）</p>
+<div class="pnum">10ページ目</div>
+<p>では、2をやればいい。結果を出している人のやり方を、知ればいい。</p>
+<p>そう思います。でも、ここに問題があります。</p>
+<p>スポーツなら、うまい人の動きは目に見えます。<br>動画で見て、ああ、こう構えるのか、と真似ができます。</p>
+<p>勉強は、見えません。</p>
+<p>同じ教室で、同じ授業を受けて、同じ問題集を開いている。<br>外から見えるのは、そこまでです。</p>
+<p>あの子が、その3時間のあいだ、頭のなかで何をしているのか。<br>そして、何をしていないのか。</p>
+<p>それは、誰にも見えません。</p>
+<p>だから、あなたのせいではありません。<br>見えないものは、真似のしようがないからです。</p>
+<p>（めくってください）</p>
+<div class="pnum">11ページ目</div>
+<p>この本は、そこを見えるようにします。</p>
+<p>あの子が、勉強中に絶対にやらないこと。<br>そして、かわりに何をしているのか。</p>
+<p>45個、並べます。</p>
+<p>あの子は、特別ではありません。<br>やってはいけないことを避けて、やるべきことを正しくやっているだけです。</p>
+<p>そして、それは全部、真似ができます。</p>
+<p>（めくってください）</p>
+<div class="pnum">12ページ目</div>
+<p>45個は、バラバラではありません。6つの場面に分かれています。</p>
+<div class="indent">　　選ぶ　　入れる　　つなげる　　出す　　直す</div>
+<p>この5つを1周すると、できないが1つ、できるに変わります。</p>
+<p>あとは、それを試験の日まで回すだけ。それが6つ目です。</p>
+<div class="indent">　　回す</div>
+<p>受験は、特別なことではありません。<br>この6つに、締切がついただけです。</p>
+<p>（めくってください）</p>
+<div class="pnum">13ページ目</div>
+<p>先に言っておきます。</p>
+<p>45個のうち、あなたが今やっているものが、必ずあります。<br>たいてい、3つか4つです。</p>
+<p>勉強時間は、1分も増やしません。参考書も増やしません。<br>やる気も、性格も、生まれつきのものも、今日は変えません。</p>
+<p>やめるだけです。</p>
+<p>次のページから、その45個を並べます。</p>
+<p>上から読んで、自分がやっているものに、チェックを入れてください。</p>
+<p>1分で終わります。</p></div></body></html>

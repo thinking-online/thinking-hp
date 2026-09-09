@@ -468,6 +468,29 @@ def build_saishu(outpath):
     return outpath
 
 
+def build_mokuji(outpath):
+    body = open(os.path.join(M, "企画書", "目次_最終.md"), encoding="utf-8").read()
+    cover = """<div class="cover">
+<div class="kicker">目次　最終案　2026年9月9日</div>
+<div class="t">あの子が、<br>勉強中に絶対にやらないこと</div>
+<div class="s">伸びる人と伸びない人が、毎日分かれる45の場面</div>
+<div class="au">朝倉 徹大（受験の王様）</div>
+<div class="note">章のリード文を6つとも同じ形にして、<br>
+表紙の約束を目次のなかで6回くり返す形にしたもの。</div>
+</div>"""
+    css = CSS + """
+h2 { font-size: 12.5pt; margin: 1.5em 0 .3em 0; }
+h2 + h2 { font-size: 10.5pt; font-weight: 400; color: #444;
+          margin: 0 0 1em 0; padding-bottom: .6em; border-bottom: 1px solid #e0e0e0; }
+.indent { font-size: 10.4pt; line-height: 2.0; letter-spacing: .01em; }
+"""
+    doc = ("<!doctype html><html lang='ja'><head><meta charset='utf-8'>"
+           f"<title>目次 最終案</title><style>{css}</style></head><body>\n"
+           + cover + md_to_html(body) + "\n</body></html>")
+    open(outpath, "w", encoding="utf-8").write(doc)
+    return outpath
+
+
 if __name__ == "__main__":
     os.makedirs("build", exist_ok=True)
     print(build_daihon("build/台本.html"))
@@ -475,3 +498,4 @@ if __name__ == "__main__":
     print(build_copy("build/コピー案.html"))
     print(build_kousei("build/新構成案.html"))
     print(build_saishu("build/最終構成案.html"))
+    print(build_mokuji("build/目次_最終案.html"))

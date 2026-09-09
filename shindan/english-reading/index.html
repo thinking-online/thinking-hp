@@ -426,12 +426,8 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   display:inline-block;padding:4px 10px;margin:8px 0 12px;
 }
 .camp .body{font-size:.86rem;line-height:1.9;color:rgba(250,247,239,.92)}
-.camp .camp-cta{
-  margin-top:12px;font-size:.84rem;background:rgba(227,176,75,.12);
-  border:1.5px dashed var(--gold);border-radius:8px;padding:10px 12px;
-  color:#fff;
-}
-.camp .camp-cta b{color:var(--gold);font-weight:900}
+.camp .btn{margin-top:12px}
+.camp .copied{margin-top:10px}
 
 /* ===== 追従バー ===== */
 .stickybar{
@@ -510,15 +506,16 @@ const STORE_KEY = "thinking_eigo_shindan_v1";
 const SEND_RETURN = "この結果をコピーして、そのままLINEで送ってください。受験の王様が結果を見て、<b>今の状態と「やるべきこと」をあなた個別に整理して返します。</b>";
 /* ★②' キャンプ告知（結果画面下部のバナー） */
 const CAMP = {
-  badge: "NEXT PROJECT",
-  dates: "COMING SOON",
-  title: "英語の読み方 特化イベント",
-  sub:   "準備中｜案内はLINEでいち早く届きます",
-  body:  "「読み方」を実演で叩き込むイベントを準備しています。診断結果を送ってくれた人から優先的に案内します。",
-  cta:   "公式LINEの通知をオンにして、<b>案内を見逃さないで</b>ください。"
+  badge: "無料モニター募集 予定",
+  dates: "5 DAYS",
+  title: "5日間で「英語の読み方」を攻略",
+  sub:   "無料モニターイベント｜開催予定",
+  body:  "5日間で英語の読み方を攻略する無料モニターイベントを開催予定です。気になる人は、LINEで「<b>モニター</b>」とだけ送っておいてください。先行して案内していきます。",
+  word:  "モニター"
 };
-/* ★②'' 解説セクションで紹介する記事URL */
-const ARTICLE_URL = "https://thinking-online.com/lp/sse/";
+/* ★②'' 解説セクションのリンク（個別指導LP／note問題集） */
+const SSE_URL  = "https://thinking-online.com/lp/sse/";
+const NOTE_URL = "https://note.com/king_of_juken/m/mbb67149d6ac4";
 
 /* ---------- 学年（アンケートは7分岐 / テストは6セット） ---------- */
 const GRADES = [
@@ -1147,7 +1144,8 @@ function renderResult(){
         <div class="pcap">TRAINING PRINCIPLE</div>
         <div class="pmain">5ステップの徹底 ×<br><b>幹と枝を分ける</b>トレーニング</div>
       </div>
-      <a class="article-link" href="${ARTICLE_URL}" target="_blank" rel="noopener">📖 この「読み方」の考え方をさらに詳しく<small>受験の王様の解説記事を読む</small><span class="go">→ 記事を開く</span></a>
+      <a class="article-link" href="${SSE_URL}" target="_blank" rel="noopener">🎯 英語を1ヶ月みっちり鍛えたい人へ<small>「読み方」を1ヶ月で叩き込む個別指導について</small><span class="go">→ こちらをクリック</span></a>
+      <a class="article-link" href="${NOTE_URL}" target="_blank" rel="noopener">📘 丸暗記ではなく「読む」ための英単語へ<small>あなたが持っている英単語帳の「空所補充形式の問題集」を作りました</small><span class="go">→ noteで見る</span></a>
     </div>
 
     <div class="camp">
@@ -1157,7 +1155,9 @@ function renderResult(){
         <h3>${CAMP.title}</h3>
         <div class="sub">${CAMP.sub}</div>
         <div class="body">${CAMP.body}</div>
-        <div class="camp-cta">${CAMP.cta}</div>
+        <button class="btn btn-primary" id="monitorcopy">「${CAMP.word}」をコピーする</button>
+        <div class="copied" id="monitorcopied">コピーしました！LINEに貼り付けて送信してください。</div>
+        <a class="btn btn-line" href="${LINE_URL}" target="_blank" rel="noopener">LINEを開いて送る</a>
       </div>
     </div>
   </div></div>
@@ -1176,6 +1176,13 @@ function renderResult(){
     copyPlain(type.name, ()=>{
       document.getElementById("copiedtype").classList.add("show");
       document.getElementById("copytype").textContent = "「" + type.name + "」をコピーしました ✓";
+    });
+  };
+  /* モニターイベントの合言葉コピー */
+  document.getElementById("monitorcopy").onclick = ()=>{
+    copyPlain(CAMP.word, ()=>{
+      document.getElementById("monitorcopied").classList.add("show");
+      document.getElementById("monitorcopy").textContent = "「" + CAMP.word + "」をコピーしました ✓";
     });
   };
   /* LINEボタンを押した瞬間にも自動コピー（コピーを飛ばした人の保険） */

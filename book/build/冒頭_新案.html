@@ -1,0 +1,290 @@
+<!doctype html><html lang='ja'><head><meta charset='utf-8'><title>冒頭 新案</title><style>/* 見本組　A5・縦組み・右綴じ　本文 45字 × 16行 */
+@page { size: 148mm 210mm; margin: 17mm 14mm 19mm 14mm; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact;
+       writing-mode: vertical-rl; text-orientation: mixed; }
+body { font-family: "Noto Serif CJK JP","IPA明朝",serif;
+       font-size: 9.4pt; line-height: 1.68; color: #1a1a1a; margin: 0;
+       text-align: justify; }
+.mk { font-size: 1px; line-height: 0; color: #ffffff; }
+.blk { break-before: page; }
+.blk.first { break-before: auto; }
+.blankpage { height: 1px; }
+p { margin: 0 0 .85em 0; }
+.tcy { text-combine-upright: all; }
+.upr { text-orientation: upright; letter-spacing: -.05em; }
+code { font-size: .9em; color: #666; }
+hr.rule { border: 0; border-right: 1px solid #ddd; margin: 0 1.4em; }
+
+h1 { font-family: "Noto Sans CJK JP",sans-serif; font-size: 13.5pt; font-weight: 700;
+     line-height: 1.55; margin: 0 0 2.2em 0; padding-right: .75em;
+     border-right: 3px solid #1a1a1a; break-after: avoid; }
+h2 { font-family: "Noto Sans CJK JP",sans-serif; font-size: 11.2pt; font-weight: 700;
+     margin: 2.4em 0 1.2em 0; break-after: avoid; }
+h3 { font-family: "Noto Sans CJK JP",sans-serif; font-size: 10pt; font-weight: 700;
+     margin: 1.8em 0 .75em 0; break-after: avoid; }
+h4 { font-family: "Noto Sans CJK JP",sans-serif; font-size: 9.6pt; margin: 1.5em 0 .6em 0; }
+ul { margin: 0 0 1em 0; padding: 0 1.1em 0 0; }
+li { margin-bottom: .4em; }
+.pagebreak { break-before: page; width: 0; }
+.sep { height: 0; margin: 0 1.3em 0 0; border-right: 1px solid #e8e8e8; }
+
+/* 小見出しラベル */
+.lbl { font-family: "Noto Sans CJK JP",sans-serif; font-size: 7.4pt; color: #909090;
+       margin: 1em 0 .32em 0; letter-spacing: .1em; break-after: avoid;
+       text-orientation: upright; }
+.lbl-good { border-right: 2px solid #1a1a1a; padding-right: .45em; margin-right: -.62em; }
+.orn { color: #b8b8b8; font-size: 8pt; margin: 1.8em 0; text-align: center; break-after: avoid; }
+
+.qtext { font-family: "Noto Sans CJK JP",sans-serif; font-size: 13pt; font-weight: 700;
+         line-height: 1.6; margin: 0 0 1.6em 0; letter-spacing: .01em; }
+.hintbox { background: #f5f4ee; border-right: 3px solid #cdc6a8; padding: .7em .7em .7em 0;
+           margin: 0 0 1.1em 0; font-size: 8.7pt; line-height: 1.8; }
+.lawbox { font-family: "Noto Sans CJK JP",sans-serif; font-size: 11pt; font-weight: 700;
+          line-height: 1.5; padding: .7em .7em .7em 0; margin: .2em 0 .95em 0;
+          border-right: 4px solid #1a1a1a; background: #f6f6f6; }
+.lawbox.f1 { border-right-color: #2f6fb0; } .lawbox.f2 { border-right-color: #2e8b57; }
+.lawbox.f3 { border-right-color: #a8791b; } .lawbox.f4 { border-right-color: #cc3d78; }
+.lawbox.f5 { border-right-color: #c0392b; } .lawbox.f6 { border-right-color: #7b3fa0; }
+.conclbox { border-right: 1px solid #dcdcdc; padding-right: .7em; margin: 0 0 .85em 0; }
+.rubric { font-family: "Noto Sans CJK JP",sans-serif; font-size: 7.6pt; color: #8c8c8c;
+          line-height: 1.7; margin: 0 0 1.4em 0; letter-spacing: .06em; }
+.ans { margin: 0 0 .85em 0; }
+.indent { margin: 0 0 1.1em 0; white-space: pre-wrap; }
+.figslot { border: 1px dashed #c8c8c8; color: #b0b0b0; font-size: 7.4pt;
+           block-size: 34mm; inline-size: 26mm; margin: .6em 0 .4em 0;
+           display: flex; align-items: center; justify-content: center;
+           letter-spacing: .3em; background: #fcfcfc; }
+.figbox, .cornerfig { border: 1px dashed #c4c4c4; color: #8a8a8a; padding: .9em 1.1em;
+          margin: 1em 0; font-size: 8pt; line-height: 1.8; background: #fbfbfb; }
+
+/* 分かれ道は横組みの表にする（日本語の本の作法） */
+table { border-collapse: collapse; font-size: 8pt; margin: .3em 0 1.4em 0; line-height: 1.65; }
+th, td { border: 1px solid #cfcfcf; padding: .45em .35em; vertical-align: top; text-align: start; }
+th { background: #f2f2f2; font-family: "Noto Sans CJK JP",sans-serif; font-weight: 700; }
+.vs { font-size: 7.3pt; float: inline-start; margin: 0 0 1em 1.2em; clear: both; }
+.vs th, .vs td { height: 27mm; }
+.vs tr:first-child th { background: #f2f2f2; color: #8c8c8c; font-size: 7.4pt; }
+.vs tr:first-child th:nth-child(2), .vs tr:first-child th:nth-child(3) { color: #2a2a2a; font-size: 8pt; }
+.vs td:first-child, .vs th:first-child { background: #fafafa; color: #8c8c8c; font-size: 6.8pt; height: 15mm; }
+.vs td:nth-child(3) { background: #f4f4f4; }
+.vs.f1 td:nth-child(3), .vs.f1 th:nth-child(3) { background: #eef4fb; }
+.vs.f2 td:nth-child(3), .vs.f2 th:nth-child(3) { background: #eef6f1; }
+.vs.f3 td:nth-child(3), .vs.f3 th:nth-child(3) { background: #faf4e6; }
+.vs.f4 td:nth-child(3), .vs.f4 th:nth-child(3) { background: #fdf0f5; }
+.vs.f5 td:nth-child(3), .vs.f5 th:nth-child(3) { background: #fbeeec; }
+.vs.f6 td:nth-child(3), .vs.f6 th:nth-child(3) { background: #f5eefa; }
+
+/* やらない45のチェック欄。縦組みなので、1項目を1行として流す */
+.cklist { margin: .3em 0 1em 0; }
+.ck { font-size: 7.8pt; line-height: 1.45; margin: 0 0 0 .42em; }
+.ck .n { color: #a8a8a8; font-size: 6.8pt; margin-left: .5em; }
+.ck .box { display: inline-block; inline-size: .95em; block-size: .95em;
+           border: 1px solid #9a9a9a; margin-left: .55em; vertical-align: -.1em; }
+.ck .t { }
+/* 書き込み行。縦組みなので、行の上に見出し、下に単位、あいだを罫にする */
+.frows { margin: .4em 0 1.4em 0; }
+.frow { display: flex; align-items: center; font-size: 9pt; margin: 0 0 0 1.1em; }
+.frow .fl { white-space: nowrap; }
+.frow .fd { flex: 1; min-height: 4em; border-block-end: 1px solid #cfcfcf; margin: .55em 0; }
+.frow .fu { white-space: nowrap; color: #6a6a6a; font-size: 8.4pt; }
+
+/* 巻頭の9ページは、文字を大きく */
+.front p { font-size: 10.4pt; line-height: 1.95; margin: 0 0 1.25em 0; }
+.front .indent { font-size: 10.4pt; line-height: 1.95; }
+
+/* カバー */
+.cover { writing-mode: horizontal-tb; box-sizing: border-box;
+         width: 148mm; height: 210mm; margin: 0;
+         background: #14161a; color: #f2f0ea; padding: 34mm 16mm 20mm 16mm;
+         font-family: "Noto Sans CJK JP",sans-serif; }
+.cover .cttl { font-size: 21.5pt; font-weight: 700; line-height: 1.52; letter-spacing: 0; }
+.cover .csub { font-size: 10.5pt; color: #b9b4a6; margin-top: 2.2em; line-height: 1.8; }
+.cover .cobi { margin-top: 26mm; font-size: 10pt; line-height: 2.05; color: #14161a;
+               background: #d9d3c4; padding: 7mm 6mm; }
+.cover .cau { margin-top: 14mm; font-size: 12pt; letter-spacing: .12em; }
+
+/* 本扉　縦組み */
+.htobira { padding-right: 8mm; }
+.htobira .httl { font-family: "Noto Sans CJK JP",sans-serif; font-size: 17pt; font-weight: 700;
+                 line-height: 1.7; }
+.htobira .hsub { font-size: 9.5pt; color: #6a6a6a; margin: 2.6em 0 0 2.4em; }
+.htobira .hau { font-family: "Noto Sans CJK JP",sans-serif; font-size: 11.5pt;
+                letter-spacing: .12em; margin: 96mm 0 0 13em; }
+.htobira .hpub { font-size: 8.6pt; color: #6a6a6a; letter-spacing: .12em;
+                 margin: 96mm 0 0 2em; }
+
+/* 目次　縦組み。行が右から左へ流れ、ノンブルは行の下に落とす */
+.toc .tocttl { font-family: "Noto Sans CJK JP",sans-serif; font-size: 15pt; font-weight: 700;
+               letter-spacing: .3em; margin: 0 0 2.6em 0; break-after: avoid; }
+.trow { display: flex; align-items: center; font-size: 9.2pt; margin: 0 0 0 1.15em;
+        line-height: 1.5; }
+.trow .tl { white-space: nowrap; }
+.trow .td { flex: 1; min-height: 1.6em; border-block-end: 1px dotted #c8c8c8;
+            margin: .5em 0; }
+.trow .tp { font-size: 8.6pt; color: #4a4a4a; }
+.trow.sub { font-size: 8.2pt; color: #4a4a4a; margin: 0 0 0 .78em; padding-top: 1.7em; }
+.tocgrp { font-family: "Noto Sans CJK JP",sans-serif; font-size: 7.6pt; color: #9a9a9a;
+          letter-spacing: .2em; margin: 0 0 0 1.9em; text-orientation: upright; }
+
+/* 章扉 */
+.door { break-after: page; height: 168mm; display: flex; flex-direction: column;
+        justify-content: center; padding-right: 22mm;
+        font-family: "Noto Sans CJK JP",sans-serif; }
+.door .dnum { font-size: 8.6pt; letter-spacing: .32em; color: #9a9a9a; }
+.door .dtag { font-size: 10pt; color: #6a6a6a; margin-right: .9em; letter-spacing: .1em; }
+.door .dttl { font-size: 17pt; font-weight: 700; line-height: 1.6; margin-right: 1.1em; }
+.door .dbar { width: 3px; height: 40mm; background: #1a1a1a; margin-right: 2em; }
+.door.f0 .dbar { background: #1a1a1a; }
+.door.f1 .dbar { background: #2f6fb0; } .door.f2 .dbar { background: #2e8b57; }
+.door.f3 .dbar { background: #a8791b; } .door.f4 .dbar { background: #cc3d78; }
+.door.f5 .dbar { background: #c0392b; } .door.f6 .dbar { background: #7b3fa0; }
+
+/* 奥付　縦組み */
+.colophon { padding-right: 6mm; }
+.colophon .cottl { font-family: "Noto Sans CJK JP",sans-serif; font-size: 12pt; font-weight: 700; }
+.colophon .cosub { font-size: 8.6pt; color: #6a6a6a; margin: 1.2em 0 0 2.6em; }
+.colophon .corow { font-size: 9pt; letter-spacing: .06em; margin-left: 1.3em; }
+.colophon .conote { font-size: 7.4pt; color: #8a8a8a; line-height: 1.9; margin-left: 3em;
+                    border-inline-start: 1px solid #dcdcdc; padding-inline-start: 1.2em; }
+
+/* 法則の見開き　問いのページは大きく、答えのページは詰める */
+.qpage p { font-size: 9.8pt; line-height: 1.9; }
+.apage { font-size: 8.9pt; line-height: 1.62; }
+.apage p { margin: 0 0 .7em 0; }
+.apage .lawbox { font-size: 10.2pt; }
+.apage .lbl { margin: .8em 0 .28em 0; }
+.apage .vs { font-size: 7.2pt; margin: 0 0 .85em 1.1em; }
+.apage .vs th, .apage .vs td { height: 25mm; }
+.apage .vs td:first-child, .apage .vs th:first-child { height: 14mm; }
+
+/* 目次　法則は2段。上がやらないこと、下がかわりにやっていること */
+.tocnote { font-size: 8pt; color: #7a7a7a; line-height: 1.9; margin: 0 0 2.4em 1.5em; }
+.trow .tn { color: #a4a4a4; font-size: 7.4pt; margin-left: .75em; }
+.trow.sub { font-size: 8.6pt; color: #1f1f1f; margin: 0 0 0 .3em; padding-top: 1.5em; }
+.tsub { font-size: 7.5pt; color: #808080; line-height: 1.5;
+        margin: 0 0 0 1.5em; padding-top: 3.6em; }
+</style></head><body><div class="front"><h1>はじめに　<span class="tcy">1</span>分で、証明します</h1>
+<p>いきなりですが、<span class="tcy">10</span>秒だけ、付き合ってください。</p>
+<p>次の<span class="tcy">11</span>個の数字を、<span class="tcy">10</span>秒で覚えてください。</p>
+<p>声に出しても、指で追ってもかまいません。</p>
+<div class="indent">　　<span class="tcy">1</span>　<span class="tcy">4</span>　<span class="tcy">9</span>　<span class="tcy">1</span>　<span class="tcy">6</span>　<span class="tcy">2</span>　<span class="tcy">5</span>　<span class="tcy">3</span>　<span class="tcy">6</span>　<span class="tcy">4</span>　<span class="tcy">9</span></div>
+<p>はい、<span class="tcy">10</span>秒。</p>
+<div class="indent">　　　……</div>
+<p>本を伏せて、言えますか。</p>
+<p>たぶん、<span class="tcy">6</span>個目か<span class="tcy">7</span>個目で、あやしくなったはずです。</p>
+<p>それが普通です。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>では、<span class="tcy">1</span>つだけ、教えます。</p>
+<p>この並びの正体は、これです。</p>
+<div class="indent">　　<span class="tcy">1</span>　<span class="tcy">4</span>　<span class="tcy">9</span>　<span class="tcy">16</span>　<span class="tcy">25</span>　<span class="tcy">36</span>　<span class="tcy">49</span></div>
+<p><span class="tcy">1</span>×<span class="tcy">1</span>、<span class="tcy">2</span>×<span class="tcy">2</span>、<span class="tcy">3</span>×<span class="tcy">3</span>、<span class="tcy">4</span>×<span class="tcy">4</span>、<span class="tcy">5</span>×<span class="tcy">5</span>、<span class="tcy">6</span>×<span class="tcy">6</span>、<span class="tcy">7</span>×<span class="tcy">7</span>。</p>
+<p>この法則を知ってしまうと、もう、さっきまでの見え方には戻れません。</p>
+<p>もう一度、見てください。</p>
+<div class="indent">　　<span class="tcy">1</span>　<span class="tcy">4</span>　<span class="tcy">9</span>　<span class="tcy">1</span>　<span class="tcy">6</span>　<span class="tcy">2</span>　<span class="tcy">5</span>　<span class="tcy">3</span>　<span class="tcy">6</span>　<span class="tcy">4</span>　<span class="tcy">9</span></div>
+<p><span class="tcy">10</span>秒も、いりませんよね。</p>
+<p>というより、しばらく忘れられません。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>いま、何が起きたか。</p>
+<p>さっきと今で、あなたの記憶力は変わっていません。<br>集中力も、やる気も、<span class="tcy">1</span>分前と同じです。</p>
+<p>必死に覚えようとして声に出すことも、書いて覚えることも、していません。</p>
+<p>努力の量は、むしろ減りました。</p>
+<p>変わったのは、数字の見方だけです。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>「頭がいい」という言葉があります。</p>
+<p>たいてい、生まれつきのものとして使われます。<br>あの子は頭がいい。自分は、そうじゃない。</p>
+<p>でも、さっきの<span class="tcy">11</span>個は、どうでしたか。</p>
+<p>あなたは<span class="tcy">1</span>分前より、確実に多く覚えられるようになりました。<br>生まれつきのものは、<span class="tcy">1</span>ミリも変わっていないのに。</p>
+<p>頭が良くなる、というのは、こういうことです。</p>
+<p>見方を<span class="tcy">1</span>つ知る。それだけで、同じ時間で入る量が変わる。</p>
+<p>この本は、それを<span class="tcy">45</span>回やります。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>その前に、<span class="tcy">1</span>つ聞かせてください。</p>
+<p>「ちゃんと勉強してるの？」</p>
+<p>言われたこと、ありますか。</p>
+<p>テストが返ってきた日。点数を見た親に。あるいは、先生に。</p>
+<p>そのときのことを、思い出してください。</p>
+<p>あなたは、本当に、勉強していなかったのでしょうか。</p>
+<p>そんなわけがない。</p>
+<p>授業は受けています。課題も出しています。<br>テスト前は、机に向かっています。<br>部活でへとへとになった日も、やってはいたはずです。</p>
+<p>勉強のやり方の本を、わざわざ開く人が、<br>勉強していないということは、ありません。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>やっている。それなのに、点が違う。</p>
+<p>同じ教科書。同じ先生。同じ授業。<br>勉強した時間は、こちらのほうが長いくらいです。</p>
+<p>それでも、クラスに<span class="tcy">1</span>人はいる「あの子」は、点を取ってきます。</p>
+<div class="indent">　　部活に行っているのに、成績がいい。</div>
+<div class="indent">　　塾に行っていないのに、成績がいい。</div>
+<div class="indent">　　勉強している様子がないのに、成績がいい。</div>
+<p>なぜですか。</p>
+<p>やっぱり才能ですか。結局、地頭ですか。</p>
+<p>一度は、そう思ってあきらめかけたかもしれません。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>私は、高校<span class="tcy">3</span>年のとき、<span class="tcy">1</span>日<span class="tcy">14</span>時間、勉強していました。</p>
+<p>偏差値は<span class="tcy">42</span>でした。受けた<span class="tcy">10</span>校は、全部落ちました。</p>
+<p>勉強しているのに伸びない人の、日本代表みたいなものでした。</p>
+<p>だから、才能のせいにしたくなる気持ちは、よくわかります。<br>そのほうが、ラクだからです。</p>
+<p>でも、そのあと<span class="tcy">6</span>年で<span class="upr">2000</span>人以上を<span class="tcy">1</span>人ずつ見てきて、<br>才能でしか説明できない子は、<span class="tcy">1</span>人もいませんでした。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>質問を、もう<span class="tcy">1</span>つだけ。</p>
+<p>バケツに、穴が空いています。水を溜めたい。まず、何をしますか。</p>
+<div class="indent">　　ア　注ぐ水の量を、増やす</div>
+<div class="indent">　　イ　そのまま、注ぎ続ける</div>
+<div class="indent">　　ウ　先に、穴をふさぐ</div>
+<p>ウ、ですよね。</p>
+<p>では、勉強のときは、どうでしょうか。</p>
+<div class="indent">　　点が足りない　　→　勉強時間を増やす</div>
+<div class="indent">　　覚えられない　　→　もう<span class="tcy">1</span>回、書く</div>
+<div class="indent">　　終わらない　　　→　参考書を、もう<span class="tcy">1</span>冊</div>
+<p>ほとんどの人が、アを選んでいます。私も、そうでした。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>さっきの<span class="tcy">11</span>個の数字を、思い出してください。</p>
+<p>あそこで、いちばんやってはいけなかったのは、何でしたか。</p>
+<p>時間を増やすこと。何回も書くこと。何回も見返すこと。</p>
+<p>見方を知らないまま、量だけを増やすことです。</p>
+<p>順番があります。</p>
+<div class="indent">　　<span class="tcy">1</span>　やってはいけないことを、やめる</div>
+<div class="indent">　　<span class="tcy">2</span>　結果を出している人の、やり方を知る</div>
+<div class="indent">　　<span class="tcy">3</span>　その正しいやり方で、量をやる</div>
+<p>多くの人は、<span class="tcy">3</span>から始めます。<span class="tcy">1</span>と<span class="tcy">2</span>を飛ばして、量だけを増やします。</p>
+<p>量が足りないのではありません。順番が、逆なのです。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>では、<span class="tcy">2</span>をやればいい。結果を出している人のやり方を、知ればいい。</p>
+<p>そう思います。でも、ここに問題があります。</p>
+<p>スポーツなら、うまい人の動きは目に見えます。<br>動画で見て、ああ、こう構えるのか、と真似ができます。</p>
+<p>勉強は、見えません。</p>
+<p>同じ教室で、同じ授業を受けて、同じ問題集を開いている。<br>外から見えるのは、そこまでです。</p>
+<p>あの子が、その<span class="tcy">3</span>時間のあいだ、頭のなかで何をしているのか。<br>そして、何をしていないのか。</p>
+<p>それは、誰にも見えません。</p>
+<p>だから、あなたのせいではありません。<br>見えないものは、真似のしようがないからです。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>この本は、そこを見えるようにします。</p>
+<p>あの子が、勉強中に絶対にやらないこと。<br>そして、かわりに何をしているのか。</p>
+<p><span class="tcy">45</span>個、並べます。</p>
+<p>あの子は、特別ではありません。<br>やってはいけないことを避けて、やるべきことを正しくやっているだけです。</p>
+<p>そして、それは全部、真似ができます。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p><span class="tcy">45</span>個は、バラバラではありません。<span class="tcy">6</span>つの場面に分かれています。</p>
+<div class="indent">　　選ぶ　　入れる　　つなげる　　出す　　直す</div>
+<p>この<span class="tcy">5</span>つを<span class="tcy">1</span>周すると、できないが<span class="tcy">1</span>つ、できるに変わります。</p>
+<p>あとは、それを試験の日まで回すだけ。それが<span class="tcy">6</span>つ目です。</p>
+<div class="indent">　　回す</div>
+<p>受験は、特別なことではありません。<br>この<span class="tcy">6</span>つに、締切がついただけです。</p>
+<p>（めくってください）</p>
+<div class="pagebreak"></div>
+<p>先に言っておきます。</p>
+<p><span class="tcy">45</span>個のうち、あなたが今やっているものが、必ずあります。<br>たいてい、<span class="tcy">3</span>つか<span class="tcy">4</span>つです。</p>
+<p>勉強時間は、<span class="tcy">1</span>分も増やしません。参考書も増やしません。<br>やる気も、性格も、生まれつきのものも、今日は変えません。</p>
+<p>やめるだけです。</p>
+<p>次のページから、その<span class="tcy">45</span>個を並べます。</p>
+<p>上から読んで、自分がやっているものに、チェックを入れてください。</p>
+<p><span class="tcy">1</span>分で終わります。</p></div></body></html>

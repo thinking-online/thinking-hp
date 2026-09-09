@@ -9,6 +9,18 @@ CHROME = "/opt/pw-browsers/chromium"
 SRC = "冒頭_新案.md"
 
 
+def force_break(h):
+    """（ここでページを送る）を、本物の改ページに変える。ここだけは絶対に送る。"""
+    h = re.sub(r'<p[^>]*>（ここでページを送る）</p>',
+               '<div class="pagebreak"></div>', h)
+    h = re.sub(r'<div class="sep"></div>\s*(?=<div class="pagebreak">)', '', h)
+    h = re.sub(r'<div class="pagebreak"></div>\s*<div class="sep"></div>',
+               '<div class="pagebreak"></div>', h)
+    # 見出しの直後の区切り線は、注記を外した名残なので消す
+    h = re.sub(r'(</h1>)\s*<div class="sep"></div>', r'\1', h)
+    return h
+
+
 def topdf(html_path, pdf_path):
     subprocess.run([CHROME, "--headless", "--disable-gpu", "--no-sandbox",
                     "--no-pdf-header-footer", f"--print-to-pdf={pdf_path}",
@@ -25,6 +37,7 @@ def tate():
     head, body, _ = bp.strip_meta(raw)
     h = bt.md_to_html_v(head + "\n\n" + body)
     h = re.sub(r'(<h1>.*?</h1>)\s*<div class="pagebreak"></div>', r'\1', h, flags=re.S)
+    h = force_break(h)
     doc = ("<!doctype html><html lang='ja'><head><meta charset='utf-8'>"
            f"<title>冒頭 新案 縦組み</title><style>{css}</style></head><body>"
            f'<div class="front">{h}</div></body></html>')
@@ -44,7 +57,7 @@ def yoko():
     h = re.sub(r'<h2>(\d+)ページ目</h2>',
                r'<div class="pnum">\1ページ目</div>', h)
     h = re.sub(r'<div class="sep"></div>\s*(?=<div class="pnum">)', '', h)
-    h = re.sub(r'(<h1>.*?</h1>)', r'\1', h, flags=re.S)
+    h = force_break(h)
     css = bp.CSS + """
 @page { size: A5; margin: 16mm 15mm 15mm 15mm; }
 body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 10.4pt; line-height: 1.95; }

@@ -7,6 +7,7 @@ import build_tate as bt
 
 CHROME = "/opt/pw-browsers/chromium"
 SRC = "冒頭_新案.md"
+SRC2 = "実演6本.md"
 
 
 def force_break(h):
@@ -79,7 +80,35 @@ h1 { font-size: 15pt; margin: 0 0 1.6em 0; padding-bottom: .5em;
     return "build/冒頭_新案_横.pdf"
 
 
+def yoko2():
+    """実演6本を、横組みで。各実演の問いと答えは必ず別ページにする。"""
+    bp.HR_AS_PAGEBREAK = True
+    bp.inline = bt._orig_inline
+    raw = open(os.path.join(bp.M, SRC2), encoding="utf-8").read()
+    head, body, _ = bp.strip_meta(raw)
+    h = bp.md_to_html(head + "\n\n" + body)
+    css = bp.CSS + """
+@page { size: A5; margin: 16mm 15mm 15mm 15mm; }
+body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 10.2pt; line-height: 1.95; }
+p { margin: 0 0 1.15em 0; }
+h1 { font-size: 15pt; margin: 0 0 1.6em 0; padding-bottom: .5em;
+     border-bottom: 2px solid #1a1a1a; page-break-after: avoid; }
+h2 { font-size: 9pt; letter-spacing: .18em; color: #8a8a8a; font-weight: 400;
+     margin: 0 0 1.6em 0; padding-bottom: .4em; border-bottom: 1px solid #e4e4e4;
+     page-break-after: avoid; }
+.indent { white-space: pre-wrap; font-size: 10.6pt; letter-spacing: .06em;
+          margin: .5em 0 1.4em 0; line-height: 2.0; }
+"""
+    doc = ("<!doctype html><html lang='ja'><head><meta charset='utf-8'>"
+           f"<title>実演6本</title><style>{css}</style></head><body>"
+           f'<div class="front">{h}</div></body></html>')
+    open("build/実演6本.html", "w", encoding="utf-8").write(doc)
+    topdf("build/実演6本.html", "build/実演6本.pdf")
+    return "build/実演6本.pdf"
+
+
 if __name__ == "__main__":
     os.makedirs("build", exist_ok=True)
     print(yoko())
     print(tate())
+    print(yoko2())

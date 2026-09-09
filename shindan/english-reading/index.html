@@ -307,6 +307,102 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
 .cta-note{text-align:center;font-size:.78rem;color:var(--ink-sub)}
 
+/* ===== 解説セクション ===== */
+.kaisetsu{margin-top:26px}
+.k-head{
+  text-align:center;font-family:var(--font-display);font-weight:800;font-size:1.2rem;
+  letter-spacing:.06em;line-height:1.5;
+  border-top:1.5px solid var(--ink);padding-top:18px;
+}
+.k-head small{display:block;font-family:var(--font-num);font-weight:600;font-size:.68rem;color:var(--gold-deep);letter-spacing:.22em;margin-bottom:6px}
+.k-lead{font-size:.88rem;color:var(--ink-sub);margin:10px 0 4px}
+.k-cap{
+  font-family:var(--font-display);font-weight:800;font-size:1rem;letter-spacing:.05em;
+  margin:22px 0 10px;padding-left:10px;border-left:4px solid var(--gold-deep);
+}
+.myths{display:grid;gap:8px}
+.myth{
+  display:flex;align-items:center;gap:10px;background:#fff;
+  border:1px solid var(--paper-line);border-radius:8px;padding:10px 12px;font-size:.86rem;
+}
+.myth .x{
+  flex:0 0 26px;height:26px;border-radius:50%;background:rgba(161,37,44,.09);
+  color:#a1252c;font-weight:900;font-size:.95rem;
+  display:flex;align-items:center;justify-content:center;border:1.5px solid #a1252c;
+}
+.myth s{text-decoration-color:#a1252c;text-decoration-thickness:2px}
+.myth-punch{
+  text-align:center;font-weight:900;font-size:.95rem;margin-top:10px;
+}
+.myth-punch b{background:linear-gradient(transparent 62%,rgba(227,176,75,.45) 62%)}
+.demo-en{
+  background:#fff;border:1.5px solid var(--ink);border-radius:8px;padding:13px;
+  font-size:.95rem;line-height:1.9;margin:10px 0 6px;overflow-wrap:anywhere;
+}
+.demo-en .trunk{background:rgba(227,176,75,.35);border-radius:3px;padding:0 2px;font-weight:700}
+.demo-note{font-size:.8rem;color:var(--ink-sub)}
+.demo-note b{color:var(--ink)}
+.pipeline{display:grid;margin:12px 0 4px}
+.pstep{
+  background:#fff;border:1.5px solid var(--paper-line);border-radius:10px;
+  padding:11px 13px 11px 46px;font-size:.88rem;font-weight:700;position:relative;
+}
+.pstep small{display:block;font-weight:500;font-size:.76rem;color:var(--ink-sub)}
+.pstep .pn{
+  position:absolute;left:12px;top:50%;transform:translateY(-50%);
+  width:24px;height:24px;border-radius:50%;background:var(--ink);color:var(--paper);
+  font-family:var(--font-num);font-size:.76rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+}
+.parrow{text-align:center;color:var(--gold-deep);font-weight:900;line-height:1.1;padding:2px 0;font-size:.9rem}
+.tree{
+  background:#fff;border:1px solid var(--paper-line);border-radius:8px;
+  padding:12px 14px;margin:10px 0;font-size:.84rem;line-height:1.8;overflow-x:auto;
+}
+.tree .trunkline{font-weight:900}
+.tree .trunkline .tag,.tree .branch .tag{
+  display:inline-block;font-family:var(--font-num);font-size:.66rem;font-weight:600;
+  border-radius:4px;padding:0 6px;margin-right:6px;vertical-align:1px;
+}
+.tree .trunkline .tag{background:var(--ink);color:var(--paper)}
+.tree .branch{padding-left:1.2em;position:relative;color:var(--ink)}
+.tree .branch::before{content:"└";position:absolute;left:0;color:var(--gold-deep);font-weight:900}
+.tree .branch .tag{background:var(--gold-soft);color:var(--gold-deep);border:1px solid var(--gold-deep)}
+.tree .jp{color:var(--ink-sub);font-size:.78rem}
+.choice{
+  background:#fff;border:1.5px solid var(--paper-line);border-radius:10px;
+  padding:11px 13px;margin:8px 0;font-size:.84rem;line-height:1.75;
+  border-left-width:5px;
+}
+.choice.ok{border-left-color:#0a7a3d}
+.choice.ng{border-left-color:#a1252c}
+.choice .mark{
+  display:inline-flex;align-items:center;gap:6px;font-weight:900;font-size:.8rem;margin-bottom:2px;
+}
+.choice.ok .mark{color:#0a7a3d}
+.choice.ng .mark{color:#a1252c}
+.choice .en-s{overflow-wrap:anywhere}
+.choice .why{
+  display:block;margin-top:6px;font-size:.8rem;font-weight:700;
+  background:var(--paper);border-radius:6px;padding:6px 9px;
+}
+.choice.ng .why b{color:#a1252c}
+.choice.ok .why b{color:#0a7a3d}
+.principle{
+  margin-top:14px;border:2px solid var(--ink);border-radius:10px;background:#fff;
+  padding:14px;text-align:center;
+}
+.principle .pcap{font-size:.68rem;letter-spacing:.22em;font-weight:700;color:var(--ink-sub);margin-bottom:6px}
+.principle .pmain{font-family:var(--font-display);font-weight:800;font-size:1.05rem;letter-spacing:.04em;line-height:1.7}
+.principle .pmain b{border-bottom:3px double var(--gold-deep)}
+.article-link{
+  display:block;margin-top:12px;background:var(--gold-soft);
+  border:1.5px dashed var(--gold-deep);border-radius:10px;padding:12px 14px;
+  font-size:.84rem;color:var(--ink);text-decoration:none;font-weight:700;
+}
+.article-link small{display:block;font-weight:500;font-size:.74rem;color:var(--ink-sub)}
+.article-link .go{color:var(--gold-deep)}
+
 /* ===== キャンプ告知 ===== */
 .camp{
   margin-top:20px;border-radius:12px;overflow:hidden;
@@ -414,13 +510,15 @@ const STORE_KEY = "thinking_eigo_shindan_v1";
 const SEND_RETURN = "この結果をコピーして、そのままLINEで送ってください。受験の王様が結果を見て、<b>今の状態と「やるべきこと」をあなた個別に整理して返します。</b>";
 /* ★②' キャンプ告知（結果画面下部のバナー） */
 const CAMP = {
-  badge: "Instagramフォロワー9万人突破記念",
-  dates: "8月9日スタート｜5日間",
-  title: "英語読解力キャンプ",
-  sub:   "モニター募集｜最初で最後の企画",
-  body:  "受験の王様が5日間付きっきり。あなたの英語力をつけ切るために、全てを捧げます。",
-  cta:   "参加したい人は、診断結果と一緒に「<b>キャンプ希望</b>」とLINEで送ってください。"
+  badge: "NEXT PROJECT",
+  dates: "COMING SOON",
+  title: "英語の読み方 特化イベント",
+  sub:   "準備中｜案内はLINEでいち早く届きます",
+  body:  "「読み方」を実演で叩き込むイベントを準備しています。診断結果を送ってくれた人から優先的に案内します。",
+  cta:   "公式LINEの通知をオンにして、<b>案内を見逃さないで</b>ください。"
 };
+/* ★②'' 解説セクションで紹介する記事URL */
+const ARTICLE_URL = "https://thinking-online.com/lp/sse/";
 
 /* ---------- 学年（アンケートは7分岐 / テストは6セット） ---------- */
 const GRADES = [
@@ -999,6 +1097,58 @@ function renderResult(){
     </div>
 
     <div class="comment">${GRADE_COMMENT[S.quizKey]}<br>${LEVEL_COMMENT[r.level]}<br>${gapSchool}までの具体的な話は、結果を送ってくれた人と個別に進めます。</div>
+
+    <div class="kaisetsu">
+      <div class="k-head"><small>KAISETSU — 全タイプ共通</small>なぜ「読めた風」で<br>失点するのか</div>
+      <p class="k-lead">診断おつかれさま。今回は少ない文章量で、いま「ちゃんと読めて」「ちゃんと解けるか」を測りました。ここからが本題です。</p>
+
+      <div class="k-cap">まず、3つの誤解をこわす</div>
+      <div class="myths">
+        <div class="myth"><span class="x">✗</span><span>英単語を覚えたら、<s>英文は読めるようになる</s></span></div>
+        <div class="myth"><span class="x">✗</span><span>英文法を覚えたら、<s>英文は読めるようになる</s></span></div>
+        <div class="myth"><span class="x">✗</span><span>構造さえ取れたら、<s>英文は読めるようになる</s></span></div>
+      </div>
+      <p class="myth-punch">みんなそう考えがち。でも、<b>そうじゃない。</b></p>
+
+      <div class="k-cap">証拠：全部「中学レベルの単語」の文</div>
+      <div class="demo-en">In the examples I am talking of <span class="trunk">the person continues to behave</span> in what most people agree is a normal manner.</div>
+      <p class="demo-note">知らない単語、ほぼゼロのはず。でも「どういう意味？」と聞かれて<b>即答できましたか？</b> 読めている風でも、いざ自分の中で咀嚼して説明しようとするとできない——これが「読めた風」の正体。マーカー部分が文の<b>幹</b>（その人は、振る舞い続ける）。幹が見えると、残りは全部飾りだと分かります。だから、<b>闇雲に文章を読みまくっても結果は出ません。</b></p>
+
+      <div class="k-cap">読める人が全員やっている5ステップ</div>
+      <div class="pipeline">
+        <div class="pstep"><span class="pn">1</span>文章の構造をちゃんと掴む<small>幹（SV）と枝（修飾）を分ける</small></div>
+        <div class="parrow">▼</div>
+        <div class="pstep"><span class="pn">2</span>直訳をちゃんとできる状態にする<small>雰囲気ではなく、構造どおりに</small></div>
+        <div class="parrow">▼</div>
+        <div class="pstep"><span class="pn">3</span>咀嚼して「つまりどういうこと？」まで落とす<small>自分の言葉で言い直せるか</small></div>
+        <div class="parrow">▼</div>
+        <div class="pstep"><span class="pn">4</span>選択肢を分解して理解する<small>選択肢も1つの英文として構造で読む</small></div>
+        <div class="parrow">▼</div>
+        <div class="pstep"><span class="pn">5</span>全選択肢の正誤理由を言語化する<small>「なぜ正解？なぜ不正解？」を全部言えたら卒業</small></div>
+      </div>
+
+      <div class="k-cap">実演：この5ステップで1問解くと、こうなる</div>
+      <div class="demo-en">A stable society requires a set of laws that apply equally to both the rich and the poor, a respect for the rights of citizens of all religions and ethnic origins, and a strong desire to provide for the common welfare.</div>
+      <p class="demo-note"><b>STEP1-3｜幹と枝を分ける：</b>動詞は requires。幹は「安定した社会は、3つのものを必要とする」。3つの目的語が枝として並んでいるだけ。</p>
+      <div class="tree">
+        <div class="trunkline"><span class="tag">幹</span>A stable society <b>requires</b> …<span class="jp">（安定した社会は～を必要とする）</span></div>
+        <div class="branch"><span class="tag">枝1</span>laws that apply <b>equally</b> to the rich and the poor<span class="jp">（貧富に等しく適用される法）</span></div>
+        <div class="branch"><span class="tag">枝2</span>respect for the rights of citizens of <b>all</b> religions …<span class="jp">（あらゆる宗教・民族の市民の権利の尊重）</span></div>
+        <div class="branch"><span class="tag">枝3</span>a strong desire to provide for the <b>common welfare</b><span class="jp">（公共の福祉を支えようとする強い意志）</span></div>
+      </div>
+      <p class="demo-note"><b>STEP4-5｜選択肢を分解して、正誤を言語化する：</b>「上の文に最も近い意味は？」</p>
+      <div class="choice ng"><span class="mark">✗ A</span><span class="en-s">A stable society applies its laws more strictly to the poor than to the rich, …</span><span class="why"><b>equally（等しく）→ more strictly to the poor（貧しい人に厳しく）</b>に反転している</span></div>
+      <div class="choice ng"><span class="mark">✗ B</span><span class="en-s">… the two groups come to share one religion and one ethnic origin.</span><span class="why"><b>all religions（あらゆる宗教）→ one religion（1つの宗教）</b>にすり替わっている</span></div>
+      <div class="choice ok"><span class="mark">○ C</span><span class="en-s">For a society to be stable, it needs laws that treat the rich and the poor alike, respect for the rights of citizens of every religion and ethnic background, and a strong wish to serve the common good.</span><span class="why"><b>equally＝alike／all＝every／welfare＝common good</b>。枝3本がすべて言い換えで対応している</span></div>
+      <div class="choice ng"><span class="mark">✗ D</span><span class="en-s">What a stable society needs above all is a strong desire for wealth, …</span><span class="why"><b>common welfare（公共の福祉）→ wealth（富）</b>にすり替わっている</span></div>
+      <p class="demo-note">誤答は3つとも、本文の単語を使いながら<b>たった1か所だけ</b>ずらしてある。単語の一致度で選ぶと必ず捕まる。幹と枝で照合すると、一瞬で切れる。</p>
+
+      <div class="principle">
+        <div class="pcap">TRAINING PRINCIPLE</div>
+        <div class="pmain">5ステップの徹底 ×<br><b>幹と枝を分ける</b>トレーニング</div>
+      </div>
+      <a class="article-link" href="${ARTICLE_URL}" target="_blank" rel="noopener">📖 この「読み方」の考え方をさらに詳しく<small>受験の王様の解説記事を読む</small><span class="go">→ 記事を開く</span></a>
+    </div>
 
     <div class="camp">
       <div class="camp-inner">

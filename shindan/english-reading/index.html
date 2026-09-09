@@ -342,6 +342,21 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 .demo-en .trunk{background:rgba(227,176,75,.35);border-radius:3px;padding:0 2px;font-weight:700}
 .demo-note{font-size:.8rem;color:var(--ink-sub)}
 .demo-note b{color:var(--ink)}
+.dq{margin:12px 0}
+.dq-q{font-weight:900;font-size:.92rem;margin-bottom:8px}
+.dq-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.dq-btn{
+  border:1.5px solid var(--paper-line);background:#fff;border-radius:8px;
+  padding:11px 6px;font-size:.84rem;font-weight:700;cursor:pointer;
+  font-family:var(--font-body);color:var(--ink);
+}
+.dq-btn:disabled{cursor:default;opacity:.85}
+.dq-btn.picked-ng{border-color:#a1252c;background:rgba(161,37,44,.08);color:#a1252c}
+.dq-btn.is-ok{border-color:#0a7a3d;background:#eafaf0;color:#0a7a3d}
+.dq-verdict{display:none;margin-top:10px;border-radius:8px;padding:11px 13px;font-size:.86rem;font-weight:700}
+.dq-verdict.show{display:block}
+.dq-verdict.ng{background:rgba(161,37,44,.08);border:1.5px solid #a1252c;color:#a1252c}
+.dq-verdict.ok{background:#eafaf0;border:1.5px solid #bfe8cf;color:#0a7a3d}
 .pipeline{display:grid;margin:12px 0 4px}
 .pstep{
   background:#fff;border:1.5px solid var(--paper-line);border-radius:10px;
@@ -1108,8 +1123,29 @@ function renderResult(){
       <p class="myth-punch">みんなそう考えがち。でも、<b>そうじゃない。</b></p>
 
       <div class="k-cap">証拠：全部「中学レベルの単語」の文</div>
-      <div class="demo-en">In the examples I am talking of <span class="trunk">the person continues to behave</span> in what most people agree is a normal manner.</div>
-      <p class="demo-note">知らない単語、ほぼゼロのはず。でも「どういう意味？」と聞かれて<b>即答できましたか？</b> 読めている風でも、いざ自分の中で咀嚼して説明しようとするとできない——これが「読めた風」の正体。マーカー部分が文の<b>幹</b>（その人は、振る舞い続ける）。幹が見えると、残りは全部飾りだと分かります。だから、<b>闇雲に文章を読みまくっても結果は出ません。</b></p>
+      <p class="k-lead">次の文、知らない単語はほぼゼロのはずです。まず<b>自力で</b>読んでください。</p>
+      <div class="demo-en" id="demoEn">In the examples I am talking of the person continues to behave in what most people agree is a normal manner.</div>
+      <div class="dq">
+        <div class="dq-q">Q. 「〜し続ける（continues）」の主語はどれ？</div>
+        <div class="dq-grid">
+          <button class="dq-btn" data-ok="0">I（私）</button>
+          <button class="dq-btn" data-ok="1">the person（その人）</button>
+          <button class="dq-btn" data-ok="0">most people（ほとんどの人）</button>
+          <button class="dq-btn" data-ok="0">the examples（例）</button>
+        </div>
+        <div class="dq-verdict" id="dqVerdict"></div>
+      </div>
+      <div id="dqReveal" hidden>
+        <div class="tree">
+          <div class="branch"><span class="tag">飾り</span>In the examples ( I am talking of )<span class="jp">（私が話している例では）← ただの前置き</span></div>
+          <div class="trunkline"><span class="tag">幹S</span>the person<span class="jp">（その人は）</span></div>
+          <div class="trunkline"><span class="tag">幹V</span>continues to behave<span class="jp">（振る舞い続ける）</span></div>
+          <div class="branch"><span class="tag">飾り</span>in ( what most people agree is a normal manner )<span class="jp">（ほとんどの人が普通だと認めるやり方で）</span></div>
+        </div>
+        <div class="box bad"><div class="cap">なぜ迷うのか</div>この文には、主語っぽい顔をした名詞が<b>3つ</b>並んでいます（I ／ most people ／ the examples）。単語を拾って読むと、どれが幹か決められない。でも幹は <b>the person continues to behave</b> の1本だけ。残りは全部飾りです。</div>
+        <div class="box"><div class="cap">直訳 → 咀嚼</div><b>直訳：</b>私が話している例では、その人は、ほとんどの人が普通の振る舞いだと認めるようなやり方で、振る舞い続ける。<br><b>つまり：</b>その人は、まわりから見ればごく普通の様子で行動し続けている、ということ。</div>
+        <p class="demo-note">単語は全部、中学レベル。それでも今、<b>迷いませんでしたか？</b> それが「読めた風」の正体です。だから、<b>闇雲に文章を読みまくっても結果は出ません。</b>読み方を先に入れる必要があります。</p>
+      </div>
 
       <div class="k-cap">読める人が全員やっている5ステップ</div>
       <div class="pipeline">
@@ -1185,6 +1221,28 @@ function renderResult(){
       document.getElementById("monitorcopy").textContent = "「" + CAMP.word + "」をコピーしました ✓";
     });
   };
+  /* デモ英文のミニ問題：答えて初めて構造の種明かしが開く */
+  let dqDone = false;
+  app.querySelectorAll(".dq-btn").forEach(b=>{
+    b.onclick = ()=>{
+      if(dqDone) return;
+      dqDone = true;
+      const isOk = b.dataset.ok === "1";
+      app.querySelectorAll(".dq-btn").forEach(x=>{
+        x.disabled = true;
+        if(x.dataset.ok === "1") x.classList.add("is-ok");
+      });
+      if(!isOk) b.classList.add("picked-ng");
+      const v = document.getElementById("dqVerdict");
+      v.textContent = isOk
+        ? "○ 正解。……でも、即答できましたか？ 一瞬でも迷ったなら、下を読んでください。"
+        : "✗ そう読んだなら——この文は、読めていません。下で種明かしをします。";
+      v.classList.add("show", isOk ? "ok" : "ng");
+      document.getElementById("demoEn").innerHTML =
+        'In the examples I am talking of <span class="trunk">the person continues to behave</span> in what most people agree is a normal manner.';
+      document.getElementById("dqReveal").hidden = false;
+    };
+  });
   /* LINEボタンを押した瞬間にも自動コピー（コピーを飛ばした人の保険） */
   app.querySelectorAll(".line-go").forEach(a=>{ a.addEventListener("click", copyBoth); });
   document.getElementById("stickybar").classList.add("show");

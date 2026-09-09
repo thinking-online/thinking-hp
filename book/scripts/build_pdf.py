@@ -434,8 +434,26 @@ def build_copy(outpath):
     return outpath
 
 
+def build_kousei(outpath):
+    body = open("docs/13_新構成案_6つの力.md", encoding="utf-8").read()
+    cover = """<div class="cover">
+<div class="kicker">新構成案　2026年9月9日　提案。確定ではありません</div>
+<div class="t">6つの力</div>
+<div class="s">選ぶ・入れる・つなげる・出す・直す・回す</div>
+<div class="au">あの子が、勉強中に絶対にやらないこと</div>
+<div class="note">主張を6文に絞り、覚える概念を10個から5個に減らす案。<br>
+削るもの4つ、残すもの4つ＋道具1つ。45法則の再割り当てまで。</div>
+</div>"""
+    doc = ("<!doctype html><html lang='ja'><head><meta charset='utf-8'>"
+           f"<title>新構成案</title><style>{CSS}</style></head><body>\n"
+           + cover + md_to_html(body) + "\n</body></html>")
+    open(outpath, "w", encoding="utf-8").write(doc)
+    return outpath
+
+
 if __name__ == "__main__":
     os.makedirs("build", exist_ok=True)
     print(build_daihon("build/台本.html"))
     print(build_kikakusho("build/企画書.html"))
     print(build_copy("build/コピー案.html"))
+    print(build_kousei("build/新構成案.html"))

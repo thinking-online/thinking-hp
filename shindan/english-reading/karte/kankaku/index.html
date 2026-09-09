@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>読み方カルテ｜感覚読み型｜受験の王様</title>
+<meta name="description" content="英語設計診断「感覚読み型」専用の攻略カルテ。なぜそう判定されたのか、なぜ危ないのか、今日から変える「根拠読み」の型まで。">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0B2239;
+  --grid:rgba(126,170,255,.07);
+  --gold:#E3B04B;
+  --gold-deep:#C39432;
+  --gold-soft:rgba(227,176,75,.14);
+  --paper:#FAF7EF;
+  --paper-line:#E5DEC9;
+  --ink:#182433;
+  --ink-sub:#5C6775;
+  --line-green:#06C755;
+  --red:#a1252c;
+  --radius:10px;
+  --font-body:'Noto Sans JP',-apple-system,BlinkMacSystemFont,'Hiragino Kaku Gothic ProN',Meiryo,sans-serif;
+  --font-display:'Shippori Mincho','Hiragino Mincho ProN',serif;
+  --font-num:'Oswald','Noto Sans JP',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{font-size:16px}
+body{
+  font-family:var(--font-body);
+  color:var(--ink);
+  background:
+    linear-gradient(rgba(7,24,41,.55),rgba(7,24,41,.55)),
+    repeating-linear-gradient(0deg,transparent 0 31px,var(--grid) 31px 32px),
+    repeating-linear-gradient(90deg,transparent 0 31px,var(--grid) 31px 32px),
+    var(--navy);
+  min-height:100vh;
+  line-height:1.85;
+}
+.wrap{max-width:480px;margin:0 auto;padding:20px 16px 64px}
+.sheet{
+  border:2px solid var(--ink);border-radius:8px;position:relative;
+  background:var(--paper);box-shadow:0 12px 34px rgba(0,0,0,.4);
+}
+.sheet::before{
+  content:"";position:absolute;inset:6px;border:1px solid rgba(24,36,51,.28);
+  border-radius:5px;pointer-events:none;
+}
+.inner{padding:24px 20px 28px;position:relative}
+.eyebrow{font-size:.68rem;letter-spacing:.22em;font-weight:700;color:var(--gold-deep);text-transform:uppercase}
+h1{
+  font-family:var(--font-display);font-weight:800;font-size:1.7rem;line-height:1.4;
+  margin:.3em 0 .2em;letter-spacing:.04em;
+}
+h1 .type{
+  border-bottom:3px double var(--gold-deep);padding:0 .1em .05em;
+}
+.lead{color:var(--ink-sub);font-size:.9rem;border-bottom:1.5px solid var(--ink);padding-bottom:16px;margin-bottom:8px}
+h2{
+  font-family:var(--font-display);font-weight:800;font-size:1.15rem;letter-spacing:.05em;
+  margin:34px 0 12px;display:flex;align-items:center;gap:10px;
+}
+h2 .n{
+  flex:0 0 30px;height:30px;background:var(--ink);color:var(--paper);border-radius:50%;
+  font-family:var(--font-num);font-size:.85rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;letter-spacing:0;
+}
+p{font-size:.92rem;margin-bottom:12px}
+b{font-weight:900}
+.marker{background:linear-gradient(transparent 62%,rgba(227,176,75,.45) 62%)}
+ul.flow{list-style:none;display:grid;gap:8px;margin:12px 0 16px}
+ul.flow li{
+  background:#fff;border:1px solid var(--paper-line);border-radius:8px;
+  padding:10px 12px;font-size:.88rem;display:flex;gap:10px;align-items:flex-start;
+}
+ul.flow li .i{flex:0 0 auto}
+.box{
+  background:#fff;border:1px solid var(--paper-line);border-left:3px solid var(--gold-deep);
+  border-radius:0 8px 8px 0;padding:14px;margin:14px 0;font-size:.9rem;
+}
+.box.bad{border-left-color:var(--red)}
+.box .cap{font-size:.7rem;letter-spacing:.18em;font-weight:700;color:var(--ink-sub);margin-bottom:6px}
+.box.bad .cap{color:var(--red)}
+.en{
+  background:#fff;border:1.5px solid var(--ink);border-radius:8px;padding:14px;
+  font-size:1rem;line-height:1.9;margin:14px 0;overflow-wrap:anywhere;
+}
+.en .sv{border-bottom:2px solid var(--gold-deep);font-weight:700}
+.steps{counter-reset:st;display:grid;gap:10px;margin:14px 0}
+.steps .st{
+  background:#fff;border:1px solid var(--paper-line);border-radius:8px;padding:12px 14px;
+  font-size:.88rem;position:relative;padding-left:44px;
+}
+.steps .st::before{
+  counter-increment:st;content:counter(st);
+  position:absolute;left:12px;top:12px;width:22px;height:22px;
+  background:var(--gold-deep);color:#fff;border-radius:50%;
+  font-family:var(--font-num);font-size:.75rem;font-weight:600;
+  display:flex;align-items:center;justify-content:center;
+}
+.week{width:100%;border-collapse:collapse;font-size:.84rem;margin:12px 0 6px;background:#fff}
+.week th,.week td{border:1px solid var(--paper-line);padding:8px 10px;text-align:left}
+.week th{background:var(--gold-soft);font-family:var(--font-num);font-weight:600;white-space:nowrap;font-size:.8rem}
+.slogan{
+  text-align:center;font-family:var(--font-display);font-weight:800;font-size:1.25rem;
+  letter-spacing:.1em;margin:20px 0;color:var(--ink);
+}
+.slogan small{display:block;font-family:var(--font-body);font-weight:500;font-size:.72rem;color:var(--ink-sub);letter-spacing:.14em;margin-top:4px}
+.stairs{display:grid;gap:6px;margin:14px 0}
+.stair{
+  display:flex;align-items:center;gap:10px;background:#fff;
+  border:1px solid var(--paper-line);border-radius:8px;padding:9px 12px;font-size:.86rem;
+}
+.stair .lv{font-family:var(--font-num);font-weight:600;font-size:.72rem;color:var(--ink-sub);flex:0 0 3.4em}
+.stair.you{border:2px solid var(--red);position:relative}
+.stair.you::after{
+  content:"← いまのあなたの壁";position:absolute;right:10px;
+  font-size:.7rem;font-weight:900;color:var(--red);
+}
+.stair:nth-child(1){margin-left:0}
+.stair:nth-child(2){margin-left:10px}
+.stair:nth-child(3){margin-left:20px}
+.stair:nth-child(4){margin-left:30px}
+.cta{
+  margin-top:26px;border:2.5px solid var(--gold-deep);border-radius:12px;
+  background:linear-gradient(180deg,#fff,var(--gold-soft));
+  box-shadow:0 6px 18px rgba(227,176,75,.25);padding:18px 16px;
+}
+.cta .cap{text-align:center;font-size:.72rem;letter-spacing:.18em;font-weight:900;color:var(--gold-deep);margin-bottom:8px}
+.cta p{font-size:.88rem}
+.btn{
+  display:block;width:100%;border:none;cursor:pointer;
+  font-family:var(--font-body);font-weight:700;font-size:1rem;
+  border-radius:var(--radius);padding:15px;margin-top:10px;
+  text-align:center;text-decoration:none;color:var(--ink);
+  transition:transform .12s ease;
+}
+.btn:active{transform:scale(.985)}
+.btn-primary{background:linear-gradient(180deg,var(--gold),var(--gold-deep));color:#231a05;box-shadow:0 6px 16px rgba(227,176,75,.35)}
+.btn-line{background:var(--line-green);color:#fff;box-shadow:0 6px 16px rgba(6,199,85,.3)}
+.copied{
+  display:none;text-align:center;font-size:.85rem;font-weight:700;color:#0a7a3d;
+  background:#eafaf0;border:1px solid #bfe8cf;border-radius:8px;padding:10px;margin-top:10px;
+}
+.copied.show{display:block}
+.note{text-align:center;font-size:.76rem;color:var(--ink-sub);margin-top:10px}
+.foot{text-align:center;margin-top:26px;color:rgba(250,247,239,.5);font-size:.68rem;letter-spacing:.18em}
+@media (max-width:360px){h1{font-size:1.45rem}}
+</style>
+</head>
+<body>
+<main class="wrap">
+<div class="sheet"><div class="inner">
+
+  <div class="eyebrow">KING'S READING KARTE — 01</div>
+  <h1><span class="type">感覚読み型</span>の攻略カルテ</h1>
+  <p class="lead">「わからない」を選ばずに、誤答が多い。——診断でそのサインが出た人だけに送っている、専用の処方箋です。</p>
+
+  <h2><span class="n">1</span>あなたに起きていること</h2>
+  <p>診断のとき、あなたは根拠を持てない問題でも「わからない」を押さず、選択肢を<b>選んで、外して</b>いました。これは性格でも運でもなく、<span class="marker">読み方のクセ</span>です。具体的にはこう読んでいます。</p>
+  <ul class="flow">
+    <li><span class="i">👀</span><span>文の中の「知っている単語」だけを拾う</span></li>
+    <li><span class="i">🧩</span><span>拾った単語から「それっぽい意味」を頭の中で組み立てる</span></li>
+    <li><span class="i">🎯</span><span>選択肢の中から、その「それっぽさ」に一番近いものを選ぶ</span></li>
+  </ul>
+  <p>この読み方、<b>易しい文なら正解できてしまう</b>んです。だから今まで表面化しなかった。むしろ「英語は雰囲気でなんとかなる」という成功体験さえある。それが感覚読み型の一番やっかいなところです。</p>
+
+  <h2><span class="n">2</span>なぜ、今のままだと危ないか</h2>
+  <p>種明かしをします。今回の診断の誤答の選択肢は、<b>全部わざと「雰囲気で読むと選びたくなる」ように作ってあります</b>。本文の単語をそのまま使いながら、「誰が・誰に」を入れ替えたり、肯定と否定をひっくり返したり。</p>
+  <div class="box bad">
+    <div class="cap">つまり</div>
+    あなたが落とした問題は「単語力が足りなくて」落ちたのではありません。<b>単語は拾えているのに、組み立てで落ちている。</b>だから、このまま単語帳だけ増やしても失点は止まりません。そして入試の選択肢は、診断とまったく同じ発想で作られています。
+  </div>
+  <p>感覚読みは、文が長く・構造が複雑になるほど命中率が下がります。学年が上がって「最近、英語が急に読めなくなった」と感じる子の多くは、実はここでつまずいています。</p>
+
+  <h2><span class="n">3</span>今日から変える「根拠読み」の型</h2>
+  <p>直し方はシンプルです。読む順番を、感覚から<span class="marker">「根拠」</span>に変える。ルールは3つだけ。</p>
+  <div class="steps">
+    <div class="st">訳す前に、<b>動詞（V）に印</b>をつけて「誰が・どうした」を先に確定させる</div>
+    <div class="st">答えを選ぶ前に、<b>根拠になる場所を本文で指でおさえる</b></div>
+    <div class="st">指させないなら、それは「わかっていない」。<b>当てずに、戻って読み直す</b></div>
+  </div>
+  <p>実際にやってみましょう。診断にも出た、この2文。</p>
+  <div class="en">The bag under the desk is not mine. <span class="sv">Mine</span> <span class="sv">is</span> on the chair by the door.</div>
+  <div class="box bad">
+    <div class="cap">感覚読み</div>
+    「bag…desk…mine…chair…door…机のところの私のカバン？」→ 単語は全部知っているのに、位置関係が組み立てられず、それっぽい選択肢に吸い込まれる。
+  </div>
+  <div class="box">
+    <div class="cap">根拠読み</div>
+    ① 動詞は is。→ その前の <b>The bag under the desk</b> までがまるごと主語のカタマリ。「机の下のカバンは」＋「私のではない」。<br>
+    ② 2文目の主語は <b>Mine</b>（＝my bag）。「私のカバンは」＋「ドアのそばの椅子の上にある」。<br>
+    ③ 「私のカバンはどこ？」→ 本文の <b>on the chair by the door</b> を指でおさえて答える。
+  </div>
+  <p>文が中1レベルでも高3レベルでも、やることは同じです。<b>カタマリで切って、Vから確定させて、根拠を指でおさえる。</b>長い文はこの型の「回数」が増えるだけ。</p>
+
+  <h2><span class="n">4</span>7日間・1日10分プラン</h2>
+  <table class="week">
+    <tr><th>DAY 1-2</th><td>手持ちの教科書・問題集から1日3文。動詞に印→主語のカタマリに線→和訳</td></tr>
+    <tr><th>DAY 3-4</th><td>同じ3文を「誰が・どうした・なぜ」の3点だけで口頭で言い直す</td></tr>
+    <tr><th>DAY 5-6</th><td>問題を解くとき、根拠に下線を引いてから答える。引けない問題は飛ばして印をつける</td></tr>
+    <tr><th>DAY 7</th><td>診断で間違えた問題の英文を、根拠読みでもう一度読み直す（結果画面は保存されています）</td></tr>
+  </table>
+  <div class="slogan">「当てるな、指させ」<small>KANKAKU-YOMI RECOVERY SLOGAN</small></div>
+
+  <h2><span class="n">5</span>この先の話——英語のCore（核）の階段</h2>
+  <p>英語の力は、この順番で積み上がる階段です。</p>
+  <div class="stairs">
+    <div class="stair"><span class="lv">STEP1</span><span>英単語 — 拾える語を増やす</span></div>
+    <div class="stair"><span class="lv">STEP2</span><span>英文法 — カタマリを作るルール</span></div>
+    <div class="stair you"><span class="lv">STEP3</span><span>英文解釈 — SVOCで文を確定させる</span></div>
+    <div class="stair"><span class="lv">STEP4</span><span>英語長文 — 文と文を論理でつなぐ</span></div>
+  </div>
+  <p>感覚読み型のあなたが最優先で入れるべきは<b>STEP3「解釈の型」</b>。ここが入ると、いま持っている単語力と文法知識が一気に「読める」に変わります。</p>
+  <p>ただし——<b>どの教材を・どの順番で・1日何分やるか</b>は、学年と現在地とゴール（志望校）で全員違います。ここから先は、雰囲気で決めるところではありません。</p>
+
+  <div class="cta">
+    <div class="cap">＼ ここから先は、個別に設計 ／</div>
+    <p>王様があなたの診断結果を見た上で、<b>「この秋、何をどの順番でやるか」</b>を個別に整理して返します。希望する人は、LINEで<b>「設計相談」</b>とだけ送ってください。</p>
+    <button class="btn btn-primary" id="copyword">「設計相談」をコピーする</button>
+    <div class="copied" id="copied">コピーしました！LINEに貼り付けて送信してください。</div>
+    <a class="btn btn-line" id="linego" href="#" target="_blank" rel="noopener">LINEを開いて送る</a>
+    <p class="note">診断結果を送ってくれた人が対象です。無理な勧誘はしません。</p>
+  </div>
+
+</div></div>
+<div class="foot">受験の王様｜学部別合格設計塾 THINKING</div>
+</main>
+
+<script>
+/* ★ LINE URL（診断ページと同じもの） */
+const LINE_URL = "https://liff.line.me/1656043253-rkMxPZMQ/landing?follow=%40499yrupi&lp=JDVkS9&liff_id=1656043253-rkMxPZMQ";
+const WORD = "設計相談";
+document.getElementById("linego").href = LINE_URL;
+
+function fallbackCopy(text, done){
+  const ta = document.createElement("textarea");
+  ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+  document.body.appendChild(ta); ta.focus(); ta.select();
+  try{ document.execCommand("copy"); done(); }catch(e){}
+  document.body.removeChild(ta);
+}
+function copyPlain(text, done){
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(done).catch(()=>fallbackCopy(text, done));
+  } else { fallbackCopy(text, done); }
+}
+const btn = document.getElementById("copyword");
+btn.onclick = ()=> copyPlain(WORD, ()=>{
+  document.getElementById("copied").classList.add("show");
+  btn.textContent = "コピーしました ✓";
+});
+document.getElementById("linego").addEventListener("click", ()=> copyPlain(WORD, ()=>{}));
+</script>
+</body>
+</html>

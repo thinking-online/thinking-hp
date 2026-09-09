@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>英語設計診断｜受験の王様</title>
+<title>【スタッフ用】診断結果プレビュー｜受験の王様</title>
 <meta name="description" content="学年別・全10問。「英語の読み方」ができているかを、構造把握・言い換え・論理の3分野で本質から診断します。1問ごとに制限時間つき。">
 <meta property="og:title" content="英語設計診断｜受験の王様">
 <meta property="og:description" content="学年別・全10問・制限時間つき。なんとなく読みでは解けない「英語の読み方」診断。構造把握/言い換え/論理の3分野で弱点タイプと今やるべき順番がわかります。">
@@ -568,6 +568,33 @@ img{max-width:100%;height:auto}
 </style>
 </head>
 <body>
+<meta name="robots" content="noindex">
+<style>
+.pvbar{position:fixed;top:0;left:0;right:0;z-index:60;background:rgba(7,24,41,.96);
+  border-bottom:1px solid rgba(227,176,75,.4);padding:8px 10px;}
+.pvbar .t{max-width:480px;margin:0 auto 6px;font-size:.62rem;letter-spacing:.12em;color:#E3B04B;font-weight:900;text-align:center}
+.pvbar .row{max-width:480px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.pvbar button{border:1px solid #E3B04B;background:transparent;color:#FAF7EF;border-radius:6px;
+  padding:6px 2px;font-size:.64rem;font-weight:700;cursor:pointer;font-family:inherit}
+.pvbar button.on{background:#E3B04B;color:#231a05}
+body{padding-top:92px}
+</style>
+<div class="pvbar"><div class="t">スタッフ用プレビュー｜タイプをタップして結果画面を切り替え（生徒には配布しないでください）</div><div class="row" id="pvrow"></div></div>
+<script>
+const PV_SNAPS = {"満点(100点)": {"v": 1, "date": "2026.09.09", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ok"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ok"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ok"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ok"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "ok"}]}, "実戦設計型": {"v": 1, "date": "2026.09.09", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ng"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ok"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ok"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ok"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ok"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "ok"}]}, "感覚読み型": {"v": 1, "date": "2026.09.09", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ng"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ng"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ok"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ng"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ng"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "ng"}]}, "読み違い型": {"v": 1, "date": "2026.09.09", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ng"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "idk"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ok"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ok"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ng"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "ok"}]}, "構造BB型": {"v": 1, "date": "2026.09.09", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ng"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ok"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ok"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "idk"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ok"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "ok"}]}, "論理迷子型": {"v": 1, "date": "2026.09.09", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ok"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ng"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ok"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ok"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "to"}]}, "基礎再設計型": {"v": 1, "date": "2026.09.09", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "idk"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "idk"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "idk"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ng"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "idk"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ng"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "idk"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "idk"}]}};
+const cur = localStorage.getItem("pv_staff_type") || "読み違い型";
+try{ localStorage.setItem("thinking_eigo_staff_preview", JSON.stringify(PV_SNAPS[cur] || Object.values(PV_SNAPS)[0])); }catch(e){}
+document.addEventListener("DOMContentLoaded", ()=>{
+  const row = document.getElementById("pvrow");
+  Object.keys(PV_SNAPS).forEach(name=>{
+    const b = document.createElement("button");
+    b.textContent = name;
+    if(name===cur) b.classList.add("on");
+    b.onclick = ()=>{ localStorage.setItem("pv_staff_type", name); location.reload(); };
+    row.appendChild(b);
+  });
+});
+</script>
 <main class="wrap"><div id="app"></div><div class="foot">受験の王様｜学部別合格設計塾 THINKING</div></main>
 
 <script>
@@ -586,9 +613,9 @@ const DIAG_CODE = "TH-ENG-A8BK";
    LINE DevelopersでLIFFアプリを作成し、そのLIFF ID（例 "1234567890-abcdefgh"）を
    設定すると、開いた瞬間にLINEログインが走り、生徒のLINE表示名が
    結果シートとコピー文面に自動で入る。空文字のままなら連携なしで動作。 */
-const LIFF_ID = "2010988133-9QK9ecuR";
+const LIFF_ID = ""; // スタッフ用プレビューではLINEログインを無効化
 /* 結果の保存キー（診断を一度受けたら、次回以降は保存済みの結果を即表示） */
-const STORE_KEY = "thinking_eigo_shindan_v1";
+const STORE_KEY = "thinking_eigo_staff_preview";
 /* ★② 結果送信のリターン（結果画面の一等地に出る文言） */
 const SEND_RETURN = "この結果をコピーして、そのままLINEで送ってください。受験の王様が結果を見て、<b>今の状態と「やるべきこと」をあなた個別に整理して返します。</b>";
 /* ★②' キャンプ告知（結果画面下部のバナー） */
@@ -834,7 +861,7 @@ function renderStart(){
   app.innerHTML = `
   <div class="card card--start" style="text-align:center">
     <div class="cover-frame">
-      <img class="cover" src="cover.jpg" alt="英語力診断｜あなたの“読む”力を一発判定"
+      <img class="cover" src="../cover.jpg" alt="英語力診断｜あなたの“読む”力を一発判定"
         width="819" height="1024" decoding="async"
         onerror="this.closest('.cover-frame')?.remove();document.getElementById('fallback-title').style.display='block'">
     </div>
@@ -1119,7 +1146,7 @@ function renderResult(){
   app.innerHTML = `
   ${S.restored ? `<div class="restored-note">保存済みの診断結果を表示しています（診断日 ${dateStr}）</div>` : ``}
   <div class="result-cover-frame">
-    <img class="result-cover" src="result-header.jpg" alt="あなたの診断結果" width="1024" height="576" decoding="async" onerror="this.closest('.result-cover-frame')?.remove()">
+    <img class="result-cover" src="../result-header.jpg" alt="あなたの診断結果" width="1024" height="576" decoding="async" onerror="this.closest('.result-cover-frame')?.remove()">
   </div>
   <div class="sheet"><div class="sheet-inner">
     <div class="titleblock">

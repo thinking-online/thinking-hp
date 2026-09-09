@@ -307,6 +307,31 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
 @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
 .cta-note{text-align:center;font-size:.78rem;color:var(--ink-sub)}
 
+/* ===== 長文への橋（全タイプ共通） ===== */
+.longbridge{
+  margin-top:20px;border:2px solid var(--ink);border-radius:10px;
+  background:#fff;padding:16px 14px;
+}
+.longbridge .lcap{
+  text-align:center;font-size:.7rem;letter-spacing:.22em;font-weight:900;
+  color:var(--red);margin-bottom:6px;
+}
+.longbridge h4{
+  text-align:center;font-family:var(--font-display);font-weight:800;
+  font-size:1.05rem;letter-spacing:.04em;line-height:1.6;margin-bottom:12px;
+}
+.lb-compare{display:grid;gap:6px}
+.lb-card{
+  border:1.5px solid var(--paper-line);border-radius:8px;padding:10px 12px;
+  font-size:.84rem;background:var(--paper);
+}
+.lb-card .t{font-size:.66rem;letter-spacing:.16em;font-weight:900;color:var(--ink-sub);margin-bottom:2px}
+.lb-card.goal{border-color:var(--gold-deep);background:var(--gold-soft)}
+.lb-card.goal .t{color:var(--gold-deep)}
+.lb-arrow{text-align:center;color:var(--gold-deep);font-weight:900;line-height:1;padding:2px 0}
+.longbridge .lb-note{font-size:.84rem;margin-top:12px;line-height:1.85}
+.longbridge .lb-note b{background:linear-gradient(transparent 62%,rgba(227,176,75,.45) 62%);font-weight:900}
+
 /* ===== 解説セクション ===== */
 .kaisetsu{margin-top:26px}
 .k-head{
@@ -727,7 +752,7 @@ const GRADE_COMMENT = {
 };
 
 const LEVEL_COMMENT = {
- 5:"制限時間内でも精密に読めています。この時期として最高水準の完成度。あとは志望校に向けた実戦設計だけ。",
+ 5:"制限時間内でも精密に読めています。この時期として最高水準の完成度。ただし、この読みを「長文」で使う技術は別物——下の解説まで必ず読んでください。",
  4:"読み方の土台はほぼ完成しています。落とした問題の分野を埋めれば、上位帯で得点が安定します。",
  3:"いま最も伸びしろが大きいゾーンです。「読み方」の入れ方しだいで結果が大きく変わります。",
  2:"英文を「なんとなく」で処理しているサインが出ています。読み方のルールを入れれば、まだ十分に間に合います。",
@@ -1162,6 +1187,17 @@ function renderResult(){
     </div>
 
     <div class="comment">${GRADE_COMMENT[S.quizKey]}<br>${LEVEL_COMMENT[r.level]}<br>${gapSchool}までの具体的な話は、結果を送ってくれた人と個別に進めます。</div>
+
+    <div class="longbridge">
+      <div class="lcap">— たとえ100点でも —</div>
+      <h4>この診断で測れたのは、<br>まだ「短い文章」の読みです</h4>
+      <div class="lb-compare">
+        <div class="lb-card"><div class="t">今日の診断で測ったもの</div>少ない文章量を、正確に読めるか</div>
+        <div class="lb-arrow">▼ ここに大きな壁がある ▼</div>
+        <div class="lb-card goal"><div class="t">入試の長文で問われるもの</div>何十もの文を<b>論理でつなぎ</b>、制限時間内に解き切る力</div>
+      </div>
+      <p class="lb-note">1文が読める人が、そのまま長文を解けるわけではありません。今日の読み方を<b>「長文でどう使うか」</b>、そして段落と段落を筋道立てて追う<b>「論理的な読解」</b>は、学ばないと身につかない技術です。満点だった人も含めて、全員ここからが本番——その入口を、この下で解説します。</p>
+    </div>
 
     <div class="kaisetsu">
       <div class="k-head"><small>KAISETSU — 全タイプ共通</small>なぜ「読めた風」で<br>失点するのか</div>

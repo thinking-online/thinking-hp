@@ -451,9 +451,27 @@ def build_kousei(outpath):
     return outpath
 
 
+def build_saishu(outpath):
+    body = open("docs/14_最終構成案.md", encoding="utf-8").read()
+    cover = """<div class="cover">
+<div class="kicker">最終構成案　2026年9月9日</div>
+<div class="t">あの子が、<br>勉強中に絶対にやらないこと</div>
+<div class="s">伸びる人と伸びない人が、毎日分かれる45の場面</div>
+<div class="au">朝倉 徹大（受験の王様）</div>
+<div class="note">6つの力（選ぶ・入れる・つなげる・出す・直す・回す）に、<br>
+45法則を配置し直した完成形。目次コピー、実演、実装コストまで。</div>
+</div>"""
+    doc = ("<!doctype html><html lang='ja'><head><meta charset='utf-8'>"
+           f"<title>最終構成案</title><style>{CSS}</style></head><body>\n"
+           + cover + md_to_html(body) + "\n</body></html>")
+    open(outpath, "w", encoding="utf-8").write(doc)
+    return outpath
+
+
 if __name__ == "__main__":
     os.makedirs("build", exist_ok=True)
     print(build_daihon("build/台本.html"))
     print(build_kikakusho("build/企画書.html"))
     print(build_copy("build/コピー案.html"))
     print(build_kousei("build/新構成案.html"))
+    print(build_saishu("build/最終構成案.html"))

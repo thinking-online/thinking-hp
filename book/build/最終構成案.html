@@ -1,0 +1,217 @@
+<!doctype html><html lang='ja'><head><meta charset='utf-8'><title>最終構成案</title><style>
+@page { size: A5; margin: 13mm 14mm 11mm 14mm; }
+@page :first { margin: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 9.1pt; line-height: 1.72;
+       color: #1c1c1c; margin: 0; }
+p { margin: 0 0 0.72em 0; }
+code { font-size: 0.9em; color: #666; background: #f2f2f2; padding: 0 .25em; border-radius: 2px; }
+hr.rule { border: 0; border-top: 1px solid #ddd; margin: 1.6em 0; }
+h1 { font-size: 15.5pt; line-height: 1.45; margin: 0 0 .95em 0; padding-bottom: .5em;
+     border-bottom: 2px solid #1c1c1c; page-break-before: always; page-break-after: avoid; }
+h2 { font-size: 12.5pt; margin: 2.0em 0 .8em 0; page-break-after: avoid; }
+h3 { font-size: 10.4pt; margin: 1.5em 0 .5em 0; color: #444; page-break-after: avoid; }
+h4 { font-size: 9.8pt; margin: 1.2em 0 .4em 0; color: #555; page-break-after: avoid; }
+ul { margin: 0 0 1em 0; padding-left: 1.2em; }
+li { margin-bottom: .35em; }
+table { border-collapse: collapse; width: 100%; font-size: 8.4pt; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: .38em .5em; text-align: left; vertical-align: top; }
+th { background: #f4f4f4; }
+.indent { margin: 0 0 1em 0; white-space: pre-wrap; font-size: 9.2pt; line-height: 1.85; }
+.vs { font-size: 8.2pt; margin: .28em 0 .85em 0; }
+.vs th, .vs td { padding: .3em .5em; line-height: 1.45; }
+.vs th:first-child, .vs td:first-child { width: 21%; font-size: 7.8pt; color: #8a8a8a;
+                                          background: #fafafa; white-space: nowrap; }
+.vs th:nth-child(2), .vs td:nth-child(2) { width: 39.5%; color: #5a5a5a; }
+.vs th:nth-child(3), .vs td:nth-child(3) { width: 39.5%; }
+.vs th { background: #f2f2f2; color: #444; font-size: 8pt; }
+.vs th:nth-child(3) { color: #1c1c1c; }
+.vs td:nth-child(3) { background: #f4f4f4; }
+.vs.f1 td:nth-child(3), .vs.f1 th:nth-child(3) { background: #eef4fb; }
+.vs.f2 td:nth-child(3), .vs.f2 th:nth-child(3) { background: #eef6f1; }
+.vs.f3 td:nth-child(3), .vs.f3 th:nth-child(3) { background: #faf4e6; }
+.vs.f4 td:nth-child(3), .vs.f4 th:nth-child(3) { background: #fdf0f5; }
+.vs.f5 td:nth-child(3), .vs.f5 th:nth-child(3) { background: #fbeeec; }
+.vs.f6 td:nth-child(3), .vs.f6 th:nth-child(3) { background: #f5eefa; }
+.cklist { margin: .25em 0 .7em 0; }
+.cols2 { column-count: 2; column-gap: 7mm; margin-top: .2em; }
+.cols2 h3 { margin: .55em 0 .3em 0; font-size: 8.6pt; color: #666; break-after: avoid; }
+.cols2 h3:first-child { margin-top: 0; }
+.cols2 .ck { break-inside: avoid; padding: .16em 0; }
+.ck { display: flex; align-items: flex-start; gap: .5em; padding: .2em 0; font-size: 8.8pt; }
+.ck .n { width: 1.6em; text-align: right; color: #9a9a9a; font-size: 7.8pt; padding-top: .18em; }
+.ck .box { width: .78em; height: .78em; border: 1px solid #9a9a9a; border-radius: 1px;
+           display: inline-block; flex: none; margin-top: .32em; }
+.ck .t { flex: 1; }
+.frows { margin: .6em 0 1.2em 0; }
+.frow { display: flex; align-items: baseline; gap: .5em; padding: .42em 0; }
+.frow .fl { white-space: nowrap; }
+.frow .fd { flex: 1 1 auto; border-bottom: 1px solid #cfcfcf; height: .85em; }
+.frow .fu { white-space: nowrap; color: #777; font-size: 8.6pt; }
+.figbox { border: 1px dashed #b0b0b0; color: #777; text-align: center; padding: 1.5em .8em;
+          margin: 1.1em 0; font-size: 8.6pt; border-radius: 3px; background: #fafafa; }
+.pagelabel { font-size: 7.3pt; letter-spacing: .18em; color: #8a8a8a; border-bottom: 1px solid #e2e2e2;
+             padding-bottom: .35em; margin: 0 0 1.1em 0; page-break-after: avoid; }
+.newpage { page-break-before: always; }
+.pagebreak { page-break-before: always; height: 0; }
+h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
+.front p { font-size: 9.8pt; line-height: 1.85; margin: 0 0 .95em 0; }
+.front .indent { font-size: 11pt; line-height: 2.0; }
+.lbl { font-size: 7.3pt; letter-spacing: .16em; color: #9a9a9a; margin: .72em 0 .22em 0; page-break-after: avoid; }
+.qtext { font-size: 12.5pt; line-height: 1.55; margin: 0 0 1em 0; }
+.situ { margin: 0 0 1.1em 0; }
+.hintbox { background: #f6f6f2; border-left: 3px solid #c9c2a6; padding: .6em .85em; margin: 0 0 .9em 0; font-size: 8.9pt; }
+.lawbox { font-size: 11pt; line-height: 1.45; padding: .5em .85em; margin: .1em 0 .75em 0;
+          border-left: 4px solid #1c1c1c; background: #f7f7f7; }
+.lbl-bad, .lbl-good { color: #6a6a6a; }
+.lbl-good { border-left: 3px solid #1c1c1c; padding-left: .5em; margin-left: -.65em; }
+.ans { margin: 0 0 .6em 0; }
+.cornerfig { font-size: 7.8pt; color: #8a8a8a; line-height: 1.75; border-top: 1px dotted #dcdcdc;
+             padding-top: .55em; margin: 0; }
+.rubric { font-size: 8pt; color: #8a8a8a; letter-spacing: .04em; line-height: 1.7; margin: 0 0 1.3em 0; }
+.conclbox { border-top: 1px solid #ddd; padding-top: .55em; margin: 0 0 .8em 0; }
+.lawbox.f1 { border-left-color: #2f6fb0; } .lawbox.f2 { border-left-color: #2e8b57; }
+.lawbox.f3 { border-left-color: #a8791b; } .lawbox.f4 { border-left-color: #cc3d78; }
+.lawbox.f5 { border-left-color: #c0392b; } .lawbox.f6 { border-left-color: #7b3fa0; }
+/* 扉 */
+.cover { height: 210mm; width: 148mm; box-sizing: border-box; padding: 42mm 20mm 20mm 20mm;
+         page-break-after: always; }
+.cover .kicker { font-size: 9pt; color: #777; letter-spacing: .1em; }
+.cover .t { font-size: 18.5pt; line-height: 1.6; margin: 1.2em 0 .6em 0; }
+.cover .s { font-size: 12pt; color: #333; margin-bottom: 3.5em; }
+.cover .obi { font-size: 9.4pt; line-height: 1.9; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;
+              padding: 1em 0; margin-bottom: 3em; }
+.cover .au { font-size: 11pt; }
+.cover .note { font-size: 8pt; color: #999; margin-top: 3.5em; line-height: 1.8; }
+/* 目次 */
+.toc { page-break-after: always; }
+.toc h1 { page-break-before: avoid; }
+.toc .row { display: flex; justify-content: space-between; font-size: 9.4pt; padding: .28em 0;
+            border-bottom: 1px dotted #e0e0e0; }
+.toc .row .r { color: #999; font-size: 8.6pt; }
+.toc .grp { margin-top: 1.4em; font-size: 8pt; letter-spacing: .16em; color: #9a9a9a; }
+/* 中扉 */
+.part { page-break-before: always; padding-top: 55mm; page-break-after: always; }
+.part .num { font-size: 8.4pt; letter-spacing: .22em; color: #999; }
+.part .ttl { font-size: 18pt; line-height: 1.55; margin-top: .8em; }
+.part .bar { width: 34mm; height: 3px; background: #1c1c1c; margin-top: 1.6em; }
+.part.f1 .bar { background: #2f6fb0; } .part.f2 .bar { background: #2e8b57; }
+.part.f3 .bar { background: #a8791b; } .part.f4 .bar { background: #cc3d78; }
+.part.f5 .bar { background: #c0392b; } .part.f6 .bar { background: #7b3fa0; }
+.meta { font-size: 8pt; color: #a0a0a0; border: 1px solid #eee; background: #fbfbfb;
+        padding: .5em .7em; margin: 0 0 1.1em 0; line-height: 1.7; }
+</style></head><body>
+<div class="cover">
+<div class="kicker">最終構成案　2026年9月9日</div>
+<div class="t">あの子が、<br>勉強中に絶対にやらないこと</div>
+<div class="s">伸びる人と伸びない人が、毎日分かれる45の場面</div>
+<div class="au">朝倉 徹大（受験の王様）</div>
+<div class="note">6つの力（選ぶ・入れる・つなげる・出す・直す・回す）に、<br>
+45法則を配置し直した完成形。目次コピー、実演、実装コストまで。</div>
+</div><h1>14　最終構成案</h1>
+<p>2026年9月9日。ここまでの会話で決まったことを、全部1本にした。<br><code>13</code> の6つの力を、45法則の配置と目次コピーまで落とし切ったもの。<br>これが現時点の完成形。<code>00</code> を置き換えるかどうかは著者判断。</p>
+<h1>1　本の骨</h1>
+<h2>タイトル</h2>
+<div class="indent">　　あの子が、勉強中に絶対にやらないこと<br>　　　伸びる人と伸びない人が、毎日分かれる45の場面</div>
+<h2>主張（6文）</h2>
+<div class="indent">　　成績は、頭の良さでは決まりません。できるようになった数で決まります。</div>
+<div class="indent">　　できない が できる に変わるとき、人は必ず同じ工程を通ります。<br>　　選ぶ、入れる、つなげる、出す、直す。この5つを1周すると、1個増えます。</div>
+<div class="indent">　　あとは、試験の日までに何周できるか。それが6つ目、回す力です。</div>
+<div class="indent">　　伸びる人と伸びない人は、この6つの場面それぞれで、毎日ちがうことをしています。<br>　　その違いを、45個、そのまま並べます。</div>
+<h2>帯</h2>
+<div class="indent">　　表　　1　4　9　1　6　2　5　3　6　4　9<br>　　　　　この11個を、10秒で覚えてください。<br>　　　　　たぶん、途中で止まります。<br>　　　　　では、1つだけ。これは1、4、9、16、25、36、49です。<br>　　　　　いま、あなたの記憶力は1ミリも変わっていません。</div>
+<div class="indent">　　裏　　「今日、何時間やったの？」<br>　　　　　　その質問を、変えるだけでした。　　　　　　保護者の方へ</div>
+<h2>6つの力</h2>
+<div class="indent">　　選ぶ　→　入れる　→　つなげる　→　出す　→　直す<br>　　　↑　　　　　　　　　　　　　　　　　　　↓<br>　　　└───────────────────────────────────┘<br>　　　　　　　　　　　　回す</div>
+<table><tr><th>力</th><th>伸びない人</th><th>伸びる人</th><th>章の一行</th></tr><tr><td>選ぶ</td><td>範囲の全部に、一度ずつ手をつける</td><td>出るところから、順番に手をつける</td><td>全部やろうとした人から、間に合わなくなる</td></tr><tr><td>入れる</td><td>量を入れる</td><td>形を入れる</td><td>入っていないものは、つなげようがない</td></tr><tr><td>つなげる</td><td>1つずつ、別々に覚える</td><td>1つ入れて、10動かす</td><td>つないだものは忘れにくい。バラバラのものは忘れる</td></tr><tr><td>出す</td><td>見てわかった、で終える</td><td>何も見ずに出せた、で終える</td><td>出せなかったものは、入っていなかったということ</td></tr><tr><td>直す</td><td>赤で、正解を写す</td><td>どの行から違ったかを、指す</td><td>間違いは、次にどこを直すかを教えてくれている</td></tr><tr><td>回す</td><td>やる気が出たら、回す</td><td>やる気がなくても、回る形にする</td><td>1周で1個。あとは、何周できるか</td></tr></table>
+<h1>2　全体構成</h1>
+<div class="indent">　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　　ページ<br>　　カバー・本扉・目次　　　　　　　　　　　　　　　　　　　　　10<br>　　はじめに　　　　　　　　　　　　　　　　　　　　　　　　　　10<br>　　あの子が、絶対にやらない45のこと（巻頭チェック）　　　　　　 4<br>　　序章　6つのうち、どこで止まっている？　　　　　　　　　　　　4<br>　　第1章　総論　同じ教科書、同じ3時間。なぜ差がつくのか　　　　 14<br>　　第2章　選ぶ力　　　　7本　　　　　　　　　　　　　　　　　　20<br>　　第3章　入れる力　　　8本　　　　　　　　　　　　　　　　　　22<br>　　第4章　つなげる力　　6本　　　　　　　　　　　　　　　　　　18<br>　　第5章　出す力　　　　8本　　　　　　　　　　　　　　　　　　22<br>　　第6章　直す力　　　　8本　　　　　　　　　　　　　　　　　　22<br>　　第7章　回す力　　　　8本　　　　　　　　　　　　　　　　　　22<br>　　まとめ　45を1枚に　　　　　　　　　　　　　　　　　　　　　　4<br>　　保護者の方へ　　　　　　　　　　　　　　　　　　　　　　　　 4<br>　　付録　できないノートの作り方　　　　　　　　　　　　　　　　 4<br>　　おわりに　1日14時間やって、偏差値42だった　　　　　　　　　　4<br>　　奥付　　　　　　　　　　　　　　　　　　　　　　　　　　　　 1<br>　　　　　　　　　　　　　　　　　　　　　　　　　　　　合計　約185</div>
+<h2>各章のなか（6章とも同じ形）</h2>
+<div class="indent">　　1ページ　　章扉　　　　　力の名前と、章の一行<br>　　2ページ　　実演　　　　　その場で失敗させる。答えはめくった先<br>　　1ページ　　この力とは　　定義1行 ＋ 二項対立1枚<br>　　14〜16　　 見開き　　　　1法則2ページ<br>　　1ページ　　トレーニング　今日やる1つ<br>　　1ページ　　この章の1行</div>
+<h2>実演とトレーニング</h2>
+<table><tr><th>章</th><th>実演（章の入口）</th><th>トレーニング（章の最後）</th></tr><tr><td>選ぶ</td><td>範囲表を出して、30秒で「絶対に出る」3つに丸をつける</td><td>今週やらない単元を3つ、紙に書いて口に出す</td></tr><tr><td>入れる</td><td>アミラーゼの4択</td><td>解く前に「要するに何を出すか」を1行書く</td></tr><tr><td>つなげる</td><td>import / export / portable を10秒で覚える → port＝運ぶ</td><td>1つ覚えたら、同じ形をもう1つ探して隣に書く</td></tr><tr><td>出す</td><td>本を閉じて、1ページ前に書いてあったことを3つ書く</td><td>解けた問題を、誰もいない部屋で声に出して説明する</td></tr><tr><td>直す</td><td>連立方程式5行。3行目で符号ミス。「×はどこ」と聞く</td><td>間違い10個を、種類で3つに束ねる</td></tr><tr><td>回す</td><td>先週の月曜、何を勉強したか書く</td><td>崩れる日を1日、先に決めて空けておく</td></tr></table>
+<h1>3　目次</h1>
+<h2>見せ方</h2>
+<p>1法則につき2段。上が「あの子が絶対にやらないこと」、下が「かわりにやっていること」。<br>表紙の約束を、目次で45回くり返す。目次の頭に1行だけ置く。</p>
+<div class="indent">　　上が、あの子が絶対にやらないこと。<br>　　下が、かわりにやっていることです。</div>
+<h2>前付</h2>
+<div class="indent">　　はじめに<br>　　あの子が、絶対にやらない45のこと<br>　　序章　6つのうち、どこで止まっている？</div>
+<h2>第1章　同じ教科書、同じ3時間。なぜ差がつくのか</h2>
+<div class="indent">　総論。ここに法則は置かない。定義と、6つの力の全体像と、できないノートだけ。</div>
+<h2>第2章　選ぶ力　全部やろうとした人から、間に合わなくなる</h2>
+<div class="indent">　01　実力がつくまで、過去問を開かない<br>　　　→　過去問は、解くためではなく、捨てるために最初に開く</div>
+<div class="indent">　02　3冊が途中のまま、4冊目を買う<br>　　　→　買う前に、終わらせる1冊を決める</div>
+<div class="indent">　03　テスト前に、ワークの1ページ目から始める<br>　　　→　1ページ目ではなく、配点の大きい「できない」から始める</div>
+<div class="indent">　04　5つの苦手を、1日ずつ順ぐりに回す<br>　　　→　苦手は、順番を決めてから1つずつ</div>
+<div class="indent">　05　模試を、点数と判定だけ見て片づける<br>　　　→　模試は、捨てていい単元を見つけるために見る</div>
+<div class="indent">　06　まだいない自分を基準に、計画を立てる<br>　　　→　計画は、今の自分からしか立てられない</div>
+<div class="indent">　07　範囲の全部に、一度ずつ手をつける<br>　　　→　捨てた単元を言えるのが、設計した証拠</div>
+<h2>第3章　入れる力　入っていないものは、つなげようがない</h2>
+<div class="indent">　08　知っている言葉を拾って、意味をつなぐ<br>　　　→　何が何にかかっているかを、指で追う</div>
+<div class="indent">　09　問題文の途中で、わかった気になって解き始める<br>　　　→　問題文は、最後まで読んでから解く</div>
+<div class="indent">　10　何を聞かれているか決めないまま、本文を読み直す<br>　　　→　解く前に、設問を自分の言葉で言い換える</div>
+<div class="indent">　11　長文を、本文の1行目から読み始める<br>　　　→　設問を先に読んで、本文に探しに行く</div>
+<div class="indent">　12　板書を、全部そのまま写す<br>　　　→　板書は写さず、先生の話を1行に要約する</div>
+<div class="indent">　13　図に描かずに、文章のまま頭で考える<br>　　　→　図に描き直せないものは、まだつかめていない</div>
+<div class="indent">　14　「ここ、全部わからないです」と言う<br>　　　→　全部ではなく、止まった1行を指さす</div>
+<div class="indent">　15　難しいと感じて、参考書を最初から読み直す<br>　　　→　知らないと、わかっていないを分けてから動く</div>
+<h2>第4章　つなげる力　つないだものは忘れにくい。バラバラのものは忘れる</h2>
+<div class="indent">　16　初めて見る問題を、ゼロから考え続ける<br>　　　→　解く前に、前に見た形を探す</div>
+<div class="indent">　17　なぜを持たずに、語呂だけで覚える<br>　　　→　覚える前に「なぜ」を1つつける</div>
+<div class="indent">　18　単語を、1語10回ずつ書いて覚える<br>　　　→　1つの例文で、10個覚える</div>
+<div class="indent">　19　似ている3つを、それぞれ丸ごと覚える<br>　　　→　似たものは、違いだけで覚える</div>
+<div class="indent">　20　同じ内容を、科目の数だけ覚え直す<br>　　　→　覚えたものは、別の科目で1回使う</div>
+<div class="indent">　21　教科書を見ながら、まとめノートを作る<br>　　　→　まとめは紙ではなく、頭のなかに作る</div>
+<h2>第5章　出す力　出せなかったものは、入っていなかったということ</h2>
+<div class="indent">　22　授業でわかったから、その単元は復習しない<br>　　　→　「わかっている」と「できる」は、別の段階</div>
+<div class="indent">　23　解説を読んで納得したら、次の問題へ進む<br>　　　→　解説を閉じて、白紙に解き直す</div>
+<div class="indent">　24　出てこなかったら、すぐ答えをめくる<br>　　　→　覚えるとは、見ることではなく思い出すこと</div>
+<div class="indent">　25　「わかった」を、テストの日まで信じる<br>　　　→　わかった、は出せるまで信じない</div>
+<div class="indent">　26　解答を横に置いたまま、○をつける<br>　　　→　白紙に出せるかで判定する</div>
+<div class="indent">　27　説明できないのは、説明が下手なだけだと思う<br>　　　→　説明できないものは、まだできていない</div>
+<div class="indent">　28　全部は解けないから、白紙のまま飛ばす<br>　　　→　途中までを自力で書く。そこが、できないの境目</div>
+<div class="indent">　29　時間を測らずに解いて、解けたと数える<br>　　　→　本番と同じ時間で解けて、はじめてできる</div>
+<h2>第6章　直す力　間違いは、次にどこを直すかを教えてくれている</h2>
+<div class="indent">　30　解けない問題に印をつけて、先へ進む<br>　　　→　解けない問題は、隠さず集める</div>
+<div class="indent">　31　解けなかった問題を、もう一度そのまま解く<br>　　　→　×の場所ではなく、最後にできていた場所に戻る</div>
+<div class="indent">　32　間違えた問題に、赤で正解を写す<br>　　　→　正解より先に、どこで崩れたかを探す</div>
+<div class="indent">　33　わからなかった解説を、最初から読み直す<br>　　　→　解説は、どこから読めなくなったかだけ探す</div>
+<div class="indent">　34　ケアレスミス、次は気をつける、で終える<br>　　　→　ケアレスミスと言った瞬間、原因は消える</div>
+<div class="indent">　35　間違いノートに、問題と正解を写す<br>　　　→　間違いノートには、正解ではなく原因を書く</div>
+<div class="indent">　36　10個の間違いを、10問とも順に直す<br>　　　→　間違いは数えず、種類で分ける</div>
+<div class="indent">　37　3回間違えた問題の、4回目をやる<br>　　　→　4回目より、1つ前のできていた問題を解き直す</div>
+<h2>第7章　回す力　1周で1個。あとは、何周できるか</h2>
+<div class="indent">　38　点が下がったら、自分を責める<br>　　　→　下がったら、自分ではなく、変えたことを見る</div>
+<div class="indent">　39　やる気が出るのを待つ<br>　　　→　やる気は、計画に入れない</div>
+<div class="indent">　40　机に座ってから、何をやるか決める<br>　　　→　最初の10分は、毎日同じことにする</div>
+<div class="indent">　41　勉強した時間を記録する<br>　　　→　時間ではなく、できた数を記録する</div>
+<div class="indent">　42　解けないまま、その日を終える<br>　　　→　今日できた1つ、で終える</div>
+<div class="indent">　43　計画が崩れてから、作り直す<br>　　　→　崩れる日は、最初から計画に入れておく</div>
+<div class="indent">　44　忘れてから、最初から覚え直す<br>　　　→　どうせ忘れる。戻る日を、先に決める</div>
+<div class="indent">　45　毎晩、明日の計画を立て直す<br>　　　→　計画は、週に1回だけ直す</div>
+<h2>巻末</h2>
+<div class="indent">　　まとめ　45を1枚に<br>　　保護者の方へ　「何時間やったの？」を、変えるだけでした<br>　　付録　できないノートの作り方<br>　　おわりに　1日14時間やって、偏差値42だった</div>
+<h1>4　旧番号との対応</h1>
+<p>45本のうち、中身を書き直すのは1本だけ。あとは番号と章が動くだけで、本文はそのまま使える。</p>
+<table><tr><th>新</th><th>旧</th><th>動いた理由</th></tr><tr><td>08</td><td>新規</td><td>入れる力に、文の構造を扱う法則が1本もなかった。アミラーゼの実演を受け止める1本</td></tr><tr><td>22</td><td>旧2</td><td>第1章から出す力へ。わかっている／できる の話は、出す力の定義そのもの</td></tr><tr><td>24</td><td>旧23</td><td>つなげるから出すへ。思い出す、は完全に出す側の行為</td></tr><tr><td>30</td><td>旧30</td><td>出すから直すへ。集める行為は、直すの入口</td></tr><tr><td>31</td><td>旧3</td><td>第1章から直す力へ。最後にできていた場所に戻る、は直す力の核</td></tr><tr><td>38</td><td>旧38</td><td>直すから回すへ。下がったときに何を変えるかは、回し方の話</td></tr><tr><td>─</td><td>旧1</td><td>法則から降ろして、第1章の定義本文にする</td></tr></table>
+<p>法則の本数<br>　　選ぶ7　入れる8　つなげる6　出す8　直す8　回す8　　合計45</p>
+<p>つなげるが6本でいちばん軽い。ここは概念がいちばん締まっているところなので、<br>無理に7本に増やさない。章のページ数が18ページになるだけで、問題はない。</p>
+<h1>5　削るものと、残すもの</h1>
+<p>読者が覚える概念を、10個から5個に減らす。</p>
+<table><tr><th>削る</th><th>畳み先</th></tr><tr><td>4段階の図</td><td>6つの工程の図に統合。本の図は1枚だけにする</td></tr><tr><td>2つの通貨（1行消える／1行増える）</td><td>「1周で1個」に一本化</td></tr><tr><td>7つの型</td><td>「6つのうちどこで止まっているか」に置き換え。型という概念ごと消える</td></tr><tr><td>巻頭の3ステップ</td><td>6つの中に見つかる形にする</td></tr></table>
+<p>3ステップは消さない。6つの中に入っていると分かる形にする。</p>
+<div class="indent">　　1　やめる　　　　＝　選ぶ力<br>　　2　やり方を知る　＝　入れる・つなげる・出す・直す<br>　　3　量を増やす　　＝　回す力</div>
+<p>残すのは、定義／6つの力／二項対立／期限／できないノート（道具）の5つ。</p>
+<p>「数える」は力から降ろして、出す力の定義に畳む。</p>
+<div class="indent">　　出す力とは、何も見ずに出すこと。そして、出せたら1個と数えること。</div>
+<h1>6　序章を、型から力に変える</h1>
+<p>7つの型を消して、6つのどこで止まっているかを診断する形にする。<br>質問は、二項対立の左右を選ばせるだけでよい。</p>
+<table><tr><th>質問</th><th>左を選んだら</th></tr><tr><td>テスト前、範囲の全部に手をつける？　出るところから？</td><td>選ぶ力</td></tr><tr><td>解説を読むとき、知っている言葉を拾う？　文の形をつかむ？</td><td>入れる力</td></tr><tr><td>単語は1つずつ覚える？　1つから10動かす？</td><td>つなげる力</td></tr><tr><td>見てわかったで終える？　何も見ずに出せたで終える？</td><td>出す力</td></tr><tr><td>間違えたら赤で正解を写す？　どの行から違ったか探す？</td><td>直す力</td></tr><tr><td>やる気が出たら勉強する？　出なくても回る形にしてある？</td><td>回す力</td></tr></table>
+<p>型の名前を考える作業（Instagram質問箱待ち）は、これで不要になる。</p>
+<h1>7　これを実装すると、何が必要か</h1>
+<p>正直に、全部書く。</p>
+<table><tr><th></th><th>やること</th><th>重さ</th></tr><tr><td>1</td><td>法則ファイル45本の番号を振り直す</td><td>軽い。機械でできる</td></tr><tr><td>2</td><td>章タグを力の名前に統一する</td><td>軽い</td></tr><tr><td>3</td><td>新08（文の形）を1本、書き下ろす</td><td>中。見開き1本</td></tr><tr><td>4</td><td>旧1を法則から降ろし、第1章の定義本文に書き直す</td><td>中</td></tr><tr><td>5</td><td>第1章から総論以外を抜く（14ページに圧縮）</td><td>中</td></tr><tr><td>6</td><td>章末2ページの片方をトレーニングに差し替え。6本</td><td>中</td></tr><tr><td>7</td><td>章の入口の実演を6本書く</td><td>重い。ここがいちばん量がある</td></tr><tr><td>8</td><td>序章を、型の診断から力の診断に書き換える</td><td>中</td></tr><tr><td>9</td><td>付録を「1周で1個」の書き方に直す</td><td>中</td></tr><tr><td>10</td><td>巻頭チェック45行の順番を、新番号に合わせる</td><td>軽い</td></tr></table>
+<p>いちばん重いのは7。6つの実演のうち、アミラーゼだけは著者が持ってきたものがそのまま使える。<br>残り5つは、この文書に骨だけ書いてある。</p>
+<h1>8　まだ決まっていないこと</h1>
+<p>1　第3章の名前を【入れる力】にするか【入れ方】にするか。他の章と揃えるなら力で統一<br>2　「頭がいい」を本文で1回だけ使う件（<code>08</code> に記録済み）。<code>00</code> の不使用ルールと衝突する<br>3　Instagram 9万人という数字。今回はじめて出てきたので、確定値の確認が要る<br>4　つなげる力が6本でよいか。7本に揃えるなら1本足す</p>
+</body></html>

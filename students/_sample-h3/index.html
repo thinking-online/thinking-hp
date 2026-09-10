@@ -1,0 +1,1539 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>鈴木 一郎｜個別戦略シート サンプル（高3・国公立）｜THINKING</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THINKING 個別戦略シート — 印刷（A4）用スタイルシート
+   engine version: 1.0
+   ============================================================ */
+
+@font-face{font-family:"Zen Kaku Gothic New";font-weight:400;src:local("Zen Kaku Gothic New")}
+@font-face{font-family:"Shippori Mincho B1";font-weight:600;src:local("Shippori Mincho B1")}
+
+:root{
+  --navy:#16233a;
+  --navy-deep:#0c1424;
+  --navy-soft:#24354f;
+  --gold:#c8a55a;
+  --gold-deep:#a07d38;
+  --gold-light:#e6d3a6;
+  --ivory:#faf8f4;
+  --cream:#fffdf9;
+  --paper:#f0ece4;
+  --ink:#18212f;
+  --ink-2:#4c586a;
+  --ink-3:#8b93a1;
+  --rule:rgba(22,35,58,.14);
+  --rule-soft:rgba(22,35,58,.07);
+  --good:#2c7a5d;
+  --mid:#c08a2e;
+  --bad:#b23f3f;
+
+  --sans:"Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",system-ui,sans-serif;
+  --mincho:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN",serif;
+  /* 数値まわりの欧文書体。CJK を持たないので日本語フォントを必ず後ろに置く
+     （「約」「点」「ヶ月」等が別書体に落ちるのを防ぐ） */
+  --en:"Cormorant Garamond","Cormorant","Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",sans-serif;
+
+  --pad-x:15mm;
+  --pad-y:14mm;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:#5b6472;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+  line-height:1.75;
+}
+body,.page,.page *{
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+/* 欧文フォントの数字は既定でオールドスタイル（1 が I に見える）。
+   数値を読ませる箇所はライニング＋等幅数字に統一する。 */
+.cover-brand .cb-en,.cover-kpi .k-value,.kpi .k-v,.sec-no,.sec-en,
+.s-num,.s-pct,.s-tgt,.s-gap,.wish-rank,.wseg .w-v,.step-no,
+ol.num li::before,.pf-no,.runner .r-left,.cover-contents .cc-no{
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+}
+
+/* ---------- ページの器 ---------- */
+@page{ size:A4 portrait; margin:0; }
+
+.page{
+  position:relative;
+  width:210mm;
+  height:297mm;
+  overflow:hidden;
+  margin:0 auto;
+  background:var(--cream);
+  color:var(--ink);
+  page-break-after:always;
+  break-after:page;
+  display:flex;
+  flex-direction:column;
+}
+.page:last-child{page-break-after:auto;break-after:auto;}
+.page-body{
+  flex:1;
+  min-height:0;
+  padding:var(--pad-y) var(--pad-x) 0;
+  display:flex;
+  flex-direction:column;
+}
+.page-body > *{flex:0 0 auto;}
+.pb-fill{flex:1 1 auto !important;min-height:0;}
+
+/* 画面表示時だけページを浮かせる */
+@media screen{
+  body{padding:24px 0;}
+  .page{box-shadow:0 24px 60px -24px rgba(0,0,0,.6);margin-bottom:24px;}
+}
+
+/* ---------- 走り書きヘッダー / フッター ---------- */
+.runner{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  padding:7mm var(--pad-x) 0;
+  font-size:8pt;
+  letter-spacing:.14em;
+  color:var(--ink-3);
+}
+.runner .r-left{font-family:var(--en);font-size:10pt;letter-spacing:.22em;color:var(--gold-deep);}
+.runner .r-right{font-weight:500;}
+.page-foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:0 var(--pad-x) 8mm;
+  font-size:7.6pt;
+  letter-spacing:.1em;
+  color:var(--ink-3);
+  border-top:0;
+}
+.page-foot .pf-rule{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,var(--rule),rgba(200,165,90,.5));
+}
+.page-foot .pf-no{
+  font-family:var(--en);
+  font-size:13pt;
+  letter-spacing:.06em;
+  color:var(--gold-deep);
+  font-weight:600;
+}
+
+/* ============================================================
+   表紙
+   ============================================================ */
+.cover{
+  background:
+    radial-gradient(120% 80% at 50% -10%, #2b3f60 0%, rgba(43,63,96,0) 62%),
+    linear-gradient(175deg,#16233a 0%,#0c1424 100%);
+  color:#f3efe6;
+}
+.cover .page-body{padding:0;}
+.cover-frame{
+  position:absolute;
+  inset:9mm;
+  border:1px solid rgba(200,165,90,.4);
+}
+.cover-frame::before,.cover-frame::after{
+  content:"";position:absolute;background:rgba(200,165,90,.85);
+}
+.cover-frame::before{left:-1px;top:-1px;width:18mm;height:2px;}
+.cover-frame::after{right:-1px;bottom:-1px;width:18mm;height:2px;}
+
+.cover-inner{
+  position:relative;
+  z-index:2;
+  height:100%;
+  padding:22mm 20mm 16mm;
+  display:flex;
+  flex-direction:column;
+}
+.cover-brand{
+  display:flex;flex-direction:column;gap:3px;
+}
+.cover-brand .cb-en{
+  font-family:var(--en);
+  font-size:19pt;letter-spacing:.34em;color:#efe7d6;font-weight:500;
+}
+.cover-brand .cb-en i{font-style:normal;color:var(--gold);}
+.cover-brand .cb-jp{
+  font-family:var(--mincho);
+  font-size:7.6pt;letter-spacing:.4em;color:rgba(230,211,166,.72);
+}
+
+.cover-eyebrow{
+  margin-top:19mm;
+  font-size:8.4pt;letter-spacing:.34em;color:var(--gold);
+  display:flex;align-items:center;gap:10px;
+}
+.cover-eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(200,165,90,.6),transparent);}
+
+.cover-title{
+  font-family:var(--mincho);
+  font-size:34pt;
+  font-weight:600;
+  line-height:1.32;
+  letter-spacing:.09em;
+  margin:5mm 0 0;
+  color:#fbf8f1;
+}
+.cover-title em{
+  font-style:normal;
+  color:var(--gold-light);
+  display:block;
+  font-size:15pt;
+  letter-spacing:.22em;
+  margin-top:5mm;
+}
+.cover-sub{
+  margin-top:4mm;
+  font-size:9.6pt;
+  line-height:2;
+  color:rgba(243,239,230,.78);
+  max-width:118mm;
+}
+
+.cover-name{
+  margin-top:12mm;
+  padding:6mm 0 0;
+  border-top:1px solid rgba(200,165,90,.32);
+  display:flex;align-items:flex-end;gap:6mm;flex-wrap:wrap;
+}
+.cover-name .cn-label{
+  font-size:8pt;letter-spacing:.3em;color:rgba(230,211,166,.75);padding-bottom:3mm;
+}
+.cover-name .cn-value{
+  font-family:var(--mincho);
+  font-size:26pt;letter-spacing:.14em;color:#fff;line-height:1.2;
+}
+.cover-name .cn-meta{
+  padding-bottom:3mm;font-size:8.6pt;color:rgba(243,239,230,.62);letter-spacing:.08em;
+}
+
+.cover-contents{
+  margin-top:7mm;
+  display:grid;grid-template-columns:1fr 1fr;gap:0 9mm;
+}
+.cover-contents .cc-label{
+  grid-column:1 / -1;
+  font-size:7.6pt;letter-spacing:.32em;color:var(--gold);
+  display:flex;align-items:center;gap:8px;margin-bottom:2mm;
+}
+.cover-contents .cc-label::after{content:"";flex:1;height:1px;background:rgba(200,165,90,.28);}
+.cover-contents .cc-item{
+  display:flex;gap:3.5mm;align-items:baseline;
+  font-size:8.2pt;letter-spacing:.05em;color:rgba(243,239,230,.7);
+  padding:1.15mm 0;border-bottom:1px solid rgba(200,165,90,.12);
+}
+.cover-contents .cc-no{
+  font-family:var(--en);font-size:9.5pt;font-weight:600;color:var(--gold);flex:0 0 5.5mm;
+}
+
+.cover-kpis{
+  margin-top:auto;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border:1px solid rgba(200,165,90,.3);
+  background:rgba(255,255,255,.035);
+}
+.cover-kpi{padding:6mm 5mm;border-right:1px solid rgba(200,165,90,.22);}
+.cover-kpi:last-child{border-right:0;}
+.cover-kpi .k-label{font-size:7.6pt;letter-spacing:.2em;color:rgba(230,211,166,.8);}
+.cover-kpi .k-value{
+  font-family:var(--en);font-size:30pt;font-weight:600;line-height:1.05;margin-top:2mm;color:#fff;
+}
+.cover-kpi .k-value small{font-size:13pt;letter-spacing:.02em;margin-left:2px;}
+.cover-kpi.is-gap .k-value{color:var(--gold-light);}
+.cover-kpi .k-note{font-size:7.6pt;color:rgba(243,239,230,.6);margin-top:1mm;letter-spacing:.04em;}
+
+.cover-foot{
+  margin-top:6mm;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:7.6pt;letter-spacing:.16em;color:rgba(243,239,230,.5);
+}
+
+/* ============================================================
+   セクション見出し
+   ============================================================ */
+.sec{
+  display:flex;align-items:flex-start;gap:5mm;
+  padding-bottom:3.5mm;
+  border-bottom:1px solid var(--rule);
+  margin-bottom:5mm;
+}
+.sec-no{
+  flex:0 0 auto;
+  font-family:var(--en);
+  font-size:26pt;font-weight:600;line-height:1;
+  color:var(--gold);
+  letter-spacing:.02em;
+  padding-top:1mm;
+}
+.sec-txt{flex:1;min-width:0;}
+.sec-title{
+  font-family:var(--mincho);
+  font-size:16pt;font-weight:600;letter-spacing:.06em;line-height:1.35;
+  margin:0;color:var(--navy);
+}
+.sec-en{
+  font-family:var(--en);
+  font-size:9pt;letter-spacing:.26em;color:var(--ink-3);margin-top:1mm;text-transform:uppercase;
+}
+.sec-lead{
+  font-size:9.4pt;line-height:1.85;color:var(--ink-2);margin:0 0 5mm;
+}
+.sec-lead strong{color:var(--navy);font-weight:700;}
+
+h3.blk{
+  font-family:var(--mincho);
+  font-size:11.5pt;font-weight:600;letter-spacing:.06em;color:var(--navy);
+  margin:0 0 2.5mm;display:flex;align-items:center;gap:2.5mm;
+}
+h3.blk::before{
+  content:"";width:3px;height:14px;background:var(--gold);flex:0 0 auto;
+}
+
+/* ============================================================
+   汎用パーツ
+   ============================================================ */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm;}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;}
+.stack-gap{display:flex;flex-direction:column;gap:4.5mm;}
+.mt-auto{margin-top:auto;}
+
+.card{
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-radius:2px;
+  padding:4.5mm 5mm;
+}
+.card.is-dark{background:var(--navy);border-color:var(--navy);color:#f1ede4;}
+.card.is-dark .c-title{color:var(--gold-light);}
+.card.is-dark .c-body{color:rgba(241,237,228,.86);}
+.card.is-gold{background:#fdf8ec;border-color:rgba(200,165,90,.45);}
+.c-kicker{
+  font-size:7.4pt;letter-spacing:.22em;color:var(--gold-deep);margin-bottom:1.5mm;font-weight:500;
+}
+.c-title{
+  font-family:var(--mincho);
+  font-size:11pt;font-weight:600;letter-spacing:.04em;color:var(--navy);margin:0 0 2mm;line-height:1.5;
+}
+.c-body{font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin:0;}
+.c-body strong{color:var(--navy);font-weight:700;}
+
+.pill{
+  display:inline-block;
+  font-size:7.4pt;letter-spacing:.12em;font-weight:500;
+  padding:.9mm 2.4mm;border-radius:1px;
+  border:1px solid currentColor;
+}
+.pill.p-core{color:var(--gold-deep);background:rgba(200,165,90,.1);}
+.pill.p-base{color:var(--navy-soft);background:rgba(36,53,79,.07);}
+.pill.p-risk{color:var(--bad);background:rgba(178,63,63,.07);}
+.pill.p-ok{color:var(--good);background:rgba(44,122,93,.08);}
+
+/* ---------- 志望校リスト ---------- */
+.wish{border-top:1px solid var(--rule);}
+.wish-row{
+  display:flex;align-items:center;gap:4mm;
+  padding:2.6mm 1mm;
+  border-bottom:1px solid var(--rule-soft);
+}
+.wish-rank{
+  flex:0 0 9mm;
+  font-family:var(--en);font-size:15pt;font-weight:600;color:var(--gold);line-height:1;text-align:center;
+}
+.wish-main{flex:1;min-width:0;}
+.wish-univ{font-size:10pt;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.45;}
+.wish-fac{font-size:8.2pt;color:var(--ink-2);letter-spacing:.02em;line-height:1.5;}
+.wish-tag{flex:0 0 auto;}
+
+/* ---------- 得点テーブル ---------- */
+table.score{
+  width:100%;border-collapse:collapse;font-size:8.6pt;
+}
+table.score th{
+  font-size:7.4pt;letter-spacing:.12em;font-weight:500;color:var(--ink-3);
+  text-align:right;padding:0 1.5mm 1.8mm;border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+table.score th.t-name{text-align:left;}
+table.score th.t-bar{text-align:left;}
+table.score td{
+  padding:1.55mm 1.5mm;border-bottom:1px solid var(--rule-soft);text-align:right;vertical-align:middle;
+}
+table.score tr.is-sum td{
+  border-top:1.4px solid var(--navy);border-bottom:0;padding-top:2.2mm;font-weight:700;color:var(--navy);
+}
+table.score tr.is-sub td{background:rgba(22,35,58,.028);}
+.s-name{text-align:left;line-height:1.35;}
+.s-name b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;}
+.s-name span{display:block;font-size:7.2pt;color:var(--ink-3);letter-spacing:.02em;}
+.s-num{font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);white-space:nowrap;}
+.s-num i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.s-pct{font-family:var(--en);font-size:12pt;font-weight:600;white-space:nowrap;}
+.s-pct i{font-style:normal;font-size:7.6pt;font-family:var(--sans);margin-left:1px;color:var(--ink-3);}
+.s-pct.lv-hi{color:var(--good);}
+.s-pct.lv-mid{color:var(--mid);}
+.s-pct.lv-lo{color:var(--bad);}
+.s-tgt{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--ink-2);}
+.s-gap{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--gold-deep);white-space:nowrap;}
+.s-bar{width:34%;}
+
+.track{
+  position:relative;height:7px;background:var(--paper);border-radius:1px;overflow:visible;
+}
+.track .fill{
+  position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,var(--navy-soft),var(--navy));
+}
+.track.lv-hi .fill{background:linear-gradient(90deg,#3d9273,var(--good));}
+.track.lv-mid .fill{background:linear-gradient(90deg,#d9a94a,var(--mid));}
+.track.lv-lo .fill{background:linear-gradient(90deg,#cd6767,var(--bad));}
+.track .tick{
+  position:absolute;top:-3px;bottom:-3px;width:1.6px;background:var(--gold-deep);
+}
+.track .tick::after{
+  content:"";position:absolute;top:-2.5px;left:-2.2px;
+  border-left:3px solid transparent;border-right:3px solid transparent;border-top:3.4px solid var(--gold-deep);
+}
+
+/* ---------- KPI 帯 ---------- */
+.kpirow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);background:var(--ivory);}
+.kpirow.k3{grid-template-columns:repeat(3,1fr);}
+.kpi{padding:3.6mm 4mm;border-right:1px solid var(--rule);}
+.kpi:last-child{border-right:0;}
+.kpi .k-l{font-size:7.4pt;letter-spacing:.16em;color:var(--ink-3);}
+.kpi .k-v{font-family:var(--en);font-size:24pt;font-weight:600;line-height:1.1;color:var(--navy);margin-top:.8mm;}
+.kpi .k-v small{font-size:11pt;margin-left:1px;}
+.kpi .k-n{font-size:7.4pt;color:var(--ink-3);margin-top:.5mm;}
+.kpi.acc .k-v{color:var(--gold-deep);}
+.kpi.bad .k-v{color:var(--bad);}
+.kpi.good .k-v{color:var(--good);}
+
+/* ---------- 配点構造バー ---------- */
+.weight{margin:0;}
+.weight-bar{display:flex;height:15mm;border:1px solid var(--rule);overflow:hidden;}
+.wseg{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  color:#fff;text-align:center;gap:.6mm;padding:0 1mm;border-right:1px solid rgba(255,255,255,.28);
+}
+.wseg:last-child{border-right:0;}
+.wseg .w-t{font-size:7.6pt;letter-spacing:.06em;font-weight:500;line-height:1.2;}
+.wseg .w-v{font-family:var(--en);font-size:13pt;font-weight:600;line-height:1;}
+.wseg.w1{background:var(--navy);}
+.wseg.w2{background:var(--navy-soft);}
+.wseg.w3{background:var(--gold-deep);}
+.wseg.w4{background:#a8afba;}
+.weight-legend{
+  display:flex;flex-wrap:wrap;gap:1.5mm 5mm;margin-top:2.5mm;font-size:7.8pt;color:var(--ink-2);
+}
+.weight-legend span{display:flex;align-items:center;gap:1.8mm;}
+.weight-legend i{width:8px;height:8px;display:inline-block;border-radius:1px;}
+
+/* ---------- ステップ（①②③④） ---------- */
+.steps{display:flex;flex-direction:column;gap:2.6mm;}
+.step{
+  display:flex;gap:3.5mm;align-items:flex-start;
+  padding:3mm 3.5mm;background:var(--ivory);border-left:2.5px solid var(--gold);
+}
+.step-no{
+  flex:0 0 auto;width:6.5mm;height:6.5mm;border-radius:50%;
+  background:var(--navy);color:var(--gold-light);
+  font-family:var(--en);font-size:11pt;font-weight:600;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+.step-txt{flex:1;min-width:0;}
+.step-t{font-size:9.6pt;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.5;}
+.step-d{font-size:8.4pt;line-height:1.75;color:var(--ink-2);margin-top:.6mm;}
+.step-d strong{color:var(--navy);}
+
+/* ---------- 箇条書き ---------- */
+ul.bul{margin:0;padding:0;list-style:none;}
+ul.bul li{
+  position:relative;padding-left:4.2mm;font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin-bottom:.8mm;
+}
+ul.bul li::before{
+  content:"";position:absolute;left:.4mm;top:.62em;width:4.5px;height:4.5px;background:var(--gold-deep);border-radius:50%;
+}
+ul.bul li strong{color:var(--navy);font-weight:700;}
+ul.bul.tight li{margin-bottom:.2mm;line-height:1.7;}
+
+ol.num{margin:0;padding:0;list-style:none;counter-reset:n;}
+ol.num li{
+  position:relative;padding-left:6.5mm;font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin-bottom:1.2mm;counter-increment:n;
+}
+ol.num li::before{
+  content:counter(n);position:absolute;left:0;top:.15em;
+  width:4.4mm;height:4.4mm;border:1px solid var(--gold-deep);color:var(--gold-deep);
+  font-family:var(--en);font-size:9pt;font-weight:600;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+
+/* ---------- チェックリスト ---------- */
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:1.6mm 5mm;}
+.check{display:flex;align-items:flex-start;gap:2.4mm;font-size:8.6pt;line-height:1.65;color:var(--ink-2);}
+.check .box{
+  flex:0 0 auto;width:3.4mm;height:3.4mm;border:1.2px solid var(--navy-soft);margin-top:.9mm;background:#fff;
+}
+.check b{color:var(--navy);font-weight:700;}
+
+/* ---------- コールアウト ---------- */
+.callout{
+  border:1px solid rgba(200,165,90,.5);
+  background:linear-gradient(180deg,#fdf8ec,#fbf4e3);
+  padding:4mm 5mm;position:relative;
+}
+.callout .co-t{
+  font-family:var(--mincho);font-size:10.5pt;font-weight:600;color:var(--gold-deep);
+  letter-spacing:.06em;margin-bottom:1.5mm;
+}
+.callout .co-b{font-size:8.8pt;line-height:1.85;color:var(--ink-2);}
+.callout .co-b strong{color:var(--navy);}
+.callout.is-navy{background:var(--navy);border-color:var(--navy);}
+.callout.is-navy .co-t{color:var(--gold-light);}
+.callout.is-navy .co-b{color:rgba(241,237,228,.88);}
+.callout.is-navy .co-b strong{color:#fff;}
+
+/* ---------- 週次テーブル ---------- */
+table.plain{width:100%;border-collapse:collapse;font-size:8.4pt;}
+table.plain th{
+  background:var(--navy);color:var(--gold-light);font-weight:500;font-size:7.6pt;letter-spacing:.12em;
+  padding:1.8mm 2.5mm;text-align:left;
+}
+table.plain td{
+  padding:1.9mm 2.5mm;border-bottom:1px solid var(--rule-soft);color:var(--ink-2);line-height:1.65;vertical-align:top;
+}
+table.plain tr:nth-child(even) td{background:rgba(22,35,58,.022);}
+table.plain td b{color:var(--navy);}
+table.plain td.tc{text-align:center;}
+.nowrap{white-space:nowrap;}
+
+/* ---------- SAMPLE 表示 ---------- */
+/* 見本であることを、資料のどこを見ても分かる状態にしておくための表示 */
+.cover-badge{
+  position:absolute;
+  top:9mm;right:9mm;
+  transform:translate(-6mm,6mm);
+  border:1px solid rgba(200,165,90,.75);
+  color:var(--gold-light);
+  font-family:var(--en);
+  font-size:9.5pt;font-weight:600;letter-spacing:.34em;
+  padding:1.8mm 4mm 1.8mm 4.34mm;
+  background:rgba(200,165,90,.08);
+  z-index:3;
+}
+.r-sample{
+  font-family:var(--en);
+  font-size:8.5pt;font-weight:600;letter-spacing:.28em;
+  color:var(--gold-deep);
+  border:1px solid rgba(200,165,90,.55);
+  padding:.3mm 1.8mm .3mm 2.1mm;
+  margin-right:3mm;
+}
+.cover-note{
+  margin-top:5mm;
+  max-width:120mm;
+  padding-left:3.5mm;
+  border-left:1.5px solid rgba(200,165,90,.5);
+  font-size:7.8pt;line-height:1.75;letter-spacing:.03em;
+  color:rgba(243,239,230,.58);
+}
+.cover-note strong{color:var(--gold-light);font-weight:500;}
+
+/* 見本版は注記が1ブロック増えるぶん、上側の余白を詰めて表紙内に収める */
+.cover-badge ~ .cover-inner .cover-eyebrow{margin-top:11mm;}
+.cover-badge ~ .cover-inner .cover-name{margin-top:8mm;}
+.cover-badge ~ .cover-inner .cover-contents{margin-top:5mm;}
+
+/* ---------- 配点比重バー ---------- */
+.bars{display:flex;flex-direction:column;gap:2.1mm;}
+.bar-row{display:flex;align-items:center;gap:3mm;}
+.bar-l{flex:0 0 33mm;min-width:0;}
+.bar-l b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;line-height:1.3;display:block;}
+.bar-l span{display:block;font-size:7.1pt;color:var(--ink-3);line-height:1.35;}
+.bar-t{flex:1;height:9px;background:var(--paper);position:relative;border-radius:1px;}
+.bar-f{position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,#4a5b78,var(--navy));}
+.bar-row.is-key .bar-f{background:linear-gradient(90deg,var(--gold),var(--gold-deep));}
+.bar-row.is-mute .bar-f{background:linear-gradient(90deg,#c2c8d1,#a8afba);}
+.bar-v{flex:0 0 19mm;text-align:right;font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-v i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.bar-p{flex:0 0 16mm;text-align:right;font-family:var(--en);font-size:11.5pt;font-weight:600;color:var(--ink-2);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-row.is-key .bar-p,.bar-row.is-key .bar-v{color:var(--gold-deep);}
+.bar-p i{font-style:normal;font-family:var(--sans);font-size:7.2pt;color:var(--ink-3);margin-left:1px;}
+
+/* ---------- 例題（英文＋設問＋選択肢） ---------- */
+.exam-passage{
+  background:#fff;border:1px solid var(--rule);border-left:2.5px solid var(--gold);
+  padding:3.4mm 4.5mm;font-size:9.4pt;line-height:1.95;color:var(--ink);letter-spacing:.004em;
+}
+.exam-q{
+  margin-top:3mm;font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:2.5mm;
+}
+.exam-q em{font-style:normal;font-family:var(--en);font-size:8.4pt;letter-spacing:.18em;color:var(--gold-deep);}
+.exam-choices{margin-top:2.4mm;display:flex;flex-direction:column;gap:1.5mm;}
+.exam-choice{
+  display:flex;gap:2.8mm;align-items:flex-start;
+  padding:2.1mm 3mm;background:var(--ivory);border:1px solid var(--rule-soft);
+}
+.exam-choice.is-ok{border-color:rgba(200,165,90,.6);background:#fdf8ec;}
+.ec-k{
+  flex:0 0 auto;width:5mm;height:5mm;display:flex;align-items:center;justify-content:center;
+  font-family:var(--en);font-size:9.5pt;font-weight:600;line-height:1;
+  border:1px solid var(--ink-3);color:var(--ink-2);background:#fff;
+}
+.exam-choice.is-ok .ec-k{background:var(--gold);border-color:var(--gold);color:#fff;}
+.ec-b{flex:1;min-width:0;}
+.ec-t{font-size:8.2pt;line-height:1.65;color:var(--ink-2);}
+.ec-w{font-size:7.7pt;line-height:1.6;margin-top:.8mm;color:var(--ink-3);}
+.ec-w b{font-weight:700;color:var(--bad);margin-right:1mm;}
+.exam-choice.is-ok .ec-w b{color:var(--good);}
+
+/* ---------- プロセス帯（面談〜運用の流れ） ---------- */
+.flow{display:flex;align-items:stretch;gap:0;}
+.flow-item{
+  flex:1;min-width:0;
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-right:0;
+  padding:3.4mm 3mm 3.6mm;
+  position:relative;
+}
+.flow-item:last-child{border-right:1px solid var(--rule);}
+.flow-item.is-key{background:#fdf8ec;border-color:rgba(200,165,90,.5);}
+.flow-item + .flow-item::before{
+  content:"";position:absolute;left:-3.2px;top:50%;
+  width:6px;height:6px;margin-top:-3px;
+  border-top:1.4px solid var(--gold);border-right:1.4px solid var(--gold);
+  transform:rotate(45deg);
+  background:var(--cream);
+  z-index:2;
+}
+.flow-no{
+  font-family:var(--en);font-size:13pt;font-weight:600;color:var(--gold);line-height:1;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+.flow-t{
+  font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  margin-top:1.6mm;line-height:1.45;
+}
+.flow-d{font-size:7.6pt;line-height:1.65;color:var(--ink-2);margin-top:1.2mm;}
+
+/* ---------- 問い合わせ導線 ---------- */
+.cta{
+  background:
+    radial-gradient(120% 140% at 12% 0%, #2b3f60 0%, rgba(43,63,96,0) 60%),
+    linear-gradient(160deg,#16233a 0%,#0c1424 100%);
+  border:1px solid rgba(200,165,90,.35);
+  padding:5mm 6mm;
+  display:flex;align-items:center;justify-content:space-between;gap:6mm;
+}
+.cta-l{min-width:0;}
+.cta-t{
+  font-family:var(--mincho);font-size:12pt;font-weight:600;letter-spacing:.06em;
+  color:var(--gold-light);margin-bottom:1.6mm;
+}
+.cta-b{font-size:8.6pt;line-height:1.8;color:rgba(243,239,230,.82);}
+.cta-b strong{color:#fff;}
+.cta-r{flex:0 0 auto;text-align:right;border-left:1px solid rgba(200,165,90,.28);padding-left:6mm;}
+.cta-r .cr-l{font-size:7.2pt;letter-spacing:.2em;color:rgba(230,211,166,.7);}
+.cta-r .cr-v{
+  font-family:var(--en);font-size:14pt;font-weight:600;color:#fff;line-height:1.35;
+  letter-spacing:.04em;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+
+/* ---------- メモ欄（手書き用） ---------- */
+.memo{
+  border:1px solid var(--rule);
+  background:var(--ivory);
+  padding:3.5mm 5mm 4mm;
+}
+.memo .mm-t{
+  font-family:var(--mincho);font-size:10pt;font-weight:600;color:var(--navy);
+  letter-spacing:.06em;margin-bottom:2.5mm;display:flex;align-items:center;gap:2.5mm;
+}
+.memo .mm-t::before{content:"";width:3px;height:13px;background:var(--gold);flex:0 0 auto;}
+.memo .mm-line{border-bottom:1px solid var(--rule-soft);height:7.5mm;}
+.memo .mm-line:last-child{border-bottom-color:var(--rule);}
+
+</style>
+</head>
+<body>
+<section class="page cover">
+    <div class="cover-frame"></div>
+    <div class="cover-badge">SAMPLE</div>
+    <div class="cover-inner">
+      <div class="cover-brand">
+        <div class="cb-en">THINK<i>I</i>NG</div>
+        <div class="cb-jp">シンキング</div>
+      </div>
+      <div class="cover-eyebrow">ENTRANCE EXAM STRATEGY — SAMPLE</div>
+      <h1 class="cover-title">個別戦略シート<em>筑波大学 総合学域群 へ</em></h1>
+      <p class="cover-sub">この1枚が、これから本番までの判断基準になる。<br>何を極め、何を捨てず、どの数字を追うのか。全部ここに書いてある。迷ったら、ここに戻る。</p>
+      <div class="cover-note">本資料は個別戦略シートの<strong>見本</strong>です。<strong>生徒名・模試の得点はすべて架空</strong>で、実在の生徒の情報は含みません。志望校と配点は、二次試験で英語・国語・世界史を課す国公立文系の一例として設定しています。</div>
+      <div class="cover-name">
+        <div class="cn-label">生徒</div>
+        <div class="cn-value">鈴木 一郎</div>
+        <div class="cn-meta">受験学年／国公立文系／二次 英語・国語・世界史</div>
+      </div>
+      <div class="cover-contents">
+        <div class="cc-label">CONTENTS</div>
+        <div class="cc-item"><span class="cc-no">01</span><span>ゴールの確認と、勝負の前提</span></div><div class="cc-item"><span class="cc-no">02</span><span>数字で見る現在地</span></div><div class="cc-item"><span class="cc-no">03</span><span>どこで合否が決まるのか</span></div><div class="cc-item"><span class="cc-no">04</span><span>+160点の設計図</span></div><div class="cc-item"><span class="cc-no">05</span><span>英語 ― 完成度を「型」に変える</span></div><div class="cc-item"><span class="cc-no">06</span><span>国語 ― 時間をかけずに高値安定</span></div><div class="cc-item"><span class="cc-no">07</span><span>世界史 ― 最大の伸びしろ、最大のリスク</span></div><div class="cc-item"><span class="cc-no">08</span><span>ボーダーを超えるための底上げ</span></div><div class="cc-item"><span class="cc-no">09</span><span>環境ルールと、数字で判断する運用</span></div><div class="cc-item"><span class="cc-no">10</span><span>本番までのロードマップ</span></div><div class="cc-item"><span class="cc-no">11</span><span>最初の30日でやり切ること</span></div>
+      </div>
+      <div class="cover-kpis"><div class="cover-kpi">
+            <div class="k-label">現 在 地</div>
+            <div class="k-value">65.8<small>%</small></div>
+            <div class="k-note">共通テスト換算 625.2 / 950</div>
+          </div><div class="cover-kpi">
+            <div class="k-label">目標ボーダー</div>
+            <div class="k-value">80.32<small>%</small></div>
+            <div class="k-note">必要点 763.0 / 950</div>
+          </div><div class="cover-kpi is-gap">
+            <div class="k-label">必要な上積み</div>
+            <div class="k-value">+137.8<small>点</small></div>
+            <div class="k-note">共通テスト 950点満点ベース</div>
+          </div></div>
+      <div class="cover-foot">
+        <span>THINKING 個別戦略シート／見本版</span>
+        <span>SAMPLE — 営業・説明用の見本</span>
+      </div>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>01 現在地とゴール</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">01</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">ゴールの確認と、勝負の前提</h2>
+                <div class="sec-en">Target &amp; Structure</div>
+              </div>
+            </div>
+      <p class="sec-lead">志望校は5校。第一志望の<strong>筑波大学 総合学域群</strong>を基準に設計する。共通テスト950点＋二次試験1500点＝<strong>総合2450点</strong>、この配点の形が、これから1年の時間の使い方を決める。</p>
+<h3 class="blk">志望校 ― 優先順位</h3>
+<div class="wish"><div class="wish-row">
+          <div class="wish-rank">1</div>
+          <div class="wish-main">
+            <div class="wish-univ">筑波大学</div>
+            <div class="wish-fac">総合学域群</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-core">第一志望</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">2</div>
+          <div class="wish-main">
+            <div class="wish-univ">筑波大学</div>
+            <div class="wish-fac">人文・文化学群 比較文化学類</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">国公立</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">3</div>
+          <div class="wish-main">
+            <div class="wish-univ">法政大学</div>
+            <div class="wish-fac">文学部 心理学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">私大</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">4</div>
+          <div class="wish-main">
+            <div class="wish-univ">東洋大学</div>
+            <div class="wish-fac">社会学部 メディアコミュニケーション学科／社会心理学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">私大</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">5</div>
+          <div class="wish-main">
+            <div class="wish-univ">東京都立大学</div>
+            <div class="wish-fac">人文社会学部 人文学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">国公立</span></div>
+        </div></div>
+<div style="height:2mm"></div>
+<h3 class="blk">配点の前提</h3>
+<div class="kpirow"><div class="kpi">
+          <div class="k-l">共通テスト</div>
+          <div class="k-v">950<small>点</small></div>
+          <div class="k-n">1次</div>
+        </div><div class="kpi">
+          <div class="k-l">二 次 試 験</div>
+          <div class="k-v">1500<small>点</small></div>
+          <div class="k-n">英・国・世 各500点</div>
+        </div><div class="kpi">
+          <div class="k-l">総 合</div>
+          <div class="k-v">2450<small>点</small></div>
+          <div class="k-n">1次＋2次</div>
+        </div><div class="kpi acc">
+          <div class="k-l">目標ボーダー</div>
+          <div class="k-v">80.32<small>%</small></div>
+          <div class="k-n">共テ 763.0点</div>
+        </div></div>
+<div style="height:3mm"></div>
+<div class="callout is-navy">
+      <div class="co-t">勝負の重心は「二次」にある</div>
+      <div class="co-b">総合2450点のうち、二次試験だけで<strong>1500点＝61.2%</strong>。しかもその全てが<strong>英語・国語・世界史</strong>の3科目。<br>ただし、二次で戦うにはまず共通テストでボーダーを踏む必要がある。<strong>「二次3科目を極める」と「共テでボーダーを超える」は、どちらも必須で、優先順位ではなく並行課題</strong>として扱う。</div>
+    </div>
+<div style="height:3mm"></div>
+<div class="grid2"><div class="card">
+          <div class="c-kicker">二次試験</div>
+          <div class="c-title">英語・国語・世界史 各500点</div>
+          <p class="c-body">世界史は<strong>論述でガッツリ</strong>問われる。マーク式で点が取れることと、論述で書けることは別物。ここは早い段階から意識して仕上げていく。</p>
+        </div><div class="card">
+          <div class="c-kicker">私大との関係</div>
+          <div class="c-title">使う科目が完全に重なる</div>
+          <p class="c-body">私大でも使うのは英語・国語・世界史。<strong>二次対策がそのまま私大対策になる</strong>構造なので、この3科目への投下は二重に効く。</p>
+        </div></div>
+    </div>
+    <div class="page-foot">
+      <span>SAMPLE｜個別戦略シート 見本</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">01</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>02 数字で見る現在地</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">02</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">数字で見る現在地</h2>
+                <div class="sec-en">Mock Exam Breakdown</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">全統マーク模試の結果を、共通テスト950点満点の換算配点に置き直したもの。バーは現在の得点率、<strong>▼ が目標ライン</strong>。感想ではなく、この数字だけで判断していく。</p>
+<table class="score">
+      <thead><tr>
+        <th class="t-name">科目</th>
+        <th>換算得点</th>
+        <th class="t-bar">現在地 ／ ▼ 目標</th>
+        <th>得点率</th>
+        <th>目標</th>
+        <th>必要</th>
+      </tr></thead>
+      <tbody><tr>
+          <td class="s-name"><b>国語</b><span>現代文＋古文＋漢文</span></td>
+          <td class="s-num">154<i>/200</i></td>
+          <td class="s-bar">
+            <div class="track lv-mid">
+              <div class="fill" style="width:77.0%"></div>
+              <div class="tick" style="left:85.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-mid">77.0<i>%</i></td>
+          <td class="s-tgt">170</td>
+          <td class="s-gap">+16</td>
+        </tr><tr>
+          <td class="s-name"><b>英語 R</b><span>リーディング 素点 88 / 100</span></td>
+          <td class="s-num">140.8<i>/160</i></td>
+          <td class="s-bar">
+            <div class="track lv-hi">
+              <div class="fill" style="width:88.0%"></div>
+              <div class="tick" style="left:95.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-hi">88.0<i>%</i></td>
+          <td class="s-tgt">152</td>
+          <td class="s-gap">+11.2</td>
+        </tr><tr>
+          <td class="s-name"><b>英語 L</b><span>リスニング 素点 91 / 100</span></td>
+          <td class="s-num">36.4<i>/40</i></td>
+          <td class="s-bar">
+            <div class="track lv-hi">
+              <div class="fill" style="width:91.0%"></div>
+              <div class="tick" style="left:95.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-hi">91.0<i>%</i></td>
+          <td class="s-tgt">38</td>
+          <td class="s-gap">+1.6</td>
+        </tr><tr>
+          <td class="s-name"><b>歴史総合・世界史探究</b><span>二次でも500点を占める最重要科目</span></td>
+          <td class="s-num">45<i>/100</i></td>
+          <td class="s-bar">
+            <div class="track lv-lo">
+              <div class="fill" style="width:45.0%"></div>
+              <div class="tick" style="left:80.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-lo">45.0<i>%</i></td>
+          <td class="s-tgt">80</td>
+          <td class="s-gap">+35</td>
+        </tr><tr class="is-sub">
+          <td class="s-name"><b>数学 I・A</b></td>
+          <td class="s-num">43<i>/100</i></td>
+          <td class="s-bar">
+            <div class="track lv-lo">
+              <div class="fill" style="width:43.0%"></div>
+              <div class="tick" style="left:70.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-lo">43.0<i>%</i></td>
+          <td class="s-tgt">70</td>
+          <td class="s-gap">+27</td>
+        </tr><tr class="is-sub">
+          <td class="s-name"><b>数学 II・B・C</b></td>
+          <td class="s-num">38<i>/100</i></td>
+          <td class="s-bar">
+            <div class="track lv-lo">
+              <div class="fill" style="width:38.0%"></div>
+              <div class="tick" style="left:65.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-lo">38.0<i>%</i></td>
+          <td class="s-tgt">65</td>
+          <td class="s-gap">+27</td>
+        </tr><tr class="is-sub">
+          <td class="s-name"><b>公共・倫理</b></td>
+          <td class="s-num">71<i>/100</i></td>
+          <td class="s-bar">
+            <div class="track lv-mid">
+              <div class="fill" style="width:71.0%"></div>
+              <div class="tick" style="left:85.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-mid">71.0<i>%</i></td>
+          <td class="s-tgt">85</td>
+          <td class="s-gap">+14</td>
+        </tr><tr class="is-sub">
+          <td class="s-name"><b>化学基礎</b></td>
+          <td class="s-num">26<i>/50</i></td>
+          <td class="s-bar">
+            <div class="track lv-lo">
+              <div class="fill" style="width:52.0%"></div>
+              <div class="tick" style="left:80.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-lo">52.0<i>%</i></td>
+          <td class="s-tgt">40</td>
+          <td class="s-gap">+14</td>
+        </tr><tr class="is-sub">
+          <td class="s-name"><b>生物基礎</b></td>
+          <td class="s-num">39<i>/50</i></td>
+          <td class="s-bar">
+            <div class="track lv-mid">
+              <div class="fill" style="width:78.0%"></div>
+              <div class="tick" style="left:90.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-mid">78.0<i>%</i></td>
+          <td class="s-tgt">45</td>
+          <td class="s-gap">+6</td>
+        </tr><tr class="is-sub">
+          <td class="s-name"><b>情報 I</b><span>素点 64 / 100 → 50点に換算</span></td>
+          <td class="s-num">32<i>/50</i></td>
+          <td class="s-bar">
+            <div class="track lv-mid">
+              <div class="fill" style="width:64.0%"></div>
+              <div class="tick" style="left:80.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-mid">64.0<i>%</i></td>
+          <td class="s-tgt">40</td>
+          <td class="s-gap">+8</td>
+        </tr>
+        <tr class="is-sum">
+          <td class="s-name"><b>合計</b></td>
+          <td class="s-num">625.2<i>/950</i></td>
+          <td class="s-bar">
+            <div class="track lv-mid">
+              <div class="fill" style="width:65.8%"></div>
+              <div class="tick" style="left:82.6%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-mid">65.8<i>%</i></td>
+          <td class="s-tgt">785</td>
+          <td class="s-gap">+159.8</td>
+        </tr>
+      </tbody></table>
+<div style="height:3mm"></div>
+<div class="kpirow"><div class="kpi">
+          <div class="k-l">現在の合計</div>
+          <div class="k-v">625.2</div>
+          <div class="k-n">/ 950点</div>
+        </div><div class="kpi">
+          <div class="k-l">現在の得点率</div>
+          <div class="k-v">65.8<small>%</small></div>
+          <div class="k-n">全科目 換算後</div>
+        </div><div class="kpi bad">
+          <div class="k-l">ボーダーまで</div>
+          <div class="k-v">-137.8<small>点</small></div>
+          <div class="k-n">80.32% = 763.0点</div>
+        </div><div class="kpi acc">
+          <div class="k-l">残り時間</div>
+          <div class="k-v">約4.5<small>ヶ月</small></div>
+          <div class="k-n">本番は1月中旬</div>
+        </div></div>
+<div style="height:3mm"></div>
+<div class="callout">
+      <div class="co-t">この表から読み取るべき3点</div>
+      <div class="co-b"><strong>① 英語は完成域にある。</strong>R 88.0%／L 91.0%。共通テスト形式ではすでに武器。残る課題は「二次・私大の型に持っていけるか」だけ。<br><strong>② 国語も高い。</strong>77.0%。ここは時間をかけずに水準を維持する設計にする。<br><strong>③ 崩れているのは世界史・数学・化学基礎・情報。</strong>特に世界史45.0%は、二次でも500点を占める科目としては危険水域。ここが今年最大の勝負どころ。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>全統マーク模試／筑波大 換算配点ベース</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">02</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>03 配点構造</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">03</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">どこで合否が決まるのか</h2>
+                <div class="sec-en">Where The Points Are</div>
+              </div>
+            </div>
+      <p class="sec-lead">総合2450点を、科目のかたまりで分解するとこうなる。これが「英語・国語・世界史を極める」という方針の、感覚ではない根拠。</p>
+<div class="weight">
+      <div class="weight-bar"><div class="wseg w1" style="width:61.22%">
+            <div class="w-t">二次試験 英語・国語・世界史</div>
+            <div class="w-v">61.2%</div>
+          </div><div class="wseg w3" style="width:20.41%">
+            <div class="w-t">共テ 英・国・世</div>
+            <div class="w-v">20.4%</div>
+          </div><div class="wseg w4" style="width:18.37%">
+            <div class="w-t">共テ その他</div>
+            <div class="w-v">18.4%</div>
+          </div></div>
+      <div class="weight-legend"><span><i style="background:#16233a"></i><strong>二次試験 1500点</strong> ― 英語・国語・世界史 各500点（世界史は論述）</span><span><i style="background:#a07d38"></i><strong>共通テスト 英・国・世 500点</strong> ― 英語200・国語200・世界史100</span><span><i style="background:#a8afba"></i><strong>共通テスト その他 450点</strong> ― 数学ⅠA・ⅡBC・理科基礎・公共倫理・情報</span></div>
+    </div>
+<div style="height:5mm"></div>
+<div class="kpirow"><div class="kpi acc">
+          <div class="k-l">英・国・世が握る配点</div>
+          <div class="k-v">2000<small>点</small></div>
+          <div class="k-n">共テ500 ＋ 二次1500</div>
+        </div><div class="kpi acc">
+          <div class="k-l">総合に占める割合</div>
+          <div class="k-v">81.6<small>%</small></div>
+          <div class="k-n">2000 / 2450</div>
+        </div><div class="kpi">
+          <div class="k-l">その他5科目</div>
+          <div class="k-v">18.4<small>%</small></div>
+          <div class="k-n">450 / 2450</div>
+        </div><div class="kpi bad">
+          <div class="k-l">世界史が握る配点</div>
+          <div class="k-v">600<small>点</small></div>
+          <div class="k-n">共テ100 ＋ 二次500</div>
+        </div></div>
+<div style="height:5mm"></div>
+<div class="grid2"><div class="card is-gold">
+          <div class="c-kicker">戦略①</div>
+          <div class="c-title">英・国・世 ― 極める科目</div>
+          <p class="c-body">総合の<strong>81.6%</strong>を握る3科目。ここは「取れればいい」ではなく<strong>極める</strong>対象。時間の大半をここに寄せる。<br>英語と国語はすでに共テ形式で高得点が取れる状態。<strong>二次・私大の型に変換できるか</strong>が全て。世界史だけが未完成。</p>
+        </div><div class="card">
+          <div class="c-kicker">戦略②</div>
+          <div class="c-title">その他5科目 ― 落とさない科目</div>
+          <p class="c-body">総合の<strong>18.4%</strong>。深追いはしない。ただし現状は数学・化学基礎・情報で明確に不足していて、<strong>このままだと共テのボーダーを踏めない</strong>。<br>狙うのは満点ではなく「取りこぼしゼロ」。<strong>単元別に潰す</strong>やり方で、確実に基準まで持っていく。</p>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">この構造から決まる、時間の使い方</h3>
+<ul class="bul"><li><strong>平日・休日を問わず、学習時間の大半は英語・国語・世界史に置く。</strong>総合の81.6%がここにある以上、ここへの投下が最もリターンが大きい。</li><li><strong>その他5科目は「上限を決めて」やる。</strong>不安で時間を伸ばすのではなく、単元を潰し終えたら次に進む。18.4%の科目に時間を吸われるのが一番もったいない。</li><li><strong>英語・国語は「維持」ではなく「変換」に時間を使う。</strong>共テ形式で伸ばすのではなく、二次・私大の型に持っていくための時間として使う。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">だから、こういう順番になる</div>
+      <div class="co-b"><strong>英語・国語・世界史を極めきれるなら、進路の選択肢はもっと上に広がる。</strong>現在は法政大学を志望に置いているが、この3科目が仕上がれば私大トップ層も射程に入る。<br>その可能性を現実にできるかどうかは、<strong>世界史を仕上げられるか</strong>にかかっている。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>どこで合否が決まるのか</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">03</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>04 得点設計</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">04</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">+160点の設計図</h2>
+                <div class="sec-en">Point Design</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">ボーダー763.0点までは<strong>+137.8点</strong>。ただし本番は必ずブレるので、ボーダーちょうどは狙わない。<strong>+159.8点を積んで785.0点＝82.6%</strong>、ボーダーに対して<strong>+22.0点の安全マージン</strong>を取る設計にする。</p>
+<table class="plain">
+      <thead><tr><th style="width:21%">科目</th><th style="width:9%">現在</th><th style="width:9%">目標</th><th style="width:10%">上積み</th><th style="width:51%">ここを取りにいく根拠</th></tr></thead>
+      <tbody><tr><td><strong>世界史</strong></td><td>45.0</td><td>80.0</td><td><strong>+35.0</strong></td><td>最大の伸びしろ。二次500点も同じ科目。ここへの投下が二重に効く</td></tr><tr><td><strong>数学 I・A</strong></td><td>43.0</td><td>70.0</td><td><strong>+27.0</strong></td><td>単元別に潰せば必ず動く。43%はまだ土台が乗っていない状態</td></tr><tr><td><strong>数学 II・B・C</strong></td><td>38.0</td><td>65.0</td><td><strong>+27.0</strong></td><td>同上。全範囲を薄く回さず、単元ごとに「もう大丈夫」を作る</td></tr><tr><td>化学基礎</td><td>26.0</td><td>40.0</td><td>+14.0</td><td>52%。計算問題の型が固まれば一気に上がる領域</td></tr><tr><td>国語</td><td>154.0</td><td>170.0</td><td>+16.0</td><td>77.0%。過去問ベースで解き方を固定すれば届く</td></tr><tr><td>公共・倫理</td><td>71.0</td><td>85.0</td><td>+14.0</td><td>71%。知識の抜けを埋めるだけで得点源にできる</td></tr><tr><td>英語（R+L）</td><td>177.2</td><td>190.0</td><td>+12.8</td><td>R95・L95。すでに完成域。ここは維持が仕事</td></tr><tr><td>情報 I</td><td>32.0</td><td>40.0</td><td>+8.0</td><td>素点64→80。頻出分野の演習で十分届く</td></tr><tr><td>生物基礎</td><td>39.0</td><td>45.0</td><td>+6.0</td><td>78%。知識の抜けだけを埋める</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<div class="kpirow"><div class="kpi good">
+          <div class="k-l">目標合計</div>
+          <div class="k-v">785.0</div>
+          <div class="k-n">/ 950点</div>
+        </div><div class="kpi good">
+          <div class="k-l">目標得点率</div>
+          <div class="k-v">82.6<small>%</small></div>
+          <div class="k-n">ボーダー 80.32%</div>
+        </div><div class="kpi good">
+          <div class="k-l">ボーダー超過</div>
+          <div class="k-v">+22.0<small>点</small></div>
+          <div class="k-n">本番のブレ吸収分</div>
+        </div><div class="kpi acc">
+          <div class="k-l">必要な上積み</div>
+          <div class="k-v">+159.8<small>点</small></div>
+          <div class="k-n">625.2 → 785.0</div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">この目標点の扱い方</h3>
+<ul class="bul tight"><li><strong>模試ごとに更新する。</strong>この目標は固定ではない。次の模試の結果が出たら、差分を取り直して配分を組み替える。</li><li><strong>上積みの大きい科目から手を打つ。</strong>世界史 → 数学 の順に時間を配分する。得意科目を磨くより、ここを埋めるほうが総合点は動く。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">上積みの56%は、たった3科目から出る</div>
+      <div class="co-b"><strong>世界史(+35)・数学I・A(+27)・数学II・B・C(+27) の3つで +89点</strong>。必要な上積み159.8点の<strong>56%</strong>がここに集中している。<br>つまり、共通テストのボーダー突破は「全科目をまんべんなく上げる」話ではなく、<strong>この3科目を単元単位で潰し切れるか</strong>という一点の話になる。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>共通テスト 950点満点の積み上げ設計</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">04</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>05 英語</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">05</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">英語 ― 完成度を「型」に変える</h2>
+                <div class="sec-en">English</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">共テ換算 <strong>88.6%</strong>（R 88.0% / L 91.0%）。<strong>すでに武器になっている</strong>科目。ここから先は共通テスト形式を積み増す話ではなく、<strong>二次・私大の型に持っていけるかどうかが全て</strong>。</p>
+<div class="kpirow"><div class="kpi">
+          <div class="k-l">英語が握る配点</div>
+          <div class="k-v">700<small>点</small></div>
+          <div class="k-n">共テ200 ＋ 二次500</div>
+        </div><div class="kpi">
+          <div class="k-l">総合に占める割合</div>
+          <div class="k-v">28.6<small>%</small></div>
+          <div class="k-n">700 / 2450</div>
+        </div><div class="kpi good">
+          <div class="k-l">現在の得点率</div>
+          <div class="k-v">88.6<small>%</small></div>
+          <div class="k-n">共通テスト換算</div>
+        </div><div class="kpi">
+          <div class="k-l">共テでの上積み</div>
+          <div class="k-v">+12.8<small>点</small></div>
+          <div class="k-n">ここは維持が仕事</div>
+        </div></div>
+<div style="height:4mm"></div>
+<div class="steps"><div class="step">
+          <div class="step-no">1</div>
+          <div class="step-txt">
+            <div class="step-t">英文法を、短期集中で完全に終わらせる</div>
+            <div class="step-d">唯一残っている不安要素。<strong>一度だけ全範囲を潰し切って、そこで一旦OKとする。</strong>以降は文法に長期間を割かない。問題演習で出てきた課題を、その都度確認して埋めるやり方に切り替えるのが最も効率がいい。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">2</div>
+          <div class="step-txt">
+            <div class="step-t">長文の「読み方」を型として固定する</div>
+            <div class="step-d">感覚で読むのをやめ、構文の取り方・論理展開の追い方を<strong>再現できる手順</strong>にする。ここが固まると、初見の英文でも得点が安定する。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">3</div>
+          <div class="step-txt">
+            <div class="step-t">英語読解特訓でレベルの高い英文に当てる</div>
+            <div class="step-d">読み方が固まったら、<strong>難度の高い英文にきちんと取り組む</strong>。ここで負荷をかけておくことが、二次・私大の本文に耐える力になる。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">4</div>
+          <div class="step-txt">
+            <div class="step-t">二次・私大の過去問へ移行する</div>
+            <div class="step-d">過去問を解いていく流れをベースに進める。<strong>形式ごとの得点の取り方</strong>（設問処理・時間配分・記述の書き方）を確立していく。</div>
+          </div>
+        </div></div>
+<div style="height:3mm"></div>
+<div class="grid2"><div class="card">
+          <div class="c-kicker">添削の回し方</div>
+          <div class="c-title">英作文はその場で人に見せる</div>
+          <p class="c-body">英作文など添削が必要なものが出たら、<strong>manabo をすぐ使う</strong>。学校の先生も遠慮なく活用する。<br><strong>自己判断で放置しないこと</strong>が唯一のルール。添削が滞ると、書く量が減って伸びが止まる。</p>
+        </div><div class="card is-gold">
+          <div class="c-kicker">共通テスト</div>
+          <div class="c-title">R 95 / L 95 が目標ライン</div>
+          <p class="c-body">現状 R 91・L 94。<strong>形式慣れの追加投下は最小限で足りる。</strong>共テ英語のために時間を割くより、その時間を世界史と数学に回すほうが総合点は伸びる。</p>
+        </div></div>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">英語は「守り」ではなく「武器」</div>
+      <div class="co-b">私大トップ層まで射程に入れられる根拠は、この英語の完成度にある。<strong>共テ形式で9割を超えている状態は、そのままでは価値が出ない。</strong>二次・私大の型に変換して初めて、志望校の選択肢が広がる。ここを最後まで落とさない。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>極める科目 ①</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">05</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>06 国語</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">06</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">国語 ― 時間をかけずに高値安定</h2>
+                <div class="sec-en">Japanese</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">共テ換算 <strong>77.0%</strong>。すでに戦える水準。<strong>他科目（特に世界史・数学）に時間を取られる可能性が高い前提</strong>で、投下時間を絞りながら水準を保つ設計にする。</p>
+<div class="kpirow"><div class="kpi">
+          <div class="k-l">国語が握る配点</div>
+          <div class="k-v">700<small>点</small></div>
+          <div class="k-n">共テ200 ＋ 二次500</div>
+        </div><div class="kpi">
+          <div class="k-l">総合に占める割合</div>
+          <div class="k-v">28.6<small>%</small></div>
+          <div class="k-n">700 / 2450</div>
+        </div><div class="kpi">
+          <div class="k-l">現在の得点率</div>
+          <div class="k-v">77.0<small>%</small></div>
+          <div class="k-n">共通テスト換算</div>
+        </div><div class="kpi acc">
+          <div class="k-l">共テでの上積み</div>
+          <div class="k-v">+16.0<small>点</small></div>
+          <div class="k-n">目標 170 / 200</div>
+        </div></div>
+<div style="height:4mm"></div>
+<div class="steps"><div class="step">
+          <div class="step-no">1</div>
+          <div class="step-txt">
+            <div class="step-t">現代文は「過去問ベース」で進める</div>
+            <div class="step-d">演習量を闇雲に増やすのではなく、<strong>志望校の過去問で解き方を固める</strong>のを基本線にする。追加の問題演習をやれる余裕がある時、あるいは必要が出た時は、<strong>その時点で相談する</strong>。自己判断で教材を増やさない。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">2</div>
+          <div class="step-txt">
+            <div class="step-t">古文単語・漢文語彙はメンテナンス科目</div>
+            <div class="step-d">一度覚えて終わりではなく、<strong>継続して抜けを作らない</strong>種類のもの。毎日少量でいいので必ず触る。<strong>ここが抜けると、読解力ごと一気に崩れる</strong>のが古文・漢文の怖さ。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">3</div>
+          <div class="step-txt">
+            <div class="step-t">二次の記述形式に合わせて答え方を揃える</div>
+            <div class="step-d">設問が何を要求しているかを掴んで、それに正面から答える型を作る。共通テストの選択肢を選ぶ力とは別物なので、過去問に入った段階で意識的に切り替える。</div>
+          </div>
+        </div></div>
+<div style="height:3mm"></div>
+<table class="plain">
+      <thead><tr><th style="width:16%">領域</th><th style="width:40%">進め方</th><th style="width:18%">頻度の目安</th><th style="width:26%">判断基準</th></tr></thead>
+      <tbody><tr><td>現代文</td><td>過去問ベース。解いた後は必ず設問ごとに何点落としたかを出す</td><td>週2〜3題</td><td><strong>得点率85%</strong>で安定するか</td></tr><tr><td>古文</td><td>単語・文法のメンテナンス＋読解演習</td><td><strong>毎日</strong>（単語）</td><td>単語の抜けが<strong>ゼロ</strong>か</td></tr><tr><td>漢文</td><td>語彙・句形のメンテナンス</td><td><strong>毎日</strong>（短時間）</td><td>句形で失点していないか</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">相談するタイミング（自己判断で動かさない）</h3>
+<ul class="bul"><li>現代文の過去問で<strong>得点率85%を切る回が続いた</strong>とき → 追加演習をやるかどうかを、その時点で相談する。</li><li>古文・漢文で<strong>語彙・句形での失点</strong>が出たとき → メンテナンスの量と頻度を見直す。放置すると必ず広がる。</li><li>二次の記述で<strong>書き方が定まらない</strong>とき → 添削に回す。自分の判断で書き方を変えない。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">国語で時間を溶かさないこと自体が、世界史への投資になる</div>
+      <div class="co-b">国語はすでに水準に届いている。ここで<strong>必要以上に時間を使わない判断</strong>ができるかどうかが、そのまま世界史に回せる時間の量になる。<br>「不安だからもう一周」ではなく、<strong>過去問の点数で判断する</strong>。85%で安定しているなら、それ以上は積まない。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>極める科目 ②</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">06</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>07 世界史</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">07</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">世界史 ― 最大の伸びしろ、最大のリスク</h2>
+                <div class="sec-en">World History</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">共テ換算 <strong>45.0%</strong>。共通テスト形式ですら基礎が取れていない状態。一方で二次では<strong>500点・論述でガッツリ</strong>問われる。<strong>総合2450点のうち600点をこの科目が握っている。</strong>ここが今年最大の勝負どころ。</p>
+<div class="kpirow"><div class="kpi">
+          <div class="k-l">世界史が握る配点</div>
+          <div class="k-v">600<small>点</small></div>
+          <div class="k-n">共テ100 ＋ 二次500</div>
+        </div><div class="kpi">
+          <div class="k-l">総合に占める割合</div>
+          <div class="k-v">24.5<small>%</small></div>
+          <div class="k-n">600 / 2450</div>
+        </div><div class="kpi bad">
+          <div class="k-l">現在の得点率</div>
+          <div class="k-v">45.0<small>%</small></div>
+          <div class="k-n">共通テスト形式</div>
+        </div><div class="kpi acc">
+          <div class="k-l">必要な上積み</div>
+          <div class="k-v">+35.0<small>点</small></div>
+          <div class="k-n">全体上積みの22%</div>
+        </div></div>
+<div style="height:4mm"></div>
+<div class="steps"><div class="step">
+          <div class="step-no">1</div>
+          <div class="step-txt">
+            <div class="step-t">高速で、基礎の部分だけでもインプットを一周し切る</div>
+            <div class="step-d">学校の教材をベースに進めるのもあり。ただし<strong>レイアウトや知識の整理の面で厳しそうなら、教材の変更も含めて早めに判断する</strong>。市販の参考書とおすすめのYouTube動画は<strong>面談で提示する</strong>。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">2</div>
+          <div class="step-txt">
+            <div class="step-t">正誤問題特化で、知識の点と点をつなげる</div>
+            <div class="step-d">覚えた知識を<strong>「判断できる知識」に変える工程</strong>。ここを飛ばすと、覚えているのに問題では点にならない状態が続く。45%から抜け出すのに一番効く工程がここ。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">3</div>
+          <div class="step-txt">
+            <div class="step-t">問題を解きまくる。解きながら穴を埋める</div>
+            <div class="step-d">解きながら<strong>「この知識はこう出題されるのか」を確認し、不足をその場で埋める</strong>を繰り返す。インプットに戻りすぎず、常に出題側から知識を見る。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">4</div>
+          <div class="step-txt">
+            <div class="step-t">記述（論述）対策に向けて動く</div>
+            <div class="step-d"><strong>論述特化のテキストは用意してある。</strong>基礎知識が乗った段階で、二次の論述に向けて本格的に移行する。論述は知識ゼロでは書けないので、①〜③の完成度がそのまま論述の上限になる。</div>
+          </div>
+        </div></div>
+<div style="height:3mm"></div>
+<table class="plain">
+      <thead><tr><th style="width:22%">「完了」の基準</th><th style="width:44%">何ができたら完了か</th><th style="width:34%">次に進む条件</th></tr></thead>
+      <tbody><tr><td><strong>① 基礎インプット</strong></td><td>通史を一周し切っている</td><td><strong>一周完了</strong>（完璧は求めない）</td></tr><tr><td><strong>② 正誤問題</strong></td><td>正誤を<strong>根拠つきで</strong>判断できる</td><td>正答率 <strong>80%</strong></td></tr><tr><td><strong>③ 演習</strong></td><td>共テ形式で安定して得点できる</td><td>得点率 <strong>80%</strong></td></tr><tr><td><strong>④ 論述</strong></td><td>設問要求に沿って字数内で書ける</td><td>過去問で添削を回し続ける</td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">今すぐの絶対条件 ― 毎週の小テストで基本を落とさない</div>
+      <div class="co-b">論述の前に、まず<strong>毎週の小テストで基本を落とさない状態</strong>に持っていくこと。ここが安定しない限り、上の工程は積み上がらない。<br><strong>小テストは「インプットが本当に入ったか」の唯一の計測点。</strong>落とした問題は翌週までに必ず埋める。例外なし。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>最重要科目／最大の勝負どころ</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">07</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>08 共テ底上げ</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">08</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">ボーダーを超えるための底上げ</h2>
+                <div class="sec-en">Common Test Base</div>
+              </div>
+            </div>
+      <p class="sec-lead"><strong>数学・世界史・情報・理科基礎で不足が明確</strong>になっている。これらは総合の18.4%で、深追いはしない領域。ただし<strong>このままではボーダーを踏めない</strong>ので、確実に基準まで引き上げる。狙うのは満点ではなく<strong>取りこぼしゼロ</strong>。</p>
+<div class="steps"><div class="step">
+          <div class="step-no">1</div>
+          <div class="step-txt">
+            <div class="step-t">「これだけ極めろパック」をまずやり切る</div>
+            <div class="step-d">50点・60点を取れていない科目は、まずここで<strong>土台を一度で完成させる</strong>。中途半端に他の教材に手を出さず、<strong>やり切ることを最優先</strong>にする。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">2</div>
+          <div class="step-txt">
+            <div class="step-t">そのあと、マーク式の単元別演習を重ねる</div>
+            <div class="step-d">パックをやり切った上で、単元別の演習に入る。<strong>「この単元はもう大丈夫」という状態を、1つ1つ単元ごとに作っていく。</strong>全範囲を薄く何周もするやり方は禁止。潰した単元が増えていく形で進める。</div>
+          </div>
+        </div></div>
+<div style="height:4mm"></div>
+<table class="plain">
+      <thead><tr><th style="width:22%">科目</th><th style="width:12%">現在</th><th style="width:12%">目標</th><th style="width:54%">最優先で手当てするところ</th></tr></thead>
+      <tbody><tr><td><strong>数学 I・A</strong></td><td>43.0 (43%)</td><td><strong>70.0</strong></td><td>土台がまだ乗っていない状態。パックをやり切ってから単元別へ。潰した単元を記録して可視化する</td></tr><tr><td><strong>数学 II・B・C</strong></td><td>38.0 (38%)</td><td><strong>65.0</strong></td><td>同上。ⅠAより低いので、こちらも同じ手順で単元単位に分解して潰す</td></tr><tr><td><strong>化学基礎</strong></td><td>26.0 (52%)</td><td><strong>40.0</strong></td><td>計算問題の型が固まっていない可能性が高い。単元別演習で型を固定すれば一気に動く</td></tr><tr><td>情報 I</td><td>32.0 (64%)</td><td><strong>40.0</strong></td><td>素点64→80。頻出分野に絞った演習で届く。時間投下は最小限で</td></tr><tr><td>公共・倫理</td><td>71.0 (71%)</td><td><strong>85.0</strong></td><td>知識の抜けを埋めるだけ。得点源側に寄せられる科目</td></tr><tr><td>生物基礎</td><td>39.0 (78%)</td><td><strong>45.0</strong></td><td>すでに水準内。抜けの確認のみ。ここに時間を使わない</td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">「演習量」ではなく「単元」で管理する</div>
+      <div class="co-b">50点・60点を切っている科目に対して、<strong>全範囲を薄く回すのは一番やってはいけないやり方</strong>。何時間やったかではなく、<strong>どの単元が終わったか</strong>で進捗を管理する。<br>単元ごとに「もう大丈夫」を確定させていけば、点数は必ず後からついてくる。<strong>時間で管理せず、潰した単元の数で管理する。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>落とさない科目／数学・理科基礎・情報・公共倫理</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">08</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>09 環境と運用</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">09</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">環境ルールと、数字で判断する運用</h2>
+                <div class="sec-en">Rules &amp; Operation</div>
+              </div>
+            </div>
+      <p class="sec-lead">学習の質は、意思ではなく<strong>仕組み</strong>で決まる。面談で決めたルールを固定化して、<strong>日々の判断に思考を使わない状態</strong>を作る。ここが崩れると、上の戦略は全部絵に描いた餅になる。</p>
+<div class="grid2"><div class="card is-gold">
+          <div class="c-kicker">ルール ③</div>
+          <div class="c-title">自習室・環境ルールの固定化</div>
+          <p class="c-body">面談で決めた<strong>入る時間・抜ける時間のルールを固定</strong>する。基本の時間を決めておいて、<strong>例外がある時だけ連絡する</strong>という形にする。<br>こうすることで「今日どうするか」を毎日考えずに済み、<strong>思考をブラさずに済む</strong>。判断コストをゼロにするのが目的。</p>
+        </div><div class="card">
+          <div class="c-kicker">ルール ④</div>
+          <div class="c-title">全て「数字」で判断する</div>
+          <p class="c-body"><strong>国公立・過去問分析シート</strong>がある。過去問を解いたあとは必ずそのシートに落として、<strong>何点足りていないのかを毎回数字で出す</strong>。<br>「手応えがあった／なかった」では次の一手が決まらない。<strong>点数化して初めて、次に何をやるかが決まる。</strong></p>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">運用の4原則</h3>
+<ol class="num"><li><strong>決めた時間に入り、決めた時間に出る。</strong>例外は事前連絡のみ。連絡すれば例外はOK、連絡なしの例外はナシ。</li><li><strong>解いた過去問は必ず分析シートに落とす。</strong>感想ではなく点数で残す。あと何点足りないのかを毎回明確にする。</li><li><strong>毎週の小テストは「基本を落とさない」が合格ライン。</strong>落とした問題は翌週までに埋める。持ち越さない。</li><li><strong>迷ったらこのシートに戻る。</strong>優先順位はここに書いてある通り。新しい教材や不安に振り回されない。</li></ol>
+<div style="height:4mm"></div>
+<h3 class="blk">毎週チェックする4つの数字</h3>
+<table class="plain">
+      <thead><tr><th style="width:24%">指標</th><th style="width:40%">どこで見るか</th><th style="width:36%">合格ライン</th></tr></thead>
+      <tbody><tr><td><strong>世界史の小テスト</strong></td><td>毎週の小テスト</td><td><strong>基本問題の失点ゼロ</strong></td></tr><tr><td><strong>潰した単元の数</strong></td><td>単元別演習の記録</td><td>週あたりの目標数は面談で決める</td></tr><tr><td><strong>過去問の得点</strong></td><td>国公立・過去問分析シート</td><td><strong>目標との差を毎回数値で出す</strong></td></tr><tr><td><strong>自習室の稼働</strong></td><td>入室・退室のルール</td><td><strong>例外は事前連絡があった時のみ</strong></td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">判断基準は、全部「数字」</div>
+      <div class="co-b">あと何点足りないのか。どの単元が何%なのか。小テストで何問落としたのか。<strong>それ以外の材料で戦略は動かさない。</strong><br>不安や手応えは判断材料にしない。<strong>数字が動いていないなら、やり方を変える。数字が動いているなら、不安でも続ける。</strong>これを1年間、徹底する。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>仕組みで質を担保する</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">09</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>10 ロードマップ</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">10</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">本番までのロードマップ</h2>
+                <div class="sec-en">Roadmap</div>
+              </div>
+            </div>
+      <p class="sec-lead">共通テスト本番は1月中旬、残り約4.5ヶ月。<strong>世界史の基礎インプットと英文法の完成を最初の1ヶ月に寄せる</strong>のが全体設計の前提になる。ここが遅れると、後ろの工程が全部圧迫される。</p>
+<table class="plain">
+      <thead><tr><th style="width:13%">時期</th><th style="width:22%">英語</th><th style="width:19%">国語</th><th style="width:24%">世界史</th><th style="width:22%">共テ底上げ</th></tr></thead>
+      <tbody><tr><td><strong>9月</strong></td><td><strong>英文法を短期集中で完全終了</strong>／読み方の型づくり</td><td>古文単語・漢文語彙の毎日メンテ開始</td><td><strong>基礎インプットを高速で一周</strong>／教材の適否をここで判断</td><td><strong>「これだけ極めろパック」に着手</strong></td></tr><tr><td><strong>10月</strong></td><td>英語読解特訓でレベルを上げる</td><td>現代文 過去問スタート</td><td><strong>正誤問題特化</strong>で知識をつなぐ</td><td>パックをやり切る → <strong>単元別演習へ</strong></td></tr><tr><td><strong>11月</strong></td><td><strong>二次・私大の過去問へ移行</strong></td><td>過去問ベースで型を固定</td><td>問題を解きまくる／穴埋め</td><td>単元別演習を継続（数学最優先）</td></tr><tr><td><strong>12月</strong></td><td>共テ形式で仕上げ（維持）</td><td>共テ形式で仕上げ（維持）</td><td><strong>論述対策に着手</strong>＋共テ形式</td><td><strong>共テ直前特化</strong>／未完了単元を集中的に</td></tr><tr><td><strong>1月上旬</strong></td><td>形式慣れのみ</td><td>形式慣れのみ</td><td>共テ形式で得点固め</td><td>取りこぼし科目の最終確認</td></tr><tr><td><strong>1月中旬</strong></td><td>共通テスト本番</td><td>共通テスト本番</td><td>共通テスト本番</td><td>共通テスト本番</td></tr><tr><td><strong>1月下旬〜</strong></td><td><strong>二次・私大 過去問中心</strong></td><td>記述形式に集中</td><td><strong>論述に全振り</strong></td><td>—</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">月末に必ず確認すること</h3>
+<ul class="bul"><li><strong>9月末</strong>：世界史の一周は終わったか／英文法は終わったか。遅れているなら、10月の予定をその場で組み直す。</li><li><strong>10月末</strong>：数学ⅠA・ⅡBCは単元別演習に入れているか。パックが終わっていないなら、そこを最優先で埋める。</li><li><strong>11月末</strong>：二次・私大の過去問に入れているか。共テ直前期に入る前に、二次の形式に一度は触れておく。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">このロードマップで最も守るべき1点</div>
+      <div class="co-b"><strong>9月中に「世界史の基礎インプット一周」と「英文法の完全終了」を終えること。</strong><br>この2つはどちらも<strong>一度やり切れば以降は軽くなる</strong>タイプの工程で、逆に長引かせると最後まで足を引っ張り続ける。他の何を後回しにしてでも、この2つを9月中に落とし切る。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>本番までの時間の使い方</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">10</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right"><span class="r-sample">SAMPLE</span>11 最初の30日</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">11</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">最初の30日でやり切ること</h2>
+                <div class="sec-en">First 30 Days</div>
+              </div>
+            </div>
+      <p class="sec-lead">戦略は、最初の30日の動き出しで決まる。ここに書いてあることを一つずつ潰していく。<strong>終わったらチェックを入れて、面談で一緒に確認する。</strong></p>
+<div class="checks"><div class="check"><span class="box"></span><span><strong>英文法</strong>：短期集中の範囲と期限を決めて、着手する</span></div><div class="check"><span class="box"></span><span><strong>英文法</strong>：全範囲を一周やり切る（以降は演習で穴埋めに移行）</span></div><div class="check"><span class="box"></span><span><strong>世界史</strong>：インプット教材を確定させる（学校教材 or 市販／面談で提示）</span></div><div class="check"><span class="box"></span><span><strong>世界史</strong>：基礎インプットの一周を高速で走り切る</span></div><div class="check"><span class="box"></span><span><strong>世界史</strong>：毎週の小テストで基本を落とさない状態にする</span></div><div class="check"><span class="box"></span><span><strong>世界史</strong>：落とした問題を翌週までに埋めるサイクルを回す</span></div><div class="check"><span class="box"></span><span><strong>共テ底上げ</strong>：これだけ極めろパックに着手する（数学ⅠA・ⅡBC優先）</span></div><div class="check"><span class="box"></span><span><strong>共テ底上げ</strong>：潰した単元を記録する仕組みを作る</span></div><div class="check"><span class="box"></span><span><strong>国語</strong>：古文単語・漢文語彙の毎日メンテを固定化する</span></div><div class="check"><span class="box"></span><span><strong>国語</strong>：現代文の過去問を解き始める（追加演習が必要なら相談）</span></div><div class="check"><span class="box"></span><span><strong>環境</strong>：自習室に入る時間・抜ける時間を固定して運用開始</span></div><div class="check"><span class="box"></span><span><strong>環境</strong>：例外がある時だけ連絡する運用を徹底する</span></div><div class="check"><span class="box"></span><span><strong>数字管理</strong>：国公立・過去問分析シートの使い方を確認する</span></div><div class="check"><span class="box"></span><span><strong>数字管理</strong>：解いた過去問を必ずシートに点数で落とす</span></div></div>
+<div style="height:4mm"></div>
+<div class="callout is-navy">
+      <div class="co-t">この1年で、どこまで行けるか</div>
+      <div class="co-b">英語はすでに武器になっている。国語も戦える。<strong>残っているのは世界史と、共通テストの底上げだけ。</strong><br>この2つを潰し切れたとき、筑波大学 総合学域群は「届くかどうか」ではなく<strong>「確実に狙う」</strong>対象になる。そして英語・国語・世界史の3科目が本当に極まったなら、<strong>私大トップ層まで選択肢は広がる。</strong><br><strong>やることは全部このシートに書いてある。あとは、決めた通りに動くだけ。</strong></div>
+    </div>
+<div style="height:4mm"></div>
+<div class="memo">
+      <div class="mm-t">面談メモ／今週決めたこと</div>
+      <div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>SAMPLE｜個別戦略シート 見本</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">11</span>
+    </div>
+  </section>
+<script>
+/* ?only=N でそのページだけ表示（レイアウト検証用） */
+(function(){
+  var m = /[?&]only=(\d+)/.exec(location.search);
+  if(!m) return;
+  var n = parseInt(m[1],10);
+  document.querySelectorAll('.page').forEach(function(el,i){
+    if(i !== n) el.style.display='none';
+  });
+  document.body.style.padding='0';
+  var sh = /[?&]shift=(d+)/.exec(location.search);
+  if(sh) document.querySelectorAll('.page')[n].style.marginTop = '-' + sh[1] + 'px';
+})();
+
+/* ?qa=1 で各ページのはみ出し量を出力（--dump-dom で回収する） */
+(function(){
+  if(!/[?&]qa=1/.test(location.search)) return;
+  var out = [];
+  document.querySelectorAll('.page').forEach(function(el,i){
+    var b = el.querySelector('.cover-inner') || el.querySelector('.page-body');
+    var over = b ? Math.round(b.scrollHeight - b.clientHeight) : 0;
+    var slack = b ? Math.round(b.clientHeight - (b.lastElementChild ? b.lastElementChild.getBoundingClientRect().bottom - b.getBoundingClientRect().top : 0)) : 0;
+    out.push('PAGE ' + String(i).padStart(2,'0') + '  h=' + el.offsetHeight + 'px  bodyH=' + (b?b.clientHeight:0) + 'px  overflow=' + over + 'px  slack=' + slack + 'px');
+  });
+  document.querySelectorAll('.page').forEach(function(el){ el.style.display='none'; });
+  var pre = document.createElement('pre');
+  pre.id = 'qa-report';
+  pre.style.cssText = 'font:16px/1.7 monospace;color:#111;background:#fff;padding:24px;margin:0;white-space:pre;';
+  pre.textContent = out.join(String.fromCharCode(10));
+  document.body.style.padding = '0';
+  document.body.appendChild(pre);
+})();
+</script>
+</body>
+</html>

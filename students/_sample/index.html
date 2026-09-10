@@ -561,6 +561,58 @@ table.plain td.tc{text-align:center;}
 }
 .cover-note strong{color:var(--gold-light);font-weight:500;}
 
+/* 見本版は注記が1ブロック増えるぶん、上側の余白を詰めて表紙内に収める */
+.cover-badge ~ .cover-inner .cover-eyebrow{margin-top:11mm;}
+.cover-badge ~ .cover-inner .cover-name{margin-top:8mm;}
+.cover-badge ~ .cover-inner .cover-contents{margin-top:5mm;}
+
+/* ---------- 配点比重バー ---------- */
+.bars{display:flex;flex-direction:column;gap:2.1mm;}
+.bar-row{display:flex;align-items:center;gap:3mm;}
+.bar-l{flex:0 0 33mm;min-width:0;}
+.bar-l b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;line-height:1.3;display:block;}
+.bar-l span{display:block;font-size:7.1pt;color:var(--ink-3);line-height:1.35;}
+.bar-t{flex:1;height:9px;background:var(--paper);position:relative;border-radius:1px;}
+.bar-f{position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,#4a5b78,var(--navy));}
+.bar-row.is-key .bar-f{background:linear-gradient(90deg,var(--gold),var(--gold-deep));}
+.bar-row.is-mute .bar-f{background:linear-gradient(90deg,#c2c8d1,#a8afba);}
+.bar-v{flex:0 0 19mm;text-align:right;font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-v i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.bar-p{flex:0 0 16mm;text-align:right;font-family:var(--en);font-size:11.5pt;font-weight:600;color:var(--ink-2);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-row.is-key .bar-p,.bar-row.is-key .bar-v{color:var(--gold-deep);}
+.bar-p i{font-style:normal;font-family:var(--sans);font-size:7.2pt;color:var(--ink-3);margin-left:1px;}
+
+/* ---------- 例題（英文＋設問＋選択肢） ---------- */
+.exam-passage{
+  background:#fff;border:1px solid var(--rule);border-left:2.5px solid var(--gold);
+  padding:3.4mm 4.5mm;font-size:9.4pt;line-height:1.95;color:var(--ink);letter-spacing:.004em;
+}
+.exam-q{
+  margin-top:3mm;font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:2.5mm;
+}
+.exam-q em{font-style:normal;font-family:var(--en);font-size:8.4pt;letter-spacing:.18em;color:var(--gold-deep);}
+.exam-choices{margin-top:2.4mm;display:flex;flex-direction:column;gap:1.5mm;}
+.exam-choice{
+  display:flex;gap:2.8mm;align-items:flex-start;
+  padding:2.1mm 3mm;background:var(--ivory);border:1px solid var(--rule-soft);
+}
+.exam-choice.is-ok{border-color:rgba(200,165,90,.6);background:#fdf8ec;}
+.ec-k{
+  flex:0 0 auto;width:5mm;height:5mm;display:flex;align-items:center;justify-content:center;
+  font-family:var(--en);font-size:9.5pt;font-weight:600;line-height:1;
+  border:1px solid var(--ink-3);color:var(--ink-2);background:#fff;
+}
+.exam-choice.is-ok .ec-k{background:var(--gold);border-color:var(--gold);color:#fff;}
+.ec-b{flex:1;min-width:0;}
+.ec-t{font-size:8.2pt;line-height:1.65;color:var(--ink-2);}
+.ec-w{font-size:7.7pt;line-height:1.6;margin-top:.8mm;color:var(--ink-3);}
+.ec-w b{font-weight:700;color:var(--bad);margin-right:1mm;}
+.exam-choice.is-ok .ec-w b{color:var(--good);}
+
 /* ---------- プロセス帯（面談〜運用の流れ） ---------- */
 .flow{display:flex;align-items:stretch;gap:0;}
 .flow-item{

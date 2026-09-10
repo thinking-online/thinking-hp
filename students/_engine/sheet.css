@@ -550,6 +550,11 @@ table.plain td.tc{text-align:center;}
 }
 .cover-note strong{color:var(--gold-light);font-weight:500;}
 
+/* 見本版は注記が1ブロック増えるぶん、上側の余白を詰めて表紙内に収める */
+.cover-badge ~ .cover-inner .cover-eyebrow{margin-top:11mm;}
+.cover-badge ~ .cover-inner .cover-name{margin-top:8mm;}
+.cover-badge ~ .cover-inner .cover-contents{margin-top:5mm;}
+
 /* ---------- 配点比重バー ---------- */
 .bars{display:flex;flex-direction:column;gap:2.1mm;}
 .bar-row{display:flex;align-items:center;gap:3mm;}

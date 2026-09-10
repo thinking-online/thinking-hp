@@ -491,6 +491,32 @@ h2 + h2 { font-size: 10.5pt; font-weight: 400; color: #444;
     return outpath
 
 
+def build_status(outpath):
+    """00_はじめにお読みください。編集者向けの入口。状態と更新履歴。"""
+    import datetime
+    body = open("docs/15_進行状況と更新履歴.md", encoding="utf-8").read()
+    today = datetime.date.today().strftime("%Y年%-m月%-d日")
+    cover = f"""<div class="cover">
+<div class="kicker">はじめにお読みください　{today}</div>
+<div class="t">進行状況と<br>更新履歴</div>
+<div class="s">頭のいい人が勉強で、絶対にやらないこと</div>
+<div class="au">朝倉 徹大（受験の王様）</div>
+<div class="note">このファイルだけ読めば、いまの状態が全部わかるようにしています。<br>
+資料が増えても、必ずここが入口です。</div>
+</div>"""
+    css = CSS + """
+h1 { font-size: 14pt; }
+h3 { font-size: 10.6pt; margin: 1.8em 0 .5em 0; }
+table { font-size: 9pt; }
+.indent { font-size: 10pt; line-height: 1.95; }
+"""
+    doc = ("<!doctype html><html lang='ja'><head><meta charset='utf-8'>"
+           f"<title>進行状況と更新履歴</title><style>{css}</style></head><body>\n"
+           + cover + md_to_html(body) + "\n</body></html>")
+    open(outpath, "w", encoding="utf-8").write(doc)
+    return outpath
+
+
 if __name__ == "__main__":
     os.makedirs("build", exist_ok=True)
     print(build_daihon("build/台本.html"))
@@ -499,3 +525,4 @@ if __name__ == "__main__":
     print(build_kousei("build/新構成案.html"))
     print(build_saishu("build/最終構成案.html"))
     print(build_mokuji("build/目次_最終案.html"))
+    print(build_status("build/00_はじめにお読みください.html"))

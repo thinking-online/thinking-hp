@@ -1,0 +1,168 @@
+<!doctype html><html lang='ja'><head><meta charset='utf-8'><title>進行状況と更新履歴</title><style>
+@page { size: A5; margin: 13mm 14mm 11mm 14mm; }
+@page :first { margin: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: "IPAPGothic","IPAGothic",sans-serif; font-size: 9.1pt; line-height: 1.72;
+       color: #1c1c1c; margin: 0; }
+p { margin: 0 0 0.72em 0; }
+code { font-size: 0.9em; color: #666; background: #f2f2f2; padding: 0 .25em; border-radius: 2px; }
+hr.rule { border: 0; border-top: 1px solid #ddd; margin: 1.6em 0; }
+h1 { font-size: 15.5pt; line-height: 1.45; margin: 0 0 .95em 0; padding-bottom: .5em;
+     border-bottom: 2px solid #1c1c1c; page-break-before: always; page-break-after: avoid; }
+h2 { font-size: 12.5pt; margin: 2.0em 0 .8em 0; page-break-after: avoid; }
+h3 { font-size: 10.4pt; margin: 1.5em 0 .5em 0; color: #444; page-break-after: avoid; }
+h4 { font-size: 9.8pt; margin: 1.2em 0 .4em 0; color: #555; page-break-after: avoid; }
+ul { margin: 0 0 1em 0; padding-left: 1.2em; }
+li { margin-bottom: .35em; }
+table { border-collapse: collapse; width: 100%; font-size: 8.4pt; margin: 1em 0; }
+th, td { border: 1px solid #ccc; padding: .38em .5em; text-align: left; vertical-align: top; }
+th { background: #f4f4f4; }
+.indent { margin: 0 0 1em 0; white-space: pre-wrap; font-size: 9.2pt; line-height: 1.85; }
+.vs { font-size: 8.2pt; margin: .28em 0 .85em 0; }
+.vs th, .vs td { padding: .3em .5em; line-height: 1.45; }
+.vs th:first-child, .vs td:first-child { width: 21%; font-size: 7.8pt; color: #8a8a8a;
+                                          background: #fafafa; white-space: nowrap; }
+.vs th:nth-child(2), .vs td:nth-child(2) { width: 39.5%; color: #5a5a5a; }
+.vs th:nth-child(3), .vs td:nth-child(3) { width: 39.5%; }
+.vs th { background: #f2f2f2; color: #444; font-size: 8pt; }
+.vs th:nth-child(3) { color: #1c1c1c; }
+.vs td:nth-child(3) { background: #f4f4f4; }
+.vs.f1 td:nth-child(3), .vs.f1 th:nth-child(3) { background: #eef4fb; }
+.vs.f2 td:nth-child(3), .vs.f2 th:nth-child(3) { background: #eef6f1; }
+.vs.f3 td:nth-child(3), .vs.f3 th:nth-child(3) { background: #faf4e6; }
+.vs.f4 td:nth-child(3), .vs.f4 th:nth-child(3) { background: #fdf0f5; }
+.vs.f5 td:nth-child(3), .vs.f5 th:nth-child(3) { background: #fbeeec; }
+.vs.f6 td:nth-child(3), .vs.f6 th:nth-child(3) { background: #f5eefa; }
+.cklist { margin: .25em 0 .7em 0; }
+.cols2 { column-count: 2; column-gap: 7mm; margin-top: .2em; }
+.cols2 h3 { margin: .55em 0 .3em 0; font-size: 8.6pt; color: #666; break-after: avoid; }
+.cols2 h3:first-child { margin-top: 0; }
+.cols2 .ck { break-inside: avoid; padding: .16em 0; }
+.ck { display: flex; align-items: flex-start; gap: .5em; padding: .2em 0; font-size: 8.8pt; }
+.ck .n { width: 1.6em; text-align: right; color: #9a9a9a; font-size: 7.8pt; padding-top: .18em; }
+.ck .box { width: .78em; height: .78em; border: 1px solid #9a9a9a; border-radius: 1px;
+           display: inline-block; flex: none; margin-top: .32em; }
+.ck .t { flex: 1; }
+.frows { margin: .6em 0 1.2em 0; }
+.frow { display: flex; align-items: baseline; gap: .5em; padding: .42em 0; }
+.frow .fl { white-space: nowrap; }
+.frow .fd { flex: 1 1 auto; border-bottom: 1px solid #cfcfcf; height: .85em; }
+.frow .fu { white-space: nowrap; color: #777; font-size: 8.6pt; }
+.figbox { border: 1px dashed #b0b0b0; color: #777; text-align: center; padding: 1.5em .8em;
+          margin: 1.1em 0; font-size: 8.6pt; border-radius: 3px; background: #fafafa; }
+.pagelabel { font-size: 7.3pt; letter-spacing: .18em; color: #8a8a8a; border-bottom: 1px solid #e2e2e2;
+             padding-bottom: .35em; margin: 0 0 1.1em 0; page-break-after: avoid; }
+.newpage { page-break-before: always; }
+.pagebreak { page-break-before: always; height: 0; }
+h1 + .meta + .pagebreak, h1 + .pagebreak { page-break-before: avoid; }
+.front p { font-size: 9.8pt; line-height: 1.85; margin: 0 0 .95em 0; }
+.front .indent { font-size: 11pt; line-height: 2.0; }
+.lbl { font-size: 7.3pt; letter-spacing: .16em; color: #9a9a9a; margin: .72em 0 .22em 0; page-break-after: avoid; }
+.qtext { font-size: 12.5pt; line-height: 1.55; margin: 0 0 1em 0; }
+.situ { margin: 0 0 1.1em 0; }
+.hintbox { background: #f6f6f2; border-left: 3px solid #c9c2a6; padding: .6em .85em; margin: 0 0 .9em 0; font-size: 8.9pt; }
+.lawbox { font-size: 11pt; line-height: 1.45; padding: .5em .85em; margin: .1em 0 .75em 0;
+          border-left: 4px solid #1c1c1c; background: #f7f7f7; }
+.lbl-bad, .lbl-good { color: #6a6a6a; }
+.lbl-good { border-left: 3px solid #1c1c1c; padding-left: .5em; margin-left: -.65em; }
+.ans { margin: 0 0 .6em 0; }
+.cornerfig { font-size: 7.8pt; color: #8a8a8a; line-height: 1.75; border-top: 1px dotted #dcdcdc;
+             padding-top: .55em; margin: 0; }
+.rubric { font-size: 8pt; color: #8a8a8a; letter-spacing: .04em; line-height: 1.7; margin: 0 0 1.3em 0; }
+.conclbox { border-top: 1px solid #ddd; padding-top: .55em; margin: 0 0 .8em 0; }
+.lawbox.f1 { border-left-color: #2f6fb0; } .lawbox.f2 { border-left-color: #2e8b57; }
+.lawbox.f3 { border-left-color: #a8791b; } .lawbox.f4 { border-left-color: #cc3d78; }
+.lawbox.f5 { border-left-color: #c0392b; } .lawbox.f6 { border-left-color: #7b3fa0; }
+/* 扉 */
+.cover { height: 210mm; width: 148mm; box-sizing: border-box; padding: 42mm 20mm 20mm 20mm;
+         page-break-after: always; }
+.cover .kicker { font-size: 9pt; color: #777; letter-spacing: .1em; }
+.cover .t { font-size: 18.5pt; line-height: 1.6; margin: 1.2em 0 .6em 0; }
+.cover .s { font-size: 12pt; color: #333; margin-bottom: 3.5em; }
+.cover .obi { font-size: 9.4pt; line-height: 1.9; border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;
+              padding: 1em 0; margin-bottom: 3em; }
+.cover .au { font-size: 11pt; }
+.cover .note { font-size: 8pt; color: #999; margin-top: 3.5em; line-height: 1.8; }
+/* 目次 */
+.toc { page-break-after: always; }
+.toc h1 { page-break-before: avoid; }
+.toc .row { display: flex; justify-content: space-between; font-size: 9.4pt; padding: .28em 0;
+            border-bottom: 1px dotted #e0e0e0; }
+.toc .row .r { color: #999; font-size: 8.6pt; }
+.toc .grp { margin-top: 1.4em; font-size: 8pt; letter-spacing: .16em; color: #9a9a9a; }
+/* 中扉 */
+.part { page-break-before: always; padding-top: 55mm; page-break-after: always; }
+.part .num { font-size: 8.4pt; letter-spacing: .22em; color: #999; }
+.part .ttl { font-size: 18pt; line-height: 1.55; margin-top: .8em; }
+.part .bar { width: 34mm; height: 3px; background: #1c1c1c; margin-top: 1.6em; }
+.part.f1 .bar { background: #2f6fb0; } .part.f2 .bar { background: #2e8b57; }
+.part.f3 .bar { background: #a8791b; } .part.f4 .bar { background: #cc3d78; }
+.part.f5 .bar { background: #c0392b; } .part.f6 .bar { background: #7b3fa0; }
+.meta { font-size: 8pt; color: #a0a0a0; border: 1px solid #eee; background: #fbfbfb;
+        padding: .5em .7em; margin: 0 0 1.1em 0; line-height: 1.7; }
+
+h1 { font-size: 14pt; }
+h3 { font-size: 10.6pt; margin: 1.8em 0 .5em 0; }
+table { font-size: 9pt; }
+.indent { font-size: 10pt; line-height: 1.95; }
+</style></head><body>
+<div class="cover">
+<div class="kicker">はじめにお読みください　2026年9月10日</div>
+<div class="t">進行状況と<br>更新履歴</div>
+<div class="s">頭のいい人が勉強で、絶対にやらないこと</div>
+<div class="au">朝倉 徹大（受験の王様）</div>
+<div class="note">このファイルだけ読めば、いまの状態が全部わかるようにしています。<br>
+資料が増えても、必ずここが入口です。</div>
+</div><h1>進行状況と更新履歴</h1>
+<p>学研　杉浦さま</p>
+<p>このファイルだけ読めば、いまの状態が全部わかるようにしています。<br>資料が増えても、必ずここが入口です。</p>
+<p>最終更新　2026年9月10日</p>
+<h1>1　いまの状態</h1>
+<h2>決まっているもの</h2>
+<table><tr><th></th><th>内容</th></tr><tr><td>読者</td><td>やっているのに伸びない中高生と、その保護者。中学生を含む</td></tr><tr><td>構造</td><td>6つの力（選ぶ・入れる・つなげる・出す・直す・回す）× 45の見開き</td></tr><tr><td>見開き</td><td>右ページに問い、左ページに答え。伸びない人と伸びる人の二項対立</td></tr><tr><td>判型</td><td>A5・縦組み・右綴じ。約185ページ</td></tr><tr><td>45の配置</td><td>選ぶ7／入れる8／つなげる6／出す8／直す8／回す8</td></tr></table>
+<h2>まだ決まっていないもの</h2>
+<table><tr><th></th><th>内容</th><th>決めるのは</th></tr><tr><td>1</td><td>タイトル最終形と、帯の3案</td><td>編集部と相談</td></tr><tr><td>2</td><td>「頭のいい人」を表紙・目次で使うか</td><td>編集部と相談</td></tr><tr><td>3</td><td>初版部数と発売時期</td><td>編集部</td></tr><tr><td>4</td><td>棚（学参棚か、実用書棚か）</td><td>編集部・営業</td></tr><tr><td>5</td><td>中学生と高校生の比率（いま4対3）</td><td>著者。編集部の意見を聞きたい</td></tr></table>
+<h2>次にご意見をいただきたい3点</h2>
+<p>1　タイトルは「頭のいい人が勉強で、絶対にやらないこと」で進めてよいか<br>2　この本はどの棚に置かれる想定か<br>3　中学生と高校生の比率を、いまの4対3から動かすべきか</p>
+<h1>2　資料の一覧</h1>
+<table><tr><th>ファイル</th><th>中身</th><th>状態</th></tr><tr><td>企画書</td><td>企画の全体。31ページ</td><td>更新済み</td></tr><tr><td>目次</td><td>前付から巻末まで。45本すべて</td><td>9/9 全面改訂</td></tr><tr><td>見本組</td><td>A5縦組みで本の体裁に組んだもの。219ページ</td><td>9/8 作成</td></tr><tr><td>はじめに</td><td>冒頭9ページ</td><td>9/9 書き直し</td></tr><tr><td>実演6本</td><td>各章の入口に置く2ページ×6</td><td>9/9 新規</td></tr><tr><td>最終構成案</td><td>構造の設計。45の配置と実装手順</td><td>9/9 新規</td></tr></table>
+<h1>3　更新履歴</h1>
+<p>新しい順です。何を、どう変えて、なぜ変えたかを書いています。</p>
+<h2>9月9日</h2>
+<h3>目次を全面的に組み直しました</h3>
+<p>章のリード文を、6つとも同じ形にしました。</p>
+<div class="indent">　　頭のいい人が、〔場面〕ときにやらないこと</div>
+<p>場面だけを入れ替えます。何からやるか決める／読む・聞く／覚える／解く／間違えたあと／毎日続ける。</p>
+<p>理由　表紙の約束（絶対にやらないこと）を、目次のなかで6回くり返すためです。<br>以前は章ごとにバラバラの見出しでした。</p>
+<p>あわせて、章の名前に対象を入れました。</p>
+<div class="indent">　　正しい道を、選ぶ力<br>　　解説を、正しく入れる力<br>　　入れたものを、つなげる力<br>　　つなげたものを、出す力<br>　　出せなかった場所を、直す力<br>　　これを、試験の日まで回す力</div>
+<p>前の力の結果が、次の力の対象になっています。名前を並べるだけで一周が読めます。</p>
+<h3>章の入口に、実演を6本つくりました</h3>
+<p>各章の頭に2ページ、読者にその場で失敗してもらう問題を置きます。</p>
+<div class="indent">　　選ぶ　　40問1回ずつと13問3回ずつ、どちらが点が高いか<br>　　入れる　アミラーゼの4択（用語を知らなくても解ける）<br>　　つなげる　光合成と呼吸の式を並べて、気づくかどうか<br>　　出す　　4行読ませて、閉じて書かせる。書けない<br>　　直す　　移項の符号ミスの答案。直すのは何行目か<br>　　回す　　先週の月曜、何時間やったか／何ができるようになったか</div>
+<p>理由　説明より先に体験させたほうが、読者が納得するからです。<br>巻頭の11個の数字と同じ作りを、6章ぶん用意しました。</p>
+<h3>構造を6つの力に整理しました</h3>
+<p>読者が覚える概念を10個から5個に減らしました。<br>4段階の図、2つの通貨、7つの型、巻頭の3ステップの4つを削り、<br>6つの力の図1枚に統合しています。</p>
+<p>理由　概念が多いと、体系が読者の負担になるためです。</p>
+<h2>9月8日</h2>
+<h3>見本組を作りました</h3>
+<p>A5・縦組み・右綴じで、本そのものの体裁に組みました。219ページ。<br>カバー、本扉、目次、柱とノンブル、章扉、奥付まで入っています。</p>
+<p>右綴じなので、法則の問いページは必ず偶数ページ（見開きの右）、<br>答えは奇数ページ（左）に来るようにしています。</p>
+<p>理由　この分量が、この判型で何ページになるかを先に確定させるためです。</p>
+<h3>冒頭を書き直しました</h3>
+<p>11個の数字を10秒で覚えてもらう実演から始まります。</p>
+<div class="indent">　　1　4　9　1　6　2　5　3　6　4　9</div>
+<p>たいてい6個目か7個目で止まります。めくると、1、4、9、16、25、36、49だと分かる。<br>記憶力も努力の量も変わっていないのに、覚えられるようになります。</p>
+<p>理由　「才能ではない」を、説明ではなく体験にするためです。<br>書店で立ち読みする人が、その場で1回失敗して、その場で成功します。</p>
+<h3>45の問いを、生徒が実際に言う言葉に差し替えました</h3>
+<p>以前は著者が考えた問いでした。全部、教室で実際に聞く言葉に変えています。</p>
+<div class="indent">　　例　「解説を読んだらわかるのに、テストだと解けないんです」</div>
+<h3>過去の配布物を読み込みました</h3>
+<p>『2026版 夏休み戦略が面白いほどわかる本』122ページ<br>『だれでも、何歳からでも 頭良い人になれる。』300ページ</p>
+<p>どちらも受験の王様名義で無料配布したものです。<br>300ページのテキストの20法則のうち13が、本書の45法則と対応していました。<br>本書は新しく作ったものではなく、これまで配ってきたものを、<br>1つの定義で束ね直したものになっています。</p>
+<h1>4　このあとの予定</h1>
+<table><tr><th>時期</th><th>やること</th></tr><tr><td>9月中旬</td><td>大枠（企画書＋サンプル原稿）の提出</td></tr><tr><td>9月下旬</td><td>いただいた意見を反映。タイトルと部数の相談</td></tr><tr><td>10月</td><td>45本の見開きを、実際の生徒の話に差し替える</td></tr><tr><td>11月</td><td>初稿</td></tr></table>
+<h1>5　この資料の更新について</h1>
+<p>更新するたびに、このファイルの更新履歴に追記します。<br>何を変えたかだけでなく、なぜ変えたか、前はどうだったかも書きます。</p>
+<p>ファイル名には必ず日付を入れています。最新版はここに載っているものです。</p>
+</body></html>

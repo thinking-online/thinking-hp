@@ -455,6 +455,9 @@ body.is-closed .sticky-cta__closed { display: block; }
   font: 700 11px/1.3 var(--sans);
 }
 .gallery-head b { color: var(--gold); }
+.block--dark .gallery-head p {
+  color: rgba(255, 255, 255, 0.55);
+}
 .gallery {
   display: flex;
   gap: 12px;

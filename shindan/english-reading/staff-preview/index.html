@@ -515,6 +515,22 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   border:1px solid rgba(250,247,239,.35);border-radius:999px;padding:7px 4px;
   text-decoration:none;
 }
+.offer{
+  margin:12px 0 2px;background:var(--paper);color:var(--ink);
+  border:2px solid var(--gold);border-radius:10px;padding:14px 12px;
+}
+.offer .ocap{font-size:.7rem;letter-spacing:.16em;font-weight:900;color:var(--gold-deep)}
+.offer .oline{font-size:.88rem;font-weight:700;margin-top:4px}
+.offer .oline b{color:var(--red)}
+.offer .oprice{font-family:var(--font-num);font-weight:600;font-size:2.4rem;line-height:1.2}
+.offer .oprice small{font-size:1rem;margin-left:2px}
+.offer .ocount{
+  font-weight:900;font-size:.9rem;color:var(--red);
+  background:rgba(161,37,44,.07);border:1.5px dashed var(--red);
+  border-radius:8px;padding:8px 10px;margin:8px 0 6px;
+}
+.offer .ocount.over{color:var(--ink-sub);background:var(--paper);border-color:var(--paper-line)}
+.offer .onote{font-size:.74rem;color:var(--ink-sub)}
 
 /* ===== 追従バー ===== */
 .stickybar{
@@ -583,7 +599,11 @@ body{padding-top:92px}
 <script>
 const PV_SNAPS = {"満点(100点)": {"v": 1, "date": "2026.09.15", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ok"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ok"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ok"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ok"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "ok"}]}, "実戦設計型": {"v": 1, "date": "2026.09.15", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ng"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ok"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ok"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ok"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ok"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "ok"}]}, "感覚読み型": {"v": 1, "date": "2026.09.15", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ng"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ng"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ok"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ng"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ng"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "ng"}]}, "読み違い型": {"v": 1, "date": "2026.09.15", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ng"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "idk"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ok"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ok"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ng"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "ok"}]}, "構造BB型": {"v": 1, "date": "2026.09.15", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ng"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ok"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ok"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "idk"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ok"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "ok"}]}, "論理迷子型": {"v": 1, "date": "2026.09.15", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "ok"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "ok"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ok"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "ng"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ok"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "ok"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "to"}]}, "基礎再設計型": {"v": 1, "date": "2026.09.15", "gradeId": "h2", "gradeLabel": "高2", "quizKey": "h2", "school": "早稲田大学 商学部", "dev": "52〜58", "name": "やまだ たろう", "answers": [{"f": "str", "u": "構造：関係詞のネストとSV", "d": 1, "st": "ok"}, {"f": "para", "u": "言い換え：few（否定）", "d": 1, "st": "idk"}, {"f": "logic", "u": "論理：Therefore（因果）", "d": 1, "st": "ok"}, {"f": "str", "u": "構造：接触節と前置詞句の連鎖", "d": 2, "st": "idk"}, {"f": "para", "u": "言い換え：仮定法の含意", "d": 2, "st": "idk"}, {"f": "para", "u": "言い換え：否定比較とso...that", "d": 2, "st": "ng"}, {"f": "logic", "u": "論理：In other words（言い換え）", "d": 2, "st": "idk"}, {"f": "str", "u": "構造：節の切れ目と因果", "d": 3, "st": "ng"}, {"f": "para", "u": "言い換え：反対要素の見抜き", "d": 3, "st": "idk"}, {"f": "logic", "u": "論理：譲歩からの主張", "d": 3, "st": "idk"}]}};
 const cur = localStorage.getItem("pv_staff_type") || "読み違い型";
-try{ localStorage.setItem("thinking_eigo_staff_preview", JSON.stringify(PV_SNAPS[cur] || Object.values(PV_SNAPS)[0])); }catch(e){}
+try{
+  const s = PV_SNAPS[cur] || Object.values(PV_SNAPS)[0];
+  s.ts = Date.now() - 20*3600000; /* 診断から20時間経過の想定 */
+  localStorage.setItem("thinking_eigo_staff_preview", JSON.stringify(s));
+}catch(e){}
 document.addEventListener("DOMContentLoaded", ()=>{
   const row = document.getElementById("pvrow");
   Object.keys(PV_SNAPS).forEach(name=>{
@@ -644,6 +664,20 @@ const SHIDO = {
    ・month が今月と一致しない/読めない場合は数字を出さず
      「受け入れは、月に数名だけ」のまま（更新忘れでも嘘にならない安全装置） */
 const SEATS_URL = "../seats.json";
+/* ★②''''' 枠の固定表記と、診断後3日以内の特別価格
+   ・CAP_TEXT … 常時表示する枠の表記（実際に毎月この人数で締める運用が前提）。
+     seats.json が今月分のときだけ実数「残り◯名」に自動で置き換わる
+   ・OFFER … 診断日からdays日以内の申込に適用する特別価格。
+     期限はその生徒の診断日時から自動計算（生徒ごとに本物の期限）。
+     王様側の確認は「LINEに診断結果が届いた日から3日以内か」を見るだけ。
+     on:false にすると価格ブロックごと非表示 */
+const CAP_TEXT = "毎月30枠限定で受け付けています";
+const OFFER = {
+  on: true,
+  days: 3,
+  price: "24,800",
+  note: "期限を過ぎると、通常価格でのご案内になります。"
+};
 
 /* ---------- 学年（アンケートは7分岐 / テストは6セット） ---------- */
 const GRADES = [
@@ -798,18 +832,20 @@ const LEVEL_COMMENT = {
 const app = document.getElementById("app");
 let S = {};
 let timerId = null;
+let offerTimer = null;
 let USER_NAME = ""; // LIFFログイン時のLINE表示名（未連携時は空）
 
 function resetState(){
   if(timerId){ clearInterval(timerId); timerId = null; }
-  S = {gradeId:null, gradeLabel:"", quizKey:"", school:"", dev:"", qIndex:0, items:[], answers:[], code:"", restored:false, dateStr:""};
+  if(offerTimer){ clearInterval(offerTimer); offerTimer = null; }
+  S = {gradeId:null, gradeLabel:"", quizKey:"", school:"", dev:"", qIndex:0, items:[], answers:[], code:"", restored:false, dateStr:"", ts:null};
 }
 
 /* ---------- 結果の保存・復元 ---------- */
 function saveSnapshot(){
   try{
     localStorage.setItem(STORE_KEY, JSON.stringify({
-      v:1, date:S.dateStr, gradeId:S.gradeId, gradeLabel:S.gradeLabel,
+      v:1, ts:S.ts, date:S.dateStr, gradeId:S.gradeId, gradeLabel:S.gradeLabel,
       quizKey:S.quizKey, school:S.school, dev:S.dev, name:USER_NAME, answers:S.answers
     }));
   }catch(e){}
@@ -832,6 +868,7 @@ function boot(){
       S.gradeId = snap.gradeId; S.gradeLabel = snap.gradeLabel; S.quizKey = snap.quizKey;
       S.school = snap.school; S.dev = snap.dev; S.answers = snap.answers;
       S.dateStr = snap.date; S.restored = true;
+      S.ts = (typeof snap.ts === "number") ? snap.ts : null;
       if(!USER_NAME && snap.name) USER_NAME = snap.name;
       renderResult();
     } else {
@@ -1144,6 +1181,7 @@ function renderResult(){
     S.dateStr = today.getFullYear() + "." + String(today.getMonth()+1).padStart(2,"0") + "." + String(today.getDate()).padStart(2,"0");
   }
   const dateStr = S.dateStr;
+  if(!S.ts && !S.restored) S.ts = Date.now();
   if(!S.restored) saveSnapshot();
   const pct = f => Math.round(r.rate[f]*100);
   const weakHtml = r.weakUnits.length
@@ -1323,7 +1361,7 @@ function renderResult(){
 
     <div class="shido">
       <div class="shido-inner">
-        <span class="limited" id="seatsBadge">受け入れは、月に数名だけ</span>
+        <span class="limited" id="seatsBadge">${CAP_TEXT}</span>
         <div class="eyeb">PERSONAL COACHING</div>
         <h3>受験の王様の個別指導</h3>
         <div class="proof">
@@ -1333,6 +1371,14 @@ function renderResult(){
           <div class="ptile"><div class="pv">40,000+</div><div class="pk">公式LINE登録者</div></div>
         </div>
         <p class="body"><b>大学別・学部別の問題演習を自作するくらい</b>、徹底的に英語を極めてきました。長文読解まで仕上げ切りたいなら、やることは人によって全く違います。だから個別指導では、<b>今のあなたの状態を直接聞いた上で、指導プランをゼロから練ります</b>。</p>
+        ${OFFER.on ? `
+        <div class="offer" id="offerBox">
+          <div class="ocap">英語力診断を受けた人だけの特別価格</div>
+          <div class="oline">診断から<b>${OFFER.days}日以内</b>の申込は</div>
+          <div class="oprice">${OFFER.price}<small>円</small></div>
+          <div class="ocount" id="offerCount"></div>
+          <div class="onote">${OFFER.note}</div>
+        </div>` : ``}
         <div class="invite">本気で変わりたい人は——<br>LINEで「<b>${SHIDO.word}</b>」に興味がある旨をお知らせください。</div>
         <button class="btn btn-primary" id="shidocopy">「${SHIDO.word}」をコピーする</button>
         <div class="copied" id="shidocopied">コピーしました！LINEに貼り付けて、興味がある旨を送ってください。</div>
@@ -1368,6 +1414,37 @@ function renderResult(){
       document.getElementById("monitorcopy").textContent = "「" + CAMP.word + "」をコピーしました ✓";
     });
   };
+  /* 診断日から3日以内の特別価格カウントダウン（その生徒だけの本物の期限） */
+  if(OFFER.on && document.getElementById("offerCount")){
+    let deadline = null;
+    if(typeof S.ts === "number"){
+      deadline = S.ts + OFFER.days * 86400000;
+    } else if(S.dateStr){
+      const p = S.dateStr.split(".");
+      if(p.length === 3){
+        /* 旧データ（時刻なし）は診断日の翌日0時起点でdays日 */
+        deadline = new Date(+p[0], +p[1]-1, +p[2] + OFFER.days + 1).getTime();
+      }
+    }
+    const el = document.getElementById("offerCount");
+    const tick = ()=>{
+      if(deadline === null){ el.textContent = "あなたの期限：診断日から" + OFFER.days + "日以内"; return; }
+      const left = deadline - Date.now();
+      if(left <= 0){
+        el.textContent = "あなたの特別価格の期限は終了しました（通常価格でご案内できます）";
+        el.classList.add("over");
+        if(offerTimer){ clearInterval(offerTimer); offerTimer = null; }
+        return;
+      }
+      const dd = Math.floor(left / 86400000);
+      const hh = Math.floor((left % 86400000) / 3600000);
+      const mm = Math.floor((left % 3600000) / 60000);
+      el.textContent = "⏳ あなたの期限まで、あと " + (dd > 0 ? dd + "日 " : "") + hh + "時間 " + mm + "分";
+    };
+    tick();
+    offerTimer = setInterval(tick, 30000);
+  }
+
   /* 今月の残席表示（seats.json が今月分のときだけ数字を出す） */
   fetch(SEATS_URL + "?t=" + Date.now())
     .then(res=>res.json())

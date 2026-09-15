@@ -486,6 +486,15 @@ body.is-closed .sticky-cta__closed { display: block; }
   height: 100%;
   object-fit: cover;
 }
+.gallery__card--sheet {
+  flex-basis: 92vw;
+  max-width: 560px;
+  aspect-ratio: 1024 / 597;
+}
+.gallery__card--sheet img {
+  object-fit: contain;
+  background: #f4f1ea;
+}
 @media (min-width: 640px) {
   .gallery-wrap { margin: 28px 0 36px; }
   .gallery {
@@ -496,6 +505,11 @@ body.is-closed .sticky-cta__closed { display: block; }
   .gallery__card {
     flex-basis: clamp(300px, 42vw, 480px);
     aspect-ratio: 16 / 9;
+  }
+  .gallery__card--sheet {
+    flex-basis: clamp(420px, 62vw, 640px);
+    max-width: 640px;
+    aspect-ratio: 1024 / 597;
   }
 }
 

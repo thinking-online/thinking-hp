@@ -609,6 +609,14 @@ const SHIDO = {
   tv:   "https://powered-by-tv.com/2023/08/12/powernews11/",
   word: "個別指導"
 };
+/* ★②'''' 今月の残席表示
+   同じフォルダの seats.json（{"month":"2026-09","total":40,"left":40}）を読んで
+   個別指導バッジに「◯月の参加枠｜残り◯名」を表示する。
+   ・申込が入ったら GitHub で left の数字を減らすだけ（0で「満了」表示）
+   ・月が替わったら month と left を書き換える
+   ・month が今月と一致しない/読めない場合は数字を出さず
+     「受け入れは、月に数名だけ」のまま（更新忘れでも嘘にならない安全装置） */
+const SEATS_URL = "seats.json";
 
 /* ---------- 学年（アンケートは7分岐 / テストは6セット） ---------- */
 const GRADES = [
@@ -1288,7 +1296,7 @@ function renderResult(){
 
     <div class="shido">
       <div class="shido-inner">
-        <span class="limited">受け入れは、月に数名だけ</span>
+        <span class="limited" id="seatsBadge">受け入れは、月に数名だけ</span>
         <div class="eyeb">PERSONAL COACHING</div>
         <h3>受験の王様の個別指導</h3>
         <div class="proof">
@@ -1333,6 +1341,22 @@ function renderResult(){
       document.getElementById("monitorcopy").textContent = "「" + CAMP.word + "」をコピーしました ✓";
     });
   };
+  /* 今月の残席表示（seats.json が今月分のときだけ数字を出す） */
+  fetch(SEATS_URL + "?t=" + Date.now())
+    .then(res=>res.json())
+    .then(d=>{
+      const el = document.getElementById("seatsBadge");
+      if(!el || !d) return;
+      const now = new Date();
+      const ym = now.getFullYear() + "-" + String(now.getMonth()+1).padStart(2,"0");
+      if(d.month !== ym || typeof d.left !== "number") return;
+      const m = now.getMonth() + 1;
+      el.textContent = d.left > 0
+        ? m + "月の参加枠｜残り " + d.left + " 名"
+        : m + "月分は満了しました（来月分はLINEで案内します）";
+    })
+    .catch(()=>{});
+
   /* 個別指導の合言葉コピー */
   document.getElementById("shidocopy").onclick = ()=>{
     copyPlain(SHIDO.word, ()=>{

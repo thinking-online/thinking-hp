@@ -893,7 +893,43 @@ body.is-closed .sticky-cta__closed { display: block; }
   font: 700 17px/1.45 var(--mincho);
   letter-spacing: 0.02em;
 }
+.perk-flow {
+  list-style: none;
+  margin: 4px 0 18px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+.perk-flow li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2px 12px;
+  align-items: start;
+  padding: 14px 16px;
+  background: var(--paper-lift);
+  border: 1px solid var(--line-gold);
+}
+.perk-flow b {
+  color: var(--gold);
+  font: 900 11px/1.4 var(--sans);
+  letter-spacing: 0.14em;
+  padding-top: 3px;
+}
+.perk-flow strong {
+  display: block;
+  color: var(--ink);
+  font: 800 15px/1.45 var(--sans);
+  margin-bottom: 2px;
+}
+.perk-flow span {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 13.5px;
+  line-height: 1.7;
+}
 @media (min-width: 640px) {
+  .perk-flow { gap: 10px; margin-bottom: 22px; }
+  .perk-flow li { padding: 16px 18px; }
   .step { margin-bottom: 26px; padding-bottom: 26px; }
   .step__title { font-size: 19px; margin-bottom: 12px; }
 }

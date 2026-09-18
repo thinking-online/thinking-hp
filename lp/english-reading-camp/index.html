@@ -17,6 +17,14 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/english-reading-camp/styles.css">
+  <script>
+    (function () {
+      var deadline = Date.parse("2026-09-18T23:59:59+09:00");
+      if (Date.now() >= deadline) {
+        location.replace("/english-reading-camp/closed/");
+      }
+    })();
+  </script>
 </head>
 <body>
   <div class="progress" id="progress" aria-hidden="true"></div>
@@ -45,7 +53,7 @@
         <span class="countdown__label">秒</span>
       </div>
     </div>
-    <p class="deadline-bar__closed">募集は締め切りました</p>
+    <p class="deadline-bar__closed">審査申込350名を超えました</p>
   </div>
 
   <main>
@@ -713,7 +721,7 @@
           </a>
           <p class="final__cta-note">本気の思いを、フォームで見せてください</p>
         </div>
-        <p class="final__closed">募集は締め切りました。<br class="only-sp">次回があるかどうかは未定です。</p>
+        <p class="final__closed">審査申込350名を超えました。<br>ありがとうございました。</p>
 
         <p class="final__sign">
           本気のあなたを。<br>
@@ -733,7 +741,7 @@
     <a class="sticky-cta__btn js-open-only" data-form-link href="#" target="_blank" rel="noopener noreferrer">
       審査フォームへ →
     </a>
-    <p class="sticky-cta__closed">募集は締め切りました</p>
+    <p class="sticky-cta__closed">審査申込350名を超えました</p>
   </div>
 
   <script src="/english-reading-camp/scripts.js" defer></script>

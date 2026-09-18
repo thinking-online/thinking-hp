@@ -1105,3 +1105,81 @@ body.is-closed .final__closed { display: block; }
 @media (min-width: 640px) {
   br.only-sp { display: none; }
 }
+
+/* ========== 締め切り後お礼ページ ========== */
+body.thanks-page {
+  padding: 0;
+  color: #fff;
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(184, 146, 58, 0.16), transparent 52%),
+    linear-gradient(180deg, var(--green-deep), var(--green-black) 70%);
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+.thanks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 560px;
+  margin: 0 auto;
+  padding: 48px var(--gutter) 64px;
+  text-align: center;
+}
+.thanks__brand {
+  margin: 0 0 6px;
+  color: var(--gold-soft);
+  font: 700 12px/1.3 var(--sans);
+  letter-spacing: 0.18em;
+}
+.thanks__camp {
+  margin: 0 0 28px;
+  color: rgba(255, 255, 255, 0.72);
+  font: 500 13px/1.5 var(--sans);
+  letter-spacing: 0.06em;
+}
+.thanks__kicker {
+  margin: 0 0 12px;
+  color: var(--gold);
+  font: 700 11px/1.3 var(--sans);
+  letter-spacing: 0.2em;
+}
+.thanks__title {
+  margin: 0 0 16px;
+  color: #fff;
+  font: 700 26px/1.45 var(--mincho);
+  letter-spacing: 0.04em;
+}
+.thanks__count {
+  display: inline-block;
+  color: var(--gold-bright);
+  font-size: 1.35em;
+  font-weight: 700;
+}
+.thanks__lead {
+  margin: 0 0 28px;
+  color: var(--gold-bright);
+  font: 700 20px/1.6 var(--mincho);
+  letter-spacing: 0.04em;
+}
+.thanks__body {
+  margin: 0 auto 32px;
+  max-width: 28em;
+}
+.thanks__body p {
+  margin: 0 0 0.85em;
+  color: rgba(255, 255, 255, 0.82);
+  font: 500 15px/1.9 var(--sans);
+}
+.thanks__body p:last-child { margin-bottom: 0; }
+.thanks__sign {
+  margin: 0;
+  color: var(--gold-bright);
+  font: 700 15px/1.4 var(--mincho);
+}
+@media (min-width: 640px) {
+  .thanks { padding: 72px 28px 88px; }
+  .thanks__title { font-size: 34px; }
+  .thanks__lead { font-size: 22px; }
+}

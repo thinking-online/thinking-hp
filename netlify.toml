@@ -311,6 +311,14 @@
   to = "/lp/english-reading-camp/index.html"
   status = 200
 [[redirects]]
+  from = "/english-reading-camp/closed"
+  to = "/lp/english-reading-camp/closed/index.html"
+  status = 200
+[[redirects]]
+  from = "/english-reading-camp/closed/"
+  to = "/lp/english-reading-camp/closed/index.html"
+  status = 200
+[[redirects]]
   from = "/english-reading-camp/*"
   to = "/lp/english-reading-camp/:splat"
   status = 200

@@ -40,10 +40,7 @@
   function applyClosedState() {
     if (closedApplied) return;
     closedApplied = true;
-    document.body.classList.add("is-closed");
-    document.body.style.setProperty("--sticky-bottom", "72px");
-    if (stickyCta) stickyCta.classList.remove("is-visible");
-    disableFormLinks();
+    window.location.replace("/english-reading-camp/closed/");
   }
 
   bindFormLinks();

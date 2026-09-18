@@ -1,5 +1,5 @@
 /**
- * 受験の王様通信 6月 vol.01 — LP scripts
+ * 受験の王様通信 7月 vol.02 — LP scripts
  */
 (function () {
   "use strict";

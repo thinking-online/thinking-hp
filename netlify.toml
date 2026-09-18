@@ -179,6 +179,16 @@
   to = "/lp/king-letter-202506-01/:splat"
   status = 200
 
+# LP: 受験の王様通信 7月 vol.02 — /king-letter-202507-01 で公開
+[[redirects]]
+  from = "/king-letter-202507-01"
+  to = "/lp/king-letter-202507-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/king-letter-202507-01/*"
+  to = "/lp/king-letter-202507-01/:splat"
+  status = 200
+
 # LP: 受験の王様コミュニティ — /king-of-juken-community で公開
 [[redirects]]
   from = "/king-of-juken-community"
@@ -313,6 +323,16 @@
 [[redirects]]
   from = "/coreenglish-sl/*"
   to = "/lp/coreenglish-sl/:splat"
+  status = 200
+
+# 診断: 7月の勉強時間パーソナル診断 — /shindan/min で公開
+[[redirects]]
+  from = "/shindan/min"
+  to = "/shindan/min/index.html"
+  status = 200
+[[redirects]]
+  from = "/shindan/min/*"
+  to = "/shindan/min/:splat"
   status = 200
 
 # 診断: 英語設計診断 — /english-reading で公開

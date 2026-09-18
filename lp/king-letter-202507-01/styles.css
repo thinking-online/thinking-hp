@@ -1,4 +1,4 @@
-/* 受験の王様通信 6月 vol.01 — Mobile-first LP */
+/* 受験の王様通信 7月 vol.02 — Mobile-first LP */
 
 :root {
   --green: #15402e;
@@ -24,6 +24,18 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+#present-time,
+#present-words,
+#present-route,
+#present,
+#contents,
+#result,
+#english,
+#consult {
+  scroll-margin-top: 56px;
+  scroll-margin-bottom: 120px;
 }
 
 body {
@@ -778,6 +790,24 @@ section {
 .gift-points .chk svg {
   width: 13px;
   height: 13px;
+}
+
+.present-copy {
+  margin: 4px 16px 0;
+  padding: 4px 2px 0;
+}
+
+.present-copy .lead {
+  margin: 0 0 4px;
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.75;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+}
+
+.present-copy .gift-points li {
+  align-items: flex-start;
 }
 
 .bonus-group {

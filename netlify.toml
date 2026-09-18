@@ -189,6 +189,16 @@
   to = "/lp/king-letter-202507-01/:splat"
   status = 200
 
+# LP: 受験の王様通信 8月 vol.03 — /king-letter-202508-01 で公開
+[[redirects]]
+  from = "/king-letter-202508-01"
+  to = "/lp/king-letter-202508-01/index.html"
+  status = 200
+[[redirects]]
+  from = "/king-letter-202508-01/*"
+  to = "/lp/king-letter-202508-01/:splat"
+  status = 200
+
 # LP: 受験の王様コミュニティ — /king-of-juken-community で公開
 [[redirects]]
   from = "/king-of-juken-community"

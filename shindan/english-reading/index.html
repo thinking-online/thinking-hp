@@ -248,6 +248,83 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   border-bottom:3px double var(--gold-deep);display:inline-block;padding:0 .3em .1em;
 }
 .typedesc{font-size:.88rem;color:var(--ink);text-align:left;background:#fff;border:1px solid var(--paper-line);border-radius:8px;padding:14px}
+
+.typevideo{margin:4px 0 0}
+.typevideo-frame{
+  position:relative;width:100%;aspect-ratio:16/9;
+  background:#0b2239;border-radius:8px;overflow:hidden;
+  border:1px solid var(--paper-line);
+}
+.typevideo-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.typevideo-open{
+  display:block;margin-top:10px;text-align:center;word-break:break-all;
+  font-size:.75rem;font-weight:700;color:var(--gold-deep);text-decoration:none;
+}
+
+/* ===== 次にやること ①② ===== */
+.now{margin:22px 0 4px;display:grid;gap:14px}
+.now-step{
+  border:2px solid var(--ink);border-radius:12px;background:#fff;padding:16px 14px;
+}
+.now-step.is-main{
+  border-color:var(--gold-deep);
+  background:linear-gradient(180deg,#fff,var(--gold-soft));
+}
+.now-step .nhead{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
+.now-step .nnum{
+  font-family:var(--font-num);font-size:1.45rem;font-weight:600;
+  color:var(--gold-deep);letter-spacing:.02em;line-height:1;flex:0 0 auto;
+}
+.now-step h3{
+  font-family:var(--font-display);font-weight:800;font-size:1.08rem;
+  letter-spacing:.03em;line-height:1.45;padding-top:2px;
+}
+.now-step .nbody{font-size:.86rem;color:var(--ink);line-height:1.8;margin-bottom:12px}
+.now-step .btn-line{margin-top:10px}
+.now-step .copied{margin:8px 0 0}
+
+/* ===== SSE募集 / Before→After ===== */
+.offer-kicker{
+  margin:26px 0 10px;text-align:center;
+  font-size:.7rem;letter-spacing:.18em;font-weight:900;color:var(--gold-deep);
+}
+.sse-card,.ba-card{
+  display:block;text-decoration:none;color:inherit;overflow:hidden;
+  border-radius:12px;border:2px solid var(--ink);background:#fff;
+}
+.sse-card{background:var(--navy);color:var(--paper);border-color:var(--navy)}
+.sse-card img{display:block;width:100%;height:158px;object-fit:cover;object-position:center}
+.sse-card .sbody{padding:14px 14px 16px}
+.sse-card .kicker{font-size:.64rem;letter-spacing:.18em;font-weight:900;color:var(--gold)}
+.sse-card h3{
+  font-family:var(--font-display);font-weight:800;font-size:1.22rem;
+  letter-spacing:.04em;margin:4px 0 8px;color:#fff;line-height:1.4;
+}
+.sse-card p{font-size:.84rem;line-height:1.75;color:rgba(250,247,239,.9)}
+.sse-card .go{display:inline-block;margin-top:12px;font-weight:900;font-size:.86rem;color:var(--gold)}
+.ba-card{margin-top:14px}
+.ba-card .ba-meta{padding:14px 14px 8px}
+.ba-card .kicker{font-size:.64rem;letter-spacing:.16em;font-weight:900;color:var(--gold-deep)}
+.ba-card strong{
+  display:block;font-family:var(--font-display);font-weight:800;
+  font-size:1.08rem;letter-spacing:.03em;line-height:1.5;margin:4px 0 4px;color:var(--ink);
+}
+.ba-card .ba-sub{display:block;font-size:.78rem;color:var(--ink-sub);font-weight:500}
+.ba-list{display:grid;gap:8px;padding:8px 12px 12px}
+.ba-item{
+  display:flex;align-items:flex-start;gap:8px;
+  background:var(--paper);border:1px solid var(--paper-line);border-radius:8px;
+  padding:10px 12px;font-size:.82rem;line-height:1.65;font-weight:700;color:var(--ink);
+}
+.ba-item span{
+  flex:0 0 auto;margin-top:1px;padding:1px 8px;border-radius:999px;
+  background:var(--gold-soft);color:var(--gold-deep);font-size:.68rem;letter-spacing:.06em;
+  border:1px solid var(--gold-deep);font-weight:900;
+}
+.ba-card .go{
+  display:block;text-align:center;padding:13px;
+  font-weight:900;font-size:.86rem;color:var(--gold-deep);background:var(--gold-soft);
+}
 .fields{margin:20px 0 4px;display:grid;gap:10px}
 .frow{display:grid;grid-template-columns:4.6em 1fr 3em;align-items:center;gap:10px;font-size:.82rem}
 .frow .fname{font-weight:700}
@@ -600,8 +677,11 @@ const CAMP = {
   body:  "5日間で英語の読み方を攻略する無料モニターイベントを開催予定です。気になる人は、LINEで「<b>モニター</b>」とだけ送っておいてください。先行して案内していきます。",
   word:  "モニター"
 };
-/* ★②'' 解説セクションのリンク（個別指導LP／note問題集） */
+/* ★②'' 結果画面の次アクション（SSE募集／Before→After） */
 const SSE_URL  = "https://thinking-online.com/lp/sse/";
+const SSE_IMG  = "/lp/sse/assets/hero-proof-2000.png";
+const BA_URL   = "https://assaaa-blog.com/post_lp/sse-before-after-33days/";
+const BA_IMG   = "https://assaaa-blog.com/wp-content/uploads/2022/12/" + encodeURIComponent("ローンチ中画像-10.png");
 const NOTE_URL = "https://note.com/king_of_juken/m/mbb67149d6ac4";
 /* ★②''' 個別指導セクション（実績リンクと合言葉） */
 const SHIDO = {
@@ -725,14 +805,19 @@ h3:[
 /* ---------- タイプ判定 ★④ ---------- */
 const TYPES = {
  str:{name:"構造ブラックボックス型",desc:"単語は知っているのに、文が長くなると「誰が・何を・どうした」が崩れるタイプ。SVOCの切り方と修飾のかかり先のつかみ方を入れると、長文が別物になります。",
+  video:"https://utage-system.com/video/B1oUpyISObKj",
   rx:["1日1文でいいので、SVOCを振ってから意味を言う「構文解釈」を習慣にする","読めない文は「主語はどこからどこまでか」を特定するところから始める","音読はSVOCのカタマリを意識しながら1文5回"]},
  para:{name:"読み違い型",desc:"読めている「つもり」になりやすいタイプ。肯定と否定、誰が誰に、原因と結果——1つの取り違えで文全体の意味が反転します。「なんとなく合ってそう」で選ぶクセを直すと一気に伸びます。",
+  video:"https://utage-system.com/video/tCxq0295IUJf",
   rx:["読んだ文を「誰が・どうした・なぜ」の3点で自分の言葉で言い直す練習をする","選択肢を選ぶ前に、本文の対応箇所と1つずつ突き合わせて「ズレ」を探す","not A but B / far from など「意味が反転する表現」をストックする"]},
  logic:{name:"論理迷子型",desc:"一文一文は読めるのに、文と文のつながり（因果・逆接・指示語）で流れを見失うタイプ。論理マーカーを読む技術を入れると、長い文章でも得点が安定します。",
+  video:"https://utage-system.com/video/3cHxsFhPwPk6",
   rx:["However / so / for example などの論理マーカーに印をつけて読む","指示語（it / this / one）が出たら、その場で指す内容を言ってから先に進む","段落ごとに「一言要約」をメモしながら読む"]},
  kan:{name:"感覚読み型",desc:"「わからない」を選ばずに誤答している＝根拠がないまま雰囲気で選んでいるサイン。実はいちばん危険で、いちばん早く変えられるタイプです。「なんとなく」を「根拠」に変える読み方から始めましょう。",
+  video:"https://utage-system.com/video/FjH0BrvJ3dIG",
   rx:["答えを選ぶ前に、根拠になる箇所を本文の中で必ず指でおさえる","根拠が指させないときは「わからない」と認める（それが精読のスタート）","1日1文、SVOCを振ってから意味を言う練習で「読めた」の基準を作り直す"]},
  kiso:{name:"基礎再設計型",desc:"複数の分野に穴がある状態。逆に言えば、正しい順番で積み直せば伸び幅が最も大きいタイプです。根性ではなく、順番の問題です。",
+  video:"https://utage-system.com/video/vkl2aO0qkG1b",
   rx:["この夏やることを「単語＋短い文のSVOC」の2つに絞る","1つ前の学年の英文に戻る勇気を持つ（それが実は最短ルート）","毎日同じ時間に英語30分を固定して、継続を仕組み化する"]},
  jissen:{name:"実戦設計型",desc:"制限時間つきでも正確に読めています。読み方の土台は完成レベル。ここからは志望校の出題形式に合わせて、過去問と実戦演習をどう配置するかの「実戦設計」フェーズです。",
   rx:["志望校の過去問を1年分、時間を測って解いてみる","落とした問題を「構造／言い換え／論理」に分類して原因を特定する","出題形式（長文・英作文・リスニング）ごとの対策配分を決める"]}
@@ -1089,6 +1174,7 @@ function buildCopyText(r){
     "────────────",
     "スコア：" + r.score + "／100（Lv." + r.level + "）",
     "タイプ：" + TYPES[r.typeKey].name,
+    ...(TYPES[r.typeKey].video ? ["解説動画：" + TYPES[r.typeKey].video] : []),
     "構造把握 " + pct("str") + "｜言い換え " + pct("para") + "｜論理 " + pct("logic"),
     "回答の質：正解" + r.nOk + "・誤答" + r.nNg + "・わからない" + r.nIdk + "・時間切れ" + r.nTo,
     "弱点単元：" + weak,
@@ -1097,6 +1183,17 @@ function buildCopyText(r){
     "━━━━━━━━━━━━",
     "↑このまま送信してください！"
   ].join("\n");
+}
+
+function typeVideoHtml(type){
+  if(!type.video) return "";
+  return `
+    <div class="typevideo">
+      <div class="typevideo-frame">
+        <iframe src="${type.video}" title="${type.name}の解説動画" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <a class="typevideo-open" href="${type.video}" target="_blank" rel="noopener">動画リンクを開く ↗</a>
+    </div>`;
 }
 
 /* ---------- 画面：結果 ---------- */
@@ -1114,8 +1211,6 @@ function renderResult(){
   const weakHtml = r.weakUnits.length
     ? r.weakUnits.map(u=>`<span class="wchip">${u}</span>`).join("")
     : `<span class="wchip">なし（全問正解！）</span>`;
-  const gapSchool = S.school==="未定" ? "あなたの志望校" : "『"+escapeHtml(S.school)+"』";
-
   app.innerHTML = `
   ${S.restored ? `<div class="restored-note">保存済みの診断結果を表示しています（診断日 ${dateStr}）</div>` : ``}
   <div class="result-cover-frame">
@@ -1147,20 +1242,6 @@ function renderResult(){
       <div class="typename">${type.name}</div>
       <div class="typedesc">${type.desc}</div>
     </div>
-
-    <div class="cta-hero">
-      <div class="cap">＼ この結果、ここで終わらせない ／</div>
-      <div class="msg">${SEND_RETURN}</div>
-      <div class="grid">
-        <div class="stepline"><span class="stepnum">1</span><button class="btn btn-primary pulse" id="copy">結果をコピーする</button></div>
-        <div class="copied" id="copied">コピーしました！あとはLINEに貼り付けて送信するだけ。</div>
-        <div class="stepline"><span class="stepnum">2</span><a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">LINEを開いて、そのまま送信</a></div>
-        <div class="stepline"><span class="stepnum">3</span><button class="btn btn-type" id="copytype">「${type.name}」をコピーして、もう1通送る</button></div>
-        <div class="copied" id="copiedtype">「${type.name}」をコピーしました！LINEに戻って貼り付けて送信してください。</div>
-      </div>
-      <p class="cta-note" style="margin-top:10px">③まで送ると、あなたのタイプ専用の<b>「読み方カルテ」</b>が自動で届きます。</p>
-    </div>
-
     <div class="fields">
       ${["str","para","logic"].map(f=>`
       <div class="frow">
@@ -1186,128 +1267,45 @@ function renderResult(){
       <div class="weak-chips">${weakHtml}</div>
     </div>
 
-    <div class="comment">${GRADE_COMMENT[S.quizKey]}<br>${LEVEL_COMMENT[r.level]}<br>${gapSchool}までの具体的な話は、結果を送ってくれた人と個別に進めます。</div>
-
-    <div class="longbridge">
-      <div class="lcap">— たとえ100点でも —</div>
-      <h4>この診断で測れたのは、<br>まだ「短い文章」の読みです</h4>
-      <div class="lb-compare">
-        <div class="lb-card"><div class="t">今日の診断で測ったもの</div>少ない文章量を、正確に読めるか</div>
-        <div class="lb-arrow">▼ ここに大きな壁がある ▼</div>
-        <div class="lb-card goal"><div class="t">入試の長文で問われるもの</div>何十もの文を<b>論理でつなぎ</b>、制限時間内に解き切る力</div>
+    <div class="now">
+      <div class="now-step is-main">
+        <div class="nhead"><span class="nnum">①</span><h3>結果が出たらコピペして送ってください！</h3></div>
+        <p class="nbody">この結果をコピーして、LINEに貼り付けて送ってください。受験の王様が結果を見て、今の状態とやるべきことを個別に返します。</p>
+        <button class="btn btn-primary pulse" id="copy">結果をコピーする</button>
+        <div class="copied" id="copied">コピーしました！あとはLINEに貼り付けて送信するだけ。</div>
+        <a class="btn btn-line line-go" href="${LINE_URL}" target="_blank" rel="noopener">LINEを開いて送る</a>
       </div>
-      <p class="lb-note">1文が読める人が、そのまま長文を解けるわけではありません。今日の読み方を<b>「長文でどう使うか」</b>、そして段落と段落を筋道立てて追う<b>「論理的な読解」</b>は、学ばないと身につかない技術です。満点だった人も含めて、全員ここからが本番——その入口を、この下で解説します。</p>
-    </div>
-
-    <div class="kaisetsu">
-      <div class="k-head"><small>KAISETSU — 全タイプ共通</small>なぜ「読めた風」で<br>失点するのか</div>
-      <p class="k-lead">診断おつかれさま。今回は少ない文章量で、いま「ちゃんと読めて」「ちゃんと解けるか」を測りました。ここからが本題です。</p>
-
-      <div class="k-cap">まず、3つの誤解をこわす</div>
-      <div class="myths">
-        <div class="myth"><span class="x">✗</span><span>英単語を覚えたら、<s>英文は読めるようになる</s></span></div>
-        <div class="myth"><span class="x">✗</span><span>英文法を覚えたら、<s>英文は読めるようになる</s></span></div>
-        <div class="myth"><span class="x">✗</span><span>構造さえ取れたら、<s>英文は読めるようになる</s></span></div>
-      </div>
-      <p class="myth-punch">みんなそう考えがち。でも、<b>そうじゃない。</b></p>
-
-      <div class="k-cap">証拠：全部「中学レベルの単語」の文</div>
-      <p class="k-lead">次の文、知らない単語はほぼゼロのはずです。まず<b>自力で</b>読んでください。</p>
-      <div class="demo-en" id="demoEn">In the examples I am talking of the person continues to behave in what most people agree is a normal manner.</div>
-      <div class="dq">
-        <div class="dq-q">Q. つまり、この文は何と言っている？一言でどれ？</div>
-        <div class="dq-grid">
-          <button class="dq-btn" data-ok="0">私は今、その人のいろいろな行動の例について話を続けている</button>
-          <button class="dq-btn" data-ok="0">私が話している例では、普通のマナーを守るべきだと多くの人が同意している</button>
-          <button class="dq-btn" data-ok="1">その人は、周りのほとんどの人が「普通だ」と認めるような振る舞いを続けている</button>
-          <button class="dq-btn" data-ok="0">その人の振る舞いは、ほとんどの人から普通ではないと思われている</button>
-        </div>
-        <div class="dq-verdict" id="dqVerdict"></div>
-      </div>
-      <div id="dqReveal" hidden>
-        <div class="tree">
-          <div class="branch"><span class="tag">飾り</span>In the examples ( I am talking of )<span class="jp">（私が話している例では）← ただの前置き</span></div>
-          <div class="trunkline"><span class="tag">幹S</span>the person<span class="jp">（その人は）</span></div>
-          <div class="trunkline"><span class="tag">幹V</span>continues to behave<span class="jp">（振る舞い続ける）</span></div>
-          <div class="branch"><span class="tag">飾り</span>in ( what most people agree is a normal manner )<span class="jp">（ほとんどの人が普通だと認めるやり方で）</span></div>
-        </div>
-        <div class="box bad"><div class="cap">なぜ間違えるのか</div>この文には、主語っぽい顔をした名詞が<b>3つ</b>並んでいます（I ／ most people ／ the examples）。単語を拾って読むと、どれを中心に意味を組み立てるか決められない。でも幹は <b>the person continues to behave</b> の1本だけ。残りは全部飾りです。ちなみに manner を「マナー」と読んだ人も要注意——ここでは<b>「やり方・様子」</b>の意味。単語の意味も、文脈の中で決まります。</div>
-        <div class="box"><div class="cap">直訳 → 咀嚼</div><b>直訳：</b>私が話している例では、その人は、ほとんどの人が普通の振る舞いだと認めるようなやり方で、振る舞い続ける。<br><b>つまり：</b>その人は、まわりから見ればごく普通の様子で行動し続けている、ということ。</div>
-        <p class="demo-note">単語は全部、中学レベル。それでも今、<b>迷いませんでしたか？</b> それが「読めた風」の正体です。だから、<b>闇雲に文章を読みまくっても結果は出ません。</b>読み方を先に入れる必要があります。</p>
-      </div>
-
-      <div class="k-cap">読める人が全員やっている5ステップ</div>
-      <div class="pipeline">
-        <div class="pstep"><span class="pn">1</span>文章の構造をちゃんと掴む<small>幹（SV）と枝（修飾）を分ける</small></div>
-        <div class="parrow">▼</div>
-        <div class="pstep"><span class="pn">2</span>直訳をちゃんとできる状態にする<small>雰囲気ではなく、構造どおりに</small></div>
-        <div class="parrow">▼</div>
-        <div class="pstep"><span class="pn">3</span>咀嚼して「つまりどういうこと？」まで落とす<small>自分の言葉で言い直せるか</small></div>
-        <div class="parrow">▼</div>
-        <div class="pstep"><span class="pn">4</span>選択肢を分解して理解する<small>選択肢も1つの英文として構造で読む</small></div>
-        <div class="parrow">▼</div>
-        <div class="pstep"><span class="pn">5</span>全選択肢の正誤理由を言語化する<small>「なぜ正解？なぜ不正解？」を全部言えたら卒業</small></div>
-      </div>
-
-      <div class="k-cap">実演：この5ステップで1問解くと、こうなる</div>
-      <div class="demo-en">A stable society requires a set of laws that apply equally to both the rich and the poor, a respect for the rights of citizens of all religions and ethnic origins, and a strong desire to provide for the common welfare.</div>
-      <p class="demo-note"><b>STEP1-3｜幹と枝を分ける：</b>動詞は requires。幹は「安定した社会は、3つのものを必要とする」。3つの目的語が枝として並んでいるだけ。</p>
-      <div class="tree">
-        <div class="trunkline"><span class="tag">幹</span>A stable society <b>requires</b> …<span class="jp">（安定した社会は～を必要とする）</span></div>
-        <div class="branch"><span class="tag">枝1</span>laws that apply <b>equally</b> to the rich and the poor<span class="jp">（貧富に等しく適用される法）</span></div>
-        <div class="branch"><span class="tag">枝2</span>respect for the rights of citizens of <b>all</b> religions …<span class="jp">（あらゆる宗教・民族の市民の権利の尊重）</span></div>
-        <div class="branch"><span class="tag">枝3</span>a strong desire to provide for the <b>common welfare</b><span class="jp">（公共の福祉を支えようとする強い意志）</span></div>
-      </div>
-      <p class="demo-note"><b>STEP4-5｜選択肢を分解して、正誤を言語化する：</b>「上の文に最も近い意味は？」</p>
-      <div class="choice ng"><span class="mark">✗ A</span><span class="en-s">A stable society applies its laws more strictly to the poor than to the rich, …</span><span class="why"><b>equally（等しく）→ more strictly to the poor（貧しい人に厳しく）</b>に反転している</span></div>
-      <div class="choice ng"><span class="mark">✗ B</span><span class="en-s">… the two groups come to share one religion and one ethnic origin.</span><span class="why"><b>all religions（あらゆる宗教）→ one religion（1つの宗教）</b>にすり替わっている</span></div>
-      <div class="choice ok"><span class="mark">○ C</span><span class="en-s">For a society to be stable, it needs laws that treat the rich and the poor alike, respect for the rights of citizens of every religion and ethnic background, and a strong wish to serve the common good.</span><span class="why"><b>equally＝alike／all＝every／welfare＝common good</b>。枝3本がすべて言い換えで対応している</span></div>
-      <div class="choice ng"><span class="mark">✗ D</span><span class="en-s">What a stable society needs above all is a strong desire for wealth, …</span><span class="why"><b>common welfare（公共の福祉）→ wealth（富）</b>にすり替わっている</span></div>
-      <p class="demo-note">誤答は3つとも、本文の単語を使いながら<b>たった1か所だけ</b>ずらしてある。単語の一致度で選ぶと必ず捕まる。幹と枝で照合すると、一瞬で切れる。</p>
-
-      <div class="principle">
-        <div class="pcap">TRAINING PRINCIPLE</div>
-        <div class="pmain">5ステップの徹底 ×<br><b>幹と枝を分ける</b>トレーニング</div>
-      </div>
-      <a class="article-link" href="${SSE_URL}" target="_blank" rel="noopener">🎯 英語を1ヶ月みっちり鍛えたい人へ<small>「読み方」を1ヶ月で叩き込む個別指導について</small><span class="go">→ こちらをクリック</span></a>
-      <a class="article-link" href="${NOTE_URL}" target="_blank" rel="noopener">📘 丸暗記ではなく「読む」ための英単語へ<small>あなたが持っている英単語帳の「空所補充形式の問題集」を作りました</small><span class="go">→ noteで見る</span></a>
-    </div>
-
-    <div class="camp">
-      <div class="camp-inner">
-        <span class="badge">${CAMP.badge}</span>
-        <div class="dates">${CAMP.dates}</div>
-        <h3>${CAMP.title}</h3>
-        <div class="sub">${CAMP.sub}</div>
-        <div class="body">${CAMP.body}</div>
-        <button class="btn btn-primary" id="monitorcopy">「${CAMP.word}」をコピーする</button>
-        <div class="copied" id="monitorcopied">コピーしました！LINEに貼り付けて送信してください。</div>
-        <a class="btn btn-line" href="${LINE_URL}" target="_blank" rel="noopener">LINEを開いて送る</a>
+      <div class="now-step">
+        <div class="nhead"><span class="nnum">②</span><h3>やるべきことを動画で確認する</h3></div>
+        <p class="nbody">${type.video ? "あなたのタイプで、今から何をするか。この動画で確認してください。" : "このタイプの解説動画は準備中です。①の結果を送ってもらえれば、やるべきことを個別に返します。"}</p>
+        ${typeVideoHtml(type)}
       </div>
     </div>
 
-    <div class="shido">
-      <div class="shido-inner">
-        <span class="limited">受け入れは、月に数名だけ</span>
-        <div class="eyeb">PERSONAL COACHING</div>
-        <h3>受験の王様の個別指導</h3>
-        <div class="proof">
-          <div class="ptile"><div class="pv">R25</div><div class="pk">メディア取材</div></div>
-          <div class="ptile"><div class="pv">TV</div><div class="pk">テレビで紹介</div></div>
-          <div class="ptile"><div class="pv">90,000+</div><div class="pk">Instagramフォロワー</div></div>
-          <div class="ptile"><div class="pv">40,000+</div><div class="pk">公式LINE登録者</div></div>
-        </div>
-        <p class="body"><b>大学別・学部別の問題演習を自作するくらい</b>、徹底的に英語を極めてきました。長文読解まで仕上げ切りたいなら、やることは人によって全く違います。だから個別指導では、<b>今のあなたの状態を直接聞いた上で、指導プランをゼロから練ります</b>。</p>
-        <div class="invite">本気で変わりたい人は——<br>LINEで「<b>${SHIDO.word}</b>」に興味がある旨をお知らせください。</div>
-        <button class="btn btn-primary" id="shidocopy">「${SHIDO.word}」をコピーする</button>
-        <div class="copied" id="shidocopied">コピーしました！LINEに貼り付けて、興味がある旨を送ってください。</div>
-        <a class="btn btn-line" href="${LINE_URL}" target="_blank" rel="noopener">LINEを開いて送る</a>
-        <div class="media-links">
-          <a href="${SHIDO.r25}" target="_blank" rel="noopener">📰 R25の取材記事 ↗</a>
-          <a href="${SHIDO.tv}" target="_blank" rel="noopener">📺 テレビ紹介の記事 ↗</a>
-        </div>
+    <div class="offer-kicker">読み方を、1ヶ月で変えたい人へ</div>
+    <a class="sse-card" href="${SSE_URL}" target="_blank" rel="noopener">
+      <img src="${SSE_IMG}" alt="参加者2000名 手書き感想多数">
+      <div class="sbody">
+        <span class="kicker">SMART STUDY ENGLISH</span>
+        <h3>英語個別指導の募集ページ</h3>
+        <p>33日で、英語の読み方を脳にインストールする個別サポート。</p>
+        <span class="go">募集ページを見る ↗</span>
       </div>
-    </div>
+    </a>
+    <a class="ba-card" href="${BA_URL}" target="_blank" rel="noopener">
+      <div class="ba-meta">
+        <span class="kicker">BEFORE → AFTER</span>
+        <strong>33日間で、私たちは、こんなに変わりました。</strong>
+        <span class="ba-sub">英語個別指導に参加した生徒の変化</span>
+      </div>
+      <div class="ba-list">
+        <div class="ba-item"><span>新高1</span>偏差値45 → 57。人としてもめちゃ成長した33日間</div>
+        <div class="ba-item"><span>高2</span>進研ゼミも塾もダメだった。でも、1ヶ月やり切れた</div>
+        <div class="ba-item"><span>中3</span>英語アレルギーだった私が、勉強が好きになった</div>
+        <div class="ba-item"><span>高3</span>3日も勉強できない私が、教材1冊やり切れた</div>
+      </div>
+      <span class="go">記事を見る ↗</span>
+    </a>
   </div></div>
   <div class="retry"><a id="retry">診断をやり直す（前回の記録は消えます）</a></div>
   <div class="stickybar" id="stickybar"><div class="inner">
@@ -1319,49 +1317,6 @@ function renderResult(){
   const copyBoth = ()=> doCopy(copyText);
   document.getElementById("copy").onclick = copyBoth;
   document.getElementById("copy2").onclick = copyBoth;
-  /* ③タイプ名だけをコピー（Lステップの完全一致キーワード用） */
-  document.getElementById("copytype").onclick = ()=>{
-    copyPlain(type.name, ()=>{
-      document.getElementById("copiedtype").classList.add("show");
-      document.getElementById("copytype").textContent = "「" + type.name + "」をコピーしました ✓";
-    });
-  };
-  /* モニターイベントの合言葉コピー */
-  document.getElementById("monitorcopy").onclick = ()=>{
-    copyPlain(CAMP.word, ()=>{
-      document.getElementById("monitorcopied").classList.add("show");
-      document.getElementById("monitorcopy").textContent = "「" + CAMP.word + "」をコピーしました ✓";
-    });
-  };
-  /* 個別指導の合言葉コピー */
-  document.getElementById("shidocopy").onclick = ()=>{
-    copyPlain(SHIDO.word, ()=>{
-      document.getElementById("shidocopied").classList.add("show");
-      document.getElementById("shidocopy").textContent = "「" + SHIDO.word + "」をコピーしました ✓";
-    });
-  };
-  /* デモ英文のミニ問題：答えて初めて構造の種明かしが開く */
-  let dqDone = false;
-  app.querySelectorAll(".dq-btn").forEach(b=>{
-    b.onclick = ()=>{
-      if(dqDone) return;
-      dqDone = true;
-      const isOk = b.dataset.ok === "1";
-      app.querySelectorAll(".dq-btn").forEach(x=>{
-        x.disabled = true;
-        if(x.dataset.ok === "1") x.classList.add("is-ok");
-      });
-      if(!isOk) b.classList.add("picked-ng");
-      const v = document.getElementById("dqVerdict");
-      v.textContent = isOk
-        ? "○ 正解。……でも、即答できましたか？ 一瞬でも迷ったなら、下を読んでください。"
-        : "✗ そう読んだなら——この文は、読めていません。下で種明かしをします。";
-      v.classList.add("show", isOk ? "ok" : "ng");
-      document.getElementById("demoEn").innerHTML =
-        'In the examples I am talking of <span class="trunk">the person continues to behave</span> in what most people agree is a normal manner.';
-      document.getElementById("dqReveal").hidden = false;
-    };
-  });
   /* LINEボタンを押した瞬間にも自動コピー（コピーを飛ばした人の保険） */
   app.querySelectorAll(".line-go").forEach(a=>{ a.addEventListener("click", copyBoth); });
   document.getElementById("stickybar").classList.add("show");

@@ -15,6 +15,14 @@
   for = "/components/*"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+[[headers]]
+  for = "/english-reading/staff-preview"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+[[headers]]
+  for = "/english-reading/staff-preview/"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
 
 # ---------------------------------------------------------------------------
 # Pretty URLs（拡張子なし）— 例: /support が support.html を返す
@@ -357,6 +365,15 @@
 [[redirects]]
   from = "/english-reading"
   to = "/shindan/english-reading/index.html"
+  status = 200
+# スタッフ用プレビュー（生徒に配布しない）
+[[redirects]]
+  from = "/english-reading/staff-preview"
+  to = "/shindan/english-reading/staff-preview/index.html"
+  status = 200
+[[redirects]]
+  from = "/english-reading/staff-preview/"
+  to = "/shindan/english-reading/staff-preview/index.html"
   status = 200
 [[redirects]]
   from = "/english-reading/*"

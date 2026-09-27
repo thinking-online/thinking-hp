@@ -420,41 +420,8 @@
   to = "/reading-lesson/:slug/index.html"
   status = 200
 
-# ---------------------------------------------------------------------------
-# 解説 — /explanation
-# explanation/ に置いた HTML は、ファイルごとの追記なしで公開される。
-# 例: explanation/foo.html → /explanation/foo
-#     explanation/bar/baz.html → /explanation/bar/baz
-# 一覧（コピー用リンク）は scripts/publish-explanations.py が作る。
-# ---------------------------------------------------------------------------
-
-[[redirects]]
-  from = "/explanation"
-  to = "/explanation/index.html"
-  status = 200
-[[redirects]]
-  from = "/explanation/"
-  to = "/explanation"
-  status = 301
-[[redirects]]
-  from = "/explanation/index.html"
-  to = "/explanation"
-  status = 301
-  force = true
-[[redirects]]
-  from = "/explanation/:name.html"
-  to = "/explanation/:name"
-  status = 301
-  force = true
-[[redirects]]
-  from = "/explanation/:dir/:name.html"
-  to = "/explanation/:dir/:name"
-  status = 301
-  force = true
-# 実ファイル（画像など）があるパスはそのまま配信する。無いパスだけ .html を返す。
-[[redirects]]
-  from = "/explanation/*"
-  to = "/explanation/:splat.html"
-  status = 200
+# 解説 HTML は explanation/ に置いたファイルをそのまま公開する。
+# /explanation/foo.html が実体。拡張子なし URL 用のリダイレクトは置かない
+# （:name が置換されず /explanation/:name へ 301 が循環したため）。
 
 # 7月以降の号は準備でき次第、netlify.toml にリダイレクトを追加して公開

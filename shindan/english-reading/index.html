@@ -293,33 +293,39 @@ input.text:focus{outline:2px solid var(--gold);border-color:var(--gold)}
   border-radius:12px;border:2px solid var(--ink);background:#fff;
 }
 .sse-card{background:var(--navy);color:var(--paper);border-color:var(--navy)}
-.sse-card img{display:block;width:100%;height:158px;object-fit:cover;object-position:center}
-.sse-card .sbody{padding:14px 14px 16px}
-.sse-card .kicker{font-size:.64rem;letter-spacing:.18em;font-weight:900;color:var(--gold)}
-.sse-card h3{
-  font-family:var(--font-display);font-weight:800;font-size:1.22rem;
-  letter-spacing:.04em;margin:4px 0 8px;color:#fff;line-height:1.4;
-}
-.sse-card p{font-size:.84rem;line-height:1.75;color:rgba(250,247,239,.9)}
-.sse-card .go{display:inline-block;margin-top:12px;font-weight:900;font-size:.86rem;color:var(--gold)}
+.sse-card img{display:block;width:100%;height:auto;background:#0a2a6b}
+.sse-card .sbody{padding:12px 14px 14px}
+.sse-card .go{display:block;text-align:center;font-weight:900;font-size:.86rem;color:var(--gold)}
 .ba-card{margin-top:14px}
-.ba-card .ba-meta{padding:14px 14px 8px}
+.ba-card .ba-meta{padding:14px 14px 10px;text-align:center}
 .ba-card .kicker{font-size:.64rem;letter-spacing:.16em;font-weight:900;color:var(--gold-deep)}
 .ba-card strong{
   display:block;font-family:var(--font-display);font-weight:800;
   font-size:1.08rem;letter-spacing:.03em;line-height:1.5;margin:4px 0 4px;color:var(--ink);
 }
 .ba-card .ba-sub{display:block;font-size:.78rem;color:var(--ink-sub);font-weight:500}
-.ba-list{display:grid;gap:8px;padding:8px 12px 12px}
-.ba-item{
-  display:flex;align-items:flex-start;gap:8px;
-  background:var(--paper);border:1px solid var(--paper-line);border-radius:8px;
-  padding:10px 12px;font-size:.82rem;line-height:1.65;font-weight:700;color:var(--ink);
+.ba-stories{display:grid;gap:10px;padding:0 12px 12px}
+.ba-story{
+  background:#fff;border:1.5px solid var(--paper-line);border-radius:10px;padding:10px 10px 12px;
 }
-.ba-item span{
-  flex:0 0 auto;margin-top:1px;padding:1px 8px;border-radius:999px;
-  background:var(--gold-soft);color:var(--gold-deep);font-size:.68rem;letter-spacing:.06em;
-  border:1px solid var(--gold-deep);font-weight:900;
+.ba-grade{
+  display:inline-block;font-size:.66rem;font-weight:900;letter-spacing:.08em;
+  color:var(--gold-deep);background:var(--gold-soft);border:1px solid var(--gold-deep);
+  border-radius:999px;padding:2px 8px;margin-bottom:8px;
+}
+.ba-pair{display:grid;grid-template-columns:1fr 28px 1fr;align-items:stretch;gap:6px}
+.ba-col{border-radius:8px;padding:8px 8px 10px;text-align:center}
+.ba-col small{
+  display:block;font-size:.6rem;font-weight:900;letter-spacing:.14em;margin-bottom:4px;
+}
+.ba-col b{display:block;font-size:.84rem;line-height:1.45;font-weight:900}
+.ba-col.before{background:#f3f0ea;color:var(--ink-sub)}
+.ba-col.before small{color:#8a7f6e}
+.ba-col.after{background:var(--gold-soft);border:1.5px solid var(--gold-deep);color:var(--ink)}
+.ba-col.after small{color:var(--gold-deep)}
+.ba-arrow{
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;font-weight:900;color:var(--gold-deep);
 }
 .ba-card .go{
   display:block;text-align:center;padding:13px;
@@ -678,8 +684,8 @@ const CAMP = {
   word:  "モニター"
 };
 /* ★②'' 結果画面の次アクション（SSE募集／Before→After） */
-const SSE_URL  = "https://thinking-online.com/lp/sse/";
-const SSE_IMG  = "/lp/sse/assets/hero-proof-2000.png";
+const SSE_URL  = "https://assaaa-blog.com/sl/";
+const SSE_IMG  = "/shindan/english-reading/sse-cover.png";
 const BA_URL   = "https://assaaa-blog.com/post_lp/sse-before-after-33days/";
 const BA_IMG   = "https://assaaa-blog.com/wp-content/uploads/2022/12/" + encodeURIComponent("ローンチ中画像-10.png");
 const NOTE_URL = "https://note.com/king_of_juken/m/mbb67149d6ac4";
@@ -805,19 +811,19 @@ h3:[
 /* ---------- タイプ判定 ★④ ---------- */
 const TYPES = {
  str:{name:"構造ブラックボックス型",desc:"単語は知っているのに、文が長くなると「誰が・何を・どうした」が崩れるタイプ。SVOCの切り方と修飾のかかり先のつかみ方を入れると、長文が別物になります。",
-  video:"https://utage-system.com/video/B1oUpyISObKj",
+  video:"https://utage-system.com/video/KM2oNR6wg5UN",
   rx:["1日1文でいいので、SVOCを振ってから意味を言う「構文解釈」を習慣にする","読めない文は「主語はどこからどこまでか」を特定するところから始める","音読はSVOCのカタマリを意識しながら1文5回"]},
  para:{name:"読み違い型",desc:"読めている「つもり」になりやすいタイプ。肯定と否定、誰が誰に、原因と結果——1つの取り違えで文全体の意味が反転します。「なんとなく合ってそう」で選ぶクセを直すと一気に伸びます。",
-  video:"https://utage-system.com/video/tCxq0295IUJf",
+  video:"https://utage-system.com/video/NzsHbOQ87AQh",
   rx:["読んだ文を「誰が・どうした・なぜ」の3点で自分の言葉で言い直す練習をする","選択肢を選ぶ前に、本文の対応箇所と1つずつ突き合わせて「ズレ」を探す","not A but B / far from など「意味が反転する表現」をストックする"]},
  logic:{name:"論理迷子型",desc:"一文一文は読めるのに、文と文のつながり（因果・逆接・指示語）で流れを見失うタイプ。論理マーカーを読む技術を入れると、長い文章でも得点が安定します。",
-  video:"https://utage-system.com/video/3cHxsFhPwPk6",
+  video:"https://utage-system.com/video/DfK42devhiwI",
   rx:["However / so / for example などの論理マーカーに印をつけて読む","指示語（it / this / one）が出たら、その場で指す内容を言ってから先に進む","段落ごとに「一言要約」をメモしながら読む"]},
  kan:{name:"感覚読み型",desc:"「わからない」を選ばずに誤答している＝根拠がないまま雰囲気で選んでいるサイン。実はいちばん危険で、いちばん早く変えられるタイプです。「なんとなく」を「根拠」に変える読み方から始めましょう。",
-  video:"https://utage-system.com/video/FjH0BrvJ3dIG",
+  video:"https://utage-system.com/video/8s1R9auuJobB",
   rx:["答えを選ぶ前に、根拠になる箇所を本文の中で必ず指でおさえる","根拠が指させないときは「わからない」と認める（それが精読のスタート）","1日1文、SVOCを振ってから意味を言う練習で「読めた」の基準を作り直す"]},
  kiso:{name:"基礎再設計型",desc:"複数の分野に穴がある状態。逆に言えば、正しい順番で積み直せば伸び幅が最も大きいタイプです。根性ではなく、順番の問題です。",
-  video:"https://utage-system.com/video/vkl2aO0qkG1b",
+  video:"https://utage-system.com/video/cSK1xJeCWAfT",
   rx:["この夏やることを「単語＋短い文のSVOC」の2つに絞る","1つ前の学年の英文に戻る勇気を持つ（それが実は最短ルート）","毎日同じ時間に英語30分を固定して、継続を仕組み化する"]},
  jissen:{name:"実戦設計型",desc:"制限時間つきでも正確に読めています。読み方の土台は完成レベル。ここからは志望校の出題形式に合わせて、過去問と実戦演習をどう配置するかの「実戦設計」フェーズです。",
   rx:["志望校の過去問を1年分、時間を測って解いてみる","落とした問題を「構造／言い換え／論理」に分類して原因を特定する","出題形式（長文・英作文・リスニング）ごとの対策配分を決める"]}
@@ -1284,27 +1290,50 @@ function renderResult(){
 
     <div class="offer-kicker">読み方を、1ヶ月で変えたい人へ</div>
     <a class="sse-card" href="${SSE_URL}" target="_blank" rel="noopener">
-      <img src="${SSE_IMG}" alt="参加者2000名 手書き感想多数">
-      <div class="sbody">
-        <span class="kicker">SMART STUDY ENGLISH</span>
-        <h3>英語個別指導の募集ページ</h3>
-        <p>33日で、英語の読み方を脳にインストールする個別サポート。</p>
-        <span class="go">募集ページを見る ↗</span>
-      </div>
+      <img src="${SSE_IMG}" alt="Smart Study English｜33日間で英語の読み方を1から鍛える">
+      <div class="sbody"><span class="go">募集ページを見る ↗</span></div>
     </a>
     <a class="ba-card" href="${BA_URL}" target="_blank" rel="noopener">
       <div class="ba-meta">
         <span class="kicker">BEFORE → AFTER</span>
-        <strong>33日間で、私たちは、こんなに変わりました。</strong>
+        <strong>33日間で、こんなに変わりました</strong>
         <span class="ba-sub">英語個別指導に参加した生徒の変化</span>
       </div>
-      <div class="ba-list">
-        <div class="ba-item"><span>新高1</span>偏差値45 → 57。人としてもめちゃ成長した33日間</div>
-        <div class="ba-item"><span>高2</span>進研ゼミも塾もダメだった。でも、1ヶ月やり切れた</div>
-        <div class="ba-item"><span>中3</span>英語アレルギーだった私が、勉強が好きになった</div>
-        <div class="ba-item"><span>高3</span>3日も勉強できない私が、教材1冊やり切れた</div>
+      <div class="ba-stories">
+        <div class="ba-story">
+          <span class="ba-grade">新高1</span>
+          <div class="ba-pair">
+            <div class="ba-col before"><small>BEFORE</small><b>偏差値 45</b></div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-col after"><small>AFTER</small><b>偏差値 57</b></div>
+          </div>
+        </div>
+        <div class="ba-story">
+          <span class="ba-grade">中3</span>
+          <div class="ba-pair">
+            <div class="ba-col before"><small>BEFORE</small><b>英語アレルギー</b></div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-col after"><small>AFTER</small><b>勉強が好きになった</b></div>
+          </div>
+        </div>
+        <div class="ba-story">
+          <span class="ba-grade">高3</span>
+          <div class="ba-pair">
+            <div class="ba-col before"><small>BEFORE</small><b>3日も続かない</b></div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-col after"><small>AFTER</small><b>教材1冊やり切れた</b></div>
+          </div>
+        </div>
+        <div class="ba-story">
+          <span class="ba-grade">高2</span>
+          <div class="ba-pair">
+            <div class="ba-col before"><small>BEFORE</small><b>塾もゼミもダメ</b></div>
+            <div class="ba-arrow">→</div>
+            <div class="ba-col after"><small>AFTER</small><b>1ヶ月やり切れた</b></div>
+          </div>
+        </div>
       </div>
-      <span class="go">記事を見る ↗</span>
+      <span class="go">変化の記事を見る ↗</span>
     </a>
   </div></div>
   <div class="retry"><a id="retry">診断をやり直す（前回の記録は消えます）</a></div>

@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>共通テスト第2問攻略｜可視化リーディングで解く事実／意見問題 — 空飛ぶ車 — オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f7f3ed;
+  --paper:#fdfaf4;
+  --ink:#2c2520;
+  --ink2:#6b6155;
+  --ink3:#9a9086;
+  --border:#e7ddce;
+  --orange:#e85a1a;
+  --orange-dark:#b8420f;
+  --orange-light:#fde4d3;
+  --aqua:#3f83a0;
+  --aqua-light:#e2eef2;
+  --green:#3b8a5a;
+  --green-light:#e4f2ea;
+  --amber:#b07d1e;
+  --amber-light:#f8eed4;
+  --purple:#7a5aa8;
+  --purple-light:#efe8f7;
+  --red:#c0392b;
+  --red-light:#fbe3e0;
+  --radius:14px;
+  --radius-sm:9px;
+  --shadow:0 4px 20px rgba(80,55,25,.08);
+  --shadow-lg:0 10px 40px rgba(80,55,25,.12);
+}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:
+    radial-gradient(1200px 600px at 12% -5%, rgba(232,90,26,.06), transparent 55%),
+    radial-gradient(1000px 600px at 100% 8%, rgba(63,131,160,.06), transparent 55%),
+    var(--bg);
+  color:var(--ink);
+  line-height:1.9;
+  font-size:15.5px;
+  -webkit-font-smoothing:antialiased;
+}
+.en{font-family:'Source Serif 4','Noto Serif JP',serif;}
+.serif{font-family:'Noto Serif JP','Source Serif 4',serif;}
+b,strong{font-weight:700;}
+
+/* ===== HEADER ===== */
+.header{
+  max-width:980px;margin:0 auto;padding:44px 24px 28px;
+}
+.brand{display:flex;align-items:center;gap:12px;color:var(--ink3);font-size:12.5px;letter-spacing:.06em;}
+.brand .logo{
+  width:30px;height:30px;border-radius:8px;
+  background:linear-gradient(135deg,var(--orange),var(--orange-dark));
+  display:grid;place-items:center;color:#fff;font-weight:900;font-size:15px;
+}
+.brand .sep{opacity:.5;}
+.hero{margin-top:22px;}
+.daybox{
+  width:96px;height:104px;border:3px solid var(--orange);border-radius:12px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:var(--orange);background:var(--paper);box-shadow:var(--shadow);
+}
+.daybox .lbl{font-size:11px;letter-spacing:.25em;font-weight:700;}
+.daybox .num{font-size:44px;font-weight:900;line-height:1;margin-top:2px;}
+.hero h1{
+  font-family:'Noto Serif JP',serif;font-size:29px;line-height:1.45;font-weight:700;color:var(--ink);
+}
+.hero h1 .accent{color:var(--orange);}
+.hero .lead{margin-top:12px;color:var(--ink2);font-size:14.5px;max-width:62ch;}
+.meta{margin-top:16px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;
+  background:var(--paper);border:1px solid var(--border);font-size:12.5px;color:var(--ink2);
+}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block;}
+.chip.aq i{background:var(--aqua);}
+.chip.gr i{background:var(--green);}
+
+/* ===== LAYOUT ===== */
+.wrap{max-width:980px;margin:0 auto;padding:0 24px 80px;}
+.section{
+  background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow);padding:30px 32px;margin-top:26px;
+}
+.sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid var(--orange-light);}
+.sec-no{
+  font-family:'Source Serif 4',serif;font-weight:700;color:var(--orange);font-size:13px;letter-spacing:.1em;
+  border:1.5px solid var(--orange);border-radius:6px;padding:1px 9px;
+}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:21px;font-weight:700;}
+.sec-sub{color:var(--ink3);font-size:12.5px;font-family:'Source Serif 4',serif;font-style:italic;}
+.section p{margin-bottom:12px;}
+.section p:last-child{margin-bottom:0;}
+.note{color:var(--ink2);font-size:14px;}
+
+/* ===== CALLOUTS ===== */
+.callout{
+  border-left:4px solid var(--orange);background:var(--orange-light);
+  border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:14px 18px;margin:16px 0;
+}
+.callout.aqua{border-color:var(--aqua);background:var(--aqua-light);}
+.callout.green{border-color:var(--green);background:var(--green-light);}
+.callout.amber{border-color:var(--amber);background:var(--amber-light);}
+.callout.purple{border-color:var(--purple);background:var(--purple-light);}
+.callout .ttl{font-weight:700;font-size:13.5px;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.callout .ttl::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--orange);}
+.callout.aqua .ttl::before{background:var(--aqua);}
+.callout.green .ttl::before{background:var(--green);}
+.callout.amber .ttl::before{background:var(--amber);}
+.callout.purple .ttl::before{background:var(--purple);}
+
+/* ===== REVEAL ===== */
+.reveal-box{border:1.5px dashed var(--aqua);border-radius:var(--radius-sm);padding:18px 20px;background:#fff;}
+.reveal-prompt{color:var(--ink2);font-size:14.5px;}
+.reveal-btn{
+  margin-top:12px;display:inline-flex;align-items:center;gap:8px;cursor:pointer;
+  background:var(--aqua);color:#fff;border:none;border-radius:999px;padding:9px 18px;
+  font-family:inherit;font-size:13.5px;font-weight:700;letter-spacing:.02em;
+  transition:transform .12s ease, background .12s ease;
+}
+.reveal-btn:hover{background:#316c85;}
+.reveal-btn:active{transform:scale(.98);}
+.reveal-btn:focus-visible{outline:3px solid var(--orange-light);outline-offset:2px;}
+.reveal-btn.orange{background:var(--orange);}
+.reveal-btn.orange:hover{background:var(--orange-dark);}
+.reveal-content{display:none;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);}
+.reveal-content.open{display:block;animation:fade .25s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.reveal-content.open{animation:none;}}
+
+/* ===== EXAM PAPER ===== */
+.exam{
+  background:#fff;border:1px solid #d9d2c6;border-radius:6px;padding:26px 30px;
+  box-shadow:inset 0 0 0 1px #f2ede4;font-family:'Source Serif 4','Noto Serif JP',serif;font-size:15.5px;line-height:1.95;
+}
+.exam .q-head{font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:15px;margin-bottom:10px;}
+.exam .q-head small{font-weight:400;color:var(--ink2);margin-left:8px;font-size:12.5px;}
+.exam .lead-text{margin-bottom:16px;}
+.blog{border:1px solid #c9c2b6;padding:18px 22px;border-radius:4px;background:#fff;}
+.blog .btitle{text-align:center;font-weight:700;font-style:italic;font-size:17px;margin-bottom:12px;}
+.blog .bmeta{font-style:italic;color:var(--ink2);line-height:1.7;margin-bottom:14px;font-size:14.5px;}
+.blog p{margin-bottom:12px;}
+.blog p:last-child{margin-bottom:0;}
+.qs{margin-top:18px;}
+.q{margin-top:16px;}
+.q .stem{font-weight:600;}
+.q .stem .qn{font-family:'Noto Sans JP',sans-serif;font-weight:700;margin-right:10px;color:var(--ink);}
+.box{display:inline-block;min-width:38px;text-align:center;border:1.5px solid var(--ink);padding:0 6px;margin:0 4px;font-family:'Noto Sans JP',sans-serif;font-size:13px;line-height:1.6;vertical-align:middle;}
+.q ol{list-style:none;margin:8px 0 0 24px;}
+.q li{display:flex;gap:10px;align-items:baseline;line-height:1.85;}
+.circ{
+  flex:none;width:19px;height:19px;border:1.5px solid var(--ink);border-radius:50%;
+  display:inline-grid;place-items:center;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;line-height:1;
+}
+u.kw{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+
+/* highlight marks inside passage */
+mark{background:transparent;padding:0 1px;border-radius:2px;}
+.m1{background:linear-gradient(transparent 55%, rgba(232,90,26,.28) 55%);}
+.m2{background:linear-gradient(transparent 55%, rgba(63,131,160,.28) 55%);}
+.m3{background:linear-gradient(transparent 55%, rgba(59,138,90,.28) 55%);}
+.m4{background:linear-gradient(transparent 55%, rgba(122,90,168,.28) 55%);}
+.tagq{
+  display:inline-block;font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:700;color:#fff;
+  padding:1px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;line-height:1.6;
+}
+.tagq.t1{background:var(--orange);} .tagq.t2{background:var(--aqua);} .tagq.t3{background:var(--green);} .tagq.t4{background:var(--purple);}
+
+/* ===== QUIZ ===== */
+.quiz{display:grid;gap:14px;margin-top:14px;}
+.quiz-row{
+  display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:center;
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;
+}
+.quiz-row .qlabel{font-weight:700;color:var(--ink2);font-size:14px;}
+.opts{display:flex;gap:8px;flex-wrap:wrap;}
+.opt{
+  width:44px;height:40px;border-radius:8px;border:1.5px solid var(--border);background:var(--paper);
+  font-family:inherit;font-weight:700;cursor:pointer;color:var(--ink2);font-size:15px;
+  transition:all .12s ease;
+}
+.opt:hover{border-color:var(--aqua);color:var(--aqua);}
+.opt:focus-visible{outline:3px solid var(--orange-light);outline-offset:1px;}
+.opt.sel{background:var(--aqua);border-color:var(--aqua);color:#fff;}
+.opt.ok{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.ng{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.hint{border-color:var(--green);color:var(--green);}
+.quiz-foot{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:14px;}
+.score{font-family:'Source Serif 4',serif;font-size:18px;font-weight:700;color:var(--orange);}
+.timer{
+  display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);
+  border-radius:999px;padding:6px 14px;font-size:13.5px;color:var(--ink2);
+}
+.timer .t{font-family:'Source Serif 4',serif;font-size:18px;font-weight:700;color:var(--ink);min-width:58px;text-align:center;}
+.timer button{
+  border:none;background:var(--orange);color:#fff;border-radius:999px;padding:4px 12px;
+  font-family:inherit;font-weight:700;font-size:12.5px;cursor:pointer;
+}
+.timer button.stop{background:var(--ink2);}
+
+/* ===== EYE-PATH DIAGRAM (signature visual) ===== */
+.eyepath{
+  margin:18px 0 6px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px;
+}
+.eyepath svg{width:100%;height:auto;display:block;}
+.legend{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:12px;font-size:13px;color:var(--ink2);}
+.legend span{display:inline-flex;align-items:center;gap:6px;}
+.legend i{width:20px;height:20px;border-radius:50%;display:inline-grid;place-items:center;color:#fff;font-style:normal;font-weight:900;font-size:11px;}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:16px;}
+.stcard{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;position:relative;}
+.stcard .n{
+  position:absolute;top:-12px;left:14px;width:26px;height:26px;border-radius:50%;
+  background:var(--orange);color:#fff;font-weight:900;font-size:13px;display:grid;place-items:center;
+}
+.stcard .n.aq{background:var(--aqua);} .stcard .n.gr{background:var(--green);} .stcard .n.pu{background:var(--purple);}
+.stcard h4{font-size:14.5px;margin:6px 0 6px;font-weight:700;}
+.stcard p{font-size:13.5px;color:var(--ink2);margin:0;}
+
+/* ===== TABLE ===== */
+.tbl{width:100%;border-collapse:separate;border-spacing:0;font-size:14px;margin:14px 0;background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;}
+.tbl th,.tbl td{padding:10px 12px;border-bottom:1px solid var(--border);vertical-align:top;text-align:left;}
+.tbl th{background:var(--orange-light);font-weight:700;font-size:13px;color:var(--orange-dark);}
+.tbl tr:last-child td{border-bottom:none;}
+.tbl .kw-yes{color:var(--orange);font-weight:700;}
+.tbl .kw-no{color:var(--aqua);font-weight:700;}
+
+/* ===== ANSWER CARD ===== */
+.ans-card{margin-top:26px;border:2px solid var(--orange);border-radius:var(--radius-sm);overflow:hidden;background:#fff;}
+.ans-card .ah{
+  display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--orange);color:#fff;padding:10px 18px;
+}
+.ans-card .ah .qn{font-size:18px;font-weight:900;font-family:'Source Serif 4',serif;}
+.ans-card .ah .ans{font-weight:700;}
+.ans-card .ah .lvl{font-size:12.5px;opacity:.9;margin-left:auto;}
+.ans-card .ab{padding:18px 20px;}
+.ja-q{font-weight:700;margin-bottom:8px;}
+.ja-opts{list-style:none;margin:0 0 6px 0;display:grid;gap:4px;font-size:14px;}
+.ja-opts li{display:flex;gap:10px;align-items:baseline;}
+.ja-opts .circ{width:18px;height:18px;font-size:10.5px;}
+.ja-opts li.right{color:var(--green);font-weight:700;}
+.ja-opts li.right .circ{border-color:var(--green);background:var(--green);color:#fff;}
+
+/* ===== BRAIN LOG (脳内実況) ===== */
+.brain{margin-top:14px;display:grid;gap:10px;}
+.step{
+  display:grid;grid-template-columns:34px 1fr;gap:12px;align-items:start;
+  background:var(--paper);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;
+}
+.step .k{
+  width:28px;height:28px;border-radius:50%;background:var(--aqua);color:#fff;
+  display:grid;place-items:center;font-weight:900;font-size:13px;margin-top:2px;
+}
+.step .k.o{background:var(--orange);} .step .k.g{background:var(--green);} .step .k.a{background:var(--amber);} .step .k.p{background:var(--purple);}
+.step h5{font-size:14px;font-weight:700;margin-bottom:3px;}
+.step p{font-size:14px;color:var(--ink2);margin:0;}
+.step .ex{
+  margin-top:6px;padding:8px 12px;background:#fff;border-left:3px solid var(--aqua);border-radius:0 6px 6px 0;
+  font-family:'Source Serif 4','Noto Serif JP',serif;font-size:14.5px;color:var(--ink);
+}
+.step .ex .ja{display:block;font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--ink2);margin-top:2px;}
+
+/* ===== elimination marks ===== */
+.elim{list-style:none;margin:10px 0;display:grid;gap:6px;}
+.elim li{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start;font-size:14px;}
+.mk{
+  width:28px;height:28px;border-radius:6px;display:grid;place-items:center;font-weight:900;font-size:15px;color:#fff;
+}
+.mk.o{background:var(--green);} .mk.x{background:var(--red);} .mk.q{background:var(--amber);}
+.elim .why{color:var(--ink2);font-size:13.5px;}
+
+/* ===== paraphrase ===== */
+.para{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0;font-family:'Source Serif 4',serif;font-size:15px;}
+.para .a{background:var(--aqua-light);color:var(--aqua);padding:2px 10px;border-radius:6px;font-weight:600;}
+.para .b{background:var(--orange-light);color:var(--orange-dark);padding:2px 10px;border-radius:6px;font-weight:600;}
+.para .arr{color:var(--ink3);font-weight:700;}
+
+/* ===== fact / opinion ===== */
+.fo{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:16px 0;}
+.fo .col{border-radius:var(--radius-sm);padding:16px 18px;background:#fff;border:1px solid var(--border);}
+.fo .col h4{font-size:15px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px;}
+.fo .col.fact h4{color:var(--aqua);} .fo .col.op h4{color:var(--orange);}
+.fo .col ul{list-style:none;display:grid;gap:5px;font-size:13.5px;}
+.fo .col li{padding-left:14px;position:relative;}
+.fo .col li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;}
+.fo .col.fact li::before{background:var(--aqua);} .fo .col.op li::before{background:var(--orange);}
+.fo code{font-family:'Source Serif 4',serif;font-weight:600;font-size:14px;color:var(--ink);}
+.drill{display:grid;gap:8px;margin-top:12px;}
+.drill-row{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 14px;}
+.drill-row .s{font-family:'Source Serif 4',serif;font-size:15px;}
+.drill-row .btns{display:flex;gap:6px;}
+.drill-row .btns button{
+  border:1.5px solid var(--border);background:var(--paper);border-radius:6px;padding:5px 10px;font-family:inherit;font-weight:700;font-size:12.5px;cursor:pointer;color:var(--ink2);
+}
+.drill-row .btns button.f.on{background:var(--aqua);border-color:var(--aqua);color:#fff;}
+.drill-row .btns button.o.on{background:var(--orange);border-color:var(--orange);color:#fff;}
+.drill-row .res{grid-column:1/-1;font-size:13px;color:var(--ink2);display:none;padding-top:6px;border-top:1px dashed var(--border);}
+.drill-row .res.show{display:block;}
+.drill-row .res.good{color:var(--green);} .drill-row .res.bad{color:var(--red);}
+
+/* ===== translation ===== */
+.tr{display:grid;gap:14px;margin-top:8px;}
+.tr .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px 16px;}
+.tr .pair .e{font-family:'Source Serif 4',serif;font-size:14.5px;line-height:1.85;}
+.tr .pair .j{font-size:14px;line-height:1.9;color:var(--ink);}
+.tr .pn{font-size:11.5px;color:var(--ink3);font-weight:700;letter-spacing:.08em;margin-bottom:4px;grid-column:1/-1;}
+
+/* ===== vocab ===== */
+.vocab{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px 18px;margin-top:8px;font-size:14px;}
+.vocab div{display:flex;gap:10px;align-items:baseline;padding:5px 0;border-bottom:1px dotted var(--border);}
+.vocab .w{font-family:'Source Serif 4',serif;font-weight:600;min-width:120px;}
+.vocab .pos{font-size:10.5px;color:#fff;background:var(--ink3);border-radius:3px;padding:0 5px;line-height:1.6;}
+.vocab .m{color:var(--ink2);font-size:13.5px;}
+.vgroup{margin-top:14px;font-size:12.5px;font-weight:700;color:var(--orange);}
+
+/* ===== weapons ===== */
+.weapons{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:6px;}
+.weapon{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:18px 18px 16px;border-top:4px solid var(--orange);}
+.weapon:nth-child(2){border-top-color:var(--aqua);} .weapon:nth-child(3){border-top-color:var(--green);}
+.weapon .wn{font-family:'Source Serif 4',serif;font-weight:700;color:var(--ink3);font-size:12px;letter-spacing:.1em;}
+.weapon h4{font-size:15.5px;font-weight:700;margin:4px 0 8px;line-height:1.5;}
+.weapon p{font-size:13.5px;color:var(--ink2);margin:0;}
+
+/* ===== checklist ===== */
+.check{list-style:none;display:grid;gap:8px;margin-top:8px;}
+.check li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:8px;padding:10px 14px;cursor:pointer;font-size:14px;}
+.check li input{margin-top:6px;accent-color:var(--orange);width:16px;height:16px;flex:none;}
+.check li.done{background:var(--green-light);border-color:#bfe0cb;}
+.check-foot{margin-top:12px;font-weight:700;color:var(--orange);font-family:'Source Serif 4',serif;font-size:16px;}
+
+.footer{max-width:980px;margin:0 auto;padding:10px 24px 60px;color:var(--ink3);font-size:12px;text-align:center;line-height:1.8;}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;}
+  .daybox{width:84px;height:92px;}
+  .hero h1{font-size:23px;}
+  .section{padding:22px 18px;}
+  .exam{padding:18px 16px;font-size:14.5px;}
+  .fo{grid-template-columns:1fr;}
+  .tr .pair{grid-template-columns:1fr;}
+  .quiz-row{grid-template-columns:1fr;}
+  .ans-card .ah .lvl{margin-left:0;}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="brand">
+    <span class="logo">T</span>
+    <span>オンライン塾 THINKING</span><span class="sep">｜</span>
+    <span>共通テスト リーディング攻略</span><span class="sep">｜</span>
+    <span>可視化リーディング</span>
+  </div>
+  <div class="hero">
+    <div>
+      <h1>【事実／意見問題】を攻略する<br><span class="accent">可視化リーディング</span> ― 空飛ぶ車 ―</h1>
+      <p class="lead">第2問は「事実」と「意見」が混ざった英文が出ます。ここで覚えるのは、本文をどう読むかより先に、<b>目をどの順番で動かすか</b>。設問の先読みが効く問題と効かない問題を切り分け、それぞれの目の動かし方を、見える手順として固めます。</p>
+      <div class="meta">
+        <span class="chip"><i></i>2025年度 共通テスト本試験 第2問（配点12）</span>
+        <span class="chip aq"><i></i>目標解答時間 6分</span>
+        <span class="chip gr"><i></i>設問4問 各3点</span>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<!-- ================= STEP 0 ================= -->
+<section class="section">
+  <div class="sec-head">
+    <span class="sec-no">STEP 0</span>
+    <h2 class="sec-title">まず、時間を測って自力で解く</h2>
+    <span class="sec-sub">Try it yourself</span>
+  </div>
+  <p class="note">解説を読む前に必ず解いてください。ここで大事なのは正解数ではなく、<b>「どの設問で本文に戻る回数が増えたか」「どの設問で選択肢を全部読み直したか」</b>を自分で観察することです。それがそのまま、この後の可視化リーディングがあなたに効く場所になります。</p>
+
+  <div class="quiz-foot" style="margin-top:10px;">
+    <div class="timer" aria-live="polite">
+      <span>タイマー</span><span class="t" id="tm">6:00</span>
+      <button id="tmbtn" onclick="timer()">スタート</button>
+    </div>
+    <span class="note">6分を切ったら止めずにそのまま続けて、超過時間を覚えておきましょう。</span>
+  </div>
+
+  <div class="exam" style="margin-top:18px;">
+    <div class="q-head">第2問<small>（配点 12）</small></div>
+    <p class="lead-text">Your teacher asks you to write a report about the future of transportation. To prepare, you read a blog written by a British author about the topic.</p>
+
+    <div class="blog">
+      <div class="btitle">Flying Vehicles</div>
+      <div class="bmeta">10 December 2024<br>Jonah Markowski<br>Bristol, UK</div>
+      <p>Yesterday, I attended a forum in northern Japan called <i>Flying Vehicles: Today and Tomorrow</i>. Modern transportation problems and solutions were discussed by three guest speakers.</p>
+      <p>All the speakers agreed on three points. First, flying vehicles should be electrically powered in general. Air pollution can be reduced by increasing the use of zero-emission technologies. Second, emergency services would be improved. Flying ambulances would be faster in large cities with heavy traffic. Also, they would be better for servicing small towns far from hospitals. Finally, from a safety point of view, they said that flying technology would need to be well tested and controlled to avoid accidents in the air.</p>
+      <p>At the end of the forum, the speakers discussed flying taxis. According to one of the speakers, recent reports show that some countries are already developing this technology. A few of them are even testing flying taxi services in the middle of their major cities. Then, someone in the audience asked if flying taxis would soon be available around the world. Two of the speakers answered, “Yes,” but they disagreed about the timing. One of them said, “In 5 years,” and the other said, “In 15 years.” The third speaker answered, “No, because the operating costs of flying taxis are too high.” I look forward to seeing which guest speaker’s prediction turns out to be correct.</p>
+      <p>Next week’s blog is about self-driving cars. It’s going to be a fantastic post!</p>
+    </div>
+
+    <div class="qs">
+      <div class="q">
+        <p class="stem"><span class="qn">問 1</span>Which of the following did all the guest speakers agree on? <span class="box">4</span></p>
+        <ol>
+          <li><span class="circ">1</span>Flying vehicles are widely accepted as being safe.</li>
+          <li><span class="circ">2</span>Flying vehicles will improve responses to emergencies.</li>
+          <li><span class="circ">3</span>Modern transportation problems are difficult to solve.</li>
+          <li><span class="circ">4</span>Zero-emission technologies cannot be applied to flying vehicles.</li>
+        </ol>
+      </div>
+      <div class="q">
+        <p class="stem"><span class="qn">問 2</span>Flying vehicles will most likely <span class="box">5</span>.</p>
+        <ol>
+          <li><span class="circ">1</span>be used in small towns rather than large cities</li>
+          <li><span class="circ">2</span>increase the number of traffic jams near hospitals</li>
+          <li><span class="circ">3</span>prevent solutions to environmental problems</li>
+          <li><span class="circ">4</span>require proper assessment and regulation</li>
+        </ol>
+      </div>
+      <div class="q">
+        <p class="stem"><span class="qn">問 3</span>One guest speaker’s <u class="kw">opinion</u> is that <span class="box">6</span>.</p>
+        <ol>
+          <li><span class="circ">1</span>flying taxi centres will be based in rural areas</li>
+          <li><span class="circ">2</span>flying taxi technology has already been tested</li>
+          <li><span class="circ">3</span>flying taxis are already widespread</li>
+          <li><span class="circ">4</span>flying taxis are too expensive to run</li>
+        </ol>
+      </div>
+      <div class="q">
+        <p class="stem"><span class="qn">問 4</span>Which of the following is mentioned in the blog? <span class="box">7</span></p>
+        <ol>
+          <li><span class="circ">1</span>Costs of flying ambulance services</li>
+          <li><span class="circ">2</span>Flying transport using solar-power</li>
+          <li><span class="circ">3</span>Parking areas for flying taxis</li>
+          <li><span class="circ">4</span>Urban trials of flying taxi services</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz" id="quiz">
+    <div class="quiz-row" data-q="1" data-ans="2"><span class="qlabel">問 1</span><div class="opts"><button class="opt">1</button><button class="opt">2</button><button class="opt">3</button><button class="opt">4</button></div></div>
+    <div class="quiz-row" data-q="2" data-ans="4"><span class="qlabel">問 2</span><div class="opts"><button class="opt">1</button><button class="opt">2</button><button class="opt">3</button><button class="opt">4</button></div></div>
+    <div class="quiz-row" data-q="3" data-ans="4"><span class="qlabel">問 3</span><div class="opts"><button class="opt">1</button><button class="opt">2</button><button class="opt">3</button><button class="opt">4</button></div></div>
+    <div class="quiz-row" data-q="4" data-ans="4"><span class="qlabel">問 4</span><div class="opts"><button class="opt">1</button><button class="opt">2</button><button class="opt">3</button><button class="opt">4</button></div></div>
+  </div>
+  <div class="quiz-foot">
+    <button class="reveal-btn orange" onclick="grade()">採点する</button>
+    <span class="score" id="score"></span>
+    <span class="note" id="scoremsg"></span>
+  </div>
+</section>
+
+<!-- ================= STEP 1 ================= -->
+<section class="section">
+  <div class="sec-head">
+    <span class="sec-no">STEP 1</span>
+    <h2 class="sec-title">可視化リーディング ― 目の動かし方を見える化する</h2>
+    <span class="sec-sub">The eye path</span>
+  </div>
+  <p>第1問までの読み方は「設問を先読みして、キーワードで本文を狙い読みする」でした。第2問でも土台は同じです。ただし第2問からは、<b>設問文にキーワードが無い問題</b>が混ざり始めます。「次のうちどれが本文で述べられているか」のような設問は、先読みしても探すべき言葉が手に入りません。そこで手順を1本増やします。</p>
+
+  <div class="eyepath" aria-label="可視化リーディングの図">
+    <svg viewBox="0 0 900 430" xmlns="http://www.w3.org/2000/svg" role="img">
+      <defs>
+        <marker id="ah" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L10,5 L0,10 z" fill="#e85a1a"/>
+        </marker>
+        <marker id="ah2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L10,5 L0,10 z" fill="#3f83a0"/>
+        </marker>
+      </defs>
+      <!-- left page: passage -->
+      <rect x="30" y="30" width="380" height="370" rx="6" fill="#fff" stroke="#d9d2c6"/>
+      <rect x="55" y="55" width="330" height="34" rx="4" fill="#fde4d3" stroke="#e85a1a" stroke-width="1.5"/>
+      <text x="70" y="77" font-family="Noto Sans JP" font-size="13" fill="#b8420f" font-weight="700">リード文：誰が・何のために・何を読む</text>
+      <rect x="55" y="105" width="330" height="26" rx="4" fill="#f7f3ed"/>
+      <text x="70" y="123" font-family="Source Serif 4" font-size="13" font-style="italic" fill="#2c2520">Title: Flying Vehicles ／ 日付・筆者・場所</text>
+      <g fill="#c9c2b6">
+        <rect x="55" y="150" width="300" height="6" rx="3"/><rect x="55" y="164" width="330" height="6" rx="3"/>
+        <rect x="55" y="192" width="330" height="6" rx="3"/><rect x="55" y="206" width="310" height="6" rx="3"/><rect x="55" y="220" width="330" height="6" rx="3"/><rect x="55" y="234" width="280" height="6" rx="3"/>
+        <rect x="55" y="262" width="330" height="6" rx="3"/><rect x="55" y="276" width="320" height="6" rx="3"/><rect x="55" y="290" width="330" height="6" rx="3"/><rect x="55" y="304" width="330" height="6" rx="3"/><rect x="55" y="318" width="260" height="6" rx="3"/>
+        <rect x="55" y="346" width="200" height="6" rx="3"/>
+      </g>
+      <text x="45" y="200" font-family="Noto Sans JP" font-size="10" fill="#9a9086" transform="rotate(-90 45 200)">第2段落</text>
+      <text x="45" y="300" font-family="Noto Sans JP" font-size="10" fill="#9a9086" transform="rotate(-90 45 300)">第3段落</text>
+      <!-- keyword hits -->
+      <rect x="55" y="190" width="150" height="10" rx="3" fill="#e85a1a" opacity=".85"/>
+      <text x="212" y="199" font-family="Noto Sans JP" font-size="10" fill="#e85a1a" font-weight="700">All the speakers agreed</text>
+      <rect x="55" y="302" width="120" height="10" rx="3" fill="#3f83a0" opacity=".85"/>
+      <text x="182" y="311" font-family="Noto Sans JP" font-size="10" fill="#3f83a0" font-weight="700">照らし合わせて発見</text>
+
+      <!-- right page: questions -->
+      <rect x="470" y="30" width="400" height="370" rx="6" fill="#fff" stroke="#d9d2c6"/>
+      <rect x="495" y="60" width="350" height="60" rx="4" fill="#fde4d3" stroke="#e85a1a" stroke-width="1.5"/>
+      <text x="510" y="82" font-family="Noto Sans JP" font-size="12.5" fill="#b8420f" font-weight="700">キーワードあり設問（問1・問3）</text>
+      <text x="510" y="104" font-family="Noto Sans JP" font-size="11.5" fill="#6b6155">all the speakers / opinion → 本文に探しに行く</text>
+      <rect x="495" y="150" width="350" height="60" rx="4" fill="#e2eef2" stroke="#3f83a0" stroke-width="1.5"/>
+      <text x="510" y="172" font-family="Noto Sans JP" font-size="12.5" fill="#3f83a0" font-weight="700">キーワードなし設問（問2・問4）</text>
+      <text x="510" y="194" font-family="Noto Sans JP" font-size="11.5" fill="#6b6155">most likely / mentioned → 選択肢を先に読む</text>
+      <g fill="#c9c2b6">
+        <rect x="520" y="240" width="300" height="6" rx="3"/><rect x="520" y="256" width="280" height="6" rx="3"/><rect x="520" y="272" width="300" height="6" rx="3"/><rect x="520" y="288" width="260" height="6" rx="3"/>
+      </g>
+      <text x="520" y="230" font-family="Noto Sans JP" font-size="10.5" fill="#9a9086">選択肢①〜④（ツッコミを入れながら読む）</text>
+      <rect x="495" y="320" width="350" height="50" rx="4" fill="#e4f2ea" stroke="#3b8a5a" stroke-width="1.5"/>
+      <text x="510" y="342" font-family="Noto Sans JP" font-size="12.5" fill="#3b8a5a" font-weight="700">消去法：○ ／ ？ ／ × を付けて処理</text>
+      <text x="510" y="360" font-family="Noto Sans JP" font-size="11" fill="#6b6155">本文と一つずつ突き合わせる</text>
+
+      <!-- arrows -->
+      <!-- 1 lead -> 2 questions -->
+      <path d="M385,72 C430,72 440,90 495,90" fill="none" stroke="#e85a1a" stroke-width="3" marker-end="url(#ah)"/>
+      <!-- 2 kw question -> 3-1 passage hit -->
+      <path d="M495,110 C440,130 420,170 210,192" fill="none" stroke="#e85a1a" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#ah)"/>
+      <!-- 2 no-kw question -> options -->
+      <path d="M670,210 L670,232" fill="none" stroke="#3f83a0" stroke-width="3" marker-end="url(#ah2)"/>
+      <!-- options -> passage compare -->
+      <path d="M520,270 C470,280 440,300 180,307" fill="none" stroke="#3f83a0" stroke-width="3" stroke-dasharray="7 5" marker-end="url(#ah2)"/>
+      <!-- options -> elimination -->
+      <path d="M670,296 L670,318" fill="none" stroke="#3b8a5a" stroke-width="3" marker-end="url(#ah2)"/>
+
+      <!-- numbered badges -->
+      <g font-family="Noto Sans JP" font-weight="900" font-size="12" fill="#fff" text-anchor="middle">
+        <circle cx="42" cy="55" r="13" fill="#e85a1a"/><text x="42" y="59">1</text>
+        <circle cx="482" cy="60" r="13" fill="#e85a1a"/><text x="482" y="64">2</text>
+        <circle cx="228" cy="178" r="13" fill="#e85a1a"/><text x="228" y="182">3-1</text>
+        <circle cx="482" cy="150" r="13" fill="#3f83a0"/><text x="482" y="154">2</text>
+        <circle cx="500" cy="238" r="13" fill="#3f83a0"/><text x="500" y="242">3-2</text>
+      </g>
+    </svg>
+    <div class="legend">
+      <span><i style="background:#e85a1a">1</i>リード文・タイトルで全体像</span>
+      <span><i style="background:#e85a1a">2</i>設問を先読み → タイプ判定</span>
+      <span><i style="background:#e85a1a">3-1</i>キーワードあり → 狙い読み</span>
+      <span><i style="background:#3f83a0">3-2</i>キーワードなし → 選択肢先読み → 照合</span>
+    </div>
+  </div>
+
+  <div class="st">
+    <div class="stcard"><span class="n">1</span><h4>リード文とタイトルで「場面」を先に作る</h4><p>問題に入る前に、誰が・何のために・何を読むかを1行で言えるようにします。今回は「輸送の未来のレポートのために、イギリス人のブログを読む」。タイトル、日付、筆者、イラストは全部ヒントです。空飛ぶ乗り物の絵があれば、読み始める前に話題は決まっています。</p></div>
+    <div class="stcard"><span class="n">2</span><h4>設問を先読みして「探す言葉」があるか判定</h4><p>1問ずつ「何を答えればいいか」を握ります。設問文の中に本文で探せる具体的な語（all the speakers, opinion）があればキーワードあり、most likely / mentioned のように抽象的ならキーワードなし。ここで二手に分かれます。</p></div>
+    <div class="stcard"><span class="n">3-1</span><h4>キーワードあり → 該当箇所を本文から探し、狙い読み</h4><p>選択肢を先に読みません。出題者は選択肢に「本文っぽい言葉」を散らして誘導してきます。先に本文で答えの根拠を握ってから選択肢を見ると、その誘導に引っかかりにくくなります。</p></div>
+    <div class="stcard"><span class="n aq">3-2</span><h4>キーワードなし → 選択肢を先読みし、本文と一つずつ照合</h4><p>探す言葉が無いので、選択肢の方を「探す言葉」にします。読むときに「本当に？」「そんな話あった？」とツッコミを入れておくと、本文を読んだときに引っかかりが残ります。○？×を付けて消去法で処理します。</p></div>
+  </div>
+
+  <div class="callout amber">
+    <div class="ttl">この手順の急所</div>
+    <p style="margin:0;">「設問を先読みする」までは誰でもやります。差がつくのは、<b>先読みした瞬間にタイプを判定して、選択肢を読むか読まないかを決めていること</b>です。キーワードあり問題で選択肢まで読んでしまうと、時間を失ううえに、本文を読む前に誤った先入観を植え付けられます。逆にキーワードなし問題で選択肢を読まずに本文へ行くと、何を探しているのか分からないまま全文を読み直すことになります。</p>
+  </div>
+</section>
+
+<!-- ================= STEP 2 ================= -->
+<section class="section">
+  <div class="sec-head">
+    <span class="sec-no">STEP 2</span>
+    <h2 class="sec-title">4問をタイプ分けする ― 先読み30秒の作業</h2>
+    <span class="sec-sub">Classify before you read</span>
+  </div>
+  <p>本文を読む前に、設問4つを見て次の表を頭の中で作ります。実際の試験では10〜20秒。書く必要はなく、「問1と問3は探しに行く、問2と問4は選択肢を先に見る」と決めるだけで十分です。</p>
+  <table class="tbl">
+    <thead><tr><th style="width:56px;">設問</th><th>設問文</th><th style="width:120px;">タイプ</th><th>探す言葉 ／ やること</th></tr></thead>
+    <tbody>
+      <tr><td><b>問1</b></td><td class="en">Which of the following did <b>all the guest speakers agree on</b>?</td><td class="kw-yes">キーワードあり</td><td>「全員が同意した」箇所を探す。agree / all がそのまま本文にありそう。</td></tr>
+      <tr><td><b>問2</b></td><td class="en">Flying vehicles will <b>most likely</b> ___.</td><td class="kw-no">キーワードなし</td><td>「今後〜になりそう」は本文のどこにでもあり得る。選択肢を先読みしてツッコミを用意。</td></tr>
+      <tr><td><b>問3</b></td><td class="en">One guest speaker’s <b><u>opinion</u></b> is that ___.</td><td class="kw-yes">キーワードあり（意見）</td><td>「意見」と下線付きで問われている。まず選択肢の中から「意見らしい表現」を見つけ、該当スピーカーの発言を探す。</td></tr>
+      <tr><td><b>問4</b></td><td class="en">Which of the following is <b>mentioned</b> in the blog?</td><td class="kw-no">キーワードなし</td><td>典型的な「言及されているのはどれか」。選択肢を先読みし、読み終えた本文と照合して消去法。</td></tr>
+    </tbody>
+  </table>
+  <div class="callout aqua">
+    <div class="ttl">問3の扱いが少し特殊な理由</div>
+    <p style="margin:0;">問3は設問に opinion というキーワードがありますが、本文に "opinion" という語が出てくるわけではありません。この語が教えてくれるのは「探す場所」ではなく「<b>選択肢の絞り込み方</b>」です。「意見」と問われた以上、事実として書かれた選択肢は答えになりません。つまり問3は、選択肢を先に読んで「事実っぽいもの」を落としてから本文へ向かう、3-1と3-2の合わせ技になります。STEP 4で詳しくやります。</p>
+  </div>
+</section>
+
+<!-- ================= STEP 3 ================= -->
+<section class="section">
+  <div class="sec-head">
+    <span class="sec-no">STEP 3</span>
+    <h2 class="sec-title">脳内実況 ― 読める人の頭の中を再生する</h2>
+    <span class="sec-sub">Think-aloud</span>
+  </div>
+  <p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。「読めば分かる」ではなく「どの順番で何を見て、なぜそう判断したか」を追ってください。</p>
+
+  <!-- 問1 -->
+  <div class="ans-card">
+    <div class="ah"><span class="qn">問 1</span><span class="ans">正解 ②</span><span class="lvl">レベル 易 ／ 配点 3点 ／ キーワードあり</span></div>
+    <div class="ab">
+      <p class="ja-q">ゲストスピーカー全員が同意したのは次のどれか。</p>
+      <ul class="ja-opts">
+        <li><span class="circ">1</span>空飛ぶ車は安全だと広く受け入れられている。</li>
+        <li class="right"><span class="circ">2</span>空飛ぶ車は緊急事態への対応を向上させるだろう。</li>
+        <li><span class="circ">3</span>現代の輸送問題は解決が難しい。</li>
+        <li><span class="circ">4</span>排出ゼロ技術は空飛ぶ車には応用できない。</li>
+      </ul>
+      <div class="brain">
+        <div class="step"><span class="k o">1</span><div><h5>先読み：all the guest speakers agree on ＝「全員が同意した内容」</h5><p>「全員」「同意」という強い言葉があるので、本文に同じ意味の文が必ずあるはず。選択肢はまだ読まない。</p></div></div>
+        <div class="step"><span class="k o">2</span><div><h5>本文を上から流すと、第2段落の頭で止まる</h5><div class="ex">All the speakers agreed on three points.<span class="ja">スピーカー全員が3つの点で同意した。</span></div><p>設問の言葉がそのまま出てきた。ここから「3つ」が列挙される。First / Second / Finally が目印。</p></div></div>
+        <div class="step"><span class="k g">3</span><div><h5>1つ目のポイントを読んだら、いったん選択肢を見る</h5><div class="ex">First, flying vehicles should be electrically powered in general. Air pollution can be reduced by increasing the use of zero-emission technologies.<span class="ja">第一に、空飛ぶ車は原則として電動であるべきだ。排出ゼロ技術の利用を増やせば大気汚染を減らせる。</span></div><p>ポイントを1つ読むごとに選択肢を確認するのが速い。zero-emission という語が④にある。ただし④は「応用できない」と言っていて本文と真逆。本文の言葉を使って逆のことを言う、典型的な誘導。④に×。</p></div></div>
+        <div class="step"><span class="k g">4</span><div><h5>2つ目のポイントで、②と一致</h5><div class="ex">Second, emergency services would be improved.<span class="ja">第二に、緊急サービスは向上するだろう。</span></div><p>選択肢②の improve responses to emergencies と同じ内容。emergency services → responses to emergencies、would be improved → will improve と、表現を変えただけ。ここで②に○。</p></div></div>
+        <div class="step"><span class="k a">5</span><div><h5>残りも念のため潰す（10秒）</h5><p>①「安全だと広く受け入れられている」：本文は「安全のために試験と管理が必要」と言っている。安全はまだ確保されていない話なので×。③「解決が難しい」：第1段落は "problems and solutions were discussed" と述べただけで、難しいとは書いていない。×。</p></div></div>
+      </div>
+      <div class="para"><span class="a">emergency services would be improved</span><span class="arr">⇒</span><span class="b">will improve responses to emergencies</span></div>
+      <div class="callout green"><div class="ttl">この問題の学び</div><p style="margin:0;">キーワードあり問題は「設問の言葉が本文にそのまま出る場所」を探すのが第一歩。見つけたら、そこから先を「1つ読んでは選択肢を確認」のリズムで進めると、全部読んでから選択肢を見返す時間が要りません。</p></div>
+    </div>
+  </div>
+
+  <!-- 問2 -->
+  <div class="ans-card">
+    <div class="ah"><span class="qn">問 2</span><span class="ans">正解 ④</span><span class="lvl">レベル 普通 ／ 配点 3点 ／ キーワードなし</span></div>
+    <div class="ab">
+      <p class="ja-q">空飛ぶ車は、最も可能性が高いのは ___ である。</p>
+      <ul class="ja-opts">
+        <li><span class="circ">1</span>大都市よりも小さな町で使われる</li>
+        <li><span class="circ">2</span>病院の近くで渋滞の数を増やす</li>
+        <li><span class="circ">3</span>環境問題の解決を妨げる</li>
+        <li class="right"><span class="circ">4</span>適切な審査と規制を必要とする</li>
+      </ul>
+      <div class="brain">
+        <div class="step"><span class="k">1</span><div><h5>先読み：most likely ＝ 探す言葉が無い</h5><p>「最もありそうなこと」は本文のどこにでも書けます。この設問は狙い読みできないと判断して、<b>選択肢を先に読む</b>方へ切り替え。</p></div></div>
+        <div class="step"><span class="k">2</span><div><h5>選択肢を読みながら、1つずつツッコミを入れて記憶に残す</h5>
+          <ul class="elim" style="margin-top:8px;">
+            <li><span class="mk q">？</span><div>① 小さな町で使われる<div class="why">「大都市より」小さな町？ 大都市の渋滞を飛び越える話の方がありそうだけど…</div></div></li>
+            <li><span class="mk q">？</span><div>② 病院近くの渋滞を増やす<div class="why">空を飛ぶのに渋滞を増やす？ むしろ減らしそう。</div></div></li>
+            <li><span class="mk q">？</span><div>③ 環境問題の解決を妨げる<div class="why">電動で排出ゼロなら、環境問題の解決に「役立つ」側では？</div></div></li>
+            <li><span class="mk q">？</span><div>④ 適切な審査と規制が必要<div class="why">確かに空を飛ぶなら安全面の規制は要りそう。</div></div></li>
+          </ul>
+          <p>この「？」の状態で本文に入ると、該当文に出会った瞬間に「あ、これだ」と反応できます。ツッコミは正解を当てるためではなく、<b>記憶のフックを作るため</b>のものです。</p></div></div>
+        <div class="step"><span class="k g">3</span><div><h5>問1の続きの箇所（3つ目のポイント）で答えに当たる</h5><div class="ex">Finally, from a safety point of view, they said that flying technology would need to be well tested and controlled to avoid accidents in the air.<span class="ja">最後に、安全の観点から、空中の事故を避けるために飛行技術は十分に試験され、管理される必要があるだろうと彼らは述べた。</span></div><p>need → require、well tested → proper assessment、controlled → regulation。三つの言葉がまとめて言い換えられている。④に○。</p></div></div>
+        <div class="step"><span class="k a">4</span><div><h5>残りを本文で確認して落とす</h5><p>①：本文は「大都市で速い」「小さな町にも良い」と両方を挙げているだけで、どちらかを優先していない。「rather than」が言い過ぎ。×。②：「渋滞の多い大都市で速い」とあるだけで、渋滞を増やすとは言っていない。×。③：排出ゼロ技術で大気汚染を減らせる、と真逆。×。</p></div></div>
+      </div>
+      <div class="para"><span class="a">would need to be well tested and controlled</span><span class="arr">⇒</span><span class="b">require proper assessment and regulation</span></div>
+      <div class="callout green"><div class="ttl">この問題の学び</div><p style="margin:0;">キーワードなし問題の正解は、たいてい本文を「まとめ直した」言い換えで作られています。単語1つの一致で選ぶのではなく、「本文の1文がまるごと別の言葉で言い直されていないか」で見ます。①のように、本文の言葉（small towns / large cities）を使いながら関係だけ変えてある選択肢が最も危険です。</p></div>
+    </div>
+  </div>
+
+  <!-- 問3 -->
+  <div class="ans-card">
+    <div class="ah"><span class="qn">問 3</span><span class="ans">正解 ④</span><span class="lvl">レベル 易 ／ 配点 3点 ／ 事実・意見の識別</span></div>
+    <div class="ab">
+      <p class="ja-q">あるゲストスピーカーの意見は、___ というものだ。</p>
+      <ul class="ja-opts">
+        <li><span class="circ">1</span>空飛ぶタクシーのセンターは地方部に置かれるだろう</li>
+        <li><span class="circ">2</span>空飛ぶタクシーの技術はすでに試験済みである</li>
+        <li><span class="circ">3</span>空飛ぶタクシーはすでに普及している</li>
+        <li class="right"><span class="circ">4</span>空飛ぶタクシーは運営するには費用がかかりすぎる</li>
+      </ul>
+      <div class="brain">
+        <div class="step"><span class="k o">1</span><div><h5>先読み：opinion に下線 ＝ 「意見」だけが答えになる</h5><p>本文に "opinion" という語は無いので探しには行けません。代わりに、この語は「事実として書かれた選択肢は正解にならない」というルールをくれます。まず選択肢を、内容ではなく<b>書き方</b>で仕分けします。</p></div></div>
+        <div class="step"><span class="k p">2</span><div><h5>選択肢を「事実の書き方」と「意見の書き方」に分ける</h5>
+          <ul class="elim" style="margin-top:8px;">
+            <li><span class="mk q">意見</span><div>① <span class="en">will be based</span><div class="why">will は未来の予測。誰かの見立てなので「意見」の形。</div></div></li>
+            <li><span class="mk x">事実</span><div>② <span class="en">has already been tested</span><div class="why">already ＋ 完了形は「済んだこと」の報告。事実の形なので、本文にあっても答えにならない。</div></div></li>
+            <li><span class="mk x">事実</span><div>③ <span class="en">are already widespread</span><div class="why">already ＋ 現在形で現状の報告。同じく事実の形。</div></div></li>
+            <li><span class="mk q">意見</span><div>④ <span class="en">too expensive</span><div class="why">too は「〜すぎる」という主観的な評価。意見の形。</div></div></li>
+          </ul>
+          <p>本文を読む前に①か④まで絞れました。あとは第3段落で「地方に拠点」か「費用が高すぎる」のどちらが出てくるかを確認するだけ。</p></div></div>
+        <div class="step"><span class="k g">3</span><div><h5>第3段落の終盤で④の根拠に当たる</h5><div class="ex">The third speaker answered, “No, because the operating costs of flying taxis are too high.”<span class="ja">3人目のスピーカーは「いや、空飛ぶタクシーの運営コストは高すぎるから」と答えた。</span></div><p>operating costs ... too high → too expensive to run。costs ↔ expensive、operating ↔ run の言い換え。しかもこれは「3人目のスピーカー個人の答え」なので、設問の One guest speaker's にも一致。④に○。</p></div></div>
+        <div class="step"><span class="k a">4</span><div><h5>①は本文に無いことを確認</h5><p>rural / centre に相当する話は第3段落のどこにもない。「大都市の真ん中で試験している」とは書いてあるので、むしろ逆方向。×。②③は本文に近い記述（developing, testing）がありますが、それは「報告が示す事実」として書かれた内容であって、スピーカーの意見ではありません。仮に内容が合っていても、設問が求める「意見」ではないので×。</p></div></div>
+      </div>
+      <div class="para"><span class="a">operating costs ... are too high</span><span class="arr">⇒</span><span class="b">too expensive to run</span></div>
+      <div class="callout purple"><div class="ttl">この問題の学び</div><p style="margin:0;">「意見」を問う問題は、本文を読む前に選択肢の<b>文法的な形</b>で半分決まります。will / would / should / too / must など主観のマーカーが入っていれば意見の候補、already ＋ 完了形や数字・日付は事実の候補。この仕分けは読解力ではなく「見る場所を知っているか」の勝負です。</p></div>
+    </div>
+  </div>
+
+  <!-- 問4 -->
+  <div class="ans-card">
+    <div class="ah"><span class="qn">問 4</span><span class="ans">正解 ④</span><span class="lvl">レベル 易 ／ 配点 3点 ／ キーワードなし</span></div>
+    <div class="ab">
+      <p class="ja-q">ブログで言及されているのは次のどれか。</p>
+      <ul class="ja-opts">
+        <li><span class="circ">1</span>空飛ぶ救急車サービスのコスト</li>
+        <li><span class="circ">2</span>太陽光発電を使った空飛ぶ輸送</li>
+        <li><span class="circ">3</span>空飛ぶタクシー用の駐車エリア</li>
+        <li class="right"><span class="circ">4</span>空飛ぶタクシーサービスの都市部での試験</li>
+      </ul>
+      <div class="brain">
+        <div class="step"><span class="k">1</span><div><h5>先読み：mentioned ＝ 探す言葉なし、選択肢を先に読む</h5><p>「言及されているのはどれか」は第2問の定番で、本文全体が範囲。問2と同じく選択肢を先読みしてツッコミを用意します。</p></div></div>
+        <div class="step"><span class="k">2</span><div><h5>選択肢を読みながらツッコミ</h5>
+          <ul class="elim" style="margin-top:8px;">
+            <li><span class="mk q">？</span><div>① 空飛ぶ救急車のコスト<div class="why">コストの話はあったけど、それはタクシーじゃなかった？</div></div></li>
+            <li><span class="mk q">？</span><div>② 太陽光発電<div class="why">「電動」とは言っていたけど、太陽光なんて具体的な話あった？</div></div></li>
+            <li><span class="mk q">？</span><div>③ 駐車エリア<div class="why">駐車場の話、一度も出てない気がする。</div></div></li>
+            <li><span class="mk q">？</span><div>④ 都市部での試験<div class="why">「大都市の真ん中で試している」って読んだ気がする。</div></div></li>
+          </ul></div></div>
+        <div class="step"><span class="k g">3</span><div><h5>問4を解く頃には本文をほぼ読み終えている</h5><p>問1〜3で第2・第3段落は通過済み。だからこの問題は「探す」というより「読んだ記憶と照合する」問題です。④のツッコミ「読んだ気がする」を最優先で本文に確認しに行きます。</p><div class="ex">A few of them are even testing flying taxi services in the middle of their major cities.<span class="ja">そのうちいくつかの国は、大都市の中心部で空飛ぶタクシーサービスの試験さえ行っている。</span></div><p>testing → trials、in the middle of their major cities → urban。④に○。</p></div></div>
+        <div class="step"><span class="k a">4</span><div><h5>残りの3つは「言葉のすり替え」で作られている</h5><p>①：コストが出てくるのは flying taxis の運営コストで、ambulance ではない。主語のすり替え。×。②：electrically powered / zero-emission とは言ったが、solar-power は一度も出ていない。「電気」を「太陽光」に具体化したすり替え。×。③：parking に相当する記述は無い。完全な作り話。×。</p></div></div>
+      </div>
+      <div class="para"><span class="a">testing ... in the middle of their major cities</span><span class="arr">⇒</span><span class="b">Urban trials</span></div>
+      <div class="callout green"><div class="ttl">この問題の学び</div><p style="margin:0;">「言及されているのはどれか」の誤答は、①主語をすり替える、②抽象語を勝手に具体化する、③本文に無い話を混ぜる、の3パターンでほぼ作られています。選択肢先読みの段階でこの3つを疑っておくと、本文照合が一気に速くなります。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STEP 4 ================= -->
+<section class="section">
+  <div class="sec-head">
+    <span class="sec-no">STEP 4</span>
+    <h2 class="sec-title">事実と意見を「形」で見分ける</h2>
+    <span class="sec-sub">Fact vs. opinion</span>
+  </div>
+  <p>問3で使った仕分けを、どの英文でも使える道具にしておきます。事実と意見は「内容」で判断しようとすると迷います。「書き方」で判断すると迷いません。</p>
+  <div class="fo">
+    <div class="col fact">
+      <h4>事実の書き方（Fact）</h4>
+      <ul>
+        <li>数字・日付・固有名詞：<code>10 December 2024</code>、<code>three guest speakers</code></li>
+        <li><code>already</code> ＋ 完了形／現在形：済んだこと・現状の報告</li>
+        <li><code>recent reports show that ...</code>：出典を伴う報告</li>
+        <li>過去形の出来事：<code>I attended a forum</code>、<code>the speakers discussed</code></li>
+        <li>誰が読んでも同じ結論になる記述</li>
+      </ul>
+    </div>
+    <div class="col op">
+      <h4>意見の書き方（Opinion）</h4>
+      <ul>
+        <li>予測の助動詞：<code>will</code>、<code>would</code>、<code>In 5 years</code></li>
+        <li>評価・判断：<code>should</code>、<code>need to</code>、<code>too high</code>、<code>fantastic</code></li>
+        <li>主観の合図：<code>I think</code>、<code>I look forward to</code></li>
+        <li>断言の形をした見立て：<code>Air pollution can be reduced by ...</code></li>
+        <li>人によって結論が変わりうる記述</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout amber">
+    <div class="ttl">注意：本文中では「意見が事実として報告される」</div>
+    <p style="margin:0;">本文の "All the speakers agreed on three points." は、それ自体は「合意があった」という事実の報告です。しかし合意された中身（電動にすべきだ、緊急サービスは向上するだろう）はスピーカーたちの意見です。設問が「事実」を問うか「意見」を問うかで、同じ文のどの層を見るかが変わります。</p>
+  </div>
+
+  <p style="margin-top:18px;"><b>10秒ドリル</b>：本文中の文を「事実」か「意見」かで仕分けてください。</p>
+  <div class="drill" id="drill">
+    <div class="drill-row" data-a="f"><span class="s">Modern transportation problems and solutions were discussed by three guest speakers.</span><div class="btns"><button class="f" onclick="drill(this,'f')">事実</button><button class="o" onclick="drill(this,'o')">意見</button></div><div class="res">過去形で「議論された」という出来事の報告。誰が見ても同じ内容なので事実。</div></div>
+    <div class="drill-row" data-a="o"><span class="s">Flying vehicles should be electrically powered in general.</span><div class="btns"><button class="f" onclick="drill(this,'f')">事実</button><button class="o" onclick="drill(this,'o')">意見</button></div><div class="res">should は「〜すべきだ」という判断。合意された内容ではあるが、形は意見。</div></div>
+    <div class="drill-row" data-a="f"><span class="s">Some countries are already developing this technology.</span><div class="btns"><button class="f" onclick="drill(this,'f')">事実</button><button class="o" onclick="drill(this,'o')">意見</button></div><div class="res">already ＋ 現在進行形で、報告に基づく現状。事実の形。</div></div>
+    <div class="drill-row" data-a="o"><span class="s">The operating costs of flying taxis are too high.</span><div class="btns"><button class="f" onclick="drill(this,'f')">事実</button><button class="o" onclick="drill(this,'o')">意見</button></div><div class="res">too は「〜すぎる」という評価。数字があるわけでもなく、人によって判断が変わる。意見。</div></div>
+    <div class="drill-row" data-a="o"><span class="s">It’s going to be a fantastic post!</span><div class="btns"><button class="f" onclick="drill(this,'f')">事実</button><button class="o" onclick="drill(this,'o')">意見</button></div><div class="res">fantastic は筆者の評価。未来のことでもある。意見。</div></div>
+  </div>
+</section>
+
+<!-- ================= STEP 5 ================= -->
+<section class="section">
+  <div class="sec-head">
+    <span class="sec-no">STEP 5</span>
+    <h2 class="sec-title">全訳 ― 該当箇所を色で確認する</h2>
+    <span class="sec-sub">Full translation</span>
+  </div>
+  <p class="note">色の下線は各設問の根拠箇所です。<mark class="m1">問1</mark>・<mark class="m2">問2</mark>・<mark class="m3">問3</mark>・<mark class="m4">問4</mark>。4問の根拠が第2段落と第3段落に集中していることを確かめてください。第2問は「設問の順番＝本文の順番」が基本です。</p>
+  <div class="tr">
+    <div class="pair"><div class="pn">リード文</div><div class="e">Your teacher asks you to write a report about the future of transportation. To prepare, you read a blog written by a British author about the topic.</div><div class="j">先生から、輸送の未来についてレポートを書くように言われた。その準備として、このテーマについてイギリス人の書き手が書いたブログを読む。</div></div>
+    <div class="pair"><div class="pn">タイトル・見出し</div><div class="e"><i>Flying Vehicles</i><br>10 December 2024 / Jonah Markowski / Bristol, UK</div><div class="j">空飛ぶ乗り物<br>2024年12月10日 ／ ジョナ・マルコウスキ ／ イギリス、ブリストル</div></div>
+    <div class="pair"><div class="pn">第1段落</div><div class="e">Yesterday, I attended a forum in northern Japan called <i>Flying Vehicles: Today and Tomorrow</i>. Modern transportation problems and solutions were discussed by three guest speakers.</div><div class="j">昨日、私は日本の北部で開かれた「空飛ぶ乗り物：今日と明日」というフォーラムに参加した。3人のゲストスピーカーが、現代の輸送の問題と解決策について議論した。</div></div>
+    <div class="pair"><div class="pn">第2段落</div><div class="e"><mark class="m1">All the speakers agreed on three points.</mark> First, flying vehicles should be electrically powered in general. Air pollution can be reduced by increasing the use of zero-emission technologies. <mark class="m1">Second, emergency services would be improved.</mark> Flying ambulances would be faster in large cities with heavy traffic. Also, they would be better for servicing small towns far from hospitals. <mark class="m2">Finally, from a safety point of view, they said that flying technology would need to be well tested and controlled to avoid accidents in the air.</mark></div><div class="j"><mark class="m1">スピーカー全員が3つの点で同意した。</mark><span class="tagq t1">問1</span> 第一に、空飛ぶ乗り物は原則として電動であるべきだ。排出ゼロ技術の利用を増やすことで大気汚染を減らせる。<mark class="m1">第二に、緊急サービスは向上するだろう。</mark><span class="tagq t1">問1</span> 空飛ぶ救急車は、交通量の多い大都市では速くなるだろう。また、病院から遠い小さな町に対応するのにも適しているだろう。<mark class="m2">最後に、安全の観点から、空中での事故を避けるために飛行技術は十分に試験され、管理される必要があるだろうと彼らは述べた。</mark><span class="tagq t2">問2</span></div></div>
+    <div class="pair"><div class="pn">第3段落</div><div class="e">At the end of the forum, the speakers discussed flying taxis. According to one of the speakers, recent reports show that some countries are already developing this technology. <mark class="m4">A few of them are even testing flying taxi services in the middle of their major cities.</mark> Then, someone in the audience asked if flying taxis would soon be available around the world. Two of the speakers answered, “Yes,” but they disagreed about the timing. One of them said, “In 5 years,” and the other said, “In 15 years.” <mark class="m3">The third speaker answered, “No, because the operating costs of flying taxis are too high.”</mark> I look forward to seeing which guest speaker’s prediction turns out to be correct.</div><div class="j">フォーラムの終わりに、スピーカーたちは空飛ぶタクシーについて議論した。スピーカーの一人によれば、最近の報告では、いくつかの国がすでにこの技術を開発しているという。<mark class="m4">そのうちの数か国は、大都市の中心部で空飛ぶタクシーサービスの試験さえ行っている。</mark><span class="tagq t4">問4</span> そのとき、聴衆の一人が、空飛ぶタクシーは近いうちに世界中で利用できるようになるのかと尋ねた。スピーカーのうち2人は「なる」と答えたが、時期については意見が分かれた。一人は「5年後」、もう一人は「15年後」と言った。<mark class="m3">3人目のスピーカーは「ならない。空飛ぶタクシーの運営コストが高すぎるからだ」と答えた。</mark><span class="tagq t3">問3</span> どのゲストスピーカーの予測が正しいと分かるのか、楽しみにしている。</div></div>
+    <div class="pair"><div class="pn">第4段落</div><div class="e">Next week’s blog is about self-driving cars. It’s going to be a fantastic post!</div><div class="j">来週のブログは自動運転車について。素晴らしい記事になるはずだ！</div></div>
+  </div>
+</section>
+
+<!-- ================= STEP 6 ================= -->
+<section class="section">
+  <div class="sec-head">
+    <span class="sec-no">STEP 6</span>
+    <h2 class="sec-title">語句 ― 言い換えに使われた語を優先して覚える</h2>
+    <span class="sec-sub">Vocabulary</span>
+  </div>
+  <p class="note">第2問の正解は「本文の語 → 選択肢の語」の言い換えで作られます。単語帳的に覚えるのではなく、<b>ペアで</b>覚えてください。</p>
+  <div class="vgroup">今回の言い換えペア（最優先）</div>
+  <div class="vocab">
+    <div><span class="w">improve</span><span class="pos">動</span><span class="m">向上させる（emergency services ↔ responses to emergencies）</span></div>
+    <div><span class="w">need to ／ require</span><span class="pos">動</span><span class="m">必要とする</span></div>
+    <div><span class="w">test ／ assessment</span><span class="pos">動／名</span><span class="m">試験する／評価・査定</span></div>
+    <div><span class="w">control ／ regulation</span><span class="pos">動／名</span><span class="m">管理する／規制</span></div>
+    <div><span class="w">costs ／ expensive</span><span class="pos">名／形</span><span class="m">費用／費用がかかる</span></div>
+    <div><span class="w">operating ／ run</span><span class="pos">形／動</span><span class="m">運営上の／〜を運営する</span></div>
+    <div><span class="w">test ／ trial</span><span class="pos">動／名</span><span class="m">試験する／試行</span></div>
+    <div><span class="w">major cities ／ urban</span><span class="pos">名／形</span><span class="m">大都市／都市部の</span></div>
+  </div>
+  <div class="vgroup">リード文</div>
+  <div class="vocab">
+    <div><span class="w">transportation</span><span class="pos">名</span><span class="m">輸送、交通</span></div>
+    <div><span class="w">author</span><span class="pos">名</span><span class="m">書き手、著者</span></div>
+  </div>
+  <div class="vgroup">本文</div>
+  <div class="vocab">
+    <div><span class="w">vehicle</span><span class="pos">名</span><span class="m">乗り物、車両</span></div>
+    <div><span class="w">forum</span><span class="pos">名</span><span class="m">公開討論会</span></div>
+    <div><span class="w">solution</span><span class="pos">名</span><span class="m">解決策</span></div>
+    <div><span class="w">electrically powered</span><span class="pos">熟</span><span class="m">電気で動く</span></div>
+    <div><span class="w">pollution</span><span class="pos">名</span><span class="m">汚染</span></div>
+    <div><span class="w">zero-emission</span><span class="pos">形</span><span class="m">排出ゼロの</span></div>
+    <div><span class="w">emergency</span><span class="pos">名</span><span class="m">緊急事態</span></div>
+    <div><span class="w">ambulance</span><span class="pos">名</span><span class="m">救急車</span></div>
+    <div><span class="w">service</span><span class="pos">動</span><span class="m">〜にサービスを提供する</span></div>
+    <div><span class="w">point of view</span><span class="pos">熟</span><span class="m">観点</span></div>
+    <div><span class="w">available</span><span class="pos">形</span><span class="m">利用できる</span></div>
+    <div><span class="w">disagree</span><span class="pos">動</span><span class="m">意見が合わない</span></div>
+    <div><span class="w">timing</span><span class="pos">名</span><span class="m">時期</span></div>
+    <div><span class="w">prediction</span><span class="pos">名</span><span class="m">予測</span></div>
+    <div><span class="w">turn out to be ～</span><span class="pos">熟</span><span class="m">〜だと判明する</span></div>
+    <div><span class="w">look forward to ～</span><span class="pos">熟</span><span class="m">〜を楽しみに待つ</span></div>
+    <div><span class="w">self-driving</span><span class="pos">形</span><span class="m">自動運転の</span></div>
+    <div><span class="w">post</span><span class="pos">名</span><span class="m">（ブログの）投稿</span></div>
+  </div>
+  <div class="vgroup">選択肢</div>
+  <div class="vocab">
+    <div><span class="w">response</span><span class="pos">名</span><span class="m">対応、反応</span></div>
+    <div><span class="w">apply A to B</span><span class="pos">熟</span><span class="m">AをBに応用する</span></div>
+    <div><span class="w">traffic jam</span><span class="pos">名</span><span class="m">交通渋滞</span></div>
+    <div><span class="w">prevent</span><span class="pos">動</span><span class="m">妨げる</span></div>
+    <div><span class="w">proper</span><span class="pos">形</span><span class="m">適切な</span></div>
+    <div><span class="w">based in ～</span><span class="pos">熟</span><span class="m">〜を拠点とする</span></div>
+    <div><span class="w">rural</span><span class="pos">形</span><span class="m">地方の、田舎の</span></div>
+    <div><span class="w">widespread</span><span class="pos">形</span><span class="m">広く普及した</span></div>
+    <div><span class="w">solar-power</span><span class="pos">名</span><span class="m">太陽光発電</span></div>
+    <div><span class="w">mention</span><span class="pos">動</span><span class="m">言及する</span></div>
+  </div>
+</section>
+
+<!-- ================= STEP 7 ================= -->
+<section class="section">
+  <div class="sec-head">
+    <span class="sec-no">STEP 7</span>
+    <h2 class="sec-title">持ち帰る3つの武器 と 自己点検</h2>
+    <span class="sec-sub">Take-aways</span>
+  </div>
+  <div class="weapons">
+    <div class="weapon"><span class="wn">武器 1</span><h4>設問を先読みしたら、その場でタイプ判定する</h4><p>探せる語があれば選択肢を読まずに本文へ。無ければ選択肢を先に読む。この分岐を「毎回・無意識に」できるようになるのが第2問のゴールです。</p></div>
+    <div class="weapon"><span class="wn">武器 2</span><h4>選択肢を先読みするときは、ツッコミを1つずつ添える</h4><p>「本当に？」「そんな話あった？」の一言が記憶のフックになります。本文で該当文に出会ったときの反応速度が変わります。</p></div>
+    <div class="weapon"><span class="wn">武器 3</span><h4>「意見」を問われたら、まず選択肢の形で仕分ける</h4><p>will / should / too は意見、already ＋ 完了形や数字は事実。本文を読む前に半分落とせます。読解力ではなく手順の問題です。</p></div>
+  </div>
+
+  <p style="margin-top:22px;"><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。</p>
+  <ul class="check" id="check">
+    <li><input type="checkbox"><span>本文を読む前に、リード文とタイトルから「誰が何のために何を読むか」を1行で言えた</span></li>
+    <li><input type="checkbox"><span>設問4つを先読みして、キーワードあり／なしを分けてから本文に入った</span></li>
+    <li><input type="checkbox"><span>問1で、選択肢を読まずに "All the speakers agreed" を探しに行った</span></li>
+    <li><input type="checkbox"><span>問1で、ポイントを1つ読むごとに選択肢を確認した（全部読んでから見返していない）</span></li>
+    <li><input type="checkbox"><span>問2・問4で、選択肢を先に読み、ツッコミを入れながら本文に入った</span></li>
+    <li><input type="checkbox"><span>問3で、本文を読む前に②③を「事実の形」として落とした</span></li>
+    <li><input type="checkbox"><span>正解を選ぶとき、単語の一致ではなく「1文まるごとの言い換え」で判断した</span></li>
+    <li><input type="checkbox"><span>誤答の作り方（主語のすり替え・勝手な具体化・本文に無い話）を1つ以上見抜けた</span></li>
+    <li><input type="checkbox"><span>本文に戻った回数が、設問1つにつき1〜2回以内だった</span></li>
+    <li><input type="checkbox"><span>6分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li>
+  </ul>
+  <div class="check-foot" id="checkfoot">0 / 10</div>
+  <div class="callout" style="margin-top:18px;">
+    <div class="ttl">次に向けて</div>
+    <p style="margin:0;">7個以上なら手順は身についています。次は同じ手順を「初見の第2問」で再現できるかを試してください。6個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度6分で解き直してください。答えを覚えていても構いません。測っているのは正解ではなく、<b>目の動かし方</b>です。</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  出典：2025年度 大学入学共通テスト 本試験 英語（リーディング）第2問<br>
+  学部別合格設計塾 THINKING ― 受験は根性じゃなく、設計。
+</footer>
+
+<script>
+/* ---- reveal ---- */
+function toggle(id,btn){
+  var el=document.getElementById(id);
+  var open=el.classList.toggle('open');
+  btn.setAttribute('aria-expanded',open);
+}
+
+/* ---- timer ---- */
+var tsec=360, tid=null;
+function fmt(s){var m=Math.floor(Math.abs(s)/60),ss=Math.abs(s)%60;return (s<0?'+':'')+m+':'+(ss<10?'0':'')+ss;}
+function timer(){
+  var btn=document.getElementById('tmbtn'), disp=document.getElementById('tm');
+  if(tid){clearInterval(tid);tid=null;btn.textContent='再開';btn.classList.remove('stop');return;}
+  btn.textContent='ストップ';btn.classList.add('stop');
+  tid=setInterval(function(){
+    tsec--; disp.textContent=fmt(tsec);
+    disp.style.color = tsec<0 ? '#c0392b' : '';
+  },1000);
+}
+
+/* ---- quiz ---- */
+document.querySelectorAll('.quiz-row').forEach(function(row){
+  row.querySelectorAll('.opt').forEach(function(b){
+    b.addEventListener('click',function(){
+      if(row.dataset.graded) return;
+      row.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel');});
+      b.classList.add('sel');
+      row.dataset.sel=b.textContent.trim();
+    });
+  });
+});
+function grade(){
+  var rows=document.querySelectorAll('.quiz-row'),score=0,answered=0;
+  rows.forEach(function(row){
+    var ans=row.dataset.ans, sel=row.dataset.sel;
+    if(!sel) return;
+    answered++;
+    row.dataset.graded='1';
+    row.querySelectorAll('.opt').forEach(function(b){
+      var v=b.textContent.trim();
+      b.classList.remove('sel');
+      if(v===ans && v===sel){b.classList.add('ok');}
+      else if(v===sel){b.classList.add('ng');}
+      else if(v===ans){b.classList.add('hint');}
+    });
+    if(sel===ans) score+=3;
+  });
+  if(answered<4){
+    document.getElementById('scoremsg').textContent='4問すべてに答えてから採点してください。';
+    rows.forEach(function(r){ if(!r.dataset.sel){ delete r.dataset.graded; } });
+    return;
+  }
+  document.getElementById('score').textContent=score+' / 12点';
+  var msg = score===12 ? '全問正解。次は「どの順番で目を動かしたか」を解説と照らし合わせてください。'
+          : score>=9 ? '合格圏。落とした1問が、キーワードありかなしかを確認してください。'
+          : score>=6 ? '半分。おそらく問2か問4で選択肢を読み直す回数が増えたはずです。STEP 1の手順を読んでから解説へ。'
+          : '手順を入れる前の状態です。ここから伸びます。STEP 1を読んでからSTEP 3の脳内実況を追ってください。';
+  document.getElementById('scoremsg').textContent=msg;
+  if(tid){clearInterval(tid);tid=null;document.getElementById('tmbtn').textContent='終了';document.getElementById('tmbtn').classList.remove('stop');}
+}
+
+/* ---- drill ---- */
+function drill(btn,choice){
+  var row=btn.closest('.drill-row'), a=row.dataset.a, res=row.querySelector('.res');
+  row.querySelectorAll('button').forEach(function(b){b.classList.remove('on');});
+  btn.classList.add('on');
+  res.classList.add('show');
+  res.classList.remove('good','bad');
+  res.classList.add(choice===a?'good':'bad');
+  var base=res.dataset.base||res.textContent; res.dataset.base=base;
+  res.textContent=(choice===a?'正解。':'不正解。')+base;
+}
+
+/* ---- checklist ---- */
+document.querySelectorAll('#check li').forEach(function(li){
+  var cb=li.querySelector('input');
+  li.addEventListener('click',function(e){
+    if(e.target!==cb) cb.checked=!cb.checked;
+    li.classList.toggle('done',cb.checked);
+    var n=document.querySelectorAll('#check input:checked').length;
+    document.getElementById('checkfoot').textContent=n+' / 10';
+  });
+});
+</script>
+</body>
+</html>

@@ -8,7 +8,8 @@
 
 [build]
   publish = "."
-  command = "true"
+  # explanation/ の HTML から公開リンク一覧と sitemap を作る（npm は使わない）
+  command = "python3 scripts/publish-explanations.py"
 
 # JSX sources change often; avoid long-lived CDN cache on these paths after deploys.
 [[headers]]
@@ -417,6 +418,43 @@
 [[redirects]]
   from = "/reading-lesson/:slug"
   to = "/reading-lesson/:slug/index.html"
+  status = 200
+
+# ---------------------------------------------------------------------------
+# 解説 — /explanation
+# explanation/ に置いた HTML は、ファイルごとの追記なしで公開される。
+# 例: explanation/foo.html → /explanation/foo
+#     explanation/bar/baz.html → /explanation/bar/baz
+# 一覧（コピー用リンク）は scripts/publish-explanations.py が作る。
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/explanation"
+  to = "/explanation/index.html"
+  status = 200
+[[redirects]]
+  from = "/explanation/"
+  to = "/explanation"
+  status = 301
+[[redirects]]
+  from = "/explanation/index.html"
+  to = "/explanation"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/explanation/:name.html"
+  to = "/explanation/:name"
+  status = 301
+  force = true
+[[redirects]]
+  from = "/explanation/:dir/:name.html"
+  to = "/explanation/:dir/:name"
+  status = 301
+  force = true
+# 実ファイル（画像など）があるパスはそのまま配信する。無いパスだけ .html を返す。
+[[redirects]]
+  from = "/explanation/*"
+  to = "/explanation/:splat.html"
   status = 200
 
 # 7月以降の号は準備でき次第、netlify.toml にリダイレクトを追加して公開

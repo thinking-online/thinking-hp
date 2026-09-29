@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>to不定詞のポジション</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: 1カラムのノート。形＝点線の枠、ポジション＝塗りの色、という表記ルールをページ全体で統一 */
+:root{
+  --bg:#f5f7f9; --paper:#ffffff; --ink:#15202e; --sub:#5a6675; --line:#d9dfe6;
+  --accent:#1f3a8a;
+  --S:#2563c9; --S-bg:#e3ecfb;
+  --V:#c8322d; --V-bg:#fbe5e3;
+  --O:#138a5b; --O-bg:#dff3ea;
+  --C:#c76a07; --C-bg:#fdefd9;
+  --M:#6b6280; --M-bg:#ecebf1;
+  --ok:#138a5b; --ng:#c8322d;
+  --f-display:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --f-body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --f-en:"Source Sans 3","Helvetica Neue",Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#10151c; --paper:#18202a; --ink:#e8edf3; --sub:#9aa6b4; --line:#2c3743; --accent:#8fa9f5;
+  --S:#7aa7ff; --S-bg:#1d2b45; --V:#ff7d77; --V-bg:#3a1f22; --O:#4fd29a; --O-bg:#153427;
+  --C:#ffab4a; --C-bg:#3a2a14; --M:#b3a9cc; --M-bg:#27243a; --ok:#4fd29a; --ng:#ff7d77; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#10151c; --paper:#18202a; --ink:#e8edf3; --sub:#9aa6b4; --line:#2c3743; --accent:#8fa9f5;
+  --S:#7aa7ff; --S-bg:#1d2b45; --V:#ff7d77; --V-bg:#3a1f22; --O:#4fd29a; --O-bg:#153427;
+  --C:#ffab4a; --C-bg:#3a2a14; --M:#b3a9cc; --M-bg:#27243a; --ok:#4fd29a; --ng:#ff7d77; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.8;margin:0}
+.wrap{max-width:760px;margin:0 auto;padding-inline:16px;padding-block:32px 72px;display:flex;flex-direction:column;gap:56px}
+h1,h2{font-family:var(--f-display);font-weight:900;letter-spacing:.01em;text-wrap:balance;margin:0}
+h2{font-size:1.45rem;line-height:1.4}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;color:var(--accent);margin:0 0 6px}
+p{margin:0}
+.lead{color:var(--sub)}
+section{display:flex;flex-direction:column;gap:18px}
+.en{font-family:var(--f-en)}
+.step .n,.pat .tag,.score,.wrong .x{font-weight:900}
+.sent,.qsent,.three .ex{font-size:1.2rem}
+
+/* hero */
+.brand{font-size:.8rem;color:var(--sub);letter-spacing:.08em;font-weight:700}
+.hero{gap:22px}
+.hero h1{font-size:clamp(1.9rem,6vw,2.8rem);line-height:1.3}
+.wrong{display:flex;flex-wrap:wrap;align-items:center;gap:10px;font-weight:700}
+.wrong .q{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:6px 12px;text-decoration:line-through;text-decoration-color:var(--ng);text-decoration-thickness:2px;color:var(--sub)}
+.wrong .x{color:var(--ng);font-family:var(--f-display);font-size:1.3rem}
+
+/* two-axis card */
+.axis{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.axis>div{background:var(--paper);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.axis .form{border:2px dashed var(--ink)}
+.axis .pos{border:2px solid transparent;background:linear-gradient(var(--paper),var(--paper)) padding-box,linear-gradient(90deg,var(--S),var(--O),var(--C),var(--M)) border-box}
+.axis h3{margin:0;font-size:1.15rem;font-weight:900}
+.axis small{color:var(--sub);font-size:.85rem;line-height:1.6}
+.pill{display:inline-block;font-size:.8rem;font-weight:700;padding:1px 10px;border-radius:99px}
+.analogy{background:var(--paper);border-radius:12px;padding:18px;border:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.analogy .row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+/* chunk rendering */
+.sent{display:flex;flex-wrap:wrap;align-items:flex-end;gap:14px 6px;font-family:var(--f-en);font-size:1.12rem;line-height:1.3;padding-block:8px}
+.ch{display:flex;flex-direction:column;align-items:center;gap:4px;min-width:0}
+.ch .body{padding:5px 8px;border-radius:6px;border:2px solid transparent;transition:background .25s,border-color .25s}
+.ch .top,.ch .bot{font-family:var(--f-body);font-size:.72rem;font-weight:700;line-height:1;min-height:1em;white-space:nowrap;transition:opacity .25s}
+.ch .top{color:var(--ink);letter-spacing:.04em}
+.ch.form .body{border:2px dashed var(--ink)}
+.ch .bot{padding:3px 8px;border-radius:99px;color:#fff}
+.ch.hideform .top{opacity:0}
+.ch.hidepos .bot{opacity:0}
+.ch.hidepos .body{background:transparent!important}
+.r-S .body{background:var(--S-bg)} .r-S .bot{background:var(--S)}
+.r-V .body{background:var(--V-bg)} .r-V .bot{background:var(--V)}
+.r-O .body{background:var(--O-bg)} .r-O .bot{background:var(--O)}
+.r-C .body{background:var(--C-bg)} .r-C .bot{background:var(--C)}
+.r-M .body{background:var(--M-bg)} .r-M .bot{background:var(--M)}
+:root[data-theme="dark"] .ch .bot{color:#10151c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .ch .bot{color:#10151c}}
+
+/* three forms matrix */
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.three>div{background:var(--paper);border-radius:12px;padding:16px;display:flex;flex-direction:column;gap:8px;border-top:4px solid var(--c);min-width:0}
+.three .lab{font-weight:900;color:var(--c)}
+.three .ex{font-family:var(--f-en);font-size:.95rem;line-height:1.5}
+.three .ex b{font-weight:600;color:var(--c);border-bottom:2px dashed var(--c)}
+.three small{color:var(--sub);font-size:.82rem;line-height:1.6}
+
+/* flow */
+.steps{display:flex;flex-direction:column;gap:10px;counter-reset:s}
+.step{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start;background:var(--paper);border-radius:12px;padding:14px 16px;border:1px solid var(--line)}
+.step .n{font-family:var(--f-display);font-size:1.3rem;color:var(--accent);line-height:1.3}
+.patterns{display:grid;gap:12px}
+.pat{background:var(--paper);border-radius:12px;padding:16px 18px;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;border:1px solid var(--line)}
+.pat .tag{font-family:var(--f-display);font-size:1.1rem;grid-row:span 3}
+.pat .shape{font-family:var(--f-en);font-weight:600}
+.pat .ask{font-weight:700}
+.pat .res{display:flex;flex-wrap:wrap;gap:8px;font-size:.9rem}
+.pat .res span{display:inline-flex;align-items:center;gap:6px}
+
+/* analyzer */
+.lab-box{background:var(--paper);border-radius:14px;border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;cursor:pointer}
+.tab{border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:99px;padding:4px 14px;font-weight:700;font-size:.88rem}
+.tab[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.stage{min-height:92px;overflow-x:auto}
+.progress{display:flex;gap:6px}
+.progress i{flex:1;height:4px;border-radius:2px;background:var(--line)}
+.progress i.on{background:var(--accent)}
+.say{background:var(--bg);border-radius:10px;padding:12px 14px;font-size:.95rem;min-height:3.2em}
+.say .k{font-weight:900}
+.ctrl{display:flex;gap:10px;justify-content:space-between}
+.btn{border:none;border-radius:10px;padding:10px 18px;font-weight:700;background:var(--accent);color:var(--paper)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn:disabled{opacity:.35;cursor:default}
+button:focus-visible{outline:3px solid var(--C);outline-offset:2px}
+
+/* quiz */
+.quiz{display:flex;flex-direction:column;gap:14px}
+.qcard{background:var(--paper);border-radius:14px;border:1px solid var(--line);padding:18px;display:flex;flex-direction:column;gap:14px}
+.qhead{display:flex;justify-content:space-between;font-size:.85rem;color:var(--sub);font-weight:700}
+.qsent{font-family:var(--f-en);font-size:1.15rem;line-height:1.7}
+.qsent u{text-decoration:none;border:2px dashed var(--ink);border-radius:6px;padding:1px 6px}
+.choices{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.choice{border-radius:10px;padding:12px 6px;font-weight:900;font-size:1.05rem;border:2px solid var(--c);background:var(--paper);color:var(--c)}
+.choice:hover:not(:disabled){background:var(--cb)}
+.choice.picked{background:var(--c);color:var(--paper)}
+.choice:disabled{cursor:default}
+.fb{border-radius:10px;padding:12px 14px;font-size:.95rem;display:flex;flex-direction:column;gap:6px}
+.fb.ok{background:var(--O-bg)} .fb.ng{background:var(--V-bg)}
+.fb .v{font-weight:900}
+.fb.ok .v{color:var(--ok)} .fb.ng .v{color:var(--ng)}
+.score{font-family:var(--f-display);font-size:1.4rem}
+
+/* takeaway */
+.take{background:var(--ink);color:var(--bg);border-radius:16px;padding:28px 22px;display:flex;flex-direction:column;gap:14px}
+.take h2{color:var(--bg);font-size:1.6rem}
+.take p{color:var(--bg);opacity:.85}
+.foot{text-align:center;color:var(--sub);font-size:.8rem}
+
+@media (max-width:560px){
+  .axis,.three{grid-template-columns:1fr}
+  .sent{font-size:1rem}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+  <section class="hero">
+    <p class="brand">学部別合格設計塾THINKING ／ 英文構造トレーニング</p>
+    <h1>to不定詞は「形」。<br>O・Cは「ポジション」。</h1>
+    <div class="wrong">
+      <span class="q">これはto不定詞？ Oなの？ Cなの？</span>
+      <span class="x">×</span>
+    </div>
+    <p>この質問が出たら、分け方がズレているサイン。to不定詞とO・Cは、そもそも比べるものじゃない。</p>
+  </section>
+
+  <section>
+    <div>
+      <p class="eyebrow">POINT 1</p>
+      <h2>英語の部品には「2つのラベル」がある</h2>
+    </div>
+    <div class="axis">
+      <div class="form">
+        <span class="pill" style="border:2px dashed var(--ink)">点線の枠</span>
+        <h3>形（見た目）</h3>
+        <small>名詞、to不定詞、that節、-ing など。<br>「どんな格好をしているか」</small>
+      </div>
+      <div class="pos">
+        <span class="pill" style="background:var(--ink);color:var(--paper)">塗りの色</span>
+        <h3>ポジション（役割）</h3>
+        <small>S・V・O・C・補足。<br>「文の中でどんな仕事をしているか」</small>
+      </div>
+    </div>
+    <div class="analogy">
+      <p><b>サッカーでたとえると</b></p>
+      <div class="row">
+        <span class="pill" style="border:2px dashed var(--ink)">高校生</span><span>＝ 身分（形）</span>
+      </div>
+      <div class="row">
+        <span class="pill" style="background:var(--O);color:var(--paper)">ゴールキーパー</span><span>＝ ポジション（役割）</span>
+      </div>
+      <p class="lead">「高校生のゴールキーパー」は普通にいる。同じように「to不定詞のO」「to不定詞のC」も普通にいる。</p>
+    </div>
+    <div class="sent" id="demo"></div>
+    <p class="lead">上が形（点線）、下がポジション（色）。1つのかたまりに、ラベルが2枚ついている。</p>
+  </section>
+
+  <section>
+    <div>
+      <p class="eyebrow">POINT 2</p>
+      <h2>to不定詞は、3つのポジションで働ける</h2>
+    </div>
+    <div class="three">
+      <div style="--c:var(--O)">
+        <span class="lab">Oで働く</span>
+        <p class="ex">I decided <b>to study abroad</b>.</p>
+        <small>「何を決めた？」の答え</small>
+      </div>
+      <div style="--c:var(--C)">
+        <span class="lab">Cで働く</span>
+        <p class="ex">He wanted them <b>to become friends</b>.</p>
+        <small>「彼らが友達になる」という関係</small>
+      </div>
+      <div style="--c:var(--M)">
+        <span class="lab">補足で働く</span>
+        <p class="ex">He went there <b>to see her</b>.</p>
+        <small>消しても文が成り立つ</small>
+      </div>
+    </div>
+    <p class="lead">形は同じto不定詞でも、ポジションは3通り。だから「to不定詞だからO」とは決まらない。</p>
+  </section>
+
+  <section>
+    <div>
+      <p class="eyebrow">POINT 3</p>
+      <h2>ポジションの見抜き方</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="n">1</span><p>メインの<b style="color:var(--S)">S</b>と<b style="color:var(--V)">V</b>を見つける</p></div>
+      <div class="step"><span class="n">2</span><p>to〜をひとかたまりにして点線で囲む</p></div>
+      <div class="step"><span class="n">3</span><p>Vの後ろの並び方を見て、下の3パターンのどれかに当てはめる</p></div>
+    </div>
+    <div class="patterns">
+      <div class="pat">
+        <span class="tag" style="color:var(--O)">A</span>
+        <span class="shape">V ＋ to〜</span>
+        <span class="ask">「何をVした？」の答えになる？</span>
+        <span class="res"><span><span class="pill" style="background:var(--O);color:var(--paper)">なる → O</span></span><span><span class="pill" style="background:var(--M);color:var(--paper)">ならない → 補足</span></span></span>
+      </div>
+      <div class="pat">
+        <span class="tag" style="color:var(--C)">B</span>
+        <span class="shape">V ＋ 名詞 ＋ to〜</span>
+        <span class="ask">「名詞が〜する」の関係になる？</span>
+        <span class="res"><span><span class="pill" style="background:var(--C);color:var(--paper)">なる → C</span></span><span><span class="pill" style="background:var(--M);color:var(--paper)">ならない → 補足</span></span></span>
+      </div>
+      <div class="pat">
+        <span class="tag" style="color:var(--C)">C</span>
+        <span class="shape">be動詞 ＋ to〜</span>
+        <span class="ask">「S ＝ to〜」になる？</span>
+        <span class="res"><span><span class="pill" style="background:var(--C);color:var(--paper)">なる → C</span></span></span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <p class="eyebrow">やってみよう</p>
+      <h2>教科書の文を、1ステップずつ分解する</h2>
+    </div>
+    <div class="lab-box">
+      <div class="tabs" id="tabs" role="group" aria-label="例文を選ぶ"></div>
+      <div class="progress" id="prog"></div>
+      <div class="stage"><div class="sent" id="stage"></div></div>
+      <div class="say" id="say"></div>
+      <div class="ctrl">
+        <button class="btn ghost" id="prev" type="button">もどる</button>
+        <button class="btn" id="next" type="button">次のステップ</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div>
+      <p class="eyebrow">練習問題</p>
+      <h2>点線のto〜は、どのポジション？</h2>
+    </div>
+    <p class="lead">形はぜんぶto不定詞。聞かれているのはポジションだけ。</p>
+    <div class="quiz" id="quiz"></div>
+  </section>
+
+  <section class="take">
+    <p class="eyebrow" style="color:var(--C)">持って帰る一言</p>
+    <h2>形を見つけたら、次に聞くのは「どこで働いてる？」</h2>
+    <p>to不定詞に限らず、that節も、-ingも、ただの名詞も同じ。まず形で囲んで、それからポジションを決める。順番は必ず「外側の文全体 → かたまりの中身」。</p>
+  </section>
+
+  <p class="foot">受験は根性じゃなく、設計。 ／ 学部別合格設計塾THINKING</p>
+</div>
+
+<script>
+// 部品: [英語, ポジション, 形ラベル(任意)]
+const demo=[["He","S"],["wanted","V"],["them","O"],["to become friends","C","to不定詞"]];
+
+const sentences=[
+  {name:"文1",parts:[["Coubertin","S"],["wanted","V"],["to realize three things","O","to不定詞"],["through sports","M","前置詞＋名詞"]],
+   pattern:"A",
+   steps:[
+    "まずは文を眺めるだけ。いきなり「toだ！」と反応しない。",
+    "<span class='k'>①</span> S＝Coubertin、V＝wanted。ここが文の骨格。",
+    "<span class='k'>②</span> to realize three things をひとかたまりにして点線で囲む。これが「形」のラベル。",
+    "<span class='k'>③</span> V ＋ to〜 の並び → パターンA。「何を望んだ？」→「3つのことを実現すること」。答えになる。",
+    "だから to realize〜 は <b>to不定詞の形で、Oとして働いている</b>。through sports は消しても文が成り立つので補足。"]},
+  {name:"文2",parts:[["he","S"],["wanted","V"],["people in the world","O"],["to make their body and mind strong","C","to不定詞"]],
+   pattern:"B",
+   steps:[
+    "文を眺める。wanted の後ろが長いけど、あわてない。",
+    "<span class='k'>①</span> S＝he、V＝wanted。",
+    "<span class='k'>②</span> to make their body and mind strong をひとかたまりにして点線で囲む。",
+    "<span class='k'>③</span> V ＋ 名詞 ＋ to〜 の並び → パターンB。「人々が（身体と心を）強くする」→ 関係が成り立つ。",
+    "だから people＝O、to make〜＝C。<b>want O to do＝Oに〜してほしい</b>。中身の make / their body and mind / strong は V・O・C だけど、それは外側が決まってから。"]},
+  {name:"文3",parts:[["he","S"],["wanted","V"],["them","O"],["to become friends","C","to不定詞"]],
+   pattern:"B",
+   steps:[
+    "文を眺める。文2と同じ並びに見えたら、もう力がついてきている。",
+    "<span class='k'>①</span> S＝he、V＝wanted。",
+    "<span class='k'>②</span> to become friends を点線で囲む。",
+    "<span class='k'>③</span> V ＋ 名詞 ＋ to〜 → パターンB。「彼らが友達になる」→ 関係が成り立つ。",
+    "だから them＝O、to become friends＝C。<b>to不定詞の形で、Cとして働いている</b>。"]},
+  {name:"文4",parts:[["he","S"],["wanted","V"],["them","O"],["to build a peaceful world","C","to不定詞"]],
+   pattern:"B",
+   steps:[
+    "最後の文。自分で答えを予想してから進めよう。",
+    "<span class='k'>①</span> S＝he、V＝wanted。",
+    "<span class='k'>②</span> to build a peaceful world を点線で囲む。",
+    "<span class='k'>③</span> V ＋ 名詞 ＋ to〜 → パターンB。「彼らが平和な世界を作る」→ 関係が成り立つ。",
+    "だから them＝O、to build〜＝C。文2・3・4はぜんぶ同じ設計図。<b>1つ分かれば3つ分かる</b>。"]}
+];
+
+const posName={S:"S",V:"V",O:"O",C:"C",M:"補足"};
+
+function chunk([t,r,f]){
+  const d=document.createElement("div");
+  d.className="ch r-"+r+(f?" form":"");
+  d.innerHTML=`<span class="top">${f||""}</span><span class="body">${t}</span><span class="bot">${posName[r]}</span>`;
+  return d;
+}
+function render(el,parts){el.innerHTML="";const nodes=parts.map(p=>{const c=chunk(p);el.appendChild(c);return c});return nodes}
+render(document.getElementById("demo"),demo);
+
+// analyzer
+let cur=0,step=0;
+const tabs=document.getElementById("tabs"),stage=document.getElementById("stage"),say=document.getElementById("say"),prog=document.getElementById("prog");
+const prev=document.getElementById("prev"),next=document.getElementById("next");
+sentences.forEach((s,i)=>{const b=document.createElement("button");b.type="button";b.className="tab";b.textContent=s.name;b.onclick=()=>{cur=i;step=0;draw()};tabs.appendChild(b)});
+for(let i=0;i<5;i++)prog.appendChild(document.createElement("i"));
+function draw(){
+  const s=sentences[cur];
+  [...tabs.children].forEach((b,i)=>b.setAttribute("aria-pressed",i===cur));
+  [...prog.children].forEach((b,i)=>b.classList.toggle("on",i<=step));
+  const nodes=render(stage,s.parts);
+  nodes.forEach((n,i)=>{
+    const [,r,f]=s.parts[i];
+    const isSV=r==="S"||r==="V";
+    const showPos = step>=4 || (step>=1 && isSV);
+    const showForm = step>=2 && !!f && r!=="M" || (step>=4 && !!f);
+    if(!showPos)n.classList.add("hidepos");
+    if(!showForm){n.classList.add("hideform");n.classList.remove("form")}
+  });
+  say.innerHTML=s.steps[step];
+  prev.disabled=step===0;
+  next.textContent=step===4?(cur<sentences.length-1?"次の文へ":"最初の文へ"):"次のステップ";
+}
+prev.onclick=()=>{if(step>0){step--;draw()}};
+next.onclick=()=>{if(step<4){step++}else{cur=(cur+1)%sentences.length;step=0}draw()};
+draw();
+
+// quiz
+const qs=[
+  {pre:"I decided ",to:"to study abroad",post:".",ans:"O",why:"パターンA（V＋to〜）。「何を決めた？」→「留学すること」。答えになるのでO。"},
+  {pre:"She told me ",to:"to open the window",post:".",ans:"C",why:"パターンB（V＋名詞＋to〜）。「私が窓を開ける」→ 関係が成り立つのでC。"},
+  {pre:"He went to the library ",to:"to borrow a book",post:".",ans:"補足",why:"went は「何を行った？」と聞けない。消しても He went to the library. が成り立つので補足（目的「〜するために」）。"},
+  {pre:"My dream is ",to:"to become a teacher",post:".",ans:"C",why:"パターンC（be動詞＋to〜）。「私の夢 ＝ 先生になること」なのでC。"},
+  {pre:"My mother asked me ",to:"to clean my room",post:".",ans:"C",why:"パターンB。「私が部屋を掃除する」→ 関係が成り立つのでC。ask O to do＝Oに〜するよう頼む。"},
+  {pre:"I have a lot of homework ",to:"to do",post:".",ans:"補足",why:"V＋名詞＋to〜の並びだけど、「宿題がやる」は変。関係が成り立たないので補足（homework を説明している）。並びだけで決めず、必ず関係をチェック。"},
+  {pre:"I want ",to:"to see you again",post:".",ans:"O",why:"パターンA。「何を望む？」→「またあなたに会うこと」。Oの定番。"},
+  {pre:"I got up early ",to:"to catch the first train",post:".",ans:"補足",why:"got up は「何を起きた？」と聞けない。消しても文が成り立つので補足（〜するために）。"}
+];
+const quiz=document.getElementById("quiz");
+let answered=0,correct=0;
+const scoreBox=document.createElement("div");
+const colors={O:["var(--O)","var(--O-bg)"],C:["var(--C)","var(--C-bg)"],"補足":["var(--M)","var(--M-bg)"]};
+qs.forEach((q,i)=>{
+  const c=document.createElement("div");c.className="qcard";
+  c.innerHTML=`<div class="qhead"><span>Q${i+1}</span><span>パターンで判定</span></div>
+  <p class="qsent">${q.pre}<u>${q.to}</u>${q.post}</p><div class="choices"></div>`;
+  const ch=c.querySelector(".choices");
+  ["O","C","補足"].forEach(o=>{
+    const b=document.createElement("button");b.type="button";b.className="choice";b.textContent=o;
+    b.style.setProperty("--c",colors[o][0]);b.style.setProperty("--cb",colors[o][1]);
+    b.onclick=()=>{
+      ch.querySelectorAll("button").forEach(x=>x.disabled=true);
+      b.classList.add("picked");
+      const ok=o===q.ans;answered++;if(ok)correct++;
+      const fb=document.createElement("div");fb.className="fb "+(ok?"ok":"ng");
+      fb.innerHTML=`<span class="v">${ok?"正解":"答えは "+q.ans}</span><span>${q.why}</span>`;
+      c.appendChild(fb);updateScore();
+    };
+    ch.appendChild(b);
+  });
+  quiz.appendChild(c);
+});
+scoreBox.className="qcard";quiz.appendChild(scoreBox);
+function updateScore(){
+  const msg=answered<qs.length?"全問答えると結果が出ます":(correct===qs.length?"満点。もう「toが出たら何用法？」で迷わない。":correct>=6?"かなり掴めてる。間違えた問題のパターンだけ見直そう。":"POINT 3のパターンA・B・Cに戻って、もう一度だけ解き直そう。");
+  scoreBox.innerHTML=`<span class="score">${correct} / ${qs.length}</span><span class="lead">${msg}</span>`;
+}
+updateScore();
+</script>
+
+</body>
+</html>

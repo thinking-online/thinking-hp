@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英語精読｜上智大学 2024 大問2（現代の少女時代）｜THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;600;700;900&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#16263f; --navy2:#22344f; --navy-ink:#0f1c30;
+  --gold:#b8954a; --gold-d:#8f7031; --gold-soft:#f3ecda;
+  --verm:#c8431f; --verm-d:#9e3417; --verm-soft:#fbe9e2;
+  --teal:#1f6b5c; --teal-d:#155346; --teal-soft:#e2f1ed;
+  --blue:#2f5c86; --blue-soft:#e7eef6;
+  --ink:#232830; --muted:#6c6a61; --faint:#9a978c;
+  --paper:#faf7f0; --surface:#ffffff; --surface2:#f5f1e8;
+  --line:#e6dfce; --line2:#d8cfb8;
+  --ok:#1f6b5c; --ng:#c8431f;
+  --shadow:0 1px 2px rgba(22,38,63,.05),0 8px 24px rgba(22,38,63,.06);
+}
+html{scroll-behavior:smooth;}
+body{font-family:"Noto Sans JP",sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;font-size:15.5px;-webkit-font-smoothing:antialiased;padding-bottom:60px;}
+.en{font-family:"Zilla Slab",serif;font-weight:600;letter-spacing:.01em;}
+em{font-style:normal;color:var(--verm);font-weight:600;}
+strong{font-weight:700;}
+
+/* HEADER */
+.top{position:sticky;top:0;z-index:200;background:var(--navy);color:#f4efe3;border-bottom:2px solid var(--gold);}
+.top-in{max-width:1080px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.mark{width:40px;height:40px;border-radius:9px;flex:none;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--navy);font-family:"Noto Serif JP",serif;font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);}
+.ttl{display:flex;flex-direction:column;line-height:1.3;}
+.ttl b{font-family:"Noto Serif JP",serif;font-size:15px;font-weight:700;letter-spacing:.02em;}
+.ttl span{font-size:10.5px;color:var(--gold);letter-spacing:.14em;font-weight:500;}
+.top-meta{margin-left:auto;font-size:10.5px;color:#c9c2b0;text-align:right;letter-spacing:.03em;}
+
+/* NAV */
+.nav{position:sticky;top:63px;z-index:190;background:rgba(250,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-in{max-width:1080px;margin:0 auto;padding:0 14px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
+.nav-in::-webkit-scrollbar{display:none;}
+.tab{flex:none;border:none;background:none;cursor:pointer;padding:12px 15px 10px;font-family:"Noto Sans JP",sans-serif;font-size:13px;font-weight:700;color:var(--muted);border-bottom:2.5px solid transparent;letter-spacing:.02em;white-space:nowrap;transition:.15s;display:flex;flex-direction:column;align-items:flex-start;gap:1px;position:relative;}
+.tab small{font-size:9px;color:var(--faint);font-weight:500;letter-spacing:.1em;}
+.tab .dot{position:absolute;top:9px;right:7px;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:0;transition:.2s;}
+.tab.done .dot{opacity:1;}
+.tab:hover{color:var(--navy);}
+.tab.on{color:var(--navy);border-bottom-color:var(--gold);}
+.tab.on small{color:var(--gold-d);}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:30px 22px 40px;}
+.panel{display:none;animation:fade .4s ease;}
+.panel.on{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.panel.on{animation:none;} html{scroll-behavior:auto;}}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold-d);text-transform:uppercase;margin-bottom:8px;}
+h1.head{font-family:"Noto Serif JP",serif;font-size:26px;font-weight:900;color:var(--navy);line-height:1.35;letter-spacing:.01em;}
+h1.head .sub{display:block;font-size:14px;font-weight:500;color:var(--muted);margin-top:8px;letter-spacing:.02em;}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold) 0,var(--gold) 46px,var(--line) 46px);margin:16px 0 26px;}
+h2.sec{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:700;color:var(--navy);margin:34px 0 14px;padding-left:13px;border-left:4px solid var(--gold);line-height:1.4;}
+h2.sec:first-child{margin-top:6px;}
+p{margin:0 0 12px;}
+p.lead{font-size:16px;color:#39404a;}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:16px;}
+.box{border-radius:11px;padding:15px 17px;margin:14px 0;font-size:14.5px;line-height:1.8;}
+.box .lab{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;padding:2px 9px;border-radius:20px;margin-bottom:7px;}
+.box.gold{background:var(--gold-soft);border:1px solid var(--line2);} .box.gold .lab{background:var(--gold);color:#fff;}
+.box.verm{background:var(--verm-soft);border:1px solid #f0cdc0;} .box.verm .lab{background:var(--verm);color:#fff;}
+.box.teal{background:var(--teal-soft);border:1px solid #bfe0d7;} .box.teal .lab{background:var(--teal);color:#fff;}
+.box.navy{background:#eef1f6;border:1px solid #d5ddea;} .box.navy .lab{background:var(--navy);color:#fff;}
+
+/* HERO (overview) */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#f3efe4;border-radius:16px;padding:30px 30px 26px;position:relative;overflow:hidden;margin-bottom:26px;}
+.hero::after{content:"設計";position:absolute;right:-6px;bottom:-24px;font-family:"Noto Serif JP",serif;font-weight:900;font-size:150px;color:rgba(184,149,74,.10);writing-mode:vertical-rl;letter-spacing:0;line-height:.8;}
+.hero .eyebrow{color:var(--gold);}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:29px;font-weight:900;line-height:1.4;position:relative;z-index:1;}
+.hero p{color:#d5cfc0;font-size:14.5px;max-width:660px;position:relative;z-index:1;margin-top:10px;}
+.thesis{position:relative;z-index:1;margin-top:16px;background:rgba(184,149,74,.14);border:1px solid rgba(184,149,74,.4);border-radius:10px;padding:11px 15px;font-size:13.5px;color:#f0e8d5;}
+.thesis b{color:var(--gold);}
+.stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1;}
+.stat b{display:block;font-family:"Zilla Slab",serif;font-size:30px;font-weight:700;color:var(--gold);line-height:1;}
+.stat span{font-size:11px;color:#c9c2b0;letter-spacing:.05em;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:720px){.grid2{grid-template-columns:1fr;}}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0 4px;}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top;}
+th{background:var(--navy);color:#f2eee2;font-weight:700;font-size:12.5px;letter-spacing:.03em;}
+tr:last-child td{border-bottom:none;}
+td.c{white-space:nowrap;font-weight:700;color:var(--navy);}
+tbody tr:nth-child(even){background:var(--surface2);}
+
+/* PARA MAP */
+.para{display:grid;grid-template-columns:52px 1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-bottom:14px;box-shadow:var(--shadow);}
+.para-n{background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:16px;gap:3px;}
+.para-n b{font-family:"Zilla Slab",serif;font-size:24px;font-weight:700;color:var(--gold);}
+.para-n span{writing-mode:vertical-rl;font-size:9.5px;letter-spacing:.14em;color:#b9c0cc;margin-top:2px;}
+.para-b{padding:15px 18px;}
+.para-b .theme{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:15px;margin-bottom:6px;}
+.para-b .theme .k{color:var(--verm);}
+.para-b p{font-size:14px;color:#3a4048;margin-bottom:8px;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.utag{font-family:"Zilla Slab",serif;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:6px;background:var(--gold-soft);color:var(--gold-d);border:1px solid var(--line2);}
+.utag.blank{background:var(--verm-soft);color:var(--verm);border-color:#f0cdc0;}
+
+/* FLOW */
+.flow{display:flex;flex-direction:column;gap:0;margin:14px 0;}
+.fnode{display:grid;grid-template-columns:34px 1fr;gap:12px;position:relative;padding-bottom:16px;}
+.fnode:not(:last-child)::before{content:"";position:absolute;left:16px;top:34px;bottom:-2px;width:2px;background:var(--line2);}
+.fdot{width:34px;height:34px;border-radius:50%;background:var(--surface);border:2px solid var(--gold);color:var(--navy);font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;z-index:1;}
+.fbody{padding-top:3px;}
+.fbody b{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:14.5px;}
+.fbody p{font-size:13.5px;color:#4a5058;margin:3px 0 0;}
+
+.sci{display:grid;grid-template-columns:1fr;gap:12px;}
+.sci .who{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:11px;padding:14px 16px;box-shadow:var(--shadow);}
+.sci .yr{font-family:"Zilla Slab",serif;font-weight:700;color:var(--gold-d);font-size:13px;text-align:right;line-height:1.4;padding-top:2px;min-width:78px;}
+.sci .yr b{display:block;font-size:15px;color:var(--navy);font-family:"Noto Serif JP",serif;}
+.sci .desc b{font-family:"Noto Serif JP",serif;color:var(--navy);}
+.sci .desc p{font-size:13.5px;color:#4a5058;margin:3px 0 0;}
+
+/* QUESTION INDEX */
+.qindex{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 22px;}
+.qjump{font-family:"Zilla Slab",serif;font-weight:700;font-size:13px;width:34px;height:34px;border-radius:8px;border:1px solid var(--line2);background:var(--surface);color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
+.qjump:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+/* QUESTION CARD */
+.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0;margin-bottom:20px;box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:120px;}
+.q-head{display:flex;align-items:center;gap:12px;padding:15px 20px;background:var(--surface2);border-bottom:1px solid var(--line);flex-wrap:wrap;}
+.q-no{font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;background:var(--navy);color:#fff;width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex:none;}
+.q-focus{flex:1;min-width:180px;}
+.q-focus .lbl{font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--gold-d);}
+.q-focus .en{display:block;font-size:15px;color:var(--navy);line-height:1.5;}
+.q-type{font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:20px;background:#fff;border:1px solid var(--line2);color:var(--muted);letter-spacing:.03em;flex:none;}
+.q-body{padding:18px 20px;}
+.q-body .askjp{font-size:13.5px;color:var(--muted);margin-bottom:12px;}
+
+.choices{display:flex;flex-direction:column;gap:8px;margin-bottom:6px;}
+.ch{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;text-align:left;width:100%;background:var(--surface);border:1.5px solid var(--line2);border-radius:10px;padding:11px 13px;cursor:pointer;font-family:inherit;font-size:14px;color:var(--ink);line-height:1.6;transition:.15s;}
+.ch:hover{border-color:var(--gold);background:#fffdf8;}
+.ch .num{font-family:"Zilla Slab",serif;font-weight:700;color:var(--navy);font-size:15px;width:26px;height:26px;border-radius:6px;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex:none;}
+.ch .mk{font-weight:900;font-size:17px;opacity:0;flex:none;width:20px;text-align:center;}
+.ch.reveal{cursor:default;}
+.ch.reveal.correct{border-color:var(--ok);background:#eef7f4;}
+.ch.reveal.correct .mk{opacity:1;color:var(--ok);}
+.ch.reveal.correct .num{background:var(--ok);color:#fff;}
+.ch.reveal.wrong{border-color:#e9d5cd;background:#fdf6f3;color:#7a6b64;}
+.ch.reveal.wrong .mk{opacity:1;color:var(--ng);}
+.ch.picked{box-shadow:0 0 0 2px var(--navy) inset;}
+
+.reveal-btn{margin-top:12px;background:var(--navy);color:#fff;border:none;border-radius:9px;padding:10px 18px;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;letter-spacing:.03em;transition:.15s;}
+.reveal-btn:hover{background:var(--navy2);}
+
+.solution{display:none;margin-top:16px;border-top:1px dashed var(--line2);padding-top:16px;}
+.solution.show{display:block;animation:fade .3s;}
+.ans-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-soft);border:1px solid var(--gold);border-radius:9px;padding:7px 14px;font-weight:700;color:var(--navy);font-size:14px;margin-bottom:12px;}
+.ans-badge .c{font-family:"Zilla Slab",serif;font-size:18px;color:var(--verm);font-weight:700;}
+
+/* EVIDENCE BOX (根拠) */
+.ev{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;}
+.ev-hd{background:var(--navy);color:#f2eee2;padding:7px 14px;font-size:10.5px;font-weight:700;letter-spacing:.1em;display:flex;align-items:center;gap:8px;}
+.ev-hd::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.ev-bd{padding:12px 15px;font-size:13.5px;line-height:1.8;}
+.ev-q{font-family:"Zilla Slab",serif;font-style:italic;color:var(--navy);background:var(--surface2);padding:9px 13px;border-radius:8px;border-left:3px solid var(--gold);margin-bottom:8px;font-size:13.5px;line-height:1.7;}
+.ev-q .h{background:#fbe9c9;font-style:normal;font-weight:700;padding:0 3px;border-radius:3px;color:var(--navy-ink);}
+
+/* CHOICE ANALYSIS */
+.chy-h{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;margin:14px 0 7px;}
+.ca-row{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:9px;margin-bottom:6px;overflow:hidden;}
+.ca-mark{flex:none;width:34px;display:flex;align-items:center;justify-content:center;font-family:"Zilla Slab",serif;font-size:16px;font-weight:700;color:#fff;}
+.ca-mark.ok{background:var(--ok);} .ca-mark.ng{background:var(--ng);}
+.ca-bd{padding:9px 13px;font-size:13px;line-height:1.75;flex:1;}
+.ca-bd .k{font-weight:700;} .ca-bd .k.o{color:var(--teal-d);} .ca-bd .k.x{color:var(--verm-d);}
+
+/* CALLOUTS */
+.co{border-radius:9px;padding:11px 14px;margin:10px 0;font-size:13.5px;line-height:1.78;}
+.co .co-lbl{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px;}
+.co.nav{background:var(--blue-soft);border-left:3px solid var(--navy);} .co.nav .co-lbl{color:var(--navy);}
+.co.gold{background:var(--gold-soft);border-left:3px solid var(--gold);} .co.gold .co-lbl{color:var(--gold-d);}
+.co.teal{background:var(--teal-soft);border-left:3px solid var(--teal);} .co.teal .co-lbl{color:var(--teal-d);}
+.co.verm{background:var(--verm-soft);border-left:3px solid var(--verm);} .co.verm .co-lbl{color:var(--verm-d);}
+
+/* DESCRIPTIVE */
+.desc-write{background:var(--teal-soft);border:1px solid #bfe0d7;border-radius:10px;padding:14px 16px;margin:6px 0;}
+.desc-write .modelans{font-family:"Noto Serif JP",serif;font-weight:600;color:var(--navy);font-size:15px;line-height:1.7;padding:8px 12px;background:#fff;border-radius:8px;border:1px solid #bfe0d7;margin:6px 0;}
+.desc-write .cnt{font-family:"Zilla Slab",serif;font-size:11px;color:var(--teal);font-weight:700;float:right;}
+
+/* READING MAP */
+.tmap{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow);}
+.tmap .h{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.tmap .h b{font-family:"Zilla Slab",serif;font-size:20px;color:var(--gold);}
+.tmap .h span{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:15px;}
+.tmap .key{font-size:11px;font-weight:700;color:var(--gold-d);letter-spacing:.05em;margin:10px 0 4px;}
+.tmap ul{margin:0;padding-left:20px;}
+.tmap li{font-size:13.5px;color:#3a4048;margin-bottom:5px;line-height:1.7;}
+.tmap li em{color:var(--verm);}
+.qbadge{font-family:"Zilla Slab",serif;font-size:10.5px;font-weight:700;color:#fff;background:var(--navy);padding:1px 7px;border-radius:5px;margin-left:4px;}
+
+/* SUMMARY */
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px;margin:14px 0;}
+.acell{background:var(--surface);border:1px solid var(--line2);border-radius:9px;padding:8px;text-align:center;box-shadow:var(--shadow);}
+.acell .qn{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.05em;}
+.acell .av{font-family:"Zilla Slab",serif;font-size:19px;font-weight:700;color:var(--verm);line-height:1.2;}
+.acell.txt .av{font-size:12px;color:var(--navy);font-family:"Noto Sans JP";font-weight:700;line-height:1.35;}
+.route{display:grid;grid-template-columns:36px 1fr;gap:12px;margin-bottom:12px;}
+.route .rn{width:36px;height:36px;border-radius:9px;background:var(--gold-soft);border:1px solid var(--line2);color:var(--gold-d);font-family:"Zilla Slab",serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex:none;}
+.route b{color:var(--navy);font-family:"Noto Serif JP",serif;}
+.route p{font-size:13.5px;color:#4a5058;margin:2px 0 0;}
+
+/* PANEL NAV */
+.pnav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);flex-wrap:wrap;}
+.btnp{display:inline-flex;align-items:center;gap:6px;padding:11px 22px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.15s;}
+.btnp:hover{background:var(--navy2);}
+.btns{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:var(--surface);color:var(--navy);border:1px solid var(--line2);border-radius:10px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:.15s;}
+.btns:hover{background:var(--surface2);}
+.pnav .sp{flex:1;}
+
+/* FOOTER */
+.foot{border-top:1px solid var(--line);margin-top:40px;padding:22px 22px 6px;text-align:center;color:var(--muted);font-size:12px;}
+.foot a{color:var(--gold-d);text-decoration:none;font-weight:700;}
+.foot .brand{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:13.5px;letter-spacing:.03em;}
+.foot .cr{font-size:10.5px;color:var(--faint);margin-top:6px;}
+
+.jump-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(22,38,63,.28);font-size:18px;z-index:150;display:none;}
+.jump-top.show{display:block;}
+
+@media (max-width:600px){
+  body{font-size:15px;}
+  .wrap{padding:22px 16px 30px;}
+  h1.head{font-size:21px;} .hero h1{font-size:22px;}
+  .q-head{padding:13px 15px;} .q-body{padding:15px;}
+  .ch{grid-template-columns:26px 1fr auto;font-size:13.5px;}
+}
+
+/* ===== 記述問題 専用コンポーネント ===== */
+.dsteps{margin:14px 0 6px;}
+.dstep{display:grid;grid-template-columns:32px 1fr;gap:12px;position:relative;padding-bottom:14px;}
+.dstep:not(:last-child)::before{content:"";position:absolute;left:15px;top:32px;bottom:0;width:2px;background:var(--line2);}
+.dstep .dn{width:32px;height:32px;border-radius:8px;background:var(--navy);color:#fff;font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;z-index:1;flex:none;}
+.dstep .db{padding-top:2px;}
+.dstep .db b{display:block;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:14px;margin-bottom:2px;}
+.dstep .db p{font-size:13.5px;color:#414851;margin:0;line-height:1.75;}
+.dstep .db .cite{font-family:"Zilla Slab",serif;font-style:italic;background:var(--surface2);border-left:3px solid var(--gold);border-radius:6px;padding:7px 11px;margin-top:6px;font-size:13px;color:var(--navy);line-height:1.7;}
+.dstep .db .cite .h{background:#fbe9c9;font-style:normal;font-weight:700;padding:0 3px;border-radius:3px;}
+
+.model{background:linear-gradient(160deg,#eef7f4,#e2f1ed);border:1px solid #bfe0d7;border-radius:11px;padding:15px 17px;margin:12px 0;}
+.model .mlab{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--teal-d);margin-bottom:7px;}
+.model .mtext{font-family:"Noto Serif JP",serif;font-weight:600;color:var(--navy);font-size:15.5px;line-height:1.9;background:#fff;border-radius:8px;padding:11px 14px;border:1px solid #bfe0d7;}
+.model .mtext + .mtext{margin-top:8px;}
+.model .mnote{font-size:12.5px;color:var(--teal-d);margin-top:8px;line-height:1.7;}
+
+/* ルーブリック（要素点・自己採点） */
+.rub{border:1px solid var(--line);border-radius:11px;overflow:hidden;margin:12px 0;background:var(--surface);}
+.rub-hd{background:var(--gold);color:#fff;padding:8px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.rub-hd .sc{background:rgba(255,255,255,.22);border-radius:20px;padding:2px 11px;font-family:"Zilla Slab",serif;font-size:13px;font-weight:700;white-space:nowrap;}
+.rub-row{display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:flex-start;padding:11px 14px;border-bottom:1px solid var(--line);cursor:pointer;transition:.15s;}
+.rub-row:last-child{border-bottom:none;}
+.rub-row:hover{background:#fffdf8;}
+.rub-row.on{background:var(--teal-soft);}
+.rub-cb{width:20px;height:20px;border-radius:5px;border:2px solid var(--line2);background:#fff;flex:none;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;transition:.15s;}
+.rub-row.on .rub-cb{background:var(--teal);border-color:var(--teal);}
+.rub-row.on .rub-cb::after{content:"✓";}
+.rub-el{font-size:13.5px;line-height:1.7;}
+.rub-el b{color:var(--navy);}
+.rub-el .must{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 7px;border-radius:20px;background:var(--verm);color:#fff;margin-left:6px;vertical-align:1px;}
+.rub-el .plus{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 7px;border-radius:20px;background:var(--surface2);color:var(--muted);border:1px solid var(--line2);margin-left:6px;vertical-align:1px;}
+.rub-pt{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;color:var(--gold-d);white-space:nowrap;padding-top:1px;}
+.rub-foot{padding:9px 14px;background:var(--surface2);font-size:12px;color:var(--muted);border-top:1px solid var(--line);}
+
+/* NG解答例 */
+.ng{background:var(--verm-soft);border:1px solid #f0cdc0;border-radius:11px;padding:14px 16px;margin:12px 0;}
+.ng .nlab{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--verm-d);margin-bottom:8px;}
+.ng-row{display:grid;grid-template-columns:auto 1fr;gap:10px;margin-bottom:9px;align-items:flex-start;}
+.ng-row:last-child{margin-bottom:0;}
+.ng-row .x{color:var(--verm);font-weight:900;font-size:14px;line-height:1.6;flex:none;}
+.ng-row .nb{font-size:13.5px;line-height:1.75;}
+.ng-row .nb .bad{display:block;font-family:"Noto Serif JP",serif;color:var(--verm-d);background:#fff;border:1px dashed #e5b8a6;border-radius:6px;padding:6px 10px;margin-bottom:4px;font-size:13.5px;}
+.ng-row .nb .why{color:#6b5c56;font-size:12.5px;}
+
+/* 語尾テンプレ表 */
+.mtx{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 6px;}
+.mtx th,.mtx td{border:1px solid var(--line2);padding:10px 12px;vertical-align:middle;}
+.mtx thead th{background:var(--navy);color:#f2eee2;font-weight:700;font-size:12.5px;}
+.mtx td.cond{background:var(--surface2);font-weight:700;color:var(--navy);font-size:12.5px;white-space:nowrap;}
+.mtx td.tr{background:#fdf6f3;} .mtx td.so{background:#eef7f4;}
+
+/* 対比マトリクス */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:720px){.vs{grid-template-columns:1fr;}}
+.vs-col{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);}
+.vs-hd{padding:11px 15px;color:#fff;font-family:"Noto Serif JP",serif;font-weight:700;font-size:15px;}
+.vs-hd small{display:block;font-family:"Zilla Slab",serif;font-size:11px;font-weight:600;opacity:.8;letter-spacing:.05em;}
+.vs-col.t .vs-hd{background:var(--verm);} .vs-col.s .vs-hd{background:var(--teal);}
+.vs-bd{background:var(--surface);padding:13px 15px;}
+.vs-bd .r{font-size:13.5px;line-height:1.7;padding:7px 0;border-bottom:1px dashed var(--line);}
+.vs-bd .r:last-child{border-bottom:none;}
+.vs-bd .r b{display:block;font-size:10.5px;letter-spacing:.06em;color:var(--faint);font-weight:700;margin-bottom:1px;}
+
+/* ===== 対訳（全訳マップ）― 中央大版レイアウト準拠 ===== */
+.tr-sec{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--faint);margin:26px 0 10px;display:flex;align-items:center;gap:9px;}
+.tr-sec::before{content:"";width:26px;height:1px;background:var(--line2);}
+.tr-sec::after{content:"";flex:1;height:1px;background:var(--line2);}
+.tr-sec b{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:14px;font-weight:700;letter-spacing:.02em;}
+.tr-row{display:grid;grid-template-columns:1fr;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-bottom:12px;box-shadow:var(--shadow);}
+.tr-en{font-family:"Zilla Slab",serif;font-size:14px;line-height:1.95;padding:15px 18px;background:var(--surface);color:var(--ink);}
+.tr-jp{font-family:"Noto Sans JP",sans-serif;font-size:13.5px;line-height:2;padding:15px 18px;background:var(--surface2);color:var(--ink);border-top:1px solid var(--line);}
+.tr-en em,.tr-jp em{color:var(--verm);font-weight:600;}
+.tr-en .ul{border-bottom:1.5px solid var(--gold);padding-bottom:1px;font-weight:700;}
+.tr-en .uln{font-size:9px;font-weight:700;color:var(--gold-d);vertical-align:super;margin-right:1px;line-height:0;font-family:"Noto Sans JP",sans-serif;}
+.tr-slot{min-height:74px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-family:"Noto Sans JP",sans-serif;font-size:12.5px;text-align:center;border:1px dashed var(--line2);border-radius:8px;background:#fdfbf6;padding:12px;line-height:1.7;}
+.tr-jp .tr-slot{background:#f2eee4;}
+.tr-points{margin:0 0 22px;padding:12px 15px;background:var(--gold-soft);border-radius:9px;border-left:3px solid var(--gold);font-size:13px;line-height:1.8;}
+.tr-points .pl{font-size:9.5px;font-weight:700;letter-spacing:.09em;color:var(--gold-d);margin-bottom:4px;}
+.tr-points ul{margin:0;padding-left:18px;}
+.tr-points li{margin-bottom:4px;}
+.tr-points li b{color:var(--navy);}
+.tr-points li em{color:var(--verm);font-weight:600;}
+@media(min-width:760px){
+  .tr-row{grid-template-columns:1fr 1fr;}
+  .tr-jp{border-top:none;border-left:1px solid var(--line);}
+}
+/* 貼り付けパネル */
+.paste{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:20px;box-shadow:var(--shadow);}
+.paste h4{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:15px;margin-bottom:6px;}
+.paste p{font-size:13px;color:var(--muted);margin-bottom:10px;}
+.paste .pgrid{display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:760px){.paste .pgrid{grid-template-columns:1fr 1fr;}}
+.paste label{display:block;font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--gold-d);margin-bottom:4px;}
+.paste textarea{width:100%;min-height:110px;border:1px solid var(--line2);border-radius:9px;padding:10px 12px;font-family:inherit;font-size:13px;line-height:1.7;resize:vertical;background:var(--paper);color:var(--ink);}
+.paste textarea:focus{outline:none;border-color:var(--gold);background:#fff;}
+.paste .prow{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.paste .msg{font-size:12.5px;color:var(--teal-d);font-weight:700;}
+
+/* ===== 和訳のみ 1カラム表示 ===== */
+.jpbox{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:6px 20px 14px;margin-bottom:12px;box-shadow:var(--shadow);}
+.jpline{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:start;}
+.jpline:last-child{border-bottom:none;}
+.jpline .n{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;color:var(--gold-d);background:var(--gold-soft);border:1px solid var(--line2);border-radius:6px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+.jpline .s{font-size:14.5px;line-height:2;color:var(--ink);}
+.jpline .s em{color:var(--verm);font-weight:600;font-style:normal;}
+
+/* ===== 同志社 追加：正答率バッジ・整序・内容一致 ===== */
+.rate{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;}
+.rate.low{background:var(--verm);color:#fff;}
+.rate.mid{background:var(--gold);color:#fff;}
+.rate.hi{background:var(--teal-soft);color:var(--teal-d);border:1px solid #bfe0d7;}
+.ratebar{height:5px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:5px;}
+.ratebar i{display:block;height:100%;border-radius:3px;}
+.ratebar i.low{background:var(--verm);} .ratebar i.mid{background:var(--gold);} .ratebar i.hi{background:var(--teal);}
+
+/* 語句整序 */
+.pool{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0;}
+.pw{font-family:"Zilla Slab",serif;font-weight:600;font-size:14px;padding:6px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--line2);color:var(--navy);}
+.pw.used{background:var(--teal-soft);border-color:var(--teal);color:var(--teal-d);}
+.pw.unused{opacity:.45;text-decoration:line-through;}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.slot{border:1.5px solid var(--line2);border-radius:9px;padding:8px 12px;text-align:center;background:var(--surface);min-width:88px;}
+.slot .k{font-size:10.5px;font-weight:700;color:var(--muted);}
+.slot .v{font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;color:var(--navy);}
+.slot.hit{border-color:var(--verm);background:var(--verm-soft);}
+.slot.hit .k{color:var(--verm-d);} .slot.hit .v{color:var(--verm-d);}
+.full{background:var(--navy);color:#f2eee2;border-radius:10px;padding:13px 16px;margin:10px 0;font-family:"Zilla Slab",serif;font-size:15px;line-height:1.8;}
+.full b{color:var(--gold);}
+.full .jp{display:block;font-family:"Noto Sans JP",sans-serif;font-size:13.5px;color:#c9c2b0;margin-top:7px;}
+.full .jp b{color:#fff;}
+
+/* 内容一致 8択 */
+.mi{border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-bottom:9px;background:var(--surface);}
+.mi-h{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:11px 13px;cursor:pointer;transition:.15s;}
+.mi-h:hover{background:#fffdf8;}
+.mi .num{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;width:28px;height:28px;border-radius:7px;background:var(--surface2);color:var(--navy);display:flex;align-items:center;justify-content:center;}
+.mi .st{font-size:13.5px;line-height:1.7;}
+.mi .mk{font-weight:900;font-size:16px;width:22px;text-align:center;opacity:0;}
+.mi.on.ok{border-color:var(--ok);} .mi.on.ok .mi-h{background:#eef7f4;} .mi.on.ok .num{background:var(--ok);color:#fff;} .mi.on.ok .mk{opacity:1;color:var(--ok);}
+.mi.on.ng{border-color:#e9d5cd;} .mi.on.ng .mi-h{background:#fdf6f3;} .mi.on.ng .mk{opacity:1;color:var(--ng);}
+.mi-d{display:none;padding:0 13px 12px;border-top:1px dashed var(--line);}
+.mi.on .mi-d{display:block;padding-top:11px;}
+.mi-d .src{font-size:12.5px;color:var(--muted);background:var(--surface2);border-left:3px solid var(--gold);border-radius:6px;padding:8px 11px;margin-bottom:7px;line-height:1.7;}
+.mi-d .jd{font-size:13px;line-height:1.75;}
+
+
+/* ===== 会話フロー表示（大問2） ===== */
+.conv{margin:14px 0;}
+.cturn{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);align-items:start;}
+.cturn:last-child{border-bottom:none;}
+.cturn .who{font-family:"Zilla Slab",serif;font-weight:700;font-size:13px;color:#fff;background:var(--navy);border-radius:6px;padding:3px 0;text-align:center;height:fit-content;}
+.cturn.john .who{background:var(--blue,#2f5c86);}
+.cturn.sarah .who{background:var(--verm);}
+.cturn.david .who{background:var(--teal);}
+.cturn.setup .who{background:var(--gold);}
+.cturn .say{font-size:14px;line-height:1.85;color:var(--ink);}
+.cturn .say b{background:#fbe9c9;color:var(--navy);padding:0 3px;border-radius:3px;font-weight:700;}
+.cturn .memo{display:block;margin-top:4px;font-size:11.5px;color:var(--gold-d);font-weight:700;}
+.cturn.setup{background:var(--surface2);border-radius:9px;padding:11px 13px;border-bottom:none;margin-bottom:6px;}
+.cturn.setup .say{font-size:13px;color:var(--muted);}
+
+
+/* ==== ダークモード無効化：端末がダークでも文字が消えないよう配色を固定 ==== */
+:root{ color-scheme: light; }
+@media (prefers-color-scheme: dark){
+  :root{
+    --navy:#16263f; --navy2:#22344f; --navy-ink:#0f1c30;
+    --gold:#b8954a; --gold-d:#8f7031; --gold-soft:#f3ecda;
+    --verm:#c8431f; --verm-d:#9e3417; --verm-soft:#fbe9e2;
+    --teal:#1f6b5c; --teal-d:#155346; --teal-soft:#e2f1ed;
+    --blue:#2f5c86; --blue-soft:#e7eef6;
+    --ink:#232830; --muted:#6c6a61; --faint:#9a978c;
+    --paper:#faf7f0; --surface:#ffffff; --surface2:#f5f1e8;
+    --line:#e6dfce; --line2:#d8cfb8;
+    --ok:#1f6b5c; --ng:#c8431f;
+  }
+  html, body{ background:var(--paper) !important; color:var(--ink) !important; }
+  /* 明るいセル上の本文は必ず濃色に固定（白文字化による消失を防ぐ） */
+  table, .mtx, .mtx td, .mtx th tbody tr, .box, .para, .para-b, .tr-points, .jpbox,
+  .q, .ch, .ev, .ca-row, .rub, .conv, .cturn, .theme, p, li, span, td, div{
+    -webkit-text-fill-color: currentColor;
+  }
+  .mtx td{ color:var(--ink); }
+  .mtx tbody tr:nth-child(even){ background:var(--surface2); }
+  .box.navy{ background:#eef1f6; }
+}
+
+
+/* ==== 文字消え防止：明色背景セル・本文の文字色を濃色で明示固定 ==== */
+.mtx td{ color:var(--ink); }                 /* 通常セル（2・3列目）を濃紺で固定 */
+.mtx td.cond{ color:var(--navy); }
+.mtx td.tr, .mtx td.so{ color:var(--ink); }
+.mtx td b, .mtx td strong{ color:var(--navy); }   /* 表内の太字も濃色 */
+.box{ color:var(--ink); }                    /* 明色ボックス本文 */
+.box.navy{ color:var(--ink); }
+.para-b, .para-b p, .theme{ color:var(--ink); }
+.para-b .theme{ color:var(--navy); }
+.tr-points, .tr-points li, .tr-points ul{ color:var(--ink); }
+.jpbox, .jpline .s{ color:var(--ink); }
+.conv .say{ color:var(--ink); }
+.route > div{ color:var(--ink); }
+.q, .ch{ color:var(--ink); }
+/* 濃色背景に乗る白系文字は従来どおり（ここで上書きしない） */
+
+
+/* ==== 表セルの背景・文字色をセル自身に直接固定（透過事故を根絶） ==== */
+.mtx thead th{ background:var(--navy) !important; color:#f2eee2 !important; }
+.mtx tbody td{ background:var(--surface) !important; color:var(--ink) !important; }
+.mtx tbody tr:nth-child(even) td{ background:var(--surface2) !important; }
+.mtx tbody td.cond{ background:var(--surface2) !important; color:var(--navy) !important; }
+.mtx tbody td b, .mtx tbody td strong{ color:var(--navy) !important; }
+@media (prefers-color-scheme: dark){
+  .mtx thead th{ background:var(--navy) !important; color:#f2eee2 !important; }
+  .mtx tbody td{ background:var(--surface) !important; color:var(--ink) !important; }
+  .mtx tbody tr:nth-child(even) td{ background:var(--surface2) !important; }
+  .mtx tbody td.cond{ background:var(--surface2) !important; color:var(--navy) !important; }
+  .mtx tbody td b, .mtx tbody td strong{ color:var(--navy) !important; }
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="mark">上</div>
+    <div class="ttl"><b>英語精読・完全解説</b><span>上智大学 2024 ／ 大問2</span></div>
+    <div class="top-meta">現代の少女時代（The Economist）<br>本試験10問＋発展5問</div>
+  </div>
+</header>
+<nav class="nav">
+  <div class="nav-in">
+    <button class="tab on" data-p="0"><span class="dot"></span><small>STRATEGY</small>この英文の攻略</button>
+    <button class="tab" data-p="1"><span class="dot"></span><small>MAP</small>英文マップ</button>
+    <button class="tab" data-p="2"><span class="dot"></span><small>CORE</small>核心の転換</button>
+    <button class="tab" data-p="3"><span class="dot"></span><small>11–14</small>設問 前半</button>
+    <button class="tab" data-p="4"><span class="dot"></span><small>15–17</small>設問 中盤</button>
+    <button class="tab" data-p="5"><span class="dot"></span><small>18–20</small>設問 後半</button>
+    <button class="tab" data-p="6"><span class="dot"></span><small>READING</small>全訳</button>
+    <button class="tab" data-p="7"><span class="dot"></span><small>ORIGINAL</small>発展5問</button>
+    <button class="tab" data-p="8"><span class="dot"></span><small>REVIEW</small>総まとめ</button>
+  </div>
+</nav>
+<div class="wrap">
+<section class="panel on" id="p0">
+  <div class="hero">
+    <div class="eyebrow">Reading Strategy</div>
+    <h1>「女の子であること」は、<br>もう男の子の反対語ではない。<br>定義が変わった、という話。</h1>
+    <p>オランダの屋上でタピオカティーを飲む二人の少女から始まり、統計と研究を挟んで、また同じ少女に戻って終わる。その間に描かれるのは、<em>少女時代（girlhood）という経験そのものが作り替えられてきた過程</em>だ。<u>かつて少女時代は「少年時代の反対」として定義されていた</u>――男の子が意地悪なときに優しく、うるさいときに静かに。<b>その引き算の定義から、それ自体として成り立つものへ</b>。この転換を掴めば、10の設問が一本の線で並ぶ。</p>
+    <div class="thesis"><b>この記事の骨格：</b>①かつてない少女時代が始まっている。②その核心は<u>対比による定義からの脱却</u>。③友情・投資・育て方が少女に有利に働く。④<u>皮肉にも、少女を縛った古い扱いが今や武器になった</u>。⑤さらに少女は<u>親を変える主体</u>でもある。⑥虚構では昔から勇敢だった少女が、現実でも声を持ち始めた。⑦ただし<u>高い期待は重荷でもある</u>。⑧結末――you は複数形だと気づいた瞬間、不安が自信に変わる。</div>
+    <div class="stats">
+      <div class="stat"><b>15</b><span>段落構成</span></div>
+      <div class="stat"><b>10</b><span>本試験設問</span></div>
+      <div class="stat"><b>5</b><span>発展問題</span></div>
+      <div class="stat"><b>49</b><span>全訳の文数</span></div>
+    </div>
+  </div>
+  <h2 class="sec">設問タイプと攻め方</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:20%">タイプ</th><th style="width:22%">該当設問</th><th>攻め方</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">指示語・下線部</td><td>(11) (12) (16)</td><td><b>直前・直後が答えを決める</b>。(11)＝直前の否定文／(12)＝直後の歴史説明／(16)＝直後の引用。</td></tr>
+      <tr><td class="cond">理由・推論</td><td>(13) (15) (18)</td><td><b>根拠の一文を指す</b>。(13)は<u>二文を結んで因果を作る</u>のがポイント。</td></tr>
+      <tr><td class="cond">不一致（NOT）</td><td>(14)</td><td><b>言及のある三つを消す</b>。残る(b)は<u>本文が明示的に否定した内容</u>。</td></tr>
+      <tr><td class="cond">引用の機能</td><td>(17)</td><td><b>挙げられたのは作家ではなく作中人物</b>。何を証明するための例かを問う。</td></tr>
+      <tr><td class="cond">誤解の特定・主旨</td><td>(19) (20)</td><td>(19)＝<b>By myself? が誤解の種類を示す</b>。(20)＝<b>第3〜4段落の主題文に帰着</b>。</td></tr>
+    </tbody>
+  </table>
+  <div class="box gold" style="margin-top:20px;"><span class="lab">この解説の構成</span>
+    <strong>本試験10問の完全解説</strong>に加えて、<strong>THINKINGオリジナルの発展5問</strong>（早慶・上智上位レベル／選択肢すべて英語）を収録しています。<u>本試験は「該当箇所を正確に読む力」、発展問題は「記事全体を一本の構成として掌握する力」</u>を測ります。<em>誤答にはすべて「なぜダメか」＋「どんな読み方をした人が選ぶか」</em>を記しました。</div>
+  <div class="pnav"><span class="sp"></span><button class="btnp" data-go="1">英文マップへ進む →</button></div>
+</section><section class="panel" id="p1">
+  <div class="eyebrow">Passage Map</div>
+  <h1 class="head">英文マップ ― 15段落の流れと設問の在りか<span class="sub">「二人の少女→枠組み→核心→証拠の積み上げ→逆説→反転→歴史→現在→留保→同じ少女に戻る」という円環構造。</span></h1>
+  <div class="rule"></div><div class="para"><div class="para-n"><b>1</b><span>導入</span></div><div class="para-b">
+      <div class="theme">屋上の二人</div><p>廃ビルの屋上、タピオカティー、ヴィンテージジーンズ。ドーラの好きな歌手は<em>「思っていることをはっきり言うから」</em>＝<u>speak up の伏線</u>。</p><div class="tags"><span class="utag" style="opacity:.5">—</span></div></div></div><div class="para"><div class="para-n"><b>2</b><span>現状</span></div><div class="para-b">
+      <div class="theme">「それは別の時代の話」</div><p>TikTokで場所を知り、抗議活動に抜け出す。<em>女の子だからできないことがあるとは思わない</em>。それを「別の時代のもの」と退ける。</p><div class="tags"><span class="utag">設問(11)</span></div></div></div><div class="para"><div class="para-n"><b>3</b><span>枠組み</span></div><div class="para-b">
+      <div class="theme">かつてない少女時代</div><p>母の世代の平等化、ソーシャルメディア、少女時代の観念の変化。<u>a girlhood like none before＝記事全体の宣言</u>。</p><div class="tags"><span class="utag" style="opacity:.5">—</span></div></div></div><div class="para"><div class="para-n"><b>4</b><span>核心</span></div><div class="para-b">
+      <div class="theme">対比による定義からの脱却</div><p><em>女の子であることがそれ自体で一つのもの</em>に。かつては「男の子が意地悪なとき優しく」＝<u>引き算の定義</u>。今は幅広く柔軟。</p><div class="tags"><span class="utag">設問(12)</span></div></div></div><div class="para"><div class="para-n"><b>5</b><span>友情</span></div><div class="para-b">
+      <div class="theme">少女同士の絆</div><p>女性同士の友情はより親密で支え合う。<u>少年は10代で離れるが、少女はいっそう近づく</u>。次段落の伏線。</p><div class="tags"><span class="utag" style="opacity:.5">—</span></div></div></div><div class="para"><div class="para-n"><b>6</b><span>検証</span></div><div class="para-b">
+      <div class="theme">ロックダウンで最もつらかったこと</div><p><em>友達に会えないことが最もつらい</em>（家族の緊張やオンライン授業を上回る）。そして<u>少女のほうが苦しんだ</u>。</p><div class="tags"><span class="utag">設問(13)</span></div></div></div><div class="para"><div class="para-n"><b>7</b><span>投資</span></div><div class="para-b">
+      <div class="theme">支出の逆転</div><p>1970年代は少年に多く→2017年に差が消失→<em>今は少女のほうが多い</em>（家庭教師・画材・音楽）。</p><div class="tags"><span class="utag">設問(14)</span></div></div></div><div class="para"><div class="para-n"><b>8</b><span>逆説</span></div><div class="para-b">
+      <div class="theme">古いステレオタイプが利点に</div><p><em>皮肉にも</em>、読み聞かせ・歌・感情の会話が<u>ソフトスキル重視の時代に優位を生む</u>。余暇が少ないのは<u>家事のせいではない</u>。</p><div class="tags"><span class="utag">設問(14)</span></div></div></div><div class="para"><div class="para-n"><b>9</b><span>反転</span></div><div class="para-b">
+      <div class="theme">娘が親を変える</div><p><em>娘は親の価値観も変える</em>。父親の伝統的態度が減り、家事分担が増え、<u>ビジネスマンは女性のキャリアを支援</u>。</p><div class="tags"><span class="utag">設問(15)</span></div></div></div><div class="para"><div class="para-n"><b>10</b><span>摩擦</span></div><div class="para-b">
+      <div class="theme">テクノロジーをめぐる溝</div><p>親は<em>あまりに一方的</em>。ドラマ・気晴らし・中毒という否定面ばかり見る。<u>でも刺激的でもある</u>とフランキー。</p><div class="tags"><span class="utag">設問(16)</span></div></div></div><div class="para"><div class="para-n"><b>11</b><span>歴史</span></div><div class="para-b">
+      <div class="theme">虚構と現実のずれ</div><p><em>虚構では長らく勇敢で率直</em>（ジェーン・エア、クローディア）。<u>しかし現実の少女は10代で沈黙した</u>――好かれるための圧力で。</p><div class="tags"><span class="utag">設問(17)</span><span class="utag">設問(18)</span></div></div></div><div class="para"><div class="para-n"><b>12</b><span>現在</span></div><div class="para-b">
+      <div class="theme">声を上げる道具</div><p><em>教育・インターネット・家を出る自由</em>を得た今、声が聞かれると学ぶ。<u>世界を良くしたい、リーダーになりたい</u>。</p><div class="tags"><span class="utag" style="opacity:.5">—</span></div></div></div><div class="para"><div class="para-n"><b>13</b><span>留保</span></div><div class="para-b">
+      <div class="theme">高い期待という重荷</div><p><em>高い期待は間違いなくリスク</em>。<u>良い行い・良い外見・良い人柄</u>という三重のプレッシャー。</p><div class="tags"><span class="utag" style="opacity:.5">—</span></div></div></div><div class="para"><div class="para-n"><b>14</b><span>場面</span></div><div class="para-b">
+      <div class="theme">フランキーのパニック</div><p>「世界を変えられると思う?」→<em>「私一人で? ああ無理」</em>。<u>第13段落の重荷の実例</u>。</p><div class="tags"><span class="utag">設問(19)</span></div></div></div><div class="para"><div class="para-n"><b>15</b><span>結末</span></div><div class="para-b">
+      <div class="theme">複数形だと気づく</div><p><em>you は複数形</em>だと気づく。「女の子たち全員ね」と<u>安堵のため息</u>。「もちろん私たちならできます」。</p><div class="tags"><span class="utag">設問(20)</span></div></div></div><div class="box navy"><span class="lab">円環構造が意味を生む</span>
+  <strong>記事は同じ二人の少女で始まり、同じ少女で終わる</strong>。<u>間に挟まれる統計・研究・文学は、すべてフランキーの最後の一言を支えるために積み上げられている</u>。<em>だから結末の「もちろん私たちならできます」は、単なる感動的な締めではなく、記事全体が証明してきたことの要約になっている</em>。</div><div class="pnav"><button class="btns" data-go="0">← 攻略</button><span class="sp"></span><button class="btnp" data-go="2">核心の転換へ →</button></div></section><section class="panel" id="p2">
+  <div class="eyebrow">The Core Shift</div>
+  <h1 class="head">核心の転換 ― 引き算の定義から、それ自体へ<span class="sub">設問(12)と(20)はここに帰着する。記事全体がこの一つの転換を論証している。</span></h1>
+  <div class="rule"></div>
+  <div class="vs">
+    <div class="vs-col t"><div class="vs-hd">かつての少女時代<small>defined in opposition to boyhood</small></div><div class="vs-bd">
+      <div class="r"><b>定義</b>少年時代との<strong>対比</strong>で決まる＝引き算の定義</div>
+      <div class="r"><b>内容</b>男の子が意地悪なとき<strong>優しく</strong>／うるさいとき<strong>静かに</strong>／個性を持つとき<strong>可愛らしく</strong></div>
+      <div class="r"><b>含意</b>少女には<strong>「個性」すら割り当てられていない</strong></div>
+      <div class="r"><b>虚構と現実</b>物語では勇敢（ジェーン・エア）だが、<strong>現実の少女は10代で沈黙</strong></div>
+    </div></div>
+    <div class="vs-col s"><div class="vs-hd">今日の少女時代<small>a thing in itself</small></div><div class="vs-bd">
+      <div class="r"><b>定義</b><strong>それ自体で成り立つ</strong>一つのもの</div>
+      <div class="r"><b>内容</b>興味も行動も<strong>幅広く柔軟（broad and flexible）</strong></div>
+      <div class="r"><b>含意</b>「女の子だからできない」は<strong>別の時代の話</strong></div>
+      <div class="r"><b>虚構と現実</b><strong>道具を得て、現実でも声が聞かれる</strong>ようになった</div>
+    </div></div>
+  </div>
+  <div class="box gold"><span class="lab">この転換が解く設問</span>
+    <strong>設問(12)</strong>＝<u>a thing in itself の意味は、直後の「対比で定義されてきた」の裏返し</u>＝(b)。<br>
+    <strong>設問(11)</strong>＝<u>ドーラが「別の時代」と退けるのは、左側の世界の制約</u>＝(b)。<br>
+    <strong>設問(20)</strong>＝<u>記事が論じたのは、この転換そのもの</u>＝(d) more flexible and contains more possibilities。</div>
+  <div class="box navy"><span class="lab">記事が積み上げる五つの証拠</span>
+    転換の主張を支えるのは、<strong>①友情の質（第5〜6段落）②家族の投資（第7段落）③育て方の逆説（第8段落）④娘が親を変える力（第9段落）⑤発言の道具（第12段落）</strong>。<u>五つとも方向が同じ</u>なので、<em>記事は一貫して「少女の条件が改善した」と論証している</em>。<b>だから設問(20)で「不平等が残る」「逆転した」を選ぶと、論証の向きを読み違えたことになる</b>。</div>
+  <div class="box verm"><span class="lab">ただし一点だけ、方向が違う段落がある</span>
+    <strong>第13段落「高い期待は間違いなくリスク」</strong>。<u>これだけが留保</u>。しかも<em>別の要因ではなく、力を与える期待そのものが重荷になる</em>という両義性として書かれている。<b>この一段落を記事全体の結論と取り違えると設問(20)で(c)を選ぶ</b>。<u>留保は留保として、主題と区別する</u>。</div>
+  <div class="pnav"><button class="btns" data-go="1">← 英文マップ</button><span class="sp"></span><button class="btnp" data-go="3">設問(11)〜(14)へ →</button></div>
+</section><section class="panel" id="p3">
+  <div class="eyebrow">Solutions ①</div>
+  <h1 class="head">設問(11)〜(14)<span class="sub">指示語・下線部・理由・不一致。<b>直前と直後が答えを決める</b>問題群。</span></h1>
+  <div class="rule"></div>
+  <div class="qindex" id="qidxAB"></div>
+  <div id="qWrapAB"></div>
+  <div class="pnav"><button class="btns" data-go="2">← 核心の転換</button><span class="sp"></span><button class="btnp" data-go="4">設問(15)〜(17)へ →</button></div>
+</section><section class="panel" id="p4">
+  <div class="eyebrow">Solutions ②</div>
+  <h1 class="head">設問(15)〜(17)<span class="sub">推論・語義・引用の機能。<b>向き（増えるか減るか、どちら側か）</b>を正確に取る。</span></h1>
+  <div class="rule"></div>
+  <div class="box verm" style="margin-top:0"><span class="lab">この3問に共通する罠</span>
+    <strong>「向き」の取り違え</strong>。<u>(15)は decreases / makes more likely の向き、(16)は偏りがどちら側か、(17)は虚構と現実のどちらの例か</u>。<em>いずれも本文に明示されているが、語の一致だけで選ぶと逆を取る</em>。</div>
+  <div class="qindex" id="qidxCD"></div>
+  <div id="qWrapCD"></div>
+  <div class="pnav"><button class="btns" data-go="3">← 設問(11)〜(14)</button><span class="sp"></span><button class="btnp" data-go="5">設問(18)〜(20)へ →</button></div>
+</section><section class="panel" id="p5">
+  <div class="eyebrow">Solutions ③</div>
+  <h1 class="head">設問(18)〜(20)<span class="sub">理由・誤解の特定・主旨。<b>時期（過去か現在か）と、主題か留保か</b>を見分ける。</span></h1>
+  <div class="rule"></div>
+  <div class="qindex" id="qidxEF"></div>
+  <div id="qWrapEF"></div>
+  <div class="pnav"><button class="btns" data-go="4">← 設問(15)〜(17)</button><span class="sp"></span><button class="btnp" data-go="6">全訳へ →</button></div>
+</section><section class="panel" id="p6">
+  <div class="eyebrow">Reading Map</div>
+  <h1 class="head">全訳 ― 段落ごとの日本語訳と読解ポイント<span class="sub">THINKINGオリジナル訳（全15段落・49文）。番号①②③…は各段落内の文の順番。<b>赤字</b>が設問に直結する箇所。</span></h1>
+  <div class="rule"></div>
+  <div class="box gold" style="margin-top:0"><span class="lab">読むときの視点</span>
+    この記事は<strong>具体（二人の少女）と抽象（統計・研究）を往復しながら進む</strong>。訳を読むときは<u>「この具体例は、どの主張を支えているか」</u>を確かめてほしい。<em>ぶぶ漬けならぬタピオカティーの場面、ロックダウンの証言、文学作品、そして最後のフランキーの一言</em>――すべてが一つの転換を証明するために置かれている。</div><div class="tr-sec"><b>第1段落</b>｜導入 ― 屋上の二人</div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">オランダのある都市の廃ビルの屋上で、フランキーとドーラは夏の日差しの中、台湾のタピオカティーをすすっている。</div></div><div class="jpline"><div class="n">②</div><div class="s">二人の少女はヴィンテージのジーンズと、自分たちで装飾したスニーカーを身につけている。</div></div><div class="jpline"><div class="n">③</div><div class="s">フランキーのTシャツはある美術展を記念するもの、ドーラのはビリー・アイリッシュだ。<em>「彼女は自分の思っていることをはっきり言うから」</em>という理由で彼女が好きな歌手である。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第1段落</div><ul><li><b>導入の機能</b>：<u>統計から始めず、具体的な二人の少女から始める</u>。<em>記事全体が「この二人」と「数千万人」を往復する構造</em>で、最終段落でフランキーに戻って閉じる。</li>
+    <li><b>she speaks her mind</b>「思っていることをはっきり言う」＝<u>第11〜12段落の「声を上げる（speak up / speak louder）」という主題の伏線</u>。<em>冒頭の何気ない一言が、記事の核心語を先取りしている</em>。</li></ul></div><div class="tr-sec"><b>第2段落</b>｜現状 ― 「それは別の時代の話」　<span class="qbadge">(11)</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">少女たちはこの場所をTikTokで見つけた。</div></div><div class="jpline"><div class="n">②</div><div class="s">歯が痛くなるほど甘いタピオカティーのことは、Instagramで知った。</div></div><div class="jpline"><div class="n">③</div><div class="s">彼女たちが最近した一番のいたずらは、政治的な抗議活動に参加するためにこっそり抜け出したことだ。</div></div><div class="jpline"><div class="n">④</div><div class="s"><em>彼女たちは、自分が女の子だからという理由でできないことがあるとは思っていない</em>。</div></div><div class="jpline"><div class="n">⑤</div><div class="s">「<u>それはもう別の時代の話だ</u>と思う」とドーラは言う。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第2段落</div><ul><li><b>(11) from another time</b>「別の時代のもの」＝<u>問(11)の根拠</u>。<em>直前の文が決定的</em>：<b>彼女たちは「女の子だからできないことがある」とは思っていない</b>。その考えを指して「別の時代のもの」＝<u>正解(b)「いくつかのことは女の子によってなされるべきでないという信念」</u>。<span class="qbadge">(11)</span></li>
+    <li><b>指示語は直前を見る</b>：<em>that＝直前の文で否定された考え方</em>。<u>ドーラが退けているのは制約の観念であって、平等の理念ではない</u>（選択肢(a)の罠）。</li>
+    <li><b>sneak out to a political protest</b>「抗議活動に行くため抜け出す」＝<em>最も「いたずら」なことがこれ</em>という描写が、この世代の性格を一言で示す。</li></ul></div><div class="tr-sec"><b>第3段落</b>｜枠組み ― かつてない少女時代</div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">フランキー、ドーラ、そして豊かな世界の数千万人の11歳から16歳の少女たちは、かつてない少女時代を過ごしている。</div></div><div class="jpline"><div class="n">②</div><div class="s">彼女たちの母親たちは、以前の世代よりもはるかに父親との平等に近づいていた。</div></div><div class="jpline"><div class="n">③</div><div class="s">彼女たちには、航海すべき当惑するようなソーシャルメディアの世界がある。</div></div><div class="jpline"><div class="n">④</div><div class="s">そして彼女たちは、少女時代についての考え方が急速に変化している世界にさらされている。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第3段落</div><ul><li><b>三つの条件</b>：<em>①母の世代の平等化 ②ソーシャルメディア ③少女時代の観念の変化</em>＝<u>この三つが以降の段落で順に展開される</u>。</li>
+    <li><b>a girlhood like none before</b>「かつてない少女時代」＝<u>記事全体の主題文</u>。<em>問(20)（本文の要点）はこの一文に帰着する</em>。</li>
+    <li><b>bewildering（当惑させる）</b>：ソーシャルメディアを<u>単純な善でも悪でもなく「厄介なもの」</u>として提示。第10段落の議論への伏線。</li></ul></div><div class="tr-sec"><b>第4段落</b>｜核心 ― 対比による定義からの脱却　<span class="qbadge">(12)</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">鍵となる変化の一つは、<em>女の子であることが今やそれ自体で一つのものとして見られている</em>ということだ。</div></div><div class="jpline"><div class="n">②</div><div class="s">何世紀もの間、少女時代は少年時代との対比で定義されてきた。男の子が意地悪なときには優しく、男の子がうるさいときには静かに、男の子が個性を持つときには可愛らしく。</div></div><div class="jpline"><div class="n">③</div><div class="s">今日では、少女たちは幅広く柔軟な範囲の興味と行動を許されており、彼女たち自身もそれを自らに許している。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第4段落</div><ul><li><b>(12) a thing in itself</b>「それ自体で一つのもの」＝<u>問(12)の根拠</u>。<em>段落の第2文が意味を明かす</em>：<b>何世紀もの間、少女時代は少年時代との「対比で（in opposition to）」定義されてきた</b>。→ <u>正解(b)「女の子はもはや男の子の単なる正反対とは見なされない」</u>。<span class="qbadge">(12)</span></li>
+    <li><b>対比による定義の実例</b>：<em>nice when boys were nasty / quiet when boys were loud / pretty when boys had personalities</em>＝<u>すべて男の子を基準にした引き算の定義</u>。<b>少女には「個性」すら割り当てられていなかった</b>点に注意。</li>
+    <li><b>問(20)への接続</b>：<em>broad and flexible（幅広く柔軟）</em>＝<u>正解(d)の more flexible and contains more possibilities と直結</u>。</li></ul></div><div class="tr-sec"><b>第5段落</b>｜友情 ― 少女同士の絆</div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">少女たちの間の濃密で親密な友情は、ジェーン・オースティンからエレナ・フェッランテに至る女性小説家たちに題材を提供してきた。</div></div><div class="jpline"><div class="n">②</div><div class="s">さまざまな国での研究が、女性同士の友情はより親密で支え合うものだと確認している。</div></div><div class="jpline"><div class="n">③</div><div class="s">親しい友情にある少年たちは、10代になるとしばしば離れていく。</div></div><div class="jpline"><div class="n">④</div><div class="s">同じ年齢で、少女たちは以前よりもいっそう近づく傾向がある。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第5段落</div><ul><li><b>次段落への橋渡し</b>：<u>友情の重要性を先に示しておくことで、第6段落の「友人に会えないことが最もつらかった」が説得力を持つ</u>。<em>論証の順序が計算されている</em>。</li>
+    <li><b>男女の非対称</b>：<em>少年は10代で離れる／少女はいっそう近づく</em>。<u>この差が第6段落の「少女のほうが苦しんだ」の背景</u>。</li></ul></div><div class="tr-sec"><b>第6段落</b>｜検証 ― ロックダウンで最もつらかったこと　<span class="qbadge">(13)</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">私たちが話を聞いたほとんどすべての少女が、<em>友達に会えないことがコロナ禍のロックダウンで最もつらかったことだ</em>と言った。それは家族間の緊張やオンライン授業といった要因を<u>上回っていた</u>。</div></div><div class="jpline"><div class="n">②</div><div class="s">英国児童協会の調査は、これが英国の10歳から17歳の子ども全般に当てはまること、そして<em>少女たちが少年たちよりも苦しんだ</em>ことを確認している。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第6段落</div><ul><li><b>(13) 問(13)の根拠</b>：<u>正解(c)「友人に会えなかったことでより苦しんだから」</u>。<em>第1文が「友人に会えないこと＝最もつらい」と述べ、第2文が「少女のほうが苦しんだ」と述べる</em>。<b>二文を合わせて因果が成立する</b>。<span class="qbadge">(13)</span></li>
+    <li><b>eclipsing（覆い隠す・上回る）</b>：<em>家族間の緊張やオンライン授業よりも大きな要因だった</em>＝<u>選択肢(b)「家族とより多く争ったから」は、本文が「それより大きい」と退けた要因</u>。<b>本文に出てくる語ほど危ない</b>。</li></ul></div><div class="tr-sec"><b>第7段落</b>｜投資 ― 支出の逆転　<span class="qbadge">(14)</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">家族もまた、過去と比べて少女により多くの資源を投資している。</div></div><div class="jpline"><div class="n">②</div><div class="s">1970年代、アメリカの親たちは少女よりも少年にかなり多額のお金を費やしていた。</div></div><div class="jpline"><div class="n">③</div><div class="s">2017年までにその差は消えた。</div></div><div class="jpline"><div class="n">④</div><div class="s"><em>今日の少女たちは、家庭教師、画材、音楽レッスンについて、少年たちよりも多くの親の支出を享受している</em>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第7段落</div><ul><li><b>(14) 問(14)の根拠の一つ</b>：最終文＝<u>選択肢(d)「親は少年より少女の家庭教師により多く支出する」と一致</u>＝<em>言及あり＝答えではない</em>。<span class="qbadge">(14)</span></li>
+    <li><b>数値の推移</b>：<em>1970年代＝少年に多く → 2017年＝差が消失 → 今日＝少女のほうが多い</em>。<u>「差が消えた」で止まらず、その先まで進んでいる</u>点を正確に。</li></ul></div><div class="tr-sec"><b>第8段落</b>｜逆説 ― 古いステレオタイプが利点に　<span class="qbadge">(14)</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><em>皮肉なことに</em>、子どもの育て方に関連する古いジェンダー・ステレオタイプのいくつかが、今では少女たちの役に立っているかもしれない。</div></div><div class="jpline"><div class="n">②</div><div class="s">少女たちは幼児のころ、少年たちよりも多く読み聞かせをしてもらう。</div></div><div class="jpline"><div class="n">③</div><div class="s">彼女たちの父親は5倍歌ってあげる可能性が高く、また<u>悲しみを含む感情について彼女たちに話す可能性も高い</u>。</div></div><div class="jpline"><div class="n">④</div><div class="s"><u>母親たちは彼女たちに対してより複雑な語彙を使う可能性が高い</u>。</div></div><div class="jpline"><div class="n">⑤</div><div class="s">これらのほとんどが、<em>「ソフトスキル」をますます重視する世界で少女たちに優位をもたらしている</em>。</div></div><div class="jpline"><div class="n">⑥</div><div class="s">少女たちは今でも少年たちより余暇時間が少ないが、現在ではそれは主に、<em>家事が不公平に分担されているからではなく</em>、宿題や身だしなみにより多くの時間を費やすためである。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第8段落</div><ul><li><b>(14) 問(14)の核心</b>：最終文が決定的。<u>本文は「家事が不公平に分担されているからではない（rather than because house chores are unfairly divided）」と明確に否定している</u>。→ <em>選択肢(b)「女の子は今でも男の子より家事に多くの時間を費やす」は、単に言及がないのではなく<b>本文が否定した内容</b></em>＝<u>正解(b)</u>。<span class="qbadge">(14)</span></li>
+    <li><b>(14) 他の選択肢の所在</b>：<em>(a)父親が感情について話す＝第3文／(c)母親が複雑な語彙＝第4文</em>＝<u>いずれも言及あり</u>。</li>
+    <li><b>Ironically の構造</b>：<u>少女を制限する見方から生まれた扱い（優しく育てる）が、ソフトスキルを重んじる時代に優位をもたらす</u>＝<em>意図と結果の逆転</em>。<b>ステレオタイプが良くなったのではなく、社会が評価する能力が動いた</b>。</li></ul></div><div class="tr-sec"><b>第9段落</b>｜反転 ― 娘が親を変える　<span class="qbadge">(15)</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><em>娘たちは親の、特に父親の価値観を変えることもできる</em>。</div></div><div class="jpline"><div class="n">②</div><div class="s">研究者たちは、娘がいることが、父親がジェンダー役割について伝統的な態度を持つ可能性を<u>減少させ</u>、家事で自分の役割を果たす可能性を<u>高める</u>ことを発見した。</div></div><div class="jpline"><div class="n">③</div><div class="s">別の研究では、娘がいることが政治家や裁判官の判断に影響を与えることが示されている。</div></div><div class="jpline"><div class="n">④</div><div class="s"><em>娘を持つビジネスマンは、女性の職業的キャリアを支援する可能性が高い</em>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第9段落</div><ul><li><b>(15) 問(15)の根拠</b>：最終文<u>support women's professional careers（女性の職業的キャリアを支援する）</u>＝<em>正解(d)「職場で女性の昇進を促す意欲」</em>。<span class="qbadge">(15)</span></li>
+    <li><b>(15) 誤答の所在</b>：<em>(a)家事を女性任せ＝本文は「家事をより分担する」と逆／(c)フェミニズム的態度の拒否＝本文は「伝統的態度を持つ可能性が減る」と逆</em>。<u>本文の二つの動詞（decreases / makes more likely）の向きを取れば両方消える</u>。</li>
+    <li><b>too の機能</b>：<b>Daughters can change parents' values <u>too</u></b>＝<u>それまでの「環境→少女」という向きに、「少女→環境」を付け加える</u>。<em>記事に双方向性を与える重要な段落</em>。</li></ul></div><div class="tr-sec"><b>第10段落</b>｜摩擦 ― テクノロジーをめぐる親子の溝　<span class="qbadge">(16)</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">ほとんどの少女が同意する一つの点は、彼女たちの親がテクノロジーに対して<em>あまりにも一方的な</em>アプローチを取るということだ。</div></div><div class="jpline"><div class="n">②</div><div class="s">「私の両親は、それが全部ドラマと気晴らしの塊で、私たちがみんな中毒になっていると思っています」とフランキーは不満をもらす。「<u>でも、それはとても刺激的にもなりうるんです。オンラインでいろんなことに立ち向かっている女性がたくさんいますよ</u>」</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第10段落</div><ul><li><b>(16) too one-sided</b>「あまりに一方的」＝<u>問(16)の根拠</u>。<em>直後のフランキーの発言が中身を明かす</em>：<b>親は「ドラマ・気晴らし・中毒」という否定面ばかり見る</b>／<b>but it can be really inspiring, too（でも刺激的でもある）</b>。→ <u>正解(b)「否定的な側面をあまりにも強調する」</u>。<span class="qbadge">(16)</span></li>
+    <li><b>one-sided＝偏っている</b>：<u>どちら側に偏っているかは文脈が決める</u>。<em>ここは否定面への偏り</em>。選択肢(c)「危険に無頓着すぎる」は<b>偏りの向きが逆</b>。</li></ul></div><div class="tr-sec"><b>第11段落</b>｜歴史 ― フィクションと現実のずれ　<span class="qbadge">(17)</span> <span class="qbadge">(18)</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">少女たちはますます、自分たちが力を持っていると言われ、またそう感じている。</div></div><div class="jpline"><div class="n">②</div><div class="s">そして、たとえ自分たちが世界を動かしていると信じていなくても、彼女たちは確かに世界を良くしたいと思っている。</div></div><div class="jpline"><div class="n">③</div><div class="s">心理学者のキャロル・ギリガンは、<em>若い少女たちが長い間、論争的な問題について勇敢で率直な存在として想像されてきた</em>ことを指摘する。シャーロット・ブロンテのヒロインであるジェーン・エアから、トニ・モリスンの小説『青い眼がほしい』のクローディアまで。</div></div><div class="jpline"><div class="n">④</div><div class="s"><em>しかし現実の少女たちが10代になると、「好かれる」若い女性になるよう圧力をかけられ、声を上げるのをやめる傾向があった</em>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第11段落</div><ul><li><b>(17) 問(17)の根拠</b>：第3文<u>have long been imagined as brave and outspoken（長い間、勇敢で率直だと想像されてきた）</u>＝<em>正解(b)「フィクションの中の女性登場人物はしばしば勇気あるものとして表される」</em>。<span class="qbadge">(17)</span></li>
+    <li><b>(18) 問(18)の根拠</b>：最終文<u>pressured as they were to become "likeable" young women（「好かれる」若い女性になるよう圧力をかけられて）</u>＝<em>正解(a)「好かれなければというプレッシャーを感じたから」</em>。<span class="qbadge">(18)</span></li>
+    <li><b>imagined ↔ real-life の二層</b>：<em>フィクションの中では昔から勇敢（imagined）／現実の少女は10代で沈黙（real-life, 過去形）</em>。<u>though がこの食い違いを明示する</u>。<b>次段落の Today が、このずれの解消を告げる</b>。</li></ul></div><div class="tr-sec"><b>第12段落</b>｜現在 ― 声を上げる道具を手にした</div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">今日の少女たちは、<em>より大きな声で話すために必要な道具を手に入れた今</em>、自分たちの声が聞かれるということを学んでいる。教育から、インターネット、家を出る自由まで。</div></div><div class="jpline"><div class="n">②</div><div class="s">少女たちは今や少年たちよりも、<em>世界をより良い場所にしたい、あるいはリーダーになりたい</em>と言う可能性が高い。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第12段落</div><ul><li><b>前段落のずれの解消</b>：<u>フィクションでは勇敢、現実では沈黙というずれが、「道具を得た今」埋まりつつある</u>。<em>Today's girls という書き出しが時制の転換を示す</em>。</li>
+    <li><b>the tools needed to speak louder</b>：<em>教育・インターネット・家を出る自由</em>＝<u>具体的な三つの手段</u>。第1段落のドーラの「she speaks her mind」がここで回収される。</li>
+    <li><b>次段落への接続</b>：<u>「世界を良くしたい」という高い志が、直後で「高い期待というリスク」に裏返る</u>。</li></ul></div><div class="tr-sec"><b>第13段落</b>｜留保 ― 高い期待という重荷</div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><em>高い期待は間違いなくリスクである</em>。</div></div><div class="jpline"><div class="n">②</div><div class="s">少女たちに何が不安にさせるかと尋ねると、多くがプレッシャーを挙げる。<u>良い行いをするプレッシャー、良く見えるプレッシャー、良い子であるプレッシャー</u>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第13段落</div><ul><li><b>段落配置が論理を担う</b>：<u>直前が「リーダーになりたい」という高揚、直後が「高い期待はリスク」</u>。<em>同じ expectations が力の源でもあり重荷でもある</em>＝<b>利得と代償が同一現象から同時に生じる</b>。</li>
+    <li><b>三つのプレッシャー</b>：<em>do good（行い）／look good（外見）／be good（人柄）</em>＝<u>行動・容姿・性格のすべてに及ぶ</u>。<b>第14段落のフランキーのパニックはこの実例</b>。</li></ul></div><div class="tr-sec"><b>第14段落</b>｜場面 ― フランキーのパニック　<span class="qbadge">(19)</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">「<em>あなたは世界を変えられると思いますか?</em>」と尋ねられると、フランキーはパニックになったように見える。</div></div><div class="jpline"><div class="n">②</div><div class="s">「<u>私一人で?</u> ああ、神様、無理です。もし問題を解決できなかったらどうしよう?」</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第14段落</div><ul><li><b>(19) 問(19)の根拠</b>：<u>By myself?（私一人で?）</u>＝<em>フランキーは you を単数（＝彼女個人）と解釈した</em>。→ <b>正解(c)「質問者が少女たち全体ではなく彼女個人のことを言っていると考える」</b>。<span class="qbadge">(19)</span></li>
+    <li><b>誤解の種類を特定する</b>：<em>年齢でも、問題の範囲でも、地理的範囲でもなく、<u>単数か複数か</u></em>。<b>次段落の the "you" is plural が答えを確定させる</b>。</li>
+    <li><b>第13段落との対応</b>：<u>このパニックこそ「高い期待というリスク」の実例</u>。<em>逸話が直前の抽象的な主張を具体化している</em>。</li></ul></div><div class="tr-sec"><b>第15段落</b>｜結末 ― 複数形だと気づく　<span class="qbadge">(20)</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">それから彼女は<em>「you」が複数形だと気づく</em>。それがすべてを変える。</div></div><div class="jpline"><div class="n">②</div><div class="s">「ああ、<u>女の子たち全員</u>ってことですね」と彼女は<em>安堵のため息とともに</em>言う。「もちろん私たちならできます」</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第15段落</div><ul><li><b>(20) 問(20)への帰着</b>：<u>記事は一貫して「女の子であるという経験がどう変わったか」を論じてきた</u>＝<em>正解(d)「女の子であるという経験は以前よりも柔軟で多くの可能性を含む」</em>。<span class="qbadge">(20)</span></li>
+    <li><b>結末が二主題を一点で結ぶ</b>：<em>パニック＝第13段落「高い期待はリスク」の実例／安堵＝第12段落「世界を良くしたい」の実例</em>。<u>個人としての重荷と、集団としての自信が、一つの場面で交差する</u>。</li>
+    <li><b>第9段落との呼応</b>：<u>娘が親を変えるという論点があるからこそ、「もちろん私たちならできます」が根拠のある自信になる</u>。<em>この段落がなければ結末は単なる楽観に終わる</em>。</li></ul></div><div class="pnav"><button class="btns" data-go="5">← 設問(18)〜(20)</button><span class="sp"></span><button class="btnp" data-go="7">発展5問へ →</button></div></section><section class="panel" id="p7">
+  <div class="eyebrow">Original Questions</div>
+  <h1 class="head">発展5問 ― THINKINGオリジナル<span class="sub">早慶・上智上位レベル。<b>選択肢はすべて英語</b>。本文の語句を拾うだけでは解けず、<u>結末の機能・逆説の構造・時間の層・両義性・論の向き</u>を掴んでいないと正解が選べない5問。</span></h1>
+  <div class="rule"></div>
+
+  <div class="box navy" style="margin-top:0"><span class="lab">この5問が試すもの</span>
+    本試験の10問は<strong>該当箇所を正確に読む力</strong>を測っていました。この発展問題はその先、<u>「記事全体を一本の構成として掌握しているか」</u>を測ります。<em>各問の誤答は、本文の語をそのまま使いながら論理を一点だけ崩してあります</em>。<b>「見覚えのある語が入っている」は正解の根拠になりません</b>。</div>
+
+  <h2 class="sec">5問が狙う5つの急所</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:12%">問</th><th style="width:26%">狙う力</th><th>この本文での急所</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">発展1</td><td>結末の機能</td><td><b>youの単複のオチが二主題を一点で結ぶ</b>。パニック＝重荷、安堵＝集団の自信。</td></tr>
+      <tr><td class="cond">発展2</td><td>逆説の構造</td><td><b>Ironicallyの中身</b>。少女を縛る扱いが、評価軸の変化で武器になった。</td></tr>
+      <tr><td class="cond">発展3</td><td>時間の層</td><td><b>imagined（虚構では勇敢）↔ real-life（現実は沈黙）</b>、そしてTodayで解消。</td></tr>
+      <tr><td class="cond">発展4</td><td>両義性</td><td><b>同じ expectations が力の源でも重荷でもある</b>。段落配置が論理を担う。</td></tr>
+      <tr><td class="cond">発展5</td><td>論の向き</td><td><b>too の一語で「環境→少女」が「少女→環境」に反転</b>する。</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box gold" style="margin-top:18px;"><span class="lab">取り組み方</span>
+    <strong>まず本文を読み直してから、5問を通しで解いてください</strong>。各問は選択肢をタップして自分で解け、「答え・根拠を表示」で<u>解答プロセス→根拠（本文）→全選択肢の✓✗</u>が開きます。<em>正解を選べても、他の3つがなぜ外れるかを説明できなければ半分</em>――誤答解説には<b>「どんな読み方をした人がそれを選ぶか」</b>まで書いてあります。</div>
+
+  <h2 class="sec">発展 第1問・第2問</h2>
+  <div class="qindex" id="qidxGH"></div>
+  <div id="qWrapGH"></div>
+
+  <h2 class="sec">発展 第3問〜第5問</h2>
+  <div class="qindex" id="qidxIJ"></div>
+  <div id="qWrapIJ"></div>
+
+  <div class="box verm" style="margin-top:22px;"><span class="lab">5問を終えたら</span>
+    落とした問題があれば、<strong>本文のどこを読み飛ばしていたか</strong>を特定してください。<u>発展1なら第13段落と結末の対応、発展2なら第8段落のIronicallyと最終文、発展3なら第11段落のimagined/real-lifeと第12段落のToday、発展4なら第12段落と第13段落の並び、発展5なら第9段落冒頭のtoo</u>。<em>いずれも本文に明確な根拠があり、推測で補う必要はありません</em>。<b>「なんとなく」で選んだ箇所こそ、伸びしろです</b>。</div>
+
+  <div class="pnav"><button class="btns" data-go="6">← 全訳</button><span class="sp"></span><button class="btnp" data-go="8">総まとめへ →</button></div>
+</section><section class="panel" id="p8">
+  <div class="eyebrow">Review</div>
+  <h1 class="head">総まとめ ― 解答一覧と復習動線<span class="sub">まず自己採点。落とした問題が「どの手がかりを見落としたか」で振り返る。</span></h1>
+  <div class="rule"></div>
+  <h2 class="sec">本試験 解答一覧</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:10%">設問</th><th style="width:10%">解答</th><th style="width:34%">決め手</th><th>陥りやすい誤答</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">(11)</td><td><b>(b)</b></td><td>直前の否定文が指示内容</td><td>(a) 平等への信念（方向が逆）</td></tr>
+      <tr><td class="cond">(12)</td><td><b>(b)</b></td><td>直後の「対比で定義されてきた」の裏返し</td><td>(a) 羨まれる（価値の優劣にすり替え）</td></tr>
+      <tr><td class="cond">(13)</td><td><b>(c)</b></td><td>最大の苦痛＋少女のほうが苦しんだ</td><td>(b) 家族ともめた（eclipsingで退けられた要因）</td></tr>
+      <tr><td class="cond">(14)</td><td><b>(b)</b></td><td>rather than で明示的に否定</td><td>(d) 言及があるのに選ぶ（NOTの見落とし）</td></tr>
+      <tr><td class="cond">(15)</td><td><b>(d)</b></td><td>support women&apos;s professional careers</td><td>(a)(c) 向きが逆（decreases / more likely）</td></tr>
+      <tr><td class="cond">(16)</td><td><b>(b)</b></td><td>直後の引用が偏りの向きを示す</td><td>(c) 無頓着（偏りの向きが逆）</td></tr>
+      <tr><td class="cond">(17)</td><td><b>(b)</b></td><td>挙げられたのは作中人物</td><td>(a) 作家の話だと読む</td></tr>
+      <tr><td class="cond">(18)</td><td><b>(a)</b></td><td>pressured … to become likeable</td><td>(d) 現代のプレッシャーと混同</td></tr>
+      <tr><td class="cond">(19)</td><td><b>(c)</b></td><td>By myself? が誤解の種類を示す</td><td>(b)(d) 年齢や範囲の誤解だと読む</td></tr>
+      <tr><td class="cond">(20)</td><td><b>(d)</b></td><td>a girlhood like none before / broad and flexible</td><td>(c) 第13段落の留保を結論と取り違え</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec">発展5問 解答一覧</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:10%">問</th><th style="width:10%">解答</th><th style="width:34%">試された力</th><th>最も引っかかる誤答</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">発展1</td><td><b>2</b></td><td>結末が二主題を一点で結ぶ機能</td><td>1（panicked だけ見て幼さと読む）</td></tr>
+      <tr><td class="cond">発展2</td><td><b>4</b></td><td>Ironically の中身の言語化</td><td>2（old を「今はない」と読む）</td></tr>
+      <tr><td class="cond">発展3</td><td><b>1</b></td><td>虚構と現実の二層＋解消</td><td>2（二層を入れ替える）</td></tr>
+      <tr><td class="cond">発展4</td><td><b>3</b></td><td>同一現象の両面として読む</td><td>2（留保を第三者の反論と分類）</td></tr>
+      <tr><td class="cond">発展5</td><td><b>2</b></td><td>too が示す論の向きの反転</td><td>4（制度主導と読み、因果を逆に）</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec">復習動線 ― 落とした「型」から潰す</h2>
+  <div class="route"><div class="rn">A</div><div><b>指示語・下線部の根拠を外した（(11)(12)(16)）</b><p>この記事の下線部は<em>直前か直後に必ず説明がある</em>。<u>(11)＝直前の否定文／(12)＝直後の歴史説明／(16)＝直後の引用</u>。<strong>下線部そのものを睨む時間を、前後一文を読む時間に回す</strong>。</p></div></div>
+  <div class="route"><div class="rn">B</div><div><b>向きを取り違えた（(15)(16)(17)）</b><p><em>増えるのか減るのか、どちら側に偏るのか、虚構か現実か</em>。<u>(15)は decreases / makes more likely、(16)は否定面への偏り、(17)は imagined（虚構）側の例</u>。<strong>語の一致で選ばず、向きを指差し確認する</strong>。</p></div></div>
+  <div class="route"><div class="rn">C</div><div><b>設問の条件を見落とした（(14)(18)）</b><p><u>(14)は NOT mentioned（述べられていないもの）</u>、<u>(18)は in the past（過去において）</u>。<strong>設問文の限定語を読み落とすと、正しく読めていても外す</strong>。<em>(18)の(d)は現代のプレッシャーで、時期が違う</em>。</p></div></div>
+  <div class="route"><div class="rn">D</div><div><b>主題と留保を混同した（(20)・発展4）</b><p>記事は一貫して<em>少女の条件の改善</em>を論証し、<u>第13段落だけが留保</u>。<strong>留保を結論と取り違えると(20)で(c)を選ぶ</strong>。しかもその留保は<em>別の要因ではなく、力を与える期待そのものの裏面</em>として書かれている（発展4）。</p></div></div>
+  <div class="route"><div class="rn">E</div><div><b>論の向きと時間の層を外した（発展3・発展5）</b><p><u>発展3＝imagined（虚構では勇敢）↔ real-life（現実は沈黙）、そして Today で解消</u>。<u>発展5＝too の一語で「環境→少女」が「少女→環境」に反転</u>。<strong>一語（though, too, Today）が論の構造を切り替える</strong>ことに注意。</p></div></div>
+
+  <div class="box navy" style="margin-top:22px;"><span class="lab">次の一手</span>
+    この記事の核心は<strong>「少女時代の定義が、引き算から、それ自体へと変わった」</strong>という一点です。<u>統計も、文学も、父親の研究も、すべてこの転換を支える証拠として置かれている</u>。そして<em>結末の you の単複は、記事が証明してきたことを一つの場面に凝縮する装置</em>です。評論的なエッセイを読むときは、<b>「どの一文が主題で、どの段落が証拠で、どこが留保か」</b>を仕分けながら進んでください。それができれば、設問は自然に解けます。</div>
+  <div class="pnav"><button class="btns" data-go="0">↩ 最初に戻る</button><span class="sp"></span><button class="btns" data-go="7">← 発展5問</button></div>
+</section></div>
+<footer class="foot">
+  <div class="brand">学部別合格設計塾 THINKING</div>
+  <div>受験は根性じゃなく、設計。 ／ <a href="https://thinking-online.com/" target="_blank" rel="noopener">https://thinking-online.com/</a></div>
+  <div class="cr">本解説は上智大学2024年英語（大問2）の学習用解説です。設問・出典（The Economist）の著作権は出題者・原著者に帰属します。和訳・解説・発展問題はTHINKINGによるオリジナルです。</div>
+</footer>
+<button class="jump-top" id="jumpTop" aria-label="上へ">↑</button>
+
+<script>
+const Q = [
+/* ===== (11)〜(14)：グループAB ===== */
+{id:"(11)", grp:"AB", type:"指示内容", lbl:"設問(11)", en:"&quot;I think that's from another time,&quot; says Dora.",
+ ask:"What belief does Dora say is &quot;from another time&quot;?（ドーラが「別の時代のもの」と言っているのはどんな信念か）", answer:"2", kind:"choice",
+ choices:[
+  {t:"(a) The belief in the social and economic equality of the sexes.（両性の社会的・経済的平等への信念）", ok:false},
+  {t:"(b) The belief that some things should not be done by girls.（いくつかのことは女の子によってなされるべきでないという信念）", ok:true},
+  {t:"(c) The belief that social media is good for you.（ソーシャルメディアは自分のためになるという信念）", ok:false},
+  {t:"(d) The belief that teenagers should have to do what their parents say.（10代は親の言うことに従わねばならないという信念）", ok:false}],
+ steps:[
+   {t:"指示語の原則に従う", d:"<b>that＝直前の文の内容</b>。<u>指示語は、まず直前を見る</u>のが鉄則。"},
+   {t:"直前の文を正確に読む", d:"<b>They do not think there is anything they cannot do because they are girls.</b>「彼女たちは、自分が女の子だからという理由でできないことがあるとは思っていない」。"},
+   {t:"何が「別の時代」かを特定", d:"ドーラが古いと退けているのは、<u>この文で否定されている考え＝「女の子だからできないことがある」という制約の観念</u>。"},
+   {t:"選ぶ", d:"<b>「いくつかのことは女の子によってなされるべきでない」という信念</b>＝(b)。"}],
+ ev:{q:'<span class="h">They do not think there is anything they cannot do because they are girls.</span> &quot;I think that&apos;s from another time,&quot; says Dora.', jp:"「彼女たちは、女の子だからという理由でできないことがあるとは思っていない。『それはもう別の時代の話だと思う』とドーラは言う」。"},
+ co:[{c:"gold",l:"that は直前の文を受ける",h:"<b>ドーラが古いと退けているのは「制約の観念」</b>。<u>彼女が当然視している価値観（平等）ではない</u>。<em>肯定文と否定文のどちらを指すかを取り違えない</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>指示語が受ける内容を、否定文の中から正確に取り出す力</b>。<u>直前の文は「〜とは思っていない」という否定形</u>なので、that が指すのは<em>否定された側の考え</em>。"}],
+ sol:[
+  {m:"x",n:"(a)",t:"<b>方向が逆</b>。両性の平等は<u>ドーラが当然視している現代の価値観</u>であって、<em>「別の時代のもの」として退けている対象ではない</em>。〈選びがちな人〉<b>「女の子だから」という語句を見て、ジェンダーに関わる選択肢を内容確認せずに選んだ人</b>。<u>equality という前向きな語に引かれると落ちる</u>。"},
+  {m:"o",n:"(b)",t:"正解。直前の文が否定している「女の子だからできないことがある」という制約の観念を指す。"},
+  {m:"x",n:"(c)",t:"<b>話題がずれる</b>。ソーシャルメディアの良し悪しは<u>第10段落（親とのテクノロジー観の対立）の論点</u>であって、ここではない。〈選びがちな人〉<b>同じ段落に TikTok・Instagram が出てくるのを見て、ソーシャルメディアの話だと早合点した人</b>。"},
+  {m:"x",n:"(d)",t:"<b>本文にない信念</b>。親子関係は第10段落で触れられるが、<u>「親に従うべき」という信念をドーラが退けた記述はない</u>。〈選びがちな人〉<b>sneak out（こっそり抜け出す）という行動から、親への反抗がテーマだと推測した人</b>。"}]},
+
+{id:"(12)", grp:"AB", type:"下線部の意味", lbl:"設問(12)", en:"One of the key changes is that being a girl is now seen as a thing in itself.",
+ ask:"What does it mean that &quot;being a girl is now seen as a thing in itself&quot;?（「女の子であることが今やそれ自体で一つのものとして見られている」とはどういう意味か）", answer:"2", kind:"choice",
+ choices:[
+  {t:"(a) Being a girl is now seen as something to be envied.（女の子であることは今や羨まれるものと見なされている）", ok:false},
+  {t:"(b) Girls are no longer seen as just the opposite of boys.（女の子はもはや男の子の単なる正反対とは見なされない）", ok:true},
+  {t:"(c) Girls have become less visible and successful in society.（女の子は社会でより目立たず、成功しなくなった）", ok:false},
+  {t:"(d) Girls nowadays spend less time playing with boys.（今日の女の子は男の子と遊ぶ時間が少ない）", ok:false}],
+ steps:[
+   {t:"段落の続きに意味の説明を探す", d:"下線部の直後：<b>For centuries, girlhood was defined in opposition to boyhood</b>「何世紀もの間、少女時代は少年時代との対比で定義されてきた」。"},
+   {t:"対比による定義の中身を確認", d:"<em>男の子が意地悪なときには優しく、うるさいときには静かに、個性を持つときには可愛らしく</em>＝<u>すべて男の子を基準にした引き算の定義</u>。"},
+   {t:"「それ自体で」の意味を導く", d:"<b>a thing in itself＝他との対比に頼らず、それ自身として成り立つもの</b>。<u>つまり「男の子の正反対」という定義から脱却したということ</u>。"},
+   {t:"選ぶ", d:"<b>(b)「女の子はもはや男の子の単なる正反対とは見なされない」</b>。"}],
+ ev:{q:'being a girl is now seen as a thing in itself. <span class="h">For centuries, girlhood was defined in opposition to boyhood</span>; being nice when boys were nasty, quiet when boys were loud, pretty when boys had personalities.', jp:"「女の子であることが今やそれ自体で一つのものとして見られている。何世紀もの間、少女時代は少年時代との対比で定義されてきた。男の子が意地悪なときには優しく、うるさいときには静かに、個性を持つときには可愛らしく」。"},
+ co:[{c:"nav",l:"in opposition to が鍵",h:"<b>対比による定義 ↔ それ自体としての定義</b>。<u>下線部の意味は、直後の歴史的説明との対比で決まる</u>。<em>a thing in itself は「独立して成り立つ」であって、価値の高さの話ではない</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>抽象的な表現（a thing in itself）を、直後の具体的な説明から読み解く力</b>。<u>語だけ見ても意味は決まらない</u>。"}],
+ sol:[
+  {m:"x",n:"(a)",t:"<b>価値の優劣にすり替えている</b>。<u>a thing in itself は「独立して成り立つもの」</u>であって、<em>羨望の対象という意味ではない</em>。本文にも「羨まれる」という記述はない。〈選びがちな人〉<b>記事全体が少女の状況改善を描くので、下線部も「良くなった」の言い換えだと読んだ人</b>。<u>方向は合っていても、意味が違う</u>。"},
+  {m:"o",n:"(b)",t:"正解。直後の「対比で定義されてきた」という歴史の裏返し。男の子を基準にした定義からの脱却。"},
+  {m:"x",n:"(c)",t:"<b>本文と正反対</b>。記事全体が<u>少女の可視性と成功の増大</u>を描いている（親の投資、発言権、リーダー志向）。〈選びがちな人〉<b>a thing in itself を「孤立している」と読み、社会からの後退と解釈した人</b>。"},
+  {m:"x",n:"(d)",t:"<b>in opposition to を物理的な分離と誤読</b>。<u>これは「定義のされ方」の話</u>であって、<em>遊ぶ相手や時間の話ではない</em>。本文に男女が遊ぶ時間の記述はない。〈選びがちな人〉<b>opposite（正反対）という語から、男女が離れていくイメージを作った人</b>。"}]},
+
+{id:"(13)", grp:"AB", type:"理由", lbl:"設問(13)", en:"Almost all the girls we spoke with said that not seeing their friends was the hardest part of COVID lockdown…",
+ ask:"Why did girls struggle more than boys during COVID lockdown, according to the article?（記事によれば、なぜ少女は少年よりコロナ禍のロックダウンで苦しんだのか）", answer:"3", kind:"choice",
+ choices:[
+  {t:"(a) Because parents enforced lockdown more strictly on girls than boys.（親が少年より少女にロックダウンをより厳格に課したから）", ok:false},
+  {t:"(b) Because girls fought more with their families than boys.（少女が少年より家族ともめたから）", ok:false},
+  {t:"(c) Because girls suffered more from not being able to meet their friends.（少女が友人に会えないことでより苦しんだから）", ok:true},
+  {t:"(d) Because girls spent more time on social media than boys.（少女が少年よりソーシャルメディアに時間を費やしたから）", ok:false}],
+ steps:[
+   {t:"二つの事実を取り出す", d:"<b>①友人に会えないことが最もつらかった（ほとんどすべての少女）</b>／<b>②少女が少年より苦しんだ（英国児童協会の調査）</b>。"},
+   {t:"二つを結ぶ", d:"<u>少女にとって最大の苦痛は友人に会えないこと</u>。そして<u>少女のほうが苦しんだ</u>。→ <b>友人に会えないことの打撃が少女でより大きかった</b>。"},
+   {t:"第5段落で裏を取る", d:"<em>少女同士の友情はより親密で支え合うもの／少年は10代で離れていくが、少女はいっそう近づく</em>＝<u>友情の重みの差が背景にある</u>。"},
+   {t:"選ぶ", d:"<b>(c)「友人に会えないことでより苦しんだから」</b>。"}],
+ ev:{q:'Almost all the girls we spoke with said that <span class="h">not seeing their friends was the hardest part of COVID lockdown</span>, eclipsing factors like family tensions and online schooling. A survey … confirms this was the case … and that <span class="h">girls struggled more than boys</span>.', jp:"「ほとんどすべての少女が、友達に会えないことがロックダウンで最もつらかったと言った。それは家族間の緊張やオンライン授業といった要因を上回っていた。調査は…少女が少年より苦しんだことを確認している」。"},
+ co:[{c:"nav",l:"二文を結んで因果を作る",h:"<b>「最大の苦痛は友人に会えないこと」＋「少女のほうが苦しんだ」</b>＝<u>その苦痛が少女でより大きい</u>。<em>一文だけでは答えが出ない設問</em>。"},
+     {c:"verm",l:"eclipsing に注意",h:"<b>eclipsing＝〜を覆い隠すほど大きい</b>。<u>家族間の緊張やオンライン授業は、それより小さい要因として退けられている</u>。<em>本文に出てくる語ほど危ない</em>。"}],
+ sol:[
+  {m:"x",n:"(a)",t:"<b>本文にない</b>。<u>親がロックダウンを性別で区別して課したという記述は一切ない</u>。〈選びがちな人〉<b>「少女のほうが苦しんだ」という結果から、外部の原因を推測で補った人</b>。"},
+  {m:"x",n:"(b)",t:"<b>本文が退けた要因</b>。<u>family tensions（家族間の緊張）は eclipsing（それを上回って）という語で、より小さい要因として処理されている</u>。〈選びがちな人〉<b>family tensions という語が本文にあるのを見て、根拠だと判断した人</b>。<u>最も引っかかりやすい</u>。"},
+  {m:"o",n:"(c)",t:"正解。友人に会えないことが最大の苦痛であり、少女のほうが苦しんだ。二文を結べば因果が成立する。"},
+  {m:"x",n:"(d)",t:"<b>男女差の記述がない</b>。本文にソーシャルメディアは登場するが、<u>使用時間の男女差も、それが苦痛の原因だという記述もない</u>。〈選びがちな人〉<b>第3段落の bewildering world of social media を持ち込み、原因として接続した人</b>。"}]},
+
+{id:"(14)", grp:"AB", type:"内容不一致", lbl:"設問(14)", en:"Which statement about modern parenting is NOT mentioned in the article?",
+ ask:"Which statement about modern parenting is NOT mentioned in the article?（現代の子育てについて、記事中で述べられていないものはどれか）", answer:"2", kind:"choice",
+ choices:[
+  {t:"(a) Fathers are more likely to talk to daughters about emotions.（父親は娘と感情について話す可能性が高い）", ok:false},
+  {t:"(b) Girls still spend more time doing housework than boys.（少女は今でも少年より家事に多くの時間を費やす）", ok:true},
+  {t:"(c) Mothers are more likely to use complicated words with girls.（母親は少女に対してより複雑な語彙を使う可能性が高い）", ok:false},
+  {t:"(d) Parents spend more money on tutoring girls than boys.（親は少年より少女の家庭教師に多くのお金を使う）", ok:false}],
+ steps:[
+   {t:"設問の向きを確認", d:"<b>NOT mentioned（述べられていないもの）を選ぶ</b>。<u>言及がある三つを消す</u>のが確実な手順。"},
+   {t:"言及を一つずつ確認", d:"<b>(d)＝第7段落最終文</b>（tutoring, art supplies and music lessons）／<b>(a)＝第8段落第3文</b>（more likely to speak to them about emotions）／<b>(c)＝第8段落第4文</b>（more likely to use complex vocabulary）。<u>三つとも言及あり</u>。"},
+   {t:"残った(b)を検証", d:"第8段落最終文：<b>Girls still have less leisure time than boys, but nowadays that is primarily because they spend more time on homework and grooming, <u>rather than because house chores are unfairly divided</u>.</b>"},
+   {t:"判定", d:"<b>本文は「家事が不公平に分担されているからではない」と明確に否定している</b>。<u>単に言及がないのではなく、本文が打ち消した内容</u>＝(b)が正解。"}],
+ ev:{q:'Girls still have less leisure time than boys, but nowadays that is primarily because they spend more time on homework and grooming, <span class="h">rather than because house chores are unfairly divided</span>.', jp:"「少女は今でも少年より余暇が少ないが、現在ではそれは主に宿題や身だしなみに時間を費やすためであって、家事が不公平に分担されているからではない」。"},
+ co:[{c:"verm",l:"rather than が決め手",h:"<b>A rather than B＝BではなくA</b>。<u>本文は家事の不公平を明示的に否定している</u>。<em>「言及なし」より強く、「否定されている」</em>。"},
+     {c:"nav",l:"NOT問題は消去法で",h:"<b>言及のある三つを本文で確認して消す</b>。<u>(d)第7段落／(a)(c)第8段落</u>と、根拠が順番に並んでいるので照合しやすい。"}],
+ sol:[
+  {m:"x",n:"(a)",t:"<b>第8段落第3文に明記</b>。<u>fathers … are more likely to speak to them about emotions, including sadness</u>。言及があるので答えではない。"},
+  {m:"o",n:"(b)",t:"正解（＝述べられていない）。本文は「家事が不公平に分担されているからではない」と明確に否定しており、少女が家事に多くの時間を費やすとは述べていない。"},
+  {m:"x",n:"(c)",t:"<b>第8段落第4文に明記</b>。<u>Their mothers are more likely to use complex vocabulary with them</u>。言及があるので答えではない。"},
+  {m:"x",n:"(d)",t:"<b>第7段落最終文に明記</b>。<u>Girls today enjoy more parental spending than boys on tutoring, art supplies and music lessons</u>。言及があるので答えではない。〈選びがちな人〉<b>設問の向き（NOT）を見落とし、「本文に書いてある」ものを選んでしまう人</b>。"}]},
+
+/* ===== (15)〜(17)：グループCD ===== */
+{id:"(15)", grp:"CD", type:"推論", lbl:"設問(15)", en:"Businessmen with daughters are more likely to support women's professional careers.",
+ ask:"Based on the article, a man who has a daughter would be more likely to show which of the following behaviors?（記事に基づくと、娘のいる男性が示す可能性が最も高い行動はどれか）", answer:"4", kind:"choice",
+ choices:[
+  {t:"(a) A tendency to leave the housework to women.（家事を女性に任せる傾向）", ok:false},
+  {t:"(b) A greater interest in women's sports.（女性スポーツへのより大きな関心）", ok:false},
+  {t:"(c) A tendency to reject feminist political attitudes.（フェミニズム的な政治的態度を拒否する傾向）", ok:false},
+  {t:"(d) A willingness to promote women at his workplace.（職場で女性の昇進を促す意欲）", ok:true}],
+ steps:[
+   {t:"該当段落の記述を並べる", d:"第9段落：<b>①伝統的なジェンダー役割の態度を持つ可能性が減る ②家事で自分の役割を果たす可能性が高まる ③政治家や裁判官の判断に影響 ④女性の職業的キャリアを支援する可能性が高い</b>。"},
+   {t:"最終文に照準", d:"<b>Businessmen with daughters are more likely to support women&apos;s professional careers.</b>「娘を持つビジネスマンは、女性の職業的キャリアを支援する可能性が高い」。"},
+   {t:"言い換えを選ぶ", d:"<b>support women&apos;s professional careers＝職場で女性の昇進を促す</b>＝(d)。"}],
+ ev:{q:'<span class="h">Businessmen with daughters are more likely to support women&apos;s professional careers.</span>', jp:"「娘を持つビジネスマンは、女性の職業的キャリアを支援する可能性が高い」。"},
+ co:[{c:"gold",l:"二つの動詞の向き",h:"<b>decreases（伝統的態度を減らす）／makes more likely（家事分担を増やす）</b>。<u>この二つの向きを取れば、(a)(c)は自動的に消える</u>。"},
+     {c:"nav",l:"出題者が見ている力",h:"<b>研究結果の記述を、具体的な行動に翻訳する力</b>。<u>support careers → promote at workplace</u> という抽象から具体への橋渡し。"}],
+ sol:[
+  {m:"x",n:"(a)",t:"<b>本文と正反対</b>。<u>makes them more likely to pull their weight in housework</u>＝<em>家事で自分の役割を果たすようになる</em>。〈選びがちな人〉<b>housework という語が本文にあるのを見て、向きを確認せず選んだ人</b>。"},
+  {m:"x",n:"(b)",t:"<b>本文にない</b>。<u>女性スポーツへの言及は一切ない</u>。〈選びがちな人〉<b>「娘がいると女性に理解を示す」という一般的な連想から、本文にない行動を補った人</b>。"},
+  {m:"x",n:"(c)",t:"<b>本文と正反対</b>。<u>decreases fathers&apos; likelihood of holding traditional attitudes on gender roles</u>＝<em>伝統的な態度を持つ可能性が減る</em>。つまりフェミニズム的態度に近づく。〈選びがちな人〉<b>political という語（politicians and judges）を拾い、政治的態度の話だと接続した人</b>。"},
+  {m:"o",n:"(d)",t:"正解。第9段落最終文「女性の職業的キャリアを支援する」の具体化。"}]},
+
+{id:"(16)", grp:"CD", type:"語句の意味", lbl:"設問(16)", en:"their parents take too one-sided an approach to technology",
+ ask:"Which of these is closest to the meaning, in this context, of &quot;too one-sided&quot;?（この文脈で「あまりに一方的」に最も意味が近いものはどれか）", answer:"2", kind:"choice",
+ choices:[
+  {t:"(a) Too close to the truth.（真実に近すぎる）", ok:false},
+  {t:"(b) Too focused on the negative.（否定的な側面に偏りすぎている）", ok:true},
+  {t:"(c) Too relaxed about the dangers.（危険について無頓着すぎる）", ok:false},
+  {t:"(d) Too sexist.（性差別的すぎる）", ok:false}],
+ steps:[
+   {t:"one-sided の基本義を押さえる", d:"<b>one-sided＝一方に偏っている</b>。<u>どちら側に偏っているかは文脈が決める</u>。"},
+   {t:"直後の引用で偏りの向きを特定", d:"フランキー：<b>「親はそれが全部ドラマと気晴らしの塊で、私たちがみんな中毒になっていると思っている」</b>＝<u>否定面の列挙</u>。"},
+   {t:"but 以下で対比を確認", d:"<b>but it can be really inspiring, too</b>「でも、それはとても刺激的にもなりうる」＝<u>親が見ていない肯定面</u>。"},
+   {t:"選ぶ", d:"<b>親は否定面ばかり見ている</b>＝(b)「否定的な側面に偏りすぎている」。"}],
+ ev:{q:'&quot;My parents think it&apos;s all a bunch of <span class="h">drama and distraction</span> and that we&apos;re all <span class="h">addicted</span>,&quot; complains Frankie, &quot;<span class="h">but it can be really inspiring, too</span>.&quot;', jp:"「私の両親は、それが全部ドラマと気晴らしの塊で、私たちがみんな中毒になっていると思っています…でも、それはとても刺激的にもなりうるんです」。"},
+ co:[{c:"nav",l:"偏りの向きは直後が決める",h:"<b>ドラマ・気晴らし・中毒＝否定面／刺激的＝肯定面</b>。<u>親が前者だけを見ているから one-sided</u>。<em>but が対比を明示している</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>多義的な語（one-sided）の、この文脈での向きを決める力</b>。<u>語義を知っているだけでは解けず、直後の引用を読む必要がある</u>。"}],
+ sol:[
+  {m:"x",n:"(a)",t:"<b>意味をなさない</b>。<u>one-sided は偏りを指す語であって、真実との距離を表さない</u>。〈選びがちな人〉<b>選択肢の形だけ見て、消去法の最後に残した人</b>。"},
+  {m:"o",n:"(b)",t:"正解。親はドラマ・気晴らし・中毒という否定面ばかりを見ている。but 以下の肯定面と対比される。"},
+  {m:"x",n:"(c)",t:"<b>偏りの向きが逆</b>。<u>親はむしろ危険を強調しすぎている</u>。〈選びがちな人〉<b>「親は無頓着」という構図を想定した人</b>。<em>本文を読めば向きは明らか</em>。"},
+  {m:"x",n:"(d)",t:"<b>話題がずれる</b>。<u>ここはテクノロジーへの見方の話</u>で、<em>ジェンダーの話ではない</em>。〈選びがちな人〉<b>記事全体がジェンダーを扱うので、この語もジェンダー関連だと推測した人</b>。"}]},
+
+{id:"(17)", grp:"CD", type:"引用の機能", lbl:"設問(17)", en:"from Charlotte Brontë's heroine Jane Eyre, to Claudia in Toni Morrison's novel The Bluest Eye",
+ ask:"Literary works by Charlotte Brontë and Toni Morrison are introduced to support what argument?（シャーロット・ブロンテとトニ・モリスンの文学作品は、どんな主張を裏づけるために導入されているか）", answer:"2", kind:"choice",
+ choices:[
+  {t:"(a) The argument that, despite gender inequality in the past, there were many female authors.（過去のジェンダー不平等にもかかわらず、多くの女性作家がいたという主張）", ok:false},
+  {t:"(b) The argument that female characters in fiction have often been represented as courageous.（フィクションの中の女性登場人物はしばしば勇気あるものとして描かれてきたという主張）", ok:true},
+  {t:"(c) The argument that female leadership has rarely been seen in fiction, but often in real life.（女性のリーダーシップはフィクションではまれだが現実にはよく見られるという主張）", ok:false},
+  {t:"(d) The argument that girls become more outspoken as they enter their teens.（少女は10代に入るとより率直になるという主張）", ok:false}],
+ steps:[
+   {t:"引用が置かれた文を読む", d:"<b>young girls have long been imagined as brave and outspoken on controversial issues, from Charlotte Brontë&apos;s heroine Jane Eyre, to Claudia…</b>"},
+   {t:"二人が何の例かを特定", d:"<u>ジェーン・エアもクローディアも「作中人物（heroine / character）」</u>。<em>作家ではなく、作品の中の少女として挙げられている</em>。"},
+   {t:"支える主張を言語化", d:"<b>フィクションの中では、少女は長らく勇敢で率直な存在として描かれてきた</b>＝(b)。"},
+   {t:"直後の but に注意", d:"<em>しかし現実の少女は10代で声を上げるのをやめた</em>＝<u>フィクションと現実のずれ</u>。<b>引用はフィクション側の例</b>。"}],
+ ev:{q:'young girls have long been <span class="h">imagined as brave and outspoken</span> on controversial issues, from Charlotte Brontë&apos;s <span class="h">heroine</span> Jane Eyre, to <span class="h">Claudia in Toni Morrison&apos;s novel</span> The Bluest Eye.', jp:"「若い少女たちは長い間、論争的な問題について勇敢で率直な存在として想像されてきた。シャーロット・ブロンテのヒロイン、ジェーン・エアから、トニ・モリスンの小説のクローディアまで」。"},
+ co:[{c:"gold",l:"挙げられたのは作中人物",h:"<b>heroine（ヒロイン）／Claudia in … novel（小説の中のクローディア）</b>＝<u>作家ではなく作中人物の例</u>。<em>だから「女性作家が多くいた」証明にはならない</em>。"},
+     {c:"verm",l:"imagined が二層を分ける",h:"<b>imagined（想像の中では）</b>＝<u>フィクションの層</u>。直後の real-life（現実の少女）と対になる。<em>引用は前者の例</em>。"}],
+ sol:[
+  {m:"x",n:"(a)",t:"<b>挙げられたのは作家ではなく作中人物</b>。<u>heroine Jane Eyre / Claudia in … novel</u>という書き方が、<em>作品内の人物を指していることを示す</em>。女性作家の数は論点ではない。〈選びがちな人〉<b>ブロンテとモリスンという作家名が目に入り、作家についての主張だと読んだ人</b>。<u>最も引っかかりやすい</u>。"},
+  {m:"o",n:"(b)",t:"正解。imagined as brave and outspoken の具体例として、二つの作品の少女が挙げられている。"},
+  {m:"x",n:"(c)",t:"<b>二層が逆</b>。本文は<u>フィクションでこそ勇敢な少女が描かれ、現実の少女は沈黙した</u>と述べる。〈選びがちな人〉<b>imagined と real-life の対応を取り違えた人</b>。"},
+  {m:"x",n:"(d)",t:"<b>本文と正反対</b>。直後の文は<u>現実の少女は10代になると声を上げるのをやめる傾向があった</u>と述べる。〈選びがちな人〉<b>outspoken という語を拾い、直後の though 以下を読まなかった人</b>。"}]},
+
+/* ===== (18)〜(20)：グループEF ===== */
+{id:"(18)", grp:"EF", type:"理由", lbl:"設問(18)", en:"they tended to stop speaking up, pressured as they were to become likeable young women",
+ ask:"According to the article, what was the main reason that teenage girls tended to stop speaking up on controversial issues in the past?（記事によれば、過去に10代の少女が論争的な問題で発言をやめる傾向にあった主な理由は何か）", answer:"1", kind:"choice",
+ choices:[
+  {t:"(a) Because they felt pressure to be likeable.（好かれなければというプレッシャーを感じたから）", ok:true},
+  {t:"(b) Because they focused on close friendships instead.（代わりに親密な友情に専念したから）", ok:false},
+  {t:"(c) Because they lacked famous role models.（有名なロールモデルを欠いていたから）", ok:false},
+  {t:"(d) Because they were under pressure to be leaders.（リーダーになるというプレッシャーを受けていたから）", ok:false}],
+ steps:[
+   {t:"該当文を特定", d:"第11段落最終文：<b>As real-life girls hit their teens, though, they tended to stop speaking up, <u>pressured as they were to become &quot;likeable&quot; young women</u>.</b>"},
+   {t:"分詞構文の意味を取る", d:"<b>pressured as they were to become &quot;likeable&quot;</b>＝<em>「好かれる」若い女性になるよう圧力をかけられて</em>。<u>これが発言をやめた理由</u>。"},
+   {t:"選ぶ", d:"<b>(a)「好かれなければというプレッシャーを感じたから」</b>。<u>本文の likeable がそのまま選択肢に現れる</u>。"}],
+ ev:{q:'As real-life girls hit their teens, though, they tended to stop speaking up, <span class="h">pressured as they were to become &quot;likeable&quot; young women</span>.', jp:"「しかし現実の少女たちが10代になると、『好かれる』若い女性になるよう圧力をかけられ、声を上げるのをやめる傾向があった」。"},
+ co:[{c:"gold",l:"pressured as they were",h:"<b>分詞構文＋as の挿入</b>で理由を表す。<u>＝because they were pressured to become likeable</u>。<em>この構文が読めれば即決</em>。"},
+     {c:"verm",l:"時期の取り違えに注意",h:"<b>設問は「過去に」発言をやめた理由</b>。<u>現代のプレッシャー（第13段落）と混同しない</u>。<em>選択肢(d)は現代の話</em>。"}],
+ sol:[
+  {m:"o",n:"(a)",t:"正解。pressured … to become likeable young women が直接の根拠。"},
+  {m:"x",n:"(b)",t:"<b>別の論点からの持ち込み</b>。<u>親密な友情は第5段落の話</u>であり、<em>発言をやめた理由としては述べられていない</em>。〈選びがちな人〉<b>記事内の別の「少女の特徴」を、理由として接続した人</b>。"},
+  {m:"x",n:"(c)",t:"<b>本文と逆</b>。<u>ジェーン・エアやクローディアという、勇敢な少女のモデルが文学の中に挙げられている</u>。<em>モデルの欠如が理由ではない</em>。〈選びがちな人〉<b>「ロールモデルがいないから自信を持てない」という一般論で補った人</b>。"},
+  {m:"x",n:"(d)",t:"<b>時期が逆</b>。<u>リーダーになるプレッシャーは現代の話</u>（第12〜13段落）。<em>過去に発言をやめた理由ではない</em>。〈選びがちな人〉<b>pressure という語が第13段落にもあるので、そちらを根拠にした人</b>。<u>設問の in the past を見落とすと落ちる</u>。"}]},
+
+{id:"(19)", grp:"EF", type:"誤解の内容", lbl:"設問(19)", en:"By myself? Oh God no. … Then she realizes the you is plural.",
+ ask:"How does Frankie at first misunderstand the question &quot;Do you think you can change the world?&quot;（フランキーは最初、「あなたは世界を変えられると思うか」という問いをどう誤解しているか）", answer:"3", kind:"choice",
+ choices:[
+  {t:"(a) She thinks that the questioner is asking about all the problems in the world, not just gender problems.（質問者が、ジェンダーの問題だけでなく世界のあらゆる問題について尋ねていると考える）", ok:false},
+  {t:"(b) She thinks that the questioner is asking if she can change the world while she is still a child.（まだ子どものうちに世界を変えられるかと尋ねられていると考える）", ok:false},
+  {t:"(c) She thinks that the questioner means her individually, rather than girls in general.（質問者が少女たち全体ではなく彼女個人のことを言っていると考える）", ok:true},
+  {t:"(d) She thinks that the questioner is asking if she can change her local community, rather than the whole world.（世界全体ではなく地元の共同体を変えられるかと尋ねられていると考える）", ok:false}],
+ steps:[
+   {t:"最初の反応を読む", d:"<b>「By myself?（私一人で?）」</b>＝<u>you を自分一人のことだと受け取っている</u>。"},
+   {t:"気づきの瞬間を読む", d:"<b>Then she realizes the &quot;you&quot; is plural, which changes everything.</b>「それから彼女は you が複数形だと気づく。それがすべてを変える」。"},
+   {t:"誤解の種類を特定", d:"<u>単数か複数か（一人か、少女たち全体か）の取り違え</u>。<em>年齢でも、問題の範囲でも、地理的範囲でもない</em>。"},
+   {t:"選ぶ", d:"<b>(c)「質問者が少女たち全体ではなく彼女個人のことを言っていると考える」</b>。"}],
+ ev:{q:'&quot;<span class="h">By myself?</span> Oh God no. What if I can&apos;t fix the problems?&quot; Then she realizes <span class="h">the &quot;you&quot; is plural</span>, which changes everything. &quot;Oh, you mean all girls,&quot; she says…', jp:"「私一人で? ああ神様、無理です。もし問題を解決できなかったらどうしよう?」…それから彼女は『you』が複数形だと気づく。それがすべてを変える。「ああ、女の子たち全員ってことですね」。"},
+ co:[{c:"gold",l:"By myself? が答えを決める",h:"<b>「私一人で?」という最初の一言</b>が、<u>誤解の中身を一語で示している</u>。<em>次段落の plural / all girls が確定させる</em>。"},
+     {c:"nav",l:"出題者が見ている力",h:"<b>誤解の「種類」を正確に特定する力</b>。<u>何を取り違えたのか（人数か、年齢か、範囲か）を区別する</u>。"}],
+ sol:[
+  {m:"x",n:"(a)",t:"<b>問題の範囲の誤解ではない</b>。<u>フランキーが取り違えたのは you の指す人数</u>であって、<em>world の中身ではない</em>。〈選びがちな人〉<b>change the world という語句に注目し、world の範囲の話だと読んだ人</b>。"},
+  {m:"x",n:"(b)",t:"<b>年齢の問題ではない</b>。<u>By myself? は人数についての疑問</u>であって、<em>「子どものうちに」という時期の問題ではない</em>。〈選びがちな人〉<b>少女が主題の記事なので、年齢の話だと推測した人</b>。"},
+  {m:"o",n:"(c)",t:"正解。you を単数（彼女個人）と取ったことが誤解の中身。次段落の plural / all girls が確定させる。"},
+  {m:"x",n:"(d)",t:"<b>地理的範囲の誤解ではない</b>。<u>本文に地元の共同体への言及はない</u>。〈選びがちな人〉<b>「世界は大きすぎる」という感覚から、規模の縮小という方向で誤解を想定した人</b>。"}]},
+
+{id:"(20)", grp:"EF", type:"主旨", lbl:"設問(20)", en:"（本文全体）",
+ ask:"Which of these statements is closest to the main point of this article?（この記事の要点に最も近いものはどれか）", answer:"4", kind:"choice",
+ choices:[
+  {t:"(a) A crisis of masculinity is negatively affecting young boys&apos; sense of self-esteem.（男性性の危機が少年の自尊心に悪影響を与えている）", ok:false},
+  {t:"(b) Although men were previously in control in society, the situation is now mostly reversed.（かつては男性が社会を支配していたが、今や状況はほぼ逆転した）", ok:false},
+  {t:"(c) Gender inequality is still a major problem and will take many years to solve.（ジェンダー不平等は今も大きな問題で、解決には長い年月がかかる）", ok:false},
+  {t:"(d) The experience of being a girl is more flexible and contains more possibilities than before.（女の子であるという経験は、以前よりも柔軟で多くの可能性を含む）", ok:true}],
+ steps:[
+   {t:"記事の主題文を探す", d:"第3段落：<b>Frankie, Dora and tens of millions of … girls … are having a girlhood like none before.</b>「かつてない少女時代を過ごしている」＝<u>記事全体の宣言</u>。"},
+   {t:"主題の中身を確認", d:"第4段落：<b>girls are allowed, and allow themselves, a range of interests and behaviours that is broad and flexible</b>「幅広く柔軟な範囲の興味と行動」＝<u>flexible という語が直接現れる</u>。"},
+   {t:"結末で確認", d:"<b>「もちろん私たちならできます」</b>＝<u>可能性の確認で閉じる</u>。"},
+   {t:"選ぶ", d:"<b>(d)「女の子であるという経験は、以前よりも柔軟で多くの可能性を含む」</b>。<u>broad and flexible / like none before と直結</u>。"}],
+ ev:{q:'Frankie, Dora and tens of millions of 11- to 16-year-old girls in the rich world are having <span class="h">a girlhood like none before</span>. … girls are allowed, and allow themselves, a range of interests and behaviours that is <span class="h">broad and flexible</span>.', jp:"「フランキー、ドーラ、そして数千万人の少女たちは、かつてない少女時代を過ごしている…少女たちは幅広く柔軟な範囲の興味と行動を許されている」。"},
+ co:[{c:"nav",l:"主題文は第3〜4段落",h:"<b>a girlhood like none before（かつてない少女時代）＋broad and flexible（幅広く柔軟）</b>。<u>正解の語（flexible, possibilities）が本文に直接対応する</u>。"},
+     {c:"verm",l:"主旨問題は「何を論じたか」で選ぶ",h:"<b>記事が論じたのは「少女であることの経験の変化」</b>。<u>少年の危機でも、支配の逆転でも、不平等の残存でもない</u>。<em>それぞれ本文の一部に触れるが、主題ではない</em>。"}],
+ sol:[
+  {m:"x",n:"(a)",t:"<b>少年は比較のためにのみ登場する</b>。<u>少年の自尊心や「男性性の危機」は本文に一切ない</u>。〈選びがちな人〉<b>男女の比較が多いので、少年側の問題も論じられていると読んだ人</b>。<em>比較対象であることと、主題であることは別</em>。"},
+  {m:"x",n:"(b)",t:"<b>「逆転した」は言い過ぎ</b>。本文は<u>少女の状況改善を述べるが、男性支配が逆転したとは述べていない</u>。第9段落も「父親の態度が変わる」であって支配の交代ではない。〈選びがちな人〉<b>支出の逆転（第7段落）など個別の逆転を、社会全体の逆転に拡大した人</b>。"},
+  {m:"x",n:"(c)",t:"<b>記事の基調と逆</b>。本文は<u>変化と可能性を強調する</u>。プレッシャー（第13段落）には触れるが、<em>それは留保であって主題ではない</em>。〈選びがちな人〉<b>「高い期待はリスク」という一段落を、記事全体の結論と取り違えた人</b>。"},
+  {m:"o",n:"(d)",t:"正解。a girlhood like none before（第3段落）、broad and flexible（第4段落）と直結し、結末の「もちろんできる」まで一貫する。"}]},
+].concat([
+/* ===== 発展1：最後のオチが集約するもの ===== */
+{id:"発展1", grp:"GH", type:"結末の機能", lbl:"Original Q1", en:"（最終2段落：Frankie's reaction to the question）",
+ ask:"Why does the article end with Frankie's confusion over the word \"you\"?（なぜこの記事はフランキーが「you」という語をめぐって混乱する場面で終わるのか）", answer:"2", kind:"choice",
+ choices:[
+  {t:"To suggest that girls of Frankie's age are still too young to understand questions about social change.（フランキーの年齢の少女は社会変革についての問いを理解するにはまだ幼すぎると示唆するため）", ok:false},
+  {t:"To capture in a single moment both the burden the individual girl feels and the confidence she has in girls collectively.（個人としての少女が感じる重荷と、少女たち全体に対して抱く自信の両方を、一つの場面に凝縮するため）", ok:true},
+  {t:"To show that the English language is poorly suited to discussing questions of gender and generation.（英語という言語がジェンダーや世代の問題を論じるのに適していないことを示すため）", ok:false},
+  {t:"To imply that girls today are more optimistic than the evidence presented in the article would justify.（今日の少女たちは、記事で示された証拠が正当化する以上に楽観的だと示唆するため）", ok:false}],
+ steps:[
+   {t:"二つの反応を並べる", d:"単数と取ったとき：<b>looks panicked「パニックになったように見える」「私一人で? ああ無理。問題を解決できなかったらどうしよう」</b>／複数と気づいたとき：<b>with a sigh of relief「安堵のため息とともに」「もちろんできるわ」</b>。"},
+   {t:"直前の段落と結ぶ", d:"第13段落：<b>High expectations are undoubtedly a risk … pressure to do good, look good and be good.</b>＝<u>個人にかかる重圧</u>。フランキーのパニックはこの重圧の実例。"},
+   {t:"記事全体の主張と結ぶ", d:"第12段落：<b>Girls now are more likely than boys to say that they want to make the world a better place</b>＝<u>集団としての少女の力</u>。「もちろんできる」はこの自信の実例。"},
+   {t:"選ぶ", d:"<b>一つの場面が、個人の重荷と集団への自信の両方を同時に示している</b>＝2。<u>記事の二つの主題が一点で交差する</u>。"}],
+ ev:{q:'"By myself? Oh God no. What if I can\'t fix the problems?" Then she realizes the "you" is plural, which changes everything. "Oh, you mean all girls," she says <span class="h">with a sigh of relief</span>. "Of course we can."', jp:"「私一人で? ああ神様、無理。問題を解決できなかったらどうしよう」…それから彼女は『you』が複数形だと気づく。それがすべてを変える。「ああ、女の子たち全部ってことね」と安堵のため息とともに言う。「もちろんできるわ」。"},
+ co:[{c:"nav",l:"一場面に二主題を重ねる",h:"<b>パニック＝第13段落の「高い期待というリスク」の実例／安堵＝第12段落の「世界を良くしたい」の実例</b>。<u>結末は記事の二本の線を一点で結ぶ装置</u>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>逸話が論のどこに接続しているかを読む力</b>。<u>「かわいいオチ」で済ませず、直前2段落との対応を見る</u>。"}],
+ sol:[
+  {m:"x",n:"1",t:"<b>記事の少女像と正反対</b>。本文は<u>少女たちが政治的抗議に参加し、オンラインで声を上げ、世界を良くしたいと語る</u>姿を描いている。<em>幼すぎて理解できない存在としては描かれていない</em>。〈選びがちな人〉<b>panicked という一語だけを拾い、直後の「もちろんできる」を読まなかった人</b>。"},
+  {m:"o",n:"2",t:"正解。パニックは第13段落の重圧の実例、安堵は第12段落の集団的自信の実例。二主題が一場面で交差している。"},
+  {m:"x",n:"3",t:"<b>言語論は本文の主題ではない</b>。you の単複は<u>主題を可視化する仕掛けとして使われている</u>のであって、<em>英語の不備を論じてはいない</em>。〈選びがちな人〉<b>仕掛けの表面（文法的な多義性）だけを見て、それが何を示すために使われているかを問わなかった人</b>。"},
+  {m:"x",n:"4",t:"<b>筆者は楽観を否定していない</b>。記事は<u>親の投資、父親の変化、教育と発言権の拡大</u>など、根拠を積み上げたうえで結末に至る。<em>「証拠以上に楽観的」という批判的な含みはない</em>。〈選びがちな人〉<b>第13段落の「リスク」を記事全体への留保と読み、結末を皮肉と解釈した人</b>。"}]},
+
+/* ===== 発展2：Ironicallyの逆説構造 ===== */
+{id:"発展2", grp:"GH", type:"逆説の構造", lbl:"Original Q2", en:"（第8段落：Ironically, some old gender stereotypes … may now help girls.）",
+ ask:"In what sense are the old gender stereotypes described in the eighth paragraph \"ironic\"?（第8段落で述べられる古いジェンダー・ステレオタイプは、どのような意味で「皮肉」なのか）", answer:"4", kind:"choice",
+ choices:[
+  {t:"They were invented by people who secretly wished to give girls an advantage over boys.（それらは、密かに少女に男子より優位を与えたいと願った人々によって生み出された）", ok:false},
+  {t:"They have been abandoned by parents at exactly the moment when they would have been most useful.（それらは、最も有用であったはずのまさにその時期に親たちによって捨てられた）", ok:false},
+  {t:"They were once thought harmful but research has now shown that they never had any effect at all.（かつて有害と考えられたが、研究によって何の影響もなかったことが示された）", ok:false},
+  {t:"Practices that arose from a limiting view of girls now give them an advantage in a world that values the very skills those practices developed.（少女を制限する見方から生まれた慣行が、まさにその慣行が育てた技能を重んじる世界で、今や少女に優位を与えている）", ok:true}],
+ steps:[
+   {t:"どんな慣行かを確認", d:"<b>幼児期に多く読み聞かせる／父親が5倍歌ってやる／悲しみを含む感情について話す／母親がより複雑な語彙を使う</b>＝<u>「女の子は優しく情緒的に育てるもの」という古い前提から生まれた扱い</u>。"},
+   {t:"その前提が何だったかを確認", d:"第4段落：<em>何世紀もの間、少女時代は少年時代との対立で定義された。男子が意地悪なときに優しく、うるさいときに静かに</em>＝<u>少女を制限する見方</u>。"},
+   {t:"現在の帰結を確認", d:"<b>Most of this gives girls an advantage in a world that increasingly prizes \"soft skills\".</b>「ソフトスキルをますます重視する世界で、これらの多くが少女に優位を与える」。"},
+   {t:"皮肉の中身を言語化", d:"<b>少女を縛るために生まれた慣行が、その慣行が育てた能力を評価する時代の到来によって、今や武器になっている</b>＝<u>意図と結果の逆転</u>＝4。"}],
+ ev:{q:'<span class="h">Ironically, some old gender stereotypes related to children\'s upbringing may now help girls.</span> … Most of this gives girls an advantage in a world that increasingly prizes "soft skills".', jp:"「皮肉なことに、子育てに関する古いジェンダー・ステレオタイプのいくつかが、今や少女を助けるかもしれない…これらのほとんどが、ソフトスキルをますます重視する世界で少女に優位を与える」。"},
+ co:[{c:"gold",l:"皮肉＝意図と結果の逆転",h:"<b>制限するための扱いが、時代の変化によって資産に変わった</b>。<u>ステレオタイプ自体が良いものになったのではなく、社会が評価する能力の方が動いた</u>のが要点。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>Ironically の中身を、本文の二点（扱いの由来と現在の価値）を結んで説明する力</b>。<u>「皮肉」という語を見て漠然と逆説だと済ませない</u>。"}],
+ sol:[
+  {m:"x",n:"1",t:"<b>意図の捏造</b>。本文は<u>ステレオタイプが少女を助けようとして作られたとは述べていない</u>。皮肉が成立するのは<em>意図せざる結果だから</em>であって、隠れた善意があったなら皮肉にならない。〈選びがちな人〉<b>「皮肉」を「実は良い意図があった」という裏話として読んだ人</b>。"},
+  {m:"x",n:"2",t:"<b>本文と逆</b>。これらの慣行は<u>現在も続いている</u>（are read to more / are five times more likely to sing）。<em>捨てられたとは書かれていない</em>。〈選びがちな人〉<b>old という語から「過去のもの＝今はない」と推測した人</b>。<u>old は由来の古さであって消滅ではない</u>。"},
+  {m:"x",n:"3",t:"<b>「何の影響もなかった」は本文と正反対</b>。本文は<u>これらが少女に優位を与えると明言</u>している。影響がないどころか、影響があるからこそ皮肉になる。〈選びがちな人〉<b>研究への言及（Researchers have found…）を次段落から持ち込み、内容を確認しなかった人</b>。"},
+  {m:"o",n:"4",t:"正解。少女を制限する見方から生まれた慣行が、その慣行が育てた技能を重んじる時代に優位をもたらしている。意図と結果の逆転。"}]},
+
+/* ===== 発展3：ギリガンの引用の時間構造 ===== */
+{id:"発展3", grp:"IJ", type:"時間構造の把握", lbl:"Original Q3", en:"（第11〜12段落：Carol Gilligan / Today's girls）",
+ ask:"What contrast does the reference to Carol Gilligan establish, and how is it resolved in the following paragraph?（キャロル・ギリガンへの言及はどのような対比を打ち立て、それは次の段落でどう解消されるか）", answer:"1", kind:"choice",
+ choices:[
+  {t:"Fiction had long shown girls as outspoken while real girls fell silent in their teens; today's girls are described as finally having the means to speak and be heard.（フィクションは長らく少女を率直な存在として描いてきたが、現実の少女は10代で沈黙した。今日の少女は、ついに語り聞かれるための手段を得たと述べられる）", ok:true},
+  {t:"Fiction had long shown girls as silent while real girls were outspoken; today's novels are described as finally catching up with reality.（フィクションは長らく少女を沈黙した存在として描いたが、現実の少女は率直だった。今日の小説はついに現実に追いついたと述べられる）", ok:false},
+  {t:"Novelists disagreed about whether girls were courageous, and recent research is described as having settled the dispute in their favour.（小説家たちは少女が勇敢かどうかで意見が割れており、最近の研究がその論争を少女に有利に決着させたと述べられる）", ok:false},
+  {t:"Girls were courageous in childhood but not in adolescence, and today's girls are described as remaining childlike for longer.（少女は子ども時代には勇敢だが思春期にはそうでなく、今日の少女はより長く子どもらしさを保つと述べられる）", ok:false}],
+ steps:[
+   {t:"ギリガンが指摘する層を確認", d:"<b>young girls have long been imagined as brave and outspoken … from Jane Eyre to Claudia</b>＝<u>フィクションの中の少女像（long been imagined）</u>。"},
+   {t:"現実の層を確認", d:"<b>As real-life girls hit their teens, though, they tended to stop speaking up</b>＝<u>現実の少女は10代で黙った（過去形 tended）</u>。<em>though が二層の食い違いを示す</em>。"},
+   {t:"次段落での解消を確認", d:"第12段落：<b>Today's girls learn that, now they have the tools needed to speak louder … their voices will be heard.</b>＝<u>現在、現実の側がフィクションの像に追いつきつつある</u>。"},
+   {t:"選ぶ", d:"<b>フィクション（率直）↔現実（沈黙）の対比が、今日の少女が手段を得たことで解消される</b>＝1。"}],
+ ev:{q:'young girls have long been <span class="h">imagined</span> as brave and outspoken … As <span class="h">real-life</span> girls hit their teens, though, they tended to stop speaking up … Today\'s girls learn that, now they have the tools needed to speak louder … their voices will be heard.', jp:"「若い少女は長らく勇敢で率直だと想像されてきた…しかし現実の少女は10代になると声を上げるのをやめる傾向があった…今日の少女は、より大きな声で話すのに必要な道具を得た今、自分の声が聞かれると学ぶ」。"},
+ co:[{c:"nav",l:"imagined と real-life の対",h:"<b>imagined（想像の中で）↔ real-life（現実の）</b>。<u>この一語対が二つの層を分けている</u>。<em>though がその食い違いを明示し、次段落の Today が解消を示す</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>段落をまたぐ時間構造（長年の対比→現在の解消）を追う力</b>。<u>ギリガンの段落だけを読むと、対比はあっても解消が見えない</u>。"}],
+ sol:[
+  {m:"o",n:"1",t:"正解。imagined（フィクションでは率直）と real-life（現実は沈黙）の対比が、第12段落の「今日は手段がある」で解消される。"},
+  {m:"x",n:"2",t:"<b>二層が入れ替わっている</b>。本文では<u>フィクションの側が率直（brave and outspoken）、現実の側が沈黙</u>。<em>逆に読むと全体が崩れる</em>。〈選びがちな人〉<b>imagined と real-life の対応を取り違えた人</b>。<u>最も多い誤読</u>。"},
+  {m:"x",n:"3",t:"<b>「小説家の意見が割れていた」は本文にない</b>。ジェーン・エアもクローディアも<u>同じ方向（勇敢で率直）の例として並べられている</u>。<em>論争も決着も描かれていない</em>。〈選びがちな人〉<b>二人の作家名が挙がるのを見て、対立する立場の代表だと推測した人</b>。"},
+  {m:"x",n:"4",t:"<b>「子どもらしさを保つ」は本文にない</b>。第12段落が述べるのは<u>教育・インターネット・家を出る自由という手段を得たこと</u>であって、<em>幼さの持続ではない</em>。〈選びがちな人〉<b>「10代で黙った」の裏返しとして「10代でも子どものまま」を作った人</b>。"}]},
+
+/* ===== 発展4：エンパワメントとプレッシャーの表裏 ===== */
+{id:"発展4", grp:"IJ", type:"両義性の把握", lbl:"Original Q4", en:"（第12〜13段落：tools to speak louder / High expectations are a risk）",
+ ask:"Why does the author place the warning about \"high expectations\" immediately after describing how much girls now want to lead and improve the world?（筆者はなぜ、少女たちがいかに世界を率い良くしたいと願っているかを述べた直後に、「高い期待」についての警告を置いているのか）", answer:"3", kind:"choice",
+ choices:[
+  {t:"To argue that girls should lower their ambitions until society becomes more equal.（社会がより平等になるまで少女は野心を下げるべきだと論じるため）", ok:false},
+  {t:"To introduce a counter-argument from critics who believe that the gains described earlier are exaggerated.（先に述べた進展は誇張だと考える批判者の反論を導入するため）", ok:false},
+  {t:"To show that the same expectations that empower girls also weigh on them, so that the gain and the cost arise together.（少女に力を与えるまさにその期待が同時に重荷にもなり、利得と代償が同時に生じることを示すため）", ok:true},
+  {t:"To explain that anxiety among girls is caused mainly by the demands their parents place on their schoolwork.（少女の不安は主に親が学業に課す要求によって生じると説明するため）", ok:false}],
+ steps:[
+   {t:"直前の内容を確認", d:"第12段落：<b>Girls now are more likely than boys to say that they want to make the world a better place, or that they want to be a leader.</b>＝<u>期待の高まりとエンパワメント</u>。"},
+   {t:"直後の内容を確認", d:"第13段落：<b>High expectations are undoubtedly a risk.</b>「高い期待は間違いなくリスクである」。<u>続けて pressure to do good, look good and be good</u>。"},
+   {t:"同じ語に注目", d:"<b>expectations（期待）</b>という語が<u>力の源であると同時にリスクの源</u>として使われている。<em>別の要因が付け加わったのではなく、同じものの裏面</em>。"},
+   {t:"選ぶ", d:"<b>力を与える期待がそのまま重荷にもなる＝利得と代償が同時に生じる</b>＝3。<u>結末のフランキーのパニックもこの重荷の実例</u>。"}],
+ ev:{q:'Girls now are more likely than boys to say that they want to make the world a better place, or that they want to be a leader. <span class="h">High expectations are undoubtedly a risk.</span> When you ask girls what makes them anxious, many mention pressure: pressure to do good, look good and be good.', jp:"「少女たちは今や男子より、世界をより良い場所にしたい、リーダーになりたいと言う可能性が高い。高い期待は間違いなくリスクである。何が不安にさせるかと尋ねると、多くがプレッシャーを挙げる。良いことをする、良く見える、良い子であるというプレッシャー」。"},
+ co:[{c:"nav",l:"同じ語の両面",h:"<b>expectations は、力を与えるものであり、同時に押し潰すもの</b>。<u>段落の並び（直後に置く）が、両者が同一の現象の二面であることを示している</u>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>肯定的な記述の直後に置かれた留保を、別論点ではなく同一現象の裏面として読む力</b>。<u>段落の配置そのものが論理を担っている</u>。"}],
+ sol:[
+  {m:"x",n:"1",t:"<b>野心を下げよという主張は本文にない</b>。筆者は<u>リスクを指摘するだけで、志を抑えよとは述べていない</u>。〈選びがちな人〉<b>risk という語をそのまま「やめるべき」という提言に読み替えた人</b>。"},
+  {m:"x",n:"2",t:"<b>批判者の反論ではない</b>。<u>これは筆者自身の留保</u>であり、第三者の見解として導入されていない（undoubtedly と断定している）。〈選びがちな人〉<b>肯定の後の留保を見ると「反論の引用」だと反射的に分類する人</b>。"},
+  {m:"o",n:"3",t:"正解。少女に力を与える期待がそのまま重荷になる。利得と代償が同一の現象から同時に生じる。"},
+  {m:"x",n:"4",t:"<b>原因が本文より狭い</b>。本文が挙げるプレッシャーは<u>do good, look good and be good（行い・外見・人柄）の三つ</u>であり、<em>学業に限定されていないし、親が原因だとも述べていない</em>。〈選びがちな人〉<b>第7段落の家庭教師への支出を持ち込み、原因を親に帰した人</b>。"}]},
+
+/* ===== 発展5：少女は客体であり主体でもある ===== */
+{id:"発展5", grp:"IJ", type:"論の構造", lbl:"Original Q5", en:"（第9段落：Daughters can change parents' values too）",
+ ask:"What does the paragraph about daughters changing their fathers' attitudes contribute to the article as a whole?（娘が父親の態度を変えることについての段落は、記事全体に何を寄与しているか）", answer:"2", kind:"choice",
+ choices:[
+  {t:"It concedes that the changes described elsewhere depend entirely on decisions made by adults.（他所で述べられた変化が、すべて大人の決定に依存していることを認めている）", ok:false},
+  {t:"It shows that girls are not only shaped by the changing world around them but are themselves agents of that change.（少女が周囲の変化する世界によって形づくられるだけでなく、彼女たち自身がその変化の担い手でもあることを示している）", ok:true},
+  {t:"It warns that the benefits girls receive come at the expense of their fathers' own career prospects.（少女が受ける恩恵が、父親自身の職業上の見通しを犠牲にして得られていると警告している）", ok:false},
+  {t:"It demonstrates that political and legal institutions have become the main driver of change in family life.（政治的・法的制度が家庭生活における変化の主な推進力になったことを示している）", ok:false}],
+ steps:[
+   {t:"記事の大半の方向を確認", d:"第3〜8段落：<b>母親の地位、ソーシャルメディア、家族の投資、育て方のステレオタイプ</b>＝<u>少女を取り巻く環境が少女に影響する</u>という向き。"},
+   {t:"この段落の向きを確認", d:"第9段落：<b>Daughters can change parents' values too, particularly fathers'.</b>＝<u>向きが逆転</u>。娘の存在が父親の態度を変え、政治家や裁判官の判断に影響し、ビジネスマンの行動を変える。"},
+   {t:"too の機能を読む", d:"<b>too（〜もまた）</b>＝<u>それまでの一方向の記述に、逆方向を付け加える合図</u>。"},
+   {t:"選ぶ", d:"<b>少女は変化を受ける側であると同時に、変化を起こす側でもある</b>＝2。<u>結末の「もちろんできる」への伏線でもある</u>。"}],
+ ev:{q:'<span class="h">Daughters can change parents\' values too, particularly fathers\'.</span> Researchers have found that having daughters decreases fathers\' likelihood of holding traditional attitudes on gender roles … Separate studies have shown that having daughters affects decisions by politicians and judges.', jp:"「娘は親の価値観も変えうる、特に父親の。研究者たちは、娘を持つことが父親が伝統的なジェンダー役割の態度を持つ可能性を減らすことを見出した…別の研究は、娘を持つことが政治家や裁判官の決定に影響することを示した」。"},
+ co:[{c:"gold",l:"too が示す方向の逆転",h:"<b>それまでは「環境→少女」、この段落は「少女→環境」</b>。<u>too の一語が、記事に双方向性を与えている</u>。"},
+     {c:"nav",l:"結末への伏線",h:"<b>少女が変化の担い手だという論点があるから、最後の「もちろんできるわ」が根拠のある自信として読める</b>。<u>この段落がなければ結末は単なる楽観になる</u>。"}],
+ sol:[
+  {m:"x",n:"1",t:"<b>結論が正反対</b>。この段落は<u>大人の側が娘によって変えられる</u>ことを述べており、<em>大人の決定への依存を認めるものではない</em>。〈選びがちな人〉<b>parents, politicians, judges という語を見て、意思決定者の話だと読み、変化の向きを取り違えた人</b>。"},
+  {m:"o",n:"2",t:"正解。少女は環境に形づくられるだけでなく、父親・政治家・企業人の態度を変える主体としても描かれている。"},
+  {m:"x",n:"3",t:"<b>「犠牲」という論点は本文にない</b>。本文は<u>父親が家事をより分担し、女性のキャリアを支持するようになる</u>と述べるだけで、<em>父親の損失は論じていない</em>。〈選びがちな人〉<b>pull their weight in housework を負担の増加と捉え、ゼロサムの枠組みを持ち込んだ人</b>。"},
+  {m:"x",n:"4",t:"<b>因果が逆</b>。本文は<u>娘の存在が政治家や裁判官の決定に影響する</u>と述べており、<em>制度が家庭を変えるのではなく、家庭（娘）が制度に影響している</em>。〈選びがちな人〉<b>politicians and judges という語を見て、制度主導の話だと読んだ人</b>。"}]},
+]);
+function esc(id){ var s=String(id); var out='q'; for(var i=0;i<s.length;i++){ var c=s.charCodeAt(i); if((c>=48&&c<=57)||(c>=65&&c<=90)||(c>=97&&c<=122)) out+=s[i]; else out+='_'+c; } return out; }
+function rateCls(r){ return r<=40?'low':(r<=55?'mid':'hi'); }
+function rateBadge(r){
+  if(!r) return '';
+  const c=rateCls(r);
+  const lab = c==='low'?'最難関':(c==='mid'?'差がつく':'取りたい');
+  return `<span class="rate ${c}">正答率 ${r}%・${lab}</span>`;
+}
+function buildEV(ev){ return ev?`<div class="ev"><div class="ev-hd">根拠｜本文の該当箇所</div><div class="ev-bd"><div class="ev-q">${ev.q}</div>${ev.jp}</div></div>`:''; }
+function buildCO(list){ return (list||[]).map(o=>`<div class="co ${o.c}"><div class="co-lbl">${o.l}</div>${o.h}</div>`).join(''); }
+function buildCA(rows){ return (rows||[]).map(r=>`<div class="ca-row"><div class="ca-mark ${r.m==='o'?'ok':'ng'}">${r.m==='o'?'✓':'✗'}</div><div class="ca-bd"><span class="k ${r.m==='o'?'o':'x'}">${r.n}.</span> ${r.t}</div></div>`).join(''); }
+function buildSteps(steps){
+  if(!steps) return '';
+  return '<div class="chy-h">解答プロセス</div><div class="dsteps">'+steps.map((s,i)=>`<div class="dstep"><div class="dn">${i+1}</div><div class="db"><b>${s.t}</b><p>${s.d}</p>${s.cite?`<div class="cite">${s.cite}</div>`:''}</div></div>`).join('')+'</div>';
+}
+function buildRubric(q){
+  if(!q.rubric) return '';
+  const rid='rb'+esc(q.id);
+  return `<div class="chy-h">採点基準（自己採点）</div><div class="rub" id="${rid}">
+    <div class="rub-hd"><span>自分の答案に入っていた要素にチェック</span><span class="sc"><b class="now">0</b> / ${q.total} 点</span></div>
+    ${q.rubric.map(r=>`<div class="rub-row" data-rid="${rid}" data-pt="${r.p}"><div class="rub-cb"></div><div class="rub-el">${r.t}${r.must?'<span class="must">必須</span>':'<span class="plus">加点</span>'}</div><div class="rub-pt">${r.p}点</div></div>`).join('')}
+    <div class="rub-foot">※ 配点は非公表のため、要素配分は学習用の目安（10点換算）。</div></div>`;
+}
+function buildNG(list,title){
+  if(!list) return '';
+  return `<div class="ng"><div class="nlab">✗ ${title||'NG解答例 ― この書き方で落とす'}</div>${
+    list.map(n=>`<div class="ng-row"><span class="x">✗</span><div class="nb"><span class="bad">${n.bad}</span><span class="why">${n.why}</span></div></div>`).join('')}</div>`;
+}
+
+function buildBody(q){
+  let b='';
+  if(q.kind==='choice'){
+    b+=`<div class="choices">${q.choices.map((c,i)=>`<button class="ch" data-ok="${c.ok?1:0}"><span class="num">${i+1}</span><span>${c.t}</span><span class="mk"></span></button>`).join('')}</div>`;
+  } else if(q.kind==='multi'){
+    b+=`<div class="box navy" style="margin:0 0 8px"><span class="lab">8択から3つ</span>各文をタップすると○×と根拠が開きます。まず自分で3つ選んでから確認しよう。</div>`;
+    b+=q.items.map(it=>`<div class="mi" data-ok="${it.ok?1:0}"><div class="mi-h"><span class="num">${it.n}</span><span class="st">${it.t}</span><span class="mk"></span></div>
+      <div class="mi-d"><div class="src">根拠｜${it.ev}</div><div class="jd">${it.why}</div></div></div>`).join('');
+  } else if(q.kind==='order'){
+    b+=`<div class="box teal" style="margin:0 0 8px"><span class="lab">まず自分で並べる</span>選択肢は7語。<strong>使わない語が3つ</strong>含まれています。答えを見る前に紙で完成させること。</div>
+      <div class="pool">${q.pool.map(w=>`<span class="pw">${w}</span>`).join('')}</div>`;
+  } else if(q.kind==='desc'){
+    b+=`<div class="box teal" style="margin:0 0 4px"><span class="lab">まず自分で書く</span>解説を開く前に、必ず<strong>自分の訳を紙に書いてから</strong>「答え・根拠を表示」を押すこと。</div>`;
+  }
+  return b;
+}
+function buildSol(q){
+  let s='';
+  if(q.kind==='choice'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`+(q.steps?buildSteps(q.steps):'')+buildEV(q.ev)+`<div class="chy-h">全選択肢の照合</div>`+buildCA(q.sol)+buildCO(q.co);
+  } else if(q.kind==='multi'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`+buildCO(q.co)+`<div class="box gold"><span class="lab">確認</span>上の各文をタップすると、○×・根拠段落・判定理由がすべて開きます。</div>`;
+  } else if(q.kind==='order'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`;
+    s+=`<div class="slots">${q.slots.map(x=>`<div class="slot ${x.hit?'hit':''}"><div class="k">( ${x.k} )</div><div class="v">${x.v}</div></div>`).join('')}</div>`;
+    s+=`<div class="full">${q.full}<span class="jp">${q.fullJp}</span></div>`;
+    s+=`<div class="chy-h">使う語・使わない語</div><div class="pool">${q.pool.map(w=>{
+      const used=q.slots.some(x=>x.v===w);
+      return `<span class="pw ${used?'used':'unused'}">${w}</span>`;}).join('')}</div>`;
+    s+=buildSteps(q.steps)+buildNG(q.traps,'✗ 落とし穴 ― ここで25%まで落ちる')+buildRubric(q);
+  } else if(q.kind==='desc'){
+    s+=buildSteps(q.steps);
+    s+=`<div class="model"><div class="mlab">模範解答</div>${q.model.map(m=>`<div class="mtext">${m}</div>`).join('')}${q.mnote?`<div class="mnote">▶ ${q.mnote}</div>`:''}</div>`;
+    s+=buildRubric(q)+buildNG(q.ng);
+  }
+  return s;
+}
+function buildQ(q){
+  const el=document.createElement('div'); el.className='q'; el.id=esc(q.id);
+  el.innerHTML=`<div class="q-head"><div class="q-no">${q.id}</div>
+    <div class="q-focus"><span class="lbl">${q.lbl}</span><span class="en">${q.en}</span>${q.rate?`<div class="ratebar"><i class="${rateCls(q.rate)}" style="width:${q.rate}%"></i></div>`:''}</div>
+    <span class="q-type">${q.type}</span>${rateBadge(q.rate)}</div>
+    <div class="q-body"><div class="askjp">${q.ask}</div>${buildBody(q)}
+    <button class="reveal-btn">答え・根拠を表示 ▼</button>
+    <div class="solution">${buildSol(q)}</div></div>`;
+  return el;
+}
+
+[['AB','qWrapAB','qidxAB'],['CD','qWrapCD','qidxCD'],['EF','qWrapEF','qidxEF'],['GH','qWrapGH','qidxGH'],['IJ','qWrapIJ','qidxIJ']].forEach(([g,w,ix])=>{
+  const wrap=document.getElementById(w), idx=document.getElementById(ix);
+  if(!wrap) return;
+  Q.filter(q=>q.grp===g).forEach(q=>{
+    wrap.appendChild(buildQ(q));
+    const j=document.createElement('button'); j.className='qjump'; j.textContent=q.id; j.style.width='auto'; j.style.padding='0 9px';
+    j.addEventListener('click',()=>document.getElementById(esc(q.id)).scrollIntoView({behavior:'smooth'}));
+    idx.appendChild(j);
+  });
+});
+
+/* interactions */
+document.querySelectorAll('.q').forEach(card=>{
+  const chs=card.querySelectorAll('.choices .ch');
+  chs.forEach(b=>b.addEventListener('click',()=>{
+    chs.forEach(x=>x.classList.remove('picked'));
+    b.classList.add('picked','reveal');
+    b.classList.add(b.dataset.ok==='1'?'correct':'wrong');
+    b.querySelector('.mk').textContent=b.dataset.ok==='1'?'○':'×';
+  }));
+  card.querySelectorAll('.mi').forEach(mi=>{
+    mi.querySelector('.mi-h').addEventListener('click',()=>{
+      mi.classList.toggle('on');
+      mi.classList.add(mi.dataset.ok==='1'?'ok':'ng');
+      mi.querySelector('.mk').textContent = mi.dataset.ok==='1'?'○':'×';
+    });
+  });
+  const rb=card.querySelector('.reveal-btn'), sol=card.querySelector('.solution');
+  rb.addEventListener('click',()=>{
+    const open=sol.classList.toggle('show');
+    rb.textContent=open?'解説を閉じる ▲':'答え・根拠を表示 ▼';
+    if(open){
+      chs.forEach(b=>{b.classList.add('reveal');b.classList.add(b.dataset.ok==='1'?'correct':'wrong');b.querySelector('.mk').textContent=b.dataset.ok==='1'?'○':'×';});
+      card.querySelectorAll('.mi').forEach(mi=>{mi.classList.add('on');mi.classList.add(mi.dataset.ok==='1'?'ok':'ng');mi.querySelector('.mk').textContent=mi.dataset.ok==='1'?'○':'×';});
+    }
+  });
+});
+document.querySelectorAll('.rub-row').forEach(row=>{
+  row.addEventListener('click',()=>{
+    row.classList.toggle('on');
+    const rub=document.getElementById(row.dataset.rid);
+    let s=0; rub.querySelectorAll('.rub-row.on').forEach(r=>s+=parseInt(r.dataset.pt,10));
+    rub.querySelector('.sc .now').textContent=s;
+  });
+});
+const tabs=document.querySelectorAll('.tab'), panels=document.querySelectorAll('.panel');
+function goTo(i){
+  tabs.forEach(x=>x.classList.remove('on')); panels.forEach(x=>x.classList.remove('on'));
+  const t=document.querySelector('.tab[data-p="'+i+'"]'); t.classList.add('on','done');
+  document.getElementById('p'+i).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'}); t.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+tabs.forEach(t=>t.addEventListener('click',()=>goTo(t.dataset.p)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>goTo(b.dataset.go)));
+document.querySelector('.tab[data-p="0"]').classList.add('done');
+const jt=document.getElementById('jumpTop');
+window.addEventListener('scroll',()=>jt.classList.toggle('show',window.scrollY>500));
+jt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+
+
+
+
+
+</script>
+</body>
+</html>

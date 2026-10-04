@@ -8,8 +8,7 @@
 
 [build]
   publish = "."
-  # explanation/ の HTML から公開リンク一覧と sitemap を作る（npm は使わない）
-  command = "python3 scripts/publish-explanations.py"
+  command = "true"
 
 # JSX sources change often; avoid long-lived CDN cache on these paths after deploys.
 [[headers]]
@@ -430,8 +429,90 @@
   to = "/reading-lesson/:slug/index.html"
   status = 200
 
-# 解説 HTML は explanation/ に置いたファイルをそのまま公開する。
-# /explanation/foo.html が実体。拡張子なし URL 用のリダイレクトは置かない
-# （:name が置換されず /explanation/:name へ 301 が循環したため）。
+# ---------------------------------------------------------------------------
+# 解説 — /lesson
+# 英語ファイル名の HTML を lesson/ に置くと、そのパスがそのまま公開URLになる。
+# 例: lesson/r7-supplementary/q1-stationery.html
+#     → https://thinking-online.com/lesson/r7-supplementary/q1-stationery.html
+# 一覧ページは作らない。旧 /explanation は一覧を出さず、個別URLだけ新URLへ移す。
+# ---------------------------------------------------------------------------
+
+[[headers]]
+  for = "/lesson/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[redirects]]
+  from = "/explanation/thinking_kyotsu_visual_reading_flying_vehicles.html"
+  to = "/lesson/kyotsu-q2-flying-vehicles.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/thinking_kyotsu_visual_reading_flying_vehicles"
+  to = "/lesson/kyotsu-q2-flying-vehicles.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/sophia-university-2024-english-q2-full.html"
+  to = "/lesson/sophia-university-2024-q2.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/sophia-university-2024-english-q2-full"
+  to = "/lesson/sophia-university-2024-q2.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/to不定詞のポジション.html"
+  to = "/lesson/to-infinitive-position.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/to不定詞のポジション"
+  to = "/lesson/to-infinitive-position.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/令和7年追試/thinking_r7tsui_q1_ad_stationery.html"
+  to = "/lesson/r7-supplementary/q1-stationery.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/令和7年追試/thinking_r7tsui_q2_housework_blog.html"
+  to = "/lesson/r7-supplementary/q2-housework.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/令和7年追試/thinking_r7tsui_q3_sora_dream.html"
+  to = "/lesson/r7-supplementary/q3-sora.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/令和7年追試/thinking_r7tsui_q4_essay_homework.html"
+  to = "/lesson/r7-supplementary/q4-homework-essay.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/令和7年追試/thinking_r7tsui_q5_festival_memo.html"
+  to = "/lesson/r7-supplementary/q5-festival.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/令和7年追試/thinking_r7tsui_q6_toiura_train.html"
+  to = "/lesson/r7-supplementary/q6-toiura.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/令和7年追試/thinking_r7tsui_q7_hard_soft_water.html"
+  to = "/lesson/r7-supplementary/q7-hard-soft-water.html"
+  status = 301
+[[redirects]]
+  from = "/explanation/令和7年追試/thinking_r7tsui_q8_zoos_essay.html"
+  to = "/lesson/r7-supplementary/q8-zoos.html"
+  status = 301
+
+[[redirects]]
+  from = "/explanation"
+  to = "/lesson/closed.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/explanation/"
+  to = "/lesson/closed.html"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/explanation/*"
+  to = "/lesson/closed.html"
+  status = 404
+  force = true
 
 # 7月以降の号は準備でき次第、netlify.toml にリダイレクトを追加して公開

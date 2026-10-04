@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fdfaf4">
+<title>共通テスト第2問攻略｜可視化リーディングで解く事実／意見問題 — 家事は誰がする？ — オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f7f3ed; --paper:#fdfaf4; --ink:#2c2520; --ink2:#6b6155; --ink3:#9a9086; --border:#e7ddce;
+  --orange:#e85a1a; --orange-dark:#b8420f; --orange-light:#fde4d3;
+  --aqua:#3f83a0; --aqua-light:#e2eef2; --green:#3b8a5a; --green-light:#e4f2ea;
+  --amber:#b07d1e; --amber-light:#f8eed4; --purple:#7a5aa8; --purple-light:#efe8f7;
+  --red:#c0392b; --red-light:#fbe3e0;
+  --radius:16px; --radius-sm:10px;
+  --shadow:0 4px 20px rgba(80,55,25,.08); --shadow-lg:0 12px 40px rgba(80,55,25,.16);
+  --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px);
+  --topbar:52px; --tap:44px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;} *{transition:none!important;animation:none!important;}}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);line-height:1.9;font-size:16px;
+  background:radial-gradient(900px 500px at 10% -5%,rgba(232,90,26,.06),transparent 55%),radial-gradient(900px 500px at 100% 8%,rgba(63,131,160,.06),transparent 55%),var(--bg);
+  -webkit-font-smoothing:antialiased;padding-bottom:calc(84px + var(--sab));overflow-x:hidden;}
+body.sheet-open{overflow:hidden;}
+.en{font-family:'Source Serif 4','Noto Serif JP',serif;}
+b,strong{font-weight:700;}
+button{font-family:inherit;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+:focus-visible{outline:3px solid rgba(232,90,26,.35);outline-offset:2px;}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(253,250,244,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding-top:var(--sat);}
+.topbar-in{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:10px;height:var(--topbar);padding:0 16px;}
+.logo{width:30px;height:30px;border-radius:8px;flex:none;background:linear-gradient(135deg,var(--orange),var(--orange-dark));display:grid;place-items:center;color:#fff;font-weight:900;font-size:15px;}
+.topbar .ttl{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0;}
+.topbar .ttl small{display:block;font-size:10.5px;color:var(--ink3);font-weight:500;line-height:1.3;}
+.tclock{font-family:'Source Serif 4',serif;font-weight:700;font-size:15px;color:var(--ink2);display:none;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:#fff;}
+.tclock.on{display:block;} .tclock.over{color:var(--red);border-color:var(--red);}
+.progress{height:3px;background:var(--border);}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--aqua));transition:width .2s;}
+.stepnav{position:sticky;top:calc(var(--topbar) + 3px + var(--sat));z-index:49;background:rgba(247,243,237,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.stepnav-in{max-width:980px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:8px 16px;scrollbar-width:none;}
+.stepnav-in::-webkit-scrollbar{display:none;}
+.stepnav a{flex:none;text-decoration:none;color:var(--ink2);font-size:12.5px;font-weight:700;padding:7px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;white-space:nowrap;min-height:34px;display:inline-flex;align-items:center;gap:5px;}
+.stepnav a em{font-style:normal;font-family:'Source Serif 4',serif;color:var(--orange);font-size:11.5px;}
+.stepnav a.active{background:var(--orange);border-color:var(--orange);color:#fff;} .stepnav a.active em{color:#fff;}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 40px;}
+.hero{padding:26px 0 8px;}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--orange-dark);font-weight:700;background:var(--orange-light);padding:5px 12px;border-radius:999px;}
+.hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(23px,6.2vw,31px);line-height:1.4;font-weight:700;margin-top:12px;}
+.hero h1 .accent{color:var(--orange);}
+.hero .lead{margin-top:12px;color:var(--ink2);font-size:15px;max-width:62ch;}
+.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--border);font-size:12.5px;color:var(--ink2);}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block;}
+.chip.aq i{background:var(--aqua);} .chip.gr i{background:var(--green);}
+.section{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 18px;margin-top:20px;scroll-margin-top:calc(var(--topbar) + 60px + var(--sat));}
+@media (min-width:720px){.section{padding:30px 32px;}}
+.sec-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--orange-light);}
+.sec-no{font-family:'Source Serif 4',serif;font-weight:700;color:var(--orange);font-size:12px;letter-spacing:.1em;border:1.5px solid var(--orange);border-radius:6px;padding:1px 8px;flex:none;}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:clamp(18px,5vw,21px);font-weight:700;line-height:1.45;}
+.sec-sub{color:var(--ink3);font-size:12px;font-family:'Source Serif 4',serif;font-style:italic;width:100%;}
+@media (min-width:720px){.sec-sub{width:auto;}}
+.section p{margin-bottom:12px;} .section p:last-child{margin-bottom:0;}
+.note{color:var(--ink2);font-size:14.5px;}
+.callout{border-left:4px solid var(--orange);background:var(--orange-light);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:13px 15px;margin:16px 0;font-size:15px;}
+.callout.aqua{border-color:var(--aqua);background:var(--aqua-light);} .callout.green{border-color:var(--green);background:var(--green-light);}
+.callout.amber{border-color:var(--amber);background:var(--amber-light);} .callout.purple{border-color:var(--purple);background:var(--purple-light);}
+.callout .ttl{font-weight:700;font-size:13.5px;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.callout .ttl::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--orange);flex:none;}
+.callout.aqua .ttl::before{background:var(--aqua);} .callout.green .ttl::before{background:var(--green);} .callout.amber .ttl::before{background:var(--amber);} .callout.purple .ttl::before{background:var(--purple);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;border:none;border-radius:999px;padding:0 20px;min-height:var(--tap);font-size:14.5px;font-weight:700;color:#fff;background:var(--aqua);transition:transform .12s,background .12s;}
+.btn:hover{background:#316c85;} .btn:active{transform:scale(.97);}
+.btn.orange{background:var(--orange);} .btn.orange:hover{background:var(--orange-dark);}
+.btn.ghost{background:#fff;color:var(--ink2);border:1.5px solid var(--border);} .btn.ghost:hover{background:#fff;border-color:var(--ink3);}
+.btn.block{width:100%;}
+/* exam paper */
+.exam{background:#fff;border:1px solid #d9d2c6;border-radius:8px;padding:18px 16px;font-family:'Source Serif 4','Noto Serif JP',serif;font-size:16px;line-height:1.9;}
+@media (min-width:720px){.exam{padding:26px 30px;}}
+.exam .q-head{font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:15px;margin-bottom:10px;}
+.exam .q-head small{font-weight:400;color:var(--ink2);margin-left:8px;font-size:12.5px;}
+.exam p,.sheet-body p{margin-bottom:12px;}
+.lead-text{margin-bottom:14px;}
+.doc{border:1px solid #c9c2b6;padding:16px;border-radius:6px;background:#fff;margin:10px 0 14px;}
+.doc .dtitle{text-align:center;font-weight:700;font-size:17px;margin-bottom:10px;}
+.doc .dtitle.it{font-style:italic;}
+.doc .dmeta{font-style:italic;color:var(--ink2);line-height:1.7;margin-bottom:12px;font-size:14.5px;}
+.doc .by{text-align:right;font-size:14px;color:var(--ink2);margin-bottom:8px;}
+.doc h4{font-size:15px;margin:10px 0 4px;}
+.doc .sub{font-weight:700;font-style:italic;}
+.doc p:last-child{margin-bottom:0;}
+.doc.memo{font-family:'Noto Sans JP',sans-serif;background:#fffdf8;border-style:dashed;}
+.doc.memo ul{list-style:none;margin:4px 0 8px 10px;}
+.doc.memo li{padding-left:16px;position:relative;margin-bottom:3px;}
+.doc.memo li::before{content:"•";position:absolute;left:0;color:var(--ink3);}
+.doc.memo li.dash::before{content:"–";}
+.doc.memo .lbl{font-weight:700;margin-top:8px;}
+.doc.essay{display:grid;grid-template-columns:1fr;gap:0;}
+.doc.essay .body{border-bottom:1px solid #c9c2b6;padding-bottom:10px;}
+.doc.essay .cm{font-family:'Noto Sans JP',sans-serif;font-size:13.5px;color:var(--ink2);padding-top:10px;}
+.doc.essay .cm b{color:var(--ink);}
+@media (min-width:720px){.doc.essay{grid-template-columns:1fr 200px;gap:0 16px;} .doc.essay .body{border-bottom:none;border-right:1px solid #c9c2b6;padding-right:14px;} .doc.essay .cm{padding-top:0;}}
+.cmnum{font-family:'Noto Sans JP',sans-serif;font-size:11px;vertical-align:super;font-weight:700;color:var(--orange-dark);}
+.ul1{text-decoration:underline;text-underline-offset:3px;}
+.op{border:1px solid #c9c2b6;border-radius:6px;padding:10px 14px;margin-bottom:10px;background:#fff;}
+.op .who{font-weight:700;margin-bottom:2px;} .op .who span{font-weight:400;color:var(--ink2);font-size:14px;}
+table.tb{border-collapse:collapse;font-size:14px;margin:8px auto;background:#fff;}
+table.tb th,table.tb td{border:1px solid #9a9086;padding:3px 10px;text-align:center;}
+table.tb th{font-weight:700;}
+.bars{margin:8px 0 12px;font-family:'Noto Sans JP',sans-serif;font-size:13px;}
+.bar-row{display:grid;grid-template-columns:minmax(110px,38%) 1fr 40px;gap:8px;align-items:center;margin-bottom:5px;}
+.bar-row .bl{text-align:right;line-height:1.3;} .bar-row .bb{height:16px;background:#c9c2b6;border:1px solid #8a8176;} .bar-row .bn{font-weight:700;}
+.q{margin-top:16px;} .q .stem{font-weight:600;}
+.q .stem .qn{font-family:'Noto Sans JP',sans-serif;font-weight:700;margin-right:8px;}
+.box{display:inline-block;min-width:36px;text-align:center;border:1.5px solid var(--ink);padding:0 6px;margin:0 4px;font-family:'Noto Sans JP',sans-serif;font-size:13px;line-height:1.6;vertical-align:middle;}
+.q ol{list-style:none;margin:8px 0 0 4px;}
+.q li{display:flex;gap:10px;align-items:baseline;line-height:1.8;margin-bottom:4px;}
+.circ{flex:none;width:20px;height:20px;border:1.5px solid var(--ink);border-radius:50%;display:inline-grid;place-items:center;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;line-height:1;transform:translateY(2px);}
+u.kw{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;font-family:'Noto Sans JP',sans-serif;font-size:13px;}
+.pics div{border:1px solid #c9c2b6;border-radius:6px;padding:8px 10px;background:#fff;line-height:1.6;}
+.pics b{display:block;margin-bottom:2px;}
+mark{background:transparent;padding:0 1px;border-radius:2px;color:inherit;}
+.m1{background:linear-gradient(transparent 55%,rgba(232,90,26,.3) 55%);} .m2{background:linear-gradient(transparent 55%,rgba(63,131,160,.3) 55%);}
+.m3{background:linear-gradient(transparent 55%,rgba(59,138,90,.3) 55%);} .m4{background:linear-gradient(transparent 55%,rgba(122,90,168,.3) 55%);}
+.m5{background:linear-gradient(transparent 55%,rgba(176,125,30,.35) 55%);}
+.exam mark{background:transparent!important;}
+.sheet-body:not(.show-hl) mark{background:transparent;}
+.tagq{display:inline-block;font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:700;color:#fff;padding:1px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;line-height:1.6;}
+.tagq.t1{background:var(--orange);} .tagq.t2{background:var(--aqua);} .tagq.t3{background:var(--green);} .tagq.t4{background:var(--purple);} .tagq.t5{background:var(--amber);}
+/* quiz */
+.timerbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.timer{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 8px 6px 16px;font-size:13.5px;color:var(--ink2);}
+.timer .t{font-family:'Source Serif 4',serif;font-size:20px;font-weight:700;color:var(--ink);min-width:60px;text-align:center;}
+.timer .t.over{color:var(--red);}
+.timer button{border:none;background:var(--orange);color:#fff;border-radius:999px;padding:0 16px;min-height:36px;font-weight:700;font-size:13px;cursor:pointer;}
+.timer button.stop{background:var(--ink2);}
+.quiz{display:grid;gap:12px;margin-top:16px;}
+.quiz-row{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;}
+.quiz-row .qlabel{font-weight:700;color:var(--ink2);font-size:14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.quiz-row .qlabel .st{font-size:12px;font-weight:700;text-align:right;}
+.quiz-row .qlabel .st.ok{color:var(--green);} .quiz-row .qlabel .st.ng{color:var(--red);}
+.slot{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center;margin-bottom:6px;}
+.slot .sl{font-size:12px;font-weight:700;color:var(--ink3);text-align:center;border:1px solid var(--border);border-radius:6px;padding:4px 0;}
+.opts{display:grid;gap:8px;}
+.opts.n4{grid-template-columns:repeat(4,1fr);} .opts.n5{grid-template-columns:repeat(5,1fr);} .opts.n6{grid-template-columns:repeat(6,1fr);}
+.opt{min-height:var(--tap);border-radius:10px;border:1.5px solid var(--border);background:var(--paper);font-weight:700;cursor:pointer;color:var(--ink2);font-size:17px;transition:all .12s;}
+.opt:hover{border-color:var(--aqua);color:var(--aqua);}
+.opt.sel{background:var(--aqua);border-color:var(--aqua);color:#fff;}
+.opt.ok{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.ng{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.hint{border-color:var(--green);color:var(--green);border-width:2px;}
+.quiz-foot{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+@media (min-width:720px){.quiz-foot{flex-direction:row;align-items:center;flex-wrap:wrap;}}
+.score{font-family:'Source Serif 4',serif;font-size:22px;font-weight:700;color:var(--orange);}
+/* flow */
+.flow{position:relative;display:grid;gap:0;padding-left:34px;margin-top:6px;}
+.flow::before{content:"";position:absolute;left:13px;top:14px;bottom:14px;width:3px;border-radius:3px;background:linear-gradient(var(--orange),var(--aqua));}
+.fnode{position:relative;padding:8px 0 14px;}
+.fnode .fb{position:absolute;left:-34px;top:8px;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;font-size:11.5px;display:grid;place-items:center;border:3px solid var(--paper);}
+.fnode.aq .fb{background:var(--aqua);} .fnode.gr .fb{background:var(--green);} .fnode.pu .fb{background:var(--purple);}
+.fnode .fc{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;}
+.fnode.aq .fc{border-color:#bcd6e2;background:#f4f9fb;}
+.fnode h4{font-size:15px;font-weight:700;margin-bottom:5px;line-height:1.5;}
+.fnode p{font-size:14px;color:var(--ink2);margin:0!important;}
+.fnode .branch{font-size:12px;color:var(--ink3);margin:0 0 6px;} .fnode .branch b{color:var(--orange);}
+@media (min-width:720px){.flow.cols{grid-template-columns:repeat(2,1fr);gap:0 20px;}}
+/* types */
+.types{display:grid;gap:10px;margin:14px 0;}
+@media (min-width:720px){.types{grid-template-columns:1fr 1fr;}}
+.type{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;border-left:5px solid var(--orange);}
+.type.no{border-left-color:var(--aqua);} .type.mix{border-left-color:var(--purple);}
+.type .th{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;}
+.type .qn{font-weight:900;font-size:15px;}
+.type .badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--orange-light);color:var(--orange-dark);white-space:nowrap;}
+.type.no .badge{background:var(--aqua-light);color:var(--aqua);} .type.mix .badge{background:var(--purple-light);color:var(--purple);}
+.type .stem{font-family:'Source Serif 4',serif;font-size:15px;margin-bottom:6px;}
+.type .do{font-size:13.5px;color:var(--ink2);}
+/* answer card */
+.ans-card{margin-top:18px;border:2px solid var(--orange);border-radius:var(--radius-sm);overflow:hidden;background:#fff;}
+.ans-card .ah{width:100%;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--orange);color:#fff;padding:12px 16px;border:none;text-align:left;cursor:pointer;min-height:56px;}
+.ans-card .ah .qn{font-size:19px;font-weight:900;font-family:'Source Serif 4',serif;}
+.ans-card .ah .ans{font-weight:700;font-size:15px;}
+.ans-card .ah .lvl{font-size:11.5px;opacity:.9;width:100%;}
+@media (min-width:720px){.ans-card .ah .lvl{width:auto;margin-left:auto;}}
+.ans-card .ah .chev{margin-left:auto;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;transition:transform .2s;flex:none;}
+@media (min-width:720px){.ans-card .ah .chev{margin-left:12px;}}
+.ans-card .ah .chev svg{width:14px;height:14px;}
+.ans-card.open .ah .chev{transform:rotate(180deg);}
+.ans-card .ab{display:none;padding:16px 14px 18px;}
+@media (min-width:720px){.ans-card .ab{padding:18px 20px;}}
+.ans-card.open .ab{display:block;animation:fade .22s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+.ja-q{font-weight:700;margin-bottom:8px;font-size:15.5px;}
+.ja-opts{list-style:none;margin:0 0 8px 0;display:grid;gap:5px;font-size:14.5px;}
+.ja-opts li{display:flex;gap:10px;align-items:baseline;}
+.ja-opts .circ{width:18px;height:18px;font-size:10.5px;}
+.ja-opts li.right{color:var(--green);font-weight:700;}
+.ja-opts li.right .circ{border-color:var(--green);background:var(--green);color:#fff;}
+.brain{margin-top:12px;display:grid;gap:10px;}
+.step{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;background:var(--paper);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 12px;}
+.step .k{width:28px;height:28px;border-radius:50%;background:var(--aqua);color:#fff;display:grid;place-items:center;font-weight:900;font-size:13px;margin-top:2px;}
+.step .k.o{background:var(--orange);} .step .k.g{background:var(--green);} .step .k.a{background:var(--amber);} .step .k.p{background:var(--purple);}
+.step h5{font-size:14.5px;font-weight:700;margin-bottom:4px;line-height:1.5;}
+.step p{font-size:14.5px;color:var(--ink2);margin:0 0 6px!important;} .step p:last-child{margin-bottom:0!important;}
+.step .ex{margin:6px 0 8px;padding:8px 12px;background:#fff;border-left:3px solid var(--aqua);border-radius:0 6px 6px 0;font-family:'Source Serif 4','Noto Serif JP',serif;font-size:15px;color:var(--ink);line-height:1.75;}
+.step .ex .ja{display:block;font-family:'Noto Sans JP',sans-serif;font-size:13.5px;color:var(--ink2);margin-top:4px;line-height:1.7;}
+.elim{list-style:none;margin:8px 0;display:grid;gap:8px;}
+.elim li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:14.5px;}
+.mk{min-width:30px;height:30px;padding:0 6px;border-radius:7px;display:grid;place-items:center;font-weight:900;font-size:12px;color:#fff;white-space:nowrap;}
+.mk.o{background:var(--green);} .mk.x{background:var(--red);} .mk.q{background:var(--amber);} .mk.b{background:var(--aqua);}
+.elim .why{color:var(--ink2);font-size:13.5px;line-height:1.7;}
+.para{display:flex;flex-direction:column;gap:6px;margin:10px 0;font-family:'Source Serif 4',serif;font-size:15px;}
+@media (min-width:720px){.para{flex-direction:row;align-items:center;flex-wrap:wrap;gap:10px;}}
+.para .a{background:var(--aqua-light);color:var(--aqua);padding:4px 12px;border-radius:8px;font-weight:600;}
+.para .b{background:var(--orange-light);color:var(--orange-dark);padding:4px 12px;border-radius:8px;font-weight:600;}
+.para .arr{color:var(--ink3);font-weight:700;text-align:center;}
+.ab .btn.mob-only{margin:4px 0 6px;}
+.desk-only{display:none;} @media (min-width:720px){.desk-only{display:block;} .mob-only{display:none!important;}}
+/* two col compare */
+.fo{display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0;}
+@media (min-width:720px){.fo{grid-template-columns:1fr 1fr;}}
+.fo .col{border-radius:var(--radius-sm);padding:14px 16px;background:#fff;border:1px solid var(--border);}
+.fo .col h4{font-size:15.5px;font-weight:700;margin-bottom:8px;}
+.fo .col.fact h4{color:var(--aqua);} .fo .col.op h4{color:var(--orange);}
+.fo .col ul{list-style:none;display:grid;gap:6px;font-size:14px;}
+.fo .col li{padding-left:14px;position:relative;line-height:1.7;}
+.fo .col li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--ink3);}
+.fo .col.fact li::before{background:var(--aqua);} .fo .col.op li::before{background:var(--orange);}
+.fo code,.step code,.callout code,.fnode code,.type code{font-family:'Source Serif 4',serif;font-weight:600;font-size:14.5px;color:var(--ink);}
+/* drill */
+.drill{display:grid;gap:10px;margin-top:12px;}
+.drill-row{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+.drill-row .s{font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.7;margin-bottom:10px;}
+.drill-row .s.ja{font-family:'Noto Sans JP',sans-serif;font-size:14.5px;}
+.drill-row .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.drill-row .btns.n3{grid-template-columns:1fr 1fr 1fr;}
+.drill-row .btns button{border:1.5px solid var(--border);background:var(--paper);border-radius:8px;min-height:var(--tap);font-weight:700;font-size:14px;cursor:pointer;color:var(--ink2);}
+.drill-row .btns button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
+.drill-row .btns button.on.good{background:var(--green);border-color:var(--green);} .drill-row .btns button.on.bad{background:var(--red);border-color:var(--red);}
+.drill-row .res{font-size:13.5px;color:var(--ink2);display:none;padding-top:8px;margin-top:10px;border-top:1px dashed var(--border);line-height:1.7;}
+.drill-row .res.show{display:block;} .drill-row .res.good{color:var(--green);} .drill-row .res.bad{color:var(--red);}
+/* translation */
+.tr{display:grid;gap:12px;margin-top:8px;}
+.tr .pair{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;}
+.tr .pn{font-size:11.5px;color:var(--ink3);font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.tr .pair .e{font-family:'Source Serif 4',serif;font-size:15px;line-height:1.85;padding-bottom:10px;border-bottom:1px dashed var(--border);margin-bottom:10px;}
+.tr .pair .j{font-size:14.5px;line-height:1.9;}
+@media (min-width:720px){.tr .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;} .tr .pn{grid-column:1/-1;} .tr .pair .e{border-bottom:none;padding-bottom:0;margin-bottom:0;}}
+.tr .pair.hidden-en .e{display:none;}
+.trtools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.toggle{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--border);background:#fff;border-radius:999px;padding:0 14px;min-height:36px;font-size:13px;font-weight:700;color:var(--ink2);cursor:pointer;}
+.toggle.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+/* vocab */
+.vgroup{margin-top:14px;font-size:12.5px;font-weight:700;color:var(--orange);}
+.vocab{display:grid;grid-template-columns:1fr;gap:0 18px;margin-top:6px;font-size:14.5px;}
+@media (min-width:600px){.vocab{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}}
+.vocab div{display:flex;gap:8px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--border);}
+.vocab .w{font-family:'Source Serif 4',serif;font-weight:600;min-width:118px;}
+.vocab .pos{font-size:10.5px;color:#fff;background:var(--ink3);border-radius:3px;padding:0 5px;line-height:1.6;flex:none;}
+.vocab .m{color:var(--ink2);font-size:13.5px;}
+/* weapons / checklist */
+.weapons{display:grid;grid-template-columns:1fr;gap:12px;margin-top:6px;}
+@media (min-width:720px){.weapons{grid-template-columns:repeat(3,1fr);}}
+.weapon{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;border-top:4px solid var(--orange);}
+.weapon:nth-child(2){border-top-color:var(--aqua);} .weapon:nth-child(3){border-top-color:var(--green);}
+.weapon .wn{font-family:'Source Serif 4',serif;font-weight:700;color:var(--ink3);font-size:12px;letter-spacing:.1em;}
+.weapon h4{font-size:15.5px;font-weight:700;margin:4px 0 8px;line-height:1.5;}
+.weapon p{font-size:14px;color:var(--ink2);margin:0!important;}
+.check{list-style:none;display:grid;gap:8px;margin-top:8px;}
+.check li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:14.5px;line-height:1.7;}
+.check li input{margin-top:5px;accent-color:var(--orange);width:20px;height:20px;flex:none;}
+.check li.done{background:var(--green-light);border-color:#bfe0cb;}
+.check-foot{margin-top:12px;display:flex;align-items:center;gap:12px;font-weight:700;color:var(--orange);font-family:'Source Serif 4',serif;font-size:18px;}
+.check-foot .bar{flex:1;height:8px;background:var(--border);border-radius:99px;overflow:hidden;}
+.check-foot .bar i{display:block;height:100%;width:0;background:var(--green);transition:width .25s;}
+.footer{max-width:980px;margin:0 auto;padding:10px 16px 20px;color:var(--ink3);font-size:12px;text-align:center;line-height:1.8;}
+/* dock & sheet */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:8px 12px calc(8px + var(--sab));background:rgba(253,250,244,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);}
+.dock-in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:1fr auto auto;gap:8px;}
+.dock .btn{min-height:46px;font-size:14px;} .dock .btn.icon{padding:0 14px;} .dock .btn svg{width:18px;height:18px;flex:none;}
+.scrim{position:fixed;inset:0;background:rgba(44,37,32,.45);z-index:70;opacity:0;pointer-events:none;transition:opacity .2s;}
+.scrim.on{opacity:1;pointer-events:auto;}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:71;background:var(--paper);border-radius:18px 18px 0 0;box-shadow:var(--shadow-lg);transform:translateY(100%);transition:transform .28s cubic-bezier(.2,.8,.2,1);max-height:88dvh;display:flex;flex-direction:column;max-width:980px;margin:0 auto;}
+.sheet.on{transform:none;}
+.sheet .grip{width:40px;height:5px;border-radius:99px;background:var(--border);margin:10px auto 4px;flex:none;}
+.sheet .sh{display:flex;align-items:center;gap:8px;padding:6px 16px 10px;border-bottom:1px solid var(--border);flex:none;flex-wrap:wrap;}
+.sheet .sh .t{font-weight:700;font-size:14.5px;flex:1;}
+.sheet .sh .toggle{min-height:32px;font-size:12px;padding:0 12px;}
+.sheet .sh .close{width:36px;height:36px;border-radius:50%;border:none;background:var(--border);display:grid;place-items:center;cursor:pointer;}
+.sheet .sh .close svg{width:16px;height:16px;}
+.sheet-body{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px 16px calc(20px + var(--sab));font-family:'Source Serif 4','Noto Serif JP',serif;font-size:16px;line-height:1.9;overscroll-behavior:contain;}
+.sheet-body .qtabs{display:flex;gap:6px;margin:0 0 12px;font-family:'Noto Sans JP',sans-serif;}
+.sheet-body .qtabs button{flex:1;min-height:36px;border-radius:8px;border:1.5px solid var(--border);background:#fff;font-weight:700;font-size:13px;color:var(--ink2);}
+.sheet-body .qtabs button.on{color:#fff;}
+.sheet-body .qtabs button[data-q="0"].on{background:var(--ink);border-color:var(--ink);}
+.sheet-body .qtabs button[data-q="1"].on{background:var(--orange);border-color:var(--orange);}
+.sheet-body .qtabs button[data-q="2"].on{background:var(--aqua);border-color:var(--aqua);}
+.sheet-body .qtabs button[data-q="3"].on{background:var(--green);border-color:var(--green);}
+.sheet-body .qtabs button[data-q="4"].on{background:var(--purple);border-color:var(--purple);}
+.sheet-body .qtabs button[data-q="5"].on{background:var(--amber);border-color:var(--amber);}
+.sheet-body.f1 mark:not(.m1),.sheet-body.f2 mark:not(.m2),.sheet-body.f3 mark:not(.m3),.sheet-body.f4 mark:not(.m4),.sheet-body.f5 mark:not(.m5){background:transparent;}
+mark.pulse{background:rgba(253,228,211,.95)!important;transition:background .6s;}
+.toast{position:fixed;left:50%;bottom:calc(76px + var(--sab));transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:700;opacity:0;pointer-events:none;transition:all .25s;z-index:80;white-space:nowrap;max-width:92vw;overflow:hidden;text-overflow:ellipsis;}
+.toast.on{opacity:1;transform:translateX(-50%);}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><span class="logo">T</span><div class="ttl">可視化リーディング ― 事実／意見問題<small>令和7年 追試験 第2問「家事は誰がする？」 ／ オンライン塾 THINKING</small></div><div class="tclock" id="tclock">6:00</div></div><div class="progress"><i id="pbar"></i></div></div>
+<nav class="stepnav" aria-label="ステップ"><div class="stepnav-in" id="stepnav"><a href="#s0"><em>0</em>自力で解く</a><a href="#s1"><em>1</em>目の動かし方</a><a href="#s2"><em>2</em>タイプ分け</a><a href="#s3"><em>3</em>脳内実況</a><a href="#s4"><em>4</em>事実と意見</a><a href="#s5"><em>5</em>全訳</a><a href="#s6"><em>6</em>語句</a><a href="#s7"><em>7</em>持ち帰り</a></div></nav>
+<main class="wrap">
+<header class="hero">
+  <span class="kicker">令和7年度 共通テスト追試験 第2問（配点12）</span>
+  <h1>【事実／意見問題】を攻略する<br><span class="accent">可視化リーディング</span><br>― 家事は誰がする？ ―</h1>
+  <p class="lead">第2問は「事実」と「意見」が混ざった文章です。設問が事実を聞いているのか、数字を聞いているのか、筆者の意見を聞いているのかを先に決めて、本文のその層だけを読みに行く。読解力ではなく、見る場所を決める手順の問題です。</p>
+  <div class="meta"><span class="chip aq"><i></i>目標解答時間 6分</span><span class="chip gr"><i></i>設問4問 各3点</span><span class="chip"><i></i>下の「本文を開く」で、いつでも英文を参照できます</span></div>
+</header>
+<section class="section" id="s0"><div class="sec-head"><span class="sec-no">STEP 0</span><h2 class="sec-title">まず、時間を測って自力で解く</h2><span class="sec-sub">Try it yourself</span></div><p class="note">解説を読む前に必ず解いてください。大事なのは正解数ではなく、<b>「設問が事実を聞いているのか意見を聞いているのかを先に決めたか」「数字の問題で、選択肢の half を 50% に置き換えて照合したか」</b>を自分で観察すること。それがそのまま、この後の可視化リーディングがあなたに効く場所になります。</p>
+<div class="timerbar"><div class="timer" aria-live="polite"><span>タイマー</span><span class="t" id="tm">6:00</span><button id="tmbtn" onclick="timer()">スタート</button></div><span class="note" style="font-size:13px;">目標時間を過ぎても止めずに続けて、超過時間を覚えておきましょう。</span></div>
+<div class="exam" style="margin-top:16px;"><div class="q-head">第2問<small>（配点 12）</small></div>
+<p class="lead-text">You are writing a report about the attitudes of married couples towards housework. In order to prepare, you find this online article written by a British exchange student living in Japan.</p>
+<div class="doc">
+<div class="dtitle it">Who does what at home?</div>
+<div class="dmeta">12 November 2024<br>Stephen Nitwick<br>Tokomachi, Japan</div>
+<p>I’ve been doing a homestay with a Japanese family in Tokomachi City and I’ve noticed a few differences in the roles of the members between my two families. For example, my father back in England makes breakfast but my host father takes out the rubbish. A few weeks ago, however, my host father also started cooking for us after work. <mark class="m1">His food has become really good with help from an online cooking site.</mark> This made me wonder how housework was being shared in other Japanese families in my city.</p>
+<p>I found an online survey of 5,000 Tokomachi residents who are married and have children: Half are husbands and the other half are wives. Of all the respondents, 80% said that wives, in general, do the majority of both the household chores and child raising. Also, <mark class="m2">70% of the wives who were surveyed wished their husbands would do more around the house.</mark> Furthermore, 60% of the husbands said that they want more responsibility around the home.</p>
+<p>The survey asked the couples about how they could be better partners in housework. <mark class="m3">The answer among the majority of husbands was shorter working hours for themselves.</mark> The answer most favoured by wives was a change in their husbands’ awareness of household chores and childcare duties. I find it interesting that husbands and wives perceive the solution to being a better partner from different angles.</p>
+<p><mark class="m4">Although the current situation is not really satisfactory for many respondents in the survey, I think it’s still encouraging that many couples want to improve how the housework and childcare tasks are shared. The future looks promising.</mark></p>
+</div>
+<div class="q"><p class="stem"><span class="qn">問 1</span>Which option best describes Stephen’s <u class="kw">opinion</u>? <span class="box">4</span></p><ol><li><span class="circ">1</span>Stephen’s father makes breakfast every day.</li><li><span class="circ">2</span>Stephen’s father should learn cooking online.</li><li><span class="circ">3</span>Stephen’s host father has his own online cooking site.</li><li><span class="circ">4</span>Stephen’s host father’s cooking has got tasty.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 2</span>According to the survey data, which of the following is true? <span class="box">5</span></p><ol><li><span class="circ">1</span>Less than half of the survey participants have children.</li><li><span class="circ">2</span>More than half of the husbands surveyed do most of the housework.</li><li><span class="circ">3</span>More than half of the wives want their husbands to do more housework.</li><li><span class="circ">4</span>More wives than husbands participated in the survey.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 3</span>Which of the following is true about the results of the survey? <span class="box">6</span></p><ol><li><span class="circ">1</span>Husbands and wives have similar preferences for household tasks.</li><li><span class="circ">2</span>Husbands want to do household chores more than child raising.</li><li><span class="circ">3</span>Many husbands think they need to be at their workplace less.</li><li><span class="circ">4</span>Wives think their husbands’ awareness of household duties has changed.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 4</span>Which of the following best describes Stephen’s attitude towards the sharing of housework in Japanese families? <span class="box">7</span></p><ol><li><span class="circ">1</span>Completely satisfied</li><li><span class="circ">2</span>Definitely disappointed</li><li><span class="circ">3</span>Moderately hopeful</li><li><span class="circ">4</span>Mostly negative</li></ol></div></div>
+<div class="quiz" id="quiz"></div>
+<div class="quiz-foot"><button class="btn orange" id="gradebtn" onclick="grade()">採点する</button><span class="score" id="score"></span><span class="note" id="scoremsg" style="font-size:14px;"></span></div></section><section class="section" id="s1"><div class="sec-head"><span class="sec-no">STEP 1</span><h2 class="sec-title">可視化リーディング ― 事実・データ・意見の3層を分けて読む</h2><span class="sec-sub">The eye path</span></div><p>第2問は「事実」と「意見」が混ざった文章です。ブログ記事の形をしていますが、中身は<b>筆者の体験（事実）→ 調査データ（事実）→ 筆者の感想（意見）</b>の3層。設問はこの層のどれを聞いているかで解き方が変わります。先読みの段階で「この設問は事実か、意見か」を判定し、本文の該当する層だけを読みに行きます。</p><div class="flow cols"><div class="fnode "><span class="fb">1</span><div class="fc"><h4>リード文で「何のために何を読むか」を1行にする</h4><p>「夫婦の家事に対する意識のレポートを書くために、日本在住のイギリス人留学生の記事を読む」。attitudes（意識・態度）という語から、意見・感想が問われると予想できる。</p></div></div><div class="fnode "><span class="fb">2</span><div class="fc"><h4>設問を先読みして「事実／意見／データ」のどれを聞いているか判定</h4><p>opinion（意見）／ survey data（数字）／ results of the survey（調査結果）／ attitude（筆者の姿勢）。4問が全部違う層を聞いている。</p></div></div><div class="fnode "><span class="fb">3-1</span><div class="fc"><div class="branch"><b>データ設問</b>の場合</div><h4>数字の問題は、数字のある段落に直行する</h4><p>survey data と言われたら、% や人数が並ぶ第2段落。選択肢の「half / more than half」を数字に置き換えて照合する。</p></div></div><div class="fnode aq"><span class="fb">3-2</span><div class="fc"><div class="branch"><b style="color:var(--aqua)">意見設問</b>の場合</div><h4>意見・姿勢の問題は、主観マーカーを探す</h4><p>I think / I find it interesting / really good / promising。筆者の声が出ている文だけが根拠になる。事実の文は答えにならない。</p></div></div></div><div class="callout amber"><div class="ttl">この手順の急所</div><p>第2問は「読めば分かる」文章です。差がつくのは読解力ではなく、<b>設問が事実を聞いているのか意見を聞いているのかを先に決めているか</b>。意見を問われているのに事実の選択肢を選ぶ、データを問われているのに感想で答える。失点のほとんどはこの取り違えです。</p></div></section><section class="section" id="s2"><div class="sec-head"><span class="sec-no">STEP 2</span><h2 class="sec-title">4問をタイプ分けする ― どの層を聞いているか</h2><span class="sec-sub">Classify before you read</span></div><div class="types"><div class="type mix"><div class="th"><span class="qn">問1</span><span class="badge">意見（opinion）</span></div><div class="stem">Which option best describes Stephen’s <u>opinion</u>?</div><div class="do">下線付きの opinion。選択肢を「事実の形」と「意見の形」に仕分けし、意見の形のものだけを本文で確認する。</div></div><div class="type no"><div class="th"><span class="qn">問2</span><span class="badge">データ照合</span></div><div class="stem">According to the <b>survey data</b>, which of the following is true?</div><div class="do">数字の段落（第2段落）に直行。half / more than half を 50% に置き換えて、4つの数字と突き合わせる。</div></div><div class="type no"><div class="th"><span class="qn">問3</span><span class="badge">調査結果の読み取り</span></div><div class="stem">Which of the following is true about the <b>results</b> of the survey?</div><div class="do">第3段落「どうすればより良いパートナーになれるか」の回答。夫の回答と妻の回答を取り違えさせる選択肢に注意。</div></div><div class="type mix"><div class="th"><span class="qn">問4</span><span class="badge">筆者の姿勢（attitude）</span></div><div class="stem">Which ... best describes Stephen’s <b>attitude</b> towards ...?</div><div class="do">最終段落の「結論の温度」を読む。Although ～, I think ～ の型で、譲歩のあとに本音が来る。</div></div></div><div class="callout aqua"><div class="ttl">問1と問4は「同じ意見問題」でも狙い方が違う</div><p>問1は「本文のどの文が筆者の意見か」を当てる問題。問4は「筆者の意見の温度（満足／失望／ほどほど／否定的）」を当てる問題。前者は主観マーカーのある1文を探せば決まり、後者は最終段落の<b>譲歩→主張</b>の構造を読んで、強さを測ります。</p></div></section><section class="section" id="s3"><div class="sec-head"><span class="sec-no">STEP 3</span><h2 class="sec-title">脳内実況 ― 読める人の頭の中を再生する</h2><span class="sec-sub">Think-aloud</span></div><p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。各問はタップで開閉できます。「本文の該当箇所を見る」を押すと、根拠の文が色付きで開きます。</p><div class="ans-card open">
+<button class="ah" onclick="acc(this)" aria-expanded="true"><span class="qn">問 1</span><span class="ans">正解 ④</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点 ／ 意見問題</span></button>
+<div class="ab"><p class="ja-q">スティーブンの意見を最もよく表しているのはどれか。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>スティーブンの父は毎日朝食を作る。</li><li class=""><span class="circ">2</span>スティーブンの父はオンラインで料理を学ぶべきだ。</li><li class=""><span class="circ">3</span>スティーブンのホストファーザーは自分のオンライン料理サイトを持っている。</li><li class="right"><span class="circ">4</span>スティーブンのホストファーザーの料理はおいしくなった。</li></ul><div class="brain"><div class="step"><span class="k p">1</span><div><h5>先読み：opinion に下線 ＝ 選択肢をまず「形」で仕分ける</h5><p>本文を読む前に、選択肢の書き方だけで事実っぽいもの／意見っぽいものを分けます。</p><ul class="elim"><li><span class="mk x">事実</span><div>① makes breakfast every day<div class="why">現在形で習慣の報告。every day という事実の断定。筆者の意見ではない。</div></div></li><li><span class="mk q">意見</span><div>② should learn cooking online<div class="why">should は「〜すべき」。意見の形。候補として残す。</div></div></li><li><span class="mk x">事実</span><div>③ has his own online cooking site<div class="why">所有の事実。本文にあっても意見ではない。</div></div></li><li><span class="mk q">意見</span><div>④ cooking has got tasty<div class="why">tasty（おいしい）は評価語。意見の形。候補として残す。</div></div></li></ul><p>この時点で②か④。あとは第1段落で、筆者が「〜すべき」と言っているか、「おいしくなった」と言っているかを確認するだけ。</p></div></div><div class="step"><span class="k g">2</span><div><h5>第1段落でホストファーザーの料理の話を見つける</h5><div class="ex">His food has become really good with help from an online cooking site.<span class="ja">彼の料理はオンライン料理サイトの助けで本当においしくなった。</span></div><p>really good（本当においしい）は筆者の評価。これが④ has got tasty の言い換え。④に○。</p></div></div><div class="step"><span class="k a">3</span><div><h5>②と、事実選択肢の「本文との食い違い」も確認</h5><p>②「スティーブンの父は学ぶべき」：本文で料理サイトを使っているのはホストファーザーで、実の父ではない。しかも should とは言っていない。×。①実の父が朝食を作るとは書いてあるが every day とは書いていないし、そもそも事実の報告。×。③サイトを「持っている」のではなく「サイトの助けを借りた」。×。</p></div></div></div><div class="para"><span class="a">His food has become really good</span><span class="arr">⇒</span><span class="b">host father’s cooking has got tasty</span></div><button class="btn ghost block mob-only" onclick="openSheet(1)">本文の該当箇所を見る</button><div class="callout purple"><div class="ttl">この問題の学び</div><p>意見問題は、本文を読む前に選択肢の形で半分落とせます。should / tasty / interesting / promising のような<b>判断・評価の語</b>があるものが意見。every day / has his own のような<b>断定・所有</b>は事実。本文に書いてあるかどうかは、そのあとで確認します。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 2</span><span class="ans">正解 ③</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点 ／ データ照合</span></button>
+<div class="ab"><p class="ja-q">調査データによれば、次のうち正しいものはどれか。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>調査参加者の半数未満に子どもがいる。</li><li class=""><span class="circ">2</span>調査対象の夫の半数以上が家事の大半をしている。</li><li class="right"><span class="circ">3</span>妻の半数以上が、夫にもっと家事をしてほしいと思っている。</li><li class=""><span class="circ">4</span>夫より妻のほうが多く調査に参加した。</li></ul><div class="brain"><div class="step"><span class="k ">1</span><div><h5>先読み：survey data ＝ 数字の段落へ直行</h5><p>選択肢は4つとも half / more than half で作られています。つまり「50%を超えるか」を数字で確認する問題。第2段落の数字を4つ拾います。5,000人／半々／80%／70%／60%。</p></div></div><div class="step"><span class="k g">2</span><div><h5>選択肢の「half」を数字に置き換えて照合</h5><div class="ex">Also, 70% of the wives who were surveyed wished their husbands would do more around the house.<span class="ja">また、調査対象の妻の70%が、夫に家の中でもっと働いてほしいと思っていた。</span></div><p>③「妻の半数以上が、夫にもっとしてほしい」→ 70% of the wives wished their husbands would do more。70% は half を超える。③に○。</p></div></div><div class="step"><span class="k a">3</span><div><h5>残りを数字で潰す</h5><p>①「半数未満に子どもがいる」：調査対象は married and have children（既婚で子どもがいる）人だけ。全員に子どもがいる。×。②「夫の半数以上が家事の大半をしている」：80%が「妻が大半をしている」と答えた。逆。×。④「妻のほうが多く参加」：Half are husbands and the other half are wives。半々。×。</p></div></div></div><div class="para"><span class="a">70% of the wives wished their husbands would do more</span><span class="arr">⇒</span><span class="b">More than half of the wives want their husbands to do more housework</span></div><button class="btn ghost block mob-only" onclick="openSheet(2)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>データ問題の選択肢は、数字をそのまま出さず<b>half / most / majority / less than</b> に言い換えてきます。先に選択肢の言葉を数字（50%）に戻してから本文を見ると、照合が一瞬で終わります。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 3</span><span class="ans">正解 ③</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点 ／ 調査結果の読み取り</span></button>
+<div class="ab"><p class="ja-q">調査結果について正しいものはどれか。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>夫と妻は家事の好みが似ている。</li><li class=""><span class="circ">2</span>夫は育児よりも家事をしたがっている。</li><li class="right"><span class="circ">3</span>多くの夫は、職場にいる時間を減らす必要があると考えている。</li><li class=""><span class="circ">4</span>妻は、夫の家事に対する意識が変わったと思っている。</li></ul><div class="brain"><div class="step"><span class="k ">1</span><div><h5>先読み：results of the survey ＝ 第3段落「より良いパートナーになるには」の回答</h5><p>第2段落は数字、第3段落は「どうすれば良くなるか」という質問への回答。選択肢に preferences / awareness / workplace とあるので、第3段落が本命。</p></div></div><div class="step"><span class="k g">2</span><div><h5>夫の回答と妻の回答を分けて読む</h5><div class="ex">The answer among the majority of husbands was shorter working hours for themselves.<span class="ja">夫の多数派の答えは、自分たちの労働時間を短くすることだった。</span></div><p>夫の多数派の答え：自分たちの労働時間を短くすること。→ ③「職場にいる時間を減らす必要がある」。shorter working hours → be at their workplace less。③に○。</p></div></div><div class="step"><span class="k a">3</span><div><h5>残りは「夫と妻の取り違え」と「時制のすり替え」</h5><p>①「好みが似ている」：本文は perceive the solution from different angles（違う角度から見ている）。逆。×。②「育児より家事」：そんな比較はどこにもない。×。④「意識が変わった」：妻が望んだのは a change in their husbands’ awareness（意識が変わること）。変わってほしいのであって、変わったのではない。<b>願望を既成事実にすり替えた</b>選択肢。×。</p></div></div></div><div class="para"><span class="a">shorter working hours for themselves</span><span class="arr">⇒</span><span class="b">need to be at their workplace less</span></div><button class="btn ghost block mob-only" onclick="openSheet(3)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>④のような「〜してほしい（願望）」を「〜した（事実）」に書き換える誤答は、第2問の常連です。本文の動詞が wished / want / would なら、選択肢が has changed（完了）になっていた時点で疑ってください。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 4</span><span class="ans">正解 ③</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点 ／ 筆者の姿勢</span></button>
+<div class="ab"><p class="ja-q">日本の家庭における家事分担に対するスティーブンの姿勢を最もよく表しているのはどれか。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>完全に満足</li><li class=""><span class="circ">2</span>明らかに失望</li><li class="right"><span class="circ">3</span>ほどほどに希望を持っている</li><li class=""><span class="circ">4</span>おおむね否定的</li></ul><div class="brain"><div class="step"><span class="k p">1</span><div><h5>先読み：attitude ＝ 最終段落の「結論の温度」を測る</h5><p>選択肢は4つの温度：完全満足／明確な失望／ほどほどの希望／おおむね否定。両極端（①②④）か中間（③）か。筆者の結論文を探しに最終段落へ。</p></div></div><div class="step"><span class="k g">2</span><div><h5>Although ～, I think ～ の型を読む</h5><div class="ex">Although the current situation is not really satisfactory ..., I think it’s still encouraging that many couples want to improve .... The future looks promising.<span class="ja">現状は多くの回答者にとって本当に満足のいくものではないが、多くの夫婦が改善したいと思っていることは、やはり励みになると思う。将来は明るそうだ。</span></div><p>前半（譲歩）：現状は満足とは言えない → ①完全に満足は×。後半（主張）：それでも encouraging（励まされる）、The future looks promising（将来は明るそう）→ ②失望・④否定的は×。「満足ではないが、希望はある」＝ ③ Moderately hopeful。</p></div></div><div class="step"><span class="k a">3</span><div><h5>なぜ Moderately（ほどほど）なのか</h5><p>still（それでも）と not really satisfactory（本当に満足とは言えない）が、希望に<b>留保</b>を付けています。手放しの楽観ではない。だから Completely でも Definitely でもなく Moderately。副詞1語が答えを決める問題です。</p></div></div></div><div class="para"><span class="a">not really satisfactory ... still encouraging ... promising</span><span class="arr">⇒</span><span class="b">Moderately hopeful</span></div><button class="btn ghost block mob-only" onclick="openSheet(4)">本文の該当箇所を見る</button><div class="callout purple"><div class="ttl">この問題の学び</div><p>筆者の姿勢を問う問題は、<b>Although / but / still</b> の前後を見ます。譲歩のあとに来るのが本音。そして「どのくらい強いか」は副詞（really / still / completely）で測る。選択肢の副詞（Completely / Definitely / Moderately / Mostly）と本文の留保の強さを合わせてください。</p></div></div></div></section><section class="section" id="s4"><div class="sec-head"><span class="sec-no">STEP 4</span><h2 class="sec-title">事実と意見を「形」で見分ける</h2><span class="sec-sub">Fact vs. opinion</span></div><p>第2問の核は「事実と意見の識別」です。内容で判断しようとすると迷います。<b>書き方（形）</b>で判断すると迷いません。この記事を材料に、見分けの道具を固めます。</p>
+<div class="fo">
+<div class="col fact"><h4>事実の書き方（Fact）</h4><ul>
+<li>数字・割合・人数：<code>5,000 residents</code>、<code>80%</code>、<code>70%</code></li>
+<li>調査・出典を伴う報告：<code>I found an online survey</code>、<code>The survey asked ...</code></li>
+<li>過去形の出来事：<code>my host father also started cooking</code></li>
+<li>現在形の習慣：<code>my father makes breakfast</code>、<code>takes out the rubbish</code></li>
+<li>誰が読んでも同じ内容になる記述</li>
+</ul></div>
+<div class="col op"><h4>意見の書き方（Opinion）</h4><ul>
+<li>評価の形容詞：<code>really good</code>、<code>satisfactory</code>、<code>encouraging</code>、<code>promising</code></li>
+<li>主観の合図：<code>I think</code>、<code>I find it interesting</code>、<code>This made me wonder</code></li>
+<li>判断・助言：<code>should</code>、<code>need to</code></li>
+<li>譲歩のあとの主張：<code>Although ～, I think ～</code></li>
+<li>人によって結論が変わりうる記述</li>
+</ul></div></div><div class="callout amber"><div class="ttl">注意：事実の文の中に意見が埋まる</div><p>「80%が、妻が家事の大半をしていると答えた」は、80%という数字は事実ですが、その中身は回答者の意見です。設問が survey data を問うなら数字（80%）を見る。設問が respondents の考えを問うなら中身を見る。<b>同じ文のどの層を見るか</b>が設問で変わります。</p></div><p style="margin-top:18px;"><b>10秒ドリル</b>：本文中の文を「事実」か「意見」かで仕分けてください。</p><div class="drill"><div class="drill-row" data-a="f"><div class="s">My father back in England makes breakfast but my host father takes out the rubbish.</div><div class="btns"><button onclick="drill(this,'f')">事実</button><button onclick="drill(this,'o')">意見</button></div><div class="res">現在形で家庭内の役割を報告。誰が見ても同じ内容なので事実。</div></div><div class="drill-row" data-a="o"><div class="s">His food has become really good with help from an online cooking site.</div><div class="btns"><button onclick="drill(this,'f')">事実</button><button onclick="drill(this,'o')">意見</button></div><div class="res">really good は筆者の評価。問1の根拠になった意見の文。</div></div><div class="drill-row" data-a="f"><div class="s">Half are husbands and the other half are wives.</div><div class="btns"><button onclick="drill(this,'f')">事実</button><button onclick="drill(this,'o')">意見</button></div><div class="res">調査対象の内訳。数字の事実。</div></div><div class="drill-row" data-a="o"><div class="s">I find it interesting that husbands and wives perceive the solution from different angles.</div><div class="btns"><button onclick="drill(this,'f')">事実</button><button onclick="drill(this,'o')">意見</button></div><div class="res">I find it interesting は主観の合図。意見。</div></div><div class="drill-row" data-a="f"><div class="s">70% of the wives who were surveyed wished their husbands would do more around the house.</div><div class="btns"><button onclick="drill(this,'f')">事実</button><button onclick="drill(this,'o')">意見</button></div><div class="res">「70%がそう望んだ」という調査結果の報告。数字は事実。中身（望み）は回答者の意見だが、文としては事実の報告。</div></div><div class="drill-row" data-a="o"><div class="s">The future looks promising.</div><div class="btns"><button onclick="drill(this,'f')">事実</button><button onclick="drill(this,'o')">意見</button></div><div class="res">promising は評価語で、未来の予測。筆者の意見。</div></div></div></section><section class="section" id="s5"><div class="sec-head"><span class="sec-no">STEP 5</span><h2 class="sec-title">全訳 ― 該当箇所を色で確認する</h2><span class="sec-sub">Full translation</span></div><p class="note">色の下線は各設問の根拠箇所です。<mark class="m1">問1</mark>・<mark class="m2">問2</mark>・<mark class="m3">問3</mark>・<mark class="m4">問4</mark>。4問の根拠が「段落順」に並んでいることを確かめてください。第2問は設問の順番と本文の順番がほぼ一致します。</p>
+<div class="trtools"><button class="toggle" id="hideEn" onclick="toggleEn(this)">英文を隠して和訳だけ読む</button></div><div class="tr" id="tr"><div class="pair"><div class="pn">リード文</div><div class="e">You are writing a report about the attitudes of married couples towards housework. In order to prepare, you find this online article written by a British exchange student living in Japan.</div><div class="j">あなたは夫婦の家事に対する意識についてレポートを書いている。その準備のために、日本在住のイギリス人交換留学生が書いたこのオンライン記事を見つける。</div></div><div class="pair"><div class="pn">タイトル・見出し</div><div class="e"><i>Who does what at home?</i><br>12 November 2024 / Stephen Nitwick / Tokomachi, Japan</div><div class="j">家では誰が何をする？<br>2024年11月12日 ／ スティーブン・ニトウィック ／ 日本、トコマチ</div></div><div class="pair"><div class="pn">第1段落</div><div class="e">I’ve been doing a homestay with a Japanese family in Tokomachi City and I’ve noticed a few differences in the roles of the members between my two families. For example, my father back in England makes breakfast but my host father takes out the rubbish. A few weeks ago, however, my host father also started cooking for us after work. <mark class="m1">His food has become really good with help from an online cooking site.</mark> This made me wonder how housework was being shared in other Japanese families in my city.</div><div class="j">私はトコマチ市の日本人家庭でホームステイをしていて、2つの家族の間で家族の役割にいくつか違いがあることに気づいた。たとえば、イングランドの私の父は朝食を作るが、ホストファーザーはゴミ出しをする。しかし数週間前、ホストファーザーは仕事のあとに私たちのために料理もし始めた。<mark class="m1">彼の料理はオンライン料理サイトの助けで本当においしくなった。</mark><span class="tagq t1">問1</span> これがきっかけで、私の街の他の日本の家庭では家事がどう分担されているのか気になった。</div></div><div class="pair"><div class="pn">第2段落</div><div class="e">I found an online survey of 5,000 Tokomachi residents who are married and have children: Half are husbands and the other half are wives. Of all the respondents, 80% said that wives, in general, do the majority of both the household chores and child raising. Also, <mark class="m2">70% of the wives who were surveyed wished their husbands would do more around the house.</mark> Furthermore, 60% of the husbands said that they want more responsibility around the home.</div><div class="j">既婚で子どものいるトコマチ住民5,000人を対象にしたオンライン調査を見つけた。半数が夫で、残り半数が妻だ。回答者全体のうち80%が、一般的に妻が家事と育児の両方の大半を担っていると答えた。また、<mark class="m2">調査対象の妻の70%が、夫に家の中でもっと働いてほしいと思っていた。</mark><span class="tagq t2">問2</span> さらに、夫の60%が家庭でもっと責任を持ちたいと答えた。</div></div><div class="pair"><div class="pn">第3段落</div><div class="e">The survey asked the couples about how they could be better partners in housework. <mark class="m3">The answer among the majority of husbands was shorter working hours for themselves.</mark> The answer most favoured by wives was a change in their husbands’ awareness of household chores and childcare duties. I find it interesting that husbands and wives perceive the solution to being a better partner from different angles.</div><div class="j">調査は夫婦に、どうすれば家事においてより良いパートナーになれるかを尋ねた。<mark class="m3">夫の多数派の答えは、自分たちの労働時間を短くすることだった。</mark><span class="tagq t3">問3</span> 妻に最も支持された答えは、夫の家事・育児の務めに対する意識が変わることだった。夫と妻が、より良いパートナーになるための解決策を異なる角度から捉えているのは興味深いと思う。</div></div><div class="pair"><div class="pn">第4段落</div><div class="e"><mark class="m4">Although the current situation is not really satisfactory for many respondents in the survey, I think it’s still encouraging that many couples want to improve how the housework and childcare tasks are shared. The future looks promising.</mark></div><div class="j"><mark class="m4">調査の多くの回答者にとって現状は本当に満足のいくものではないが、多くの夫婦が家事・育児の分担のしかたを改善したいと思っていることは、やはり励みになると思う。将来は明るそうだ。</mark><span class="tagq t4">問4</span></div></div></div></section><section class="section" id="s6"><div class="sec-head"><span class="sec-no">STEP 6</span><h2 class="sec-title">語句 ― 言い換えに使われた語を優先して覚える</h2><span class="sec-sub">Vocabulary</span></div><p class="note">第2問の正解は「本文の語 → 選択肢の語」の言い換えで作られます。ペアで覚えてください。</p><div class="vgroup">今回の言い換えペア（最優先）</div><div class="vocab"><div><span class="w">really good ／ tasty</span><span class="pos">形</span><span class="m">本当においしい／おいしい</span></div><div><span class="w">70% ／ more than half</span><span class="pos">名</span><span class="m">70%／半数以上</span></div><div><span class="w">shorter working hours ／ be at the workplace less</span><span class="pos">熟</span><span class="m">労働時間短縮／職場にいる時間を減らす</span></div><div><span class="w">encouraging, promising ／ hopeful</span><span class="pos">形</span><span class="m">励みになる・有望な／希望のある</span></div><div><span class="w">not really satisfactory ／ moderately</span><span class="pos">副</span><span class="m">本当に満足ではない／ほどほどに</span></div></div><div class="vgroup">リード文</div><div class="vocab"><div><span class="w">attitude</span><span class="pos">名</span><span class="m">態度、姿勢、意識</span></div><div><span class="w">married couple</span><span class="pos">名</span><span class="m">夫婦</span></div><div><span class="w">housework</span><span class="pos">名</span><span class="m">家事</span></div><div><span class="w">exchange student</span><span class="pos">名</span><span class="m">交換留学生</span></div></div><div class="vgroup">本文</div><div class="vocab"><div><span class="w">homestay</span><span class="pos">名</span><span class="m">ホームステイ</span></div><div><span class="w">role</span><span class="pos">名</span><span class="m">役割</span></div><div><span class="w">rubbish</span><span class="pos">名</span><span class="m">ゴミ（英）</span></div><div><span class="w">wonder</span><span class="pos">動</span><span class="m">〜だろうかと思う</span></div><div><span class="w">survey</span><span class="pos">名</span><span class="m">調査</span></div><div><span class="w">resident</span><span class="pos">名</span><span class="m">住民</span></div><div><span class="w">respondent</span><span class="pos">名</span><span class="m">回答者</span></div><div><span class="w">majority</span><span class="pos">名</span><span class="m">大多数</span></div><div><span class="w">household chores</span><span class="pos">名</span><span class="m">家事</span></div><div><span class="w">child raising</span><span class="pos">名</span><span class="m">育児</span></div><div><span class="w">responsibility</span><span class="pos">名</span><span class="m">責任</span></div><div><span class="w">favour</span><span class="pos">動</span><span class="m">支持する（英つづり）</span></div><div><span class="w">awareness</span><span class="pos">名</span><span class="m">意識、自覚</span></div><div><span class="w">duty</span><span class="pos">名</span><span class="m">務め、義務</span></div><div><span class="w">perceive</span><span class="pos">動</span><span class="m">捉える、認識する</span></div><div><span class="w">angle</span><span class="pos">名</span><span class="m">角度、観点</span></div><div><span class="w">satisfactory</span><span class="pos">形</span><span class="m">満足のいく</span></div><div><span class="w">encouraging</span><span class="pos">形</span><span class="m">励みになる</span></div><div><span class="w">promising</span><span class="pos">形</span><span class="m">有望な</span></div></div><div class="vgroup">選択肢</div><div class="vocab"><div><span class="w">describe</span><span class="pos">動</span><span class="m">描写する、表す</span></div><div><span class="w">participant</span><span class="pos">名</span><span class="m">参加者</span></div><div><span class="w">preference</span><span class="pos">名</span><span class="m">好み</span></div><div><span class="w">workplace</span><span class="pos">名</span><span class="m">職場</span></div><div><span class="w">completely</span><span class="pos">副</span><span class="m">完全に</span></div><div><span class="w">definitely</span><span class="pos">副</span><span class="m">明らかに</span></div><div><span class="w">moderately</span><span class="pos">副</span><span class="m">ほどほどに</span></div><div><span class="w">mostly</span><span class="pos">副</span><span class="m">おおむね</span></div></div></section><section class="section" id="s7"><div class="sec-head"><span class="sec-no">STEP 7</span><h2 class="sec-title">持ち帰る3つの武器 と 自己点検</h2><span class="sec-sub">Take-aways</span></div><div class="weapons"><div class="weapon"><span class="wn">武器 1</span><h4>設問を先読みしたら「事実・データ・意見」のどれかを即判定</h4><p>opinion / attitude なら意見の層へ。survey data なら数字の段落へ。層を間違えると、本文に書いてある正しいことを選んで失点する。</p></div><div class="weapon"><span class="wn">武器 2</span><h4>意見問題は、選択肢の「形」で先に半分落とす</h4><p>should / tasty / interesting / promising は意見。every day / has his own / 数字は事実。本文を読む前に候補を2つに絞れる。</p></div><div class="weapon"><span class="wn">武器 3</span><h4>筆者の姿勢は Although の後ろと副詞で測る</h4><p>譲歩のあとが本音。still / not really / completely のような副詞が「どのくらい強いか」を決める。選択肢の副詞と合わせる。</p></div></div><p style="margin-top:22px;"><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。チェックはこの端末に保存されます。</p><ul class="check" id="check"><li><input type="checkbox"><span>リード文の attitudes から「意見が問われる文章だ」と予想した</span></li><li><input type="checkbox"><span>設問4つを先読みして、事実／データ／意見／姿勢に仕分けてから本文に入った</span></li><li><input type="checkbox"><span>問1で、本文を読む前に①③を「事実の形」として候補から外した</span></li><li><input type="checkbox"><span>問2で、選択肢の half / more than half を 50% に置き換えてから数字を見た</span></li><li><input type="checkbox"><span>問3で、夫の回答と妻の回答を分けて読み、④の「変わってほしい→変わった」のすり替えに気づいた</span></li><li><input type="checkbox"><span>問4で、Although の後ろ（I think ～）を本音として読んだ</span></li><li><input type="checkbox"><span>問4で、still / not really という留保から Moderately を選んだ（Completely を選ばなかった）</span></li><li><input type="checkbox"><span>6分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li></ul><div class="check-foot"><span id="checkfoot">0 / 0</span><span class="bar"><i id="checkbar"></i></span></div><div class="callout "><div class="ttl">次に向けて</div><p>7個以上なら第2問の手順は入っています。次は同じ手順を「初見の第2問」で再現できるかを試してください。6個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度6分で解き直してください。測っているのは正解ではなく、<b>設問の層を先に決めたか</b>です。</p></div><button class="btn ghost block" style="margin-top:16px;" onclick="resetAll()">解答・チェックをリセットしてもう一度解く</button></section>
+</main>
+<footer class="footer">出典：令和7年度 大学入学共通テスト 追試験 英語（リーディング）第2問<br>学部別合格設計塾 THINKING ― 受験は根性じゃなく、設計。</footer>
+<div class="dock" role="toolbar" aria-label="クイック操作"><div class="dock-in">
+<button class="btn orange" onclick="openSheet(0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>本文を開く</button>
+<button class="btn ghost icon" onclick="jumpNext()" aria-label="次のステップへ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>次へ</button>
+<button class="btn ghost icon" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="先頭へ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></button>
+</div></div>
+<div class="scrim" id="scrim" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="本文"><div class="grip"></div>
+<div class="sh"><span class="t">本文 ― Who does what at home?</span><button class="toggle on" id="hlToggle" onclick="toggleHl()">根拠の色を表示</button><button class="close" onclick="closeSheet()" aria-label="閉じる"><svg viewBox="0 0 16 16" fill="none" stroke="#2c2520" stroke-width="2" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+<div class="sheet-body show-hl" id="sheetBody"><div class="qtabs"><button data-q="0" class="on" onclick="filterQ(0)">全部</button><button data-q="1" onclick="filterQ(1)">問1</button><button data-q="2" onclick="filterQ(2)">問2</button><button data-q="3" onclick="filterQ(3)">問3</button><button data-q="4" onclick="filterQ(4)">問4</button></div>
+<p class="lead-text">You are writing a report about the attitudes of married couples towards housework. In order to prepare, you find this online article written by a British exchange student living in Japan.</p>
+<div class="doc">
+<div class="dtitle it">Who does what at home?</div>
+<div class="dmeta">12 November 2024<br>Stephen Nitwick<br>Tokomachi, Japan</div>
+<p>I’ve been doing a homestay with a Japanese family in Tokomachi City and I’ve noticed a few differences in the roles of the members between my two families. For example, my father back in England makes breakfast but my host father takes out the rubbish. A few weeks ago, however, my host father also started cooking for us after work. <mark class="m1">His food has become really good with help from an online cooking site.</mark> This made me wonder how housework was being shared in other Japanese families in my city.</p>
+<p>I found an online survey of 5,000 Tokomachi residents who are married and have children: Half are husbands and the other half are wives. Of all the respondents, 80% said that wives, in general, do the majority of both the household chores and child raising. Also, <mark class="m2">70% of the wives who were surveyed wished their husbands would do more around the house.</mark> Furthermore, 60% of the husbands said that they want more responsibility around the home.</p>
+<p>The survey asked the couples about how they could be better partners in housework. <mark class="m3">The answer among the majority of husbands was shorter working hours for themselves.</mark> The answer most favoured by wives was a change in their husbands’ awareness of household chores and childcare duties. I find it interesting that husbands and wives perceive the solution to being a better partner from different angles.</p>
+<p><mark class="m4">Although the current situation is not really satisfactory for many respondents in the survey, I think it’s still encouraging that many couples want to improve how the housework and childcare tasks are shared. The future looks promising.</mark></p>
+</div>
+<div class="q"><p class="stem"><span class="qn">問 1</span>Which option best describes Stephen’s <u class="kw">opinion</u>? <span class="box">4</span></p><ol><li><span class="circ">1</span>Stephen’s father makes breakfast every day.</li><li><span class="circ">2</span>Stephen’s father should learn cooking online.</li><li><span class="circ">3</span>Stephen’s host father has his own online cooking site.</li><li><span class="circ">4</span>Stephen’s host father’s cooking has got tasty.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 2</span>According to the survey data, which of the following is true? <span class="box">5</span></p><ol><li><span class="circ">1</span>Less than half of the survey participants have children.</li><li><span class="circ">2</span>More than half of the husbands surveyed do most of the housework.</li><li><span class="circ">3</span>More than half of the wives want their husbands to do more housework.</li><li><span class="circ">4</span>More wives than husbands participated in the survey.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 3</span>Which of the following is true about the results of the survey? <span class="box">6</span></p><ol><li><span class="circ">1</span>Husbands and wives have similar preferences for household tasks.</li><li><span class="circ">2</span>Husbands want to do household chores more than child raising.</li><li><span class="circ">3</span>Many husbands think they need to be at their workplace less.</li><li><span class="circ">4</span>Wives think their husbands’ awareness of household duties has changed.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 4</span>Which of the following best describes Stephen’s attitude towards the sharing of housework in Japanese families? <span class="box">7</span></p><ol><li><span class="circ">1</span>Completely satisfied</li><li><span class="circ">2</span>Definitely disappointed</li><li><span class="circ">3</span>Moderately hopeful</li><li><span class="circ">4</span>Mostly negative</li></ol></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+var KEY='thinking_r7_tsui_q2';
+var QUIZ=[{"label": "問 1", "slots": ["4"], "n": 4, "ans": ["4"], "ansText": "4", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}, {"label": "問 2", "slots": ["5"], "n": 4, "ans": ["3"], "ansText": "3", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}, {"label": "問 3", "slots": ["6"], "n": 4, "ans": ["3"], "ansText": "3", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}, {"label": "問 4", "slots": ["7"], "n": 4, "ans": ["3"], "ansText": "3", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}];
+var TOTAL=12;
+var TSEC0=360;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return {};}}
+function save(o){try{localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
+var state=load();
+function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('on');},1800);}
+/* timer */
+var tsec=TSEC0,tid=null;
+function fmt(s){var m=Math.floor(Math.abs(s)/60),ss=Math.abs(s)%60;return (s<0?'+':'')+m+':'+(ss<10?'0':'')+ss;}
+function paintTimer(){var d=document.getElementById('tm'),c=document.getElementById('tclock');d.textContent=fmt(tsec);c.textContent=fmt(tsec);d.classList.toggle('over',tsec<0);c.classList.toggle('over',tsec<0);}
+function timer(){var btn=document.getElementById('tmbtn'),c=document.getElementById('tclock');
+  if(tid){clearInterval(tid);tid=null;btn.textContent='再開';btn.classList.remove('stop');return;}
+  btn.textContent='ストップ';btn.classList.add('stop');c.classList.add('on');
+  tid=setInterval(function(){tsec--;paintTimer();if(tsec===0)toast('目標時間を経過。そのまま続けてOK');},1000);}
+/* quiz */
+var sel={};
+function buildQuiz(){
+  var host=document.getElementById('quiz');
+  QUIZ.forEach(function(q,qi){
+    var row=document.createElement('div');row.className='quiz-row';row.dataset.qi=qi;
+    var h='<div class="qlabel"><span>'+q.label+(q.note?' <span style="font-weight:500;color:var(--ink3);font-size:12px">'+q.note+'</span>':'')+'</span><span class="st"></span></div>';
+    q.slots.forEach(function(s,si){
+      var nn=(q.ns&&q.ns[si])||q.n;
+      h+='<div class="slot"><span class="sl">'+s+'</span><div class="opts n'+nn+'" data-si="'+si+'">';
+      for(var k=1;k<=nn;k++)h+='<button class="opt" data-v="'+k+'">'+k+'</button>';
+      h+='</div></div>';
+    });
+    row.innerHTML=h;host.appendChild(row);
+    sel[qi]=new Array(q.slots.length).fill(null);
+    row.querySelectorAll('.opts').forEach(function(op){
+      var si=+op.dataset.si;
+      op.querySelectorAll('.opt').forEach(function(b){
+        b.addEventListener('click',function(){
+          if(row.dataset.graded)return;
+          op.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel');});
+          b.classList.add('sel');sel[qi][si]=b.dataset.v;
+        });
+      });
+    });
+  });
+}
+function grade(silent){
+  var unanswered=[];
+  QUIZ.forEach(function(q,qi){if(sel[qi].some(function(v){return v===null;}))unanswered.push(qi);});
+  if(unanswered.length){toast('すべての空欄に答えてから採点してください');var r=document.querySelector('.quiz-row[data-qi="'+unanswered[0]+'"]');if(r)r.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  var score=0;
+  QUIZ.forEach(function(q,qi){
+    var row=document.querySelector('.quiz-row[data-qi="'+qi+'"]');row.dataset.graded='1';
+    var mine=sel[qi],ans=q.ans.map(String),correct,earned=0;
+    if(q.mode==='set'){var a=mine.slice().sort().join(),b=ans.slice().sort().join();correct=(a===b);
+      if(q.each){ earned=0; mine.forEach(function(v){ if(ans.indexOf(v)>=0) earned+=q.each; }); if(new Set(mine).size<mine.length) earned=Math.min(earned,q.each);} else earned=correct?q.pts:0;
+    } else if(q.mode==='mixed'){var k=q.k;var a1=mine.slice(0,k).sort().join(),b1=ans.slice(0,k).sort().join();correct=(a1===b1)&&(mine.slice(k).join()===ans.slice(k).join());earned=correct?q.pts:0;}
+    else {correct=mine.join()===ans.join();earned=correct?q.pts:0;}
+    score+=earned;
+    row.querySelectorAll('.opts').forEach(function(op,si){
+      op.querySelectorAll('.opt').forEach(function(b){
+        var v=b.dataset.v;b.classList.remove('sel');
+        if(q.mode==='set'||(q.mode==='mixed'&&si<q.k)){ var pool=q.mode==='set'?ans:ans.slice(0,q.k), mpool=q.mode==='set'?mine:mine.slice(0,q.k); if(v===mine[si]&&pool.indexOf(v)>=0&&mpool.indexOf(v)===si)b.classList.add('ok'); else if(v===mine[si])b.classList.add('ng'); }
+        else { if(v===ans[si]&&v===mine[si])b.classList.add('ok'); else if(v===mine[si])b.classList.add('ng'); else if(v===ans[si])b.classList.add('hint'); }
+      });
+    });
+    if((q.mode==='set'||q.mode==='mixed')&&!correct){var k2=q.mode==='set'?ans.length:q.k;var miss=ans.slice(0,k2).filter(function(v){return mine.slice(0,k2).indexOf(v)<0;});row.querySelectorAll('.opts').forEach(function(op,si){if(si>=k2)return;op.querySelectorAll('.opt').forEach(function(b){if(miss.indexOf(b.dataset.v)>=0&&!b.classList.contains('ng')&&!b.classList.contains('ok'))b.classList.add('hint');});});}
+    var st=row.querySelector('.st');
+    st.textContent=correct?'正解（'+earned+'点）':(earned>0?'一部正解（'+earned+'点）正解 '+q.ansText:'不正解（正解 '+q.ansText+'）');
+    st.className='st '+(correct?'ok':'ng');
+  });
+  document.getElementById('score').textContent=score+' / '+TOTAL+'点';
+  var r=score/TOTAL,msg=r>=1?'全問正解。次は「どの順番で目を動かしたか」を解説と照らし合わせてください。':r>=0.7?'合格圏。落とした設問が、どのタイプだったかを確認してください。':r>=0.45?'半分前後。この大問の「読む順番」が入っていない可能性が高いです。STEP 1を読んでから解説へ。':'手順を入れる前の状態です。ここから伸びます。STEP 1を読んでからSTEP 3の脳内実況を追ってください。';
+  document.getElementById('scoremsg').textContent=msg;
+  document.getElementById('gradebtn').textContent='採点済み';
+  if(tid){clearInterval(tid);tid=null;document.getElementById('tmbtn').textContent='終了';document.getElementById('tmbtn').classList.remove('stop');}
+  state.sel=sel;state.time=tsec;save(state);
+  if(!silent)setTimeout(function(){document.getElementById('s1').scrollIntoView({behavior:'smooth'});},900);
+}
+function restoreQuiz(){
+  if(!state.sel)return;
+  var ok=true;QUIZ.forEach(function(q,qi){var s=state.sel[qi];if(!s||s.length!==q.slots.length||s.some(function(v){return v===null;}))ok=false;else sel[qi]=s.map(String);});
+  if(!ok)return;
+  tsec=typeof state.time==='number'?state.time:TSEC0;paintTimer();grade(true);
+  document.getElementById('scoremsg').textContent+='（前回の結果を表示中）';
+}
+/* accordion */
+function acc(btn){var card=btn.closest('.ans-card');var open=card.classList.toggle('open');btn.setAttribute('aria-expanded',open);if(open){setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'start'});},60);}}
+/* drill */
+function drill(btn,choice){var row=btn.closest('.drill-row'),a=row.dataset.a,res=row.querySelector('.res');
+  row.querySelectorAll('button').forEach(function(b){b.classList.remove('on','good','bad');});btn.classList.add('on',choice===a?'good':'bad');
+  res.classList.add('show');res.classList.remove('good','bad');res.classList.add(choice===a?'good':'bad');
+  var base=res.dataset.base||res.textContent;res.dataset.base=base;res.textContent=(choice===a?'正解。':'不正解。')+base;}
+/* translation */
+function toggleEn(b){var on=b.classList.toggle('on');document.querySelectorAll('#tr .pair').forEach(function(p){p.classList.toggle('hidden-en',on);});b.textContent=on?'英文を表示する':'英文を隠して和訳だけ読む';}
+/* checklist */
+var checks=document.querySelectorAll('#check li');
+function paintChecks(){var n=document.querySelectorAll('#check input:checked').length;document.getElementById('checkfoot').textContent=n+' / '+checks.length;document.getElementById('checkbar').style.width=(n*100/checks.length)+'%';}
+checks.forEach(function(li,i){var cb=li.querySelector('input');if(state.checks&&state.checks[i]){cb.checked=true;li.classList.add('done');}
+  li.addEventListener('click',function(e){if(e.target!==cb)cb.checked=!cb.checked;li.classList.toggle('done',cb.checked);state.checks=[].map.call(checks,function(l){return l.querySelector('input').checked;});save(state);paintChecks();});});
+function resetAll(){try{localStorage.removeItem(KEY);}catch(e){}location.reload();}
+/* sheet */
+var sheet=document.getElementById('sheet'),scrim=document.getElementById('scrim'),body=document.getElementById('sheetBody');
+function openSheet(q){sheet.classList.add('on');scrim.classList.add('on');document.body.classList.add('sheet-open');filterQ(q||0);
+  if(q){var el=body.querySelector('mark.m'+q);if(el){setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('pulse');setTimeout(function(){el.classList.remove('pulse');},1400);},260);}}
+  else{body.scrollTop=0;}}
+function closeSheet(){sheet.classList.remove('on');scrim.classList.remove('on');document.body.classList.remove('sheet-open');}
+function filterQ(q){body.classList.remove('f1','f2','f3','f4','f5');if(q)body.classList.add('f'+q);body.querySelectorAll('.qtabs button').forEach(function(b){b.classList.toggle('on',+b.dataset.q===q);});}
+function toggleHl(){var on=body.classList.toggle('show-hl');var t=document.getElementById('hlToggle');t.classList.toggle('on',on);t.textContent=on?'根拠の色を表示':'白文（色なし）';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet();});
+(function(){var y0=null;sheet.addEventListener('touchstart',function(e){y0=(body.scrollTop<=0)?e.touches[0].clientY:null;},{passive:true});sheet.addEventListener('touchmove',function(e){if(y0===null)return;if(e.touches[0].clientY-y0>70){closeSheet();y0=null;}},{passive:true});})();
+/* progress / nav */
+var secs=[].slice.call(document.querySelectorAll('.section')),links=[].slice.call(document.querySelectorAll('#stepnav a'));var lastCur=-1;
+function onScroll(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight);document.getElementById('pbar').style.width=(p*100)+'%';
+  var top=window.innerHeight*0.35,cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<top)cur=i;});
+  if(cur!==lastCur){lastCur=cur;links.forEach(function(a,i){a.classList.toggle('active',i===cur);});var act=links[cur],nav=document.getElementById('stepnav');nav.scrollTo({left:act.offsetLeft-nav.clientWidth/2+act.offsetWidth/2,behavior:'smooth'});}}
+var raf=null;window.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){raf=null;onScroll();});},{passive:true});
+function jumpNext(){var top=window.innerHeight*0.35,cur=-1;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<top)cur=i;});secs[Math.min(cur+1,secs.length-1)].scrollIntoView({behavior:'smooth'});}
+links.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+buildQuiz();restoreQuiz();paintChecks();onScroll();
+</script>
+</body></html>

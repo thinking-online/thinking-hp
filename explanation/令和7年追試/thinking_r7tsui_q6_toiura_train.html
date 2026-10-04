@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fdfaf4">
+<title>共通テスト第6問攻略｜可視化リーディングで解く物語の感情問題 — トイウラへの旅 — オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f7f3ed; --paper:#fdfaf4; --ink:#2c2520; --ink2:#6b6155; --ink3:#9a9086; --border:#e7ddce;
+  --orange:#e85a1a; --orange-dark:#b8420f; --orange-light:#fde4d3;
+  --aqua:#3f83a0; --aqua-light:#e2eef2; --green:#3b8a5a; --green-light:#e4f2ea;
+  --amber:#b07d1e; --amber-light:#f8eed4; --purple:#7a5aa8; --purple-light:#efe8f7;
+  --red:#c0392b; --red-light:#fbe3e0;
+  --radius:16px; --radius-sm:10px;
+  --shadow:0 4px 20px rgba(80,55,25,.08); --shadow-lg:0 12px 40px rgba(80,55,25,.16);
+  --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px);
+  --topbar:52px; --tap:44px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;} *{transition:none!important;animation:none!important;}}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);line-height:1.9;font-size:16px;
+  background:radial-gradient(900px 500px at 10% -5%,rgba(232,90,26,.06),transparent 55%),radial-gradient(900px 500px at 100% 8%,rgba(63,131,160,.06),transparent 55%),var(--bg);
+  -webkit-font-smoothing:antialiased;padding-bottom:calc(84px + var(--sab));overflow-x:hidden;}
+body.sheet-open{overflow:hidden;}
+.en{font-family:'Source Serif 4','Noto Serif JP',serif;}
+b,strong{font-weight:700;}
+button{font-family:inherit;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+:focus-visible{outline:3px solid rgba(232,90,26,.35);outline-offset:2px;}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(253,250,244,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding-top:var(--sat);}
+.topbar-in{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:10px;height:var(--topbar);padding:0 16px;}
+.logo{width:30px;height:30px;border-radius:8px;flex:none;background:linear-gradient(135deg,var(--orange),var(--orange-dark));display:grid;place-items:center;color:#fff;font-weight:900;font-size:15px;}
+.topbar .ttl{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0;}
+.topbar .ttl small{display:block;font-size:10.5px;color:var(--ink3);font-weight:500;line-height:1.3;}
+.tclock{font-family:'Source Serif 4',serif;font-weight:700;font-size:15px;color:var(--ink2);display:none;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:#fff;}
+.tclock.on{display:block;} .tclock.over{color:var(--red);border-color:var(--red);}
+.progress{height:3px;background:var(--border);}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--aqua));transition:width .2s;}
+.stepnav{position:sticky;top:calc(var(--topbar) + 3px + var(--sat));z-index:49;background:rgba(247,243,237,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.stepnav-in{max-width:980px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:8px 16px;scrollbar-width:none;}
+.stepnav-in::-webkit-scrollbar{display:none;}
+.stepnav a{flex:none;text-decoration:none;color:var(--ink2);font-size:12.5px;font-weight:700;padding:7px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;white-space:nowrap;min-height:34px;display:inline-flex;align-items:center;gap:5px;}
+.stepnav a em{font-style:normal;font-family:'Source Serif 4',serif;color:var(--orange);font-size:11.5px;}
+.stepnav a.active{background:var(--orange);border-color:var(--orange);color:#fff;} .stepnav a.active em{color:#fff;}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 40px;}
+.hero{padding:26px 0 8px;}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--orange-dark);font-weight:700;background:var(--orange-light);padding:5px 12px;border-radius:999px;}
+.hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(23px,6.2vw,31px);line-height:1.4;font-weight:700;margin-top:12px;}
+.hero h1 .accent{color:var(--orange);}
+.hero .lead{margin-top:12px;color:var(--ink2);font-size:15px;max-width:62ch;}
+.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--border);font-size:12.5px;color:var(--ink2);}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block;}
+.chip.aq i{background:var(--aqua);} .chip.gr i{background:var(--green);}
+.section{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 18px;margin-top:20px;scroll-margin-top:calc(var(--topbar) + 60px + var(--sat));}
+@media (min-width:720px){.section{padding:30px 32px;}}
+.sec-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--orange-light);}
+.sec-no{font-family:'Source Serif 4',serif;font-weight:700;color:var(--orange);font-size:12px;letter-spacing:.1em;border:1.5px solid var(--orange);border-radius:6px;padding:1px 8px;flex:none;}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:clamp(18px,5vw,21px);font-weight:700;line-height:1.45;}
+.sec-sub{color:var(--ink3);font-size:12px;font-family:'Source Serif 4',serif;font-style:italic;width:100%;}
+@media (min-width:720px){.sec-sub{width:auto;}}
+.section p{margin-bottom:12px;} .section p:last-child{margin-bottom:0;}
+.note{color:var(--ink2);font-size:14.5px;}
+.callout{border-left:4px solid var(--orange);background:var(--orange-light);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:13px 15px;margin:16px 0;font-size:15px;}
+.callout.aqua{border-color:var(--aqua);background:var(--aqua-light);} .callout.green{border-color:var(--green);background:var(--green-light);}
+.callout.amber{border-color:var(--amber);background:var(--amber-light);} .callout.purple{border-color:var(--purple);background:var(--purple-light);}
+.callout .ttl{font-weight:700;font-size:13.5px;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.callout .ttl::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--orange);flex:none;}
+.callout.aqua .ttl::before{background:var(--aqua);} .callout.green .ttl::before{background:var(--green);} .callout.amber .ttl::before{background:var(--amber);} .callout.purple .ttl::before{background:var(--purple);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;border:none;border-radius:999px;padding:0 20px;min-height:var(--tap);font-size:14.5px;font-weight:700;color:#fff;background:var(--aqua);transition:transform .12s,background .12s;}
+.btn:hover{background:#316c85;} .btn:active{transform:scale(.97);}
+.btn.orange{background:var(--orange);} .btn.orange:hover{background:var(--orange-dark);}
+.btn.ghost{background:#fff;color:var(--ink2);border:1.5px solid var(--border);} .btn.ghost:hover{background:#fff;border-color:var(--ink3);}
+.btn.block{width:100%;}
+/* exam paper */
+.exam{background:#fff;border:1px solid #d9d2c6;border-radius:8px;padding:18px 16px;font-family:'Source Serif 4','Noto Serif JP',serif;font-size:16px;line-height:1.9;}
+@media (min-width:720px){.exam{padding:26px 30px;}}
+.exam .q-head{font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:15px;margin-bottom:10px;}
+.exam .q-head small{font-weight:400;color:var(--ink2);margin-left:8px;font-size:12.5px;}
+.exam p,.sheet-body p{margin-bottom:12px;}
+.lead-text{margin-bottom:14px;}
+.doc{border:1px solid #c9c2b6;padding:16px;border-radius:6px;background:#fff;margin:10px 0 14px;}
+.doc .dtitle{text-align:center;font-weight:700;font-size:17px;margin-bottom:10px;}
+.doc .dtitle.it{font-style:italic;}
+.doc .dmeta{font-style:italic;color:var(--ink2);line-height:1.7;margin-bottom:12px;font-size:14.5px;}
+.doc .by{text-align:right;font-size:14px;color:var(--ink2);margin-bottom:8px;}
+.doc h4{font-size:15px;margin:10px 0 4px;}
+.doc .sub{font-weight:700;font-style:italic;}
+.doc p:last-child{margin-bottom:0;}
+.doc.memo{font-family:'Noto Sans JP',sans-serif;background:#fffdf8;border-style:dashed;}
+.doc.memo ul{list-style:none;margin:4px 0 8px 10px;}
+.doc.memo li{padding-left:16px;position:relative;margin-bottom:3px;}
+.doc.memo li::before{content:"•";position:absolute;left:0;color:var(--ink3);}
+.doc.memo li.dash::before{content:"–";}
+.doc.memo .lbl{font-weight:700;margin-top:8px;}
+.doc.essay{display:grid;grid-template-columns:1fr;gap:0;}
+.doc.essay .body{border-bottom:1px solid #c9c2b6;padding-bottom:10px;}
+.doc.essay .cm{font-family:'Noto Sans JP',sans-serif;font-size:13.5px;color:var(--ink2);padding-top:10px;}
+.doc.essay .cm b{color:var(--ink);}
+@media (min-width:720px){.doc.essay{grid-template-columns:1fr 200px;gap:0 16px;} .doc.essay .body{border-bottom:none;border-right:1px solid #c9c2b6;padding-right:14px;} .doc.essay .cm{padding-top:0;}}
+.cmnum{font-family:'Noto Sans JP',sans-serif;font-size:11px;vertical-align:super;font-weight:700;color:var(--orange-dark);}
+.ul1{text-decoration:underline;text-underline-offset:3px;}
+.op{border:1px solid #c9c2b6;border-radius:6px;padding:10px 14px;margin-bottom:10px;background:#fff;}
+.op .who{font-weight:700;margin-bottom:2px;} .op .who span{font-weight:400;color:var(--ink2);font-size:14px;}
+table.tb{border-collapse:collapse;font-size:14px;margin:8px auto;background:#fff;}
+table.tb th,table.tb td{border:1px solid #9a9086;padding:3px 10px;text-align:center;}
+table.tb th{font-weight:700;}
+.bars{margin:8px 0 12px;font-family:'Noto Sans JP',sans-serif;font-size:13px;}
+.bar-row{display:grid;grid-template-columns:minmax(110px,38%) 1fr 40px;gap:8px;align-items:center;margin-bottom:5px;}
+.bar-row .bl{text-align:right;line-height:1.3;} .bar-row .bb{height:16px;background:#c9c2b6;border:1px solid #8a8176;} .bar-row .bn{font-weight:700;}
+.q{margin-top:16px;} .q .stem{font-weight:600;}
+.q .stem .qn{font-family:'Noto Sans JP',sans-serif;font-weight:700;margin-right:8px;}
+.box{display:inline-block;min-width:36px;text-align:center;border:1.5px solid var(--ink);padding:0 6px;margin:0 4px;font-family:'Noto Sans JP',sans-serif;font-size:13px;line-height:1.6;vertical-align:middle;}
+.q ol{list-style:none;margin:8px 0 0 4px;}
+.q li{display:flex;gap:10px;align-items:baseline;line-height:1.8;margin-bottom:4px;}
+.circ{flex:none;width:20px;height:20px;border:1.5px solid var(--ink);border-radius:50%;display:inline-grid;place-items:center;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;line-height:1;transform:translateY(2px);}
+u.kw{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;font-family:'Noto Sans JP',sans-serif;font-size:13px;}
+.pics div{border:1px solid #c9c2b6;border-radius:6px;padding:8px 10px;background:#fff;line-height:1.6;}
+.pics b{display:block;margin-bottom:2px;}
+mark{background:transparent;padding:0 1px;border-radius:2px;color:inherit;}
+.m1{background:linear-gradient(transparent 55%,rgba(232,90,26,.3) 55%);} .m2{background:linear-gradient(transparent 55%,rgba(63,131,160,.3) 55%);}
+.m3{background:linear-gradient(transparent 55%,rgba(59,138,90,.3) 55%);} .m4{background:linear-gradient(transparent 55%,rgba(122,90,168,.3) 55%);}
+.m5{background:linear-gradient(transparent 55%,rgba(176,125,30,.35) 55%);}
+.exam mark{background:transparent!important;}
+.sheet-body:not(.show-hl) mark{background:transparent;}
+.tagq{display:inline-block;font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:700;color:#fff;padding:1px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;line-height:1.6;}
+.tagq.t1{background:var(--orange);} .tagq.t2{background:var(--aqua);} .tagq.t3{background:var(--green);} .tagq.t4{background:var(--purple);} .tagq.t5{background:var(--amber);}
+/* quiz */
+.timerbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.timer{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 8px 6px 16px;font-size:13.5px;color:var(--ink2);}
+.timer .t{font-family:'Source Serif 4',serif;font-size:20px;font-weight:700;color:var(--ink);min-width:60px;text-align:center;}
+.timer .t.over{color:var(--red);}
+.timer button{border:none;background:var(--orange);color:#fff;border-radius:999px;padding:0 16px;min-height:36px;font-weight:700;font-size:13px;cursor:pointer;}
+.timer button.stop{background:var(--ink2);}
+.quiz{display:grid;gap:12px;margin-top:16px;}
+.quiz-row{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;}
+.quiz-row .qlabel{font-weight:700;color:var(--ink2);font-size:14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.quiz-row .qlabel .st{font-size:12px;font-weight:700;text-align:right;}
+.quiz-row .qlabel .st.ok{color:var(--green);} .quiz-row .qlabel .st.ng{color:var(--red);}
+.slot{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center;margin-bottom:6px;}
+.slot .sl{font-size:12px;font-weight:700;color:var(--ink3);text-align:center;border:1px solid var(--border);border-radius:6px;padding:4px 0;}
+.opts{display:grid;gap:8px;}
+.opts.n4{grid-template-columns:repeat(4,1fr);} .opts.n5{grid-template-columns:repeat(5,1fr);} .opts.n6{grid-template-columns:repeat(6,1fr);}
+.opt{min-height:var(--tap);border-radius:10px;border:1.5px solid var(--border);background:var(--paper);font-weight:700;cursor:pointer;color:var(--ink2);font-size:17px;transition:all .12s;}
+.opt:hover{border-color:var(--aqua);color:var(--aqua);}
+.opt.sel{background:var(--aqua);border-color:var(--aqua);color:#fff;}
+.opt.ok{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.ng{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.hint{border-color:var(--green);color:var(--green);border-width:2px;}
+.quiz-foot{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+@media (min-width:720px){.quiz-foot{flex-direction:row;align-items:center;flex-wrap:wrap;}}
+.score{font-family:'Source Serif 4',serif;font-size:22px;font-weight:700;color:var(--orange);}
+/* flow */
+.flow{position:relative;display:grid;gap:0;padding-left:34px;margin-top:6px;}
+.flow::before{content:"";position:absolute;left:13px;top:14px;bottom:14px;width:3px;border-radius:3px;background:linear-gradient(var(--orange),var(--aqua));}
+.fnode{position:relative;padding:8px 0 14px;}
+.fnode .fb{position:absolute;left:-34px;top:8px;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;font-size:11.5px;display:grid;place-items:center;border:3px solid var(--paper);}
+.fnode.aq .fb{background:var(--aqua);} .fnode.gr .fb{background:var(--green);} .fnode.pu .fb{background:var(--purple);}
+.fnode .fc{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;}
+.fnode.aq .fc{border-color:#bcd6e2;background:#f4f9fb;}
+.fnode h4{font-size:15px;font-weight:700;margin-bottom:5px;line-height:1.5;}
+.fnode p{font-size:14px;color:var(--ink2);margin:0!important;}
+.fnode .branch{font-size:12px;color:var(--ink3);margin:0 0 6px;} .fnode .branch b{color:var(--orange);}
+@media (min-width:720px){.flow.cols{grid-template-columns:repeat(2,1fr);gap:0 20px;}}
+/* types */
+.types{display:grid;gap:10px;margin:14px 0;}
+@media (min-width:720px){.types{grid-template-columns:1fr 1fr;}}
+.type{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;border-left:5px solid var(--orange);}
+.type.no{border-left-color:var(--aqua);} .type.mix{border-left-color:var(--purple);}
+.type .th{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;}
+.type .qn{font-weight:900;font-size:15px;}
+.type .badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--orange-light);color:var(--orange-dark);white-space:nowrap;}
+.type.no .badge{background:var(--aqua-light);color:var(--aqua);} .type.mix .badge{background:var(--purple-light);color:var(--purple);}
+.type .stem{font-family:'Source Serif 4',serif;font-size:15px;margin-bottom:6px;}
+.type .do{font-size:13.5px;color:var(--ink2);}
+/* answer card */
+.ans-card{margin-top:18px;border:2px solid var(--orange);border-radius:var(--radius-sm);overflow:hidden;background:#fff;}
+.ans-card .ah{width:100%;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--orange);color:#fff;padding:12px 16px;border:none;text-align:left;cursor:pointer;min-height:56px;}
+.ans-card .ah .qn{font-size:19px;font-weight:900;font-family:'Source Serif 4',serif;}
+.ans-card .ah .ans{font-weight:700;font-size:15px;}
+.ans-card .ah .lvl{font-size:11.5px;opacity:.9;width:100%;}
+@media (min-width:720px){.ans-card .ah .lvl{width:auto;margin-left:auto;}}
+.ans-card .ah .chev{margin-left:auto;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;transition:transform .2s;flex:none;}
+@media (min-width:720px){.ans-card .ah .chev{margin-left:12px;}}
+.ans-card .ah .chev svg{width:14px;height:14px;}
+.ans-card.open .ah .chev{transform:rotate(180deg);}
+.ans-card .ab{display:none;padding:16px 14px 18px;}
+@media (min-width:720px){.ans-card .ab{padding:18px 20px;}}
+.ans-card.open .ab{display:block;animation:fade .22s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+.ja-q{font-weight:700;margin-bottom:8px;font-size:15.5px;}
+.ja-opts{list-style:none;margin:0 0 8px 0;display:grid;gap:5px;font-size:14.5px;}
+.ja-opts li{display:flex;gap:10px;align-items:baseline;}
+.ja-opts .circ{width:18px;height:18px;font-size:10.5px;}
+.ja-opts li.right{color:var(--green);font-weight:700;}
+.ja-opts li.right .circ{border-color:var(--green);background:var(--green);color:#fff;}
+.brain{margin-top:12px;display:grid;gap:10px;}
+.step{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;background:var(--paper);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 12px;}
+.step .k{width:28px;height:28px;border-radius:50%;background:var(--aqua);color:#fff;display:grid;place-items:center;font-weight:900;font-size:13px;margin-top:2px;}
+.step .k.o{background:var(--orange);} .step .k.g{background:var(--green);} .step .k.a{background:var(--amber);} .step .k.p{background:var(--purple);}
+.step h5{font-size:14.5px;font-weight:700;margin-bottom:4px;line-height:1.5;}
+.step p{font-size:14.5px;color:var(--ink2);margin:0 0 6px!important;} .step p:last-child{margin-bottom:0!important;}
+.step .ex{margin:6px 0 8px;padding:8px 12px;background:#fff;border-left:3px solid var(--aqua);border-radius:0 6px 6px 0;font-family:'Source Serif 4','Noto Serif JP',serif;font-size:15px;color:var(--ink);line-height:1.75;}
+.step .ex .ja{display:block;font-family:'Noto Sans JP',sans-serif;font-size:13.5px;color:var(--ink2);margin-top:4px;line-height:1.7;}
+.elim{list-style:none;margin:8px 0;display:grid;gap:8px;}
+.elim li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:14.5px;}
+.mk{min-width:30px;height:30px;padding:0 6px;border-radius:7px;display:grid;place-items:center;font-weight:900;font-size:12px;color:#fff;white-space:nowrap;}
+.mk.o{background:var(--green);} .mk.x{background:var(--red);} .mk.q{background:var(--amber);} .mk.b{background:var(--aqua);}
+.elim .why{color:var(--ink2);font-size:13.5px;line-height:1.7;}
+.para{display:flex;flex-direction:column;gap:6px;margin:10px 0;font-family:'Source Serif 4',serif;font-size:15px;}
+@media (min-width:720px){.para{flex-direction:row;align-items:center;flex-wrap:wrap;gap:10px;}}
+.para .a{background:var(--aqua-light);color:var(--aqua);padding:4px 12px;border-radius:8px;font-weight:600;}
+.para .b{background:var(--orange-light);color:var(--orange-dark);padding:4px 12px;border-radius:8px;font-weight:600;}
+.para .arr{color:var(--ink3);font-weight:700;text-align:center;}
+.ab .btn.mob-only{margin:4px 0 6px;}
+.desk-only{display:none;} @media (min-width:720px){.desk-only{display:block;} .mob-only{display:none!important;}}
+/* two col compare */
+.fo{display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0;}
+@media (min-width:720px){.fo{grid-template-columns:1fr 1fr;}}
+.fo .col{border-radius:var(--radius-sm);padding:14px 16px;background:#fff;border:1px solid var(--border);}
+.fo .col h4{font-size:15.5px;font-weight:700;margin-bottom:8px;}
+.fo .col.fact h4{color:var(--aqua);} .fo .col.op h4{color:var(--orange);}
+.fo .col ul{list-style:none;display:grid;gap:6px;font-size:14px;}
+.fo .col li{padding-left:14px;position:relative;line-height:1.7;}
+.fo .col li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--ink3);}
+.fo .col.fact li::before{background:var(--aqua);} .fo .col.op li::before{background:var(--orange);}
+.fo code,.step code,.callout code,.fnode code,.type code{font-family:'Source Serif 4',serif;font-weight:600;font-size:14.5px;color:var(--ink);}
+/* drill */
+.drill{display:grid;gap:10px;margin-top:12px;}
+.drill-row{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+.drill-row .s{font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.7;margin-bottom:10px;}
+.drill-row .s.ja{font-family:'Noto Sans JP',sans-serif;font-size:14.5px;}
+.drill-row .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.drill-row .btns.n3{grid-template-columns:1fr 1fr 1fr;}
+.drill-row .btns button{border:1.5px solid var(--border);background:var(--paper);border-radius:8px;min-height:var(--tap);font-weight:700;font-size:14px;cursor:pointer;color:var(--ink2);}
+.drill-row .btns button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
+.drill-row .btns button.on.good{background:var(--green);border-color:var(--green);} .drill-row .btns button.on.bad{background:var(--red);border-color:var(--red);}
+.drill-row .res{font-size:13.5px;color:var(--ink2);display:none;padding-top:8px;margin-top:10px;border-top:1px dashed var(--border);line-height:1.7;}
+.drill-row .res.show{display:block;} .drill-row .res.good{color:var(--green);} .drill-row .res.bad{color:var(--red);}
+/* translation */
+.tr{display:grid;gap:12px;margin-top:8px;}
+.tr .pair{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;}
+.tr .pn{font-size:11.5px;color:var(--ink3);font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.tr .pair .e{font-family:'Source Serif 4',serif;font-size:15px;line-height:1.85;padding-bottom:10px;border-bottom:1px dashed var(--border);margin-bottom:10px;}
+.tr .pair .j{font-size:14.5px;line-height:1.9;}
+@media (min-width:720px){.tr .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;} .tr .pn{grid-column:1/-1;} .tr .pair .e{border-bottom:none;padding-bottom:0;margin-bottom:0;}}
+.tr .pair.hidden-en .e{display:none;}
+.trtools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.toggle{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--border);background:#fff;border-radius:999px;padding:0 14px;min-height:36px;font-size:13px;font-weight:700;color:var(--ink2);cursor:pointer;}
+.toggle.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+/* vocab */
+.vgroup{margin-top:14px;font-size:12.5px;font-weight:700;color:var(--orange);}
+.vocab{display:grid;grid-template-columns:1fr;gap:0 18px;margin-top:6px;font-size:14.5px;}
+@media (min-width:600px){.vocab{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}}
+.vocab div{display:flex;gap:8px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--border);}
+.vocab .w{font-family:'Source Serif 4',serif;font-weight:600;min-width:118px;}
+.vocab .pos{font-size:10.5px;color:#fff;background:var(--ink3);border-radius:3px;padding:0 5px;line-height:1.6;flex:none;}
+.vocab .m{color:var(--ink2);font-size:13.5px;}
+/* weapons / checklist */
+.weapons{display:grid;grid-template-columns:1fr;gap:12px;margin-top:6px;}
+@media (min-width:720px){.weapons{grid-template-columns:repeat(3,1fr);}}
+.weapon{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;border-top:4px solid var(--orange);}
+.weapon:nth-child(2){border-top-color:var(--aqua);} .weapon:nth-child(3){border-top-color:var(--green);}
+.weapon .wn{font-family:'Source Serif 4',serif;font-weight:700;color:var(--ink3);font-size:12px;letter-spacing:.1em;}
+.weapon h4{font-size:15.5px;font-weight:700;margin:4px 0 8px;line-height:1.5;}
+.weapon p{font-size:14px;color:var(--ink2);margin:0!important;}
+.check{list-style:none;display:grid;gap:8px;margin-top:8px;}
+.check li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:14.5px;line-height:1.7;}
+.check li input{margin-top:5px;accent-color:var(--orange);width:20px;height:20px;flex:none;}
+.check li.done{background:var(--green-light);border-color:#bfe0cb;}
+.check-foot{margin-top:12px;display:flex;align-items:center;gap:12px;font-weight:700;color:var(--orange);font-family:'Source Serif 4',serif;font-size:18px;}
+.check-foot .bar{flex:1;height:8px;background:var(--border);border-radius:99px;overflow:hidden;}
+.check-foot .bar i{display:block;height:100%;width:0;background:var(--green);transition:width .25s;}
+.footer{max-width:980px;margin:0 auto;padding:10px 16px 20px;color:var(--ink3);font-size:12px;text-align:center;line-height:1.8;}
+/* dock & sheet */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:8px 12px calc(8px + var(--sab));background:rgba(253,250,244,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);}
+.dock-in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:1fr auto auto;gap:8px;}
+.dock .btn{min-height:46px;font-size:14px;} .dock .btn.icon{padding:0 14px;} .dock .btn svg{width:18px;height:18px;flex:none;}
+.scrim{position:fixed;inset:0;background:rgba(44,37,32,.45);z-index:70;opacity:0;pointer-events:none;transition:opacity .2s;}
+.scrim.on{opacity:1;pointer-events:auto;}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:71;background:var(--paper);border-radius:18px 18px 0 0;box-shadow:var(--shadow-lg);transform:translateY(100%);transition:transform .28s cubic-bezier(.2,.8,.2,1);max-height:88dvh;display:flex;flex-direction:column;max-width:980px;margin:0 auto;}
+.sheet.on{transform:none;}
+.sheet .grip{width:40px;height:5px;border-radius:99px;background:var(--border);margin:10px auto 4px;flex:none;}
+.sheet .sh{display:flex;align-items:center;gap:8px;padding:6px 16px 10px;border-bottom:1px solid var(--border);flex:none;flex-wrap:wrap;}
+.sheet .sh .t{font-weight:700;font-size:14.5px;flex:1;}
+.sheet .sh .toggle{min-height:32px;font-size:12px;padding:0 12px;}
+.sheet .sh .close{width:36px;height:36px;border-radius:50%;border:none;background:var(--border);display:grid;place-items:center;cursor:pointer;}
+.sheet .sh .close svg{width:16px;height:16px;}
+.sheet-body{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px 16px calc(20px + var(--sab));font-family:'Source Serif 4','Noto Serif JP',serif;font-size:16px;line-height:1.9;overscroll-behavior:contain;}
+.sheet-body .qtabs{display:flex;gap:6px;margin:0 0 12px;font-family:'Noto Sans JP',sans-serif;}
+.sheet-body .qtabs button{flex:1;min-height:36px;border-radius:8px;border:1.5px solid var(--border);background:#fff;font-weight:700;font-size:13px;color:var(--ink2);}
+.sheet-body .qtabs button.on{color:#fff;}
+.sheet-body .qtabs button[data-q="0"].on{background:var(--ink);border-color:var(--ink);}
+.sheet-body .qtabs button[data-q="1"].on{background:var(--orange);border-color:var(--orange);}
+.sheet-body .qtabs button[data-q="2"].on{background:var(--aqua);border-color:var(--aqua);}
+.sheet-body .qtabs button[data-q="3"].on{background:var(--green);border-color:var(--green);}
+.sheet-body .qtabs button[data-q="4"].on{background:var(--purple);border-color:var(--purple);}
+.sheet-body .qtabs button[data-q="5"].on{background:var(--amber);border-color:var(--amber);}
+.sheet-body.f1 mark:not(.m1),.sheet-body.f2 mark:not(.m2),.sheet-body.f3 mark:not(.m3),.sheet-body.f4 mark:not(.m4),.sheet-body.f5 mark:not(.m5){background:transparent;}
+mark.pulse{background:rgba(253,228,211,.95)!important;transition:background .6s;}
+.toast{position:fixed;left:50%;bottom:calc(76px + var(--sab));transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:700;opacity:0;pointer-events:none;transition:all .25s;z-index:80;white-space:nowrap;max-width:92vw;overflow:hidden;text-overflow:ellipsis;}
+.toast.on{opacity:1;transform:translateX(-50%);}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><span class="logo">T</span><div class="ttl">可視化リーディング ― 物語の感情問題<small>令和7年 追試験 第6問「トイウラへの旅」 ／ オンライン塾 THINKING</small></div><div class="tclock" id="tclock">10:00</div></div><div class="progress"><i id="pbar"></i></div></div>
+<nav class="stepnav" aria-label="ステップ"><div class="stepnav-in" id="stepnav"><a href="#s0"><em>0</em>自力で解く</a><a href="#s1"><em>1</em>目の動かし方</a><a href="#s2"><em>2</em>タイプ分け</a><a href="#s3"><em>3</em>脳内実況</a><a href="#s4"><em>4</em>感情の読み方</a><a href="#s5"><em>5</em>全訳</a><a href="#s6"><em>6</em>語句</a><a href="#s7"><em>7</em>持ち帰り</a></div></nav>
+<main class="wrap">
+<header class="hero">
+  <span class="kicker">令和7年度 共通テスト追試験 第6問（配点12）</span>
+  <h1>【物語の感情問題】を攻略する<br><span class="accent">可視化リーディング</span><br>― トイウラへの旅 ―</h1>
+  <p class="lead">長い物語を読んでワークシートを埋める大問です。問われるのは出来事ではなく、登場人物の感情の変遷と性格。感情語だけでなく、動作や台詞から気持ちを読む。ワークシートを先に見て「拾うもの」を4種類に絞り、1回で読み切る手順を固めます。</p>
+  <div class="meta"><span class="chip aq"><i></i>目標解答時間 10分</span><span class="chip gr"><i></i>設問4問 各3点（問2・問3は全部正解で3点）</span><span class="chip"><i></i>下の「本文を開く」で、いつでも英文を参照できます</span></div>
+</header>
+<section class="section" id="s0"><div class="sec-head"><span class="sec-no">STEP 0</span><h2 class="sec-title">まず、時間を測って自力で解く</h2><span class="sec-sub">Try it yourself</span></div><p class="note">解説を読む前に必ず解いてください。大事なのは正解数ではなく、<b>「ワークシートを先に見て、拾うものを決めてから読んだか」「女性の感情を本文順にメモしながら読めたか」</b>を自分で観察すること。それがそのまま、この後の可視化リーディングがあなたに効く場所になります。</p>
+<div class="timerbar"><div class="timer" aria-live="polite"><span>タイマー</span><span class="t" id="tm">10:00</span><button id="tmbtn" onclick="timer()">スタート</button></div><span class="note" style="font-size:13px;">目標時間を過ぎても止めずに続けて、超過時間を覚えておきましょう。</span></div>
+<div class="exam" style="margin-top:16px;"><div class="q-head">第6問<small>（配点 12）</small></div>
+<p class="lead-text">You are taking an English course at a university. Your teacher has provided a story and has asked you to read it and complete a worksheet.</p>
+<div class="doc">
+<div class="dtitle">My Adventure Going to Toiura</div>
+<p>My name is Hiroki and I’m 10 years old. I’m from Shinayama City, which is two hours away by super express train from Toiura, a small town where my grandparents live. Last month, my dad asked me if I wanted to visit my grandparents by myself this summer. I was really excited but also nervous; I had never been on a trip by myself!</p>
+<p>The day of my trip came. After we arrived at the station, I bought a box of my favorite cookies for my grandparents. My parents then accompanied me to the train and made sure I was sitting in the right place. <mark class="m3">My parents told me to be careful of strangers before they left.</mark></p>
+<p>The tall buildings of Shinayama flashed by and suburban houses started to appear, then rice fields took over. The train stopped and some passengers got on. Suddenly, I heard, “Excuse me!”</p>
+<p>I turned and saw a middle-aged woman pointing at the seat next to me. <mark class="m1">I moved my backpack from the aisle seat. As she sat down, she spread her arms and legs into the space I had occupied before. I retreated away from the left armrest and shifted my body toward the window.</mark></p>
+<p>“Are you traveling alone?” she asked me. I nodded in reply. “Wow! Where are you going?” I didn’t know whether to respond because my parents had told me to be cautious of strangers. So, I just said, “Toiura.” The woman’s eyes widened. “Toiura! I have a friend living there! I love visiting her.” She started digging around in her bag.</p>
+<p>I saw her pull out a box of fancy chocolates. “Would you like one?” she asked. I was tempted to take one, but I remembered what my parents had told me. I didn’t know what to do. <mark class="m3">I didn’t want to go against my parents’ wishes, but I also thought it would be rude to refuse.</mark> I thought for a moment and said, “No, thank you, ma’am.” But she replied, “Oh, don’t be shy! Help yourself.” I breathed in and said, “I really don’t want any, but thank you for asking.”</p>
+<p><mark class="m2">The chocolate woman looked sad and softly said, “All right.”</mark> <mark class="m2">For a minute, there was an uncomfortable silence, then she took out her phone and started tapping on it. The tension eased a little,</mark> but I felt I couldn’t end the conversation this way. So I said, “I’m sorry about the chocolate. I just can’t take one.” “That’s fine, dear,” she said. <mark class="m4">“You’ve handled this situation in a way that’s beyond your age.”</mark> After that, we sat in silence and enjoyed the train ride.</p>
+<p>“We are now arriving at Toiura station. We will be stopping for five minutes,” said the announcement. As the train pulled into the station, I could see my grandparents waving. <mark class="m2">The chocolate woman asked me with surprise, “Are those your grandparents?” When I said yes, she said, “How about that! It’s a small world!”</mark> Then she hurriedly began writing something on a piece of paper. I stayed in my seat waving to my grandparents for a little bit; I wanted to show them I was on the train by myself!</p>
+<p><mark class="m3">As I was leaving my seat, the woman handed me the box of chocolates with a note on it.</mark> <mark class="m2">She said, “Please share this with Michiko, and tell her I said hello. I don’t want to interfere with your reunion.”</mark> I wondered how the chocolate woman knew my grandmother’s name, but I really didn’t have time to ask her. I rushed off the train, and ran toward my grandparents on the platform.</p>
+<p>When I met them, I said, “I brought some cookies, and some chocolates from a woman sitting next to me. Maybe we shouldn’t eat them though, because she’s a stranger.” As the train began to leave, we saw the chocolate woman waving to us. “Junko!” my grandmother said. Then she looked at the box of chocolates and read the note on it.</p>
+<div style="border:1.5px solid #777;border-radius:6px;padding:10px 14px;max-width:360px;margin:6px auto 0;font-family:'Noto Sans JP',sans-serif;font-size:14px;line-height:1.7;"><b>Nana’s Fancy Chocolates</b><br><i>Dear Michiko,<br>It was my pleasure to sit next to your grandson. <mark class="m4">I was impressed by him!</mark><br>Enjoy these chocolates!<br>Junko</i></div>
+</div>
+<p style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#6b6155;margin-bottom:4px;">Worksheet</p>
+<div class="doc memo">
+<div class="dtitle">English Reading I ― My Adventure Going to Toiura</div>
+<p>Draw a picture that best shows Hiroki and the “chocolate woman” after she had gotten on the train. <span class="box">24</span> (Picture)</p>
+<p>How would you describe the chocolate woman’s sentiments on the train ride? Write them below in the order they emerged.<br>1) <span class="box">25</span> 2) <span class="box">26</span> 3) <span class="box">27</span> 4) <span class="box">28</span></p>
+<p>Answer the following questions:<br>What are the characteristics of the two main characters?<br>Hiroki <span class="box">29</span>. / The chocolate woman <span class="box">30</span>.<br>Why was Junko so impressed? She thought that Hiroki had <span class="box">31</span>.</p>
+</div>
+<div class="q"><p class="stem"><span class="qn">問 1</span>Choose the picture that you should draw. <span class="box">24</span></p>
+<div class="pics">
+<div><b>①</b> 少年が窓側、女性が通路側。女性は腕と脚を大きく広げて肘掛けを占領し、少年は窓のほうへ体を寄せて縮こまっている。</div>
+<div><b>②</b> 少年が窓側、女性が通路側。女性は膝に手を置いて行儀よく座り、少年もまっすぐ座っている。</div>
+<div><b>③</b> 女性が窓側、少年が通路側。女性は腕を広げて座り、少年は通路側で体を寄せている。</div>
+<div><b>④</b> 女性が窓側、少年が通路側。二人とも行儀よく座っている。</div>
+</div></div><div class="q"><p class="stem"><span class="qn">問 2</span>Choose <u class="kw">four</u> out of the five options (①〜⑤) to complete the worksheet. <span class="box">25</span> <span class="box">26</span> <span class="box">27</span> <span class="box">28</span></p><ol><li><span class="circ">1</span>She is disappointed that Hiroki has rejected her offer.</li><li><span class="circ">2</span>She is surprised to find a connection with Hiroki’s grandmother.</li><li><span class="circ">3</span>She shows frustration about Hiroki’s rude behavior toward her.</li><li><span class="circ">4</span>She shows interest in something else to make things less awkward.</li><li><span class="circ">5</span>She shows thoughtfulness in deciding not to meet her friend.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 3</span>Choose the best options for <span class="box">29</span> and <span class="box">30</span>. </p><ol><li><span class="circ">1</span>avoids meeting new people</li><li><span class="circ">2</span>can be generous even to strangers</li><li><span class="circ">3</span>does not enjoy traveling alone</li><li><span class="circ">4</span>likes to protect others from harm</li><li><span class="circ">5</span>tries to follow the advice of others</li></ol></div><div class="q"><p class="stem"><span class="qn">問 4</span>Choose the best option for <span class="box">31</span>. </p><ol><li><span class="circ">1</span>acted carelessly</li><li><span class="circ">2</span>been aggressive</li><li><span class="circ">3</span>been intelligent</li><li><span class="circ">4</span>behaved maturely</li></ol></div></div>
+<div class="quiz" id="quiz"></div>
+<div class="quiz-foot"><button class="btn orange" id="gradebtn" onclick="grade()">採点する</button><span class="score" id="score"></span><span class="note" id="scoremsg" style="font-size:14px;"></span></div></section><section class="section" id="s1"><div class="sec-head"><span class="sec-no">STEP 1</span><h2 class="sec-title">可視化リーディング ― ワークシートで「拾うもの」を決めてから読む</h2><span class="sec-sub">The eye path</span></div><p>第6問は長めの物語を読んで「ワークシート」を完成させる問題です。第3問との違いは、設問が<b>登場人物の感情の変遷と性格</b>に寄ること。出来事を追うだけでなく、「この行動のとき、この人はどんな気持ちか」を本文の<b>感情語・動作描写</b>から拾っていきます。</p><div class="flow cols"><div class="fnode "><span class="fb">1</span><div class="fc"><h4>リード文とワークシートを先に見て、何を拾うかを決める</h4><p>ワークシートの4項目：①乗車直後の座り方の絵 ②女性の感情の順番 ③2人の性格 ④女性が感心した理由。読む前に「座り方」「女性の感情語」「2人の行動」「beyond your age」のような評価を待ち構える。</p></div></div><div class="fnode "><span class="fb">2</span><div class="fc"><h4>登場人物を2人に絞り、それぞれの「行動」に印を付ける</h4><p>ヒロキ：両親の言いつけを守ってチョコを断る。女性：チョコを勧める、悲しむ、スマホを見る、驚く、メモを書いて箱を渡す。行動が性格問題（問3）の材料になる。</p></div></div><div class="fnode aq"><span class="fb">3</span><div class="fc"><h4>女性の感情語を出てきた順にメモする</h4><p>looked sad → uncomfortable silence / tapping on phone → with surprise → I don’t want to interfere。この4つが問2の順番そのもの。感情は本文順＝時系列なので、第3問のような巻き戻しは不要。</p></div></div><div class="fnode aq"><span class="fb">4</span><div class="fc"><h4>動作描写は「絵」に変換して読む</h4><p>moved my backpack from the aisle seat（自分は窓側）／she spread her arms and legs（女性は広げている）／I retreated toward the window（自分は窓に寄った）。この3つで問1の絵が1つに決まる。</p></div></div></div><div class="callout amber"><div class="ttl">この手順の急所</div><p>第6問の物語は長いので、全部を同じ濃さで読むと時間が足りません。ワークシートを先に見れば、<b>拾うべきものは「座り方」「女性の感情」「2人の行動」「最後の評価」の4種類だけ</b>と分かる。この4種類に印を付けながら1回で読み切るのが、第6問の読み方です。</p></div></section><section class="section" id="s2"><div class="sec-head"><span class="sec-no">STEP 2</span><h2 class="sec-title">4問をタイプ分けする ― 絵・感情・性格・評価</h2><span class="sec-sub">Classify before you read</span></div><div class="types"><div class="type no"><div class="th"><span class="qn">問1</span><span class="badge">動作描写 → 絵</span></div><div class="stem">Choose the picture that you should draw.</div><div class="do">「座席の位置」と「体勢」の2軸で絵を分ける。本文の3文（backpack / spread / retreated）をそのまま絵に変換する。</div></div><div class="type no"><div class="th"><span class="qn">問2</span><span class="badge">感情の変遷（順番）</span></div><div class="stem">...the chocolate woman’s sentiments ... in the order they <b>emerged</b>.</div><div class="do">女性の感情語を本文順に拾う。5つのうち1つは本文に無いダミー。</div></div><div class="type mix"><div class="th"><span class="qn">問3</span><span class="badge">性格（行動から推論）</span></div><div class="stem">What are the characteristics of the two main characters?</div><div class="do">2人それぞれの「繰り返される行動」から性格を選ぶ。1回の行動ではなく、物語を通して一貫している性質。</div></div><div class="type "><div class="th"><span class="qn">問4</span><span class="badge">評価の言い換え</span></div><div class="stem">Why was Junko so impressed? She thought that Hiroki had ___.</div><div class="do">女性がヒロキを評価した台詞（beyond your age）を探し、その言い換えを選ぶ。</div></div></div><div class="callout aqua"><div class="ttl">第3問の並べ替えと、第6問の並べ替えの違い</div><p>第3問は「出来事」の並べ替えで、回想による時間の巻き戻しが罠でした。第6問は「感情」の並べ替え。感情は本文に出てきた順にそのまま並べればよい代わりに、<b>感情が直接書かれていない</b>ことがある（スマホをいじる ＝ 気まずさを紛らわせる）。動作から感情を読む力が問われます。</p></div></section><section class="section" id="s3"><div class="sec-head"><span class="sec-no">STEP 3</span><h2 class="sec-title">脳内実況 ― 読める人の頭の中を再生する</h2><span class="sec-sub">Think-aloud</span></div><p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。各問はタップで開閉できます。</p><div class="ans-card open">
+<button class="ah" onclick="acc(this)" aria-expanded="true"><span class="qn">問 1</span><span class="ans">正解 ①</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点 ／ 動作描写 → 絵</span></button>
+<div class="ab"><p class="ja-q">描くべき絵を選べ。（女性が乗車したあとのヒロキと「チョコレートの女性」）</p><ul class="ja-opts"><li class="right"><span class="circ">1</span>少年が窓側・女性が通路側。女性は腕と脚を広げ、少年は窓に寄って縮こまる。</li><li class=""><span class="circ">2</span>少年が窓側・女性が通路側。二人とも行儀よく座る。</li><li class=""><span class="circ">3</span>女性が窓側・少年が通路側。女性は腕を広げる。</li><li class=""><span class="circ">4</span>女性が窓側・少年が通路側。二人とも行儀よく座る。</li></ul><div class="brain"><div class="step"><span class="k ">1</span><div><h5>先読み：絵を2軸で分ける</h5><p>軸1：誰が窓側か（①②は少年、③④は女性）。軸2：女性が広がっているか（①③は広がる、②④は行儀よい）。本文の該当段落でこの2軸を確認する。</p></div></div><div class="step"><span class="k g">2</span><div><h5>軸1：ヒロキは窓側</h5><div class="ex">I moved my backpack from the aisle seat.<span class="ja">私は通路側の席からリュックをどけた。</span></div><p>通路側の席からリュックをどけた ＝ ヒロキ自身は窓側に座っている。③④が消える。</p></div></div><div class="step"><span class="k g">3</span><div><h5>軸2：女性は広がり、ヒロキは窓に寄った</h5><div class="ex">As she sat down, she spread her arms and legs into the space I had occupied before. I retreated away from the left armrest and shifted my body toward the window.<span class="ja">彼女は座ると、私がさっきまで使っていたスペースに腕と脚を広げた。私は左の肘掛けから退いて、体を窓のほうへ寄せた。</span></div><p>spread her arms and legs（腕と脚を広げた）、I retreated ... toward the window（窓のほうへ退いた）。女性が広がり、少年が縮こまっている絵 ＝ ①。</p></div></div><div class="step"><span class="k a">4</span><div><h5>②が引っかけ</h5><p>②は座席の位置は合っているが、女性が行儀よく座っている。spread（広げた）という動詞を読み落とすと②を選ぶ。絵の問題は<b>動詞</b>を落とさないこと。</p></div></div></div><div class="para"><span class="a">moved my backpack from the aisle seat / spread her arms and legs / retreated toward the window</span><span class="arr">⇒</span><span class="b">①：少年が窓側で縮こまり、女性が通路側で広がる</span></div><button class="btn ghost block mob-only" onclick="openSheet(1)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>絵を選ぶ問題は、選択肢を<b>2軸（位置×体勢）</b>に分けてから本文を見ると、各軸1文ずつで決まります。特に体勢を表す動詞（spread / retreated / shifted）を落とすと、位置だけ合った誤答を踏みます。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 2</span><span class="ans">正解 ①→④→②→⑤</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル やや難 ／ 配点 3点（全部正解で得点） ／ 感情の変遷</span></button>
+<div class="ab"><p class="ja-q">女性の列車内での感情を、現れた順に4つ並べよ。</p><ul class="ja-opts"><li class="right"><span class="circ">1</span>ヒロキに申し出を断られてがっかりしている。</li><li class="right"><span class="circ">2</span>ヒロキの祖母とのつながりを知って驚いている。</li><li class=""><span class="circ">3</span>ヒロキの失礼な態度にいら立ちを見せている。</li><li class="right"><span class="circ">4</span>気まずさを和らげるために別のものに関心を向けている。</li><li class="right"><span class="circ">5</span>友人に会わないと決める思いやりを見せている。</li></ul><div class="brain"><div class="step"><span class="k ">1</span><div><h5>先読み：女性の感情語を本文順に拾う準備</h5><p>5つの選択肢を頭に入れる。「がっかり／驚き／いら立ち／別のものに関心／思いやり」。女性の描写が出るたびに照合する。</p></div></div><div class="step"><span class="k g">2</span><div><h5>1つ目：チョコを断られて sad</h5><div class="ex">The chocolate woman looked sad and softly said, “All right.”<span class="ja">チョコレートの女性は悲しそうな顔をして、小さく「分かったわ」と言った。</span></div><p>looked sad（悲しそうに見えた）＝ ① disappointed。</p></div></div><div class="step"><span class="k g">3</span><div><h5>2つ目：気まずい沈黙 → スマホをいじる</h5><div class="ex">For a minute, there was an uncomfortable silence, then she took out her phone and started tapping on it. The tension eased a little,<span class="ja">1分ほど気まずい沈黙があり、それから彼女はスマホを取り出していじり始めた。緊張は少し和らいだ。</span></div><p>感情語は無いが、uncomfortable silence のあとに phone を取り出し、tension eased（緊張が和らいだ）。気まずさを紛らわせるために別のものに関心を向けた ＝ ④。<b>動作から感情を読む</b>箇所。</p></div></div><div class="step"><span class="k g">4</span><div><h5>3つ目：祖父母を見て surprise</h5><div class="ex">The chocolate woman asked me with surprise, “Are those your grandparents?” ... “How about that! It’s a small world!”<span class="ja">チョコレートの女性は驚いて尋ねた。「あれはあなたのおじいさんおばあさん？」…「まあ！ 世間は狭いわね！」</span></div><p>with surprise（驚いて）、It’s a small world!（世間は狭い）＝ ② surprised to find a connection。</p></div></div><div class="step"><span class="k g">5</span><div><h5>4つ目：再会の邪魔をしないという気遣い</h5><div class="ex">“Please share this with Michiko, and tell her I said hello. I don’t want to interfere with your reunion.”<span class="ja">「これをミチコと分けて、よろしく伝えてね。あなたたちの再会の邪魔はしたくないの。」</span></div><p>I don’t want to interfere with your reunion（再会の邪魔をしたくない）。友人ミチコに会えるのに、会わずに箱だけ託した ＝ ⑤ thoughtfulness。</p></div></div><div class="step"><span class="k a">6</span><div><h5>ダミーは③</h5><p>③「ヒロキの失礼な態度にいら立ち」：女性は一度も怒っていない。むしろ That’s fine, dear と受け止め、beyond your age と褒めている。ヒロキ自身は it would be rude to refuse と心配したが、女性がそう感じた描写はない。×。</p><p>よって ① → ④ → ② → ⑤。</p></div></div></div><div class="para"><span class="a">looked sad → tapping on phone → with surprise → don’t want to interfere</span><span class="arr">⇒</span><span class="b">① → ④ → ② → ⑤</span></div><button class="btn ghost block mob-only" onclick="openSheet(2)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>感情の並べ替えは、本文順にそのまま並べればよいのですが、<b>感情語が無い箇所</b>（スマホをいじる）を動作から読めるかが分かれ目。また「ヒロキが心配したこと（失礼かも）」と「女性が実際に感じたこと」を混同させるダミー（③）に注意。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 3</span><span class="ans">正解 29＝⑤、30＝②</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点（両方正解で得点） ／ 性格</span></button>
+<div class="ab"><p class="ja-q">2人の主要人物の特徴は何か。ヒロキは___。チョコレートの女性は___。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>新しい人に会うのを避ける</li><li class="right"><span class="circ">2</span>見知らぬ人にも気前がよい</li><li class=""><span class="circ">3</span>一人旅を楽しめない</li><li class=""><span class="circ">4</span>他人を危害から守るのが好き</li><li class="right"><span class="circ">5</span>他人の助言に従おうとする</li></ul><div class="brain"><div class="step"><span class="k p">1</span><div><h5>先読み：2人それぞれの「一貫した行動」を集める</h5><p>性格は1回の行動では決まらない。物語を通して繰り返される行動を探す。</p></div></div><div class="step"><span class="k g">2</span><div><h5>ヒロキ：両親の言いつけを最後まで守る</h5><div class="ex">My parents told me to be careful of strangers ... I didn’t want to go against my parents’ wishes ... Maybe we shouldn’t eat them though, because she’s a stranger.<span class="ja">両親は知らない人に気をつけるように言った…両親の望みに逆らいたくなかった…でも食べないほうがいいかも、知らない人だから。</span></div><p>両親に「知らない人に注意」と言われ → 答えるのをためらう → チョコを断る → 祖父母にも「知らない人だから食べないほうが」。一貫して<b>両親の助言に従う</b>。29 ＝ ⑤。</p></div></div><div class="step"><span class="k g">3</span><div><h5>女性：初対面の子どもにチョコを勧め、最後は箱ごと渡す</h5><div class="ex">“Would you like one?” ... the woman handed me the box of chocolates with a note on it.<span class="ja">「1ついかが？」…女性はメモを添えたチョコレートの箱を私に手渡した。</span></div><p>初対面のヒロキにチョコを勧め、断られても結局、箱ごと（しかもメモ付きで）渡す。<b>見知らぬ人にも気前がよい</b>。30 ＝ ②。</p></div></div><div class="step"><span class="k a">4</span><div><h5>残りを落とす</h5><p>①新しい人を避ける：女性は自分から話しかけている。ヒロキも避けてはいない。×。③一人旅を楽しめない：ヒロキは excited で、一人で乗っていることを祖父母に見せたがっている。×。④他人を守るのが好き：両親の行動であって、2人の性格ではない。×。</p></div></div></div><div class="para"><span class="a">follow parents’ advice ／ offer and give chocolates to a stranger</span><span class="arr">⇒</span><span class="b">29 tries to follow the advice of others ／ 30 can be generous even to strangers</span></div><button class="btn ghost block mob-only" onclick="openSheet(3)">本文の該当箇所を見る</button><div class="callout purple"><div class="ttl">この問題の学び</div><p>性格問題は<b>繰り返しの行動</b>から。ヒロキは3回「両親の言葉」に戻る。女性は2回チョコを差し出す。1回だけの行動（ヒロキが nervous だった、女性が悲しんだ）で決めると、③や①のような誤答に引っかかります。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 4</span><span class="ans">正解 ④</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 易 ／ 配点 3点 ／ 評価の言い換え</span></button>
+<div class="ab"><p class="ja-q">ジュンコはなぜそんなに感心したのか。彼女はヒロキが___と思った。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>不注意に行動した</li><li class=""><span class="circ">2</span>攻撃的だった</li><li class=""><span class="circ">3</span>頭が良かった</li><li class="right"><span class="circ">4</span>大人びた振る舞いをした</li></ul><div class="brain"><div class="step"><span class="k o">1</span><div><h5>先読み：impressed ＝ 女性がヒロキを評価した台詞を探す</h5><p>メモに I was impressed by him! とある。何に感心したかは、本文の女性の台詞に書いてあるはず。</p></div></div><div class="step"><span class="k g">2</span><div><h5>beyond your age が答え</h5><div class="ex">“You’ve handled this situation in a way that’s beyond your age.”<span class="ja">「あなたは年齢以上のやり方でこの状況に対処したわね。」</span></div><p>「年齢を超えたやり方でこの状況に対処した」＝ 大人びた振る舞い。④ behaved maturely。</p></div></div><div class="step"><span class="k a">3</span><div><h5>③が引っかけ</h5><p>③ intelligent（頭が良い）：年齢の割に、という評価は「賢さ」ではなく「落ち着き・礼儀」の話。断り方（No, thank you, ma’am／thank you for asking／I’m sorry about the chocolate）が丁寧だったことへの評価。①不注意、②攻撃的は真逆。×。</p></div></div></div><div class="para"><span class="a">handled this situation in a way that’s beyond your age</span><span class="arr">⇒</span><span class="b">behaved maturely</span></div><button class="btn ghost block mob-only" onclick="openSheet(4)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>「なぜ感心したか」は、本文の<b>評価の台詞</b>をそのまま言い換えた選択肢を選びます。beyond your age ＝ maturely（大人びて）。賢い（intelligent）と大人びた（mature）は違う。何を褒めているか（頭か、態度か）まで見てください。</p></div></div></div></section><section class="section" id="s4"><div class="sec-head"><span class="sec-no">STEP 4</span><h2 class="sec-title">感情の読み方 ― 感情語・動作・台詞の3経路</h2><span class="sec-sub">Reading emotions</span></div><p>第6問の核は「感情を本文から拾う」ことです。感情は、感情語で直接書かれることもあれば、動作や台詞で間接的に示されることもあります。この物語で使われた3種類を整理します。</p>
+<div class="fo">
+<div class="col fact"><h4>感情の書かれ方3種</h4><ul>
+<li><b>感情語で直接</b>：<code>looked sad</code>、<code>with surprise</code>、<code>I was really excited but also nervous</code></li>
+<li><b>動作で間接</b>：<code>took out her phone and started tapping on it</code>（気まずさを紛らわす）、<code>spread her arms and legs</code>（遠慮がない）、<code>I retreated</code>（圧迫感）</li>
+<li><b>台詞で間接</b>：<code>I don’t want to interfere with your reunion</code>（気遣い）、<code>How about that! It’s a small world!</code>（驚き）、<code>beyond your age</code>（感心）</li>
+</ul></div>
+<div class="col op"><h4>この物語の女性の感情カーブ</h4><ul>
+<li>チョコを勧める（親しみ）</li>
+<li>断られる → <code>sad</code>（がっかり）①</li>
+<li>気まずい沈黙 → スマホ（関心を逸らす）④</li>
+<li>謝られる → <code>That’s fine</code>、<code>beyond your age</code>（受容・感心）</li>
+<li>祖父母を見る → <code>surprise</code>（驚き）②</li>
+<li>箱を託す → <code>interfere</code> しない（気遣い）⑤</li>
+</ul></div></div><div class="callout amber"><div class="ttl">「登場人物が心配したこと」と「実際に起きたこと」を分ける</div><p>ヒロキは「断るのは失礼かも（rude）」と心配しました。でも女性は怒っていない。問2のダミー③は、この<b>ヒロキの心配を女性の感情にすり替えた</b>選択肢です。誰の視点の文かを常に確認してください。</p></div><p style="margin-top:18px;"><b>10秒ドリル</b>：次の描写から読み取れる女性の感情は？</p><div class="drill"><div class="drill-row" data-a="b"><div class="s">The woman’s eyes widened. “Toiura! I have a friend living there!”</div><div class="btns n3"><button onclick="drill(this,'a')">がっかり</button><button onclick="drill(this,'b')">驚き・喜び</button><button onclick="drill(this,'c')">気まずさ</button></div><div class="res">目を見開く ＝ 驚き・うれしさ。行き先に友人がいると知った反応。</div></div><div class="drill-row" data-a="c"><div class="s">She took out her phone and started tapping on it.</div><div class="btns n3"><button onclick="drill(this,'a')">がっかり</button><button onclick="drill(this,'b')">驚き・喜び</button><button onclick="drill(this,'c')">気まずさ</button></div><div class="res">気まずい沈黙を紛らわすための動作。関心を逸らす。</div></div><div class="drill-row" data-a="a"><div class="s">The chocolate woman looked sad and softly said, “All right.”</div><div class="btns n3"><button onclick="drill(this,'a')">がっかり</button><button onclick="drill(this,'b')">驚き・喜び</button><button onclick="drill(this,'c')">気まずさ</button></div><div class="res">looked sad と softly（小声で）。がっかり。</div></div><div class="drill-row" data-a="b"><div class="s">Then she hurriedly began writing something on a piece of paper.</div><div class="btns n3"><button onclick="drill(this,'a')">がっかり</button><button onclick="drill(this,'b')">驚き・喜び</button><button onclick="drill(this,'c')">気まずさ</button></div><div class="res">hurriedly（急いで）。祖母が友人だと分かった直後の、うれしい驚きからの行動。</div></div></div></section><section class="section" id="s5"><div class="sec-head"><span class="sec-no">STEP 5</span><h2 class="sec-title">全訳 ― 該当箇所を色で確認する</h2><span class="sec-sub">Full translation</span></div><p class="note">色の下線は各設問の根拠箇所です。<mark class="m1">問1</mark>・<mark class="m2">問2</mark>・<mark class="m3">問3</mark>・<mark class="m4">問4</mark>。問2の根拠が物語の後半に順番どおり並んでいることを確かめてください。</p>
+<div class="trtools"><button class="toggle" id="hideEn" onclick="toggleEn(this)">英文を隠して和訳だけ読む</button></div><div class="tr" id="tr"><div class="pair"><div class="pn">リード文</div><div class="e">You are taking an English course at a university. Your teacher has provided a story and has asked you to read it and complete a worksheet.</div><div class="j">あなたは大学で英語の授業を受けている。先生が物語を配り、それを読んでワークシートを完成させるように言った。</div></div><div class="pair"><div class="pn">第1〜2段落</div><div class="e">My name is Hiroki and I’m 10 years old. I’m from Shinayama City, which is two hours away by super express train from Toiura, a small town where my grandparents live. Last month, my dad asked me if I wanted to visit my grandparents by myself this summer. I was really excited but also nervous; I had never been on a trip by myself!<br>The day of my trip came. After we arrived at the station, I bought a box of my favorite cookies for my grandparents. My parents then accompanied me to the train and made sure I was sitting in the right place. <mark class="m3">My parents told me to be careful of strangers before they left.</mark></div><div class="j">僕の名前はヒロキ、10歳です。シナヤマ市出身で、そこは祖父母の住む小さな町トイウラから特急で2時間のところにあります。先月、父が、この夏に一人で祖父母を訪ねたいかと聞いてきました。すごくわくわくしたけれど、不安でもありました。一人で旅行したことなんてなかったから！<br>旅行の日が来ました。駅に着くと、祖父母に僕の大好きなクッキーを1箱買いました。両親は列車まで付き添って、僕が正しい席に座っているのを確かめました。<mark class="m3">両親は去る前に、知らない人に気をつけるように言いました。</mark><span class="tagq t3">問3</span></div></div><div class="pair"><div class="pn">第3〜4段落</div><div class="e">The tall buildings of Shinayama flashed by and suburban houses started to appear, then rice fields took over. The train stopped and some passengers got on. Suddenly, I heard, “Excuse me!”<br>I turned and saw a middle-aged woman pointing at the seat next to me. <mark class="m1">I moved my backpack from the aisle seat. As she sat down, she spread her arms and legs into the space I had occupied before. I retreated away from the left armrest and shifted my body toward the window.</mark></div><div class="j">シナヤマの高いビルが流れ去り、郊外の家々が見え始め、やがて田んぼが広がりました。列車が止まり、何人かの乗客が乗ってきました。突然、「すみません！」という声が聞こえました。<br>振り向くと、中年の女性が僕の隣の席を指さしていました。<mark class="m1">僕は通路側の席からリュックをどけました。彼女は座ると、僕がさっきまで使っていたスペースに腕と脚を広げました。僕は左の肘掛けから退いて、体を窓のほうへ寄せました。</mark><span class="tagq t1">問1</span></div></div><div class="pair"><div class="pn">第5〜6段落</div><div class="e">“Are you traveling alone?” she asked me. I nodded in reply. “Wow! Where are you going?” I didn’t know whether to respond because my parents had told me to be cautious of strangers. So, I just said, “Toiura.” The woman’s eyes widened. “Toiura! I have a friend living there! I love visiting her.” She started digging around in her bag.<br>I saw her pull out a box of fancy chocolates. “Would you like one?” she asked. I was tempted to take one, but I remembered what my parents had told me. I didn’t know what to do. <mark class="m3">I didn’t want to go against my parents’ wishes, but I also thought it would be rude to refuse.</mark> I thought for a moment and said, “No, thank you, ma’am.” But she replied, “Oh, don’t be shy! Help yourself.” I breathed in and said, “I really don’t want any, but thank you for asking.”</div><div class="j">「一人で旅行してるの？」と彼女は聞きました。僕はうなずきました。「まあ！ どこへ行くの？」両親に知らない人には用心するよう言われていたので、答えるべきか迷いました。だからただ「トイウラ」とだけ言いました。女性は目を見開きました。「トイウラ！ 友達が住んでるのよ！ 会いに行くのが大好きなの。」彼女はバッグの中をごそごそ探し始めました。<br>彼女が高級チョコレートの箱を取り出すのが見えました。「1ついかが？」と彼女は聞きました。もらいたい気持ちはあったけれど、両親の言葉を思い出しました。どうしていいか分かりませんでした。<mark class="m3">両親の望みに逆らいたくなかったけれど、断るのも失礼だと思いました。</mark><span class="tagq t3">問3</span> 少し考えて、「いいえ、結構です」と言いました。でも彼女は「あら、遠慮しないで！ どうぞ」と返しました。僕は息を吸って言いました。「本当にいりません。でも聞いてくれてありがとうございます。」</div></div><div class="pair"><div class="pn">第7段落</div><div class="e"><mark class="m2">The chocolate woman looked sad and softly said, “All right.”</mark> <mark class="m2">For a minute, there was an uncomfortable silence, then she took out her phone and started tapping on it. The tension eased a little,</mark> but I felt I couldn’t end the conversation this way. So I said, “I’m sorry about the chocolate. I just can’t take one.” “That’s fine, dear,” she said. <mark class="m4">“You’ve handled this situation in a way that’s beyond your age.”</mark> After that, we sat in silence and enjoyed the train ride.</div><div class="j"><mark class="m2">チョコレートの女性は悲しそうな顔をして、小さく「分かったわ」と言いました。</mark><span class="tagq t2">問2</span> <mark class="m2">1分ほど気まずい沈黙があり、それから彼女はスマホを取り出していじり始めました。緊張は少し和らぎましたが、</mark><span class="tagq t2">問2</span>このまま会話を終わらせてはいけない気がしました。それで「チョコのこと、ごめんなさい。どうしても受け取れないんです」と言いました。「いいのよ」と彼女は言いました。<mark class="m4">「あなたは年齢以上のやり方でこの状況に対処したわね。」</mark><span class="tagq t4">問4</span> そのあと、僕たちは黙って座り、列車の旅を楽しみました。</div></div><div class="pair"><div class="pn">第8段落</div><div class="e">“We are now arriving at Toiura station. We will be stopping for five minutes,” said the announcement. As the train pulled into the station, I could see my grandparents waving. <mark class="m2">The chocolate woman asked me with surprise, “Are those your grandparents?” When I said yes, she said, “How about that! It’s a small world!”</mark> Then she hurriedly began writing something on a piece of paper. I stayed in my seat waving to my grandparents for a little bit; I wanted to show them I was on the train by myself!</div><div class="j">「まもなくトイウラ駅に到着します。5分間停車します」とアナウンスが流れました。列車が駅に入ると、祖父母が手を振っているのが見えました。<mark class="m2">チョコレートの女性は驚いて尋ねました。「あれはあなたのおじいさんおばあさん？」僕がそうだと言うと、「まあ！ 世間は狭いわね！」と言いました。</mark><span class="tagq t2">問2</span> それから彼女は急いで紙切れに何か書き始めました。僕は少しの間、席に座ったまま祖父母に手を振りました。一人で列車に乗っているところを見せたかったのです！</div></div><div class="pair"><div class="pn">第9〜10段落</div><div class="e"><mark class="m3">As I was leaving my seat, the woman handed me the box of chocolates with a note on it.</mark> <mark class="m2">She said, “Please share this with Michiko, and tell her I said hello. I don’t want to interfere with your reunion.”</mark> I wondered how the chocolate woman knew my grandmother’s name, but I really didn’t have time to ask her. I rushed off the train, and ran toward my grandparents on the platform.<br>When I met them, I said, “I brought some cookies, and some chocolates from a woman sitting next to me. Maybe we shouldn’t eat them though, because she’s a stranger.” As the train began to leave, we saw the chocolate woman waving to us. “Junko!” my grandmother said. Then she looked at the box of chocolates and read the note on it.</div><div class="j"><mark class="m3">席を立とうとしたとき、女性はメモを添えたチョコレートの箱を僕に手渡しました。</mark><span class="tagq t3">問3</span> <mark class="m2">「これをミチコと分けて、よろしく伝えてね。あなたたちの再会の邪魔はしたくないの。」</mark><span class="tagq t2">問2</span> どうしてチョコレートの女性が祖母の名前を知っているのか不思議でしたが、聞いている時間はありませんでした。僕は急いで列車を降り、ホームの祖父母のほうへ走りました。<br>会うと僕は言いました。「クッキーと、隣に座ってた女の人からもらったチョコレートがあるよ。でも食べないほうがいいかも、知らない人だから。」列車が動き出すと、チョコレートの女性が手を振っているのが見えました。「ジュンコ！」と祖母が言いました。それから祖母はチョコレートの箱を見て、添えられたメモを読みました。</div></div><div class="pair"><div class="pn">メモ</div><div class="e">Dear Michiko, It was my pleasure to sit next to your grandson. <mark class="m4">I was impressed by him!</mark> Enjoy these chocolates! Junko</div><div class="j">ミチコへ。お孫さんの隣に座れて楽しかったわ。<mark class="m4">彼には感心しました！</mark><span class="tagq t4">問4</span> チョコレートを楽しんでね！ ジュンコ</div></div></div></section><section class="section" id="s6"><div class="sec-head"><span class="sec-no">STEP 6</span><h2 class="sec-title">語句 ― 感情の語と動作の動詞を優先して覚える</h2><span class="sec-sub">Vocabulary</span></div><p class="note">第6問は「感情・態度を表す語」と「動作描写の動詞」を優先して覚えます。</p><div class="vgroup">今回の言い換えペア（最優先）</div><div class="vocab"><div><span class="w">looked sad ／ disappointed</span><span class="pos">形</span><span class="m">悲しそう／がっかり</span></div><div><span class="w">tapping on her phone ／ shows interest in something else</span><span class="pos">熟</span><span class="m">スマホをいじる／別のものに関心を向ける</span></div><div><span class="w">with surprise / small world ／ surprised to find a connection</span><span class="pos">熟</span><span class="m">驚いて／つながりに驚く</span></div><div><span class="w">don’t want to interfere ／ thoughtfulness</span><span class="pos">熟</span><span class="m">邪魔したくない／思いやり</span></div><div><span class="w">beyond your age ／ behaved maturely</span><span class="pos">熟</span><span class="m">年齢以上の／大人びた振る舞い</span></div><div><span class="w">follow parents’ words ／ follow the advice of others</span><span class="pos">熟</span><span class="m">親の言葉を守る／助言に従う</span></div><div><span class="w">offer / hand the box ／ generous</span><span class="pos">熟</span><span class="m">差し出す・渡す／気前がよい</span></div></div><div class="vgroup">動作描写の動詞</div><div class="vocab"><div><span class="w">spread</span><span class="pos">動</span><span class="m">広げる</span></div><div><span class="w">retreat</span><span class="pos">動</span><span class="m">退く</span></div><div><span class="w">shift</span><span class="pos">動</span><span class="m">（体を）ずらす</span></div><div><span class="w">occupy</span><span class="pos">動</span><span class="m">占める</span></div><div><span class="w">nod</span><span class="pos">動</span><span class="m">うなずく</span></div><div><span class="w">widen</span><span class="pos">動</span><span class="m">（目を）見開く</span></div><div><span class="w">dig around</span><span class="pos">熟</span><span class="m">ごそごそ探す</span></div><div><span class="w">tap on ～</span><span class="pos">熟</span><span class="m">（画面を）叩く</span></div><div><span class="w">hurriedly</span><span class="pos">副</span><span class="m">急いで</span></div><div><span class="w">rush off</span><span class="pos">熟</span><span class="m">急いで降りる</span></div></div><div class="vgroup">本文</div><div class="vocab"><div><span class="w">super express</span><span class="pos">名</span><span class="m">特急</span></div><div><span class="w">by oneself</span><span class="pos">熟</span><span class="m">一人で</span></div><div><span class="w">accompany</span><span class="pos">動</span><span class="m">付き添う</span></div><div><span class="w">stranger</span><span class="pos">名</span><span class="m">見知らぬ人</span></div><div><span class="w">flash by</span><span class="pos">熟</span><span class="m">さっと通り過ぎる</span></div><div><span class="w">suburban</span><span class="pos">形</span><span class="m">郊外の</span></div><div><span class="w">take over</span><span class="pos">熟</span><span class="m">取って代わる</span></div><div><span class="w">middle-aged</span><span class="pos">形</span><span class="m">中年の</span></div><div><span class="w">aisle seat</span><span class="pos">名</span><span class="m">通路側の席</span></div><div><span class="w">armrest</span><span class="pos">名</span><span class="m">肘掛け</span></div><div><span class="w">cautious</span><span class="pos">形</span><span class="m">用心深い</span></div><div><span class="w">fancy</span><span class="pos">形</span><span class="m">高級な</span></div><div><span class="w">be tempted to ～</span><span class="pos">熟</span><span class="m">〜したい誘惑に駆られる</span></div><div><span class="w">go against ～</span><span class="pos">熟</span><span class="m">〜に逆らう</span></div><div><span class="w">refuse</span><span class="pos">動</span><span class="m">断る</span></div><div><span class="w">ma’am</span><span class="pos">名</span><span class="m">（女性への敬称）</span></div><div><span class="w">help yourself</span><span class="pos">熟</span><span class="m">ご自由にどうぞ</span></div><div><span class="w">breathe in</span><span class="pos">熟</span><span class="m">息を吸う</span></div><div><span class="w">uncomfortable</span><span class="pos">形</span><span class="m">気まずい</span></div><div><span class="w">tension</span><span class="pos">名</span><span class="m">緊張</span></div><div><span class="w">ease</span><span class="pos">動</span><span class="m">和らぐ</span></div><div><span class="w">handle</span><span class="pos">動</span><span class="m">対処する</span></div><div><span class="w">pull into ～</span><span class="pos">熟</span><span class="m">（駅に）入る</span></div><div><span class="w">reunion</span><span class="pos">名</span><span class="m">再会</span></div><div><span class="w">interfere with ～</span><span class="pos">熟</span><span class="m">〜を邪魔する</span></div><div><span class="w">platform</span><span class="pos">名</span><span class="m">ホーム</span></div></div><div class="vgroup">選択肢</div><div class="vocab"><div><span class="w">sentiment</span><span class="pos">名</span><span class="m">感情</span></div><div><span class="w">emerge</span><span class="pos">動</span><span class="m">現れる</span></div><div><span class="w">reject</span><span class="pos">動</span><span class="m">拒む</span></div><div><span class="w">frustration</span><span class="pos">名</span><span class="m">いら立ち</span></div><div><span class="w">awkward</span><span class="pos">形</span><span class="m">気まずい</span></div><div><span class="w">thoughtfulness</span><span class="pos">名</span><span class="m">思いやり</span></div><div><span class="w">generous</span><span class="pos">形</span><span class="m">気前のよい</span></div><div><span class="w">harm</span><span class="pos">名</span><span class="m">危害</span></div><div><span class="w">aggressive</span><span class="pos">形</span><span class="m">攻撃的な</span></div><div><span class="w">maturely</span><span class="pos">副</span><span class="m">大人びて</span></div></div></section><section class="section" id="s7"><div class="sec-head"><span class="sec-no">STEP 7</span><h2 class="sec-title">持ち帰る3つの武器 と 自己点検</h2><span class="sec-sub">Take-aways</span></div><div class="weapons"><div class="weapon"><span class="wn">武器 1</span><h4>ワークシートを先に見て、拾うものを4種類に絞る</h4><p>座り方・女性の感情・2人の行動・最後の評価。この4つに印を付けながら1回で読み切る。全部を同じ濃さで読まない。</p></div><div class="weapon"><span class="wn">武器 2</span><h4>感情は「感情語・動作・台詞」の3経路で拾う</h4><p>looked sad は感情語。スマホをいじるは動作。don’t want to interfere は台詞。感情語が無い箇所ほど問われる。</p></div><div class="weapon"><span class="wn">武器 3</span><h4>性格は「繰り返される行動」から、評価は「評価の台詞」から</h4><p>ヒロキは3回親の言葉に戻る。女性は2回チョコを差し出す。感心の理由は beyond your age の言い換え。1回の行動や連想で決めない。</p></div></div><p style="margin-top:22px;"><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。チェックはこの端末に保存されます。</p><ul class="check" id="check"><li><input type="checkbox"><span>リード文とワークシートを先に見て、何を拾うかを決めてから本文に入った</span></li><li><input type="checkbox"><span>問1で、絵を「位置×体勢」の2軸に分けてから本文の3文で決めた</span></li><li><input type="checkbox"><span>問1で、spread（広げた）を読み落とさず、②（行儀よい女性）を選ばなかった</span></li><li><input type="checkbox"><span>問2で、女性の感情を本文順にメモしながら読んだ</span></li><li><input type="checkbox"><span>問2で、スマホをいじる動作から「気まずさを紛らわす」を読み取れた</span></li><li><input type="checkbox"><span>問2で、ヒロキの心配（失礼かも）と女性の感情を混同せず、③をダミーと判断した</span></li><li><input type="checkbox"><span>問3で、1回の行動ではなく繰り返しの行動から性格を選んだ</span></li><li><input type="checkbox"><span>問4で、beyond your age を「賢い」ではなく「大人びた」と言い換えた</span></li><li><input type="checkbox"><span>10分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li></ul><div class="check-foot"><span id="checkfoot">0 / 0</span><span class="bar"><i id="checkbar"></i></span></div><div class="callout "><div class="ttl">次に向けて</div><p>8個以上なら第6問の手順は入っています。次は同じ手順を「初見の長めの物語」で再現できるかを試してください。7個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度10分で解き直してください。測っているのは正解ではなく、<b>感情を動作からも拾えたか</b>です。</p></div><button class="btn ghost block" style="margin-top:16px;" onclick="resetAll()">解答・チェックをリセットしてもう一度解く</button></section>
+</main>
+<footer class="footer">出典：令和7年度 大学入学共通テスト 追試験 英語（リーディング）第6問<br>学部別合格設計塾 THINKING ― 受験は根性じゃなく、設計。</footer>
+<div class="dock" role="toolbar" aria-label="クイック操作"><div class="dock-in">
+<button class="btn orange" onclick="openSheet(0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>本文を開く</button>
+<button class="btn ghost icon" onclick="jumpNext()" aria-label="次のステップへ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>次へ</button>
+<button class="btn ghost icon" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="先頭へ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></button>
+</div></div>
+<div class="scrim" id="scrim" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="本文"><div class="grip"></div>
+<div class="sh"><span class="t">本文 ― My Adventure Going to Toiura</span><button class="toggle on" id="hlToggle" onclick="toggleHl()">根拠の色を表示</button><button class="close" onclick="closeSheet()" aria-label="閉じる"><svg viewBox="0 0 16 16" fill="none" stroke="#2c2520" stroke-width="2" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+<div class="sheet-body show-hl" id="sheetBody"><div class="qtabs"><button data-q="0" class="on" onclick="filterQ(0)">全部</button><button data-q="1" onclick="filterQ(1)">問1</button><button data-q="2" onclick="filterQ(2)">問2</button><button data-q="3" onclick="filterQ(3)">問3</button><button data-q="4" onclick="filterQ(4)">問4</button></div>
+<p class="lead-text">You are taking an English course at a university. Your teacher has provided a story and has asked you to read it and complete a worksheet.</p>
+<div class="doc">
+<div class="dtitle">My Adventure Going to Toiura</div>
+<p>My name is Hiroki and I’m 10 years old. I’m from Shinayama City, which is two hours away by super express train from Toiura, a small town where my grandparents live. Last month, my dad asked me if I wanted to visit my grandparents by myself this summer. I was really excited but also nervous; I had never been on a trip by myself!</p>
+<p>The day of my trip came. After we arrived at the station, I bought a box of my favorite cookies for my grandparents. My parents then accompanied me to the train and made sure I was sitting in the right place. <mark class="m3">My parents told me to be careful of strangers before they left.</mark></p>
+<p>The tall buildings of Shinayama flashed by and suburban houses started to appear, then rice fields took over. The train stopped and some passengers got on. Suddenly, I heard, “Excuse me!”</p>
+<p>I turned and saw a middle-aged woman pointing at the seat next to me. <mark class="m1">I moved my backpack from the aisle seat. As she sat down, she spread her arms and legs into the space I had occupied before. I retreated away from the left armrest and shifted my body toward the window.</mark></p>
+<p>“Are you traveling alone?” she asked me. I nodded in reply. “Wow! Where are you going?” I didn’t know whether to respond because my parents had told me to be cautious of strangers. So, I just said, “Toiura.” The woman’s eyes widened. “Toiura! I have a friend living there! I love visiting her.” She started digging around in her bag.</p>
+<p>I saw her pull out a box of fancy chocolates. “Would you like one?” she asked. I was tempted to take one, but I remembered what my parents had told me. I didn’t know what to do. <mark class="m3">I didn’t want to go against my parents’ wishes, but I also thought it would be rude to refuse.</mark> I thought for a moment and said, “No, thank you, ma’am.” But she replied, “Oh, don’t be shy! Help yourself.” I breathed in and said, “I really don’t want any, but thank you for asking.”</p>
+<p><mark class="m2">The chocolate woman looked sad and softly said, “All right.”</mark> <mark class="m2">For a minute, there was an uncomfortable silence, then she took out her phone and started tapping on it. The tension eased a little,</mark> but I felt I couldn’t end the conversation this way. So I said, “I’m sorry about the chocolate. I just can’t take one.” “That’s fine, dear,” she said. <mark class="m4">“You’ve handled this situation in a way that’s beyond your age.”</mark> After that, we sat in silence and enjoyed the train ride.</p>
+<p>“We are now arriving at Toiura station. We will be stopping for five minutes,” said the announcement. As the train pulled into the station, I could see my grandparents waving. <mark class="m2">The chocolate woman asked me with surprise, “Are those your grandparents?” When I said yes, she said, “How about that! It’s a small world!”</mark> Then she hurriedly began writing something on a piece of paper. I stayed in my seat waving to my grandparents for a little bit; I wanted to show them I was on the train by myself!</p>
+<p><mark class="m3">As I was leaving my seat, the woman handed me the box of chocolates with a note on it.</mark> <mark class="m2">She said, “Please share this with Michiko, and tell her I said hello. I don’t want to interfere with your reunion.”</mark> I wondered how the chocolate woman knew my grandmother’s name, but I really didn’t have time to ask her. I rushed off the train, and ran toward my grandparents on the platform.</p>
+<p>When I met them, I said, “I brought some cookies, and some chocolates from a woman sitting next to me. Maybe we shouldn’t eat them though, because she’s a stranger.” As the train began to leave, we saw the chocolate woman waving to us. “Junko!” my grandmother said. Then she looked at the box of chocolates and read the note on it.</p>
+<div style="border:1.5px solid #777;border-radius:6px;padding:10px 14px;max-width:360px;margin:6px auto 0;font-family:'Noto Sans JP',sans-serif;font-size:14px;line-height:1.7;"><b>Nana’s Fancy Chocolates</b><br><i>Dear Michiko,<br>It was my pleasure to sit next to your grandson. <mark class="m4">I was impressed by him!</mark><br>Enjoy these chocolates!<br>Junko</i></div>
+</div>
+<p style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#6b6155;margin-bottom:4px;">Worksheet</p>
+<div class="doc memo">
+<div class="dtitle">English Reading I ― My Adventure Going to Toiura</div>
+<p>Draw a picture that best shows Hiroki and the “chocolate woman” after she had gotten on the train. <span class="box">24</span> (Picture)</p>
+<p>How would you describe the chocolate woman’s sentiments on the train ride? Write them below in the order they emerged.<br>1) <span class="box">25</span> 2) <span class="box">26</span> 3) <span class="box">27</span> 4) <span class="box">28</span></p>
+<p>Answer the following questions:<br>What are the characteristics of the two main characters?<br>Hiroki <span class="box">29</span>. / The chocolate woman <span class="box">30</span>.<br>Why was Junko so impressed? She thought that Hiroki had <span class="box">31</span>.</p>
+</div>
+<div class="q"><p class="stem"><span class="qn">問 1</span>Choose the picture that you should draw. <span class="box">24</span></p>
+<div class="pics">
+<div><b>①</b> 少年が窓側、女性が通路側。女性は腕と脚を大きく広げて肘掛けを占領し、少年は窓のほうへ体を寄せて縮こまっている。</div>
+<div><b>②</b> 少年が窓側、女性が通路側。女性は膝に手を置いて行儀よく座り、少年もまっすぐ座っている。</div>
+<div><b>③</b> 女性が窓側、少年が通路側。女性は腕を広げて座り、少年は通路側で体を寄せている。</div>
+<div><b>④</b> 女性が窓側、少年が通路側。二人とも行儀よく座っている。</div>
+</div></div><div class="q"><p class="stem"><span class="qn">問 2</span>Choose <u class="kw">four</u> out of the five options (①〜⑤) to complete the worksheet. <span class="box">25</span> <span class="box">26</span> <span class="box">27</span> <span class="box">28</span></p><ol><li><span class="circ">1</span>She is disappointed that Hiroki has rejected her offer.</li><li><span class="circ">2</span>She is surprised to find a connection with Hiroki’s grandmother.</li><li><span class="circ">3</span>She shows frustration about Hiroki’s rude behavior toward her.</li><li><span class="circ">4</span>She shows interest in something else to make things less awkward.</li><li><span class="circ">5</span>She shows thoughtfulness in deciding not to meet her friend.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 3</span>Choose the best options for <span class="box">29</span> and <span class="box">30</span>. </p><ol><li><span class="circ">1</span>avoids meeting new people</li><li><span class="circ">2</span>can be generous even to strangers</li><li><span class="circ">3</span>does not enjoy traveling alone</li><li><span class="circ">4</span>likes to protect others from harm</li><li><span class="circ">5</span>tries to follow the advice of others</li></ol></div><div class="q"><p class="stem"><span class="qn">問 4</span>Choose the best option for <span class="box">31</span>. </p><ol><li><span class="circ">1</span>acted carelessly</li><li><span class="circ">2</span>been aggressive</li><li><span class="circ">3</span>been intelligent</li><li><span class="circ">4</span>behaved maturely</li></ol></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+var KEY='thinking_r7_tsui_q6';
+var QUIZ=[{"label": "問 1", "slots": ["24"], "n": 4, "ans": ["1"], "ansText": "1", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}, {"label": "問 2", "slots": ["25", "26", "27", "28"], "n": 5, "ans": ["1", "4", "2", "5"], "ansText": "①→④→②→⑤", "pts": 3, "mode": "ordered", "each": null, "note": "（全部正解で3点）", "ns": null, "k": null}, {"label": "問 3", "slots": ["29 Hiroki", "30 woman"], "n": 5, "ans": ["5", "2"], "ansText": "29=⑤, 30=②", "pts": 3, "mode": "ordered", "each": null, "note": "（両方正解で3点）", "ns": null, "k": null}, {"label": "問 4", "slots": ["31"], "n": 4, "ans": ["4"], "ansText": "4", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}];
+var TOTAL=12;
+var TSEC0=600;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return {};}}
+function save(o){try{localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
+var state=load();
+function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('on');},1800);}
+/* timer */
+var tsec=TSEC0,tid=null;
+function fmt(s){var m=Math.floor(Math.abs(s)/60),ss=Math.abs(s)%60;return (s<0?'+':'')+m+':'+(ss<10?'0':'')+ss;}
+function paintTimer(){var d=document.getElementById('tm'),c=document.getElementById('tclock');d.textContent=fmt(tsec);c.textContent=fmt(tsec);d.classList.toggle('over',tsec<0);c.classList.toggle('over',tsec<0);}
+function timer(){var btn=document.getElementById('tmbtn'),c=document.getElementById('tclock');
+  if(tid){clearInterval(tid);tid=null;btn.textContent='再開';btn.classList.remove('stop');return;}
+  btn.textContent='ストップ';btn.classList.add('stop');c.classList.add('on');
+  tid=setInterval(function(){tsec--;paintTimer();if(tsec===0)toast('目標時間を経過。そのまま続けてOK');},1000);}
+/* quiz */
+var sel={};
+function buildQuiz(){
+  var host=document.getElementById('quiz');
+  QUIZ.forEach(function(q,qi){
+    var row=document.createElement('div');row.className='quiz-row';row.dataset.qi=qi;
+    var h='<div class="qlabel"><span>'+q.label+(q.note?' <span style="font-weight:500;color:var(--ink3);font-size:12px">'+q.note+'</span>':'')+'</span><span class="st"></span></div>';
+    q.slots.forEach(function(s,si){
+      var nn=(q.ns&&q.ns[si])||q.n;
+      h+='<div class="slot"><span class="sl">'+s+'</span><div class="opts n'+nn+'" data-si="'+si+'">';
+      for(var k=1;k<=nn;k++)h+='<button class="opt" data-v="'+k+'">'+k+'</button>';
+      h+='</div></div>';
+    });
+    row.innerHTML=h;host.appendChild(row);
+    sel[qi]=new Array(q.slots.length).fill(null);
+    row.querySelectorAll('.opts').forEach(function(op){
+      var si=+op.dataset.si;
+      op.querySelectorAll('.opt').forEach(function(b){
+        b.addEventListener('click',function(){
+          if(row.dataset.graded)return;
+          op.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel');});
+          b.classList.add('sel');sel[qi][si]=b.dataset.v;
+        });
+      });
+    });
+  });
+}
+function grade(silent){
+  var unanswered=[];
+  QUIZ.forEach(function(q,qi){if(sel[qi].some(function(v){return v===null;}))unanswered.push(qi);});
+  if(unanswered.length){toast('すべての空欄に答えてから採点してください');var r=document.querySelector('.quiz-row[data-qi="'+unanswered[0]+'"]');if(r)r.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  var score=0;
+  QUIZ.forEach(function(q,qi){
+    var row=document.querySelector('.quiz-row[data-qi="'+qi+'"]');row.dataset.graded='1';
+    var mine=sel[qi],ans=q.ans.map(String),correct,earned=0;
+    if(q.mode==='set'){var a=mine.slice().sort().join(),b=ans.slice().sort().join();correct=(a===b);
+      if(q.each){ earned=0; mine.forEach(function(v){ if(ans.indexOf(v)>=0) earned+=q.each; }); if(new Set(mine).size<mine.length) earned=Math.min(earned,q.each);} else earned=correct?q.pts:0;
+    } else if(q.mode==='mixed'){var k=q.k;var a1=mine.slice(0,k).sort().join(),b1=ans.slice(0,k).sort().join();correct=(a1===b1)&&(mine.slice(k).join()===ans.slice(k).join());earned=correct?q.pts:0;}
+    else {correct=mine.join()===ans.join();earned=correct?q.pts:0;}
+    score+=earned;
+    row.querySelectorAll('.opts').forEach(function(op,si){
+      op.querySelectorAll('.opt').forEach(function(b){
+        var v=b.dataset.v;b.classList.remove('sel');
+        if(q.mode==='set'||(q.mode==='mixed'&&si<q.k)){ var pool=q.mode==='set'?ans:ans.slice(0,q.k), mpool=q.mode==='set'?mine:mine.slice(0,q.k); if(v===mine[si]&&pool.indexOf(v)>=0&&mpool.indexOf(v)===si)b.classList.add('ok'); else if(v===mine[si])b.classList.add('ng'); }
+        else { if(v===ans[si]&&v===mine[si])b.classList.add('ok'); else if(v===mine[si])b.classList.add('ng'); else if(v===ans[si])b.classList.add('hint'); }
+      });
+    });
+    if((q.mode==='set'||q.mode==='mixed')&&!correct){var k2=q.mode==='set'?ans.length:q.k;var miss=ans.slice(0,k2).filter(function(v){return mine.slice(0,k2).indexOf(v)<0;});row.querySelectorAll('.opts').forEach(function(op,si){if(si>=k2)return;op.querySelectorAll('.opt').forEach(function(b){if(miss.indexOf(b.dataset.v)>=0&&!b.classList.contains('ng')&&!b.classList.contains('ok'))b.classList.add('hint');});});}
+    var st=row.querySelector('.st');
+    st.textContent=correct?'正解（'+earned+'点）':(earned>0?'一部正解（'+earned+'点）正解 '+q.ansText:'不正解（正解 '+q.ansText+'）');
+    st.className='st '+(correct?'ok':'ng');
+  });
+  document.getElementById('score').textContent=score+' / '+TOTAL+'点';
+  var r=score/TOTAL,msg=r>=1?'全問正解。次は「どの順番で目を動かしたか」を解説と照らし合わせてください。':r>=0.7?'合格圏。落とした設問が、どのタイプだったかを確認してください。':r>=0.45?'半分前後。この大問の「読む順番」が入っていない可能性が高いです。STEP 1を読んでから解説へ。':'手順を入れる前の状態です。ここから伸びます。STEP 1を読んでからSTEP 3の脳内実況を追ってください。';
+  document.getElementById('scoremsg').textContent=msg;
+  document.getElementById('gradebtn').textContent='採点済み';
+  if(tid){clearInterval(tid);tid=null;document.getElementById('tmbtn').textContent='終了';document.getElementById('tmbtn').classList.remove('stop');}
+  state.sel=sel;state.time=tsec;save(state);
+  if(!silent)setTimeout(function(){document.getElementById('s1').scrollIntoView({behavior:'smooth'});},900);
+}
+function restoreQuiz(){
+  if(!state.sel)return;
+  var ok=true;QUIZ.forEach(function(q,qi){var s=state.sel[qi];if(!s||s.length!==q.slots.length||s.some(function(v){return v===null;}))ok=false;else sel[qi]=s.map(String);});
+  if(!ok)return;
+  tsec=typeof state.time==='number'?state.time:TSEC0;paintTimer();grade(true);
+  document.getElementById('scoremsg').textContent+='（前回の結果を表示中）';
+}
+/* accordion */
+function acc(btn){var card=btn.closest('.ans-card');var open=card.classList.toggle('open');btn.setAttribute('aria-expanded',open);if(open){setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'start'});},60);}}
+/* drill */
+function drill(btn,choice){var row=btn.closest('.drill-row'),a=row.dataset.a,res=row.querySelector('.res');
+  row.querySelectorAll('button').forEach(function(b){b.classList.remove('on','good','bad');});btn.classList.add('on',choice===a?'good':'bad');
+  res.classList.add('show');res.classList.remove('good','bad');res.classList.add(choice===a?'good':'bad');
+  var base=res.dataset.base||res.textContent;res.dataset.base=base;res.textContent=(choice===a?'正解。':'不正解。')+base;}
+/* translation */
+function toggleEn(b){var on=b.classList.toggle('on');document.querySelectorAll('#tr .pair').forEach(function(p){p.classList.toggle('hidden-en',on);});b.textContent=on?'英文を表示する':'英文を隠して和訳だけ読む';}
+/* checklist */
+var checks=document.querySelectorAll('#check li');
+function paintChecks(){var n=document.querySelectorAll('#check input:checked').length;document.getElementById('checkfoot').textContent=n+' / '+checks.length;document.getElementById('checkbar').style.width=(n*100/checks.length)+'%';}
+checks.forEach(function(li,i){var cb=li.querySelector('input');if(state.checks&&state.checks[i]){cb.checked=true;li.classList.add('done');}
+  li.addEventListener('click',function(e){if(e.target!==cb)cb.checked=!cb.checked;li.classList.toggle('done',cb.checked);state.checks=[].map.call(checks,function(l){return l.querySelector('input').checked;});save(state);paintChecks();});});
+function resetAll(){try{localStorage.removeItem(KEY);}catch(e){}location.reload();}
+/* sheet */
+var sheet=document.getElementById('sheet'),scrim=document.getElementById('scrim'),body=document.getElementById('sheetBody');
+function openSheet(q){sheet.classList.add('on');scrim.classList.add('on');document.body.classList.add('sheet-open');filterQ(q||0);
+  if(q){var el=body.querySelector('mark.m'+q);if(el){setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('pulse');setTimeout(function(){el.classList.remove('pulse');},1400);},260);}}
+  else{body.scrollTop=0;}}
+function closeSheet(){sheet.classList.remove('on');scrim.classList.remove('on');document.body.classList.remove('sheet-open');}
+function filterQ(q){body.classList.remove('f1','f2','f3','f4','f5');if(q)body.classList.add('f'+q);body.querySelectorAll('.qtabs button').forEach(function(b){b.classList.toggle('on',+b.dataset.q===q);});}
+function toggleHl(){var on=body.classList.toggle('show-hl');var t=document.getElementById('hlToggle');t.classList.toggle('on',on);t.textContent=on?'根拠の色を表示':'白文（色なし）';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet();});
+(function(){var y0=null;sheet.addEventListener('touchstart',function(e){y0=(body.scrollTop<=0)?e.touches[0].clientY:null;},{passive:true});sheet.addEventListener('touchmove',function(e){if(y0===null)return;if(e.touches[0].clientY-y0>70){closeSheet();y0=null;}},{passive:true});})();
+/* progress / nav */
+var secs=[].slice.call(document.querySelectorAll('.section')),links=[].slice.call(document.querySelectorAll('#stepnav a'));var lastCur=-1;
+function onScroll(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight);document.getElementById('pbar').style.width=(p*100)+'%';
+  var top=window.innerHeight*0.35,cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<top)cur=i;});
+  if(cur!==lastCur){lastCur=cur;links.forEach(function(a,i){a.classList.toggle('active',i===cur);});var act=links[cur],nav=document.getElementById('stepnav');nav.scrollTo({left:act.offsetLeft-nav.clientWidth/2+act.offsetWidth/2,behavior:'smooth'});}}
+var raf=null;window.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){raf=null;onScroll();});},{passive:true});
+function jumpNext(){var top=window.innerHeight*0.35,cur=-1;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<top)cur=i;});secs[Math.min(cur+1,secs.length-1)].scrollIntoView({behavior:'smooth'});}
+links.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+buildQuiz();restoreQuiz();paintChecks();onScroll();
+</script>
+</body></html>

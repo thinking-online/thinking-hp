@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fdfaf4">
+<title>共通テスト第8問攻略｜可視化リーディングで解く複数意見・エッセイ構成問題 — 動物園の是非 — オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f7f3ed; --paper:#fdfaf4; --ink:#2c2520; --ink2:#6b6155; --ink3:#9a9086; --border:#e7ddce;
+  --orange:#e85a1a; --orange-dark:#b8420f; --orange-light:#fde4d3;
+  --aqua:#3f83a0; --aqua-light:#e2eef2; --green:#3b8a5a; --green-light:#e4f2ea;
+  --amber:#b07d1e; --amber-light:#f8eed4; --purple:#7a5aa8; --purple-light:#efe8f7;
+  --red:#c0392b; --red-light:#fbe3e0;
+  --radius:16px; --radius-sm:10px;
+  --shadow:0 4px 20px rgba(80,55,25,.08); --shadow-lg:0 12px 40px rgba(80,55,25,.16);
+  --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px);
+  --topbar:52px; --tap:44px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;} *{transition:none!important;animation:none!important;}}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);line-height:1.9;font-size:16px;
+  background:radial-gradient(900px 500px at 10% -5%,rgba(232,90,26,.06),transparent 55%),radial-gradient(900px 500px at 100% 8%,rgba(63,131,160,.06),transparent 55%),var(--bg);
+  -webkit-font-smoothing:antialiased;padding-bottom:calc(84px + var(--sab));overflow-x:hidden;}
+body.sheet-open{overflow:hidden;}
+.en{font-family:'Source Serif 4','Noto Serif JP',serif;}
+b,strong{font-weight:700;}
+button{font-family:inherit;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+:focus-visible{outline:3px solid rgba(232,90,26,.35);outline-offset:2px;}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(253,250,244,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding-top:var(--sat);}
+.topbar-in{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:10px;height:var(--topbar);padding:0 16px;}
+.logo{width:30px;height:30px;border-radius:8px;flex:none;background:linear-gradient(135deg,var(--orange),var(--orange-dark));display:grid;place-items:center;color:#fff;font-weight:900;font-size:15px;}
+.topbar .ttl{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0;}
+.topbar .ttl small{display:block;font-size:10.5px;color:var(--ink3);font-weight:500;line-height:1.3;}
+.tclock{font-family:'Source Serif 4',serif;font-weight:700;font-size:15px;color:var(--ink2);display:none;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:#fff;}
+.tclock.on{display:block;} .tclock.over{color:var(--red);border-color:var(--red);}
+.progress{height:3px;background:var(--border);}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--aqua));transition:width .2s;}
+.stepnav{position:sticky;top:calc(var(--topbar) + 3px + var(--sat));z-index:49;background:rgba(247,243,237,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.stepnav-in{max-width:980px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:8px 16px;scrollbar-width:none;}
+.stepnav-in::-webkit-scrollbar{display:none;}
+.stepnav a{flex:none;text-decoration:none;color:var(--ink2);font-size:12.5px;font-weight:700;padding:7px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;white-space:nowrap;min-height:34px;display:inline-flex;align-items:center;gap:5px;}
+.stepnav a em{font-style:normal;font-family:'Source Serif 4',serif;color:var(--orange);font-size:11.5px;}
+.stepnav a.active{background:var(--orange);border-color:var(--orange);color:#fff;} .stepnav a.active em{color:#fff;}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 40px;}
+.hero{padding:26px 0 8px;}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--orange-dark);font-weight:700;background:var(--orange-light);padding:5px 12px;border-radius:999px;}
+.hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(23px,6.2vw,31px);line-height:1.4;font-weight:700;margin-top:12px;}
+.hero h1 .accent{color:var(--orange);}
+.hero .lead{margin-top:12px;color:var(--ink2);font-size:15px;max-width:62ch;}
+.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--border);font-size:12.5px;color:var(--ink2);}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block;}
+.chip.aq i{background:var(--aqua);} .chip.gr i{background:var(--green);}
+.section{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 18px;margin-top:20px;scroll-margin-top:calc(var(--topbar) + 60px + var(--sat));}
+@media (min-width:720px){.section{padding:30px 32px;}}
+.sec-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--orange-light);}
+.sec-no{font-family:'Source Serif 4',serif;font-weight:700;color:var(--orange);font-size:12px;letter-spacing:.1em;border:1.5px solid var(--orange);border-radius:6px;padding:1px 8px;flex:none;}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:clamp(18px,5vw,21px);font-weight:700;line-height:1.45;}
+.sec-sub{color:var(--ink3);font-size:12px;font-family:'Source Serif 4',serif;font-style:italic;width:100%;}
+@media (min-width:720px){.sec-sub{width:auto;}}
+.section p{margin-bottom:12px;} .section p:last-child{margin-bottom:0;}
+.note{color:var(--ink2);font-size:14.5px;}
+.callout{border-left:4px solid var(--orange);background:var(--orange-light);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:13px 15px;margin:16px 0;font-size:15px;}
+.callout.aqua{border-color:var(--aqua);background:var(--aqua-light);} .callout.green{border-color:var(--green);background:var(--green-light);}
+.callout.amber{border-color:var(--amber);background:var(--amber-light);} .callout.purple{border-color:var(--purple);background:var(--purple-light);}
+.callout .ttl{font-weight:700;font-size:13.5px;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.callout .ttl::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--orange);flex:none;}
+.callout.aqua .ttl::before{background:var(--aqua);} .callout.green .ttl::before{background:var(--green);} .callout.amber .ttl::before{background:var(--amber);} .callout.purple .ttl::before{background:var(--purple);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;border:none;border-radius:999px;padding:0 20px;min-height:var(--tap);font-size:14.5px;font-weight:700;color:#fff;background:var(--aqua);transition:transform .12s,background .12s;}
+.btn:hover{background:#316c85;} .btn:active{transform:scale(.97);}
+.btn.orange{background:var(--orange);} .btn.orange:hover{background:var(--orange-dark);}
+.btn.ghost{background:#fff;color:var(--ink2);border:1.5px solid var(--border);} .btn.ghost:hover{background:#fff;border-color:var(--ink3);}
+.btn.block{width:100%;}
+/* exam paper */
+.exam{background:#fff;border:1px solid #d9d2c6;border-radius:8px;padding:18px 16px;font-family:'Source Serif 4','Noto Serif JP',serif;font-size:16px;line-height:1.9;}
+@media (min-width:720px){.exam{padding:26px 30px;}}
+.exam .q-head{font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:15px;margin-bottom:10px;}
+.exam .q-head small{font-weight:400;color:var(--ink2);margin-left:8px;font-size:12.5px;}
+.exam p,.sheet-body p{margin-bottom:12px;}
+.lead-text{margin-bottom:14px;}
+.doc{border:1px solid #c9c2b6;padding:16px;border-radius:6px;background:#fff;margin:10px 0 14px;}
+.doc .dtitle{text-align:center;font-weight:700;font-size:17px;margin-bottom:10px;}
+.doc .dtitle.it{font-style:italic;}
+.doc .dmeta{font-style:italic;color:var(--ink2);line-height:1.7;margin-bottom:12px;font-size:14.5px;}
+.doc .by{text-align:right;font-size:14px;color:var(--ink2);margin-bottom:8px;}
+.doc h4{font-size:15px;margin:10px 0 4px;}
+.doc .sub{font-weight:700;font-style:italic;}
+.doc p:last-child{margin-bottom:0;}
+.doc.memo{font-family:'Noto Sans JP',sans-serif;background:#fffdf8;border-style:dashed;}
+.doc.memo ul{list-style:none;margin:4px 0 8px 10px;}
+.doc.memo li{padding-left:16px;position:relative;margin-bottom:3px;}
+.doc.memo li::before{content:"•";position:absolute;left:0;color:var(--ink3);}
+.doc.memo li.dash::before{content:"–";}
+.doc.memo .lbl{font-weight:700;margin-top:8px;}
+.doc.essay{display:grid;grid-template-columns:1fr;gap:0;}
+.doc.essay .body{border-bottom:1px solid #c9c2b6;padding-bottom:10px;}
+.doc.essay .cm{font-family:'Noto Sans JP',sans-serif;font-size:13.5px;color:var(--ink2);padding-top:10px;}
+.doc.essay .cm b{color:var(--ink);}
+@media (min-width:720px){.doc.essay{grid-template-columns:1fr 200px;gap:0 16px;} .doc.essay .body{border-bottom:none;border-right:1px solid #c9c2b6;padding-right:14px;} .doc.essay .cm{padding-top:0;}}
+.cmnum{font-family:'Noto Sans JP',sans-serif;font-size:11px;vertical-align:super;font-weight:700;color:var(--orange-dark);}
+.ul1{text-decoration:underline;text-underline-offset:3px;}
+.op{border:1px solid #c9c2b6;border-radius:6px;padding:10px 14px;margin-bottom:10px;background:#fff;}
+.op .who{font-weight:700;margin-bottom:2px;} .op .who span{font-weight:400;color:var(--ink2);font-size:14px;}
+table.tb{border-collapse:collapse;font-size:14px;margin:8px auto;background:#fff;}
+table.tb th,table.tb td{border:1px solid #9a9086;padding:3px 10px;text-align:center;}
+table.tb th{font-weight:700;}
+.bars{margin:8px 0 12px;font-family:'Noto Sans JP',sans-serif;font-size:13px;}
+.bar-row{display:grid;grid-template-columns:minmax(110px,38%) 1fr 40px;gap:8px;align-items:center;margin-bottom:5px;}
+.bar-row .bl{text-align:right;line-height:1.3;} .bar-row .bb{height:16px;background:#c9c2b6;border:1px solid #8a8176;} .bar-row .bn{font-weight:700;}
+.q{margin-top:16px;} .q .stem{font-weight:600;}
+.q .stem .qn{font-family:'Noto Sans JP',sans-serif;font-weight:700;margin-right:8px;}
+.box{display:inline-block;min-width:36px;text-align:center;border:1.5px solid var(--ink);padding:0 6px;margin:0 4px;font-family:'Noto Sans JP',sans-serif;font-size:13px;line-height:1.6;vertical-align:middle;}
+.q ol{list-style:none;margin:8px 0 0 4px;}
+.q li{display:flex;gap:10px;align-items:baseline;line-height:1.8;margin-bottom:4px;}
+.circ{flex:none;width:20px;height:20px;border:1.5px solid var(--ink);border-radius:50%;display:inline-grid;place-items:center;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;line-height:1;transform:translateY(2px);}
+u.kw{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;font-family:'Noto Sans JP',sans-serif;font-size:13px;}
+.pics div{border:1px solid #c9c2b6;border-radius:6px;padding:8px 10px;background:#fff;line-height:1.6;}
+.pics b{display:block;margin-bottom:2px;}
+mark{background:transparent;padding:0 1px;border-radius:2px;color:inherit;}
+.m1{background:linear-gradient(transparent 55%,rgba(232,90,26,.3) 55%);} .m2{background:linear-gradient(transparent 55%,rgba(63,131,160,.3) 55%);}
+.m3{background:linear-gradient(transparent 55%,rgba(59,138,90,.3) 55%);} .m4{background:linear-gradient(transparent 55%,rgba(122,90,168,.3) 55%);}
+.m5{background:linear-gradient(transparent 55%,rgba(176,125,30,.35) 55%);}
+.exam mark{background:transparent!important;}
+.sheet-body:not(.show-hl) mark{background:transparent;}
+.tagq{display:inline-block;font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:700;color:#fff;padding:1px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;line-height:1.6;}
+.tagq.t1{background:var(--orange);} .tagq.t2{background:var(--aqua);} .tagq.t3{background:var(--green);} .tagq.t4{background:var(--purple);} .tagq.t5{background:var(--amber);}
+/* quiz */
+.timerbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.timer{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 8px 6px 16px;font-size:13.5px;color:var(--ink2);}
+.timer .t{font-family:'Source Serif 4',serif;font-size:20px;font-weight:700;color:var(--ink);min-width:60px;text-align:center;}
+.timer .t.over{color:var(--red);}
+.timer button{border:none;background:var(--orange);color:#fff;border-radius:999px;padding:0 16px;min-height:36px;font-weight:700;font-size:13px;cursor:pointer;}
+.timer button.stop{background:var(--ink2);}
+.quiz{display:grid;gap:12px;margin-top:16px;}
+.quiz-row{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;}
+.quiz-row .qlabel{font-weight:700;color:var(--ink2);font-size:14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.quiz-row .qlabel .st{font-size:12px;font-weight:700;text-align:right;}
+.quiz-row .qlabel .st.ok{color:var(--green);} .quiz-row .qlabel .st.ng{color:var(--red);}
+.slot{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center;margin-bottom:6px;}
+.slot .sl{font-size:12px;font-weight:700;color:var(--ink3);text-align:center;border:1px solid var(--border);border-radius:6px;padding:4px 0;}
+.opts{display:grid;gap:8px;}
+.opts.n4{grid-template-columns:repeat(4,1fr);} .opts.n5{grid-template-columns:repeat(5,1fr);} .opts.n6{grid-template-columns:repeat(6,1fr);}
+.opt{min-height:var(--tap);border-radius:10px;border:1.5px solid var(--border);background:var(--paper);font-weight:700;cursor:pointer;color:var(--ink2);font-size:17px;transition:all .12s;}
+.opt:hover{border-color:var(--aqua);color:var(--aqua);}
+.opt.sel{background:var(--aqua);border-color:var(--aqua);color:#fff;}
+.opt.ok{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.ng{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.hint{border-color:var(--green);color:var(--green);border-width:2px;}
+.quiz-foot{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+@media (min-width:720px){.quiz-foot{flex-direction:row;align-items:center;flex-wrap:wrap;}}
+.score{font-family:'Source Serif 4',serif;font-size:22px;font-weight:700;color:var(--orange);}
+/* flow */
+.flow{position:relative;display:grid;gap:0;padding-left:34px;margin-top:6px;}
+.flow::before{content:"";position:absolute;left:13px;top:14px;bottom:14px;width:3px;border-radius:3px;background:linear-gradient(var(--orange),var(--aqua));}
+.fnode{position:relative;padding:8px 0 14px;}
+.fnode .fb{position:absolute;left:-34px;top:8px;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;font-size:11.5px;display:grid;place-items:center;border:3px solid var(--paper);}
+.fnode.aq .fb{background:var(--aqua);} .fnode.gr .fb{background:var(--green);} .fnode.pu .fb{background:var(--purple);}
+.fnode .fc{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;}
+.fnode.aq .fc{border-color:#bcd6e2;background:#f4f9fb;}
+.fnode h4{font-size:15px;font-weight:700;margin-bottom:5px;line-height:1.5;}
+.fnode p{font-size:14px;color:var(--ink2);margin:0!important;}
+.fnode .branch{font-size:12px;color:var(--ink3);margin:0 0 6px;} .fnode .branch b{color:var(--orange);}
+@media (min-width:720px){.flow.cols{grid-template-columns:repeat(2,1fr);gap:0 20px;}}
+/* types */
+.types{display:grid;gap:10px;margin:14px 0;}
+@media (min-width:720px){.types{grid-template-columns:1fr 1fr;}}
+.type{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;border-left:5px solid var(--orange);}
+.type.no{border-left-color:var(--aqua);} .type.mix{border-left-color:var(--purple);}
+.type .th{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;}
+.type .qn{font-weight:900;font-size:15px;}
+.type .badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--orange-light);color:var(--orange-dark);white-space:nowrap;}
+.type.no .badge{background:var(--aqua-light);color:var(--aqua);} .type.mix .badge{background:var(--purple-light);color:var(--purple);}
+.type .stem{font-family:'Source Serif 4',serif;font-size:15px;margin-bottom:6px;}
+.type .do{font-size:13.5px;color:var(--ink2);}
+/* answer card */
+.ans-card{margin-top:18px;border:2px solid var(--orange);border-radius:var(--radius-sm);overflow:hidden;background:#fff;}
+.ans-card .ah{width:100%;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--orange);color:#fff;padding:12px 16px;border:none;text-align:left;cursor:pointer;min-height:56px;}
+.ans-card .ah .qn{font-size:19px;font-weight:900;font-family:'Source Serif 4',serif;}
+.ans-card .ah .ans{font-weight:700;font-size:15px;}
+.ans-card .ah .lvl{font-size:11.5px;opacity:.9;width:100%;}
+@media (min-width:720px){.ans-card .ah .lvl{width:auto;margin-left:auto;}}
+.ans-card .ah .chev{margin-left:auto;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;transition:transform .2s;flex:none;}
+@media (min-width:720px){.ans-card .ah .chev{margin-left:12px;}}
+.ans-card .ah .chev svg{width:14px;height:14px;}
+.ans-card.open .ah .chev{transform:rotate(180deg);}
+.ans-card .ab{display:none;padding:16px 14px 18px;}
+@media (min-width:720px){.ans-card .ab{padding:18px 20px;}}
+.ans-card.open .ab{display:block;animation:fade .22s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+.ja-q{font-weight:700;margin-bottom:8px;font-size:15.5px;}
+.ja-opts{list-style:none;margin:0 0 8px 0;display:grid;gap:5px;font-size:14.5px;}
+.ja-opts li{display:flex;gap:10px;align-items:baseline;}
+.ja-opts .circ{width:18px;height:18px;font-size:10.5px;}
+.ja-opts li.right{color:var(--green);font-weight:700;}
+.ja-opts li.right .circ{border-color:var(--green);background:var(--green);color:#fff;}
+.brain{margin-top:12px;display:grid;gap:10px;}
+.step{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;background:var(--paper);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 12px;}
+.step .k{width:28px;height:28px;border-radius:50%;background:var(--aqua);color:#fff;display:grid;place-items:center;font-weight:900;font-size:13px;margin-top:2px;}
+.step .k.o{background:var(--orange);} .step .k.g{background:var(--green);} .step .k.a{background:var(--amber);} .step .k.p{background:var(--purple);}
+.step h5{font-size:14.5px;font-weight:700;margin-bottom:4px;line-height:1.5;}
+.step p{font-size:14.5px;color:var(--ink2);margin:0 0 6px!important;} .step p:last-child{margin-bottom:0!important;}
+.step .ex{margin:6px 0 8px;padding:8px 12px;background:#fff;border-left:3px solid var(--aqua);border-radius:0 6px 6px 0;font-family:'Source Serif 4','Noto Serif JP',serif;font-size:15px;color:var(--ink);line-height:1.75;}
+.step .ex .ja{display:block;font-family:'Noto Sans JP',sans-serif;font-size:13.5px;color:var(--ink2);margin-top:4px;line-height:1.7;}
+.elim{list-style:none;margin:8px 0;display:grid;gap:8px;}
+.elim li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:14.5px;}
+.mk{min-width:30px;height:30px;padding:0 6px;border-radius:7px;display:grid;place-items:center;font-weight:900;font-size:12px;color:#fff;white-space:nowrap;}
+.mk.o{background:var(--green);} .mk.x{background:var(--red);} .mk.q{background:var(--amber);} .mk.b{background:var(--aqua);}
+.elim .why{color:var(--ink2);font-size:13.5px;line-height:1.7;}
+.para{display:flex;flex-direction:column;gap:6px;margin:10px 0;font-family:'Source Serif 4',serif;font-size:15px;}
+@media (min-width:720px){.para{flex-direction:row;align-items:center;flex-wrap:wrap;gap:10px;}}
+.para .a{background:var(--aqua-light);color:var(--aqua);padding:4px 12px;border-radius:8px;font-weight:600;}
+.para .b{background:var(--orange-light);color:var(--orange-dark);padding:4px 12px;border-radius:8px;font-weight:600;}
+.para .arr{color:var(--ink3);font-weight:700;text-align:center;}
+.ab .btn.mob-only{margin:4px 0 6px;}
+.desk-only{display:none;} @media (min-width:720px){.desk-only{display:block;} .mob-only{display:none!important;}}
+/* two col compare */
+.fo{display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0;}
+@media (min-width:720px){.fo{grid-template-columns:1fr 1fr;}}
+.fo .col{border-radius:var(--radius-sm);padding:14px 16px;background:#fff;border:1px solid var(--border);}
+.fo .col h4{font-size:15.5px;font-weight:700;margin-bottom:8px;}
+.fo .col.fact h4{color:var(--aqua);} .fo .col.op h4{color:var(--orange);}
+.fo .col ul{list-style:none;display:grid;gap:6px;font-size:14px;}
+.fo .col li{padding-left:14px;position:relative;line-height:1.7;}
+.fo .col li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--ink3);}
+.fo .col.fact li::before{background:var(--aqua);} .fo .col.op li::before{background:var(--orange);}
+.fo code,.step code,.callout code,.fnode code,.type code{font-family:'Source Serif 4',serif;font-weight:600;font-size:14.5px;color:var(--ink);}
+/* drill */
+.drill{display:grid;gap:10px;margin-top:12px;}
+.drill-row{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+.drill-row .s{font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.7;margin-bottom:10px;}
+.drill-row .s.ja{font-family:'Noto Sans JP',sans-serif;font-size:14.5px;}
+.drill-row .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.drill-row .btns.n3{grid-template-columns:1fr 1fr 1fr;}
+.drill-row .btns button{border:1.5px solid var(--border);background:var(--paper);border-radius:8px;min-height:var(--tap);font-weight:700;font-size:14px;cursor:pointer;color:var(--ink2);}
+.drill-row .btns button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
+.drill-row .btns button.on.good{background:var(--green);border-color:var(--green);} .drill-row .btns button.on.bad{background:var(--red);border-color:var(--red);}
+.drill-row .res{font-size:13.5px;color:var(--ink2);display:none;padding-top:8px;margin-top:10px;border-top:1px dashed var(--border);line-height:1.7;}
+.drill-row .res.show{display:block;} .drill-row .res.good{color:var(--green);} .drill-row .res.bad{color:var(--red);}
+/* translation */
+.tr{display:grid;gap:12px;margin-top:8px;}
+.tr .pair{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;}
+.tr .pn{font-size:11.5px;color:var(--ink3);font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.tr .pair .e{font-family:'Source Serif 4',serif;font-size:15px;line-height:1.85;padding-bottom:10px;border-bottom:1px dashed var(--border);margin-bottom:10px;}
+.tr .pair .j{font-size:14.5px;line-height:1.9;}
+@media (min-width:720px){.tr .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;} .tr .pn{grid-column:1/-1;} .tr .pair .e{border-bottom:none;padding-bottom:0;margin-bottom:0;}}
+.tr .pair.hidden-en .e{display:none;}
+.trtools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.toggle{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--border);background:#fff;border-radius:999px;padding:0 14px;min-height:36px;font-size:13px;font-weight:700;color:var(--ink2);cursor:pointer;}
+.toggle.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+/* vocab */
+.vgroup{margin-top:14px;font-size:12.5px;font-weight:700;color:var(--orange);}
+.vocab{display:grid;grid-template-columns:1fr;gap:0 18px;margin-top:6px;font-size:14.5px;}
+@media (min-width:600px){.vocab{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}}
+.vocab div{display:flex;gap:8px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--border);}
+.vocab .w{font-family:'Source Serif 4',serif;font-weight:600;min-width:118px;}
+.vocab .pos{font-size:10.5px;color:#fff;background:var(--ink3);border-radius:3px;padding:0 5px;line-height:1.6;flex:none;}
+.vocab .m{color:var(--ink2);font-size:13.5px;}
+/* weapons / checklist */
+.weapons{display:grid;grid-template-columns:1fr;gap:12px;margin-top:6px;}
+@media (min-width:720px){.weapons{grid-template-columns:repeat(3,1fr);}}
+.weapon{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;border-top:4px solid var(--orange);}
+.weapon:nth-child(2){border-top-color:var(--aqua);} .weapon:nth-child(3){border-top-color:var(--green);}
+.weapon .wn{font-family:'Source Serif 4',serif;font-weight:700;color:var(--ink3);font-size:12px;letter-spacing:.1em;}
+.weapon h4{font-size:15.5px;font-weight:700;margin:4px 0 8px;line-height:1.5;}
+.weapon p{font-size:14px;color:var(--ink2);margin:0!important;}
+.check{list-style:none;display:grid;gap:8px;margin-top:8px;}
+.check li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:14.5px;line-height:1.7;}
+.check li input{margin-top:5px;accent-color:var(--orange);width:20px;height:20px;flex:none;}
+.check li.done{background:var(--green-light);border-color:#bfe0cb;}
+.check-foot{margin-top:12px;display:flex;align-items:center;gap:12px;font-weight:700;color:var(--orange);font-family:'Source Serif 4',serif;font-size:18px;}
+.check-foot .bar{flex:1;height:8px;background:var(--border);border-radius:99px;overflow:hidden;}
+.check-foot .bar i{display:block;height:100%;width:0;background:var(--green);transition:width .25s;}
+.footer{max-width:980px;margin:0 auto;padding:10px 16px 20px;color:var(--ink3);font-size:12px;text-align:center;line-height:1.8;}
+/* dock & sheet */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:8px 12px calc(8px + var(--sab));background:rgba(253,250,244,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);}
+.dock-in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:1fr auto auto;gap:8px;}
+.dock .btn{min-height:46px;font-size:14px;} .dock .btn.icon{padding:0 14px;} .dock .btn svg{width:18px;height:18px;flex:none;}
+.scrim{position:fixed;inset:0;background:rgba(44,37,32,.45);z-index:70;opacity:0;pointer-events:none;transition:opacity .2s;}
+.scrim.on{opacity:1;pointer-events:auto;}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:71;background:var(--paper);border-radius:18px 18px 0 0;box-shadow:var(--shadow-lg);transform:translateY(100%);transition:transform .28s cubic-bezier(.2,.8,.2,1);max-height:88dvh;display:flex;flex-direction:column;max-width:980px;margin:0 auto;}
+.sheet.on{transform:none;}
+.sheet .grip{width:40px;height:5px;border-radius:99px;background:var(--border);margin:10px auto 4px;flex:none;}
+.sheet .sh{display:flex;align-items:center;gap:8px;padding:6px 16px 10px;border-bottom:1px solid var(--border);flex:none;flex-wrap:wrap;}
+.sheet .sh .t{font-weight:700;font-size:14.5px;flex:1;}
+.sheet .sh .toggle{min-height:32px;font-size:12px;padding:0 12px;}
+.sheet .sh .close{width:36px;height:36px;border-radius:50%;border:none;background:var(--border);display:grid;place-items:center;cursor:pointer;}
+.sheet .sh .close svg{width:16px;height:16px;}
+.sheet-body{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px 16px calc(20px + var(--sab));font-family:'Source Serif 4','Noto Serif JP',serif;font-size:16px;line-height:1.9;overscroll-behavior:contain;}
+.sheet-body .qtabs{display:flex;gap:6px;margin:0 0 12px;font-family:'Noto Sans JP',sans-serif;}
+.sheet-body .qtabs button{flex:1;min-height:36px;border-radius:8px;border:1.5px solid var(--border);background:#fff;font-weight:700;font-size:13px;color:var(--ink2);}
+.sheet-body .qtabs button.on{color:#fff;}
+.sheet-body .qtabs button[data-q="0"].on{background:var(--ink);border-color:var(--ink);}
+.sheet-body .qtabs button[data-q="1"].on{background:var(--orange);border-color:var(--orange);}
+.sheet-body .qtabs button[data-q="2"].on{background:var(--aqua);border-color:var(--aqua);}
+.sheet-body .qtabs button[data-q="3"].on{background:var(--green);border-color:var(--green);}
+.sheet-body .qtabs button[data-q="4"].on{background:var(--purple);border-color:var(--purple);}
+.sheet-body .qtabs button[data-q="5"].on{background:var(--amber);border-color:var(--amber);}
+.sheet-body.f1 mark:not(.m1),.sheet-body.f2 mark:not(.m2),.sheet-body.f3 mark:not(.m3),.sheet-body.f4 mark:not(.m4),.sheet-body.f5 mark:not(.m5){background:transparent;}
+mark.pulse{background:rgba(253,228,211,.95)!important;transition:background .6s;}
+.toast{position:fixed;left:50%;bottom:calc(76px + var(--sab));transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:700;opacity:0;pointer-events:none;transition:all .25s;z-index:80;white-space:nowrap;max-width:92vw;overflow:hidden;text-overflow:ellipsis;}
+.toast.on{opacity:1;transform:translateX(-50%);}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><span class="logo">T</span><div class="ttl">可視化リーディング ― 複数意見・エッセイ構成問題<small>令和7年 追試験 第8問「動物園の是非」 ／ オンライン塾 THINKING</small></div><div class="tclock" id="tclock">16:00</div></div><div class="progress"><i id="pbar"></i></div></div>
+<nav class="stepnav" aria-label="ステップ"><div class="stepnav-in" id="stepnav"><a href="#s0"><em>0</em>自力で解く</a><a href="#s1"><em>1</em>目の動かし方</a><a href="#s2"><em>2</em>タイプ分け</a><a href="#s3"><em>3</em>脳内実況</a><a href="#s4"><em>4</em>意見の地図</a><a href="#s5"><em>5</em>全訳</a><a href="#s6"><em>6</em>語句</a><a href="#s7"><em>7</em>持ち帰り</a></div></nav>
+<main class="wrap">
+<header class="hero">
+  <span class="kicker">令和7年度 共通テスト追試験 第8問（配点17）</span>
+  <h1>【複数意見・エッセイ構成問題】を攻略する<br><span class="accent">可視化リーディング</span><br>― 動物園の是非 ―</h1>
+  <p class="lead">5人の意見を読み、立場を決め、資料でアウトラインを補強する。読む量は最大ですが、設問は人を指名してきます。全員を要約する表は要らない。指名された段落だけを読み、共通点は抽象語で、資料は結論文と数字の検算で取る。最後の大問を時間内に終える手順を固めます。</p>
+  <div class="meta"><span class="chip aq"><i></i>目標解答時間 16分</span><span class="chip gr"><i></i>設問5問（問3は全部正解で4点、問5は4点）</span><span class="chip"><i></i>下の「本文を開く」で、いつでも英文を参照できます</span></div>
+</header>
+<section class="section" id="s0"><div class="sec-head"><span class="sec-no">STEP 0</span><h2 class="sec-title">まず、時間を測って自力で解く</h2><span class="sec-sub">Try it yourself</span></div><p class="note">解説を読む前に必ず解いてください。大事なのは正解数ではなく、<b>「5人全員を要約してから設問に行かなかったか」「問3で各段落の末尾1文から賛否を判定したか」「問5で選択肢の数字を自分で検算したか」</b>を自分で観察すること。それがそのまま、この後の可視化リーディングがあなたに効く場所になります。</p>
+<div class="timerbar"><div class="timer" aria-live="polite"><span>タイマー</span><span class="t" id="tm">16:00</span><button id="tmbtn" onclick="timer()">スタート</button></div><span class="note" style="font-size:13px;">目標時間を過ぎても止めずに続けて、超過時間を覚えておきましょう。</span></div>
+<div class="exam" style="margin-top:16px;"><div class="q-head">第8問<small>（配点 17）</small></div>
+<p class="lead-text">You are working on an essay about <b>zoos</b>. You will follow the steps below:<br>Step 1: Read a range of opinions gathered from the Internet about the pros and cons of zoos.<br>Step 2: Take a position on zoos.<br>Step 3: Create an outline of your essay using additional sources.</p>
+<p><b>[Step 1] Read a range of opinions</b></p>
+<div class="op"><div class="who">Aya <span>(local government advisor)</span></div>In terms of their business practices, zoos are unusual in that, in principle, they don’t buy animals. Apart from pandas, they only exchange them with other zoos. Nevertheless, zoos boost local economies: The money saved on not having to purchase their “product” can be used for employing staff, building zoo infrastructure, or running animal medical programs. <mark class="m3">Other benefits provided by zoos include collaborating with universities on research, or with schools on children’s education.</mark></div>
+<div class="op"><div class="who">David <span>(urban planner)</span></div>Most zoos are located in urban areas, ensuring the business is economically viable because of the large population. <mark class="m2">However, keeping dangerous and, in some cases, man-eating animals in the middle of a sea of humans can be a huge risk. In the country of Georgia, such animals as bears and lions recently escaped from Tbilisi Zoo after flooding, posing a danger to local citizens.</mark> Perhaps we should close down zoos for safety reasons.</div>
+<div class="op"><div class="who">Indira <span>(student)</span></div><mark class="m1">Zoos are prisons for animals. Imagine being a cheetah, used to traveling long distances for food. Then imagine being locked up for the rest of your life in a relatively small space, with no choice in your food, very little stimulation, and lots of strange, noisy humans looking at you every day. We would not expose any persons to such cruel treatment. Why do so many people think it’s OK to treat animals in such a way?</mark></div>
+<div class="op"><div class="who">Kenyatta <span>(journalist)</span></div>Zoos perform an important function in international relations. China is well known for its “panda politics,” whereby pandas are “loaned” to overseas zoos as a part of the country’s “soft power.” Trade deals are often found where an animal is symbolic of a particular nation and is in high demand, like koalas and Australia. Animals may be temporarily swapped between countries as part of a political treaty, in the same way as art galleries exchange paintings. <mark class="m3">This can also help promote the mutual flow of zoological information that improves global connectivity.</mark></div>
+<div class="op"><div class="who">Yo <span>(office worker)</span></div>One possible cause of pandemics is the migration of an animal virus to humans. <mark class="m2">While so-called “virus jumping” can happen in the wild, or at markets where live animals are sold, zoos too must be considered as a potential source of such events. Given the loss of life and economic disruption that can be brought about by pandemics,</mark> governments around the world must guarantee that proper procedures are followed at zoos and safari parks in order to ensure such a leap between species cannot occur.</div>
+<div class="q"><p class="stem"><span class="qn">問 1</span>Which of the following best summarizes Indira’s opinion? <span class="box">38</span></p><ol><li><span class="circ">1</span>Humans and animals should have different rights.</li><li><span class="circ">2</span>Mistreatment of animals is a serious problem.</li><li><span class="circ">3</span>Observation is key to understanding animal suffering.</li><li><span class="circ">4</span>Prisons are necessary to keep society safe.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 2</span>Both David and Yo mention that zoos <span class="box">39</span></p><ol><li><span class="circ">1</span>are often located in large cities</li><li><span class="circ">2</span>can be the source of infectious diseases</li><li><span class="circ">3</span>can potentially cause harm to people</li><li><span class="circ">4</span>work toward protecting the environment</li></ol></div>
+<p style="margin-top:16px;"><b>[Step 2] Take a position</b></p>
+<div class="q"><p class="stem"><span class="qn">問 3</span>Now that you have understood the various opinions, you have taken a position on zoos and written some notes below. Choose the best options to complete <span class="box">40</span>〜<span class="box">42</span>. (You must have <u class="kw">all</u> of 40〜42 correct to get points.)</p>
+<div class="doc memo" style="margin:10px 0;"><b>POSITION: We should support and actively maintain zoos.</b><br>● <span class="box">40</span> and <span class="box">41</span> opinions support this the most.<br>● An argument common to these two people is that <span class="box">42</span>.</div>
+<p>Options for <span class="box">40</span> and <span class="box">41</span> (the order does not matter):</p><ol><li><span class="circ">1</span>Aya’s</li><li><span class="circ">2</span>David’s</li><li><span class="circ">3</span>Indira’s</li><li><span class="circ">4</span>Kenyatta’s</li><li><span class="circ">5</span>Yo’s</li></ol><p style="margin-top:8px;">Options for <span class="box">42</span>:</p><ol><li><span class="circ">1</span>a country’s culture is reflected in its zoos</li><li><span class="circ">2</span>animal welfare is the priority when running a zoo</li><li><span class="circ">3</span>sharing knowledge is an important function of a zoo</li><li><span class="circ">4</span>zoos provide useful data on local economies</li></ol></div>
+<p style="margin-top:16px;"><b>[Step 3] Create an outline of your essay</b></p>
+<div class="doc memo">
+<div class="dtitle">We should support and actively maintain zoos</div>
+<div class="lbl">Introduction</div><p>Zoos offer many different benefits and should be viewed positively for the following three reasons.</p>
+<div class="lbl">Body</div><p>REASON 1 from Step 2, based on evidence from the opinions in Step 1<br>REASON 2 (<span class="box">43</span>), based on evidence from Source A<br>REASON 3, based on evidence (<span class="box">44</span>) from Source B</p>
+<div class="lbl">Conclusion</div><p>We should continue to provide zoos with help and resources.</p>
+</div>
+<div class="doc"><div class="sub">Source A</div>
+<p>According to the Red List published by the International Union for Conservation of Nature, more than 42,000 species were regarded as threatened with extinction in 2022, compared to approximately 24,000 in 2016. Recently, zoos have been expected to play a more active role in animal species conservation. To prevent endangered animals from becoming extinct, and to restore their populations, two methods have been adopted: on-site and off-site conservation. The former tries to preserve species through working in their natural surroundings, while the latter tries to protect and breed species in captivity and aims to return them back to the wild. <mark class="m4">Japanese zoos have been actively involved in off-site conservation and have had positive results. Two good examples are the crested ibis (<i>toki</i>) and the white stork (<i>kounotori</i>). Although they once disappeared from the natural world, their numbers have been growing due to the efforts of zoos.</mark></p></div>
+<div class="doc"><div class="sub">Source B</div>
+<p>Kids like animals, but <i>which</i> animals do they like? Three hundred Japanese children aged three to six were shown various animals and asked whether they liked them. The number of “likes” for each animal was noted and the top 10 are shown in the table. <mark class="m5">Checked animals are those that, in Japan, can be seen only in zoos (including safari parks).</mark></p>
+<table class="tb"><tr><th>Rank</th><th>Animal</th><th>Likes</th><th>Zoo</th></tr>
+<tr><td>1</td><td>cat</td><td>205</td><td></td></tr><tr><td>2</td><td>dog</td><td>175</td><td></td></tr><tr><td>3</td><td>panda</td><td>157</td><td>✓</td></tr><tr><td>4</td><td>lion</td><td>143</td><td>✓</td></tr><tr><td>5</td><td>elephant</td><td>130</td><td>✓</td></tr><tr><td>6</td><td>rabbit</td><td>110</td><td></td></tr><tr><td>7</td><td>giraffe</td><td>80</td><td>✓</td></tr><tr><td>8</td><td>koala</td><td>65</td><td>✓</td></tr><tr><td>9</td><td>tiger</td><td>52</td><td>✓</td></tr><tr><td>10</td><td>kangaroo</td><td>38</td><td>✓</td></tr></table></div>
+<div class="q"><p class="stem"><span class="qn">問 4</span>Based on Source A, which of the following is the most appropriate for REASON 2? <span class="box">43</span></p><ol><li><span class="circ">1</span>Due to zoos working in on-site environments, some rare birds have reappeared in the wild.</li><li><span class="circ">2</span>Funding research on Red List animals is a path that has been pursued by many zoos.</li><li><span class="circ">3</span>Thanks to zoos, recorded observations of some endangered species seem to be on the rise.</li><li><span class="circ">4</span>Zoos have been protecting and saving the lives of a broad range of abandoned animals.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 5</span>For REASON 3, you have decided to write <i>Zoos have animals that children want to see</i>. Based on Source B, which option best supports this statement? <span class="box">44</span></p><ol><li><span class="circ">1</span>According to the table, pandas, lions, and elephants are the three most popular zoo animals. The fact that each of them was liked by more than half the kids clearly reveals their popularity.</li><li><span class="circ">2</span>Although the top two animals commonly live among humans, in Japan more than two thirds of the top 10 animals can only be seen in zoos. This suggests that zoos are special places for young children.</li><li><span class="circ">3</span>Cats, dogs, and rabbits get a lot of likes from children and can be seen outside zoos. While the number of people keeping pets is reportedly decreasing, their popularity among children is increasing.</li><li><span class="circ">4</span>While more than 50% of children answered that they liked either cats or dogs, the other top 10 animals are found only in zoos. This means that zoos provide a unique opportunity for kids to see a variety of animals they prefer.</li></ol></div></div>
+<div class="quiz" id="quiz"></div>
+<div class="quiz-foot"><button class="btn orange" id="gradebtn" onclick="grade()">採点する</button><span class="score" id="score"></span><span class="note" id="scoremsg" style="font-size:14px;"></span></div></section><section class="section" id="s1"><div class="sec-head"><span class="sec-no">STEP 1</span><h2 class="sec-title">可視化リーディング ― 指名された人だけを読む</h2><span class="sec-sub">The eye path</span></div><p>第8問は「5人の意見 → 立場を決める → 追加資料でアウトライン」という3ステップの大問です。読む量は最大ですが、構造は単純。<b>意見は1人1段落、設問は1人か2人を指名してくる</b>。全員の意見を要約してから設問に行くのではなく、設問に指名された人の段落だけを読みに行きます。</p><div class="flow cols"><div class="fnode "><span class="fb">1</span><div class="fc"><h4>リード文の Step 1〜3 で、大問の設計図を把握する</h4><p>Step 1 意見を読む（問1・2）→ Step 2 立場を決める（問3）→ Step 3 資料でアウトライン（問4・5）。設問がどの Step のものかで、見る資料が変わる。</p></div></div><div class="fnode "><span class="fb">2</span><div class="fc"><h4>5人の意見は「肩書き＋賛否＋キーワード1語」だけ先に拾う</h4><p>Aya（行政・賛成・経済と研究）／David（都市計画・反対・危険）／Indira（学生・反対・動物の権利）／Kenyatta（記者・賛成・外交と情報）／Yo（会社員・反対寄り・パンデミック）。各段落の最初と最後の文で決まる。</p></div></div><div class="fnode aq"><span class="fb">3</span><div class="fc"><h4>設問に指名された人の段落だけを精読する</h4><p>問1は Indira だけ。問2は David と Yo の2人。問3は「賛成」の2人（Aya と Kenyatta）。指名されていない人は読まなくていい。</p></div></div><div class="fnode aq"><span class="fb">4</span><div class="fc"><h4>資料問題は、資料より先にアウトラインの「理由の位置」を見る</h4><p>REASON 2 は Source A、REASON 3 は Source B と決まっている。資料は設問が求める1点（鳥の回復、子どもが見たい動物）だけを探す。</p></div></div></div><div class="callout amber"><div class="ttl">この手順の急所</div><p>第8問で時間切れになる人は、5人の意見を全部丁寧に読んで「誰が何と言ったか」の表を作ってから設問に行きます。表は要りません。<b>設問が人を指名してくる</b>ので、指名された段落だけを読む。問3の「賛成の2人」も、各段落の最初の1文で賛否を判定すれば10秒で絞れます。</p></div></section><section class="section" id="s2"><div class="sec-head"><span class="sec-no">STEP 2</span><h2 class="sec-title">5問をタイプ分けする ― 要約・共通点・立場・資料</h2><span class="sec-sub">Classify before you read</span></div><div class="types"><div class="type "><div class="th"><span class="qn">問1</span><span class="badge">1人の要約</span></div><div class="stem">Which ... best <b>summarizes</b> Indira’s opinion?</div><div class="do">Indira の段落だけ。具体例（チーター）ではなく、主張の抽象文（Zoos are prisons / cruel treatment）を要約した選択肢を選ぶ。</div></div><div class="type no"><div class="th"><span class="qn">問2</span><span class="badge">2人の共通点</span></div><div class="stem"><b>Both</b> David and Yo mention that zoos ___.</div><div class="do">2人の段落を読み、両方に当てはまる抽象度の選択肢を選ぶ。片方にしか無い具体語（city / disease）は×。</div></div><div class="type mix"><div class="th"><span class="qn">問3</span><span class="badge">賛否の判定＋共通論点</span></div><div class="stem">[40][41] opinions support this (zoos should be supported) the most. An argument common to these two people is that [42].</div><div class="do">5人を賛成／反対に仕分け、賛成の2人を選ぶ。次にその2人に共通する論点を探す。3つ全部正解で4点。</div></div><div class="type "><div class="th"><span class="qn">問4</span><span class="badge">資料Aの根拠</span></div><div class="stem">Based on Source A, which ... is the most appropriate for REASON 2?</div><div class="do">Source A の結論部分（日本の動物園の成果：トキ・コウノトリの回復）を言い換えた選択肢。on-site / off-site の取り違えに注意。</div></div><div class="type no"><div class="th"><span class="qn">問5</span><span class="badge">資料Bの根拠（表の読み取り）</span></div><div class="stem">Based on Source B, which option best supports <i>Zoos have animals that children want to see</i>?</div><div class="do">表の数字と✓を使って、主張を支える文を選ぶ。数字の計算（7/10、過半数）が合っているかを検証する。</div></div></div><div class="callout aqua"><div class="ttl">問3が「全部正解で4点」である意味</div><p>40・41（賛成の2人）と42（共通論点）は連動しています。2人を間違えると共通論点も合わない。だから<b>賛否の判定を先に確実に</b>行う。各段落の末尾（Perhaps we should close down zoos／Why do so many people think it’s OK）に賛否がはっきり出るので、そこを見ます。</p></div></section><section class="section" id="s3"><div class="sec-head"><span class="sec-no">STEP 3</span><h2 class="sec-title">脳内実況 ― 読める人の頭の中を再生する</h2><span class="sec-sub">Think-aloud</span></div><p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。各問はタップで開閉できます。</p><div class="ans-card open">
+<button class="ah" onclick="acc(this)" aria-expanded="true"><span class="qn">問 1</span><span class="ans">正解 ②</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 易 ／ 配点 3点 ／ 1人の要約</span></button>
+<div class="ab"><p class="ja-q">インディラの意見を最もよく要約しているのはどれか。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>人間と動物は異なる権利を持つべきだ。</li><li class="right"><span class="circ">2</span>動物の虐待は深刻な問題だ。</li><li class=""><span class="circ">3</span>観察が動物の苦しみを理解する鍵だ。</li><li class=""><span class="circ">4</span>社会の安全を保つために刑務所は必要だ。</li></ul><div class="brain"><div class="step"><span class="k o">1</span><div><h5>先読み：summarizes ＝ 具体例ではなく主張の抽象文を探す</h5><p>Indira の段落だけ読む。チーターの具体例は飛ばして、最初と最後の文（主張）を見る。</p></div></div><div class="step"><span class="k g">2</span><div><h5>最初の文と最後の文が主張</h5><div class="ex">Zoos are prisons for animals. ... We would not expose any persons to such cruel treatment. Why do so many people think it’s OK to treat animals in such a way?<span class="ja">動物園は動物の牢獄だ。…人間ならそんな残酷な扱いにさらさないだろう。なぜ多くの人は動物をそんなふうに扱ってもいいと思うのか。</span></div><p>「動物園は動物の牢獄」「人間にはしないような残酷な扱い」「なぜ動物にはOKだと思うのか」。動物への残酷な扱い（＝虐待）が問題だ、という主張。② Mistreatment of animals is a serious problem。○。</p></div></div><div class="step"><span class="k a">3</span><div><h5>残りは「本文の語を使った逆の主張」</h5><p>①人間と動物は異なる権利：Indira は「人間にしないことを動物にもするな」＝ 同じように扱えという主張。逆。×。③観察が鍵：Imagine（想像してみて）とは言うが、観察の話ではない。×。④刑務所が必要：prisons という語は出るが、動物園を牢獄に例えて批判している。真逆。×。</p></div></div></div><div class="para"><span class="a">cruel treatment / treat animals in such a way</span><span class="arr">⇒</span><span class="b">Mistreatment of animals</span></div><button class="btn ghost block mob-only" onclick="openSheet(1)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>1人の意見の要約は、<b>段落の最初と最後の文</b>を見ます。中間の具体例（チーター）は主張を支える材料であって、主張そのものではない。本文の語（prisons）をそのまま使った選択肢（④）は、文脈が逆になっていることが多いので要注意。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 2</span><span class="ans">正解 ③</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点 ／ 2人の共通点</span></button>
+<div class="ab"><p class="ja-q">デイビッドとヨーの両方が、動物園は___と述べている。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>大都市に立地することが多い</li><li class=""><span class="circ">2</span>感染症の発生源になりうる</li><li class="right"><span class="circ">3</span>人に危害を及ぼす可能性がある</li><li class=""><span class="circ">4</span>環境保護に取り組んでいる</li></ul><div class="brain"><div class="step"><span class="k ">1</span><div><h5>先読み：Both ＝ 2人の段落に共通する内容を、共通する抽象度で</h5><p>David の段落と Yo の段落を読み、それぞれの「動物園の問題点」を1語にする。David：危険な動物が逃げる。Yo：ウイルスが人に移る。共通点は「人に害がある」。</p></div></div><div class="step"><span class="k g">2</span><div><h5>David：危険な動物が人のそばにいるリスク</h5><div class="ex">...keeping dangerous and, in some cases, man-eating animals in the middle of a sea of humans can be a huge risk. ... posing a danger to local citizens.<span class="ja">危険な、場合によっては人を襲う動物を人の海の真ん中で飼うのは大きなリスクになりうる。…地域住民に危険をもたらした。</span></div><p>huge risk、posing a danger to local citizens。人への危害。</p></div></div><div class="step"><span class="k g">3</span><div><h5>Yo：パンデミックの発生源になりうる</h5><div class="ex">...zoos too must be considered as a potential source of such events. Given the loss of life and economic disruption that can be brought about by pandemics,<span class="ja">動物園もそうした事態の潜在的な発生源と考えなければならない。パンデミックがもたらしうる人命の損失と経済の混乱を考えると、</span></div><p>loss of life（人命の損失）。これも人への危害。両方に共通する抽象語は ③ can potentially cause harm to people。○。</p></div></div><div class="step"><span class="k a">4</span><div><h5>残りは「片方だけ」か「本文に無い」</h5><p>①大都市に立地：David だけ。Yo は言っていない。×。②感染症の発生源：Yo だけ。David は動物が逃げる話。×。④環境保護：どちらも言っていない。×。</p></div></div></div><div class="para"><span class="a">huge risk / danger to citizens ＋ loss of life</span><span class="arr">⇒</span><span class="b">can potentially cause harm to people</span></div><button class="btn ghost block mob-only" onclick="openSheet(2)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>Both の問題は、<b>片方にしか無い具体語を消す</b>のが先。残るのは2人を包む抽象語（harm to people）です。「正しいことが書いてある」①②は片方だけなので、本文に書いてあっても答えになりません。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 3</span><span class="ans">正解 40・41＝①と④、42＝③</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル やや難 ／ 配点 4点（全部正解で得点） ／ 賛否の判定＋共通論点</span></button>
+<div class="ab"><p class="ja-q">立場：動物園を支持し積極的に維持すべきだ。___と___の意見が最もこれを支持する。この2人に共通する論点は___。</p><p class="ja-q" style="font-weight:500;font-size:14px;">40・41の選択肢</p><ul class="ja-opts"><li class="right"><span class="circ">1</span>アヤの</li><li class=""><span class="circ">2</span>デイビッドの</li><li class=""><span class="circ">3</span>インディラの</li><li class="right"><span class="circ">4</span>ケニヤッタの</li><li class=""><span class="circ">5</span>ヨーの</li></ul><p class="ja-q" style="font-weight:500;font-size:14px;">42の選択肢</p><ul class="ja-opts"><li class=""><span class="circ">1</span>国の文化は動物園に反映される</li><li class=""><span class="circ">2</span>動物園運営では動物福祉が最優先だ</li><li class="right"><span class="circ">3</span>知識の共有は動物園の重要な機能だ</li><li class=""><span class="circ">4</span>動物園は地域経済の有用なデータを提供する</li></ul><div class="brain"><div class="step"><span class="k p">1</span><div><h5>先読み：まず5人を賛成／反対に仕分ける</h5><p>各段落の末尾1文で判定。</p><ul class="elim"><li><span class="mk o">賛成</span><div>Aya<div class="why">boost local economies / Other benefits ... research, education。利点を並べている。</div></div></li><li><span class="mk x">反対</span><div>David<div class="why">Perhaps we should close down zoos。閉鎖すべき。</div></div></li><li><span class="mk x">反対</span><div>Indira<div class="why">Zoos are prisons。虐待。</div></div></li><li><span class="mk o">賛成</span><div>Kenyatta<div class="why">important function in international relations / improves global connectivity。</div></div></li><li><span class="mk x">慎重</span><div>Yo<div class="why">potential source of pandemics / governments must guarantee。規制が必要。支持ではない。</div></div></li></ul><p>賛成は Aya と Kenyatta。40・41 ＝ ①と④。</p></div></div><div class="step"><span class="k g">2</span><div><h5>2人に共通する論点を探す</h5><div class="ex">Aya: collaborating with universities on research, or with schools on children’s education. ／ Kenyatta: promote the mutual flow of zoological information<span class="ja">アヤ：大学との研究協力、学校での子どもの教育 ／ ケニヤッタ：動物学的情報の相互流通を促進する</span></div><p>Aya の最終文：大学との研究協力、学校との教育。Kenyatta の最終文：動物学の情報の相互流通。どちらも<b>知識・情報の共有</b>。42 ＝ ③ sharing knowledge is an important function of a zoo。</p></div></div><div class="step"><span class="k a">3</span><div><h5>42の残りを落とす</h5><p>①国の文化：Kenyatta は「国の象徴となる動物」の話はするが文化とは言っていないし、Aya は無関係。×。②動物福祉が最優先：Aya は animal medical programs に触れるが「最優先」とは言わず、Kenyatta は無関係。×。④地域経済のデータ：Aya は boost local economies（経済を押し上げる）と言うが「データを提供」ではない。Kenyatta は無関係。×。</p><p>共通論点は「<b>2人とも</b>言っていること」。片方しか言っていないものは、どんなに本文に近くても×。</p></div></div></div><div class="para"><span class="a">research with universities / education ＋ mutual flow of zoological information</span><span class="arr">⇒</span><span class="b">sharing knowledge is an important function of a zoo</span></div><button class="btn ghost block mob-only" onclick="openSheet(3)">本文の該当箇所を見る</button><div class="callout purple"><div class="ttl">この問題の学び</div><p>立場を決める問題は、<b>①各段落の末尾で賛否を判定 → ②賛成者の最終文同士を見比べる</b>の2手順。共通論点は、2人の段落の最終文に並んでいることが多い。片方だけに当てはまる選択肢（④の経済）は、本文に近く見えても共通ではないので×。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 4</span><span class="ans">正解 ③</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点 ／ 資料Aの根拠</span></button>
+<div class="ab"><p class="ja-q">資料Aに基づくと、理由2に最も適切なのはどれか。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>動物園が生息域内環境で活動したおかげで、希少な鳥が野生に再出現した。</li><li class=""><span class="circ">2</span>レッドリストの動物の研究に資金を出すのは、多くの動物園が歩んできた道だ。</li><li class="right"><span class="circ">3</span>動物園のおかげで、一部の絶滅危惧種の観察記録が増えているようだ。</li><li class=""><span class="circ">4</span>動物園は幅広い捨てられた動物の命を守り、救ってきた。</li></ul><div class="brain"><div class="step"><span class="k o">1</span><div><h5>先読み：Source A の結論 ＝ 日本の動物園の成果</h5><p>Source A は「絶滅危惧種が増えている → 動物園に保全の役割 → 2つの方法（on-site / off-site） → 日本の動物園は off-site で成果（トキ・コウノトリ）」。結論は最後の3文。</p></div></div><div class="step"><span class="k g">2</span><div><h5>トキとコウノトリの数が増えている</h5><div class="ex">Japanese zoos have been actively involved in off-site conservation and have had positive results. ... Although they once disappeared from the natural world, their numbers have been growing due to the efforts of zoos.<span class="ja">日本の動物園は生息域外保全に積極的に関わり、良い成果を上げてきた。…一度は自然界から姿を消したが、動物園の努力によってその数は増えている。</span></div><p>一度は自然界から消えたが、動物園の努力で数が増えている ＝ ③「動物園のおかげで絶滅危惧種の観察記録が増えている」。○。</p></div></div><div class="step"><span class="k a">3</span><div><h5>①が最大の引っかけ</h5><p>①「on-site（生息域内）で活動したおかげで」：日本の動物園が関わったのは <b>off-site</b>（生息域外＝飼育下で繁殖して野生に戻す）。本文は「前者（on-site）は自然環境で、後者（off-site）は飼育下で」と定義している。鳥が再出現したという結果は合っているが、原因の方法名が逆。×。②研究資金：本文に無い。×。④捨てられた動物：abandoned（捨てられた）ではなく endangered（絶滅危惧）。×。</p></div></div></div><div class="para"><span class="a">their numbers have been growing due to the efforts of zoos</span><span class="arr">⇒</span><span class="b">recorded observations of some endangered species seem to be on the rise</span></div><button class="btn ghost block mob-only" onclick="openSheet(4)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>資料問題は、<b>結論の文</b>を言い換えた選択肢を選びますが、①のように「結果は合っているが原因の用語が逆」という誤答が混ざります。the former / the latter で定義された用語は、どちらがどちらかを確認してから選択肢を見る。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 5</span><span class="ans">正解 ②</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル やや難 ／ 配点 4点 ／ 資料Bの根拠（表の読み取り）</span></button>
+<div class="ab"><p class="ja-q">理由3「動物園には子どもが見たい動物がいる」を、資料Bに基づいて最もよく支持するのはどれか。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>表によれば、パンダ・ライオン・ゾウが動物園の動物で最も人気の3つ。それぞれ半数超の子どもに好かれたことが人気を明確に示す。</li><li class="right"><span class="circ">2</span>上位2つは人間のそばで暮らす動物だが、日本では上位10のうち3分の2超が動物園でしか見られない。これは動物園が幼い子どもにとって特別な場所であることを示す。</li><li class=""><span class="circ">3</span>猫・犬・ウサギは子どもに人気で動物園の外で見られる。ペットを飼う人は減っていると言われるが、子どもの間での人気は高まっている。</li><li class=""><span class="circ">4</span>子どもの50%超が猫か犬が好きと答えたが、他の上位10の動物は動物園でしか見られない。これは動物園が子どもの好む多様な動物を見る独自の機会を提供することを意味する。</li></ul><div class="brain"><div class="step"><span class="k ">1</span><div><h5>先読み：主張は「子どもが見たい動物が動物園にいる」。表の✓（動物園でしか見られない）が鍵</h5><p>表：上位10のうち✓は パンダ・ライオン・ゾウ・キリン・コアラ・トラ・カンガルー ＝ 7つ。✓なしは 猫・犬・ウサギ ＝ 3つ。母数は300人。</p></div></div><div class="step"><span class="k g">2</span><div><h5>②の数字を検証する</h5><div class="ex">Checked animals are those that, in Japan, can be seen only in zoos (including safari parks).<span class="ja">✓の動物は、日本では動物園（サファリパークを含む）でしか見られないものである。</span></div><p>「上位2つ（猫・犬）は人間のそばで暮らす」→ ✓なし。正しい。「上位10のうち3分の2超が動物園でしか見られない」→ 7/10 ＝ 70% ＞ 66.7%。正しい。主張（子どもが見たい動物が動物園にいる）を直接支える。② ○。</p></div></div><div class="step"><span class="k a">3</span><div><h5>①④は数字が間違い、③は主張と無関係</h5><p>①「それぞれ半数超の子どもに好かれた」：300人中、パンダ157（52%）は半数超だが、ライオン143（48%）とゾウ130（43%）は半数未満。数字が誤り。×。④「他の上位10の動物は<b>全部</b>動物園でしか見られない」：ウサギ（6位）は✓なし。誤り。さらに「50%超が猫か犬」も表からは読めない（複数回答で各動物への「好き」の数なので、人数の割合は出せない）。×。③猫・犬・ウサギは動物園の外で見られる動物の話。「動物園に見たい動物がいる」の支持にならない。しかもペット飼育の減少は表に無い。×。</p></div></div></div><div class="para"><span class="a">7 of the top 10 are checked (zoo-only)</span><span class="arr">⇒</span><span class="b">more than two thirds of the top 10 animals can only be seen in zoos</span></div><button class="btn ghost block mob-only" onclick="openSheet(5)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>表を使った「主張を支える文」問題は、<b>選択肢の数字を自分で計算して検証</b>します。①の「半数超」は 143/300 で崩れ、④の「他は全部」はウサギで崩れる。もっともらしい文ほど、数字を1つ検算する。これが第8問最後の4点を取る方法です。</p></div></div></div></section><section class="section" id="s4"><div class="sec-head"><span class="sec-no">STEP 4</span><h2 class="sec-title">意見の地図 ― 5人の仕分けと設問の役割</h2><span class="sec-sub">Mapping opinions</span></div><p>第8問は「複数の意見を読んで立場を取り、資料で補強する」という、英語のエッセイ作成の流れそのものです。この構造を知っておくと、初見でも各設問の役割が見えます。</p>
+<div class="fo">
+<div class="col fact"><h4>5人の意見を10秒で仕分ける表</h4><ul>
+<li><b>Aya</b>（行政アドバイザー）賛成：経済効果、研究・教育への貢献</li>
+<li><b>David</b>（都市計画）反対：危険な動物が逃げるリスク → 閉鎖すべき</li>
+<li><b>Indira</b>（学生）反対：動物園は牢獄、残酷</li>
+<li><b>Kenyatta</b>（記者）賛成：外交（パンダ政治）、情報の交流</li>
+<li><b>Yo</b>（会社員）慎重：パンデミックの発生源 → 政府が規制を</li>
+</ul></div>
+<div class="col op"><h4>設問の役割（エッセイ作成の流れ）</h4><ul>
+<li><b>問1</b>：1人の主張を要約する（段落の最初と最後）</li>
+<li><b>問2</b>：2人の共通点を抽象化する（片方だけの具体語を消す）</li>
+<li><b>問3</b>：立場に合う人を選び、共通論点を特定する（賛否判定 → 最終文比較）</li>
+<li><b>問4</b>：文章資料から理由を取る（結論文の言い換え、用語の逆転に注意）</li>
+<li><b>問5</b>：表から理由を取る（選択肢の数字を検算）</li>
+</ul></div></div><div class="callout amber"><div class="ttl">「共通点」問題の鉄則：具体を消して抽象を残す</div><p>問2（David と Yo）も問3の42（Aya と Kenyatta）も、答えは2人を包む抽象語（harm to people／sharing knowledge）です。片方の具体語（city／disease／economies）を使った選択肢は、本文に書いてあっても共通点ではない。<b>両方の段落で指させる語だけが残る</b>。</p></div><p style="margin-top:18px;"><b>10秒ドリル</b>：各人の段落の末尾1文から、動物園に賛成か反対かを判定してください。</p><div class="drill"><div class="drill-row" data-a="a"><div class="s">“Other benefits provided by zoos include collaborating with universities on research, or with schools on children’s education.”</div><div class="btns"><button onclick="drill(this,'a')">賛成</button><button onclick="drill(this,'b')">反対・慎重</button></div><div class="res">benefits（利点）を列挙している。賛成。Aya。</div></div><div class="drill-row" data-a="b"><div class="s">“Perhaps we should close down zoos for safety reasons.”</div><div class="btns"><button onclick="drill(this,'a')">賛成</button><button onclick="drill(this,'b')">反対・慎重</button></div><div class="res">close down（閉鎖）すべき。反対。David。</div></div><div class="drill-row" data-a="a"><div class="s">“This can also help promote the mutual flow of zoological information that improves global connectivity.”</div><div class="btns"><button onclick="drill(this,'a')">賛成</button><button onclick="drill(this,'b')">反対・慎重</button></div><div class="res">help promote（促進に役立つ）。賛成。Kenyatta。</div></div><div class="drill-row" data-a="b"><div class="s">“...governments around the world must guarantee that proper procedures are followed at zoos ...”</div><div class="btns"><button onclick="drill(this,'a')">賛成</button><button onclick="drill(this,'b')">反対・慎重</button></div><div class="res">規制が必要という慎重論。支持する立場ではない。Yo。</div></div></div></section><section class="section" id="s5"><div class="sec-head"><span class="sec-no">STEP 5</span><h2 class="sec-title">全訳 ― 該当箇所を色で確認する</h2><span class="sec-sub">Full translation</span></div><p class="note">色の下線は各設問の根拠箇所です。<mark class="m1">問1</mark>・<mark class="m2">問2</mark>・<mark class="m3">問3</mark>・<mark class="m4">問4</mark>・<mark class="m5">問5</mark>。問2と問3の根拠が「2人の段落にまたがっている」ことを確かめてください。</p>
+<div class="trtools"><button class="toggle" id="hideEn" onclick="toggleEn(this)">英文を隠して和訳だけ読む</button></div><div class="tr" id="tr"><div class="pair"><div class="pn">リード文</div><div class="e">You are working on an essay about zoos. You will follow the steps below: Step 1: Read a range of opinions gathered from the Internet about the pros and cons of zoos. Step 2: Take a position on zoos. Step 3: Create an outline of your essay using additional sources.</div><div class="j">あなたは動物園についてのエッセイに取り組んでいる。次の手順に従う。ステップ1：動物園の賛否についてインターネットで集めたさまざまな意見を読む。ステップ2：動物園について立場を決める。ステップ3：追加資料を使ってエッセイのアウトラインを作る。</div></div><div class="pair"><div class="pn">Aya（行政アドバイザー）</div><div class="e">In terms of their business practices, zoos are unusual in that, in principle, they don’t buy animals. Apart from pandas, they only exchange them with other zoos. Nevertheless, zoos boost local economies: The money saved on not having to purchase their “product” can be used for employing staff, building zoo infrastructure, or running animal medical programs. <mark class="m3">Other benefits provided by zoos include collaborating with universities on research, or with schools on children’s education.</mark></div><div class="j">事業のやり方という点で、動物園は原則として動物を買わないという点で珍しい。パンダを除けば、他の動物園と交換するだけだ。それでも動物園は地域経済を押し上げる。「商品」を購入しなくて済むことで浮いたお金は、職員の雇用、動物園のインフラ整備、動物の医療プログラムの運営に使える。<mark class="m3">動物園がもたらす他の利点には、大学との研究協力や、学校との子どもの教育における協力がある。</mark><span class="tagq t3">問3</span></div></div><div class="pair"><div class="pn">David（都市計画家）</div><div class="e">Most zoos are located in urban areas, ensuring the business is economically viable because of the large population. <mark class="m2">However, keeping dangerous and, in some cases, man-eating animals in the middle of a sea of humans can be a huge risk. In the country of Georgia, such animals as bears and lions recently escaped from Tbilisi Zoo after flooding, posing a danger to local citizens.</mark> Perhaps we should close down zoos for safety reasons.</div><div class="j">ほとんどの動物園は都市部にあり、人口が多いおかげで事業として経済的に成り立っている。<mark class="m2">しかし、危険な、場合によっては人を襲う動物を人の海の真ん中で飼うのは大きなリスクになりうる。ジョージアという国では、洪水のあとクマやライオンなどの動物がトビリシ動物園から逃げ出し、地域住民に危険をもたらした。</mark><span class="tagq t2">問2</span> 安全のために動物園を閉鎖すべきかもしれない。</div></div><div class="pair"><div class="pn">Indira（学生）</div><div class="e"><mark class="m1">Zoos are prisons for animals. Imagine being a cheetah, used to traveling long distances for food. Then imagine being locked up for the rest of your life in a relatively small space, with no choice in your food, very little stimulation, and lots of strange, noisy humans looking at you every day. We would not expose any persons to such cruel treatment. Why do so many people think it’s OK to treat animals in such a way?</mark></div><div class="j"><mark class="m1">動物園は動物の牢獄だ。食べ物を求めて長距離を移動することに慣れたチーターになったと想像してみてほしい。そして、残りの一生を比較的狭い場所に閉じ込められ、食べ物を選べず、刺激もほとんどなく、見知らぬ騒がしい人間に毎日見られていると想像してみてほしい。私たちは人間ならそんな残酷な扱いにさらさないだろう。なぜ多くの人は動物をそんなふうに扱ってもいいと思うのか。</mark><span class="tagq t1">問1</span></div></div><div class="pair"><div class="pn">Kenyatta（ジャーナリスト）</div><div class="e">Zoos perform an important function in international relations. China is well known for its “panda politics,” whereby pandas are “loaned” to overseas zoos as a part of the country’s “soft power.” Trade deals are often found where an animal is symbolic of a particular nation and is in high demand, like koalas and Australia. Animals may be temporarily swapped between countries as part of a political treaty, in the same way as art galleries exchange paintings. <mark class="m3">This can also help promote the mutual flow of zoological information that improves global connectivity.</mark></div><div class="j">動物園は国際関係において重要な機能を果たす。中国は「パンダ外交」で有名で、国の「ソフトパワー」の一環としてパンダを海外の動物園に「貸し出す」。コアラとオーストラリアのように、ある動物が特定の国の象徴で需要が高い場合、貿易取引が行われることが多い。美術館が絵画を交換するのと同じように、政治的な条約の一部として動物が国家間で一時的に交換されることもある。<mark class="m3">これはまた、世界のつながりを強める動物学的情報の相互流通を促進するのにも役立つ。</mark><span class="tagq t3">問3</span></div></div><div class="pair"><div class="pn">Yo（会社員）</div><div class="e">One possible cause of pandemics is the migration of an animal virus to humans. <mark class="m2">While so-called “virus jumping” can happen in the wild, or at markets where live animals are sold, zoos too must be considered as a potential source of such events. Given the loss of life and economic disruption that can be brought about by pandemics,</mark> governments around the world must guarantee that proper procedures are followed at zoos and safari parks in order to ensure such a leap between species cannot occur.</div><div class="j">パンデミックの原因の1つとして考えられるのは、動物のウイルスが人間に移ることだ。<mark class="m2">いわゆる「ウイルスの飛び移り」は野生でも、生きた動物が売られる市場でも起こりうるが、動物園もそうした事態の潜在的な発生源と考えなければならない。パンデミックがもたらしうる人命の損失と経済の混乱を考えると、</mark><span class="tagq t2">問2</span>世界中の政府は、種を超えたそうした飛び移りが起こらないよう、動物園やサファリパークで適切な手順が守られることを保証しなければならない。</div></div><div class="pair"><div class="pn">Source A</div><div class="e">According to the Red List published by the International Union for Conservation of Nature, more than 42,000 species were regarded as threatened with extinction in 2022, compared to approximately 24,000 in 2016. Recently, zoos have been expected to play a more active role in animal species conservation. To prevent endangered animals from becoming extinct, and to restore their populations, two methods have been adopted: on-site and off-site conservation. The former tries to preserve species through working in their natural surroundings, while the latter tries to protect and breed species in captivity and aims to return them back to the wild. <mark class="m4">Japanese zoos have been actively involved in off-site conservation and have had positive results. Two good examples are the crested ibis (toki) and the white stork (kounotori). Although they once disappeared from the natural world, their numbers have been growing due to the efforts of zoos.</mark></div><div class="j">国際自然保護連合が発表するレッドリストによれば、2022年には42,000種を超える種が絶滅の危機にあるとみなされ、2016年の約24,000種から増えている。近年、動物園は動物種の保全においてより積極的な役割を果たすことが期待されている。絶滅危惧動物の絶滅を防ぎ、個体数を回復させるために、生息域内保全と生息域外保全という2つの方法が採用されてきた。前者は自然環境の中で活動して種を守ろうとし、後者は飼育下で種を保護・繁殖させ、野生に戻すことを目指す。<mark class="m4">日本の動物園は生息域外保全に積極的に関わり、良い成果を上げてきた。良い例がトキとコウノトリだ。一度は自然界から姿を消したが、動物園の努力によってその数は増えている。</mark><span class="tagq t4">問4</span></div></div><div class="pair"><div class="pn">Source B</div><div class="e">Kids like animals, but which animals do they like? Three hundred Japanese children aged three to six were shown various animals and asked whether they liked them. The number of “likes” for each animal was noted and the top 10 are shown in the table. <mark class="m5">Checked animals are those that, in Japan, can be seen only in zoos (including safari parks).</mark><br>1 cat 205 / 2 dog 175 / 3 panda 157 ✓ / 4 lion 143 ✓ / 5 elephant 130 ✓ / 6 rabbit 110 / 7 giraffe 80 ✓ / 8 koala 65 ✓ / 9 tiger 52 ✓ / 10 kangaroo 38 ✓</div><div class="j">子どもは動物が好きだが、どの動物が好きなのか。3〜6歳の日本の子ども300人にさまざまな動物を見せ、好きかどうかを尋ねた。各動物への「好き」の数を記録し、上位10を表に示す。<mark class="m5">✓の動物は、日本では動物園（サファリパークを含む）でしか見られないものである。</mark><span class="tagq t5">問5</span><br>1 猫 205 ／ 2 犬 175 ／ 3 パンダ 157 ✓ ／ 4 ライオン 143 ✓ ／ 5 ゾウ 130 ✓ ／ 6 ウサギ 110 ／ 7 キリン 80 ✓ ／ 8 コアラ 65 ✓ ／ 9 トラ 52 ✓ ／ 10 カンガルー 38 ✓</div></div></div></section><section class="section" id="s6"><div class="sec-head"><span class="sec-no">STEP 6</span><h2 class="sec-title">語句 ― 意見文の構造語と抽象化の語を優先して覚える</h2><span class="sec-sub">Vocabulary</span></div><p class="note">第8問は「意見文の構造語」と「賛否・抽象化の語」を優先して覚えます。</p><div class="vgroup">今回の言い換えペア（最優先）</div><div class="vocab"><div><span class="w">cruel treatment ／ mistreatment</span><span class="pos">名</span><span class="m">残酷な扱い／虐待</span></div><div><span class="w">huge risk / danger / loss of life ／ harm to people</span><span class="pos">熟</span><span class="m">リスク・危険・人命の損失／人への危害</span></div><div><span class="w">research / education ＋ flow of information ／ sharing knowledge</span><span class="pos">熟</span><span class="m">研究・教育＋情報の流通／知識の共有</span></div><div><span class="w">numbers have been growing ／ observations on the rise</span><span class="pos">熟</span><span class="m">数が増えている／観察記録が増加</span></div><div><span class="w">7 of the top 10 ／ more than two thirds</span><span class="pos">熟</span><span class="m">10のうち7／3分の2超</span></div></div><div class="vgroup">意見文の構造語</div><div class="vocab"><div><span class="w">pros and cons</span><span class="pos">名</span><span class="m">賛否両論</span></div><div><span class="w">take a position</span><span class="pos">熟</span><span class="m">立場を取る</span></div><div><span class="w">in terms of ～</span><span class="pos">熟</span><span class="m">〜の点で</span></div><div><span class="w">in principle</span><span class="pos">熟</span><span class="m">原則として</span></div><div><span class="w">Apart from ～</span><span class="pos">熟</span><span class="m">〜を除いて</span></div><div><span class="w">Nevertheless</span><span class="pos">副</span><span class="m">それにもかかわらず</span></div><div><span class="w">However</span><span class="pos">副</span><span class="m">しかし</span></div><div><span class="w">Perhaps</span><span class="pos">副</span><span class="m">おそらく</span></div><div><span class="w">While ～</span><span class="pos">接</span><span class="m">〜である一方</span></div><div><span class="w">Given ～</span><span class="pos">前</span><span class="m">〜を考えると</span></div><div><span class="w">the former / the latter</span><span class="pos">名</span><span class="m">前者／後者</span></div><div><span class="w">compared to ～</span><span class="pos">熟</span><span class="m">〜と比べて</span></div><div><span class="w">Although ～</span><span class="pos">接</span><span class="m">〜だけれども</span></div></div><div class="vgroup">本文</div><div class="vocab"><div><span class="w">business practice</span><span class="pos">名</span><span class="m">事業のやり方</span></div><div><span class="w">boost</span><span class="pos">動</span><span class="m">押し上げる</span></div><div><span class="w">infrastructure</span><span class="pos">名</span><span class="m">インフラ</span></div><div><span class="w">collaborate with ～</span><span class="pos">熟</span><span class="m">〜と協力する</span></div><div><span class="w">urban</span><span class="pos">形</span><span class="m">都市の</span></div><div><span class="w">viable</span><span class="pos">形</span><span class="m">実行可能な、成り立つ</span></div><div><span class="w">man-eating</span><span class="pos">形</span><span class="m">人を襲う</span></div><div><span class="w">pose a danger</span><span class="pos">熟</span><span class="m">危険をもたらす</span></div><div><span class="w">close down</span><span class="pos">熟</span><span class="m">閉鎖する</span></div><div><span class="w">prison</span><span class="pos">名</span><span class="m">牢獄</span></div><div><span class="w">lock up</span><span class="pos">熟</span><span class="m">閉じ込める</span></div><div><span class="w">stimulation</span><span class="pos">名</span><span class="m">刺激</span></div><div><span class="w">expose A to B</span><span class="pos">熟</span><span class="m">AをBにさらす</span></div><div><span class="w">international relations</span><span class="pos">名</span><span class="m">国際関係</span></div><div><span class="w">loan</span><span class="pos">動</span><span class="m">貸し出す</span></div><div><span class="w">soft power</span><span class="pos">名</span><span class="m">ソフトパワー</span></div><div><span class="w">symbolic of ～</span><span class="pos">熟</span><span class="m">〜の象徴の</span></div><div><span class="w">in high demand</span><span class="pos">熟</span><span class="m">需要が高い</span></div><div><span class="w">treaty</span><span class="pos">名</span><span class="m">条約</span></div><div><span class="w">mutual</span><span class="pos">形</span><span class="m">相互の</span></div><div><span class="w">zoological</span><span class="pos">形</span><span class="m">動物学の</span></div><div><span class="w">connectivity</span><span class="pos">名</span><span class="m">つながり</span></div><div><span class="w">pandemic</span><span class="pos">名</span><span class="m">パンデミック</span></div><div><span class="w">migration</span><span class="pos">名</span><span class="m">移動</span></div><div><span class="w">potential</span><span class="pos">形</span><span class="m">潜在的な</span></div><div><span class="w">disruption</span><span class="pos">名</span><span class="m">混乱</span></div><div><span class="w">guarantee</span><span class="pos">動</span><span class="m">保証する</span></div><div><span class="w">procedure</span><span class="pos">名</span><span class="m">手順</span></div><div><span class="w">species</span><span class="pos">名</span><span class="m">種</span></div><div><span class="w">threatened with extinction</span><span class="pos">熟</span><span class="m">絶滅の危機にある</span></div><div><span class="w">conservation</span><span class="pos">名</span><span class="m">保全</span></div><div><span class="w">endangered</span><span class="pos">形</span><span class="m">絶滅危惧の</span></div><div><span class="w">restore</span><span class="pos">動</span><span class="m">回復させる</span></div><div><span class="w">in captivity</span><span class="pos">熟</span><span class="m">飼育下で</span></div><div><span class="w">breed</span><span class="pos">動</span><span class="m">繁殖させる</span></div><div><span class="w">crested ibis</span><span class="pos">名</span><span class="m">トキ</span></div><div><span class="w">white stork</span><span class="pos">名</span><span class="m">コウノトリ</span></div></div><div class="vgroup">選択肢</div><div class="vocab"><div><span class="w">summarize</span><span class="pos">動</span><span class="m">要約する</span></div><div><span class="w">mistreatment</span><span class="pos">名</span><span class="m">虐待</span></div><div><span class="w">observation</span><span class="pos">名</span><span class="m">観察</span></div><div><span class="w">infectious disease</span><span class="pos">名</span><span class="m">感染症</span></div><div><span class="w">welfare</span><span class="pos">名</span><span class="m">福祉</span></div><div><span class="w">priority</span><span class="pos">名</span><span class="m">優先事項</span></div><div><span class="w">reappear</span><span class="pos">動</span><span class="m">再出現する</span></div><div><span class="w">funding</span><span class="pos">名</span><span class="m">資金提供</span></div><div><span class="w">pursue</span><span class="pos">動</span><span class="m">追求する</span></div><div><span class="w">abandoned</span><span class="pos">形</span><span class="m">捨てられた</span></div><div><span class="w">reveal</span><span class="pos">動</span><span class="m">明らかにする</span></div><div><span class="w">two thirds</span><span class="pos">名</span><span class="m">3分の2</span></div><div><span class="w">reportedly</span><span class="pos">副</span><span class="m">伝えられるところでは</span></div><div><span class="w">unique opportunity</span><span class="pos">名</span><span class="m">独自の機会</span></div></div></section><section class="section" id="s7"><div class="sec-head"><span class="sec-no">STEP 7</span><h2 class="sec-title">持ち帰る3つの武器 と 自己点検</h2><span class="sec-sub">Take-aways</span></div><div class="weapons"><div class="weapon"><span class="wn">武器 1</span><h4>設問が指名した人の段落だけを読む。全員の要約表は作らない</h4><p>問1は Indira、問2は David と Yo、問3は賛成の2人。指名されていない人の段落は精読しない。</p></div><div class="weapon"><span class="wn">武器 2</span><h4>共通点は「片方だけの具体語を消して、両方を包む抽象語を残す」</h4><p>harm to people、sharing knowledge。本文に書いてある正しいことでも、片方しか言っていなければ共通点ではない。</p></div><div class="weapon"><span class="wn">武器 3</span><h4>資料は結論文の言い換え＋数字の検算。用語の逆転（on-site / off-site）に注意</h4><p>表問題は選択肢の「半数超」「全部」を自分で計算して崩す。もっともらしい文ほど1つ検算する。</p></div></div><p style="margin-top:22px;"><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。チェックはこの端末に保存されます。</p><ul class="check" id="check"><li><input type="checkbox"><span>リード文の Step 1〜3 で、どの設問がどの Step に対応するかを把握した</span></li><li><input type="checkbox"><span>5人の意見を「肩書き＋賛否＋キーワード1語」だけで先に仕分けた</span></li><li><input type="checkbox"><span>問1で、Indira の段落の最初と最後の文（主張）から要約を選んだ</span></li><li><input type="checkbox"><span>問2で、片方にしか無い具体語（city / disease）を消してから共通点を選んだ</span></li><li><input type="checkbox"><span>問3で、各段落の末尾1文から賛否を判定し、賛成の2人を10秒で絞った</span></li><li><input type="checkbox"><span>問3の42で、2人の最終文を見比べて共通論点（知識の共有）を選んだ</span></li><li><input type="checkbox"><span>問4で、the former / the latter の定義を確認し、on-site と off-site を取り違えなかった</span></li><li><input type="checkbox"><span>問5で、①の「半数超」と④の「他は全部」を数字で検算して崩した</span></li><li><input type="checkbox"><span>16分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li></ul><div class="check-foot"><span id="checkfoot">0 / 0</span><span class="bar"><i id="checkbar"></i></span></div><div class="callout "><div class="ttl">次に向けて</div><p>8個以上なら第8問の手順は入っています。次は同じ手順を「初見の複数意見問題」で再現できるかを試してください。7個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度16分で解き直してください。測っているのは正解ではなく、<b>指名された段落だけを読めたか</b>です。</p></div><button class="btn ghost block" style="margin-top:16px;" onclick="resetAll()">解答・チェックをリセットしてもう一度解く</button></section>
+</main>
+<footer class="footer">出典：令和7年度 大学入学共通テスト 追試験 英語（リーディング）第8問<br>学部別合格設計塾 THINKING ― 受験は根性じゃなく、設計。</footer>
+<div class="dock" role="toolbar" aria-label="クイック操作"><div class="dock-in">
+<button class="btn orange" onclick="openSheet(0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>本文を開く</button>
+<button class="btn ghost icon" onclick="jumpNext()" aria-label="次のステップへ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>次へ</button>
+<button class="btn ghost icon" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="先頭へ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></button>
+</div></div>
+<div class="scrim" id="scrim" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="本文"><div class="grip"></div>
+<div class="sh"><span class="t">本文 ― Opinions on Zoos ＋ Sources</span><button class="toggle on" id="hlToggle" onclick="toggleHl()">根拠の色を表示</button><button class="close" onclick="closeSheet()" aria-label="閉じる"><svg viewBox="0 0 16 16" fill="none" stroke="#2c2520" stroke-width="2" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+<div class="sheet-body show-hl" id="sheetBody"><div class="qtabs"><button data-q="0" class="on" onclick="filterQ(0)">全部</button><button data-q="1" onclick="filterQ(1)">問1</button><button data-q="2" onclick="filterQ(2)">問2</button><button data-q="3" onclick="filterQ(3)">問3</button><button data-q="4" onclick="filterQ(4)">問4</button><button data-q="5" onclick="filterQ(5)">問5</button></div>
+<p class="lead-text">You are working on an essay about <b>zoos</b>. You will follow the steps below:<br>Step 1: Read a range of opinions gathered from the Internet about the pros and cons of zoos.<br>Step 2: Take a position on zoos.<br>Step 3: Create an outline of your essay using additional sources.</p>
+<p><b>[Step 1] Read a range of opinions</b></p>
+<div class="op"><div class="who">Aya <span>(local government advisor)</span></div>In terms of their business practices, zoos are unusual in that, in principle, they don’t buy animals. Apart from pandas, they only exchange them with other zoos. Nevertheless, zoos boost local economies: The money saved on not having to purchase their “product” can be used for employing staff, building zoo infrastructure, or running animal medical programs. <mark class="m3">Other benefits provided by zoos include collaborating with universities on research, or with schools on children’s education.</mark></div>
+<div class="op"><div class="who">David <span>(urban planner)</span></div>Most zoos are located in urban areas, ensuring the business is economically viable because of the large population. <mark class="m2">However, keeping dangerous and, in some cases, man-eating animals in the middle of a sea of humans can be a huge risk. In the country of Georgia, such animals as bears and lions recently escaped from Tbilisi Zoo after flooding, posing a danger to local citizens.</mark> Perhaps we should close down zoos for safety reasons.</div>
+<div class="op"><div class="who">Indira <span>(student)</span></div><mark class="m1">Zoos are prisons for animals. Imagine being a cheetah, used to traveling long distances for food. Then imagine being locked up for the rest of your life in a relatively small space, with no choice in your food, very little stimulation, and lots of strange, noisy humans looking at you every day. We would not expose any persons to such cruel treatment. Why do so many people think it’s OK to treat animals in such a way?</mark></div>
+<div class="op"><div class="who">Kenyatta <span>(journalist)</span></div>Zoos perform an important function in international relations. China is well known for its “panda politics,” whereby pandas are “loaned” to overseas zoos as a part of the country’s “soft power.” Trade deals are often found where an animal is symbolic of a particular nation and is in high demand, like koalas and Australia. Animals may be temporarily swapped between countries as part of a political treaty, in the same way as art galleries exchange paintings. <mark class="m3">This can also help promote the mutual flow of zoological information that improves global connectivity.</mark></div>
+<div class="op"><div class="who">Yo <span>(office worker)</span></div>One possible cause of pandemics is the migration of an animal virus to humans. <mark class="m2">While so-called “virus jumping” can happen in the wild, or at markets where live animals are sold, zoos too must be considered as a potential source of such events. Given the loss of life and economic disruption that can be brought about by pandemics,</mark> governments around the world must guarantee that proper procedures are followed at zoos and safari parks in order to ensure such a leap between species cannot occur.</div>
+<div class="q"><p class="stem"><span class="qn">問 1</span>Which of the following best summarizes Indira’s opinion? <span class="box">38</span></p><ol><li><span class="circ">1</span>Humans and animals should have different rights.</li><li><span class="circ">2</span>Mistreatment of animals is a serious problem.</li><li><span class="circ">3</span>Observation is key to understanding animal suffering.</li><li><span class="circ">4</span>Prisons are necessary to keep society safe.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 2</span>Both David and Yo mention that zoos <span class="box">39</span></p><ol><li><span class="circ">1</span>are often located in large cities</li><li><span class="circ">2</span>can be the source of infectious diseases</li><li><span class="circ">3</span>can potentially cause harm to people</li><li><span class="circ">4</span>work toward protecting the environment</li></ol></div>
+<p style="margin-top:16px;"><b>[Step 2] Take a position</b></p>
+<div class="q"><p class="stem"><span class="qn">問 3</span>Now that you have understood the various opinions, you have taken a position on zoos and written some notes below. Choose the best options to complete <span class="box">40</span>〜<span class="box">42</span>. (You must have <u class="kw">all</u> of 40〜42 correct to get points.)</p>
+<div class="doc memo" style="margin:10px 0;"><b>POSITION: We should support and actively maintain zoos.</b><br>● <span class="box">40</span> and <span class="box">41</span> opinions support this the most.<br>● An argument common to these two people is that <span class="box">42</span>.</div>
+<p>Options for <span class="box">40</span> and <span class="box">41</span> (the order does not matter):</p><ol><li><span class="circ">1</span>Aya’s</li><li><span class="circ">2</span>David’s</li><li><span class="circ">3</span>Indira’s</li><li><span class="circ">4</span>Kenyatta’s</li><li><span class="circ">5</span>Yo’s</li></ol><p style="margin-top:8px;">Options for <span class="box">42</span>:</p><ol><li><span class="circ">1</span>a country’s culture is reflected in its zoos</li><li><span class="circ">2</span>animal welfare is the priority when running a zoo</li><li><span class="circ">3</span>sharing knowledge is an important function of a zoo</li><li><span class="circ">4</span>zoos provide useful data on local economies</li></ol></div>
+<p style="margin-top:16px;"><b>[Step 3] Create an outline of your essay</b></p>
+<div class="doc memo">
+<div class="dtitle">We should support and actively maintain zoos</div>
+<div class="lbl">Introduction</div><p>Zoos offer many different benefits and should be viewed positively for the following three reasons.</p>
+<div class="lbl">Body</div><p>REASON 1 from Step 2, based on evidence from the opinions in Step 1<br>REASON 2 (<span class="box">43</span>), based on evidence from Source A<br>REASON 3, based on evidence (<span class="box">44</span>) from Source B</p>
+<div class="lbl">Conclusion</div><p>We should continue to provide zoos with help and resources.</p>
+</div>
+<div class="doc"><div class="sub">Source A</div>
+<p>According to the Red List published by the International Union for Conservation of Nature, more than 42,000 species were regarded as threatened with extinction in 2022, compared to approximately 24,000 in 2016. Recently, zoos have been expected to play a more active role in animal species conservation. To prevent endangered animals from becoming extinct, and to restore their populations, two methods have been adopted: on-site and off-site conservation. The former tries to preserve species through working in their natural surroundings, while the latter tries to protect and breed species in captivity and aims to return them back to the wild. <mark class="m4">Japanese zoos have been actively involved in off-site conservation and have had positive results. Two good examples are the crested ibis (<i>toki</i>) and the white stork (<i>kounotori</i>). Although they once disappeared from the natural world, their numbers have been growing due to the efforts of zoos.</mark></p></div>
+<div class="doc"><div class="sub">Source B</div>
+<p>Kids like animals, but <i>which</i> animals do they like? Three hundred Japanese children aged three to six were shown various animals and asked whether they liked them. The number of “likes” for each animal was noted and the top 10 are shown in the table. <mark class="m5">Checked animals are those that, in Japan, can be seen only in zoos (including safari parks).</mark></p>
+<table class="tb"><tr><th>Rank</th><th>Animal</th><th>Likes</th><th>Zoo</th></tr>
+<tr><td>1</td><td>cat</td><td>205</td><td></td></tr><tr><td>2</td><td>dog</td><td>175</td><td></td></tr><tr><td>3</td><td>panda</td><td>157</td><td>✓</td></tr><tr><td>4</td><td>lion</td><td>143</td><td>✓</td></tr><tr><td>5</td><td>elephant</td><td>130</td><td>✓</td></tr><tr><td>6</td><td>rabbit</td><td>110</td><td></td></tr><tr><td>7</td><td>giraffe</td><td>80</td><td>✓</td></tr><tr><td>8</td><td>koala</td><td>65</td><td>✓</td></tr><tr><td>9</td><td>tiger</td><td>52</td><td>✓</td></tr><tr><td>10</td><td>kangaroo</td><td>38</td><td>✓</td></tr></table></div>
+<div class="q"><p class="stem"><span class="qn">問 4</span>Based on Source A, which of the following is the most appropriate for REASON 2? <span class="box">43</span></p><ol><li><span class="circ">1</span>Due to zoos working in on-site environments, some rare birds have reappeared in the wild.</li><li><span class="circ">2</span>Funding research on Red List animals is a path that has been pursued by many zoos.</li><li><span class="circ">3</span>Thanks to zoos, recorded observations of some endangered species seem to be on the rise.</li><li><span class="circ">4</span>Zoos have been protecting and saving the lives of a broad range of abandoned animals.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 5</span>For REASON 3, you have decided to write <i>Zoos have animals that children want to see</i>. Based on Source B, which option best supports this statement? <span class="box">44</span></p><ol><li><span class="circ">1</span>According to the table, pandas, lions, and elephants are the three most popular zoo animals. The fact that each of them was liked by more than half the kids clearly reveals their popularity.</li><li><span class="circ">2</span>Although the top two animals commonly live among humans, in Japan more than two thirds of the top 10 animals can only be seen in zoos. This suggests that zoos are special places for young children.</li><li><span class="circ">3</span>Cats, dogs, and rabbits get a lot of likes from children and can be seen outside zoos. While the number of people keeping pets is reportedly decreasing, their popularity among children is increasing.</li><li><span class="circ">4</span>While more than 50% of children answered that they liked either cats or dogs, the other top 10 animals are found only in zoos. This means that zoos provide a unique opportunity for kids to see a variety of animals they prefer.</li></ol></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+var KEY='thinking_r7_tsui_q8';
+var QUIZ=[{"label": "問 1", "slots": ["38"], "n": 4, "ans": ["2"], "ansText": "2", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}, {"label": "問 2", "slots": ["39"], "n": 4, "ans": ["3"], "ansText": "3", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}, {"label": "問 3", "slots": ["40", "41", "42"], "n": 5, "ans": ["1", "4", "3"], "ansText": "40・41＝①と④（順不同）、42＝③", "pts": 4, "mode": "mixed", "each": null, "note": "（40〜42すべて正解で4点）", "ns": [5, 5, 4], "k": 2}, {"label": "問 4", "slots": ["43"], "n": 4, "ans": ["3"], "ansText": "3", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}, {"label": "問 5", "slots": ["44"], "n": 4, "ans": ["2"], "ansText": "2", "pts": 4, "mode": "single", "each": null, "note": "", "ns": null, "k": null}];
+var TOTAL=17;
+var TSEC0=960;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return {};}}
+function save(o){try{localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
+var state=load();
+function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('on');},1800);}
+/* timer */
+var tsec=TSEC0,tid=null;
+function fmt(s){var m=Math.floor(Math.abs(s)/60),ss=Math.abs(s)%60;return (s<0?'+':'')+m+':'+(ss<10?'0':'')+ss;}
+function paintTimer(){var d=document.getElementById('tm'),c=document.getElementById('tclock');d.textContent=fmt(tsec);c.textContent=fmt(tsec);d.classList.toggle('over',tsec<0);c.classList.toggle('over',tsec<0);}
+function timer(){var btn=document.getElementById('tmbtn'),c=document.getElementById('tclock');
+  if(tid){clearInterval(tid);tid=null;btn.textContent='再開';btn.classList.remove('stop');return;}
+  btn.textContent='ストップ';btn.classList.add('stop');c.classList.add('on');
+  tid=setInterval(function(){tsec--;paintTimer();if(tsec===0)toast('目標時間を経過。そのまま続けてOK');},1000);}
+/* quiz */
+var sel={};
+function buildQuiz(){
+  var host=document.getElementById('quiz');
+  QUIZ.forEach(function(q,qi){
+    var row=document.createElement('div');row.className='quiz-row';row.dataset.qi=qi;
+    var h='<div class="qlabel"><span>'+q.label+(q.note?' <span style="font-weight:500;color:var(--ink3);font-size:12px">'+q.note+'</span>':'')+'</span><span class="st"></span></div>';
+    q.slots.forEach(function(s,si){
+      var nn=(q.ns&&q.ns[si])||q.n;
+      h+='<div class="slot"><span class="sl">'+s+'</span><div class="opts n'+nn+'" data-si="'+si+'">';
+      for(var k=1;k<=nn;k++)h+='<button class="opt" data-v="'+k+'">'+k+'</button>';
+      h+='</div></div>';
+    });
+    row.innerHTML=h;host.appendChild(row);
+    sel[qi]=new Array(q.slots.length).fill(null);
+    row.querySelectorAll('.opts').forEach(function(op){
+      var si=+op.dataset.si;
+      op.querySelectorAll('.opt').forEach(function(b){
+        b.addEventListener('click',function(){
+          if(row.dataset.graded)return;
+          op.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel');});
+          b.classList.add('sel');sel[qi][si]=b.dataset.v;
+        });
+      });
+    });
+  });
+}
+function grade(silent){
+  var unanswered=[];
+  QUIZ.forEach(function(q,qi){if(sel[qi].some(function(v){return v===null;}))unanswered.push(qi);});
+  if(unanswered.length){toast('すべての空欄に答えてから採点してください');var r=document.querySelector('.quiz-row[data-qi="'+unanswered[0]+'"]');if(r)r.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  var score=0;
+  QUIZ.forEach(function(q,qi){
+    var row=document.querySelector('.quiz-row[data-qi="'+qi+'"]');row.dataset.graded='1';
+    var mine=sel[qi],ans=q.ans.map(String),correct,earned=0;
+    if(q.mode==='set'){var a=mine.slice().sort().join(),b=ans.slice().sort().join();correct=(a===b);
+      if(q.each){ earned=0; mine.forEach(function(v){ if(ans.indexOf(v)>=0) earned+=q.each; }); if(new Set(mine).size<mine.length) earned=Math.min(earned,q.each);} else earned=correct?q.pts:0;
+    } else if(q.mode==='mixed'){var k=q.k;var a1=mine.slice(0,k).sort().join(),b1=ans.slice(0,k).sort().join();correct=(a1===b1)&&(mine.slice(k).join()===ans.slice(k).join());earned=correct?q.pts:0;}
+    else {correct=mine.join()===ans.join();earned=correct?q.pts:0;}
+    score+=earned;
+    row.querySelectorAll('.opts').forEach(function(op,si){
+      op.querySelectorAll('.opt').forEach(function(b){
+        var v=b.dataset.v;b.classList.remove('sel');
+        if(q.mode==='set'||(q.mode==='mixed'&&si<q.k)){ var pool=q.mode==='set'?ans:ans.slice(0,q.k), mpool=q.mode==='set'?mine:mine.slice(0,q.k); if(v===mine[si]&&pool.indexOf(v)>=0&&mpool.indexOf(v)===si)b.classList.add('ok'); else if(v===mine[si])b.classList.add('ng'); }
+        else { if(v===ans[si]&&v===mine[si])b.classList.add('ok'); else if(v===mine[si])b.classList.add('ng'); else if(v===ans[si])b.classList.add('hint'); }
+      });
+    });
+    if((q.mode==='set'||q.mode==='mixed')&&!correct){var k2=q.mode==='set'?ans.length:q.k;var miss=ans.slice(0,k2).filter(function(v){return mine.slice(0,k2).indexOf(v)<0;});row.querySelectorAll('.opts').forEach(function(op,si){if(si>=k2)return;op.querySelectorAll('.opt').forEach(function(b){if(miss.indexOf(b.dataset.v)>=0&&!b.classList.contains('ng')&&!b.classList.contains('ok'))b.classList.add('hint');});});}
+    var st=row.querySelector('.st');
+    st.textContent=correct?'正解（'+earned+'点）':(earned>0?'一部正解（'+earned+'点）正解 '+q.ansText:'不正解（正解 '+q.ansText+'）');
+    st.className='st '+(correct?'ok':'ng');
+  });
+  document.getElementById('score').textContent=score+' / '+TOTAL+'点';
+  var r=score/TOTAL,msg=r>=1?'全問正解。次は「どの順番で目を動かしたか」を解説と照らし合わせてください。':r>=0.7?'合格圏。落とした設問が、どのタイプだったかを確認してください。':r>=0.45?'半分前後。この大問の「読む順番」が入っていない可能性が高いです。STEP 1を読んでから解説へ。':'手順を入れる前の状態です。ここから伸びます。STEP 1を読んでからSTEP 3の脳内実況を追ってください。';
+  document.getElementById('scoremsg').textContent=msg;
+  document.getElementById('gradebtn').textContent='採点済み';
+  if(tid){clearInterval(tid);tid=null;document.getElementById('tmbtn').textContent='終了';document.getElementById('tmbtn').classList.remove('stop');}
+  state.sel=sel;state.time=tsec;save(state);
+  if(!silent)setTimeout(function(){document.getElementById('s1').scrollIntoView({behavior:'smooth'});},900);
+}
+function restoreQuiz(){
+  if(!state.sel)return;
+  var ok=true;QUIZ.forEach(function(q,qi){var s=state.sel[qi];if(!s||s.length!==q.slots.length||s.some(function(v){return v===null;}))ok=false;else sel[qi]=s.map(String);});
+  if(!ok)return;
+  tsec=typeof state.time==='number'?state.time:TSEC0;paintTimer();grade(true);
+  document.getElementById('scoremsg').textContent+='（前回の結果を表示中）';
+}
+/* accordion */
+function acc(btn){var card=btn.closest('.ans-card');var open=card.classList.toggle('open');btn.setAttribute('aria-expanded',open);if(open){setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'start'});},60);}}
+/* drill */
+function drill(btn,choice){var row=btn.closest('.drill-row'),a=row.dataset.a,res=row.querySelector('.res');
+  row.querySelectorAll('button').forEach(function(b){b.classList.remove('on','good','bad');});btn.classList.add('on',choice===a?'good':'bad');
+  res.classList.add('show');res.classList.remove('good','bad');res.classList.add(choice===a?'good':'bad');
+  var base=res.dataset.base||res.textContent;res.dataset.base=base;res.textContent=(choice===a?'正解。':'不正解。')+base;}
+/* translation */
+function toggleEn(b){var on=b.classList.toggle('on');document.querySelectorAll('#tr .pair').forEach(function(p){p.classList.toggle('hidden-en',on);});b.textContent=on?'英文を表示する':'英文を隠して和訳だけ読む';}
+/* checklist */
+var checks=document.querySelectorAll('#check li');
+function paintChecks(){var n=document.querySelectorAll('#check input:checked').length;document.getElementById('checkfoot').textContent=n+' / '+checks.length;document.getElementById('checkbar').style.width=(n*100/checks.length)+'%';}
+checks.forEach(function(li,i){var cb=li.querySelector('input');if(state.checks&&state.checks[i]){cb.checked=true;li.classList.add('done');}
+  li.addEventListener('click',function(e){if(e.target!==cb)cb.checked=!cb.checked;li.classList.toggle('done',cb.checked);state.checks=[].map.call(checks,function(l){return l.querySelector('input').checked;});save(state);paintChecks();});});
+function resetAll(){try{localStorage.removeItem(KEY);}catch(e){}location.reload();}
+/* sheet */
+var sheet=document.getElementById('sheet'),scrim=document.getElementById('scrim'),body=document.getElementById('sheetBody');
+function openSheet(q){sheet.classList.add('on');scrim.classList.add('on');document.body.classList.add('sheet-open');filterQ(q||0);
+  if(q){var el=body.querySelector('mark.m'+q);if(el){setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('pulse');setTimeout(function(){el.classList.remove('pulse');},1400);},260);}}
+  else{body.scrollTop=0;}}
+function closeSheet(){sheet.classList.remove('on');scrim.classList.remove('on');document.body.classList.remove('sheet-open');}
+function filterQ(q){body.classList.remove('f1','f2','f3','f4','f5');if(q)body.classList.add('f'+q);body.querySelectorAll('.qtabs button').forEach(function(b){b.classList.toggle('on',+b.dataset.q===q);});}
+function toggleHl(){var on=body.classList.toggle('show-hl');var t=document.getElementById('hlToggle');t.classList.toggle('on',on);t.textContent=on?'根拠の色を表示':'白文（色なし）';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet();});
+(function(){var y0=null;sheet.addEventListener('touchstart',function(e){y0=(body.scrollTop<=0)?e.touches[0].clientY:null;},{passive:true});sheet.addEventListener('touchmove',function(e){if(y0===null)return;if(e.touches[0].clientY-y0>70){closeSheet();y0=null;}},{passive:true});})();
+/* progress / nav */
+var secs=[].slice.call(document.querySelectorAll('.section')),links=[].slice.call(document.querySelectorAll('#stepnav a'));var lastCur=-1;
+function onScroll(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight);document.getElementById('pbar').style.width=(p*100)+'%';
+  var top=window.innerHeight*0.35,cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<top)cur=i;});
+  if(cur!==lastCur){lastCur=cur;links.forEach(function(a,i){a.classList.toggle('active',i===cur);});var act=links[cur],nav=document.getElementById('stepnav');nav.scrollTo({left:act.offsetLeft-nav.clientWidth/2+act.offsetWidth/2,behavior:'smooth'});}}
+var raf=null;window.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){raf=null;onScroll();});},{passive:true});
+function jumpNext(){var top=window.innerHeight*0.35,cur=-1;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<top)cur=i;});secs[Math.min(cur+1,secs.length-1)].scrollIntoView({behavior:'smooth'});}
+links.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+buildQuiz();restoreQuiz();paintChecks();onScroll();
+</script>
+</body></html>

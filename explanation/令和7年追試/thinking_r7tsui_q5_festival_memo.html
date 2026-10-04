@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fdfaf4">
+<title>共通テスト第5問攻略｜可視化リーディングで解く複数資料問題 — フェスティバルの計画メモ — オンライン塾 THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#f7f3ed; --paper:#fdfaf4; --ink:#2c2520; --ink2:#6b6155; --ink3:#9a9086; --border:#e7ddce;
+  --orange:#e85a1a; --orange-dark:#b8420f; --orange-light:#fde4d3;
+  --aqua:#3f83a0; --aqua-light:#e2eef2; --green:#3b8a5a; --green-light:#e4f2ea;
+  --amber:#b07d1e; --amber-light:#f8eed4; --purple:#7a5aa8; --purple-light:#efe8f7;
+  --red:#c0392b; --red-light:#fbe3e0;
+  --radius:16px; --radius-sm:10px;
+  --shadow:0 4px 20px rgba(80,55,25,.08); --shadow-lg:0 12px 40px rgba(80,55,25,.16);
+  --sat:env(safe-area-inset-top,0px); --sab:env(safe-area-inset-bottom,0px);
+  --topbar:52px; --tap:44px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;} *{transition:none!important;animation:none!important;}}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--ink);line-height:1.9;font-size:16px;
+  background:radial-gradient(900px 500px at 10% -5%,rgba(232,90,26,.06),transparent 55%),radial-gradient(900px 500px at 100% 8%,rgba(63,131,160,.06),transparent 55%),var(--bg);
+  -webkit-font-smoothing:antialiased;padding-bottom:calc(84px + var(--sab));overflow-x:hidden;}
+body.sheet-open{overflow:hidden;}
+.en{font-family:'Source Serif 4','Noto Serif JP',serif;}
+b,strong{font-weight:700;}
+button{font-family:inherit;-webkit-tap-highlight-color:transparent;touch-action:manipulation;}
+:focus-visible{outline:3px solid rgba(232,90,26,.35);outline-offset:2px;}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(253,250,244,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border);padding-top:var(--sat);}
+.topbar-in{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:10px;height:var(--topbar);padding:0 16px;}
+.logo{width:30px;height:30px;border-radius:8px;flex:none;background:linear-gradient(135deg,var(--orange),var(--orange-dark));display:grid;place-items:center;color:#fff;font-weight:900;font-size:15px;}
+.topbar .ttl{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0;}
+.topbar .ttl small{display:block;font-size:10.5px;color:var(--ink3);font-weight:500;line-height:1.3;}
+.tclock{font-family:'Source Serif 4',serif;font-weight:700;font-size:15px;color:var(--ink2);display:none;padding:4px 10px;border:1px solid var(--border);border-radius:999px;background:#fff;}
+.tclock.on{display:block;} .tclock.over{color:var(--red);border-color:var(--red);}
+.progress{height:3px;background:var(--border);}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--orange),var(--aqua));transition:width .2s;}
+.stepnav{position:sticky;top:calc(var(--topbar) + 3px + var(--sat));z-index:49;background:rgba(247,243,237,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--border);}
+.stepnav-in{max-width:980px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;padding:8px 16px;scrollbar-width:none;}
+.stepnav-in::-webkit-scrollbar{display:none;}
+.stepnav a{flex:none;text-decoration:none;color:var(--ink2);font-size:12.5px;font-weight:700;padding:7px 12px;border-radius:999px;border:1px solid var(--border);background:#fff;white-space:nowrap;min-height:34px;display:inline-flex;align-items:center;gap:5px;}
+.stepnav a em{font-style:normal;font-family:'Source Serif 4',serif;color:var(--orange);font-size:11.5px;}
+.stepnav a.active{background:var(--orange);border-color:var(--orange);color:#fff;} .stepnav a.active em{color:#fff;}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 40px;}
+.hero{padding:26px 0 8px;}
+.kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;color:var(--orange-dark);font-weight:700;background:var(--orange-light);padding:5px 12px;border-radius:999px;}
+.hero h1{font-family:'Noto Serif JP',serif;font-size:clamp(23px,6.2vw,31px);line-height:1.4;font-weight:700;margin-top:12px;}
+.hero h1 .accent{color:var(--orange);}
+.hero .lead{margin-top:12px;color:var(--ink2);font-size:15px;max-width:62ch;}
+.meta{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--border);font-size:12.5px;color:var(--ink2);}
+.chip i{width:8px;height:8px;border-radius:50%;background:var(--orange);display:inline-block;}
+.chip.aq i{background:var(--aqua);} .chip.gr i{background:var(--green);}
+.section{background:var(--paper);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px 18px;margin-top:20px;scroll-margin-top:calc(var(--topbar) + 60px + var(--sat));}
+@media (min-width:720px){.section{padding:30px 32px;}}
+.sec-head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px;padding-bottom:12px;border-bottom:2px solid var(--orange-light);}
+.sec-no{font-family:'Source Serif 4',serif;font-weight:700;color:var(--orange);font-size:12px;letter-spacing:.1em;border:1.5px solid var(--orange);border-radius:6px;padding:1px 8px;flex:none;}
+.sec-title{font-family:'Noto Serif JP',serif;font-size:clamp(18px,5vw,21px);font-weight:700;line-height:1.45;}
+.sec-sub{color:var(--ink3);font-size:12px;font-family:'Source Serif 4',serif;font-style:italic;width:100%;}
+@media (min-width:720px){.sec-sub{width:auto;}}
+.section p{margin-bottom:12px;} .section p:last-child{margin-bottom:0;}
+.note{color:var(--ink2);font-size:14.5px;}
+.callout{border-left:4px solid var(--orange);background:var(--orange-light);border-radius:0 var(--radius-sm) var(--radius-sm) 0;padding:13px 15px;margin:16px 0;font-size:15px;}
+.callout.aqua{border-color:var(--aqua);background:var(--aqua-light);} .callout.green{border-color:var(--green);background:var(--green-light);}
+.callout.amber{border-color:var(--amber);background:var(--amber-light);} .callout.purple{border-color:var(--purple);background:var(--purple-light);}
+.callout .ttl{font-weight:700;font-size:13.5px;margin-bottom:4px;display:flex;align-items:center;gap:8px;}
+.callout .ttl::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--orange);flex:none;}
+.callout.aqua .ttl::before{background:var(--aqua);} .callout.green .ttl::before{background:var(--green);} .callout.amber .ttl::before{background:var(--amber);} .callout.purple .ttl::before{background:var(--purple);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;cursor:pointer;border:none;border-radius:999px;padding:0 20px;min-height:var(--tap);font-size:14.5px;font-weight:700;color:#fff;background:var(--aqua);transition:transform .12s,background .12s;}
+.btn:hover{background:#316c85;} .btn:active{transform:scale(.97);}
+.btn.orange{background:var(--orange);} .btn.orange:hover{background:var(--orange-dark);}
+.btn.ghost{background:#fff;color:var(--ink2);border:1.5px solid var(--border);} .btn.ghost:hover{background:#fff;border-color:var(--ink3);}
+.btn.block{width:100%;}
+/* exam paper */
+.exam{background:#fff;border:1px solid #d9d2c6;border-radius:8px;padding:18px 16px;font-family:'Source Serif 4','Noto Serif JP',serif;font-size:16px;line-height:1.9;}
+@media (min-width:720px){.exam{padding:26px 30px;}}
+.exam .q-head{font-family:'Noto Sans JP',sans-serif;font-weight:700;font-size:15px;margin-bottom:10px;}
+.exam .q-head small{font-weight:400;color:var(--ink2);margin-left:8px;font-size:12.5px;}
+.exam p,.sheet-body p{margin-bottom:12px;}
+.lead-text{margin-bottom:14px;}
+.doc{border:1px solid #c9c2b6;padding:16px;border-radius:6px;background:#fff;margin:10px 0 14px;}
+.doc .dtitle{text-align:center;font-weight:700;font-size:17px;margin-bottom:10px;}
+.doc .dtitle.it{font-style:italic;}
+.doc .dmeta{font-style:italic;color:var(--ink2);line-height:1.7;margin-bottom:12px;font-size:14.5px;}
+.doc .by{text-align:right;font-size:14px;color:var(--ink2);margin-bottom:8px;}
+.doc h4{font-size:15px;margin:10px 0 4px;}
+.doc .sub{font-weight:700;font-style:italic;}
+.doc p:last-child{margin-bottom:0;}
+.doc.memo{font-family:'Noto Sans JP',sans-serif;background:#fffdf8;border-style:dashed;}
+.doc.memo ul{list-style:none;margin:4px 0 8px 10px;}
+.doc.memo li{padding-left:16px;position:relative;margin-bottom:3px;}
+.doc.memo li::before{content:"•";position:absolute;left:0;color:var(--ink3);}
+.doc.memo li.dash::before{content:"–";}
+.doc.memo .lbl{font-weight:700;margin-top:8px;}
+.doc.essay{display:grid;grid-template-columns:1fr;gap:0;}
+.doc.essay .body{border-bottom:1px solid #c9c2b6;padding-bottom:10px;}
+.doc.essay .cm{font-family:'Noto Sans JP',sans-serif;font-size:13.5px;color:var(--ink2);padding-top:10px;}
+.doc.essay .cm b{color:var(--ink);}
+@media (min-width:720px){.doc.essay{grid-template-columns:1fr 200px;gap:0 16px;} .doc.essay .body{border-bottom:none;border-right:1px solid #c9c2b6;padding-right:14px;} .doc.essay .cm{padding-top:0;}}
+.cmnum{font-family:'Noto Sans JP',sans-serif;font-size:11px;vertical-align:super;font-weight:700;color:var(--orange-dark);}
+.ul1{text-decoration:underline;text-underline-offset:3px;}
+.op{border:1px solid #c9c2b6;border-radius:6px;padding:10px 14px;margin-bottom:10px;background:#fff;}
+.op .who{font-weight:700;margin-bottom:2px;} .op .who span{font-weight:400;color:var(--ink2);font-size:14px;}
+table.tb{border-collapse:collapse;font-size:14px;margin:8px auto;background:#fff;}
+table.tb th,table.tb td{border:1px solid #9a9086;padding:3px 10px;text-align:center;}
+table.tb th{font-weight:700;}
+.bars{margin:8px 0 12px;font-family:'Noto Sans JP',sans-serif;font-size:13px;}
+.bar-row{display:grid;grid-template-columns:minmax(110px,38%) 1fr 40px;gap:8px;align-items:center;margin-bottom:5px;}
+.bar-row .bl{text-align:right;line-height:1.3;} .bar-row .bb{height:16px;background:#c9c2b6;border:1px solid #8a8176;} .bar-row .bn{font-weight:700;}
+.q{margin-top:16px;} .q .stem{font-weight:600;}
+.q .stem .qn{font-family:'Noto Sans JP',sans-serif;font-weight:700;margin-right:8px;}
+.box{display:inline-block;min-width:36px;text-align:center;border:1.5px solid var(--ink);padding:0 6px;margin:0 4px;font-family:'Noto Sans JP',sans-serif;font-size:13px;line-height:1.6;vertical-align:middle;}
+.q ol{list-style:none;margin:8px 0 0 4px;}
+.q li{display:flex;gap:10px;align-items:baseline;line-height:1.8;margin-bottom:4px;}
+.circ{flex:none;width:20px;height:20px;border:1.5px solid var(--ink);border-radius:50%;display:inline-grid;place-items:center;font-family:'Noto Sans JP',sans-serif;font-size:11px;font-weight:700;line-height:1;transform:translateY(2px);}
+u.kw{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;}
+.pics{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0;font-family:'Noto Sans JP',sans-serif;font-size:13px;}
+.pics div{border:1px solid #c9c2b6;border-radius:6px;padding:8px 10px;background:#fff;line-height:1.6;}
+.pics b{display:block;margin-bottom:2px;}
+mark{background:transparent;padding:0 1px;border-radius:2px;color:inherit;}
+.m1{background:linear-gradient(transparent 55%,rgba(232,90,26,.3) 55%);} .m2{background:linear-gradient(transparent 55%,rgba(63,131,160,.3) 55%);}
+.m3{background:linear-gradient(transparent 55%,rgba(59,138,90,.3) 55%);} .m4{background:linear-gradient(transparent 55%,rgba(122,90,168,.3) 55%);}
+.m5{background:linear-gradient(transparent 55%,rgba(176,125,30,.35) 55%);}
+.exam mark{background:transparent!important;}
+.sheet-body:not(.show-hl) mark{background:transparent;}
+.tagq{display:inline-block;font-family:'Noto Sans JP',sans-serif;font-size:10.5px;font-weight:700;color:#fff;padding:1px 7px;border-radius:4px;margin-left:4px;vertical-align:middle;line-height:1.6;}
+.tagq.t1{background:var(--orange);} .tagq.t2{background:var(--aqua);} .tagq.t3{background:var(--green);} .tagq.t4{background:var(--purple);} .tagq.t5{background:var(--amber);}
+/* quiz */
+.timerbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:12px;}
+.timer{display:inline-flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--border);border-radius:999px;padding:6px 8px 6px 16px;font-size:13.5px;color:var(--ink2);}
+.timer .t{font-family:'Source Serif 4',serif;font-size:20px;font-weight:700;color:var(--ink);min-width:60px;text-align:center;}
+.timer .t.over{color:var(--red);}
+.timer button{border:none;background:var(--orange);color:#fff;border-radius:999px;padding:0 16px;min-height:36px;font-weight:700;font-size:13px;cursor:pointer;}
+.timer button.stop{background:var(--ink2);}
+.quiz{display:grid;gap:12px;margin-top:16px;}
+.quiz-row{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;}
+.quiz-row .qlabel{font-weight:700;color:var(--ink2);font-size:14px;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px;}
+.quiz-row .qlabel .st{font-size:12px;font-weight:700;text-align:right;}
+.quiz-row .qlabel .st.ok{color:var(--green);} .quiz-row .qlabel .st.ng{color:var(--red);}
+.slot{display:grid;grid-template-columns:44px 1fr;gap:8px;align-items:center;margin-bottom:6px;}
+.slot .sl{font-size:12px;font-weight:700;color:var(--ink3);text-align:center;border:1px solid var(--border);border-radius:6px;padding:4px 0;}
+.opts{display:grid;gap:8px;}
+.opts.n4{grid-template-columns:repeat(4,1fr);} .opts.n5{grid-template-columns:repeat(5,1fr);} .opts.n6{grid-template-columns:repeat(6,1fr);}
+.opt{min-height:var(--tap);border-radius:10px;border:1.5px solid var(--border);background:var(--paper);font-weight:700;cursor:pointer;color:var(--ink2);font-size:17px;transition:all .12s;}
+.opt:hover{border-color:var(--aqua);color:var(--aqua);}
+.opt.sel{background:var(--aqua);border-color:var(--aqua);color:#fff;}
+.opt.ok{background:var(--green);border-color:var(--green);color:#fff;}
+.opt.ng{background:var(--red);border-color:var(--red);color:#fff;}
+.opt.hint{border-color:var(--green);color:var(--green);border-width:2px;}
+.quiz-foot{display:flex;flex-direction:column;gap:10px;margin-top:14px;}
+@media (min-width:720px){.quiz-foot{flex-direction:row;align-items:center;flex-wrap:wrap;}}
+.score{font-family:'Source Serif 4',serif;font-size:22px;font-weight:700;color:var(--orange);}
+/* flow */
+.flow{position:relative;display:grid;gap:0;padding-left:34px;margin-top:6px;}
+.flow::before{content:"";position:absolute;left:13px;top:14px;bottom:14px;width:3px;border-radius:3px;background:linear-gradient(var(--orange),var(--aqua));}
+.fnode{position:relative;padding:8px 0 14px;}
+.fnode .fb{position:absolute;left:-34px;top:8px;width:28px;height:28px;border-radius:50%;background:var(--orange);color:#fff;font-weight:900;font-size:11.5px;display:grid;place-items:center;border:3px solid var(--paper);}
+.fnode.aq .fb{background:var(--aqua);} .fnode.gr .fb{background:var(--green);} .fnode.pu .fb{background:var(--purple);}
+.fnode .fc{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;}
+.fnode.aq .fc{border-color:#bcd6e2;background:#f4f9fb;}
+.fnode h4{font-size:15px;font-weight:700;margin-bottom:5px;line-height:1.5;}
+.fnode p{font-size:14px;color:var(--ink2);margin:0!important;}
+.fnode .branch{font-size:12px;color:var(--ink3);margin:0 0 6px;} .fnode .branch b{color:var(--orange);}
+@media (min-width:720px){.flow.cols{grid-template-columns:repeat(2,1fr);gap:0 20px;}}
+/* types */
+.types{display:grid;gap:10px;margin:14px 0;}
+@media (min-width:720px){.types{grid-template-columns:1fr 1fr;}}
+.type{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 14px;border-left:5px solid var(--orange);}
+.type.no{border-left-color:var(--aqua);} .type.mix{border-left-color:var(--purple);}
+.type .th{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;}
+.type .qn{font-weight:900;font-size:15px;}
+.type .badge{font-size:11.5px;font-weight:700;padding:3px 10px;border-radius:999px;background:var(--orange-light);color:var(--orange-dark);white-space:nowrap;}
+.type.no .badge{background:var(--aqua-light);color:var(--aqua);} .type.mix .badge{background:var(--purple-light);color:var(--purple);}
+.type .stem{font-family:'Source Serif 4',serif;font-size:15px;margin-bottom:6px;}
+.type .do{font-size:13.5px;color:var(--ink2);}
+/* answer card */
+.ans-card{margin-top:18px;border:2px solid var(--orange);border-radius:var(--radius-sm);overflow:hidden;background:#fff;}
+.ans-card .ah{width:100%;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--orange);color:#fff;padding:12px 16px;border:none;text-align:left;cursor:pointer;min-height:56px;}
+.ans-card .ah .qn{font-size:19px;font-weight:900;font-family:'Source Serif 4',serif;}
+.ans-card .ah .ans{font-weight:700;font-size:15px;}
+.ans-card .ah .lvl{font-size:11.5px;opacity:.9;width:100%;}
+@media (min-width:720px){.ans-card .ah .lvl{width:auto;margin-left:auto;}}
+.ans-card .ah .chev{margin-left:auto;width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.22);display:grid;place-items:center;transition:transform .2s;flex:none;}
+@media (min-width:720px){.ans-card .ah .chev{margin-left:12px;}}
+.ans-card .ah .chev svg{width:14px;height:14px;}
+.ans-card.open .ah .chev{transform:rotate(180deg);}
+.ans-card .ab{display:none;padding:16px 14px 18px;}
+@media (min-width:720px){.ans-card .ab{padding:18px 20px;}}
+.ans-card.open .ab{display:block;animation:fade .22s ease;}
+@keyframes fade{from{opacity:0;transform:translateY(4px);}to{opacity:1;transform:none;}}
+.ja-q{font-weight:700;margin-bottom:8px;font-size:15.5px;}
+.ja-opts{list-style:none;margin:0 0 8px 0;display:grid;gap:5px;font-size:14.5px;}
+.ja-opts li{display:flex;gap:10px;align-items:baseline;}
+.ja-opts .circ{width:18px;height:18px;font-size:10.5px;}
+.ja-opts li.right{color:var(--green);font-weight:700;}
+.ja-opts li.right .circ{border-color:var(--green);background:var(--green);color:#fff;}
+.brain{margin-top:12px;display:grid;gap:10px;}
+.step{display:grid;grid-template-columns:32px 1fr;gap:10px;align-items:start;background:var(--paper);border:1px solid var(--border);border-radius:var(--radius-sm);padding:12px 12px;}
+.step .k{width:28px;height:28px;border-radius:50%;background:var(--aqua);color:#fff;display:grid;place-items:center;font-weight:900;font-size:13px;margin-top:2px;}
+.step .k.o{background:var(--orange);} .step .k.g{background:var(--green);} .step .k.a{background:var(--amber);} .step .k.p{background:var(--purple);}
+.step h5{font-size:14.5px;font-weight:700;margin-bottom:4px;line-height:1.5;}
+.step p{font-size:14.5px;color:var(--ink2);margin:0 0 6px!important;} .step p:last-child{margin-bottom:0!important;}
+.step .ex{margin:6px 0 8px;padding:8px 12px;background:#fff;border-left:3px solid var(--aqua);border-radius:0 6px 6px 0;font-family:'Source Serif 4','Noto Serif JP',serif;font-size:15px;color:var(--ink);line-height:1.75;}
+.step .ex .ja{display:block;font-family:'Noto Sans JP',sans-serif;font-size:13.5px;color:var(--ink2);margin-top:4px;line-height:1.7;}
+.elim{list-style:none;margin:8px 0;display:grid;gap:8px;}
+.elim li{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:start;font-size:14.5px;}
+.mk{min-width:30px;height:30px;padding:0 6px;border-radius:7px;display:grid;place-items:center;font-weight:900;font-size:12px;color:#fff;white-space:nowrap;}
+.mk.o{background:var(--green);} .mk.x{background:var(--red);} .mk.q{background:var(--amber);} .mk.b{background:var(--aqua);}
+.elim .why{color:var(--ink2);font-size:13.5px;line-height:1.7;}
+.para{display:flex;flex-direction:column;gap:6px;margin:10px 0;font-family:'Source Serif 4',serif;font-size:15px;}
+@media (min-width:720px){.para{flex-direction:row;align-items:center;flex-wrap:wrap;gap:10px;}}
+.para .a{background:var(--aqua-light);color:var(--aqua);padding:4px 12px;border-radius:8px;font-weight:600;}
+.para .b{background:var(--orange-light);color:var(--orange-dark);padding:4px 12px;border-radius:8px;font-weight:600;}
+.para .arr{color:var(--ink3);font-weight:700;text-align:center;}
+.ab .btn.mob-only{margin:4px 0 6px;}
+.desk-only{display:none;} @media (min-width:720px){.desk-only{display:block;} .mob-only{display:none!important;}}
+/* two col compare */
+.fo{display:grid;grid-template-columns:1fr;gap:12px;margin:16px 0;}
+@media (min-width:720px){.fo{grid-template-columns:1fr 1fr;}}
+.fo .col{border-radius:var(--radius-sm);padding:14px 16px;background:#fff;border:1px solid var(--border);}
+.fo .col h4{font-size:15.5px;font-weight:700;margin-bottom:8px;}
+.fo .col.fact h4{color:var(--aqua);} .fo .col.op h4{color:var(--orange);}
+.fo .col ul{list-style:none;display:grid;gap:6px;font-size:14px;}
+.fo .col li{padding-left:14px;position:relative;line-height:1.7;}
+.fo .col li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--ink3);}
+.fo .col.fact li::before{background:var(--aqua);} .fo .col.op li::before{background:var(--orange);}
+.fo code,.step code,.callout code,.fnode code,.type code{font-family:'Source Serif 4',serif;font-weight:600;font-size:14.5px;color:var(--ink);}
+/* drill */
+.drill{display:grid;gap:10px;margin-top:12px;}
+.drill-row{background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 14px;}
+.drill-row .s{font-family:'Source Serif 4',serif;font-size:15.5px;line-height:1.7;margin-bottom:10px;}
+.drill-row .s.ja{font-family:'Noto Sans JP',sans-serif;font-size:14.5px;}
+.drill-row .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.drill-row .btns.n3{grid-template-columns:1fr 1fr 1fr;}
+.drill-row .btns button{border:1.5px solid var(--border);background:var(--paper);border-radius:8px;min-height:var(--tap);font-weight:700;font-size:14px;cursor:pointer;color:var(--ink2);}
+.drill-row .btns button.on{background:var(--ink);border-color:var(--ink);color:#fff;}
+.drill-row .btns button.on.good{background:var(--green);border-color:var(--green);} .drill-row .btns button.on.bad{background:var(--red);border-color:var(--red);}
+.drill-row .res{font-size:13.5px;color:var(--ink2);display:none;padding-top:8px;margin-top:10px;border-top:1px dashed var(--border);line-height:1.7;}
+.drill-row .res.show{display:block;} .drill-row .res.good{color:var(--green);} .drill-row .res.bad{color:var(--red);}
+/* translation */
+.tr{display:grid;gap:12px;margin-top:8px;}
+.tr .pair{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;}
+.tr .pn{font-size:11.5px;color:var(--ink3);font-weight:700;letter-spacing:.08em;margin-bottom:6px;}
+.tr .pair .e{font-family:'Source Serif 4',serif;font-size:15px;line-height:1.85;padding-bottom:10px;border-bottom:1px dashed var(--border);margin-bottom:10px;}
+.tr .pair .j{font-size:14.5px;line-height:1.9;}
+@media (min-width:720px){.tr .pair{display:grid;grid-template-columns:1fr 1fr;gap:16px;} .tr .pn{grid-column:1/-1;} .tr .pair .e{border-bottom:none;padding-bottom:0;margin-bottom:0;}}
+.tr .pair.hidden-en .e{display:none;}
+.trtools{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px;}
+.toggle{display:inline-flex;align-items:center;gap:6px;border:1.5px solid var(--border);background:#fff;border-radius:999px;padding:0 14px;min-height:36px;font-size:13px;font-weight:700;color:var(--ink2);cursor:pointer;}
+.toggle.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+/* vocab */
+.vgroup{margin-top:14px;font-size:12.5px;font-weight:700;color:var(--orange);}
+.vocab{display:grid;grid-template-columns:1fr;gap:0 18px;margin-top:6px;font-size:14.5px;}
+@media (min-width:600px){.vocab{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));}}
+.vocab div{display:flex;gap:8px;align-items:baseline;padding:7px 0;border-bottom:1px dotted var(--border);}
+.vocab .w{font-family:'Source Serif 4',serif;font-weight:600;min-width:118px;}
+.vocab .pos{font-size:10.5px;color:#fff;background:var(--ink3);border-radius:3px;padding:0 5px;line-height:1.6;flex:none;}
+.vocab .m{color:var(--ink2);font-size:13.5px;}
+/* weapons / checklist */
+.weapons{display:grid;grid-template-columns:1fr;gap:12px;margin-top:6px;}
+@media (min-width:720px){.weapons{grid-template-columns:repeat(3,1fr);}}
+.weapon{background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;border-top:4px solid var(--orange);}
+.weapon:nth-child(2){border-top-color:var(--aqua);} .weapon:nth-child(3){border-top-color:var(--green);}
+.weapon .wn{font-family:'Source Serif 4',serif;font-weight:700;color:var(--ink3);font-size:12px;letter-spacing:.1em;}
+.weapon h4{font-size:15.5px;font-weight:700;margin:4px 0 8px;line-height:1.5;}
+.weapon p{font-size:14px;color:var(--ink2);margin:0!important;}
+.check{list-style:none;display:grid;gap:8px;margin-top:8px;}
+.check li{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--border);border-radius:10px;padding:12px 14px;cursor:pointer;font-size:14.5px;line-height:1.7;}
+.check li input{margin-top:5px;accent-color:var(--orange);width:20px;height:20px;flex:none;}
+.check li.done{background:var(--green-light);border-color:#bfe0cb;}
+.check-foot{margin-top:12px;display:flex;align-items:center;gap:12px;font-weight:700;color:var(--orange);font-family:'Source Serif 4',serif;font-size:18px;}
+.check-foot .bar{flex:1;height:8px;background:var(--border);border-radius:99px;overflow:hidden;}
+.check-foot .bar i{display:block;height:100%;width:0;background:var(--green);transition:width .25s;}
+.footer{max-width:980px;margin:0 auto;padding:10px 16px 20px;color:var(--ink3);font-size:12px;text-align:center;line-height:1.8;}
+/* dock & sheet */
+.dock{position:fixed;left:0;right:0;bottom:0;z-index:60;padding:8px 12px calc(8px + var(--sab));background:rgba(253,250,244,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);}
+.dock-in{max-width:520px;margin:0 auto;display:grid;grid-template-columns:1fr auto auto;gap:8px;}
+.dock .btn{min-height:46px;font-size:14px;} .dock .btn.icon{padding:0 14px;} .dock .btn svg{width:18px;height:18px;flex:none;}
+.scrim{position:fixed;inset:0;background:rgba(44,37,32,.45);z-index:70;opacity:0;pointer-events:none;transition:opacity .2s;}
+.scrim.on{opacity:1;pointer-events:auto;}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:71;background:var(--paper);border-radius:18px 18px 0 0;box-shadow:var(--shadow-lg);transform:translateY(100%);transition:transform .28s cubic-bezier(.2,.8,.2,1);max-height:88dvh;display:flex;flex-direction:column;max-width:980px;margin:0 auto;}
+.sheet.on{transform:none;}
+.sheet .grip{width:40px;height:5px;border-radius:99px;background:var(--border);margin:10px auto 4px;flex:none;}
+.sheet .sh{display:flex;align-items:center;gap:8px;padding:6px 16px 10px;border-bottom:1px solid var(--border);flex:none;flex-wrap:wrap;}
+.sheet .sh .t{font-weight:700;font-size:14.5px;flex:1;}
+.sheet .sh .toggle{min-height:32px;font-size:12px;padding:0 12px;}
+.sheet .sh .close{width:36px;height:36px;border-radius:50%;border:none;background:var(--border);display:grid;place-items:center;cursor:pointer;}
+.sheet .sh .close svg{width:16px;height:16px;}
+.sheet-body{overflow-y:auto;-webkit-overflow-scrolling:touch;padding:14px 16px calc(20px + var(--sab));font-family:'Source Serif 4','Noto Serif JP',serif;font-size:16px;line-height:1.9;overscroll-behavior:contain;}
+.sheet-body .qtabs{display:flex;gap:6px;margin:0 0 12px;font-family:'Noto Sans JP',sans-serif;}
+.sheet-body .qtabs button{flex:1;min-height:36px;border-radius:8px;border:1.5px solid var(--border);background:#fff;font-weight:700;font-size:13px;color:var(--ink2);}
+.sheet-body .qtabs button.on{color:#fff;}
+.sheet-body .qtabs button[data-q="0"].on{background:var(--ink);border-color:var(--ink);}
+.sheet-body .qtabs button[data-q="1"].on{background:var(--orange);border-color:var(--orange);}
+.sheet-body .qtabs button[data-q="2"].on{background:var(--aqua);border-color:var(--aqua);}
+.sheet-body .qtabs button[data-q="3"].on{background:var(--green);border-color:var(--green);}
+.sheet-body .qtabs button[data-q="4"].on{background:var(--purple);border-color:var(--purple);}
+.sheet-body .qtabs button[data-q="5"].on{background:var(--amber);border-color:var(--amber);}
+.sheet-body.f1 mark:not(.m1),.sheet-body.f2 mark:not(.m2),.sheet-body.f3 mark:not(.m3),.sheet-body.f4 mark:not(.m4),.sheet-body.f5 mark:not(.m5){background:transparent;}
+mark.pulse{background:rgba(253,228,211,.95)!important;transition:background .6s;}
+.toast{position:fixed;left:50%;bottom:calc(76px + var(--sab));transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 18px;border-radius:999px;font-size:13.5px;font-weight:700;opacity:0;pointer-events:none;transition:all .25s;z-index:80;white-space:nowrap;max-width:92vw;overflow:hidden;text-overflow:ellipsis;}
+.toast.on{opacity:1;transform:translateX(-50%);}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><span class="logo">T</span><div class="ttl">可視化リーディング ― 複数資料問題<small>令和7年 追試験 第5問「フェスティバルの計画メモ」 ／ オンライン塾 THINKING</small></div><div class="tclock" id="tclock">12:00</div></div><div class="progress"><i id="pbar"></i></div></div>
+<nav class="stepnav" aria-label="ステップ"><div class="stepnav-in" id="stepnav"><a href="#s0"><em>0</em>自力で解く</a><a href="#s1"><em>1</em>目の動かし方</a><a href="#s2"><em>2</em>タイプ分け</a><a href="#s3"><em>3</em>脳内実況</a><a href="#s4"><em>4</em>資料の地図</a><a href="#s5"><em>5</em>全訳</a><a href="#s6"><em>6</em>語句</a><a href="#s7"><em>7</em>持ち帰り</a></div></nav>
+<main class="wrap">
+<header class="hero">
+  <span class="kicker">令和7年度 共通テスト追試験 第5問（配点16）</span>
+  <h1>【複数資料問題】を攻略する<br><span class="accent">可視化リーディング</span><br>― フェスティバルの計画メモ ―</h1>
+  <p class="lead">記事・グラフ・コメント・メモの4つが並ぶ大問です。読む量に圧倒されますが、設問はすべてメモの空欄。メモを地図にして、空欄ごとに見る資料を1つに決める。グラフは順位表に、コメントは目的でふるいに。資料をまたいで迷子にならない手順を固めます。</p>
+  <div class="meta"><span class="chip aq"><i></i>目標解答時間 12分</span><span class="chip gr"><i></i>設問5問（問4は各2点）</span><span class="chip"><i></i>下の「本文を開く」で、いつでも英文を参照できます</span></div>
+</header>
+<section class="section" id="s0"><div class="sec-head"><span class="sec-no">STEP 0</span><h2 class="sec-title">まず、時間を測って自力で解く</h2><span class="sec-sub">Try it yourself</span></div><p class="note">解説を読む前に必ず解いてください。大事なのは正解数ではなく、<b>「本文より先にメモを読んだか」「グラフを順位表に変換してから選択肢を見たか」</b>を自分で観察すること。それがそのまま、この後の可視化リーディングがあなたに効く場所になります。</p>
+<div class="timerbar"><div class="timer" aria-live="polite"><span>タイマー</span><span class="t" id="tm">12:00</span><button id="tmbtn" onclick="timer()">スタート</button></div><span class="note" style="font-size:13px;">目標時間を過ぎても止めずに続けて、超過時間を覚えておきましょう。</span></div>
+<div class="exam" style="margin-top:16px;"><div class="q-head">第5問<small>（配点 16）</small></div>
+<p class="lead-text">You are an exchange student in the US and have joined the festival committee in your community. You read the following article and use last year’s survey results to create a memo for the upcoming meeting.</p>
+<div class="doc">
+<div class="dtitle">Festival Fundamentals</div><div class="by">by Kandi Russell</div>
+<p>Local communities hold festivals for a variety of purposes. They often include stands selling local products, performances, and workshops where visitors can try new things. <mark class="m1">For festivals to run smoothly, organizers usually follow the “SLA Festival Model”: <i>Scheme</i>, <i>Location</i>, and <i>Assistance</i>.</mark></p>
+<p><i>Scheme</i> relates to how easy it is to arrange, co-ordinate, and hold the event within a specific time frame. <mark class="m2">Do you have enough time to plan and advertise your event? Do the local sellers have enough time to prepare items that people will want to buy? Is there time to arrange for workshops that visitors will be interested in? We suggest allowing at least two months to organize your festival.</mark> During this time, you should arrange for sellers, performers, and people to give workshops.</p>
+<p><i>Location</i> relates to the actual place of the festival. Some locations are far superior to others because they are accessible, visible, and large enough to accommodate all of the stands, workshop areas, and your visitors. Also, the festival organizer must check with local authorities as there are often regulations: trash disposal and recycling, areas for medical attention, and food handling and storage. <mark class="m5">Especially for health and safety, some local authorities require clear labels for people with food allergies.</mark></p>
+<p><i>Assistance</i> relates to making sure there are enough people to help you prepare, organize, and run the event. Festivals can usually last all day and generally have lots of visitors, so things can get untidy. It is therefore very important to clean up properly afterward. This means having a large enough group of assistants is essential.</p>
+<p><mark class="m1">Nothing guarantees a successful festival, but it is vital to consider the scheme, the location, and the assistance required.</mark> The last secret ingredient for success is having a positive attitude!</p>
+</div>
+<div class="doc">
+<div class="dtitle">Survey Results</div>
+<p><b>● What event(s) did you attend at the festival?</b> <span style="font-size:13px;color:#6b6155;">(People surveyed = 191, multiple answers allowed)</span></p>
+<div class="bars"><mark class="m3"><div class="bar-row"><span class="bl">Baked goods sale</span><span class="bb" style="width:92%"></span><span class="bn">176</span></div><div class="bar-row"><span class="bl">Flower arrangement workshop</span><span class="bb" style="width:68%"></span><span class="bn">129</span></div><div class="bar-row"><span class="bl">Jam-making workshop</span><span class="bb" style="width:51%"></span><span class="bn">97</span></div><div class="bar-row"><span class="bl">Musical performances</span><span class="bb" style="width:29%"></span><span class="bn">56</span></div><div class="bar-row"><span class="bl">Painting workshop</span><span class="bb" style="width:19%"></span><span class="bn">37</span></div><div class="bar-row"><span class="bl">Bread-making workshop</span><span class="bb" style="width:13%"></span><span class="bn">24</span></div></mark></div>
+<p><b>● What did you think about the festival?</b></p>
+<p style="margin-bottom:4px;">Main comments:</p>
+<p style="margin-bottom:6px;"><mark class="m4">Comment 1: It was fun for all the family, but how about having small animals for children to play with?</mark></p>
+<p style="margin-bottom:6px;">Comment 2: The florist who gave the workshop was fantastic! I’m already looking forward to next year. I’m sure more people will want to join.</p>
+<p style="margin-bottom:6px;"><mark class="m5">Comment 3: The cakes and cookies looked really good but I didn’t know what they were made of. I have some food allergies, so I was sad that I couldn’t buy anything.</mark></p>
+<p style="margin-bottom:6px;"><mark class="m4">Comment 4: Just like last year, the bread-making workshop wasn’t crowded. It’s time for something new! Butter making might be fun.</mark></p>
+<p style="margin-bottom:6px;">Comment 5: I had a great time, but I was disappointed that all of the vending machines were out of drinks. Provide more vending machines.</p>
+<p>Comment 6: The ground was uneven and I twisted my ankle while walking. Thankfully, the medical staff were very kind.</p>
+</div>
+<p style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#6b6155;margin-bottom:4px;">Your memo</p>
+<div class="doc memo">
+<div class="dtitle">Plan for This Year’s Festival</div>
+<div class="lbl">The SLA Festival Model</div>
+<ul><li>What is it for? <span class="box">18</span></li>
+<li>Three components &amp; key questions
+<ul><li class="dash">Scheme: <span class="box">19</span></li><li class="dash">Location: Where will the festival be held?</li><li class="dash">Assistance: Who can assist with the festival?</li></ul></li></ul>
+<div class="lbl">Based on the Survey Results <span class="box">20</span></div>
+<ul><li class="dash">A. Fewer respondents joined bread making than jam making.</li><li class="dash">B. Flower arrangement was the most popular workshop.</li><li class="dash">C. More than 50 respondents attended musical performances.</li><li class="dash">D. Most respondents visited the baked goods stand.</li><li class="dash">E. The painting workshop was the least popular event.</li></ul>
+<div class="lbl">Things to Consider</div>
+<ul><li>Plan new events based on <span class="box">21</span> and <span class="box">22</span>.</li><li>Give the flower arranging workshop a bigger space.</li><li>Check local regulations and <span class="box">23</span>.</li></ul>
+</div>
+<div class="q"><p class="stem"><span class="qn">問 1</span>Which of the following best describes the purpose of the SLA Festival Model? <span class="box">18</span></p><ol><li><span class="circ">1</span>It helps to achieve successful events.</li><li><span class="circ">2</span>It helps to learn about new festival trends.</li><li><span class="circ">3</span>It helps to revive local communities.</li><li><span class="circ">4</span>It helps to understand the history of festivals.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 2</span>According to the SLA Festival Model, which of the following is the best option for <span class="box">19</span>? </p><ol><li><span class="circ">1</span>How can we encourage more festival advertisers?</li><li><span class="circ">2</span>How much time is needed to arrange the festival?</li><li><span class="circ">3</span>What is the main purpose of the festival?</li><li><span class="circ">4</span>What time will the festival start and finish?</li></ol></div><div class="q"><p class="stem"><span class="qn">問 3</span>In the Survey Results section in your memo, you have noticed an error. Which statement should you <u class="kw">remove</u>? <span class="box">20</span></p><ol><li><span class="circ">1</span>A</li><li><span class="circ">2</span>B</li><li><span class="circ">3</span>C</li><li><span class="circ">4</span>D</li><li><span class="circ">5</span>E</li></ol></div><div class="q"><p class="stem"><span class="qn">問 4</span>For this year’s festival, you want to add new events. Which two comments would be most helpful? (The order does not matter.) <span class="box">21</span> <span class="box">22</span></p><ol><li><span class="circ">1</span>Comment 1</li><li><span class="circ">2</span>Comment 2</li><li><span class="circ">3</span>Comment 3</li><li><span class="circ">4</span>Comment 4</li><li><span class="circ">5</span>Comment 5</li><li><span class="circ">6</span>Comment 6</li></ol></div><div class="q"><p class="stem"><span class="qn">問 5</span>Based on both the article and comments from last year’s festival, which of the following is the best option for <span class="box">23</span>? </p><ol><li><span class="circ">1</span>ensure food labels list all ingredients</li><li><span class="circ">2</span>food should be stored in fridges</li><li><span class="circ">3</span>have a medical station on site</li><li><span class="circ">4</span>make sure trash is properly separated</li></ol></div></div>
+<div class="quiz" id="quiz"></div>
+<div class="quiz-foot"><button class="btn orange" id="gradebtn" onclick="grade()">採点する</button><span class="score" id="score"></span><span class="note" id="scoremsg" style="font-size:14px;"></span></div></section><section class="section" id="s1"><div class="sec-head"><span class="sec-no">STEP 1</span><h2 class="sec-title">可視化リーディング ― メモを地図にして資料を渡り歩く</h2><span class="sec-sub">The eye path</span></div><p>第5問は「記事＋アンケート結果（グラフ・コメント）＋自分のメモ」の3点セットです。読む量が多く見えますが、設問はすべて<b>メモの空欄</b>に対応しています。だから読む順番は「メモ → 設問 → 本文の該当部分」。本文を頭から読むのは最も遅い解き方です。</p><div class="flow cols"><div class="fnode "><span class="fb">1</span><div class="fc"><h4>リード文で「3つの資料」と「ゴール（メモを完成させる）」を確認</h4><p>記事（article）／昨年の調査結果（survey results）／メモ（memo）。ゴールはメモの完成。つまりメモが設計図。</p></div></div><div class="fnode "><span class="fb">2</span><div class="fc"><h4>本文より先に「メモ」を読む</h4><p>メモには見出しがある。SLAモデル（何のため？3要素）／調査結果に基づく5文／検討事項。空欄がどの資料に対応するかがここで決まる。18・19は記事、20は数字、21・22はコメント、23は記事＋コメント。</p></div></div><div class="fnode aq"><span class="fb">3</span><div class="fc"><h4>記事は「3要素の定義文」だけ先に読む</h4><p>Scheme / Location / Assistance の各段落の最初の1〜2文。モデルの目的は第1段落と最終段落。細部は設問に呼ばれてから。</p></div></div><div class="fnode aq"><span class="fb">4</span><div class="fc"><h4>数字問題はグラフの「順位」を書き出してから照合</h4><p>176 ＞ 129 ＞ 97 ＞ 56 ＞ 37 ＞ 24。最多・最少・比較を表す語（most / least / fewer than / more than）を選択肢から数字に戻す。</p></div></div><div class="fnode aq"><span class="fb">5</span><div class="fc"><h4>コメントは「設問の目的」でふるいにかける</h4><p>「新しいイベントを足したい」なら、新企画を提案しているコメントだけが候補。感想・苦情・称賛は目的に合わない。</p></div></div></div><div class="callout amber"><div class="ttl">この手順の急所</div><p>第5問は<b>メモが地図</b>です。メモの見出しと空欄を見れば、記事のどこ・グラフのどこ・コメントのどれを見ればいいかが全部決まる。本文を頭から読んで「あとでメモを埋めよう」とすると、同じ場所を2回読むことになり、時間が倍かかります。</p></div></section><section class="section" id="s2"><div class="sec-head"><span class="sec-no">STEP 2</span><h2 class="sec-title">5問をタイプ分けする ― どの資料を見るか</h2><span class="sec-sub">Classify before you read</span></div><div class="types"><div class="type "><div class="th"><span class="qn">問1</span><span class="badge">記事：目的（第1＋最終段落）</span></div><div class="stem">...best describes the <b>purpose</b> of the SLA Festival Model?</div><div class="do">モデルの目的は、導入文（For festivals to run smoothly）と締めの文（vital to consider ...）に書かれる。中身の3要素は読まなくていい。</div></div><div class="type "><div class="th"><span class="qn">問2</span><span class="badge">記事：Scheme の定義</span></div><div class="stem">...the best option for <b>Scheme</b>: ___?</div><div class="do">メモでは Location と Assistance の key question が例示済み（Where / Who）。Scheme 段落の疑問文を見て、同じ型で「時間」の質問を選ぶ。</div></div><div class="type no"><div class="th"><span class="qn">問3</span><span class="badge">グラフ：誤りを除く</span></div><div class="stem">...you have noticed an <b>error</b>. Which statement should you <u>remove</u>?</div><div class="do">5文を数字と照合し、唯一間違っているものを探す。「最も少ない」「〜より少ない」の比較語に注意。</div></div><div class="type no"><div class="th"><span class="qn">問4</span><span class="badge">コメント：目的でふるい分け</span></div><div class="stem">...you want to <b>add new events</b>. Which two comments would be most helpful?</div><div class="do">6つのコメントのうち「新しい企画を提案している」ものだけを選ぶ。順不同・各2点。</div></div><div class="type mix"><div class="th"><span class="qn">問5</span><span class="badge">記事＋コメント：両方の根拠</span></div><div class="stem">Based on <b>both</b> the article and comments ... best option for 23?</div><div class="do">記事の regulations（規制）の記述と、コメントの不満が重なる1点を探す。片方だけで決めない。</div></div></div><div class="callout aqua"><div class="ttl">問5の「both」が意味すること</div><p>記事の Location 段落には規制が4種類（ゴミ・医療・食品の扱い・アレルギー表示）書かれています。4つの選択肢はそれぞれに対応していて、記事だけでは1つに絞れません。<b>コメントで実際に困った人がいるもの</b>に絞ると、アレルギー表示（Comment 3）だけが残ります。</p></div></section><section class="section" id="s3"><div class="sec-head"><span class="sec-no">STEP 3</span><h2 class="sec-title">脳内実況 ― 読める人の頭の中を再生する</h2><span class="sec-sub">Think-aloud</span></div><p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。各問はタップで開閉できます。</p><div class="ans-card open">
+<button class="ah" onclick="acc(this)" aria-expanded="true"><span class="qn">問 1</span><span class="ans">正解 ①</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 易 ／ 配点 3点 ／ 記事：目的</span></button>
+<div class="ab"><p class="ja-q">SLAフェスティバル・モデルの目的を最もよく表しているのはどれか。</p><ul class="ja-opts"><li class="right"><span class="circ">1</span>成功するイベントを実現するのに役立つ。</li><li class=""><span class="circ">2</span>新しいフェスティバルの流行を知るのに役立つ。</li><li class=""><span class="circ">3</span>地域社会を再生するのに役立つ。</li><li class=""><span class="circ">4</span>フェスティバルの歴史を理解するのに役立つ。</li></ul><div class="brain"><div class="step"><span class="k o">1</span><div><h5>先読み：purpose ＝ 記事の導入文と結論文を見る</h5><p>モデルの「目的」は、モデルを紹介する文（第1段落末）と、まとめる文（最終段落）に出る。中の3要素の説明は読まなくていい。</p></div></div><div class="step"><span class="k g">2</span><div><h5>導入文：円滑に運営するために</h5><div class="ex">For festivals to run smoothly, organizers usually follow the “SLA Festival Model”<span class="ja">フェスティバルを円滑に運営するために、主催者はたいてい「SLAフェスティバル・モデル」に従う</span></div><p>run smoothly（円滑に運営する）＝ 成功させる。①の候補。</p></div></div><div class="step"><span class="k g">3</span><div><h5>結論文で確定</h5><div class="ex">Nothing guarantees a successful festival, but it is vital to consider the scheme, the location, and the assistance required.<span class="ja">成功するフェスティバルを保証するものは何もないが、計画・場所・必要な支援を考えることは不可欠だ。</span></div><p>successful festival（成功するフェスティバル）という語がそのまま出る。① achieve successful events。○。</p></div></div><div class="step"><span class="k a">4</span><div><h5>残りは本文に無い</h5><p>②流行、③地域再生、④歴史：いずれも記事に一切出てこない。「フェスティバル」という語から連想できそうな内容を並べただけの誤答。×。</p></div></div></div><div class="para"><span class="a">run smoothly / a successful festival</span><span class="arr">⇒</span><span class="b">achieve successful events</span></div><button class="btn ghost block mob-only" onclick="openSheet(1)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>「〜の目的は何か」は、本文の<b>最初と最後</b>を見る問題です。中身の説明（3要素）を読まなくても、導入文と結論文で答えが2回出てきます。読む場所を2文に絞ってください。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 2</span><span class="ans">正解 ②</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点 ／ 記事：Scheme の定義</span></button>
+<div class="ab"><p class="ja-q">SLAフェスティバル・モデルによれば、19（Scheme の key question）に最も適するのはどれか。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>どうすればフェスティバルの広告主を増やせるか？</li><li class="right"><span class="circ">2</span>フェスティバルの準備にどれくらいの時間が必要か？</li><li class=""><span class="circ">3</span>フェスティバルの主な目的は何か？</li><li class=""><span class="circ">4</span>フェスティバルは何時に始まり何時に終わるか？</li></ul><div class="brain"><div class="step"><span class="k o">1</span><div><h5>先読み：メモの型を見る</h5><p>メモでは Location: Where will the festival be held?（どこで）、Assistance: Who can assist?（誰が）。つまり Scheme の key question も「その要素の核心を一言で聞く疑問文」。Scheme の段落で何が繰り返されているかを見る。</p></div></div><div class="step"><span class="k g">2</span><div><h5>Scheme 段落は「時間」の話しかしていない</h5><div class="ex">Scheme relates to how easy it is to arrange, co-ordinate, and hold the event within a specific time frame. Do you have enough time to plan and advertise your event? ... We suggest allowing at least two months to organize your festival.<span class="ja">スキーム（計画）は、特定の期間内にイベントを手配・調整・開催することがどれだけ容易かに関わる。企画と宣伝をする時間は十分あるか？ … 準備には少なくとも2か月を見ておくことを勧める。</span></div><p>time frame／enough time／enough time／Is there time／at least two months。段落全体が「時間が足りるか」の話。② How much time is needed to arrange the festival? ○。</p></div></div><div class="step"><span class="k a">3</span><div><h5>④が引っかけ</h5><p>④「何時に始まり何時に終わるか」も「時間」の語を使っていますが、これは当日の開始・終了時刻の話。Scheme が問うのは<b>準備期間</b>。「時間」でも種類が違う。×。①広告主を増やす：advertise（宣伝する）はあるが、advertisers（広告主）を増やす話ではない。×。③主な目的：モデル全体の目的ではなく Scheme の核心を聞いている。×。</p></div></div></div><div class="para"><span class="a">enough time to plan ... at least two months to organize</span><span class="arr">⇒</span><span class="b">How much time is needed to arrange the festival?</span></div><button class="btn ghost block mob-only" onclick="openSheet(2)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>メモの空欄は<b>隣の例と同じ型</b>で埋めます。Where / Who と並んでいるなら、Scheme も「一言で核心を聞く疑問文」。段落で繰り返される語（time）を拾えば決まりますが、同じ語を使った別の意味の選択肢（④の開始時刻）には注意。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 3</span><span class="ans">正解 ⑤</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点 ／ グラフ：誤りを除く</span></button>
+<div class="ab"><p class="ja-q">メモの調査結果の欄に誤りがある。どの文を削除すべきか。</p><ul class="ja-opts"><li class=""><span class="circ">1</span>A. パン作りの参加者はジャム作りより少なかった。</li><li class=""><span class="circ">2</span>B. フラワーアレンジメントは最も人気のワークショップだった。</li><li class=""><span class="circ">3</span>C. 音楽演奏には50人超が参加した。</li><li class=""><span class="circ">4</span>D. 最も多くの回答者が焼き菓子販売を訪れた。</li><li class="right"><span class="circ">5</span>E. 絵画ワークショップは最も人気のないイベントだった。</li></ul><div class="brain"><div class="step"><span class="k ">1</span><div><h5>先読み：グラフの順位を先に書き出す</h5><p>焼き菓子 176 ＞ 花 129 ＞ ジャム 97 ＞ 音楽 56 ＞ 絵画 37 ＞ パン 24。この1行を作ってから5文を見る。</p></div></div><div class="step"><span class="k g">2</span><div><h5>5文を上から照合して、1つだけ×を探す</h5><p>A：パン24 ＜ ジャム97。正しい。B：ワークショップの中で花129が最多。正しい。C：音楽56 ＞ 50。正しい。D：焼き菓子176が最多。正しい。E：絵画37は最少ではない。最少はパン24。<b>誤り</b>。⑤を削除。</p></div></div><div class="step"><span class="k a">3</span><div><h5>E が引っかけになる仕組み</h5><p>絵画37は下から2番目。「少ないほう」なので least と言われると一瞬正しく見える。<b>least は最下位1つだけ</b>。順位表を作っておけば一目で分かりますが、グラフを目で追うだけだと見落とします。</p></div></div></div><div class="para"><span class="a">Painting 37 ＞ Bread-making 24</span><span class="arr">⇒</span><span class="b">E（painting ＝ least）は誤り</span></div><button class="btn ghost block mob-only" onclick="openSheet(3)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>グラフ問題は<b>順位表を1行で書き出してから</b>選択肢を見る。most / least / fewer than / more than を数字に置き換える。「下から2番目」を「最少」と言い張る選択肢が第5問の定番の誤りです。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 4</span><span class="ans">正解 ①と④</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 4点（各2点・順不同） ／ コメント：目的でふるい分け</span></button>
+<div class="ab"><p class="ja-q">今年のフェスティバルに新しいイベントを加えたい。最も役立つコメントを2つ選べ。</p><ul class="ja-opts"><li class="right"><span class="circ">1</span>Comment 1（子どもが遊べる小動物はどう？）</li><li class=""><span class="circ">2</span>Comment 2（花の先生が素晴らしかった）</li><li class=""><span class="circ">3</span>Comment 3（アレルギーで何も買えなかった）</li><li class="right"><span class="circ">4</span>Comment 4（パン作りは不人気。バター作りはどう？）</li><li class=""><span class="circ">5</span>Comment 5（自販機が品切れ）</li><li class=""><span class="circ">6</span>Comment 6（地面が凸凹で足をひねった）</li></ul><div class="brain"><div class="step"><span class="k ">1</span><div><h5>先読み：目的は「新しいイベントを足す」</h5><p>6つのコメントを、「新企画を提案しているか」の1点でふるいにかける。感想・称賛・苦情は目的に合わないので候補から外す。</p></div></div><div class="step"><span class="k g">2</span><div><h5>提案の形（how about / might be fun）を探す</h5><div class="ex">...how about having small animals for children to play with? / It’s time for something new! Butter making might be fun.<span class="ja">子どもが遊べる小動物を置くのはどうでしょう？ ／ 何か新しいことをする時期です！ バター作りは楽しいかもしれません。</span></div><p>Comment 1：how about having small animals（小動物はどう？）→ 新企画の提案。Comment 4：It’s time for something new! Butter making might be fun.（新しいことを。バター作りはどう？）→ 新企画の提案。①と④。</p></div></div><div class="step"><span class="k a">3</span><div><h5>残り4つは「イベントの追加」ではない</h5><p>Comment 2：既存の花のワークショップへの称賛（続けてほしい）。新企画ではない。×。Comment 3：アレルギー表示の問題 → 問5の根拠。×。Comment 5：自販機を増やせ → 設備の話。×。Comment 6：地面と医療スタッフ → 安全の話。×。</p></div></div></div><div class="para"><span class="a">how about having ～ / ～ might be fun</span><span class="arr">⇒</span><span class="b">新しいイベントの提案 ＝ Comment 1, 4</span></div><button class="btn ghost block mob-only" onclick="openSheet(4)">本文の該当箇所を見る</button><div class="callout green"><div class="ttl">この問題の学び</div><p>複数コメントから選ぶ問題は、<b>設問の目的語（new events）でふるいにかける</b>のが先。全部を丁寧に読んで比べる必要はなく、提案の形（how about / might be / should）があるものだけを残せば2つに絞れます。</p></div></div></div><div class="ans-card">
+<button class="ah" onclick="acc(this)" aria-expanded="false"><span class="qn">問 5</span><span class="ans">正解 ①</span><span class="chev"><svg viewBox="0 0 16 16" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M3 6l5 5 5-5"/></svg></span><span class="lvl">レベル 普通 ／ 配点 3点 ／ 記事＋コメント</span></button>
+<div class="ab"><p class="ja-q">記事と昨年のコメントの両方に基づくと、23（地域の規制を確認し、___）に最も適するのはどれか。</p><ul class="ja-opts"><li class="right"><span class="circ">1</span>食品ラベルに全原材料が記載されるようにする</li><li class=""><span class="circ">2</span>食品は冷蔵庫で保管すべきだ</li><li class=""><span class="circ">3</span>現場に医療ステーションを設ける</li><li class=""><span class="circ">4</span>ゴミが適切に分別されるようにする</li></ul><div class="brain"><div class="step"><span class="k p">1</span><div><h5>先読み：both ＝ 記事とコメントの両方に根拠があるもの</h5><p>メモの文は Check local regulations and ___. 記事の Location 段落に regulations の中身が4つ。選択肢の4つがそれぞれ対応している。記事だけでは絞れないので、コメントで裏付けがあるものを探す。</p></div></div><div class="step"><span class="k g">2</span><div><h5>記事：アレルギー表示が「特に」強調されている</h5><div class="ex">Especially for health and safety, some local authorities require clear labels for people with food allergies.<span class="ja">特に健康と安全のために、一部の自治体は食物アレルギーのある人のための明確な表示を義務付けている。</span></div><p>Especially（特に）と require（義務付ける）で、4つの規制の中でアレルギー表示だけが強調されている。①の候補。</p></div></div><div class="step"><span class="k g">3</span><div><h5>コメント：実際に困った人がいる</h5><div class="ex">I didn’t know what they were made of. I have some food allergies, so I was sad that I couldn’t buy anything.<span class="ja">何でできているか分からなかった。食物アレルギーがあるので、何も買えなくて悲しかった。</span></div><p>Comment 3「何でできているか分からず、アレルギーがあるので買えなかった」。記事の規制とコメントの不満が重なる唯一の点。① ensure food labels list all ingredients。○。</p></div></div><div class="step"><span class="k a">4</span><div><h5>残りは「記事にはあるがコメントに無い」</h5><p>②冷蔵保管：記事に food handling and storage はあるが、コメントに保管の不満はない。×。③医療ステーション：Comment 6 で medical staff were very kind（医療スタッフは親切だった）。すでに機能していて不満ではない。×。④ゴミ分別：記事に trash disposal and recycling はあるが、コメントにゴミの話はない。×。</p></div></div></div><div class="para"><span class="a">require clear labels for people with food allergies ＋ Comment 3</span><span class="arr">⇒</span><span class="b">ensure food labels list all ingredients</span></div><button class="btn ghost block mob-only" onclick="openSheet(5)">本文の該当箇所を見る</button><div class="callout purple"><div class="ttl">この問題の学び</div><p>both と言われたら、<b>片方にしかない根拠は捨てる</b>。記事の4つの規制は全部本当ですが、コメントで裏付けがあるのは1つだけ。③のように「コメントに出てくるが不満ではない」ものも落とせるように、コメントの温度（sad / disappointed か thankfully か）を読んでください。</p></div></div></div></section><section class="section" id="s4"><div class="sec-head"><span class="sec-no">STEP 4</span><h2 class="sec-title">資料の地図 ― 空欄と資料の対応、グラフの読み方</h2><span class="sec-sub">Mapping the sources</span></div><p>第5問は資料が3つあります。設問ごとに「どの資料を見るか」が決まっているので、資料をまたいで迷子にならない地図を作っておきます。</p>
+<div class="fo">
+<div class="col fact"><h4>メモの空欄 → 見る資料</h4><ul>
+<li><b>18 モデルの目的</b> → 記事の第1段落末＋最終段落（<code>run smoothly</code> / <code>successful</code>）</li>
+<li><b>19 Scheme の key question</b> → 記事の Scheme 段落（<code>time</code> が5回）</li>
+<li><b>20 調査結果の誤り</b> → グラフ。順位表を1行で作る</li>
+<li><b>21・22 新イベント</b> → コメント。提案の形（<code>how about</code> / <code>might be fun</code>）</li>
+<li><b>23 規制＋α</b> → 記事の regulations 4つ × コメントの不満。重なりは1つ</li>
+</ul></div>
+<div class="col op"><h4>第5問の誤答の作られ方</h4><ul>
+<li><b>連想語</b>：フェスティバルから連想できる「歴史」「流行」「地域再生」（問1）</li>
+<li><b>同じ語の別の意味</b>：準備の「時間」と開始「時刻」（問2の④）</li>
+<li><b>下から2番目を最少と言う</b>：least / most の順位ずらし（問3のE）</li>
+<li><b>目的違いの正しいコメント</b>：称賛・苦情は本当だが「新企画」ではない（問4）</li>
+<li><b>片方の資料にしかない根拠</b>：記事にはあるがコメントに無い規制（問5の②④）</li>
+</ul></div></div><div class="callout amber"><div class="ttl">グラフを見る順番</div><p>① 母数と注記（191人・複数回答可）→ ② 最大と最小 → ③ 隣同士の差。選択肢に most / least / more than 50 / fewer than が出たら、この順位表に戻るだけ。グラフを「眺める」のではなく「順位表に変換する」のが可視化です。</p></div><p style="margin-top:18px;"><b>10秒ドリル</b>：グラフ（176／129／97／56／37／24）に照らして、正しいか誤りか。</p><div class="drill"><div class="drill-row" data-a="a"><div class="s">Fewer than 30 respondents joined the bread-making workshop.</div><div class="btns"><button onclick="drill(this,'a')">正しい</button><button onclick="drill(this,'b')">誤り</button></div><div class="res">パン作りは24人。30未満。正しい。</div></div><div class="drill-row" data-a="b"><div class="s">The jam-making workshop was less popular than the musical performances.</div><div class="btns"><button onclick="drill(this,'a')">正しい</button><button onclick="drill(this,'b')">誤り</button></div><div class="res">ジャム97 ＞ 音楽56。ジャムのほうが人気。誤り。</div></div><div class="drill-row" data-a="a"><div class="s">More than half of the respondents attended the flower arrangement workshop.</div><div class="btns"><button onclick="drill(this,'a')">正しい</button><button onclick="drill(this,'b')">誤り</button></div><div class="res">129 ÷ 191 ≒ 68%。半数超。正しい。</div></div><div class="drill-row" data-a="b"><div class="s">The painting workshop attracted the smallest number of respondents.</div><div class="btns"><button onclick="drill(this,'a')">正しい</button><button onclick="drill(this,'b')">誤り</button></div><div class="res">絵画37は下から2番目。最少はパン24。誤り（問3のEと同じ罠）。</div></div></div></section><section class="section" id="s5"><div class="sec-head"><span class="sec-no">STEP 5</span><h2 class="sec-title">全訳 ― 該当箇所を色で確認する</h2><span class="sec-sub">Full translation</span></div><p class="note">色の下線は各設問の根拠箇所です。<mark class="m1">問1</mark>・<mark class="m2">問2</mark>・<mark class="m3">問3</mark>・<mark class="m4">問4</mark>・<mark class="m5">問5</mark>。問5だけが記事とコメントの2か所に根拠があることを確かめてください。</p>
+<div class="trtools"><button class="toggle" id="hideEn" onclick="toggleEn(this)">英文を隠して和訳だけ読む</button></div><div class="tr" id="tr"><div class="pair"><div class="pn">リード文</div><div class="e">You are an exchange student in the US and have joined the festival committee in your community. You read the following article and use last year’s survey results to create a memo for the upcoming meeting.</div><div class="j">あなたはアメリカの交換留学生で、地域のフェスティバル委員会に加わった。次の記事を読み、昨年の調査結果を使って、次回の会議用のメモを作成する。</div></div><div class="pair"><div class="pn">記事 第1段落</div><div class="e">Local communities hold festivals for a variety of purposes. They often include stands selling local products, performances, and workshops where visitors can try new things. <mark class="m1">For festivals to run smoothly, organizers usually follow the “SLA Festival Model”: Scheme, Location, and Assistance.</mark></div><div class="j">地域社会はさまざまな目的でフェスティバルを開く。地元産品の販売スタンド、演奏、来場者が新しいことを試せるワークショップなどが含まれることが多い。<mark class="m1">フェスティバルを円滑に運営するために、主催者はたいてい「SLAフェスティバル・モデル」、すなわち計画（Scheme）・場所（Location）・支援（Assistance）に従う。</mark><span class="tagq t1">問1</span></div></div><div class="pair"><div class="pn">記事 第2段落（Scheme）</div><div class="e">Scheme relates to how easy it is to arrange, co-ordinate, and hold the event within a specific time frame. <mark class="m2">Do you have enough time to plan and advertise your event? Do the local sellers have enough time to prepare items that people will want to buy? Is there time to arrange for workshops that visitors will be interested in? We suggest allowing at least two months to organize your festival.</mark> During this time, you should arrange for sellers, performers, and people to give workshops.</div><div class="j">計画は、特定の期間内にイベントを手配・調整・開催することがどれだけ容易かに関わる。<mark class="m2">企画と宣伝をする時間は十分あるか？ 地元の売り手には、人々が買いたくなる品を準備する時間が十分あるか？ 来場者が興味を持つワークショップを手配する時間はあるか？ 準備には少なくとも2か月を見ておくことを勧める。</mark><span class="tagq t2">問2</span> この期間に、売り手、出演者、ワークショップの講師を手配すべきだ。</div></div><div class="pair"><div class="pn">記事 第3段落（Location）</div><div class="e">Location relates to the actual place of the festival. Some locations are far superior to others because they are accessible, visible, and large enough to accommodate all of the stands, workshop areas, and your visitors. Also, the festival organizer must check with local authorities as there are often regulations: trash disposal and recycling, areas for medical attention, and food handling and storage. <mark class="m5">Especially for health and safety, some local authorities require clear labels for people with food allergies.</mark></div><div class="j">場所は、フェスティバルの実際の会場に関わる。アクセスしやすく、目につきやすく、すべてのスタンド・ワークショップ区画・来場者を収容できる広さがあるという理由で、他よりはるかに優れた場所がある。また、ゴミの処理とリサイクル、医療対応の区画、食品の取り扱いと保管など、規制があることが多いので、主催者は自治体に確認しなければならない。<mark class="m5">特に健康と安全のために、一部の自治体は食物アレルギーのある人のための明確な表示を義務付けている。</mark><span class="tagq t5">問5</span></div></div><div class="pair"><div class="pn">記事 第4〜5段落（Assistance・結論）</div><div class="e">Assistance relates to making sure there are enough people to help you prepare, organize, and run the event. Festivals can usually last all day and generally have lots of visitors, so things can get untidy. It is therefore very important to clean up properly afterward. This means having a large enough group of assistants is essential.<br><mark class="m1">Nothing guarantees a successful festival, but it is vital to consider the scheme, the location, and the assistance required.</mark> The last secret ingredient for success is having a positive attitude!</div><div class="j">支援は、準備・運営・実施を手伝ってくれる人が十分いるようにすることに関わる。フェスティバルはたいてい一日中続き、来場者も多いので、散らかりやすい。だから後片付けをきちんとすることがとても重要だ。つまり、十分な人数の手伝いがいることが不可欠だ。<br><mark class="m1">成功するフェスティバルを保証するものは何もないが、計画・場所・必要な支援を考えることは不可欠だ。</mark><span class="tagq t1">問1</span> 成功の最後の秘訣は、前向きな姿勢を持つことだ！</div></div><div class="pair"><div class="pn">調査結果（グラフ）</div><div class="e">What event(s) did you attend at the festival? (191 surveyed, multiple answers)<br><mark class="m3">Baked goods sale 176 / Flower arrangement workshop 129 / Jam-making workshop 97 / Musical performances 56 / Painting workshop 37 / Bread-making workshop 24</mark></div><div class="j">フェスティバルでどのイベントに参加しましたか？（191人・複数回答可）<br><mark class="m3">焼き菓子販売 176 ／ フラワーアレンジメント 129 ／ ジャム作り 97 ／ 音楽演奏 56 ／ 絵画 37 ／ パン作り 24</mark><span class="tagq t3">問3</span></div></div><div class="pair"><div class="pn">調査結果（コメント）</div><div class="e"><mark class="m4">Comment 1: It was fun for all the family, but how about having small animals for children to play with?</mark><br>Comment 2: The florist who gave the workshop was fantastic! I’m already looking forward to next year. I’m sure more people will want to join.<br><mark class="m5">Comment 3: The cakes and cookies looked really good but I didn’t know what they were made of. I have some food allergies, so I was sad that I couldn’t buy anything.</mark><br><mark class="m4">Comment 4: Just like last year, the bread-making workshop wasn’t crowded. It’s time for something new! Butter making might be fun.</mark><br>Comment 5: I had a great time, but I was disappointed that all of the vending machines were out of drinks. Provide more vending machines.<br>Comment 6: The ground was uneven and I twisted my ankle while walking. Thankfully, the medical staff were very kind.</div><div class="j"><mark class="m4">コメント1：家族みんなで楽しめたが、子どもが遊べる小動物を置くのはどうか？</mark><span class="tagq t4">問4</span><br>コメント2：ワークショップの花屋さんが素晴らしかった！ もう来年が楽しみ。参加したい人がもっと増えるはず。<br><mark class="m5">コメント3：ケーキやクッキーはおいしそうだったが、何でできているか分からなかった。食物アレルギーがあるので、何も買えなくて悲しかった。</mark><span class="tagq t5">問5</span><br><mark class="m4">コメント4：昨年と同じく、パン作りは混んでいなかった。何か新しいことをする時期だ！ バター作りは楽しいかも。</mark><span class="tagq t4">問4</span><br>コメント5：楽しかったが、自販機が全部飲み物切れでがっかり。自販機を増やして。<br>コメント6：地面が凸凹で歩いていて足首をひねった。幸い医療スタッフがとても親切だった。</div></div><div class="pair"><div class="pn">メモ</div><div class="e">Plan for This Year’s Festival — The SLA Festival Model: What is it for? [18] / Scheme: [19] / Location: Where will the festival be held? / Assistance: Who can assist? — Based on the Survey Results [20] A〜E — Things to Consider: Plan new events based on [21] and [22]. Give the flower arranging workshop a bigger space. Check local regulations and [23].</div><div class="j">今年のフェスティバル計画 ― SLAモデル：何のため？[18]／計画：[19]／場所：どこで開催するか？／支援：誰が手伝えるか？ ― 調査結果に基づいて [20] A〜E ― 検討事項：[21]と[22]に基づいて新イベントを企画する。フラワーアレンジメントの区画を広げる。地域の規制を確認し、[23]。</div></div></div></section><section class="section" id="s6"><div class="sec-head"><span class="sec-no">STEP 6</span><h2 class="sec-title">語句 ― 運営の語と比較語を優先して覚える</h2><span class="sec-sub">Vocabulary</span></div><p class="note">第5問は「運営・規制の語」と「グラフを読む比較語」を優先して覚えます。</p><div class="vgroup">今回の言い換えペア（最優先）</div><div class="vocab"><div><span class="w">run smoothly / successful festival ／ achieve successful events</span><span class="pos">熟</span><span class="m">円滑に運営／成功するイベント</span></div><div><span class="w">enough time / two months ／ How much time is needed</span><span class="pos">熟</span><span class="m">十分な時間／どれだけ時間が必要か</span></div><div><span class="w">how about ～ / ～ might be fun ／ new events</span><span class="pos">熟</span><span class="m">〜はどう？／新しいイベント</span></div><div><span class="w">clear labels for food allergies ／ food labels list all ingredients</span><span class="pos">熟</span><span class="m">アレルギー表示／全原材料の表示</span></div></div><div class="vgroup">グラフを読む比較語</div><div class="vocab"><div><span class="w">most / least</span><span class="pos">形</span><span class="m">最も多い／最も少ない</span></div><div><span class="w">fewer than ～</span><span class="pos">熟</span><span class="m">〜より少ない</span></div><div><span class="w">more than ～</span><span class="pos">熟</span><span class="m">〜より多い</span></div><div><span class="w">the most popular</span><span class="pos">熟</span><span class="m">最も人気の</span></div><div><span class="w">multiple answers allowed</span><span class="pos">熟</span><span class="m">複数回答可</span></div><div><span class="w">respondent</span><span class="pos">名</span><span class="m">回答者</span></div></div><div class="vgroup">本文</div><div class="vocab"><div><span class="w">fundamentals</span><span class="pos">名</span><span class="m">基本</span></div><div><span class="w">committee</span><span class="pos">名</span><span class="m">委員会</span></div><div><span class="w">upcoming</span><span class="pos">形</span><span class="m">来たる</span></div><div><span class="w">a variety of ～</span><span class="pos">熟</span><span class="m">さまざまな</span></div><div><span class="w">stand</span><span class="pos">名</span><span class="m">売り場、スタンド</span></div><div><span class="w">organizer</span><span class="pos">名</span><span class="m">主催者</span></div><div><span class="w">scheme</span><span class="pos">名</span><span class="m">計画、仕組み</span></div><div><span class="w">co-ordinate</span><span class="pos">動</span><span class="m">調整する</span></div><div><span class="w">time frame</span><span class="pos">名</span><span class="m">期間、時間枠</span></div><div><span class="w">advertise</span><span class="pos">動</span><span class="m">宣伝する</span></div><div><span class="w">allow</span><span class="pos">動</span><span class="m">（時間を）見込む</span></div><div><span class="w">superior to ～</span><span class="pos">熟</span><span class="m">〜より優れた</span></div><div><span class="w">accessible</span><span class="pos">形</span><span class="m">アクセスしやすい</span></div><div><span class="w">visible</span><span class="pos">形</span><span class="m">目につきやすい</span></div><div><span class="w">accommodate</span><span class="pos">動</span><span class="m">収容する</span></div><div><span class="w">local authorities</span><span class="pos">名</span><span class="m">自治体</span></div><div><span class="w">regulation</span><span class="pos">名</span><span class="m">規制</span></div><div><span class="w">trash disposal</span><span class="pos">名</span><span class="m">ゴミ処理</span></div><div><span class="w">medical attention</span><span class="pos">名</span><span class="m">医療対応</span></div><div><span class="w">storage</span><span class="pos">名</span><span class="m">保管</span></div><div><span class="w">label</span><span class="pos">名</span><span class="m">表示、ラベル</span></div><div><span class="w">allergy</span><span class="pos">名</span><span class="m">アレルギー</span></div><div><span class="w">untidy</span><span class="pos">形</span><span class="m">散らかった</span></div><div><span class="w">afterward</span><span class="pos">副</span><span class="m">あとで</span></div><div><span class="w">essential</span><span class="pos">形</span><span class="m">不可欠な</span></div><div><span class="w">guarantee</span><span class="pos">動</span><span class="m">保証する</span></div><div><span class="w">vital</span><span class="pos">形</span><span class="m">不可欠な</span></div><div><span class="w">ingredient</span><span class="pos">名</span><span class="m">材料、要素</span></div><div><span class="w">florist</span><span class="pos">名</span><span class="m">花屋</span></div><div><span class="w">crowded</span><span class="pos">形</span><span class="m">混雑した</span></div><div><span class="w">vending machine</span><span class="pos">名</span><span class="m">自動販売機</span></div><div><span class="w">uneven</span><span class="pos">形</span><span class="m">凸凹の</span></div><div><span class="w">twist one’s ankle</span><span class="pos">熟</span><span class="m">足首をひねる</span></div></div><div class="vgroup">選択肢</div><div class="vocab"><div><span class="w">achieve</span><span class="pos">動</span><span class="m">達成する</span></div><div><span class="w">trend</span><span class="pos">名</span><span class="m">流行</span></div><div><span class="w">revive</span><span class="pos">動</span><span class="m">再生させる</span></div><div><span class="w">encourage</span><span class="pos">動</span><span class="m">促す</span></div><div><span class="w">remove</span><span class="pos">動</span><span class="m">取り除く</span></div><div><span class="w">ensure</span><span class="pos">動</span><span class="m">確実にする</span></div><div><span class="w">fridge</span><span class="pos">名</span><span class="m">冷蔵庫</span></div><div><span class="w">on site</span><span class="pos">熟</span><span class="m">現場に</span></div><div><span class="w">separate</span><span class="pos">動</span><span class="m">分別する</span></div></div></section><section class="section" id="s7"><div class="sec-head"><span class="sec-no">STEP 7</span><h2 class="sec-title">持ち帰る3つの武器 と 自己点検</h2><span class="sec-sub">Take-aways</span></div><div class="weapons"><div class="weapon"><span class="wn">武器 1</span><h4>メモが地図。本文より先にメモを読み、空欄ごとに見る資料を1つに決める</h4><p>記事を頭から読むのは最も遅い。18・19は記事、20はグラフ、21・22はコメント、23は記事＋コメント。</p></div><div class="weapon"><span class="wn">武器 2</span><h4>グラフは「順位表1行」に変換してから選択肢を見る</h4><p>176＞129＞97＞56＞37＞24。least は最下位1つだけ。下から2番目を最少と言う選択肢が定番の誤り。</p></div><div class="weapon"><span class="wn">武器 3</span><h4>both と言われたら、片方にしかない根拠は捨てる</h4><p>記事の規制4つは全部本当。コメントで実際に困った人がいる1つだけが答え。コメントの温度（sad か thankfully か）も読む。</p></div></div><p style="margin-top:22px;"><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。チェックはこの端末に保存されます。</p><ul class="check" id="check"><li><input type="checkbox"><span>リード文で「3つの資料」と「ゴールはメモの完成」を確認した</span></li><li><input type="checkbox"><span>本文より先にメモを読み、空欄がどの資料に対応するかを決めた</span></li><li><input type="checkbox"><span>問1で、記事の導入文と結論文だけを見て目的を答えた（3要素の中身は読み飛ばした）</span></li><li><input type="checkbox"><span>問2で、Location: Where / Assistance: Who と同じ型で Scheme の疑問文を選んだ</span></li><li><input type="checkbox"><span>問3で、グラフを順位表に書き出してから5文を照合した</span></li><li><input type="checkbox"><span>問4で、「新しいイベント」という目的で6コメントをふるいにかけた</span></li><li><input type="checkbox"><span>問5で、記事の規制4つとコメントの不満の重なりを探した（記事だけで決めなかった）</span></li><li><input type="checkbox"><span>12分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li></ul><div class="check-foot"><span id="checkfoot">0 / 0</span><span class="bar"><i id="checkbar"></i></span></div><div class="callout "><div class="ttl">次に向けて</div><p>7個以上なら第5問の手順は入っています。次は同じ手順を「初見の複数資料問題」で再現できるかを試してください。6個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度12分で解き直してください。測っているのは正解ではなく、<b>メモから見る資料を決めたか</b>です。</p></div><button class="btn ghost block" style="margin-top:16px;" onclick="resetAll()">解答・チェックをリセットしてもう一度解く</button></section>
+</main>
+<footer class="footer">出典：令和7年度 大学入学共通テスト 追試験 英語（リーディング）第5問<br>学部別合格設計塾 THINKING ― 受験は根性じゃなく、設計。</footer>
+<div class="dock" role="toolbar" aria-label="クイック操作"><div class="dock-in">
+<button class="btn orange" onclick="openSheet(0)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7a3 3 0 0 1 3 3v13a2 2 0 0 0-2-2H4z"/><path d="M20 4h-7a3 3 0 0 0-3 3v13a2 2 0 0 1 2-2h8z"/></svg>本文を開く</button>
+<button class="btn ghost icon" onclick="jumpNext()" aria-label="次のステップへ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>次へ</button>
+<button class="btn ghost icon" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="先頭へ"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 15l6-6 6 6"/></svg></button>
+</div></div>
+<div class="scrim" id="scrim" onclick="closeSheet()"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="本文"><div class="grip"></div>
+<div class="sh"><span class="t">本文 ― Festival Fundamentals ＋ Survey ＋ Memo</span><button class="toggle on" id="hlToggle" onclick="toggleHl()">根拠の色を表示</button><button class="close" onclick="closeSheet()" aria-label="閉じる"><svg viewBox="0 0 16 16" fill="none" stroke="#2c2520" stroke-width="2" stroke-linecap="round"><path d="M3 3l10 10M13 3L3 13"/></svg></button></div>
+<div class="sheet-body show-hl" id="sheetBody"><div class="qtabs"><button data-q="0" class="on" onclick="filterQ(0)">全部</button><button data-q="1" onclick="filterQ(1)">問1</button><button data-q="2" onclick="filterQ(2)">問2</button><button data-q="3" onclick="filterQ(3)">問3</button><button data-q="4" onclick="filterQ(4)">問4</button><button data-q="5" onclick="filterQ(5)">問5</button></div>
+<p class="lead-text">You are an exchange student in the US and have joined the festival committee in your community. You read the following article and use last year’s survey results to create a memo for the upcoming meeting.</p>
+<div class="doc">
+<div class="dtitle">Festival Fundamentals</div><div class="by">by Kandi Russell</div>
+<p>Local communities hold festivals for a variety of purposes. They often include stands selling local products, performances, and workshops where visitors can try new things. <mark class="m1">For festivals to run smoothly, organizers usually follow the “SLA Festival Model”: <i>Scheme</i>, <i>Location</i>, and <i>Assistance</i>.</mark></p>
+<p><i>Scheme</i> relates to how easy it is to arrange, co-ordinate, and hold the event within a specific time frame. <mark class="m2">Do you have enough time to plan and advertise your event? Do the local sellers have enough time to prepare items that people will want to buy? Is there time to arrange for workshops that visitors will be interested in? We suggest allowing at least two months to organize your festival.</mark> During this time, you should arrange for sellers, performers, and people to give workshops.</p>
+<p><i>Location</i> relates to the actual place of the festival. Some locations are far superior to others because they are accessible, visible, and large enough to accommodate all of the stands, workshop areas, and your visitors. Also, the festival organizer must check with local authorities as there are often regulations: trash disposal and recycling, areas for medical attention, and food handling and storage. <mark class="m5">Especially for health and safety, some local authorities require clear labels for people with food allergies.</mark></p>
+<p><i>Assistance</i> relates to making sure there are enough people to help you prepare, organize, and run the event. Festivals can usually last all day and generally have lots of visitors, so things can get untidy. It is therefore very important to clean up properly afterward. This means having a large enough group of assistants is essential.</p>
+<p><mark class="m1">Nothing guarantees a successful festival, but it is vital to consider the scheme, the location, and the assistance required.</mark> The last secret ingredient for success is having a positive attitude!</p>
+</div>
+<div class="doc">
+<div class="dtitle">Survey Results</div>
+<p><b>● What event(s) did you attend at the festival?</b> <span style="font-size:13px;color:#6b6155;">(People surveyed = 191, multiple answers allowed)</span></p>
+<div class="bars"><mark class="m3"><div class="bar-row"><span class="bl">Baked goods sale</span><span class="bb" style="width:92%"></span><span class="bn">176</span></div><div class="bar-row"><span class="bl">Flower arrangement workshop</span><span class="bb" style="width:68%"></span><span class="bn">129</span></div><div class="bar-row"><span class="bl">Jam-making workshop</span><span class="bb" style="width:51%"></span><span class="bn">97</span></div><div class="bar-row"><span class="bl">Musical performances</span><span class="bb" style="width:29%"></span><span class="bn">56</span></div><div class="bar-row"><span class="bl">Painting workshop</span><span class="bb" style="width:19%"></span><span class="bn">37</span></div><div class="bar-row"><span class="bl">Bread-making workshop</span><span class="bb" style="width:13%"></span><span class="bn">24</span></div></mark></div>
+<p><b>● What did you think about the festival?</b></p>
+<p style="margin-bottom:4px;">Main comments:</p>
+<p style="margin-bottom:6px;"><mark class="m4">Comment 1: It was fun for all the family, but how about having small animals for children to play with?</mark></p>
+<p style="margin-bottom:6px;">Comment 2: The florist who gave the workshop was fantastic! I’m already looking forward to next year. I’m sure more people will want to join.</p>
+<p style="margin-bottom:6px;"><mark class="m5">Comment 3: The cakes and cookies looked really good but I didn’t know what they were made of. I have some food allergies, so I was sad that I couldn’t buy anything.</mark></p>
+<p style="margin-bottom:6px;"><mark class="m4">Comment 4: Just like last year, the bread-making workshop wasn’t crowded. It’s time for something new! Butter making might be fun.</mark></p>
+<p style="margin-bottom:6px;">Comment 5: I had a great time, but I was disappointed that all of the vending machines were out of drinks. Provide more vending machines.</p>
+<p>Comment 6: The ground was uneven and I twisted my ankle while walking. Thankfully, the medical staff were very kind.</p>
+</div>
+<p style="font-family:'Noto Sans JP',sans-serif;font-size:13px;color:#6b6155;margin-bottom:4px;">Your memo</p>
+<div class="doc memo">
+<div class="dtitle">Plan for This Year’s Festival</div>
+<div class="lbl">The SLA Festival Model</div>
+<ul><li>What is it for? <span class="box">18</span></li>
+<li>Three components &amp; key questions
+<ul><li class="dash">Scheme: <span class="box">19</span></li><li class="dash">Location: Where will the festival be held?</li><li class="dash">Assistance: Who can assist with the festival?</li></ul></li></ul>
+<div class="lbl">Based on the Survey Results <span class="box">20</span></div>
+<ul><li class="dash">A. Fewer respondents joined bread making than jam making.</li><li class="dash">B. Flower arrangement was the most popular workshop.</li><li class="dash">C. More than 50 respondents attended musical performances.</li><li class="dash">D. Most respondents visited the baked goods stand.</li><li class="dash">E. The painting workshop was the least popular event.</li></ul>
+<div class="lbl">Things to Consider</div>
+<ul><li>Plan new events based on <span class="box">21</span> and <span class="box">22</span>.</li><li>Give the flower arranging workshop a bigger space.</li><li>Check local regulations and <span class="box">23</span>.</li></ul>
+</div>
+<div class="q"><p class="stem"><span class="qn">問 1</span>Which of the following best describes the purpose of the SLA Festival Model? <span class="box">18</span></p><ol><li><span class="circ">1</span>It helps to achieve successful events.</li><li><span class="circ">2</span>It helps to learn about new festival trends.</li><li><span class="circ">3</span>It helps to revive local communities.</li><li><span class="circ">4</span>It helps to understand the history of festivals.</li></ol></div><div class="q"><p class="stem"><span class="qn">問 2</span>According to the SLA Festival Model, which of the following is the best option for <span class="box">19</span>? </p><ol><li><span class="circ">1</span>How can we encourage more festival advertisers?</li><li><span class="circ">2</span>How much time is needed to arrange the festival?</li><li><span class="circ">3</span>What is the main purpose of the festival?</li><li><span class="circ">4</span>What time will the festival start and finish?</li></ol></div><div class="q"><p class="stem"><span class="qn">問 3</span>In the Survey Results section in your memo, you have noticed an error. Which statement should you <u class="kw">remove</u>? <span class="box">20</span></p><ol><li><span class="circ">1</span>A</li><li><span class="circ">2</span>B</li><li><span class="circ">3</span>C</li><li><span class="circ">4</span>D</li><li><span class="circ">5</span>E</li></ol></div><div class="q"><p class="stem"><span class="qn">問 4</span>For this year’s festival, you want to add new events. Which two comments would be most helpful? (The order does not matter.) <span class="box">21</span> <span class="box">22</span></p><ol><li><span class="circ">1</span>Comment 1</li><li><span class="circ">2</span>Comment 2</li><li><span class="circ">3</span>Comment 3</li><li><span class="circ">4</span>Comment 4</li><li><span class="circ">5</span>Comment 5</li><li><span class="circ">6</span>Comment 6</li></ol></div><div class="q"><p class="stem"><span class="qn">問 5</span>Based on both the article and comments from last year’s festival, which of the following is the best option for <span class="box">23</span>? </p><ol><li><span class="circ">1</span>ensure food labels list all ingredients</li><li><span class="circ">2</span>food should be stored in fridges</li><li><span class="circ">3</span>have a medical station on site</li><li><span class="circ">4</span>make sure trash is properly separated</li></ol></div></div></div>
+<div class="toast" id="toast"></div>
+<script>
+var KEY='thinking_r7_tsui_q5';
+var QUIZ=[{"label": "問 1", "slots": ["18"], "n": 4, "ans": ["1"], "ansText": "1", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}, {"label": "問 2", "slots": ["19"], "n": 4, "ans": ["2"], "ansText": "2", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}, {"label": "問 3", "slots": ["20"], "n": 5, "ans": ["5"], "ansText": "5", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}, {"label": "問 4", "slots": ["21", "22"], "n": 6, "ans": ["1", "4"], "ansText": "①と④", "pts": 4, "mode": "set", "each": 2, "note": "（順不同・各2点）", "ns": null, "k": null}, {"label": "問 5", "slots": ["23"], "n": 4, "ans": ["1"], "ansText": "1", "pts": 3, "mode": "single", "each": null, "note": "", "ns": null, "k": null}];
+var TOTAL=16;
+var TSEC0=720;
+function load(){try{return JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){return {};}}
+function save(o){try{localStorage.setItem(KEY,JSON.stringify(o));}catch(e){}}
+var state=load();
+function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');clearTimeout(t._h);t._h=setTimeout(function(){t.classList.remove('on');},1800);}
+/* timer */
+var tsec=TSEC0,tid=null;
+function fmt(s){var m=Math.floor(Math.abs(s)/60),ss=Math.abs(s)%60;return (s<0?'+':'')+m+':'+(ss<10?'0':'')+ss;}
+function paintTimer(){var d=document.getElementById('tm'),c=document.getElementById('tclock');d.textContent=fmt(tsec);c.textContent=fmt(tsec);d.classList.toggle('over',tsec<0);c.classList.toggle('over',tsec<0);}
+function timer(){var btn=document.getElementById('tmbtn'),c=document.getElementById('tclock');
+  if(tid){clearInterval(tid);tid=null;btn.textContent='再開';btn.classList.remove('stop');return;}
+  btn.textContent='ストップ';btn.classList.add('stop');c.classList.add('on');
+  tid=setInterval(function(){tsec--;paintTimer();if(tsec===0)toast('目標時間を経過。そのまま続けてOK');},1000);}
+/* quiz */
+var sel={};
+function buildQuiz(){
+  var host=document.getElementById('quiz');
+  QUIZ.forEach(function(q,qi){
+    var row=document.createElement('div');row.className='quiz-row';row.dataset.qi=qi;
+    var h='<div class="qlabel"><span>'+q.label+(q.note?' <span style="font-weight:500;color:var(--ink3);font-size:12px">'+q.note+'</span>':'')+'</span><span class="st"></span></div>';
+    q.slots.forEach(function(s,si){
+      var nn=(q.ns&&q.ns[si])||q.n;
+      h+='<div class="slot"><span class="sl">'+s+'</span><div class="opts n'+nn+'" data-si="'+si+'">';
+      for(var k=1;k<=nn;k++)h+='<button class="opt" data-v="'+k+'">'+k+'</button>';
+      h+='</div></div>';
+    });
+    row.innerHTML=h;host.appendChild(row);
+    sel[qi]=new Array(q.slots.length).fill(null);
+    row.querySelectorAll('.opts').forEach(function(op){
+      var si=+op.dataset.si;
+      op.querySelectorAll('.opt').forEach(function(b){
+        b.addEventListener('click',function(){
+          if(row.dataset.graded)return;
+          op.querySelectorAll('.opt').forEach(function(x){x.classList.remove('sel');});
+          b.classList.add('sel');sel[qi][si]=b.dataset.v;
+        });
+      });
+    });
+  });
+}
+function grade(silent){
+  var unanswered=[];
+  QUIZ.forEach(function(q,qi){if(sel[qi].some(function(v){return v===null;}))unanswered.push(qi);});
+  if(unanswered.length){toast('すべての空欄に答えてから採点してください');var r=document.querySelector('.quiz-row[data-qi="'+unanswered[0]+'"]');if(r)r.scrollIntoView({behavior:'smooth',block:'center'});return;}
+  var score=0;
+  QUIZ.forEach(function(q,qi){
+    var row=document.querySelector('.quiz-row[data-qi="'+qi+'"]');row.dataset.graded='1';
+    var mine=sel[qi],ans=q.ans.map(String),correct,earned=0;
+    if(q.mode==='set'){var a=mine.slice().sort().join(),b=ans.slice().sort().join();correct=(a===b);
+      if(q.each){ earned=0; mine.forEach(function(v){ if(ans.indexOf(v)>=0) earned+=q.each; }); if(new Set(mine).size<mine.length) earned=Math.min(earned,q.each);} else earned=correct?q.pts:0;
+    } else if(q.mode==='mixed'){var k=q.k;var a1=mine.slice(0,k).sort().join(),b1=ans.slice(0,k).sort().join();correct=(a1===b1)&&(mine.slice(k).join()===ans.slice(k).join());earned=correct?q.pts:0;}
+    else {correct=mine.join()===ans.join();earned=correct?q.pts:0;}
+    score+=earned;
+    row.querySelectorAll('.opts').forEach(function(op,si){
+      op.querySelectorAll('.opt').forEach(function(b){
+        var v=b.dataset.v;b.classList.remove('sel');
+        if(q.mode==='set'||(q.mode==='mixed'&&si<q.k)){ var pool=q.mode==='set'?ans:ans.slice(0,q.k), mpool=q.mode==='set'?mine:mine.slice(0,q.k); if(v===mine[si]&&pool.indexOf(v)>=0&&mpool.indexOf(v)===si)b.classList.add('ok'); else if(v===mine[si])b.classList.add('ng'); }
+        else { if(v===ans[si]&&v===mine[si])b.classList.add('ok'); else if(v===mine[si])b.classList.add('ng'); else if(v===ans[si])b.classList.add('hint'); }
+      });
+    });
+    if((q.mode==='set'||q.mode==='mixed')&&!correct){var k2=q.mode==='set'?ans.length:q.k;var miss=ans.slice(0,k2).filter(function(v){return mine.slice(0,k2).indexOf(v)<0;});row.querySelectorAll('.opts').forEach(function(op,si){if(si>=k2)return;op.querySelectorAll('.opt').forEach(function(b){if(miss.indexOf(b.dataset.v)>=0&&!b.classList.contains('ng')&&!b.classList.contains('ok'))b.classList.add('hint');});});}
+    var st=row.querySelector('.st');
+    st.textContent=correct?'正解（'+earned+'点）':(earned>0?'一部正解（'+earned+'点）正解 '+q.ansText:'不正解（正解 '+q.ansText+'）');
+    st.className='st '+(correct?'ok':'ng');
+  });
+  document.getElementById('score').textContent=score+' / '+TOTAL+'点';
+  var r=score/TOTAL,msg=r>=1?'全問正解。次は「どの順番で目を動かしたか」を解説と照らし合わせてください。':r>=0.7?'合格圏。落とした設問が、どのタイプだったかを確認してください。':r>=0.45?'半分前後。この大問の「読む順番」が入っていない可能性が高いです。STEP 1を読んでから解説へ。':'手順を入れる前の状態です。ここから伸びます。STEP 1を読んでからSTEP 3の脳内実況を追ってください。';
+  document.getElementById('scoremsg').textContent=msg;
+  document.getElementById('gradebtn').textContent='採点済み';
+  if(tid){clearInterval(tid);tid=null;document.getElementById('tmbtn').textContent='終了';document.getElementById('tmbtn').classList.remove('stop');}
+  state.sel=sel;state.time=tsec;save(state);
+  if(!silent)setTimeout(function(){document.getElementById('s1').scrollIntoView({behavior:'smooth'});},900);
+}
+function restoreQuiz(){
+  if(!state.sel)return;
+  var ok=true;QUIZ.forEach(function(q,qi){var s=state.sel[qi];if(!s||s.length!==q.slots.length||s.some(function(v){return v===null;}))ok=false;else sel[qi]=s.map(String);});
+  if(!ok)return;
+  tsec=typeof state.time==='number'?state.time:TSEC0;paintTimer();grade(true);
+  document.getElementById('scoremsg').textContent+='（前回の結果を表示中）';
+}
+/* accordion */
+function acc(btn){var card=btn.closest('.ans-card');var open=card.classList.toggle('open');btn.setAttribute('aria-expanded',open);if(open){setTimeout(function(){card.scrollIntoView({behavior:'smooth',block:'start'});},60);}}
+/* drill */
+function drill(btn,choice){var row=btn.closest('.drill-row'),a=row.dataset.a,res=row.querySelector('.res');
+  row.querySelectorAll('button').forEach(function(b){b.classList.remove('on','good','bad');});btn.classList.add('on',choice===a?'good':'bad');
+  res.classList.add('show');res.classList.remove('good','bad');res.classList.add(choice===a?'good':'bad');
+  var base=res.dataset.base||res.textContent;res.dataset.base=base;res.textContent=(choice===a?'正解。':'不正解。')+base;}
+/* translation */
+function toggleEn(b){var on=b.classList.toggle('on');document.querySelectorAll('#tr .pair').forEach(function(p){p.classList.toggle('hidden-en',on);});b.textContent=on?'英文を表示する':'英文を隠して和訳だけ読む';}
+/* checklist */
+var checks=document.querySelectorAll('#check li');
+function paintChecks(){var n=document.querySelectorAll('#check input:checked').length;document.getElementById('checkfoot').textContent=n+' / '+checks.length;document.getElementById('checkbar').style.width=(n*100/checks.length)+'%';}
+checks.forEach(function(li,i){var cb=li.querySelector('input');if(state.checks&&state.checks[i]){cb.checked=true;li.classList.add('done');}
+  li.addEventListener('click',function(e){if(e.target!==cb)cb.checked=!cb.checked;li.classList.toggle('done',cb.checked);state.checks=[].map.call(checks,function(l){return l.querySelector('input').checked;});save(state);paintChecks();});});
+function resetAll(){try{localStorage.removeItem(KEY);}catch(e){}location.reload();}
+/* sheet */
+var sheet=document.getElementById('sheet'),scrim=document.getElementById('scrim'),body=document.getElementById('sheetBody');
+function openSheet(q){sheet.classList.add('on');scrim.classList.add('on');document.body.classList.add('sheet-open');filterQ(q||0);
+  if(q){var el=body.querySelector('mark.m'+q);if(el){setTimeout(function(){el.scrollIntoView({behavior:'smooth',block:'center'});el.classList.add('pulse');setTimeout(function(){el.classList.remove('pulse');},1400);},260);}}
+  else{body.scrollTop=0;}}
+function closeSheet(){sheet.classList.remove('on');scrim.classList.remove('on');document.body.classList.remove('sheet-open');}
+function filterQ(q){body.classList.remove('f1','f2','f3','f4','f5');if(q)body.classList.add('f'+q);body.querySelectorAll('.qtabs button').forEach(function(b){b.classList.toggle('on',+b.dataset.q===q);});}
+function toggleHl(){var on=body.classList.toggle('show-hl');var t=document.getElementById('hlToggle');t.classList.toggle('on',on);t.textContent=on?'根拠の色を表示':'白文（色なし）';}
+document.addEventListener('keydown',function(e){if(e.key==='Escape')closeSheet();});
+(function(){var y0=null;sheet.addEventListener('touchstart',function(e){y0=(body.scrollTop<=0)?e.touches[0].clientY:null;},{passive:true});sheet.addEventListener('touchmove',function(e){if(y0===null)return;if(e.touches[0].clientY-y0>70){closeSheet();y0=null;}},{passive:true});})();
+/* progress / nav */
+var secs=[].slice.call(document.querySelectorAll('.section')),links=[].slice.call(document.querySelectorAll('#stepnav a'));var lastCur=-1;
+function onScroll(){var h=document.documentElement,p=h.scrollTop/(h.scrollHeight-h.clientHeight);document.getElementById('pbar').style.width=(p*100)+'%';
+  var top=window.innerHeight*0.35,cur=0;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<top)cur=i;});
+  if(cur!==lastCur){lastCur=cur;links.forEach(function(a,i){a.classList.toggle('active',i===cur);});var act=links[cur],nav=document.getElementById('stepnav');nav.scrollTo({left:act.offsetLeft-nav.clientWidth/2+act.offsetWidth/2,behavior:'smooth'});}}
+var raf=null;window.addEventListener('scroll',function(){if(raf)return;raf=requestAnimationFrame(function(){raf=null;onScroll();});},{passive:true});
+function jumpNext(){var top=window.innerHeight*0.35,cur=-1;secs.forEach(function(s,i){if(s.getBoundingClientRect().top<top)cur=i;});secs[Math.min(cur+1,secs.length-1)].scrollIntoView({behavior:'smooth'});}
+links.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});});});
+buildQuiz();restoreQuiz();paintChecks();onScroll();
+</script>
+</body></html>

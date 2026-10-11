@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>共通テスト英語R 可視化リーディング｜THINKING</title>
+<meta name="description" content="共通テスト英語リーディングの大問別・可視化リーディング。動画、パワポ、問題、解説をここから開けます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#16315f; --blue:#2f6bff; --yellow:#ffe56a; --ink:#1a2744; --muted:#5c6b82;
+  --line:#e3eaf3; --paper:#fff; --bg:#f3f6fb; --soon:#8b97a8;
+}
+html{scroll-behavior:smooth;}
+body{font-family:"Noto Sans JP",sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;}
+a{color:inherit;}
+.wrap{max-width:880px;margin:0 auto;padding:16px 16px 72px;}
+.hero{display:block;width:100%;height:auto;border-radius:18px;background:#eef3fb;}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:18px 16px;margin-top:14px;}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--blue);}
+h1{font-size:22px;line-height:1.35;margin:4px 0 8px;}
+.exam-date{font-size:13px;color:var(--muted);}
+.count{display:flex;align-items:flex-end;gap:8px;margin-top:12px;}
+.count b{font-size:56px;line-height:.9;font-weight:900;letter-spacing:-.04em;color:var(--navy);}
+.count span{font-size:18px;font-weight:700;padding-bottom:6px;}
+.subtime{margin-top:6px;font-size:14px;color:var(--muted);}
+.hours{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);}
+.hours label{display:block;font-size:13px;font-weight:700;margin-bottom:8px;}
+.hours-row{display:flex;align-items:center;gap:8px;}
+.hours input{width:88px;font:inherit;font-size:18px;font-weight:700;padding:8px 10px;border:1.5px solid var(--line);border-radius:12px;color:var(--navy);}
+.study{margin-top:10px;font-size:15px;}
+.study b{font-size:28px;color:var(--navy);letter-spacing:-.03em;}
+.book-title{font-size:16px;font-weight:700;margin:4px 0 12px;}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:42px;padding:8px 14px;border-radius:999px;font-size:13px;font-weight:700;text-decoration:none;border:1.5px solid var(--navy);background:var(--navy);color:#fff;}
+.btn.ghost{background:#fff;color:var(--navy);}
+.btn.soon{background:#f4f6f9;color:var(--soon);border-color:#e1e6ee;pointer-events:none;}
+.q-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:12px;}
+.q-head h2{font-size:20px;}
+.links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px;}
+.block-label{font-size:12px;font-weight:700;color:var(--muted);margin:8px 0;}
+.task{padding:12px 0;border-top:1px solid var(--line);}
+.task h3{font-size:15px;margin-bottom:2px;}
+.task p{font-size:12px;color:var(--muted);margin-bottom:8px;}
+.task .links{margin:0;}
+.soon-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;}
+.soon-card{background:var(--paper);border:1px dashed #d5deea;border-radius:16px;padding:16px;min-height:96px;}
+.soon-card h2{font-size:16px;}
+.badge{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;letter-spacing:.06em;color:var(--soon);background:#f4f6f9;border-radius:999px;padding:3px 8px;}
+.note{margin-top:8px;font-size:13px;color:var(--muted);}
+@media (max-width:560px){
+  .count b{font-size:46px;}
+  .soon-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <img class="hero" src="kyotsu-reading-hero.png" alt="共通テスト英語R 可視化リーディング。読む力と解く力を、見える化する。オンライン塾 THINKING">
+
+  <section class="card" aria-labelledby="count-title">
+    <p class="kicker">COUNTDOWN</p>
+    <h1 id="count-title">共通テストまで</h1>
+    <p class="exam-date">2027年1月16日（土）午前9時30分</p>
+    <div class="count"><b id="days">—</b><span>日</span></div>
+    <p class="subtime" id="subtime">残り時間を計算しています</p>
+    <div class="hours">
+      <label for="daily">1日の勉強時間</label>
+      <div class="hours-row">
+        <input id="daily" type="number" min="0.5" max="24" step="0.5" value="10" inputmode="decimal" aria-describedby="study-line">
+        <span>時間</span>
+      </div>
+      <p class="study" id="study-line">残り勉強時間 <b id="study-hours">—</b> 時間</p>
+      <p class="note">本番までの残り時間をもとに、1日この時間で進めた場合の合計です。この端末に保存されます。</p>
+    </div>
+  </section>
+
+  <section class="card">
+    <p class="kicker">補助教材</p>
+    <h2 class="book-title">2027年用共通テスト実戦模試 英語リーディング</h2>
+    <a class="btn" href="https://link.amazon/B0ipL6B9K" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
+  </section>
+
+  <div id="questions"></div>
+  <p class="note">第2問から第8問は、1週間ごとに追加します。</p>
+</div>
+
+<script>
+/* 第2問以降を公開するときは open を true にし、URLを入れる。空なら Coming Soon のまま。 */
+var QUESTIONS = [
+  {
+    n: 1,
+    open: true,
+    video: "https://utage-system.com/video/fbxA9oGymcbx",
+    slides: "https://d27rnpuamwvieu.cloudfront.net/pdf/0GW3RemI8bJd1xUXxpkQpYgXX.pdf",
+    practices: [
+      {
+        label: "2026年本試験",
+        note: "ホブストンの校外学習",
+        problem: "https://d27rnpuamwvieu.cloudfront.net/pdf/06m3ibpStDzOCRsAPYfLcXgXX.pdf",
+        explain: "/lesson/thinking_kyotsu_q1_r8_honshiken_hobston.html"
+      },
+      {
+        label: "2026年追試験",
+        note: "",
+        problem: "https://d27rnpuamwvieu.cloudfront.net/pdf/0gqauXdI6bh9Ktb7fyRfwLwXX.pdf",
+        explain: ""
+      },
+      {
+        label: "2025年追試験",
+        note: "文房具店の広告",
+        problem: "https://d27rnpuamwvieu.cloudfront.net/pdf/0bu0xeywnLvo8N3feC79jqQXX.pdf",
+        explain: "/lesson/thinking_kyotsu_q1_r7_tsuishiken_stationery.html"
+      }
+    ]
+  }
+];
+
+var EXAM = new Date("2027-01-16T09:30:00+09:00");
+var HOURS_KEY = "thinking-kyotsu-daily-hours";
+var dailyInput = document.getElementById("daily");
+
+function savedHours(){
+  var n = Number(localStorage.getItem(HOURS_KEY));
+  if (!n || n < 0.5 || n > 24) return 10;
+  return n;
+}
+dailyInput.value = savedHours();
+dailyInput.addEventListener("input", function(){
+  var n = Number(dailyInput.value);
+  if (n >= 0.5 && n <= 24) localStorage.setItem(HOURS_KEY, String(n));
+  renderCount();
+});
+
+function renderCount(){
+  var ms = EXAM.getTime() - Date.now();
+  var daysEl = document.getElementById("days");
+  var subEl = document.getElementById("subtime");
+  var studyEl = document.getElementById("study-hours");
+  var daily = Number(dailyInput.value);
+  if (!daily || daily < 0.5) daily = 10;
+  if (ms <= 0){
+    daysEl.textContent = "0";
+    subEl.textContent = "本番の時刻を過ぎています";
+    studyEl.textContent = "0";
+    return;
+  }
+  var day = 86400000;
+  var days = Math.floor(ms / day);
+  var hours = Math.floor((ms % day) / 3600000);
+  var mins = Math.floor((ms % 3600000) / 60000);
+  daysEl.textContent = String(days);
+  subEl.textContent = "あと " + hours + "時間 " + mins + "分";
+  studyEl.textContent = Math.round((ms / day) * daily).toLocaleString("ja-JP");
+}
+renderCount();
+setInterval(renderCount, 30000);
+
+function link(href, text, primary){
+  if (!href) return '<span class="btn soon">' + text + "は準備中</span>";
+  return '<a class="btn' + (primary ? "" : " ghost") + '" href="' + href + '" target="_blank" rel="noopener noreferrer">' + text + "</a>";
+}
+
+function renderQuestions(){
+  var html = "";
+  var byN = {};
+  QUESTIONS.forEach(function(q){ byN[q.n] = q; });
+  var openHtml = "";
+  for (var n = 1; n <= 8; n++){
+    var q = byN[n];
+    if (q && q.open){
+      var practices = (q.practices || []).map(function(item){
+        return '<article class="task"><h3>' + item.label + "</h3>" +
+          (item.note ? "<p>" + item.note + "</p>" : "") +
+          '<div class="links">' + link(item.problem, "問題", false) + link(item.explain, "解説", true) + "</div></article>";
+      }).join("");
+      openHtml += '<section class="card" id="q' + n + '">' +
+        '<div class="q-head"><h2>第' + n + '問対策</h2></div>' +
+        '<div class="links">' + link(q.video, "動画講義", true) + link(q.slides, "パワポ", false) + "</div>" +
+        '<p class="block-label">自主課題</p>' + practices +
+        "</section>";
+    }
+  }
+  var soon = "";
+  for (var i = 1; i <= 8; i++){
+    var item = byN[i];
+    if (item && item.open) continue;
+    soon += '<article class="soon-card" id="q' + i + '"><h2>第' + i + '問</h2><span class="badge">Coming Soon</span></article>';
+  }
+  document.getElementById("questions").innerHTML = openHtml +
+    (soon ? '<div class="soon-grid">' + soon + "</div>" : "");
+}
+renderQuestions();
+</script>
+</body>
+</html>

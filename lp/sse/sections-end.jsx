@@ -386,7 +386,7 @@ function PriceSection() {
             <span className="eyebrow">MONITOR OFFER</span>
             <h2 className="section-title">期間限定<br /><em>モニター募集</em></h2>
             <p className="section-lead">
-              先着30名様限定・2026年5月31日まで。<br />
+              先着30名様限定・2026年10月31日まで。<br />
               リスクは私たちが負います。あなたは本気で取り組むことだけ。
             </p>
           </div>
@@ -396,7 +396,7 @@ function PriceSection() {
           <div className="price-card-head">
             <span className="price-tag">モニター募集</span>
             <h3>SSE 33日間 集中合宿</h3>
-            <span className="price-period">先着30名　2026年5月31日まで</span>
+            <span className="price-period">先着30名　2026年10月31日まで</span>
           </div>
 
           <div className="price-body">

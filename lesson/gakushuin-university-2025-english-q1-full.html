@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英語精読｜学習院大学 2025 大問1（テクノロジーと記憶）｜THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;600;700;900&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#16263f; --navy2:#22344f; --navy-ink:#0f1c30;
+  --gold:#b8954a; --gold-d:#8f7031; --gold-soft:#f3ecda;
+  --verm:#c8431f; --verm-d:#9e3417; --verm-soft:#fbe9e2;
+  --teal:#1f6b5c; --teal-d:#155346; --teal-soft:#e2f1ed;
+  --blue:#2f5c86; --blue-soft:#e7eef6;
+  --ink:#232830; --muted:#6c6a61; --faint:#9a978c;
+  --paper:#faf7f0; --surface:#ffffff; --surface2:#f5f1e8;
+  --line:#e6dfce; --line2:#d8cfb8;
+  --ok:#1f6b5c; --ng:#c8431f;
+  --shadow:0 1px 2px rgba(22,38,63,.05),0 8px 24px rgba(22,38,63,.06);
+}
+html{scroll-behavior:smooth;}
+body{font-family:"Noto Sans JP",sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;font-size:15.5px;-webkit-font-smoothing:antialiased;padding-bottom:60px;}
+.en{font-family:"Zilla Slab",serif;font-weight:600;letter-spacing:.01em;}
+em{font-style:normal;color:var(--verm);font-weight:600;}
+strong{font-weight:700;}
+
+/* HEADER */
+.top{position:sticky;top:0;z-index:200;background:var(--navy);color:#f4efe3;border-bottom:2px solid var(--gold);}
+.top-in{max-width:1080px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.mark{width:40px;height:40px;border-radius:9px;flex:none;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--navy);font-family:"Noto Serif JP",serif;font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);}
+.ttl{display:flex;flex-direction:column;line-height:1.3;}
+.ttl b{font-family:"Noto Serif JP",serif;font-size:15px;font-weight:700;letter-spacing:.02em;}
+.ttl span{font-size:10.5px;color:var(--gold);letter-spacing:.14em;font-weight:500;}
+.top-meta{margin-left:auto;font-size:10.5px;color:#c9c2b0;text-align:right;letter-spacing:.03em;}
+
+/* NAV */
+.nav{position:sticky;top:63px;z-index:190;background:rgba(250,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-in{max-width:1080px;margin:0 auto;padding:0 14px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
+.nav-in::-webkit-scrollbar{display:none;}
+.tab{flex:none;border:none;background:none;cursor:pointer;padding:12px 15px 10px;font-family:"Noto Sans JP",sans-serif;font-size:13px;font-weight:700;color:var(--muted);border-bottom:2.5px solid transparent;letter-spacing:.02em;white-space:nowrap;transition:.15s;display:flex;flex-direction:column;align-items:flex-start;gap:1px;position:relative;}
+.tab small{font-size:9px;color:var(--faint);font-weight:500;letter-spacing:.1em;}
+.tab .dot{position:absolute;top:9px;right:7px;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:0;transition:.2s;}
+.tab.done .dot{opacity:1;}
+.tab:hover{color:var(--navy);}
+.tab.on{color:var(--navy);border-bottom-color:var(--gold);}
+.tab.on small{color:var(--gold-d);}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:30px 22px 40px;}
+.panel{display:none;animation:fade .4s ease;}
+.panel.on{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.panel.on{animation:none;} html{scroll-behavior:auto;}}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold-d);text-transform:uppercase;margin-bottom:8px;}
+h1.head{font-family:"Noto Serif JP",serif;font-size:26px;font-weight:900;color:var(--navy);line-height:1.35;letter-spacing:.01em;}
+h1.head .sub{display:block;font-size:14px;font-weight:500;color:var(--muted);margin-top:8px;letter-spacing:.02em;}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold) 0,var(--gold) 46px,var(--line) 46px);margin:16px 0 26px;}
+h2.sec{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:700;color:var(--navy);margin:34px 0 14px;padding-left:13px;border-left:4px solid var(--gold);line-height:1.4;}
+h2.sec:first-child{margin-top:6px;}
+p{margin:0 0 12px;}
+p.lead{font-size:16px;color:#39404a;}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:16px;}
+.box{border-radius:11px;padding:15px 17px;margin:14px 0;font-size:14.5px;line-height:1.8;}
+.box .lab{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;padding:2px 9px;border-radius:20px;margin-bottom:7px;}
+.box.gold{background:var(--gold-soft);border:1px solid var(--line2);} .box.gold .lab{background:var(--gold);color:#fff;}
+.box.verm{background:var(--verm-soft);border:1px solid #f0cdc0;} .box.verm .lab{background:var(--verm);color:#fff;}
+.box.teal{background:var(--teal-soft);border:1px solid #bfe0d7;} .box.teal .lab{background:var(--teal);color:#fff;}
+.box.navy{background:#eef1f6;border:1px solid #d5ddea;} .box.navy .lab{background:var(--navy);color:#fff;}
+
+/* HERO (overview) */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#f3efe4;border-radius:16px;padding:30px 30px 26px;position:relative;overflow:hidden;margin-bottom:26px;}
+.hero::after{content:"設計";position:absolute;right:-6px;bottom:-24px;font-family:"Noto Serif JP",serif;font-weight:900;font-size:150px;color:rgba(184,149,74,.10);writing-mode:vertical-rl;letter-spacing:0;line-height:.8;}
+.hero .eyebrow{color:var(--gold);}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:29px;font-weight:900;line-height:1.4;position:relative;z-index:1;}
+.hero p{color:#d5cfc0;font-size:14.5px;max-width:660px;position:relative;z-index:1;margin-top:10px;}
+.thesis{position:relative;z-index:1;margin-top:16px;background:rgba(184,149,74,.14);border:1px solid rgba(184,149,74,.4);border-radius:10px;padding:11px 15px;font-size:13.5px;color:#f0e8d5;}
+.thesis b{color:var(--gold);}
+.stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1;}
+.stat b{display:block;font-family:"Zilla Slab",serif;font-size:30px;font-weight:700;color:var(--gold);line-height:1;}
+.stat span{font-size:11px;color:#c9c2b0;letter-spacing:.05em;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:720px){.grid2{grid-template-columns:1fr;}}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0 4px;}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top;}
+th{background:var(--navy);color:#f2eee2;font-weight:700;font-size:12.5px;letter-spacing:.03em;}
+tr:last-child td{border-bottom:none;}
+td.c{white-space:nowrap;font-weight:700;color:var(--navy);}
+tbody tr:nth-child(even){background:var(--surface2);}
+
+/* PARA MAP */
+.para{display:grid;grid-template-columns:52px 1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-bottom:14px;box-shadow:var(--shadow);}
+.para-n{background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:16px;gap:3px;}
+.para-n b{font-family:"Zilla Slab",serif;font-size:24px;font-weight:700;color:var(--gold);}
+.para-n span{writing-mode:vertical-rl;font-size:9.5px;letter-spacing:.14em;color:#b9c0cc;margin-top:2px;}
+.para-b{padding:15px 18px;}
+.para-b .theme{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:15px;margin-bottom:6px;}
+.para-b .theme .k{color:var(--verm);}
+.para-b p{font-size:14px;color:#3a4048;margin-bottom:8px;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.utag{font-family:"Zilla Slab",serif;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:6px;background:var(--gold-soft);color:var(--gold-d);border:1px solid var(--line2);}
+.utag.blank{background:var(--verm-soft);color:var(--verm);border-color:#f0cdc0;}
+
+/* FLOW */
+.flow{display:flex;flex-direction:column;gap:0;margin:14px 0;}
+.fnode{display:grid;grid-template-columns:34px 1fr;gap:12px;position:relative;padding-bottom:16px;}
+.fnode:not(:last-child)::before{content:"";position:absolute;left:16px;top:34px;bottom:-2px;width:2px;background:var(--line2);}
+.fdot{width:34px;height:34px;border-radius:50%;background:var(--surface);border:2px solid var(--gold);color:var(--navy);font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;z-index:1;}
+.fbody{padding-top:3px;}
+.fbody b{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:14.5px;}
+.fbody p{font-size:13.5px;color:#4a5058;margin:3px 0 0;}
+
+.sci{display:grid;grid-template-columns:1fr;gap:12px;}
+.sci .who{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:11px;padding:14px 16px;box-shadow:var(--shadow);}
+.sci .yr{font-family:"Zilla Slab",serif;font-weight:700;color:var(--gold-d);font-size:13px;text-align:right;line-height:1.4;padding-top:2px;min-width:78px;}
+.sci .yr b{display:block;font-size:15px;color:var(--navy);font-family:"Noto Serif JP",serif;}
+.sci .desc b{font-family:"Noto Serif JP",serif;color:var(--navy);}
+.sci .desc p{font-size:13.5px;color:#4a5058;margin:3px 0 0;}
+
+/* QUESTION INDEX */
+.qindex{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 22px;}
+.qjump{font-family:"Zilla Slab",serif;font-weight:700;font-size:13px;width:34px;height:34px;border-radius:8px;border:1px solid var(--line2);background:var(--surface);color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
+.qjump:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+/* QUESTION CARD */
+.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0;margin-bottom:20px;box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:120px;}
+.q-head{display:flex;align-items:center;gap:12px;padding:15px 20px;background:var(--surface2);border-bottom:1px solid var(--line);flex-wrap:wrap;}
+.q-no{font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;background:var(--navy);color:#fff;width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex:none;}
+.q-focus{flex:1;min-width:180px;}
+.q-focus .lbl{font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--gold-d);}
+.q-focus .en{display:block;font-size:15px;color:var(--navy);line-height:1.5;}
+.q-type{font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:20px;background:#fff;border:1px solid var(--line2);color:var(--muted);letter-spacing:.03em;flex:none;}
+.q-body{padding:18px 20px;}
+.q-body .askjp{font-size:13.5px;color:var(--muted);margin-bottom:12px;}
+
+.choices{display:flex;flex-direction:column;gap:8px;margin-bottom:6px;}
+.ch{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;text-align:left;width:100%;background:var(--surface);border:1.5px solid var(--line2);border-radius:10px;padding:11px 13px;cursor:pointer;font-family:inherit;font-size:14px;color:var(--ink);line-height:1.6;transition:.15s;}
+.ch:hover{border-color:var(--gold);background:#fffdf8;}
+.ch .num{font-family:"Zilla Slab",serif;font-weight:700;color:var(--navy);font-size:15px;width:26px;height:26px;border-radius:6px;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex:none;}
+.ch .mk{font-weight:900;font-size:17px;opacity:0;flex:none;width:20px;text-align:center;}
+.ch.reveal{cursor:default;}
+.ch.reveal.correct{border-color:var(--ok);background:#eef7f4;}
+.ch.reveal.correct .mk{opacity:1;color:var(--ok);}
+.ch.reveal.correct .num{background:var(--ok);color:#fff;}
+.ch.reveal.wrong{border-color:#e9d5cd;background:#fdf6f3;color:#7a6b64;}
+.ch.reveal.wrong .mk{opacity:1;color:var(--ng);}
+.ch.picked{box-shadow:0 0 0 2px var(--navy) inset;}
+
+.reveal-btn{margin-top:12px;background:var(--navy);color:#fff;border:none;border-radius:9px;padding:10px 18px;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;letter-spacing:.03em;transition:.15s;}
+.reveal-btn:hover{background:var(--navy2);}
+
+.solution{display:none;margin-top:16px;border-top:1px dashed var(--line2);padding-top:16px;}
+.solution.show{display:block;animation:fade .3s;}
+.ans-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-soft);border:1px solid var(--gold);border-radius:9px;padding:7px 14px;font-weight:700;color:var(--navy);font-size:14px;margin-bottom:12px;}
+.ans-badge .c{font-family:"Zilla Slab",serif;font-size:18px;color:var(--verm);font-weight:700;}
+
+/* EVIDENCE BOX (根拠) */
+.ev{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;}
+.ev-hd{background:var(--navy);color:#f2eee2;padding:7px 14px;font-size:10.5px;font-weight:700;letter-spacing:.1em;display:flex;align-items:center;gap:8px;}
+.ev-hd::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.ev-bd{padding:12px 15px;font-size:13.5px;line-height:1.8;}
+.ev-q{font-family:"Zilla Slab",serif;font-style:italic;color:var(--navy);background:var(--surface2);padding:9px 13px;border-radius:8px;border-left:3px solid var(--gold);margin-bottom:8px;font-size:13.5px;line-height:1.7;}
+.ev-q .h{background:#fbe9c9;font-style:normal;font-weight:700;padding:0 3px;border-radius:3px;color:var(--navy-ink);}
+
+/* CHOICE ANALYSIS */
+.chy-h{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;margin:14px 0 7px;}
+.ca-row{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:9px;margin-bottom:6px;overflow:hidden;}
+.ca-mark{flex:none;width:34px;display:flex;align-items:center;justify-content:center;font-family:"Zilla Slab",serif;font-size:16px;font-weight:700;color:#fff;}
+.ca-mark.ok{background:var(--ok);} .ca-mark.ng{background:var(--ng);}
+.ca-bd{padding:9px 13px;font-size:13px;line-height:1.75;flex:1;}
+.ca-bd .k{font-weight:700;} .ca-bd .k.o{color:var(--teal-d);} .ca-bd .k.x{color:var(--verm-d);}
+
+/* CALLOUTS */
+.co{border-radius:9px;padding:11px 14px;margin:10px 0;font-size:13.5px;line-height:1.78;}
+.co .co-lbl{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px;}
+.co.nav{background:var(--blue-soft);border-left:3px solid var(--navy);} .co.nav .co-lbl{color:var(--navy);}
+.co.gold{background:var(--gold-soft);border-left:3px solid var(--gold);} .co.gold .co-lbl{color:var(--gold-d);}
+.co.teal{background:var(--teal-soft);border-left:3px solid var(--teal);} .co.teal .co-lbl{color:var(--teal-d);}
+.co.verm{background:var(--verm-soft);border-left:3px solid var(--verm);} .co.verm .co-lbl{color:var(--verm-d);}
+
+/* DESCRIPTIVE */
+.desc-write{background:var(--teal-soft);border:1px solid #bfe0d7;border-radius:10px;padding:14px 16px;margin:6px 0;}
+.desc-write .modelans{font-family:"Noto Serif JP",serif;font-weight:600;color:var(--navy);font-size:15px;line-height:1.7;padding:8px 12px;background:#fff;border-radius:8px;border:1px solid #bfe0d7;margin:6px 0;}
+.desc-write .cnt{font-family:"Zilla Slab",serif;font-size:11px;color:var(--teal);font-weight:700;float:right;}
+
+/* READING MAP */
+.tmap{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow);}
+.tmap .h{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.tmap .h b{font-family:"Zilla Slab",serif;font-size:20px;color:var(--gold);}
+.tmap .h span{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:15px;}
+.tmap .key{font-size:11px;font-weight:700;color:var(--gold-d);letter-spacing:.05em;margin:10px 0 4px;}
+.tmap ul{margin:0;padding-left:20px;}
+.tmap li{font-size:13.5px;color:#3a4048;margin-bottom:5px;line-height:1.7;}
+.tmap li em{color:var(--verm);}
+.qbadge{font-family:"Zilla Slab",serif;font-size:10.5px;font-weight:700;color:#fff;background:var(--navy);padding:1px 7px;border-radius:5px;margin-left:4px;}
+
+/* SUMMARY */
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px;margin:14px 0;}
+.acell{background:var(--surface);border:1px solid var(--line2);border-radius:9px;padding:8px;text-align:center;box-shadow:var(--shadow);}
+.acell .qn{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.05em;}
+.acell .av{font-family:"Zilla Slab",serif;font-size:19px;font-weight:700;color:var(--verm);line-height:1.2;}
+.acell.txt .av{font-size:12px;color:var(--navy);font-family:"Noto Sans JP";font-weight:700;line-height:1.35;}
+.route{display:grid;grid-template-columns:36px 1fr;gap:12px;margin-bottom:12px;}
+.route .rn{width:36px;height:36px;border-radius:9px;background:var(--gold-soft);border:1px solid var(--line2);color:var(--gold-d);font-family:"Zilla Slab",serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex:none;}
+.route b{color:var(--navy);font-family:"Noto Serif JP",serif;}
+.route p{font-size:13.5px;color:#4a5058;margin:2px 0 0;}
+
+/* PANEL NAV */
+.pnav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);flex-wrap:wrap;}
+.btnp{display:inline-flex;align-items:center;gap:6px;padding:11px 22px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.15s;}
+.btnp:hover{background:var(--navy2);}
+.btns{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:var(--surface);color:var(--navy);border:1px solid var(--line2);border-radius:10px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:.15s;}
+.btns:hover{background:var(--surface2);}
+.pnav .sp{flex:1;}
+
+/* FOOTER */
+.foot{border-top:1px solid var(--line);margin-top:40px;padding:22px 22px 6px;text-align:center;color:var(--muted);font-size:12px;}
+.foot a{color:var(--gold-d);text-decoration:none;font-weight:700;}
+.foot .brand{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:13.5px;letter-spacing:.03em;}
+.foot .cr{font-size:10.5px;color:var(--faint);margin-top:6px;}
+
+.jump-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(22,38,63,.28);font-size:18px;z-index:150;display:none;}
+.jump-top.show{display:block;}
+
+@media (max-width:600px){
+  body{font-size:15px;}
+  .wrap{padding:22px 16px 30px;}
+  h1.head{font-size:21px;} .hero h1{font-size:22px;}
+  .q-head{padding:13px 15px;} .q-body{padding:15px;}
+  .ch{grid-template-columns:26px 1fr auto;font-size:13.5px;}
+}
+
+/* ===== 記述問題 専用コンポーネント ===== */
+.dsteps{margin:14px 0 6px;}
+.dstep{display:grid;grid-template-columns:32px 1fr;gap:12px;position:relative;padding-bottom:14px;}
+.dstep:not(:last-child)::before{content:"";position:absolute;left:15px;top:32px;bottom:0;width:2px;background:var(--line2);}
+.dstep .dn{width:32px;height:32px;border-radius:8px;background:var(--navy);color:#fff;font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;z-index:1;flex:none;}
+.dstep .db{padding-top:2px;}
+.dstep .db b{display:block;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:14px;margin-bottom:2px;}
+.dstep .db p{font-size:13.5px;color:#414851;margin:0;line-height:1.75;}
+.dstep .db .cite{font-family:"Zilla Slab",serif;font-style:italic;background:var(--surface2);border-left:3px solid var(--gold);border-radius:6px;padding:7px 11px;margin-top:6px;font-size:13px;color:var(--navy);line-height:1.7;}
+.dstep .db .cite .h{background:#fbe9c9;font-style:normal;font-weight:700;padding:0 3px;border-radius:3px;}
+
+.model{background:linear-gradient(160deg,#eef7f4,#e2f1ed);border:1px solid #bfe0d7;border-radius:11px;padding:15px 17px;margin:12px 0;}
+.model .mlab{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--teal-d);margin-bottom:7px;}
+.model .mtext{font-family:"Noto Serif JP",serif;font-weight:600;color:var(--navy);font-size:15.5px;line-height:1.9;background:#fff;border-radius:8px;padding:11px 14px;border:1px solid #bfe0d7;}
+.model .mtext + .mtext{margin-top:8px;}
+.model .mnote{font-size:12.5px;color:var(--teal-d);margin-top:8px;line-height:1.7;}
+
+/* ルーブリック（要素点・自己採点） */
+.rub{border:1px solid var(--line);border-radius:11px;overflow:hidden;margin:12px 0;background:var(--surface);}
+.rub-hd{background:var(--gold);color:#fff;padding:8px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.rub-hd .sc{background:rgba(255,255,255,.22);border-radius:20px;padding:2px 11px;font-family:"Zilla Slab",serif;font-size:13px;font-weight:700;white-space:nowrap;}
+.rub-row{display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:flex-start;padding:11px 14px;border-bottom:1px solid var(--line);cursor:pointer;transition:.15s;}
+.rub-row:last-child{border-bottom:none;}
+.rub-row:hover{background:#fffdf8;}
+.rub-row.on{background:var(--teal-soft);}
+.rub-cb{width:20px;height:20px;border-radius:5px;border:2px solid var(--line2);background:#fff;flex:none;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;transition:.15s;}
+.rub-row.on .rub-cb{background:var(--teal);border-color:var(--teal);}
+.rub-row.on .rub-cb::after{content:"✓";}
+.rub-el{font-size:13.5px;line-height:1.7;}
+.rub-el b{color:var(--navy);}
+.rub-el .must{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 7px;border-radius:20px;background:var(--verm);color:#fff;margin-left:6px;vertical-align:1px;}
+.rub-el .plus{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 7px;border-radius:20px;background:var(--surface2);color:var(--muted);border:1px solid var(--line2);margin-left:6px;vertical-align:1px;}
+.rub-pt{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;color:var(--gold-d);white-space:nowrap;padding-top:1px;}
+.rub-foot{padding:9px 14px;background:var(--surface2);font-size:12px;color:var(--muted);border-top:1px solid var(--line);}
+
+/* NG解答例 */
+.ng{background:var(--verm-soft);border:1px solid #f0cdc0;border-radius:11px;padding:14px 16px;margin:12px 0;}
+.ng .nlab{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--verm-d);margin-bottom:8px;}
+.ng-row{display:grid;grid-template-columns:auto 1fr;gap:10px;margin-bottom:9px;align-items:flex-start;}
+.ng-row:last-child{margin-bottom:0;}
+.ng-row .x{color:var(--verm);font-weight:900;font-size:14px;line-height:1.6;flex:none;}
+.ng-row .nb{font-size:13.5px;line-height:1.75;}
+.ng-row .nb .bad{display:block;font-family:"Noto Serif JP",serif;color:var(--verm-d);background:#fff;border:1px dashed #e5b8a6;border-radius:6px;padding:6px 10px;margin-bottom:4px;font-size:13.5px;}
+.ng-row .nb .why{color:#6b5c56;font-size:12.5px;}
+
+/* 語尾テンプレ表 */
+.mtx{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 6px;}
+.mtx th,.mtx td{border:1px solid var(--line2);padding:10px 12px;vertical-align:middle;}
+.mtx thead th{background:var(--navy);color:#f2eee2;font-weight:700;font-size:12.5px;}
+.mtx td.cond{background:var(--surface2);font-weight:700;color:var(--navy);font-size:12.5px;white-space:nowrap;}
+.mtx td.tr{background:#fdf6f3;} .mtx td.so{background:#eef7f4;}
+
+/* 対比マトリクス */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:720px){.vs{grid-template-columns:1fr;}}
+.vs-col{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);}
+.vs-hd{padding:11px 15px;color:#fff;font-family:"Noto Serif JP",serif;font-weight:700;font-size:15px;}
+.vs-hd small{display:block;font-family:"Zilla Slab",serif;font-size:11px;font-weight:600;opacity:.8;letter-spacing:.05em;}
+.vs-col.t .vs-hd{background:var(--verm);} .vs-col.s .vs-hd{background:var(--teal);}
+.vs-bd{background:var(--surface);padding:13px 15px;}
+.vs-bd .r{font-size:13.5px;line-height:1.7;padding:7px 0;border-bottom:1px dashed var(--line);}
+.vs-bd .r:last-child{border-bottom:none;}
+.vs-bd .r b{display:block;font-size:10.5px;letter-spacing:.06em;color:var(--faint);font-weight:700;margin-bottom:1px;}
+
+/* ===== 対訳（全訳マップ）― 中央大版レイアウト準拠 ===== */
+.tr-sec{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--faint);margin:26px 0 10px;display:flex;align-items:center;gap:9px;}
+.tr-sec::before{content:"";width:26px;height:1px;background:var(--line2);}
+.tr-sec::after{content:"";flex:1;height:1px;background:var(--line2);}
+.tr-sec b{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:14px;font-weight:700;letter-spacing:.02em;}
+.tr-row{display:grid;grid-template-columns:1fr;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-bottom:12px;box-shadow:var(--shadow);}
+.tr-en{font-family:"Zilla Slab",serif;font-size:14px;line-height:1.95;padding:15px 18px;background:var(--surface);color:var(--ink);}
+.tr-jp{font-family:"Noto Sans JP",sans-serif;font-size:13.5px;line-height:2;padding:15px 18px;background:var(--surface2);color:var(--ink);border-top:1px solid var(--line);}
+.tr-en em,.tr-jp em{color:var(--verm);font-weight:600;}
+.tr-en .ul{border-bottom:1.5px solid var(--gold);padding-bottom:1px;font-weight:700;}
+.tr-en .uln{font-size:9px;font-weight:700;color:var(--gold-d);vertical-align:super;margin-right:1px;line-height:0;font-family:"Noto Sans JP",sans-serif;}
+.tr-slot{min-height:74px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-family:"Noto Sans JP",sans-serif;font-size:12.5px;text-align:center;border:1px dashed var(--line2);border-radius:8px;background:#fdfbf6;padding:12px;line-height:1.7;}
+.tr-jp .tr-slot{background:#f2eee4;}
+.tr-points{margin:0 0 22px;padding:12px 15px;background:var(--gold-soft);border-radius:9px;border-left:3px solid var(--gold);font-size:13px;line-height:1.8;}
+.tr-points .pl{font-size:9.5px;font-weight:700;letter-spacing:.09em;color:var(--gold-d);margin-bottom:4px;}
+.tr-points ul{margin:0;padding-left:18px;}
+.tr-points li{margin-bottom:4px;}
+.tr-points li b{color:var(--navy);}
+.tr-points li em{color:var(--verm);font-weight:600;}
+@media(min-width:760px){
+  .tr-row{grid-template-columns:1fr 1fr;}
+  .tr-jp{border-top:none;border-left:1px solid var(--line);}
+}
+/* 貼り付けパネル */
+.paste{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:20px;box-shadow:var(--shadow);}
+.paste h4{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:15px;margin-bottom:6px;}
+.paste p{font-size:13px;color:var(--muted);margin-bottom:10px;}
+.paste .pgrid{display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:760px){.paste .pgrid{grid-template-columns:1fr 1fr;}}
+.paste label{display:block;font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--gold-d);margin-bottom:4px;}
+.paste textarea{width:100%;min-height:110px;border:1px solid var(--line2);border-radius:9px;padding:10px 12px;font-family:inherit;font-size:13px;line-height:1.7;resize:vertical;background:var(--paper);color:var(--ink);}
+.paste textarea:focus{outline:none;border-color:var(--gold);background:#fff;}
+.paste .prow{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.paste .msg{font-size:12.5px;color:var(--teal-d);font-weight:700;}
+
+/* ===== 和訳のみ 1カラム表示 ===== */
+.jpbox{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:6px 20px 14px;margin-bottom:12px;box-shadow:var(--shadow);}
+.jpline{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:start;}
+.jpline:last-child{border-bottom:none;}
+.jpline .n{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;color:var(--gold-d);background:var(--gold-soft);border:1px solid var(--line2);border-radius:6px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+.jpline .s{font-size:14.5px;line-height:2;color:var(--ink);}
+.jpline .s em{color:var(--verm);font-weight:600;font-style:normal;}
+
+/* ===== 同志社 追加：正答率バッジ・整序・内容一致 ===== */
+.rate{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;}
+.rate.low{background:var(--verm);color:#fff;}
+.rate.mid{background:var(--gold);color:#fff;}
+.rate.hi{background:var(--teal-soft);color:var(--teal-d);border:1px solid #bfe0d7;}
+.ratebar{height:5px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:5px;}
+.ratebar i{display:block;height:100%;border-radius:3px;}
+.ratebar i.low{background:var(--verm);} .ratebar i.mid{background:var(--gold);} .ratebar i.hi{background:var(--teal);}
+
+/* 語句整序 */
+.pool{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0;}
+.pw{font-family:"Zilla Slab",serif;font-weight:600;font-size:14px;padding:6px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--line2);color:var(--navy);}
+.pw.used{background:var(--teal-soft);border-color:var(--teal);color:var(--teal-d);}
+.pw.unused{opacity:.45;text-decoration:line-through;}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.slot{border:1.5px solid var(--line2);border-radius:9px;padding:8px 12px;text-align:center;background:var(--surface);min-width:88px;}
+.slot .k{font-size:10.5px;font-weight:700;color:var(--muted);}
+.slot .v{font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;color:var(--navy);}
+.slot.hit{border-color:var(--verm);background:var(--verm-soft);}
+.slot.hit .k{color:var(--verm-d);} .slot.hit .v{color:var(--verm-d);}
+.full{background:var(--navy);color:#f2eee2;border-radius:10px;padding:13px 16px;margin:10px 0;font-family:"Zilla Slab",serif;font-size:15px;line-height:1.8;}
+.full b{color:var(--gold);}
+.full .jp{display:block;font-family:"Noto Sans JP",sans-serif;font-size:13.5px;color:#c9c2b0;margin-top:7px;}
+.full .jp b{color:#fff;}
+
+/* 内容一致 8択 */
+.mi{border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-bottom:9px;background:var(--surface);}
+.mi-h{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:11px 13px;cursor:pointer;transition:.15s;}
+.mi-h:hover{background:#fffdf8;}
+.mi .num{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;width:28px;height:28px;border-radius:7px;background:var(--surface2);color:var(--navy);display:flex;align-items:center;justify-content:center;}
+.mi .st{font-size:13.5px;line-height:1.7;}
+.mi .mk{font-weight:900;font-size:16px;width:22px;text-align:center;opacity:0;}
+.mi.on.ok{border-color:var(--ok);} .mi.on.ok .mi-h{background:#eef7f4;} .mi.on.ok .num{background:var(--ok);color:#fff;} .mi.on.ok .mk{opacity:1;color:var(--ok);}
+.mi.on.ng{border-color:#e9d5cd;} .mi.on.ng .mi-h{background:#fdf6f3;} .mi.on.ng .mk{opacity:1;color:var(--ng);}
+.mi-d{display:none;padding:0 13px 12px;border-top:1px dashed var(--line);}
+.mi.on .mi-d{display:block;padding-top:11px;}
+.mi-d .src{font-size:12.5px;color:var(--muted);background:var(--surface2);border-left:3px solid var(--gold);border-radius:6px;padding:8px 11px;margin-bottom:7px;line-height:1.7;}
+.mi-d .jd{font-size:13px;line-height:1.75;}
+
+
+/* ===== 会話フロー表示（大問2） ===== */
+.conv{margin:14px 0;}
+.cturn{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);align-items:start;}
+.cturn:last-child{border-bottom:none;}
+.cturn .who{font-family:"Zilla Slab",serif;font-weight:700;font-size:13px;color:#fff;background:var(--navy);border-radius:6px;padding:3px 0;text-align:center;height:fit-content;}
+.cturn.john .who{background:var(--blue,#2f5c86);}
+.cturn.sarah .who{background:var(--verm);}
+.cturn.david .who{background:var(--teal);}
+.cturn.setup .who{background:var(--gold);}
+.cturn .say{font-size:14px;line-height:1.85;color:var(--ink);}
+.cturn .say b{background:#fbe9c9;color:var(--navy);padding:0 3px;border-radius:3px;font-weight:700;}
+.cturn .memo{display:block;margin-top:4px;font-size:11.5px;color:var(--gold-d);font-weight:700;}
+.cturn.setup{background:var(--surface2);border-radius:9px;padding:11px 13px;border-bottom:none;margin-bottom:6px;}
+.cturn.setup .say{font-size:13px;color:var(--muted);}
+
+
+/* ==== ダークモード無効化：端末がダークでも文字が消えないよう配色を固定 ==== */
+:root{ color-scheme: light; }
+@media (prefers-color-scheme: dark){
+  :root{
+    --navy:#16263f; --navy2:#22344f; --navy-ink:#0f1c30;
+    --gold:#b8954a; --gold-d:#8f7031; --gold-soft:#f3ecda;
+    --verm:#c8431f; --verm-d:#9e3417; --verm-soft:#fbe9e2;
+    --teal:#1f6b5c; --teal-d:#155346; --teal-soft:#e2f1ed;
+    --blue:#2f5c86; --blue-soft:#e7eef6;
+    --ink:#232830; --muted:#6c6a61; --faint:#9a978c;
+    --paper:#faf7f0; --surface:#ffffff; --surface2:#f5f1e8;
+    --line:#e6dfce; --line2:#d8cfb8;
+    --ok:#1f6b5c; --ng:#c8431f;
+  }
+  html, body{ background:var(--paper) !important; color:var(--ink) !important; }
+  /* 明るいセル上の本文は必ず濃色に固定（白文字化による消失を防ぐ） */
+  table, .mtx, .mtx td, .mtx th tbody tr, .box, .para, .para-b, .tr-points, .jpbox,
+  .q, .ch, .ev, .ca-row, .rub, .conv, .cturn, .theme, p, li, span, td, div{
+    -webkit-text-fill-color: currentColor;
+  }
+  .mtx td{ color:var(--ink); }
+  .mtx tbody tr:nth-child(even){ background:var(--surface2); }
+  .box.navy{ background:#eef1f6; }
+}
+
+
+/* ==== 文字消え防止：明色背景セル・本文の文字色を濃色で明示固定 ==== */
+.mtx td{ color:var(--ink); }                 /* 通常セル（2・3列目）を濃紺で固定 */
+.mtx td.cond{ color:var(--navy); }
+.mtx td.tr, .mtx td.so{ color:var(--ink); }
+.mtx td b, .mtx td strong{ color:var(--navy); }   /* 表内の太字も濃色 */
+.box{ color:var(--ink); }                    /* 明色ボックス本文 */
+.box.navy{ color:var(--ink); }
+.para-b, .para-b p, .theme{ color:var(--ink); }
+.para-b .theme{ color:var(--navy); }
+.tr-points, .tr-points li, .tr-points ul{ color:var(--ink); }
+.jpbox, .jpline .s{ color:var(--ink); }
+.conv .say{ color:var(--ink); }
+.route > div{ color:var(--ink); }
+.q, .ch{ color:var(--ink); }
+/* 濃色背景に乗る白系文字は従来どおり（ここで上書きしない） */
+
+
+/* ==== 表セルの背景・文字色をセル自身に直接固定（透過事故を根絶） ==== */
+.mtx thead th{ background:var(--navy) !important; color:#f2eee2 !important; }
+.mtx tbody td{ background:var(--surface) !important; color:var(--ink) !important; }
+.mtx tbody tr:nth-child(even) td{ background:var(--surface2) !important; }
+.mtx tbody td.cond{ background:var(--surface2) !important; color:var(--navy) !important; }
+.mtx tbody td b, .mtx tbody td strong{ color:var(--navy) !important; }
+@media (prefers-color-scheme: dark){
+  .mtx thead th{ background:var(--navy) !important; color:#f2eee2 !important; }
+  .mtx tbody td{ background:var(--surface) !important; color:var(--ink) !important; }
+  .mtx tbody tr:nth-child(even) td{ background:var(--surface2) !important; }
+  .mtx tbody td.cond{ background:var(--surface2) !important; color:var(--navy) !important; }
+  .mtx tbody td b, .mtx tbody td strong{ color:var(--navy) !important; }
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="mark">学</div>
+    <div class="ttl"><b>英語精読・完全解説</b><span>学習院大学 2025 ／ 大問1</span></div>
+    <div class="top-meta">テクノロジーと記憶（Time／Charan Ranganath）<br>本試験10問＋発展5問</div>
+  </div>
+</header>
+<nav class="nav">
+  <div class="nav-in">
+    <button class="tab on" data-p="0"><span class="dot"></span><small>STRATEGY</small>この英文の攻略</button>
+    <button class="tab" data-p="1"><span class="dot"></span><small>MAP</small>英文マップ</button>
+    <button class="tab" data-p="2"><span class="dot"></span><small>CORE</small>核心の切り分け</button>
+    <button class="tab" data-p="3"><span class="dot"></span><small>A–D</small>設問 前半</button>
+    <button class="tab" data-p="4"><span class="dot"></span><small>E–G</small>設問 中盤</button>
+    <button class="tab" data-p="5"><span class="dot"></span><small>H–J</small>設問 後半</button>
+    <button class="tab" data-p="6"><span class="dot"></span><small>READING</small>全訳</button>
+    <button class="tab" data-p="7"><span class="dot"></span><small>ORIGINAL</small>発展5問</button>
+    <button class="tab" data-p="8"><span class="dot"></span><small>REVIEW</small>総まとめ</button>
+  </div>
+</nav>
+<div class="wrap">
+<section class="panel on" id="p0">
+  <div class="hero">
+    <div class="eyebrow">Reading Strategy</div>
+    <h1>テクノロジーは記憶を壊すのか。<br>著者の答えは「壊すのは<br>テクノロジーではない」。</h1>
+    <p>神経科学者チャラン・ラナガナスによる論説。<u>デジタル時代、理論上は記憶が豊かになるはずなのに、実際には逆を感じる人が多い</u>――この落差から出発する。しかし著者は<em>「機器に頼ると記憶力が落ちる」という通念を、第2段落で明確に否定する</em>。<b>電話番号もパスワードも、喜んで機器に預けている</b>。では何が記憶を損なっているのか。<u>答えは「テクノロジーそのもの」ではなく「それとの関わり方」</u>だ。この一点の付け替えを掴めば、10の設問が一本の線で並ぶ。</p>
+    <div class="thesis"><b>この文章の骨格：</b>①理論と実際のずれ（第1段落）。②世間の恐れを却下――<u>外部化は無害</u>（第2段落）。③問題の再定義――<b>犯人はテクノロジーではなく関わり方</b>（第3段落）。④原理の提示――<u>今この瞬間の特徴的なものへの注意</u>（第4段落）。⑤適用例①マルチタスク（第5〜6段落）。⑥適用例②記録行為（第7〜8段落）。⑦結論――<b>less is more、ただし使い方次第</b>（第9段落）。</div>
+    <div class="stats">
+      <div class="stat"><b>9</b><span>段落構成</span></div>
+      <div class="stat"><b>10</b><span>本試験設問</span></div>
+      <div class="stat"><b>5</b><span>発展問題</span></div>
+      <div class="stat"><b>30</b><span>全訳の文数</span></div>
+    </div>
+  </div>
+
+  <h2 class="sec">設問タイプと攻め方</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:20%">タイプ</th><th style="width:20%">該当設問</th><th>攻め方</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">語句の言い換え</td><td>A・E・F</td><td><b>多義語を文脈で切り替える</b>。A＝in theory との対／E＝句動詞を熟語として処理／F＝<u>cost は金銭ではない</u>。</td></tr>
+      <tr><td class="cond">空所補充</td><td>B・G</td><td><b>前後の評価の向きで決める</b>。B＝<u>or が言い換えを導く</u>／G＝直前の原因と直後の結果が両方マイナス。</td></tr>
+      <tr><td class="cond">和訳（25字）</td><td>C</td><td><b>枠に接続するかを必ず確認</b>。<u>increasing を落とさない</u>。lead us to lose の us を消さない。</td></tr>
+      <tr><td class="cond">下線部の言い換え</td><td>D</td><td><b>疑問文の下線部は、直後の答えから逆算できる</b>。its の内容特定が出発点。</td></tr>
+      <tr><td class="cond">指示内容</td><td>H</td><td><b>this は直前の「節」を受ける</b>。<u>直前の文の主語を機械的に拾わない</u>。</td></tr>
+      <tr><td class="cond">理由</td><td>I</td><td><b>理由は直後の文にも書かれている</b>。<u>like ~ は比喩であって事実ではない</u>。</td></tr>
+      <tr><td class="cond">内容一致（2つ）</td><td>J</td><td><b>everyone / uncommon / everything など極端な語を疑う</b>。<u>3つ以上選ぶと0点</u>という条件に注意。</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box verm" style="margin-top:20px;"><span class="lab">この文章で最も落としやすい一点</span>
+    <strong>第2段落と第6段落が矛盾して見えたら、読めていません</strong>。<u>第2段落「電話番号は喜んで機器に任せる」と、第6段落「ぼやけた不完全な記憶しか残らない」は両立します</u>。<em>著者は「技術に頼ること」を一語でまとめず、<b>情報を外に預けること</b>と<b>体験中に注意が割れること</b>を厳密に分けている</em>。<b>この切り分けができていないと、設問D・Jで必ず外します</b>。</div>
+
+  <div class="box gold" style="margin-top:16px;"><span class="lab">この解説の構成</span>
+    <strong>本試験A〜J（10問）の完全解説</strong>に加えて、<strong>THINKINGオリジナルの発展5問</strong>（早慶・MARCH上位レベル／設問文・選択肢すべて英語）を収録しています。<u>本試験は「該当箇所を正確に読む力」、発展問題は「文章全体を一本の論証として掌握する力」</u>を測ります。<em>誤答にはすべて「なぜダメか」＋「どんな読み方をした人が選ぶか」</em>を記しました。</div>
+
+  <div class="pnav"><span class="sp"></span><button class="btnp" data-go="1">英文マップへ進む →</button></div>
+</section><section class="panel" id="p1">
+  <div class="eyebrow">Passage Map</div>
+  <h1 class="head">英文マップ ― 9段落の流れと設問の在りか<span class="sub">「ずれの提示 → 通念の却下 → 犯人の付け替え → 原理 → 適用例×2 → 結論」。<b>第4段落を境に、文章は原理と適用の二層になる</b>。</span></h1>
+  <div class="rule"></div><div class="para"><div class="para-n"><b>1</b><span>問いの設定</span></div><div class="para-b">
+      <div class="theme">理論と実際のずれ</div><p><em>In theory</em> なら記憶は豊かになるはず。<u>But in practice は逆</u>。人々の心配は「知性を下げているのでは」――<b>より正確に言えば「記憶する力を損なっているのでは」</b>。</p><div class="tags"><span class="utag">設問A</span><span class="utag">設問B</span></div></div></div><div class="para"><div class="para-n"><b>2</b><span>却下</span></div><div class="para-b">
+      <div class="theme">世間の恐れを退ける</div><p><em>よくある恐れ＝機器依存が記憶喪失を招く</em>。<u>However、そう考える理由はない</u>。<b>電話番号もパスワードも喜んで機器に任せている</b>。写真的記憶はないが、電話にはある。</p><div class="tags"><span class="utag">設問C</span></div></div></div><div class="para"><div class="para-n"><b>3</b><span>再定義</span></div><div class="para-b">
+      <div class="theme">犯人の付け替え①</div><p>技術が<u>「容量を空ける」</u>なら、なぜ記憶が悪くなったと感じるのか。<b>短い答え――テクノロジーが問題なのではない。関わり方が問題だ</b>。</p><div class="tags"><span class="utag">設問D</span></div></div></div><div class="para"><div class="para-n"><b>4</b><span>原理</span></div><div class="para-b">
+      <div class="theme">記憶形成の条件</div><p><b>今この瞬間の特徴的なもの（distinct）への注意</b>。<u>以降の段落はすべて、この原理が壊れる場面</u>。<em>日常生活を送る中で、脳が注意を向けさせてくれる</em>。</p><div class="tags"><span class="utag">設問E</span></div></div></div><div class="para"><div class="para-n"><b>5</b><span>適用①</span></div><div class="para-b">
+      <div class="theme">中断と注意の分割</div><p>会話も会議も<u>日常的に中断される</u>。さらに<em>複数の目標に注意を分散させる</em>ことで悪化。<b>マルチタスクは効率的だと感じさせるが、代償が伴う</b>。</p><div class="tags"><span class="utag">設問F</span></div></div></div><div class="para"><div class="para-n"><b>6</b><span>機構</span></div><div class="para-b">
+      <div class="theme">なぜ代償になるのか</div><p>切り替えのたびに<u>脳のリソースが「集中を取り戻す」ために使われる</u>。結果、<b>一歩後れを取り</b>、<em>ぼやけた不完全な記憶しか残らない</em>。</p><div class="tags"><span class="utag">設問G</span></div></div></div><div class="para"><div class="para-n"><b>7</b><span>適用②</span></div><div class="para-b">
+      <div class="theme">記録という行為</div><p>職場の外でも記録する。<u>スマホで簡単に記録できるのに、記憶は広がらない</u>。<b>繰り返すが、問題は技術ではなく、レンズ越しに経験をふるいにかけていること</b>――犯人の付け替え②。</p><div class="tags"><span class="utag">設問H</span></div></div></div><div class="para"><div class="para-n"><b>8</b><span>基準</span></div><div class="para-b">
+      <div class="theme">決め手は関与</div><p><em>写真自体は善でも悪でもない</em>。<u>決定的要因は、注意の向け方と有意義な関与</u>。<b>記録を優先すると、鮮明だった体験が「本で読んだ物語」のように遠くなる</b>。</p><div class="tags"><span class="utag">設問I</span></div></div></div><div class="para"><div class="para-n"><b>9</b><span>結論</span></div><div class="para-b">
+      <div class="theme">less is more</div><p><b>少ないほうが豊か</b>。<u>無限の記録は望ましい目標ですらない</u>。記憶は選択的だが、<em>細部も意味も感情も伴いうる</em>。<b>そこにアクセスできる使い方をすれば、大切なものは保てる</b>。</p><div class="tags"><span class="utag">設問J</span></div></div></div><div class="box navy"><span class="lab">構造を一枚で言うと</span>
+  <strong>第1〜3段落が「問いの設定と犯人の特定」、第4段落が「原理」、第5〜8段落が「原理が壊れる二つの場面」、第9段落が「結論」</strong>。<u>この四部構成が見えれば、どの設問がどの段落に帰着するかは自動的に決まる</u>。<em>設問A〜Dは前半（問いと犯人）、E〜Iは中盤（原理と適用）、Jは全体</em>。</div><div class="box verm"><span class="lab">読み飛ばしやすい二箇所</span>
+  <strong>第2段落第2文の However</strong>――<u>ここで著者は通念を否定している</u>。<em>読み飛ばすと、この文章を「テクノロジー批判」だと誤解する</em>。<br>
+  <strong>第7段落第1文の Outside of the workplace</strong>――<u>場面の転換であって、論点の転換ではない</u>。<em>設問H(ニ)はこの二語を読み飛ばした人を狙っている</em>。</div><div class="pnav"><button class="btns" data-go="0">← 攻略</button><span class="sp"></span><button class="btnp" data-go="2">核心の切り分けへ →</button></div></section><section class="panel" id="p2">
+  <div class="eyebrow">The Core Distinction</div>
+  <h1 class="head">核心の切り分け ― 預けることと、割れること<span class="sub">この文章が読めるかどうかは、この一点にかかっている。<b>「技術に頼る」を一語でまとめた瞬間、第2段落と第6段落は矛盾する</b>。</span></h1>
+  <div class="rule"></div>
+
+  <div class="box gold" style="margin-top:0"><span class="lab">まず、矛盾に見えるものを並べてみる</span>
+    <strong>第2段落第3文</strong>｜<u>電話番号やパスワードの暗記は、喜んで機器に任せている</u>（＝技術に頼るのは良いこと）<br>
+    <strong>第6段落最終文</strong>｜<u>残るのはぼやけた不完全な記憶だけ</u>（＝技術を使うと記憶が損なわれる）<br>
+    <em>同じ著者が、同じ文章の中で、技術の使用を肯定し、かつ否定している</em>。<b>これをどう調停するか</b>――それが本文の論理です。</div>
+
+  <div class="vs">
+    <div class="vs-col s"><div class="vs-hd">外部化（offloading）<small>第2〜3段落・無害どころか歓迎</small></div><div class="vs-bd">
+      <div class="r"><b>何をするか</b>情報を<strong>脳の外に預ける</strong>（電話番号・パスワード）</div>
+      <div class="r"><b>注意への影響</b><strong>消費しない</strong>。むしろ <u>free up space</u>（容量を空ける）</div>
+      <div class="r"><b>記憶への影響</b><strong>低下につながると考える理由はない</strong>（第2段落第2文）</div>
+      <div class="r"><b>著者の評価</b><strong>I&apos;m happy to ~</strong>「喜んで任せている」</div>
+    </div></div>
+    <div class="vs-col t"><div class="vs-hd">注意の分割（divided attention）<small>第5〜8段落・これが犯人</small></div><div class="vs-bd">
+      <div class="r"><b>何をするか</b>体験の最中に<strong>注意が複数に割れる</strong>（マルチタスク／レンズ越しの記録）</div>
+      <div class="r"><b>注意への影響</b><strong>消費する</strong>。<u>リソースが「集中を取り戻す」ために使われる</u></div>
+      <div class="r"><b>記憶への影響</b><strong>distinct な細部が刻まれない</strong>→ ぼやけた不完全な記憶</div>
+      <div class="r"><b>著者の評価</b><strong>it comes at a cost</strong>「代償が伴う」</div>
+    </div></div>
+  </div>
+
+  <div class="box navy"><span class="lab">蝶番は第3段落の free up space</span>
+    <strong>「容量を空ける」という一語が、二つをつないでいます</strong>。<u>外部化は脳の資源を奪うのではなく、解放する</u>。<em>だから預けてよい</em>。<b>対して注意の分割は、まさにその資源を食いつぶす</b>。<u>同じ「テクノロジーの使用」でも、脳に対してしていることが正反対</u>。<em>この切り分けを持たずに読むと、第2段落を例外や軽い冗談として処理してしまい、文章の半分が消える</em>。</div>
+
+  <h2 class="sec">もう一つの骨格 ― 犯人の付け替えが二度起きる</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:14%">箇所</th><th style="width:26%">構文</th><th>付け替えの中身</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">第3段落<br>最終文</td><td><b>the problem isn&apos;t X — it&apos;s Y</b></td><td>X＝technology ／ Y＝<u>how we interact with it</u>（関わり方）</td></tr>
+      <tr><td class="cond">第7段落<br>最終文</td><td><b>the problem isn&apos;t X, but rather Y</b></td><td>X＝technology ／ Y＝<u>filtering our experiences through the lens</u>（レンズ越しのふるい分け）</td></tr>
+    </tbody>
+  </table>
+  <div class="box gold"><span class="lab">Again という一語が反復を保証する</span>
+    <strong>第7段落のこの文は Again,「繰り返すが」で始まっています</strong>。<u>著者自身が、同じ主張を二度述べていると宣言している</u>。<em>つまり二箇所の対応は推測ではなく、本文に明記された事実</em>。<b>そして犯人を道具から使い手に移したからこそ、第9段落の結論は「使うな」ではなく「こう使え」になる</b>。<u>構造が結論の形を決めている</u>。</div>
+
+  <h2 class="sec">この二点が解く設問</h2>
+  <div class="box verm"><span class="lab">切り分けと付け替えから直接決まる問題</span>
+    <strong>設問D</strong>＝<u>(ニ)の電話番号は、第2段落で「覚えなくてよい例」として挙げられている</u>ので逆。<br>
+    <strong>設問J(ロ)</strong>＝<u>第2段落最終文の but my phone does を読めば一発で消える</u>。<br>
+    <strong>発展1</strong>＝<u>二度の付け替えが、結論を「使用の条件」にしている</u>。<br>
+    <strong>発展2</strong>＝<u>外部化と注意の分割の切り分けそのもの</u>。<br>
+    <strong>発展4</strong>＝<u>犯人が使い手である以上、「技術を捨てろ」は本文の主張になりえない</u>。</div>
+
+  <div class="pnav"><button class="btns" data-go="1">← 英文マップ</button><span class="sp"></span><button class="btnp" data-go="3">設問A〜Dへ →</button></div>
+</section><section class="panel" id="p3">
+  <div class="eyebrow">Solutions ①</div>
+  <h1 class="head">設問A〜D<span class="sub">言い換え・空所補充・和訳・言い換え。<b>いずれも下線部の前後一文が答えを決める</b>問題群。</span></h1>
+  <div class="rule"></div>
+  <div class="box gold" style="margin-top:0"><span class="lab">この4問に共通する原則</span>
+    <strong>下線部そのものを睨んでも答えは出ない</strong>。<u>A＝直前の In theory／B＝直後の言い換え／C＝与えられた枠／D＝直後の答えの文</u>。<em>いずれも「下線部の外」に根拠がある</em>。<b>下線部を見る時間を、前後一文を読む時間に回すこと</b>。</div>
+  <div class="qindex" id="qidxAB"></div>
+  <div id="qWrapAB"></div>
+  <div class="pnav"><button class="btns" data-go="2">← 核心の切り分け</button><span class="sp"></span><button class="btnp" data-go="4">設問E〜Gへ →</button></div>
+</section><section class="panel" id="p4">
+  <div class="eyebrow">Solutions ②</div>
+  <h1 class="head">設問E〜G<span class="sub">句動詞・多義語・空所補充。<b>語の第一義に飛びつかず、文脈で意味を切り替える</b>三問。</span></h1>
+  <div class="rule"></div>
+  <div class="box verm" style="margin-top:0"><span class="lab">この3問に共通する罠</span>
+    <strong>辞書の一番目の意味で処理してしまうこと</strong>。<u>E＝go about を「〜について行く」と分解しない／F＝cost を金銭と取らない／G＝further を「さらに遅れて」と読まない</u>。<em>とくにFの(ロ) it&apos;s quite expensive は、逆接の向きが合っているぶん最も危険</em>。<b>方向が合っていても、意味が違えば誤答</b>。</div>
+  <div class="qindex" id="qidxCD"></div>
+  <div id="qWrapCD"></div>
+  <div class="pnav"><button class="btns" data-go="3">← 設問A〜D</button><span class="sp"></span><button class="btnp" data-go="5">設問H〜Jへ →</button></div>
+</section><section class="panel" id="p5">
+  <div class="eyebrow">Solutions ③</div>
+  <h1 class="head">設問H〜J<span class="sub">指示内容・理由・内容一致。<b>節の範囲、比喩の扱い、極端な語の検出</b>がそれぞれの急所。</span></h1>
+  <div class="rule"></div>
+  <div class="box navy" style="margin-top:0"><span class="lab">Jの前に確認しておくこと</span>
+    <strong>内容一致で7つを一度に比べようとすると必ず迷います</strong>。<u>まず everyone・uncommon・all of them・everything といった極端な語を含む選択肢を取り出し、本文にそこまでの強さがあるか確認する</u>。<em>(イ)(ハ)(ニ)(ホ)はこの一手で消えます</em>。<b>残る(ロ)は but 以下まで読めば消え、(ヘ)(ト)が残る</b>。</div>
+  <div class="qindex" id="qidxEF"></div>
+  <div id="qWrapEF"></div>
+  <div class="pnav"><button class="btns" data-go="4">← 設問E〜G</button><span class="sp"></span><button class="btnp" data-go="6">全訳へ →</button></div>
+</section><section class="panel" id="p6">
+  <div class="eyebrow">Reading Map</div>
+  <h1 class="head">全訳 ― 段落ごとの日本語訳と読解ポイント<span class="sub">THINKINGオリジナル訳（全9段落・30文）。番号①②③…は各段落内の文の順番。<b>太字・下線</b>が設問に直結する箇所。</span></h1>
+  <div class="rule"></div>
+  <div class="box gold" style="margin-top:0"><span class="lab">読むときの視点</span>
+    この文章は<strong>原理と適用の二層構造</strong>で書かれています。訳を読むときは<u>「この段落は原理か、適用例か、結論か」</u>を確かめてください。<em>第4段落だけが原理、第5〜8段落はその適用、第9段落が結論</em>。<b>この仕分けができれば、どの設問がどこに帰着するかが自動的に決まります</b>。</div><div class="tr-sec"><b>第1段落</b>｜問いの設定　<span class="utag">設問A・B</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">デジタルの時代、私たちは写真や録音、ソーシャルメディアへの投稿を通じて、自分の人生を驚くほど細部まで記録する技術を手にしている。</div></div><div class="jpline"><div class="n">②</div><div class="s">理論上は、人生の重要な瞬間をたやすく捉えられるこの能力は、それらの瞬間を記憶する力を豊かにしてくれるはずである。</div></div><div class="jpline"><div class="n">③</div><div class="s">しかし<u>実際には</u>、人々はその逆を経験していると私によく語る。</div></div><div class="jpline"><div class="n">④</div><div class="s">私は記憶を研究しているが、人々が心配していることの一つは、<em>テクノロジーが私たちの知性を低下させているのではないか</em>――あるいは、<u>より正確に言えば</u>、記憶する力を損なっているのではないか、という点である。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第1段落</div><ul><li><b>In theory ↔ But in practice</b> の定型対。第2文が「はず」、第3文が「しかし実際は逆」。<u>設問Aはこの対の把握だけで決まる</u>。</li><li>第4文の <b>or</b> は<u>言い換えを導く or</u>。したがって <em>making us ( X ) intelligent</em> と <em>hurting our ability to remember</em> は同じ趣旨＝(X) に less。<b>設問B</b>。</li><li><b>or more precisely</b>「より正確に言えば」は定型。(Y) に more。</li><li>第3・最終文は<b>設問J(イ)</b>の判定根拠。<u>everyone believes technology has a positive impact は正反対</u>。</li></ul></div><div class="tr-sec"><b>第2段落</b>｜世間の恐れを却下　<span class="utag">設問C・J</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">よくある恐れは、<em>私たちの電子機器への依存度の高まりが、記憶する力の喪失を導くかもしれない</em>というものだ。</div></div><div class="jpline"><div class="n">②</div><div class="s">しかし、重要な情報を保存するためにテクノロジーに頼ることが、何らかの形で記憶力の低下につながると考える理由はない。</div></div><div class="jpline"><div class="n">③</div><div class="s">実際、電話番号やパスワードの暗記といった<u>ありふれた記憶作業は、喜んで自分の機器に任せている</u>。</div></div><div class="jpline"><div class="n">④</div><div class="s">私に写真のような記憶力はない――<b>だが私の電話にはある</b>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第2段落</div><ul><li>第1文が<b>設問C</b>の下線部。<u>an increasing dependence</u>＝「依存の高まり」（単なる「依存」ではない）、<u>lead us to lose</u>＝「私たちに失わせる」。</li><li>第2文の <b>However</b> が論の分岐点。<u>著者は「機器依存→記憶衰退」を明確に否定している</u>。ここを押さえないと第6段落と矛盾して見える。</li><li>第3文が<b>この文章最大の急所</b>。<u>外部化（offloading）は無害どころか歓迎</u>。有害なのは体験中に注意が割れること（第5〜8段落）。<em>両者は別物</em>。</li><li>第4文は<b>設問J(ロ)</b>の判定根拠。<u>著者は「電話には写真的記憶がある」と言っている</u>ので、(ロ) は逆。</li></ul></div><div class="tr-sec"><b>第3段落</b>｜問題の再定義　<span class="utag">設問D</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">では、覚えておきたいことを必要なときに思い出せるよう、テクノロジーが<u>「容量を空ける」</u>手助けをしてくれるのだとしたら、<em>なぜこれほど多くの人が、生活の中にテクノロジーが存在することで記憶がうまく作れなくなっていると感じるのだろうか</em>。</div></div><div class="jpline"><div class="n">②</div><div class="s">手短に言えば――<b>テクノロジーが問題なのではない。問題は、私たちがそれとどう関わるかである</b>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第3段落</div><ul><li>第1文が<b>設問D</b>の下線部。<u>its＝technology&apos;s</u>、<u>form poor memories＝記憶がうまく形成されない</u>。平易に言い換えれば「テクノロジーが記憶に悪影響を与えていると考えるのはなぜか」。</li><li><b>free up space</b>（容量を空ける）が、第2段落の外部化肯定を受けている。<u>技術は容量を奪うのではなく空けてくれる</u>。</li><li>第2文が<b>犯人の付け替え①</b>。<em>the problem isn&apos;t X — it&apos;s Y</em> の構文。<u>同じ構文が第7段落最終文で繰り返される</u>。これが文章の骨格。</li></ul></div><div class="tr-sec"><b>第4段落</b>｜記憶形成の原理　<span class="utag">発展3の根拠</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">持続する記憶を形成するためには、<b>今この瞬間の特徴的なもの</b>、つまり後から思い出して経験を組み立て直せるような細部に、注意を集中させる必要がある。</div></div><div class="jpline"><div class="n">②</div><div class="s"><u>日常生活を送る</u>中で、脳は私たちが学ぶべきことに注意を向けさせ、処理し、思い出を正確に保つのを助けてくれる。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第4段落</div><ul><li>第1文が<b>この文章の原理</b>。<em>focus on what is distinct about the present moment</em>。<u>以降の第5〜8段落は、すべてこの原理が壊れる場面</u>。</li><li><b>distinct</b>（第4段落）と <b>distinctive</b>（第8段落第4文・最終文）の語根の呼応が、<u>マルチタスクとカメラが同一原理の二例だと示す本文内証拠</u>。<b>発展3</b>はここを突く。</li><li>第2文の <u>go about our daily lives</u> が<b>設問E</b>の下線部。「日常生活を送る」＝ carry on with。</li></ul></div><div class="tr-sec"><b>第5段落</b>｜適用例①：注意の分割　<span class="utag">設問F・J</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">しかし、会話も活動も会議も、メールやメッセージ、電話によって<u>日常的に中断される</u>世界では、こうした能力は圧倒されてしまう――さらに私たちは、<em>複数の目標に注意を分散させる</em>ことで問題を悪化させることが多い。</div></div><div class="jpline"><div class="n">②</div><div class="s">マルチタスクは自分がより効率的であるように感じさせてくれるが、<b>それには代償が伴う</b>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第5段落</div><ul><li>第1文は<b>設問J(ハ)</b>の判定根拠。<u>routinely interrupted ↔ It is uncommon to be interrupted</u> で正反対。</li><li>第2文の <b>it comes at a cost</b> が<b>設問F</b>の下線部。<u>cost は金銭ではなく「代償」</u>。but の逆接が評価の向きを決めている。</li><li><em>splitting our attention</em> が第2段落の「機器に預ける」と決定的に違う点。<u>預けることは注意を使わないが、分割は注意を奪う</u>。<b>発展2</b>の核心。</li></ul></div><div class="tr-sec"><b>第6段落</b>｜メカニズム　<span class="utag">設問G・J</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">気が散ったり、（会話をしながらメッセージを確認するなど）活動を切り替えたりするたびに、<u>脳のリソースは集中を取り戻すために使われる</u>。</div></div><div class="jpline"><div class="n">②</div><div class="s">その結果、私たちは<b>一歩後れを取った</b>ままになり、最終的に残るのは<em>ぼやけた不完全な記憶</em>だけになる。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第6段落</div><ul><li>第1文は<b>設問J(ニ)</b>の判定根拠。<u>集中は「取り戻す」べきものとして一度失われている</u>ので、「すべてに集中できる」は矛盾。</li><li>第2文の空所 ( Z ) が<b>設問G</b>。<u>直前が「リソースを消費して追いつく」、直後が「ぼやけた不完全な記憶」</u>。評価の向きは negative＝behind。</li><li>第2文は<b>設問J(ホ)</b>の判定根拠でもある。<u>blurry, incomplete ↔ recall everything</u> で正反対。</li></ul></div><div class="tr-sec"><b>第7段落</b>｜適用例②：記録　<span class="utag">設問H・J</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">職場の外でも、私たちはしばしばテクノロジーを使って自分の生活を記録する。</div></div><div class="jpline"><div class="n">②</div><div class="s">コンサートで大勢の人がスマートフォンでその様子を撮影している光景は、テクノロジーが私たちの生活をいかに変えたかを物語っている。</div></div><div class="jpline"><div class="n">③</div><div class="s">スマートフォンのカメラのおかげで経験を簡単に記録できるようになったが、ほとんどの人にとって<em>それはより豊かな記憶には結びついていない</em>。</div></div><div class="jpline"><div class="n">④</div><div class="s">繰り返すが、<b>問題は必ずしもテクノロジーにあるのではなく、むしろ私たちがカメラのレンズを通して経験をふるいにかけていることにある</b>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第7段落</div><ul><li>第3文の <u>this</u> が<b>設問H</b>。<em>直前の節</em>「スマホのカメラが経験を簡単に記録できるようにしてくれること」を受ける。<u>直前の文の主語（コンサートの群衆）ではない</u>。</li><li>第4文が<b>犯人の付け替え②</b>。<u>第3段落と同じ構文の反復</u>。これが偶然でなく骨格であることを見抜けるかが<b>発展1</b>。</li><li>第1文の <b>Outside of the workplace</b> は場面の転換であって、<u>論点の転換ではない</u>。第5〜6段落と第7〜8段落は同一原理の二例。<b>発展3</b>。</li><li>第3文〜第8段落が<b>設問J(ヘ)</b>の根拠。</li></ul></div><div class="tr-sec"><b>第8段落</b>｜決め手は関与　<span class="utag">設問I・J</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">写真を撮ることが、記憶に良い影響を与えるとも悪い影響を与えるとも、必ずしも言えない。</div></div><div class="jpline"><div class="n">②</div><div class="s"><b>決定的な要因は、注意をどう向けるか、そして対象と有意義に関わるかどうかである</b>。</div></div><div class="jpline"><div class="n">③</div><div class="s">私たちの脳は、大量の情報を集めるよりも、<u>質の高いわずかな情報と有意義に関わることで、より少ないもので多くを成す</u>ように作られている。</div></div><div class="jpline"><div class="n">④</div><div class="s"><em>「体験すること」よりも「記録すること」に意識が向くと</em>、その瞬間の特徴的なもの――経験を唯一無二で忘れがたいものにする光景、音、感情――に注意を払わなくなる。</div></div><div class="jpline"><div class="n">⑤</div><div class="s">そうした細部を欠くと、体験した当時はあれほど鮮明だったもの（家族旅行や子どものバイオリンの発表会）が、<b>本で読んだ物語のように、自分から遠く感じられるようになりうる</b>。</div></div><div class="jpline"><div class="n">⑥</div><div class="s">すべての瞬間を記録しようとするあまり、私たちは経験に十分な細やかさで集中できず、後々まで保たれる<u>特徴ある記憶を形成できない</u>のである。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第8段落</div><ul><li>第1〜2文が<b>この文章の判定基準</b>。<u>写真そのものは中立。決め手は attention と meaningful engagement</u>。<em>「重要な体験かどうか」ではない</em>――ここを取り違えると<b>発展2</b>で誤答する。</li><li>第5文の下線部(7)が<b>設問I</b>。理由は第2文と最終文にある＝<u>有意義に関わらなかったから</u>。<em>like a story we read in a book は比喩</em>であり、実際に読んだ話ではない。</li><li>第3文 <b>do more with less</b> が第9段落 <b>less is more</b> と呼応。<u>量ではなく関与の深さ</u>。</li><li>第4文 <em>distinctive in the moment</em> が第4段落 <em>distinct about the present moment</em> の反復。<b>原理と適用の対応</b>。</li></ul></div><div class="tr-sec"><b>第9段落</b>｜結論　<span class="utag">設問J・発展4</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">テクノロジーにおいても、記憶そのものと同じく、<b>「少ないほうが豊かである」</b>。</div></div><div class="jpline"><div class="n">②</div><div class="s">テクノロジーを使って果てしなく人生を記録しても、すべての経験を思い出せるようにはならないし、<u>そもそもそれは望ましい目標でもない</u>。</div></div><div class="jpline"><div class="n">③</div><div class="s">出来事についての私たちの記憶は選択的なものだが、同時に、<em>多くの細部と意味と感情を伴いうる</em>。</div></div><div class="jpline"><div class="n">④</div><div class="s"><b>過去の経験のそうした側面にアクセスできるようなやり方でテクノロジーを使えば</b>、私たちは大切なものを保ち続けることができる。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第9段落</div><ul><li>第1〜2文が<b>設問J(ト)</b>の根拠。<u>less is more ＋ endlessly では思い出せない</u>。</li><li>最終文が<b>結論の射程</b>を決める。<em>By using technology in ways that…</em>＝<u>使用の停止ではなく使用の条件</u>。<b>発展4</b>はここを突く。</li><li>「記録を減らせ」は本文一致（(ト)）だが、「テクノロジーを使うな」は本文にない。<b>この距離を測れるかが最終的な読解力</b>。</li><li>第3文 <u>selective だが detail, meaning, emotion を伴いうる</u>＝<em>選択的であることと豊かであることは両立する</em>。この一文が文章全体の要約になっている。</li></ul></div><div class="pnav"><button class="btns" data-go="5">← 設問H〜J</button><span class="sp"></span><button class="btnp" data-go="7">発展5問へ →</button></div></section><section class="panel" id="p7">
+  <div class="eyebrow">Original Questions</div>
+  <h1 class="head">発展5問 ― THINKINGオリジナル<span class="sub">早慶・MARCH上位レベル。<b>設問文も選択肢もすべて英語</b>。本文の語句を拾うだけでは解けず、<u>論証構造・概念の切り分け・段落の階層・結論の射程・比喩の機能</u>を掴んでいないと正解にたどり着けない5問。</span></h1>
+  <div class="rule"></div>
+
+  <div class="box navy" style="margin-top:0"><span class="lab">この5問が試すもの</span>
+    本試験のA〜Jは<strong>該当箇所を正確に読む力</strong>を測っていました。この発展問題はその先、<u>「文章全体を一本の論証として掌握しているか」</u>を測ります。<em>5問とも、段落をまたいで二箇所以上を接続しないと解けないように作ってあります</em>。<b>一箇所だけ見て答えが出る問題は意図的に排除しました</b>。</div>
+
+  <h2 class="sec">5問が狙う5つの層</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:12%">問</th><th style="width:26%">狙う力</th><th>この本文での急所</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">発展1</td><td>論証構造</td><td><b>犯人の付け替えが二度起きている</b>。第3段落と第7段落で同じ構文が反復され、それが結論の形を決めている。</td></tr>
+      <tr><td class="cond">発展2</td><td>概念の切り分け</td><td><b>外部化と注意の分割は別物</b>。第2段落と第6段落が矛盾して見える人は、ここを一語でまとめている。</td></tr>
+      <tr><td class="cond">発展3</td><td>段落の階層</td><td><b>第4段落が原理、第5〜6段落と第7〜8段落がその二適用</b>。distinct と distinctive の反復が証拠。</td></tr>
+      <tr><td class="cond">発展4</td><td>結論の射程</td><td><b>「減らせ」と「やめろ」の距離</b>。最終文は使用の停止ではなく使用の条件を述べている。</td></tr>
+      <tr><td class="cond">発展5</td><td>比喩の機能</td><td><b>like a story we read in a book が何を言い表すか</b>。素材（読書）ではなく働き（外から受け取る）を読む。</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box gold" style="margin-top:18px;"><span class="lab">取り組み方</span>
+    <strong>まず本文を読み直してから、5問を通しで解いてください</strong>。各問は選択肢をタップして自分で解け、「答え・根拠を表示」で<u>解答プロセス → 根拠（本文の該当箇所） → 全選択肢の照合</u>が開きます。<em>正解を選べても、残り3つがなぜ外れるかを説明できなければ半分</em>――誤答解説には<b>「どんな読み方をした人がそれを選ぶか」</b>まで書いてあります。</div>
+
+  <div class="box verm" style="margin-top:14px;"><span class="lab">とくに発展2を落とさないこと</span>
+    <strong>発展2は、この文章を読めたかどうかの分水嶺です</strong>。<u>第2段落で著者は「電話番号は喜んで機器に任せる」と言い、第6段落では「ぼやけた不完全な記憶しか残らない」と言う</u>。<em>この二つが矛盾して見えるなら、まだ読めていません</em>。<b>著者は「技術に頼ること」を一語でまとめず、預けることと注意が割れることを厳密に分けています</b>。</div>
+
+  <h2 class="sec">発展 第1問・第2問</h2>
+  <div class="qindex" id="qidxGH"></div>
+  <div id="qWrapGH"></div>
+
+  <h2 class="sec">発展 第3問〜第5問</h2>
+  <div class="qindex" id="qidxIJ"></div>
+  <div id="qWrapIJ"></div>
+
+  <div class="box navy" style="margin-top:22px;"><span class="lab">5問を終えたら</span>
+    落とした問題があれば、<strong>本文のどこを読み飛ばしていたか</strong>を特定してください。<u>発展1なら第3段落と第7段落の構文の一致、発展2なら第2段落第3文と第3段落の free up space、発展3なら第4段落 distinct と第8段落 distinctive、発展4なら第9段落最終文の By using ~、発展5なら第8段落の so vivid ↔ distant</u>。<em>いずれも本文に明確な根拠があり、推測で補う必要はありません</em>。<b>「なんとなく」で選んだ箇所こそ、伸びしろです</b>。</div>
+
+  <div class="pnav"><button class="btns" data-go="6">← 全訳</button><span class="sp"></span><button class="btnp" data-go="8">総まとめへ →</button></div>
+</section><section class="panel" id="p8">
+  <div class="eyebrow">Review</div>
+  <h1 class="head">総まとめ ― 解答一覧と復習動線<span class="sub">まず自己採点。落とした問題が「どの手がかりを見落としたか」で振り返る。</span></h1>
+  <div class="rule"></div>
+
+  <h2 class="sec">本試験 解答一覧</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:9%">設問</th><th style="width:13%">解答</th><th style="width:34%">決め手</th><th>陥りやすい誤答</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">A</td><td><b>(イ)</b></td><td>直前の In theory との定型対</td><td>(ハ) practice を「練習」と訳す</td></tr>
+      <tr><td class="cond">B</td><td><b>(ロ)</b></td><td>or が言い換えを導く＋worry / hurting</td><td>(ニ) X を more にして向きを逆に取る</td></tr>
+      <tr><td class="cond">C</td><td><b>22字</b></td><td>依存度の高まりが、私たちの記憶力の喪失を導く</td><td>increasing を落とす／枠に接続しない</td></tr>
+      <tr><td class="cond">D</td><td><b>(ロ)</b></td><td>直後の文がこの問いへの答え</td><td>(ニ) phone numbers の語の一致で選ぶ</td></tr>
+      <tr><td class="cond">E</td><td><b>(イ)</b></td><td>go about one&apos;s life＝営む</td><td>(ハ) go と run を語感で結びつける</td></tr>
+      <tr><td class="cond">F</td><td><b>(ニ)</b></td><td>cost は金銭ではなく代償</td><td>(ロ) expensive（向きは合うが意味が違う）</td></tr>
+      <tr><td class="cond">G</td><td><b>(ロ)</b></td><td>regain our focus → ぼやけた記憶</td><td>(ニ) further を「さらに遅れて」と読む</td></tr>
+      <tr><td class="cond">H</td><td><b>(ハ)</b></td><td>this は同じ文の前半の節を受ける</td><td>(イ) 直前の文の主語を拾う</td></tr>
+      <tr><td class="cond">I</td><td><b>(ハ)</b></td><td>critical factors＋直後の文</td><td>(ニ) 比喩を文字どおりに取る</td></tr>
+      <tr><td class="cond">J</td><td><b>(ヘ)(ト)</b></td><td>第7〜8段落／第9段落 less is more</td><td>(ロ) but my phone does を読み落とす</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec">発展5問 解答一覧</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:12%">問</th><th style="width:10%">解答</th><th style="width:34%">試された力</th><th>最も引っかかる誤答</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">発展1</td><td><b>②</b></td><td>二度の付け替えが結論の形を決める</td><td>③（場面の違いを論点の違いと取る）</td></tr>
+      <tr><td class="cond">発展2</td><td><b>③</b></td><td>外部化と注意の分割の切り分け</td><td>①（重要度で説明してしまう）</td></tr>
+      <tr><td class="cond">発展3</td><td><b>①</b></td><td>原理と二つの適用という階層</td><td>④（並列を因果に読み替える）</td></tr>
+      <tr><td class="cond">発展4</td><td><b>③</b></td><td>「減らせ」と「やめろ」の距離</td><td>①（本文一致なのに誤読と判定する）</td></tr>
+      <tr><td class="cond">発展5</td><td><b>④</b></td><td>比喩の素材ではなく働きを読む</td><td>②（読書批判と取る）</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec">復習動線 ― 落とした「型」から潰す</h2>
+  <div class="route"><div class="rn">A</div><div><b>多義語を第一義で処理した（A・E・F・G）</b><p><em>practice＝練習、cost＝費用、further＝さらに</em>。<u>いずれも辞書の一番目が文脈に合わない</u>。<strong>多義語は「この文脈では何か」を前後一文で確かめる癖をつける</strong>。<em>とくにFの(ロ)は逆接の向きが正しいぶん見抜きにくい</em>。</p></div></div>
+  <div class="route"><div class="rn">B</div><div><b>語の一致だけで選んだ（D・F・H）</b><p><u>D(ニ)の phone numbers、F(ハ)の multiple goals、H(ロ)の camera lens</u>――<em>どれも本文に実在する語句</em>。<strong>しかし「本文に出てきた語」は正解の根拠にならない</strong>。<u>その語が肯定の文脈か否定の文脈か、どの段落の論点かまで確認する</u>。</p></div></div>
+  <div class="route"><div class="rn">C</div><div><b>限定語・頻度語を読み飛ばした（H・J）</b><p><u>H＝Outside of the workplace の Outside、J＝routinely / everyone / all of them / everything</u>。<strong>設問の正誤は、しばしば副詞や限定語一語で決まる</strong>。<em>内容語だけ拾い読みする習慣があると、ここで必ず落とす</em>。</p></div></div>
+  <div class="route"><div class="rn">D</div><div><b>比喩を文字どおりに取った（I・発展5）</b><p><u>like a story we read in a book は喩え</u>であって、実際に本を読んだ話ではない。<strong>like / as if に続く部分は、事実ではなく説明の道具</strong>。<em>比喩を見たら「これは何を言い表すために持ち出されたか」を一度言語化する</em>。</p></div></div>
+  <div class="route"><div class="rn">E</div><div><b>二つの概念を一語でまとめた（発展2・設問D・設問J）</b><p><u>外部化と注意の分割は別物</u>。<strong>これを混ぜると、第2段落と第6段落が矛盾して見える</strong>。<em>著者が同じ文章の中で肯定と否定を並べていたら、必ず「何と何を分けているのか」を探す</em>。<b>それが論説文の核心であることが多い</b>。</p></div></div>
+  <div class="route"><div class="rn">F</div><div><b>結論を強めすぎた（発展4）</b><p><u>「記録を減らせ」は本文一致だが、「技術を捨てろ」は本文にない</u>。<strong>入試の内容一致で最も多い誤答型が、この「言い過ぎ」</strong>。<em>本文が条件つきで述べていることを、無条件の主張に書き換えた選択肢を疑う</em>。</p></div></div>
+
+  <div class="box navy" style="margin-top:22px;"><span class="lab">次の一手</span>
+    この文章の核心は<strong>「犯人は道具ではなく、使い手の注意の向け方である」</strong>という一点です。<u>第3段落と第7段落で二度その付け替えが宣言され、第4段落が原理を与え、第5〜8段落が二つの適用例を示し、第9段落が条件つきの結論を出す</u>。<em>論説文を読むときは、「どの一文が原理で、どの段落が適用例で、結論にはどんな条件が付いているか」</em>を仕分けながら進んでください。<b>それができれば、設問は自然に解けます</b>。</div>
+
+  <div class="pnav"><button class="btns" data-go="0">↩ 最初に戻る</button><span class="sp"></span><button class="btns" data-go="7">← 発展5問</button></div>
+</section></div>
+<footer class="foot">
+  <div class="brand">学部別合格設計塾 THINKING</div>
+  <div>受験は根性じゃなく、設計。 ／ <a href="https://thinking-online.com/" target="_blank" rel="noopener">https://thinking-online.com/</a></div>
+  <div class="cr">本解説は学習院大学2025年英語（大問1）の学習用解説です。設問・出典（Time, February 24, 2024／Charan Ranganath）の著作権は出題者・原著者に帰属します。和訳・解説・発展問題はTHINKINGによるオリジナルです。</div>
+</footer>
+<button class="jump-top" id="jumpTop" aria-label="上へ">↑</button>
+
+<script>
+const Q = [
+/* ===== A〜D：グループAB ===== */
+{id:"A", grp:"AB", type:"下線部の言い換え", lbl:"設問A", en:"But (1)in practice, people often tell me they experience the opposite.",
+ ask:"下線部(1) in practice の言い換えとして最も適切なものを選びなさい。", answer:"(イ)", kind:"choice",
+ choices:[
+  {t:"(イ) in reality（実際には・現実には）", ok:true},
+  {t:"(ロ) in recording（記録においては）", ok:false},
+  {t:"(ハ) in rehearsing（リハーサルにおいては）", ok:false},
+  {t:"(ニ) in remembering（記憶においては）", ok:false}],
+ steps:[
+   {t:"下線部の直前にある合図を探す", d:"一つ前の文が <b>In theory</b> で始まっている。<u>In theory が出たら、次に来るのは but in practice</u>。これは英語の論説で最も頻出する対の一つ。"},
+   {t:"二文の関係を確認する", d:"第2文「理論上は、記憶する力を豊かにしてくれる<b>はず</b>」→ 第3文「しかし(1)、人々は<b>その逆</b>を経験すると言う」。<em>期待と現実のずれ</em>という構図。"},
+   {t:"in practice の意味を確定する", d:"<b>practice＝「実践・実際」</b>。<u>in theory（理論上は）の対語として「実際には」</u>。ここでの practice に「練習」の意味はない。"},
+   {t:"選ぶ", d:"<b>in reality（実際には）＝(イ)</b>。<u>theory と reality が正しい対になる</u>。"}],
+ ev:{q:'<span class="h">In theory</span>, this ability to effortlessly capture the important moments of our lives should enrich our ability to remember those moments. But <span class="h">(1)in practice</span>, people often tell me they experience the opposite.', jp:"「理論上は、人生の重要な瞬間をたやすく捉えられるこの能力は、それらの瞬間を記憶する力を豊かにしてくれるはずである。しかし実際には、人々はその逆を経験していると私によく語る。」"},
+ co:[{c:"gold",l:"in theory / in practice は一組で覚える",h:"<b>理論上は〜。しかし実際には〜。</b><u>論説文が問題提起をするときの最も一般的な型</u>。<em>この型を知っていれば、下線部を見た瞬間に答えが決まる</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>熟語の定型対を知っているか、かつ文脈で裏を取れるか</b>。<u>practice の第一義「練習」に飛びつかず、直前の In theory を根拠にできるか</u>を測っている。"}],
+ sol:[
+  {m:"o",n:"(イ)",t:"正解。直前の In theory と対になり、「理論上はそうなるはずだが、実際には逆だ」という文意が成立する。"},
+  {m:"x",n:"(ロ)",t:"<b>本文の話題語に引きずられた選択</b>。record / recording はこの文章の頻出語だが、<u>in recording「記録においては」では In theory との対比が成立しない</u>。〈選びがちな人〉<b>下線部の前後を読まず、本文全体のキーワードと形が似た選択肢を選んだ人</b>。<em>言い換え問題は「本文で見た語」ではなく「その位置での意味」で決まる</em>。"},
+  {m:"x",n:"(ハ)",t:"<b>practice を第一義の「練習」で処理した典型的な誤答</b>。<u>in rehearsing は「リハーサルをする際には」</u>で、ここに置くと「理論上は記憶が豊かになるはず。しかしリハーサルでは逆を経験する」となり意味をなさない。〈選びがちな人〉<b>単語帳の訳語を一つだけ覚えていて、文脈で選び直せない人</b>。"},
+  {m:"x",n:"(ニ)",t:"<b>内容語に引かれた選択</b>。文章の主題は記憶なので remembering は一見なじむが、<u>直前の文がすでに「記憶する力」の話をしている</u>ため、in remembering では同語反復になり、<em>In theory との対比が消える</em>。〈選びがちな人〉<b>「テーマに合っていれば正解だろう」と判断した人</b>。<u>言い換えは意味の等価であって、話題の一致ではない</u>。"}]},
+
+{id:"B", grp:"AB", type:"空所補充（組み合わせ）", lbl:"設問B", en:"whether technology is making us ( X ) intelligent — or, ( Y ) precisely, whether it&apos;s hurting our ability to remember.",
+ ask:"空所( X )と( Y )に入る語の組み合わせとして最も適切なものを選びなさい。", answer:"(ロ)", kind:"choice",
+ choices:[
+  {t:"(イ) X = less ／ Y = less", ok:false},
+  {t:"(ロ) X = less ／ Y = more", ok:true},
+  {t:"(ハ) X = more ／ Y = less", ok:false},
+  {t:"(ニ) X = more ／ Y = more", ok:false}],
+ steps:[
+   {t:"or の働きを見抜く", d:"<b>( X ) のあとに続く or は、前の部分の言い換えを導いている</b>。<u>A — or, more precisely, B</u> の形で、<em>B は A をより正確に述べ直したもの</em>。"},
+   {t:"言い換え先の内容を読む", d:"言い換え先は <b>whether it&apos;s hurting our ability to remember</b>「記憶する力を損なっているのではないか」。<u>これは明確にマイナス方向</u>。"},
+   {t:"( X ) を逆算する", d:"making us ( X ) intelligent が上と同じ趣旨になるには、<b>less intelligent（知性を低下させている）</b>でなければならない。<u>さらに動詞が worry（心配する）であることも、マイナス方向を裏づける</u>。"},
+   {t:"( Y ) を決める", d:"<b>or more precisely「より正確に言えば」</b>が定型。<u>less precisely では「正確さを落として言えば」となり、言い換えの導入にならない</u>。よって(ロ)。"}],
+ ev:{q:'I study memory, and one thing that seems to <span class="h">worry</span> people, is whether technology is making us ( X ) intelligent — <span class="h">or, ( Y ) precisely,</span> whether it&apos;s <span class="h">hurting</span> our ability to remember.', jp:"「私は記憶を研究しているが、人々が心配していることの一つは、テクノロジーが私たちの知性を低下させているのではないか――あるいは、より正確に言えば、記憶する力を損なっているのではないか、という点である。」"},
+ co:[{c:"nav",l:"or は言い換えの合図",h:"<b>ダッシュ＋or＋副詞＋comma</b> という形を見たら、<u>直後は直前の言い換え</u>。<em>だから両者の評価の向き（プラスかマイナスか）は必ず一致する</em>。これが ( X ) を決める。"},
+     {c:"gold",l:"worry と hurting が向きを固定する",h:"<b>人々が「心配」していること、そして「損なっている」</b>。<u>この二語だけで、( X ) がマイナス方向だと確定する</u>。<em>空所補充は空所の周りだけ見ても決まらない</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>等位接続詞 or が言い換えを導く用法を知っているか</b>。<u>並列（AまたはB）ではなく同格的な言い直し</u>と読めるかを問うている。and / or の機能を文脈で判断する力。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<b>( X ) は正しいが ( Y ) が成立しない</b>。<u>less precisely は「それほど正確ではなく言えば」</u>となり、<em>より精密な言い直しを導入する位置に置けない</em>。〈選びがちな人〉<b>( X ) を正しく less と決めたところで安心し、( Y ) を検討せずに同じ語を選んだ人</b>。<u>組み合わせ問題は両方を独立に検証する</u>。"},
+  {m:"o",n:"(ロ)",t:"正解。( X ) に less で「知性を低下させている」となり、言い換え先の「記憶する力を損なっている」と向きが一致する。( Y ) は or more precisely という定型。"},
+  {m:"x",n:"(ハ)",t:"<b>( X ) の向きが逆</b>。more intelligent では「テクノロジーが私たちをより賢くしているのではないか」となり、<u>それを people が worry（心配）するのは不自然</u>。さらに<em>言い換え先の hurting our ability to remember と正反対</em>になる。〈選びがちな人〉<b>or more precisely という定型だけを知っていて、( Y ) から埋め、( X ) を文脈確認せずに残りを入れた人</b>。"},
+  {m:"x",n:"(ニ)",t:"<b>( X ) の向きが逆</b>。(ハ)と同じ理由で、<u>worry・hurting というマイナスの文脈に more intelligent は置けない</u>。〈選びがちな人〉<b>「テクノロジーは人を賢くする」という一般論を持ち込み、本文を読まずに常識で補った人</b>。<em>この文章はまさにその通念を疑うところから始まっている</em>。"}]},
+
+{id:"C", grp:"AB", type:"和訳（25字以内）", lbl:"設問C", en:"(2)an increasing dependence on our devices may lead us to lose our ability to remember",
+ ask:"下線部(2)を、句読点を含め25字以内の日本語に訳しなさい。ただし、与えられた語句で始め、終えること。　　私たちの電子機器への　□□□…□□□　かもしれない", answer:"下記の模範解答参照", kind:"desc",
+ steps:[
+   {t:"与えられた枠を先に読む", d:"<b>「私たちの電子機器への」で始まり「かもしれない」で終わる</b>。<u>冒頭の「への」は dependence on our devices の on を先取りしている</u>ので、書き出しは<em>「依存…」</em>から。末尾の「かもしれない」は <b>may</b> に対応する。"},
+   {t:"主語の構造を正しく取る", d:"<b>an increasing dependence</b>＝<u>「依存の高まり」「依存度が増していること」</u>。<em>increasing を落として単に「依存」と訳すと減点</em>。<u>これは無生物主語</u>で、文全体は「依存の高まりが → 私たちに → 失わせる」という因果。"},
+   {t:"lead O to do を処理する", d:"<b>lead us to lose</b>＝「私たちに失わせる」「私たちが失うことにつながる」。<u>us を落とすと主述がねじれる</u>。<em>「依存の高まりが記憶力を失う」は主語と動作主が食い違う悪文</em>。"},
+   {t:"字数に合わせて圧縮する", d:"<b>our ability to remember</b>＝「記憶する力」「記憶力」。<u>25字という制限があるので、名詞化（「記憶力の喪失」）で縮めるのが実戦的</u>。<em>「私たちの」の重複は削ってよい</em>。"}],
+ model:["依存度の高まりが、私たちの記憶力の喪失を導く　〈22字〉",
+        "依存の高まりが、記憶する力を失わせる　〈18字〉",
+        "依存が強まることで、記憶力を失ってしまう　〈20字〉"],
+ mnote:"いずれも「私たちの電子機器への」＋模範解答＋「かもしれない」でつながることを必ず確認すること。接続しない答案は、内容が合っていても条件違反で0点になりうる。",
+ total:10,
+ rubric:[
+  {t:"dependence を「依存（度）」と訳している", p:3, must:true},
+  {t:"increasing を「高まり／増大／強まる」など<u>変化</u>として訳している", p:3, must:true},
+  {t:"lead us to lose を「失わせる／喪失を導く／失うことにつながる」と<u>因果</u>で訳している", p:2, must:true},
+  {t:"ability to remember を「記憶力／記憶する力」と訳している", p:2, must:false}],
+ ng:[
+  {bad:"依存が、私たちの記憶力の喪失を導く", why:"<b>increasing が落ちている</b>。<u>an increasing dependence は「依存が増していること」であって、単なる「依存」ではない</u>。<em>この文章は第2段落第3文で「依存そのものは歓迎」と述べている</em>ので、変化の訳出は内容上も必須。"},
+  {bad:"依存度の高まりは、記憶力を失うだろう", why:"<b>主語と動作主がねじれている</b>。<u>失うのは「私たち」であって「依存度の高まり」ではない</u>。lead us to lose の us を落とした結果。<em>無生物主語構文は「Aが、私たちに、Bさせる」の三要素を崩さない</em>。"},
+  {bad:"電子機器に頼りすぎると記憶力が落ちる", why:"<b>与えられた枠に接続しない</b>。<u>「私たちの電子機器への」＋「頼りすぎると…」は日本語としてつながらない</u>。<em>内容が合っていても条件違反</em>。<b>書き出しの語句が指定されている問題は、必ず声に出してつないでみること</b>。"},
+  {bad:"私たちの電子機器への依存度の高まりが記憶力の喪失を導く", why:"<b>与えられた語句を重複して書いている</b>。<u>「私たちの電子機器への」はすでに印刷されている</u>ので、解答欄に書き写すと字数を無駄に消費し、25字を超える。<em>枠の条件を読み違えたケース</em>。"}]},
+
+{id:"D", grp:"AB", type:"下線部の言い換え", lbl:"設問D", en:"(3)why do so many of us feel like its presence in our lives is leading us to form poor memories?",
+ ask:"下線部(3)の言い換えとして最も適切なものを選びなさい。", answer:"(ロ)", kind:"choice",
+ choices:[
+  {t:"(イ) why do we have so many problems storing information on our devices?（なぜ機器への情報保存にこれほど問題が多いのか）", ok:false},
+  {t:"(ロ) why do we think technology is having a bad effect on our memory?（なぜ私たちはテクノロジーが記憶に悪影響を与えていると考えるのか）", ok:true},
+  {t:"(ハ) why does our memory seem to grow poorer with age?（なぜ記憶力は年齢とともに衰えるように見えるのか）", ok:false},
+  {t:"(ニ) why is it so difficult to remember things like phone numbers?（なぜ電話番号のようなものを覚えるのがこれほど難しいのか）", ok:false}],
+ steps:[
+   {t:"指示語 its を特定する", d:"<b>its＝technology&apos;s</b>。<u>同じ文の前半が if technology can help us… なので、its は technology を受ける</u>。"},
+   {t:"抽象表現をほどく", d:"<b>its presence in our lives</b>＝「生活の中にテクノロジーが存在すること」。<u>存在＝使用していること</u>と読めばよい。"},
+   {t:"form poor memories を言い換える", d:"<b>poor memories を form する</b>＝「貧弱な記憶しか作れない」＝<u>記憶に悪影響が出ている</u>。<em>記憶を「失う」ではなく「うまく形成できない」である点に注意</em>。"},
+   {t:"全体を平易な一文にする", d:"「なぜ多くの人は、テクノロジーの存在が記憶を悪くしていると<b>感じる</b>のか」＝<u>why do we think technology is having a bad effect on our memory?</u>＝(ロ)。"}],
+ ev:{q:'So, if technology can help us &quot;free up space&quot; for the things we want to remember when we need to remember them, <span class="h">(3)why do so many of us feel like its presence in our lives is leading us to form poor memories?</span> The short answer: technology isn&apos;t the problem — it&apos;s how we interact with it.', jp:"「では、覚えておきたいことを必要なときに思い出せるよう、テクノロジーが『容量を空ける』手助けをしてくれるのだとしたら、なぜこれほど多くの人が、生活の中にテクノロジーが存在することで記憶がうまく作れなくなっていると感じるのだろうか。手短に言えば――テクノロジーが問題なのではない。問題は、私たちがそれとどう関わるかである。」"},
+ co:[{c:"gold",l:"直後の答えから逆算できる",h:"<b>この疑問文の答えが、次の文に書いてある</b>。<u>technology isn&apos;t the problem — it&apos;s how we interact with it</u>。<em>「テクノロジーのせいではない」と答えているのだから、問いは「テクノロジーのせいなのか」という趣旨</em>。<b>疑問文の下線部は、その答えを見れば内容が確定する</b>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>指示語の特定＋抽象名詞句（its presence）のほどき＋比喩的表現（form poor memories）の平易化</b>。<u>三段階の処理を一度に要求している</u>。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<b>本文が明確に否定している内容</b>。<u>第2段落第2文「重要な情報を保存するためにテクノロジーに頼ることが記憶力の低下につながると考える理由はない」</u>、さらに第3段落前半で <em>free up space</em> と肯定している。<b>情報の保存に問題があるとは本文のどこにも書かれていない</b>。〈選びがちな人〉<b>so many of us という語形を so many problems と取り違え、形の似た選択肢に引かれた人</b>。"},
+  {m:"o",n:"(ロ)",t:"正解。its presence＝テクノロジーの存在、form poor memories＝記憶への悪影響。直後の文がこの問いへの答えになっている。"},
+  {m:"x",n:"(ハ)",t:"<b>本文にない論点</b>。<u>この文章は加齢について一言も述べていない</u>。<em>poor memories の poor を「衰え」と読み、原因を年齢に求めた</em>のが誤りの正体。〈選びがちな人〉<b>「記憶が悪くなる」と聞くと反射的に加齢を連想する人</b>。<u>本文が扱うのは年齢ではなく注意の向け方</u>。"},
+  {m:"x",n:"(ニ)",t:"<b>方向が正反対</b>。<u>電話番号は第2段落第3文で「喜んで機器に任せている」例として挙げられている</u>＝<em>覚えなくてよいものの代表</em>。それを「覚えるのが難しい」と問題視するのは著者の立場と逆。〈選びがちな人〉<b>本文に出てきた具体語（phone numbers）が選択肢にあると、それだけで根拠があると感じてしまう人</b>。<u>本文に出てくる語が、肯定の文脈か否定の文脈かまで確認する</u>。"}]},
+
+/* ===== E〜G：グループCD ===== */
+{id:"E", grp:"CD", type:"句動詞の言い換え", lbl:"設問E", en:"As we (4)go about our daily lives, our brain helps us focus attention on and process what we need to learn.",
+ ask:"下線部(4) go about の言い換えとして最も適切なものを選びなさい。", answer:"(イ)", kind:"choice",
+ choices:[
+  {t:"(イ) carry on with（〜を続ける・営む）", ok:true},
+  {t:"(ロ) make plans for（〜の計画を立てる）", ok:false},
+  {t:"(ハ) run over（〜をざっと見る・轢く）", ok:false},
+  {t:"(ニ) think of（〜を思いつく・〜について考える）", ok:false}],
+ steps:[
+   {t:"かたまりで捉える", d:"<b>go about our daily lives</b> で一つの表現。<u>go about ＝「（日課などを）進める・営む」</u>。<em>go about one&apos;s business / daily life はほぼ定型</em>。"},
+   {t:"文の役割を確認する", d:"<b>As we go about our daily lives,</b> は<u>「日常生活を送る中で」という時・状況を表す副詞節</u>。<em>主節は「脳が注意を向けさせてくれる」</em>という常時起きていることの説明。"},
+   {t:"各選択肢を代入して確かめる", d:"<b>carry on with our daily lives</b>＝「日常生活を続ける」で自然。<u>他の三つはいずれも「生活を営む」の意味にならない</u>。"},
+   {t:"選ぶ", d:"<b>(イ) carry on with</b>。"}],
+ ev:{q:'To form lasting memories, we need to focus on what is distinct about the present moment, those details we can recall afterwards to reconstruct an experience. <span class="h">As we (4)go about our daily lives</span>, our brain helps us focus attention on and process what we need to learn, and keep our recollections accurate.', jp:"「持続する記憶を形成するためには、今この瞬間の特徴的なもの、つまり後から思い出して経験を組み立て直せるような細部に、注意を集中させる必要がある。日常生活を送る中で、脳は私たちが学ぶべきことに注意を向けさせ、処理し、思い出を正確に保つのを助けてくれる。」"},
+ co:[{c:"nav",l:"句動詞は後ろの目的語とセットで覚える",h:"<b>go about ＋ one&apos;s life / business / work</b>＝「（日常の営みを）進める」。<u>go about ＋ doing なら「〜に取りかかる」</u>。<em>同じ句動詞でも目的語で訳が変わる</em>から、必ずセットで記憶する。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>句動詞を、構成語の直感ではなく熟語として処理できるか</b>。<u>go と run が似ていると感じるのは、句動詞を「動詞＋前置詞の足し算」と誤解しているため</u>。"}],
+ sol:[
+  {m:"o",n:"(イ)",t:"正解。carry on with our daily lives で「日常生活を営み続ける」となり、下線部と等価。"},
+  {m:"x",n:"(ロ)",t:"<b>時制と意味がずれる</b>。<u>make plans for our daily lives は「日常生活の計画を立てる」</u>で、<em>計画段階の話になってしまう</em>。しかし主節は「脳が常に注意を向けさせている」という<b>生活している最中の出来事</b>を述べている。〈選びがちな人〉<b>about を「〜について」と前置詞的に処理し、「生活について考え／備える」と連想した人</b>。"},
+  {m:"x",n:"(ハ)",t:"<b>動詞の直感で選んだ典型的な誤答</b>。<u>run over は「ざっと目を通す」「（車が）轢く」「あふれる」</u>のいずれでも、daily lives を目的語に取れない。〈選びがちな人〉<b>go と run をどちらも「移動の動詞」と捉え、句動詞を語感で選んだ人</b>。<em>句動詞は動詞の意味から推測できないからこそ覚える価値がある</em>。"},
+  {m:"x",n:"(ニ)",t:"<b>意味が狭すぎる</b>。<u>think of our daily lives は「日常生活について考える」</u>で、<em>思考の話になり、営み・行動の意味が消える</em>。〈選びがちな人〉<b>go about に「取り組む」の語感を見て、そこから「考える」に飛んだ人</b>。<u>go about は頭の中の作業ではなく、実際に生活を進めることを指す</u>。"}]},
+
+{id:"F", grp:"CD", type:"下線部の言い換え", lbl:"設問F", en:"Multitasking can make us feel that we&apos;re being more efficient, but (5)it comes at a cost.",
+ ask:"下線部(5)の言い換えとして最も適切なものを選びなさい。", answer:"(ニ)", kind:"choice",
+ choices:[
+  {t:"(イ) it&apos;s as simple as that（ただそれだけのことだ）", ok:false},
+  {t:"(ロ) it&apos;s quite expensive（それはかなり高くつく）", ok:false},
+  {t:"(ハ) there are multiple goals（複数の目標がある）", ok:false},
+  {t:"(ニ) there are negative aspects（マイナスの面がある）", ok:true}],
+ steps:[
+   {t:"but の逆接から評価の向きを決める", d:"前半は <b>make us feel that we&apos;re being more efficient</b>「より効率的だと<u>感じさせる</u>」＝プラス評価。<u>but が来た以上、下線部はマイナス評価</u>。<em>この時点で(イ)は消える</em>。"},
+   {t:"come at a cost の意味を確定する", d:"<b>come at a cost＝「代償を伴う」</b>。<u>ここでの cost は金銭ではなく、犠牲・引き換えに失うもの</u>。<em>at the cost of ~「〜を犠牲にして」と同じ cost</em>。"},
+   {t:"次の段落で裏を取る", d:"第6段落が代償の中身を説明している。<b>切り替えのたびに脳のリソースが消費され、一歩後れを取り、ぼやけた不完全な記憶しか残らない</b>。<u>これは金銭ではなく、記憶の質という代償</u>。"},
+   {t:"選ぶ", d:"<b>(ニ) there are negative aspects「マイナスの面がある」</b>が最も近い。"}],
+ ev:{q:'Multitasking can make us feel that we&apos;re being more efficient, <span class="h">but (5)it comes at a cost.</span> Each time we are distracted or switch between activities, the brain&apos;s resources are used to regain our focus. The result is that we remain one step behind, and in the end, we are only left with blurry, incomplete memories.', jp:"「マルチタスクは自分がより効率的であるように感じさせてくれるが、それには代償が伴う。気が散ったり活動を切り替えたりするたびに、脳のリソースは集中を取り戻すために使われる。その結果、私たちは一歩後れを取ったままになり、最終的に残るのはぼやけた不完全な記憶だけになる。」"},
+ co:[{c:"gold",l:"cost を金銭に限定しない",h:"<b>at a cost / at the cost of / at all costs</b> はいずれも<u>金銭ではなく「犠牲・代償」</u>。<em>この文章に金額の話は一度も出てこない</em>。<b>多義語は文脈で意味を切り替える</b>。"},
+     {c:"nav",l:"逆接が答えの半分を決める",h:"<b>プラス but マイナス</b>という構図を押さえれば、<u>選択肢はマイナス方向の二つ（ロ・ニ）に絞れる</u>。<em>そのうえで「金銭か否か」を判定すれば答えは一つ</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>多義語を文脈で確定する力</b>と、<u>逆接接続詞から評価の向きを読む力</u>。<em>この二つを組み合わせれば、熟語を知らなくても正解にたどり着ける</em>ように作られている。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<b>逆接の後ろに置けない</b>。<u>「ただそれだけのことだ」は話を打ち切る表現</u>で、<em>but が導くマイナス評価にならない</em>。しかも直後の第6段落が代償の中身を詳しく説明しており、話は打ち切られていない。〈選びがちな人〉<b>it comes at a cost を訳せず、無難そうな慣用句を選んだ人</b>。"},
+  {m:"x",n:"(ロ)",t:"<b>cost を金銭と取った最大の罠</b>。<u>方向（マイナス評価）は合っているので、ここで止まると正解に見えてしまう</u>。しかし<em>マルチタスクが「高くつく」のは金銭ではない</em>。第6段落が説明する代償は<b>脳のリソースと記憶の質</b>であって、費用ではない。〈選びがちな人〉<b>cost＝費用という第一義だけで処理し、直後の段落で裏を取らなかった人</b>。<u>逆接の向きが合っているぶん、かえって危険な誤答</u>。"},
+  {m:"x",n:"(ハ)",t:"<b>直前の語をそのまま写しただけ</b>。<u>multiple goals は第5段落第1文の splitting our attention between multiple goals から取られている</u>が、<em>「複数の目標がある」は事実の記述であって、代償の説明ではない</em>。〈選びがちな人〉<b>直前に出てきた語句が選択肢にあると、関連が深いと感じて選ぶ人</b>。<u>言い換え問題では、下線部と意味が等価かどうかだけを見る</u>。"},
+  {m:"o",n:"(ニ)",t:"正解。come at a cost＝代償を伴う＝マイナスの面がある。第6段落がその中身（リソースの消費・ぼやけた記憶）を説明している。"}]},
+
+{id:"G", grp:"CD", type:"空所補充", lbl:"設問G", en:"The result is that we remain one step ( Z ), and in the end, we are only left with blurry, incomplete memories.",
+ ask:"空所( Z )に入る語として最も適切なものを選びなさい。", answer:"(ロ)", kind:"choice",
+ choices:[
+  {t:"(イ) ahead（先んじて）", ok:false},
+  {t:"(ロ) behind（後れて）", ok:true},
+  {t:"(ハ) closer（より近く）", ok:false},
+  {t:"(ニ) further（さらに先へ）", ok:false}],
+ steps:[
+   {t:"直前の因果を読む", d:"<b>Each time we are distracted or switch between activities, the brain&apos;s resources are used to regain our focus.</b>「切り替えのたびに、脳のリソースは<u>集中を取り戻すために</u>使われる」。<em>regain＝一度失ったものを取り戻す</em>。"},
+   {t:"状態を言葉にする", d:"<b>取り戻している間、私たちは本来いるべき地点に達していない</b>。<u>つまり追いつこうとして追いつけていない状態</u>。"},
+   {t:"直後の結果で裏を取る", d:"<b>we are only left with blurry, incomplete memories</b>「ぼやけた不完全な記憶しか残らない」＝<u>明確にマイナスの帰結</u>。<em>したがって空所もマイナス方向</em>。"},
+   {t:"選ぶ", d:"<b>one step behind「一歩後れを取って」</b>＝(ロ)。<u>前後の因果と評価の向きが一致する唯一の選択肢</u>。"}],
+ ev:{q:'Each time we are distracted or switch between activities (such as checking a message while holding a conversation), the brain&apos;s resources are used to <span class="h">regain our focus</span>. The result is that we remain one step ( Z ), and in the end, we are only left with <span class="h">blurry, incomplete memories</span>.', jp:"「気が散ったり、（会話をしながらメッセージを確認するなど）活動を切り替えたりするたびに、脳のリソースは集中を取り戻すために使われる。その結果、私たちは一歩後れを取ったままになり、最終的に残るのはぼやけた不完全な記憶だけになる。」"},
+ co:[{c:"nav",l:"The result is that は評価の向きを引き継ぐ",h:"<b>原因がマイナスなら結果もマイナス</b>。<u>直前は「リソースの浪費」、直後は「不完全な記憶」</u>。<em>空所はその間に挟まれているので、プラスの語は入りようがない</em>。"},
+     {c:"gold",l:"one step ＋ 方向語",h:"<b>one step ahead</b>「一歩先んじて」／<b>one step behind</b>「一歩後れて」／<b>one step closer (to ~)</b>「（〜に）一歩近づいて」／<b>one step further</b>「もう一歩進んで」。<u>四つとも実在する表現だから、意味ではなく文脈で選ぶ必要がある</u>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>前後の論理（原因と結果）から、空所の評価の向きを決める力</b>。<u>選択肢四つがすべて成立する英語表現なので、語彙力では差がつかない</u>。<em>純粋に文脈処理を測る設計</em>。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<b>評価の向きが正反対</b>。<u>one step ahead は「一歩先んじて」というプラスの状態</u>。しかし直後は <em>ぼやけた不完全な記憶しか残らない</em> というマイナスの帰結。〈選びがちな人〉<b>直前の「効率的だと感じさせる」（第5段落）を引きずり、マルチタスクの利点の話が続いていると読んだ人</b>。<u>but it comes at a cost でもう論は転じている</u>。"},
+  {m:"o",n:"(ロ)",t:"正解。集中を取り戻すためにリソースを消費し続けるため、常に一歩後れた状態にとどまる。直後の「ぼやけた不完全な記憶」とも整合する。"},
+  {m:"x",n:"(ハ)",t:"<b>表現としては成立するが文脈が埋まらない</b>。<u>one step closer は「何に近づくのか」を示す to ~ が必要</u>で、ここにはない。さらに<em>「近づく」は前進＝プラス方向</em>であり、マイナスの帰結と噛み合わない。〈選びがちな人〉<b>空所の前後ではなく、選択肢を単体で眺めて「ありそうな表現」を選んだ人</b>。"},
+  {m:"x",n:"(ニ)",t:"<b>further を「さらに遅れて」と誤解した誤答</b>。<u>further は「さらに先へ」という前進方向</u>（go one step further＝もう一歩踏み込む）。<em>遅れを表すなら further behind と behind が必要</em>。〈選びがちな人〉<b>far の比較級だから「さらに〜」とだけ覚えていて、方向まで意識していない人</b>。<u>方向を持つ語は、どちら向きかまでセットで覚える</u>。"}]},
+
+/* ===== H〜J：グループEF ===== */
+{id:"H", grp:"EF", type:"指示内容", lbl:"設問H", en:"The smartphone camera enables us to easily document our experiences, yet for most of us (6)this hasn&apos;t translated into a more extensive memory.",
+ ask:"下線部(6) this が指す内容として最も適切なものを選びなさい。", answer:"(ハ)", kind:"choice",
+ choices:[
+  {t:"(イ) crowds of people attending concerts（コンサートに集まる大勢の人々）", ok:false},
+  {t:"(ロ) solving problems with a camera lens（カメラのレンズで問題を解決すること）", ok:false},
+  {t:"(ハ) the ease of use of smartphones to document our lives（生活を記録するうえでのスマートフォンの使いやすさ）", ok:true},
+  {t:"(ニ) using modern technology in the workplace（職場で現代技術を使うこと）", ok:false}],
+ steps:[
+   {t:"this の受ける範囲を決める", d:"<b>this は語ではなく、直前の節全体を受けることが多い</b>。<u>ここでは同じ文の前半 The smartphone camera enables us to easily document our experiences</u>。"},
+   {t:"節の内容を名詞句にまとめる", d:"「スマートフォンのカメラが、<b>経験を簡単に記録することを可能にしてくれる</b>」→ 名詞化すると<u>「生活を記録するうえでのスマホの使いやすさ」</u>。<em>easily が ease に対応している</em>。"},
+   {t:"yet の対比で確認する", d:"<b>yet this hasn&apos;t translated into a more extensive memory</b>「<u>しかしそれは、より豊かな記憶には結びついていない</u>」。<em>「記録は簡単になった、しかし記憶は増えていない」という対比</em>が成立する。"},
+   {t:"選ぶ", d:"<b>(ハ)</b>。<u>easily document ↔ the ease of use … to document</u> の対応が決定的。"}],
+ ev:{q:'The crowds of people at concerts recording the action with their smartphones illustrates how technology has changed our lives. <span class="h">The smartphone camera enables us to easily document our experiences</span>, yet for most of us <span class="h">(6)this</span> hasn&apos;t translated into a more extensive memory.', jp:"「コンサートで大勢の人がスマートフォンでその様子を撮影している光景は、テクノロジーが私たちの生活をいかに変えたかを物語っている。スマートフォンのカメラのおかげで経験を簡単に記録できるようになったが、ほとんどの人にとって、それはより豊かな記憶には結びついていない。」"},
+ co:[{c:"gold",l:"指示語は「直前の文」ではなく「直前の節」",h:"<b>this が同じ文の前半を受ける</b>のはごく普通。<u>「一つ前の文の主語」を機械的に拾うと外す</u>。<em>yet という逆接が同じ文の中にあることが、this の範囲を教えてくれる</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>節を名詞句に言い換える力</b>。<u>動詞中心の表現（easily document）を名詞中心の表現（the ease of use … to document）に変換できるか</u>を測っている。<em>英語の抽象度を上下させる操作</em>。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<b>一つ前の文の主語を機械的に拾った誤答</b>。<u>crowds of people at concerts は「技術が生活を変えた」ことの例示</u>であって、<em>「より豊かな記憶に結びつかなかった」ものではない</em>。<b>群衆が記憶に結びつかない、では意味が通らない</b>。〈選びがちな人〉<b>指示語＝直前の文の主語、と機械的に処理している人</b>。<u>this は節や文全体を受ける場合が圧倒的に多い</u>。"},
+  {m:"x",n:"(ロ)",t:"<b>本文にない内容</b>。<u>camera lens は第7段落最終文に出るが、そこは filtering our experiences through the lens of a camera「レンズを通して経験をふるいにかけている」</u>という<em>問題の指摘</em>であって、<b>レンズで問題を解決する話はどこにもない</b>。〈選びがちな人〉<b>段落内に出てきた語（camera、lens）を組み合わせた選択肢を、見覚えがあるという理由で選んだ人</b>。"},
+  {m:"o",n:"(ハ)",t:"正解。直前の節「スマホのカメラが経験を簡単に記録できるようにしてくれる」を名詞句にまとめたもの。easily document と the ease of use … to document が対応する。"},
+  {m:"x",n:"(ニ)",t:"<b>段落の設定と正反対</b>。<u>第7段落は Outside of the workplace「職場の外でも」で始まっている</u>。<em>つまりこの段落はまさに職場以外の話</em>。職場の話は第5段落（会議・メール）。〈選びがちな人〉<b>workplace という語を見つけて、Outside of という冒頭の二語を読み飛ばした人</b>。<u>場所や時期を表す副詞句は、肯定か否定かまで確認する</u>。"}]},
+
+{id:"I", grp:"EF", type:"理由", lbl:"設問I", en:"something that was so vivid when we experienced it (a family vacation or a child&apos;s violin recital) (7)can end up feeling distant to us, like a story we read in a book",
+ ask:"下線部(7)の理由として最も適切なものを選びなさい。", answer:"(ハ)", kind:"choice",
+ choices:[
+  {t:"(イ) because the event happened a long time ago（その出来事がずっと昔に起きたから）", ok:false},
+  {t:"(ロ) because the family occasion wasn&apos;t important（その家族の行事が重要でなかったから）", ok:false},
+  {t:"(ハ) because we didn&apos;t engage meaningfully with the experience（その経験と有意義に関わらなかったから）", ok:true},
+  {t:"(ニ) because we once read a similar story in a book（かつて似た話を本で読んだことがあるから）", ok:false}],
+ steps:[
+   {t:"直前の条件節を読む", d:"<b>Without those details</b>「そうした細部を欠くと」。<u>those details＝直前の文の the sights, sounds and feelings that make an experience unique and memorable</u>。"},
+   {t:"なぜ細部を欠くのかを一文前に探す", d:"<b>When we focus on &quot;documenting&quot; over &quot;experiencing,&quot; we don&apos;t pay attention to what is distinctive in the moment.</b>「記録することに意識が向くと、その瞬間の特徴的なものに注意を払わなくなる」。"},
+   {t:"段落の判定基準に戻す", d:"第8段落第2文が明言している。<b>The critical factors involve how you direct your attention and whether you meaningfully engage with the subject matter.</b>＝<u>決め手は注意の向け方と、有意義に関わったかどうか</u>。"},
+   {t:"直後の文で裏を取る", d:"<b>By trying to record every moment, we don&apos;t focus on the experience in enough detail to form distinctive memories that we will retain.</b><u>次の文が同じ内容を言い直している</u>。よって(ハ)。"}],
+ ev:{q:'<span class="h">The critical factors involve how you direct your attention and whether you meaningfully engage with the subject matter.</span> … Without those details, something that was <span class="h">so vivid</span> when we experienced it (a family vacation or a child&apos;s violin recital) (7)can end up feeling distant to us, like a story we read in a book. <span class="h">By trying to record every moment, we don&apos;t focus on the experience in enough detail to form distinctive memories that we will retain.</span>', jp:"「決定的な要因は、注意をどう向けるか、そして対象と有意義に関わるかどうかである。……そうした細部を欠くと、体験した当時はあれほど鮮明だったもの（家族旅行や子どものバイオリンの発表会）が、本で読んだ物語のように、自分から遠く感じられるようになりうる。すべての瞬間を記録しようとするあまり、私たちは経験に十分な細やかさで集中できず、後々まで保たれる特徴ある記憶を形成できないのである。」"},
+ co:[{c:"gold",l:"理由は直後の文にも書かれている",h:"<b>英語の論説は、重要な主張を二度言う</b>。<u>下線部の直後の文が、同じことを別の言い方で述べている</u>。<em>理由問題で前を探して見つからないときは、後ろを読む</em>。"},
+     {c:"nav",l:"so vivid が誤答を一つ消す",h:"<b>体験した当時は「あれほど鮮明だった」</b>と本文が明記している。<u>つまりその出来事は印象的だった</u>。<em>だから「重要でなかったから」という説明は本文と矛盾する</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>比喩を比喩として処理する力</b>と、<u>段落の判定基準（critical factors）を具体例に適用する力</u>。<em>like a story we read in a book を実際の読書体験と取ると、文章の論理が崩れる</em>。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<b>本文にない論点</b>。<u>この文章は時間の経過による記憶の劣化を一度も扱っていない</u>。<em>問題にされているのは「体験したその瞬間に注意を向けたかどうか」であって、そこから何年たったかではない</em>。〈選びがちな人〉<b>distant を「時間的に遠い」と読んだ人</b>。<u>ここでの distant は心理的な距離（自分ごとに感じられない）</u>。"},
+  {m:"x",n:"(ロ)",t:"<b>本文の記述と矛盾する</b>。<u>本文は something that was so vivid when we experienced it「体験した当時はあれほど鮮明だった」と明記</u>している。<em>つまり重要でなかったどころか、強い印象を持った出来事だったからこそ、今それが遠く感じられることが問題になる</em>。〈選びがちな人〉<b>「忘れた＝大事じゃなかった」という常識で理由を補った人</b>。<u>本文が反証を先に置いている</u>ので、読んでいれば必ず消せる。"},
+  {m:"o",n:"(ハ)",t:"正解。第8段落第2文の critical factors（注意の向け方と有意義な関与）に照らし、記録に意識が向いて経験と十分に関わらなかったことが理由。下線部の直後の文も同内容を述べている。"},
+  {m:"x",n:"(ニ)",t:"<b>比喩を文字どおりに受け取った最多の誤答</b>。<u>like a story we read in a book は「本で読んだ物語のように」という喩え</u>であって、<em>実際に本で読んだという事実の主張ではない</em>。<b>「自分が生きた感覚を伴わず、外から受け取った情報のように感じられる」</b>ことを表している。〈選びがちな人〉<b>下線部の直後にある語句をそのまま理由に流用した人</b>。<u>like / as if に続く部分は、事実ではなく喩え</u>。"}]},
+
+{id:"J", grp:"EF", type:"内容一致（7択から2つ）", lbl:"設問J", en:"本文の内容と一致するものを2つ選びなさい。",
+ ask:"本文の内容と一致するものを次の(イ)〜(ト)の中から2つ選びなさい。ただし、3つ以上選んだ場合は得点を認めません。", answer:"(ヘ)・(ト)", kind:"multi",
+ mlab:"7択から2つ", mhint:"まず自分で2つ選んでから確認しよう。",
+ items:[
+  {n:"(イ)", t:"In the digital age, everyone believes technology has a positive impact on our ability to remember.（デジタル時代には、テクノロジーが記憶力に良い影響を与えると誰もが信じている）", ok:false,
+   ev:"第1段落 第3文・最終文", why:"<b>明確に矛盾する</b>。第3文 <u>people often tell me they experience the opposite</u>「人々は逆を経験すると私に語る」、最終文 <u>whether it&apos;s hurting our ability to remember</u>「記憶する力を損なっているのではないか（と心配している）」。<em>誰もが良い影響を信じているどころか、多くの人が悪影響を心配している</em>というのが出発点。〈選びがちな人〉<b>In the digital age という書き出しが第1文と同じなので、同じ内容だと感じた人</b>。<u>everyone という全称に注意</u>。"},
+  {n:"(ロ)", t:"The author does not believe that phones have a photographic memory.（著者は、電話が写真のような記憶力を持つとは考えていない）", ok:false,
+   ev:"第2段落 最終文", why:"<b>主語が逆</b>。<u>I don&apos;t have a photographic memory — but my phone does.</u>「私に写真のような記憶力はない――だが私の電話にはある」。<em>写真的記憶を持たないのは著者であって、電話は持っている</em>。〈選びがちな人〉<b>否定語 don&apos;t だけを拾い、but 以下の does（＝has a photographic memory）を読み落とした人</b>。<u>but の後ろの代動詞 does が何を受けるかを必ず確認する</u>。"},
+  {n:"(ハ)", t:"It is uncommon to be interrupted by emails and messages when talking to others.（他人と話しているときにメールやメッセージで中断されるのは珍しい）", ok:false,
+   ev:"第5段落 第1文", why:"<b>正反対</b>。<u>our conversations, activities and meetings are routinely interrupted by emails, messages and phone calls</u>「会話も活動も会議も、メールやメッセージ、電話によって<em>日常的に</em>中断される」。<b>routinely（日常的に）と uncommon（珍しい）は真っ向から対立する</b>。〈選びがちな人〉<b>本文に interrupted と emails と messages があるのを確認し、語の一致だけで一致と判定した人</b>。<u>頻度を表す副詞まで照合する</u>。"},
+  {n:"(ニ)", t:"Even when we engage in multiple tasks, we can concentrate on all of them.（複数の作業に取り組んでいるときでも、そのすべてに集中できる）", ok:false,
+   ev:"第6段落 第1文", why:"<b>矛盾する</b>。<u>the brain&apos;s resources are used to regain our focus</u>「脳のリソースは集中を<em>取り戻す</em>ために使われる」。<b>regain と書かれている以上、集中はいったん失われている</b>。〈選びがちな人〉<b>第5段落の「マルチタスクは効率的だと感じさせる」を事実として読んだ人</b>。<u>make us feel ~ は「〜と感じさせる」であって、実際にそうだとは言っていない</u>。"},
+  {n:"(ホ)", t:"Multitasking helps stimulate our brains so that we can recall everything.（マルチタスクは脳を刺激し、すべてを思い出せるようにしてくれる）", ok:false,
+   ev:"第6段落 最終文", why:"<b>結論が正反対</b>。<u>we are only left with blurry, incomplete memories</u>「残るのはぼやけた不完全な記憶だけ」。<em>recall everything（すべてを思い出せる）とは真逆の帰結</em>。〈選びがちな人〉<b>「脳を使うのだから鍛えられるはず」という一般論を持ち込んだ人</b>。<u>本文はマルチタスクを一貫して否定的に扱っている</u>。"},
+  {n:"(ヘ)", t:"Filtering our experiences through a camera has a negative impact on how we structure memories.（カメラを通して経験をふるいにかけることは、記憶の作られ方に悪影響を与える）", ok:true,
+   ev:"第7段落 第3文〜第8段落", why:"<b>一致する</b>。第7段落第3〜4文 <u>this hasn&apos;t translated into a more extensive memory … we are filtering our experiences through the lens of a camera</u>、さらに第8段落 <u>When we focus on &quot;documenting&quot; over &quot;experiencing,&quot; we don&apos;t pay attention to what is distinctive in the moment</u> から最終文 <u>we don&apos;t focus on the experience in enough detail to form distinctive memories that we will retain</u> まで。<em>記憶の「作られ方（how we structure memories）」に悪影響が出るという趣旨が、段落全体で説明されている</em>。"},
+  {n:"(ト)", t:"Documenting our lives less with technology is better for forming lasting memories.（テクノロジーで生活を記録することを減らすほうが、持続する記憶を作るうえで良い）", ok:true,
+   ev:"第9段落 第1〜2文", why:"<b>一致する</b>。<u>With technology, as with memory itself, &quot;less is more.&quot;</u>「テクノロジーにおいても、記憶そのものと同じく『少ないほうが豊かである』」。続けて <u>Using technology to document our lives endlessly will not enable us to remember all our experiences, nor is that a desirable goal.</u>「果てしなく記録しても、すべての経験を思い出せるようにはならないし、そもそもそれは望ましい目標でもない」。<em>さらに第8段落最終文 By trying to record every moment, we don&apos;t focus on the experience in enough detail とも整合する</em>。"}],
+ co:[{c:"gold",l:"2つに絞る手順",h:"<b>まず明確な矛盾を消す</b>。<u>(イ)everyone／(ハ)uncommon／(ホ)recall everything は、本文の語と正反対の語が入っている</u>ので即座に消える。<em>残る(ロ)(ニ)は、どちらも「但し書き」を読み落とすと一致に見える</em>タイプ。<b>最後に残る(ヘ)(ト)が正解</b>。"},
+     {c:"nav",l:"この設問の誤答パターンは二種類だけ",h:"<b>①正反対の語に置き換えたもの（イ・ハ・ホ）</b>と、<b>②文の一部だけ切り取ると合って見えるもの（ロ・ニ）</b>。<u>①は語の照合で、②は文の最後まで読むことで消える</u>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>選択肢の一語一語を本文と照合する精度</b>。<u>とくに everyone / uncommon / all of them / everything といった極端な語</u>は、<em>本文にそこまでの強さがあるかを必ず確認させる仕掛け</em>。<b>3つ以上選ぶと0点という条件も、曖昧なまま保険をかけることを許さない設計</b>。"}]},
+].concat([
+/* ===== 発展1・発展2：グループGH ===== */
+{id:"発展1", grp:"GH", type:"論証構造", lbl:"ORIGINAL 1", en:"The two displacements of blame", rate:38,
+ ask:"In paragraph 3 the author writes, &quot;technology isn&apos;t the problem — it&apos;s how we interact with it.&quot; In paragraph 7 he writes, &quot;the problem isn&apos;t necessarily with technology, but rather that we are filtering our experiences through the lens of a camera.&quot; Which statement best captures what these two sentences jointly do for the essay&apos;s argument?",
+ answer:"2", kind:"choice",
+ choices:[
+  {t:"① They concede a weakness in the author&apos;s own position and then narrow the scope of his earlier claim.", ok:false},
+  {t:"② They relocate the cause from the device to the user&apos;s handling of attention, which is what allows the essay to close with advice on use rather than on avoidance.", ok:true},
+  {t:"③ They identify two unrelated sources of forgetting, one belonging to the workplace and the other to private life.", ok:false},
+  {t:"④ They establish that the harm arises from the sheer volume of information that technology makes available.", ok:false}],
+ steps:[
+   {t:"二文が同じ構文であることに気づく", d:"<b>the problem isn&apos;t X — it&apos;s Y</b>（第3段落）と <b>the problem isn&apos;t necessarily with X, but rather Y</b>（第7段落）。<u>同一の型が、離れた二箇所で繰り返されている</u>。<em>これは偶然ではなく、文章の骨格</em>。"},
+   {t:"X と Y に何が入るかを並べる", d:"<b>第3段落：X＝technology ／ Y＝how we interact with it</b>。<b>第7段落：X＝technology ／ Y＝filtering our experiences through the lens</b>。<u>どちらも X は同じ「テクノロジー」、Y は「私たちの側の扱い方」</u>。"},
+   {t:"この付け替えが何を可能にするかを考える", d:"<b>犯人が道具なら、処方は「使うな」になる。犯人が扱い方なら、処方は「こう使え」になる</b>。<u>第9段落最終文 By using technology in ways that allow us to access those aspects… は後者</u>。<em>構造と結論が噛み合っている</em>。"},
+   {t:"選ぶ", d:"<b>②</b>。<u>原因を機器から使い手の注意の扱いへ移すこと</u>が、<em>結末を「使用の停止」ではなく「使用の条件」にしている</em>。"}],
+ ev:{q:'The short answer: <span class="h">technology isn&apos;t the problem — it&apos;s how we interact with it.</span> … Again, <span class="h">the problem isn&apos;t necessarily with technology, but rather that we are filtering our experiences through the lens of a camera.</span> … <span class="h">By using technology in ways that allow us to access those aspects of our past experiences, we can hold on to what matters.</span>', jp:"「手短に言えば――テクノロジーが問題なのではない。問題は、私たちがそれとどう関わるかである。……繰り返すが、問題は必ずしもテクノロジーにあるのではなく、むしろ私たちがカメラのレンズを通して経験をふるいにかけていることにある。……過去の経験のそうした側面にアクセスできるようなやり方でテクノロジーを使えば、私たちは大切なものを保ち続けることができる。」"},
+ co:[{c:"gold",l:"Again という一語が答えを保証する",h:"<b>第7段落の文は Again, で始まる</b>。<u>著者自身が「もう一度言うが」と宣言している</u>。<em>つまり第3段落と第7段落が同じ主張の反復であることは、推測ではなく本文に明記されている</em>。"},
+     {c:"nav",l:"構造が結論を決める",h:"<b>犯人を誰にするかが、処方箋を決める</b>。<u>道具が犯人なら禁止、扱い方が犯人なら作法</u>。<em>この文章が一貫して「作法」を語れるのは、二度の付け替えで犯人を移しておいたから</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>反復される構文を、文章の骨格として認識する力</b>。<u>一文ずつ訳せても、同じ型が二度出たことに気づかなければ構造は見えない</u>。<em>段落をまたいで形を照合する読み方</em>を要求している。"}],
+ sol:[
+  {m:"x",n:"①",t:"<b>譲歩・限定の読み</b>。<u>著者は自説の弱点を認めていない</u>。むしろ第2段落 However, there is no reason to think… 以降、<em>一貫して同じ主張を補強し続けている</em>。<b>concede（認める）も narrow the scope（範囲を狭める）も、本文には対応する動きがない</b>。〈選びがちな人〉<b>isn&apos;t … but という形を見て、反射的に「譲歩構文」と分類した人</b>。<u>not A but B は譲歩ではなく、対象の置き換え</u>。"},
+  {m:"o",n:"②",t:"正解。原因を device から the user&apos;s handling of attention へ移している。その付け替えがあるからこそ、第9段落最終文で「使用の停止」ではなく「使用の仕方」を説ける。"},
+  {m:"x",n:"③",t:"<b>表層の対比を論理の対比と取り違えた誤答</b>。<u>たしかに第5段落は職場（会議・メール）、第7段落は Outside of the workplace</u> と場面は分かれる。しかし<em>unrelated（互いに無関係）ではない</em>。<b>両者とも第4段落の原理（今この瞬間の特徴的なものへの注意）が壊れる例</b>であり、しかも引用された二文は<u>どちらも「テクノロジーのせいではない」という同一の主張</u>。〈選びがちな人〉<b>場面が変わったことを論点が変わったことだと読んだ人</b>。<u>場所を表す副詞句は、舞台の転換であって主題の転換ではないことが多い</u>。"},
+  {m:"x",n:"④",t:"<b>量を犯人にした読み</b>。<u>第8段落に a huge amount of information、第9段落に endlessly とあるので、量が原因に見えなくもない</u>。しかし第8段落第2文が<em>決定的な要因は how you direct your attention と whether you meaningfully engage だと明言</em>しており、<b>量そのものではなく関与の質が基準</b>。さらに<u>第2段落で「情報を機器に預けること」は無害と断言されている</u>。〈選びがちな人〉<b>less is more という標語だけを取り出し、「少なければよい＝多いのが原因」と単純化した人</b>。<u>本文の less は量の話であると同時に、質的関与とセットで語られている</u>。"}]},
+
+{id:"発展2", grp:"GH", type:"概念の切り分け", lbl:"ORIGINAL 2", en:"Offloading versus divided attention", rate:32,
+ ask:"The author says he is &quot;happy to leave ordinary memory tasks, like memorizing phone numbers and passwords, to my devices&quot; (paragraph 2), yet he also argues that our use of technology leaves us with &quot;blurry, incomplete memories&quot; (paragraph 6). On the author&apos;s own reasoning, why is there no contradiction between these two positions?",
+ answer:"3", kind:"choice",
+ choices:[
+  {t:"① Phone numbers and passwords are too trivial to be worth remembering, whereas concerts and family vacations carry emotional significance.", ok:false},
+  {t:"② Devices are reliable for text-based information but unreliable for the sights, sounds and feelings that make an experience memorable.", ok:false},
+  {t:"③ Storing information outside the mind does not consume attention, whereas dividing attention during an experience prevents the distinctive details from being encoded in the first place.", ok:true},
+  {t:"④ The first case describes the author&apos;s own habits, while the second describes the habits of the people who come to him with complaints.", ok:false}],
+ steps:[
+   {t:"二つの場面が何をしているかを言葉にする", d:"<b>第2段落＝情報を機器に預ける（外部化）</b>。<b>第5〜6段落＝体験の最中に注意が割れる（注意の分割）</b>。<u>どちらも「テクノロジーを使う」ことだが、脳に対してしていることが違う</u>。"},
+   {t:"外部化の効果を本文で確認する", d:"第3段落に <b>technology can help us &quot;free up space&quot;</b>「テクノロジーは容量を空ける手助けをしてくれる」。<u>つまり外部化は資源を奪うのではなく、むしろ解放する</u>。<em>著者が歓迎するのはこのため</em>。"},
+   {t:"注意の分割の効果を本文で確認する", d:"第5段落 <b>splitting our attention between multiple goals</b>、第6段落 <b>the brain&apos;s resources are used to regain our focus</b>。<u>こちらは資源を消費する</u>。<em>そして第4段落の原理「今この瞬間の特徴的なものへの注意」が働かなくなる</em>。"},
+   {t:"両立する理由を述べる", d:"<b>外部化は注意を使わない。分割は注意を奪う</b>。<u>したがって「機器に預けてよい」と「ぼやけた記憶しか残らない」は矛盾しない</u>。＝<b>③</b>。"}],
+ ev:{q:'In fact, <span class="h">I&apos;m happy to leave ordinary memory tasks, like memorizing phone numbers and passwords, to my devices.</span> … if technology can help us <span class="h">&quot;free up space&quot;</span> … we often make the problem worse by <span class="h">splitting our attention between multiple goals</span> … the brain&apos;s resources are used to regain our focus.', jp:"「実際、電話番号やパスワードの暗記といったありふれた記憶作業は、喜んで自分の機器に任せている。……テクノロジーが『容量を空ける』手助けをしてくれるのだとしたら……さらに私たちは、複数の目標に注意を分散させることで問題を悪化させることが多い。……脳のリソースは集中を取り戻すために使われる。」"},
+ co:[{c:"gold",l:"この文章の最大の急所",h:"<b>「テクノロジーに頼る」を一語でまとめてしまうと、第2段落と第6段落が矛盾して見える</b>。<u>著者は二つを厳密に区別している</u>。<em>預けること（offloading）と、割れること（divided attention）</em>。<b>この区別ができているかどうかで、この文章が読めたかどうかが決まる</b>。"},
+     {c:"nav",l:"free up space が決め手",h:"<b>容量を「空ける」</b>という表現は、<u>外部化が資源を消費しないどころか解放することを示している</u>。<em>第3段落のこの一語が、第2段落と第6段落を矛盾なく接続する蝶番</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>一見矛盾する二箇所を、著者の論理で調停する力</b>。<u>どちらかを無視したり、片方を例外扱いしたりせず、両方を説明する原理を本文から取り出せるか</u>。<em>最上位層を分ける問い</em>。"}],
+ sol:[
+  {m:"x",n:"①",t:"<b>最も危険な誤答</b>。<u>「重要度で切り分ける」という、一見もっともらしい説明</u>。しかし<em>第8段落第1〜2文が真っ向から否定する</em>。<b>Taking photos does not necessarily have a good or bad effect on memory. The critical factors involve how you direct your attention and whether you meaningfully engage with the subject matter.</b>＝<u>決め手は重要度ではなく、注意の向け方と関与の質</u>。<b>同じ家族旅行でも、関与すれば残り、記録に徹すれば残らない</b>。〈選びがちな人〉<b>第8段落を読んでいない、あるいは読んでも第2段落と接続していない人</b>。<u>重要度説では、なぜ「鮮明だった家族旅行」が遠くなるのかを説明できない</u>。"},
+  {m:"x",n:"②",t:"<b>本文にない論点</b>。<u>機器の性能や信頼性について、この文章は何も述べていない</u>。むしろ第7段落は <em>The smartphone camera enables us to easily document our experiences</em>「スマホのカメラのおかげで簡単に記録できる」と、<b>記録能力そのものは認めている</b>。問題は記録できないことではなく、<u>記録が記憶に結びつかないこと</u>。〈選びがちな人〉<b>sights, sounds and feelings という語句を拾い、それを「機器が捉えられないもの」と読み替えた人</b>。<em>本文は「機器が捉えられない」ではなく「私たちが注意を払わない」と書いている</em>。"},
+  {m:"o",n:"③",t:"正解。外部化は注意を消費せず（free up space）、注意の分割は資源を消費して（regain our focus）、第4段落が要求する「今この瞬間の特徴的なものへの注意」を妨げる。両者は別の機構なので矛盾しない。"},
+  {m:"x",n:"④",t:"<b>主語の読み違い</b>。<u>第5〜6段落は一貫して we / our で書かれている</u>（our conversations, we are distracted, we remain one step behind）。<em>著者自身を含む一般論であって、他人の習慣の話ではない</em>。〈選びがちな人〉<b>第1段落の people often tell me they experience the opposite を引きずり、「著者 ↔ 一般の人々」という対立図式で読んだ人</b>。<u>人称代名詞がどこで I から we に切り替わるかを追う</u>。"}]},
+
+/* ===== 発展3〜発展5：グループIJ ===== */
+{id:"発展3", grp:"IJ", type:"段落間の階層", lbl:"ORIGINAL 3", en:"One principle, two applications", rate:41,
+ ask:"Paragraphs 5 and 6 concern multitasking at work; paragraphs 7 and 8 concern photographing experiences outside work. What is the logical relationship between these two discussions?",
+ answer:"1", kind:"choice",
+ choices:[
+  {t:"① Both are instances of the same failure — attention is pulled away from what is distinctive in the present moment — which paragraph 4 has already identified as the condition for lasting memory.", ok:true},
+  {t:"② The second qualifies the first by showing that divided attention does no harm when the activity is an enjoyable one.", ok:false},
+  {t:"③ The second is a milder version of the first, since a camera interrupts us far less often than emails and phone calls do.", ok:false},
+  {t:"④ The first describes a cause of poor memory, and the second describes the strategy people adopt in order to compensate for it.", ok:false}],
+ steps:[
+   {t:"第4段落が何をしている段落か確認する", d:"<b>To form lasting memories, we need to focus on what is distinct about the present moment.</b><u>これは事例ではなく原理の宣言</u>。<em>第5段落以降はすべて、この原理が破られる場面</em>。"},
+   {t:"第5〜6段落を原理に当てはめる", d:"<b>splitting our attention between multiple goals</b>＝<u>注意が複数に割れる</u>。<em>結果、今この瞬間の細部に注意が向かない</em>。"},
+   {t:"第7〜8段落を同じ原理に当てはめる", d:"<b>When we focus on &quot;documenting&quot; over &quot;experiencing,&quot; we don&apos;t pay attention to what is distinctive in the moment.</b><u>こちらも、注意が今この瞬間から逸れている</u>。"},
+   {t:"本文内の証拠を確認する", d:"<b>第4段落 distinct about the present moment</b> と <b>第8段落 distinctive in the moment</b>。<u>同じ語根がほぼ同じ形で反復されている</u>。<em>これが「同一原理の二適用」であることの本文内証拠</em>。＝<b>①</b>。"}],
+ ev:{q:'To form lasting memories, we need to focus on <span class="h">what is distinct about the present moment</span>, those details we can recall afterwards to reconstruct an experience. … we often make the problem worse by <span class="h">splitting our attention between multiple goals</span>. … When we focus on &quot;documenting&quot; over &quot;experiencing,&quot; we don&apos;t pay attention to <span class="h">what is distinctive in the moment</span> — the sights, sounds and feelings that make an experience unique and memorable.', jp:"「持続する記憶を形成するためには、今この瞬間の特徴的なものに注意を集中させる必要がある。……さらに私たちは、複数の目標に注意を分散させることで問題を悪化させることが多い。……『体験すること』よりも『記録すること』に意識が向くと、その瞬間の特徴的なもの――経験を唯一無二で忘れがたいものにする光景、音、感情――に注意を払わなくなる。」"},
+ co:[{c:"gold",l:"語根の反復が構造を可視化する",h:"<b>distinct（第4段落）→ distinctive（第8段落第4文・最終文）</b>。<u>著者は同じ語を意図的に戻している</u>。<em>「ここで言っているのは、さっき立てた原理のことだ」という合図</em>。<b>離れた段落の対応は、しばしば語の反復として埋め込まれている</b>。"},
+     {c:"nav",l:"原理と適用の階層",h:"<b>第4段落＝原理／第5〜6段落＝適用例①／第7〜8段落＝適用例②</b>。<u>この三層が見えれば、文章の半分は読めている</u>。<em>段落を横並びの情報として読むと、この階層は見えない</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>離れた段落どうしの関係を把握する力</b>。<u>一段落ずつ正確に訳せることと、段落の役割を仕分けられることは別の能力</u>。<em>後者がないと、本試験の内容一致問題でも根拠段落を特定できない</em>。"}],
+ sol:[
+  {m:"o",n:"①",t:"正解。第4段落が原理を与え、第5〜6段落と第7〜8段落がその二つの適用例。distinct と distinctive の反復が本文内の証拠になっている。"},
+  {m:"x",n:"②",t:"<b>本文にない条件を持ち込んだ誤答</b>。<u>「楽しい活動なら注意の分割は無害」という記述はどこにもない</u>。むしろ<em>コンサートも家族旅行も子どものバイオリン発表会も、楽しい場面でありながら記憶に残らない例として挙げられている</em>。〈選びがちな人〉<b>第7〜8段落の題材（コンサート・休暇・発表会）が娯楽的なので、第5段落の仕事の話と性質が違うと感じた人</b>。<u>題材の違いは、論理の違いではない</u>。"},
+  {m:"x",n:"③",t:"<b>存在しない比較を読み込んだ誤答</b>。<u>本文はカメラとメールの中断頻度を比べていない</u>。そもそも<em>第7〜8段落のカメラは「中断するもの」としてではなく、「注意の向け先を変えてしまうもの」として扱われている</em>。<b>milder（より軽い）という程度判断も本文にない</b>。〈選びがちな人〉<b>第5段落の interrupted という語に引かれ、第7〜8段落も中断の話だと枠をはめた人</b>。"},
+  {m:"x",n:"④",t:"<b>筋は通るが本文にない因果</b>。<u>「記憶が悪くなったから記録で補おうとする」という説明は一見もっともらしい</u>。しかし<em>第7段落は記録を補償手段として導入していない</em>。<b>Outside of the workplace, we often use technology to document our lives</b> と、<u>単に広く行われている行為として提示している</u>。〈選びがちな人〉<b>二つの段落が並んでいると、自動的に因果や時系列で結びつけてしまう人</b>。<u>並列は並列として読む</u>。"}]},
+
+{id:"発展4", grp:"IJ", type:"結論の射程", lbl:"ORIGINAL 4", en:"What the conclusion does NOT say", rate:36,
+ ask:"Which of the following would the author most likely regard as a misreading of his final paragraph?",
+ answer:"3", kind:"choice",
+ choices:[
+  {t:"① That recording fewer moments can improve the quality of what we remember.", ok:false},
+  {t:"② That remembering everything we have experienced is not a goal worth pursuing.", ok:false},
+  {t:"③ That we ought to stop using technology to record our lives if we want vivid memories.", ok:true},
+  {t:"④ That a memory can be selective and still be rich in detail, meaning and feeling.", ok:false}],
+ steps:[
+   {t:"設問の形式を確認する", d:"<b>誤読を選ぶ問題</b>。<u>つまり三つは本文と一致し、一つだけが一致しない</u>。<em>消去法が使えないので、四つすべてを本文と照合する必要がある</em>。"},
+   {t:"①②④を本文で確かめる", d:"<b>①＝less is more ＋ By trying to record every moment…（第8段落最終文）</b>。<b>②＝nor is that a desirable goal</b>。<b>④＝Our memories of events are selective, but they also can have a great deal of detail, meaning, and emotion</b>。<u>三つとも本文に対応がある</u>。"},
+   {t:"③を最終文と突き合わせる", d:"<b>By using technology in ways that allow us to access those aspects of our past experiences, we can hold on to what matters.</b><u>これは「使うのをやめろ」ではなく「こう使え」という条件の提示</u>。<em>stop using とは正反対の方向</em>。"},
+   {t:"文章全体の立場で裏を取る", d:"<b>第2段落で外部化を歓迎し、第3段落で technology isn&apos;t the problem と明言している</b>。<u>この文章は一貫してテクノロジー肯定の立場から、使い方だけを批判している</u>。よって<b>③が誤読</b>。"}],
+ ev:{q:'With technology, as with memory itself, <span class="h">&quot;less is more.&quot;</span> Using technology to document our lives endlessly will not enable us to remember all our experiences, <span class="h">nor is that a desirable goal.</span> <span class="h">Our memories of events are selective, but they also can have a great deal of detail, meaning, and emotion.</span> <span class="h">By using technology in ways that allow us to access those aspects of our past experiences, we can hold on to what matters.</span>', jp:"「テクノロジーにおいても、記憶そのものと同じく『少ないほうが豊かである』。テクノロジーを使って果てしなく人生を記録しても、すべての経験を思い出せるようにはならないし、そもそもそれは望ましい目標でもない。出来事についての私たちの記憶は選択的なものだが、同時に、多くの細部と意味と感情を伴いうる。過去の経験のそうした側面にアクセスできるようなやり方でテクノロジーを使えば、私たちは大切なものを保ち続けることができる。」"},
+ co:[{c:"gold",l:"「減らせ」と「やめろ」の距離",h:"<b>本試験の設問J(ト)「テクノロジーで記録することを減らすほうがよい」は本文一致（正解）</b>。<u>それでも「テクノロジーを使うのをやめろ」は本文にない</u>。<em>記録量を減らすことと、道具を捨てることは別</em>。<b>この距離を測れるかが、この文章の最終的な読解力</b>。"},
+     {c:"nav",l:"By using ~ という条件節",h:"<b>最終文は By doing ~「〜することによって」で始まる</b>。<u>つまり条件を満たした使用を前提にしている</u>。<em>使用そのものを否定するなら、この構文は書けない</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>結論の射程を正確に測る力</b>。<u>主張を強めすぎる誤読（やめろ）を検出できるか</u>。<em>入試の内容一致問題で最も頻出する誤答型が、この「言い過ぎ」</em>。<b>誤読を選ばせる形式にすることで、四つすべての照合を強制している</b>。"}],
+ sol:[
+  {m:"x",n:"①",t:"<b>本文と一致する（＝誤読ではない）</b>。<u>第9段落第1文 &quot;less is more&quot;</u>、および<u>第8段落最終文 By trying to record every moment, we don&apos;t focus on the experience in enough detail</u>。<em>記録を減らすことが記憶の質に資する、という趣旨は本文にある</em>。<b>本試験の設問J(ト)が正解であることとも整合する</b>。"},
+  {m:"x",n:"②",t:"<b>本文と一致する（＝誤読ではない）</b>。<u>第9段落第2文 nor is that a desirable goal</u>「そもそもそれは望ましい目標でもない」。<em>that＝すべての経験を思い出せるようになること</em>。<b>本文がほぼそのままの形で述べている</b>。"},
+  {m:"o",n:"③",t:"正解（これが誤読）。第9段落最終文 By using technology in ways that… は使用の停止ではなく使用の条件を述べている。第2段落の外部化肯定、第3段落の technology isn&apos;t the problem とも一貫し、この文章は一度もテクノロジーの放棄を主張していない。〈選びがちな人〉less is more を反テクノロジーの標語として読み、文章全体を技術批判だと分類した人。"},
+  {m:"x",n:"④",t:"<b>本文と一致する（＝誤読ではない）</b>。<u>第9段落第3文 Our memories of events are selective, but they also can have a great deal of detail, meaning, and emotion</u>。<em>選択的であることと豊かであることは両立する、というこの一文が、文章全体の要約になっている</em>。<b>選択的＝貧しい、ではない</b>。"}]},
+
+{id:"発展5", grp:"IJ", type:"比喩の機能", lbl:"ORIGINAL 5", en:"&quot;like a story we read in a book&quot;", rate:44,
+ ask:"In paragraph 8 the author writes that a once-vivid experience &quot;can end up feeling distant to us, like a story we read in a book.&quot; What does this comparison specifically convey?",
+ answer:"4", kind:"choice",
+ choices:[
+  {t:"① That our memories of recorded events gradually become factually inaccurate.", ok:false},
+  {t:"② That reading is an inferior way of acquiring memories compared with direct experience.", ok:false},
+  {t:"③ That we come to confuse what we have actually lived through with what we have merely read about.", ok:false},
+  {t:"④ That the event is retained as information received from outside rather than as something lived from within.", ok:true}],
+ steps:[
+   {t:"比喩の前にある対比軸を取る", d:"<b>something that was so vivid when we experienced it … can end up feeling distant</b>。<u>軸は vivid（体験した当時の生々しさ）↔ distant（今感じる遠さ）</u>。<em>正確さの話でも、時間の話でもない</em>。"},
+   {t:"本で読んだ物語とは何かを言葉にする", d:"<b>内容は知っている。筋も言える。しかし自分がその場にいた感覚はない</b>。<u>つまり外から受け取った情報として持っている</u>。<em>これが distant の中身</em>。"},
+   {t:"段落の中心対比に接続する", d:"第8段落第4文 <b>When we focus on &quot;documenting&quot; over &quot;experiencing&quot;</b>。<u>記録を優先すると、体験が体験でなくなる</u>。<em>比喩はこの対比を一息で言い表している</em>。"},
+   {t:"選ぶ", d:"<b>④</b>。<u>内側から生きたものではなく、外側から受け取った情報として保持される</u>。"}],
+ ev:{q:'When we focus on <span class="h">&quot;documenting&quot; over &quot;experiencing,&quot;</span> we don&apos;t pay attention to what is distinctive in the moment — the sights, sounds and feelings that make an experience unique and memorable. Without those details, something that was <span class="h">so vivid</span> when we experienced it (a family vacation or a child&apos;s violin recital) can end up <span class="h">feeling distant</span> to us, like a story we read in a book.', jp:"「『体験すること』よりも『記録すること』に意識が向くと、その瞬間の特徴的なもの――経験を唯一無二で忘れがたいものにする光景、音、感情――に注意を払わなくなる。そうした細部を欠くと、体験した当時はあれほど鮮明だったもの（家族旅行や子どものバイオリンの発表会）が、本で読んだ物語のように、自分から遠く感じられるようになりうる。」"},
+ co:[{c:"gold",l:"比喩は論旨のどこに刺さっているかで読む",h:"<b>この比喩は documenting / experiencing の対比の真下に置かれている</b>。<u>だから「読書 vs 体験」という比喩の表面ではなく、「外から受け取る vs 内から生きる」という論旨を読む</u>。<em>比喩の素材ではなく、比喩の働きを見る</em>。"},
+     {c:"nav",l:"so vivid が誤答を切る",h:"<b>体験した当時は鮮明だった</b>と本文が明記している。<u>だから「正確さが落ちた」でも「重要でなかった」でもない</u>。<em>鮮明だったものが遠くなる、という落差そのものが論点</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>比喩を比喩として処理し、論旨に還元する力</b>。<u>本試験の設問I(ニ)が「かつて本で似た話を読んだから」という literal な誤答を用意している</u>のと同じ急所を、<em>逆側から問うている</em>。"}],
+ sol:[
+  {m:"x",n:"①",t:"<b>distant を「正確さの劣化」と読んだ誤答</b>。<u>本文は記憶の内容が事実と食い違うとは一言も述べていない</u>。<em>第4段落には keep our recollections accurate という表現があるが、第8段落の distant は正確さではなく距離感の話</em>。〈選びがちな人〉<b>blurry, incomplete（第6段落）を「不正確」と読み替え、そのまま第8段落に持ち込んだ人</b>。<u>ぼやける（細部が薄い）と間違う（事実が違う）は別</u>。"},
+  {m:"x",n:"②",t:"<b>比喩の素材を論点と取り違えた誤答</b>。<u>著者は読書を批判していない</u>。<em>a story we read in a book は「自分が生きていない出来事」の分かりやすい例として持ち出されているだけ</em>。<b>本を読むことの是非は、この文章の論点ではない</b>。〈選びがちな人〉<b>比喩に出てきた名詞（book, story）が選択肢にあると、そこが論点だと感じる人</b>。<u>比喩は何かを説明する道具であって、説明の対象ではない</u>。"},
+  {m:"x",n:"③",t:"<b>distant を「区別がつかない」と曖昧に処理した誤答</b>。<u>feeling distant は「遠く感じられる」であって、「混同する」ではない</u>。<em>むしろ、体験したはずなのに体験した感じがしない、という落差がはっきり意識されている</em>。〈選びがちな人〉<b>like という語から「似ている→見分けがつかない」と連想を伸ばした人</b>。<u>like A は「Aのように感じられる」であって「Aと取り違える」ではない</u>。"},
+  {m:"o",n:"④",t:"正解。vivid（内側から生きた鮮明さ）と distant（外側から受け取った情報）の落差を言い表した比喩。第8段落の documenting / experiencing の対比と直結している。"}]},
+]);
+function esc(id){ var s=String(id); var out='q'; for(var i=0;i<s.length;i++){ var c=s.charCodeAt(i); if((c>=48&&c<=57)||(c>=65&&c<=90)||(c>=97&&c<=122)) out+=s[i]; else out+='_'+c; } return out; }
+function rateCls(r){ return r<=40?'low':(r<=55?'mid':'hi'); }
+function rateBadge(r){
+  if(!r) return '';
+  const c=rateCls(r);
+  const lab = c==='low'?'最難関':(c==='mid'?'差がつく':'取りたい');
+  return `<span class="rate ${c}">正答率 ${r}%・${lab}</span>`;
+}
+function buildEV(ev){ return ev?`<div class="ev"><div class="ev-hd">根拠｜本文の該当箇所</div><div class="ev-bd"><div class="ev-q">${ev.q}</div>${ev.jp}</div></div>`:''; }
+function buildCO(list){ return (list||[]).map(o=>`<div class="co ${o.c}"><div class="co-lbl">${o.l}</div>${o.h}</div>`).join(''); }
+function buildCA(rows){ return (rows||[]).map(r=>`<div class="ca-row"><div class="ca-mark ${r.m==='o'?'ok':'ng'}">${r.m==='o'?'✓':'✗'}</div><div class="ca-bd"><span class="k ${r.m==='o'?'o':'x'}">${r.n}.</span> ${r.t}</div></div>`).join(''); }
+function buildSteps(steps){
+  if(!steps) return '';
+  return '<div class="chy-h">解答プロセス</div><div class="dsteps">'+steps.map((s,i)=>`<div class="dstep"><div class="dn">${i+1}</div><div class="db"><b>${s.t}</b><p>${s.d}</p>${s.cite?`<div class="cite">${s.cite}</div>`:''}</div></div>`).join('')+'</div>';
+}
+function buildRubric(q){
+  if(!q.rubric) return '';
+  const rid='rb'+esc(q.id);
+  return `<div class="chy-h">採点基準（自己採点）</div><div class="rub" id="${rid}">
+    <div class="rub-hd"><span>自分の答案に入っていた要素にチェック</span><span class="sc"><b class="now">0</b> / ${q.total} 点</span></div>
+    ${q.rubric.map(r=>`<div class="rub-row" data-rid="${rid}" data-pt="${r.p}"><div class="rub-cb"></div><div class="rub-el">${r.t}${r.must?'<span class="must">必須</span>':'<span class="plus">加点</span>'}</div><div class="rub-pt">${r.p}点</div></div>`).join('')}
+    <div class="rub-foot">※ 配点は非公表のため、要素配分は学習用の目安（10点換算）。</div></div>`;
+}
+function buildNG(list,title){
+  if(!list) return '';
+  return `<div class="ng"><div class="nlab">✗ ${title||'NG解答例 ― この書き方で落とす'}</div>${
+    list.map(n=>`<div class="ng-row"><span class="x">✗</span><div class="nb"><span class="bad">${n.bad}</span><span class="why">${n.why}</span></div></div>`).join('')}</div>`;
+}
+
+function buildBody(q){
+  let b='';
+  if(q.kind==='choice'){
+    b+=`<div class="choices">${q.choices.map((c,i)=>`<button class="ch" data-ok="${c.ok?1:0}"><span class="num">${i+1}</span><span>${c.t}</span><span class="mk"></span></button>`).join('')}</div>`;
+  } else if(q.kind==='multi'){
+    b+=`<div class="box navy" style="margin:0 0 8px"><span class="lab">${q.mlab||'8択から3つ'}</span>各文をタップすると○×と根拠が開きます。${q.mhint||'まず自分で3つ選んでから確認しよう。'}</div>`;
+    b+=q.items.map(it=>`<div class="mi" data-ok="${it.ok?1:0}"><div class="mi-h"><span class="num">${it.n}</span><span class="st">${it.t}</span><span class="mk"></span></div>
+      <div class="mi-d"><div class="src">根拠｜${it.ev}</div><div class="jd">${it.why}</div></div></div>`).join('');
+  } else if(q.kind==='order'){
+    b+=`<div class="box teal" style="margin:0 0 8px"><span class="lab">まず自分で並べる</span>選択肢は7語。<strong>使わない語が3つ</strong>含まれています。答えを見る前に紙で完成させること。</div>
+      <div class="pool">${q.pool.map(w=>`<span class="pw">${w}</span>`).join('')}</div>`;
+  } else if(q.kind==='desc'){
+    b+=`<div class="box teal" style="margin:0 0 4px"><span class="lab">まず自分で書く</span>解説を開く前に、必ず<strong>自分の訳を紙に書いてから</strong>「答え・根拠を表示」を押すこと。</div>`;
+  }
+  return b;
+}
+function buildSol(q){
+  let s='';
+  if(q.kind==='choice'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`+(q.steps?buildSteps(q.steps):'')+buildEV(q.ev)+`<div class="chy-h">全選択肢の照合</div>`+buildCA(q.sol)+buildCO(q.co);
+  } else if(q.kind==='multi'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`+buildCO(q.co)+`<div class="box gold"><span class="lab">確認</span>上の各文をタップすると、○×・根拠段落・判定理由がすべて開きます。</div>`;
+  } else if(q.kind==='order'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`;
+    s+=`<div class="slots">${q.slots.map(x=>`<div class="slot ${x.hit?'hit':''}"><div class="k">( ${x.k} )</div><div class="v">${x.v}</div></div>`).join('')}</div>`;
+    s+=`<div class="full">${q.full}<span class="jp">${q.fullJp}</span></div>`;
+    s+=`<div class="chy-h">使う語・使わない語</div><div class="pool">${q.pool.map(w=>{
+      const used=q.slots.some(x=>x.v===w);
+      return `<span class="pw ${used?'used':'unused'}">${w}</span>`;}).join('')}</div>`;
+    s+=buildSteps(q.steps)+buildNG(q.traps,'✗ 落とし穴 ― ここで25%まで落ちる')+buildRubric(q);
+  } else if(q.kind==='desc'){
+    s+=buildSteps(q.steps);
+    s+=`<div class="model"><div class="mlab">模範解答</div>${q.model.map(m=>`<div class="mtext">${m}</div>`).join('')}${q.mnote?`<div class="mnote">▶ ${q.mnote}</div>`:''}</div>`;
+    s+=buildRubric(q)+buildNG(q.ng);
+  }
+  return s;
+}
+function buildQ(q){
+  const el=document.createElement('div'); el.className='q'; el.id=esc(q.id);
+  el.innerHTML=`<div class="q-head"><div class="q-no">${q.id}</div>
+    <div class="q-focus"><span class="lbl">${q.lbl}</span><span class="en">${q.en}</span>${q.rate?`<div class="ratebar"><i class="${rateCls(q.rate)}" style="width:${q.rate}%"></i></div>`:''}</div>
+    <span class="q-type">${q.type}</span>${rateBadge(q.rate)}</div>
+    <div class="q-body"><div class="askjp">${q.ask}</div>${buildBody(q)}
+    <button class="reveal-btn">答え・根拠を表示 ▼</button>
+    <div class="solution">${buildSol(q)}</div></div>`;
+  return el;
+}
+
+[['AB','qWrapAB','qidxAB'],['CD','qWrapCD','qidxCD'],['EF','qWrapEF','qidxEF'],['GH','qWrapGH','qidxGH'],['IJ','qWrapIJ','qidxIJ']].forEach(([g,w,ix])=>{
+  const wrap=document.getElementById(w), idx=document.getElementById(ix);
+  if(!wrap) return;
+  Q.filter(q=>q.grp===g).forEach(q=>{
+    wrap.appendChild(buildQ(q));
+    const j=document.createElement('button'); j.className='qjump'; j.textContent=q.id; j.style.width='auto'; j.style.padding='0 9px';
+    j.addEventListener('click',()=>document.getElementById(esc(q.id)).scrollIntoView({behavior:'smooth'}));
+    idx.appendChild(j);
+  });
+});
+
+/* interactions */
+document.querySelectorAll('.q').forEach(card=>{
+  const chs=card.querySelectorAll('.choices .ch');
+  chs.forEach(b=>b.addEventListener('click',()=>{
+    chs.forEach(x=>x.classList.remove('picked'));
+    b.classList.add('picked','reveal');
+    b.classList.add(b.dataset.ok==='1'?'correct':'wrong');
+    b.querySelector('.mk').textContent=b.dataset.ok==='1'?'○':'×';
+  }));
+  card.querySelectorAll('.mi').forEach(mi=>{
+    mi.querySelector('.mi-h').addEventListener('click',()=>{
+      mi.classList.toggle('on');
+      mi.classList.add(mi.dataset.ok==='1'?'ok':'ng');
+      mi.querySelector('.mk').textContent = mi.dataset.ok==='1'?'○':'×';
+    });
+  });
+  const rb=card.querySelector('.reveal-btn'), sol=card.querySelector('.solution');
+  rb.addEventListener('click',()=>{
+    const open=sol.classList.toggle('show');
+    rb.textContent=open?'解説を閉じる ▲':'答え・根拠を表示 ▼';
+    if(open){
+      chs.forEach(b=>{b.classList.add('reveal');b.classList.add(b.dataset.ok==='1'?'correct':'wrong');b.querySelector('.mk').textContent=b.dataset.ok==='1'?'○':'×';});
+      card.querySelectorAll('.mi').forEach(mi=>{mi.classList.add('on');mi.classList.add(mi.dataset.ok==='1'?'ok':'ng');mi.querySelector('.mk').textContent=mi.dataset.ok==='1'?'○':'×';});
+    }
+  });
+});
+document.querySelectorAll('.rub-row').forEach(row=>{
+  row.addEventListener('click',()=>{
+    row.classList.toggle('on');
+    const rub=document.getElementById(row.dataset.rid);
+    let s=0; rub.querySelectorAll('.rub-row.on').forEach(r=>s+=parseInt(r.dataset.pt,10));
+    rub.querySelector('.sc .now').textContent=s;
+  });
+});
+const tabs=document.querySelectorAll('.tab'), panels=document.querySelectorAll('.panel');
+function goTo(i){
+  tabs.forEach(x=>x.classList.remove('on')); panels.forEach(x=>x.classList.remove('on'));
+  const t=document.querySelector('.tab[data-p="'+i+'"]'); t.classList.add('on','done');
+  document.getElementById('p'+i).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'}); t.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+tabs.forEach(t=>t.addEventListener('click',()=>goTo(t.dataset.p)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>goTo(b.dataset.go)));
+document.querySelector('.tab[data-p="0"]').classList.add('done');
+const jt=document.getElementById('jumpTop');
+window.addEventListener('scroll',()=>jt.classList.toggle('show',window.scrollY>500));
+jt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+
+
+
+
+
+</script>
+</body>
+</html>

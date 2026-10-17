@@ -467,6 +467,40 @@ tbody tr:nth-child(even){background:var(--surface2);}
 
 
 
+/* 設問文：英文＋和訳 */
+.q-body .askjp .aen{display:block;font-family:"Zilla Slab",serif;font-size:14px;color:var(--navy);line-height:1.72;margin-bottom:9px;}
+.q-body .askjp .ajp{display:block;font-size:13px;color:var(--ink);line-height:1.8;padding:9px 12px;background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;}
+.q-body .askjp .ajp b{color:var(--gold-d);}
+/* 選択肢の和訳 */
+.ch .cjp{display:block;margin-top:5px;padding-top:5px;border-top:1px dashed var(--line2);font-size:12.5px;color:var(--muted);line-height:1.72;font-family:"Noto Sans JP",sans-serif;}
+.ch.reveal.correct .cjp{color:var(--teal-d);border-top-color:#bfe0d6;}
+.ch.reveal.wrong .cjp{color:#8d7b73;}
+/* 全選択肢照合ブロックの構造化 */
+.ca-bd .cj{display:block;margin:6px 0 7px;padding:7px 11px;background:var(--surface2);border-radius:7px;font-size:12.5px;color:var(--navy);line-height:1.72;}
+.ca-bd .cj b{color:var(--gold-d);}
+.ca-bd .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:4px;margin-right:7px;vertical-align:1px;white-space:nowrap;}
+.ca-bd .tag.g{background:var(--teal-soft);color:var(--teal-d);}
+.ca-bd .tag.v{background:var(--verm-soft);color:var(--verm-d);}
+.ca-bd .tag.n{background:var(--blue-soft);color:var(--navy);}
+/* 解答プロセス：見出しの<b>だけブロック、本文中の<b>はインラインに戻す */
+.dstep .db p b{display:inline;font-family:"Noto Sans JP",sans-serif;font-size:inherit;color:var(--navy-ink);margin:0;font-weight:700;}
+@media (max-width:520px){
+  .q-body .askjp .aen{font-size:13px;}
+  .ch .cjp{font-size:12px;}
+}
+@media (prefers-color-scheme: dark){
+  .q-body .askjp .aen{color:var(--navy) !important;}
+  .q-body .askjp .ajp{background:var(--surface2) !important;color:var(--ink) !important;}
+  .ch .cjp{color:var(--muted) !important;}
+  .ch.reveal.correct .cjp{color:var(--teal-d) !important;}
+  .ch.reveal.wrong .cjp{color:#8d7b73 !important;}
+  .ca-bd .cj{background:var(--surface2) !important;color:var(--navy) !important;}
+  .ca-bd .tag.g{background:var(--teal-soft) !important;color:var(--teal-d) !important;}
+  .ca-bd .tag.v{background:var(--verm-soft) !important;color:var(--verm-d) !important;}
+  .ca-bd .tag.n{background:var(--blue-soft) !important;color:var(--navy) !important;}
+  .dstep .db p b{color:var(--navy-ink) !important;}
+}
+
 </style>
 </head>
 <body>
@@ -641,29 +675,35 @@ tbody tr:nth-child(even){background:var(--surface2);}
       <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">テクノロジーにおいても、記憶そのものと同じく、<b>「少ないほうが豊かである」</b>。</div></div><div class="jpline"><div class="n">②</div><div class="s">テクノロジーを使って果てしなく人生を記録しても、すべての経験を思い出せるようにはならないし、<u>そもそもそれは望ましい目標でもない</u>。</div></div><div class="jpline"><div class="n">③</div><div class="s">出来事についての私たちの記憶は選択的なものだが、同時に、<em>多くの細部と意味と感情を伴いうる</em>。</div></div><div class="jpline"><div class="n">④</div><div class="s"><b>過去の経験のそうした側面にアクセスできるようなやり方でテクノロジーを使えば</b>、私たちは大切なものを保ち続けることができる。</div></div></div>
       <div class="tr-points"><div class="pl">設問の根拠・急所｜第9段落</div><ul><li>第1〜2文が<b>設問J(ト)</b>の根拠。<u>less is more ＋ endlessly では思い出せない</u>。</li><li>最終文が<b>結論の射程</b>を決める。<em>By using technology in ways that…</em>＝<u>使用の停止ではなく使用の条件</u>。<b>発展4</b>はここを突く。</li><li>「記録を減らせ」は本文一致（(ト)）だが、「テクノロジーを使うな」は本文にない。<b>この距離を測れるかが最終的な読解力</b>。</li><li>第3文 <u>selective だが detail, meaning, emotion を伴いうる</u>＝<em>選択的であることと豊かであることは両立する</em>。この一文が文章全体の要約になっている。</li></ul></div><div class="pnav"><button class="btns" data-go="5">← 設問H〜J</button><span class="sp"></span><button class="btnp" data-go="7">発展5問へ →</button></div></section><section class="panel" id="p7">
   <div class="eyebrow">Original Questions</div>
-  <h1 class="head">発展5問 ― THINKINGオリジナル<span class="sub">早慶・MARCH上位レベル。<b>設問文も選択肢もすべて英語</b>。本文の語句を拾うだけでは解けず、<u>論証構造・概念の切り分け・段落の階層・結論の射程・比喩の機能</u>を掴んでいないと正解にたどり着けない5問。</span></h1>
+  <h1 class="head">発展5問 ― THINKINGオリジナル<span class="sub">早慶・MARCH上位レベル。<b>設問文・選択肢はすべて英語、全文に和訳つき</b>。本文の語句を拾うだけでは解けず、<u>論証構造・概念の切り分け・段落の階層・結論の射程・比喩の機能</u>を掴んでいないと正解にたどり着けない5問。</span></h1>
   <div class="rule"></div>
 
   <div class="box navy" style="margin-top:0"><span class="lab">この5問が試すもの</span>
     本試験のA〜Jは<strong>該当箇所を正確に読む力</strong>を測っていました。この発展問題はその先、<u>「文章全体を一本の論証として掌握しているか」</u>を測ります。<em>5問とも、段落をまたいで二箇所以上を接続しないと解けないように作ってあります</em>。<b>一箇所だけ見て答えが出る問題は意図的に排除しました</b>。</div>
 
-  <h2 class="sec">5問が狙う5つの層</h2>
+  <div class="box gold" style="margin-top:14px;"><span class="lab">これは英語の問題であり、同時に現代文の問題です</span>
+    <strong>5問とも、英文を日本語に置き換えても難度がほとんど下がりません</strong>。<u>単語がわかれば解ける問題ではなく、論理の形を見抜けないと解けない問題だから</u>です。<em>だから選択肢にはすべて和訳を付けました</em>。<b>和訳だけを読んで解いてみて、それでも迷うなら、英語力ではなく論理の読み方が課題だということになります</b>。<u>その切り分けを自分でできるようにするための設計です</u>。</div>
+
+  <h2 class="sec">5問を現代文の操作に翻訳すると</h2>
   <table class="mtx">
-    <thead><tr><th style="width:12%">問</th><th style="width:26%">狙う力</th><th>この本文での急所</th></tr></thead>
+    <thead><tr><th style="width:11%">問</th><th style="width:25%">現代文で言えば何を問う問題か</th><th>この本文での急所</th></tr></thead>
     <tbody>
-      <tr><td class="cond">発展1</td><td>論証構造</td><td><b>犯人の付け替えが二度起きている</b>。第3段落と第7段落で同じ構文が反復され、それが結論の形を決めている。</td></tr>
-      <tr><td class="cond">発展2</td><td>概念の切り分け</td><td><b>外部化と注意の分割は別物</b>。第2段落と第6段落が矛盾して見える人は、ここを一語でまとめている。</td></tr>
-      <tr><td class="cond">発展3</td><td>段落の階層</td><td><b>第4段落が原理、第5〜6段落と第7〜8段落がその二適用</b>。distinct と distinctive の反復が証拠。</td></tr>
-      <tr><td class="cond">発展4</td><td>結論の射程</td><td><b>「減らせ」と「やめろ」の距離</b>。最終文は使用の停止ではなく使用の条件を述べている。</td></tr>
-      <tr><td class="cond">発展5</td><td>比喩の機能</td><td><b>like a story we read in a book が何を言い表すか</b>。素材（読書）ではなく働き（外から受け取る）を読む。</td></tr>
+      <tr><td class="cond">発展1</td><td><b>筆者は何を犯人から外し、<br>代わりに何を据えたか</b></td><td>「Xが問題なのではない。Yこそが問題だ」という形が<u>第3段落と第7段落で二度繰り返される</u>。しかも第7段落は <b>Again</b> で始まり、筆者自身が反復だと宣言している。</td></tr>
+      <tr><td class="cond">発展2</td><td><b>同じ言葉で呼ばれている<br>二つを、筆者はどう分けたか</b></td><td>第2段落と第6段落が矛盾して見えるのは、<u>「技術に頼ること」という一語に外部化と注意の分割が混ざっているから</u>。蝶番は第3段落の free up space。</td></tr>
+      <tr><td class="cond">発展3</td><td><b>抽象（原理）と具体（例）の<br>階層が見えているか</b></td><td>第4段落だけが原理、第5〜8段落はその二つの適用例。<u>distinct と distinctive の語根の反復</u>が、本文内の証拠になっている。</td></tr>
+      <tr><td class="cond">発展4</td><td><b>筆者の主張を、<br>どこまで広げてよいか</b></td><td>「記録を減らせ」は本文一致、「技術を捨てろ」は本文にない。<u>最終文の By using ~ は使用を前提にした条件提示</u>。言い過ぎの検出。</td></tr>
+      <tr><td class="cond">発展5</td><td><b>この比喩は、<br>何を言うために置かれたか</b></td><td>「本で読んだ物語」は読書の話ではなく、<u>自分が生きていない出来事</u>の具体像。第8段落の documenting / experiencing の対比に直結する。</td></tr>
     </tbody>
   </table>
 
-  <div class="box gold" style="margin-top:18px;"><span class="lab">取り組み方</span>
-    <strong>まず本文を読み直してから、5問を通しで解いてください</strong>。各問は選択肢をタップして自分で解け、「答え・根拠を表示」で<u>解答プロセス → 根拠（本文の該当箇所） → 全選択肢の照合</u>が開きます。<em>正解を選べても、残り3つがなぜ外れるかを説明できなければ半分</em>――誤答解説には<b>「どんな読み方をした人がそれを選ぶか」</b>まで書いてあります。</div>
+  <div class="box verm" style="margin-top:18px;"><span class="lab">誤答は五つの型でできています</span>
+    <strong>この5問の誤答選択肢15個は、すべて次のどれかに分類できます</strong>。<u>①本文にない基準を持ち込む（発展2①）／②並列を因果に読み替える（発展3④）／③条件つきを無条件に拡大する（発展4③）／④比喩の素材を論点と取り違える（発展5②）／⑤舞台の転換を論点の転換と読む（発展1③）</u>。<em>どれも現代文の選択肢問題でそのまま出てくる型です</em>。<b>自分がどの型に引っかかったかを特定できれば、同じ型は二度と踏みません</b>。</div>
 
-  <div class="box verm" style="margin-top:14px;"><span class="lab">とくに発展2を落とさないこと</span>
-    <strong>発展2は、この文章を読めたかどうかの分水嶺です</strong>。<u>第2段落で著者は「電話番号は喜んで機器に任せる」と言い、第6段落では「ぼやけた不完全な記憶しか残らない」と言う</u>。<em>この二つが矛盾して見えるなら、まだ読めていません</em>。<b>著者は「技術に頼ること」を一語でまとめず、預けることと注意が割れることを厳密に分けています</b>。</div>
+  <div class="box navy" style="margin-top:14px;"><span class="lab">取り組み方</span>
+    <strong>まず本文を読み直してから、5問を通しで解いてください</strong>。各問は選択肢をタップして自分で解け、「答え・根拠を表示」で<u>解答プロセス → 根拠（本文の該当箇所と和訳） → 全選択肢の照合</u>が開きます。<em>正解を選べても、残り3つがなぜ外れるかを説明できなければ半分</em>――誤答解説は<b>〈その選択肢の主張〉→〈照合すべき箇所〉→〈崩れる一点〉→〈選びがちな人〉→〈現代文で言えば〉</b>の順に並べてあります。</div>
+
+  <div class="box gold" style="margin-top:14px;"><span class="lab">とくに発展2を落とさないこと</span>
+    <strong>発展2は、この文章を読めたかどうかの分水嶺です</strong>。<u>第2段落で筆者は「電話番号は喜んで機器に任せる」と言い、第6段落では「ぼやけた不完全な記憶しか残らない」と言う</u>。<em>この二つが矛盾して見えるなら、まだ読めていません</em>。<b>筆者は「技術に頼ること」を一語でまとめず、預けることと注意が割れることを厳密に分けています</b>。<u>評論で一見矛盾する二箇所に出会ったら、「どちらが本音か」ではなく「この人は何と何を分けているのか」と問う</u>――それが読解の中心的な操作です。</div>
 
   <h2 class="sec">発展 第1問・第2問</h2>
   <div class="qindex" id="qidxGH"></div>
@@ -674,7 +714,7 @@ tbody tr:nth-child(even){background:var(--surface2);}
   <div id="qWrapIJ"></div>
 
   <div class="box navy" style="margin-top:22px;"><span class="lab">5問を終えたら</span>
-    落とした問題があれば、<strong>本文のどこを読み飛ばしていたか</strong>を特定してください。<u>発展1なら第3段落と第7段落の構文の一致、発展2なら第2段落第3文と第3段落の free up space、発展3なら第4段落 distinct と第8段落 distinctive、発展4なら第9段落最終文の By using ~、発展5なら第8段落の so vivid ↔ distant</u>。<em>いずれも本文に明確な根拠があり、推測で補う必要はありません</em>。<b>「なんとなく」で選んだ箇所こそ、伸びしろです</b>。</div>
+    落とした問題があれば、<strong>本文のどこを読み飛ばしていたか</strong>を特定してください。<u>発展1なら第3段落と第7段落の構文の一致と Again の一語、発展2なら第2段落第3文と第3段落の free up space、発展3なら第4段落 distinct と第8段落 distinctive、発展4なら第9段落最終文の By using ~、発展5なら第8段落の so vivid ↔ distant</u>。<em>いずれも本文に明確な根拠があり、推測で補う必要はありません</em>。<b>「なんとなく」で選んだ箇所こそ、伸びしろです</b>。</div>
 
   <div class="pnav"><button class="btns" data-go="6">← 全訳</button><span class="sp"></span><button class="btnp" data-go="8">総まとめへ →</button></div>
 </section><section class="panel" id="p8">
@@ -701,15 +741,17 @@ tbody tr:nth-child(even){background:var(--surface2);}
 
   <h2 class="sec">発展5問 解答一覧</h2>
   <table class="mtx">
-    <thead><tr><th style="width:12%">問</th><th style="width:10%">解答</th><th style="width:34%">試された力</th><th>最も引っかかる誤答</th></tr></thead>
+    <thead><tr><th style="width:11%">問</th><th style="width:9%">解答</th><th style="width:30%">試された力</th><th style="width:22%">最も引っかかる誤答</th><th>現代文の誤答型</th></tr></thead>
     <tbody>
-      <tr><td class="cond">発展1</td><td><b>②</b></td><td>二度の付け替えが結論の形を決める</td><td>③（場面の違いを論点の違いと取る）</td></tr>
-      <tr><td class="cond">発展2</td><td><b>③</b></td><td>外部化と注意の分割の切り分け</td><td>①（重要度で説明してしまう）</td></tr>
-      <tr><td class="cond">発展3</td><td><b>①</b></td><td>原理と二つの適用という階層</td><td>④（並列を因果に読み替える）</td></tr>
-      <tr><td class="cond">発展4</td><td><b>③</b></td><td>「減らせ」と「やめろ」の距離</td><td>①（本文一致なのに誤読と判定する）</td></tr>
-      <tr><td class="cond">発展5</td><td><b>④</b></td><td>比喩の素材ではなく働きを読む</td><td>②（読書批判と取る）</td></tr>
+      <tr><td class="cond">発展1</td><td><b>②</b></td><td>二度の付け替えが結論の形を決める</td><td>③（職場と私生活を別論点と取る）</td><td><u>舞台の転換を論点の転換と読む</u></td></tr>
+      <tr><td class="cond">発展2</td><td><b>③</b></td><td>外部化と注意の分割の切り分け</td><td>①（重要度で説明してしまう）</td><td><u>本文にない基準を持ち込む</u></td></tr>
+      <tr><td class="cond">発展3</td><td><b>①</b></td><td>原理と二つの適用という階層</td><td>④（記録を補償策と読む）</td><td><u>並列を因果に読み替える</u></td></tr>
+      <tr><td class="cond">発展4</td><td><b>③</b></td><td>「減らせ」と「やめろ」の距離</td><td>①（本文一致なのに誤読と判定）</td><td><u>条件つきを無条件に拡大する</u></td></tr>
+      <tr><td class="cond">発展5</td><td><b>④</b></td><td>比喩の素材ではなく働きを読む</td><td>②（読書批判と取る）</td><td><u>比喩の素材を論点と取り違える</u></td></tr>
     </tbody>
   </table>
+  <div class="box gold" style="margin-top:14px;"><span class="lab">この五つの型は、現代文の選択肢問題でもそのまま出ます</span>
+    <strong>誤答15個は、右端の五つの型にすべて分類できます</strong>。<u>英語の問題として落としたのか、論理の読み方として落としたのかを切り分けてください</u>。<em>和訳を読んでも同じ選択肢を選ぶなら、それは単語力の問題ではありません</em>。<b>そしてこの五つの型は、現代文でも英語長文でも、出題者が繰り返し使う型です</b>。<u>自分がどれに引っかかるかを知っておくだけで、正答率は変わります</u>。</div>
 
   <h2 class="sec">復習動線 ― 落とした「型」から潰す</h2>
   <div class="route"><div class="rn">A</div><div><b>多義語を第一義で処理した（A・E・F・G）</b><p><em>practice＝練習、cost＝費用、further＝さらに</em>。<u>いずれも辞書の一番目が文脈に合わない</u>。<strong>多義語は「この文脈では何か」を前後一文で確かめる癖をつける</strong>。<em>とくにFの(ロ)は逆接の向きが正しいぶん見抜きにくい</em>。</p></div></div>
@@ -955,120 +997,126 @@ const Q = [
 ].concat([
 /* ===== 発展1・発展2：グループGH ===== */
 {id:"発展1", grp:"GH", type:"論証構造", lbl:"ORIGINAL 1", en:"The two displacements of blame", rate:38,
- ask:"In paragraph 3 the author writes, &quot;technology isn&apos;t the problem — it&apos;s how we interact with it.&quot; In paragraph 7 he writes, &quot;the problem isn&apos;t necessarily with technology, but rather that we are filtering our experiences through the lens of a camera.&quot; Which statement best captures what these two sentences jointly do for the essay&apos;s argument?",
+ ask:"<span class=\"aen\">In paragraph 3 the author writes, &quot;technology isn&apos;t the problem — it&apos;s how we interact with it.&quot; In paragraph 7 he writes, &quot;the problem isn&apos;t necessarily with technology, but rather that we are filtering our experiences through the lens of a camera.&quot; Which statement best captures what these two sentences jointly do for the essay&apos;s argument?</span><span class=\"ajp\"><b>和訳</b>｜第3段落で筆者は「テクノロジーが問題なのではない。問題は、私たちがそれとどう関わるかである」と書いている。第7段落では「問題は必ずしもテクノロジーにあるのではなく、むしろ私たちがカメラのレンズを通して経験をふるいにかけていることにある」と書いている。<b>この二つの文が、この論説の議論において共同で果たしている働き</b>を最もよく捉えているのはどれか。</span>",
  answer:"2", kind:"choice",
  choices:[
-  {t:"① They concede a weakness in the author&apos;s own position and then narrow the scope of his earlier claim.", ok:false},
-  {t:"② They relocate the cause from the device to the user&apos;s handling of attention, which is what allows the essay to close with advice on use rather than on avoidance.", ok:true},
-  {t:"③ They identify two unrelated sources of forgetting, one belonging to the workplace and the other to private life.", ok:false},
-  {t:"④ They establish that the harm arises from the sheer volume of information that technology makes available.", ok:false}],
+  {t:"① They concede a weakness in the author&apos;s own position and then narrow the scope of his earlier claim.<span class=\"cjp\">筆者自身の立場の弱点を認め、そのうえで先の主張の範囲を狭めている。</span>", ok:false},
+  {t:"② They relocate the cause from the device to the user&apos;s handling of attention, which is what allows the essay to close with advice on use rather than on avoidance.<span class=\"cjp\">原因を機器から使い手の注意の扱い方へと移し替えており、それによってこの論説は「使うな」ではなく「こう使え」という助言で締めくくることができている。</span>", ok:true},
+  {t:"③ They identify two unrelated sources of forgetting, one belonging to the workplace and the other to private life.<span class=\"cjp\">互いに無関係な二つの忘却の原因を特定しており、一方は職場に、もう一方は私生活に属している。</span>", ok:false},
+  {t:"④ They establish that the harm arises from the sheer volume of information that technology makes available.<span class=\"cjp\">害は、テクノロジーが利用可能にする情報の量そのものから生じるのだと立証している。</span>", ok:false}],
  steps:[
-   {t:"二文が同じ構文であることに気づく", d:"<b>the problem isn&apos;t X — it&apos;s Y</b>（第3段落）と <b>the problem isn&apos;t necessarily with X, but rather Y</b>（第7段落）。<u>同一の型が、離れた二箇所で繰り返されている</u>。<em>これは偶然ではなく、文章の骨格</em>。"},
-   {t:"X と Y に何が入るかを並べる", d:"<b>第3段落：X＝technology ／ Y＝how we interact with it</b>。<b>第7段落：X＝technology ／ Y＝filtering our experiences through the lens</b>。<u>どちらも X は同じ「テクノロジー」、Y は「私たちの側の扱い方」</u>。"},
-   {t:"この付け替えが何を可能にするかを考える", d:"<b>犯人が道具なら、処方は「使うな」になる。犯人が扱い方なら、処方は「こう使え」になる</b>。<u>第9段落最終文 By using technology in ways that allow us to access those aspects… は後者</u>。<em>構造と結論が噛み合っている</em>。"},
-   {t:"選ぶ", d:"<b>②</b>。<u>原因を機器から使い手の注意の扱いへ移すこと</u>が、<em>結末を「使用の停止」ではなく「使用の条件」にしている</em>。"}],
- ev:{q:'The short answer: <span class="h">technology isn&apos;t the problem — it&apos;s how we interact with it.</span> … Again, <span class="h">the problem isn&apos;t necessarily with technology, but rather that we are filtering our experiences through the lens of a camera.</span> … <span class="h">By using technology in ways that allow us to access those aspects of our past experiences, we can hold on to what matters.</span>', jp:"「手短に言えば――テクノロジーが問題なのではない。問題は、私たちがそれとどう関わるかである。……繰り返すが、問題は必ずしもテクノロジーにあるのではなく、むしろ私たちがカメラのレンズを通して経験をふるいにかけていることにある。……過去の経験のそうした側面にアクセスできるようなやり方でテクノロジーを使えば、私たちは大切なものを保ち続けることができる。」"},
- co:[{c:"gold",l:"Again という一語が答えを保証する",h:"<b>第7段落の文は Again, で始まる</b>。<u>著者自身が「もう一度言うが」と宣言している</u>。<em>つまり第3段落と第7段落が同じ主張の反復であることは、推測ではなく本文に明記されている</em>。"},
-     {c:"nav",l:"構造が結論を決める",h:"<b>犯人を誰にするかが、処方箋を決める</b>。<u>道具が犯人なら禁止、扱い方が犯人なら作法</u>。<em>この文章が一貫して「作法」を語れるのは、二度の付け替えで犯人を移しておいたから</em>。"},
-     {c:"verm",l:"出題者が見ている力",h:"<b>反復される構文を、文章の骨格として認識する力</b>。<u>一文ずつ訳せても、同じ型が二度出たことに気づかなければ構造は見えない</u>。<em>段落をまたいで形を照合する読み方</em>を要求している。"}],
+   {t:"二つの文が同じ形であることに気づく", d:"<b>the problem isn&apos;t X — it&apos;s Y</b>（第3段落）と <b>the problem isn&apos;t necessarily with X, but rather Y</b>（第7段落）。<u>同一の型が、四段落も離れた二箇所で繰り返されている</u>。<em>評論で同じ形の文が二度出たら、それは装飾ではなく骨格</em>。", cite:'<span class="h">technology isn&apos;t the problem — it&apos;s how we interact with it</span> … <span class="h">the problem isn&apos;t necessarily with technology, but rather that we are filtering our experiences</span>'},
+   {t:"X と Y に何が入るかを並べる", d:"<b>第3段落｜X＝technology ／ Y＝how we interact with it</b>（関わり方）。<b>第7段落｜X＝technology ／ Y＝filtering our experiences through the lens</b>（レンズ越しのふるい分け）。<u>どちらも X は同じ「テクノロジー」、Y は同じ「私たちの側の扱い方」</u>。<em>つまり二文は、別々のことを言っているのではなく、同じ付け替えを二度やっている</em>。"},
+   {t:"本文が反復だと明言しているのを確認する", d:"第7段落のその文は <b>Again,</b>「繰り返すが」で始まる。<u>筆者自身が「もう一度言うが」と宣言している</u>。<em>したがって二箇所の対応は読者の推測ではなく、本文に書かれた事実</em>。"},
+   {t:"付け替えが何を可能にするかを考える", d:"<b>犯人が道具なら、処方は「使うな」になる。犯人が扱い方なら、処方は「こう使え」になる</b>。<u>第9段落最終文は By using technology in ways that allow us to access those aspects…</u>＝<em>使うことを前提にした条件の提示</em>。<b>構造と結論が噛み合っている</b>。よって②。"}],
+ ev:{q:'The short answer: <span class="h">technology isn&apos;t the problem — it&apos;s how we interact with it.</span> … <span class="h">Again,</span> <span class="h">the problem isn&apos;t necessarily with technology, but rather that we are filtering our experiences through the lens of a camera.</span> … <span class="h">By using technology in ways that allow us to access those aspects of our past experiences, we can hold on to what matters.</span>', jp:"「手短に言えば――テクノロジーが問題なのではない。問題は、私たちがそれとどう関わるかである。……<b>繰り返すが</b>、問題は必ずしもテクノロジーにあるのではなく、むしろ私たちがカメラのレンズを通して経験をふるいにかけていることにある。……過去の経験のそうした側面にアクセスできるようなやり方でテクノロジーを使えば、私たちは大切なものを保ち続けることができる。」"},
+ co:[{c:"teal",l:"現代文の問題として言い換えると",h:"<b>「筆者は、何を犯人から外し、代わりに何を犯人に据えたか」</b>という問い。<u>評論において「Xが問題なのではない。Yこそが問題だ」という形は、論点を移動させる装置</u>。<em>しかもそれが二度繰り返されているなら、移動は偶発ではなく、この文章全体の設計</em>。<b>そして犯人をどこに置くかが、その文章が出せる結論の形を決める</b>――道具が犯人なら禁止、使い手が犯人なら作法。"},
+     {c:"gold",l:"Again という一語が答えを保証する",h:"<b>第7段落のその文は Again, で始まっている</b>。<u>著者自身が反復だと宣言しているので、二箇所の対応は確定事項</u>。<em>離れた段落の対応は、しばしばこうした一語に埋め込まれている</em>。<b>Again / Once more / As I said は、前に戻れという指示語だと思ってよい</b>。"},
+     {c:"nav",l:"構造が結論の形を決める",h:"<b>第2段落で外部化を歓迎し、第3段落と第7段落で犯人を使い手に移し、第9段落で使用の条件を説く</b>。<u>この順序は入れ替えられない</u>。<em>もし犯人がテクノロジーのままなら、最終段落で「こう使え」と書くことは論理的に不可能</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>反復される構文を、文章の骨格として認識する力</b>。<u>一文ずつ訳せることと、同じ型が二度出たと気づくことは別の能力</u>。<em>段落をまたいで「形」を照合する読み方</em>を要求している。"}],
  sol:[
-  {m:"x",n:"①",t:"<b>譲歩・限定の読み</b>。<u>著者は自説の弱点を認めていない</u>。むしろ第2段落 However, there is no reason to think… 以降、<em>一貫して同じ主張を補強し続けている</em>。<b>concede（認める）も narrow the scope（範囲を狭める）も、本文には対応する動きがない</b>。〈選びがちな人〉<b>isn&apos;t … but という形を見て、反射的に「譲歩構文」と分類した人</b>。<u>not A but B は譲歩ではなく、対象の置き換え</u>。"},
-  {m:"o",n:"②",t:"正解。原因を device から the user&apos;s handling of attention へ移している。その付け替えがあるからこそ、第9段落最終文で「使用の停止」ではなく「使用の仕方」を説ける。"},
-  {m:"x",n:"③",t:"<b>表層の対比を論理の対比と取り違えた誤答</b>。<u>たしかに第5段落は職場（会議・メール）、第7段落は Outside of the workplace</u> と場面は分かれる。しかし<em>unrelated（互いに無関係）ではない</em>。<b>両者とも第4段落の原理（今この瞬間の特徴的なものへの注意）が壊れる例</b>であり、しかも引用された二文は<u>どちらも「テクノロジーのせいではない」という同一の主張</u>。〈選びがちな人〉<b>場面が変わったことを論点が変わったことだと読んだ人</b>。<u>場所を表す副詞句は、舞台の転換であって主題の転換ではないことが多い</u>。"},
-  {m:"x",n:"④",t:"<b>量を犯人にした読み</b>。<u>第8段落に a huge amount of information、第9段落に endlessly とあるので、量が原因に見えなくもない</u>。しかし第8段落第2文が<em>決定的な要因は how you direct your attention と whether you meaningfully engage だと明言</em>しており、<b>量そのものではなく関与の質が基準</b>。さらに<u>第2段落で「情報を機器に預けること」は無害と断言されている</u>。〈選びがちな人〉<b>less is more という標語だけを取り出し、「少なければよい＝多いのが原因」と単純化した人</b>。<u>本文の less は量の話であると同時に、質的関与とセットで語られている</u>。"}]},
+  {m:"x",n:"①",t:"<span class=\"tag v\">主張</span>筆者は自分の弱点を認め、先の主張の範囲を狭めた。<span class=\"cj\"><b>照合すべき箇所</b>｜第2段落第2文 However, there is no reason to think…／第3段落最終文／第7段落最終文</span><b>崩れる一点</b>｜<u>本文に「認める」動きがない</u>。第2段落で通念を否定して以降、筆者は<em>一度も自説を後退させていない</em>。第3段落と第7段落は<b>同じ主張を同じ強さで述べ直しているだけ</b>で、範囲を狭めてもいない。<br>〈選びがちな人〉<b>not A but B という形を見て、反射的に「譲歩構文」と分類した人</b>。<u>「確かにAだが、しかしB」（譲歩）と「Aではなく、Bだ」（置き換え）は別物</u>。<em>前者は相手の言い分を一度受け入れるが、後者は受け入れていない</em>。<br><span class=\"tag n\">現代文で言えば</span><b>譲歩と否定の混同</b>。<u>「〜ではない」は、主張を限定する動きではなく、対象そのものを差し替える動き</u>。"},
+  {m:"o",n:"②",t:"<span class=\"tag g\">正解</span>原因を機器から使い手の注意の扱いへ移し、それが結論の形を決めている。<span class=\"cj\"><b>根拠</b>｜第3段落最終文 it&apos;s how we interact with it／第7段落最終文 we are filtering our experiences／第9段落最終文 By using technology in ways that…</span><b>三点が噛み合う</b>｜①二文はどちらも <u>X（technology）を否定し、Y（私たちの側の扱い）を立てている</u>。②第7段落のその文は <b>Again,</b> で始まり、<em>筆者自身が反復だと宣言している</em>。③犯人が使い手である以上、処方は<b>使用の停止ではなく使用の条件</b>になる――それが第9段落最終文の <u>By using technology in ways that…</u> という構文に現れている。<em>使うことを前提にしなければ、この一文は書けない</em>。"},
+  {m:"x",n:"③",t:"<span class=\"tag v\">主張</span>無関係な二つの原因で、片方は職場、片方は私生活のもの。<span class=\"cj\"><b>照合すべき箇所</b>｜第5段落（会議・メール）／第7段落第1文 Outside of the workplace／第4段落第1文</span><b>崩れる一点</b>｜<u>unrelated（互いに無関係）が成り立たない</u>。第5〜6段落と第7〜8段落は、<b>どちらも第4段落が立てた原理（今この瞬間の特徴的なものへの注意）が壊れる場面</b>。しかも<em>引用された二文は、どちらも「テクノロジーのせいではない」という同一の主張</em>であって、別々の原因を名指してなどいない。<br>〈選びがちな人〉<b>Outside of the workplace という場面転換を、論点の転換だと読んだ人</b>。<u>舞台が変わっただけで、論じていることは変わっていない</u>。<br><span class=\"tag n\">現代文で言えば</span><b>具体例の違いを、主張の違いと取り違える誤り</b>。<u>評論は同じ主張を複数の領域で例証する</u>。<em>例が変われば主張も変わる、ではない</em>。"},
+  {m:"x",n:"④",t:"<span class=\"tag v\">主張</span>害は情報の量そのものから生じる。<span class=\"cj\"><b>照合すべき箇所</b>｜第8段落第2〜3文 The critical factors involve…／第2段落第2〜3文／第9段落第1文 less is more</span><b>崩れる一点</b>｜<u>本文は量を犯人にしていない</u>。第8段落第2文が <b>「決定的な要因は、注意をどう向けるか、そして対象と有意義に関わるかどうかである」</b> と明言している。さらに<em>第2段落は「情報を機器に預けること」を無害と断言</em>しており、<u>情報が多いこと自体は害ではない</u>。<br>〈選びがちな人〉<b>less is more という標語だけを取り出し、「少ない方がよい＝多いのが原因」と裏返した人</b>。<u>本文の less は量の話であると同時に、「質の高いわずかな情報と有意義に関わる」（第8段落第3文）という関与の話とセットになっている</u>。<br><span class=\"tag n\">現代文で言えば</span><b>キャッチフレーズの独り歩き</b>。<em>印象的な一文を文章全体の主張と同一視すると、その一文が置かれた文脈が抜け落ちる</em>。"}]},
 
 {id:"発展2", grp:"GH", type:"概念の切り分け", lbl:"ORIGINAL 2", en:"Offloading versus divided attention", rate:32,
- ask:"The author says he is &quot;happy to leave ordinary memory tasks, like memorizing phone numbers and passwords, to my devices&quot; (paragraph 2), yet he also argues that our use of technology leaves us with &quot;blurry, incomplete memories&quot; (paragraph 6). On the author&apos;s own reasoning, why is there no contradiction between these two positions?",
+ ask:"<span class=\"aen\">The author says he is &quot;happy to leave ordinary memory tasks, like memorizing phone numbers and passwords, to my devices&quot; (paragraph 2), yet he also argues that our use of technology leaves us with &quot;blurry, incomplete memories&quot; (paragraph 6). On the author&apos;s own reasoning, why is there no contradiction between these two positions?</span><span class=\"ajp\"><b>和訳</b>｜筆者は「電話番号やパスワードの暗記といったありふれた記憶作業は、喜んで自分の機器に任せている」（第2段落）と述べている。その一方で、私たちのテクノロジーの使い方は「ぼやけた不完全な記憶」しか残さないとも論じている（第6段落）。<b>筆者自身の論理に従うなら、この二つの立場のあいだに矛盾がないのはなぜか</b>。</span>",
  answer:"3", kind:"choice",
  choices:[
-  {t:"① Phone numbers and passwords are too trivial to be worth remembering, whereas concerts and family vacations carry emotional significance.", ok:false},
-  {t:"② Devices are reliable for text-based information but unreliable for the sights, sounds and feelings that make an experience memorable.", ok:false},
-  {t:"③ Storing information outside the mind does not consume attention, whereas dividing attention during an experience prevents the distinctive details from being encoded in the first place.", ok:true},
-  {t:"④ The first case describes the author&apos;s own habits, while the second describes the habits of the people who come to him with complaints.", ok:false}],
+  {t:"① Phone numbers and passwords are too trivial to be worth remembering, whereas concerts and family vacations carry emotional significance.<span class=\"cjp\">電話番号やパスワードは些末すぎて覚える価値がないのに対し、コンサートや家族旅行には感情的な重みがあるから。</span>", ok:false},
+  {t:"② Devices are reliable for text-based information but unreliable for the sights, sounds and feelings that make an experience memorable.<span class=\"cjp\">機器は文字情報については信頼できるが、経験を忘れがたいものにする光景・音・感情については信頼できないから。</span>", ok:false},
+  {t:"③ Storing information outside the mind does not consume attention, whereas dividing attention during an experience prevents the distinctive details from being encoded in the first place.<span class=\"cjp\">情報を頭の外に保存することは注意を消費しないのに対し、体験の最中に注意を分割することは、そもそも特徴的な細部が刻まれること自体を妨げるから。</span>", ok:true},
+  {t:"④ The first case describes the author&apos;s own habits, while the second describes the habits of the people who come to him with complaints.<span class=\"cjp\">前者は筆者自身の習慣を述べたものであり、後者は不満を訴えて筆者のもとに来る人々の習慣を述べたものだから。</span>", ok:false}],
  steps:[
-   {t:"二つの場面が何をしているかを言葉にする", d:"<b>第2段落＝情報を機器に預ける（外部化）</b>。<b>第5〜6段落＝体験の最中に注意が割れる（注意の分割）</b>。<u>どちらも「テクノロジーを使う」ことだが、脳に対してしていることが違う</u>。"},
-   {t:"外部化の効果を本文で確認する", d:"第3段落に <b>technology can help us &quot;free up space&quot;</b>「テクノロジーは容量を空ける手助けをしてくれる」。<u>つまり外部化は資源を奪うのではなく、むしろ解放する</u>。<em>著者が歓迎するのはこのため</em>。"},
-   {t:"注意の分割の効果を本文で確認する", d:"第5段落 <b>splitting our attention between multiple goals</b>、第6段落 <b>the brain&apos;s resources are used to regain our focus</b>。<u>こちらは資源を消費する</u>。<em>そして第4段落の原理「今この瞬間の特徴的なものへの注意」が働かなくなる</em>。"},
-   {t:"両立する理由を述べる", d:"<b>外部化は注意を使わない。分割は注意を奪う</b>。<u>したがって「機器に預けてよい」と「ぼやけた記憶しか残らない」は矛盾しない</u>。＝<b>③</b>。"}],
- ev:{q:'In fact, <span class="h">I&apos;m happy to leave ordinary memory tasks, like memorizing phone numbers and passwords, to my devices.</span> … if technology can help us <span class="h">&quot;free up space&quot;</span> … we often make the problem worse by <span class="h">splitting our attention between multiple goals</span> … the brain&apos;s resources are used to regain our focus.', jp:"「実際、電話番号やパスワードの暗記といったありふれた記憶作業は、喜んで自分の機器に任せている。……テクノロジーが『容量を空ける』手助けをしてくれるのだとしたら……さらに私たちは、複数の目標に注意を分散させることで問題を悪化させることが多い。……脳のリソースは集中を取り戻すために使われる。」"},
- co:[{c:"gold",l:"この文章の最大の急所",h:"<b>「テクノロジーに頼る」を一語でまとめてしまうと、第2段落と第6段落が矛盾して見える</b>。<u>著者は二つを厳密に区別している</u>。<em>預けること（offloading）と、割れること（divided attention）</em>。<b>この区別ができているかどうかで、この文章が読めたかどうかが決まる</b>。"},
-     {c:"nav",l:"free up space が決め手",h:"<b>容量を「空ける」</b>という表現は、<u>外部化が資源を消費しないどころか解放することを示している</u>。<em>第3段落のこの一語が、第2段落と第6段落を矛盾なく接続する蝶番</em>。"},
-     {c:"verm",l:"出題者が見ている力",h:"<b>一見矛盾する二箇所を、著者の論理で調停する力</b>。<u>どちらかを無視したり、片方を例外扱いしたりせず、両方を説明する原理を本文から取り出せるか</u>。<em>最上位層を分ける問い</em>。"}],
+   {t:"矛盾に見えるものを、まず並べて確認する", d:"<b>第2段落第3文</b>｜<u>ありふれた記憶作業は喜んで機器に任せている</u>（＝技術に頼るのは良いこと）。<b>第6段落最終文</b>｜<u>残るのはぼやけた不完全な記憶だけ</u>（＝技術を使うと記憶が損なわれる）。<em>同じ筆者が、同じ文章で、技術の使用を肯定し、かつ否定している</em>。"},
+   {t:"二つが脳に対して何をしているかを言葉にする", d:"<b>第2段落＝情報を脳の外に預ける（外部化）</b>。<b>第5〜6段落＝体験の最中に注意が複数に割れる（注意の分割）</b>。<u>どちらも「テクノロジーを使う」ことだが、脳に対してしている操作が違う</u>。"},
+   {t:"外部化の効果を本文で確認する", d:"第3段落に <b>technology can help us &quot;free up space&quot;</b>「容量を空ける手助けをしてくれる」。<u>外部化は資源を奪うのではなく、むしろ解放する</u>。<em>だから筆者は歓迎できる</em>。", cite:'if technology can help us <span class="h">&quot;free up space&quot;</span> for the things we want to remember when we need to remember them'},
+   {t:"注意の分割の効果を本文で確認する", d:"第5段落 <b>splitting our attention between multiple goals</b>、第6段落 <b>the brain&apos;s resources are used to regain our focus</b>。<u>こちらは資源を消費する</u>。<em>消費された結果、第4段落が要求する「今この瞬間の特徴的なものへの注意」が成立しなくなる</em>。"},
+   {t:"両立する理由を一文にまとめる", d:"<b>外部化は注意を使わない。分割は注意を奪う</b>。<u>だから「機器に預けてよい」と「ぼやけた記憶しか残らない」は矛盾しない</u>。＝<b>③</b>。"}],
+ ev:{q:'In fact, <span class="h">I&apos;m happy to leave ordinary memory tasks, like memorizing phone numbers and passwords, to my devices.</span> … if technology can help us <span class="h">&quot;free up space&quot;</span> … we often make the problem worse by <span class="h">splitting our attention between multiple goals</span> … <span class="h">the brain&apos;s resources are used to regain our focus</span>.', jp:"「実際、電話番号やパスワードの暗記といったありふれた記憶作業は、喜んで自分の機器に任せている。……テクノロジーが『容量を空ける』手助けをしてくれるのだとしたら……さらに私たちは、複数の目標に注意を分散させることで問題を悪化させることが多い。……脳のリソースは集中を取り戻すために使われる。」"},
+ co:[{c:"teal",l:"現代文の問題として言い換えると",h:"<b>「筆者は、同じ言葉で呼ばれている二つを、どう分けているか」</b>という問い。<u>評論で一見矛盾する二箇所に出会ったら、筆者は必ず何かを区別している</u>。<em>矛盾を見つけたときに「どちらかが本音だろう」と選ぶのではなく、「この人は何と何を分けているのか」と問う</em>――それが評論読解の中心的な操作です。<b>ここでは「技術に頼ること」という一語の中に、外部化と注意の分割という別物が二つ入っていた</b>。"},
+     {c:"gold",l:"蝶番は第3段落の free up space",h:"<b>「容量を空ける」という一語が、二つをつないでいる</b>。<u>外部化は脳の資源を奪うのではなく解放する</u>。<em>第3段落のこの表現を見落とすと、第2段落を例外や軽口として処理してしまい、文章の半分が消える</em>。"},
+     {c:"nav",l:"in the first place（そもそも）が効いている",h:"<b>正解の選択肢は「失われる」ではなく「そもそも刻まれない」と書いている</b>。<u>これは本文の論理に正確に対応する</u>。<em>第4段落は記憶の形成条件を述べており、第6段落の blurry, incomplete は「作られ損なった記憶」であって「作られた後で薄れた記憶」ではない</em>。<b>細部の一語が、正誤を分けている</b>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>一見矛盾する二箇所を、筆者自身の論理で調停する力</b>。<u>どちらかを無視したり、片方を例外扱いしたりせず、両方を説明できる原理を本文から取り出せるか</u>。<em>最上位層を分ける問い</em>。"}],
  sol:[
-  {m:"x",n:"①",t:"<b>最も危険な誤答</b>。<u>「重要度で切り分ける」という、一見もっともらしい説明</u>。しかし<em>第8段落第1〜2文が真っ向から否定する</em>。<b>Taking photos does not necessarily have a good or bad effect on memory. The critical factors involve how you direct your attention and whether you meaningfully engage with the subject matter.</b>＝<u>決め手は重要度ではなく、注意の向け方と関与の質</u>。<b>同じ家族旅行でも、関与すれば残り、記録に徹すれば残らない</b>。〈選びがちな人〉<b>第8段落を読んでいない、あるいは読んでも第2段落と接続していない人</b>。<u>重要度説では、なぜ「鮮明だった家族旅行」が遠くなるのかを説明できない</u>。"},
-  {m:"x",n:"②",t:"<b>本文にない論点</b>。<u>機器の性能や信頼性について、この文章は何も述べていない</u>。むしろ第7段落は <em>The smartphone camera enables us to easily document our experiences</em>「スマホのカメラのおかげで簡単に記録できる」と、<b>記録能力そのものは認めている</b>。問題は記録できないことではなく、<u>記録が記憶に結びつかないこと</u>。〈選びがちな人〉<b>sights, sounds and feelings という語句を拾い、それを「機器が捉えられないもの」と読み替えた人</b>。<em>本文は「機器が捉えられない」ではなく「私たちが注意を払わない」と書いている</em>。"},
-  {m:"o",n:"③",t:"正解。外部化は注意を消費せず（free up space）、注意の分割は資源を消費して（regain our focus）、第4段落が要求する「今この瞬間の特徴的なものへの注意」を妨げる。両者は別の機構なので矛盾しない。"},
-  {m:"x",n:"④",t:"<b>主語の読み違い</b>。<u>第5〜6段落は一貫して we / our で書かれている</u>（our conversations, we are distracted, we remain one step behind）。<em>著者自身を含む一般論であって、他人の習慣の話ではない</em>。〈選びがちな人〉<b>第1段落の people often tell me they experience the opposite を引きずり、「著者 ↔ 一般の人々」という対立図式で読んだ人</b>。<u>人称代名詞がどこで I から we に切り替わるかを追う</u>。"}]},
+  {m:"x",n:"①",t:"<span class=\"tag v\">主張</span>重要度の差で説明できる――些末なものは預け、大切なものは自分で覚える。<span class=\"cj\"><b>照合すべき箇所</b>｜第8段落第1〜2文／第8段落第5文 so vivid</span><b>崩れる一点</b>｜<u>本文が真っ向から否定している</u>。第8段落第1〜2文は <b>「写真を撮ることは、記憶に良い影響を与えるとも悪い影響を与えるとも必ずしも言えない。決定的な要因は、注意をどう向けるか、そして対象と有意義に関わるかどうかである」</b>。<em>つまり決め手は対象の重要度ではなく、こちらの関与の仕方</em>。<u>さらに本文は家族旅行を so vivid（あれほど鮮明だった）と書いている</u>ので、<b>「感情的な重みがあるから残る」なら、そもそも遠く感じられるはずがない</b>。<em>重要度説では、この文章が説明しようとしている現象そのものが説明できない</em>。<br>〈選びがちな人〉<b>第2段落と第6段落を並べて、自分の常識で辻褄を合わせた人</b>。<u>「大事なものは覚える、どうでもいいものは預ける」は、もっともらしいが本文の軸ではない</u>。<br><span class=\"tag n\">現代文で言えば</span><b>本文にない基準を持ち込む誤り</b>。<u>矛盾を調停するとき、筆者が実際に使っている軸ではなく、自分が思いつく軸で説明してしまう</u>。<em>選択肢問題で最も多い失点源です</em>。"},
+  {m:"x",n:"②",t:"<span class=\"tag v\">主張</span>機器の信頼性の差で説明できる――文字は得意だが、光景や感情は苦手。<span class=\"cj\"><b>照合すべき箇所</b>｜第7段落第3文 The smartphone camera enables us to easily document our experiences／第8段落第4文</span><b>崩れる一点</b>｜<u>本文は機器の性能を一度も問題にしていない</u>。むしろ第7段落第3文は <b>「スマートフォンのカメラのおかげで経験を簡単に記録できるようになった」</b> と、<em>記録できること自体は認めている</em>。<u>問題は記録が記憶に結びつかないこと</u>であり、その理由も <b>「私たちが注意を払わなくなる」（第8段落第4文）</b> と、<em>人間の側に置かれている</em>。<br>〈選びがちな人〉<b>sights, sounds and feelings という語句を拾い、それを「機器には捉えられないもの」と読み替えた人</b>。<u>本文は「機器が捉えられない」ではなく「私たちが注意を払わない」と書いている</u>。<br><span class=\"tag n\">現代文で言えば</span><b>原因の主語をすり替える誤り</b>。<u>筆者が人間の側に置いた原因を、道具の側に移してしまっている</u>。<em>これはこの文章の論旨（犯人は道具ではない）と正面から衝突する</em>。"},
+  {m:"o",n:"③",t:"<span class=\"tag g\">正解</span>外部化は注意を消費せず、注意の分割は特徴的な細部が刻まれること自体を妨げる。<span class=\"cj\"><b>根拠</b>｜第3段落 free up space／第4段落第1文／第5段落第1文 splitting our attention／第6段落第1文 regain our focus</span><b>二つの場面で、脳に対してしている操作が正反対</b>｜<u>外部化は情報を外に置くだけで注意を使わない</u>――それどころか第3段落は <b>free up space</b>「容量を空ける」と、<em>資源が解放される</em>と述べている。<u>一方、注意の分割は資源を消費する</u>――第6段落 <b>the brain&apos;s resources are used to regain our focus</b>。<em>そして消費された結果、第4段落が要求する「今この瞬間の特徴的なものへの注意」が成立しなくなる</em>。<br><b>選択肢の in the first place（そもそも）が決定的</b>｜<u>記憶が後から失われるのではなく、最初から刻まれない</u>。<em>第4段落が記憶の「形成条件」を述べている以上、破られたときに起きるのは喪失ではなく不成立</em>。"},
+  {m:"x",n:"④",t:"<span class=\"tag v\">主張</span>前者は筆者自身の話、後者は他人の話だから矛盾しない。<span class=\"cj\"><b>照合すべき箇所</b>｜第5段落第1文／第6段落第1〜2文の人称</span><b>崩れる一点</b>｜<u>第5〜6段落は一貫して we / our で書かれている</u>。<b>our conversations ／ we often make the problem worse ／ we are distracted ／ we remain one step behind ／ we are only left with…</b>。<em>筆者自身を含む一般論であって、他人の習慣として切り離した記述はどこにもない</em>。<br>〈選びがちな人〉<b>第1段落の people often tell me they experience the opposite を引きずり、「筆者 ↔ 一般の人々」という対立図式を最後まで当てはめた人</b>。<u>人称は第2段落の I から、第4段落以降の we へ移っている</u>。<br><span class=\"tag n\">現代文で言えば</span><b>人称の変化を追わない誤り</b>。<u>筆者が「私」と書くか「私たち」と書くかは、主張の射程を示す合図</u>。<em>we に変わった瞬間、それは筆者も含む一般論になっている</em>。"}]},
 
 /* ===== 発展3〜発展5：グループIJ ===== */
 {id:"発展3", grp:"IJ", type:"段落間の階層", lbl:"ORIGINAL 3", en:"One principle, two applications", rate:41,
- ask:"Paragraphs 5 and 6 concern multitasking at work; paragraphs 7 and 8 concern photographing experiences outside work. What is the logical relationship between these two discussions?",
+ ask:"<span class=\"aen\">Paragraphs 5 and 6 concern multitasking at work; paragraphs 7 and 8 concern photographing experiences outside work. What is the logical relationship between these two discussions?</span><span class=\"ajp\"><b>和訳</b>｜第5・第6段落は職場でのマルチタスクを扱い、第7・第8段落は職場の外で経験を写真に記録することを扱っている。<b>この二つの議論のあいだの論理的な関係</b>はどれか。</span>",
  answer:"1", kind:"choice",
  choices:[
-  {t:"① Both are instances of the same failure — attention is pulled away from what is distinctive in the present moment — which paragraph 4 has already identified as the condition for lasting memory.", ok:true},
-  {t:"② The second qualifies the first by showing that divided attention does no harm when the activity is an enjoyable one.", ok:false},
-  {t:"③ The second is a milder version of the first, since a camera interrupts us far less often than emails and phone calls do.", ok:false},
-  {t:"④ The first describes a cause of poor memory, and the second describes the strategy people adopt in order to compensate for it.", ok:false}],
+  {t:"① Both are instances of the same failure — attention is pulled away from what is distinctive in the present moment — which paragraph 4 has already identified as the condition for lasting memory.<span class=\"cjp\">どちらも同一の失敗の事例である。すなわち、今この瞬間の特徴的なものから注意が引き離されるという失敗であり、それは第4段落がすでに「持続する記憶の条件」として特定していたものである。</span>", ok:true},
+  {t:"② The second qualifies the first by showing that divided attention does no harm when the activity is an enjoyable one.<span class=\"cjp\">後者は、活動が楽しいものである場合には注意の分割が害をもたらさないと示すことで、前者に限定を加えている。</span>", ok:false},
+  {t:"③ The second is a milder version of the first, since a camera interrupts us far less often than emails and phone calls do.<span class=\"cjp\">カメラはメールや電話よりもはるかに頻度低くしか私たちを中断しないので、後者は前者のより穏やかな版である。</span>", ok:false},
+  {t:"④ The first describes a cause of poor memory, and the second describes the strategy people adopt in order to compensate for it.<span class=\"cjp\">前者は記憶が貧弱になる原因を述べ、後者は人々がそれを埋め合わせるために採用する方策を述べている。</span>", ok:false}],
  steps:[
-   {t:"第4段落が何をしている段落か確認する", d:"<b>To form lasting memories, we need to focus on what is distinct about the present moment.</b><u>これは事例ではなく原理の宣言</u>。<em>第5段落以降はすべて、この原理が破られる場面</em>。"},
-   {t:"第5〜6段落を原理に当てはめる", d:"<b>splitting our attention between multiple goals</b>＝<u>注意が複数に割れる</u>。<em>結果、今この瞬間の細部に注意が向かない</em>。"},
-   {t:"第7〜8段落を同じ原理に当てはめる", d:"<b>When we focus on &quot;documenting&quot; over &quot;experiencing,&quot; we don&apos;t pay attention to what is distinctive in the moment.</b><u>こちらも、注意が今この瞬間から逸れている</u>。"},
-   {t:"本文内の証拠を確認する", d:"<b>第4段落 distinct about the present moment</b> と <b>第8段落 distinctive in the moment</b>。<u>同じ語根がほぼ同じ形で反復されている</u>。<em>これが「同一原理の二適用」であることの本文内証拠</em>。＝<b>①</b>。"}],
+   {t:"第4段落が何をしている段落か確認する", d:"<b>To form lasting memories, we need to focus on what is distinct about the present moment.</b><u>これは事例ではなく、原理の宣言</u>。<em>「持続する記憶には、この条件が必要だ」と述べた一文</em>。<b>以降の段落はすべて、この条件が満たされない場面になる</b>。"},
+   {t:"第5〜6段落を原理に当てはめる", d:"<b>splitting our attention between multiple goals</b>＝<u>注意が複数に割れる</u>。<em>結果として、今この瞬間の細部に注意が向かない</em>。<b>条件が破られている</b>。"},
+   {t:"第7〜8段落を同じ原理に当てはめる", d:"<b>When we focus on &quot;documenting&quot; over &quot;experiencing,&quot; we don&apos;t pay attention to what is distinctive in the moment.</b><u>こちらも、注意が今この瞬間から逸れている</u>。<em>割れ方は違うが、破られている条件は同じ</em>。"},
+   {t:"本文内の証拠を確認する", d:"<b>第4段落 distinct about the present moment</b> と <b>第8段落 distinctive in the moment</b>。<u>ほぼ同じ形で戻ってきた同一の語根</u>。<em>筆者が「ここで言っているのは、さきほど立てた原理のことだ」と合図している</em>。よって<b>①</b>。", cite:'To form lasting memories, we need to focus on <span class="h">what is distinct about the present moment</span> … we don&apos;t pay attention to <span class="h">what is distinctive in the moment</span>'}],
  ev:{q:'To form lasting memories, we need to focus on <span class="h">what is distinct about the present moment</span>, those details we can recall afterwards to reconstruct an experience. … we often make the problem worse by <span class="h">splitting our attention between multiple goals</span>. … When we focus on &quot;documenting&quot; over &quot;experiencing,&quot; we don&apos;t pay attention to <span class="h">what is distinctive in the moment</span> — the sights, sounds and feelings that make an experience unique and memorable.', jp:"「持続する記憶を形成するためには、今この瞬間の特徴的なものに注意を集中させる必要がある。……さらに私たちは、複数の目標に注意を分散させることで問題を悪化させることが多い。……『体験すること』よりも『記録すること』に意識が向くと、その瞬間の特徴的なもの――経験を唯一無二で忘れがたいものにする光景、音、感情――に注意を払わなくなる。」"},
- co:[{c:"gold",l:"語根の反復が構造を可視化する",h:"<b>distinct（第4段落）→ distinctive（第8段落第4文・最終文）</b>。<u>著者は同じ語を意図的に戻している</u>。<em>「ここで言っているのは、さっき立てた原理のことだ」という合図</em>。<b>離れた段落の対応は、しばしば語の反復として埋め込まれている</b>。"},
-     {c:"nav",l:"原理と適用の階層",h:"<b>第4段落＝原理／第5〜6段落＝適用例①／第7〜8段落＝適用例②</b>。<u>この三層が見えれば、文章の半分は読めている</u>。<em>段落を横並びの情報として読むと、この階層は見えない</em>。"},
+ co:[{c:"teal",l:"現代文の問題として言い換えると",h:"<b>「抽象（原理）と具体（適用例）の階層を見抜けるか」</b>という問い。<u>評論は、原理を一度立てて、それを複数の領域で例証していく</u>。<em>第4段落だけが抽象、第5〜8段落はその具体</em>。<b>段落を横並びの情報として読むと、この階層は見えません</b>。<u>一段落ごとに「これは原理か、例か、結論か」とラベルを貼りながら読む</u>――それだけで文章の形が立ち上がります。"},
+     {c:"gold",l:"語根の反復が構造を可視化する",h:"<b>distinct（第4段落）→ distinctive（第8段落）</b>。<u>筆者は同じ語を意図的に戻している</u>。<em>離れた段落の対応は、しばしば語の反復として埋め込まれている</em>。<b>日本語の評論でも同じで、最初に定義した語が後で再登場したら、そこは原理に戻った合図</b>。"},
+     {c:"nav",l:"割れ方は違うが、破られる条件は同じ",h:"<b>マルチタスクは注意を複数の目標に分散させ、カメラは注意を「体験」から「記録」へ向け変える</b>。<u>作用の仕方は違う</u>。<em>しかしどちらも、第4段落が要求した「今この瞬間の特徴的なものへの注意」を成立させない</em>。<b>だから二つは同じ失敗の二つの形</b>。"},
      {c:"verm",l:"出題者が見ている力",h:"<b>離れた段落どうしの関係を把握する力</b>。<u>一段落ずつ正確に訳せることと、段落の役割を仕分けられることは別の能力</u>。<em>後者がないと、本試験の内容一致問題でも根拠段落を特定できない</em>。"}],
  sol:[
-  {m:"o",n:"①",t:"正解。第4段落が原理を与え、第5〜6段落と第7〜8段落がその二つの適用例。distinct と distinctive の反復が本文内の証拠になっている。"},
-  {m:"x",n:"②",t:"<b>本文にない条件を持ち込んだ誤答</b>。<u>「楽しい活動なら注意の分割は無害」という記述はどこにもない</u>。むしろ<em>コンサートも家族旅行も子どものバイオリン発表会も、楽しい場面でありながら記憶に残らない例として挙げられている</em>。〈選びがちな人〉<b>第7〜8段落の題材（コンサート・休暇・発表会）が娯楽的なので、第5段落の仕事の話と性質が違うと感じた人</b>。<u>題材の違いは、論理の違いではない</u>。"},
-  {m:"x",n:"③",t:"<b>存在しない比較を読み込んだ誤答</b>。<u>本文はカメラとメールの中断頻度を比べていない</u>。そもそも<em>第7〜8段落のカメラは「中断するもの」としてではなく、「注意の向け先を変えてしまうもの」として扱われている</em>。<b>milder（より軽い）という程度判断も本文にない</b>。〈選びがちな人〉<b>第5段落の interrupted という語に引かれ、第7〜8段落も中断の話だと枠をはめた人</b>。"},
-  {m:"x",n:"④",t:"<b>筋は通るが本文にない因果</b>。<u>「記憶が悪くなったから記録で補おうとする」という説明は一見もっともらしい</u>。しかし<em>第7段落は記録を補償手段として導入していない</em>。<b>Outside of the workplace, we often use technology to document our lives</b> と、<u>単に広く行われている行為として提示している</u>。〈選びがちな人〉<b>二つの段落が並んでいると、自動的に因果や時系列で結びつけてしまう人</b>。<u>並列は並列として読む</u>。"}]},
+  {m:"o",n:"①",t:"<span class=\"tag g\">正解</span>第4段落が原理を与え、第5〜6段落と第7〜8段落がその二つの適用例になっている。<span class=\"cj\"><b>根拠</b>｜第4段落第1文 what is distinct about the present moment／第8段落第4文 what is distinctive in the moment</span><b>第4段落は事例ではなく原理の宣言</b>｜<u>「持続する記憶を作るには、今この瞬間の特徴的なものに注意を集中させる必要がある」</u>。<em>以降の段落はすべて、この条件が満たされない場面である</em>。<u>第5〜6段落は注意が複数の目標に割れることで、第7〜8段落は注意が「記録」に向かうことで、同じ条件が破られる</u>。<br><b>そして本文自身が証拠を残している</b>｜<u>第4段落の distinct と第8段落の distinctive は、ほぼ同じ形で戻ってきた同一の語根</u>。<em>筆者が「ここで言っているのは、さきほど立てた原理のことだ」と合図している</em>。"},
+  {m:"x",n:"②",t:"<span class=\"tag v\">主張</span>楽しい活動なら注意の分割は無害。だから後者は前者に限定を加えている。<span class=\"cj\"><b>照合すべき箇所</b>｜第7段落第2文（コンサート）／第8段落第5文（家族旅行・子どものバイオリン発表会）</span><b>崩れる一点</b>｜<u>本文はまさにその逆を言っている</u>。<b>コンサートも家族旅行も子どものバイオリン発表会も、すべて「楽しい場面でありながら記憶に残らない」例として挙げられている</b>。<em>「楽しければ無害」なら、第8段落第5文の「あれほど鮮明だったものが遠く感じられる」という現象自体が起きない</em>。<br>〈選びがちな人〉<b>題材の性質（仕事 vs 娯楽）を、論理の違いとして読んだ人</b>。<u>扱われている素材が変わっても、筆者が論じている原理は変わっていない</u>。<br><span class=\"tag n\">現代文で言えば</span><b>本文にない条件を勝手に付け足す誤り</b>。<em>「限定を加えている」と書く選択肢は、本文にその限定語（ただし／〜の場合は／とはいえ）が実在するかを必ず確認する</em>。"},
+  {m:"x",n:"③",t:"<span class=\"tag v\">主張</span>カメラは中断の頻度が低いので、後者は前者の穏やかな版である。<span class=\"cj\"><b>照合すべき箇所</b>｜第5段落第1文 routinely interrupted／第8段落第4文 documenting over experiencing</span><b>崩れる一点</b>｜<u>本文はカメラとメールの頻度を比較していない</u>。そもそも<b>第7〜8段落のカメラは「中断するもの」として扱われていない</b>――<em>カメラの問題は、注意を途切れさせることではなく、注意の向け先を「体験」から「記録」へ変えてしまうこと</em>。<u>作用の種類が違うので、そもそも強弱で並べられない</u>。<br>〈選びがちな人〉<b>第5段落の interrupted という語を枠として持ち越し、第7〜8段落も同じ枠で読んだ人</b>。<br><span class=\"tag n\">現代文で言えば</span><b>ありもしない程度比較の捏造</b>。<u>「より〜だ」「〜ほどではない」と書く選択肢は、本文に比較の記述があるかを確認する</u>。<em>なければ、その時点で誤り</em>。"},
+  {m:"x",n:"④",t:"<span class=\"tag v\">主張</span>前者が原因で、後者はそれを埋め合わせるための方策。<span class=\"cj\"><b>照合すべき箇所</b>｜第7段落第1文 Outside of the workplace, we often use technology to document our lives</span><b>崩れる一点</b>｜<u>本文にその因果はない</u>。<b>第7段落は記録行為を「職場の外でも広く行われていること」として提示しているだけ</b>で、<em>「記憶が悪くなったから記録するようになった」とはどこにも書かれていない</em>。<u>二つは原因と対策の連鎖ではなく、同じ原理の二つの現れ</u>。<br>〈選びがちな人〉<b>段落が並んでいると、自動的に因果や時系列で結んでしまう人</b>。<u>筋が通るぶん、最も自信を持って選ばれる誤答</u>。<br><span class=\"tag n\">現代文で言えば</span><b>並列を因果に読み替える誤り</b>。<u>接続語がない並びは、まず並列を疑う</u>。<em>「だから」「その結果」が本文にないのに因果で結ぶのは、読解ではなく創作です</em>。"}]},
 
 {id:"発展4", grp:"IJ", type:"結論の射程", lbl:"ORIGINAL 4", en:"What the conclusion does NOT say", rate:36,
- ask:"Which of the following would the author most likely regard as a misreading of his final paragraph?",
+ ask:"<span class=\"aen\">Which of the following would the author most likely regard as a misreading of his final paragraph?</span><span class=\"ajp\"><b>和訳</b>｜次のうち、<b>筆者が自分の最終段落に対する誤読とみなす可能性が最も高いもの</b>はどれか。<br><span style=\"color:var(--verm-d)\">※ 正しいものではなく、誤っているものを選ぶ設問です。四つすべてを本文と照合してください。</span></span>",
  answer:"3", kind:"choice",
  choices:[
-  {t:"① That recording fewer moments can improve the quality of what we remember.", ok:false},
-  {t:"② That remembering everything we have experienced is not a goal worth pursuing.", ok:false},
-  {t:"③ That we ought to stop using technology to record our lives if we want vivid memories.", ok:true},
-  {t:"④ That a memory can be selective and still be rich in detail, meaning and feeling.", ok:false}],
+  {t:"① That recording fewer moments can improve the quality of what we remember.<span class=\"cjp\">記録する瞬間を減らすことが、私たちが覚えている内容の質を高めうる、ということ。</span>", ok:false},
+  {t:"② That remembering everything we have experienced is not a goal worth pursuing.<span class=\"cjp\">経験したことすべてを覚えていることは、追求する価値のある目標ではない、ということ。</span>", ok:false},
+  {t:"③ That we ought to stop using technology to record our lives if we want vivid memories.<span class=\"cjp\">鮮明な記憶が欲しいのなら、テクノロジーを使って生活を記録するのをやめるべきだ、ということ。</span>", ok:true},
+  {t:"④ That a memory can be selective and still be rich in detail, meaning and feeling.<span class=\"cjp\">記憶は選択的でありながら、なお細部・意味・感情において豊かでありうる、ということ。</span>", ok:false}],
  steps:[
-   {t:"設問の形式を確認する", d:"<b>誤読を選ぶ問題</b>。<u>つまり三つは本文と一致し、一つだけが一致しない</u>。<em>消去法が使えないので、四つすべてを本文と照合する必要がある</em>。"},
-   {t:"①②④を本文で確かめる", d:"<b>①＝less is more ＋ By trying to record every moment…（第8段落最終文）</b>。<b>②＝nor is that a desirable goal</b>。<b>④＝Our memories of events are selective, but they also can have a great deal of detail, meaning, and emotion</b>。<u>三つとも本文に対応がある</u>。"},
-   {t:"③を最終文と突き合わせる", d:"<b>By using technology in ways that allow us to access those aspects of our past experiences, we can hold on to what matters.</b><u>これは「使うのをやめろ」ではなく「こう使え」という条件の提示</u>。<em>stop using とは正反対の方向</em>。"},
-   {t:"文章全体の立場で裏を取る", d:"<b>第2段落で外部化を歓迎し、第3段落で technology isn&apos;t the problem と明言している</b>。<u>この文章は一貫してテクノロジー肯定の立場から、使い方だけを批判している</u>。よって<b>③が誤読</b>。"}],
+   {t:"設問の形式を確認する", d:"<b>誤読を選ぶ問題</b>。<u>三つは本文と一致し、一つだけが一致しない</u>。<em>消去法が使えないので、四つすべてを本文と照合する必要がある</em>。"},
+   {t:"①②④を最終段落で確かめる", d:"<b>①＝less is more（第1文）＋第8段落最終文 By trying to record every moment…</b>。<b>②＝nor is that a desirable goal（第2文）</b>。<b>④＝Our memories of events are selective, but they also can have a great deal of detail, meaning, and emotion（第3文）</b>。<u>三つとも本文に対応がある</u>。"},
+   {t:"③を最終文と突き合わせる", d:"<b>By using technology in ways that allow us to access those aspects of our past experiences, we can hold on to what matters.</b><u>「〜ができるようなやり方でテクノロジーを使えば」という形は、使うことを前提にしてはじめて書ける</u>。<em>stop using（使うのをやめる）とは正反対の方向</em>。", cite:'<span class="h">By using technology in ways that allow us to access those aspects of our past experiences</span>, we can hold on to what matters.'},
+   {t:"文章全体の立場で裏を取る", d:"<b>第2段落で外部化を歓迎し、第3段落で technology isn&apos;t the problem と明言している</b>。<u>この論説は一貫してテクノロジー肯定の立場から、使い方だけを批判している</u>。<em>放棄の主張は一度も出てこない</em>。よって<b>③が誤読</b>。"}],
  ev:{q:'With technology, as with memory itself, <span class="h">&quot;less is more.&quot;</span> Using technology to document our lives endlessly will not enable us to remember all our experiences, <span class="h">nor is that a desirable goal.</span> <span class="h">Our memories of events are selective, but they also can have a great deal of detail, meaning, and emotion.</span> <span class="h">By using technology in ways that allow us to access those aspects of our past experiences, we can hold on to what matters.</span>', jp:"「テクノロジーにおいても、記憶そのものと同じく『少ないほうが豊かである』。テクノロジーを使って果てしなく人生を記録しても、すべての経験を思い出せるようにはならないし、そもそもそれは望ましい目標でもない。出来事についての私たちの記憶は選択的なものだが、同時に、多くの細部と意味と感情を伴いうる。過去の経験のそうした側面にアクセスできるようなやり方でテクノロジーを使えば、私たちは大切なものを保ち続けることができる。」"},
- co:[{c:"gold",l:"「減らせ」と「やめろ」の距離",h:"<b>本試験の設問J(ト)「テクノロジーで記録することを減らすほうがよい」は本文一致（正解）</b>。<u>それでも「テクノロジーを使うのをやめろ」は本文にない</u>。<em>記録量を減らすことと、道具を捨てることは別</em>。<b>この距離を測れるかが、この文章の最終的な読解力</b>。"},
-     {c:"nav",l:"By using ~ という条件節",h:"<b>最終文は By doing ~「〜することによって」で始まる</b>。<u>つまり条件を満たした使用を前提にしている</u>。<em>使用そのものを否定するなら、この構文は書けない</em>。"},
-     {c:"verm",l:"出題者が見ている力",h:"<b>結論の射程を正確に測る力</b>。<u>主張を強めすぎる誤読（やめろ）を検出できるか</u>。<em>入試の内容一致問題で最も頻出する誤答型が、この「言い過ぎ」</em>。<b>誤読を選ばせる形式にすることで、四つすべての照合を強制している</b>。"}],
+ co:[{c:"teal",l:"現代文の問題として言い換えると",h:"<b>「筆者の主張を、どこまで広げてよいか」</b>という問い。<u>本文が条件つきで述べていることを、無条件の主張に拡大するのが「言い過ぎ」の誤読</u>。<em>入試の内容一致問題で最も多い誤答型がこれです</em>。<b>見分け方は単純で、本文に「〜すれば」「〜の場合」といった条件が付いているのに、選択肢が「〜すべきだ」と言い切っていたら疑う</b>。"},
+     {c:"gold",l:"「減らせ」と「やめろ」の距離",h:"<b>本試験の設問J(ト)「テクノロジーで記録することを減らすほうがよい」は本文一致（正解）</b>。<u>それでも「テクノロジーを使うのをやめろ」は本文にない</u>。<em>記録量を減らすことと、道具を捨てることは、論理の上でまったく違う主張</em>。<b>この距離を測れるかが、この文章の最終的な読解力</b>。"},
+     {c:"nav",l:"By using ~ という構文が立場を示す",h:"<b>最終文は By doing ~「〜することによって」で始まる</b>。<u>つまり使用を前提にした条件の提示</u>。<em>もし筆者が放棄を主張しているなら、この構文自体が成立しない</em>。<b>構文の形が、筆者の立場を直接語っている</b>。"},
+     {c:"verm",l:"なぜ「誤読を選べ」という形式にしたか",h:"<b>正解を選ぶ形式だと、残り三つを読まずに答えが出てしまう</b>。<u>誤読を選ぶ形式にすると、四つすべてを本文と照合しないと確信が持てない</u>。<em>現代文の「適当でないものを選べ」と同じ設計</em>。<b>照合の精度そのものを測る問題です</b>。"}],
  sol:[
-  {m:"x",n:"①",t:"<b>本文と一致する（＝誤読ではない）</b>。<u>第9段落第1文 &quot;less is more&quot;</u>、および<u>第8段落最終文 By trying to record every moment, we don&apos;t focus on the experience in enough detail</u>。<em>記録を減らすことが記憶の質に資する、という趣旨は本文にある</em>。<b>本試験の設問J(ト)が正解であることとも整合する</b>。"},
-  {m:"x",n:"②",t:"<b>本文と一致する（＝誤読ではない）</b>。<u>第9段落第2文 nor is that a desirable goal</u>「そもそもそれは望ましい目標でもない」。<em>that＝すべての経験を思い出せるようになること</em>。<b>本文がほぼそのままの形で述べている</b>。"},
-  {m:"o",n:"③",t:"正解（これが誤読）。第9段落最終文 By using technology in ways that… は使用の停止ではなく使用の条件を述べている。第2段落の外部化肯定、第3段落の technology isn&apos;t the problem とも一貫し、この文章は一度もテクノロジーの放棄を主張していない。〈選びがちな人〉less is more を反テクノロジーの標語として読み、文章全体を技術批判だと分類した人。"},
-  {m:"x",n:"④",t:"<b>本文と一致する（＝誤読ではない）</b>。<u>第9段落第3文 Our memories of events are selective, but they also can have a great deal of detail, meaning, and emotion</u>。<em>選択的であることと豊かであることは両立する、というこの一文が、文章全体の要約になっている</em>。<b>選択的＝貧しい、ではない</b>。"}]},
+  {m:"x",n:"①",t:"<span class=\"tag n\">判定</span>本文と一致する（＝誤読ではない）。<span class=\"cj\"><b>根拠</b>｜第9段落第1文 &quot;less is more&quot;／第8段落最終文 By trying to record every moment, we don&apos;t focus on the experience in enough detail</span><b>記録を減らすことが記憶の質に資する</b>という趣旨は、本文に明確にある。<u>しかも本試験の設問J(ト)「テクノロジーで生活を記録することを減らすほうが、持続する記憶を作るうえで良い」が正解とされている</u>のと同じ内容。<em>ここを誤読だと判定してしまうと、本試験の正解と衝突する</em>。<br>〈選びがちな人〉<b>③を正しいと思い込んでいるために、①と③の区別がつかなくなった人</b>。<u>①（記録を減らす）と③（使うのをやめる）の距離を測れるかが、この問題のすべて</u>。"},
+  {m:"x",n:"②",t:"<span class=\"tag n\">判定</span>本文と一致する（＝誤読ではない）。<span class=\"cj\"><b>根拠</b>｜第9段落第2文 nor is that a desirable goal</span><b>that＝すべての経験を思い出せるようになること</b>。<u>本文がほぼそのままの形で「そもそもそれは望ましい目標でもない」と述べている</u>。<em>記憶力の限界を嘆いているのではなく、全記憶という目標そのものを退けている</em>点に注意。<b>この否定があるから、第3文の「記憶は選択的だ」が欠陥ではなく性質として読める</b>。"},
+  {m:"o",n:"③",t:"<span class=\"tag g\">正解（これが誤読）</span>鮮明な記憶が欲しいなら、記録にテクノロジーを使うのをやめるべきだ。<span class=\"cj\"><b>根拠</b>｜第9段落最終文 By using technology in ways that allow us to access those aspects…／第3段落最終文 technology isn&apos;t the problem／第2段落第2〜3文</span><b>最終文は使用の停止ではなく、使用の条件を述べている</b>｜<u>By using technology in ways that…「〜ができるようなやり方でテクノロジーを使えば」という形は、使うことを前提にしてはじめて書ける構文</u>。<em>もし筆者が放棄を主張しているなら、この一文は成立しない</em>。<br><b>文章全体の立場も一貫している</b>｜<u>第2段落で外部化を歓迎し、第3段落で technology isn&apos;t the problem と明言</u>。<em>この論説は一度もテクノロジーの放棄を主張していない</em>。<br>〈選びがちな人〉<b>less is more を反テクノロジーの標語として読み、文章全体を技術批判に分類した人</b>。"},
+  {m:"x",n:"④",t:"<span class=\"tag n\">判定</span>本文と一致する（＝誤読ではない）。<span class=\"cj\"><b>根拠</b>｜第9段落第3文 Our memories of events are selective, but they also can have a great deal of detail, meaning, and emotion</span><b>選択的であることと、豊かであることは両立する</b>。<u>この一文が、文章全体の要約になっている</u>。<em>記憶が選択的なのは欠陥ではなく性質であり、だからこそ「何を選ぶか」＝注意の向け方が決定的になる</em>。<b>ここを読めると、第4段落の原理と第9段落の結論が一本の線でつながる</b>。"}]},
 
 {id:"発展5", grp:"IJ", type:"比喩の機能", lbl:"ORIGINAL 5", en:"&quot;like a story we read in a book&quot;", rate:44,
- ask:"In paragraph 8 the author writes that a once-vivid experience &quot;can end up feeling distant to us, like a story we read in a book.&quot; What does this comparison specifically convey?",
+ ask:"<span class=\"aen\">In paragraph 8 the author writes that a once-vivid experience &quot;can end up feeling distant to us, like a story we read in a book.&quot; What does this comparison specifically convey?</span><span class=\"ajp\"><b>和訳</b>｜第8段落で筆者は、かつて鮮明だった経験が「本で読んだ物語のように、私たちから遠く感じられるようになりうる」と書いている。<b>この比喩が具体的に伝えているのはどのようなことか</b>。</span>",
  answer:"4", kind:"choice",
  choices:[
-  {t:"① That our memories of recorded events gradually become factually inaccurate.", ok:false},
-  {t:"② That reading is an inferior way of acquiring memories compared with direct experience.", ok:false},
-  {t:"③ That we come to confuse what we have actually lived through with what we have merely read about.", ok:false},
-  {t:"④ That the event is retained as information received from outside rather than as something lived from within.", ok:true}],
+  {t:"① That our memories of recorded events gradually become factually inaccurate.<span class=\"cjp\">記録された出来事についての私たちの記憶は、次第に事実として不正確になっていく、ということ。</span>", ok:false},
+  {t:"② That reading is an inferior way of acquiring memories compared with direct experience.<span class=\"cjp\">読書は、直接経験と比べて記憶を得る方法として劣っている、ということ。</span>", ok:false},
+  {t:"③ That we come to confuse what we have actually lived through with what we have merely read about.<span class=\"cjp\">私たちは、実際に生きて通り抜けたことと、ただ読んだだけのことを混同するようになる、ということ。</span>", ok:false},
+  {t:"④ That the event is retained as information received from outside rather than as something lived from within.<span class=\"cjp\">その出来事が、内側から生きられたものとしてではなく、外から受け取った情報として保持される、ということ。</span>", ok:true}],
  steps:[
-   {t:"比喩の前にある対比軸を取る", d:"<b>something that was so vivid when we experienced it … can end up feeling distant</b>。<u>軸は vivid（体験した当時の生々しさ）↔ distant（今感じる遠さ）</u>。<em>正確さの話でも、時間の話でもない</em>。"},
-   {t:"本で読んだ物語とは何かを言葉にする", d:"<b>内容は知っている。筋も言える。しかし自分がその場にいた感覚はない</b>。<u>つまり外から受け取った情報として持っている</u>。<em>これが distant の中身</em>。"},
-   {t:"段落の中心対比に接続する", d:"第8段落第4文 <b>When we focus on &quot;documenting&quot; over &quot;experiencing&quot;</b>。<u>記録を優先すると、体験が体験でなくなる</u>。<em>比喩はこの対比を一息で言い表している</em>。"},
-   {t:"選ぶ", d:"<b>④</b>。<u>内側から生きたものではなく、外側から受け取った情報として保持される</u>。"}],
+   {t:"比喩の直前にある対比軸を取る", d:"<b>something that was so vivid when we experienced it … can end up feeling distant</b>。<u>軸は vivid（体験した当時の生々しさ）↔ distant（いま感じる遠さ）</u>。<em>正確さの話でも、時間の経過の話でもない</em>。<b>比喩の意味は、その直前にある対比が決める</b>。"},
+   {t:"「本で読んだ物語」とは何かを言葉にする", d:"<b>筋も知っている。内容も言える。しかし自分がその場にいた感覚はない</b>。<u>つまり外から受け取った情報として持っている</u>。<em>これが distant の中身</em>。"},
+   {t:"段落の中心対比に接続する", d:"第8段落第4文 <b>When we focus on &quot;documenting&quot; over &quot;experiencing,&quot;</b>「『体験すること』よりも『記録すること』に意識が向くと」。<u>記録を優先すると、体験が体験でなくなる</u>。<em>比喩はこの対比を一息で言い表している</em>。"},
+   {t:"選ぶ", d:"<b>④「内側から生きられたものとしてではなく、外から受け取った情報として保持される」</b>。<u>documenting / experiencing の対比を、そのまま言い換えた形になっている</u>。"}],
  ev:{q:'When we focus on <span class="h">&quot;documenting&quot; over &quot;experiencing,&quot;</span> we don&apos;t pay attention to what is distinctive in the moment — the sights, sounds and feelings that make an experience unique and memorable. Without those details, something that was <span class="h">so vivid</span> when we experienced it (a family vacation or a child&apos;s violin recital) can end up <span class="h">feeling distant</span> to us, like a story we read in a book.', jp:"「『体験すること』よりも『記録すること』に意識が向くと、その瞬間の特徴的なもの――経験を唯一無二で忘れがたいものにする光景、音、感情――に注意を払わなくなる。そうした細部を欠くと、体験した当時はあれほど鮮明だったもの（家族旅行や子どものバイオリンの発表会）が、本で読んだ物語のように、自分から遠く感じられるようになりうる。」"},
- co:[{c:"gold",l:"比喩は論旨のどこに刺さっているかで読む",h:"<b>この比喩は documenting / experiencing の対比の真下に置かれている</b>。<u>だから「読書 vs 体験」という比喩の表面ではなく、「外から受け取る vs 内から生きる」という論旨を読む</u>。<em>比喩の素材ではなく、比喩の働きを見る</em>。"},
-     {c:"nav",l:"so vivid が誤答を切る",h:"<b>体験した当時は鮮明だった</b>と本文が明記している。<u>だから「正確さが落ちた」でも「重要でなかった」でもない</u>。<em>鮮明だったものが遠くなる、という落差そのものが論点</em>。"},
-     {c:"verm",l:"出題者が見ている力",h:"<b>比喩を比喩として処理し、論旨に還元する力</b>。<u>本試験の設問I(ニ)が「かつて本で似た話を読んだから」という literal な誤答を用意している</u>のと同じ急所を、<em>逆側から問うている</em>。"}],
+ co:[{c:"teal",l:"現代文の問題として言い換えると",h:"<b>「この比喩は、何を言うために持ち出されたか」</b>という問い。<u>比喩を読むときに見るのは、たとえに使われた素材（本・物語）ではなく、その素材が担わされた働き</u>。<em>ここでの「本で読んだ物語」は、読書の話をするためではなく、<b>自分が生きていない出来事</b>の具体像として置かれている</em>。<b>比喩は論旨を圧縮した形で提示するので、正しくほどけば、その段落の主張がそのまま出てきます</b>。"},
+     {c:"gold",l:"so vivid が誤答を二つ切る",h:"<b>体験した当時は「あれほど鮮明だった」と本文が明記している</b>。<u>だから「正確さが落ちた」でも「重要でなかった」でもない</u>。<em>鮮明だったものが遠くなる、というその落差そのものが論点</em>。<b>比喩の直前の一語が、選択肢の半分を消している</b>。"},
+     {c:"nav",l:"本試験の設問Iと表裏の関係",h:"<b>本試験の設問Iは、同じ比喩の「理由」を問い、(ニ) because we once read a similar story in a book という literal な誤答を用意している</b>。<u>こちらは同じ急所を逆側から問うている</u>。<em>設問Iを正解できても、比喩の中身を言語化できていなければ、この問題で②や③を選ぶ</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>比喩を比喩として処理し、論旨に還元する力</b>。<u>英文和訳はできるのに内容一致で外す生徒は、たいていここでつまずいている</u>。<em>文の意味は取れても、その文が段落の中で果たす役割が見えていない</em>。"}],
  sol:[
-  {m:"x",n:"①",t:"<b>distant を「正確さの劣化」と読んだ誤答</b>。<u>本文は記憶の内容が事実と食い違うとは一言も述べていない</u>。<em>第4段落には keep our recollections accurate という表現があるが、第8段落の distant は正確さではなく距離感の話</em>。〈選びがちな人〉<b>blurry, incomplete（第6段落）を「不正確」と読み替え、そのまま第8段落に持ち込んだ人</b>。<u>ぼやける（細部が薄い）と間違う（事実が違う）は別</u>。"},
-  {m:"x",n:"②",t:"<b>比喩の素材を論点と取り違えた誤答</b>。<u>著者は読書を批判していない</u>。<em>a story we read in a book は「自分が生きていない出来事」の分かりやすい例として持ち出されているだけ</em>。<b>本を読むことの是非は、この文章の論点ではない</b>。〈選びがちな人〉<b>比喩に出てきた名詞（book, story）が選択肢にあると、そこが論点だと感じる人</b>。<u>比喩は何かを説明する道具であって、説明の対象ではない</u>。"},
-  {m:"x",n:"③",t:"<b>distant を「区別がつかない」と曖昧に処理した誤答</b>。<u>feeling distant は「遠く感じられる」であって、「混同する」ではない</u>。<em>むしろ、体験したはずなのに体験した感じがしない、という落差がはっきり意識されている</em>。〈選びがちな人〉<b>like という語から「似ている→見分けがつかない」と連想を伸ばした人</b>。<u>like A は「Aのように感じられる」であって「Aと取り違える」ではない</u>。"},
-  {m:"o",n:"④",t:"正解。vivid（内側から生きた鮮明さ）と distant（外側から受け取った情報）の落差を言い表した比喩。第8段落の documenting / experiencing の対比と直結している。"}]},
+  {m:"x",n:"①",t:"<span class=\"tag v\">主張</span>記憶が次第に事実として不正確になっていく。<span class=\"cj\"><b>照合すべき箇所</b>｜第8段落第5文 so vivid ↔ feeling distant／第4段落第2文 keep our recollections accurate</span><b>崩れる一点</b>｜<u>軸が違う</u>。ここは <b>vivid（体験時の生々しさ）と distant（いま感じる遠さ）の対比</b>であって、<em>正確さの話ではない</em>。<u>accurate という語は第4段落に出るが、それは「脳が思い出を正確に保つのを助ける」という別の文脈</u>。<b>ぼやける（細部が薄い）ことと、間違う（事実が違う）ことは別の現象</b>。<br>〈選びがちな人〉<b>第6段落の blurry, incomplete を「不正確」と読み替え、そのまま第8段落に持ち込んだ人</b>。<u>incomplete は「欠けている」であって「誤っている」ではない</u>。<br><span class=\"tag n\">現代文で言えば</span><b>比喩が置かれた対比軸を取り違える誤り</b>。<em>比喩の意味は、その直前にある対比が決める</em>。"},
+  {m:"x",n:"②",t:"<span class=\"tag v\">主張</span>読書は直接経験より記憶の手段として劣っている。<span class=\"cj\"><b>照合すべき箇所</b>｜第8段落第5文の like 以下</span><b>崩れる一点</b>｜<u>比喩の素材を論点と取り違えている</u>。<b>a story we read in a book は「自分が生きていない出来事」の分かりやすい例として持ち出されただけ</b>。<em>読書の価値はこの文章の論点ではなく、筆者は読書について何の評価も下していない</em>。<br>〈選びがちな人〉<b>比喩に出てきた名詞（book, story）が選択肢にあると、そこが論点だと感じる人</b>。<u>見覚えのある語は、正解の根拠にならない</u>。<br><span class=\"tag n\">現代文で言えば</span><b>比喩を「たとえられる側」ではなく「たとえる側」で読んでしまう誤り</b>。<u>比喩は何かを説明する道具であって、説明の対象ではない</u>。<em>比喩を見たら「何を言うためにこれが持ち出されたか」を一度言語化する習慣をつける</em>。"},
+  {m:"x",n:"③",t:"<span class=\"tag v\">主張</span>実際に生きたことと、ただ読んだだけのことを混同するようになる。<span class=\"cj\"><b>照合すべき箇所</b>｜第8段落第5文 feeling distant</span><b>崩れる一点</b>｜<u>distant は「遠い」であって「見分けがつかない」ではない</u>。<em>むしろ本文の現象は、体験したはずなのに体験した感じがしない、という落差がはっきり意識されている状態</em>。<b>混同しているなら、そもそも「遠く感じる」という自覚が生まれない</b>。<br>〈選びがちな人〉<b>like という語から「似ている→区別がつかない」と連想を伸ばした人</b>。<u>like A は「Aのように感じられる」であって「Aと取り違える」ではない</u>。<br><span class=\"tag n\">現代文で言えば</span><b>語の意味を曖昧なまま拡張する誤り</b>。<em>「遠い」を「同じに見える」まで広げると、本文とは別の現象を語ることになる</em>。"},
+  {m:"o",n:"④",t:"<span class=\"tag g\">正解</span>その出来事が、内側から生きられたものとしてではなく、外から受け取った情報として保持される。<span class=\"cj\"><b>根拠</b>｜第8段落第4文 &quot;documenting&quot; over &quot;experiencing&quot;／第5文 so vivid ↔ feeling distant</span><b>比喩の直前にある対比が、答えを決めている</b>｜<u>第4文が documenting（記録する）と experiencing（体験する）を対立させ、第5文がその帰結を述べる</u>。<em>記録を優先した出来事は、その場にいたはずなのに、自分が内側から生きたものとして残らない</em>。<br><b>本で読んだ物語がまさにそれ</b>｜<u>筋も知っている、内容も言える、しかし自分がそこにいた感覚はない</u>。<em>つまり「外から受け取った情報として保持される」</em>。<b>選択肢は、第8段落の中心対比をそのまま言い換えた形になっている</b>。"}]},
 ]);
 function esc(id){ var s=String(id); var out='q'; for(var i=0;i<s.length;i++){ var c=s.charCodeAt(i); if((c>=48&&c<=57)||(c>=65&&c<=90)||(c>=97&&c<=122)) out+=s[i]; else out+='_'+c; } return out; }
 function rateCls(r){ return r<=40?'low':(r<=55?'mid':'hi'); }

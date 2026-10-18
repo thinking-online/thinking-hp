@@ -21,6 +21,7 @@ https://<本ドメイン>/kakomon/<大学フォルダ>/<ファイル名>.pdf
 | `bunkyo-u` | 文教大学 |
 | `fukuoka-u` | 福岡大学 |
 | `kanazawa-u` | 金沢大学 |
+| `kitakyushu-u` | 北九州市立大学（外国語学部） |
 
 ## ファイル名ルール
 

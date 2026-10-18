@@ -1,0 +1,1375 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>須田 あや音｜初回戦略シート｜THINKING</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THINKING 個別戦略シート — 印刷（A4）用スタイルシート
+   engine version: 1.0
+   ============================================================ */
+
+@font-face{font-family:"Zen Kaku Gothic New";font-weight:400;src:local("Zen Kaku Gothic New")}
+@font-face{font-family:"Shippori Mincho B1";font-weight:600;src:local("Shippori Mincho B1")}
+
+:root{
+  --navy:#16233a;
+  --navy-deep:#0c1424;
+  --navy-soft:#24354f;
+  --gold:#c8a55a;
+  --gold-deep:#a07d38;
+  --gold-light:#e6d3a6;
+  --ivory:#faf8f4;
+  --cream:#fffdf9;
+  --paper:#f0ece4;
+  --ink:#18212f;
+  --ink-2:#4c586a;
+  --ink-3:#8b93a1;
+  --rule:rgba(22,35,58,.14);
+  --rule-soft:rgba(22,35,58,.07);
+  --good:#2c7a5d;
+  --mid:#c08a2e;
+  --bad:#b23f3f;
+
+  --sans:"Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",system-ui,sans-serif;
+  --mincho:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN",serif;
+  /* 数値まわりの欧文書体。CJK を持たないので日本語フォントを必ず後ろに置く
+     （「約」「点」「ヶ月」等が別書体に落ちるのを防ぐ） */
+  --en:"Cormorant Garamond","Cormorant","Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",sans-serif;
+
+  --pad-x:15mm;
+  --pad-y:14mm;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:#5b6472;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+  line-height:1.75;
+}
+body,.page,.page *{
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+/* 欧文フォントの数字は既定でオールドスタイル（1 が I に見える）。
+   数値を読ませる箇所はライニング＋等幅数字に統一する。 */
+.cover-brand .cb-en,.cover-kpi .k-value,.kpi .k-v,.sec-no,.sec-en,
+.s-num,.s-pct,.s-tgt,.s-gap,.wish-rank,.wseg .w-v,.step-no,
+ol.num li::before,.pf-no,.runner .r-left,.cover-contents .cc-no{
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+}
+
+/* ---------- ページの器 ---------- */
+@page{ size:A4 portrait; margin:0; }
+
+.page{
+  position:relative;
+  width:210mm;
+  height:297mm;
+  overflow:hidden;
+  margin:0 auto;
+  background:var(--cream);
+  color:var(--ink);
+  page-break-after:always;
+  break-after:page;
+  display:flex;
+  flex-direction:column;
+}
+.page:last-child{page-break-after:auto;break-after:auto;}
+.page-body{
+  flex:1;
+  min-height:0;
+  padding:var(--pad-y) var(--pad-x) 0;
+  display:flex;
+  flex-direction:column;
+}
+.page-body > *{flex:0 0 auto;}
+.pb-fill{flex:1 1 auto !important;min-height:0;}
+
+/* 画面表示時だけページを浮かせる */
+@media screen{
+  body{padding:24px 0;}
+  .page{box-shadow:0 24px 60px -24px rgba(0,0,0,.6);margin-bottom:24px;}
+}
+
+/* ---------- 走り書きヘッダー / フッター ---------- */
+.runner{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  padding:7mm var(--pad-x) 0;
+  font-size:8pt;
+  letter-spacing:.14em;
+  color:var(--ink-3);
+}
+.runner .r-left{font-family:var(--en);font-size:10pt;letter-spacing:.22em;color:var(--gold-deep);}
+.runner .r-right{font-weight:500;}
+.page-foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:0 var(--pad-x) 8mm;
+  font-size:7.6pt;
+  letter-spacing:.1em;
+  color:var(--ink-3);
+  border-top:0;
+}
+.page-foot .pf-rule{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,var(--rule),rgba(200,165,90,.5));
+}
+.page-foot .pf-no{
+  font-family:var(--en);
+  font-size:13pt;
+  letter-spacing:.06em;
+  color:var(--gold-deep);
+  font-weight:600;
+}
+
+/* ============================================================
+   表紙
+   ============================================================ */
+.cover{
+  background:
+    radial-gradient(120% 80% at 50% -10%, #2b3f60 0%, rgba(43,63,96,0) 62%),
+    linear-gradient(175deg,#16233a 0%,#0c1424 100%);
+  color:#f3efe6;
+}
+.cover .page-body{padding:0;}
+.cover-frame{
+  position:absolute;
+  inset:9mm;
+  border:1px solid rgba(200,165,90,.4);
+}
+.cover-frame::before,.cover-frame::after{
+  content:"";position:absolute;background:rgba(200,165,90,.85);
+}
+.cover-frame::before{left:-1px;top:-1px;width:18mm;height:2px;}
+.cover-frame::after{right:-1px;bottom:-1px;width:18mm;height:2px;}
+
+.cover-inner{
+  position:relative;
+  z-index:2;
+  height:100%;
+  padding:22mm 20mm 16mm;
+  display:flex;
+  flex-direction:column;
+}
+.cover-brand{
+  display:flex;flex-direction:column;gap:3px;
+}
+.cover-brand .cb-en{
+  font-family:var(--en);
+  font-size:19pt;letter-spacing:.34em;color:#efe7d6;font-weight:500;
+}
+.cover-brand .cb-en i{font-style:normal;color:var(--gold);}
+.cover-brand .cb-jp{
+  font-family:var(--mincho);
+  font-size:7.6pt;letter-spacing:.4em;color:rgba(230,211,166,.72);
+}
+
+.cover-eyebrow{
+  margin-top:19mm;
+  font-size:8.4pt;letter-spacing:.34em;color:var(--gold);
+  display:flex;align-items:center;gap:10px;
+}
+.cover-eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(200,165,90,.6),transparent);}
+
+.cover-title{
+  font-family:var(--mincho);
+  font-size:34pt;
+  font-weight:600;
+  line-height:1.32;
+  letter-spacing:.09em;
+  margin:5mm 0 0;
+  color:#fbf8f1;
+}
+.cover-title em{
+  font-style:normal;
+  color:var(--gold-light);
+  display:block;
+  font-size:15pt;
+  letter-spacing:.22em;
+  margin-top:5mm;
+}
+.cover-sub{
+  margin-top:4mm;
+  font-size:9.6pt;
+  line-height:2;
+  color:rgba(243,239,230,.78);
+  max-width:118mm;
+}
+
+.cover-name{
+  margin-top:12mm;
+  padding:6mm 0 0;
+  border-top:1px solid rgba(200,165,90,.32);
+  display:flex;align-items:flex-end;gap:6mm;flex-wrap:wrap;
+}
+.cover-name .cn-label{
+  font-size:8pt;letter-spacing:.3em;color:rgba(230,211,166,.75);padding-bottom:3mm;
+}
+.cover-name .cn-value{
+  font-family:var(--mincho);
+  font-size:26pt;letter-spacing:.14em;color:#fff;line-height:1.2;
+}
+.cover-name .cn-meta{
+  padding-bottom:3mm;font-size:8.6pt;color:rgba(243,239,230,.62);letter-spacing:.08em;
+}
+
+.cover-contents{
+  margin-top:7mm;
+  display:grid;grid-template-columns:1fr 1fr;gap:0 9mm;
+}
+.cover-contents .cc-label{
+  grid-column:1 / -1;
+  font-size:7.6pt;letter-spacing:.32em;color:var(--gold);
+  display:flex;align-items:center;gap:8px;margin-bottom:2mm;
+}
+.cover-contents .cc-label::after{content:"";flex:1;height:1px;background:rgba(200,165,90,.28);}
+.cover-contents .cc-item{
+  display:flex;gap:3.5mm;align-items:baseline;
+  font-size:8.2pt;letter-spacing:.05em;color:rgba(243,239,230,.7);
+  padding:1.15mm 0;border-bottom:1px solid rgba(200,165,90,.12);
+}
+.cover-contents .cc-no{
+  font-family:var(--en);font-size:9.5pt;font-weight:600;color:var(--gold);flex:0 0 5.5mm;
+}
+
+.cover-kpis{
+  margin-top:auto;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border:1px solid rgba(200,165,90,.3);
+  background:rgba(255,255,255,.035);
+}
+.cover-kpi{padding:6mm 5mm;border-right:1px solid rgba(200,165,90,.22);}
+.cover-kpi:last-child{border-right:0;}
+.cover-kpi .k-label{font-size:7.6pt;letter-spacing:.2em;color:rgba(230,211,166,.8);}
+.cover-kpi .k-value{
+  font-family:var(--en);font-size:30pt;font-weight:600;line-height:1.05;margin-top:2mm;color:#fff;
+}
+.cover-kpi .k-value small{font-size:13pt;letter-spacing:.02em;margin-left:2px;}
+.cover-kpi.is-gap .k-value{color:var(--gold-light);}
+.cover-kpi .k-note{font-size:7.6pt;color:rgba(243,239,230,.6);margin-top:1mm;letter-spacing:.04em;}
+
+.cover-foot{
+  margin-top:6mm;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:7.6pt;letter-spacing:.16em;color:rgba(243,239,230,.5);
+}
+
+/* ============================================================
+   セクション見出し
+   ============================================================ */
+.sec{
+  display:flex;align-items:flex-start;gap:5mm;
+  padding-bottom:3.5mm;
+  border-bottom:1px solid var(--rule);
+  margin-bottom:5mm;
+}
+.sec-no{
+  flex:0 0 auto;
+  font-family:var(--en);
+  font-size:26pt;font-weight:600;line-height:1;
+  color:var(--gold);
+  letter-spacing:.02em;
+  padding-top:1mm;
+}
+.sec-txt{flex:1;min-width:0;}
+.sec-title{
+  font-family:var(--mincho);
+  font-size:16pt;font-weight:600;letter-spacing:.06em;line-height:1.35;
+  margin:0;color:var(--navy);
+}
+.sec-en{
+  font-family:var(--en);
+  font-size:9pt;letter-spacing:.26em;color:var(--ink-3);margin-top:1mm;text-transform:uppercase;
+}
+.sec-lead{
+  font-size:9.4pt;line-height:1.85;color:var(--ink-2);margin:0 0 5mm;
+}
+.sec-lead strong{color:var(--navy);font-weight:700;}
+
+h3.blk{
+  font-family:var(--mincho);
+  font-size:11.5pt;font-weight:600;letter-spacing:.06em;color:var(--navy);
+  margin:0 0 2.5mm;display:flex;align-items:center;gap:2.5mm;
+}
+h3.blk::before{
+  content:"";width:3px;height:14px;background:var(--gold);flex:0 0 auto;
+}
+
+/* ============================================================
+   汎用パーツ
+   ============================================================ */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm;}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;}
+.stack-gap{display:flex;flex-direction:column;gap:4.5mm;}
+.mt-auto{margin-top:auto;}
+
+.card{
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-radius:2px;
+  padding:4.5mm 5mm;
+}
+.card.is-dark{background:var(--navy);border-color:var(--navy);color:#f1ede4;}
+.card.is-dark .c-title{color:var(--gold-light);}
+.card.is-dark .c-body{color:rgba(241,237,228,.86);}
+.card.is-gold{background:#fdf8ec;border-color:rgba(200,165,90,.45);}
+.c-kicker{
+  font-size:7.4pt;letter-spacing:.22em;color:var(--gold-deep);margin-bottom:1.5mm;font-weight:500;
+}
+.c-title{
+  font-family:var(--mincho);
+  font-size:11pt;font-weight:600;letter-spacing:.04em;color:var(--navy);margin:0 0 2mm;line-height:1.5;
+}
+.c-body{font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin:0;}
+.c-body strong{color:var(--navy);font-weight:700;}
+
+.pill{
+  display:inline-block;
+  font-size:7.4pt;letter-spacing:.12em;font-weight:500;
+  padding:.9mm 2.4mm;border-radius:1px;
+  border:1px solid currentColor;
+}
+.pill.p-core{color:var(--gold-deep);background:rgba(200,165,90,.1);}
+.pill.p-base{color:var(--navy-soft);background:rgba(36,53,79,.07);}
+.pill.p-risk{color:var(--bad);background:rgba(178,63,63,.07);}
+.pill.p-ok{color:var(--good);background:rgba(44,122,93,.08);}
+
+/* ---------- 志望校リスト ---------- */
+.wish{border-top:1px solid var(--rule);}
+.wish-row{
+  display:flex;align-items:center;gap:4mm;
+  padding:2.6mm 1mm;
+  border-bottom:1px solid var(--rule-soft);
+}
+.wish-rank{
+  flex:0 0 9mm;
+  font-family:var(--en);font-size:15pt;font-weight:600;color:var(--gold);line-height:1;text-align:center;
+}
+.wish-main{flex:1;min-width:0;}
+.wish-univ{font-size:10pt;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.45;}
+.wish-fac{font-size:8.2pt;color:var(--ink-2);letter-spacing:.02em;line-height:1.5;}
+.wish-tag{flex:0 0 auto;}
+
+/* ---------- 得点テーブル ---------- */
+table.score{
+  width:100%;border-collapse:collapse;font-size:8.6pt;
+}
+table.score th{
+  font-size:7.4pt;letter-spacing:.12em;font-weight:500;color:var(--ink-3);
+  text-align:right;padding:0 1.5mm 1.8mm;border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+table.score th.t-name{text-align:left;}
+table.score th.t-bar{text-align:left;}
+table.score td{
+  padding:1.55mm 1.5mm;border-bottom:1px solid var(--rule-soft);text-align:right;vertical-align:middle;
+}
+table.score tr.is-sum td{
+  border-top:1.4px solid var(--navy);border-bottom:0;padding-top:2.2mm;font-weight:700;color:var(--navy);
+}
+table.score tr.is-sub td{background:rgba(22,35,58,.028);}
+.s-name{text-align:left;line-height:1.35;}
+.s-name b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;}
+.s-name span{display:block;font-size:7.2pt;color:var(--ink-3);letter-spacing:.02em;}
+.s-num{font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);white-space:nowrap;}
+.s-num i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.s-pct{font-family:var(--en);font-size:12pt;font-weight:600;white-space:nowrap;}
+.s-pct i{font-style:normal;font-size:7.6pt;font-family:var(--sans);margin-left:1px;color:var(--ink-3);}
+.s-pct.lv-hi{color:var(--good);}
+.s-pct.lv-mid{color:var(--mid);}
+.s-pct.lv-lo{color:var(--bad);}
+.s-tgt{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--ink-2);}
+.s-gap{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--gold-deep);white-space:nowrap;}
+.s-bar{width:34%;}
+
+.track{
+  position:relative;height:7px;background:var(--paper);border-radius:1px;overflow:visible;
+}
+.track .fill{
+  position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,var(--navy-soft),var(--navy));
+}
+.track.lv-hi .fill{background:linear-gradient(90deg,#3d9273,var(--good));}
+.track.lv-mid .fill{background:linear-gradient(90deg,#d9a94a,var(--mid));}
+.track.lv-lo .fill{background:linear-gradient(90deg,#cd6767,var(--bad));}
+.track .tick{
+  position:absolute;top:-3px;bottom:-3px;width:1.6px;background:var(--gold-deep);
+}
+.track .tick::after{
+  content:"";position:absolute;top:-2.5px;left:-2.2px;
+  border-left:3px solid transparent;border-right:3px solid transparent;border-top:3.4px solid var(--gold-deep);
+}
+
+/* ---------- KPI 帯 ---------- */
+.kpirow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);background:var(--ivory);}
+.kpirow.k3{grid-template-columns:repeat(3,1fr);}
+.kpi{padding:3.6mm 4mm;border-right:1px solid var(--rule);}
+.kpi:last-child{border-right:0;}
+.kpi .k-l{font-size:7.4pt;letter-spacing:.16em;color:var(--ink-3);}
+.kpi .k-v{font-family:var(--en);font-size:24pt;font-weight:600;line-height:1.1;color:var(--navy);margin-top:.8mm;}
+.kpi .k-v small{font-size:11pt;margin-left:1px;}
+.kpi .k-n{font-size:7.4pt;color:var(--ink-3);margin-top:.5mm;}
+.kpi.acc .k-v{color:var(--gold-deep);}
+.kpi.bad .k-v{color:var(--bad);}
+.kpi.good .k-v{color:var(--good);}
+
+/* ---------- 配点構造バー ---------- */
+.weight{margin:0;}
+.weight-bar{display:flex;height:15mm;border:1px solid var(--rule);overflow:hidden;}
+.wseg{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  color:#fff;text-align:center;gap:.6mm;padding:0 1mm;border-right:1px solid rgba(255,255,255,.28);
+}
+.wseg:last-child{border-right:0;}
+.wseg .w-t{font-size:7.6pt;letter-spacing:.06em;font-weight:500;line-height:1.2;}
+.wseg .w-v{font-family:var(--en);font-size:13pt;font-weight:600;line-height:1;}
+.wseg.w1{background:var(--navy);}
+.wseg.w2{background:var(--navy-soft);}
+.wseg.w3{background:var(--gold-deep);}
+.wseg.w4{background:#a8afba;}
+.weight-legend{
+  display:flex;flex-wrap:wrap;gap:1.5mm 5mm;margin-top:2.5mm;font-size:7.8pt;color:var(--ink-2);
+}
+.weight-legend span{display:flex;align-items:center;gap:1.8mm;}
+.weight-legend i{width:8px;height:8px;display:inline-block;border-radius:1px;}
+
+/* ---------- ステップ（①②③④） ---------- */
+.steps{display:flex;flex-direction:column;gap:2.6mm;}
+.step{
+  display:flex;gap:3.5mm;align-items:flex-start;
+  padding:3mm 3.5mm;background:var(--ivory);border-left:2.5px solid var(--gold);
+}
+.step-no{
+  flex:0 0 auto;width:6.5mm;height:6.5mm;border-radius:50%;
+  background:var(--navy);color:var(--gold-light);
+  font-family:var(--en);font-size:11pt;font-weight:600;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+.step-txt{flex:1;min-width:0;}
+.step-t{font-size:9.6pt;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.5;}
+.step-d{font-size:8.4pt;line-height:1.75;color:var(--ink-2);margin-top:.6mm;}
+.step-d strong{color:var(--navy);}
+
+/* ---------- 箇条書き ---------- */
+ul.bul{margin:0;padding:0;list-style:none;}
+ul.bul li{
+  position:relative;padding-left:4.2mm;font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin-bottom:.8mm;
+}
+ul.bul li::before{
+  content:"";position:absolute;left:.4mm;top:.62em;width:4.5px;height:4.5px;background:var(--gold-deep);border-radius:50%;
+}
+ul.bul li strong{color:var(--navy);font-weight:700;}
+ul.bul.tight li{margin-bottom:.2mm;line-height:1.7;}
+
+ol.num{margin:0;padding:0;list-style:none;counter-reset:n;}
+ol.num li{
+  position:relative;padding-left:6.5mm;font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin-bottom:1.2mm;counter-increment:n;
+}
+ol.num li::before{
+  content:counter(n);position:absolute;left:0;top:.15em;
+  width:4.4mm;height:4.4mm;border:1px solid var(--gold-deep);color:var(--gold-deep);
+  font-family:var(--en);font-size:9pt;font-weight:600;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+
+/* ---------- チェックリスト ---------- */
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:1.6mm 5mm;}
+.check{display:flex;align-items:flex-start;gap:2.4mm;font-size:8.6pt;line-height:1.65;color:var(--ink-2);}
+.check .box{
+  flex:0 0 auto;width:3.4mm;height:3.4mm;border:1.2px solid var(--navy-soft);margin-top:.9mm;background:#fff;
+}
+.check b{color:var(--navy);font-weight:700;}
+
+/* ---------- コールアウト ---------- */
+.callout{
+  border:1px solid rgba(200,165,90,.5);
+  background:linear-gradient(180deg,#fdf8ec,#fbf4e3);
+  padding:4mm 5mm;position:relative;
+}
+.callout .co-t{
+  font-family:var(--mincho);font-size:10.5pt;font-weight:600;color:var(--gold-deep);
+  letter-spacing:.06em;margin-bottom:1.5mm;
+}
+.callout .co-b{font-size:8.8pt;line-height:1.85;color:var(--ink-2);}
+.callout .co-b strong{color:var(--navy);}
+.callout.is-navy{background:var(--navy);border-color:var(--navy);}
+.callout.is-navy .co-t{color:var(--gold-light);}
+.callout.is-navy .co-b{color:rgba(241,237,228,.88);}
+.callout.is-navy .co-b strong{color:#fff;}
+
+/* ---------- 週次テーブル ---------- */
+table.plain{width:100%;border-collapse:collapse;font-size:8.4pt;}
+table.plain th{
+  background:var(--navy);color:var(--gold-light);font-weight:500;font-size:7.6pt;letter-spacing:.12em;
+  padding:1.8mm 2.5mm;text-align:left;
+}
+table.plain td{
+  padding:1.9mm 2.5mm;border-bottom:1px solid var(--rule-soft);color:var(--ink-2);line-height:1.65;vertical-align:top;
+}
+table.plain tr:nth-child(even) td{background:rgba(22,35,58,.022);}
+table.plain td b{color:var(--navy);}
+table.plain td.tc{text-align:center;}
+.nowrap{white-space:nowrap;}
+
+/* ---------- SAMPLE 表示 ---------- */
+/* 見本であることを、資料のどこを見ても分かる状態にしておくための表示 */
+.cover-badge{
+  position:absolute;
+  top:9mm;right:9mm;
+  transform:translate(-6mm,6mm);
+  border:1px solid rgba(200,165,90,.75);
+  color:var(--gold-light);
+  font-family:var(--en);
+  font-size:9.5pt;font-weight:600;letter-spacing:.34em;
+  padding:1.8mm 4mm 1.8mm 4.34mm;
+  background:rgba(200,165,90,.08);
+  z-index:3;
+}
+.r-sample{
+  font-family:var(--en);
+  font-size:8.5pt;font-weight:600;letter-spacing:.28em;
+  color:var(--gold-deep);
+  border:1px solid rgba(200,165,90,.55);
+  padding:.3mm 1.8mm .3mm 2.1mm;
+  margin-right:3mm;
+}
+.cover-note{
+  margin-top:5mm;
+  max-width:120mm;
+  padding-left:3.5mm;
+  border-left:1.5px solid rgba(200,165,90,.5);
+  font-size:7.8pt;line-height:1.75;letter-spacing:.03em;
+  color:rgba(243,239,230,.58);
+}
+.cover-note strong{color:var(--gold-light);font-weight:500;}
+
+/* 見本版は注記が1ブロック増えるぶん、上側の余白を詰めて表紙内に収める */
+.cover-badge ~ .cover-inner .cover-eyebrow{margin-top:11mm;}
+.cover-badge ~ .cover-inner .cover-name{margin-top:8mm;}
+.cover-badge ~ .cover-inner .cover-contents{margin-top:5mm;}
+
+/* ---------- 配点比重バー ---------- */
+.bars{display:flex;flex-direction:column;gap:2.1mm;}
+.bar-row{display:flex;align-items:center;gap:3mm;}
+.bar-l{flex:0 0 33mm;min-width:0;}
+.bar-l b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;line-height:1.3;display:block;}
+.bar-l span{display:block;font-size:7.1pt;color:var(--ink-3);line-height:1.35;}
+.bar-t{flex:1;height:9px;background:var(--paper);position:relative;border-radius:1px;}
+.bar-f{position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,#4a5b78,var(--navy));}
+.bar-row.is-key .bar-f{background:linear-gradient(90deg,var(--gold),var(--gold-deep));}
+.bar-row.is-mute .bar-f{background:linear-gradient(90deg,#c2c8d1,#a8afba);}
+.bar-v{flex:0 0 19mm;text-align:right;font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-v i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.bar-p{flex:0 0 16mm;text-align:right;font-family:var(--en);font-size:11.5pt;font-weight:600;color:var(--ink-2);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-row.is-key .bar-p,.bar-row.is-key .bar-v{color:var(--gold-deep);}
+.bar-p i{font-style:normal;font-family:var(--sans);font-size:7.2pt;color:var(--ink-3);margin-left:1px;}
+
+/* ---------- 例題（英文＋設問＋選択肢） ---------- */
+.exam-passage{
+  background:#fff;border:1px solid var(--rule);border-left:2.5px solid var(--gold);
+  padding:3.4mm 4.5mm;font-size:9.4pt;line-height:1.95;color:var(--ink);letter-spacing:.004em;
+}
+.exam-q{
+  margin-top:3mm;font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:2.5mm;
+}
+.exam-q em{font-style:normal;font-family:var(--en);font-size:8.4pt;letter-spacing:.18em;color:var(--gold-deep);}
+.exam-choices{margin-top:2.4mm;display:flex;flex-direction:column;gap:1.5mm;}
+.exam-choice{
+  display:flex;gap:2.8mm;align-items:flex-start;
+  padding:2.1mm 3mm;background:var(--ivory);border:1px solid var(--rule-soft);
+}
+.exam-choice.is-ok{border-color:rgba(200,165,90,.6);background:#fdf8ec;}
+.ec-k{
+  flex:0 0 auto;width:5mm;height:5mm;display:flex;align-items:center;justify-content:center;
+  font-family:var(--en);font-size:9.5pt;font-weight:600;line-height:1;
+  border:1px solid var(--ink-3);color:var(--ink-2);background:#fff;
+}
+.exam-choice.is-ok .ec-k{background:var(--gold);border-color:var(--gold);color:#fff;}
+.ec-b{flex:1;min-width:0;}
+.ec-t{font-size:8.2pt;line-height:1.65;color:var(--ink-2);}
+.ec-w{font-size:7.7pt;line-height:1.6;margin-top:.8mm;color:var(--ink-3);}
+.ec-w b{font-weight:700;color:var(--bad);margin-right:1mm;}
+.exam-choice.is-ok .ec-w b{color:var(--good);}
+
+/* ---------- プロセス帯（面談〜運用の流れ） ---------- */
+.flow{display:flex;align-items:stretch;gap:0;}
+.flow-item{
+  flex:1;min-width:0;
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-right:0;
+  padding:3.4mm 3mm 3.6mm;
+  position:relative;
+}
+.flow-item:last-child{border-right:1px solid var(--rule);}
+.flow-item.is-key{background:#fdf8ec;border-color:rgba(200,165,90,.5);}
+.flow-item + .flow-item::before{
+  content:"";position:absolute;left:-3.2px;top:50%;
+  width:6px;height:6px;margin-top:-3px;
+  border-top:1.4px solid var(--gold);border-right:1.4px solid var(--gold);
+  transform:rotate(45deg);
+  background:var(--cream);
+  z-index:2;
+}
+.flow-no{
+  font-family:var(--en);font-size:13pt;font-weight:600;color:var(--gold);line-height:1;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+.flow-t{
+  font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  margin-top:1.6mm;line-height:1.45;
+}
+.flow-d{font-size:7.6pt;line-height:1.65;color:var(--ink-2);margin-top:1.2mm;}
+
+/* ---------- 問い合わせ導線 ---------- */
+.cta{
+  background:
+    radial-gradient(120% 140% at 12% 0%, #2b3f60 0%, rgba(43,63,96,0) 60%),
+    linear-gradient(160deg,#16233a 0%,#0c1424 100%);
+  border:1px solid rgba(200,165,90,.35);
+  padding:5mm 6mm;
+  display:flex;align-items:center;justify-content:space-between;gap:6mm;
+}
+.cta-l{min-width:0;}
+.cta-t{
+  font-family:var(--mincho);font-size:12pt;font-weight:600;letter-spacing:.06em;
+  color:var(--gold-light);margin-bottom:1.6mm;
+}
+.cta-b{font-size:8.6pt;line-height:1.8;color:rgba(243,239,230,.82);}
+.cta-b strong{color:#fff;}
+.cta-r{flex:0 0 auto;text-align:right;border-left:1px solid rgba(200,165,90,.28);padding-left:6mm;}
+.cta-r .cr-l{font-size:7.2pt;letter-spacing:.2em;color:rgba(230,211,166,.7);}
+.cta-r .cr-v{
+  font-family:var(--en);font-size:14pt;font-weight:600;color:#fff;line-height:1.35;
+  letter-spacing:.04em;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+
+/* ---------- メモ欄（手書き用） ---------- */
+.memo{
+  border:1px solid var(--rule);
+  background:var(--ivory);
+  padding:3.5mm 5mm 4mm;
+}
+.memo .mm-t{
+  font-family:var(--mincho);font-size:10pt;font-weight:600;color:var(--navy);
+  letter-spacing:.06em;margin-bottom:2.5mm;display:flex;align-items:center;gap:2.5mm;
+}
+.memo .mm-t::before{content:"";width:3px;height:13px;background:var(--gold);flex:0 0 auto;}
+.memo .mm-line{border-bottom:1px solid var(--rule-soft);height:7.5mm;}
+.memo .mm-line:last-child{border-bottom-color:var(--rule);}
+
+</style>
+</head>
+<body>
+<section class="page cover">
+    <div class="cover-frame"></div>
+    
+    <div class="cover-inner">
+      <div class="cover-brand">
+        <div class="cb-en">THINK<i>I</i>NG</div>
+        <div class="cb-jp">シンキング</div>
+      </div>
+      <div class="cover-eyebrow">2027 ENTRANCE EXAM STRATEGY</div>
+      <h1 class="cover-title">個別戦略シート<em>立教大学 文学部 へ、そして確実な進学へ</em></h1>
+      <p class="cover-sub">私立文系3科目。<strong>同じ大学でも、日程を変えれば受ける科目まで変わる。</strong><br>すでに持っている英検2級を、どの方式でどう使うか。この1枚が、これから本番までの判断基準になる。</p>
+      
+      <div class="cover-name">
+        <div class="cn-label">生徒</div>
+        <div class="cn-value">須田 あや音</div>
+        <div class="cn-meta">高校3年／私立文系／英語・国語・日本史</div>
+      </div>
+      <div class="cover-contents">
+        <div class="cc-label">CONTENTS</div>
+        <div class="cc-item"><span class="cc-no">01</span><span>ゴールの確認と、現在地の捉え方</span></div><div class="cc-item"><span class="cc-no">02</span><span>立教は、日程ごとに中身が違う</span></div><div class="cc-item"><span class="cc-no">03</span><span>英語の試験がない日程が、4つある</span></div><div class="cc-item"><span class="cc-no">04</span><span>5校の方式を、全部並べる</span></div><div class="cc-item"><span class="cc-no">05</span><span>英検2級 CSE2101 を、どう使うか</span></div><div class="cc-item"><span class="cc-no">06</span><span>英語には、3つのルートがある</span></div><div class="cc-item"><span class="cc-no">07</span><span>「言い換えを処理できる」とは、どういう状態か</span></div><div class="cc-item"><span class="cc-no">08</span><span>国語 ― 漢文は、実質やらなくていい</span></div><div class="cc-item"><span class="cc-no">09</span><span>日本史 ― 正誤問題で突破する</span></div><div class="cc-item"><span class="cc-no">10</span><span>受験校・方式の設計と、判断のタイミング</span></div><div class="cc-item"><span class="cc-no">11</span><span>環境ルールと、数字で判断する運用</span></div><div class="cc-item"><span class="cc-no">12</span><span>本番までのロードマップ</span></div><div class="cc-item"><span class="cc-no">13</span><span>最初の1ヶ月でやり切ること</span></div>
+      </div>
+      <div class="cover-kpis"><div class="cover-kpi">
+            <div class="k-label">入試本番まで</div>
+            <div class="k-value">106<small>日</small></div>
+            <div class="k-note">2月上旬／立教は 2/6〜2/13</div>
+          </div><div class="cover-kpi">
+            <div class="k-label">立教で受けられる日程</div>
+            <div class="k-value">5<small>/ 6</small></div>
+            <div class="k-note">日本史選択の場合（2/6のみ不可）</div>
+          </div><div class="cover-kpi is-gap">
+            <div class="k-label">英語の試験がない日程</div>
+            <div class="k-value">4<small>日程</small></div>
+            <div class="k-note">外検・共テ英語で200点を事前確定</div>
+          </div></div>
+      <div class="cover-foot">
+        <span>2026年10月18日／THINKING 進路戦略</span>
+        <span>CONFIDENTIAL — 須田 あや音 様専用</span>
+      </div>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">01 ゴールと現在地</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">01</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">ゴールの確認と、現在地の捉え方</h2>
+                <div class="sec-en">Target &amp; Starting Point</div>
+              </div>
+            </div>
+      <p class="sec-lead">志望校は5校、すべて<strong>私立文系3科目型（英語・国語・日本史）</strong>。やる科目は決まっている。<strong>決めるべきは「どの方式・どの日程で受けるか」と「英検2級をどこで使うか」。</strong></p>
+<h3 class="blk">志望校 ― 現在の候補</h3>
+<div class="wish"><div class="wish-row">
+          <div class="wish-rank">1</div>
+          <div class="wish-main">
+            <div class="wish-univ">立教大学</div>
+            <div class="wish-fac">文学部 文芸・思想専修</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-core">第一志望</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">2</div>
+          <div class="wish-main">
+            <div class="wish-univ">明治学院大学</div>
+            <div class="wish-fac">文学部 芸術学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">併願</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">3</div>
+          <div class="wish-main">
+            <div class="wish-univ">専修大学</div>
+            <div class="wish-fac">国際コミュニケーション学部 異文化コミュニケーション学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">併願</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">4</div>
+          <div class="wish-main">
+            <div class="wish-univ">駒澤大学</div>
+            <div class="wish-fac">文学部</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">併願</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">5</div>
+          <div class="wish-main">
+            <div class="wish-univ">大正大学</div>
+            <div class="wish-fac">表現学部 表現学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-ok">滑り止め</span></div>
+        </div></div>
+<div style="height:3mm"></div>
+<div class="callout">
+      <div class="co-t">すでに持っている武器 ― 英検2級・CSEスコア2101</div>
+      <div class="co-b"><strong>英検2級に合格済み、CSEスコアは2101。</strong>これは<strong>5校のうち4校で使える。</strong>とくに立教では、<strong>英語の試験そのものを受けなくてよくなる日程がある。</strong><br>ただし<strong>得点換算のされ方は大学ごとにまったく違う。</strong>同じスコアでも満点換算になる大学もあれば、8割換算にとどまる大学もある。<strong>まず換算率を確認する。</strong>（→ <strong>05ページ</strong>）</div>
+    </div>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">いま進めていること</div>
+      <div class="co-b"><strong>英語</strong> ― 長文読解に入る前の<strong>英文解釈・言い換えのトレーニング</strong>を、演習シートで確認している段階。<br><strong>日本史</strong> ― 点としての知識では私立を突破できないので、<strong>正誤問題に特化した演習</strong>と、落とした問題の仕分けを進めている。<br><strong>受験校</strong> ― <strong>「滑り止めが本当に滑り止まるのか」</strong>を過去問の点数で見ていく流れを進めている。<br><strong>共通しているのは、「基本がどこまでできて、どこからできていないのか」を把握する段階にあるということ。</strong>この把握を最速で終わらせる。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>須田 あや音 様｜初回戦略シート</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">01</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">02 立教の6日程</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">02</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">立教は、日程ごとに中身が違う</h2>
+                <div class="sec-en">Six Different Exams</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">立教大学 文学部の一般入試は<strong>6日程</strong>。どれも満点は550点で同じだが、<strong>受ける科目も、選べる地歴も、日程によって違う。</strong>ここを把握しないまま出願すると、受けられない日程に出願してしまう。</p>
+<table class="plain">
+      <thead><tr><th style="width:9%">日程</th><th style="width:9%">教科</th><th style="width:17%">国語 200</th><th style="width:17%">英語 200</th><th style="width:28%">地歴 150</th><th style="width:20%">日本史で受けられるか</th></tr></thead>
+      <tbody><tr><td><strong>2/6</strong></td><td>2教科</td><td>漢文を除く</td><td><strong>外検 or 共テ</strong></td><td><strong>「歴史総合、世界史探究」のみ</strong>（or 数学）</td><td><strong>✕ 不可</strong></td></tr><tr><td><strong>2/8</strong></td><td>2教科</td><td>漢文を除く</td><td><strong>外検 or 共テ</strong></td><td>地理・日本史・世界史から1</td><td><strong>○</strong></td></tr><tr><td><strong>2/9</strong></td><td>2教科</td><td>漢文を除く</td><td><strong>外検 or 共テ</strong></td><td><strong>「歴史総合、日本史探究」</strong>（or 数学）</td><td><strong>○</strong></td></tr><tr><td><strong>2/11</strong></td><td><strong>3教科</strong></td><td><span style="color:var(--ink-3)">漢文除外の記載なし</span></td><td><strong>個別試験</strong></td><td>日本史・世界史から1</td><td><strong>○</strong></td></tr><tr><td><strong>2/12</strong></td><td>2教科</td><td>漢文を除く</td><td><strong>外検 or 共テ</strong></td><td>日本史・世界史から1</td><td><strong>○</strong></td></tr><tr><td><strong>2/13</strong></td><td>2教科</td><td>漢文を除く</td><td><strong>外検 or 共テ</strong></td><td>日本史・世界史から1</td><td><strong>○</strong></td></tr></tbody>
+    </table>
+<div style="height:3mm"></div>
+<div class="kpirow"><div class="kpi">
+          <div class="k-l">各日程の満点</div>
+          <div class="k-v">550<small>点</small></div>
+          <div class="k-n">6日程すべて共通</div>
+        </div><div class="kpi">
+          <div class="k-l">国語の比重</div>
+          <div class="k-v">36.4<small>%</small></div>
+          <div class="k-n">200 / 550</div>
+        </div><div class="kpi">
+          <div class="k-l">英語の比重</div>
+          <div class="k-v">36.4<small>%</small></div>
+          <div class="k-n">200 / 550</div>
+        </div><div class="kpi">
+          <div class="k-l">日本史の比重</div>
+          <div class="k-v">27.3<small>%</small></div>
+          <div class="k-n">150 / 550</div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">6日程のうち、どう選ぶか</h3>
+<ul class="bul"><li><strong>2/6だけが出願対象から外れる。</strong>地歴の指定が「歴史総合、世界史探究」のみ（他は数学）。<strong>日本史選択なら、対象外はこの1日程だけ。</strong></li><li><strong>2/9は「歴史総合、日本史探究」の指定。</strong>世界史や地理では受けられない日程で、<strong>日本史選択にはむしろ有利に働く。</strong></li><li><strong>2教科日程（2/8・2/9・2/12・2/13）は、当日やることが同じ。</strong>国語と日本史の2科目だけ。<strong>つまり1種類の対策で4日程に出願できる。</strong>（→ <strong>03ページ</strong>）</li><li><strong>2/11だけは英語の個別試験がある。</strong>別ファイルの問題分析を見て、<strong>受けるかどうかを決める。</strong>受けるなら英語の当日対策が追加で必要になる。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">まず押さえるべき2点</div>
+      <div class="co-b"><strong>① 2/6だけは日本史で受けられない。</strong>地歴の指定が「歴史総合、世界史探究」のみ（他は数学）。<strong>日本史選択なら、この日程は出願対象から外れる。</strong><br><strong>② 2/11だけが、英語の個別試験を課す日程。</strong>他の5日程は<strong>外検または共通テストの英語を利用する。</strong>つまり<strong>2/11は、他の日程とまったく性格が違う。</strong><br><strong>2/11の英語の問題形式については、別ファイルで分析資料を共有している。そちらを参照すること。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>立教大学 文学部（史学科以外）</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">02</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">03 英語を受けない日程</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">03</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">英語の試験がない日程が、4つある</h2>
+                <div class="sec-en">Four Days Without English</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">日本史で受けられる5日程のうち、<strong>2/8・2/9・2/12・2/13の4日程は英語の個別試験がない。</strong>英語200点は外検または共通テストで事前に確定する。<strong>つまり当日やるのは、国語と日本史だけ。</strong></p>
+<div class="kpirow"><div class="kpi good">
+          <div class="k-l">受けられる日程</div>
+          <div class="k-v">5<small>/ 6</small></div>
+          <div class="k-n">2/6のみ不可</div>
+        </div><div class="kpi acc">
+          <div class="k-l">英語の試験がない日程</div>
+          <div class="k-v">4<small>日程</small></div>
+          <div class="k-n">2/8・2/9・2/12・2/13</div>
+        </div><div class="kpi acc">
+          <div class="k-l">当日勝負の配点</div>
+          <div class="k-v">350<small>点</small></div>
+          <div class="k-n">国語200 ＋ 日本史150</div>
+        </div><div class="kpi">
+          <div class="k-l">当日勝負の比率</div>
+          <div class="k-v">63.6<small>%</small></div>
+          <div class="k-n">350 / 550</div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">日程タイプで、当日やることが変わる</h3>
+<table class="plain">
+      <thead><tr><th style="width:24%">日程</th><th style="width:26%">当日受ける科目</th><th style="width:22%">当日の配点</th><th style="width:28%">事前に確定している配点</th></tr></thead>
+      <tbody><tr><td><strong>2/8・2/9・2/12・2/13</strong></td><td><strong>国語 ＋ 日本史</strong></td><td><strong>350点（63.6%）</strong></td><td><strong>英語200点（36.4%）</strong><br>外検 or 共テ英語</td></tr><tr><td><strong>2/11</strong></td><td>国語 ＋ 英語 ＋ 日本史</td><td>550点（100%）</td><td>—</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">ここから決まること</h3>
+<ul class="bul"><li><strong>4日程では、国語と日本史が合否のすべて。</strong>550点のうち350点＝<strong>63.6%</strong>がこの2科目。<strong>立教を本気で狙うなら、国語と日本史の仕上がりがそのまま結果になる。</strong></li><li><strong>英語200点は、試験当日より前に決まっている。</strong>外検のスコアか共通テストの英語。<strong>つまり英語の「準備」は、10月〜12月の段階で終わらせる種類のもの。</strong>直前期に英語で挽回する余地はない。</li><li><strong>2/11だけは別物として準備する。</strong>英語の個別試験があるぶん、対策の種類が変わる。<strong>別ファイルの問題分析を見て、受けるかどうかも含めて判断する。</strong></li></ul>
+<div style="height:4mm"></div>
+<h3 class="blk">4日程に出願すると、何が起きるか</h3>
+<ul class="bul"><li><strong>対策は1種類でいい。</strong>当日やるのが国語と日本史だけなので、<strong>4日程に出願しても準備の中身は同じ。</strong>日程を増やすほど、1回あたりの対策コストは下がっていく。</li><li><strong>ただし体力と受験料は増える。</strong>2/8〜2/13の約1週間に集中するため、<strong>他校の日程と重ならないかを先に確認する。</strong></li><li><strong>立教に回数を賭けるか、他校に分散するか。</strong>これは過去問の得点次第。<strong>立教の得点率が合格ラインに近いほど、日程を増やす価値が上がる。</strong></li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">同じ大学に、最大5回挑戦できる</div>
+      <div class="co-b">立教文学部は日程が分かれているため、<strong>日本史選択でも最大5日程に出願できる。</strong>これは第一志望に対して<strong>5回のチャンスがある</strong>ということ。<br>ただし<strong>受験料も体力も有限。</strong>何日程に出願するかは、<strong>過去問の得点と費用の両面から決める。</strong>（→ <strong>10ページ</strong>）</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>立教の構造が持つ意味</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">03</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">04 全方式の配点</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">04</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">5校の方式を、全部並べる</h2>
+                <div class="sec-en">Every Format</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">私立は<strong>同じ大学・同じ学部でも、方式によって満点も科目数も配点も違う。</strong>判明しているものを1枚に並べる。ここが受験校設計の出発点になる。</p>
+<table class="plain">
+      <thead><tr><th style="width:30%">大学・方式</th><th style="width:7%">教科</th><th style="width:8%">満点</th><th style="width:14%">国語</th><th style="width:15%">英語</th><th style="width:14%">日本史</th><th style="width:12%">外検</th></tr></thead>
+      <tbody><tr><td><strong>立教</strong> 文／2教科日程（2/8・9・12・13）</td><td><strong>2</strong></td><td>550</td><td>200 36.4%</td><td>200 36.4%</td><td>150 27.3%</td><td><strong>利用</strong></td></tr><tr><td><strong>立教</strong> 文／2/11</td><td>3</td><td>550</td><td>200 36.4%</td><td>200 36.4%</td><td>150 27.3%</td><td>—</td></tr><tr><td><strong>明治学院</strong> 文・芸術／A日程3教科</td><td>3</td><td>400</td><td><strong>150</strong> 37.5%</td><td><strong>150</strong> 37.5%</td><td>100 25.0%</td><td>—</td></tr><tr><td><strong>明治学院</strong> 文・芸術／全学部3教科</td><td>3</td><td>300</td><td>100 33.3%</td><td>100 33.3%</td><td>100 33.3%</td><td>—</td></tr><tr><td><strong>専修</strong> 異文化／前期学部個別C方式</td><td>3</td><td>350</td><td>100 28.6%</td><td><strong>150</strong> 42.9%</td><td>100 28.6%</td><td>—</td></tr><tr><td><strong>専修</strong> 国際コミュ／前期全学部・個別A</td><td>3</td><td>300</td><td>100 33.3%</td><td>100 33.3%</td><td>100 33.3%</td><td><strong>換算</strong></td></tr><tr><td><strong>専修</strong> 国際コミュ／全国入試</td><td>3</td><td>300</td><td>100 33.3%</td><td>100 33.3%</td><td>100 33.3%</td><td>—</td></tr><tr><td><strong>専修</strong> 異文化／前期3科目 <span style="color:var(--ink-3)">共テ利用</span></td><td>3</td><td>450</td><td>150 <span style="color:var(--ink-3)">現代文のみ</span></td><td>200 <span style="color:var(--ink-3)">R100+L100</span></td><td>100</td><td><strong>個別なし</strong></td></tr><tr><td><strong>駒澤</strong> 文／全学部統一</td><td>3</td><td>300</td><td>100 33.3%</td><td>100 33.3%</td><td>100 33.3%</td><td><strong>換算</strong></td></tr><tr><td><strong>駒澤</strong> 文／T方式 2月・3月</td><td>3</td><td>300</td><td>100 33.3%</td><td>100 33.3%</td><td>100 33.3%</td><td>—</td></tr><tr><td><strong>大正</strong> 全学部／3科目文系型</td><td>3</td><td>300</td><td>100 33.3%</td><td>100 33.3%</td><td>100 33.3%</td><td><strong>換算</strong></td></tr><tr><td><strong>大正</strong> 表現／<strong>2科目文系型</strong></td><td><strong>2</strong></td><td>200</td><td><strong>100</strong> 50.0%</td><td><strong>100</strong> 50.0%</td><td><strong>不要</strong></td><td><strong>換算</strong></td></tr><tr><td><strong>大正</strong> 全学部／前期4科目文系型</td><td>4</td><td>400</td><td>100 25.0%</td><td>100 25.0%</td><td>100 25.0%</td><td><strong>換算</strong>／数学100必須</td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">この表から見えること</div>
+      <div class="co-b"><strong>① 英語はすべての方式で最大配点（または同点最大）。</strong>例外は1つもない。<strong>英語に時間を置くことに迷う理由はない。</strong><br><strong>② 外検が使えるのは5校中4校。</strong>明治学院のこの2方式だけは記載がなく、<strong>英語は当日受験</strong>になる。<br><strong>③ 大正の表現／2科目型は、国語と英語だけで200点。日本史が要らない。</strong><strong>しかも外検換算あり。</strong>最も負担が軽く、<strong>最後の砦として機能する。</strong><br><strong>④ 専修は学科・方式で配点が変わる。</strong>異文化コミュニケーション学科のC方式だけ英語150点（42.9%）。<strong>学科選択も戦略になる。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>5大学・判明している方式</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">04</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">05 英検2級の使い方</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">05</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">英検2級 CSE2101 を、どう使うか</h2>
+                <div class="sec-en">Using The Certificate</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm"><strong>英検2級・CSEスコア2101</strong>を持っている。これは<strong>5校中4校で使える。</strong>ただし<strong>扱われ方が大学によってまったく違う。</strong>「英語の試験が免除される」のか「点数に換算される」のかで、意味がまるで変わる。</p>
+<table class="plain">
+      <thead><tr><th style="width:34%">大学・方式</th><th style="width:26%">外検の扱い</th><th style="width:40%">効き方</th></tr></thead>
+      <tbody><tr><td><strong>立教</strong> 文／2教科日程（4日程）</td><td><strong>外検 or 共テ英語を利用（200点）</strong></td><td><strong>英語の試験そのものを受けない。</strong>200点が事前に確定する</td></tr><tr><td><strong>専修</strong> 前期全学部・前期学部個別A</td><td>[外検] 得点換算</td><td>英語100点に換算される</td></tr><tr><td><strong>駒澤</strong> 文／全学部統一</td><td>[外検] 得点換算</td><td>英語100点に換算される</td></tr><tr><td><strong>大正</strong> 全方式</td><td>[外検] 得点換算</td><td>英語100点に換算される</td></tr><tr><td><strong>明治学院</strong> 文・芸術（両方式）</td><td><span style="color:var(--ink-3)">記載なし</span></td><td><strong>英語は当日受験</strong></td></tr></tbody>
+    </table>
+<div style="height:3mm"></div>
+<div class="kpirow"><div class="kpi">
+          <div class="k-l">CSEスコア</div>
+          <div class="k-v">2101</div>
+          <div class="k-n">英検2級 合格</div>
+        </div><div class="kpi">
+          <div class="k-l">CEFR区分</div>
+          <div class="k-v">B1</div>
+          <div class="k-n">B1 = CSE 1950〜2299</div>
+        </div><div class="kpi acc">
+          <div class="k-l">B2（準1級相当）まで</div>
+          <div class="k-v">+199</div>
+          <div class="k-n">CSE 2300 から B2</div>
+        </div><div class="kpi good">
+          <div class="k-l">外検が使える学校</div>
+          <div class="k-v">4<small>校</small></div>
+          <div class="k-n">5校中／明治学院を除く</div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">スコアを上げるという選択肢もある</h3>
+<ul class="bul"><li><strong>CSE2101はCEFR B1。B2（準1級相当）は CSE2300 から ―― あと199点。</strong>多くの大学ではCEFRのレベルが上がると換算点も上がる。<strong>上げられるなら、英語の持ち点が丸ごと変わる。</strong></li><li><strong>ただし、本番までに受験機会があるか／出願に間に合うかを必ず確認する。</strong>「いつ以降に受験したスコアか」を条件にしている大学もある。<strong>間に合わないなら、いまのスコアで戦う前提で設計を固める。</strong></li><li><strong>間に合わない場合の保険が、共通テストの英語。</strong>立教は「外検 <strong>または</strong> 共テ英語」。<strong>共テを受けておけば、換算が低かったときの代替になりうる。</strong>（→ <strong>06ページ</strong>）</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">最優先の確認 ― 「2101点が何点に換算されるか」</div>
+      <div class="co-b"><strong>同じ英検2級でも、大学によって換算率はまったく違う。</strong>満点扱いの大学もあれば、CEFRのレベルで刻んで8割程度にとどまる大学もある。<br><strong>立教の4日程は、この換算点がそのまま英語200点になる。</strong>つまり<strong>換算率を知らないまま出願するのは、自分の持ち点を知らずに戦うのと同じ。</strong><br><strong>各大学の換算表を必ず確認して、2101点が何点になるのかを数字で押さえる。</strong>これが10月中の最優先タスク。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>CSEスコア 2101 を、どこで使うか</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">05</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">06 英語の3ルート</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">06</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">英語には、3つのルートがある</h2>
+                <div class="sec-en">Three Routes</div>
+              </div>
+            </div>
+      <p class="sec-lead">英語はすべての方式で最大配点。<strong>ただし「どう得点するか」のルートが3つある。</strong>どのルートで何点を取りにいくのかを、方式ごとに決めておく。</p>
+<div class="steps"><div class="step">
+          <div class="step-no">1</div>
+          <div class="step-txt">
+            <div class="step-t">ルート① 外部検定 ― すでに持っている持ち点</div>
+            <div class="step-d"><strong>英検2級 CSE2101。</strong>立教の4日程では<strong>英語の試験が免除</strong>され、専修・駒澤・大正では<strong>得点に換算</strong>される。<strong>まず換算率を確認して、持ち点を数字で確定させる。</strong>ここが確定すれば、英語にかける時間の量そのものが変わる。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">2</div>
+          <div class="step-txt">
+            <div class="step-t">ルート② 共通テストの英語 ― 保険として効く</div>
+            <div class="step-d">立教の5日程は<strong>「外検 または 共通テストの英語」</strong>を利用する。つまり<strong>共通テストの英語を受けておけば、外検の換算が低かった場合の代替になりうる。</strong>専修には共テ利用方式（個別試験なし）もある。<strong>共テを受けるかどうかは、早めに決める。</strong></div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">3</div>
+          <div class="step-txt">
+            <div class="step-t">ルート③ 個別試験 ― 当日の実力勝負</div>
+            <div class="step-d"><strong>立教2/11（200点）・明治学院の両方式（150点／100点）・専修C方式（150点）</strong>などは、当日の英語試験で勝負する。<strong>ここは解釈と読解の力がそのまま点になる。</strong>立教2/11の問題分析は<strong>別ファイルを参照</strong>。</div>
+          </div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">ルートごとに、何をいつまでにやるか</h3>
+<table class="plain">
+      <thead><tr><th style="width:20%">ルート</th><th style="width:36%">対象の方式</th><th style="width:28%">必要なこと</th><th style="width:16%">期限</th></tr></thead>
+      <tbody><tr><td><strong>① 外検</strong><br><span style="color:var(--ink-3)">CSE2101</span></td><td>立教 4日程／専修 前期全学部・個別A／駒澤 全学部統一／大正 全方式</td><td><strong>換算率の確認</strong>／出願時にスコア提出</td><td><strong>10月中</strong></td></tr><tr><td><strong>② 共テ英語</strong></td><td>立教 5日程（外検の代替）／専修 共テ利用</td><td>共通テストに出願して受験する</td><td><strong>出願期限</strong></td></tr><tr><td><strong>③ 個別試験</strong></td><td>立教2/11／明治学院 両方式／専修C方式・全国入試／駒澤T方式</td><td>当日の英語試験で得点する</td><td>本番まで継続</td></tr></tbody>
+    </table>
+<div style="height:3mm"></div>
+<ul class="bul tight"><li><strong>外検と共テ英語は、どちらか有利な方を使える可能性が高い。</strong>つまり<strong>共テ英語を受けておくこと自体が保険になる。</strong>ただし条件は大学ごとに違うので必ず確認する。</li><li><strong>個別試験が必要な方式を1つでも受けるなら、英語の当日対策は外せない。</strong>とくに<strong>明治学院は外検が使えない。</strong>ここを本気で受けるなら、英語の演習は最後まで継続する。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">ルートが決まれば、英語にかける時間が決まる</div>
+      <div class="co-b"><strong>外検の換算が高く、立教を2教科日程中心で受けるなら ――</strong> 英語の当日対策に割く時間は減らせる。その分を<strong>国語と日本史</strong>に寄せられる。<br><strong>逆に換算が低い、または明治学院・専修C方式を本命に置くなら ――</strong> 英語の個別試験対策が必須になる。<br><strong>どちらになるかは、換算率を確認するまで決められない。だから確認が最優先。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>外検・共通テスト・個別試験</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">06</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">07 英語の到達点</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">07</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">「言い換えを処理できる」とは、どういう状態か</h2>
+                <div class="sec-en">What Precision Reading Means</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">演習シートで確認している「解釈と言い換え」が<strong>できている状態</strong>を、具体的に定義しておく。下の5段階を全部言葉にできることが目標。</p>
+<ol class="num"><li><strong>文章の構造をちゃんと掴む</strong> ― 主語・動詞・修飾関係・並列を、正確に取れる。</li><li><strong>直訳をちゃんとできる状態にする</strong> ― 雰囲気ではなく、構造どおりに日本語にできる。</li><li><strong>咀嚼して「つまりどういうことか」理解できる</strong> ― 直訳をかみ砕いて、内容として説明できる。</li><li><strong>選択肢を分解して理解できる</strong> ― 選択肢の英文も、本文と同じ精度で読める。</li><li><strong>選択肢それぞれについて、なぜ答えか／なぜ不正解かを全て言語化できる</strong> ― ここまでで、ようやく「読めた」。</li></ol>
+<div style="height:4mm"></div>
+<h3 class="blk">到達点はこのレベル</h3>
+<div class="exam">
+      <div class="exam-passage">A stable society requires a set of laws that apply equally to both the rich and the poor, a respect for the rights of citizens of all religions and ethnic origins, and a strong desire to provide for the common welfare.</div>
+      <div class="exam-q"><em>Q</em><span>Which one is closest in meaning to the sentence above?</span></div>
+      <div class="exam-choices"><div class="exam-choice">
+            <div class="ec-k">A</div>
+            <div class="ec-b">
+              <div class="ec-t">A stable society applies its laws more strictly to the poor than to the rich, though it still protects the rights of all its citizens.</div>
+              <div class="ec-w"><b>✕</b>本文は laws that <strong>apply equally to both</strong> the rich and the poor。「貧しい人により厳しく適用する」は逆の内容。</div>
+            </div>
+          </div><div class="exam-choice">
+            <div class="ec-k">B</div>
+            <div class="ec-b">
+              <div class="ec-t">A society stays stable as long as the rich respect the poor and the two groups come to share one religion and one ethnic origin.</div>
+              <div class="ec-w"><b>✕</b>本文は <strong>all religions and ethnic origins</strong> の権利を尊重するという内容。「一つの宗教・民族を共有する」は正反対。</div>
+            </div>
+          </div><div class="exam-choice is-ok">
+            <div class="ec-k">C</div>
+            <div class="ec-b">
+              <div class="ec-t">For a society to be stable, it needs laws that treat the rich and the poor alike, respect for the rights of citizens of every religion and ethnic background, and a strong wish to serve the common good.</div>
+              <div class="ec-w"><b>○</b>requires に続く<strong>3つの並列（法の平等・権利の尊重・共通の福祉への意志）がすべて言い換えられている。</strong>これが「言い換えを処理する」ということ。</div>
+            </div>
+          </div><div class="exam-choice">
+            <div class="ec-k">D</div>
+            <div class="ec-b">
+              <div class="ec-t">What a stable society needs above all is a strong desire for wealth, shared equally by citizens of all religions and ethnic origins.</div>
+              <div class="ec-w"><b>✕</b>本文は desire to provide for the common <strong>welfare</strong>（共通の福祉）。<strong>wealth（富）</strong> への欲求ではない。1語のすり替え。</div>
+            </div>
+          </div></div>
+    </div>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">「正解できたか」ではなく「全選択肢を説明できたか」で判断する</div>
+      <div class="co-b">Cが正解だと分かるだけでは足りない。<strong>A・B・Dがなぜ違うのかを、本文のどの語句と食い違っているかまで言葉にできて、初めて「解けた」。</strong><br><strong>1題をここまで言語化するほうが、10題を「答え合わせ」で流すよりはるかに効く。</strong>残り106日だからこそ、1題の密度を上げる。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>解釈と言い換え</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">07</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">08 国語</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">08</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">国語 ― 漢文は、実質やらなくていい</h2>
+                <div class="sec-en">What Japanese Actually Asks</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm"><strong>立教では国語が200点＝36.4%。</strong>英語と並ぶ最大配点で、しかも<strong>4日程では当日勝負の主役。</strong>その国語の出題範囲を5校分確認すると、<strong>漢文はほぼ必要ない。</strong></p>
+<table class="plain">
+      <thead><tr><th style="width:40%">大学・方式</th><th style="width:14%">現代文</th><th style="width:20%">古文</th><th style="width:26%">漢文</th></tr></thead>
+      <tbody><tr><td>立教 文／2/6・8・9・12・13</td><td><strong>○</strong></td><td>○（古典探究）</td><td><strong>漢文を除く</strong></td></tr><tr><td>立教 文／2/11</td><td><strong>○</strong></td><td>○（古典探究）</td><td><strong><span style="color:var(--ink-3)">除外の記載なし・要確認</span></strong></td></tr><tr><td>明治学院 文・芸術（両方式）</td><td><strong>○</strong></td><td>○（古典探究）</td><td><strong>漢文を除く</strong></td></tr><tr><td>専修 国際コミュ（個別試験）</td><td><strong>○</strong></td><td>○（言語文化）</td><td><strong>漢文を除く</strong></td></tr><tr><td>専修 異文化／共テ利用</td><td><strong>○ のみ</strong></td><td><strong>不要</strong></td><td><strong>不要</strong></td></tr><tr><td>駒澤 文（全方式）</td><td><strong>○</strong></td><td>○（言語文化）</td><td><strong>漢文を除く</strong></td></tr><tr><td>大正（全方式）</td><td><strong>○</strong></td><td>○（言語文化）</td><td><strong>漢文を除く</strong></td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">ここから決まること</h3>
+<ul class="bul"><li><strong>漢文に時間を使わない。</strong>立教2/11を除き、すべての方式で除外されるか出題されない。<strong>浮いた時間は現代文と古文に全部まわす。</strong></li><li><strong>古文は必要。</strong>専修の共テ利用を除くすべてで出る。<strong>立教は「古典探究」まで範囲に入るので、ここで手を抜けない。</strong></li><li><strong>立教2/11だけ、漢文除外の記載がない。</strong>この日程を受けるなら、<strong>漢文が出るかどうかを必ず確認する。</strong>出るなら対策範囲が変わる。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">国語は、立教の「当日の主役」</div>
+      <div class="co-b">4日程では<strong>当日350点のうち200点が国語。当日勝負の57.1%</strong>を国語が占める。<br>英語が外検で確定しているぶん、<strong>国語の1点がそのまま合否を動かす。</strong><br><strong>現代文と古文に、国語の時間を全部まわす。</strong>漢文を切る判断が、そのまま得点になる。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>漢文に時間を使わないという判断</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">08</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">09 日本史</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">09</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">日本史 ― 正誤問題で突破する</h2>
+                <div class="sec-en">Japanese History</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">日本史の比重は方式により<strong>25.0%〜33.3%</strong>。立教では150点＝27.3%だが、<strong>英語が外検で確定している日程では、当日350点のうち150点＝42.9%</strong>を占める。併願校では英語・国語と同じ100点。</p>
+<div class="kpirow"><div class="kpi acc">
+          <div class="k-l">立教 当日勝負での比重</div>
+          <div class="k-v">42.9<small>%</small></div>
+          <div class="k-n">150 / 350（2教科日程）</div>
+        </div><div class="kpi good">
+          <div class="k-l">明治学院 全学部・駒澤・専修</div>
+          <div class="k-v">33.3<small>%</small></div>
+          <div class="k-n">英語・国語と同配点</div>
+        </div><div class="kpi">
+          <div class="k-l">立教（550点満点ベース）</div>
+          <div class="k-v">27.3<small>%</small></div>
+          <div class="k-n">150 / 550</div>
+        </div><div class="kpi">
+          <div class="k-l">明治学院 A日程</div>
+          <div class="k-v">25.0<small>%</small></div>
+          <div class="k-n">100 / 400</div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">いま進めている「正誤特化」の回し方</h3>
+<div class="steps"><div class="step">
+          <div class="step-no">1</div>
+          <div class="step-txt">
+            <div class="step-t">まず正答率を測る</div>
+            <div class="step-d">現状の正誤の正答率を数字で出す。<strong>8割が目安。</strong>ここが出ていないと、知識が足りないのか判断が甘いのかが分からない。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">2</div>
+          <div class="step-txt">
+            <div class="step-t">落とした問題を「知識」か「判断」かで仕分ける</div>
+            <div class="step-d">正誤を落とす原因は2つしかない。<strong>そもそも知らなかったのか、知っていたのに判断できなかったのか。</strong>毎回どちらかを判定して、<strong>該当する側だけを埋める。</strong>この仕分けをやらないと同じ失点を繰り返す。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">3</div>
+          <div class="step-txt">
+            <div class="step-t">同じ範囲を、間を空けて2回目を回す</div>
+            <div class="step-d">1回目で埋めた知識が定着しているかを確認する。<strong>2回目で落としたものが、本当の弱点。</strong>ここだけを集中的に潰す。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">4</div>
+          <div class="step-txt">
+            <div class="step-t">過去問で、出題のされ方を確認する</div>
+            <div class="step-d">大学ごとに正誤の作り方が違う。<strong>どういう引っかけ方をされるのかを過去問で掴んで、そこに合わせて知識を整える。</strong>立教は150点と重いので、ここは丁寧に。</div>
+          </div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">どの大学を基準に仕上げるか</h3>
+<ul class="bul tight"><li><strong>立教の150点が最も重い。</strong>しかも2教科日程では当日の42.9%。<strong>立教の過去問で出題のされ方を掴むことを基準にする。</strong></li><li><strong>併願校（明治学院 全学部・駒澤・専修）では英語・国語と同じ100点。</strong>均等配点なので、<strong>日本史が仕上がるほど併願の確実性がそのまま上がる。</strong></li><li><strong>大正の2科目型だけは日本史が不要。</strong>国語と英語だけ。<strong>日本史が間に合わなくても出せる方式がある</strong>ことは、保険として覚えておく。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">日本史は「裏切らない科目」</div>
+      <div class="co-b">英語は、やっても伸びを感じにくい時期がある。現代文は、やっても点が安定しないことがある。<br><strong>日本史は違う。やった分だけ返ってくる。</strong>範囲は決まっていて、覚えて、正誤で判断できるようにして、問題で確認する。<strong>この3工程を繰り返すだけで確実に上がる。</strong><br>そして<strong>立教の2教科日程では、当日の42.9%を占める。</strong>ここを固めることが、そのまま第一志望への距離を縮める。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>正誤問題で突破する</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">09</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">10 受験校と方式の設計</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">10</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">受験校・方式の設計と、判断のタイミング</h2>
+                <div class="sec-en">Where To Apply</div>
+              </div>
+            </div>
+      <p class="sec-lead"><strong>上を狙うことと、確実に進学することは両立できる。</strong>ただしそれには、受験校を層で組み立てて、<strong>判断する日を先に決めておく</strong>必要がある。</p>
+<table class="plain">
+      <thead><tr><th style="width:16%">層</th><th style="width:25%">大学・学部</th><th style="width:37%">狙う方式の考え方</th><th style="width:22%">確認事項</th></tr></thead>
+      <tbody><tr><td><strong>第一志望</strong></td><td>立教大 文学部</td><td><strong>日本史で受けられる5日程から選ぶ。</strong>2教科日程（英語免除）を軸に、2/11は別ファイルの分析を見て判断</td><td><strong>外検の換算率</strong></td></tr><tr><td><strong>併願</strong></td><td>明治学院大 文・芸術</td><td><strong>外検が使えない。</strong>英語は当日受験。A日程は国英150点ずつ</td><td>英語の当日対策</td></tr><tr><td><strong>併願</strong></td><td>専修大 国際コミュ・異文化</td><td>C方式は英語150点。<strong>前期全学部・個別Aは外検換算。</strong>共テ利用は個別試験なし</td><td><strong>学科ごとの配点</strong></td></tr><tr><td><strong>併願</strong></td><td>駒澤大 文学部</td><td>全方式300点の均等配点。<strong>全学部統一は外検換算</strong></td><td>学科と日程</td></tr><tr><td><strong>滑り止め</strong></td><td><strong>大正大 表現学部</strong></td><td><strong>2科目型（国英200点・日本史不要・外検換算）が最も軽い。</strong>現役進学の最後の砦</td><td><strong>3方式の日程</strong></td></tr></tbody>
+    </table>
+<div style="height:3mm"></div>
+<h3 class="blk">いますぐ確認すること（成績と関係なくできる）</h3>
+<ol class="num"><li><strong>各大学の外検換算表で、CSE2101が何点になるかを確認する。</strong>立教の4日程ではこれがそのまま英語200点になる。<strong>最優先。</strong></li><li><strong>共通テストを受けるかどうかを決める。</strong>立教の5日程は「外検 or 共テ英語」。<strong>共テ英語は外検の保険になりうる。</strong>専修には共テ利用方式（個別試験なし）もある。</li><li><strong>専修大の学科ごとの配点を確認する。</strong>学科によって配点が変わるため、<strong>どの学科・どの方式で出願するのが有利か</strong>を点数状態と合わせて決める。</li><li><strong>5大学の受験日程・受験料・出願期間を一覧にする。</strong>立教だけで最大5日程。<strong>物理的に受けられない組み合わせと、費用の上限を先に確定させる。</strong></li></ol>
+<div style="height:3mm"></div>
+<h3 class="blk">判断のタイミング</h3>
+<ul class="bul tight"><li><strong>10月中</strong> ― 外検の換算率を確認し終える。<strong>共通テストを受けるかどうかを決める。</strong></li><li><strong>11月中</strong> ― 過去問で各方式の合格最低点との差を数値化。<strong>大正大の2科目型が本当に滑り止まるかを確定させる。</strong></li><li><strong>12月末</strong> ― <strong>立教の何日程に出願するかを含め、受験する方式の組み合わせを確定させる。</strong>出願期間に悩む状態を作らない。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">「滑り止めが滑り止まるか」から逆算する</div>
+      <div class="co-b">上から順に考えると、どうしても<strong>滑り止めの確認が後回しになる。</strong>だが現役で進学することを考えるなら、<strong>順番は逆。</strong><br><strong>まず大正大の2科目型（国語＋英語200点）で、合格最低点との差を数字にする。</strong>ここが固まって初めて、立教に時間を割く判断ができる。<strong>土台が不安なまま上を狙うのが、一番危ない。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>進学先を、確実に作る</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">10</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">11 環境と運用</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">11</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">環境ルールと、数字で判断する運用</h2>
+                <div class="sec-en">Rules &amp; Operation</div>
+              </div>
+            </div>
+      <p class="sec-lead">残り106日。<strong>勉強時間の最大化が全ての前提</strong>になる。学習の質は意思ではなく<strong>仕組み</strong>で決まる。面談で決めたルールを固定化して、<strong>日々の判断に思考を使わない状態</strong>を作る。</p>
+<div class="grid2"><div class="card is-gold">
+          <div class="c-kicker">環境</div>
+          <div class="c-title">自習室ルールを固定する</div>
+          <p class="c-body">面談で決めた<strong>入る時間・抜ける時間のルールを固定</strong>する。基本の時間を決めておいて、<strong>例外がある時だけ連絡する</strong>という形にする。<br>「今日どうするか」を毎日考えなくて済む状態を作ることで、<strong>思考をブラさずに済む。</strong>判断コストをゼロにするのが目的。</p>
+        </div><div class="card">
+          <div class="c-kicker">判断</div>
+          <div class="c-title">全て「数字」で判断する</div>
+          <p class="c-body"><strong>過去問シート</strong>を使って、<strong>方式ごとに</strong>合格最低点との差を数字で出す。満点が200〜550点と違うので、<strong>素点ではなく得点率で比較する。</strong><br>「手応えがあった／なかった」では次の一手が決まらない。<strong>点数化して初めて、どの大学にどれだけ時間を割くかが決まる。</strong></p>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">運用の4原則</h3>
+<ol class="num"><li><strong>決めた時間に自習室に入り、決めた時間に出る。</strong>例外は事前連絡のみ。連絡すれば例外はOK、連絡なしの例外はナシ。</li><li><strong>国語と日本史は毎日。</strong>立教の2教科日程では、この2科目が当日の100%。<strong>空白の日を作らない。</strong></li><li><strong>詰まったら抱え込まず、その場で質問する。</strong>解説を見ても分からない問題で止まっている時間が、一番もったいない。manabo をすぐ使う。</li><li><strong>迷ったらこのシートに戻る。</strong>優先順位はここに書いてある通り。<strong>新しい教材や周りの動きに振り回されない。</strong></li></ol>
+<div style="height:4mm"></div>
+<h3 class="blk">毎週チェックする数字</h3>
+<ul class="bul tight"><li><strong>英語</strong> ― 演習シートで、解釈・言い換えのどこで落としているか。</li><li><strong>日本史</strong> ― 正誤問題の正答率。<strong>8割を超えているか。</strong></li><li><strong>国語</strong> ― 現代文と古文を分けて得点率を出す。立教は国語200点。</li><li><strong>過去問</strong> ― 方式ごとの<strong>得点率</strong>と、合格最低点との差。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">判断基準は、全部「数字」</div>
+      <div class="co-b">どの方式で何%取れているのか。正誤の正答率は何%か。外検は何点に換算されるのか。<strong>それ以外の材料で戦略は動かさない。</strong><br>不安や手応えは判断材料にしない。<strong>数字が動いていないなら、やり方を変える。数字が動いているなら、不安でも続ける。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>仕組みで質を担保する</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">11</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">12 ロードマップ</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">12</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">本番までのロードマップ</h2>
+                <div class="sec-en">Roadmap</div>
+              </div>
+            </div>
+      <p class="sec-lead"><strong>入試本番まで106日、約15週。</strong>立教は2/6〜2/13に集中する。私立専願なので、<strong>最初から過去問を軸に組み立てられる。</strong>基礎固めと過去問を並走させ、方式ごとの差を早く数字にする。</p>
+<table class="plain">
+      <thead><tr><th style="width:14%">時期</th><th style="width:11%">本番まで</th><th style="width:23%">英語</th><th style="width:22%">国語</th><th style="width:18%">日本史</th><th style="width:12%">判断</th></tr></thead>
+      <tbody><tr><td><strong>10月下旬</strong></td><td><strong>106日</strong></td><td><strong>外検の換算率を確認</strong>／演習シートで穴を特定</td><td>現代文・古文の現在地を測る</td><td><strong>正誤の正答率を測る</strong></td><td><strong>共テ受験の可否</strong></td></tr><tr><td><strong>11月</strong></td><td><strong>残り63日</strong></td><td>穴を潰す → 長文演習／個別試験が要る方式の対策</td><td>古文を仕上げる／現代文の解き方を固定</td><td>正誤を回し切る／通史の穴埋め</td><td><strong>過去問で各方式の差を数値化</strong></td></tr><tr><td><strong>12月</strong></td><td><strong>残り32日</strong></td><td>方式ごとの過去問</td><td><strong>立教の国語200点に照準</strong></td><td>過去問＋知識補充を繰り返す</td><td><strong>出願する日程・方式を確定</strong></td></tr><tr><td><strong>1月</strong></td><td><strong>残り1日</strong></td><td>過去問中心／弱点の最終補強</td><td>直前の総仕上げ</td><td>直前の総復習</td><td>出願・最終調整</td></tr><tr><td><strong>2月</strong></td><td><strong>本番</strong></td><td>方式別の演習</td><td><strong>立教2教科日程は国語が主役</strong></td><td><strong>当日の42.9%</strong></td><td><strong>私大入試</strong></td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">各時点で必ず確認すること</h3>
+<ul class="bul"><li><strong>10月末</strong> ― <strong>外検の換算率は確認できたか。</strong>ここが分からないと、英語にかける時間の量が決まらない。<strong>すべての前提になる確認。</strong></li><li><strong>11月末</strong> ― 過去問で、<strong>方式ごとに合格最低点との差が数字で出ているか。</strong>特に<strong>大正大の2科目型が本当に滑り止まるのか。</strong>ここで確定させる。</li><li><strong>12月末</strong> ― 立教の何日程に出願するかを含め、<strong>受験する方式の組み合わせは確定したか。</strong>出願期間に入ってから悩む状態を作らない。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">このロードマップで最も守るべき1点</div>
+      <div class="co-b"><strong>11月末までに、方式ごとの合格最低点との差を数字にすること。</strong><br>これが出ていないと、12月以降「どの大学・どの日程にどれだけ時間を割くか」を感覚で決めることになる。<strong>残り2ヶ月を感覚で走るのが、一番こわい。</strong><br><strong>過去問は「実力がついてから解くもの」ではない。差を測るために、早く解く。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>本番までの106日</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">12</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">13 最初の1ヶ月</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">13</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">最初の1ヶ月でやり切ること</h2>
+                <div class="sec-en">First 30 Days</div>
+              </div>
+            </div>
+      <p class="sec-lead">残り106日のうちの最初の30日。<strong>ここで「測る」と「決める」を終わらせる。</strong>上から順に潰していく。終わったらチェックを入れて、面談で一緒に確認する。</p>
+<div class="checks"><div class="check"><span class="box"></span><span><strong>確認</strong>：各大学の外検換算表で、<strong>CSE2101が何点になるか</strong>を確認する（最優先）</span></div><div class="check"><span class="box"></span><span><strong>確認</strong>：<strong>共通テストを受けるか</strong>を決める（立教の英語の保険／専修の共テ利用）</span></div><div class="check"><span class="box"></span><span><strong>確認</strong>：<strong>専修大の学科ごとの配点</strong>を確認する</span></div><div class="check"><span class="box"></span><span><strong>確認</strong>：立教2/11の国語で、<strong>漢文が出題されるか</strong>を確認する</span></div><div class="check"><span class="box"></span><span><strong>確認</strong>：5大学の<strong>受験日程・受験料・出願期間</strong>を一覧にする</span></div><div class="check"><span class="box"></span><span><strong>測る</strong>：<strong>大正大 表現／2科目型</strong>の過去問を解いて、合格最低点との差を出す</span></div><div class="check"><span class="box"></span><span><strong>測る</strong>：駒澤・専修の過去問で差を出す（滑り止めの判定）</span></div><div class="check"><span class="box"></span><span><strong>測る</strong>：立教の<strong>国語</strong>を過去問で測る（200点・当日の主役）</span></div><div class="check"><span class="box"></span><span><strong>測る</strong>：<strong>日本史の正誤の正答率</strong>を出す（目標8割）</span></div><div class="check"><span class="box"></span><span><strong>英語</strong>：演習シートで<strong>解釈・言い換えのどこで落としているか</strong>を特定する</span></div><div class="check"><span class="box"></span><span><strong>英語</strong>：精読の5段階を、実際に1題やって<strong>全選択肢を言語化してみる</strong></span></div><div class="check"><span class="box"></span><span><strong>日本史</strong>：落とした正誤問題を<strong>「知識」か「判断」かで仕分ける</strong>サイクルを固定する</span></div><div class="check"><span class="box"></span><span><strong>国語</strong>：古文を仕上げる計画を立てる（立教は古典探究まで範囲）</span></div><div class="check"><span class="box"></span><span><strong>過去問</strong>：解いた結果を<strong>過去問シートに得点率で落とす</strong>（満点が違うので素点で比べない）</span></div><div class="check"><span class="box"></span><span><strong>環境</strong>：自習室に入る時間・抜ける時間を固定して運用開始</span></div></div>
+<div style="height:4mm"></div>
+<div class="callout is-navy">
+      <div class="co-t">106日で、どこまで行けるか</div>
+      <div class="co-b"><strong>第一志望の立教は、日本史選択でも最大5日程に挑戦できる。</strong>しかもそのうち<strong>4日程は英語の試験がない。</strong>当日やるのは国語と日本史だけ。<br><strong>つまり、国語と日本史を仕上げることが、そのまま立教への最短距離になる。</strong>そして英検2級という持ち点が、すでに英語の一部を確定させている。<br><strong>やることは絞れている。</strong>まずは外検の換算率を確認して、持ち点を数字にする。そして測って、決める。<strong>あとは、決めた通りに動くだけ。</strong></div>
+    </div>
+<div style="height:4mm"></div>
+<div class="memo">
+      <div class="mm-t">面談メモ／今週決めたこと</div>
+      <div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>須田 あや音 様｜初回戦略シート</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">13</span>
+    </div>
+  </section>
+<script>
+/* ?only=N でそのページだけ表示（レイアウト検証用） */
+(function(){
+  var m = /[?&]only=(\d+)/.exec(location.search);
+  if(!m) return;
+  var n = parseInt(m[1],10);
+  document.querySelectorAll('.page').forEach(function(el,i){
+    if(i !== n) el.style.display='none';
+  });
+  document.body.style.padding='0';
+  var sh = /[?&]shift=(d+)/.exec(location.search);
+  if(sh) document.querySelectorAll('.page')[n].style.marginTop = '-' + sh[1] + 'px';
+})();
+
+/* ?qa=1 で各ページのはみ出し量を出力（--dump-dom で回収する） */
+(function(){
+  if(!/[?&]qa=1/.test(location.search)) return;
+  var out = [];
+  document.querySelectorAll('.page').forEach(function(el,i){
+    var b = el.querySelector('.cover-inner') || el.querySelector('.page-body');
+    var over = b ? Math.round(b.scrollHeight - b.clientHeight) : 0;
+    var slack = b ? Math.round(b.clientHeight - (b.lastElementChild ? b.lastElementChild.getBoundingClientRect().bottom - b.getBoundingClientRect().top : 0)) : 0;
+    out.push('PAGE ' + String(i).padStart(2,'0') + '  h=' + el.offsetHeight + 'px  bodyH=' + (b?b.clientHeight:0) + 'px  overflow=' + over + 'px  slack=' + slack + 'px');
+  });
+  document.querySelectorAll('.page').forEach(function(el){ el.style.display='none'; });
+  var pre = document.createElement('pre');
+  pre.id = 'qa-report';
+  pre.style.cssText = 'font:16px/1.7 monospace;color:#111;background:#fff;padding:24px;margin:0;white-space:pre;';
+  pre.textContent = out.join(String.fromCharCode(10));
+  document.body.style.padding = '0';
+  document.body.appendChild(pre);
+})();
+</script>
+</body>
+</html>

@@ -23,6 +23,7 @@ https://<本ドメイン>/kakomon/<大学フォルダ>/<ファイル名>.pdf
 | `kanazawa-u` | 金沢大学 |
 | `kitakyushu-u` | 北九州市立大学（外国語学部） |
 | `senshu-u` | 専修大学 |
+| `rikkyo-lit` | 立教大学 文学部（2/11） |
 
 ## ファイル名ルール
 

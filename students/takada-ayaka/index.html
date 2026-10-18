@@ -1,0 +1,1292 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>髙田 彩華｜初回戦略シート｜THINKING</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THINKING 個別戦略シート — 印刷（A4）用スタイルシート
+   engine version: 1.0
+   ============================================================ */
+
+@font-face{font-family:"Zen Kaku Gothic New";font-weight:400;src:local("Zen Kaku Gothic New")}
+@font-face{font-family:"Shippori Mincho B1";font-weight:600;src:local("Shippori Mincho B1")}
+
+:root{
+  --navy:#16233a;
+  --navy-deep:#0c1424;
+  --navy-soft:#24354f;
+  --gold:#c8a55a;
+  --gold-deep:#a07d38;
+  --gold-light:#e6d3a6;
+  --ivory:#faf8f4;
+  --cream:#fffdf9;
+  --paper:#f0ece4;
+  --ink:#18212f;
+  --ink-2:#4c586a;
+  --ink-3:#8b93a1;
+  --rule:rgba(22,35,58,.14);
+  --rule-soft:rgba(22,35,58,.07);
+  --good:#2c7a5d;
+  --mid:#c08a2e;
+  --bad:#b23f3f;
+
+  --sans:"Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",system-ui,sans-serif;
+  --mincho:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN",serif;
+  /* 数値まわりの欧文書体。CJK を持たないので日本語フォントを必ず後ろに置く
+     （「約」「点」「ヶ月」等が別書体に落ちるのを防ぐ） */
+  --en:"Cormorant Garamond","Cormorant","Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",sans-serif;
+
+  --pad-x:15mm;
+  --pad-y:14mm;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:#5b6472;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+  line-height:1.75;
+}
+body,.page,.page *{
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+/* 欧文フォントの数字は既定でオールドスタイル（1 が I に見える）。
+   数値を読ませる箇所はライニング＋等幅数字に統一する。 */
+.cover-brand .cb-en,.cover-kpi .k-value,.kpi .k-v,.sec-no,.sec-en,
+.s-num,.s-pct,.s-tgt,.s-gap,.wish-rank,.wseg .w-v,.step-no,
+ol.num li::before,.pf-no,.runner .r-left,.cover-contents .cc-no{
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+}
+
+/* ---------- ページの器 ---------- */
+@page{ size:A4 portrait; margin:0; }
+
+.page{
+  position:relative;
+  width:210mm;
+  height:297mm;
+  overflow:hidden;
+  margin:0 auto;
+  background:var(--cream);
+  color:var(--ink);
+  page-break-after:always;
+  break-after:page;
+  display:flex;
+  flex-direction:column;
+}
+.page:last-child{page-break-after:auto;break-after:auto;}
+.page-body{
+  flex:1;
+  min-height:0;
+  padding:var(--pad-y) var(--pad-x) 0;
+  display:flex;
+  flex-direction:column;
+}
+.page-body > *{flex:0 0 auto;}
+.pb-fill{flex:1 1 auto !important;min-height:0;}
+
+/* 画面表示時だけページを浮かせる */
+@media screen{
+  body{padding:24px 0;}
+  .page{box-shadow:0 24px 60px -24px rgba(0,0,0,.6);margin-bottom:24px;}
+}
+
+/* ---------- 走り書きヘッダー / フッター ---------- */
+.runner{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  padding:7mm var(--pad-x) 0;
+  font-size:8pt;
+  letter-spacing:.14em;
+  color:var(--ink-3);
+}
+.runner .r-left{font-family:var(--en);font-size:10pt;letter-spacing:.22em;color:var(--gold-deep);}
+.runner .r-right{font-weight:500;}
+.page-foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:0 var(--pad-x) 8mm;
+  font-size:7.6pt;
+  letter-spacing:.1em;
+  color:var(--ink-3);
+  border-top:0;
+}
+.page-foot .pf-rule{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,var(--rule),rgba(200,165,90,.5));
+}
+.page-foot .pf-no{
+  font-family:var(--en);
+  font-size:13pt;
+  letter-spacing:.06em;
+  color:var(--gold-deep);
+  font-weight:600;
+}
+
+/* ============================================================
+   表紙
+   ============================================================ */
+.cover{
+  background:
+    radial-gradient(120% 80% at 50% -10%, #2b3f60 0%, rgba(43,63,96,0) 62%),
+    linear-gradient(175deg,#16233a 0%,#0c1424 100%);
+  color:#f3efe6;
+}
+.cover .page-body{padding:0;}
+.cover-frame{
+  position:absolute;
+  inset:9mm;
+  border:1px solid rgba(200,165,90,.4);
+}
+.cover-frame::before,.cover-frame::after{
+  content:"";position:absolute;background:rgba(200,165,90,.85);
+}
+.cover-frame::before{left:-1px;top:-1px;width:18mm;height:2px;}
+.cover-frame::after{right:-1px;bottom:-1px;width:18mm;height:2px;}
+
+.cover-inner{
+  position:relative;
+  z-index:2;
+  height:100%;
+  padding:22mm 20mm 16mm;
+  display:flex;
+  flex-direction:column;
+}
+.cover-brand{
+  display:flex;flex-direction:column;gap:3px;
+}
+.cover-brand .cb-en{
+  font-family:var(--en);
+  font-size:19pt;letter-spacing:.34em;color:#efe7d6;font-weight:500;
+}
+.cover-brand .cb-en i{font-style:normal;color:var(--gold);}
+.cover-brand .cb-jp{
+  font-family:var(--mincho);
+  font-size:7.6pt;letter-spacing:.4em;color:rgba(230,211,166,.72);
+}
+
+.cover-eyebrow{
+  margin-top:19mm;
+  font-size:8.4pt;letter-spacing:.34em;color:var(--gold);
+  display:flex;align-items:center;gap:10px;
+}
+.cover-eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(200,165,90,.6),transparent);}
+
+.cover-title{
+  font-family:var(--mincho);
+  font-size:34pt;
+  font-weight:600;
+  line-height:1.32;
+  letter-spacing:.09em;
+  margin:5mm 0 0;
+  color:#fbf8f1;
+}
+.cover-title em{
+  font-style:normal;
+  color:var(--gold-light);
+  display:block;
+  font-size:15pt;
+  letter-spacing:.22em;
+  margin-top:5mm;
+}
+.cover-sub{
+  margin-top:4mm;
+  font-size:9.6pt;
+  line-height:2;
+  color:rgba(243,239,230,.78);
+  max-width:118mm;
+}
+
+.cover-name{
+  margin-top:12mm;
+  padding:6mm 0 0;
+  border-top:1px solid rgba(200,165,90,.32);
+  display:flex;align-items:flex-end;gap:6mm;flex-wrap:wrap;
+}
+.cover-name .cn-label{
+  font-size:8pt;letter-spacing:.3em;color:rgba(230,211,166,.75);padding-bottom:3mm;
+}
+.cover-name .cn-value{
+  font-family:var(--mincho);
+  font-size:26pt;letter-spacing:.14em;color:#fff;line-height:1.2;
+}
+.cover-name .cn-meta{
+  padding-bottom:3mm;font-size:8.6pt;color:rgba(243,239,230,.62);letter-spacing:.08em;
+}
+
+.cover-contents{
+  margin-top:7mm;
+  display:grid;grid-template-columns:1fr 1fr;gap:0 9mm;
+}
+.cover-contents .cc-label{
+  grid-column:1 / -1;
+  font-size:7.6pt;letter-spacing:.32em;color:var(--gold);
+  display:flex;align-items:center;gap:8px;margin-bottom:2mm;
+}
+.cover-contents .cc-label::after{content:"";flex:1;height:1px;background:rgba(200,165,90,.28);}
+.cover-contents .cc-item{
+  display:flex;gap:3.5mm;align-items:baseline;
+  font-size:8.2pt;letter-spacing:.05em;color:rgba(243,239,230,.7);
+  padding:1.15mm 0;border-bottom:1px solid rgba(200,165,90,.12);
+}
+.cover-contents .cc-no{
+  font-family:var(--en);font-size:9.5pt;font-weight:600;color:var(--gold);flex:0 0 5.5mm;
+}
+
+.cover-kpis{
+  margin-top:auto;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border:1px solid rgba(200,165,90,.3);
+  background:rgba(255,255,255,.035);
+}
+.cover-kpi{padding:6mm 5mm;border-right:1px solid rgba(200,165,90,.22);}
+.cover-kpi:last-child{border-right:0;}
+.cover-kpi .k-label{font-size:7.6pt;letter-spacing:.2em;color:rgba(230,211,166,.8);}
+.cover-kpi .k-value{
+  font-family:var(--en);font-size:30pt;font-weight:600;line-height:1.05;margin-top:2mm;color:#fff;
+}
+.cover-kpi .k-value small{font-size:13pt;letter-spacing:.02em;margin-left:2px;}
+.cover-kpi.is-gap .k-value{color:var(--gold-light);}
+.cover-kpi .k-note{font-size:7.6pt;color:rgba(243,239,230,.6);margin-top:1mm;letter-spacing:.04em;}
+
+.cover-foot{
+  margin-top:6mm;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:7.6pt;letter-spacing:.16em;color:rgba(243,239,230,.5);
+}
+
+/* ============================================================
+   セクション見出し
+   ============================================================ */
+.sec{
+  display:flex;align-items:flex-start;gap:5mm;
+  padding-bottom:3.5mm;
+  border-bottom:1px solid var(--rule);
+  margin-bottom:5mm;
+}
+.sec-no{
+  flex:0 0 auto;
+  font-family:var(--en);
+  font-size:26pt;font-weight:600;line-height:1;
+  color:var(--gold);
+  letter-spacing:.02em;
+  padding-top:1mm;
+}
+.sec-txt{flex:1;min-width:0;}
+.sec-title{
+  font-family:var(--mincho);
+  font-size:16pt;font-weight:600;letter-spacing:.06em;line-height:1.35;
+  margin:0;color:var(--navy);
+}
+.sec-en{
+  font-family:var(--en);
+  font-size:9pt;letter-spacing:.26em;color:var(--ink-3);margin-top:1mm;text-transform:uppercase;
+}
+.sec-lead{
+  font-size:9.4pt;line-height:1.85;color:var(--ink-2);margin:0 0 5mm;
+}
+.sec-lead strong{color:var(--navy);font-weight:700;}
+
+h3.blk{
+  font-family:var(--mincho);
+  font-size:11.5pt;font-weight:600;letter-spacing:.06em;color:var(--navy);
+  margin:0 0 2.5mm;display:flex;align-items:center;gap:2.5mm;
+}
+h3.blk::before{
+  content:"";width:3px;height:14px;background:var(--gold);flex:0 0 auto;
+}
+
+/* ============================================================
+   汎用パーツ
+   ============================================================ */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm;}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;}
+.stack-gap{display:flex;flex-direction:column;gap:4.5mm;}
+.mt-auto{margin-top:auto;}
+
+.card{
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-radius:2px;
+  padding:4.5mm 5mm;
+}
+.card.is-dark{background:var(--navy);border-color:var(--navy);color:#f1ede4;}
+.card.is-dark .c-title{color:var(--gold-light);}
+.card.is-dark .c-body{color:rgba(241,237,228,.86);}
+.card.is-gold{background:#fdf8ec;border-color:rgba(200,165,90,.45);}
+.c-kicker{
+  font-size:7.4pt;letter-spacing:.22em;color:var(--gold-deep);margin-bottom:1.5mm;font-weight:500;
+}
+.c-title{
+  font-family:var(--mincho);
+  font-size:11pt;font-weight:600;letter-spacing:.04em;color:var(--navy);margin:0 0 2mm;line-height:1.5;
+}
+.c-body{font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin:0;}
+.c-body strong{color:var(--navy);font-weight:700;}
+
+.pill{
+  display:inline-block;
+  font-size:7.4pt;letter-spacing:.12em;font-weight:500;
+  padding:.9mm 2.4mm;border-radius:1px;
+  border:1px solid currentColor;
+}
+.pill.p-core{color:var(--gold-deep);background:rgba(200,165,90,.1);}
+.pill.p-base{color:var(--navy-soft);background:rgba(36,53,79,.07);}
+.pill.p-risk{color:var(--bad);background:rgba(178,63,63,.07);}
+.pill.p-ok{color:var(--good);background:rgba(44,122,93,.08);}
+
+/* ---------- 志望校リスト ---------- */
+.wish{border-top:1px solid var(--rule);}
+.wish-row{
+  display:flex;align-items:center;gap:4mm;
+  padding:2.6mm 1mm;
+  border-bottom:1px solid var(--rule-soft);
+}
+.wish-rank{
+  flex:0 0 9mm;
+  font-family:var(--en);font-size:15pt;font-weight:600;color:var(--gold);line-height:1;text-align:center;
+}
+.wish-main{flex:1;min-width:0;}
+.wish-univ{font-size:10pt;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.45;}
+.wish-fac{font-size:8.2pt;color:var(--ink-2);letter-spacing:.02em;line-height:1.5;}
+.wish-tag{flex:0 0 auto;}
+
+/* ---------- 得点テーブル ---------- */
+table.score{
+  width:100%;border-collapse:collapse;font-size:8.6pt;
+}
+table.score th{
+  font-size:7.4pt;letter-spacing:.12em;font-weight:500;color:var(--ink-3);
+  text-align:right;padding:0 1.5mm 1.8mm;border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+table.score th.t-name{text-align:left;}
+table.score th.t-bar{text-align:left;}
+table.score td{
+  padding:1.55mm 1.5mm;border-bottom:1px solid var(--rule-soft);text-align:right;vertical-align:middle;
+}
+table.score tr.is-sum td{
+  border-top:1.4px solid var(--navy);border-bottom:0;padding-top:2.2mm;font-weight:700;color:var(--navy);
+}
+table.score tr.is-sub td{background:rgba(22,35,58,.028);}
+.s-name{text-align:left;line-height:1.35;}
+.s-name b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;}
+.s-name span{display:block;font-size:7.2pt;color:var(--ink-3);letter-spacing:.02em;}
+.s-num{font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);white-space:nowrap;}
+.s-num i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.s-pct{font-family:var(--en);font-size:12pt;font-weight:600;white-space:nowrap;}
+.s-pct i{font-style:normal;font-size:7.6pt;font-family:var(--sans);margin-left:1px;color:var(--ink-3);}
+.s-pct.lv-hi{color:var(--good);}
+.s-pct.lv-mid{color:var(--mid);}
+.s-pct.lv-lo{color:var(--bad);}
+.s-tgt{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--ink-2);}
+.s-gap{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--gold-deep);white-space:nowrap;}
+.s-bar{width:34%;}
+
+.track{
+  position:relative;height:7px;background:var(--paper);border-radius:1px;overflow:visible;
+}
+.track .fill{
+  position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,var(--navy-soft),var(--navy));
+}
+.track.lv-hi .fill{background:linear-gradient(90deg,#3d9273,var(--good));}
+.track.lv-mid .fill{background:linear-gradient(90deg,#d9a94a,var(--mid));}
+.track.lv-lo .fill{background:linear-gradient(90deg,#cd6767,var(--bad));}
+.track .tick{
+  position:absolute;top:-3px;bottom:-3px;width:1.6px;background:var(--gold-deep);
+}
+.track .tick::after{
+  content:"";position:absolute;top:-2.5px;left:-2.2px;
+  border-left:3px solid transparent;border-right:3px solid transparent;border-top:3.4px solid var(--gold-deep);
+}
+
+/* ---------- KPI 帯 ---------- */
+.kpirow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);background:var(--ivory);}
+.kpirow.k3{grid-template-columns:repeat(3,1fr);}
+.kpi{padding:3.6mm 4mm;border-right:1px solid var(--rule);}
+.kpi:last-child{border-right:0;}
+.kpi .k-l{font-size:7.4pt;letter-spacing:.16em;color:var(--ink-3);}
+.kpi .k-v{font-family:var(--en);font-size:24pt;font-weight:600;line-height:1.1;color:var(--navy);margin-top:.8mm;}
+.kpi .k-v small{font-size:11pt;margin-left:1px;}
+.kpi .k-n{font-size:7.4pt;color:var(--ink-3);margin-top:.5mm;}
+.kpi.acc .k-v{color:var(--gold-deep);}
+.kpi.bad .k-v{color:var(--bad);}
+.kpi.good .k-v{color:var(--good);}
+
+/* ---------- 配点構造バー ---------- */
+.weight{margin:0;}
+.weight-bar{display:flex;height:15mm;border:1px solid var(--rule);overflow:hidden;}
+.wseg{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  color:#fff;text-align:center;gap:.6mm;padding:0 1mm;border-right:1px solid rgba(255,255,255,.28);
+}
+.wseg:last-child{border-right:0;}
+.wseg .w-t{font-size:7.6pt;letter-spacing:.06em;font-weight:500;line-height:1.2;}
+.wseg .w-v{font-family:var(--en);font-size:13pt;font-weight:600;line-height:1;}
+.wseg.w1{background:var(--navy);}
+.wseg.w2{background:var(--navy-soft);}
+.wseg.w3{background:var(--gold-deep);}
+.wseg.w4{background:#a8afba;}
+.weight-legend{
+  display:flex;flex-wrap:wrap;gap:1.5mm 5mm;margin-top:2.5mm;font-size:7.8pt;color:var(--ink-2);
+}
+.weight-legend span{display:flex;align-items:center;gap:1.8mm;}
+.weight-legend i{width:8px;height:8px;display:inline-block;border-radius:1px;}
+
+/* ---------- ステップ（①②③④） ---------- */
+.steps{display:flex;flex-direction:column;gap:2.6mm;}
+.step{
+  display:flex;gap:3.5mm;align-items:flex-start;
+  padding:3mm 3.5mm;background:var(--ivory);border-left:2.5px solid var(--gold);
+}
+.step-no{
+  flex:0 0 auto;width:6.5mm;height:6.5mm;border-radius:50%;
+  background:var(--navy);color:var(--gold-light);
+  font-family:var(--en);font-size:11pt;font-weight:600;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+.step-txt{flex:1;min-width:0;}
+.step-t{font-size:9.6pt;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.5;}
+.step-d{font-size:8.4pt;line-height:1.75;color:var(--ink-2);margin-top:.6mm;}
+.step-d strong{color:var(--navy);}
+
+/* ---------- 箇条書き ---------- */
+ul.bul{margin:0;padding:0;list-style:none;}
+ul.bul li{
+  position:relative;padding-left:4.2mm;font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin-bottom:.8mm;
+}
+ul.bul li::before{
+  content:"";position:absolute;left:.4mm;top:.62em;width:4.5px;height:4.5px;background:var(--gold-deep);border-radius:50%;
+}
+ul.bul li strong{color:var(--navy);font-weight:700;}
+ul.bul.tight li{margin-bottom:.2mm;line-height:1.7;}
+
+ol.num{margin:0;padding:0;list-style:none;counter-reset:n;}
+ol.num li{
+  position:relative;padding-left:6.5mm;font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin-bottom:1.2mm;counter-increment:n;
+}
+ol.num li::before{
+  content:counter(n);position:absolute;left:0;top:.15em;
+  width:4.4mm;height:4.4mm;border:1px solid var(--gold-deep);color:var(--gold-deep);
+  font-family:var(--en);font-size:9pt;font-weight:600;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+
+/* ---------- チェックリスト ---------- */
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:1.6mm 5mm;}
+.check{display:flex;align-items:flex-start;gap:2.4mm;font-size:8.6pt;line-height:1.65;color:var(--ink-2);}
+.check .box{
+  flex:0 0 auto;width:3.4mm;height:3.4mm;border:1.2px solid var(--navy-soft);margin-top:.9mm;background:#fff;
+}
+.check b{color:var(--navy);font-weight:700;}
+
+/* ---------- コールアウト ---------- */
+.callout{
+  border:1px solid rgba(200,165,90,.5);
+  background:linear-gradient(180deg,#fdf8ec,#fbf4e3);
+  padding:4mm 5mm;position:relative;
+}
+.callout .co-t{
+  font-family:var(--mincho);font-size:10.5pt;font-weight:600;color:var(--gold-deep);
+  letter-spacing:.06em;margin-bottom:1.5mm;
+}
+.callout .co-b{font-size:8.8pt;line-height:1.85;color:var(--ink-2);}
+.callout .co-b strong{color:var(--navy);}
+.callout.is-navy{background:var(--navy);border-color:var(--navy);}
+.callout.is-navy .co-t{color:var(--gold-light);}
+.callout.is-navy .co-b{color:rgba(241,237,228,.88);}
+.callout.is-navy .co-b strong{color:#fff;}
+
+/* ---------- 週次テーブル ---------- */
+table.plain{width:100%;border-collapse:collapse;font-size:8.4pt;}
+table.plain th{
+  background:var(--navy);color:var(--gold-light);font-weight:500;font-size:7.6pt;letter-spacing:.12em;
+  padding:1.8mm 2.5mm;text-align:left;
+}
+table.plain td{
+  padding:1.9mm 2.5mm;border-bottom:1px solid var(--rule-soft);color:var(--ink-2);line-height:1.65;vertical-align:top;
+}
+table.plain tr:nth-child(even) td{background:rgba(22,35,58,.022);}
+table.plain td b{color:var(--navy);}
+table.plain td.tc{text-align:center;}
+.nowrap{white-space:nowrap;}
+
+/* ---------- SAMPLE 表示 ---------- */
+/* 見本であることを、資料のどこを見ても分かる状態にしておくための表示 */
+.cover-badge{
+  position:absolute;
+  top:9mm;right:9mm;
+  transform:translate(-6mm,6mm);
+  border:1px solid rgba(200,165,90,.75);
+  color:var(--gold-light);
+  font-family:var(--en);
+  font-size:9.5pt;font-weight:600;letter-spacing:.34em;
+  padding:1.8mm 4mm 1.8mm 4.34mm;
+  background:rgba(200,165,90,.08);
+  z-index:3;
+}
+.r-sample{
+  font-family:var(--en);
+  font-size:8.5pt;font-weight:600;letter-spacing:.28em;
+  color:var(--gold-deep);
+  border:1px solid rgba(200,165,90,.55);
+  padding:.3mm 1.8mm .3mm 2.1mm;
+  margin-right:3mm;
+}
+.cover-note{
+  margin-top:5mm;
+  max-width:120mm;
+  padding-left:3.5mm;
+  border-left:1.5px solid rgba(200,165,90,.5);
+  font-size:7.8pt;line-height:1.75;letter-spacing:.03em;
+  color:rgba(243,239,230,.58);
+}
+.cover-note strong{color:var(--gold-light);font-weight:500;}
+
+/* 見本版は注記が1ブロック増えるぶん、上側の余白を詰めて表紙内に収める */
+.cover-badge ~ .cover-inner .cover-eyebrow{margin-top:11mm;}
+.cover-badge ~ .cover-inner .cover-name{margin-top:8mm;}
+.cover-badge ~ .cover-inner .cover-contents{margin-top:5mm;}
+
+/* ---------- 配点比重バー ---------- */
+.bars{display:flex;flex-direction:column;gap:2.1mm;}
+.bar-row{display:flex;align-items:center;gap:3mm;}
+.bar-l{flex:0 0 33mm;min-width:0;}
+.bar-l b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;line-height:1.3;display:block;}
+.bar-l span{display:block;font-size:7.1pt;color:var(--ink-3);line-height:1.35;}
+.bar-t{flex:1;height:9px;background:var(--paper);position:relative;border-radius:1px;}
+.bar-f{position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,#4a5b78,var(--navy));}
+.bar-row.is-key .bar-f{background:linear-gradient(90deg,var(--gold),var(--gold-deep));}
+.bar-row.is-mute .bar-f{background:linear-gradient(90deg,#c2c8d1,#a8afba);}
+.bar-v{flex:0 0 19mm;text-align:right;font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-v i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.bar-p{flex:0 0 16mm;text-align:right;font-family:var(--en);font-size:11.5pt;font-weight:600;color:var(--ink-2);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-row.is-key .bar-p,.bar-row.is-key .bar-v{color:var(--gold-deep);}
+.bar-p i{font-style:normal;font-family:var(--sans);font-size:7.2pt;color:var(--ink-3);margin-left:1px;}
+
+/* ---------- 例題（英文＋設問＋選択肢） ---------- */
+.exam-passage{
+  background:#fff;border:1px solid var(--rule);border-left:2.5px solid var(--gold);
+  padding:3.4mm 4.5mm;font-size:9.4pt;line-height:1.95;color:var(--ink);letter-spacing:.004em;
+}
+.exam-q{
+  margin-top:3mm;font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:2.5mm;
+}
+.exam-q em{font-style:normal;font-family:var(--en);font-size:8.4pt;letter-spacing:.18em;color:var(--gold-deep);}
+.exam-choices{margin-top:2.4mm;display:flex;flex-direction:column;gap:1.5mm;}
+.exam-choice{
+  display:flex;gap:2.8mm;align-items:flex-start;
+  padding:2.1mm 3mm;background:var(--ivory);border:1px solid var(--rule-soft);
+}
+.exam-choice.is-ok{border-color:rgba(200,165,90,.6);background:#fdf8ec;}
+.ec-k{
+  flex:0 0 auto;width:5mm;height:5mm;display:flex;align-items:center;justify-content:center;
+  font-family:var(--en);font-size:9.5pt;font-weight:600;line-height:1;
+  border:1px solid var(--ink-3);color:var(--ink-2);background:#fff;
+}
+.exam-choice.is-ok .ec-k{background:var(--gold);border-color:var(--gold);color:#fff;}
+.ec-b{flex:1;min-width:0;}
+.ec-t{font-size:8.2pt;line-height:1.65;color:var(--ink-2);}
+.ec-w{font-size:7.7pt;line-height:1.6;margin-top:.8mm;color:var(--ink-3);}
+.ec-w b{font-weight:700;color:var(--bad);margin-right:1mm;}
+.exam-choice.is-ok .ec-w b{color:var(--good);}
+
+/* ---------- プロセス帯（面談〜運用の流れ） ---------- */
+.flow{display:flex;align-items:stretch;gap:0;}
+.flow-item{
+  flex:1;min-width:0;
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-right:0;
+  padding:3.4mm 3mm 3.6mm;
+  position:relative;
+}
+.flow-item:last-child{border-right:1px solid var(--rule);}
+.flow-item.is-key{background:#fdf8ec;border-color:rgba(200,165,90,.5);}
+.flow-item + .flow-item::before{
+  content:"";position:absolute;left:-3.2px;top:50%;
+  width:6px;height:6px;margin-top:-3px;
+  border-top:1.4px solid var(--gold);border-right:1.4px solid var(--gold);
+  transform:rotate(45deg);
+  background:var(--cream);
+  z-index:2;
+}
+.flow-no{
+  font-family:var(--en);font-size:13pt;font-weight:600;color:var(--gold);line-height:1;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+.flow-t{
+  font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  margin-top:1.6mm;line-height:1.45;
+}
+.flow-d{font-size:7.6pt;line-height:1.65;color:var(--ink-2);margin-top:1.2mm;}
+
+/* ---------- 問い合わせ導線 ---------- */
+.cta{
+  background:
+    radial-gradient(120% 140% at 12% 0%, #2b3f60 0%, rgba(43,63,96,0) 60%),
+    linear-gradient(160deg,#16233a 0%,#0c1424 100%);
+  border:1px solid rgba(200,165,90,.35);
+  padding:5mm 6mm;
+  display:flex;align-items:center;justify-content:space-between;gap:6mm;
+}
+.cta-l{min-width:0;}
+.cta-t{
+  font-family:var(--mincho);font-size:12pt;font-weight:600;letter-spacing:.06em;
+  color:var(--gold-light);margin-bottom:1.6mm;
+}
+.cta-b{font-size:8.6pt;line-height:1.8;color:rgba(243,239,230,.82);}
+.cta-b strong{color:#fff;}
+.cta-r{flex:0 0 auto;text-align:right;border-left:1px solid rgba(200,165,90,.28);padding-left:6mm;}
+.cta-r .cr-l{font-size:7.2pt;letter-spacing:.2em;color:rgba(230,211,166,.7);}
+.cta-r .cr-v{
+  font-family:var(--en);font-size:14pt;font-weight:600;color:#fff;line-height:1.35;
+  letter-spacing:.04em;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+
+/* ---------- メモ欄（手書き用） ---------- */
+.memo{
+  border:1px solid var(--rule);
+  background:var(--ivory);
+  padding:3.5mm 5mm 4mm;
+}
+.memo .mm-t{
+  font-family:var(--mincho);font-size:10pt;font-weight:600;color:var(--navy);
+  letter-spacing:.06em;margin-bottom:2.5mm;display:flex;align-items:center;gap:2.5mm;
+}
+.memo .mm-t::before{content:"";width:3px;height:13px;background:var(--gold);flex:0 0 auto;}
+.memo .mm-line{border-bottom:1px solid var(--rule-soft);height:7.5mm;}
+.memo .mm-line:last-child{border-bottom-color:var(--rule);}
+
+</style>
+</head>
+<body>
+<section class="page cover">
+    <div class="cover-frame"></div>
+    
+    <div class="cover-inner">
+      <div class="cover-brand">
+        <div class="cb-en">THINK<i>I</i>NG</div>
+        <div class="cb-jp">シンキング</div>
+      </div>
+      <div class="cover-eyebrow">2027 ENTRANCE EXAM STRATEGY</div>
+      <h1 class="cover-title">個別戦略シート<em>北九州市立大学 外国語学部 英米学科 へ</em></h1>
+      <p class="cover-sub">第一志望を本気で狙う。<strong>同時に、現役で確実に進学する。</strong>この2つを両立させる設計をつくる。<br>この1枚が、これから本番までの判断基準になる。迷ったら、ここに戻る。</p>
+      
+      <div class="cover-name">
+        <div class="cn-label">生徒</div>
+        <div class="cn-value">髙田 彩華</div>
+        <div class="cn-meta">高校3年／国公立・私大併願／英語・国語・社会</div>
+      </div>
+      <div class="cover-contents">
+        <div class="cc-label">CONTENTS</div>
+        <div class="cc-item"><span class="cc-no">01</span><span>第一志望と、現役進学の両立</span></div><div class="cc-item"><span class="cc-no">02</span><span>英語だけで、70%が決まる</span></div><div class="cc-item"><span class="cc-no">03</span><span>5校を並べて見る</span></div><div class="cc-item"><span class="cc-no">04</span><span>選択科目100点の選び方</span></div><div class="cc-item"><span class="cc-no">05</span><span>2つの道のどちらを選ぶか</span></div><div class="cc-item"><span class="cc-no">06</span><span>英語 ― ここに全てを賭ける</span></div><div class="cc-item"><span class="cc-no">07</span><span>国語と社会 ― 併願を支える2科目</span></div><div class="cc-item"><span class="cc-no">08</span><span>受験校の設計と、判断のタイミング</span></div><div class="cc-item"><span class="cc-no">09</span><span>環境ルールと、数字で判断する運用</span></div><div class="cc-item"><span class="cc-no">10</span><span>本番までのロードマップ</span></div><div class="cc-item"><span class="cc-no">11</span><span>最初の1ヶ月でやり切ること</span></div>
+      </div>
+      <div class="cover-kpis"><div class="cover-kpi">
+            <div class="k-label">共通テストまで</div>
+            <div class="k-value">90<small>日</small></div>
+            <div class="k-note">国公立前期まで130日</div>
+          </div><div class="cover-kpi">
+            <div class="k-label">英語が握る配点</div>
+            <div class="k-value">70.0<small>%</small></div>
+            <div class="k-note">第一志望の総合1000点中 700点</div>
+          </div><div class="cover-kpi is-gap">
+            <div class="k-label">併願を広げた時の科目</div>
+            <div class="k-value">6<small>教科</small></div>
+            <div class="k-note">第一志望は3科目／差は共テ300点分</div>
+          </div></div>
+      <div class="cover-foot">
+        <span>2026年10月18日／THINKING 進路戦略</span>
+        <span>CONFIDENTIAL — 髙田 彩華 様専用</span>
+      </div>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">01 ゴールと現在地</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">01</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">第一志望と、現役進学の両立</h2>
+                <div class="sec-en">Target &amp; Starting Point</div>
+              </div>
+            </div>
+      <p class="sec-lead">志望校は5校。<strong>北九州市立大学 外国語学部 英米学科への志望が強い。</strong>ただし現役で進学することを第一に考えるなら、<strong>滑り止めを確実に取り切ることが必須</strong>になる。この2つを同時に成立させる設計を組む。</p>
+<h3 class="blk">志望校 ― 優先順位</h3>
+<div class="wish"><div class="wish-row">
+          <div class="wish-rank">1</div>
+          <div class="wish-main">
+            <div class="wish-univ">北九州市立大学</div>
+            <div class="wish-fac">外国語学部 英米学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-core">第一志望</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">2</div>
+          <div class="wish-main">
+            <div class="wish-univ">北九州市立大学</div>
+            <div class="wish-fac">外国語学部 国際関係学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">公立</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">3</div>
+          <div class="wish-main">
+            <div class="wish-univ">福岡女子大学</div>
+            <div class="wish-fac">国際文理学部 国際教養学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">公立</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">4</div>
+          <div class="wish-main">
+            <div class="wish-univ">福岡大学</div>
+            <div class="wish-fac">人文学部 英語学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-ok">私大</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">5</div>
+          <div class="wish-main">
+            <div class="wish-univ">長崎県立大学</div>
+            <div class="wish-fac">国際社会学部 国際社会学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">公立</span></div>
+        </div></div>
+<div style="height:3mm"></div>
+<div class="callout">
+      <div class="co-t">最初にやること ― 現在地を数字にする</div>
+      <div class="co-b">このシートは<strong>敵（配点・必要科目）の分析</strong>が中心になっている。<strong>自分の現在地はまだ数字になっていない。</strong><br>共通テスト形式で一度測って、<strong>英語・国語・社会がそれぞれ何点なのか</strong>を確定させる。ここが出るまで、どの道を選ぶかの最終判断はできない。<br><strong>残り90日。測るのは早いほどいい。</strong></div>
+    </div>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">このシートで決めること</div>
+      <div class="co-b"><strong>① 第一志望の配点から、どの科目にどれだけ時間を置くかを決める。</strong><br><strong>② 北九州市立大の「選択科目1科目（100点）」で何を選ぶかを決める。</strong>ここが進学の確実性を大きく左右する。<br><strong>③ 福岡女子大まで科目を広げるかどうかを決める。</strong>広げれば選択肢は増えるが、全科目が中途半端になるリスクが生まれる。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>髙田 彩華 様｜初回戦略シート</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">01</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">02 第一志望の配点</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">02</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">英語だけで、70%が決まる</h2>
+                <div class="sec-en">Where The Points Are</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">北九州市立大学 外国語学部 英米学科は、<strong>共通テスト600点＋二次試験400点＝総合1000点</strong>。二次試験は<strong>英語のみ400点</strong>。この配点を科目別に分解すると、構造が一目で分かる。</p>
+<div class="bars"><div class="bar-row is-key">
+          <div class="bar-l"><b>英語</b><span>共テ300 ＋ 二次400</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:100.0%"></div></div>
+          <div class="bar-v">700<i>点</i></div>
+          <div class="bar-p">70.0<i>%</i></div>
+        </div><div class="bar-row">
+          <div class="bar-l"><b>国語</b><span>共テ200</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:28.6%"></div></div>
+          <div class="bar-v">200<i>点</i></div>
+          <div class="bar-p">20.0<i>%</i></div>
+        </div><div class="bar-row is-mute">
+          <div class="bar-l"><b>選択科目 1科目</b><span>共テ100</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:14.3%"></div></div>
+          <div class="bar-v">100<i>点</i></div>
+          <div class="bar-p">10.0<i>%</i></div>
+        </div></div>
+<div style="height:4mm"></div>
+<div class="kpirow"><div class="kpi acc">
+          <div class="k-l">英語が握る配点</div>
+          <div class="k-v">700<small>点</small></div>
+          <div class="k-n">総合1000点のうち</div>
+        </div><div class="kpi acc">
+          <div class="k-l">総合に占める割合</div>
+          <div class="k-v">70.0<small>%</small></div>
+          <div class="k-n">700 / 1000</div>
+        </div><div class="kpi">
+          <div class="k-l">二次の比重</div>
+          <div class="k-v">40.0<small>%</small></div>
+          <div class="k-n">400 / 1000・二次は英語のみ</div>
+        </div><div class="kpi">
+          <div class="k-l">必要な共テ科目</div>
+          <div class="k-v">3<small>科目</small></div>
+          <div class="k-n">国語・英語・選択1科目</div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">英語の中身を、さらに分解する</h3>
+<table class="plain">
+      <thead><tr><th style="width:26%">英語の配点</th><th style="width:12%">得点</th><th style="width:26%">総合1000点に占める割合</th><th style="width:36%">問われる力</th></tr></thead>
+      <tbody><tr><td>共通テスト リーディング</td><td><strong>150</strong></td><td>15.0%</td><td>読む</td></tr><tr><td>共通テスト リスニング</td><td><strong>150</strong></td><td><strong>15.0%</strong></td><td><strong>聞く</strong></td></tr><tr><td>二次試験 英語</td><td><strong>400</strong></td><td><strong>40.0%</strong></td><td>読む・書く</td></tr><tr><td><strong>合計</strong></td><td><strong>700</strong></td><td><strong>70.0%</strong></td><td></td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">この配点から決まること</h3>
+<ul class="bul tight"><li><strong>英語に、最も多くの時間を置く。</strong>総合の70%を握る科目に時間を寄せるのが、配点上の最適解。迷ったら英語。</li><li><strong>二次対策は英語だけでいい。</strong>他の科目の二次対策が要らないので、<strong>共通テスト後は英語に全振りできる。</strong>これは大きな強み。</li><li><strong>選択科目は10%。</strong>ここに時間をかけすぎない。ただし<strong>何を選ぶか</strong>は配点とは別の意味で重要になる。（→ <strong>04ページ</strong>）</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">共通テスト英語は、R150：L150 の同配点</div>
+      <div class="co-b">多くの大学はリスニングを圧縮して配点するが、<strong>この大学はリーディングとリスニングが同じ150点。</strong><br>つまり<strong>リスニングだけで総合1000点の15.0%</strong>を占める。私大ではほとんど使わない科目だが、<strong>第一志望を狙う以上、ここは絶対に捨てられない。</strong><br>逆に言えば、<strong>リスニングは短期で伸ばしやすく、毎日の積み上げが最も素直に点になる領域。</strong>ここを放置しないこと。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>北九州市立大学 外国語学部 英米学科</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">02</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">03 5校の比較</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">03</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">5校を並べて見る</h2>
+                <div class="sec-en">Comparing The Five</div>
+              </div>
+            </div>
+      <p class="sec-lead"><strong>5校で最も違うのは、偏差値ではなく「必要な科目数」。</strong>ここを把握しないまま走ると、科目を増やしすぎて全部が中途半端になる。まず分かっていることを並べる。</p>
+<table class="plain">
+      <thead><tr><th style="width:26%">大学・学部・学科</th><th style="width:30%">共通テストで必要な科目</th><th style="width:9%">共テ</th><th style="width:23%">二次試験</th><th style="width:12%">総合</th></tr></thead>
+      <tbody><tr><td><strong>北九州市立大</strong> 外国語・英米<br><span style="color:var(--ink-3)">第一志望</span></td><td><strong>3科目</strong><br>国語・英語・選択1科目</td><td><strong>600</strong></td><td><strong>英語 400</strong></td><td><strong>1000</strong></td></tr><tr><td>北九州市立大 外国語・国際関係</td><td><span style="color:var(--ink-3)">要確認</span></td><td>—</td><td><span style="color:var(--ink-3)">要確認</span></td><td>—</td></tr><tr><td><strong>福岡女子大</strong> 国際文理・国際教養</td><td><strong>6教科6科目</strong><br>国語・数学・理科・英語・情報・地歴公民</td><td><strong>700</strong></td><td>420<br>英200＋（国 or 数）200＋調査書20</td><td><strong>1120</strong></td></tr><tr><td><strong>福岡大</strong> 人文・英語<br><span style="color:var(--ink-3)">私立</span></td><td><strong>3科目</strong><br>英語・国語・社会</td><td>—</td><td><span style="color:var(--ink-3)">方式により異なる・要確認</span></td><td>—</td></tr><tr><td>長崎県立大 国際社会・国際社会</td><td><span style="color:var(--ink-3)">要確認</span></td><td>—</td><td><span style="color:var(--ink-3)">要確認</span></td><td>—</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<div class="kpirow"><div class="kpi good">
+          <div class="k-l">第一志望の必要科目</div>
+          <div class="k-v">3<small>科目</small></div>
+          <div class="k-n">国語・英語・選択1</div>
+        </div><div class="kpi bad">
+          <div class="k-l">福岡女子大の必要科目</div>
+          <div class="k-v">6<small>科目</small></div>
+          <div class="k-n">6教科6科目</div>
+        </div><div class="kpi acc">
+          <div class="k-l">他校で使わない科目</div>
+          <div class="k-v">300<small>点</small></div>
+          <div class="k-n">数学・理科・情報</div>
+        </div><div class="kpi">
+          <div class="k-l">福岡女子大 共テに占める割合</div>
+          <div class="k-v">42.9<small>%</small></div>
+          <div class="k-n">300 / 700</div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">この表から読み取るべき3点</h3>
+<ul class="bul tight"><li><strong>① 第一志望は3科目で戦える。</strong>国語・英語・選択1科目。<strong>私立文系（英・国・社）とほぼ同じ構成</strong>になっている。</li><li><strong>② 福岡大（私立）も同じ3科目。</strong>つまり<strong>第一志望の対策が、そのまま滑り止めの対策になる。</strong>別々の勉強をする必要がない。</li><li><strong>③ 配点が未確認の学校が3つある。</strong>北九州市立大 国際関係・長崎県立大・福岡大の受験方式。<strong>ここを確認しないと併願の設計が完成しない。</strong>（→ <strong>08ページ</strong>）</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">福岡女子大だけ、別のゲームになっている</div>
+      <div class="co-b">北九州市立大（3科目）・福岡大（私立文系3科目）は、<strong>英語・国語・社会の3科目で戦える。</strong><br>一方で福岡女子大は<strong>数学・理科・情報が必須</strong>で、この3科目だけで<strong>共通テスト700点のうち300点＝42.9%</strong>を占める。<br><strong>この300点は、他の4校では1点にもならない。</strong>ここに時間を割くかどうかが、この半年で最も大きい判断になる。（→ <strong>05ページ</strong>）</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>必要科目の違いが、最大の論点</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">03</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">04 選択科目の選び方</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">04</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">選択科目100点の選び方</h2>
+                <div class="sec-en">The 100-Point Choice</div>
+              </div>
+            </div>
+      <p class="sec-lead">北九州市立大の共通テストは、国語・英語に加えて<strong>1科目だけ自由に選べる100点</strong>がある。配点としては総合の10%にすぎない。<strong>しかし、ここで何を選ぶかが、現役で進学できるかどうかを大きく左右する。</strong></p>
+<table class="plain">
+      <thead><tr><th style="width:22%">選択肢</th><th style="width:14%">北九州市立大
+100点</th><th style="width:24%">福岡大（私立3科目）</th><th style="width:20%">福岡女子大</th><th style="width:20%">兼ねられる学校数</th></tr></thead>
+      <tbody><tr><td><strong>社会</strong><br><span style="color:var(--ink-3)">地歴・公民</span></td><td><strong>○</strong></td><td><strong>○ 3科目目として必須</strong></td><td>○ 地歴公民100点</td><td><strong>3校</strong></td></tr><tr><td>数学ⅠA</td><td>○</td><td><strong>✕ 使えない</strong></td><td>○ 数学100点</td><td>2校</td></tr><tr><td>情報Ⅰ</td><td>○</td><td><strong>✕ 使えない</strong></td><td>○ 情報100点</td><td>2校</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">判断の軸は2つある</h3>
+<ul class="bul"><li><strong>① 短い時間で高得点を取りやすいか。</strong>この観点だけなら、範囲が限定されている<strong>情報Ⅰや数学ⅠA</strong>に分がある可能性がある。共通テストの100点だけを取りにいくなら、こちらが速い。</li><li><strong>② 他の受験校と兼ねられるか。</strong>この観点では<strong>社会が圧倒的</strong>。私立文系（福岡大）の3科目目は英語・国語・社会なので、<strong>社会をやらない＝私立で戦えない</strong>ということになる。</li></ul>
+<div style="height:4mm"></div>
+<div class="callout">
+      <div class="co-t">「100点のための100点」にしない</div>
+      <div class="co-b">情報や数学ⅠAを選べば、<strong>その勉強は北九州市立大の100点にしかならない。</strong><br>社会を選べば、<strong>同じ勉強が「北九大の100点」＋「私立の3科目目」＋「福岡女子大の地歴公民100点」を同時に埋める。</strong><br><strong>現役で確実に進学することを第一に置くなら、社会を選ぶほうが投資効率は明らかに高い。</strong></div>
+    </div>
+<div style="height:4mm"></div>
+<h3 class="blk">社会に決めた場合、どの科目を選ぶか</h3>
+<ul class="bul tight"><li><strong>学校で履修している科目かどうか。</strong>残り90日でゼロから始める科目は現実的ではない。<strong>授業で触れてきた科目を選ぶ</strong>のが前提。</li><li><strong>福岡大（私立）で選べる科目に入っているか。</strong>ここが外れると、せっかくの共通化が成立しない。<strong>必ず募集要項で突き合わせる。</strong></li><li><strong>福岡女子大の地歴公民の指定に含まれているか。</strong>道Bを選ぶ可能性を残すなら、ここも揃えておくと無駄がない。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">まず確認すること ― 選択科目で社会を選べるか</div>
+      <div class="co-b"><strong>この判断の前提として、北九州市立大の選択科目で地歴・公民が選べるかを必ず確認する。</strong>募集要項で指定科目を確認し、選べるなら社会で確定させる。<br>また、<strong>社会がゼロからの状態で残り90日に間に合うか</strong>も同時に見る。現状の仕上がり次第では、「共テは情報・数学ⅠAで取り、私立は英語重視型・2科目型の方式を探す」という組み方もありうる。<strong>どちらにしても、私立の受験方式（科目数と配点）を先に確認してから決める。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>北九州市立大の「1科目100点」をどう使うか</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">04</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">05 2つの道</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">05</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">2つの道のどちらを選ぶか</h2>
+                <div class="sec-en">Two Strategies</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">残り90日で全部はできない。<strong>「現役で確実に進学する」ことを最優先にするか、「挑戦的に受験校を広げる」か。</strong>どちらを選ぶかで、やる科目が変わる。先に決めておく。</p>
+<table class="plain">
+      <thead><tr><th style="width:18%"></th><th style="width:41%">道A ― 現役進学を最優先</th><th style="width:41%">道B ― 福岡女子大も狙う</th></tr></thead>
+      <tbody><tr><td><strong>対象校</strong></td><td>北九州市立大・福岡大・長崎県立大</td><td>左記 ＋ <strong>福岡女子大</strong></td></tr><tr><td><strong>必要科目</strong></td><td><strong>英語・国語・社会の3科目</strong></td><td>左記 ＋ <strong>数学・理科・情報</strong></td></tr><tr><td><strong>追加の負担</strong></td><td>なし。3科目に全時間を投下できる</td><td><strong>共テ300点分</strong>（福岡女子大の共テの42.9%）</td></tr><tr><td><strong>強み</strong></td><td><strong>3科目に集中できる。進学の確実性が最も高い</strong></td><td>選択肢が広がる</td></tr><tr><td><strong>リスク</strong></td><td>福岡女子大の選択肢が消える</td><td><strong>全科目が中途半端になる</strong></td></tr><tr><td><strong>選べる条件</strong></td><td>いつでも選べる</td><td><strong>英語・国語・社会がすでにボーダー圏にあること</strong></td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">判断の原則</h3>
+<ul class="bul"><li><strong>3科目が未達のまま科目を増やすのが、最も危険な選択。</strong>第一志望の北九州市立大は3科目型。その3科目が仕上がっていない状態で数学・理科・情報に手を出せば、<strong>第一志望も滑り止めも同時に落とす。</strong></li><li><strong>ボーダーとの差が大きいほど、道Aを選ぶ。</strong>差が大きいということは、3科目にまだ伸びしろがあるということ。そこに時間を置くほうが総合点は動く。</li><li><strong>福岡女子大の二次は、国語か数学の選択。</strong>国語を選べば二次の負担は増えない。<strong>負担が増えるのは共通テストの数学・理科・情報だけ。</strong>この事実は正確に押さえておく。</li></ul>
+<div style="height:4mm"></div>
+<h3 class="blk">道Bを選んだ場合、追加で必要になる科目</h3>
+<table class="plain">
+      <thead><tr><th style="width:38%">科目</th><th style="width:22%">福岡女子大での配点</th><th style="width:40%">他校での使い道</th></tr></thead>
+      <tbody><tr><td>数学（数ⅠA or 数ⅡBC から1）</td><td>共テ 100点</td><td>北九州市立大の選択科目として使える</td></tr><tr><td><strong>理科</strong>（基礎2分野 または 発展1科目）</td><td>共テ 100点</td><td><strong>他校では使えない</strong></td></tr><tr><td>情報Ⅰ</td><td>共テ 100点</td><td>北九州市立大の選択科目として使える</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<ul class="bul tight"><li><strong>どちらの道でも、英語・国語・社会の3科目は必ずやる。</strong>だから<strong>判断を待たずに、今すぐ3科目を始めていい。</strong>迷っている間に手が止まる必要はまったくない。</li><li><strong>道Bを選ぶとしても、追加科目の着手は11月以降でいい。</strong>まず3科目を立ち上げてから。<strong>順番を逆にしない。</strong></li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">判断は「現在地の数字」が出てから。ただし期限を切る</div>
+      <div class="co-b">どちらを選ぶかは、<strong>共通テスト形式で英語・国語・社会を測った結果を見てから決める。</strong>感覚では決めない。<br>ただし<strong>判断を先延ばしにしない。</strong>迷っている期間は、どちらの科目にも中途半端に時間を使うことになる。<strong>11月中には道を1つに決めて、そこから先はブラさない。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>現役進学を最優先するか、挑戦するか</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">05</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">06 英語</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">06</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">英語 ― ここに全てを賭ける</h2>
+                <div class="sec-en">English</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm"><strong>総合1000点のうち700点が英語。</strong>どの道を選んでも、英語が仕上がらなければ第一志望は取れない。そして英語は、<strong>併願校のすべてで必ず使う科目</strong>でもある。最優先で、最も時間をかける。</p>
+<div class="kpirow"><div class="kpi acc">
+          <div class="k-l">英語の総配点</div>
+          <div class="k-v">700<small>点</small></div>
+          <div class="k-n">共テ300 ＋ 二次400</div>
+        </div><div class="kpi acc">
+          <div class="k-l">総合に占める割合</div>
+          <div class="k-v">70.0<small>%</small></div>
+          <div class="k-n">700 / 1000</div>
+        </div><div class="kpi">
+          <div class="k-l">リスニングの比重</div>
+          <div class="k-v">15.0<small>%</small></div>
+          <div class="k-n">共テL150 / 総合1000</div>
+        </div><div class="kpi">
+          <div class="k-l">二次は英語のみ</div>
+          <div class="k-v">400<small>点</small></div>
+          <div class="k-n">二次対策＝英語対策</div>
+        </div></div>
+<div style="height:4mm"></div>
+<div class="steps"><div class="step">
+          <div class="step-no">1</div>
+          <div class="step-txt">
+            <div class="step-t">共通テスト形式で、まず現在地を測る</div>
+            <div class="step-d">リーディングとリスニングを<strong>分けて</strong>測る。R150・L150の同配点なので、<strong>どちらが足を引っ張っているかで打ち手がまったく変わる。</strong>まずここを数字にする。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">2</div>
+          <div class="step-txt">
+            <div class="step-t">リスニングを毎日の固定メニューにする</div>
+            <div class="step-d"><strong>総合の15.0%を占めるのに、対策が後回しになりやすいのがリスニング。</strong>毎日触れた量がそのまま点になる領域なので、<strong>時間を決めて毎日やる</strong>形に固定する。ここは最も素直に伸びる。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">3</div>
+          <div class="step-txt">
+            <div class="step-t">リーディングは、速度より先に正確さ</div>
+            <div class="step-d">共テ形式の演習に入る前に、<strong>1文を正確に取れる状態</strong>を確認する。あいまいなまま量を増やすと、演習が「答え合わせ」で終わって力にならない。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">4</div>
+          <div class="step-txt">
+            <div class="step-t">二次試験（英語400点）の対策へ移行する</div>
+            <div class="step-d"><strong>二次試験は英語だけ400点。</strong>他の科目の二次対策が要らないぶん、共通テスト後は英語に全振りできる。<strong>形式ごとの得点の取り方は、過去問で確立していく。</strong></div>
+          </div>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">英語のなかでの優先順位</h3>
+<ul class="bul tight"><li><strong>① リスニング（毎日・固定）</strong> ― 総合の15.0%。<strong>毎日やった分が最も素直に点になる</strong>領域。1日も空けない。</li><li><strong>② リーディング（共テ形式＋正確さ）</strong> ― 総合の15.0%。速度より先に正確さ。あいまいなまま量を増やさない。</li><li><strong>③ 二次の英語（共テ後に全振り）</strong> ― 総合の40.0%で単独最大。<strong>ただし共通テストを突破できなければ土俵に立てない。</strong>順番としては共テが先。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">二次試験の問題分析は、別資料にまとめる</div>
+      <div class="co-b"><strong>北九州市立大の二次試験（英語400点）がどういう問題で、何が問われるのか。</strong>その分析は<strong>別の資料</strong>で詳しくまとめる。<br>このシートは<strong>全体戦略（どの科目にどれだけ時間を置くか・どの大学を受けるか）</strong>を決めるためのもの。<strong>問題レベルの対策は、別資料を参照すること。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>総合の70%を握る科目</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">06</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">07 国語と社会</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">07</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">国語と社会 ― 併願を支える2科目</h2>
+                <div class="sec-en">Japanese &amp; Social Studies</div>
+              </div>
+            </div>
+      <p class="sec-lead">英語に次いで重いのが国語、そして<strong>併願の生命線になるのが社会</strong>。この2科目は、1つの勉強が複数の大学に同時に効く。</p>
+<h3 class="blk">国語 ― 第一志望で200点、併願でも必ず使う</h3>
+<ul class="bul"><li><strong>北九州市立大で共テ200点＝総合の20.0%。</strong>英語に次ぐ2番目の配点。</li><li><strong>福岡大（私立文系）でも必ず使う。</strong>福岡女子大では共テ150点＋二次200点＝350点で、総合の31.2%を占める。</li><li><strong>どの道を選んでも、国語は外れない。</strong>英語ほど時間はかけられないので、<strong>共通テスト形式で確実に取り切る形</strong>に絞って仕上げる。</li></ul>
+<div style="height:4mm"></div>
+<h3 class="blk">社会 ― 「進学を確実にする」ための科目</h3>
+<ul class="bul"><li><strong>北九州市立大の選択科目100点</strong>として使える（要確認）。配点は10%だが、ここを社会にできるかで併願の自由度が変わる。</li><li><strong>私立文系（福岡大）の3科目目は社会。</strong>ここを対策していなければ、<strong>私立に転んだときに戦えない。</strong>現役で確実に進学することを考えるなら、ここは避けて通れない。</li><li><strong>量をやった分がそのまま点になる科目。</strong>残り90日という条件では、努力の効き方が最も読める。<strong>きつい時期に自分を支えてくれるのがこの科目。</strong></li></ul>
+<div style="height:4mm"></div>
+<h3 class="blk">3科目が、どの学校のどこに効くか</h3>
+<table class="plain">
+      <thead><tr><th style="width:14%">科目</th><th style="width:28%">北九州市立大 英米</th><th style="width:28%">福岡大（私立3科目）</th><th style="width:30%">福岡女子大</th></tr></thead>
+      <tbody><tr><td><strong>英語</strong></td><td><strong>700点（70.0%）</strong></td><td><strong>3科目のうち1つ</strong></td><td>350点（31.2%）</td></tr><tr><td><strong>国語</strong></td><td><strong>200点（20.0%）</strong></td><td><strong>3科目のうち1つ</strong></td><td>350点（31.2%）</td></tr><tr><td><strong>社会</strong></td><td>選択科目 100点（10.0%）<span style="color:var(--ink-3)">要確認</span></td><td><strong>3科目のうち1つ</strong></td><td>地歴公民 100点（8.9%）</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">国語と社会の進め方</h3>
+<ul class="bul tight"><li><strong>国語は共通テスト形式に絞る。</strong>英語ほど時間はかけられない。難問や記述に手を広げず、<strong>共テ形式で確実に取り切る形</strong>だけを仕上げる。</li><li><strong>社会は「通史 → 頻出 → 正誤」の順で一気に。</strong>残り90日では細部から入ると間に合わない。<strong>まず全体を通してから、出題される形で確認する。</strong></li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">英語・国語・社会の3科目が、すべての土台になる</div>
+      <div class="co-b">第一志望（北九州市立大）も、滑り止め（福岡大）も、<strong>この3科目で戦える。</strong><br><strong>つまり、3科目を仕上げること自体が、第一志望対策と滑り止め対策を同時に進めることになる。</strong>別々の勉強をする必要はない。<br><strong>まずこの3科目。科目を増やすかどうかは、その後の判断。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>複数校を同時に支える2科目</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">07</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">08 受験校の設計</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">08</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">受験校の設計と、判断のタイミング</h2>
+                <div class="sec-en">Where To Apply</div>
+              </div>
+            </div>
+      <p class="sec-lead"><strong>第一志望を狙うことと、確実に進学することは、両立できる。</strong>ただしそれには、受験校を層で組み立てて、<strong>判断する日を先に決めておく</strong>必要がある。</p>
+<table class="plain">
+      <thead><tr><th style="width:16%">層</th><th style="width:33%">現在の候補</th><th style="width:31%">位置づけ</th><th style="width:20%">必要科目</th></tr></thead>
+      <tbody><tr><td><strong>第一志望</strong></td><td>北九州市立大 外国語・英米</td><td><strong>ここを狙うための設計をする</strong></td><td>3科目</td></tr><tr><td><strong>併願（公立）</strong></td><td>北九州市立大 国際関係／長崎県立大 国際社会</td><td>日程と配点を確認して組む</td><td><span style="color:var(--ink-3)">要確認</span></td></tr><tr><td><strong>挑戦（公立）</strong></td><td>福岡女子大 国際文理・国際教養</td><td><strong>科目が増える。受けるかは05で判断</strong></td><td>6教科6科目</td></tr><tr><td><strong>滑り止め（私立）</strong></td><td><strong>福岡大 人文・英語</strong></td><td><strong>現役進学の生命線。確実に取り切る</strong></td><td>英・国・社</td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">いますぐ確認すること（成績と関係なくできる）</h3>
+<ol class="num"><li><strong>北九州市立大の選択科目で、社会（地歴・公民）が選べるか。</strong>ここが決まらないと04ページの判断が確定しない。<strong>最優先で確認する。</strong></li><li><strong>福岡大 人文学部 英語学科の受験方式・科目・配点。</strong>英語重視型や2科目型があるかも含めて確認する。<strong>滑り止めの取り方が変わる。</strong></li><li><strong>北九州市立大 国際関係学科・長崎県立大の配点と必要科目。</strong>第一志望と同じ3科目で戦えるなら、併願の価値が一気に上がる。</li><li><strong>5校の受験日程と受験料。</strong>物理的に受けられない組み合わせがないかを先に潰す。</li></ol>
+<div style="height:4mm"></div>
+<h3 class="blk">判断のタイミング</h3>
+<ul class="bul tight"><li><strong>10月中</strong> ― 上の4点を確認し終える。<strong>選択科目を確定させる。</strong></li><li><strong>11月中</strong> ― 共通テスト形式の得点を見て、<strong>道A／道Bを1つに決める。</strong>ここから先はブラさない。</li><li><strong>12月末</strong> ― 共テ直前の得点で、<strong>出願する大学の組み合わせを確定させる。</strong></li></ul>
+<div style="height:4mm"></div>
+<h3 class="blk">確認した結果で、何が変わるか</h3>
+<ul class="bul tight"><li><strong>社会が選べる場合</strong> → 選択科目は社会で確定。<strong>3科目がすべての学校に効く形</strong>になり、設計が一気にシンプルになる。</li><li><strong>社会が選べない場合</strong> → 共テの100点は情報・数学ⅠAで取りにいき、<strong>私立は英語重視型・2科目型の方式を探す</strong>方向へ切り替える。</li><li><strong>国際関係学科・長崎県立大が3科目で戦える場合</strong> → <strong>同じ勉強で受けられる学校が増える。</strong>出願校を増やす判断がしやすくなり、現役進学の確実性が上がる。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">早く決めるほど、勝率は上がる</div>
+      <div class="co-b">受験校を絞ることは、諦めることではない。<strong>取れる大学に、残りの時間を集中させるということ。</strong><br>迷っている期間は、どの科目にも中途半端に時間を使うことになる。<strong>90日しかない以上、迷う時間そのものがコスト。</strong><br><strong>数字を見て、期限までに決める。</strong>それが第一志望を狙いながら、確実に進学するための唯一の方法。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>進学先を、確実に作る</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">08</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">09 環境と運用</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">09</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">環境ルールと、数字で判断する運用</h2>
+                <div class="sec-en">Rules &amp; Operation</div>
+              </div>
+            </div>
+      <p class="sec-lead">残り90日。<strong>勉強時間の最大化が全ての前提</strong>になる。学習の質は意思ではなく<strong>仕組み</strong>で決まる。面談で決めたルールを固定化して、<strong>日々の判断に思考を使わない状態</strong>を作る。</p>
+<div class="grid2"><div class="card is-gold">
+          <div class="c-kicker">環境</div>
+          <div class="c-title">自習室ルールを固定する</div>
+          <p class="c-body">面談で決めた<strong>入る時間・抜ける時間のルールを固定</strong>する。基本の時間を決めておいて、<strong>例外がある時だけ連絡する</strong>という形にする。<br>「今日どうするか」を毎日考えなくて済む状態を作ることで、<strong>思考をブラさずに済む。</strong>判断コストをゼロにするのが目的。</p>
+        </div><div class="card">
+          <div class="c-kicker">判断</div>
+          <div class="c-title">全て「数字」で判断する</div>
+          <p class="c-body"><strong>過去問シート</strong>を使って、志望校に対して<strong>実際にどれだけの差があるのか</strong>を毎回数字で出す。<br>「手応えがあった／なかった」では次の一手が決まらない。<strong>点数化して初めて、次にやることと、受験校の組み立てが決まる。</strong></p>
+        </div></div>
+<div style="height:4mm"></div>
+<h3 class="blk">運用の4原則</h3>
+<ol class="num"><li><strong>決めた時間に自習室に入り、決めた時間に出る。</strong>例外は事前連絡のみ。連絡すれば例外はOK、連絡なしの例外はナシ。</li><li><strong>リスニングだけは、何があっても毎日。</strong>総合の15.0%を占める科目で、かつ毎日の積み上げが最も素直に点になる。止めた瞬間に落ちる。</li><li><strong>詰まったら抱え込まず、その場で質問する。</strong>解説を見ても分からない問題で止まっている時間が、一番もったいない。manabo をすぐ使う。</li><li><strong>迷ったらこのシートに戻る。</strong>優先順位はここに書いてある通り。<strong>新しい教材や周りの動きに振り回されない。</strong></li></ol>
+<div style="height:4mm"></div>
+<h3 class="blk">毎週チェックする数字</h3>
+<ul class="bul tight"><li><strong>共テ英語 R／L それぞれの得点</strong> ― 合計ではなく、必ず分けて見る。打ち手が変わる。</li><li><strong>共テ国語の得点</strong> ― 大問ごとにどこで落としたかまで出す。</li><li><strong>社会の進捗</strong> ― 範囲のどこまでが「もう大丈夫」になったか。</li><li><strong>過去問の得点と、志望校との差</strong> ― 過去問シートに必ず点数で落とす。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">判断基準は、全部「数字」</div>
+      <div class="co-b">あと何点足りないのか。R と L のどちらが低いのか。社会はどこまで終わったのか。<strong>それ以外の材料で戦略は動かさない。</strong><br>不安や手応えは判断材料にしない。<strong>数字が動いていないなら、やり方を変える。数字が動いているなら、不安でも続ける。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>仕組みで質を担保する</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">09</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">10 ロードマップ</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">10</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">本番までのロードマップ</h2>
+                <div class="sec-en">Roadmap</div>
+              </div>
+            </div>
+      <p class="sec-lead"><strong>共通テストまで90日、国公立前期まで130日。</strong>共通テストが600点（総合の60%）を占める以上、<strong>まずは共通テストが主戦場。</strong>二次対策は英語だけなので、共テ後に集中できる。</p>
+<table class="plain">
+      <thead><tr><th style="width:15%">時期</th><th style="width:11%">共テまで</th><th style="width:25%">英語</th><th style="width:18%">国語</th><th style="width:19%">社会</th><th style="width:12%">入試</th></tr></thead>
+      <tbody><tr><td><strong>10月下旬</strong></td><td><strong>90日</strong></td><td><strong>R／Lを分けて現在地を測る</strong>／リスニングを毎日固定</td><td>共テ形式で現在地を測る</td><td><strong>現在地を測る／選択科目を確定</strong></td><td>—</td></tr><tr><td><strong>11月</strong></td><td><strong>残り47日</strong></td><td>共テ形式で固める／<strong>Lを毎日</strong></td><td>共テ形式の演習</td><td><strong>通史と頻出を一気に</strong></td><td><span style="color:var(--ink-3)">道A・Bを決定</span></td></tr><tr><td><strong>12月</strong></td><td><strong>残り16日</strong></td><td><strong>共テ直前特化</strong>／R・Lの弱い方に寄せる</td><td>共テ直前特化</td><td>正誤・一問一答で穴を潰す</td><td><span style="color:var(--ink-3)">出願校を確定</span></td></tr><tr><td><strong>1月前半</strong></td><td><strong>本番</strong></td><td>形式慣れと維持</td><td>形式慣れと維持</td><td>最終確認</td><td><strong>共通テスト</strong></td></tr><tr><td><strong>1月下旬〜2月上旬</strong></td><td>—</td><td><strong>私立の過去問</strong>（福岡大）</td><td>私立の過去問</td><td>私立の過去問</td><td><strong>私大入試</strong></td></tr><tr><td><strong>2月中旬〜25日</strong></td><td>—</td><td><strong>二次（英語400点）に全振り</strong></td><td>—</td><td>—</td><td><strong>国公立前期</strong></td></tr></tbody>
+    </table>
+<div style="height:4mm"></div>
+<h3 class="blk">各時点で必ず確認すること</h3>
+<ul class="bul"><li><strong>10月末</strong> ― 選択科目は確定したか。北九州市立大で社会を選べるかの確認は終わったか。<strong>ここが遅れると、社会の対策開始そのものが遅れる。</strong></li><li><strong>11月末</strong> ― 英語・国語・社会がボーダーに対してどこにいるか。<strong>この数字で道A／道Bを決め切る。</strong>先延ばしにしない。</li><li><strong>12月末</strong> ― 出願する大学の組み合わせは確定したか。<strong>共テ本番の直前に受験校で悩む状態を作らない。</strong></li></ul>
+<div style="height:4mm"></div>
+<h3 class="blk">共通テスト後の40日の使い方</h3>
+<ul class="bul tight"><li><strong>共テ直後から2月上旬は、私立（福岡大）の過去問に集中する。</strong>共通テストが終わった直後が私大入試。<strong>ここで滑り止めを取り切る。</strong></li><li><strong>2月中旬からは、二次（英語400点）に全振りできる。</strong>二次が英語だけなので、他科目に時間を取られない。<strong>この構造はこの大学を受けるうえで大きな強み。</strong></li><li><strong>出願先の最終判断は、共テの結果が出た時点で。</strong>そこで迷わないように、<strong>12月末までに組み合わせを決めておく。</strong></li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">このロードマップで最も守るべき1点</div>
+      <div class="co-b"><strong>リスニングを毎日やること。</strong>総合の15.0%を占めるのに、対策が後回しになりやすい。そして<strong>毎日やった分が最も素直に点になる。</strong><br>90日のうち、1日も空けない。<strong>他の何を後回しにしてでも、ここは毎日触る。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>本番までの90日と、その先</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">10</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">11 最初の1ヶ月</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">11</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">最初の1ヶ月でやり切ること</h2>
+                <div class="sec-en">First 30 Days</div>
+              </div>
+            </div>
+      <p class="sec-lead">残り90日のうちの最初の30日。<strong>ここで「測る」と「決める」を終わらせる。</strong>上から順に潰していく。終わったらチェックを入れて、面談で一緒に確認する。</p>
+<div class="checks"><div class="check"><span class="box"></span><span><strong>確認</strong>：北九州市立大の選択科目で<strong>社会が選べるか</strong>を募集要項で確認する</span></div><div class="check"><span class="box"></span><span><strong>確認</strong>：福岡大 人文・英語の<strong>受験方式・科目・配点</strong>を確認する</span></div><div class="check"><span class="box"></span><span><strong>確認</strong>：北九州市立大 国際関係／長崎県立大の<strong>配点と必要科目</strong>を確認する</span></div><div class="check"><span class="box"></span><span><strong>確認</strong>：5校の<strong>受験日程と受験料</strong>を確認し、受けられる組み合わせを出す</span></div><div class="check"><span class="box"></span><span><strong>測る</strong>：共テ形式で<strong>英語リーディング</strong>を測る</span></div><div class="check"><span class="box"></span><span><strong>測る</strong>：共テ形式で<strong>英語リスニング</strong>を測る（Rとは必ず分けて）</span></div><div class="check"><span class="box"></span><span><strong>測る</strong>：共テ形式で<strong>国語</strong>を測る</span></div><div class="check"><span class="box"></span><span><strong>測る</strong>：<strong>社会</strong>の現在地を測る（未着手ならどこから始めるかを決める）</span></div><div class="check"><span class="box"></span><span><strong>決める</strong>：<strong>選択科目を1つに確定させる</strong>（10月中）</span></div><div class="check"><span class="box"></span><span><strong>決める</strong>：測った数字をもとに、<strong>道A／道Bの方向性を面談で詰める</strong>（決定は11月中）</span></div><div class="check"><span class="box"></span><span><strong>英語</strong>：<strong>リスニングを毎日やる時間を固定して、運用を開始する</strong></span></div><div class="check"><span class="box"></span><span><strong>英語</strong>：リーディングで1文を正確に取れるかを確認する</span></div><div class="check"><span class="box"></span><span><strong>社会</strong>：通史・頻出のインプットに着手する</span></div><div class="check"><span class="box"></span><span><strong>環境</strong>：自習室に入る時間・抜ける時間を固定して運用開始</span></div><div class="check"><span class="box"></span><span><strong>数字管理</strong>：過去問シートの使い方を確認し、測った点数を全て落とす</span></div></div>
+<div style="height:4mm"></div>
+<div class="callout is-navy">
+      <div class="co-t">90日で、どこまで行けるか</div>
+      <div class="co-b">第一志望の北九州市立大は、<strong>英語だけで総合の70%が決まる大学。</strong>つまり<strong>英語に時間を置くことが、そのまま第一志望への最短距離</strong>になる。そして英語は併願校のすべてで使う。<br><strong>やることは絞れている。</strong>英語・国語・社会。この3科目で、第一志望も滑り止めも同時に戦える。<br><strong>まずは測る。そして決める。あとは、決めた通りに動くだけ。</strong></div>
+    </div>
+<div style="height:4mm"></div>
+<div class="memo">
+      <div class="mm-t">面談メモ／今週決めたこと</div>
+      <div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>髙田 彩華 様｜初回戦略シート</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">11</span>
+    </div>
+  </section>
+<script>
+/* ?only=N でそのページだけ表示（レイアウト検証用） */
+(function(){
+  var m = /[?&]only=(\d+)/.exec(location.search);
+  if(!m) return;
+  var n = parseInt(m[1],10);
+  document.querySelectorAll('.page').forEach(function(el,i){
+    if(i !== n) el.style.display='none';
+  });
+  document.body.style.padding='0';
+  var sh = /[?&]shift=(d+)/.exec(location.search);
+  if(sh) document.querySelectorAll('.page')[n].style.marginTop = '-' + sh[1] + 'px';
+})();
+
+/* ?qa=1 で各ページのはみ出し量を出力（--dump-dom で回収する） */
+(function(){
+  if(!/[?&]qa=1/.test(location.search)) return;
+  var out = [];
+  document.querySelectorAll('.page').forEach(function(el,i){
+    var b = el.querySelector('.cover-inner') || el.querySelector('.page-body');
+    var over = b ? Math.round(b.scrollHeight - b.clientHeight) : 0;
+    var slack = b ? Math.round(b.clientHeight - (b.lastElementChild ? b.lastElementChild.getBoundingClientRect().bottom - b.getBoundingClientRect().top : 0)) : 0;
+    out.push('PAGE ' + String(i).padStart(2,'0') + '  h=' + el.offsetHeight + 'px  bodyH=' + (b?b.clientHeight:0) + 'px  overflow=' + over + 'px  slack=' + slack + 'px');
+  });
+  document.querySelectorAll('.page').forEach(function(el){ el.style.display='none'; });
+  var pre = document.createElement('pre');
+  pre.id = 'qa-report';
+  pre.style.cssText = 'font:16px/1.7 monospace;color:#111;background:#fff;padding:24px;margin:0;white-space:pre;';
+  pre.textContent = out.join(String.fromCharCode(10));
+  document.body.style.padding = '0';
+  document.body.appendChild(pre);
+})();
+</script>
+</body>
+</html>

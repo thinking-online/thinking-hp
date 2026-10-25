@@ -220,7 +220,7 @@ function addGuestRow_(me) {
       if (h === 'スタッフ' || h === '停止') return false;
       return '';
     });
-    sh.appendRow(row);
+    appendSafe_(sh, row);
   } finally {
     lock.releaseLock();
   }
@@ -344,7 +344,7 @@ function toggleFav_(uid, book, on) {
         return { status: 'ok', on: false };
       }
     }
-    if (on) sh.appendRow([uid, book, new Date()]);
+    if (on) appendSafe_(sh, [uid, book, new Date()]);
     return { status: 'ok', on: on };
   } finally {
     lock.releaseLock();
@@ -352,7 +352,7 @@ function toggleFav_(uid, book, on) {
 }
 
 function appendLog_(uid, kind, book, title) {
-  sheet_(SHEET.LOGS).appendRow([new Date(), uid, kind, book, title]);
+  appendSafe_(sheet_(SHEET.LOGS), [new Date(), uid, kind, book, title]);
 }
 
 /* ======================================================================
@@ -577,7 +577,7 @@ function appendItem_(book, kind, title, file, publish, order) {
     if (h === '更新日') return new Date();
     return '';
   });
-  sheet_(SHEET.ITEMS).appendRow(row);
+  appendSafe_(sheet_(SHEET.ITEMS), row);
 }
 
 /** 登録済みの教材の中身を新しい版にする（同じファイルIDのまま＝リンクは変わらない） */
@@ -673,10 +673,10 @@ function menuSetup() {
   ensureSheet_(SHEET.LOGS, HEAD.LOGS);
 
   var cs = ss.getSheetByName(SHEET.CONFIG) || ss.insertSheet(SHEET.CONFIG);
-  if (cs.getLastRow() === 0) cs.appendRow(['項目', '値', '説明']);
+  if (cs.getLastRow() === 0) appendSafe_(cs, ['項目', '値', '説明']);
   var existing = {};
   cs.getDataRange().getValues().forEach(function (r) { existing[r[0]] = true; });
-  DEFAULT_CONFIG.forEach(function (r) { if (!existing[r[0]]) cs.appendRow(r); });
+  DEFAULT_CONFIG.forEach(function (r) { if (!existing[r[0]]) appendSafe_(cs, r); });
   cs.setFrozenRows(1);
   CacheService.getScriptCache().remove('cfg');
 
@@ -726,6 +726,21 @@ function CHECKBOX_() {
   return SpreadsheetApp.newDataValidation().requireCheckbox().build();
 }
 
+/**
+ * データの直後の行に書く。appendRow は使わない（チェックボックスに FALSE が残った行や、
+ * 他の方法で広がった行の下に入ってしまうことがあるため）。空文字と FALSE だけの行は空行とみなす。
+ */
+function appendSafe_(sh, row) {
+  var last = sh.getLastRow();
+  if (last > 1) {
+    var vals = sh.getRange(2, 1, last - 1, row.length).getValues();
+    var i = vals.length;
+    while (i > 0 && vals[i - 1].every(function (v) { return v === '' || v === false; })) i--;
+    last = i + 1;
+  }
+  sh.getRange(last + 1, 1, 1, row.length).setValues([row]);
+}
+
 function sheet_(name) {
   var sh = SpreadsheetApp.getActive().getSheetByName(name);
   if (!sh) throw new Error('シート「' + name + '」がありません。メニューの「初期セットアップ」を実行してください。');
@@ -735,7 +750,7 @@ function sheet_(name) {
 function ensureSheet_(name, head) {
   var ss = SpreadsheetApp.getActive();
   var sh = ss.getSheetByName(name) || ss.insertSheet(name);
-  if (sh.getLastRow() === 0) sh.appendRow(head);
+  if (sh.getLastRow() === 0) appendSafe_(sh, head);
   sh.getRange(1, 1, 1, head.length).setFontWeight('bold').setBackground('#172642').setFontColor('#ffffff');
   sh.setFrozenRows(1);
   return sh;
@@ -765,7 +780,7 @@ function setConfig_(key, value) {
   for (var i = 1; i < values.length; i++) {
     if (values[i][0] === key) { sh.getRange(i + 1, 2).setValue(value); CacheService.getScriptCache().remove('cfg'); return; }
   }
-  sh.appendRow([key, value, '']);
+  appendSafe_(sh, [key, value, '']);
   CacheService.getScriptCache().remove('cfg');
 }
 
@@ -826,7 +841,7 @@ function addBookRow_(uni, name) {
     if (h === '公開' || h === 'サンプル') return false;
     return '';
   });
-  sheet_(SHEET.BOOKS).appendRow(row);
+  appendSafe_(sheet_(SHEET.BOOKS), row);
 }
 
 /** 問題集のIDが空なら自動で振る（b0001, b0002, …）。一度振ったIDは変えない */

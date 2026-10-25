@@ -540,3 +540,10 @@
   for = "/kakomon-portal/seed/*"
   [headers.values]
     Content-Type = "text/csv; charset=utf-8"
+
+# 旧 kakomon/ の教材PDF（ポータルへ移行して削除済み）→ 過去問ポータル（LINE）へ案内
+[[redirects]]
+  from = "/kakomon/*"
+  to = "https://liff.line.me/2010454771-UKpPuCeO"
+  status = 302
+  force = true

@@ -373,7 +373,6 @@ function onOpen() {
     .addSeparator()
     .addItem('点検（リンク切れ・設定ミスを探す）', 'menuCheck')
     .addItem('問題集リストを最新にする', 'menuSyncBooks')
-    .addItem('旧kakomonフォルダから移行（1回だけ）', 'menuMigrateLegacy')
     .addItem('今すぐ全員に反映', 'menuPublish')
     .addSeparator()
     .addItem('初期セットアップ（通常は自動）', 'menuSetup')
@@ -558,56 +557,6 @@ function parseToc_(text) {
     }
   }
   return out;
-}
-
-/**
- * 旧 kakomon/ フォルダ（ホームページで公開中のPDF）を、ドライブに移して登録する。1回だけ使う。
- * 各フォルダの links.txt を目次として読み、そこに載っているPDFだけを移す（過去問の原本などは移さない）。
- * 時間がかかるので、途中で止まったらもう一度押せば続きから進む（移し済みのファイルは飛ばす）。
- */
-var LEGACY_BASE = 'https://thinking-online.com/kakomon/';
-var LEGACY = [
-  { dir: 'bunkyo-u', uni: '文教大学', book: '文教 一般選抜' },
-  { dir: 'fukuoka-u/past-question-pack', uni: '福岡大学', book: '福岡大 一般選抜' },
-  { dir: 'jissen-women', uni: '実践女子大学', book: '実践女子 全学部統一入試' },
-  { dir: 'jumonji-u', uni: '十文字学園女子大学', book: '十文字 一般選抜（S日程・A日程）' },
-  { dir: 'kanazawa-u', uni: '金沢大学', book: '金沢大 前期日程' },
-  { dir: 'kitakyushu-u', uni: '北九州市立大学', book: '北九州市立大 外国語学部' },
-  { dir: 'osaka-u', uni: '大阪大学', book: '大阪大 前期日程' }
-];
-
-function menuMigrateLegacy() {
-  var started = Date.now();
-  var moved = 0, done = [], pending = [];
-  syncBooks_(true); // 移行先の問題集がシートにあることを先に確かめる
-  for (var i = 0; i < LEGACY.length; i++) {
-    var L = LEGACY[i];
-    if (Date.now() - started > 4 * 60 * 1000) { pending.push(L.book); continue; }
-    var base = LEGACY_BASE + L.dir + '/';
-    var r = UrlFetchApp.fetch(base + 'links.txt', { muteHttpExceptions: true });
-    if (r.getResponseCode() !== 200) { pending.push(L.book + '（目次が読めない）'); continue; }
-    var tocText = r.getContentText('UTF-8');
-    var folder = bookFolder_(L.uni, L.book);
-    if (!folder.getFilesByName('links.txt').hasNext()) folder.createFile('links.txt', tocText, MimeType.PLAIN_TEXT);
-    var complete = true;
-    parseToc_(tocText).forEach(function (e) {
-      if (!complete) return;
-      if (folder.getFilesByName(e.file).hasNext() || alreadyMoved_(L.book, e.title)) return;
-      if (Date.now() - started > 4 * 60 * 1000) { complete = false; return; }
-      var pr = UrlFetchApp.fetch(base + e.file, { muteHttpExceptions: true });
-      if (pr.getResponseCode() !== 200) return;
-      folder.createFile(pr.getBlob().setName(e.file).setContentType('application/pdf'));
-      moved++;
-    });
-    (complete ? done : pending).push(L.book);
-  }
-  var msg = 'ドライブに移したPDF：' + moved + '件\n\n' + importCore_();
-  if (pending.length) msg = '時間の都合で途中まで進めました。もう一度このメニューを押すと続きから進みます。\n残り：' + pending.join('、') + '\n\n' + msg;
-  SpreadsheetApp.getUi().alert(msg);
-}
-
-function alreadyMoved_(book, title) {
-  return itemRows_().some(function (r) { return r.book === book && r.title === title; });
 }
 
 /** 区分はタイトルと見出しから決める（模試・単語帳・戦略編・解説、それ以外は大問別） */

@@ -17,7 +17,7 @@
 var VERSION = '1.1.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 4;
+var SETUP_VERSION = 5;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -45,7 +45,7 @@ var DEFAULT_CONFIG = [
   ['CAMPUS_URL', 'https://liff.line.me/2010454771-l3vZsfjz', '未登録の塾生に案内する THINKING CAMPUS'],
   ['購入案内URL', 'https://lin.ee/yJ8MFVb', 'ロック中の問題集の「購入はこちら」の飛び先'],
   ['公式LINE_URL', 'https://lin.ee/yJ8MFVb', '問い合わせ先'],
-  ['グループ順', 'MARCH,関関同立,日東駒専,産近甲龍,その他', 'ホームに並ぶ順番（カンマ区切り）'],
+  ['グループ順', 'MARCH,関関同立,日東駒専,産近甲龍,国公立,その他', 'ホームに並ぶ順番（カンマ区切り）'],
   ['問題集リストURL', 'https://thinking-online.com/kakomon-portal/seed/books.csv', '問題集の一覧の元データ（GitHub）。シートを開くと差分が自動で反映される'],
   ['NEW表示日数', '14', 'この日数以内に追加・更新された教材に NEW / 更新 を付ける'],
   ['保存先フォルダID', '', '初期セットアップで自動作成（触らない）']
@@ -373,6 +373,7 @@ function onOpen() {
     .addSeparator()
     .addItem('点検（リンク切れ・設定ミスを探す）', 'menuCheck')
     .addItem('問題集リストを最新にする', 'menuSyncBooks')
+    .addItem('旧kakomonフォルダから移行（1回だけ）', 'menuMigrateLegacy')
     .addItem('今すぐ全員に反映', 'menuPublish')
     .addSeparator()
     .addItem('初期セットアップ（通常は自動）', 'menuSetup')
@@ -449,6 +450,10 @@ function uploadMaterial(form) {
  *   ・目次がない／目次にないPDF      → ファイル名を仮のタイトルにして「その他」で追加し、知らせる
  */
 function menuImport() {
+  SpreadsheetApp.getUi().alert(importCore_());
+}
+
+function importCore_() {
   var root = rootFolder_();
   var rows = itemRows_();
   var known = {};
@@ -511,15 +516,24 @@ function menuImport() {
   var msg = '追加 ' + added + '件 ／ 差し替え ' + replaced + '件\n（追加したものは公開を外した状態です。中身を確認して☑公開を付けてください）';
   if (newBooks.length) msg += '\n\n新しい問題集を追加しました: ' + newBooks.join('、') + '（グループ・公開を設定してください）';
   if (notes.length) msg += '\n\n' + notes.join('\n');
-  SpreadsheetApp.getUi().alert(msg);
+  return msg;
 }
 
 /** 目次（.txt）を読む。返り値: [{title, kind, file, order}] */
 function readToc_(folder) {
   var it = folder.getFilesByType(MimeType.PLAIN_TEXT);
-  var out = [];
   while (it.hasNext()) {
-    var lines = it.next().getBlob().getDataAsString('UTF-8').split(/\r?\n/);
+    var out = parseToc_(it.next().getBlob().getDataAsString('UTF-8'));
+    if (out.length) return out;
+  }
+  return [];
+}
+
+/** 目次の文字列を読む。返り値: [{title, kind, file, order}] */
+function parseToc_(text) {
+  var out = [];
+  {
+    var lines = String(text).split(/\r?\n/);
     var section = '', pending = '';
     for (var i = 0; i < lines.length; i++) {
       var line = lines[i].trim();
@@ -542,9 +556,58 @@ function readToc_(folder) {
       }
       pending = line; // URL の直前の行がタイトル
     }
-    if (out.length) break;
   }
   return out;
+}
+
+/**
+ * 旧 kakomon/ フォルダ（ホームページで公開中のPDF）を、ドライブに移して登録する。1回だけ使う。
+ * 各フォルダの links.txt を目次として読み、そこに載っているPDFだけを移す（過去問の原本などは移さない）。
+ * 時間がかかるので、途中で止まったらもう一度押せば続きから進む（移し済みのファイルは飛ばす）。
+ */
+var LEGACY_BASE = 'https://thinking-online.com/kakomon/';
+var LEGACY = [
+  { dir: 'bunkyo-u', uni: '文教大学', book: '文教 一般選抜' },
+  { dir: 'fukuoka-u/past-question-pack', uni: '福岡大学', book: '福岡大 一般選抜' },
+  { dir: 'jissen-women', uni: '実践女子大学', book: '実践女子 全学部統一入試' },
+  { dir: 'jumonji-u', uni: '十文字学園女子大学', book: '十文字 一般選抜（S日程・A日程）' },
+  { dir: 'kanazawa-u', uni: '金沢大学', book: '金沢大 前期日程' },
+  { dir: 'kitakyushu-u', uni: '北九州市立大学', book: '北九州市立大 外国語学部' },
+  { dir: 'osaka-u', uni: '大阪大学', book: '大阪大 前期日程' }
+];
+
+function menuMigrateLegacy() {
+  var started = Date.now();
+  var moved = 0, done = [], pending = [];
+  syncBooks_(true); // 移行先の問題集がシートにあることを先に確かめる
+  for (var i = 0; i < LEGACY.length; i++) {
+    var L = LEGACY[i];
+    if (Date.now() - started > 4 * 60 * 1000) { pending.push(L.book); continue; }
+    var base = LEGACY_BASE + L.dir + '/';
+    var r = UrlFetchApp.fetch(base + 'links.txt', { muteHttpExceptions: true });
+    if (r.getResponseCode() !== 200) { pending.push(L.book + '（目次が読めない）'); continue; }
+    var tocText = r.getContentText('UTF-8');
+    var folder = bookFolder_(L.uni, L.book);
+    if (!folder.getFilesByName('links.txt').hasNext()) folder.createFile('links.txt', tocText, MimeType.PLAIN_TEXT);
+    var complete = true;
+    parseToc_(tocText).forEach(function (e) {
+      if (!complete) return;
+      if (folder.getFilesByName(e.file).hasNext() || alreadyMoved_(L.book, e.title)) return;
+      if (Date.now() - started > 4 * 60 * 1000) { complete = false; return; }
+      var pr = UrlFetchApp.fetch(base + e.file, { muteHttpExceptions: true });
+      if (pr.getResponseCode() !== 200) return;
+      folder.createFile(pr.getBlob().setName(e.file).setContentType('application/pdf'));
+      moved++;
+    });
+    (complete ? done : pending).push(L.book);
+  }
+  var msg = 'ドライブに移したPDF：' + moved + '件\n\n' + importCore_();
+  if (pending.length) msg = '時間の都合で途中まで進めました。もう一度このメニューを押すと続きから進みます。\n残り：' + pending.join('、') + '\n\n' + msg;
+  SpreadsheetApp.getUi().alert(msg);
+}
+
+function alreadyMoved_(book, title) {
+  return itemRows_().some(function (r) { return r.book === book && r.title === title; });
 }
 
 /** 区分はタイトルと見出しから決める（模試・単語帳・戦略編・解説、それ以外は大問別） */
@@ -715,6 +778,13 @@ function setupCore_() {
 
   // 問題集リストの読み込み先を GitHub からホームページに移す（リポジトリを非公開にしても読めるように）
   if (/raw\.githubusercontent\.com/.test(config_()['問題集リストURL'])) setConfig_('問題集リストURL', 'https://thinking-online.com/kakomon-portal/seed/books.csv');
+  // グループに「国公立」を足す（その他の前）
+  var groups = splitList_(config_()['グループ順']);
+  if (groups.indexOf('国公立') < 0) {
+    var at = groups.indexOf('その他');
+    groups.splice(at < 0 ? groups.length : at, 0, '国公立');
+    setConfig_('グループ順', groups.join(','));
+  }
 
   rootFolder_();
   applyValidation_();

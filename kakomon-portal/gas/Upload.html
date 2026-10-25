@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<style>
+  body{font-family:system-ui,"Hiragino Sans","Noto Sans JP",sans-serif;font-size:13px;color:#1c2433;margin:0;padding:14px}
+  label{display:block;font-weight:700;margin:14px 0 6px}
+  select,input[type=text]{width:100%;box-sizing:border-box;padding:8px;border:1px solid #d4dae4;border-radius:8px;font-size:13px}
+  .drop{border:2px dashed #b9c3d3;border-radius:10px;padding:18px 10px;text-align:center;color:#6b7280;cursor:pointer}
+  .drop.on{border-color:#172642;color:#172642;background:#f3f5f9}
+  .row{display:flex;align-items:center;gap:6px;margin-top:12px}
+  button{margin-top:18px;width:100%;padding:11px;border:0;border-radius:10px;background:#172642;color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+  button:disabled{opacity:.5;cursor:default}
+  .msg{margin-top:12px;line-height:1.6}
+  .ok{color:#1f7a4d}.err{color:#b42318}
+  .target{background:#f3f5f9;border-radius:8px;padding:10px;line-height:1.6}
+  .note{color:#6b7280;font-size:12px;line-height:1.6;margin-top:8px}
+</style>
+</head>
+<body>
+<? if (mode === 'replace') { ?>
+  <div class="target">
+    <b>差し替える教材</b><br>
+    <?= target.book ?><br><?= target.title ?>
+  </div>
+  <p class="note">リンクはそのままで中身だけ新しい版になります。生徒側の操作は不要です。</p>
+<? } else { ?>
+  <label>問題集</label>
+  <select id="book"></select>
+  <label>区分</label>
+  <select id="kind"></select>
+  <label>タイトル（空ならファイル名）</label>
+  <input id="title" type="text" placeholder="例：大問1 長文読解">
+<? } ?>
+
+<label>PDF</label>
+<div class="drop" id="drop">ここにPDFをドラッグ<br>またはクリックして選ぶ</div>
+<input id="file" type="file" accept="application/pdf" hidden>
+
+<? if (mode !== 'replace') { ?>
+  <div class="row"><input id="publish" type="checkbox"><label for="publish" style="margin:0;font-weight:400">すぐに公開する</label></div>
+<? } ?>
+
+<button id="go" disabled><?= mode === 'replace' ? '差し替える' : '追加する' ?></button>
+<div class="msg" id="msg"></div>
+
+<script>
+var MODE = <?!= JSON.stringify(mode) ?>;
+var TARGET = <?!= JSON.stringify(target) ?>;
+var picked = null;
+var $ = function (id) { return document.getElementById(id); };
+
+if (MODE !== 'replace') {
+  google.script.run.withSuccessHandler(function (o) {
+    o.books.forEach(function (n) { var op = document.createElement('option'); op.textContent = n; $('book').appendChild(op); });
+    o.kinds.forEach(function (n) { var op = document.createElement('option'); op.textContent = n; $('kind').appendChild(op); });
+  }).getUploadOptions();
+}
+
+function pick(f) {
+  if (!f) return;
+  if (f.type !== 'application/pdf') { show('PDFを選んでください。', 'err'); return; }
+  picked = f;
+  $('drop').textContent = f.name + '（' + Math.round(f.size / 1024) + 'KB）';
+  $('go').disabled = false;
+  show('', '');
+}
+$('drop').onclick = function () { $('file').click(); };
+$('file').onchange = function () { pick(this.files[0]); };
+$('drop').ondragover = function (e) { e.preventDefault(); this.classList.add('on'); };
+$('drop').ondragleave = function () { this.classList.remove('on'); };
+$('drop').ondrop = function (e) { e.preventDefault(); this.classList.remove('on'); pick(e.dataTransfer.files[0]); };
+
+function show(t, cls) { $('msg').textContent = t; $('msg').className = 'msg ' + cls; }
+
+$('go').onclick = function () {
+  if (!picked) return;
+  var btn = this;
+  btn.disabled = true;
+  show('アップロード中…（数秒〜数十秒）', '');
+  var reader = new FileReader();
+  reader.onload = function () {
+    var form = { fileName: picked.name, data: String(reader.result).split(',')[1] };
+    var done = function () {
+      show(MODE === 'replace' ? '差し替えました。生徒の画面にも反映されます。' : '追加しました。続けて追加できます。', 'ok');
+      picked = null; $('file').value = ''; $('drop').innerHTML = 'ここにPDFをドラッグ<br>またはクリックして選ぶ';
+      if (MODE !== 'replace') $('title').value = '';
+    };
+    var fail = function (err) { show('失敗しました：' + (err && err.message || err), 'err'); btn.disabled = false; };
+    if (MODE === 'replace') {
+      form.row = TARGET.row;
+      google.script.run.withSuccessHandler(done).withFailureHandler(fail).replaceMaterial(form);
+    } else {
+      form.book = $('book').value; form.kind = $('kind').value; form.title = $('title').value; form.publish = $('publish').checked;
+      google.script.run.withSuccessHandler(done).withFailureHandler(fail).uploadMaterial(form);
+    }
+  };
+  reader.readAsDataURL(picked);
+};
+</script>
+</body>
+</html>

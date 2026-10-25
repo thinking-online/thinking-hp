@@ -516,3 +516,27 @@
   force = true
 
 # 7月以降の号は準備でき次第、netlify.toml にリダイレクトを追加して公開
+
+# ---------------------------------------------------------------------------
+# 過去問ポータル — /kakomon-portal/（LINEログインの会員限定・noindex）
+# 設計: kakomon-portal/開発ガイド.md
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/kakomon-portal/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "public, max-age=0, must-revalidate"
+[[redirects]]
+  from = "/kakomon-portal"
+  to = "/kakomon-portal/"
+  status = 301
+[[redirects]]
+  from = "/kakomon-portal/gas/*"
+  to = "/kakomon-portal/"
+  status = 404
+  force = true
+[[redirects]]
+  from = "/kakomon-portal/seed/*"
+  to = "/kakomon-portal/"
+  status = 404
+  force = true

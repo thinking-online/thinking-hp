@@ -58,7 +58,7 @@ window.MOCK_BOOT = function () {
       groups: ["MARCH", "関関同立", "日東駒専", "産近甲龍", "その他"],
       kinds: ["戦略編", "大問別", "単語帳", "模試", "解説", "その他"],
       books: outBooks,
-      items: items.filter(function (it) { return open[it.b]; })
+      items: items.filter(function (it) { return open[it.b] || it.k === "戦略編"; })
     },
     etag: "mock",
     favs: role === "guest" ? [] : ["b0002", "b0006"]

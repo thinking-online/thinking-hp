@@ -27,7 +27,7 @@ var SHEET = {
 
 var HEAD = {
   BOOKS: ['ID', 'グループ', '大学', '大学よみ', '問題集名', '対応する学部・日程', '検索キーワード', '公開', 'サンプル', '並び順', 'メモ'],
-  ITEMS: ['問題集名', '区分', 'タイトル', 'ファイル', '公開', '並び順', '更新日', 'メモ'],
+  ITEMS: ['問題集名', '区分', 'タイトル', 'ファイル', '公開', '並び順', '更新日', 'メモ', '無料公開'],
   USERS: ['LINE表示名', 'LINE ID', '初回アクセス', '最終アクセス', '氏名メモ', '購入した問題集', '購入した大学（セット）', '期限', 'スタッフ', '停止', 'メモ'],
   FAVS: ['LINE ID', '問題集ID', '登録日時'],
   LOGS: ['日時', 'LINE ID', '種別', '問題集ID', 'タイトル']
@@ -288,6 +288,7 @@ function catalog_() {
       t: String(q[ic['タイトル']] || ''),
       f: fid,
       p: q[ic['公開']] === true,
+      fr: q[ic['無料公開']] === true,
       d: d instanceof Date ? Utilities.formatDate(d, 'Asia/Tokyo', 'yyyy-MM-dd') : '',
       o: Number(q[ic['並び順']]) || 9999
     });
@@ -304,16 +305,18 @@ function catalog_() {
 function filterCatalog_(full, acc) {
   var staff = acc.role === 'staff';
   var open = {};
+  var shown = {};
   var books = [];
   full.books.forEach(function (b) {
     if (!b.p && !staff) return;
     var allowed = staff || acc.role === 'student' || b.s || acc.books[b.id] || acc.unis[b.u];
     if (allowed) open[b.id] = true;
+    shown[b.id] = true;
     books.push({ id: b.id, g: b.g, u: b.u, uy: b.uy, n: b.n, cov: b.cov, kw: b.kw, s: b.s, L: !allowed, h: !b.p });
   });
   var items = full.items
-    .filter(function (it) { return open[it.b] && (it.p || staff); })
-    .map(function (it) { return { b: it.b, k: it.k, t: it.t, f: it.f, d: it.d, h: !it.p }; });
+    .filter(function (it) { return (open[it.b] && (it.p || staff)) || (it.fr && it.p && shown[it.b]); })
+    .map(function (it) { return { b: it.b, k: it.k, t: it.t, f: it.f, d: it.d, h: !it.p, fr: it.fr || undefined }; });
   return { groups: full.groups, kinds: full.kinds, books: books, items: items };
 }
 
@@ -566,6 +569,7 @@ function itemRows_() {
   return out;
 }
 
+/** 戦略編（Vol.0）は最初から無料公開にする（購入前に読める入口にするため。外したければ☑を外す） */
 function appendItem_(book, kind, title, file, publish, order) {
   var row = HEAD.ITEMS.map(function (h) {
     if (h === '問題集名') return book;
@@ -575,6 +579,7 @@ function appendItem_(book, kind, title, file, publish, order) {
     if (h === '公開') return publish;
     if (h === '並び順') return order;
     if (h === '更新日') return new Date();
+    if (h === '無料公開') return kind === '戦略編';
     return '';
   });
   appendSafe_(sheet_(SHEET.ITEMS), row);
@@ -708,6 +713,7 @@ function applyValidation_() {
   is.getRange(2, ic['問題集名'] + 1, N).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInRange(bookList, true).build());
   is.getRange(2, ic['区分'] + 1, N).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(KINDS, true).build());
   is.getRange(2, ic['公開'] + 1, N).setDataValidation(CHECKBOX_());
+  is.getRange(2, ic['無料公開'] + 1, N).setDataValidation(CHECKBOX_());
   is.getRange(1, ic['更新日'] + 1, N + 1).setBackground('#eeeeee');
 
   us.getRange(2, uc['購入した問題集'] + 1, N).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInRange(bookList, true).setAllowInvalid(true).build());
@@ -751,6 +757,9 @@ function ensureSheet_(name, head) {
   var ss = SpreadsheetApp.getActive();
   var sh = ss.getSheetByName(name) || ss.insertSheet(name);
   if (sh.getLastRow() === 0) appendSafe_(sh, head);
+  // 後から増えた列は右端に足す（列は見出しの名前で探すので、既存のデータは動かない）
+  var have = sh.getRange(1, 1, 1, Math.max(1, sh.getLastColumn())).getValues()[0].map(String);
+  head.forEach(function (h) { if (have.indexOf(h) < 0) { sh.getRange(1, have.length + 1).setValue(h); have.push(h); } });
   sh.getRange(1, 1, 1, head.length).setFontWeight('bold').setBackground('#172642').setFontColor('#ffffff');
   sh.setFrozenRows(1);
   return sh;

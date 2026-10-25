@@ -308,7 +308,7 @@ function favCard(b) {
 }
 
 function bookRow(b) {
-  var tags = (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + (hasNew(b.id) ? '<span class="tag new">NEW</span>' : "");
+  var tags = (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.L && (S.idx.items[b.id] || []).length ? '<span class="tag sample">一部無料</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + (hasNew(b.id) ? '<span class="tag new">NEW</span>' : "");
   return '<button class="row" data-book="' + esc(b.id) + '"><div class="main"><div class="t">' + esc(b.n) + tags + "</div>"
     + (b.cov ? '<div class="s">' + esc(b.cov) + "</div>" : "") + "</div>"
     + (b.L ? '<span class="lock">' + lockIcon(18) + "</span>" : chev()) + "</button>";
@@ -341,7 +341,9 @@ function renderBook(id) {
 
   if (b.L) {
     var sample = S.catalog.books.filter(function (x) { return x.s && !x.L; })[0];
-    html += '<div class="locked-box">' + lockIcon(28) + "<p>この問題集は、塾生・購入者限定です。</p>"
+    var free = S.idx.items[b.id] || [];
+    if (free.length) html += '<section class="kind"><h3>無料で読める</h3>' + free.map(function (it, i) { return matButton(b.id, i, it); }).join("") + "</section>";
+    html += '<div class="locked-box">' + lockIcon(28) + "<p>続きは、塾生・購入者限定です。</p>"
       + '<a class="btn gold" href="' + esc(S.cfg.buyUrl || "#") + '">購入・お問い合わせ（LINE）</a>'
       + (sample ? '<button class="btn ghost" data-book="' + esc(sample.id) + '">サンプル（' + esc(sample.n) + "）を見る</button>" : "")
       + "</div>";
@@ -352,14 +354,17 @@ function renderBook(id) {
       var list = items.filter(function (it) { return it.k === k; });
       if (!list.length) return;
       html += '<section class="kind"><h3>' + esc(k) + "</h3>" + list.map(function (it) {
-        var i = (S.idx.items[b.id] || []).indexOf(it);
-        return '<button class="mat" data-item="' + esc(b.id) + ":" + i + '"><span class="ico">' + docIcon() + '</span><span class="t">' + esc(it.t)
-          + (isNew(it) ? '<span class="tag new">NEW</span>' : "") + (it.h ? '<span class="tag hidden">非公開</span>' : "") + "</span>" + chev() + "</button>";
+        return matButton(b.id, (S.idx.items[b.id] || []).indexOf(it), it);
       }).join("") + "</section>";
     });
   }
   $("app").innerHTML = html;
   window.scrollTo(0, 0);
+}
+
+function matButton(bookId, i, it) {
+  return '<button class="mat" data-item="' + esc(bookId) + ":" + i + '"><span class="ico">' + docIcon() + '</span><span class="t">' + esc(it.t)
+    + (isNew(it) ? '<span class="tag new">NEW</span>' : "") + (it.h ? '<span class="tag hidden">非公開</span>' : "") + "</span>" + chev() + "</button>";
 }
 
 function renderSearch(q) {

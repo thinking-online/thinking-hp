@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
 <title>共通テスト英語R 可視化リーディング｜THINKING</title>
-<meta name="description" content="共通テスト英語リーディングの大問別・可視化リーディング。残り日数、補助教材、第1問・第2問の問題と解説をここから開けます。">
+<meta name="description" content="共通テスト英語リーディングの大問別・可視化リーディング。残り日数、補助教材、各大問の問題と解説をここから開けます。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -91,8 +91,6 @@ h1{font-size:26px;line-height:1.25;margin:2px 0 4px;}
   <nav class="map" aria-label="このページの中身">
     <a href="#time"><small>01</small><b>残り日数</b></a>
     <a href="#book"><small>02</small><b>補助教材</b></a>
-    <a href="#q1"><small>03</small><b>第1問</b></a>
-    <a href="#q2"><small>04</small><b>第2問</b></a>
   </nav>
 
   <section class="card" id="time" aria-labelledby="count-title">
@@ -133,7 +131,8 @@ h1{font-size:26px;line-height:1.25;margin:2px 0 4px;}
 </div>
 
 <script>
-/* 次の大問を公開するときは open を true にして URL を入れる。動画・パワポが空ならボタンは出さない。 */
+/* 解説動画・パワポ・解説ページは、用意できた問の URL を入れる。空なら「準備中」のまま。
+   問題PDFは lesson/pdf/ の 2026-main / 2026-supp / 2025-main の q1〜q8。 */
 var QUESTIONS = [
   {
     n: 1,
@@ -144,20 +143,20 @@ var QUESTIONS = [
       {
         label: "2026年本試験",
         note: "ホブストンの校外学習",
-        problem: "https://d27rnpuamwvieu.cloudfront.net/pdf/06m3ibpStDzOCRsAPYfLcXgXX.pdf",
+        problem: "/lesson/pdf/2026-main-q1.pdf",
         explain: "/lesson/thinking_kyotsu_q1_r8_honshiken_hobston.html"
+      },
+      {
+        label: "2026年追試験",
+        note: "",
+        problem: "/lesson/pdf/2026-supp-q1.pdf",
+        explain: ""
       },
       {
         label: "2025年本試験",
         note: "ダンス部の衣装",
-        problem: "https://d27rnpuamwvieu.cloudfront.net/pdf/0gqauXdI6bh9Ktb7fyRfwLwXX.pdf",
+        problem: "/lesson/pdf/2025-main-q1.pdf",
         explain: "/lesson/thinking_kyotsu_q1_r7_honshiken_dance.html"
-      },
-      {
-        label: "2025年追試験",
-        note: "文房具店の広告",
-        problem: "https://d27rnpuamwvieu.cloudfront.net/pdf/0bu0xeywnLvo8N3feC79jqQXX.pdf",
-        explain: "/lesson/thinking_kyotsu_q1_r7_tsuishiken_stationery.html"
       }
     ]
   },
@@ -170,23 +169,53 @@ var QUESTIONS = [
       {
         label: "2026年本試験",
         note: "キャンパスの寮",
-        problem: "https://d27rnpuamwvieu.cloudfront.net/pdf/06F3wT6YqUz18qA4kFGT0EQXX.pdf",
+        problem: "/lesson/pdf/2026-main-q2.pdf",
         explain: "/lesson/thinking_kyotsu_q2_r8_honshiken_campus.html"
+      },
+      {
+        label: "2026年追試験",
+        note: "",
+        problem: "/lesson/pdf/2026-supp-q2.pdf",
+        explain: ""
       },
       {
         label: "2025年本試験",
         note: "空飛ぶ車",
-        problem: "https://d27rnpuamwvieu.cloudfront.net/pdf/0TrO39JPNbncQVykud5ahEQXX.pdf",
+        problem: "/lesson/pdf/2025-main-q2.pdf",
         explain: "/lesson/thinking_kyotsu_q2_r7_honshiken_flying.html"
-      },
-      {
-        label: "2025年追試験",
-        note: "家事は誰がする？",
-        problem: "https://d27rnpuamwvieu.cloudfront.net/pdf/0GXZXOJDFw8uzmKYd5dW15AXX.pdf",
-        explain: "/lesson/thinking_kyotsu_q2_r7_tsuishiken_housework.html"
       }
     ]
-  }
+  },
+  { n: 3, open: true, video: "", slides: "", practices: [
+    { label: "2026年本試験", note: "", problem: "/lesson/pdf/2026-main-q3.pdf", explain: "" },
+    { label: "2026年追試験", note: "", problem: "/lesson/pdf/2026-supp-q3.pdf", explain: "" },
+    { label: "2025年本試験", note: "", problem: "/lesson/pdf/2025-main-q3.pdf", explain: "" }
+  ]},
+  { n: 4, open: true, video: "", slides: "", practices: [
+    { label: "2026年本試験", note: "", problem: "/lesson/pdf/2026-main-q4.pdf", explain: "" },
+    { label: "2026年追試験", note: "", problem: "/lesson/pdf/2026-supp-q4.pdf", explain: "" },
+    { label: "2025年本試験", note: "", problem: "/lesson/pdf/2025-main-q4.pdf", explain: "" }
+  ]},
+  { n: 5, open: true, video: "", slides: "", practices: [
+    { label: "2026年本試験", note: "", problem: "/lesson/pdf/2026-main-q5.pdf", explain: "" },
+    { label: "2026年追試験", note: "", problem: "/lesson/pdf/2026-supp-q5.pdf", explain: "" },
+    { label: "2025年本試験", note: "", problem: "/lesson/pdf/2025-main-q5.pdf", explain: "" }
+  ]},
+  { n: 6, open: true, video: "", slides: "", practices: [
+    { label: "2026年本試験", note: "", problem: "/lesson/pdf/2026-main-q6.pdf", explain: "" },
+    { label: "2026年追試験", note: "", problem: "/lesson/pdf/2026-supp-q6.pdf", explain: "" },
+    { label: "2025年本試験", note: "", problem: "/lesson/pdf/2025-main-q6.pdf", explain: "" }
+  ]},
+  { n: 7, open: true, video: "", slides: "", practices: [
+    { label: "2026年本試験", note: "", problem: "/lesson/pdf/2026-main-q7.pdf", explain: "" },
+    { label: "2026年追試験", note: "", problem: "/lesson/pdf/2026-supp-q7.pdf", explain: "" },
+    { label: "2025年本試験", note: "", problem: "/lesson/pdf/2025-main-q7.pdf", explain: "" }
+  ]},
+  { n: 8, open: true, video: "", slides: "", practices: [
+    { label: "2026年本試験", note: "", problem: "/lesson/pdf/2026-main-q8.pdf", explain: "" },
+    { label: "2026年追試験", note: "", problem: "/lesson/pdf/2026-supp-q8.pdf", explain: "" },
+    { label: "2025年本試験", note: "", problem: "/lesson/pdf/2025-main-q8.pdf", explain: "" }
+  ]}
 ];
 
 var EXAM = new Date("2027-01-16T09:30:00+09:00");
@@ -238,7 +267,7 @@ function action(href, title, detail, kind){
   return '<a class="btn ' + kind + '" href="' + href + '" target="_blank" rel="noopener noreferrer"><span class="t"><b>' + title + '</b><small>' + detail + '</small></span><span class="go" aria-hidden="true">→</span></a>';
 }
 function choice(href, label, kind){
-  if (!href) return '<span class="wait">' + label + 'は準備中</span>';
+  if (!href) return '<span class="wait">' + label.replace("を開く", "") + 'は準備中</span>';
   return '<a class="' + kind + '" href="' + href + '" target="_blank" rel="noopener noreferrer">' + label + '</a>';
 }
 
@@ -250,7 +279,7 @@ function renderQuestions(){
     var q = byN[n];
     if (!q || !q.open) continue;
     var practices = (q.practices || []).map(function(item){
-      return '<article class="paper"><header><span class="year">' + item.label + '</span><h3>' + (item.note || item.label) + '</h3></header><div class="pair">' +
+      return '<article class="paper"><header><span class="year">' + item.label + '</span>' + (item.note ? '<h3>' + item.note + '</h3>' : '') + '</header><div class="pair">' +
         choice(item.problem, "問題を開く", "problem") +
         choice(item.explain, "解説を開く", "explain") +
         "</div></article>";
@@ -276,6 +305,16 @@ function renderQuestions(){
     html += '<section class="card later"><h2>' + laterTitle + '</h2><p class="lead">毎週1問ずつ追加します。いまはまだ開けません。</p><div class="weeks">' + weeks + '</div></section>';
   }
   document.getElementById("questions").innerHTML = html;
+  var map = document.querySelector(".map");
+  map.querySelectorAll("[data-qnav]").forEach(function(el){ el.remove(); });
+  for (var m = 1; m <= 8; m++){
+    if (!byN[m] || !byN[m].open) continue;
+    var a = document.createElement("a");
+    a.href = "#q" + m;
+    a.setAttribute("data-qnav", "1");
+    a.innerHTML = "<small>" + ("0" + (m + 2)).slice(-2) + "</small><b>第" + m + "問</b>";
+    map.appendChild(a);
+  }
 }
 renderQuestions();
 </script>

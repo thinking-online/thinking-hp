@@ -14,7 +14,10 @@
  *   教材を追加 / 選択行のPDFを差し替え / フォルダから取り込み / 点検 / 初期セットアップ
  */
 
-var VERSION = '1.0.0';
+var VERSION = '1.1.0';
+
+/** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
+var SETUP_VERSION = 3;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -43,6 +46,7 @@ var DEFAULT_CONFIG = [
   ['購入案内URL', 'https://lin.ee/yJ8MFVb', 'ロック中の問題集の「購入はこちら」の飛び先'],
   ['公式LINE_URL', 'https://lin.ee/yJ8MFVb', '問い合わせ先'],
   ['グループ順', 'MARCH,関関同立,日東駒専,産近甲龍,その他', 'ホームに並ぶ順番（カンマ区切り）'],
+  ['問題集リストURL', 'https://raw.githubusercontent.com/thinking-online/thinking-hp/main/kakomon-portal/seed/%E5%95%8F%E9%A1%8C%E9%9B%86.csv', '問題集の一覧の元データ（GitHub）。シートを開くと差分が自動で反映される'],
   ['NEW表示日数', '14', 'この日数以内に追加・更新された教材に NEW / 更新 を付ける'],
   ['保存先フォルダID', '', '初期セットアップで自動作成（触らない）']
 ];
@@ -368,9 +372,10 @@ function onOpen() {
     .addItem('教材を1つ追加・差し替え', 'menuUpload')
     .addSeparator()
     .addItem('点検（リンク切れ・設定ミスを探す）', 'menuCheck')
+    .addItem('問題集リストを最新にする', 'menuSyncBooks')
     .addItem('今すぐ全員に反映', 'menuPublish')
     .addSeparator()
-    .addItem('初期セットアップ（最初の1回だけ）', 'menuSetup')
+    .addItem('初期セットアップ（通常は自動）', 'menuSetup')
     .addToUi();
 }
 
@@ -668,8 +673,31 @@ function menuCheck() {
   SpreadsheetApp.getUi().alert(problems.length ? '要修正 ' + problems.length + '件（赤い欄）\n\n' + problems.slice(0, 30).join('\n') : '問題は見つかりませんでした。');
 }
 
-/** 最初の1回だけ：シート・入力規則・フォルダ・トリガーを作る（何度実行しても壊れない） */
+/** 最初の1回だけ手で実行する。以後はシートを開いたときに必要な分だけ自動で走る（何度実行しても壊れない） */
 function menuSetup() {
+  setupCore_();
+  PropertiesService.getScriptProperties().setProperty('setupVer', String(SETUP_VERSION));
+  syncBooks_(true);
+  SpreadsheetApp.getUi().alert('セットアップが完了しました。');
+}
+
+/**
+ * シートを開いたとき（installable トリガー）。
+ * ① コードが新しくなってシートの構造が古ければセットアップし直す
+ * ② GitHub の問題集リストが変わっていれば反映する
+ * どちらも変化がなければ何もしない（開くのが遅くならないように）
+ */
+function onOpenInstalled() {
+  var props = PropertiesService.getScriptProperties();
+  if (Number(props.getProperty('setupVer') || 0) < SETUP_VERSION) {
+    setupCore_();
+    props.setProperty('setupVer', String(SETUP_VERSION));
+  }
+  var res = syncBooks_(false);
+  if (res && res.changed) SpreadsheetApp.getActive().toast(res.summary, '問題集リストを更新しました', 8);
+}
+
+function setupCore_() {
   var ss = SpreadsheetApp.getActive();
   ensureSheet_(SHEET.BOOKS, HEAD.BOOKS);
   ensureSheet_(SHEET.ITEMS, HEAD.ITEMS);
@@ -688,13 +716,98 @@ function menuSetup() {
   rootFolder_();
   applyValidation_();
 
-  var has = ScriptApp.getProjectTriggers().some(function (t) { return t.getHandlerFunction() === 'onSheetEdit'; });
-  if (!has) ScriptApp.newTrigger('onSheetEdit').forSpreadsheet(ss).onEdit().create();
+  var handlers = ScriptApp.getProjectTriggers().map(function (t) { return t.getHandlerFunction(); });
+  if (handlers.indexOf('onSheetEdit') < 0) ScriptApp.newTrigger('onSheetEdit').forSpreadsheet(ss).onEdit().create();
+  if (handlers.indexOf('onOpenInstalled') < 0) ScriptApp.newTrigger('onOpenInstalled').forSpreadsheet(ss).onOpen().create();
 
   ss.getSheetByName(SHEET.FAVS).hideSheet();
   ss.getSheetByName(SHEET.LOGS).hideSheet();
   bumpCatalogVer_();
-  SpreadsheetApp.getUi().alert('セットアップが完了しました。\n「設定」シートの「LINEチャネルID」を入力してください。');
+}
+
+function menuSyncBooks() {
+  var res = syncBooks_(true);
+  SpreadsheetApp.getUi().alert(res.changed ? res.summary : '問題集リストは最新です。');
+}
+
+/**
+ * GitHub の問題集リスト（seed/問題集.csv）を「問題集」シートに反映する。問題集名で突き合わせる。
+ *   ・シートにない問題集 → 追加（公開・サンプルは外した状態）
+ *   ・ある問題集 → グループ・大学・大学よみ・対応する学部・日程・検索キーワード・並び順をリストに合わせる
+ *     （公開・サンプル・メモ・IDは触らない）
+ *   ・グループが「削除」の行 → その問題集をシートから消す。教材が登録済みなら消さずに赤くして知らせる
+ *   ・リストにない問題集（スタッフが手で足したもの）→ 触らない
+ * force=false のときは、前回反映したリストから変わっていなければ何もしない。
+ */
+function syncBooks_(force) {
+  var url = config_()['問題集リストURL'];
+  if (!url) return { changed: false };
+  var text;
+  try {
+    var r = UrlFetchApp.fetch(url, { muteHttpExceptions: true });
+    if (r.getResponseCode() !== 200) return { changed: false };
+    text = r.getContentText('UTF-8');
+  } catch (err) {
+    return { changed: false };
+  }
+  var props = PropertiesService.getScriptProperties();
+  var hash = sha_(text);
+  if (!force && props.getProperty('booksHash') === hash) return { changed: false };
+
+  var list = Utilities.parseCsv(text.replace(/^﻿/, ''));
+  var sh = sheet_(SHEET.BOOKS);
+  var values = sh.getDataRange().getValues();
+  var col = colIndex_(values[0]);
+  var rowOf = {};
+  for (var i = 1; i < values.length; i++) {
+    var n = String(values[i][col['問題集名']] || '').trim();
+    if (n) rowOf[n] = i + 1;
+  }
+  var used = {};
+  itemRows_().forEach(function (it) { used[it.book] = true; });
+
+  var FIELDS = ['グループ', '大学', '大学よみ', '対応する学部・日程', '検索キーワード', '並び順'];
+  var added = [], updated = 0, removed = [], kept = [];
+  var toDelete = [];
+  list.forEach(function (c) {
+    if (c.length < 10) return;
+    var rec = { 'グループ': c[1], '大学': c[2], '大学よみ': c[3], '問題集名': String(c[4]).trim(), '対応する学部・日程': c[5], '検索キーワード': c[6], '並び順': Number(c[9]) || '' };
+    var name = rec['問題集名'];
+    if (!name) return;
+    var rowNo = rowOf[name];
+    if (rec['グループ'] === '削除') {
+      if (!rowNo) return;
+      if (used[name]) { sh.getRange(rowNo, col['問題集名'] + 1).setBackground('#f8d7d3'); kept.push(name); }
+      else { toDelete.push(rowNo); removed.push(name); }
+      return;
+    }
+    if (!rowNo) {
+      var row = HEAD.BOOKS.map(function (h) {
+        if (h === '公開' || h === 'サンプル') return false;
+        return rec[h] !== undefined ? rec[h] : '';
+      });
+      appendSafe_(sh, row);
+      added.push(name);
+      return;
+    }
+    var diff = false;
+    FIELDS.forEach(function (f) {
+      var cell = sh.getRange(rowNo, col[f] + 1);
+      if (String(cell.getValue()) !== String(rec[f])) { cell.setValue(rec[f]); diff = true; }
+    });
+    if (diff) updated++;
+  });
+  toDelete.sort(function (a, b) { return b - a; }).forEach(function (rowNo) { sh.deleteRow(rowNo); });
+
+  fillBookIds_();
+  bumpCatalogVer_();
+  props.setProperty('booksHash', hash);
+  var parts = [];
+  if (added.length) parts.push('追加 ' + added.length + '件（' + added.join('、') + '）');
+  if (updated) parts.push('更新 ' + updated + '件');
+  if (removed.length) parts.push('削除 ' + removed.length + '件（' + removed.join('、') + '）');
+  if (kept.length) parts.push('教材があるため削除しなかったもの: ' + kept.join('、') + '（赤い欄。教材を移してから消してください）');
+  return { changed: parts.length > 0, summary: parts.join('\n') };
 }
 
 function applyValidation_() {

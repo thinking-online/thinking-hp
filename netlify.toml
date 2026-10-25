@@ -535,8 +535,8 @@
   to = "/kakomon-portal/"
   status = 404
   force = true
-[[redirects]]
-  from = "/kakomon-portal/seed/*"
-  to = "/kakomon-portal/"
-  status = 404
-  force = true
+# 問題集リスト seed/books.csv は GAS が読み込むので公開のまま（大学名・問題集名だけで教材のリンクは含まない）
+[[headers]]
+  for = "/kakomon-portal/seed/*"
+  [headers.values]
+    Content-Type = "text/csv; charset=utf-8"

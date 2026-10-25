@@ -17,7 +17,7 @@
 var VERSION = '1.1.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 3;
+var SETUP_VERSION = 4;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -46,7 +46,7 @@ var DEFAULT_CONFIG = [
   ['購入案内URL', 'https://lin.ee/yJ8MFVb', 'ロック中の問題集の「購入はこちら」の飛び先'],
   ['公式LINE_URL', 'https://lin.ee/yJ8MFVb', '問い合わせ先'],
   ['グループ順', 'MARCH,関関同立,日東駒専,産近甲龍,その他', 'ホームに並ぶ順番（カンマ区切り）'],
-  ['問題集リストURL', 'https://raw.githubusercontent.com/thinking-online/thinking-hp/main/kakomon-portal/seed/%E5%95%8F%E9%A1%8C%E9%9B%86.csv', '問題集の一覧の元データ（GitHub）。シートを開くと差分が自動で反映される'],
+  ['問題集リストURL', 'https://thinking-online.com/kakomon-portal/seed/books.csv', '問題集の一覧の元データ（GitHub）。シートを開くと差分が自動で反映される'],
   ['NEW表示日数', '14', 'この日数以内に追加・更新された教材に NEW / 更新 を付ける'],
   ['保存先フォルダID', '', '初期セットアップで自動作成（触らない）']
 ];
@@ -713,6 +713,9 @@ function setupCore_() {
   cs.setFrozenRows(1);
   CacheService.getScriptCache().remove('cfg');
 
+  // 問題集リストの読み込み先を GitHub からホームページに移す（リポジトリを非公開にしても読めるように）
+  if (/raw\.githubusercontent\.com/.test(config_()['問題集リストURL'])) setConfig_('問題集リストURL', 'https://thinking-online.com/kakomon-portal/seed/books.csv');
+
   rootFolder_();
   applyValidation_();
 
@@ -731,7 +734,7 @@ function menuSyncBooks() {
 }
 
 /**
- * GitHub の問題集リスト（seed/問題集.csv）を「問題集」シートに反映する。問題集名で突き合わせる。
+ * GitHub の問題集リスト（seed/books.csv）を「問題集」シートに反映する。問題集名で突き合わせる。
  *   ・シートにない問題集 → 追加（公開・サンプルは外した状態）
  *   ・ある問題集 → グループ・大学・大学よみ・対応する学部・日程・検索キーワード・並び順をリストに合わせる
  *     （公開・サンプル・メモ・IDは触らない）

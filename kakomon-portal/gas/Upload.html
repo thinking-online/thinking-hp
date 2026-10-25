@@ -4,67 +4,173 @@
 <base target="_top">
 <style>
   body{font-family:system-ui,"Hiragino Sans","Noto Sans JP",sans-serif;font-size:13px;color:#1c2433;margin:0;padding:14px}
-  label{display:block;font-weight:700;margin:14px 0 6px}
-  select,input[type=text]{width:100%;box-sizing:border-box;padding:8px;border:1px solid #d4dae4;border-radius:8px;font-size:13px}
+  label.h{display:block;font-weight:700;margin:14px 0 6px}
+  select,input[type=text]{width:100%;box-sizing:border-box;padding:8px;border:1px solid #d4dae4;border-radius:8px;font-size:13px;background:#fff}
+  .nums{display:flex;flex-wrap:wrap;gap:6px}
+  .nums button{width:36px;height:34px;border:1px solid #d4dae4;border-radius:8px;background:#fff;font-size:13px;cursor:pointer;margin:0;padding:0;color:#1c2433;font-weight:700}
+  .nums button.on{background:#172642;border-color:#172642;color:#fff}
   .drop{border:2px dashed #b9c3d3;border-radius:10px;padding:18px 10px;text-align:center;color:#6b7280;cursor:pointer}
   .drop.on{border-color:#172642;color:#172642;background:#f3f5f9}
   .row{display:flex;align-items:center;gap:6px;margin-top:12px}
-  button{margin-top:18px;width:100%;padding:11px;border:0;border-radius:10px;background:#172642;color:#fff;font-weight:700;font-size:14px;cursor:pointer}
-  button:disabled{opacity:.5;cursor:default}
+  .go{margin-top:16px;width:100%;padding:11px;border:0;border-radius:10px;background:#172642;color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+  .go:disabled{opacity:.45;cursor:default}
+  .preview{margin-top:16px;padding:10px 12px;border-radius:10px;background:#f3f5f9;line-height:1.7}
+  .preview b{font-size:14px}
+  .preview .fn{color:#6b7280;font-size:11px;word-break:break-all}
+  .preview.dup{background:#fff4e5}
+  .preview .warn{color:#9a5b00;font-weight:700;font-size:12px}
   .msg{margin-top:12px;line-height:1.6}
   .ok{color:#1f7a4d}.err{color:#b42318}
   .target{background:#f3f5f9;border-radius:8px;padding:10px;line-height:1.6}
   .note{color:#6b7280;font-size:12px;line-height:1.6;margin-top:8px}
+  [hidden]{display:none!important}
 </style>
 </head>
 <body>
 <? if (mode === 'replace') { ?>
-  <div class="target">
-    <b>差し替える教材</b><br>
-    <?= target.book ?><br><?= target.title ?>
-  </div>
+  <div class="target"><b>差し替える教材</b><br><?= target.book ?><br><?= target.title ?></div>
   <p class="note">リンクはそのままで中身だけ新しい版になります。生徒側の操作は不要です。</p>
 <? } else { ?>
-  <label>問題集</label>
+  <label class="h">問題集</label>
   <select id="book"></select>
-  <label>区分</label>
+
+  <label class="h">区分</label>
   <select id="kind"></select>
-  <label>タイトル（空ならファイル名）</label>
-  <input id="title" type="text" placeholder="例：大問1 長文読解">
-  <p class="note">ドライブ上のファイル名は自動で「問題集名_タイトル.pdf」になります（例：明治 商学部_大問1 長文読解.pdf）。</p>
+
+  <div id="f-nums" hidden>
+    <label class="h" id="nums-label">大問番号（まとめる場合は複数選ぶ）</label>
+    <div class="nums" id="nums"></div>
+  </div>
+  <div id="f-section" hidden>
+    <label class="h">内容</label>
+    <select id="section"></select>
+  </div>
+  <div id="f-round" hidden>
+    <label class="h">第何回</label>
+    <select id="round"></select>
+  </div>
+  <div id="f-year" hidden>
+    <label class="h">年度</label>
+    <select id="year"></select>
+  </div>
+  <div id="f-free" hidden>
+    <label class="h">名前（その他のときだけ）</label>
+    <input id="free" type="text" placeholder="例：過去問の使い方ガイド">
+  </div>
+
+  <div class="preview" id="preview" hidden></div>
 <? } ?>
 
-<label>PDF</label>
+<label class="h">PDF</label>
 <div class="drop" id="drop">ここにPDFをドラッグ<br>またはクリックして選ぶ</div>
 <input id="file" type="file" accept="application/pdf" hidden>
 
 <? if (mode !== 'replace') { ?>
-  <div class="row"><input id="publish" type="checkbox"><label for="publish" style="margin:0;font-weight:400">すぐに公開する</label></div>
+  <div class="row"><input id="publish" type="checkbox"><label for="publish">すぐに公開する</label></div>
 <? } ?>
 
-<button id="go" disabled><?= mode === 'replace' ? '差し替える' : '追加する' ?></button>
+<button class="go" id="go" disabled><?= mode === 'replace' ? '差し替える' : '追加する' ?></button>
 <div class="msg" id="msg"></div>
 
 <script>
 var MODE = <?!= JSON.stringify(mode) ?>;
 var TARGET = <?!= JSON.stringify(target) ?>;
+var OPT = null;
 var picked = null;
+var nums = {};
 var $ = function (id) { return document.getElementById(id); };
+
+function opt(sel, values, labels) {
+  sel.innerHTML = '';
+  values.forEach(function (v, i) { var o = document.createElement('option'); o.value = v; o.textContent = labels ? labels[i] : v; sel.appendChild(o); });
+}
 
 if (MODE !== 'replace') {
   google.script.run.withSuccessHandler(function (o) {
-    o.books.forEach(function (n) { var op = document.createElement('option'); op.textContent = n; $('book').appendChild(op); });
-    o.kinds.forEach(function (n) { var op = document.createElement('option'); op.textContent = n; $('kind').appendChild(op); });
-  }).getUploadOptions();
+    OPT = o;
+    opt($('book'), o.books);
+    opt($('kind'), o.kinds);
+    opt($('section'), o.sections);
+    var years = []; for (var y = o.year; y >= o.year - 6; y--) years.push(String(y));
+    opt($('year'), years, years.map(function (y) { return y + '年度'; }));
+    var r = []; for (var i = 1; i <= 10; i++) r.push(String(i));
+    opt($('round'), r, r.map(function (n) { return '第' + n + '回'; }));
+    var box = $('nums');
+    for (var n = 1; n <= 10; n++) {
+      var b = document.createElement('button'); b.type = 'button'; b.textContent = n; b.dataset.n = n;
+      b.onclick = function () { var k = this.dataset.n; nums[k] = !nums[k]; this.classList.toggle('on', !!nums[k]); refresh(); };
+      box.appendChild(b);
+    }
+    ['book', 'kind', 'section', 'round', 'year'].forEach(function (id) { $(id).onchange = function () { if (id === 'book' || id === 'kind') suggestRound(); refresh(); }; });
+    $('free').oninput = refresh;
+    suggestRound();
+    refresh();
+  }).withFailureHandler(function (e) { show('読み込みに失敗しました：' + (e && e.message || e), 'err'); }).getUploadOptions();
 }
+
+function form() {
+  return {
+    book: $('book').value, kind: $('kind').value, section: $('section').value,
+    round: $('round').value, year: $('year').value, free: $('free').value,
+    nums: Object.keys(nums).filter(function (k) { return nums[k]; }).map(Number).sort(function (a, b) { return a - b; })
+  };
+}
+
+/** サーバーの buildTitle_ と同じ規則でタイトルを作る（画面で事前に見せるため） */
+function title(f) {
+  var n = f.nums.join('・');
+  switch (f.kind) {
+    case '戦略編': return 'Vol.0 全体戦略・分析編';
+    case '大問別': return f.nums.length && f.section ? '大問' + n + ' ' + f.section : '';
+    case '単語帳': return '必修英単語・熟語帳';
+    case '模試': return '総合模試 第' + f.round + '回';
+    case '解説': return f.year + '年度' + (f.nums.length ? ' 大問' + n : '') + ' 解説';
+    default: return f.free.trim();
+  }
+}
+
+/** 模試は、まだ登録されていない一番小さい回を自動で選ぶ */
+function suggestRound() {
+  if (!OPT || $('kind').value !== '模試') return;
+  var have = OPT.existing[$('book').value] || [];
+  for (var i = 1; i <= 10; i++) { if (have.indexOf('総合模試 第' + i + '回') < 0) { $('round').value = String(i); return; } }
+}
+
+function refresh() {
+  if (MODE === 'replace') { $('go').disabled = !picked; return; }
+  var k = $('kind').value;
+  $('f-nums').hidden = !(k === '大問別' || k === '解説');
+  $('nums-label').textContent = k === '解説' ? '大問番号（年度全体の解説なら選ばない）' : '大問番号（まとめる場合は複数選ぶ）';
+  $('f-section').hidden = k !== '大問別';
+  $('f-round').hidden = k !== '模試';
+  $('f-year').hidden = k !== '解説';
+  $('f-free').hidden = k !== 'その他';
+
+  var f = form(), t = title(f), p = $('preview');
+  p.hidden = false;
+  if (!t) {
+    p.className = 'preview';
+    p.innerHTML = k === '大問別' ? '大問番号を選んでください' : '名前を入力してください';
+    $('go').disabled = true;
+    return;
+  }
+  var dup = (OPT.existing[f.book] || []).indexOf(t) >= 0;
+  p.className = 'preview' + (dup ? ' dup' : '');
+  p.innerHTML = (dup ? '<div class="warn">すでにあります → 中身を新しい版に差し替えます（リンクは変わりません）</div>' : '')
+    + '生徒に見える名前<br><b>' + esc(t) + '</b><div class="fn">ファイル名：' + esc((f.book + '_' + t).replace(/\//g, '／')) + '.pdf</div>';
+  $('go').textContent = dup ? '差し替える' : '追加する';
+  $('go').disabled = !picked;
+}
+
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
 
 function pick(f) {
   if (!f) return;
   if (f.type !== 'application/pdf') { show('PDFを選んでください。', 'err'); return; }
   picked = f;
   $('drop').textContent = f.name + '（' + Math.round(f.size / 1024) + 'KB）';
-  $('go').disabled = false;
   show('', '');
+  refresh();
 }
 $('drop').onclick = function () { $('file').click(); };
 $('file').onchange = function () { pick(this.files[0]); };
@@ -74,6 +180,11 @@ $('drop').ondrop = function (e) { e.preventDefault(); this.classList.remove('on'
 
 function show(t, cls) { $('msg').textContent = t; $('msg').className = 'msg ' + cls; }
 
+function resetFile() {
+  picked = null; $('file').value = '';
+  $('drop').innerHTML = 'ここにPDFをドラッグ<br>またはクリックして選ぶ';
+}
+
 $('go').onclick = function () {
   if (!picked) return;
   var btn = this;
@@ -81,20 +192,24 @@ $('go').onclick = function () {
   show('アップロード中…（数秒〜数十秒）', '');
   var reader = new FileReader();
   reader.onload = function () {
-    var form = { fileName: picked.name, data: String(reader.result).split(',')[1] };
-    var done = function () {
-      show(MODE === 'replace' ? '差し替えました。生徒の画面にも反映されます。' : '追加しました。続けて追加できます。', 'ok');
-      picked = null; $('file').value = ''; $('drop').innerHTML = 'ここにPDFをドラッグ<br>またはクリックして選ぶ';
-      if (MODE !== 'replace') $('title').value = '';
-    };
+    var data = String(reader.result).split(',')[1];
     var fail = function (err) { show('失敗しました：' + (err && err.message || err), 'err'); btn.disabled = false; };
     if (MODE === 'replace') {
-      form.row = TARGET.row;
-      google.script.run.withSuccessHandler(done).withFailureHandler(fail).replaceMaterial(form);
-    } else {
-      form.book = $('book').value; form.kind = $('kind').value; form.title = $('title').value; form.publish = $('publish').checked;
-      google.script.run.withSuccessHandler(done).withFailureHandler(fail).uploadMaterial(form);
+      google.script.run.withSuccessHandler(function () {
+        show('差し替えました。生徒の画面にも反映されます。', 'ok'); resetFile(); refresh();
+      }).withFailureHandler(fail).replaceMaterial({ row: TARGET.row, fileName: picked.name, data: data });
+      return;
     }
+    var f = form();
+    f.data = data; f.fileName = picked.name; f.publish = $('publish').checked;
+    google.script.run.withSuccessHandler(function (res) {
+      show((res.replaced ? '差し替えました：' : '追加しました：') + res.title, 'ok');
+      var list = OPT.existing[f.book] = OPT.existing[f.book] || [];
+      if (list.indexOf(res.title) < 0) list.push(res.title);
+      nums = {}; Array.prototype.forEach.call(document.querySelectorAll('.nums button'), function (b) { b.classList.remove('on'); });
+      $('free').value = '';
+      resetFile(); suggestRound(); refresh();
+    }).withFailureHandler(fail).uploadMaterial(f);
   };
   reader.readAsDataURL(picked);
 };

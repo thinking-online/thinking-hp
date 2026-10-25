@@ -43,6 +43,7 @@ var DEFAULT_CONFIG = [
   ['購入案内URL', 'https://lin.ee/yJ8MFVb', 'ロック中の問題集の「購入はこちら」の飛び先'],
   ['公式LINE_URL', 'https://lin.ee/yJ8MFVb', '問い合わせ先'],
   ['グループ順', 'MARCH,関関同立,日東駒専,産近甲龍,その他', 'ホームに並ぶ順番（カンマ区切り）'],
+  ['大問の種類', '長文読解,長文空所補充,会話文,会話文空所補充,対話文整序,文法・語法,文法・語彙,語彙,同意表現,整序英作文,正誤問題,1語補充,不要文選択,発音・アクセント,資料読解,複数資料読解,和訳,和文英訳,英作文,要約', '大問別の教材で選べる「内容」（カンマ区切り。ここに足せば選択肢が増える）'],
   ['NEW表示日数', '14', 'この日数以内に追加・更新された教材に NEW / 更新 を付ける'],
   ['保存先フォルダID', '', '初期セットアップで自動作成（触らない）']
 ];
@@ -410,47 +411,110 @@ function menuReplace() {
   ui.showSidebar(html.evaluate().setTitle('PDFを差し替え'));
 }
 
-/** サイドバー用：問題集名と区分の選択肢 */
+/** サイドバー用：選択肢と、問題集ごとの登録済みタイトル（重複チェック・模試の回数の自動提案に使う） */
 function getUploadOptions() {
-  var sh = sheet_(SHEET.BOOKS);
-  var values = sh.getDataRange().getValues();
-  var col = colIndex_(values[0]);
+  var bv = sheet_(SHEET.BOOKS).getDataRange().getValues();
+  var bc = colIndex_(bv[0]);
   var names = [];
-  for (var i = 1; i < values.length; i++) {
-    var n = String(values[i][col['問題集名']] || '').trim();
+  for (var i = 1; i < bv.length; i++) {
+    var n = String(bv[i][bc['問題集名']] || '').trim();
     if (n) names.push(n);
   }
-  return { books: names, kinds: KINDS };
+  var iv = sheet_(SHEET.ITEMS).getDataRange().getValues();
+  var ic = colIndex_(iv[0]);
+  var existing = {};
+  for (var j = 1; j < iv.length; j++) {
+    var b = String(iv[j][ic['問題集名']] || '').trim();
+    if (b) (existing[b] = existing[b] || []).push(String(iv[j][ic['タイトル']] || ''));
+  }
+  return { books: names, kinds: KINDS, sections: splitList_(config_()['大問の種類']), existing: existing, year: new Date().getFullYear() };
 }
 
-/** サイドバーから呼ばれる：新規追加 */
+/**
+ * タイトルは選択肢から自動で作る（手入力させない。誰が入れても同じ書き方になる）。
+ *   戦略編 → Vol.0 全体戦略・分析編
+ *   大問別 → 大問1・2 長文読解（大問番号＋「設定」シートの「大問の種類」から選んだ内容）
+ *   単語帳 → 必修英単語・熟語帳
+ *   模試   → 総合模試 第1回
+ *   解説   → 2025年度 大問1 解説
+ *   その他 → 入力した名前（例外用）
+ */
+function buildTitle_(f) {
+  var nums = (f.nums || []).map(Number).filter(function (n) { return n > 0; }).sort(function (a, b) { return a - b; });
+  switch (f.kind) {
+    case '戦略編': return 'Vol.0 全体戦略・分析編';
+    case '大問別':
+      if (!nums.length || !f.section) throw new Error('大問番号と内容を選んでください');
+      return '大問' + nums.join('・') + ' ' + f.section;
+    case '単語帳': return '必修英単語・熟語帳';
+    case '模試':
+      if (!(Number(f.round) > 0)) throw new Error('第何回かを選んでください');
+      return '総合模試 第' + Number(f.round) + '回';
+    case '解説':
+      if (!f.year) throw new Error('年度を選んでください');
+      return f.year + '年度' + (nums.length ? ' 大問' + nums.join('・') : '') + ' 解説';
+    default:
+      var t = String(f.free || '').trim();
+      if (!t) throw new Error('名前を入力してください');
+      return t;
+  }
+}
+
+/** 並び順もタイトルの中身から決める（入れた順番に関係なく、戦略編→大問順→単語帳→模試→解説 に並ぶ） */
+function orderFor_(f) {
+  var nums = (f.nums || []).map(Number).filter(function (n) { return n > 0; });
+  var first = nums.length ? Math.min.apply(null, nums) : 0;
+  switch (f.kind) {
+    case '戦略編': return 10;
+    case '大問別': return 100 + first * 10;
+    case '単語帳': return 800;
+    case '模試': return 900 + Number(f.round || 0);
+    case '解説': return 1000 + (3000 - Number(f.year || 0)) * 20 + first;
+    default: return 5000;
+  }
+}
+
+/**
+ * サイドバーから呼ばれる：追加。
+ * 同じ問題集に同じタイトルがすでにあれば、新しい行は作らずにその教材を差し替える（リンクは変わらない）。
+ */
 function uploadMaterial(form) {
-  var blob = Utilities.newBlob(Utilities.base64Decode(form.data), 'application/pdf', form.fileName);
   var book = bookRow_(form.book);
   if (!book) throw new Error('問題集「' + form.book + '」が見つかりません');
-  var folder = bookFolder_(book.uni, form.book);
-  var title = String(form.title || '').trim() || titleFromFileName_(form.book, form.fileName);
-  var file = folder.createFile(blob);
-  file.setName(fileNameFor_(form.book, title));
-  share_(file);
+  var title = buildTitle_(form);
+  var blob = Utilities.newBlob(Utilities.base64Decode(form.data), 'application/pdf', fileNameFor_(form.book, title));
 
   var sh = sheet_(SHEET.ITEMS);
+  var values = sh.getDataRange().getValues();
+  var col = colIndex_(values[0]);
+  for (var i = 1; i < values.length; i++) {
+    if (String(values[i][col['問題集名']]).trim() !== form.book || String(values[i][col['タイトル']]).trim() !== title) continue;
+    var fid = fileIdOf_(values[i][col['ファイル']]);
+    if (!fid) break;
+    Drive.Files.update({ name: fileNameFor_(form.book, title) }, fid, blob); // 高度なサービス Drive API（v3）
+    sh.getRange(i + 1, col['更新日'] + 1).setValue(new Date());
+    bumpCatalogVer_();
+    return { ok: true, replaced: true, title: title };
+  }
+
+  var file = bookFolder_(book.uni, form.book).createFile(blob);
+  share_(file);
   var row = HEAD.ITEMS.map(function (h) {
     if (h === '問題集名') return form.book;
-    if (h === '区分') return form.kind;
+    if (h === '区分') return KINDS.indexOf(form.kind) >= 0 ? form.kind : 'その他';
     if (h === 'タイトル') return title;
     if (h === 'ファイル') return file.getUrl();
     if (h === '公開') return !!form.publish;
-    if (h === '並び順') return nextOrder_(form.book);
+    if (h === '並び順') return orderFor_(form);
     if (h === '更新日') return new Date();
     return '';
   });
   sh.appendRow(row);
   bumpCatalogVer_();
-  return { ok: true, title: title, url: file.getUrl() };
+  return { ok: true, replaced: false, title: title };
 }
 
-/** サイドバーから呼ばれる：差し替え（同じファイルIDのまま中身を新しい版にする＝リンクは変わらない） */
+/** サイドバーから呼ばれる：選択行の差し替え（同じファイルIDのまま中身を新しい版にする＝リンクは変わらない） */
 function replaceMaterial(form) {
   var sh = sheet_(SHEET.ITEMS);
   var col = colIndex_(sh.getRange(1, 1, 1, sh.getLastColumn()).getValues()[0]);
@@ -501,15 +565,16 @@ function menuImport() {
       list.forEach(function (file) {
         if (known[file.getId()]) return;
         share_(file);
-        var base = titleFromFileName_(bookName, file.getName());
-        file.setName(fileNameFor_(bookName, base));
+        var spec = specFromFileName_(titleFromFileName_(bookName, file.getName()));
+        var title = buildTitle_(spec);
+        file.setName(fileNameFor_(bookName, title));
         var row = HEAD.ITEMS.map(function (h) {
           if (h === '問題集名') return bookName;
-          if (h === '区分') return kindFromName_(base);
-          if (h === 'タイトル') return base;
+          if (h === '区分') return spec.kind;
+          if (h === 'タイトル') return title;
           if (h === 'ファイル') return file.getUrl();
           if (h === '公開') return false;
-          if (h === '並び順') return nextOrder_(bookName);
+          if (h === '並び順') return orderFor_(spec);
           if (h === '更新日') return file.getLastUpdated();
           return '';
         });
@@ -520,7 +585,7 @@ function menuImport() {
   }
   fillBookIds_();
   bumpCatalogVer_();
-  var msg = added + '件の教材を追加しました（公開は外した状態です。タイトルを整えて☑公開を付けてください）。';
+  var msg = added + '件の教材を追加しました（公開は外した状態です。中身を確認して☑公開を付けてください）。';
   if (newBooks.length) msg += '\n新しい問題集も追加しました: ' + newBooks.join('、') + '（グループ・公開を設定してください）';
   SpreadsheetApp.getUi().alert(msg);
 }
@@ -549,11 +614,15 @@ function menuCheck() {
   var iv = is.getDataRange().getValues();
   var ic = colIndex_(iv[0]);
   if (iv.length > 1) is.getRange(2, 1, iv.length - 1, iv[0].length).setBackground(null);
+  var titleSeen = {};
   for (var j = 1; j < iv.length; j++) {
     var rowNo = j + 1;
     var bn = String(iv[j][ic['問題集名']] || '').trim();
     if (!bn) continue;
     if (!bookNames[bn]) { is.getRange(rowNo, ic['問題集名'] + 1).setBackground(red); problems.push(rowNo + '行目: 問題集「' + bn + '」が「問題集」シートにない'); }
+    var tkey = bn + '\u0000' + String(iv[j][ic['タイトル']]).trim();
+    if (titleSeen[tkey]) { is.getRange(rowNo, ic['タイトル'] + 1).setBackground(red); problems.push(rowNo + '行目: 同じ問題集に同じタイトルが2つある（' + iv[j][ic['タイトル']] + '）'); }
+    titleSeen[tkey] = true;
     var fid = fileIdOf_(iv[j][ic['ファイル']]);
     if (!fid) { is.getRange(rowNo, ic['ファイル'] + 1).setBackground(red); problems.push(rowNo + '行目: ファイルのリンクがない'); continue; }
     try {
@@ -774,16 +843,6 @@ function fillBookIds_() {
   }
 }
 
-function nextOrder_(bookName) {
-  var values = sheet_(SHEET.ITEMS).getDataRange().getValues();
-  var col = colIndex_(values[0]);
-  var max = 0;
-  for (var i = 1; i < values.length; i++) {
-    if (String(values[i][col['問題集名']]).trim() === bookName) max = Math.max(max, Number(values[i][col['並び順']]) || 0);
-  }
-  return max + 10;
-}
-
 /**
  * ドライブ上のファイル名は「問題集名_タイトル.pdf」に統一する（例：明治 商学部_大問1 長文読解.pdf）。
  * 生徒がダウンロードしたときに、どの大学の何の教材かが分かるようにするため。
@@ -799,14 +858,30 @@ function titleFromFileName_(book, fileName) {
   return base.indexOf(prefix) === 0 ? base.slice(prefix.length) : base;
 }
 
-function kindFromName_(base) {
-  var s = base.toLowerCase();
-  if (/^(vol0|manual|guide|strategy)/.test(s) || /vol\.?\s*0|戦略/.test(s)) return '戦略編';
-  if (/^q\d/.test(s) || /大問/.test(base)) return '大問別';
-  if (/vocab|単語/.test(s)) return '単語帳';
-  if (/mock|模試/.test(s)) return '模試';
-  if (/lesson|解説/.test(s)) return '解説';
-  return 'その他';
+/**
+ * フォルダから取り込むときに、ファイル名からタイトルの材料を読み取る（kakomon/README.md のファイル名ルール）。
+ *   vol0-strategy / manual-p1 → 戦略編、q1-reading / q1-2-reading → 大問1(・2) 長文読解、
+ *   vocab → 単語帳、mock-2 → 総合模試 第2回。読み取れないものは「その他」（ファイル名をそのまま名前にする）
+ */
+var SLUG_SECTION = {
+  'reading': '長文読解', 'cloze': '長文空所補充', 'dialogue': '会話文', 'dialogue-cloze': '会話文空所補充',
+  'dialogue-order': '対話文整序', 'grammar': '文法・語法', 'grammar-vocab': '文法・語彙', 'sentence-order': '整序英作文',
+  'error': '正誤問題', 'translation': '和訳', 'writing': '英作文', 'summary': '要約', 'paraphrase': '同意表現',
+  'one-word': '1語補充', 'irrelevant': '不要文選択', 'pronunciation': '発音・アクセント', 'multi-text': '複数資料読解',
+  'vocab': '語彙'
+};
+function specFromFileName_(base) {
+  var s = String(base).trim().toLowerCase();
+  var m;
+  if ((m = s.match(/(?:mock|模試)\D*(\d+)?/))) return { kind: '模試', round: Number(m[1] || 1) };
+  if (!/^q\d/.test(s) && /vocab|単語/.test(s)) return { kind: '単語帳' };
+  if (/^(vol\.?\s*0|manual|guide|strategy)/.test(s) || /戦略/.test(s)) return { kind: '戦略編' };
+  if ((m = s.match(/^q((?:\d+-)*\d+)-([a-z-]+)$/))) {
+    var nums = m[1].split('-').map(Number);
+    var section = SLUG_SECTION[m[2]];
+    if (section) return { kind: '大問別', nums: nums, section: section };
+  }
+  return { kind: 'その他', free: String(base).trim() };
 }
 
 function splitList_(v) {

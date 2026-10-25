@@ -429,11 +429,12 @@ function uploadMaterial(form) {
   var book = bookRow_(form.book);
   if (!book) throw new Error('問題集「' + form.book + '」が見つかりません');
   var folder = bookFolder_(book.uni, form.book);
+  var title = String(form.title || '').trim() || titleFromFileName_(form.book, form.fileName);
   var file = folder.createFile(blob);
+  file.setName(fileNameFor_(form.book, title));
   share_(file);
 
   var sh = sheet_(SHEET.ITEMS);
-  var title = String(form.title || '').trim() || form.fileName.replace(/\.pdf$/i, '');
   var row = HEAD.ITEMS.map(function (h) {
     if (h === '問題集名') return form.book;
     if (h === '区分') return form.kind;
@@ -457,7 +458,8 @@ function replaceMaterial(form) {
   var fid = fileIdOf_(sh.getRange(rowNo, col['ファイル'] + 1).getValue());
   if (!fid) throw new Error('この行にはファイルがありません');
   var blob = Utilities.newBlob(Utilities.base64Decode(form.data), 'application/pdf', form.fileName);
-  Drive.Files.update({}, fid, blob); // 高度なサービス Drive API（v3）。appsscript.json で有効化済み
+  var name = fileNameFor_(sh.getRange(rowNo, col['問題集名'] + 1).getValue(), sh.getRange(rowNo, col['タイトル'] + 1).getValue());
+  Drive.Files.update({ name: name }, fid, blob); // 高度なサービス Drive API（v3）。appsscript.json で有効化済み
   sh.getRange(rowNo, col['更新日'] + 1).setValue(new Date());
   bumpCatalogVer_();
   return { ok: true };
@@ -499,7 +501,8 @@ function menuImport() {
       list.forEach(function (file) {
         if (known[file.getId()]) return;
         share_(file);
-        var base = file.getName().replace(/\.pdf$/i, '');
+        var base = titleFromFileName_(bookName, file.getName());
+        file.setName(fileNameFor_(bookName, base));
         var row = HEAD.ITEMS.map(function (h) {
           if (h === '問題集名') return bookName;
           if (h === '区分') return kindFromName_(base);
@@ -557,6 +560,8 @@ function menuCheck() {
       var file = DriveApp.getFileById(fid);
       if (file.isTrashed()) throw new Error('ゴミ箱');
       if (file.getSharingAccess() !== DriveApp.Access.ANYONE_WITH_LINK) share_(file);
+      var expected = fileNameFor_(bn, iv[j][ic['タイトル']]);
+      if (file.getName() !== expected) file.setName(expected); // タイトルを直したらファイル名も揃える
       is.getRange(rowNo, ic['更新日'] + 1).setValue(file.getLastUpdated());
     } catch (err) {
       is.getRange(rowNo, ic['ファイル'] + 1).setBackground(red);
@@ -779,9 +784,24 @@ function nextOrder_(bookName) {
   return max + 10;
 }
 
+/**
+ * ドライブ上のファイル名は「問題集名_タイトル.pdf」に統一する（例：明治 商学部_大問1 長文読解.pdf）。
+ * 生徒がダウンロードしたときに、どの大学の何の教材かが分かるようにするため。
+ */
+function fileNameFor_(book, title) {
+  return (String(book).trim() + '_' + String(title).trim()).replace(/\//g, '／').replace(/[\\:*?"<>|]/g, '・') + '.pdf';
+}
+
+/** ファイル名からタイトルを作る。「問題集名_」で始まっていればその部分を外す */
+function titleFromFileName_(book, fileName) {
+  var base = String(fileName).replace(/\.pdf$/i, '').trim();
+  var prefix = String(book).trim() + '_';
+  return base.indexOf(prefix) === 0 ? base.slice(prefix.length) : base;
+}
+
 function kindFromName_(base) {
   var s = base.toLowerCase();
-  if (/^(vol0|manual|guide|strategy)/.test(s) || /戦略/.test(base)) return '戦略編';
+  if (/^(vol0|manual|guide|strategy)/.test(s) || /vol\.?\s*0|戦略/.test(s)) return '戦略編';
   if (/^q\d/.test(s) || /大問/.test(base)) return '大問別';
   if (/vocab|単語/.test(s)) return '単語帳';
   if (/mock|模試/.test(s)) return '模試';

@@ -452,19 +452,24 @@ function menuImport() {
   SpreadsheetApp.getUi().alert(importCore_());
 }
 
+// Apps Script は1回の実行が約6分で強制終了されるので、その前に区切って「もう一度実行」を案内する
+var IMPORT_BUDGET_MS = 4.5 * 60 * 1000;
+
 function importCore_() {
+  var started = Date.now();
   var root = rootFolder_();
   var rows = itemRows_();
   var known = {};
   rows.forEach(function (r) { if (r.fid) known[r.fid] = true; });
   var names = bookIdsByName_();
-  var added = 0, replaced = 0, newBooks = [], notes = [];
+  var added = 0, replaced = 0, newBooks = [], notes = [], unfinished = false;
+  function outOfTime() { return unfinished || (unfinished = Date.now() - started > IMPORT_BUDGET_MS); }
 
   var unis = root.getFolders();
-  while (unis.hasNext()) {
+  while (unis.hasNext() && !outOfTime()) {
     var uniFolder = unis.next();
     var bookFolders = uniFolder.getFolders();
-    while (bookFolders.hasNext()) {
+    while (bookFolders.hasNext() && !outOfTime()) {
       var bf = bookFolders.next();
       var bookName = bf.getName();
       if (!names[bookName]) { addBookRow_(uniFolder.getName(), bookName); names[bookName] = true; newBooks.push(bookName); }
@@ -487,6 +492,7 @@ function importCore_() {
         var file = pdfs[e.file];
         if (!file) return;
         delete pdfs[e.file];
+        if (outOfTime()) return; // 残りは次の実行で（ファイルはフォルダに残っている）
         var hit = byTitle[e.title];
         if (hit && hit.fid) {
           replaceContent_(hit, file.getBlob());
@@ -494,17 +500,19 @@ function importCore_() {
           replaced++;
           return;
         }
+        // 先に登録する。途中で止まっても登録済みなら次の実行で二重に入らない（共有・名前は「点検」でも直る）
+        appendItem_(bookName, e.kind, e.title, file, false, e.order);
         share_(file);
         file.setName(fileNameFor_(bookName, e.title));
-        appendItem_(bookName, e.kind, e.title, file, false, e.order);
         added++;
       });
 
       Object.keys(pdfs).forEach(function (name) {
+        if (outOfTime()) return;
         var file = pdfs[name];
         var title = normalizeTitle_(name.replace(/\.pdf$/i, ''));
-        share_(file);
         appendItem_(bookName, 'その他', title, file, false, nextOrder_(bookName));
+        share_(file);
         added++;
         notes.push(bookName + '：「' + name + '」は目次にないため仮のタイトルで追加しました');
       });
@@ -513,6 +521,7 @@ function importCore_() {
   fillBookIds_();
   bumpCatalogVer_();
   var msg = '追加 ' + added + '件 ／ 差し替え ' + replaced + '件\n（追加したものは公開を外した状態です。中身を確認して☑公開を付けてください）';
+  if (unfinished) msg = '【まだ途中です】時間の上限が近いので、ここで区切りました。もう一度「フォルダから取り込み」を実行してください（続きから進みます）。\n\n' + msg;
   if (newBooks.length) msg += '\n\n新しい問題集を追加しました: ' + newBooks.join('、') + '（グループ・公開を設定してください）';
   if (notes.length) msg += '\n\n' + notes.join('\n');
   return msg;

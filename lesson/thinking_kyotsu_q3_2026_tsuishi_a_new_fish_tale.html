@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#fdfaf4">
+<title>共通テスト第3問攻略｜可視化リーディングで解くストーリー型 — A New Fish Tale — オンライン塾 THINKING</title>
+<style>
+:root{
+  --paper:#fdfaf4; --paper2:#f6f0e4; --ink:#1f1b16; --ink2:#5a524a; --line:#e3d9c7;
+  --accent:#b8542b; --accent2:#8f3f1f;
+  --q1:#d9a441; --q2:#4f9474; --q3:#5c6fb5;
+  --q1bg:#fbf1d6; --q2bg:#dff0e7; --q3bg:#e2e6f6;
+  --ok:#2f8a5b; --ng:#c0392b;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.85;font-size:15.5px;padding-bottom:84px}
+.en{font-family:Georgia,"Times New Roman","Hiragino Mincho ProN",serif;font-size:1.02em}
+a{color:var(--accent)}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(253,250,244,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;gap:10px;padding:10px 16px;max-width:720px;margin:0 auto}
+.logo{width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-family:Georgia,serif;flex:none}
+.top .t{font-size:12.5px;color:var(--ink2);line-height:1.3}
+.top .t b{display:block;color:var(--ink);font-size:13.5px}
+.timerchip{margin-left:auto;font-family:Georgia,serif;font-size:15px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;min-width:64px;text-align:center}
+nav.steps{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px;max-width:720px;margin:0 auto;scrollbar-width:none}
+nav.steps::-webkit-scrollbar{display:none}
+nav.steps a{flex:none;font-size:12px;padding:5px 10px;border-radius:999px;background:var(--paper2);color:var(--ink2);text-decoration:none;border:1px solid var(--line)}
+nav.steps a i{font-style:normal;font-family:Georgia,serif;color:var(--accent);margin-right:4px;font-weight:700}
+.hero{padding:28px 0 10px}
+.kicker{font-size:12.5px;color:var(--ink2);letter-spacing:.04em}
+h1{font-size:25px;line-height:1.35;margin:8px 0 10px;font-weight:800}
+h1 small{display:block;font-size:14px;color:var(--accent);font-weight:700;margin-bottom:6px}
+.lead{color:var(--ink2);font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.meta span{font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+section.step{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:22px}
+.stepno{font-family:Georgia,serif;color:var(--accent);font-weight:700;letter-spacing:.08em;font-size:13px}
+h2{font-size:21px;margin:4px 0 4px;line-height:1.4}
+.sub{font-family:Georgia,serif;font-style:italic;color:var(--ink2);font-size:13.5px;margin-bottom:14px}
+h3{font-size:16.5px;margin:22px 0 8px}
+h4{font-size:15px;margin:14px 0 6px}
+p{margin:8px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px;margin:12px 0}
+.card.soft{background:var(--paper2);border-color:transparent}
+.note{border-left:4px solid var(--accent);background:#fff8ef;padding:12px 14px;border-radius:0 var(--radius) var(--radius) 0;margin:14px 0}
+.note b.l{display:block;color:var(--accent2);font-size:13.5px;margin-bottom:4px}
+.pill{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--ink);color:#fff;margin-right:6px;vertical-align:middle}
+.pill.q1{background:var(--q1)}.pill.q2{background:var(--q2)}.pill.q3{background:var(--q3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:11px 20px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:active{transform:translateY(1px)}
+/* passage */
+.passage{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 10px;margin:12px 0}
+.passage .ttl{text-align:center;font-family:Georgia,serif;font-weight:700;font-size:18px;margin:6px 0 12px}
+.passage p.en{text-indent:1.2em;margin:0 0 10px;line-height:1.75}
+.passage .lead-en{font-style:italic;color:var(--ink2);text-indent:0}
+mark{background:transparent;padding:0 1px;border-bottom:3px solid transparent;color:inherit;transition:.2s}
+.show-all mark.q1,.show-q1 mark.q1{background:var(--q1bg);border-bottom-color:var(--q1)}
+.show-all mark.q2,.show-q2 mark.q2{background:var(--q2bg);border-bottom-color:var(--q2)}
+.show-all mark.q3,.show-q3 mark.q3{background:var(--q3bg);border-bottom-color:var(--q3)}
+.qlist{margin:14px 0}
+.q{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:10px 0}
+.q .stem{font-weight:700;margin-bottom:8px}
+.q .stem .en{font-weight:400}
+.opts{list-style:none;padding:0;margin:0}
+.opts li{display:flex;gap:8px;padding:6px 0;border-top:1px dashed var(--line)}
+.opts li:first-child{border-top:none}
+.opts .n{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ink);font-size:12px;display:grid;place-items:center;font-family:Georgia,serif;margin-top:4px}
+.answers{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.answers label{border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--paper2);font-size:14px;cursor:pointer}
+.answers input{display:none}
+.answers input:checked+span{color:#fff}
+.answers label:has(input:checked){background:var(--ink);color:#fff}
+.order{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.order select{font-size:15px;padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:#fff;font-family:inherit}
+.order .arrow{color:var(--ink2)}
+.result{margin-top:10px;font-weight:700}
+.result.ok{color:var(--ok)}.result.ng{color:var(--ng)}
+.timerbox{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin:12px 0}
+.timerbox .big{font-family:Georgia,serif;font-size:30px;min-width:92px}
+/* 5 step */
+.flow{counter-reset:s}
+.fstep{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.fstep:first-child{border-top:none}
+.fstep .num{flex:none;width:34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700}
+.fstep h4{margin:4px 0 4px}
+.fstep .goal{font-size:13.5px;color:var(--accent2);margin-top:6px}
+/* think-aloud */
+details.think{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin:12px 0;overflow:hidden}
+details.think summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
+details.think summary::-webkit-details-marker{display:none}
+details.think summary .ans{margin-left:auto;font-size:12.5px;color:var(--ink2);font-weight:400;white-space:nowrap}
+details.think summary::after{content:"＋";margin-left:8px;color:var(--accent);font-weight:400}
+details.think[open] summary::after{content:"－"}
+details.think .body{padding:0 16px 16px;border-top:1px solid var(--line)}
+.jaopts{list-style:none;padding:0;margin:10px 0 4px;font-size:14px;color:var(--ink2)}
+.jaopts li{padding:3px 0}
+.jaopts .n{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;margin-right:6px;font-family:Georgia,serif}
+.jaopts li.c{color:var(--ink);font-weight:700}.jaopts li.c .n{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ta{counter-reset:t;margin-top:8px}
+.ta .t{display:flex;gap:12px;padding:12px 0;border-top:1px dashed var(--line)}
+.ta .t .n{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:12.5px;font-family:Georgia,serif;margin-top:2px}
+.ta .t h5{margin:2px 0 4px;font-size:14.5px}
+.quote{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14.5px}
+.quote .en{display:block;font-size:15px}
+.quote .ja{display:block;color:var(--ink2);font-size:13.5px;margin-top:4px}
+.map{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border:1.5px dashed var(--accent);border-radius:10px;padding:10px 12px;margin:10px 0;font-size:14px}
+.map .en{font-weight:700}
+.map .ar{color:var(--accent);font-weight:800}
+.learn{background:var(--paper2);border-radius:10px;padding:12px 14px;margin-top:12px;font-size:14.5px}
+.learn b{display:block;color:var(--accent2);font-size:13px;margin-bottom:3px}
+.ev{display:inline-block;font-size:12.5px;padding:2px 8px;border-radius:6px;margin:2px 0}
+.ev.q1{background:var(--q1bg)}.ev.q2{background:var(--q2bg)}.ev.q3{background:var(--q3bg)}
+/* timeline */
+.tl{position:relative;padding-left:28px;margin:14px 0}
+.tl::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .ev2{position:relative;padding:8px 0 8px 6px}
+.tl .ev2::before{content:"";position:absolute;left:-23px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 1.5px var(--accent)}
+.tl .ev2.ghost::before{background:#fff;box-shadow:0 0 0 1.5px var(--ink2)}
+.tl .ev2 .lab{font-weight:700}
+.tl .ev2 .src{font-size:13px;color:var(--ink2)}
+.tl .ev2 .tag{display:inline-block;font-size:11.5px;background:var(--ink);color:#fff;border-radius:6px;padding:0 7px;margin-left:6px;vertical-align:middle}
+.tl .ev2.ghost .tag{background:var(--ng)}
+/* translation */
+.tr{margin:10px 0 14px}
+.tr .lab{font-size:12px;color:var(--ink2);letter-spacing:.06em}
+.tr p{margin:4px 0}
+.tr p.ja{color:#3a342d;font-size:14.5px}
+.tr p.ja .qm{font-size:11px;padding:0 5px;border-radius:5px;color:#fff;margin-left:4px;vertical-align:middle}
+.qm.q1{background:var(--q1)}.qm.q2{background:var(--q2)}.qm.q3{background:var(--q3)}
+.hideen .tr p.en{display:none}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;margin:8px 0}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.legend .l1::before{background:var(--q1)}.legend .l2::before{background:var(--q2)}.legend .l3::before{background:var(--q3)}
+/* vocab */
+.vocab{display:grid;grid-template-columns:1fr;gap:6px;margin:10px 0}
+.v{display:flex;gap:10px;align-items:baseline;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px}
+.v .w{font-family:Georgia,serif;font-weight:700;min-width:120px}
+.v .pos{font-size:11px;color:var(--ink2);border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.v.pair{border-color:var(--accent);background:#fff8ef}
+/* checklist */
+.chk{list-style:none;padding:0;margin:12px 0}
+.chk li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line)}
+.chk li:first-child{border-top:none}
+.chk input{width:20px;height:20px;margin-top:4px;accent-color:var(--accent)}
+.score{font-family:Georgia,serif;font-size:22px;margin:8px 0}
+.weapon{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.weapon .num{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;width:52px;line-height:1.3;padding-top:4px}
+footer{margin:40px 0 20px;font-size:12.5px;color:var(--ink2);text-align:center;line-height:1.7}
+/* bottom bar + sheet */
+.bbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(253,250,244,.96);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.bbar .in{max-width:720px;margin:0 auto;display:flex;gap:10px;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+.bbar .btn{flex:1}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top-left-radius:18px;border-top-right-radius:18px;box-shadow:0 -10px 30px rgba(0,0,0,.18);max-height:82vh;transform:translateY(105%);transition:transform .28s ease;display:flex;flex-direction:column}
+.sheet.open{transform:translateY(0)}
+.sheet .head{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.sheet .head b{font-size:14px}
+.sheet .filters{display:flex;gap:6px;margin-left:auto}
+.sheet .filters button{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 10px;cursor:pointer;font-family:inherit}
+.sheet .filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sheet .filters button.f1.on{background:var(--q1);border-color:var(--q1)}
+.sheet .filters button.f2.on{background:var(--q2);border-color:var(--q2)}
+.sheet .filters button.f3.on{background:var(--q3);border-color:var(--q3)}
+.sheet .close{margin-left:8px;border:none;background:transparent;font-size:20px;cursor:pointer}
+.sheet .scroll{overflow:auto;padding:0 16px 24px;-webkit-overflow-scrolling:touch}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:45;opacity:0;pointer-events:none;transition:.25s}
+.overlay.on{opacity:1;pointer-events:auto}
+.tiny{font-size:12.5px;color:var(--ink2)}
+.center{text-align:center}
+@media (min-width:600px){.vocab{grid-template-columns:1fr 1fr}}
+</style></head>
+<body data-key="fish">
+<header class="top"><div class="bar"><div class="logo">T</div><div class="t">可視化リーディング ― ストーリー型<b>共通テスト第3問「A New Fish Tale」／ オンライン塾 THINKING</b></div><div class="timerchip" id="tChip">6:00</div></div>
+<nav class="steps"><a href="#s0"><i>0</i>自力で解く</a><a href="#s1"><i>1</i>5STEP</a><a href="#s2"><i>2</i>先読み</a><a href="#s3"><i>3</i>脳内実況</a><a href="#s4"><i>4</i>時間軸</a><a href="#s5"><i>5</i>全訳</a><a href="#s6"><i>6</i>語句</a><a href="#s7"><i>7</i>持ち帰り</a></nav></header>
+
+<main class="wrap">
+<div class="hero">
+<div class="kicker">2026年度 共通テスト追試験 第3問</div>
+<h1><small>【ストーリー型】を攻略する</small>可視化リーディング ― A New Fish Tale ―</h1>
+<p class="lead">第3問は、短い物語を読んで「誰が・何を・どの順番で」を答える問題です。ここで覚えるのは、英文を上手に訳すことではなく、<b>出来事を拾って時間軸に置く</b>という目の動かし方。並べ替え問題は「文を並べる」問題ではなく、「時間軸を復元する」問題だと分かった瞬間に、迷いが消えます。</p>
+<div class="meta"><span>目標解答時間 6分</span><span>設問3問</span><span>並べ替え1問を含む</span><span>下の「本文を開く」で、いつでも英文を参照できます</span></div>
+</div>
+
+<section class="step" id="s0"><div class="stepno">STEP 0</div><h2>まず、時間を測って自力で解く</h2><div class="sub">Try it yourself</div>
+<p>解説を読む前に必ず解いてください。大事なのは正解数ではなく、<b>並べ替え問題で「本文に何回戻ったか」「どの選択肢で迷ったか」</b>を自分で観察すること。そこがそのまま、この後の可視化リーディングがあなたに効く場所になります。</p>
+<div class="timerbox"><div class="big" id="tBig">6:00</div><button class="btn" id="tBtn">スタート</button><span class="tiny">6分を過ぎても止めずに続けて、超過時間を覚えておきましょう。</span></div>
+<div class="passage show-none"><p class="en lead-en">Your English teacher told you to read this short fiction story for the next class.</p><div class="ttl">A New Fish Tale</div><p class="en">It all started in the Yukarry Plastic Zone, an enormous area of plastic waste in the middle of the Yukarry Sea. For years, salt water broke down the waste into very small pieces called microplastics. <mark class="q1">Over time, sea life in the Zone absorbed these microplastics from the sea water, and this affected some fish’s eggs.</mark> Fish that grew from these eggs consisted of both organic and plastic materials. <mark class="q3">They were a new kind of life on Earth.</mark></p><p class="en">After a while, a fishing boat happened to catch one of these partially plastic fish. <mark class="q3">Marine biologists discovered that the fish were eating much of the ocean waste in the Zone, helping to clean the water.</mark> This news quickly spread around the world. <mark class="q2">People were so thankful for these special plastic-eating fish, calling them, “Heroes of the Sea.”</mark></p><p class="en">A year later, a research ship came across hundreds of these “heroes” floating on top of the sea. They had all died. <mark class="q3">After studying this event, the scientists reported that the fish only live for a short time and cannot produce their own eggs.</mark> Another problem was that when the fish’s bodies broke down, many plastic pieces remained floating on the ocean. <mark class="q2">This news was a terrible surprise to everyone.</mark> The waste problem hadn’t been fixed at all. Something still needed to be done to solve it.</p><p class="en">The world’s governments finally took more responsibility. They began major projects to clean up all of the oceans. <mark class="q3">They also made single-use plastic illegal.</mark> In addition, people were only allowed to use natural materials for bags and containers. This helped create the eco-friendlier world that we enjoy now.</p></div>
+<div class="qlist"><div class="q"><div class="stem"><span class="pill">問 1</span><span class="en">According to the story, small pieces of plastic were ___.</span></div><ol class="opts"><li><span class="n">1</span><span class="en">affecting the climate of the Earth</span></li><li><span class="n">2</span><span class="en">causing changes to the eggs of some fish</span></li><li><span class="n">3</span><span class="en">gradually absorbed into the Yukarry Sea</span></li><li><span class="n">4</span><span class="en">used for improving organic materials</span></li></ol><div class="answers"><label><input type="radio" name="q1" value="1"><span>1</span></label><label><input type="radio" name="q1" value="2"><span>2</span></label><label><input type="radio" name="q1" value="3"><span>3</span></label><label><input type="radio" name="q1" value="4"><span>4</span></label></div><div class="result" id="r1"></div></div><div class="q"><div class="stem"><span class="pill">問 2</span><span class="en">Based on the second and third paragraphs, people’s feelings toward the fish most likely changed from ___.</span></div><ol class="opts"><li><span class="n">1</span><span class="en">angry to frightened</span></li><li><span class="n">2</span><span class="en">grateful to shocked</span></li><li><span class="n">3</span><span class="en">honored to satisfied</span></li><li><span class="n">4</span><span class="en">scared to hopeful</span></li></ol><div class="answers"><label><input type="radio" name="q2" value="1"><span>1</span></label><label><input type="radio" name="q2" value="2"><span>2</span></label><label><input type="radio" name="q2" value="3"><span>3</span></label><label><input type="radio" name="q2" value="4"><span>4</span></label></div><div class="result" id="r2"></div></div><div class="q"><div class="stem"><span class="pill">問 3</span><span class="en">Choose four out of the five options (①〜⑤) and put them in the order they happened in the story.</span></div><ol class="opts"><li><span class="n">1</span><span class="en">A novel species was born in the ocean.</span></li><li><span class="n">2</span><span class="en">Catching plastic fish was banned.</span></li><li><span class="n">3</span><span class="en">Governments made earth-friendly laws.</span></li><li><span class="n">4</span><span class="en">Scientists found that the fish have a limited life cycle.</span></li><li><span class="n">5</span><span class="en">The hero fish consumed a lot of sea garbage.</span></li></ol><div class="order"><select data-q="3"><option value="">－</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><span class="arrow">→</span><select data-q="3"><option value="">－</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><span class="arrow">→</span><select data-q="3"><option value="">－</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select><span class="arrow">→</span><select data-q="3"><option value="">－</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div><div class="result" id="r3"></div></div></div>
+<p class="center"><button class="btn" id="grade">採点する</button></p><p class="center" id="gradeSum" style="font-weight:700"></p>
+</section>
+
+<section class="step" id="s1"><div class="stepno">STEP 1</div><h2>可視化リーディング ― ストーリー型の5STEP</h2><div class="sub">The eye path</div>
+<p>第2問までの「設問先読み → 狙い読み」は、第3問でも土台は同じです。ただし物語には「狙い読みできない」性質があります。出来事は本文の中に散らばっていて、しかも書かれた順と起きた順がずれる。だから第3問では、本文を<b>出来事の連続</b>として読み、<b>時間軸に置き直す</b>という手順を足します。</p>
+<div class="card flow"><div class="fstep"><div class="num">1</div><div><h4>リード文・タイトルから「物語の入口」をつくる</h4><p>本文をいきなり読み始めない。リード文で「自分はどんな状況で、この文章を読むのか」を確認し、タイトルで「何系の物語か」だけつかむ。中身は本文で確定する。先にストーリーを勝手に作らない。</p><div class="goal">このSTEPのゴール：「何系の物語か」だけつかんで本文に入る。</div></div></div><div class="fstep"><div class="num">2</div><div><h4>設問を先読みして「何を追いながら読むか」を決める</h4><p>本文を全部読んでから設問を見るのでは遅い。設問を自分の言葉に直し、並べ替え問題は選択肢まで先に見て「1つの選択肢＝1つの出来事」として短く持っておく。英文の丸暗記は不要。</p><div class="goal">このSTEPのゴール：先読みは答えを探すためではなく、本文を読むためのアンテナを立てるため。</div></div></div><div class="fstep"><div class="num">3</div><div><h4>本文は「英文の集まり」ではなく「出来事の連続」として読む</h4><p>一文一文を訳して終わらせない。常に「今、何が起きた？」と考え、心配した・問題が起きた・気づいた・決断した・伝えた・行動が変わった・結果が出た、というストーリーが動く瞬間を拾う。英文 → 何が起きた？ → 出来事、の形で残す。</p><div class="goal">このSTEPのゴール：文章を追うのではなく、ストーリーが動く瞬間を拾い続ける。</div></div></div><div class="fstep"><div class="num">4</div><div><h4>「書かれた順」ではなく「実際に起きた順」で整理する</h4><p>大問3で最重要。先に書かれていることが先に起きたこととは限らない。過去を振り返る・時間が進む・場面が変わる・結果が語られる。a few weeks / Back at home / At the next practice / From that day on / before / after / then / later などの時間表現に必ず反応し、「これはいつ起きたこと？」を常に確認する。</p><div class="goal">このSTEPのゴール：並べ替え問題は、文を並べる問題ではなく、時間軸を復元する問題。</div></div></div><div class="fstep"><div class="num">5</div><div><h4>選択肢を本文に「配置」して、順番を確定する</h4><p>「たぶんこの順番っぽい」という感覚勝負を絶対にしない。選択肢を1つずつ「本文のどこで起きた出来事か」に対応させる。選択肢と本文は同じ表現では出てこないので、言い換えを見る。選択肢 → 本文の言い換え → 本文の位置、まで確定させる。</p><div class="goal">このSTEPのゴール：並べ替えるのではなく、本文に置く。置いた順番が、そのまま答えになる。</div></div></div></div>
+<div class="note"><b class="l">この手順の急所</b>並べ替え問題で落ちる人の9割は、読めていないのではなく「それっぽい順」で並べています。STEP 5の「本文に置く」をやると、迷う時間そのものが消えます。置いた順番が答えなので、迷いようがないからです。</div>
+<h3>この物語での当てはめ</h3>
+<div class="card flow"><div class="fstep"><div class="num">1</div><div><h4>入口：先生から「次の授業までに読んでおけ」と言われた短いフィクション</h4><p>タイトルは A New Fish Tale。fish tale は「ほら話」の意味もあるが、「新しい魚の物語」とだけ受け取る。fiction と書いてあるので、架空の設定が来る。</p></div></div><div class="fstep"><div class="num">2</div><div><h4>アンテナ：「プラスチック片は何をしたか」「人々の感情の変化」「出来事の順番」</h4><p>並べ替えの5つを、新種が生まれた／漁が禁止された／政府が法律を作った／寿命が短いと分かった／魚がゴミを食べた、と圧縮して持つ。</p></div></div><div class="fstep"><div class="num">3</div><div><h4>出来事：卵に影響 → 新種誕生 → ゴミを食べる → 英雄扱い → 大量死 → 寿命が短い → 政府が動く</h4><p>“affected some fish’s eggs” を「卵に影響」、“were eating much of the ocean waste” を「ゴミを食べた」、“made single-use plastic illegal” を「法律を作った」と出来事にして残す。</p></div></div><div class="fstep"><div class="num">4</div><div><h4>時間軸：For years / Over time / After a while / A year later / finally</h4><p>この物語は時間表現が段落ごとに置かれていて、書かれた順 ＝ 起きた順。時間表現を拾うだけで時間軸ができる。</p></div></div><div class="fstep"><div class="num">5</div><div><h4>配置：new kind of life ＝ novel species、eating waste ＝ consumed garbage、illegal ＝ laws</h4><p>「漁が禁止された」は本文に無い。禁止されたのは single-use plastic。選択肢②を切って、残り4つを置いた順が答え。</p></div></div></div>
+</section>
+
+<section class="step" id="s2"><div class="stepno">STEP 2</div><h2>設問の先読み ― 何を追いながら読むかを決める</h2><div class="sub">Set your antennas</div>
+<p>本文を読む前に、設問3つを自分の言葉に直します。実際の試験では20〜30秒。並べ替え問題だけは選択肢まで先に見て、1つの選択肢を1つの短い出来事に圧縮しておきます。</p>
+<div class="card"><div><span class="pill q1">問1</span><span class="en">According to the story, small pieces of plastic were ___.</span></div><p>→ 小さなプラスチック片は何をしたか？ small pieces of plastic ＝ 本文の microplastics。第1段落で、それが「何に何をしたか」を狙う。</p></div><div class="card"><div><span class="pill q2">問2</span><span class="en">... people’s feelings toward the fish most likely changed from ___.</span></div><p>→ 第2・第3段落で、人々の魚への感情は、何から何へ変わったか？ 「前の感情 → 後の感情」の2点を本文から取る。</p></div><div class="card"><div><span class="pill q3">問3</span><span class="en">Choose four ... in the order they happened in the story.</span></div><p>→ どんな出来事が、どの順番で起きたのか？</p><div class="card soft" style="margin:8px 0 0"><div class="tiny" style="margin-bottom:4px">選択肢を出来事に圧縮</div>① novel species was born → 新種が生まれた<br>② catching plastic fish was banned → プラスチック魚を獲ることが禁止された<br>③ governments made earth-friendly laws → 政府が環境に優しい法律を作った<br>④ fish have a limited life cycle → 魚の寿命が短いと分かった<br>⑤ hero fish consumed sea garbage → 英雄の魚が海のゴミを食べた</div></div>
+</section>
+
+<section class="step" id="s3"><div class="stepno">STEP 3</div><h2>脳内実況 ― 読める人の頭の中を再生する</h2><div class="sub">Think-aloud</div>
+<p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。「どの順番で何を見て、なぜそう判断したか」を追ってください。各問はタップで開閉できます。「本文の該当箇所を見る」を押すと、根拠の文が色付きで開きます。</p>
+<details class="think" open><summary><span class="pill q1">問 1</span>プラスチック片は何をしたか<span class="ans">正解 ② causing changes to the eggs of some fish</span></summary><div class="body">
+<p style="margin-top:12px"><b>物語によると、小さなプラスチック片は___。</b></p><ul class="jaopts"><li class=""><span class="n">1</span>地球の気候に影響を与えていた</li><li class="c"><span class="n">2</span>一部の魚の卵に変化を引き起こしていた</li><li class=""><span class="n">3</span>徐々にユカリー海に吸収されていた</li><li class=""><span class="n">4</span>有機物の改良に使われていた</li></ul>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：small pieces of plastic ＝ microplastics。第1段落を狙う</h5>設問の言葉は本文ではそのまま出ない。very small pieces called microplastics が該当語。第1段落の中で、それが主語になって「何をしたか」を探す。</div></div><div class="t"><div class="n">2</div><div><h5>第1段落で、microplastics が何に影響したかが書かれる</h5><div class="quote"><span class="en">Over time, sea life in the Zone absorbed these microplastics from the sea water, and this affected some fish’s eggs.</span><span class="ja">時がたつにつれ、ゾーンの海洋生物が海水からこのマイクロプラスチックを吸収し、それが一部の魚の卵に影響を与えた。</span></div>affected some fish’s eggs ＝ 一部の魚の卵に影響した。これを「変化を引き起こした」と言い換えたのが②。</div></div><div class="t"><div class="n">3</div><div><h5>③の罠：absorbed という単語が本文にある</h5>③ gradually absorbed into the Yukarry Sea ＝ 海に吸収された。本文は sea life absorbed these microplastics。吸収したのは「海洋生物」で、「海」ではない。主語のすり替え。本文の単語を使った不正解の典型。×。</div></div><div class="t"><div class="n">4</div><div><h5>①④は本文に無い</h5>climate（気候）の話は一切出てこない。organic materials は「魚が有機物とプラスチックの両方でできていた」という文脈で、「改良に使われた」とは言っていない。②に○。</div></div></div><div class="map"><span class="en">this affected some fish’s eggs</span><span class="ar">⇒</span><span class="en">causing changes to the eggs of some fish</span></div>
+<p class="center"><button class="btn ghost" data-open="q1">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>本文の動詞（absorbed）がそのまま出てくる選択肢ほど疑う。主語が「海洋生物」から「海」にすり替わっていれば、それは別の出来事。affect → cause changes のように、言い換えられた選択肢の方が正解になる。</div></div></details><details class="think" ><summary><span class="pill q2">問 2</span>人々の感情の変化<span class="ans">正解 ② grateful to shocked</span></summary><div class="body">
+<p style="margin-top:12px"><b>第2・第3段落に基づくと、人々の魚への感情は___から___へ変わった可能性が最も高い。</b></p><ul class="jaopts"><li class=""><span class="n">1</span>怒りから恐怖へ</li><li class="c"><span class="n">2</span>感謝から衝撃へ</li><li class=""><span class="n">3</span>名誉から満足へ</li><li class=""><span class="n">4</span>恐怖から希望へ</li></ul>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：changed from A to B。第2段落で A、第3段落で B を取る</h5>設問が段落を指定してくれている。第2段落の「感情語」と、第3段落の「感情語」を1つずつ拾えばいい。</div></div><div class="t"><div class="n">2</div><div><h5>第2段落：感謝して「海の英雄」と呼ぶ</h5><div class="quote"><span class="en">People were so thankful for these special plastic-eating fish, calling them, “Heroes of the Sea.”</span><span class="ja">人々はこの特別なプラスチックを食べる魚にとても感謝し、「海の英雄」と呼んだ。</span></div>thankful ＝ grateful。前の感情は「感謝」で確定。この時点で②しか残らない（①③④の from は angry / honored / scared で、どれも thankful ではない）。</div></div><div class="t"><div class="n">3</div><div><h5>第3段落：ひどい驚きだった</h5><div class="quote"><span class="en">This news was a terrible surprise to everyone.</span><span class="ja">この知らせは、誰にとってもひどい驚きだった。</span></div>terrible surprise ＝ shocked。後の感情も一致。②に○。</div></div><div class="t"><div class="n">4</div><div><h5>③の honored に引っかからない</h5>「英雄」と呼んだのは人々の側。人々が honored（名誉に思った）のではなく、魚を英雄扱いした。感情の主語が違う。×。</div></div></div><div class="map"><span class="en">so thankful</span><span class="ar">⇒</span><span class="en">grateful</span></div><div class="map"><span class="en">a terrible surprise</span><span class="ar">⇒</span><span class="en">shocked</span></div>
+<p class="center"><button class="btn ghost" data-open="q2">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>感情の変化を問う設問は、from と to の2点を別々に本文から取る。片方（thankful）だけで選択肢が1つに絞れることも多いが、もう片方（terrible surprise）まで確認して「取り切る」。</div></div></details><details class="think" ><summary><span class="pill q3">問 3</span>出来事の並べ替え<span class="ans">正解 ①→⑤→④→③</span></summary><div class="body">
+<p style="margin-top:12px"><b>5つの選択肢から4つを選び、物語で起きた順に並べよ。</b></p><ul class="jaopts"><li class=""><span class="n">1</span>新しい種が海で生まれた。</li><li class=""><span class="n">2</span>プラスチック魚を獲ることが禁止された。</li><li class=""><span class="n">3</span>政府が環境に優しい法律を作った。</li><li class=""><span class="n">4</span>科学者が、魚の寿命が限られていると分かった。</li><li class=""><span class="n">5</span>英雄の魚が海のゴミを大量に食べた。</li></ul>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：5つを出来事に圧縮して、時間表現を待つ</h5>新種誕生／漁の禁止／法律／寿命が短い／ゴミを食べた。この物語は段落ごとに時間表現があるので、それに乗る。</div></div><div class="t"><div class="n">2</div><div><h5>第1段落：新しい生命が生まれる</h5><div class="quote"><span class="en">They were a new kind of life on Earth.</span><span class="ja">それらは地球上の新しい種類の生命だった。</span></div>a new kind of life ＝ a novel species。<b>①</b>が最初。</div></div><div class="t"><div class="n">3</div><div><h5>第2段落（After a while）：魚がゴミを食べていると分かる</h5><div class="quote"><span class="en">Marine biologists discovered that the fish were eating much of the ocean waste in the Zone, helping to clean the water.</span><span class="ja">海洋生物学者は、その魚がゾーンの海洋ゴミの多くを食べて、水をきれいにするのに役立っていることを発見した。</span></div>eating much of the ocean waste ＝ consumed a lot of sea garbage。<b>⑤</b>。</div></div><div class="t"><div class="n">4</div><div><h5>第3段落（A year later）：寿命が短いと報告される</h5><div class="quote"><span class="en">After studying this event, the scientists reported that the fish only live for a short time and cannot produce their own eggs.</span><span class="ja">この出来事を調べた後、科学者たちは、その魚は短い期間しか生きられず、自分の卵を作れないと報告した。</span></div>only live for a short time ＝ have a limited life cycle。<b>④</b>。</div></div><div class="t"><div class="n">5</div><div><h5>第4段落（finally）：政府が法律を作る</h5><div class="quote"><span class="en">They also made single-use plastic illegal.</span><span class="ja">政府はまた、使い捨てプラスチックを違法にした。</span></div>made ～ illegal ＝ made laws。環境のための法律なので earth-friendly laws。<b>③</b>が最後。</div></div><div class="t"><div class="n">6</div><div><h5>②を切る：禁止されたのは「漁」ではなく「使い捨てプラスチック」</h5>本文で illegal（違法）になったのは single-use plastic。プラスチック魚を獲ることは禁止されていない。「禁止」という出来事はあるが、対象が違う。②は切れる。</div></div><div class="t"><div class="n">7</div><div><h5>置いた順を読む：① → ⑤ → ④ → ③</h5>For years → After a while → A year later → finally。段落の時間表現に乗せれば、そのまま答えになる。</div></div></div><div class="map"><span class="en">a new kind of life</span><span class="ar">⇒</span><span class="en">① a novel species was born</span></div><div class="map"><span class="en">eating much of the ocean waste</span><span class="ar">⇒</span><span class="en">⑤ consumed a lot of sea garbage</span></div><div class="map"><span class="en">only live for a short time</span><span class="ar">⇒</span><span class="en">④ have a limited life cycle</span></div><div class="map"><span class="en">made single-use plastic illegal</span><span class="ar">⇒</span><span class="en">③ made earth-friendly laws</span></div>
+<p class="center"><button class="btn ghost" data-open="q3">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>段落の頭にある時間表現（After a while / A year later / finally）は、並べ替え問題の答えをほぼ作ってくれる。そして②のように「禁止」という出来事はあっても「対象」が違う選択肢が混ざる。何が禁止されたか、目的語まで照合する。</div></div></details>
+</section>
+
+<section class="step" id="s4"><div class="stepno">STEP 4</div><h2>時間軸の復元 ― 選択肢を本文に置く</h2><div class="sub">Rebuild the timeline</div>
+<p>並べ替え問題を、もう一度「本文に置く」作業として見える化します。本文の上から下に拾った出来事を、実際に起きた順に並べ直したのが下の時間軸です。赤い丸が選択肢に対応する出来事、白い丸が本文に無い（または起きていない）選択肢です。</p>
+<div class="card"><div class="tl"><div class="ev2 "><div class="lab">海水がプラスチックゴミを微細化する（For years）</div><div class="src en">salt water broke down the waste into very small pieces</div></div><div class="ev2 "><div class="lab">海洋生物が吸収し、魚の卵に影響（Over time）</div><div class="src en">this affected some fish’s eggs</div></div><div class="ev2 "><div class="lab">新しい種類の生命が生まれる <span class="tag">①</span></div><div class="src en">They were a new kind of life on Earth.</div></div><div class="ev2 "><div class="lab">漁船が一匹捕まえ、ゴミを食べていると判明（After a while） <span class="tag">⑤</span></div><div class="src en">the fish were eating much of the ocean waste</div></div><div class="ev2 "><div class="lab">人々が感謝し「海の英雄」と呼ぶ</div><div class="src en">so thankful … “Heroes of the Sea”</div></div><div class="ev2 "><div class="lab">数百匹が死んで浮いているのが見つかる（A year later）</div><div class="src en">hundreds of these “heroes” floating … They had all died.</div></div><div class="ev2 "><div class="lab">寿命が短く、卵を作れないと報告される <span class="tag">④</span></div><div class="src en">only live for a short time and cannot produce their own eggs</div></div><div class="ev2 "><div class="lab">政府が使い捨てプラスチックを違法にする（finally） <span class="tag">③</span></div><div class="src en">made single-use plastic illegal</div></div><div class="ev2 ghost"><div class="lab">プラスチック魚を獲ることが禁止された <span class="tag">②</span></div><div class="src en">本文に無い（違法になったのは single-use plastic であって、漁ではない）</div></div></div></div>
+<div class="note"><b class="l">不正解の選択肢の切り方</b>②「プラスチック魚を獲ることが禁止された」は、本文に illegal（違法）という「禁止」の出来事があるので引っかかる。でも違法になったのは single-use plastic。対象が違えば別の出来事。並べ替えの不正解は、本文の出来事から「目的語」だけ差し替えて作られることがある。何が禁止されたか、何を食べたか、目的語まで見る。</div>
+</section>
+
+<section class="step" id="s5"><div class="stepno">STEP 5</div><h2>全訳 ― 該当箇所を色で確認する</h2><div class="sub">Full translation</div>
+<p>色の下線は各設問の根拠箇所です。</p>
+<div class="legend"><span class="l1">問1</span><span class="l2">問2</span><span class="l3">問3</span></div>
+<p class="center"><button class="btn ghost" id="hideEn">英文を隠して和訳だけ読む</button></p>
+<div class="tr"><div class="lab">リード文</div><p class="en">Your English teacher told you to read this short fiction story for the next class.</p><p class="ja">英語の先生から、次の授業までにこの短い創作物語を読むように言われた。</p></div><div class="tr"><div class="lab">タイトル</div><p class="en">A New Fish Tale</p><p class="ja">新しい魚の物語</p></div><div class="tr"><div class="lab">第1段落</div><p class="en">It all started in the Yukarry Plastic Zone, an enormous area of plastic waste in the middle of the Yukarry Sea. For years, salt water broke down the waste into very small pieces called microplastics. Over time, sea life in the Zone absorbed these microplastics from the sea water, and this affected some fish’s eggs. Fish that grew from these eggs consisted of both organic and plastic materials. They were a new kind of life on Earth.</p><p class="ja">すべては、ユカリー海の真ん中にある巨大なプラスチックゴミの海域「ユカリー・プラスチック・ゾーン」で始まった。何年もの間、海水がゴミを分解して、マイクロプラスチックと呼ばれる非常に小さな破片にした。時がたつにつれ、ゾーンの海洋生物が海水からこのマイクロプラスチックを吸収し、それが一部の魚の卵に影響を与えた。<span class="qm q1">問1</span>その卵から育った魚は、有機物とプラスチックの両方でできていた。それらは地球上の新しい種類の生命だった。<span class="qm q3">問3</span></p></div><div class="tr"><div class="lab">第2段落</div><p class="en">After a while, a fishing boat happened to catch one of these partially plastic fish. Marine biologists discovered that the fish were eating much of the ocean waste in the Zone, helping to clean the water. This news quickly spread around the world. People were so thankful for these special plastic-eating fish, calling them, “Heroes of the Sea.”</p><p class="ja">しばらくして、ある漁船が偶然、この一部プラスチックの魚を一匹捕まえた。海洋生物学者は、その魚がゾーンの海洋ゴミの多くを食べて、水をきれいにするのに役立っていることを発見した。<span class="qm q3">問3</span>この知らせは瞬く間に世界中に広まった。人々はこの特別なプラスチックを食べる魚にとても感謝し、「海の英雄」と呼んだ。<span class="qm q2">問2</span></p></div><div class="tr"><div class="lab">第3段落</div><p class="en">A year later, a research ship came across hundreds of these “heroes” floating on top of the sea. They had all died. After studying this event, the scientists reported that the fish only live for a short time and cannot produce their own eggs. Another problem was that when the fish’s bodies broke down, many plastic pieces remained floating on the ocean. This news was a terrible surprise to everyone. The waste problem hadn’t been fixed at all. Something still needed to be done to solve it.</p><p class="ja">1年後、調査船が、この「英雄」たちが数百匹、海面に浮いているのに出くわした。すべて死んでいた。この出来事を調べた後、科学者たちは、その魚は短い期間しか生きられず、自分の卵を作れないと報告した。<span class="qm q3">問3</span>もう一つの問題は、魚の体が分解されると、多くのプラスチック片が海に浮いたまま残ることだった。この知らせは、誰にとってもひどい驚きだった。<span class="qm q2">問2</span>ゴミ問題はまったく解決していなかった。それを解決するために、まだ何かがなされる必要があった。</p></div><div class="tr"><div class="lab">第4段落</div><p class="en">The world’s governments finally took more responsibility. They began major projects to clean up all of the oceans. They also made single-use plastic illegal. In addition, people were only allowed to use natural materials for bags and containers. This helped create the eco-friendlier world that we enjoy now.</p><p class="ja">世界の政府はついに、より大きな責任を引き受けた。すべての海をきれいにする大規模なプロジェクトを始めた。また、使い捨てプラスチックを違法にした。<span class="qm q3">問3</span>さらに、袋や容器には天然素材しか使えないことになった。これが、今私たちが享受している、より環境に優しい世界を作るのに役立った。</p></div>
+</section>
+
+<section class="step" id="s6"><div class="stepno">STEP 6</div><h2>語句 ― 言い換えに使われた語を優先して覚える</h2><div class="sub">Vocabulary</div>
+<p>第3問の並べ替えは「本文の出来事 → 選択肢の言い換え」で作られます。単語帳的に覚えるのではなく、<b>ペアで</b>覚えてください。</p>
+<h4>今回の言い換えペア（最優先）</h4><div class="vocab"><div class="v pair"><span class="w">a new kind of life ／ a novel species</span><span>新しい種類の生命 → 新種（選択肢①）</span></div><div class="v pair"><span class="w">eating the ocean waste ／ consume sea garbage</span><span>海のゴミを食べる（選択肢⑤）</span></div><div class="v pair"><span class="w">live for a short time ／ limited life cycle</span><span>短い期間しか生きない → 限られた寿命（選択肢④）</span></div><div class="v pair"><span class="w">made ～ illegal ／ made laws</span><span>違法にした → 法律を作った（選択肢③）</span></div><div class="v pair"><span class="w">affect ／ cause changes to</span><span>影響する → 変化を引き起こす（問1）</span></div><div class="v pair"><span class="w">thankful ／ grateful</span><span>感謝して（問2）</span></div><div class="v pair"><span class="w">a terrible surprise ／ shocked</span><span>ひどい驚き → 衝撃を受けて（問2）</span></div></div>
+<h4>本文・設問</h4><div class="vocab"><div class="v"><span class="w">enormous</span><span class="pos">形</span><span>巨大な</span></div><div class="v"><span class="w">waste</span><span class="pos">名</span><span>ゴミ、廃棄物</span></div><div class="v"><span class="w">break down</span><span class="pos">熟</span><span>分解する</span></div><div class="v"><span class="w">absorb</span><span class="pos">動</span><span>吸収する</span></div><div class="v"><span class="w">affect</span><span class="pos">動</span><span>影響を与える</span></div><div class="v"><span class="w">consist of ～</span><span class="pos">熟</span><span>〜から成る</span></div><div class="v"><span class="w">organic</span><span class="pos">形</span><span>有機の</span></div><div class="v"><span class="w">partially</span><span class="pos">副</span><span>部分的に</span></div><div class="v"><span class="w">marine biologist</span><span class="pos">名</span><span>海洋生物学者</span></div><div class="v"><span class="w">spread</span><span class="pos">動</span><span>広まる</span></div><div class="v"><span class="w">thankful</span><span class="pos">形</span><span>感謝して</span></div><div class="v"><span class="w">come across ～</span><span class="pos">熟</span><span>〜に出くわす</span></div><div class="v"><span class="w">float</span><span class="pos">動</span><span>浮く</span></div><div class="v"><span class="w">produce</span><span class="pos">動</span><span>生み出す</span></div><div class="v"><span class="w">remain</span><span class="pos">動</span><span>残る</span></div><div class="v"><span class="w">fix</span><span class="pos">動</span><span>解決する、直す</span></div><div class="v"><span class="w">responsibility</span><span class="pos">名</span><span>責任</span></div><div class="v"><span class="w">single-use</span><span class="pos">形</span><span>使い捨ての</span></div><div class="v"><span class="w">illegal</span><span class="pos">形</span><span>違法の</span></div><div class="v"><span class="w">container</span><span class="pos">名</span><span>容器</span></div><div class="v"><span class="w">eco-friendly</span><span class="pos">形</span><span>環境に優しい</span></div><div class="v"><span class="w">novel</span><span class="pos">形</span><span>新しい、新奇な（名詞の「小説」ではない）</span></div><div class="v"><span class="w">species</span><span class="pos">名</span><span>種</span></div><div class="v"><span class="w">ban</span><span class="pos">動</span><span>禁止する</span></div><div class="v"><span class="w">life cycle</span><span class="pos">名</span><span>生活環、一生</span></div></div>
+</section>
+
+<section class="step" id="s7"><div class="stepno">STEP 7</div><h2>持ち帰る3原則 と 自己点検</h2><div class="sub">Take-aways</div>
+<div class="card"><div class="weapon"><div class="num">原則 1</div><div><h4 style="margin:0 0 4px">文章ではなく、出来事を追う。</h4><p style="margin:0">「英文を全部覚える」のではなく、「何が起きたか」を残す。</p></div></div><div class="weapon"><div class="num">原則 2</div><div><h4 style="margin:0 0 4px">文順ではなく、時間軸で考える。</h4><p style="margin:0">「どこに書いてあるか」より、「いつ起きたか」を見る。</p></div></div><div class="weapon"><div class="num">原則 3</div><div><h4 style="margin:0 0 4px">選択肢は、本文の言い換えとして探す。</h4><p style="margin:0">同じ単語を探すのではなく、同じ出来事を探す。</p></div></div></div>
+<div class="note"><b class="l">大問3の本質</b>大問3は、ただ英文を読む問題ではない。本文を読みながら、出来事を拾う → 時間軸に置く → 選択肢と対応させる、問題。物語は「文章」で追わない。「何が起きたか」を時間軸で追う。</div>
+<p><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。チェックはこの端末に保存されます。</p>
+<ul class="chk"><li><input type="checkbox"><span>本文を読む前に、リード文から「自分はどんな状況で読むのか」を1行で言えた</span></li><li><input type="checkbox"><span>タイトルから「何系の物語か」だけつかみ、中身を決めつけずに本文に入った</span></li><li><input type="checkbox"><span>設問3つを先読みし、自分の言葉に直してから本文を読んだ</span></li><li><input type="checkbox"><span>並べ替えの選択肢を「1つの選択肢＝1つの出来事」として短く持ってから本文に入った</span></li><li><input type="checkbox"><span>本文を読みながら「今、何が起きた？」と出来事の形で残していった</span></li><li><input type="checkbox"><span>時間を動かす表現（then / after / later / a year later など）に反応して時間軸に置き直した</span></li><li><input type="checkbox"><span>並べ替えは「それっぽい順」ではなく、選択肢を本文の位置に配置してから確定した</span></li><li><input type="checkbox"><span>本文に無い出来事の選択肢を、本文の記述で「切った」と説明できる</span></li><li><input type="checkbox"><span>正解を選ぶとき、同じ単語ではなく「同じ出来事の言い換え」で判断した</span></li><li><input type="checkbox"><span>6分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li><li><input type="checkbox"><span>問1で、absorbed の主語が「海洋生物」であって「海」ではないことを見て③を切れた</span></li><li><input type="checkbox"><span>問2で、thankful と terrible surprise の2点を別々に本文から取った</span></li><li><input type="checkbox"><span>問3で、②「漁の禁止」を「違法になったのは使い捨てプラスチック」という目的語の違いで切れた</span></li><li><input type="checkbox"><span>問3で、段落頭の時間表現（After a while / A year later / finally）に乗って並べられた</span></li></ul>
+<div class="score" id="chkScore">0 / 14</div>
+<div class="card soft"><b>次に向けて</b><p>9個以上なら手順は身についています。次は同じ手順を「初見の第3問」で再現できるかを試してください。8個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度6分で解き直してください。答えを覚えていても構いません。測っているのは正解ではなく、<b>出来事を時間軸に置く動作</b>です。</p>
+<p class="center"><button class="btn ghost" id="reset">解答・チェックをリセットしてもう一度解く</button></p></div>
+</section>
+
+<footer>出典：2026年度 共通テスト追試験 第3問 英語（リーディング）第3問<br>学部別・逆転合格設計塾 THINKING ― 受験は根性じゃなく、設計。</footer>
+</main>
+
+<div class="bbar"><div class="in"><button class="btn ghost" id="openSheet">本文を開く</button></div></div>
+<div class="overlay" id="ov"></div>
+<div class="sheet" id="sheet"><div class="head"><b>本文 ― A New Fish Tale</b><div class="filters"><button data-f="none">なし</button><button data-f="all" class="on">全部</button><button class="f1" data-f="q1">問1</button><button class="f2" data-f="q2">問2</button><button class="f3" data-f="q3">問3</button></div><button class="close" id="closeSheet">×</button></div>
+<div class="scroll"><div class="passage show-all" id="sheetPassage"><p class="en lead-en">Your English teacher told you to read this short fiction story for the next class.</p><div class="ttl">A New Fish Tale</div><p class="en">It all started in the Yukarry Plastic Zone, an enormous area of plastic waste in the middle of the Yukarry Sea. For years, salt water broke down the waste into very small pieces called microplastics. <mark class="q1">Over time, sea life in the Zone absorbed these microplastics from the sea water, and this affected some fish’s eggs.</mark> Fish that grew from these eggs consisted of both organic and plastic materials. <mark class="q3">They were a new kind of life on Earth.</mark></p><p class="en">After a while, a fishing boat happened to catch one of these partially plastic fish. <mark class="q3">Marine biologists discovered that the fish were eating much of the ocean waste in the Zone, helping to clean the water.</mark> This news quickly spread around the world. <mark class="q2">People were so thankful for these special plastic-eating fish, calling them, “Heroes of the Sea.”</mark></p><p class="en">A year later, a research ship came across hundreds of these “heroes” floating on top of the sea. They had all died. <mark class="q3">After studying this event, the scientists reported that the fish only live for a short time and cannot produce their own eggs.</mark> Another problem was that when the fish’s bodies broke down, many plastic pieces remained floating on the ocean. <mark class="q2">This news was a terrible surprise to everyone.</mark> The waste problem hadn’t been fixed at all. Something still needed to be done to solve it.</p><p class="en">The world’s governments finally took more responsibility. They began major projects to clean up all of the oceans. <mark class="q3">They also made single-use plastic illegal.</mark> In addition, people were only allowed to use natural materials for bags and containers. This helped create the eco-friendlier world that we enjoy now.</p></div>
+<div class="qlist"><div class="q"><div class="stem"><span class="pill">問 1</span><span class="en">According to the story, small pieces of plastic were ___.</span></div><ol class="opts"><li><span class="n">1</span><span class="en">affecting the climate of the Earth</span></li><li><span class="n">2</span><span class="en">causing changes to the eggs of some fish</span></li><li><span class="n">3</span><span class="en">gradually absorbed into the Yukarry Sea</span></li><li><span class="n">4</span><span class="en">used for improving organic materials</span></li></ol></div><div class="q"><div class="stem"><span class="pill">問 2</span><span class="en">Based on the second and third paragraphs, people’s feelings toward the fish most likely changed from ___.</span></div><ol class="opts"><li><span class="n">1</span><span class="en">angry to frightened</span></li><li><span class="n">2</span><span class="en">grateful to shocked</span></li><li><span class="n">3</span><span class="en">honored to satisfied</span></li><li><span class="n">4</span><span class="en">scared to hopeful</span></li></ol></div><div class="q"><div class="stem"><span class="pill">問 3</span><span class="en">Choose four out of the five options (①〜⑤) and put them in the order they happened in the story.</span></div><ol class="opts"><li><span class="n">1</span><span class="en">A novel species was born in the ocean.</span></li><li><span class="n">2</span><span class="en">Catching plastic fish was banned.</span></li><li><span class="n">3</span><span class="en">Governments made earth-friendly laws.</span></li><li><span class="n">4</span><span class="en">Scientists found that the fish have a limited life cycle.</span></li><li><span class="n">5</span><span class="en">The hero fish consumed a lot of sea garbage.</span></li></ol></div></div></div></div>
+
+<script>const TARGET_SEC=360; const ANS=[{"q": 1, "type": "single", "ans": "2"}, {"q": 2, "type": "single", "ans": "2"}, {"q": 3, "type": "order", "ans": ["1", "5", "4", "3"]}];
+(function(){
+  const KEY = 'thinking_q3_' + document.body.dataset.key;
+  // timer
+  let t = TARGET_SEC, iv=null, running=false, elapsed=0;
+  const big=document.getElementById('tBig'), chip=document.getElementById('tChip'), btn=document.getElementById('tBtn');
+  function fmt(s){ const neg=s<0; s=Math.abs(s); const m=Math.floor(s/60), r=s%60; return (neg?'+':'')+m+':'+String(r).padStart(2,'0'); }
+  function render(){ const left=TARGET_SEC-elapsed; big.textContent=fmt(left); chip.textContent=fmt(left); big.style.color = left<0?'var(--ng)':'inherit'; }
+  render();
+  btn.addEventListener('click',()=>{
+    if(!running){ running=true; btn.textContent='ストップ'; iv=setInterval(()=>{elapsed++; render();},1000); }
+    else { running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // grading
+  document.getElementById('grade').addEventListener('click',()=>{
+    let n=0;
+    ANS.forEach(a=>{
+      const el=document.getElementById('r'+a.q);
+      let ok=false, user='';
+      if(a.type==='single'){
+        const c=document.querySelector('input[name="q'+a.q+'"]:checked'); user=c?c.value:'';
+        ok = user===a.ans;
+      }else{
+        const sels=[...document.querySelectorAll('select[data-q="'+a.q+'"]')].map(s=>s.value); user=sels.join('→');
+        ok = sels.join('')===a.ans.join('');
+      }
+      if(ok){n++; el.textContent='正解';el.className='result ok';}
+      else{ el.textContent='不正解（正解：'+(Array.isArray(a.ans)?a.ans.join('→'):a.ans)+'）'; el.className='result ng'; }
+    });
+    const s=document.getElementById('gradeSum'); s.textContent= n+' / '+ANS.length+'問正解。正解数より、どの設問で本文に戻る回数が増えたかを覚えておいてください。';
+    if(running){ running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // sheet
+  const sheet=document.getElementById('sheet'), ov=document.getElementById('ov');
+  function openSheet(f){ sheet.classList.add('open'); ov.classList.add('on'); if(f) setFilter(f); }
+  function closeSheet(){ sheet.classList.remove('open'); ov.classList.remove('on'); }
+  document.getElementById('openSheet').addEventListener('click',()=>openSheet());
+  document.getElementById('closeSheet').addEventListener('click',closeSheet);
+  ov.addEventListener('click',closeSheet);
+  const sp=document.getElementById('sheetPassage');
+  function setFilter(f){
+    sp.className='passage show-'+f;
+    document.querySelectorAll('.filters button').forEach(b=>b.classList.toggle('on', b.dataset.f===f));
+  }
+  document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f)));
+  document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openSheet(b.dataset.open)));
+  setFilter('none');
+  // hide english toggle
+  const hb=document.getElementById('hideEn'); if(hb){ hb.addEventListener('click',()=>{ document.body.classList.toggle('hideen'); hb.textContent=document.body.classList.contains('hideen')?'英文も表示する':'英文を隠して和訳だけ読む'; }); }
+  // checklist persistence
+  const boxes=[...document.querySelectorAll('.chk input')];
+  let saved={}; try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  boxes.forEach((b,i)=>{ b.checked=!!saved[i]; b.addEventListener('change',()=>{ saved[i]=b.checked; try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){} upd(); }); });
+  function upd(){ const n=boxes.filter(b=>b.checked).length; document.getElementById('chkScore').textContent=n+' / '+boxes.length; }
+  upd();
+  document.getElementById('reset').addEventListener('click',()=>{
+    boxes.forEach(b=>b.checked=false); saved={}; try{localStorage.removeItem(KEY);}catch(e){} upd();
+    document.querySelectorAll('.answers input').forEach(i=>i.checked=false);
+    document.querySelectorAll('.order select').forEach(s=>s.selectedIndex=0);
+    document.querySelectorAll('.result').forEach(r=>{r.textContent='';r.className='result';});
+    document.getElementById('gradeSum').textContent='';
+    elapsed=0; render(); if(running){running=false;clearInterval(iv);} btn.textContent='スタート';
+    window.scrollTo({top:document.getElementById('s0').offsetTop-70,behavior:'smooth'});
+  });
+})();
+</script>
+</body></html>

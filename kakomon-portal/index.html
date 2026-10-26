@@ -1,0 +1,501 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#172642">
+<title>THINKING 過去問ポータル</title>
+<style>
+  :root{
+    --navy:#172642; --navy-2:#24365a; --gold:#C8A55A;
+    --paper:#F6F4EF; --card:#fff; --ink:#1C2433; --muted:#6B7280; --line:#E6E2D8;
+    --soft:#EFEBE2; --ok:#1f7a4d; --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",sans-serif;
+    background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+  button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:560px;margin:0 auto;padding:0 16px 56px}
+
+  /* ヘッダーと検索 */
+  .top{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 0 12px}
+  .top-in{max-width:560px;margin:0 auto;padding:0 16px}
+  .brand{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+  .brand-name{font-size:15px;font-weight:700;letter-spacing:.06em}
+  .brand-name small{display:block;font-size:10px;font-weight:500;letter-spacing:.18em;color:var(--gold)}
+  .me{font-size:11px;color:#c9d0de;text-align:right;max-width:50%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .search{position:relative;display:block}
+  .search input{width:100%;height:44px;border:0;border-radius:12px;padding:0 40px 0 40px;font-size:16px;background:#fff;color:var(--ink);outline:none}
+  .search svg{position:absolute;left:12px;top:12px;width:20px;height:20px;color:var(--muted)}
+  .search .clear{position:absolute;right:6px;top:6px;width:32px;height:32px;border-radius:50%;color:var(--muted);font-size:18px;display:none}
+  .search.has .clear{display:block}
+
+  /* 共通パーツ */
+  h2.sec{font-size:13px;letter-spacing:.12em;color:var(--muted);font-weight:700;margin:26px 0 10px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius)}
+  .list{display:flex;flex-direction:column;gap:8px}
+  .row{display:flex;align-items:center;gap:12px;padding:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);width:100%;text-align:left}
+  .row:active{background:var(--soft)}
+  .row .main{flex:1;min-width:0}
+  .row .t{font-weight:700;font-size:15px;line-height:1.4}
+  .row .s{font-size:12px;color:var(--muted);margin-top:2px;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+  .chev{color:#b8b2a4;flex:none}
+  .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.04em;padding:2px 7px;border-radius:999px;vertical-align:2px;margin-left:6px}
+  .tag.new{background:var(--gold);color:#fff}
+  .tag.sample{background:#e8eef8;color:var(--navy)}
+  .tag.hidden{background:#eee;color:#888}
+  .lock{flex:none;color:#a39d8f}
+  .empty{color:var(--muted);font-size:13px;padding:14px 4px}
+  .notice{margin-top:16px;padding:14px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);font-size:13px}
+  .notice b{display:block;font-size:14px;margin-bottom:4px}
+  .btn{display:flex;align-items:center;justify-content:center;gap:8px;height:48px;border-radius:12px;background:var(--navy);color:#fff;font-weight:700;font-size:15px;width:100%;margin-top:10px}
+  .btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+  .btn.gold{background:var(--gold)}
+
+  /* ホーム：グループタブと大学 */
+  .tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:2px 16px}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:none;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13px;font-weight:700;color:var(--muted)}
+  .tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
+  .unis{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
+  .uni{padding:14px 12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left}
+  .uni:active{background:var(--soft)}
+  .uni .t{font-weight:700;font-size:15px}
+  .uni .s{font-size:11px;color:var(--muted)}
+  .favs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:2px 16px}
+  .favs::-webkit-scrollbar{display:none}
+  .fav{flex:none;width:150px;padding:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left}
+  .fav .u{font-size:11px;color:var(--muted)}
+  .fav .t{font-weight:700;font-size:14px;line-height:1.4;margin-top:2px}
+
+  /* 問題集ページ */
+  .crumb{font-size:12px;color:var(--muted);margin-top:18px}
+  .crumb button{color:var(--navy);font-weight:700}
+  .book-head{display:flex;align-items:flex-start;gap:12px;margin-top:6px}
+  .book-head h1{flex:1;font-size:22px;line-height:1.35;margin:0}
+  .star{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;color:#b8b2a4}
+  .star.on{color:var(--gold);border-color:var(--gold)}
+  .cov{margin-top:12px;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);font-size:13px}
+  .cov span{display:block;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.08em;margin-bottom:2px}
+  .kind{margin-top:22px}
+  .kind h3{font-size:12px;letter-spacing:.14em;color:var(--navy);margin:0 0 8px;display:flex;align-items:center;gap:8px}
+  .kind h3::after{content:"";flex:1;height:1px;background:var(--line)}
+  .mat{display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:12px;width:100%;text-align:left;margin-bottom:8px}
+  .mat:active{background:var(--soft)}
+  .mat .ico{flex:none;width:34px;height:34px;border-radius:9px;background:var(--soft);color:var(--navy);display:flex;align-items:center;justify-content:center}
+  .mat .t{flex:1;font-weight:700;font-size:14px;line-height:1.45}
+  .locked-box{margin-top:18px;padding:20px 16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:center}
+  .locked-box svg{color:var(--gold)}
+  .locked-box p{font-size:13px;color:var(--muted);margin:8px 0 4px}
+
+  /* ビューア */
+  .viewer{position:fixed;inset:0;z-index:50;background:#2b2f36;display:flex;flex-direction:column}
+  .viewer[hidden]{display:none}
+  .vbar{display:flex;align-items:center;gap:8px;background:var(--navy);color:#fff;padding:calc(8px + env(safe-area-inset-top)) 8px 8px}
+  .vbar .back{width:40px;height:40px;display:flex;align-items:center;justify-content:center}
+  .vbar .vt{flex:1;font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .vbody{flex:1;position:relative}
+  .vbody iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+  .vload{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#c9d0de;font-size:13px}
+  .vfoot{background:var(--navy);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
+  .vfoot .btn{margin:0}
+
+  .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%);background:rgba(23,38,66,.94);color:#fff;font-size:13px;padding:10px 16px;border-radius:999px;z-index:80;opacity:0;transition:opacity .2s;pointer-events:none;max-width:90%}
+  .toast.show{opacity:1}
+  .skel{height:58px;border-radius:var(--radius);background:linear-gradient(90deg,#ece8df,#f4f1ea,#ece8df);background-size:200% 100%;animation:sk 1.2s infinite}
+  @keyframes sk{to{background-position:-200% 0}}
+  .pv{background:#fff3cd;color:#664d03;font-size:12px;text-align:center;padding:6px}
+</style>
+</head>
+<body>
+<div class="pv" id="pv" hidden></div>
+<header class="top">
+  <div class="top-in">
+    <div class="brand">
+      <div class="brand-name" id="brand">THINKING<small>過去問ポータル</small></div>
+      <div class="me" id="me"></div>
+    </div>
+    <label class="search" id="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="text" placeholder="大学・学部で検索（例：明治 商）" autocomplete="off" enterkeyhint="search">
+      <button class="clear" id="q-clear" type="button" aria-label="検索をクリア">×</button>
+    </label>
+  </div>
+</header>
+
+<main class="wrap" id="app">
+  <div style="margin-top:20px" class="list"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
+</main>
+
+<div class="viewer" id="viewer" hidden>
+  <div class="vbar">
+    <button class="back" id="v-back" aria-label="閉じる"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <div class="vt" id="v-title"></div>
+  </div>
+  <div class="vbody">
+    <div class="vload" id="v-load">読み込み中…</div>
+    <iframe id="v-frame" title="PDF" allow="autoplay"></iframe>
+  </div>
+  <div class="vfoot"><button class="btn gold" id="v-print">印刷・保存する（PDFを開く）</button></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ===== 設定（セットアップ時に2か所だけ埋める）================================ */
+var LIFF_ID = "2010454771-UKpPuCeO";   // LINE Developers で作った LIFF ID
+var GAS_URL = "https://script.google.com/macros/s/AKfycbwkVjlCL1Q2-0qiLBuR1KSqdubXRdZUFpMydthQCcfkYoCvOhjFqauTKQcu-Bx4Xb8M/exec";   // Apps Script をデプロイした Webアプリの URL（…/exec）
+/* ========================================================================= */
+
+var CACHE_KEY = "kp.cache.v1";
+var RECENT_KEY = "kp.recent.v1";
+var TAB_KEY = "kp.tab.v1";
+
+var S = { user: null, cfg: { newDays: 14 }, catalog: null, etag: "", favs: {}, idx: null };
+var $ = function (id) { return document.getElementById(id); };
+var PREVIEW = /[?&]preview=1/.test(location.search);
+
+/* ---------- 保存（ブラウザ保存が使えない環境でも動くように try で包む） ---------- */
+function load(key) { try { return JSON.parse(localStorage.getItem(key) || "null"); } catch (e) { return null; } }
+function save(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) {} }
+function persist() {
+  if (PREVIEW) return;
+  save(CACHE_KEY, { user: S.user, cfg: S.cfg, catalog: S.catalog, etag: S.etag, favs: Object.keys(S.favs) });
+}
+
+/* ---------- 起動：前回の内容をすぐ表示 → 裏で最新を取りに行く ---------- */
+function start() {
+  var c = PREVIEW ? null : load(CACHE_KEY);
+  if (c && c.catalog) { applyState(c); render(); }
+  if (PREVIEW) { loadScript("mock.js").then(function () { applyState(window.MOCK_BOOT()); render(); showPreviewBar(); }); return; }
+  if (!LIFF_ID || !GAS_URL) { renderMessage("準備中", "ポータルの設定がまだ完了していません。"); return; }
+  loadScript("https://static.line-scdn.net/liff/edge/2/sdk.js")
+    .then(function () { return liff.init({ liffId: LIFF_ID }); })
+    .then(function () {
+      if (!liff.isLoggedIn()) { liff.login({ redirectUri: location.href }); return; }
+      return syncBoot();
+    })
+    .catch(function () {
+      if (!S.catalog) renderMessage("LINEから開いてください", "このページはLINEアプリの中で開くと使えます。");
+    });
+}
+
+function syncBoot() {
+  var token = idToken();
+  if (!token) return;
+  return getJSON(GAS_URL + "?action=boot&token=" + encodeURIComponent(token) + "&etag=" + encodeURIComponent(S.etag || ""))
+    .then(function (res) {
+      if (res.status === "unauthorized") { relogin(); return; }
+      if (res.status !== "ok") throw new Error(res.reason || "error");
+      try { sessionStorage.removeItem("kp.relogin"); } catch (e) {}
+      var changed = !!res.catalog || JSON.stringify(res.favs.slice().sort()) !== JSON.stringify(Object.keys(S.favs).sort()) || !S.user || S.user.role !== res.user.role;
+      applyState({ user: res.user, cfg: res.cfg, catalog: res.catalog || S.catalog, etag: res.etag, favs: res.favs });
+      persist();
+      if (changed) render();
+      else renderMe();
+    })
+    .catch(function () { if (!S.catalog) renderMessage("通信できませんでした", "電波の良い場所で、もう一度開いてください。"); });
+}
+
+/** 期限切れのIDトークンを送らない（LINE内ブラウザは古いトークンを返すことがある） */
+function idToken() {
+  try {
+    var d = liff.getDecodedIDToken();
+    if (!d || d.exp * 1000 < Date.now() + 60000) { relogin(); return ""; }
+    return liff.getIDToken();
+  } catch (e) { return ""; }
+}
+function relogin() {
+  if (sessionStorage.getItem("kp.relogin")) return;
+  try { sessionStorage.setItem("kp.relogin", "1"); } catch (e) {}
+  liff.logout();
+  liff.login({ redirectUri: location.href });
+}
+
+function applyState(o) {
+  S.user = o.user || S.user;
+  S.cfg = o.cfg || S.cfg;
+  if (o.catalog) { S.catalog = o.catalog; S.idx = buildIndex(o.catalog); }
+  S.etag = o.etag || S.etag;
+  if (o.favs) { S.favs = {}; o.favs.forEach(function (id) { S.favs[id] = true; }); }
+}
+
+/* ---------- 一覧の索引 ---------- */
+function buildIndex(cat) {
+  var books = {}, items = {}, unis = {}, order = [];
+  cat.books.forEach(function (b) {
+    b.hay = norm([b.g, b.u, b.uy, b.n, b.cov, b.kw].join(" "));
+    books[b.id] = b;
+    var key = b.g + "\u0000" + b.u;
+    if (!unis[key]) { unis[key] = { g: b.g, u: b.u, uy: b.uy, books: [] }; order.push(key); }
+    unis[key].books.push(b);
+  });
+  cat.items.forEach(function (it) { (items[it.b] = items[it.b] || []).push(it); });
+  return { books: books, items: items, unis: order.map(function (k) { return unis[k]; }) };
+}
+
+/** 全角/半角・カタカナ/ひらがな・空白の違いを吸収して検索する */
+function norm(s) {
+  return String(s || "").normalize("NFKC").toLowerCase()
+    .replace(/[ァ-ヶ]/g, function (c) { return String.fromCharCode(c.charCodeAt(0) - 0x60); })
+    .replace(/[\s・,、。.\-‐_/()（）「」]/g, "");
+}
+
+/* ---------- 画面 ---------- */
+function render() {
+  renderMe();
+  var q = $("q").value.trim();
+  if (q) return renderSearch(q);
+  var h = location.hash.replace(/^#\/?/, "");
+  var parts = h.split("/");
+  if (parts[0] === "b" && parts[1]) return renderBook(decodeURIComponent(parts[1]));
+  if (parts[0] === "u" && parts[1]) return renderUni(decodeURIComponent(parts[1]));
+  renderHome();
+}
+
+function renderMe() {
+  if (!S.user) return;
+  var label = { student: "塾生", buyer: "購入者", guest: "ゲスト", staff: "スタッフ" }[S.user.role] || "";
+  $("me").textContent = (S.user.name ? S.user.name + " ・ " : "") + label;
+}
+
+function renderHome() {
+  if (!S.idx) return;
+  var html = "";
+  html += roleNotice();
+
+  var favs = Object.keys(S.favs).map(function (id) { return S.idx.books[id]; }).filter(Boolean);
+  html += '<h2 class="sec">お気に入り</h2>';
+  html += favs.length
+    ? '<div class="favs">' + favs.map(favCard).join("") + "</div>"
+    : '<div class="empty">問題集のページで ☆ を押すと、ここに並びます。</div>';
+
+  var recent = (load(RECENT_KEY) || []).map(function (id) { return S.idx.books[id]; }).filter(Boolean).filter(function (b) { return !S.favs[b.id]; });
+  if (recent.length) html += '<h2 class="sec">最近見た問題集</h2><div class="list">' + recent.slice(0, 4).map(bookRow).join("") + "</div>";
+
+  var groups = S.catalog.groups.filter(function (g) { return S.idx.unis.some(function (u) { return u.g === g; }); });
+  S.idx.unis.forEach(function (u) { if (groups.indexOf(u.g) < 0) groups.push(u.g); });
+  var tab = load(TAB_KEY);
+  if (groups.indexOf(tab) < 0) tab = groups[0];
+  html += '<h2 class="sec">大学から探す</h2>';
+  html += '<div class="tabs" role="tablist">' + groups.map(function (g) {
+    return '<button class="tab' + (g === tab ? " on" : "") + '" data-tab="' + esc(g) + '">' + esc(g) + "</button>";
+  }).join("") + "</div>";
+  html += '<div class="unis">' + S.idx.unis.filter(function (u) { return u.g === tab; }).map(function (u) {
+    var n = u.books.length;
+    return '<button class="uni" data-uni="' + esc(u.u) + '"><div class="t">' + esc(u.u) + '</div><div class="s">' + n + "冊</div></button>";
+  }).join("") + "</div>";
+
+  $("app").innerHTML = html;
+  window.scrollTo(0, 0);
+}
+
+function roleNotice() {
+  var r = S.user && S.user.role;
+  if (r === "guest") {
+    return '<div class="notice"><b>サンプルの問題集を公開中です</b>THINKINGの塾生は、THINKING CAMPUSで登録するとすべての問題集を見られます。購入した方は、ご購入の確認後に開けるようになります。'
+      + '<a class="btn ghost" href="' + esc(S.cfg.campusUrl || "#") + '">THINKING CAMPUS で登録する</a>'
+      + '<a class="btn" href="' + esc(S.cfg.buyUrl || "#") + '">購入・お問い合わせ（LINE）</a></div>';
+  }
+  return "";
+}
+
+function favCard(b) {
+  return '<button class="fav" data-book="' + esc(b.id) + '"><div class="u">' + esc(b.u) + '</div><div class="t">' + esc(shortName(b)) + (b.L ? lockIcon(14) : "") + "</div></button>";
+}
+
+function bookRow(b) {
+  var tags = (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.L && (S.idx.items[b.id] || []).length ? '<span class="tag sample">一部無料</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + (hasNew(b.id) ? '<span class="tag new">NEW</span>' : "");
+  return '<button class="row" data-book="' + esc(b.id) + '"><div class="main"><div class="t">' + esc(b.n) + tags + "</div>"
+    + (b.cov ? '<div class="s">' + esc(b.cov) + "</div>" : "") + "</div>"
+    + (b.L ? '<span class="lock">' + lockIcon(18) + "</span>" : chev()) + "</button>";
+}
+
+function shortName(b) {
+  return b.n.indexOf(b.u) === 0 && b.n.length > b.u.length ? b.n.slice(b.u.length).trim() : b.n;
+}
+
+function renderUni(name) {
+  if (!S.idx) return;
+  var u = S.idx.unis.filter(function (x) { return x.u === name; })[0];
+  if (!u) return renderHome();
+  if (u.books.length === 1) { location.replace("#/b/" + encodeURIComponent(u.books[0].id)); return; }
+  $("app").innerHTML = '<div class="crumb"><button data-go="#/">ホーム</button> › ' + esc(u.g) + "</div>"
+    + '<div class="book-head"><h1>' + esc(u.u) + "</h1></div>"
+    + '<h2 class="sec">問題集（' + u.books.length + "冊）</h2>"
+    + '<div class="list">' + u.books.map(bookRow).join("") + "</div>";
+  window.scrollTo(0, 0);
+}
+
+function renderBook(id) {
+  if (!S.idx) return;
+  var b = S.idx.books[id];
+  if (!b) return renderHome();
+  var html = '<div class="crumb"><button data-go="#/">ホーム</button> › <button data-uni="' + esc(b.u) + '">' + esc(b.u) + "</button></div>";
+  html += '<div class="book-head"><h1>' + esc(b.n) + (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + "</h1>"
+    + '<button class="star' + (S.favs[b.id] ? " on" : "") + '" data-fav="' + esc(b.id) + '" aria-label="お気に入り">' + starIcon(!!S.favs[b.id]) + "</button></div>";
+  if (b.cov) html += '<div class="cov"><span>この1冊で対応する入試</span>' + esc(b.cov) + "</div>";
+
+  if (b.L) {
+    var sample = S.catalog.books.filter(function (x) { return x.s && !x.L; })[0];
+    var free = S.idx.items[b.id] || [];
+    if (free.length) html += '<section class="kind"><h3>無料で読める</h3>' + free.map(function (it, i) { return matButton(b.id, i, it); }).join("") + "</section>";
+    html += '<div class="locked-box">' + lockIcon(28) + "<p>続きは、塾生・購入者限定です。</p>"
+      + '<a class="btn gold" href="' + esc(S.cfg.buyUrl || "#") + '">購入・お問い合わせ（LINE）</a>'
+      + (sample ? '<button class="btn ghost" data-book="' + esc(sample.id) + '">サンプル（' + esc(sample.n) + "）を見る</button>" : "")
+      + "</div>";
+  } else {
+    var items = S.idx.items[b.id] || [];
+    if (!items.length) html += '<div class="empty">教材を準備中です。</div>';
+    S.catalog.kinds.forEach(function (k) {
+      var list = items.filter(function (it) { return it.k === k; });
+      if (!list.length) return;
+      html += '<section class="kind"><h3>' + esc(k) + "</h3>" + list.map(function (it) {
+        return matButton(b.id, (S.idx.items[b.id] || []).indexOf(it), it);
+      }).join("") + "</section>";
+    });
+  }
+  $("app").innerHTML = html;
+  window.scrollTo(0, 0);
+}
+
+function matButton(bookId, i, it) {
+  return '<button class="mat" data-item="' + esc(bookId) + ":" + i + '"><span class="ico">' + docIcon() + '</span><span class="t">' + esc(it.t)
+    + (isNew(it) ? '<span class="tag new">NEW</span>' : "") + (it.h ? '<span class="tag hidden">非公開</span>' : "") + "</span>" + chev() + "</button>";
+}
+
+function renderSearch(q) {
+  if (!S.idx) return;
+  var tokens = q.split(/\s+/).map(norm).filter(Boolean);
+  var hits = S.catalog.books.filter(function (b) { return tokens.every(function (t) { return b.hay.indexOf(t) >= 0; }); });
+  $("app").innerHTML = '<h2 class="sec">「' + esc(q) + "」の検索結果（" + hits.length + "件）</h2>"
+    + (hits.length ? '<div class="list">' + hits.map(function (b) { return bookRow(b).replace('<div class="t">', '<div class="t"><span style="font-weight:500;color:var(--muted);font-size:12px;display:block">' + esc(b.u) + "</span>"); }).join("") + "</div>"
+      : '<div class="empty">見つかりませんでした。大学名だけ（例：明治）で検索してみてください。</div>');
+}
+
+function renderMessage(title, body) {
+  $("app").innerHTML = '<div class="notice"><b>' + esc(title) + "</b>" + esc(body) + "</div>";
+}
+
+/* ---------- 操作 ---------- */
+document.addEventListener("click", function (ev) {
+  var el = ev.target.closest("[data-book],[data-uni],[data-go],[data-tab],[data-fav],[data-item]");
+  if (!el) return;
+  var d = el.dataset;
+  if (d.fav) return toggleFav(d.fav, el);
+  if (d.item) { var p = d.item.split(":"); return openItem(p[0], Number(p[1])); }
+  if (d.tab) { save(TAB_KEY, d.tab); return renderHome(); }
+  clearSearch();
+  if (d.book) location.hash = "#/b/" + encodeURIComponent(d.book);
+  else if (d.uni) location.hash = "#/u/" + encodeURIComponent(d.uni);
+  else if (d.go) location.hash = d.go;
+});
+window.addEventListener("hashchange", function () { if (!$("viewer").hidden) closeViewer(true); render(); });
+
+var qTimer = 0;
+$("q").addEventListener("input", function () {
+  $("search-box").classList.toggle("has", !!this.value);
+  clearTimeout(qTimer);
+  qTimer = setTimeout(render, 60);
+});
+$("q").addEventListener("keydown", function (e) { if (e.key === "Enter") this.blur(); });
+$("q-clear").addEventListener("click", function (e) { e.preventDefault(); clearSearch(); render(); });
+function clearSearch() { $("q").value = ""; $("search-box").classList.remove("has"); }
+
+function toggleFav(id, el) {
+  var on = !S.favs[id];
+  if (on) S.favs[id] = true; else delete S.favs[id];
+  el.classList.toggle("on", on);
+  el.innerHTML = starIcon(on);
+  toast(on ? "お気に入りに追加しました" : "お気に入りから外しました");
+  persist();
+  if (PREVIEW) return;
+  post({ action: "fav", token: idToken(), book: id, on: on }).then(function (res) {
+    if (!res || res.status !== "ok") throw new Error();
+  }).catch(function () {
+    if (on) delete S.favs[id]; else S.favs[id] = true;
+    persist(); render();
+    toast("保存できませんでした。もう一度お試しください。");
+  });
+}
+
+/* ---------- ビューア（Googleドライブのプレビューを埋め込み） ---------- */
+var CUR = null;
+function openItem(bookId, i) {
+  var it = (S.idx.items[bookId] || [])[i];
+  if (!it) return;
+  CUR = it;
+  pushRecent(bookId);
+  $("v-title").textContent = it.t;
+  $("v-load").hidden = false;
+  $("v-frame").src = "about:blank";
+  $("viewer").hidden = false;
+  document.body.style.overflow = "hidden";
+  history.pushState({ viewer: 1 }, "");
+  if (PREVIEW || /^mock/.test(it.f)) {
+    $("v-load").textContent = "（プレビューのため、実際のPDFは表示されません）";
+  } else {
+    $("v-load").textContent = "読み込み中…";
+    $("v-frame").src = "https://drive.google.com/file/d/" + it.f + "/preview";
+    post({ action: "log", token: idToken(), book: bookId, title: it.t }).catch(function () {});
+  }
+}
+$("v-frame").addEventListener("load", function () { if (this.src !== "about:blank") $("v-load").hidden = true; });
+$("v-back").addEventListener("click", function () { history.back(); });
+window.addEventListener("popstate", function () { if (!$("viewer").hidden) closeViewer(true); });
+function closeViewer(fromHistory) {
+  $("viewer").hidden = true;
+  $("v-frame").src = "about:blank";
+  document.body.style.overflow = "";
+  CUR = null;
+}
+/** 印刷・保存は端末のブラウザでPDFそのものを開く（LINE内ブラウザでは印刷できないため） */
+$("v-print").addEventListener("click", function () {
+  if (!CUR) return;
+  if (PREVIEW || /^mock/.test(CUR.f)) return toast("プレビューでは開けません");
+  var url = "https://drive.google.com/uc?export=download&id=" + CUR.f;
+  if (window.liff && liff.isInClient && liff.isInClient()) liff.openWindow({ url: url, external: true });
+  else window.open(url, "_blank", "noopener");
+});
+
+function pushRecent(id) {
+  var r = (load(RECENT_KEY) || []).filter(function (x) { return x !== id; });
+  r.unshift(id);
+  save(RECENT_KEY, r.slice(0, 8));
+}
+
+/* ---------- 補助 ---------- */
+function hasNew(bookId) { return (S.idx.items[bookId] || []).some(isNew); }
+function isNew(it) {
+  if (!it.d) return false;
+  var days = (Date.now() - new Date(it.d + "T00:00:00+09:00").getTime()) / 86400000;
+  return days <= (S.cfg.newDays || 14);
+}
+function getJSON(url) { return fetch(url).then(function (r) { return r.json(); }); }
+/* Content-Type を付けない（text/plain のまま）。付けると CORS の事前確認で GAS が失敗する */
+function post(body) { return fetch(GAS_URL, { method: "POST", body: JSON.stringify(body) }).then(function (r) { return r.json(); }); }
+function loadScript(src) {
+  return new Promise(function (ok, ng) { var s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = ng; document.head.appendChild(s); });
+}
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+var tt = 0;
+function toast(m) { var t = $("toast"); t.textContent = m; t.classList.add("show"); clearTimeout(tt); tt = setTimeout(function () { t.classList.remove("show"); }, 1800); }
+function chev() { return '<svg class="chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 5l7 7-7 7"/></svg>'; }
+function lockIcon(n) { return '<svg width="' + n + '" height="' + n + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="vertical-align:-2px;margin-left:4px"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>'; }
+function starIcon(on) { return '<svg width="22" height="22" viewBox="0 0 24 24" fill="' + (on ? "currentColor" : "none") + '" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 3 2.7 5.6 6.1.8-4.5 4.2 1.1 6.1L12 16.8 6.6 19.7l1.1-6.1L3.2 9.4l6.1-.8z"/></svg>'; }
+function docIcon() { return '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>'; }
+function showPreviewBar() {
+  var role = (location.search.match(/[?&]role=(\w+)/) || [])[1] || "student";
+  var bar = $("pv");
+  bar.hidden = false;
+  bar.innerHTML = "プレビュー表示（" + esc(role) + "）： "
+    + ["student", "buyer", "guest", "staff"].map(function (r) { return '<a style="text-decoration:underline;margin:0 4px" href="?preview=1&role=' + r + location.hash + '">' + r + "</a>"; }).join("");
+}
+
+start();
+</script>
+</body>
+</html>

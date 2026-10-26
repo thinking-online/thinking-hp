@@ -1,0 +1,47 @@
+# 過去問ポータルの GAS（kakomon-portal/gas/）を、main に入ったら自動で Apps Script に反映して
+# 既存のウェブアプリ（URLはそのまま）を新しいバージョンで更新する。
+# 必要な設定は kakomon-portal/セットアップ手順.md の「自動デプロイ」を参照。
+name: 過去問ポータル GAS 自動デプロイ
+
+on:
+  push:
+    branches: [main]
+    paths: ['kakomon-portal/gas/**']
+  workflow_dispatch:
+
+concurrency:
+  group: kakomon-gas-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      CLASPRC_JSON: ${{ secrets.CLASPRC_JSON }}
+      SCRIPT_ID: ${{ vars.KAKOMON_SCRIPT_ID }}
+      DEPLOYMENT_ID: ${{ vars.KAKOMON_DEPLOYMENT_ID }}
+    steps:
+      - name: 設定があるか確認
+        run: |
+          if [ -z "$CLASPRC_JSON" ] || [ -z "$SCRIPT_ID" ] || [ -z "$DEPLOYMENT_ID" ]; then
+            echo "::warning::CLASPRC_JSON / KAKOMON_SCRIPT_ID / KAKOMON_DEPLOYMENT_ID が未設定のため、自動デプロイをスキップしました"
+            echo "SKIP=1" >> "$GITHUB_ENV"
+          fi
+      - uses: actions/checkout@v4
+        if: env.SKIP != '1'
+      - uses: actions/setup-node@v4
+        if: env.SKIP != '1'
+        with:
+          node-version: 20
+      - name: clasp を用意
+        if: env.SKIP != '1'
+        run: |
+          npm install -g @google/clasp@2.4.2
+          printf '%s' "$CLASPRC_JSON" > ~/.clasprc.json
+          printf '{"scriptId":"%s","rootDir":"kakomon-portal/gas"}' "$SCRIPT_ID" > .clasp.json
+      - name: コードを反映
+        if: env.SKIP != '1'
+        run: clasp push --force
+      - name: ウェブアプリを新しいバージョンで更新（URLは変わらない）
+        if: env.SKIP != '1'
+        run: clasp deploy --deploymentId "$DEPLOYMENT_ID" --description "auto ${GITHUB_SHA::7}"

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base target="_top">
+<style>
+  body{font-family:system-ui,"Hiragino Sans","Noto Sans JP",sans-serif;font-size:13px;color:#1c2433;margin:0;padding:14px}
+  label.h{display:block;font-weight:700;margin:14px 0 6px}
+  select,input[type=text]{width:100%;box-sizing:border-box;padding:8px;border:1px solid #d4dae4;border-radius:8px;font-size:13px;background:#fff}
+  .seg{display:flex;border:1px solid #d4dae4;border-radius:10px;overflow:hidden}
+  .seg button{flex:1;padding:9px 0;border:0;background:#fff;font-size:13px;font-weight:700;color:#6b7280;cursor:pointer}
+  .seg button.on{background:#172642;color:#fff}
+  .drop{border:2px dashed #b9c3d3;border-radius:10px;padding:18px 10px;text-align:center;color:#6b7280;cursor:pointer}
+  .drop.on{border-color:#172642;color:#172642;background:#f3f5f9}
+  .row{display:flex;align-items:center;gap:6px;margin-top:12px}
+  .go{margin-top:16px;width:100%;padding:11px;border:0;border-radius:10px;background:#172642;color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+  .go:disabled{opacity:.45;cursor:default}
+  .preview{margin-top:14px;padding:10px 12px;border-radius:10px;background:#f3f5f9;line-height:1.7}
+  .preview .fn{color:#6b7280;font-size:11px;word-break:break-all}
+  .preview.dup{background:#fff4e5}
+  .warn{color:#9a5b00;font-weight:700;font-size:12px}
+  .msg{margin-top:12px;line-height:1.6}
+  .ok{color:#1f7a4d}.err{color:#b42318}
+  .note{color:#6b7280;font-size:12px;line-height:1.6;margin-top:6px}
+  [hidden]{display:none!important}
+</style>
+</head>
+<body>
+<p class="note" style="margin-top:0">問題集をまとめて登録するときは、PDFと目次（links.txt）をドライブのフォルダに入れて、メニューの「フォルダから取り込み」を使ってください。ここは1つだけ直したいとき用です。</p>
+
+<label class="h">問題集</label>
+<select id="book"></select>
+
+<label class="h">やること</label>
+<div class="seg">
+  <button type="button" id="m-replace" class="on">差し替え</button>
+  <button type="button" id="m-add">新しく追加</button>
+</div>
+
+<div id="f-replace">
+  <label class="h">差し替える教材</label>
+  <select id="target"></select>
+  <p class="note">リンクはそのままで中身だけ新しい版になります。</p>
+</div>
+
+<div id="f-add" hidden>
+  <label class="h">区分</label>
+  <select id="kind"></select>
+  <label class="h">タイトル（PDFの表紙・目次と同じ名前）</label>
+  <input id="title" type="text" placeholder="例：Vol.3 大問III 誤り指摘">
+  <div class="preview" id="preview" hidden></div>
+</div>
+
+<label class="h">PDF</label>
+<div class="drop" id="drop">ここにPDFをドラッグ<br>またはクリックして選ぶ</div>
+<input id="file" type="file" accept="application/pdf" hidden>
+
+<div class="row" id="f-publish" hidden><input id="publish" type="checkbox"><label for="publish">すぐに公開する</label></div>
+
+<button class="go" id="go" disabled>差し替える</button>
+<div class="msg" id="msg"></div>
+
+<script>
+var OPT = null, picked = null, mode = 'replace';
+var $ = function (id) { return document.getElementById(id); };
+
+function fill(sel, values) {
+  sel.innerHTML = '';
+  values.forEach(function (v) { var o = document.createElement('option'); o.value = v; o.textContent = v; sel.appendChild(o); });
+}
+
+google.script.run.withSuccessHandler(function (o) {
+  OPT = o;
+  fill($('book'), o.books);
+  fill($('kind'), o.kinds);
+  $('book').onchange = function () { fillTargets(); refresh(); };
+  $('target').onchange = refresh;
+  $('kind').onchange = refresh;
+  $('title').oninput = refresh;
+  fillTargets();
+  refresh();
+}).withFailureHandler(function (e) { show('読み込みに失敗しました：' + (e && e.message || e), 'err'); }).getUploadOptions();
+
+function fillTargets() {
+  var list = OPT.existing[$('book').value] || [];
+  fill($('target'), list);
+  if (!list.length) setMode('add');
+}
+
+$('m-replace').onclick = function () { setMode('replace'); };
+$('m-add').onclick = function () { setMode('add'); };
+function setMode(m) {
+  mode = m;
+  $('m-replace').classList.toggle('on', m === 'replace');
+  $('m-add').classList.toggle('on', m === 'add');
+  $('f-replace').hidden = m !== 'replace';
+  $('f-add').hidden = m !== 'add';
+  $('f-publish').hidden = m !== 'add';
+  refresh();
+}
+
+/** サーバーの normalizeTitle_ と同じ（Vol0 → Vol.0） */
+function norm(t) { return String(t || '').trim().replace(/^vol\s*\.?\s*(\d+)\s*/i, 'Vol.$1 ').trim(); }
+
+function currentTitle() { return mode === 'replace' ? $('target').value : norm($('title').value); }
+
+function refresh() {
+  if (!OPT) return;
+  var t = currentTitle();
+  var dup = mode === 'add' && t && (OPT.existing[$('book').value] || []).indexOf(t) >= 0;
+  if (mode === 'add') {
+    var p = $('preview');
+    p.hidden = !t;
+    p.className = 'preview' + (dup ? ' dup' : '');
+    p.innerHTML = (dup ? '<div class="warn">同じタイトルがあります → 差し替えになります</div>' : '')
+      + '<div class="fn">ファイル名：' + esc(($('book').value + '_' + t).replace(/\//g, '／')) + '.pdf</div>';
+  }
+  $('go').textContent = mode === 'replace' || dup ? '差し替える' : '追加する';
+  $('go').disabled = !picked || !t;
+}
+
+function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+function pick(f) {
+  if (!f) return;
+  if (f.type !== 'application/pdf') { show('PDFを選んでください。', 'err'); return; }
+  picked = f;
+  $('drop').textContent = f.name + '（' + Math.round(f.size / 1024) + 'KB）';
+  show('', '');
+  refresh();
+}
+$('drop').onclick = function () { $('file').click(); };
+$('file').onchange = function () { pick(this.files[0]); };
+$('drop').ondragover = function (e) { e.preventDefault(); this.classList.add('on'); };
+$('drop').ondragleave = function () { this.classList.remove('on'); };
+$('drop').ondrop = function (e) { e.preventDefault(); this.classList.remove('on'); pick(e.dataTransfer.files[0]); };
+
+function show(t, cls) { $('msg').textContent = t; $('msg').className = 'msg ' + cls; }
+
+$('go').onclick = function () {
+  if (!picked) return;
+  var btn = this;
+  btn.disabled = true;
+  show('アップロード中…（数秒〜数十秒）', '');
+  var reader = new FileReader();
+  reader.onload = function () {
+    var f = {
+      mode: mode, book: $('book').value, title: currentTitle(), kind: $('kind').value,
+      publish: $('publish').checked, data: String(reader.result).split(',')[1]
+    };
+    google.script.run.withSuccessHandler(function (res) {
+      show((res.replaced ? '差し替えました：' : '追加しました：') + res.title, 'ok');
+      var list = OPT.existing[f.book] = OPT.existing[f.book] || [];
+      if (list.indexOf(res.title) < 0) list.push(res.title);
+      picked = null; $('file').value = ''; $('title').value = '';
+      $('drop').innerHTML = 'ここにPDFをドラッグ<br>またはクリックして選ぶ';
+      fillTargets(); refresh();
+    }).withFailureHandler(function (err) {
+      show('失敗しました：' + (err && err.message || err), 'err'); btn.disabled = false;
+    }).uploadMaterial(f);
+  };
+  reader.readAsDataURL(picked);
+};
+</script>
+</body>
+</html>

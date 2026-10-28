@@ -25,7 +25,7 @@
   .top{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 0 12px}
   .top-in{max-width:560px;margin:0 auto;padding:0 16px}
   .brand{display:flex;align-items:center;justify-content:space-between;gap:8px}
-  .brand-name{font-size:15px;font-weight:700;letter-spacing:.06em}
+  .brand-name{font-size:15px;font-weight:700;letter-spacing:.06em;color:inherit;text-align:left;padding:0;cursor:pointer}
   .brand-name small{display:block;font-size:10px;font-weight:500;letter-spacing:.18em;color:var(--gold)}
   .me{font-size:11px;color:#c9d0de;text-align:right;max-width:50%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   /* 検索：右下の虫眼鏡が、押すと左へ横に伸びて検索窓になる。× で元の丸に戻る */
@@ -122,6 +122,13 @@
   .mat:active{background:var(--soft)}
   .mat .ico{flex:none;width:34px;height:34px;border-radius:9px;background:var(--soft);color:var(--navy);display:flex;align-items:center;justify-content:center}
   .mat .t{flex:1;font-weight:700;font-size:14px;line-height:1.45}
+  .mat.locked{cursor:default;-webkit-user-select:none;user-select:none}
+  .mat.locked:active{background:#fff}
+  .mat.locked .t{color:#8a8578;font-weight:600}
+  .mat.locked .ico{background:#f1efe9;color:#b8b2a4}
+  .mat.locked .lock svg{margin-left:0}
+  .toc-note{margin:14px 2px 0;font-size:12px;line-height:1.7;color:var(--muted)}
+  .toc-note svg{color:var(--gold);margin-left:0;vertical-align:-1px}
   .locked-box{margin-top:18px;padding:20px 16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:center}
   .locked-box svg{color:var(--gold)}
   .locked-box p{font-size:13px;color:var(--muted);margin:8px 0 4px}
@@ -150,7 +157,7 @@
 <header class="top">
   <div class="top-in">
     <div class="brand">
-      <div class="brand-name" id="brand">THINKING 合格部屋<small>学部別対策ライブラリー</small></div>
+      <button class="brand-name" id="brand" data-go="#/" aria-label="ホームに戻る">THINKING 合格部屋<small>学部別対策ライブラリー</small></button>
       <div class="me" id="me"></div>
     </div>
   </div>
@@ -368,7 +375,7 @@ function favCard(b) {
 function bookRow(b) { return bookRowOf(b, false); }
 function bookRowThumb(b) { return bookRowOf(b, true); }
 function bookRowOf(b, thumb) {
-  var tags = (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.L && (S.idx.items[b.id] || []).length ? '<span class="tag sample">一部無料</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + (hasNew(b.id) ? '<span class="tag new">NEW</span>' : "");
+  var tags = (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.L && (S.idx.items[b.id] || []).some(function (it) { return !it.L; }) ? '<span class="tag sample">一部無料</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + (hasNew(b.id) ? '<span class="tag new">NEW</span>' : "");
   return '<button class="row" data-book="' + esc(b.id) + '">' + (thumb ? pic(b.u, 160, "thumb") : "") + '<div class="main"><div class="t">' + esc(b.n) + tags + "</div>"
     + (b.cov ? '<div class="s">' + esc(b.cov) + "</div>" : "") + "</div>"
     + (b.L ? '<span class="lock">' + lockIcon(18) + "</span>" : chev()) + "</button>";
@@ -401,32 +408,37 @@ function renderBook(id) {
     + '<button class="star' + (S.favs[b.id] ? " on" : "") + '" data-fav="' + esc(b.id) + '" aria-label="お気に入り">' + starIcon(!!S.favs[b.id]) + "</button></div>";
   if (b.cov) html += '<div class="cov"><span>この1冊で対応する入試</span>' + esc(b.cov) + "</div>";
 
+  // ロック中でも目次（区分・タイトル）は見せる。鍵の付いた教材は押しても開かない
+  var items = S.idx.items[b.id] || [];
+  var nLocked = items.filter(function (it) { return it.L; }).length;
+  if (b.L && items.length) html += '<p class="toc-note">' + lockIcon(13) + " この問題集の全" + items.length + "点の構成です。" + (nLocked < items.length ? "「無料」の教材はすぐに読めます。" : "") + "鍵の付いた教材は、塾生・購入者限定です。</p>";
+  if (!items.length) html += '<div class="empty">教材を準備中です。</div>';
+  S.catalog.kinds.forEach(function (k) {
+    var list = items.filter(function (it) { return it.k === k; });
+    if (!list.length) return;
+    html += '<section class="kind"><h3>' + esc(k) + "</h3>" + list.map(function (it) {
+      return it.L ? lockedRow(it) : matButton(b.id, items.indexOf(it), it, b.L);
+    }).join("") + "</section>";
+  });
   if (b.L) {
     var sample = S.catalog.books.filter(function (x) { return x.s && !x.L; })[0];
-    var free = S.idx.items[b.id] || [];
-    if (free.length) html += '<section class="kind"><h3>無料で読める</h3>' + free.map(function (it, i) { return matButton(b.id, i, it); }).join("") + "</section>";
-    html += '<div class="locked-box">' + lockIcon(28) + "<p>続きは、塾生・購入者限定です。</p>"
+    html += '<div class="locked-box">' + lockIcon(28) + "<p>鍵の付いた教材は、塾生・購入者限定です。</p>"
       + '<a class="btn gold" href="' + esc(S.cfg.buyUrl || "#") + '">購入・お問い合わせ（LINE）</a>'
       + (sample ? '<button class="btn ghost" data-book="' + esc(sample.id) + '">サンプル（' + esc(sample.n) + "）を見る</button>" : "")
       + "</div>";
-  } else {
-    var items = S.idx.items[b.id] || [];
-    if (!items.length) html += '<div class="empty">教材を準備中です。</div>';
-    S.catalog.kinds.forEach(function (k) {
-      var list = items.filter(function (it) { return it.k === k; });
-      if (!list.length) return;
-      html += '<section class="kind"><h3>' + esc(k) + "</h3>" + list.map(function (it) {
-        return matButton(b.id, (S.idx.items[b.id] || []).indexOf(it), it);
-      }).join("") + "</section>";
-    });
   }
   $("app").innerHTML = html;
   window.scrollTo(0, 0);
 }
 
-function matButton(bookId, i, it) {
+function matButton(bookId, i, it, freeTag) {
   return '<button class="mat" data-item="' + esc(bookId) + ":" + i + '"><span class="ico">' + docIcon() + '</span><span class="t">' + esc(it.t)
-    + (isNew(it) ? '<span class="tag new">NEW</span>' : "") + (it.h ? '<span class="tag hidden">非公開</span>' : "") + "</span>" + chev() + "</button>";
+    + (freeTag ? '<span class="tag sample">無料</span>' : "") + (isNew(it) ? '<span class="tag new">NEW</span>' : "") + (it.h ? '<span class="tag hidden">非公開</span>' : "") + "</span>" + chev() + "</button>";
+}
+/** 鍵の付いた教材：タイトルだけ見せて、押しても何も起きない */
+function lockedRow(it) {
+  return '<div class="mat locked" aria-disabled="true"><span class="ico">' + docIcon() + '</span><span class="t">' + esc(it.t)
+    + (isNew(it) ? '<span class="tag new">NEW</span>' : "") + '</span><span class="lock" aria-label="塾生・購入者限定">' + lockIcon(18) + "</span></div>";
 }
 
 function renderSearch(q) {
@@ -453,7 +465,11 @@ document.addEventListener("click", function (ev) {
   clearSearch();
   if (d.book) location.hash = "#/b/" + encodeURIComponent(d.book);
   else if (d.uni) location.hash = "#/u/" + encodeURIComponent(d.uni);
-  else if (d.go) location.hash = d.go;
+  else if (d.go) {
+    // すでにホームにいるとき（ロゴを押したとき）は、いちばん上に戻す
+    if (location.hash.replace(/^#\/?/, "") === d.go.replace(/^#\/?/, "")) { render(); window.scrollTo(0, 0); }
+    else location.hash = d.go;
+  }
 });
 window.addEventListener("hashchange", function () { if (!$("viewer").hidden) closeViewer(true); render(); });
 

@@ -124,7 +124,7 @@ function linkRole_(key) {
 function bootResponse_(user, access, favs, clientEtag) {
   var cfg = config_();
   var full = catalog_();
-  var etag = full.v + ':' + access.key;
+  var etag = CATALOG_FORMAT + ':' + full.v + ':' + access.key;
   user.role = access.role;
   var res = {
     status: 'ok',
@@ -339,7 +339,10 @@ function catalog_() {
   return full;
 }
 
-/** 本人が見てよい範囲だけを返す。ロック中の問題集はファイルIDを送らない */
+/** 一覧の形を変えたら1つ上げる（端末に残った古い一覧を取り直させる） */
+var CATALOG_FORMAT = 2;
+
+/** 本人が見てよい範囲だけを返す。ロック中の問題集は目次（区分・タイトル）だけ送り、ファイルIDは送らない */
 function filterCatalog_(full, acc) {
   var staff = acc.role === 'staff';
   var open = {};
@@ -353,8 +356,11 @@ function filterCatalog_(full, acc) {
     books.push({ id: b.id, g: b.g, u: b.u, uy: b.uy, n: b.n, cov: b.cov, kw: b.kw, s: b.s, L: !allowed, h: !b.p });
   });
   var items = full.items
-    .filter(function (it) { return (open[it.b] && (it.p || staff)) || (it.fr && it.p && shown[it.b]); })
-    .map(function (it) { return { b: it.b, k: it.k, t: it.t, f: it.f, d: it.d, h: !it.p, fr: it.fr || undefined }; });
+    .filter(function (it) { return (open[it.b] && (it.p || staff)) || (it.p && shown[it.b]); })
+    .map(function (it) {
+      if (open[it.b] || it.fr) return { b: it.b, k: it.k, t: it.t, f: it.f, d: it.d, h: !it.p, fr: it.fr || undefined };
+      return { b: it.b, k: it.k, t: it.t, d: it.d, L: 1 };
+    });
   var unis = {};
   books.forEach(function (b) { if (full.unis && full.unis[b.u]) unis[b.u] = full.unis[b.u]; });
   return { groups: full.groups, kinds: full.kinds, books: books, items: items, unis: unis };

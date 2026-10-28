@@ -58,7 +58,11 @@ window.MOCK_BOOT = function () {
       groups: ["MARCH", "関関同立", "日東駒専", "産近甲龍", "その他"],
       kinds: ["戦略編", "大問別", "単語帳", "模試", "解説", "その他"],
       books: outBooks,
-      items: items.filter(function (it) { return open[it.b] || it.k === "戦略編"; }),
+      // ロック中の問題集は目次だけ（ファイルIDなし）。戦略編は無料
+      items: items.map(function (it) {
+        if (open[it.b] || it.k === "戦略編") return it;
+        return { b: it.b, k: it.k, t: it.t, d: it.d, L: 1 };
+      }),
       // 大学の画像は img/uni/ の本物。シート（ドライブ）の画像を試すときは i に画像のURLを入れる
       unis: {
         "明治大学": { c: "学部ごとに出題がまったく違う。受ける学部の1冊から始めよう" }

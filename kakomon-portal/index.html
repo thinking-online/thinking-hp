@@ -28,21 +28,19 @@
   .brand-name{font-size:15px;font-weight:700;letter-spacing:.06em}
   .brand-name small{display:block;font-size:10px;font-weight:500;letter-spacing:.18em;color:var(--gold)}
   .me{font-size:11px;color:#c9d0de;text-align:right;max-width:50%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  /* 検索窓：ふだんは閉じておき、右下の虫眼鏡で上からスッと開く */
-  .search-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .22s ease}
-  .top.open .search-wrap{grid-template-rows:1fr}
-  .search-wrap>div{min-height:0;overflow:hidden}
-  .search{position:relative;display:block;margin-top:10px}
-  .search input{width:100%;height:44px;border:0;border-radius:12px;padding:0 40px 0 40px;font-size:16px;background:#fff;color:var(--ink);outline:none}
-  .search svg{position:absolute;left:12px;top:12px;width:20px;height:20px;color:var(--muted)}
-  .fab{position:fixed;right:max(16px, calc(50% - 264px));bottom:calc(20px + env(safe-area-inset-bottom));z-index:40;width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(23,38,66,.32),0 1px 3px rgba(23,38,66,.2);transition:transform .15s,background .15s}
-  .fab:active{transform:scale(.94)}
-  .fab .x{display:none}
-  .fab.on .x{display:block}
-  .fab.on .m{display:none}
-  .fab.on{background:var(--gold)}
-  .search .clear{position:absolute;right:6px;top:6px;width:32px;height:32px;border-radius:50%;color:var(--muted);font-size:18px;display:none}
-  .search.has .clear{display:block}
+  /* 検索：右下の虫眼鏡が、押すと左へ横に伸びて検索窓になる。× で元の丸に戻る */
+  .sbar{position:fixed;right:max(16px, calc(50% - 264px));bottom:calc(20px + env(safe-area-inset-bottom) + var(--kb, 0px));z-index:40;
+    width:56px;height:56px;border-radius:28px;background:var(--navy);display:flex;align-items:center;overflow:hidden;
+    box-shadow:0 6px 18px rgba(23,38,66,.32),0 1px 3px rgba(23,38,66,.2);transition:width .26s cubic-bezier(.2,.8,.2,1),background .2s}
+  .sbar.open{width:min(528px, calc(100vw - 32px));background:#fff;border:2px solid var(--navy)}
+  .sbar .go{flex:none;width:52px;height:52px;display:flex;align-items:center;justify-content:center;color:#fff}
+  .sbar:not(.open) .go{width:56px;height:56px}
+  .sbar.open .go{color:var(--navy);pointer-events:none}
+  .sbar input{flex:1;min-width:0;height:100%;border:0;outline:none;background:transparent;font-size:16px;color:var(--ink);padding:0;opacity:0;transition:opacity .15s}
+  .sbar.open input{opacity:1;transition-delay:.12s}
+  .sbar .close{flex:none;width:40px;height:40px;margin-right:6px;border-radius:50%;background:var(--navy);color:#fff;display:none;align-items:center;justify-content:center}
+  .sbar.open .close{display:flex}
+  .sbar:not(.open):active{transform:scale(.94)}
 
   /* 共通パーツ */
   h2.sec{font-size:13px;letter-spacing:.12em;color:var(--muted);font-weight:700;margin:26px 0 10px}
@@ -155,20 +153,18 @@
       <div class="brand-name" id="brand">THINKING 合格部屋<small>学部別対策ライブラリー</small></div>
       <div class="me" id="me"></div>
     </div>
-    <div class="search-wrap"><div>
-    <label class="search" id="search-box">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="text" placeholder="大学・学部で検索（例：明治 商）" autocomplete="off" enterkeyhint="search" tabindex="-1">
-      <button class="clear" id="q-clear" type="button" aria-label="検索をクリア">×</button>
-    </label>
-    </div></div>
   </div>
 </header>
 
-<button class="fab" id="fab" type="button" aria-label="大学・学部を検索" aria-expanded="false">
-  <svg class="m" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-  <svg class="x" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
-</button>
+<div class="sbar" id="sbar" role="search">
+  <button class="go" id="fab" type="button" aria-label="大学・学部を検索" aria-expanded="false">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+  </button>
+  <input id="q" type="text" placeholder="大学・学部で検索（例：明治 商）" autocomplete="off" enterkeyhint="search" tabindex="-1" aria-label="大学・学部で検索">
+  <button class="close" id="q-clear" type="button" aria-label="検索を閉じる">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+  </button>
+</div>
 
 <main class="wrap" id="app">
   <div style="margin-top:20px" class="list"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
@@ -444,27 +440,34 @@ window.addEventListener("hashchange", function () { if (!$("viewer").hidden) clo
 
 var qTimer = 0;
 $("q").addEventListener("input", function () {
-  $("search-box").classList.toggle("has", !!this.value);
   clearTimeout(qTimer);
   qTimer = setTimeout(render, 60);
 });
 $("q").addEventListener("keydown", function (e) { if (e.key === "Enter") this.blur(); });
-$("q-clear").addEventListener("click", function (e) { e.preventDefault(); $("q").value = ""; $("search-box").classList.remove("has"); $("q").focus(); render(); });
-function clearSearch() { $("q").value = ""; $("search-box").classList.remove("has"); setSearchOpen(false); }
-/** 右下の虫眼鏡：押すと上の検索窓が開いてすぐ入力できる。もう一度押す（×）と閉じて元の画面に戻る */
+$("q-clear").addEventListener("click", function (e) { e.preventDefault(); clearSearch(); render(); });
+function clearSearch() { $("q").value = ""; setSearchOpen(false); }
+/** 右下の虫眼鏡：押すと左へ横に伸びて検索窓になり、すぐ入力できる。× で閉じて元の画面に戻る */
 function setSearchOpen(on) {
-  document.querySelector(".top").classList.toggle("open", on);
-  $("fab").classList.toggle("on", on);
+  $("sbar").classList.toggle("open", on);
   $("fab").setAttribute("aria-expanded", on ? "true" : "false");
-  $("fab").setAttribute("aria-label", on ? "検索を閉じる" : "大学・学部を検索");
   $("q").tabIndex = on ? 0 : -1;
+  if (!on) $("q").blur();
 }
 $("fab").addEventListener("click", function () {
-  if ($("fab").classList.contains("on")) { clearSearch(); render(); return; }
+  if ($("sbar").classList.contains("open")) return;
   setSearchOpen(true);
   $("q").focus(); // キーボードを出すため、押した操作の中ですぐにフォーカスする
-  window.scrollTo(0, 0);
 });
+/* キーボードが出たら、検索窓をキーボードのすぐ上に持ち上げる（LINE内ブラウザで隠れないように） */
+if (window.visualViewport) {
+  var fitKb = function () {
+    var vv = window.visualViewport;
+    var kb = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+    document.documentElement.style.setProperty("--kb", kb + "px");
+  };
+  window.visualViewport.addEventListener("resize", fitKb);
+  window.visualViewport.addEventListener("scroll", fitKb);
+}
 
 function toggleFav(id, el) {
   var on = !S.favs[id];

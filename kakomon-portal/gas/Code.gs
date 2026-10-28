@@ -11,6 +11,8 @@
  *   POST {action:"fav", token, book, on}     お気に入りの登録/解除
  *   POST {action:"log", token, kind, book, title}  閲覧ログ（kind: view=教材を開いた／book=問題集のページ／search0=検索で見つからなかった言葉）
  *   POST {action:"done", token, book, file, title, on}  教材の「やった」チェック
+ *   POST {action:"report", token, book, file, page, kind, text, photos:[base64 JPEG]}  教材の修正依頼
+ *   志望校は「お気に入り」と同じ記録に "u:大学名" として入れる（fav API をそのまま使う）
  *
  * 運用メニュー（スプレッドシート上部「過去問ポータル」）
  *   教材を追加 / 選択行のPDFを差し替え / フォルダから取り込み / 点検 / 利用状況のまとめ / 初期セットアップ
@@ -21,7 +23,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 12;
+var SETUP_VERSION = 13;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -34,7 +36,8 @@ var SHEET = {
   LOGS: '閲覧ログ',
   REPORT: '利用状況',
   REPORT_WEEKS: '利用状況（週ごと）',
-  STUDENTS: '生徒ごとの進み具合'
+  STUDENTS: '生徒ごとの進み具合',
+  REQ: '修正依頼'
 };
 
 var HEAD = {
@@ -45,6 +48,7 @@ var HEAD = {
   FAVS: ['LINE ID', '問題集ID', '登録日時'],
   DONE: ['LINE ID', '問題集ID', 'ファイルID', '教材', '日時', '名前'],
   LOGS: ['日時', 'LINE ID', '種別', '問題集ID', 'タイトル', '区分'],
+  REQ: ['受付日時', '状態', '名前', '区分', '問題集', '教材', 'ページ', '種類', '内容', '写真', '対応メモ', 'LINE ID', 'ファイルID'],
   REPORT_WEEKS: ['週のはじめ', '来た人', '塾生', '購入者', 'ゲスト', 'スタッフ', '問題集ページを見た回数', '教材を開いた回数', 'やったチェック', '検索で見つからなかった回数']
 };
 
@@ -92,6 +96,7 @@ function doPost(e) {
       appendLog_(me.uid, kind, String(body.book || ''), String(body.title || '').slice(0, 100), access_(me).role);
       return json_({ status: 'ok' });
     }
+    if (body.action === 'report') return json_(saveRequest_(me, body));
     if (body.action === 'done') return json_(toggleDone_(me, String(body.book || ''), String(body.file || ''), String(body.title || ''), !!body.on));
     return json_({ status: 'error', reason: 'unknown action' });
   } catch (err) {
@@ -484,6 +489,61 @@ function toggleDone_(me, book, file, title, on) {
   }
 }
 
+/* ---------------- 修正依頼 ---------------- */
+
+var REQ_KINDS = ['誤字・脱字', '答えが違う', '解説が分かりにくい', '表示されない', 'その他'];
+var REQ_STATES = ['未対応', '対応中', '対応済み', '対応しない'];
+
+/**
+ * 生徒からの修正依頼を「修正依頼」シートに1行で残す。だれから・どの教材かは自動で入る。
+ * 写真は塾のドライブ「修正依頼の写真」に入れる（共有しない。シートのリンクから運営だけが見る）。
+ */
+function saveRequest_(me, body) {
+  var cache = CacheService.getScriptCache();
+  var ck = 'req:' + Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyyMMdd') + ':' + me.uid;
+  var sent = Number(cache.get(ck) || 0);
+  if (sent >= 10) return { status: 'error', reason: 'limit' };
+
+  var full = catalog_();
+  var fid = String(body.file || '');
+  var item = null, book = null;
+  full.items.forEach(function (it) { if (it.f === fid) item = it; });
+  if (item) full.books.forEach(function (b) { if (b.id === item.b) book = b; });
+  var text = String(body.text || '').slice(0, 2000);
+  var photos = (body.photos || []).slice(0, 3);
+  if (!item || (!text.trim() && !photos.length)) return { status: 'error', reason: 'empty' };
+
+  var when = new Date();
+  var stamp = Utilities.formatDate(when, 'Asia/Tokyo', 'yyyyMMdd-HHmmss');
+  var links = [];
+  if (photos.length) {
+    var folder = childFolder_(rootFolder_(), '修正依頼の写真');
+    photos.forEach(function (b64, i) {
+      var blob = Utilities.newBlob(Utilities.base64Decode(String(b64)), 'image/jpeg', stamp + '_' + (me.name || 'noname') + '_' + (i + 1) + '.jpg');
+      links.push(folder.createFile(blob).getUrl());
+    });
+  }
+  var kind = REQ_KINDS.indexOf(String(body.kind)) >= 0 ? String(body.kind) : 'その他';
+  var sh = ensureSheet_(SHEET.REQ, HEAD.REQ);
+  appendSafe_(sh, [when, '未対応', me.name || '', roleLabel_(access_(me).role), book ? book.n : '', item.t, String(body.page || '').slice(0, 20), kind, text, links.join('\n'), '', me.uid, fid]);
+  var row = sh.getLastRow();
+  sh.getRange(row, 2).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(REQ_STATES, true).build());
+  cache.put(ck, String(sent + 1), 21600);
+  return { status: 'ok' };
+}
+
+function roleLabel_(role) {
+  return { student: '塾生', buyer: '購入者', guest: 'ゲスト', staff: 'スタッフ' }[role] || '';
+}
+
+/** シートを開いたときに、未対応の修正依頼があれば知らせる */
+function notifyRequests_() {
+  var sh = SpreadsheetApp.getActive().getSheetByName(SHEET.REQ);
+  if (!sh || sh.getLastRow() < 2) return;
+  var n = sh.getRange(2, 2, sh.getLastRow() - 1, 1).getValues().filter(function (r) { return r[0] === '未対応' || r[0] === ''; }).length;
+  if (n) SpreadsheetApp.getActive().toast('「修正依頼」シートを確認してください', '未対応の修正依頼が ' + n + ' 件あります', 10);
+}
+
 /* ---------------- 生徒ごとの進み具合 ---------------- */
 
 function menuStudents() {
@@ -654,6 +714,17 @@ function weeklyReport(e) {
   rows.push(['', '', '', '', '']);
   rows.push(['■ 大学（見た人が多い順）', '見た人', '', '', '']);
   Object.keys(unis).sort(function (a, b) { return count(unis[b]) - count(unis[a]); }).forEach(function (u) { rows.push([u, count(unis[u]), '', '', '']); });
+  rows.push(['', '', '', '', '']);
+  rows.push(['■ 志望校（選んでいる人数）', '人数', '', '', '']);
+  var fs = sheet_(SHEET.FAVS);
+  var goals = {};
+  if (fs.getLastRow() >= 2) fs.getRange(2, 1, fs.getLastRow() - 1, 2).getValues().forEach(function (r) {
+    var v = String(r[1]);
+    if (v.indexOf('u:') === 0) goals[v.slice(2)] = (goals[v.slice(2)] || 0) + 1;
+  });
+  var gk = Object.keys(goals).sort(function (a, b) { return goals[b] - goals[a]; });
+  if (!gk.length) rows.push(['（まだいません）', '', '', '', '']);
+  gk.forEach(function (u) { rows.push([u, goals[u], '', '', '']); });
   rows.push(['', '', '', '', '']);
   rows.push(['■ 検索で見つからなかった言葉（作る候補）', '回数', '', '', '']);
   var mk = Object.keys(misses).sort(function (a, b) { return misses[b] - misses[a]; });
@@ -1067,6 +1138,7 @@ function onOpenInstalled() {
   }
   var res = syncBooks_(false);
   if (res && res.changed) SpreadsheetApp.getActive().toast(res.summary, '問題集リストを更新しました', 8);
+  notifyRequests_();
 }
 
 function setupCore_() {
@@ -1079,6 +1151,7 @@ function setupCore_() {
   ensureSheet_(SHEET.DONE, HEAD.DONE);
   ensureSheet_(SHEET.LOGS, HEAD.LOGS);
   ensureSheet_(SHEET.REPORT_WEEKS, HEAD.REPORT_WEEKS);
+  ensureSheet_(SHEET.REQ, HEAD.REQ);
 
   var cs = ss.getSheetByName(SHEET.CONFIG) || ss.insertSheet(SHEET.CONFIG);
   if (cs.getLastRow() === 0) appendSafe_(cs, ['項目', '値', '説明']);

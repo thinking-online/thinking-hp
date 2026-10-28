@@ -144,6 +144,47 @@
   .mat.locked .lock svg{margin-left:0}
   .toc-note{margin:14px 2px 0;font-size:12px;line-height:1.7;color:var(--muted)}
   .toc-note svg{color:var(--gold);margin-left:0;vertical-align:-1px}
+  .vbtns{display:flex;gap:8px}
+  .vbtns .btn{margin:0}
+  .vbtns #v-req{flex:0 0 34%}
+  .btn.ghost-dark{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45);font-size:14px}
+
+  /* 下から出るシート（修正依頼・志望校） */
+  .sheet{position:fixed;inset:0;z-index:90;background:rgba(15,22,36,.5);display:flex;align-items:flex-end;justify-content:center}
+  .sheet[hidden]{display:none}
+  .sheet-in{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:#fff;border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom))}
+  .sheet-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+  .sheet-h b{font-size:16px;color:var(--navy)}
+  .sheet-x{width:40px;height:40px;font-size:22px;color:var(--muted)}
+  .req-target{padding:10px 12px;background:var(--soft);border-radius:10px;font-size:13px;line-height:1.5}
+  .req-target span{display:block;font-size:11px;color:var(--muted)}
+  .fl{display:block;margin-top:14px;font-size:12px;font-weight:700;color:var(--muted)}
+  .fl input[type=file]{display:none}
+  .fl input:not([type=file]),.fl textarea{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:16px;font-weight:400;color:var(--ink,#1d2433);background:#fff}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .chip{padding:8px 12px;border:1px solid var(--line);border-radius:999px;font-size:13px;font-weight:600;color:var(--navy);background:#fff}
+  .chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+  .shots{display:flex;gap:8px;margin-top:6px}
+  .shot{position:relative;width:72px;height:72px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+  .shot img{width:100%;height:100%;object-fit:cover}
+  .shot button{position:absolute;top:2px;right:2px;width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;font-size:13px;line-height:22px}
+  .addshot{height:42px;font-size:14px;margin-top:8px}
+  .req-note{font-size:12px;line-height:1.6;color:var(--muted);margin:14px 2px 0}
+  .goal-g{margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--muted)}
+  .goal-opts{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+
+  /* ホーム：前回のつづき・志望校 */
+  .resume{display:flex;align-items:center;gap:12px;width:100%;margin-top:16px;padding:12px 14px;background:var(--navy);color:#fff;border-radius:var(--radius);text-align:left}
+  .resume .k{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--gold)}
+  .resume .t{font-weight:700;font-size:14px;line-height:1.45;margin-top:2px}
+  .resume .s{font-size:12px;color:#c9d0de;margin-top:1px}
+  .resume .main{flex:1;min-width:0}
+  .resume .go{flex:none;width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center}
+  .sec-row{display:flex;align-items:baseline;justify-content:space-between}
+  .sec-row button{font-size:12px;font-weight:700;color:var(--navy);padding:4px 2px}
+  .goal-empty{display:flex;align-items:center;gap:12px;margin-top:16px;padding:14px;background:#fff;border:1px dashed #cfc8b8;border-radius:var(--radius)}
+  .goal-empty p{flex:1;margin:0;font-size:13px;line-height:1.6;color:var(--muted)}
+  .goal-empty .btn{width:auto;margin:0;padding:0 16px;height:40px;font-size:14px}
   .legal{margin:28px 2px 0;font-size:11px;line-height:1.7;color:var(--muted);text-align:center}
   .vnote{margin:0 0 8px;font-size:11px;line-height:1.5;color:#c9d0de;text-align:center}
   .locked-box{margin-top:18px;padding:20px 16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:center}
@@ -203,7 +244,33 @@
     <div class="vload" id="v-load">読み込み中…</div>
     <iframe id="v-frame" title="PDF" allow="autoplay"></iframe>
   </div>
-  <div class="vfoot"><p class="vnote">教材やリンクの共有・転載・譲渡は禁止です。</p><button class="btn gold" id="v-print">印刷・保存する（PDFを開く）</button></div>
+  <div class="vfoot"><p class="vnote">教材やリンクの共有・転載・譲渡は禁止です。</p>
+    <div class="vbtns"><button class="btn ghost-dark" id="v-req">修正を依頼</button><button class="btn gold" id="v-print">印刷・保存する（PDFを開く）</button></div></div>
+</div>
+
+<div class="sheet" id="req" hidden role="dialog" aria-modal="true" aria-labelledby="req-h">
+  <div class="sheet-in">
+    <div class="sheet-h"><b id="req-h">修正を依頼する</b><button class="sheet-x" id="req-x" aria-label="閉じる">×</button></div>
+    <div class="req-target" id="req-target"></div>
+    <label class="fl">ページ（わかれば）<input id="req-page" inputmode="numeric" maxlength="10" placeholder="例：12"></label>
+    <div class="fl">種類<div class="chips" id="req-kind"></div></div>
+    <label class="fl">くわしい内容<textarea id="req-text" rows="4" maxlength="2000" placeholder="例：問3の答えが(B)になっていますが、本文の5行目から(C)だと思います。"></textarea></label>
+    <div class="fl">写真・スクリーンショット（3枚まで）
+      <div class="shots" id="req-shots"></div>
+      <label class="btn ghost addshot" id="req-add">写真を選ぶ<input type="file" id="req-file" accept="image/*" multiple hidden></label>
+    </div>
+    <p class="req-note">送った人の名前と、どの教材かは自動で届きます。確認して、LINEでお返事します。</p>
+    <button class="btn gold" id="req-send">送る</button>
+  </div>
+</div>
+
+<div class="sheet" id="goal" hidden role="dialog" aria-modal="true" aria-labelledby="goal-h">
+  <div class="sheet-in">
+    <div class="sheet-h"><b id="goal-h">志望校を選ぶ</b><button class="sheet-x" id="goal-x" aria-label="閉じる">×</button></div>
+    <p class="req-note" style="margin-top:0">選んだ大学の問題集が、ホームのいちばん上に並びます（5校まで）。</p>
+    <div id="goal-list"></div>
+    <button class="btn gold" id="goal-save">決める</button>
+  </div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -352,11 +419,15 @@ function renderHome(keepScroll) {
   var html = topHero();
   html += '<p class="lead">過去5年の入試を<b>1問残らず解いて分析</b>し、学部ごとの出題を<b>オリジナル問題で再現</b>した対策教材が、ここにそろっています。</p>';
   html += roleNotice();
+  html += resumeCard();
+  html += goalSection();
 
-  var favs = Object.keys(S.favs).map(function (id) { return S.idx.books[id]; }).filter(Boolean);
+  var goalUnis = goalsOf();
+  var inGoal = function (b) { return goalUnis.indexOf(b.u) >= 0; };
+  var favs = Object.keys(S.favs).map(function (id) { return S.idx.books[id]; }).filter(Boolean).filter(function (b) { return !inGoal(b); });
   if (favs.length) html += '<h2 class="sec">お気に入り</h2><div class="favs">' + favs.map(favCard).join("") + "</div>";
 
-  var recent = (load(RECENT_KEY) || []).map(function (id) { return S.idx.books[id]; }).filter(Boolean).filter(function (b) { return !S.favs[b.id]; });
+  var recent = (load(RECENT_KEY) || []).map(function (id) { return S.idx.books[id]; }).filter(Boolean).filter(function (b) { return !S.favs[b.id] && !inGoal(b); });
   if (recent.length) html += '<h2 class="sec">最近見た問題集</h2><div class="list">' + recent.slice(0, 4).map(bookRowThumb).join("") + "</div>";
 
   var groups = S.catalog.groups.filter(function (g) { return S.idx.unis.some(function (u) { return u.g === g; }); });
@@ -378,6 +449,150 @@ function renderHome(keepScroll) {
   window.scrollTo(0, keepScroll ? y : 0);
   prefetchPics();
 }
+
+/* ---------- 前回のつづき（最後に開いた教材。端末の中だけに覚える） ---------- */
+var LAST_KEY = "kp.last.v1";
+function resumeCard() {
+  var last = load(LAST_KEY);
+  if (!last || !S.idx) return "";
+  var list = S.idx.items[last.b] || [];
+  var i = -1;
+  list.forEach(function (it, n) { if (it.f && it.f === last.f && !it.L) i = n; });
+  var b = S.idx.books[last.b];
+  if (i < 0 || !b) return "";
+  return '<button class="resume" data-item="' + esc(b.id) + ":" + i + '"><span class="main"><span class="k" style="display:block">前回のつづき</span>'
+    + '<span class="t" style="display:block">' + esc(list[i].t) + '</span><span class="s" style="display:block">' + esc(b.n) + "</span></span>"
+    + '<span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></button>';
+}
+
+/* ---------- 志望校（お気に入りと同じ記録に "u:大学名" で入れる） ---------- */
+function goalsOf() {
+  return Object.keys(S.favs).filter(function (k) { return k.indexOf("u:") === 0; }).map(function (k) { return k.slice(2); })
+    .filter(function (u) { return S.idx && S.idx.unis.some(function (x) { return x.u === u; }); });
+}
+function goalSection() {
+  var goals = goalsOf();
+  if (!goals.length) {
+    return '<div class="goal-empty"><p>志望校を選ぶと、その大学の問題集がここに並びます。</p><button class="btn" data-goalpick="1">志望校を選ぶ</button></div>';
+  }
+  var html = '<div class="sec-row"><h2 class="sec">志望校の問題集</h2><button data-goalpick="1">変更</button></div><div class="list">';
+  goals.forEach(function (u) {
+    S.idx.unis.filter(function (x) { return x.u === u; }).forEach(function (x) {
+      x.books.forEach(function (b) { html += bookRowThumb(b); });
+    });
+  });
+  return html + "</div>";
+}
+var GOAL_PICK = {};
+function openGoalPicker() {
+  GOAL_PICK = {};
+  goalsOf().forEach(function (u) { GOAL_PICK[u] = true; });
+  var groups = [];
+  S.idx.unis.forEach(function (u) { if (groups.indexOf(u.g) < 0) groups.push(u.g); });
+  $("goal-list").innerHTML = groups.map(function (g) {
+    return '<div class="goal-g">' + esc(g) + '</div><div class="goal-opts">' + S.idx.unis.filter(function (u) { return u.g === g; }).map(function (u) {
+      return '<button class="chip' + (GOAL_PICK[u.u] ? " on" : "") + '" data-goaluni="' + esc(u.u) + '">' + esc(u.u) + "</button>";
+    }).join("") + "</div>";
+  }).join("");
+  $("goal").hidden = false;
+}
+$("goal-list").addEventListener("click", function (ev) {
+  var el = ev.target.closest("[data-goaluni]");
+  if (!el) return;
+  var u = el.dataset.goaluni;
+  if (!GOAL_PICK[u] && Object.keys(GOAL_PICK).length >= 5) return toast("志望校は5校まで選べます");
+  if (GOAL_PICK[u]) delete GOAL_PICK[u]; else GOAL_PICK[u] = true;
+  el.classList.toggle("on", !!GOAL_PICK[u]);
+});
+$("goal-x").addEventListener("click", function () { $("goal").hidden = true; });
+$("goal-save").addEventListener("click", function () {
+  var before = goalsOf();
+  var changes = [];
+  before.forEach(function (u) { if (!GOAL_PICK[u]) changes.push(["u:" + u, false]); });
+  Object.keys(GOAL_PICK).forEach(function (u) { if (before.indexOf(u) < 0) changes.push(["u:" + u, true]); });
+  changes.forEach(function (c) { if (c[1]) S.favs[c[0]] = true; else delete S.favs[c[0]]; });
+  persist();
+  $("goal").hidden = true;
+  renderHome(true);
+  if (!changes.length) return;
+  toast("志望校を保存しました");
+  if (PREVIEW || LINK_KEY) return;
+  Promise.all(changes.map(function (c) { return post({ action: "fav", token: idToken(), book: c[0], on: c[1] }); })).then(function (rs) {
+    if (rs.some(function (r) { return !r || r.status !== "ok"; })) throw new Error();
+  }).catch(function () { toast("保存できなかった志望校があります。もう一度お試しください。"); });
+});
+
+/* ---------- 修正依頼（どの教材か・だれからかは自動。写真は送る前に端末で小さくする） ---------- */
+var REQ_KINDS = ["誤字・脱字", "答えが違う", "解説が分かりにくい", "表示されない", "その他"];
+var REQ = { item: null, kind: "", shots: [] };
+$("v-req").addEventListener("click", function () {
+  if (!CUR) return;
+  var b = S.idx.books[CUR.b] || {};
+  REQ = { item: CUR, kind: "", shots: [] };
+  $("req-target").innerHTML = "<span>この教材について送ります</span>" + esc(b.n || "") + "／" + esc(CUR.t);
+  $("req-page").value = "";
+  $("req-text").value = "";
+  $("req-kind").innerHTML = REQ_KINDS.map(function (k) { return '<button class="chip" data-kind="' + esc(k) + '">' + esc(k) + "</button>"; }).join("");
+  paintShots();
+  $("req").hidden = false;
+});
+$("req-x").addEventListener("click", function () { $("req").hidden = true; });
+$("req-kind").addEventListener("click", function (ev) {
+  var el = ev.target.closest("[data-kind]");
+  if (!el) return;
+  REQ.kind = el.dataset.kind;
+  Array.prototype.forEach.call(this.children, function (c) { c.classList.toggle("on", c === el); });
+});
+$("req-file").addEventListener("change", function () {
+  var files = Array.prototype.slice.call(this.files || [], 0, 3 - REQ.shots.length);
+  this.value = "";
+  files.forEach(function (f) {
+    shrinkImage(f).then(function (dataUrl) { REQ.shots.push(dataUrl); paintShots(); }).catch(function () { toast("この写真は読み込めませんでした"); });
+  });
+});
+function paintShots() {
+  $("req-shots").innerHTML = REQ.shots.map(function (u, i) { return '<div class="shot"><img alt="" src="' + u + '"><button data-shot="' + i + '" aria-label="外す">×</button></div>'; }).join("");
+  $("req-add").style.display = REQ.shots.length >= 3 ? "none" : "";
+}
+$("req-shots").addEventListener("click", function (ev) {
+  var el = ev.target.closest("[data-shot]");
+  if (!el) return;
+  REQ.shots.splice(Number(el.dataset.shot), 1);
+  paintShots();
+});
+/** 長い辺を1280pxまでに縮めて JPEG にする（1枚200KBほど） */
+function shrinkImage(file) {
+  return new Promise(function (ok, ng) {
+    var url = URL.createObjectURL(file);
+    var img = new Image();
+    img.onload = function () {
+      var r = Math.min(1, 1280 / Math.max(img.width, img.height));
+      var c = document.createElement("canvas");
+      c.width = Math.round(img.width * r); c.height = Math.round(img.height * r);
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+      URL.revokeObjectURL(url);
+      ok(c.toDataURL("image/jpeg", 0.8));
+    };
+    img.onerror = function () { URL.revokeObjectURL(url); ng(); };
+    img.src = url;
+  });
+}
+$("req-send").addEventListener("click", function () {
+  var text = $("req-text").value.trim();
+  if (!text && !REQ.shots.length) return toast("内容か写真を入れてください");
+  if (!REQ.kind) return toast("種類を選んでください");
+  if (PREVIEW) { $("req").hidden = true; return toast("（プレビューのため送っていません）"); }
+  if (LINK_KEY) return toast("確認用リンクからは送れません。LINEから開いてください");
+  var btn = this;
+  btn.disabled = true;
+  btn.textContent = "送っています…";
+  post({ action: "report", token: idToken(), book: REQ.item.b, file: REQ.item.f, page: $("req-page").value.trim(), kind: REQ.kind, text: text,
+    photos: REQ.shots.map(function (u) { return u.split(",")[1]; }) }).then(function (res) {
+    if (res && res.status === "ok") { $("req").hidden = true; toast("送りました。確認してLINEでお返事します"); return; }
+    toast(res && res.reason === "limit" ? "今日はこれ以上送れません。明日またお願いします" : "送れませんでした。もう一度お試しください");
+  }).catch(function () { toast("送れませんでした。電波の良い場所でもう一度お試しください"); })
+    .then(function () { btn.disabled = false; btn.textContent = "送る"; });
+});
 
 function legalNote() {
   return '<p class="legal">教材やリンクの共有・転載・譲渡は禁止です。違反が確認された場合は、法的措置をとることがあります。© THINKING</p>';
@@ -546,9 +761,10 @@ function renderMessage(title, body) {
 
 /* ---------- 操作 ---------- */
 document.addEventListener("click", function (ev) {
-  var el = ev.target.closest("[data-book],[data-uni],[data-go],[data-tab],[data-fav],[data-item],[data-done]");
+  var el = ev.target.closest("[data-book],[data-uni],[data-go],[data-tab],[data-fav],[data-item],[data-done],[data-goalpick]");
   if (!el) return;
   var d = el.dataset;
+  if (d.goalpick) return openGoalPicker();
   if (d.fav) return toggleFav(d.fav, el);
   if (d.done) return toggleDone(d.done, el);
   if (d.item) { var p = d.item.split(":"); return openItem(p[0], Number(p[1])); }
@@ -618,6 +834,7 @@ function openItem(bookId, i) {
   var it = (S.idx.items[bookId] || [])[i];
   if (!it) return;
   CUR = it;
+  if (it.f) save(LAST_KEY, { b: bookId, f: it.f });
   $("v-title").textContent = it.t;
   $("v-load").hidden = false;
   $("v-frame").src = "about:blank";

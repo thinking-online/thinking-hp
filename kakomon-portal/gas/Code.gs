@@ -23,7 +23,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 17;
+var SETUP_VERSION = 18;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -1425,7 +1425,8 @@ function applyValidation_() {
   bs.getRange(2, bc['グループ'] + 1, N).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(groups, true).build());
   bs.getRange(2, bc['公開'] + 1, N).setDataValidation(CHECKBOX_());
   bs.getRange(2, bc['サンプル'] + 1, N).setDataValidation(CHECKBOX_());
-  bs.getRange(1, bc['ID'] + 1, N + 1).setBackground('#eeeeee').setFontColor('#888888');
+  autoCols_(bs, bc['ID'] + 1, 1, N);
+  bs.getRange(2, bc['ID'] + 1, N).setFontColor('#888888');
 
   var bookList = bs.getRange(2, bc['問題集名'] + 1, N);
   var uniList = bs.getRange(2, bc['大学'] + 1, N);
@@ -1433,13 +1434,19 @@ function applyValidation_() {
   is.getRange(2, ic['区分'] + 1, N).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(KINDS, true).build());
   is.getRange(2, ic['公開'] + 1, N).setDataValidation(CHECKBOX_());
   is.getRange(2, ic['無料公開'] + 1, N).setDataValidation(CHECKBOX_());
-  is.getRange(1, ic['更新日'] + 1, N + 1).setBackground('#eeeeee');
+  autoCols_(is, ic['更新日'] + 1, 1, N);
 
   us.getRange(2, uc['購入した問題集'] + 1, N).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInRange(bookList, true).setAllowInvalid(true).build());
   us.getRange(2, uc['購入した大学（セット）'] + 1, N).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInRange(uniList, true).setAllowInvalid(true).build());
   us.getRange(2, uc['スタッフ'] + 1, N).setDataValidation(CHECKBOX_());
   us.getRange(2, uc['停止'] + 1, N).setDataValidation(CHECKBOX_());
-  us.getRange(1, uc['LINE表示名'] + 1, N + 1, 4).setBackground('#eeeeee');
+  autoCols_(us, uc['LINE表示名'] + 1, 4, N);
+}
+
+/** 自動で入る列（手で入れない列）：見出しは赤に白い字、中身は薄い灰色 */
+function autoCols_(sh, col, width, n) {
+  sh.getRange(1, col, 1, width).setBackground('#c0392b').setFontColor('#ffffff').setFontWeight('bold');
+  sh.getRange(2, col, n, width).setBackground('#eeeeee');
 }
 
 /* ======================================================================

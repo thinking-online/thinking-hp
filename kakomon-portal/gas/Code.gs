@@ -23,7 +23,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 15;
+var SETUP_VERSION = 16;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -48,7 +48,7 @@ var HEAD = {
   FAVS: ['LINE ID', '問題集ID', '登録日時'],
   DONE: ['LINE ID', '問題集ID', 'ファイルID', '教材', '日時', '名前'],
   LOGS: ['日時', 'LINE ID', '種別', '問題集ID', 'タイトル', '区分'],
-  REQ: ['受付日時', '状態', '名前', '区分', '問題集', '教材', 'ページ', '種類', '内容', '写真', '対応メモ', 'LINE ID', 'ファイルID', '生徒へのひとこと'],
+  REQ: ['受付日時', '状態', '名前', '区分', '問題集', '教材', '教材を開く', 'ページ', '種類', '内容', '写真', '対応メモ', 'LINE ID', 'ファイルID', '生徒へのひとこと'],
   REPORT_WEEKS: ['週のはじめ', '来た人', '塾生', '購入者', 'ゲスト', 'スタッフ', '問題集ページを見た回数', '教材を開いた回数', 'やったチェック', '検索で見つからなかった回数']
 };
 
@@ -526,9 +526,16 @@ function saveRequest_(me, body) {
   }
   var kind = REQ_KINDS.indexOf(String(body.kind)) >= 0 ? String(body.kind) : 'その他';
   var sh = reqSheet_();
-  appendSafe_(sh, [when, '未対応', me.name || '', roleLabel_(access_(me).role), book ? book.n : '', item.t, String(body.page || '').slice(0, 20), kind, text, links.join('\n'), '', me.uid, fid]);
+  // 列は見出しの名前で探して入れる（あとから列を足したり並べ替えたりしても崩れないように）
+  var head = sh.getRange(2, 1, 1, sh.getLastColumn()).getValues()[0].map(String);
+  var val = {
+    '受付日時': when, '状態': '未対応', '名前': me.name || '', '区分': roleLabel_(access_(me).role), '問題集': book ? book.n : '', '教材': item.t,
+    '教材を開く': fileLink_(fid), 'ページ': String(body.page || '').slice(0, 20), '種類': kind, '内容': text, '写真': links.join('\n'),
+    'LINE ID': me.uid, 'ファイルID': fid
+  };
+  appendSafe_(sh, head.map(function (h) { return val[h] !== undefined ? val[h] : ''; }));
   var row = sh.getLastRow();
-  sh.getRange(row, 2).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(REQ_STATES, true).build());
+  sh.getRange(row, head.indexOf('状態') + 1).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(REQ_STATES, true).build());
   cache.put(ck, String(sent + 1), 21600);
   bumpReqVer_();
   return { status: 'ok' };
@@ -600,9 +607,32 @@ function reqSheet_() {
   else if (sh.getLastRow() === 0) sh.insertRowBefore(1);
   var have = sh.getRange(2, 1, 1, Math.max(1, sh.getLastColumn())).getValues()[0].map(String);
   if (!have[0]) { sh.getRange(2, 1, 1, HEAD.REQ.length).setValues([HEAD.REQ]); have = HEAD.REQ.slice(); }
+  // 「教材を開く」は「教材」のすぐ右に入れる（運営がシートからそのまま教材を開いて確かめられるように）
+  if (have.indexOf('教材を開く') < 0 && have.indexOf('教材') >= 0) {
+    var at = have.indexOf('教材') + 1;
+    sh.insertColumnAfter(at);
+    sh.getRange(2, at + 1).setValue('教材を開く');
+    var fc = have.indexOf('ファイルID');
+    if (fc >= 0 && sh.getLastRow() >= 3) {
+      var ids = sh.getRange(3, fc + 2, sh.getLastRow() - 2, 1).getValues();   // 1列ずれたあとの「ファイルID」
+      sh.getRange(3, at + 1, ids.length, 1).setValues(ids.map(function (r) { return [r[0] ? fileLink_(String(r[0])) : '']; }));
+    }
+    have.splice(at, 0, '教材を開く');
+  }
   HEAD.REQ.forEach(function (h) { if (have.indexOf(h) < 0) { sh.getRange(2, have.length + 1).setValue(h); have.push(h); } });
   if (String(sh.getRange(1, 1).getFormula()) === '') layoutReqSheet_(sh);
   return sh;
+}
+
+function fileLink_(fid) {
+  return fid ? '=HYPERLINK("https://drive.google.com/file/d/' + fid + '/view","開く")' : '';
+}
+
+/** 依頼がまだ入っていない行の「状態」のプルダウンを外す（空の行に▾が並ばないように。依頼が入った行には付ける） */
+function tidyReqSheet_() {
+  var sh = reqSheet_();
+  var from = Math.max(3, sh.getLastRow() + 1);
+  if (from <= sh.getMaxRows()) sh.getRange(from, 2, sh.getMaxRows() - from + 1, 1).clearDataValidations();
 }
 
 function layoutReqSheet_(sh) {
@@ -633,8 +663,8 @@ function layoutReqSheet_(sh) {
   rules.push(rule('=AND($A3<>"",OR($B3="対応済み",$B3="対応しない"))', null, '#9a958a'));
   sh.setConditionalFormatRules(rules);
 
-  // 状態のプルダウンを全行に
-  sh.getRange(3, 2, Math.max(1, sh.getMaxRows() - 2), 1).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(REQ_STATES, true).build());
+  // 状態のプルダウンは依頼が入っている行だけ（新しい依頼の行には saveRequest_ で付ける）
+  if (sh.getLastRow() >= 3) sh.getRange(3, 2, sh.getLastRow() - 2, 1).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(REQ_STATES, true).build());
   var c = colIndex_(sh.getRange(2, 1, 1, sh.getLastColumn()).getValues()[0]);
   sh.getRange(3, 1, Math.max(1, sh.getMaxRows() - 2), 1).setNumberFormat('yyyy/MM/dd HH:mm');
   sh.setColumnWidth(1, 130);
@@ -1244,7 +1274,7 @@ function setupCore_() {
   ensureSheet_(SHEET.DONE, HEAD.DONE);
   ensureSheet_(SHEET.LOGS, HEAD.LOGS);
   ensureSheet_(SHEET.REPORT_WEEKS, HEAD.REPORT_WEEKS);
-  reqSheet_();
+  tidyReqSheet_();
 
   var cs = ss.getSheetByName(SHEET.CONFIG) || ss.insertSheet(SHEET.CONFIG);
   if (cs.getLastRow() === 0) appendSafe_(cs, ['項目', '値', '説明']);

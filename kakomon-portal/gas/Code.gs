@@ -23,7 +23,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 14;
+var SETUP_VERSION = 15;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -525,7 +525,7 @@ function saveRequest_(me, body) {
     });
   }
   var kind = REQ_KINDS.indexOf(String(body.kind)) >= 0 ? String(body.kind) : 'その他';
-  var sh = ensureSheet_(SHEET.REQ, HEAD.REQ);
+  var sh = reqSheet_();
   appendSafe_(sh, [when, '未対応', me.name || '', roleLabel_(access_(me).role), book ? book.n : '', item.t, String(body.page || '').slice(0, 20), kind, text, links.join('\n'), '', me.uid, fid]);
   var row = sh.getLastRow();
   sh.getRange(row, 2).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(REQ_STATES, true).build());
@@ -549,6 +549,7 @@ function reqIndex_() {
   var sh = SpreadsheetApp.getActive().getSheetByName(SHEET.REQ);
   if (sh && sh.getLastRow() >= 2) {
     var v = sh.getDataRange().getValues();
+    if (v[0][0] !== HEAD.REQ[0]) v = v.slice(1);   // 1行目は件数のまとめ、2行目が見出し
     var c = colIndex_(v[0]);
     var shown = { '対応済み': 'done', '対応しない': 'no' };
     for (var i = 1; i < v.length; i++) {
@@ -581,9 +582,69 @@ function roleLabel_(role) {
 /** シートを開いたときに、未対応の修正依頼があれば知らせる */
 function notifyRequests_() {
   var sh = SpreadsheetApp.getActive().getSheetByName(SHEET.REQ);
-  if (!sh || sh.getLastRow() < 2) return;
-  var n = sh.getRange(2, 2, sh.getLastRow() - 1, 1).getValues().filter(function (r) { return r[0] === '未対応' || r[0] === ''; }).length;
+  if (!sh || sh.getLastRow() < 3) return;
+  var n = sh.getRange(3, 1, sh.getLastRow() - 2, 2).getValues().filter(function (r) { return r[0] !== '' && r[1] === '未対応'; }).length;
   if (n) SpreadsheetApp.getActive().toast('「修正依頼」シートを確認してください', '未対応の修正依頼が ' + n + ' 件あります', 10);
+}
+
+/**
+ * 「修正依頼」シート。1行目＝件数のまとめ（未対応・対応中・対応済み・対応しない）、2行目＝見出し、3行目から依頼。
+ * 状態で行の色が変わる（未対応＝赤・対応中＝黄・対応済み／対応しない＝灰色の文字）。見出しにフィルタ付き。
+ * 以前の形（1行目が見出し）なら、上に1行足して作り直す。
+ */
+function reqSheet_() {
+  var ss = SpreadsheetApp.getActive();
+  var sh = ss.getSheetByName(SHEET.REQ) || ss.insertSheet(SHEET.REQ);
+  var a1 = String(sh.getRange(1, 1).getValue());
+  if (a1 === HEAD.REQ[0]) sh.insertRowBefore(1);
+  else if (sh.getLastRow() === 0) sh.insertRowBefore(1);
+  var have = sh.getRange(2, 1, 1, Math.max(1, sh.getLastColumn())).getValues()[0].map(String);
+  if (!have[0]) { sh.getRange(2, 1, 1, HEAD.REQ.length).setValues([HEAD.REQ]); have = HEAD.REQ.slice(); }
+  HEAD.REQ.forEach(function (h) { if (have.indexOf(h) < 0) { sh.getRange(2, have.length + 1).setValue(h); have.push(h); } });
+  if (String(sh.getRange(1, 1).getFormula()) === '') layoutReqSheet_(sh);
+  return sh;
+}
+
+function layoutReqSheet_(sh) {
+  var n = HEAD.REQ.length;
+  sh.getRange(1, 1, 1, n).clearContent().setBackground('#f6f4ef');
+  sh.getRange(1, 1).setFormula('="未対応 "&COUNTIFS($B$3:$B,"未対応",$A$3:$A,"<>")&" 件"').setFontSize(13).setFontWeight('bold').setFontColor('#c0392b');
+  sh.getRange(1, 3).setFormula('="対応中 "&COUNTIFS($B$3:$B,"対応中",$A$3:$A,"<>")&" 件"').setFontWeight('bold').setFontColor('#9a6b00');
+  sh.getRange(1, 5).setFormula('="対応済み "&COUNTIFS($B$3:$B,"対応済み",$A$3:$A,"<>")&" 件"').setFontColor('#2f8f5b');
+  sh.getRange(1, 7).setFormula('="対応しない "&COUNTIFS($B$3:$B,"対応しない",$A$3:$A,"<>")&" 件"').setFontColor('#6f6a5f');
+  sh.getRange(1, 9).setValue('状態を「対応済み」「対応しない」にして「生徒へのひとこと」を書くと、生徒のポータルに出ます').setFontColor('#6f6a5f').setFontSize(9);
+  sh.setRowHeight(1, 34);
+  sh.getRange(1, 1, 1, n).setVerticalAlignment('middle');
+  sh.getRange(2, 1, 1, n).setFontWeight('bold').setBackground('#172642').setFontColor('#ffffff');
+  sh.getRange(2, 2).setBackground('#c0392b');
+  sh.setFrozenRows(2);
+
+  // 状態ごとの色
+  var body = sh.getRange(3, 1, Math.max(1, sh.getMaxRows() - 2), n);
+  var rules = sh.getConditionalFormatRules().filter(function (r) { return !r.getRanges().some(function (g) { return g.getRow() === 3; }); });
+  var rule = function (formula, bg, fg) {
+    var b = SpreadsheetApp.newConditionalFormatRule().whenFormulaSatisfied(formula).setRanges([body]);
+    if (bg) b.setBackground(bg);
+    if (fg) b.setFontColor(fg);
+    return b.build();
+  };
+  rules.push(rule('=AND($A3<>"",$B3="未対応")', '#fdecea', null));
+  rules.push(rule('=AND($A3<>"",$B3="対応中")', '#fff6dd', null));
+  rules.push(rule('=AND($A3<>"",OR($B3="対応済み",$B3="対応しない"))', null, '#9a958a'));
+  sh.setConditionalFormatRules(rules);
+
+  // 状態のプルダウンを全行に
+  sh.getRange(3, 2, Math.max(1, sh.getMaxRows() - 2), 1).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(REQ_STATES, true).build());
+  var c = colIndex_(sh.getRange(2, 1, 1, sh.getLastColumn()).getValues()[0]);
+  sh.getRange(3, 1, Math.max(1, sh.getMaxRows() - 2), 1).setNumberFormat('yyyy/MM/dd HH:mm');
+  sh.setColumnWidth(1, 130);
+  sh.setColumnWidth(c['内容'] + 1, 260);
+  sh.setColumnWidth(c['生徒へのひとこと'] + 1, 260);
+  sh.getRange(3, c['内容'] + 1, Math.max(1, sh.getMaxRows() - 2), 1).setWrap(true);
+  sh.getRange(3, c['生徒へのひとこと'] + 1, Math.max(1, sh.getMaxRows() - 2), 1).setWrap(true);
+
+  if (sh.getFilter()) sh.getFilter().remove();
+  sh.getRange(2, 1, sh.getMaxRows() - 1, n).createFilter();   // 下に増えていく行も入るように、シートの最後の行まで
 }
 
 /* ---------------- 生徒ごとの進み具合 ---------------- */
@@ -1183,7 +1244,7 @@ function setupCore_() {
   ensureSheet_(SHEET.DONE, HEAD.DONE);
   ensureSheet_(SHEET.LOGS, HEAD.LOGS);
   ensureSheet_(SHEET.REPORT_WEEKS, HEAD.REPORT_WEEKS);
-  ensureSheet_(SHEET.REQ, HEAD.REQ);
+  reqSheet_();
 
   var cs = ss.getSheetByName(SHEET.CONFIG) || ss.insertSheet(SHEET.CONFIG);
   if (cs.getLastRow() === 0) appendSafe_(cs, ['項目', '値', '説明']);

@@ -535,14 +535,23 @@ function topHero() {
 }
 
 /* ---------- 大学の画像 ---------- */
+/**
+ * Netlify に置いた大学の画像（img/uni/<名前>-640.webp・-1280.webp。16:9）。大学名 → ファイル名。
+ * シート「大学」の画像欄に画像があればそちらを優先する（運営がシートだけで差し替えられるように）。
+ */
+var UNI_IMG = {
+};
+var PIC_SIZES = { hero: "(max-width: 560px) 100vw, 560px", thumb: "64px", bthumb: "88px", "": "(max-width: 560px) 50vw, 280px" };
 function uniInfo(name) { return (S.catalog && S.catalog.unis && S.catalog.unis[name]) || {}; }
 /** 大学の画像（16:9）。画像が未登録・読み込み失敗のときは同じ大きさの枠に頭文字を薄く出す（レイアウトは崩れない） */
 function pic(uni, w, cls) {
-  var id = uniInfo(uni).i;
-  var src = !id ? "" : /^data:/.test(id) ? id : "https://drive.google.com/thumbnail?id=" + encodeURIComponent(id) + "&sz=w" + w;
+  var id = uniInfo(uni).i, slug = UNI_IMG[uni], src = "", set = "";
+  if (id) src = /^data:/.test(id) ? id : "https://drive.google.com/thumbnail?id=" + encodeURIComponent(id) + "&sz=w" + w;
+  else if (slug) { src = "img/uni/" + slug + "-640.webp"; set = "img/uni/" + slug + "-640.webp 640w, img/uni/" + slug + "-1280.webp 1280w"; }
   var ph = String(uni || "").replace(/大学$/, "").charAt(0);
   return '<span class="pic' + (cls ? " " + cls : "") + '" aria-hidden="true"><span class="ph">' + esc(ph) + "</span>"
-    + (src ? '<img src="' + esc(src) + '" alt="" loading="lazy" decoding="async" onload="this.classList.add(\'ok\')" onerror="this.remove()">' : "")
+    + (src ? '<img src="' + esc(src) + '"' + (set ? ' srcset="' + set + '" sizes="' + PIC_SIZES[cls || ""] + '"' : "")
+      + ' alt="" loading="lazy" decoding="async" onload="this.classList.add(\'ok\')" onerror="this.remove()">' : "")
     + "</span>";
 }
 

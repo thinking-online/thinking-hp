@@ -1040,3 +1040,314 @@ section {
   .parent-intro { display: none !important; }
   .btn::before { animation: none !important; }
 }
+/* ── 読解特訓（応用/基礎クラス分け） ── */
+.reading-card__tag--adv {
+  background: linear-gradient(180deg, #8a7355, #6b5a42);
+}
+
+.philosophy-box {
+  margin: 0 16px 14px;
+  background: linear-gradient(135deg, #eef1f6 0%, #e4ebf5 100%);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: var(--shadow-card);
+}
+.philosophy-box p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--ink);
+  line-height: 1.85;
+}
+.philosophy-box p + p { margin-top: 10px; }
+.philosophy-box strong { color: var(--navy); font-weight: 700; }
+.philosophy-box--compact { margin-top: 0; }
+
+.class-label {
+  margin: 18px 16px 10px;
+  font-family: "Shippori Mincho B1", serif;
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: 0.12em;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.class-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--hairline), transparent);
+}
+
+.link-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.link-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  background: linear-gradient(180deg, #5a82b5 0%, #4a6fa5 100%);
+  color: #fff;
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 6px 16px -8px rgba(74, 111, 165, 0.7);
+  transition: filter 0.2s ease, transform 0.12s ease;
+}
+.link-chip::after {
+  content: "›";
+  font-size: 16px;
+  opacity: 0.8;
+}
+.link-chip:active { transform: scale(0.98); }
+
+/* ── 統計カード（小テスト数値表示）── */
+.stat-row {
+  display: flex;
+  justify-content: center;
+  padding: 0 16px;
+  margin-bottom: 14px;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  border-radius: 18px;
+  padding: 22px 32px;
+  text-align: center;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 12px 32px -10px rgba(26, 42, 68, 0.45);
+}
+
+.stat-card__label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--sage-light);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.stat-card__num {
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 58px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.stat-card__num span {
+  font-size: 28px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.stat-card__note {
+  margin-top: 8px;
+  font-size: 11.5px;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* ── img-pair（画像並び）── */
+.img-pair {
+  margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.img-pair__item {
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-card);
+  background: #fff;
+}
+
+.img-pair__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.img-pair__item figcaption {
+  padding: 10px 14px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-align: center;
+  background: #f8f9fc;
+  border-top: 1px solid var(--hairline);
+}
+
+/* ── steps-grid / step-card ── */
+.steps-grid {
+  margin: 16px 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-card {
+  background: #fff;
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 18px 16px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.step-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--sage-light), var(--sage));
+}
+
+.step-card__num {
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--sage);
+  line-height: 1;
+  margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+
+.step-card__title {
+  margin: 0 0 8px;
+  font-family: "Shippori Mincho B1", serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.45;
+}
+
+.step-card__text {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+/* ── スマホ全体の見切れ防止 ── */
+.phone * {
+  box-sizing: border-box;
+}
+
+/* reading-card の横幅が画面から出ないように */
+.reading-cards {
+  overflow: hidden;
+}
+
+.reading-card {
+  max-width: 100%;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.reading-card__title {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* link-chip-row のはみ出し防止 */
+.link-chip-row {
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.link-chip {
+  max-width: 100%;
+  word-break: keep-all;
+  white-space: nowrap;
+}
+
+/* stat-card の数値が小さい画面でも崩れないように */
+.stat-card__num {
+  font-size: clamp(42px, 14vw, 58px);
+}
+
+/* philosophy-box のテキスト */
+.philosophy-box {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* column-card のはみ出し防止 */
+.column-card__title,
+.column-card__text {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* summary-list のはみ出し防止 */
+.summary-list li {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* notice-item */
+.notice-item__title,
+.notice-item__body {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* sec-title の長い文字列 */
+.sec-title {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* hero-lead の改行 */
+.hero-lead {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 全体のスクロール横方向を封じる */
+body {
+  overflow-x: hidden;
+}
+
+/* ── feature-hero（画像＋キャプション）── */
+.feature-hero {
+  margin: 0 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--hairline);
+  box-shadow: var(--shadow-card);
+  background: #fff;
+}
+.feature-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+.feature-hero figcaption {
+  padding: 12px 16px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  text-align: center;
+  background: linear-gradient(180deg, #fff, #f4f6fa);
+  border-top: 1px solid var(--hairline);
+}

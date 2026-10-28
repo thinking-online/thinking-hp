@@ -484,6 +484,25 @@ function toggleDone_(uid, book, file, title, on) {
 
 /* ---------------- 利用状況のまとめ（毎週） ---------------- */
 
+/**
+ * まとめ終わった古い記録は消す（数字は「利用状況（週ごと）」に残っている）。
+ * まとめに使うのは直近2週間（今週と、比べる前の週）だけなので、それより前の行は持たない。
+ * 記録は日時の順に並んでいるので、上から古い行をまとめて消す。
+ */
+function trimLogs_(keepFrom) {
+  var ls = sheet_(SHEET.LOGS);
+  var last = ls.getLastRow();
+  if (last < 2) return;
+  var times = ls.getRange(2, 1, last - 1, 1).getValues();
+  var n = 0;
+  while (n < times.length) {
+    var t = times[n][0] instanceof Date ? times[n][0] : new Date(times[n][0]);
+    if (!(t < keepFrom)) break;
+    n++;
+  }
+  if (n) ls.deleteRows(2, n);
+}
+
 function menuReport() {
   var r = weeklyReport();
   SpreadsheetApp.getActive().setActiveSheet(sheet_(SHEET.REPORT));
@@ -590,6 +609,7 @@ function weeklyReport(e) {
   if (fromTrigger) {
     var ws = ensureSheet_(SHEET.REPORT_WEEKS, HEAD.REPORT_WEEKS);
     appendSafe_(ws, [fmt(start), count(people), byRole.student, byRole.buyer, byRole.guest, byRole.staff, pageViews, opens, doneWeek, missCount]);
+    trimLogs_(prevStart);
   }
   return { range: fmt(start) + ' 〜 ' + fmt(end), people: count(people) };
 }

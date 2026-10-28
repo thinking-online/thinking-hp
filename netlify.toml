@@ -535,7 +535,21 @@
   for = "/kakomon-portal/*"
   [headers.values]
     X-Robots-Tag = "noindex, nofollow"
+# 画面（index.html・mock.js）は毎回最新を確かめる
+[[headers]]
+  for = "/kakomon-portal/"
+  [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+[[headers]]
+  for = "/kakomon-portal/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+# トップ画像・大学の画像は端末に1日ためる（画面を切り替えるたびに読み直して、ちらつかないように）。
+# 同じ名前で差し替えたときは、最大1日は前の画像が出ることがある
+[[headers]]
+  for = "/kakomon-portal/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400, stale-while-revalidate=604800"
 [[redirects]]
   from = "/kakomon-portal"
   to = "/kakomon-portal/"

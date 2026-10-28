@@ -59,10 +59,9 @@ window.MOCK_BOOT = function () {
       kinds: ["戦略編", "大問別", "単語帳", "模試", "解説", "その他"],
       books: outBooks,
       items: items.filter(function (it) { return open[it.b] || it.k === "戦略編"; }),
-      // 大学の画像：明治・立教などは img/uni/ の本物、専修だけシート（ドライブ）経由の見本。ほかは画像がないときの枠
+      // 大学の画像は img/uni/ の本物。シート（ドライブ）の画像を試すときは i に画像のURLを入れる
       unis: {
-        "明治大学": { c: "学部ごとに出題がまったく違う。受ける学部の1冊から始めよう" },
-        "専修大学": { i: sampleImage("#24365a", "#F6F4EF", "SENSHU") }
+        "明治大学": { c: "学部ごとに出題がまったく違う。受ける学部の1冊から始めよう" }
       }
     },
     etag: "mock",
@@ -70,11 +69,3 @@ window.MOCK_BOOT = function () {
   };
 };
 
-/* プレビュー用の見本画像（16:9 の SVG） */
-function sampleImage(bg, fg, word) {
-  var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">'
-    + '<rect width="1600" height="900" fill="' + bg + '"/>'
-    + '<circle cx="1320" cy="180" r="260" fill="' + fg + '" opacity=".18"/>'
-    + '<text x="120" y="560" font-family="Georgia,serif" font-size="220" font-weight="700" fill="' + fg + '">' + word + '</text></svg>';
-  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
-}

@@ -190,13 +190,15 @@ var LIFF_ID = "2010454771-UKpPuCeO";   // LINE Developers で作った LIFF ID
 var GAS_URL = "https://script.google.com/macros/s/AKfycbwkVjlCL1Q2-0qiLBuR1KSqdubXRdZUFpMydthQCcfkYoCvOhjFqauTKQcu-Bx4Xb8M/exec";   // Apps Script をデプロイした Webアプリの URL（…/exec）
 /* ========================================================================= */
 
-var CACHE_KEY = "kp.cache.v1";
+var PREVIEW = /[?&]preview=1/.test(location.search);
+/* 確認用リンク（?k=キー）：LINEログインなしで、塾生の表示・未購入者の表示を見る。お気に入りは端末の中だけに保存 */
+var LINK_KEY = PREVIEW ? "" : decodeURIComponent((location.search.match(/[?&]k=([^&#]+)/) || [])[1] || "");
+var CACHE_KEY = LINK_KEY ? "kp.cache.link." + LINK_KEY.slice(0, 6) : "kp.cache.v1";
 var RECENT_KEY = "kp.recent.v1";
 var TAB_KEY = "kp.tab.v1";
 
 var S = { user: null, cfg: { newDays: 14 }, catalog: null, etag: "", favs: {}, idx: null };
 var $ = function (id) { return document.getElementById(id); };
-var PREVIEW = /[?&]preview=1/.test(location.search);
 
 /* ---------- 保存（ブラウザ保存が使えない環境でも動くように try で包む） ---------- */
 function load(key) { try { return JSON.parse(localStorage.getItem(key) || "null"); } catch (e) { return null; } }
@@ -212,6 +214,7 @@ function start() {
   if (c && c.catalog) { applyState(c); render(); }
   if (PREVIEW) { loadScript("mock.js").then(function () { applyState(window.MOCK_BOOT()); render(); showPreviewBar(); }); return; }
   if (!LIFF_ID || !GAS_URL) { renderMessage("準備中", "ポータルの設定がまだ完了していません。"); return; }
+  if (LINK_KEY) { syncBoot(); return; }
   loadScript("https://static.line-scdn.net/liff/edge/2/sdk.js")
     .then(function () { return liff.init({ liffId: LIFF_ID }); })
     .then(function () {
@@ -224,11 +227,23 @@ function start() {
 }
 
 function syncBoot() {
-  var token = idToken();
-  if (!token) return;
-  return getJSON(GAS_URL + "?action=boot&token=" + encodeURIComponent(token) + "&etag=" + encodeURIComponent(S.etag || ""))
+  var auth;
+  if (LINK_KEY) auth = "key=" + encodeURIComponent(LINK_KEY);
+  else {
+    var token = idToken();
+    if (!token) return;
+    auth = "token=" + encodeURIComponent(token);
+  }
+  return getJSON(GAS_URL + "?action=boot&" + auth + "&etag=" + encodeURIComponent(S.etag || ""))
     .then(function (res) {
+      if (res.status === "unauthorized" && LINK_KEY) {
+        try { localStorage.removeItem(CACHE_KEY); } catch (e) {}
+        S.catalog = null;
+        renderMessage("このリンクは使えません", "確認用リンクが変更されたか、停止されています。");
+        return;
+      }
       if (res.status === "unauthorized") { relogin(); return; }
+      if (LINK_KEY) res.favs = Object.keys(S.favs);
       if (res.status !== "ok") throw new Error(res.reason || "error");
       try { sessionStorage.removeItem("kp.relogin"); } catch (e) {}
       var changed = !!res.catalog || JSON.stringify(res.favs.slice().sort()) !== JSON.stringify(Object.keys(S.favs).sort()) || !S.user || S.user.role !== res.user.role;
@@ -300,6 +315,10 @@ function renderMe() {
   if (!S.user) return;
   var label = { student: "塾生", buyer: "購入者", guest: "ゲスト", staff: "スタッフ" }[S.user.role] || "";
   $("me").textContent = (S.user.name ? S.user.name + " ・ " : "") + label;
+  if (S.user.link) {
+    $("pv").hidden = false;
+    $("pv").textContent = "確認用リンクで表示中（" + (S.user.role === "guest" ? "未購入者" : "塾生") + "の画面）";
+  }
 }
 
 function renderHome(keepScroll) {
@@ -476,7 +495,7 @@ function toggleFav(id, el) {
   el.innerHTML = starIcon(on);
   toast(on ? "お気に入りに追加しました" : "お気に入りから外しました");
   persist();
-  if (PREVIEW) return;
+  if (PREVIEW || LINK_KEY) return;
   post({ action: "fav", token: idToken(), book: id, on: on }).then(function (res) {
     if (!res || res.status !== "ok") throw new Error();
   }).catch(function () {
@@ -504,7 +523,7 @@ function openItem(bookId, i) {
   } else {
     $("v-load").textContent = "読み込み中…";
     $("v-frame").src = "https://drive.google.com/file/d/" + it.f + "/preview";
-    post({ action: "log", token: idToken(), book: bookId, title: it.t }).catch(function () {});
+    if (!LINK_KEY) post({ action: "log", token: idToken(), book: bookId, title: it.t }).catch(function () {});
   }
 }
 $("v-frame").addEventListener("load", function () { if (this.src !== "about:blank") $("v-load").hidden = true; });

@@ -5,7 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
 <meta name="theme-color" content="#172642">
-<title>THINKING 過去問ポータル</title>
+<title>THINKING 合格部屋｜学部別対策ライブラリー</title>
+<link rel="preload" as="image" href="img/top-800.webp" imagesrcset="img/top-800.webp 800w, img/top-1400.webp 1400w" imagesizes="(max-width: 560px) 100vw, 560px">
 <style>
   :root{
     --navy:#172642; --navy-2:#24365a; --gold:#C8A55A;
@@ -18,18 +19,28 @@
     background:var(--paper);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
   button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:560px;margin:0 auto;padding:0 16px 56px}
+  .wrap{max-width:560px;margin:0 auto;padding:0 16px calc(100px + env(safe-area-inset-bottom))}
 
   /* ヘッダーと検索 */
   .top{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;padding:calc(10px + env(safe-area-inset-top)) 0 12px}
   .top-in{max-width:560px;margin:0 auto;padding:0 16px}
-  .brand{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:10px}
+  .brand{display:flex;align-items:center;justify-content:space-between;gap:8px}
   .brand-name{font-size:15px;font-weight:700;letter-spacing:.06em}
   .brand-name small{display:block;font-size:10px;font-weight:500;letter-spacing:.18em;color:var(--gold)}
   .me{font-size:11px;color:#c9d0de;text-align:right;max-width:50%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-  .search{position:relative;display:block}
+  /* 検索窓：ふだんは閉じておき、右下の虫眼鏡で上からスッと開く */
+  .search-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows .22s ease}
+  .top.open .search-wrap{grid-template-rows:1fr}
+  .search-wrap>div{min-height:0;overflow:hidden}
+  .search{position:relative;display:block;margin-top:10px}
   .search input{width:100%;height:44px;border:0;border-radius:12px;padding:0 40px 0 40px;font-size:16px;background:#fff;color:var(--ink);outline:none}
   .search svg{position:absolute;left:12px;top:12px;width:20px;height:20px;color:var(--muted)}
+  .fab{position:fixed;right:max(16px, calc(50% - 264px));bottom:calc(20px + env(safe-area-inset-bottom));z-index:40;width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 18px rgba(23,38,66,.32),0 1px 3px rgba(23,38,66,.2);transition:transform .15s,background .15s}
+  .fab:active{transform:scale(.94)}
+  .fab .x{display:none}
+  .fab.on .x{display:block}
+  .fab.on .m{display:none}
+  .fab.on{background:var(--gold)}
   .search .clear{position:absolute;right:6px;top:6px;width:32px;height:32px;border-radius:50%;color:var(--muted);font-size:18px;display:none}
   .search.has .clear{display:block}
 
@@ -55,19 +66,45 @@
   .btn.ghost{background:#fff;color:var(--navy);border:1px solid var(--navy)}
   .btn.gold{background:var(--gold)}
 
+  /* ホーム：トップ画像（16:9。端から端まで。画像の上に文字は重ねない＝画像の中に名前が入っているため） */
+  .top-hero{position:relative;display:block;margin:0 -16px;aspect-ratio:1400/788;background:#dfe9f2;overflow:hidden}
+  .top-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .lead{margin:14px 2px 0;font-size:13px;line-height:1.7;color:var(--muted)}
+  .lead b{color:var(--ink)}
+  @media (min-width:561px){.top-hero{margin:16px 0 0;border-radius:var(--radius);border:1px solid var(--line)}}
+
   /* ホーム：グループタブと大学 */
   .tabs{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:2px 16px}
   .tabs::-webkit-scrollbar{display:none}
   .tab{flex:none;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13px;font-weight:700;color:var(--muted)}
   .tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
-  .unis{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
-  .uni{padding:14px 12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left}
+  .unis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+  .uni{display:flex;flex-direction:column;padding:0;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left}
   .uni:active{background:var(--soft)}
-  .uni .t{font-weight:700;font-size:15px}
-  .uni .s{font-size:11px;color:var(--muted)}
+  .uni:active .pic img{transform:scale(1.02)}
+  .uni .ub{padding:10px 12px 12px}
+  .uni .t{font-weight:700;font-size:15px;line-height:1.35}
+  .uni .s{font-size:11px;color:var(--muted);margin-top:1px}
+
+  /* 大学の画像（16:9）。画像がないときは同じ大きさの枠だけ残し、大学名の頭文字を薄く出す */
+  .pic{position:relative;display:block;aspect-ratio:16/9;background:var(--soft);overflow:hidden;flex:none}
+  .pic::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(23,38,66,.025) 14px 15px)}
+  .pic .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;color:rgba(23,38,66,.13);letter-spacing:.02em;line-height:1;user-select:none}
+  .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s,transform .2s}
+  .pic img.ok{opacity:1}
+  .uni .pic .ph{font-size:34px}
+  .hero{margin-top:10px;border-radius:var(--radius);border:1px solid var(--line)}
+  .hero .ph{font-size:64px}
+  .uni-note{font-size:13px;color:var(--muted);margin:6px 0 0}
+  .thumb{width:64px;border-radius:8px;border:1px solid var(--line)}
+  .bthumb{width:88px;border-radius:10px;border:1px solid var(--line);margin-top:4px}
+  .bthumb .ph{font-size:22px}
+  .thumb .ph{font-size:16px}
+  .fav .pic{margin:-12px -12px 10px;border-radius:0}
+  .fav .pic .ph{font-size:24px}
   .favs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:2px 16px}
   .favs::-webkit-scrollbar{display:none}
-  .fav{flex:none;width:150px;padding:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left}
+  .fav{flex:none;width:150px;padding:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left;overflow:hidden}
   .fav .u{font-size:11px;color:var(--muted)}
   .fav .t{font-weight:700;font-size:14px;line-height:1.4;margin-top:2px}
 
@@ -115,16 +152,23 @@
 <header class="top">
   <div class="top-in">
     <div class="brand">
-      <div class="brand-name" id="brand">THINKING<small>過去問ポータル</small></div>
+      <div class="brand-name" id="brand">THINKING 合格部屋<small>学部別対策ライブラリー</small></div>
       <div class="me" id="me"></div>
     </div>
+    <div class="search-wrap"><div>
     <label class="search" id="search-box">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-      <input id="q" type="text" placeholder="大学・学部で検索（例：明治 商）" autocomplete="off" enterkeyhint="search">
+      <input id="q" type="text" placeholder="大学・学部で検索（例：明治 商）" autocomplete="off" enterkeyhint="search" tabindex="-1">
       <button class="clear" id="q-clear" type="button" aria-label="検索をクリア">×</button>
     </label>
+    </div></div>
   </div>
 </header>
+
+<button class="fab" id="fab" type="button" aria-label="大学・学部を検索" aria-expanded="false">
+  <svg class="m" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+  <svg class="x" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>
+</button>
 
 <main class="wrap" id="app">
   <div style="margin-top:20px" class="list"><div class="skel"></div><div class="skel"></div><div class="skel"></div></div>
@@ -262,19 +306,17 @@ function renderMe() {
   $("me").textContent = (S.user.name ? S.user.name + " ・ " : "") + label;
 }
 
-function renderHome() {
+function renderHome(keepScroll) {
   if (!S.idx) return;
-  var html = "";
+  var html = topHero();
+  html += '<p class="lead">過去5年の入試を<b>1問残らず解いて分析</b>し、学部ごとの出題を<b>オリジナル問題で再現</b>した対策教材が、ここにそろっています。</p>';
   html += roleNotice();
 
   var favs = Object.keys(S.favs).map(function (id) { return S.idx.books[id]; }).filter(Boolean);
-  html += '<h2 class="sec">お気に入り</h2>';
-  html += favs.length
-    ? '<div class="favs">' + favs.map(favCard).join("") + "</div>"
-    : '<div class="empty">問題集のページで ☆ を押すと、ここに並びます。</div>';
+  if (favs.length) html += '<h2 class="sec">お気に入り</h2><div class="favs">' + favs.map(favCard).join("") + "</div>";
 
   var recent = (load(RECENT_KEY) || []).map(function (id) { return S.idx.books[id]; }).filter(Boolean).filter(function (b) { return !S.favs[b.id]; });
-  if (recent.length) html += '<h2 class="sec">最近見た問題集</h2><div class="list">' + recent.slice(0, 4).map(bookRow).join("") + "</div>";
+  if (recent.length) html += '<h2 class="sec">最近見た問題集</h2><div class="list">' + recent.slice(0, 4).map(bookRowThumb).join("") + "</div>";
 
   var groups = S.catalog.groups.filter(function (g) { return S.idx.unis.some(function (u) { return u.g === g; }); });
   S.idx.unis.forEach(function (u) { if (groups.indexOf(u.g) < 0) groups.push(u.g); });
@@ -286,11 +328,12 @@ function renderHome() {
   }).join("") + "</div>";
   html += '<div class="unis">' + S.idx.unis.filter(function (u) { return u.g === tab; }).map(function (u) {
     var n = u.books.length;
-    return '<button class="uni" data-uni="' + esc(u.u) + '"><div class="t">' + esc(u.u) + '</div><div class="s">' + n + "冊</div></button>";
+    return '<button class="uni" data-uni="' + esc(u.u) + '">' + pic(u.u, 400) + '<span class="ub"><span class="t" style="display:block">' + esc(u.u) + '</span><span class="s" style="display:block">' + n + "冊</span></span></button>";
   }).join("") + "</div>";
 
+  var y = window.scrollY;
   $("app").innerHTML = html;
-  window.scrollTo(0, 0);
+  window.scrollTo(0, keepScroll ? y : 0);
 }
 
 function roleNotice() {
@@ -304,12 +347,14 @@ function roleNotice() {
 }
 
 function favCard(b) {
-  return '<button class="fav" data-book="' + esc(b.id) + '"><div class="u">' + esc(b.u) + '</div><div class="t">' + esc(shortName(b)) + (b.L ? lockIcon(14) : "") + "</div></button>";
+  return '<button class="fav" data-book="' + esc(b.id) + '">' + pic(b.u, 320) + '<div class="u">' + esc(b.u) + '</div><div class="t">' + esc(shortName(b)) + (b.L ? lockIcon(14) : "") + "</div></button>";
 }
 
-function bookRow(b) {
+function bookRow(b) { return bookRowOf(b, false); }
+function bookRowThumb(b) { return bookRowOf(b, true); }
+function bookRowOf(b, thumb) {
   var tags = (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.L && (S.idx.items[b.id] || []).length ? '<span class="tag sample">一部無料</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + (hasNew(b.id) ? '<span class="tag new">NEW</span>' : "");
-  return '<button class="row" data-book="' + esc(b.id) + '"><div class="main"><div class="t">' + esc(b.n) + tags + "</div>"
+  return '<button class="row" data-book="' + esc(b.id) + '">' + (thumb ? pic(b.u, 160, "thumb") : "") + '<div class="main"><div class="t">' + esc(b.n) + tags + "</div>"
     + (b.cov ? '<div class="s">' + esc(b.cov) + "</div>" : "") + "</div>"
     + (b.L ? '<span class="lock">' + lockIcon(18) + "</span>" : chev()) + "</button>";
 }
@@ -324,7 +369,9 @@ function renderUni(name) {
   if (!u) return renderHome();
   if (u.books.length === 1) { location.replace("#/b/" + encodeURIComponent(u.books[0].id)); return; }
   $("app").innerHTML = '<div class="crumb"><button data-go="#/">ホーム</button> › ' + esc(u.g) + "</div>"
+    + pic(u.u, 1200, "hero")
     + '<div class="book-head"><h1>' + esc(u.u) + "</h1></div>"
+    + (uniInfo(u.u).c ? '<p class="uni-note">' + esc(uniInfo(u.u).c) + "</p>" : "")
     + '<h2 class="sec">問題集（' + u.books.length + "冊）</h2>"
     + '<div class="list">' + u.books.map(bookRow).join("") + "</div>";
   window.scrollTo(0, 0);
@@ -335,7 +382,7 @@ function renderBook(id) {
   var b = S.idx.books[id];
   if (!b) return renderHome();
   var html = '<div class="crumb"><button data-go="#/">ホーム</button> › <button data-uni="' + esc(b.u) + '">' + esc(b.u) + "</button></div>";
-  html += '<div class="book-head"><h1>' + esc(b.n) + (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + "</h1>"
+  html += '<div class="book-head">' + pic(b.u, 240, "bthumb") + '<h1>' + esc(b.n) + (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + "</h1>"
     + '<button class="star' + (S.favs[b.id] ? " on" : "") + '" data-fav="' + esc(b.id) + '" aria-label="お気に入り">' + starIcon(!!S.favs[b.id]) + "</button></div>";
   if (b.cov) html += '<div class="cov"><span>この1冊で対応する入試</span>' + esc(b.cov) + "</div>";
 
@@ -372,7 +419,7 @@ function renderSearch(q) {
   var tokens = q.split(/\s+/).map(norm).filter(Boolean);
   var hits = S.catalog.books.filter(function (b) { return tokens.every(function (t) { return b.hay.indexOf(t) >= 0; }); });
   $("app").innerHTML = '<h2 class="sec">「' + esc(q) + "」の検索結果（" + hits.length + "件）</h2>"
-    + (hits.length ? '<div class="list">' + hits.map(function (b) { return bookRow(b).replace('<div class="t">', '<div class="t"><span style="font-weight:500;color:var(--muted);font-size:12px;display:block">' + esc(b.u) + "</span>"); }).join("") + "</div>"
+    + (hits.length ? '<div class="list">' + hits.map(function (b) { return bookRowThumb(b).replace('<div class="t">', '<div class="t"><span style="font-weight:500;color:var(--muted);font-size:12px;display:block">' + esc(b.u) + "</span>"); }).join("") + "</div>"
       : '<div class="empty">見つかりませんでした。大学名だけ（例：明治）で検索してみてください。</div>');
 }
 
@@ -387,7 +434,7 @@ document.addEventListener("click", function (ev) {
   var d = el.dataset;
   if (d.fav) return toggleFav(d.fav, el);
   if (d.item) { var p = d.item.split(":"); return openItem(p[0], Number(p[1])); }
-  if (d.tab) { save(TAB_KEY, d.tab); return renderHome(); }
+  if (d.tab) { save(TAB_KEY, d.tab); return renderHome(true); }
   clearSearch();
   if (d.book) location.hash = "#/b/" + encodeURIComponent(d.book);
   else if (d.uni) location.hash = "#/u/" + encodeURIComponent(d.uni);
@@ -402,8 +449,22 @@ $("q").addEventListener("input", function () {
   qTimer = setTimeout(render, 60);
 });
 $("q").addEventListener("keydown", function (e) { if (e.key === "Enter") this.blur(); });
-$("q-clear").addEventListener("click", function (e) { e.preventDefault(); clearSearch(); render(); });
-function clearSearch() { $("q").value = ""; $("search-box").classList.remove("has"); }
+$("q-clear").addEventListener("click", function (e) { e.preventDefault(); $("q").value = ""; $("search-box").classList.remove("has"); $("q").focus(); render(); });
+function clearSearch() { $("q").value = ""; $("search-box").classList.remove("has"); setSearchOpen(false); }
+/** 右下の虫眼鏡：押すと上の検索窓が開いてすぐ入力できる。もう一度押す（×）と閉じて元の画面に戻る */
+function setSearchOpen(on) {
+  document.querySelector(".top").classList.toggle("open", on);
+  $("fab").classList.toggle("on", on);
+  $("fab").setAttribute("aria-expanded", on ? "true" : "false");
+  $("fab").setAttribute("aria-label", on ? "検索を閉じる" : "大学・学部を検索");
+  $("q").tabIndex = on ? 0 : -1;
+}
+$("fab").addEventListener("click", function () {
+  if ($("fab").classList.contains("on")) { clearSearch(); render(); return; }
+  setSearchOpen(true);
+  $("q").focus(); // キーボードを出すため、押した操作の中ですぐにフォーカスする
+  window.scrollTo(0, 0);
+});
 
 function toggleFav(id, el) {
   var on = !S.favs[id];
@@ -465,6 +526,33 @@ function pushRecent(id) {
   var r = (load(RECENT_KEY) || []).filter(function (x) { return x !== id; });
   r.unshift(id);
   save(RECENT_KEY, r.slice(0, 8));
+}
+
+/* ---------- トップ画像（Netlify に置いた画像。端末の幅に合わせて小さい方から読む） ---------- */
+function topHero() {
+  return '<span class="top-hero" role="img" aria-label="THINKING 合格部屋 学部別対策ライブラリー">'
+    + '<img src="img/top-800.webp" srcset="img/top-800.webp 800w, img/top-1400.webp 1400w" sizes="(max-width: 560px) 100vw, 560px" alt="" width="1400" height="788" decoding="async" fetchpriority="high"></span>';
+}
+
+/* ---------- 大学の画像 ---------- */
+/**
+ * Netlify に置いた大学の画像（img/uni/<名前>-640.webp・-1280.webp。16:9）。大学名 → ファイル名。
+ * シート「大学」の画像欄に画像があればそちらを優先する（運営がシートだけで差し替えられるように）。
+ */
+var UNI_IMG = {
+};
+var PIC_SIZES = { hero: "(max-width: 560px) 100vw, 560px", thumb: "64px", bthumb: "88px", "": "(max-width: 560px) 50vw, 280px" };
+function uniInfo(name) { return (S.catalog && S.catalog.unis && S.catalog.unis[name]) || {}; }
+/** 大学の画像（16:9）。画像が未登録・読み込み失敗のときは同じ大きさの枠に頭文字を薄く出す（レイアウトは崩れない） */
+function pic(uni, w, cls) {
+  var id = uniInfo(uni).i, slug = UNI_IMG[uni], src = "", set = "";
+  if (id) src = /^data:/.test(id) ? id : "https://drive.google.com/thumbnail?id=" + encodeURIComponent(id) + "&sz=w" + w;
+  else if (slug) { src = "img/uni/" + slug + "-640.webp"; set = "img/uni/" + slug + "-640.webp 640w, img/uni/" + slug + "-1280.webp 1280w"; }
+  var ph = String(uni || "").replace(/大学$/, "").charAt(0);
+  return '<span class="pic' + (cls ? " " + cls : "") + '" aria-hidden="true"><span class="ph">' + esc(ph) + "</span>"
+    + (src ? '<img src="' + esc(src) + '"' + (set ? ' srcset="' + set + '" sizes="' + PIC_SIZES[cls || ""] + '"' : "")
+      + ' alt="" loading="lazy" decoding="async" onload="this.classList.add(\'ok\')" onerror="this.remove()">' : "")
+    + "</span>";
 }
 
 /* ---------- 補助 ---------- */

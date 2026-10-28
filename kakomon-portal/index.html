@@ -120,6 +120,20 @@
   .kind h3{font-size:12px;letter-spacing:.14em;color:var(--navy);margin:0 0 8px;display:flex;align-items:center;gap:8px}
   .kind h3::after{content:"";flex:1;height:1px;background:var(--line)}
   .mat{display:flex;align-items:center;gap:12px;padding:14px;background:#fff;border:1px solid var(--line);border-radius:12px;width:100%;text-align:left;margin-bottom:8px}
+  .matrow{display:flex;gap:8px;margin-bottom:8px}
+  .matrow .mat{margin-bottom:0;flex:1;min-width:0}
+  .mat.done .t{color:var(--muted)}
+  .chk{flex:none;width:60px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;background:#fff;border:1px solid var(--line);border-radius:12px;color:#c9c3b6;font-size:10px;font-weight:700;letter-spacing:.04em}
+  .chk.on{background:var(--gold);border-color:var(--gold);color:#fff}
+  .chk:active{transform:scale(.96)}
+  .prog{margin-top:14px;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:var(--radius)}
+  .prog-t{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;margin-bottom:8px}
+  .prog-t b{font-size:11px;letter-spacing:.08em;color:var(--muted)}
+  .prog-t span{font-weight:700;color:var(--navy)}
+  .bar{display:block;height:6px;border-radius:999px;background:var(--soft);overflow:hidden}
+  .bar i{display:block;height:100%;background:var(--gold);border-radius:999px;transition:width .25s}
+  .rp{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--muted);margin-top:6px}
+  .rp .bar{width:72px;height:4px}
   .mat:active{background:var(--soft)}
   .mat .ico{flex:none;width:34px;height:34px;border-radius:9px;background:var(--soft);color:var(--navy);display:flex;align-items:center;justify-content:center}
   .mat .t{flex:1;font-weight:700;font-size:14px;line-height:1.45}
@@ -207,7 +221,7 @@ var CACHE_KEY = LINK_KEY ? "kp.cache.link." + LINK_KEY.slice(0, 6) : "kp.cache.v
 var RECENT_KEY = "kp.recent.v1";
 var TAB_KEY = "kp.tab.v1";
 
-var S = { user: null, cfg: { newDays: 14 }, catalog: null, etag: "", favs: {}, idx: null };
+var S = { user: null, cfg: { newDays: 14 }, catalog: null, etag: "", favs: {}, done: {}, idx: null };
 var $ = function (id) { return document.getElementById(id); };
 
 /* ---------- 保存（ブラウザ保存が使えない環境でも動くように try で包む） ---------- */
@@ -215,7 +229,7 @@ function load(key) { try { return JSON.parse(localStorage.getItem(key) || "null"
 function save(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) {} }
 function persist() {
   if (PREVIEW) return;
-  save(CACHE_KEY, { user: S.user, cfg: S.cfg, catalog: S.catalog, etag: S.etag, favs: Object.keys(S.favs) });
+  save(CACHE_KEY, { user: S.user, cfg: S.cfg, catalog: S.catalog, etag: S.etag, favs: Object.keys(S.favs), done: Object.keys(S.done) });
 }
 
 /* ---------- 起動：前回の内容をすぐ表示 → 裏で最新を取りに行く ---------- */
@@ -253,11 +267,12 @@ function syncBoot() {
         return;
       }
       if (res.status === "unauthorized") { relogin(); return; }
-      if (LINK_KEY) res.favs = Object.keys(S.favs);
+      if (LINK_KEY) { res.favs = Object.keys(S.favs); res.done = Object.keys(S.done); }
       if (res.status !== "ok") throw new Error(res.reason || "error");
       try { sessionStorage.removeItem("kp.relogin"); } catch (e) {}
-      var changed = !!res.catalog || JSON.stringify(res.favs.slice().sort()) !== JSON.stringify(Object.keys(S.favs).sort()) || !S.user || S.user.role !== res.user.role;
-      applyState({ user: res.user, cfg: res.cfg, catalog: res.catalog || S.catalog, etag: res.etag, favs: res.favs });
+      var same = function (a, o) { return JSON.stringify((a || []).slice().sort()) === JSON.stringify(Object.keys(o).sort()); };
+      var changed = !!res.catalog || !same(res.favs, S.favs) || !same(res.done, S.done) || !S.user || S.user.role !== res.user.role;
+      applyState({ user: res.user, cfg: res.cfg, catalog: res.catalog || S.catalog, etag: res.etag, favs: res.favs, done: res.done || [] });
       persist();
       if (changed) render();
       else renderMe();
@@ -286,6 +301,7 @@ function applyState(o) {
   if (o.catalog) { S.catalog = o.catalog; S.idx = buildIndex(o.catalog); }
   S.etag = o.etag || S.etag;
   if (o.favs) { S.favs = {}; o.favs.forEach(function (id) { S.favs[id] = true; }); }
+  if (o.done) { S.done = {}; o.done.forEach(function (f) { S.done[f] = true; }); }
 }
 
 /* ---------- 一覧の索引 ---------- */
@@ -386,8 +402,14 @@ function bookRowThumb(b) { return bookRowOf(b, true); }
 function bookRowOf(b, thumb) {
   var tags = (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.L && (S.idx.items[b.id] || []).some(function (it) { return !it.L; }) ? '<span class="tag sample">一部無料</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + (hasNew(b.id) ? '<span class="tag new">NEW</span>' : "");
   return '<button class="row" data-book="' + esc(b.id) + '">' + (thumb ? pic(b.u, 160, "thumb") : "") + '<div class="main"><div class="t">' + esc(b.n) + tags + "</div>"
-    + (b.cov ? '<div class="s">' + esc(b.cov) + "</div>" : "") + "</div>"
+    + (b.cov ? '<div class="s">' + esc(b.cov) + "</div>" : "") + rowProgress(b) + "</div>"
     + (b.L ? '<span class="lock">' + lockIcon(18) + "</span>" : chev()) + "</button>";
+}
+
+function rowProgress(b) {
+  var p = progressOf(b.id);
+  if (!p.done) return "";
+  return '<div class="rp"><span class="bar"><i style="width:' + Math.round(p.done / p.total * 100) + '%"></i></span>' + p.done + " / " + p.total + "</div>";
 }
 
 function shortName(b) {
@@ -413,6 +435,7 @@ function renderBook(id) {
   var b = S.idx.books[id];
   if (!b) return renderHome();
   pushRecent(b.id);   // 問題集のページを開いたら「最近見た問題集」に入れる（教材を開かなくても）
+  logOnce("book", b.id, b.n);
   var html = '<div class="crumb"><button data-go="#/">ホーム</button> › <button data-uni="' + esc(b.u) + '">' + esc(b.u) + "</button></div>";
   html += '<div class="book-head">' + pic(b.u, 240, "bthumb") + '<h1>' + esc(b.n) + (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + "</h1>"
     + '<button class="star' + (S.favs[b.id] ? " on" : "") + '" data-fav="' + esc(b.id) + '" aria-label="お気に入り">' + starIcon(!!S.favs[b.id]) + "</button></div>";
@@ -423,6 +446,7 @@ function renderBook(id) {
   var nLocked = items.filter(function (it) { return it.L; }).length;
   if (b.L && items.length) html += '<p class="toc-note">' + lockIcon(13) + " この問題集の全" + items.length + "点の構成です。" + (nLocked < items.length ? "「無料」の教材はすぐに読めます。" : "") + "鍵の付いた教材は、塾生・購入者限定です。</p>";
   if (!items.length) html += '<div class="empty">教材を準備中です。</div>';
+  html += progressBox(b.id);
   S.catalog.kinds.forEach(function (k) {
     var list = items.filter(function (it) { return it.k === k; });
     if (!list.length) return;
@@ -443,8 +467,59 @@ function renderBook(id) {
 }
 
 function matButton(bookId, i, it, freeTag) {
-  return '<button class="mat" data-item="' + esc(bookId) + ":" + i + '"><span class="ico">' + docIcon() + '</span><span class="t">' + esc(it.t)
-    + (freeTag ? '<span class="tag sample">無料</span>' : "") + (isNew(it) ? '<span class="tag new">NEW</span>' : "") + (it.h ? '<span class="tag hidden">非公開</span>' : "") + "</span>" + chev() + "</button>";
+  var done = !!S.done[it.f];
+  return '<div class="matrow"><button class="mat' + (done ? " done" : "") + '" data-item="' + esc(bookId) + ":" + i + '"><span class="ico">' + docIcon() + '</span><span class="t">' + esc(it.t)
+    + (freeTag ? '<span class="tag sample">無料</span>' : "") + (isNew(it) ? '<span class="tag new">NEW</span>' : "") + (it.h ? '<span class="tag hidden">非公開</span>' : "") + "</span>" + chev() + "</button>"
+    + '<button class="chk' + (done ? " on" : "") + '" data-done="' + esc(bookId) + ":" + i + '" role="checkbox" aria-checked="' + done + '" aria-label="やった">' + checkIcon() + '<span>やった</span></button></div>';
+}
+
+/* ---------- 「やった」チェックと進み具合 ---------- */
+/** 開ける教材のうち、チェックした数 */
+function progressOf(bookId) {
+  var open = (S.idx.items[bookId] || []).filter(function (it) { return !it.L && it.f; });
+  return { done: open.filter(function (it) { return S.done[it.f]; }).length, total: open.length };
+}
+function progressBox(bookId) {
+  var p = progressOf(bookId);
+  if (!p.total) return "";
+  var pct = Math.round(p.done / p.total * 100);
+  return '<div class="prog" id="prog"><div class="prog-t"><b>進み具合</b><span>' + p.done + " / " + p.total + (p.done === p.total ? "　ぜんぶやった！" : "") + "</span></div>"
+    + '<div class="bar"><i style="width:' + pct + '%"></i></div></div>';
+}
+function toggleDone(key, el) {
+  var p = key.split(":"), bookId = p[0], it = (S.idx.items[bookId] || [])[Number(p[1])];
+  if (!it || !it.f) return;
+  var on = !S.done[it.f];
+  if (on) S.done[it.f] = true; else delete S.done[it.f];
+  var paint = function () {
+    el.classList.toggle("on", !!S.done[it.f]);
+    el.setAttribute("aria-checked", String(!!S.done[it.f]));
+    el.previousSibling.classList.toggle("done", !!S.done[it.f]);
+    var box = $("prog");
+    if (box) box.outerHTML = progressBox(bookId);
+  };
+  paint();
+  persist();
+  if (PREVIEW || LINK_KEY) return;
+  post({ action: "done", token: idToken(), book: bookId, file: it.f, title: it.t, on: on }).then(function (res) {
+    if (!res || res.status !== "ok") throw new Error();
+  }).catch(function () {
+    if (on) delete S.done[it.f]; else S.done[it.f] = true;
+    paint(); persist();
+    toast("保存できませんでした。もう一度お試しください。");
+  });
+}
+function checkIcon() { return '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'; }
+
+/* ---------- 利用状況の記録（運営の「利用状況」シート用。画面は待たない） ---------- */
+var LOGGED = {};
+function logOnce(kind, book, title) {
+  if (PREVIEW || LINK_KEY || !window.liff) return;
+  var k = kind + ":" + book + ":" + title;
+  if (LOGGED[k]) return;
+  LOGGED[k] = 1;
+  var token = idToken();
+  if (token) post({ action: "log", token: token, kind: kind, book: book, title: title }).catch(function () {});
 }
 /** 鍵の付いた教材：タイトルだけ見せて、押しても何も起きない */
 function lockedRow(it) {
@@ -452,10 +527,14 @@ function lockedRow(it) {
     + (isNew(it) ? '<span class="tag new">NEW</span>' : "") + '</span><span class="lock" aria-label="塾生・購入者限定">' + lockIcon(18) + "</span></div>";
 }
 
+var missTimer = 0;
 function renderSearch(q) {
   if (!S.idx) return;
   var tokens = q.split(/\s+/).map(norm).filter(Boolean);
   var hits = S.catalog.books.filter(function (b) { return tokens.every(function (t) { return b.hay.indexOf(t) >= 0; }); });
+  // 見つからなかった言葉は、打ち終わって1.5秒たってから記録する（打っている途中の文字は送らない）
+  clearTimeout(missTimer);
+  if (!hits.length) missTimer = setTimeout(function () { if ($("q").value.trim() === q) logOnce("search0", "", q); }, 1500);
   $("app").innerHTML = '<h2 class="sec">「' + esc(q) + "」の検索結果（" + hits.length + "件）</h2>"
     + (hits.length ? '<div class="list">' + hits.map(function (b) { return bookRowThumb(b).replace('<div class="t">', '<div class="t"><span style="font-weight:500;color:var(--muted);font-size:12px;display:block">' + esc(b.u) + "</span>"); }).join("") + "</div>"
       : '<div class="empty">見つかりませんでした。大学名だけ（例：明治）で検索してみてください。</div>');
@@ -467,10 +546,11 @@ function renderMessage(title, body) {
 
 /* ---------- 操作 ---------- */
 document.addEventListener("click", function (ev) {
-  var el = ev.target.closest("[data-book],[data-uni],[data-go],[data-tab],[data-fav],[data-item]");
+  var el = ev.target.closest("[data-book],[data-uni],[data-go],[data-tab],[data-fav],[data-item],[data-done]");
   if (!el) return;
   var d = el.dataset;
   if (d.fav) return toggleFav(d.fav, el);
+  if (d.done) return toggleDone(d.done, el);
   if (d.item) { var p = d.item.split(":"); return openItem(p[0], Number(p[1])); }
   if (d.tab) { save(TAB_KEY, d.tab); return renderHome(true); }
   clearSearch();
@@ -549,7 +629,7 @@ function openItem(bookId, i) {
   } else {
     $("v-load").textContent = "読み込み中…";
     $("v-frame").src = "https://drive.google.com/file/d/" + it.f + "/preview";
-    if (!LINK_KEY) post({ action: "log", token: idToken(), book: bookId, title: it.t }).catch(function () {});
+    if (!LINK_KEY) post({ action: "log", token: idToken(), kind: "view", book: bookId, title: it.t }).catch(function () {});
   }
 }
 $("v-frame").addEventListener("load", function () { if (this.src !== "about:blank") $("v-load").hidden = true; });

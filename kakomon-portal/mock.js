@@ -59,10 +59,10 @@ window.MOCK_BOOT = function () {
       kinds: ["戦略編", "大問別", "単語帳", "模試", "解説", "その他"],
       books: outBooks,
       items: items.filter(function (it) { return open[it.b] || it.k === "戦略編"; }),
-      // 大学の画像：明治・立教などは img/uni/ の本物、中央だけシート（ドライブ）経由の見本。ほかは画像がないときの枠
+      // 大学の画像：明治・立教などは img/uni/ の本物、専修だけシート（ドライブ）経由の見本。ほかは画像がないときの枠
       unis: {
         "明治大学": { c: "学部ごとに出題がまったく違う。受ける学部の1冊から始めよう" },
-        "中央大学": { i: sampleImage("#24365a", "#F6F4EF", "CHUO") }
+        "専修大学": { i: sampleImage("#24365a", "#F6F4EF", "SENSHU") }
       }
     },
     etag: "mock",

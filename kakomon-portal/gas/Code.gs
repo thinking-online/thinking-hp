@@ -7,6 +7,7 @@
  * API（Webアプリとしてデプロイ）
  *   GET  ?action=ping
  *   GET  ?action=boot&token=<LINE IDトークン>&etag=<前回のetag>
+ *   GET  ?action=boot&key=<確認用リンクのキー>&etag=<前回のetag>   LINEログインなしの確認用（塾生の表示／未購入者の表示）
  *   POST {action:"fav", token, book, on}     お気に入りの登録/解除
  *   POST {action:"log", token, book, title}  閲覧ログ
  *
@@ -17,7 +18,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 6;
+var SETUP_VERSION = 7;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -49,6 +50,8 @@ var DEFAULT_CONFIG = [
   ['公式LINE_URL', 'https://lin.ee/yJ8MFVb', '問い合わせ先'],
   ['グループ順', 'MARCH,関関同立,日東駒専,産近甲龍,国公立,その他', 'ホームに並ぶ順番（カンマ区切り）'],
   ['問題集リストURL', 'https://thinking-online.com/kakomon-portal/seed/books.csv', '問題集の一覧の元データ（GitHub）。シートを開くと差分が自動で反映される'],
+  ['確認用リンク（塾生の表示）', '7ccc70f5d82bdef9e7848168a65cf1cc16d33c84cf3a278810e23aef4491a0d9', 'LINEログインなしで塾生と同じ表示を見るリンクのキー（スタッフ用）。「停止」で無効。新しい文字列を入れるとキーが変わる'],
+  ['確認用リンク（未購入者の表示）', '950261aa90e0cd3cf92c0442f1672fce937f9910799634ec985f94d7808dc784', 'LINEログインなしで未購入者（ゲスト）と同じ表示を見るリンクのキー。「停止」で無効。新しい文字列を入れるとキーが変わる'],
   ['NEW表示日数', '14', 'この日数以内に追加・更新された教材に NEW / 更新 を付ける'],
   ['保存先フォルダID', '', '初期セットアップで自動作成（触らない）']
 ];
@@ -61,6 +64,7 @@ function doGet(e) {
   var p = (e && e.parameter) || {};
   try {
     if (p.action === 'ping') return json_({ ok: true, version: VERSION, time: new Date().toISOString() });
+    if (p.action === 'boot' && p.key) return json_(bootByKey_(p.key, p.etag || ''));
     if (p.action === 'boot') return json_(boot_(p.token, p.etag || ''));
     return json_({ status: 'error', reason: 'unknown action' });
   } catch (err) {
@@ -90,14 +94,42 @@ function boot_(token, clientEtag) {
   var me = auth_(token);
   if (!me) return { status: 'unauthorized' };
 
+  return bootResponse_({ name: me.name, role: '' }, access_(me), favsOf_(me.uid), clientEtag);
+}
+
+/**
+ * 確認用リンク（LINEログインなし）。スタッフが毎回ログインせずに、塾生の表示・未購入者の表示を確かめるためのもの。
+ * キーは設定シートに入れる（64桁の16進ならキーのSHA-256、それ以外はキーそのもの）。お気に入りは端末の中だけに保存する。
+ */
+function bootByKey_(key, clientEtag) {
+  var role = linkRole_(String(key));
+  if (!role) return { status: 'unauthorized' };
+  var access = { role: role, books: {}, unis: {}, key: 'link.' + role };
+  return bootResponse_({ name: '確認用リンク', role: '', link: true }, access, [], clientEtag);
+}
+
+function linkRole_(key) {
+  if (key.length < 16) return '';
   var cfg = config_();
-  var access = access_(me);
+  var hash = sha_(key);
+  var roles = { '確認用リンク（塾生の表示）': 'student', '確認用リンク（未購入者の表示）': 'guest' };
+  for (var name in roles) {
+    var v = String(cfg[name] || '').trim();
+    if (!v || v === '停止') continue;
+    if (/^[0-9a-f]{64}$/.test(v) ? v === hash : v === key) return roles[name];
+  }
+  return '';
+}
+
+function bootResponse_(user, access, favs, clientEtag) {
+  var cfg = config_();
   var full = catalog_();
   var etag = full.v + ':' + access.key;
+  user.role = access.role;
   var res = {
     status: 'ok',
-    user: { name: me.name, role: access.role },
-    favs: favsOf_(me.uid),
+    user: user,
+    favs: favs,
     cfg: {
       title: cfg['ポータル名'],
       buyUrl: cfg['購入案内URL'],

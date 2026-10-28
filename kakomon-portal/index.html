@@ -697,13 +697,13 @@ function drawPage(doc, seq, el, name) {
   }).catch(function () { el.dataset.st = ""; });
 }
 
-/** 透かし：上に「○○さん専用（日付）」、下に注意書き、ページ全体に薄く斜めの名前（設定で切れる） */
+/** 透かし：上に「○○さん専用（日付）」、下に注意書き。設定「透かし（斜め）」があり のときだけページ全体に薄く斜めの名前 */
 function drawWatermark(ctx, w, h, name) {
   var d = new Date();
   var who = name + " さん専用（" + d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate() + "）";
   var font = "'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Noto Sans CJK JP',Meiryo,sans-serif";
   ctx.save();
-  if (S.cfg.wmDiag !== false) {
+  if (S.cfg.wmDiag === true) {
     var fd = Math.round(w * 0.032);
     ctx.globalAlpha = 0.07;
     ctx.fillStyle = "#172642";

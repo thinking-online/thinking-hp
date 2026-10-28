@@ -20,7 +20,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 8;
+var SETUP_VERSION = 9;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -54,7 +54,7 @@ var DEFAULT_CONFIG = [
   ['問題集リストURL', 'https://thinking-online.com/kakomon-portal/seed/books.csv', '問題集の一覧の元データ（GitHub）。シートを開くと差分が自動で反映される'],
   ['確認用リンク（塾生の表示）', '7ccc70f5d82bdef9e7848168a65cf1cc16d33c84cf3a278810e23aef4491a0d9', 'LINEログインなしで塾生と同じ表示を見るリンクのキー（スタッフ用）。「停止」で無効。新しい文字列を入れるとキーが変わる'],
   ['確認用リンク（未購入者の表示）', '950261aa90e0cd3cf92c0442f1672fce937f9910799634ec985f94d7808dc784', 'LINEログインなしで未購入者（ゲスト）と同じ表示を見るリンクのキー。「停止」で無効。新しい文字列を入れるとキーが変わる'],
-  ['透かし（斜め）', 'あり', '教材のページ全体に、開いた人の名前を薄く斜めに入れる（あり／なし）。ページ上下の名前と注意書きはいつも入る'],
+  ['透かし（斜め）', 'なし', '教材のページ全体に、開いた人の名前を薄く斜めに入れる（あり／なし）。ページ上下の名前と注意書きはいつも入る'],
   ['NEW表示日数', '14', 'この日数以内に追加・更新された教材に NEW / 更新 を付ける'],
   ['保存先フォルダID', '', '初期セットアップで自動作成（触らない）']
 ];
@@ -139,7 +139,7 @@ function bootResponse_(user, access, favs, clientEtag) {
       buyUrl: cfg['購入案内URL'],
       lineUrl: cfg['公式LINE_URL'],
       campusUrl: cfg['CAMPUS_URL'],
-      wmDiag: String(cfg['透かし（斜め）'] || 'あり').trim() !== 'なし',
+      wmDiag: String(cfg['透かし（斜め）'] || '').trim() === 'あり',
       newDays: Number(cfg['NEW表示日数']) || 14
     },
     etag: etag
@@ -893,6 +893,9 @@ function setupCore_() {
 
   // 表示名を「THINKING 合格部屋」に変える（2026/10。運営が手で変えた名前はそのまま）
   if (config_()['ポータル名'] === 'THINKING 過去問ポータル') setConfig_('ポータル名', 'THINKING 合格部屋');
+  // ページ全体の斜めの透かしは使わない（2026/10。上下の名前と注意書きだけにする）。1回だけ「なし」に直す
+  var props = PropertiesService.getScriptProperties();
+  if (!props.getProperty('wmDiagOff')) { setConfig_('透かし（斜め）', 'なし'); props.setProperty('wmDiagOff', '1'); }
 
   rootFolder_();
   fillUniRows_();

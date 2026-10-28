@@ -12,7 +12,7 @@
  *   POST {action:"log", token, kind, book, title}  閲覧ログ（kind: view=教材を開いた／book=問題集のページ／search0=検索で見つからなかった言葉）
  *   POST {action:"done", token, book, file, title, on}  教材の「やった」チェック
  *   POST {action:"report", token, book, file, page, kind, text, photos:[base64 JPEG]}  教材の修正依頼
- *   志望校は「お気に入り」と同じ記録に "u:大学名" として入れる（fav API をそのまま使う）
+ *   boot の reqs：本人が送った修正依頼と、その状態・運営からのひとこと（シート「修正依頼」の「生徒へのひとこと」）
  *
  * 運用メニュー（スプレッドシート上部「過去問ポータル」）
  *   教材を追加 / 選択行のPDFを差し替え / フォルダから取り込み / 点検 / 利用状況のまとめ / 初期セットアップ
@@ -23,7 +23,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 13;
+var SETUP_VERSION = 14;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -48,7 +48,7 @@ var HEAD = {
   FAVS: ['LINE ID', '問題集ID', '登録日時'],
   DONE: ['LINE ID', '問題集ID', 'ファイルID', '教材', '日時', '名前'],
   LOGS: ['日時', 'LINE ID', '種別', '問題集ID', 'タイトル', '区分'],
-  REQ: ['受付日時', '状態', '名前', '区分', '問題集', '教材', 'ページ', '種類', '内容', '写真', '対応メモ', 'LINE ID', 'ファイルID'],
+  REQ: ['受付日時', '状態', '名前', '区分', '問題集', '教材', 'ページ', '種類', '内容', '写真', '対応メモ', 'LINE ID', 'ファイルID', '生徒へのひとこと'],
   REPORT_WEEKS: ['週のはじめ', '来た人', '塾生', '購入者', 'ゲスト', 'スタッフ', '問題集ページを見た回数', '教材を開いた回数', 'やったチェック', '検索で見つからなかった回数']
 };
 
@@ -117,6 +117,7 @@ function boot_(token, clientEtag) {
   logVisit_(me, access.role);
   var res = bootResponse_({ name: me.name, role: '' }, access, favsOf_(me.uid), clientEtag);
   res.done = doneOf_(me.uid);
+  res.reqs = reqIndex_()[me.uid] || [];
   return res;
 }
 
@@ -529,7 +530,48 @@ function saveRequest_(me, body) {
   var row = sh.getLastRow();
   sh.getRange(row, 2).setDataValidation(SpreadsheetApp.newDataValidation().requireValueInList(REQ_STATES, true).build());
   cache.put(ck, String(sent + 1), 21600);
+  bumpReqVer_();
   return { status: 'ok' };
+}
+
+/**
+ * 修正依頼を送った人ごとにまとめたもの（ポータルの「送った修正依頼」とお知らせ用）。
+ * 起動のたびにシートを読まないよう、シートが編集されるまで覚えておく（reqVer）。
+ * 生徒に見せる状態：未対応・対応中 → 確認中／対応済み → 修正しました／対応しない → このままにします
+ */
+function reqIndex_() {
+  var props = PropertiesService.getScriptProperties();
+  var ver = props.getProperty('reqVer') || '0';
+  var cache = CacheService.getScriptCache();
+  var hit = getChunked_(cache, 'reqs:' + ver);
+  if (hit) return JSON.parse(hit);
+  var out = {};
+  var sh = SpreadsheetApp.getActive().getSheetByName(SHEET.REQ);
+  if (sh && sh.getLastRow() >= 2) {
+    var v = sh.getDataRange().getValues();
+    var c = colIndex_(v[0]);
+    var shown = { '対応済み': 'done', '対応しない': 'no' };
+    for (var i = 1; i < v.length; i++) {
+      var r = v[i], uid = String(r[c['LINE ID']] || '');
+      if (!uid) continue;
+      var t = r[c['受付日時']] instanceof Date ? r[c['受付日時']] : new Date(r[c['受付日時']]);
+      (out[uid] = out[uid] || []).push({
+        id: String(t.getTime()),
+        d: Utilities.formatDate(t, 'Asia/Tokyo', 'M/d'),
+        b: String(r[c['問題集']] || ''), t: String(r[c['教材']] || ''), f: String(r[c['ファイルID']] || ''),
+        k: String(r[c['種類']] || ''), p: String(r[c['ページ']] || ''), x: String(r[c['内容']] || '').slice(0, 80),
+        s: shown[String(r[c['状態']])] || 'wait',
+        r: c['生徒へのひとこと'] !== undefined ? String(r[c['生徒へのひとこと']] || '') : ''
+      });
+    }
+    Object.keys(out).forEach(function (u) { out[u].reverse(); out[u] = out[u].slice(0, 30); });
+  }
+  putChunked_(cache, 'reqs:' + ver, JSON.stringify(out), 21600);
+  return out;
+}
+
+function bumpReqVer_() {
+  PropertiesService.getScriptProperties().setProperty('reqVer', String(Date.now()));
 }
 
 function roleLabel_(role) {
@@ -715,17 +757,6 @@ function weeklyReport(e) {
   rows.push(['■ 大学（見た人が多い順）', '見た人', '', '', '']);
   Object.keys(unis).sort(function (a, b) { return count(unis[b]) - count(unis[a]); }).forEach(function (u) { rows.push([u, count(unis[u]), '', '', '']); });
   rows.push(['', '', '', '', '']);
-  rows.push(['■ 志望校（選んでいる人数）', '人数', '', '', '']);
-  var fs = sheet_(SHEET.FAVS);
-  var goals = {};
-  if (fs.getLastRow() >= 2) fs.getRange(2, 1, fs.getLastRow() - 1, 2).getValues().forEach(function (r) {
-    var v = String(r[1]);
-    if (v.indexOf('u:') === 0) goals[v.slice(2)] = (goals[v.slice(2)] || 0) + 1;
-  });
-  var gk = Object.keys(goals).sort(function (a, b) { return goals[b] - goals[a]; });
-  if (!gk.length) rows.push(['（まだいません）', '', '', '', '']);
-  gk.forEach(function (u) { rows.push([u, goals[u], '', '', '']); });
-  rows.push(['', '', '', '', '']);
   rows.push(['■ 検索で見つからなかった言葉（作る候補）', '回数', '', '', '']);
   var mk = Object.keys(misses).sort(function (a, b) { return misses[b] - misses[a]; });
   if (!mk.length) rows.push(['（なし）', '', '', '', '']);
@@ -777,6 +808,7 @@ function onOpen() {
 function onSheetEdit(e) {
   var name = e && e.range ? e.range.getSheet().getName() : '';
   if (name === SHEET.USERS) bumpUserVer_();
+  if (name === SHEET.REQ) bumpReqVer_();
   if (name === SHEET.BOOKS) { fillBookIds_(); fillUniRows_(); }
   if (name === SHEET.BOOKS || name === SHEET.ITEMS || name === SHEET.CONFIG || name === SHEET.UNIS) bumpCatalogVer_();
 }

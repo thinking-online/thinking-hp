@@ -129,6 +129,8 @@
   .mat.locked .lock svg{margin-left:0}
   .toc-note{margin:14px 2px 0;font-size:12px;line-height:1.7;color:var(--muted)}
   .toc-note svg{color:var(--gold);margin-left:0;vertical-align:-1px}
+  .legal{margin:28px 2px 0;font-size:11px;line-height:1.7;color:var(--muted);text-align:center}
+  .vnote{margin:0 0 8px;font-size:11px;line-height:1.5;color:#c9d0de;text-align:center}
   .locked-box{margin-top:18px;padding:20px 16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:center}
   .locked-box svg{color:var(--gold)}
   .locked-box p{font-size:13px;color:var(--muted);margin:8px 0 4px}
@@ -140,43 +142,10 @@
   .vbar .back{width:40px;height:40px;display:flex;align-items:center;justify-content:center}
   .vbar .vt{flex:1;font-size:14px;font-weight:700;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
   .vbody{flex:1;position:relative}
-  .vpages{position:absolute;inset:0;overflow:auto;-webkit-overflow-scrolling:touch;padding:10px 8px 16px}
-  .vpage{position:relative;max-width:820px;margin:0 auto 10px;background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.35)}
-  .vpage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-  .vpages,.vpage canvas{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
-  .vload{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:10px;color:#c9d0de;font-size:13px;text-align:center;padding:24px;z-index:1}
-  .vload[hidden]{display:none}
-  .vload .btn{width:auto;padding:0 20px;height:42px;font-size:14px}
+  .vbody iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}
+  .vload{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#c9d0de;font-size:13px}
   .vfoot{background:var(--navy);padding:8px 16px calc(10px + env(safe-area-inset-bottom))}
   .vfoot .btn{margin:0}
-  .vnote{margin:0 0 8px;font-size:11px;line-height:1.5;color:#c9d0de;text-align:center}
-
-  /* 確認ダイアログ */
-  .modal{position:fixed;inset:0;z-index:90;background:rgba(15,22,36,.55);display:flex;align-items:center;justify-content:center;padding:24px}
-  .modal[hidden]{display:none}
-  .mbox{width:100%;max-width:400px;background:#fff;border-radius:16px;padding:20px 18px 16px}
-  .mbox b{display:block;font-size:16px;color:var(--navy)}
-  .mbox p{font-size:13px;line-height:1.75;color:#4a4f5c;margin:10px 0 4px;white-space:pre-line}
-  .mbtns{display:flex;gap:8px}
-  .mbtns .btn{flex:1}
-
-  /* 共有・転載の禁止の表記 */
-  .legal{margin:28px 2px 0;font-size:11px;line-height:1.7;color:var(--muted);text-align:center}
-
-  /* 印刷：ページ画像だけを紙に出す */
-  .print-area{display:none}
-  .print-page{margin:0 auto 16px;max-width:820px}
-  .print-page img{display:block;width:100%;box-shadow:0 1px 6px rgba(0,0,0,.25)}
-  .print-head{position:sticky;top:0;z-index:1;max-width:820px;margin:0 auto 12px;padding:calc(14px + env(safe-area-inset-top)) 16px 14px;background:#f6f4ef;border-bottom:1px solid var(--line)}
-  @page{margin:0}
-  @media print{
-    body>*:not(.print-area){display:none!important}
-    .print-area{display:block!important}
-    .print-head{display:none!important}
-    .print-page{margin:0;max-width:none;break-after:page;page-break-after:always}
-    .print-page:last-child{break-after:auto;page-break-after:auto}
-    .print-page img{width:100%;box-shadow:none}
-  }
 
   .toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom));transform:translateX(-50%);background:rgba(23,38,66,.94);color:#fff;font-size:13px;padding:10px 16px;border-radius:999px;z-index:80;opacity:0;transition:opacity .2s;pointer-events:none;max-width:90%}
   .toast.show{opacity:1}
@@ -217,18 +186,10 @@
   </div>
   <div class="vbody">
     <div class="vload" id="v-load">読み込み中…</div>
-    <div class="vpages" id="v-pages"></div>
+    <iframe id="v-frame" title="PDF" allow="autoplay"></iframe>
   </div>
-  <div class="vfoot">
-    <p class="vnote">この教材には利用者の情報が記録されています。共有・転載・譲渡は禁止です。</p>
-    <button class="btn gold" id="v-print">印刷する</button>
-  </div>
+  <div class="vfoot"><p class="vnote">教材やリンクの共有・転載・譲渡は禁止です。</p><button class="btn gold" id="v-print">印刷・保存する（PDFを開く）</button></div>
 </div>
-
-<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="m-title">
-  <div class="mbox"><b id="m-title"></b><p id="m-body"></p><div class="mbtns" id="m-btns"></div></div>
-</div>
-<div class="print-area" id="print-area"></div>
 
 <div class="toast" id="toast"></div>
 
@@ -258,7 +219,6 @@ function persist() {
 
 /* ---------- 起動：前回の内容をすぐ表示 → 裏で最新を取りに行く ---------- */
 function start() {
-  if (PRINT.pt && PRINT.f) return startPrintPage();
   var c = PREVIEW ? null : load(CACHE_KEY);
   if (c && c.catalog) { applyState(c); render(); }
   if (PREVIEW) { loadScript("mock.js").then(function () { applyState(window.MOCK_BOOT()); render(); showPreviewBar(); }); return; }
@@ -402,7 +362,7 @@ function renderHome(keepScroll) {
 }
 
 function legalNote() {
-  return '<p class="legal">教材には利用者の情報が記録されています。教材やリンクの共有・転載・譲渡は禁止です。<br>違反が確認された場合は、法的措置をとることがあります。© THINKING</p>';
+  return '<p class="legal">教材やリンクの共有・転載・譲渡は禁止です。違反が確認された場合は、法的措置をとることがあります。© THINKING</p>';
 }
 
 function roleNotice() {
@@ -569,256 +529,44 @@ function toggleFav(id, el) {
   });
 }
 
-/* ---------- ビューア ----------
- * 教材のPDFはドライブで共有しない。開くたびに GAS が本人の権限を確かめて中身を返し、ここで描く（pdf.js）。
- * ドライブのリンクが出回っても、他の人は開けない。 */
-var PDFJS_BASE = "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/legacy/build/";
-var CUR = null, CUR_DOC = null, OPEN_SEQ = 0, PAGE_OBS = null;
-var PDF_BYTES = {}, PDF_ORDER = [];
-
-function loadPdfJs() {
-  if (window.pdfjsLib && pdfjsLib.GlobalWorkerOptions.workerSrc) return Promise.resolve(pdfjsLib);
-  return loadScript(PDFJS_BASE + "pdf.min.js").then(function () {
-    pdfjsLib.GlobalWorkerOptions.workerSrc = PDFJS_BASE + "pdf.worker.min.js";
-    return pdfjsLib;
-  });
-}
-/** 本人の確かめ方（LINEのIDトークン／確認用リンクのキー／印刷用の合言葉）を付けて送る */
-function authBody(o) {
-  if (PRINT.pt) o.pt = PRINT.pt;
-  else if (LINK_KEY) o.key = LINK_KEY;
-  else o.token = idToken();
-  return o;
-}
-function apiError(res) {
-  var e = new Error((res && res.status) || "error");
-  e.code = res && res.status;
-  return e;
-}
-/** PDFの中身。同じ教材を続けて開いたときは通信しない（直近4冊まで覚えておく） */
-function pdfBytes(fid) {
-  if (PDF_BYTES[fid]) return Promise.resolve(PDF_BYTES[fid]);
-  return post(authBody({ action: "pdf", file: fid })).then(function (res) {
-    if (!res || res.status !== "ok") throw apiError(res);
-    var bin = atob(res.data), u8 = new Uint8Array(bin.length);
-    for (var i = 0; i < bin.length; i++) u8[i] = bin.charCodeAt(i);
-    var out = { data: u8, name: res.name || "", title: res.title || "" };
-    PDF_BYTES[fid] = out;
-    PDF_ORDER.push(fid);
-    if (PDF_ORDER.length > 4) delete PDF_BYTES[PDF_ORDER.shift()];
-    return out;
-  });
-}
-function openPdf(fid) {
-  return Promise.all([loadPdfJs(), pdfBytes(fid)]).then(function (r) {
-    // pdf.js は渡したデータを作業用スレッドに移してしまうので、写しを渡す
-    return r[0].getDocument({ data: r[1].data.slice(), isEvalSupported: false }).promise.then(function (doc) { return { doc: doc, name: r[1].name, title: r[1].title }; });
-  });
-}
-
+/* ---------- ビューア（Googleドライブのプレビューを埋め込み） ---------- */
+var CUR = null;
 function openItem(bookId, i) {
   var it = (S.idx.items[bookId] || [])[i];
   if (!it) return;
   CUR = it;
   pushRecent(bookId);
   $("v-title").textContent = it.t;
+  $("v-load").hidden = false;
+  $("v-frame").src = "about:blank";
   $("viewer").hidden = false;
   document.body.style.overflow = "hidden";
   history.pushState({ viewer: 1 }, "");
-  clearPages();
-  if (PREVIEW || /^mock/.test(it.f)) return viewerMessage("（プレビューのため、実際のPDFは表示されません）");
-  viewerMessage("読み込み中…");
-  var seq = ++OPEN_SEQ;
-  openPdf(it.f).then(function (o) {
-    if (seq !== OPEN_SEQ) { o.doc.destroy(); return; }
-    CUR_DOC = o.doc;
-    return layoutPages(o.doc, seq);
-  }).catch(function (e) {
-    if (seq !== OPEN_SEQ) return;
-    if (e.code === "unauthorized" && !LINK_KEY) { relogin(); return; }
-    viewerMessage(e.code === "forbidden" || e.code === "unauthorized" ? "この教材を開く権限がありません。" : "読み込めませんでした。電波の良い場所で、もう一度お試しください。", e.code === "forbidden" || e.code === "unauthorized" ? null : function () { openItemAgain(bookId, i); });
-  });
+  if (PREVIEW || /^mock/.test(it.f)) {
+    $("v-load").textContent = "（プレビューのため、実際のPDFは表示されません）";
+  } else {
+    $("v-load").textContent = "読み込み中…";
+    $("v-frame").src = "https://drive.google.com/file/d/" + it.f + "/preview";
+    if (!LINK_KEY) post({ action: "log", token: idToken(), book: bookId, title: it.t }).catch(function () {});
+  }
 }
-function openItemAgain(bookId, i) { history.back(); setTimeout(function () { openItem(bookId, i); }, 50); }
-function viewerMessage(text, retry) {
-  var el = $("v-load");
-  el.hidden = false;
-  el.innerHTML = "<span>" + esc(text) + "</span>" + (retry ? '<button class="btn ghost" id="v-retry">もう一度読み込む</button>' : "");
-  if (retry) $("v-retry").onclick = retry;
-}
-
-/** ページの枠を先に全部並べ、画面に近づいたページだけ描く（離れたら消してメモリを空ける） */
-function layoutPages(doc, seq) {
-  return doc.getPage(1).then(function (p1) {
-    if (seq !== OPEN_SEQ) return;
-    var vp = p1.getViewport({ scale: 1 });
-    var box = $("v-pages");
-    var html = "";
-    for (var n = 1; n <= doc.numPages; n++) html += '<div class="vpage" data-p="' + n + '" style="aspect-ratio:' + vp.width + "/" + vp.height + '"></div>';
-    box.innerHTML = html;
-    box.scrollTop = 0;
-    $("v-load").hidden = true;
-    PAGE_OBS = new IntersectionObserver(function (ents) {
-      ents.forEach(function (en) {
-        var el = en.target;
-        if (en.isIntersecting) drawPage(doc, seq, el);
-        else if (el.firstChild) { el.innerHTML = ""; el.dataset.st = ""; }
-      });
-    }, { root: box, rootMargin: "1200px 0px" });
-    Array.prototype.forEach.call(box.children, function (el) { PAGE_OBS.observe(el); });
-  });
-}
-function drawPage(doc, seq, el) {
-  if (el.dataset.st) return;
-  el.dataset.st = "1";
-  doc.getPage(Number(el.dataset.p)).then(function (page) {
-    if (seq !== OPEN_SEQ || el.dataset.st !== "1") return;
-    var vp1 = page.getViewport({ scale: 1 });
-    el.style.aspectRatio = vp1.width + "/" + vp1.height;
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var scale = Math.min((el.clientWidth || 400) * dpr / vp1.width, 3);
-    var vp = page.getViewport({ scale: scale });
-    var c = document.createElement("canvas");
-    c.width = Math.round(vp.width); c.height = Math.round(vp.height);
-    var ctx = c.getContext("2d");
-    return page.render({ canvasContext: ctx, viewport: vp }).promise.then(function () {
-      if (seq !== OPEN_SEQ || el.dataset.st !== "1") return;
-      el.innerHTML = "";
-      el.appendChild(c);
-      el.dataset.st = "2";
-    });
-  }).catch(function () { el.dataset.st = ""; });
-}
-
-function clearPages() {
-  OPEN_SEQ++;
-  if (PAGE_OBS) { PAGE_OBS.disconnect(); PAGE_OBS = null; }
-  if (CUR_DOC) { try { CUR_DOC.destroy(); } catch (e) {} CUR_DOC = null; }
-  $("v-pages").innerHTML = "";
-}
+$("v-frame").addEventListener("load", function () { if (this.src !== "about:blank") $("v-load").hidden = true; });
 $("v-back").addEventListener("click", function () { history.back(); });
 window.addEventListener("popstate", function () { if (!$("viewer").hidden) closeViewer(true); });
 function closeViewer(fromHistory) {
   $("viewer").hidden = true;
-  clearPages();
+  $("v-frame").src = "about:blank";
   document.body.style.overflow = "";
   CUR = null;
 }
-
-/* ---------- 印刷 ----------
- * ページ画像を作って印刷する。LINEの中では印刷できないので、10分だけ使える合言葉を付けて外のブラウザで開く。 */
-var PRINT = (function () {
-  var q = location.search;
-  var g = function (k) { var m = q.match(new RegExp("[?&]" + k + "=([^&#]+)")); return m ? decodeURIComponent(m[1]) : ""; };
-  return { pt: g("pt"), f: g("pf") };
-})();
-
+/** 印刷・保存は端末のブラウザでPDFそのものを開く（LINE内ブラウザでは印刷できないため） */
 $("v-print").addEventListener("click", function () {
   if (!CUR) return;
-  if (PREVIEW || /^mock/.test(CUR.f)) return toast("プレビューでは印刷できません");
-  startPrint(CUR);
+  if (PREVIEW || /^mock/.test(CUR.f)) return toast("プレビューでは開けません");
+  var url = "https://drive.google.com/uc?export=download&id=" + CUR.f;
+  if (window.liff && liff.isInClient && liff.isInClient()) liff.openWindow({ url: url, external: true });
+  else window.open(url, "_blank", "noopener");
 });
-function startPrint(it) {
-  var inLine = !LINK_KEY && window.liff && liff.isInClient && liff.isInClient();
-  if (!inLine) return printPdf(it.f);
-  toast("印刷の準備をしています…");
-  post(authBody({ action: "printToken", file: it.f })).then(function (res) {
-    if (!res || res.status !== "ok") throw apiError(res);
-    var url = location.origin + location.pathname + "?pt=" + encodeURIComponent(res.pt) + "&pf=" + encodeURIComponent(it.f);
-    liff.openWindow({ url: url, external: true });
-  }).catch(function () { toast("印刷の準備ができませんでした。もう一度お試しください。"); });
-}
-/** 全ページを画像にして、印刷用の場所に並べてから印刷する */
-function printPdf(fid, standalone) {
-  var area = $("print-area");
-  var urls = [], cancelled = false;
-  area.innerHTML = '<div class="print-head"><b>印刷の準備をしています…</b><p class="legal" id="pr-state" style="text-align:left;margin-top:6px"></p>'
-    + (standalone ? "" : '<button class="btn ghost" id="pr-close">やめる</button>') + "</div>";
-  // 準備のあいだも画面に重ねて見せる（ビューアに戻れるように）
-  area.style.cssText = PRINT_OVERLAY;
-  if ($("pr-close")) $("pr-close").onclick = function () { cancelled = true; closePrint(urls); };
-  return openPdf(fid).then(function (o) {
-    var doc = o.doc, n = 0;
-    if (standalone) document.title = o.title + "（印刷）";
-    var next = function () {
-      n++;
-      if (cancelled) return Promise.reject(new Error("cancelled"));
-      if (n > doc.numPages) return Promise.resolve();
-      $("pr-state") && ($("pr-state").textContent = n + " / " + doc.numPages + " ページ");
-      return doc.getPage(n).then(function (page) {
-        var vp1 = page.getViewport({ scale: 1 });
-        var vp = page.getViewport({ scale: 1100 / vp1.width });   // A4 幅でおよそ 130dpi（文字はくっきり、準備は速く）
-        var c = document.createElement("canvas");
-        c.width = Math.round(vp.width); c.height = Math.round(vp.height);
-        var ctx = c.getContext("2d");
-        ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, c.width, c.height);
-        return page.render({ canvasContext: ctx, viewport: vp }).promise.then(function () {
-          return new Promise(function (ok) { c.toBlob(ok, "image/jpeg", 0.88); });
-        }).then(function (blob) {
-          var u = URL.createObjectURL(blob);
-          urls.push(u);
-          var div = document.createElement("div");
-          div.className = "print-page";
-          div.innerHTML = '<img alt="" src="' + u + '">';
-          area.appendChild(div);
-          c.width = c.height = 0;
-          return next();
-        });
-      });
-    };
-    return next().then(function () {
-      doc.destroy();
-      // 印刷はボタンを押したときだけ開く。準備のあとで自動で開くと、Safari などが
-      // 「このWebサイトから自動的に印刷することは禁止されています」と止めるため
-      var head = area.querySelector(".print-head");
-      head.innerHTML = "<b>印刷の準備ができました（全" + doc.numPages + "ページ）</b>"
-        + '<p class="legal" style="text-align:left;margin-top:6px">' + esc(o.title) + "</p>"
-        + '<button class="btn gold" id="pr-go">印刷する</button>' + (standalone ? "" : '<button class="btn ghost" id="pr-close">閉じる</button>');
-      $("pr-go").onclick = function () { window.print(); };
-      if ($("pr-close")) $("pr-close").onclick = function () { closePrint(urls); };
-    });
-  }).catch(function (e) {
-    if (cancelled) return;
-    var msg = e && (e.code === "unauthorized" || e.code === "forbidden") ? "印刷用のリンクの期限が切れました。LINEのポータルから、もう一度「印刷する」を押してください。" : "印刷の準備ができませんでした。電波の良い場所で、もう一度お試しください。";
-    area.innerHTML = '<div class="print-head"><b>印刷できませんでした</b><p class="legal" style="text-align:left">' + esc(msg) + "</p>" + (standalone ? "" : '<button class="btn ghost" id="pr-close">閉じる</button>') + "</div>";
-    area.style.cssText = PRINT_OVERLAY;
-    if ($("pr-close")) $("pr-close").onclick = function () { closePrint(urls); };
-  });
-}
-var PRINT_OVERLAY = "display:block;position:fixed;inset:0;z-index:95;overflow:auto;background:#f6f4ef";
-function closePrint(urls) {
-  urls.forEach(function (u) { URL.revokeObjectURL(u); });
-  var area = $("print-area");
-  area.innerHTML = "";
-  area.style.cssText = "";
-}
-/** 外のブラウザで開いた印刷用のページ（?pt=…&pf=…）。ログインなしで、その1冊だけを印刷する */
-function startPrintPage() {
-  document.querySelector("header.top").style.display = "none";
-  $("app").style.display = "none";
-  $("sbar").style.display = "none";
-  history.replaceState(null, "", location.pathname);   // 合言葉をアドレス欄に残さない
-  printPdf(PRINT.f, true);
-}
-
-/* ---------- 共有しようとしたときの注意 ---------- */
-function showModal(title, body, buttons) {
-  $("m-title").textContent = title;
-  $("m-body").textContent = body;
-  var box = $("m-btns");
-  box.innerHTML = "";
-  (buttons || [{ label: "わかりました" }]).forEach(function (b) {
-    var el = document.createElement("button");
-    el.className = "btn" + (b.ghost ? " ghost" : "");
-    el.textContent = b.label;
-    el.onclick = function () { $("modal").hidden = true; if (b.onClick) b.onClick(); };
-    box.appendChild(el);
-  });
-  $("modal").hidden = false;
-}
-var SHARE_NOTICE = "ポータルの教材は、ログインした本人だけが開けます。リンクを送っても、他の人は開けません。\n教材の共有・転載・譲渡は禁止です。違反が確認された場合は、法的措置をとることがあります。";
-document.addEventListener("copy", function () { showModal("教材の共有はできません", SHARE_NOTICE); });
-$("v-pages").addEventListener("contextmenu", function (ev) { ev.preventDefault(); showModal("教材の共有はできません", SHARE_NOTICE); });
 
 function pushRecent(id) {
   var r = (load(RECENT_KEY) || []).filter(function (x) { return x !== id; });

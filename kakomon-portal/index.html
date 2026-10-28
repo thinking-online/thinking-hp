@@ -412,6 +412,7 @@ function renderBook(id) {
   if (!S.idx) return;
   var b = S.idx.books[id];
   if (!b) return renderHome();
+  pushRecent(b.id);   // 問題集のページを開いたら「最近見た問題集」に入れる（教材を開かなくても）
   var html = '<div class="crumb"><button data-go="#/">ホーム</button> › <button data-uni="' + esc(b.u) + '">' + esc(b.u) + "</button></div>";
   html += '<div class="book-head">' + pic(b.u, 240, "bthumb") + '<h1>' + esc(b.n) + (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + "</h1>"
     + '<button class="star' + (S.favs[b.id] ? " on" : "") + '" data-fav="' + esc(b.id) + '" aria-label="お気に入り">' + starIcon(!!S.favs[b.id]) + "</button></div>";
@@ -537,7 +538,6 @@ function openItem(bookId, i) {
   var it = (S.idx.items[bookId] || [])[i];
   if (!it) return;
   CUR = it;
-  pushRecent(bookId);
   $("v-title").textContent = it.t;
   $("v-load").hidden = false;
   $("v-frame").src = "about:blank";

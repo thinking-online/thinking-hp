@@ -14,14 +14,15 @@
  *   教材を追加 / 選択行のPDFを差し替え / フォルダから取り込み / 点検 / 初期セットアップ
  */
 
-var VERSION = '1.1.0';
+var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 5;
+var SETUP_VERSION = 6;
 
 var SHEET = {
   BOOKS: '問題集',
   ITEMS: '教材',
+  UNIS: '大学',
   USERS: '利用者',
   CONFIG: '設定',
   FAVS: 'お気に入り',
@@ -31,6 +32,7 @@ var SHEET = {
 var HEAD = {
   BOOKS: ['ID', 'グループ', '大学', '大学よみ', '問題集名', '対応する学部・日程', '検索キーワード', '公開', 'サンプル', '並び順', 'メモ'],
   ITEMS: ['問題集名', '区分', 'タイトル', 'ファイル', '公開', '並び順', '更新日', 'メモ', '無料公開'],
+  UNIS: ['大学', '画像', 'ひとこと', 'メモ'],
   USERS: ['LINE表示名', 'LINE ID', '初回アクセス', '最終アクセス', '氏名メモ', '購入した問題集', '購入した大学（セット）', '期限', 'スタッフ', '停止', 'メモ'],
   FAVS: ['LINE ID', '問題集ID', '登録日時'],
   LOGS: ['日時', 'LINE ID', '種別', '問題集ID', 'タイトル']
@@ -300,7 +302,7 @@ function catalog_() {
 
   books.sort(function (a, b) { return a.o - b.o; });
   items.sort(function (a, b) { return a.o - b.o; });
-  var full = { v: v, groups: groups, kinds: KINDS, books: books, items: items };
+  var full = { v: v, groups: groups, kinds: KINDS, books: books, items: items, unis: uniCatalog_() };
   putChunked_(cache, 'cat:' + v, JSON.stringify(full), 21600);
   return full;
 }
@@ -321,7 +323,25 @@ function filterCatalog_(full, acc) {
   var items = full.items
     .filter(function (it) { return (open[it.b] && (it.p || staff)) || (it.fr && it.p && shown[it.b]); })
     .map(function (it) { return { b: it.b, k: it.k, t: it.t, f: it.f, d: it.d, h: !it.p, fr: it.fr || undefined }; });
-  return { groups: full.groups, kinds: full.kinds, books: books, items: items };
+  var unis = {};
+  books.forEach(function (b) { if (full.unis && full.unis[b.u]) unis[b.u] = full.unis[b.u]; });
+  return { groups: full.groups, kinds: full.kinds, books: books, items: items, unis: unis };
+}
+
+/** 大学ごとの画像（ドライブのファイルID）とひとこと。返り値: {大学名: {i, c}}（どちらもないときは載せない） */
+function uniCatalog_() {
+  var sh = SpreadsheetApp.getActive().getSheetByName(SHEET.UNIS);
+  var out = {};
+  if (!sh || sh.getLastRow() < 2) return out;
+  var v = sh.getDataRange().getValues();
+  var c = colIndex_(v[0]);
+  for (var i = 1; i < v.length; i++) {
+    var name = String(v[i][c['大学']] || '').trim();
+    var img = fileIdOf_(v[i][c['画像']]);
+    var note = String(v[i][c['ひとこと']] || '').trim();
+    if (name && (img || note)) out[name] = { i: img || undefined, c: note || undefined };
+  }
+  return out;
 }
 
 /* ---------------- お気に入り・ログ ---------------- */
@@ -383,8 +403,8 @@ function onOpen() {
 function onSheetEdit(e) {
   var name = e && e.range ? e.range.getSheet().getName() : '';
   if (name === SHEET.USERS) bumpUserVer_();
-  if (name === SHEET.BOOKS) fillBookIds_();
-  if (name === SHEET.BOOKS || name === SHEET.ITEMS || name === SHEET.CONFIG) bumpCatalogVer_();
+  if (name === SHEET.BOOKS) { fillBookIds_(); fillUniRows_(); }
+  if (name === SHEET.BOOKS || name === SHEET.ITEMS || name === SHEET.CONFIG || name === SHEET.UNIS) bumpCatalogVer_();
 }
 
 function menuPublish() {
@@ -462,12 +482,14 @@ function importCore_() {
   var known = {};
   rows.forEach(function (r) { if (r.fid) known[r.fid] = true; });
   var names = bookIdsByName_();
-  var added = 0, replaced = 0, newBooks = [], notes = [], unfinished = false;
+  var added = 0, replaced = 0, images = 0, newBooks = [], notes = [], unfinished = false;
+  var uniImgs = uniImageMap_();
   function outOfTime() { return unfinished || (unfinished = Date.now() - started > IMPORT_BUDGET_MS); }
 
   var unis = root.getFolders();
   while (unis.hasNext() && !outOfTime()) {
     var uniFolder = unis.next();
+    if (importUniImage_(uniFolder, uniImgs)) images++;
     var bookFolders = uniFolder.getFolders();
     while (bookFolders.hasNext() && !outOfTime()) {
       var bf = bookFolders.next();
@@ -519,8 +541,10 @@ function importCore_() {
     }
   }
   fillBookIds_();
+  fillUniRows_();
   bumpCatalogVer_();
   var msg = '追加 ' + added + '件 ／ 差し替え ' + replaced + '件\n（追加したものは公開を外した状態です。中身を確認して☑公開を付けてください）';
+  if (images) msg += '\n\n大学の画像を ' + images + '件 登録しました（すぐに全員の画面に出ます）';
   if (unfinished) msg = '【まだ途中です】時間の上限が近いので、ここで区切りました。もう一度「フォルダから取り込み」を実行してください（続きから進みます）。\n\n' + msg;
   if (newBooks.length) msg += '\n\n新しい問題集を追加しました: ' + newBooks.join('、') + '（グループ・公開を設定してください）';
   if (notes.length) msg += '\n\n' + notes.join('\n');
@@ -688,7 +712,31 @@ function menuCheck() {
     });
   }
 
+  var ush = ss.getSheetByName(SHEET.UNIS);
+  if (ush && ush.getLastRow() > 1) {
+    var uvv = ush.getDataRange().getValues();
+    var ucc = colIndex_(uvv[0]);
+    ush.getRange(2, 1, uvv.length - 1, uvv[0].length).setBackground(null);
+    for (var x = 1; x < uvv.length; x++) {
+      var uname = String(uvv[x][ucc['大学']] || '').trim();
+      if (uname && !uniNames[uname]) { ush.getRange(x + 1, ucc['大学'] + 1).setBackground(red); problems.push('大学シート' + (x + 1) + '行目: 大学「' + uname + '」が問題集シートにない'); }
+      if (!String(uvv[x][ucc['画像']] || '').trim()) continue;
+      var imgId = fileIdOf_(uvv[x][ucc['画像']]);
+      try {
+        if (!imgId) throw new Error('リンクの形が違う');
+        var img = DriveApp.getFileById(imgId);
+        if (img.isTrashed()) throw new Error('ゴミ箱');
+        if (!/^image\//.test(img.getMimeType())) throw new Error('画像ではない');
+        if (img.getSharingAccess() !== DriveApp.Access.ANYONE_WITH_LINK) share_(img);
+      } catch (err) {
+        ush.getRange(x + 1, ucc['画像'] + 1).setBackground(red);
+        problems.push('大学シート' + (x + 1) + '行目: 「' + uname + '」の画像が開けない（' + err.message + '）');
+      }
+    }
+  }
+
   fillBookIds_();
+  fillUniRows_();
   bumpCatalogVer_();
   bumpUserVer_();
   SpreadsheetApp.getUi().alert(problems.length ? '要修正 ' + problems.length + '件（赤い欄）\n\n' + problems.slice(0, 30).join('\n') : '問題は見つかりませんでした。');
@@ -722,6 +770,7 @@ function setupCore_() {
   var ss = SpreadsheetApp.getActive();
   ensureSheet_(SHEET.BOOKS, HEAD.BOOKS);
   ensureSheet_(SHEET.ITEMS, HEAD.ITEMS);
+  ensureSheet_(SHEET.UNIS, HEAD.UNIS);
   ensureSheet_(SHEET.USERS, HEAD.USERS);
   ensureSheet_(SHEET.FAVS, HEAD.FAVS);
   ensureSheet_(SHEET.LOGS, HEAD.LOGS);
@@ -745,6 +794,7 @@ function setupCore_() {
   }
 
   rootFolder_();
+  fillUniRows_();
   applyValidation_();
 
   var handlers = ScriptApp.getProjectTriggers().map(function (t) { return t.getHandlerFunction(); });
@@ -831,6 +881,7 @@ function syncBooks_(force) {
   toDelete.sort(function (a, b) { return b - a; }).forEach(function (rowNo) { sh.deleteRow(rowNo); });
 
   fillBookIds_();
+  fillUniRows_();
   bumpCatalogVer_();
   props.setProperty('booksHash', hash);
   var parts = [];
@@ -1013,6 +1064,66 @@ function fillBookIds_() {
     max++;
     sh.getRange(i + 1, col['ID'] + 1).setValue('b' + ('000' + max).slice(-4));
   }
+}
+
+/** 「大学」シートに、問題集シートにある大学をすべて並べる（足りない行だけ足す。画像・ひとことは触らない） */
+function fillUniRows_() {
+  var ss = SpreadsheetApp.getActive();
+  var us = ss.getSheetByName(SHEET.UNIS);
+  if (!us) return;
+  var have = {};
+  if (us.getLastRow() > 1) us.getRange(2, 1, us.getLastRow() - 1, 1).getValues().forEach(function (r) { have[String(r[0]).trim()] = true; });
+  var bv = sheet_(SHEET.BOOKS).getDataRange().getValues();
+  var bc = colIndex_(bv[0]);
+  for (var i = 1; i < bv.length; i++) {
+    var u = String(bv[i][bc['大学']] || '').trim();
+    if (!u || have[u]) continue;
+    have[u] = true;
+    appendSafe_(us, HEAD.UNIS.map(function (h) { return h === '大学' ? u : ''; }));
+  }
+}
+
+/** 返り値: {大学名: {row, fid}}（「大学」シートの画像欄の今の値） */
+function uniImageMap_() {
+  var us = SpreadsheetApp.getActive().getSheetByName(SHEET.UNIS);
+  var m = {};
+  if (!us || us.getLastRow() < 2) return m;
+  var v = us.getDataRange().getValues();
+  var c = colIndex_(v[0]);
+  for (var i = 1; i < v.length; i++) {
+    var u = String(v[i][c['大学']] || '').trim();
+    if (u) m[u] = { row: i + 1, fid: fileIdOf_(v[i][c['画像']]) };
+  }
+  return m;
+}
+
+/**
+ * 大学のフォルダ（直下）に置いた画像を、その大学の画像として登録する。
+ * 画像が複数あれば一番新しいもの。登録済みの画像と同じなら何もしない。返り値: 登録したら true
+ */
+function importUniImage_(uniFolder, map) {
+  var latest = null;
+  var files = uniFolder.getFiles();
+  while (files.hasNext()) {
+    var f = files.next();
+    if (!/^image\//.test(f.getMimeType()) || f.isTrashed()) continue;
+    if (!latest || latest.getLastUpdated() < f.getLastUpdated()) latest = f;
+  }
+  if (!latest) return false;
+  var uni = uniFolder.getName();
+  var cur = map[uni];
+  if (cur && cur.fid === latest.getId()) return false;
+  share_(latest);
+  var us = sheet_(SHEET.UNIS);
+  var col = colIndex_(HEAD.UNIS);
+  var url = 'https://drive.google.com/file/d/' + latest.getId() + '/view';
+  if (cur) us.getRange(cur.row, col['画像'] + 1).setValue(url);
+  else {
+    appendSafe_(us, HEAD.UNIS.map(function (h) { return h === '大学' ? uni : h === '画像' ? url : ''; }));
+    map[uni] = { row: us.getLastRow(), fid: latest.getId() };
+  }
+  if (cur) cur.fid = latest.getId();
+  return true;
 }
 
 /**

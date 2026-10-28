@@ -60,14 +60,33 @@
   .tabs::-webkit-scrollbar{display:none}
   .tab{flex:none;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:13px;font-weight:700;color:var(--muted)}
   .tab.on{background:var(--navy);border-color:var(--navy);color:#fff}
-  .unis{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:12px}
-  .uni{padding:14px 12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left}
+  .unis{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:12px}
+  .uni{display:flex;flex-direction:column;padding:0;overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left}
   .uni:active{background:var(--soft)}
-  .uni .t{font-weight:700;font-size:15px}
-  .uni .s{font-size:11px;color:var(--muted)}
+  .uni:active .pic img{transform:scale(1.02)}
+  .uni .ub{padding:10px 12px 12px}
+  .uni .t{font-weight:700;font-size:15px;line-height:1.35}
+  .uni .s{font-size:11px;color:var(--muted);margin-top:1px}
+
+  /* 大学の画像（16:9）。画像がないときは同じ大きさの枠だけ残し、大学名の頭文字を薄く出す */
+  .pic{position:relative;display:block;aspect-ratio:16/9;background:var(--soft);overflow:hidden;flex:none}
+  .pic::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(23,38,66,.025) 14px 15px)}
+  .pic .ph{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:800;color:rgba(23,38,66,.13);letter-spacing:.02em;line-height:1;user-select:none}
+  .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .3s,transform .2s}
+  .pic img.ok{opacity:1}
+  .uni .pic .ph{font-size:34px}
+  .hero{margin-top:10px;border-radius:var(--radius);border:1px solid var(--line)}
+  .hero .ph{font-size:64px}
+  .uni-note{font-size:13px;color:var(--muted);margin:6px 0 0}
+  .thumb{width:64px;border-radius:8px;border:1px solid var(--line)}
+  .bthumb{width:88px;border-radius:10px;border:1px solid var(--line);margin-top:4px}
+  .bthumb .ph{font-size:22px}
+  .thumb .ph{font-size:16px}
+  .fav .pic{margin:-12px -12px 10px;border-radius:0}
+  .fav .pic .ph{font-size:24px}
   .favs{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding:2px 16px}
   .favs::-webkit-scrollbar{display:none}
-  .fav{flex:none;width:150px;padding:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left}
+  .fav{flex:none;width:150px;padding:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:left;overflow:hidden}
   .fav .u{font-size:11px;color:var(--muted)}
   .fav .t{font-weight:700;font-size:14px;line-height:1.4;margin-top:2px}
 
@@ -274,7 +293,7 @@ function renderHome() {
     : '<div class="empty">問題集のページで ☆ を押すと、ここに並びます。</div>';
 
   var recent = (load(RECENT_KEY) || []).map(function (id) { return S.idx.books[id]; }).filter(Boolean).filter(function (b) { return !S.favs[b.id]; });
-  if (recent.length) html += '<h2 class="sec">最近見た問題集</h2><div class="list">' + recent.slice(0, 4).map(bookRow).join("") + "</div>";
+  if (recent.length) html += '<h2 class="sec">最近見た問題集</h2><div class="list">' + recent.slice(0, 4).map(bookRowThumb).join("") + "</div>";
 
   var groups = S.catalog.groups.filter(function (g) { return S.idx.unis.some(function (u) { return u.g === g; }); });
   S.idx.unis.forEach(function (u) { if (groups.indexOf(u.g) < 0) groups.push(u.g); });
@@ -286,7 +305,7 @@ function renderHome() {
   }).join("") + "</div>";
   html += '<div class="unis">' + S.idx.unis.filter(function (u) { return u.g === tab; }).map(function (u) {
     var n = u.books.length;
-    return '<button class="uni" data-uni="' + esc(u.u) + '"><div class="t">' + esc(u.u) + '</div><div class="s">' + n + "冊</div></button>";
+    return '<button class="uni" data-uni="' + esc(u.u) + '">' + pic(u.u, 400) + '<span class="ub"><span class="t" style="display:block">' + esc(u.u) + '</span><span class="s" style="display:block">' + n + "冊</span></span></button>";
   }).join("") + "</div>";
 
   $("app").innerHTML = html;
@@ -304,12 +323,14 @@ function roleNotice() {
 }
 
 function favCard(b) {
-  return '<button class="fav" data-book="' + esc(b.id) + '"><div class="u">' + esc(b.u) + '</div><div class="t">' + esc(shortName(b)) + (b.L ? lockIcon(14) : "") + "</div></button>";
+  return '<button class="fav" data-book="' + esc(b.id) + '">' + pic(b.u, 320) + '<div class="u">' + esc(b.u) + '</div><div class="t">' + esc(shortName(b)) + (b.L ? lockIcon(14) : "") + "</div></button>";
 }
 
-function bookRow(b) {
+function bookRow(b) { return bookRowOf(b, false); }
+function bookRowThumb(b) { return bookRowOf(b, true); }
+function bookRowOf(b, thumb) {
   var tags = (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.L && (S.idx.items[b.id] || []).length ? '<span class="tag sample">一部無料</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + (hasNew(b.id) ? '<span class="tag new">NEW</span>' : "");
-  return '<button class="row" data-book="' + esc(b.id) + '"><div class="main"><div class="t">' + esc(b.n) + tags + "</div>"
+  return '<button class="row" data-book="' + esc(b.id) + '">' + (thumb ? pic(b.u, 160, "thumb") : "") + '<div class="main"><div class="t">' + esc(b.n) + tags + "</div>"
     + (b.cov ? '<div class="s">' + esc(b.cov) + "</div>" : "") + "</div>"
     + (b.L ? '<span class="lock">' + lockIcon(18) + "</span>" : chev()) + "</button>";
 }
@@ -324,7 +345,9 @@ function renderUni(name) {
   if (!u) return renderHome();
   if (u.books.length === 1) { location.replace("#/b/" + encodeURIComponent(u.books[0].id)); return; }
   $("app").innerHTML = '<div class="crumb"><button data-go="#/">ホーム</button> › ' + esc(u.g) + "</div>"
+    + pic(u.u, 1200, "hero")
     + '<div class="book-head"><h1>' + esc(u.u) + "</h1></div>"
+    + (uniInfo(u.u).c ? '<p class="uni-note">' + esc(uniInfo(u.u).c) + "</p>" : "")
     + '<h2 class="sec">問題集（' + u.books.length + "冊）</h2>"
     + '<div class="list">' + u.books.map(bookRow).join("") + "</div>";
   window.scrollTo(0, 0);
@@ -335,7 +358,7 @@ function renderBook(id) {
   var b = S.idx.books[id];
   if (!b) return renderHome();
   var html = '<div class="crumb"><button data-go="#/">ホーム</button> › <button data-uni="' + esc(b.u) + '">' + esc(b.u) + "</button></div>";
-  html += '<div class="book-head"><h1>' + esc(b.n) + (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + "</h1>"
+  html += '<div class="book-head">' + pic(b.u, 240, "bthumb") + '<h1>' + esc(b.n) + (b.s ? '<span class="tag sample">サンプル</span>' : "") + (b.h ? '<span class="tag hidden">非公開</span>' : "") + "</h1>"
     + '<button class="star' + (S.favs[b.id] ? " on" : "") + '" data-fav="' + esc(b.id) + '" aria-label="お気に入り">' + starIcon(!!S.favs[b.id]) + "</button></div>";
   if (b.cov) html += '<div class="cov"><span>この1冊で対応する入試</span>' + esc(b.cov) + "</div>";
 
@@ -372,7 +395,7 @@ function renderSearch(q) {
   var tokens = q.split(/\s+/).map(norm).filter(Boolean);
   var hits = S.catalog.books.filter(function (b) { return tokens.every(function (t) { return b.hay.indexOf(t) >= 0; }); });
   $("app").innerHTML = '<h2 class="sec">「' + esc(q) + "」の検索結果（" + hits.length + "件）</h2>"
-    + (hits.length ? '<div class="list">' + hits.map(function (b) { return bookRow(b).replace('<div class="t">', '<div class="t"><span style="font-weight:500;color:var(--muted);font-size:12px;display:block">' + esc(b.u) + "</span>"); }).join("") + "</div>"
+    + (hits.length ? '<div class="list">' + hits.map(function (b) { return bookRowThumb(b).replace('<div class="t">', '<div class="t"><span style="font-weight:500;color:var(--muted);font-size:12px;display:block">' + esc(b.u) + "</span>"); }).join("") + "</div>"
       : '<div class="empty">見つかりませんでした。大学名だけ（例：明治）で検索してみてください。</div>');
 }
 
@@ -465,6 +488,18 @@ function pushRecent(id) {
   var r = (load(RECENT_KEY) || []).filter(function (x) { return x !== id; });
   r.unshift(id);
   save(RECENT_KEY, r.slice(0, 8));
+}
+
+/* ---------- 大学の画像 ---------- */
+function uniInfo(name) { return (S.catalog && S.catalog.unis && S.catalog.unis[name]) || {}; }
+/** 大学の画像（16:9）。画像が未登録・読み込み失敗のときは同じ大きさの枠に頭文字を薄く出す（レイアウトは崩れない） */
+function pic(uni, w, cls) {
+  var id = uniInfo(uni).i;
+  var src = !id ? "" : /^data:/.test(id) ? id : "https://drive.google.com/thumbnail?id=" + encodeURIComponent(id) + "&sz=w" + w;
+  var ph = String(uni || "").replace(/大学$/, "").charAt(0);
+  return '<span class="pic' + (cls ? " " + cls : "") + '" aria-hidden="true"><span class="ph">' + esc(ph) + "</span>"
+    + (src ? '<img src="' + esc(src) + '" alt="" loading="lazy" decoding="async" onload="this.classList.add(\'ok\')" onerror="this.remove()">' : "")
+    + "</span>";
 }
 
 /* ---------- 補助 ---------- */

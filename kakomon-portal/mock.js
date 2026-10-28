@@ -58,9 +58,23 @@ window.MOCK_BOOT = function () {
       groups: ["MARCH", "関関同立", "日東駒専", "産近甲龍", "その他"],
       kinds: ["戦略編", "大問別", "単語帳", "模試", "解説", "その他"],
       books: outBooks,
-      items: items.filter(function (it) { return open[it.b] || it.k === "戦略編"; })
+      items: items.filter(function (it) { return open[it.b] || it.k === "戦略編"; }),
+      // 大学の画像の見本：明治と中央だけ画像あり（ほかは画像がないときの枠の見え方を確かめる）
+      unis: {
+        "明治大学": { i: sampleImage("#172642", "#C8A55A", "MEIJI"), c: "学部ごとに出題がまったく違う。受ける学部の1冊から始めよう" },
+        "中央大学": { i: sampleImage("#24365a", "#F6F4EF", "CHUO") }
+      }
     },
     etag: "mock",
     favs: role === "guest" ? [] : ["b0002", "b0006"]
   };
 };
+
+/* プレビュー用の見本画像（16:9 の SVG） */
+function sampleImage(bg, fg, word) {
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">'
+    + '<rect width="1600" height="900" fill="' + bg + '"/>'
+    + '<circle cx="1320" cy="180" r="260" fill="' + fg + '" opacity=".18"/>'
+    + '<text x="120" y="560" font-family="Georgia,serif" font-size="220" font-weight="700" fill="' + fg + '">' + word + '</text></svg>';
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+}

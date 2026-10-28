@@ -9,16 +9,19 @@
  *   GET  ?action=boot&token=<LINE IDトークン>&etag=<前回のetag>
  *   GET  ?action=boot&key=<確認用リンクのキー>&etag=<前回のetag>   LINEログインなしの確認用（塾生の表示／未購入者の表示）
  *   POST {action:"fav", token, book, on}     お気に入りの登録/解除
- *   POST {action:"log", token, book, title}  閲覧ログ
+ *   POST {action:"log", token, kind, book, title}  閲覧ログ（kind: view=教材を開いた／book=問題集のページ／search0=検索で見つからなかった言葉）
+ *   POST {action:"done", token, book, file, title, on}  教材の「やった」チェック
  *
  * 運用メニュー（スプレッドシート上部「過去問ポータル」）
- *   教材を追加 / 選択行のPDFを差し替え / フォルダから取り込み / 点検 / 初期セットアップ
+ *   教材を追加 / 選択行のPDFを差し替え / フォルダから取り込み / 点検 / 利用状況のまとめ / 初期セットアップ
+ *
+ * 毎週月曜の朝7時に「利用状況」シートを作り直し、「利用状況（週ごと）」に1行足す（weeklyReport）。
  */
 
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 11;
+var SETUP_VERSION = 12;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -27,7 +30,10 @@ var SHEET = {
   USERS: '利用者',
   CONFIG: '設定',
   FAVS: 'お気に入り',
-  LOGS: '閲覧ログ'
+  DONE: 'やった',
+  LOGS: '閲覧ログ',
+  REPORT: '利用状況',
+  REPORT_WEEKS: '利用状況（週ごと）'
 };
 
 var HEAD = {
@@ -36,7 +42,9 @@ var HEAD = {
   UNIS: ['大学', '画像', 'ひとこと', 'メモ'],
   USERS: ['LINE表示名', 'LINE ID', '初回アクセス', '最終アクセス', '氏名メモ', '購入した問題集', '購入した大学（セット）', '期限', 'スタッフ', '停止', 'メモ'],
   FAVS: ['LINE ID', '問題集ID', '登録日時'],
-  LOGS: ['日時', 'LINE ID', '種別', '問題集ID', 'タイトル']
+  DONE: ['LINE ID', '問題集ID', 'ファイルID', '教材', '日時'],
+  LOGS: ['日時', 'LINE ID', '種別', '問題集ID', 'タイトル', '区分'],
+  REPORT_WEEKS: ['週のはじめ', '来た人', '塾生', '購入者', 'ゲスト', 'スタッフ', '問題集ページを見た回数', '教材を開いた回数', 'やったチェック', '検索で見つからなかった回数']
 };
 
 var KINDS = ['戦略編', '大問別', '単語帳', '模試', '解説', 'その他'];
@@ -78,7 +86,12 @@ function doPost(e) {
     var me = auth_(body.token);
     if (!me) return json_({ status: 'unauthorized' });
     if (body.action === 'fav') return json_(toggleFav_(me.uid, String(body.book || ''), !!body.on));
-    if (body.action === 'log') { appendLog_(me.uid, 'view', String(body.book || ''), String(body.title || '')); return json_({ status: 'ok' }); }
+    if (body.action === 'log') {
+      var kind = { view: 'view', book: 'book', search0: 'search0' }[body.kind] || 'view';
+      appendLog_(me.uid, kind, String(body.book || ''), String(body.title || '').slice(0, 100), access_(me).role);
+      return json_({ status: 'ok' });
+    }
+    if (body.action === 'done') return json_(toggleDone_(me.uid, String(body.book || ''), String(body.file || ''), String(body.title || ''), !!body.on));
     return json_({ status: 'error', reason: 'unknown action' });
   } catch (err) {
     return json_({ status: 'error', reason: String(err && err.message || err) });
@@ -94,7 +107,20 @@ function boot_(token, clientEtag) {
   var me = auth_(token);
   if (!me) return { status: 'unauthorized' };
 
-  return bootResponse_({ name: me.name, role: '' }, access_(me), favsOf_(me.uid), clientEtag);
+  var access = access_(me);
+  logVisit_(me, access.role);
+  var res = bootResponse_({ name: me.name, role: '' }, access, favsOf_(me.uid), clientEtag);
+  res.done = doneOf_(me.uid);
+  return res;
+}
+
+/** その日はじめて開いたときだけ「来た」を記録する（毎回シートに書くと起動が遅くなるため） */
+function logVisit_(me, role) {
+  var cache = CacheService.getScriptCache();
+  var key = 'visit:' + Utilities.formatDate(new Date(), 'Asia/Tokyo', 'yyyyMMdd') + ':' + me.uid;
+  if (cache.get(key)) return;
+  cache.put(key, '1', 21600);
+  appendLog_(me.uid, 'visit', '', me.name, role);
 }
 
 /**
@@ -416,8 +442,156 @@ function toggleFav_(uid, book, on) {
   }
 }
 
-function appendLog_(uid, kind, book, title) {
-  appendSafe_(sheet_(SHEET.LOGS), [new Date(), uid, kind, book, title]);
+function appendLog_(uid, kind, book, title, role) {
+  appendSafe_(sheet_(SHEET.LOGS), [new Date(), uid, kind, book, title, role || '']);
+}
+
+/* ---------------- 「やった」チェック ---------------- */
+
+/** 本人がチェックした教材（ファイルID）の一覧。起動のたびにシートを読まないよう、6時間覚えておく */
+function doneOf_(uid) {
+  var cache = CacheService.getScriptCache();
+  var hit = cache.get('done:' + uid);
+  if (hit) return JSON.parse(hit);
+  var sh = sheet_(SHEET.DONE);
+  var last = sh.getLastRow();
+  var out = [];
+  if (last >= 2) sh.getRange(2, 1, last - 1, 3).getValues().forEach(function (r) { if (String(r[0]) === uid) out.push(String(r[2])); });
+  cache.put('done:' + uid, JSON.stringify(out), 21600);
+  return out;
+}
+
+function toggleDone_(uid, book, file, title, on) {
+  if (!file) return { status: 'error', reason: 'file is empty' };
+  var lock = LockService.getScriptLock();
+  lock.waitLock(10000);
+  try {
+    var sh = sheet_(SHEET.DONE);
+    var last = sh.getLastRow();
+    var values = last >= 2 ? sh.getRange(2, 1, last - 1, 3).getValues() : [];
+    var found = -1;
+    for (var i = values.length - 1; i >= 0; i--) {
+      if (String(values[i][0]) === uid && String(values[i][2]) === file) { found = i; break; }
+    }
+    if (on && found < 0) appendSafe_(sh, [uid, book, file, title, new Date()]);
+    if (!on && found >= 0) sh.deleteRow(found + 2);
+    CacheService.getScriptCache().remove('done:' + uid);
+    return { status: 'ok', on: on };
+  } finally {
+    lock.releaseLock();
+  }
+}
+
+/* ---------------- 利用状況のまとめ（毎週） ---------------- */
+
+function menuReport() {
+  var r = weeklyReport();
+  SpreadsheetApp.getActive().setActiveSheet(sheet_(SHEET.REPORT));
+  SpreadsheetApp.getUi().alert('利用状況をまとめました（' + r.range + '）\n\n来た人：' + r.people + '人');
+}
+
+/**
+ * 直近7日の閲覧ログから「利用状況」シートを作り直し、「利用状況（週ごと）」に1行足す。
+ * 時間で動くトリガー（毎週月曜7時）から呼ばれる。メニューから手で作ることもできる（そのときは週ごとの行は足さない）。
+ */
+function weeklyReport(e) {
+  var fromTrigger = !!(e && e.triggerUid);
+  var tz = 'Asia/Tokyo';
+  var end = new Date();
+  var start = new Date(end.getTime() - 7 * 86400000);
+  var prevStart = new Date(start.getTime() - 7 * 86400000);
+  var fmt = function (d) { return Utilities.formatDate(d, tz, 'yyyy/MM/dd'); };
+
+  var full = catalog_();
+  var bookById = {};
+  full.books.forEach(function (b) { bookById[b.id] = b; });
+  var roleName = { student: '塾生', buyer: '購入者', guest: 'ゲスト', staff: 'スタッフ' };
+
+  var ls = sheet_(SHEET.LOGS);
+  var lv = ls.getLastRow() >= 2 ? ls.getRange(2, 1, ls.getLastRow() - 1, 6).getValues() : [];
+  var people = {}, prevPeople = {}, roleOf = {}, books = {}, unis = {}, misses = {};
+  var pageViews = 0, opens = 0, prevViews = 0, missCount = 0;
+  lv.forEach(function (r) {
+    var t = r[0] instanceof Date ? r[0] : new Date(r[0]);
+    var uid = String(r[1]), kind = String(r[2]), bid = String(r[3]), role = String(r[5] || '');
+    if (t >= prevStart && t < start) { if (uid) prevPeople[uid] = 1; if (kind === 'book' || kind === 'view') prevViews++; return; }
+    if (t < start || t > end) return;
+    if (uid) { people[uid] = 1; if (role) roleOf[uid] = role; }
+    if (kind === 'search0') {
+      var q = String(r[4]).trim();
+      if (q) { misses[q] = (misses[q] || 0) + 1; missCount++; }
+      return;
+    }
+    if (kind !== 'book' && kind !== 'view') return;
+    var b = bookById[bid];
+    if (!b) return;
+    var x = books[bid] || (books[bid] = { pages: 0, opens: 0, who: {}, guests: {} });
+    if (kind === 'book') { x.pages++; pageViews++; } else { x.opens++; opens++; }
+    x.who[uid] = 1;
+    if (role === 'guest') x.guests[uid] = 1;
+    var y = unis[b.u] || (unis[b.u] = {});
+    y[uid] = 1;
+  });
+
+  var ds = sheet_(SHEET.DONE);
+  var dv = ds.getLastRow() >= 2 ? ds.getRange(2, 1, ds.getLastRow() - 1, 5).getValues() : [];
+  var doneWeek = 0, doneByBook = {};
+  dv.forEach(function (r) {
+    var t = r[4] instanceof Date ? r[4] : new Date(r[4]);
+    var bid = String(r[1]);
+    doneByBook[bid] = (doneByBook[bid] || 0) + 1;
+    if (t >= start && t <= end) doneWeek++;
+  });
+
+  var count = function (o) { return Object.keys(o).length; };
+  var byRole = { student: 0, buyer: 0, guest: 0, staff: 0 };
+  Object.keys(people).forEach(function (u) { if (byRole[roleOf[u]] !== undefined) byRole[roleOf[u]]++; });
+  var diff = function (now, before) { return before ? (now >= before ? '+' : '') + (now - before) + '（前の週 ' + before + '）' : ''; };
+
+  var rows = [];
+  rows.push(['利用状況のまとめ', fmt(start) + ' 〜 ' + fmt(end), '', '', '']);
+  rows.push(['作成', Utilities.formatDate(end, tz, 'yyyy/MM/dd HH:mm'), '', '', '']);
+  rows.push(['', '', '', '', '']);
+  rows.push(['■ 全体', '', '', '', '']);
+  rows.push(['来た人', count(people), diff(count(people), count(prevPeople)), '', '']);
+  rows.push(['　塾生／購入者／ゲスト／スタッフ', byRole.student + '／' + byRole.buyer + '／' + byRole.guest + '／' + byRole.staff, '', '', '']);
+  rows.push(['問題集ページを見た回数＋教材を開いた回数', pageViews + opens, diff(pageViews + opens, prevViews), '', '']);
+  rows.push(['　うち教材を開いた回数', opens, '', '', '']);
+  rows.push(['「やった」チェック', doneWeek, '', '', '']);
+  rows.push(['', '', '', '', '']);
+  rows.push(['■ 問題集（見た人が多い順）', 'ページを見た回数', '教材を開いた回数', '見た人', 'うちゲスト（＝購入見込み）']);
+  Object.keys(books).sort(function (a, b) { return count(books[b].who) - count(books[a].who) || books[b].pages - books[a].pages; }).forEach(function (bid) {
+    var x = books[bid];
+    rows.push([bookById[bid].n, x.pages, x.opens, count(x.who), count(x.guests)]);
+  });
+  rows.push(['', '', '', '', '']);
+  rows.push(['■ 大学（見た人が多い順）', '見た人', '', '', '']);
+  Object.keys(unis).sort(function (a, b) { return count(unis[b]) - count(unis[a]); }).forEach(function (u) { rows.push([u, count(unis[u]), '', '', '']); });
+  rows.push(['', '', '', '', '']);
+  rows.push(['■ 検索で見つからなかった言葉（作る候補）', '回数', '', '', '']);
+  var mk = Object.keys(misses).sort(function (a, b) { return misses[b] - misses[a]; });
+  if (!mk.length) rows.push(['（なし）', '', '', '', '']);
+  mk.slice(0, 50).forEach(function (q) { rows.push([q, misses[q], '', '', '']); });
+  rows.push(['', '', '', '', '']);
+  rows.push(['■ 「やった」チェックの合計（これまで）', '数', '', '', '']);
+  Object.keys(doneByBook).sort(function (a, b) { return doneByBook[b] - doneByBook[a]; }).forEach(function (bid) {
+    if (bookById[bid]) rows.push([bookById[bid].n, doneByBook[bid], '', '', '']);
+  });
+
+  var ss = SpreadsheetApp.getActive();
+  var rs = ss.getSheetByName(SHEET.REPORT) || ss.insertSheet(SHEET.REPORT);
+  rs.clear();
+  rs.getRange(1, 1, rows.length, 5).setValues(rows);
+  rs.getRange(1, 1).setFontSize(14).setFontWeight('bold');
+  rows.forEach(function (r, i) { if (/^■/.test(String(r[0]))) rs.getRange(i + 1, 1, 1, 5).setFontWeight('bold').setBackground('#eef1f6'); });
+  rs.setColumnWidth(1, 360);
+  rs.setColumnWidths(2, 4, 150);
+
+  if (fromTrigger) {
+    var ws = ensureSheet_(SHEET.REPORT_WEEKS, HEAD.REPORT_WEEKS);
+    appendSafe_(ws, [fmt(start), count(people), byRole.student, byRole.buyer, byRole.guest, byRole.staff, pageViews, opens, doneWeek, missCount]);
+  }
+  return { range: fmt(start) + ' 〜 ' + fmt(end), people: count(people) };
 }
 
 /* ======================================================================
@@ -432,6 +606,7 @@ function onOpen() {
     .addItem('点検（リンク切れ・設定ミスを探す）', 'menuCheck')
     .addItem('問題集リストを最新にする', 'menuSyncBooks')
     .addItem('今すぐ全員に反映', 'menuPublish')
+    .addItem('利用状況のまとめを今すぐ作る', 'menuReport')
     .addSeparator()
     .addItem('初期セットアップ（通常は自動）', 'menuSetup')
     .addToUi();
@@ -811,7 +986,9 @@ function setupCore_() {
   ensureSheet_(SHEET.UNIS, HEAD.UNIS);
   ensureSheet_(SHEET.USERS, HEAD.USERS);
   ensureSheet_(SHEET.FAVS, HEAD.FAVS);
+  ensureSheet_(SHEET.DONE, HEAD.DONE);
   ensureSheet_(SHEET.LOGS, HEAD.LOGS);
+  ensureSheet_(SHEET.REPORT_WEEKS, HEAD.REPORT_WEEKS);
 
   var cs = ss.getSheetByName(SHEET.CONFIG) || ss.insertSheet(SHEET.CONFIG);
   if (cs.getLastRow() === 0) appendSafe_(cs, ['項目', '値', '説明']);
@@ -847,9 +1024,11 @@ function setupCore_() {
   var handlers = ScriptApp.getProjectTriggers().map(function (t) { return t.getHandlerFunction(); });
   if (handlers.indexOf('onSheetEdit') < 0) ScriptApp.newTrigger('onSheetEdit').forSpreadsheet(ss).onEdit().create();
   if (handlers.indexOf('onOpenInstalled') < 0) ScriptApp.newTrigger('onOpenInstalled').forSpreadsheet(ss).onOpen().create();
+  if (handlers.indexOf('weeklyReport') < 0) ScriptApp.newTrigger('weeklyReport').timeBased().onWeekDay(ScriptApp.WeekDay.MONDAY).atHour(7).inTimezone('Asia/Tokyo').create();
 
   ss.getSheetByName(SHEET.FAVS).hideSheet();
   ss.getSheetByName(SHEET.LOGS).hideSheet();
+  ss.getSheetByName(SHEET.DONE).hideSheet();
   bumpCatalogVer_();
   return left;
 }

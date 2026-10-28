@@ -41,7 +41,7 @@ var HEAD = {
 var KINDS = ['戦略編', '大問別', '単語帳', '模試', '解説', 'その他'];
 
 var DEFAULT_CONFIG = [
-  ['ポータル名', 'THINKING 過去問ポータル', '画面上部の名前'],
+  ['ポータル名', 'THINKING 合格部屋', '画面上部の名前'],
   ['LINEチャネルID', '', 'LIFFアプリを作ったLINEログインチャネルの「チャネルID」（数字）'],
   ['CAMPUS_API_URL', 'https://script.google.com/macros/s/AKfycbwNuxYxMqk5rv4LXBHmp9QnafbowzEdGgfJv0AcZUXNJoy3zn8pfbFqD_XG0E4f4lJm/exec', '塾生判定に使う THINKING CAMPUS のAPI'],
   ['CAMPUS_URL', 'https://liff.line.me/2010454771-l3vZsfjz', '未登録の塾生に案内する THINKING CAMPUS'],
@@ -792,6 +792,9 @@ function setupCore_() {
     groups.splice(at < 0 ? groups.length : at, 0, '国公立');
     setConfig_('グループ順', groups.join(','));
   }
+
+  // 表示名を「THINKING 合格部屋」に変える（2026/10。運営が手で変えた名前はそのまま）
+  if (config_()['ポータル名'] === 'THINKING 過去問ポータル') setConfig_('ポータル名', 'THINKING 合格部屋');
 
   rootFolder_();
   fillUniRows_();

@@ -53,7 +53,7 @@ window.MOCK_BOOT = function () {
   });
   return {
     user: { name: "テスト 太郎", role: role },
-    cfg: { title: "THINKING 過去問ポータル", buyUrl: "https://lin.ee/yJ8MFVb", lineUrl: "https://lin.ee/yJ8MFVb", campusUrl: "#", newDays: 14 },
+    cfg: { title: "THINKING 合格部屋", buyUrl: "https://lin.ee/yJ8MFVb", lineUrl: "https://lin.ee/yJ8MFVb", campusUrl: "#", newDays: 14 },
     catalog: {
       groups: ["MARCH", "関関同立", "日東駒専", "産近甲龍", "その他"],
       kinds: ["戦略編", "大問別", "単語帳", "模試", "解説", "その他"],

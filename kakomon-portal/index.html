@@ -149,7 +149,7 @@
   .vbtns #v-req{flex:0 0 34%}
   .btn.ghost-dark{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45);font-size:14px}
 
-  /* 下から出るシート（修正依頼・志望校） */
+  /* 下から出るシート（修正依頼） */
   .sheet{position:fixed;inset:0;z-index:90;background:rgba(15,22,36,.5);display:flex;align-items:flex-end;justify-content:center}
   .sheet[hidden]{display:none}
   .sheet-in{width:100%;max-width:560px;max-height:92vh;overflow:auto;background:#fff;border-radius:18px 18px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom))}
@@ -170,21 +170,36 @@
   .shot button{position:absolute;top:2px;right:2px;width:22px;height:22px;border-radius:50%;background:rgba(0,0,0,.6);color:#fff;font-size:13px;line-height:22px}
   .addshot{height:42px;font-size:14px;margin-top:8px}
   .req-note{font-size:12px;line-height:1.6;color:var(--muted);margin:14px 2px 0}
-  .goal-g{margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--muted)}
-  .goal-opts{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
 
-  /* ホーム：前回のつづき・志望校 */
+  /* ホーム：前回のつづき */
   .resume{display:flex;align-items:center;gap:12px;width:100%;margin-top:16px;padding:12px 14px;background:var(--navy);color:#fff;border-radius:var(--radius);text-align:left}
   .resume .k{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--gold)}
   .resume .t{font-weight:700;font-size:14px;line-height:1.45;margin-top:2px}
   .resume .s{font-size:12px;color:#c9d0de;margin-top:1px}
   .resume .main{flex:1;min-width:0}
   .resume .go{flex:none;width:36px;height:36px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center}
-  .sec-row{display:flex;align-items:baseline;justify-content:space-between}
-  .sec-row button{font-size:12px;font-weight:700;color:var(--navy);padding:4px 2px}
-  .goal-empty{display:flex;align-items:center;gap:12px;margin-top:16px;padding:14px;background:#fff;border:1px dashed #cfc8b8;border-radius:var(--radius)}
-  .goal-empty p{flex:1;margin:0;font-size:13px;line-height:1.6;color:var(--muted)}
-  .goal-empty .btn{width:auto;margin:0;padding:0 16px;height:40px;font-size:14px}
+  /* 修正依頼のお知らせ・一覧 */
+  .fixnote{margin-top:16px;padding:14px;border-radius:var(--radius);background:#fff;border:1px solid var(--line);border-left:4px solid #2f8f5b}
+  .fixnote.no{border-left-color:#9a958a}
+  .fixnote .k{font-size:11px;font-weight:700;letter-spacing:.08em;color:#2f8f5b}
+  .fixnote.no .k{color:var(--muted)}
+  .fixnote .t{font-weight:700;font-size:14px;margin-top:4px;line-height:1.5}
+  .fixnote .s{font-size:12px;color:#4a4f5c;margin-top:4px;line-height:1.7;white-space:pre-line}
+  .fixnote .acts{display:flex;gap:8px;margin-top:10px}
+  .fixnote .acts .btn{height:40px;font-size:13px;margin:0}
+  .menu-link{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:10px;padding:12px 14px;background:#fff;border:1px solid var(--line);border-radius:12px;font-size:14px;font-weight:700;color:var(--navy);text-align:left}
+  .st{display:inline-block;font-size:10px;font-weight:700;padding:2px 8px;border-radius:999px}
+  .st.done{background:#e3f3ea;color:#2f8f5b}
+  .st.wait{background:#fdf1d8;color:#9a6b00}
+  .st.no{background:#efede8;color:#6f6a5f}
+  .reqcard{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin-bottom:8px}
+  .reqcard .h{display:flex;justify-content:space-between;align-items:center;font-size:11px;color:var(--muted)}
+  .reqcard .t{font-weight:700;font-size:14px;margin-top:4px;line-height:1.5}
+  .reqcard .q{font-size:12px;color:#4a4f5c;margin-top:4px;line-height:1.6}
+  .reqcard .a{margin-top:8px;padding:8px 10px;background:#f4faf6;border-radius:8px;font-size:12px;line-height:1.6;color:#2b4a39;white-space:pre-line}
+  .reqcard .a.no{background:#f7f5f0;color:#4a4f5c}
+  .reqcard .a b{display:block;font-size:11px;color:#2f8f5b}
+  .reqcard .a.no b{color:var(--muted)}
   .legal{margin:28px 2px 0;font-size:11px;line-height:1.7;color:var(--muted);text-align:center}
   .vnote{margin:0 0 8px;font-size:11px;line-height:1.5;color:#c9d0de;text-align:center}
   .locked-box{margin-top:18px;padding:20px 16px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);text-align:center}
@@ -264,15 +279,6 @@
   </div>
 </div>
 
-<div class="sheet" id="goal" hidden role="dialog" aria-modal="true" aria-labelledby="goal-h">
-  <div class="sheet-in">
-    <div class="sheet-h"><b id="goal-h">志望校を選ぶ</b><button class="sheet-x" id="goal-x" aria-label="閉じる">×</button></div>
-    <p class="req-note" style="margin-top:0">選んだ大学の問題集が、ホームのいちばん上に並びます（5校まで）。</p>
-    <div id="goal-list"></div>
-    <button class="btn gold" id="goal-save">決める</button>
-  </div>
-</div>
-
 <div class="toast" id="toast"></div>
 
 <script>
@@ -288,7 +294,7 @@ var CACHE_KEY = LINK_KEY ? "kp.cache.link." + LINK_KEY.slice(0, 6) : "kp.cache.v
 var RECENT_KEY = "kp.recent.v1";
 var TAB_KEY = "kp.tab.v1";
 
-var S = { user: null, cfg: { newDays: 14 }, catalog: null, etag: "", favs: {}, done: {}, idx: null };
+var S = { user: null, cfg: { newDays: 14 }, catalog: null, etag: "", favs: {}, done: {}, reqs: [], idx: null };
 var $ = function (id) { return document.getElementById(id); };
 
 /* ---------- 保存（ブラウザ保存が使えない環境でも動くように try で包む） ---------- */
@@ -296,7 +302,7 @@ function load(key) { try { return JSON.parse(localStorage.getItem(key) || "null"
 function save(key, v) { try { localStorage.setItem(key, JSON.stringify(v)); } catch (e) {} }
 function persist() {
   if (PREVIEW) return;
-  save(CACHE_KEY, { user: S.user, cfg: S.cfg, catalog: S.catalog, etag: S.etag, favs: Object.keys(S.favs), done: Object.keys(S.done) });
+  save(CACHE_KEY, { user: S.user, cfg: S.cfg, catalog: S.catalog, etag: S.etag, favs: Object.keys(S.favs), done: Object.keys(S.done), reqs: S.reqs });
 }
 
 /* ---------- 起動：前回の内容をすぐ表示 → 裏で最新を取りに行く ---------- */
@@ -338,8 +344,8 @@ function syncBoot() {
       if (res.status !== "ok") throw new Error(res.reason || "error");
       try { sessionStorage.removeItem("kp.relogin"); } catch (e) {}
       var same = function (a, o) { return JSON.stringify((a || []).slice().sort()) === JSON.stringify(Object.keys(o).sort()); };
-      var changed = !!res.catalog || !same(res.favs, S.favs) || !same(res.done, S.done) || !S.user || S.user.role !== res.user.role;
-      applyState({ user: res.user, cfg: res.cfg, catalog: res.catalog || S.catalog, etag: res.etag, favs: res.favs, done: res.done || [] });
+      var changed = !!res.catalog || !same(res.favs, S.favs) || !same(res.done, S.done) || JSON.stringify(res.reqs || []) !== JSON.stringify(S.reqs || []) || !S.user || S.user.role !== res.user.role;
+      applyState({ user: res.user, cfg: res.cfg, catalog: res.catalog || S.catalog, etag: res.etag, favs: res.favs, done: res.done || [], reqs: res.reqs || [] });
       persist();
       if (changed) render();
       else renderMe();
@@ -369,6 +375,7 @@ function applyState(o) {
   S.etag = o.etag || S.etag;
   if (o.favs) { S.favs = {}; o.favs.forEach(function (id) { S.favs[id] = true; }); }
   if (o.done) { S.done = {}; o.done.forEach(function (f) { S.done[f] = true; }); }
+  if (o.reqs) S.reqs = o.reqs;
 }
 
 /* ---------- 一覧の索引 ---------- */
@@ -400,6 +407,7 @@ function render() {
   var h = location.hash.replace(/^#\/?/, "");
   var parts = h.split("/");
   if (parts[0] === "b" && parts[1]) return renderBook(decodeURIComponent(parts[1]));
+  if (parts[0] === "reqs") return renderReqs();
   if (parts[0] === "u" && parts[1]) return renderUni(decodeURIComponent(parts[1]));
   renderHome();
 }
@@ -419,15 +427,14 @@ function renderHome(keepScroll) {
   var html = topHero();
   html += '<p class="lead">過去5年の入試を<b>1問残らず解いて分析</b>し、学部ごとの出題を<b>オリジナル問題で再現</b>した対策教材が、ここにそろっています。</p>';
   html += roleNotice();
+  html += fixNotice();
   html += resumeCard();
-  html += goalSection();
+  if ((S.reqs || []).length) html += '<button class="menu-link" data-go="#/reqs">送った修正依頼（' + S.reqs.length + "件）" + chev() + "</button>";
 
-  var goalUnis = goalsOf();
-  var inGoal = function (b) { return goalUnis.indexOf(b.u) >= 0; };
-  var favs = Object.keys(S.favs).map(function (id) { return S.idx.books[id]; }).filter(Boolean).filter(function (b) { return !inGoal(b); });
+  var favs = Object.keys(S.favs).map(function (id) { return S.idx.books[id]; }).filter(Boolean);
   if (favs.length) html += '<h2 class="sec">お気に入り</h2><div class="favs">' + favs.map(favCard).join("") + "</div>";
 
-  var recent = (load(RECENT_KEY) || []).map(function (id) { return S.idx.books[id]; }).filter(Boolean).filter(function (b) { return !S.favs[b.id] && !inGoal(b); });
+  var recent = (load(RECENT_KEY) || []).map(function (id) { return S.idx.books[id]; }).filter(Boolean).filter(function (b) { return !S.favs[b.id]; });
   if (recent.length) html += '<h2 class="sec">最近見た問題集</h2><div class="list">' + recent.slice(0, 4).map(bookRowThumb).join("") + "</div>";
 
   var groups = S.catalog.groups.filter(function (g) { return S.idx.unis.some(function (u) { return u.g === g; }); });
@@ -464,63 +471,6 @@ function resumeCard() {
     + '<span class="t" style="display:block">' + esc(list[i].t) + '</span><span class="s" style="display:block">' + esc(b.n) + "</span></span>"
     + '<span class="go"><svg width="16" height="16" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></span></button>';
 }
-
-/* ---------- 志望校（お気に入りと同じ記録に "u:大学名" で入れる） ---------- */
-function goalsOf() {
-  return Object.keys(S.favs).filter(function (k) { return k.indexOf("u:") === 0; }).map(function (k) { return k.slice(2); })
-    .filter(function (u) { return S.idx && S.idx.unis.some(function (x) { return x.u === u; }); });
-}
-function goalSection() {
-  var goals = goalsOf();
-  if (!goals.length) {
-    return '<div class="goal-empty"><p>志望校を選ぶと、その大学の問題集がここに並びます。</p><button class="btn" data-goalpick="1">志望校を選ぶ</button></div>';
-  }
-  var html = '<div class="sec-row"><h2 class="sec">志望校の問題集</h2><button data-goalpick="1">変更</button></div><div class="list">';
-  goals.forEach(function (u) {
-    S.idx.unis.filter(function (x) { return x.u === u; }).forEach(function (x) {
-      x.books.forEach(function (b) { html += bookRowThumb(b); });
-    });
-  });
-  return html + "</div>";
-}
-var GOAL_PICK = {};
-function openGoalPicker() {
-  GOAL_PICK = {};
-  goalsOf().forEach(function (u) { GOAL_PICK[u] = true; });
-  var groups = [];
-  S.idx.unis.forEach(function (u) { if (groups.indexOf(u.g) < 0) groups.push(u.g); });
-  $("goal-list").innerHTML = groups.map(function (g) {
-    return '<div class="goal-g">' + esc(g) + '</div><div class="goal-opts">' + S.idx.unis.filter(function (u) { return u.g === g; }).map(function (u) {
-      return '<button class="chip' + (GOAL_PICK[u.u] ? " on" : "") + '" data-goaluni="' + esc(u.u) + '">' + esc(u.u) + "</button>";
-    }).join("") + "</div>";
-  }).join("");
-  $("goal").hidden = false;
-}
-$("goal-list").addEventListener("click", function (ev) {
-  var el = ev.target.closest("[data-goaluni]");
-  if (!el) return;
-  var u = el.dataset.goaluni;
-  if (!GOAL_PICK[u] && Object.keys(GOAL_PICK).length >= 5) return toast("志望校は5校まで選べます");
-  if (GOAL_PICK[u]) delete GOAL_PICK[u]; else GOAL_PICK[u] = true;
-  el.classList.toggle("on", !!GOAL_PICK[u]);
-});
-$("goal-x").addEventListener("click", function () { $("goal").hidden = true; });
-$("goal-save").addEventListener("click", function () {
-  var before = goalsOf();
-  var changes = [];
-  before.forEach(function (u) { if (!GOAL_PICK[u]) changes.push(["u:" + u, false]); });
-  Object.keys(GOAL_PICK).forEach(function (u) { if (before.indexOf(u) < 0) changes.push(["u:" + u, true]); });
-  changes.forEach(function (c) { if (c[1]) S.favs[c[0]] = true; else delete S.favs[c[0]]; });
-  persist();
-  $("goal").hidden = true;
-  renderHome(true);
-  if (!changes.length) return;
-  toast("志望校を保存しました");
-  if (PREVIEW || LINK_KEY) return;
-  Promise.all(changes.map(function (c) { return post({ action: "fav", token: idToken(), book: c[0], on: c[1] }); })).then(function (rs) {
-    if (rs.some(function (r) { return !r || r.status !== "ok"; })) throw new Error();
-  }).catch(function () { toast("保存できなかった志望校があります。もう一度お試しください。"); });
-});
 
 /* ---------- 修正依頼（どの教材か・だれからかは自動。写真は送る前に端末で小さくする） ---------- */
 var REQ_KINDS = ["誤字・脱字", "答えが違う", "解説が分かりにくい", "表示されない", "その他"];
@@ -593,6 +543,49 @@ $("req-send").addEventListener("click", function () {
   }).catch(function () { toast("送れませんでした。電波の良い場所でもう一度お試しください"); })
     .then(function () { btn.disabled = false; btn.textContent = "送る"; });
 });
+
+/* ---------- 修正依頼の結果（運営が「状態」と「生徒へのひとこと」を入れると出る） ---------- */
+var REQ_SEEN_KEY = "kp.reqseen.v1";
+var REQ_STATE = { done: "修正しました", wait: "確認中", no: "このままにします" };
+/** ホームの上：まだ見ていない「修正しました／このままにします」を1件出す */
+function fixNotice() {
+  var seen = load(REQ_SEEN_KEY) || [];
+  var fresh = (S.reqs || []).filter(function (r) { return r.s !== "wait" && seen.indexOf(r.id) < 0; });
+  if (!fresh.length) return "";
+  var r = fresh[0];
+  var it = findItemByFile(r.f);
+  var body = r.d + "に送ってもらった「" + r.k + (r.p ? "（" + r.p + "ページ）" : "") + "」" + (r.s === "done" ? "を直しました。ありがとうございます！" : "について確認しました。")
+    + (r.r ? "\n" + r.r : "");
+  return '<div class="fixnote' + (r.s === "no" ? " no" : "") + '"><div class="k">' + (r.s === "done" ? "✔ 修正しました" : "確認しました") + (fresh.length > 1 ? "（ほかに" + (fresh.length - 1) + "件）" : "") + "</div>"
+    + '<div class="t">' + esc(r.b) + "／" + esc(r.t) + '</div><div class="s">' + esc(body) + "</div>"
+    + '<div class="acts">' + (it && r.s === "done" ? '<button class="btn gold" data-reqopen="' + esc(r.id) + '">直った教材を開く</button>' : "")
+    + '<button class="btn ghost" data-reqseen="' + esc(r.id) + '">閉じる</button></div></div>';
+}
+function findItemByFile(f) {
+  if (!f || !S.idx) return null;
+  for (var b in S.idx.items) {
+    var list = S.idx.items[b];
+    for (var i = 0; i < list.length; i++) if (list[i].f === f && !list[i].L) return { b: b, i: i };
+  }
+  return null;
+}
+function markReqSeen(id) {
+  var seen = (load(REQ_SEEN_KEY) || []).filter(function (x) { return x !== id; });
+  seen.push(id);
+  save(REQ_SEEN_KEY, seen.slice(-60));
+}
+function renderReqs() {
+  var html = '<div class="crumb"><button data-go="#/">ホーム</button> › 送った修正依頼</div><div class="book-head"><h1 style="font-size:20px">送った修正依頼</h1></div><div style="margin-top:12px">';
+  (S.reqs || []).forEach(function (r) {
+    markReqSeen(r.id);
+    html += '<div class="reqcard"><div class="h"><span>' + esc(r.d) + ' 送信</span><span class="st ' + r.s + '">' + REQ_STATE[r.s] + "</span></div>"
+      + '<div class="t">' + esc(r.b) + "／" + esc(r.t) + '</div><div class="q">' + esc(r.k) + (r.p ? "・" + esc(r.p) + "ページ" : "") + (r.x ? "：" + esc(r.x) : "") + "</div>"
+      + (r.r ? '<div class="a' + (r.s === "no" ? " no" : "") + '"><b>THINKINGより</b>' + esc(r.r) + "</div>" : "") + "</div>";
+  });
+  if (!(S.reqs || []).length) html += '<div class="empty">まだ送った修正依頼はありません。</div>';
+  $("app").innerHTML = html + "</div>";
+  window.scrollTo(0, 0);
+}
 
 function legalNote() {
   return '<p class="legal">教材やリンクの共有・転載・譲渡は禁止です。違反が確認された場合は、法的措置をとることがあります。© THINKING</p>';
@@ -761,10 +754,18 @@ function renderMessage(title, body) {
 
 /* ---------- 操作 ---------- */
 document.addEventListener("click", function (ev) {
-  var el = ev.target.closest("[data-book],[data-uni],[data-go],[data-tab],[data-fav],[data-item],[data-done],[data-goalpick]");
+  var el = ev.target.closest("[data-book],[data-uni],[data-go],[data-tab],[data-fav],[data-item],[data-done],[data-reqseen],[data-reqopen]");
   if (!el) return;
   var d = el.dataset;
-  if (d.goalpick) return openGoalPicker();
+  if (d.reqseen) { markReqSeen(d.reqseen); return renderHome(true); }
+  if (d.reqopen) {
+    var r = (S.reqs || []).filter(function (x) { return x.id === d.reqopen; })[0];
+    var at = r && findItemByFile(r.f);
+    markReqSeen(d.reqopen);
+    renderHome(true);
+    if (at) openItem(at.b, at.i);
+    return;
+  }
   if (d.fav) return toggleFav(d.fav, el);
   if (d.done) return toggleDone(d.done, el);
   if (d.item) { var p = d.item.split(":"); return openItem(p[0], Number(p[1])); }

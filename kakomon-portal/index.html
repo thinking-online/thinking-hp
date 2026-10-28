@@ -163,7 +163,7 @@
   /* 共有・転載の禁止の表記 */
   .legal{margin:28px 2px 0;font-size:11px;line-height:1.7;color:var(--muted);text-align:center}
 
-  /* 印刷：透かし入りのページ画像だけを紙に出す */
+  /* 印刷：ページ画像だけを紙に出す */
   .print-area{display:none}
   .print-page{margin:0 auto 16px;max-width:820px}
   .print-page img{display:block;width:100%;box-shadow:0 1px 6px rgba(0,0,0,.25)}
@@ -571,7 +571,7 @@ function toggleFav(id, el) {
 
 /* ---------- ビューア ----------
  * 教材のPDFはドライブで共有しない。開くたびに GAS が本人の権限を確かめて中身を返し、ここで描く（pdf.js）。
- * どのページにも、開いた人の名前・日付と、共有禁止の注意書きを描き込む（画面でも印刷でも消えない）。 */
+ * ドライブのリンクが出回っても、他の人は開けない。 */
 var PDFJS_BASE = "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/legacy/build/";
 var LEGAL = ["この教材には利用者の情報が記録されています。外部への共有・転載・譲渡は禁止です。",
   "違反が確認された場合は、法的措置をとることがあります。© THINKING"];
@@ -634,7 +634,7 @@ function openItem(bookId, i) {
   openPdf(it.f).then(function (o) {
     if (seq !== OPEN_SEQ) { o.doc.destroy(); return; }
     CUR_DOC = o.doc;
-    return layoutPages(o.doc, seq, wmName(o.name));
+    return layoutPages(o.doc, seq);
   }).catch(function (e) {
     if (seq !== OPEN_SEQ) return;
     if (e.code === "unauthorized" && !LINK_KEY) { relogin(); return; }
@@ -648,13 +648,9 @@ function viewerMessage(text, retry) {
   el.innerHTML = "<span>" + esc(text) + "</span>" + (retry ? '<button class="btn ghost" id="v-retry">もう一度読み込む</button>' : "");
   if (retry) $("v-retry").onclick = retry;
 }
-function wmName(serverName) {
-  var n = serverName || (S.user && S.user.name) || "";
-  return n || "利用者";
-}
 
 /** ページの枠を先に全部並べ、画面に近づいたページだけ描く（離れたら消してメモリを空ける） */
-function layoutPages(doc, seq, name) {
+function layoutPages(doc, seq) {
   return doc.getPage(1).then(function (p1) {
     if (seq !== OPEN_SEQ) return;
     var vp = p1.getViewport({ scale: 1 });
@@ -667,14 +663,14 @@ function layoutPages(doc, seq, name) {
     PAGE_OBS = new IntersectionObserver(function (ents) {
       ents.forEach(function (en) {
         var el = en.target;
-        if (en.isIntersecting) drawPage(doc, seq, el, name);
+        if (en.isIntersecting) drawPage(doc, seq, el);
         else if (el.firstChild) { el.innerHTML = ""; el.dataset.st = ""; }
       });
     }, { root: box, rootMargin: "1200px 0px" });
     Array.prototype.forEach.call(box.children, function (el) { PAGE_OBS.observe(el); });
   });
 }
-function drawPage(doc, seq, el, name) {
+function drawPage(doc, seq, el) {
   if (el.dataset.st) return;
   el.dataset.st = "1";
   doc.getPage(Number(el.dataset.p)).then(function (page) {
@@ -689,46 +685,11 @@ function drawPage(doc, seq, el, name) {
     var ctx = c.getContext("2d");
     return page.render({ canvasContext: ctx, viewport: vp }).promise.then(function () {
       if (seq !== OPEN_SEQ || el.dataset.st !== "1") return;
-      drawWatermark(ctx, c.width, c.height, name);
       el.innerHTML = "";
       el.appendChild(c);
       el.dataset.st = "2";
     });
   }).catch(function () { el.dataset.st = ""; });
-}
-
-/** 透かし：上に「○○さん専用（日付）」、下に注意書き。設定「透かし（斜め）」があり のときだけページ全体に薄く斜めの名前 */
-function drawWatermark(ctx, w, h, name) {
-  var d = new Date();
-  var who = name + " さん専用（" + d.getFullYear() + "/" + (d.getMonth() + 1) + "/" + d.getDate() + "）";
-  var font = "'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP','Noto Sans CJK JP',Meiryo,sans-serif";
-  ctx.save();
-  if (S.cfg.wmDiag === true) {
-    var fd = Math.round(w * 0.032);
-    ctx.globalAlpha = 0.07;
-    ctx.fillStyle = "#172642";
-    ctx.font = "700 " + fd + "px " + font;
-    ctx.textAlign = "center";
-    ctx.translate(w / 2, h / 2);
-    ctx.rotate(-Math.PI / 6);
-    var span = Math.hypot(w, h);
-    var gx = fd * 13, gy = fd * 9;
-    for (var y = -span / 2, row = 0; y < span / 2; y += gy, row++) {
-      for (var x = -span / 2 + (row % 2 ? gx / 2 : 0); x < span / 2; x += gx) ctx.fillText(name + " さん専用", x, y);
-    }
-    ctx.restore();
-    ctx.save();
-  }
-  var fs = Math.max(7, Math.round(w * 0.011));
-  ctx.globalAlpha = 0.9;
-  ctx.fillStyle = "#6f6551";
-  ctx.font = "500 " + fs + "px " + font;
-  ctx.textAlign = "right";
-  ctx.fillText(who + " ・ THINKING 合格部屋", w * 0.94, h * 0.022 + fs);
-  ctx.textAlign = "center";
-  ctx.fillText(LEGAL[0], w / 2, h - fs * 1.55 - h * 0.002);
-  ctx.fillText(LEGAL[1], w / 2, h - fs * 0.35 - h * 0.002);
-  ctx.restore();
 }
 
 function clearPages() {
@@ -747,7 +708,7 @@ function closeViewer(fromHistory) {
 }
 
 /* ---------- 印刷 ----------
- * 透かし入りのページ画像を作って印刷する。LINEの中では印刷できないので、10分だけ使える合言葉を付けて外のブラウザで開く。 */
+ * ページ画像を作って印刷する。LINEの中では印刷できないので、10分だけ使える合言葉を付けて外のブラウザで開く。 */
 var PRINT = (function () {
   var q = location.search;
   var g = function (k) { var m = q.match(new RegExp("[?&]" + k + "=([^&#]+)")); return m ? decodeURIComponent(m[1]) : ""; };
@@ -757,9 +718,7 @@ var PRINT = (function () {
 $("v-print").addEventListener("click", function () {
   if (!CUR) return;
   if (PREVIEW || /^mock/.test(CUR.f)) return toast("プレビューでは印刷できません");
-  var it = CUR;
-  showModal("印刷する前に", "印刷したページにも、あなたの名前と日付、注意書きが入ります。\n印刷した教材を人に渡したり、写真や画像で共有したりすることは禁止です。",
-    [{ label: "やめる", ghost: true }, { label: "印刷する", onClick: function () { startPrint(it); } }]);
+  startPrint(CUR);
 });
 function startPrint(it) {
   var inLine = !LINK_KEY && window.liff && liff.isInClient && liff.isInClient();
@@ -771,13 +730,13 @@ function startPrint(it) {
     liff.openWindow({ url: url, external: true });
   }).catch(function () { toast("印刷の準備ができませんでした。もう一度お試しください。"); });
 }
-/** 全ページを透かし入りの画像にして、印刷用の場所に並べてから印刷する */
+/** 全ページを画像にして、印刷用の場所に並べてから印刷する */
 function printPdf(fid, standalone) {
   var area = $("print-area");
   area.innerHTML = '<div class="print-head"><b>印刷の準備をしています…</b><p class="legal" id="pr-state" style="text-align:left;margin-top:6px"></p></div>';
   area.style.display = standalone ? "block" : "";
   return openPdf(fid).then(function (o) {
-    var doc = o.doc, name = wmName(o.name), n = 0, urls = [];
+    var doc = o.doc, n = 0, urls = [];
     if (standalone) document.title = o.title + "（印刷）";
     var next = function () {
       n++;
@@ -791,7 +750,6 @@ function printPdf(fid, standalone) {
         var ctx = c.getContext("2d");
         ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, c.width, c.height);
         return page.render({ canvasContext: ctx, viewport: vp }).promise.then(function () {
-          drawWatermark(ctx, c.width, c.height, name);
           return new Promise(function (ok) { c.toBlob(ok, "image/jpeg", 0.88); });
         }).then(function (blob) {
           var u = URL.createObjectURL(blob);

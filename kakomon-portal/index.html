@@ -540,6 +540,7 @@ function topHero() {
  * シート「大学」の画像欄に画像があればそちらを優先する（運営がシートだけで差し替えられるように）。
  */
 var UNI_IMG = {
+  "早稲田大学": "waseda", "慶應義塾大学": "keio", "明治大学": "meiji", "青山学院大学": "aoyama", "立教大学": "rikkyo"
 };
 var PIC_SIZES = { hero: "(max-width: 560px) 100vw, 560px", thumb: "64px", bthumb: "88px", "": "(max-width: 560px) 50vw, 280px" };
 function uniInfo(name) { return (S.catalog && S.catalog.unis && S.catalog.unis[name]) || {}; }

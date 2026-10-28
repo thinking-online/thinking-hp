@@ -547,18 +547,27 @@ $("req-send").addEventListener("click", function () {
 /* ---------- 修正依頼の結果（運営が「状態」と「生徒へのひとこと」を入れると出る） ---------- */
 var REQ_SEEN_KEY = "kp.reqseen.v1";
 var REQ_STATE = { done: "修正しました", wait: "確認中", no: "このままにします" };
-/** ホームの上：まだ見ていない「修正しました／このままにします」を1件出す */
+/**
+ * ホームの上：まだ見せていない「修正しました／確認しました」を1件出す。
+ * 1回表示したら見たことにする（次にポータルを開いたときはもう出さない）。今開いている間だけは出し続ける。
+ */
+var REQ_SHOWING = null;
 function fixNotice() {
   var seen = load(REQ_SEEN_KEY) || [];
-  var fresh = (S.reqs || []).filter(function (r) { return r.s !== "wait" && seen.indexOf(r.id) < 0; });
-  if (!fresh.length) return "";
-  var r = fresh[0];
+  var r = REQ_SHOWING && (S.reqs || []).filter(function (x) { return x.id === REQ_SHOWING; })[0];
+  if (!r) {
+    r = (S.reqs || []).filter(function (x) { return x.s !== "wait" && seen.indexOf(x.id) < 0; })[0];
+    if (!r) return "";
+    REQ_SHOWING = r.id;
+    markReqSeen(r.id);
+  }
   var it = findItemByFile(r.f);
-  var body = r.d + "に送ってもらった「" + r.k + (r.p ? "（" + r.p + "ページ）" : "") + "」" + (r.s === "done" ? "を直しました。ありがとうございます！" : "について確認しました。")
+  var what = "「" + r.k + (r.p ? "（" + r.p + "ページ）" : "") + "」";
+  var body = r.d + "に送ってもらった" + what + (r.s === "done" ? "の内容を修正しました。ご報告ありがとうございます！" : "について確認しました。")
     + (r.r ? "\n" + r.r : "");
-  return '<div class="fixnote' + (r.s === "no" ? " no" : "") + '"><div class="k">' + (r.s === "done" ? "✔ 修正しました" : "確認しました") + (fresh.length > 1 ? "（ほかに" + (fresh.length - 1) + "件）" : "") + "</div>"
+  return '<div class="fixnote' + (r.s === "no" ? " no" : "") + '"><div class="k">' + (r.s === "done" ? "✔ 修正しました" : "確認しました") + "</div>"
     + '<div class="t">' + esc(r.b) + "／" + esc(r.t) + '</div><div class="s">' + esc(body) + "</div>"
-    + '<div class="acts">' + (it && r.s === "done" ? '<button class="btn gold" data-reqopen="' + esc(r.id) + '">直った教材を開く</button>' : "")
+    + '<div class="acts">' + (it && r.s === "done" ? '<button class="btn gold" data-reqopen="' + esc(r.id) + '">修正した教材を開く</button>' : "")
     + '<button class="btn ghost" data-reqseen="' + esc(r.id) + '">閉じる</button></div></div>';
 }
 function findItemByFile(f) {
@@ -757,11 +766,11 @@ document.addEventListener("click", function (ev) {
   var el = ev.target.closest("[data-book],[data-uni],[data-go],[data-tab],[data-fav],[data-item],[data-done],[data-reqseen],[data-reqopen]");
   if (!el) return;
   var d = el.dataset;
-  if (d.reqseen) { markReqSeen(d.reqseen); return renderHome(true); }
+  if (d.reqseen) { REQ_SHOWING = "x"; return renderHome(true); }
   if (d.reqopen) {
     var r = (S.reqs || []).filter(function (x) { return x.id === d.reqopen; })[0];
     var at = r && findItemByFile(r.f);
-    markReqSeen(d.reqopen);
+    REQ_SHOWING = "x";
     renderHome(true);
     if (at) openItem(at.b, at.i);
     return;

@@ -9,9 +9,7 @@
  *   GET  ?action=boot&token=<LINE IDトークン>&etag=<前回のetag>
  *   GET  ?action=boot&key=<確認用リンクのキー>&etag=<前回のetag>   LINEログインなしの確認用（塾生の表示／未購入者の表示）
  *   POST {action:"fav", token, book, on}     お気に入りの登録/解除
- *   POST {action:"log", token, book, title}  閲覧ログ（旧画面用）
- *   POST {action:"pdf", token|key|pt, file}   教材のPDFを本人の権限を確かめて返す（ドライブのリンクは共有しない）
- *   POST {action:"printToken", token|key, file} 外のブラウザで印刷するための10分だけ使える合言葉
+ *   POST {action:"log", token, book, title}  閲覧ログ
  *
  * 運用メニュー（スプレッドシート上部「過去問ポータル」）
  *   教材を追加 / 選択行のPDFを差し替え / フォルダから取り込み / 点検 / 初期セットアップ
@@ -20,7 +18,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 10;
+var SETUP_VERSION = 11;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -77,7 +75,6 @@ function doGet(e) {
 function doPost(e) {
   try {
     var body = JSON.parse((e && e.postData && e.postData.contents) || '{}');
-    if (body.action === 'pdf' || body.action === 'printToken') return json_(pdfApi_(body));
     var me = auth_(body.token);
     if (!me) return json_({ status: 'unauthorized' });
     if (body.action === 'fav') return json_(toggleFav_(me.uid, String(body.book || ''), !!body.on));
@@ -144,59 +141,6 @@ function bootResponse_(user, access, favs, clientEtag) {
   };
   if (clientEtag !== etag) res.catalog = filterCatalog_(full, access);
   return res;
-}
-
-/* ---------------- 教材のPDF（共有リンクを使わずに渡す） ---------------- */
-
-/**
- * 教材のファイルはドライブで共有しない。開くたびに本人の権限を確かめて、中身をこの API から渡す。
- * こうすると、ドライブのリンクが出回っても他の人は開けない。返したら閲覧ログに残す。
- */
-function pdfApi_(body) {
-  var who = whoForPdf_(body);
-  if (!who) return { status: 'unauthorized' };
-  var fid = String(body.file || '');
-  var full = catalog_();
-  var item = null;
-  for (var i = 0; i < full.items.length; i++) if (full.items[i].f === fid) { item = full.items[i]; break; }
-  // 印刷用の合言葉は、発行したときに権限を確かめ、ファイルも1つに決めてある
-  if (!item || !(who.viaToken || canOpen_(full, item, who.access))) return { status: 'forbidden' };
-
-  if (body.action === 'printToken') {
-    var pt = Utilities.getUuid().replace(/-/g, '') + Utilities.getUuid().replace(/-/g, '').slice(0, 8);
-    CacheService.getScriptCache().put('pt:' + pt, JSON.stringify({ uid: who.uid, name: who.name, role: who.access.role, file: fid }), 600);
-    return { status: 'ok', pt: pt };
-  }
-  var blob = DriveApp.getFileById(fid).getBlob();
-  if (who.uid) appendLog_(who.uid, body.pt ? 'print' : 'view', item.b, item.t);
-  return { status: 'ok', name: who.name, title: item.t, data: Utilities.base64Encode(blob.getBytes()) };
-}
-
-/** だれが開こうとしているか（LINEのIDトークン／確認用リンクのキー／印刷用の合言葉） */
-function whoForPdf_(body) {
-  if (body.pt) {
-    var hit = CacheService.getScriptCache().get('pt:' + String(body.pt));
-    if (!hit) return null;
-    var t = JSON.parse(hit);
-    if (t.file !== String(body.file || '')) return null;
-    return { uid: t.uid, name: t.name, access: { role: t.role, books: {}, unis: {} }, viaToken: true };
-  }
-  if (body.key) {
-    var role = linkRole_(String(body.key));
-    return role ? { uid: '', name: '確認用リンク', access: { role: role, books: {}, unis: {} } } : null;
-  }
-  var me = auth_(body.token);
-  if (!me) return null;
-  return { uid: me.uid, name: me.name, access: access_(me) };
-}
-
-function canOpen_(full, item, acc) {
-  if (acc.role === 'staff') return true;
-  if (!item.p) return false;
-  var book = null;
-  for (var i = 0; i < full.books.length; i++) if (full.books[i].id === item.b) { book = full.books[i]; break; }
-  if (!book || !book.p) return false;
-  return acc.role === 'student' || item.fr || book.s || !!acc.books[book.id] || !!acc.unis[book.u];
 }
 
 /* ---------------- 認証（LINE IDトークンの検証） ---------------- */
@@ -548,7 +492,7 @@ function uploadMaterial(form) {
   if (form.mode === 'replace') throw new Error('差し替える教材が見つかりません');
 
   var file = bookFolder_(book.uni, form.book).createFile(blob);
-  keepPrivate_(file);
+  share_(file);
   appendItem_(form.book, KINDS.indexOf(form.kind) >= 0 ? form.kind : kindOf_(title, ''), title, file, !!form.publish, nextOrder_(form.book));
   bumpCatalogVer_();
   return { ok: true, replaced: false, title: title };
@@ -618,7 +562,7 @@ function importCore_() {
         }
         // 先に登録する。途中で止まっても登録済みなら次の実行で二重に入らない（共有・名前は「点検」でも直る）
         appendItem_(bookName, e.kind, e.title, file, false, e.order);
-        keepPrivate_(file);
+        share_(file);
         file.setName(fileNameFor_(bookName, e.title));
         added++;
       });
@@ -628,7 +572,7 @@ function importCore_() {
         var file = pdfs[name];
         var title = normalizeTitle_(name.replace(/\.pdf$/i, ''));
         appendItem_(bookName, 'その他', title, file, false, nextOrder_(bookName));
-        keepPrivate_(file);
+        share_(file);
         added++;
         notes.push(bookName + '：「' + name + '」は目次にないため仮のタイトルで追加しました');
       });
@@ -768,7 +712,6 @@ function menuCheck() {
   var ic = colIndex_(iv[0]);
   if (iv.length > 1) is.getRange(2, 1, iv.length - 1, iv[0].length).setBackground(null);
   var titleSeen = {};
-  var madePrivate = 0;
   for (var j = 1; j < iv.length; j++) {
     var rowNo = j + 1;
     var bn = String(iv[j][ic['問題集名']] || '').trim();
@@ -782,7 +725,7 @@ function menuCheck() {
     try {
       var file = DriveApp.getFileById(fid);
       if (file.isTrashed()) throw new Error('ゴミ箱');
-      if (file.getSharingAccess() !== DriveApp.Access.PRIVATE) { keepPrivate_(file); madePrivate++; }
+      if (file.getSharingAccess() !== DriveApp.Access.ANYONE_WITH_LINK) share_(file);
       var expected = fileNameFor_(bn, iv[j][ic['タイトル']]);
       if (file.getName() !== expected) file.setName(expected); // タイトルを直したらファイル名も揃える
       is.getRange(rowNo, ic['更新日'] + 1).setValue(file.getLastUpdated());
@@ -834,7 +777,6 @@ function menuCheck() {
   fillUniRows_();
   bumpCatalogVer_();
   bumpUserVer_();
-  if (madePrivate) ss.toast('教材 ' + madePrivate + '件のリンク共有を止めました（ポータルからは今までどおり開けます）', '点検', 8);
   SpreadsheetApp.getUi().alert(problems.length ? '要修正 ' + problems.length + '件（赤い欄）\n\n' + problems.slice(0, 30).join('\n') : '問題は見つかりませんでした。');
 }
 
@@ -855,7 +797,7 @@ function menuSetup() {
 function onOpenInstalled() {
   var props = PropertiesService.getScriptProperties();
   if (Number(props.getProperty('setupVer') || 0) < SETUP_VERSION) {
-    // 教材の共有止めが時間内に終わらなかったときは、次に開いたときにもう一度セットアップする
+    // 共有の戻しが時間内に終わらなかったときは、次に開いたときにもう一度セットアップする
     if (!setupCore_()) props.setProperty('setupVer', String(SETUP_VERSION));
   }
   var res = syncBooks_(false);
@@ -891,14 +833,15 @@ function setupCore_() {
 
   // 表示名を「THINKING 合格部屋」に変える（2026/10。運営が手で変えた名前はそのまま）
   if (config_()['ポータル名'] === 'THINKING 過去問ポータル') setConfig_('ポータル名', 'THINKING 合格部屋');
-  // 透かしはやめた（2026/10）。設定シートに残った行を消す
+
+  // 2026/10：教材を共有しない仕組みを一度入れて戻した。止めた共有を元に戻し、そのときの設定の行を消す
   var cv = cs.getDataRange().getValues();
   for (var ci = cv.length - 1; ci >= 1; ci--) if (cv[ci][0] === '透かし（斜め）') cs.deleteRow(ci + 1);
   CacheService.getScriptCache().remove('cfg');
 
   rootFolder_();
   fillUniRows_();
-  var left = privatizeMaterials_();
+  var left = shareMaterials_();
   applyValidation_();
 
   var handlers = ScriptApp.getProjectTriggers().map(function (t) { return t.getHandlerFunction(); });
@@ -911,11 +854,8 @@ function setupCore_() {
   return left;
 }
 
-/**
- * 教材のPDFのリンク共有をまとめて止める（2026/10。以前は「リンクを知っている人は誰でも見られる」にしていた）。
- * 時間内に終わらなかった分は、次にシートを開いたときか「点検」で止まる。
- */
-function privatizeMaterials_() {
+/** 教材のPDFを「リンクを知っている人は見られる」にそろえる。時間内に終わらなかった分は次に開いたときか「点検」で */
+function shareMaterials_() {
   var start = Date.now();
   var is = sheet_(SHEET.ITEMS);
   var iv = is.getDataRange().getValues();
@@ -927,7 +867,7 @@ function privatizeMaterials_() {
     if (Date.now() - start > 240000) { left++; continue; }
     try {
       var file = DriveApp.getFileById(fid);
-      if (file.getSharingAccess() !== DriveApp.Access.PRIVATE) keepPrivate_(file);
+      if (file.getSharingAccess() !== DriveApp.Access.ANYONE_WITH_LINK) share_(file);
     } catch (err) { /* 開けないファイルは「点検」で赤くなる */ }
   }
   return left;
@@ -1132,14 +1072,8 @@ function bookFolder_(uni, bookName) {
   return childFolder_(childFolder_(rootFolder_(), uni || 'その他'), bookName);
 }
 
-/** 大学の画像だけはリンクで公開する（ポータルにそのまま表示するため） */
 function share_(file) {
   file.setSharing(DriveApp.Access.ANYONE_WITH_LINK, DriveApp.Permission.VIEW);
-}
-
-/** 教材のPDFはリンクで共有しない。ポータルは API 経由で中身を渡す（pdfApi_） */
-function keepPrivate_(file) {
-  file.setSharing(DriveApp.Access.PRIVATE, DriveApp.Permission.NONE);
 }
 
 function fileIdOf_(v) {

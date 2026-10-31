@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英語精読｜学習院大学 2022 大問2（オーバーツーリズム）｜THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;600;700;900&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#16263f; --navy2:#22344f; --navy-ink:#0f1c30;
+  --gold:#b8954a; --gold-d:#8f7031; --gold-soft:#f3ecda;
+  --verm:#c8431f; --verm-d:#9e3417; --verm-soft:#fbe9e2;
+  --teal:#1f6b5c; --teal-d:#155346; --teal-soft:#e2f1ed;
+  --blue:#2f5c86; --blue-soft:#e7eef6;
+  --ink:#232830; --muted:#6c6a61; --faint:#9a978c;
+  --paper:#faf7f0; --surface:#ffffff; --surface2:#f5f1e8;
+  --line:#e6dfce; --line2:#d8cfb8;
+  --ok:#1f6b5c; --ng:#c8431f;
+  --shadow:0 1px 2px rgba(22,38,63,.05),0 8px 24px rgba(22,38,63,.06);
+}
+html{scroll-behavior:smooth;}
+body{font-family:"Noto Sans JP",sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;font-size:15.5px;-webkit-font-smoothing:antialiased;padding-bottom:60px;}
+.en{font-family:"Zilla Slab",serif;font-weight:600;letter-spacing:.01em;}
+em{font-style:normal;color:var(--verm);font-weight:600;}
+strong{font-weight:700;}
+
+/* HEADER */
+.top{position:sticky;top:0;z-index:200;background:var(--navy);color:#f4efe3;border-bottom:2px solid var(--gold);}
+.top-in{max-width:1080px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.mark{width:40px;height:40px;border-radius:9px;flex:none;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--navy);font-family:"Noto Serif JP",serif;font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);}
+.ttl{display:flex;flex-direction:column;line-height:1.3;}
+.ttl b{font-family:"Noto Serif JP",serif;font-size:15px;font-weight:700;letter-spacing:.02em;}
+.ttl span{font-size:10.5px;color:var(--gold);letter-spacing:.14em;font-weight:500;}
+.top-meta{margin-left:auto;font-size:10.5px;color:#c9c2b0;text-align:right;letter-spacing:.03em;}
+
+/* NAV */
+.nav{position:sticky;top:63px;z-index:190;background:rgba(250,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-in{max-width:1080px;margin:0 auto;padding:0 14px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
+.nav-in::-webkit-scrollbar{display:none;}
+.tab{flex:none;border:none;background:none;cursor:pointer;padding:12px 15px 10px;font-family:"Noto Sans JP",sans-serif;font-size:13px;font-weight:700;color:var(--muted);border-bottom:2.5px solid transparent;letter-spacing:.02em;white-space:nowrap;transition:.15s;display:flex;flex-direction:column;align-items:flex-start;gap:1px;position:relative;}
+.tab small{font-size:9px;color:var(--faint);font-weight:500;letter-spacing:.1em;}
+.tab .dot{position:absolute;top:9px;right:7px;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:0;transition:.2s;}
+.tab.done .dot{opacity:1;}
+.tab:hover{color:var(--navy);}
+.tab.on{color:var(--navy);border-bottom-color:var(--gold);}
+.tab.on small{color:var(--gold-d);}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:30px 22px 40px;}
+.panel{display:none;animation:fade .4s ease;}
+.panel.on{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.panel.on{animation:none;} html{scroll-behavior:auto;}}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold-d);text-transform:uppercase;margin-bottom:8px;}
+h1.head{font-family:"Noto Serif JP",serif;font-size:26px;font-weight:900;color:var(--navy);line-height:1.35;letter-spacing:.01em;}
+h1.head .sub{display:block;font-size:14px;font-weight:500;color:var(--muted);margin-top:8px;letter-spacing:.02em;}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold) 0,var(--gold) 46px,var(--line) 46px);margin:16px 0 26px;}
+h2.sec{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:700;color:var(--navy);margin:34px 0 14px;padding-left:13px;border-left:4px solid var(--gold);line-height:1.4;}
+h2.sec:first-child{margin-top:6px;}
+p{margin:0 0 12px;}
+p.lead{font-size:16px;color:#39404a;}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:16px;}
+.box{border-radius:11px;padding:15px 17px;margin:14px 0;font-size:14.5px;line-height:1.8;}
+.box .lab{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;padding:2px 9px;border-radius:20px;margin-bottom:7px;}
+.box.gold{background:var(--gold-soft);border:1px solid var(--line2);} .box.gold .lab{background:var(--gold);color:#fff;}
+.box.verm{background:var(--verm-soft);border:1px solid #f0cdc0;} .box.verm .lab{background:var(--verm);color:#fff;}
+.box.teal{background:var(--teal-soft);border:1px solid #bfe0d7;} .box.teal .lab{background:var(--teal);color:#fff;}
+.box.navy{background:#eef1f6;border:1px solid #d5ddea;} .box.navy .lab{background:var(--navy);color:#fff;}
+
+/* HERO (overview) */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#f3efe4;border-radius:16px;padding:30px 30px 26px;position:relative;overflow:hidden;margin-bottom:26px;}
+.hero::after{content:"設計";position:absolute;right:-6px;bottom:-24px;font-family:"Noto Serif JP",serif;font-weight:900;font-size:150px;color:rgba(184,149,74,.10);writing-mode:vertical-rl;letter-spacing:0;line-height:.8;}
+.hero .eyebrow{color:var(--gold);}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:29px;font-weight:900;line-height:1.4;position:relative;z-index:1;}
+.hero p{color:#d5cfc0;font-size:14.5px;max-width:660px;position:relative;z-index:1;margin-top:10px;}
+.thesis{position:relative;z-index:1;margin-top:16px;background:rgba(184,149,74,.14);border:1px solid rgba(184,149,74,.4);border-radius:10px;padding:11px 15px;font-size:13.5px;color:#f0e8d5;}
+.thesis b{color:var(--gold);}
+.stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1;}
+.stat b{display:block;font-family:"Zilla Slab",serif;font-size:30px;font-weight:700;color:var(--gold);line-height:1;}
+.stat span{font-size:11px;color:#c9c2b0;letter-spacing:.05em;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:720px){.grid2{grid-template-columns:1fr;}}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0 4px;}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top;}
+th{background:var(--navy);color:#f2eee2;font-weight:700;font-size:12.5px;letter-spacing:.03em;}
+tr:last-child td{border-bottom:none;}
+td.c{white-space:nowrap;font-weight:700;color:var(--navy);}
+tbody tr:nth-child(even){background:var(--surface2);}
+
+/* PARA MAP */
+.para{display:grid;grid-template-columns:52px 1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-bottom:14px;box-shadow:var(--shadow);}
+.para-n{background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:16px;gap:3px;}
+.para-n b{font-family:"Zilla Slab",serif;font-size:24px;font-weight:700;color:var(--gold);}
+.para-n span{writing-mode:vertical-rl;font-size:9.5px;letter-spacing:.14em;color:#b9c0cc;margin-top:2px;}
+.para-b{padding:15px 18px;}
+.para-b .theme{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:15px;margin-bottom:6px;}
+.para-b .theme .k{color:var(--verm);}
+.para-b p{font-size:14px;color:#3a4048;margin-bottom:8px;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.utag{font-family:"Zilla Slab",serif;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:6px;background:var(--gold-soft);color:var(--gold-d);border:1px solid var(--line2);}
+.utag.blank{background:var(--verm-soft);color:var(--verm);border-color:#f0cdc0;}
+
+/* FLOW */
+.flow{display:flex;flex-direction:column;gap:0;margin:14px 0;}
+.fnode{display:grid;grid-template-columns:34px 1fr;gap:12px;position:relative;padding-bottom:16px;}
+.fnode:not(:last-child)::before{content:"";position:absolute;left:16px;top:34px;bottom:-2px;width:2px;background:var(--line2);}
+.fdot{width:34px;height:34px;border-radius:50%;background:var(--surface);border:2px solid var(--gold);color:var(--navy);font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;z-index:1;}
+.fbody{padding-top:3px;}
+.fbody b{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:14.5px;}
+.fbody p{font-size:13.5px;color:#4a5058;margin:3px 0 0;}
+
+.sci{display:grid;grid-template-columns:1fr;gap:12px;}
+.sci .who{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:11px;padding:14px 16px;box-shadow:var(--shadow);}
+.sci .yr{font-family:"Zilla Slab",serif;font-weight:700;color:var(--gold-d);font-size:13px;text-align:right;line-height:1.4;padding-top:2px;min-width:78px;}
+.sci .yr b{display:block;font-size:15px;color:var(--navy);font-family:"Noto Serif JP",serif;}
+.sci .desc b{font-family:"Noto Serif JP",serif;color:var(--navy);}
+.sci .desc p{font-size:13.5px;color:#4a5058;margin:3px 0 0;}
+
+/* QUESTION INDEX */
+.qindex{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 22px;}
+.qjump{font-family:"Zilla Slab",serif;font-weight:700;font-size:13px;width:34px;height:34px;border-radius:8px;border:1px solid var(--line2);background:var(--surface);color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
+.qjump:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+/* QUESTION CARD */
+.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0;margin-bottom:20px;box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:120px;}
+.q-head{display:flex;align-items:center;gap:12px;padding:15px 20px;background:var(--surface2);border-bottom:1px solid var(--line);flex-wrap:wrap;}
+.q-no{font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;background:var(--navy);color:#fff;width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex:none;}
+.q-focus{flex:1;min-width:180px;}
+.q-focus .lbl{font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--gold-d);}
+.q-focus .en{display:block;font-size:15px;color:var(--navy);line-height:1.5;}
+.q-type{font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:20px;background:#fff;border:1px solid var(--line2);color:var(--muted);letter-spacing:.03em;flex:none;}
+.q-body{padding:18px 20px;}
+.q-body .askjp{font-size:13.5px;color:var(--muted);margin-bottom:12px;}
+
+.choices{display:flex;flex-direction:column;gap:8px;margin-bottom:6px;}
+.ch{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;text-align:left;width:100%;background:var(--surface);border:1.5px solid var(--line2);border-radius:10px;padding:11px 13px;cursor:pointer;font-family:inherit;font-size:14px;color:var(--ink);line-height:1.6;transition:.15s;}
+.ch:hover{border-color:var(--gold);background:#fffdf8;}
+.ch .num{font-family:"Zilla Slab",serif;font-weight:700;color:var(--navy);font-size:15px;width:26px;height:26px;border-radius:6px;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex:none;}
+.ch .mk{font-weight:900;font-size:17px;opacity:0;flex:none;width:20px;text-align:center;}
+.ch.reveal{cursor:default;}
+.ch.reveal.correct{border-color:var(--ok);background:#eef7f4;}
+.ch.reveal.correct .mk{opacity:1;color:var(--ok);}
+.ch.reveal.correct .num{background:var(--ok);color:#fff;}
+.ch.reveal.wrong{border-color:#e9d5cd;background:#fdf6f3;color:#7a6b64;}
+.ch.reveal.wrong .mk{opacity:1;color:var(--ng);}
+.ch.picked{box-shadow:0 0 0 2px var(--navy) inset;}
+
+.reveal-btn{margin-top:12px;background:var(--navy);color:#fff;border:none;border-radius:9px;padding:10px 18px;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;letter-spacing:.03em;transition:.15s;}
+.reveal-btn:hover{background:var(--navy2);}
+
+.solution{display:none;margin-top:16px;border-top:1px dashed var(--line2);padding-top:16px;}
+.solution.show{display:block;animation:fade .3s;}
+.ans-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-soft);border:1px solid var(--gold);border-radius:9px;padding:7px 14px;font-weight:700;color:var(--navy);font-size:14px;margin-bottom:12px;}
+.ans-badge .c{font-family:"Zilla Slab",serif;font-size:18px;color:var(--verm);font-weight:700;}
+
+/* EVIDENCE BOX (根拠) */
+.ev{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;}
+.ev-hd{background:var(--navy);color:#f2eee2;padding:7px 14px;font-size:10.5px;font-weight:700;letter-spacing:.1em;display:flex;align-items:center;gap:8px;}
+.ev-hd::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.ev-bd{padding:12px 15px;font-size:13.5px;line-height:1.8;}
+.ev-q{font-family:"Zilla Slab",serif;font-style:italic;color:var(--navy);background:var(--surface2);padding:9px 13px;border-radius:8px;border-left:3px solid var(--gold);margin-bottom:8px;font-size:13.5px;line-height:1.7;}
+.ev-q .h{background:#fbe9c9;font-style:normal;font-weight:700;padding:0 3px;border-radius:3px;color:var(--navy-ink);}
+
+/* CHOICE ANALYSIS */
+.chy-h{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;margin:14px 0 7px;}
+.ca-row{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:9px;margin-bottom:6px;overflow:hidden;}
+.ca-mark{flex:none;width:34px;display:flex;align-items:center;justify-content:center;font-family:"Zilla Slab",serif;font-size:16px;font-weight:700;color:#fff;}
+.ca-mark.ok{background:var(--ok);} .ca-mark.ng{background:var(--ng);}
+.ca-bd{padding:9px 13px;font-size:13px;line-height:1.75;flex:1;}
+.ca-bd .k{font-weight:700;} .ca-bd .k.o{color:var(--teal-d);} .ca-bd .k.x{color:var(--verm-d);}
+
+/* CALLOUTS */
+.co{border-radius:9px;padding:11px 14px;margin:10px 0;font-size:13.5px;line-height:1.78;}
+.co .co-lbl{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px;}
+.co.nav{background:var(--blue-soft);border-left:3px solid var(--navy);} .co.nav .co-lbl{color:var(--navy);}
+.co.gold{background:var(--gold-soft);border-left:3px solid var(--gold);} .co.gold .co-lbl{color:var(--gold-d);}
+.co.teal{background:var(--teal-soft);border-left:3px solid var(--teal);} .co.teal .co-lbl{color:var(--teal-d);}
+.co.verm{background:var(--verm-soft);border-left:3px solid var(--verm);} .co.verm .co-lbl{color:var(--verm-d);}
+
+/* DESCRIPTIVE */
+.desc-write{background:var(--teal-soft);border:1px solid #bfe0d7;border-radius:10px;padding:14px 16px;margin:6px 0;}
+.desc-write .modelans{font-family:"Noto Serif JP",serif;font-weight:600;color:var(--navy);font-size:15px;line-height:1.7;padding:8px 12px;background:#fff;border-radius:8px;border:1px solid #bfe0d7;margin:6px 0;}
+.desc-write .cnt{font-family:"Zilla Slab",serif;font-size:11px;color:var(--teal);font-weight:700;float:right;}
+
+/* READING MAP */
+.tmap{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow);}
+.tmap .h{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.tmap .h b{font-family:"Zilla Slab",serif;font-size:20px;color:var(--gold);}
+.tmap .h span{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:15px;}
+.tmap .key{font-size:11px;font-weight:700;color:var(--gold-d);letter-spacing:.05em;margin:10px 0 4px;}
+.tmap ul{margin:0;padding-left:20px;}
+.tmap li{font-size:13.5px;color:#3a4048;margin-bottom:5px;line-height:1.7;}
+.tmap li em{color:var(--verm);}
+.qbadge{font-family:"Zilla Slab",serif;font-size:10.5px;font-weight:700;color:#fff;background:var(--navy);padding:1px 7px;border-radius:5px;margin-left:4px;}
+
+/* SUMMARY */
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px;margin:14px 0;}
+.acell{background:var(--surface);border:1px solid var(--line2);border-radius:9px;padding:8px;text-align:center;box-shadow:var(--shadow);}
+.acell .qn{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.05em;}
+.acell .av{font-family:"Zilla Slab",serif;font-size:19px;font-weight:700;color:var(--verm);line-height:1.2;}
+.acell.txt .av{font-size:12px;color:var(--navy);font-family:"Noto Sans JP";font-weight:700;line-height:1.35;}
+.route{display:grid;grid-template-columns:36px 1fr;gap:12px;margin-bottom:12px;}
+.route .rn{width:36px;height:36px;border-radius:9px;background:var(--gold-soft);border:1px solid var(--line2);color:var(--gold-d);font-family:"Zilla Slab",serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex:none;}
+.route b{color:var(--navy);font-family:"Noto Serif JP",serif;}
+.route p{font-size:13.5px;color:#4a5058;margin:2px 0 0;}
+
+/* PANEL NAV */
+.pnav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);flex-wrap:wrap;}
+.btnp{display:inline-flex;align-items:center;gap:6px;padding:11px 22px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.15s;}
+.btnp:hover{background:var(--navy2);}
+.btns{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:var(--surface);color:var(--navy);border:1px solid var(--line2);border-radius:10px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:.15s;}
+.btns:hover{background:var(--surface2);}
+.pnav .sp{flex:1;}
+
+/* FOOTER */
+.foot{border-top:1px solid var(--line);margin-top:40px;padding:22px 22px 6px;text-align:center;color:var(--muted);font-size:12px;}
+.foot a{color:var(--gold-d);text-decoration:none;font-weight:700;}
+.foot .brand{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:13.5px;letter-spacing:.03em;}
+.foot .cr{font-size:10.5px;color:var(--faint);margin-top:6px;}
+
+.jump-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(22,38,63,.28);font-size:18px;z-index:150;display:none;}
+.jump-top.show{display:block;}
+
+@media (max-width:600px){
+  body{font-size:15px;}
+  .wrap{padding:22px 16px 30px;}
+  h1.head{font-size:21px;} .hero h1{font-size:22px;}
+  .q-head{padding:13px 15px;} .q-body{padding:15px;}
+  .ch{grid-template-columns:26px 1fr auto;font-size:13.5px;}
+}
+
+/* ===== 記述問題 専用コンポーネント ===== */
+.dsteps{margin:14px 0 6px;}
+.dstep{display:grid;grid-template-columns:32px 1fr;gap:12px;position:relative;padding-bottom:14px;}
+.dstep:not(:last-child)::before{content:"";position:absolute;left:15px;top:32px;bottom:0;width:2px;background:var(--line2);}
+.dstep .dn{width:32px;height:32px;border-radius:8px;background:var(--navy);color:#fff;font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;z-index:1;flex:none;}
+.dstep .db{padding-top:2px;}
+.dstep .db b{display:block;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:14px;margin-bottom:2px;}
+.dstep .db p{font-size:13.5px;color:#414851;margin:0;line-height:1.75;}
+.dstep .db .cite{font-family:"Zilla Slab",serif;font-style:italic;background:var(--surface2);border-left:3px solid var(--gold);border-radius:6px;padding:7px 11px;margin-top:6px;font-size:13px;color:var(--navy);line-height:1.7;}
+.dstep .db .cite .h{background:#fbe9c9;font-style:normal;font-weight:700;padding:0 3px;border-radius:3px;}
+
+.model{background:linear-gradient(160deg,#eef7f4,#e2f1ed);border:1px solid #bfe0d7;border-radius:11px;padding:15px 17px;margin:12px 0;}
+.model .mlab{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--teal-d);margin-bottom:7px;}
+.model .mtext{font-family:"Noto Serif JP",serif;font-weight:600;color:var(--navy);font-size:15.5px;line-height:1.9;background:#fff;border-radius:8px;padding:11px 14px;border:1px solid #bfe0d7;}
+.model .mtext + .mtext{margin-top:8px;}
+.model .mnote{font-size:12.5px;color:var(--teal-d);margin-top:8px;line-height:1.7;}
+
+/* ルーブリック（要素点・自己採点） */
+.rub{border:1px solid var(--line);border-radius:11px;overflow:hidden;margin:12px 0;background:var(--surface);}
+.rub-hd{background:var(--gold);color:#fff;padding:8px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.rub-hd .sc{background:rgba(255,255,255,.22);border-radius:20px;padding:2px 11px;font-family:"Zilla Slab",serif;font-size:13px;font-weight:700;white-space:nowrap;}
+.rub-row{display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:flex-start;padding:11px 14px;border-bottom:1px solid var(--line);cursor:pointer;transition:.15s;}
+.rub-row:last-child{border-bottom:none;}
+.rub-row:hover{background:#fffdf8;}
+.rub-row.on{background:var(--teal-soft);}
+.rub-cb{width:20px;height:20px;border-radius:5px;border:2px solid var(--line2);background:#fff;flex:none;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;transition:.15s;}
+.rub-row.on .rub-cb{background:var(--teal);border-color:var(--teal);}
+.rub-row.on .rub-cb::after{content:"✓";}
+.rub-el{font-size:13.5px;line-height:1.7;}
+.rub-el b{color:var(--navy);}
+.rub-el .must{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 7px;border-radius:20px;background:var(--verm);color:#fff;margin-left:6px;vertical-align:1px;}
+.rub-el .plus{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 7px;border-radius:20px;background:var(--surface2);color:var(--muted);border:1px solid var(--line2);margin-left:6px;vertical-align:1px;}
+.rub-pt{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;color:var(--gold-d);white-space:nowrap;padding-top:1px;}
+.rub-foot{padding:9px 14px;background:var(--surface2);font-size:12px;color:var(--muted);border-top:1px solid var(--line);}
+
+/* NG解答例 */
+.ng{background:var(--verm-soft);border:1px solid #f0cdc0;border-radius:11px;padding:14px 16px;margin:12px 0;}
+.ng .nlab{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--verm-d);margin-bottom:8px;}
+.ng-row{display:grid;grid-template-columns:auto 1fr;gap:10px;margin-bottom:9px;align-items:flex-start;}
+.ng-row:last-child{margin-bottom:0;}
+.ng-row .x{color:var(--verm);font-weight:900;font-size:14px;line-height:1.6;flex:none;}
+.ng-row .nb{font-size:13.5px;line-height:1.75;}
+.ng-row .nb .bad{display:block;font-family:"Noto Serif JP",serif;color:var(--verm-d);background:#fff;border:1px dashed #e5b8a6;border-radius:6px;padding:6px 10px;margin-bottom:4px;font-size:13.5px;}
+.ng-row .nb .why{color:#6b5c56;font-size:12.5px;}
+
+/* 語尾テンプレ表 */
+.mtx{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 6px;}
+.mtx th,.mtx td{border:1px solid var(--line2);padding:10px 12px;vertical-align:middle;}
+.mtx thead th{background:var(--navy);color:#f2eee2;font-weight:700;font-size:12.5px;}
+.mtx td.cond{background:var(--surface2);font-weight:700;color:var(--navy);font-size:12.5px;white-space:nowrap;}
+.mtx td.tr{background:#fdf6f3;} .mtx td.so{background:#eef7f4;}
+
+/* 対比マトリクス */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:720px){.vs{grid-template-columns:1fr;}}
+.vs-col{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);}
+.vs-hd{padding:11px 15px;color:#fff;font-family:"Noto Serif JP",serif;font-weight:700;font-size:15px;}
+.vs-hd small{display:block;font-family:"Zilla Slab",serif;font-size:11px;font-weight:600;opacity:.8;letter-spacing:.05em;}
+.vs-col.t .vs-hd{background:var(--verm);} .vs-col.s .vs-hd{background:var(--teal);}
+.vs-bd{background:var(--surface);padding:13px 15px;}
+.vs-bd .r{font-size:13.5px;line-height:1.7;padding:7px 0;border-bottom:1px dashed var(--line);}
+.vs-bd .r:last-child{border-bottom:none;}
+.vs-bd .r b{display:block;font-size:10.5px;letter-spacing:.06em;color:var(--faint);font-weight:700;margin-bottom:1px;}
+
+/* ===== 対訳（全訳マップ）― 中央大版レイアウト準拠 ===== */
+.tr-sec{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--faint);margin:26px 0 10px;display:flex;align-items:center;gap:9px;}
+.tr-sec::before{content:"";width:26px;height:1px;background:var(--line2);}
+.tr-sec::after{content:"";flex:1;height:1px;background:var(--line2);}
+.tr-sec b{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:14px;font-weight:700;letter-spacing:.02em;}
+.tr-row{display:grid;grid-template-columns:1fr;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-bottom:12px;box-shadow:var(--shadow);}
+.tr-en{font-family:"Zilla Slab",serif;font-size:14px;line-height:1.95;padding:15px 18px;background:var(--surface);color:var(--ink);}
+.tr-jp{font-family:"Noto Sans JP",sans-serif;font-size:13.5px;line-height:2;padding:15px 18px;background:var(--surface2);color:var(--ink);border-top:1px solid var(--line);}
+.tr-en em,.tr-jp em{color:var(--verm);font-weight:600;}
+.tr-en .ul{border-bottom:1.5px solid var(--gold);padding-bottom:1px;font-weight:700;}
+.tr-en .uln{font-size:9px;font-weight:700;color:var(--gold-d);vertical-align:super;margin-right:1px;line-height:0;font-family:"Noto Sans JP",sans-serif;}
+.tr-slot{min-height:74px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-family:"Noto Sans JP",sans-serif;font-size:12.5px;text-align:center;border:1px dashed var(--line2);border-radius:8px;background:#fdfbf6;padding:12px;line-height:1.7;}
+.tr-jp .tr-slot{background:#f2eee4;}
+.tr-points{margin:0 0 22px;padding:12px 15px;background:var(--gold-soft);border-radius:9px;border-left:3px solid var(--gold);font-size:13px;line-height:1.8;}
+.tr-points .pl{font-size:9.5px;font-weight:700;letter-spacing:.09em;color:var(--gold-d);margin-bottom:4px;}
+.tr-points ul{margin:0;padding-left:18px;}
+.tr-points li{margin-bottom:4px;}
+.tr-points li b{color:var(--navy);}
+.tr-points li em{color:var(--verm);font-weight:600;}
+@media(min-width:760px){
+  .tr-row{grid-template-columns:1fr 1fr;}
+  .tr-jp{border-top:none;border-left:1px solid var(--line);}
+}
+/* 貼り付けパネル */
+.paste{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:20px;box-shadow:var(--shadow);}
+.paste h4{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:15px;margin-bottom:6px;}
+.paste p{font-size:13px;color:var(--muted);margin-bottom:10px;}
+.paste .pgrid{display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:760px){.paste .pgrid{grid-template-columns:1fr 1fr;}}
+.paste label{display:block;font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--gold-d);margin-bottom:4px;}
+.paste textarea{width:100%;min-height:110px;border:1px solid var(--line2);border-radius:9px;padding:10px 12px;font-family:inherit;font-size:13px;line-height:1.7;resize:vertical;background:var(--paper);color:var(--ink);}
+.paste textarea:focus{outline:none;border-color:var(--gold);background:#fff;}
+.paste .prow{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.paste .msg{font-size:12.5px;color:var(--teal-d);font-weight:700;}
+
+/* ===== 和訳のみ 1カラム表示 ===== */
+.jpbox{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:6px 20px 14px;margin-bottom:12px;box-shadow:var(--shadow);}
+.jpline{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:start;}
+.jpline:last-child{border-bottom:none;}
+.jpline .n{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;color:var(--gold-d);background:var(--gold-soft);border:1px solid var(--line2);border-radius:6px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+.jpline .s{font-size:14.5px;line-height:2;color:var(--ink);}
+.jpline .s em{color:var(--verm);font-weight:600;font-style:normal;}
+
+/* ===== 同志社 追加：正答率バッジ・整序・内容一致 ===== */
+.rate{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;}
+.rate.low{background:var(--verm);color:#fff;}
+.rate.mid{background:var(--gold);color:#fff;}
+.rate.hi{background:var(--teal-soft);color:var(--teal-d);border:1px solid #bfe0d7;}
+.ratebar{height:5px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:5px;}
+.ratebar i{display:block;height:100%;border-radius:3px;}
+.ratebar i.low{background:var(--verm);} .ratebar i.mid{background:var(--gold);} .ratebar i.hi{background:var(--teal);}
+
+/* 語句整序 */
+.pool{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0;}
+.pw{font-family:"Zilla Slab",serif;font-weight:600;font-size:14px;padding:6px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--line2);color:var(--navy);}
+.pw.used{background:var(--teal-soft);border-color:var(--teal);color:var(--teal-d);}
+.pw.unused{opacity:.45;text-decoration:line-through;}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.slot{border:1.5px solid var(--line2);border-radius:9px;padding:8px 12px;text-align:center;background:var(--surface);min-width:88px;}
+.slot .k{font-size:10.5px;font-weight:700;color:var(--muted);}
+.slot .v{font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;color:var(--navy);}
+.slot.hit{border-color:var(--verm);background:var(--verm-soft);}
+.slot.hit .k{color:var(--verm-d);} .slot.hit .v{color:var(--verm-d);}
+.full{background:var(--navy);color:#f2eee2;border-radius:10px;padding:13px 16px;margin:10px 0;font-family:"Zilla Slab",serif;font-size:15px;line-height:1.8;}
+.full b{color:var(--gold);}
+.full .jp{display:block;font-family:"Noto Sans JP",sans-serif;font-size:13.5px;color:#c9c2b0;margin-top:7px;}
+.full .jp b{color:#fff;}
+
+/* 内容一致 8択 */
+.mi{border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-bottom:9px;background:var(--surface);}
+.mi-h{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:11px 13px;cursor:pointer;transition:.15s;}
+.mi-h:hover{background:#fffdf8;}
+.mi .num{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;width:28px;height:28px;border-radius:7px;background:var(--surface2);color:var(--navy);display:flex;align-items:center;justify-content:center;}
+.mi .st{font-size:13.5px;line-height:1.7;}
+.mi .mk{font-weight:900;font-size:16px;width:22px;text-align:center;opacity:0;}
+.mi.on.ok{border-color:var(--ok);} .mi.on.ok .mi-h{background:#eef7f4;} .mi.on.ok .num{background:var(--ok);color:#fff;} .mi.on.ok .mk{opacity:1;color:var(--ok);}
+.mi.on.ng{border-color:#e9d5cd;} .mi.on.ng .mi-h{background:#fdf6f3;} .mi.on.ng .mk{opacity:1;color:var(--ng);}
+.mi-d{display:none;padding:0 13px 12px;border-top:1px dashed var(--line);}
+.mi.on .mi-d{display:block;padding-top:11px;}
+.mi-d .src{font-size:12.5px;color:var(--muted);background:var(--surface2);border-left:3px solid var(--gold);border-radius:6px;padding:8px 11px;margin-bottom:7px;line-height:1.7;}
+.mi-d .jd{font-size:13px;line-height:1.75;}
+
+
+/* ===== 会話フロー表示（大問2） ===== */
+.conv{margin:14px 0;}
+.cturn{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);align-items:start;}
+.cturn:last-child{border-bottom:none;}
+.cturn .who{font-family:"Zilla Slab",serif;font-weight:700;font-size:13px;color:#fff;background:var(--navy);border-radius:6px;padding:3px 0;text-align:center;height:fit-content;}
+.cturn.john .who{background:var(--blue,#2f5c86);}
+.cturn.sarah .who{background:var(--verm);}
+.cturn.david .who{background:var(--teal);}
+.cturn.setup .who{background:var(--gold);}
+.cturn .say{font-size:14px;line-height:1.85;color:var(--ink);}
+.cturn .say b{background:#fbe9c9;color:var(--navy);padding:0 3px;border-radius:3px;font-weight:700;}
+.cturn .memo{display:block;margin-top:4px;font-size:11.5px;color:var(--gold-d);font-weight:700;}
+.cturn.setup{background:var(--surface2);border-radius:9px;padding:11px 13px;border-bottom:none;margin-bottom:6px;}
+.cturn.setup .say{font-size:13px;color:var(--muted);}
+
+
+/* ==== ダークモード無効化：端末がダークでも文字が消えないよう配色を固定 ==== */
+:root{ color-scheme: light; }
+@media (prefers-color-scheme: dark){
+  :root{
+    --navy:#16263f; --navy2:#22344f; --navy-ink:#0f1c30;
+    --gold:#b8954a; --gold-d:#8f7031; --gold-soft:#f3ecda;
+    --verm:#c8431f; --verm-d:#9e3417; --verm-soft:#fbe9e2;
+    --teal:#1f6b5c; --teal-d:#155346; --teal-soft:#e2f1ed;
+    --blue:#2f5c86; --blue-soft:#e7eef6;
+    --ink:#232830; --muted:#6c6a61; --faint:#9a978c;
+    --paper:#faf7f0; --surface:#ffffff; --surface2:#f5f1e8;
+    --line:#e6dfce; --line2:#d8cfb8;
+    --ok:#1f6b5c; --ng:#c8431f;
+  }
+  html, body{ background:var(--paper) !important; color:var(--ink) !important; }
+  /* 明るいセル上の本文は必ず濃色に固定（白文字化による消失を防ぐ） */
+  table, .mtx, .mtx td, .mtx th tbody tr, .box, .para, .para-b, .tr-points, .jpbox,
+  .q, .ch, .ev, .ca-row, .rub, .conv, .cturn, .theme, p, li, span, td, div{
+    -webkit-text-fill-color: currentColor;
+  }
+  .mtx td{ color:var(--ink); }
+  .mtx tbody tr:nth-child(even){ background:var(--surface2); }
+  .box.navy{ background:#eef1f6; }
+}
+
+
+/* ==== 文字消え防止：明色背景セル・本文の文字色を濃色で明示固定 ==== */
+.mtx td{ color:var(--ink); }                 /* 通常セル（2・3列目）を濃紺で固定 */
+.mtx td.cond{ color:var(--navy); }
+.mtx td.tr, .mtx td.so{ color:var(--ink); }
+.mtx td b, .mtx td strong{ color:var(--navy); }   /* 表内の太字も濃色 */
+.box{ color:var(--ink); }                    /* 明色ボックス本文 */
+.box.navy{ color:var(--ink); }
+.para-b, .para-b p, .theme{ color:var(--ink); }
+.para-b .theme{ color:var(--navy); }
+.tr-points, .tr-points li, .tr-points ul{ color:var(--ink); }
+.jpbox, .jpline .s{ color:var(--ink); }
+.conv .say{ color:var(--ink); }
+.route > div{ color:var(--ink); }
+.q, .ch{ color:var(--ink); }
+/* 濃色背景に乗る白系文字は従来どおり（ここで上書きしない） */
+
+
+/* ==== 表セルの背景・文字色をセル自身に直接固定（透過事故を根絶） ==== */
+.mtx thead th{ background:var(--navy) !important; color:#f2eee2 !important; }
+.mtx tbody td{ background:var(--surface) !important; color:var(--ink) !important; }
+.mtx tbody tr:nth-child(even) td{ background:var(--surface2) !important; }
+.mtx tbody td.cond{ background:var(--surface2) !important; color:var(--navy) !important; }
+.mtx tbody td b, .mtx tbody td strong{ color:var(--navy) !important; }
+@media (prefers-color-scheme: dark){
+  .mtx thead th{ background:var(--navy) !important; color:#f2eee2 !important; }
+  .mtx tbody td{ background:var(--surface) !important; color:var(--ink) !important; }
+  .mtx tbody tr:nth-child(even) td{ background:var(--surface2) !important; }
+  .mtx tbody td.cond{ background:var(--surface2) !important; color:var(--navy) !important; }
+  .mtx tbody td b, .mtx tbody td strong{ color:var(--navy) !important; }
+}
+
+
+
+
+
+/* 設問文：英文＋和訳 */
+.q-body .askjp .aen{display:block;font-size:13.5px;color:var(--ink);line-height:1.8;margin-bottom:9px;font-weight:500;}
+.q-body .askjp .ajp{display:block;font-size:13px;color:var(--ink);line-height:1.8;padding:9px 12px;background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;}
+.q-body .askjp .ajp b{color:var(--gold-d);}
+/* 選択肢の和訳 */
+.ch .cjp{display:block;margin-top:5px;padding-top:5px;border-top:1px dashed var(--line2);font-size:12.5px;color:var(--muted);line-height:1.72;font-family:"Noto Sans JP",sans-serif;}
+.ch.reveal.correct .cjp{color:var(--teal-d);border-top-color:#bfe0d6;}
+.ch.reveal.wrong .cjp{color:#8d7b73;}
+.mi .st .cjp{display:block;margin-top:5px;padding-top:5px;border-top:1px dashed var(--line2);font-size:12.5px;color:var(--muted);line-height:1.72;font-family:"Noto Sans JP",sans-serif;}
+/* 全選択肢照合ブロックの構造化 */
+.ca-bd .cj{display:block;margin:6px 0 7px;padding:7px 11px;background:var(--surface2);border-radius:7px;font-size:12.5px;color:var(--navy);line-height:1.72;}
+.ca-bd .cj b{color:var(--gold-d);}
+.ca-bd .tag,.jd .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:4px;margin-right:7px;vertical-align:1px;white-space:nowrap;}
+.ca-bd .tag.g,.jd .tag.g{background:var(--teal-soft);color:var(--teal-d);}
+.ca-bd .tag.v,.jd .tag.v{background:var(--verm-soft);color:var(--verm-d);}
+.ca-bd .tag.n,.jd .tag.n{background:var(--blue-soft);color:var(--navy);}
+/* 解答プロセス：見出しの<b>だけブロック、本文中の<b>はインラインに */
+.dstep .db p b{display:inline;font-family:"Noto Sans JP",sans-serif;font-size:inherit;color:var(--navy-ink);margin:0;font-weight:700;}
+/* 責任の移動図 */
+.flow{margin:16px 0 8px;}
+.flow-row{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:11px 0 11px 16px;border-left:3px solid var(--gold);border-bottom:1px dashed var(--line2);align-items:baseline;}
+.flow-row:last-child{border-bottom:0;}
+.flow-row .ph{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:13.5px;}
+.flow-row .bd{font-size:13.5px;color:var(--ink);line-height:1.75;}
+@media (max-width:520px){
+  .q-body .askjp .aen{font-size:13px;}
+  .ch .cjp{font-size:12px;}
+  .flow-row{grid-template-columns:1fr;gap:3px;padding-left:12px;}
+}
+@media (prefers-color-scheme: dark){
+  .q-body .askjp .aen{color:var(--ink) !important;}
+  .q-body .askjp .ajp{background:var(--surface2) !important;color:var(--ink) !important;}
+  .ch .cjp,.mi .st .cjp{color:var(--muted) !important;}
+  .ch.reveal.correct .cjp{color:var(--teal-d) !important;}
+  .ch.reveal.wrong .cjp{color:#8d7b73 !important;}
+  .ca-bd .cj{background:var(--surface2) !important;color:var(--navy) !important;}
+  .ca-bd .tag.g,.jd .tag.g{background:var(--teal-soft) !important;color:var(--teal-d) !important;}
+  .ca-bd .tag.v,.jd .tag.v{background:var(--verm-soft) !important;color:var(--verm-d) !important;}
+  .ca-bd .tag.n,.jd .tag.n{background:var(--blue-soft) !important;color:var(--navy) !important;}
+  .dstep .db p b{color:var(--navy-ink) !important;}
+  .flow-row .ph{color:var(--navy) !important;}
+  .flow-row .bd{color:var(--ink) !important;}
+}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="mark">学</div>
+    <div class="ttl"><b>英語精読・完全解説</b><span>学習院大学 2022 ／ 大問2</span></div>
+    <div class="top-meta">オーバーツーリズム（The Conversation）<br>設問A〜L・全12問</div>
+  </div>
+</header>
+<nav class="nav">
+  <div class="nav-in">
+    <button class="tab on" data-p="0"><span class="dot"></span><small>STRATEGY</small>この英文の攻略</button>
+    <button class="tab" data-p="1"><span class="dot"></span><small>MAP</small>英文マップ</button>
+    <button class="tab" data-p="2"><span class="dot"></span><small>CORE</small>犯人は誰か</button>
+    <button class="tab" data-p="3"><span class="dot"></span><small>A–D</small>設問 前半</button>
+    <button class="tab" data-p="4"><span class="dot"></span><small>E–G</small>設問 理由3問</button>
+    <button class="tab" data-p="5"><span class="dot"></span><small>H–I</small>設問 和訳・言換</button>
+    <button class="tab" data-p="6"><span class="dot"></span><small>J–L</small>設問 後半</button>
+    <button class="tab" data-p="7"><span class="dot"></span><small>READING</small>全訳</button>
+    <button class="tab" data-p="8"><span class="dot"></span><small>REVIEW</small>総まとめ</button>
+  </div>
+</nav>
+<div class="wrap">
+<section class="panel on" id="p0">
+  <div class="hero">
+    <div class="eyebrow">Reading Strategy</div>
+    <h1>観光客が悪い、ではない。<br>犯人を途中で<br>すり替えている文章。</h1>
+    <p>オーバーツーリズムを論じた12段落。<u>被害の記述が続くので「観光客批判の文章」だと思って読むと、設問G・J・Lで一斉に外します</u>。この文章の心臓は第9段落です。<em>「明らかに、観光は雇用と投資と経済的利益をもたらす」と利点を認めたうえで、オーバーツーリズムとは「観光の拡大が限界を認めそこなったとき」に起こるものだと定義する</em>。そして<b>観光客嫌悪を生んだ原因は、観光客ではなく「対処できなかった行政」だと名指しする</b>。結論の第12段落でも、要求はまず行政と観光業に向けられ、<u>観光客は最後に also（〜もまた）として加えられるだけ</u>です。</p>
+    <div class="thesis"><b>この文章の骨格：</b>①住民が失うもの（第1〜2段落）。②被害の多面性――環境・インフラ・住宅（第3〜6段落）。③悪化の理由――<u>備えのない場所にまで観光が広がった</u>（第7〜8段落）。④<b>利点の承認と、犯人の特定</b>――観光は利益をもたらす。問題は限界を認めない拡大と、行政の無力（第9段落）。⑤対策と、その<u>さじ加減の難しさ</u>（第10〜11段落）。⑥結論――<b>共有された責任</b>（第12段落）。</div>
+    <div class="stats">
+      <div class="stat"><b>12</b><span>段落構成</span></div>
+      <div class="stat"><b>12</b><span>設問数</span></div>
+      <div class="stat"><b>40</b><span>全訳の文数</span></div>
+      <div class="stat"><b>40</b><span>配点</span></div>
+    </div>
+  </div>
+
+  <h2 class="sec">設問タイプと攻め方</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:16%">設問</th><th style="width:20%">タイプ</th><th>攻め方</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">A・D</td><td>空所補充</td><td><b>直後の一文で決まる</b>。<u>A＝also suffering という評価の向き／D＝multiple ways が complex を保証する</u>。</td></tr>
+      <tr><td class="cond">B</td><td>具体例</td><td><b>原因と対策は同じ対象に向く</b>。<u>被害を招いたのが「観光客の数」なら、取るべき行動も数に向かう</u>。</td></tr>
+      <tr><td class="cond">C</td><td>抜き出し（7語）</td><td><b>price A out of B の二要素</b>（値段で手が届かない／出ていかざるをえない）<u>が揃う箇所を探す</u>。語数を必ず数える。</td></tr>
+      <tr><td class="cond">E・F・G</td><td>理由</td><td><b>三問とも理由が本文に明示されている</b>。<u>E＝by the fact that／F＝which indicates／G＝This が受ける直前の文</u>。<em>探し回る必要がない</em>。</td></tr>
+      <tr><td class="cond">H</td><td>和訳（20字）</td><td><b>枠に接続するか必ず声に出して確認</b>。<u>末尾の「とった」を落とすと文が成立しない</u>。</td></tr>
+      <tr><td class="cond">I・K</td><td>言い換え</td><td><b>直後の文が中身を説明している</b>。<u>I＝減らしすぎの害／K＝by ~ing が役割の中身</u>。</td></tr>
+      <tr><td class="cond">J</td><td>担い手</td><td><b>must が向けられた相手を拾う</b>。<u>住民は「福祉を優先される側」で担い手ではない</u>。</td></tr>
+      <tr><td class="cond">L</td><td>内容一致2つ</td><td><b>本文を裏返しただけの選択肢が四つ</b>。<u>far smaller／coping well／much benefit／more than</u>。<em>向きを照合すれば消える</em>。</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box verm" style="margin-top:20px;"><span class="lab">この文章で最も落としやすい一点</span>
+    <strong>第9段落第1文を読み飛ばさないこと</strong>。<u>Clearly, tourism brings jobs, investment and economic benefits to destinations.</u>（明らかに、観光は目的地に雇用と投資と経済的利益をもたらす）。<em>被害の記述が8段落も続いたあとに置かれた、たった一文の承認です</em>。<b>ここを落とすと「筆者は観光を否定している」という枠ができ、設問L(ト)で誤答します</b>。<u>筆者は利点を認めたうえで、住民の福祉を観光の必要より上に置いている</u>。</div>
+
+  <div class="box gold" style="margin-top:16px;"><span class="lab">この解説について</span>
+    <strong>全12問、旺文社の解答と照合済み</strong>です。<u>すべての選択肢に和訳を付けました</u>。<em>誤答にはすべて「なぜダメか」＋「どんな読み方をした人が選ぶか」</em>を記しています。<b>記述2問（設問C・H）には自己採点用のルーブリックとNG解答例</b>を用意しました。</div>
+
+  <div class="pnav"><span class="sp"></span><button class="btnp" data-go="1">英文マップへ進む →</button></div>
+</section><section class="panel" id="p1">
+  <div class="eyebrow">Passage Map</div>
+  <h1 class="head">英文マップ ― 12段落の流れと設問の在りか<span class="sub">「被害の積み上げ → 悪化の理由 → <b>犯人の特定</b> → 対策と留保 → 責任の配分」。<u>第9段落で論の向きが変わる</u>ことに注意。</span></h1>
+  <div class="rule"></div><div class="para"><div class="para-n"><b>1</b><span>導入</span></div><div class="para-b">
+      <div class="theme">懸念と反対運動</div><p>ヨーロッパ各都市で住民が懸念。<u>バルセロナは宿泊客3000万人に対し住民162.5万人</u>。<b>オーバーツーリズムとその影響に反対する社会運動が広がる</b>。</p><div class="tags"><span class="utag">設問L</span></div></div></div><div class="para"><div class="para-n"><b>2</b><span>被害①</span></div><div class="para-b">
+      <div class="theme">住民が失う土地らしさ</div><p><em>観光客は「地元の人のように暮らし」本物の体験を求める</em>。<b>一方で住民は、町を特徴づけてきた土地固有の感覚が観光化の波の下に消えるのを見ている</b>。<u>施設とインフラも逼迫</u>。</p><div class="tags"><span class="utag">設問A</span><span class="utag">設問L</span></div></div></div><div class="para"><div class="para-n"><b>3</b><span>広がり</span></div><div class="para-b">
+      <div class="theme">世界的な問題</div><p>アムステルダム、ベルリン、ヴェネツィア、京都、バリ。<u>タイでは映画で有名になった海岸の観光客数が衝撃的な環境被害を招き、当局が行動を強いられた</u>。</p><div class="tags"><span class="utag">設問B</span><span class="utag">設問L</span></div></div></div><div class="para"><div class="para-n"><b>4</b><span>定義</span></div><div class="para-b">
+      <div class="theme">引用された定義と被害</div><p><em>過剰な増加→過密→住民が季節的ピークの帰結を被る</em>。被害は<b>景観・ビーチ・インフラ・不動産市場</b>の四方面。</p><div class="tags"><span class="utag">設問C</span><span class="utag">設問L</span></div></div></div><div class="para"><div class="para-n"><b>5</b><span>宣言</span></div><div class="para-b">
+      <div class="theme">複雑なのに単純化される</div><p><b>きわめて複雑な問題でありながら、しばしば単純化されすぎる</b>。<u>多様な形で影響を及ぼしうる</u>。クルーズ船――<em>還元は少ないのに汚染は生む</em>。</p><div class="tags"><span class="utag">設問D</span><span class="utag">設問L</span></div></div></div><div class="para"><div class="para-n"><b>6</b><span>被害②</span></div><div class="para-b">
+      <div class="theme">住民が負う費用</div><p>都市が観光客向けに変わる→観光産業が栄える→<u>生活費が上がる</u>。Airbnbは住宅を手の届かないものにし住民を追い出すと非難。<b>ただし同社の是正努力にも触れる</b>。</p><div class="tags"><span class="utag">設問C</span><span class="utag">設問L</span></div></div></div><div class="para"><div class="para-n"><b>7</b><span>悪化の理由</span></div><div class="para-b">
+      <div class="theme">備えのない場所へ</div><p><b>観光地の多くに備えがない</b>ことで事態は悪化。<u>1950年は98%が15の有名地へ。2007年は57%</u>――<em>確立された目的地を越えた拡大</em>。</p><div class="tags"><span class="utag">設問E</span><span class="utag">設問F</span></div></div></div><div class="para"><div class="para-n"><b>8</b><span>被害③</span></div><div class="para-b">
+      <div class="theme">固有の雰囲気が薄れる</div><p>過密と観光特化型の商売が<u>地元事業者を圧倒</u>。行儀の悪い観光客も増加。<b>固有の雰囲気が薄れ、群衆管理と廃棄物処理の問題が生じる</b>。</p><div class="tags"><span class="utag" style="opacity:.5">—</span></div></div></div><div class="para"><div class="para-n"><b>9</b><span>核心</span></div><div class="para-b">
+      <div class="theme">利点の承認と、犯人の特定</div><p><b>明らかに観光は雇用と投資と経済的利益をもたらす</b>。<u>しかしオーバーツーリズムは、拡大が限界を認めそこなったときに起こる</u>。<em>行政は圧倒的な観光産業に対処できず、それが観光客嫌悪を広めた</em>。</p><div class="tags"><span class="utag">設問G</span><span class="utag">設問L</span></div></div></div><div class="para"><div class="para-n"><b>10</b><span>ずれ</span></div><div class="para-b">
+      <div class="theme">優先課題のはずなのに</div><p>対処は最優先事項であるべき。<b>しかし苦情が高まるにもかかわらず宣伝は続き</b>、持続不可能な群れが押し寄せ続ける。</p><div class="tags"><span class="utag" style="opacity:.5">—</span></div></div></div><div class="para"><div class="para-n"><b>11</b><span>対策</span></div><div class="para-b">
+      <div class="theme">強い措置と、さじ加減</div><p>管理は不可能に見える。<u>しかし観光税・罰金・デマーケティングなど強力な対策を講じた都市もある</u>。<b>しかしさじ加減が難しい――急減すれば経済的打撃</b>。</p><div class="tags"><span class="utag">設問H</span><span class="utag">設問I</span><span class="utag">設問L</span></div></div></div><div class="para"><div class="para-n"><b>12</b><span>結論</span></div><div class="para-b">
+      <div class="theme">共有された責任</div><p><b>行政担当者と観光業従事者は限界を受け入れよ</b>。<u>住民の福祉を観光の必要より優先せよ</u>。収容力に見合う観光客数を。<em>観光客もまた、配慮によって役割を果たせ</em>。</p><div class="tags"><span class="utag">設問J</span><span class="utag">設問K</span><span class="utag">設問L</span></div></div></div><div class="box navy"><span class="lab">構造を一枚で言うと</span>
+  <strong>第1〜8段落が被害の積み上げ、第9段落が転換点、第10〜12段落が対策と責任</strong>。<u>第1〜8段落だけ読むと「観光客が悪い」という結論に見える</u>。<em>しかし第9段落が、利点を認めたうえで犯人を「限界を認めない拡大」と「行政の無力」に定める</em>。<b>この転換を押さえているかで、後半3問（G・J・L）の正答率が変わります</b>。</div><div class="box verm"><span class="lab">読み飛ばしやすい三箇所</span>
+  <strong>第9段落第1文 Clearly, tourism brings jobs...</strong>｜<u>観光の利点を認めた一文</u>。<em>設問L(ト)の判定に効く</em>。<br>
+  <strong>第6段落最終文 Airbnb is also making efforts...</strong>｜<u>批判したあとに是正努力にも触れる</u>。<em>筆者が一方的断罪を避けている証拠</em>。<br>
+  <strong>第12段落第3文 Prioritising the welfare of local residents</strong>｜<u>住民は「優先される側」</u>。<em>設問Jで住民を担い手に入れると誤答</em>。</div><div class="pnav"><button class="btns" data-go="0">← 攻略</button><span class="sp"></span><button class="btnp" data-go="2">犯人は誰かへ →</button></div></section><section class="panel" id="p2">
+  <div class="eyebrow">Who Is to Blame</div>
+  <h1 class="head">犯人は誰か ― 途中で入れ替わる<span class="sub">被害を8段落も積み上げたあと、第9段落で筆者は犯人を名指しする。<b>それは観光客ではない</b>。</span></h1>
+  <div class="rule"></div>
+
+  <div class="box gold" style="margin-top:0"><span class="lab">まず、素朴な読みを確認しておく</span>
+    <strong>第1〜8段落だけを読むと、こう見えます</strong>。<u>観光客が押し寄せ、土地らしさが消え、インフラが逼迫し、住宅が高騰し、地元事業者が圧倒され、行儀の悪い観光客が増える</u>。<em>だから観光客が悪い</em>。<b>ところが第9段落で、筆者はこの読みを明確に否定します</b>。</div>
+
+  <h2 class="sec">第9段落の四文 ― ここが心臓部</h2>
+  <div class="flow">
+    <div class="flow-row"><div class="ph">第1文｜承認</div><div class="bd"><b>Clearly, tourism brings jobs, investment and economic benefits to destinations.</b><br><u>明らかに、観光は雇用と投資と経済的利益をもたらす</u>。<em>被害を8段落述べたあとで、わざわざ利点を認める</em>。</div></div>
+    <div class="flow-row"><div class="ph">第2文｜定義</div><div class="bd"><b>But overtourism occurs when tourism expansion fails to acknowledge that there are limits.</b><br><u>オーバーツーリズムとは「拡大が限界を認めそこなったとき」に起こるもの</u>。<em>量の多さではない</em>。</div></div>
+    <div class="flow-row"><div class="ph">第3文｜犯人</div><div class="bd"><b>Local government and planning authorities have so far been powerless to deal with the overwhelming influence of the global tourism industry.</b><br><u>行政は、圧倒的な観光産業に対処する力を持てずにいる</u>。</div></div>
+    <div class="flow-row"><div class="ph">第4文｜帰結</div><div class="bd"><b>This has led to widespread &quot;tourist-phobia&quot; — a mixture of mistrust of and contempt for tourists.</b><br><u>このことが観光客嫌悪を生んだ</u>。<em>嫌悪の原因は観光客ではなく、手を打てなかった行政のほう</em>。</div></div>
+  </div>
+
+  <div class="box verm"><span class="lab">この四文が三つの設問を決める</span>
+    <strong>設問G</strong>｜<u>This が受けるのは第3文（行政の無力）</u>。<em>だから正解は(イ) local government has not taken effective action</em>。<br>
+    <strong>設問L(ト)</strong>｜<u>第1文で利点を認めている</u>ので、<em>「筆者は経済を軽視している」とは言えない。ただし第12段落で住民の福祉を上に置くので、(ト)は不一致</em>。<br>
+    <strong>設問J</strong>｜<u>犯人が行政と産業である以上、第12段落で責任を負うのもまず行政と観光業</u>。<em>観光客は also として最後に加わる</em>。</div>
+
+  <h2 class="sec">結論での責任の配分 ― 順序が主張を担う</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:24%">第12段落の文</th><th style="width:26%">誰に向けられているか</th><th>立場</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">第2文</td><td><b>City administrators and those who work in tourism</b></td><td><u>must accept</u>＝責任の担い手。<em>最初に置かれている</em></td></tr>
+      <tr><td class="cond">第3文</td><td><b>local residents</b></td><td><u>Prioritising the welfare of ~</u>＝<b>優先される側</b>。<em>担い手ではない</em></td></tr>
+      <tr><td class="cond">第4文</td><td>（行為者を明示しない）</td><td><u>Prime consideration must be given ~</u>＝制度の話</td></tr>
+      <tr><td class="cond">第5文</td><td><b>Tourists</b></td><td><u>must <b>also</b> play their part</u>＝担い手だが、<em>also（〜もまた）で最後に加えられる</em></td></tr>
+    </tbody>
+  </table>
+  <div class="box navy"><span class="lab">also という一語</span>
+    <strong>also は付け足しを示す副詞です</strong>。<u>強調のために最後に置いたのではない</u>。<em>第9段落で原因を行政の無力に定めた以上、観光客への要求が主たる処方になることはありえない</em>。<b>設問Jで local residents を入れてしまう人は、第3文を「住民も当事者だ」と読んでいます</b>。<u>住民は守られる側です</u>。</div>
+
+  <h2 class="sec">もう一つの構え ― 単純化を避ける</h2>
+  <div class="box gold"><span class="lab">第5段落の自己言及が、書き方そのものを決めている</span>
+    <strong>It is a hugely complex issue that is often oversimplified.</strong>（これはきわめて複雑な問題でありながら、しばしば単純化されすぎる）<br>
+    <u>この宣言どおり、筆者は一方的な断罪を避け続けます</u>。<em>第6段落ではAirbnbを批判したあと、同社の是正努力にも触れる。第9段落では観光の利点を認める。第11段落では対策を挙げたうえで「さじ加減が難しい」と留保する</em>。<br>
+    <b>設問Dの正解が complex / oversimplified であること自体が、この文章の読み方を教えています</b>。</div>
+
+  <div class="pnav"><button class="btns" data-go="1">← 英文マップ</button><span class="sp"></span><button class="btnp" data-go="3">設問A〜Dへ →</button></div>
+</section><section class="panel" id="p3">
+  <div class="eyebrow">Solutions ①</div>
+  <h1 class="head">設問A〜D<span class="sub">空所補充2問・具体例1問・抜き出し1問。<b>いずれも直後の一文か、指定された段落で決まる</b>。</span></h1>
+  <div class="rule"></div>
+  <div class="box gold" style="margin-top:0"><span class="lab">この4問に共通する原則</span>
+    <strong>空所や下線部そのものを睨んでも答えは出ない</strong>。<u>A＝直後の also suffering が評価の向きを固定する／B＝被害の原因が対策の向きを決める／C＝設問が第6段落と指定している／D＝直後の multiple ways が complex を保証する</u>。<em>根拠はすべて、下線部の外にあります</em>。</div>
+  <div class="qindex" id="qidxAB"></div>
+  <div id="qWrapAB"></div>
+  <div class="pnav"><button class="btns" data-go="2">← 犯人は誰か</button><span class="sp"></span><button class="btnp" data-go="4">設問E〜Gへ →</button></div>
+</section><section class="panel" id="p4">
+  <div class="eyebrow">Solutions ②</div>
+  <h1 class="head">設問E〜G ― 理由問題3連続<span class="sub">三問とも<b>理由が本文に明示されています</b>。探し回る必要はありません。</span></h1>
+  <div class="rule"></div>
+  <div class="box navy" style="margin-top:0"><span class="lab">理由の在りかを先に示します</span>
+    <strong>E</strong>｜<u>下線部の直後 by the fact that ~</u>（〜という事実によって）。<em>この形が出たら、that 以下がそのまま理由</em>。<br>
+    <strong>F</strong>｜<u>下線部の直後 which indicates ~</u>（〜を示している）。<em>筆者が数字の意味を自分で書いている</em>。<br>
+    <strong>G</strong>｜<u>This has led to ~ の This が受ける直前の一文</u>。<em>指示語を特定すれば原因が確定する</em>。</div>
+  <div class="box verm" style="margin-top:14px;"><span class="lab">この3問に共通する罠</span>
+    <strong>本文の別の段落から答えを持ってくること</strong>。<u>E(ハ)はタイの環境被害（第3段落）、E(ニ)はAirbnb（第6段落）、G(ハ)はクルーズ船の還元（第5段落）</u>。<em>どれも本文に実在しますが、その下線部の理由ではありません</em>。<b>「本文にあるか」ではなく「この文の理由か」で判定します</b>。</div>
+  <div class="qindex" id="qidxCD"></div>
+  <div id="qWrapCD"></div>
+  <div class="pnav"><button class="btns" data-go="3">← 設問A〜D</button><span class="sp"></span><button class="btnp" data-go="5">設問H・Iへ →</button></div>
+</section><section class="panel" id="p5">
+  <div class="eyebrow">Solutions ③</div>
+  <h1 class="head">設問H・I<span class="sub">和訳（20字以内）と、慣用表現の言い換え。<b>どちらも直後の文が答えを支えています</b>。</span></h1>
+  <div class="rule"></div>
+  <div class="box gold" style="margin-top:0"><span class="lab">設問Hで最も多い失点</span>
+    <strong>末尾の「とった」を落とすこと</strong>。<u>与えられた語句は「都市もある」だけ</u>なので、<em>「抑えるために強力な手段を」で止めると「手段を都市もある」となり、文が成立しません</em>。<b>12字で収まって安心せず、必ず枠につないで声に出してください</b>。</div>
+  <div class="qindex" id="qidxEF"></div>
+  <div id="qWrapEF"></div>
+  <div class="pnav"><button class="btns" data-go="4">← 設問E〜G</button><span class="sp"></span><button class="btnp" data-go="6">設問J〜Lへ →</button></div>
+</section><section class="panel" id="p6">
+  <div class="eyebrow">Solutions ④</div>
+  <h1 class="head">設問J〜L<span class="sub">責任の担い手・言い換え・内容一致。<b>第9段落と第12段落の関係が分かっていれば、三問とも一本の線でつながります</b>。</span></h1>
+  <div class="rule"></div>
+  <div class="box verm" style="margin-top:0"><span class="lab">Lに入る前に</span>
+    <strong>7つを一度に比べようとすると必ず迷います</strong>。<u>まず本文を裏返しただけの選択肢を探してください</u>――<em>(イ) far smaller、(ロ) coping well、(ホ) see much benefit、(ト) more than</em>。<b>四つとも本文の該当箇所を見れば向きが逆だと分かります</b>。<u>残る(ヘ)は定義のすり替えで、第11段落に whereby 以下の説明があります</u>。<em>これで(ハ)(ニ)が残る</em>。</div>
+
+  <h2 class="sec">設問J・K</h2>
+  <div class="qindex" id="qidxGH"></div>
+  <div id="qWrapGH"></div>
+
+  <h2 class="sec">設問L</h2>
+  <div class="qindex" id="qidxIJ"></div>
+  <div id="qWrapIJ"></div>
+
+  <div class="pnav"><button class="btns" data-go="5">← 設問H・I</button><span class="sp"></span><button class="btnp" data-go="7">全訳へ →</button></div>
+</section><section class="panel" id="p7">
+  <div class="eyebrow">Reading Map</div>
+  <h1 class="head">全訳 ― 段落ごとの日本語訳と読解ポイント<span class="sub">THINKINGオリジナル訳（全12段落・40文）。番号①②③…は各段落内の文の順番。<b>太字・下線</b>が設問に直結する箇所。</span></h1>
+  <div class="rule"></div>
+  <div class="box gold" style="margin-top:0"><span class="lab">読むときの視点</span>
+    <strong>第8段落までと、第9段落以降で読み方を切り替えてください</strong>。<u>前半は被害の記述、第9段落が転換点、後半は原因と責任の話</u>。<em>前半だけ読むと「観光客が悪い」という結論に見えますが、第9段落がそれを否定します</em>。<b>訳を読みながら「この段落は被害か、原因か、対策か」を仕分けてください</b>。</div><div class="tr-sec"><b>第1段落</b>｜問題の提示　<span class="utag">設問L</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">ヨーロッパの多くの都市で、地元の人々がオーバーツーリズムを心配している。</div></div><div class="jpline"><div class="n">②</div><div class="s">2017年に3000万人の宿泊客が訪れたバルセロナは――<u>住民人口162万5000人に対してである</u>――とりわけ休暇の最盛期における、都市での観光の急速な拡大をめぐる、こうした高まる懸念の中心にある。</div></div><div class="jpline"><div class="n">③</div><div class="s">しかしヨーロッパ全土で、<em>オーバーツーリズムと、それが地元住民に及ぼす影響に反対する社会運動</em>が広がりつつある。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第1段落</div><ul><li>第2文の数字が<b>設問L(イ)</b>の判定根拠。<u>3000万人（観光客）対 162万5000人（住民）</u>＝<em>観光客のほうが圧倒的に多い</em>。<b>(イ)は far smaller と述べており逆</b>。</li><li>第3文の <b>growing social movements are opposing</b> は、<u>住民側の反発が組織化していることを示す</u>。<em>この文章が「観光客を責める話」ではないことの最初の合図</em>。</li></ul></div><div class="tr-sec"><b>第2段落</b>｜住民が失うもの　<span class="utag">設問A・L</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">多くの観光客が「地元の人のように暮らし」、滞在中に本物の体験をしたいと望む一方で、観光に依存する多くの目的地の住民は、<b>自分たちの故郷を特徴づけてきた土地固有の感覚が、土産物屋や群衆、観光バス、騒がしいバーの波の下に消えていく</b>のを目にしている。</div></div><div class="jpline"><div class="n">②</div><div class="s">彼らはまた、<u>地元の施設やインフラが多大な負担にさらされる</u>ことでも苦しんでいる。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第2段落</div><ul><li>第1文の空所(X)が<b>設問A</b>。<u>see O do の原形</u>が入り、<b>beneath a wave of ~（〜の波の下に）</b>という方向と、<em>suffering という否定的文脈</em>から vanish に決まる。</li><li>第1文は<b>この文章で最も皮肉が効いた一文</b>。<u>観光客が求める「本物らしさ」が、観光客が集まることで失われていく</u>。<em>While の前後が、求める側と失う側の対比になっている</em>。</li><li>第2文の <b>infrastructure are put under enormous strain</b> が<b>設問L(ニ)</b>の根拠の一つ。<u>第4段落にも同じ表現が繰り返される</u>。</li></ul></div><div class="tr-sec"><b>第3段落</b>｜世界的な広がり　<span class="utag">設問B・L</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">これは真に世界的な問題である。</div></div><div class="jpline"><div class="n">②</div><div class="s">オーバーツーリズムが深刻な問題を引き起こしている他の目的地には、<em>アムステルダム、ベルリン、ヴェネツィア、京都、バリ</em>などがある。</div></div><div class="jpline"><div class="n">③</div><div class="s">最近タイ当局は、2000年のレオナルド・ディカプリオ主演の映画『ザ・ビーチ』で有名になった海岸を訪れる観光客の数が、<b>衝撃的な環境被害</b>を招いたことを受けて、<u>行動を取らざるをえなくなった</u>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第3段落</div><ul><li>第2文が<b>設問L(ロ)</b>の判定根拠。<u>アムステルダムとベルリンは「深刻な問題が起きている」側として挙げられている</u>。<em>(ロ)の coping well（うまく対処している）とは正反対</em>。</li><li>第3文の <b>act</b> が<b>設問B</b>。<u>行動を取らせた原因は shocking environmental damage</u>。<em>したがって取るべき行動は、観光客を増やす方向ではなく減らす方向</em>。</li><li>第3文の環境被害は<b>設問L(ハ)</b>の根拠の一つでもある。</li></ul></div><div class="tr-sec"><b>第4段落</b>｜定義と被害　<span class="utag">設問C・L</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">オーバーツーリズムは「訪問者の過剰な増加が過密を招き、その地域の住民が<u>季節的な観光のピーク</u>の帰結を被ることで、<em>生活様式が乱され、全般的な幸福と施設の利用が損なわれる</em>こと」と定義されている。</div></div><div class="jpline"><div class="n">②</div><div class="s">主張されているのは、オーバーツーリズムが<b>景観を損ない、ビーチを傷め、インフラに多大な負担をかけ、そして住民を価格面で不動産市場から締め出している</b>、ということである。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第4段落</div><ul><li>第2文の下線部(2) <b>pricing residents out of the property market</b> が<b>設問C</b>。<u>price A out of B＝価格によってAをBから締め出す</u>。<em>第6段落に7語の言い換えがある</em>。</li><li><b>被害が四つ並んでいる</b>｜<u>景観・ビーチ（環境）／インフラ（公共）／不動産市場（住民の暮らし）</u>。<em>この多面性が、設問L(ハ)(ニ)の両方を成立させる</em>。</li><li>第1文の定義は<b>引用</b>（is defined as）であり、<u>筆者自身の規定ではない</u>。<em>筆者自身の規定は第9段落第2文にある</em>。</li></ul></div><div class="tr-sec"><b>第5段落</b>｜複雑さの宣言　<span class="utag">設問D</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">これは<b>きわめて複雑な問題でありながら、しばしば単純化されすぎる</b>。</div></div><div class="jpline"><div class="n">②</div><div class="s">それは<u>多様な形で</u>影響を及ぼしうる。</div></div><div class="jpline"><div class="n">③</div><div class="s">たとえば国際クルーズ船産業は、毎日何千人もの乗客を寄港地に送り込む。</div></div><div class="jpline"><div class="n">④</div><div class="s"><em>地域社会に還元されるものは比較的少ない</em>一方で、クルーズ船は物理的にも視覚的にも汚染を生み出す。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第5段落</div><ul><li>第1文の空所(Y)(Z)が<b>設問D</b>。<u>直後の「多様な形で影響を及ぼしうる」が complex を保証する</u>。<em>そして複雑なのに単純化される、という対比が oversimplified を決める</em>。</li><li><b>この一文は文章全体の設計図</b>。<u>筆者は「複雑だ」と宣言したうえで、実際に被害・加害・利点・対策を複数の方向から扱う</u>。<em>第9段落で観光の利点を認めるのも、第6段落でAirbnbの是正努力に触れるのも、この宣言の実践</em>。</li><li>第4文が<b>設問L(ホ)</b>の判定根拠。<u>comparatively little is returned</u>＝<em>地域への還元は少ない</em>。<b>(ホ)の see much benefit とは逆</b>。</li></ul></div><div class="tr-sec"><b>第6段落</b>｜住民が負う費用　<span class="utag">設問C・L</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">都市の住民もまた、観光の成長の代償を負っている。</div></div><div class="jpline"><div class="n">②</div><div class="s">都市が観光客に合わせて姿を変えるにつれ、世界の観光産業は繁栄する。</div></div><div class="jpline"><div class="n">③</div><div class="s">それと同時に、地域社会の生活費は上昇する。</div></div><div class="jpline"><div class="n">④</div><div class="s">たとえばオンライン民泊サービスのAirbnbは、<b>住宅を手の届かないものにし、住民を住まいから追い出している</b>と非難されてきた。</div></div><div class="jpline"><div class="n">⑤</div><div class="s">アムステルダムは、短期賃貸を禁止し、クルーズ船の乗客を中心部から遠ざけることで、これを直接防ごうとしている。</div></div><div class="jpline"><div class="n">⑥</div><div class="s"><u>Airbnbもまた、自らが生んだと非難されている問題に対処する努力をしている</u>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第6段落</div><ul><li>第4文の <b>making housing less affordable and displacing residents</b>（7語）が<b>設問C</b>の答え。<u>price out（価格で締め出す）→ less affordable（手が届かない）＋ displacing（追い出す）</u>に正確に対応する。</li><li>最終文が<b>この筆者の姿勢を示す一文</b>。<u>Airbnbを批判したあと、同社の是正努力にも触れる</u>。<em>第5段落で「単純化されがち」と述べた筆者が、自ら一方的な断罪を避けている</em>。</li><li>段落全体が<b>設問L(ニ)</b>（住民への負担）を補強する。</li></ul></div><div class="tr-sec"><b>第7段落</b>｜悪化の理由　<span class="utag">設問E・F</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><b>観光地の多くがオーバーツーリズムに対処する備えをほとんど持たない</b>という事実によって、事態はいっそう悪化している。</div></div><div class="jpline"><div class="n">②</div><div class="s">イタリアの社会学者マルコ・デラモによれば、1950年には国際観光客の<em>98%</em>が、世界でパリやローマのようなわずか15の有名な目的地を訪れていた。</div></div><div class="jpline"><div class="n">③</div><div class="s">2007年にはこの数字が<em>57%</em>まで下がっており、それは<u>確立された目的地を越えた世界的観光の急速な拡大</u>を示している。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第7段落</div><ul><li>第1文の下線部(3)が<b>設問E</b>。<u>理由は by the fact that 以下に明示されている</u>＝<em>観光地に備えがないこと</em>。<b>探す必要すらない</b>。</li><li>第3文の下線部(4)が<b>設問F</b>。<u>割合が下がった理由は、観光客が多様な目的地を訪れるようになったから</u>。<em>which indicates 以下が筆者自身の解釈を示している</em>。</li><li><b>注意</b>｜<u>98%→57% は「割合」の低下であって、観光客数の減少ではない</u>。<em>総数が増えていれば、割合が下がっても実数は増える</em>。<b>設問F(ニ)はこの混同を狙っている</b>。</li></ul></div><div class="tr-sec"><b>第8段落</b>｜固有性の消失</div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">過密と、クラブやバーや土産物屋といった典型的な観光特化型の商売が生まれることが、<b>地元の事業者を圧倒し</b>、行儀の悪い観光客がますます一般的になりつつある。</div></div><div class="jpline"><div class="n">②</div><div class="s">これが<u>目的地の固有の雰囲気を薄れさせ</u>、群衆の管理や廃棄物処理の問題を引き起こす。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第8段落</div><ul><li>この段落は<b>第2段落の具体化</b>。<u>第2段落で「土地固有の感覚が消える」と述べたことを、地元事業者の側から言い直している</u>。</li><li><b>主語が二つある</b>｜<u>Overcrowding（過密）と the creation of ~ businesses（観光特化型の商売が生まれること）</u>。<em>観光客個人ではなく、現象と構造が主語になっている</em>点に注意。</li></ul></div><div class="tr-sec"><b>第9段落</b>｜利点の承認と、犯人の特定　<span class="utag">設問G・L</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><b>明らかに、観光は目的地に雇用と投資と経済的利益をもたらす</b>。</div></div><div class="jpline"><div class="n">②</div><div class="s">しかしオーバーツーリズムは、<em>観光の拡大が限界の存在を認めそこなったとき</em>に起こる。</div></div><div class="jpline"><div class="n">③</div><div class="s">自治体と都市計画の当局は、これまでのところ、<u>世界的な観光産業の圧倒的な影響力に対処する力を持てずにいる</u>。</div></div><div class="jpline"><div class="n">④</div><div class="s"><b>このことが「観光客恐怖症」――観光客に対する不信と侮蔑の入り混じったもの――を広く生み出してきた</b>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第9段落</div><ul><li><b>この段落が文章の心臓部</b>。四文が順に、<u>利点の承認 → 筆者自身の定義 → 行政の無力 → その帰結</u>と進む。</li><li>第1文の <b>Clearly, tourism brings jobs, investment and economic benefits</b> は<u>読み飛ばしやすいが決定的</u>。<em>筆者は反観光ではない</em>。<b>設問L(ト)の判定にも効く</b>。</li><li>第2文が<b>筆者自身によるオーバーツーリズムの規定</b>。<u>量の多さではなく、限界を認めないこと</u>。<em>これが分かると第11段落の「さじ加減」が理解できる</em>。</li><li>第3〜4文が<b>設問G</b>。<u>This has led to の This は直前の文、すなわち行政の無力を受ける</u>。<em>観光客嫌悪の原因は、観光客そのものではない</em>。</li><li>第4文の <b>mistrust of and contempt for tourists</b>｜<u>of と for の目的語がどちらも tourists</u>。<em>観光客は向けられる対象であって、抱く主体ではない</em>。</li></ul></div><div class="tr-sec"><b>第10段落</b>｜優先課題と現実のずれ</div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">オーバーツーリズムへの対処は、いまや最優先事項でなければならない。</div></div><div class="jpline"><div class="n">②</div><div class="s"><b>しかし苦情が高まっているにもかかわらず、観光の宣伝は続いており</b>、持続不可能なほどの観光客の群れが、都市やビーチやその他の自然の驚異へ押し寄せ続けている。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第10段落</div><ul><li>第2文の <b>despite</b> が示すのは<u>「あるべき姿」と「現実」のずれ</u>。<em>苦情が増えれば宣伝が止まりそうなものだが、止まっていない</em>。</li><li>この段落は短いが、<b>第11段落の「不可能に見える」への橋渡し</b>になっている。</li></ul></div><div class="tr-sec"><b>第11段落</b>｜対策とその限界　<span class="utag">設問H・I</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">観光客の流れを管理することは、不可能な仕事に思える。</div></div><div class="jpline"><div class="n">②</div><div class="s"><b>しかし、新たな観光税の導入、新しい条例に紐づく罰金、そして「デマーケティング」――目的地が大人数の団体ではなく、より少数で、支出が多く、負荷の小さい観光客を引きつけることに注力する手法――を含め、オーバーツーリズムの影響を抑えるために強力な対策を講じた都市もある</b>。</div></div><div class="jpline"><div class="n">③</div><div class="s">しかし、<em>それはさじ加減の難しい道である</em>。</div></div><div class="jpline"><div class="n">④</div><div class="s"><u>ある目的地への観光客の到着が急激かつ劇的に減れば、それに依存する人々にとって相当の経済的影響が生じる</u>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第11段落</div><ul><li>第2文が<b>設問H</b>の和訳箇所。<u>limit the effects of overtourism＝オーバーツーリズムの影響を抑える</u>、<u>have taken strong measures＝強力な対策を講じた</u>。</li><li>第2文の <b>demarketing</b> の説明が<b>設問L(ヘ)</b>の判定根拠。<u>少数・高支出・低負荷の観光客を引きつけること</u>であって、<em>地元の人に地元製品を買わせることではない</em>。</li><li>第3文の下線部(7)が<b>設問I</b>。<u>理由は第4文にある</u>＝<em>減らしすぎると経済的打撃</em>。<b>だから「明確な線を引けばよい」のではなく、balance が難しい</b>。</li><li><b>But が二回連続する</b>｜<u>不可能に見える → しかし対策した都市がある → しかし加減が難しい</u>。<em>悲観・希望・留保の三段</em>。</li></ul></div><div class="tr-sec"><b>第12段落</b>｜結論――共有された責任　<span class="utag">設問J・K・L</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">オーバーツーリズムは<b>共有された責任</b>である。</div></div><div class="jpline"><div class="n">②</div><div class="s"><u>都市の行政担当者と観光業に携わる人々は</u>、成長には明確な限界があることを受け入れなければならない。</div></div><div class="jpline"><div class="n">③</div><div class="s"><em>地元住民の福祉を、世界的観光の必要よりも優先することが不可欠である</em>。</div></div><div class="jpline"><div class="n">④</div><div class="s">観光客の数が目的地の収容力の範囲に収まるようにすることに、最優先の考慮が払われなければならない。</div></div><div class="jpline"><div class="n">⑤</div><div class="s"><b>観光客もまた、自分が訪れる場所と、そこに住む人々に配慮することで、自らの役割を果たさなければならない</b>。</div></div></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第12段落</div><ul><li>第1文の下線部(8)が<b>設問J</b>。<u>責任の担い手は must が向けられた相手</u>＝<em>行政担当者・観光業従事者・観光客の三者</em>。<b>地元住民は第3文で「福祉を優先される」側</b>であり、担い手ではない。</li><li>第5文の下線部(9)が<b>設問K</b>。<u>being sensitive to ~＝〜に配慮する</u>。<em>場所とそこに住む人々への配慮＝住民への敬意</em>。</li><li>第3文が<b>設問L(ト)</b>の判定根拠。<u>住民の福祉を観光の必要より優先せよ</u>＝<em>(ト)の「経済的利益を住民の福祉より強調すべき」とは正反対</em>。</li><li><b>要求の順序に注目</b>｜<u>行政と業界が先、観光客は最後で、しかも also（〜もまた）</u>。<em>第9段落で原因を行政の無力に置いたことと一貫している</em>。</li></ul></div><div class="pnav"><button class="btns" data-go="6">← 設問J〜L</button><span class="sp"></span><button class="btnp" data-go="8">総まとめへ →</button></div></section><section class="panel" id="p8">
+  <div class="eyebrow">Review</div>
+  <h1 class="head">総まとめ ― 解答一覧と復習動線<span class="sub">まず自己採点。落とした問題が「どの手がかりを見落としたか」で振り返る。</span></h1>
+  <div class="rule"></div>
+
+  <h2 class="sec">解答一覧（旺文社解答と照合済み）</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:9%">設問</th><th style="width:17%">解答</th><th style="width:34%">決め手</th><th>陥りやすい誤答</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">A</td><td><b>(ニ)</b> vanish</td><td>beneath＋直後の also suffering</td><td>(イ)(ロ) プラス方向の語を入れる</td></tr>
+      <tr><td class="cond">B</td><td><b>(ハ)</b></td><td>被害の原因が「観光客の数」</td><td>(イ)(ニ) 増やす方向の施策</td></tr>
+      <tr><td class="cond">C</td><td><b>making ／ residents</b></td><td>price out の二要素が揃う7語</td><td>increased／communities（語数は合うが意味が違う）</td></tr>
+      <tr><td class="cond">D</td><td><b>(イ)</b> complex／oversimplified</td><td>直後の multiple ways</td><td>(ハ) simple（直後の文と衝突）</td></tr>
+      <tr><td class="cond">E</td><td><b>(ロ)</b></td><td>直後の by the fact that ~</td><td>(ハ)(ニ) 別の段落から持ってくる</td></tr>
+      <tr><td class="cond">F</td><td><b>(イ)</b></td><td>直後の which indicates ~</td><td>(ニ) 割合と実数の混同</td></tr>
+      <tr><td class="cond">G</td><td><b>(イ)</b></td><td>This が受ける直前の一文</td><td>(ロ) 不信の向きを逆に取る</td></tr>
+      <tr><td class="cond">H</td><td><b>抑えるために<br>強力な手段をとった</b></td><td>take a strong measure to do</td><td>末尾の「とった」を落とす</td></tr>
+      <tr><td class="cond">I</td><td><b>(ハ)</b></td><td>直後の文＝減らしすぎの害</td><td>(ロ) fine を「明確な」と読む</td></tr>
+      <tr><td class="cond">J</td><td><b>(ハ)</b></td><td>must が向けられた三者</td><td>住民を担い手に入れる</td></tr>
+      <tr><td class="cond">K</td><td><b>(ロ)</b></td><td>being sensitive to＝敬意を払う</td><td>(ハ) high-spending を要求と読む</td></tr>
+      <tr><td class="cond">L</td><td><b>(ハ)・(ニ)</b></td><td>環境破壊＋インフラと住民への負担</td><td>(ト) 第9段落第1文に引きずられる</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec">復習動線 ― 落とした「型」から潰す</h2>
+  <div class="route"><div class="rn">A</div><div><b>直後の一文を読まなかった（A・D・E・F・I）</b><p><u>A＝also suffering／D＝multiple ways／E＝by the fact that／F＝which indicates／I＝減らしすぎの害</u>。<strong>五問とも、答えは下線部や空所の直後に書いてあります</strong>。<em>下線部を睨む時間を、前後一文を読む時間に回すだけで、半分が解けます</em>。</p></div></div>
+  <div class="route"><div class="rn">B</div><div><b>別の段落から答えを持ってきた（E・G・K）</b><p><u>E(ハ)はタイの環境被害、E(ニ)はAirbnb、G(ハ)はクルーズ船、K(ハ)は high-spending</u>。<strong>どれも本文に実在する内容です</strong>。<em>だからこそ照合すると「あった」と感じて選んでしまう</em>。<b>「本文にあるか」ではなく「この下線部の理由・言い換えか」で判定してください</b>。</p></div></div>
+  <div class="route"><div class="rn">C</div><div><b>割合と実数を混同した（F）</b><p><u>98%も57%も「15の有名地だけを訪れる人の割合」</u>であって、観光客の総数ではありません。<strong>総数が増えていれば、割合が下がっても実数は増える</strong>。<em>しかも本文は rapid expansion と明言しています</em>。<b>パーセンテージが出たら「何に対する割合か」を必ず押さえる</b>。</p></div></div>
+  <div class="route"><div class="rn">D</div><div><b>向きを取り違えた（G・I・L）</b><p><u>G＝mistrust of / contempt for の目的語は tourists（観光客は向けられる側）／I＝fine line は「細い線」で「明確な線」ではない／L＝far smaller・coping well・much benefit・more than がすべて逆</u>。<strong>語の一致で満足せず、大小や方向まで照合する</strong>。</p></div></div>
+  <div class="route"><div class="rn">E</div><div><b>立場を取り違えた（J）</b><p><u>must が向けられた相手が責任の担い手、welfare を優先される相手が保護対象</u>。<strong>地元住民は被害者であって、責任の担い手ではありません</strong>。<em>被害を受けていることと、責任を負うことは別です</em>。</p></div></div>
+  <div class="route"><div class="rn">F</div><div><b>枠に接続しなかった（H）</b><p><u>与えられた語句は「都市もある」だけ</u>。<strong>「抑えるために強力な手段を」で止めると文が成立しません</strong>。<em>指定語句つきの和訳では、書き終えたあとに必ず枠とつないで声に出す</em>。<b>内容が合っていても、条件違反なら点になりません</b>。</p></div></div>
+  <div class="route"><div class="rn">G</div><div><b>文章全体の立場を決めつけた（L(ト)）</b><p><u>オーバーツーリズムを論じる文章だから、筆者は観光を否定しているはずだ</u>――<strong>この枠が最も危険です</strong>。<em>第9段落第1文 Clearly, tourism brings jobs, investment and economic benefits がそれを否定します</em>。<b>筆者は利点を認めたうえで、住民の福祉を観光の必要より上に置いている</b>。</p></div></div>
+
+  <div class="box navy" style="margin-top:22px;"><span class="lab">次の一手</span>
+    この文章の核心は<strong>「犯人が途中で入れ替わる」</strong>という一点です。<u>第1〜8段落で被害を積み上げ、第9段落で利点を認めたうえで、犯人を「限界を認めない拡大」と「行政の無力」に定める</u>。<em>そして第12段落で責任を配分し直し、観光客は also として最後に加えられる</em>。<b>評論を読むときは、被害の記述が続いても「筆者は誰を責めているか」を保留しておいてください</b>。<u>多くの文章は、素朴な犯人を一度立ててから、それを組み替えます</u>。</div>
+
+  <div class="pnav"><button class="btns" data-go="0">↩ 最初に戻る</button><span class="sp"></span><button class="btns" data-go="7">← 全訳</button></div>
+</section></div>
+<footer class="foot">
+  <div class="brand">THINKING</div>
+  <div>受験は根性じゃなく、設計。 ／ <a href="https://thinking-online.com/" target="_blank" rel="noopener">https://thinking-online.com/</a></div>
+  <div class="cr">本解説は学習院大学2022年度英語（大問2）の学習用解説です。設問・出典（The Conversation, July 18, 2018）の著作権は出題者・原著者に帰属します。和訳・解説はTHINKINGによるオリジナルです。</div>
+</footer>
+<button class="jump-top" id="jumpTop" aria-label="上へ">↑</button>
+
+<script>
+const Q = [
+/* ===== A〜D：グループAB ===== */
+{id:"A", grp:"AB", type:"空所補充", lbl:"設問A", en:"the residents ... are seeing the unique sense of place that characterised their home towns ( X ) beneath a wave of souvenir shops, crowds, tour buses and noisy bars",
+ ask:"<span class=\"aen\">空所( X )に入る語として最も適切なものを次の(イ)〜(ニ)の中から1つ選びなさい。</span><span class=\"ajp\"><b>該当箇所</b>｜観光に依存する多くの目的地の住民は、自分たちの故郷を特徴づけてきた土地固有の感覚が、土産物屋や群衆、観光バス、騒がしいバーの波の下に<b>（ X ）</b>のを目にしている。</span>",
+ answer:"(ニ)", kind:"choice",
+ choices:[
+  {t:"(イ) develop<span class=\"cjp\">発展する、成長する</span>", ok:false},
+  {t:"(ロ) flourish<span class=\"cjp\">栄える、繁茂する</span>", ok:false},
+  {t:"(ハ) spread<span class=\"cjp\">広がる</span>", ok:false},
+  {t:"(ニ) vanish<span class=\"cjp\">消える、消滅する</span>", ok:true}],
+ steps:[
+   {t:"空所の品詞を確定する", d:"<b>are seeing the unique sense of place ... ( X ) beneath ~</b>。<u>知覚動詞 see の目的格補語の位置</u>なので、<em>原形の動詞</em>が入る。<b>四つとも原形なので、ここでは絞れない</b>。"},
+   {t:"前置詞句の方向を見る", d:"<b>beneath a wave of souvenir shops, crowds, tour buses and noisy bars</b>「土産物屋・群衆・観光バス・騒がしいバーの<u>波の下に</u>」。<em>beneath は「〜の下に」</em>。<u>何かが波の下に行く＝覆い隠される</u>。"},
+   {t:"段落の評価の向きで裏を取る", d:"直後の文｜<b>They are also suffering as local facilities and infrastructure are put under enormous strain.</b>「住民はまた、施設やインフラが多大な負担にさらされることでも苦しんでいる」。<u>also（〜もまた）が付いているので、前文もマイナスの内容でなければならない</u>。"},
+   {t:"選ぶ", d:"<b>vanish（消える）＝(ニ)</b>。<u>土地固有の感覚が、観光化の波の下に消えていく</u>。<em>develop・flourish はプラス方向で also と噛み合わず、spread は beneath という方向と合わない</em>。"}],
+ ev:{q:'While many tourists want to &quot;live like a local&quot; and have an authentic experience during their visit, the residents of many tourism-dependent destinations are seeing <span class="h">the unique sense of place that characterised their home towns ( X ) beneath a wave of souvenir shops, crowds, tour buses and noisy bars</span>. <span class="h">They are also suffering</span> as local facilities and infrastructure are put under enormous strain.', jp:"「多くの観光客が『地元の人のように暮らし』、滞在中に本物の体験をしたいと望む一方で、観光に依存する多くの目的地の住民は、自分たちの故郷を特徴づけてきた土地固有の感覚が、土産物屋や群衆、観光バス、騒がしいバーの波の下に消えていくのを目にしている。彼らはまた、地元の施設やインフラが多大な負担にさらされることでも苦しんでいる。」"},
+ co:[{c:"gold",l:"also という一語が評価の向きを固定する",h:"<b>They are <u>also</u> suffering</b>。<u>「〜もまた苦しんでいる」ということは、その前にも苦しみが述べられていたはず</u>。<em>つまり空所を含む文は、住民にとってマイナスの出来事を述べている</em>。<b>この一語だけで(イ)(ロ)が消える</b>。"},
+     {c:"nav",l:"この一文がこの文章で最も皮肉が効いている",h:"<b>観光客は「本物の体験」を求める。しかし求める人が集まることで、その本物らしさが消えていく</b>。<u>While の前後が、求める側と失う側の対比になっている</u>。<em>文章全体を貫く構図が、この一文に凝縮されている</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>四つとも文法的には入る語の中から、文脈で一つに絞る力</b>。<u>語彙の知識ではなく、前置詞の方向と、直後の文の評価の向きで決める</u>。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<span class=\"tag v\">主張</span>develop「発展する、成長する」。<span class=\"cj\"><b>照合すべき箇所</b>｜They are <b>also</b> suffering as local facilities and infrastructure are put under enormous strain.</span><b>崩れる一点</b>｜<u>評価の向きが逆</u>。<em>直後の文が also suffering（〜もまた苦しんでいる）と続く以上、空所の文もマイナスでなければならない</em>。<b>さらに beneath a wave of ~（波の下に）という方向とも噛み合わない</b>――<u>何かが波の下で発展する、という像が成立しない</u>。<br>〈選びがちな人〉<b>souvenir shops や tour buses を「観光地の発展」と読んだ人</b>。<u>本文はそれを、住民が何かを失う原因として挙げている</u>。"},
+  {m:"x",n:"(ロ)",t:"<span class=\"tag v\">主張</span>flourish「栄える、繁茂する」。<span class=\"cj\"><b>照合すべき箇所</b>｜beneath a wave of ~／They are also suffering</span><b>崩れる一点</b>｜<u>(イ)と同じ誤り</u>。<b>プラス方向の語なので、also suffering と接続できない</b>。<em>しかも「固有の感覚が波の下で栄える」では意味をなさない</em>。<br>〈選びがちな人〉<b>the unique sense of place という価値あるものが主語なので、前向きな動詞を当てた人</b>。<u>主語の性質ではなく、文全体の向きで決める</u>。"},
+  {m:"x",n:"(ハ)",t:"<span class=\"tag v\">主張</span>spread「広がる」。<span class=\"cj\"><b>照合すべき箇所</b>｜<b>beneath</b> a wave of souvenir shops, crowds, tour buses and noisy bars</span><b>崩れる一点</b>｜<u>前置詞の方向と合わない</u>。<b>beneath は「〜の下に」</b>であって、<em>広がる方向を示す語とは結びつかない</em>。<u>spread なら across や throughout が自然</u>。<br>〈選びがちな人〉<b>マイナスの意味を持ちうる語だと判断して選んだ人</b>。<u>spread 自体は中立で、何が広がるかで評価が決まる</u>。<em>ここで広がっているのは観光化の波のほうであり、固有の感覚ではない</em>。"},
+  {m:"o",n:"(ニ)",t:"<span class=\"tag g\">正解</span>vanish「消える」。<span class=\"cj\"><b>根拠</b>｜beneath a wave of ~（波の下に）＋ They are <b>also</b> suffering</span><b>観光化の波の下に、土地固有の感覚が消えていく</b>。<u>beneath という方向（下に覆われる）と、also suffering という評価の向き（マイナス）の両方に適合する唯一の選択肢</u>。"}]},
+
+{id:"B", grp:"AB", type:"具体例", lbl:"設問B", en:"Recently, Thai authorities were forced to (1)act when the number of tourists ... led to shocking environmental damage.",
+ ask:"<span class=\"aen\">下線部(1) <b>act</b> の具体例として最も適切なものを次の(イ)〜(ニ)の中から1つ選びなさい。</span><span class=\"ajp\"><b>該当箇所</b>｜最近タイ当局は、映画『ザ・ビーチ』で有名になった海岸を訪れる観光客の数が、衝撃的な環境被害を招いたことを受けて、<b>行動を取ら</b>ざるをえなくなった。</span>",
+ answer:"(ハ)", kind:"choice",
+ choices:[
+  {t:"(イ) build many hotels to accommodate tourists<span class=\"cjp\">観光客を収容するためにホテルを多数建てる</span>", ok:false},
+  {t:"(ロ) encourage local residents to make films<span class=\"cjp\">地元住民に映画を作るよう奨励する</span>", ok:false},
+  {t:"(ハ) restrict the number of tourists<span class=\"cjp\">観光客の数を制限する</span>", ok:true},
+  {t:"(ニ) use the film to attract more tourists<span class=\"cjp\">その映画を使ってさらに多くの観光客を引きつける</span>", ok:false}],
+ steps:[
+   {t:"行動を取らせた原因を特定する", d:"<b>were forced to act <u>when</u> the number of tourists ... led to shocking environmental damage</b>。<u>観光客の数が環境被害を招いた</u>。<em>これが当局を動かした</em>。"},
+   {t:"原因に対応する行動を考える", d:"<b>被害の原因は「観光客の数」</b>。<u>したがって当局が取るべき行動は、その数に働きかけるもの</u>。<em>増やす方向ではありえない</em>。"},
+   {t:"forced to の含みを確認する", d:"<b>were forced to act</b>「行動を<u>取らざるをえなかった</u>」。<em>当局にとって望ましい施策ではなく、やむなく踏み切った措置</em>。<u>観光収入を手放す決断だったことが示唆されている</u>。"},
+   {t:"選ぶ", d:"<b>restrict the number of tourists＝(ハ)</b>。"}],
+ ev:{q:'Recently, <span class="h">Thai authorities were forced to (1)act</span> when <span class="h">the number of tourists visiting the coastline</span> made famous by the 2000 Leonardo DiCaprio film <em>The Beach</em> <span class="h">led to shocking environmental damage</span>.', jp:"「最近タイ当局は、2000年のレオナルド・ディカプリオ主演の映画『ザ・ビーチ』で有名になった海岸を訪れる観光客の数が、衝撃的な環境被害を招いたことを受けて、行動を取らざるをえなくなった。」"},
+ co:[{c:"gold",l:"原因と対策は同じ対象に向く",h:"<b>被害を招いたのは「観光客の数」</b>。<u>だから対策も「数」に向かう</u>。<em>具体例を問う設問では、まず原因を特定し、それに対応する行動を探す</em>。"},
+     {c:"nav",l:"誤答のうち二つが「増やす」方向",h:"<b>(イ)ホテルを建てる／(ニ)映画で集客する</b>。<u>どちらも観光客を増やす施策</u>。<em>環境被害への対処としては逆</em>。<b>方向だけで二つ消える</b>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>具体例を、文脈の因果から導く力</b>。<u>act という抽象的な語に、文脈が与えている内容を読む</u>。<em>act 単独では何も決まらない</em>。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<span class=\"tag v\">主張</span>観光客を収容するためにホテルを多数建てる。<span class=\"cj\"><b>照合すべき箇所</b>｜led to shocking environmental damage</span><b>崩れる一点</b>｜<u>方向が逆</u>。<b>ホテルを建てれば観光客はさらに増え、環境被害は拡大する</b>。<em>当局が「行動を取らざるをえなかった」のは被害への対処のためであって、受け入れ拡大のためではない</em>。<br>〈選びがちな人〉<b>観光客が多いのだから収容設備が必要だ、と現実的な発想で補った人</b>。<u>本文が示している問題は収容不足ではなく環境破壊</u>。"},
+  {m:"x",n:"(ロ)",t:"<span class=\"tag v\">主張</span>地元住民に映画を作るよう奨励する。<span class=\"cj\"><b>照合すべき箇所</b>｜the 2000 Leonardo DiCaprio film <em>The Beach</em></span><b>崩れる一点</b>｜<u>本文と無関係</u>。<b>映画は「海岸が有名になったきっかけ」として言及されているだけ</b>で、<em>映画製作そのものが論点ではない</em>。<br>〈選びがちな人〉<b>film という語が本文にあるのを見て選んだ人</b>。<u>語の一致は根拠にならない</u>。"},
+  {m:"o",n:"(ハ)",t:"<span class=\"tag g\">正解</span>観光客の数を制限する。<span class=\"cj\"><b>根拠</b>｜the number of tourists ... led to shocking environmental damage</span><b>被害を招いたのが観光客の数である以上、取るべき行動はその数を抑えること</b>。<u>were forced to（やむなく）という表現も、観光収入を手放す決断だったことを示唆する</u>。"},
+  {m:"x",n:"(ニ)",t:"<span class=\"tag v\">主張</span>その映画を使ってさらに多くの観光客を引きつける。<span class=\"cj\"><b>照合すべき箇所</b>｜were <b>forced</b> to act ... led to shocking environmental damage</span><b>崩れる一点</b>｜<u>(イ)と同じく増やす方向</u>。<em>しかも環境被害が起きた直後に集客を強化するのは、文脈として成立しない</em>。<br>〈選びがちな人〉<b>made famous by the film（映画で有名になった）という記述を、観光振興の成功例として読んだ人</b>。<u>本文はそれを被害の出発点として述べている</u>。"}]},
+
+{id:"C", grp:"AB", type:"抜き出し（7語）", lbl:"設問C", en:"(2)pricing residents out of the property market",
+ ask:"<span class=\"aen\">下線部(2) <b>pricing residents out of the property market</b> の言い換えとして最も適切な<b>7語</b>からなる語句を、&quot;City residents&quot; からはじまる<b>第6段落</b>から探し、最初と最後の語を書きなさい。</span><span class=\"ajp\"><b>下線部の意味</b>｜住民を価格面で不動産市場から締め出している</span>", answer:"making ／ residents", kind:"desc",
+ steps:[
+   {t:"下線部の意味を分解する", d:"<b>price A out of B</b>＝<u>「価格によってAをBから締め出す」</u>。<em>家賃や地価が上がりすぎて、住民がその市場にとどまれなくなる</em>。<b>二つの要素がある</b>――<u>①値段が手の届かないものになる　②住民が出ていくことになる</u>。"},
+   {t:"探す範囲を確認する", d:"<b>第6段落</b>＝<u>City residents also bear the cost of tourism growth.</u> で始まる段落。<em>設問が範囲を指定しているので、他の段落は見ない</em>。"},
+   {t:"二つの要素が揃う箇所を探す", d:"第4文｜<b>Airbnb ... has been accused of <u>making housing less affordable and displacing residents</u></b>。<u>making housing less affordable＝値段が手の届かないものになる</u>、<u>displacing residents＝住民を立ち退かせる</u>。<em>下線部の二要素が過不足なく揃っている</em>。", cite:'The online vacation rental service, Airbnb, for example, has been accused of <span class="h">making housing less affordable and displacing residents</span>.'},
+   {t:"語数を数えて確定する", d:"<b>making(1) housing(2) less(3) affordable(4) and(5) displacing(6) residents(7)</b>＝<u>ちょうど7語</u>。<em>したがって最初の語は making、最後の語は residents</em>。"}],
+ model:["最初の語　<b>making</b>　／　最後の語　<b>residents</b>",
+        "該当する語句（7語）　making housing less affordable and displacing residents"],
+ mnote:"書くのは最初と最後の語だけ。語句全体を書き写す必要はない。語数が7語ちょうどであることを必ず数えて確認すること。",
+ total:10,
+ rubric:[
+  {t:"最初の語を <b>making</b> と答えている", p:5, must:true},
+  {t:"最後の語を <b>residents</b> と答えている", p:5, must:true}],
+ ng:[
+  {bad:"increased ／ communities", why:"<b>第3文の an increased cost of living for local communities を選んでいる</b>。<u>increased(1) cost(2) of(3) living(4) for(5) local(6) communities(7) で7語にはなる</u>が、<em>これは「生活費の上昇」であって、不動産市場から締め出されることではない</em>。<b>price out に含まれる「出ていかざるをえない」という要素がない</b>。<u>語数だけで決めると引っかかる</u>。"},
+  {bad:"has ／ residents", why:"<b>has been accused of making housing less affordable and displacing residents から数え始めている</b>。<u>has(1) been(2) accused(3) of(4) making(5) housing(6) less(7) で7語目が less になり、residents まで届かない</u>。<em>言い換えに当たる部分は accused of 以下ではなく、making 以下</em>。<b>非難されているという事実ではなく、非難の中身が下線部に対応する</b>。"},
+  {bad:"banning ／ centre", why:"<b>第5文のアムステルダムの対策を選んでいる</b>。<u>これは問題への「対処」であって、下線部が述べている「問題そのもの」ではない</u>。<em>言い換えを探す問題では、意味が等しい箇所を探す</em>。"},
+  {bad:"making housing less affordable and displacing residents", why:"<b>語句全体を書いてしまっている</b>。<u>設問は「最初と最後の語を書きなさい」</u>。<em>内容は合っていても、指示に従っていなければ減点対象になりうる</em>。<b>設問文の指示を最後まで読む</b>。"}]},
+
+{id:"D", grp:"AB", type:"空所補充（組み合わせ）", lbl:"設問D", en:"It is a hugely ( Y ) issue that is often ( Z ).",
+ ask:"<span class=\"aen\">空所( Y )と( Z )に入る語の組み合わせとして最も適切なものを次の(イ)〜(ニ)の中から1つ選びなさい。</span><span class=\"ajp\"><b>該当箇所</b>｜これはきわめて<b>（ Y ）</b>な問題でありながら、しばしば<b>（ Z ）</b>。それは多様な形で影響を及ぼしうる。</span>",
+ answer:"(イ)", kind:"choice",
+ choices:[
+  {t:"(イ) Y = complex ／ Z = oversimplified<span class=\"cjp\">複雑な ／ 単純化されすぎている</span>", ok:true},
+  {t:"(ロ) Y = exaggerated ／ Z = overvalued<span class=\"cjp\">誇張された ／ 過大評価されている</span>", ok:false},
+  {t:"(ハ) Y = simple ／ Z = overcomplicated<span class=\"cjp\">単純な ／ 複雑にされすぎている</span>", ok:false},
+  {t:"(ニ) Y = valuable ／ Z = overexaggerated<span class=\"cjp\">価値のある ／ 過度に誇張されている</span>", ok:false}],
+ steps:[
+   {t:"直後の文から ( Y ) を決める", d:"<b>It can have an impact in multiple ways.</b>「それは<u>多様な形で</u>影響を及ぼしうる」。<em>影響の経路が複数あるということは、その問題は複雑だということ</em>。<u>したがって ( Y )＝complex</u>。", cite:'It is a hugely ( Y ) issue that is often ( Z ). <span class="h">It can have an impact in multiple ways.</span>'},
+   {t:"that is often ~ の関係を見る", d:"<b>a hugely ( Y ) issue <u>that is often</u> ( Z )</b>。<u>「〜な問題でありながら、しばしば〜される」</u>。<em>この形は、実態と扱われ方のずれを述べるときに使う</em>。"},
+   {t:"ずれの中身を考える", d:"<b>複雑な問題が、しばしばどう扱われるか</b>。<u>複雑さが見落とされ、単純化される</u>。<em>これが筆者の指摘</em>。<b>( Z )＝oversimplified</b>。"},
+   {t:"段落以降の展開で裏を取る", d:"<b>この宣言どおり、筆者は以降で複数の方向から論じる</b>。<u>クルーズ船の例、住民の生活費、Airbnbの両面、行政の無力、観光の利点の承認</u>。<em>一面的な断罪を避ける書き方が、この一文の実践になっている</em>。よって<b>(イ)</b>。"}],
+ ev:{q:'<span class="h">It is a hugely ( Y ) issue that is often ( Z ). It can have an impact in multiple ways.</span> The international cruise ship industry, for example, delivers thousands of passengers daily to destination ports. While comparatively little is returned to the local communities, cruise ships create physical and visual pollution.', jp:"「これはきわめて複雑な問題でありながら、しばしば単純化されすぎる。それは多様な形で影響を及ぼしうる。たとえば国際クルーズ船産業は、毎日何千人もの乗客を寄港地に送り込む。地域社会に還元されるものは比較的少ない一方で、クルーズ船は物理的にも視覚的にも汚染を生み出す。」"},
+ co:[{c:"gold",l:"multiple ways が ( Y ) を一語で決める",h:"<b>影響の経路が複数ある＝複雑</b>。<u>直後の一文だけで ( Y )＝complex が確定する</u>。<em>(ハ)の simple は、この一文と正面から衝突する</em>。"},
+     {c:"nav",l:"この一文は文章全体の設計図",h:"<b>「複雑なのに単純化される」と宣言した筆者は、以降それを実践する</b>。<u>第6段落でAirbnbを批判しつつ是正努力にも触れ、第9段落で観光の利点を認め、第11段落で対策を挙げたうえで加減の難しさを留保する</u>。<em>どれも一面的な断罪を避ける書き方</em>。<b>この一文を押さえると、文章全体の姿勢が見える</b>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>組み合わせ問題を、片方ずつ独立に検証する力</b>。<u>( Y ) は直後の一文で決まり、( Z ) は that is often ~ という形から決まる</u>。<em>二段階で確認すれば、四つのうち三つは機械的に消える</em>。"}],
+ sol:[
+  {m:"o",n:"(イ)",t:"<span class=\"tag g\">正解</span>complex ／ oversimplified「複雑な ／ 単純化されすぎている」。<span class=\"cj\"><b>根拠</b>｜直後の It can have an impact in <b>multiple ways</b>.</span><b>影響の経路が複数あることが complex を保証する</b>。<u>そして「複雑なのに単純化される」という実態と扱われ方のずれが、この段落以降の書き方そのものを予告している</u>。"},
+  {m:"x",n:"(ロ)",t:"<span class=\"tag v\">主張</span>exaggerated ／ overvalued「誇張された ／ 過大評価されている」。<span class=\"cj\"><b>照合すべき箇所</b>｜It can have an impact in multiple ways.／文章全体の姿勢</span><b>崩れる一点</b>｜<u>筆者はこの問題を深刻なものとして扱っている</u>。<b>「誇張されている」「過大評価されている」なら、以降で被害を詳述する必要がない</b>。<em>しかも multiple ways（多様な影響）という直後の一文とも噛み合わない</em>。<br>〈選びがちな人〉<b>over- で始まる語が並ぶのを見て、overtourism との語形の一致で選んだ人</b>。"},
+  {m:"x",n:"(ハ)",t:"<span class=\"tag v\">主張</span>simple ／ overcomplicated「単純な ／ 複雑にされすぎている」。<span class=\"cj\"><b>照合すべき箇所</b>｜It can have an impact in <b>multiple ways</b>.</span><b>崩れる一点</b>｜<u>正解の裏返しになっている</u>。<b>直後の文が「多様な形で影響を及ぼしうる」と述べている以上、( Y ) に simple は入らない</b>。<em>多様＝複雑</em>。<br>〈選びがちな人〉<b>「単純な問題が複雑にされている」という構図も世の中にはあるので、形として成立すると感じた人</b>。<u>一般論ではなく、直後の一文で判定する</u>。<br><span class=\"tag n\">ここが最も危険</span>二語の関係だけ見ると(イ)と対称に見える。<em>決め手は本文の直後の一文のみ</em>。"},
+  {m:"x",n:"(ニ)",t:"<span class=\"tag v\">主張</span>valuable ／ overexaggerated「価値のある ／ 過度に誇張されている」。<span class=\"cj\"><b>照合すべき箇所</b>｜a hugely ( Y ) <b>issue</b></span><b>崩れる一点</b>｜<u>issue（問題）を valuable（価値のある）と形容するのが不自然</u>。<em>価値があるのは解決や議論であって、問題そのものではない</em>。<b>さらに overexaggerated は(ロ)と同じく、筆者がこの問題を深刻に扱っていることと矛盾する</b>。<br>〈選びがちな人〉<b>( Z ) の over- という形だけを見て、(ロ)と迷った末に選んだ人</b>。"}]},
+
+/* ===== E〜G：グループCD ===== */
+{id:"E", grp:"CD", type:"理由", lbl:"設問E", en:"(3)Things are made worse by the fact that tourist destinations are mostly unprepared to deal with overtourism.",
+ ask:"<span class=\"aen\">下線部(3) <b>Things are made worse</b> の理由として最も適切なものを次の(イ)〜(ニ)の中から1つ選びなさい。</span><span class=\"ajp\"><b>該当箇所</b>｜観光地の多くがオーバーツーリズムに対処する備えをほとんど持たないという事実によって、<b>事態はいっそう悪化している</b>。</span>",
+ answer:"(ロ)", kind:"choice",
+ choices:[
+  {t:"(イ) a decrease in international tourists<span class=\"cjp\">国際観光客の減少</span>", ok:false},
+  {t:"(ロ) a failure to address overtourism<span class=\"cjp\">オーバーツーリズムに対処できていないこと</span>", ok:true},
+  {t:"(ハ) serious environmental damage caused by tourists<span class=\"cjp\">観光客が引き起こす深刻な環境被害</span>", ok:false},
+  {t:"(ニ) the spread of online vacation rentals<span class=\"cjp\">オンライン民泊サービスの普及</span>", ok:false}],
+ steps:[
+   {t:"理由が明示されていることに気づく", d:"<b>Things are made worse <u>by the fact that</u> tourist destinations are mostly unprepared to deal with overtourism.</b><u>by the fact that 以下が、そのまま理由</u>。<em>他の段落を探す必要はない</em>。"},
+   {t:"理由の中身を言い換える", d:"<b>tourist destinations are mostly unprepared to deal with overtourism</b>「観光地の多くが、オーバーツーリズムに対処する備えを持たない」。<u>つまり対処できていない</u>。"},
+   {t:"選択肢の表現と突き合わせる", d:"<b>a failure to address overtourism</b>「オーバーツーリズムに対処できていないこと」。<u>unprepared to deal with＝failure to address</u>。<em>deal with と address はどちらも「対処する」</em>。"},
+   {t:"選ぶ", d:"<b>(ロ)</b>。"}],
+ ev:{q:'<span class="h">(3)Things are made worse by the fact that tourist destinations are mostly unprepared to deal with overtourism.</span> According to the Italian sociologist Marco d&rsquo;Eramo, in 1950 98% of international tourists visited just 15 famous destinations like Paris and Rome worldwide.', jp:"「観光地の多くがオーバーツーリズムに対処する備えをほとんど持たないという事実によって、事態はいっそう悪化している。イタリアの社会学者マルコ・デラモによれば、1950年には国際観光客の98%が、世界でパリやローマのようなわずか15の有名な目的地を訪れていた。」"},
+ co:[{c:"gold",l:"by the fact that は理由を名指しする",h:"<b>be made worse by ~</b>「〜によって悪化させられる」。<u>by の目的語が原因</u>。<em>しかも the fact that という形で、節の内容がそのまま原因だと示されている</em>。<b>この設問は、下線部の直後を読むだけで決まる</b>。"},
+     {c:"nav",l:"他の選択肢は本文の別の箇所から来ている",h:"<b>(ハ)は第3段落のタイの事例、(ニ)は第6段落のAirbnb</b>。<u>どちらも本文に実在するが、この文の理由ではない</u>。<em>「本文にあるか」ではなく「この文の理由か」で判定する</em>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>理由が明示されている箇所を、探し回らずに見つける力</b>。<u>理由問題では、まず下線部の前後に理由を示す語（because, by, due to, the fact that）がないかを確認する</u>。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<span class=\"tag v\">主張</span>国際観光客の減少。<span class=\"cj\"><b>照合すべき箇所</b>｜第7段落第3文 which indicates the <b>rapid expansion</b> of global tourism</span><b>崩れる一点</b>｜<u>本文は観光の拡大を述べており、減少ではない</u>。<em>同じ段落の第3文が rapid expansion と明言している</em>。<br>〈選びがちな人〉<b>直後の 98%→57% という数字を見て、観光客が減ったと読んだ人</b>。<u>減ったのは「15の有名地だけを訪れる人の割合」であって、観光客の総数ではない</u>。<em>設問Fと同じ罠</em>。"},
+  {m:"o",n:"(ロ)",t:"<span class=\"tag g\">正解</span>オーバーツーリズムに対処できていないこと。<span class=\"cj\"><b>根拠</b>｜by the fact that tourist destinations are mostly <b>unprepared to deal with</b> overtourism</span><b>unprepared to deal with＝failure to address</b>。<u>下線部の直後に by the fact that という形で理由が明示されている</u>。<em>探す手間すらかからない</em>。"},
+  {m:"x",n:"(ハ)",t:"<span class=\"tag v\">主張</span>観光客が引き起こす深刻な環境被害。<span class=\"cj\"><b>照合すべき箇所</b>｜第3段落第3文（タイの事例）</span><b>崩れる一点</b>｜<u>本文に実在する内容だが、別の段落の話</u>。<b>第3段落のタイの事例であって、第7段落第1文の理由ではない</b>。<em>この文が理由として挙げているのは「備えがないこと」</em>。<br>〈選びがちな人〉<b>Things are made worse という漠然とした表現を見て、文章全体から最も深刻そうな被害を選んだ人</b>。<u>下線部の直後を読んでいない</u>。"},
+  {m:"x",n:"(ニ)",t:"<span class=\"tag v\">主張</span>オンライン民泊サービスの普及。<span class=\"cj\"><b>照合すべき箇所</b>｜第6段落第4文（Airbnb）</span><b>崩れる一点</b>｜<u>(ハ)と同じく、別の段落の内容</u>。<b>Airbnbは第6段落で住民の生活費と住宅の問題として扱われている</b>。<em>第7段落の「備えがない」という理由とは別</em>。<br>〈選びがちな人〉<b>段落をまたいで印象に残った固有名詞を拾った人</b>。"}]},
+
+{id:"F", grp:"CD", type:"理由", lbl:"設問F", en:"In 2007 (4)this figure had decreased to 57%, which indicates the rapid expansion of global tourism beyond established destinations.",
+ ask:"<span class=\"aen\">下線部(4) <b>this figure had decreased to 57%</b> の理由として最も適切なものを次の(イ)〜(ニ)の中から1つ選びなさい。</span><span class=\"ajp\"><b>該当箇所</b>｜1950年には国際観光客の98%が、わずか15の有名な目的地を訪れていた。2007年には<b>この数字が57%まで下がっており</b>、それは確立された目的地を越えた世界的観光の急速な拡大を示している。</span>",
+ answer:"(イ)", kind:"choice",
+ choices:[
+  {t:"(イ) international tourists now visit a variety of destinations<span class=\"cjp\">国際観光客が今やさまざまな目的地を訪れるようになった</span>", ok:true},
+  {t:"(ロ) most international tourists still visit 15 established destinations<span class=\"cjp\">大半の国際観光客は今も15の確立された目的地を訪れている</span>", ok:false},
+  {t:"(ハ) the number of tourist destinations is decreasing worldwide<span class=\"cjp\">観光地の数が世界的に減少している</span>", ok:false},
+  {t:"(ニ) there were far fewer international tourists in 2007 than 1950<span class=\"cjp\">2007年には1950年よりはるかに少ない国際観光客しかいなかった</span>", ok:false}],
+ steps:[
+   {t:"この数字が何の数字かを確定する", d:"<b>98%／57%＝「15の有名な目的地だけを訪れる国際観光客の<u>割合</u>」</b>。<em>観光客の総数ではない</em>。<u>ここを取り違えると、四つの選択肢のうち二つが正しく見えてしまう</u>。"},
+   {t:"割合が下がる仕組みを考える", d:"<b>15の有名地に行く人の割合が下がる＝それ以外の場所に行く人の割合が上がる</b>。<u>つまり行き先が散らばった</u>。"},
+   {t:"筆者自身の解釈で裏を取る", d:"直後｜<b>which indicates the rapid expansion of global tourism <u>beyond established destinations</u></b>「確立された目的地を<u>越えた</u>、世界的観光の急速な拡大を示している」。<em>筆者が数字の意味を自分で書いている</em>。", cite:'In 2007 (4)this figure had decreased to 57%, which indicates the <span class="h">rapid expansion of global tourism beyond established destinations</span>.'},
+   {t:"選ぶ", d:"<b>(イ) 国際観光客が今やさまざまな目的地を訪れるようになった</b>。<u>beyond established destinations をそのまま言い換えた内容</u>。"}],
+ ev:{q:'According to the Italian sociologist Marco d&rsquo;Eramo, in 1950 <span class="h">98% of international tourists visited just 15 famous destinations</span> like Paris and Rome worldwide. In 2007 <span class="h">(4)this figure had decreased to 57%</span>, which indicates the <span class="h">rapid expansion of global tourism beyond established destinations</span>.', jp:"「イタリアの社会学者マルコ・デラモによれば、1950年には国際観光客の98%が、世界でパリやローマのようなわずか15の有名な目的地を訪れていた。2007年にはこの数字が57%まで下がっており、それは確立された目的地を越えた世界的観光の急速な拡大を示している。」"},
+ co:[{c:"verm",l:"割合と実数を混同しない",h:"<b>下がったのは「割合」</b>。<u>観光客の総数が増えていれば、割合が下がっても実数は増える</u>。<em>実際、本文は rapid expansion（急速な拡大）と明言している</em>。<b>(ニ)はこの混同を狙った選択肢</b>。"},
+     {c:"gold",l:"which indicates が答えを書いている",h:"<b>数字の直後に、筆者自身の解釈が付いている</b>。<u>rapid expansion of global tourism beyond established destinations</u>。<em>「確立された目的地を越えて」＝それ以外の場所にも行くようになった</em>。<b>選択肢の a variety of destinations がこれに対応する</b>。"},
+     {c:"nav",l:"この数字が第1文とつながる",h:"<b>第7段落第1文は「観光地の多くが備えを持たない」</b>。<u>なぜ備えがないのか――これまで観光地ではなかった場所にまで観光客が来るようになったから</u>。<em>数字は、第1文の主張を支える論拠として置かれている</em>。"},
+     {c:"teal",l:"出題者が見ている力",h:"<b>数字が何を測ったものかを確認する力</b>。<u>パーセンテージが出てきたら「何に対する割合か」を必ず押さえる</u>。<em>母数を確認しないまま増減だけ読むと、結論が逆になる</em>。"}],
+ sol:[
+  {m:"o",n:"(イ)",t:"<span class=\"tag g\">正解</span>国際観光客が今やさまざまな目的地を訪れるようになった。<span class=\"cj\"><b>根拠</b>｜which indicates the rapid expansion of global tourism <b>beyond established destinations</b></span><b>15の有名地だけを訪れる人の割合が下がったのは、行き先が散らばったから</b>。<u>筆者自身が which indicates 以下でその意味を書いている</u>。<em>a variety of destinations が beyond established destinations の言い換えになっている</em>。"},
+  {m:"x",n:"(ロ)",t:"<span class=\"tag v\">主張</span>大半の国際観光客は今も15の確立された目的地を訪れている。<span class=\"cj\"><b>照合すべき箇所</b>｜this figure had <b>decreased</b> to 57%</span><b>崩れる一点</b>｜<u>事実としては57%なので「大半」とは言えるが、それでは「下がった」ことの理由にならない</u>。<em>設問が問うているのは、なぜ下がったのか</em>。<b>現状の説明であって、変化の原因ではない</b>。<br>〈選びがちな人〉<b>57%という数字が過半数であることに注目した人</b>。<u>設問が理由を問うていることを見落としている</u>。"},
+  {m:"x",n:"(ハ)",t:"<span class=\"tag v\">主張</span>観光地の数が世界的に減少している。<span class=\"cj\"><b>照合すべき箇所</b>｜rapid <b>expansion</b> of global tourism <b>beyond</b> established destinations</span><b>崩れる一点</b>｜<u>方向が正反対</u>。<b>観光は既存の目的地を越えて広がっている</b>のだから、<em>行き先の数はむしろ増えている</em>。<br>〈選びがちな人〉<b>decreased という語に引かれ、何かが減ったという方向で統一してしまった人</b>。<u>減ったのは割合だけ</u>。"},
+  {m:"x",n:"(ニ)",t:"<span class=\"tag v\">主張</span>2007年には1950年よりはるかに少ない国際観光客しかいなかった。<span class=\"cj\"><b>照合すべき箇所</b>｜98%／57% は<b>割合</b>／rapid expansion of global tourism</span><b>崩れる一点</b>｜<u>割合と実数の混同</u>。<b>98%も57%も「15の有名地だけを訪れる人の割合」</b>であって、<em>観光客の総数ではない</em>。<u>しかも本文は rapid expansion と明言している</u>。<br>〈選びがちな人〉<b>数字が下がったのだから観光客が減ったのだろう、と母数を確認せずに読んだ人</b>。<em>この文章で最も多い誤読</em>。<br><span class=\"tag n\">ここが最も危険</span>decreased という語と数字の下落が一致して見えるため、確認せずに選びやすい。"}]},
+
+{id:"G", grp:"CD", type:"理由", lbl:"設問G", en:"This has led to widespread &quot;(5)tourist-phobia&quot; — a mixture of mistrust of and contempt for tourists.",
+ ask:"<span class=\"aen\">下線部(5) <b>tourist-phobia</b> が生じた理由として最も適切なものを次の(イ)〜(ニ)の中から1つ選びなさい。</span><span class=\"ajp\"><b>該当箇所</b>｜自治体と都市計画の当局は、これまでのところ、世界的な観光産業の圧倒的な影響力に対処する力を持てずにいる。このことが「<b>観光客恐怖症</b>」――観光客に対する不信と侮蔑の入り混じったもの――を広く生み出してきた。</span>",
+ answer:"(イ)", kind:"choice",
+ choices:[
+  {t:"(イ) local government has not taken effective action to restrict overtourism<span class=\"cjp\">自治体がオーバーツーリズムを抑えるための有効な対策を取ってこなかった</span>", ok:true},
+  {t:"(ロ) many tourists mistrust local culture and people<span class=\"cjp\">多くの観光客が地元の文化や人々を信用していない</span>", ok:false},
+  {t:"(ハ) tourism brings benefits only to the tourist destinations, not to the local people<span class=\"cjp\">観光は観光地にのみ利益をもたらし、地元の人々にはもたらさない</span>", ok:false},
+  {t:"(ニ) tourists become less interested in the tourist destination<span class=\"cjp\">観光客が観光地への関心を失っていく</span>", ok:false}],
+ steps:[
+   {t:"This が何を受けるかを特定する", d:"<b>This has led to widespread &quot;tourist-phobia&quot;</b>。<u>This は直前の一文を受ける</u>。<em>直前の文＝Local government and planning authorities have so far been powerless to deal with the overwhelming influence of the global tourism industry.</em>", cite:'<span class="h">Local government and planning authorities have so far been powerless to deal with the overwhelming influence of the global tourism industry.</span> <span class="h">This</span> has led to widespread &quot;(5)tourist-phobia&quot;'},
+   {t:"直前の文の内容を言い換える", d:"<b>powerless to deal with ~</b>「〜に対処する力を持てずにいる」。<u>つまり有効な手が打てていない</u>。<em>これが嫌悪を広めた原因</em>。"},
+   {t:"phobia の向きを確認する", d:"<b>a mixture of mistrust <u>of</u> and contempt <u>for</u> tourists</b>。<u>of と for の目的語がどちらも tourists</u>。<em>したがって観光客は、不信と侮蔑を<b>向けられる側</b></em>。<b>抱く側ではない</b>。"},
+   {t:"選ぶ", d:"<b>(イ) 自治体が有効な対策を取ってこなかった</b>。<u>powerless to deal with＝has not taken effective action</u>。"}],
+ ev:{q:'But overtourism occurs when tourism expansion fails to acknowledge that there are limits. <span class="h">Local government and planning authorities have so far been powerless to deal with the overwhelming influence of the global tourism industry.</span> <span class="h">This has led to widespread &quot;(5)tourist-phobia&quot;</span> — a mixture of <span class="h">mistrust of and contempt for tourists</span>.', jp:"「しかしオーバーツーリズムは、観光の拡大が限界の存在を認めそこなったときに起こる。自治体と都市計画の当局は、これまでのところ、世界的な観光産業の圧倒的な影響力に対処する力を持てずにいる。このことが『観光客恐怖症』――観光客に対する不信と侮蔑の入り混じったもの――を広く生み出してきた。」"},
+ co:[{c:"verm",l:"この文章の最も重要な一点",h:"<b>観光客嫌悪の原因は、観光客そのものではなく行政の無力である</b>。<u>筆者はここで、素朴な「観光客が悪い」という図式を組み替えている</u>。<em>そして第12段落で、責任を行政・観光業・観光客に配分し直す</em>。<b>観光客は最後に also（〜もまた）として加えられるだけ</b>。"},
+     {c:"gold",l:"前置詞の目的語が phobia の向きを決める",h:"<b>mistrust <u>of</u> ... and contempt <u>for</u> tourists</b>。<u>どちらの前置詞も tourists を目的語に取る</u>。<em>つまり観光客は向けられる対象</em>。<b>(ロ)は、この向きを逆に読んだ選択肢</b>。"},
+     {c:"nav",l:"This は直前の一文を受ける",h:"<b>指示語の原則</b>。<u>This has led to ~ の This は、直前の文の内容全体</u>。<em>段落の主題文や、遠く離れた内容ではない</em>。"},
+     {c:"teal",l:"出題者が見ている力",h:"<b>指示語の特定と、前置詞の目的語の確認</b>。<u>どちらも機械的な作業だが、省くと解答が逆になる</u>。"}],
+ sol:[
+  {m:"o",n:"(イ)",t:"<span class=\"tag g\">正解</span>自治体がオーバーツーリズムを抑えるための有効な対策を取ってこなかった。<span class=\"cj\"><b>根拠</b>｜Local government and planning authorities have so far been <b>powerless to deal with</b> the overwhelming influence of the global tourism industry. <b>This</b> has led to ~</span><b>powerless to deal with＝has not taken effective action</b>。<u>This が直前の文を受けるので、原因はこの一文に書かれている</u>。<em>観光客嫌悪を生んだのは観光客ではなく、手を打てなかった行政だ、という構図</em>。"},
+  {m:"x",n:"(ロ)",t:"<span class=\"tag v\">主張</span>多くの観光客が地元の文化や人々を信用していない。<span class=\"cj\"><b>照合すべき箇所</b>｜a mixture of mistrust <b>of</b> and contempt <b>for tourists</b></span><b>崩れる一点</b>｜<u>不信と侮蔑の向きが逆</u>。<b>of と for の目的語はどちらも tourists</b>なので、<em>観光客は不信を向けられる側</em>。<u>抱く側ではない</u>。<br>〈選びがちな人〉<b>mistrust という語が本文にあるのを確認し、主語を取り違えた人</b>。<em>phobia という語から「観光客が感じる恐怖」と読んだ人も同じ誤り</em>。<br><span class=\"tag n\">ここが最も危険</span>本文の語をそのまま使っているため、照合すると一致して見える。<b>前置詞の目的語まで確認すれば消える</b>。"},
+  {m:"x",n:"(ハ)",t:"<span class=\"tag v\">主張</span>観光は観光地にのみ利益をもたらし、地元の人々にはもたらさない。<span class=\"cj\"><b>照合すべき箇所</b>｜第5段落 comparatively little is returned to the local communities／第9段落第3文（This が受ける文）</span><b>崩れる一点</b>｜<u>内容としては第5段落に近いことが書かれているが、この文の理由ではない</u>。<b>This が受けるのは直前の一文（行政の無力）</b>。<em>「本文にあるか」ではなく「This が指すか」で判定する</em>。<br>〈選びがちな人〉<b>住民が観光客を嫌う気持ちの説明として、もっともらしいほうを選んだ人</b>。<u>心情の説明としては自然だが、本文が挙げている原因とは違う</u>。"},
+  {m:"x",n:"(ニ)",t:"<span class=\"tag v\">主張</span>観光客が観光地への関心を失っていく。<span class=\"cj\"><b>照合すべき箇所</b>｜第10段落 unsustainable crowds of tourists continue to descend</span><b>崩れる一点</b>｜<u>本文と正反対</u>。<b>観光客は減るどころか押し寄せ続けている</b>。<em>しかも観光客の関心が薄れることが、住民の嫌悪を生む理由にはならない</em>。<br>〈選びがちな人〉<b>phobia（恐怖症）という語から、観光客が避けるようになる現象だと読んだ人</b>。"}]},
+
+/* ===== H・I：グループEF ===== */
+{id:"H", grp:"EF", type:"和訳（20字以内）", lbl:"設問H", en:"(6)some cities have taken strong measures to limit the effects of overtourism",
+ ask:"<span class=\"aen\">下線部(6)を、句読点を含め<b>20字以内</b>の日本語に訳しなさい。ただし、与えられた語句で始め、与えられた語句で終えること。<br>　　オーバーツーリズムの影響を　□□□…□□□　都市もある</span><span class=\"ajp\"><b>下線部</b>｜some cities have taken strong measures to limit the effects of overtourism</span>", answer:"下記の模範解答参照", kind:"desc",
+ steps:[
+   {t:"与えられた枠を先に読む", d:"<b>「オーバーツーリズムの影響を」で始まり「都市もある」で終わる</b>。<u>冒頭の「影響を」は the effects of overtourism を先取りしている</u>ので、<em>書き出しは「限定する／抑える」といった動詞から</em>。<b>末尾の「都市もある」は some cities に対応する</b>。"},
+   {t:"残る要素を確認する", d:"枠に入っていないのは <b>have taken strong measures to limit</b> の部分。<u>limit＝抑える・制限する</u>、<u>strong measures＝強力な対策・強い措置</u>、<u>have taken＝講じた・取った</u>。"},
+   {t:"日本語の語順に組み替える", d:"<b>「（影響を）抑えるために、強力な対策を講じた」</b>。<u>英語は measures → to limit の順だが、日本語は目的が先に来る</u>。<em>「影響を」が先に与えられているので、そこから「抑えるために」と続けるのが自然</em>。"},
+   {t:"字数を確認し、枠につないで読む", d:"<b>「オーバーツーリズムの影響を｜抑えるために強力な対策を講じた｜都市もある」</b>。<u>必ず声に出してつないでみること</u>。<em>内容が合っていても、枠に接続しなければ条件違反になる</em>。"}],
+ model:["抑えるために強力な手段をとった　〈15字〉　※旺文社解答",
+        "制限するために強い施策を講じた　〈15字〉",
+        "抑えるために強力な対策を講じた　〈15字〉"],
+ mnote:"take a strong measure to do「〜するために強力な手段をとる／強い施策を講じる」。いずれも「オーバーツーリズムの影響を」＋模範解答＋「都市もある」でつながることを必ず確認すること。<b>末尾の「とった／講じた」を落とすと枠に接続しない</b>。",
+ total:10,
+ rubric:[
+  {t:"limit を「抑える／制限する」と訳している", p:3, must:true},
+  {t:"strong measures を「強力な手段／強い施策／強力な対策」と訳している", p:3, must:true},
+  {t:"have taken を「とった／講じた」と<u>過去（完了）</u>で訳している", p:2, must:true},
+  {t:"目的を表す to を「〜するために」と処理している", p:2, must:false}],
+ ng:[
+  {bad:"抑えようとしている", why:"<b>have taken（完了）を「しようとしている」と訳している</b>。<u>すでに講じた措置であって、これからの意図ではない</u>。<em>第11段落は、実際に観光税や罰金やデマーケティングを導入した都市の話をしている</em>。"},
+  {bad:"小さくする対策がある", why:"<b>strong（強力な）が落ちている</b>。<u>この段落の要点は、不可能に見える課題に対して<b>強い</b>措置を取った都市があるということ</u>。<em>strong が消えると、直前の an impossible task との対比が弱まる</em>。"},
+  {bad:"減らすために観光税を導入した", why:"<b>具体例を訳に入れてしまっている</b>。<u>観光税・罰金・デマーケティングは including 以下の例示であり、下線部には含まれない</u>。<em>下線部の範囲を越えて訳すと、字数も足りなくなる</em>。"},
+  {bad:"強力な対策を講じて影響を抑えた", why:"<b>与えられた枠に接続しない</b>。<u>「オーバーツーリズムの影響を」＋「強力な対策を講じて…」は日本語としてつながらない</u>。<em>「影響を」の直後には、それを目的語に取る動詞が来なければならない</em>。<b>指定語句つきの和訳では、必ず声に出してつないで確認する</b>。"},
+  {bad:"抑えるために強力な手段を", why:"<b>末尾の動詞が抜けている</b>。<u>「オーバーツーリズムの影響を抑えるために強力な手段を<b>都市もある</b>」となり、文が成立しない</u>。<em>与えられた語句は「都市もある」だけなので、「とった／講じた」は解答側に書く必要がある</em>。<b>12字で収まって安心し、枠につないで読まなかった答案</b>。"}]},
+
+{id:"I", grp:"EF", type:"表現の言い換え", lbl:"設問I", en:"But (7)it&apos;s a fine line to tread.",
+ ask:"<span class=\"aen\">下線部(7) <b>it&apos;s a fine line to tread</b> の意味に最も近いものを次の(イ)〜(ニ)の中から1つ選びなさい。</span><span class=\"ajp\"><b>該当箇所</b>｜しかし、<b>それはさじ加減の難しい道である</b>。ある目的地への観光客の到着が急激かつ劇的に減れば、それに依存する人々にとって相当の経済的影響が生じる。</span>",
+ answer:"(ハ)", kind:"choice",
+ choices:[
+  {t:"(イ) it helps to see things differently<span class=\"cjp\">物事を違った角度から見ることが役に立つ</span>", ok:false},
+  {t:"(ロ) it is best to establish a clear boundary<span class=\"cjp\">明確な境界線を引くのが最善である</span>", ok:false},
+  {t:"(ハ) it is difficult to find the right balance<span class=\"cjp\">適切なバランスを見つけるのが難しい</span>", ok:true},
+  {t:"(ニ) it is not easy to put into words<span class=\"cjp\">言葉にするのが容易ではない</span>", ok:false}],
+ steps:[
+   {t:"表現を分解する", d:"<b>a fine line</b>＝<u>「細い線、きわどい一線」</u>。<b>tread</b>＝<u>「（道を）歩む、踏む」</u>。<em>walk a fine line / tread a fine line で「きわどい綱渡りをする」</em>。"},
+   {t:"直後の文で中身を確認する", d:"<b>When tourist arrivals to a destination decline suddenly and dramatically it has considerable economic consequences for those who rely on them.</b>「観光客の到着が急激に減れば、それに依存する人々に相当の経済的影響が生じる」。<u>つまり減らしすぎても害がある</u>。", cite:'But (7)it&apos;s a fine line to tread. <span class="h">When tourist arrivals to a destination decline suddenly and dramatically it has considerable economic consequences for those who rely on them.</span>'},
+   {t:"前後の文脈を一本にする", d:"<b>対策を取れば観光客は減る。しかし減りすぎれば経済が打撃を受ける</b>。<u>多すぎても少なすぎても問題</u>。<em>これが「きわどい一線」の中身</em>。"},
+   {t:"選ぶ", d:"<b>(ハ) 適切なバランスを見つけるのが難しい</b>。"}],
+ ev:{q:'But some cities have taken strong measures to limit the effects of overtourism ... But <span class="h">(7)it&apos;s a fine line to tread.</span> <span class="h">When tourist arrivals to a destination decline suddenly and dramatically it has considerable economic consequences for those who rely on them.</span>', jp:"「しかし、オーバーツーリズムの影響を抑えるために強力な対策を講じた都市もある。……しかし、それはさじ加減の難しい道である。ある目的地への観光客の到着が急激かつ劇的に減れば、それに依存する人々にとって相当の経済的影響が生じる。」"},
+ co:[{c:"gold",l:"fine の意味に注意",h:"<b>ここでの fine は「素晴らしい」ではなく「細い、微妙な」</b>。<u>a fine line＝細い一線</u>。<em>その上を歩く（tread）のだから、少しでも外れれば落ちる</em>。<b>there is a fine line between A and B（AとBは紙一重だ）も同じ fine</b>。"},
+     {c:"nav",l:"But が二回続く段落",h:"<b>不可能に見える → <u>But</u> 対策を取った都市がある → <u>But</u> さじ加減が難しい</b>。<u>悲観・希望・留保の三段</u>。<em>筆者は安易な解決を提示しない</em>。<b>この構えは第5段落の「単純化されがち」という宣言と一貫している</b>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>慣用表現を、直後の文の内容から復元する力</b>。<u>a fine line to tread を知らなくても、直後の「減りすぎると経済的打撃」から balance の問題だと導ける</u>。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<span class=\"tag v\">主張</span>物事を違った角度から見ることが役に立つ。<span class=\"cj\"><b>照合すべき箇所</b>｜直後の文（観光客が急減すれば経済的打撃）</span><b>崩れる一点</b>｜<u>視点の切り替えという話は本文に出てこない</u>。<em>But という逆接の後ろに置かれる以上、直前の「強力な対策」に対する留保でなければならない</em>。<b>「見方を変えると役立つ」では留保にならない</b>。<br>〈選びがちな人〉<b>表現の意味が取れず、無難そうな一般論を選んだ人</b>。"},
+  {m:"x",n:"(ロ)",t:"<span class=\"tag v\">主張</span>明確な境界線を引くのが最善である。<span class=\"cj\"><b>照合すべき箇所</b>｜a <b>fine</b> line to tread</span><b>崩れる一点</b>｜<u>fine line は「細い・微妙な線」であって「明確な線」ではない</u>。<b>むしろ線が細いからこそ、どこで線を引けばよいかが難しい</b>。<em>意味が正反対になっている</em>。<br>〈選びがちな人〉<b>line という語から「線引き」を連想し、対策の話だから基準を決めるべきだと読んだ人</b>。<u>fine の意味を確認していない</u>。<br><span class=\"tag n\">ここが最も危険</span>line という共通語があり、対策の文脈にもなじむため、最も多く選ばれる誤答。"},
+  {m:"o",n:"(ハ)",t:"<span class=\"tag g\">正解</span>適切なバランスを見つけるのが難しい。<span class=\"cj\"><b>根拠</b>｜直後の文 When tourist arrivals ... decline suddenly and dramatically it has considerable economic consequences</span><b>対策を取れば観光客は減る。しかし減りすぎれば経済が打撃を受ける</b>。<u>多すぎても少なすぎても問題だから、きわどい一線を歩くことになる</u>。<em>直後の一文が、この表現の中身を説明している</em>。"},
+  {m:"x",n:"(ニ)",t:"<span class=\"tag v\">主張</span>言葉にするのが容易ではない。<span class=\"cj\"><b>照合すべき箇所</b>｜直後の文（具体的な経済的帰結の説明）</span><b>崩れる一点</b>｜<u>直後で具体的に説明されている</u>。<b>言葉にしにくいのなら、次の文で中身を書けない</b>。<em>表現の難しさではなく、実行の難しさの話</em>。<br>〈選びがちな人〉<b>fine line という比喩的な表現を見て、言語化の難しさを述べていると読んだ人</b>。"}]},
+
+/* ===== J・K：グループGH ===== */
+{id:"J", grp:"GH", type:"担い手の特定", lbl:"設問J", en:"Overtourism is (8)a shared responsibility.",
+ ask:"<span class=\"aen\">下線部(8) <b>a shared responsibility</b> の担い手として最も適切な組み合わせを次の(イ)〜(ニ)の中から1つ選びなさい。</span><span class=\"ajp\"><b>該当箇所</b>｜オーバーツーリズムは<b>共有された責任</b>である。都市の行政担当者と観光業に携わる人々は、成長には明確な限界があることを受け入れなければならない。……観光客もまた、自らの役割を果たさなければならない。</span>",
+ answer:"(ハ)", kind:"choice",
+ choices:[
+  {t:"(イ) city administrators, local residents, and people who work in tourism<span class=\"cjp\">都市の行政担当者、地元住民、観光業に携わる人々</span>", ok:false},
+  {t:"(ロ) city administrators, local residents, and tourists<span class=\"cjp\">都市の行政担当者、地元住民、観光客</span>", ok:false},
+  {t:"(ハ) city administrators, people who work in tourism, and tourists<span class=\"cjp\">都市の行政担当者、観光業に携わる人々、観光客</span>", ok:true},
+  {t:"(ニ) local residents, people who work in tourism, and tourists<span class=\"cjp\">地元住民、観光業に携わる人々、観光客</span>", ok:false}],
+ steps:[
+   {t:"責任を負う者は must が向けられた相手だと決める", d:"<b>a shared responsibility（共有された責任）</b>。<u>では誰が共有するのか</u>。<em>段落内で「〜しなければならない」と要求されている相手を拾えばよい</em>。"},
+   {t:"must が付いた主語を順に拾う", d:"第2文｜<b>City administrators and those who work in tourism <u>must accept</u> ~</b>。<br>第5文｜<b>Tourists <u>must also</u> play their part ~</b>。<u>この二文で三者が挙がる</u>。", cite:'<span class="h">City administrators and those who work in tourism must accept</span> that there are definite limits to growth. … <span class="h">Tourists must also play their part</span> by being sensitive to the places they visit and those who live there.'},
+   {t:"local residents の立場を確認する", d:"第3文｜<b><u>Prioritising the welfare of local residents</u> above the needs of global tourism is vital.</b>「地元住民の福祉を、世界的観光の必要よりも優先することが不可欠である」。<u>住民は<b>優先される側</b></u>。<em>責任を要求されている側ではない</em>。"},
+   {t:"選ぶ", d:"<b>(ハ) 行政担当者・観光業従事者・観光客</b>。<u>local residents を含む選択肢はすべて誤り</u>。"}],
+ ev:{q:'Overtourism is <span class="h">(8)a shared responsibility</span>. <span class="h">City administrators and those who work in tourism must accept</span> that there are definite limits to growth. <span class="h">Prioritising the welfare of local residents</span> above the needs of global tourism is vital. Prime consideration must be given to ensuring that the number of tourists fits within a destination&rsquo;s capacity. <span class="h">Tourists must also play their part</span> by being sensitive to the places they visit and those who live there.', jp:"「オーバーツーリズムは共有された責任である。都市の行政担当者と観光業に携わる人々は、成長には明確な限界があることを受け入れなければならない。地元住民の福祉を、世界的観光の必要よりも優先することが不可欠である。観光客の数が目的地の収容力の範囲に収まるようにすることに、最優先の考慮が払われなければならない。観光客もまた、自分が訪れる場所と、そこに住む人々に配慮することで、自らの役割を果たさなければならない。」"},
+ co:[{c:"gold",l:"住民は守られる側であって、担い手ではない",h:"<b>Prioritising the welfare of local residents</b>「住民の福祉を優先する」。<u>優先するのは行政や業界であって、住民が何かを求められているのではない</u>。<em>この一文が、local residents を含む三つの選択肢のうち二つを同時に消す</em>。"},
+     {c:"nav",l:"要求の順序が主張を担っている",h:"<b>行政と観光業が先、観光客は最後で、しかも also（〜もまた）</b>。<u>also は付け足しを示す副詞</u>。<em>第9段落で原因を行政の無力に置いたことと一貫している</em>。<b>筆者は観光客のマナーを主因とは見ていない</b>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>段落内の役割分担を、助動詞と動詞の向きで仕分ける力</b>。<u>must が向けられた相手が責任の担い手、welfare を優先される相手が保護対象</u>。<em>同じ段落に出てくる語を、立場で区別できるか</em>。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<span class=\"tag v\">主張</span>行政担当者、地元住民、観光業に携わる人々。<span class=\"cj\"><b>照合すべき箇所</b>｜Prioritising the welfare of <b>local residents</b>／<b>Tourists</b> must also play their part</span><b>崩れる一点が二つ</b>｜<u>①地元住民が入っている</u>（住民は福祉を優先される側）。<u>②観光客が抜けている</u>（最終文で明確に責任を課されている）。<br>〈選びがちな人〉<b>被害を受けているのは住民だから、住民も当事者として責任を負うはずだと考えた人</b>。<u>被害者であることと、責任の担い手であることは別</u>。"},
+  {m:"x",n:"(ロ)",t:"<span class=\"tag v\">主張</span>行政担当者、地元住民、観光客。<span class=\"cj\"><b>照合すべき箇所</b>｜City administrators and <b>those who work in tourism</b> must accept</span><b>崩れる一点が二つ</b>｜<u>①地元住民が入っている</u>。<u>②観光業に携わる人々が抜けている</u>。<em>第2文で City administrators <b>and</b> those who work in tourism と、二者が並列で must の主語になっている</em>。<br>〈選びがちな人〉<b>and で結ばれた二つ目の主語を読み落とした人</b>。"},
+  {m:"o",n:"(ハ)",t:"<span class=\"tag g\">正解</span>行政担当者、観光業に携わる人々、観光客。<span class=\"cj\"><b>根拠</b>｜第2文 City administrators and those who work in tourism <b>must accept</b> ~／第5文 Tourists <b>must also</b> play their part ~</span><b>must が向けられている相手がこの三者</b>。<u>地元住民は第3文で「福祉を優先される側」として現れており、責任を課されてはいない</u>。"},
+  {m:"x",n:"(ニ)",t:"<span class=\"tag v\">主張</span>地元住民、観光業に携わる人々、観光客。<span class=\"cj\"><b>照合すべき箇所</b>｜<b>City administrators</b> and those who work in tourism must accept</span><b>崩れる一点が二つ</b>｜<u>①地元住民が入っている</u>。<u>②行政担当者が抜けている</u>。<em>第9段落で行政の無力が嫌悪の原因とされ、第12段落の冒頭で真っ先に要求されているのが行政</em>。<b>この文章で行政を外すことはありえない</b>。<br>〈選びがちな人〉<b>行政は「無力」と書かれていたので、責任の担い手から外れると読んだ人</b>。<u>無力だからこそ、受け入れるべきだと要求されている</u>。"}]},
+
+{id:"K", grp:"GH", type:"表現の言い換え", lbl:"設問K", en:"(9)Tourists must also play their part by being sensitive to the places they visit and those who live there.",
+ ask:"<span class=\"aen\">下線部(9)の意味に最も近いものを次の(イ)〜(ニ)の中から1つ選びなさい。</span><span class=\"ajp\"><b>下線部の意味</b>｜観光客もまた、自分が訪れる場所と、そこに住む人々に配慮することで、自らの役割を果たさなければならない。</span>",
+ answer:"(ロ)", kind:"choice",
+ choices:[
+  {t:"(イ) Tourists should explore destinations in large groups.<span class=\"cjp\">観光客は大人数の団体で目的地を見て回るべきだ。</span>", ok:false},
+  {t:"(ロ) Tourists should show more respect for local residents.<span class=\"cjp\">観光客は地元住民にもっと敬意を払うべきだ。</span>", ok:true},
+  {t:"(ハ) Tourists should spend more money at the destinations.<span class=\"cjp\">観光客は目的地でもっと金を使うべきだ。</span>", ok:false},
+  {t:"(ニ) Tourists should visit a variety of destinations.<span class=\"cjp\">観光客はさまざまな目的地を訪れるべきだ。</span>", ok:false}],
+ steps:[
+   {t:"by 以下が「役割」の中身だと見る", d:"<b>play their part <u>by</u> being sensitive to ~</b>。<u>by ~ing が手段を示す</u>。<em>つまり「配慮すること」が、観光客に求められる役割そのもの</em>。"},
+   {t:"配慮の対象を二つ押さえる", d:"<b>the places they visit</b>（訪れる場所）<b>and those who live there</b>（そこに住む人々）。<u>場所と人の両方</u>。<em>選択肢では「人」のほうが代表として取り上げられている</em>。"},
+   {t:"sensitive の意味を確定する", d:"<b>be sensitive to ~</b>＝<u>「〜に気を配る、配慮する」</u>。<em>「敏感である」から転じて、相手の事情をくみ取るという意味</em>。<u>敬意を払うことと重なる</u>。"},
+   {t:"選ぶ", d:"<b>(ロ) 地元住民にもっと敬意を払うべきだ</b>。<u>those who live there＝local residents</u>、<u>being sensitive to＝show respect for</u>。"}],
+ ev:{q:'<span class="h">(9)Tourists must also play their part by being sensitive to the places they visit and those who live there.</span>', jp:"「観光客もまた、自分が訪れる場所と、そこに住む人々に配慮することで、自らの役割を果たさなければならない。」"},
+ co:[{c:"gold",l:"誤答三つは、すべて本文の別の箇所から来ている",h:"<b>(イ)large groups＝第11段落のデマーケティングの説明（しかも避けるべき側）／(ハ)spend more money＝同じく第11段落の high-spending／(ニ)a variety of destinations＝第7段落の観光の拡散</b>。<u>どれも本文に実在する表現だが、観光客への要求として書かれたものではない</u>。"},
+     {c:"nav",l:"also が示す位置づけ",h:"<b>Tourists must <u>also</u> play their part</b>。<u>also は付け足し</u>。<em>第12段落の要求は、行政と観光業から始まり、観光客は最後に加えられる</em>。<b>観光客のマナーは主たる処方ではなく、補足的な義務として置かれている</b>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>本文に出てきた語句を、文脈から切り離して使わない力</b>。<u>三つの誤答はいずれも本文の語を含んでいる</u>。<em>「見たことがある」は根拠にならない</em>。"}],
+ sol:[
+  {m:"x",n:"(イ)",t:"<span class=\"tag v\">主張</span>観光客は大人数の団体で目的地を見て回るべきだ。<span class=\"cj\"><b>照合すべき箇所</b>｜第11段落 attracting fewer, high-spending and low-impact tourists, <b>rather than large groups</b></span><b>崩れる一点</b>｜<u>方向が正反対</u>。<b>デマーケティングは、大人数の団体<u>ではなく</u>少人数を引きつける手法</b>として説明されている。<em>large groups は避けるべき側</em>。<br>〈選びがちな人〉<b>large groups という語句が本文にあるのを見て選んだ人</b>。<u>rather than が直前に付いていることを読み落としている</u>。"},
+  {m:"o",n:"(ロ)",t:"<span class=\"tag g\">正解</span>観光客は地元住民にもっと敬意を払うべきだ。<span class=\"cj\"><b>根拠</b>｜being sensitive to the places they visit and <b>those who live there</b></span><b>those who live there＝local residents</b>、<u>being sensitive to＝配慮する＝show respect for</u>。<em>by ~ing が「役割」の中身を示しているので、この配慮こそが観光客に求められていること</em>。"},
+  {m:"x",n:"(ハ)",t:"<span class=\"tag v\">主張</span>観光客は目的地でもっと金を使うべきだ。<span class=\"cj\"><b>照合すべき箇所</b>｜第11段落 attracting fewer, <b>high-spending</b> and low-impact tourists</span><b>崩れる一点</b>｜<u>high-spending は、都市が「どういう観光客を引きつけるか」という選別の基準</u>であって、<em>観光客に向けられた要求ではない</em>。<b>下線部が求めているのは支出ではなく配慮</b>。<br>〈選びがちな人〉<b>第5段落の comparatively little is returned（地域への還元が少ない）を思い出し、だから金を使うべきだと補った人</b>。<u>筋は通るが、下線部が言っていることではない</u>。"},
+  {m:"x",n:"(ニ)",t:"<span class=\"tag v\">主張</span>観光客はさまざまな目的地を訪れるべきだ。<span class=\"cj\"><b>照合すべき箇所</b>｜第7段落 rapid expansion of global tourism beyond established destinations</span><b>崩れる一点</b>｜<u>第7段落で述べられているのは、実際に起きている現象</u>であって、<em>推奨ではない</em>。<b>しかもその拡散こそが「備えのない場所に観光客が来る」という問題を生んでいる</b>。<u>推奨するはずがない</u>。<br>〈選びがちな人〉<b>観光客が集中するのが問題なのだから分散すればよい、と自分で解決策を考えた人</b>。<u>本文はその分散を、悪化の原因として扱っている</u>。"}]},
+
+/* ===== L：グループIJ ===== */
+{id:"L", grp:"IJ", type:"内容一致（7択から2つ）", lbl:"設問L", en:"本文の内容と一致するものを2つ選びなさい。",
+ ask:"<span class=\"aen\">本文の内容と一致するものを次の(イ)〜(ト)の中から<b>2つ</b>選びなさい。ただし、3つ以上選んだ場合は得点を認めません。</span><span class=\"ajp\"><b>手順</b>｜まず<b>本文を裏返しただけの選択肢</b>を探して消す。<u>(イ) far smaller／(ロ) coping well／(ホ) much benefit／(ト) more than</u>――四つとも本文の該当箇所を見れば向きが逆だとわかる。<em>残る(ヘ)は定義のすり替えで、第11段落に whereby 以下の説明がある</em>。</span>",
+ answer:"(ハ)・(ニ)", kind:"multi",
+ mlab:"7択から2つ", mhint:"まず自分で2つ選んでから確認しよう。",
+ items:[
+  {n:"(イ)", t:"In 2017 the number of tourists visiting Barcelona was far smaller than the number of its inhabitants.<span class=\"cjp\">2017年、バルセロナを訪れた観光客の数は、その住民の数よりはるかに少なかった。</span>", ok:false,
+   ev:"第1段落 第2文", why:"<b>数字が正反対</b>。<u>there were 30 million overnight visitors in 2017, compared to a resident population of 1,625,000</u>＝<em>観光客3000万人に対し、住民162万5000人</em>。<b>観光客のほうが約18倍多い</b>。<br>〈選びがちな人〉<b>数字を照合せず、far smaller という表現だけ見て「住民より少ないこともありうる」と判断した人</b>。<u>二つの数字が並んでいる箇所は、必ず大小を確認する</u>。"},
+  {n:"(ロ)", t:"Major popular tourist destinations such as Amsterdam and Berlin are coping well with overtourism.<span class=\"cjp\">アムステルダムやベルリンのような主要な人気観光地は、オーバーツーリズムにうまく対処している。</span>", ok:false,
+   ev:"第3段落 第2文", why:"<b>正反対</b>。<u>Other destinations where overtourism is <b>causing serious trouble</b> include Amsterdam, Berlin, Venice, Kyoto and Bali</u>。<em>この二都市は「深刻な問題が起きている」側の例として挙げられている</em>。<br>〈選びがちな人〉<b>第6段落でアムステルダムが短期賃貸の禁止など対策を取っていることを読み、うまく対処していると判断した人</b>。<u>対策を取っていることと、うまく対処できていることは別</u>。<em>第6段落は wants to take direct action（直接防ごうとしている）であって、成功したとは書かれていない</em>。"},
+  {n:"(ハ)", t:"Overtourism not only affects the quality of life of local residents but also causes environmental destruction.<span class=\"cjp\">オーバーツーリズムは地元住民の生活の質に影響を与えるだけでなく、環境破壊も引き起こす。</span>", ok:true,
+   ev:"第3段落 第3文／第4段落 第1〜2文", why:"<b>一致する</b>。<u>生活の質</u>＝第4段落 <em>disturbed their lifestyles, and affected general well-being and access to facilities</em>（生活様式が乱され、全般的な幸福と施設の利用が損なわれる）。<u>環境破壊</u>＝第3段落 <em>shocking environmental damage</em>、第4段落 <em>harming the landscape, damaging beaches</em>（景観を損ない、ビーチを傷める）。<b>not only A but also B の両方に本文の根拠がある</b>。"},
+  {n:"(ニ)", t:"Overtourism puts a huge burden on local infrastructure and residents.<span class=\"cjp\">オーバーツーリズムは、地元のインフラと住民に大きな負担をかける。</span>", ok:true,
+   ev:"第2段落 第2文／第4段落 第2文", why:"<b>一致する</b>。<u>第2段落</u>｜<em>local facilities and infrastructure are put under enormous strain</em>（地元の施設やインフラが多大な負担にさらされる）。<u>第4段落</u>｜<em>putting infrastructure under enormous strain</em>。<b>同じ表現が二度繰り返されている</b>。<u>住民への負担は第6段落（生活費の上昇、住宅問題）でも裏づけられる</u>。"},
+  {n:"(ホ)", t:"Since international cruise ships bring large numbers of tourists, local businesses and residents in tourist destinations see much benefit.<span class=\"cjp\">国際クルーズ船が多数の観光客を運んでくるので、観光地の地元事業者と住民は大きな利益を得ている。</span>", ok:false,
+   ev:"第5段落 第4文", why:"<b>正反対</b>。<u>While <b>comparatively little is returned to the local communities</b>, cruise ships create physical and visual pollution</u>＝<em>地域社会に還元されるものは比較的少なく、しかも汚染を生む</em>。<br>〈選びがちな人〉<b>大量の観光客が来るのだから経済効果があるはずだ、と常識で補った人</b>。<u>本文はまさにその常識を否定するために、この一文を置いている</u>。"},
+  {n:"(ヘ)", t:"In tourism, &quot;demarketing&quot; encourages local people to buy local products.<span class=\"cjp\">観光における「デマーケティング」とは、地元の人々に地元の産品を買うよう促すことである。</span>", ok:false,
+   ev:"第11段落 第2文", why:"<b>定義が違う</b>。<u>&quot;demarketing,&quot; whereby destinations focus on attracting <b>fewer, high-spending and low-impact tourists</b>, rather than large groups</u>＝<em>目的地が、大人数の団体ではなく、少数で支出が多く負荷の小さい観光客を引きつけることに注力する手法</em>。<b>地元の人の購買行動とは無関係</b>。<br>〈選びがちな人〉<b>de-marketing という語を「宣伝を減らす」と解し、そこから「地産地消」へ連想を伸ばした人</b>。<u>本文に whereby 以下の定義が書かれている</u>。"},
+  {n:"(ト)", t:"The economic benefits of tourism should be emphasized more than the well-being of local residents.<span class=\"cjp\">観光の経済的利益は、地元住民の幸福よりも重視されるべきである。</span>", ok:false,
+   ev:"第12段落 第3文", why:"<b>優先順位が正反対</b>。<u>Prioritising the welfare of local residents <b>above</b> the needs of global tourism is vital</u>＝<em>地元住民の福祉を、世界的観光の必要よりも優先することが不可欠である</em>。<br>〈選びがちな人〉<b>第9段落第1文 Clearly, tourism brings jobs, investment and economic benefits を読み、筆者は経済を重視していると判断した人</b>。<u>利点を認めることと、それを最優先にすることは別</u>。<em>筆者は利点を認めたうえで、住民の福祉を上に置いている</em>。"}],
+ co:[{c:"gold",l:"2つに絞る手順",h:"<b>まず本文と正反対の記述を探して消す</b>。<u>(イ)far smaller／(ロ)coping well／(ホ)see much benefit／(ト)emphasized more than</u>――<em>四つとも本文の記述を裏返しただけ</em>。<b>残る(ヘ)は定義のすり替えで、本文に whereby 以下の説明がある</b>。<u>これで(ハ)(ニ)が残る</u>。"},
+     {c:"nav",l:"誤答の型は二種類だけ",h:"<b>①向きを逆にしたもの（イ・ロ・ホ・ト）</b>と<b>②定義を入れ替えたもの（ヘ）</b>。<u>①は本文の該当箇所と比べれば即座に消える</u>。<em>②は本文に定義が書いてあるので、読めば消える</em>。<b>推測を要する選択肢は一つもない</b>。"},
+     {c:"verm",l:"出題者が見ている力",h:"<b>選択肢と本文を、方向まで含めて照合する精度</b>。<u>far smaller／coping well／much benefit／more than</u>――<em>いずれも本文に対応する表現があり、そこを見れば向きが逆だと分かる</em>。<b>語の一致で満足せず、大小や優先順位まで確認できるか</b>。"}]},
+];
+
+function esc(id){ var s=String(id); var out='q'; for(var i=0;i<s.length;i++){ var c=s.charCodeAt(i); if((c>=48&&c<=57)||(c>=65&&c<=90)||(c>=97&&c<=122)) out+=s[i]; else out+='_'+c; } return out; }
+function rateCls(r){ return r<=40?'low':(r<=55?'mid':'hi'); }
+function rateBadge(r){
+  if(!r) return '';
+  const c=rateCls(r);
+  const lab = c==='low'?'最難関':(c==='mid'?'差がつく':'取りたい');
+  return `<span class="rate ${c}">正答率 ${r}%・${lab}</span>`;
+}
+function buildEV(ev){ return ev?`<div class="ev"><div class="ev-hd">根拠｜本文の該当箇所</div><div class="ev-bd"><div class="ev-q">${ev.q}</div>${ev.jp}</div></div>`:''; }
+function buildCO(list){ return (list||[]).map(o=>`<div class="co ${o.c}"><div class="co-lbl">${o.l}</div>${o.h}</div>`).join(''); }
+function buildCA(rows){ return (rows||[]).map(r=>`<div class="ca-row"><div class="ca-mark ${r.m==='o'?'ok':'ng'}">${r.m==='o'?'✓':'✗'}</div><div class="ca-bd"><span class="k ${r.m==='o'?'o':'x'}">${r.n}.</span> ${r.t}</div></div>`).join(''); }
+function buildSteps(steps){
+  if(!steps) return '';
+  return '<div class="chy-h">解答プロセス</div><div class="dsteps">'+steps.map((s,i)=>`<div class="dstep"><div class="dn">${i+1}</div><div class="db"><b>${s.t}</b><p>${s.d}</p>${s.cite?`<div class="cite">${s.cite}</div>`:''}</div></div>`).join('')+'</div>';
+}
+function buildRubric(q){
+  if(!q.rubric) return '';
+  const rid='rb'+esc(q.id);
+  return `<div class="chy-h">採点基準（自己採点）</div><div class="rub" id="${rid}">
+    <div class="rub-hd"><span>自分の答案に入っていた要素にチェック</span><span class="sc"><b class="now">0</b> / ${q.total} 点</span></div>
+    ${q.rubric.map(r=>`<div class="rub-row" data-rid="${rid}" data-pt="${r.p}"><div class="rub-cb"></div><div class="rub-el">${r.t}${r.must?'<span class="must">必須</span>':'<span class="plus">加点</span>'}</div><div class="rub-pt">${r.p}点</div></div>`).join('')}
+    <div class="rub-foot">※ 配点は非公表のため、要素配分は学習用の目安（10点換算）。</div></div>`;
+}
+function buildNG(list,title){
+  if(!list) return '';
+  return `<div class="ng"><div class="nlab">✗ ${title||'NG解答例 ― この書き方で落とす'}</div>${
+    list.map(n=>`<div class="ng-row"><span class="x">✗</span><div class="nb"><span class="bad">${n.bad}</span><span class="why">${n.why}</span></div></div>`).join('')}</div>`;
+}
+
+function buildBody(q){
+  let b='';
+  if(q.kind==='choice'){
+    b+=`<div class="choices">${q.choices.map((c,i)=>`<button class="ch" data-ok="${c.ok?1:0}"><span class="num">${i+1}</span><span>${c.t}</span><span class="mk"></span></button>`).join('')}</div>`;
+  } else if(q.kind==='multi'){
+    b+=`<div class="box navy" style="margin:0 0 8px"><span class="lab">${q.mlab||'8択から3つ'}</span>各文をタップすると○×と根拠が開きます。${q.mhint||'まず自分で3つ選んでから確認しよう。'}</div>`;
+    b+=q.items.map(it=>`<div class="mi" data-ok="${it.ok?1:0}"><div class="mi-h"><span class="num">${it.n}</span><span class="st">${it.t}</span><span class="mk"></span></div>
+      <div class="mi-d"><div class="src">根拠｜${it.ev}</div><div class="jd">${it.why}</div></div></div>`).join('');
+  } else if(q.kind==='order'){
+    b+=`<div class="box teal" style="margin:0 0 8px"><span class="lab">まず自分で並べる</span>選択肢は7語。<strong>使わない語が3つ</strong>含まれています。答えを見る前に紙で完成させること。</div>
+      <div class="pool">${q.pool.map(w=>`<span class="pw">${w}</span>`).join('')}</div>`;
+  } else if(q.kind==='desc'){
+    b+=`<div class="box teal" style="margin:0 0 4px"><span class="lab">まず自分で書く</span>解説を開く前に、必ず<strong>自分の訳を紙に書いてから</strong>「答え・根拠を表示」を押すこと。</div>`;
+  }
+  return b;
+}
+function buildSol(q){
+  let s='';
+  if(q.kind==='choice'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`+(q.steps?buildSteps(q.steps):'')+buildEV(q.ev)+`<div class="chy-h">全選択肢の照合</div>`+buildCA(q.sol)+buildCO(q.co);
+  } else if(q.kind==='multi'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`+buildCO(q.co)+`<div class="box gold"><span class="lab">確認</span>上の各文をタップすると、○×・根拠段落・判定理由がすべて開きます。</div>`;
+  } else if(q.kind==='order'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`;
+    s+=`<div class="slots">${q.slots.map(x=>`<div class="slot ${x.hit?'hit':''}"><div class="k">( ${x.k} )</div><div class="v">${x.v}</div></div>`).join('')}</div>`;
+    s+=`<div class="full">${q.full}<span class="jp">${q.fullJp}</span></div>`;
+    s+=`<div class="chy-h">使う語・使わない語</div><div class="pool">${q.pool.map(w=>{
+      const used=q.slots.some(x=>x.v===w);
+      return `<span class="pw ${used?'used':'unused'}">${w}</span>`;}).join('')}</div>`;
+    s+=buildSteps(q.steps)+buildNG(q.traps,'✗ 落とし穴 ― ここで25%まで落ちる')+buildRubric(q);
+  } else if(q.kind==='desc'){
+    s+=buildSteps(q.steps);
+    s+=`<div class="model"><div class="mlab">模範解答</div>${q.model.map(m=>`<div class="mtext">${m}</div>`).join('')}${q.mnote?`<div class="mnote">▶ ${q.mnote}</div>`:''}</div>`;
+    s+=buildRubric(q)+buildNG(q.ng);
+  }
+  return s;
+}
+function buildQ(q){
+  const el=document.createElement('div'); el.className='q'; el.id=esc(q.id);
+  el.innerHTML=`<div class="q-head"><div class="q-no">${q.id}</div>
+    <div class="q-focus"><span class="lbl">${q.lbl}</span><span class="en">${q.en}</span>${q.rate?`<div class="ratebar"><i class="${rateCls(q.rate)}" style="width:${q.rate}%"></i></div>`:''}</div>
+    <span class="q-type">${q.type}</span>${rateBadge(q.rate)}</div>
+    <div class="q-body"><div class="askjp">${q.ask}</div>${buildBody(q)}
+    <button class="reveal-btn">答え・根拠を表示 ▼</button>
+    <div class="solution">${buildSol(q)}</div></div>`;
+  return el;
+}
+
+[['AB','qWrapAB','qidxAB'],['CD','qWrapCD','qidxCD'],['EF','qWrapEF','qidxEF'],['GH','qWrapGH','qidxGH'],['IJ','qWrapIJ','qidxIJ']].forEach(([g,w,ix])=>{
+  const wrap=document.getElementById(w), idx=document.getElementById(ix);
+  if(!wrap) return;
+  Q.filter(q=>q.grp===g).forEach(q=>{
+    wrap.appendChild(buildQ(q));
+    const j=document.createElement('button'); j.className='qjump'; j.textContent=q.id; j.style.width='auto'; j.style.padding='0 9px';
+    j.addEventListener('click',()=>document.getElementById(esc(q.id)).scrollIntoView({behavior:'smooth'}));
+    idx.appendChild(j);
+  });
+});
+
+/* interactions */
+document.querySelectorAll('.q').forEach(card=>{
+  const chs=card.querySelectorAll('.choices .ch');
+  chs.forEach(b=>b.addEventListener('click',()=>{
+    chs.forEach(x=>x.classList.remove('picked'));
+    b.classList.add('picked','reveal');
+    b.classList.add(b.dataset.ok==='1'?'correct':'wrong');
+    b.querySelector('.mk').textContent=b.dataset.ok==='1'?'○':'×';
+  }));
+  card.querySelectorAll('.mi').forEach(mi=>{
+    mi.querySelector('.mi-h').addEventListener('click',()=>{
+      mi.classList.toggle('on');
+      mi.classList.add(mi.dataset.ok==='1'?'ok':'ng');
+      mi.querySelector('.mk').textContent = mi.dataset.ok==='1'?'○':'×';
+    });
+  });
+  const rb=card.querySelector('.reveal-btn'), sol=card.querySelector('.solution');
+  rb.addEventListener('click',()=>{
+    const open=sol.classList.toggle('show');
+    rb.textContent=open?'解説を閉じる ▲':'答え・根拠を表示 ▼';
+    if(open){
+      chs.forEach(b=>{b.classList.add('reveal');b.classList.add(b.dataset.ok==='1'?'correct':'wrong');b.querySelector('.mk').textContent=b.dataset.ok==='1'?'○':'×';});
+      card.querySelectorAll('.mi').forEach(mi=>{mi.classList.add('on');mi.classList.add(mi.dataset.ok==='1'?'ok':'ng');mi.querySelector('.mk').textContent=mi.dataset.ok==='1'?'○':'×';});
+    }
+  });
+});
+document.querySelectorAll('.rub-row').forEach(row=>{
+  row.addEventListener('click',()=>{
+    row.classList.toggle('on');
+    const rub=document.getElementById(row.dataset.rid);
+    let s=0; rub.querySelectorAll('.rub-row.on').forEach(r=>s+=parseInt(r.dataset.pt,10));
+    rub.querySelector('.sc .now').textContent=s;
+  });
+});
+const tabs=document.querySelectorAll('.tab'), panels=document.querySelectorAll('.panel');
+function goTo(i){
+  tabs.forEach(x=>x.classList.remove('on')); panels.forEach(x=>x.classList.remove('on'));
+  const t=document.querySelector('.tab[data-p="'+i+'"]'); t.classList.add('on','done');
+  document.getElementById('p'+i).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'}); t.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+tabs.forEach(t=>t.addEventListener('click',()=>goTo(t.dataset.p)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>goTo(b.dataset.go)));
+document.querySelector('.tab[data-p="0"]').classList.add('done');
+const jt=document.getElementById('jumpTop');
+window.addEventListener('scroll',()=>jt.classList.toggle('show',window.scrollY>500));
+jt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+
+
+
+
+
+</script>
+</body>
+</html>

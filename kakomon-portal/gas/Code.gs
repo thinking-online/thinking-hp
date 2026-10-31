@@ -23,7 +23,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 18;
+var SETUP_VERSION = 19;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -494,6 +494,8 @@ function toggleDone_(me, book, file, title, on) {
 
 var REQ_KINDS = ['誤字・脱字', '答えが違う', '解説が分かりにくい', '表示されない', 'その他'];
 var REQ_STATES = ['未対応', '対応中', '対応済み', '対応しない'];
+// 保存先フォルダの中に置くが、大学のフォルダではない（教材の取り込みでは読み飛ばす）
+var REQ_PHOTO_FOLDER = '修正依頼の写真';
 
 /**
  * 生徒からの修正依頼を「修正依頼」シートに1行で残す。だれから・どの教材かは自動で入る。
@@ -518,7 +520,7 @@ function saveRequest_(me, body) {
   var stamp = Utilities.formatDate(when, 'Asia/Tokyo', 'yyyyMMdd-HHmmss');
   var links = [];
   if (photos.length) {
-    var folder = childFolder_(rootFolder_(), '修正依頼の写真');
+    var folder = childFolder_(rootFolder_(), REQ_PHOTO_FOLDER);
     photos.forEach(function (b64, i) {
       var blob = Utilities.newBlob(Utilities.base64Decode(String(b64)), 'image/jpeg', stamp + '_' + (me.name || 'noname') + '_' + (i + 1) + '.jpg');
       links.push(folder.createFile(blob).getUrl());
@@ -976,6 +978,7 @@ function importCore_() {
   var unis = root.getFolders();
   while (unis.hasNext() && !outOfTime()) {
     var uniFolder = unis.next();
+    if (uniFolder.getName() === REQ_PHOTO_FOLDER) continue;
     if (importUniImage_(uniFolder, uniImgs)) images++;
     var bookFolders = uniFolder.getFolders();
     while (bookFolders.hasNext() && !outOfTime()) {
@@ -1295,6 +1298,7 @@ function setupCore_() {
   CacheService.getScriptCache().remove('cfg');
 
   rootFolder_();
+  unshareReqPhotos_();
   fillUniRows_();
   var left = shareMaterials_();
   applyValidation_();
@@ -1309,6 +1313,26 @@ function setupCore_() {
   ss.getSheetByName(SHEET.DONE).hideSheet();
   bumpCatalogVer_();
   return left;
+}
+
+/**
+ * 2026/10：教材の取り込みが「修正依頼の写真」フォルダを大学と取り違え、生徒の写真を大学の画像として
+ * 共有・登録していた。大学シートからその行を消し、写真の共有を止める（何度実行しても壊れない）。
+ */
+function unshareReqPhotos_() {
+  var us = SpreadsheetApp.getActive().getSheetByName(SHEET.UNIS);
+  if (us && us.getLastRow() > 1) {
+    var names = us.getRange(2, 1, us.getLastRow() - 1, 1).getValues();
+    for (var i = names.length - 1; i >= 0; i--) if (String(names[i][0]).trim() === REQ_PHOTO_FOLDER) us.deleteRow(i + 2);
+  }
+  var it = rootFolder_().getFoldersByName(REQ_PHOTO_FOLDER);
+  while (it.hasNext()) {
+    var files = it.next().getFiles();
+    while (files.hasNext()) {
+      var f = files.next();
+      if (f.getSharingAccess() !== DriveApp.Access.PRIVATE) f.setSharing(DriveApp.Access.PRIVATE, DriveApp.Permission.NONE);
+    }
+  }
 }
 
 /** 教材のPDFを「リンクを知っている人は見られる」にそろえる。時間内に終わらなかった分は次に開いたときか「点検」で */

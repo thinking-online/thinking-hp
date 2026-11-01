@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#fdfaf4">
+<title>共通テスト第4問攻略｜可視化リーディングで解くライティング添削問題 — Join Eco Week Activities — オンライン塾 THINKING</title>
+<style>
+:root{
+  --paper:#fdfaf4; --paper2:#f6f0e4; --ink:#1f1b16; --ink2:#5a524a; --line:#e3d9c7;
+  --accent:#b8542b; --accent2:#8f3f1f;
+  --q1:#d9a441; --q2:#4f9474; --q3:#5c6fb5;
+  --q1bg:#fbf1d6; --q2bg:#dff0e7; --q3bg:#e2e6f6;
+  --ok:#2f8a5b; --ng:#c0392b;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.85;font-size:15.5px;padding-bottom:84px}
+.en{font-family:Georgia,"Times New Roman","Hiragino Mincho ProN",serif;font-size:1.02em}
+a{color:var(--accent)}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(253,250,244,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;gap:10px;padding:10px 16px;max-width:720px;margin:0 auto}
+.logo{width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-family:Georgia,serif;flex:none}
+.top .t{font-size:12.5px;color:var(--ink2);line-height:1.3}
+.top .t b{display:block;color:var(--ink);font-size:13.5px}
+.timerchip{margin-left:auto;font-family:Georgia,serif;font-size:15px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;min-width:64px;text-align:center}
+nav.steps{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px;max-width:720px;margin:0 auto;scrollbar-width:none}
+nav.steps::-webkit-scrollbar{display:none}
+nav.steps a{flex:none;font-size:12px;padding:5px 10px;border-radius:999px;background:var(--paper2);color:var(--ink2);text-decoration:none;border:1px solid var(--line)}
+nav.steps a i{font-style:normal;font-family:Georgia,serif;color:var(--accent);margin-right:4px;font-weight:700}
+.hero{padding:28px 0 10px}
+.kicker{font-size:12.5px;color:var(--ink2);letter-spacing:.04em}
+h1{font-size:25px;line-height:1.35;margin:8px 0 10px;font-weight:800}
+h1 small{display:block;font-size:14px;color:var(--accent);font-weight:700;margin-bottom:6px}
+.lead{color:var(--ink2);font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.meta span{font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+section.step{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:22px}
+.stepno{font-family:Georgia,serif;color:var(--accent);font-weight:700;letter-spacing:.08em;font-size:13px}
+h2{font-size:21px;margin:4px 0 4px;line-height:1.4}
+.sub{font-family:Georgia,serif;font-style:italic;color:var(--ink2);font-size:13.5px;margin-bottom:14px}
+h3{font-size:16.5px;margin:22px 0 8px}
+h4{font-size:15px;margin:14px 0 6px}
+p{margin:8px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px;margin:12px 0}
+.card.soft{background:var(--paper2);border-color:transparent}
+.note{border-left:4px solid var(--accent);background:#fff8ef;padding:12px 14px;border-radius:0 var(--radius) var(--radius) 0;margin:14px 0}
+.note b.l{display:block;color:var(--accent2);font-size:13.5px;margin-bottom:4px}
+.pill{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--ink);color:#fff;margin-right:6px;vertical-align:middle}
+.pill.q1{background:var(--q1)}.pill.q2{background:var(--q2)}.pill.q3{background:var(--q3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:11px 20px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:active{transform:translateY(1px)}
+/* passage */
+.passage{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 10px;margin:12px 0}
+.passage .ttl{text-align:center;font-family:Georgia,serif;font-weight:700;font-size:18px;margin:6px 0 12px}
+.passage p.en{text-indent:1.2em;margin:0 0 10px;line-height:1.75}
+.passage .lead-en{font-style:italic;color:var(--ink2);text-indent:0}
+mark{background:transparent;padding:0 1px;border-bottom:3px solid transparent;color:inherit;transition:.2s}
+.show-all mark.q1,.show-q1 mark.q1{background:var(--q1bg);border-bottom-color:var(--q1)}
+.show-all mark.q2,.show-q2 mark.q2{background:var(--q2bg);border-bottom-color:var(--q2)}
+.show-all mark.q3,.show-q3 mark.q3{background:var(--q3bg);border-bottom-color:var(--q3)}
+.qlist{margin:14px 0}
+.q{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:10px 0}
+.q .stem{font-weight:700;margin-bottom:8px}
+.q .stem .en{font-weight:400}
+.opts{list-style:none;padding:0;margin:0}
+.opts li{display:flex;gap:8px;padding:6px 0;border-top:1px dashed var(--line)}
+.opts li:first-child{border-top:none}
+.opts .n{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ink);font-size:12px;display:grid;place-items:center;font-family:Georgia,serif;margin-top:4px}
+.answers{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.answers label{border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--paper2);font-size:14px;cursor:pointer}
+.answers input{display:none}
+.answers input:checked+span{color:#fff}
+.answers label:has(input:checked){background:var(--ink);color:#fff}
+.order{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.order select{font-size:15px;padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:#fff;font-family:inherit}
+.order .arrow{color:var(--ink2)}
+.result{margin-top:10px;font-weight:700}
+.result.ok{color:var(--ok)}.result.ng{color:var(--ng)}
+.timerbox{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin:12px 0}
+.timerbox .big{font-family:Georgia,serif;font-size:30px;min-width:92px}
+/* 5 step */
+.flow{counter-reset:s}
+.fstep{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.fstep:first-child{border-top:none}
+.fstep .num{flex:none;width:34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700}
+.fstep h4{margin:4px 0 4px}
+.fstep .goal{font-size:13.5px;color:var(--accent2);margin-top:6px}
+/* think-aloud */
+details.think{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin:12px 0;overflow:hidden}
+details.think summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
+details.think summary::-webkit-details-marker{display:none}
+details.think summary .ans{margin-left:auto;font-size:12.5px;color:var(--ink2);font-weight:400;white-space:nowrap}
+details.think summary::after{content:"＋";margin-left:8px;color:var(--accent);font-weight:400}
+details.think[open] summary::after{content:"－"}
+details.think .body{padding:0 16px 16px;border-top:1px solid var(--line)}
+.jaopts{list-style:none;padding:0;margin:10px 0 4px;font-size:14px;color:var(--ink2)}
+.jaopts li{padding:3px 0}
+.jaopts .n{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;margin-right:6px;font-family:Georgia,serif}
+.jaopts li.c{color:var(--ink);font-weight:700}.jaopts li.c .n{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ta{counter-reset:t;margin-top:8px}
+.ta .t{display:flex;gap:12px;padding:12px 0;border-top:1px dashed var(--line)}
+.ta .t .n{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:12.5px;font-family:Georgia,serif;margin-top:2px}
+.ta .t h5{margin:2px 0 4px;font-size:14.5px}
+.quote{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14.5px}
+.quote .en{display:block;font-size:15px}
+.quote .ja{display:block;color:var(--ink2);font-size:13.5px;margin-top:4px}
+.map{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border:1.5px dashed var(--accent);border-radius:10px;padding:10px 12px;margin:10px 0;font-size:14px}
+.map .en{font-weight:700}
+.map .ar{color:var(--accent);font-weight:800}
+.learn{background:var(--paper2);border-radius:10px;padding:12px 14px;margin-top:12px;font-size:14.5px}
+.learn b{display:block;color:var(--accent2);font-size:13px;margin-bottom:3px}
+.ev{display:inline-block;font-size:12.5px;padding:2px 8px;border-radius:6px;margin:2px 0}
+.ev.q1{background:var(--q1bg)}.ev.q2{background:var(--q2bg)}.ev.q3{background:var(--q3bg)}
+/* timeline */
+.tl{position:relative;padding-left:28px;margin:14px 0}
+.tl::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .ev2{position:relative;padding:8px 0 8px 6px}
+.tl .ev2::before{content:"";position:absolute;left:-23px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 1.5px var(--accent)}
+.tl .ev2.ghost::before{background:#fff;box-shadow:0 0 0 1.5px var(--ink2)}
+.tl .ev2 .lab{font-weight:700}
+.tl .ev2 .src{font-size:13px;color:var(--ink2)}
+.tl .ev2 .tag{display:inline-block;font-size:11.5px;background:var(--ink);color:#fff;border-radius:6px;padding:0 7px;margin-left:6px;vertical-align:middle}
+.tl .ev2.ghost .tag{background:var(--ng)}
+/* translation */
+.tr{margin:10px 0 14px}
+.tr .lab{font-size:12px;color:var(--ink2);letter-spacing:.06em}
+.tr p{margin:4px 0}
+.tr p.ja{color:#3a342d;font-size:14.5px}
+.tr p.ja .qm{font-size:11px;padding:0 5px;border-radius:5px;color:#fff;margin-left:4px;vertical-align:middle}
+.qm.q1{background:var(--q1)}.qm.q2{background:var(--q2)}.qm.q3{background:var(--q3)}
+.hideen .tr p.en{display:none}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;margin:8px 0}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.legend .l1::before{background:var(--q1)}.legend .l2::before{background:var(--q2)}.legend .l3::before{background:var(--q3)}
+/* vocab */
+.vocab{display:grid;grid-template-columns:1fr;gap:6px;margin:10px 0}
+.v{display:flex;gap:10px;align-items:baseline;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px}
+.v .w{font-family:Georgia,serif;font-weight:700;min-width:120px}
+.v .pos{font-size:11px;color:var(--ink2);border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.v.pair{border-color:var(--accent);background:#fff8ef}
+/* checklist */
+.chk{list-style:none;padding:0;margin:12px 0}
+.chk li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line)}
+.chk li:first-child{border-top:none}
+.chk input{width:20px;height:20px;margin-top:4px;accent-color:var(--accent)}
+.score{font-family:Georgia,serif;font-size:22px;margin:8px 0}
+.weapon{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.weapon .num{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;width:52px;line-height:1.3;padding-top:4px}
+footer{margin:40px 0 20px;font-size:12.5px;color:var(--ink2);text-align:center;line-height:1.7}
+/* bottom bar + sheet */
+.bbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(253,250,244,.96);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.bbar .in{max-width:720px;margin:0 auto;display:flex;gap:10px;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+.bbar .btn{flex:1}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top-left-radius:18px;border-top-right-radius:18px;box-shadow:0 -10px 30px rgba(0,0,0,.18);max-height:82vh;transform:translateY(105%);transition:transform .28s ease;display:flex;flex-direction:column}
+.sheet.open{transform:translateY(0)}
+.sheet .head{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.sheet .head b{font-size:14px}
+.sheet .filters{display:flex;gap:6px;margin-left:auto}
+.sheet .filters button{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 10px;cursor:pointer;font-family:inherit}
+.sheet .filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sheet .filters button.f1.on{background:var(--q1);border-color:var(--q1)}
+.sheet .filters button.f2.on{background:var(--q2);border-color:var(--q2)}
+.sheet .filters button.f3.on{background:var(--q3);border-color:var(--q3)}
+.sheet .close{margin-left:8px;border:none;background:transparent;font-size:20px;cursor:pointer}
+.sheet .scroll{overflow:auto;padding:0 16px 24px;-webkit-overflow-scrolling:touch}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:45;opacity:0;pointer-events:none;transition:.25s}
+.overlay.on{opacity:1;pointer-events:auto}
+.tiny{font-size:12.5px;color:var(--ink2)}
+.center{text-align:center}
+@media (min-width:600px){.vocab{grid-template-columns:1fr 1fr}}
+
+.pos{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--paper2);border:1.5px dashed var(--accent);color:var(--accent);font-family:Georgia,serif;font-size:12px;font-weight:700;margin:0 3px;vertical-align:middle}
+.pos.hit{background:var(--accent);color:#fff;border-style:solid}
+u.ul{text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:1px}
+sup.cm{font-family:Georgia,serif;font-size:11px;color:var(--accent);font-weight:700;margin-right:2px}
+.cmts{display:grid;gap:8px;margin:12px 0}
+.cmt{display:flex;gap:10px;background:#fff8ef;border:1px dashed var(--accent);border-radius:10px;padding:10px 12px;font-size:14px}
+.cmt .n{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700}
+.cmt .en{font-family:"Comic Sans MS","Segoe Print",Georgia,serif;font-style:italic}
+.toc{margin:12px 0}
+.toc .row{display:grid;grid-template-columns:64px 1fr;gap:10px;padding:10px 0;border-top:1px dashed var(--line);align-items:start}
+.toc .row:first-child{border-top:none}
+.toc .para{font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;padding-top:3px}
+.toc .first{font-size:14px}
+.toc .role{display:inline-block;font-size:12px;background:var(--ink);color:#fff;border-radius:6px;padding:1px 8px;margin-bottom:4px}
+.toc .role.red{background:var(--accent)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+.tbl th,.tbl td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+.tbl th{background:var(--paper2);font-size:12.5px}
+.type{display:inline-block;font-size:12px;border-radius:6px;padding:1px 8px;color:#fff;font-weight:700}
+.type.add{background:var(--q2)}.type.fix{background:var(--q3)}
+.hole{background:#fff;border:2px dashed var(--accent);border-radius:12px;padding:12px 14px;margin:10px 0}
+.hole .l{font-size:12px;color:var(--accent2);letter-spacing:.06em;font-weight:700}
+.hole .shape{font-size:16px;font-weight:800;margin-top:4px}
+.piece{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14px}
+.piece.ok{background:#e4f3ea}
+.piece .m{display:inline-block;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;text-align:center;line-height:18px;font-family:Georgia,serif;margin-right:6px}
+.piece.ok .m{background:var(--ok);border-color:var(--ok);color:#fff}
+.piece .why{display:block;color:var(--ink2);font-size:13px;margin-top:3px}
+.piece.ok .why{color:#1f5e3b}
+.link4{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.link4 div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.link4 b{display:block;font-size:14px;margin-bottom:2px}
+.link4 .hit{border-color:var(--accent);background:#fff8ef}
+</style></head><body data-key="q4eco">
+<header class="top"><div class="bar"><div class="logo">T</div><div class="t">可視化リーディング ― 添削問題<b>共通テスト第4問「Join Eco Week Activities」／ オンライン塾 THINKING</b></div><div class="timerchip" id="tChip">6:00</div></div><nav class="steps"><a href="#s0"><i>0</i>自力で解く</a><a href="#s1"><i>1</i>5STEP</a><a href="#s2"><i>2</i>目的と目次</a><a href="#s3"><i>3</i>赤ペン翻訳</a><a href="#s4"><i>4</i>脳内実況</a><a href="#s5"><i>5</i>全訳</a><a href="#s6"><i>6</i>語句</a><a href="#s7"><i>7</i>持ち帰り</a></nav></header>
+<main class="wrap">
+<div class="hero"><div class="kicker">2026年度 共通テスト本試験 第4問</div>
+<h1><small>【ライティング添削問題】を攻略する</small>可視化リーディング ― Join Eco Week Activities ―</h1>
+<p class="lead">第4問は、友達（自分）が書いた英文に先生が赤ペンを入れていて、そのコメントをもとに文章を直す問題です。単に文法的に正しい英文を探す問題ではありません。問われているのは、<b>「この文章で、この場所に、どんな内容が必要なのか」</b>を見抜く力。だから修正箇所の前後だけ読んでも足りない。全体の目的、段落の役割、先生のコメント、この3つを読んでから穴の形を決めます。</p>
+<div class="meta"><span>目標解答時間 6分</span><span>設問4問</span><span>赤ペン4ヶ所</span><span>下の「本文を開く」で、いつでも英文を参照できます</span></div></div>
+
+<section class="step" id="s0"><div class="stepno">STEP 0</div><h2>まず、時間を測って自力で解く</h2><div class="sub">Try it yourself</div>
+<p>解説を読む前に必ず解いてください。観察してほしいのは、<b>「選択肢を先に読んでから本文に戻った設問はどれか」</b>。それがそのまま、穴の形を決める前にピースを触ってしまった場所です。</p>
+<div class="timerbox"><div class="big" id="tBig">6:00</div><button class="btn" id="tBtn">スタート</button><span class="tiny">6分を過ぎても止めずに続けて、超過時間を覚えておきましょう。</span></div>
+<div class="passage show-none"><p class="en lead-en">In English Club, you are writing an online newsletter to promote your high school’s Eco Week theme of waste management. This is your most recent draft with comments from the club supervisor.</p><div class="tiny" style="margin:0 0 6px"><i>January 2026 ／ English Club Times</i></div><div class="ttl">Join Eco Week Activities</div><p class="en">The waste produced around the world is a continuing challenge. We must think of better methods to reduce and manage waste, and we can start at school. <mark class="q1">To raise awareness of waste management, we want to inform you about three activities for Eco Week 2026.</mark></p><p class="en">One activity is <sup class="cm">(1)</sup><u class="ul">a poster contest</u>. During Eco Week, we will vote to decide on the top three posters based on the message and design. <mark class="q1">They will be posted on the school website after Eco Week so that students can keep in mind the importance of waste management.</mark></p><p class="en">Another activity is a garbage collecting race which students from other schools can also join. Here’s what to do. First, make a team of three. <span class="pos">A</span> Then, on the morning of the race, meet at the local seashore, and receive tools and bags. <span class="pos">B</span> <mark class="q2">Listen to the organizer explain the aim and rules of the race.</mark> <span class="pos hit">C</span> <mark class="q2">Join the closing ceremony to see if your team has won.</mark> <span class="pos">D</span> The winning team will be featured on the local city website. Through this activity, we will enjoy working together to create a clean environment.</p><p class="en">The third activity is an eco-friendly fashion show. <mark class="q3">Students will make original items using clothing from their closet.</mark> <sup class="cm">(3)</sup><u class="ul">Making our own clothes is enjoyable.</u> The most creative entries will be chosen and the winning ones will be exhibited in our hall.</p><p class="en">Through these Eco Week 2026 activities, we will be able to <sup class="cm">(4)</sup><u class="ul">acquire recycling skills for waste management</u>. This school campaign will include a poster contest, a garbage collecting race, and an eco-friendly fashion show. <mark class="q3">We can make a difference to improve our environment. Let’s think globally and act locally!</mark></p><div class="cmts"><div class="cmt"><span class="n">(1)</span><span class="en">What is the purpose of making the posters? Explain it.</span></div><div class="cmt"><span class="n">(2)</span><span class="en">Readers want to know how the winners will be decided. Add it.</span></div><div class="cmt"><span class="n">(3)</span><span class="en">This sentence doesn’t seem to fit well here. Rewrite it.</span></div><div class="cmt"><span class="n">(4)</span><span class="en">This part does not summarize your main argument. Rewrite it.</span></div></div><p class="tiny">Overall comments: <span class="en">Your draft introduces eco activities well. I hope many students join them!</span></p></div>
+<div class="qlist"><div class="q"><div class="stem"><span class="pill">問 1</span><span class="en">Based on Comment (1), choose the best phrase to add after the underlined part.</span></div><ol class="opts"><li><span class="n">①</span><span class="en">to advertise a new school website</span></li><li><span class="n">②</span><span class="en">to discover the best artists in the school</span></li><li><span class="n">③</span><span class="en">to promote eco-friendly actions among students</span></li><li><span class="n">④</span><span class="en">to recruit more English Club members</span></li></ol><div class="answers"><label><input type="radio" name="q1" value="①"><span>①</span></label><label><input type="radio" name="q1" value="②"><span>②</span></label><label><input type="radio" name="q1" value="③"><span>③</span></label><label><input type="radio" name="q1" value="④"><span>④</span></label></div><div class="result" id="r1"></div></div><div class="q"><div class="stem"><span class="pill">問 2</span><span class="en">Based on Comment (2), choose the best place to add the sentence below.</span></div><div class="quote"><span class="en">Pick up more garbage than other teams in an hour.</span></div><ol class="opts"><li><span class="n">A</span><span class="en">First, make a team of three. の後</span></li><li><span class="n">B</span><span class="en">receive tools and bags. の後</span></li><li><span class="n">C</span><span class="en">explain the aim and rules of the race. の後</span></li><li><span class="n">D</span><span class="en">see if your team has won. の後</span></li></ol><div class="answers"><label><input type="radio" name="q2" value="A"><span>A</span></label><label><input type="radio" name="q2" value="B"><span>B</span></label><label><input type="radio" name="q2" value="C"><span>C</span></label><label><input type="radio" name="q2" value="D"><span>D</span></label></div><div class="result" id="r2"></div></div><div class="q"><div class="stem"><span class="pill">問 3</span><span class="en">Based on Comment (3), choose the best sentence to replace the underlined sentence.</span></div><ol class="opts"><li><span class="n">①</span><span class="en">This activity will help students to appreciate various ways of reusing old clothes.</span></li><li><span class="n">②</span><span class="en">This activity will influence more students to ask the fashion industry to lower prices for old clothes.</span></li><li><span class="n">③</span><span class="en">This activity will lead to the growth of the market for fast fashion over the one for used clothes.</span></li><li><span class="n">④</span><span class="en">This activity will provide students with opportunities for improving their business skills to sell used clothes.</span></li></ol><div class="answers"><label><input type="radio" name="q3" value="①"><span>①</span></label><label><input type="radio" name="q3" value="②"><span>②</span></label><label><input type="radio" name="q3" value="③"><span>③</span></label><label><input type="radio" name="q3" value="④"><span>④</span></label></div><div class="result" id="r3"></div></div><div class="q"><div class="stem"><span class="pill">問 4</span><span class="en">Based on Comment (4), choose the best phrase to replace the underlined part.</span></div><ol class="opts"><li><span class="n">①</span><span class="en">become creative artists who focus on</span></li><li><span class="n">②</span><span class="en">cooperate with other high schools on</span></li><li><span class="n">③</span><span class="en">get ourselves more involved in</span></li><li><span class="n">④</span><span class="en">learn how to collect more garbage for</span></li></ol><div class="answers"><label><input type="radio" name="q4" value="①"><span>①</span></label><label><input type="radio" name="q4" value="②"><span>②</span></label><label><input type="radio" name="q4" value="③"><span>③</span></label><label><input type="radio" name="q4" value="④"><span>④</span></label></div><div class="result" id="r4"></div></div></div>
+<p class="center"><button class="btn" id="grade">採点する</button></p><p class="center" id="gradeSum" style="font-weight:700"></p>
+</section>
+
+<section class="step" id="s1"><div class="stepno">STEP 1</div><h2>可視化リーディング ― 添削問題の5STEP</h2><div class="sub">The eye path</div>
+<p>赤ペンの前後だけを読んで解く人と、全体から穴の形を決めて解く人。英語力はほぼ同じでも、第4問の点はここで分かれます。目の動かし方を5つに固定します。</p>
+<div class="card flow"><div class="fstep"><div class="num">1</div><div><h4>「この子、結局なにが言いたいの？」を一言で言う</h4><p>いきなり赤ペンに飛びつかない。リード文・タイトル・第1段落から「誰に向けて、何を伝えようとしているのか」を日本語で一言にする。全体の目的が分からなければ、何を足すべきか、何を直すべきかも判断できない。</p><div class="goal">鉄則：目的地を知らずに、道案内はできない。</div></div></div><div class="fstep"><div class="num">2</div><div><h4>各段落の1文目を「目次」として読む</h4><p>全文を細かく読む前に、各段落の1文目を確認する。本を読む前に目次を見るのと同じ。「この段落は何を説明する場所？」「赤ペンがある段落は、全体の中で何を担当している？」を先に把握する。</p><div class="goal">鉄則：1文を判断する前に、その文が所属する段落の役割を知る。</div></div></div><div class="fstep"><div class="num">3</div><div><h4>赤ペンを「何が足りない？ 何がズレている？」に言い換える</h4><p>コメントは2種類しかない。足せ（Add / Explain：目的・理由・例・手順・まとめが抜けている）と、直せ（Rewrite / Change：今ある文が段落のテーマや全体の主張と合っていない）。どちらかに分類して、「目的が足りない」「結論が主張と合っていない」まで具体的に言える状態にする。</p><div class="goal">鉄則：赤ペンを読んだら、「何を足す？ 何と合わせる？」まで翻訳する。</div></div></div><div class="fstep"><div class="num">4</div><div><h4>穴の形を自分で決めてから、ピースを探す</h4><p>第4問の心臓部。選択肢を見る前に、修正する文・前後の文・段落のテーマ・全体の目的から「ここには、どんな内容が入れば自然につながる？」を自分で決める。つながりは4つ：対比（A↔B）、言い換え・具体化（A→A'）、追加（A＋B）、因果（理由・目的・結果）。</p><div class="goal">鉄則：穴の形を先に決める。ピースはあとから。</div></div></div><div class="fstep"><div class="num">5</div><div><h4>ピースをはめて、通して読む</h4><p>自分の予測と意味が一致する選択肢を探し、本文に入れて通して読む。他の選択肢がなぜ違うかも本文の根拠で説明する。合うものが無ければ、コメントの翻訳・前後関係・段落の役割に戻って予測を直す。</p><div class="goal">鉄則：選択肢で決めない。本文で決めて、選択肢で確認する。</div></div></div></div>
+<div class="note"><b class="l">この手順の急所</b>STEP 4 で「穴の形」を日本語で言えるかどうかが全部です。言えない状態で選択肢を読むと、4つとも英語として自然に見えて、「どれが一番それっぽいか」の勝負になる。それはジグソーパズルで穴の形を見ずにピースを片っ端からはめるのと同じです。</div>
+</section>
+
+<section class="step" id="s2"><div class="stepno">STEP 2</div><h2>目的を一言に、段落を目次に</h2><div class="sub">Purpose &amp; outline</div>
+<h3>STEP 1｜この文章は、誰に、何を伝えたい？</h3>
+<div class="card"><p><b>何の話？</b> → 学校のエコ週間（テーマ：ごみ管理）の活動</p><p><b>誰に向けて？</b> → ニュースレターを読む生徒たち</p><p><b>何を伝えたい？</b> → ごみ問題への関心を高めるため、3つの活動を紹介して参加を促す</p></div>
+<div class="note"><b class="l">頭の中ではこうなる</b>「学校のエコ週間で行う3つの活動を生徒に紹介して、環境への意識を高めるための文章ね。」ここまでつかめればOK。活動の中身はまだ読まなくていい。</div>
+<h3>STEP 2｜各段落の1文目を目次として読む</h3>
+<div class="card toc"><div class="row"><div class="para">第1段落</div><div><span class="role ">文章全体の目的</span><div class="first en">To raise awareness of waste management, we want to inform you about three activities …</div><div class="tiny">ごみ管理への関心を高めるため、3つの活動を紹介する</div></div></div><div class="row"><div class="para">第2段落</div><div><span class="role red">1つ目の活動｜赤ペン(1)</span><div class="first en">One activity is a poster contest.</div><div class="tiny">ポスターコンテスト</div></div></div><div class="row"><div class="para">第3段落</div><div><span class="role red">2つ目の活動｜赤ペン(2)</span><div class="first en">Another activity is a garbage collecting race …</div><div class="tiny">ゴミ拾いレース。Here’s what to do. で手順が並ぶ</div></div></div><div class="row"><div class="para">第4段落</div><div><span class="role red">3つ目の活動｜赤ペン(3)</span><div class="first en">The third activity is an eco-friendly fashion show.</div><div class="tiny">環境に優しいファッションショー</div></div></div><div class="row"><div class="para">第5段落</div><div><span class="role red">全体のまとめ｜赤ペン(4)</span><div class="first en">Through these Eco Week 2026 activities, …</div><div class="tiny">3つの活動を通して何を実現したいか</div></div></div></div>
+<div class="note"><b class="l">設計図が見えると</b>「目的 → 活動1 → 活動2 → 活動3 → まとめ」の列挙型。だから第4段落（ファッションショー）に、ファッションショーと関係ない文があれば浮くし、第5段落の結論が3つの活動と関係ない話になっていれば直す必要がある。赤ペンが4つとも「段落の役割」を知っていれば翻訳できる位置に置かれている。</div>
+</section>
+
+<section class="step" id="s3"><div class="stepno">STEP 3</div><h2>赤ペンを「足せ／直せ」に翻訳する</h2><div class="sub">Translate the red pen</div>
+<p>コメントを読んだ瞬間に「何を修正する問題か」を確定します。足せ（情報が抜けている）か、直せ（今ある文が何かと合っていない）か。直せの場合は「何と合っていないのか」まで言います。</p>
+<table class="tbl"><tr><th>赤ペン</th><th>コメント</th><th>分類</th><th>翻訳（何を足す？ 何と合わせる？）</th></tr><tr><td><span class="pill q1" style="background:var(--ink)">(1)</span></td><td class="en" style="font-size:13px">What is the purpose of making the posters? Explain it.</td><td><span class="type add">足せ</span></td><td>ポスターを作る「目的」が書かれていない。活動の目的を足す。目的なので、全体の目的（ごみ管理への関心）と同じ方向のはず。</td></tr><tr><td><span class="pill q2" style="background:var(--ink)">(2)</span></td><td class="en" style="font-size:13px">Readers want to know how the winners will be decided. Add it.</td><td><span class="type add">足せ</span></td><td>「勝ち方」が抜けている。手順（First → Then → Listen → Join）のどこに「勝利条件」を入れると自然かを決める。</td></tr><tr><td><span class="pill q3" style="background:var(--ink)">(3)</span></td><td class="en" style="font-size:13px">This sentence doesn’t seem to fit well here. Rewrite it.</td><td><span class="type fix">直せ</span></td><td>この文が「この場所」と合っていない。何と合っていないか → 段落のテーマ（環境に優しいファッションショー／古着の再利用）。</td></tr><tr><td><span class="pill q3" style="background:var(--ink)">(4)</span></td><td class="en" style="font-size:13px">This part does not summarize your main argument. Rewrite it.</td><td><span class="type fix">直せ</span></td><td>結論が「全体の主張」をまとめていない。何と合わせるか → 第1段落の目的（関心を高める、参加を促す）と3つの活動の共通点。</td></tr></table>
+<div class="note"><b class="l">やってしまいがちなこと</b>赤ペンを「ここを直せという場所の印」としてしか見ないこと。赤ペンは修正箇所を示すだけではなく、何が問題なのかを教える、最も重要な手がかりです。</div>
+</section>
+
+<section class="step" id="s4"><div class="stepno">STEP 4</div><h2>脳内実況 ― 穴の形を決めてから、ピースを探す</h2><div class="sub">Think-aloud</div>
+<p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。各問、「穴の形」を決めるまでは選択肢を一切見ていないことに注目してください。各問はタップで開閉できます。</p>
+<details class="think" open><summary><span class="pill" style="background:var(--ink)">問 1</span>ポスターを作る目的<span class="ans">正解 ③</span></summary><div class="body">
+<p style="margin-top:12px"><b>コメント(1)に基づき、下線部の後に加える最適な語句を選べ。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>赤ペンの翻訳：「目的を説明して」＝ 足せ</h5>purpose と Explain。情報が抜けているタイプ。「ポスターコンテストは何のためにやるのか」を足す。</div></div><div class="t"><div class="n">2</div><div><h5>穴の形を決めるために、全体の目的に戻る</h5><div class="quote"><span class="en">To raise awareness of waste management, we want to inform you about three activities …</span><span class="ja">ごみ管理への関心を高めるために、3つの活動を紹介する。</span></div>3つの活動は全部「関心を高める」ための活動。ポスターコンテストもその1つ。</div></div><div class="t"><div class="n">3</div><div><h5>段落の中にも、目的を示す文がある</h5><div class="quote"><span class="en">They will be posted on the school website … so that students can keep in mind the importance of waste management.</span><span class="ja">生徒がごみ管理の大切さを忘れないように、学校のサイトに掲載する。</span></div>so that ＝ 目的。ポスターは「絵の上手さを競う」ためではなく「生徒の意識を保つ」ためのもの。</div></div><div class="t"><div class="n">4</div><div><h5>ここで穴の形が決まる</h5>「生徒の環境への意識・行動を広げるため」。この日本語が言えてから、初めて選択肢を見る。</div></div></div>
+<div class="hole"><div class="l">穴の形（選択肢を見る前に決める）</div><div class="shape">生徒の間に、環境に優しい意識・行動を広げるため</div></div>
+<div class="link4"><div class=""><b>① 対比 A↔B</b>反対・違い</div><div class=""><b>② 言い換え・具体化 A→A'</b>前を詳しく</div><div class=""><b>③ 追加 A＋B</b>同じ方向を足す</div><div class="hit"><b>④ 因果</b>理由・目的・結果</div></div>
+<h4>ピースを当てる</h4><div class="piece "><span class="m">①</span><span class="en">to advertise a new school website</span><span class="why">サイトはポスターを「掲載する手段」。新しいサイトの宣伝が目的とは書かれていない。手段と目的のすり替え。</span></div><div class="piece "><span class="m">②</span><span class="en">to discover the best artists in the school</span><span class="why">top three を選ぶのは活動の一部だが、目的は「芸術家の発掘」ではない。based on the message and design の message を無視している。</span></div><div class="piece ok"><span class="m">③</span><span class="en">to promote eco-friendly actions among students</span><span class="why">穴の形と一致。promote ＝ 広める、eco-friendly actions ＝ 環境に優しい行動、among students ＝ 生徒の間で。</span></div><div class="piece "><span class="m">④</span><span class="en">to recruit more English Club members</span><span class="why">英語部が書いているのと、部員募集が目的なのは別の話。本文に根拠なし。</span></div>
+<div class="quote" style="border-left:4px solid var(--ok)"><span class="tiny">はめて通して読む</span><span class="en">One activity is a poster contest to promote eco-friendly actions among students. During Eco Week, we will vote …</span><span class="ja">活動の1つは、生徒の間に環境に優しい行動を広めるためのポスターコンテストです。続く「サイトに掲載して意識を保ってもらう」とも矛盾しない。</span></div>
+<p class="center"><button class="btn ghost" data-open="q1">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「目的を足せ」と言われたら、答えは必ず「全体の目的」と同じ方向にある。段落の中だけで探さず、第1段落まで戻る。so that / to 不定詞 / in order to が、目的の置き場所。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問 2</span>勝ち方の文を、どこに置くか<span class="ans">正解 C</span></summary><div class="body">
+<p style="margin-top:12px"><b>コメント(2)に基づき、「1時間で他のチームより多くのゴミを拾う」という文を加える最適な場所を選べ。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>赤ペンの翻訳：「勝ち方を足せ」＝ 足せ。ただし「どこに」が問題</h5>入れる文は決まっている。Pick up more garbage than other teams in an hour.（1時間で他チームより多く拾う）。これは「レースのルール＝勝利条件」。</div></div><div class="t"><div class="n">2</div><div><h5>段落の構造を見る：Here’s what to do. で手順が並ぶ</h5><div class="quote"><span class="en">First, make a team of three. [A] Then, … receive tools and bags. [B] Listen to the organizer explain the aim and rules of the race. [C] Join the closing ceremony to see if your team has won. [D]</span><span class="ja">チームを作る → 道具を受け取る → 主催者がルールを説明 → 閉会式で勝敗を知る</span></div>時系列の手順。入れる文は「手順」ではなく「ルールの中身」。だから「ルールが説明される」直後が自然。</div></div><div class="t"><div class="n">3</div><div><h5>穴の形：「ルールの説明」の具体化として、その直後</h5>[C] は Listen to the organizer explain the aim and rules の直後。ここに「ルールの中身」を置くと、言い換え・具体化（A → A'）の関係になる。そして次の文 see if your team has won（勝ったか確認）に自然に繋がる。勝利条件を知ってから、勝敗を見る。</div></div></div>
+<div class="hole"><div class="l">穴の形（選択肢を見る前に決める）</div><div class="shape">「ルールの説明」の直後に、ルールの中身として置く</div></div>
+<div class="link4"><div class=""><b>① 対比 A↔B</b>反対・違い</div><div class="hit"><b>② 言い換え・具体化 A→A'</b>前を詳しく</div><div class=""><b>③ 追加 A＋B</b>同じ方向を足す</div><div class=""><b>④ 因果</b>理由・目的・結果</div></div>
+<h4>ピースを当てる</h4><div class="piece "><span class="m">A</span><span class="en">First, make a team of three. の後</span><span class="why">まだチームを作っただけ。道具も受け取っていないし、ルール説明もまだ。ここで「1時間で多く拾え」は唐突。</span></div><div class="piece "><span class="m">B</span><span class="en">receive tools and bags. の後</span><span class="why">道具を受け取った直後。次の文が「ルールを説明するのを聞け」なので、その前にルールを言ってしまうと順番が逆。</span></div><div class="piece ok"><span class="m">C</span><span class="en">explain the aim and rules of the race. の後</span><span class="why">「ルールの説明」→「ルールの中身」→「勝ったか確認」。説明の具体化として最も自然。</span></div><div class="piece "><span class="m">D</span><span class="en">see if your team has won. の後</span><span class="why">勝敗が決まった後にルールを言っても遅い。次の文は「勝ったチームは市のサイトに載る」で、話はもう「結果」に移っている。</span></div>
+<div class="quote" style="border-left:4px solid var(--ok)"><span class="tiny">はめて通して読む</span><span class="en">Listen to the organizer explain the aim and rules of the race. Pick up more garbage than other teams in an hour. Join the closing ceremony to see if your team has won.</span><span class="ja">主催者がレースの目的とルールを説明するのを聞く。1時間で他のチームより多くのゴミを拾う。閉会式に参加して、自分のチームが勝ったか確かめる。</span></div>
+<p class="center"><button class="btn ghost" data-open="q2">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「どこに入れるか」の問題は、入れる文の「役割」を先に決める。手順なのか、ルールなのか、理由なのか。役割が決まれば、それを受ける文（rules）の直後、それを使う文（has won）の直前、と場所が一つに絞れる。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問 3</span>浮いている文を、段落に合わせる<span class="ans">正解 ①</span></summary><div class="body">
+<p style="margin-top:12px"><b>コメント(3)に基づき、下線部の文と置き換える最適な文を選べ。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>赤ペンの翻訳：「ここに合っていない」＝ 直せ。何と合っていないのか</h5>Making our own clothes is enjoyable.（自分で服を作るのは楽しい）。英語としては正しい。でも何と合わないのか。段落の1文目に戻る。</div></div><div class="t"><div class="n">2</div><div><h5>段落のテーマ：環境に優しいファッションショー</h5><div class="quote"><span class="en">The third activity is an eco-friendly fashion show. Students will make original items using clothing from their closet.</span><span class="ja">3つ目の活動は、環境に優しいファッションショー。生徒はクローゼットの服を使ってオリジナルの作品を作る。</span></div>キーワードは eco-friendly と using clothing from their closet。つまり「古着の再利用」。</div></div><div class="t"><div class="n">3</div><div><h5>ズレの正体：「楽しい」は eco と無関係</h5>下線部は「楽しさ」の話。段落は「環境に優しい・再利用」の話。方向がズレている。直すなら、「この活動が、再利用という点で生徒に何をもたらすか」の文。</div></div><div class="t"><div class="n">4</div><div><h5>穴の形が決まる</h5>「この活動は、古い服を再利用するいろいろな方法を生徒に知ってもらう助けになる」。全体の目的（意識を高める）とも一致する方向。</div></div></div>
+<div class="hole"><div class="l">穴の形（選択肢を見る前に決める）</div><div class="shape">この活動は、古着を再利用する方法を生徒に知ってもらうためのもの</div></div>
+<div class="link4"><div class=""><b>① 対比 A↔B</b>反対・違い</div><div class="hit"><b>② 言い換え・具体化 A→A'</b>前を詳しく</div><div class=""><b>③ 追加 A＋B</b>同じ方向を足す</div><div class=""><b>④ 因果</b>理由・目的・結果</div></div>
+<h4>ピースを当てる</h4><div class="piece ok"><span class="m">①</span><span class="en">This activity will help students to appreciate various ways of reusing old clothes.</span><span class="why">穴の形と一致。reusing old clothes ＝ using clothing from their closet の言い換え。appreciate ＝ 価値を知る。</span></div><div class="piece "><span class="m">②</span><span class="en">… ask the fashion industry to lower prices for old clothes.</span><span class="why">古着の「値段を下げろ」と業界に求める話。再利用でも環境でもない。本文に根拠なし。</span></div><div class="piece "><span class="m">③</span><span class="en">… growth of the market for fast fashion over the one for used clothes.</span><span class="why">ファストファッションの市場が古着市場より成長する。eco-friendly と真逆。本文の言葉（used clothes）を使って逆のことを言う典型の罠。</span></div><div class="piece "><span class="m">④</span><span class="en">… improving their business skills to sell used clothes.</span><span class="why">古着を「売る」ビジネススキル。活動はショーであって販売ではない。目的がすり替わっている。</span></div>
+<div class="quote" style="border-left:4px solid var(--ok)"><span class="tiny">はめて通して読む</span><span class="en">The third activity is an eco-friendly fashion show. Students will make original items using clothing from their closet. This activity will help students to appreciate various ways of reusing old clothes. The most creative entries will be chosen …</span><span class="ja">環境に優しいファッションショー。クローゼットの服で作品を作る。この活動は、古着を再利用するさまざまな方法の価値を生徒に知ってもらう助けになる。最も創造的な作品が選ばれる。</span></div>
+<p class="center"><button class="btn ghost" data-open="q3">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「合っていない」と言われたら、英文の正しさは問題ではない。段落の1文目（テーマ）に戻って、下線部が何の話をしているかを比べる。ズレているのは「話題の方向」。③のように本文の単語を使って逆を言う選択肢が必ず混ざる。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問 4</span>結論を、主張に合わせる<span class="ans">正解 ③</span></summary><div class="body">
+<p style="margin-top:12px"><b>コメント(4)に基づき、下線部と置き換える最適な語句を選べ。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>赤ペンの翻訳：「主張をまとめていない」＝ 直せ。何と合わせるか → 文章全体</h5>acquire recycling skills for waste management（リサイクルの技術を身につける）。下線部は「技術」の話。でもこの文章は技術を教える文章だったか。</div></div><div class="t"><div class="n">2</div><div><h5>全体の目的と3つの活動の共通点に戻る</h5><div class="quote"><span class="en">To raise awareness … we want to inform you about three activities. / Join Eco Week Activities / We can make a difference … Let’s think globally and act locally!</span><span class="ja">関心を高めるために活動を紹介する／エコ週間の活動に参加しよう／私たちは変化を起こせる、行動しよう</span></div>タイトルは Join。最後は act locally。主張は「技術を習得しよう」ではなく「活動に参加しよう、行動しよう」。</div></div><div class="t"><div class="n">3</div><div><h5>3つの活動を並べて共通点を取る</h5>ポスター（意識を広める）、ゴミ拾い（協力して環境をきれいに）、ファッションショー（再利用を知る）。どれも「リサイクル技術の習得」ではなく「ごみ問題に自分たちが関わる」こと。</div></div><div class="t"><div class="n">4</div><div><h5>穴の形が決まる</h5>「これらの活動を通して、私たちはごみ管理に、もっと自分たちから関わるようになれる」。</div></div></div>
+<div class="hole"><div class="l">穴の形（選択肢を見る前に決める）</div><div class="shape">3つの活動を通して、ごみ管理に自分たちがもっと関わるようになる</div></div>
+<div class="link4"><div class=""><b>① 対比 A↔B</b>反対・違い</div><div class=""><b>② 言い換え・具体化 A→A'</b>前を詳しく</div><div class=""><b>③ 追加 A＋B</b>同じ方向を足す</div><div class="hit"><b>④ 因果</b>理由・目的・結果</div></div>
+<h4>ピースを当てる</h4><div class="piece "><span class="m">①</span><span class="en">become creative artists who focus on</span><span class="why">創造的な芸術家になる。ポスターとファッションショーの一部には当てはまるが、ゴミ拾いレースに当てはまらない。3つをまとめていない。</span></div><div class="piece "><span class="m">②</span><span class="en">cooperate with other high schools on</span><span class="why">他校との協力。ゴミ拾いレースだけの話（students from other schools can also join）。1つの活動の特徴で全体をまとめている。</span></div><div class="piece ok"><span class="m">③</span><span class="en">get ourselves more involved in</span><span class="why">穴の形と一致。involved in ＝ 関わる。タイトルの Join、最後の act locally と同じ方向。3つ全部に当てはまる。</span></div><div class="piece "><span class="m">④</span><span class="en">learn how to collect more garbage for</span><span class="why">ゴミの集め方を学ぶ。これもゴミ拾いレースだけ。ポスターとファッションショーに当てはまらない。</span></div>
+<div class="quote" style="border-left:4px solid var(--ok)"><span class="tiny">はめて通して読む</span><span class="en">Through these Eco Week 2026 activities, we will be able to get ourselves more involved in waste management. This school campaign will include a poster contest, a garbage collecting race, and an eco-friendly fashion show. We can make a difference …</span><span class="ja">これらの活動を通して、私たちはごみ管理にもっと自分たちから関われるようになる。このキャンペーンには、ポスターコンテスト、ゴミ拾いレース、エコファッションショーが含まれる。私たちは変化を起こせる。</span></div>
+<p class="center"><button class="btn ghost" data-open="q3">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「まとめを直せ」の不正解は、「3つのうち1つにしか当てはまらない」選択肢で作られる。①②④は全部そのパターン。まとめは、列挙した全部に当てはまるものでなければならない。タイトルと最終文（Join / act locally）が、主張の置き場所。</div></div></details>
+</section>
+
+<section class="step" id="s5"><div class="stepno">STEP 5</div><h2>全訳 ― 修正後の文章として読む</h2><div class="sub">Full translation</div>
+<p>色の下線は各設問の根拠箇所です。和訳は、正解を入れた「修正後」の文章にしてあります。通して読んで、先生のコメントがすべて解消されていることを確かめてください。</p>
+<div class="legend"><span class="l1">問1</span><span class="l2">問2</span><span class="l3">問3・問4</span></div>
+<p class="center"><button class="btn ghost" id="hideEn">英文を隠して和訳だけ読む</button></p>
+<div class="tr"><div class="lab">リード文</div><p class="en">In English Club, you are writing an online newsletter to promote your high school’s Eco Week theme of waste management. This is your most recent draft with comments from the club supervisor.</p><p class="ja">英語部で、あなたは高校のエコ週間のテーマ「ごみ管理」を宣伝するオンラインのニュースレターを書いている。これが部の顧問からのコメント付きの最新の原稿である。</p></div><div class="tr"><div class="lab">第1段落｜目的</div><p class="en">The waste produced around the world is a continuing challenge. We must think of better methods to reduce and manage waste, and we can start at school. To raise awareness of waste management, we want to inform you about three activities for Eco Week 2026.</p><p class="ja">世界中で生み出されるごみは、続いている課題だ。私たちはごみを減らし管理するためのより良い方法を考えなければならず、それは学校から始められる。ごみ管理への関心を高めるために、エコ週間2026の3つの活動を紹介したい。<span class="qm q1">問1</span></p></div><div class="tr"><div class="lab">第2段落｜活動1（修正後）</div><p class="en">One activity is a poster contest to promote eco-friendly actions among students. During Eco Week, we will vote to decide on the top three posters based on the message and design. They will be posted on the school website after Eco Week so that students can keep in mind the importance of waste management.</p><p class="ja">活動の1つは、生徒の間に環境に優しい行動を広めるためのポスターコンテストだ。<span class="qm q1">問1</span>エコ週間中、メッセージとデザインに基づいて上位3枚のポスターを投票で決める。エコ週間の後、生徒がごみ管理の大切さを忘れないように、それらは学校のウェブサイトに掲載される。</p></div><div class="tr"><div class="lab">第3段落｜活動2（修正後）</div><p class="en">Another activity is a garbage collecting race which students from other schools can also join. Here’s what to do. First, make a team of three. Then, on the morning of the race, meet at the local seashore, and receive tools and bags. Listen to the organizer explain the aim and rules of the race. Pick up more garbage than other teams in an hour. Join the closing ceremony to see if your team has won. The winning team will be featured on the local city website. Through this activity, we will enjoy working together to create a clean environment.</p><p class="ja">もう1つの活動は、他校の生徒も参加できるゴミ拾いレースだ。やることは次の通り。まず3人のチームを作る。次に、レース当日の朝、地元の海岸に集合し、道具と袋を受け取る。主催者がレースの目的とルールを説明するのを聞く。1時間で他のチームより多くのゴミを拾う。<span class="qm q2">問2</span>閉会式に参加して、自分のチームが勝ったかどうか確かめる。優勝チームは市のウェブサイトで紹介される。この活動を通して、私たちは協力してきれいな環境を作ることを楽しめる。</p></div><div class="tr"><div class="lab">第4段落｜活動3（修正後）</div><p class="en">The third activity is an eco-friendly fashion show. Students will make original items using clothing from their closet. This activity will help students to appreciate various ways of reusing old clothes. The most creative entries will be chosen and the winning ones will be exhibited in our hall.</p><p class="ja">3つ目の活動は、環境に優しいファッションショーだ。生徒は自分のクローゼットの服を使ってオリジナルの作品を作る。この活動は、古着を再利用するさまざまな方法の価値を生徒に知ってもらう助けになる。<span class="qm q3">問3</span>最も創造的な作品が選ばれ、入賞作品はホールに展示される。</p></div><div class="tr"><div class="lab">第5段落｜まとめ（修正後）</div><p class="en">Through these Eco Week 2026 activities, we will be able to get ourselves more involved in waste management. This school campaign will include a poster contest, a garbage collecting race, and an eco-friendly fashion show. We can make a difference to improve our environment. Let’s think globally and act locally!</p><p class="ja">これらのエコ週間2026の活動を通して、私たちはごみ管理にもっと自分たちから関われるようになる。<span class="qm q3">問4</span>この学校キャンペーンには、ポスターコンテスト、ゴミ拾いレース、環境に優しいファッションショーが含まれる。私たちは環境を改善するための変化を起こせる。地球規模で考え、足元から行動しよう！</p></div>
+</section>
+
+<section class="step" id="s6"><div class="stepno">STEP 6</div><h2>語句 ― 段落の役割を決める語を優先して覚える</h2><div class="sub">Vocabulary</div>
+<p>第4問は、段落の役割を示す語（One / Another / The third / In conclusion）と、赤ペンのコメントに出る語（purpose / summarize / fit / concluding）が読めれば、半分は解けます。</p>
+<h4>今回の最重要ペア</h4><div class="vocab"><div class="v pair"><span class="w">raise awareness ／ promote eco-friendly actions</span><span>関心を高める → 環境に優しい行動を広める（問1）</span></div><div class="v pair"><span class="w">so that ／ purpose</span><span>〜するために → 目的（問1、目的の置き場所）</span></div><div class="v pair"><span class="w">rules ／ Pick up more garbage than …</span><span>ルール → ルールの中身（問2、具体化）</span></div><div class="v pair"><span class="w">using clothing from their closet ／ reusing old clothes</span><span>クローゼットの服を使う → 古着の再利用（問3）</span></div><div class="v pair"><span class="w">Join ／ act locally ／ get involved in</span><span>参加する／足元から行動する／関わる（問4、主張の言い換え）</span></div><div class="v pair"><span class="w">One ／ Another ／ The third ／ Through these</span><span>列挙の目印（段落の役割を決める語）</span></div></div>
+<h4>本文・設問</h4><div class="vocab"><div class="v"><span class="w">waste</span><span class="pos">名</span><span>ごみ、廃棄物</span></div><div class="v"><span class="w">challenge</span><span class="pos">名</span><span>課題</span></div><div class="v"><span class="w">awareness</span><span class="pos">名</span><span>意識、関心</span></div><div class="v"><span class="w">inform A about B</span><span class="pos">熟</span><span>AにBを知らせる</span></div><div class="v"><span class="w">vote</span><span class="pos">動</span><span>投票する</span></div><div class="v"><span class="w">keep in mind</span><span class="pos">熟</span><span>心に留めておく</span></div><div class="v"><span class="w">organizer</span><span class="pos">名</span><span>主催者</span></div><div class="v"><span class="w">aim</span><span class="pos">名</span><span>目的</span></div><div class="v"><span class="w">closing ceremony</span><span class="pos">名</span><span>閉会式</span></div><div class="v"><span class="w">feature</span><span class="pos">動</span><span>特集する、取り上げる</span></div><div class="v"><span class="w">eco-friendly</span><span class="pos">形</span><span>環境に優しい</span></div><div class="v"><span class="w">closet</span><span class="pos">名</span><span>クローゼット</span></div><div class="v"><span class="w">entry</span><span class="pos">名</span><span>出品作品</span></div><div class="v"><span class="w">exhibit</span><span class="pos">動</span><span>展示する</span></div><div class="v"><span class="w">acquire</span><span class="pos">動</span><span>身につける</span></div><div class="v"><span class="w">make a difference</span><span class="pos">熟</span><span>変化を起こす</span></div><div class="v"><span class="w">purpose</span><span class="pos">名</span><span>目的</span></div><div class="v"><span class="w">fit</span><span class="pos">動</span><span>合う</span></div><div class="v"><span class="w">summarize</span><span class="pos">動</span><span>要約する</span></div><div class="v"><span class="w">argument</span><span class="pos">名</span><span>主張</span></div><div class="v"><span class="w">promote</span><span class="pos">動</span><span>広める、促進する</span></div><div class="v"><span class="w">recruit</span><span class="pos">動</span><span>募集する</span></div><div class="v"><span class="w">appreciate</span><span class="pos">動</span><span>価値を知る、理解する</span></div><div class="v"><span class="w">get involved in</span><span class="pos">熟</span><span>〜に関わる</span></div></div>
+</section>
+
+<section class="step" id="s7"><div class="stepno">STEP 7</div><h2>持ち帰る5STEP と 自己点検</h2><div class="sub">Take-aways</div>
+<div class="card"><div class="weapon"><div class="num">STEP 1</div><div><h4 style="margin:0 0 4px">全体の目的をつかむ。</h4><p style="margin:0">リード文・タイトル・第1段落。「この文章は何を伝えたい？」を一言に。</p></div></div><div class="weapon"><div class="num">STEP 2</div><div><h4 style="margin:0 0 4px">段落の役割をつかむ。</h4><p style="margin:0">各段落の1文目を目次として読む。赤ペンのある段落が全体の中で担当していることを言う。</p></div></div><div class="weapon"><div class="num">STEP 3</div><div><h4 style="margin:0 0 4px">赤ペンを翻訳する。</h4><p style="margin:0">足せ／直せ に分類し、「何を足す？ 何と合わせる？」まで具体化する。</p></div></div><div class="weapon"><div class="num">STEP 4</div><div><h4 style="margin:0 0 4px">穴の形を先に決める。</h4><p style="margin:0">対比・言い換え・追加・因果。選択肢を見る前に必要な内容を日本語で言う。</p></div></div><div class="weapon"><div class="num">STEP 5</div><div><h4 style="margin:0 0 4px">最後に選択肢で確定する。</h4><p style="margin:0">本文に入れて通して読む。他の選択肢が違う理由も本文で言う。</p></div></div></div>
+<div class="note"><b class="l">第4問の本質</b>正解を探しにいくな。本文を読んで、正解に必要な条件を先に決めろ。その条件を満たす選択肢を、最後に残せ。</div>
+<p><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。チェックはこの端末に保存されます。</p>
+<ul class="chk"><li><input type="checkbox"><span>赤ペンを見る前に、リード文・タイトル・第1段落から「何を伝えたい文章か」を一言で言えた</span></li><li><input type="checkbox"><span>各段落の1文目を先に読んで、段落ごとの役割（目的／各項目／まとめ）を把握してから本文に入った</span></li><li><input type="checkbox"><span>それぞれの赤ペンを「足せ」か「直せ」かに分類できた</span></li><li><input type="checkbox"><span>赤ペンを「目的が足りない」「段落のテーマとズレている」など、具体的な言葉に翻訳できた</span></li><li><input type="checkbox"><span>選択肢を見る前に、「ここにはこういう内容が必要」と日本語で言えた</span></li><li><input type="checkbox"><span>前後のつながりを、対比・言い換え・追加・因果のどれかで説明できた</span></li><li><input type="checkbox"><span>正解の選択肢を本文に入れて、通して読んで自然かどうか確認した</span></li><li><input type="checkbox"><span>不正解の選択肢を、本文のどこと合わないかで「切った」と説明できる</span></li><li><input type="checkbox"><span>「英語として自然そう」ではなく「この文章のこの場所に必要か」で選んだ</span></li><li><input type="checkbox"><span>6分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li><li><input type="checkbox"><span>問1で、段落内の so that と第1段落の To raise awareness を根拠に「目的」の方向を決めてから選択肢を見た</span></li><li><input type="checkbox"><span>問2で、入れる文を「ルールの中身」と役割づけして、rules の直後に置けた</span></li><li><input type="checkbox"><span>問3で、下線部のズレを「楽しさ ≠ 環境・再利用」と段落テーマとの比較で言えた</span></li><li><input type="checkbox"><span>問4で、不正解の3つを「3つの活動のうち1つにしか当てはまらない」で切れた</span></li></ul>
+<div class="score" id="chkScore">0 / 14</div>
+<div class="card soft"><b>次に向けて</b><p>10個以上なら手順は身についています。次は同じ手順を「初見の第4問」で再現できるかを試してください。9個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度6分で解き直してください。測っているのは正解ではなく、<b>穴の形を先に決める動作</b>です。</p>
+<p class="center"><button class="btn ghost" id="reset">解答・チェックをリセットしてもう一度解く</button></p></div>
+</section>
+<footer>出典：2026年度 共通テスト本試験 第4問 英語（リーディング）第4問<br>学部別・逆転合格設計塾 THINKING ― 受験は根性じゃなく、設計。</footer>
+</main>
+<div class="bbar"><div class="in"><button class="btn ghost" id="openSheet">本文を開く</button><a class="btn" href="thinking_kyotsu_q4_2026_tsuishi_positive_impacts_of_music.html">次へ</a></div></div>
+<div class="overlay" id="ov"></div>
+<div class="sheet" id="sheet"><div class="head"><b>本文 ― Join Eco Week Activities</b><div class="filters"><button data-f="none">なし</button><button data-f="all" class="on">全部</button><button class="f1" data-f="q1">問1</button><button class="f2" data-f="q2">問2</button><button class="f3" data-f="q3">問3・4</button></div><button class="close" id="closeSheet">×</button></div>
+<div class="scroll"><div class="passage show-all" id="sheetPassage"><p class="en lead-en">In English Club, you are writing an online newsletter to promote your high school’s Eco Week theme of waste management. This is your most recent draft with comments from the club supervisor.</p><div class="tiny" style="margin:0 0 6px"><i>January 2026 ／ English Club Times</i></div><div class="ttl">Join Eco Week Activities</div><p class="en">The waste produced around the world is a continuing challenge. We must think of better methods to reduce and manage waste, and we can start at school. <mark class="q1">To raise awareness of waste management, we want to inform you about three activities for Eco Week 2026.</mark></p><p class="en">One activity is <sup class="cm">(1)</sup><u class="ul">a poster contest</u>. During Eco Week, we will vote to decide on the top three posters based on the message and design. <mark class="q1">They will be posted on the school website after Eco Week so that students can keep in mind the importance of waste management.</mark></p><p class="en">Another activity is a garbage collecting race which students from other schools can also join. Here’s what to do. First, make a team of three. <span class="pos">A</span> Then, on the morning of the race, meet at the local seashore, and receive tools and bags. <span class="pos">B</span> <mark class="q2">Listen to the organizer explain the aim and rules of the race.</mark> <span class="pos hit">C</span> <mark class="q2">Join the closing ceremony to see if your team has won.</mark> <span class="pos">D</span> The winning team will be featured on the local city website. Through this activity, we will enjoy working together to create a clean environment.</p><p class="en">The third activity is an eco-friendly fashion show. <mark class="q3">Students will make original items using clothing from their closet.</mark> <sup class="cm">(3)</sup><u class="ul">Making our own clothes is enjoyable.</u> The most creative entries will be chosen and the winning ones will be exhibited in our hall.</p><p class="en">Through these Eco Week 2026 activities, we will be able to <sup class="cm">(4)</sup><u class="ul">acquire recycling skills for waste management</u>. This school campaign will include a poster contest, a garbage collecting race, and an eco-friendly fashion show. <mark class="q3">We can make a difference to improve our environment. Let’s think globally and act locally!</mark></p><div class="cmts"><div class="cmt"><span class="n">(1)</span><span class="en">What is the purpose of making the posters? Explain it.</span></div><div class="cmt"><span class="n">(2)</span><span class="en">Readers want to know how the winners will be decided. Add it.</span></div><div class="cmt"><span class="n">(3)</span><span class="en">This sentence doesn’t seem to fit well here. Rewrite it.</span></div><div class="cmt"><span class="n">(4)</span><span class="en">This part does not summarize your main argument. Rewrite it.</span></div></div><p class="tiny">Overall comments: <span class="en">Your draft introduces eco activities well. I hope many students join them!</span></p></div></div></div>
+<script>const TARGET_SEC=360; const ANS=[{"q": 1, "type": "single", "ans": "③"}, {"q": 2, "type": "single", "ans": "C"}, {"q": 3, "type": "single", "ans": "①"}, {"q": 4, "type": "single", "ans": "③"}];
+(function(){
+  const KEY = 'thinking_q3_' + document.body.dataset.key;
+  // timer
+  let t = TARGET_SEC, iv=null, running=false, elapsed=0;
+  const big=document.getElementById('tBig'), chip=document.getElementById('tChip'), btn=document.getElementById('tBtn');
+  function fmt(s){ const neg=s<0; s=Math.abs(s); const m=Math.floor(s/60), r=s%60; return (neg?'+':'')+m+':'+String(r).padStart(2,'0'); }
+  function render(){ const left=TARGET_SEC-elapsed; big.textContent=fmt(left); chip.textContent=fmt(left); big.style.color = left<0?'var(--ng)':'inherit'; }
+  render();
+  btn.addEventListener('click',()=>{
+    if(!running){ running=true; btn.textContent='ストップ'; iv=setInterval(()=>{elapsed++; render();},1000); }
+    else { running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // grading
+  document.getElementById('grade').addEventListener('click',()=>{
+    let n=0;
+    ANS.forEach(a=>{
+      const el=document.getElementById('r'+a.q);
+      let ok=false, user='';
+      if(a.type==='single'){
+        const c=document.querySelector('input[name="q'+a.q+'"]:checked'); user=c?c.value:'';
+        ok = user===a.ans;
+      }else{ ok=false; }
+      if(ok){n++; el.textContent='正解';el.className='result ok';}
+      else{ el.textContent='不正解（正解：'+(Array.isArray(a.ans)?a.ans.join('→'):a.ans)+'）'; el.className='result ng'; }
+    });
+    const s=document.getElementById('gradeSum'); s.textContent= n+' / '+ANS.length+'問正解。正解数より、どの設問で本文に戻る回数が増えたかを覚えておいてください。';
+    if(running){ running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // sheet
+  const sheet=document.getElementById('sheet'), ov=document.getElementById('ov');
+  function openSheet(f){ sheet.classList.add('open'); ov.classList.add('on'); if(f) setFilter(f); }
+  function closeSheet(){ sheet.classList.remove('open'); ov.classList.remove('on'); }
+  document.getElementById('openSheet').addEventListener('click',()=>openSheet());
+  document.getElementById('closeSheet').addEventListener('click',closeSheet);
+  ov.addEventListener('click',closeSheet);
+  const sp=document.getElementById('sheetPassage');
+  function setFilter(f){
+    sp.className='passage show-'+f;
+    document.querySelectorAll('.filters button').forEach(b=>b.classList.toggle('on', b.dataset.f===f));
+  }
+  document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f)));
+  document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openSheet(b.dataset.open)));
+  setFilter('none');
+  // hide english toggle
+  const hb=document.getElementById('hideEn'); if(hb){ hb.addEventListener('click',()=>{ document.body.classList.toggle('hideen'); hb.textContent=document.body.classList.contains('hideen')?'英文も表示する':'英文を隠して和訳だけ読む'; }); }
+  // checklist persistence
+  const boxes=[...document.querySelectorAll('.chk input')];
+  let saved={}; try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  boxes.forEach((b,i)=>{ b.checked=!!saved[i]; b.addEventListener('change',()=>{ saved[i]=b.checked; try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){} upd(); }); });
+  function upd(){ const n=boxes.filter(b=>b.checked).length; document.getElementById('chkScore').textContent=n+' / '+boxes.length; }
+  upd();
+  document.getElementById('reset').addEventListener('click',()=>{
+    boxes.forEach(b=>b.checked=false); saved={}; try{localStorage.removeItem(KEY);}catch(e){} upd();
+    document.querySelectorAll('.answers input').forEach(i=>i.checked=false);
+    document.querySelectorAll('.order select').forEach(s=>s.selectedIndex=0);
+    document.querySelectorAll('.result').forEach(r=>{r.textContent='';r.className='result';});
+    document.getElementById('gradeSum').textContent='';
+    elapsed=0; render(); if(running){running=false;clearInterval(iv);} btn.textContent='スタート';
+    window.scrollTo({top:document.getElementById('s0').offsetTop-70,behavior:'smooth'});
+  });
+})();
+</script>
+</body></html>

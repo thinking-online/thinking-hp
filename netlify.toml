@@ -571,3 +571,13 @@
   to = "https://liff.line.me/2010454771-UKpPuCeO"
   status = 302
   force = true
+
+# ---------------------------------------------------------------------------
+# 小テストPDF（Dr.okke）— /test/{slug}/{slug}-{番号}-mondai.pdf / -kaitou.pdf
+# PDFは専用サイト thinking-pdf-a4nxit に置き、ここから転送する（URLは thinking-online.com のまま）。
+# force は付けない：本サイトの test/ にある既存PDF（eiken-2, leap など）は今までどおり本サイトから返す。
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/test/*"
+  to = "https://thinking-pdf-a4nxit.netlify.app/test/:splat"
+  status = 200

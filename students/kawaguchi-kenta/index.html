@@ -1,0 +1,1624 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>川口 健太｜初回戦略シート｜THINKING</title>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Shippori+Mincho+B1:wght@600;700&family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   THINKING 個別戦略シート — 印刷（A4）用スタイルシート
+   engine version: 1.0
+   ============================================================ */
+
+@font-face{font-family:"Zen Kaku Gothic New";font-weight:400;src:local("Zen Kaku Gothic New")}
+@font-face{font-family:"Shippori Mincho B1";font-weight:600;src:local("Shippori Mincho B1")}
+
+:root{
+  --navy:#16233a;
+  --navy-deep:#0c1424;
+  --navy-soft:#24354f;
+  --gold:#c8a55a;
+  --gold-deep:#a07d38;
+  --gold-light:#e6d3a6;
+  --ivory:#faf8f4;
+  --cream:#fffdf9;
+  --paper:#f0ece4;
+  --ink:#18212f;
+  --ink-2:#4c586a;
+  --ink-3:#8b93a1;
+  --rule:rgba(22,35,58,.14);
+  --rule-soft:rgba(22,35,58,.07);
+  --good:#2c7a5d;
+  --mid:#c08a2e;
+  --bad:#b23f3f;
+
+  --sans:"Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",system-ui,sans-serif;
+  --mincho:"Shippori Mincho B1","Noto Serif JP","Hiragino Mincho ProN",serif;
+  /* 数値まわりの欧文書体。CJK を持たないので日本語フォントを必ず後ろに置く
+     （「約」「点」「ヶ月」等が別書体に落ちるのを防ぐ） */
+  --en:"Cormorant Garamond","Cormorant","Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",sans-serif;
+
+  --pad-x:15mm;
+  --pad-y:14mm;
+}
+
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:#5b6472;
+  -webkit-font-smoothing:antialiased;
+  font-feature-settings:"palt" 1;
+  line-height:1.75;
+}
+body,.page,.page *{
+  -webkit-print-color-adjust:exact;
+  print-color-adjust:exact;
+}
+
+/* 欧文フォントの数字は既定でオールドスタイル（1 が I に見える）。
+   数値を読ませる箇所はライニング＋等幅数字に統一する。 */
+.cover-brand .cb-en,.cover-kpi .k-value,.kpi .k-v,.sec-no,.sec-en,
+.s-num,.s-pct,.s-tgt,.s-gap,.wish-rank,.wseg .w-v,.step-no,
+ol.num li::before,.pf-no,.runner .r-left,.cover-contents .cc-no{
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1,"tnum" 1;
+}
+
+/* ---------- ページの器 ---------- */
+@page{ size:A4 portrait; margin:0; }
+
+.page{
+  position:relative;
+  width:210mm;
+  height:297mm;
+  overflow:hidden;
+  margin:0 auto;
+  background:var(--cream);
+  color:var(--ink);
+  page-break-after:always;
+  break-after:page;
+  display:flex;
+  flex-direction:column;
+}
+.page:last-child{page-break-after:auto;break-after:auto;}
+.page-body{
+  flex:1;
+  min-height:0;
+  padding:var(--pad-y) var(--pad-x) 0;
+  display:flex;
+  flex-direction:column;
+}
+.page-body > *{flex:0 0 auto;}
+.pb-fill{flex:1 1 auto !important;min-height:0;}
+
+/* 画面表示時だけページを浮かせる */
+@media screen{
+  body{padding:24px 0;}
+  .page{box-shadow:0 24px 60px -24px rgba(0,0,0,.6);margin-bottom:24px;}
+}
+
+/* ---------- 走り書きヘッダー / フッター ---------- */
+.runner{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  padding:7mm var(--pad-x) 0;
+  font-size:8pt;
+  letter-spacing:.14em;
+  color:var(--ink-3);
+}
+.runner .r-left{font-family:var(--en);font-size:10pt;letter-spacing:.22em;color:var(--gold-deep);}
+.runner .r-right{font-weight:500;}
+.page-foot{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:0 var(--pad-x) 8mm;
+  font-size:7.6pt;
+  letter-spacing:.1em;
+  color:var(--ink-3);
+  border-top:0;
+}
+.page-foot .pf-rule{
+  flex:1;height:1px;
+  background:linear-gradient(90deg,var(--rule),rgba(200,165,90,.5));
+}
+.page-foot .pf-no{
+  font-family:var(--en);
+  font-size:13pt;
+  letter-spacing:.06em;
+  color:var(--gold-deep);
+  font-weight:600;
+}
+
+/* ============================================================
+   表紙
+   ============================================================ */
+.cover{
+  background:
+    radial-gradient(120% 80% at 50% -10%, #2b3f60 0%, rgba(43,63,96,0) 62%),
+    linear-gradient(175deg,#16233a 0%,#0c1424 100%);
+  color:#f3efe6;
+}
+.cover .page-body{padding:0;}
+.cover-frame{
+  position:absolute;
+  inset:9mm;
+  border:1px solid rgba(200,165,90,.4);
+}
+.cover-frame::before,.cover-frame::after{
+  content:"";position:absolute;background:rgba(200,165,90,.85);
+}
+.cover-frame::before{left:-1px;top:-1px;width:18mm;height:2px;}
+.cover-frame::after{right:-1px;bottom:-1px;width:18mm;height:2px;}
+
+.cover-inner{
+  position:relative;
+  z-index:2;
+  height:100%;
+  padding:22mm 20mm 16mm;
+  display:flex;
+  flex-direction:column;
+}
+.cover-brand{
+  display:flex;flex-direction:column;gap:3px;
+}
+.cover-brand .cb-en{
+  font-family:var(--en);
+  font-size:19pt;letter-spacing:.34em;color:#efe7d6;font-weight:500;
+}
+.cover-brand .cb-en i{font-style:normal;color:var(--gold);}
+.cover-brand .cb-jp{
+  font-family:var(--mincho);
+  font-size:7.6pt;letter-spacing:.4em;color:rgba(230,211,166,.72);
+}
+
+.cover-eyebrow{
+  margin-top:19mm;
+  font-size:8.4pt;letter-spacing:.34em;color:var(--gold);
+  display:flex;align-items:center;gap:10px;
+}
+.cover-eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,rgba(200,165,90,.6),transparent);}
+
+.cover-title{
+  font-family:var(--mincho);
+  font-size:34pt;
+  font-weight:600;
+  line-height:1.32;
+  letter-spacing:.09em;
+  margin:5mm 0 0;
+  color:#fbf8f1;
+}
+.cover-title em{
+  font-style:normal;
+  color:var(--gold-light);
+  display:block;
+  font-size:15pt;
+  letter-spacing:.22em;
+  margin-top:5mm;
+}
+.cover-sub{
+  margin-top:4mm;
+  font-size:9.6pt;
+  line-height:2;
+  color:rgba(243,239,230,.78);
+  max-width:118mm;
+}
+
+.cover-name{
+  margin-top:12mm;
+  padding:6mm 0 0;
+  border-top:1px solid rgba(200,165,90,.32);
+  display:flex;align-items:flex-end;gap:6mm;flex-wrap:wrap;
+}
+.cover-name .cn-label{
+  font-size:8pt;letter-spacing:.3em;color:rgba(230,211,166,.75);padding-bottom:3mm;
+}
+.cover-name .cn-value{
+  font-family:var(--mincho);
+  font-size:26pt;letter-spacing:.14em;color:#fff;line-height:1.2;
+}
+.cover-name .cn-meta{
+  padding-bottom:3mm;font-size:8.6pt;color:rgba(243,239,230,.62);letter-spacing:.08em;
+}
+
+.cover-contents{
+  margin-top:7mm;
+  display:grid;grid-template-columns:1fr 1fr;gap:0 9mm;
+}
+.cover-contents .cc-label{
+  grid-column:1 / -1;
+  font-size:7.6pt;letter-spacing:.32em;color:var(--gold);
+  display:flex;align-items:center;gap:8px;margin-bottom:2mm;
+}
+.cover-contents .cc-label::after{content:"";flex:1;height:1px;background:rgba(200,165,90,.28);}
+.cover-contents .cc-item{
+  display:flex;gap:3.5mm;align-items:baseline;
+  font-size:8.2pt;letter-spacing:.05em;color:rgba(243,239,230,.7);
+  padding:1.15mm 0;border-bottom:1px solid rgba(200,165,90,.12);
+}
+.cover-contents .cc-no{
+  font-family:var(--en);font-size:9.5pt;font-weight:600;color:var(--gold);flex:0 0 5.5mm;
+}
+
+.cover-kpis{
+  margin-top:auto;
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;
+  border:1px solid rgba(200,165,90,.3);
+  background:rgba(255,255,255,.035);
+}
+.cover-kpi{padding:6mm 5mm;border-right:1px solid rgba(200,165,90,.22);}
+.cover-kpi:last-child{border-right:0;}
+.cover-kpi .k-label{font-size:7.6pt;letter-spacing:.2em;color:rgba(230,211,166,.8);}
+.cover-kpi .k-value{
+  font-family:var(--en);font-size:30pt;font-weight:600;line-height:1.05;margin-top:2mm;color:#fff;
+}
+.cover-kpi .k-value small{font-size:13pt;letter-spacing:.02em;margin-left:2px;}
+.cover-kpi.is-gap .k-value{color:var(--gold-light);}
+.cover-kpi .k-note{font-size:7.6pt;color:rgba(243,239,230,.6);margin-top:1mm;letter-spacing:.04em;}
+
+.cover-foot{
+  margin-top:6mm;
+  display:flex;justify-content:space-between;align-items:baseline;
+  font-size:7.6pt;letter-spacing:.16em;color:rgba(243,239,230,.5);
+}
+
+/* ============================================================
+   セクション見出し
+   ============================================================ */
+.sec{
+  display:flex;align-items:flex-start;gap:5mm;
+  padding-bottom:3.5mm;
+  border-bottom:1px solid var(--rule);
+  margin-bottom:5mm;
+}
+.sec-no{
+  flex:0 0 auto;
+  font-family:var(--en);
+  font-size:26pt;font-weight:600;line-height:1;
+  color:var(--gold);
+  letter-spacing:.02em;
+  padding-top:1mm;
+}
+.sec-txt{flex:1;min-width:0;}
+.sec-title{
+  font-family:var(--mincho);
+  font-size:16pt;font-weight:600;letter-spacing:.06em;line-height:1.35;
+  margin:0;color:var(--navy);
+}
+.sec-en{
+  font-family:var(--en);
+  font-size:9pt;letter-spacing:.26em;color:var(--ink-3);margin-top:1mm;text-transform:uppercase;
+}
+.sec-lead{
+  font-size:9.4pt;line-height:1.85;color:var(--ink-2);margin:0 0 5mm;
+}
+.sec-lead strong{color:var(--navy);font-weight:700;}
+
+h3.blk{
+  font-family:var(--mincho);
+  font-size:11.5pt;font-weight:600;letter-spacing:.06em;color:var(--navy);
+  margin:0 0 2.5mm;display:flex;align-items:center;gap:2.5mm;
+}
+h3.blk::before{
+  content:"";width:3px;height:14px;background:var(--gold);flex:0 0 auto;
+}
+
+/* ============================================================
+   汎用パーツ
+   ============================================================ */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm;}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;}
+.stack-gap{display:flex;flex-direction:column;gap:4.5mm;}
+.mt-auto{margin-top:auto;}
+
+.card{
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-radius:2px;
+  padding:4.5mm 5mm;
+}
+.card.is-dark{background:var(--navy);border-color:var(--navy);color:#f1ede4;}
+.card.is-dark .c-title{color:var(--gold-light);}
+.card.is-dark .c-body{color:rgba(241,237,228,.86);}
+.card.is-gold{background:#fdf8ec;border-color:rgba(200,165,90,.45);}
+.c-kicker{
+  font-size:7.4pt;letter-spacing:.22em;color:var(--gold-deep);margin-bottom:1.5mm;font-weight:500;
+}
+.c-title{
+  font-family:var(--mincho);
+  font-size:11pt;font-weight:600;letter-spacing:.04em;color:var(--navy);margin:0 0 2mm;line-height:1.5;
+}
+.c-body{font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin:0;}
+.c-body strong{color:var(--navy);font-weight:700;}
+
+.pill{
+  display:inline-block;
+  font-size:7.4pt;letter-spacing:.12em;font-weight:500;
+  padding:.9mm 2.4mm;border-radius:1px;
+  border:1px solid currentColor;
+}
+.pill.p-core{color:var(--gold-deep);background:rgba(200,165,90,.1);}
+.pill.p-base{color:var(--navy-soft);background:rgba(36,53,79,.07);}
+.pill.p-risk{color:var(--bad);background:rgba(178,63,63,.07);}
+.pill.p-ok{color:var(--good);background:rgba(44,122,93,.08);}
+
+/* ---------- 志望校リスト ---------- */
+.wish{border-top:1px solid var(--rule);}
+.wish-row{
+  display:flex;align-items:center;gap:4mm;
+  padding:2.6mm 1mm;
+  border-bottom:1px solid var(--rule-soft);
+}
+.wish-rank{
+  flex:0 0 9mm;
+  font-family:var(--en);font-size:15pt;font-weight:600;color:var(--gold);line-height:1;text-align:center;
+}
+.wish-main{flex:1;min-width:0;}
+.wish-univ{font-size:10pt;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.45;}
+.wish-fac{font-size:8.2pt;color:var(--ink-2);letter-spacing:.02em;line-height:1.5;}
+.wish-tag{flex:0 0 auto;}
+
+/* ---------- 得点テーブル ---------- */
+table.score{
+  width:100%;border-collapse:collapse;font-size:8.6pt;
+}
+table.score th{
+  font-size:7.4pt;letter-spacing:.12em;font-weight:500;color:var(--ink-3);
+  text-align:right;padding:0 1.5mm 1.8mm;border-bottom:1px solid var(--rule);white-space:nowrap;
+}
+table.score th.t-name{text-align:left;}
+table.score th.t-bar{text-align:left;}
+table.score td{
+  padding:1.55mm 1.5mm;border-bottom:1px solid var(--rule-soft);text-align:right;vertical-align:middle;
+}
+table.score tr.is-sum td{
+  border-top:1.4px solid var(--navy);border-bottom:0;padding-top:2.2mm;font-weight:700;color:var(--navy);
+}
+table.score tr.is-sub td{background:rgba(22,35,58,.028);}
+.s-name{text-align:left;line-height:1.35;}
+.s-name b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;}
+.s-name span{display:block;font-size:7.2pt;color:var(--ink-3);letter-spacing:.02em;}
+.s-num{font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);white-space:nowrap;}
+.s-num i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.s-pct{font-family:var(--en);font-size:12pt;font-weight:600;white-space:nowrap;}
+.s-pct i{font-style:normal;font-size:7.6pt;font-family:var(--sans);margin-left:1px;color:var(--ink-3);}
+.s-pct.lv-hi{color:var(--good);}
+.s-pct.lv-mid{color:var(--mid);}
+.s-pct.lv-lo{color:var(--bad);}
+.s-tgt{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--ink-2);}
+.s-gap{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--gold-deep);white-space:nowrap;}
+.s-bar{width:34%;}
+
+.track{
+  position:relative;height:7px;background:var(--paper);border-radius:1px;overflow:visible;
+}
+.track .fill{
+  position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,var(--navy-soft),var(--navy));
+}
+.track.lv-hi .fill{background:linear-gradient(90deg,#3d9273,var(--good));}
+.track.lv-mid .fill{background:linear-gradient(90deg,#d9a94a,var(--mid));}
+.track.lv-lo .fill{background:linear-gradient(90deg,#cd6767,var(--bad));}
+.track .tick{
+  position:absolute;top:-3px;bottom:-3px;width:1.6px;background:var(--gold-deep);
+}
+.track .tick::after{
+  content:"";position:absolute;top:-2.5px;left:-2.2px;
+  border-left:3px solid transparent;border-right:3px solid transparent;border-top:3.4px solid var(--gold-deep);
+}
+
+/* ---------- KPI 帯 ---------- */
+.kpirow{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--rule);background:var(--ivory);}
+.kpirow.k3{grid-template-columns:repeat(3,1fr);}
+.kpi{padding:3.6mm 4mm;border-right:1px solid var(--rule);}
+.kpi:last-child{border-right:0;}
+.kpi .k-l{font-size:7.4pt;letter-spacing:.16em;color:var(--ink-3);}
+.kpi .k-v{font-family:var(--en);font-size:24pt;font-weight:600;line-height:1.1;color:var(--navy);margin-top:.8mm;}
+.kpi .k-v small{font-size:11pt;margin-left:1px;}
+.kpi .k-n{font-size:7.4pt;color:var(--ink-3);margin-top:.5mm;}
+.kpi.acc .k-v{color:var(--gold-deep);}
+.kpi.bad .k-v{color:var(--bad);}
+.kpi.good .k-v{color:var(--good);}
+
+/* ---------- 配点構造バー ---------- */
+.weight{margin:0;}
+.weight-bar{display:flex;height:15mm;border:1px solid var(--rule);overflow:hidden;}
+.wseg{
+  display:flex;flex-direction:column;justify-content:center;align-items:center;
+  color:#fff;text-align:center;gap:.6mm;padding:0 1mm;border-right:1px solid rgba(255,255,255,.28);
+}
+.wseg:last-child{border-right:0;}
+.wseg .w-t{font-size:7.6pt;letter-spacing:.06em;font-weight:500;line-height:1.2;}
+.wseg .w-v{font-family:var(--en);font-size:13pt;font-weight:600;line-height:1;}
+.wseg.w1{background:var(--navy);}
+.wseg.w2{background:var(--navy-soft);}
+.wseg.w3{background:var(--gold-deep);}
+.wseg.w4{background:#a8afba;}
+.weight-legend{
+  display:flex;flex-wrap:wrap;gap:1.5mm 5mm;margin-top:2.5mm;font-size:7.8pt;color:var(--ink-2);
+}
+.weight-legend span{display:flex;align-items:center;gap:1.8mm;}
+.weight-legend i{width:8px;height:8px;display:inline-block;border-radius:1px;}
+
+/* ---------- ステップ（①②③④） ---------- */
+.steps{display:flex;flex-direction:column;gap:2.6mm;}
+.step{
+  display:flex;gap:3.5mm;align-items:flex-start;
+  padding:3mm 3.5mm;background:var(--ivory);border-left:2.5px solid var(--gold);
+}
+.step-no{
+  flex:0 0 auto;width:6.5mm;height:6.5mm;border-radius:50%;
+  background:var(--navy);color:var(--gold-light);
+  font-family:var(--en);font-size:11pt;font-weight:600;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+.step-txt{flex:1;min-width:0;}
+.step-t{font-size:9.6pt;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.5;}
+.step-d{font-size:8.4pt;line-height:1.75;color:var(--ink-2);margin-top:.6mm;}
+.step-d strong{color:var(--navy);}
+
+/* ---------- 箇条書き ---------- */
+ul.bul{margin:0;padding:0;list-style:none;}
+ul.bul li{
+  position:relative;padding-left:4.2mm;font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin-bottom:.8mm;
+}
+ul.bul li::before{
+  content:"";position:absolute;left:.4mm;top:.62em;width:4.5px;height:4.5px;background:var(--gold-deep);border-radius:50%;
+}
+ul.bul li strong{color:var(--navy);font-weight:700;}
+ul.bul.tight li{margin-bottom:.2mm;line-height:1.7;}
+
+ol.num{margin:0;padding:0;list-style:none;counter-reset:n;}
+ol.num li{
+  position:relative;padding-left:6.5mm;font-size:8.8pt;line-height:1.8;color:var(--ink-2);margin-bottom:1.2mm;counter-increment:n;
+}
+ol.num li::before{
+  content:counter(n);position:absolute;left:0;top:.15em;
+  width:4.4mm;height:4.4mm;border:1px solid var(--gold-deep);color:var(--gold-deep);
+  font-family:var(--en);font-size:9pt;font-weight:600;
+  display:flex;align-items:center;justify-content:center;line-height:1;
+}
+
+/* ---------- チェックリスト ---------- */
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:1.6mm 5mm;}
+.check{display:flex;align-items:flex-start;gap:2.4mm;font-size:8.6pt;line-height:1.65;color:var(--ink-2);}
+.check .box{
+  flex:0 0 auto;width:3.4mm;height:3.4mm;border:1.2px solid var(--navy-soft);margin-top:.9mm;background:#fff;
+}
+.check b{color:var(--navy);font-weight:700;}
+
+/* ---------- コールアウト ---------- */
+.callout{
+  border:1px solid rgba(200,165,90,.5);
+  background:linear-gradient(180deg,#fdf8ec,#fbf4e3);
+  padding:4mm 5mm;position:relative;
+}
+.callout .co-t{
+  font-family:var(--mincho);font-size:10.5pt;font-weight:600;color:var(--gold-deep);
+  letter-spacing:.06em;margin-bottom:1.5mm;
+}
+.callout .co-b{font-size:8.8pt;line-height:1.85;color:var(--ink-2);}
+.callout .co-b strong{color:var(--navy);}
+.callout.is-navy{background:var(--navy);border-color:var(--navy);}
+.callout.is-navy .co-t{color:var(--gold-light);}
+.callout.is-navy .co-b{color:rgba(241,237,228,.88);}
+.callout.is-navy .co-b strong{color:#fff;}
+
+/* ---------- 週次テーブル ---------- */
+table.plain{width:100%;border-collapse:collapse;font-size:8.4pt;}
+table.plain th{
+  background:var(--navy);color:var(--gold-light);font-weight:500;font-size:7.6pt;letter-spacing:.12em;
+  padding:1.8mm 2.5mm;text-align:left;
+}
+table.plain td{
+  padding:1.9mm 2.5mm;border-bottom:1px solid var(--rule-soft);color:var(--ink-2);line-height:1.65;vertical-align:top;
+}
+table.plain tr:nth-child(even) td{background:rgba(22,35,58,.022);}
+table.plain td b{color:var(--navy);}
+table.plain td.tc{text-align:center;}
+.nowrap{white-space:nowrap;}
+
+/* ---------- SAMPLE 表示 ---------- */
+/* 見本であることを、資料のどこを見ても分かる状態にしておくための表示 */
+.cover-badge{
+  position:absolute;
+  top:9mm;right:9mm;
+  transform:translate(-6mm,6mm);
+  border:1px solid rgba(200,165,90,.75);
+  color:var(--gold-light);
+  font-family:var(--en);
+  font-size:9.5pt;font-weight:600;letter-spacing:.34em;
+  padding:1.8mm 4mm 1.8mm 4.34mm;
+  background:rgba(200,165,90,.08);
+  z-index:3;
+}
+.r-sample{
+  font-family:var(--en);
+  font-size:8.5pt;font-weight:600;letter-spacing:.28em;
+  color:var(--gold-deep);
+  border:1px solid rgba(200,165,90,.55);
+  padding:.3mm 1.8mm .3mm 2.1mm;
+  margin-right:3mm;
+}
+.cover-note{
+  margin-top:5mm;
+  max-width:120mm;
+  padding-left:3.5mm;
+  border-left:1.5px solid rgba(200,165,90,.5);
+  font-size:7.8pt;line-height:1.75;letter-spacing:.03em;
+  color:rgba(243,239,230,.58);
+}
+.cover-note strong{color:var(--gold-light);font-weight:500;}
+
+/* 見本版は注記が1ブロック増えるぶん、上側の余白を詰めて表紙内に収める */
+.cover-badge ~ .cover-inner .cover-eyebrow{margin-top:11mm;}
+.cover-badge ~ .cover-inner .cover-name{margin-top:8mm;}
+.cover-badge ~ .cover-inner .cover-contents{margin-top:5mm;}
+
+/* ---------- 配点比重バー ---------- */
+.bars{display:flex;flex-direction:column;gap:2.1mm;}
+.bar-row{display:flex;align-items:center;gap:3mm;}
+.bar-l{flex:0 0 33mm;min-width:0;}
+.bar-l b{font-size:9.4pt;font-weight:700;color:var(--navy);letter-spacing:.02em;line-height:1.3;display:block;}
+.bar-l span{display:block;font-size:7.1pt;color:var(--ink-3);line-height:1.35;}
+.bar-t{flex:1;height:9px;background:var(--paper);position:relative;border-radius:1px;}
+.bar-f{position:absolute;left:0;top:0;bottom:0;border-radius:1px;
+  background:linear-gradient(90deg,#4a5b78,var(--navy));}
+.bar-row.is-key .bar-f{background:linear-gradient(90deg,var(--gold),var(--gold-deep));}
+.bar-row.is-mute .bar-f{background:linear-gradient(90deg,#c2c8d1,#a8afba);}
+.bar-v{flex:0 0 19mm;text-align:right;font-family:var(--en);font-size:13pt;font-weight:600;color:var(--navy);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-v i{font-style:normal;font-family:var(--sans);font-size:7.4pt;color:var(--ink-3);margin-left:1px;}
+.bar-p{flex:0 0 16mm;text-align:right;font-family:var(--en);font-size:11.5pt;font-weight:600;color:var(--ink-2);
+  font-variant-numeric:lining-nums tabular-nums;font-feature-settings:"lnum" 1,"tnum" 1;}
+.bar-row.is-key .bar-p,.bar-row.is-key .bar-v{color:var(--gold-deep);}
+.bar-p i{font-style:normal;font-family:var(--sans);font-size:7.2pt;color:var(--ink-3);margin-left:1px;}
+
+/* ---------- 例題（英文＋設問＋選択肢） ---------- */
+.exam-passage{
+  background:#fff;border:1px solid var(--rule);border-left:2.5px solid var(--gold);
+  padding:3.4mm 4.5mm;font-size:9.4pt;line-height:1.95;color:var(--ink);letter-spacing:.004em;
+}
+.exam-q{
+  margin-top:3mm;font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  display:flex;align-items:baseline;gap:2.5mm;
+}
+.exam-q em{font-style:normal;font-family:var(--en);font-size:8.4pt;letter-spacing:.18em;color:var(--gold-deep);}
+.exam-choices{margin-top:2.4mm;display:flex;flex-direction:column;gap:1.5mm;}
+.exam-choice{
+  display:flex;gap:2.8mm;align-items:flex-start;
+  padding:2.1mm 3mm;background:var(--ivory);border:1px solid var(--rule-soft);
+}
+.exam-choice.is-ok{border-color:rgba(200,165,90,.6);background:#fdf8ec;}
+.ec-k{
+  flex:0 0 auto;width:5mm;height:5mm;display:flex;align-items:center;justify-content:center;
+  font-family:var(--en);font-size:9.5pt;font-weight:600;line-height:1;
+  border:1px solid var(--ink-3);color:var(--ink-2);background:#fff;
+}
+.exam-choice.is-ok .ec-k{background:var(--gold);border-color:var(--gold);color:#fff;}
+.ec-b{flex:1;min-width:0;}
+.ec-t{font-size:8.2pt;line-height:1.65;color:var(--ink-2);}
+.ec-w{font-size:7.7pt;line-height:1.6;margin-top:.8mm;color:var(--ink-3);}
+.ec-w b{font-weight:700;color:var(--bad);margin-right:1mm;}
+.exam-choice.is-ok .ec-w b{color:var(--good);}
+
+/* ---------- プロセス帯（面談〜運用の流れ） ---------- */
+.flow{display:flex;align-items:stretch;gap:0;}
+.flow-item{
+  flex:1;min-width:0;
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-right:0;
+  padding:3.4mm 3mm 3.6mm;
+  position:relative;
+}
+.flow-item:last-child{border-right:1px solid var(--rule);}
+.flow-item.is-key{background:#fdf8ec;border-color:rgba(200,165,90,.5);}
+.flow-item + .flow-item::before{
+  content:"";position:absolute;left:-3.2px;top:50%;
+  width:6px;height:6px;margin-top:-3px;
+  border-top:1.4px solid var(--gold);border-right:1.4px solid var(--gold);
+  transform:rotate(45deg);
+  background:var(--cream);
+  z-index:2;
+}
+.flow-no{
+  font-family:var(--en);font-size:13pt;font-weight:600;color:var(--gold);line-height:1;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+.flow-t{
+  font-size:9pt;font-weight:700;color:var(--navy);letter-spacing:.02em;
+  margin-top:1.6mm;line-height:1.45;
+}
+.flow-d{font-size:7.6pt;line-height:1.65;color:var(--ink-2);margin-top:1.2mm;}
+
+/* ---------- 問い合わせ導線 ---------- */
+.cta{
+  background:
+    radial-gradient(120% 140% at 12% 0%, #2b3f60 0%, rgba(43,63,96,0) 60%),
+    linear-gradient(160deg,#16233a 0%,#0c1424 100%);
+  border:1px solid rgba(200,165,90,.35);
+  padding:5mm 6mm;
+  display:flex;align-items:center;justify-content:space-between;gap:6mm;
+}
+.cta-l{min-width:0;}
+.cta-t{
+  font-family:var(--mincho);font-size:12pt;font-weight:600;letter-spacing:.06em;
+  color:var(--gold-light);margin-bottom:1.6mm;
+}
+.cta-b{font-size:8.6pt;line-height:1.8;color:rgba(243,239,230,.82);}
+.cta-b strong{color:#fff;}
+.cta-r{flex:0 0 auto;text-align:right;border-left:1px solid rgba(200,165,90,.28);padding-left:6mm;}
+.cta-r .cr-l{font-size:7.2pt;letter-spacing:.2em;color:rgba(230,211,166,.7);}
+.cta-r .cr-v{
+  font-family:var(--en);font-size:14pt;font-weight:600;color:#fff;line-height:1.35;
+  letter-spacing:.04em;
+  font-variant-numeric:lining-nums;font-feature-settings:"lnum" 1;
+}
+
+/* ---------- メモ欄（手書き用） ---------- */
+.memo{
+  border:1px solid var(--rule);
+  background:var(--ivory);
+  padding:3.5mm 5mm 4mm;
+}
+.memo .mm-t{
+  font-family:var(--mincho);font-size:10pt;font-weight:600;color:var(--navy);
+  letter-spacing:.06em;margin-bottom:2.5mm;display:flex;align-items:center;gap:2.5mm;
+}
+.memo .mm-t::before{content:"";width:3px;height:13px;background:var(--gold);flex:0 0 auto;}
+.memo .mm-line{border-bottom:1px solid var(--rule-soft);height:7.5mm;}
+.memo .mm-line:last-child{border-bottom-color:var(--rule);}
+
+</style>
+</head>
+<body>
+<section class="page cover">
+    <div class="cover-frame"></div>
+    
+    <div class="cover-inner">
+      <div class="cover-brand">
+        <div class="cb-en">THINK<i>I</i>NG</div>
+        <div class="cb-jp">シンキング</div>
+      </div>
+      <div class="cover-eyebrow">2027 ENTRANCE EXAM STRATEGY</div>
+      <h1 class="cover-title">個別戦略シート<em>高知大学 人文社会科学部 へ、そして確実な進学へ</em></h1>
+      <p class="cover-sub">国公立1校、私立2校。<strong>この3校は、同じ戦い方では攻められない。</strong><br>高知大は英語と国語で総合の69%。私立2校は、方式を選べば英語を外すこともできる。どこに時間を置くかを、配点の数字で決める。</p>
+      
+      <div class="cover-name">
+        <div class="cn-label">生徒</div>
+        <div class="cn-value">川口 健太</div>
+        <div class="cn-meta">高校3年／国公立文系／高知大 人文社会科学部 第一志望</div>
+      </div>
+      <div class="cover-contents">
+        <div class="cc-label">CONTENTS</div>
+        <div class="cc-item"><span class="cc-no">01</span><span>3校は、同じ戦い方では攻められない</span></div><div class="cc-item"><span class="cc-no">02</span><span>数字で見る現在地</span></div><div class="cc-item"><span class="cc-no">03</span><span>210点は、どこに落ちているか</span></div><div class="cc-item"><span class="cc-no">04</span><span>高知大 ― 英語と国語で、総合の69%</span></div><div class="cc-item"><span class="cc-no">05</span><span>1点の重さが、科目で4倍違う</span></div><div class="cc-item"><span class="cc-no">06</span><span>共通テストで、ほぼ決まる</span></div><div class="cc-item"><span class="cc-no">07</span><span>英語 ― 最大の穴を、最大の武器に変える</span></div><div class="cc-item"><span class="cc-no">08</span><span>「言い換えを処理できる」とは、どういう状態か</span></div><div class="cc-item"><span class="cc-no">09</span><span>国語 ― 古文だけが沈んでいる</span></div><div class="cc-item"><span class="cc-no">10</span><span>日本史 ― 82点を90点にする、正誤問題の仕分け</span></div><div class="cc-item"><span class="cc-no">11</span><span>数学・理科・情報 ― 高知大のためだけの150点</span></div><div class="cc-item"><span class="cc-no">12</span><span>私立2校 ― 方式を選べば、8ポイント動く</span></div><div class="cc-item"><span class="cc-no">13</span><span>滑り止めは、本当に滑り止まるのか</span></div><div class="cc-item"><span class="cc-no">14</span><span>環境ルールと、数字で判断する運用</span></div><div class="cc-item"><span class="cc-no">15</span><span>本番までのロードマップ</span></div><div class="cc-item"><span class="cc-no">16</span><span>最初の2週間と、確認しなければいけないこと</span></div>
+      </div>
+      <div class="cover-kpis"><div class="cover-kpi">
+            <div class="k-label">共通テストまで</div>
+            <div class="k-value">74<small>日</small></div>
+            <div class="k-note">2027年1月16日・17日</div>
+          </div><div class="cover-kpi is-gap">
+            <div class="k-label">高知大 英語の比重</div>
+            <div class="k-value">43.8<small>%</small></div>
+            <div class="k-note">共テ200＋二次150＝350 / 800点</div>
+          </div><div class="cover-kpi">
+            <div class="k-label">二次試験の比率</div>
+            <div class="k-value">19<small>%</small></div>
+            <div class="k-note">150 / 800点・英語1教科のみ</div>
+          </div></div>
+      <div class="cover-foot">
+        <span>2026年11月3日／THINKING 進路戦略</span>
+        <span>CONFIDENTIAL — 川口 健太 様専用</span>
+      </div>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">01 ゴール</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">01</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">3校は、同じ戦い方では攻められない</h2>
+                <div class="sec-en">Three Different Games</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">志望校は3校。だが<strong>配点の形がまったく違う。</strong>同じ勉強を3校に向けて続けると、必ずどこかで無駄が出る。まず3校の「形」を並べるところから始める。</p>
+<div class="wish"><div class="wish-row">
+          <div class="wish-rank">1</div>
+          <div class="wish-main">
+            <div class="wish-univ">高知大学</div>
+            <div class="wish-fac">人文社会科学部 人文社会学科〈人文科学〉前期</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-core">第一志望</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">2</div>
+          <div class="wish-main">
+            <div class="wish-univ">中京大学</div>
+            <div class="wish-fac">文学部 歴史文化学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">私大</span></div>
+        </div><div class="wish-row">
+          <div class="wish-rank">3</div>
+          <div class="wish-main">
+            <div class="wish-univ">愛知大学</div>
+            <div class="wish-fac">文学部 歴史地理学科</div>
+          </div>
+          <div class="wish-tag"><span class="pill p-base">私大</span></div>
+        </div></div>
+<div style="height:3mm"></div>
+<h3 class="blk">受けられる形を、全部並べる</h3>
+<table class="plain">
+      <thead><tr><th style="width:30%">大学・方式</th><th style="width:12%">満点</th><th style="width:35%">使う科目</th><th style="width:23%">英語の比重</th></tr></thead>
+      <tbody><tr><td><strong>高知大学</strong> 前期</td><td><strong>800点</strong></td><td>共テ6教科6科目（650）＋二次 英語（150）</td><td><strong>43.8%</strong></td></tr><tr><td>中京大学 前期A・M 3教科型</td><td>300点</td><td>国語・英語・選択1科目</td><td>33.3%</td></tr><tr><td><strong>中京大学</strong> 前期A・M <strong>2教科型</strong></td><td>300点</td><td>国語＋選択1科目（高得点を2倍）</td><td><strong>英語を外せる</strong></td></tr><tr><td>愛知大学 スタンダード方式</td><td>300点</td><td>国語・英語・選択1科目</td><td>33.3%</td></tr><tr><td>愛知大学 最高得点重視方式</td><td>500点</td><td>同じ3科目（最高点を3倍にする）</td><td>20.0〜60.0%</td></tr><tr><td><strong>愛知大学</strong> 共テ利用 <strong>前期2科目</strong></td><td>200点</td><td>8科目から2科目を選ぶ</td><td><strong>英語を外せる</strong></td></tr><tr><td>愛知大学 共テ利用 前期3科目</td><td>300点</td><td>国語（近代以降）・英語・選択1科目</td><td>33.3%</td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">「英語をやるかどうか」が、3校で違う</div>
+      <div class="co-b">高知大では英語が<strong>総合の43.8%</strong>を握る。一方、中京大の2教科型と愛知大の共テ2科目型は、<strong>英語を使わずに出願できる。</strong><br>同じ生徒が、方式を変えるだけで「英語勝負」にも「英語ゼロ」にもなる。<strong>どの方式で戦うかを決めることは、何を勉強するかを決めることと同じ。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>3校の形を揃えて見る</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">01</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">02 現在地</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">02</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">数字で見る現在地</h2>
+                <div class="sec-en">Where You Stand</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">進研模試の得点を、<strong>高知大の配点（共通テスト650点）にそのまま乗せ直した</strong>もの。偏差値ではなく、本番で使われる点数で見る。</p>
+<table class="score">
+      <thead><tr>
+        <th class="t-name">科目</th>
+        <th>換算得点</th>
+        <th class="t-bar">現在地 ／ ▼ 目標</th>
+        <th>得点率</th>
+        <th>目標</th>
+        <th>必要</th>
+      </tr></thead>
+      <tbody><tr>
+          <td class="s-name"><b>国語</b><span>現代文90＋古文22＋漢文41（素点 153 / 200）</span></td>
+          <td class="s-num">153<i>/200</i></td>
+          <td class="s-bar">
+            <div class="track lv-mid">
+              <div class="fill" style="width:76.5%"></div>
+              <div class="tick" style="left:85.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-mid">76.5<i>%</i></td>
+          <td class="s-tgt">170</td>
+          <td class="s-gap">+17</td>
+        </tr><tr>
+          <td class="s-name"><b>英語 リーディング</b><span>素点 63 / 100 → 160点に換算</span></td>
+          <td class="s-num">100.8<i>/160</i></td>
+          <td class="s-bar">
+            <div class="track lv-mid">
+              <div class="fill" style="width:63.0%"></div>
+              <div class="tick" style="left:78.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-mid">63.0<i>%</i></td>
+          <td class="s-tgt">124.8</td>
+          <td class="s-gap">+24</td>
+        </tr><tr>
+          <td class="s-name"><b>英語 リスニング</b><span>素点 52 / 100 → 40点に換算</span></td>
+          <td class="s-num">20.8<i>/40</i></td>
+          <td class="s-bar">
+            <div class="track lv-lo">
+              <div class="fill" style="width:52.0%"></div>
+              <div class="tick" style="left:62.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-lo">52.0<i>%</i></td>
+          <td class="s-tgt">24.8</td>
+          <td class="s-gap">+4</td>
+        </tr><tr>
+          <td class="s-name"><b>歴史総合・日本史探究</b><span>地歴公民から1科目（公共・政経 75点より高い）</span></td>
+          <td class="s-num">82<i>/100</i></td>
+          <td class="s-bar">
+            <div class="track lv-hi">
+              <div class="fill" style="width:82.0%"></div>
+              <div class="tick" style="left:90.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-hi">82.0<i>%</i></td>
+          <td class="s-tgt">90</td>
+          <td class="s-gap">+8</td>
+        </tr><tr class="is-sub">
+          <td class="s-name"><b>数学 I・A</b><span>素点 57 / 100 → 50点に換算</span></td>
+          <td class="s-num">28.5<i>/50</i></td>
+          <td class="s-bar">
+            <div class="track lv-lo">
+              <div class="fill" style="width:57.0%"></div>
+              <div class="tick" style="left:68.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-lo">57.0<i>%</i></td>
+          <td class="s-tgt">34</td>
+          <td class="s-gap">+5.5</td>
+        </tr><tr class="is-sub">
+          <td class="s-name"><b>理科基礎</b><span>生物基礎31＋地学基礎26 → 50点に換算</span></td>
+          <td class="s-num">28.5<i>/50</i></td>
+          <td class="s-bar">
+            <div class="track lv-lo">
+              <div class="fill" style="width:57.0%"></div>
+              <div class="tick" style="left:68.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-lo">57.0<i>%</i></td>
+          <td class="s-tgt">34</td>
+          <td class="s-gap">+5.5</td>
+        </tr><tr class="is-sub">
+          <td class="s-name"><b>情報 I</b><span>素点 52 / 100 → 50点に換算</span></td>
+          <td class="s-num">26<i>/50</i></td>
+          <td class="s-bar">
+            <div class="track lv-lo">
+              <div class="fill" style="width:52.0%"></div>
+              <div class="tick" style="left:72.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-lo">52.0<i>%</i></td>
+          <td class="s-tgt">36</td>
+          <td class="s-gap">+10</td>
+        </tr>
+        <tr class="is-sum">
+          <td class="s-name"><b>合計</b></td>
+          <td class="s-num">439.6<i>/650</i></td>
+          <td class="s-bar">
+            <div class="track lv-mid">
+              <div class="fill" style="width:67.6%"></div>
+              <div class="tick" style="left:79.0%"></div>
+            </div>
+          </td>
+          <td class="s-pct lv-mid">67.6<i>%</i></td>
+          <td class="s-tgt">513.6</td>
+          <td class="s-gap">+74</td>
+        </tr>
+      </tbody></table>
+<div style="height:3mm"></div>
+<h3 class="blk">この表から、まず読むべき3点</h3>
+<ul class="bul tight"><li><strong>英語だけが取り残されている。</strong> リーディング63%・リスニング52%。この2つで、取りこぼし全体の<strong>37.3%</strong>を占める。国語61.3・日本史67.3という偏差値と比べると、差は明らかに大きい。</li><li><strong>日本史と漢文は、すでに武器。</strong> 日本史82点（偏差値67.3）、漢文41/45＝91.1%。<strong>ここは「伸ばす」科目ではなく「落とさない」科目。</strong></li><li><strong>古文だけが沈んでいる。</strong> 22/45＝48.9%。国語の偏差値61.3は、現代文と漢文が支えて作られた数字で、古文は支えていない。</li><li><strong>数学・理科基礎・情報は、揃って50%台。</strong> 1科目50点換算なので1つずつは致命傷ではないが、<strong>3科目で150点ある。</strong>12月にまとめて処理する。</li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">共テ換算 439.6 / 650点 ＝ 67.6%</div>
+      <div class="co-b">本シートでは、74日で積める現実的な到達点として<strong>513.6点（79.0%）</strong>を目標に置く。上積みは<strong>+74.0点。</strong><br><span style="color:var(--ink-3)">この79.0%は合格ラインそのものではない。合格者最低点の確認後に、正式な目標へ置き換える（06ページ・16ページ参照）。</span></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>偏差値ではなく、本番で使われる点数で見る</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">02</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">03 取りこぼし</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">03</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">210点は、どこに落ちているか</h2>
+                <div class="sec-en">Where the Points Are Lost</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">共テ換算650点のうち、いま取れていないのは<strong>210.4点。</strong>それが科目ごとにどう分かれているかを見る。優先順位は「苦手かどうか」ではなく、<strong>この棒の長さで決まる。</strong></p>
+<div class="bars"><div class="bar-row is-key">
+          <div class="bar-l"><b>英語 リーディング</b><span>素点 63 → 100 の差 × 1.6</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:98.7%"></div></div>
+          <div class="bar-v">59.2<i>点</i></div>
+          <div class="bar-p">28.1<i>%</i></div>
+        </div><div class="bar-row">
+          <div class="bar-l"><b>情報 I</b><span>素点 52 → 100 の差 × 0.5</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:40.0%"></div></div>
+          <div class="bar-v">24<i>点</i></div>
+          <div class="bar-p">11.4<i>%</i></div>
+        </div><div class="bar-row is-key">
+          <div class="bar-l"><b>国語 古文</b><span>22 → 45 の差 × 1.0</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:38.3%"></div></div>
+          <div class="bar-v">23<i>点</i></div>
+          <div class="bar-p">10.9<i>%</i></div>
+        </div><div class="bar-row">
+          <div class="bar-l"><b>数学 I・A</b><span>素点 57 → 100 の差 × 0.5</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:35.8%"></div></div>
+          <div class="bar-v">21.5<i>点</i></div>
+          <div class="bar-p">10.2<i>%</i></div>
+        </div><div class="bar-row">
+          <div class="bar-l"><b>理科基礎</b><span>素点 57 → 100 の差 × 0.5</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:35.8%"></div></div>
+          <div class="bar-v">21.5<i>点</i></div>
+          <div class="bar-p">10.2<i>%</i></div>
+        </div><div class="bar-row">
+          <div class="bar-l"><b>国語 現代文</b><span>90 → 110 の差 × 1.0</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:33.3%"></div></div>
+          <div class="bar-v">20<i>点</i></div>
+          <div class="bar-p">9.5<i>%</i></div>
+        </div><div class="bar-row">
+          <div class="bar-l"><b>英語 リスニング</b><span>素点 52 → 100 の差 × 0.4</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:32.0%"></div></div>
+          <div class="bar-v">19.2<i>点</i></div>
+          <div class="bar-p">9.1<i>%</i></div>
+        </div><div class="bar-row">
+          <div class="bar-l"><b>日本史探究</b><span>歴総・日探 82 → 100 の差 × 1.0</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:30.0%"></div></div>
+          <div class="bar-v">18<i>点</i></div>
+          <div class="bar-p">8.6<i>%</i></div>
+        </div><div class="bar-row is-mute">
+          <div class="bar-l"><b>国語 漢文</b><span>41 → 45 の差 × 1.0</span></div>
+          <div class="bar-t"><div class="bar-f" style="width:6.7%"></div></div>
+          <div class="bar-v">4<i>点</i></div>
+          <div class="bar-p">1.9<i>%</i></div>
+        </div></div>
+<div style="height:3mm"></div>
+<h3 class="blk">この並び順が、そのまま優先順位になるわけではない</h3>
+<ul class="bul tight"><li><strong>上位3つ（英語リーディング・情報I・古文）だけで、取りこぼしの50.5%。</strong> ここを動かすことが、+74点のうちの大半をつくる。</li><li><strong>ただし、同じ1点でも重さが違う。</strong> 情報・数学・理科基礎は、素点2点でようやく換算1点。<strong>次のページで、1点の重さを揃えて比較する。</strong></li><li><strong>日本史と漢文は、下から2番目と最下位。</strong> すでに取れているぶん、伸ばせる余地が小さい。<strong>だから「落とさない」運用に切り替える。</strong></li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">英語リーディングだけで、取りこぼしの28.1%</div>
+      <div class="co-b">リーディングの59.2点は、<strong>情報・数学・理科基礎の3科目を合計した取りこぼし（67.0点）に迫る量</strong>を、たった1科目で占めている。<br>しかも英語には二次試験の150点もある。<strong>リーディングを動かすことが、このシート全体でいちばん効く行動。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>「苦手だから」ではなく「配点が大きいから」で決める</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">03</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">04 高知大の配点</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">04</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">高知大 ― 英語と国語で、総合の69%</h2>
+                <div class="sec-en">The Weight of Each Subject</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">高知大の総合は800点（共通テスト650＋二次150）。<strong>二次試験は英語1教科だけ</strong>なので、英語の配点は共テ200＋二次150＝<strong>350点</strong>になる。</p>
+<div class="weight">
+      <div class="weight-bar"><div class="wseg w1" style="width:43.75%">
+            <div class="w-t">英語</div>
+            <div class="w-v">43.8%</div>
+          </div><div class="wseg w2" style="width:25.00%">
+            <div class="w-t">国語</div>
+            <div class="w-v">25.0%</div>
+          </div><div class="wseg w3" style="width:12.50%">
+            <div class="w-t">地歴公民</div>
+            <div class="w-v">12.5%</div>
+          </div><div class="wseg w4" style="width:18.75%">
+            <div class="w-t">数学・理科・情報</div>
+            <div class="w-v">18.8%</div>
+          </div></div>
+      <div class="weight-legend"><span><i style="background:#16233a"></i><strong>英語 350点（43.8%）</strong> ― 共テ200［うちリスニング40］＋二次150（英語1教科のみ）</span><span><i style="background:#24354f"></i><strong>国語 200点（25.0%）</strong> ― 現代文110・古文45・漢文45</span><span><i style="background:#a07d38"></i><strong>地歴公民 100点（12.5%）</strong> ― 歴史総合・日本史探究を選択</span><span><i style="background:#a8afba"></i><strong>数学・理科・情報 150点（18.8%）</strong> ― 各50点。配点は小さいが落とせない</span></div>
+    </div>
+<div style="height:3mm"></div>
+<div style="height:3mm"></div>
+<h3 class="blk">配点から、すでに決まっていること</h3>
+<ul class="bul tight"><li><strong>英語・国語・日本史の3科目で、総合の81.3%（650点）。</strong>うち英語＋国語だけで<strong>68.8%（550点）。</strong>残りの数学・理科・情報は合わせて18.8%しかない。</li><li><strong>地歴公民は日本史探究を選ぶ。</strong> 公共・政経は偏差値では68.0と日本史（67.3）より上だが、高知大は<strong>素点を配点に換算する</strong>ので、82点と75点のうち<strong>素点が高い日本史</strong>が正しい選択。</li><li><strong>理科は「基礎2科目」または「発展1科目」から選択。</strong> 現在の生物基礎＋地学基礎のまま進める。<strong>50点科目なので、科目変更のリスクを取る価値はない。</strong></li></ul>
+<div style="height:3mm"></div>
+<h3 class="blk">二次試験は、英語1教科150点だけ</h3>
+<ul class="bul tight"><li>高知大の個別（2次）試験は、<strong>英語1教科150点のみ。</strong>数学も国語も社会も課されない。<strong>二次対策＝英語。</strong></li><li><strong>本人記載の資料（活動報告書）</strong>の提出があるが、評価は<strong>合否境界上で同順位となった者に対してのみ</strong>行われる。<span style="color:var(--ink-3)">最後の一押しであって、ここを当てにした設計はしない。</span></li><li>共テ英語200点と二次英語150点は、<strong>同じ力で取りに行ける350点。</strong>他の科目は共テの1回しか使われない。</li></ul>
+<div style="height:3mm"></div>
+<h3 class="blk">共通テストで使う6教科6科目（650点）</h3>
+<table class="plain">
+      <thead><tr><th style="width:16%">教科</th><th style="width:30%">科目</th><th style="width:12%">配点</th><th style="width:42%">選択の中身</th></tr></thead>
+      <tbody><tr><td>国語</td><td>国語</td><td>200点</td><td>現代文110・古文45・漢文45</td></tr><tr><td>外国語</td><td>英語</td><td>200点</td><td><strong>リーディング160・リスニング40</strong></td></tr><tr><td>地歴公民</td><td>歴史総合・日本史探究</td><td>100点</td><td>地歴／公民／地歴公から1科目</td></tr><tr><td>数学</td><td>数学 I・A</td><td>50点</td><td><strong>数I・数I A・数IIBCから1</strong></td></tr><tr><td>理科</td><td>生物基礎・地学基礎</td><td>50点</td><td>基礎2分野 または 発展1科目</td></tr><tr><td>情報</td><td>情報 I</td><td>50点</td><td>—</td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">英語に置いた時間だけが、2回回収できる</div>
+      <div class="co-b">共通テストでも二次試験でも使われる科目は、英語だけ。<strong>共テ200＋二次150＝350点。</strong><br>「どの科目に時間を置くか」で迷ったら、英語。<strong>配点がそう言っている。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>総合800点の内訳</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">04</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">05 1点の重さ</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">05</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">1点の重さが、科目で4倍違う</h2>
+                <div class="sec-en">The Value of One Point</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">同じ「素点1点」でも、総合800点に与える影響は科目でまったく違う。<strong>どの1点を取りに行くかは、ここで決まる。</strong></p>
+<table class="plain">
+      <thead><tr><th style="width:30%">科目</th><th style="width:14%">素点の満点</th><th style="width:18%">高知大での配点</th><th style="width:19%">素点1点の重さ</th><th style="width:19%">リーディング比</th></tr></thead>
+      <tbody><tr><td><strong>共テ 英語 リーディング</strong></td><td>100点</td><td><strong>160点</strong></td><td><strong>1.60点</strong></td><td><strong>×1.00（基準）</strong></td></tr><tr><td>共テ 国語</td><td>200点</td><td>200点</td><td>1.00点</td><td>×0.63</td></tr><tr><td>共テ 地歴公民（日本史）</td><td>100点</td><td>100点</td><td>1.00点</td><td>×0.63</td></tr><tr><td>二次 英語</td><td>150点</td><td>150点</td><td>1.00点</td><td>×0.63</td></tr><tr><td>共テ 数学 I・A</td><td>100点</td><td>50点</td><td>0.50点</td><td>×0.31</td></tr><tr><td>共テ 理科基礎</td><td>100点</td><td>50点</td><td>0.50点</td><td>×0.31</td></tr><tr><td>共テ 情報 I</td><td>100点</td><td>50点</td><td>0.50点</td><td>×0.31</td></tr><tr><td><strong>共テ 英語 リスニング</strong></td><td>100点</td><td><strong>40点</strong></td><td><strong>0.40点</strong></td><td><strong>×0.25</strong></td></tr></tbody>
+    </table>
+<div style="height:2mm"></div>
+<h3 class="blk">ここから出る、3つの判断</h3>
+<ul class="bul tight"><li><strong>リーディングの1点は、リスニングの4点に相当する。</strong> 英語に使える時間は、まずリーディングへ寄せる。<span style="color:var(--ink-3)">捨てるという意味ではない。リスニング40点は「落とさない」ラインとして毎日15分で守る。</span></li><li><strong>情報・数学・理科基礎は、1点が0.5点にしかならない。</strong> 3科目合計で150点（18.8%）。伸ばす価値はあるが、<strong>英語より先には来ない。</strong></li><li><strong>日本史の1点は、リーディングの0.63点分。</strong> すでに82点なので、ここは「時間をかけずに90点」を狙う科目。</li></ul>
+<div style="height:2mm"></div>
+<h3 class="blk">同じ「素点+10点」を、どこで取るか</h3>
+<table class="plain">
+      <thead><tr><th style="width:36%">取る場所</th><th style="width:18%">素点の上積み</th><th style="width:22%">換算の上積み</th><th style="width:24%">総合800点では</th></tr></thead>
+      <tbody><tr><td><strong>共テ 英語 リーディング</strong></td><td>+10点</td><td><strong>+16.0点</strong></td><td><strong>+2.00ポイント</strong></td></tr><tr><td>共テ 国語</td><td>+10点</td><td>+10.0点</td><td>+1.25ポイント</td></tr><tr><td>共テ 地歴公民（日本史）</td><td>+10点</td><td>+10.0点</td><td>+1.25ポイント</td></tr><tr><td>二次 英語</td><td>+10点</td><td>+10.0点</td><td>+1.25ポイント</td></tr><tr><td>共テ 数学・理科基礎・情報（各）</td><td>+10点</td><td>+5.0点</td><td>+0.63ポイント</td></tr><tr><td><strong>共テ 英語 リスニング</strong></td><td>+10点</td><td><strong>+4.0点</strong></td><td><strong>+0.50ポイント</strong></td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">優先順位は、英語 → 古文 → 情報・理科 → 数学</div>
+      <div class="co-b">この順番は、好き嫌いでも得意不得意でもなく、<strong>1点の重さと取りこぼしの大きさを掛け合わせた結果。</strong><br><strong>迷ったら、この順番に戻る。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>どの1点を取りに行くか</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">05</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">06 共テと二次</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">06</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">共通テストで、ほぼ決まる</h2>
+                <div class="sec-en">Simulation</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">高知大の二次試験は英語1教科150点、配点比率19%。<strong>共テで何点取るかが、ほぼそのまま合否になる。</strong>共テの得点率と二次の得点率を振って、総合がどう動くかを出す。</p>
+<table class="plain">
+      <thead><tr><th style="width:24%">共テ得点率</th><th style="width:19%">共テ換算</th><th style="width:19%">二次 50%</th><th style="width:19%">二次 60%</th><th style="width:19%">二次 70%</th></tr></thead>
+      <tbody><tr><td>70.0%</td><td>455.0点</td><td>66.3%</td><td>68.1%</td><td>70.0%</td></tr><tr><td>75.0%</td><td>487.5点</td><td>70.3%</td><td>72.2%</td><td>74.1%</td></tr><tr><td><strong>79.0%（本シートの目標）</strong></td><td><strong>513.6点</strong></td><td><strong>73.6%</strong></td><td><strong>75.5%</strong></td><td><strong>77.3%</strong></td></tr><tr><td>83.0%</td><td>539.5点</td><td>76.8%</td><td>78.7%</td><td>80.6%</td></tr></tbody>
+    </table>
+<div style="height:1mm"></div>
+<h3 class="blk">この表から読めること</h3>
+<ul class="bul tight"><li><strong>二次を10ポイント上げても、総合は1.9ポイントしか動かない。</strong> 一方、<strong>共テを5ポイント上げると総合は4.1ポイント動く。</strong></li><li>言い換えると、<strong>共テの1ポイント ＝ 二次の4.3ポイント。</strong> 残り74日を共通テストに集中させる根拠は、ここにある。</li><li><strong>共テが終わってから高知大の前期まで、40日ある。</strong> 二次英語（英語1教科）の対策は、その40日に寄せられる。<span style="color:var(--ink-3)">共テ 1/16・17 → 前期 2/25</span></li></ul>
+<div style="height:1mm"></div>
+<h3 class="blk">513.6点を、どう積むか</h3>
+<table class="plain">
+      <thead><tr><th style="width:28%">科目</th><th style="width:16%">現在（素点）</th><th style="width:16%">目標（素点）</th><th style="width:22%">換算 現在 → 目標</th><th style="width:18%">上積み</th></tr></thead>
+      <tbody><tr><td><strong>英語 リーディング</strong></td><td>63</td><td><strong>78</strong></td><td>100.8 → 124.8</td><td><strong>+24.0点</strong></td></tr><tr><td><strong>国語</strong></td><td>153</td><td><strong>170</strong></td><td>153.0 → 170.0</td><td><strong>+17.0点</strong></td></tr><tr><td>情報 I</td><td>52</td><td>72</td><td>26.0 → 36.0</td><td>+10.0点</td></tr><tr><td>歴史総合・日本史探究</td><td>82</td><td>90</td><td>82.0 → 90.0</td><td>+8.0点</td></tr><tr><td>数学 I・A</td><td>57</td><td>68</td><td>28.5 → 34.0</td><td>+5.5点</td></tr><tr><td>理科基礎</td><td>57</td><td>68</td><td>28.5 → 34.0</td><td>+5.5点</td></tr><tr><td>英語 リスニング</td><td>52</td><td>62</td><td>20.8 → 24.8</td><td>+4.0点</td></tr><tr><td><strong>合計</strong></td><td>—</td><td>—</td><td><strong>439.6 → 513.6</strong></td><td><strong>+74.0点</strong></td></tr></tbody>
+    </table>
+<div style="height:1mm"></div>
+<ul class="bul tight"><li><strong>+74.0点のうち、英語で+28.0点、国語で+17.0点。この2科目で、必要な上積みの60.8%。</strong><span style="color:var(--ink-3)">国語の内訳は09ページ</span></li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">合格ラインは、必ず数字で確認して置き換える</div>
+      <div class="co-b"><strong>本シートの「79.0%」は、現在地から74日で積める現実的な到達点として置いた数字であり、高知大の合格ラインそのものではない。</strong><br>大学公表の合格者最低点と、予備校のボーダー得点率を確認して、<strong>11月中にこの数字を正式な目標へ置き換える。</strong>それまでは、上の表で「どのラインなら何%になるか」を見る。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>二次は19%しかない</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">06</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">07 英語①</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">07</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">英語 ― 最大の穴を、最大の武器に変える</h2>
+                <div class="sec-en">English: The Decisive Subject</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">高知大の350点（43.8%）を握る科目。そして、取りこぼしの37.3%もここにある。<strong>この科目をどう動かすかが、このシートの中心。</strong></p>
+<div class="kpirow k3"><div class="kpi">
+          <div class="k-l">リーディング 現在</div>
+          <div class="k-v">63<small>点</small></div>
+          <div class="k-n">素点100点中・偏差値57.6</div>
+        </div><div class="kpi">
+          <div class="k-l">リスニング 現在</div>
+          <div class="k-v">52<small>点</small></div>
+          <div class="k-n">素点100点中・偏差値50.5</div>
+        </div><div class="kpi acc">
+          <div class="k-l">リーディング 目標</div>
+          <div class="k-v">78<small>点</small></div>
+          <div class="k-n">換算 124.8 / 160点</div>
+        </div></div>
+<div style="height:3mm"></div>
+<h3 class="blk">いまの63点が、何を意味しているか</h3>
+<ul class="bul tight"><li>英語計115/200（偏差値54.8）。国語61.3・日本史67.3と並べると、<strong>英語だけが明確に取り残されている。</strong>順番としては、まずここを他科目の水準まで引き上げる。</li><li>高知大の<strong>二次試験は英語1教科150点。</strong>つまり<strong>二次対策＝英語の精読と記述。</strong>英語を上げる作業は、共テと二次の両方に同時に効く。<span style="color:var(--ink-3)">出題傾向の分析は別資料でまとめる。</span></li><li>単語と文法の抜けを埋めるだけで63点が78点になることは、まずない。<strong>1文を正確に取り切る力（精読）</strong>が足りていない可能性が高い。次のページで、その到達点を定義する。</li></ul>
+<div style="height:3mm"></div>
+<h3 class="blk">11月からの英語の置き方</h3>
+<div class="steps"><div class="step">
+          <div class="step-no">1</div>
+          <div class="step-txt">
+            <div class="step-t">単語と文法の穴を、11月中に一度だけ総ざらいする</div>
+            <div class="step-d">既習範囲の抜けを潰す作業は11月で終える。<strong>12月以降をここに使わない。</strong></div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">2</div>
+          <div class="step-txt">
+            <div class="step-t">英文解釈 ― 1日1題、構造を取って直訳まで書く</div>
+            <div class="step-d">次ページの5段階を、全部言葉にできる状態をつくる。<strong>書かずに頭の中で済ませない。</strong></div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">3</div>
+          <div class="step-txt">
+            <div class="step-t">長文 ― 週3題、時間を計って解く</div>
+            <div class="step-d">解いたあと、<strong>全選択肢について○✕の理由を言語化する。</strong>ここまでで1題。</div>
+          </div>
+        </div><div class="step">
+          <div class="step-no">4</div>
+          <div class="step-txt">
+            <div class="step-t">リスニング ― 毎日15分、音読とセットで</div>
+            <div class="step-d">配点40点。伸ばす科目ではなく<strong>落とさない科目</strong>として、毎日必ず触る。</div>
+          </div>
+        </div></div>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">11月の英語は、量ではなく「書いた量」で測る</div>
+      <div class="co-b">長文の題数を増やしても、63点は動かない。見るのは<strong>毎日1題、構造を取って直訳を書き切ったかどうか。</strong>それだけを記録する。<br><strong>リーディング63→78は、換算で+24.0点。このシートの中で、いちばん大きい1手。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>最大の穴を、最大の武器に</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">07</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">08 英語②</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">08</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">「言い換えを処理できる」とは、どういう状態か</h2>
+                <div class="sec-en">What Precision Reading Means</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">英文解釈でやってもらう「解釈と言い換え」が<strong>できている状態</strong>を、具体的に定義しておく。下の5段階を全部言葉にできることが目標。</p>
+<ol class="num"><li><strong>文章の構造をちゃんと掴む</strong> ― 主語・動詞・修飾関係・並列を、正確に取れる。</li><li><strong>直訳をちゃんとできる状態にする</strong> ― 雰囲気ではなく、構造どおりに日本語にできる。</li><li><strong>咀嚼して「つまりどういうことか」理解できる</strong> ― 直訳をかみ砕いて、内容として説明できる。</li><li><strong>選択肢を分解して理解できる</strong> ― 選択肢の英文も、本文と同じ精度で読める。</li><li><strong>選択肢それぞれについて、なぜ答えか／なぜ不正解かを全て言語化できる</strong> ― ここまでで、ようやく「読めた」。</li></ol>
+<div style="height:3mm"></div>
+<h3 class="blk">到達点はこのレベル</h3>
+<div class="exam">
+      <div class="exam-passage">Although the new policy was intended to reduce traffic in the city center, it ended up pushing most of the congestion into the surrounding neighborhoods, where residents had far less say in how their streets were used.</div>
+      <div class="exam-q"><em>Q</em><span>Which one is closest in meaning to the sentence above?</span></div>
+      <div class="exam-choices"><div class="exam-choice">
+            <div class="ec-k">A</div>
+            <div class="ec-b">
+              <div class="ec-t">The new policy succeeded in cutting traffic throughout the city, including the neighborhoods around the center.</div>
+              <div class="ec-w"><b>✕</b>本文は ended up <strong>pushing</strong> most of the congestion <strong>into</strong> the surrounding neighborhoods。周辺部では渋滞が<strong>増えている。</strong>「市全体で減った」は逆。</div>
+            </div>
+          </div><div class="exam-choice is-ok">
+            <div class="ec-k">B</div>
+            <div class="ec-b">
+              <div class="ec-t">The policy was meant to cut traffic downtown, but in practice it simply moved the jams to nearby areas, whose residents had little influence over local road decisions.</div>
+              <div class="ec-w"><b>○</b><strong>Although（譲歩）＋ intended to / ended up（意図と結果の対比）＋ had far less say（発言権が小さい）</strong>の3点がすべて言い換えられている。これが「言い換えを処理する」ということ。</div>
+            </div>
+          </div><div class="exam-choice">
+            <div class="ec-k">C</div>
+            <div class="ec-b">
+              <div class="ec-t">Residents of the surrounding neighborhoods demanded the new policy because they wanted less traffic on their streets.</div>
+              <div class="ec-w"><b>✕</b>住民が政策を<strong>求めた</strong>とは書かれていない。本文は had far less <strong>say</strong>（＝決定に関われなかった）。主体と因果をまるごと作り替えている。</div>
+            </div>
+          </div><div class="exam-choice">
+            <div class="ec-k">D</div>
+            <div class="ec-b">
+              <div class="ec-t">The policy reduced congestion in the city center, and the surrounding neighborhoods were given more control over their own streets.</div>
+              <div class="ec-w"><b>✕</b>前半は合っているが、後半で <strong>far less say → more control</strong> と<strong>逆</strong>にしている。<strong>前半だけ読んで選ぶと必ず落とす型。</strong></div>
+            </div>
+          </div></div>
+    </div>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">「正解できたか」ではなく「全選択肢を説明できたか」で判断する</div>
+      <div class="co-b">Bが正解だと分かるだけでは足りない。<strong>A・C・Dがなぜ違うのかを、本文のどの語句と食い違っているかまで言葉にできて、初めて「解けた」。</strong><br><strong>1題をここまで言語化するほうが、10題を答え合わせで流すよりはるかに効く。</strong>残り74日だからこそ、1題の密度を上げる。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>精読の到達点</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">08</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">09 国語</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">09</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">国語 ― 古文だけが沈んでいる</h2>
+                <div class="sec-en">Japanese: One Hole</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">国語は153/200、偏差値61.3。<strong>だがこの数字は、現代文と漢文が支えて作られている。</strong>分野ごとに分けると、古文だけが明らかに落ちている。</p>
+<table class="plain">
+      <thead><tr><th style="width:16%">分野</th><th style="width:18%">得点</th><th style="width:15%">得点率</th><th style="width:51%">判断</th></tr></thead>
+      <tbody><tr><td>現代文</td><td>90 / 110</td><td>81.8%</td><td>維持しつつ、95点まで。<strong>3校すべてで使う。</strong></td></tr><tr><td><strong>古文</strong></td><td><strong>22 / 45</strong></td><td><strong>48.9%</strong></td><td><strong>最優先で立て直す。</strong>ただし必要なのは高知大の共テだけ</td></tr><tr><td>漢文</td><td>41 / 45</td><td><strong>91.1%</strong></td><td><strong>すでに武器。</strong>週1回の維持でいい</td></tr></tbody>
+    </table>
+<div style="height:2mm"></div>
+<h3 class="blk">古文をやる理由と、やらなくていい場面</h3>
+<ul class="bul tight"><li><strong>高知大の共通テストでは、古文45点は必答。</strong> 総合800点のうち5.6%。いま22点なので、<strong>23点が丸ごと落ちている。</strong></li><li><strong>愛知大の個別試験は「古文・漢文はいずれか一方を選択」。</strong> 漢文が91.1%の川口くんは<strong>迷わず漢文を選ぶ。</strong>それだけで国語の見込み得点率が<strong>72.3% → 84.5%</strong>に上がる（+12.3ポイント）。</li><li><strong>中京大は「国語の漢文は選択問題」と記載がある。</strong> 古文を回避できるかは<strong>要確認</strong>だが、できるなら同じ効果が出る。</li></ul>
+<div style="height:2mm"></div>
+<h3 class="blk">古文の立て直し方（11月〜12月）</h3>
+<ol class="num"><li><strong>助動詞・助詞を、意味の識別まで含めて一巡する。</strong> 活用表を言えることではなく、文中で「この『る』は何か」を判定できること。</li><li><strong>敬語で主語を取る。</strong> 古文を落とす最大の原因は「誰が何をしたか」が取れないこと。尊敬・謙譲・丁寧の3分類を、本文に書き込みながら読む。</li><li><strong>1日1題、現代語訳を書く。</strong> 選択肢を見る前に自分の訳を作る。ここを飛ばすと、読めた気になるだけで点にならない。</li></ol>
+<div style="height:2mm"></div>
+<h3 class="blk">国語の目標（共テ200点）</h3>
+<table class="plain">
+      <thead><tr><th style="width:28%">分野</th><th style="width:24%">現在</th><th style="width:24%">目標</th><th style="width:24%">上積み</th></tr></thead>
+      <tbody><tr><td>現代文</td><td>90 / 110</td><td>95 / 110</td><td>+5点</td></tr><tr><td><strong>古文</strong></td><td><strong>22 / 45</strong></td><td><strong>33 / 45</strong></td><td><strong>+11点</strong></td></tr><tr><td>漢文</td><td>41 / 45</td><td>42 / 45</td><td>+1点</td></tr><tr><td><strong>国語 合計</strong></td><td><strong>153 / 200</strong></td><td><strong>170 / 200</strong></td><td><strong>+17点</strong></td></tr></tbody>
+    </table>
+<ul class="bul tight"><li><strong>上積みの中心は古文（+11点）。</strong>現代文は3校すべてで使うので週2題、漢文は週1回の維持でいい。</li></ul>
+<div style="height:2mm"></div>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">古文は「高知大のためだけの45点」。だが、いちばん大きく落ちている科目のひとつ</div>
+      <div class="co-b">私立2校では、古文は<strong>回避できる可能性が高い</strong>（愛知大は確定、中京大は要確認）。つまり古文は、<strong>高知大を受けるかどうかの判断と直結した科目。</strong><br>高知大を本気で取りに行くなら、11月〜12月に立て直す。<strong>ここを放置したまま出願するのは、45点を捨てて受けに行くのと同じ。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>古文だけが沈んでいる</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">09</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">10 日本史</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">10</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">日本史 ― 82点を90点にする、正誤問題の仕分け</h2>
+                <div class="sec-en">Japanese History</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">日本史は82/100、偏差値67.3。<strong>3校すべてで使う、いちばん汎用性の高い武器。</strong>82点まで来ている生徒が落とすのは、知識が無いからではなく、<strong>選択肢のどこが書き換えられているかを見抜けていないから。</strong>誤りの型を5つに分けて潰す。</p>
+<table class="plain">
+      <thead><tr><th style="width:20%">誤りの型</th><th style="width:42%">何が書き換えられているか</th><th style="width:38%">チェックの仕方</th></tr></thead>
+      <tbody><tr><td><strong>① 主体のすり替え</strong></td><td>やった人・機関が別のものになっている</td><td>人名・機関名に丸をつけ、本当にその主体かを確認する</td></tr><tr><td><strong>② 時期のずれ</strong></td><td>出来事は正しいが、年代や前後関係が違う</td><td>選択肢の年代を書き出して、並べ替えてみる</td></tr><tr><td><strong>③ 因果の逆転</strong></td><td>原因と結果が入れ替わっている</td><td>「〜のため」「〜の結果」で切り、矢印の向きを確認する</td></tr><tr><td><strong>④ 程度の言い過ぎ</strong></td><td>「すべて」「初めて」「廃止された」「禁止された」</td><td>強い断定語に線を引き、例外がないかを考える</td></tr><tr><td><strong>⑤ 用語の取り違え</strong></td><td>似た用語に差し替えられている</td><td>その用語を自分の言葉で定義できるかを確認する</td></tr></tbody>
+    </table>
+<div style="height:3mm"></div>
+<h3 class="blk">運用のしかた</h3>
+<ul class="bul tight"><li><strong>間違えた選択肢が①〜⑤のどれだったかを、ノートに記録する。</strong> 2週間分たまると、<strong>自分がどの型に弱いかが偏って出る。</strong>そこだけを集中的に潰す。</li><li><strong>「なぜ誤りか」を一行で書く。正解の選択肢だけでなく、4つ全部について書く。</strong> ここをやるかどうかで、82点と90点が分かれる。</li><li><strong>通史が一巡していないなら、12月前半までに必ず終える。</strong> 正誤の精度は、通史が通ってからしか上がらない。</li></ul>
+<div style="height:3mm"></div>
+<h3 class="blk">例：この3つは、どの型か</h3>
+<table class="plain">
+      <thead><tr><th style="width:48%">選択肢の例（墾田永年私財法）</th><th style="width:20%">誤りの型</th><th style="width:32%">どこが違うか</th></tr></thead>
+      <tbody><tr><td>「墾田永年私財法によって、<strong>班田収授法は廃止された</strong>」</td><td><strong>④ 程度の言い過ぎ</strong></td><td>新しく開墾した土地の私有を認めただけで、制度そのものが廃止されたわけではない</td></tr><tr><td>「三世一身法は、墾田永年私財法<strong>のあとに</strong>出された」</td><td><strong>② 時期のずれ</strong></td><td>三世一身法（723年）が先、墾田永年私財法（743年）が後</td></tr><tr><td>「墾田永年私財法は、<strong>藤原不比等</strong>が中心となって出した」</td><td><strong>① 主体のすり替え</strong></td><td>人物が違う。不比等は720年に没している</td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">日本史に置いた時間は、3校すべてで回収できる</div>
+      <div class="co-b">高知大では100点（総合の12.5%）、愛知大の共テ2科目型では<strong>200点中100点</strong>、中京大の2教科型では<strong>高得点科目として2倍＝300点中200点。</strong><br><strong>同じ1点が、方式によって2倍の価値になる科目。</strong>82点を90点にする作業は、どの進路を選んでも無駄にならない。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>3校すべてで使う武器</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">10</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">11 数学・理科・情報</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">11</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">数学・理科・情報 ― 高知大のためだけの150点</h2>
+                <div class="sec-en">The Remaining 18.8%</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">数学I・A、理科基礎、情報Iの3科目は、<strong>高知大の共通テストでしか使わない。</strong>合計150点＝総合の18.8%。素点1点が0.5点にしかならない科目群を、どこに置くかを決める。</p>
+<table class="plain">
+      <thead><tr><th style="width:24%">科目</th><th style="width:22%">現在（素点）</th><th style="width:18%">換算</th><th style="width:18%">目標（素点）</th><th style="width:18%">換算の上積み</th></tr></thead>
+      <tbody><tr><td>数学 I・A</td><td>57 / 100</td><td>28.5 / 50</td><td>68 / 100</td><td>+5.5点</td></tr><tr><td>理科基礎</td><td>57 / 100 <span style="color:var(--ink-3)">生物31・地学26</span></td><td>28.5 / 50</td><td>68 / 100</td><td>+5.5点</td></tr><tr><td>情報 I</td><td>52 / 100</td><td>26.0 / 50</td><td>72 / 100</td><td>+10.0点</td></tr><tr><td><strong>3科目 合計</strong></td><td><strong>166 / 300</strong></td><td><strong>83.0 / 150</strong></td><td><strong>208 / 300</strong></td><td><strong>+21.0点</strong></td></tr></tbody>
+    </table>
+<div style="height:3mm"></div>
+<h3 class="blk">3科目の置き方</h3>
+<ul class="bul tight"><li><strong>情報Iがいちばんコスパがいい。</strong> 範囲が狭く、52点は「まだ手をつけていない」水準。<strong>12月に集中して詰めれば、短期間で70点台に乗る。</strong></li><li><strong>地学基礎が26/50（52.0%）と低い。</strong> 生物基礎31/50より落ちている。<span style="color:var(--ink-3)">いまから科目を変えるのは危険。地学基礎は出題範囲が狭いので、12月に一気に詰める。</span></li><li><strong>数学は「数I・数I A・数IIBCから1」。</strong> 数I単独で受験できる可能性があるが、<strong>平均点や得点調整の扱いが異なるため要確認。</strong>確認が済むまでは数I・Aのまま進める。</li><li><strong>この3科目に、11月を使わない。</strong> 11月は英語と古文。12月に入ってから、ここを一気に仕上げる。</li></ul>
+<div style="height:3mm"></div>
+<h3 class="blk">12月に、この3科目をどう詰めるか</h3>
+<table class="plain">
+      <thead><tr><th style="width:18%">科目</th><th style="width:18%">期間</th><th style="width:46%">やること</th><th style="width:18%">到達の目安</th></tr></thead>
+      <tbody><tr><td><strong>情報 I</strong></td><td>12/1 〜 12/15</td><td>教科書レベルの用語・アルゴリズム・データ活用を一巡し、過去問と予想問題を5セット通す</td><td><strong>70点台</strong></td></tr><tr><td><strong>理科基礎</strong></td><td>12/5 〜 12/20</td><td><strong>地学基礎を優先。</strong>生物基礎は暗記事項の確認のみ。それぞれ5セット</td><td><strong>合計68点</strong></td></tr><tr><td><strong>数学 I・A</strong></td><td>12/15 〜 1/10</td><td>新しい範囲に手を出さない。データの分析・場合の数と確率など、<strong>点が安定しやすい単元から</strong>固める</td><td><strong>68点</strong></td></tr></tbody>
+    </table>
+<div style="height:2mm"></div>
+<ul class="bul tight"><li><strong>3科目とも、新しい参考書を買わない。</strong> いま持っている教材と過去問・予想問題で足りる。<strong>12月に教材を増やすと、どれも終わらない。</strong></li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">3科目で素点42点積むより、リーディングで15点積むほうが大きい</div>
+      <div class="co-b">数学・理科・情報を合計<strong>+42点</strong>（57→68、57→68、52→72）積んでも、換算では<strong>+21.0点。</strong><br>一方、リーディングを<strong>63→78（+15点）</strong>動かすと、換算で<strong>+24.0点。</strong><br><strong>だから順番は、英語 → 古文 → 情報・理科 → 数学。</strong>この順番を崩さない。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>高知大のためだけの150点</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">11</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">12 私立の方式</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">12</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">私立2校 ― 方式を選べば、8ポイント動く</h2>
+                <div class="sec-en">Choosing the Right Format</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">中京大と愛知大は、<strong>同じ学科でも方式によって使う科目と満点が変わる。</strong>いまの得点率をそのまま各方式に当てはめると、見込み得点率は<strong>73.8%〜81.9%</strong>まで開く。実力は何も変わっていないのに、8.1ポイントの差が出る。</p>
+<table class="plain">
+      <thead><tr><th style="width:30%">大学・方式</th><th style="width:11%">満点</th><th style="width:37%">使う科目</th><th style="width:22%">見込み得点率</th></tr></thead>
+      <tbody><tr><td><strong>中京大 前期A・M 2教科型</strong></td><td>300点</td><td>国語＋日本史（高得点を2倍）</td><td><strong>80.2%</strong></td></tr><tr><td><strong>愛知大 共テ利用 前期2科目</strong></td><td>200点</td><td>現代文＋日本史</td><td><strong>81.9%</strong></td></tr><tr><td>愛知大 最高得点重視方式</td><td>500点</td><td>国語・英語・日本史（最高点を3倍）</td><td>79.7%</td></tr><tr><td>愛知大 スタンダード方式</td><td>300点</td><td>国語・英語・日本史</td><td>76.5%</td></tr><tr><td>中京大 前期A・M 3教科型</td><td>300点</td><td>国語・英語・日本史</td><td>73.8%</td></tr><tr><td>愛知大 共テ利用 前期3科目</td><td>300点</td><td>現代文・英語・日本史</td><td>73.8%</td></tr></tbody>
+    </table>
+<div style="height:2mm"></div>
+<h3 class="blk">この表の前提と、要確認の項目</h3>
+<ul class="bul tight"><li><strong>愛知大の国語は「古文・漢文のいずれか一方を選択」。漢文を選ぶ前提で計算している。</strong> 漢文91.1%なので、ここは確実に取れる。</li><li><strong>中京大の国語は「漢文は選択問題」との記載のみ。</strong> 上の表は<strong>古文を回避できない前提</strong>の数字。回避できるなら、2教科型は<strong>82.8%</strong>、3教科型は<strong>76.5%</strong>まで上がる。<strong>要確認。</strong></li><li><strong>愛知大の共テ利用（英語）は、リスニングの扱いが公表資料だけでは確定できない。</strong> 3科目型の73.8%は、リーディングとリスニングを同配点とした場合の数字。<strong>要確認。</strong></li><li><strong>中京大A方式と愛知大には［外検］の得点換算・加点がある。</strong> 英検などのスコアがあれば<strong>必ず申告する。</strong><span style="color:var(--ink-3)">現時点で未確認。次回面談で持参すること。</span></li></ul>
+<div style="height:2mm"></div>
+<h3 class="blk">愛知大 共テ2科目型 ― どの2科目を出すか</h3>
+<table class="plain">
+      <thead><tr><th style="width:38%">科目</th><th style="width:20%">いまの得点率</th><th style="width:42%">判断</th></tr></thead>
+      <tbody><tr><td><strong>歴史総合・日本史探究</strong></td><td><strong>82.0%</strong></td><td><strong>出す</strong></td></tr><tr><td><strong>国語（近代以降の文章のみ）</strong></td><td><strong>81.8%</strong></td><td><strong>出す</strong></td></tr><tr><td>公共、政治・経済</td><td>75.0%</td><td><strong>地歴公民は1科目まで。</strong>日本史と同時には出せない</td></tr><tr><td>外国語（英語）</td><td>57.5%</td><td>出さない <span style="color:var(--ink-3)">リスニングの扱いは要確認</span></td></tr><tr><td>数学 I・A ／ 理科基礎 ／ 情報 I</td><td>52.0〜57.0%</td><td>出さない</td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">得点率が高い方式が、受かりやすい方式とは限らない</div>
+      <div class="co-b">科目数を絞れる方式は<strong>志願者が集中し、合格最低点も上がる</strong>のが普通。この表は「自分の持ち点がどの方式で最大化されるか」を見るためのもので、<strong>合格のしやすさそのものではない。</strong><br><strong>各方式の合格最低点と倍率を募集要項で確認し、この表と突き合わせたうえで出願方式を決める。12月中に決着させる。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>同じ実力でも、方式で8ポイント動く</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">12</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">13 受験校設計</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">13</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">滑り止めは、本当に滑り止まるのか</h2>
+                <div class="sec-en">Designing the Application Set</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">「私立2校を押さえて、高知大に挑戦する」という形は、<strong>押さえが本当に押さえになっているときにしか成立しない。</strong>数字で確認する。</p>
+<table class="plain">
+      <thead><tr><th style="width:20%">大学</th><th style="width:18%">区分</th><th style="width:28%">最も得点率が高い方式</th><th style="width:14%">見込み</th><th style="width:20%">いまの立ち位置</th></tr></thead>
+      <tbody><tr><td>高知大学</td><td>国公立・第一志望</td><td>前期（共テ650＋二次英語150）</td><td>共テ 67.6%</td><td><strong>届いていない。74日で+74点</strong></td></tr><tr><td>中京大学</td><td>私立</td><td>前期A・M 2教科型</td><td>80.2%</td><td><strong>最も手が届く形</strong></td></tr><tr><td>愛知大学</td><td>私立</td><td>共テ利用 前期2科目</td><td>81.9%</td><td><strong>共テ当日の出来がそのまま出る</strong></td></tr></tbody>
+    </table>
+<div style="height:3mm"></div>
+<h3 class="blk">押さえとして成立させるための3つの条件</h3>
+<ol class="num"><li><strong>共テ利用だけに頼らない。</strong> 愛知大の共テ2科目型は現代文と日本史だけで決まるぶん、<strong>共テ当日の結果がそのまま合否になる。</strong>必ず<strong>個別試験（スタンダード／最高得点重視）も併願</strong>して、二の矢を用意する。</li><li><strong>1校につき複数方式で出す。</strong> 中京大は2教科型と3教科型、愛知大はスタンダードと最高得点重視を同時に出願できる構造になっている。<strong>同じ1回の試験で複数方式に判定がかかるなら、出さない理由がない。</strong><span style="color:var(--ink-3)">出願料と併願の可否は募集要項で確認。</span></li><li><strong>出願締切は、共テの結果が出る前に来る。</strong> 私立の出願は1月中旬までのものが多い。<strong>「共テを見てから決める」は間に合わない。12月中に出願方式を確定させる。</strong></li></ol>
+<div style="height:3mm"></div>
+<h3 class="blk">切り替えの判断</h3>
+<ul class="bul tight"><li><strong>12月の共テ形式演習で、共テ換算75%に届かない場合</strong> ― 二次英語（記述）に使う時間を減らし、<strong>私立の個別試験対策へ振り替える。</strong></li><li><strong>75%を超えた場合</strong> ― 共テ後の40日を<strong>まるごと二次英語</strong>に充てる。高知大の二次は英語1教科なので、集中すれば動く。</li><li><strong>どちらに転んでも、日本史と現代文は3校すべてで使う。</strong> ここに置いた時間だけは、絶対に無駄にならない。</li></ul>
+<div style="height:3mm"></div>
+<h3 class="blk">いま決めておくこと</h3>
+<ul class="bul tight"><li><strong>高知大に出願する前提で、11月〜12月を進める。</strong> 科目を落とす判断をするのは、12月の共テ形式演習の結果を見てから。それまでは全科目を走らせる。</li><li><strong>私立2校は「受けるかどうか」ではなく「どの方式で受けるか」を決める。</strong> 12ページの表と募集要項を突き合わせ、<strong>12月中に確定させる。</strong></li><li><strong>受験校を増やすなら、いま決める。</strong> 1月に入ってから足した学校は、対策の時間が取れない。<span style="color:var(--ink-3)">増やす場合も、国語と日本史で戦える大学に限る。</span></li></ul>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">「受かる1校」を数字で確保してから、挑戦する</div>
+      <div class="co-b">高知大は現時点で<strong>共テ67.6%</strong>、目標まで<strong>+74点。</strong>十分に挑戦する価値はある。だが<strong>挑戦は、進学先が確保されているから成立する。</strong><br>中京大2教科型（80.2%）と愛知大 共テ2科目型（81.9%）を<strong>確実に押さえる形で出願設計を組む。</strong>そのうえで、高知大に全力で向かう。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>滑り止めが、本当に滑り止まるのか</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">13</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">14 運用</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">14</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">環境ルールと、数字で判断する運用</h2>
+                <div class="sec-en">Rules and Weekly Review</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">ここから本番までは、<strong>やる気ではなく仕組みで進める。</strong>守るルールと、見る数字を先に決めておく。</p>
+<div class="grid3"><div class="card">
+          <div class="c-kicker">RULE 01</div>
+          <div class="c-title">自習室は「来る日を決めて」使う</div>
+          <p class="c-body">気が向いたら来る、では続かない。<strong>曜日と時間を固定する。</strong>決めたら動かさない。</p>
+        </div><div class="card">
+          <div class="c-kicker">RULE 02</div>
+          <div class="c-title">スマホは自習室に持ち込まない</div>
+          <p class="c-body">鞄の奥かロッカーへ。<strong>手元にある時点で集中は切れている。</strong>触るのは休憩時間だけ。</p>
+        </div><div class="card">
+          <div class="c-kicker">RULE 03</div>
+          <div class="c-title">「何時間やったか」は記録しない</div>
+          <p class="c-body">記録するのは<strong>科目別の解いた問題数と正答率。</strong>時間は成果ではない。</p>
+        </div></div>
+<div style="height:1mm"></div>
+<h3 class="blk">週次で見る数字（これ以外は見ない）</h3>
+<table class="plain">
+      <thead><tr><th style="width:38%">指標</th><th style="width:14%">頻度</th><th style="width:48%">判断の基準</th></tr></thead>
+      <tbody><tr><td>英語 ― 長文の正答率</td><td>週</td><td>7割を切る週が2回続いたら、長文を止めて精読に戻る</td></tr><tr><td>英語 ― 全選択肢を言語化できた割合</td><td>週</td><td>8割を下回るなら、題数を減らして1題の密度を上げる</td></tr><tr><td>古文 ― 助動詞・敬語の識別の正答率</td><td>週</td><td>9割になるまで、次の単元へ進まない</td></tr><tr><td>日本史 ― 誤り選択肢の型（①〜⑤）の分布</td><td>隔週</td><td>偏って出ている型だけを集中的に潰す</td></tr><tr><td>共テ形式の通し得点</td><td>月</td><td><strong>650点に換算し直して記録する。偏差値では見ない。</strong></td></tr></tbody>
+    </table>
+<div style="height:1mm"></div>
+<h3 class="blk">面談での決め方</h3>
+<ul class="bul tight"><li><strong>模試が返るたびに、このシートの数字を更新する。</strong>現在地・目標・上積みを入れ替え、次の1ヶ月の優先順位を組み直す。</li><li>「頑張る」「不安」では判断しない。<strong>上の表の数字が動いたかどうかだけで、やることを変える。</strong></li><li>高知大の<strong>二次試験の出題分析は別資料</strong>でまとめる。本シートは「どこに時間を置くか」を決めるための資料。</li></ul>
+<div style="height:1mm"></div>
+<h3 class="blk">1週間の型（11月／時間は面談で調整する）</h3>
+<table class="plain">
+      <thead><tr><th style="width:24%">科目</th><th style="width:38%">平日（学校がある日）</th><th style="width:38%">休日</th></tr></thead>
+      <tbody><tr><td>英語</td><td>英文解釈 1題（30分）＋リスニング 15分</td><td>長文 1題＋解き直し（90分）</td></tr><tr><td>国語</td><td>古文：助動詞・敬語の識別 20分</td><td>現代語訳 1題（60分）＋現代文 1題（45分）</td></tr><tr><td>日本史</td><td>通史 30分</td><td>通史＋正誤演習（90分）</td></tr><tr><td>数学・理科・情報</td><td>—</td><td><strong>11月は手をつけない</strong></td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">判断の材料を、毎週そろえる</div>
+      <div class="co-b">上の5つの数字が揃っていれば、面談でやることは<strong>「次の1週間で何を変えるか」を決めるだけ</strong>になる。<br><strong>記録がないと、面談は感想の交換になる。</strong>5つだけでいいので、毎週必ず持ってくること。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>数字でしか判断しない</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">14</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">15 ロードマップ</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">15</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">本番までのロードマップ</h2>
+                <div class="sec-en">Roadmap</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">共通テストまで74日、高知大の前期まで114日。<strong>11月・12月・1月・2月で、やることの重心を変える。</strong></p>
+<table class="plain">
+      <thead><tr><th style="width:18%">時期</th><th style="width:9%">日数</th><th style="width:19%">重心</th><th style="width:54%">具体的にやること</th></tr></thead>
+      <tbody><tr><td><strong>11月</strong><br>11/3 〜 11/30</td><td>28日</td><td><strong>英語と古文</strong></td><td>英語：単語・文法の総ざらいを月内で完了＋英文解釈を毎日1題。古文：助動詞・助詞の識別と、敬語で主語を取る訓練。日本史：通史の一巡を進める。</td></tr><tr><td><strong>12月前半</strong><br>12/1 〜 12/15</td><td>15日</td><td><strong>英語＋日本史＋情報</strong></td><td>英語：長文を週3題、時間を計って。日本史：通史一巡を完了し、誤りの型分けを開始。情報I：ここから集中的に詰める。</td></tr><tr><td><strong>12月後半〜1/15</strong></td><td>31日</td><td><strong>共テ形式の演習</strong></td><td>全科目を共テ形式で通す。理科基礎・数学もここで仕上げる。<strong>私立の出願方式を12月中に確定させる。</strong></td></tr><tr><td><strong>1/16・17</strong></td><td>—</td><td><strong>共通テスト</strong></td><td>—</td></tr><tr><td><strong>1/18 〜 2月上旬</strong></td><td>約20日</td><td><strong>私立の個別試験</strong></td><td>中京大・愛知大の個別試験。国語（漢文を選択）と日本史で取り切る。</td></tr><tr><td><strong>2月上旬 〜 2/25</strong></td><td>約20日</td><td><strong>高知大の二次英語</strong></td><td>英語1教科150点。記述と精読に全振りする。<span style="color:var(--ink-3)">出題分析は別資料</span></td></tr></tbody>
+    </table>
+<div style="height:3mm"></div>
+<h3 class="blk">動かしてはいけない順番</h3>
+<ul class="bul tight"><li><strong>11月は英語と古文。</strong> 情報・理科・数学には手を出さない。この3科目は12月からでも間に合う。</li><li><strong>12月中に、私立の出願方式を確定させる。</strong> 共テの結果を見てからでは締切に間に合わない。</li><li><strong>共テ後の40日は、高知大の二次英語のための時間。</strong> ここを確保するために、共テまでに全科目を仕上げておく。</li></ul>
+<div style="height:3mm"></div>
+<h3 class="blk">各時点での到達目標（共テ換算650点・目安）</h3>
+<table class="plain">
+      <thead><tr><th style="width:24%">時点</th><th style="width:24%">共テ換算の目標</th><th style="width:16%">得点率</th><th style="width:36%">主な上積み元</th></tr></thead>
+      <tbody><tr><td>現在（11/3）</td><td>439.6点</td><td>67.6%</td><td>—</td></tr><tr><td>11月末</td><td>465点前後</td><td>71.5%</td><td>英語リーディング＋古文</td></tr><tr><td>12月末</td><td>495点前後</td><td>76.2%</td><td>情報I・日本史・現代文</td></tr><tr><td><strong>本番（1/16）</strong></td><td><strong>513.6点</strong></td><td><strong>79.0%</strong></td><td>理科基礎・数学の仕上げ</td></tr></tbody>
+    </table>
+<div style="height:2mm"></div>
+<ul class="bul tight"><li><strong>この中間目標は、共テ形式の通し演習で測る。</strong> 11月末と12月末に1回ずつ、全科目を通して650点に換算する。<strong>届いていなければ、その場で次の1ヶ月の配分を組み直す。</strong></li></ul>
+<div class="pb-fill"></div>
+<div class="callout">
+      <div class="co-t">日程について</div>
+      <div class="co-b">共通テストは<strong>2027年1月16日（土）・17日（日）</strong>、国公立前期は<strong>2月25日</strong>を前提にしている。<br><strong>私立2校の個別試験日・出願締切は、募集要項で必ず確認する</strong>（中京大M方式の公民は2月8日のみ実施、愛知大の「地総・地探」「公共・政経」は2月1日・2月5日のみ選択可との記載あり）。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>重心を、月ごとに移す</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">15</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">16 最初の2週間</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">16</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">最初の2週間と、確認しなければいけないこと</h2>
+                <div class="sec-en">First Two Weeks</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">11月17日までにやり切ることと、<strong>こちらで確認が必要な項目</strong>を分けて出す。確認が済み次第、このシートの数字を更新する。</p>
+<div class="checks"><div class="check"><span class="box"></span><span>英単語・英文法の抜けを洗い出し、総ざらいの計画を11月中で引く</span></div><div class="check"><span class="box"></span><span>英文解釈を1日1題、構造→直訳→言い換えまで書いて開始する</span></div><div class="check"><span class="box"></span><span>古文：助動詞の識別を、意味の判定まで含めて一巡する</span></div><div class="check"><span class="box"></span><span>古文：敬語の3分類で、本文に主語を書き込みながら読む練習を始める</span></div><div class="check"><span class="box"></span><span>日本史：誤り選択肢の型（①〜⑤）を記録するノートを作る</span></div><div class="check"><span class="box"></span><span>現代文：週2題、解答根拠に線を引いて解く</span></div><div class="check"><span class="box"></span><span>共テ形式の英語リーディングを1回、時間を計って解く（現在地の再確認）</span></div><div class="check"><span class="box"></span><span>自習室に来る曜日と時間を決めて、THINKINGに共有する</span></div></div>
+<div style="height:3mm"></div>
+<h3 class="blk">要確認（次回面談までに）</h3>
+<table class="plain">
+      <thead><tr><th style="width:34%">項目</th><th style="width:22%">確認先</th><th style="width:44%">分かると何が変わるか</th></tr></thead>
+      <tbody><tr><td><strong>高知大の合格者最低点・ボーダー得点率</strong></td><td>大学公表資料／予備校</td><td>本シートの目標79.0%を、正式な合格ラインに置き換える</td></tr><tr><td><strong>中京大 国語の「漢文は選択問題」の中身</strong></td><td>中京大 募集要項・過去問</td><td>古文を回避できれば、2教科型が80.2%→82.8%に上がる</td></tr><tr><td><strong>愛知大 共テ利用の英語（リスニングの扱い）</strong></td><td>愛知大 募集要項</td><td>共テ3科目型の見込み得点率が確定する</td></tr><tr><td><strong>英検など外部検定のスコア</strong></td><td>本人</td><td>中京大A方式の得点換算・愛知大の加点が使えるかが決まる</td></tr><tr><td><strong>共テ「数学I」単独受験の可否と扱い</strong></td><td>大学入試センター／大学</td><td>数学の学習範囲を絞れるかが決まる</td></tr><tr><td><strong>中京大・愛知大の全日程と出願締切</strong></td><td>各大学 募集要項</td><td>併願の組み方と、出願方式を決める時期が決まる</td></tr></tbody>
+    </table>
+<div style="height:3mm"></div>
+<div class="memo">
+      <div class="mm-t">面談メモ</div>
+      <div class="mm-line"></div><div class="mm-line"></div><div class="mm-line"></div>
+    </div>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">この資料は、固定されたものではない</div>
+      <div class="co-b">書いてある数字は、<strong>いま分かっているデータだけで組んだもの。</strong>上の「要確認」が埋まるたび、そして模試が返るたびに、<strong>現在地・目標・優先順位をすべて更新する。</strong><br><strong>次にやることは、常にこのシートの数字が決める。</strong></div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>ここから動かす</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">16</span>
+    </div>
+  </section>
+<script>
+/* ?only=N でそのページだけ表示（レイアウト検証用） */
+(function(){
+  var m = /[?&]only=(\d+)/.exec(location.search);
+  if(!m) return;
+  var n = parseInt(m[1],10);
+  document.querySelectorAll('.page').forEach(function(el,i){
+    if(i !== n) el.style.display='none';
+  });
+  document.body.style.padding='0';
+  var sh = /[?&]shift=(d+)/.exec(location.search);
+  if(sh) document.querySelectorAll('.page')[n].style.marginTop = '-' + sh[1] + 'px';
+})();
+
+/* ?qa=1 で各ページのはみ出し量を出力（--dump-dom で回収する） */
+(function(){
+  if(!/[?&]qa=1/.test(location.search)) return;
+  var out = [];
+  document.querySelectorAll('.page').forEach(function(el,i){
+    var b = el.querySelector('.cover-inner') || el.querySelector('.page-body');
+    var over = b ? Math.round(b.scrollHeight - b.clientHeight) : 0;
+    var slack = b ? Math.round(b.clientHeight - (b.lastElementChild ? b.lastElementChild.getBoundingClientRect().bottom - b.getBoundingClientRect().top : 0)) : 0;
+    out.push('PAGE ' + String(i).padStart(2,'0') + '  h=' + el.offsetHeight + 'px  bodyH=' + (b?b.clientHeight:0) + 'px  overflow=' + over + 'px  slack=' + slack + 'px');
+  });
+  document.querySelectorAll('.page').forEach(function(el){ el.style.display='none'; });
+  var pre = document.createElement('pre');
+  pre.id = 'qa-report';
+  pre.style.cssText = 'font:16px/1.7 monospace;color:#111;background:#fff;padding:24px;margin:0;white-space:pre;';
+  pre.textContent = out.join(String.fromCharCode(10));
+  document.body.style.padding = '0';
+  document.body.appendChild(pre);
+})();
+</script>
+</body>
+</html>

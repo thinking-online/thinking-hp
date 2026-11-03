@@ -249,6 +249,11 @@ ol.num li::before,.pf-no,.runner .r-left,.cover-contents .cc-no{
   font-family:var(--en);font-size:9.5pt;font-weight:600;color:var(--gold);flex:0 0 5.5mm;
 }
 
+/* ページ数が多いシート（15ページ以上）の目次。行が増えた分だけ詰めて、
+   表紙フッターが金枠に乗り上げるのを防ぐ。build.mjs が is-dense を付ける。 */
+.cover-contents.is-dense{margin-top:5mm;}
+.cover-contents.is-dense .cc-item{padding:.75mm 0;font-size:8pt;}
+
 .cover-kpis{
   margin-top:auto;
   display:grid;grid-template-columns:repeat(3,1fr);
@@ -694,29 +699,29 @@ table.plain td.tc{text-align:center;}
       </div>
       <div class="cover-eyebrow">2027 ENTRANCE EXAM STRATEGY</div>
       <h1 class="cover-title">個別戦略シート<em>高知大学 人文社会科学部 へ、そして確実な進学へ</em></h1>
-      <p class="cover-sub">国公立1校、私立2校。<strong>この3校は、同じ戦い方では攻められない。</strong><br>高知大は英語と国語で総合の69%。私立2校は、方式を選べば英語を外すこともできる。どこに時間を置くかを、配点の数字で決める。</p>
+      <p class="cover-sub">国公立1校、私立2校。<strong>この3校は、同じ戦い方では攻められない。</strong><br>高知大はいまC判定、<strong>A判定まで+29.4点。</strong>英語と国語で総合の69%。<strong>配点の数字で、時間の置き場所を決める。</strong></p>
       
       <div class="cover-name">
         <div class="cn-label">生徒</div>
         <div class="cn-value">川口 健太</div>
         <div class="cn-meta">高校3年／国公立文系／高知大 人文社会科学部 第一志望</div>
       </div>
-      <div class="cover-contents">
+      <div class="cover-contents is-dense">
         <div class="cc-label">CONTENTS</div>
-        <div class="cc-item"><span class="cc-no">01</span><span>3校は、同じ戦い方では攻められない</span></div><div class="cc-item"><span class="cc-no">02</span><span>数字で見る現在地</span></div><div class="cc-item"><span class="cc-no">03</span><span>210点は、どこに落ちているか</span></div><div class="cc-item"><span class="cc-no">04</span><span>高知大 ― 英語と国語で、総合の69%</span></div><div class="cc-item"><span class="cc-no">05</span><span>1点の重さが、科目で4倍違う</span></div><div class="cc-item"><span class="cc-no">06</span><span>共通テストで、ほぼ決まる</span></div><div class="cc-item"><span class="cc-no">07</span><span>英語 ― 最大の穴を、最大の武器に変える</span></div><div class="cc-item"><span class="cc-no">08</span><span>「言い換えを処理できる」とは、どういう状態か</span></div><div class="cc-item"><span class="cc-no">09</span><span>国語 ― 古文だけが沈んでいる</span></div><div class="cc-item"><span class="cc-no">10</span><span>日本史 ― 82点を90点にする、正誤問題の仕分け</span></div><div class="cc-item"><span class="cc-no">11</span><span>数学・理科・情報 ― 高知大のためだけの150点</span></div><div class="cc-item"><span class="cc-no">12</span><span>私立2校 ― 方式を選べば、8ポイント動く</span></div><div class="cc-item"><span class="cc-no">13</span><span>滑り止めは、本当に滑り止まるのか</span></div><div class="cc-item"><span class="cc-no">14</span><span>環境ルールと、数字で判断する運用</span></div><div class="cc-item"><span class="cc-no">15</span><span>本番までのロードマップ</span></div><div class="cc-item"><span class="cc-no">16</span><span>最初の2週間と、確認しなければいけないこと</span></div>
+        <div class="cc-item"><span class="cc-no">01</span><span>3校は、同じ戦い方では攻められない</span></div><div class="cc-item"><span class="cc-no">02</span><span>数字で見る現在地</span></div><div class="cc-item"><span class="cc-no">03</span><span>合格ラインと、いまの判定</span></div><div class="cc-item"><span class="cc-no">04</span><span>210点は、どこに落ちているか</span></div><div class="cc-item"><span class="cc-no">05</span><span>高知大 ― 英語と国語で、総合の69%</span></div><div class="cc-item"><span class="cc-no">06</span><span>1点の重さが、科目で4倍違う</span></div><div class="cc-item"><span class="cc-no">07</span><span>共通テストで、ほぼ決まる</span></div><div class="cc-item"><span class="cc-no">08</span><span>英語 ― 最大の穴を、最大の武器に変える</span></div><div class="cc-item"><span class="cc-no">09</span><span>「言い換えを処理できる」とは、どういう状態か</span></div><div class="cc-item"><span class="cc-no">10</span><span>国語 ― 古文だけが沈んでいる</span></div><div class="cc-item"><span class="cc-no">11</span><span>日本史 ― 82点を90点にする、正誤問題の仕分け</span></div><div class="cc-item"><span class="cc-no">12</span><span>数学・理科・情報 ― 高知大のためだけの150点</span></div><div class="cc-item"><span class="cc-no">13</span><span>私立2校 ― 方式を選べば、8ポイント動く</span></div><div class="cc-item"><span class="cc-no">14</span><span>滑り止めは、本当に滑り止まるのか</span></div><div class="cc-item"><span class="cc-no">15</span><span>環境ルールと、数字で判断する運用</span></div><div class="cc-item"><span class="cc-no">16</span><span>本番までのロードマップ</span></div><div class="cc-item"><span class="cc-no">17</span><span>最初の2週間と、確認しなければいけないこと</span></div>
       </div>
       <div class="cover-kpis"><div class="cover-kpi">
             <div class="k-label">共通テストまで</div>
             <div class="k-value">74<small>日</small></div>
             <div class="k-note">2027年1月16日・17日</div>
-          </div><div class="cover-kpi is-gap">
+          </div><div class="cover-kpi">
             <div class="k-label">高知大 英語の比重</div>
             <div class="k-value">43.8<small>%</small></div>
             <div class="k-note">共テ200＋二次150＝350 / 800点</div>
-          </div><div class="cover-kpi">
-            <div class="k-label">二次試験の比率</div>
-            <div class="k-value">19<small>%</small></div>
-            <div class="k-note">150 / 800点・英語1教科のみ</div>
+          </div><div class="cover-kpi is-gap">
+            <div class="k-label">A判定まで</div>
+            <div class="k-value">+29.4<small>点</small></div>
+            <div class="k-note">共テ469点・72.15%／現在C判定</div>
           </div></div>
       <div class="cover-foot">
         <span>2026年11月3日／THINKING 進路戦略</span>
@@ -905,8 +910,8 @@ table.plain td.tc{text-align:center;}
 <ul class="bul tight"><li><strong>英語だけが取り残されている。</strong> リーディング63%・リスニング52%。この2つで、取りこぼし全体の<strong>37.3%</strong>を占める。国語61.3・日本史67.3という偏差値と比べると、差は明らかに大きい。</li><li><strong>日本史と漢文は、すでに武器。</strong> 日本史82点（偏差値67.3）、漢文41/45＝91.1%。<strong>ここは「伸ばす」科目ではなく「落とさない」科目。</strong></li><li><strong>古文だけが沈んでいる。</strong> 22/45＝48.9%。国語の偏差値61.3は、現代文と漢文が支えて作られた数字で、古文は支えていない。</li><li><strong>数学・理科基礎・情報は、揃って50%台。</strong> 1科目50点換算なので1つずつは致命傷ではないが、<strong>3科目で150点ある。</strong>12月にまとめて処理する。</li></ul>
 <div class="pb-fill"></div>
 <div class="callout">
-      <div class="co-t">共テ換算 439.6 / 650点 ＝ 67.6%</div>
-      <div class="co-b">本シートでは、74日で積める現実的な到達点として<strong>513.6点（79.0%）</strong>を目標に置く。上積みは<strong>+74.0点。</strong><br><span style="color:var(--ink-3)">この79.0%は合格ラインそのものではない。合格者最低点の確認後に、正式な目標へ置き換える（06ページ・16ページ参照）。</span></div>
+      <div class="co-t">共テ換算 439.6 / 650点 ＝ 67.6% ― いまはC判定圏</div>
+      <div class="co-b"><strong>B判定（448点）まで+8.4点、A判定（469点）まで+29.4点。</strong>本シートの目標は<strong>513.6点（79.0%）</strong>で、A判定ラインの<strong>+44.6点上</strong>に置いている。上積みは<strong>+74.0点。</strong><br><span style="color:var(--ink-3)">判定ラインの内訳と、マージンを置く理由は03ページ。</span></div>
     </div>
     </div>
     <div class="page-foot">
@@ -918,11 +923,67 @@ table.plain td.tc{text-align:center;}
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">03 取りこぼし</span>
+      <span class="r-right">03 合格ライン</span>
     </div>
     <div class="page-body">
       <div class="sec">
               <div class="sec-no">03</div>
+              <div class="sec-txt">
+                <h2 class="sec-title">合格ラインと、いまの判定</h2>
+                <div class="sec-en">The Lines You Have to Cross</div>
+              </div>
+            </div>
+      <p class="sec-lead" style="margin-bottom:3mm">高知大の共通テスト（650点満点）の判定ラインが出ている。<strong>いまの439.6点がどこにあるのかを、先に確定させる。</strong><span style="color:var(--ink-3)">東進の判定ラインによる。大学公表の合格者最低点（二次込みの総合800点）とは別の数字。</span></p>
+<table class="plain">
+      <thead><tr><th style="width:18%">判定</th><th style="width:20%">共テ得点</th><th style="width:18%">得点率</th><th style="width:44%">現在地 439.6点 との差</th></tr></thead>
+      <tbody><tr><td><strong>A判定</strong></td><td><strong>469点</strong></td><td><strong>72.15%</strong></td><td><strong>+29.4点 足りない</strong></td></tr><tr><td><strong>B判定</strong></td><td><strong>448点</strong></td><td><strong>68.92%</strong></td><td><strong>+8.4点 足りない</strong></td></tr><tr><td><strong>C判定</strong></td><td><strong>427点</strong></td><td><strong>65.69%</strong></td><td><strong>12.6点 上回っている ← いまここ</strong></td></tr><tr><td>D判定</td><td>400点</td><td>61.54%</td><td>39.6点 上回っている</td></tr></tbody>
+    </table>
+<div style="height:2mm"></div>
+<div class="kpirow k3"><div class="kpi">
+          <div class="k-l">いまの判定</div>
+          <div class="k-v">C</div>
+          <div class="k-n">439.6点・67.6%</div>
+        </div><div class="kpi">
+          <div class="k-l">B判定まで</div>
+          <div class="k-v">+8.4<small>点</small></div>
+          <div class="k-n">448点・68.92%</div>
+        </div><div class="kpi acc">
+          <div class="k-l">A判定まで</div>
+          <div class="k-v">+29.4<small>点</small></div>
+          <div class="k-n">469点・72.15%</div>
+        </div></div>
+<div style="height:2mm"></div>
+<h3 class="blk">この数字が意味すること</h3>
+<ul class="bul tight"><li><strong>すでにC判定圏にいる。</strong> D判定ラインを39.6点、C判定ラインを12.6点上回っている。<strong>ゼロから積み上げる話ではない。</strong></li><li><strong>この4本は、共通テストだけの線。</strong> 高知大にはこのあと二次英語150点がある（07ページ）。</li><li><strong>判定ラインは予想値で、更新されることがある。</strong> 共テ後の自己採点リサーチの数字が、最終的な判断材料になる。</li></ul>
+<div style="height:2mm"></div>
+<h3 class="blk">なぜ、目標をA判定の上に置くのか</h3>
+<ul class="bul tight"><li>本シートの目標は<strong>513.6点（79.0%）。A判定ラインより+44.6点上</strong>に置いている。これは意図的なマージン。</li><li><strong>A判定ちょうどを狙うと、本番で少し崩れただけでB・Cへ落ちる。</strong> 模試と本番は別物で、当日の失点は必ず出る。</li><li><strong>二次試験は19%しかない</strong>（07ページ）。共テで作った差は、二次でほぼ取り返せない。<strong>だからマージンは共テ側で持つ。</strong></li></ul>
+<div style="height:2mm"></div>
+<h3 class="blk">それぞれのラインを、どう取るか</h3>
+<table class="plain">
+      <thead><tr><th style="width:24%">ライン</th><th style="width:18%">必要な上積み</th><th style="width:58%">その作り方（例）</th></tr></thead>
+      <tbody><tr><td><strong>B判定 448点</strong></td><td><strong>+8.4点</strong></td><td>英語リーディング 63 → 69（+6点 × 1.6 ＝ <strong>9.6点</strong>）<strong>これだけで届く</strong></td></tr><tr><td><strong>A判定 469点</strong></td><td><strong>+29.4点</strong></td><td>リーディング+10（16.0点）＋ 古文+8（8.0点）＋ 日本史+6（6.0点）＝ <strong>30.0点</strong></td></tr><tr><td><strong>目標 513.6点</strong></td><td><strong>+74.0点</strong></td><td>全7科目の積み上げ。内訳は<strong>07ページの表</strong></td></tr></tbody>
+    </table>
+<div class="pb-fill"></div>
+<div class="callout is-navy">
+      <div class="co-t">問いは「届くか」ではなく「どれだけ上に乗せるか」</div>
+      <div class="co-b">現在地はC判定。<strong>B判定まで+8.4点、A判定まで+29.4点。</strong>どちらも、英語リーディングと古文を動かせば見える距離にある。<br><strong>年内にB判定、12月中にA判定を超える。</strong>そのうえで、本番までに目標の513.6点まで積む。</div>
+    </div>
+    </div>
+    <div class="page-foot">
+      <span>いま、どこにいるのか</span>
+      <span class="pf-rule"></span>
+      <span class="pf-no">03</span>
+    </div>
+  </section>
+<section class="page">
+    <div class="runner">
+      <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
+      <span class="r-right">04 取りこぼし</span>
+    </div>
+    <div class="page-body">
+      <div class="sec">
+              <div class="sec-no">04</div>
               <div class="sec-txt">
                 <h2 class="sec-title">210点は、どこに落ちているか</h2>
                 <div class="sec-en">Where the Points Are Lost</div>
@@ -987,17 +1048,17 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>「苦手だから」ではなく「配点が大きいから」で決める</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">03</span>
+      <span class="pf-no">04</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">04 高知大の配点</span>
+      <span class="r-right">05 高知大の配点</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">04</div>
+              <div class="sec-no">05</div>
               <div class="sec-txt">
                 <h2 class="sec-title">高知大 ― 英語と国語で、総合の69%</h2>
                 <div class="sec-en">The Weight of Each Subject</div>
@@ -1042,17 +1103,17 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>総合800点の内訳</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">04</span>
+      <span class="pf-no">05</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">05 1点の重さ</span>
+      <span class="r-right">06 1点の重さ</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">05</div>
+              <div class="sec-no">06</div>
               <div class="sec-txt">
                 <h2 class="sec-title">1点の重さが、科目で4倍違う</h2>
                 <div class="sec-en">The Value of One Point</div>
@@ -1081,26 +1142,26 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>どの1点を取りに行くか</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">05</span>
+      <span class="pf-no">06</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">06 共テと二次</span>
+      <span class="r-right">07 共テと二次</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">06</div>
+              <div class="sec-no">07</div>
               <div class="sec-txt">
                 <h2 class="sec-title">共通テストで、ほぼ決まる</h2>
                 <div class="sec-en">Simulation</div>
               </div>
             </div>
-      <p class="sec-lead" style="margin-bottom:3mm">高知大の二次試験は英語1教科150点、配点比率19%。<strong>共テで何点取るかが、ほぼそのまま合否になる。</strong>共テの得点率と二次の得点率を振って、総合がどう動くかを出す。</p>
+      <p class="sec-lead" style="margin-bottom:3mm">高知大の二次試験は英語1教科150点、配点比率19%。<strong>共テで何点取るかが、ほぼそのまま合否になる。</strong>共テの判定ラインごとに、二次の出来で総合がどう動くかを出す。</p>
 <table class="plain">
-      <thead><tr><th style="width:24%">共テ得点率</th><th style="width:19%">共テ換算</th><th style="width:19%">二次 50%</th><th style="width:19%">二次 60%</th><th style="width:19%">二次 70%</th></tr></thead>
-      <tbody><tr><td>70.0%</td><td>455.0点</td><td>66.3%</td><td>68.1%</td><td>70.0%</td></tr><tr><td>75.0%</td><td>487.5点</td><td>70.3%</td><td>72.2%</td><td>74.1%</td></tr><tr><td><strong>79.0%（本シートの目標）</strong></td><td><strong>513.6点</strong></td><td><strong>73.6%</strong></td><td><strong>75.5%</strong></td><td><strong>77.3%</strong></td></tr><tr><td>83.0%</td><td>539.5点</td><td>76.8%</td><td>78.7%</td><td>80.6%</td></tr></tbody>
+      <thead><tr><th style="width:24%">共テの判定ライン</th><th style="width:19%">共テ換算</th><th style="width:19%">二次 50%</th><th style="width:19%">二次 60%</th><th style="width:19%">二次 70%</th></tr></thead>
+      <tbody><tr><td>C判定 65.7% <span style="color:var(--ink-3)">いまここ</span></td><td>427.0点</td><td>62.8%</td><td>64.6%</td><td>66.5%</td></tr><tr><td><strong>B判定 68.9%</strong></td><td><strong>448.0点</strong></td><td>65.4%</td><td>67.3%</td><td>69.1%</td></tr><tr><td><strong>A判定 72.2%</strong></td><td><strong>469.0点</strong></td><td><strong>68.0%</strong></td><td><strong>69.9%</strong></td><td><strong>71.8%</strong></td></tr><tr><td><strong>本シートの目標 79.0%</strong></td><td><strong>513.6点</strong></td><td><strong>73.6%</strong></td><td><strong>75.5%</strong></td><td><strong>77.3%</strong></td></tr></tbody>
     </table>
 <div style="height:1mm"></div>
 <h3 class="blk">この表から読めること</h3>
@@ -1112,27 +1173,27 @@ table.plain td.tc{text-align:center;}
       <tbody><tr><td><strong>英語 リーディング</strong></td><td>63</td><td><strong>78</strong></td><td>100.8 → 124.8</td><td><strong>+24.0点</strong></td></tr><tr><td><strong>国語</strong></td><td>153</td><td><strong>170</strong></td><td>153.0 → 170.0</td><td><strong>+17.0点</strong></td></tr><tr><td>情報 I</td><td>52</td><td>72</td><td>26.0 → 36.0</td><td>+10.0点</td></tr><tr><td>歴史総合・日本史探究</td><td>82</td><td>90</td><td>82.0 → 90.0</td><td>+8.0点</td></tr><tr><td>数学 I・A</td><td>57</td><td>68</td><td>28.5 → 34.0</td><td>+5.5点</td></tr><tr><td>理科基礎</td><td>57</td><td>68</td><td>28.5 → 34.0</td><td>+5.5点</td></tr><tr><td>英語 リスニング</td><td>52</td><td>62</td><td>20.8 → 24.8</td><td>+4.0点</td></tr><tr><td><strong>合計</strong></td><td>—</td><td>—</td><td><strong>439.6 → 513.6</strong></td><td><strong>+74.0点</strong></td></tr></tbody>
     </table>
 <div style="height:1mm"></div>
-<ul class="bul tight"><li><strong>+74.0点のうち、英語で+28.0点、国語で+17.0点。この2科目で、必要な上積みの60.8%。</strong><span style="color:var(--ink-3)">国語の内訳は09ページ</span></li></ul>
+<ul class="bul tight"><li><strong>+74.0点のうち、英語で+28.0点、国語で+17.0点。この2科目で、必要な上積みの60.8%。</strong><span style="color:var(--ink-3)">国語の内訳は10ページ</span></li></ul>
 <div class="pb-fill"></div>
 <div class="callout is-navy">
-      <div class="co-t">合格ラインは、必ず数字で確認して置き換える</div>
-      <div class="co-b"><strong>本シートの「79.0%」は、現在地から74日で積める現実的な到達点として置いた数字であり、高知大の合格ラインそのものではない。</strong><br>大学公表の合格者最低点と、予備校のボーダー得点率を確認して、<strong>11月中にこの数字を正式な目標へ置き換える。</strong>それまでは、上の表で「どのラインなら何%になるか」を見る。</div>
+      <div class="co-t">A判定に乗っても、二次が崩れれば総合は68%止まり</div>
+      <div class="co-b">共テでA判定ライン（469点）に乗っても、二次英語が50%なら総合は<strong>68.0%</strong>にとどまる。<strong>判定は共テの点から出た数字で、二次の出来までは保証しない。</strong><br>一方、共テを<strong>513.6点まで乗せておけば、二次が50%でも総合73.6%。A判定ちょうどで二次70%を取った場合（71.8%）より上。</strong>マージンを共テ側で持つ理由はここにある。</div>
     </div>
     </div>
     <div class="page-foot">
       <span>二次は19%しかない</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">06</span>
+      <span class="pf-no">07</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">07 英語①</span>
+      <span class="r-right">08 英語①</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">07</div>
+              <div class="sec-no">08</div>
               <div class="sec-txt">
                 <h2 class="sec-title">英語 ― 最大の穴を、最大の武器に変える</h2>
                 <div class="sec-en">English: The Decisive Subject</div>
@@ -1191,17 +1252,17 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>最大の穴を、最大の武器に</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">07</span>
+      <span class="pf-no">08</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">08 英語②</span>
+      <span class="r-right">09 英語②</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">08</div>
+              <div class="sec-no">09</div>
               <div class="sec-txt">
                 <h2 class="sec-title">「言い換えを処理できる」とは、どういう状態か</h2>
                 <div class="sec-en">What Precision Reading Means</div>
@@ -1249,17 +1310,17 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>精読の到達点</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">08</span>
+      <span class="pf-no">09</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">09 国語</span>
+      <span class="r-right">10 国語</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">09</div>
+              <div class="sec-no">10</div>
               <div class="sec-txt">
                 <h2 class="sec-title">国語 ― 古文だけが沈んでいる</h2>
                 <div class="sec-en">Japanese: One Hole</div>
@@ -1293,17 +1354,17 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>古文だけが沈んでいる</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">09</span>
+      <span class="pf-no">10</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">10 日本史</span>
+      <span class="r-right">11 日本史</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">10</div>
+              <div class="sec-no">11</div>
               <div class="sec-txt">
                 <h2 class="sec-title">日本史 ― 82点を90点にする、正誤問題の仕分け</h2>
                 <div class="sec-en">Japanese History</div>
@@ -1332,17 +1393,17 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>3校すべてで使う武器</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">10</span>
+      <span class="pf-no">11</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">11 数学・理科・情報</span>
+      <span class="r-right">12 数学・理科・情報</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">11</div>
+              <div class="sec-no">12</div>
               <div class="sec-txt">
                 <h2 class="sec-title">数学・理科・情報 ― 高知大のためだけの150点</h2>
                 <div class="sec-en">The Remaining 18.8%</div>
@@ -1373,17 +1434,17 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>高知大のためだけの150点</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">11</span>
+      <span class="pf-no">12</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">12 私立の方式</span>
+      <span class="r-right">13 私立の方式</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">12</div>
+              <div class="sec-no">13</div>
               <div class="sec-txt">
                 <h2 class="sec-title">私立2校 ― 方式を選べば、8ポイント動く</h2>
                 <div class="sec-en">Choosing the Right Format</div>
@@ -1412,17 +1473,17 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>同じ実力でも、方式で8ポイント動く</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">12</span>
+      <span class="pf-no">13</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">13 受験校設計</span>
+      <span class="r-right">14 受験校設計</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">13</div>
+              <div class="sec-no">14</div>
               <div class="sec-txt">
                 <h2 class="sec-title">滑り止めは、本当に滑り止まるのか</h2>
                 <div class="sec-en">Designing the Application Set</div>
@@ -1431,37 +1492,37 @@ table.plain td.tc{text-align:center;}
       <p class="sec-lead" style="margin-bottom:3mm">「私立2校を押さえて、高知大に挑戦する」という形は、<strong>押さえが本当に押さえになっているときにしか成立しない。</strong>数字で確認する。</p>
 <table class="plain">
       <thead><tr><th style="width:20%">大学</th><th style="width:18%">区分</th><th style="width:28%">最も得点率が高い方式</th><th style="width:14%">見込み</th><th style="width:20%">いまの立ち位置</th></tr></thead>
-      <tbody><tr><td>高知大学</td><td>国公立・第一志望</td><td>前期（共テ650＋二次英語150）</td><td>共テ 67.6%</td><td><strong>届いていない。74日で+74点</strong></td></tr><tr><td>中京大学</td><td>私立</td><td>前期A・M 2教科型</td><td>80.2%</td><td><strong>最も手が届く形</strong></td></tr><tr><td>愛知大学</td><td>私立</td><td>共テ利用 前期2科目</td><td>81.9%</td><td><strong>共テ当日の出来がそのまま出る</strong></td></tr></tbody>
+      <tbody><tr><td>高知大学</td><td>国公立・第一志望</td><td>前期（共テ650＋二次英語150）</td><td>共テ 67.6%</td><td><strong>C判定。A判定まで+29.4点</strong></td></tr><tr><td>中京大学</td><td>私立</td><td>前期A・M 2教科型</td><td>80.2%</td><td><strong>最も手が届く形</strong></td></tr><tr><td>愛知大学</td><td>私立</td><td>共テ利用 前期2科目</td><td>81.9%</td><td><strong>共テ当日の出来がそのまま出る</strong></td></tr></tbody>
     </table>
 <div style="height:3mm"></div>
 <h3 class="blk">押さえとして成立させるための3つの条件</h3>
 <ol class="num"><li><strong>共テ利用だけに頼らない。</strong> 愛知大の共テ2科目型は現代文と日本史だけで決まるぶん、<strong>共テ当日の結果がそのまま合否になる。</strong>必ず<strong>個別試験（スタンダード／最高得点重視）も併願</strong>して、二の矢を用意する。</li><li><strong>1校につき複数方式で出す。</strong> 中京大は2教科型と3教科型、愛知大はスタンダードと最高得点重視を同時に出願できる構造になっている。<strong>同じ1回の試験で複数方式に判定がかかるなら、出さない理由がない。</strong><span style="color:var(--ink-3)">出願料と併願の可否は募集要項で確認。</span></li><li><strong>出願締切は、共テの結果が出る前に来る。</strong> 私立の出願は1月中旬までのものが多い。<strong>「共テを見てから決める」は間に合わない。12月中に出願方式を確定させる。</strong></li></ol>
 <div style="height:3mm"></div>
 <h3 class="blk">切り替えの判断</h3>
-<ul class="bul tight"><li><strong>12月の共テ形式演習で、共テ換算75%に届かない場合</strong> ― 二次英語（記述）に使う時間を減らし、<strong>私立の個別試験対策へ振り替える。</strong></li><li><strong>75%を超えた場合</strong> ― 共テ後の40日を<strong>まるごと二次英語</strong>に充てる。高知大の二次は英語1教科なので、集中すれば動く。</li><li><strong>どちらに転んでも、日本史と現代文は3校すべてで使う。</strong> ここに置いた時間だけは、絶対に無駄にならない。</li></ul>
+<ul class="bul tight"><li><strong>12月の共テ形式演習で、A判定ライン（469点・72.2%）に届かない場合</strong> ― 二次英語（記述）に使う時間を減らし、<strong>私立の個別試験対策へ振り替える。</strong></li><li><strong>A判定ラインを超えた場合</strong> ― 共テ後の40日を<strong>まるごと二次英語</strong>に充てる。高知大の二次は英語1教科なので、集中すれば動く。</li><li><strong>どちらに転んでも、日本史と現代文は3校すべてで使う。</strong> ここに置いた時間だけは、絶対に無駄にならない。</li></ul>
 <div style="height:3mm"></div>
 <h3 class="blk">いま決めておくこと</h3>
-<ul class="bul tight"><li><strong>高知大に出願する前提で、11月〜12月を進める。</strong> 科目を落とす判断をするのは、12月の共テ形式演習の結果を見てから。それまでは全科目を走らせる。</li><li><strong>私立2校は「受けるかどうか」ではなく「どの方式で受けるか」を決める。</strong> 12ページの表と募集要項を突き合わせ、<strong>12月中に確定させる。</strong></li><li><strong>受験校を増やすなら、いま決める。</strong> 1月に入ってから足した学校は、対策の時間が取れない。<span style="color:var(--ink-3)">増やす場合も、国語と日本史で戦える大学に限る。</span></li></ul>
+<ul class="bul tight"><li><strong>高知大に出願する前提で、11月〜12月を進める。</strong> 科目を落とす判断をするのは、12月の共テ形式演習の結果を見てから。それまでは全科目を走らせる。</li><li><strong>私立2校は「受けるかどうか」ではなく「どの方式で受けるか」を決める。</strong> 13ページの表と募集要項を突き合わせ、<strong>12月中に確定させる。</strong></li><li><strong>受験校を増やすなら、いま決める。</strong> 1月に入ってから足した学校は、対策の時間が取れない。<span style="color:var(--ink-3)">増やす場合も、国語と日本史で戦える大学に限る。</span></li></ul>
 <div class="pb-fill"></div>
 <div class="callout is-navy">
       <div class="co-t">「受かる1校」を数字で確保してから、挑戦する</div>
-      <div class="co-b">高知大は現時点で<strong>共テ67.6%</strong>、目標まで<strong>+74点。</strong>十分に挑戦する価値はある。だが<strong>挑戦は、進学先が確保されているから成立する。</strong><br>中京大2教科型（80.2%）と愛知大 共テ2科目型（81.9%）を<strong>確実に押さえる形で出願設計を組む。</strong>そのうえで、高知大に全力で向かう。</div>
+      <div class="co-b">高知大は現時点で<strong>共テ439.6点＝C判定。A判定（469点）まで+29.4点</strong>で、手が届く位置にいる。だが<strong>挑戦は、進学先が確保されているから成立する。</strong><br>中京大2教科型（80.2%）と愛知大 共テ2科目型（81.9%）を<strong>確実に押さえる形で出願設計を組む。</strong>そのうえで、高知大に全力で向かう。</div>
     </div>
     </div>
     <div class="page-foot">
       <span>滑り止めが、本当に滑り止まるのか</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">13</span>
+      <span class="pf-no">14</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">14 運用</span>
+      <span class="r-right">15 運用</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">14</div>
+              <div class="sec-no">15</div>
               <div class="sec-txt">
                 <h2 class="sec-title">環境ルールと、数字で判断する運用</h2>
                 <div class="sec-en">Rules and Weekly Review</div>
@@ -1505,17 +1566,17 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>数字でしか判断しない</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">14</span>
+      <span class="pf-no">15</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">15 ロードマップ</span>
+      <span class="r-right">16 ロードマップ</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">15</div>
+              <div class="sec-no">16</div>
               <div class="sec-txt">
                 <h2 class="sec-title">本番までのロードマップ</h2>
                 <div class="sec-en">Roadmap</div>
@@ -1526,17 +1587,17 @@ table.plain td.tc{text-align:center;}
       <thead><tr><th style="width:18%">時期</th><th style="width:9%">日数</th><th style="width:19%">重心</th><th style="width:54%">具体的にやること</th></tr></thead>
       <tbody><tr><td><strong>11月</strong><br>11/3 〜 11/30</td><td>28日</td><td><strong>英語と古文</strong></td><td>英語：単語・文法の総ざらいを月内で完了＋英文解釈を毎日1題。古文：助動詞・助詞の識別と、敬語で主語を取る訓練。日本史：通史の一巡を進める。</td></tr><tr><td><strong>12月前半</strong><br>12/1 〜 12/15</td><td>15日</td><td><strong>英語＋日本史＋情報</strong></td><td>英語：長文を週3題、時間を計って。日本史：通史一巡を完了し、誤りの型分けを開始。情報I：ここから集中的に詰める。</td></tr><tr><td><strong>12月後半〜1/15</strong></td><td>31日</td><td><strong>共テ形式の演習</strong></td><td>全科目を共テ形式で通す。理科基礎・数学もここで仕上げる。<strong>私立の出願方式を12月中に確定させる。</strong></td></tr><tr><td><strong>1/16・17</strong></td><td>—</td><td><strong>共通テスト</strong></td><td>—</td></tr><tr><td><strong>1/18 〜 2月上旬</strong></td><td>約20日</td><td><strong>私立の個別試験</strong></td><td>中京大・愛知大の個別試験。国語（漢文を選択）と日本史で取り切る。</td></tr><tr><td><strong>2月上旬 〜 2/25</strong></td><td>約20日</td><td><strong>高知大の二次英語</strong></td><td>英語1教科150点。記述と精読に全振りする。<span style="color:var(--ink-3)">出題分析は別資料</span></td></tr></tbody>
     </table>
-<div style="height:3mm"></div>
+<div style="height:2mm"></div>
 <h3 class="blk">動かしてはいけない順番</h3>
 <ul class="bul tight"><li><strong>11月は英語と古文。</strong> 情報・理科・数学には手を出さない。この3科目は12月からでも間に合う。</li><li><strong>12月中に、私立の出願方式を確定させる。</strong> 共テの結果を見てからでは締切に間に合わない。</li><li><strong>共テ後の40日は、高知大の二次英語のための時間。</strong> ここを確保するために、共テまでに全科目を仕上げておく。</li></ul>
-<div style="height:3mm"></div>
+<div style="height:2mm"></div>
 <h3 class="blk">各時点での到達目標（共テ換算650点・目安）</h3>
 <table class="plain">
-      <thead><tr><th style="width:24%">時点</th><th style="width:24%">共テ換算の目標</th><th style="width:16%">得点率</th><th style="width:36%">主な上積み元</th></tr></thead>
-      <tbody><tr><td>現在（11/3）</td><td>439.6点</td><td>67.6%</td><td>—</td></tr><tr><td>11月末</td><td>465点前後</td><td>71.5%</td><td>英語リーディング＋古文</td></tr><tr><td>12月末</td><td>495点前後</td><td>76.2%</td><td>情報I・日本史・現代文</td></tr><tr><td><strong>本番（1/16）</strong></td><td><strong>513.6点</strong></td><td><strong>79.0%</strong></td><td>理科基礎・数学の仕上げ</td></tr></tbody>
+      <thead><tr><th style="width:17%">時点</th><th style="width:19%">共テ換算の目標</th><th style="width:12%">得点率</th><th style="width:22%">判定</th><th style="width:30%">主な上積み元</th></tr></thead>
+      <tbody><tr><td>現在（11/3）</td><td>439.6点</td><td>67.6%</td><td><strong>C判定</strong></td><td>—</td></tr><tr><td>11月末</td><td>465点前後</td><td>71.5%</td><td>B判定の上</td><td>英語リーディング＋古文</td></tr><tr><td><strong>12月中旬</strong></td><td><strong>469点 超え</strong></td><td><strong>72.2%</strong></td><td><strong>A判定ライン突破</strong></td><td>情報I・日本史・現代文</td></tr><tr><td><strong>本番（1/16）</strong></td><td><strong>513.6点</strong></td><td><strong>79.0%</strong></td><td><strong>A判定 +44.6点</strong></td><td>理科基礎・数学の仕上げ</td></tr></tbody>
     </table>
 <div style="height:2mm"></div>
-<ul class="bul tight"><li><strong>この中間目標は、共テ形式の通し演習で測る。</strong> 11月末と12月末に1回ずつ、全科目を通して650点に換算する。<strong>届いていなければ、その場で次の1ヶ月の配分を組み直す。</strong></li></ul>
+<ul class="bul tight"><li><strong>この中間目標は、共テ形式の通し演習で測る。</strong> 11月末と12月末に1回ずつ、全科目を通して650点に換算する。<strong>12月中旬までにA判定ライン（469点）を超えていなければ、その場で配分を組み直す。</strong></li></ul>
 <div class="pb-fill"></div>
 <div class="callout">
       <div class="co-t">日程について</div>
@@ -1546,17 +1607,17 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>重心を、月ごとに移す</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">15</span>
+      <span class="pf-no">16</span>
     </div>
   </section>
 <section class="page">
     <div class="runner">
       <span class="r-left">THINK<span style="color:var(--gold)">I</span>NG</span>
-      <span class="r-right">16 最初の2週間</span>
+      <span class="r-right">17 最初の2週間</span>
     </div>
     <div class="page-body">
       <div class="sec">
-              <div class="sec-no">16</div>
+              <div class="sec-no">17</div>
               <div class="sec-txt">
                 <h2 class="sec-title">最初の2週間と、確認しなければいけないこと</h2>
                 <div class="sec-en">First Two Weeks</div>
@@ -1568,7 +1629,7 @@ table.plain td.tc{text-align:center;}
 <h3 class="blk">要確認（次回面談までに）</h3>
 <table class="plain">
       <thead><tr><th style="width:34%">項目</th><th style="width:22%">確認先</th><th style="width:44%">分かると何が変わるか</th></tr></thead>
-      <tbody><tr><td><strong>高知大の合格者最低点・ボーダー得点率</strong></td><td>大学公表資料／予備校</td><td>本シートの目標79.0%を、正式な合格ラインに置き換える</td></tr><tr><td><strong>中京大 国語の「漢文は選択問題」の中身</strong></td><td>中京大 募集要項・過去問</td><td>古文を回避できれば、2教科型が80.2%→82.8%に上がる</td></tr><tr><td><strong>愛知大 共テ利用の英語（リスニングの扱い）</strong></td><td>愛知大 募集要項</td><td>共テ3科目型の見込み得点率が確定する</td></tr><tr><td><strong>英検など外部検定のスコア</strong></td><td>本人</td><td>中京大A方式の得点換算・愛知大の加点が使えるかが決まる</td></tr><tr><td><strong>共テ「数学I」単独受験の可否と扱い</strong></td><td>大学入試センター／大学</td><td>数学の学習範囲を絞れるかが決まる</td></tr><tr><td><strong>中京大・愛知大の全日程と出願締切</strong></td><td>各大学 募集要項</td><td>併願の組み方と、出願方式を決める時期が決まる</td></tr></tbody>
+      <tbody><tr><td><strong>高知大の合格者最低点（総合800点）</strong></td><td>大学公表資料</td><td>共テの判定ラインに加えて、<strong>二次込みで何点必要か</strong>が確定する</td></tr><tr><td><strong>中京大 国語の「漢文は選択問題」の中身</strong></td><td>中京大 募集要項・過去問</td><td>古文を回避できれば、2教科型が80.2%→82.8%に上がる</td></tr><tr><td><strong>愛知大 共テ利用の英語（リスニングの扱い）</strong></td><td>愛知大 募集要項</td><td>共テ3科目型の見込み得点率が確定する</td></tr><tr><td><strong>英検など外部検定のスコア</strong></td><td>本人</td><td>中京大A方式の得点換算・愛知大の加点が使えるかが決まる</td></tr><tr><td><strong>共テ「数学I」単独受験の可否と扱い</strong></td><td>大学入試センター／大学</td><td>数学の学習範囲を絞れるかが決まる</td></tr><tr><td><strong>中京大・愛知大の全日程と出願締切</strong></td><td>各大学 募集要項</td><td>併願の組み方と、出願方式を決める時期が決まる</td></tr></tbody>
     </table>
 <div style="height:3mm"></div>
 <div class="memo">
@@ -1584,7 +1645,7 @@ table.plain td.tc{text-align:center;}
     <div class="page-foot">
       <span>ここから動かす</span>
       <span class="pf-rule"></span>
-      <span class="pf-no">16</span>
+      <span class="pf-no">17</span>
     </div>
   </section>
 <script>

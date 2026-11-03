@@ -317,7 +317,7 @@ function coverPage(d) {
         <div class="cn-value">${esc(d.meta.student)}</div>
         <div class="cn-meta">${esc(d.meta.grade)}／${esc(d.meta.course)}</div>
       </div>
-      <div class="cover-contents">
+      <div class="cover-contents${d.pages.length >= 15 ? " is-dense" : ""}">
         <div class="cc-label">CONTENTS</div>
         ${d.pages
           .map(

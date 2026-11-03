@@ -238,6 +238,11 @@ ol.num li::before,.pf-no,.runner .r-left,.cover-contents .cc-no{
   font-family:var(--en);font-size:9.5pt;font-weight:600;color:var(--gold);flex:0 0 5.5mm;
 }
 
+/* ページ数が多いシート（15ページ以上）の目次。行が増えた分だけ詰めて、
+   表紙フッターが金枠に乗り上げるのを防ぐ。build.mjs が is-dense を付ける。 */
+.cover-contents.is-dense{margin-top:5mm;}
+.cover-contents.is-dense .cc-item{padding:.75mm 0;font-size:8pt;}
+
 .cover-kpis{
   margin-top:auto;
   display:grid;grid-template-columns:repeat(3,1fr);

@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#fdfaf4">
+<title>共通テスト第4問攻略｜可視化リーディングで解くライティング添削問題 — Try a Slow Life — オンライン塾 THINKING</title>
+<style>
+:root{
+  --paper:#fdfaf4; --paper2:#f6f0e4; --ink:#1f1b16; --ink2:#5a524a; --line:#e3d9c7;
+  --accent:#b8542b; --accent2:#8f3f1f;
+  --q1:#d9a441; --q2:#4f9474; --q3:#5c6fb5;
+  --q1bg:#fbf1d6; --q2bg:#dff0e7; --q3bg:#e2e6f6;
+  --ok:#2f8a5b; --ng:#c0392b;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.85;font-size:15.5px;padding-bottom:84px}
+.en{font-family:Georgia,"Times New Roman","Hiragino Mincho ProN",serif;font-size:1.02em}
+a{color:var(--accent)}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(253,250,244,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;gap:10px;padding:10px 16px;max-width:720px;margin:0 auto}
+.logo{width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-family:Georgia,serif;flex:none}
+.top .t{font-size:12.5px;color:var(--ink2);line-height:1.3}
+.top .t b{display:block;color:var(--ink);font-size:13.5px}
+.timerchip{margin-left:auto;font-family:Georgia,serif;font-size:15px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;min-width:64px;text-align:center}
+nav.steps{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px;max-width:720px;margin:0 auto;scrollbar-width:none}
+nav.steps::-webkit-scrollbar{display:none}
+nav.steps a{flex:none;font-size:12px;padding:5px 10px;border-radius:999px;background:var(--paper2);color:var(--ink2);text-decoration:none;border:1px solid var(--line)}
+nav.steps a i{font-style:normal;font-family:Georgia,serif;color:var(--accent);margin-right:4px;font-weight:700}
+.hero{padding:28px 0 10px}
+.kicker{font-size:12.5px;color:var(--ink2);letter-spacing:.04em}
+h1{font-size:25px;line-height:1.35;margin:8px 0 10px;font-weight:800}
+h1 small{display:block;font-size:14px;color:var(--accent);font-weight:700;margin-bottom:6px}
+.lead{color:var(--ink2);font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.meta span{font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+section.step{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:22px}
+.stepno{font-family:Georgia,serif;color:var(--accent);font-weight:700;letter-spacing:.08em;font-size:13px}
+h2{font-size:21px;margin:4px 0 4px;line-height:1.4}
+.sub{font-family:Georgia,serif;font-style:italic;color:var(--ink2);font-size:13.5px;margin-bottom:14px}
+h3{font-size:16.5px;margin:22px 0 8px}
+h4{font-size:15px;margin:14px 0 6px}
+p{margin:8px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px;margin:12px 0}
+.card.soft{background:var(--paper2);border-color:transparent}
+.note{border-left:4px solid var(--accent);background:#fff8ef;padding:12px 14px;border-radius:0 var(--radius) var(--radius) 0;margin:14px 0}
+.note b.l{display:block;color:var(--accent2);font-size:13.5px;margin-bottom:4px}
+.pill{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--ink);color:#fff;margin-right:6px;vertical-align:middle}
+.pill.q1{background:var(--q1)}.pill.q2{background:var(--q2)}.pill.q3{background:var(--q3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:11px 20px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:active{transform:translateY(1px)}
+/* passage */
+.passage{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 10px;margin:12px 0}
+.passage .ttl{text-align:center;font-family:Georgia,serif;font-weight:700;font-size:18px;margin:6px 0 12px}
+.passage p.en{text-indent:1.2em;margin:0 0 10px;line-height:1.75}
+.passage .lead-en{font-style:italic;color:var(--ink2);text-indent:0}
+mark{background:transparent;padding:0 1px;border-bottom:3px solid transparent;color:inherit;transition:.2s}
+.show-all mark.q1,.show-q1 mark.q1{background:var(--q1bg);border-bottom-color:var(--q1)}
+.show-all mark.q2,.show-q2 mark.q2{background:var(--q2bg);border-bottom-color:var(--q2)}
+.show-all mark.q3,.show-q3 mark.q3{background:var(--q3bg);border-bottom-color:var(--q3)}
+.qlist{margin:14px 0}
+.q{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:10px 0}
+.q .stem{font-weight:700;margin-bottom:8px}
+.q .stem .en{font-weight:400}
+.opts{list-style:none;padding:0;margin:0}
+.opts li{display:flex;gap:8px;padding:6px 0;border-top:1px dashed var(--line)}
+.opts li:first-child{border-top:none}
+.opts .n{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ink);font-size:12px;display:grid;place-items:center;font-family:Georgia,serif;margin-top:4px}
+.answers{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.answers label{border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--paper2);font-size:14px;cursor:pointer}
+.answers input{display:none}
+.answers input:checked+span{color:#fff}
+.answers label:has(input:checked){background:var(--ink);color:#fff}
+.order{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.order select{font-size:15px;padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:#fff;font-family:inherit}
+.order .arrow{color:var(--ink2)}
+.result{margin-top:10px;font-weight:700}
+.result.ok{color:var(--ok)}.result.ng{color:var(--ng)}
+.timerbox{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin:12px 0}
+.timerbox .big{font-family:Georgia,serif;font-size:30px;min-width:92px}
+/* 5 step */
+.flow{counter-reset:s}
+.fstep{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.fstep:first-child{border-top:none}
+.fstep .num{flex:none;width:34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700}
+.fstep h4{margin:4px 0 4px}
+.fstep .goal{font-size:13.5px;color:var(--accent2);margin-top:6px}
+/* think-aloud */
+details.think{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin:12px 0;overflow:hidden}
+details.think summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
+details.think summary::-webkit-details-marker{display:none}
+details.think summary .ans{margin-left:auto;font-size:12.5px;color:var(--ink2);font-weight:400;white-space:nowrap}
+details.think summary::after{content:"＋";margin-left:8px;color:var(--accent);font-weight:400}
+details.think[open] summary::after{content:"－"}
+details.think .body{padding:0 16px 16px;border-top:1px solid var(--line)}
+.jaopts{list-style:none;padding:0;margin:10px 0 4px;font-size:14px;color:var(--ink2)}
+.jaopts li{padding:3px 0}
+.jaopts .n{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;margin-right:6px;font-family:Georgia,serif}
+.jaopts li.c{color:var(--ink);font-weight:700}.jaopts li.c .n{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ta{counter-reset:t;margin-top:8px}
+.ta .t{display:flex;gap:12px;padding:12px 0;border-top:1px dashed var(--line)}
+.ta .t .n{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:12.5px;font-family:Georgia,serif;margin-top:2px}
+.ta .t h5{margin:2px 0 4px;font-size:14.5px}
+.quote{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14.5px}
+.quote .en{display:block;font-size:15px}
+.quote .ja{display:block;color:var(--ink2);font-size:13.5px;margin-top:4px}
+.map{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border:1.5px dashed var(--accent);border-radius:10px;padding:10px 12px;margin:10px 0;font-size:14px}
+.map .en{font-weight:700}
+.map .ar{color:var(--accent);font-weight:800}
+.learn{background:var(--paper2);border-radius:10px;padding:12px 14px;margin-top:12px;font-size:14.5px}
+.learn b{display:block;color:var(--accent2);font-size:13px;margin-bottom:3px}
+.ev{display:inline-block;font-size:12.5px;padding:2px 8px;border-radius:6px;margin:2px 0}
+.ev.q1{background:var(--q1bg)}.ev.q2{background:var(--q2bg)}.ev.q3{background:var(--q3bg)}
+/* timeline */
+.tl{position:relative;padding-left:28px;margin:14px 0}
+.tl::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .ev2{position:relative;padding:8px 0 8px 6px}
+.tl .ev2::before{content:"";position:absolute;left:-23px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 1.5px var(--accent)}
+.tl .ev2.ghost::before{background:#fff;box-shadow:0 0 0 1.5px var(--ink2)}
+.tl .ev2 .lab{font-weight:700}
+.tl .ev2 .src{font-size:13px;color:var(--ink2)}
+.tl .ev2 .tag{display:inline-block;font-size:11.5px;background:var(--ink);color:#fff;border-radius:6px;padding:0 7px;margin-left:6px;vertical-align:middle}
+.tl .ev2.ghost .tag{background:var(--ng)}
+/* translation */
+.tr{margin:10px 0 14px}
+.tr .lab{font-size:12px;color:var(--ink2);letter-spacing:.06em}
+.tr p{margin:4px 0}
+.tr p.ja{color:#3a342d;font-size:14.5px}
+.tr p.ja .qm{font-size:11px;padding:0 5px;border-radius:5px;color:#fff;margin-left:4px;vertical-align:middle}
+.qm.q1{background:var(--q1)}.qm.q2{background:var(--q2)}.qm.q3{background:var(--q3)}
+.hideen .tr p.en{display:none}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;margin:8px 0}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.legend .l1::before{background:var(--q1)}.legend .l2::before{background:var(--q2)}.legend .l3::before{background:var(--q3)}
+/* vocab */
+.vocab{display:grid;grid-template-columns:1fr;gap:6px;margin:10px 0}
+.v{display:flex;gap:10px;align-items:baseline;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px}
+.v .w{font-family:Georgia,serif;font-weight:700;min-width:120px}
+.v .pos{font-size:11px;color:var(--ink2);border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.v.pair{border-color:var(--accent);background:#fff8ef}
+/* checklist */
+.chk{list-style:none;padding:0;margin:12px 0}
+.chk li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line)}
+.chk li:first-child{border-top:none}
+.chk input{width:20px;height:20px;margin-top:4px;accent-color:var(--accent)}
+.score{font-family:Georgia,serif;font-size:22px;margin:8px 0}
+.weapon{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.weapon .num{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;width:52px;line-height:1.3;padding-top:4px}
+footer{margin:40px 0 20px;font-size:12.5px;color:var(--ink2);text-align:center;line-height:1.7}
+/* bottom bar + sheet */
+.bbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(253,250,244,.96);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.bbar .in{max-width:720px;margin:0 auto;display:flex;gap:10px;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+.bbar .btn{flex:1}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top-left-radius:18px;border-top-right-radius:18px;box-shadow:0 -10px 30px rgba(0,0,0,.18);max-height:82vh;transform:translateY(105%);transition:transform .28s ease;display:flex;flex-direction:column}
+.sheet.open{transform:translateY(0)}
+.sheet .head{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.sheet .head b{font-size:14px}
+.sheet .filters{display:flex;gap:6px;margin-left:auto}
+.sheet .filters button{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 10px;cursor:pointer;font-family:inherit}
+.sheet .filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sheet .filters button.f1.on{background:var(--q1);border-color:var(--q1)}
+.sheet .filters button.f2.on{background:var(--q2);border-color:var(--q2)}
+.sheet .filters button.f3.on{background:var(--q3);border-color:var(--q3)}
+.sheet .close{margin-left:8px;border:none;background:transparent;font-size:20px;cursor:pointer}
+.sheet .scroll{overflow:auto;padding:0 16px 24px;-webkit-overflow-scrolling:touch}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:45;opacity:0;pointer-events:none;transition:.25s}
+.overlay.on{opacity:1;pointer-events:auto}
+.tiny{font-size:12.5px;color:var(--ink2)}
+.center{text-align:center}
+@media (min-width:600px){.vocab{grid-template-columns:1fr 1fr}}
+
+.pos{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--paper2);border:1.5px dashed var(--accent);color:var(--accent);font-family:Georgia,serif;font-size:12px;font-weight:700;margin:0 3px;vertical-align:middle}
+.pos.hit{background:var(--accent);color:#fff;border-style:solid}
+u.ul{text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:1px}
+sup.cm{font-family:Georgia,serif;font-size:11px;color:var(--accent);font-weight:700;margin-right:2px}
+.cmts{display:grid;gap:8px;margin:12px 0}
+.cmt{display:flex;gap:10px;background:#fff8ef;border:1px dashed var(--accent);border-radius:10px;padding:10px 12px;font-size:14px}
+.cmt .n{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700}
+.cmt .en{font-family:"Comic Sans MS","Segoe Print",Georgia,serif;font-style:italic}
+.toc{margin:12px 0}
+.toc .row{display:grid;grid-template-columns:64px 1fr;gap:10px;padding:10px 0;border-top:1px dashed var(--line);align-items:start}
+.toc .row:first-child{border-top:none}
+.toc .para{font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;padding-top:3px}
+.toc .first{font-size:14px}
+.toc .role{display:inline-block;font-size:12px;background:var(--ink);color:#fff;border-radius:6px;padding:1px 8px;margin-bottom:4px}
+.toc .role.red{background:var(--accent)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+.tbl th,.tbl td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+.tbl th{background:var(--paper2);font-size:12.5px}
+.type{display:inline-block;font-size:12px;border-radius:6px;padding:1px 8px;color:#fff;font-weight:700}
+.type.add{background:var(--q2)}.type.fix{background:var(--q3)}
+.hole{background:#fff;border:2px dashed var(--accent);border-radius:12px;padding:12px 14px;margin:10px 0}
+.hole .l{font-size:12px;color:var(--accent2);letter-spacing:.06em;font-weight:700}
+.hole .shape{font-size:16px;font-weight:800;margin-top:4px}
+.piece{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14px}
+.piece.ok{background:#e4f3ea}
+.piece .m{display:inline-block;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;text-align:center;line-height:18px;font-family:Georgia,serif;margin-right:6px}
+.piece.ok .m{background:var(--ok);border-color:var(--ok);color:#fff}
+.piece .why{display:block;color:var(--ink2);font-size:13px;margin-top:3px}
+.piece.ok .why{color:#1f5e3b}
+.link4{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.link4 div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.link4 b{display:block;font-size:14px;margin-bottom:2px}
+.link4 .hit{border-color:var(--accent);background:#fff8ef}
+</style></head><body data-key="q4slow">
+<header class="top"><div class="bar"><div class="logo">T</div><div class="t">可視化リーディング ― 添削問題<b>共通テスト第4問「Try a Slow Life」／ オンライン塾 THINKING</b></div><div class="timerchip" id="tChip">6:00</div></div><nav class="steps"><a href="#s0"><i>0</i>自力で解く</a><a href="#s1"><i>1</i>5STEP</a><a href="#s2"><i>2</i>目的と目次</a><a href="#s3"><i>3</i>赤ペン翻訳</a><a href="#s4"><i>4</i>脳内実況</a><a href="#s5"><i>5</i>全訳</a><a href="#s6"><i>6</i>語句</a><a href="#s7"><i>7</i>持ち帰り</a></nav></header>
+<main class="wrap">
+<div class="hero"><div class="kicker">2025年度 共通テスト本試験 第4問</div>
+<h1><small>【ライティング添削問題】を攻略する</small>可視化リーディング ― Try a Slow Life ―</h1>
+<p class="lead">第4問は、友達（自分）が書いた英文に先生が赤ペンを入れていて、そのコメントをもとに文章を直す問題です。単に文法的に正しい英文を探す問題ではありません。問われているのは、<b>「この文章で、この場所に、どんな内容が必要なのか」</b>を見抜く力。だから修正箇所の前後だけ読んでも足りない。全体の目的、段落の役割、先生のコメント、この3つを読んでから穴の形を決めます。</p>
+<div class="meta"><span>目標解答時間 6分</span><span>設問4問</span><span>赤ペン4ヶ所</span><span>下の「本文を開く」で、いつでも英文を参照できます</span></div></div>
+
+<section class="step" id="s0"><div class="stepno">STEP 0</div><h2>まず、時間を測って自力で解く</h2><div class="sub">Try it yourself</div>
+<p>解説を読む前に必ず解いてください。観察してほしいのは、<b>「選択肢を先に読んでから本文に戻った設問はどれか」</b>。それがそのまま、穴の形を決める前にピースを触ってしまった場所です。</p>
+<div class="timerbox"><div class="big" id="tBig">6:00</div><button class="btn" id="tBtn">スタート</button><span class="tiny">6分を過ぎても止めずに続けて、超過時間を覚えておきましょう。</span></div>
+<div class="passage show-none"><p class="en lead-en">In English class, you are writing an essay on a topic related to lifestyle in modern society. This is your most recent draft. You are now working on improvements based on comments from your teacher.</p><div class="ttl">Try a Slow Life</div><p class="en">In modern society, people are always busy and this fast pace of living can be stressful. The movement toward a slow life has shown us that you don’t have to be busy all the time. Instead, you can slow down and notice things that are truly meaningful to you. <mark class="q3">By taking your time and being completely focused on these things, you can improve the quality of your work and life.</mark> This essay will describe some ways to do this.</p><p class="en">One key point of the slow life is to own fewer belongings. <mark class="q1">This makes it easier to concentrate on everyday activities.</mark> <sup class="cm">(1)</sup><span class="pos">∧</span> <mark class="q1">Many people today tend to buy more than they can consume.</mark> Do you <i>really</i> need five pairs of the latest sneakers? Slow-lifers would recommend reducing possessions and buying only necessary items.</p><p class="en">Another recommendation is to think about your communication style and manner in your public and private life. <mark class="q2">Sadly, one study has found that around 90% of people check smartphones during face-to-face conversations, which may appear impolite and affect relationships negatively.</mark> <sup class="cm">(2)</sup><span class="pos">∧</span></p><p class="en"><mark class="q3">The final aspect of slow living is to take 10 minutes to reflect on your day. Try to recollect people and events that were significant. By mentally highlighting them, you can find fulfillment in daily tasks.</mark></p><p class="en">In summary, through a slow life, <sup class="cm">(3)</sup><u class="ul">you can relax</u>. Even small changes can improve your life. Avoid having non-essential items, spend quality time with people around you, and <sup class="cm">(4)</sup><u class="ul">remember what you talked about with your friends</u>. By doing these things, you will have a chance to live a better and more rewarding life.</p><div class="cmts"><div class="cmt"><span class="n">(1)</span><span class="en">Add an appropriate connecting word.</span></div><div class="cmt"><span class="n">(2)</span><span class="en">Add a concluding sentence to improve this paragraph.</span></div><div class="cmt"><span class="n">(3)</span><span class="en">The underlined part isn’t your main argument. Rewrite it.</span></div><div class="cmt"><span class="n">(4)</span><span class="en">The underlined part doesn’t describe your essay content well. Change it.</span></div></div><p class="tiny">Overall comments: <span class="en">You have really improved your essay. Keep working on it. I’m going to follow your suggestions to slow down and hopefully improve the quality of my life.</span></p></div>
+<div class="qlist"><div class="q"><div class="stem"><span class="pill">問 1</span><span class="en">Based on Comment (1), which is the best word to add?</span></div><ol class="opts"><li><span class="n">①</span><span class="en">However</span></li><li><span class="n">②</span><span class="en">Moreover</span></li><li><span class="n">③</span><span class="en">Otherwise</span></li><li><span class="n">④</span><span class="en">Therefore</span></li></ol><div class="answers"><label><input type="radio" name="q1" value="①"><span>①</span></label><label><input type="radio" name="q1" value="②"><span>②</span></label><label><input type="radio" name="q1" value="③"><span>③</span></label><label><input type="radio" name="q1" value="④"><span>④</span></label></div><div class="result" id="r1"></div></div><div class="q"><div class="stem"><span class="pill">問 2</span><span class="en">Based on Comment (2), which is the best sentence to add?</span></div><ol class="opts"><li><span class="n">①</span><span class="en">Limit the time you spend having conversations with people.</span></li><li><span class="n">②</span><span class="en">Send messages with your phone just once or twice a day.</span></li><li><span class="n">③</span><span class="en">Try to focus your attention on the person you are talking with.</span></li><li><span class="n">④</span><span class="en">Use your phone to find real friends through social media.</span></li></ol><div class="answers"><label><input type="radio" name="q2" value="①"><span>①</span></label><label><input type="radio" name="q2" value="②"><span>②</span></label><label><input type="radio" name="q2" value="③"><span>③</span></label><label><input type="radio" name="q2" value="④"><span>④</span></label></div><div class="result" id="r2"></div></div><div class="q"><div class="stem"><span class="pill">問 3</span><span class="en">Based on Comment (3), which is the best phrase to replace the underlined part?</span></div><ol class="opts"><li><span class="n">①</span><span class="en">you can be satisfied at work and in your personal life</span></li><li><span class="n">②</span><span class="en">you can complete tasks in a short period of time</span></li><li><span class="n">③</span><span class="en">you can decrease stress by sharing work with others</span></li><li><span class="n">④</span><span class="en">you can focus on the outcome rather than the process</span></li></ol><div class="answers"><label><input type="radio" name="q3" value="①"><span>①</span></label><label><input type="radio" name="q3" value="②"><span>②</span></label><label><input type="radio" name="q3" value="③"><span>③</span></label><label><input type="radio" name="q3" value="④"><span>④</span></label></div><div class="result" id="r3"></div></div><div class="q"><div class="stem"><span class="pill">問 4</span><span class="en">Based on Comment (4), which is the best phrase to replace the underlined part?</span></div><ol class="opts"><li><span class="n">①</span><span class="en">plan your daily activities as soon as you wake up</span></li><li><span class="n">②</span><span class="en">recall the bad things that happened in your life</span></li><li><span class="n">③</span><span class="en">think back to the memorable parts of your day</span></li><li><span class="n">④</span><span class="en">throw away unwanted items before sleeping</span></li></ol><div class="answers"><label><input type="radio" name="q4" value="①"><span>①</span></label><label><input type="radio" name="q4" value="②"><span>②</span></label><label><input type="radio" name="q4" value="③"><span>③</span></label><label><input type="radio" name="q4" value="④"><span>④</span></label></div><div class="result" id="r4"></div></div></div>
+<p class="center"><button class="btn" id="grade">採点する</button></p><p class="center" id="gradeSum" style="font-weight:700"></p>
+</section>
+
+<section class="step" id="s1"><div class="stepno">STEP 1</div><h2>可視化リーディング ― 添削問題の5STEP</h2><div class="sub">The eye path</div>
+<p>赤ペンの前後だけを読んで解く人と、全体から穴の形を決めて解く人。英語力はほぼ同じでも、第4問の点はここで分かれます。目の動かし方を5つに固定します。</p>
+<div class="card flow"><div class="fstep"><div class="num">1</div><div><h4>「この子、結局なにが言いたいの？」を一言で言う</h4><p>いきなり赤ペンに飛びつかない。リード文・タイトル・第1段落から「誰に向けて、何を伝えようとしているのか」を日本語で一言にする。全体の目的が分からなければ、何を足すべきか、何を直すべきかも判断できない。</p><div class="goal">鉄則：目的地を知らずに、道案内はできない。</div></div></div><div class="fstep"><div class="num">2</div><div><h4>各段落の1文目を「目次」として読む</h4><p>全文を細かく読む前に、各段落の1文目を確認する。本を読む前に目次を見るのと同じ。「この段落は何を説明する場所？」「赤ペンがある段落は、全体の中で何を担当している？」を先に把握する。</p><div class="goal">鉄則：1文を判断する前に、その文が所属する段落の役割を知る。</div></div></div><div class="fstep"><div class="num">3</div><div><h4>赤ペンを「何が足りない？ 何がズレている？」に言い換える</h4><p>コメントは2種類しかない。足せ（Add / Explain：目的・理由・例・手順・まとめが抜けている）と、直せ（Rewrite / Change：今ある文が段落のテーマや全体の主張と合っていない）。どちらかに分類して、「目的が足りない」「結論が主張と合っていない」まで具体的に言える状態にする。</p><div class="goal">鉄則：赤ペンを読んだら、「何を足す？ 何と合わせる？」まで翻訳する。</div></div></div><div class="fstep"><div class="num">4</div><div><h4>穴の形を自分で決めてから、ピースを探す</h4><p>第4問の心臓部。選択肢を見る前に、修正する文・前後の文・段落のテーマ・全体の目的から「ここには、どんな内容が入れば自然につながる？」を自分で決める。つながりは4つ：対比（A↔B）、言い換え・具体化（A→A'）、追加（A＋B）、因果（理由・目的・結果）。</p><div class="goal">鉄則：穴の形を先に決める。ピースはあとから。</div></div></div><div class="fstep"><div class="num">5</div><div><h4>ピースをはめて、通して読む</h4><p>自分の予測と意味が一致する選択肢を探し、本文に入れて通して読む。他の選択肢がなぜ違うかも本文の根拠で説明する。合うものが無ければ、コメントの翻訳・前後関係・段落の役割に戻って予測を直す。</p><div class="goal">鉄則：選択肢で決めない。本文で決めて、選択肢で確認する。</div></div></div></div>
+<div class="note"><b class="l">この手順の急所</b>STEP 4 で「穴の形」を日本語で言えるかどうかが全部です。言えない状態で選択肢を読むと、4つとも英語として自然に見えて、「どれが一番それっぽいか」の勝負になる。それはジグソーパズルで穴の形を見ずにピースを片っ端からはめるのと同じです。</div>
+</section>
+
+<section class="step" id="s2"><div class="stepno">STEP 2</div><h2>目的を一言に、段落を目次に</h2><div class="sub">Purpose &amp; outline</div>
+<h3>STEP 1｜この文章は、誰に、何を伝えたい？</h3>
+<div class="card"><p><b>何の話？</b> → 現代社会のライフスタイル。「スローライフ」のすすめ</p><p><b>誰に向けて？</b> → 英語の授業でエッセイを読む先生・クラス</p><p><b>何を伝えたい？</b> → スローライフの具体的な方法を3つ示して、仕事と生活の質を上げられると伝える</p></div>
+<div class="note"><b class="l">頭の中ではこうなる</b>「忙しい現代で、スローライフの3つの方法（持ち物を減らす・会話のマナー・1日を振り返る）を紹介して、生活の質を上げようと勧めるエッセイね。」第1段落の最後の This essay will describe some ways to do this. が、この文章の設計図を予告している。</div>
+<h3>STEP 2｜各段落の1文目を目次として読む</h3>
+<div class="card toc"><div class="row"><div class="para">第1段落</div><div><span class="role ">導入・主張</span><div class="first en">By taking your time and being completely focused on these things, you can improve the quality of your work and life.</div><div class="tiny">スローライフで仕事と生活の質が上がる。方法を3つ説明する</div></div></div><div class="row"><div class="para">第2段落</div><div><span class="role red">方法1｜赤ペン(1)</span><div class="first en">One key point of the slow life is to own fewer belongings.</div><div class="tiny">持ち物を減らす</div></div></div><div class="row"><div class="para">第3段落</div><div><span class="role red">方法2｜赤ペン(2)</span><div class="first en">Another recommendation is to think about your communication style and manner …</div><div class="tiny">会話のスタイルとマナー</div></div></div><div class="row"><div class="para">第4段落</div><div><span class="role ">方法3</span><div class="first en">The final aspect of slow living is to take 10 minutes to reflect on your day.</div><div class="tiny">1日を振り返る</div></div></div><div class="row"><div class="para">第5段落</div><div><span class="role red">まとめ｜赤ペン(3)(4)</span><div class="first en">In summary, through a slow life, …</div><div class="tiny">3つの方法を一言ずつ繰り返して締める</div></div></div></div>
+<div class="note"><b class="l">設計図が見えると</b>「主張 → 方法1 → 方法2 → 方法3 → まとめ」の列挙型。まとめの段落は、3つの方法を順番に1つずつ言い直す構造になっている（Avoid having non-essential items ＝ 方法1、spend quality time with people ＝ 方法2、そして3つ目が赤ペン(4)）。この対応が見えていれば、問4は第4段落を見るだけで決まる。問3の「主張」は第1段落にある。</div>
+</section>
+
+<section class="step" id="s3"><div class="stepno">STEP 3</div><h2>赤ペンを「足せ／直せ」に翻訳する</h2><div class="sub">Translate the red pen</div>
+<p>コメントを読んだ瞬間に「何を修正する問題か」を確定します。足せ（情報が抜けている）か、直せ（今ある文が何かと合っていない）か。直せの場合は「何と合っていないのか」まで言います。</p>
+<table class="tbl"><tr><th>赤ペン</th><th>コメント</th><th>分類</th><th>翻訳（何を足す？ 何と合わせる？）</th></tr><tr><td><span class="pill q1" style="background:var(--ink)">(1)</span></td><td class="en" style="font-size:13px">Add an appropriate connecting word.</td><td><span class="type add">足せ</span></td><td>接続語が抜けている。前の文と後の文の関係（対比？追加？因果？）を決めて、それに合う語を足す。</td></tr><tr><td><span class="pill q2" style="background:var(--ink)">(2)</span></td><td class="en" style="font-size:13px">Add a concluding sentence to improve this paragraph.</td><td><span class="type add">足せ</span></td><td>段落の結びの文が無い。段落のテーマ（会話のマナー）と、直前の問題点（会話中にスマホを見る）を受けて、「だからこうしよう」を足す。</td></tr><tr><td><span class="pill q3" style="background:var(--ink)">(3)</span></td><td class="en" style="font-size:13px">The underlined part isn’t your main argument. Rewrite it.</td><td><span class="type fix">直せ</span></td><td>「リラックスできる」は主張ではない。何と合わせるか → 第1段落の主張（仕事と生活の質を上げる）。</td></tr><tr><td><span class="pill q3" style="background:var(--ink)">(4)</span></td><td class="en" style="font-size:13px">The underlined part doesn’t describe your essay content well. Change it.</td><td><span class="type fix">直せ</span></td><td>「友達と話したことを覚えておく」はエッセイの内容と合っていない。何と合わせるか → 第4段落（方法3：1日を振り返る）。</td></tr></table>
+<div class="note"><b class="l">やってしまいがちなこと</b>赤ペンを「ここを直せという場所の印」としてしか見ないこと。赤ペンは修正箇所を示すだけではなく、何が問題なのかを教える、最も重要な手がかりです。</div>
+</section>
+
+<section class="step" id="s4"><div class="stepno">STEP 4</div><h2>脳内実況 ― 穴の形を決めてから、ピースを探す</h2><div class="sub">Think-aloud</div>
+<p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。各問、「穴の形」を決めるまでは選択肢を一切見ていないことに注目してください。各問はタップで開閉できます。</p>
+<details class="think" open><summary><span class="pill" style="background:var(--ink)">問 1</span>接続語を足す<span class="ans">正解 ① However</span></summary><div class="body">
+<p style="margin-top:12px"><b>コメント(1)に基づき、加えるのに最適な語を選べ。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>赤ペンの翻訳：接続語を足す。つまり「前後の関係」を決める問題</h5>接続語は4種類しかない。対比（However）、追加（Moreover）、さもないと（Otherwise）、因果（Therefore）。前の文と後の文を並べて、関係を決める。</div></div><div class="t"><div class="n">2</div><div><h5>前の文と後の文を並べる</h5><div class="quote"><span class="en">[前] This makes it easier to concentrate on everyday activities.<br>[後] Many people today tend to buy more than they can consume.</span><span class="ja">[前] 持ち物が少ないと、日々の活動に集中しやすい。<br>[後] 今日、多くの人は消費できる以上に買ってしまう。</span></div>前は「少ない方がいい」。後は「でも実際は、みんな買いすぎている」。理想と現実。方向が逆。</div></div><div class="t"><div class="n">3</div><div><h5>穴の形が決まる：対比</h5>「少ない方がいい」↔「しかし現実は買いすぎ」。A ↔ B の対比。接続語は However。</div></div></div>
+<div class="hole"><div class="l">穴の形（選択肢を見る前に決める）</div><div class="shape">理想（少ない方がいい）と現実（買いすぎている）の対比</div></div>
+<div class="link4"><div class="hit"><b>① 対比 A↔B</b>反対・違い</div><div class=""><b>② 言い換え・具体化 A→A'</b>前を詳しく</div><div class=""><b>③ 追加 A＋B</b>同じ方向を足す</div><div class=""><b>④ 因果</b>理由・目的・結果</div></div>
+<h4>ピースを当てる</h4><div class="piece ok"><span class="m">①</span><span class="en">However</span><span class="why">対比。「しかし、多くの人は買いすぎている」。前後の方向の逆転を正しく繋ぐ。</span></div><div class="piece "><span class="m">②</span><span class="en">Moreover</span><span class="why">追加。「さらに、買いすぎている」では、前の「集中しやすい」と同じ方向の情報になるが、内容が逆なので繋がらない。</span></div><div class="piece "><span class="m">③</span><span class="en">Otherwise</span><span class="why">「さもないと」。前の文が命令・条件でないと成立しない。「集中しやすい。さもないと買いすぎる」は意味不明。</span></div><div class="piece "><span class="m">④</span><span class="en">Therefore</span><span class="why">因果。「集中しやすい。だから買いすぎる」。原因と結果の関係が無い。</span></div>
+<div class="quote" style="border-left:4px solid var(--ok)"><span class="tiny">はめて通して読む</span><span class="en">This makes it easier to concentrate on everyday activities. However, many people today tend to buy more than they can consume. Do you really need five pairs of the latest sneakers?</span><span class="ja">持ち物が少ないと日々の活動に集中しやすい。しかし、今日多くの人は消費できる以上に買ってしまう。最新のスニーカーが本当に5足も必要？</span></div>
+<p class="center"><button class="btn ghost" data-open="q1">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>接続語の問題は、単語の意味ではなく「前後の方向」で決まる。前の文を一言、後の文を一言にして、同じ方向か逆か、原因と結果かを見る。4つの選択肢は対比・追加・条件・因果で、必ず1つずつ置かれている。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問 2</span>段落の結びを足す<span class="ans">正解 ③</span></summary><div class="body">
+<p style="margin-top:12px"><b>コメント(2)に基づき、加えるのに最適な文を選べ。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>赤ペンの翻訳：結びの文が無い。段落のテーマと問題点から「だからこうしよう」を作る</h5>concluding sentence ＝ 段落のまとめ。段落の1文目（テーマ）と、直前の文（問題点）を見る。</div></div><div class="t"><div class="n">2</div><div><h5>段落の1文目と、直前の文</h5><div class="quote"><span class="en">[1文目] Another recommendation is to think about your communication style and manner …<br>[直前] … around 90% of people check smartphones during face-to-face conversations, which may appear impolite and affect relationships negatively.</span><span class="ja">[1文目] もう1つのおすすめは、会話のスタイルとマナーを考えること。<br>[直前] 90%の人が会話中にスマホを見る。それは失礼に見えて、関係に悪影響。</span></div>テーマは「会話のマナー」。問題は「会話中にスマホを見ること」。</div></div><div class="t"><div class="n">3</div><div><h5>穴の形が決まる：問題への解決＝「だから、目の前の人に集中しよう」</h5>結びは、問題を受けた「提案」の形。スマホではなく、話している相手に注意を向けよう。段落のテーマ（マナー）と一致する。</div></div></div>
+<div class="hole"><div class="l">穴の形（選択肢を見る前に決める）</div><div class="shape">スマホを見るのをやめて、話している相手に注意を向けよう（マナーの提案）</div></div>
+<div class="link4"><div class=""><b>① 対比 A↔B</b>反対・違い</div><div class=""><b>② 言い換え・具体化 A→A'</b>前を詳しく</div><div class=""><b>③ 追加 A＋B</b>同じ方向を足す</div><div class="hit"><b>④ 因果</b>理由・目的・結果</div></div>
+<h4>ピースを当てる</h4><div class="piece "><span class="m">①</span><span class="en">Limit the time you spend having conversations with people.</span><span class="why">会話の時間を減らす。問題は「会話中のスマホ」であって「会話が長い」ことではない。テーマと逆方向。</span></div><div class="piece "><span class="m">②</span><span class="en">Send messages with your phone just once or twice a day.</span><span class="why">メッセージの回数制限。会話中にスマホを見る問題とは別の話。本文にメッセージの話は無い。</span></div><div class="piece ok"><span class="m">③</span><span class="en">Try to focus your attention on the person you are talking with.</span><span class="why">穴の形と一致。会話中の相手に注意を向ける ＝ スマホを見ない ＝ マナー。</span></div><div class="piece "><span class="m">④</span><span class="en">Use your phone to find real friends through social media.</span><span class="why">スマホをもっと使えという話。問題の原因を勧めている。真逆。</span></div>
+<div class="quote" style="border-left:4px solid var(--ok)"><span class="tiny">はめて通して読む</span><span class="en">… which may appear impolite and affect relationships negatively. Try to focus your attention on the person you are talking with.</span><span class="ja">……それは失礼に見え、人間関係に悪影響を与えかねない。話している相手に注意を向けるようにしよう。</span></div>
+<p class="center"><button class="btn ghost" data-open="q2">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「結びを足せ」は、段落の1文目（テーマ）と直前の文（問題）の両方を受ける文を作る。片方だけに合う選択肢（①は会話の話、②④はスマホの話）が罠。両方に合うのは1つしかない。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問 3</span>主張に合わせて直す<span class="ans">正解 ①</span></summary><div class="body">
+<p style="margin-top:12px"><b>コメント(3)に基づき、下線部と置き換える最適な語句を選べ。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>赤ペンの翻訳：「これは主張ではない」＝ 直せ。主張は第1段落にある</h5>In summary, through a slow life, you can relax. リラックスは確かにスローライフっぽい。でも先生は「主張ではない」と言っている。主張は第1段落。</div></div><div class="t"><div class="n">2</div><div><h5>第1段落の主張文</h5><div class="quote"><span class="en">By taking your time and being completely focused on these things, you can improve the quality of your work and life.</span><span class="ja">時間をかけて大事なことに集中すれば、仕事と生活の質を上げられる。</span></div>主張は「仕事と生活の質が上がる」。「リラックスできる」はその一部ではあっても、主張そのものではない。</div></div><div class="t"><div class="n">3</div><div><h5>穴の形が決まる</h5>「仕事と私生活の両方で、満足できる」。improve the quality of your work and life の言い換え。work と life の両方が入っていること。</div></div></div>
+<div class="hole"><div class="l">穴の形（選択肢を見る前に決める）</div><div class="shape">仕事と生活の両方の質が上がる（第1段落の主張の言い換え）</div></div>
+<div class="link4"><div class=""><b>① 対比 A↔B</b>反対・違い</div><div class="hit"><b>② 言い換え・具体化 A→A'</b>前を詳しく</div><div class=""><b>③ 追加 A＋B</b>同じ方向を足す</div><div class=""><b>④ 因果</b>理由・目的・結果</div></div>
+<h4>ピースを当てる</h4><div class="piece ok"><span class="m">①</span><span class="en">you can be satisfied at work and in your personal life</span><span class="why">穴の形と一致。work and life → at work and in your personal life。quality を satisfied に言い換え。</span></div><div class="piece "><span class="m">②</span><span class="en">you can complete tasks in a short period of time</span><span class="why">短時間で終わらせる。スローライフと真逆（fast pace を否定する文章）。</span></div><div class="piece "><span class="m">③</span><span class="en">you can decrease stress by sharing work with others</span><span class="why">仕事を分担する話は本文に無い。stress という単語で引っかける罠。</span></div><div class="piece "><span class="m">④</span><span class="en">you can focus on the outcome rather than the process</span><span class="why">結果重視。本文は「過程に時間をかける」話。逆。</span></div>
+<div class="quote" style="border-left:4px solid var(--ok)"><span class="tiny">はめて通して読む</span><span class="en">In summary, through a slow life, you can be satisfied at work and in your personal life. Even small changes can improve your life.</span><span class="ja">まとめると、スローライフを通して、仕事でも私生活でも満足できる。小さな変化でも生活は良くなる。</span></div>
+<p class="center"><button class="btn ghost" data-open="q3">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「主張ではない」と言われたら、答えは必ず第1段落（または最終段落の別の文）に書いてある。下線部の近くを探しても無い。主張は文章の冒頭と末尾に置かれる。work and life のように、主張を構成する語が2つあるときは、両方入っている選択肢を探す。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問 4</span>エッセイの内容に合わせて直す<span class="ans">正解 ③</span></summary><div class="body">
+<p style="margin-top:12px"><b>コメント(4)に基づき、下線部と置き換える最適な語句を選べ。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>赤ペンの翻訳：「内容を正しく描写していない」＝ 直せ。何と合わせるか → 本文の3つの方法</h5>まとめの段落は、3つの方法を順に言い直している。Avoid having non-essential items ＝ 方法1、spend quality time with people around you ＝ 方法2。だから下線部は方法3の言い直しのはず。</div></div><div class="t"><div class="n">2</div><div><h5>方法3（第4段落）を見る</h5><div class="quote"><span class="en">The final aspect of slow living is to take 10 minutes to reflect on your day. Try to recollect people and events that were significant.</span><span class="ja">最後の側面は、10分取って1日を振り返ること。重要だった人や出来事を思い出す。</span></div>方法3は「1日を振り返る」。下線部の「友達と話したことを覚えておく」は、方法2（会話）と方法3（振り返り）が混ざっていて、方法3を正しく表していない。</div></div><div class="t"><div class="n">3</div><div><h5>穴の形が決まる</h5>「1日の印象的な部分を振り返る」。reflect on your day / recollect significant events の言い換え。</div></div></div>
+<div class="hole"><div class="l">穴の形（選択肢を見る前に決める）</div><div class="shape">1日の大事な部分を振り返る（方法3の言い換え）</div></div>
+<div class="link4"><div class=""><b>① 対比 A↔B</b>反対・違い</div><div class="hit"><b>② 言い換え・具体化 A→A'</b>前を詳しく</div><div class=""><b>③ 追加 A＋B</b>同じ方向を足す</div><div class=""><b>④ 因果</b>理由・目的・結果</div></div>
+<h4>ピースを当てる</h4><div class="piece "><span class="m">①</span><span class="en">plan your daily activities as soon as you wake up</span><span class="why">朝に計画を立てる。振り返り（reflect）ではなく予定（plan）。方向が逆。</span></div><div class="piece "><span class="m">②</span><span class="en">recall the bad things that happened in your life</span><span class="why">recall は合っているが bad things が違う。本文は significant（重要な）であって、悪いことではない。</span></div><div class="piece ok"><span class="m">③</span><span class="en">think back to the memorable parts of your day</span><span class="why">穴の形と一致。think back to ＝ reflect on / recollect、memorable parts ＝ significant people and events、your day ＝ your day。</span></div><div class="piece "><span class="m">④</span><span class="en">throw away unwanted items before sleeping</span><span class="why">不要な物を捨てる。方法1（持ち物）の話で、方法3ではない。しかも方法1はすでに Avoid having non-essential items で言い直されている。</span></div>
+<div class="quote" style="border-left:4px solid var(--ok)"><span class="tiny">はめて通して読む</span><span class="en">Avoid having non-essential items, spend quality time with people around you, and think back to the memorable parts of your day. By doing these things, you will have a chance to live a better and more rewarding life.</span><span class="ja">不要な物を持たない、周りの人と質の高い時間を過ごす、そして1日の印象的な部分を振り返る。これらをすれば、より良く、より実りある人生を送るチャンスが得られる。</span></div>
+<p class="center"><button class="btn ghost" data-open="q3">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>まとめの段落は「本文の各段落を1つずつ言い直す」構造になっていることが多い。対応表を作れば、下線部がどの段落の言い直しかが分かり、その段落だけ見れば答えが出る。④のように、別の段落（方法1）の言い直しを置いた罠が必ずある。</div></div></details>
+</section>
+
+<section class="step" id="s5"><div class="stepno">STEP 5</div><h2>全訳 ― 修正後の文章として読む</h2><div class="sub">Full translation</div>
+<p>色の下線は各設問の根拠箇所です。和訳は、正解を入れた「修正後」の文章にしてあります。通して読んで、先生のコメントがすべて解消されていることを確かめてください。</p>
+<div class="legend"><span class="l1">問1</span><span class="l2">問2</span><span class="l3">問3・問4</span></div>
+<p class="center"><button class="btn ghost" id="hideEn">英文を隠して和訳だけ読む</button></p>
+<div class="tr"><div class="lab">リード文</div><p class="en">In English class, you are writing an essay on a topic related to lifestyle in modern society. This is your most recent draft. You are now working on improvements based on comments from your teacher.</p><p class="ja">英語の授業で、あなたは現代社会のライフスタイルに関するテーマでエッセイを書いている。これが最新の原稿で、先生のコメントをもとに改善に取り組んでいる。</p></div><div class="tr"><div class="lab">第1段落｜主張</div><p class="en">In modern society, people are always busy and this fast pace of living can be stressful. The movement toward a slow life has shown us that you don’t have to be busy all the time. Instead, you can slow down and notice things that are truly meaningful to you. By taking your time and being completely focused on these things, you can improve the quality of your work and life. This essay will describe some ways to do this.</p><p class="ja">現代社会では、人はいつも忙しく、この速いペースの生活はストレスになりうる。スローライフへの動きは、いつも忙しくしている必要はないと教えてくれた。代わりに、ペースを落として、自分にとって本当に意味のあるものに気づける。時間をかけて、それらに完全に集中することで、仕事と生活の質を上げられる。<span class="qm q3">問3</span>このエッセイでは、そのための方法をいくつか説明する。</p></div><div class="tr"><div class="lab">第2段落｜方法1（修正後）</div><p class="en">One key point of the slow life is to own fewer belongings. This makes it easier to concentrate on everyday activities. However, many people today tend to buy more than they can consume. Do you really need five pairs of the latest sneakers? Slow-lifers would recommend reducing possessions and buying only necessary items.</p><p class="ja">スローライフの重要な点の1つは、持ち物を減らすことだ。そうすると日々の活動に集中しやすくなる。しかし<span class="qm q1">問1</span>、今日の多くの人は消費できる以上に買ってしまう傾向がある。最新のスニーカーが本当に5足も必要だろうか？ スローライフ実践者なら、持ち物を減らし、必要な物だけ買うことを勧めるだろう。</p></div><div class="tr"><div class="lab">第3段落｜方法2（修正後）</div><p class="en">Another recommendation is to think about your communication style and manner in your public and private life. Sadly, one study has found that around 90% of people check smartphones during face-to-face conversations, which may appear impolite and affect relationships negatively. Try to focus your attention on the person you are talking with.</p><p class="ja">もう1つのおすすめは、公私両方での会話のスタイルとマナーについて考えることだ。残念なことに、ある研究では約90%の人が対面の会話中にスマートフォンを確認していると分かった。それは失礼に見え、人間関係に悪影響を与えかねない。話している相手に注意を向けるようにしよう。<span class="qm q2">問2</span></p></div><div class="tr"><div class="lab">第4段落｜方法3</div><p class="en">The final aspect of slow living is to take 10 minutes to reflect on your day. Try to recollect people and events that were significant. By mentally highlighting them, you can find fulfillment in daily tasks.</p><p class="ja">スローライフの最後の側面は、10分取って1日を振り返ることだ。重要だった人や出来事を思い出してみよう。それらを心の中で強調することで、日々の仕事に充実感を見出せる。<span class="qm q3">問4</span></p></div><div class="tr"><div class="lab">第5段落｜まとめ（修正後）</div><p class="en">In summary, through a slow life, you can be satisfied at work and in your personal life. Even small changes can improve your life. Avoid having non-essential items, spend quality time with people around you, and think back to the memorable parts of your day. By doing these things, you will have a chance to live a better and more rewarding life.</p><p class="ja">まとめると、スローライフを通して、仕事でも私生活でも満足できる。<span class="qm q3">問3</span>小さな変化でも生活は良くなる。不要な物を持たず、周りの人と質の高い時間を過ごし、1日の印象的な部分を振り返ろう。<span class="qm q3">問4</span>これらをすれば、より良く、より実りある人生を送るチャンスが得られる。</p></div>
+</section>
+
+<section class="step" id="s6"><div class="stepno">STEP 6</div><h2>語句 ― 段落の役割を決める語を優先して覚える</h2><div class="sub">Vocabulary</div>
+<p>第4問は、段落の役割を示す語（One / Another / The third / In conclusion）と、赤ペンのコメントに出る語（purpose / summarize / fit / concluding）が読めれば、半分は解けます。</p>
+<h4>今回の最重要ペア</h4><div class="vocab"><div class="v pair"><span class="w">improve the quality of work and life ／ satisfied at work and in personal life</span><span>仕事と生活の質 → 仕事と私生活の満足（問3）</span></div><div class="v pair"><span class="w">reflect on your day ／ think back to your day</span><span>振り返る（問4）</span></div><div class="v pair"><span class="w">significant ／ memorable</span><span>重要な → 印象的な（問4）</span></div><div class="v pair"><span class="w">recollect ／ recall ／ think back</span><span>思い出す（問4、③と②の比較）</span></div><div class="v pair"><span class="w">check smartphones during conversations ／ focus on the person you are talking with</span><span>問題 → 解決（問2）</span></div><div class="v pair"><span class="w">However ／ Moreover ／ Otherwise ／ Therefore</span><span>対比／追加／さもないと／因果（問1、接続語の4分類）</span></div></div>
+<h4>本文・設問</h4><div class="vocab"><div class="v"><span class="w">pace</span><span class="pos">名</span><span>ペース、速さ</span></div><div class="v"><span class="w">movement</span><span class="pos">名</span><span>動き、運動</span></div><div class="v"><span class="w">meaningful</span><span class="pos">形</span><span>意味のある</span></div><div class="v"><span class="w">belongings</span><span class="pos">名</span><span>持ち物</span></div><div class="v"><span class="w">concentrate on</span><span class="pos">熟</span><span>〜に集中する</span></div><div class="v"><span class="w">consume</span><span class="pos">動</span><span>消費する</span></div><div class="v"><span class="w">possession</span><span class="pos">名</span><span>所有物</span></div><div class="v"><span class="w">recommendation</span><span class="pos">名</span><span>おすすめ、提案</span></div><div class="v"><span class="w">manner</span><span class="pos">名</span><span>マナー、態度</span></div><div class="v"><span class="w">face-to-face</span><span class="pos">形</span><span>対面の</span></div><div class="v"><span class="w">impolite</span><span class="pos">形</span><span>失礼な</span></div><div class="v"><span class="w">affect</span><span class="pos">動</span><span>影響する</span></div><div class="v"><span class="w">aspect</span><span class="pos">名</span><span>側面</span></div><div class="v"><span class="w">reflect on</span><span class="pos">熟</span><span>〜を振り返る</span></div><div class="v"><span class="w">recollect</span><span class="pos">動</span><span>思い出す</span></div><div class="v"><span class="w">significant</span><span class="pos">形</span><span>重要な</span></div><div class="v"><span class="w">fulfillment</span><span class="pos">名</span><span>充実感</span></div><div class="v"><span class="w">non-essential</span><span class="pos">形</span><span>不要な</span></div><div class="v"><span class="w">rewarding</span><span class="pos">形</span><span>実りある、やりがいのある</span></div><div class="v"><span class="w">connecting word</span><span class="pos">名</span><span>接続語</span></div><div class="v"><span class="w">concluding sentence</span><span class="pos">名</span><span>結びの文</span></div><div class="v"><span class="w">main argument</span><span class="pos">名</span><span>主張</span></div><div class="v"><span class="w">describe</span><span class="pos">動</span><span>描写する、述べる</span></div></div>
+</section>
+
+<section class="step" id="s7"><div class="stepno">STEP 7</div><h2>持ち帰る5STEP と 自己点検</h2><div class="sub">Take-aways</div>
+<div class="card"><div class="weapon"><div class="num">STEP 1</div><div><h4 style="margin:0 0 4px">全体の目的をつかむ。</h4><p style="margin:0">リード文・タイトル・第1段落。「この文章は何を伝えたい？」を一言に。</p></div></div><div class="weapon"><div class="num">STEP 2</div><div><h4 style="margin:0 0 4px">段落の役割をつかむ。</h4><p style="margin:0">各段落の1文目を目次として読む。赤ペンのある段落が全体の中で担当していることを言う。</p></div></div><div class="weapon"><div class="num">STEP 3</div><div><h4 style="margin:0 0 4px">赤ペンを翻訳する。</h4><p style="margin:0">足せ／直せ に分類し、「何を足す？ 何と合わせる？」まで具体化する。</p></div></div><div class="weapon"><div class="num">STEP 4</div><div><h4 style="margin:0 0 4px">穴の形を先に決める。</h4><p style="margin:0">対比・言い換え・追加・因果。選択肢を見る前に必要な内容を日本語で言う。</p></div></div><div class="weapon"><div class="num">STEP 5</div><div><h4 style="margin:0 0 4px">最後に選択肢で確定する。</h4><p style="margin:0">本文に入れて通して読む。他の選択肢が違う理由も本文で言う。</p></div></div></div>
+<div class="note"><b class="l">第4問の本質</b>正解を探しにいくな。本文を読んで、正解に必要な条件を先に決めろ。その条件を満たす選択肢を、最後に残せ。</div>
+<p><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。チェックはこの端末に保存されます。</p>
+<ul class="chk"><li><input type="checkbox"><span>赤ペンを見る前に、リード文・タイトル・第1段落から「何を伝えたい文章か」を一言で言えた</span></li><li><input type="checkbox"><span>各段落の1文目を先に読んで、段落ごとの役割（目的／各項目／まとめ）を把握してから本文に入った</span></li><li><input type="checkbox"><span>それぞれの赤ペンを「足せ」か「直せ」かに分類できた</span></li><li><input type="checkbox"><span>赤ペンを「目的が足りない」「段落のテーマとズレている」など、具体的な言葉に翻訳できた</span></li><li><input type="checkbox"><span>選択肢を見る前に、「ここにはこういう内容が必要」と日本語で言えた</span></li><li><input type="checkbox"><span>前後のつながりを、対比・言い換え・追加・因果のどれかで説明できた</span></li><li><input type="checkbox"><span>正解の選択肢を本文に入れて、通して読んで自然かどうか確認した</span></li><li><input type="checkbox"><span>不正解の選択肢を、本文のどこと合わないかで「切った」と説明できる</span></li><li><input type="checkbox"><span>「英語として自然そう」ではなく「この文章のこの場所に必要か」で選んだ</span></li><li><input type="checkbox"><span>6分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li><li><input type="checkbox"><span>問1で、前の文と後の文を一言ずつにして「理想 ↔ 現実」の対比だと言えた</span></li><li><input type="checkbox"><span>問2で、段落の1文目（マナー）と直前の文（スマホ）の両方に合う文を選んだ</span></li><li><input type="checkbox"><span>問3で、下線部の近くではなく第1段落の主張文に戻って答えを決めた</span></li><li><input type="checkbox"><span>問4で、まとめの段落と本文の3つの方法の対応表を作って、方法3の言い直しだと特定した</span></li></ul>
+<div class="score" id="chkScore">0 / 14</div>
+<div class="card soft"><b>次に向けて</b><p>10個以上なら手順は身についています。次は同じ手順を「初見の第4問」で再現できるかを試してください。9個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度6分で解き直してください。測っているのは正解ではなく、<b>穴の形を先に決める動作</b>です。</p>
+<p class="center"><button class="btn ghost" id="reset">解答・チェックをリセットしてもう一度解く</button></p></div>
+</section>
+<footer>出典：2025年度 共通テスト本試験 第4問 英語（リーディング）第4問<br>学部別・逆転合格設計塾 THINKING ― 受験は根性じゃなく、設計。</footer>
+</main>
+<div class="bbar"><div class="in"><button class="btn ghost" id="openSheet">本文を開く</button><a class="btn" href="thinking_kyotsu_q4_2026_honshi_eco_week.html">次へ</a></div></div>
+<div class="overlay" id="ov"></div>
+<div class="sheet" id="sheet"><div class="head"><b>本文 ― Try a Slow Life</b><div class="filters"><button data-f="none">なし</button><button data-f="all" class="on">全部</button><button class="f1" data-f="q1">問1</button><button class="f2" data-f="q2">問2</button><button class="f3" data-f="q3">問3・4</button></div><button class="close" id="closeSheet">×</button></div>
+<div class="scroll"><div class="passage show-all" id="sheetPassage"><p class="en lead-en">In English class, you are writing an essay on a topic related to lifestyle in modern society. This is your most recent draft. You are now working on improvements based on comments from your teacher.</p><div class="ttl">Try a Slow Life</div><p class="en">In modern society, people are always busy and this fast pace of living can be stressful. The movement toward a slow life has shown us that you don’t have to be busy all the time. Instead, you can slow down and notice things that are truly meaningful to you. <mark class="q3">By taking your time and being completely focused on these things, you can improve the quality of your work and life.</mark> This essay will describe some ways to do this.</p><p class="en">One key point of the slow life is to own fewer belongings. <mark class="q1">This makes it easier to concentrate on everyday activities.</mark> <sup class="cm">(1)</sup><span class="pos">∧</span> <mark class="q1">Many people today tend to buy more than they can consume.</mark> Do you <i>really</i> need five pairs of the latest sneakers? Slow-lifers would recommend reducing possessions and buying only necessary items.</p><p class="en">Another recommendation is to think about your communication style and manner in your public and private life. <mark class="q2">Sadly, one study has found that around 90% of people check smartphones during face-to-face conversations, which may appear impolite and affect relationships negatively.</mark> <sup class="cm">(2)</sup><span class="pos">∧</span></p><p class="en"><mark class="q3">The final aspect of slow living is to take 10 minutes to reflect on your day. Try to recollect people and events that were significant. By mentally highlighting them, you can find fulfillment in daily tasks.</mark></p><p class="en">In summary, through a slow life, <sup class="cm">(3)</sup><u class="ul">you can relax</u>. Even small changes can improve your life. Avoid having non-essential items, spend quality time with people around you, and <sup class="cm">(4)</sup><u class="ul">remember what you talked about with your friends</u>. By doing these things, you will have a chance to live a better and more rewarding life.</p><div class="cmts"><div class="cmt"><span class="n">(1)</span><span class="en">Add an appropriate connecting word.</span></div><div class="cmt"><span class="n">(2)</span><span class="en">Add a concluding sentence to improve this paragraph.</span></div><div class="cmt"><span class="n">(3)</span><span class="en">The underlined part isn’t your main argument. Rewrite it.</span></div><div class="cmt"><span class="n">(4)</span><span class="en">The underlined part doesn’t describe your essay content well. Change it.</span></div></div><p class="tiny">Overall comments: <span class="en">You have really improved your essay. Keep working on it. I’m going to follow your suggestions to slow down and hopefully improve the quality of my life.</span></p></div></div></div>
+<script>const TARGET_SEC=360; const ANS=[{"q": 1, "type": "single", "ans": "①"}, {"q": 2, "type": "single", "ans": "③"}, {"q": 3, "type": "single", "ans": "①"}, {"q": 4, "type": "single", "ans": "③"}];
+(function(){
+  const KEY = 'thinking_q3_' + document.body.dataset.key;
+  // timer
+  let t = TARGET_SEC, iv=null, running=false, elapsed=0;
+  const big=document.getElementById('tBig'), chip=document.getElementById('tChip'), btn=document.getElementById('tBtn');
+  function fmt(s){ const neg=s<0; s=Math.abs(s); const m=Math.floor(s/60), r=s%60; return (neg?'+':'')+m+':'+String(r).padStart(2,'0'); }
+  function render(){ const left=TARGET_SEC-elapsed; big.textContent=fmt(left); chip.textContent=fmt(left); big.style.color = left<0?'var(--ng)':'inherit'; }
+  render();
+  btn.addEventListener('click',()=>{
+    if(!running){ running=true; btn.textContent='ストップ'; iv=setInterval(()=>{elapsed++; render();},1000); }
+    else { running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // grading
+  document.getElementById('grade').addEventListener('click',()=>{
+    let n=0;
+    ANS.forEach(a=>{
+      const el=document.getElementById('r'+a.q);
+      let ok=false, user='';
+      if(a.type==='single'){
+        const c=document.querySelector('input[name="q'+a.q+'"]:checked'); user=c?c.value:'';
+        ok = user===a.ans;
+      }else{ ok=false; }
+      if(ok){n++; el.textContent='正解';el.className='result ok';}
+      else{ el.textContent='不正解（正解：'+(Array.isArray(a.ans)?a.ans.join('→'):a.ans)+'）'; el.className='result ng'; }
+    });
+    const s=document.getElementById('gradeSum'); s.textContent= n+' / '+ANS.length+'問正解。正解数より、どの設問で本文に戻る回数が増えたかを覚えておいてください。';
+    if(running){ running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // sheet
+  const sheet=document.getElementById('sheet'), ov=document.getElementById('ov');
+  function openSheet(f){ sheet.classList.add('open'); ov.classList.add('on'); if(f) setFilter(f); }
+  function closeSheet(){ sheet.classList.remove('open'); ov.classList.remove('on'); }
+  document.getElementById('openSheet').addEventListener('click',()=>openSheet());
+  document.getElementById('closeSheet').addEventListener('click',closeSheet);
+  ov.addEventListener('click',closeSheet);
+  const sp=document.getElementById('sheetPassage');
+  function setFilter(f){
+    sp.className='passage show-'+f;
+    document.querySelectorAll('.filters button').forEach(b=>b.classList.toggle('on', b.dataset.f===f));
+  }
+  document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f)));
+  document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openSheet(b.dataset.open)));
+  setFilter('none');
+  // hide english toggle
+  const hb=document.getElementById('hideEn'); if(hb){ hb.addEventListener('click',()=>{ document.body.classList.toggle('hideen'); hb.textContent=document.body.classList.contains('hideen')?'英文も表示する':'英文を隠して和訳だけ読む'; }); }
+  // checklist persistence
+  const boxes=[...document.querySelectorAll('.chk input')];
+  let saved={}; try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  boxes.forEach((b,i)=>{ b.checked=!!saved[i]; b.addEventListener('change',()=>{ saved[i]=b.checked; try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){} upd(); }); });
+  function upd(){ const n=boxes.filter(b=>b.checked).length; document.getElementById('chkScore').textContent=n+' / '+boxes.length; }
+  upd();
+  document.getElementById('reset').addEventListener('click',()=>{
+    boxes.forEach(b=>b.checked=false); saved={}; try{localStorage.removeItem(KEY);}catch(e){} upd();
+    document.querySelectorAll('.answers input').forEach(i=>i.checked=false);
+    document.querySelectorAll('.order select').forEach(s=>s.selectedIndex=0);
+    document.querySelectorAll('.result').forEach(r=>{r.textContent='';r.className='result';});
+    document.getElementById('gradeSum').textContent='';
+    elapsed=0; render(); if(running){running=false;clearInterval(iv);} btn.textContent='スタート';
+    window.scrollTo({top:document.getElementById('s0').offsetTop-70,behavior:'smooth'});
+  });
+})();
+</script>
+</body></html>

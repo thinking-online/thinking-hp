@@ -900,12 +900,14 @@ var UNI_IMG = {
   "中央大学": "chuo", "法政大学": "hosei", "学習院大学": "gakushuin",
   "関西大学": "kansai", "関西学院大学": "kwansei", "同志社大学": "doshisha",
   "立命館大学": "ritsumeikan", "日本大学": "nihon", "東洋大学": "toyo", "駒澤大学": "komazawa", "専修大学": "senshu",
-  "京都産業大学": "kyosan", "近畿大学": "kindai", "甲南大学": "konan", "龍谷大学": "ryukoku"
+  "京都産業大学": "kyosan", "近畿大学": "kindai", "甲南大学": "konan", "龍谷大学": "ryukoku",
+  "中京大学": "chukyo"
 };
 /* LQIP:BEGIN（scripts/kakomon-portal-lqip.py が書く。手で直さない） */
 var PIC_LQ = {
 "__top": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAACwBgCdASogABIAPu1gqE2ppaOiMAgBMB2JZgC7MtVA/3VXgxl9c7uSU1QsudtZrhgxatscF55qk8rmnN2sgAD+4eEtuckHNh7pq7Ncn2fiBMqSyefKKVTySt+Qcn09frevWC+5TtyREsaZ3NaftQZK083FzaPkojhX9mG1/y/cbPOpDXWh8+AQ9bnzYT6ZAMdp2L/5z96YE0VvCaz/rQ/wJXEkFw9ute0JAeQTJm1laOz+DTI+Nf7KZKz0Ehkdtr7HxAmllAuRlqNpGj3h1TgqUKjhQTf7sloUEAAA",
 "aoyama": "data:image/webp;base64,UklGRv4AAABXRUJQVlA4IPIAAACQBQCdASogABIAPu1gqE2ppaOiMAgBMB2JZgCsMxrUDttibzV3UQvOqF9cGgc+iY9g1UdYAAD+4lZLQhps/q5pZkE+P2/51oehQ+OlUmv4lGZGngnzSRy/wMXDnq5WYo5UFh+n9DWzBHshr9elZ4Y7R+PIBnK3tANNczMbPtPiDFIjhjJ4WUZ8c3wAeJlN83kC1mppVbDOkTkrh3hI6XV1w8JmznstWUqPU6okN3Ay19haMy7ybB6c2iVqxZHSed3aj1z7PlEwD4QF+INxsIzbJPFOdDVzR0Q6SyqEDXohML8fIcgnloM9HgBMYh/wG0AAAA==",
+"chukyo": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAAAwBQCdASogABIAPu1qrlCppaQiqAqpMB2JZgC7ADTs22udY6ju1OFVo7g1LP9WvsMdAAD+9wUsqtWhabIbkYyMf/teKtcweyvU4Puxn/j0GcFUCSfxIHh3ArO8o0RljMwsOilIgjPJjHoM1GeLnRyiaoG5eYolC/ohW2tb+fsxLzHYjxtrh0stcQ8qnlCIWk4fr0hCOyCnrQR7pNWiUN1mQG966liloDOjATF7AAA=",
 "chuo": "data:image/webp;base64,UklGRt4AAABXRUJQVlA4INIAAABQBQCdASogABIAPu1gqE2ppSOiMAgBMB2JZAC06CHhQ2I1L0jk6cHA/PxwGLTG277S6tAA/uiSG8ogMDNr2wRBNa4CecHCSuNv5aK4TqcfmL7L75K+MZj8Da9cyVMWmiAmxxl4aZgsf5J/RkqK5W3SFu216gGtzRfaJUOJuFQMq5DzziD9Wv+WiStp/4tGVC6FfqDnzHSzBiD9/8P4/gvdOdA43F/3XVKgGGBV1xPyT05ze5KWSFGcClSGA7rwBTzSsSsTLheUa4JTnXITi9tP2AA=",
 "doshisha": "data:image/webp;base64,UklGRvAAAABXRUJQVlA4IOQAAACwBQCdASogABIAPu1iqU2ppaOiMAgBMB2JQBfJMZjcDvYWDVF5f8rd+RSDbVd6gIn1ZZSF8gAA/uiTnxq/ru5uWwiZDwDNBtPzXgqYK5BW7G+U2aWL32xh/GVLu76p+iuJgC1xHY+QGRFLwTkZTVqZ30NPGFxLl7K99U3O6sv16CdbPZiABcWaGeUaF/Bt5PGOZYHMF1Fp+cTXMSmIkUkJ+jo8sA0bxfovtMsAts6T1VeMN0uqj/iO8Z5wKKauBRTcYjEWBFVVs3GNjppjusPGzMgCSUhVsSd/MfpvAehOlPPJEAA=",
 "gakushuin": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAABQBgCdASogABIAPu1kqU2ppaOiMAgBMB2JYgDB51/8/9EAATSWjRmh8ZzQhH1iqeUCyZkhGk8cq0UxgAD+64sRolBSBz5AipcGlMbC2HNSbLf6HfJsbi8rpGqb3oqqdconiBtbuzeP6cJzmRwP4+iPGBJcnHqAe0UsPsEDbFKg6owinGMXIp4aUO50aj46oPJgyC3Xi6GFKW7Gu4cnuNhTOUrpJHQi4qYrOi/paLpjiCwcmniY3h1gRMfJZFLxy7+Q8Ul0lXtmCO7MUS+W2AAft6jxNiYfw8NHrtaFQlMgSRqRxZrpcD+8wYAAAA==",

@@ -6,10 +6,10 @@ NAVY, GRAY = "#15467E", "#8a8a8a"
 RATE = 520
 def esc(s): return html.escape(s, quote=False)
 
-MAP = [("第1章　計画","第2章","計画編"), ("第2章　授業","第3章","授業編"),
-       ("第3章　暗記","第4章","暗記編"), ("第4章　演習","第5章","演習編"),
-       ("第5章　復習","第6章","復習編"), ("第6章　集中","第7章","集中編"),
-       ("第7章　気持ち","第8章","気持ち編"), ("終章　本番","終章","本番編")]
+MAP = [("第1章　計画","第3章","計画編"), ("第2章　授業","第4章","授業編"),
+       ("第3章　暗記","第5章","暗記編"), ("第4章　演習","第6章","演習編"),
+       ("第5章　復習","第7章","復習編"), ("第6章　集中","第8章","集中編"),
+       ("第7章　気持ち","第9章","気持ち編"), ("終章　本番","終章","本番編")]
 
 gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
@@ -39,7 +39,7 @@ for old, no, name in MAP:
     c = by[old]; n = len(c["items"])
     pg = max(1, round(sum(ZI.get(i["n"],0) for i in c["items"])/RATE)) + 2; tot += pg
     rows.append((no, name, n, pg))
-TOTAL = sum(FP) + tot + 24
+TOTAL = sum(FP) + 12 + tot + 24
 
 front = f'''<div class="sheet">
 <div class="ttl">やっているのに、伸びない。</div>
@@ -54,7 +54,10 @@ front = f'''<div class="sheet">
 <tr class="sb"><td></td><td colspan="3">やめる4つ　／　探している間は、やらなくていい</td></tr>
 <tr class="fr"><td class="c1">第1章</td><td class="c2">結果 ＝ 戦略 × やり方 × 量</td>
   <td class="c3"></td><td class="c4">{FP[2]}</td></tr>
-<tr class="sb"><td></td><td colspan="3">かけ算だから、1つが0なら0　／　やり方を、6つに分ける</td></tr>
+<tr class="sb"><td></td><td colspan="3">かけ算だから、1つが0なら0　／　類書が埋めているのは、まん中の1列だけ</td></tr>
+<tr class="fr"><td class="c1">第2章</td><td class="c2">頭のいい人が<span class="hen">持っている</span>、6つの武器</td>
+  <td class="c3">6つ</td><td class="c4">12</td></tr>
+<tr class="sb"><td></td><td colspan="3">式を分解しただけ　／　選ぶ・入れる・つなげる・出す・なおす・続ける</td></tr>
 '''
 for no, name, n, pg in rows:
     front += (f'<tr class="mr"><td class="c1">{no}</td>'

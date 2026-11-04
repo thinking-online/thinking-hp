@@ -23,7 +23,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 20;
+var SETUP_VERSION = 21;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -1306,6 +1306,7 @@ function setupCore_() {
 
   rootFolder_();
   unshareReqPhotos_();
+  booksSummary_();
   fillUniRows_();
   var left = shareMaterials_();
   applyValidation_();
@@ -1597,6 +1598,36 @@ function bookIdsByName_() {
     if (n) m[n] = String(values[i][col['ID']] || '');
   }
   return m;
+}
+
+/**
+ * 問題集シートの右側（M1 から）に、グループごとの「公開中／全冊数」を式で出す（運営が見るだけ。ポータルは読まない）。
+ * 見出しは既存の列名と重ならない名前にする（列は見出しの名前で探すため）。グループの並びは「グループ順」の設定どおり。
+ * 式なので、公開のチェックを付け外しするとその場で変わる。セットアップのたびに式を書き直す（グループ順の変更に追従）。
+ */
+function booksSummary_() {
+  var bs = sheet_(SHEET.BOOKS);
+  var head = bs.getRange(1, 1, 1, bs.getLastColumn()).getValues()[0].map(String);
+  var c = function (name) { return columnLetter_(head.indexOf(name) + 1); };
+  var G = c('グループ') + '2:' + c('グループ'), N = c('問題集名') + '2:' + c('問題集名'), P = c('公開') + '2:' + c('公開');
+  var order = splitList_(config_()['グループ順']).map(function (g) { return '"' + g.replace(/"/g, '') + '"'; }).join(',');
+  var last = 0;
+  HEAD.BOOKS.forEach(function (h) { last = Math.max(last, head.indexOf(h) + 1); });
+  var at = last + 2; // 問題集の列のいちばん右から1列あける
+  var f = '=ARRAYFORMULA(LET(u,UNIQUE(FILTER(' + G + ',' + G + '<>"",' + G + '<>"削除",' + N + '<>"")),' +
+    'g,SORT(u,IFNA(MATCH(u,{' + order + '},0),99),TRUE),' +
+    'VSTACK({"（集計）グループ","公開中","全冊数"},' +
+    '{"合計",COUNTIFS(' + P + ',TRUE,' + G + ',"<>削除",' + N + ',"<>"),COUNTIFS(' + N + ',"<>",' + G + ',"<>削除")},' +
+    'HSTACK(g,COUNTIFS(' + G + ',g,' + P + ',TRUE,' + N + ',"<>"),COUNTIFS(' + G + ',g,' + N + ',"<>")))))';
+  bs.getRange(1, at).setFormula(f);
+  bs.getRange(1, at, 2, 3).setFontWeight('bold');
+  bs.setColumnWidth(at, 130);
+}
+
+function columnLetter_(n) {
+  var s = '';
+  while (n > 0) { var m = (n - 1) % 26; s = String.fromCharCode(65 + m) + s; n = Math.floor((n - 1) / 26); }
+  return s;
 }
 
 /** 大学名から決まるグループ（教材の取り込みで新しい問題集を足すとき、「その他」にしないため） */

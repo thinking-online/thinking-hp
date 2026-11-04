@@ -23,7 +23,7 @@
 var VERSION = '1.2.0';
 
 /** シートの構造（列・入力規則・トリガー）を変えたら1つ上げる。シートを開いたときに自動でセットアップが走る */
-var SETUP_VERSION = 18;
+var SETUP_VERSION = 20;
 
 var SHEET = {
   BOOKS: '問題集',
@@ -61,7 +61,7 @@ var DEFAULT_CONFIG = [
   ['CAMPUS_URL', 'https://liff.line.me/2010454771-l3vZsfjz', '未登録の塾生に案内する THINKING CAMPUS'],
   ['購入案内URL', 'https://lin.ee/yJ8MFVb', 'ロック中の問題集の「購入はこちら」の飛び先'],
   ['公式LINE_URL', 'https://lin.ee/yJ8MFVb', '問い合わせ先'],
-  ['グループ順', 'MARCH,関関同立,日東駒専,産近甲龍,国公立,その他', 'ホームに並ぶ順番（カンマ区切り）'],
+  ['グループ順', '早慶,MARCH,関関同立,日東駒専,産近甲龍,国公立,その他', 'ホームに並ぶ順番（カンマ区切り）'],
   ['問題集リストURL', 'https://thinking-online.com/kakomon-portal/seed/books.csv', '問題集の一覧の元データ（GitHub）。シートを開くと差分が自動で反映される'],
   ['確認用リンク（塾生の表示）', '7ccc70f5d82bdef9e7848168a65cf1cc16d33c84cf3a278810e23aef4491a0d9', 'LINEログインなしで塾生と同じ表示を見るリンクのキー（スタッフ用）。「停止」で無効。新しい文字列を入れるとキーが変わる'],
   ['確認用リンク（未購入者の表示）', '950261aa90e0cd3cf92c0442f1672fce937f9910799634ec985f94d7808dc784', 'LINEログインなしで未購入者（ゲスト）と同じ表示を見るリンクのキー。「停止」で無効。新しい文字列を入れるとキーが変わる'],
@@ -494,6 +494,8 @@ function toggleDone_(me, book, file, title, on) {
 
 var REQ_KINDS = ['誤字・脱字', '答えが違う', '解説が分かりにくい', '表示されない', 'その他'];
 var REQ_STATES = ['未対応', '対応中', '対応済み', '対応しない'];
+// 保存先フォルダの中に置くが、大学のフォルダではない（教材の取り込みでは読み飛ばす）
+var REQ_PHOTO_FOLDER = '修正依頼の写真';
 
 /**
  * 生徒からの修正依頼を「修正依頼」シートに1行で残す。だれから・どの教材かは自動で入る。
@@ -518,7 +520,7 @@ function saveRequest_(me, body) {
   var stamp = Utilities.formatDate(when, 'Asia/Tokyo', 'yyyyMMdd-HHmmss');
   var links = [];
   if (photos.length) {
-    var folder = childFolder_(rootFolder_(), '修正依頼の写真');
+    var folder = childFolder_(rootFolder_(), REQ_PHOTO_FOLDER);
     photos.forEach(function (b64, i) {
       var blob = Utilities.newBlob(Utilities.base64Decode(String(b64)), 'image/jpeg', stamp + '_' + (me.name || 'noname') + '_' + (i + 1) + '.jpg');
       links.push(folder.createFile(blob).getUrl());
@@ -976,6 +978,7 @@ function importCore_() {
   var unis = root.getFolders();
   while (unis.hasNext() && !outOfTime()) {
     var uniFolder = unis.next();
+    if (uniFolder.getName() === REQ_PHOTO_FOLDER) continue;
     if (importUniImage_(uniFolder, uniImgs)) images++;
     var bookFolders = uniFolder.getFolders();
     while (bookFolders.hasNext() && !outOfTime()) {
@@ -1285,6 +1288,13 @@ function setupCore_() {
     groups.splice(at < 0 ? groups.length : at, 0, '国公立');
     setConfig_('グループ順', groups.join(','));
   }
+  // グループに「早慶」を足す（いちばん前）。すでに入っている早稲田・慶應の問題集を「その他」から移す
+  groups = splitList_(config_()['グループ順']);
+  if (groups.indexOf('早慶') < 0) {
+    groups.unshift('早慶');
+    setConfig_('グループ順', groups.join(','));
+  }
+  regroupBooks_();
 
   // 表示名を「THINKING 合格部屋」に変える（2026/10。運営が手で変えた名前はそのまま）
   if (config_()['ポータル名'] === 'THINKING 過去問ポータル') setConfig_('ポータル名', 'THINKING 合格部屋');
@@ -1295,6 +1305,7 @@ function setupCore_() {
   CacheService.getScriptCache().remove('cfg');
 
   rootFolder_();
+  unshareReqPhotos_();
   fillUniRows_();
   var left = shareMaterials_();
   applyValidation_();
@@ -1309,6 +1320,26 @@ function setupCore_() {
   ss.getSheetByName(SHEET.DONE).hideSheet();
   bumpCatalogVer_();
   return left;
+}
+
+/**
+ * 2026/10：教材の取り込みが「修正依頼の写真」フォルダを大学と取り違え、生徒の写真を大学の画像として
+ * 共有・登録していた。大学シートからその行を消し、写真の共有を止める（何度実行しても壊れない）。
+ */
+function unshareReqPhotos_() {
+  var us = SpreadsheetApp.getActive().getSheetByName(SHEET.UNIS);
+  if (us && us.getLastRow() > 1) {
+    var names = us.getRange(2, 1, us.getLastRow() - 1, 1).getValues();
+    for (var i = names.length - 1; i >= 0; i--) if (String(names[i][0]).trim() === REQ_PHOTO_FOLDER) us.deleteRow(i + 2);
+  }
+  var it = rootFolder_().getFoldersByName(REQ_PHOTO_FOLDER);
+  while (it.hasNext()) {
+    var files = it.next().getFiles();
+    while (files.hasNext()) {
+      var f = files.next();
+      if (f.getSharingAccess() !== DriveApp.Access.PRIVATE) f.setSharing(DriveApp.Access.PRIVATE, DriveApp.Permission.NONE);
+    }
+  }
 }
 
 /** 教材のPDFを「リンクを知っている人は見られる」にそろえる。時間内に終わらなかった分は次に開いたときか「点検」で */
@@ -1568,11 +1599,45 @@ function bookIdsByName_() {
   return m;
 }
 
+/** 大学名から決まるグループ（教材の取り込みで新しい問題集を足すとき、「その他」にしないため） */
+var UNI_GROUP = {
+  '早稲田大学': '早慶', '慶應義塾大学': '早慶',
+  '明治大学': 'MARCH', '青山学院大学': 'MARCH', '立教大学': 'MARCH', '中央大学': 'MARCH', '法政大学': 'MARCH',
+  '関西大学': '関関同立', '関西学院大学': '関関同立', '同志社大学': '関関同立', '立命館大学': '関関同立',
+  '日本大学': '日東駒専', '東洋大学': '日東駒専', '駒澤大学': '日東駒専', '専修大学': '日東駒専',
+  '京都産業大学': '産近甲龍', '近畿大学': '産近甲龍', '甲南大学': '産近甲龍', '龍谷大学': '産近甲龍'
+};
+
+/** 同じ大学の問題集がすでにあればそのグループ、なければ UNI_GROUP、どちらもなければ「その他」 */
+function groupForUni_(uni) {
+  var bv = sheet_(SHEET.BOOKS).getDataRange().getValues();
+  var bc = colIndex_(bv[0]);
+  for (var i = 1; i < bv.length; i++) {
+    var g = String(bv[i][bc['グループ']] || '');
+    if (String(bv[i][bc['大学']] || '').trim() === uni && g && g !== 'その他' && g !== '削除') return g;
+  }
+  return UNI_GROUP[uni] || 'その他';
+}
+
+/** 「その他」になっている問題集のうち、UNI_GROUP にある大学のものを正しいグループに移す（何度実行しても壊れない） */
+function regroupBooks_() {
+  var bs = sheet_(SHEET.BOOKS);
+  var bv = bs.getDataRange().getValues();
+  if (bv.length < 2) return;
+  var bc = colIndex_(bv[0]);
+  for (var i = 1; i < bv.length; i++) {
+    var g = UNI_GROUP[String(bv[i][bc['大学']] || '').trim()];
+    var cur = String(bv[i][bc['グループ']] || '');
+    if (g && (cur === '' || cur === 'その他')) bs.getRange(i + 1, bc['グループ'] + 1).setValue(g);
+  }
+}
+
 function addBookRow_(uni, name) {
+  var group = groupForUni_(uni);
   var row = HEAD.BOOKS.map(function (h) {
     if (h === '大学') return uni;
     if (h === '問題集名') return name;
-    if (h === 'グループ') return 'その他';
+    if (h === 'グループ') return group;
     if (h === '公開' || h === 'サンプル') return false;
     return '';
   });

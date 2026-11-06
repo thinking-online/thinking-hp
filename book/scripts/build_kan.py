@@ -12,6 +12,9 @@ gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
 ZI = {_p[i]: len(re.sub(r'\s','',_p[i+1])) for i in range(1,len(_p),2)}
 HEAD = {_p[i]: ("頭のなか" in _p[i+1] or "頭の中" in _p[i+1]) for i in range(1,len(_p),2)}
+DONE = {_p[i] for i in range(1,len(_p),2)
+        if re.search(r'###?\s*伸びない人', _p[i+1]) and re.search(r'###?\s*頭のいい人', _p[i+1])}
+THINK = {"入れる力","つなげる力","出す力","なおす力"}
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
 sec = plan.split("# 7 62項目")[1].split("# 8 1週間")[0]
@@ -52,8 +55,13 @@ p1 = f'''<div class="sh">
 <div class="bd">やっているのに伸びない中高生と、その保護者。社会人は切る。</div>
 
 <div class="sec">約束</div>
-<div class="bd">頭のなかは、外から見えない。だから真似できない。それを見える化する。<br>
-<span class="chk">→　62項目すべてに「頭のなか」を書く（現在 54／62）</span></div>
+<div class="bd">頭のなかは、外から見えない。だから真似できない。それを見える化する。</div>
+
+<div class="sec">幹　62項目を貫く1行</div>
+<div class="kan">その場の自分を、信用しない。</div>
+<div class="bd sm">62個の×を全部並べると、サボっている人の言葉が1つもない。全部、まじめな人が自分に言っている言葉で、
+その場では正しく聞こえる。そして全部、確かめていない。<br>
+「わかった」も「大事そう」も「やる気がない」も、確かめていない その場の感覚。6つの武器は、それを確かめる6つの方法。</div>
 
 <div class="sec">論理</div>
 <pre class="logic">穴の空いたバケツ　→　もっと注ぐな、穴をふさげ
@@ -69,12 +77,40 @@ p1 = f'''<div class="sh">
 
 <div class="sec">6つの武器</div>
 <div class="w6">{VOICE}</div>
-<div class="bd sm">選ぶ力＝戦略　／　入れる・つなげる・出す・なおす＝やり方　／　続ける力＝量<br>
-11本　／　33本　／　18本　＝　62</div>
+<div class="bd sm">選ぶ力＝戦略　／　入れる・つなげる・出す・なおす＝やり方　／　続ける力＝量　　11本 ／ 33本 ／ 18本 ＝ 62</div>
+</div>
+
+<div class="sh">
+<div class="lb">どこまで書くか</div>
+<div class="sec">深さ</div>
+<table class="lv">
+<tr><td class="l">レベル1</td><td class="ln">原則</td><td class="le">アクティブリコールが効く</td><td class="lw">科学の本</td></tr>
+<tr><td class="l">レベル2</td><td class="ln">行動</td><td class="le">寝る前に復習しろ</td><td class="lw">多くの勉強法本</td></tr>
+<tr><td class="l">レベル3</td><td class="ln">手順</td><td class="le">教科書を閉じて、白紙に3つ書く</td><td class="lw">いい勉強法本</td></tr>
+<tr class="hit"><td class="l">レベル4</td><td class="ln">頭の動かし方</td><td class="le">白紙を見て何も出ないとき、何を先に探すか</td><td class="lw">この本</td></tr>
+</table>
+<div class="bd sm">調べた類書5冊は、2か3で止まっていた。3まで行く本はある。4はない。</div>
+
+<div class="sec">分岐点　この本の必殺技</div>
+<pre class="logic">1　同じ場面で、2つの頭の中を並べる　　　伸びない人　／　頭のいい人
+2　時間を入れる　　　　　　　　　　　　 3秒　／　40秒
+3　<span class="em">分岐点の1語を取り出す</span>　　　　　　読者が持ち帰るのは、ここだけ</pre>
+<div class="bd sm">2つの思考を並べるだけなら類書もやる。どこで枝分かれしたかを1語に絞るのは見たことがない。
+テスト2週間前の夜に思い出せるのは、手順ではなく1語。</div>
+
+<div class="sec">試作した5つ</div>
+<table class="fk">
+<tr><td class="fn">37</td><td class="ft">「ここ、全部わからないです」と言う</td><td class="fw">どこまで？</td></tr>
+<tr><td class="fn">20</td><td class="ft">単語を、1語10回ずつ書いて覚える</td><td class="fw">何秒で出た？</td></tr>
+<tr><td class="fn">30</td><td class="ft">初めて見る問題を、ゼロから考え続ける</td><td class="fw">全部が初めて？　組み合わせだけ？</td></tr>
+<tr><td class="fn">52</td><td class="ft">やる気が出るのを待つ</td><td class="fw">で、1個目は？</td></tr>
+<tr><td class="fn">61</td><td class="ft">緊張したときに、落ち着こうとする</td><td class="fw">来てる</td></tr>
+</table>
 
 <div class="sec">形式</div>
 <div class="bd">全項目 ×／○ の二項対立。1項目3ページ。右肩に武器タグ1つ。<br>
-全項目に「頭のなか」を1節　←　約束の実行。</div>
+全項目に「頭のなか」を1節。<span class="chk">現在 54／62</span><br>
+頭を動かす項目に、分岐点を1語。<span class="chk">現在 1／約40</span></div>
 
 <div class="sec">物理</div>
 <div class="bd">四六判　2色刷り　約{TOTAL}ページ　1,700円台<span class="chk">　←　価格は学研に確認</span></div>
@@ -112,10 +148,15 @@ for k, no, name in MAP:
     for it in c["items"]:
         st = '<span class="star">★</span>' if it["thick"] else ''
         hd = '' if HEAD.get(it["n"], True) else '<span class="warn">頭のなか 未</span>'
+        if it["n"] in DONE: hd += '<span class="done">分岐点 済</span>'
+        elif it["w"] in THINK: hd += '<span class="need">分岐点 要</span>'
         det.append(f'<div class="it"><div class="t"><span class="n">{it["n"]}</span>{esc(it["t"])}{st}'
                    f'<span class="wg">{it["w"]}</span>{hd}</div>'
                    f'<div class="x">×　{esc(it["x"])}</div><div class="o">○　{esc(it["o"])}</div></div>')
-det.append('<div class="nt">★＝厚く書く項目。「頭のなか 未」＝約束の節がまだない項目（8本）。</div></div>')
+det.append('<div class="nt">★＝厚く書く項目。<span class="warn">頭のなか 未</span>＝約束の節がまだない項目。'
+ '<span class="need">分岐点 要</span>＝入れる・つなげる・出す・なおす の33本。'
+ 'ここに選ぶ力と続ける力から頭を動かすものを足して、計40本前後になる。'
+ '物理と段取りの項目（スマホを別の部屋に置く、寝る時間を削らない等）には分岐点がないので入れない。</div></div>')
 
 CSS = f"""
 @page{{size:A4;margin:17mm 20mm}}
@@ -163,9 +204,30 @@ table.big td{{padding:2.4mm 1mm;vertical-align:baseline}}
 .it .n{{font-family:"Noto Sans CJK JP",sans-serif;font-size:9pt;font-weight:700;color:{NAVY};margin-right:3mm}}
 .it .star{{color:#b8860b;font-size:8pt;margin-left:1.5mm}}
 .it .wg{{font-family:"Noto Sans CJK JP",sans-serif;font-size:7pt;color:{GRAY};margin-left:3mm}}
-.it .warn{{font-family:"Noto Sans CJK JP",sans-serif;font-size:7pt;color:#c0392b;margin-left:2mm}}
+""
 .it .x{{font-size:8.8pt;color:#666;margin:.5mm 0 0 9mm}}
 .it .o{{font-size:8.8pt;color:{NAVY};margin-left:9mm}}
+.kan{{font-family:"Noto Sans CJK JP",sans-serif;font-size:15pt;font-weight:700;color:{NAVY};
+ text-align:center;border:1.5px solid {NAVY};padding:5mm;margin:1mm 0 3mm;letter-spacing:.08em}}
+pre.logic .em{{color:{NAVY};font-weight:700}}
+table.lv{{width:100%;border-collapse:collapse;margin-bottom:2.5mm}}
+table.lv td{{padding:2.3mm 1mm;border-bottom:1px solid #e8e8e8;font-size:9.3pt;vertical-align:baseline}}
+table.lv .l{{font-family:"Noto Sans CJK JP",sans-serif;font-size:8pt;color:{GRAY};width:16mm;white-space:nowrap}}
+table.lv .ln{{font-family:"Noto Sans CJK JP",sans-serif;font-weight:700;width:26mm;white-space:nowrap}}
+table.lv .le{{font-size:9.3pt}}
+table.lv .lw{{font-size:8pt;color:{GRAY};text-align:right;width:30mm;white-space:nowrap}}
+table.lv tr.hit td{{background:#eef3f9;border-bottom:2px solid {NAVY}}}
+table.lv tr.hit .ln,table.lv tr.hit .lw{{color:{NAVY};font-weight:700}}
+table.fk{{width:100%;border-collapse:collapse}}
+table.fk td{{padding:2.2mm 1mm;border-bottom:1px solid #e8e8e8;vertical-align:baseline}}
+table.fk .fn{{font-family:"Noto Sans CJK JP",sans-serif;font-size:8.5pt;font-weight:700;color:{NAVY};width:9mm}}
+table.fk .ft{{font-size:9.5pt}}
+table.fk .fw{{font-family:"Noto Sans CJK JP",sans-serif;font-size:10pt;font-weight:700;
+ color:{NAVY};text-align:right;white-space:nowrap}}
+.it .warn{{font-family:"Noto Sans CJK JP",sans-serif;font-size:7pt;color:#c0392b;margin-left:2mm}}
+.it .need{{font-family:"Noto Sans CJK JP",sans-serif;font-size:7pt;color:#b8860b;margin-left:2mm}}
+.it .done{{font-family:"Noto Sans CJK JP",sans-serif;font-size:7pt;color:#1a7f37;margin-left:2mm}}
+.nt .warn{{color:#c0392b}} .nt .need{{color:#b8860b}}
 """
 out=('<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>幹と構成</title>'
      f'<style>{CSS}</style></head><body>'+p1+p2+"\n".join(det)+'</body></html>')

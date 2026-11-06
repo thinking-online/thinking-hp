@@ -12,8 +12,9 @@ gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
 ZI = {_p[i]: len(re.sub(r'\s','',_p[i+1])) for i in range(1,len(_p),2)}
 HEAD = {_p[i]: ("頭のなか" in _p[i+1] or "頭の中" in _p[i+1]) for i in range(1,len(_p),2)}
-DONE = {_p[i] for i in range(1,len(_p),2)
-        if re.search(r'###?\s*伸びない人', _p[i+1]) and re.search(r'###?\s*頭のいい人', _p[i+1])}
+PAIR = {_p[i] for i in range(1,len(_p),2)
+        if re.search(r'^### .*伸びない', _p[i+1], re.M) and re.search(r'^### .*頭のいい', _p[i+1], re.M)}
+DONE = {_p[i] for i in range(1,len(_p),2) if "違いは、1か所" in _p[i+1] or "違いは1か所" in _p[i+1]}
 THINK = {"入れる力","つなげる力","出す力","なおす力"}
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
@@ -109,8 +110,8 @@ p1 = f'''<div class="sh">
 
 <div class="sec">形式</div>
 <div class="bd">全項目 ×／○ の二項対立。1項目3ページ。右肩に武器タグ1つ。<br>
-全項目に「頭のなか」を1節。<span class="chk">現在 54／62</span><br>
-頭を動かす項目に、分岐点を1語。<span class="chk">現在 1／約40</span></div>
+全項目に「頭のなか」を、伸びない人と頭のいい人の対で。<span class="chk">現在 49／62</span><br>
+頭を動かす項目に、分岐点を1語。<span class="chk">現在 2／約40</span></div>
 
 <div class="sec">物理</div>
 <div class="bd">四六判　2色刷り　約{TOTAL}ページ　1,700円台<span class="chk">　←　価格は学研に確認</span></div>
@@ -207,8 +208,8 @@ pt = f'''<div class="pg">
 <div class="lb">ここから</div>
 <div class="sec">僕がやること</div>
 <table class="lv">
-<tr><td class="l">1</td><td class="ln">分岐点</td><td class="le">約39本　×　約250字　＝　約10,000字</td><td class="lw">済 1本</td></tr>
-<tr><td class="l">2</td><td class="ln">頭のなか</td><td class="le">8本。1と重なるので実質ゼロ</td><td class="lw">未 8本</td></tr>
+<tr><td class="l">1</td><td class="ln">分岐点</td><td class="le">約38本。既存49本は頭のなかが対で入っているので、1語を抜くだけ</td><td class="lw">済 2本</td></tr>
+<tr><td class="l">2</td><td class="ln">頭のなか</td><td class="le">13本。すべて僕が今回書いたもの</td><td class="lw">対なし 13本</td></tr>
 <tr><td class="l">3</td><td class="ln">型の移植</td><td class="le">62本を、場面から問いに書き換える</td><td class="lw">済 1本</td></tr>
 <tr><td class="l">4</td><td class="ln">図</td><td class="le">4型で、62本に1〜2点ずつ</td><td class="lw">済 2点</td></tr>
 <tr><td class="l">5</td><td class="ln">おわりに</td><td class="le">14時間の話から、そのあとの話へ</td><td class="lw"></td></tr>

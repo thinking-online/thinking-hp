@@ -245,7 +245,7 @@ for k, no, name in MAP:
                f'<span class="hen2">{name}</span><span class="cc">{len(c["items"])}本</span></div>')
     for it in c["items"]:
         st = '<span class="star">★</span>' if it["thick"] else ''
-        hd = '' if HEAD.get(it["n"], True) else '<span class="warn">頭のなか 未</span>'
+        hd = '' if it["n"] in PAIR else '<span class="warn">頭のなか 対なし</span>'
         if it["n"] in DONE: hd += '<span class="done">分岐点 済</span>'
         elif it["w"] in THINK: hd += '<span class="need">分岐点 要</span>'
         det.append(f'<div class="it"><div class="t"><span class="n">{it["n"]}</span>{esc(it["t"])}{st}'

@@ -4,9 +4,10 @@ import re, html, os, subprocess
 NAVY, GRAY, RATE = "#15467E", "#8a8a8a", 520
 def esc(s): return html.escape(s, quote=False)
 
-MAP = [("基本の基本","序章","基本の基本編"), ("授業","第1章","授業編"),
-       ("暗記","第2章","暗記編"), ("演習","第3章","演習編"), ("復習","第4章","復習編"),
-       ("集中","第5章","集中編"), ("モチベ","第6章","モチベ編"), ("本番","終章","本番編")]
+MAP = [("基本の基本","第1章","基本の基本編"), ("戦略","第2章","戦略編"), ("計画","第3章","計画編"),
+       ("授業","第4章","授業編"), ("暗記","第5章","暗記編"), ("演習","第6章","演習編"),
+       ("復習","第7章","復習編"), ("集中","第8章","集中編"), ("モチベ","第9章","モチベ編"),
+       ("本番","終章","本番編")]
 
 gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
@@ -17,7 +18,7 @@ DONE = {_p[i] for i in range(1,len(_p),2)
 THINK = {"入れる力","つなげる力","出す力","なおす力"}
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 70項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 75項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)
@@ -48,7 +49,7 @@ VOICE = "  ".join(f'<span class="wn">{w}</span><span class="wk">{k}</span>'
 
 p1 = f'''<div class="sh">
 <div class="t" style="font-size:17pt">やっているのに、伸びない。</div>
-<div class="s">頭のいい人が勉強で、絶対にやらない70のこと　／　朝倉 徹大</div>
+<div class="s">頭のいい人が勉強で、絶対にやらない75のこと　／　朝倉 徹大</div>
 <div class="lb">幹　2026年11月6日　確定版</div>
 
 <div class="sec">読者</div>

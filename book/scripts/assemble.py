@@ -8,7 +8,7 @@ def norm(s):
 
 # ---- 1 現行案から62項目を読む
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 70項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 75項目")[1].split("# 8 1週間")[0]
 chapters, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)

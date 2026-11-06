@@ -4,9 +4,10 @@ import re, html, os, subprocess
 NAVY, GRAY, RATE = "#15467E", "#8a8a8a", 520
 def esc(s): return html.escape(s, quote=False)
 
-MAP = [("基本の基本","序章","基本の基本編"), ("授業","第1章","授業編"),
-       ("暗記","第2章","暗記編"), ("演習","第3章","演習編"), ("復習","第4章","復習編"),
-       ("集中","第5章","集中編"), ("モチベ","第6章","モチベ編"), ("本番","終章","本番編")]
+MAP = [("基本の基本","第1章","基本の基本編"), ("戦略","第2章","戦略編"), ("計画","第3章","計画編"),
+       ("授業","第4章","授業編"), ("暗記","第5章","暗記編"), ("演習","第6章","演習編"),
+       ("復習","第7章","復習編"), ("集中","第8章","集中編"), ("モチベ","第9章","モチベ編"),
+       ("本番","終章","本番編")]
 
 gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
@@ -18,7 +19,7 @@ DONE = {_p[i] for i in range(1,len(_p),2) if "違いは、1か所" in _p[i+1] or
 THINK = {"入れる力","つなげる力","出す力","なおす力"}
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 70項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 75項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)
@@ -40,7 +41,7 @@ for k, no, name in MAP:
     c = by[k]; n = len(c["items"])
     pg = max(1, round(sum(ZI.get(i["n"],0) for i in c["items"])/RATE)) + 2
     tot += pg; rows.append((no, name, n, pg))
-TOTAL = sum(FP) + tot + 28     # 巻末24＋大人の方へ4
+TOTAL = sum(FP) + 9 + tot + 28     # 巻末24＋大人の方へ4
 
 VOICE = "  ".join(f'<span class="wn">{w}</span><span class="wk">{k}</span>'
     for w,k in [("選ぶ力","これ、出るの？"),("入れる力","いま、閉じて出せる？"),
@@ -49,7 +50,7 @@ VOICE = "  ".join(f'<span class="wn">{w}</span><span class="wk">{k}</span>'
 
 p1 = f'''<div class="sh">
 <div class="t" style="font-size:17pt">やっているのに、伸びない。</div>
-<div class="s">頭のいい人が勉強で、絶対にやらない70のこと　／　朝倉 徹大</div>
+<div class="s">頭のいい人が勉強で、絶対にやらない75のこと　／　朝倉 徹大</div>
 <div class="lb">制作仕様書　2026年11月6日</div>
 
 <div class="sec">読者</div>
@@ -126,6 +127,9 @@ p2 = f'''<div class="sh">
 <table class="big">
 <tr class="fr"><td class="c1">巻頭</td><td class="c2">10秒だけ、付き合ってください</td><td class="c3"></td><td class="c4">6</td></tr>
 <tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く</td></tr>
+<tr class="fr"><td class="c1">序章</td><td class="c2">「自分に合った勉強法」を探すな</td>
+  <td class="c3"></td><td class="c4">9</td></tr>
+<tr class="sb"><td></td><td colspan="3">やめる4つ　／　人は経験したことがないものを選べない　／　探している間は、やらなくていい</td></tr>
 {trs}
 <tr class="fr"><td class="c1">巻末</td><td class="c2">手持ちカード ／ まず、この6つ ／ 悩み別の引き方 ／ 5教科で、どう使うか</td><td class="c3"></td><td class="c4">24</td></tr>
 <tr class="fr"><td class="c1"></td><td class="c2">保護者の方へ ／ 大人の方へ（資格と仕事に、6つをどう使うか） ／ おわりに</td><td class="c3"></td><td class="c4">4</td></tr>

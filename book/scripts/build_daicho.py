@@ -4,9 +4,10 @@ import re, html, os, subprocess, json
 NAVY, GRAY = "#15467E", "#8a8a8a"
 def esc(s): return html.escape(s, quote=False)
 
-MAP=[("基本の基本","序章","基本の基本編"),("授業","第1章","授業編"),
-     ("暗記","第2章","暗記編"),("演習","第3章","演習編"),("復習","第4章","復習編"),
-     ("集中","第5章","集中編"),("モチベ","第6章","モチベ編"),("本番","終章","本番編")]
+MAP = [("基本の基本","第1章","基本の基本編"), ("戦略","第2章","戦略編"), ("計画","第3章","計画編"),
+       ("授業","第4章","授業編"), ("暗記","第5章","暗記編"), ("演習","第6章","演習編"),
+       ("復習","第7章","復習編"), ("集中","第8章","集中編"), ("モチベ","第9章","モチベ編"),
+       ("本番","終章","本番編")]
 SRC=json.load(open("/tmp/claude-0/-home-user-thinking-hp/f9344ade-049a-53cf-a8a8-bafe881b2958/scratchpad/src.json"))
 LAB={"未執筆_前半.md":"新","未執筆_後半.md":"新","09_1日の計画をtodoリストで立てて終わる.md":"新",
  "DaiGo由来5本.md":"D",
@@ -39,7 +40,7 @@ for i in range(1,len(P),3):
           "rest":rest[:70],"today":today,"z":len(re.sub(r'\s','',b))}
 
 plan=open("manuscript/企画書/現行案.md",encoding="utf-8").read()
-sec=plan.split("# 7 70項目")[1].split("# 8 1週間")[0]
+sec=plan.split("# 7 75項目")[1].split("# 8 1週間")[0]
 chs,cur=[],None
 for line in sec.split("\n"):
     m=re.match(r'^## (.+?)\s+(\d+)本\s*$',line)
@@ -53,7 +54,7 @@ for line in sec.split("\n"):
     if m and cur and cur["items"]: cur["items"][-1]["x" if m.group(1)=="×" else "o"]=m.group(2)
 by={c["k"]:c for c in chs}
 
-cards=['<div class="lb">コンテンツ台帳　70項目の中身</div>',
+cards=['<div class="lb">コンテンツ台帳　75項目の中身</div>',
  '<div class="leg">各項目の　番号・タイトル・武器・出どころ・字数　／　×と○　／　やり方の手順　／'
  '　使っている数字　／　残るもの。<span class="bp">対</span>＝頭のなかが対で入っている　'
  '<span class="bf">分</span>＝分岐点の1語を抜き出している　''<span class="bn">新</span>＝DaiGo本の読解を踏まえて今回追加</div>']

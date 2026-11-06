@@ -4,9 +4,10 @@ import re, html, os, subprocess
 NAVY, GRAY, RATE = "#15467E", "#8a8a8a", 520
 def esc(s): return html.escape(s, quote=False)
 
-MAP = [("戦略","第3章","戦略編"), ("計画","第4章","計画編"), ("授業","第5章","授業編"),
-       ("暗記","第6章","暗記編"), ("演習","第7章","演習編"), ("復習","第8章","復習編"),
-       ("集中","第9章","集中編"), ("モチベ","第10章","モチベ編"), ("本番","終章","本番編")]
+MAP = [("基本の基本","序章","基本の基本編"), ("戦略","第1章","戦略編"), ("計画","第2章","計画編"),
+       ("授業","第3章","授業編"), ("暗記","第4章","暗記編"), ("演習","第5章","演習編"),
+       ("復習","第6章","復習編"), ("集中","第7章","集中編"), ("モチベ","第8章","モチベ編"),
+       ("本番","終章","本番編")]
 
 gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
@@ -18,23 +19,23 @@ DONE = {_p[i] for i in range(1,len(_p),2) if "違いは、1か所" in _p[i+1] or
 THINK = {"入れる力","つなげる力","出す力","なおす力"}
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 67項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 70項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)
     if m:
         cur = {"k": re.split(r'[\s　]{2,}', m.group(1).strip())[0], "items": []}
         chs.append(cur); continue
-    m = re.match(r'^(\d{2})　(.*?)\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力)\s*$', line.rstrip())
+    m = re.match(r'^(\d{2})　(.*?)(?:\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力))?\s*$', line.rstrip())
     if m and cur:
         cur["items"].append({"n":m.group(1),"t":m.group(2).replace("★厚く書く","").replace("★新規","").strip(),
-                             "w":m.group(3),"x":"","o":"","thick":"★厚く書く" in line,"new":"★新規" in line}); continue
+                             "w":m.group(3) or "","x":"","o":"","thick":"★厚く書く" in line,"new":"★新規" in line}); continue
     m = re.match(r'^\s+(×|○)「(.+)」\s*$', line)
     if m and cur and cur["items"]:
         cur["items"][-1]["x" if m.group(1)=="×" else "o"] = m.group(2)
 by = {c["k"]: c for c in chs}
 
-FP = (11, 9, 11, 12)          # はじめに／序章／第1章／第2章
+FP = (6,)   # 巻頭のみ。序章以下は章として数える
 rows, tot = [], 0
 for k, no, name in MAP:
     c = by[k]; n = len(c["items"])
@@ -49,7 +50,7 @@ VOICE = "  ".join(f'<span class="wn">{w}</span><span class="wk">{k}</span>'
 
 p1 = f'''<div class="sh">
 <div class="t" style="font-size:17pt">やっているのに、伸びない。</div>
-<div class="s">頭のいい人が勉強で、絶対にやらない67のこと　／　朝倉 徹大</div>
+<div class="s">頭のいい人が勉強で、絶対にやらない70のこと　／　朝倉 徹大</div>
 <div class="lb">制作仕様書　2026年11月6日</div>
 
 <div class="sec">読者</div>
@@ -58,9 +59,9 @@ p1 = f'''<div class="sh">
 <div class="sec">約束</div>
 <div class="bd">頭のなかは、外から見えない。だから真似できない。それを見える化する。</div>
 
-<div class="sec">幹　67項目を貫く1行</div>
+<div class="sec">幹　70項目を貫く1行</div>
 <div class="kan">その場の自分を、信用しない。</div>
-<div class="bd sm">67個の×を全部並べると、サボっている人の言葉が1つもない。全部、まじめな人が自分に言っている言葉で、
+<div class="bd sm">70個の×を全部並べると、サボっている人の言葉が1つもない。全部、まじめな人が自分に言っている言葉で、
 その場では正しく聞こえる。そして全部、確かめていない。<br>
 「わかった」も「大事そう」も「やる気がない」も、確かめていない その場の感覚。6つの武器は、それを確かめる6つの方法。</div>
 
@@ -78,7 +79,7 @@ p1 = f'''<div class="sh">
 
 <div class="sec">6つの武器</div>
 <div class="w6">{VOICE}</div>
-<div class="bd sm">選ぶ力＝戦略　／　入れる・つなげる・出す・なおす＝やり方　／　続ける力＝量　　11本 ／ 36本 ／ 20本 ＝ 67</div>
+<div class="bd sm">選ぶ力＝戦略　／　入れる・つなげる・出す・なおす＝やり方　／　続ける力＝量　　11本 ／ 36本 ／ 20本 ＋ 基本の基本3　＝　70</div>
 </div>
 
 <div class="sh">
@@ -110,7 +111,7 @@ p1 = f'''<div class="sh">
 
 <div class="sec">形式</div>
 <div class="bd">全項目 ×／○ の二項対立。1項目3ページ。右肩に武器タグ1つ。<br>
-全項目に「頭のなか」を、伸びない人と頭のいい人の対で。<span class="chk">現在 54／67</span><br>
+全項目に「頭のなか」を、伸びない人と頭のいい人の対で。<span class="chk">現在 54／70</span><br>
 頭を動かす項目に、分岐点を1語。<span class="chk">現在 7／36</span></div>
 
 <div class="sec">物理</div>
@@ -124,20 +125,14 @@ trs = "".join(f'<tr class="mr"><td class="c1">{no}</td>'
 p2 = f'''<div class="sh">
 <div class="lb">構成</div>
 <table class="big">
-<tr class="fr"><td class="c1">はじめに</td><td class="c2">この本は、10秒で始まります</td><td class="c3"></td><td class="c4">{FP[0]}</td></tr>
-<tr class="sb"><td></td><td colspan="3">11個の数字　／　ちゃんと勉強してるの？　／　あの子はなぜ　／　バケツ　／　①やめる②知る③量　／　頭のなかは映らない</td></tr>
-<tr class="fr"><td class="c1">序章</td><td class="c2">「自分に合った勉強法」を、探すのをやめる</td><td class="c3"></td><td class="c4">{FP[1]}</td></tr>
-<tr class="sb"><td></td><td colspan="3">やめる4つ　／　人は経験したことがないものを選べない　／　探している間は、やらなくていい</td></tr>
-<tr class="fr"><td class="c1">第1章</td><td class="c2">結果 ＝ 戦略 × やり方 × 量</td><td class="c3"></td><td class="c4">{FP[2]}</td></tr>
-<tr class="sb"><td></td><td colspan="3">1つが0なら0　／　類書が埋めているのはまん中の1列だけ　／　勝ち切れ　／　あなたは、どこが0ですか</td></tr>
-<tr class="fr"><td class="c1">第2章</td><td class="c2">頭のいい人が<span class="hen">持っている</span>、6つの武器</td><td class="c3">6つ</td><td class="c4">{FP[3]}</td></tr>
-<tr class="sb"><td></td><td colspan="3">式を分解しただけ　／　1問につき、だいたい2つ　／　まず、この6つ</td></tr>
+<tr class="fr"><td class="c1">巻頭</td><td class="c2">10秒だけ、付き合ってください</td><td class="c3"></td><td class="c4">6</td></tr>
+<tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く</td></tr>
 {trs}
 <tr class="fr"><td class="c1">巻末</td><td class="c2">手持ちカード ／ まず、この6つ ／ 悩み別の引き方 ／ 5教科で、どう使うか</td><td class="c3"></td><td class="c4">24</td></tr>
 <tr class="fr"><td class="c1"></td><td class="c2">保護者の方へ ／ 大人の方へ（資格と仕事に、6つをどう使うか） ／ おわりに</td><td class="c3"></td><td class="c4">4</td></tr>
 <tr class="tot"><td></td><td colspan="2">合計</td><td class="tv">約 {TOTAL} ページ　四六判</td></tr>
 </table>
-<div class="nt">「頭のいい人が、絶対にやらないこと」が目次に9回出る。表紙の約束が、目次を上から読むだけで9回入る。<br>
+<div class="nt">「頭のいい人が、絶対にやらないこと」が目次に10回出る。表紙の約束が、目次を上から読むだけで10回入る。<br>
 ページは1ページ520字で計算。</div>
 </div>'''
 
@@ -165,7 +160,7 @@ pk = '''<div class="sh">
 <div class="bd sm">章タイトルと同じ言葉を使う。両側とも 行動＋結末。生徒の声は5に置く。</div>
 
 <div class="sec">分量</div>
-<div class="bd">標準 約1,650字＝3ページ　／　厚く書く7本 約2,200字＝4ページ　／　図は1本に1〜2点<br><span class="chk">選ぶ11　入れる8　つなげる6　出す12　なおす10　続ける20　＝　67</span></div>
+<div class="bd">標準 約1,650字＝3ページ　／　厚く書く7本 約2,200字＝4ページ　／　図は1本に1〜2点<br><span class="chk">基本の基本3　選ぶ11　入れる8　つなげる6　出す12　なおす10　続ける20　＝　70</span></div>
 
 <div class="sec">図の4型</div>
 <table class="lv">
@@ -174,7 +169,7 @@ pk = '''<div class="sh">
 <tr><td class="l">時間図</td><td class="le" colspan="2">時間がどこに消えているか。75分と12分、など</td></tr>
 <tr><td class="l">構造図</td><td class="le" colspan="2">頭の中のつながり方。1本ずつの線と、束ねた線、など</td></tr>
 </table>
-<div class="bd sm">4型に絞る。67本でもバラけず、同じ本に見える。SVGで作り、2色刷りの版下にそのまま出せる。</div>
+<div class="bd sm">4型に絞る。70本でもバラけず、同じ本に見える。SVGで作り、2色刷りの版下にそのまま出せる。</div>
 </div>
 
 <div class="sh">
@@ -210,8 +205,8 @@ pt = f'''<div class="pg">
 <table class="lv">
 <tr><td class="l">1</td><td class="ln">分岐点</td><td class="le">残り29本。頭のなかが対で入っているので、1語を抜くだけ</td><td class="lw">済 7本</td></tr>
 <tr><td class="l">2</td><td class="ln">頭のなか</td><td class="le">13本。09 12 14 15 18 22 27 50 51 52 53 65 66</td><td class="lw">対なし 13本</td></tr>
-<tr><td class="l">3</td><td class="ln">型の移植</td><td class="le">67本を、場面から問いに書き換える</td><td class="lw">済 1本</td></tr>
-<tr><td class="l">4</td><td class="ln">図</td><td class="le">4型で、67本に1〜2点ずつ</td><td class="lw">済 2点</td></tr>
+<tr><td class="l">3</td><td class="ln">型の移植</td><td class="le">70本を、場面から問いに書き換える</td><td class="lw">済 1本</td></tr>
+<tr><td class="l">4</td><td class="ln">図</td><td class="le">4型で、70本に1〜2点ずつ</td><td class="lw">済 2点</td></tr>
 <tr><td class="l">5</td><td class="ln">おわりに</td><td class="le">14時間の話から、そのあとの話へ</td><td class="lw"></td></tr>
 </table>
 
@@ -225,17 +220,17 @@ pt = f'''<div class="pg">
 </table>
 
 <div class="sec">杉浦さんに聞くこと</div>
-<div class="bd">{TOTAL}ページで、いくらになりますか。　／　初版部数の想定。　／　表紙の数字は67でいいか。</div>
+<div class="bd">{TOTAL}ページで、いくらになりますか。　／　初版部数の想定。　／　表紙の数字は70でいいか。</div>
 
 <div class="sec">進行</div>
-<pre class="logic">11/7-11/10　 暗記編10本（20-29）を新型で。1章ぶんで手触りを確定させる
+<pre class="logic">11/7-11/10　 暗記編10本（23-32）を新型で。1章ぶんで手触りを確定させる
 11/11-11/13　本文の相互参照85か所を直す。多くが旧番号のまま
-11/14-11/22　残り57本を新型に移植。分岐点29本と図を入れる
+11/14-11/22　残り60本を新型に移植。分岐点29本と図を入れる
 11/23-11/25　著者の実話21か所を差し込む
 11/26-11/27　序章・第1章・第2章の仕上げ、おわりに書き直し
 11/28　　　　巻末
 11/29　　　　通し読み。数字と言葉の統一
-<div class="bd sm">既存本文は約98,000字あり、新しく書くのは約8,000字（分岐点29本）。残りは移植と加筆。</div>
+<div class="bd sm">既存本文は約111,000字あり、新しく書くのは約8,000字（分岐点29本）。残りは移植と加筆。</div>
 </div>'''
 
 det = ['<div class="sh2"><div class="lb">62項目</div>']

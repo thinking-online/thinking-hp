@@ -4,9 +4,10 @@ import re, html, os, subprocess
 NAVY, GRAY, RATE = "#15467E", "#8a8a8a", 520
 def esc(s): return html.escape(s, quote=False)
 
-MAP = [("戦略","第3章","戦略編"), ("計画","第4章","計画編"), ("授業","第5章","授業編"),
-       ("暗記","第6章","暗記編"), ("演習","第7章","演習編"), ("復習","第8章","復習編"),
-       ("集中","第9章","集中編"), ("モチベ","第10章","モチベ編"), ("本番","終章","本番編")]
+MAP = [("基本の基本","序章","基本の基本編"), ("戦略","第1章","戦略編"), ("計画","第2章","計画編"),
+       ("授業","第3章","授業編"), ("暗記","第4章","暗記編"), ("演習","第5章","演習編"),
+       ("復習","第6章","復習編"), ("集中","第7章","集中編"), ("モチベ","第8章","モチベ編"),
+       ("本番","終章","本番編")]
 
 gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
@@ -17,17 +18,17 @@ DONE = {_p[i] for i in range(1,len(_p),2)
 THINK = {"入れる力","つなげる力","出す力","なおす力"}
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 67項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 70項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)
     if m:
         cur = {"k": re.split(r'[\s　]{2,}', m.group(1).strip())[0], "items": []}
         chs.append(cur); continue
-    m = re.match(r'^(\d{2})　(.*?)\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力)\s*$', line.rstrip())
+    m = re.match(r'^(\d{2})　(.*?)(?:\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力))?\s*$', line.rstrip())
     if m and cur:
         cur["items"].append({"n":m.group(1),"t":m.group(2).replace("★厚く書く","").replace("★新規","").strip(),
-                             "w":m.group(3),"x":"","o":"","thick":"★厚く書く" in line,"new":"★新規" in line}); continue
+                             "w":m.group(3) or "","x":"","o":"","thick":"★厚く書く" in line,"new":"★新規" in line}); continue
     m = re.match(r'^\s+(×|○)「(.+)」\s*$', line)
     if m and cur and cur["items"]:
         cur["items"][-1]["x" if m.group(1)=="×" else "o"] = m.group(2)
@@ -48,7 +49,7 @@ VOICE = "  ".join(f'<span class="wn">{w}</span><span class="wk">{k}</span>'
 
 p1 = f'''<div class="sh">
 <div class="t" style="font-size:17pt">やっているのに、伸びない。</div>
-<div class="s">頭のいい人が勉強で、絶対にやらない67のこと　／　朝倉 徹大</div>
+<div class="s">頭のいい人が勉強で、絶対にやらない70のこと　／　朝倉 徹大</div>
 <div class="lb">幹　2026年11月6日　確定版</div>
 
 <div class="sec">読者</div>

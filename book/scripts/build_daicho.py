@@ -39,19 +39,19 @@ for i in range(1,len(P),3):
           "rest":rest[:70],"today":today,"z":len(re.sub(r'\s','',b))}
 
 plan=open("manuscript/企画書/現行案.md",encoding="utf-8").read()
-sec=plan.split("# 7 67項目")[1].split("# 8 1週間")[0]
+sec=plan.split("# 7 70項目")[1].split("# 8 1週間")[0]
 chs,cur=[],None
 for line in sec.split("\n"):
     m=re.match(r'^## (.+?)\s+(\d+)本\s*$',line)
     if m: cur={"k":re.split(r'[\s　]{2,}',m.group(1).strip())[0],"items":[]}; chs.append(cur); continue
-    m=re.match(r'^(\d{2})　(.*?)\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力)\s*$',line.rstrip())
-    if m and cur: cur["items"].append({"n":m.group(1),"w":m.group(3),"x":"","o":"",
+    m=re.match(r'^(\d{2})　(.*?)(?:\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力))?\s*$',line.rstrip())
+    if m and cur: cur["items"].append({"n":m.group(1),"w":m.group(3) or "","x":"","o":"",
         "thick":"★厚く書く" in line,"new":"★新規" in line}); continue
     m=re.match(r'^\s+(×|○)「(.+)」\s*$',line)
     if m and cur and cur["items"]: cur["items"][-1]["x" if m.group(1)=="×" else "o"]=m.group(2)
 by={c["k"]:c for c in chs}
 
-cards=['<div class="lb">コンテンツ台帳　67項目の中身</div>',
+cards=['<div class="lb">コンテンツ台帳　70項目の中身</div>',
  '<div class="leg">各項目の　番号・タイトル・武器・出どころ・字数　／　×と○　／　やり方の手順　／'
  '　使っている数字　／　残るもの。<span class="bp">対</span>＝頭のなかが対で入っている　'
  '<span class="bf">分</span>＝分岐点の1語を抜き出している　''<span class="bn">新</span>＝DaiGo本の読解を踏まえて今回追加</div>']

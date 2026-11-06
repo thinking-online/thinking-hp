@@ -2,9 +2,10 @@
 """現行案.md の62項目から、目次を組む。出力 manuscript/企画書/目次_最新.md"""
 import re
 
-MAP = [("戦略","第3章","戦略編"), ("計画","第4章","計画編"), ("授業","第5章","授業編"),
-       ("暗記","第6章","暗記編"), ("演習","第7章","演習編"), ("復習","第8章","復習編"),
-       ("集中","第9章","集中編"), ("モチベ","第10章","モチベ編"), ("本番","終章","本番編")]
+MAP = [("基本の基本","序章","基本の基本編"), ("戦略","第1章","戦略編"), ("計画","第2章","計画編"),
+       ("授業","第3章","授業編"), ("暗記","第4章","暗記編"), ("演習","第5章","演習編"),
+       ("復習","第6章","復習編"), ("集中","第7章","集中編"), ("モチベ","第8章","モチベ編"),
+       ("本番","終章","本番編")]
 
 # 実字数（原稿_最新版.md から）
 RATE = 520   # 四六判9.5pt縦組み。見出し・×○囲み・余白こみの実効字数
@@ -14,19 +15,19 @@ ZI = {_p[i]: len(re.sub(r'\s', '', _p[i+1])) for i in range(1, len(_p), 2)}
 def pz(ns): return max(1, round(sum(ZI.get(n, 0) for n in ns) / RATE))
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 67項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 70項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)
     if m:
         cur = {"old": re.split(r'[\s　]{2,}', m.group(1).strip())[0], "items": []}
         chs.append(cur); continue
-    m = re.match(r'^(\d{2})　(.*?)\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力)\s*$',
+    m = re.match(r'^(\d{2})　(.*?)(?:\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力))?\s*$',
                  line.rstrip())
     if m and cur:
         cur["items"].append({"n": m.group(1),
                              "t": m.group(2).replace("★厚く書く","").replace("★新規","").strip(),
-                             "w": m.group(3), "x": "", "o": "",
+                             "w": m.group(3) or "", "x": "", "o": "",
                              "thick": "★厚く書く" in line, "new": "★新規" in line}); continue
     m = re.match(r'^\s+(×|○)「(.+)」\s*$', line)
     if m and cur and cur["items"]:

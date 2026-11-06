@@ -3,7 +3,10 @@
 import re, html, os, subprocess
 NAVY, GRAY = "#15467E", "#8a8a8a"
 def esc(s): return html.escape(s, quote=False)
-src = open("manuscript/分岐点/試作5本.md", encoding="utf-8").read()
+import sys
+SRC=sys.argv[1] if len(sys.argv)>1 else "manuscript/分岐点/試作5本.md"
+OUT=sys.argv[2] if len(sys.argv)>2 else "分岐点_試作5本"
+src = open(SRC, encoding="utf-8").read()
 
 out, lines = [], src.split("\n"); i, n = 0, len(lines)
 while i < n:
@@ -59,8 +62,8 @@ pre.fork{{font-family:"Noto Sans CJK JP",sans-serif;font-size:13pt;font-weight:7
 html_out=('<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>分岐点</title>'
  f'<style>{CSS}</style></head><body>'+"\n".join(out)+'</body></html>')
 os.makedirs("build",exist_ok=True)
-open("build/分岐点_試作5本.html","w",encoding="utf-8").write(html_out)
+open(f"build/{OUT}.html","w",encoding="utf-8").write(html_out)
 subprocess.run(["/usr/bin/google-chrome","--headless","--disable-gpu","--no-sandbox",
- "--no-pdf-header-footer","--print-to-pdf=build/分岐点_試作5本.pdf",
- "file://"+os.path.abspath("build/分岐点_試作5本.html")],check=True,capture_output=True)
+ "--no-pdf-header-footer",f"--print-to-pdf=build/{OUT}.pdf",
+ "file://"+os.path.abspath(f"build/{OUT}.html")],check=True,capture_output=True)
 print("ok")

@@ -53,6 +53,7 @@ front = f'''<div class="sheet">
 <div class="sub">頭のいい人が勉強で、絶対にやらない75のこと　／　朝倉 徹大</div>
 <div class="lead">目次　2026年11月6日</div>
 <table class="big">
+<tr class="hd"><td></td><td></td><td class="c3">項目</td><td class="c4">ページ数</td></tr>
 <tr class="fr"><td class="c1">巻頭</td><td class="c2">10秒だけ、付き合ってください</td>
   <td class="c3"></td><td class="c4">{FP[0]}</td></tr>
 <tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く、隠すところは1つもない</td></tr>
@@ -113,6 +114,8 @@ table.big td{{padding:2.6mm 1mm;vertical-align:baseline}}
   width:20mm;text-align:right;white-space:nowrap}}
 .mr .pre{{color:#666;font-size:9.5pt}}
 .mr .hen{{color:{NAVY};font-weight:700;font-size:11pt;margin-left:1.5mm}}
+.hd td{{font-family:"Noto Sans CJK JP",sans-serif;font-size:7pt;color:#aaa;
+  letter-spacing:.12em;padding:0 1mm 1.5mm;border:none;text-align:right}}
 .sb td{{font-size:8.5pt;color:#888;padding:0 1mm 3mm;border:none}}
 .tot td{{font-family:"Noto Sans CJK JP",sans-serif;font-size:10pt;font-weight:700;
   color:{NAVY};border-top:2px solid {NAVY};padding-top:3.5mm;text-align:right}}

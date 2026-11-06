@@ -22,7 +22,9 @@ ARROW = re.compile(r'[→×○□]')
 
 def render(path, first):
     src = open(path, encoding="utf-8").read()
-    # 巻頭ページ.md は先頭にメモがある版があるので、--- が3つ以上あれば本体だけ取る
+    if src.lstrip().startswith("# 巻頭ページ"):
+        # 見出しと編集メモを落として、本文だけにする
+        src = "# 巻頭　10秒だけ、付き合ってください\n" + src.split("---", 1)[1]
     out, lines = [], src.split("\n")
     i, n = 0, len(lines)
     while i < n:
@@ -67,8 +69,23 @@ def render(path, first):
     return "\n".join(out)
 
 body = []
+if OUT == "基本の基本編":
+    import re as _re
+    _src = open(SRCS[0][1], encoding="utf-8").read()
+    _its = _re.findall(r'^# (\d{2})　(.+)$', _src, flags=_re.M)
+    _li = "\n".join(f'<div class="ti"><span class="tn">{n}</span>{t}</div>' for n, t in _its)
+    body.append(f'''<div class="tobira">
+  <div class="tno">第1章</div>
+  <div class="tpre">頭のいい人が、絶対にやらないこと</div>
+  <div class="thn">基本の基本編</div>
+  <div class="tct">{len(_its)}本</div>
+  <div class="tlist">{_li}</div>
+  <div class="tfoot">ここから先の67個は、全部この8個のどれかでできている。</div>
+</div>''')
+
 for k, (name, path) in enumerate(SRCS):
-    body.append(f'<div class="sh{"" if k == 0 else " brk"}">')
+    first_sheet = (k == 0 and OUT != "基本の基本編")
+    body.append(f'<div class="sh{"" if first_sheet else " brk"}">')
     body.append(render(path, first=True))
     body.append('</div>')
 
@@ -78,6 +95,21 @@ CSS = f"""
 body{{font-family:"Noto Serif CJK JP",serif;font-size:10.6pt;line-height:2.0;color:#111}}
 .sh.brk{{page-break-before:always}}
 h1.brk{{page-break-before:always;margin-top:0}}
+.tobira{{page-break-after:always;padding-top:30mm}}
+.tno{{font-family:"Noto Sans CJK JP",sans-serif;font-size:11pt;font-weight:700;
+ color:{NAVY};letter-spacing:.3em}}
+.tpre{{font-size:12pt;color:#555;margin-top:12mm;letter-spacing:.04em}}
+.thn{{font-family:"Noto Sans CJK JP",sans-serif;font-size:26pt;font-weight:700;
+ color:{NAVY};margin-top:3mm;letter-spacing:.05em}}
+.tct{{font-family:"Noto Sans CJK JP",sans-serif;font-size:9pt;color:{GRAY};
+ margin-top:5mm;letter-spacing:.2em;border-bottom:2px solid {NAVY};
+ padding-bottom:4mm;display:block}}
+.tlist{{margin-top:11mm}}
+.ti{{font-size:11pt;line-height:1.6;margin-bottom:4.5mm}}
+.tn{{font-family:"Noto Sans CJK JP",sans-serif;font-size:9pt;font-weight:700;
+ color:{NAVY};margin-right:4mm}}
+.tfoot{{margin-top:14mm;border-top:1px dotted #ccc;padding-top:5mm;
+ font-size:9pt;color:#777}}
 h1{{font-family:"Noto Sans CJK JP",sans-serif;font-size:16pt;font-weight:700;color:#111;
  letter-spacing:.02em;margin:0 0 9mm;padding-bottom:3.5mm;
  border-bottom:2.5px solid {NAVY};page-break-after:avoid}}

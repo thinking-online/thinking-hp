@@ -4,9 +4,9 @@ import re, html, os, subprocess, json
 NAVY, GRAY = "#15467E", "#8a8a8a"
 def esc(s): return html.escape(s, quote=False)
 
-MAP=[("戦略","第3章","戦略編"),("計画","第4章","計画編"),("授業","第5章","授業編"),
-     ("暗記","第6章","暗記編"),("演習","第7章","演習編"),("復習","第8章","復習編"),
-     ("集中","第9章","集中編"),("モチベ","第10章","モチベ編"),("本番","終章","本番編")]
+MAP=[("基本の基本","序章","基本の基本編"),("授業","第1章","授業編"),
+     ("暗記","第2章","暗記編"),("演習","第3章","演習編"),("復習","第4章","復習編"),
+     ("集中","第5章","集中編"),("モチベ","第6章","モチベ編"),("本番","終章","本番編")]
 SRC=json.load(open("/tmp/claude-0/-home-user-thinking-hp/f9344ade-049a-53cf-a8a8-bafe881b2958/scratchpad/src.json"))
 LAB={"未執筆_前半.md":"新","未執筆_後半.md":"新","09_1日の計画をtodoリストで立てて終わる.md":"新",
  "DaiGo由来5本.md":"D",
@@ -47,6 +47,8 @@ for line in sec.split("\n"):
     m=re.match(r'^(\d{2})　(.*?)(?:\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力))?\s*$',line.rstrip())
     if m and cur: cur["items"].append({"n":m.group(1),"w":m.group(3) or "","x":"","o":"",
         "thick":"★厚く書く" in line,"new":"★新規" in line}); continue
+    m=re.match(r'^［(.+)］\s*$',line)
+    if m and cur: cur.setdefault("secs",{})[len(cur["items"])]=m.group(1); continue
     m=re.match(r'^\s+(×|○)「(.+)」\s*$',line)
     if m and cur and cur["items"]: cur["items"][-1]["x" if m.group(1)=="×" else "o"]=m.group(2)
 by={c["k"]:c for c in chs}

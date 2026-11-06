@@ -6,10 +6,9 @@ NAVY, GRAY = "#15467E", "#8a8a8a"
 RATE = 520
 def esc(s): return html.escape(s, quote=False)
 
-MAP = [("基本の基本","序章","基本の基本編"), ("戦略","第1章","戦略編"), ("計画","第2章","計画編"),
-       ("授業","第3章","授業編"), ("暗記","第4章","暗記編"), ("演習","第5章","演習編"),
-       ("復習","第6章","復習編"), ("集中","第7章","集中編"), ("モチベ","第8章","モチベ編"),
-       ("本番","終章","本番編")]
+MAP = [("基本の基本","序章","基本の基本編"), ("授業","第1章","授業編"),
+       ("暗記","第2章","暗記編"), ("演習","第3章","演習編"), ("復習","第4章","復習編"),
+       ("集中","第5章","集中編"), ("モチベ","第6章","モチベ編"), ("本番","終章","本番編")]
 
 gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
@@ -33,31 +32,22 @@ for line in sec.split("\n"):
         cur["items"][-1]["x" if m.group(1)=="×" else "o"] = m.group(2)
 by = {c["old"]: c for c in chs}
 
-FP = round(2613/RATE)+6, round(4726/RATE), round(5822/RATE)
+FP = (6,)
 rows, tot = [], 0
 for old, no, name in MAP:
     c = by[old]; n = len(c["items"])
     pg = max(1, round(sum(ZI.get(i["n"],0) for i in c["items"])/RATE)) + 2; tot += pg
     rows.append((no, name, n, pg))
-TOTAL = sum(FP) + 12 + tot + 24
+TOTAL = sum(FP) + tot + 28
 
 front = f'''<div class="sheet">
 <div class="ttl">やっているのに、伸びない。</div>
 <div class="sub">頭のいい人が勉強で、絶対にやらない70のこと　／　朝倉 徹大</div>
-<div class="lead">目次　2026年11月4日</div>
+<div class="lead">目次　2026年11月6日</div>
 <table class="big">
-<tr class="fr"><td class="c1">はじめに</td><td class="c2">この本は、10秒で始まります</td>
+<tr class="fr"><td class="c1">巻頭</td><td class="c2">10秒だけ、付き合ってください</td>
   <td class="c3"></td><td class="c4">{FP[0]}</td></tr>
-<tr class="sb"><td></td><td colspan="3">1　4　9　1　6　2　5　3　6　4　9　／　穴の空いたバケツ</td></tr>
-<tr class="fr"><td class="c1">序章</td><td class="c2">「自分に合った勉強法」を、探すのをやめる</td>
-  <td class="c3"></td><td class="c4">{FP[1]}</td></tr>
-<tr class="sb"><td></td><td colspan="3">やめる4つ　／　探している間は、やらなくていい</td></tr>
-<tr class="fr"><td class="c1">第1章</td><td class="c2">結果 ＝ 戦略 × やり方 × 量</td>
-  <td class="c3"></td><td class="c4">{FP[2]}</td></tr>
-<tr class="sb"><td></td><td colspan="3">かけ算だから、1つが0なら0　／　類書が埋めているのは、まん中の1列だけ</td></tr>
-<tr class="fr"><td class="c1">第2章</td><td class="c2">頭のいい人が<span class="hen">持っている</span>、6つの武器</td>
-  <td class="c3">6つ</td><td class="c4">12</td></tr>
-<tr class="sb"><td></td><td colspan="3">式を分解しただけ　／　選ぶ・入れる・つなげる・出す・なおす・続ける</td></tr>
+<tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く、隠すところは1つもない</td></tr>
 '''
 for no, name, n, pg in rows:
     front += (f'<tr class="mr"><td class="c1">{no}</td>'
@@ -73,7 +63,7 @@ front += f'''<tr class="fr"><td class="c1">巻末</td>
 <div class="note">章の名前が8回くり返される。目次を上から読むだけで、
 表紙の約束が8回、目に入る。<br>
 ページは実字数から計算（1ページ520字、四六判9.5pt縦組み、見出しと×／○の囲みこみ）。<br>
-6つの武器は目次に出さない。第1章の最後、各項目の右肩、章扉、巻末カードの4か所に置く。</div>
+6つの武器は目次に出さない。序章03、各項目の右肩、章扉、巻末カードの4か所に置く。</div>
 </div>'''
 
 detail = ['<div class="sheet2"><div class="dh">目次　項目</div>']
@@ -82,7 +72,9 @@ for old, no, name in MAP:
     detail.append(f'<div class="ch"><span class="cn">{no}</span>'
                   f'頭のいい人が、絶対にやらないこと　<span class="hen2">{name}</span>'
                   f'<span class="cc">{len(c["items"])}本</span></div>')
-    for it in c["items"]:
+    for k_i, it in enumerate(c["items"]):
+        if c.get("secs",{}).get(k_i):
+            detail.append(f'<div class="sec2">{esc(c["secs"][k_i])}</div>')
         st = '<span class="star">★</span>' if it["thick"] else ''
         detail.append(f'''<div class="it"><div class="t"><span class="n">{it["n"]}</span>
 {esc(it["t"])}{st}</div>
@@ -126,6 +118,7 @@ table.big td{{padding:2.6mm 1mm;vertical-align:baseline}}
 .ch .cn{{color:{NAVY};font-weight:700;margin-right:3mm}}
 .ch .hen2{{color:{NAVY};font-weight:700;font-size:11pt}}
 .ch .cc{{float:right;font-size:8pt;color:{GRAY}}}
+.sec2{{font-family:"Noto Sans CJK JP",sans-serif;font-size:8pt;color:{NAVY};letter-spacing:.14em;margin:4.5mm 0 2.5mm;padding-left:1mm;border-left:2px solid {NAVY};page-break-after:avoid}}
 .it{{margin-bottom:3.6mm;page-break-inside:avoid}}
 .it .t{{font-size:10.5pt;line-height:1.55}}
 .it .n{{font-family:"Noto Sans CJK JP",sans-serif;font-size:9pt;font-weight:700;

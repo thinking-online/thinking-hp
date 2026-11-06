@@ -62,7 +62,11 @@ for ch in chapters:
 L = ["# 原稿　最新版", "", "現行案の62項目順に、既存本文を並べ直したもの。",
      "章と番号は新構成。本文は既存のまま（文体・長さの調整はこれから）。", "",
      "未執筆の項目は「★未執筆」と書いてある。", "", "---", ""]
-L.append(open("manuscript/序章_v6.md", encoding="utf-8").read().strip())
+kan=open("manuscript/巻頭ページ.md",encoding="utf-8").read()
+L.append("# 巻頭ページ\n\n"+kan.split("---",2)[2].strip())
+L += ["", "---", ""]
+jo=open("manuscript/序章_v5.md",encoding="utf-8").read()
+L.append(jo.strip())
 L += ["", "---", ""]
 for ch in chapters:
     L += [f'# {ch["name"]}', ""]

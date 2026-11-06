@@ -9,9 +9,11 @@ MAP=[("戦略","第3章","戦略編"),("計画","第4章","計画編"),("授業"
      ("集中","第9章","集中編"),("気持ち","第10章","気持ち編"),("本番","終章","本番編")]
 SRC=json.load(open("/tmp/claude-0/-home-user-thinking-hp/f9344ade-049a-53cf-a8a8-bafe881b2958/scratchpad/src.json"))
 LAB={"未執筆_前半.md":"新","未執筆_後半.md":"新","09_1日の計画をtodoリストで立てて終わる.md":"新",
+ "DaiGo由来5本.md":"D",
  "14_部活.md":"追","24_なぜそうなる.md":"追","59_時間を記録して満足する.md":"感",
  "60_他人と比べて落ち込む.md":"感","61_できないで終わらせる.md":"感"}
-SLB={"新":"僕が今回書いた","追":"必要と判断して追加","感":"感想データから","既":"著者の既存原稿"}
+SLB={"新":"僕が今回書いた","追":"必要と判断して追加","感":"感想データから",
+ "D":"DaiGo読解から追加","既":"著者の既存原稿"}
 
 gen=open("manuscript/原稿_最新版.md",encoding="utf-8").read()
 P=re.split(r'^## (\d{2})　(.+)$', gen, flags=re.M)
@@ -37,14 +39,14 @@ for i in range(1,len(P),3):
           "rest":rest[:70],"today":today,"z":len(re.sub(r'\s','',b))}
 
 plan=open("manuscript/企画書/現行案.md",encoding="utf-8").read()
-sec=plan.split("# 7 62項目")[1].split("# 8 1週間")[0]
+sec=plan.split("# 7 67項目")[1].split("# 8 1週間")[0]
 chs,cur=[],None
 for line in sec.split("\n"):
     m=re.match(r'^## (.+?)\s+(\d+)本\s*$',line)
     if m: cur={"k":re.split(r'[\s　]{2,}',m.group(1).strip())[0],"items":[]}; chs.append(cur); continue
     m=re.match(r'^(\d{2})　(.*?)\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力)\s*$',line.rstrip())
     if m and cur: cur["items"].append({"n":m.group(1),"w":m.group(3),"x":"","o":"",
-        "thick":"★厚く書く" in line}); continue
+        "thick":"★厚く書く" in line,"new":"★新規" in line}); continue
     m=re.match(r'^\s+(×|○)「(.+)」\s*$',line)
     if m and cur and cur["items"]: cur["items"][-1]["x" if m.group(1)=="×" else "o"]=m.group(2)
 by={c["k"]:c for c in chs}
@@ -52,7 +54,7 @@ by={c["k"]:c for c in chs}
 cards=['<div class="lb">コンテンツ台帳　62項目の中身</div>',
  '<div class="leg">各項目の　番号・タイトル・武器・出どころ・字数　／　×と○　／　やり方の手順　／'
  '　使っている数字　／　残るもの。<span class="bp">対</span>＝頭のなかが対で入っている　'
- '<span class="bf">分</span>＝分岐点の1語を抜き出している</div>']
+ '<span class="bf">分</span>＝分岐点の1語を抜き出している　''<span class="bn">新</span>＝DaiGo本の読解を踏まえて今回追加</div>']
 for k,no,name in MAP:
     c=by[k]
     cards.append(f'<div class="ch"><span class="cn">{no}</span>{name}'
@@ -60,6 +62,7 @@ for k,no,name in MAP:
     for it in c["items"]:
         d=D[it["n"]]; sl=LAB.get(SRC.get(it["n"],""),"既")
         badge=('<span class="bp">対</span>' if d["pair"] else '<span class="bx">対なし</span>')
+        if it.get("new"): badge='<span class="bn">新</span>'+badge
         if d["fork"]: badge+='<span class="bf">分</span>'
         st = "　".join(re.sub(r'^[0-9１-９]+[　 ]*','',s) for s in d["steps"][:4]) or "―"
         nm = "　".join(d["nums"][:9]) or "―"
@@ -94,6 +97,7 @@ body{{font-family:"Noto Serif CJK JP",serif;font-size:8.6pt;color:#111;line-heig
  border-radius:1.5mm;margin-left:2mm;vertical-align:1px}}
 .bp{{background:#e7f1e9;color:#1a7f37}} .bf{{background:#fdf2dc;color:#8a6500}}
 .bx{{background:#fbe9e7;color:#c0392b}}
+.bn{{background:#e8e4f3;color:#5b3fa8;font-family:"Noto Sans CJK JP",sans-serif;font-size:6.6pt;padding:.3mm 1.4mm;border-radius:1.5mm;margin-left:2mm;vertical-align:1px}}
 .xo{{margin:1.2mm 0 1.6mm 8mm;font-size:8.2pt}}
 .xo .x{{color:#777;margin-right:6mm}} .xo .o{{color:{NAVY}}}
 table.dt{{margin-left:8mm;border-collapse:collapse;width:calc(100% - 8mm)}}

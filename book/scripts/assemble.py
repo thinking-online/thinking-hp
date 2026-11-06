@@ -8,7 +8,7 @@ def norm(s):
 
 # ---- 1 現行案から62項目を読む
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 62項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 67項目")[1].split("# 8 1週間")[0]
 chapters, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)
@@ -19,9 +19,9 @@ for line in sec.split("\n"):
     m = re.match(r'^(\d{2})　(.*?)\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力)\s*$',
                  line.rstrip())
     if m and cur is not None:
-        t = m.group(2).replace("★厚く書く", "").strip()
+        t = m.group(2).replace("★厚く書く","").replace("★新規","").strip()
         cur["items"].append({"n": m.group(1), "t": t,
-                             "w": m.group(3), "thick": "★厚く書く" in line,
+                             "w": m.group(3), "thick": "★厚く書く" in line, "new": "★新規" in line,
                              "x": "", "o": ""})
         continue
     m = re.match(r'^\s+(×|○)「(.+)」\s*$', line)

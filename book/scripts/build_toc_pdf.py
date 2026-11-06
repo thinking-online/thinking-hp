@@ -15,7 +15,7 @@ _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
 ZI = {_p[i]: len(re.sub(r'\s', '', _p[i+1])) for i in range(1, len(_p), 2)}
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 62項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 67項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)
@@ -25,8 +25,8 @@ for line in sec.split("\n"):
     m = re.match(r'^(\d{2})　(.*?)\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力)\s*$',
                  line.rstrip())
     if m and cur:
-        cur["items"].append({"n": m.group(1), "t": m.group(2).replace("★厚く書く","").strip(),
-                             "x": "", "o": "", "thick": "★厚く書く" in line}); continue
+        cur["items"].append({"n": m.group(1), "t": m.group(2).replace("★厚く書く","").replace("★新規","").strip(),
+                             "x": "", "o": "", "thick": "★厚く書く" in line, "new": "★新規" in line}); continue
     m = re.match(r'^\s+(×|○)「(.+)」\s*$', line)
     if m and cur and cur["items"]:
         cur["items"][-1]["x" if m.group(1)=="×" else "o"] = m.group(2)

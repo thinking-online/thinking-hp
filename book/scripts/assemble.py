@@ -65,7 +65,7 @@ L = ["# 原稿　最新版", "", "現行案の62項目順に、既存本文を�
 kan=open("manuscript/巻頭ページ.md",encoding="utf-8").read()
 L.append("# 巻頭ページ\n\n"+kan.split("---",2)[2].strip())
 L += ["", "---", ""]
-jo=open("manuscript/序章_v5.md",encoding="utf-8").read()
+jo=open("manuscript/序章_v6_完全版.md",encoding="utf-8").read()
 L.append(jo.strip())
 L += ["", "---", ""]
 for ch in chapters:

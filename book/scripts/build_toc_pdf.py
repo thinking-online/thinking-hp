@@ -33,13 +33,20 @@ for line in sec.split("\n"):
         cur["items"][-1]["x" if m.group(1)=="×" else "o"] = m.group(2)
 by = {c["old"]: c for c in chs}
 
-FP = (6,)
+# 巻頭と序章は会話体で改行が多いため、本文より少ないレートで数える
+RATE2 = 420
+_ws = re.compile(r'\s')
+KAN_ZI = len(_ws.sub('', open("manuscript/巻頭ページ.md", encoding="utf-8").read()))
+JO_ZI  = len(_ws.sub('', open("manuscript/序章_v6_完全版.md", encoding="utf-8").read()))
+KAN_PG = max(1, round(KAN_ZI / RATE2))
+JO_PG  = max(1, round(JO_ZI  / RATE2))
+FP = (KAN_PG,)
 rows, tot = [], 0
 for old, no, name in MAP:
     c = by[old]; n = len(c["items"])
     pg = max(1, round(sum(ZI.get(i["n"],0) for i in c["items"])/RATE)) + 2; tot += pg
     rows.append((no, name, n, pg))
-TOTAL = sum(FP) + 9 + tot + 28
+TOTAL = sum(FP) + JO_PG + tot + 28
 
 front = f'''<div class="sheet">
 <div class="ttl">やっているのに、伸びない。</div>
@@ -49,9 +56,9 @@ front = f'''<div class="sheet">
 <tr class="fr"><td class="c1">巻頭</td><td class="c2">10秒だけ、付き合ってください</td>
   <td class="c3"></td><td class="c4">{FP[0]}</td></tr>
 <tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く、隠すところは1つもない</td></tr>
-<tr class="fr"><td class="c1">序章</td><td class="c2">「自分に合った勉強法」を探すな</td>
-  <td class="c3"></td><td class="c4">9</td></tr>
-<tr class="sb"><td></td><td colspan="3">やめる4つ　／　人は経験したことがないものを選べない　／　探している間は、やらなくていい</td></tr>
+<tr class="fr"><td class="c1">序章</td><td class="c2">「自分に合った勉強法」を、探すのをやめる</td>
+  <td class="c3"></td><td class="c4">{JO_PG}</td></tr>
+<tr class="sb"><td></td><td colspan="3">それ、誰から教わりましたか　／　人は、やったことのないものを選べない　／　2000人が、全員同じ4つ　／　×やりやすかったか　○出せたか　／　探している間は、やらなくていい</td></tr>
 '''
 for no, name, n, pg in rows:
     front += (f'<tr class="mr"><td class="c1">{no}</td>'
@@ -60,14 +67,14 @@ for no, name, n, pg in rows:
               f'<td class="c3">{n}本</td><td class="c4">{pg}</td></tr>\n')
 front += f'''<tr class="fr"><td class="c1">巻末</td>
   <td class="c2">手持ちカード ／ まず、この6つ ／ 悩み別の引き方</td>
-  <td class="c3"></td><td class="c4">24</td></tr>
+  <td class="c3"></td><td class="c4">28</td></tr>
 <tr class="sb"><td></td><td colspan="3">5教科で、どう使うか ／ 保護者の方へ ／ おわりに ／ 参考文献</td></tr>
 <tr class="tot"><td></td><td colspan="2">合計</td><td class="tv">約 {TOTAL} ページ　四六判</td></tr>
 </table>
 <div class="note">章の名前が8回くり返される。目次を上から読むだけで、
 表紙の約束が8回、目に入る。<br>
-ページは実字数から計算（1ページ520字、四六判9.5pt縦組み、見出しと×／○の囲みこみ）。<br>
-6つの武器は目次に出さない。序章03、各項目の右肩、章扉、巻末カードの4か所に置く。</div>
+ページは実字数から計算（本文は1ページ520字、巻頭と序章は改行が多いので420字。四六判9.5pt縦組み、見出しと×／○の囲みこみ）。<br>
+6つの力は目次に出さない。第1章の03〜08で1つずつ、各項目の右肩、章扉、巻末カードの4か所に置く。</div>
 </div>'''
 
 detail = ['<div class="sheet2"><div class="dh">目次　項目</div>']

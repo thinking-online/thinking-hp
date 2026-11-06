@@ -35,13 +35,20 @@ for line in sec.split("\n"):
         cur["items"][-1]["x" if m.group(1)=="×" else "o"] = m.group(2)
 by = {c["k"]: c for c in chs}
 
-FP = (6,)   # 巻頭のみ。序章以下は章として数える
+# 巻頭と序章は会話体で改行が多いため、本文より少ないレートで数える
+RATE2 = 420
+_ws = re.compile(r'\s')
+KAN_ZI = len(_ws.sub('', open("manuscript/巻頭ページ.md", encoding="utf-8").read()))
+JO_ZI  = len(_ws.sub('', open("manuscript/序章_v6_完全版.md", encoding="utf-8").read()))
+KAN_PG = max(1, round(KAN_ZI / RATE2))
+JO_PG  = max(1, round(JO_ZI  / RATE2))
+FP = (KAN_PG,)   # 巻頭のみ。序章は JO_PG で別に数える
 rows, tot = [], 0
 for k, no, name in MAP:
     c = by[k]; n = len(c["items"])
     pg = max(1, round(sum(ZI.get(i["n"],0) for i in c["items"])/RATE)) + 2
     tot += pg; rows.append((no, name, n, pg))
-TOTAL = sum(FP) + 9 + tot + 28     # 巻末24＋大人の方へ4
+TOTAL = sum(FP) + JO_PG + tot + 28     # 巻末24＋大人の方へ4
 
 VOICE = "  ".join(f'<span class="wn">{w}</span><span class="wk">{k}</span>'
     for w,k in [("選ぶ力","これ、出るの？"),("入れる力","いま、閉じて出せる？"),
@@ -125,11 +132,11 @@ trs = "".join(f'<tr class="mr"><td class="c1">{no}</td>'
 p2 = f'''<div class="sh">
 <div class="lb">構成</div>
 <table class="big">
-<tr class="fr"><td class="c1">巻頭</td><td class="c2">10秒だけ、付き合ってください</td><td class="c3"></td><td class="c4">6</td></tr>
+<tr class="fr"><td class="c1">巻頭</td><td class="c2">10秒だけ、付き合ってください</td><td class="c3"></td><td class="c4">{KAN_PG}</td></tr>
 <tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く</td></tr>
-<tr class="fr"><td class="c1">序章</td><td class="c2">「自分に合った勉強法」を探すな</td>
-  <td class="c3"></td><td class="c4">9</td></tr>
-<tr class="sb"><td></td><td colspan="3">やめる4つ　／　人は経験したことがないものを選べない　／　探している間は、やらなくていい</td></tr>
+<tr class="fr"><td class="c1">序章</td><td class="c2">「自分に合った勉強法」を、探すのをやめる</td>
+  <td class="c3"></td><td class="c4">{JO_PG}</td></tr>
+<tr class="sb"><td></td><td colspan="3">それ、誰から教わりましたか　／　人は、やったことのないものを選べない　／　2000人が、全員同じ4つ　／　×やりやすかったか　○出せたか　／　探している間は、やらなくていい</td></tr>
 {trs}
 <tr class="fr"><td class="c1">巻末</td><td class="c2">手持ちカード ／ まず、この6つ ／ 悩み別の引き方 ／ 5教科で、どう使うか</td><td class="c3"></td><td class="c4">24</td></tr>
 <tr class="fr"><td class="c1"></td><td class="c2">保護者の方へ ／ 大人の方へ（資格と仕事に、6つをどう使うか） ／ おわりに</td><td class="c3"></td><td class="c4">4</td></tr>

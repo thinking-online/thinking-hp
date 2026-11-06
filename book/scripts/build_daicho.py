@@ -6,7 +6,7 @@ def esc(s): return html.escape(s, quote=False)
 
 MAP=[("戦略","第3章","戦略編"),("計画","第4章","計画編"),("授業","第5章","授業編"),
      ("暗記","第6章","暗記編"),("演習","第7章","演習編"),("復習","第8章","復習編"),
-     ("集中","第9章","集中編"),("気持ち","第10章","モチベ編"),("本番","終章","本番編")]
+     ("集中","第9章","集中編"),("モチベ","第10章","モチベ編"),("本番","終章","本番編")]
 SRC=json.load(open("/tmp/claude-0/-home-user-thinking-hp/f9344ade-049a-53cf-a8a8-bafe881b2958/scratchpad/src.json"))
 LAB={"未執筆_前半.md":"新","未執筆_後半.md":"新","09_1日の計画をtodoリストで立てて終わる.md":"新",
  "DaiGo由来5本.md":"D",
@@ -51,7 +51,7 @@ for line in sec.split("\n"):
     if m and cur and cur["items"]: cur["items"][-1]["x" if m.group(1)=="×" else "o"]=m.group(2)
 by={c["k"]:c for c in chs}
 
-cards=['<div class="lb">コンテンツ台帳　62項目の中身</div>',
+cards=['<div class="lb">コンテンツ台帳　67項目の中身</div>',
  '<div class="leg">各項目の　番号・タイトル・武器・出どころ・字数　／　×と○　／　やり方の手順　／'
  '　使っている数字　／　残るもの。<span class="bp">対</span>＝頭のなかが対で入っている　'
  '<span class="bf">分</span>＝分岐点の1語を抜き出している　''<span class="bn">新</span>＝DaiGo本の読解を踏まえて今回追加</div>']

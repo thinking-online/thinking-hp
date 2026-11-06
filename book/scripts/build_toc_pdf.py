@@ -8,7 +8,7 @@ def esc(s): return html.escape(s, quote=False)
 
 MAP = [("戦略","第3章","戦略編"), ("計画","第4章","計画編"), ("授業","第5章","授業編"),
        ("暗記","第6章","暗記編"), ("演習","第7章","演習編"), ("復習","第8章","復習編"),
-       ("集中","第9章","集中編"), ("気持ち","第10章","モチベ編"), ("本番","終章","本番編")]
+       ("集中","第9章","集中編"), ("モチベ","第10章","モチベ編"), ("本番","終章","本番編")]
 
 gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
@@ -42,7 +42,7 @@ TOTAL = sum(FP) + 12 + tot + 24
 
 front = f'''<div class="sheet">
 <div class="ttl">やっているのに、伸びない。</div>
-<div class="sub">頭のいい人が勉強で、絶対にやらない62のこと　／　朝倉 徹大</div>
+<div class="sub">頭のいい人が勉強で、絶対にやらない67のこと　／　朝倉 徹大</div>
 <div class="lead">目次　2026年11月4日</div>
 <table class="big">
 <tr class="fr"><td class="c1">はじめに</td><td class="c2">この本は、10秒で始まります</td>

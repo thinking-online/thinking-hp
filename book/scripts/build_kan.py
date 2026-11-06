@@ -6,7 +6,7 @@ def esc(s): return html.escape(s, quote=False)
 
 MAP = [("戦略","第3章","戦略編"), ("計画","第4章","計画編"), ("授業","第5章","授業編"),
        ("暗記","第6章","暗記編"), ("演習","第7章","演習編"), ("復習","第8章","復習編"),
-       ("集中","第9章","集中編"), ("気持ち","第10章","モチベ編"), ("本番","終章","本番編")]
+       ("集中","第9章","集中編"), ("モチベ","第10章","モチベ編"), ("本番","終章","本番編")]
 
 gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
@@ -48,7 +48,7 @@ VOICE = "  ".join(f'<span class="wn">{w}</span><span class="wk">{k}</span>'
 
 p1 = f'''<div class="sh">
 <div class="t" style="font-size:17pt">やっているのに、伸びない。</div>
-<div class="s">頭のいい人が勉強で、絶対にやらない62のこと　／　朝倉 徹大</div>
+<div class="s">頭のいい人が勉強で、絶対にやらない67のこと　／　朝倉 徹大</div>
 <div class="lb">幹　2026年11月6日　確定版</div>
 
 <div class="sec">読者</div>

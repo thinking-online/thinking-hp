@@ -82,7 +82,7 @@ pre{{font-family:"Noto Sans CJK JP",sans-serif;font-size:9.5pt;line-height:1.9;
  white-space:pre-wrap;page-break-inside:avoid}}
 """
 cv = f'''<div class="cv"><div class="t">やっているのに、伸びない。</div>
-<div class="s">頭のいい人が勉強で、絶対にやらない62のこと　／　朝倉 徹大</div>
+<div class="s">頭のいい人が勉強で、絶対にやらない67のこと　／　朝倉 徹大</div>
 <div class="lb">前半　はじめに ・ 序章 ・ 第1章 ・ 第2章</div>
 <table>{trs}</table>
 <div class="nt">はじめにで「頭のなかを見える化します」と約束して、第2章で6つの武器として回収する。<br>

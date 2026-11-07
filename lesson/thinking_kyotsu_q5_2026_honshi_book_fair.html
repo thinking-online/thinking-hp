@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#fdfaf4">
+<title>共通テスト第5問攻略｜可視化リーディングで解く複数資料問題 — Readburgh Library Book Fair — オンライン塾 THINKING</title>
+<style>
+:root{
+  --paper:#fdfaf4; --paper2:#f6f0e4; --ink:#1f1b16; --ink2:#5a524a; --line:#e3d9c7;
+  --accent:#b8542b; --accent2:#8f3f1f;
+  --q1:#d9a441; --q2:#4f9474; --q3:#5c6fb5;
+  --q1bg:#fbf1d6; --q2bg:#dff0e7; --q3bg:#e2e6f6;
+  --ok:#2f8a5b; --ng:#c0392b;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.85;font-size:15.5px;padding-bottom:84px}
+.en{font-family:Georgia,"Times New Roman","Hiragino Mincho ProN",serif;font-size:1.02em}
+a{color:var(--accent)}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(253,250,244,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;gap:10px;padding:10px 16px;max-width:720px;margin:0 auto}
+.logo{width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-family:Georgia,serif;flex:none}
+.top .t{font-size:12.5px;color:var(--ink2);line-height:1.3}
+.top .t b{display:block;color:var(--ink);font-size:13.5px}
+.timerchip{margin-left:auto;font-family:Georgia,serif;font-size:15px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;min-width:64px;text-align:center}
+nav.steps{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px;max-width:720px;margin:0 auto;scrollbar-width:none}
+nav.steps::-webkit-scrollbar{display:none}
+nav.steps a{flex:none;font-size:12px;padding:5px 10px;border-radius:999px;background:var(--paper2);color:var(--ink2);text-decoration:none;border:1px solid var(--line)}
+nav.steps a i{font-style:normal;font-family:Georgia,serif;color:var(--accent);margin-right:4px;font-weight:700}
+.hero{padding:28px 0 10px}
+.kicker{font-size:12.5px;color:var(--ink2);letter-spacing:.04em}
+h1{font-size:25px;line-height:1.35;margin:8px 0 10px;font-weight:800}
+h1 small{display:block;font-size:14px;color:var(--accent);font-weight:700;margin-bottom:6px}
+.lead{color:var(--ink2);font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.meta span{font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+section.step{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:22px}
+.stepno{font-family:Georgia,serif;color:var(--accent);font-weight:700;letter-spacing:.08em;font-size:13px}
+h2{font-size:21px;margin:4px 0 4px;line-height:1.4}
+.sub{font-family:Georgia,serif;font-style:italic;color:var(--ink2);font-size:13.5px;margin-bottom:14px}
+h3{font-size:16.5px;margin:22px 0 8px}
+h4{font-size:15px;margin:14px 0 6px}
+p{margin:8px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px;margin:12px 0}
+.card.soft{background:var(--paper2);border-color:transparent}
+.note{border-left:4px solid var(--accent);background:#fff8ef;padding:12px 14px;border-radius:0 var(--radius) var(--radius) 0;margin:14px 0}
+.note b.l{display:block;color:var(--accent2);font-size:13.5px;margin-bottom:4px}
+.pill{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--ink);color:#fff;margin-right:6px;vertical-align:middle}
+.pill.q1{background:var(--q1)}.pill.q2{background:var(--q2)}.pill.q3{background:var(--q3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:11px 20px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:active{transform:translateY(1px)}
+/* passage */
+.passage{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 10px;margin:12px 0}
+.passage .ttl{text-align:center;font-family:Georgia,serif;font-weight:700;font-size:18px;margin:6px 0 12px}
+.passage p.en{text-indent:1.2em;margin:0 0 10px;line-height:1.75}
+.passage .lead-en{font-style:italic;color:var(--ink2);text-indent:0}
+mark{background:transparent;padding:0 1px;border-bottom:3px solid transparent;color:inherit;transition:.2s}
+.show-all mark.q1,.show-q1 mark.q1{background:var(--q1bg);border-bottom-color:var(--q1)}
+.show-all mark.q2,.show-q2 mark.q2{background:var(--q2bg);border-bottom-color:var(--q2)}
+.show-all mark.q3,.show-q3 mark.q3{background:var(--q3bg);border-bottom-color:var(--q3)}
+.qlist{margin:14px 0}
+.q{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:10px 0}
+.q .stem{font-weight:700;margin-bottom:8px}
+.q .stem .en{font-weight:400}
+.opts{list-style:none;padding:0;margin:0}
+.opts li{display:flex;gap:8px;padding:6px 0;border-top:1px dashed var(--line)}
+.opts li:first-child{border-top:none}
+.opts .n{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ink);font-size:12px;display:grid;place-items:center;font-family:Georgia,serif;margin-top:4px}
+.answers{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.answers label{border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--paper2);font-size:14px;cursor:pointer}
+.answers input{display:none}
+.answers input:checked+span{color:#fff}
+.answers label:has(input:checked){background:var(--ink);color:#fff}
+.order{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.order select{font-size:15px;padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:#fff;font-family:inherit}
+.order .arrow{color:var(--ink2)}
+.result{margin-top:10px;font-weight:700}
+.result.ok{color:var(--ok)}.result.ng{color:var(--ng)}
+.timerbox{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin:12px 0}
+.timerbox .big{font-family:Georgia,serif;font-size:30px;min-width:92px}
+/* 5 step */
+.flow{counter-reset:s}
+.fstep{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.fstep:first-child{border-top:none}
+.fstep .num{flex:none;width:34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700}
+.fstep h4{margin:4px 0 4px}
+.fstep .goal{font-size:13.5px;color:var(--accent2);margin-top:6px}
+/* think-aloud */
+details.think{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin:12px 0;overflow:hidden}
+details.think summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
+details.think summary::-webkit-details-marker{display:none}
+details.think summary .ans{margin-left:auto;font-size:12.5px;color:var(--ink2);font-weight:400;white-space:nowrap}
+details.think summary::after{content:"＋";margin-left:8px;color:var(--accent);font-weight:400}
+details.think[open] summary::after{content:"－"}
+details.think .body{padding:0 16px 16px;border-top:1px solid var(--line)}
+.jaopts{list-style:none;padding:0;margin:10px 0 4px;font-size:14px;color:var(--ink2)}
+.jaopts li{padding:3px 0}
+.jaopts .n{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;margin-right:6px;font-family:Georgia,serif}
+.jaopts li.c{color:var(--ink);font-weight:700}.jaopts li.c .n{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ta{counter-reset:t;margin-top:8px}
+.ta .t{display:flex;gap:12px;padding:12px 0;border-top:1px dashed var(--line)}
+.ta .t .n{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:12.5px;font-family:Georgia,serif;margin-top:2px}
+.ta .t h5{margin:2px 0 4px;font-size:14.5px}
+.quote{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14.5px}
+.quote .en{display:block;font-size:15px}
+.quote .ja{display:block;color:var(--ink2);font-size:13.5px;margin-top:4px}
+.map{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border:1.5px dashed var(--accent);border-radius:10px;padding:10px 12px;margin:10px 0;font-size:14px}
+.map .en{font-weight:700}
+.map .ar{color:var(--accent);font-weight:800}
+.learn{background:var(--paper2);border-radius:10px;padding:12px 14px;margin-top:12px;font-size:14.5px}
+.learn b{display:block;color:var(--accent2);font-size:13px;margin-bottom:3px}
+.ev{display:inline-block;font-size:12.5px;padding:2px 8px;border-radius:6px;margin:2px 0}
+.ev.q1{background:var(--q1bg)}.ev.q2{background:var(--q2bg)}.ev.q3{background:var(--q3bg)}
+/* timeline */
+.tl{position:relative;padding-left:28px;margin:14px 0}
+.tl::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .ev2{position:relative;padding:8px 0 8px 6px}
+.tl .ev2::before{content:"";position:absolute;left:-23px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 1.5px var(--accent)}
+.tl .ev2.ghost::before{background:#fff;box-shadow:0 0 0 1.5px var(--ink2)}
+.tl .ev2 .lab{font-weight:700}
+.tl .ev2 .src{font-size:13px;color:var(--ink2)}
+.tl .ev2 .tag{display:inline-block;font-size:11.5px;background:var(--ink);color:#fff;border-radius:6px;padding:0 7px;margin-left:6px;vertical-align:middle}
+.tl .ev2.ghost .tag{background:var(--ng)}
+/* translation */
+.tr{margin:10px 0 14px}
+.tr .lab{font-size:12px;color:var(--ink2);letter-spacing:.06em}
+.tr p{margin:4px 0}
+.tr p.ja{color:#3a342d;font-size:14.5px}
+.tr p.ja .qm{font-size:11px;padding:0 5px;border-radius:5px;color:#fff;margin-left:4px;vertical-align:middle}
+.qm.q1{background:var(--q1)}.qm.q2{background:var(--q2)}.qm.q3{background:var(--q3)}
+.hideen .tr p.en{display:none}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;margin:8px 0}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.legend .l1::before{background:var(--q1)}.legend .l2::before{background:var(--q2)}.legend .l3::before{background:var(--q3)}
+/* vocab */
+.vocab{display:grid;grid-template-columns:1fr;gap:6px;margin:10px 0}
+.v{display:flex;gap:10px;align-items:baseline;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px}
+.v .w{font-family:Georgia,serif;font-weight:700;min-width:120px}
+.v .pos{font-size:11px;color:var(--ink2);border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.v.pair{border-color:var(--accent);background:#fff8ef}
+/* checklist */
+.chk{list-style:none;padding:0;margin:12px 0}
+.chk li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line)}
+.chk li:first-child{border-top:none}
+.chk input{width:20px;height:20px;margin-top:4px;accent-color:var(--accent)}
+.score{font-family:Georgia,serif;font-size:22px;margin:8px 0}
+.weapon{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.weapon .num{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;width:52px;line-height:1.3;padding-top:4px}
+footer{margin:40px 0 20px;font-size:12.5px;color:var(--ink2);text-align:center;line-height:1.7}
+/* bottom bar + sheet */
+.bbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(253,250,244,.96);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.bbar .in{max-width:720px;margin:0 auto;display:flex;gap:10px;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+.bbar .btn{flex:1}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top-left-radius:18px;border-top-right-radius:18px;box-shadow:0 -10px 30px rgba(0,0,0,.18);max-height:82vh;transform:translateY(105%);transition:transform .28s ease;display:flex;flex-direction:column}
+.sheet.open{transform:translateY(0)}
+.sheet .head{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.sheet .head b{font-size:14px}
+.sheet .filters{display:flex;gap:6px;margin-left:auto}
+.sheet .filters button{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 10px;cursor:pointer;font-family:inherit}
+.sheet .filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sheet .filters button.f1.on{background:var(--q1);border-color:var(--q1)}
+.sheet .filters button.f2.on{background:var(--q2);border-color:var(--q2)}
+.sheet .filters button.f3.on{background:var(--q3);border-color:var(--q3)}
+.sheet .close{margin-left:8px;border:none;background:transparent;font-size:20px;cursor:pointer}
+.sheet .scroll{overflow:auto;padding:0 16px 24px;-webkit-overflow-scrolling:touch}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:45;opacity:0;pointer-events:none;transition:.25s}
+.overlay.on{opacity:1;pointer-events:auto}
+.tiny{font-size:12.5px;color:var(--ink2)}
+.center{text-align:center}
+@media (min-width:600px){.vocab{grid-template-columns:1fr 1fr}}
+
+.pos{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--paper2);border:1.5px dashed var(--accent);color:var(--accent);font-family:Georgia,serif;font-size:12px;font-weight:700;margin:0 3px;vertical-align:middle}
+.pos.hit{background:var(--accent);color:#fff;border-style:solid}
+u.ul{text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:1px}
+sup.cm{font-family:Georgia,serif;font-size:11px;color:var(--accent);font-weight:700;margin-right:2px}
+.cmts{display:grid;gap:8px;margin:12px 0}
+.cmt{display:flex;gap:10px;background:#fff8ef;border:1px dashed var(--accent);border-radius:10px;padding:10px 12px;font-size:14px}
+.cmt .n{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700}
+.cmt .en{font-family:"Comic Sans MS","Segoe Print",Georgia,serif;font-style:italic}
+.toc{margin:12px 0}
+.toc .row{display:grid;grid-template-columns:64px 1fr;gap:10px;padding:10px 0;border-top:1px dashed var(--line);align-items:start}
+.toc .row:first-child{border-top:none}
+.toc .para{font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;padding-top:3px}
+.toc .first{font-size:14px}
+.toc .role{display:inline-block;font-size:12px;background:var(--ink);color:#fff;border-radius:6px;padding:1px 8px;margin-bottom:4px}
+.toc .role.red{background:var(--accent)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+.tbl th,.tbl td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+.tbl th{background:var(--paper2);font-size:12.5px}
+.type{display:inline-block;font-size:12px;border-radius:6px;padding:1px 8px;color:#fff;font-weight:700}
+.type.add{background:var(--q2)}.type.fix{background:var(--q3)}
+.hole{background:#fff;border:2px dashed var(--accent);border-radius:12px;padding:12px 14px;margin:10px 0}
+.hole .l{font-size:12px;color:var(--accent2);letter-spacing:.06em;font-weight:700}
+.hole .shape{font-size:16px;font-weight:800;margin-top:4px}
+.piece{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14px}
+.piece.ok{background:#e4f3ea}
+.piece .m{display:inline-block;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;text-align:center;line-height:18px;font-family:Georgia,serif;margin-right:6px}
+.piece.ok .m{background:var(--ok);border-color:var(--ok);color:#fff}
+.piece .why{display:block;color:var(--ink2);font-size:13px;margin-top:3px}
+.piece.ok .why{color:#1f5e3b}
+.link4{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.link4 div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.link4 b{display:block;font-size:14px;margin-bottom:2px}
+.link4 .hit{border-color:var(--accent);background:#fff8ef}
+
+.docs{display:grid;gap:10px;margin:12px 0}
+.doc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.doc .dh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.doc .dh .tag{font-size:11.5px;background:var(--ink);color:#fff;border-radius:6px;padding:1px 8px;font-family:Georgia,serif}
+.doc .dh b{font-size:14.5px}
+.doc .role{font-size:13.5px;color:var(--ink2)}
+.docarrow{text-align:center;color:var(--accent);font-weight:800;font-size:20px;line-height:1}
+.ant{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+.ant th,.ant td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+.ant th{background:var(--paper2);font-size:12.5px}
+.ant .qn{font-family:Georgia,serif;color:var(--accent);font-weight:700;white-space:nowrap}
+.cmp{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+.cmp th,.cmp td{border:1px solid var(--line);padding:7px 9px;vertical-align:top;text-align:left}
+.cmp th{background:var(--paper2);font-size:12px}
+.cmpcards{display:grid;gap:8px;margin:10px 0}
+.cc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13.5px}
+.cc .row{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:4px 0}
+.cc .k{font-family:Georgia,serif;font-size:11px;color:var(--accent);font-weight:700;padding-top:3px}
+.cc .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px dashed var(--line);margin-top:6px;padding-top:6px;font-size:12.5px;color:var(--ink2)}
+.ant td:nth-child(2){display:none}.ant th:nth-child(2){display:none}
+@media (min-width:600px){.ant td:nth-child(2),.ant th:nth-child(2){display:table-cell}}
+.st{display:inline-block;font-size:11.5px;border-radius:6px;padding:1px 7px;color:#fff;font-weight:700;white-space:nowrap}
+.st.ok{background:var(--ok)}.st.chg{background:var(--accent)}.st.new{background:var(--q3)}.st.todo{background:var(--q1);color:#3a2a00}.st.x{background:var(--ng)}
+.cut{display:inline-block;font-size:11px;border:1px solid var(--ng);color:var(--ng);border-radius:5px;padding:0 6px;margin-right:4px;white-space:nowrap}
+.ev3{display:grid;gap:6px;margin:8px 0}
+.ev3 .e{display:flex;gap:8px;align-items:flex-start;background:var(--paper2);border-radius:10px;padding:8px 10px;font-size:14px}
+.ev3 .e .src{flex:none;font-size:11px;background:var(--ink);color:#fff;border-radius:5px;padding:1px 7px;margin-top:3px;white-space:nowrap}
+.ev3 .e .ja{display:block;color:var(--ink2);font-size:13px}
+.piece{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14px}
+.piece.ok{background:#e4f3ea}
+.piece .m{display:inline-block;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;text-align:center;line-height:18px;font-family:Georgia,serif;margin-right:6px}
+.piece.ok .m{background:var(--ok);border-color:var(--ok);color:#fff}
+.piece .why{display:block;color:var(--ink2);font-size:13px;margin-top:3px}
+.piece.ok .why{color:#1f5e3b}
+.cond{background:#fff;border:2px dashed var(--accent);border-radius:12px;padding:12px 14px;margin:10px 0}
+.cond .l{font-size:12px;color:var(--accent2);letter-spacing:.06em;font-weight:700}
+.cond ul{margin:6px 0 0;padding-left:18px}
+.cond li{margin:2px 0;font-size:14.5px}
+.sched{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+.sched th,.sched td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+.sched th{background:var(--paper2);font-weight:700}
+.sched .th{background:#fff8ef;font-weight:700}
+.email{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:13px}
+.email .hdr{font-family:Georgia,serif;font-size:12.5px;color:var(--ink2);border-bottom:1px dashed var(--line);padding-bottom:4px;margin-bottom:6px}
+.form{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:10px 0}
+.form .bk{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:6px 0;font-size:13.5px}
+.form .bk .meta{font-size:12px;color:var(--ink2);margin-bottom:3px}
+.passage p.en{text-indent:0}
+.answers.multi label{border-radius:8px}
+.imgbox{text-align:center;margin:8px 0}
+.imgbox img{max-width:100%;border:1px solid var(--line);border-radius:10px;background:#fff}
+.doc-sec{border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}
+
+:root{--q4:#9a5ab8;--q5:#2a8f8f;--q4bg:#eee2f5;--q5bg:#d9efef}
+.show-all mark.q4,.show-q4 mark.q4{background:var(--q4bg);border-bottom-color:var(--q4)}
+.show-all mark.q5,.show-q5 mark.q5{background:var(--q5bg);border-bottom-color:var(--q5)}
+.legend .l4::before{background:var(--q4)}.legend .l5::before{background:var(--q5)}
+.qm.q4{background:var(--q4)}.qm.q5{background:var(--q5)}
+.ev.q4{background:var(--q4bg)}.ev.q5{background:var(--q5bg)}
+.sheet .filters button.f4.on{background:var(--q4);border-color:var(--q4)}
+.sheet .filters button.f5.on{background:var(--q5);border-color:var(--q5)}
+.sheet .filters{flex-wrap:wrap}
+.doc-sec .dt{font-family:Georgia,serif;font-size:12px;color:var(--accent);letter-spacing:.06em;margin-bottom:4px}
+</style></head><body data-key="q5lib">
+<header class="top"><div class="bar"><div class="logo">T</div><div class="t">可視化リーディング ― 複数資料問題<b>共通テスト第5問「Readburgh Library Book Fair」／ オンライン塾 THINKING</b></div><div class="timerchip" id="tChip">13:00</div></div><nav class="steps"><a href="#s0"><i>0</i>自力で解く</a><a href="#s1"><i>1</i>5STEP</a><a href="#s2"><i>2</i>状況と関係図</a><a href="#s3"><i>3</i>設問先読み</a><a href="#s4"><i>4</i>照合マップ</a><a href="#s5"><i>5</i>脳内実況</a><a href="#s6"><i>6</i>全訳</a><a href="#s7"><i>7</i>語句</a><a href="#s8"><i>8</i>持ち帰り</a></nav></header>
+<main class="wrap">
+<div class="hero"><div class="kicker">2026年度 共通テスト本試験 第5問</div>
+<h1><small>【複数資料問題】を攻略する</small>可視化リーディング ― Readburgh Library Book Fair ―</h1>
+<p class="lead">第5問は、複数の英文や図表を読み、それぞれの情報を照らし合わせながら答えを導く問題です。英文をそれぞれ読めるだけでは足りない。<b>資料Aに書かれていることが、資料Bでどう扱われているのか。</b>そこまで理解して初めて解けます。今回は、図書館のチラシ → 自分が送ったフォーム → 図書館からの返信メール、の3点。自分が「4冊推薦してボランティアは断った」という事実が、返信メールでどう扱われているか。そこを押さえれば問4と問5は一直線です。</p>
+<div class="meta"><span>目標解答時間 13分</span><span>設問5問</span><span>資料3点</span><span>下の「本文を開く」で、いつでも資料を参照できます</span></div></div>
+
+<section class="step" id="s0"><div class="stepno">STEP 0</div><h2>まず、時間を測って自力で解く</h2><div class="sub">Try it yourself</div>
+<p>解説を読む前に必ず解いてください。観察してほしいのは、<b>「資料を行ったり来たりした回数」</b>。同じ場所を3回以上探しに戻った設問があれば、それは資料同士のつながりを頭の中に残さずに読んだ場所です。</p>
+<div class="timerbox"><div class="big" id="tBig">13:00</div><button class="btn" id="tBtn">スタート</button><span class="tiny">13分を過ぎても止めずに続けて、超過時間を覚えておきましょう。</span></div>
+<div class="passage show-none"><p class="en lead-en">You are studying in the UK. In the town library, you found the following leaflet. After reading it, you submitted a form and received an email from the library.</p><div class="doc-sec"><div class="dt">資料A｜図書館のチラシ</div><div class="email"><div class="hdr">Readburgh Library ― Book Recommendations &amp; Volunteers Wanted</div>
+<p class="en"><mark class="q1">Our library will hold a book fair from 1 to 8 February 2026, to introduce picture books from various countries to Readburgh children.</mark> <mark class="q2">The fair will exhibit books all week in the entrance hall. We are also planning to have ‘Story Time’ reading sessions in The Children’s Centre in the library on the final day.</mark></p>
+<p class="en">To help improve our selection of books, we are calling for picture book recommendations for <mark class="q4">preschool children</mark>. Additionally, the library is recruiting volunteers to read stories to children during the reading sessions. <mark class="q2">If you volunteer, you will receive a book coupon.</mark></p>
+<p class="en">Please note:<br>・Books in the original language or translations are welcome.<br>・<mark class="q3">No book should cost more than £20.</mark><br>・The submission period is from 15 December 2025 to 19 January 2026.</p>
+<p class="en">Nominate your book(s) and/or register as a volunteer via the online form.<br><span class="tiny">For questions, contact: internationalbookfair@***.lib.uk</span></p></div></div><div class="doc-sec"><div class="dt">資料B｜自分が送ったオンラインフォーム</div><div class="form"><div class="hdr tiny" style="margin-bottom:6px">Library Book Fair Online Form ／ Will you be a ‘Story Time’ reader? <b>Yes ／ No</b></div>
+<div class="bk"><div class="meta"><b class="en">Green Demon Blue Demon</b> ― Written by Shinichiro Ishida ／ Year 1990 ／ <mark class="q3">Price £16</mark> ／ <mark class="q3">Pictures by Author</mark></div>
+<span class="en">This book contains short stories about demons and various animals they encounter. <mark class="q3">Most stories are heart-warming, but some are not.</mark> My favourite is ‘Breakfast Battle.’ Two demons fight over what to feed their <mark class="q3">pet dog</mark> for breakfast. Illustrations are another attractive feature, making it suitable for children between three and five years old.</span></div>
+<div class="bk"><div class="meta"><b class="en">Paint! Paint! Paint!</b> ― Written by Kaori Ando ／ Year 2022 ／ <mark class="q3">Price £8</mark> ／ <mark class="q3">Pictures by Author</mark></div>
+<span class="en">This is a popular picture book for parents to read to their children before they enter primary school. The main character wants to paint the whole world. She paints ceilings in orange, kitchens in purple, and streets and buildings in green. By chance, her <mark class="q3">cat</mark> steps in some paint and leaves paw prints wherever it goes. The world looks more colourful after reading the story.</span></div>
+<div class="bk"><div class="meta"><b class="en">Panda Adventures</b> ― Written by Maruo Maru ／ Year 2021 ／ <mark class="q3">Price £10</mark> ／ <mark class="q3">Pictures by Kanako Maru</mark></div>
+<span class="en">In this story, a young male <mark class="q3">panda</mark> escapes from a zoo. He meets a schoolboy and they visit places in town together. <mark class="q3">However, the poor panda is caught and taken back to the zoo. The boy’s final words to the panda had me in tears.</mark> <mark class="q4">The story is long, so it is suitable for kids aged over ten.</mark></span></div>
+<div class="bk"><div class="meta"><b class="en">The Cloud Prince</b> ― Written by Kamiko Narita ／ Year 1981 ／ <mark class="q3">Price £19</mark> ／ <mark class="q3">Pictures by Author</mark></div>
+<span class="en">A boy who lives on a thunder cloud plays tricks on children. The tricks include snow in summer and a rainstorm in the park when they are playing. The children are afraid of him at first, but he rescues an injured <mark class="q3">goat</mark> and they all become friends. This book is read to preschool children all over the world.</span></div></div></div><div class="doc-sec"><div class="dt">資料C｜図書館からの返信メール</div><div class="email"><div class="hdr">From: internationalbookfair@***.lib.uk ／ Date: 17 January 2026 ／ Subject: Book Recommendations</div>
+<p class="en">Hello,</p>
+<p class="en">Thank you for your recommendations. In fact, we found that the titles have been translated into multiple languages, which will make the fair truly international. <mark class="q4">Although one of your entries did not fit the target age range, your other titles are gratefully accepted (refer to the attachment).</mark> <mark class="q5">If you have an additional book recommendation, please email it to us.</mark></p>
+<p class="en"><mark class="q5">As we are still short of volunteers for the last day, would you kindly reconsider?</mark></p>
+<p class="en">Thanks again,<br>Library Staff<br><span class="tiny">Attachment: List of accepted books</span></p></div></div></div>
+<div class="qlist"><div class="q"><div class="stem"><span class="pill">問1</span><span class="en">What is the main purpose of the library book fair?</span></div><ol class="opts"><li><span class="n">①</span><span class="en">To display picture books by Readburgh authors</span></li><li><span class="n">②</span><span class="en">To encourage international students to use the library</span></li><li><span class="n">③</span><span class="en">To familiarise children with stories from around the world</span></li><li><span class="n">④</span><span class="en">To promote foreign book collections in preschools</span></li></ol><div class="answers "><label><input type="radio" name="q1" value="①"><span>①</span></label><label><input type="radio" name="q1" value="②"><span>②</span></label><label><input type="radio" name="q1" value="③"><span>③</span></label><label><input type="radio" name="q1" value="④"><span>④</span></label></div><div class="result" id="r1"></div></div><div class="q"><div class="stem"><span class="pill">問2</span><span class="en">Which is true about the library event?</span></div><ol class="opts"><li><span class="n">①</span><span class="en">Books will be on show in the children’s area.</span></li><li><span class="n">②</span><span class="en">Reading sessions will be held daily.</span></li><li><span class="n">③</span><span class="en">The book fair will run for one month.</span></li><li><span class="n">④</span><span class="en">Volunteers will be given a thank-you gift.</span></li></ol><div class="answers "><label><input type="radio" name="q2" value="①"><span>①</span></label><label><input type="radio" name="q2" value="②"><span>②</span></label><label><input type="radio" name="q2" value="③"><span>③</span></label><label><input type="radio" name="q2" value="④"><span>④</span></label></div><div class="result" id="r2"></div></div><div class="q"><div class="stem"><span class="pill">問3</span><span class="en">Which combination best describes the four books you recommended?</span></div><div class="card soft" style="margin:6px 0"><span class="en">A: All the books include drawings by the writers.<br>B: All the books meet the budget criterion.<br>C: All the stories have happy endings.<br>D: All the stories mention animals.</span></div><ol class="opts"><li><span class="n">①</span><span class="en">A and B</span></li><li><span class="n">②</span><span class="en">A and C</span></li><li><span class="n">③</span><span class="en">A and D</span></li><li><span class="n">④</span><span class="en">B and C</span></li><li><span class="n">⑤</span><span class="en">B and D</span></li><li><span class="n">⑥</span><span class="en">C and D</span></li></ol><div class="answers "><label><input type="radio" name="q3" value="①"><span>①</span></label><label><input type="radio" name="q3" value="②"><span>②</span></label><label><input type="radio" name="q3" value="③"><span>③</span></label><label><input type="radio" name="q3" value="④"><span>④</span></label><label><input type="radio" name="q3" value="⑤"><span>⑤</span></label><label><input type="radio" name="q3" value="⑥"><span>⑥</span></label></div><div class="result" id="r3"></div></div><div class="q"><div class="stem"><span class="pill">問4</span><span class="en">Which of your book recommendations will not be included in the fair?</span></div><ol class="opts"><li><span class="n">①</span><span class="en">Green Demon Blue Demon</span></li><li><span class="n">②</span><span class="en">Paint! Paint! Paint!</span></li><li><span class="n">③</span><span class="en">Panda Adventures</span></li><li><span class="n">④</span><span class="en">The Cloud Prince</span></li></ol><div class="answers "><label><input type="radio" name="q4" value="①"><span>①</span></label><label><input type="radio" name="q4" value="②"><span>②</span></label><label><input type="radio" name="q4" value="③"><span>③</span></label><label><input type="radio" name="q4" value="④"><span>④</span></label></div><div class="result" id="r4"></div></div><div class="q"><div class="stem"><span class="pill">問5</span><span class="en">In the email, what are the two things that the library would like you to do? (The order does not matter.)</span></div><ol class="opts"><li><span class="n">①</span><span class="en">Ask your friends to volunteer</span></li><li><span class="n">②</span><span class="en">Buy a new picture book</span></li><li><span class="n">③</span><span class="en">Participate in ‘Story Time’</span></li><li><span class="n">④</span><span class="en">Resubmit your online form</span></li><li><span class="n">⑤</span><span class="en">Suggest another book title</span></li><li><span class="n">⑥</span><span class="en">Translate one of the books</span></li></ol><div class="answers multi"><label><input type="checkbox" name="q5" value="①"><span>①</span></label><label><input type="checkbox" name="q5" value="②"><span>②</span></label><label><input type="checkbox" name="q5" value="③"><span>③</span></label><label><input type="checkbox" name="q5" value="④"><span>④</span></label><label><input type="checkbox" name="q5" value="⑤"><span>⑤</span></label><label><input type="checkbox" name="q5" value="⑥"><span>⑥</span></label></div><div class="tiny">2つ選択</div><div class="result" id="r5"></div></div></div>
+<p class="center"><button class="btn" id="grade">採点する</button></p><p class="center" id="gradeSum" style="font-weight:700"></p>
+</section>
+
+<section class="step" id="s1"><div class="stepno">STEP 1</div><h2>可視化リーディング ― 複数資料問題の5STEP</h2><div class="sub">The eye path</div>
+<p>第5問で点が分かれるのは、英語力ではなく「資料をつないで読んでいるか」です。目の動かし方を5つに固定します。</p>
+<div class="card flow"><div class="fstep"><div class="num">1</div><div><h4>リード文から「自分が置かれた状況」をつかむ</h4><p>いきなり資料を読み始めない。リード文で「自分は今、どんな立場で、この資料を読むことになっているのか」を確認し、実際の場面を頭の中でイメージする。英文を訳すのではなく、場面を作る。</p><div class="goal">鉄則：文章を読む前に、「自分は今どんな状況にいるのか」をつかむ。</div></div></div><div class="fstep"><div class="num">2</div><div><h4>資料同士の「関係図」を頭の中につくる</h4><p>資料はいくつある？ それぞれ何の資料？ 誰が作った？ どの資料とどの資料が関係している？ 資料を1つずつ独立した文章として扱わず、関係でつなぐ。この段階では中身まで理解しなくていい。</p><div class="goal">鉄則：資料を読む前に、資料同士の関係をつかむ。</div></div></div><div class="fstep"><div class="num">3</div><div><h4>設問を先読みして「探す情報」を決める</h4><p>すべての設問に目を通し、「結局、何を答えればいい問題なのか」まで自分の言葉にする。キーワードを見つけて終わらせない。選択肢は、読む目的が明確になるなら先に見る。多すぎるなら本文の後でいい。</p><div class="goal">鉄則：設問先読みは、答えを探すためではない。本文で何を探すかを決めるためにする。</div></div></div><div class="fstep"><div class="num">4</div><div><h4>資料同士を「照らし合わせながら」読む</h4><p>大問5の最重要STEP。本文は上から読むが、常に「今読んでいる内容は、他の資料のどことつながる？」と考える。OK／変更・再検討／新情報／未完了 のように整理すると、英文理解ではなく「状況そのもの」が把握できる。</p><div class="goal">鉄則：1文ずつ正確に読む。でも、頭の中では資料同士をつなぎ続ける。</div></div></div><div class="fstep"><div class="num">5</div><div><h4>複数の根拠をそろえて、正解を「確定」する</h4><p>「なんとなく合っていそう」で選ばない。本文のどことどこを根拠にすればこの答えになるのかを明確にする。根拠が1か所見つかっただけで安心しない。不正解は4つの基準で切る：本文と矛盾／本文にない情報／対象・時期・条件がズレ／問われている内容とズレ。</p><div class="goal">鉄則：答えを当てるな。必要な根拠を全部そろえて、正解を確定しろ。</div></div></div></div>
+<div class="note"><b class="l">この手順の急所</b>STEP 4 で「資料Aのこれは、資料Bでこう扱われた」という対応を頭の中に残せるか。これが残っていれば、設問を解くときに探し直す回数がほぼゼロになります。残っていなければ、5問すべてで資料を最初から読み直すことになり、時間が消えます。</div>
+</section>
+
+<section class="step" id="s2"><div class="stepno">STEP 2</div><h2>状況をつかみ、資料の関係図をつくる</h2><div class="sub">Situation &amp; relation map</div>
+<h3>STEP 1｜自分は今、どんな状況？</h3>
+<div class="card"><p><b>自分は誰？</b> → イギリスで勉強している学生。</p><p><b>何をした？</b> → 町の図書館でチラシを見て、オンラインフォームを送った（本を4冊推薦。「Story Time」の読み手は No）。</p><p><b>今、何が起きた？</b> → 図書館から返信メールが届いた。</p></div>
+<div class="note"><b class="l">頭の中ではこうなる</b>「図書館が絵本の推薦とボランティアを募集していて、自分は本だけ4冊推薦してボランティアは断った。その返事が来た」。この「自分が何を送ったか」を先に押さえておくと、返信の reconsider（考え直して）が何を指すか一発で分かる。</div>
+<h3>STEP 2｜資料同士はどうつながる？</h3>
+<div class="docs"><div class="doc"><div class="dh"><span class="tag">資料A</span><b>チラシ｜図書館 → 一般</b></div><div class="role">募集の内容と条件。イベントの目的・日程・場所・対象年齢（preschool）・予算（£20以下）・ボランティア特典（本のクーポン）。</div></div><div class="docarrow">↓<div class="tiny" style="font-weight:400">Aの条件に沿って、自分が応募</div></div><div class="doc"><div class="dh"><span class="tag">資料B</span><b>オンラインフォーム｜自分 → 図書館</b></div><div class="role">推薦した4冊のデータ（価格・絵の作者・内容・対象年齢）。Story Time の読み手は No。</div></div><div class="docarrow">↓<div class="tiny" style="font-weight:400">Bへの返答</div></div><div class="doc"><div class="dh"><span class="tag">資料C</span><b>返信メール｜図書館 → 自分</b></div><div class="role">4冊のうち1冊は対象年齢に合わず不採用。追加推薦があればメールを。ボランティアが足りないので考え直してほしい。</div></div></div>
+<div class="note"><b class="l">ここが重要</b>Aは「条件」、Bは「自分の応募」、Cは「結果と追加のお願い」。だから問3（4冊の共通点）はBだけで解けるが、問4（不採用の1冊）はCの「対象年齢に合わない」をAの「preschool」とBの各冊の年齢に突き合わせないと決まらない。問5はCの依頼だが、Bで自分が No と答えたことを知らないと reconsider の意味が取れない。</div>
+</section>
+
+<section class="step" id="s3"><div class="stepno">STEP 3</div><h2>設問を先読みして、探す情報を決める</h2><div class="sub">Set your antennas</div>
+<p>設問を英語のまま眺めない。「結局、何を答えればいい問題なのか」まで自分の言葉にして、どの資料のどこを見ればいいかまで決めます。</p>
+<table class="ant"><tr><th>設問</th><th>原文</th><th>自分の言葉に直すと</th><th>どこを見る</th></tr><tr><td class="qn">問1</td><td class="en" style="font-size:13px">What is the main purpose of the library book fair?</td><td>ブックフェアの主な目的は？</td><td>資料Aの冒頭。to 不定詞の目的表現。</td></tr><tr><td class="qn">問2</td><td class="en" style="font-size:13px">Which is true about the library event?</td><td>イベントについて正しいのは？</td><td>資料A。場所・頻度・期間・特典の4点を選択肢と照合。</td></tr><tr><td class="qn">問3</td><td class="en" style="font-size:13px">Which combination best describes the four books you recommended?</td><td>自分が推薦した4冊に共通するのは？</td><td>資料Bの4冊すべて。A〜Dを1冊ずつ検証。「全部」が条件。</td></tr><tr><td class="qn">問4</td><td class="en" style="font-size:13px">Which of your book recommendations will not be included in the fair?</td><td>4冊のうち、フェアに入らないのは？</td><td>資料C（不採用の理由）× 資料A（対象年齢）× 資料B（各冊の年齢）。</td></tr><tr><td class="qn">問5</td><td class="en" style="font-size:13px">what are the two things that the library would like you to do?</td><td>図書館が自分にしてほしい2つのことは？</td><td>資料Cの依頼2つ。Bで自分が No と答えたことと合わせて読む。</td></tr></table>
+<div class="note"><b class="l">やってしまいがちなこと</b>問3の All（すべての本が）を見落とすこと。4冊中3冊に当てはまる記述が、罠として必ず置かれる。1冊でも外れたら、その記述は切る。</div>
+</section>
+
+<section class="step" id="s4"><div class="stepno">STEP 4</div><h2>照合マップ ― 資料同士を突き合わせる</h2><div class="sub">Cross-reference map</div>
+<p>チラシの条件（資料A）に、自分の4冊（資料B）がどう当てはまるかを表にしてから、図書館の返事（資料C）を重ねます。問3と問4は、この表ができていれば表を読むだけです。</p>
+<div class="tiny" style="margin-bottom:4px">A ＝ 資料A｜チラシの条件 ／ 設問の観点　／　B ＝ 資料B｜4冊の実態</div><div class="cmpcards"><div class="cc"><div class="row"><div class="k">A</div><div>対象：preschool children（就学前）</div></div><div class="row"><div class="k">B</div><div class="en">Green Demon：3〜5歳 ○／Paint!：before primary school ○／Panda：over ten ×／Cloud Prince：preschool ○</div></div><div class="foot"><span class="st chg">1冊だけ外れる</span><span>→ 問4の正解＝Panda</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>予算：£20以下</div></div><div class="row"><div class="k">B</div><div class="en">£16／£8／£10／£19</div></div><div class="foot"><span class="st ok">全冊OK</span><span>→ 問3のB ○</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>絵は著者本人か（問3のA）</div></div><div class="row"><div class="k">B</div><div class="en">Author／Author／Kanako Maru（別人）／Author</div></div><div class="foot"><span class="st x">Pandaだけ別人</span><span>→ 問3のA ×</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>ハッピーエンドか（問3のC）</div></div><div class="row"><div class="k">B</div><div class="en">some are not／colourful ○／taken back, in tears ×／become friends ○</div></div><div class="foot"><span class="st x">2冊が外れる</span><span>→ 問3のC ×</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>動物が出てくるか（問3のD）</div></div><div class="row"><div class="k">B</div><div class="en">pet dog／cat／panda／goat</div></div><div class="foot"><span class="st ok">全冊に動物</span><span>→ 問3のD ○</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>Story Time の読み手</div></div><div class="row"><div class="k">B</div><div class="en">フォームで No と回答</div></div><div class="foot"><span class="st new">資料Cで「考え直して」と頼まれる</span><span>→ 問5の③</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>推薦は何冊でも（book(s)）</div></div><div class="row"><div class="k">B</div><div class="en">4冊送った</div></div><div class="foot"><span class="st new">資料Cで「追加があればメールを」</span><span>→ 問5の⑤</span></div></div></div>
+<div class="note"><b class="l">このマップができると</b>問3は表の4行を縦に見るだけで B と D が残る。問4は表の1行目で Panda が浮く。資料を読み直す必要がない。第5問は「読む」のではなく「表にする」問題だと分かると、時間が余る。</div>
+</section>
+
+<section class="step" id="s5"><div class="stepno">STEP 5</div><h2>脳内実況 ― 根拠をそろえて確定する</h2><div class="sub">Think-aloud</div>
+<p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。各問、「根拠をそろえる → 正解の条件を確定 → 選択肢を照合」の順で、不正解は4つの基準（矛盾／本文にない／条件ズレ／設問ズレ）のどれで切ったかを明示します。各問はタップで開閉できます。</p>
+<details class="think" open><summary><span class="pill" style="background:var(--ink)">問1</span>ブックフェアの目的<span class="ans">正解 ③</span></summary><div class="body">
+<p style="margin-top:12px"><b>図書館のブックフェアの主な目的は何か。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：目的 ＝ to 不定詞を資料Aの冒頭で待つ</h5>イベントの目的は、告知文の1文目に to 〜 の形で書かれるのが定石。</div></div><div class="t"><div class="n">2</div><div><h5>1文目で見つかる</h5><div class="quote"><span class="en">Our library will hold a book fair from 1 to 8 February 2026, to introduce picture books from various countries to Readburgh children.</span><span class="ja">さまざまな国の絵本を Readburgh の子どもたちに紹介するために、ブックフェアを開催する。</span></div>目的は「いろいろな国の絵本を、子どもに紹介する」。</div></div><div class="t"><div class="n">3</div><div><h5>言い換えを確定する</h5>various countries → around the world。introduce … to children → familiarise children with。主語は図書館、対象は子ども。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">資料A</span><span><span class="en">to introduce picture books from various countries to Readburgh children</span><span class="ja">いろいろな国の絵本を子どもに紹介するため</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>対象は「子ども」</li><li>中身は「いろいろな国の物語」</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">③</span><span class="en">To familiarise children with stories from around the world</span><span class="why">children ＝ children、from various countries ＝ around the world。一致。</span></div><div class="piece "><span class="m">①</span><span class="en">To display picture books by Readburgh authors</span><span class="why"><span class="cut">矛盾</span>Readburgh の作家ではなく、いろいろな国の本。</span></div><div class="piece "><span class="m">②</span><span class="en">To encourage international students to use the library</span><span class="why"><span class="cut">本文にない</span>留学生の利用促進という話は無い。自分が留学生なのはリード文の話で、フェアの目的ではない。</span></div><div class="piece "><span class="m">④</span><span class="en">To promote foreign book collections in preschools</span><span class="why"><span class="cut">条件ズレ</span>preschool は「対象年齢」であって、幼稚園に本を広めるという話ではない。</span></div>
+<p class="center"><button class="btn ghost" data-open="q1">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「目的」は告知文の1文目の to 不定詞。選択肢はリード文の情報（自分が留学生）や本文の別の語（preschool）を使って作られる。目的の文だけを根拠にして、他を切る。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問2</span>イベントについて正しいもの<span class="ans">正解 ④</span></summary><div class="body">
+<p style="margin-top:12px"><b>図書館のイベントについて正しいのはどれか。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：選択肢の4点を資料Aで1つずつ照合</h5>場所（children’s area?）、頻度（daily?）、期間（one month?）、特典（gift?）。それぞれ本文のどこで決まるかを探す。</div></div><div class="t"><div class="n">2</div><div><h5>本文の事実</h5><div class="quote"><span class="en">The fair will exhibit books all week in the entrance hall. … ‘Story Time’ reading sessions … on the final day. … If you volunteer, you will receive a book coupon.</span><span class="ja">展示は1週間、入口ホールで。読み聞かせは最終日。ボランティアには本のクーポン。</span></div></div></div><div class="t"><div class="n">3</div><div><h5>1つずつ切る</h5>場所は entrance hall（①×）。読み聞かせは final day のみ（②×）。期間は 1〜8 February ＝ 1週間（③×）。クーポン ＝ お礼の品（④○）。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">資料A</span><span><span class="en">If you volunteer, you will receive a book coupon.</span><span class="ja">ボランティアには本のクーポン</span></span></div><div class="e"><span class="src">資料A</span><span><span class="en">all week in the entrance hall / on the final day / from 1 to 8 February</span><span class="ja">場所・頻度・期間</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>資料Aの記述と1つも矛盾しない</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">④</span><span class="en">Volunteers will be given a thank-you gift.</span><span class="why">book coupon ＝ thank-you gift。</span></div><div class="piece "><span class="m">①</span><span class="en">Books will be on show in the children’s area.</span><span class="why"><span class="cut">矛盾</span>展示は entrance hall。Children’s Centre は読み聞かせの場所。</span></div><div class="piece "><span class="m">②</span><span class="en">Reading sessions will be held daily.</span><span class="why"><span class="cut">矛盾</span>final day だけ。</span></div><div class="piece "><span class="m">③</span><span class="en">The book fair will run for one month.</span><span class="why"><span class="cut">矛盾</span>1〜8 February ＝ 1週間。</span></div>
+<p class="center"><button class="btn ghost" data-open="q2">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「正しいもの」型は、選択肢ごとに本文の該当箇所を探して矛盾で切る。場所と場所（entrance hall と Children’s Centre）を入れ替えた選択肢が典型の罠。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問3</span>4冊すべてに当てはまる組み合わせ<span class="ans">正解 ⑤ B and D</span></summary><div class="body">
+<p style="margin-top:12px"><b>自分が推薦した4冊を最もよく表す組み合わせはどれか。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：All ＝ 4冊全部。1冊でも外れたら切る</h5>A〜Dの4つの記述を、4冊それぞれで検証する。表にするのが一番速い。</div></div><div class="t"><div class="n">2</div><div><h5>A：絵は著者本人か</h5><div class="quote"><span class="en">Pictures by Author ／ Author ／ Kanako Maru ／ Author</span><span class="ja">Panda Adventures だけ、絵は Kanako Maru（著者 Maruo Maru とは別人）。</span></div>A ×。</div></div><div class="t"><div class="n">3</div><div><h5>B：予算£20以下か</h5>£16、£8、£10、£19。全部20未満。B ○。</div></div><div class="t"><div class="n">4</div><div><h5>C：全部ハッピーエンドか</h5><div class="quote"><span class="en">Most stories are heart-warming, but some are not. ／ the poor panda is caught and taken back to the zoo … had me in tears</span><span class="ja">Green Demon は「そうでない話もある」、Panda は連れ戻されて涙。</span></div>C ×。</div></div><div class="t"><div class="n">5</div><div><h5>D：全部に動物が出るか</h5>pet dog、cat、panda、goat。全冊に動物。D ○。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">資料B</span><span><span class="en">£16 / £8 / £10 / £19</span><span class="ja">全冊£20以下</span></span></div><div class="e"><span class="src">資料B</span><span><span class="en">pet dog / cat / panda / goat</span><span class="ja">全冊に動物</span></span></div><div class="e"><span class="src">資料B</span><span><span class="en">Pictures by Kanako Maru</span><span class="ja">Pandaの絵は別人</span></span></div><div class="e"><span class="src">資料B</span><span><span class="en">some are not / taken back to the zoo … in tears</span><span class="ja">ハッピーエンドでない話がある</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>4冊すべてに当てはまる記述だけを残す</li><li>B（予算）と D（動物）</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">⑤</span><span class="en">B and D</span><span class="why">予算と動物。4冊とも満たす。</span></div><div class="piece "><span class="m">①②③</span><span class="en">A を含む組み合わせ</span><span class="why"><span class="cut">条件ズレ</span>Panda の絵は著者ではない。3冊は合うが「全部」ではない。</span></div><div class="piece "><span class="m">②④⑥</span><span class="en">C を含む組み合わせ</span><span class="why"><span class="cut">矛盾</span>Green Demon と Panda はハッピーエンドではない。</span></div>
+<p class="center"><button class="btn ghost" data-open="q3">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「すべての本が」型は、3冊に当てはまる記述（A）が最大の罠。表を作って1冊ずつ○×を付ける。資料Aの条件（£20）と資料Bの事実（価格）を突き合わせる B のような項目は、資料をまたぐことを忘れない。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問4</span>フェアに入らない1冊<span class="ans">正解 ③</span></summary><div class="body">
+<p style="margin-top:12px"><b>自分の推薦本のうち、フェアに含まれないのはどれか。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：資料Cの「不採用の理由」を取る</h5><div class="quote"><span class="en">Although one of your entries did not fit the target age range, your other titles are gratefully accepted.</span><span class="ja">1冊は対象年齢に合わなかったが、他は受け入れた。</span></div>理由は「対象年齢」。では対象年齢は何歳か → 資料Aに戻る。</div></div><div class="t"><div class="n">2</div><div><h5>資料Aで対象年齢を確認</h5>picture book recommendations for preschool children。就学前の子ども。</div></div><div class="t"><div class="n">3</div><div><h5>資料Bで、4冊の対象年齢を見る</h5><div class="quote"><span class="en">three and five years old ／ before they enter primary school ／ suitable for kids aged over ten ／ read to preschool children</span><span class="ja">3〜5歳／小学校入学前／10歳以上／就学前</span></div>Panda Adventures だけ「10歳以上」。就学前ではない。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">資料C</span><span><span class="en">one of your entries did not fit the target age range</span><span class="ja">1冊が対象年齢に合わない</span></span></div><div class="e"><span class="src">資料A</span><span><span class="en">recommendations for preschool children</span><span class="ja">対象は就学前</span></span></div><div class="e"><span class="src">資料B</span><span><span class="en">The story is long, so it is suitable for kids aged over ten.</span><span class="ja">Pandaは10歳以上向け</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>資料Cの理由 ＝ 対象年齢</li><li>資料Aの対象 ＝ 就学前</li><li>資料Bで就学前に合わない1冊</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">③</span><span class="en">Panda Adventures</span><span class="why">over ten。就学前ではない。3資料が一致。</span></div><div class="piece "><span class="m">①</span><span class="en">Green Demon Blue Demon</span><span class="why"><span class="cut">矛盾</span>3〜5歳。就学前に合う。</span></div><div class="piece "><span class="m">②</span><span class="en">Paint! Paint! Paint!</span><span class="why"><span class="cut">矛盾</span>小学校入学前。合う。</span></div><div class="piece "><span class="m">④</span><span class="en">The Cloud Prince</span><span class="why"><span class="cut">矛盾</span>preschool children と明記。合う。</span></div>
+<p class="center"><button class="btn ghost" data-open="q4">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>資料Cは「理由」しか言わない。理由（対象年齢）を資料Aで数値化（就学前）し、資料Bで各冊に当てはめる。3つの資料を順番にたどる問題。1か所で止まると、£19 の Cloud Prince を「高いから」と選ぶような誤りが出る。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問5</span>図書館が自分にしてほしい2つのこと<span class="ans">正解 ③ と ⑤</span></summary><div class="body">
+<p style="margin-top:12px"><b>メールで、図書館があなたにしてほしい2つのことは何か。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：資料Cの依頼文を2つ取る。依頼は please / would you の形</h5><div class="quote"><span class="en">If you have an additional book recommendation, please email it to us. ／ As we are still short of volunteers for the last day, would you kindly reconsider?</span><span class="ja">追加の推薦があればメールを。／最終日のボランティアが足りないので、考え直してもらえませんか？</span></div></div></div><div class="t"><div class="n">2</div><div><h5>reconsider（考え直す）の中身を、資料Bで確定する</h5>フォームで Will you be a ‘Story Time’ reader? に No と答えている。だから「考え直して」＝「読み手をやってほしい」。最終日 ＝ Story Time の日（資料A）。</div></div><div class="t"><div class="n">3</div><div><h5>2つを言い換える</h5>追加の推薦 → Suggest another book title（⑤）。読み手を考え直す → Participate in ‘Story Time’（③）。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">資料C</span><span><span class="en">If you have an additional book recommendation, please email it to us.</span><span class="ja">追加推薦をメールで</span></span></div><div class="e"><span class="src">資料C</span><span><span class="en">still short of volunteers for the last day, would you kindly reconsider?</span><span class="ja">ボランティアを考え直して</span></span></div><div class="e"><span class="src">資料B</span><span><span class="en">Will you be a ‘Story Time’ reader? → No</span><span class="ja">自分は読み手を断っていた</span></span></div><div class="e"><span class="src">資料A</span><span><span class="en">‘Story Time’ reading sessions … on the final day</span><span class="ja">最終日＝Story Time</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>資料Cに依頼として書かれている</li><li>依頼の中身を資料A・Bで特定できる</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">③</span><span class="en">Participate in ‘Story Time’</span><span class="why">reconsider ＝ Bで No と答えた読み手ボランティアを引き受ける。</span></div><div class="piece ok"><span class="m">⑤</span><span class="en">Suggest another book title</span><span class="why">additional book recommendation ＝ もう1冊提案。</span></div><div class="piece "><span class="m">①</span><span class="en">Ask your friends to volunteer</span><span class="why"><span class="cut">本文にない</span>友人に頼めとは言っていない。自分に reconsider。</span></div><div class="piece "><span class="m">②</span><span class="en">Buy a new picture book</span><span class="why"><span class="cut">本文にない</span>買えとは言っていない。</span></div><div class="piece "><span class="m">④</span><span class="en">Resubmit your online form</span><span class="why"><span class="cut">本文にない</span>追加は email it to us。フォームの再送ではない。</span></div><div class="piece "><span class="m">⑥</span><span class="en">Translate one of the books</span><span class="why"><span class="cut">設問ズレ</span>翻訳済みだと図書館が言っただけ。依頼ではない。</span></div>
+<p class="center"><button class="btn ghost" data-open="q5">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>reconsider のような「何を」が省かれた依頼は、自分が前に送った資料（B）に戻らないと意味が取れない。第5問の依頼は、自分の過去の回答を前提に書かれている。</div></div></details>
+</section>
+
+<section class="step" id="s6"><div class="stepno">STEP 6</div><h2>全訳 ― 資料ごとに確認する</h2><div class="sub">Full translation</div>
+<p>色の下線は各設問の根拠箇所です。</p>
+<div class="legend"><span class="l1">問1</span><span class="l2">問2</span><span class="l3">問3</span><span class="l4">問4</span><span class="l5">問5</span></div>
+<p class="center"><button class="btn ghost" id="hideEn">英文を隠して和訳だけ読む</button></p>
+<div class="tr"><div class="lab">リード文</div><p class="en">You are studying in the UK. In the town library, you found the following leaflet. After reading it, you submitted a form and received an email from the library.</p><p class="ja">あなたはイギリスで勉強している。町の図書館で次のチラシを見つけ、読んだ後にフォームを送り、図書館からメールを受け取った。</p></div><div class="tr"><div class="lab">資料A｜チラシ</div><p class="en">Our library will hold a book fair from 1 to 8 February 2026, to introduce picture books from various countries to Readburgh children. The fair will exhibit books all week in the entrance hall. We are also planning to have ‘Story Time’ reading sessions in The Children’s Centre in the library on the final day. To help improve our selection of books, we are calling for picture book recommendations for preschool children. Additionally, the library is recruiting volunteers to read stories to children during the reading sessions. If you volunteer, you will receive a book coupon. Please note: Books in the original language or translations are welcome. No book should cost more than £20. The submission period is from 15 December 2025 to 19 January 2026.</p><p class="ja">当館は2026年2月1日から8日まで、さまざまな国の絵本を Readburgh の子どもたちに紹介するためブックフェアを開催します。<span class="qm q1">問1</span>フェアでは1週間、入口ホールに本を展示します。最終日には館内の Children’s Centre で「Story Time」の読み聞かせも予定しています。<span class="qm q2">問2</span>蔵書を充実させるため、就学前の子ども向け絵本の推薦を募集します。<span class="qm q4">問4</span>また、読み聞かせで子どもに本を読むボランティアも募集しています。ボランティアをすると本のクーポンがもらえます。<span class="qm q2">問2</span>注意：原語の本でも翻訳でも歓迎。1冊£20を超えないこと。<span class="qm q3">問3</span>応募期間は2025年12月15日〜2026年1月19日。</p></div><div class="tr"><div class="lab">資料B｜フォーム（4冊）</div><p class="en">Green Demon Blue Demon (£16, pictures by author): short stories about demons and various animals. Most stories are heart-warming, but some are not. … suitable for children between three and five. / Paint! Paint! Paint! (£8, pictures by author): for parents to read to children before primary school. Her cat steps in some paint … / Panda Adventures (£10, pictures by Kanako Maru): a young panda escapes from a zoo … is caught and taken back. The boy’s final words had me in tears. The story is long, so it is suitable for kids aged over ten. / The Cloud Prince (£19, pictures by author): a boy on a thunder cloud plays tricks … rescues an injured goat and they all become friends. Read to preschool children all over the world.</p><p class="ja">『Green Demon Blue Demon』（£16、絵は著者）：鬼とさまざまな動物の短編集。ほとんどは心温まるが、そうでない話もある。……3〜5歳向け。／『Paint! Paint! Paint!』（£8、絵は著者）：小学校入学前の子に親が読む本。猫が絵の具を踏んで足跡を残す。／『Panda Adventures』（£10、絵は Kanako Maru）：若いパンダが動物園を脱走……捕まって連れ戻される。少年の最後の言葉に涙。話が長いので10歳以上向け。<span class="qm q4">問4</span>／『The Cloud Prince』（£19、絵は著者）：雷雲に住む少年が子どもにいたずら……けがをしたヤギを助けて友達になる。世界中の就学前の子に読まれている。<span class="qm q3">問3</span></p></div><div class="tr"><div class="lab">資料C｜返信メール</div><p class="en">Thank you for your recommendations. In fact, we found that the titles have been translated into multiple languages, which will make the fair truly international. Although one of your entries did not fit the target age range, your other titles are gratefully accepted (refer to the attachment). If you have an additional book recommendation, please email it to us. As we are still short of volunteers for the last day, would you kindly reconsider?</p><p class="ja">推薦ありがとうございます。実は、どの本も複数の言語に翻訳されていると分かり、フェアが本当に国際的になります。1冊は対象年齢に合いませんでしたが、他の本はありがたく受け入れます（添付参照）。<span class="qm q4">問4</span>追加の推薦があれば、メールでお送りください。最終日のボランティアがまだ足りないので、考え直していただけませんか？<span class="qm q5">問5</span></p></div>
+</section>
+
+<section class="step" id="s7"><div class="stepno">STEP 7</div><h2>語句 ― 資料をつなぐ語を優先して覚える</h2><div class="sub">Vocabulary</div>
+<p>第5問は、資料Aの語が資料Bや設問でどう言い換えられるかで決まります。ペアで覚えてください。</p>
+<h4>今回の最重要ペア</h4><div class="vocab"><div class="v pair"><span class="w">introduce … to children ／ familiarise children with</span><span>子どもに紹介する → 子どもに親しませる（問1）</span></div><div class="v pair"><span class="w">various countries ／ around the world</span><span>さまざまな国 → 世界中（問1）</span></div><div class="v pair"><span class="w">book coupon ／ thank-you gift</span><span>本のクーポン → お礼の品（問2）</span></div><div class="v pair"><span class="w">cost no more than £20 ／ meet the budget criterion</span><span>£20以下 → 予算条件を満たす（問3）</span></div><div class="v pair"><span class="w">Pictures by Author ／ drawings by the writers</span><span>絵は著者 → 作者による絵（問3）</span></div><div class="v pair"><span class="w">preschool ／ before primary school ／ three and five</span><span>就学前の言い方（問4）</span></div><div class="v pair"><span class="w">additional recommendation ／ suggest another title</span><span>追加推薦 → 別の本を提案（問5）</span></div><div class="v pair"><span class="w">reconsider（volunteer）／ participate in ‘Story Time’</span><span>考え直す → 読み聞かせに参加（問5）</span></div></div>
+<h4>本文・設問</h4><div class="vocab"><div class="v"><span class="w">leaflet</span><span class="pos">名</span><span>チラシ</span></div><div class="v"><span class="w">exhibit</span><span class="pos">動</span><span>展示する</span></div><div class="v"><span class="w">recruit</span><span class="pos">動</span><span>募集する</span></div><div class="v"><span class="w">coupon</span><span class="pos">名</span><span>クーポン</span></div><div class="v"><span class="w">nominate</span><span class="pos">動</span><span>推薦する</span></div><div class="v"><span class="w">submission</span><span class="pos">名</span><span>提出</span></div><div class="v"><span class="w">heart-warming</span><span class="pos">形</span><span>心温まる</span></div><div class="v"><span class="w">illustration</span><span class="pos">名</span><span>挿絵</span></div><div class="v"><span class="w">paw print</span><span class="pos">名</span><span>（動物の）足跡</span></div><div class="v"><span class="w">escape</span><span class="pos">動</span><span>逃げる</span></div><div class="v"><span class="w">rescue</span><span class="pos">動</span><span>救う</span></div><div class="v"><span class="w">injured</span><span class="pos">形</span><span>けがをした</span></div><div class="v"><span class="w">entry</span><span class="pos">名</span><span>応募作品</span></div><div class="v"><span class="w">gratefully</span><span class="pos">副</span><span>ありがたく</span></div><div class="v"><span class="w">attachment</span><span class="pos">名</span><span>添付</span></div><div class="v"><span class="w">short of</span><span class="pos">熟</span><span>〜が不足して</span></div><div class="v"><span class="w">reconsider</span><span class="pos">動</span><span>考え直す</span></div><div class="v"><span class="w">familiarise</span><span class="pos">動</span><span>親しませる</span></div><div class="v"><span class="w">criterion</span><span class="pos">名</span><span>基準</span></div><div class="v"><span class="w">on show</span><span class="pos">熟</span><span>展示中で</span></div></div>
+</section>
+
+<section class="step" id="s8"><div class="stepno">STEP 8</div><h2>持ち帰る3原則 と 自己点検</h2><div class="sub">Take-aways</div>
+<div class="card"><div class="weapon"><div class="num">原則 1</div><div><h4 style="margin:0 0 4px">資料をバラバラに読まない。</h4><p style="margin:0">それぞれの資料が何のためにあり、どうつながっているのかを意識する。</p></div></div><div class="weapon"><div class="num">原則 2</div><div><h4 style="margin:0 0 4px">1か所の情報だけで判断しない。</h4><p style="margin:0">複数の資料や条件を照らし合わせ、必要な情報をそろえる。</p></div></div><div class="weapon"><div class="num">原則 3</div><div><h4 style="margin:0 0 4px">最後は必ず根拠で確定する。</h4><p style="margin:0">なぜ正解か、なぜ他の選択肢は違うのかを説明できるようにする。</p></div></div></div>
+<div class="note"><b class="l">第5問の本質</b>大問5は、複数の資料をただ読む問題ではない。資料同士をつなげて、必要な情報を整理し、根拠を組み合わせる問題。文章は1つずつ読む。情報はつなげて理解する。答えはすべての条件を満たして確定する。</div>
+<p><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。チェックはこの端末に保存されます。</p>
+<ul class="chk"><li><input type="checkbox"><span>本文を読む前に、リード文から「自分はどんな立場で、何をしている状況か」を一言で言えた</span></li><li><input type="checkbox"><span>資料がいくつあって、どれがどれへの返答・反応なのか、関係図を先に作った</span></li><li><input type="checkbox"><span>設問5つを先読みして、「何を探しながら読むか」を自分の言葉にしてから本文に入った</span></li><li><input type="checkbox"><span>資料Aを読みながら「資料Bのどこと対応するか」を意識して読んだ</span></li><li><input type="checkbox"><span>資料Bを読むとき、Aの内容に対して「OK／変更／新情報／未完了」のどれかに振り分けられた</span></li><li><input type="checkbox"><span>複数の根拠が必要な設問で、根拠を1か所だけ見つけて選ぶことをしなかった</span></li><li><input type="checkbox"><span>不正解の選択肢を「矛盾／本文にない／条件ズレ／設問ズレ」のどれで切ったか説明できる</span></li><li><input type="checkbox"><span>図や表の設問で、本文から条件を先に確定してから選択肢の図を見た</span></li><li><input type="checkbox"><span>「事実」だけでなく「その事実から次に何が必要になるか」を資料を出発点に考えられた</span></li><li><input type="checkbox"><span>13分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li><li><input type="checkbox"><span>問3で、4冊×4項目の表を作って「全部○」の項目だけ残した</span></li><li><input type="checkbox"><span>問4で、資料C（理由）→ 資料A（就学前）→ 資料B（各冊の年齢）の順にたどった</span></li><li><input type="checkbox"><span>問5で、フォームの No を根拠に reconsider の中身を「読み手をやる」と確定した</span></li></ul>
+<div class="score" id="chkScore">0 / 13</div>
+<div class="card soft"><b>次に向けて</b><p>10個以上なら手順は身についています。次は同じ手順を「初見の第5問」で再現できるかを試してください。9個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度13分で解き直してください。測っているのは正解ではなく、<b>資料をつないで読む動作</b>です。</p>
+<p class="center"><button class="btn ghost" id="reset">解答・チェックをリセットしてもう一度解く</button></p></div>
+</section>
+<footer>出典：2026年度 共通テスト本試験 第5問 英語（リーディング）第5問<br>学部別・逆転合格設計塾 THINKING ― 受験は根性じゃなく、設計。</footer>
+</main>
+<div class="bbar"><div class="in"><button class="btn ghost" id="openSheet">本文を開く</button><a class="btn" href="thinking_kyotsu_q5_2026_tsuishi_lost_and_found.html">次へ</a></div></div>
+<div class="overlay" id="ov"></div>
+<div class="sheet" id="sheet"><div class="head"><b>資料 ― Readburgh Library Book Fair</b><div class="filters"><button data-f="none">なし</button><button data-f="all" class="on">全部</button><button class="f1" data-f="q1">問1</button><button class="f2" data-f="q2">問2</button><button class="f3" data-f="q3">問3</button><button class="f4" data-f="q4">問4</button><button class="f5" data-f="q5">問5</button></div><button class="close" id="closeSheet">×</button></div>
+<div class="scroll"><div class="passage show-all" id="sheetPassage"><p class="en lead-en">You are studying in the UK. In the town library, you found the following leaflet. After reading it, you submitted a form and received an email from the library.</p><div class="doc-sec"><div class="dt">資料A｜図書館のチラシ</div><div class="email"><div class="hdr">Readburgh Library ― Book Recommendations &amp; Volunteers Wanted</div>
+<p class="en"><mark class="q1">Our library will hold a book fair from 1 to 8 February 2026, to introduce picture books from various countries to Readburgh children.</mark> <mark class="q2">The fair will exhibit books all week in the entrance hall. We are also planning to have ‘Story Time’ reading sessions in The Children’s Centre in the library on the final day.</mark></p>
+<p class="en">To help improve our selection of books, we are calling for picture book recommendations for <mark class="q4">preschool children</mark>. Additionally, the library is recruiting volunteers to read stories to children during the reading sessions. <mark class="q2">If you volunteer, you will receive a book coupon.</mark></p>
+<p class="en">Please note:<br>・Books in the original language or translations are welcome.<br>・<mark class="q3">No book should cost more than £20.</mark><br>・The submission period is from 15 December 2025 to 19 January 2026.</p>
+<p class="en">Nominate your book(s) and/or register as a volunteer via the online form.<br><span class="tiny">For questions, contact: internationalbookfair@***.lib.uk</span></p></div></div><div class="doc-sec"><div class="dt">資料B｜自分が送ったオンラインフォーム</div><div class="form"><div class="hdr tiny" style="margin-bottom:6px">Library Book Fair Online Form ／ Will you be a ‘Story Time’ reader? <b>Yes ／ No</b></div>
+<div class="bk"><div class="meta"><b class="en">Green Demon Blue Demon</b> ― Written by Shinichiro Ishida ／ Year 1990 ／ <mark class="q3">Price £16</mark> ／ <mark class="q3">Pictures by Author</mark></div>
+<span class="en">This book contains short stories about demons and various animals they encounter. <mark class="q3">Most stories are heart-warming, but some are not.</mark> My favourite is ‘Breakfast Battle.’ Two demons fight over what to feed their <mark class="q3">pet dog</mark> for breakfast. Illustrations are another attractive feature, making it suitable for children between three and five years old.</span></div>
+<div class="bk"><div class="meta"><b class="en">Paint! Paint! Paint!</b> ― Written by Kaori Ando ／ Year 2022 ／ <mark class="q3">Price £8</mark> ／ <mark class="q3">Pictures by Author</mark></div>
+<span class="en">This is a popular picture book for parents to read to their children before they enter primary school. The main character wants to paint the whole world. She paints ceilings in orange, kitchens in purple, and streets and buildings in green. By chance, her <mark class="q3">cat</mark> steps in some paint and leaves paw prints wherever it goes. The world looks more colourful after reading the story.</span></div>
+<div class="bk"><div class="meta"><b class="en">Panda Adventures</b> ― Written by Maruo Maru ／ Year 2021 ／ <mark class="q3">Price £10</mark> ／ <mark class="q3">Pictures by Kanako Maru</mark></div>
+<span class="en">In this story, a young male <mark class="q3">panda</mark> escapes from a zoo. He meets a schoolboy and they visit places in town together. <mark class="q3">However, the poor panda is caught and taken back to the zoo. The boy’s final words to the panda had me in tears.</mark> <mark class="q4">The story is long, so it is suitable for kids aged over ten.</mark></span></div>
+<div class="bk"><div class="meta"><b class="en">The Cloud Prince</b> ― Written by Kamiko Narita ／ Year 1981 ／ <mark class="q3">Price £19</mark> ／ <mark class="q3">Pictures by Author</mark></div>
+<span class="en">A boy who lives on a thunder cloud plays tricks on children. The tricks include snow in summer and a rainstorm in the park when they are playing. The children are afraid of him at first, but he rescues an injured <mark class="q3">goat</mark> and they all become friends. This book is read to preschool children all over the world.</span></div></div></div><div class="doc-sec"><div class="dt">資料C｜図書館からの返信メール</div><div class="email"><div class="hdr">From: internationalbookfair@***.lib.uk ／ Date: 17 January 2026 ／ Subject: Book Recommendations</div>
+<p class="en">Hello,</p>
+<p class="en">Thank you for your recommendations. In fact, we found that the titles have been translated into multiple languages, which will make the fair truly international. <mark class="q4">Although one of your entries did not fit the target age range, your other titles are gratefully accepted (refer to the attachment).</mark> <mark class="q5">If you have an additional book recommendation, please email it to us.</mark></p>
+<p class="en"><mark class="q5">As we are still short of volunteers for the last day, would you kindly reconsider?</mark></p>
+<p class="en">Thanks again,<br>Library Staff<br><span class="tiny">Attachment: List of accepted books</span></p></div></div></div></div></div>
+<script>const TARGET_SEC=780; const ANS=[{"q": 1, "type": "single", "ans": "③"}, {"q": 2, "type": "single", "ans": "④"}, {"q": 3, "type": "single", "ans": "⑤"}, {"q": 4, "type": "single", "ans": "③"}, {"q": 5, "type": "multi", "ans": ["③", "⑤"]}];
+(function(){
+  const KEY = 'thinking_q3_' + document.body.dataset.key;
+  // timer
+  let t = TARGET_SEC, iv=null, running=false, elapsed=0;
+  const big=document.getElementById('tBig'), chip=document.getElementById('tChip'), btn=document.getElementById('tBtn');
+  function fmt(s){ const neg=s<0; s=Math.abs(s); const m=Math.floor(s/60), r=s%60; return (neg?'+':'')+m+':'+String(r).padStart(2,'0'); }
+  function render(){ const left=TARGET_SEC-elapsed; big.textContent=fmt(left); chip.textContent=fmt(left); big.style.color = left<0?'var(--ng)':'inherit'; }
+  render();
+  btn.addEventListener('click',()=>{
+    if(!running){ running=true; btn.textContent='ストップ'; iv=setInterval(()=>{elapsed++; render();},1000); }
+    else { running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // grading
+  document.getElementById('grade').addEventListener('click',()=>{
+    let n=0;
+    ANS.forEach(a=>{ if(a.type==='multi'){a.ans=a.ans;} 
+      const el=document.getElementById('r'+a.q);
+      let ok=false, user='';
+      if(a.type==='single'){
+        const c=document.querySelector('input[name="q'+a.q+'"]:checked'); user=c?c.value:'';
+        ok = user===a.ans;
+      }else if(a.type==='multi'){
+        const c=[...document.querySelectorAll('input[name="q'+a.q+'"]:checked')].map(i=>i.value).sort(); user=c.join('・');
+        ok = c.join('')===[...a.ans].sort().join('');
+      }else{ ok=false; }
+      if(ok){n++; el.textContent='正解';el.className='result ok';}
+      else{ el.textContent='不正解（正解：'+(Array.isArray(a.ans)?a.ans.join('→'):a.ans)+'）'; el.className='result ng'; }
+    });
+    const s=document.getElementById('gradeSum'); s.textContent= n+' / '+ANS.length+'問正解。正解数より、どの設問で本文に戻る回数が増えたかを覚えておいてください。';
+    if(running){ running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // sheet
+  const sheet=document.getElementById('sheet'), ov=document.getElementById('ov');
+  function openSheet(f){ sheet.classList.add('open'); ov.classList.add('on'); if(f) setFilter(f); }
+  function closeSheet(){ sheet.classList.remove('open'); ov.classList.remove('on'); }
+  document.getElementById('openSheet').addEventListener('click',()=>openSheet());
+  document.getElementById('closeSheet').addEventListener('click',closeSheet);
+  ov.addEventListener('click',closeSheet);
+  const sp=document.getElementById('sheetPassage');
+  function setFilter(f){
+    sp.className='passage show-'+f;
+    document.querySelectorAll('.filters button').forEach(b=>b.classList.toggle('on', b.dataset.f===f));
+  }
+  document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f)));
+  document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openSheet(b.dataset.open)));
+  setFilter('none');
+  // hide english toggle
+  const hb=document.getElementById('hideEn'); if(hb){ hb.addEventListener('click',()=>{ document.body.classList.toggle('hideen'); hb.textContent=document.body.classList.contains('hideen')?'英文も表示する':'英文を隠して和訳だけ読む'; }); }
+  // checklist persistence
+  const boxes=[...document.querySelectorAll('.chk input')];
+  let saved={}; try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  boxes.forEach((b,i)=>{ b.checked=!!saved[i]; b.addEventListener('change',()=>{ saved[i]=b.checked; try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){} upd(); }); });
+  function upd(){ const n=boxes.filter(b=>b.checked).length; document.getElementById('chkScore').textContent=n+' / '+boxes.length; }
+  upd();
+  document.getElementById('reset').addEventListener('click',()=>{
+    boxes.forEach(b=>b.checked=false); saved={}; try{localStorage.removeItem(KEY);}catch(e){} upd();
+    document.querySelectorAll('.answers input').forEach(i=>i.checked=false);
+    document.querySelectorAll('.order select').forEach(s=>s.selectedIndex=0);
+    document.querySelectorAll('.result').forEach(r=>{r.textContent='';r.className='result';});
+    document.getElementById('gradeSum').textContent='';
+    elapsed=0; render(); if(running){running=false;clearInterval(iv);} btn.textContent='スタート';
+    window.scrollTo({top:document.getElementById('s0').offsetTop-70,behavior:'smooth'});
+  });
+})();
+</script>
+</body></html>

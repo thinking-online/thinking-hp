@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#fdfaf4">
+<title>共通テスト第5問攻略｜可視化リーディングで解く複数資料問題 — Lost and (Usually) Found — オンライン塾 THINKING</title>
+<style>
+:root{
+  --paper:#fdfaf4; --paper2:#f6f0e4; --ink:#1f1b16; --ink2:#5a524a; --line:#e3d9c7;
+  --accent:#b8542b; --accent2:#8f3f1f;
+  --q1:#d9a441; --q2:#4f9474; --q3:#5c6fb5;
+  --q1bg:#fbf1d6; --q2bg:#dff0e7; --q3bg:#e2e6f6;
+  --ok:#2f8a5b; --ng:#c0392b;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.85;font-size:15.5px;padding-bottom:84px}
+.en{font-family:Georgia,"Times New Roman","Hiragino Mincho ProN",serif;font-size:1.02em}
+a{color:var(--accent)}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(253,250,244,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;gap:10px;padding:10px 16px;max-width:720px;margin:0 auto}
+.logo{width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-family:Georgia,serif;flex:none}
+.top .t{font-size:12.5px;color:var(--ink2);line-height:1.3}
+.top .t b{display:block;color:var(--ink);font-size:13.5px}
+.timerchip{margin-left:auto;font-family:Georgia,serif;font-size:15px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;min-width:64px;text-align:center}
+nav.steps{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px;max-width:720px;margin:0 auto;scrollbar-width:none}
+nav.steps::-webkit-scrollbar{display:none}
+nav.steps a{flex:none;font-size:12px;padding:5px 10px;border-radius:999px;background:var(--paper2);color:var(--ink2);text-decoration:none;border:1px solid var(--line)}
+nav.steps a i{font-style:normal;font-family:Georgia,serif;color:var(--accent);margin-right:4px;font-weight:700}
+.hero{padding:28px 0 10px}
+.kicker{font-size:12.5px;color:var(--ink2);letter-spacing:.04em}
+h1{font-size:25px;line-height:1.35;margin:8px 0 10px;font-weight:800}
+h1 small{display:block;font-size:14px;color:var(--accent);font-weight:700;margin-bottom:6px}
+.lead{color:var(--ink2);font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.meta span{font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+section.step{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:22px}
+.stepno{font-family:Georgia,serif;color:var(--accent);font-weight:700;letter-spacing:.08em;font-size:13px}
+h2{font-size:21px;margin:4px 0 4px;line-height:1.4}
+.sub{font-family:Georgia,serif;font-style:italic;color:var(--ink2);font-size:13.5px;margin-bottom:14px}
+h3{font-size:16.5px;margin:22px 0 8px}
+h4{font-size:15px;margin:14px 0 6px}
+p{margin:8px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px;margin:12px 0}
+.card.soft{background:var(--paper2);border-color:transparent}
+.note{border-left:4px solid var(--accent);background:#fff8ef;padding:12px 14px;border-radius:0 var(--radius) var(--radius) 0;margin:14px 0}
+.note b.l{display:block;color:var(--accent2);font-size:13.5px;margin-bottom:4px}
+.pill{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--ink);color:#fff;margin-right:6px;vertical-align:middle}
+.pill.q1{background:var(--q1)}.pill.q2{background:var(--q2)}.pill.q3{background:var(--q3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:11px 20px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:active{transform:translateY(1px)}
+/* passage */
+.passage{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 10px;margin:12px 0}
+.passage .ttl{text-align:center;font-family:Georgia,serif;font-weight:700;font-size:18px;margin:6px 0 12px}
+.passage p.en{text-indent:1.2em;margin:0 0 10px;line-height:1.75}
+.passage .lead-en{font-style:italic;color:var(--ink2);text-indent:0}
+mark{background:transparent;padding:0 1px;border-bottom:3px solid transparent;color:inherit;transition:.2s}
+.show-all mark.q1,.show-q1 mark.q1{background:var(--q1bg);border-bottom-color:var(--q1)}
+.show-all mark.q2,.show-q2 mark.q2{background:var(--q2bg);border-bottom-color:var(--q2)}
+.show-all mark.q3,.show-q3 mark.q3{background:var(--q3bg);border-bottom-color:var(--q3)}
+.qlist{margin:14px 0}
+.q{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:10px 0}
+.q .stem{font-weight:700;margin-bottom:8px}
+.q .stem .en{font-weight:400}
+.opts{list-style:none;padding:0;margin:0}
+.opts li{display:flex;gap:8px;padding:6px 0;border-top:1px dashed var(--line)}
+.opts li:first-child{border-top:none}
+.opts .n{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ink);font-size:12px;display:grid;place-items:center;font-family:Georgia,serif;margin-top:4px}
+.answers{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.answers label{border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--paper2);font-size:14px;cursor:pointer}
+.answers input{display:none}
+.answers input:checked+span{color:#fff}
+.answers label:has(input:checked){background:var(--ink);color:#fff}
+.order{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.order select{font-size:15px;padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:#fff;font-family:inherit}
+.order .arrow{color:var(--ink2)}
+.result{margin-top:10px;font-weight:700}
+.result.ok{color:var(--ok)}.result.ng{color:var(--ng)}
+.timerbox{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin:12px 0}
+.timerbox .big{font-family:Georgia,serif;font-size:30px;min-width:92px}
+/* 5 step */
+.flow{counter-reset:s}
+.fstep{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.fstep:first-child{border-top:none}
+.fstep .num{flex:none;width:34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700}
+.fstep h4{margin:4px 0 4px}
+.fstep .goal{font-size:13.5px;color:var(--accent2);margin-top:6px}
+/* think-aloud */
+details.think{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin:12px 0;overflow:hidden}
+details.think summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
+details.think summary::-webkit-details-marker{display:none}
+details.think summary .ans{margin-left:auto;font-size:12.5px;color:var(--ink2);font-weight:400;white-space:nowrap}
+details.think summary::after{content:"＋";margin-left:8px;color:var(--accent);font-weight:400}
+details.think[open] summary::after{content:"－"}
+details.think .body{padding:0 16px 16px;border-top:1px solid var(--line)}
+.jaopts{list-style:none;padding:0;margin:10px 0 4px;font-size:14px;color:var(--ink2)}
+.jaopts li{padding:3px 0}
+.jaopts .n{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;margin-right:6px;font-family:Georgia,serif}
+.jaopts li.c{color:var(--ink);font-weight:700}.jaopts li.c .n{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ta{counter-reset:t;margin-top:8px}
+.ta .t{display:flex;gap:12px;padding:12px 0;border-top:1px dashed var(--line)}
+.ta .t .n{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:12.5px;font-family:Georgia,serif;margin-top:2px}
+.ta .t h5{margin:2px 0 4px;font-size:14.5px}
+.quote{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14.5px}
+.quote .en{display:block;font-size:15px}
+.quote .ja{display:block;color:var(--ink2);font-size:13.5px;margin-top:4px}
+.map{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border:1.5px dashed var(--accent);border-radius:10px;padding:10px 12px;margin:10px 0;font-size:14px}
+.map .en{font-weight:700}
+.map .ar{color:var(--accent);font-weight:800}
+.learn{background:var(--paper2);border-radius:10px;padding:12px 14px;margin-top:12px;font-size:14.5px}
+.learn b{display:block;color:var(--accent2);font-size:13px;margin-bottom:3px}
+.ev{display:inline-block;font-size:12.5px;padding:2px 8px;border-radius:6px;margin:2px 0}
+.ev.q1{background:var(--q1bg)}.ev.q2{background:var(--q2bg)}.ev.q3{background:var(--q3bg)}
+/* timeline */
+.tl{position:relative;padding-left:28px;margin:14px 0}
+.tl::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .ev2{position:relative;padding:8px 0 8px 6px}
+.tl .ev2::before{content:"";position:absolute;left:-23px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 1.5px var(--accent)}
+.tl .ev2.ghost::before{background:#fff;box-shadow:0 0 0 1.5px var(--ink2)}
+.tl .ev2 .lab{font-weight:700}
+.tl .ev2 .src{font-size:13px;color:var(--ink2)}
+.tl .ev2 .tag{display:inline-block;font-size:11.5px;background:var(--ink);color:#fff;border-radius:6px;padding:0 7px;margin-left:6px;vertical-align:middle}
+.tl .ev2.ghost .tag{background:var(--ng)}
+/* translation */
+.tr{margin:10px 0 14px}
+.tr .lab{font-size:12px;color:var(--ink2);letter-spacing:.06em}
+.tr p{margin:4px 0}
+.tr p.ja{color:#3a342d;font-size:14.5px}
+.tr p.ja .qm{font-size:11px;padding:0 5px;border-radius:5px;color:#fff;margin-left:4px;vertical-align:middle}
+.qm.q1{background:var(--q1)}.qm.q2{background:var(--q2)}.qm.q3{background:var(--q3)}
+.hideen .tr p.en{display:none}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;margin:8px 0}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.legend .l1::before{background:var(--q1)}.legend .l2::before{background:var(--q2)}.legend .l3::before{background:var(--q3)}
+/* vocab */
+.vocab{display:grid;grid-template-columns:1fr;gap:6px;margin:10px 0}
+.v{display:flex;gap:10px;align-items:baseline;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px}
+.v .w{font-family:Georgia,serif;font-weight:700;min-width:120px}
+.v .pos{font-size:11px;color:var(--ink2);border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.v.pair{border-color:var(--accent);background:#fff8ef}
+/* checklist */
+.chk{list-style:none;padding:0;margin:12px 0}
+.chk li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line)}
+.chk li:first-child{border-top:none}
+.chk input{width:20px;height:20px;margin-top:4px;accent-color:var(--accent)}
+.score{font-family:Georgia,serif;font-size:22px;margin:8px 0}
+.weapon{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.weapon .num{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;width:52px;line-height:1.3;padding-top:4px}
+footer{margin:40px 0 20px;font-size:12.5px;color:var(--ink2);text-align:center;line-height:1.7}
+/* bottom bar + sheet */
+.bbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(253,250,244,.96);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.bbar .in{max-width:720px;margin:0 auto;display:flex;gap:10px;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+.bbar .btn{flex:1}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top-left-radius:18px;border-top-right-radius:18px;box-shadow:0 -10px 30px rgba(0,0,0,.18);max-height:82vh;transform:translateY(105%);transition:transform .28s ease;display:flex;flex-direction:column}
+.sheet.open{transform:translateY(0)}
+.sheet .head{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.sheet .head b{font-size:14px}
+.sheet .filters{display:flex;gap:6px;margin-left:auto}
+.sheet .filters button{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 10px;cursor:pointer;font-family:inherit}
+.sheet .filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sheet .filters button.f1.on{background:var(--q1);border-color:var(--q1)}
+.sheet .filters button.f2.on{background:var(--q2);border-color:var(--q2)}
+.sheet .filters button.f3.on{background:var(--q3);border-color:var(--q3)}
+.sheet .close{margin-left:8px;border:none;background:transparent;font-size:20px;cursor:pointer}
+.sheet .scroll{overflow:auto;padding:0 16px 24px;-webkit-overflow-scrolling:touch}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:45;opacity:0;pointer-events:none;transition:.25s}
+.overlay.on{opacity:1;pointer-events:auto}
+.tiny{font-size:12.5px;color:var(--ink2)}
+.center{text-align:center}
+@media (min-width:600px){.vocab{grid-template-columns:1fr 1fr}}
+
+.pos{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--paper2);border:1.5px dashed var(--accent);color:var(--accent);font-family:Georgia,serif;font-size:12px;font-weight:700;margin:0 3px;vertical-align:middle}
+.pos.hit{background:var(--accent);color:#fff;border-style:solid}
+u.ul{text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:1px}
+sup.cm{font-family:Georgia,serif;font-size:11px;color:var(--accent);font-weight:700;margin-right:2px}
+.cmts{display:grid;gap:8px;margin:12px 0}
+.cmt{display:flex;gap:10px;background:#fff8ef;border:1px dashed var(--accent);border-radius:10px;padding:10px 12px;font-size:14px}
+.cmt .n{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700}
+.cmt .en{font-family:"Comic Sans MS","Segoe Print",Georgia,serif;font-style:italic}
+.toc{margin:12px 0}
+.toc .row{display:grid;grid-template-columns:64px 1fr;gap:10px;padding:10px 0;border-top:1px dashed var(--line);align-items:start}
+.toc .row:first-child{border-top:none}
+.toc .para{font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;padding-top:3px}
+.toc .first{font-size:14px}
+.toc .role{display:inline-block;font-size:12px;background:var(--ink);color:#fff;border-radius:6px;padding:1px 8px;margin-bottom:4px}
+.toc .role.red{background:var(--accent)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+.tbl th,.tbl td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+.tbl th{background:var(--paper2);font-size:12.5px}
+.type{display:inline-block;font-size:12px;border-radius:6px;padding:1px 8px;color:#fff;font-weight:700}
+.type.add{background:var(--q2)}.type.fix{background:var(--q3)}
+.hole{background:#fff;border:2px dashed var(--accent);border-radius:12px;padding:12px 14px;margin:10px 0}
+.hole .l{font-size:12px;color:var(--accent2);letter-spacing:.06em;font-weight:700}
+.hole .shape{font-size:16px;font-weight:800;margin-top:4px}
+.piece{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14px}
+.piece.ok{background:#e4f3ea}
+.piece .m{display:inline-block;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;text-align:center;line-height:18px;font-family:Georgia,serif;margin-right:6px}
+.piece.ok .m{background:var(--ok);border-color:var(--ok);color:#fff}
+.piece .why{display:block;color:var(--ink2);font-size:13px;margin-top:3px}
+.piece.ok .why{color:#1f5e3b}
+.link4{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.link4 div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.link4 b{display:block;font-size:14px;margin-bottom:2px}
+.link4 .hit{border-color:var(--accent);background:#fff8ef}
+
+.docs{display:grid;gap:10px;margin:12px 0}
+.doc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.doc .dh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.doc .dh .tag{font-size:11.5px;background:var(--ink);color:#fff;border-radius:6px;padding:1px 8px;font-family:Georgia,serif}
+.doc .dh b{font-size:14.5px}
+.doc .role{font-size:13.5px;color:var(--ink2)}
+.docarrow{text-align:center;color:var(--accent);font-weight:800;font-size:20px;line-height:1}
+.ant{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+.ant th,.ant td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+.ant th{background:var(--paper2);font-size:12.5px}
+.ant .qn{font-family:Georgia,serif;color:var(--accent);font-weight:700;white-space:nowrap}
+.cmp{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+.cmp th,.cmp td{border:1px solid var(--line);padding:7px 9px;vertical-align:top;text-align:left}
+.cmp th{background:var(--paper2);font-size:12px}
+.cmpcards{display:grid;gap:8px;margin:10px 0}
+.cc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13.5px}
+.cc .row{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:4px 0}
+.cc .k{font-family:Georgia,serif;font-size:11px;color:var(--accent);font-weight:700;padding-top:3px}
+.cc .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px dashed var(--line);margin-top:6px;padding-top:6px;font-size:12.5px;color:var(--ink2)}
+.ant td:nth-child(2){display:none}.ant th:nth-child(2){display:none}
+@media (min-width:600px){.ant td:nth-child(2),.ant th:nth-child(2){display:table-cell}}
+.st{display:inline-block;font-size:11.5px;border-radius:6px;padding:1px 7px;color:#fff;font-weight:700;white-space:nowrap}
+.st.ok{background:var(--ok)}.st.chg{background:var(--accent)}.st.new{background:var(--q3)}.st.todo{background:var(--q1);color:#3a2a00}.st.x{background:var(--ng)}
+.cut{display:inline-block;font-size:11px;border:1px solid var(--ng);color:var(--ng);border-radius:5px;padding:0 6px;margin-right:4px;white-space:nowrap}
+.ev3{display:grid;gap:6px;margin:8px 0}
+.ev3 .e{display:flex;gap:8px;align-items:flex-start;background:var(--paper2);border-radius:10px;padding:8px 10px;font-size:14px}
+.ev3 .e .src{flex:none;font-size:11px;background:var(--ink);color:#fff;border-radius:5px;padding:1px 7px;margin-top:3px;white-space:nowrap}
+.ev3 .e .ja{display:block;color:var(--ink2);font-size:13px}
+.piece{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14px}
+.piece.ok{background:#e4f3ea}
+.piece .m{display:inline-block;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;text-align:center;line-height:18px;font-family:Georgia,serif;margin-right:6px}
+.piece.ok .m{background:var(--ok);border-color:var(--ok);color:#fff}
+.piece .why{display:block;color:var(--ink2);font-size:13px;margin-top:3px}
+.piece.ok .why{color:#1f5e3b}
+.cond{background:#fff;border:2px dashed var(--accent);border-radius:12px;padding:12px 14px;margin:10px 0}
+.cond .l{font-size:12px;color:var(--accent2);letter-spacing:.06em;font-weight:700}
+.cond ul{margin:6px 0 0;padding-left:18px}
+.cond li{margin:2px 0;font-size:14.5px}
+.sched{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+.sched th,.sched td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+.sched th{background:var(--paper2);font-weight:700}
+.sched .th{background:#fff8ef;font-weight:700}
+.email{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:13px}
+.email .hdr{font-family:Georgia,serif;font-size:12.5px;color:var(--ink2);border-bottom:1px dashed var(--line);padding-bottom:4px;margin-bottom:6px}
+.form{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:10px 0}
+.form .bk{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:6px 0;font-size:13.5px}
+.form .bk .meta{font-size:12px;color:var(--ink2);margin-bottom:3px}
+.passage p.en{text-indent:0}
+.answers.multi label{border-radius:8px}
+.imgbox{text-align:center;margin:8px 0}
+.imgbox img{max-width:100%;border:1px solid var(--line);border-radius:10px;background:#fff}
+.doc-sec{border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}
+
+:root{--q4:#9a5ab8;--q5:#2a8f8f;--q4bg:#eee2f5;--q5bg:#d9efef}
+.show-all mark.q4,.show-q4 mark.q4{background:var(--q4bg);border-bottom-color:var(--q4)}
+.show-all mark.q5,.show-q5 mark.q5{background:var(--q5bg);border-bottom-color:var(--q5)}
+.legend .l4::before{background:var(--q4)}.legend .l5::before{background:var(--q5)}
+.qm.q4{background:var(--q4)}.qm.q5{background:var(--q5)}
+.ev.q4{background:var(--q4bg)}.ev.q5{background:var(--q5bg)}
+.sheet .filters button.f4.on{background:var(--q4);border-color:var(--q4)}
+.sheet .filters button.f5.on{background:var(--q5);border-color:var(--q5)}
+.sheet .filters{flex-wrap:wrap}
+.doc-sec .dt{font-family:Georgia,serif;font-size:12px;color:var(--accent);letter-spacing:.06em;margin-bottom:4px}
+</style></head><body data-key="q5lost">
+<header class="top"><div class="bar"><div class="logo">T</div><div class="t">可視化リーディング ― 複数資料問題<b>共通テスト第5問「Lost and (Usually) Found」／ オンライン塾 THINKING</b></div><div class="timerchip" id="tChip">13:00</div></div><nav class="steps"><a href="#s0"><i>0</i>自力で解く</a><a href="#s1"><i>1</i>5STEP</a><a href="#s2"><i>2</i>状況と関係図</a><a href="#s3"><i>3</i>設問先読み</a><a href="#s4"><i>4</i>照合マップ</a><a href="#s5"><i>5</i>脳内実況</a><a href="#s6"><i>6</i>全訳</a><a href="#s7"><i>7</i>語句</a><a href="#s8"><i>8</i>持ち帰り</a></nav></header>
+<main class="wrap">
+<div class="hero"><div class="kicker">2026年度 共通テスト追試験 第5問</div>
+<h1><small>【複数資料問題】を攻略する</small>可視化リーディング ― Lost and (Usually) Found ―</h1>
+<p class="lead">第5問は、複数の英文や図表を読み、それぞれの情報を照らし合わせながら答えを導く問題です。英文をそれぞれ読めるだけでは足りない。<b>資料Aに書かれていることが、資料Bでどう扱われているのか。</b>そこまで理解して初めて解けます。今回は、ジェニーのメール → ジェニーが読んだブログ → 自分たちのグループの返信、の3点。ジェニーが「ことわざが理由だと思う」と言い、ブログが「交番とことわざ」を挙げ、自分たちが「いや、法律だ」と返す。この3者の「理由」の違いを押さえると、問1・問3・問5が一本の線になります。</p>
+<div class="meta"><span>目標解答時間 13分</span><span>設問5問</span><span>資料3点</span><span>下の「本文を開く」で、いつでも資料を参照できます</span></div></div>
+
+<section class="step" id="s0"><div class="stepno">STEP 0</div><h2>まず、時間を測って自力で解く</h2><div class="sub">Try it yourself</div>
+<p>解説を読む前に必ず解いてください。観察してほしいのは、<b>「資料を行ったり来たりした回数」</b>。同じ場所を3回以上探しに戻った設問があれば、それは資料同士のつながりを頭の中に残さずに読んだ場所です。</p>
+<div class="timerbox"><div class="big" id="tBig">13:00</div><button class="btn" id="tBtn">スタート</button><span class="tiny">13分を過ぎても止めずに続けて、超過時間を覚えておきましょう。</span></div>
+<div class="passage show-none"><p class="en lead-en">Your class will be hosting Jenny, a student from the UK. After a few email exchanges, she has emailed again about a blog post on lost and found items in Japan. You and your group members have replied.</p><div class="doc-sec"><div class="dt">資料A｜ジェニーのメール</div><div class="email"><div class="hdr">Jenny’s email</div>
+<p class="en">Hello again,</p>
+<p class="en">Your emails are making me feel more comfortable about living in Japan. Yesterday, I read a blog and was amazed to learn about <mark class="q1">the high return rate of lost property in Japan</mark>. It also mentions <mark class="q1">a well-known saying that I find fascinating</mark>. <mark class="q5">I guess that’s the main reason for the high number of returns.</mark> Please read the blog (www.************) and let me know if you agree.</p>
+<p class="en">In English, we have a saying, ‘Finders keepers, losers weepers.’ So, if I lose something, I don’t expect to get it back. I probably wouldn’t bother to report it to the police either. However, occasionally, ‘finders’ check for contact information and get in touch with the ‘loser.’ <mark class="q2">A couple of years ago, my uncle, who lives in Edinburgh, lost his wallet, but it just appeared in his letterbox with a note from the finder. The person who found it must have put it in there. He was very fortunate that nothing had been removed.</mark></p>
+<p class="en">Anyway, I look forward to your response.<br>Best wishes,<br>Jenny</p></div></div><div class="doc-sec"><div class="dt">資料B｜ブログ（ジェニーが読んだもの）</div><div class="email"><div class="hdr">Enya Hand’s Blog ― Lost and (Usually) Found　By Enya Hand</div>
+<p class="en">People often say that if you lose your wallet in Japan, you will likely get it back. Based on my time living there, I found a couple of reasons why.</p>
+<p class="en"><mark class="q3">First, there are over 6,000 small neighbourhood police boxes called koban. They are located across the country in places where people gather or pass by. Around 48,000 police officers work in these police boxes. Also, the relatively low crime rate enables them to handle lost property, which is considered important police work.</mark></p>
+<p class="en"><mark class="q3">Second, the Japanese say ‘Otentosama ga miteiru,’ which literally means the sun witnesses everything. Children are taught this saying and learn that even if no one sees them doing the wrong thing, the sun is watching, so it is better to do the right thing.</mark></p>
+<p class="en">According to a survey on lost property, around 84% of mobile phones, 72% of ID cards, and 72% of money, including even large sums, get reunited with the original owners. This, however, does not mean that you can neglect your belongings.</p>
+<div class="form"><div class="tiny" style="margin-bottom:4px">Comments:</div>
+<div class="bk"><span class="en"><mark class="q4">I dropped my passport, and a child ran up and returned it.</mark> I bowed and said, ‘Arigato.’ She was only about five!</span> <span class="tiny">― Francesca</span></div>
+<div class="bk"><span class="en">In Hokkaido, I saw a glove on the pavement. The following morning, I saw it again. <mark class="q4">Someone had put it on top of a nearby bench.</mark> It was a kind gesture.</span> <span class="tiny">― Nelson</span></div>
+<div class="bk"><span class="en">I lost my engagement ring on holiday in Japan. I went to the koban and did the paperwork. <mark class="q4">Two days later, the police called and told me to return to the koban. Now, when I look at my left hand, I smile.</mark></span> <span class="tiny">― Samira</span></div>
+<div class="bk"><span class="en">I left my umbrella in a Japanese cafe. I went back for it, but it was gone. I asked the server, but she said she hadn’t seen it. <mark class="q4">It probably has a new owner.</mark></span> <span class="tiny">― Tom</span></div></div></div></div><div class="doc-sec"><div class="dt">資料C｜自分たちのグループの返信</div><div class="email"><div class="hdr">Your group’s reply email</div>
+<p class="en">Hello Jenny,</p>
+<p class="en">Thanks for sharing the English saying. We also find that fascinating. It is true that the Japanese saying is common knowledge as many of us heard it when we were children. <mark class="q5">We don’t take it that seriously, though. Actually, we have a law known as the Lost Property Act. It says that the finder must report the item to the police. Otherwise, they may be punished. Also, if lost property is not claimed within 90 days, the finder is ‘rewarded’ by receiving the item. We think that this better explains the high return rate in Japan.</mark></p>
+<p class="en">We can’t wait to meet you.<br>Yours,<br>Group 4 Members</p>
+<p class="en"><span class="tiny">P.S. Your uncle was really lucky.</span></p></div></div></div>
+<div class="qlist"><div class="q"><div class="stem"><span class="pill">問1</span><span class="en">Which two parts of the blog is Jenny most interested in? (The order does not matter.)</span></div><ol class="opts"><li><span class="n">①</span><span class="en">The common Japanese saying</span></li><li><span class="n">②</span><span class="en">The low serious crime rate</span></li><li><span class="n">③</span><span class="en">The meaning of the English saying</span></li><li><span class="n">④</span><span class="en">The number of police officers</span></li><li><span class="n">⑤</span><span class="en">The percentage of lost items returned</span></li></ol><div class="answers multi"><label><input type="checkbox" name="q1" value="①"><span>①</span></label><label><input type="checkbox" name="q1" value="②"><span>②</span></label><label><input type="checkbox" name="q1" value="③"><span>③</span></label><label><input type="checkbox" name="q1" value="④"><span>④</span></label><label><input type="checkbox" name="q1" value="⑤"><span>⑤</span></label></div><div class="tiny">2つ選択</div><div class="result" id="r1"></div></div><div class="q"><div class="stem"><span class="pill">問2</span><span class="en">What was the outcome of the story about Jenny’s uncle?</span></div><ol class="opts"><li><span class="n">①</span><span class="en">He was contacted by email by the finder.</span></li><li><span class="n">②</span><span class="en">His wallet was returned without any money in it.</span></li><li><span class="n">③</span><span class="en">The finder returned the lost wallet to him.</span></li><li><span class="n">④</span><span class="en">The police called him when they found his wallet.</span></li></ol><div class="answers "><label><input type="radio" name="q2" value="①"><span>①</span></label><label><input type="radio" name="q2" value="②"><span>②</span></label><label><input type="radio" name="q2" value="③"><span>③</span></label><label><input type="radio" name="q2" value="④"><span>④</span></label></div><div class="result" id="r2"></div></div><div class="q"><div class="stem"><span class="pill">問3</span><span class="en">According to the blog, which combination best describes the reasons for the high return rate of lost property in Japan?</span></div><div class="card soft" style="margin:6px 0"><span class="en">A: Dealing with lost property is an essential police duty.<br>B: The law ensures the rights of both losers and finders.<br>C: The number of koban is increasing year by year.<br>D: ‘The sun sees everything’ is widely believed.</span></div><ol class="opts"><li><span class="n">①</span><span class="en">A and B</span></li><li><span class="n">②</span><span class="en">A and C</span></li><li><span class="n">③</span><span class="en">A and D</span></li><li><span class="n">④</span><span class="en">B and C</span></li><li><span class="n">⑤</span><span class="en">B and D</span></li><li><span class="n">⑥</span><span class="en">C and D</span></li></ol><div class="answers "><label><input type="radio" name="q3" value="①"><span>①</span></label><label><input type="radio" name="q3" value="②"><span>②</span></label><label><input type="radio" name="q3" value="③"><span>③</span></label><label><input type="radio" name="q3" value="④"><span>④</span></label><label><input type="radio" name="q3" value="⑤"><span>⑤</span></label><label><input type="radio" name="q3" value="⑥"><span>⑥</span></label></div><div class="result" id="r3"></div></div><div class="q"><div class="stem"><span class="pill">問4</span><span class="en">Based on the blog comments, which two items were returned to their original owners?</span></div><ol class="opts"><li><span class="n">①</span><span class="en">Glove and passport</span></li><li><span class="n">②</span><span class="en">Glove and ring</span></li><li><span class="n">③</span><span class="en">Glove and umbrella</span></li><li><span class="n">④</span><span class="en">Passport and ring</span></li><li><span class="n">⑤</span><span class="en">Passport and umbrella</span></li><li><span class="n">⑥</span><span class="en">Ring and umbrella</span></li></ol><div class="answers "><label><input type="radio" name="q4" value="①"><span>①</span></label><label><input type="radio" name="q4" value="②"><span>②</span></label><label><input type="radio" name="q4" value="③"><span>③</span></label><label><input type="radio" name="q4" value="④"><span>④</span></label><label><input type="radio" name="q4" value="⑤"><span>⑤</span></label><label><input type="radio" name="q4" value="⑥"><span>⑥</span></label></div><div class="result" id="r4"></div></div><div class="q"><div class="stem"><span class="pill">問5</span><span class="en">Your group and Jenny have different opinions on ___.</span></div><ol class="opts"><li><span class="n">①</span><span class="en">how people pay attention to possessions</span></li><li><span class="n">②</span><span class="en">the interpretation of the English saying</span></li><li><span class="n">③</span><span class="en">what happened regarding Jenny’s uncle</span></li><li><span class="n">④</span><span class="en">why people in Japan hand in lost items</span></li></ol><div class="answers "><label><input type="radio" name="q5" value="①"><span>①</span></label><label><input type="radio" name="q5" value="②"><span>②</span></label><label><input type="radio" name="q5" value="③"><span>③</span></label><label><input type="radio" name="q5" value="④"><span>④</span></label></div><div class="result" id="r5"></div></div></div>
+<p class="center"><button class="btn" id="grade">採点する</button></p><p class="center" id="gradeSum" style="font-weight:700"></p>
+</section>
+
+<section class="step" id="s1"><div class="stepno">STEP 1</div><h2>可視化リーディング ― 複数資料問題の5STEP</h2><div class="sub">The eye path</div>
+<p>第5問で点が分かれるのは、英語力ではなく「資料をつないで読んでいるか」です。目の動かし方を5つに固定します。</p>
+<div class="card flow"><div class="fstep"><div class="num">1</div><div><h4>リード文から「自分が置かれた状況」をつかむ</h4><p>いきなり資料を読み始めない。リード文で「自分は今、どんな立場で、この資料を読むことになっているのか」を確認し、実際の場面を頭の中でイメージする。英文を訳すのではなく、場面を作る。</p><div class="goal">鉄則：文章を読む前に、「自分は今どんな状況にいるのか」をつかむ。</div></div></div><div class="fstep"><div class="num">2</div><div><h4>資料同士の「関係図」を頭の中につくる</h4><p>資料はいくつある？ それぞれ何の資料？ 誰が作った？ どの資料とどの資料が関係している？ 資料を1つずつ独立した文章として扱わず、関係でつなぐ。この段階では中身まで理解しなくていい。</p><div class="goal">鉄則：資料を読む前に、資料同士の関係をつかむ。</div></div></div><div class="fstep"><div class="num">3</div><div><h4>設問を先読みして「探す情報」を決める</h4><p>すべての設問に目を通し、「結局、何を答えればいい問題なのか」まで自分の言葉にする。キーワードを見つけて終わらせない。選択肢は、読む目的が明確になるなら先に見る。多すぎるなら本文の後でいい。</p><div class="goal">鉄則：設問先読みは、答えを探すためではない。本文で何を探すかを決めるためにする。</div></div></div><div class="fstep"><div class="num">4</div><div><h4>資料同士を「照らし合わせながら」読む</h4><p>大問5の最重要STEP。本文は上から読むが、常に「今読んでいる内容は、他の資料のどことつながる？」と考える。OK／変更・再検討／新情報／未完了 のように整理すると、英文理解ではなく「状況そのもの」が把握できる。</p><div class="goal">鉄則：1文ずつ正確に読む。でも、頭の中では資料同士をつなぎ続ける。</div></div></div><div class="fstep"><div class="num">5</div><div><h4>複数の根拠をそろえて、正解を「確定」する</h4><p>「なんとなく合っていそう」で選ばない。本文のどことどこを根拠にすればこの答えになるのかを明確にする。根拠が1か所見つかっただけで安心しない。不正解は4つの基準で切る：本文と矛盾／本文にない情報／対象・時期・条件がズレ／問われている内容とズレ。</p><div class="goal">鉄則：答えを当てるな。必要な根拠を全部そろえて、正解を確定しろ。</div></div></div></div>
+<div class="note"><b class="l">この手順の急所</b>STEP 4 で「資料Aのこれは、資料Bでこう扱われた」という対応を頭の中に残せるか。これが残っていれば、設問を解くときに探し直す回数がほぼゼロになります。残っていなければ、5問すべてで資料を最初から読み直すことになり、時間が消えます。</div>
+</section>
+
+<section class="step" id="s2"><div class="stepno">STEP 2</div><h2>状況をつかみ、資料の関係図をつくる</h2><div class="sub">Situation &amp; relation map</div>
+<h3>STEP 1｜自分は今、どんな状況？</h3>
+<div class="card"><p><b>自分は誰？</b> → イギリスからの留学生ジェニーを受け入れるクラスの一員。グループで返信を書いた側。</p><p><b>何が起きた？</b> → ジェニーが「日本の落とし物の返却率が高い」というブログを読んで、「ことわざが理由だと思うけど、どう思う？」と聞いてきた。</p><p><b>自分たちは？</b> → ブログを読んだうえで、返信した。</p></div>
+<div class="note"><b class="l">頭の中ではこうなる</b>「ジェニーがブログを読んで『理由はことわざだと思う。同意する？』と聞いてきて、自分たちが答えた」。つまり、この3つの資料は「返却率が高い理由」をめぐる意見のやり取り。誰が何を理由だと言っているか、を追えばいい。</div>
+<h3>STEP 2｜資料同士はどうつながる？</h3>
+<div class="docs"><div class="doc"><div class="dh"><span class="tag">資料A</span><b>ジェニーのメール｜ジェニー → 自分たち</b></div><div class="role">ブログで興味を持った2点（返却率・ことわざ）と、自分の仮説（理由はことわざ）。イギリスのことわざと、叔父の財布の話。</div></div><div class="docarrow">↓<div class="tiny" style="font-weight:400">ジェニーが読んだもの</div></div><div class="doc"><div class="dh"><span class="tag">資料B</span><b>ブログ｜第三者 → 一般</b></div><div class="role">返却率が高い理由を2つ（交番と警察／ことわざ）。統計。コメント欄に4人の体験談（戻った／戻らなかった）。</div></div><div class="docarrow">↓<div class="tiny" style="font-weight:400">AとBを踏まえた返事</div></div><div class="doc"><div class="dh"><span class="tag">資料C</span><b>グループの返信｜自分たち → ジェニー</b></div><div class="role">ことわざはそこまで真剣に受け止めていない。本当の理由は法律（遺失物法）。叔父は運が良かった。</div></div></div>
+<div class="note"><b class="l">ここが重要</b>Aは「ジェニーの仮説」、Bは「ブログの理由」、Cは「自分たちの反論」。問1はAだけ、問2はAだけ、問3はBだけ、問4はBのコメント欄だけ。問5だけが AとCの「意見の違い」を突き合わせる。どの設問がどの資料で閉じるかを先に決めると、探し回らずに済む。</div>
+</section>
+
+<section class="step" id="s3"><div class="stepno">STEP 3</div><h2>設問を先読みして、探す情報を決める</h2><div class="sub">Set your antennas</div>
+<p>設問を英語のまま眺めない。「結局、何を答えればいい問題なのか」まで自分の言葉にして、どの資料のどこを見ればいいかまで決めます。</p>
+<table class="ant"><tr><th>設問</th><th>原文</th><th>自分の言葉に直すと</th><th>どこを見る</th></tr><tr><td class="qn">問1</td><td class="en" style="font-size:13px">Which two parts of the blog is Jenny most interested in?</td><td>ジェニーがブログで一番興味を持った2点は？</td><td>資料A。amazed / fascinating など興味を表す語の近く。</td></tr><tr><td class="qn">問2</td><td class="en" style="font-size:13px">What was the outcome of the story about Jenny’s uncle?</td><td>叔父の話の結末は？</td><td>資料A。財布が「どうやって」戻ったか。</td></tr><tr><td class="qn">問3</td><td class="en" style="font-size:13px">According to the blog, … the reasons for the high return rate?</td><td>ブログによる、返却率が高い理由の組み合わせは？</td><td>資料B。First / Second の2つ。</td></tr><tr><td class="qn">問4</td><td class="en" style="font-size:13px">Based on the blog comments, which two items were returned?</td><td>コメント欄で、持ち主に戻った2つは？</td><td>資料Bのコメント4つ。戻った／戻っていないを1つずつ判定。</td></tr><tr><td class="qn">問5</td><td class="en" style="font-size:13px">Your group and Jenny have different opinions on ___.</td><td>自分たちとジェニーで意見が違うのは何について？</td><td>資料A（ジェニーの仮説）× 資料C（自分たちの主張）。</td></tr></table>
+<div class="note"><b class="l">やってしまいがちなこと</b>問3の According to the blog と、問5の Your group and Jenny を読み飛ばすこと。問3でグループの返信（法律）を根拠にしたり、問5でブログの理由を答えたりすると、資料を取り違えた誤答になる。「どの資料の意見か」が設問に指定されている。</div>
+</section>
+
+<section class="step" id="s4"><div class="stepno">STEP 4</div><h2>照合マップ ― 資料同士を突き合わせる</h2><div class="sub">Cross-reference map</div>
+<p>この問題は「返却率が高い理由」を3者がどう説明しているかが軸です。資料ごとの「理由」と「事実」を並べ、どの設問に使うかを整理します。</p>
+<div class="tiny" style="margin-bottom:4px">A ＝ 資料A｜ジェニー　／　B ＝ 資料B｜ブログ ／ 資料C｜自分たち</div><div class="cmpcards"><div class="cc"><div class="row"><div class="k">A</div><div>興味：返却率の高さ（amazed）</div></div><div class="row"><div class="k">B</div><div class="en">B：84%／72%／72% の統計</div></div><div class="foot"><span class="st new">Aの興味①</span><span>→ 問1の⑤</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>興味：有名なことわざ（fascinating）</div></div><div class="row"><div class="k">B</div><div class="en">B：Otentosama ga miteiru</div></div><div class="foot"><span class="st new">Aの興味②</span><span>→ 問1の①</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>仮説：理由はことわざ（the main reason）</div></div><div class="row"><div class="k">B</div><div class="en">B：理由は交番＋ことわざ ／ C：ことわざは真剣に受け止めていない。理由は法律</div></div><div class="foot"><span class="st chg">意見が分かれる</span><span>→ 問5の正解／問3（Bのみ）</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>叔父：財布が郵便受けに、拾い主のメモ付き、中身は無事</div></div><div class="row"><div class="k">B</div><div class="en">C：Your uncle was really lucky.</div></div><div class="foot"><span class="st ok">結末：拾い主が返した</span><span>→ 問2</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>英語のことわざ：Finders keepers</div></div><div class="row"><div class="k">B</div><div class="en">C：We also find that fascinating.</div></div><div class="foot"><span class="st ok">意見は一致</span><span>→ 問5の②を切る</span></div></div><div class="cc"><div class="row"><div class="k">A</div><div>―</div></div><div class="row"><div class="k">B</div><div class="en">B コメント：passport 返った／glove ベンチに置かれただけ／ring 警察から電話で返った／umbrella 新しい持ち主</div></div><div class="foot"><span class="st new">戻ったのは passport と ring</span><span>→ 問4</span></div></div></div>
+<div class="note"><b class="l">このマップができると</b>「理由」の行を見ると、ジェニー＝ことわざ、ブログ＝交番＋ことわざ、自分たち＝法律、と3者がずれている。問3は「ブログの」理由なので交番＋ことわざ、問5は「ジェニーと自分たちの」違いなので「なぜ届けるか」。主語を取り違えなければ両方とも表から読める。</div>
+</section>
+
+<section class="step" id="s5"><div class="stepno">STEP 5</div><h2>脳内実況 ― 根拠をそろえて確定する</h2><div class="sub">Think-aloud</div>
+<p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。各問、「根拠をそろえる → 正解の条件を確定 → 選択肢を照合」の順で、不正解は4つの基準（矛盾／本文にない／条件ズレ／設問ズレ）のどれで切ったかを明示します。各問はタップで開閉できます。</p>
+<details class="think" open><summary><span class="pill" style="background:var(--ink)">問1</span>ジェニーが興味を持った2点<span class="ans">正解 ① と ⑤</span></summary><div class="body">
+<p style="margin-top:12px"><b>ジェニーがブログの中で最も興味を持っている2つの部分はどれか。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：興味を表す語を資料Aで待つ</h5>interested ＝ amazed / fascinating / find … interesting。ジェニーが自分の反応を書いている文を探す。</div></div><div class="t"><div class="n">2</div><div><h5>1段落目に2つ並んでいる</h5><div class="quote"><span class="en">I read a blog and was amazed to learn about the high return rate of lost property in Japan. It also mentions a well-known saying that I find fascinating.</span><span class="ja">ブログを読んで、日本の落とし物の返却率の高さに驚いた。有名なことわざにも触れていて、それがとても面白い。</span></div>amazed → 返却率。fascinating → ことわざ。</div></div><div class="t"><div class="n">3</div><div><h5>ブログに書いてあることと、ジェニーが反応したことを分ける</h5>ブログには警察官の数（48,000人）も犯罪率の低さも書いてある。でもジェニーはそれに触れていない。「ブログにある」と「ジェニーが興味を持った」は別。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">資料A</span><span><span class="en">was amazed to learn about the high return rate of lost property</span><span class="ja">返却率に驚いた</span></span></div><div class="e"><span class="src">資料A</span><span><span class="en">a well-known saying that I find fascinating</span><span class="ja">ことわざが面白い</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>ジェニー自身が反応している（amazed / fascinating）</li><li>ブログの内容であること</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">①</span><span class="en">The common Japanese saying</span><span class="why">well-known saying ＝ common Japanese saying。fascinating。</span></div><div class="piece ok"><span class="m">⑤</span><span class="en">The percentage of lost items returned</span><span class="why">high return rate ＝ percentage returned。amazed。</span></div><div class="piece "><span class="m">②</span><span class="en">The low serious crime rate</span><span class="why"><span class="cut">設問ズレ</span>ブログにはあるが、ジェニーは触れていない。</span></div><div class="piece "><span class="m">③</span><span class="en">The meaning of the English saying</span><span class="why"><span class="cut">設問ズレ</span>英語のことわざはジェニー自身の話で、ブログの内容ではない。</span></div><div class="piece "><span class="m">④</span><span class="en">The number of police officers</span><span class="why"><span class="cut">設問ズレ</span>ブログにはあるが、ジェニーは触れていない。</span></div>
+<p class="center"><button class="btn ghost" data-open="q1">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「〇〇が興味を持ったのは」型は、資料に「書いてある」ことではなく、その人が「反応した」ことを探す。感情語（amazed / fascinating）の直後の名詞句が答え。資料Bに書いてある事実（警察官の数）を使った選択肢が罠。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問2</span>叔父の財布の結末<span class="ans">正解 ③</span></summary><div class="body">
+<p style="margin-top:12px"><b>ジェニーの叔父の話の結末はどうだったか。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：outcome ＝ 結末。財布は「どうやって」戻ったか</h5><div class="quote"><span class="en">my uncle … lost his wallet, but it just appeared in his letterbox with a note from the finder. The person who found it must have put it in there. He was very fortunate that nothing had been removed.</span><span class="ja">叔父は財布をなくしたが、拾い主のメモ付きで郵便受けに現れた。拾った人が入れたに違いない。何も抜かれていなくて幸運だった。</span></div></div></div><div class="t"><div class="n">2</div><div><h5>細部を確定する</h5>戻し方 ＝ 拾い主が郵便受けに入れた（警察ではない、メールでもない）。中身 ＝ nothing had been removed（無事）。</div></div><div class="t"><div class="n">3</div><div><h5>選択肢の「少しだけ違う」を切る</h5>①はメールで連絡（本文はメモを郵便受けに）。②は中身が無い（本文は無事）。④は警察（本文は拾い主本人）。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">資料A</span><span><span class="en">it just appeared in his letterbox with a note from the finder</span><span class="ja">拾い主が郵便受けに</span></span></div><div class="e"><span class="src">資料A</span><span><span class="en">nothing had been removed</span><span class="ja">中身は無事</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>返したのは「拾い主」</li><li>手段は郵便受け＋メモ</li><li>中身は無事</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">③</span><span class="en">The finder returned the lost wallet to him.</span><span class="why">拾い主が返した。手段は問われていないので、これで十分。</span></div><div class="piece "><span class="m">①</span><span class="en">He was contacted by email by the finder.</span><span class="why"><span class="cut">条件ズレ</span>連絡手段はメモ（note）であってメールではない。</span></div><div class="piece "><span class="m">②</span><span class="en">His wallet was returned without any money in it.</span><span class="why"><span class="cut">矛盾</span>nothing had been removed。</span></div><div class="piece "><span class="m">④</span><span class="en">The police called him when they found his wallet.</span><span class="why"><span class="cut">矛盾</span>警察は関わっていない。ジェニーは「警察には届けないだろう」とまで言っている。</span></div>
+<p class="center"><button class="btn ghost" data-open="q2">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>体験談の設問は、「誰が・どうやって・結果どうなった」の3点を本文で確定してから選ぶ。不正解は3点のうち1点だけ変える（メモ→メール、拾い主→警察、無事→空）。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問3</span>ブログが挙げる理由<span class="ans">正解 ③ A and D</span></summary><div class="body">
+<p style="margin-top:12px"><b>ブログによると、日本で落とし物の返却率が高い理由の組み合わせとして最も適切なのはどれか。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：According to the blog。資料Bだけで答える</h5>自分たちの返信（法律）を根拠にしてはいけない。ブログの First / Second を取る。</div></div><div class="t"><div class="n">2</div><div><h5>First：交番と警察</h5><div class="quote"><span class="en">the relatively low crime rate enables them to handle lost property, which is considered important police work.</span><span class="ja">犯罪率が比較的低いので、警察は落とし物を扱える。それは重要な警察の仕事とされている。</span></div>＝ A（落とし物の対応は警察の重要な任務）。</div></div><div class="t"><div class="n">3</div><div><h5>Second：ことわざ</h5><div class="quote"><span class="en">the Japanese say ‘Otentosama ga miteiru,’ which literally means the sun witnesses everything. Children are taught this saying …</span><span class="ja">「お天道様が見ている」。子どもはこのことわざを教わる。</span></div>＝ D（「太陽はすべてを見ている」が広く信じられている）。</div></div><div class="t"><div class="n">4</div><div><h5>BとCを切る</h5>B 法律 → ブログには無い。これは資料C（自分たちの返信）の内容。資料の取り違え。C 交番が年々増えている → over 6,000 とあるだけで「増えている」とは書いていない。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">資料B</span><span><span class="en">handle lost property, which is considered important police work</span><span class="ja">落とし物対応は重要な警察の仕事</span></span></div><div class="e"><span class="src">資料B</span><span><span class="en">‘Otentosama ga miteiru’ … Children are taught this saying</span><span class="ja">お天道様が見ている、を子どもが教わる</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>ブログに書かれている理由（First / Second）</li><li>グループの返信の内容は使わない</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">③</span><span class="en">A and D</span><span class="why">First ＝ A、Second ＝ D。</span></div><div class="piece "><span class="m">①④⑤</span><span class="en">B を含む組み合わせ</span><span class="why"><span class="cut">設問ズレ</span>法律は資料Cの主張。ブログには無い。</span></div><div class="piece "><span class="m">②④⑥</span><span class="en">C を含む組み合わせ</span><span class="why"><span class="cut">本文にない</span>6,000以上とあるが、増加しているとは書いていない。</span></div>
+<p class="center"><button class="btn ghost" data-open="q3">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>According to the blog の一言で、使っていい資料が1つに限定される。別の資料に書いてある「正しい情報」（法律）が、この設問では不正解になる。第5問は「本文に書いてあるか」ではなく「指定された資料に書いてあるか」。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問4</span>持ち主に戻った2つ<span class="ans">正解 ④ Passport and ring</span></summary><div class="body">
+<p style="margin-top:12px"><b>ブログのコメントに基づくと、元の持ち主に戻ったのはどの2つか。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：コメント4つを「戻った／戻っていない」で判定</h5>returned to their original owners ＝ 持ち主の手に戻った。「見つかった」「親切にされた」とは違う。</div></div><div class="t"><div class="n">2</div><div><h5>4つを判定する</h5><div class="quote"><span class="en">passport: a child ran up and returned it ／ glove: Someone had put it on top of a nearby bench ／ ring: the police called and told me to return to the koban. Now … I smile ／ umbrella: It probably has a new owner.</span><span class="ja">パスポート：子どもが返した ○／手袋：ベンチの上に置かれただけ（持ち主には戻っていない）×／指輪：警察から電話で戻り、今は左手にある ○／傘：別の人の物になった ×</span></div></div></div><div class="t"><div class="n">3</div><div><h5>手袋の罠</h5>It was a kind gesture（親切な行為）とあるので「戻った」と読みがち。でも書き手は通りがかりの人で、持ち主ではない。ベンチに置かれただけ。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">資料B</span><span><span class="en">a child ran up and returned it</span><span class="ja">パスポートは返された</span></span></div><div class="e"><span class="src">資料B</span><span><span class="en">the police called and told me to return to the koban. Now, when I look at my left hand, I smile.</span><span class="ja">指輪は警察経由で戻った</span></span></div><div class="e"><span class="src">資料B</span><span><span class="en">Someone had put it on top of a nearby bench</span><span class="ja">手袋はベンチに置かれただけ</span></span></div><div class="e"><span class="src">資料B</span><span><span class="en">It probably has a new owner.</span><span class="ja">傘は戻っていない</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>持ち主の手に戻ったと明記</li><li>「親切にされた」「見かけた」は戻ったではない</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">④</span><span class="en">Passport and ring</span><span class="why">両方とも持ち主に戻った。</span></div><div class="piece "><span class="m">①②③</span><span class="en">Glove を含む組み合わせ</span><span class="why"><span class="cut">条件ズレ</span>手袋はベンチに置かれただけ。持ち主に戻っていない。</span></div><div class="piece "><span class="m">③⑤⑥</span><span class="en">Umbrella を含む組み合わせ</span><span class="why"><span class="cut">矛盾</span>傘は新しい持ち主のところ。</span></div>
+<p class="center"><button class="btn ghost" data-open="q4">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>コメント欄の設問は、「良い話に聞こえる」ことと「設問の条件を満たす」ことを分ける。手袋は kind gesture でも、returned to the owner ではない。条件の語（returned to their original owners）に厳密に当てはめる。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問5</span>意見が違うのは何について<span class="ans">正解 ④</span></summary><div class="body">
+<p style="margin-top:12px"><b>あなたのグループとジェニーは、___について異なる意見を持っている。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：ジェニーの主張（A）と自分たちの主張（C）を並べる</h5>「意見が違う」なので、両方に意見が書かれていて、かつ食い違っている項目を探す。</div></div><div class="t"><div class="n">2</div><div><h5>ジェニーの主張</h5><div class="quote"><span class="en">I guess that’s the main reason for the high number of returns.</span><span class="ja">（ことわざが）返却が多い主な理由だと思う。</span></div></div></div><div class="t"><div class="n">3</div><div><h5>自分たちの主張</h5><div class="quote"><span class="en">We don’t take it that seriously, though. Actually, we have a law known as the Lost Property Act. … We think that this better explains the high return rate in Japan.</span><span class="ja">そこまで真剣には受け止めていない。実は遺失物法という法律があって……こちらの方が返却率の高さをよく説明すると思う。</span></div></div></div><div class="t"><div class="n">4</div><div><h5>食い違っているのは「なぜ届けるか」</h5>ジェニー＝ことわざ。自分たち＝法律。同じ「返却率が高い理由」について、違う答え。これが④。②の英語のことわざは We also find that fascinating で一致。③の叔父は really lucky で一致。①の持ち物への注意は、ブログの最後に1文あるだけで、どちらも意見を述べていない。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">資料A</span><span><span class="en">I guess that’s the main reason for the high number of returns.</span><span class="ja">ジェニー：理由はことわざ</span></span></div><div class="e"><span class="src">資料C</span><span><span class="en">We think that this (the law) better explains the high return rate</span><span class="ja">自分たち：理由は法律</span></span></div><div class="e"><span class="src">資料C</span><span><span class="en">We also find that fascinating. / Your uncle was really lucky.</span><span class="ja">英語のことわざと叔父の件は一致</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>AとCの両方に意見がある</li><li>その意見が食い違っている</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">④</span><span class="en">why people in Japan hand in lost items</span><span class="why">ことわざ vs 法律。同じ問いに違う答え。</span></div><div class="piece "><span class="m">①</span><span class="en">how people pay attention to possessions</span><span class="why"><span class="cut">本文にない</span>持ち物への注意はブログの1文で、AにもCにも意見が無い。</span></div><div class="piece "><span class="m">②</span><span class="en">the interpretation of the English saying</span><span class="why"><span class="cut">矛盾</span>We also find that fascinating。一致している。</span></div><div class="piece "><span class="m">③</span><span class="en">what happened regarding Jenny’s uncle</span><span class="why"><span class="cut">矛盾</span>Your uncle was really lucky。事実をそのまま受け止めている。</span></div>
+<p class="center"><button class="btn ghost" data-open="q5">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「意見が違う」型は、両者が「同じ問い」に「違う答え」を出している箇所を探す。片方しか意見を言っていない項目（①）と、両者が同意している項目（②③）が罠。資料Cの though / Actually / better explains が、反論の合図。</div></div></details>
+</section>
+
+<section class="step" id="s6"><div class="stepno">STEP 6</div><h2>全訳 ― 資料ごとに確認する</h2><div class="sub">Full translation</div>
+<p>色の下線は各設問の根拠箇所です。</p>
+<div class="legend"><span class="l1">問1</span><span class="l2">問2</span><span class="l3">問3</span><span class="l4">問4</span><span class="l5">問5</span></div>
+<p class="center"><button class="btn ghost" id="hideEn">英文を隠して和訳だけ読む</button></p>
+<div class="tr"><div class="lab">リード文</div><p class="en">Your class will be hosting Jenny, a student from the UK. After a few email exchanges, she has emailed again about a blog post on lost and found items in Japan. You and your group members have replied.</p><p class="ja">あなたのクラスはイギリスからの留学生ジェニーを受け入れる。何度かメールをやり取りした後、彼女が日本の落とし物に関するブログ記事について再びメールしてきた。あなたとグループのメンバーが返信した。</p></div><div class="tr"><div class="lab">資料A｜ジェニーのメール</div><p class="en">Your emails are making me feel more comfortable about living in Japan. Yesterday, I read a blog and was amazed to learn about the high return rate of lost property in Japan. It also mentions a well-known saying that I find fascinating. I guess that’s the main reason for the high number of returns. Please read the blog and let me know if you agree. In English, we have a saying, ‘Finders keepers, losers weepers.’ So, if I lose something, I don’t expect to get it back. I probably wouldn’t bother to report it to the police either. However, occasionally, ‘finders’ check for contact information and get in touch with the ‘loser.’ A couple of years ago, my uncle, who lives in Edinburgh, lost his wallet, but it just appeared in his letterbox with a note from the finder. The person who found it must have put it in there. He was very fortunate that nothing had been removed.</p><p class="ja">あなたたちのメールのおかげで、日本で暮らすことに安心感が出てきました。昨日ブログを読んで、日本の落とし物の返却率の高さに驚きました。<span class="qm q1">問1</span>有名なことわざにも触れていて、それがとても面白いです。<span class="qm q1">問1</span>それが返却が多い主な理由だと思います。<span class="qm q5">問5</span>ブログを読んで、同意するか教えてください。英語には「拾った者の勝ち、なくした者の負け」ということわざがあります。だから何かをなくしても、戻ってくるとは期待しません。たぶん警察に届けもしないでしょう。でも時々、拾った人が連絡先を調べてなくした人に連絡することはあります。数年前、エディンバラに住む叔父が財布をなくしましたが、拾い主のメモ付きで郵便受けに現れました。拾った人が入れたに違いありません。何も抜かれていなくて、とても幸運でした。<span class="qm q2">問2</span></p></div><div class="tr"><div class="lab">資料B｜ブログ</div><p class="en">People often say that if you lose your wallet in Japan, you will likely get it back. Based on my time living there, I found a couple of reasons why. First, there are over 6,000 small neighbourhood police boxes called koban. They are located across the country in places where people gather or pass by. Around 48,000 police officers work in these police boxes. Also, the relatively low crime rate enables them to handle lost property, which is considered important police work. Second, the Japanese say ‘Otentosama ga miteiru,’ which literally means the sun witnesses everything. Children are taught this saying and learn that even if no one sees them doing the wrong thing, the sun is watching, so it is better to do the right thing. According to a survey on lost property, around 84% of mobile phones, 72% of ID cards, and 72% of money, including even large sums, get reunited with the original owners. This, however, does not mean that you can neglect your belongings.</p><p class="ja">日本で財布をなくしても戻ってくる可能性が高い、とよく言われる。住んでいた経験から、理由を2つ見つけた。第一に、交番と呼ばれる小さな派出所が6,000以上あり、人が集まる場所や通る場所に全国配置されている。約48,000人の警察官がそこで働いている。また、犯罪率が比較的低いので、警察は落とし物に対応でき、それは重要な警察の仕事とされている。第二に、日本人は「お天道様が見ている」と言う。文字通りには「太陽はすべてを目撃している」。子どもはこのことわざを教わり、誰も見ていなくても太陽が見ているから正しいことをした方がいい、と学ぶ。<span class="qm q3">問3</span>落とし物の調査によると、携帯電話の約84%、身分証の72%、現金の72%（高額でも）が持ち主の元に戻る。ただし、持ち物を気にしなくていいという意味ではない。</p></div><div class="tr"><div class="lab">資料B｜コメント</div><p class="en">Francesca: I dropped my passport, and a child ran up and returned it. I bowed and said, ‘Arigato.’ She was only about five! / Nelson: In Hokkaido, I saw a glove on the pavement. The following morning, I saw it again. Someone had put it on top of a nearby bench. It was a kind gesture. / Samira: I lost my engagement ring on holiday in Japan. I went to the koban and did the paperwork. Two days later, the police called and told me to return to the koban. Now, when I look at my left hand, I smile. / Tom: I left my umbrella in a Japanese cafe. I went back for it, but it was gone. I asked the server, but she said she hadn’t seen it. It probably has a new owner.</p><p class="ja">フランチェスカ：パスポートを落としたら、子どもが駆け寄って返してくれた。お辞儀して「ありがとう」と言った。5歳くらいの子だった！／ネルソン：北海道で歩道に手袋を見た。翌朝また見たら、誰かが近くのベンチの上に置いていた。親切な行為だった。／サミラ：日本で休暇中に婚約指輪をなくした。交番で書類を書いたら、2日後に警察から電話があり、交番に戻るよう言われた。今、左手を見ると笑顔になる。／トム：日本のカフェに傘を忘れた。取りに戻ったが無かった。店員に聞いたが見ていないと言われた。たぶん新しい持ち主がいる。<span class="qm q4">問4</span></p></div><div class="tr"><div class="lab">資料C｜グループの返信</div><p class="en">Thanks for sharing the English saying. We also find that fascinating. It is true that the Japanese saying is common knowledge as many of us heard it when we were children. We don’t take it that seriously, though. Actually, we have a law known as the Lost Property Act. It says that the finder must report the item to the police. Otherwise, they may be punished. Also, if lost property is not claimed within 90 days, the finder is ‘rewarded’ by receiving the item. We think that this better explains the high return rate in Japan. We can’t wait to meet you. P.S. Your uncle was really lucky.</p><p class="ja">英語のことわざを教えてくれてありがとう。私たちも面白いと思います。日本のことわざが誰でも知っているものなのは本当で、多くの人が子どもの頃に聞きました。でも、そこまで真剣には受け止めていません。実は、遺失物法という法律があります。拾った人は警察に届けなければならず、さもないと罰せられることがあります。また、90日以内に持ち主が現れなければ、拾った人がその物を受け取ることで「報われ」ます。こちらの方が日本の返却率の高さをよく説明すると思います。<span class="qm q5">問5</span>会えるのが待ちきれません。追伸：叔父さんは本当に運が良かったですね。</p></div>
+</section>
+
+<section class="step" id="s7"><div class="stepno">STEP 7</div><h2>語句 ― 資料をつなぐ語を優先して覚える</h2><div class="sub">Vocabulary</div>
+<p>第5問は、資料Aの語が資料Bや設問でどう言い換えられるかで決まります。ペアで覚えてください。</p>
+<h4>今回の最重要ペア</h4><div class="vocab"><div class="v pair"><span class="w">high return rate ／ percentage of lost items returned</span><span>返却率の高さ（問1）</span></div><div class="v pair"><span class="w">well-known saying ／ common Japanese saying</span><span>有名なことわざ（問1）</span></div><div class="v pair"><span class="w">a note from the finder in his letterbox ／ the finder returned it</span><span>拾い主のメモ付きで郵便受けに → 拾い主が返した（問2）</span></div><div class="v pair"><span class="w">important police work ／ essential police duty</span><span>重要な警察の仕事 → 不可欠な警察の任務（問3）</span></div><div class="v pair"><span class="w">the sun witnesses everything ／ the sun sees everything</span><span>お天道様が見ている（問3）</span></div><div class="v pair"><span class="w">returned it ／ the police called … I smile ／ returned to their original owners</span><span>持ち主に戻った表現（問4）</span></div><div class="v pair"><span class="w">the main reason for returns ／ better explains the return rate ／ why people hand in lost items</span><span>返却率の理由 → なぜ届けるか（問5）</span></div></div>
+<h4>本文・設問</h4><div class="vocab"><div class="v"><span class="w">host</span><span class="pos">動</span><span>受け入れる</span></div><div class="v"><span class="w">lost property</span><span class="pos">名</span><span>落とし物、遺失物</span></div><div class="v"><span class="w">return rate</span><span class="pos">名</span><span>返却率</span></div><div class="v"><span class="w">fascinating</span><span class="pos">形</span><span>魅力的な、面白い</span></div><div class="v"><span class="w">bother to</span><span class="pos">熟</span><span>わざわざ〜する</span></div><div class="v"><span class="w">letterbox</span><span class="pos">名</span><span>郵便受け</span></div><div class="v"><span class="w">remove</span><span class="pos">動</span><span>取り除く、抜き取る</span></div><div class="v"><span class="w">police box</span><span class="pos">名</span><span>交番</span></div><div class="v"><span class="w">crime rate</span><span class="pos">名</span><span>犯罪率</span></div><div class="v"><span class="w">handle</span><span class="pos">動</span><span>扱う</span></div><div class="v"><span class="w">witness</span><span class="pos">動</span><span>目撃する</span></div><div class="v"><span class="w">reunite</span><span class="pos">動</span><span>再会させる</span></div><div class="v"><span class="w">neglect</span><span class="pos">動</span><span>おろそかにする</span></div><div class="v"><span class="w">belongings</span><span class="pos">名</span><span>持ち物</span></div><div class="v"><span class="w">pavement</span><span class="pos">名</span><span>歩道</span></div><div class="v"><span class="w">gesture</span><span class="pos">名</span><span>行為、しぐさ</span></div><div class="v"><span class="w">engagement ring</span><span class="pos">名</span><span>婚約指輪</span></div><div class="v"><span class="w">paperwork</span><span class="pos">名</span><span>書類手続き</span></div><div class="v"><span class="w">claim</span><span class="pos">動</span><span>（所有権を）主張する、受け取りに来る</span></div><div class="v"><span class="w">reward</span><span class="pos">動</span><span>報いる</span></div><div class="v"><span class="w">outcome</span><span class="pos">名</span><span>結末</span></div><div class="v"><span class="w">essential</span><span class="pos">形</span><span>不可欠な</span></div><div class="v"><span class="w">interpretation</span><span class="pos">名</span><span>解釈</span></div><div class="v"><span class="w">hand in</span><span class="pos">熟</span><span>届け出る、提出する</span></div><div class="v"><span class="w">possession</span><span class="pos">名</span><span>所有物</span></div></div>
+</section>
+
+<section class="step" id="s8"><div class="stepno">STEP 8</div><h2>持ち帰る3原則 と 自己点検</h2><div class="sub">Take-aways</div>
+<div class="card"><div class="weapon"><div class="num">原則 1</div><div><h4 style="margin:0 0 4px">資料をバラバラに読まない。</h4><p style="margin:0">それぞれの資料が何のためにあり、どうつながっているのかを意識する。</p></div></div><div class="weapon"><div class="num">原則 2</div><div><h4 style="margin:0 0 4px">1か所の情報だけで判断しない。</h4><p style="margin:0">複数の資料や条件を照らし合わせ、必要な情報をそろえる。</p></div></div><div class="weapon"><div class="num">原則 3</div><div><h4 style="margin:0 0 4px">最後は必ず根拠で確定する。</h4><p style="margin:0">なぜ正解か、なぜ他の選択肢は違うのかを説明できるようにする。</p></div></div></div>
+<div class="note"><b class="l">第5問の本質</b>大問5は、複数の資料をただ読む問題ではない。資料同士をつなげて、必要な情報を整理し、根拠を組み合わせる問題。文章は1つずつ読む。情報はつなげて理解する。答えはすべての条件を満たして確定する。</div>
+<p><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。チェックはこの端末に保存されます。</p>
+<ul class="chk"><li><input type="checkbox"><span>本文を読む前に、リード文から「自分はどんな立場で、何をしている状況か」を一言で言えた</span></li><li><input type="checkbox"><span>資料がいくつあって、どれがどれへの返答・反応なのか、関係図を先に作った</span></li><li><input type="checkbox"><span>設問5つを先読みして、「何を探しながら読むか」を自分の言葉にしてから本文に入った</span></li><li><input type="checkbox"><span>資料Aを読みながら「資料Bのどこと対応するか」を意識して読んだ</span></li><li><input type="checkbox"><span>資料Bを読むとき、Aの内容に対して「OK／変更／新情報／未完了」のどれかに振り分けられた</span></li><li><input type="checkbox"><span>複数の根拠が必要な設問で、根拠を1か所だけ見つけて選ぶことをしなかった</span></li><li><input type="checkbox"><span>不正解の選択肢を「矛盾／本文にない／条件ズレ／設問ズレ」のどれで切ったか説明できる</span></li><li><input type="checkbox"><span>図や表の設問で、本文から条件を先に確定してから選択肢の図を見た</span></li><li><input type="checkbox"><span>「事実」だけでなく「その事実から次に何が必要になるか」を資料を出発点に考えられた</span></li><li><input type="checkbox"><span>13分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li><li><input type="checkbox"><span>問1で、「ブログに書いてある」と「ジェニーが反応した」を分けて、感情語の直後だけを取った</span></li><li><input type="checkbox"><span>問3で、According to the blog を見て、グループの返信（法律）を根拠から外した</span></li><li><input type="checkbox"><span>問4で、手袋の kind gesture に引っ張られず「持ち主に戻ったか」だけで判定した</span></li><li><input type="checkbox"><span>問5で、ジェニー（ことわざ）と自分たち（法律）が同じ問いに違う答えを出している箇所を特定した</span></li></ul>
+<div class="score" id="chkScore">0 / 14</div>
+<div class="card soft"><b>次に向けて</b><p>10個以上なら手順は身についています。次は同じ手順を「初見の第5問」で再現できるかを試してください。9個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度13分で解き直してください。測っているのは正解ではなく、<b>資料をつないで読む動作</b>です。</p>
+<p class="center"><button class="btn ghost" id="reset">解答・チェックをリセットしてもう一度解く</button></p></div>
+</section>
+<footer>出典：2026年度 共通テスト追試験 第5問 英語（リーディング）第5問<br>学部別・逆転合格設計塾 THINKING ― 受験は根性じゃなく、設計。</footer>
+</main>
+<div class="bbar"><div class="in"><button class="btn ghost" id="openSheet">本文を開く</button></div></div>
+<div class="overlay" id="ov"></div>
+<div class="sheet" id="sheet"><div class="head"><b>資料 ― Lost and (Usually) Found</b><div class="filters"><button data-f="none">なし</button><button data-f="all" class="on">全部</button><button class="f1" data-f="q1">問1</button><button class="f2" data-f="q2">問2</button><button class="f3" data-f="q3">問3</button><button class="f4" data-f="q4">問4</button><button class="f5" data-f="q5">問5</button></div><button class="close" id="closeSheet">×</button></div>
+<div class="scroll"><div class="passage show-all" id="sheetPassage"><p class="en lead-en">Your class will be hosting Jenny, a student from the UK. After a few email exchanges, she has emailed again about a blog post on lost and found items in Japan. You and your group members have replied.</p><div class="doc-sec"><div class="dt">資料A｜ジェニーのメール</div><div class="email"><div class="hdr">Jenny’s email</div>
+<p class="en">Hello again,</p>
+<p class="en">Your emails are making me feel more comfortable about living in Japan. Yesterday, I read a blog and was amazed to learn about <mark class="q1">the high return rate of lost property in Japan</mark>. It also mentions <mark class="q1">a well-known saying that I find fascinating</mark>. <mark class="q5">I guess that’s the main reason for the high number of returns.</mark> Please read the blog (www.************) and let me know if you agree.</p>
+<p class="en">In English, we have a saying, ‘Finders keepers, losers weepers.’ So, if I lose something, I don’t expect to get it back. I probably wouldn’t bother to report it to the police either. However, occasionally, ‘finders’ check for contact information and get in touch with the ‘loser.’ <mark class="q2">A couple of years ago, my uncle, who lives in Edinburgh, lost his wallet, but it just appeared in his letterbox with a note from the finder. The person who found it must have put it in there. He was very fortunate that nothing had been removed.</mark></p>
+<p class="en">Anyway, I look forward to your response.<br>Best wishes,<br>Jenny</p></div></div><div class="doc-sec"><div class="dt">資料B｜ブログ（ジェニーが読んだもの）</div><div class="email"><div class="hdr">Enya Hand’s Blog ― Lost and (Usually) Found　By Enya Hand</div>
+<p class="en">People often say that if you lose your wallet in Japan, you will likely get it back. Based on my time living there, I found a couple of reasons why.</p>
+<p class="en"><mark class="q3">First, there are over 6,000 small neighbourhood police boxes called koban. They are located across the country in places where people gather or pass by. Around 48,000 police officers work in these police boxes. Also, the relatively low crime rate enables them to handle lost property, which is considered important police work.</mark></p>
+<p class="en"><mark class="q3">Second, the Japanese say ‘Otentosama ga miteiru,’ which literally means the sun witnesses everything. Children are taught this saying and learn that even if no one sees them doing the wrong thing, the sun is watching, so it is better to do the right thing.</mark></p>
+<p class="en">According to a survey on lost property, around 84% of mobile phones, 72% of ID cards, and 72% of money, including even large sums, get reunited with the original owners. This, however, does not mean that you can neglect your belongings.</p>
+<div class="form"><div class="tiny" style="margin-bottom:4px">Comments:</div>
+<div class="bk"><span class="en"><mark class="q4">I dropped my passport, and a child ran up and returned it.</mark> I bowed and said, ‘Arigato.’ She was only about five!</span> <span class="tiny">― Francesca</span></div>
+<div class="bk"><span class="en">In Hokkaido, I saw a glove on the pavement. The following morning, I saw it again. <mark class="q4">Someone had put it on top of a nearby bench.</mark> It was a kind gesture.</span> <span class="tiny">― Nelson</span></div>
+<div class="bk"><span class="en">I lost my engagement ring on holiday in Japan. I went to the koban and did the paperwork. <mark class="q4">Two days later, the police called and told me to return to the koban. Now, when I look at my left hand, I smile.</mark></span> <span class="tiny">― Samira</span></div>
+<div class="bk"><span class="en">I left my umbrella in a Japanese cafe. I went back for it, but it was gone. I asked the server, but she said she hadn’t seen it. <mark class="q4">It probably has a new owner.</mark></span> <span class="tiny">― Tom</span></div></div></div></div><div class="doc-sec"><div class="dt">資料C｜自分たちのグループの返信</div><div class="email"><div class="hdr">Your group’s reply email</div>
+<p class="en">Hello Jenny,</p>
+<p class="en">Thanks for sharing the English saying. We also find that fascinating. It is true that the Japanese saying is common knowledge as many of us heard it when we were children. <mark class="q5">We don’t take it that seriously, though. Actually, we have a law known as the Lost Property Act. It says that the finder must report the item to the police. Otherwise, they may be punished. Also, if lost property is not claimed within 90 days, the finder is ‘rewarded’ by receiving the item. We think that this better explains the high return rate in Japan.</mark></p>
+<p class="en">We can’t wait to meet you.<br>Yours,<br>Group 4 Members</p>
+<p class="en"><span class="tiny">P.S. Your uncle was really lucky.</span></p></div></div></div></div></div>
+<script>const TARGET_SEC=780; const ANS=[{"q": 1, "type": "multi", "ans": ["①", "⑤"]}, {"q": 2, "type": "single", "ans": "③"}, {"q": 3, "type": "single", "ans": "③"}, {"q": 4, "type": "single", "ans": "④"}, {"q": 5, "type": "single", "ans": "④"}];
+(function(){
+  const KEY = 'thinking_q3_' + document.body.dataset.key;
+  // timer
+  let t = TARGET_SEC, iv=null, running=false, elapsed=0;
+  const big=document.getElementById('tBig'), chip=document.getElementById('tChip'), btn=document.getElementById('tBtn');
+  function fmt(s){ const neg=s<0; s=Math.abs(s); const m=Math.floor(s/60), r=s%60; return (neg?'+':'')+m+':'+String(r).padStart(2,'0'); }
+  function render(){ const left=TARGET_SEC-elapsed; big.textContent=fmt(left); chip.textContent=fmt(left); big.style.color = left<0?'var(--ng)':'inherit'; }
+  render();
+  btn.addEventListener('click',()=>{
+    if(!running){ running=true; btn.textContent='ストップ'; iv=setInterval(()=>{elapsed++; render();},1000); }
+    else { running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // grading
+  document.getElementById('grade').addEventListener('click',()=>{
+    let n=0;
+    ANS.forEach(a=>{ if(a.type==='multi'){a.ans=a.ans;} 
+      const el=document.getElementById('r'+a.q);
+      let ok=false, user='';
+      if(a.type==='single'){
+        const c=document.querySelector('input[name="q'+a.q+'"]:checked'); user=c?c.value:'';
+        ok = user===a.ans;
+      }else if(a.type==='multi'){
+        const c=[...document.querySelectorAll('input[name="q'+a.q+'"]:checked')].map(i=>i.value).sort(); user=c.join('・');
+        ok = c.join('')===[...a.ans].sort().join('');
+      }else{ ok=false; }
+      if(ok){n++; el.textContent='正解';el.className='result ok';}
+      else{ el.textContent='不正解（正解：'+(Array.isArray(a.ans)?a.ans.join('→'):a.ans)+'）'; el.className='result ng'; }
+    });
+    const s=document.getElementById('gradeSum'); s.textContent= n+' / '+ANS.length+'問正解。正解数より、どの設問で本文に戻る回数が増えたかを覚えておいてください。';
+    if(running){ running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // sheet
+  const sheet=document.getElementById('sheet'), ov=document.getElementById('ov');
+  function openSheet(f){ sheet.classList.add('open'); ov.classList.add('on'); if(f) setFilter(f); }
+  function closeSheet(){ sheet.classList.remove('open'); ov.classList.remove('on'); }
+  document.getElementById('openSheet').addEventListener('click',()=>openSheet());
+  document.getElementById('closeSheet').addEventListener('click',closeSheet);
+  ov.addEventListener('click',closeSheet);
+  const sp=document.getElementById('sheetPassage');
+  function setFilter(f){
+    sp.className='passage show-'+f;
+    document.querySelectorAll('.filters button').forEach(b=>b.classList.toggle('on', b.dataset.f===f));
+  }
+  document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f)));
+  document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openSheet(b.dataset.open)));
+  setFilter('none');
+  // hide english toggle
+  const hb=document.getElementById('hideEn'); if(hb){ hb.addEventListener('click',()=>{ document.body.classList.toggle('hideen'); hb.textContent=document.body.classList.contains('hideen')?'英文も表示する':'英文を隠して和訳だけ読む'; }); }
+  // checklist persistence
+  const boxes=[...document.querySelectorAll('.chk input')];
+  let saved={}; try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  boxes.forEach((b,i)=>{ b.checked=!!saved[i]; b.addEventListener('change',()=>{ saved[i]=b.checked; try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){} upd(); }); });
+  function upd(){ const n=boxes.filter(b=>b.checked).length; document.getElementById('chkScore').textContent=n+' / '+boxes.length; }
+  upd();
+  document.getElementById('reset').addEventListener('click',()=>{
+    boxes.forEach(b=>b.checked=false); saved={}; try{localStorage.removeItem(KEY);}catch(e){} upd();
+    document.querySelectorAll('.answers input').forEach(i=>i.checked=false);
+    document.querySelectorAll('.order select').forEach(s=>s.selectedIndex=0);
+    document.querySelectorAll('.result').forEach(r=>{r.textContent='';r.className='result';});
+    document.getElementById('gradeSum').textContent='';
+    elapsed=0; render(); if(running){running=false;clearInterval(iv);} btn.textContent='スタート';
+    window.scrollTo({top:document.getElementById('s0').offsetTop-70,behavior:'smooth'});
+  });
+})();
+</script>
+</body></html>

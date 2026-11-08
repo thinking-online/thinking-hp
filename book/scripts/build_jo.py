@@ -9,6 +9,10 @@ import re, html, os, subprocess, sys
 NAVY, GRAY = "#15467E", "#8a8a8a"
 def esc(s): return html.escape(s, quote=False)
 
+def mark(s):
+    """==ここ== を、薄いネイビーの地にする"""
+    return re.sub(r'==(.+?)==', r'<span class="mk">\1</span>', s)
+
 import sys
 MODE = sys.argv[1] if len(sys.argv) > 1 else ""
 if MODE == "kihon":
@@ -37,7 +41,7 @@ def render(path, first):
         if l.startswith("```"):
             buf = []; i += 1
             while i < n and not lines[i].startswith("```"):
-                buf.append(esc(lines[i].rstrip())); i += 1
+                buf.append(mark(esc(lines[i].rstrip()))); i += 1
             i += 1
             body = "\n".join(buf).strip("\n")
             ne = [b for b in buf if b.strip()]
@@ -57,15 +61,15 @@ def render(path, first):
                 cls = "" if not out else ' class="brk"'
                 out.append(f'<h1{cls}>{txt}</h1>')
             elif lv == 2:
-                out.append(f'<h2>{txt}</h2>')
+                out.append(f'<h2>{mark(txt)}</h2>')
             else:
-                out.append(f'<h3>{txt}</h3>')
+                out.append(f'<h3>{mark(txt)}</h3>')
             i += 1; continue
         if not l.strip(): i += 1; continue
         buf = []
         while i < n and lines[i].strip() and not lines[i].startswith(("#", "```")) \
               and not re.match(r'^\s*---\s*$', lines[i]):
-            buf.append(esc(lines[i].rstrip())); i += 1
+            buf.append(mark(esc(lines[i].rstrip()))); i += 1
         txt = "<br>".join(buf)
         # 1行だけ・短い・「か。」で終わる → 問いかけとして立てる
         bare = buf[0].strip() if len(buf) == 1 else ""
@@ -124,6 +128,7 @@ h2{{font-family:"Noto Sans CJK JP",sans-serif;font-size:12pt;font-weight:700;col
 h3{{font-family:"Noto Sans CJK JP",sans-serif;font-size:10.5pt;font-weight:700;
  margin:6mm 0 2mm;page-break-after:avoid}}
 p{{margin:0 0 3.2mm}}
+.mk{{background:#d0dae8;padding:.1em .1em;border-radius:2px}}
 p.q{{font-family:"Noto Sans CJK JP",sans-serif;font-size:11.5pt;font-weight:700;
  color:{NAVY};margin:5mm 0 5mm}}
 .beat{{color:#cfcfcf;font-size:8pt;text-align:center;letter-spacing:.5em;margin:5.5mm 0}}

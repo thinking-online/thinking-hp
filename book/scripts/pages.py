@@ -24,6 +24,7 @@ def _w(s):
     return sum(0.5 if (ord(c) < 0x3000 and c.isascii()) else 1 for c in s)
 
 def count_lines(text, cpl=CPL, honor_breaks=True):
+    text = re.sub(r"==(.+?)==", r"\1", text)   # マーカーの印は字数に入れない
     lines = text.split("\n")
     n, i, N = 0, 0, len(lines)
     para = []

@@ -27,6 +27,10 @@ OUT = f"縦組み_{SRC[0]}"
 
 def esc(s): return html.escape(s, quote=False)
 
+def mark(s):
+    """==ここ== を、薄いネイビーの地にする。2色刷りで刷れるマーカー"""
+    return re.sub(r'==(.+?)==', r'<span class="mk">\1</span>', s)
+
 def tcy(s):
     """算用数字　1〜2桁は縦中横　3桁以上は正立させて縦に積む"""
     s = re.sub(r'(?<![0-9])([0-9]{3,})(?![0-9])', r'<span class="upr">\1</span>', s)
@@ -52,14 +56,14 @@ while i < N:
     m = re.match(r'^(#{1,3})\s+(.*)$', l)
     if m:
         lv, t = len(m.group(1)), tcy(esc(m.group(2)))
-        out.append(f'<h{lv}>{t}</h{lv}>'); i += 1; continue
+        out.append(f'<h{lv}>{mark(t)}</h{lv}>'); i += 1; continue
     if not l.strip(): i += 1; continue
     buf = []
     while i < N and lines[i].strip() and not lines[i].startswith(("#", "```")) \
           and not re.match(r'^\s*---\s*$', lines[i]):
         buf.append(tcy(esc(lines[i].rstrip()))); i += 1
     cls = ' class="ind"' if buf[0].startswith("　") else ""
-    out.append(f'<p{cls}>' + "<br>".join(buf) + '</p>')
+    out.append(f'<p{cls}>' + "<br>".join(mark(b) for b in buf) + '</p>')
 
 hashira = SRC[0]
 CSS = f"""
@@ -90,6 +94,7 @@ h3{{font-family:"Noto Sans CJK JP",sans-serif;font-size:10pt;font-weight:700;
  break-inside:avoid}}
 .beat{{color:#bbb;font-size:7.5pt;margin:.9em 0;text-align:center;
  letter-spacing:.4em}}
+.mk{{background:#d0dae8;padding:0 .05em;border-radius:1px}}
 .tcy{{text-combine-upright:all;-webkit-text-combine:horizontal}}
 .upr{{text-orientation:upright;letter-spacing:-.05em}}
 """

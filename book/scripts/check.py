@@ -12,7 +12,7 @@ import re, os, sys, glob
 LIVE = ["assemble.py", "build_toc.py", "build_toc_pdf.py", "build_spec.py",
         "build_genko_pdf.py", "build_daicho.py", "build_jo.py",
         "build_hyoshi.py", "build_zenhan.py", "check.py"]
-ACTIVE = ["manuscript/巻頭ページ.md", "manuscript/序章_v7.md",
+ACTIVE = ["manuscript/巻頭ページ.md", "manuscript/序章_v8.md",
           "manuscript/本文/新構成/基本の基本8本.md"]
 
 ng = []
@@ -23,7 +23,7 @@ for f in LIVE:
     p = os.path.join("scripts", f)
     if not os.path.exists(p): continue
     for m in re.finditer(r'"(manuscript/[^"]+\.md)"', open(p, encoding="utf-8").read()):
-        if "*" in m.group(1): continue          # glob は実パスではない
+        if "*" in m.group(1) or "{" in m.group(1): continue   # glob と f-string は実パスではない
         if not os.path.exists(m.group(1)):
             bad("パス", f"{f} が存在しない原稿を指している　{m.group(1)}")
 
@@ -52,7 +52,7 @@ for f in ACTIVE:
 
 # 5 「巻頭で」「序章で」と書いた主張の、相手がいるか（目視すべき箇所を出すだけ）
 kan = open("manuscript/巻頭ページ.md", encoding="utf-8").read()
-jo = open("manuscript/序章_v7.md", encoding="utf-8").read()
+jo = open("manuscript/序章_v8.md", encoding="utf-8").read()
 warn = []
 for f in ACTIVE:
     for i, line in enumerate(open(f, encoding="utf-8"), 1):

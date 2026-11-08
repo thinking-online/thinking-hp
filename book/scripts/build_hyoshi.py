@@ -8,13 +8,12 @@ import os, re, subprocess
 
 NAVY, GRAY = "#15467E", "#8a8a8a"
 
-# 合計ページ数は目次ビルダーと同じ計算で出す
-RATE, RATE2 = 520, 420
-_ws = re.compile(r'\s')
-def zi(p): return len(_ws.sub('', open(p, encoding="utf-8").read()))
+# 合計ページ数は目次ビルダーと同じ計算（行数割り）で出す
+import sys as _sys, math as _math; _sys.path.insert(0, "scripts")
+import pages as _pg
 gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
-ZI = {_p[i]: len(_ws.sub('', _p[i+1])) for i in range(1, len(_p), 2)}
+LN = {_p[i]: _pg.count_lines(_p[i+1]) for i in range(1, len(_p), 2)}
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
 sec = plan.split("# 7 75項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
@@ -25,9 +24,9 @@ for line in sec.split("\n"):
         chs.append(cur); continue
     m = re.match(r'^(\d{2})　', line.rstrip())
     if m and cur: cur["items"].append(m.group(1))
-tot = sum(max(1, round(sum(ZI.get(n, 0) for n in c["items"]) / RATE)) + 2 for c in chs)
-TOTAL = (max(1, round(zi("manuscript/巻頭ページ.md") / RATE2))
-         + max(1, round(zi("manuscript/序章_v7.md") / RATE2)) + tot + 28)
+tot = sum(_math.ceil(sum(LN.get(n, 0) for n in c["items"]) / _pg.LPP) + 2 for c in chs)
+TOTAL = (_pg.pages(open("manuscript/巻頭ページ.md", encoding="utf-8").read())
+         + _pg.pages(open("manuscript/序章_v8.md", encoding="utf-8").read()) + tot + 28)
 N = sum(len(c["items"]) for c in chs)
 
 HTML = f"""<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>表紙</title>

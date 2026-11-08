@@ -15,9 +15,14 @@ import re, html, os, sys, subprocess
 
 NAVY, GRAY = "#15467E", "#8a8a8a"
 MODE = sys.argv[1] if len(sys.argv) > 1 else "jo"
-SRC = {"jo":    ("序章",   "manuscript/序章_v10.md"),
-       "kihon": ("第1章",  "manuscript/本文/新構成/基本の基本8本.md"),
-       "kan":   ("巻頭",   "manuscript/巻頭ページ.md")}[MODE]
+PRESET = {"jo":    ("序章",   "manuscript/序章_v10.md"),
+          "kihon": ("第1章",  "manuscript/本文/新構成/基本の基本8本.md"),
+          "kan":   ("巻頭",   "manuscript/巻頭ページ.md"),
+          "zen":   ("原稿",   "manuscript/原稿_最新版.md")}
+if MODE in PRESET:
+    SRC = PRESET[MODE]
+else:                                  # ファイルを直接渡してもいい
+    SRC = (os.path.splitext(os.path.basename(MODE))[0], MODE)
 OUT = f"縦組み_{SRC[0]}"
 
 def esc(s): return html.escape(s, quote=False)
@@ -56,8 +61,14 @@ while i < N:
     cls = ' class="ind"' if buf[0].startswith("　") else ""
     out.append(f'<p{cls}>' + "<br>".join(buf) + '</p>')
 
+hashira = SRC[0]
 CSS = f"""
-@page {{ size:127mm 188mm; margin:18mm 15mm }}
+@page {{ size:127mm 188mm; margin:18mm 15mm;
+  @bottom-center {{ content:counter(page);
+    font-family:"Noto Serif CJK JP",serif; font-size:8pt; color:#555 }}
+  @top-center {{ content:"{hashira}";
+    font-family:"Noto Sans CJK JP",sans-serif; font-size:7.5pt;
+    color:#aaa; letter-spacing:.2em }} }}
 *{{box-sizing:border-box;margin:0;padding:0}}
 html{{height:100%}}
 body{{height:152mm;              /* 188mm − 天地18mm×2。行の長さはこの高さで決まる */

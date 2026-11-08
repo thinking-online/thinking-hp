@@ -15,7 +15,7 @@ import re, html, os, sys, subprocess
 
 NAVY, GRAY = "#15467E", "#8a8a8a"
 MODE = sys.argv[1] if len(sys.argv) > 1 else "jo"
-SRC = {"jo":    ("序章",   "manuscript/序章_v9.md"),
+SRC = {"jo":    ("序章",   "manuscript/序章_v10.md"),
        "kihon": ("第1章",  "manuscript/本文/新構成/基本の基本8本.md"),
        "kan":   ("巻頭",   "manuscript/巻頭ページ.md")}[MODE]
 OUT = f"縦組み_{SRC[0]}"

@@ -42,9 +42,9 @@ by = {c["k"]: c for c in chs}
 RATE2 = 420   # 旧。字数割りは使わない
 _ws = re.compile(r'\s')
 KAN_ZI = len(_ws.sub('', open("manuscript/巻頭ページ.md", encoding="utf-8").read()))
-JO_ZI  = len(_ws.sub('', open("manuscript/序章_v9.md", encoding="utf-8").read()))
+JO_ZI  = len(_ws.sub('', open("manuscript/序章_v10.md", encoding="utf-8").read()))
 KAN_PG = _pg.pages(open("manuscript/巻頭ページ.md", encoding="utf-8").read())
-JO_PG  = _pg.pages(open("manuscript/序章_v9.md", encoding="utf-8").read())
+JO_PG  = _pg.pages(open("manuscript/序章_v10.md", encoding="utf-8").read())
 FP = (KAN_PG,)   # 巻頭のみ。序章は JO_PG で別に数える
 rows, tot = [], 0
 for k, no, name in MAP:
@@ -139,7 +139,7 @@ p2 = f'''<div class="sh">
 <tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く</td></tr>
 <tr class="fr"><td class="c1">序章</td><td class="c2">00　やり方を疑わずに、量を増やす</td>
   <td class="c3"></td><td class="c4">{JO_PG}</td></tr>
-<tr class="sb"><td></td><td colspan="3">3つとも、科学的に効果が低い　／　やめる・知る・やる　／　多くの人がやっているから、結果が出るとは限らない　／　負けに不思議の負けなし　／　効くのは、思い出すこと　／　作業か、勉強か</td></tr>
+<tr class="sb"><td></td><td colspan="3">3つとも、科学的に効果が低い　／　やめる・知る・やる　／　先輩が受かった理由は、本人にも分からない　／　効くのは、間隔をあけて思い出すこと　／　ただ、これが疲れる　／　×自分に合った勉強法　○点につながる勉強法</td></tr>
 {trs}
 <tr class="fr"><td class="c1">巻末</td><td class="c2">手持ちカード ／ まず、この6つ ／ 悩み別の引き方 ／ 5教科で、どう使うか</td><td class="c3"></td><td class="c4">24</td></tr>
 <tr class="fr"><td class="c1"></td><td class="c2">保護者の方へ ／ 大人の方へ（資格と仕事に、6つをどう使うか） ／ おわりに</td><td class="c3"></td><td class="c4">4</td></tr>

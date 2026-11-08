@@ -39,7 +39,7 @@ by = {c["old"]: c for c in chs}
 
 import math as _math
 KAN_PG = _pg.pages(open("manuscript/巻頭ページ.md", encoding="utf-8").read())
-JO_PG  = _pg.pages(open("manuscript/序章_v9.md", encoding="utf-8").read())
+JO_PG  = _pg.pages(open("manuscript/序章_v10.md", encoding="utf-8").read())
 FP = (KAN_PG,)
 rows, tot = [], 0
 for old, no, name in MAP:
@@ -61,7 +61,7 @@ front = f'''<div class="sheet">
   <td class="c2"><span class="zn">00</span>やり方を疑わずに、量を増やす</td>
   <td class="c3"></td><td class="c4">{JO_PG}</td></tr>
 <tr class="xo"><td></td><td colspan="3">×「やり方は合っているから、あとは量だけ」<br>○「量の前に、やってはいけないことをやめる」</td></tr>
-<tr class="sb"><td></td><td colspan="3">3つとも、科学的に効果が低い　／　やめる・知る・やる　／　多くの人がやっているから、結果が出るとは限らない　／　負けに不思議の負けなし　／　効くのは、思い出すこと　／　作業か、勉強か</td></tr>
+<tr class="sb"><td></td><td colspan="3">3つとも、科学的に効果が低い　／　やめる・知る・やる　／　先輩が受かった理由は、本人にも分からない　／　効くのは、間隔をあけて思い出すこと　／　ただ、これが疲れる　／　×自分に合った勉強法　○点につながる勉強法</td></tr>
 '''
 for no, name, n, pg in rows:
     front += (f'<tr class="mr"><td class="c1">{no}</td>'

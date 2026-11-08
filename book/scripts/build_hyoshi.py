@@ -26,7 +26,7 @@ for line in sec.split("\n"):
     if m and cur: cur["items"].append(m.group(1))
 tot = sum(_math.ceil(sum(LN.get(n, 0) for n in c["items"]) / _pg.LPP) + 2 for c in chs)
 TOTAL = (_pg.pages(open("manuscript/巻頭ページ.md", encoding="utf-8").read())
-         + _pg.pages(open("manuscript/序章_v9.md", encoding="utf-8").read()) + tot + 28)
+         + _pg.pages(open("manuscript/序章_v10.md", encoding="utf-8").read()) + tot + 28)
 N = sum(len(c["items"]) for c in chs)
 
 HTML = f"""<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>表紙</title>

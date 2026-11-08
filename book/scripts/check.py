@@ -39,6 +39,13 @@ for probe in ["いきなりですが、", "10秒で、次の11個の数字を覚
     if probe not in gen:
         bad("欠落", f"巻頭の「{probe}」が原稿_最新版.md にない")
 
+# 3b マーカーの印が、組み上がった原稿に漏れていないか（置換の壊れを検出）
+for probe, why in [("==", "マーカーの印 == が本文に残っている"),
+                   ("\\1", "置換が壊れて \\1 という文字列が本文に入っている")]:
+    if probe in gen:
+        n = gen.count(probe)
+        bad("置換", f"原稿_最新版.md に {why}（{n}か所）")
+
 # 4 「N番」の参照先が実在するか
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
 sec = plan.split("# 7 75項目")[1].split("# 8 1週間")[0]

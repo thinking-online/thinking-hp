@@ -152,7 +152,10 @@ subprocess.run(["/usr/bin/google-chrome", "--headless", "--disable-gpu", "--no-s
                 "file://" + os.path.abspath(f"build/{OUT}.html")],
                check=True, capture_output=True)
 ws = re.compile(r'\s')
+sys.path.insert(0, "scripts")
+import pages as _pg
 for name, path in SRCS:
-    z = len(ws.sub('', open(path, encoding="utf-8").read()))
-    rate = 520 if OUT == "基本の基本編" else 420
-    print(f"{name}　{z:,}字　約{max(1,round(z/rate))}ページ（四六判換算）")
+    src = open(path, encoding="utf-8").read()
+    z = len(ws.sub('', src))
+    print(f"{name}　{z:,}字　四六判で {_pg.pages(src)}ページ"
+          f"（改行を流し込めば {_pg.pages(src, honor_breaks=False)}ページ）")

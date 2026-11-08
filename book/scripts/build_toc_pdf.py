@@ -11,9 +11,13 @@ MAP = [("基本の基本","第1章","基本の基本編"), ("戦略","第2章","
        ("復習","第7章","復習編"), ("集中","第8章","集中編"), ("モチベ","第9章","モチベ編"),
        ("本番","終章","本番編")]
 
+import sys as _sys; _sys.path.insert(0, "scripts")
+import pages as _pg
+
 gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
-ZI = {_p[i]: len(re.sub(r'\s', '', _p[i+1])) for i in range(1, len(_p), 2)}
+# 項目ごとの行数（四六判 43字×17行。改行は生かす）
+LN = {_p[i]: _pg.count_lines(_p[i+1]) for i in range(1, len(_p), 2)}
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
 sec = plan.split("# 7 75項目")[1].split("# 8 1週間")[0]
@@ -33,18 +37,14 @@ for line in sec.split("\n"):
         cur["items"][-1]["x" if m.group(1)=="×" else "o"] = m.group(2)
 by = {c["old"]: c for c in chs}
 
-# 巻頭と序章は会話体で改行が多いため、本文より少ないレートで数える
-RATE2 = 420
-_ws = re.compile(r'\s')
-KAN_ZI = len(_ws.sub('', open("manuscript/巻頭ページ.md", encoding="utf-8").read()))
-JO_ZI  = len(_ws.sub('', open("manuscript/序章_v7.md", encoding="utf-8").read()))
-KAN_PG = max(1, round(KAN_ZI / RATE2))
-JO_PG  = max(1, round(JO_ZI  / RATE2))
+import math as _math
+KAN_PG = _pg.pages(open("manuscript/巻頭ページ.md", encoding="utf-8").read())
+JO_PG  = _pg.pages(open("manuscript/序章_v7.md", encoding="utf-8").read())
 FP = (KAN_PG,)
 rows, tot = [], 0
 for old, no, name in MAP:
     c = by[old]; n = len(c["items"])
-    pg = max(1, round(sum(ZI.get(i["n"],0) for i in c["items"])/RATE)) + 2; tot += pg
+    pg = _math.ceil(sum(LN.get(i["n"], 0) for i in c["items"]) / _pg.LPP) + 2; tot += pg
     rows.append((no, name, n, pg))
 TOTAL = sum(FP) + JO_PG + tot + 28
 
@@ -76,7 +76,7 @@ front += f'''<tr class="fr"><td class="c1">巻末</td>
 </table>
 <div class="note">章の名前が8回くり返される。目次を上から読むだけで、
 表紙の約束が8回、目に入る。<br>
-ページは実字数から計算（本文は1ページ520字、巻頭と序章は改行が多いので420字。四六判9.5pt縦組み、見出しと×／○の囲みこみ）。<br>
+ページは行数から計算（四六判9.5pt縦組み、43字×17行。原稿の改行をそのまま生かした場合。見出しは3行、囲みは上下1行アキで計上）。<br>
 6つの力は目次に出さない。第1章の03〜08で1つずつ、各項目の右肩、章扉、巻末カードの4か所に置く。</div>
 </div>'''
 

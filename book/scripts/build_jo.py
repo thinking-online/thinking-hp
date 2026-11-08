@@ -10,9 +10,13 @@ NAVY, GRAY = "#15467E", "#8a8a8a"
 def esc(s): return html.escape(s, quote=False)
 
 import sys
-if len(sys.argv) > 1 and sys.argv[1] == "kihon":
+MODE = sys.argv[1] if len(sys.argv) > 1 else ""
+if MODE == "kihon":
     SRCS = [("第1章 基本の基本編", "manuscript/本文/新構成/基本の基本8本.md")]
     OUT = "基本の基本編"
+elif MODE == "jo":
+    SRCS = [("序章", "manuscript/序章_v7.md")]
+    OUT = "序章"
 else:
     SRCS = [("巻頭ページ", "manuscript/巻頭ページ.md"),
             ("序章",       "manuscript/序章_v7.md")]

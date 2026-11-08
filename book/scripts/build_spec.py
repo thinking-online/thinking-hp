@@ -42,9 +42,9 @@ by = {c["k"]: c for c in chs}
 RATE2 = 420   # 旧。字数割りは使わない
 _ws = re.compile(r'\s')
 KAN_ZI = len(_ws.sub('', open("manuscript/巻頭ページ.md", encoding="utf-8").read()))
-JO_ZI  = len(_ws.sub('', open("manuscript/序章_v11.md", encoding="utf-8").read()))
+JO_ZI  = len(_ws.sub('', open("manuscript/序章_v12.md", encoding="utf-8").read()))
 KAN_PG = _pg.pages(open("manuscript/巻頭ページ.md", encoding="utf-8").read())
-JO_PG  = _pg.pages(open("manuscript/序章_v11.md", encoding="utf-8").read())
+JO_PG  = _pg.pages(open("manuscript/序章_v12.md", encoding="utf-8").read())
 FP = (KAN_PG,)   # 巻頭のみ。序章は JO_PG で別に数える
 rows, tot = [], 0
 for k, no, name in MAP:

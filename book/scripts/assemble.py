@@ -72,7 +72,7 @@ kan=open("manuscript/巻頭ページ.md",encoding="utf-8").read()
 # split("---",2)[2] だと「いきなりですが」で始まる冒頭が丸ごと落ちる
 L.append("# 巻頭　10秒だけ、付き合ってください\n\n"+kan.split("---",1)[1].strip())
 L += ["", "---", ""]
-L.append(open("manuscript/序章_v11.md",encoding="utf-8").read().strip())
+L.append(open("manuscript/序章_v12.md",encoding="utf-8").read().strip())
 L += ["", "---", ""]
 for ch in chapters:
     L += [f'# {ch["name"]}', ""]

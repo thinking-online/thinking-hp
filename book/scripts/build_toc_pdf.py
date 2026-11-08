@@ -39,7 +39,7 @@ by = {c["old"]: c for c in chs}
 
 import math as _math
 KAN_PG = _pg.pages(open("manuscript/巻頭ページ.md", encoding="utf-8").read())
-JO_PG  = _pg.pages(open("manuscript/序章_v11.md", encoding="utf-8").read())
+JO_PG  = _pg.pages(open("manuscript/序章_v12.md", encoding="utf-8").read())
 FP = (KAN_PG,)
 rows, tot = [], 0
 for old, no, name in MAP:

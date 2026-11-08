@@ -136,7 +136,7 @@ p2 = f'''<div class="sh">
 <tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く</td></tr>
 <tr class="fr"><td class="c1">序章</td><td class="c2">00　「自分に合った勉強法」を、探す</td>
   <td class="c3"></td><td class="c4">{JO_PG}</td></tr>
-<tr class="sb"><td></td><td colspan="3">それ、誰から教わりましたか　／　2000人が、全員同じ4つ　／　勝ちに不思議の勝ちあり　／　やりやすさで選ぶと、作業になる　／　×やりやすかったか　○出せたか　／　やめる・知る・やる</td></tr>
+<tr class="sb"><td></td><td colspan="3">それ、どこで覚えましたか　／　いちばん効くことを、1回もやっていない　／　やりやすさで選ぶと、作業になる　／　2000人が、全員同じ4つ　／　負けに不思議の負けなし　／　×やりやすかったか　○出せたか</td></tr>
 {trs}
 <tr class="fr"><td class="c1">巻末</td><td class="c2">手持ちカード ／ まず、この6つ ／ 悩み別の引き方 ／ 5教科で、どう使うか</td><td class="c3"></td><td class="c4">24</td></tr>
 <tr class="fr"><td class="c1"></td><td class="c2">保護者の方へ ／ 大人の方へ（資格と仕事に、6つをどう使うか） ／ おわりに</td><td class="c3"></td><td class="c4">4</td></tr>

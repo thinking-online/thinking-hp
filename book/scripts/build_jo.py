@@ -22,9 +22,13 @@ elif MODE == "jo":
     ver = sys.argv[2] if len(sys.argv) > 2 else "v11"
     SRCS = [("序章", f"manuscript/序章_{ver}.md")]
     OUT = "序章" if ver == "v11" else f"序章_{ver}"
+elif MODE.endswith(".md"):            # ファイルを直接渡してもいい
+    import os as _os
+    OUT = _os.path.splitext(_os.path.basename(MODE))[0]
+    SRCS = [(OUT, MODE)]
 else:
     SRCS = [("巻頭ページ", "manuscript/巻頭ページ.md"),
-            ("序章",       "manuscript/序章_v7.md")]
+            ("序章",       "manuscript/序章_v12.md")]
     OUT = "巻頭と序章"
 
 ARROW = re.compile(r'[→×○□]')

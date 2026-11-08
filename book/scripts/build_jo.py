@@ -15,8 +15,9 @@ if MODE == "kihon":
     SRCS = [("第1章 基本の基本編", "manuscript/本文/新構成/基本の基本8本.md")]
     OUT = "基本の基本編"
 elif MODE == "jo":
-    SRCS = [("序章", "manuscript/序章_v7.md")]
-    OUT = "序章"
+    ver = sys.argv[2] if len(sys.argv) > 2 else "v7"
+    SRCS = [("序章", f"manuscript/序章_{ver}.md")]
+    OUT = "序章" if ver == "v7" else f"序章_{ver}"
 else:
     SRCS = [("巻頭ページ", "manuscript/巻頭ページ.md"),
             ("序章",       "manuscript/序章_v7.md")]

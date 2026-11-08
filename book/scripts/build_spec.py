@@ -42,9 +42,9 @@ by = {c["k"]: c for c in chs}
 RATE2 = 420   # 旧。字数割りは使わない
 _ws = re.compile(r'\s')
 KAN_ZI = len(_ws.sub('', open("manuscript/巻頭ページ.md", encoding="utf-8").read()))
-JO_ZI  = len(_ws.sub('', open("manuscript/序章_v8.md", encoding="utf-8").read()))
+JO_ZI  = len(_ws.sub('', open("manuscript/序章_v9.md", encoding="utf-8").read()))
 KAN_PG = _pg.pages(open("manuscript/巻頭ページ.md", encoding="utf-8").read())
-JO_PG  = _pg.pages(open("manuscript/序章_v8.md", encoding="utf-8").read())
+JO_PG  = _pg.pages(open("manuscript/序章_v9.md", encoding="utf-8").read())
 FP = (KAN_PG,)   # 巻頭のみ。序章は JO_PG で別に数える
 rows, tot = [], 0
 for k, no, name in MAP:
@@ -137,9 +137,9 @@ p2 = f'''<div class="sh">
 <table class="big">
 <tr class="fr"><td class="c1">巻頭</td><td class="c2">10秒だけ、付き合ってください</td><td class="c3"></td><td class="c4">{KAN_PG}</td></tr>
 <tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く</td></tr>
-<tr class="fr"><td class="c1">序章</td><td class="c2">00　「自分に合った勉強法」を、探す</td>
+<tr class="fr"><td class="c1">序章</td><td class="c2">00　やり方を疑わずに、量を増やす</td>
   <td class="c3"></td><td class="c4">{JO_PG}</td></tr>
-<tr class="sb"><td></td><td colspan="3">それ、どこで覚えましたか　／　いちばん効くことを、1回もやっていない　／　やりやすさで選ぶと、作業になる　／　2000人が、全員同じ4つ　／　負けに不思議の負けなし　／　×やりやすかったか　○出せたか</td></tr>
+<tr class="sb"><td></td><td colspan="3">3つとも、科学的に効果が低い　／　やめる・知る・やる　／　多くの人がやっているから、結果が出るとは限らない　／　負けに不思議の負けなし　／　効くのは、思い出すこと　／　作業か、勉強か</td></tr>
 {trs}
 <tr class="fr"><td class="c1">巻末</td><td class="c2">手持ちカード ／ まず、この6つ ／ 悩み別の引き方 ／ 5教科で、どう使うか</td><td class="c3"></td><td class="c4">24</td></tr>
 <tr class="fr"><td class="c1"></td><td class="c2">保護者の方へ ／ 大人の方へ（資格と仕事に、6つをどう使うか） ／ おわりに</td><td class="c3"></td><td class="c4">4</td></tr>

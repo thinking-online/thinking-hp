@@ -15,7 +15,7 @@ if len(sys.argv) > 1 and sys.argv[1] == "kihon":
     OUT = "基本の基本編"
 else:
     SRCS = [("巻頭ページ", "manuscript/巻頭ページ.md"),
-            ("序章",       "manuscript/序章_v6_完全版.md")]
+            ("序章",       "manuscript/序章_v7.md")]
     OUT = "巻頭と序章"
 
 ARROW = re.compile(r'[→×○□]')

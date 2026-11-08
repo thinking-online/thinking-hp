@@ -27,7 +27,7 @@ for line in sec.split("\n"):
     if m and cur: cur["items"].append(m.group(1))
 tot = sum(max(1, round(sum(ZI.get(n, 0) for n in c["items"]) / RATE)) + 2 for c in chs)
 TOTAL = (max(1, round(zi("manuscript/巻頭ページ.md") / RATE2))
-         + max(1, round(zi("manuscript/序章_v6_完全版.md") / RATE2)) + tot + 28)
+         + max(1, round(zi("manuscript/序章_v7.md") / RATE2)) + tot + 28)
 N = sum(len(c["items"]) for c in chs)
 
 HTML = f"""<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>表紙</title>

@@ -39,7 +39,7 @@ by = {c["k"]: c for c in chs}
 RATE2 = 420
 _ws = re.compile(r'\s')
 KAN_ZI = len(_ws.sub('', open("manuscript/巻頭ページ.md", encoding="utf-8").read()))
-JO_ZI  = len(_ws.sub('', open("manuscript/序章_v6_完全版.md", encoding="utf-8").read()))
+JO_ZI  = len(_ws.sub('', open("manuscript/序章_v7.md", encoding="utf-8").read()))
 KAN_PG = max(1, round(KAN_ZI / RATE2))
 JO_PG  = max(1, round(JO_ZI  / RATE2))
 FP = (KAN_PG,)   # 巻頭のみ。序章は JO_PG で別に数える
@@ -134,9 +134,9 @@ p2 = f'''<div class="sh">
 <table class="big">
 <tr class="fr"><td class="c1">巻頭</td><td class="c2">10秒だけ、付き合ってください</td><td class="c3"></td><td class="c4">{KAN_PG}</td></tr>
 <tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く</td></tr>
-<tr class="fr"><td class="c1">序章</td><td class="c2">「自分に合った勉強法」を、探すのをやめる</td>
+<tr class="fr"><td class="c1">序章</td><td class="c2">00　「自分に合った勉強法」を、探す</td>
   <td class="c3"></td><td class="c4">{JO_PG}</td></tr>
-<tr class="sb"><td></td><td colspan="3">それ、誰から教わりましたか　／　人は、やったことのないものを選べない　／　2000人が、全員同じ4つ　／　×やりやすかったか　○出せたか　／　探している間は、やらなくていい</td></tr>
+<tr class="sb"><td></td><td colspan="3">それ、誰から教わりましたか　／　2000人が、全員同じ4つ　／　勝ちに不思議の勝ちあり　／　やりやすさで選ぶと、作業になる　／　×やりやすかったか　○出せたか　／　やめる・知る・やる</td></tr>
 {trs}
 <tr class="fr"><td class="c1">巻末</td><td class="c2">手持ちカード ／ まず、この6つ ／ 悩み別の引き方 ／ 5教科で、どう使うか</td><td class="c3"></td><td class="c4">24</td></tr>
 <tr class="fr"><td class="c1"></td><td class="c2">保護者の方へ ／ 大人の方へ（資格と仕事に、6つをどう使うか） ／ おわりに</td><td class="c3"></td><td class="c4">4</td></tr>

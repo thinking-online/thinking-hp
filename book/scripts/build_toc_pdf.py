@@ -37,7 +37,7 @@ by = {c["old"]: c for c in chs}
 RATE2 = 420
 _ws = re.compile(r'\s')
 KAN_ZI = len(_ws.sub('', open("manuscript/巻頭ページ.md", encoding="utf-8").read()))
-JO_ZI  = len(_ws.sub('', open("manuscript/序章_v6_完全版.md", encoding="utf-8").read()))
+JO_ZI  = len(_ws.sub('', open("manuscript/序章_v7.md", encoding="utf-8").read()))
 KAN_PG = max(1, round(KAN_ZI / RATE2))
 JO_PG  = max(1, round(JO_ZI  / RATE2))
 FP = (KAN_PG,)
@@ -57,9 +57,11 @@ front = f'''<div class="sheet">
 <tr class="fr"><td class="c1">巻頭</td><td class="c2">10秒だけ、付き合ってください</td>
   <td class="c3"></td><td class="c4">{FP[0]}</td></tr>
 <tr class="sb"><td></td><td colspan="3">11個の数字　／　正しいのに変われない　／　見えないから　／　偏差値42から早稲田　／　全部書く、隠すところは1つもない</td></tr>
-<tr class="fr"><td class="c1">序章</td><td class="c2">「自分に合った勉強法」を、探すのをやめる</td>
+<tr class="fr"><td class="c1">序章</td>
+  <td class="c2"><span class="zn">00</span>「自分に合った勉強法」を、探す</td>
   <td class="c3"></td><td class="c4">{JO_PG}</td></tr>
-<tr class="sb"><td></td><td colspan="3">それ、誰から教わりましたか　／　人は、やったことのないものを選べない　／　2000人が、全員同じ4つ　／　×やりやすかったか　○出せたか　／　探している間は、やらなくていい</td></tr>
+<tr class="xo"><td></td><td colspan="3">×「自分に合ったやり方を、見つけたい」<br>○「やりやすさで選ぶのを、やめる」</td></tr>
+<tr class="sb"><td></td><td colspan="3">それ、誰から教わりましたか　／　2000人が、全員同じ4つ　／　勝ちに不思議の勝ちあり　／　やりやすさで選ぶと、作業になる　／　×やりやすかったか　○出せたか　／　やめる・知る・やる</td></tr>
 '''
 for no, name, n, pg in rows:
     front += (f'<tr class="mr"><td class="c1">{no}</td>'
@@ -116,6 +118,9 @@ table.big td{{padding:2.6mm 1mm;vertical-align:baseline}}
 .mr .hen{{color:{NAVY};font-weight:700;font-size:11pt;margin-left:1.5mm}}
 .hd td{{font-family:"Noto Sans CJK JP",sans-serif;font-size:7pt;color:#aaa;
   letter-spacing:.12em;padding:0 1mm 1.5mm;border:none;text-align:right}}
+.c2 .zn{{font-family:"Noto Sans CJK JP",sans-serif;font-size:8.5pt;font-weight:700;
+  color:{NAVY};margin-right:3mm}}
+.xo td{{font-size:9pt;color:#555;padding:0 1mm 2mm 1mm;border:none;line-height:1.9}}
 .sb td{{font-size:8.5pt;color:#888;padding:0 1mm 3mm;border:none}}
 .tot td{{font-family:"Noto Sans CJK JP",sans-serif;font-size:10pt;font-weight:700;
   color:{NAVY};border-top:2px solid {NAVY};padding-top:3.5mm;text-align:right}}

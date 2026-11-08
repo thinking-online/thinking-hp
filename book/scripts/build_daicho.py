@@ -40,11 +40,11 @@ for i in range(1,len(P),3):
           "rest":rest[:70],"today":today,"z":len(re.sub(r'\s','',b))}
 
 plan=open("manuscript/企画書/現行案.md",encoding="utf-8").read()
-sec=plan.split("# 7 75項目")[1].split("# 8 1週間")[0]
+sec=plan.split("# 7 51項目")[1].split("# 8 1週間")[0]
 chs,cur=[],None
 for line in sec.split("\n"):
     m=re.match(r'^## (.+?)\s+(\d+)本\s*$',line)
-    if m: cur={"k":re.split(r'[\s　]{2,}',m.group(1).strip())[0],"items":[]}; chs.append(cur); continue
+    if m: cur={"k":re.split(r'[\s　]+',m.group(1).strip())[-1],"items":[]}; chs.append(cur); continue
     m=re.match(r'^(\d{2})　(.*?)(?:\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力))?\s*$',line.rstrip())
     if m and cur: cur["items"].append({"n":m.group(1),"w":m.group(3) or "","x":"","o":"",
         "thick":"★厚く書く" in line,"new":"★新規" in line}); continue

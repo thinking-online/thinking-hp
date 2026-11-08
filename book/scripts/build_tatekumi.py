@@ -18,7 +18,7 @@ MODE = sys.argv[1] if len(sys.argv) > 1 else "jo"
 PRESET = {"jo":    ("序章",   "manuscript/序章_v11.md"),
           "kihon": ("第1章",  "manuscript/本文/新構成/基本の基本8本.md"),
           "kan":   ("巻頭",   "manuscript/巻頭ページ.md"),
-          "zen":   ("原稿",   "manuscript/原稿_最新版.md")}
+          "zen":   ("原稿",   "manuscript/原稿_最新版_マーカー.md")}
 if MODE in PRESET:
     SRC = PRESET[MODE]
 else:                                  # ファイルを直接渡してもいい

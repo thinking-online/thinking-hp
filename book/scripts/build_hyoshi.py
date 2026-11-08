@@ -15,7 +15,7 @@ gen = open("manuscript/原稿_最新版.md", encoding="utf-8").read()
 _p = re.split(r'^## (\d{2})　.+$', gen, flags=re.M)
 LN = {_p[i]: _pg.count_lines(_p[i+1]) for i in range(1, len(_p), 2)}
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 75項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 51項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)

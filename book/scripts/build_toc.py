@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""現行案.md の62項目から、目次を組む。出力 manuscript/企画書/目次_最新.md"""
+"""現行案.md の51項目から、目次を組む。出力 manuscript/企画書/目次_最新.md"""
 import re
 
 MAP = [("基本の基本","第1章","基本の基本編"), ("戦略","第2章","戦略編"), ("計画","第3章","計画編"),
@@ -15,12 +15,12 @@ ZI = {_p[i]: len(re.sub(r'\s', '', _p[i+1])) for i in range(1, len(_p), 2)}
 def pz(ns): return max(1, round(sum(ZI.get(n, 0) for n in ns) / RATE))
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 75項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 51項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)
     if m:
-        cur = {"old": re.split(r'[\s　]{2,}', m.group(1).strip())[0], "items": []}
+        cur = {"old": re.split(r'[\s　]+', m.group(1).strip())[-1], "items": []}
         chs.append(cur); continue
     m = re.match(r'^(\d{2})　(.*?)(?:\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力))?\s*$',
                  line.rstrip())

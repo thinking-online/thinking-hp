@@ -8,7 +8,7 @@ def norm(s):
 
 # ---- 1 現行案から62項目を読む
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 75項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 51項目")[1].split("# 8 1週間")[0]
 chapters, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)
@@ -37,9 +37,14 @@ for f in (sorted(glob.glob("manuscript/本文/*.md"))
     parts = re.split(r'^# (\d{2})　(.+)$', txt, flags=re.M)
     for i in range(1, len(parts), 3):
         title, body = parts[i+1].strip(), parts[i+2]
-        body = re.sub(r'^\s*　　[×○]「.*?」\s*$', '', body, flags=re.M)
-        body = body.split("---", 1)[-1].strip() if body.lstrip().startswith("---") \
-               else re.sub(r'^\s*---\s*$', '', body, count=1, flags=re.M).strip()
+        # 見出しの直後、最初の --- までにある ×／○ の行は落とす。
+        # 対は企画書から出すので、本文に残っていると二重になる。
+        PAIR = r'^[ \t　]*[×○]「[^」]*」(?:[ \t　]*[×○]「[^」]*」)?[ \t　]*$'
+        head, sep, rest = body.partition("\n---")
+        if sep:
+            body = re.sub(PAIR, '', head, flags=re.M) + sep + rest
+        body = re.sub(r'^\s*---\s*$', '', body, count=1, flags=re.M).strip()
+        body = re.sub(r'\A(?:' + PAIR[1:] + r'\n?)+', '', body, flags=re.M).strip()
         bodies[norm(title)] = {"src": os.path.basename(f), "title": title, "body": body}
 
 # ---- 3 照合
@@ -67,8 +72,7 @@ kan=open("manuscript/巻頭ページ.md",encoding="utf-8").read()
 # split("---",2)[2] だと「いきなりですが」で始まる冒頭が丸ごと落ちる
 L.append("# 巻頭　10秒だけ、付き合ってください\n\n"+kan.split("---",1)[1].strip())
 L += ["", "---", ""]
-jo=re.sub(r"==(.+?)==", r"\1", open("manuscript/序章_v11.md",encoding="utf-8").read())
-L.append(jo.strip())
+L.append(open("manuscript/序章_v11.md",encoding="utf-8").read().strip())
 L += ["", "---", ""]
 for ch in chapters:
     L += [f'# {ch["name"]}', ""]
@@ -82,7 +86,11 @@ for ch in chapters:
             L += ["★未執筆", ""]
         L += ["---", ""]
 os.makedirs("manuscript", exist_ok=True)
-open("manuscript/原稿_最新版.md", "w", encoding="utf-8").write("\n".join(L))
+txt = "\n".join(L)
+# マーカー（==...==）を残した版と、落とした版の2つを書く。
+# 残した版は組版用。落とした版は字数を数えたり読んだりする用。
+open("manuscript/原稿_最新版_マーカー.md", "w", encoding="utf-8").write(txt)
+open("manuscript/原稿_最新版.md", "w", encoding="utf-8").write(re.sub(r"==(.+?)==", r"\1", txt))
 
 tot = sum(len(c["items"]) for c in chapters)
 w = sum(len(re.sub(r'\s', '', i["body"] or "")) for c in chapters for i in c["items"])

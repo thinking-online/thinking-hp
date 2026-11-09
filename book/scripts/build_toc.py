@@ -15,7 +15,7 @@ ZI = {_p[i]: len(re.sub(r'\s', '', _p[i+1])) for i in range(1, len(_p), 2)}
 def pz(ns): return max(1, round(sum(ZI.get(n, 0) for n in ns) / RATE))
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 51項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 50項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)

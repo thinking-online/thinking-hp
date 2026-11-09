@@ -22,7 +22,7 @@ DONE = {_p[i] for i in range(1,len(_p),2) if "違いは、1か所" in _p[i+1] or
 THINK = {"入れる力","つなげる力","出す力","なおす力"}
 
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 51項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 50項目")[1].split("# 8 1週間")[0]
 chs, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)

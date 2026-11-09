@@ -48,7 +48,7 @@ for probe, why in [("==", "マーカーの印 == が本文に残っている"),
 
 # 4 「N番」の参照先が実在するか
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 51項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 50項目")[1].split("# 8 1週間")[0]
 nums = {m.group(1) for m in re.finditer(r'^(\d{2})　', sec, flags=re.M)}
 for f in ACTIVE:
     for i, line in enumerate(open(f, encoding="utf-8"), 1):

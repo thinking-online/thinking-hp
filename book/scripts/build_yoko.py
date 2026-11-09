@@ -5,9 +5,11 @@ A5・1段・柱とノンブルつき。マーカー（==…==）は色の帯で�
 book/ で実行。"""
 import re, html, os, subprocess
 
+import sys
 NAVY = "#15467E"
 MK   = "#d0dae8"
-SRC  = "manuscript/原稿_最新版_マーカー.md"
+SRC  = sys.argv[1] if len(sys.argv) > 1 else "manuscript/原稿_最新版_マーカー.md"
+OUT  = sys.argv[2] if len(sys.argv) > 2 else "原稿_横組み"
 
 def esc(s):
     s = html.escape(s, quote=False)
@@ -39,6 +41,8 @@ def body_html(text):
         first = buf[0].lstrip()
         if first.startswith(("×", "○")):
             out.append(f'<p class="xo">{joined}</p>')
+        elif first.startswith("★未執筆"):
+            out.append('<p class="mi">★ まだ書いていない項目です</p>')
         elif first.startswith(("この場面を見つけた問い", "今日やること")):
             out.append(f'<p class="todo">{joined}</p>')
         elif buf[0].startswith("　　"):
@@ -102,11 +106,14 @@ for name, blob in secs:
         bd2 = re.sub(r'^\s*[×○]「.+?」\s*$', '', bd2, count=2, flags=re.M)
         toc.append(f'<div class="tc"><span class="tnum">{num}</span>'
                    f'<span class="tn">{esc(title)}</span></div>')
+        pair = ""
+        if mx and mo and (mx.group(1).strip() or mo.group(1).strip()):
+            pair = (f'<div class="pair"><div class="l x"><span class="s">×</span>'
+                    f'{esc(mx.group(1))}</div><div class="l o"><span class="s">○</span>'
+                    f'{esc(mo.group(1))}</div></div>')
         out.append(f'''<div class="item">
 <h2><span class="no">{num}</span>{esc(title)}</h2>
-<div class="pair"><div class="l x"><span class="s">×</span>{esc(mx.group(1)) if mx else ""}</div>
-<div class="l o"><span class="s">○</span>{esc(mo.group(1)) if mo else ""}</div></div>
-<div class="meta">{esc(wp)}</div>
+{pair}<div class="meta">{esc(wp)}</div>
 {body_html(bd2)}</div>''')
     out.append('</section>')
     book.append("\n".join(out))
@@ -182,6 +189,8 @@ p + p {{ text-indent:1em; }}
 p.q {{ margin:3.5mm 0; }}
 p.xo {{ border-left:2px solid #d6d6d6; padding:2mm 4mm; margin:3.5mm 0;
   font-family:"Noto Sans CJK JP",sans-serif; font-size:9pt; }}
+p.mi {{ background:#fff3cd; color:#8a6d00; padding:2mm 4mm; margin:3mm 0;
+  font-family:"Noto Sans CJK JP",sans-serif; font-size:9pt; }}
 p.todo {{ background:#f5f7fa; padding:3mm 4mm; margin:4mm 0 0;
   font-family:"Noto Sans CJK JP",sans-serif; font-size:8.5pt; line-height:1.9;
   page-break-inside:avoid; }}
@@ -204,8 +213,8 @@ html_out = ('<!doctype html><html lang="ja"><head><meta charset="utf-8">'
             f'<title>やっているのに、伸びない。</title><style>{CSS}</style></head><body>'
             + cover + tochtml + "\n".join(book) + '</body></html>')
 os.makedirs("build", exist_ok=True)
-open("build/原稿_横組み.html", "w", encoding="utf-8").write(html_out)
+open(f"build/{OUT}.html", "w", encoding="utf-8").write(html_out)
 subprocess.run(["/usr/bin/google-chrome", "--headless", "--disable-gpu", "--no-sandbox",
-  "--no-pdf-header-footer", "--print-to-pdf=build/原稿_横組み.pdf",
-  "file://" + os.path.abspath("build/原稿_横組み.html")], check=True, capture_output=True)
-print(f"項目 {nitem}　→ build/原稿_横組み.pdf")
+  "--no-pdf-header-footer", f"--print-to-pdf=build/{OUT}.pdf",
+  "file://" + os.path.abspath(f"build/{OUT}.html")], check=True, capture_output=True)
+print(f"項目 {nitem}　→ build/{OUT}.pdf")

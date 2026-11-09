@@ -53,15 +53,16 @@ while i < N:
         out.append('<div class="box">' + "<br>".join(buf) + '</div>'); continue
     if re.match(r'^\s*---\s*$', l):
         out.append('<div class="beat">＊</div>'); i += 1; continue
-    m = re.match(r'^(#{1,3})\s+(.*)$', l)
+    m = re.match(r'^(#{1,6})\s+(.*)$', l)
     if m:
-        lv, t = len(m.group(1)), tcy(esc(m.group(2)))
+        lv, t = min(len(m.group(1)), 3), tcy(esc(m.group(2)))
         out.append(f'<h{lv}>{mark(t)}</h{lv}>'); i += 1; continue
     if not l.strip(): i += 1; continue
     buf = []
     while i < N and lines[i].strip() and not lines[i].startswith(("#", "```")) \
           and not re.match(r'^\s*---\s*$', lines[i]):
         buf.append(tcy(esc(lines[i].rstrip()))); i += 1
+    if not buf: i += 1; continue
     cls = ' class="ind"' if buf[0].startswith("　") else ""
     out.append(f'<p{cls}>' + "<br>".join(mark(b) for b in buf) + '</p>')
 

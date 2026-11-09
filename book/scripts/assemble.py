@@ -6,9 +6,16 @@ import re, glob, difflib, os
 def norm(s):
     return re.sub(r'[、。「」？\s　・]', '', s)
 
+# 改題した項目。企画書の新しい題 → 本文に残っている元の題
+ALIAS = {
+    "考える時間を、決めずに始める":      "出てこなかったら、すぐ答えをめくる",
+    "休む時刻を決めずに、終わるまでやる": "睡眠を削って、勉強時間を増やす",
+    "予習を、ノートに写すだけで終える":   "新しい単元に入るとき、いきなり読み始める",
+}
+
 # ---- 1 現行案から62項目を読む
 plan = open("manuscript/企画書/現行案.md", encoding="utf-8").read()
-sec = plan.split("# 7 51項目")[1].split("# 8 1週間")[0]
+sec = plan.split("# 7 50項目")[1].split("# 8 1週間")[0]
 chapters, cur = [], None
 for line in sec.split("\n"):
     m = re.match(r'^## (.+?)\s+(\d+)本\s*$', line)
@@ -16,12 +23,15 @@ for line in sec.split("\n"):
         name = re.split(r'[\s　]{2,}', m.group(1).strip())[0]
         cur = {"name": name, "items": []}
         chapters.append(cur); continue
-    m = re.match(r'^(\d{2})　(.*?)(?:\s+(選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力))?\s*$',
-                 line.rstrip())
+    m = re.match(r'^(\d{2})　(.+)$', line.rstrip())
     if m and cur is not None:
-        t = m.group(2).replace("★厚く書く","").replace("★新規","").strip()
-        cur["items"].append({"n": m.group(1), "t": t,
-                             "w": m.group(3) or "", "thick": "★厚く書く" in line, "new": "★新規" in line,
+        rest = m.group(2)
+        W = r'選ぶ力|入れる力|つなげる力|出す力|なおす力|続ける力'
+        mw, mp, ms = re.search(W, rest), re.search(r'［(\d+)p］', rest), re.search(r'〔(新|旧稿)〕', rest)
+        t = re.sub(r'[\s　]*(★厚く書く|★新規|［\d+p］|〔新〕|〔旧稿〕|' + W + r')', '', rest).strip()
+        cur["items"].append({"n": m.group(1), "t": t, "w": mw.group(0) if mw else "",
+                             "thick": "★厚く書く" in rest, "new": "★新規" in rest,
+                             "pg": int(mp.group(1)) if mp else 4, "st": ms.group(1) if ms else "",
                              "x": "", "o": ""})
         continue
     m = re.match(r'^\s+(×|○)「(.+)」\s*$', line)
@@ -52,7 +62,7 @@ keys = list(bodies)
 out, miss, used = [], [], set()
 for ch in chapters:
     for it in ch["items"]:
-        k = norm(it["t"])
+        k = norm(ALIAS.get(it["t"], it["t"]))
         hit = k if k in bodies else None
         if not hit:
             c = difflib.get_close_matches(k, keys, n=1, cutoff=0.72)

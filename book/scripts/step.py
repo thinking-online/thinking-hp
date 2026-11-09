@@ -15,9 +15,9 @@ KETU = "manuscript/企画書/決定.md"
 Q50  = "manuscript/企画書/Q50.md"
 JIT  = "manuscript/企画書/実話10.md"
 
-CH = [("第1章", "基本の基本"), ("第2章", "戦略"), ("第3章", "計画"), ("第4章", "授業"),
-      ("第5章", "暗記"), ("第6章", "演習"), ("第7章", "復習"), ("第8章", "集中"),
-      ("第9章", "モチベ"), ("終章", "本番")]
+CH = [("第1章", "基本の基本"), ("第2章", "戦略"), ("第3章", "計画"), ("第4章", "授業・学校"),
+      ("第5章", "暗記"), ("第6章", "演習"), ("第7章", "復習・基準"), ("第8章", "集中・環境"),
+      ("第9章", "不安とモチベ"), ("終章", "本番")]
 
 def plan_items():
     """現行案から項目を読む。[(番号, 見出し行, 本文ブロック, 章), ...]"""
@@ -61,7 +61,8 @@ def s1():
         return False, f"見出しは「# 7 {n}項目」、実際の項目は {len(items)}本。どちらも50にする"
     bad = [i["n"] for i in items if not (i["x"] and i["o"])]
     if bad: return False, "×／○ が足りない：" + " ".join(bad)
-    bad = [i["n"] for i in items if not re.search(WORD, i["line"])]
+    # 01と02は、力を渡す前の項目なので付けない
+    bad = [i["n"] for i in items if i["n"] not in ("01", "02") and not re.search(WORD, i["line"])]
     if bad: return False, "力が付いていない：" + " ".join(bad)
     return True, "50本。×／○と力、すべてあり"
 

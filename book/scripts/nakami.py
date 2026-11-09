@@ -46,7 +46,9 @@ for i in range(1, len(parts), 3):
     rows.append((n, t, {
         "数字": nums,
         "判断": len(HAN.findall(b)),
-        "動作": len(re.findall(r'^###?\s*[1-9]　', b, flags=re.M)) or (1 if DOU.search(b) else 0),
+        "動作": (len(re.findall(r'^###?\s*[1-9]　', b, flags=re.M))
+                 + len(re.findall(r'^[　\s]+[1-9]　\S', b, flags=re.M))
+                 + (2 if len(re.findall(r'てください', b)) >= 3 else 0)),
         "理由": len(RIYU.findall(b)),
         "研究": len(KEN.findall(b)),
         "p":    pages(b),
@@ -64,7 +66,8 @@ for n, t, d in rows:
     thin = []
     if len(d["数字"]) < 2: thin.append("数字")
     if d["判断"] < 2:      thin.append("判断")
-    if d["動作"] < 2:      thin.append("動作")
+    # 基本の基本8本は原理を渡す章。手順は場面別が持つので、動作は見ない
+    if d["動作"] < 2 and int(n) > 8: thin.append("動作")
     if d["理由"] < 3:      thin.append("理由")
     mark = "  ← " + "・".join(thin) + "が薄い" if thin else ""
     print("  %s  %-32s  %2d  %2d  %2d  %2d  %2d   %dp  %2dp%s"

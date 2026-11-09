@@ -83,7 +83,8 @@ def shimeru(text):
 # あそこのリズムは書店での勝負そのものなので、機械で触らない。
 def main():
     TARGETS = (sorted(glob.glob("manuscript/本文/*.md"))
-               + sorted(glob.glob("manuscript/本文/新構成/*.md")))
+               + sorted(glob.glob("manuscript/本文/新構成/*.md"))
+               + sorted(glob.glob("manuscript/本文/新規/*.md")))
 
     dry = "--dry" in sys.argv
     tot_a = tot_b = 0

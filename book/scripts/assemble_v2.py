@@ -61,11 +61,13 @@ def ops(no, b):
         b = before(b, "頭のなか", part("10_内申"))
     if no == "16":   # 混ぜる話は17番に移した
         b = drop(b, "まとめてやるより、混ぜたほうが残ります")
+        b = b.replace("09番と05番で詳しくやります", "05番と09番に書きました")
     if no == "21":   # 時間を測る ← 本番と同じ形で
         b = before(b, "頭のなか", part("21_本番の形"))
     if no == "30":   # 計画 ← 10分で切る
         b = before(b, "頭のなか", part("30_10分で切る"))
     if no == "31":   # 短い時間 ← すきま時間
+        b = b.replace("40番でやったことと同じです", "40番で書くことと同じです")
         b = before(b, "頭のなか", part("31_すきま"))
     if no == "36":   # スマホ ← 手間を作る
         b = before(b, "これをやると、何が残るか", part("36_手間"))
@@ -98,6 +100,8 @@ def fix_refs(b, no):
 def tail(b, law, is_law):
     b = re.sub(r'^今日やること(?=[^\s　])', '今日やること　', b, flags=re.M)
     b = re.sub(r'^　*この場面を見つけた問い.*\n?', '', b, flags=re.M)
+    b = re.sub(r'^' + FORCE + '\u3000「.+」[ \t]*\n?', '', b, flags=re.M)   # 旧「6つの力」の合言葉の行
+    b = b.replace('序章で「', '01番で「')
     if is_law:
         return b
     tag = "　　もとにある絶対法則　　%s %s" % (CIRC[law - 1], LAWS[law])

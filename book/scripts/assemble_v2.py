@@ -79,9 +79,16 @@ def ops(no, b):
         b = before(b, "やり方", part("46_ルーティン"))
     return b
 
+# 旧原稿の中で、もともと番号がずれていた参照の行き先（新番号, 旧表記）→ 新表記
+REFFIX = {("23", "12"): "04", ("31", "25"): "16", ("31", "40"): "40", ("31", "46"): "29",
+          ("45", "36"): "25", ("45", "37"): "26", ("45", "25"): "16", ("46", "51"): "47",
+          ("16", "20"): "09", ("16", "22"): "05"}
+
 def fix_refs(b, no):
     def rep(m):
         o = m.group(1)
+        if (no, o) in REFFIX:
+            return REFFIX[(no, o)] + "番"
         if o in OLD2NEW:
             return OLD2NEW[o] + "番"
         MISS.append((no, m.group(0)))

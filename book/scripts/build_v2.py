@@ -43,6 +43,8 @@ def body_html(text):
             out.append(f'<p class="xo">{joined}</p>')
         elif first.startswith("★未執筆"):
             out.append('<p class="mi">★ まだ書いていない項目です</p>')
+        elif first.startswith("「できた」の基準"):
+            out.append(f'<p class="kijun">{joined}</p>')
         elif first.startswith(("この場面を見つけた問い", "今日やること", "もとにある絶対法則")):
             out.append(f'<p class="todo">{joined}</p>')
         elif buf[0].startswith("　　"):
@@ -185,6 +187,9 @@ p.xo {{ border-left:2px solid #d6d6d6; padding:2mm 4mm; margin:3.5mm 0;
   font-family:"Noto Sans CJK JP",sans-serif; font-size:9pt; }}
 p.mi {{ background:#fff3cd; color:#8a6d00; padding:2mm 4mm; margin:3mm 0;
   font-family:"Noto Sans CJK JP",sans-serif; font-size:9pt; }}
+p.kijun {{ border:1px solid {NAVY}; color:{NAVY}; padding:2.5mm 4mm; margin:4mm 0 2mm;
+  font-family:"Noto Sans CJK JP",sans-serif; font-size:8.5pt; font-weight:700; line-height:1.9;
+  page-break-inside:avoid; }}
 p.todo {{ background:#f5f7fa; padding:3mm 4mm; margin:4mm 0 0;
   font-family:"Noto Sans CJK JP",sans-serif; font-size:8.5pt; line-height:1.9;
   page-break-inside:avoid; }}

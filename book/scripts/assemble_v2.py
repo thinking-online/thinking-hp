@@ -56,6 +56,7 @@ MISS, MISSING, out = [], [], []
 # ---------- 項目ごとの加工 ----------
 def ops(no, b):
     if no == "09":   # 小テスト ← 模試の見方を補強
+        b = re.sub(r'やることは、1分で終わります。\n+```\n.*?```\n', 'やることは、1分で終わります。返ってきたその場で、間違えたものだけを、1冊のノートに書き写します。テスト用紙は、捨てていいです。\n', b, count=1, flags=re.S)
         b = before(b, "これをやると、何が残るか", part("09_模試"))
     if no == "10":   # 宿題 ← 内申という判断軸
         b = before(b, "頭のなか", part("10_内申"))
@@ -85,6 +86,36 @@ def ops(no, b):
 REFFIX = {("23", "12"): "04", ("31", "25"): "16", ("31", "40"): "40", ("31", "46"): "29",
           ("45", "36"): "25", ("45", "37"): "26", ("45", "25"): "16", ("46", "51"): "47",
           ("16", "20"): "09", ("16", "22"): "05"}
+
+# ---------- やり方（STEP 01〜03 と「できた」の基準） ----------
+# 正は manuscript/本文/v2/_steps/NN.md。本文側の「やり方」は、組み立てのときにこれで置きかえる
+KEEP_OLD = {"16": "日付のかわりに、印で回します"}     # 前の説明を残して、別の見出しにするもの
+KYOU = {"07": "次の授業で、先生の「つまり」が聞こえたら、答えが来る前に、心の中で1回だけ答える。",
+        "09": "いちばん最近返ってきた小テストを出して、間違えたものだけを、ノートの後ろに書き写す。",
+        "22": "今日解く問題を1問選んで、解き方を小声で実況しながら解く。",
+        "36": "今日の勉強のあいだ、スマホの電源を切って、別の部屋に置く。",
+        "46": "次の小テストの前に、紙を1枚出して、いま思っていることを書いて、裏返す。"}
+ENDS = ["これをやると、何が残るか", "残るもの", "この場面のまとめ", "この法則のまとめ", "まとめ"]
+
+def apply_steps(no, b):
+    p = os.path.join(V2, "_steps", no + ".md")
+    if not os.path.exists(p):
+        MISSING.append("STEP:" + no)
+        return b
+    blk = rd(p).strip("\n") + "\n\n"
+    m = re.search(r'^## やり方[ \t]*\n.*?(?=^## |\Z)', b, flags=re.M | re.S)
+    if m and no in KEEP_OLD:
+        oldsec = m.group(0).replace("## やり方", "## " + KEEP_OLD[no], 1)
+        oldsec = re.sub(r'^### \d+\u3000', '### ', oldsec, flags=re.M)
+        b = b[:m.start()] + oldsec + b[m.end():]
+        m = None
+    if m:
+        return b[:m.start()] + blk + b[m.end():]
+    for h in ENDS:
+        mm = re.search(r'^## ' + re.escape(h) + r'[ \t]*$', b, flags=re.M)
+        if mm:
+            return b[:mm.start()] + blk + b[mm.start():]
+    return b.rstrip("\n") + "\n\n" + blk
 
 def fix_refs(b, no):
     def rep(m):
@@ -138,6 +169,9 @@ for ci, (cno, ctitle, csub, items) in enumerate(CHAPTERS, 1):
             else:
                 b = "★未執筆"; MISSING.append(no)
         b = ops(no, b)
+        b = apply_steps(no, b)
+        if no in KYOU and not re.search(r'^今日やること', b, flags=re.M):
+            b = b.rstrip("\n") + "\n\n今日やること\u3000" + KYOU[no] + "\n"
         b = tail(b, law, cno == "第1章")
         head = "## %s　%s" % (no, title)
         lawline = ("　　絶対法則 %s　%s\n\n" % (CIRC[law - 1], LAWS[law])) if cno == "第1章" else ""

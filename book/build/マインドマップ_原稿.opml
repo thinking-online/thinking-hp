@@ -15,8 +15,9 @@
         <outline text="バケツに、穴が空いています"/>
         <outline text="この本に書いてあること"/>
       </outline>
-      <outline text="この本の使い方　（749字）">
+      <outline text="この本の使い方　（926字）">
         <outline text="悩みから、引く"/>
+        <outline text="巻頭で聞いたことの、答えの場所"/>
         <outline text="1つの項目は、こうなっています"/>
       </outline>
     </outline>
@@ -153,7 +154,7 @@
         <outline text="今日やること　いま読んでいる参考書の、次の区切りを決める。そこまで読んだら、わかっていなくても問題を解く。"/>
         <outline text="（2,218字）"/>
       </outline>
-      <outline text="絶対法則は、ここまでです　ここで本を閉じると、どうなるか　（830字）">
+      <outline text="絶対法則は、ここまでです　ここで本を閉じると、どうなるか　（864字）">
         <outline text="間違った姿勢は、1日ではわかりません"/>
         <outline text="我慢した時間ごと、なくなります"/>
         <outline text="あなたは、変わりたい人です"/>
@@ -245,7 +246,7 @@
       </outline>
       <outline text="コラム　まわりの5人の平均が、自分になる　（397字）"/>
     </outline>
-    <outline text="第3章　頭のいい人は、「覚えよう」としない　〔覚え方・6本・14,297字〕">
+    <outline text="第3章　頭のいい人は、「覚えよう」としない　〔覚え方・6本・15,072字〕">
       <outline text="11　全部インプットしてから、問題を解く">
         <outline text="× まだ習ってないから、解けるわけがない"/>
         <outline text="○ 読む前に、先に1回解いてみる"/>
@@ -278,6 +279,7 @@
           <outline text="声に出すと、残りやすくなります"/>
           <outline text="2つを、1つの動作にします"/>
           <outline text="声を出せない場所では"/>
+          <outline text="英単語なら、こうします"/>
         </outline>
         <outline text="やり方">
           <outline text="STEP 01　覚えたいところを読んだら、本を閉じて、顔を上げる"/>
@@ -287,7 +289,7 @@
         </outline>
         <outline text="今日やること　今日読んだページを1つ選んで、本を閉じ、目を閉じて、書いてあったことを3つ声に出す。"/>
         <outline text="研究　ヨーク大学／ウォータールー大学"/>
-        <outline text="（1,920字）"/>
+        <outline text="（2,477字）"/>
       </outline>
       <outline text="13　教科書に線を引いて、きれいなノートにまとめる">
         <outline text="× 大事なところに印をつけておけば、あとで見返せる"/>
@@ -350,7 +352,7 @@
         </outline>
         <outline text="今日やること　今日の授業を1つ選んで、「結局、何の話？」を1行で言い、キーワードを3つ書く。"/>
         <outline text="研究　研究あり（大学名は書いていない）"/>
-        <outline text="（2,271字）"/>
+        <outline text="（2,399字）"/>
       </outline>
       <outline text="16　忘れてから、最初から覚え直す">
         <outline text="× もう全部忘れた。1からやり直しだ"/>
@@ -375,12 +377,12 @@
         </outline>
         <outline text="今日やること　今日覚えたものを、明日もう一度、閉じて出す。出なかったものにだけ印をつける。次は、印があるものだけやる。"/>
         <outline text="研究　研究あり（大学名は書いていない）"/>
-        <outline text="（3,356字）"/>
+        <outline text="（3,446字）"/>
       </outline>
       <outline text="コラム　参考書を選ぶときの、3つの基準　（338字）"/>
       <outline text="コラム　おすすめの勉強場所は、どこですか　（450字）"/>
     </outline>
-    <outline text="第4章　頭のいい人は、解けた問題を数えない　〔解き方と直し方・11本・26,465字〕">
+    <outline text="第4章　頭のいい人は、解けた問題を数えない　〔解き方と直し方・11本・26,701字〕">
       <outline text="17　「今日は数学の日」と決めて、1つだけやる">
         <outline text="× 今日は二次関数を完璧にする日"/>
         <outline text="○ 解く練習は、3種類を混ぜる"/>
@@ -466,7 +468,7 @@
           <outline text="「できた」の基準　解いた問題の全部に、聞かれていることの線が引いてある。答えを書く前に、その線を見た。"/>
         </outline>
         <outline text="今日やること　次に問題を解くとき、「わかった」と思った瞬間に指を止めて、最後の1文まで読む。聞かれていることに、線を引く。"/>
-        <outline text="（1,573字）"/>
+        <outline text="（1,680字）"/>
       </outline>
       <outline text="21　時間を測らずに、解けるまで解く">
         <outline text="× 時間をかければ解けた。できる判定"/>
@@ -526,7 +528,7 @@
           <outline text="「できた」の基準　開く前に書いた1行のとおりに、進むか、戻るかを決めた。"/>
         </outline>
         <outline text="今日やること　いま使っている参考書の表紙の裏に、1行書く。「何を・どんな条件で・どれだけ」。"/>
-        <outline text="（2,306字）"/>
+        <outline text="（2,435字）"/>
       </outline>
       <outline text="24　間違えた問題を、そのままもう一度解く">
         <outline text="× できるまで、何回もやる"/>
@@ -902,7 +904,7 @@
       <outline text="コラム　無駄な同調圧力に、屈するな　（357字）"/>
       <outline text="コラム　休憩の質は、目に入るもので変わる　（235字）"/>
     </outline>
-    <outline text="第7章　頭のいい人は、落ち着こうとしない　〔メンタルと本番・7本・18,319字〕">
+    <outline text="第7章　頭のいい人は、落ち着こうとしない　〔メンタルと本番・7本・18,746字〕">
       <outline text="41　「自分はできる」と、言い聞かせる">
         <outline text="× 大丈夫、絶対できる。ポジティブにいこう"/>
         <outline text="○ できない、ではなく、まだできていない"/>
@@ -1041,6 +1043,7 @@
           <outline text="試験が始まったら、最初の1分でやることがあります"/>
           <outline text="解く順番は、2つに分けます"/>
           <outline text="逆だと、こうなります"/>
+          <outline text="途中で、頭が真っ白になったら"/>
           <outline text="後回しにしたほうも、白紙では出しません"/>
           <outline text="気をつけること"/>
         </outline>
@@ -1051,7 +1054,7 @@
           <outline text="「できた」の基準　Aの問題を全部解き終えてから、Bに入った。"/>
         </outline>
         <outline text="今日やること　次の小テストでいいので、始まったら最初に全部めくってみる。大問の横に、AかBを書く。"/>
-        <outline text="（2,481字）"/>
+        <outline text="（2,908字）"/>
       </outline>
       <outline text="コラム　無駄なプライドが、邪魔をしていた　（328字）"/>
     </outline>

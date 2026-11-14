@@ -192,7 +192,12 @@ for ci, (cno, ctitle, csub, items) in enumerate(CHAPTERS, 1):
 for f in ["90_巻末", "91_おわりに"]:
     p = os.path.join(V2, f + ".md")
     if os.path.exists(p):
-        out.append(rd(p).strip("\n") + "\n\n---\n")
+        t = rd(p)
+        if f == "90_巻末":            # 「50を、1枚に」の各行を、設計図の○にそろえる
+            for _c in CHAPTERS:
+                for it in _c[3]:
+                    t = re.sub(r'^%s\u3000.*$' % it[0], '%s\u3000%s' % (it[0], it[4]), t, count=1, flags=re.M)
+        out.append(t.strip("\n") + "\n\n---\n")
     else:
         MISSING.append(f)
 

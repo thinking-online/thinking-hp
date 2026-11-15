@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#fdfaf4">
+<title>共通テスト第6問攻略｜可視化リーディングで解く物語文 — Bluebird & Melody: Real Heroes — オンライン塾 THINKING</title>
+<style>
+:root{
+  --paper:#fdfaf4; --paper2:#f6f0e4; --ink:#1f1b16; --ink2:#5a524a; --line:#e3d9c7;
+  --accent:#b8542b; --accent2:#8f3f1f;
+  --q1:#d9a441; --q2:#4f9474; --q3:#5c6fb5;
+  --q1bg:#fbf1d6; --q2bg:#dff0e7; --q3bg:#e2e6f6;
+  --ok:#2f8a5b; --ng:#c0392b;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",system-ui,sans-serif;line-height:1.85;font-size:15.5px;padding-bottom:84px}
+.en{font-family:Georgia,"Times New Roman","Hiragino Mincho ProN",serif;font-size:1.02em}
+a{color:var(--accent)}
+.wrap{max-width:720px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:30;background:rgba(253,250,244,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .bar{display:flex;align-items:center;gap:10px;padding:10px 16px;max-width:720px;margin:0 auto}
+.logo{width:30px;height:30px;border-radius:8px;background:var(--ink);color:#fff;display:grid;place-items:center;font-weight:800;font-family:Georgia,serif;flex:none}
+.top .t{font-size:12.5px;color:var(--ink2);line-height:1.3}
+.top .t b{display:block;color:var(--ink);font-size:13.5px}
+.timerchip{margin-left:auto;font-family:Georgia,serif;font-size:15px;padding:4px 10px;border:1px solid var(--line);border-radius:999px;background:#fff;min-width:64px;text-align:center}
+nav.steps{display:flex;gap:6px;overflow-x:auto;padding:0 16px 10px;max-width:720px;margin:0 auto;scrollbar-width:none}
+nav.steps::-webkit-scrollbar{display:none}
+nav.steps a{flex:none;font-size:12px;padding:5px 10px;border-radius:999px;background:var(--paper2);color:var(--ink2);text-decoration:none;border:1px solid var(--line)}
+nav.steps a i{font-style:normal;font-family:Georgia,serif;color:var(--accent);margin-right:4px;font-weight:700}
+.hero{padding:28px 0 10px}
+.kicker{font-size:12.5px;color:var(--ink2);letter-spacing:.04em}
+h1{font-size:25px;line-height:1.35;margin:8px 0 10px;font-weight:800}
+h1 small{display:block;font-size:14px;color:var(--accent);font-weight:700;margin-bottom:6px}
+.lead{color:var(--ink2);font-size:15px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px}
+.meta span{font-size:12.5px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px 11px}
+section.step{padding:34px 0 10px;border-top:1px solid var(--line);margin-top:22px}
+.stepno{font-family:Georgia,serif;color:var(--accent);font-weight:700;letter-spacing:.08em;font-size:13px}
+h2{font-size:21px;margin:4px 0 4px;line-height:1.4}
+.sub{font-family:Georgia,serif;font-style:italic;color:var(--ink2);font-size:13.5px;margin-bottom:14px}
+h3{font-size:16.5px;margin:22px 0 8px}
+h4{font-size:15px;margin:14px 0 6px}
+p{margin:8px 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:16px 16px;margin:12px 0}
+.card.soft{background:var(--paper2);border-color:transparent}
+.note{border-left:4px solid var(--accent);background:#fff8ef;padding:12px 14px;border-radius:0 var(--radius) var(--radius) 0;margin:14px 0}
+.note b.l{display:block;color:var(--accent2);font-size:13.5px;margin-bottom:4px}
+.pill{display:inline-block;font-size:12px;padding:2px 9px;border-radius:999px;background:var(--ink);color:#fff;margin-right:6px;vertical-align:middle}
+.pill.q1{background:var(--q1)}.pill.q2{background:var(--q2)}.pill.q3{background:var(--q3)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;background:var(--accent);color:#fff;border:none;border-radius:999px;padding:11px 20px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.btn:active{transform:translateY(1px)}
+/* passage */
+.passage{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:18px 18px 10px;margin:12px 0}
+.passage .ttl{text-align:center;font-family:Georgia,serif;font-weight:700;font-size:18px;margin:6px 0 12px}
+.passage p.en{text-indent:1.2em;margin:0 0 10px;line-height:1.75}
+.passage .lead-en{font-style:italic;color:var(--ink2);text-indent:0}
+mark{background:transparent;padding:0 1px;border-bottom:3px solid transparent;color:inherit;transition:.2s}
+.show-all mark.q1,.show-q1 mark.q1{background:var(--q1bg);border-bottom-color:var(--q1)}
+.show-all mark.q2,.show-q2 mark.q2{background:var(--q2bg);border-bottom-color:var(--q2)}
+.show-all mark.q3,.show-q3 mark.q3{background:var(--q3bg);border-bottom-color:var(--q3)}
+.qlist{margin:14px 0}
+.q{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:10px 0}
+.q .stem{font-weight:700;margin-bottom:8px}
+.q .stem .en{font-weight:400}
+.opts{list-style:none;padding:0;margin:0}
+.opts li{display:flex;gap:8px;padding:6px 0;border-top:1px dashed var(--line)}
+.opts li:first-child{border-top:none}
+.opts .n{flex:none;width:22px;height:22px;border-radius:50%;border:1.5px solid var(--ink);font-size:12px;display:grid;place-items:center;font-family:Georgia,serif;margin-top:4px}
+.answers{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.answers label{border:1px solid var(--line);border-radius:999px;padding:5px 12px;background:var(--paper2);font-size:14px;cursor:pointer}
+.answers input{display:none}
+.answers input:checked+span{color:#fff}
+.answers label:has(input:checked){background:var(--ink);color:#fff}
+.order{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.order select{font-size:15px;padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:#fff;font-family:inherit}
+.order .arrow{color:var(--ink2)}
+.result{margin-top:10px;font-weight:700}
+.result.ok{color:var(--ok)}.result.ng{color:var(--ng)}
+.timerbox{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin:12px 0}
+.timerbox .big{font-family:Georgia,serif;font-size:30px;min-width:92px}
+/* 5 step */
+.flow{counter-reset:s}
+.fstep{display:flex;gap:12px;padding:14px 0;border-top:1px solid var(--line)}
+.fstep:first-child{border-top:none}
+.fstep .num{flex:none;width:34px;height:34px;border-radius:10px;background:var(--ink);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:700}
+.fstep h4{margin:4px 0 4px}
+.fstep .goal{font-size:13.5px;color:var(--accent2);margin-top:6px}
+/* think-aloud */
+details.think{background:#fff;border:1px solid var(--line);border-radius:var(--radius);margin:12px 0;overflow:hidden}
+details.think summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px;font-weight:700}
+details.think summary::-webkit-details-marker{display:none}
+details.think summary .ans{margin-left:auto;font-size:12.5px;color:var(--ink2);font-weight:400;white-space:nowrap}
+details.think summary::after{content:"＋";margin-left:8px;color:var(--accent);font-weight:400}
+details.think[open] summary::after{content:"－"}
+details.think .body{padding:0 16px 16px;border-top:1px solid var(--line)}
+.jaopts{list-style:none;padding:0;margin:10px 0 4px;font-size:14px;color:var(--ink2)}
+.jaopts li{padding:3px 0}
+.jaopts .n{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;margin-right:6px;font-family:Georgia,serif}
+.jaopts li.c{color:var(--ink);font-weight:700}.jaopts li.c .n{background:var(--ink);color:#fff;border-color:var(--ink)}
+.ta{counter-reset:t;margin-top:8px}
+.ta .t{display:flex;gap:12px;padding:12px 0;border-top:1px dashed var(--line)}
+.ta .t .n{flex:none;width:26px;height:26px;border-radius:50%;border:1.5px solid var(--accent);color:var(--accent);display:grid;place-items:center;font-size:12.5px;font-family:Georgia,serif;margin-top:2px}
+.ta .t h5{margin:2px 0 4px;font-size:14.5px}
+.quote{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14.5px}
+.quote .en{display:block;font-size:15px}
+.quote .ja{display:block;color:var(--ink2);font-size:13.5px;margin-top:4px}
+.map{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:#fff;border:1.5px dashed var(--accent);border-radius:10px;padding:10px 12px;margin:10px 0;font-size:14px}
+.map .en{font-weight:700}
+.map .ar{color:var(--accent);font-weight:800}
+.learn{background:var(--paper2);border-radius:10px;padding:12px 14px;margin-top:12px;font-size:14.5px}
+.learn b{display:block;color:var(--accent2);font-size:13px;margin-bottom:3px}
+.ev{display:inline-block;font-size:12.5px;padding:2px 8px;border-radius:6px;margin:2px 0}
+.ev.q1{background:var(--q1bg)}.ev.q2{background:var(--q2bg)}.ev.q3{background:var(--q3bg)}
+/* timeline */
+.tl{position:relative;padding-left:28px;margin:14px 0}
+.tl::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .ev2{position:relative;padding:8px 0 8px 6px}
+.tl .ev2::before{content:"";position:absolute;left:-23px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 1.5px var(--accent)}
+.tl .ev2.ghost::before{background:#fff;box-shadow:0 0 0 1.5px var(--ink2)}
+.tl .ev2 .lab{font-weight:700}
+.tl .ev2 .src{font-size:13px;color:var(--ink2)}
+.tl .ev2 .tag{display:inline-block;font-size:11.5px;background:var(--ink);color:#fff;border-radius:6px;padding:0 7px;margin-left:6px;vertical-align:middle}
+.tl .ev2.ghost .tag{background:var(--ng)}
+/* translation */
+.tr{margin:10px 0 14px}
+.tr .lab{font-size:12px;color:var(--ink2);letter-spacing:.06em}
+.tr p{margin:4px 0}
+.tr p.ja{color:#3a342d;font-size:14.5px}
+.tr p.ja .qm{font-size:11px;padding:0 5px;border-radius:5px;color:#fff;margin-left:4px;vertical-align:middle}
+.qm.q1{background:var(--q1)}.qm.q2{background:var(--q2)}.qm.q3{background:var(--q3)}
+.hideen .tr p.en{display:none}
+.legend{display:flex;gap:10px;flex-wrap:wrap;font-size:13px;margin:8px 0}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:5px;vertical-align:middle}
+.legend .l1::before{background:var(--q1)}.legend .l2::before{background:var(--q2)}.legend .l3::before{background:var(--q3)}
+/* vocab */
+.vocab{display:grid;grid-template-columns:1fr;gap:6px;margin:10px 0}
+.v{display:flex;gap:10px;align-items:baseline;background:#fff;border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:14px}
+.v .w{font-family:Georgia,serif;font-weight:700;min-width:120px}
+.v .pos{font-size:11px;color:var(--ink2);border:1px solid var(--line);border-radius:4px;padding:0 4px}
+.v.pair{border-color:var(--accent);background:#fff8ef}
+/* checklist */
+.chk{list-style:none;padding:0;margin:12px 0}
+.chk li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-top:1px dashed var(--line)}
+.chk li:first-child{border-top:none}
+.chk input{width:20px;height:20px;margin-top:4px;accent-color:var(--accent)}
+.score{font-family:Georgia,serif;font-size:22px;margin:8px 0}
+.weapon{display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--line)}
+.weapon .num{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;width:52px;line-height:1.3;padding-top:4px}
+footer{margin:40px 0 20px;font-size:12.5px;color:var(--ink2);text-align:center;line-height:1.7}
+/* bottom bar + sheet */
+.bbar{position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(253,250,244,.96);border-top:1px solid var(--line);backdrop-filter:blur(8px)}
+.bbar .in{max-width:720px;margin:0 auto;display:flex;gap:10px;padding:10px 16px;padding-bottom:calc(10px + env(safe-area-inset-bottom))}
+.bbar .btn{flex:1}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--paper);border-top-left-radius:18px;border-top-right-radius:18px;box-shadow:0 -10px 30px rgba(0,0,0,.18);max-height:82vh;transform:translateY(105%);transition:transform .28s ease;display:flex;flex-direction:column}
+.sheet.open{transform:translateY(0)}
+.sheet .head{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.sheet .head b{font-size:14px}
+.sheet .filters{display:flex;gap:6px;margin-left:auto}
+.sheet .filters button{font-size:12px;border:1px solid var(--line);background:#fff;border-radius:999px;padding:3px 10px;cursor:pointer;font-family:inherit}
+.sheet .filters button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sheet .filters button.f1.on{background:var(--q1);border-color:var(--q1)}
+.sheet .filters button.f2.on{background:var(--q2);border-color:var(--q2)}
+.sheet .filters button.f3.on{background:var(--q3);border-color:var(--q3)}
+.sheet .close{margin-left:8px;border:none;background:transparent;font-size:20px;cursor:pointer}
+.sheet .scroll{overflow:auto;padding:0 16px 24px;-webkit-overflow-scrolling:touch}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.25);z-index:45;opacity:0;pointer-events:none;transition:.25s}
+.overlay.on{opacity:1;pointer-events:auto}
+.tiny{font-size:12.5px;color:var(--ink2)}
+.center{text-align:center}
+@media (min-width:600px){.vocab{grid-template-columns:1fr 1fr}}
+
+.pos{display:inline-grid;place-items:center;width:22px;height:22px;border-radius:6px;background:var(--paper2);border:1.5px dashed var(--accent);color:var(--accent);font-family:Georgia,serif;font-size:12px;font-weight:700;margin:0 3px;vertical-align:middle}
+.pos.hit{background:var(--accent);color:#fff;border-style:solid}
+u.ul{text-decoration:none;border-bottom:2px solid var(--ink);padding-bottom:1px}
+sup.cm{font-family:Georgia,serif;font-size:11px;color:var(--accent);font-weight:700;margin-right:2px}
+.cmts{display:grid;gap:8px;margin:12px 0}
+.cmt{display:flex;gap:10px;background:#fff8ef;border:1px dashed var(--accent);border-radius:10px;padding:10px 12px;font-size:14px}
+.cmt .n{flex:none;font-family:Georgia,serif;color:var(--accent);font-weight:700}
+.cmt .en{font-family:"Comic Sans MS","Segoe Print",Georgia,serif;font-style:italic}
+.toc{margin:12px 0}
+.toc .row{display:grid;grid-template-columns:64px 1fr;gap:10px;padding:10px 0;border-top:1px dashed var(--line);align-items:start}
+.toc .row:first-child{border-top:none}
+.toc .para{font-family:Georgia,serif;color:var(--accent);font-weight:700;font-size:13px;padding-top:3px}
+.toc .first{font-size:14px}
+.toc .role{display:inline-block;font-size:12px;background:var(--ink);color:#fff;border-radius:6px;padding:1px 8px;margin-bottom:4px}
+.toc .role.red{background:var(--accent)}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+.tbl th,.tbl td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+.tbl th{background:var(--paper2);font-size:12.5px}
+.type{display:inline-block;font-size:12px;border-radius:6px;padding:1px 8px;color:#fff;font-weight:700}
+.type.add{background:var(--q2)}.type.fix{background:var(--q3)}
+.hole{background:#fff;border:2px dashed var(--accent);border-radius:12px;padding:12px 14px;margin:10px 0}
+.hole .l{font-size:12px;color:var(--accent2);letter-spacing:.06em;font-weight:700}
+.hole .shape{font-size:16px;font-weight:800;margin-top:4px}
+.piece{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14px}
+.piece.ok{background:#e4f3ea}
+.piece .m{display:inline-block;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;text-align:center;line-height:18px;font-family:Georgia,serif;margin-right:6px}
+.piece.ok .m{background:var(--ok);border-color:var(--ok);color:#fff}
+.piece .why{display:block;color:var(--ink2);font-size:13px;margin-top:3px}
+.piece.ok .why{color:#1f5e3b}
+.link4{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}
+.link4 div{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13.5px}
+.link4 b{display:block;font-size:14px;margin-bottom:2px}
+.link4 .hit{border-color:var(--accent);background:#fff8ef}
+
+.docs{display:grid;gap:10px;margin:12px 0}
+.doc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px}
+.doc .dh{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.doc .dh .tag{font-size:11.5px;background:var(--ink);color:#fff;border-radius:6px;padding:1px 8px;font-family:Georgia,serif}
+.doc .dh b{font-size:14.5px}
+.doc .role{font-size:13.5px;color:var(--ink2)}
+.docarrow{text-align:center;color:var(--accent);font-weight:800;font-size:20px;line-height:1}
+.ant{width:100%;border-collapse:collapse;font-size:14px;margin:10px 0}
+.ant th,.ant td{border:1px solid var(--line);padding:8px 10px;vertical-align:top;text-align:left}
+.ant th{background:var(--paper2);font-size:12.5px}
+.ant .qn{font-family:Georgia,serif;color:var(--accent);font-weight:700;white-space:nowrap}
+.cmp{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+.cmp th,.cmp td{border:1px solid var(--line);padding:7px 9px;vertical-align:top;text-align:left}
+.cmp th{background:var(--paper2);font-size:12px}
+.cmpcards{display:grid;gap:8px;margin:10px 0}
+.cc{background:#fff;border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:13.5px}
+.cc .row{display:grid;grid-template-columns:34px 1fr;gap:8px;padding:4px 0}
+.cc .k{font-family:Georgia,serif;font-size:11px;color:var(--accent);font-weight:700;padding-top:3px}
+.cc .foot{display:flex;justify-content:space-between;align-items:center;gap:8px;border-top:1px dashed var(--line);margin-top:6px;padding-top:6px;font-size:12.5px;color:var(--ink2)}
+.ant td:nth-child(2){display:none}.ant th:nth-child(2){display:none}
+@media (min-width:600px){.ant td:nth-child(2),.ant th:nth-child(2){display:table-cell}}
+.st{display:inline-block;font-size:11.5px;border-radius:6px;padding:1px 7px;color:#fff;font-weight:700;white-space:nowrap}
+.st.ok{background:var(--ok)}.st.chg{background:var(--accent)}.st.new{background:var(--q3)}.st.todo{background:var(--q1);color:#3a2a00}.st.x{background:var(--ng)}
+.cut{display:inline-block;font-size:11px;border:1px solid var(--ng);color:var(--ng);border-radius:5px;padding:0 6px;margin-right:4px;white-space:nowrap}
+.ev3{display:grid;gap:6px;margin:8px 0}
+.ev3 .e{display:flex;gap:8px;align-items:flex-start;background:var(--paper2);border-radius:10px;padding:8px 10px;font-size:14px}
+.ev3 .e .src{flex:none;font-size:11px;background:var(--ink);color:#fff;border-radius:5px;padding:1px 7px;margin-top:3px;white-space:nowrap}
+.ev3 .e .ja{display:block;color:var(--ink2);font-size:13px}
+.piece{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:14px}
+.piece.ok{background:#e4f3ea}
+.piece .m{display:inline-block;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--ink2);font-size:11px;text-align:center;line-height:18px;font-family:Georgia,serif;margin-right:6px}
+.piece.ok .m{background:var(--ok);border-color:var(--ok);color:#fff}
+.piece .why{display:block;color:var(--ink2);font-size:13px;margin-top:3px}
+.piece.ok .why{color:#1f5e3b}
+.cond{background:#fff;border:2px dashed var(--accent);border-radius:12px;padding:12px 14px;margin:10px 0}
+.cond .l{font-size:12px;color:var(--accent2);letter-spacing:.06em;font-weight:700}
+.cond ul{margin:6px 0 0;padding-left:18px}
+.cond li{margin:2px 0;font-size:14.5px}
+.sched{width:100%;border-collapse:collapse;font-size:13px;margin:8px 0}
+.sched th,.sched td{border:1px solid var(--line);padding:5px 8px;text-align:left;vertical-align:top}
+.sched th{background:var(--paper2);font-weight:700}
+.sched .th{background:#fff8ef;font-weight:700}
+.email{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:8px 0;font-size:13px}
+.email .hdr{font-family:Georgia,serif;font-size:12.5px;color:var(--ink2);border-bottom:1px dashed var(--line);padding-bottom:4px;margin-bottom:6px}
+.form{background:var(--paper2);border-radius:10px;padding:10px 12px;margin:10px 0}
+.form .bk{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px 10px;margin:6px 0;font-size:13.5px}
+.form .bk .meta{font-size:12px;color:var(--ink2);margin-bottom:3px}
+.passage p.en{text-indent:0}
+.answers.multi label{border-radius:8px}
+.imgbox{text-align:center;margin:8px 0}
+.imgbox img{max-width:100%;border:1px solid var(--line);border-radius:10px;background:#fff}
+.doc-sec{border-top:1px dashed var(--line);margin-top:10px;padding-top:8px}
+
+:root{--q4:#9a5ab8;--q5:#2a8f8f;--q4bg:#eee2f5;--q5bg:#d9efef}
+.show-all mark.q4,.show-q4 mark.q4{background:var(--q4bg);border-bottom-color:var(--q4)}
+.show-all mark.q5,.show-q5 mark.q5{background:var(--q5bg);border-bottom-color:var(--q5)}
+.legend .l4::before{background:var(--q4)}.legend .l5::before{background:var(--q5)}
+.qm.q4{background:var(--q4)}.qm.q5{background:var(--q5)}
+.ev.q4{background:var(--q4bg)}.ev.q5{background:var(--q5bg)}
+.sheet .filters button.f4.on{background:var(--q4);border-color:var(--q4)}
+.sheet .filters button.f5.on{background:var(--q5);border-color:var(--q5)}
+.sheet .filters{flex-wrap:wrap}
+.doc-sec .dt{font-family:Georgia,serif;font-size:12px;color:var(--accent);letter-spacing:.06em;margin-bottom:4px}
+
+.outline{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;margin:10px 0}
+.outline h4{margin:8px 0 4px;font-size:14.5px;color:var(--accent2)}
+.outline ul{margin:0 0 6px;padding-left:18px;font-size:14px}
+.outline .blank{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:Georgia,serif;font-size:12px;color:var(--accent);padding:0 4px}
+.tl{position:relative;padding-left:28px;margin:14px 0}
+.tl::before{content:"";position:absolute;left:10px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.tl .ev2{position:relative;padding:8px 0 8px 6px}
+.tl .ev2::before{content:"";position:absolute;left:-23px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 0 0 1.5px var(--accent)}
+.tl .ev2.ghost::before{background:#fff;box-shadow:0 0 0 1.5px var(--ink2)}
+.tl .ev2 .lab{font-weight:700}
+.tl .ev2 .src{font-size:13px;color:var(--ink2)}
+.tl .ev2 .tag{display:inline-block;font-size:11.5px;background:var(--ink);color:#fff;border-radius:6px;padding:0 7px;margin-left:6px;vertical-align:middle}
+.tl .ev2.ghost .tag{background:var(--ng)}
+.tl .band{position:relative;margin:10px 0 4px -28px;padding:3px 10px;background:var(--paper2);border-radius:6px;font-size:12px;color:var(--accent2);font-weight:700;letter-spacing:.04em}
+.chain{display:grid;gap:0;margin:10px 0}
+.chain .node{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:14px}
+.chain .node b{display:block;font-size:12px;color:var(--accent);letter-spacing:.06em;margin-bottom:2px}
+.chain .arr{text-align:center;color:var(--accent);font-weight:800;font-size:18px;line-height:1.3}
+.sep{text-align:center;color:var(--ink2);letter-spacing:.4em;margin:12px 0;font-size:12px}
+.passage p.en{text-indent:1.2em}
+.passage .note-en{background:var(--paper2);border-radius:10px;padding:10px 14px;margin:8px 0 10px;font-style:italic;text-indent:0}
+.order select{font-size:15px;padding:6px 8px;border-radius:10px;border:1px solid var(--line);background:#fff;font-family:inherit}
+.order{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-top:10px}
+.order .arrow{color:var(--ink2)}
+</style></head><body data-key="q6bluebird">
+<header class="top"><div class="bar"><div class="logo">T</div><div class="t">可視化リーディング ― 物語文<b>共通テスト第6問「Bluebird & Melody: Real Heroes」／ オンライン塾 THINKING</b></div><div class="timerchip" id="tChip">12:00</div></div><nav class="steps"><a href="#s0"><i>0</i>自力で解く</a><a href="#s1"><i>1</i>5STEP</a><a href="#s2"><i>2</i>入口と追うもの</a><a href="#s3"><i>3</i>出来事を拾う</a><a href="#s4"><i>4</i>線につなぐ</a><a href="#s5"><i>5</i>脳内実況</a><a href="#s6"><i>6</i>全訳</a><a href="#s7"><i>7</i>語句</a><a href="#s8"><i>8</i>持ち帰り</a></nav></header>
+<main class="wrap">
+<div class="hero"><div class="kicker">2025年度 共通テスト本試験 第6問</div>
+<h1><small>【物語文】を攻略する</small>可視化リーディング ― Bluebird & Melody: Real Heroes ―</h1>
+<p class="lead">第6問で大切なのは、物語を読みながら、登場人物・出来事・時間の流れ・物語全体の意味を正確につかむこと。出来事をそれぞれ理解するだけでは足りない。<b>「いつ、誰に、何が起きたのか」</b>、そして<b>「その出来事が、次の出来事や人物の変化にどうつながったのか」</b>まで理解して初めて解けます。今回は、友人 Harry が書いたスーパーヒーローの創作物語に「感想メール」を書く形式。Bluebird の成長の段階、Melody の能力、母の言葉の意味、そして「書かれていないこと」。最後の問4は、本文に「ある」ことではなく「無い」ことを探す珍しい設問です。</p>
+<div class="meta"><span>目標解答時間 12分</span><span>設問4問</span><span>アウトライン完成型</span><span>下の「本文を開く」で、いつでも本文を参照できます</span></div></div>
+
+<section class="step" id="s0"><div class="stepno">STEP 0</div><h2>まず、時間を測って自力で解く</h2><div class="sub">Try it yourself</div>
+<p>解説を読む前に必ず解いてください。観察してほしいのは、<b>「読み終わったとき、出来事を順番に言えたか」</b>。言えなかったなら、1文ずつ訳すことに集中して、読んだ内容を頭に残さずに進んだ場所があるということです。</p>
+<div class="timerbox"><div class="big" id="tBig">12:00</div><button class="btn" id="tBtn">スタート</button><span class="tiny">12分を過ぎても止めずに続けて、超過時間を覚えておきましょう。</span></div>
+<div class="passage show-none"><p class="en lead-en">Your friend, Harry, wants to be a professional writer. He has written a story about two new heroes for a writing contest. You read it and then give him feedback.</p><div class="ttl">Bluebird &amp; Melody: Real Heroes</div><div class="tiny center" style="margin-top:-8px;margin-bottom:10px">By Harry Okazaki</div><p class="en"><mark class="q1">Everyone knows me as Bluebird, the world-famous superhero. Before, I was only a superhero in name, but now, I deserve my title.</mark> Let me tell you my story.</p><p class="en"><mark class="q1">I served as one of six members of the incredibly popular superhero group, Team Hero. Our slogan was “Heroes for Humanity!” Rather than serving humanity, though, we starred in silly television shows. Being so caught up in my own fame, I was unaware that I was a fake superhero.</mark></p><div class="sep">◆◆◆◆◆</div><p class="en">One day, we were filming The Lives of Heroes, a reality show about our everyday good deeds. <mark class="q4">The reality, however, was that we were actors; we pretended that we were helping the world.</mark> In one episode, I was supposed to rescue a cat that had wandered into a street drain. I was flying through the air, when I heard a girl crying. In an instant, I flew down to her. In tears, she told me that her cat, Whiskers, had gotten into the drain. The truth was, a member of the television crew was waiting in the underground drain with the cat.</p><p class="en">“Have no fear! I’ll save Whiskers!” I said, as I threw open the cover of the drain and went underground. To my surprise, the crew member told me that she had lost Whiskers and asked me to find the cat. I walked around calling for Whiskers but he did not come.</p><p class="en">Suddenly, the newest Team Hero member, Melody, appeared out of nowhere. Melody was mysterious; she wore a mask around her eyes and her real identity was unknown. <mark class="q2">She could teleport to any place on earth in less than a second</mark>, so her unexpected appearances were always a surprise. She said, <mark class="q2">“Whiskers thinks that you can’t be trusted. I’ll try to convince him to come out.”</mark> <mark class="q2">Melody, who could recreate any sound, produced a cat’s meow and Whiskers appeared.</mark></p><p class="en">After picking up the cat, I returned to the street and was cheered by onlookers. <mark class="q4">When I was posing for a photo with Whiskers and the girl, I was thinking about how foolish I looked.</mark> Suddenly, <mark class="q2">a voice popped into my head, “You do look foolish trying to be a celebrity.” I realized it was Melody, who had already vanished.</mark></p><div class="sep">◆◆◆◆◆</div><p class="en"><mark class="q1">I grew up in Allegany State Park in New York State. My parents were both park rangers; they patrolled the park and helped hikers in trouble. When I was 12, I discovered my superpowers.</mark> I was climbing a tree when a branch broke. Instead of falling, I floated. When I told my parents, my mother only said, “So, you are the flyer in the family.” She then said something shocking, “You have an older sister with superpowers.” <mark class="q3">I learned my parents had been told to send her to a special facility for extraordinary children, because her powers could help humanity. “Someday, when the time is right, you’ll meet her. I know now that we should never have let her go. We won’t let that happen to you,” said my mother.</mark></p><p class="en"><mark class="q1">I decided to put my powers to use by rescuing hikers. I could fly and see for miles; I could locate or aid a troubled hiker faster than any park ranger. I became known as the Amazing Park Ranger Boy. Because of my achievements, Team Hero eventually recruited me.</mark> Upon joining, I was given the name Bluebird and told that I would be doing bigger and better things.</p><div class="sep">◆◆◆◆◆</div><p class="en">After the Whiskers incident, I flew back home. My phone buzzed with a notification. It said, “Melody has decided to leave Team Hero.” In my home office, I heard someone moving around. When I opened the door, I briefly saw a person’s shape before it disappeared. On my desk was a note:</p><p class="en note-en">Bluebird, Let’s start a family business. Join me as a co-founder of REAL HEROES.</p><p class="en"><mark class="q4">After reading the note, I understood who Melody was. Since then, working together, Melody and I have made our parents proud.</mark></p><div class="outline"><h4>Your email feedback to Harry</h4>
+<p class="en">Hey Harry,<br>I loved your story! I really liked how Bluebird passes through various stages in his personal growth (see below).<br><span class="blank">24</span> → <span class="blank">25</span> → <span class="blank">26</span> → <span class="blank">27</span><br>I found Melody really fascinating with her unique superpowers. She can <span class="blank">28</span>.<br>Also, I was moved when Bluebird’s mother said, “We won’t let that happen to you.” She meant, “We are going to <span class="blank">29</span>.”<br>On the other hand, I think you can still make the story a little better by adding a few details. You could write about <span class="blank">30</span> and <span class="blank">31</span>, which are not mentioned or suggested. These details would give your characters depth and make your story more interesting.<br>Good luck!</p></div></div>
+<div class="qlist"><div class="q"><div class="stem"><span class="pill">問1</span><span class="en">Choose four out of the five descriptions and put them in the order they occurred. (Bluebird’s personal growth)</span></div><ol class="opts"><li><span class="n">①</span><span class="en">He is a hero again.</span></li><li><span class="n">②</span><span class="en">He is a performer.</span></li><li><span class="n">③</span><span class="en">He is a professional writer.</span></li><li><span class="n">④</span><span class="en">He is a super park ranger.</span></li><li><span class="n">⑤</span><span class="en">He is an ordinary boy.</span></li></ol><div class="order"><select data-q="1"><option value="">－</option><option value="①">①</option><option value="②">②</option><option value="③">③</option><option value="④">④</option><option value="⑤">⑤</option></select><span class="arrow">→</span><select data-q="1"><option value="">－</option><option value="①">①</option><option value="②">②</option><option value="③">③</option><option value="④">④</option><option value="⑤">⑤</option></select><span class="arrow">→</span><select data-q="1"><option value="">－</option><option value="①">①</option><option value="②">②</option><option value="③">③</option><option value="④">④</option><option value="⑤">⑤</option></select><span class="arrow">→</span><select data-q="1"><option value="">－</option><option value="①">①</option><option value="②">②</option><option value="③">③</option><option value="④">④</option><option value="⑤">⑤</option></select></div><div class="result" id="r1"></div></div><div class="q"><div class="stem"><span class="pill">問2</span><span class="en">Choose the correct combination of Melody’s superpowers. (She can ___.)</span></div><div class="card soft" style="margin:6px 0"><span class="en">A: fly at very high altitudes<br>B: imitate sounds perfectly<br>C: read the minds of animals and people<br>D: see extremely long distances<br>E: speak to people using telepathy<br>F: transport herself to different places instantly</span></div><ol class="opts"><li><span class="n">①</span><span class="en">A, B, D, and F</span></li><li><span class="n">②</span><span class="en">A, C, D, and E</span></li><li><span class="n">③</span><span class="en">B, C, D, and E</span></li><li><span class="n">④</span><span class="en">B, C, E, and F</span></li></ol><div class="answers "><label><input type="radio" name="q2" value="①"><span>①</span></label><label><input type="radio" name="q2" value="②"><span>②</span></label><label><input type="radio" name="q2" value="③"><span>③</span></label><label><input type="radio" name="q2" value="④"><span>④</span></label></div><div class="result" id="r2"></div></div><div class="q"><div class="stem"><span class="pill">問3</span><span class="en">Choose the best option for 29. (“We are going to ___.”)</span></div><ol class="opts"><li><span class="n">①</span><span class="en">control your powers</span></li><li><span class="n">②</span><span class="en">hire you as a superhero</span></li><li><span class="n">③</span><span class="en">keep you together with us</span></li><li><span class="n">④</span><span class="en">make sure you don’t commit crimes</span></li></ol><div class="answers "><label><input type="radio" name="q3" value="①"><span>①</span></label><label><input type="radio" name="q3" value="②"><span>②</span></label><label><input type="radio" name="q3" value="③"><span>③</span></label><label><input type="radio" name="q3" value="④"><span>④</span></label></div><div class="result" id="r3"></div></div><div class="q"><div class="stem"><span class="pill">問4</span><span class="en">Choose the best options for 30 and 31. (The order does not matter.) Details which are NOT mentioned or suggested.</span></div><ol class="opts"><li><span class="n">①</span><span class="en">Bluebird’s childhood experiences</span></li><li><span class="n">②</span><span class="en">Bluebird’s view on the reality show</span></li><li><span class="n">③</span><span class="en">how Melody learned she had superpowers</span></li><li><span class="n">④</span><span class="en">the reason why Melody joined Team Hero</span></li><li><span class="n">⑤</span><span class="en">the relationship between Bluebird and Melody</span></li></ol><div class="answers multi"><label><input type="checkbox" name="q4" value="①"><span>①</span></label><label><input type="checkbox" name="q4" value="②"><span>②</span></label><label><input type="checkbox" name="q4" value="③"><span>③</span></label><label><input type="checkbox" name="q4" value="④"><span>④</span></label><label><input type="checkbox" name="q4" value="⑤"><span>⑤</span></label></div><div class="tiny">2つ選択</div><div class="result" id="r4"></div></div></div>
+<p class="center"><button class="btn" id="grade">採点する</button></p><p class="center" id="gradeSum" style="font-weight:700"></p>
+</section>
+
+<section class="step" id="s1"><div class="stepno">STEP 1</div><h2>可視化リーディング ― 物語文の5STEP</h2><div class="sub">The eye path</div>
+<p>物語文で点が分かれるのは、英語力ではなく「出来事を点で拾って、線でつないでいるか」です。目の動かし方を5つに固定します。</p>
+<div class="card flow"><div class="fstep"><div class="num">1</div><div><h4>リード文・タイトル・冒頭で「物語の入口」をつくる</h4><p>リード文で何のために読むのかを確認し、タイトルを見て、最初の段落を丁寧に読む。誰が・いつどこで・どんな状況で・最初に何が起きたか。タイトルだけで展開や結末を決めつけない。</p><div class="goal">鉄則：読む前に、物語の現在地をつかむ。まだ分からないことは決めつけない。</div></div></div><div class="fstep"><div class="num">2</div><div><h4>アウトライン・設問を先読みして「追うもの」を決める</h4><p>本文の前に、アウトラインやまとめ表を見る。人物の情報・出来事の順番・物語全体の意味。並べ替えは選択肢も先に見て「1つの選択肢＝1つの出来事」で持つ。ただし選択肢を事実だと決めつけない。</p><div class="goal">鉄則：先読みで答えを決めない。本文で追うべき情報を決める。</div></div></div><div class="fstep"><div class="num">3</div><div><h4>本文を上から読みながら「出来事」を点として拾う</h4><p>新しい人物が登場した／場面や時間が変わった／問題が起きた／誰かが何かをした／何かに気づいた／気持ちが変わった。物語が動く瞬間に「今、誰に何が起きた？」を一言にする。回想が始まる「時間の切り替わり」を見逃さない。</p><div class="goal">鉄則：文章を読みながら、出来事を点として拾う。時間の切り替わりも見逃さない。</div></div></div><div class="fstep"><div class="num">4</div><div><h4>人物の言動と出来事をつなぎ「なぜ？」「どう変わった？」まで考える</h4><p>なぜその行動をした？ その行動で何が起きた？ その人物について何が分かった？ 最初と最後で何が変わった？ 過去の経験が現在にどうつながった？ ただし、人物の気持ちや性格は本文に書かれた言動を根拠に判断する。勝手な想像はしない。</p><div class="goal">鉄則：出来事を点で終わらせない。人物・原因・結果・変化を、本文の根拠で線につなぐ。</div></div></div><div class="fstep"><div class="num">5</div><div><h4>アウトラインに戻り、根拠をそろえて正解を確定する</h4><p>「なんとなく物語に合っていそう」では選ばない。本文のどこが根拠か、他の選択肢はなぜ違うか。不正解は4つの基準で切る：本文と矛盾／本文にないことを足している／人物・時間・出来事がズレている／問われていることとズレている。</p><div class="goal">鉄則：答えを想像するな。必要な根拠をそろえて、正解を確定しろ。</div></div></div></div>
+<div class="note"><b class="l">この手順の急所</b>STEP 3 と STEP 4 の違いです。出来事を拾う（点）だけでは、並べ替えは解けても「人物像」や「物語が伝えること」は解けない。点を「なぜ → だから → どう変わった」の線にした瞬間に、問3・問4が本文の根拠で決まるようになります。</div>
+</section>
+
+<section class="step" id="s2"><div class="stepno">STEP 2</div><h2>物語の入口をつくり、追うものを決める</h2><div class="sub">Entrance &amp; antennas</div>
+<h3>STEP 1｜どんな物語？ 現在地はどこ？</h3>
+<div class="card"><p><b>何のために読む？</b> → 友人 Harry がコンテスト用に書いた物語を読んで、感想（フィードバック）を書く。</p><p><b>タイトル</b> → Bluebird & Melody: Real Heroes。「2人のヒーローの話」で、Real が付いている。「本物の」ヒーローとは何か、が軸になりそう、とだけ。</p><p><b>最初の段落</b> → 語り手は Bluebird。「以前は名ばかりのヒーローだったが、今は名に値する」。これから自分の話をする。</p></div>
+<div class="note"><b class="l">頭の中ではこうなる</b>「Bluebird が、偽物のヒーローだった過去から、本物になるまでを語る物語だな。」冒頭が「今」で、このあと過去に戻る。しかも Before … but now という対比が、問1の「成長の段階」をそのまま予告している。</div>
+<h3>STEP 2｜アウトラインと設問から、追うものを決める</h3>
+<div class="card"><p>今回のアウトラインは「Harry への感想メール」の形。空欄は4種類。<b>24〜27</b>：Bluebird の成長の段階（並べ替え）。<b>28</b>：Melody の超能力の組み合わせ。<b>29</b>：母の言葉 We won’t let that happen to you の意味。<b>30・31</b>：本文に書かれて「いない」詳細。</p><p>この時点で、Bluebird の「立場の変化」、Melody が「何をしたか」、母の言葉の「前後の文脈」、そして「何が書かれていないか」を追えばいいと分かる。問4は逆向きの設問なので、読みながら「書いてあること」を押さえておくほど解きやすい。</p></div>
+<table class="ant"><tr><th>設問</th><th>原文</th><th>自分の言葉に直すと</th><th>何を追う</th></tr><tr><td class="qn">問1</td><td class="en" style="font-size:13px">put them in the order they occurred（Bluebird’s personal growth）</td><td>Bluebird は、どんな段階を経て変わった？</td><td>普通の少年 → パークレンジャー → 演者 → 本物のヒーロー。本文は 現在 → 事件 → 生い立ち → 現在 の順なので、人生の順に置き直す。</td></tr><tr><td class="qn">問2</td><td class="en" style="font-size:13px">the correct combination of Melody’s superpowers</td><td>Melody の能力は何と何？</td><td>Melody が実際に「した」こと。teleport、声を再現、心を読む、頭の中に声。</td></tr><tr><td class="qn">問3</td><td class="en" style="font-size:13px">“We won’t let that happen to you.” She meant …</td><td>母の that は何を指す？</td><td>直前の文。姉に何が起きたか。</td></tr><tr><td class="qn">問4</td><td class="en" style="font-size:13px">details … which are not mentioned or suggested</td><td>本文に書かれていないのはどれ？</td><td>5つの選択肢を本文で「ある／ない」判定。あるものを切る。</td></tr></table>
+<div class="note"><b class="l">やってしまいがちなこと</b>問4の not mentioned or suggested を読み飛ばして、「本文に書いてあるもの」を選ぶこと。この設問だけ、普段と逆。suggested（示唆されている）まで含むので、「はっきり書いていないが分かる」ものも「書いてある」側に入る。</div>
+</section>
+
+<section class="step" id="s3"><div class="stepno">STEP 3</div><h2>出来事を点として拾う ― 時間の切り替わりに注意</h2><div class="sub">Pick the dots</div>
+<p>この物語は 現在 → Whiskers 事件 → 生い立ち（回想）→ 事件の後 の構造。◆◆◆◆◆ が3つ。問1の成長の段階は、本文の順ではなく人生の順。赤い丸が選択肢に対応する段階、白い丸が本文に無いものです。</p>
+<div class="card"><div class="tl"><div class="band">現在（本文の冒頭）</div><div class="ev2 "><div class="lab">「以前は名ばかりのヒーロー、今は名に値する」</div><div class="src en">Before, I was only a superhero in name, but now, I deserve my title.</div></div><div class="band">生い立ち（本文では3番目のブロック）</div><div class="ev2 "><div class="lab">ニューヨーク州の州立公園で育つ。両親はパークレンジャー。12歳で能力発見 <span class="tag">⑤ 普通の少年</span></div><div class="src en">I grew up in Allegany State Park … When I was 12, I discovered my superpowers.</div></div><div class="ev2 "><div class="lab">母から「超能力を持つ姉がいる。施設に送られた」と聞く。「君は手放さない」</div><div class="src en">You have an older sister with superpowers … We won’t let that happen to you.</div></div><div class="ev2 "><div class="lab">飛ぶ力と視力でハイカーを救助。Amazing Park Ranger Boy に <span class="tag">④ スーパーレンジャー</span></div><div class="src en">I decided to put my powers to use by rescuing hikers … the Amazing Park Ranger Boy</div></div><div class="ev2 "><div class="lab">Team Hero にスカウトされ、Bluebird に</div><div class="src en">Team Hero eventually recruited me. … I was given the name Bluebird</div></div><div class="band">Team Hero 時代（本文では1〜2番目のブロック）</div><div class="ev2 "><div class="lab">人類のためと言いつつ、くだらないテレビ番組に出演。偽物と気づかず <span class="tag">② 演者</span></div><div class="src en">we starred in silly television shows … I was unaware that I was a fake superhero.</div></div><div class="ev2 "><div class="lab">Whiskers 事件。やらせの救助。Melody が登場し、猫を出す</div><div class="src en">we pretended that we were helping the world … Melody … produced a cat’s meow and Whiskers appeared.</div></div><div class="ev2 "><div class="lab">写真撮影中「自分はバカみたいだ」。頭の中に Melody の声</div><div class="src en">how foolish I looked … a voice popped into my head</div></div><div class="band">事件の後 → 現在</div><div class="ev2 "><div class="lab">Melody が Team Hero を離脱。机にメモ「家族の事業を始めよう」</div><div class="src en">“Melody has decided to leave Team Hero.” … Let’s start a family business.</div></div><div class="ev2 "><div class="lab">Melody ＝ 姉だと分かる。2人で REAL HEROES。両親を誇らしくさせた <span class="tag">① 再びヒーロー</span></div><div class="src en">I understood who Melody was. … Melody and I have made our parents proud.</div></div><div class="ev2 ghost"><div class="lab">プロの作家になった <span class="tag">③</span></div><div class="src en">本文に無い。作家志望なのは物語を書いた Harry（リード文）</div></div></div></div>
+<div class="note"><b class="l">時間の切り替わり</b>本文の順は「現在の宣言 → Team Hero での事件 → 生い立ち → 事件の後」。人生の順は「生い立ち → レンジャー → Team Hero（演者）→ 本物のヒーロー」。生い立ちのブロックが本文の真ん中にあるので、並べ替えでは先頭に戻す。</div>
+</section>
+
+<section class="step" id="s4"><div class="stepno">STEP 4</div><h2>線につなぐ ― なぜ？ どう変わった？</h2><div class="sub">Connect the dots</div>
+<p>出来事を拾ったら、Bluebird の「立場」がどう変わり、何がそれを変えたかを線にします。母の言葉と Melody の正体も、この線の上にあります。</p>
+<div class="card"><h4>Bluebird の成長（問1）</h4><div class="chain"><div class="node"><b>普通の少年</b>パークレンジャーの両親のもとで育つ。12歳で飛べると分かる</div><div class="arr">↓</div><div class="node"><b>スーパーレンジャー</b>能力を人助けに使う。Amazing Park Ranger Boy。ここでは「本物」の働きをしていた</div><div class="arr">↓</div><div class="node"><b>演者（偽物）</b>Team Hero に入り、テレビ番組の「やらせ救助」で有名に。fake superhero と自分で言う</div><div class="arr">↓</div><div class="node"><b>再びヒーロー</b>Whiskers 事件で foolish と自覚 → Melody（姉）と REAL HEROES を始める → I deserve my title。本物に戻った</div></div><h4>母の言葉と Melody の正体（問3・問4）</h4><div class="chain"><div class="node"><b>姉の話</b>超能力を持つ姉は、人類のためにと施設に送られた。母は「手放すべきではなかった」と後悔</div><div class="arr">↓</div><div class="node"><b>母の言葉</b>We won’t let that happen to you ＝ 姉に起きたこと（手放すこと）を、君には起こさせない。「一緒にいる」</div><div class="arr">↓</div><div class="node"><b>Melody</b>正体不明の仮面の新メンバー。Bluebird の頭の中に声を送り、「家族の事業を始めよう」とメモを残す</div><div class="arr">↓</div><div class="node"><b>つなぐと</b>メモの family business で、Melody ＝ 姉だと分かる。Melody が「どうやって能力を知ったか」「なぜ Team Hero に入ったか」は、どこにも書かれていない</div></div></div>
+<div class="note"><b class="l">ここで想像しないこと</b>Melody が姉だと「示唆されている」ことと、Melody の過去が「書かれている」ことは別。関係（姉弟）は family business と our parents で分かる。でも、Melody が能力に気づいた経緯や、Team Hero に入った理由は、本文のどこにも無い。問4は、この「分かること／分からないこと」の線引きがすべて。</div>
+</section>
+
+<section class="step" id="s5"><div class="stepno">STEP 5</div><h2>脳内実況 ― アウトラインに戻り、根拠で確定する</h2><div class="sub">Think-aloud</div>
+<p>ここからは、この手順で実際に解いている人の頭の中をそのまま言葉にします。各問、「根拠をそろえる → 正解の条件を確定 → 選択肢を照合」の順で、不正解は4つの基準（矛盾／本文にない／人物・時間ズレ／設問ズレ）のどれで切ったかを明示します。各問はタップで開閉できます。</p>
+<details class="think" open><summary><span class="pill" style="background:var(--ink)">問1</span>Bluebird の成長の段階<span class="ans">正解 ⑤→④→②→①</span></summary><div class="body">
+<p style="margin-top:12px"><b>5つの説明から4つを選び、起きた順に並べよ。（Bluebird の成長の段階）</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：5つを「立場」として持つ</h5>再びヒーロー／演者／プロの作家／スーパーレンジャー／普通の少年。</div></div><div class="t"><div class="n">2</div><div><h5>本文の順ではなく、人生の順</h5>生い立ちのブロック（I grew up in …）は本文の3番目。でも人生では最初。ここを先頭に戻す。</div></div><div class="t"><div class="n">3</div><div><h5>根拠を順に置く</h5><div class="quote"><span class="en">When I was 12, I discovered my superpowers.（⑤ それまでは普通の少年）→ I became known as the Amazing Park Ranger Boy.（④）→ we starred in silly television shows … I was a fake superhero.（② 演者）→ now, I deserve my title. … Melody and I have made our parents proud.（① 再びヒーロー）</span><span class="ja">普通の少年 → スーパーレンジャー → 演者 → 本物のヒーロー</span></div></div></div><div class="t"><div class="n">4</div><div><h5>③を切る：作家は Harry</h5>professional writer はリード文の Harry（wants to be a professional writer）。Bluebird ではない。リード文の情報を本文の人物にすり替えた罠。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">本文</span><span><span class="en">I grew up in Allegany State Park … When I was 12, I discovered my superpowers.</span><span class="ja">⑤ 普通の少年</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">I became known as the Amazing Park Ranger Boy.</span><span class="ja">④ レンジャー</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">we starred in silly television shows … a fake superhero</span><span class="ja">② 演者</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">now, I deserve my title / have made our parents proud</span><span class="ja">① 再びヒーロー</span></span></div><div class="e"><span class="src">リード文</span><span><span class="en">Harry, wants to be a professional writer</span><span class="ja">③ は Harry</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>4つとも Bluebird の立場</li><li>本文の順ではなく人生の順</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">⑤→④→②→①</span><span class="en">少年 → レンジャー → 演者 → ヒーロー</span><span class="why">冒頭の Before … but now と一致。</span></div><div class="piece "><span class="m">③</span><span class="en">He is a professional writer.</span><span class="why"><span class="cut">人物ズレ</span>作家志望はリード文の Harry。</span></div>
+<p class="center"><button class="btn ghost" data-open="q1">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>成長の段階は、冒頭の Before … but now が予告している。回想ブロックが真ん中にあるので、人生の順に戻す。そしてリード文の人物（Harry）を本文の人物（Bluebird）にすり替えた選択肢が置かれる。誰の話かを確認する。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問2</span>Melody の超能力<span class="ans">正解 ④ B, C, E, F</span></summary><div class="body">
+<p style="margin-top:12px"><b>Melody の超能力の正しい組み合わせを選べ。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：Melody が「実際にした」ことを拾う</h5>A〜F の6つを、Melody の行動で○×判定。Bluebird の能力（飛ぶ・遠くまで見える）と混ぜない。</div></div><div class="t"><div class="n">2</div><div><h5>Melody の行動</h5><div class="quote"><span class="en">She could teleport to any place on earth in less than a second（F）／ “Whiskers thinks that you can’t be trusted.”（C 猫の心を読む）／ Melody, who could recreate any sound, produced a cat’s meow（B）／ a voice popped into my head … I realized it was Melody（E テレパシー）</span><span class="ja">瞬間移動／猫の考えが分かる／どんな音も再現／頭の中に声を送る</span></div></div></div><div class="t"><div class="n">3</div><div><h5>A と D は Bluebird の能力</h5>I could fly and see for miles。飛ぶのも遠くを見るのも Bluebird。Melody ではない。A か D を含む①②③は全部切れる。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">本文</span><span><span class="en">She could teleport to any place on earth</span><span class="ja">F 瞬間移動</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">Whiskers thinks that you can’t be trusted</span><span class="ja">C 心を読む</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">could recreate any sound, produced a cat’s meow</span><span class="ja">B 音を真似る</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">a voice popped into my head … it was Melody</span><span class="ja">E テレパシー</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">I could fly and see for miles</span><span class="ja">A・D は Bluebird</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>Melody が本文で実際に使った能力</li><li>Bluebird の能力を含まない</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">④</span><span class="en">B, C, E, and F</span><span class="why">4つとも Melody の行動に根拠がある。</span></div><div class="piece "><span class="m">①</span><span class="en">A, B, D, and F</span><span class="why"><span class="cut">人物ズレ</span>A と D は Bluebird の能力。</span></div><div class="piece "><span class="m">②</span><span class="en">A, C, D, and E</span><span class="why"><span class="cut">人物ズレ</span>A と D は Bluebird。</span></div><div class="piece "><span class="m">③</span><span class="en">B, C, D, and E</span><span class="why"><span class="cut">人物ズレ</span>D は Bluebird。F（瞬間移動）が抜けている。</span></div>
+<p class="center"><button class="btn ghost" data-open="q2">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>能力の設問は、「誰の能力か」で切れる。Bluebird の能力（飛ぶ・遠くが見える）が、Melody の選択肢に必ず混ぜてある。A か D を見た瞬間に切れるので、実質2択ではなく1択。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問3</span>母の言葉の意味<span class="ans">正解 ③</span></summary><div class="body">
+<p style="margin-top:12px"><b>29 に入る最適なものを選べ。（“We won’t let that happen to you.” ＝ “We are going to ___.”）</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：that が指すものを、直前で確定する</h5>We won’t let that happen to you の that ＝ 直前に語られた「姉に起きたこと」。</div></div><div class="t"><div class="n">2</div><div><h5>直前の文</h5><div class="quote"><span class="en">I learned my parents had been told to send her to a special facility for extraordinary children, because her powers could help humanity. … I know now that we should never have let her go.</span><span class="ja">姉は特別な施設に送られた。「手放すべきではなかったと今は分かる」</span></div>that ＝ 手放すこと（let her go）。</div></div><div class="t"><div class="n">3</div><div><h5>言い換える</h5>「手放さない」＝「一緒にいる」。keep you together with us。</div></div><div class="t"><div class="n">4</div><div><h5>残りを切る</h5>① 能力を制御 → 制御の話は無い。② ヒーローとして雇う → 両親がスカウトする話ではない。④ 犯罪を防ぐ → 全く無い。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">本文</span><span><span class="en">send her to a special facility … we should never have let her go</span><span class="ja">姉を手放したことを後悔</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">We won’t let that happen to you</span><span class="ja">君には同じことをさせない</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>that ＝ 直前の「姉を手放したこと」</li><li>その否定 ＝ 手元に置く</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">③</span><span class="en">keep you together with us</span><span class="why">let her go の反対。一緒にいる。</span></div><div class="piece "><span class="m">①</span><span class="en">control your powers</span><span class="why"><span class="cut">本文にない</span>能力の制御という話は無い。</span></div><div class="piece "><span class="m">②</span><span class="en">hire you as a superhero</span><span class="why"><span class="cut">本文にない</span>両親はレンジャー。雇う立場ではない。</span></div><div class="piece "><span class="m">④</span><span class="en">make sure you don’t commit crimes</span><span class="why"><span class="cut">本文にない</span>犯罪の話は無い。</span></div>
+<p class="center"><button class="btn ghost" data-open="q3">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>that / it / this の指示語を問う設問は、必ず直前の文で確定する。「施設に送る」という表面ではなく、母が後悔している「手放した」という本質を取ると、③に一直線。</div></div></details><details class="think" ><summary><span class="pill" style="background:var(--ink)">問4</span>書かれていない詳細（2つ）<span class="ans">正解 ③ と ④</span></summary><div class="body">
+<p style="margin-top:12px"><b>30・31 に入る最適なものを2つ選べ（順不同）。本文に書かれても示唆されてもいない詳細。</b></p>
+<div class="ta"><div class="t"><div class="n">1</div><div><h5>先読み：普段と逆。「ある」ものを切って、「ない」ものを残す</h5>not mentioned or suggested。はっきり書いていなくても、示唆されていれば「ある」側。</div></div><div class="t"><div class="n">2</div><div><h5>5つを本文で判定する</h5><div class="quote"><span class="en">① childhood → I grew up in Allegany State Park … When I was 12（ある）／ ② view on the reality show → we pretended … how foolish I looked（ある）／ ⑤ relationship → family business / our parents → 姉弟（示唆されている）</span><span class="ja">生い立ち、番組への見方、2人の関係は、本文にある。</span></div></div></div><div class="t"><div class="n">3</div><div><h5>③④は本文のどこにも無い</h5>Melody が「どうやって能力に気づいたか」→ 書かれていない。Melody が「なぜ Team Hero に入ったか」→ 書かれていない。彼女は the newest member としていきなり登場し、理由の説明は一切ない。</div></div><div class="t"><div class="n">4</div><div><h5>⑤の罠</h5>「2人の関係は明記されていない」と思って選びがち。でも family business、our parents で姉弟だと分かる。suggested（示唆）に当たる。</div></div></div>
+<h4>根拠をそろえる</h4><div class="ev3"><div class="e"><span class="src">本文</span><span><span class="en">I grew up in Allegany State Park … When I was 12</span><span class="ja">① はある</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">we pretended that we were helping … how foolish I looked</span><span class="ja">② はある</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">Let’s start a family business … made our parents proud</span><span class="ja">⑤ は示唆されている</span></span></div><div class="e"><span class="src">本文</span><span><span class="en">the newest Team Hero member, Melody, appeared out of nowhere</span><span class="ja">③④ の説明は無い</span></span></div></div>
+<div class="cond"><div class="l">正解の条件（選択肢を見る前に確定）</div><ul><li>本文に書かれていない</li><li>示唆もされていない（suggested まで含めて判定）</li></ul></div>
+<h4>選択肢を照合する</h4><div class="piece ok"><span class="m">③</span><span class="en">how Melody learned she had superpowers</span><span class="why">Melody の能力の経緯は無い。</span></div><div class="piece ok"><span class="m">④</span><span class="en">the reason why Melody joined Team Hero</span><span class="why">入った理由は無い。</span></div><div class="piece "><span class="m">①</span><span class="en">Bluebird’s childhood experiences</span><span class="why"><span class="cut">設問ズレ</span>生い立ちは1段落かけて書いてある。</span></div><div class="piece "><span class="m">②</span><span class="en">Bluebird’s view on the reality show</span><span class="why"><span class="cut">設問ズレ</span>pretended、foolish と自分の見方を述べている。</span></div><div class="piece "><span class="m">⑤</span><span class="en">the relationship between Bluebird and Melody</span><span class="why"><span class="cut">設問ズレ</span>family business / our parents で姉弟と分かる。示唆されている。</span></div>
+<p class="center"><button class="btn ghost" data-open="q4">本文の該当箇所を見る</button></p>
+<div class="learn"><b>この問題の学び</b>「書かれていないもの」を問う設問は、まず「書かれているもの」を根拠付きで切る。suggested の一語があるので、⑤のように「明記はないが分かる」ものは「ある」側。物語の仕掛け（Melody ＝ 姉）が分かっているかを、逆向きに聞いている。</div></div></details>
+</section>
+
+<section class="step" id="s6"><div class="stepno">STEP 6</div><h2>全訳 ― 時間の流れを確認しながら</h2><div class="sub">Full translation</div>
+<p>色の下線は各設問の根拠箇所です。</p>
+<div class="legend"><span class="l1">問1</span><span class="l2">問2</span><span class="l3">問3</span><span class="l4">問4</span></div>
+<p class="center"><button class="btn ghost" id="hideEn">英文を隠して和訳だけ読む</button></p>
+<div class="tr"><div class="lab">リード文</div><p class="en">Your friend, Harry, wants to be a professional writer. He has written a story about two new heroes for a writing contest. You read it and then give him feedback.</p><p class="ja">友人のハリーはプロの作家になりたがっている。彼は作文コンテストのために、2人の新しいヒーローの物語を書いた。あなたはそれを読み、感想を伝える。</p></div><div class="tr"><div class="lab">現在｜冒頭</div><p class="en">Everyone knows me as Bluebird, the world-famous superhero. Before, I was only a superhero in name, but now, I deserve my title. Let me tell you my story. I served as one of six members of the incredibly popular superhero group, Team Hero. Our slogan was “Heroes for Humanity!” Rather than serving humanity, though, we starred in silly television shows. Being so caught up in my own fame, I was unaware that I was a fake superhero.</p><p class="ja">誰もが私を、世界的に有名なスーパーヒーロー、ブルーバードとして知っている。以前の私は名ばかりのヒーローだったが、今は、その名に値する。<span class="qm q1">問1</span>私の話をしよう。私は大人気のヒーロー集団チーム・ヒーローの6人のメンバーの1人だった。スローガンは「人類のためのヒーロー！」。しかし人類に尽くすどころか、私たちはくだらないテレビ番組に出演していた。自分の名声に夢中で、自分が偽物のヒーローだと気づいていなかった。<span class="qm q1">問1</span></p></div><div class="tr"><div class="lab">Whiskers 事件</div><p class="en">One day, we were filming The Lives of Heroes, a reality show about our everyday good deeds. The reality, however, was that we were actors; we pretended that we were helping the world. In one episode, I was supposed to rescue a cat that had wandered into a street drain. I was flying through the air, when I heard a girl crying. In an instant, I flew down to her. In tears, she told me that her cat, Whiskers, had gotten into the drain. The truth was, a member of the television crew was waiting in the underground drain with the cat. “Have no fear! I’ll save Whiskers!” I said, as I threw open the cover of the drain and went underground. To my surprise, the crew member told me that she had lost Whiskers and asked me to find the cat. I walked around calling for Whiskers but he did not come. Suddenly, the newest Team Hero member, Melody, appeared out of nowhere. Melody was mysterious; she wore a mask around her eyes and her real identity was unknown. She could teleport to any place on earth in less than a second, so her unexpected appearances were always a surprise. She said, “Whiskers thinks that you can’t be trusted. I’ll try to convince him to come out.” Melody, who could recreate any sound, produced a cat’s meow and Whiskers appeared. After picking up the cat, I returned to the street and was cheered by onlookers. When I was posing for a photo with Whiskers and the girl, I was thinking about how foolish I looked. Suddenly, a voice popped into my head, “You do look foolish trying to be a celebrity.” I realized it was Melody, who had already vanished.</p><p class="ja">ある日、私たちは日々の善行を追うリアリティ番組『ヒーローたちの生活』を撮影していた。しかし実態は、私たちは俳優で、世界を助けるふりをしていた。<span class="qm q4">問4</span>ある回で、私は側溝に迷い込んだ猫を救助することになっていた。空を飛んでいると、少女の泣き声が聞こえた。すぐに降りた。彼女は涙ながらに、猫のウィスカーズが側溝に入ってしまったと言った。実は、テレビのスタッフが地下の側溝で猫と一緒に待っていた。「心配ない！ ウィスカーズは私が救う！」と言って、側溝の蓋を開けて地下に入った。驚いたことに、スタッフは猫を見失ったので探してくれと言った。名前を呼んで歩き回ったが、出てこなかった。突然、チーム・ヒーローの最新メンバー、メロディがどこからともなく現れた。メロディは謎めいていて、目の周りに仮面をつけ、正体は不明だった。地球上のどこへでも1秒かからずに瞬間移動できるので、彼女の予期せぬ登場はいつも驚きだった。<span class="qm q2">問2</span>彼女は言った。「ウィスカーズは、あなたは信用できないと思ってる。私が出てくるよう説得してみる」<span class="qm q2">問2</span>どんな音でも再現できるメロディが猫の鳴き声を出すと、ウィスカーズが現れた。<span class="qm q2">問2</span>猫を抱えて通りに戻ると、見物人に歓声を浴びた。ウィスカーズと少女と写真を撮っているとき、自分がどれだけバカみたいに見えるかを考えていた。<span class="qm q4">問4</span>突然、頭の中に声が響いた。「セレブになろうとして、本当にバカみたいよ」。それがメロディだと分かった。彼女はもう消えていた。<span class="qm q2">問2</span></p></div><div class="tr"><div class="lab">生い立ち（回想）</div><p class="en">I grew up in Allegany State Park in New York State. My parents were both park rangers; they patrolled the park and helped hikers in trouble. When I was 12, I discovered my superpowers. I was climbing a tree when a branch broke. Instead of falling, I floated. When I told my parents, my mother only said, “So, you are the flyer in the family.” She then said something shocking, “You have an older sister with superpowers.” I learned my parents had been told to send her to a special facility for extraordinary children, because her powers could help humanity. “Someday, when the time is right, you’ll meet her. I know now that we should never have let her go. We won’t let that happen to you,” said my mother. I decided to put my powers to use by rescuing hikers. I could fly and see for miles; I could locate or aid a troubled hiker faster than any park ranger. I became known as the Amazing Park Ranger Boy. Because of my achievements, Team Hero eventually recruited me. Upon joining, I was given the name Bluebird and told that I would be doing bigger and better things.</p><p class="ja">私はニューヨーク州のアレガニー州立公園で育った。両親はともにパークレンジャーで、公園を巡回し、困ったハイカーを助けていた。12歳のとき、自分の超能力に気づいた。<span class="qm q1">問1</span>木に登っていて枝が折れたが、落ちる代わりに浮いたのだ。両親に話すと、母は「じゃあ、あなたが家族の中の飛ぶ人ね」とだけ言った。それから衝撃的なことを言った。「あなたには超能力を持つお姉さんがいるの」。両親は、姉の力が人類の役に立つからと、特別な子どものための施設に送るよう言われたのだという。「いつか、時が来たら会えるわ。今なら分かる。手放すべきじゃなかった。あなたには同じことはさせない」と母は言った。<span class="qm q3">問3</span>私は力をハイカーの救助に使うことにした。飛べて、何マイルも先が見えた。どのレンジャーよりも早く、困ったハイカーを見つけて助けられた。「驚異のパークレンジャー少年」として知られるようになった。その実績で、チーム・ヒーローが私をスカウトした。<span class="qm q1">問1</span>加入時にブルーバードという名を与えられ、もっと大きなことをすることになると言われた。</p></div><div class="tr"><div class="lab">事件の後 → 現在</div><p class="en">After the Whiskers incident, I flew back home. My phone buzzed with a notification. It said, “Melody has decided to leave Team Hero.” In my home office, I heard someone moving around. When I opened the door, I briefly saw a person’s shape before it disappeared. On my desk was a note: [Bluebird, Let’s start a family business. Join me as a co-founder of REAL HEROES.] After reading the note, I understood who Melody was. Since then, working together, Melody and I have made our parents proud.</p><p class="ja">ウィスカーズ事件の後、私は家に飛んで帰った。電話が通知で震えた。「メロディがチーム・ヒーローを離れることを決めました」。自宅の書斎で、誰かが動く音がした。ドアを開けると、人影が一瞬見えて消えた。机の上にメモがあった。［ブルーバードへ。家族の事業を始めよう。REAL HEROES の共同創業者として加わって。］メモを読んで、メロディが誰なのか分かった。それ以来、メロディと私は一緒に働き、両親を誇らしくさせている。<span class="qm q4">問4</span></p></div>
+</section>
+
+<section class="step" id="s7"><div class="stepno">STEP 7</div><h2>語句 ― 人物と出来事を決める語を優先して覚える</h2><div class="sub">Vocabulary</div>
+<p>第6問は、本文の行動が選択肢で「性格」や「教訓」に言い換えられます。ペアで覚えてください。</p>
+<h4>今回の最重要ペア</h4><div class="vocab"><div class="v pair"><span class="w">only a superhero in name ／ fake ／ performer</span><span>名ばかり・偽物 → 演者（問1）</span></div><div class="v pair"><span class="w">I deserve my title ／ a hero again</span><span>名に値する → 再びヒーロー（問1）</span></div><div class="v pair"><span class="w">Amazing Park Ranger Boy ／ super park ranger</span><span>（問1）</span></div><div class="v pair"><span class="w">teleport ／ transport herself instantly</span><span>瞬間移動（問2）</span></div><div class="v pair"><span class="w">recreate any sound ／ imitate sounds perfectly</span><span>音を再現 → 完璧に真似る（問2）</span></div><div class="v pair"><span class="w">Whiskers thinks … ／ read the minds of animals</span><span>猫の考えが分かる → 心を読む（問2）</span></div><div class="v pair"><span class="w">a voice popped into my head ／ telepathy</span><span>頭の中に声 → テレパシー（問2）</span></div><div class="v pair"><span class="w">let her go ／ keep you together with us</span><span>手放す ↔ 一緒にいる（問3）</span></div><div class="v pair"><span class="w">family business ／ our parents ／ the relationship（suggested）</span><span>家族の事業 → 姉弟だと示唆（問4）</span></div></div>
+<h4>本文・設問</h4><div class="vocab"><div class="v"><span class="w">deserve</span><span class="pos">動</span><span>〜に値する</span></div><div class="v"><span class="w">serve</span><span class="pos">動</span><span>仕える、務める</span></div><div class="v"><span class="w">humanity</span><span class="pos">名</span><span>人類</span></div><div class="v"><span class="w">star in</span><span class="pos">熟</span><span>〜に主演する</span></div><div class="v"><span class="w">be caught up in</span><span class="pos">熟</span><span>〜に夢中になる</span></div><div class="v"><span class="w">fame</span><span class="pos">名</span><span>名声</span></div><div class="v"><span class="w">unaware</span><span class="pos">形</span><span>気づいていない</span></div><div class="v"><span class="w">good deed</span><span class="pos">名</span><span>善行</span></div><div class="v"><span class="w">pretend</span><span class="pos">動</span><span>ふりをする</span></div><div class="v"><span class="w">drain</span><span class="pos">名</span><span>側溝、排水溝</span></div><div class="v"><span class="w">crew</span><span class="pos">名</span><span>スタッフ</span></div><div class="v"><span class="w">identity</span><span class="pos">名</span><span>正体</span></div><div class="v"><span class="w">teleport</span><span class="pos">動</span><span>瞬間移動する</span></div><div class="v"><span class="w">convince</span><span class="pos">動</span><span>説得する</span></div><div class="v"><span class="w">recreate</span><span class="pos">動</span><span>再現する</span></div><div class="v"><span class="w">onlooker</span><span class="pos">名</span><span>見物人</span></div><div class="v"><span class="w">pop into one’s head</span><span class="pos">熟</span><span>頭にふと浮かぶ</span></div><div class="v"><span class="w">celebrity</span><span class="pos">名</span><span>有名人</span></div><div class="v"><span class="w">vanish</span><span class="pos">動</span><span>消える</span></div><div class="v"><span class="w">patrol</span><span class="pos">動</span><span>巡回する</span></div><div class="v"><span class="w">float</span><span class="pos">動</span><span>浮く</span></div><div class="v"><span class="w">facility</span><span class="pos">名</span><span>施設</span></div><div class="v"><span class="w">extraordinary</span><span class="pos">形</span><span>並外れた</span></div><div class="v"><span class="w">locate</span><span class="pos">動</span><span>見つける</span></div><div class="v"><span class="w">achievement</span><span class="pos">名</span><span>実績</span></div><div class="v"><span class="w">recruit</span><span class="pos">動</span><span>スカウトする</span></div><div class="v"><span class="w">buzz</span><span class="pos">動</span><span>振動する</span></div><div class="v"><span class="w">co-founder</span><span class="pos">名</span><span>共同創業者</span></div><div class="v"><span class="w">altitude</span><span class="pos">名</span><span>高度</span></div><div class="v"><span class="w">telepathy</span><span class="pos">名</span><span>テレパシー</span></div><div class="v"><span class="w">commit a crime</span><span class="pos">熟</span><span>罪を犯す</span></div></div>
+</section>
+
+<section class="step" id="s8"><div class="stepno">STEP 8</div><h2>持ち帰る3原則 と 自己点検</h2><div class="sub">Take-aways</div>
+<div class="card"><div class="weapon"><div class="num">原則 1</div><div><h4 style="margin:0 0 4px">アウトラインを先に確認して、読む目的を明確にする。</h4><p style="margin:0">何を探すべきかを決めてから本文に入る。</p></div></div><div class="weapon"><div class="num">原則 2</div><div><h4 style="margin:0 0 4px">出来事を点として拾い、時間・人物・因果関係で線につなぐ。</h4><p style="margin:0">個々の出来事だけでなく、物語全体の流れを理解する。</p></div></div><div class="weapon"><div class="num">原則 3</div><div><h4 style="margin:0 0 4px">人物や物語の意味は、必ず本文の根拠で判断する。</h4><p style="margin:0">自分の予想や印象だけで答えを決めない。</p></div></div></div>
+<div class="note"><b class="l">第6問の本質</b>物語は、英文をただ上から読んでいくものではない。誰が登場し、何が起きて、その出来事が次にどうつながり、人物にどんな変化が生まれたのか。読む前に追うものを決める。読みながら出来事を点として拾う。読んだ内容を時間と因果関係で線につなぐ。最後に根拠をそろえて答えを確定する。</div>
+<p><b>自己点検</b>：STEP 0 で解いたときの自分を思い出して、できていたものにチェックを入れてください。チェックはこの端末に保存されます。</p>
+<ul class="chk"><li><input type="checkbox"><span>本文を読む前に、リード文・タイトル・最初の段落から「誰が・どんな状況か」を一言で言えた</span></li><li><input type="checkbox"><span>タイトルだけで展開や結末を決めつけずに本文に入った</span></li><li><input type="checkbox"><span>アウトライン（まとめ表）と設問を先読みして、「人物・出来事・意味」のどれを追うかを決めてから読んだ</span></li><li><input type="checkbox"><span>並べ替えの選択肢を「1つの選択肢＝1つの出来事」として短く持ってから本文に入った</span></li><li><input type="checkbox"><span>本文を読みながら「今、誰に何が起きた？」と出来事の形で残していった</span></li><li><input type="checkbox"><span>回想や場面転換（◆◆◆◆◆ や時間表現）で「今はいつの話か」を切り替えられた</span></li><li><input type="checkbox"><span>出来事を「なぜ → だから → どう変わった」の線でつなげた</span></li><li><input type="checkbox"><span>人物の性格や気持ちを、印象ではなく本文に書かれた言動を根拠に判断した</span></li><li><input type="checkbox"><span>本文で確認できることと、自分が想像したこと（その後どうなったか等）を区別できた</span></li><li><input type="checkbox"><span>不正解の選択肢を「矛盾／本文にない／人物・時間ズレ／設問ズレ」のどれで切ったか説明できる</span></li><li><input type="checkbox"><span>12分以内に解き終えた（超過した場合は、どの設問で時間を使ったかを言える）</span></li><li><input type="checkbox"><span>問1で、生い立ちのブロックを人生の先頭に戻して並べた</span></li><li><input type="checkbox"><span>問1で、③「作家」をリード文の Harry の話だと見抜いて切れた</span></li><li><input type="checkbox"><span>問2で、A・D（飛ぶ・遠くが見える）を Bluebird の能力だと判断して切れた</span></li><li><input type="checkbox"><span>問3で、that ＝ 直前の let her go（手放した）だと確定してから選んだ</span></li><li><input type="checkbox"><span>問4で、⑤「2人の関係」を family business / our parents から「示唆されている」と判定して切れた</span></li></ul>
+<div class="score" id="chkScore">0 / 16</div>
+<div class="card soft"><b>次に向けて</b><p>11個以上なら手順は身についています。次は同じ手順を「初見の第6問」で再現できるかを試してください。10個以下なら、チェックが付かなかった項目だけを意識して、この問題をもう一度12分で解き直してください。測っているのは正解ではなく、<b>出来事を点で拾って線でつなぐ動作</b>です。</p>
+<p class="center"><button class="btn ghost" id="reset">解答・チェックをリセットしてもう一度解く</button></p></div>
+</section>
+<footer>出典：2025年度 共通テスト本試験 第6問 英語（リーディング）第6問<br>学部別・逆転合格設計塾 THINKING ― 受験は根性じゃなく、設計。</footer>
+</main>
+<div class="bbar"><div class="in"><button class="btn ghost" id="openSheet">本文を開く</button><a class="btn" href="thinking_kyotsu_q6_2026_honshi_the_onigiri_shop.html">次へ</a></div></div>
+<div class="overlay" id="ov"></div>
+<div class="sheet" id="sheet"><div class="head"><b>本文 ― Bluebird &amp; Melody: Real Heroes</b><div class="filters"><button data-f="none">なし</button><button data-f="all" class="on">全部</button><button class="f1" data-f="q1">問1</button><button class="f2" data-f="q2">問2</button><button class="f3" data-f="q3">問3</button><button class="f4" data-f="q4">問4</button></div><button class="close" id="closeSheet">×</button></div>
+<div class="scroll"><div class="passage show-all" id="sheetPassage"><p class="en lead-en">Your friend, Harry, wants to be a professional writer. He has written a story about two new heroes for a writing contest. You read it and then give him feedback.</p><div class="ttl">Bluebird &amp; Melody: Real Heroes</div><div class="tiny center" style="margin-top:-8px;margin-bottom:10px">By Harry Okazaki</div><p class="en"><mark class="q1">Everyone knows me as Bluebird, the world-famous superhero. Before, I was only a superhero in name, but now, I deserve my title.</mark> Let me tell you my story.</p><p class="en"><mark class="q1">I served as one of six members of the incredibly popular superhero group, Team Hero. Our slogan was “Heroes for Humanity!” Rather than serving humanity, though, we starred in silly television shows. Being so caught up in my own fame, I was unaware that I was a fake superhero.</mark></p><div class="sep">◆◆◆◆◆</div><p class="en">One day, we were filming The Lives of Heroes, a reality show about our everyday good deeds. <mark class="q4">The reality, however, was that we were actors; we pretended that we were helping the world.</mark> In one episode, I was supposed to rescue a cat that had wandered into a street drain. I was flying through the air, when I heard a girl crying. In an instant, I flew down to her. In tears, she told me that her cat, Whiskers, had gotten into the drain. The truth was, a member of the television crew was waiting in the underground drain with the cat.</p><p class="en">“Have no fear! I’ll save Whiskers!” I said, as I threw open the cover of the drain and went underground. To my surprise, the crew member told me that she had lost Whiskers and asked me to find the cat. I walked around calling for Whiskers but he did not come.</p><p class="en">Suddenly, the newest Team Hero member, Melody, appeared out of nowhere. Melody was mysterious; she wore a mask around her eyes and her real identity was unknown. <mark class="q2">She could teleport to any place on earth in less than a second</mark>, so her unexpected appearances were always a surprise. She said, <mark class="q2">“Whiskers thinks that you can’t be trusted. I’ll try to convince him to come out.”</mark> <mark class="q2">Melody, who could recreate any sound, produced a cat’s meow and Whiskers appeared.</mark></p><p class="en">After picking up the cat, I returned to the street and was cheered by onlookers. <mark class="q4">When I was posing for a photo with Whiskers and the girl, I was thinking about how foolish I looked.</mark> Suddenly, <mark class="q2">a voice popped into my head, “You do look foolish trying to be a celebrity.” I realized it was Melody, who had already vanished.</mark></p><div class="sep">◆◆◆◆◆</div><p class="en"><mark class="q1">I grew up in Allegany State Park in New York State. My parents were both park rangers; they patrolled the park and helped hikers in trouble. When I was 12, I discovered my superpowers.</mark> I was climbing a tree when a branch broke. Instead of falling, I floated. When I told my parents, my mother only said, “So, you are the flyer in the family.” She then said something shocking, “You have an older sister with superpowers.” <mark class="q3">I learned my parents had been told to send her to a special facility for extraordinary children, because her powers could help humanity. “Someday, when the time is right, you’ll meet her. I know now that we should never have let her go. We won’t let that happen to you,” said my mother.</mark></p><p class="en"><mark class="q1">I decided to put my powers to use by rescuing hikers. I could fly and see for miles; I could locate or aid a troubled hiker faster than any park ranger. I became known as the Amazing Park Ranger Boy. Because of my achievements, Team Hero eventually recruited me.</mark> Upon joining, I was given the name Bluebird and told that I would be doing bigger and better things.</p><div class="sep">◆◆◆◆◆</div><p class="en">After the Whiskers incident, I flew back home. My phone buzzed with a notification. It said, “Melody has decided to leave Team Hero.” In my home office, I heard someone moving around. When I opened the door, I briefly saw a person’s shape before it disappeared. On my desk was a note:</p><p class="en note-en">Bluebird, Let’s start a family business. Join me as a co-founder of REAL HEROES.</p><p class="en"><mark class="q4">After reading the note, I understood who Melody was. Since then, working together, Melody and I have made our parents proud.</mark></p><div class="outline"><h4>Your email feedback to Harry</h4>
+<p class="en">Hey Harry,<br>I loved your story! I really liked how Bluebird passes through various stages in his personal growth (see below).<br><span class="blank">24</span> → <span class="blank">25</span> → <span class="blank">26</span> → <span class="blank">27</span><br>I found Melody really fascinating with her unique superpowers. She can <span class="blank">28</span>.<br>Also, I was moved when Bluebird’s mother said, “We won’t let that happen to you.” She meant, “We are going to <span class="blank">29</span>.”<br>On the other hand, I think you can still make the story a little better by adding a few details. You could write about <span class="blank">30</span> and <span class="blank">31</span>, which are not mentioned or suggested. These details would give your characters depth and make your story more interesting.<br>Good luck!</p></div></div></div></div>
+<script>const TARGET_SEC=720; const ANS=[{"q": 1, "type": "order", "ans": ["⑤", "④", "②", "①"]}, {"q": 2, "type": "single", "ans": "④"}, {"q": 3, "type": "single", "ans": "③"}, {"q": 4, "type": "multi", "ans": ["③", "④"]}];
+(function(){
+  const KEY = 'thinking_q3_' + document.body.dataset.key;
+  // timer
+  let t = TARGET_SEC, iv=null, running=false, elapsed=0;
+  const big=document.getElementById('tBig'), chip=document.getElementById('tChip'), btn=document.getElementById('tBtn');
+  function fmt(s){ const neg=s<0; s=Math.abs(s); const m=Math.floor(s/60), r=s%60; return (neg?'+':'')+m+':'+String(r).padStart(2,'0'); }
+  function render(){ const left=TARGET_SEC-elapsed; big.textContent=fmt(left); chip.textContent=fmt(left); big.style.color = left<0?'var(--ng)':'inherit'; }
+  render();
+  btn.addEventListener('click',()=>{
+    if(!running){ running=true; btn.textContent='ストップ'; iv=setInterval(()=>{elapsed++; render();},1000); }
+    else { running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // grading
+  document.getElementById('grade').addEventListener('click',()=>{
+    let n=0;
+    ANS.forEach(a=>{
+      const el=document.getElementById('r'+a.q);
+      let ok=false, user='';
+      if(a.type==='single'){
+        const c=document.querySelector('input[name="q'+a.q+'"]:checked'); user=c?c.value:''; ok = user===a.ans;
+      }else if(a.type==='multi'){
+        const c=[...document.querySelectorAll('input[name="q'+a.q+'"]:checked')].map(i=>i.value).sort(); ok = c.join('')===[...a.ans].sort().join('');
+      }else{
+        const sels=[...document.querySelectorAll('select[data-q="'+a.q+'"]')].map(s=>s.value); ok = sels.join('')===a.ans.join('');
+      }
+      if(ok){n++; el.textContent='正解';el.className='result ok';}
+      else{ el.textContent='不正解（正解：'+(Array.isArray(a.ans)?a.ans.join(a.type==='order'?'→':'・'):a.ans)+'）'; el.className='result ng'; }
+    });
+    const s=document.getElementById('gradeSum'); s.textContent= n+' / '+ANS.length+'問正解。正解数より、どの設問で本文に戻る回数が増えたかを覚えておいてください。';
+    if(running){ running=false; btn.textContent='再開'; clearInterval(iv); }
+  });
+  // sheet
+  const sheet=document.getElementById('sheet'), ov=document.getElementById('ov');
+  function openSheet(f){ sheet.classList.add('open'); ov.classList.add('on'); if(f) setFilter(f); }
+  function closeSheet(){ sheet.classList.remove('open'); ov.classList.remove('on'); }
+  document.getElementById('openSheet').addEventListener('click',()=>openSheet());
+  document.getElementById('closeSheet').addEventListener('click',closeSheet);
+  ov.addEventListener('click',closeSheet);
+  const sp=document.getElementById('sheetPassage');
+  function setFilter(f){
+    sp.className='passage show-'+f;
+    document.querySelectorAll('.filters button').forEach(b=>b.classList.toggle('on', b.dataset.f===f));
+  }
+  document.querySelectorAll('.filters button').forEach(b=>b.addEventListener('click',()=>setFilter(b.dataset.f)));
+  document.querySelectorAll('[data-open]').forEach(b=>b.addEventListener('click',()=>openSheet(b.dataset.open)));
+  setFilter('none');
+  // hide english toggle
+  const hb=document.getElementById('hideEn'); if(hb){ hb.addEventListener('click',()=>{ document.body.classList.toggle('hideen'); hb.textContent=document.body.classList.contains('hideen')?'英文も表示する':'英文を隠して和訳だけ読む'; }); }
+  // checklist persistence
+  const boxes=[...document.querySelectorAll('.chk input')];
+  let saved={}; try{ saved=JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){}
+  boxes.forEach((b,i)=>{ b.checked=!!saved[i]; b.addEventListener('change',()=>{ saved[i]=b.checked; try{localStorage.setItem(KEY,JSON.stringify(saved));}catch(e){} upd(); }); });
+  function upd(){ const n=boxes.filter(b=>b.checked).length; document.getElementById('chkScore').textContent=n+' / '+boxes.length; }
+  upd();
+  document.getElementById('reset').addEventListener('click',()=>{
+    boxes.forEach(b=>b.checked=false); saved={}; try{localStorage.removeItem(KEY);}catch(e){} upd();
+    document.querySelectorAll('.answers input').forEach(i=>i.checked=false);
+    document.querySelectorAll('.order select').forEach(s=>s.selectedIndex=0);
+    document.querySelectorAll('.result').forEach(r=>{r.textContent='';r.className='result';});
+    document.getElementById('gradeSum').textContent='';
+    elapsed=0; render(); if(running){running=false;clearInterval(iv);} btn.textContent='スタート';
+    window.scrollTo({top:document.getElementById('s0').offsetTop-70,behavior:'smooth'});
+  });
+})();
+</script>
+</body></html>

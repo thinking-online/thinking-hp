@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;font-size:14px}[hidden]{display:none!important}</style>
+<title>THINKING 赤シート単語帳</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Archivo:wght@600;800&display=swap">
+<style>
+/* Layout: notebook-ruled word list, meaning column covered by a draggable red film */
+:root{
+  --bg:#eef1f4; --paper:#ffffff; --rule:#d7dde4; --ink:#1d2430; --muted:#6b7686;
+  --red-ink:#e0352b; --film:rgba(232,74,66,.93); --film-edge:#c92c22;
+  --blue:#2f5fd0; --ok:#1f9d6a; --warn:#e39a12; --hl:#e3e9f7;
+  --font-en:"Archivo",system-ui,sans-serif;
+  --font-ja:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12151b; --paper:#1b2029; --rule:#2c3340; --ink:#e8ecf2; --muted:#8d97a7;
+  --red-ink:#ff5a4f; --film:rgba(214,58,50,.95); --film-edge:#ff6b60;
+  --blue:#7ea2ff; --ok:#3fcf95; --warn:#f2b441; --hl:#232c3d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12151b; --paper:#1b2029; --rule:#2c3340; --ink:#e8ecf2; --muted:#8d97a7;
+  --red-ink:#ff5a4f; --film:rgba(214,58,50,.95); --film-edge:#ff6b60;
+  --blue:#7ea2ff; --ok:#3fcf95; --warn:#f2b441; --hl:#232c3d; color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-ja);
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  -webkit-tap-highlight-color:transparent}
+.wrap{max-width:520px;margin:0 auto;padding-block:16px 28px;display:flex;flex-direction:column;gap:12px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--font-en);font-weight:800;letter-spacing:.14em;font-size:12px;color:var(--blue)}
+h1{margin:2px 0 0;font-size:20px;font-weight:700;text-wrap:balance}
+.stats{display:flex;gap:8px;font-size:12px;font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--rule)}
+.dot{width:8px;height:8px;border-radius:50%}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);
+  padding:8px 12px;border-radius:10px;cursor:pointer}
+button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.hint{font-size:12px;color:var(--muted);margin:0}
+
+.book{position:relative;background:var(--paper);border:1px solid var(--rule);border-radius:14px;overflow:hidden;
+  box-shadow:0 6px 24px rgba(20,30,50,.08)}
+.row{display:grid;grid-template-columns:44px 1fr 44%;align-items:center;min-height:58px;border-bottom:1px solid var(--rule)}
+.row:last-child{border-bottom:0}
+.row.cur{background:var(--hl)}
+.mark{justify-self:center;width:24px;height:24px;border-radius:50%;border:2px solid var(--rule);background:transparent;padding:0;
+  display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700}
+.mark[data-s="ok"]{background:var(--ok);border-color:var(--ok)}
+.mark[data-s="ng"]{background:var(--warn);border-color:var(--warn)}
+.en{font-family:var(--font-en);font-weight:600;font-size:18px;letter-spacing:.01em;min-width:0;overflow-wrap:anywhere}
+.ja{color:var(--red-ink);font-weight:700;font-size:15px;padding:0 12px 0 14px;border-left:1px solid var(--rule);
+  min-height:58px;display:flex;align-items:center;min-width:0}
+.no{font-family:var(--font-en);font-size:10px;color:var(--muted);display:block;margin-bottom:1px;font-variant-numeric:tabular-nums}
+
+.sheet{position:absolute;right:0;width:44%;bottom:0;background:var(--film);border-top-left-radius:14px;
+  touch-action:none;cursor:grab;box-shadow:-4px -2px 14px rgba(160,20,10,.25);z-index:2;
+  transition:top .18s ease-out}
+.sheet.drag{transition:none;cursor:grabbing}
+.grip{position:absolute;top:-1px;left:0;right:0;height:26px;display:grid;place-items:center}
+.grip::before{content:"";width:42px;height:5px;border-radius:3px;background:rgba(255,255,255,.75)}
+.sheet:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.hidden-done .row.done{display:none}
+@media (prefers-reduced-motion:reduce){.sheet{transition:none}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="brand">THINKING</div>
+      <h1>赤シート単語帳</h1>
+    </div>
+    <div class="stats">
+      <span class="pill"><span class="dot" style="background:var(--ok)"></span>覚えた <b id="cOk">0</b></span>
+      <span class="pill"><span class="dot" style="background:var(--warn)"></span>要復習 <b id="cNg">0</b></span>
+    </div>
+  </header>
+  <div class="tools">
+    <button id="shuffle" type="button">シャッフル</button>
+    <button id="hideDone" type="button" aria-pressed="false">覚えたを隠す</button>
+    <button id="reset" type="button">シートを先頭へ</button>
+  </div>
+  <p class="hint">赤シートを指で下にずらすと、1語ずつ意味が見えます。左の丸をタップで「覚えた → 要復習 → 未チェック」。</p>
+  <div class="book" id="book"></div>
+</div>
+
+<script>
+const WORDS=[
+["compare","比較する"],["replace","置き換える"],["furthermore","さらに"],["profit","利益"],["remain","残る"],
+["organize","整理する"],["emphasize","強調する"],["experiment","実験"],["consume","消費する"],["development","発達・開発"],
+["detect","見つける・検出する"],["extremely","極めて"],["require","必要とする"],["prevent","妨げる・防ぐ"],["establish","設立する"],
+["approach","取り組み方・近づく"],["obtain","手に入れる"],["indicate","示す"],["reduce","減らす"],["available","利用できる"],
+["evidence","証拠"],["assume","仮定する・思い込む"],["recognize","認識する"],["significant","重要な・著しい"],["influence","影響（を与える）"],
+["maintain","維持する・主張する"],["tendency","傾向"],["contribute","貢献する"],["ancient","古代の"],["adequate","十分な・適切な"]
+];
+const KEY="thinking-redsheet-v1";
+let state={};try{state=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}};
+let order=WORDS.map((_,i)=>i);
+const book=document.getElementById("book");
+const sheet=document.createElement("div");
+sheet.className="sheet";sheet.tabIndex=0;sheet.setAttribute("role","slider");
+sheet.setAttribute("aria-label","赤シート（上下キーで1語ずつ動かす）");
+sheet.innerHTML='<div class="grip"></div>';
+let revealed=0; // number of rows uncovered
+
+function render(){
+  book.innerHTML="";
+  order.forEach((i,n)=>{
+    const [en,ja]=WORDS[i];const s=state[en]||"";
+    const r=document.createElement("div");r.className="row"+(s==="ok"?" done":"");
+    r.innerHTML=`<button class="mark" type="button" data-s="${s}" aria-label="${en}の状態">${s==="ok"?"✓":s==="ng"?"!":""}</button>
+      <div class="en"><span class="no">${String(n+1).padStart(3,"0")}</span>${en}</div><div class="ja">${ja}</div>`;
+    r.querySelector(".mark").onclick=()=>{
+      state[en]= s===""?"ok":s==="ok"?"ng":"";
+      if(!state[en])delete state[en];save();render();
+    };
+    book.appendChild(r);
+  });
+  book.appendChild(sheet);counts();place(revealed,false);
+}
+function rows(){return [...book.querySelectorAll(".row")].filter(r=>r.offsetParent!==null)}
+function counts(){
+  const v=Object.values(state);
+  cOk.textContent=v.filter(x=>x==="ok").length;cNg.textContent=v.filter(x=>x==="ng").length;
+}
+function edgeFor(k){const rs=rows();if(!rs.length)return 0;k=Math.max(0,Math.min(k,rs.length));
+  return k===0?0:rs[k-1].offsetTop+rs[k-1].offsetHeight}
+function place(k,anim=true){
+  const rs=rows();revealed=Math.max(0,Math.min(k,rs.length));
+  sheet.classList.toggle("drag",!anim);sheet.style.top=edgeFor(revealed)+"px";
+  rs.forEach((r,i)=>r.classList.toggle("cur",i===revealed-1));
+  sheet.setAttribute("aria-valuenow",revealed);
+}
+// drag
+let startY=0,startTop=0;
+sheet.addEventListener("pointerdown",e=>{
+  sheet.setPointerCapture(e.pointerId);sheet.classList.add("drag");
+  startY=e.clientY;startTop=sheet.offsetTop;
+});
+sheet.addEventListener("pointermove",e=>{
+  if(!sheet.hasPointerCapture(e.pointerId))return;
+  const max=book.offsetHeight;const t=Math.max(0,Math.min(max,startTop+e.clientY-startY));
+  sheet.style.top=t+"px";
+  const rs=rows();let k=0;rs.forEach((r,i)=>{if(t>=r.offsetTop+r.offsetHeight*0.5)k=i+1});
+  rs.forEach((r,i)=>r.classList.toggle("cur",i===k-1));
+});
+sheet.addEventListener("pointerup",e=>{
+  const t=sheet.offsetTop;const rs=rows();let k=0;
+  rs.forEach((r,i)=>{if(t>=r.offsetTop+r.offsetHeight*0.5)k=i+1});
+  sheet.classList.remove("drag");place(k);
+});
+sheet.addEventListener("keydown",e=>{
+  if(e.key==="ArrowDown"){place(revealed+1);e.preventDefault()}
+  if(e.key==="ArrowUp"){place(revealed-1);e.preventDefault()}
+});
+shuffle.onclick=()=>{for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]]}revealed=0;render()};
+hideDone.onclick=()=>{const on=hideDone.getAttribute("aria-pressed")!=="true";
+  hideDone.setAttribute("aria-pressed",on);book.classList.toggle("hidden-done",on);place(0)};
+reset.onclick=()=>place(0);
+window.addEventListener("resize",()=>place(revealed,false));
+revealed=5;render();
+</script>
+</body>
+</html>

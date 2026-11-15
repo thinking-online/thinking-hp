@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>THINKING 歴史一問一答</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700&family=Archivo:wght@600;800&display=swap">
+<style>
+/* Layout: ruled question list, answer column covered by a draggable red film */
+:root{
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#eef1f4; --paper:#ffffff; --rule:#d7dde4; --ink:#1d2430; --muted:#6b7686;
+  --red-ink:#e0352b; --film:rgba(232,74,66,.93);
+  --blue:#2f5fd0; --ok:#1f9d6a; --warn:#e39a12; --hl:#e3e9f7;
+  --font-en:"Archivo",system-ui,sans-serif;
+  --font-ja:"Zen Kaku Gothic New","Hiragino Sans","Noto Sans JP",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#12151b; --paper:#1b2029; --rule:#2c3340; --ink:#e8ecf2; --muted:#8d97a7;
+  --red-ink:#ff5a4f; --film:rgba(214,58,50,.95);
+  --blue:#7ea2ff; --ok:#3fcf95; --warn:#f2b441; --hl:#232c3d; color-scheme:dark}}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font-ja);font-size:14px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  -webkit-tap-highlight-color:transparent}
+[hidden]{display:none!important}
+.wrap{max-width:560px;margin:0 auto;padding-block:16px 28px;display:flex;flex-direction:column;gap:12px}
+header{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.brand{font-family:var(--font-en);font-weight:800;letter-spacing:.14em;font-size:12px;color:var(--blue)}
+h1{margin:2px 0 0;font-size:20px;font-weight:700}
+.stats{display:flex;gap:8px;font-size:12px;font-variant-numeric:tabular-nums}
+.pill{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:999px;background:var(--paper);border:1px solid var(--rule)}
+.dot{width:8px;height:8px;border-radius:50%}
+.tabs{display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border:1px solid var(--rule);border-radius:12px;padding:4px;gap:4px}
+.tabs button{border:0;padding:10px;font-weight:700;font-size:15px}
+.tabs button[aria-selected="true"]{background:var(--blue);color:#fff}
+.tools{display:flex;gap:8px;flex-wrap:wrap}
+button{font:inherit;font-size:13px;border:1px solid var(--rule);background:var(--paper);color:var(--ink);
+  padding:8px 12px;border-radius:10px;cursor:pointer}
+.tools button[aria-pressed="true"]{background:var(--blue);border-color:var(--blue);color:#fff}
+button:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+.hint{font-size:12px;color:var(--muted);margin:0;line-height:1.6}
+
+.book{position:relative;background:var(--paper);border:1px solid var(--rule);border-radius:14px;overflow:hidden;
+  box-shadow:0 6px 24px rgba(20,30,50,.08)}
+.row{display:grid;grid-template-columns:40px 1fr 36%;align-items:stretch;border-bottom:1px solid var(--rule)}
+.row:last-child{border-bottom:0}
+.row.cur{background:var(--hl)}
+.mark{align-self:center;justify-self:center;width:24px;height:24px;border-radius:50%;border:2px solid var(--rule);background:transparent;padding:0;
+  display:grid;place-items:center;color:#fff;font-size:13px;font-weight:700}
+.mark[data-s="ok"]{background:var(--ok);border-color:var(--ok)}
+.mark[data-s="ng"]{background:var(--warn);border-color:var(--warn)}
+.q{font-size:14px;line-height:1.6;padding:12px 10px 12px 0;min-width:0}
+.no{font-family:var(--font-en);font-size:10px;color:var(--muted);display:block;font-variant-numeric:tabular-nums}
+.a{color:var(--red-ink);font-weight:700;font-size:15px;line-height:1.4;padding:10px 10px 10px 12px;border-left:1px solid var(--rule);
+  display:flex;align-items:center;min-width:0;overflow-wrap:anywhere}
+
+.sheet{position:absolute;right:0;width:36%;bottom:0;background:var(--film);border-top-left-radius:14px;
+  touch-action:none;cursor:grab;box-shadow:-4px -2px 14px rgba(160,20,10,.25);z-index:2;transition:top .18s ease-out}
+.sheet.drag{transition:none;cursor:grabbing}
+.grip{position:absolute;top:-1px;left:0;right:0;height:26px;display:grid;place-items:center}
+.grip::before{content:"";width:42px;height:5px;border-radius:3px;background:rgba(255,255,255,.75)}
+.sheet:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.hidden-done .row.done{display:none}
+@media (prefers-reduced-motion:reduce){.sheet{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="brand">THINKING</div>
+      <h1>歴史一問一答</h1>
+    </div>
+    <div class="stats">
+      <span class="pill"><span class="dot" style="background:var(--ok)"></span>覚えた <b id="cOk">0</b></span>
+      <span class="pill"><span class="dot" style="background:var(--warn)"></span>要復習 <b id="cNg">0</b></span>
+    </div>
+  </header>
+  <div class="tabs" role="tablist">
+    <button type="button" role="tab" data-sub="jp" aria-selected="true">日本史</button>
+    <button type="button" role="tab" data-sub="world" aria-selected="false">世界史</button>
+  </div>
+  <div class="tools">
+    <button id="shuffle" type="button">シャッフル</button>
+    <button id="onlyNg" type="button" aria-pressed="false">要復習だけ</button>
+    <button id="hideDone" type="button" aria-pressed="false">覚えたを隠す</button>
+    <button id="reset" type="button">シートを先頭へ</button>
+  </div>
+  <p class="hint">赤シートを指で下にずらすと、1問ずつ答えが見えます。左の丸をタップで「覚えた → 要復習 → 未チェック」。</p>
+  <div class="book" id="book"></div>
+</div>
+
+<script>
+const DATA={
+jp:[
+["645年、中大兄皇子と中臣鎌足が蘇我氏を倒した政変は？","乙巳の変"],
+["701年に制定された律令は？","大宝律令"],
+["743年、開墾した土地の永久私有を認めた法令は？","墾田永年私財法"],
+["794年、平安京に都を移した天皇は？","桓武天皇"],
+["1167年、武士として初めて太政大臣となった人物は？","平清盛"],
+["1221年、後鳥羽上皇が鎌倉幕府を倒そうとして敗れた戦いは？","承久の乱"],
+["1232年、北条泰時が定めた最初の武家法は？","御成敗式目"],
+["1274年と1281年の元軍の襲来をまとめて何という？","元寇（蒙古襲来）"],
+["鎌倉幕府の滅亡後、建武の新政を行った天皇は？","後醍醐天皇"],
+["1467年に始まり、京都を荒廃させた大乱は？","応仁の乱"],
+["1588年、豊臣秀吉が農民から武器を取り上げた法令は？","刀狩令"],
+["1600年、徳川家康が石田三成らに勝利した戦いは？","関ヶ原の戦い"],
+["大名に江戸と領地を1年おきに往復させた制度は？","参勤交代"],
+["享保の改革を行った8代将軍は？","徳川吉宗"],
+["寛政の改革を行った老中は？","松平定信"],
+["1854年、アメリカと結んだ開国の条約は？","日米和親条約"],
+["1867年、徳川慶喜が政権を朝廷に返したことを何という？","大政奉還"],
+["1889年に発布された、天皇が定める形式の憲法は？","大日本帝国憲法"],
+["1925年、満25歳以上の男子に選挙権を与えた法律は？","普通選挙法"],
+["1951年、日本が独立を回復するために結んだ講和条約は？","サンフランシスコ平和条約"]
+],
+world:[
+["前27年、オクタウィアヌスが元老院から与えられた称号は？","アウグストゥス"],
+["313年、コンスタンティヌス帝がキリスト教を公認した勅令は？","ミラノ勅令"],
+["622年、ムハンマドがメッカからメディナへ移ったことを何という？","ヒジュラ（聖遷）"],
+["唐の都はどこか？","長安"],
+["1077年、皇帝ハインリヒ4世が教皇に破門の解除を願った事件は？","カノッサの屈辱"],
+["1215年、イギリス貴族がジョン王に認めさせた文書は？","マグナ・カルタ"],
+["1453年、ビザンツ帝国を滅ぼした国は？","オスマン帝国"],
+["1517年、九十五か条の論題を発表して宗教改革を始めた人物は？","ルター"],
+["1588年、スペインの無敵艦隊を破ったときのイギリスの女王は？","エリザベス1世"],
+["1648年、三十年戦争を終わらせた条約は？","ウェストファリア条約"],
+["1688年、イギリスで流血なく国王が交代した革命は？","名誉革命"],
+["1776年、アメリカ13植民地が発表した文書は？","独立宣言"],
+["1789年、フランス国民議会が採択した、人間の自由と平等をうたう宣言は？","人権宣言"],
+["1840年に始まった、イギリスと清の戦争は？","アヘン戦争"],
+["1842年、アヘン戦争の講和として結ばれた条約は？","南京条約"],
+["1861年、ロシアで農奴解放令を出した皇帝は？","アレクサンドル2世"],
+["1871年に成立したドイツ帝国の初代宰相は？","ビスマルク"],
+["1914年、第一次世界大戦のきっかけとなった事件は？","サライェヴォ事件"],
+["1919年、第一次世界大戦の講和条約は？","ヴェルサイユ条約"],
+["1929年、ニューヨーク株式市場の暴落から始まった不況は？","世界恐慌"]
+]};
+const KEY="thinking-ichimon-v1";
+let state={};try{state=JSON.parse(localStorage.getItem(KEY)||"{}")}catch(e){}
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}};
+let sub="jp",order=[],revealed=0,ngOnly=false;
+const book=document.getElementById("book");
+const sheet=document.createElement("div");
+sheet.className="sheet";sheet.tabIndex=0;sheet.setAttribute("role","slider");
+sheet.setAttribute("aria-label","赤シート（上下キーで1問ずつ動かす）");
+sheet.innerHTML='<div class="grip"></div>';
+const id=(i)=>sub+":"+i;
+
+function setSub(s){
+  sub=s;order=DATA[s].map((_,i)=>i);revealed=0;
+  document.querySelectorAll(".tabs button").forEach(b=>b.setAttribute("aria-selected",b.dataset.sub===s));
+  render();
+}
+function render(){
+  book.innerHTML="";
+  const list=order.filter(i=>!ngOnly||state[id(i)]==="ng");
+  if(!list.length){book.innerHTML='<p class="hint" style="padding:24px 16px">要復習の問題はまだありません。丸を2回タップすると要復習になります。</p>';counts();return}
+  list.forEach((i,n)=>{
+    const [q,a]=DATA[sub][i];const s=state[id(i)]||"";
+    const r=document.createElement("div");r.className="row"+(s==="ok"?" done":"");
+    r.innerHTML=`<button class="mark" type="button" data-s="${s}" aria-label="問題${i+1}の状態">${s==="ok"?"✓":s==="ng"?"!":""}</button>
+      <div class="q"><span class="no">Q${String(i+1).padStart(2,"0")}</span>${q}</div><div class="a">${a}</div>`;
+    r.querySelector(".mark").onclick=()=>{
+      const next= s===""?"ok":s==="ok"?"ng":"";
+      if(next)state[id(i)]=next;else delete state[id(i)];save();render();
+    };
+    book.appendChild(r);
+  });
+  book.appendChild(sheet);counts();place(revealed,false);
+}
+function rows(){return [...book.querySelectorAll(".row")].filter(r=>r.offsetParent!==null)}
+function counts(){
+  const v=Object.entries(state).filter(([k])=>k.startsWith(sub+":")).map(([,x])=>x);
+  cOk.textContent=v.filter(x=>x==="ok").length;cNg.textContent=v.filter(x=>x==="ng").length;
+}
+function edgeFor(k){const rs=rows();if(!rs.length)return 0;k=Math.max(0,Math.min(k,rs.length));
+  return k===0?0:rs[k-1].offsetTop+rs[k-1].offsetHeight}
+function place(k,anim=true){
+  const rs=rows();revealed=Math.max(0,Math.min(k,rs.length));
+  sheet.classList.toggle("drag",!anim);sheet.style.top=edgeFor(revealed)+"px";
+  rs.forEach((r,i)=>r.classList.toggle("cur",i===revealed-1));
+  sheet.setAttribute("aria-valuenow",revealed);
+}
+function kAt(t){let k=0;rows().forEach((r,i)=>{if(t>=r.offsetTop+r.offsetHeight*0.5)k=i+1});return k}
+let startY=0,startTop=0;
+sheet.addEventListener("pointerdown",e=>{sheet.setPointerCapture(e.pointerId);sheet.classList.add("drag");startY=e.clientY;startTop=sheet.offsetTop});
+sheet.addEventListener("pointermove",e=>{
+  if(!sheet.hasPointerCapture(e.pointerId))return;
+  const t=Math.max(0,Math.min(book.offsetHeight,startTop+e.clientY-startY));
+  sheet.style.top=t+"px";const k=kAt(t);rows().forEach((r,i)=>r.classList.toggle("cur",i===k-1));
+});
+sheet.addEventListener("pointerup",()=>{sheet.classList.remove("drag");place(kAt(sheet.offsetTop))});
+sheet.addEventListener("keydown",e=>{
+  if(e.key==="ArrowDown"){place(revealed+1);e.preventDefault()}
+  if(e.key==="ArrowUp"){place(revealed-1);e.preventDefault()}
+});
+document.querySelectorAll(".tabs button").forEach(b=>b.onclick=()=>setSub(b.dataset.sub));
+shuffle.onclick=()=>{for(let i=order.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[order[i],order[j]]=[order[j],order[i]]}revealed=0;render()};
+onlyNg.onclick=()=>{ngOnly=!ngOnly;onlyNg.setAttribute("aria-pressed",ngOnly);revealed=0;render()};
+hideDone.onclick=()=>{const on=hideDone.getAttribute("aria-pressed")!=="true";
+  hideDone.setAttribute("aria-pressed",on);book.classList.toggle("hidden-done",on);place(0)};
+reset.onclick=()=>place(0);
+window.addEventListener("resize",()=>place(revealed,false));
+setSub("jp");revealed=3;place(3,false);
+</script>
+</body>
+</html>

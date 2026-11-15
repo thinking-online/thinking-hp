@@ -1,0 +1,158 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>見本 6ページ</title><style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body { font-family:"Noto Sans CJK JP",sans-serif; background:#e9e7e2; color:#111; padding:9mm 9mm 10mm; width:545mm; }
+.sheet { font-size:15pt; font-weight:700; color:#15467E; margin-bottom:2mm; }
+.sub { font-size:10pt; color:#444; margin-bottom:6mm; line-height:1.75; }
+.grid { display:grid; grid-template-columns:254mm 254mm; gap:9mm 12mm; }
+.cap { font-size:10pt; font-weight:700; color:#333; margin:0 0 2mm 1mm; }
+.pages { display:flex; width:254mm; box-shadow:0 2px 10px rgba(0,0,0,.18); }
+.page { width:127mm; height:188mm; background:#fff; position:relative; padding:17mm 15mm 16mm 15mm; }
+.page.left  { border-right:1px solid #ddd; padding-right:18mm; }
+.page.right { padding-left:18mm; }
+.pno { position:absolute; bottom:6.5mm; font-size:7.5pt; color:#888; }
+.page.left .pno { left:15mm; } .page.right .pno { right:15mm; }
+.tag { position:absolute; top:6.5mm; font-size:7.2pt; color:#fff; background:#15467E; padding:.6mm 2.2mm; border-radius:1mm; letter-spacing:.04em; white-space:nowrap; }
+.page.left .tag { left:15mm; } .page.right .tag { right:15mm; }
+
+.v { writing-mode:vertical-rl; width:100%; height:100%; font-family:"Noto Serif CJK JP",serif;
+     font-size:10pt; line-height:1.82; text-align:justify; }
+.v p { text-indent:1em; }
+.tcy { text-combine-upright:all; -webkit-text-combine:horizontal; }
+mark { background:#fff3a6; color:inherit; }
+h3 { font-family:"Noto Sans CJK JP",sans-serif; font-size:10.5pt; font-weight:700; color:#15467E; line-height:1.4; margin:0 .75em 0 .45em; }
+.v > h3:first-child { margin-right:0; }
+
+/* イラストの枠 */
+.ill { border:1px dashed #9a9a9a; background:#f5f4ef; font-family:"Noto Sans CJK JP",sans-serif; writing-mode:horizontal-tb;
+       display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; }
+.il { position:absolute; top:1.6mm; left:2mm; font-size:6.5pt; color:#fff; background:#8a8a8a; padding:.3mm 1.6mm; border-radius:1mm; }
+.id { font-size:8pt; color:#777; line-height:1.7; }
+
+/* 1ページ目 案A */
+.p1 { width:100%; height:100%; display:flex; flex-direction:column; align-items:center; }
+.p1 .num { font-size:27pt; font-weight:900; color:#15467E; line-height:1; border-bottom:2.5pt solid #15467E; padding:0 3mm 1.2mm; letter-spacing:.06em; }
+.lawtag { font-size:7.5pt; color:#15467E; letter-spacing:.12em; margin-top:2mm; }
+.duo { flex:1; display:flex; gap:5mm; width:100%; margin-top:4.5mm; min-height:0; }
+.panel { flex:1; border:1.8pt solid; border-radius:2.5mm; display:flex; flex-direction:column; align-items:center; padding-bottom:3mm; overflow:hidden; }
+.panel.ng { border-color:#9a9a9a; } .panel.ok { border-color:#15467E; }
+.panel .head { width:100%; text-align:center; padding:1.8mm 0 1.6mm; font-size:9pt; font-weight:700; letter-spacing:.12em; }
+.panel.ng .head { background:#e6e6e6; color:#666; } .panel.ok .head { background:#15467E; color:#fff; }
+.head .m { font-size:16pt; display:block; line-height:1.15; letter-spacing:0; }
+.big { flex:1; writing-mode:vertical-rl; font-size:20pt; font-weight:700; line-height:1.55; letter-spacing:.07em; margin:4mm auto 3mm; text-align:center; min-height:0; }
+.panel.ng .big { color:#666; } .panel.ok .big { color:#111; }
+.panel .ill { width:calc(100% - 6mm); height:47mm; flex:none; }
+
+/* 1ページ目 案B */
+.p1b { width:100%; height:100%; position:relative; }
+.lawno { position:absolute; top:0; right:0; text-align:center; color:#15467E; line-height:1; }
+.lawno .lw { display:block; font-size:8pt; letter-spacing:.3em; padding-left:.3em; margin-bottom:1.2mm; }
+.lawno .ln { display:block; font-size:30pt; font-weight:900; border-top:2.5pt solid #15467E; padding-top:1.5mm; }
+.lawtag2 { position:absolute; top:26mm; right:1mm; writing-mode:vertical-rl; font-size:7.5pt; color:#15467E; letter-spacing:.12em; }
+.decl { position:absolute; top:4mm; right:24mm; height:150mm; writing-mode:vertical-rl; }
+.decl .d1 { font-size:15pt; font-weight:700; margin-left:5mm; }
+.decl .d2 { font-size:24.5pt; font-weight:900; letter-spacing:.04em; line-height:1.25; }
+.decl .d3 { font-size:15pt; font-weight:700; margin-right:5mm; padding-top:84mm; }
+.then { position:absolute; left:1mm; bottom:9mm; writing-mode:vertical-rl; font-size:16pt; font-weight:700; color:#15467E; letter-spacing:.06em; }
+.then .bar { display:inline-block; width:1.6pt; height:16mm; background:#15467E; margin-bottom:3mm; }
+.next { position:absolute; left:0; bottom:0; font-size:7.5pt; color:#888; letter-spacing:.08em; }
+
+/* 2ページ目 */
+.q { border:1.4pt solid #15467E; padding:.8em .7em .8em .6em; margin-left:1.1em; }
+.q p { text-indent:0; }
+.ql, .al { font-family:"Noto Sans CJK JP",sans-serif; font-size:19pt; font-weight:900; color:#15467E; line-height:1.2; }
+.qh { font-family:"Noto Sans CJK JP",sans-serif; font-size:11.5pt; font-weight:700; color:#15467E; margin-left:.5em; padding-top:2.4em; line-height:1.3; }
+.ql { float:none; }
+.q .ql { position:absolute; }
+.q { position:relative; }
+.a { position:relative; margin-left:.9em; }
+.a .al { position:absolute; }
+.ah { font-family:"Noto Sans CJK JP",sans-serif; font-size:14pt; font-weight:700; padding-top:2em; line-height:1.3; }
+
+/* 4ページ目 */
+.upper { height:57%; } .lower { height:38%; margin-top:5%; }
+.ill.tall { width:100%; height:100%; }
+.ill.tall .id { font-size:8.5pt; }
+
+/* 5ページ目 */
+.list { font-family:"Noto Sans CJK JP",sans-serif; font-size:9.3pt; line-height:1.7; border-right:2pt solid #15467E; padding-right:.7em; margin:0 .5em 0 .7em; }
+.list p { text-indent:0; }
+
+/* 6ページ目 */
+.hp { writing-mode:horizontal-tb; width:100%; height:100%; display:flex; flex-direction:column; }
+.stt { font-size:13pt; font-weight:700; color:#15467E; border-bottom:2pt solid #15467E; padding-bottom:1.2mm; }
+.stt span { font-size:8pt; color:#777; font-weight:400; }
+.srow { flex:1; display:flex; gap:3.5mm; align-items:stretch; padding:3mm 0; border-bottom:1px solid #dcdcdc; min-height:0; }
+.stx { flex:1; display:flex; flex-direction:column; justify-content:center; }
+.sn { font-size:8pt; font-weight:900; color:#fff; background:#15467E; align-self:flex-start; padding:.3mm 2.2mm; border-radius:1mm; letter-spacing:.08em; }
+.sh { font-size:10.5pt; font-weight:700; line-height:1.45; margin-top:1.8mm; }
+.sb { font-size:8.5pt; color:#444; line-height:1.6; margin-top:1.2mm; }
+.ill.sill { width:45mm; flex:none; }
+.kj { margin-top:3mm; border:1.3pt solid #15467E; color:#15467E; font-size:8.8pt; font-weight:700; line-height:1.6; padding:2mm 2.5mm; }
+.kj span { display:block; font-size:7.5pt; letter-spacing:.06em; }
+
+/* 7ページ目 */
+.mind { width:100%; height:100%; display:flex; flex-direction:column; gap:3.5mm; }
+.mt { font-size:13pt; font-weight:700; color:#15467E; }
+.mt span { font-size:8pt; color:#777; font-weight:400; }
+.mbox { flex:1; border:1px solid #c4c4c4; display:flex; flex-direction:column; min-height:0; }
+.mbox.ok { border:1.5pt solid #15467E; flex:1.25; }
+.mhead { font-size:8.5pt; font-weight:700; padding:1mm 2.5mm; background:#ececec; color:#555; letter-spacing:.08em; }
+.mbox.ok .mhead { background:#15467E; color:#fff; }
+.mbody { flex:1; display:flex; gap:3mm; padding:3mm; min-height:0; }
+.mv { flex:1; height:100%; writing-mode:vertical-rl; font-family:"Noto Serif CJK JP",serif; font-size:9.6pt; line-height:1.75; }
+.mv p { text-indent:0; }
+.ill.mill { width:22mm; flex:none; order:2; }
+.ill.mill .id { font-size:7pt; }
+
+/* 8ページ目 */
+.sum { font-family:"Noto Sans CJK JP",sans-serif; font-size:10.3pt; font-weight:700; line-height:1.75; margin:0 .9em 0 1.1em; border-right:2pt solid #15467E; padding-right:.8em; }
+.sum p { text-indent:0; }
+.todo { font-family:"Noto Sans CJK JP",sans-serif; font-size:9.3pt; line-height:1.65; font-weight:700; background:#f1f1ee; padding:.7em .55em; margin:0 .8em 0 1.2em; }
+.tl { display:inline-block; margin-bottom:.8em; font-size:8pt; color:#15467E; }
+.foot { font-family:"Noto Sans CJK JP",sans-serif; font-size:7.5pt; color:#15467E; letter-spacing:.12em; padding-top:1em; }
+.note { margin-top:8mm; font-size:10pt; line-height:1.9; color:#333; background:#fff; padding:5mm 7mm; }
+.note b { color:#15467E; }
+
+body { width:286mm; }
+.grid { display:block; }
+.spread { margin-bottom:9mm; }
+.job { display:inline-block; background:#15467E; color:#fff; font-size:8.5pt; padding:.5mm 3mm; border-radius:1mm; margin-right:3mm; letter-spacing:.1em; }
+.ill.p1ill { position:absolute; left:0; top:12mm; width:35mm; height:58mm; }
+.ill.p1ill .id { font-size:7.5pt; }
+.then6 { left:13mm; bottom:9mm; }
+.lower .list { margin:0 .4em 0 .5em; }
+.hp6 { writing-mode:horizontal-tb; width:100%; height:100%; display:flex; flex-direction:column; font-family:"Noto Sans CJK JP",sans-serif; }
+.hp6 .mt { margin-bottom:2.5mm; }
+.hb { border:1px solid #c4c4c4; margin-bottom:3mm; }
+.hb.ok { border:1.5pt solid #15467E; }
+.hh { font-size:8.5pt; font-weight:700; padding:.9mm 2.5mm; background:#ececec; color:#555; letter-spacing:.08em; }
+.hb.ok .hh { background:#15467E; color:#fff; }
+.hr { padding:2mm 3mm 2.2mm; font-family:"Noto Serif CJK JP",serif; }
+.say { font-size:9.2pt; line-height:1.6; }
+.act { font-size:8pt; line-height:1.6; color:#777; padding-left:1em; }
+.sm { border-left:2.2pt solid #15467E; padding:.5mm 0 .5mm 3mm; margin:1.5mm 0 3mm; }
+.smh { font-size:9pt; font-weight:700; color:#15467E; margin-bottom:1mm; }
+.sml { font-size:9.6pt; font-weight:700; line-height:1.65; }
+.td { background:#f1f1ee; font-size:9pt; font-weight:700; line-height:1.6; padding:2mm 2.8mm; }
+.td span { display:block; font-size:7.5pt; color:#15467E; letter-spacing:.06em; }
+.ft { margin-top:auto; font-size:7.5pt; color:#15467E; letter-spacing:.12em; }
+</style></head><body>
+<div class="sheet">見本　1項目を「見開き3つ・6ページ」で完結させた形（12番）</div>
+<div class="sub">四六判・縦書きを想定。各見開きは右のページが先です。点線の枠は、イラストが入る場所です。<br>
+見開きごとに役目を1つにしました（つかむ → わかる → やる）。2〜6ページ目の本文は 約1,190字（今の12番は約2,480字）。</div>
+<div class="grid">
+<div class="spread"><div class="cap"><span class="job">つかむ</span>見開き 1　　右＝1ページ目　／　左＝2ページ目</div><div class="pages"><div class="page left" data-p="2"><div class="tag">2ページ目　Q → 答えの始まり</div><div class="v"><div class="q"><div class="ql"><span class="tcy">Q</span></div><div class="qh">こんな時、何が正解？</div><p>歴史のテスト前。教科書を開いて、黙って、じっと見ています。</p><p><span class="tcy">20</span>分経って、教科書を閉じました。何が書いてあったか、言おうとしても、出てきません。</p></div><div class="a"><div class="al"><span class="tcy">A</span></div><div class="ah">目を閉じて、声に出す。</div></div><p>じっと見るのは、真面目な人ほどやります。静かで、集中しているように見えます。本人も、集中しているつもりです。</p><p>でも、やっていることは「入れる」だけです。点になるのは、「思い出して、出す」ほうでした（<span class="tcy">02</span>番）。</p><p>では、思い出す時、体をどう使えばいいのか。使うのは、<mark>目と、口</mark>です。</p><p>本を閉じる。目を閉じる。声に出す。これで、<span class="tcy">1</span>つの動作です。</p><p>自習室や図書館で、時々天井を見ている人がいますよね。あれは、さぼっているのではありません。思い出しています。</p></div><div class="pno">2</div></div><div class="page right" data-p="1"><div class="tag">1ページ目　法則の宣言 ＋ ×の場面のイラスト</div><div class="p1b">
+<div class="lawno"><span class="lw">法則</span><span class="ln">12</span></div>
+<div class="lawtag2">絶対法則 ② 思い出す</div>
+<div class="decl">
+  <div class="d1">頭のいい人は、</div>
+  <div class="d2">「黙って、じっと見つめて覚える」</div>
+  <div class="d3">を、やらない。</div>
+</div>
+<div class="ill p1ill"><span class="il">イラスト</span><span class="id">教科書を、<br>じっと見つめる子<br>（×の場面）</span></div>
+<div class="then then6"><span class="bar"></span>じゃあ、何をする？</div>
+<div class="next">◀ 次のページへ</div>
+</div><div class="pno">1</div></div></div></div>
+<div class="spread"><div class="cap"><span class="job">わかる</span>見開き 2　　右＝3ページ目　／　左＝4ページ目</div><div class="pages"><div class="page left" data-p="4"><div class="tag">4ページ目　上に図、下に説明書き</div><div class="upper"><div class="ill tall"><span class="il">イラスト（図解）</span><span class="id">×　開いたまま、黙って、見つめる<br>→ 答えが、目に入り続ける<br><br>○　閉じて、目も閉じて、声に出す<br>→ 出てこないところで、声が止まる</span></div></div><div class="lower"><div class="v"><h3>図の説明</h3><p>見つめている間は、答えが目に入り続けます。閉じて声に出すと、入っていないところで、声が止まります。</p><h3>英単語なら</h3><div class="list"><p>① <span class="tcy">10</span>個だけ、<span class="tcy">30</span>秒見る</p><p>② 閉じて、声に出す</p><p>③ 出ないものに、印</p><p>④ 印だけ、もう一度</p></div></div></div><div class="pno">4</div></div><div class="page right" data-p="3"><div class="tag">3ページ目　説明（理由と実験）</div><div class="v"><h3>目を閉じると、思い出しやすくなります</h3><p>イギリスのヨーク大学の実験です。映像を見てもらったあと、内容を思い出してもらいます。目を開けたままのグループと、目を閉じたグループ。<mark>目を閉じたほうが、正確に思い出せました。</mark></p><p>目を開けていると、机の上や壁のポスターが、ずっと頭に入ってきます。目を閉じると、それが止まります。そのぶん、頭を、思い出すことに使えます。</p><h3>声に出すと、残りやすくなります</h3><p>カナダのウォータールー大学の実験です。単語を、声に出して読むものと、黙って読むものに分けます。<mark>声に出した単語のほうが、よく覚えていました。</mark></p><p>声に出すと、口が動き、自分の声が耳から入ります。思い出す手がかりが増えます。</p><p>しかも声は、出てこなければ止まります。頭の中で言うのと違って、<mark>ごまかせません。</mark></p></div><div class="pno">3</div></div></div></div>
+<div class="spread"><div class="cap"><span class="job">やる</span>見開き 3　　右＝5ページ目　／　左＝6ページ目</div><div class="pages"><div class="page left" data-p="6"><div class="tag">6ページ目　頭の中（上下）＋ まとめ ＋ 今日やること</div><div class="hp6"><div class="mt">頭の中<span>　教科書を読んだあと</span></div><div class="hb ok"><div class="hh">頭のいい人</div><div class="hr"><div class="say">「読んだ。閉じる」</div><div class="act">（目も閉じる）</div><div class="say">「鎌倉幕府ができて、執権が北条氏になって、……そのあと、何だっけ」</div><div class="act">（声が止まる）</div><div class="say">「止まった。そこだけ見よう」</div><div class="act">（1か所だけ見て、また閉じて言う）</div></div></div><div class="hb ng"><div class="hh">伸びない人</div><div class="hr"><div class="say">「もう1回、よく見ておこう」</div><div class="act">（じっと見る）</div><div class="say">「うん、見覚えがある。大丈夫」</div><div class="act">（閉じたら、出てこない）</div></div></div><div class="sm"><div class="smh">この場面のまとめ</div><div class="sml">見つめている間は、入れているだけ。</div><div class="sml">目を閉じると、思い出しやすくなる。</div><div class="sml">声に出すと、残りやすくなる。ごまかせない。</div></div><div class="td"><span>今日やること</span>今日読んだページを1つ選び、本と目を閉じて、書いてあったことを3つ声に出す。</div><div class="ft">もとにある絶対法則　② 思い出す</div></div><div class="pno">6</div></div><div class="page right" data-p="5"><div class="tag">5ページ目　やり方を、イラストでページいっぱいに</div><div class="hp"><div class="stt">やり方<span>　3つのSTEP</span></div><div class="srow"><div class="stx"><div class="sn">STEP 01</div><div class="sh">読んだら、本を閉じて、顔を上げる</div><div class="sb">答えが目に入らないようにする。</div></div><div class="ill sill"><span class="il">イラスト</span><span class="id">本を閉じて、<br>顔を上げる</span></div></div><div class="srow"><div class="stx"><div class="sn">STEP 02</div><div class="sh">目を閉じて、止まるまで声に出す</div><div class="sb">声を出せない場所では、口だけ動かす。</div></div><div class="ill sill"><span class="il">イラスト</span><span class="id">目を閉じて、<br>声に出す</span></div></div><div class="srow"><div class="stx"><div class="sn">STEP 03</div><div class="sh">止まったところだけ見て、もう一度言う</div><div class="sb">止まった場所が、まだ入っていない場所。</div></div><div class="ill sill"><span class="il">イラスト</span><span class="id">1か所だけ見て、<br>また閉じる</span></div></div><div class="kj"><span>「できた」の基準</span>目を閉じたまま、止まらずに最後まで言えた。次の日にも、言えた。</div></div><div class="pno">5</div></div></div></div>
+</div></body></html>

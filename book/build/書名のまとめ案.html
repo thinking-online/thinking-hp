@@ -1,0 +1,140 @@
+<title>書名のまとめ案</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700;900&display=swap">
+<style>
+/* 配置の考え方：上に表紙を3つ並べる。その下に、同じ並びで「その書名にした時の中身」を置く。縦に読めば1つの方向、横に読めば3つの比較 */
+:root {
+  --bg:#f3f5f8; --surface:#ffffff; --fg:#151a22; --muted:#5d6878; --line:#d5dbe4; --band:#e7ecf3;
+  --accent:#15467e; --accent-soft:#e2ebf7; --on-accent:#ffffff; --care:#a14a08;
+  --paper:#ffffff; --paper-ink:#14171c; --paper-accent:#15467e; --paper-soft:#e4e7ec; --paper-muted:#69737f; --paper-say:#0b6b5b; --paper-say-soft:#dff2ed;
+  --sans:"Noto Sans JP","Noto Sans CJK JP","Hiragino Sans","Yu Gothic",sans-serif;
+  --serif:"Noto Serif JP","Noto Serif CJK JP","Hiragino Mincho ProN","Yu Mincho",serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg:#12161c; --surface:#1a2029; --fg:#e8ecf2; --muted:#9aa6b6; --line:#323c49; --band:#232c38;
+  --accent:#8db8ee; --accent-soft:#1f3350; --on-accent:#0f1620; --care:#f0a65a;
+  --paper:#eceef2; --paper-ink:#14171c; --paper-accent:#15467e; --paper-soft:#d6dae1; --paper-muted:#5d6773; --paper-say:#0b6b5b; --paper-say-soft:#cfe9e2; color-scheme:dark } }
+:root[data-theme="dark"] {
+  --bg:#12161c; --surface:#1a2029; --fg:#e8ecf2; --muted:#9aa6b6; --line:#323c49; --band:#232c38;
+  --accent:#8db8ee; --accent-soft:#1f3350; --on-accent:#0f1620; --care:#f0a65a;
+  --paper:#eceef2; --paper-ink:#14171c; --paper-accent:#15467e; --paper-soft:#d6dae1; --paper-muted:#5d6773; --paper-say:#0b6b5b; --paper-say-soft:#cfe9e2; color-scheme:dark }
+* { box-sizing:border-box; }
+body { background:var(--bg); color:var(--fg); font-family:var(--sans); font-size:15px; line-height:1.75; margin:0; }
+.wrap { max-width:1080px; margin:0 auto; padding-block:26px 56px;
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px)); }
+h1 { font-family:var(--serif); font-weight:900; font-size:clamp(24px,4.2vw,34px); line-height:1.35; margin:0 0 6px; text-wrap:balance; }
+.lede { color:var(--muted); margin:0 0 4px; max-width:46em; }
+h2 { font-family:var(--serif); font-weight:700; font-size:20px; margin:36px 0 4px; padding-top:18px; border-top:1px solid var(--line); }
+.h2sub { color:var(--muted); font-size:14px; margin:0 0 14px; max-width:46em; }
+.dl { font-weight:700; font-size:15px; margin-bottom:8px; display:flex; align-items:center; gap:8px; }
+.dn { font-family:var(--serif); font-weight:900; font-size:24px; color:var(--accent); line-height:1; }
+
+.rowwrap { overflow-x:auto; padding-bottom:6px; }
+.covers { display:grid; grid-template-columns:repeat(3, minmax(190px, 320px)); gap:18px; min-width:606px; }
+figure { margin:0; min-width:0; }
+figcaption { font-size:13.5px; font-weight:700; margin-top:8px; line-height:1.5; }
+.tcy { text-combine-upright:all; -webkit-text-combine:horizontal; }
+
+/* 表紙の見本（四六判）。大きさは cqw（表紙の幅の％）で決める */
+.cv { display:block; aspect-ratio:127/188; max-width:100%; container-type:inline-size; position:relative; background:var(--paper); color:var(--paper-ink);
+      border:1px solid var(--line); overflow:hidden; line-height:1.3; }
+.cv .hook { position:absolute; top:0; left:0; right:0; background:var(--paper-accent); color:#fff; font-weight:700; font-size:5.3cqw; text-align:center; padding:3.2cqw 2cqw; letter-spacing:.02em; }
+.cv .au { position:absolute; left:0; right:0; bottom:7cqw; text-align:center; font-size:4.6cqw; font-weight:700; letter-spacing:.08em; }
+.cv .ttl { position:absolute; left:8cqw; right:8cqw; top:22cqw; bottom:20cqw; display:flex; flex-direction:column; justify-content:center; font-weight:900; }
+.t1 .a { font-size:13cqw; } .t1 .b { font-size:13.6cqw; color:var(--paper-accent); margin-top:3cqw; border-bottom:1.2cqw solid var(--paper-accent); padding-bottom:1.5cqw; align-self:flex-start; }
+.t1 .c { font-size:25cqw; margin-top:3cqw; letter-spacing:.04em; }
+.t2 .a { font-size:16cqw; color:var(--paper-accent); } .t2 .b { font-size:11.6cqw; margin-top:3cqw; }
+.t2 .c { font-size:10.6cqw; margin-top:2cqw; white-space:nowrap; } .t2 .c b { font-size:33cqw; color:var(--paper-accent); line-height:1; margin-right:1cqw; }
+.cv.k3 .ttl { left:0; right:0; top:14cqw; bottom:19cqw; justify-content:flex-start; }
+.t3 .up { flex:1; background:var(--paper-accent); color:#fff; font-size:15.4cqw; display:flex; align-items:center; justify-content:center; }
+.t3 .dn { flex:1; background:var(--paper-soft); color:var(--paper-muted); font-size:15.4cqw; display:flex; align-items:center; justify-content:center; font-family:var(--sans); font-weight:900; line-height:1.3; }
+.t3 .to { position:absolute; left:50%; top:calc(50% - 6cqw); width:13cqw; height:13cqw; margin:-6.5cqw 0 0 -6.5cqw; border-radius:50%; background:var(--paper); color:var(--paper-ink);
+          font-size:7cqw; display:flex; align-items:center; justify-content:center; border:1cqw solid var(--paper-ink); z-index:1; }
+.t3 .sub { text-align:center; font-size:5.6cqw; padding-top:3cqw; letter-spacing:.1em; }
+
+.cols { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(300px,100%), 1fr)); gap:26px 22px; }
+.col { min-width:0; }
+.lab { font-size:12px; font-weight:700; color:var(--muted); letter-spacing:.1em; margin:14px 0 6px; }
+.two { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; }
+.pc { display:block; min-width:0; }
+
+/* 項目の1ページ目 */
+.pg { display:block; aspect-ratio:127/188; max-width:100%; container-type:inline-size; position:relative; background:var(--paper); color:var(--paper-ink);
+      border:1px solid var(--line); overflow:hidden; line-height:1.8; }
+.pg .no { position:absolute; top:9cqw; right:9cqw; text-align:center; color:var(--paper-accent); line-height:1; }
+.pg .no span { display:block; font-size:3.4cqw; letter-spacing:.3em; padding-left:.3em; margin-bottom:1.2cqw; }
+.pg .no b { display:block; font-size:12cqw; font-weight:900; border-top:.9cqw solid var(--paper-accent); padding-top:1.4cqw; }
+.pg .decl { position:absolute; top:12cqw; right:27cqw; height:128cqw; writing-mode:vertical-rl; display:block; }
+.pg .lead { display:block; font-size:5.5cqw; font-weight:700; letter-spacing:.06em; margin-left:3cqw; }
+.pg .kw { display:block; font-weight:900; line-height:1.2; letter-spacing:.03em; text-orientation:upright; }
+.pg .then { position:absolute; left:9cqw; bottom:10cqw; writing-mode:vertical-rl; font-size:6cqw; font-weight:700; color:var(--paper-accent); letter-spacing:.06em; }
+.pg .then i { display:inline-block; width:.6cqw; height:12cqw; background:var(--paper-accent); margin-bottom:2.4cqw; }
+.pg .say { position:absolute; left:8cqw; bottom:9cqw; top:44cqw; writing-mode:vertical-rl; font-size:5.6cqw; font-weight:700; color:var(--paper-say); background:var(--paper-say-soft);
+           padding:4cqw 2.6cqw; border-radius:6cqw; line-height:1.35; text-orientation:upright; display:flex; align-items:flex-start; }
+.pg .say em { font-style:normal; font-size:3.6cqw; letter-spacing:.2em; margin-bottom:3cqw; }
+.pg.duo .num { position:absolute; top:8cqw; left:0; right:0; text-align:center; font-size:12cqw; font-weight:900; color:var(--paper-accent); line-height:1; }
+.pg.duo .pan { position:absolute; left:8cqw; right:8cqw; top:27cqw; bottom:9cqw; display:flex; gap:4cqw; }
+.pg.duo .p { flex:1; border:.7cqw solid; display:flex; flex-direction:column; align-items:center; min-width:0; }
+.pg.duo .p.ok { border-color:var(--paper-accent); } .pg.duo .p.ng { border-color:var(--paper-muted); }
+.pg.duo .hd { width:100%; text-align:center; font-size:3.7cqw; font-weight:700; padding:1.6cqw 0; letter-spacing:.06em; line-height:1.35; }
+.pg.duo .hd b { display:block; font-size:8cqw; line-height:1.1; }
+.pg.duo .ok .hd { background:var(--paper-accent); color:#fff; } .pg.duo .ng .hd { background:var(--paper-soft); color:var(--paper-muted); }
+.pg.duo .wd { writing-mode:vertical-rl; font-weight:900; line-height:1.2; margin-top:5cqw; text-orientation:upright; }
+.pg.duo .ng .wd { color:var(--paper-muted); }
+
+.toc { background:var(--surface); border:1px solid var(--line); padding:4px 12px; }
+.tl { display:flex; gap:10px; align-items:baseline; padding:6px 0; font-size:14px; line-height:1.6; color:var(--muted); }
+.tl + .tl { border-top:1px solid var(--line); }
+.tl > b { color:var(--accent); font-size:13px; font-variant-numeric:tabular-nums; flex:none; }
+.tl span b { color:var(--fg); }
+.xo { display:inline-block; font-weight:700; margin-right:4px; } .xo.o { color:var(--accent); }
+ul { margin:0; padding-left:1.2em; font-size:14px; line-height:1.7; }
+ul.c li::marker { color:var(--care); } ul.g li::marker { color:var(--accent); }
+.foot { margin-top:30px; color:var(--muted); font-size:12.5px; }
+@media print {
+  body { font-size:11px; } .wrap { max-width:none; padding-block:0; }
+  .covers { min-width:0; grid-template-columns:repeat(3, 56mm); } .rowwrap { overflow:visible; }
+  .cols { grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; } .col, figure { break-inside:avoid; } h2 { break-after:avoid; }
+  ul, .tl { font-size:10.5px; }
+}
+
+.best .ttl { top:19cqw; bottom:42cqw; }
+.best .t1 .a { font-size:12.4cqw; } .best .t1 .b { font-size:13.2cqw; } .best .t1 .c { font-size:24cqw; margin-top:2.4cqw; }
+.best .st { font-size:5.5cqw; font-weight:700; margin-top:4cqw; letter-spacing:.02em; color:var(--paper-ink); white-space:nowrap; }
+.best .au { bottom:33.5cqw; }
+.best .obi { position:absolute; left:0; right:0; bottom:0; height:30cqw; background:var(--paper-ink); color:#fff; font-weight:900; font-size:8.4cqw; line-height:1.45;
+             display:flex; align-items:center; justify-content:center; text-align:center; }
+.lay { display:grid; grid-template-columns:minmax(0,330px) minmax(0,1fr); gap:28px; align-items:start; }
+.side { display:grid; gap:20px; min-width:0; }
+.blk { min-width:0; }
+.blk h3 { font-size:15px; margin:0 0 2px; display:flex; gap:8px; align-items:baseline; flex-wrap:wrap; }
+.blk h3 em { font-style:normal; font-size:12px; color:var(--on-accent); background:var(--accent); padding:0 8px; letter-spacing:.06em; }
+.blk p { margin:0 0 8px; color:var(--muted); font-size:13.5px; }
+.p3 { display:grid; grid-template-columns:repeat(3, minmax(0,150px)); gap:10px; }
+.tocb, .fb { background:var(--surface); border:1px solid var(--line); padding:4px 14px; }
+.ti { padding:7px 0; } .ti + .ti { border-top:1px solid var(--line); }
+.ti .tl { padding:0; font-weight:700; color:var(--fg); font-size:15px; }
+.tx, .to { font-size:12.5px; line-height:1.6; padding-left:27px; } .tx { color:var(--muted); } .to { color:var(--accent); }
+.fr { display:grid; grid-template-columns:28px minmax(0,1fr) 18px minmax(0,1fr) minmax(0,1.3fr); gap:0 8px; align-items:baseline; padding:7px 0; font-size:13.5px; }
+.fr + .fr { border-top:1px solid var(--line); }
+.fr b { color:var(--accent); font-variant-numeric:tabular-nums; } .fx { color:var(--muted); } .fr i { font-style:normal; color:var(--muted); }
+.fo { font-weight:700; color:var(--accent); } .fk { color:var(--paper-say); background:var(--paper-say-soft); padding:1px 10px; border-radius:12px; font-weight:700; font-size:12.5px; justify-self:start; }
+@media (max-width:760px) { .lay { grid-template-columns:minmax(0,1fr); } .lay > figure { max-width:300px; }
+  .fr { grid-template-columns:28px minmax(0,1fr); } .fr i { display:none; } .fo, .fk { grid-column:2; } }
+</style>
+<div class="wrap">
+<h1>3つを、置き場所で分ける</h1>
+<p class="lede">やらない系は書名に。パクる系はサブタイトルと帯と付録に。二項対立は目次と本文の形に。</p>
+<div class="lay" style="margin-top:22px">
+  <figure><span class="cv best"><span class="hook">早慶合格・学年1位・試験一発合格！</span><span class="ttl t1"><span class="a">頭のいい人が</span><span class="b">絶対やらない</span><span class="c">勉強法</span><span class="st">パクるだけで伸びる、50の法則</span></span><span class="au">朝倉 徹大（受験の王様）</span><span class="obi">勉強時間は、<br>1分も増やしません。</span></span><figcaption>表紙の見本（デザインは仮）</figcaption></figure>
+  <div class="side">
+    <div class="blk"><h3><em>① やらない</em>書名と、各項目の1ページ目</h3><p>書名と同じ言い方が、50回くり返される。</p>
+      <div class="p3"><span class="pc"><span class="pg"><span class="no"><span>法則</span><b>02</b></span><span class="decl"><span class="lead">頭のいい人が絶対やらない</span><span class="kw" style="font-size:17cqw">「読み返し」</span></span><span class="then"><i></i>じゃあ、何をする？</span></span></span><span class="pc"><span class="pg"><span class="no"><span>法則</span><b>15</b></span><span class="decl"><span class="lead">頭のいい人が絶対やらない</span><span class="kw" style="font-size:13cqw">「わかったつもり」</span></span><span class="then"><i></i>じゃあ、何をする？</span></span></span><span class="pc"><span class="pg"><span class="no"><span>法則</span><b>39</b></span><span class="decl"><span class="lead">頭のいい人が絶対やらない</span><span class="kw" style="font-size:17cqw">「徹夜」</span></span><span class="then"><i></i>じゃあ、何をする？</span></span></span></div></div>
+    <div class="blk"><h3><em>③ 二項対立</em>目次と本文</h3><p>目次は、言葉の下に×と○の2行。本文も、伸びない人と頭のいい人の対で進む。</p>
+      <div class="tocb"><div class="ti"><div class="tl"><b>02</b><span>「読み返し」</span></div><div class="tx">×　読んだ。わかった。次いこう</div><div class="to">○　閉じて、何も見ずに思い出す</div></div><div class="ti"><div class="tl"><b>05</b><span>「一夜漬け」</span></div><div class="tx">×　テスト前に、まとめてやれば間に合う</div><div class="to">○　同じ3時間なら、3日に分ける</div></div><div class="ti"><div class="tl"><b>13</b><span>「まとめノート作り」</span></div><div class="tx">×　大事なところに印をつけておけば、あとで見返せる</div><div class="to">○　線を引く前に、閉じて言ってみる</div></div></div></div>
+    <div class="blk"><h3><em>② パクる</em>サブタイトル・帯・巻末の付録</h3><p>付録「パクったら頭がよくなった勉強法則50」。やらない → パクる ＋ 口ぐせ。</p>
+      <div class="fb"><div class="fr"><b>02</b><span class="fx">読み返し</span><i>→</i><span class="fo">閉じて思い出す</span><span class="fk">今、閉じて出せる？</span></div><div class="fr"><b>05</b><span class="fx">一夜漬け</span><i>→</i><span class="fo">小分け勉強</span><span class="fk">今日はここまで。明日もう1回</span></div><div class="fr"><b>13</b><span class="fx">まとめノート作り</span><i>→</i><span class="fo">閉じてから、まとめる</span><span class="fk">この線、あとで何に使う？</span></div><div class="fr"><b>40</b><span class="fx">まず片づけ</span><i>→</i><span class="fo">まず1問</span><span class="fk">まず、1問だけ</span></div></div></div>
+  </div>
+</div>
+<p class="foot">書名の検討用。言葉はどれも仮のものです。</p>
+</div>

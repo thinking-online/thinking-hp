@@ -109,8 +109,12 @@ for name, blob in secs:
         mx = re.search(r'^\s*×「(.+?)」\s*$', bd2, flags=re.M)
         mo = re.search(r'^\s*○「(.+?)」\s*$', bd2, flags=re.M)
         bd2 = re.sub(r'^\s*[×○]「.+?」\s*$', '', bd2, count=2, flags=re.M)
-        toc.append(f'<div class="tc"><span class="tnum">{num}</span>'
-                   f'<span class="tn">{esc(title)}</span></div>')
+        tpair = ""
+        if mx and mo and (mx.group(1).strip() or mo.group(1).strip()):      # 目次にも ×／○ を出す
+            tpair = (f'<div class="tp"><div class="tx"><span class="s">×</span>{esc(mx.group(1))}</div>'
+                     f'<div class="to"><span class="s">○</span>{esc(mo.group(1))}</div></div>')
+        toc.append(f'<div class="te"><div class="tc"><span class="tnum">{num}</span>'
+                   f'<span class="tn">{esc(title)}</span></div>{tpair}</div>')
         pair = ""
         if mx and mo and (mx.group(1).strip() or mo.group(1).strip()):
             pair = (f'<div class="pair"><div class="l x"><span class="s">×</span>'
@@ -147,7 +151,12 @@ body {{ font-family:"Noto Serif CJK JP",serif; font-size:9.5pt; line-height:1.95
 .tc {{ display:flex; align-items:baseline; font-size:8.5pt; line-height:1.85; }}
 .tc .tnum {{ font-family:"Noto Sans CJK JP",sans-serif; font-size:7.5pt; color:{NAVY};
   font-weight:700; width:7mm; flex:none; }}
-.tc .tn {{ flex:1; }}
+.tc .tn {{ flex:1; font-weight:700; }}
+.te {{ break-inside:avoid; page-break-inside:avoid; margin-bottom:1.6mm; }}
+.tp {{ margin-left:7mm; font-family:"Noto Sans CJK JP",sans-serif; font-size:7.2pt; line-height:1.6; }}
+.tp .s {{ display:inline-block; width:4mm; }}
+.tp .tx {{ color:#999; }}
+.tp .to {{ color:{NAVY}; }}
 
 .chdoor {{ page-break-before:always; page-break-after:always; padding-top:30mm;
   text-align:center; }}

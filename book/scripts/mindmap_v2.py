@@ -10,7 +10,7 @@ sys.path.insert(0, "scripts")
 
 SRC = "manuscript/原稿_v2_マーカー.md"
 s = io.open(SRC, encoding="utf-8").read().split("\n---\n", 1)[1].replace("==", "")
-FIXED = {"頭のなか", "やり方", "これをやると、何が残るか", "この場面のまとめ", "この法則のまとめ", "残るもの", "まとめ"}
+FIXED = {"頭の中", "頭のなか", "やり方", "これをやると、何が残るか", "この場面のまとめ", "この法則のまとめ", "残るもの", "まとめ"}
 
 def nchar(t):
     t = re.sub(r'^#{1,6}\s*', '', t, flags=re.M)

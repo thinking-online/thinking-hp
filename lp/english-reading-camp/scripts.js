@@ -12,6 +12,12 @@
   var reveals = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
   var formLinks = Array.prototype.slice.call(document.querySelectorAll("[data-form-link]"));
   var closedApplied = false;
+  var staffPreview = (function () {
+    try {
+      if (new URLSearchParams(location.search).get("preview") === "1") return true;
+    } catch (e) {}
+    return /\/english-reading-camp\/preview\/?$/.test(location.pathname);
+  })();
 
   function bindFormLinks() {
     formLinks.forEach(function (el) {
@@ -38,6 +44,7 @@
   }
 
   function applyClosedState() {
+    if (staffPreview) return;
     if (closedApplied) return;
     closedApplied = true;
     window.location.replace("/english-reading-camp/closed/");

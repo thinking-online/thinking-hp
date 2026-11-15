@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="/english-reading-camp/styles.css">
   <script>
     (function () {
+      var preview = /(?:^|[?&])preview=1(?:&|$)/.test(location.search)
+        || /\/english-reading-camp\/preview\/?$/.test(location.pathname);
+      if (preview) return;
       var deadline = Date.parse("2026-09-18T23:59:59+09:00");
       if (Date.now() >= deadline) {
         location.replace("/english-reading-camp/closed/");

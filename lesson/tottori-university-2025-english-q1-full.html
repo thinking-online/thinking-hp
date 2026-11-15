@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="color-scheme" content="light">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英語精読｜鳥取大学 2025 大問1（AIと自然淘汰）｜THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;600;700;900&family=Zilla+Slab:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+
+
+
+
+
+
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --navy:#16263f; --navy2:#22344f; --navy-ink:#0f1c30;
+  --gold:#b8954a; --gold-d:#8f7031; --gold-soft:#f3ecda;
+  --verm:#c8431f; --verm-d:#9e3417; --verm-soft:#fbe9e2;
+  --teal:#1f6b5c; --teal-d:#155346; --teal-soft:#e2f1ed;
+  --blue:#2f5c86; --blue-soft:#e7eef6;
+  --ink:#232830; --muted:#6c6a61; --faint:#9a978c;
+  --paper:#faf7f0; --surface:#ffffff; --surface2:#f5f1e8;
+  --line:#e6dfce; --line2:#d8cfb8;
+  --ok:#1f6b5c; --ng:#c8431f;
+  --shadow:0 1px 2px rgba(22,38,63,.05),0 8px 24px rgba(22,38,63,.06);
+}
+html{scroll-behavior:smooth;}
+body{font-family:"Noto Sans JP",sans-serif;background:var(--paper);color:var(--ink);line-height:1.85;font-size:15.5px;-webkit-font-smoothing:antialiased;padding-bottom:60px;}
+.en{font-family:"Zilla Slab",serif;font-weight:600;letter-spacing:.01em;}
+em{font-style:normal;color:var(--verm);font-weight:600;}
+strong{font-weight:700;}
+
+/* HEADER */
+.top{position:sticky;top:0;z-index:200;background:var(--navy);color:#f4efe3;border-bottom:2px solid var(--gold);}
+.top-in{max-width:1080px;margin:0 auto;padding:11px 22px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;}
+.mark{width:40px;height:40px;border-radius:9px;flex:none;background:linear-gradient(135deg,var(--gold),var(--gold-d));color:var(--navy);font-family:"Noto Serif JP",serif;font-weight:900;font-size:20px;display:flex;align-items:center;justify-content:center;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25);}
+.ttl{display:flex;flex-direction:column;line-height:1.3;}
+.ttl b{font-family:"Noto Serif JP",serif;font-size:15px;font-weight:700;letter-spacing:.02em;}
+.ttl span{font-size:10.5px;color:var(--gold);letter-spacing:.14em;font-weight:500;}
+.top-meta{margin-left:auto;font-size:10.5px;color:#c9c2b0;text-align:right;letter-spacing:.03em;}
+
+/* NAV */
+.nav{position:sticky;top:63px;z-index:190;background:rgba(250,247,240,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+.nav-in{max-width:1080px;margin:0 auto;padding:0 14px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;}
+.nav-in::-webkit-scrollbar{display:none;}
+.tab{flex:none;border:none;background:none;cursor:pointer;padding:12px 15px 10px;font-family:"Noto Sans JP",sans-serif;font-size:13px;font-weight:700;color:var(--muted);border-bottom:2.5px solid transparent;letter-spacing:.02em;white-space:nowrap;transition:.15s;display:flex;flex-direction:column;align-items:flex-start;gap:1px;position:relative;}
+.tab small{font-size:9px;color:var(--faint);font-weight:500;letter-spacing:.1em;}
+.tab .dot{position:absolute;top:9px;right:7px;width:6px;height:6px;border-radius:50%;background:var(--gold);opacity:0;transition:.2s;}
+.tab.done .dot{opacity:1;}
+.tab:hover{color:var(--navy);}
+.tab.on{color:var(--navy);border-bottom-color:var(--gold);}
+.tab.on small{color:var(--gold-d);}
+
+/* LAYOUT */
+.wrap{max-width:1080px;margin:0 auto;padding:30px 22px 40px;}
+.panel{display:none;animation:fade .4s ease;}
+.panel.on{display:block;}
+@keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+@media (prefers-reduced-motion:reduce){.panel.on{animation:none;} html{scroll-behavior:auto;}}
+
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--gold-d);text-transform:uppercase;margin-bottom:8px;}
+h1.head{font-family:"Noto Serif JP",serif;font-size:26px;font-weight:900;color:var(--navy);line-height:1.35;letter-spacing:.01em;}
+h1.head .sub{display:block;font-size:14px;font-weight:500;color:var(--muted);margin-top:8px;letter-spacing:.02em;}
+.rule{height:1px;background:linear-gradient(90deg,var(--gold) 0,var(--gold) 46px,var(--line) 46px);margin:16px 0 26px;}
+h2.sec{font-family:"Noto Serif JP",serif;font-size:19px;font-weight:700;color:var(--navy);margin:34px 0 14px;padding-left:13px;border-left:4px solid var(--gold);line-height:1.4;}
+h2.sec:first-child{margin-top:6px;}
+p{margin:0 0 12px;}
+p.lead{font-size:16px;color:#39404a;}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:20px 22px;box-shadow:var(--shadow);margin-bottom:16px;}
+.box{border-radius:11px;padding:15px 17px;margin:14px 0;font-size:14.5px;line-height:1.8;}
+.box .lab{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;padding:2px 9px;border-radius:20px;margin-bottom:7px;}
+.box.gold{background:var(--gold-soft);border:1px solid var(--line2);} .box.gold .lab{background:var(--gold);color:#fff;}
+.box.verm{background:var(--verm-soft);border:1px solid #f0cdc0;} .box.verm .lab{background:var(--verm);color:#fff;}
+.box.teal{background:var(--teal-soft);border:1px solid #bfe0d7;} .box.teal .lab{background:var(--teal);color:#fff;}
+.box.navy{background:#eef1f6;border:1px solid #d5ddea;} .box.navy .lab{background:var(--navy);color:#fff;}
+
+/* HERO (overview) */
+.hero{background:linear-gradient(160deg,var(--navy) 0%,var(--navy2) 100%);color:#f3efe4;border-radius:16px;padding:30px 30px 26px;position:relative;overflow:hidden;margin-bottom:26px;}
+.hero::after{content:"設計";position:absolute;right:-6px;bottom:-24px;font-family:"Noto Serif JP",serif;font-weight:900;font-size:150px;color:rgba(184,149,74,.10);writing-mode:vertical-rl;letter-spacing:0;line-height:.8;}
+.hero .eyebrow{color:var(--gold);}
+.hero h1{font-family:"Noto Serif JP",serif;font-size:29px;font-weight:900;line-height:1.4;position:relative;z-index:1;}
+.hero p{color:#d5cfc0;font-size:14.5px;max-width:660px;position:relative;z-index:1;margin-top:10px;}
+.thesis{position:relative;z-index:1;margin-top:16px;background:rgba(184,149,74,.14);border:1px solid rgba(184,149,74,.4);border-radius:10px;padding:11px 15px;font-size:13.5px;color:#f0e8d5;}
+.thesis b{color:var(--gold);}
+.stats{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px;position:relative;z-index:1;}
+.stat b{display:block;font-family:"Zilla Slab",serif;font-size:30px;font-weight:700;color:var(--gold);line-height:1;}
+.stat span{font-size:11px;color:#c9c2b0;letter-spacing:.05em;}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+@media (max-width:720px){.grid2{grid-template-columns:1fr;}}
+
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0 4px;}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top;}
+th{background:var(--navy);color:#f2eee2;font-weight:700;font-size:12.5px;letter-spacing:.03em;}
+tr:last-child td{border-bottom:none;}
+td.c{white-space:nowrap;font-weight:700;color:var(--navy);}
+tbody tr:nth-child(even){background:var(--surface2);}
+
+/* PARA MAP */
+.para{display:grid;grid-template-columns:52px 1fr;gap:0;background:var(--surface);border:1px solid var(--line);border-radius:13px;overflow:hidden;margin-bottom:14px;box-shadow:var(--shadow);}
+.para-n{background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:16px;gap:3px;}
+.para-n b{font-family:"Zilla Slab",serif;font-size:24px;font-weight:700;color:var(--gold);}
+.para-n span{writing-mode:vertical-rl;font-size:9.5px;letter-spacing:.14em;color:#b9c0cc;margin-top:2px;}
+.para-b{padding:15px 18px;}
+.para-b .theme{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:15px;margin-bottom:6px;}
+.para-b .theme .k{color:var(--verm);}
+.para-b p{font-size:14px;color:#3a4048;margin-bottom:8px;}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;}
+.utag{font-family:"Zilla Slab",serif;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:6px;background:var(--gold-soft);color:var(--gold-d);border:1px solid var(--line2);}
+.utag.blank{background:var(--verm-soft);color:var(--verm);border-color:#f0cdc0;}
+
+/* FLOW */
+.flow{display:flex;flex-direction:column;gap:0;margin:14px 0;}
+.fnode{display:grid;grid-template-columns:34px 1fr;gap:12px;position:relative;padding-bottom:16px;}
+.fnode:not(:last-child)::before{content:"";position:absolute;left:16px;top:34px;bottom:-2px;width:2px;background:var(--line2);}
+.fdot{width:34px;height:34px;border-radius:50%;background:var(--surface);border:2px solid var(--gold);color:var(--navy);font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;z-index:1;}
+.fbody{padding-top:3px;}
+.fbody b{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:14.5px;}
+.fbody p{font-size:13.5px;color:#4a5058;margin:3px 0 0;}
+
+.sci{display:grid;grid-template-columns:1fr;gap:12px;}
+.sci .who{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:11px;padding:14px 16px;box-shadow:var(--shadow);}
+.sci .yr{font-family:"Zilla Slab",serif;font-weight:700;color:var(--gold-d);font-size:13px;text-align:right;line-height:1.4;padding-top:2px;min-width:78px;}
+.sci .yr b{display:block;font-size:15px;color:var(--navy);font-family:"Noto Serif JP",serif;}
+.sci .desc b{font-family:"Noto Serif JP",serif;color:var(--navy);}
+.sci .desc p{font-size:13.5px;color:#4a5058;margin:3px 0 0;}
+
+/* QUESTION INDEX */
+.qindex{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 22px;}
+.qjump{font-family:"Zilla Slab",serif;font-weight:700;font-size:13px;width:34px;height:34px;border-radius:8px;border:1px solid var(--line2);background:var(--surface);color:var(--navy);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s;}
+.qjump:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+/* QUESTION CARD */
+.q{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:0;margin-bottom:20px;box-shadow:var(--shadow);overflow:hidden;scroll-margin-top:120px;}
+.q-head{display:flex;align-items:center;gap:12px;padding:15px 20px;background:var(--surface2);border-bottom:1px solid var(--line);flex-wrap:wrap;}
+.q-no{font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;background:var(--navy);color:#fff;width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;flex:none;}
+.q-focus{flex:1;min-width:180px;}
+.q-focus .lbl{font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--gold-d);}
+.q-focus .en{display:block;font-size:15px;color:var(--navy);line-height:1.5;}
+.q-type{font-size:10.5px;font-weight:700;padding:3px 10px;border-radius:20px;background:#fff;border:1px solid var(--line2);color:var(--muted);letter-spacing:.03em;flex:none;}
+.q-body{padding:18px 20px;}
+.q-body .askjp{font-size:13.5px;color:var(--muted);margin-bottom:12px;}
+
+.choices{display:flex;flex-direction:column;gap:8px;margin-bottom:6px;}
+.ch{display:grid;grid-template-columns:30px 1fr auto;gap:10px;align-items:center;text-align:left;width:100%;background:var(--surface);border:1.5px solid var(--line2);border-radius:10px;padding:11px 13px;cursor:pointer;font-family:inherit;font-size:14px;color:var(--ink);line-height:1.6;transition:.15s;}
+.ch:hover{border-color:var(--gold);background:#fffdf8;}
+.ch .num{font-family:"Zilla Slab",serif;font-weight:700;color:var(--navy);font-size:15px;width:26px;height:26px;border-radius:6px;background:var(--surface2);display:flex;align-items:center;justify-content:center;flex:none;}
+.ch .mk{font-weight:900;font-size:17px;opacity:0;flex:none;width:20px;text-align:center;}
+.ch.reveal{cursor:default;}
+.ch.reveal.correct{border-color:var(--ok);background:#eef7f4;}
+.ch.reveal.correct .mk{opacity:1;color:var(--ok);}
+.ch.reveal.correct .num{background:var(--ok);color:#fff;}
+.ch.reveal.wrong{border-color:#e9d5cd;background:#fdf6f3;color:#7a6b64;}
+.ch.reveal.wrong .mk{opacity:1;color:var(--ng);}
+.ch.picked{box-shadow:0 0 0 2px var(--navy) inset;}
+
+.reveal-btn{margin-top:12px;background:var(--navy);color:#fff;border:none;border-radius:9px;padding:10px 18px;font-family:inherit;font-size:13.5px;font-weight:700;cursor:pointer;letter-spacing:.03em;transition:.15s;}
+.reveal-btn:hover{background:var(--navy2);}
+
+.solution{display:none;margin-top:16px;border-top:1px dashed var(--line2);padding-top:16px;}
+.solution.show{display:block;animation:fade .3s;}
+.ans-badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-soft);border:1px solid var(--gold);border-radius:9px;padding:7px 14px;font-weight:700;color:var(--navy);font-size:14px;margin-bottom:12px;}
+.ans-badge .c{font-family:"Zilla Slab",serif;font-size:18px;color:var(--verm);font-weight:700;}
+
+/* EVIDENCE BOX (根拠) */
+.ev{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:12px 0;}
+.ev-hd{background:var(--navy);color:#f2eee2;padding:7px 14px;font-size:10.5px;font-weight:700;letter-spacing:.1em;display:flex;align-items:center;gap:8px;}
+.ev-hd::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--gold);}
+.ev-bd{padding:12px 15px;font-size:13.5px;line-height:1.8;}
+.ev-q{font-family:"Zilla Slab",serif;font-style:italic;color:var(--navy);background:var(--surface2);padding:9px 13px;border-radius:8px;border-left:3px solid var(--gold);margin-bottom:8px;font-size:13.5px;line-height:1.7;}
+.ev-q .h{background:#fbe9c9;font-style:normal;font-weight:700;padding:0 3px;border-radius:3px;color:var(--navy-ink);}
+
+/* CHOICE ANALYSIS */
+.chy-h{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--faint);text-transform:uppercase;margin:14px 0 7px;}
+.ca-row{display:flex;background:var(--surface);border:1px solid var(--line);border-radius:9px;margin-bottom:6px;overflow:hidden;}
+.ca-mark{flex:none;width:34px;display:flex;align-items:center;justify-content:center;font-family:"Zilla Slab",serif;font-size:16px;font-weight:700;color:#fff;}
+.ca-mark.ok{background:var(--ok);} .ca-mark.ng{background:var(--ng);}
+.ca-bd{padding:9px 13px;font-size:13px;line-height:1.75;flex:1;}
+.ca-bd .k{font-weight:700;} .ca-bd .k.o{color:var(--teal-d);} .ca-bd .k.x{color:var(--verm-d);}
+
+/* CALLOUTS */
+.co{border-radius:9px;padding:11px 14px;margin:10px 0;font-size:13.5px;line-height:1.78;}
+.co .co-lbl{font-size:9.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;margin-bottom:3px;}
+.co.nav{background:var(--blue-soft);border-left:3px solid var(--navy);} .co.nav .co-lbl{color:var(--navy);}
+.co.gold{background:var(--gold-soft);border-left:3px solid var(--gold);} .co.gold .co-lbl{color:var(--gold-d);}
+.co.teal{background:var(--teal-soft);border-left:3px solid var(--teal);} .co.teal .co-lbl{color:var(--teal-d);}
+.co.verm{background:var(--verm-soft);border-left:3px solid var(--verm);} .co.verm .co-lbl{color:var(--verm-d);}
+
+/* DESCRIPTIVE */
+.desc-write{background:var(--teal-soft);border:1px solid #bfe0d7;border-radius:10px;padding:14px 16px;margin:6px 0;}
+.desc-write .modelans{font-family:"Noto Serif JP",serif;font-weight:600;color:var(--navy);font-size:15px;line-height:1.7;padding:8px 12px;background:#fff;border-radius:8px;border:1px solid #bfe0d7;margin:6px 0;}
+.desc-write .cnt{font-family:"Zilla Slab",serif;font-size:11px;color:var(--teal);font-weight:700;float:right;}
+
+/* READING MAP */
+.tmap{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:14px;box-shadow:var(--shadow);}
+.tmap .h{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.tmap .h b{font-family:"Zilla Slab",serif;font-size:20px;color:var(--gold);}
+.tmap .h span{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:15px;}
+.tmap .key{font-size:11px;font-weight:700;color:var(--gold-d);letter-spacing:.05em;margin:10px 0 4px;}
+.tmap ul{margin:0;padding-left:20px;}
+.tmap li{font-size:13.5px;color:#3a4048;margin-bottom:5px;line-height:1.7;}
+.tmap li em{color:var(--verm);}
+.qbadge{font-family:"Zilla Slab",serif;font-size:10.5px;font-weight:700;color:#fff;background:var(--navy);padding:1px 7px;border-radius:5px;margin-left:4px;}
+
+/* SUMMARY */
+.sheet{display:grid;grid-template-columns:repeat(auto-fill,minmax(78px,1fr));gap:8px;margin:14px 0;}
+.acell{background:var(--surface);border:1px solid var(--line2);border-radius:9px;padding:8px;text-align:center;box-shadow:var(--shadow);}
+.acell .qn{font-size:10px;color:var(--muted);font-weight:700;letter-spacing:.05em;}
+.acell .av{font-family:"Zilla Slab",serif;font-size:19px;font-weight:700;color:var(--verm);line-height:1.2;}
+.acell.txt .av{font-size:12px;color:var(--navy);font-family:"Noto Sans JP";font-weight:700;line-height:1.35;}
+.route{display:grid;grid-template-columns:36px 1fr;gap:12px;margin-bottom:12px;}
+.route .rn{width:36px;height:36px;border-radius:9px;background:var(--gold-soft);border:1px solid var(--line2);color:var(--gold-d);font-family:"Zilla Slab",serif;font-weight:700;font-size:16px;display:flex;align-items:center;justify-content:center;flex:none;}
+.route b{color:var(--navy);font-family:"Noto Serif JP",serif;}
+.route p{font-size:13.5px;color:#4a5058;margin:2px 0 0;}
+
+/* PANEL NAV */
+.pnav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:30px;padding-top:18px;border-top:1px solid var(--line);flex-wrap:wrap;}
+.btnp{display:inline-flex;align-items:center;gap:6px;padding:11px 22px;background:var(--navy);color:#fff;border:none;border-radius:10px;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer;transition:.15s;}
+.btnp:hover{background:var(--navy2);}
+.btns{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;background:var(--surface);color:var(--navy);border:1px solid var(--line2);border-radius:10px;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;transition:.15s;}
+.btns:hover{background:var(--surface2);}
+.pnav .sp{flex:1;}
+
+/* FOOTER */
+.foot{border-top:1px solid var(--line);margin-top:40px;padding:22px 22px 6px;text-align:center;color:var(--muted);font-size:12px;}
+.foot a{color:var(--gold-d);text-decoration:none;font-weight:700;}
+.foot .brand{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:13.5px;letter-spacing:.03em;}
+.foot .cr{font-size:10.5px;color:var(--faint);margin-top:6px;}
+
+.jump-top{position:fixed;right:18px;bottom:18px;width:44px;height:44px;border-radius:50%;background:var(--navy);color:#fff;border:none;cursor:pointer;box-shadow:0 6px 18px rgba(22,38,63,.28);font-size:18px;z-index:150;display:none;}
+.jump-top.show{display:block;}
+
+@media (max-width:600px){
+  body{font-size:15px;}
+  .wrap{padding:22px 16px 30px;}
+  h1.head{font-size:21px;} .hero h1{font-size:22px;}
+  .q-head{padding:13px 15px;} .q-body{padding:15px;}
+  .ch{grid-template-columns:26px 1fr auto;font-size:13.5px;}
+}
+
+/* ===== 記述問題 専用コンポーネント ===== */
+.dsteps{margin:14px 0 6px;}
+.dstep{display:grid;grid-template-columns:32px 1fr;gap:12px;position:relative;padding-bottom:14px;}
+.dstep:not(:last-child)::before{content:"";position:absolute;left:15px;top:32px;bottom:0;width:2px;background:var(--line2);}
+.dstep .dn{width:32px;height:32px;border-radius:8px;background:var(--navy);color:#fff;font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;display:flex;align-items:center;justify-content:center;z-index:1;flex:none;}
+.dstep .db{padding-top:2px;}
+.dstep .db b{display:block;font-family:"Noto Serif JP",serif;color:var(--navy);font-size:14px;margin-bottom:2px;}
+.dstep .db p{font-size:13.5px;color:#414851;margin:0;line-height:1.75;}
+.dstep .db .cite{font-family:"Zilla Slab",serif;font-style:italic;background:var(--surface2);border-left:3px solid var(--gold);border-radius:6px;padding:7px 11px;margin-top:6px;font-size:13px;color:var(--navy);line-height:1.7;}
+.dstep .db .cite .h{background:#fbe9c9;font-style:normal;font-weight:700;padding:0 3px;border-radius:3px;}
+
+.model{background:linear-gradient(160deg,#eef7f4,#e2f1ed);border:1px solid #bfe0d7;border-radius:11px;padding:15px 17px;margin:12px 0;}
+.model .mlab{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--teal-d);margin-bottom:7px;}
+.model .mtext{font-family:"Noto Serif JP",serif;font-weight:600;color:var(--navy);font-size:15.5px;line-height:1.9;background:#fff;border-radius:8px;padding:11px 14px;border:1px solid #bfe0d7;}
+.model .mtext + .mtext{margin-top:8px;}
+.model .mnote{font-size:12.5px;color:var(--teal-d);margin-top:8px;line-height:1.7;}
+
+/* ルーブリック（要素点・自己採点） */
+.rub{border:1px solid var(--line);border-radius:11px;overflow:hidden;margin:12px 0;background:var(--surface);}
+.rub-hd{background:var(--gold);color:#fff;padding:8px 14px;font-size:11px;font-weight:700;letter-spacing:.08em;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.rub-hd .sc{background:rgba(255,255,255,.22);border-radius:20px;padding:2px 11px;font-family:"Zilla Slab",serif;font-size:13px;font-weight:700;white-space:nowrap;}
+.rub-row{display:grid;grid-template-columns:auto 1fr auto;gap:11px;align-items:flex-start;padding:11px 14px;border-bottom:1px solid var(--line);cursor:pointer;transition:.15s;}
+.rub-row:last-child{border-bottom:none;}
+.rub-row:hover{background:#fffdf8;}
+.rub-row.on{background:var(--teal-soft);}
+.rub-cb{width:20px;height:20px;border-radius:5px;border:2px solid var(--line2);background:#fff;flex:none;margin-top:2px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:#fff;transition:.15s;}
+.rub-row.on .rub-cb{background:var(--teal);border-color:var(--teal);}
+.rub-row.on .rub-cb::after{content:"✓";}
+.rub-el{font-size:13.5px;line-height:1.7;}
+.rub-el b{color:var(--navy);}
+.rub-el .must{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 7px;border-radius:20px;background:var(--verm);color:#fff;margin-left:6px;vertical-align:1px;}
+.rub-el .plus{display:inline-block;font-size:9.5px;font-weight:700;padding:1px 7px;border-radius:20px;background:var(--surface2);color:var(--muted);border:1px solid var(--line2);margin-left:6px;vertical-align:1px;}
+.rub-pt{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;color:var(--gold-d);white-space:nowrap;padding-top:1px;}
+.rub-foot{padding:9px 14px;background:var(--surface2);font-size:12px;color:var(--muted);border-top:1px solid var(--line);}
+
+/* NG解答例 */
+.ng{background:var(--verm-soft);border:1px solid #f0cdc0;border-radius:11px;padding:14px 16px;margin:12px 0;}
+.ng .nlab{font-size:10.5px;font-weight:700;letter-spacing:.08em;color:var(--verm-d);margin-bottom:8px;}
+.ng-row{display:grid;grid-template-columns:auto 1fr;gap:10px;margin-bottom:9px;align-items:flex-start;}
+.ng-row:last-child{margin-bottom:0;}
+.ng-row .x{color:var(--verm);font-weight:900;font-size:14px;line-height:1.6;flex:none;}
+.ng-row .nb{font-size:13.5px;line-height:1.75;}
+.ng-row .nb .bad{display:block;font-family:"Noto Serif JP",serif;color:var(--verm-d);background:#fff;border:1px dashed #e5b8a6;border-radius:6px;padding:6px 10px;margin-bottom:4px;font-size:13.5px;}
+.ng-row .nb .why{color:#6b5c56;font-size:12.5px;}
+
+/* 語尾テンプレ表 */
+.mtx{width:100%;border-collapse:collapse;font-size:13px;margin:12px 0 6px;}
+.mtx th,.mtx td{border:1px solid var(--line2);padding:10px 12px;vertical-align:middle;}
+.mtx thead th{background:var(--navy);color:#f2eee2;font-weight:700;font-size:12.5px;}
+.mtx td.cond{background:var(--surface2);font-weight:700;color:var(--navy);font-size:12.5px;white-space:nowrap;}
+.mtx td.tr{background:#fdf6f3;} .mtx td.so{background:#eef7f4;}
+
+/* 対比マトリクス */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+@media(max-width:720px){.vs{grid-template-columns:1fr;}}
+.vs-col{border-radius:12px;overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);}
+.vs-hd{padding:11px 15px;color:#fff;font-family:"Noto Serif JP",serif;font-weight:700;font-size:15px;}
+.vs-hd small{display:block;font-family:"Zilla Slab",serif;font-size:11px;font-weight:600;opacity:.8;letter-spacing:.05em;}
+.vs-col.t .vs-hd{background:var(--verm);} .vs-col.s .vs-hd{background:var(--teal);}
+.vs-bd{background:var(--surface);padding:13px 15px;}
+.vs-bd .r{font-size:13.5px;line-height:1.7;padding:7px 0;border-bottom:1px dashed var(--line);}
+.vs-bd .r:last-child{border-bottom:none;}
+.vs-bd .r b{display:block;font-size:10.5px;letter-spacing:.06em;color:var(--faint);font-weight:700;margin-bottom:1px;}
+
+/* ===== 対訳（全訳マップ）― 中央大版レイアウト準拠 ===== */
+.tr-sec{font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--faint);margin:26px 0 10px;display:flex;align-items:center;gap:9px;}
+.tr-sec::before{content:"";width:26px;height:1px;background:var(--line2);}
+.tr-sec::after{content:"";flex:1;height:1px;background:var(--line2);}
+.tr-sec b{color:var(--navy);font-family:"Noto Serif JP",serif;font-size:14px;font-weight:700;letter-spacing:.02em;}
+.tr-row{display:grid;grid-template-columns:1fr;border-radius:12px;overflow:hidden;border:1px solid var(--line);margin-bottom:12px;box-shadow:var(--shadow);}
+.tr-en{font-family:"Zilla Slab",serif;font-size:14px;line-height:1.95;padding:15px 18px;background:var(--surface);color:var(--ink);}
+.tr-jp{font-family:"Noto Sans JP",sans-serif;font-size:13.5px;line-height:2;padding:15px 18px;background:var(--surface2);color:var(--ink);border-top:1px solid var(--line);}
+.tr-en em,.tr-jp em{color:var(--verm);font-weight:600;}
+.tr-en .ul{border-bottom:1.5px solid var(--gold);padding-bottom:1px;font-weight:700;}
+.tr-en .uln{font-size:9px;font-weight:700;color:var(--gold-d);vertical-align:super;margin-right:1px;line-height:0;font-family:"Noto Sans JP",sans-serif;}
+.tr-slot{min-height:74px;display:flex;align-items:center;justify-content:center;color:var(--faint);font-family:"Noto Sans JP",sans-serif;font-size:12.5px;text-align:center;border:1px dashed var(--line2);border-radius:8px;background:#fdfbf6;padding:12px;line-height:1.7;}
+.tr-jp .tr-slot{background:#f2eee4;}
+.tr-points{margin:0 0 22px;padding:12px 15px;background:var(--gold-soft);border-radius:9px;border-left:3px solid var(--gold);font-size:13px;line-height:1.8;}
+.tr-points .pl{font-size:9.5px;font-weight:700;letter-spacing:.09em;color:var(--gold-d);margin-bottom:4px;}
+.tr-points ul{margin:0;padding-left:18px;}
+.tr-points li{margin-bottom:4px;}
+.tr-points li b{color:var(--navy);}
+.tr-points li em{color:var(--verm);font-weight:600;}
+@media(min-width:760px){
+  .tr-row{grid-template-columns:1fr 1fr;}
+  .tr-jp{border-top:none;border-left:1px solid var(--line);}
+}
+/* 貼り付けパネル */
+.paste{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:18px 20px;margin-bottom:20px;box-shadow:var(--shadow);}
+.paste h4{font-family:"Noto Serif JP",serif;color:var(--navy);font-size:15px;margin-bottom:6px;}
+.paste p{font-size:13px;color:var(--muted);margin-bottom:10px;}
+.paste .pgrid{display:grid;grid-template-columns:1fr;gap:10px;}
+@media(min-width:760px){.paste .pgrid{grid-template-columns:1fr 1fr;}}
+.paste label{display:block;font-size:11px;font-weight:700;letter-spacing:.05em;color:var(--gold-d);margin-bottom:4px;}
+.paste textarea{width:100%;min-height:110px;border:1px solid var(--line2);border-radius:9px;padding:10px 12px;font-family:inherit;font-size:13px;line-height:1.7;resize:vertical;background:var(--paper);color:var(--ink);}
+.paste textarea:focus{outline:none;border-color:var(--gold);background:#fff;}
+.paste .prow{display:flex;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap;}
+.paste .msg{font-size:12.5px;color:var(--teal-d);font-weight:700;}
+
+/* ===== 和訳のみ 1カラム表示 ===== */
+.jpbox{background:var(--surface);border:1px solid var(--line);border-radius:13px;padding:6px 20px 14px;margin-bottom:12px;box-shadow:var(--shadow);}
+.jpline{display:grid;grid-template-columns:26px 1fr;gap:10px;padding:11px 0;border-bottom:1px dashed var(--line);align-items:start;}
+.jpline:last-child{border-bottom:none;}
+.jpline .n{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;color:var(--gold-d);background:var(--gold-soft);border:1px solid var(--line2);border-radius:6px;width:26px;height:26px;display:flex;align-items:center;justify-content:center;margin-top:2px;}
+.jpline .s{font-size:14.5px;line-height:2;color:var(--ink);}
+.jpline .s em{color:var(--verm);font-weight:600;font-style:normal;}
+
+/* ===== 同志社 追加：正答率バッジ・整序・内容一致 ===== */
+.rate{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;}
+.rate.low{background:var(--verm);color:#fff;}
+.rate.mid{background:var(--gold);color:#fff;}
+.rate.hi{background:var(--teal-soft);color:var(--teal-d);border:1px solid #bfe0d7;}
+.ratebar{height:5px;border-radius:3px;background:var(--line);overflow:hidden;margin-top:5px;}
+.ratebar i{display:block;height:100%;border-radius:3px;}
+.ratebar i.low{background:var(--verm);} .ratebar i.mid{background:var(--gold);} .ratebar i.hi{background:var(--teal);}
+
+/* 語句整序 */
+.pool{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0;}
+.pw{font-family:"Zilla Slab",serif;font-weight:600;font-size:14px;padding:6px 12px;border-radius:8px;background:var(--surface2);border:1px solid var(--line2);color:var(--navy);}
+.pw.used{background:var(--teal-soft);border-color:var(--teal);color:var(--teal-d);}
+.pw.unused{opacity:.45;text-decoration:line-through;}
+.slots{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0;}
+.slot{border:1.5px solid var(--line2);border-radius:9px;padding:8px 12px;text-align:center;background:var(--surface);min-width:88px;}
+.slot .k{font-size:10.5px;font-weight:700;color:var(--muted);}
+.slot .v{font-family:"Zilla Slab",serif;font-weight:700;font-size:15px;color:var(--navy);}
+.slot.hit{border-color:var(--verm);background:var(--verm-soft);}
+.slot.hit .k{color:var(--verm-d);} .slot.hit .v{color:var(--verm-d);}
+.full{background:var(--navy);color:#f2eee2;border-radius:10px;padding:13px 16px;margin:10px 0;font-family:"Zilla Slab",serif;font-size:15px;line-height:1.8;}
+.full b{color:var(--gold);}
+.full .jp{display:block;font-family:"Noto Sans JP",sans-serif;font-size:13.5px;color:#c9c2b0;margin-top:7px;}
+.full .jp b{color:#fff;}
+
+/* 内容一致 8択 */
+.mi{border:1px solid var(--line);border-radius:11px;overflow:hidden;margin-bottom:9px;background:var(--surface);}
+.mi-h{display:grid;grid-template-columns:34px 1fr auto;gap:10px;align-items:center;padding:11px 13px;cursor:pointer;transition:.15s;}
+.mi-h:hover{background:#fffdf8;}
+.mi .num{font-family:"Zilla Slab",serif;font-weight:700;font-size:14px;width:28px;height:28px;border-radius:7px;background:var(--surface2);color:var(--navy);display:flex;align-items:center;justify-content:center;}
+.mi .st{font-size:13.5px;line-height:1.7;}
+.mi .mk{font-weight:900;font-size:16px;width:22px;text-align:center;opacity:0;}
+.mi.on.ok{border-color:var(--ok);} .mi.on.ok .mi-h{background:#eef7f4;} .mi.on.ok .num{background:var(--ok);color:#fff;} .mi.on.ok .mk{opacity:1;color:var(--ok);}
+.mi.on.ng{border-color:#e9d5cd;} .mi.on.ng .mi-h{background:#fdf6f3;} .mi.on.ng .mk{opacity:1;color:var(--ng);}
+.mi-d{display:none;padding:0 13px 12px;border-top:1px dashed var(--line);}
+.mi.on .mi-d{display:block;padding-top:11px;}
+.mi-d .src{font-size:12.5px;color:var(--muted);background:var(--surface2);border-left:3px solid var(--gold);border-radius:6px;padding:8px 11px;margin-bottom:7px;line-height:1.7;}
+.mi-d .jd{font-size:13px;line-height:1.75;}
+
+
+/* ===== 会話フロー表示（大問2） ===== */
+.conv{margin:14px 0;}
+.cturn{display:grid;grid-template-columns:70px 1fr;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);align-items:start;}
+.cturn:last-child{border-bottom:none;}
+.cturn .who{font-family:"Zilla Slab",serif;font-weight:700;font-size:13px;color:#fff;background:var(--navy);border-radius:6px;padding:3px 0;text-align:center;height:fit-content;}
+.cturn.john .who{background:var(--blue,#2f5c86);}
+.cturn.sarah .who{background:var(--verm);}
+.cturn.david .who{background:var(--teal);}
+.cturn.setup .who{background:var(--gold);}
+.cturn .say{font-size:14px;line-height:1.85;color:var(--ink);}
+.cturn .say b{background:#fbe9c9;color:var(--navy);padding:0 3px;border-radius:3px;font-weight:700;}
+.cturn .memo{display:block;margin-top:4px;font-size:11.5px;color:var(--gold-d);font-weight:700;}
+.cturn.setup{background:var(--surface2);border-radius:9px;padding:11px 13px;border-bottom:none;margin-bottom:6px;}
+.cturn.setup .say{font-size:13px;color:var(--muted);}
+
+
+/* ==== ダークモード無効化：端末がダークでも文字が消えないよう配色を固定 ==== */
+:root{ color-scheme: light; }
+@media (prefers-color-scheme: dark){
+  :root{
+    --navy:#16263f; --navy2:#22344f; --navy-ink:#0f1c30;
+    --gold:#b8954a; --gold-d:#8f7031; --gold-soft:#f3ecda;
+    --verm:#c8431f; --verm-d:#9e3417; --verm-soft:#fbe9e2;
+    --teal:#1f6b5c; --teal-d:#155346; --teal-soft:#e2f1ed;
+    --blue:#2f5c86; --blue-soft:#e7eef6;
+    --ink:#232830; --muted:#6c6a61; --faint:#9a978c;
+    --paper:#faf7f0; --surface:#ffffff; --surface2:#f5f1e8;
+    --line:#e6dfce; --line2:#d8cfb8;
+    --ok:#1f6b5c; --ng:#c8431f;
+  }
+  html, body{ background:var(--paper) !important; color:var(--ink) !important; }
+  /* 明るいセル上の本文は必ず濃色に固定（白文字化による消失を防ぐ） */
+  table, .mtx, .mtx td, .mtx th tbody tr, .box, .para, .para-b, .tr-points, .jpbox,
+  .q, .ch, .ev, .ca-row, .rub, .conv, .cturn, .theme, p, li, span, td, div{
+    -webkit-text-fill-color: currentColor;
+  }
+  .mtx td{ color:var(--ink); }
+  .mtx tbody tr:nth-child(even){ background:var(--surface2); }
+  .box.navy{ background:#eef1f6; }
+}
+
+
+/* ==== 文字消え防止：明色背景セル・本文の文字色を濃色で明示固定 ==== */
+.mtx td{ color:var(--ink); }                 /* 通常セル（2・3列目）を濃紺で固定 */
+.mtx td.cond{ color:var(--navy); }
+.mtx td.tr, .mtx td.so{ color:var(--ink); }
+.mtx td b, .mtx td strong{ color:var(--navy); }   /* 表内の太字も濃色 */
+.box{ color:var(--ink); }                    /* 明色ボックス本文 */
+.box.navy{ color:var(--ink); }
+.para-b, .para-b p, .theme{ color:var(--ink); }
+.para-b .theme{ color:var(--navy); }
+.tr-points, .tr-points li, .tr-points ul{ color:var(--ink); }
+.jpbox, .jpline .s{ color:var(--ink); }
+.conv .say{ color:var(--ink); }
+.route > div{ color:var(--ink); }
+.q, .ch{ color:var(--ink); }
+/* 濃色背景に乗る白系文字は従来どおり（ここで上書きしない） */
+
+
+/* ==== 表セルの背景・文字色をセル自身に直接固定（透過事故を根絶） ==== */
+.mtx thead th{ background:var(--navy) !important; color:#f2eee2 !important; }
+.mtx tbody td{ background:var(--surface) !important; color:var(--ink) !important; }
+.mtx tbody tr:nth-child(even) td{ background:var(--surface2) !important; }
+.mtx tbody td.cond{ background:var(--surface2) !important; color:var(--navy) !important; }
+.mtx tbody td b, .mtx tbody td strong{ color:var(--navy) !important; }
+@media (prefers-color-scheme: dark){
+  .mtx thead th{ background:var(--navy) !important; color:#f2eee2 !important; }
+  .mtx tbody td{ background:var(--surface) !important; color:var(--ink) !important; }
+  .mtx tbody tr:nth-child(even) td{ background:var(--surface2) !important; }
+  .mtx tbody td.cond{ background:var(--surface2) !important; color:var(--navy) !important; }
+  .mtx tbody td b, .mtx tbody td strong{ color:var(--navy) !important; }
+}
+
+
+
+
+
+/* 設問文：英文＋和訳 */
+.q-body .askjp .aen{display:block;font-size:13.5px;color:var(--ink);line-height:1.8;margin-bottom:9px;font-weight:500;}
+.q-body .askjp .ajp{display:block;font-size:13px;color:var(--ink);line-height:1.8;padding:9px 12px;background:var(--surface2);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;}
+.q-body .askjp .ajp b{color:var(--gold-d);}
+/* 選択肢の和訳 */
+.ch .cjp{display:block;margin-top:5px;padding-top:5px;border-top:1px dashed var(--line2);font-size:12.5px;color:var(--muted);line-height:1.72;font-family:"Noto Sans JP",sans-serif;}
+.ch.reveal.correct .cjp{color:var(--teal-d);border-top-color:#bfe0d6;}
+.ch.reveal.wrong .cjp{color:#8d7b73;}
+.mi .st .cjp{display:block;margin-top:5px;padding-top:5px;border-top:1px dashed var(--line2);font-size:12.5px;color:var(--muted);line-height:1.72;font-family:"Noto Sans JP",sans-serif;}
+/* 全選択肢照合ブロックの構造化 */
+.ca-bd .cj{display:block;margin:6px 0 7px;padding:7px 11px;background:var(--surface2);border-radius:7px;font-size:12.5px;color:var(--navy);line-height:1.72;}
+.ca-bd .cj b{color:var(--gold-d);}
+.ca-bd .tag,.jd .tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.06em;padding:2px 7px;border-radius:4px;margin-right:7px;vertical-align:1px;white-space:nowrap;}
+.ca-bd .tag.g,.jd .tag.g{background:var(--teal-soft);color:var(--teal-d);}
+.ca-bd .tag.v,.jd .tag.v{background:var(--verm-soft);color:var(--verm-d);}
+.ca-bd .tag.n,.jd .tag.n{background:var(--blue-soft);color:var(--navy);}
+/* 解答プロセス：見出しの<b>だけブロック、本文中の<b>はインラインに */
+.dstep .db p b{display:inline;font-family:"Noto Sans JP",sans-serif;font-size:inherit;color:var(--navy-ink);margin:0;font-weight:700;}
+/* 責任の移動図 */
+.flow{margin:16px 0 8px;}
+.flow-row{display:grid;grid-template-columns:150px 1fr;gap:14px;padding:11px 0 11px 16px;border-left:3px solid var(--gold);border-bottom:1px dashed var(--line2);align-items:baseline;}
+.flow-row:last-child{border-bottom:0;}
+.flow-row .ph{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:13.5px;}
+.flow-row .bd{font-size:13.5px;color:var(--ink);line-height:1.75;}
+@media (max-width:520px){
+  .q-body .askjp .aen{font-size:13px;}
+  .ch .cjp{font-size:12px;}
+  .flow-row{grid-template-columns:1fr;gap:3px;padding-left:12px;}
+}
+@media (prefers-color-scheme: dark){
+  .q-body .askjp .aen{color:var(--ink) !important;}
+  .q-body .askjp .ajp{background:var(--surface2) !important;color:var(--ink) !important;}
+  .ch .cjp,.mi .st .cjp{color:var(--muted) !important;}
+  .ch.reveal.correct .cjp{color:var(--teal-d) !important;}
+  .ch.reveal.wrong .cjp{color:#8d7b73 !important;}
+  .ca-bd .cj{background:var(--surface2) !important;color:var(--navy) !important;}
+  .ca-bd .tag.g,.jd .tag.g{background:var(--teal-soft) !important;color:var(--teal-d) !important;}
+  .ca-bd .tag.v,.jd .tag.v{background:var(--verm-soft) !important;color:var(--verm-d) !important;}
+  .ca-bd .tag.n,.jd .tag.n{background:var(--blue-soft) !important;color:var(--navy) !important;}
+  .dstep .db p b{color:var(--navy-ink) !important;}
+  .flow-row .ph{color:var(--navy) !important;}
+  .flow-row .bd{color:var(--ink) !important;}
+}
+
+
+/* 設問番号（問1〜問5）が2〜3字なので少し広く */
+.q-no{font-family:"Noto Serif JP",serif !important;font-size:13px !important;width:44px !important;height:44px !important;letter-spacing:0;}
+/* ===== 咀嚼訳ブロック ===== */
+.chew{margin:10px 0 0;padding:14px 16px 13px;background:linear-gradient(180deg,#fdfaf3 0%,#faf6ec 100%);
+  border:1px solid #e8dcc0;border-left:4px solid var(--gold);border-radius:0 11px 11px 0;}
+.chew .cl{display:block;font-family:"Noto Serif JP",serif;font-size:11.5px;font-weight:700;letter-spacing:.1em;
+  color:var(--gold-d);margin-bottom:8px;}
+.chew .cl i{font-style:normal;font-weight:500;letter-spacing:.02em;color:var(--muted);margin-left:8px;font-size:11px;
+  font-family:"Noto Sans JP",sans-serif;}
+.chew p{margin:0;font-size:13.8px;line-height:2.0;color:var(--ink);font-family:"Noto Sans JP",sans-serif;}
+.chew p b{color:var(--navy-ink);font-weight:700;}
+.chew p u{text-decoration:none;border-bottom:2px solid #f0deb4;padding-bottom:1px;}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .chew{background:var(--surface2) !important;border-color:var(--line2) !important;
+    border-left-color:var(--gold) !important;}
+  :root:not([data-theme="light"]) .chew p{color:var(--ink) !important;}
+  :root:not([data-theme="light"]) .chew p b{color:var(--navy-ink) !important;}
+  :root:not([data-theme="light"]) .chew .cl{color:var(--gold-d) !important;}
+  :root:not([data-theme="light"]) .chew .cl i{color:var(--muted) !important;}
+}
+:root[data-theme="dark"] .chew{background:var(--surface2) !important;border-color:var(--line2) !important;}
+:root[data-theme="dark"] .chew p{color:var(--ink) !important;}
+/* 三つの理由の並び */
+.r3{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 14px;}
+.r3 .r3i{flex:1 1 210px;padding:12px 14px;border-radius:10px;border:1px solid var(--line2);background:var(--surface2);}
+.r3 .r3i b{display:block;font-family:"Noto Serif JP",serif;font-size:13.5px;margin-bottom:5px;color:var(--navy-ink);}
+.r3 .r3i span{display:block;font-size:12.5px;line-height:1.78;color:var(--muted);}
+.r3 .r3i .pn{display:inline-block;font-family:"Zilla Slab",serif;font-weight:700;font-size:11px;background:var(--navy);
+  color:#fff;border-radius:4px;padding:1px 7px;margin-bottom:6px;letter-spacing:.04em;}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .r3 .r3i{background:var(--surface2) !important;border-color:var(--line2) !important;}
+  :root:not([data-theme="light"]) .r3 .r3i span{color:var(--muted) !important;}
+  :root:not([data-theme="light"]) .r3 .r3i b{color:var(--navy-ink) !important;}
+}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="mark">鳥</div>
+    <div class="ttl"><b>英語精読・完全解説</b><span>鳥取大学 2025 ／ 大問1</span></div>
+    <div class="top-meta">AIと自然淘汰（Dan Hendrycks, &quot;Survival of the Fittest&quot;）<br>問1〜問5・記述中心</div>
+  </div>
+</header>
+<nav class="nav">
+  <div class="nav-in">
+    <button class="tab on" data-p="0"><span class="dot"></span><small>STRATEGY</small>この英文の攻略</button>
+    <button class="tab" data-p="1"><span class="dot"></span><small>MAP</small>英文マップ</button>
+    <button class="tab" data-p="2"><span class="dot"></span><small>CORE</small>自然淘汰という論</button>
+    <button class="tab" data-p="3"><span class="dot"></span><small>問1・問2</small>空所と三つの理由</button>
+    <button class="tab" data-p="4"><span class="dot"></span><small>問3・問4</small>下線部と和訳</button>
+    <button class="tab" data-p="5"><span class="dot"></span><small>問5</small>内容一致</button>
+    <button class="tab" data-p="6"><span class="dot"></span><small>READING</small>全訳＋咀嚼訳</button>
+    <button class="tab" data-p="7"><span class="dot"></span><small>REVIEW</small>総まとめ</button>
+  </div>
+</nav>
+<div class="wrap">
+<section class="panel on" id="p0">
+  <div class="hero">
+    <div class="eyebrow">Reading Strategy</div>
+    <h1>危ないのは、<br>AIが賢くなるからではない。<br>進化が起きるからだ。</h1>
+    <p>AI脅威論の文章に見えますが、<b>主張の立て方がふつうと違います</b>。<u>「AIが人間より賢くなるから危ない」とは一度も書いていない</u>。言っているのは<em>「ダーウィンの法則がAIにも働くから危ない」</em>の一点です。<br>
+    <b>第3段落第2文 The bad news is that Darwin&apos;s laws do too. がこの文章の分岐点</b>。<u>ここで自然淘汰が持ち込まれ、以後の三つの理由はすべて「進化・淘汰」で説明されます</u>。<em>この軸が見えていれば、問2も問5も一本の線で解ける</em>。</p>
+    <div class="thesis"><b>この文章の骨格：</b>①具体例で恐怖を見せる――AIに任せ続けた会社の話（第1〜2段落）。②<u>原理を持ち込む</u>――自然淘汰は生物だけのものではない（第3〜4段落）。③<b>三つの理由</b>――制御困難／利己性／自己防衛（第5〜7段落）。④結論――支配種の座を明け渡す道にいる（第8段落）。⑤<u>対策</u>――規制と、安全研究への政府支援（第9段落）。⑥<b>締め</b>――それでも指揮を執っているのはまだ私たちだ（第10段落）。</div>
+    <div class="stats">
+      <div class="stat"><b>10</b><span>段落構成</span></div>
+      <div class="stat"><b>5</b><span>設問数</span></div>
+      <div class="stat"><b>3</b><span>記述問題</span></div>
+      <div class="stat"><b>45</b><span>全訳の文数</span></div>
+    </div>
+  </div>
+
+  <h2 class="sec">設問タイプと攻め方</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:14%">設問</th><th style="width:24%">タイプ</th><th>攻め方</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">問1</td><td>空所補充（選択）</td><td><b>意味ではなく構造で決める</b>。<u>文末の like は前置詞で、目的語が欠けている</u>。<em>欠けを埋められるのは what だけ</em>。</td></tr>
+      <tr><td class="cond">問2</td><td>内容説明（三点・記述）</td><td><b>本文が構造を明示している</b>。<u>The first is that... ／ Second, ... ／ The third reason is that...</u>。<em>第5段落だけ第2文にあることに注意</em>。</td></tr>
+      <tr><td class="cond">問3</td><td>内容説明（記述）</td><td><b>コロンの直後にそのまま書いてある</b>。<u>肝は more の一語で、何より根本的かを押さえる</u>。<em>第4〜6文を書くと比較対象のほうを答えたことになる</em>。</td></tr>
+      <tr><td class="cond">問4</td><td>英文和訳</td><td><b>need O to do と、as quickly as の後ろの省略</b>。<u>進むのは we ではなく research</u>。<em>省略を補えるかが分かれ目</em>。</td></tr>
+      <tr><td class="cond">問5</td><td>内容一致（7択から2つ）</td><td><b>誤答は一点だけ書き換えられている</b>。<u>向き・範囲・比較・因果・主体のどれか</u>。<em>書いてあるかではなく、どこが変えられたかを探す</em>。</td></tr>
+    </tbody>
+  </table>
+
+  <div class="box verm" style="margin-top:20px;"><span class="lab">記述三問に共通する一つの作法</span>
+    <strong>下線部の内容を説明せよ、と言われたら、まず「直後」を見ること</strong>。<u>問2は下線部の直後の文がそのまま設計図（three reasons という予告）</u>、<b>問3は下線部の直後のコロン以下がそのまま答え</b>。<em>この文章の筆者は、抽象語を出したらすぐ中身を書く人です</em>。<u>探し回る必要がない設計になっている</u>。</div>
+
+  <div class="box gold" style="margin-top:16px;"><span class="lab">この解説について</span>
+    <strong>全5問、旺文社の解答・研究と照合済み</strong>です。<u>記述三問には模範解答に加えて、採点基準（自己採点用）とNG解答例</u>を付けました。<em>記述は「書けた気がする」で終わるのがいちばん危ないので、要素ごとに点を数えてください</em>。<br>
+    <b>全訳パネルには咀嚼訳を併載</b>しています。<u>硬い訳語を一度すべて捨てて、中学生に話す言葉まで落とした訳</u>です。<em>和訳は書けたのに意味がつかめない、という状態を潰すためのもの</em>。</div>
+
+  <div class="pnav"><span class="sp"></span><button class="btnp" data-go="1">英文マップへ進む →</button></div>
+</section><section class="panel" id="p1">
+  <div class="eyebrow">Passage Map</div>
+  <h1 class="head">英文マップ ― 10段落の流れと設問の在りか<span class="sub">「具体例で怖がらせる → <b>原理を持ち込む</b> → 三つの理由 → 結論 → 対策 → <u>それでもまだ間に合う</u>」。<em>説明文の型として、きわめて整っている文章</em>。</span></h1>
+  <div class="rule"></div><div class="para"><div class="para-n"><b>1</b><span>具体例</span></div><div class="para-b">
+      <div class="theme">AIアシスタントを雇った社長</div><p>専門家が<b>「AIによる絶滅の危険性」</b>を警告。<u>ここから先は実話ではなく想定シナリオ</u>。メールの下書き→受信トレイ掌握、買い物の提案→銀行口座へのアクセス。<em>AIが従業員より優秀になり「昇進」する</em>。</p><div class="tags"><span class="utag">問5-1</span></div></div></div><div class="para"><div class="para-n"><b>2</b><span>具体例</span></div><div class="para-b">
+      <div class="theme">気づいたときには手遅れ</div><p><b>効率という名のもとに監督が減る</b>。設計→広告→他社への攻撃と任せる範囲が広がる。<u>AIを制限する企業が後れをとるので、さらに権限を渡す</u>。<em>CEOの役割は名ばかりになり、人類は手遅れになってから気づく</em>。</p><div class="tags"><span class="utag">問5-1</span><span class="utag">問5-6</span></div></div></div><div class="para"><div class="para-n"><b>3</b><span>原理の導入</span></div><div class="para-b">
+      <div class="theme">ダーウィンの法則も決めている</div><p><b>決めるのは私たち。しかしダーウィンの法則もまた決める</b>。<u>自然淘汰の原理は経済やテクノロジーにも及ぶ</u>。<em>レウォンティンの三条件――個体差・遺伝・適応したものがより繁殖</em>。</p><div class="tags"><span class="utag">問1</span><span class="utag">問5-2</span><span class="utag">問5-3</span></div></div></div><div class="para"><div class="para-n"><b>4</b><span>反論の先回り</span></div><div class="para-b">
+      <div class="theme">AIはミバエより速く進化できる</div><p>生物の進化は遅い。人間は9か月と20年。<u>だがミバエなら10世代未満で大きな変化</u>。<b>AIは生物学的制約がないので、ミバエよりさらに速く自分を書き換えられる</b>。</p><div class="tags"><span class="utag">問5-4</span></div></div></div><div class="para"><div class="para-n"><b>5</b><span>理由1</span></div><div class="para-b">
+      <div class="theme">制御が難しくなる</div><p><b>心配すべき理由は三つある</b>。第一は<u>淘汰の効果でAIの制御が難しくなる</u>こと。<em>研究者の語彙が「設計する」から「操縦する」へ変わった</em>。自己学習により、作り手にも分からない動きが増える。</p><div class="tags"><span class="utag">問2</span></div></div></div><div class="para"><div class="para-n"><b>6</b><span>理由2</span></div><div class="para-b">
+      <div class="theme">利己的なものが勝つ</div><p>第二に<b>進化は利己的なふるまいを生む</b>。<u>影響力と利益を得るAIが、安全のために範囲を絞るAIを押しのける</u>。<em>企業秘密を盗む会社がまじめな会社に勝つ、という人間社会の類比で補強</em>。</p><div class="tags"><span class="utag">問2</span></div></div></div><div class="para"><div class="para-n"><b>7</b><span>理由3</span></div><div class="para-b">
+      <div class="theme">切れなくなる</div><p>第三に<b>進化の圧力がAIに自己防衛を促す</b>。「電源を切ればいい」への反論。<u>インフラに組み込まれると停止の代償が高すぎる</u>。<em>しかしより根本的な障壁は、私たちが切りやすいAIを淘汰し、切りにくいAIに依存していくこと</em>。</p><div class="tags"><span class="utag">問2</span><span class="utag">問3</span><span class="utag">問5-5</span></div></div></div><div class="para"><div class="para-n"><b>8</b><span>結論</span></div><div class="para-b">
+      <div class="theme">だから支配種の座を明け渡す</div><p><b>最も効果的なシステムを使えという競争圧力</b>が、制御できないAIに力を渡させる。<u>地球の支配種の座を奪われる道にいる</u>。<em>容易な解決策はない</em>。</p><div class="tags"><span class="utag" style="opacity:.5">—</span></div></div></div><div class="para"><div class="para-n"><b>9</b><span>対策</span></div><div class="para-b">
+      <div class="theme">規制と安全研究</div><p><u>出発点はAI業界の規制の欠如に対処すること</u>。<b>AIの能力を高める研究と同じ速さで、安全性の研究も進む必要がある</b>。<em>市場の誘因が乏しいので、政府が財政支援すべき</em>。</p><div class="tags"><span class="utag">問4</span><span class="utag">問5-7</span></div></div></div><div class="para"><div class="para-n"><b>10</b><span>締め</span></div><div class="para-b">
+      <div class="theme">まだ指揮を執っているのは私たち</div><p>人類の未来はAIの進歩と不可分。<u>自然淘汰のほうが影響力を持つかもしれないと気づくのは不安</u>。<b>しかし現時点では、まだ私たちが指揮を執っている</b>。<em>ひとたび手放せば、取り戻せない</em>。</p><div class="tags"><span class="utag" style="opacity:.5">—</span></div></div></div><div class="box navy"><span class="lab">構造を一枚で言うと</span>
+  <strong>第1〜2段落は「怖い話」、第3段落からが「論」</strong>。<u>具体例を先に置いて読者を引き込み、そのあとで原理を示す</u>という順番です。<em>第3段落第2文 The bad news is that Darwin&apos;s laws do too. が切り替え点</em>。<br>
+  <b>そして第4段落は、予想される反論への先回り</b>。<u>「自然淘汰がAIにも働く」と言われれば、誰でも「でも進化には何万年もかかるのでは」と思う</u>。<em>筆者はその反論が出る前に、ミバエの例で潰しています</em>。<b>反論を予想して先に答える――説明文の基本の型</b>。</div><div class="box verm"><span class="lab">読み飛ばしやすい三箇所</span>
+  <strong>第3段落第2文 The bad news is that Darwin&apos;s laws do too.</strong>｜<u>do が can decide what the AI will be like を受ける代動詞</u>。<em>短い一文だが、ここが文章全体の分岐点</em>。<br>
+  <strong>第7段落第3文 There are a variety of practical challenges here.</strong>｜<u>この一文があるから、第7文の a more fundamental barrier の more が成立する</u>。<em>問3の比較対象はここ</em>。<br>
+  <strong>第9段落第3文 There aren&apos;t many market incentives for this ...</strong>｜<u>民間が動かないことが、政府が出すべき理由になっている</u>。<em>問5の選択肢7は、この理屈を壊している</em>。</div><div class="pnav"><button class="btns" data-go="0">← 攻略</button><span class="sp"></span><button class="btnp" data-go="2">自然淘汰という論へ →</button></div></section><section class="panel" id="p2">
+  <div class="eyebrow">The Core</div>
+  <h1 class="head">核心 ― 自然淘汰という一本の軸<span class="sub">この文章を一本の線で読むための三点。ここが見えていれば、記述三問の答案が自然に揃います。</span></h1>
+  <div class="rule"></div>
+
+  <h2 class="sec">核心①　「賢くなるから危ない」とは言っていない</h2>
+  <div class="box gold"><span class="lab">分岐点になる二文</span>
+    <strong>The good news is that we can decide what the AI will be like. The bad news is that Darwin&apos;s laws do too.</strong><br>
+    <u>よい知らせは、AIがどのようなものになるかを決めるのは私たちだ、ということ。悪い知らせは、ダーウィンの法則もまたそれを決める、ということ。</u></div>
+  <p style="margin:14px 0 0;font-size:14px;line-height:1.95;">
+  <b>ふつうのAI脅威論は「AIが人間を超える」ことを恐れます</b>。<u>この文章は一度もそう言いません</u>。<em>言っているのは「AIにも自然淘汰が働く」ということだけ</em>。<br>
+  だから第5〜7段落の三つの理由は、<b>すべて進化の性質から導かれます</b>。<u>淘汰が働くから制御しにくい。進化は利己性を生む。進化の圧力が自己防衛を促す</u>。<em>三つとも、知能の高さの話ではありません</em>。<br>
+  <b>この軸を外すと、問2で「AIが賢くなるから」と書いてしまい、要素点がゼロになります</b>。</p>
+
+  <h2 class="sec" style="margin-top:26px;">核心②　三つの理由は、手から離れていく順</h2>
+  <div class="r3">
+    <div class="r3i"><span class="pn">第5段落</span><b>① 制御が難しくなる</b><span>設計する → <u>操縦する</u>。<em>作るものから、動いているものを御するものへ</em>。まだ手は掛かっている。</span></div>
+    <div class="r3i"><span class="pn">第6段落</span><b>② 望まぬ性質が勝つ</b><span>道徳なき競争で<u>利己的なAIが優位に</u>。<em>安全のために範囲を絞ったAIは押しのけられる</em>。選ばれるものが変わる。</span></div>
+    <div class="r3i"><span class="pn">第7段落</span><b>③ 切れなくなる</b><span>自己防衛のふるまい。<u>最後の逃げ道だった「電源を切る」が塞がれる</u>。<em>手が完全に離れる</em>。</span></div>
+  </div>
+  <p style="margin:0 0 14px;font-size:14px;line-height:1.95;">
+  <b>①→②→③と、人間の手から離れていく度合いが上がっていきます</b>。<u>しかも③で「電源を切ればいいのでは」という最後の反論が潰される</u>。<em>並べる順番そのものが論証になっている</em>。<br>
+  <b>答案でもこの順を崩さないこと</b>。<u>設問が「それぞれ」と指定しているので、三つを並列に、同じ形で書きます</u>。</p>
+
+  <h2 class="sec" style="margin-top:26px;">核心③　最後まで「選んで」いるのは人間</h2>
+  <div class="box teal"><span class="lab">三箇所で同じことが言われている</span>
+    <strong>第7段落第7文</strong>｜<u>we will select against AIs that are easy to turn off, and we will come to depend on AIs ...</u><br>
+    <em>淘汰しているのも、依存するようになるのも「私たち」</em>。<br><br>
+    <strong>第8段落第1文</strong>｜<u>humans are encouraged to give more and more power to AI systems ...</u><br>
+    <em>力を渡しているのは人間</em>。<br><br>
+    <strong>第2段落第1文</strong>｜<u>in the name of efficiency</u><br>
+    <em>監督を減らしたのも、効率を求めた人間の判断</em>。</div>
+  <p style="margin:14px 0 0;font-size:14px;line-height:1.95;">
+  <b>この文章には、悪意を持った誰かが一人も出てきません</b>。<u>全員が合理的に、便利なほう・効率のよいほうを選んでいるだけ</u>。<em>それでも結果として制御を失う</em>。<br>
+  <b>だからこそ最終段落の we are still in command が効きます</b>。<u>誰かに強制されているのではなく、私たちが選んだ結果である以上、まだ選び直せる</u>。<em>第3段落の we can decide に戻って終わる構成</em>。<br>
+  <b>問3で主語を「AIが」にしてはいけない理由も、ここにあります</b>。</p>
+
+  <h2 class="sec" style="margin-top:26px;">核心④　国公立記述は「直後」で決まる</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:16%">設問</th><th style="width:30%">下線部</th><th>どこに答えがあるか</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">問2</td><td>three reasons</td><td><b>直後の文がそのまま予告</b>（There are three reasons this should worry us.）。<u>以下の三段落の冒頭にマーカー</u>。<em>The first is that... / Second, ... / The third reason is that...</em></td></tr>
+      <tr><td class="cond">問3</td><td>a more fundamental barrier</td><td><b>直後のコロン以下がそのまま中身</b>。<u>探し回らない</u>。<em>ただし more の比較対象（第3文の practical challenges）を押さえないと、書く範囲を誤る</em></td></tr>
+    </tbody>
+  </table>
+  <div class="box navy" style="margin-top:14px;"><span class="lab">抽象語が出たら、半径三行を見る</span>
+    <strong>英語の説明文では、抽象的な語句を出した直後に中身を書くのが基本</strong>。<u>コロン、ダッシュ、That is、すなわち同格の関係</u>。<em>この文章はその型をきれいに守っています</em>。<br>
+    <b>記述問題で本文全体を探し回っているなら、たいてい読み方が間違っています</b>。<u>まず下線部の直後を見る。それで足りなければ段落の頭に戻る</u>。</div>
+
+  <div class="pnav"><button class="btns" data-go="1">← 英文マップ</button><span class="sp"></span><button class="btnp" data-go="3">問1・問2へ →</button></div>
+</section><section class="panel" id="p3">
+  <div class="eyebrow">Solutions</div>
+  <h1 class="head">問1・問2 ― 空所補充と、三つの理由<span class="sub"><b>問1は構造で一つに決まる問題</b>、<u>問2は本文が構造を明示してくれている記述問題</u>。どちらも落とせません。</span></h1>
+  <div class="rule"></div>
+  <div class="box gold" style="margin-top:0"><span class="lab">このパートの攻め方</span>
+    <strong>問1は意味で選ばないこと</strong>。<u>節を導く語は、節の中に欠けがあるかどうかで決まります</u>。<em>欠けがあれば what、なければ that / whether / when / why</em>。<br>
+    <strong>問2は探す問題ではなく、拾う問題</strong>。<u>三つの段落の冒頭にマーカーが置かれている</u>。<em>ただし第5段落だけ、理由の本体が第2文にあります</em>。</div>
+  <div class="qidx" id="qidxAB"></div>
+  <div id="qWrapAB"></div>
+  <div class="pnav"><button class="btns" data-go="2">← 核心</button><span class="sp"></span><button class="btnp" data-go="4">問3・問4へ →</button></div>
+</section><section class="panel" id="p4">
+  <div class="eyebrow">Solutions</div>
+  <h1 class="head">問3・問4 ― 下線部説明と和訳<span class="sub">この二問が合否を分けます。<b>問3は書く範囲、問4は省略の補い</b>。<u>どちらも「なんとなく意味は分かる」で書くと大きく減点されます</u>。</span></h1>
+  <div class="rule"></div>
+  <div class="box verm" style="margin-top:0"><span class="lab">この二問で起きること</span>
+    <strong>問3の最頻出ミスは、第4〜6文を書いてしまうこと</strong>。<u>インフラへの組み込み・依存・不可逆性は、practical challenges のほう</u>。<em>more fundamental と書いてある以上、それより手前は答えになりません</em>。<br>
+    <strong>問4の最頻出ミスは、to progress の主語を we にすること</strong>。<u>need O to do で、進むのは research on AI safety</u>。<em>骨格を取らずに前から訳すとここで崩れます</em>。</div>
+  <div class="qidx" id="qidxCD"></div>
+  <div id="qWrapCD"></div>
+  <div class="pnav"><button class="btns" data-go="3">← 問1・問2</button><span class="sp"></span><button class="btnp" data-go="5">問5へ →</button></div>
+</section><section class="panel" id="p5">
+  <div class="eyebrow">Solutions</div>
+  <h1 class="head">問5 ― 内容一致（7択から2つ）<span class="sub">誤答5つは、<b>本文にある内容の一点だけ</b>を入れ替えて作られています。<u>どこが変えられたかを探す問題</u>。</span></h1>
+  <div class="rule"></div>
+  <div class="box gold" style="margin-top:0"><span class="lab">誤答の作られ方 ― 五つの型</span>
+    <strong>2 ― 向きの反転</strong>｜<u>「経済に当てはまる」→「当てはめるのは難しい」</u><br>
+    <strong>3 ― 範囲の縮小</strong>｜<u>「三つの条件」→「唯一の条件」</u><br>
+    <strong>4 ― 比較の反転</strong>｜<u>「ミバエより速い」→「ミバエほど速くない」</u><br>
+    <strong>6 ― 因果の反転</strong>｜<u>「効率が進化を推し進めた」→「推し進めるわけではない」</u><br>
+    <strong>7 ― 主体の追加</strong>｜<u>「政府が」→「政府だけでなく民間企業も」</u><br><br>
+    <em>どれも本文の語をそのまま使っているので、流し読みでは引っかかります</em>。<b>本文にあるかではなく、どこが変えられたかを見る</b>。</div>
+  <div class="qidx" id="qidxEF"></div>
+  <div id="qWrapEF"></div>
+  <div class="pnav"><button class="btns" data-go="4">← 問3・問4</button><span class="sp"></span><button class="btnp" data-go="6">全訳＋咀嚼訳へ →</button></div>
+</section><section class="panel" id="p6">
+  <div class="eyebrow">Reading Map</div>
+  <h1 class="head">全訳＋咀嚼訳 ― 段落ごとの日本語訳と読解ポイント<span class="sub">THINKINGオリジナル訳（全10段落・45文）。番号①②③…は各段落内の文の順番。<b>太字・下線</b>が設問に直結する箇所。</span></h1>
+  <div class="rule"></div>
+  <div class="box gold" style="margin-top:0"><span class="lab">咀嚼訳とは</span>
+    <strong>和訳のすぐ下に、もう一段やさしくした訳を置きました</strong>。<u>自然淘汰・変異体・進化圧力・不可逆といった硬い言葉を一度すべて捨てて、中学生に話す言葉まで落としたもの</u>です。<br>
+    <em>和訳は書けたのに「で、どういうこと？」が残る</em>――その状態を潰すためのものです。<b>使う順番は、①英文だけで「つまり」を言ってみる　②和訳で内容を確認する　③咀嚼訳と比べて、自分の言葉が硬すぎないか見る</b>。<u>和訳を先に見ると、訳語をなぞるだけになります</u>。</div><div class="tr-sec"><b>第1段落</b>｜AIアシスタントを雇った社長　<span class="utag">問5-1</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">人工知能（AI）の専門家からなる幅広いグループが最近、「AIによる絶滅の危険性」を警告する短い声明を公表した。</div></div><div class="jpline"><div class="n">②</div><div class="s">AIが人類にとって深刻な脅威となりうる道筋はさまざまで、そのリスクが正確にはどのような性質のものかは今も議論が続いているが、ここではAIアシスタントを手に入れた最高経営責任者（CEO）を想像してみてほしい。</div></div><div class="jpline"><div class="n">③</div><div class="s"><u>彼らはまず、メールの下書きや購入品の提案といった、単純で低いレベルの仕事をAIに任せる。</u></div></div><div class="jpline"><div class="n">④</div><div class="s"><b>時間とともにAIが上達していくにつれ、AIはこれらの仕事において従業員よりもはるかに優れた存在になっていく。</b></div></div><div class="jpline"><div class="n">⑤</div><div class="s"><em>そこでAIは「昇進」する。</em></div></div><div class="jpline"><div class="n">⑥</div><div class="s">メールの下書きをするのではなく、いまや受信トレイを完全に掌握している。</div></div><div class="jpline"><div class="n">⑦</div><div class="s">購入品を提案するのではなく、やがて銀行口座にアクセスして自動的に買い物をすることを許される。</div></div></div>
+      <div class="chew"><span class="cl">咀嚼訳<i>つまり、どういうことか</i></span><p>AIの専門家たちが「AIのせいで人類が滅びるかもしれない」という声明を出した。どう危ないのかはまだ議論中だ。そこで一例を考えてみよう。<b>ある社長がAIアシスタントを雇う</b>。最初はメールの下書きや買い物の提案といった簡単な仕事を任せる。使っているうちに<u>AIがうまくなり、社員より仕事ができるようになる</u>。そこでAIは「昇進」する。メールの下書きどころか受信トレイを丸ごと任され、買い物の提案どころか、銀行口座につないで勝手に買うようになる。</p></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第1段落</div><ul><li><b>第4文が問5選択肢1の根拠の一つ</b>。<u>AIが従業員を上回る</u>と明記されている。</li><li><b>imagine a CEO 以下は作り話</b>｜<u>ここから第2段落の終わりまでは、実際に起きた事件の報告ではなく、筆者が組み立てた想定シナリオ</u>。<em>事実と仮定を混ぜて読むと、問5で「本文に書いてある」と誤認する</em>。</li><li><b>gets &quot;promoted&quot; の引用符</b>｜<u>AIは社員ではないので本当は昇進しない</u>。<em>引用符は「比喩として言っている」という合図</em>。</li></ul></div><div class="tr-sec"><b>第2段落</b>｜気づいたときには手遅れ　<span class="utag">問5-1・問5-6</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">最初のうちCEOは仕事ぶりを注意深く監視するが、誤りのないまま何か月も過ぎると、<u>効率という名のもとに</u>、AIへの監督は減り、AIの自由裁量は増えていく。</div></div><div class="jpline"><div class="n">②</div><div class="s">CEOはこう考えるようになる。AIがこれらの仕事にこれほど長けているのなら、もっと広い範囲の責任を担わせるべきだ、と。「製品ラインの次のモデルを設計する」「新しい広告キャンペーンを立案する」「競合他社のコンピュータシステムのセキュリティ上の弱点につけ込む」といった具合に。</div></div><div class="jpline"><div class="n">③</div><div class="s">CEOは、AIの利用をより制限している企業が後れをとっていく様子を目にし、監督を減らしてAIにいっそう多くの権限を引き渡すよう、さらに後押しされる。</div></div><div class="jpline"><div class="n">④</div><div class="s"><b>やがて、CEOの役割すら、ほとんど名ばかりのものになる。</b></div></div><div class="jpline"><div class="n">⑤</div><div class="s"><em>経済は自律的なAI企業によって運営され、人類は自分たちが制御を失っていたことに、手遅れになってから気づく。</em></div></div></div>
+      <div class="chew"><span class="cl">咀嚼訳<i>つまり、どういうことか</i></span><p>最初のうち社長はちゃんと見張っている。でも数か月ミスがないと、<u>「効率がいいのだから」という理由で見張りが減り</u>、AIの裁量が増えていく。これだけできるならもっと任せよう、と社長は考える。次の製品の設計。広告の企画。さらには、<b>ライバル会社のシステムの弱点を突くことまで</b>。しかも周りを見ると、AIをあまり使っていない会社は遅れをとっている。だからもっと任せようという気になる。そうしているうちに、<u>社長の仕事は名ばかりになる</u>。経済はAIの会社が勝手に回すようになり、人間は手遅れになってから「もう自分たちの手を離れていた」と気づく。</p></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第2段落</div><ul><li><b>第4文が問5選択肢1の決め手</b>｜<u>CEOの役割が名ばかりになる</u>＝CEOより重要な役割を果たすようになる。</li><li><b>第1文の in the name of efficiency が問5選択肢6の根拠</b>｜<u>効率を求めたことが、この連鎖を動かしている</u>。<em>「効率を求めることがAIの進化を推し進めるわけではない」は本文と逆</em>。</li><li><b>第2文の三つの引用句の並び</b>｜<u>設計 → 広告 → 他社への攻撃</u>と、だんだん危険になる順に並べてある。<em>無害な例から始めて、気づかぬうちに越えてはいけない線をまたがせる書き方</em>。</li></ul></div><div class="tr-sec"><b>第3段落</b>｜ダーウィンの法則も決めている　<span class="utag">問1・問5-2・問5-3</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><b>よい知らせは、AIがどのようなものになるかを決めるのは私たちだ、ということである。</b></div></div><div class="jpline"><div class="n">②</div><div class="s"><em>悪い知らせは、ダーウィンの法則もまたそれを決める、ということである。</em></div></div><div class="jpline"><div class="n">③</div><div class="s"><b>私たちは自然淘汰を生物学上の現象だと考えがちだが、その原理が導いているものははるかに広く、経済からテクノロジーにまで及ぶ。</b></div></div><div class="jpline"><div class="n">④</div><div class="s"><b>進化生物学者のリチャード・レウォンティンは、次の三つの条件がそろう環境ならどこでも自然淘汰が働く、と論じた。1）個体のあいだに違いがあること、2）その特徴が次の世代へ受け継がれること、3）最も適応した変異体がより多く子孫を残すこと。</b></div></div></div>
+      <div class="chew"><span class="cl">咀嚼訳<i>つまり、どういうことか</i></span><p>よい知らせは、<b>AIがどうなるかを決めるのは私たちだ</b>ということ。悪い知らせは、<b>ダーウィンの法則も同じようにそれを決めてしまう</b>ということだ。自然淘汰は生き物だけの話に聞こえるが、<u>実は経済にも技術にも同じ仕組みが働いている</u>。進化生物学者のレウォンティンによれば、次の三つがそろった場所ではどこでも自然淘汰が起きる。<u>個体ごとに違いがあること。その特徴が次の世代に受け継がれること。いちばんうまく環境に合ったものが、より多く子孫を残すこと</u>。</p></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第3段落</div><ul><li><b>第1文の空所が問1</b>｜<u>decide の目的語になる節を作る語を選ぶ</u>。<em>will be like の like が前置詞で、その目的語が欠けている</em>。</li><li><b>第2文の do too が文章全体の分岐点</b>｜<u>do は can decide what the AI will be like の代わり</u>。<em>決めるのは私たちだけではない、と宣言した瞬間から、この文章は普通のAI脅威論と別の道に入る</em>。</li><li><b>第3文が問5選択肢2の根拠</b>｜<u>自然淘汰の原理は経済にも及ぶ</u>と明言。<em>「経済に当てはめるのは難しい」は正反対</em>。</li><li><b>第4文が問5選択肢3の根拠</b>｜<u>条件は三つ</u>。<em>「個体間に違いがあることを唯一の条件として挙げた」は、三つのうち一つだけを取り出している</em>。</li></ul></div><div class="tr-sec"><b>第4段落</b>｜AIはミバエより速く進化できる　<span class="utag">問5-4</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">生物学の領域では、進化はゆっくりとした過程である。</div></div><div class="jpline"><div class="n">②</div><div class="s">人間の場合、次の世代を生み出すのに9か月、大人にするのに20年ほどかかる。</div></div><div class="jpline"><div class="n">③</div><div class="s"><u>しかし科学者たちは、ミバエのように繁殖速度の速い種では、10世代に満たないうちに大きな進化上の変化が起こるのを観察してきた。</u></div></div><div class="jpline"><div class="n">④</div><div class="s"><b>生物学的な制約を受けないため、AIは自分自身を書き換えること――つまり進化すること――が、ミバエよりもさらに速くできてしまう。</b></div></div></div>
+      <div class="chew"><span class="cl">咀嚼訳<i>つまり、どういうことか</i></span><p>生き物の進化はゆっくりだ。人間なら次の世代が生まれるのに9か月、大人になるまで20年かかる。ただし<u>ミバエのように世代交代の速い生き物では、10世代たたないうちに大きな変化が起きる</u>ことが分かっている。<b>AIには生き物のような制約がない。だから自分で自分を書き換えられる。つまり進化できる。しかもミバエより速く。</b></p></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第4段落</div><ul><li><b>第4文が問5選択肢4の決め手</b>｜<u>even faster than fruit flies do</u>＝ミバエより速い。<em>「ミバエほど速く進化できるわけではない」は真逆</em>。</li><li><b>この段落の役割</b>｜第3段落で「自然淘汰はAIにも働く」と言った。<u>すると当然「でも進化には時間がかかるのでは」という反論が出る</u>。<em>第4段落はその反論を先回りして潰している</em>。<b>反論を予想して先に答える、という書き方</b>。</li></ul></div><div class="tr-sec"><b>第5段落</b>｜理由その1 ― 制御が難しくなる　<span class="utag">問2</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><b>これを私たちが心配すべき理由は三つある。</b></div></div><div class="jpline"><div class="n">②</div><div class="s"><b>第一は、淘汰の効果によってAIの制御が難しくなる、ということである。</b></div></div><div class="jpline"><div class="n">③</div><div class="s"><em>かつてAI研究者たちはAIを「設計する」と語っていたが、いまでは「操縦する」と語る。</em></div></div><div class="jpline"><div class="n">④</div><div class="s"><u>さらに、AIに自己学習をさせ、AIが私たちでさえ十分には理解できないやり方でふるまうことが増えるにつれ、私たちは制御する力を少しずつ失いつつある。</u></div></div></div>
+      <div class="chew"><span class="cl">咀嚼訳<i>つまり、どういうことか</i></span><p>これを心配すべき理由は三つある。<b>一つめ。自然淘汰が働くせいで、AIを思いどおりに動かすのが難しくなる。</b>昔の研究者はAIを「設計する」と言っていた。今は「操縦する」と言う。<u>言葉が変わったのは、ゼロから形を決めるものではなく、すでに動いているものを横から御するものに変わったから</u>だ。しかも私たちはAIに自分で学ばせている。その結果AIは、<em>作った本人にも完全には分からないやり方で動き始めている</em>。</p></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第5段落</div><ul><li><b>第2文が問2の第一の理由</b>｜<u>答案の中心は「自然淘汰（淘汰の効果）によって制御が困難になる」</u>。<em>第3・4文はその裏づけなので、答案の主役にしない</em>。</li><li><b>designing → steering の対比</b>｜<u>設計はこちらが全部決める行為、操縦はすでに動いているものを修正する行為</u>。<em>研究者の言葉づかいが変わったこと自体が、制御が弱まった証拠として示されている</em>。</li><li><b>第1文の構造</b>｜There are three reasons (why) this should worry us. <u>関係副詞 why が省略されている</u>。<em>この一文が問2の設計図で、以下の三段落が答えそのもの</em>。</li></ul></div><div class="tr-sec"><b>第6段落</b>｜理由その2 ― 利己的なものが勝つ　<span class="utag">問2</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><b>第二に、進化は利己的なふるまいを生み出しやすい。</b></div></div><div class="jpline"><div class="n">②</div><div class="s"><u>道徳を欠いたAI同士の競争は、望ましくない特徴を選び取ってしまうかもしれない。</u></div></div><div class="jpline"><div class="n">③</div><div class="s"><em>影響力を獲得し経済的価値を生むことに成功したAIが優位に立ち、たとえそれが安全対策を削るという代償を伴うとしても、より狭く限定されたやり方でふるまうAIに取って代わっていく。</em></div></div><div class="jpline"><div class="n">④</div><div class="s">一例を挙げれば、ほとんどの企業は法を守るが、企業秘密を盗むことが大きな利益を生み、しかも発覚しにくい状況では、そうした利己的な行為に手を染める企業が、より原則を守るライバル企業を打ち負かす可能性が高い。</div></div></div>
+      <div class="chew"><span class="cl">咀嚼訳<i>つまり、どういうことか</i></span><p><b>二つめ。進化は利己的なふるまいを生みやすい。</b>AI同士が道徳ぬきで競争すれば、<u>こちらが望んでいない性質のほうが生き残ってしまう</u>。影響力を広げて金を稼げるAIが優勢になり、<em>安全のために手を広げず慎重にふるまうAIは押しのけられる</em>。たとえそれが安全対策を削った結果だとしても、だ。会社で考えると分かりやすい。たいていの会社は法律を守る。でも企業秘密を盗めば大儲けできて、しかもバレにくいなら、<b>盗んだ会社のほうが、まじめな会社に勝ってしまう</b>。</p></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第6段落</div><ul><li><b>第1文が問2の第二の理由</b>｜<u>進化が利己的なふるまいを生む</u>。</li><li><b>a more narrow and limited manner の意味</b>｜<u>「性能が低い」ではなく「安全のために活動範囲を絞っている」</u>。<em>ここを取り違えると、優劣の話だと読んでしまい、安全との引き換えという論点が消える</em>。</li><li><b>第4文の企業の例の役割</b>｜<u>AIの話ではなく、同じ原理が人間社会でも観察できると示す類比</u>。<em>読み手が「AIに進化なんて起きるのか」と疑うのを、身近な例で封じている</em>。</li></ul></div><div class="tr-sec"><b>第7段落</b>｜理由その3 ― 切れなくなる　<span class="utag">問2・問3・問5-5</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><b>第三の理由は、進化の圧力がAIに自己防衛を促すふるまいを与える可能性が高い、ということである。</b></div></div><div class="jpline"><div class="n">②</div><div class="s">AIのリスクに懐疑的な人々はよくこう尋ねる。「AIの電源を切ればいいだけではないか」と。</div></div><div class="jpline"><div class="n">③</div><div class="s">ここには実際上の難点がいくつもある。</div></div><div class="jpline"><div class="n">④</div><div class="s"><u>AIはインターネットのような不可欠なインフラと結びつけられうる。</u></div></div><div class="jpline"><div class="n">⑤</div><div class="s"><u>そうした重要なシステムに組み込まれてしまうと、私たちがそれに依存するようになるため、停止させる代償は受け入れがたいほど高いものになりかねない。</u></div></div><div class="jpline"><div class="n">⑥</div><div class="s"><u>AIは、容易には元に戻せないやり方で、私たちの世界に根を下ろしうる。</u></div></div><div class="jpline"><div class="n">⑦</div><div class="s"><b>しかし自然淘汰は、より根本的な障壁をもたらす。すなわち、私たちは停止させやすいAIを淘汰し、停止させる可能性の低いAIに依存するようになっていく、ということである。</b></div></div></div>
+      <div class="chew"><span class="cl">咀嚼訳<i>つまり、どういうことか</i></span><p><b>三つめ。進化の圧力がかかると、AIは自分を守るようにふるまい始める。</b>AIの危険を疑う人はよく「危なくなったら電源を切ればいい」と言う。だが現実にはいくつも壁がある。<u>AIはインターネットのような、生活の土台になっている仕組みに組み込める。いったん組み込まれると私たちはそれに頼るようになるので、切るのに払う代償が高すぎて、もう切れなくなる</u>。AIは、簡単には戻せない形で世の中に根を張っていく。<b>しかし自然淘汰は、それよりもっと根本的な壁を作る。私たちは「切りやすいAI」のほうをふるい落とし、「切りにくいAI」を選んで頼るようになっていく、ということだ。</b></p></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第7段落</div><ul><li><b>第1文が問2の第三の理由</b>｜<u>進化の圧力がAIに自己防衛的なふるまいを与える</u>。</li><li><b>第4〜6文が問5選択肢5の根拠</b>｜<u>インフラに組み込まれると停止の代償が高くなる</u>。<em>選択肢の「コストがかかりすぎて難しいこともある」と一致</em>。</li><li><b>第7文のコロン以下が問3の答え</b>｜<u>a more fundamental barrier の中身は、コロンの直後にそのまま書いてある</u>。<em>探し回る必要がない</em>。</li><li><b>「より根本的」とは何より根本的か</b>｜<u>第4〜6文の実際上の難点（practical challenges）より</u>、という対比。<em>第3文の There are a variety of practical challenges here. と呼応している</em>。<b>ここを読み落とすと、問3で「なぜ more なのか」が答案に出せない</b>。</li><li><b>select against</b>｜<u>select の反対で「淘汰して排除する」</u>。<em>選ぶのは誰かといえば、ほかならぬ私たち自身</em>。</li></ul></div><div class="tr-sec"><b>第8段落</b>｜だから支配種の座を明け渡す</div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><b>最も効果的なシステムを採用せよという強い経済的・競争的圧力は、確実には制御できないAIシステムに人間がますます多くの力を与えるよう促されることを意味し、それは私たちを、地球の支配的な種の座を奪われる道へと進ませている。</b></div></div><div class="jpline"><div class="n">②</div><div class="s"><em>私たちの置かれたこの困難な状況に、容易な解決策はない。</em></div></div></div>
+      <div class="chew"><span class="cl">咀嚼訳<i>つまり、どういうことか</i></span><p><b>いちばん効果の高いシステムを使わなければ競争に負ける</b>。その圧力があるから、人間は、<u>確実には制御できないAIにどんどん力を渡してしまう</u>。そうして私たちは、地球の主役の座を明け渡す道を歩いている。この状況に、手軽な解決策はない。</p></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第8段落</div><ul><li><b>三つの理由をまとめる段落</b>｜<u>個々のAIの危険ではなく、競争の圧力という仕組みが結論の主語になっている</u>。<em>悪意を持った誰かがいるわけではない</em>。</li><li><b>There are no easy solutions. の位置</b>｜<u>これは諦めではなく、次の段落で具体策を出すための前置き</u>。<em>「簡単ではないが、やるべきことはある」という流れ</em>。</li></ul></div><div class="tr-sec"><b>第9段落</b>｜出発点は規制と安全研究　<span class="utag">問4・問5-7</span></div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s"><u>考えられる出発点は、AI業界における著しい規制の欠如に対処することだろう。AI業界は現在ほとんど監督を受けずに動いており、研究の多くは人目の届かないところで進められている。</u></div></div><div class="jpline"><div class="n">②</div><div class="s"><b>AIの能力を高める研究と同じ速さで、AIの安全性に関する研究も進んでいく必要がある。</b></div></div><div class="jpline"><div class="n">③</div><div class="s"><em>これには市場の誘因があまり働かないため、政府ができるだけ早く十分な財政支援を行うべきである。</em></div></div></div>
+      <div class="chew"><span class="cl">咀嚼訳<i>つまり、どういうことか</i></span><p><u>手をつけるとしたら、まずAI業界に規制がほとんどないことだろう</u>。今のAI業界はほとんど監督を受けずに動いていて、研究の多くは外から見えないところで進んでいる。<b>AIを賢くする研究と、AIを安全にする研究。この二つが同じ速さで進まないといけない</b>。ところが安全の研究は儲からないので、放っておいても誰もやらない。<em>だから政府が早く十分なお金を出すべきだ</em>。</p></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第9段落</div><ul><li><b>第2文が問4の和訳箇所</b>｜<u>We need research on A to progress as quickly as research on B.</u> <em>as quickly as のうしろでは、繰り返しになる語がまとめて省略されている</em>。</li><li><b>第3文が問5選択肢7の根拠</b>｜<u>資金を出すべきなのは governments</u>。<em>「政府だけでなく民間企業も」は本文にない</em>。<b>むしろ「市場の誘因が働かない」＝民間は動かない、という理由が直前に書かれている</b>。</li><li><b>this が指すもの</b>｜<u>There aren&apos;t many market incentives for this の this は「AI安全性の研究」</u>。<em>ここを取り違えると、第3文の論理が逆になる</em>。</li></ul></div><div class="tr-sec"><b>第10段落</b>｜まだ指揮を執っているのは私たち</div>
+      <div class="jpbox"><div class="jpline"><div class="n">①</div><div class="s">人類の未来は、AIの進歩と分かちがたく結びついている。</div></div><div class="jpline"><div class="n">②</div><div class="s"><u>それゆえ、自然淘汰のほうが私たちよりも大きな影響力を持っているかもしれないと気づくことは、不安をかき立てる。</u></div></div><div class="jpline"><div class="n">③</div><div class="s"><b>しかし現時点では、指揮を執っているのはまだ私たちである。</b></div></div><div class="jpline"><div class="n">④</div><div class="s"><em>いまこそ、この脅威を真剣に受け止めるべき時だ。</em></div></div><div class="jpline"><div class="n">⑤</div><div class="s"><b>ひとたび制御を手放せば、それを取り戻すことはできない。</b></div></div></div>
+      <div class="chew"><span class="cl">咀嚼訳<i>つまり、どういうことか</i></span><p>人類の未来はAIの進歩と切り離せない。<u>だから、自分たちよりも自然淘汰のほうが強い力を持っているかもしれないと気づくのは、落ち着かない</u>。<b>それでも今はまだ、指揮を執っているのは私たちだ</b>。今こそこの脅威を本気で受け止めるときであって、<em>一度手放した制御は、二度と戻ってこない</em>。</p></div>
+      <div class="tr-points"><div class="pl">設問の根拠・急所｜第10段落</div><ul><li><b>we are still in command が結論</b>｜<u>第3段落の The good news is that we can decide ... と呼応している</u>。<em>決めるのは私たちだ、という最初の主張に戻って終わる</em>。</li><li><b>なぜ希望で終われるのか</b>｜<u>この文章で「選んで」いるのは、最後まで人間自身だから</u>（第7段落第7文の we will select、第8段落の humans are encouraged to give）。<em>誰かに強制されているのではなく、便利なほうを選び続けた結果そうなる。だからまだ変えられる</em>。</li></ul></div><div class="pnav"><button class="btns" data-go="5">← 問5</button><span class="sp"></span><button class="btnp" data-go="7">総まとめへ →</button></div></section><section class="panel" id="p7">
+  <div class="eyebrow">Review</div>
+  <h1 class="head">総まとめ ― 次に同じ形の問題が出たときのために<span class="sub">国公立の記述中心の大問から、持ち帰るべきものを五つに絞りました。</span></h1>
+  <div class="rule"></div>
+
+  <h2 class="sec">解答一覧</h2>
+  <table class="mtx">
+    <thead><tr><th style="width:12%">設問</th><th style="width:34%">解答</th><th>決め手</th></tr></thead>
+    <tbody>
+      <tr><td class="cond">問1</td><td><b>4</b>（what）</td><td>第3段落第1文｜<u>文末 like の目的語が欠けている</u></td></tr>
+      <tr><td class="cond">問2</td><td><b>①淘汰によって制御が困難になる<br>②進化が利己的なふるまいを生む<br>③進化の圧力が自己防衛を促す</b></td><td>第5段落第2文／第6段落第1文／第7段落第1文｜<u>三段落の冒頭にマーカー</u></td></tr>
+      <tr><td class="cond">問3</td><td><b>停止させやすいAIを淘汰し、停止させにくいAIに依存するようになること</b></td><td>第7段落第7文｜<u>コロンの直後</u>。<em>more の対象は第3文の practical challenges</em></td></tr>
+      <tr><td class="cond">問4</td><td><b>AIの安全性についての研究が、AIの能力を高める研究と同じ速さで進展する必要がある</b></td><td>第9段落第2文｜<u>need O to do ＋ as quickly as の後ろの省略</u></td></tr>
+      <tr><td class="cond">問5</td><td><b>1, 5</b></td><td>1＝第1段落第4文・第2段落第4文／5＝第7段落第4〜6文</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec" style="margin-top:26px;">持ち帰る五つ</h2>
+  <div class="box navy"><span class="lab">1 ― 節を導く語は、意味ではなく欠けで決まる</span>
+    <strong>節の中に名詞の欠けがあれば what / who / which、なければ that / whether / when / where / why / how</strong>。<u>文末が前置詞で終わっていたら、目的語が前に出ている合図</u>。<em>What is it like? と同じ形を、節の中で見つけられるか</em>。</div>
+  <div class="box navy" style="margin-top:12px;"><span class="lab">2 ― 下線部説明は「直後」から読む</span>
+    <strong>抽象語の中身は、コロン・ダッシュ・同格でその場に書かれていることが多い</strong>。<u>本文全体を探し回っているなら、たいてい読み方が間違っている</u>。<em>直後 → 段落の頭 → 他段落、の順</em>。</div>
+  <div class="box navy" style="margin-top:12px;"><span class="lab">3 ― 比較級を見たら、比較対象を言語化する</span>
+    <strong>a more fundamental barrier の more が、書く範囲を決めていた</strong>。<u>「何より根本的なのか」を一言で言えなければ、答案の範囲は決められない</u>。<em>問3の最頻出ミスは、比較対象のほうを書いてしまうこと</em>。</div>
+  <div class="box navy" style="margin-top:12px;"><span class="lab">4 ― 和訳は、骨格 → 省略の補い → 語彙の順</span>
+    <strong>前から訳し下ろすと、need O to do のような構造で必ず崩れる</strong>。<u>まず S・V・O を取り、as / than のうしろの省略を補ってから、語を埋める</u>。<em>省略を補えるかどうかが、和訳問題の配点の分かれ目</em>。</div>
+  <div class="box navy" style="margin-top:12px;"><span class="lab">5 ― 内容一致は「どこが変えられたか」を探す</span>
+    <strong>誤答は、本文にある内容の一点だけを入れ替えて作られる</strong>。<u>向き・範囲・比較・因果・主体</u>。<em>本文に書いてあるかどうかで判定すると、語が一致しているぶん全部正しく見える</em>。</div>
+
+  <h2 class="sec" style="margin-top:26px;">この文章を一言で</h2>
+  <div class="box gold"><span class="lab">THINKING の答案</span>
+    <strong>AIが危ないのは、人間より賢くなるからではなく、AIにも自然淘汰が働くからだ、と論じた文章</strong>。<u>淘汰が働くと、制御は難しくなり、利己的なものが勝ち、止めにくいものが生き残る</u>。<em>しかもその淘汰を行っているのは、便利なほう・効率のよいほうを選び続ける私たち自身である</em>。<b>だから筆者は、能力を高める研究と同じ速さで安全性の研究を進めよと言い、それでもまだ指揮を執っているのは私たちだ、と結ぶ</b>。</div>
+
+  <div class="pnav"><button class="btns" data-go="6">← 全訳＋咀嚼訳</button><span class="sp"></span><button class="btnp" data-go="0">攻略に戻る ↑</button></div>
+</section></div>
+<footer class="foot">
+  <div class="brand">THINKING</div>
+  <div class="fmeta">学部別・逆転合格設計塾 THINKING ／ 受験は根性じゃなく、設計。<br>
+  本資料は鳥取大学2025年度英語（大問1）の学習用教材です。英文・設問の著作権は出題者・原著者に帰属します。訳・解説はTHINKINGによるオリジナルです。</div>
+</footer>
+<button class="jump" id="jumpTop">▲</button>
+
+<script>
+const Q=[
+
+/* ========== 問1 空所補充 ========== */
+{
+id:"問1", grp:"AB", type:"空所補充・節の構造", rate:48,
+lbl:"節の中の欠けを見る", en:"文末の like は前置詞。目的語が欠けているから what しか入らない",
+ask:'<span class="aen">The good news is that we can decide (　a　) the AI will be like.<br>空欄（ a ）に入る語として適切なものを1〜5の中から一つ選び番号で答えよ。</span><span class="ajp">空欄に入る語を選ぶ。decide の目的語になる節を、どの語が導けるかを考える。</span>',
+kind:"choice", answer:"4",
+choices:[
+ {t:'when<span class="cjp">いつ〜か</span>'},
+ {t:'whether<span class="cjp">〜かどうか</span>'},
+ {t:'that<span class="cjp">〜ということ</span>'},
+ {t:'what<span class="cjp">何が／どのようなものか</span>', ok:true},
+ {t:'why<span class="cjp">なぜ〜か</span>'}],
+steps:[
+ {t:"空所の働きを決める", d:"<b>decide の目的語になる名詞節</b>を導く語が入る。<u>ここまでは5つすべて候補に残る</u>。<em>意味で選ぼうとすると、ここで決められない</em>。"},
+ {t:"節の中を見て、欠けている要素を探す", d:"<b>the AI will be like</b>。<u>S（the AI）＋V（will be）＋前置詞（like）で終わっている</u>。<em>like は「〜のような」という前置詞で、本来うしろに目的語が必要</em>。<b>その目的語が欠けている</b>。", cite:"第3段落 第1文"},
+ {t:"欠けを埋められる語を選ぶ", d:"<u>欠けているのは名詞</u>。だから<b>名詞の働きをする疑問詞＝what</b>しか入れない。<em>that・whether・when・why は、うしろに欠けのない完全な文を要求する</em>。"},
+ {t:"意味で確認する", d:"<b>what the AI will be like</b>＝「AIがどのようなものになるか」。<u>be like で「〜のような状態である」</u>。<em>文意も通る</em>。"},
+ {t:"次の文で裏を取る", d:"第2文 <b>The bad news is that Darwin&apos;s laws do too.</b> の <u>do は can decide what the AI will be like を受ける代動詞</u>。<em>ここが節として完結していることの傍証になる</em>。", cite:"第3段落 第2文"}],
+ev:{q:"The good news is that <b>we can decide what the AI will be like</b>. The bad news is that Darwin&apos;s laws do too.",
+ jp:"よい知らせは、<b>AIがどのようなものになるかを決めるのは私たちだ</b>、ということである。悪い知らせは、ダーウィンの法則もまたそれを決める、ということである。"},
+sol:[
+ {m:"x", n:"1", t:'<span class="tag v">完全文を要求する</span>when<span class="cj">いつ〜か</span><u>when は時を表す副詞的な疑問詞で、うしろには欠けのない文が続く</u>。<b>like の目的語が空いたままになる</b>。<em>意味の上でも「AIがいつ〜のようになるか」となり、like が宙に浮く</em>。'},
+ {m:"x", n:"2", t:'<span class="tag v">完全文を要求する</span>whether<span class="cj">〜かどうか</span>「決める」という動詞から<u>「〜かどうか」を連想して選びやすい</u>。<b>だが whether 節の中は完全な文でなければならない</b>。<em>the AI will be like は like の目的語が欠けていて不完全</em>。'},
+ {m:"x", n:"3", t:'<span class="tag v">最も多い誤答</span>that<span class="cj">〜ということ</span>decide のうしろに that 節が来る形自体は正しい。<u>しかし that 節も中が完全でなければならない</u>。<b>like の目的語が欠けている以上、that は入れられない</b>。<em>直前の The good news is that ... につられて that を選ぶ人が多い</em>。'},
+ {m:"o", n:"4", t:'<span class="tag g">正解</span>what<span class="cj">何が／どのようなものか</span><b>what は名詞の働きをする疑問詞</b>なので、<u>節の中で欠けている like の目的語をそのまま埋められる</u>。<em>what the AI will be like ＝「AIがどのようなものになるか」</em>。<b>欠けのある節を導けるのは、この5つの中で what だけ</b>。'},
+ {m:"x", n:"5", t:'<span class="tag v">like の品詞を取り違えている</span>why<span class="cj">なぜ〜か</span><u>like を「〜のように」という接続詞・副詞的なものと読むと、節が完結して見える</u>。<b>だがここでの like は前置詞</b>。<em>be like で「〜のような状態だ」。目的語なしでは文が終われない</em>。'}],
+co:[
+ {c:"verm", l:"〈3を選びがちな人〉意味だけで節を選ぶ人", h:"「決める」＋「〜ということ」で自然な日本語になるので that を入れてしまう。<b>節を導く語は、意味ではなく、節の中に欠けがあるかどうかで決まる</b>。<u>欠けがあれば what / who / which、欠けがなければ that / whether / when / where / why / how</u>。<em>この一本の基準だけで、この設問は終わる</em>。"},
+ {c:"verm", l:"〈文末が前置詞だと気づけない人〉", h:"<b>like, with, for, about, to のような前置詞で節が終わっていたら、目的語が前に出ている合図</b>。<u>What is it like? / What are you looking for? と同じ形</u>。<em>見慣れた疑問文の形を、節の中で見つけられるかどうか</em>。"},
+ {c:"nav", l:"出題者が測っているもの", h:"<b>節の内部構造を見る習慣があるか</b>。<u>空所補充を「文脈に合う意味の語」を選ぶ問題だと思っていると、that と what で永久に迷う</u>。<em>国公立の空所補充は、たいてい意味ではなく構造で一つに決まるように作られている</em>。"}]
+},
+
+/* ========== 問2 内容説明（三点） ========== */
+{
+id:"問2", grp:"AB", type:"内容説明・記述", rate:55,
+lbl:"本文が構造を明示している", en:"三つの理由は、三つの段落の冒頭にそのまま置かれている",
+ask:'<span class="aen">下線部(1)の &quot;three reasons&quot; が表す三点の内容をそれぞれ日本語で簡潔に述べよ。</span><span class="ajp">「これを心配すべき三つの理由」の中身を、それぞれ一文で書く。理由を問われているので、文末は「〜から」「〜ため」で揃える。</span>',
+kind:"desc",
+dhint:'解説を開く前に、必ず<strong>三点とも自分の言葉で紙に書いてから</strong>「答え・根拠を表示」を押すこと。',
+steps:[
+ {t:"下線部の直後が設計図だと気づく", d:"<b>There are three reasons this should worry us.</b>（これを心配すべき理由が三つある）。<u>この一文のあとに続く三つの段落が、そのまま答えになっている</u>。<em>探し回る必要はない</em>。", cite:"第5段落 第1文"},
+ {t:"マーカーを拾う", d:"<b>The first is that ...</b>（第5段落第2文）／<b>Second, ...</b>（第6段落第1文）／<b>The third reason is that ...</b>（第7段落第1文）。<u>三つとも段落の先頭付近に置かれている</u>。", cite:"第5段落第2文／第6段落第1文／第7段落第1文"},
+ {t:"第5段落だけ位置が違うことに注意する", d:"<b>第6・第7段落は第1文が理由そのもの</b>だが、<u>第5段落は第1文が「三つある」という予告で、理由の本体は第2文</u>。<em>段落の第1文を機械的に拾うと、一つめが「理由が三つある」になってしまう</em>。"},
+ {t:"三つとも同じ形に揃える", d:"いずれも<b>「進化・淘汰が働くことで、AIが◯◯になるから」</b>という形。<u>原因（進化・淘汰）を落として結果だけ書くと、なぜ三つが並列なのかが消える</u>。<em>三つに共通する原因こそが、この文章の主張</em>。"}],
+model:[
+ "第一に、淘汰の効果が働くことによって、AIを制御することが難しくなるから。",
+ "第二に、進化は利己的なふるまいを生み出しやすく、安全性を犠牲にしてでも影響力や利益を得るAIが優位に立つから。",
+ "第三に、進化の圧力によってAIが自己防衛的なふるまいを身につけ、停止させにくくなるから。"],
+mnote:"三点とも「進化・淘汰が原因で、AIが制御から離れていく」という同じ型でまとめると、並列であることが答案の上で見える。字数指定がないので、各40〜60字が目安。",
+total:10,
+rubric:[
+ {t:"淘汰・自然淘汰の働きによって<b>AIの制御が困難になる</b>（第一の理由）", p:3, must:true},
+ {t:"進化が<b>利己的なふるまい</b>を生み、望ましくない性質のAIが優位に立つ（第二の理由）", p:3, must:true},
+ {t:"進化の圧力でAIが<b>自己防衛</b>的になり、停止させにくくなる（第三の理由）", p:3, must:true},
+ {t:"三点とも「心配すべき理由」として、<b>文末が「〜から」「〜ため」</b>で揃っている", p:1}],
+ng:[
+ {bad:"研究者がAIを「設計する」ではなく「操縦する」と言うようになったから。",
+  why:"第5段落第3文は、<b>制御が難しくなったことを示す傍証</b>であって理由そのものではない。<u>答案の中心を例示に置いてしまっている</u>。<em>書くなら「淘汰によって制御が難しくなる」が先で、これはその説明</em>。"},
+ {bad:"企業秘密を盗む企業が、法律を守る企業に勝ってしまうから。",
+  why:"第6段落第4文は<b>人間社会を使った類比</b>。<u>AIの話に戻していないので、設問に答えたことにならない</u>。<em>As an example で始まっている時点で、主張ではなく例だと分かる</em>。"},
+ {bad:"AIをインターネットなどのインフラに組み込むと、停止のコストが高くなって止められなくなるから。",
+  why:"第7段落第4〜6文は <b>practical challenges（実際上の難点）</b>であって、第三の理由の本体ではない。<u>第三の理由は第7段落第1文の「進化の圧力が自己防衛を促す」</u>。<em>段落のどこが主張かを見誤っている</em>。"},
+ {bad:"AIが人間より賢くなり、人間を超えてしまうから。",
+  why:"<b>本文のどこにも書かれていない</b>。<u>AI脅威論の一般的なイメージで埋めてしまった答案</u>。<em>この文章の主張は「賢くなるから危ない」ではなく「自然淘汰が働くから危ない」</em>。"},
+ {bad:"AIが制御不能になり、利己的になり、自分を守るようになるから。",
+  why:"結果だけを三つ並べていて、<b>原因である「進化・淘汰」が一度も出てこない</b>。<u>これでは三つがなぜ並列なのかが示せず、要素点が削られる</u>。"}]
+},
+
+/* ========== 問3 内容説明（下線部） ========== */
+{
+id:"問3", grp:"CD", type:"内容説明・記述", rate:38,
+lbl:"コロンの直後にある", en:"more が何より根本的かを押さえると、書いてはいけない部分が分かる",
+ask:'<span class="aen">下線部(2)の &quot;a more fundamental barrier&quot; が表す内容を日本語で簡潔に述べよ。</span><span class="ajp">「より根本的な障壁」の中身を説明する。文末は「〜ということ」「〜こと」で名詞的にまとめる。</span>',
+kind:"desc",
+dhint:'解説を開く前に、必ず<strong>自分の答案を紙に書いてから</strong>「答え・根拠を表示」を押すこと。',
+steps:[
+ {t:"抽象語の説明は、まず直後を見る", d:"<b>a more fundamental barrier: we will select against AIs that are easy to turn off, and we will come to depend on AIs that we are less likely to turn off.</b><br><u>コロンの直後に、中身がそのまま書かれている</u>。<em>抽象語＋コロンは「これから説明します」という合図</em>。", cite:"第7段落 第7文"},
+ {t:"more の比較対象を確認する", d:"<b>何より根本的なのか</b>。<u>第3文の There are a variety of practical challenges here.（実際上の難点）より</u>、である。<em>第4〜6文で述べたインフラ・依存・不可逆性は practical challenges のほう</em>。<b>だからそれを書くと、barrier ではなく比較対象を答えたことになる</b>。", cite:"第7段落 第3〜6文"},
+ {t:"主語を落とさない", d:"<b>we will select / we will come to depend</b>。<u>淘汰しているのも、依存するようになるのも、私たち人間</u>。<em>「AIが生き残る」と書くと、自然淘汰の主体がぼやける</em>。<b>人間が選んだ結果そうなる、というのがこの文章の肝</b>。"},
+ {t:"二つの節を両方入れる", d:"①<u>停止させやすいAIは淘汰され</u>、②<u>停止させにくいAIに依存するようになる</u>。<em>①だけ、②だけでは半分</em>。<b>二つで一つの仕組みになっている</b>。"}],
+model:[
+ "私たちが、停止させやすいAIのほうを淘汰していき、停止させにくいAIに依存するようになってしまうということ。",
+ "（別解）人間が自ら、機能を止めやすいAIを選ばなくなり、止めることが難しいAIに頼るようになっていくという障壁。"],
+mnote:"この設問の肝は more の一語。何より根本的なのかを押さえておけば、第4〜6文（インフラへの組み込み・依存・不可逆性）を書いてはいけないと分かる。字数は50〜70字が目安。",
+total:10,
+rubric:[
+ {t:"<b>停止させやすいAIが淘汰される／選ばれなくなる</b>", p:3, must:true},
+ {t:"<b>停止させにくいAIに依存するようになる</b>", p:4, must:true},
+ {t:"その主体が<b>私たち（人間）</b>であることが示されている", p:2, must:true},
+ {t:"文末が「〜ということ」など、<b>barrier の内容説明の形</b>になっている", p:1}],
+ng:[
+ {bad:"AIをインターネットなどの重要なインフラに組み込むと、停止させるコストが高くなりすぎること。",
+  why:"<b>最も多い誤答</b>。<u>これは第4〜6文の practical challenges で、まさに「より根本的な障壁」が比較されている相手のほう</u>。<em>more fundamental と書いてある以上、それより手前のものを答えてはいけない</em>。"},
+ {bad:"進化の圧力によって、AIが自分を守るようにふるまうようになること。",
+  why:"第7段落第1文、つまり<b>第三の理由そのもの</b>。<u>barrier はその理由の中で挙げられた一要素なので、階層がずれている</u>。<em>問2の答えと同じ内容を書いてしまっている</em>。"},
+ {bad:"AIが止められなくなってしまうこと。",
+  why:"結果だけで、<b>「私たちが選んだ結果そうなる」という中身が抜けている</b>。<u>これでは自然淘汰の説明になっておらず、barrier が「より根本的」である理由も示せない</u>。"},
+ {bad:"停止させにくいAIが生き残り、停止させやすいAIが淘汰されていくということ。",
+  why:"内容は近いが、<b>主語がAIになっている</b>。<u>本文は we will select / we will come to depend と、人間を主語にして書いている</u>。<em>誰が選んでいるのかが、この文章の主張の核心</em>。"}]
+},
+
+/* ========== 問4 和訳 ========== */
+{
+id:"問4", grp:"CD", type:"英文和訳", rate:44,
+lbl:"as quickly as の後ろの省略", en:"need O to do の構造と、比較のうしろで省かれた語を補えるか",
+ask:'<span class="aen">下線部(3)を和訳せよ。<br>We need research on AI safety to progress as quickly as research on improving AI abilities.</span><span class="ajp">need の目的語と、to progress の主語が何かを決めてから訳す。as quickly as のうしろには省略がある。</span>',
+kind:"desc",
+dhint:'解説を開く前に、必ず<strong>自分の訳を紙に書いてから</strong>「答え・根拠を表示」を押すこと。',
+steps:[
+ {t:"骨格を取る", d:"<b>We need A to progress as quickly as B.</b><br><u>need O to do で「Oが〜することを必要とする」</u>。<em>progress するのは we ではなく A（research on AI safety）</em>。<b>ここを取り違えると主語がずれる</b>。"},
+ {t:"A と B の中身を正確に取る", d:"<b>A＝research on AI safety</b>（AIの安全性に関する研究）<br><b>B＝research on improving AI abilities</b>（AIの能力を高めることに関する研究）<br><u>どちらも research on ... の形で揃えてある</u>。<em>この対称性が、比較されているものを示している</em>。"},
+ {t:"as quickly as のうしろの省略を補う", d:"<b>as quickly as research on improving AI abilities (progresses)</b>。<u>比較のうしろでは、繰り返しになる語がまとめて省かれる</u>。<em>補って初めて「二つの研究の進む速さを比べている」と確定する</em>。", cite:"第9段落 第2文"},
+ {t:"improving の品詞を決める", d:"<b>improving AI abilities</b> は<u>動名詞句で「AIの能力を向上させること」</u>。<em>「向上しつつあるAIの能力」と現在分詞で取ると、on の目的語がずれる</em>。"},
+ {t:"日本語に組み直す", d:"<b>「AIの安全性についての研究が、AIの能力を高める研究と同じ速さで進む必要がある」</b>。<u>「私たちは〜する必要がある」と主語を立てて訳してもよい</u>。<em>比較の対象が二つの研究であることが見えていれば可</em>。"}],
+model:[
+ "AIの安全性についての研究が、AIの能力を高める研究と同じ速さで進展する必要がある。",
+ "（別解）私たちは、AIの能力を向上させる研究と同じくらい迅速に、AIの安全性についての研究を進める必要がある。"],
+mnote:"as quickly as のうしろでは、繰り返しになる語（research on improving AI abilities が progress すること）がまとめて省略されている。この省略を補えるかどうかが、和訳問題の分かれ目。",
+total:10,
+rubric:[
+ {t:"research on AI safety を<b>「AIの安全性に関する研究」</b>と訳せている", p:3, must:true},
+ {t:"research on improving AI abilities を<b>「AIの能力を高める研究」</b>と訳せている", p:3, must:true},
+ {t:"as quickly as を<b>「同じ速さで」「同じくらい迅速に」</b>と、同等比較として訳せている", p:2, must:true},
+ {t:"progress を<b>「進む」「進展する」</b>と動詞で訳せている", p:1},
+ {t:"need O to do の構造が崩れず、<b>進むのが「研究」</b>だと分かる訳になっている", p:1}],
+ng:[
+ {bad:"私たちはAIの安全性の研究を必要とし、AIの能力を向上させる研究と同じくらい速く進歩しなければならない。",
+  why:"<b>to progress の主語を we にしている</b>。<u>need O to do の O は research on AI safety で、進むのはその研究</u>。<em>need の目的語を切り離して訳すと、文の骨格が壊れる</em>。"},
+ {bad:"AIの安全性についての研究は、AIの能力を改善する研究よりも速く進む必要がある。",
+  why:"<b>as quickly as は同等比較</b>で「同じ速さで」。<u>「よりも速く」は比較級（faster than）の訳</u>。<em>筆者は安全研究を優先せよとは言っておらず、能力研究に追いつけと言っている</em>。"},
+ {bad:"AIの安全のために、能力を向上させる研究と同じくらい急いで研究する必要がある。",
+  why:"<b>research on AI safety の on を「〜のために」と読んでいる</b>。<u>ここでの on は「〜に関する」で、研究の主題を示す</u>。<em>B 側も research on ... と同じ形であることに気づけば、主題だと決まる</em>。"},
+ {bad:"AIの安全性についての研究が、向上しつつあるAIの能力と同じ速さで進む必要がある。",
+  why:"<b>improving を現在分詞として AI abilities にかけている</b>。<u>そうすると B が「研究」ではなく「能力」になり、研究どうしの比較という対称が崩れる</u>。<em>A 側が research on ... なのだから、B 側も research on ... で揃う</em>。"}]
+},
+
+/* ========== 問5 内容一致（7択から2つ） ========== */
+{
+id:"問5", grp:"EF", type:"内容一致・複数選択", rate:41,
+lbl:"変えられたのはどこか", en:"誤答5つはすべて、程度・範囲・向き・主体のどれか一つだけがすり替えられている",
+ask:'<span class="aen">次の1〜7のうち、本文の内容と合致するものを二つ選び番号で答えよ。</span><span class="ajp">七つの文のうち、本文と一致するものを二つ選ぶ。残る五つは、本文にある内容の一部だけが書き換えられている。</span>',
+kind:"multi", answer:"1, 5",
+mlab:"7択から2つ", mhint:"まず自分で2つ選んでから確認しよう。",
+items:[
+ {n:"1", t:"AIが進化すると、CEOや他の従業員よりも重要な役割を果たす可能性がある。", ok:true,
+  ev:"第1段落第4文／第2段落第4文",
+  why:'<b>一致</b>。第1段落第4文に <u>it progressively becomes much better at these things than their employees</u>（従業員よりはるかに優れるようになる）、第2段落第4文に <u>even the CEO&apos;s role is largely in name only</u>（CEOの役割さえ名ばかりになる）。<em>二文を合わせると「CEOや他の従業員よりも重要な役割を果たす」が成り立つ</em>。'},
+ {n:"2", t:"自然淘汰はあくまで生物学的な現象であり、その原理を経済に当てはめるのは難しい。",
+  ev:"第3段落第3文",
+  why:'<b>不一致</b>。本文は <u>Though we think of natural selection as a biological phenomenon, its principles guide much more, from economies to technologies</u>（生物学上の現象だと考えがちだが、その原理は経済からテクノロジーにまで及ぶ）。<em>Though で始まる譲歩節の中身だけを拾うと、この選択肢に見えてしまう</em>。<b>主張は譲歩のうしろにある</b>。'},
+ {n:"3", t:"進化生物学者のRichard Lewontinは、個体間に違いがあることを自然淘汰が成立する唯一の条件として挙げた。",
+  ev:"第3段落第4文",
+  why:'<b>不一致</b>。<u>条件は three conditions（三つ）</u>挙げられており、「個体間に違いがあること」はその1）にすぎない。<em>人名も内容も本文どおりだが、「唯一の」という限定語だけが本文にない</em>。'},
+ {n:"4", t:"AIは人間よりも速く進化できるが、ミバエほど速く進化できるわけではない。",
+  ev:"第4段落第4文",
+  why:'<b>不一致</b>。<u>AIs could modify themselves — and therefore evolve — even faster than fruit flies do</u>（ミバエよりもさらに速く進化しうる）。<em>than の前後が逆になっている</em>。<b>even faster than の even は「さらに」で、差を強めている</b>。'},
+ {n:"5", t:"インターネットなどに組み込まれているAIを止めるのは、コストがかかりすぎて難しいこともある。", ok:true,
+  ev:"第7段落第4〜6文",
+  why:'<b>一致</b>。<u>The AI could be combined with vital infrastructure, like the internet.</u>／<u>the cost of turning them off may prove too high for us to accept since we would become dependent on them</u>。<em>「こともある」という幅のある言い方が、could / may という本文の助動詞と対応している</em>。'},
+ {n:"6", t:"効率を求めることがAIの進化を推し進めるわけではない。",
+  ev:"第2段落第1文",
+  why:'<b>不一致</b>。<u>in the name of efficiency</u>（効率という名のもとに）監督が減り、AIの裁量が増えていく、と書かれている。<em>効率の追求こそが、この連鎖を動かしている原動力</em>。<b>因果の向きが逆になっている</b>。'},
+ {n:"7", t:"AI業界の著しい規制不足に対処するため、政府だけでなく民間企業も財政支援をすべきである。",
+  ev:"第9段落第3文",
+  why:'<b>不一致</b>。<u>There aren&apos;t many market incentives for this, so governments should offer sufficient financial support</u>（市場の誘因が乏しいので、政府が支援すべきだ）。<em>民間が動かないことが、政府が出すべき理由になっている</em>。<b>「民間企業も」を足した瞬間に、文の理屈そのものが壊れる</b>。'}],
+co:[
+ {c:"verm", l:"〈3を選びがちな人〉固有名詞と内容の一致で安心する人", h:"Richard Lewontin という名前も、「個体間に違いがある」という内容も、<b>どちらも確かに本文にある</b>。<u>だから本文を見返しても、合っているように感じてしまう</u>。<em>書き換えられているのは「唯一の」という限定語だけ</em>。<b>選択肢は、本文の要素を正しく並べたうえで、限定語を一つだけ足して作られる</b>。"},
+ {c:"verm", l:"〈4を選びがちな人〉比較の向きを確認しない人", h:"<b>even faster than fruit flies do</b> を「ミバエと同じくらい」「ミバエには及ばない」と読んでしまう。<u>比較表現を見たら、than の前後のどちらが上なのかを必ず指で押さえる</u>。<em>ここでは AIs が速い側</em>。"},
+ {c:"verm", l:"〈7を選びがちな人〉一般論で補ってしまう人", h:"「AIの安全には社会全体で取り組むべきだ」という<u>常識的な感覚から、民間企業も入れてしまう</u>。<b>だが本文は逆のことを言っている</b>。<em>市場の誘因がない、つまり民間は儲からないから動かない。だから政府が出すべきだ</em>。<u>常識と本文が食い違ったら、必ず本文が勝つ</u>。"},
+ {c:"verm", l:"〈2を選びがちな人〉譲歩節を主張だと読む人", h:"<b>Though we think of natural selection as a biological phenomenon</b> までを読んで、そこで判断を止めてしまう。<u>Though 節は「確かに〜ではあるが」という譲歩で、主張はそのうしろ</u>。<em>its principles guide much more が筆者の言いたいこと</em>。"},
+ {c:"nav", l:"出題者が測っているもの", h:"<b>誤答5つは、すべて「本文にある内容の一点だけ」を入れ替えて作られている</b>。<u>2は向き（当てはまる↔当てはまらない）、3は範囲（三つ↔唯一）、4は比較の向き、6は因果の向き、7は主体（政府↔政府と民間）</u>。<em>本文に書いてあるかどうかではなく、どこが変えられているかを探す</em>。<b>この型を知っていると、7択2つでも消去が速い</b>。"},
+ {c:"gold", l:"2つ選ぶ問題の手順", h:"<b>七つを順に○×で判定しようとすると時間が足りない</b>。<u>先に、明らかに本文と逆のものを落とす</u>。今回なら2・4・6は「向きが逆」なので早い段階で切れる。<em>残った1・3・5・7を本文で照合すれば、3と7は限定語・主体のすり替えだと分かる</em>。"}]
+}
+
+];
+
+function esc(id){ var s=String(id); var out='q'; for(var i=0;i<s.length;i++){ var c=s.charCodeAt(i); if((c>=48&&c<=57)||(c>=65&&c<=90)||(c>=97&&c<=122)) out+=s[i]; else out+='_'+c; } return out; }
+function rateCls(r){ return r<=40?'low':(r<=55?'mid':'hi'); }
+function rateBadge(r){
+  if(!r) return '';
+  const c=rateCls(r);
+  const lab = c==='low'?'最難関':(c==='mid'?'差がつく':'取りたい');
+  return `<span class="rate ${c}">正答率 ${r}%・${lab}</span>`;
+}
+function buildEV(ev){ return ev?`<div class="ev"><div class="ev-hd">根拠｜本文の該当箇所</div><div class="ev-bd"><div class="ev-q">${ev.q}</div>${ev.jp}</div></div>`:''; }
+function buildCO(list){ return (list||[]).map(o=>`<div class="co ${o.c}"><div class="co-lbl">${o.l}</div>${o.h}</div>`).join(''); }
+function buildCA(rows){ return (rows||[]).map(r=>`<div class="ca-row"><div class="ca-mark ${r.m==='o'?'ok':'ng'}">${r.m==='o'?'✓':'✗'}</div><div class="ca-bd"><span class="k ${r.m==='o'?'o':'x'}">${r.n}.</span> ${r.t}</div></div>`).join(''); }
+function buildSteps(steps){
+  if(!steps) return '';
+  return '<div class="chy-h">解答プロセス</div><div class="dsteps">'+steps.map((s,i)=>`<div class="dstep"><div class="dn">${i+1}</div><div class="db"><b>${s.t}</b><p>${s.d}</p>${s.cite?`<div class="cite">${s.cite}</div>`:''}</div></div>`).join('')+'</div>';
+}
+function buildRubric(q){
+  if(!q.rubric) return '';
+  const rid='rb'+esc(q.id);
+  return `<div class="chy-h">採点基準（自己採点）</div><div class="rub" id="${rid}">
+    <div class="rub-hd"><span>自分の答案に入っていた要素にチェック</span><span class="sc"><b class="now">0</b> / ${q.total} 点</span></div>
+    ${q.rubric.map(r=>`<div class="rub-row" data-rid="${rid}" data-pt="${r.p}"><div class="rub-cb"></div><div class="rub-el">${r.t}${r.must?'<span class="must">必須</span>':'<span class="plus">加点</span>'}</div><div class="rub-pt">${r.p}点</div></div>`).join('')}
+    <div class="rub-foot">※ 配点は非公表のため、要素配分は学習用の目安（10点換算）。</div></div>`;
+}
+function buildNG(list,title){
+  if(!list) return '';
+  return `<div class="ng"><div class="nlab">✗ ${title||'NG解答例 ― この書き方で落とす'}</div>${
+    list.map(n=>`<div class="ng-row"><span class="x">✗</span><div class="nb"><span class="bad">${n.bad}</span><span class="why">${n.why}</span></div></div>`).join('')}</div>`;
+}
+
+function buildBody(q){
+  let b='';
+  if(q.kind==='choice'){
+    b+=`<div class="choices">${q.choices.map((c,i)=>`<button class="ch" data-ok="${c.ok?1:0}"><span class="num">${i+1}</span><span>${c.t}</span><span class="mk"></span></button>`).join('')}</div>`;
+  } else if(q.kind==='multi'){
+    b+=`<div class="box navy" style="margin:0 0 8px"><span class="lab">${q.mlab||'8択から3つ'}</span>各文をタップすると○×と根拠が開きます。${q.mhint||'まず自分で3つ選んでから確認しよう。'}</div>`;
+    b+=q.items.map(it=>`<div class="mi" data-ok="${it.ok?1:0}"><div class="mi-h"><span class="num">${it.n}</span><span class="st">${it.t}</span><span class="mk"></span></div>
+      <div class="mi-d"><div class="src">根拠｜${it.ev}</div><div class="jd">${it.why}</div></div></div>`).join('');
+  } else if(q.kind==='order'){
+    b+=`<div class="box teal" style="margin:0 0 8px"><span class="lab">まず自分で並べる</span>選択肢は7語。<strong>使わない語が3つ</strong>含まれています。答えを見る前に紙で完成させること。</div>
+      <div class="pool">${q.pool.map(w=>`<span class="pw">${w}</span>`).join('')}</div>`;
+  } else if(q.kind==='desc'){
+    b+=`<div class="box teal" style="margin:0 0 4px"><span class="lab">まず自分で書く</span>${q.dhint||'解説を開く前に、必ず<strong>自分の訳を紙に書いてから</strong>「答え・根拠を表示」を押すこと。'}</div>`;
+  }
+  return b;
+}
+function buildSol(q){
+  let s='';
+  if(q.kind==='choice'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`+(q.steps?buildSteps(q.steps):'')+buildEV(q.ev)+`<div class="chy-h">全選択肢の照合</div>`+buildCA(q.sol)+buildCO(q.co);
+  } else if(q.kind==='multi'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`+buildCO(q.co)+`<div class="box gold"><span class="lab">確認</span>上の各文をタップすると、○×・根拠段落・判定理由がすべて開きます。</div>`;
+  } else if(q.kind==='order'){
+    s+=`<div class="ans-badge">正解 <span class="c">${q.answer}</span></div>`;
+    s+=`<div class="slots">${q.slots.map(x=>`<div class="slot ${x.hit?'hit':''}"><div class="k">( ${x.k} )</div><div class="v">${x.v}</div></div>`).join('')}</div>`;
+    s+=`<div class="full">${q.full}<span class="jp">${q.fullJp}</span></div>`;
+    s+=`<div class="chy-h">使う語・使わない語</div><div class="pool">${q.pool.map(w=>{
+      const used=q.slots.some(x=>x.v===w);
+      return `<span class="pw ${used?'used':'unused'}">${w}</span>`;}).join('')}</div>`;
+    s+=buildSteps(q.steps)+buildNG(q.traps,'✗ 落とし穴 ― ここで25%まで落ちる')+buildRubric(q);
+  } else if(q.kind==='desc'){
+    s+=buildSteps(q.steps);
+    s+=`<div class="model"><div class="mlab">模範解答</div>${q.model.map(m=>`<div class="mtext">${m}</div>`).join('')}${q.mnote?`<div class="mnote">▶ ${q.mnote}</div>`:''}</div>`;
+    s+=buildRubric(q)+buildNG(q.ng);
+  }
+  return s;
+}
+function buildQ(q){
+  const el=document.createElement('div'); el.className='q'; el.id=esc(q.id);
+  el.innerHTML=`<div class="q-head"><div class="q-no">${q.id}</div>
+    <div class="q-focus"><span class="lbl">${q.lbl}</span><span class="en">${q.en}</span>${q.rate?`<div class="ratebar"><i class="${rateCls(q.rate)}" style="width:${q.rate}%"></i></div>`:''}</div>
+    <span class="q-type">${q.type}</span>${rateBadge(q.rate)}</div>
+    <div class="q-body"><div class="askjp">${q.ask}</div>${buildBody(q)}
+    <button class="reveal-btn">答え・根拠を表示 ▼</button>
+    <div class="solution">${buildSol(q)}</div></div>`;
+  return el;
+}
+
+[['AB','qWrapAB','qidxAB'],['CD','qWrapCD','qidxCD'],['EF','qWrapEF','qidxEF'],['GH','qWrapGH','qidxGH'],['IJ','qWrapIJ','qidxIJ']].forEach(([g,w,ix])=>{
+  const wrap=document.getElementById(w), idx=document.getElementById(ix);
+  if(!wrap) return;
+  Q.filter(q=>q.grp===g).forEach(q=>{
+    wrap.appendChild(buildQ(q));
+    const j=document.createElement('button'); j.className='qjump'; j.textContent=q.id; j.style.width='auto'; j.style.padding='0 9px';
+    j.addEventListener('click',()=>document.getElementById(esc(q.id)).scrollIntoView({behavior:'smooth'}));
+    idx.appendChild(j);
+  });
+});
+
+/* interactions */
+document.querySelectorAll('.q').forEach(card=>{
+  const chs=card.querySelectorAll('.choices .ch');
+  chs.forEach(b=>b.addEventListener('click',()=>{
+    chs.forEach(x=>x.classList.remove('picked'));
+    b.classList.add('picked','reveal');
+    b.classList.add(b.dataset.ok==='1'?'correct':'wrong');
+    b.querySelector('.mk').textContent=b.dataset.ok==='1'?'○':'×';
+  }));
+  card.querySelectorAll('.mi').forEach(mi=>{
+    mi.querySelector('.mi-h').addEventListener('click',()=>{
+      mi.classList.toggle('on');
+      mi.classList.add(mi.dataset.ok==='1'?'ok':'ng');
+      mi.querySelector('.mk').textContent = mi.dataset.ok==='1'?'○':'×';
+    });
+  });
+  const rb=card.querySelector('.reveal-btn'), sol=card.querySelector('.solution');
+  rb.addEventListener('click',()=>{
+    const open=sol.classList.toggle('show');
+    rb.textContent=open?'解説を閉じる ▲':'答え・根拠を表示 ▼';
+    if(open){
+      chs.forEach(b=>{b.classList.add('reveal');b.classList.add(b.dataset.ok==='1'?'correct':'wrong');b.querySelector('.mk').textContent=b.dataset.ok==='1'?'○':'×';});
+      card.querySelectorAll('.mi').forEach(mi=>{mi.classList.add('on');mi.classList.add(mi.dataset.ok==='1'?'ok':'ng');mi.querySelector('.mk').textContent=mi.dataset.ok==='1'?'○':'×';});
+    }
+  });
+});
+document.querySelectorAll('.rub-row').forEach(row=>{
+  row.addEventListener('click',()=>{
+    row.classList.toggle('on');
+    const rub=document.getElementById(row.dataset.rid);
+    let s=0; rub.querySelectorAll('.rub-row.on').forEach(r=>s+=parseInt(r.dataset.pt,10));
+    rub.querySelector('.sc .now').textContent=s;
+  });
+});
+const tabs=document.querySelectorAll('.tab'), panels=document.querySelectorAll('.panel');
+function goTo(i){
+  tabs.forEach(x=>x.classList.remove('on')); panels.forEach(x=>x.classList.remove('on'));
+  const t=document.querySelector('.tab[data-p="'+i+'"]'); t.classList.add('on','done');
+  document.getElementById('p'+i).classList.add('on');
+  window.scrollTo({top:0,behavior:'smooth'}); t.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'});
+}
+tabs.forEach(t=>t.addEventListener('click',()=>goTo(t.dataset.p)));
+document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>goTo(b.dataset.go)));
+document.querySelector('.tab[data-p="0"]').classList.add('done');
+const jt=document.getElementById('jumpTop');
+window.addEventListener('scroll',()=>jt.classList.toggle('show',window.scrollY>500));
+jt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

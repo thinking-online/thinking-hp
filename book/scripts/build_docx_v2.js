@@ -47,6 +47,38 @@ function para(text, opt = {}, runopt = {}) {
   children.push(new Paragraph({ ...opt, children: runs(text, runopt) }));
 }
 
+// 目次。項目ごとに ×／○ も出す（見出しにはしない。左の見出し一覧をよごさないため）
+(function toc() {
+  children.push(new Paragraph({ heading: HeadingLevel.HEADING_1, children: [new TextRun({ text: '目次', font: F })] }));
+  const sp0 = { before: 0, after: 0, line: 300 };
+  for (let k = 0; k < lines.length; k++) {
+    const l = lines[k].replace(/\s+$/, '');
+    let m;
+    if ((m = l.match(/^# (.+)$/))) {
+      const name = m[1];
+      let sub = '';
+      for (let j = k + 1; j < Math.min(k + 4, lines.length); j++) {
+        const s = lines[j].trim().match(/^〔(.+)〕$/);
+        if (s) { sub = '　〔' + s[1] + '〕'; break; }
+      }
+      const isCh = /^第\d+章/.test(name);
+      para(name + sub, { spacing: { before: isCh ? 240 : 100, after: isCh ? 60 : 0, line: 300 } },
+           { bold: true, color: isCh ? NAVY : '000000' });
+    } else if ((m = l.match(/^## (\d{2}　.+)$/))) {
+      para(m[1], { spacing: { before: 80, after: 0, line: 300 } }, { bold: true });
+      let x = '', o = '';
+      for (let j = k + 1; j < Math.min(k + 8, lines.length); j++) {
+        const s = lines[j].trim();
+        if (!x && s.startsWith('×「')) x = s.slice(2, -1);
+        if (!o && s.startsWith('○「')) o = s.slice(2, -1);
+        if (s.startsWith('#')) break;
+      }
+      if (x) para('×　' + x, { indent: { left: 480 }, spacing: sp0 }, { color: GRAY });
+      if (o) para('○　' + o, { indent: { left: 480 }, spacing: sp0 }, { color: NAVY });
+    }
+  }
+})();
+
 let i = 0;
 const N = lines.length;
 while (i < N) {

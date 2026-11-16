@@ -2,6 +2,8 @@
 # 目次の案・第5版（2026-11-16）。著者の形：1項目＝×と○の短い対（同じ形で、1か所だけ入れかわる）。
 # 章タイトル・コラムは第4版（mokuji_v4.py）のまま。まだ plan_v2.py には入れていない。
 #   python3 -I scripts/mokuji_v5.py
+import sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import mokuji_v4 as v4
 # 番号: (×, ○)　01〜06は著者の案をもとに、03・05・06だけ直した
 PAIR = {

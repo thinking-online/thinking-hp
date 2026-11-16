@@ -71,19 +71,54 @@ IT = {
  "50": ("全部わかりません", "どこがわからないかも、わからない", "「ここまではわかる」から、質問する"),
 }
 
-def text():
-    out = [HEAD, ""]
+# コラム。置く場所：その番号の項目のすぐあと。種類：「コラム」＝章の終わりの、著者の話。「Q&A」＝よく聞かれること（関係する項目のすぐあと）
+# (どの項目のあと, 種類, タイトル, 一言, 原稿のファイル)
+COL = [
+ ("06", "コラム", "ダメなままでいることこそ、ダメだ", "現役で10個落ちた僕が、今ならわかること", "col_ch1_1"),
+ ("10", "コラム", "周りの5人の平均が、自分になる", "「やるのが普通」の場所を、1つ持つ", "col_ch2_1"),
+ ("15", "Q&A", "おすすめの勉強場所は、どこですか？", "答えは、「声が出せる場所」", "col_ch3_2"),
+ ("27", "コラム", "「〜しちゃう」じゃない。自分で、選んでいる", "「スマホ、見ちゃうんですよね」と言う人へ", "col_ch4_1"),
+ ("32", "Q&A", "おすすめの参考書は、何ですか？", "「誰にでもおすすめの1冊」は、ありません。選び方は3つ", "col_ch3_1"),
+ ("34", "コラム", "未来の自分に、感謝される今日にする", "浪人の1年、つらい日に考えていたこと", "col_ch5_1"),
+ ("37", "Q&A", "休憩中は、何を見ればいいですか？", "おすすめは、「緑」", "col_ch6_2"),
+ ("40", "コラム", "「みんなと同じ」の空気に、流されるな", "自習室で「15分寝ます」と宣言した話", "col_ch6_1"),
+ ("47", "コラム", "無駄なプライドが、邪魔をしていた", "中学の英単語から、やり直した日", "col_ch7_1"),
+ ("50", "コラム", "AIがある時代に、なぜ、勉強するのか", "「もう勉強しなくていいのでは？」への答え", "col_ch8_1"),
+]
+FRONT = ["はじめに　「お前の勉強法、ぜーんぶ、ズレとる。」", "この本の使い方"]
+BACK = ["巻末　50を、1枚に", "巻末　6つの言葉で、初めての場面を解く", "巻末　保護者の方へ", "巻末　参考文献",
+        "おわりに　笑わなかった人が、1人だけいました"]
+
+def text(short=False):
+    """short=True なら、項目は番号の範囲だけ（章タイトルとコラムの並びを見る用）"""
+    out = FRONT + ["", HEAD, ""]
+    col = {}
+    for c in COL: col.setdefault(c[0], []).append(c)
     for no, title, tag in CH:
         out += [f"{no}　{title}", f"　　　　〔{tag}〕", ""]
         a, b = RANGE[no]
+        run = []
+        def flush():
+            if short and run:
+                out.append(f"　{run[0]}〜{run[-1]}" if len(run) > 1 else f"　{run[0]}")
+                run.clear()
         for i in range(a, b + 1):
             n = "%02d" % i
             w, x, o = IT[n]
-            head = f"法則{n}　{LAW[n]}　「{w}」" if n in LAW else f"{n}　「{w}」"
-            out += [head, f"　　× {x}", f"　　○ {o}"]
+            if short:
+                run.append(n)
+            else:
+                head = f"法則{n}　{LAW[n]}　「{w}」" if n in LAW else f"{n}　「{w}」"
+                out += [head, f"　　× {x}", f"　　○ {o}"]
+            for _, kind, ct, sub, _f in col.get(n, []):
+                flush()
+                out += [f"　【{kind}】{ct}", f"　　　　　{sub}"]
+        flush()
         out.append("")
+    out += BACK
     return "\n".join(out).rstrip() + "\n"
 
 if __name__ == "__main__":
-    assert len(IT) == 50
-    print(text(), end="")
+    import sys
+    assert len(IT) == 50 and len(COL) == 10
+    print(text(short="--short" in sys.argv), end="")

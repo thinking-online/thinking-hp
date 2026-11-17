@@ -447,7 +447,7 @@ table.review td.hits .hit-grp { margin: 0 0 0.4mm 0; }
 table.review td.hits .hit-part { color: var(--navy); font-family: "Liberation Serif", "Noto Serif CJK JP", serif; }
 table.review td.hits .hit-n { color: var(--muted); font-weight: 400; font-size: 7.6pt; }
 table.answers td.qid { width: 13mm; }
-table.selfscore td { height: 7mm; vertical-align: middle; }
+table.selfscore td { height: 6.2mm; padding-top: 0.8mm; padding-bottom: 0.8mm; vertical-align: middle; }
 table.selfscore tbody tr td.blank { width: 15mm; background: #fff; border-left: 0.4pt solid var(--line); }
 table.selfscore tr.total td { font-weight: 700; color: var(--navy); background: #fff !important; border-top: 1pt solid var(--navy); }
 table.selfscore tr.total td.blank { background: #fff !important; border: 0.6pt solid var(--navy); }

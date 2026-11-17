@@ -373,7 +373,7 @@ def render_part(i, p) -> str:
         out.append("</div>")
         if ci == 0:
             out.append("</div>")  # 章頭の nobreak を閉じる
-        out.append(callout("blue", "【訳】", f'<p class="core-trans">{md(c["translation"])}</p>', "keep-prev"))
+        out.append(callout("blue", "【訳】", f'<p class="core-trans">{md(c["translation"])}</p>'))
         if c.get("points"):
             out.append(callout("gold", "【ここで止まって考える】", paras(c["points"])))
         if ci > 0:
@@ -450,7 +450,8 @@ def render_summary(b) -> str:
     out.append('<table class="review"><thead><tr><th>失点の型</th><th>該当設問（大問別）</th><th>足りないもの</th>'
                '<th>次にやること</th></tr></thead><tbody>' + "".join(trs) + "</tbody></table>")
 
-    out.append('<div class="nobreak"><h2 id="sum-self">自己採点表</h2>')
+    # 表は 1 ページに収まらないので nobreak で包まない（包むと前のページ末が大きく空く）。見出しは break-after: avoid
+    out.append('<div><h2 id="sum-self">自己採点表</h2>')
     rows = []
     for p, q in all_questions(b):
         rows.append(f'<tr><td class="key nowrap">大問{md(p["no"])}</td><td class="c">{md(q["id"])}</td>'

@@ -70,8 +70,30 @@ def md(text) -> str:
     s = re.sub(r"\*\*(.+?)\*\*", r"<b>\1</b>", s)
     s = re.sub(r"__(.+?)__", r"<u>\1</u>", s)
     s = re.sub(r"\[\[(.+?)\]\]", r'<span class="en">\1</span>', s)
-    s = re.sub(r"(【[^】]{1,20}】)", r'<span class="tag">\1</span>', s)
+    s = re.sub(r"【([^】]{1,20})】", lambda m: f'<span class="tag {tag_class(m.group(1))}">【{m.group(1)}】</span>', s)
     return s
+
+
+# 札（【…】）の色。札は inline の色付き太字（inline-block や枠は使わない＝欠けの原因になるため）
+TAG_COLORS = [
+    (("推定",), "t-gold"),
+    (("罠", "注意", "減点", "誤答", "NG", "ダメ"), "t-verm"),
+    (("正解", "根拠", "答案例", "訳"), "t-teal"),
+]
+
+
+def tag_class(label: str) -> str:
+    for keys, cls in TAG_COLORS:
+        if any(k in label for k in keys):
+            return cls
+    return "t-navy"
+
+
+def callout(kind: str, label: str, inner: str, extra: str = "") -> str:
+    """色付きの囲み（薄い背景＋左の色線）。札はブロックの見出し行として置く。
+    kind: navy / gold / teal / verm / blue"""
+    lab = f'<div class="co-lbl">{md(label)}</div>' if label else ""
+    return f'<div class="co co-{kind} {extra}">{lab}{inner}</div>'
 
 
 def paras(text) -> str:
@@ -108,11 +130,11 @@ def table(head, rows, cls="", col_cls=None) -> str:
     return f'<table class="{cls}"><thead><tr>{th}</tr></thead><tbody>{"".join(body)}</tbody></table>'
 
 
-def masu(chars: int, text: str = "", per_row: int = 20, caption: str = "") -> str:
+def masu(chars: int, text: str = "", per_row: int = 20, caption: str = "", example: bool = False) -> str:
     """字数指定の記述用マス目。text を入れると答案例として 1 字 1 マスで埋める。"""
     rows = -(-chars // per_row)
     cells = list(text or "")
-    out = [f'<div class="masu-wrap">']
+    out = [f'<div class="masu-wrap{" example" if example else ""}">']
     if caption:
         out.append(f'<div class="masu-caption">{md(caption)}</div>')
     out.append('<table class="masu"><tbody>')
@@ -130,15 +152,34 @@ def masu(chars: int, text: str = "", per_row: int = 20, caption: str = "") -> st
     return "".join(out)
 
 
+MARK_CLASS = {"S": "m-s", "V": "m-v", "O": "m-o", "C": "m-c", "M": "m-m"}
+
+
+def mark_class(tok: str) -> str:
+    """S / V / O / C / M（O1・S′ なども）なら色、それ以外（関係詞・接続詞など）は灰。"""
+    t = tok.strip("()（）")
+    return MARK_CLASS.get(t[:1], "m-x") if t and len(t) <= 3 else "m-x"
+
+
+def mark_html(mark: str) -> str:
+    """働きの記号を色分け（S＝紺、V＝朱、O・C＝緑、M＝金、その他＝灰）。inline の色付き太字のみ。"""
+    out = []
+    for tok in str(mark or "").split():
+        out.append(f'<span class="mk {mark_class(tok)}">{esc(tok)}</span>')
+    return " ".join(out)
+
+
 def parse_table(lines) -> str:
     """精読の構文の図：1 行 = 英文の区切り / 働き / 訳。level で従属の深さを字下げ。"""
     rows = []
     for ln in lines:
         lv = int(ln.get("level", 0))
         lvc = f" lv{lv}" if lv else ""
+        mk = str(ln.get("mark", "")).split()
+        role = mark_class(mk[0]) if mk else "m-x"
         rows.append(
-            f'<tr><td class="en-chunk{lvc}">{md(ln["en"])}</td>'
-            f'<td class="mark">{md(ln.get("mark", ""))}</td>'
+            f'<tr class="row-{role}"><td class="en-chunk{lvc}">{md(ln["en"])}</td>'
+            f'<td class="mark">{mark_html(ln.get("mark", ""))}</td>'
             f'<td class="ja-chunk{lvc}">{md(ln["ja"])}</td></tr>'
         )
     return (
@@ -197,7 +238,7 @@ def render_toc(b) -> str:
 <h1 id="toc">目次</h1>
 <div class="chapter-lead">{md(b['univ'])} {md(b.get('faculty', ''))} {md(b['year'])}年度 {md(b['subject'])}</div>
 <div class="toc"><ul>{''.join(items)}</ul></div>
-<div class="toc-howto"><p><span class="tag">【この本の使い方】</span></p>{paras(howto)}</div>
+<div class="toc-howto">{callout("navy", "【この本の使い方】", paras(howto))}</div>
 """
 
 
@@ -207,7 +248,7 @@ def render_overview(b) -> str:
     if ov.get("lead"):
         out.append(f'<div class="chapter-lead">{md(ov["lead"])}</div>')
     out.append('<h2>大問構成</h2>')
-    out.append(f'<p>{md(ov["exam_line"])}</p>')
+    out.append(f'<div class="hero">{md(ov["exam_line"])}</div>')
     out.append(table(["大問", "形式・テーマ", "設問", "配点", "目安時間"],
                      ov["structure"], "", ["c key", "", "", "c nowrap", "c nowrap"]))
     out.append('<h2>時間配分</h2>')
@@ -215,7 +256,7 @@ def render_overview(b) -> str:
     out.append('<h2>差がつく所</h2>')
     out.append(table(["どこで", "何が起きるか", "対策"], ov["diff_points"], "", ["key", "", ""]))
     if ov.get("notes"):
-        out.append(f'<div class="notes">{paras(ov["notes"])}</div>')
+        out.append(callout("gold", "【注記】", paras(ov["notes"]), "small"))
     return "".join(out)
 
 
@@ -223,71 +264,70 @@ def render_question(q) -> str:
     ans = q.get("answer_display", q["answer"])
     out = [f'<div class="question" id="q-{esc(q["id"])}">']
     out.append(
-        f'<h3>設問{md(q["id"])}<span class="qtype">{md(q["type"])}</span>'
-        f'<span class="qans">正解 {md(ans)}</span></h3>'
+        f'<div class="q-head"><span class="q-ans">正解<span class="q-ans-v">{md(ans)}</span></span>'
+        f'<span class="q-no">設問{md(q["id"])}</span><span class="q-type">{md(q["type"])}</span></div>'
     )
+    out.append('<div class="q-body">')
     if q.get("target"):
         out.append(f'<p class="q-target">{md(q["target"])}</p>')
     if q.get("intent"):
-        out.append(f'<div class="q-item"><span class="tag">【出題意図】</span>{paras(q["intent"])}</div>')
+        out.append(callout("navy", "【出題意図】", paras(q["intent"])))
     if q.get("steps"):
         lis = "".join(f"<li>{md(s)}</li>" for s in q["steps"])
-        out.append(f'<div class="q-item"><span class="tag">【解く人の頭の中の手順】</span><ol class="steps">{lis}</ol></div>')
+        out.append(callout("gold", "【解く人の頭の中の手順】", f'<ol class="steps">{lis}</ol>'))
     if q.get("basis"):
-        out.append(f'<div class="q-item"><span class="tag">【正解の根拠】</span>{paras(q["basis"])}</div>')
+        head = f'<p class="basis-ans">正解 <span class="ok">{md(ans)}</span></p>' if not q.get("chars") else ""
+        out.append(callout("teal", "【正解の根拠】", head + paras(q["basis"]), "basis"))
     if q.get("wrong"):
-        rows = [[w["choice"], w["why"], w["lack"]] for w in q["wrong"]]
-        out.append('<div class="q-item"><span class="tag">【誤答の検討】</span>')
-        out.append(table(["選択肢", "ダメな理由", "これを選ぶ人に足りないもの"], rows, "wrong", ["choice", "why", "lack"]))
-        out.append("</div>")
+        rows = [[f'× {w["choice"]}', w["why"], w["lack"]] for w in q["wrong"]]
+        out.append(callout("verm", "【誤答の検討】",
+                           table(["選択肢", "ダメな理由", "これを選ぶ人に足りないもの"], rows, "wrong",
+                                 ["choice", "why", "lack"])))
     if q.get("rubric"):
         rows = [[r["element"], r["points"], r["criteria"]] for r in q["rubric"]]
-        out.append('<div class="q-item"><span class="tag">【採点の要素】</span>')
-        out.append(table(["要素", "配点", "判定（ここまで書けていれば可／減点）"], rows, "rubric", ["el", "pt", ""]))
-        out.append("</div>")
+        out.append(callout("gold", "【採点の要素】",
+                           table(["要素", "配点", "判定（ここまで書けていれば可／減点）"], rows, "rubric",
+                                 ["el", "pt", ""])))
     if q.get("chars"):
         per_row = q.get("per_row", 20)
-        out.append('<div class="q-item"><span class="tag">【答案例】</span>')
-        for ex in q.get("examples", []):
-            out.append(masu(q["chars"], ex["text"], per_row, ex.get("label", "")))
+        inner = "".join(masu(q["chars"], ex["text"], per_row, ex.get("label", ""), True)
+                        for ex in q.get("examples", []))
+        out.append(callout("teal", "【答案例】", inner, "nobreak"))
         if q.get("blank_masu", True):
             out.append(masu(q["chars"], "", per_row, f"自分の答案（{q['chars']}字以内）"))
-        out.append("</div>")
     elif q.get("examples"):
-        out.append('<div class="q-item"><span class="tag">【答案例】</span>')
-        for ex in q["examples"]:
-            out.append(f'<p>{md(ex.get("label", ""))}　{md(ex["text"])}</p>')
-        out.append("</div>")
+        inner = "".join(f'<p>{md(ex.get("label", ""))}　{md(ex["text"])}</p>' for ex in q["examples"])
+        out.append(callout("teal", "【答案例】", inner))
     if q.get("ng"):
-        out.append('<div class="q-item"><span class="tag">【減点される書き方】</span>')
-        out.append(table(["答案", "どこが足りないか"], [[n["text"], n["why"]] for n in q["ng"]], "", ["", ""]))
-        out.append("</div>")
+        out.append(callout("verm", "【減点される書き方】",
+                           table(["答案", "どこが足りないか"], [[n["text"], n["why"]] for n in q["ng"]], "ng",
+                                 ["", ""])))
     if q.get("note"):
-        out.append(f'<div class="notes">{paras(q["note"])}</div>')
-    out.append("</div>")
+        out.append(callout("verm", "【要注意の罠】", paras(q["note"]), "trap"))
+    out.append("</div></div>")
     return "".join(out)
 
 
 def render_part(i, p) -> str:
-    out = [f'<h1 id="part{i}">大問{md(p["no"])}　{md(p["title"])}</h1>']
+    out = [f'<h1 id="part{i}"><span class="h1-eyebrow">大問{md(p["no"])}</span>{md(p["title"])}</h1>']
     out.append(f'<div class="chapter-lead">{md(p["lead"])}</div>')
 
     out.append(f'<h2 id="p{i}-identity">この文章の正体</h2>')
-    out.append(f'<p class="identity">{md(p["identity"])}</p>')
+    out.append(f'<div class="identity">{md(p["identity"])}</div>')
     if p.get("identity_note"):
         out.append(paras(p["identity_note"]))
 
     out.append('<h2>設問タイプと攻め方</h2>')
-    out.append(table(["設問", "タイプ", "攻め方"], p["types"], "", ["key c", "nowrap", ""]))
+    out.append(table(["設問", "タイプ", "攻め方"], p["types"], "types", ["key c", "nowrap", ""]))
     if p.get("types_note"):
-        out.append(paras(p["types_note"]))
+        out.append(callout("verm", "【要注意の罠】", paras(p["types_note"]), "trap"))
 
     out.append(f'<h2 id="p{i}-map">英文マップ ― 段落の流れと設問の在りか</h2>')
     if p.get("map_flow"):
-        out.append(f'<p class="flow">{md(p["map_flow"])}</p>')
+        out.append(f'<div class="flow">{md(p["map_flow"])}</div>')
     out.append(table(["段落", "役割", "内容", "設問"], p["map"], "map", ["para", "role", "", "qs"]))
     if p.get("map_note"):
-        out.append(paras(p["map_note"]))
+        out.append(callout("navy", "", paras(p["map_note"])))
 
     # 見出しだけがページ末に取り残されないよう、見出し＋前置き＋最初の精読を一塊にする
     out.append('<div class="nobreak">')
@@ -296,13 +336,13 @@ def render_part(i, p) -> str:
         out.append(paras(p["core_lead"]))
     for ci, c in enumerate(p["core"]):
         out.append('<div class="core-block">' if ci == 0 else '<div class="core-block nobreak">')
-        out.append(f'<h3>{md(c["title"])}</h3>')
+        out.append(f'<h3 class="core-title">{md(c["title"])}</h3>')
         out.append(parse_table(c["lines"]))
         if c.get("legend"):
             out.append(f'<p class="parse-legend">{md(c["legend"])}</p>')
-        out.append(f'<p class="core-trans"><span class="tag">【訳】</span>{md(c["translation"])}</p>')
+        out.append(callout("blue", "【訳】", f'<p class="core-trans">{md(c["translation"])}</p>'))
         if c.get("points"):
-            out.append(f'<div class="q-item"><span class="tag">【ここで止まって考える】</span>{paras(c["points"])}</div>')
+            out.append(callout("gold", "【ここで止まって考える】", paras(c["points"])))
         out.append("</div>")
         if ci == 0:
             out.append("</div>")
@@ -314,19 +354,19 @@ def render_part(i, p) -> str:
         out.append(render_question(q))
 
     out.append(f'<h2 id="p{i}-trans" class="pagebreak">全訳 ― 大問{md(p["no"])}</h2>')
-    out.append(f'<p class="trans-note">{md(p.get("trans_note", "左＝原文に忠実な訳（構造を写した訳）、右＝かみくだいた訳（言いたいことを日本語の順で言い直した訳）。番号は段落番号と段落内の文番号。英文本文は問題冊子で確認してください。訳はTHINKINGのオリジナルです。"))}</p>')
-    out.append('<table class="trans"><thead><tr><th class="c">文</th><th>原文に忠実な訳</th><th>かみくだいた訳</th></tr></thead><tbody>')
+    out.append(f'<p class="trans-note">{md(p.get("trans_note") or "左＝原文に忠実な訳（構造を写した訳）、右＝かみくだいた訳（言いたいことを日本語の順で言い直した訳）。番号は段落番号と段落内の文番号。英文本文は問題冊子で確認してください。訳はTHINKINGのオリジナルです。")}</p>')
+    out.append('<table class="trans"><thead><tr><th class="c">文</th><th class="h-faithful">原文に忠実な訳</th>'
+               '<th class="h-plain">かみくだいた訳</th></tr></thead><tbody>')
     for para in p["translation"]:
         label = f'第{para["para"]}段落'
         if para.get("label"):
             label += f'｜{para["label"]}'
-        if para.get("qs"):
-            label += f'　{para["qs"]}'
-        out.append(f'<tr><th class="para-head" colspan="3">{md(label)}</th></tr>')
-        for n, s in enumerate(para["sentences"], 1):
+        qs = f'<span class="para-qs">{md(para["qs"])}</span>' if para.get("qs") else ""
+        out.append(f'<tr class="para-row"><td class="para-head" colspan="3">{md(label)}{qs}</td></tr>')
+        for n, st in enumerate(para["sentences"], 1):
             out.append(
                 f'<tr><td class="sno">{para["para"]}{maru(n)}</td>'
-                f'<td class="faithful">{md(s["faithful"])}</td><td class="plain">{md(s["plain"])}</td></tr>'
+                f'<td class="faithful">{md(st["faithful"])}</td><td class="plain">{md(st["plain"])}</td></tr>'
             )
     out.append("</tbody></table>")
     return "".join(out)
@@ -348,13 +388,16 @@ def render_summary(b) -> str:
     for p, q in all_questions(b):
         rows.append([f'大問{p["no"]}', q["id"], q.get("answer_display", q["answer"]), q.get("points", "—"),
                      q.get("checked", "未照合")])
-    out.append(table(["大問", "設問", "解答", "配点", "照合（資料との一致・不一致・推定の別）"], rows, "answers",
-                     ["key nowrap", "c nowrap", "ans", "c nowrap", "chk"]))
+    html_t = table(["大問", "設問", "解答", "配点", "照合（資料との一致・不一致・推定の別）"], rows, "answers",
+                   ["key nowrap", "c nowrap", "ans", "c nowrap", "chk"])
+    # 資料と食い違った設問の行を目立たせる
+    html_t = re.sub(r'<tr>(<td class="key nowrap">(?:(?!</tr>).)*?不一致)', r'<tr class="mismatch">\1', html_t)
+    out.append(html_t)
     out.append('<h3>照合した資料と注記</h3>')
     src_rows = [[x["name"], x["status"], x.get("note", "")] for x in b.get("sources", [])]
     out.append(table(["資料", "扱い", "注記"], src_rows, "", ["key", "nowrap", ""]))
     if s.get("answer_notes"):
-        out.append(f'<div class="notes">{paras(s["answer_notes"])}</div>')
+        out.append(callout("gold", "【注記】", paras(s["answer_notes"]), "small"))
 
     out.append('<h2 id="sum-review">失点の型別の復習動線</h2>')
     if s.get("review_lead"):
@@ -363,7 +406,7 @@ def render_summary(b) -> str:
     for t in s["miss_types"]:
         hits = [f'{p["no"]}-{q["id"]}' for p, q in all_questions(b) if t["key"] in q.get("miss_types", [])]
         rows.append([f'【{t["key"]}】{t["name"]}', "・".join(hits) or "—", t["lack"], t["action"]])
-    out.append(table(["失点の型", "該当設問", "足りないもの", "次にやること"], rows, "", ["key", "nowrap", "", ""]))
+    out.append(table(["失点の型", "該当設問", "足りないもの", "次にやること"], rows, "review", ["key", "nowrap hits", "", ""]))
 
     out.append('<div class="nobreak"><h2 id="sum-self">自己採点表</h2>')
     rows = []

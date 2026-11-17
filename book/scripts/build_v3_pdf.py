@@ -51,8 +51,10 @@ def item_html(kk):
     steps, king = D.SHEET[kk]
     one, pts, dakara, toi = D.MATOME[kk]
     title = S1.S[kk][0]
-    st = "".join('<div class="st"><div class="lab">STEP<b>0%d</b></div><div><p class="do">%s</p><p class="say">「%s」</p></div></div>'
-                 % (i, esc(h), esc(v)) for i, (h, v) in enumerate(steps, 1))
+    notes = getattr(D, "SHEET_NOTE", {})
+    st = "".join('<div class="st"><div class="lab">STEP<b>0%d</b></div><div><p class="do">%s</p><p class="say">「%s」</p>%s</div></div>'
+                 % (i, esc(h), esc(v), ('<p class="nt">※%s</p>' % esc(notes[(kk, i)])) if (kk, i) in notes else "")
+                 for i, (h, v) in enumerate(steps, 1))
     return """<section class="item">
 <div class="qpage"><div class="no">%s</div><p class="q1">頭のいい人が絶対やらないこと</p><p class="q2">「%s」</p><p class="q3">じゃあ、何をするの？</p></div>
 <div class="tag">本文</div>
@@ -118,6 +120,7 @@ pre { font-family: inherit; font-size: 9.8pt; line-height: 1.8; white-space: pre
 .st .lab b { font-size: 10.5pt; margin-left: 1mm; }
 .st .do { font-weight: 700; margin: 0 0 .8mm; text-align: left; }
 .st .say { display: inline-block; border: 1px solid #15467e; border-radius: 2.5mm; padding: 0 3mm; font-size: 9.8pt; margin: 0; }
+.st .nt { font-size: 8.8pt; color: #444; margin: 1mm 0 0; text-align: left; line-height: 1.6; }
 .king { display: grid; grid-template-columns: auto 1fr; gap: 4mm; align-items: center; background: #e3ecf7; border-radius: 2.5mm; padding: 2.5mm 4mm; margin-top: 3.5mm; }
 .king span { background: #15467e; color: #fff; border-radius: 99px; font-size: 8.5pt; font-weight: 700; padding: 0 3mm; white-space: nowrap; }
 .king p { margin: 0; font-weight: 700; text-align: left; }

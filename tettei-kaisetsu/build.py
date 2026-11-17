@@ -235,16 +235,22 @@ def render_toc(b) -> str:
         items.append(f'<li class="lv1"><a href="#{anchor}">{md(label)}</a></li>')
         for a2, l2 in subs:
             items.append(f'<li class="lv2"><a href="#{a2}">{md(l2)}</a></li>')
-    howto = b.get("howto") or [
-        "問題冊子を印刷して手元に置いてください。この解説には問題文・英文本文を載せていません。",
-        "各大問は「正体 → 攻め方 → 英文マップ → 精読 → 設問 → 全訳」の順です。まず自力で解き、設問の解説から読み始めても構いません。",
-    ]
     return f"""
 <h1 id="toc">目次</h1>
 <div class="chapter-lead">{md(b['univ'])} {md(b.get('faculty', ''))} {md(b['year'])}年度 {md(b['subject'])}</div>
 <div class="toc"><ul>{''.join(items)}</ul></div>
-<div class="toc-howto">{callout("navy", "【この本の使い方】", paras(howto))}</div>
 """
+
+
+def render_howto(b) -> str:
+    """「この本の使い方」。目次の下に置くと目次が 1 ページを超えたときに 2 ページ目がほぼ空白になるので、
+    全体像の章の冒頭に置く。"""
+    howto = b.get("howto") or [
+        "問題冊子を印刷して手元に置いてください。この解説には問題文・英文本文を載せていません。",
+        "各大問は「正体 → 攻め方 → 英文マップ → 精読 → 設問 → 全訳」の順です。まず自力で解き、設問の解説から読み始めても構いません。",
+    ]
+    return f'<div class="toc-howto">{callout("navy", "【この本の使い方】", paras(howto))}</div>'
+
 
 
 def render_overview(b) -> str:
@@ -252,6 +258,7 @@ def render_overview(b) -> str:
     out = [f'<h1 id="overview">この年度の全体像</h1>']
     if ov.get("lead"):
         out.append(f'<div class="chapter-lead">{md(ov["lead"])}</div>')
+    out.append(render_howto(b))
     out.append('<h2>大問構成</h2>')
     out.append(f'<div class="hero">{md(ov["exam_line"])}</div>')
     # 見出し・列の書式は data で上書きできる（structure_head / structure_cls）
@@ -261,7 +268,7 @@ def render_overview(b) -> str:
     out.append('<h2>時間配分</h2>')
     out.append(table(["順番", "やること", "時間", "ねらい"], ov["time_plan"], "", ["c key", "", "c nowrap", ""]))
     out.append('<h2>差がつく所</h2>')
-    out.append(table(["どこで", "何が起きるか", "対策"], ov["diff_points"], "", ["key", "", ""]))
+    out.append(table(["どこで", "何が起きるか", "対策"], ov["diff_points"], "diff", ["key", "", ""]))
     if ov.get("notes"):
         out.append(callout("gold", "【注記】", paras(ov["notes"]), "small"))
     return "".join(out)
@@ -343,22 +350,28 @@ def render_part(i, p) -> str:
     if p.get("map_note"):
         out.append(callout("navy", "", paras(p["map_note"])))
 
-    # 見出しだけがページ末に取り残されないよう、見出し＋前置き＋最初の精読を一塊にする
+    # 見出しだけがページ末に取り残されないよう、見出し＋前置き＋最初の構文の図を一塊にする。
+    # 各精読ブロックは「小見出し＋構文の図＋凡例」だけを割らない塊にし、訳・解説の囲みは続けて流す
+    # （ブロック全体を割らない塊にすると、ページ末に大きな空白ができる）。
     out.append('<div class="nobreak">')
     out.append(f'<h2 id="p{i}-core">心臓部の精読</h2>')
     if p.get("core_lead"):
         out.append(paras(p["core_lead"]))
     for ci, c in enumerate(p["core"]):
-        out.append('<div class="core-block">' if ci == 0 else '<div class="core-block nobreak">')
+        if ci > 0:
+            out.append('<div class="core-block">')
+        out.append('<div class="core-head">' if ci == 0 else '<div class="core-head nobreak">')
         out.append(f'<h3 class="core-title">{md(c["title"])}</h3>')
         out.append(parse_table(c["lines"]))
         if c.get("legend"):
             out.append(f'<p class="parse-legend">{md(c["legend"])}</p>')
-        out.append(callout("blue", "【訳】", f'<p class="core-trans">{md(c["translation"])}</p>'))
-        if c.get("points"):
-            out.append(callout("gold", "【ここで止まって考える】", paras(c["points"])))
         out.append("</div>")
         if ci == 0:
+            out.append("</div>")  # 章頭の nobreak を閉じる
+        out.append(callout("blue", "【訳】", f'<p class="core-trans">{md(c["translation"])}</p>', "keep-prev"))
+        if c.get("points"):
+            out.append(callout("gold", "【ここで止まって考える】", paras(c["points"])))
+        if ci > 0:
             out.append("</div>")
 
     out.append(f'<h2 id="p{i}-qs">設問ごとの解説</h2>')

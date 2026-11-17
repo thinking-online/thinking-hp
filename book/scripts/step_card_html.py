@@ -83,3 +83,44 @@ def build(S, REDO, ROLE, CH):
     out.append('<p class="foot">原稿の検討用。もとは、今の原稿の各項目の「やり方」です。</p></div>')
     io.open("build/STEPの一覧_50.html", "w", encoding="utf-8").write("\n".join(out))
     print("ok", len(S))
+
+
+def build2(S, CH, NOTE, SRC, over):
+    """最新版（step_card_v2.py）。札は STEP 01・02・03 だけ。題は『』、下は「できた」の基準。"""
+    css2 = CSS + """
+.tag span { font-size:17px; font-variant-numeric:tabular-nums; }
+.note { display:block; color:var(--muted); font-size:12.5px; line-height:1.6; margin-top:6px; }
+.chip.warn { background:var(--marker); color:var(--ink); }
+.king i { letter-spacing:.02em; }
+.keys { margin:0 0 14px; padding:0; list-style:none; font-size:13.5px; color:var(--muted); display:grid; gap:2px; }
+.keys b { color:var(--ink); font-weight:700; }
+"""
+    out = ['<title>今日からできる3STEP 一覧</title>', '<meta name="claude:viewport-fit-sides" content="cover">',
+           '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@700;900&display=swap">',
+           '<style>' + css2 + '</style>', '<div class="wrap">',
+           '<h1>今日からできる3STEP　50項目の一覧</h1>',
+           '<p class="lede">2026年11月17日の最新版です。50項目とも、同じ形で並べています。</p>',
+           '<ul class="keys">'
+           '<li><b>太い字</b>：やること</li>'
+           '<li><b>吹き出し</b>：その時の声</li>'
+           '<li><b>「できた」の基準</b>：ここまでできたらOK、の線</li>'
+           '<li><span class="chip">著者の言葉</span> 01〜03番は、著者の原稿の言葉のままです　'
+           '<span class="chip warn">枠より長い</span> ひな形の枠（見出し24字、声14字）を超える行がある項目です</li></ul>',
+           '<nav class="chs" aria-label="章">' + "".join(f'<a href="#ch{i+1}">{H(c[0])}</a>' for i, c in enumerate(CH)) + '</nav>']
+    for i, (cno, tag, a, b) in enumerate(CH):
+        out.append(f'<section id="ch{i+1}"><h2>{H(cno)}<small>{H(tag)}</small></h2><div class="cards">')
+        for k in range(a, b + 1):
+            kk = "%02d" % k
+            t, steps, king = S[kk]
+            chips = ('<span class="chip">著者の言葉</span>' if kk in SRC else '') + ('<span class="chip warn">枠より長い</span>' if over(kk) else '')
+            li = ""
+            for j, (h, v) in enumerate(steps):
+                note = f'<small class="note">※{H(NOTE[(kk, j+1)])}</small>' if (kk, j + 1) in NOTE else ''
+                li += (f'<li><div class="tag s{j+1}"><b>STEP</b><span>0{j+1}</span></div>'
+                       f'<div><p class="do">{H(h)}</p><span class="say">「{H(v)}」</span>{note}</div></li>')
+            out.append(f'<article class="card"><header><span class="no">{kk}</span><h3 class="ttl">頭のいい人の『{H(t)}』3STEP</h3>{chips}</header>'
+                       f'<ol class="steps">{li}</ol><div class="king"><i>「できた」の基準</i><p>{H(king)}</p></div></article>')
+        out.append('</div></section>')
+    out.append('<p class="foot">原稿の検討用。01〜03番は著者の原稿、04〜06番は確定版、07〜50番は本文の「やり方」の3つを短くしたものです。</p></div>')
+    io.open("build/STEPの一覧_50.html", "w", encoding="utf-8").write("\n".join(out))
+    print("ok", len(S))

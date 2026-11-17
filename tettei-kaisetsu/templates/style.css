@@ -11,7 +11,7 @@
   size: A4;
   margin: 20mm 18mm 20mm 18mm;
   @top-left {
-    content: string(book-title);
+    content: "";  /* build.py が書名を差し込む */
     font-family: "Noto Sans CJK JP", sans-serif;
     font-size: 7.5pt;
     color: #555;
@@ -33,7 +33,7 @@
     color: #333;
   }
   @bottom-right {
-    content: string(footnote-mark);
+    content: "";  /* build.py が footer_note を差し込む */
     font-family: "Noto Sans CJK JP", sans-serif;
     font-size: 7pt;
     color: #777;
@@ -72,8 +72,6 @@ u { text-decoration: underline; text-underline-offset: 1.2pt; }
 }
 .muted { color: #555; }
 .small { font-size: 8.2pt; line-height: 1.65; }
-.book-title-holder { string-set: book-title content(); display: none; }
-.footnote-holder { string-set: footnote-mark content(); display: none; }
 
 /* ---------- 見出し ---------- */
 h1, h2, h3, h4 {

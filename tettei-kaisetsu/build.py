@@ -4,9 +4,15 @@
   data/<univ>_<year>.py（BOOK 辞書） → HTML → PDF（WeasyPrint）
 
 使い方:
-  python3 build.py data/sample_waseda-shogaku_2026.py
-  python3 build.py data/xxx.py --out /path/to/out.pdf --html   # HTML も残す
-  python3 build.py data/xxx.py --png /path/to/dir               # ページ画像も出す（pdftoppm）
+  python3 build.py sample/sample_dummy.py                 # 見本（ダミー）
+  python3 build.py waseda-shogaku_2026                     # 中身置き場の <id>.py を使う
+  python3 build.py waseda-shogaku_2026 --out x.pdf --html  # HTML も残す
+  python3 build.py waseda-shogaku_2026 --png /path/to/dir  # ページ画像も出す（pdftoppm）
+
+中身（解説・全訳・正解を含む data）はリポジトリに置かない。
+このリポジトリは Netlify で publish="." のため、置いた物はすべてサイトに公開される。
+中身置き場は --content-dir か環境変数 TETTEI_CONTENT_DIR で指定（既定は DEFAULT_CONTENT_DIR）。
+PDF の既定の出力先も <中身置き場>/out/。
 
 ビルド後に必ず検査を行い、1 つでも ERROR があれば終了コード 1 を返す:
   - 必要フォント（Noto Sans/Serif CJK JP, Liberation Serif）が入っているか
@@ -25,6 +31,7 @@ from __future__ import annotations
 import argparse
 import html
 import importlib.util
+import os
 import re
 import shutil
 import subprocess
@@ -34,6 +41,10 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 CSS_PATH = HERE / "templates" / "style.css"
+# 中身（data/<univ>_<year>.py）の置き場所。リポジトリの外に置くこと。
+DEFAULT_CONTENT_DIR = Path(
+    "/tmp/claude-0/-home-user-thinking-hp/fe35a45f-1f03-5054-8c22-5fcd44116fc2/scratchpad/content"
+)
 
 SERIES_NAME = "THINKINGの徹底解説シリーズ"
 COVER_TOP_LINE = "学部別・逆算戦略設計 THINKING"
@@ -71,6 +82,10 @@ def paras(text) -> str:
 
 def maru(n: int) -> str:
     return MARU[n - 1] if 1 <= n <= len(MARU) else f"({n})"
+
+
+def css_str(s) -> str:
+    return str(s).replace("\\", "\\\\").replace('"', '\\"').replace("\n", " ")
 
 
 def esc(s) -> str:
@@ -375,8 +390,6 @@ def render_html(b) -> str:
     foot = b.get("footer_note", "")
     body = [
         render_cover(b),
-        f'<div class="book-title-holder">{esc(book_title)}</div>',
-        f'<div class="footnote-holder">{esc(foot)}</div>',
         render_toc(b),
         render_overview(b),
     ]
@@ -388,7 +401,8 @@ def render_html(b) -> str:
 <title>{esc(book_title)}</title>
 <meta name="author" content="THINKING">
 <style>{css}
-@page cover {{ background: {color}; }}
+@page {{ @top-left {{ content: "{css_str(book_title)}"; }} @bottom-right {{ content: "{css_str(foot)}"; }} }}
+@page cover {{ background: {color}; @top-left {{ content: none; }} @bottom-right {{ content: none; }} }}
 </style></head>
 <body>{''.join(body)}</body></html>"""
 
@@ -504,7 +518,7 @@ def check_pdf(pdf: Path, b, rep: Report):
                 rep.err(f"埋め込まれていないフォント: {name}")
             if uni != "yes":
                 rep.warn(f"ToUnicode が無いフォント（コピペ・検索で化ける）: {name}")
-            base = name.split("+", 1)[-1]
+            base = name.split("+", 1)[-1].replace("-", "")
             if not any(a in base for a in ALLOWED_PDF_FONTS):
                 rep.err(f"想定外のフォントに落ちています（代替フォント）: {name}")
         rep.ok(f"PDF のフォント {len(names)} 本: " + ", ".join(sorted({n.split('+', 1)[-1] for n in names})))
@@ -539,15 +553,30 @@ def load_book(path: Path):
 
 def main():
     ap = argparse.ArgumentParser(description="THINKINGの徹底解説シリーズ PDF ビルド")
-    ap.add_argument("data", help="data/<univ>_<year>.py")
-    ap.add_argument("--out", help="出力 PDF（既定: out/<data名>.pdf）")
+    ap.add_argument("data", help="<univ>_<year>（中身置き場の .py）または data ファイルのパス")
+    ap.add_argument("--content-dir", help="中身置き場（既定: $TETTEI_CONTENT_DIR か DEFAULT_CONTENT_DIR）")
+    ap.add_argument("--out", help="出力 PDF（既定: <中身置き場>/out/<id>.pdf）")
     ap.add_argument("--html", action="store_true", help="中間 HTML も PDF の隣に残す")
     ap.add_argument("--png", help="ページ画像（PNG, 70dpi）を出すディレクトリ")
     args = ap.parse_args()
 
-    data_path = Path(args.data).resolve()
+    content_dir = Path(args.content_dir or os.environ.get("TETTEI_CONTENT_DIR") or DEFAULT_CONTENT_DIR).resolve()
+    data_path = Path(args.data)
+    if not data_path.exists():
+        data_path = content_dir / "data" / f"{args.data.removesuffix('.py')}.py"
+    data_path = data_path.resolve()
+    if not data_path.exists():
+        raise SystemExit(f"data が見つかりません: {data_path}")
+    repo_root = HERE.parent
     b = load_book(data_path)
-    out = Path(args.out).resolve() if args.out else HERE / "out" / f"{data_path.stem}.pdf"
+    if data_path.is_relative_to(repo_root) and not b.get("dummy"):
+        raise SystemExit(
+            "中身の data がリポジトリ内にあります（Netlify で公開されてしまう）。"
+            f"\n  {data_path}\n  中身置き場（{content_dir}/data/）へ移してください。"
+        )
+    out = Path(args.out).resolve() if args.out else content_dir / "out" / f"{data_path.stem}.pdf"
+    if out.is_relative_to(repo_root):
+        print(f"WARN 出力先がリポジトリ内です（.gitignore で除外されますが、手動デプロイでは公開されうる）: {out}")
     out.parent.mkdir(parents=True, exist_ok=True)
 
     rep = Report()

@@ -1,4 +1,7 @@
-__pycache__/
 out/
 *.pdf
-*.png
+# 中身（解説・全訳・正解）はリポジトリに置かない。誤って置いてもコミットされないように
+data/
+content/
+*.html
+__pycache__/

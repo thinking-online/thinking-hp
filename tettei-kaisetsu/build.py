@@ -289,11 +289,13 @@ def render_part(i, p) -> str:
     if p.get("map_note"):
         out.append(paras(p["map_note"]))
 
+    # 見出しだけがページ末に取り残されないよう、見出し＋前置き＋最初の精読を一塊にする
+    out.append('<div class="nobreak">')
     out.append(f'<h2 id="p{i}-core">心臓部の精読</h2>')
     if p.get("core_lead"):
         out.append(paras(p["core_lead"]))
-    for c in p["core"]:
-        out.append('<div class="core-block">')
+    for ci, c in enumerate(p["core"]):
+        out.append('<div class="core-block">' if ci == 0 else '<div class="core-block nobreak">')
         out.append(f'<h3>{md(c["title"])}</h3>')
         out.append(parse_table(c["lines"]))
         if c.get("legend"):
@@ -302,6 +304,8 @@ def render_part(i, p) -> str:
         if c.get("points"):
             out.append(f'<div class="q-item"><span class="tag">【ここで止まって考える】</span>{paras(c["points"])}</div>')
         out.append("</div>")
+        if ci == 0:
+            out.append("</div>")
 
     out.append(f'<h2 id="p{i}-qs">設問ごとの解説</h2>')
     if p.get("questions_lead"):
@@ -361,7 +365,7 @@ def render_summary(b) -> str:
         rows.append([f'【{t["key"]}】{t["name"]}', "・".join(hits) or "—", t["lack"], t["action"]])
     out.append(table(["失点の型", "該当設問", "足りないもの", "次にやること"], rows, "", ["key", "nowrap", "", ""]))
 
-    out.append('<h2 id="sum-self">自己採点表</h2>')
+    out.append('<div class="nobreak"><h2 id="sum-self">自己採点表</h2>')
     rows = []
     for p, q in all_questions(b):
         rows.append(f'<tr><td class="key nowrap">大問{md(p["no"])}</td><td class="c">{md(q["id"])}</td>'
@@ -373,7 +377,7 @@ def render_summary(b) -> str:
                 f'<td class="blank"></td><td class="blank"></td><td class="blank"></td><td class="blank"></td></tr>')
     out.append('<table class="selfscore"><thead><tr><th>大問</th><th class="c">設問</th><th>タイプ</th>'
                '<th class="c">配点</th><th class="c">1回目</th><th class="c">2回目</th><th class="c">3回目</th>'
-               '<th class="c">失点の型</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table>")
+               '<th class="c">失点の型</th></tr></thead><tbody>' + "".join(rows) + "</tbody></table></div>")
     if s.get("closing"):
         out.append(paras(s["closing"]))
     if b.get("copyright"):
@@ -502,6 +506,20 @@ def check_banned_and_english(b, html_src: str, rep: Report):
             rep.ok(f"大問{p['no']}: 載せている英語 {words} 語（上限 {MAX_EN_WORDS_PER_PART}）")
 
 
+def check_answers(b, rep: Report):
+    """記述の答案例が字数内か、正解・照合欄が空でないか。"""
+    for p in b["parts"]:
+        for q in p["questions"]:
+            tag = f"大問{p['no']} 設問{q['id']}"
+            if not q.get("answer"):
+                rep.err(f"{tag}: answer が空")
+            if not q.get("checked"):
+                rep.warn(f"{tag}: 照合欄（checked）が空。照合していないなら「未照合」と書く")
+            for ex in q.get("examples", []):
+                if q.get("chars") and len(ex["text"]) > q["chars"]:
+                    rep.err(f"{tag}: 答案例が {len(ex['text'])} 字（指定 {q['chars']} 字）")
+
+
 def check_pdf(pdf: Path, b, rep: Report):
     if shutil.which("pdffonts"):
         out = subprocess.run(["pdffonts", str(pdf)], capture_output=True, text=True).stdout.splitlines()[2:]
@@ -590,6 +608,7 @@ def main():
         out.with_suffix(".html").write_text(src, encoding="utf-8")
     check_glyphs(src, rep)
     check_banned_and_english(b, src, rep)
+    check_answers(b, rep)
 
     import logging
     from weasyprint import HTML

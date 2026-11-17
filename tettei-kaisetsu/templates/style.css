@@ -242,6 +242,7 @@ table.masu td {
   line-height: 1;
 }
 table.masu tbody tr:last-child td { border-bottom: 0.4pt solid #444; }
+table.masu tbody tr:last-child td.count { border-bottom: none; }
 table.masu td.count {
   border: none;
   width: 9mm;

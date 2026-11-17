@@ -21,10 +21,15 @@ PDF の既定の出力先も <中身置き場>/out/。
   - PDF から抜いた文字に U+FFFD（文字化け）がないか、見出し文字列が読み戻せるか（pdftotext）
   - 禁止語（他社のシリーズ名）が入っていないか
   - 英文の載せすぎ（本文転載）になっていないか（大問ごとの英語語数の上限）
+  - 欠け：負の text-indent の中の背景・枠つき inline-block、本文領域からはみ出した背景・枠
 
 本文の記法（data 内の文字列で使える）:
   **太字**   __下線（設問の下線部の引用）__   [[英語の語句・短い引用]]
-  【札】 は自動で太字になる（札は【】文字だけ。色付きの箱は使わない）
+  【札】 は自動で色付きの太字になる（推定＝金、罠・注意・誤答＝朱、正解・根拠＝緑、ほか＝紺）
+
+見た目（templates/style.css）：Web 版解説と同じ配色（紺＋金・緑・朱）。地は白で、色は
+見出しの帯・設問カードの左線・札の文字色・正解の強調・表の見出し行など要所だけに使う。
+欠けの防止のため、負の text-indent と、背景・枠つきの inline-block は使わない（check_clipping が検査）。
 """
 from __future__ import annotations
 
@@ -309,7 +314,7 @@ def render_question(q) -> str:
 
 
 def render_part(i, p) -> str:
-    out = [f'<h1 id="part{i}"><span class="h1-eyebrow">大問{md(p["no"])}</span>{md(p["title"])}</h1>']
+    out = [f'<h1 id="part{i}"><span class="h1-eyebrow">大問{md(p["no"])}&#x3000;</span>{md(p["title"])}</h1>']
     out.append(f'<div class="chapter-lead">{md(p["lead"])}</div>')
 
     out.append(f'<h2 id="p{i}-identity">この文章の正体</h2>')
@@ -563,6 +568,61 @@ def check_answers(b, rep: Report):
                     rep.err(f"{tag}: 答案例が {len(ex['text'])} 字（指定 {q['chars']} 字）")
 
 
+def check_clipping(doc, rep: Report):
+    """欠けの検査（レイアウト後の箱を調べる）。
+    1) inline-block / inline-table が、負の text-indent を持つ親の中にある → ERROR（欠ける原因）
+    2) 背景・枠のある箱が本文領域の左右からはみ出している → ERROR（印刷で切れる・欠ける）
+    表紙（@page cover）は全面塗りなので対象外。"""
+    from weasyprint.formatting_structure import boxes as B
+
+    def visible(box):
+        st = box.style
+        bg = st["background_color"]
+        has_bg = bg is not None and getattr(bg, "alpha", 0) > 0
+        has_border = any(getattr(box, f"border_{s}_width", 0) > 0 for s in ("top", "right", "bottom", "left"))
+        return has_bg or has_border
+
+    def indent_neg(box):
+        ti = box.style["text_indent"]
+        v = getattr(ti, "value", ti)
+        try:
+            return float(v) < 0
+        except (TypeError, ValueError):
+            return False
+
+    problems = []
+    for pno, page in enumerate(doc.pages, 1):
+        pb = page._page_box
+        if pb.page_type.name == "cover":
+            continue
+        left = pb.margin_left + pb.padding_left + pb.border_left_width
+        right = pb.margin_width() - pb.margin_right - pb.padding_right - pb.border_right_width
+        right = left + pb.width
+
+        def walk(box, neg_parent=False):
+            if isinstance(box, (B.InlineBlockBox, B.InlineFlexBox if hasattr(B, "InlineFlexBox") else B.InlineBlockBox)) \
+                    and neg_parent and visible(box):
+                problems.append(f"p.{pno}: 負の text-indent の中に背景・枠つき inline-block（欠ける）")
+            if visible(box) and not isinstance(box, (B.PageBox, B.MarginBox)):
+                x0 = box.position_x + box.margin_left
+                x1 = x0 + box.border_width()
+                if x0 < left - 1 or x1 > right + 1:
+                    cls = (box.element.get("class") if box.element is not None else "") or ""
+                    problems.append(f"p.{pno}: 背景・枠つきの箱が本文領域からはみ出し"
+                                    f"（<{box.element_tag} class=\"{cls}\"> {x0:.0f}–{x1:.0f}px／領域 {left:.0f}–{right:.0f}px）")
+            neg = neg_parent or (isinstance(box, B.BlockContainerBox) and indent_neg(box))
+            for ch in getattr(box, "children", []) or []:
+                walk(ch, neg)
+
+        for ch in pb.children:
+            walk(ch)
+    if problems:
+        for m in sorted(set(problems))[:15]:
+            rep.err(m)
+    else:
+        rep.ok("欠けの検査：負の text-indent 内の inline-block なし、はみ出した背景・枠なし")
+
+
 def check_pdf(pdf: Path, b, rep: Report):
     if shutil.which("pdffonts"):
         out = subprocess.run(["pdffonts", str(pdf)], capture_output=True, text=True).stdout.splitlines()[2:]
@@ -656,7 +716,9 @@ def main():
     import logging
     from weasyprint import HTML
     logging.getLogger("weasyprint").setLevel(logging.ERROR)
-    HTML(string=src, base_url=str(HERE)).write_pdf(str(out))
+    doc = HTML(string=src, base_url=str(HERE)).render()
+    check_clipping(doc, rep)
+    doc.write_pdf(str(out))
     print(f"PDF: {out}")
 
     check_pdf(out, b, rep)

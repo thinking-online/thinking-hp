@@ -1,121 +1,161 @@
 /* =========================================================
-   THINKINGの徹底解説シリーズ  本文スタイル（WeasyPrint 用）
-   方針：
-   - 本文は黒とグレーのみ。色付きの箱・影・角丸・飾りは使わない。
-   - 札（ラベル）は太字の【】文字だけで表す（.tag）。
-   - 罫線は表の構造を示す細線と、章頭の太線のみ。
-   - 表紙の地色だけは build.py が data の cover_color から差し込む。
+   THINKINGの徹底解説シリーズ  本文スタイル（WeasyPrint 用・カラー）
+   配色は Web 版解説（gakushuin-university-2022-english-q2-full.html）に合わせる。
+     主色   紺   --navy   見出しの帯・表の見出し行・設問番号・S
+     アクセント
+            金   --gold   見出しの左線・手順・採点・M・注記
+            緑   --teal   正解・根拠・答案例・O/C・かみくだいた訳
+            朱   --verm   誤答・罠・減点・V
+   崩れ防止のルール（過去に欠けた原因への対策）：
+   - 負の text-indent は使わない。
+   - 札・バッジは inline の色付き太字（背景なし）か、ブロック（div）で作る。
+     inline-block に背景や枠を付けない（build.py が欠けを検査する）。
+   - 囲みは break-inside: auto（長い物は割れてよい）。見出しは break-after: avoid。
+     割れたときは box-decoration-break: clone で上下の線と余白を両側に付ける。
    ========================================================= */
+
+:root {
+  --navy: #16263f;
+  --navy2: #22344f;
+  --gold: #b8954a;
+  --gold-d: #8f7031;
+  --gold-soft: #f6f0e1;
+  --verm: #c8431f;
+  --verm-d: #9e3417;
+  --verm-soft: #fbece6;
+  --teal: #1f6b5c;
+  --teal-d: #155346;
+  --teal-soft: #e6f2ee;
+  --blue-soft: #eaf0f7;
+  --ink: #232830;
+  --muted: #6c6a61;
+  --line: #e2dac8;
+  --surface2: #f7f3ea;
+}
 
 @page {
   size: A4;
-  margin: 20mm 18mm 20mm 18mm;
+  margin: 19mm 16mm 18mm 16mm;
   @top-left {
     content: "";  /* build.py が書名を差し込む */
     font-family: "Noto Sans CJK JP", sans-serif;
-    font-size: 7.5pt;
-    color: #555;
+    font-size: 7.3pt;
+    color: #16263f;
     vertical-align: bottom;
-    padding-bottom: 3mm;
+    padding-bottom: 2.2mm;
   }
   @top-right {
     content: string(chapter);
     font-family: "Noto Sans CJK JP", sans-serif;
-    font-size: 7.5pt;
-    color: #555;
+    font-weight: 700;
+    font-size: 7.3pt;
+    color: #8f7031;
     vertical-align: bottom;
-    padding-bottom: 3mm;
+    padding-bottom: 2.2mm;
   }
   @bottom-center {
     content: counter(page);
     font-family: "Noto Sans CJK JP", sans-serif;
+    font-weight: 700;
     font-size: 8pt;
-    color: #333;
+    color: #16263f;
   }
   @bottom-right {
     content: "";  /* build.py が footer_note を差し込む */
     font-family: "Noto Sans CJK JP", sans-serif;
     font-size: 7pt;
-    color: #777;
+    color: #6c6a61;
   }
 }
 
 @page cover {
   margin: 0;
-  @top-left { content: none; }
-  @top-right { content: none; }
+  @top-left { content: none; border: none; }
+  @top-right { content: none; border: none; }
   @bottom-center { content: none; }
   @bottom-right { content: none; }
 }
 
 /* ---------- 基本 ---------- */
 html {
-  font-family: "Noto Serif CJK JP", serif;
-  font-size: 9.6pt;
-  line-height: 1.8;
-  color: #111;
+  font-family: "Noto Sans CJK JP", sans-serif;
+  font-size: 9.3pt;
+  line-height: 1.78;
+  color: var(--ink);
   text-align: justify;
-  /* 和文の禁則は WeasyPrint の既定に任せる */
 }
 body { margin: 0; }
-p { margin: 0 0 2.2mm 0; orphans: 2; widows: 2; }
-b, strong { font-family: "Noto Sans CJK JP", sans-serif; font-weight: 700; }
-u { text-decoration: underline; text-underline-offset: 1.2pt; }
+p { margin: 0 0 1.8mm 0; orphans: 2; widows: 2; }
+p:last-child { margin-bottom: 0; }
+b, strong { font-weight: 700; color: var(--navy); }
+u { text-decoration: underline; text-decoration-color: var(--verm); text-underline-offset: 1.5pt; }
 .en {
   font-family: "Liberation Serif", "Noto Serif CJK JP", serif;
-  font-size: 1.04em;
+  font-size: 1.06em;
   text-align: left;
 }
-.tag {
-  font-family: "Noto Sans CJK JP", sans-serif;
-  font-weight: 700;
-}
-.muted { color: #555; }
+/* 札：inline の色付き太字（背景・枠なし） */
+.tag { font-weight: 700; }
+.tag.t-navy { color: var(--navy); }
+.tag.t-gold { color: var(--gold-d); }
+.tag.t-teal { color: var(--teal); }
+.tag.t-verm { color: var(--verm); }
+.muted { color: var(--muted); }
 .small { font-size: 8.2pt; line-height: 1.65; }
 
 /* ---------- 見出し ---------- */
 h1, h2, h3, h4 {
-  font-family: "Noto Sans CJK JP", sans-serif;
   font-weight: 700;
   line-height: 1.45;
   text-align: left;
   page-break-after: avoid;
   break-after: avoid;
 }
-/* 章（全体像・大問・総まとめ）：改ページ＋上に太線 */
+/* 章：紺の帯＋金の下線 */
 h1 {
-  string-set: chapter content();
+  string-set: chapter content(text);
   page-break-before: always;
   break-before: page;
+  font-family: "Noto Serif CJK JP", serif;
   font-size: 17pt;
-  margin: 0 0 1.5mm 0;
-  padding-top: 3mm;
-  border-top: 2.2pt solid #111;
+  color: #fff;
+  background: var(--navy);
+  border-bottom: 2.4pt solid var(--gold);
+  border-radius: 3pt;
+  margin: 0 0 0 0;
+  padding: 4.2mm 6mm 3.6mm 6mm;
+}
+h1 .h1-eyebrow {
+  display: block;
+  font-family: "Noto Sans CJK JP", sans-serif;
+  font-size: 8.5pt;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+  margin-bottom: 0.6mm;
 }
 .chapter-lead {
-  font-size: 9.2pt;
-  color: #333;
-  margin: 0 0 6mm 0;
-  padding-bottom: 2.5mm;
-  border-bottom: 0.5pt solid #111;
+  font-size: 8.8pt;
+  color: var(--muted);
+  margin: 0 0 5mm 0;
+  padding: 2mm 0 2.2mm 0;
+  border-bottom: 0.5pt solid var(--line);
 }
-/* 節（この文章の正体・設問タイプと攻め方…） */
+/* 節：金の左線＋紺の文字 */
 h2 {
-  font-size: 12.5pt;
-  margin: 7mm 0 2.5mm 0;
-  padding-bottom: 1mm;
-  border-bottom: 0.6pt solid #111;
+  font-family: "Noto Serif CJK JP", serif;
+  font-size: 12.8pt;
+  color: var(--navy);
+  margin: 6.5mm 0 2.6mm 0;
+  padding: 0.4mm 0 0.4mm 3.2mm;
+  border-left: 3.2pt solid var(--gold);
 }
-h2 .secno { margin-right: 2mm; }
-/* 小見出し（設問ごと・精読の文ごと） */
 h3 {
-  font-size: 10.5pt;
-  margin: 5.5mm 0 1.8mm 0;
+  font-family: "Noto Serif CJK JP", serif;
+  font-size: 10.6pt;
+  color: var(--navy);
+  margin: 4.5mm 0 1.8mm 0;
 }
-h4 {
-  font-size: 9.6pt;
-  margin: 3.5mm 0 1mm 0;
-}
+h4 { font-size: 9.4pt; color: var(--navy); margin: 3mm 0 1mm 0; }
 .nobreak { page-break-inside: avoid; break-inside: avoid; }
 .pagebreak { page-break-before: always; break-before: page; }
 
@@ -123,182 +163,292 @@ h4 {
 .identity {
   font-family: "Noto Serif CJK JP", serif;
   font-weight: 700;
-  font-size: 14pt;
+  font-size: 14.5pt;
   line-height: 1.6;
-  margin: 2mm 0 2mm 0;
+  color: var(--navy);
+  background: var(--gold-soft);
+  border-left: 4pt solid var(--gold);
+  border-radius: 0 4pt 4pt 0;
+  padding: 3.2mm 5mm 3.4mm 5mm;
+  margin: 1mm 0 2.6mm 0;
   text-align: left;
 }
 
-/* ---------- 汎用の表（細い横罫のみ） ---------- */
+/* ---------- 囲み（薄い背景＋左の色線）。札は .co-lbl（ブロック） ---------- */
+.co {
+  margin: 2.2mm 0;
+  padding: 2.2mm 3.6mm 2.4mm 3.6mm;
+  border-left: 2pt solid var(--navy);
+  border-radius: 0 3pt 3pt 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  font-size: 9pt;
+  line-height: 1.75;
+}
+.co .co-lbl {
+  font-weight: 700;
+  font-size: 8.6pt;
+  margin-bottom: 0.6mm;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+.co .co-lbl .tag { color: inherit; }
+/* 囲みの地は白。色は左線と札の文字だけ（色を着けすぎない） */
+.co-navy { background: transparent; border-left-color: var(--navy); }
+.co-navy .co-lbl { color: var(--navy); }
+.co-blue { background: transparent; border-left-color: #2f5c86; }
+.co-blue .co-lbl { color: #2f5c86; }
+.co-gold { background: transparent; border-left-color: var(--gold); }
+.co-gold .co-lbl { color: var(--gold-d); }
+.co-teal { background: transparent; border-left-color: var(--teal); }
+.co-teal .co-lbl { color: var(--teal-d); }
+.co-verm { background: transparent; border-left-color: var(--verm); }
+.co-verm .co-lbl { color: var(--verm-d); }
+/* 要注意の罠：四辺を朱で囲む */
+.co.trap { background: var(--verm-soft); border: 0.8pt solid var(--verm); border-left: 3pt solid var(--verm); }
+.co table { background: #fff; margin: 1mm 0 0.5mm 0; }
+
+/* 全体像の帯 */
+.hero {
+  background: #fff;
+  border: 0.8pt solid var(--navy);
+  color: var(--ink);
+  border-radius: 4pt;
+  padding: 3mm 5mm;
+  margin: 1mm 0 3mm 0;
+  font-size: 9.4pt;
+}
+.hero .tag { color: var(--navy) !important; }
+
+/* ---------- 表 ---------- */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1.5mm 0 4mm 0;
-  font-size: 8.8pt;
+  margin: 1.5mm 0 3.5mm 0;
+  font-size: 8.7pt;
   line-height: 1.6;
   text-align: left;
 }
 thead { display: table-header-group; }
 tr { page-break-inside: avoid; break-inside: avoid; }
 th {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  background: var(--navy);
+  color: #f2eee2;
   font-weight: 700;
-  font-size: 8.2pt;
-  border-top: 1pt solid #111;
-  border-bottom: 0.6pt solid #111;
-  padding: 1.2mm 1.6mm;
+  font-size: 8pt;
+  letter-spacing: 0.03em;
+  padding: 1.3mm 1.8mm;
   vertical-align: bottom;
 }
 td {
-  border-bottom: 0.3pt solid #999;
-  padding: 1.4mm 1.6mm;
+  border-bottom: 0.4pt solid var(--line);
+  padding: 1.4mm 1.8mm;
   vertical-align: top;
 }
-tbody tr:last-child td { border-bottom: 1pt solid #111; }
+tbody tr:nth-child(even) td { background: #fbf9f4; }
 td.c, th.c { text-align: center; }
 td.nowrap, th.nowrap { white-space: nowrap; }
-td.key {
-  font-family: "Noto Sans CJK JP", sans-serif;
-  font-weight: 700;
-  white-space: nowrap;
-}
+td.key { font-weight: 700; color: var(--navy); white-space: nowrap; }
 
-/* ---------- 英文マップ ---------- */
-table.map td.para {
-  font-family: "Noto Sans CJK JP", sans-serif;
-  font-weight: 700;
-  width: 9mm;
-  text-align: center;
-}
-table.map td.role { width: 20mm; font-family: "Noto Sans CJK JP", sans-serif; }
-table.map td.qs { width: 22mm; font-family: "Noto Sans CJK JP", sans-serif; font-weight: 700; }
+/* 英文マップ */
 .flow {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-weight: 700;
   font-size: 9pt;
+  color: var(--navy);
+  border-top: 0.5pt solid var(--line);
+  border-bottom: 0.5pt solid var(--line);
+  padding: 1.6mm 0.5mm;
   margin: 0 0 2mm 0;
 }
-
-/* ---------- 精読：構文の図（行ごとに英文の区切りと訳） ---------- */
-.core-block { margin: 2mm 0 5mm 0; }
-table.parse { font-size: 9pt; margin-bottom: 2mm; }
-table.parse td { border-bottom: 0.3pt dotted #888; padding: 1.1mm 1.6mm; }
-table.parse td.en-chunk {
-  width: 52%;
-  font-family: "Liberation Serif", "Noto Serif CJK JP", serif;
-  font-size: 10pt;
-  line-height: 1.5;
-}
-table.parse td.mark {
-  width: 11mm;
-  font-family: "Noto Sans CJK JP", sans-serif;
-  font-weight: 700;
-  font-size: 8pt;
+table.map td.para {
+  width: 9mm;
   text-align: center;
-  white-space: nowrap;
+  color: var(--gold-d);
+  font-family: "Liberation Serif", serif;
+  font-weight: 700;
+  font-size: 11pt;
 }
+table.map td.role { width: 17mm; font-weight: 700; color: var(--gold-d); }
+table.map td.qs { width: 20mm; font-weight: 700; color: var(--verm); }
+
+/* ---------- 精読：構文の図 ---------- */
+.core-block { margin: 1.5mm 0 4mm 0; }
+h3.core-title { border-bottom: 0.6pt solid var(--line); padding-bottom: 0.8mm; }
+table.parse { font-size: 9pt; margin-bottom: 1.5mm; border: 0.6pt solid var(--line); }
+table.parse tbody tr td { background: #fff; border-bottom: 0.4pt dotted #cfc6b0; padding: 1.3mm 1.8mm; }
+table.parse td.en-chunk {
+  width: 50%;
+  font-family: "Liberation Serif", "Noto Serif CJK JP", serif;
+  font-size: 10.4pt;
+  line-height: 1.45;
+  color: var(--navy);
+  border-left: 2.4pt solid #c9cfd8;
+}
+/* 行の左線の色＝その行の働き */
+table.parse tr.row-m-s td.en-chunk { border-left-color: var(--navy); }
+table.parse tr.row-m-v td.en-chunk { border-left-color: var(--verm); }
+table.parse tr.row-m-o td.en-chunk,
+table.parse tr.row-m-c td.en-chunk { border-left-color: var(--teal); }
+table.parse tr.row-m-m td.en-chunk { border-left-color: var(--gold); }
+table.parse td.mark { width: 13mm; text-align: center; white-space: nowrap; font-size: 8.2pt; }
 table.parse td.ja-chunk { font-size: 8.8pt; }
-/* 従属の深さ：1段 = 5mm 字下げ。左に細い縦線で「中に入っている」ことを示す */
 table.parse td.lv1 { padding-left: 6.5mm; }
 table.parse td.lv2 { padding-left: 11.5mm; }
 table.parse td.lv3 { padding-left: 16.5mm; }
-.parse-legend { font-size: 7.8pt; color: #444; margin: -1mm 0 2mm 0; }
-.core-trans { margin: 1mm 0 1.5mm 0; }
+/* 働きの記号：inline の色付き太字 */
+.mk { font-weight: 700; }
+.mk.m-s { color: var(--navy); }
+.mk.m-v { color: var(--verm); }
+.mk.m-o, .mk.m-c { color: var(--teal); }
+.mk.m-m { color: var(--gold-d); }
+.mk.m-x { color: var(--muted); }
+.parse-legend { font-size: 7.6pt; color: var(--muted); margin: 0 0 1.5mm 0; }
+.core-trans { font-family: "Noto Serif CJK JP", serif; font-weight: 700; color: var(--navy); }
 
-/* ---------- 設問ごとの解説 ---------- */
-.question { margin: 0 0 4mm 0; }
-.question h3 { border-bottom: 0.3pt solid #999; padding-bottom: 0.6mm; }
-.question h3 .qtype { font-weight: 400; font-size: 9pt; margin-left: 3mm; }
-.question h3 .qans { float: right; font-size: 9.6pt; }
-.q-target { margin: 0 0 1.5mm 0; }
-.q-item { margin: 0 0 2mm 0; }
-.q-item > .tag { display: block; margin-bottom: 0.3mm; }
-ol.steps { margin: 0 0 0 0; padding-left: 6mm; }
-ol.steps li { margin: 0 0 0.6mm 0; }
-table.wrong td.choice { width: 10mm; text-align: center; font-family: "Noto Sans CJK JP", sans-serif; font-weight: 700; }
-table.wrong td.why { width: 52%; }
-
-/* 採点表（記述） */
-table.rubric td.pt { width: 12mm; text-align: center; font-family: "Noto Sans CJK JP", sans-serif; }
-table.rubric td.el { width: 30%; }
+/* ---------- 設問カード ---------- */
+.question {
+  margin: 3mm 0 5mm 0;
+  border: 0.6pt solid var(--line);
+  border-left: 3.4pt solid var(--navy);
+  border-radius: 0 4pt 4pt 0;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.q-head {
+  background: #fbf9f4;
+  border-bottom: 0.6pt solid var(--line);
+  padding: 2mm 3.6mm 1.8mm 3.6mm;
+  page-break-after: avoid;
+  break-after: avoid;
+  font-weight: 700;
+}
+.q-head .q-no {
+  font-family: "Noto Serif CJK JP", serif;
+  font-size: 11.6pt;
+  color: var(--navy);
+}
+.q-head .q-type { font-size: 8.4pt; color: var(--gold-d); margin-left: 3mm; }
+.q-head .q-ans { float: right; font-size: 8.4pt; color: var(--teal-d); padding-top: 0.6mm; }
+.q-head .q-ans-v {
+  font-family: "Liberation Serif", "Noto Sans CJK JP", serif;
+  font-size: 13pt;
+  color: var(--teal);
+  margin-left: 1.6mm;
+}
+.q-body { padding: 2.2mm 3.6mm 2.6mm 3.6mm; }
+.q-target { margin: 0 0 1.5mm 0; font-weight: 700; color: var(--navy2); }
+ol.steps { margin: 0; padding-left: 5.5mm; }
+ol.steps li { margin: 0 0 0.5mm 0; }
+ol.steps li::marker { color: var(--gold-d); font-weight: 700; }
+.basis-ans { font-weight: 700; color: var(--teal-d); margin-bottom: 0.8mm; }
+.basis-ans .ok {
+  font-family: "Liberation Serif", "Noto Sans CJK JP", serif;
+  font-size: 12.5pt;
+  color: var(--teal);
+}
+/* 根拠の引用は蛍光ペン風（inline の背景。inline-block にしない） */
+.basis .en, .basis u { background: #fbe9c9; color: var(--navy); font-weight: 700; text-decoration: none; }
+table.wrong td.choice { width: 11mm; text-align: center; font-weight: 700; color: var(--verm); white-space: nowrap; }
+table.wrong td.why { width: 50%; }
+table.rubric td.pt { width: 11mm; text-align: center; font-weight: 700; color: var(--gold-d); }
+table.rubric td.el { width: 30%; font-weight: 700; color: var(--navy); }
 
 /* ---------- 記述答案のマス目 ---------- */
-.masu-wrap { margin: 1.5mm 0 3mm 0; page-break-inside: avoid; break-inside: avoid; }
-.masu-caption { font-family: "Noto Sans CJK JP", sans-serif; font-size: 8pt; margin-bottom: 0.8mm; }
-table.masu {
-  width: auto;
-  border-collapse: collapse;
-  margin: 0;
-  table-layout: fixed;
-}
-table.masu td {
-  width: 7.2mm;
-  height: 7.2mm;
+.masu-wrap { margin: 1.2mm 0 2.5mm 0; page-break-inside: avoid; break-inside: avoid; }
+.masu-caption { font-weight: 700; font-size: 8pt; color: var(--navy); margin-bottom: 0.8mm; }
+.masu-wrap.example .masu-caption { color: var(--teal-d); }
+table.masu { width: auto; border-collapse: collapse; margin: 0; table-layout: fixed; }
+table.masu tbody tr td {
+  width: 7.3mm;
+  height: 7.3mm;
   padding: 0;
-  border: 0.4pt solid #444;
+  background: #fff;
+  border: 0.5pt solid #9aa3b2;
   text-align: center;
   vertical-align: middle;
   font-family: "Noto Serif CJK JP", serif;
   font-size: 11pt;
   line-height: 1;
+  color: var(--ink);
 }
-table.masu tbody tr:last-child td { border-bottom: 0.4pt solid #444; }
-table.masu tbody tr:last-child td.count { border-bottom: none; }
-table.masu td.count {
+.masu-wrap.example table.masu tbody tr td { border-color: #8fbcb0; color: var(--teal-d); font-weight: 700; }
+table.masu tbody tr td.count {
   border: none;
+  background: transparent;
   width: 9mm;
   font-family: "Noto Sans CJK JP", sans-serif;
   font-size: 6.5pt;
-  color: #555;
+  font-weight: 400;
+  color: var(--muted);
   text-align: left;
   padding-left: 1.2mm;
 }
-table.masu td.dead { background: none; border-color: #bbb; color: #bbb; }
+table.masu tbody tr td.dead { border-color: #ddd; }
 
 /* ---------- 全訳 ---------- */
-.trans-note { font-size: 8.4pt; color: #333; margin-bottom: 3mm; }
+.trans-note { font-size: 8.3pt; color: var(--muted); margin-bottom: 2.5mm; }
 table.trans { font-size: 8.9pt; line-height: 1.75; }
-table.trans th.para-head {
-  font-size: 9pt;
-  border-top: 1pt solid #111;
-  border-bottom: 0.3pt solid #999;
+table.trans th.h-faithful { background: var(--navy); }
+table.trans th.h-plain { background: var(--teal); }
+table.trans tbody tr td { background: #fff; }
+table.trans tr.para-row td.para-head {
+  background: #fff;
+  color: var(--navy);
+  font-family: "Noto Serif CJK JP", serif;
+  font-weight: 700;
+  font-size: 9.4pt;
+  border-top: 1.2pt solid var(--gold);
+  border-bottom: 0.4pt solid var(--line);
   padding-top: 1.6mm;
 }
-table.trans td.sno {
-  width: 7mm;
-  text-align: center;
-  font-family: "Noto Sans CJK JP", sans-serif;
-  font-weight: 700;
-}
-table.trans td.faithful, table.trans td.plain { width: 46%; }
-table.trans td.plain { color: #222; }
+tr.para-row { page-break-after: avoid; break-after: avoid; }
+.para-qs { font-family: "Noto Sans CJK JP", sans-serif; font-size: 8pt; color: var(--verm); margin-left: 3mm; }
+table.trans td.sno { width: 8mm; text-align: center; font-weight: 700; color: var(--gold-d); }
+table.trans td.faithful { width: 46%; }
+table.trans tbody tr td.plain { width: 46%; background: #f5faf8; color: #1d3b34; border-left: 1.2pt solid var(--teal); }
 
 /* ---------- 総まとめ ---------- */
-table.answers td.ans { font-family: "Noto Sans CJK JP", sans-serif; font-weight: 700; white-space: nowrap; }
-table.answers td.chk { width: 34%; font-size: 8pt; }
-table.selfscore td { height: 7mm; }
-table.selfscore td.blank { width: 15mm; border-left: 0.3pt solid #999; }
-table.selfscore tr.total td { font-family: "Noto Sans CJK JP", sans-serif; font-weight: 700; }
+table.answers td.ans {
+  font-family: "Liberation Serif", "Noto Sans CJK JP", serif;
+  font-weight: 700;
+  font-size: 11pt;
+  color: var(--verm);
+  white-space: nowrap;
+}
+table.answers td.chk { width: 36%; font-size: 7.9pt; }
+table.answers tr.mismatch td { background: var(--verm-soft) !important; }
+table.answers tr.mismatch td.chk { color: var(--verm-d); }
+table.review td.key { color: var(--gold-d); }
+table.review td.hits { color: var(--verm); font-weight: 700; }
+table.selfscore td { height: 7mm; vertical-align: middle; }
+table.selfscore tbody tr td.blank { width: 15mm; background: #fff; border-left: 0.4pt solid var(--line); }
+table.selfscore tr.total td { font-weight: 700; color: var(--navy); background: #fff !important; border-top: 1pt solid var(--navy); }
+table.selfscore tr.total td.blank { background: #fff !important; border: 0.6pt solid var(--navy); }
 .notes { font-size: 8.2pt; line-height: 1.65; margin: 1mm 0 3mm 0; }
-.notes p { margin: 0 0 1mm 0; }
 
 /* ---------- 目次 ---------- */
-.toc { margin-top: 4mm; }
+.toc { margin-top: 3mm; }
 .toc ul { list-style: none; margin: 0; padding: 0; }
 .toc li { margin: 0; }
 .toc li.lv1 {
-  font-family: "Noto Sans CJK JP", sans-serif;
+  font-family: "Noto Serif CJK JP", serif;
   font-weight: 700;
-  font-size: 10.5pt;
-  margin-top: 3.5mm;
+  font-size: 11pt;
+  color: var(--navy);
+  margin-top: 4mm;
+  padding-bottom: 0.6mm;
+  border-bottom: 0.6pt solid var(--gold);
 }
-.toc li.lv2 { font-size: 9.2pt; padding-left: 7mm; }
+.toc li.lv2 { font-size: 9.2pt; padding-left: 7mm; margin-top: 0.6mm; }
 .toc a { color: inherit; text-decoration: none; }
 .toc a::after {
   content: leader('.') target-counter(attr(href), page);
   font-family: "Noto Sans CJK JP", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
+  color: var(--gold-d);
 }
 .toc-howto { margin-top: 8mm; font-size: 8.6pt; }
+
 
 /* =========================================================
    表紙（A4 縦 1 ページ。単色の地＋白文字＋太い帯 1 本）
@@ -339,18 +489,18 @@ table.selfscore tr.total td { font-family: "Noto Sans CJK JP", sans-serif; font-
 .cover .c-faculty {
   font-family: "Noto Serif CJK JP", serif;
   font-weight: 700;
-  font-size: 26pt;
+  font-size: 32pt;
   line-height: 1.3;
   letter-spacing: 0.08em;
-  margin-top: 2mm;
+  margin-top: 3mm;
 }
 .cover .c-year {
   font-family: "Noto Serif CJK JP", serif;
   font-weight: 400;
-  font-size: 22pt;
+  font-size: 27pt;
   line-height: 1.3;
   letter-spacing: 0.08em;
-  margin-top: 9mm;
+  margin-top: 10mm;
 }
 .cover .c-band {
   position: absolute;

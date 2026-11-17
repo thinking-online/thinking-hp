@@ -330,8 +330,6 @@ table.parse td.lv3 { padding-left: 16.5mm; }
   background: #fbf9f4;
   border-bottom: 0.6pt solid var(--line);
   padding: 2mm 3.6mm 1.8mm 3.6mm;
-  page-break-after: avoid;
-  break-after: avoid;
   font-weight: 700;
 }
 .q-head .q-no {
@@ -339,7 +337,11 @@ table.parse td.lv3 { padding-left: 16.5mm; }
   font-size: 11.6pt;
   color: var(--navy);
 }
-.q-head .q-type { font-size: 8.4pt; color: var(--gold-d); margin-left: 3mm; }
+.q-head .q-no { flex-shrink: 0; white-space: nowrap; }
+.q-head .q-type { flex-shrink: 0; font-size: 8.4pt; color: var(--gold-d); margin-left: 3mm; }
+/* 正解が長い（整序など）ときは見出しの下の行に回す */
+.q-head.long-ans { flex-wrap: wrap; }
+.q-head.long-ans .q-ans { flex-basis: 100%; margin-left: 0; padding-left: 0; padding-top: 0.8mm; text-align: left; }
 .q-head .q-ans { order: 3; margin-left: auto; padding-left: 4mm; font-size: 8.4pt; color: var(--teal-d); text-align: right; }
 .q-head .q-ans-v {
   font-family: "Liberation Serif", "Noto Sans CJK JP", serif;
@@ -348,6 +350,10 @@ table.parse td.lv3 { padding-left: 16.5mm; }
   margin-left: 1.6mm;
 }
 .q-body { padding: 2.2mm 3.6mm 2.6mm 3.6mm; }
+/* 見出し＋設問の要約は割らない塊。break-after: avoid を見出しに付けると、ページ末で見出しの地だけが残る（WeasyPrint） */
+.q-top { page-break-inside: avoid; break-inside: avoid; }
+.q-top .q-body { padding-bottom: 0; }
+.q-body.q-rest { padding-top: 1.2mm; }
 .q-target { margin: 0 0 1.5mm 0; font-weight: 700; color: var(--navy2); }
 ol.steps { margin: 0; padding-left: 5.5mm; }
 ol.steps li { margin: 0 0 0.5mm 0; }
@@ -362,6 +368,8 @@ ol.steps li::marker { color: var(--gold-d); font-weight: 700; }
 .basis .en, .basis u { background: #fbe9c9; color: var(--navy); font-weight: 700; text-decoration: none; }
 table.wrong td.choice { width: 11mm; text-align: center; font-weight: 700; color: var(--verm); white-space: nowrap; }
 table.wrong td.why { width: 50%; }
+table.wrong.long-choice td.choice { width: 26%; white-space: normal; text-align: left; }
+table.wrong.long-choice td.why { width: 40%; }
 table.rubric td.pt { width: 11mm; text-align: center; font-weight: 700; color: var(--gold-d); }
 table.rubric td.el { width: 30%; font-weight: 700; color: var(--navy); }
 

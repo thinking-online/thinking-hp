@@ -285,12 +285,14 @@ def render_question(q, anchor: str = "") -> str:
     id_attr = f' id="{esc(anchor)}"' if anchor else ""
     out = [f'<div class="question"{id_attr}>']
     out.append(
-        f'<div class="q-head"><span class="q-ans">正解<span class="q-ans-v">{md(ans)}</span></span>'
+        f'<div class="q-top"><div class="q-head{" long-ans" if len(str(ans)) > 24 else ""}"><span class="q-ans">正解<span class="q-ans-v">{md(ans)}</span></span>'
         f'<span class="q-no">設問{md(q["id"])}</span><span class="q-type">{md(q["type"])}</span></div>'
     )
     out.append('<div class="q-body">')
     if q.get("target"):
         out.append(f'<p class="q-target">{md(q["target"])}</p>')
+    out.append("</div></div>")  # q-body と q-top（見出し＋設問の要約を割らない塊）を閉じる
+    out.append('<div class="q-body q-rest">')
     if q.get("intent"):
         out.append(callout("navy", "【出題意図】", paras(q["intent"])))
     if q.get("steps"):
@@ -301,8 +303,11 @@ def render_question(q, anchor: str = "") -> str:
         out.append(callout("teal", "【正解の根拠】", head + paras(q["basis"]), "basis"))
     if q.get("wrong"):
         rows = [[f'× {w["choice"]}', w["why"], w["lack"]] for w in q["wrong"]]
+        # 誤答が語句・文（整序の誤答例など）のときは選択肢の列を折り返せる幅にする（nowrap だと他の列が潰れる）
+        long_choice = any(len(str(w["choice"])) > 16 for w in q["wrong"])
         out.append(callout("verm", "【誤答の検討】",
-                           table(["選択肢", "ダメな理由", "これを選ぶ人に足りないもの"], rows, "wrong",
+                           table(["選択肢", "ダメな理由", "これを選ぶ人に足りないもの"], rows,
+                                 "wrong long-choice" if long_choice else "wrong",
                                  ["choice", "why", "lack"])))
     if q.get("rubric"):
         rows = [[r["element"], r["points"], r["criteria"]] for r in q["rubric"]]

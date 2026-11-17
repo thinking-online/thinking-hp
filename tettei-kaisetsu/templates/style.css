@@ -261,12 +261,15 @@ td.key { font-weight: 700; color: var(--navy); white-space: nowrap; }
   margin: 0 0 2mm 0;
 }
 table.map td.para {
-  width: 9mm;
+  width: 11mm;
   text-align: center;
   color: var(--gold-d);
-  font-family: "Liberation Serif", serif;
+  /* 数字は Liberation Serif、「〜」「・」など和文の記号は Noto CJK で出す。
+     総称の serif だけを後ろに置くと、Liberation に無い記号が WenQuanYi 等に落ちる。 */
+  font-family: "Liberation Serif", "Noto Serif CJK JP", serif;
   font-weight: 700;
   font-size: 11pt;
+  white-space: nowrap;
 }
 table.map td.role { width: 17mm; font-weight: 700; color: var(--gold-d); }
 table.map td.qs { width: 20mm; font-weight: 700; color: var(--verm); }
@@ -411,15 +414,22 @@ table.trans tbody tr td.plain { width: 46%; background: #f5faf8; color: #1d3b34;
 table.answers td.ans {
   font-family: "Liberation Serif", "Noto Sans CJK JP", serif;
   font-weight: 700;
-  font-size: 11pt;
+  font-size: 10pt;
+  line-height: 1.45;
   color: var(--verm);
-  white-space: nowrap;
+  /* 整序の答えは長いので折り返しを許す（nowrap だと本文領域からはみ出す） */
+  white-space: normal;
+  overflow-wrap: break-word;
 }
 table.answers td.chk { width: 36%; font-size: 7.9pt; }
 table.answers tr.mismatch td { background: var(--verm-soft) !important; }
 table.answers tr.mismatch td.chk { color: var(--verm-d); }
-table.review td.key { color: var(--gold-d); }
-table.review td.hits { color: var(--verm); font-weight: 700; }
+table.review td.key { color: var(--gold-d); white-space: normal; width: 21%; }
+table.review td.hits { width: 30%; color: var(--verm); font-weight: 700; white-space: normal; overflow-wrap: break-word; }
+table.review td.hits .hit-grp { margin: 0 0 0.4mm 0; }
+table.review td.hits .hit-part { color: var(--navy); font-family: "Liberation Serif", "Noto Serif CJK JP", serif; }
+table.review td.hits .hit-n { color: var(--muted); font-weight: 400; font-size: 7.6pt; }
+table.answers td.qid { width: 13mm; }
 table.selfscore td { height: 7mm; vertical-align: middle; }
 table.selfscore tbody tr td.blank { width: 15mm; background: #fff; border-left: 0.4pt solid var(--line); }
 table.selfscore tr.total td { font-weight: 700; color: var(--navy); background: #fff !important; border-top: 1pt solid var(--navy); }

@@ -254,8 +254,10 @@ def render_overview(b) -> str:
         out.append(f'<div class="chapter-lead">{md(ov["lead"])}</div>')
     out.append('<h2>大問構成</h2>')
     out.append(f'<div class="hero">{md(ov["exam_line"])}</div>')
-    out.append(table(["大問", "形式・テーマ", "設問", "配点", "目安時間"],
-                     ov["structure"], "", ["c key", "", "", "c nowrap", "c nowrap"]))
+    # 見出し・列の書式は data で上書きできる（structure_head / structure_cls）
+    out.append(table(ov.get("structure_head", ["大問", "形式・テーマ", "設問", "配点", "目安時間"]),
+                     ov["structure"], "structure",
+                     ov.get("structure_cls", ["c key", "", "", "c nowrap", "c nowrap"])))
     out.append('<h2>時間配分</h2>')
     out.append(table(["順番", "やること", "時間", "ねらい"], ov["time_plan"], "", ["c key", "", "c nowrap", ""]))
     out.append('<h2>差がつく所</h2>')
@@ -265,9 +267,16 @@ def render_overview(b) -> str:
     return "".join(out)
 
 
-def render_question(q) -> str:
+def q_anchor(pi: int, qi: int) -> str:
+    """設問の id 属性。大問ごとに設問番号が重なる（設問1 が各大問にある）ので、
+    大問の通し番号と大問内の順番から作って文書全体で一意にする。"""
+    return f"q-p{pi}-{qi}"
+
+
+def render_question(q, anchor: str = "") -> str:
     ans = q.get("answer_display", q["answer"])
-    out = [f'<div class="question" id="q-{esc(q["id"])}">']
+    id_attr = f' id="{esc(anchor)}"' if anchor else ""
+    out = [f'<div class="question"{id_attr}>']
     out.append(
         f'<div class="q-head"><span class="q-ans">正解<span class="q-ans-v">{md(ans)}</span></span>'
         f'<span class="q-no">設問{md(q["id"])}</span><span class="q-type">{md(q["type"])}</span></div>'
@@ -355,8 +364,8 @@ def render_part(i, p) -> str:
     out.append(f'<h2 id="p{i}-qs">設問ごとの解説</h2>')
     if p.get("questions_lead"):
         out.append(paras(p["questions_lead"]))
-    for q in p["questions"]:
-        out.append(render_question(q))
+    for qi, q in enumerate(p["questions"], 1):
+        out.append(render_question(q, q_anchor(i, qi)))
 
     out.append(f'<h2 id="p{i}-trans" class="pagebreak">全訳 ― 大問{md(p["no"])}</h2>')
     out.append(f'<p class="trans-note">{md(p.get("trans_note") or "左＝原文に忠実な訳（構造を写した訳）、右＝かみくだいた訳（言いたいことを日本語の順で言い直した訳）。番号は段落番号と段落内の文番号。英文本文は問題冊子で確認してください。訳はTHINKINGのオリジナルです。")}</p>')
@@ -394,7 +403,7 @@ def render_summary(b) -> str:
         rows.append([f'大問{p["no"]}', q["id"], q.get("answer_display", q["answer"]), q.get("points", "—"),
                      q.get("checked", "未照合")])
     html_t = table(["大問", "設問", "解答", "配点", "照合（資料との一致・不一致・推定の別）"], rows, "answers",
-                   ["key nowrap", "c nowrap", "ans", "c nowrap", "chk"])
+                   ["key nowrap", "c nowrap qid", "ans", "c nowrap", "chk"])
     # 資料と食い違った設問の行を目立たせる
     html_t = re.sub(r'<tr>(<td class="key nowrap">(?:(?!</tr>).)*?不一致)', r'<tr class="mismatch">\1', html_t)
     out.append(html_t)
@@ -407,11 +416,21 @@ def render_summary(b) -> str:
     out.append('<h2 id="sum-review">失点の型別の復習動線</h2>')
     if s.get("review_lead"):
         out.append(paras(s["review_lead"]))
-    rows = []
+    # 該当設問は大問ごとに 1 行にまとめ、行の中では折り返してよい（nowrap にしない＝はみ出し防止）
+    trs = []
     for t in s["miss_types"]:
-        hits = [f'{p["no"]}-{q["id"]}' for p, q in all_questions(b) if t["key"] in q.get("miss_types", [])]
-        rows.append([f'【{t["key"]}】{t["name"]}', "・".join(hits) or "—", t["lack"], t["action"]])
-    out.append(table(["失点の型", "該当設問", "足りないもの", "次にやること"], rows, "review", ["key", "nowrap hits", "", ""]))
+        groups = []
+        for p in b["parts"]:
+            ids = [q["id"] for q in p["questions"] if t["key"] in q.get("miss_types", [])]
+            if ids:
+                groups.append(f'<div class="hit-grp"><span class="hit-part">{md(p["no"])}</span> '
+                              f'{"　".join(md(x) for x in ids)}</div>')
+        n = sum(1 for _p, q in all_questions(b) if t["key"] in q.get("miss_types", []))
+        hits = "".join(groups) + f'<div class="hit-n">計{n}問</div>' if groups else "—"
+        trs.append(f'<tr><td class="key">{md("【" + t["key"] + "】" + t["name"])}</td><td class="hits">{hits}</td>'
+                   f'<td>{md(t["lack"])}</td><td>{md(t["action"])}</td></tr>')
+    out.append('<table class="review"><thead><tr><th>失点の型</th><th>該当設問（大問別）</th><th>足りないもの</th>'
+               '<th>次にやること</th></tr></thead><tbody>' + "".join(trs) + "</tbody></table>")
 
     out.append('<div class="nobreak"><h2 id="sum-self">自己採点表</h2>')
     rows = []

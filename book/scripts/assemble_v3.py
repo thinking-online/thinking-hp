@@ -39,6 +39,10 @@ def body_of(kk):
     if not m:
         raise SystemExit(kk + ": まとめの見出しが見つからない")
     t = t[: m.start()]
+    hook = getattr(D, "HOOK", {}).get(kk)
+    if hook:  # 書き出し（最初の見出しの前）を、「こんな時、どうする？」の形に入れかえる
+        h = re.search(r"^## ", t, re.M)
+        t = hook.strip() + "\n\n" + t[h.start():]
     t = re.sub(r"^### STEP (0[123])　", lambda x: "### " + MARU[x.group(1)] + "　", t, flags=re.M)
     t = re.sub(r"^　　「できた」の基準　　.*\n", "", t, flags=re.M)
     t = re.sub(r"(\n---\s*)+\s*$", "\n", t.rstrip() + "\n")

@@ -43,9 +43,9 @@ def body_of(kk):
     if hook:  # 書き出し（最初の見出しの前）を、「こんな時、どうする？」の形に入れかえる
         h = re.search(r"^## ", t, re.M)
         t = hook.strip() + "\n\n" + t[h.start():]
-    # 「頭の中」と「やり方」の節は、外す（2コマと3STEPに一本化。著者の指示）
+    # 「頭の中」「やり方」「これをやると、何が残るか」の節は、外す（2コマ・3STEP・まとめに一本化。著者の指示）
     secs = re.split(r"(?m)^(?=## )", t)
-    t = "".join(s for s in secs if not re.match(r"## (頭の中|やり方)\s*\n", s))
+    t = "".join(s for s in secs if not re.match(r"## (頭の中|やり方|これをやると、何が残るか)\s*\n", s))
     t = re.sub(r"(\n---\s*)+\s*$", "\n", t.rstrip() + "\n")
     return t.strip() + "\n"
 
@@ -158,8 +158,8 @@ def check():
             for w in ("今日やること　", "### STEP", "「できた」の基準"):
                 if w in b:
                     print(kk, "本文に残っている:", w); ng += 1
-            if re.search(r"(?m)^## (頭の中|やり方)\s*$", b):
-                print(kk, "本文に、頭の中か、やり方の節が残っている"); ng += 1
+            if re.search(r"(?m)^## (頭の中|やり方|これをやると、何が残るか)\s*$", b):
+                print(kk, "本文に、外すはずの節が残っている"); ng += 1
             if "*" in b:
                 print(kk, "アスタリスクがある"); ng += 1
     return ng

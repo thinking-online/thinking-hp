@@ -309,10 +309,11 @@ def render_question(q, anchor: str = "") -> str:
     out.append('<div class="q-body">')
     if q.get("target"):
         out.append(f'<p class="q-target">{md(q["target"])}</p>')
-    out.append("</div></div>")  # q-body と q-top（見出し＋設問の要約を割らない塊）を閉じる
-    out.append('<div class="q-body q-rest">')
+    # 出題意図（短い）も塊に入れる：見出し＋要約だけがページ末に残るのを防ぐ
     if q.get("intent"):
         out.append(callout("navy", "【出題意図】", paras(q["intent"])))
+    out.append("</div></div>")  # q-body と q-top（見出し＋設問の要約＋出題意図を割らない塊）を閉じる
+    out.append('<div class="q-body q-rest">')
     if q.get("steps"):
         lis = "".join(f"<li>{md(s)}</li>" for s in q["steps"])
         out.append(callout("gold", "【解く人の頭の中の手順】", f'<ol class="steps">{lis}</ol>'))
@@ -359,7 +360,7 @@ def render_question(q, anchor: str = "") -> str:
 
 def render_evidence(q, ans) -> str:
     """根拠の文：場所 → 英文｜訳（並べる。**…** は決め手の語句として強調）→ 決め手。"""
-    inner = []
+    inner = ['<div class="co-lbl">【根拠の文】</div>']
     if not q.get("chars"):
         inner.append(f'<p class="basis-ans">正解 <span class="ok">{md(ans)}</span></p>')
     if q.get("basis"):
@@ -375,7 +376,10 @@ def render_evidence(q, ans) -> str:
             blk.append(f'<div class="ev-point"><span class="ev-point-lbl">決め手</span>{md(ev["point"])}</div>')
         blk.append("</div>")
         inner.append("".join(blk))
-    return callout("teal", "【根拠の文】", "".join(inner), "evidence")
+    # 札・正解・最初の根拠の文は割らない塊にする（札と正解だけがページ末に残るのを防ぐ）
+    n_head = len(inner) - len(q["evidence"]) + 1
+    head = '<div class="nobreak">' + "".join(inner[:n_head]) + "</div>"
+    return callout("teal", "", head + "".join(inner[n_head:]), "evidence")
 
 
 def render_choices(choices) -> str:

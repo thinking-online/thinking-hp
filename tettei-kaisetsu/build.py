@@ -748,7 +748,9 @@ def check_part_english(p, rep: Report):
         if n_sent > QUOTE_WARN_SENTENCES:
             rep.warn(f"大問{no} {kind}: 引用に {n_sent} 文（原則 1 文、必要なら前後 1 文まで）: {head}…")
     # 合計（同じ文・その一部の重複は 1 回だけ数える）
-    norm = sorted({" ".join(x.lower() for x in EN_WORD_RE.findall(_plain(t))) for _k, t in quotes},
+    # 選択肢は設問（大学の作成部分）で本文ではないので、本文の何割を載せたかの計算には入れない
+    norm = sorted({" ".join(x.lower() for x in EN_WORD_RE.findall(_plain(t))) for _k, t in quotes
+                   if "選択肢" not in _k},
                   key=len, reverse=True)
     kept = []
     for n in norm:

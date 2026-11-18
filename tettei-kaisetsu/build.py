@@ -20,11 +20,16 @@ PDF の既定の出力先も <中身置き場>/out/。
   - PDF の全フォントが埋め込まれているか、想定外のフォントが混ざっていないか（pdffonts）
   - PDF から抜いた文字に U+FFFD（文字化け）がないか、見出し文字列が読み戻せるか（pdftotext）
   - 禁止語（他社のシリーズ名）が入っていないか
-  - 英文の載せすぎ（本文転載）になっていないか（大問ごとの英語語数の上限）
+  - 英文の載せすぎ（本文転載）になっていないか（中身の形 v2）：
+      引用 1 つは原則 1 文（目安 45 語。超えたら WARN、80 語超は ERROR）
+      大問ごとの英語（根拠の文・下線部・選択肢・精読・[[...]]。同じ文の重複は 1 回）が
+      本文語数（大問の "body_words"）の約 3 割以内（30% 超で WARN、35% 超で ERROR）
+  - 大問の出典（"source"）があるか（無ければ ERROR）
   - 欠け：負の text-indent の中の背景・枠つき inline-block、本文領域からはみ出した背景・枠
 
 本文の記法（data 内の文字列で使える）:
   **太字**   __下線（設問の下線部の引用）__   [[英語の語句・短い引用]]
+  根拠の文（evidence）の英文・訳の中の **…** は「決め手の語句」として蛍光ペンで強調される
   【札】 は自動で色付きの太字になる（推定＝金、罠・注意・誤答＝朱、正解・根拠＝緑、ほか＝紺）
 
 見た目（templates/style.css）：Web 版解説と同じ配色（紺＋金・緑・朱）。地は白で、色は
@@ -58,8 +63,14 @@ REQUIRED_FONTS = ["Noto Sans CJK JP", "Noto Serif CJK JP", "Liberation Serif"]
 # PDF に出てきてよいフォント名（サブセット接頭辞を除いた名前の一部）
 ALLOWED_PDF_FONTS = ["NotoSansCJK", "NotoSerifCJK", "LiberationSerif"]
 BANNED_WORDS = ["赤本", "青本", "黒本", "緑本", "教学社", "駿台文庫", "河合出版", "東京書籍"]
-MAX_EN_WORDS_PER_PART = 260   # 大問 1 つあたりの英語語数の上限（精読の構文図＋引用）
-MAX_EN_WORDS_PER_QUOTE = 30   # [[...]] 1 つあたりの上限
+# 英語の量（中身の形 v2）。本文は載せず、引用は根拠の文・下線部・選択肢・精読だけ。
+QUOTE_WARN_WORDS = 45         # 引用 1 つは原則 1 文。目安 45 語を超えたら WARN
+QUOTE_MAX_WORDS = 80          # これを超える引用は段落の転載とみなして ERROR
+QUOTE_WARN_SENTENCES = 3      # 引用 1 つに 4 文以上（根拠の文は前後 1 文まで）→ WARN
+EN_RATIO_WARN = 0.30          # 大問の英語 ÷ 本文語数（body_words）。約 3 割以内
+EN_RATIO_MAX = 0.35           # これを超えたら ERROR（本文の通し掲載に近い）
+FALLBACK_MAX_EN_WORDS = 260   # body_words が無い大問の上限（旧来の絶対値。超えたら ERROR）
+EN_WORD_RE = re.compile(r"[A-Za-z]+(?:['’][A-Za-z]+)?")
 
 MARU = "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳㉑㉒㉓㉔㉕㉖㉗㉘㉙㉚"
 
@@ -105,6 +116,11 @@ def paras(text) -> str:
     if isinstance(text, (list, tuple)):
         return md(text)
     return f"<p>{md(text)}</p>" if text else ""
+
+
+def mark_sno(h: str) -> str:
+    """全訳の文番号（①②…）を金の太字にする（md 済みの HTML に掛ける）。"""
+    return re.sub(f"([{MARU}])", r'<span class="sn">\1</span>', h)
 
 
 def maru(n: int) -> str:
@@ -213,12 +229,14 @@ def render_cover(b) -> str:
 def toc_entries(b):
     ents = [("overview", "この年度の全体像", [])]
     for i, p in enumerate(b["parts"], 1):
+        # 精読（core）は小さく扱う：目次には出さない（本文では設問の前に短く置く）
+        trans_label = ("全訳（段落ごとの全訳と「つまり」）" if is_v2_translation(p)
+                       else "全訳（原文に忠実な訳・かみくだいた訳）")
         subs = [
             (f"p{i}-identity", "この文章の正体／設問タイプと攻め方"),
             (f"p{i}-map", "英文マップ"),
-            (f"p{i}-core", "心臓部の精読"),
             (f"p{i}-qs", "設問ごとの解説"),
-            (f"p{i}-trans", "全訳（原文に忠実な訳・かみくだいた訳）"),
+            (f"p{i}-trans", trans_label),
         ]
         ents.append((f"part{i}", f"大問{p['no']}　{p['title']}", subs))
     ents.append(("summary", "総まとめ", [
@@ -247,7 +265,7 @@ def render_howto(b) -> str:
     全体像の章の冒頭に置く。"""
     howto = b.get("howto") or [
         "問題冊子を印刷して手元に置いてください。この解説には問題文・英文本文を載せていません。",
-        "各大問は「正体 → 攻め方 → 英文マップ → 精読 → 設問 → 全訳」の順です。まず自力で解き、設問の解説から読み始めても構いません。",
+        "各大問は「出典 → 正体 → 攻め方 → 英文マップ → 設問 → 全訳」の順です。設問の解説は「手順 → 根拠の文 → 全選択肢の検討」で、正解へのたどり着き方を示します。",
     ]
     return f'<div class="toc-howto">{callout("navy", "【この本の使い方】", paras(howto))}</div>'
 
@@ -298,10 +316,15 @@ def render_question(q, anchor: str = "") -> str:
     if q.get("steps"):
         lis = "".join(f"<li>{md(s)}</li>" for s in q["steps"])
         out.append(callout("gold", "【解く人の頭の中の手順】", f'<ol class="steps">{lis}</ol>'))
-    if q.get("basis"):
+    if q.get("evidence"):
+        out.append(render_evidence(q, ans))
+    elif q.get("basis"):
         head = f'<p class="basis-ans">正解 <span class="ok">{md(ans)}</span></p>' if not q.get("chars") else ""
         out.append(callout("teal", "【正解の根拠】", head + paras(q["basis"]), "basis"))
-    if q.get("wrong"):
+    if q.get("choices"):
+        # v2：全選択肢の表。旧の誤答表（wrong）が残っていても出さない（重複させない）
+        out.append(render_choices(q["choices"]))
+    elif q.get("wrong"):
         rows = [[f'× {w["choice"]}', w["why"], w["lack"]] for w in q["wrong"]]
         # 誤答が語句・文（整序の誤答例など）のときは選択肢の列を折り返せる幅にする（nowrap だと他の列が潰れる）
         long_choice = any(len(str(w["choice"])) > 16 for w in q["wrong"])
@@ -334,8 +357,127 @@ def render_question(q, anchor: str = "") -> str:
     return "".join(out)
 
 
+def render_evidence(q, ans) -> str:
+    """根拠の文：場所 → 英文｜訳（並べる。**…** は決め手の語句として強調）→ 決め手。"""
+    inner = []
+    if not q.get("chars"):
+        inner.append(f'<p class="basis-ans">正解 <span class="ok">{md(ans)}</span></p>')
+    if q.get("basis"):
+        inner.append(f'<div class="ev-sum">{paras(q["basis"])}</div>')
+    for ev in q["evidence"]:
+        blk = ['<div class="ev">']
+        if ev.get("loc"):
+            blk.append(f'<div class="ev-loc">{md(ev["loc"])}</div>')
+        blk.append('<table class="ev-pair"><tbody><tr>'
+                   f'<td class="ev-en">{md(ev.get("en", ""))}</td>'
+                   f'<td class="ev-ja">{md(ev.get("ja", ""))}</td></tr></tbody></table>')
+        if ev.get("point"):
+            blk.append(f'<div class="ev-point"><span class="ev-point-lbl">決め手</span>{md(ev["point"])}</div>')
+        blk.append("</div>")
+        inner.append("".join(blk))
+    return callout("teal", "【根拠の文】", "".join(inner), "evidence")
+
+
+def render_choices(choices) -> str:
+    """全選択肢の表：記号（正解＝緑の ○、誤答＝朱の ×）｜英語と訳｜理由（誤答は「選ぶ人の思考」も）。"""
+    trs = []
+    for c in choices:
+        ok = bool(c.get("ok"))
+        mark = "○" if ok else "×"
+        en = f'<div class="c-en">{md(c.get("en", ""))}</div>' if c.get("en") else ""
+        ja = f'<div class="c-ja">{md(c["ja"])}</div>' if c.get("ja") else ""
+        why_lbl = "なぜ正解か" if ok else "どこがずれるか"
+        why = f'<div class="c-why"><span class="c-lbl">{why_lbl}</span>{md(c.get("why", ""))}</div>'
+        who = ""
+        if not ok and c.get("who"):
+            who = f'<div class="c-who"><span class="c-lbl">選ぶ人の思考</span>{md(c["who"])}</div>'
+        trs.append(f'<tr class="{"c-ok" if ok else "c-ng"}"><td class="ck">{mark}&#x2009;{md(c.get("key", ""))}</td>'
+                   f'<td class="cen">{en}{ja}</td><td class="cwhy">{why}{who}</td></tr>')
+    t = ('<table class="choices"><thead><tr><th class="c">記号</th><th>選択肢と訳</th>'
+         '<th>正解・不正解の理由</th></tr></thead><tbody>' + "".join(trs) + "</tbody></table>")
+    return callout("navy", "【全選択肢の検討】", t, "choices-co")
+
+
+def is_v2_translation(p) -> bool:
+    tr = p.get("translation") or []
+    return bool(tr) and all("full" in x for x in tr)
+
+
+def para_label(para) -> str:
+    v = str(para.get("para", ""))
+    return f"第{v}段落" if v.isdigit() else v
+
+
+def render_translation_v2(p) -> str:
+    """全訳（v2）：段落ごとに全訳 → その下に色を変えた「つまり」の囲み。"""
+    out = [f'<p class="trans-note">{md(p.get("trans_note") or "段落ごとに、全訳（文頭の①②…は段落内の文番号）と、その段落が「つまりどういうことか」を示します。英文本文は問題冊子で確認してください。訳はTHINKINGのオリジナルです。")}</p>']
+    for para in p["translation"]:
+        label = para_label(para)
+        if para.get("label"):
+            label += f'｜{para["label"]}'
+        qs = f'<span class="para-qs">{md(para["qs"])}</span>' if para.get("qs") else ""
+        out.append('<div class="tp">')
+        out.append(f'<div class="tp-head">{md(label)}{qs}</div>')
+        out.append(f'<div class="tp-full">{mark_sno(paras(para["full"]))}</div>')
+        if para.get("gist"):
+            out.append(f'<div class="gist"><div class="gist-lbl">つまり</div>{paras(para["gist"])}</div>')
+        out.append("</div>")
+    return "".join(out)
+
+
+def render_translation_legacy(p) -> str:
+    """旧：文単位の 2 列（原文に忠実な訳・かみくだいた訳）。v2 の形でない data 用（互換）。"""
+    out = [f'<p class="trans-note">{md(p.get("trans_note") or "左＝原文に忠実な訳（構造を写した訳）、右＝かみくだいた訳（言いたいことを日本語の順で言い直した訳）。番号は段落番号と段落内の文番号。英文本文は問題冊子で確認してください。訳はTHINKINGのオリジナルです。")}</p>']
+    out.append('<table class="trans"><thead><tr><th class="c">文</th><th class="h-faithful">原文に忠実な訳</th>'
+               '<th class="h-plain">かみくだいた訳</th></tr></thead><tbody>')
+    for para in p["translation"]:
+        label = f'第{para["para"]}段落'
+        if para.get("label"):
+            label += f'｜{para["label"]}'
+        qs = f'<span class="para-qs">{md(para["qs"])}</span>' if para.get("qs") else ""
+        out.append(f'<tr class="para-row"><td class="para-head" colspan="3">{md(label)}{qs}</td></tr>')
+        for n, st in enumerate(para["sentences"], 1):
+            out.append(
+                f'<tr><td class="sno">{para["para"]}{maru(n)}</td>'
+                f'<td class="faithful">{md(st["faithful"])}</td><td class="plain">{md(st["plain"])}</td></tr>'
+            )
+    out.append("</tbody></table>")
+    return "".join(out)
+
+
+def render_core(i, p) -> str:
+    """精読（構文の図）。v2 では小さく扱う：目次に出さない小さめの見出しで、設問の前に短く置く。"""
+    out = []
+    # 見出しだけがページ末に取り残されないよう、見出し＋前置き＋最初の構文の図を一塊にする。
+    # 各精読ブロックは「小見出し＋構文の図＋凡例」だけを割らない塊にし、訳・解説の囲みは続けて流す
+    # （ブロック全体を割らない塊にすると、ページ末に大きな空白ができる）。
+    out.append('<div class="nobreak">')
+    out.append(f'<h2 id="p{i}-core" class="minor">構文の確認（精読）</h2>')
+    if p.get("core_lead"):
+        out.append(paras(p["core_lead"]))
+    for ci, c in enumerate(p["core"]):
+        if ci > 0:
+            out.append('<div class="core-block">')
+        out.append('<div class="core-head">' if ci == 0 else '<div class="core-head nobreak">')
+        out.append(f'<h3 class="core-title">{md(c["title"])}</h3>')
+        out.append(parse_table(c["lines"]))
+        if c.get("legend"):
+            out.append(f'<p class="parse-legend">{md(c["legend"])}</p>')
+        out.append("</div>")
+        if ci == 0:
+            out.append("</div>")  # 章頭の nobreak を閉じる
+        out.append(callout("blue", "【訳】", f'<p class="core-trans">{md(c["translation"])}</p>'))
+        if c.get("points"):
+            out.append(callout("gold", "【ここで止まって考える】", paras(c["points"])))
+        if ci > 0:
+            out.append("</div>")
+    return "".join(out)
+
+
 def render_part(i, p) -> str:
     out = [f'<h1 id="part{i}"><span class="h1-eyebrow">大問{md(p["no"])}&#x3000;</span>{md(p["title"])}</h1>']
+    if p.get("source"):
+        out.append(f'<div class="part-source"><span class="src-lbl">出典</span>{md(p["source"])}</div>')
     out.append(f'<div class="chapter-lead">{md(p["lead"])}</div>')
 
     out.append(f'<h2 id="p{i}-identity">この文章の正体</h2>')
@@ -355,29 +497,8 @@ def render_part(i, p) -> str:
     if p.get("map_note"):
         out.append(callout("navy", "", paras(p["map_note"])))
 
-    # 見出しだけがページ末に取り残されないよう、見出し＋前置き＋最初の構文の図を一塊にする。
-    # 各精読ブロックは「小見出し＋構文の図＋凡例」だけを割らない塊にし、訳・解説の囲みは続けて流す
-    # （ブロック全体を割らない塊にすると、ページ末に大きな空白ができる）。
-    out.append('<div class="nobreak">')
-    out.append(f'<h2 id="p{i}-core">心臓部の精読</h2>')
-    if p.get("core_lead"):
-        out.append(paras(p["core_lead"]))
-    for ci, c in enumerate(p["core"]):
-        if ci > 0:
-            out.append('<div class="core-block">')
-        out.append('<div class="core-head">' if ci == 0 else '<div class="core-head nobreak">')
-        out.append(f'<h3 class="core-title">{md(c["title"])}</h3>')
-        out.append(parse_table(c["lines"]))
-        if c.get("legend"):
-            out.append(f'<p class="parse-legend">{md(c["legend"])}</p>')
-        out.append("</div>")
-        if ci == 0:
-            out.append("</div>")  # 章頭の nobreak を閉じる
-        out.append(callout("blue", "【訳】", f'<p class="core-trans">{md(c["translation"])}</p>'))
-        if c.get("points"):
-            out.append(callout("gold", "【ここで止まって考える】", paras(c["points"])))
-        if ci > 0:
-            out.append("</div>")
+    if p.get("core"):
+        out.append(render_core(i, p))
 
     out.append(f'<h2 id="p{i}-qs">設問ごとの解説</h2>')
     if p.get("questions_lead"):
@@ -386,21 +507,7 @@ def render_part(i, p) -> str:
         out.append(render_question(q, q_anchor(i, qi)))
 
     out.append(f'<h2 id="p{i}-trans" class="pagebreak">全訳 ― 大問{md(p["no"])}</h2>')
-    out.append(f'<p class="trans-note">{md(p.get("trans_note") or "左＝原文に忠実な訳（構造を写した訳）、右＝かみくだいた訳（言いたいことを日本語の順で言い直した訳）。番号は段落番号と段落内の文番号。英文本文は問題冊子で確認してください。訳はTHINKINGのオリジナルです。")}</p>')
-    out.append('<table class="trans"><thead><tr><th class="c">文</th><th class="h-faithful">原文に忠実な訳</th>'
-               '<th class="h-plain">かみくだいた訳</th></tr></thead><tbody>')
-    for para in p["translation"]:
-        label = f'第{para["para"]}段落'
-        if para.get("label"):
-            label += f'｜{para["label"]}'
-        qs = f'<span class="para-qs">{md(para["qs"])}</span>' if para.get("qs") else ""
-        out.append(f'<tr class="para-row"><td class="para-head" colspan="3">{md(label)}{qs}</td></tr>')
-        for n, st in enumerate(para["sentences"], 1):
-            out.append(
-                f'<tr><td class="sno">{para["para"]}{maru(n)}</td>'
-                f'<td class="faithful">{md(st["faithful"])}</td><td class="plain">{md(st["plain"])}</td></tr>'
-            )
-    out.append("</tbody></table>")
+    out.append(render_translation_v2(p) if is_v2_translation(p) else render_translation_legacy(p))
     return "".join(out)
 
 
@@ -577,19 +684,94 @@ def check_banned_and_english(b, html_src: str, rep: Report):
         rep.err(f"禁止語が入っています: {'、'.join(hit)}")
     else:
         rep.ok("禁止語（他社シリーズ名など）なし")
-    # 英文の量：構文図の英文＋ [[...]] 引用の語数を大問ごとに数える
     for p in b["parts"]:
-        src = repr(p)
-        quotes = re.findall(r"\[\[(.+?)\]\]", src)
-        chunks = [ln["en"] for c in p.get("core", []) for ln in c["lines"]]
-        words = sum(len(re.findall(r"[A-Za-z]+(?:'[A-Za-z]+)?", x)) for x in quotes + chunks)
-        long_q = [q for q in quotes if len(q.split()) > MAX_EN_WORDS_PER_QUOTE]
-        if long_q:
-            rep.err(f"大問{p['no']}: {MAX_EN_WORDS_PER_QUOTE}語を超える引用があります（本文の転載になる）: {long_q[0][:60]}…")
-        if words > MAX_EN_WORDS_PER_PART:
-            rep.err(f"大問{p['no']}: 英語が {words} 語（上限 {MAX_EN_WORDS_PER_PART}）。本文の転載になっていないか確認")
+        check_part_english(p, rep)
+        if not str(p.get("source") or "").strip():
+            rep.err(f"大問{p['no']}: 出典（source）がありません。大問の冒頭に 1 行で出す")
+        if len(p.get("core") or []) > 3:
+            rep.warn(f"大問{p['no']}: 構文の図（core）が {len(p['core'])} 個。v2 では構造が決め手の設問に限って 0〜3 個")
+
+
+def _strings(obj):
+    """data の中の文字列をすべて取り出す（dict・list を辿る）。"""
+    if isinstance(obj, str):
+        yield obj
+    elif isinstance(obj, dict):
+        for v in obj.values():
+            yield from _strings(v)
+    elif isinstance(obj, (list, tuple)):
+        for v in obj:
+            yield from _strings(v)
+
+
+def _plain(s: str) -> str:
+    return re.sub(r"\*\*|__|\[\[|\]\]", "", str(s))
+
+
+def en_words(s: str) -> int:
+    return len(EN_WORD_RE.findall(_plain(s)))
+
+
+def part_quotes(p):
+    """大問に載せている英語の引用を (種類, 英文) で集める。
+    根拠の文・選択肢・精読（構文の図 1 つ＝1 文）・下線部 __...__・[[...]]（英語を含むものだけ）。"""
+    qs = []
+    for q in p.get("questions", []):
+        for ev in q.get("evidence", []) or []:
+            qs.append((f"設問{q['id']} 根拠の文", ev.get("en", "")))
+        for c in q.get("choices", []) or []:
+            qs.append((f"設問{q['id']} 選択肢{c.get('key', '')}", c.get("en", "")))
+    for c in p.get("core", []) or []:
+        qs.append(("精読", " ".join(ln.get("en", "") for ln in c.get("lines", []))))
+    for s in _strings(p):
+        for m in re.findall(r"__(.+?)__", s):
+            qs.append(("下線部", m))
+        for m in re.findall(r"\[\[(.+?)\]\]", s):
+            qs.append(("引用", m))
+    return [(k, t) for k, t in qs if en_words(t) > 0]
+
+
+def check_part_english(p, rep: Report):
+    """v2 の英語量の検査。引用 1 つは原則 1 文（目安 45 語）。大問の英語の合計（同じ文の重複は 1 回）が
+    本文語数（body_words）の約 3 割以内。"""
+    no = p["no"]
+    quotes = part_quotes(p)
+    # 1 引用ごと
+    for kind, t in quotes:
+        w = en_words(t)
+        head = _plain(t)[:50]
+        if w > QUOTE_MAX_WORDS:
+            rep.err(f"大問{no} {kind}: 引用が {w} 語（{QUOTE_MAX_WORDS} 語超＝段落の転載）: {head}…")
+        elif w > QUOTE_WARN_WORDS:
+            rep.warn(f"大問{no} {kind}: 引用が {w} 語（原則 1 文・目安 {QUOTE_WARN_WORDS} 語まで）: {head}…")
+        n_sent = len(re.findall(r"[.!?](?:[\"'”’)]*)(?:\s|$)", _plain(t).strip()))
+        if n_sent > QUOTE_WARN_SENTENCES:
+            rep.warn(f"大問{no} {kind}: 引用に {n_sent} 文（原則 1 文、必要なら前後 1 文まで）: {head}…")
+    # 合計（同じ文・その一部の重複は 1 回だけ数える）
+    norm = sorted({" ".join(x.lower() for x in EN_WORD_RE.findall(_plain(t))) for _k, t in quotes},
+                  key=len, reverse=True)
+    kept = []
+    for n in norm:
+        if not any(f" {n} " in f" {k} " for k in kept):
+            kept.append(n)
+    total = sum(len(k.split()) for k in kept)
+    body = p.get("body_words")
+    if not body:
+        rep.warn(f"大問{no}: body_words（本文の概算語数）がありません。英語の割合を検査できない"
+                 f"（代わりに絶対上限 {FALLBACK_MAX_EN_WORDS} 語で検査）")
+        if total > FALLBACK_MAX_EN_WORDS:
+            rep.err(f"大問{no}: 英語が {total} 語（上限 {FALLBACK_MAX_EN_WORDS}）。本文の転載になっていないか確認")
         else:
-            rep.ok(f"大問{p['no']}: 載せている英語 {words} 語（上限 {MAX_EN_WORDS_PER_PART}）")
+            rep.ok(f"大問{no}: 載せている英語 {total} 語（重複除く。上限 {FALLBACK_MAX_EN_WORDS}）")
+        return
+    ratio = total / float(body)
+    msg = f"大問{no}: 載せている英語 {total} 語／本文 約{body} 語＝{ratio:.0%}（約 {EN_RATIO_WARN:.0%} 以内）"
+    if ratio > EN_RATIO_MAX:
+        rep.err(msg + f"。{EN_RATIO_MAX:.0%} 超は本文の通し掲載に近い。引用を減らす")
+    elif ratio > EN_RATIO_WARN:
+        rep.warn(msg + "。引用を見直す")
+    else:
+        rep.ok(msg)
 
 
 def check_answers(b, rep: Report):
@@ -601,6 +783,23 @@ def check_answers(b, rep: Report):
                 rep.err(f"{tag}: answer が空")
             if not q.get("checked"):
                 rep.warn(f"{tag}: 照合欄（checked）が空。照合していないなら「未照合」と書く")
+            ch = q.get("choices") or []
+            if ch:
+                oks = [str(c.get("key", "")) for c in ch if c.get("ok")]
+                if not oks:
+                    rep.err(f"{tag}: choices に正解（ok: True）がありません")
+                elif not all(k and k in str(q.get("answer", "")) for k in oks):
+                    rep.warn(f"{tag}: choices の正解 {'・'.join(oks)} と answer「{q.get('answer')}」が食い違っていないか確認")
+                for c in ch:
+                    if not c.get("why"):
+                        rep.warn(f"{tag} 選択肢{c.get('key', '')}: why（理由）が空")
+                    if not c.get("ok") and not c.get("who"):
+                        rep.warn(f"{tag} 選択肢{c.get('key', '')}: 誤答の who（選ぶ人の思考）が空")
+                    if c.get("en") and not c.get("ja"):
+                        rep.warn(f"{tag} 選択肢{c.get('key', '')}: 訳（ja）が空")
+            for ev in q.get("evidence") or []:
+                if not ev.get("ja") or not ev.get("point"):
+                    rep.warn(f"{tag}: 根拠の文（{ev.get('loc', '?')}）の訳 ja か決め手 point が空")
             for ex in q.get("examples", []):
                 if q.get("chars") and len(ex["text"]) > q["chars"]:
                     rep.err(f"{tag}: 答案例が {len(ex['text'])} 字（指定 {q['chars']} 字）")
@@ -689,7 +888,7 @@ def check_pdf(pdf: Path, b, rep: Report):
         flat = re.sub(r"\s+", "", txt)
         if "�" in txt:
             rep.err("PDF から抜いた文字に U+FFFD（文字化け）があります")
-        must = [b["univ"], SERIES_NAME, "この年度の全体像", "設問ごとの解説", "原文に忠実な訳", "自己採点表"]
+        must = [b["univ"], SERIES_NAME, "この年度の全体像", "設問ごとの解説", "全訳", "自己採点表"]
         must += [re.sub(r"\s+", "", re.sub(r"[*_\[\]]", "", p["identity"]))[:12] for p in b["parts"]]
         lost = [m for m in must if re.sub(r"\s+", "", m) not in flat]
         if lost:

@@ -4,8 +4,8 @@
      主色   紺   --navy   見出しの帯・表の見出し行・設問番号・S
      アクセント
             金   --gold   見出しの左線・手順・採点・M・注記
-            緑   --teal   正解・根拠・答案例・O/C・かみくだいた訳
-            朱   --verm   誤答・罠・減点・V
+            緑   --teal   正解・根拠・答案例・O/C・「つまり」（かみくだいた訳）・正解の選択肢の行
+            朱   --verm   誤答（選択肢の ×）・罠・減点・V
    崩れ防止のルール（過去に欠けた原因への対策）：
    - 負の text-indent は使わない。
    - 札・バッジは inline の色付き太字（背景なし）か、ブロック（div）で作る。
@@ -133,6 +133,9 @@ h1 .h1-eyebrow {
   color: var(--gold);
   margin-bottom: 0.6mm;
 }
+/* 大問の出典（大問の冒頭に 1 行） */
+.part-source { font-size: 8.2pt; color: var(--ink); padding: 2mm 0 0 0; }
+.part-source .src-lbl { font-weight: 700; color: var(--navy); margin-right: 2mm; }
 .chapter-lead {
   font-size: 8.8pt;
   color: var(--muted);
@@ -156,6 +159,8 @@ h3 {
   margin: 4.5mm 0 1.8mm 0;
 }
 h4 { font-size: 9.4pt; color: var(--navy); margin: 3mm 0 1mm 0; }
+/* 精読（v2 では小さく扱う：目次に出さない小さめの節見出し） */
+h2.minor { font-size: 10.8pt; border-left-width: 2pt; color: var(--navy2); }
 .nobreak { page-break-inside: avoid; break-inside: avoid; }
 .pagebreak { page-break-before: always; break-before: page; }
 
@@ -370,6 +375,60 @@ table.wrong td.choice { width: 11mm; text-align: center; font-weight: 700; color
 table.wrong td.why { width: 50%; }
 table.wrong.long-choice td.choice { width: 26%; white-space: normal; text-align: left; }
 table.wrong.long-choice td.why { width: 40%; }
+/* ---------- 根拠の文（v2）：場所 → 英文｜訳 → 決め手 ---------- */
+.ev-sum { margin: 0 0 1.4mm 0; }
+.ev { margin: 1.6mm 0 2mm 0; }
+.ev + .ev { border-top: 0.4pt dotted #cfc6b0; padding-top: 1.6mm; }
+.ev-loc { font-weight: 700; font-size: 8.2pt; color: var(--teal-d); margin-bottom: 0.4mm;
+  page-break-after: avoid; break-after: avoid; }
+table.ev-pair { margin: 0 0 1mm 0; border: 0.6pt solid var(--line); }
+table.ev-pair tbody tr td { background: #fff; border-bottom: none; padding: 1.5mm 2.2mm; }
+table.ev-pair td.ev-en { width: 52%; }
+table.ev-pair td.ev-en {
+  font-family: "Liberation Serif", "Noto Serif CJK JP", serif;
+  font-size: 10.2pt;
+  line-height: 1.5;
+  color: var(--navy);
+  text-align: left;
+  border-right: 0.4pt solid var(--line);
+}
+table.ev-pair td.ev-ja { font-family: "Noto Serif CJK JP", serif; font-size: 8.9pt; }
+/* 決め手の語句（**…**）：蛍光ペン風（inline の背景。inline-block にしない） */
+table.ev-pair td b { background: #fbe9c9; color: var(--navy); font-weight: 700; }
+.ev-point { font-size: 8.7pt; }
+.ev-point .ev-point-lbl { font-weight: 700; color: var(--teal-d); margin-right: 2mm; }
+.co.evidence .en { background: #fbe9c9; color: var(--navy); font-weight: 700; }
+
+/* ---------- 全選択肢の検討（v2）：正解の行＝緑、誤答＝朱の × ---------- */
+table.choices { table-layout: fixed; }
+table.choices th:nth-child(1) { width: 12mm; }
+table.choices th:nth-child(2) { width: 40%; }
+table.choices tbody tr td { background: #fff; }
+table.choices td.ck {
+  text-align: center;
+  font-family: "Liberation Serif", "Noto Sans CJK JP", serif;
+  font-weight: 700;
+  font-size: 10.5pt;
+  white-space: nowrap;
+}
+table.choices tr.c-ng td.ck { color: var(--verm); }
+table.choices tbody tr.c-ok td { background: var(--teal-soft); }
+table.choices tr.c-ok td.ck { color: var(--teal); }
+table.choices tr.c-ok td { border-top: 0.8pt solid var(--teal); border-bottom: 0.8pt solid var(--teal); }
+table.choices .c-en {
+  font-family: "Liberation Serif", "Noto Serif CJK JP", serif;
+  font-size: 9.8pt;
+  line-height: 1.45;
+  color: var(--navy);
+  text-align: left;
+}
+table.choices .c-ja { font-size: 8.2pt; color: var(--muted); margin-top: 0.6mm; }
+table.choices .c-lbl { display: block; font-weight: 700; font-size: 7.6pt; }
+table.choices tr.c-ok .c-why .c-lbl { color: var(--teal-d); }
+table.choices tr.c-ng .c-why .c-lbl { color: var(--verm-d); }
+table.choices .c-who { margin-top: 1mm; padding-top: 0.8mm; border-top: 0.4pt dotted #d9b7a9; font-size: 8.3pt; }
+table.choices .c-who .c-lbl { color: var(--verm-d); }
+
 table.rubric td.pt { width: 11mm; text-align: center; font-weight: 700; color: var(--gold-d); }
 table.rubric td.el { width: 30%; font-weight: 700; color: var(--navy); }
 
@@ -426,6 +485,37 @@ tr.para-row { page-break-after: avoid; break-after: avoid; }
 table.trans td.sno { width: 8mm; text-align: center; font-weight: 700; color: var(--gold-d); }
 table.trans td.faithful { width: 46%; }
 table.trans tbody tr td.plain { width: 46%; background: #f5faf8; color: #1d3b34; border-left: 1.2pt solid var(--teal); }
+
+/* 全訳（v2）：段落ごとに全訳 → 「つまり」の囲み（ごく薄い緑の地＋緑の左線） */
+.tp { margin: 0 0 3.4mm 0; }
+.tp-head {
+  font-family: "Noto Serif CJK JP", serif;
+  font-weight: 700;
+  font-size: 9.6pt;
+  color: var(--navy);
+  border-top: 1.2pt solid var(--gold);
+  padding-top: 1.4mm;
+  margin-bottom: 1mm;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+.tp-full { font-family: "Noto Serif CJK JP", serif; font-size: 9.1pt; line-height: 1.85; }
+.tp-full .sn { color: var(--gold-d); font-weight: 700; }
+.gist {
+  background: var(--teal-soft);
+  border-left: 2.4pt solid var(--teal);
+  border-radius: 0 3pt 3pt 0;
+  color: #1d3b34;
+  font-size: 8.9pt;
+  line-height: 1.75;
+  padding: 1.8mm 3.6mm 2mm 3.6mm;
+  margin: 1.6mm 0 0 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.gist .gist-lbl { font-weight: 700; font-size: 8.4pt; color: var(--teal-d); margin-bottom: 0.4mm; }
 
 /* ---------- 総まとめ ---------- */
 table.answers td.ans {

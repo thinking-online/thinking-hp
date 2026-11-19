@@ -147,3 +147,12 @@ tettei-kaisetsu/
   README.md
   .gitignore
 ```
+
+## 引き継ぎ・保存のしくみ（作業環境は消える前提）
+
+- 中身（訳・解説データ・過去問・分析）は**リポジトリに入れない**（main は Netlify で全公開。リポジトリ自体も public）。
+- 保存先はドライブ「THINKING 作業データ（非公開）」。新しいセッションは最初に同フォルダの「00_【最新】引き継ぎ書」を読む。
+- ドライブは1回のアップロードが約3MBまでなので、`tools/drive_pack.py` で分割して預ける。
+  - 預ける: `python3 tools/drive_pack.py pack <名前> <出力先> <対象...>` → part と manifest を全部ドライブへ（変換なし）
+  - 戻す: ドライブから part と manifest を同じフォルダに落として `python3 tools/drive_pack.py restore <manifest> <展開先>`（sha256 照合つき）
+- 作業の区切りごとに必ず預ける（納品・大問ごとの完成・セッション終了前）。

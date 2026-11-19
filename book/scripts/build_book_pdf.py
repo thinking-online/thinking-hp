@@ -153,7 +153,7 @@ def main():
                 ch = [c for c in V.CHAPTERS if "第%d章" % c[0] == name][0]
                 num, fuda, title, sub, groups = ch
                 ks = [kk for _, items in groups for kk in items]
-                intro = "".join("<p>%s</p>" % esc(p.replace("\n", "")) for p in B.read_new("ch%d_導入" % num).strip().split("\n\n"))
+                intro = P3.body_html(B.read_new("ch%d_導入" % num))
                 parts.append('<section class="chdoor"><div class="cno">第%d章</div><h1>%s</h1><p class="fld">【%s】　%s〜%s番</p>%s'
                              '<div class="intro">%s</div></section>'
                              % (num, esc(title), esc(fuda), ks[0], ks[-1], ('<p class="sub">%s</p>' % esc(sub)) if sub else "", intro))

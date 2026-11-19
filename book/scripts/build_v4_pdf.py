@@ -31,6 +31,8 @@ CSS = P3.CSS + """
 .toc .it { grid-template-columns: 9mm 1fr; margin-bottom: 1.2mm; }
 .toc .it .t { font-weight: 700; color: #16181d; }
 .toc .it .xo { color: #444; font-size: 9pt; line-height: 1.6; }
+.chdoor .intro h4 { font-size: 12.5pt; font-weight: 900; line-height: 1.6; margin: 0 0 4mm; }
+.chdoor { padding-top: 30mm; }
 .chdoor .sub { margin-top: 2mm; color: #555; }
 .new { display: inline-block; font-size: 8pt; font-weight: 700; color: #a4500a; border: 1px solid #a4500a; border-radius: 99px; padding: 0 2.6mm; line-height: 1.6; margin-left: 2mm; vertical-align: middle; }
 .qpage .new { color: #fff; border-color: #fff; }
@@ -97,7 +99,7 @@ def main():
     parts.append("\n".join(toc))
     for num, fuda, title, sub, groups in V.CHAPTERS:
         ks = [kk for _, items in groups for kk in items]
-        intro = "".join("<p>%s</p>" % esc(p.replace("\n", "")) for p in B.read_new("ch%d_導入" % num).strip().split("\n\n"))
+        intro = P3.body_html(B.read_new("ch%d_導入" % num))
         parts.append('<section class="chdoor"><div class="cno">第%d章</div><h1>%s</h1><p class="fld">【%s】　%s〜%s番</p>%s'
                      '<div class="intro">%s</div></section>'
                      % (num, esc(title), esc(fuda), ks[0], ks[-1], ('<p class="sub">%s</p>' % esc(sub)) if sub else "", intro))

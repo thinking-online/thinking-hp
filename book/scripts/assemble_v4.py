@@ -12,6 +12,7 @@ import os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import v4_data as V
+import v4_hooks as H
 import v3_data as D
 import assemble_v3 as A
 import taihi_card_v2 as T
@@ -37,7 +38,9 @@ def remap(t, where=""):
         if k not in V.OLD2NEW:
             raise SystemExit("%s: 新しい目次にない番号を指している: %s番" % (where, k))
         return V.OLD2NEW[k] + "番"
-    return re.sub(r"(?<![0-9])([0-9]{2})番", f, t)
+    t = re.sub(r"(?<![0-9])([0-9]{2})番", f, t)
+    # 第1章の6つは、「絶対法則01」のように呼ぶ（第1章の本文と、呼び方をそろえる）
+    return re.sub(r"(?<![0-9])(0[1-6])番", r"絶対法則\1", t)
 
 
 def old_secs(kk, start=None, stop=None, drop=()):
@@ -75,7 +78,11 @@ def body(kk):
     for a, b in list(it.get("pre", ())) + list(it.get("fix", ())):
         if a not in used:
             raise SystemExit("%s: 入れかえる言葉が見つからない: %s" % (kk, a))
-    return "\n".join(out).strip() + "\n"
+    b = "\n".join(out).strip() + "\n"
+    if kk in H.HOOKS:   # 書き出し（最初の見出しより前）を、その場で試せる問いに入れかえる
+        m = re.search(r"(?m)^## ", b)
+        b = H.HOOKS[kk].strip() + "\n\n" + b[m.start():]
+    return b
 
 
 def koma(kk):

@@ -19,6 +19,8 @@ CSS = P3.CSS + """
 .item { padding-top: 1mm; }
 /* 「まとめ」などの札だけが、ページの下に取り残されないようにする */
 .tag { display: block; width: fit-content; break-after: avoid; page-break-after: avoid; }
+/* まとめと、その下の一言を、同じページに置く */
+.mwrap { break-inside: avoid; page-break-inside: avoid; }
 .qpage .ttl { font-size: 11.5pt; font-weight: 700; margin: 0 0 4mm !important; padding-bottom: 3mm; border-bottom: 1px solid rgba(255,255,255,.45); text-align: left; }
 .grp { page-break-before: always; padding-top: 80mm; text-align: center; }
 .grp p { text-align: center; margin: 0; }
@@ -45,7 +47,7 @@ def kind(kk):
     return ""
 
 
-def item_html(kk):
+def item_html(kk, extra=""):
     it = V.ITEMS[kk]
     c = B.koma(kk)
     ttl, steps, king = B.sheet(kk)
@@ -62,11 +64,11 @@ def item_html(kk):
 <div class="koma"><div class="k x"><span>伸びない人</span><b>%s</b><i>%s</i></div><div class="k o"><span>頭のいい人</span><b>%s</b><i>%s</i></div></div>
 <div class="tag">今日からできる3STEP</div>
 <div class="sheet"><p class="sttl">頭のいい人の『%s』3STEP</p>%s<div class="king"><span>「できた」の基準</span><p>%s</p></div></div>
-<div class="tag">まとめ</div>
+<div class="mwrap"><div class="tag">まとめ</div>
 <div class="matome"><p class="one">%s</p><ol>%s</ol><p>%s</p><p>迷ったら、自分に聞きます。「%s」</p></div>
-</section>""" % (kk, ('<span class="new">%s</span>' % tag) if tag else "", esc(it["t"]), esc(it["q"]),
+%s</div></section>""" % (kk, ('<span class="new">%s</span>' % tag) if tag else "", esc(it["t"]), esc(it["q"]),
                  P3.body_html(B.body(kk)), esc(c[0][0]), esc(c[0][1]), esc(c[1][0]), esc(c[1][1]),
-                 esc(ttl), st, esc(king), esc(one), "".join("<li>%s</li>" % esc(p) for p in pts), esc(dakara), esc(toi))
+                 esc(ttl), st, esc(king), esc(one), "".join("<li>%s</li>" % esc(p) for p in pts), esc(dakara), esc(toi), extra)
 
 
 def main():

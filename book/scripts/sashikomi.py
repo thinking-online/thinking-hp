@@ -59,7 +59,7 @@ for k in range(LAST, int(N) - 1, -1):
 LOG.append("ファイル名：%s〜%02d番を、1つずつ後ろへ" % (N, LAST))
 
 # 2) 本文の中の「NN番」
-REF = r"(?<![0-9])(?P<n>[0-9]{2})番"
+REF = r"(?<![0-9])(?P<n>[0-9]{2})(?=番|〜[0-9]{2}番)"   # 「NN番」と、「NN〜MM番」の前の番号
 for n in sorted(x for x in os.listdir(V4) if x.endswith(".md")):
     edit(os.path.join(V4, n), lambda t: sub(t, REF))
 d6 = os.path.join(ROOT, "manuscript", "本文", "v6", "足し")

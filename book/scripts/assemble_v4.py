@@ -2,7 +2,7 @@
 # 第2章〜第5章（07〜45番）を、5章・45項目の目次で組む。案・第1版（2026-11-19）。
 #   python3 -I scripts/assemble_v4.py           → manuscript/v4/ に書き出す
 #   python3 -I scripts/assemble_v4.py --check   → 字数と抜けを調べるだけ
-# 形：章の最初にだけ導入文。章の中は、番号のない小見出しで分ける。
+# 形：章の最初に導入文。章の中は、番号のない小見出しで分ける。小見出し（編）の頭にも、導入文を置ける（本文/v4/chN_〇〇編_導入.md がある編だけ）。
 #     項目は、質問ページ → 本文 → 2コマ → 3STEP → できた基準 → まとめ。
 # もとの材料：
 #   目次と、項目ごとの組み立て   scripts/v4_data.py
@@ -27,6 +27,12 @@ n = A.n
 def read_new(name):
     with open(os.path.join(NEW, name + ".md"), encoding="utf-8") as f:
         return f.read().strip() + "\n"
+
+
+def part_intro(num, name):
+    """編の導入文（本文/v4/chN_〇〇編_導入.md）。ない編は、空の文字。2026-11-20：著者の指示で、計画編の導入を足した。"""
+    f = "ch%d_%s_導入" % (num, name)
+    return read_new(f).strip() if os.path.exists(os.path.join(NEW, f + ".md")) else ""
 
 
 def remap(t, where=""):
@@ -173,6 +179,8 @@ def chapter_md(ch):
     for name, items in groups:
         if name:
             L += ["---", "", "# ■ %s" % name, ""]
+            if part_intro(num, name):
+                L += ["## 編の導入文", "", part_intro(num, name), ""]
         for kk in items:
             L += ["---", "", item_md(kk)]
     return "\n".join(L)

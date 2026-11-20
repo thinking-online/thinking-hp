@@ -342,6 +342,9 @@ def build():
             flow(part, name + "の導入", chap, intro)
         elif kind == "group":
             grp = name
+            pi = B.part_intro(int(re.match(r"第(\d)章", chap).group(1)), name)   # 編の導入文（ある編だけ）
+            if pi:
+                flow("章の扉と導入", name + "の導入", chap + "｜" + name, md_vt(pi + "\n", hook=True))
         elif kind == "item1":
             item1(name, chap)
         elif kind == "item":

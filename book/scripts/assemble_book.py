@@ -345,7 +345,8 @@ def sections():
         S.append(("door", "第%d章" % num, "\n".join(L)))
         for name, items in groups:
             if name:
-                S.append(("group", name, "# ■ %s\n" % name))
+                pi = B.part_intro(num, name)
+                S.append(("group", name, "# ■ %s\n" % name + ("\n## 編の導入文\n\n%s\n" % pi if pi else "")))
             for kk in items:
                 S.append(("item", kk, item_md(kk)))
                 for c in columns_after(kk):

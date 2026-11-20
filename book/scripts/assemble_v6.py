@@ -123,6 +123,10 @@ class _B6:
         return r(one), [r(p) for p in pts], r(dakara), r(toi)
 
     @staticmethod
+    def part_intro(num, name):
+        return B.part_intro(num, name)   # 編の導入文は、46個の形と同じものを使う（番号は入っていない）
+
+    @staticmethod
     def read_new(name):
         t = fixnum(B.read_new(name), name)
         # 「計画編（25〜29番）」のような、番号の幅は、35個の版の小見出しから入れ直す
@@ -287,7 +291,8 @@ def sections():
         S.append(("door", "第%d章" % num, "\n".join(L)))
         for name, items in groups:
             if name:
-                S.append(("group", name, "# ■ %s\n" % name))
+                pi = B.part_intro(num, name)
+                S.append(("group", name, "# ■ %s\n" % name + ("\n## 編の導入文\n\n%s\n" % pi if pi else "")))
             for nn in items:
                 S.append(("item", nn, item_md(nn)))
                 cols(nn)

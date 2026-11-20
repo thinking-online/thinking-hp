@@ -14,7 +14,7 @@ import tate_model as M
 
 ROOT = os.path.dirname(HERE)
 MAE = os.path.join(ROOT, "manuscript", "本文", "v4", "詰める前")
-PILLAR = {"07", "15", "17", "19", "21", "29", "34", "37", "39"}
+PILLAR = {"07", "17", "19", "21", "29", "34", "37", "39"}
 HEAD, OWARI, KOMA, R, W = 4, 11, 6, 16, 40
 
 

@@ -101,7 +101,7 @@ def others(W, R):
             continue
         elif h.startswith("コラム"):
             out["コラム"].append((h[4:12], max(1, math.ceil((2 + body_rows(body, W)) / R))))
-        elif re.match(r"第[1-5]章", h):
+        elif re.match(r"第[1-9]章", h):
             out["章の扉と導入"].append((h[:3], 1 + math.ceil(body_rows(body, W) / R)))
         else:
             out["前付け・巻末"].append((h[:14], math.ceil((2 + body_rows(body, W, merge=False)) / R)))

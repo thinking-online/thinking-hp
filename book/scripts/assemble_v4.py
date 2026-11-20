@@ -187,7 +187,7 @@ def chapter_md(ch):
 
 
 def mokuji_md():
-    L = ["# 目次（第2章〜第5章　07〜45番）", ""]
+    L = ["# 目次（第2章から先）", ""]
     for num, fuda, title, sub, groups in V.CHAPTERS:
         L += ["## 第%d章　【%s】%s" % (num, fuda, title)]
         if sub:
@@ -260,7 +260,7 @@ def main():
     if write:
         with open(os.path.join(OUT, "目次.md"), "w", encoding="utf-8") as f:
             f.write(mokuji_md())
-        with open(os.path.join(OUT, "貼り付け用", "第2章から第5章_全部.txt"), "w", encoding="utf-8") as f:
+        with open(os.path.join(OUT, "貼り付け用", "第2章から先_全部.txt"), "w", encoding="utf-8") as f:
             f.write(A.to_paste(mokuji_md()) + "\n\n" + "\n\n".join(whole))
     for kk in all_items():
         if "--sizes" in sys.argv:

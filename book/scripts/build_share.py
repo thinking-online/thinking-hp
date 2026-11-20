@@ -865,6 +865,11 @@ def text_html(lines):
         elif key in TEXT_LAB or key in TEXT_LAB_S or re.match(r"^STEP0\d$", key):
             flush()
             out.append('<p class="lab%s">%s</p>' % ("" if key in TEXT_LAB else " s", esc(key)))
+        elif re.match(r"^(STEP0\d)\u3000+(.+)$", key) or re.match(r"^(「できた」の基準|できた基準)：(.+)$", key):
+            # 「STEP01　…」「『できた』の基準：…」と、1行に書いてある所は、ほかの項目と同じ並び（印の行と、文の行）にそろえる
+            m2 = re.match(r"^(STEP0\d)\u3000+(.+)$", key) or re.match(r"^(「できた」の基準|できた基準)：(.+)$", key)
+            flush()
+            out.append('<p class="lab s">%s</p><p>%s</p>' % (esc(m2.group(1)), link(esc(m2.group(2)))))
         else:
             para.append(s)
     flush()

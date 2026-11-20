@@ -3,6 +3,8 @@
 #   置き場所：manuscript/著者の最新原稿/日付.txt（一番新しい日付のものを使う。中身は、手で直さない）
 #   2026-11-20：著者「最新の原稿は以下の通り。原稿確認ページは文字だけになるからね」
 #   → ご確認ページは、このファイルの文字を、そのまま出す。目次と、言葉の資料も、ここの頭の2行の言葉に合わせる
+#   差しかえ/番号.txt … あとから、著者が、その項目だけを貼り直したもの（これも、貼った文のまま）。あれば、その項目の本文は、こちらを使う
+#     頭の2行は、もとの原稿の形（「27 × 頭のいい人は…」「→○ 頭のいい人は…」）のまま出す。貼り直した文の、題の行と、×○の行は、使わない
 #   python3 -I scripts/author_doc.py   → 読み取った形を、画面に出す
 import os, re
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -67,7 +69,25 @@ def parse():
                     item[3].append(line)
             else:
                 s["intro"].append(line)
+        for u in s["units"]:
+            if u[0] == "item":
+                r = replacement(u[1])
+                if r is not None:
+                    u[3][:] = r
     return secs
+
+
+def replacement(no):
+    """差しかえ/番号.txt があれば、その本文の行（○の行の、次から）。なければ None。"""
+    q = os.path.join(DIR, "差しかえ", no + ".txt")
+    if not os.path.exists(q):
+        return None
+    with open(q, encoding="utf-8") as f:
+        L = f.read().split("\n")
+    for i, line in enumerate(L[:8]):
+        if re.match(r"^○[\s\u3000]*頭のいい人は", line):
+            return L[i + 1:]
+    return L
 
 
 def heads():

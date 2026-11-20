@@ -16,7 +16,12 @@ import v5 as F
 
 ROOT = os.path.dirname(HERE)
 MODE = sys.argv[1] if len(sys.argv) > 1 else "max"
-NAME = {"max": "本の形_マックス版", "cut": "本の形_削った版"}[MODE]
+NAME = {"max": "本の形_マックス版", "cut": "本の形_削った版", "s35": "本の形_35個の版"}[MODE]
+if MODE == "s35":   # 35個の版：45個の版のかわりに、scripts/assemble_v6.py のものを使う
+    import assemble_v6 as A6
+    Z, K, V, B = A6.Z6, A6.K6, A6.V6, A6.B6
+N_ALL = getattr(K, "N_ALL", 45)
+PART = "07〜%d番" % N_ALL
 PARA_MAX = 170
 esc = lambda s: html.escape(s, quote=False)
 
@@ -252,7 +257,7 @@ def toc_inner():
             for kk in items:
                 L.append(item(kk, V.ITEMS[kk]["t"], V.ITEMS[kk]["o"]) + cols(kk))
     L.append('<p class="tch">%s</p>' % vt("巻末"))
-    for l in ("45を、1枚に", "6つの言葉で、初めての場面を解く", "保護者の方へ", "参考文献"):
+    for l in ("%dを、1枚に" % N_ALL, "6つの言葉で、初めての場面を解く", "保護者の方へ", "参考文献"):
         L.append(P(l, "t0"))
     L.append('<p class="tch">%s</p>' % vt("おわりに　笑わなかった人が、1人だけいました"))
     return "".join(L)
@@ -305,9 +310,9 @@ def build():
             item1(name, chap)
         elif kind == "item":
             cut = MODE == "cut" and os.path.exists(os.path.join(F.DIR, name + ".md"))   # まだ書いていない項目は、マックス版の形で入れる
-            flow("07〜45番", name, chap + ("｜" + grp if grp else ""), item_cut(name) if cut else item_max(name))
+            flow(PART, name, chap + ("｜" + grp if grp else ""), item_cut(name) if cut else item_max(name))
         elif kind == "column":
-            src = [(s, nm) for k, s, nm in K.COLUMNS if Z.column(s, nm)[0] == name][0]
+            src = [(s, nm) for k, s, nm in K.COLUMNS if (Z.column(s, nm) or ("",))[0] == name][0]
             title, text = Z.column(*src)
             part = "第1章" if chap.startswith("第1章") else "コラム"
             flow(part, "コラム " + title, "コラム", head("", "コラム", title) + md_vt(text, merge="手紙" not in src[1]))
@@ -380,12 +385,12 @@ body{margin:0;width:504px;position:relative}
 .mbox .mlab{line-height:16px;font-family:"Noto Sans CJK JP",sans-serif;font-size:9.5px;font-weight:700;color:#15467e}
 .mbox .one{font-family:"Noto Sans CJK JP",sans-serif;font-weight:900;font-size:14px}
 .mbox .li{text-indent:1em}
-/* 王様の一言（3行ぶん） */
-.vhito{width:78px;padding-right:8px}
-.hbox{height:100%;border:1.5px solid #16181d;border-radius:8px;padding:12px 8px}
+/* 王様の一言（2行ぶん。3STEP・まとめと同じページに入るように、細くした） */
+.vhito{width:52px;padding-right:5px}
+.hbox{height:100%;border:1.5px solid #16181d;border-radius:8px;padding:12px 3px}
 .hbox p{text-indent:0;font-family:"Noto Sans CJK JP",sans-serif}
-.hbox .hlab{line-height:16px;font-size:9.5px;font-weight:700}
-.hbox .h1{line-height:34px;font-size:13.8px;font-weight:900}
+.hbox .hlab{line-height:13px;font-size:9px;font-weight:700}
+.hbox .h1{line-height:25px;font-size:13.4px;font-weight:900}
 /* 「できた」の基準と、自分への問い（3行ぶん） */
 .vgoal{width:78px;padding-right:6px}
 .gbox{height:100%;background:#e3ecf7;border-radius:8px;padding:12px 5px}

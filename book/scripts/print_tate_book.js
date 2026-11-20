@@ -17,11 +17,11 @@ const path = require('path');
   rep.flows.forEach((f) => { parts[f.part] = (parts[f.part] || 0) + f.pages; });
   console.log('全部で ' + rep.total + 'ページ');
   Object.keys(parts).forEach((k) => console.log('　' + k + '：' + parts[k] + 'ページ'));
-  const items = rep.flows.filter((f) => f.part === '07〜45番');
+  const items = rep.flows.filter((f) => f.part.startsWith('07〜'));
   const by = {};
   items.forEach((f) => { (by[f.pages] = by[f.pages] || []).push(f.name); });
-  Object.keys(by).forEach((k) => console.log('　　07〜45番で ' + k + 'ページ：' + by[k].length + '個　' + by[k].join(' ')));
-  const others = rep.flows.filter((f) => f.part !== '07〜45番' && !f.name.endsWith('（扉）'));
+  Object.keys(by).forEach((k) => console.log('　　07番から先で ' + k + 'ページ：' + by[k].length + '個　' + by[k].join(' ')));
+  const others = rep.flows.filter((f) => !f.part.startsWith('07〜') && !f.name.endsWith('（扉）'));
   console.log('　　ほかの流れ：' + others.map((f) => f.name.slice(0, 12) + '=' + f.pages).join('　'));
   rep.warn.forEach((w) => console.log('　！' + w));
   // それぞれの部分が、何ページ目から始まるか

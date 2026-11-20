@@ -60,6 +60,9 @@ def old_secs(kk, start=None, stop=None, drop=()):
 
 def body(kk):
     it = V.ITEMS[kk]
+    if os.path.exists(os.path.join(NEW, kk + ".md")):
+        # 詰めた本文（本文/v4/NN.md）がある項目は、それが本文の全部。前の文は 本文/v4/詰める前/NN.md
+        return read_new(kk)
     parts = it.get("parts") or [("old", it["old"], None, None)]
     out, used = [], set()
     for p in parts:
@@ -111,6 +114,11 @@ def matome(kk):
     return remap(one, kk), [remap(p, kk) for p in pts], remap(dakara, kk), remap(toi, kk)
 
 
+# 項目の終わりの形。"moji"：文字の3STEP（見出しだけ）と、端的なまとめ（一言 → だから → 問い）。
+# "sheet"：前の形（STEPの声つきのシート、できた基準、まとめの3つ）。声と3つの文は、v4_data.py に残してある。
+OWARI = "moji"
+
+
 def item_md(kk):
     it = V.ITEMS[kk]
     c = koma(kk)
@@ -122,8 +130,16 @@ def item_md(kk):
     b = re.sub(r"^### ", "#### ", b, flags=re.M)
     b = re.sub(r"^## ", "### ", b, flags=re.M)
     L += [b.rstrip(), "", "## 頭のいい人と伸びない人の違い", "",
-          "伸びない人", c[0][0], c[0][1], "", "頭のいい人", c[1][0], c[1][1], "",
-          "## 今日からできる3STEP", "", "題：頭のいい人の『%s』3STEP" % ttl, ""]
+          "伸びない人", c[0][0], c[0][1], "", "頭のいい人", c[1][0], c[1][1], ""]
+    if OWARI == "moji":   # 文字の3STEPと、端的なまとめ（2026-11-20、著者の指示）
+        L += ["## 今日からできる3STEP", ""]
+        for i, (h, v, note) in enumerate(steps, 1):
+            L.append("STEP0%d　%s" % (i, h))
+            if note:
+                L.append("※" + note)
+        L += ["「できた」の基準：" + king, "", "## まとめ", "", one, dakara, "迷ったら、自分に聞きます。「%s」" % toi, ""]
+        return "\n".join(L)
+    L += ["## 今日からできる3STEP", "", "題：頭のいい人の『%s』3STEP" % ttl, ""]
     for i, (h, v, note) in enumerate(steps, 1):
         L += ["STEP0%d" % i, h, "「%s」" % v]
         if note:

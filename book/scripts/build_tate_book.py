@@ -16,7 +16,10 @@ import v5 as F
 
 ROOT = os.path.dirname(HERE)
 MODE = sys.argv[1] if len(sys.argv) > 1 else "max"
-NAME = {"max": "本の形_マックス版", "cut": "本の形_削った版", "s35": "本の形_35個の版"}[MODE]
+NAME = {"max": "本の形_マックス版", "cut": "本の形_削った版", "s35": "本の形_35個の版", "new": "本の形_新しい形"}[MODE]
+KOMA_ON = "--koma" in sys.argv   # new の時：2コマも入れる
+if MODE == "new" and KOMA_ON:
+    NAME += "_2コマあり"
 if MODE == "s35":   # 35個の版：45個の版のかわりに、scripts/assemble_v6.py のものを使う
     import assemble_v6 as A6
     Z, K, V, B = A6.Z6, A6.K6, A6.V6, A6.B6
@@ -194,6 +197,23 @@ def item_max(kk):
             + koma_blk(B.koma(kk)) + sheet_blk(ttl, steps, king) + matome_blk(one, lines) + hito_blk(kk))
 
 
+def owari_blk(steps, king, one, dakara, toi):
+    """新しい終わり方。文字の3STEP（見出し＋3行＋基準）と、端的なまとめ（見出し＋3行）。前に1行ずつ空ける。"""
+    st = "".join(P("STEP%02d　%s" % (i, h), "e1") + (P("※" + n, "e3") if n else "") for i, (h, v, n) in enumerate(steps, 1))
+    a = '<div class="blk vend">%s%s%s</div>' % (P("今日からできる3STEP", "el"), st, P("「できた」の基準：" + king, "e2"))
+    b = '<div class="blk vend"><p class="el">まとめ</p>%s%s%s</div>' % (P(one, "e1"), P(dakara, "e2"), P("迷ったら、自分に聞きます。「%s」" % toi, "e2"))
+    return a + b
+
+
+def item_new(kk):
+    """新しい形：項目の頭 → 本文（問い・理由・やり方・つまずく所）→ 文字の3STEP → 端的なまとめ。"""
+    it = V.ITEMS[kk]
+    ttl, steps, king = B.sheet(kk)
+    one, pts, dakara, toi = B.matome(kk)
+    return (head(kk, "頭のいい人が絶対やらないこと", it["t"]) + md_vt(B.body(kk), hook=True)
+            + (koma_blk(B.koma(kk)) if KOMA_ON else "") + owari_blk(steps, king, one, dakara, toi) + hito_blk(kk))
+
+
 def item_cut(kk):
     it = V.ITEMS[kk]
     ttl, steps, king = B.sheet(kk)
@@ -310,7 +330,7 @@ def build():
             item1(name, chap)
         elif kind == "item":
             cut = MODE == "cut" and os.path.exists(os.path.join(F.DIR, name + ".md"))   # まだ書いていない項目は、マックス版の形で入れる
-            flow(PART, name, chap + ("｜" + grp if grp else ""), item_cut(name) if cut else item_max(name))
+            flow(PART, name, chap + ("｜" + grp if grp else ""), item_cut(name) if cut else item_new(name) if MODE == "new" else item_max(name))
         elif kind == "column":
             src = [(s, nm) for k, s, nm in K.COLUMNS if (Z.column(s, nm) or ("",))[0] == name][0]
             title, text = Z.column(*src)
@@ -353,6 +373,12 @@ body{margin:0;width:504px;position:relative}
 .t25{font-size:25px}.t22{font-size:21.5px}.t19{font-size:18.5px}
 .vsub{line-height:26px;font-family:"Noto Sans CJK JP",sans-serif;font-size:13px;font-weight:700;text-align:end;color:#16181d}
 .vsub b{color:#15467e;font-weight:900}
+/* 新しい終わり方（文字の3STEPと、端的なまとめ。前に1行空ける） */
+.vend{margin-right:26px}
+.vend p{text-indent:0;font-family:"Noto Sans CJK JP",sans-serif;font-size:12.8px}
+.vend .el{font-weight:900;font-size:13.6px;color:#15467e}
+.vend .e1{font-weight:700}
+.vend .e3{font-size:11.6px;padding-top:6em}
 /* 絵の枠 */
 .ill{border:1.5px dashed #9aa0a8;background:#fff;border-radius:4px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#666;font-size:10px;line-height:1.6}
 .ill span{position:absolute;top:4px;left:5px;background:#7a7f87;color:#fff;font-size:8.5px;border-radius:3px;padding:0 6px;line-height:1.6}

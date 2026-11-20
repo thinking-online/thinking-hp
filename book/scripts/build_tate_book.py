@@ -16,11 +16,12 @@ import v5 as F
 
 ROOT = os.path.dirname(HERE)
 MODE = sys.argv[1] if len(sys.argv) > 1 else "max"
-NAME = {"max": "本の形_マックス版", "cut": "本の形_削った版", "s35": "本の形_35個の版", "new": "本の形_新しい形"}[MODE]
+NAME = {"max": "本の形_マックス版", "cut": "本の形_削った版", "s35": "本の形_35個の版", "new": "本の形_新しい形", "new35": "本の形_新しい形_35個"}[MODE]
 KOMA_ON = "--koma" in sys.argv   # new の時：2コマも入れる
-if MODE == "new" and KOMA_ON:
+NEW_FORM = MODE in ("new", "new35")   # 新しい形：文字の3STEPと、端的なまとめ
+if NEW_FORM and KOMA_ON:
     NAME += "_2コマあり"
-if MODE == "s35":   # 35個の版：45個の版のかわりに、scripts/assemble_v6.py のものを使う
+if MODE in ("s35", "new35"):   # 35個の版：45個の版のかわりに、scripts/assemble_v6.py のものを使う
     import assemble_v6 as A6
     Z, K, V, B = A6.Z6, A6.K6, A6.V6, A6.B6
 N_ALL = getattr(K, "N_ALL", 45)
@@ -330,7 +331,7 @@ def build():
             item1(name, chap)
         elif kind == "item":
             cut = MODE == "cut" and os.path.exists(os.path.join(F.DIR, name + ".md"))   # まだ書いていない項目は、マックス版の形で入れる
-            flow(PART, name, chap + ("｜" + grp if grp else ""), item_cut(name) if cut else item_new(name) if MODE == "new" else item_max(name))
+            flow(PART, name, chap + ("｜" + grp if grp else ""), item_cut(name) if cut else item_new(name) if NEW_FORM else item_max(name))
         elif kind == "column":
             src = [(s, nm) for k, s, nm in K.COLUMNS if (Z.column(s, nm) or ("",))[0] == name][0]
             title, text = Z.column(*src)

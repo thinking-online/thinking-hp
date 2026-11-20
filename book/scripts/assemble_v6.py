@@ -211,8 +211,14 @@ def item_md(nn):
     b = re.sub(r"^### ", "#### ", b, flags=re.M)
     b = re.sub(r"^## ", "### ", b, flags=re.M)
     L = ["# %s　%s" % (nn, it["t"]), "", "## 質問ページ", "", "頭のいい人が絶対やらないこと", "「%s」" % it["q"], "じゃあ、何をするの？", "", "## 本文", "",
-         b.rstrip(), "", "## 頭のいい人と伸びない人の違い", "", "伸びない人", c[0][0], c[0][1], "", "頭のいい人", c[1][0], c[1][1], "",
-         "## 今日からできる3STEP", "", "題：頭のいい人の『%s』3STEP" % ttl, ""]
+         b.rstrip(), "", "## 頭のいい人と伸びない人の違い", "", "伸びない人", c[0][0], c[0][1], "", "頭のいい人", c[1][0], c[1][1], ""]
+    if B.OWARI == "moji":   # 文字の3STEPと、端的なまとめ（45個の版と同じ形）
+        L += ["## 今日からできる3STEP", ""]
+        for i, (h, v, note) in enumerate(steps, 1):
+            L += ["STEP0%d　%s" % (i, h)] + (["※" + note] if note else [])
+        L += ["「できた」の基準：" + king, "", "## まとめ", "", one, dakara, "迷ったら、自分に聞きます。「%s」" % toi, ""]
+        return "\n".join(L + hitokoto_md(nn))
+    L += ["## 今日からできる3STEP", "", "題：頭のいい人の『%s』3STEP" % ttl, ""]
     for i, (h, v, note) in enumerate(steps, 1):
         L += ["STEP0%d" % i, h, "「%s」" % v] + (["※" + note] if note else []) + [""]
     L += ["## できた基準", "", king, "", "## まとめ", "", one, "", "```"] + ["　　%d　%s" % (i, p) for i, p in enumerate(pts, 1)]

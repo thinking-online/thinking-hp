@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-# 35個の版（第1章の6個 ＋ 29個）。形は、今の形のまま（質問ページ → 本文 → 2コマ → 3STEP → できた基準 → まとめ）。
+# 35個の版（第1章の6個 ＋ 29個）。形は、45個の版と同じ（問い・理由・やり方・つまずく所 → 文字の3STEP → 端的なまとめ）。
+#   python3 -I scripts/v6.py rebuild       → 今の45個の版（本文/v4/NN.md）から、29個を作り直す（全部、上書きする）。
+#                                            まとめた9個は、まとめ先の本文のあとに、本文/v6/足し/NN.md（まとめる相手のやり方）を足す
 # 07番から先の本文は manuscript/本文/v6/NN.md に置く（NN は、35個の版での新しい番号）。
 #   python3 -I scripts/v6.py init          → 今の原稿から、最初のファイルを作る（もうあるファイルは、上書きしない）
 #   python3 -I scripts/v6.py show 14       → その項目の材料（今のファイル、まとめる相手の本文、行の上限、2コマ・3STEP・まとめ）
@@ -59,13 +61,38 @@ def renum(t, where=""):
     return re.sub(r"(?<![0-9])([0-9]{2})番", f, t)
 
 
+HEAD, OWARI = 3, 11   # 項目の頭3行、終わり11行（文字の3STEP 5行、端的なまとめ 4行、前に1行ずつの空き）
+
+
 def limit(nn):
-    """(ページ, 本文の行の上限)。柱は、上限なし（まとめ先の柱だけ8ページ）。"""
-    k = OLD[nn]
-    if k in PILLAR:
-        return (8, M.cap(8, R) - 1) if nn in HOST else (None, None)
-    pages = 6 if nn in HOST else 5
-    return pages, M.cap(pages, R) - 1
+    """(ページ, 本文の行の上限)。柱と、まとめた項目は6ページ。ほかは5ページ。"""
+    pages = 6 if (OLD[nn] in PILLAR or nn in HOST) else 5
+    return pages, pages * R - HEAD - OWARI
+
+
+def pages_of(r):
+    return math.ceil((HEAD + r + OWARI) / R)
+
+
+# 作り直す時に、言葉を入れかえる所（35個の版の番号 → [(前, 後)]。番号を直す前の文に当てる）
+FIX = {"31": [("この本にある45のうち", "この本にある35のうち")]}
+
+
+def rebuild():
+    """今の45個の版から、29個を作り直す。まとめた項目は、足し/NN.md を後ろにつける。"""
+    os.makedirs(DIR, exist_ok=True)
+    for nn in sorted(OLD):
+        t = B.body(OLD[nn]).rstrip() + "\n"
+        if nn in HOST:
+            with open(os.path.join(DIR, "足し", nn + ".md"), encoding="utf-8") as f:
+                t += "\n" + f.read().strip() + "\n"
+        for a, b in FIX.get(nn, ()):
+            if a not in t:
+                raise SystemExit("%s: 入れかえる言葉が見つからない: %s" % (nn, a))
+            t = t.replace(a, b)
+        with open(path(nn), "w", encoding="utf-8") as f:
+            f.write("# %s\n%s" % (nn, renum(t, nn)))
+    print("作り直した %d個" % len(OLD))
 
 
 def path(nn):
@@ -164,6 +191,8 @@ def main():
     cmd, ks = sys.argv[1], sys.argv[2:]
     if cmd == "init":
         return init()
+    if cmd == "rebuild":
+        return rebuild()
     if cmd == "map":
         for nn in sorted(OLD):
             print("%s ← %s%s　%s" % (nn, OLD[nn], ("＋" + HOST[nn]) if nn in HOST else "", V.ITEMS[OLD[nn]]["t"]))
@@ -180,7 +209,7 @@ def main():
         pages, cap = limit(nn)
         r = M.body_rows(body(nn), W)
         print("%s（%s%s）　%d行／%s　→ %dページ　%d字　%s" % (nn, OLD[nn], ("＋" + HOST[nn]) if nn in HOST else "", r, ("上限%d行" % cap) if cap else "上限なし",
-                                              M.pages_for(r, R), B.n(body(nn)), "OK" if not ps else ""))
+                                              pages_of(r), B.n(body(nn)), "OK" if not ps else ""))
         for p in ps:
             print("　　× " + p)
     print("調べた %d個／直す所 %d件" % (len(ks), ng))

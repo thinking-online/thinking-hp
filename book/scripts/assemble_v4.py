@@ -126,7 +126,7 @@ def pair_lines(it):
     """（しない, する）の2行。題や○の中の「」は、『』にする。v4_data の pair=(しない, する) があれば、それを使う。"""
     x, o = it.get("pair") or (it["t"], it["o"])
     q = lambda s: s.replace("「", "『").replace("」", "』")
-    return ["頭のいい人は、「%s」をしない。" % q(x), "かわりに、「%s」をする。" % q(o)]
+    return ["×　頭のいい人は「%s」をしない。" % q(x), "○　頭のいい人は「%s」をする。" % q(o)]   # 著者の書き方（2026-11-20）
 
 
 def item_md(kk):

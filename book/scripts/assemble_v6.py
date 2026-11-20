@@ -135,7 +135,9 @@ class _B6:
 
 B6 = _B6()
 V6 = types.SimpleNamespace(
-    ITEMS={nn: dict(dict(t=_item(nn)["t"], q=_item(nn)["q"], x=_item(nn)["x"], o=_item(nn)["o"]), **F.OVERRIDE.get(nn, {})) for nn in F.OLD},
+    # pair（項目の頭の、短い「しない／する」）は、45個の版のものを、そのまま使う。まとめた項目で、目次の言葉を変えたものは、そちらを使う
+    ITEMS={nn: dict(dict(t=_item(nn)["t"], q=_item(nn)["q"], x=_item(nn)["x"], o=_item(nn)["o"]),
+                    **({"pair": _item(nn)["pair"]} if "pair" in _item(nn) and nn not in F.OVERRIDE else {}), **F.OVERRIDE.get(nn, {})) for nn in F.OLD},
     CHAPTERS=[(num, fuda, title, sub, [(name, [F.NEW[k] for k in ks]) for name, ks in dict(F.GROUPS)[num]])
               for num, fuda, title, sub, _ in V.CHAPTERS])
 

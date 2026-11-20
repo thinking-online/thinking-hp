@@ -1,0 +1,791 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#172642">
+<title>THINKING 小論文ラボ</title>
+<style>
+:root{
+  --navy:#172642; --navy2:#24365a; --gold:#C8A55A; --paper:#F6F4EF; --card:#fff; --ink:#1C2433; --muted:#6B7280; --line:#E6E2D8;
+  --good:#1f7a55; --good-bg:#e4f3ec; --issue:#b4452c; --issue-bg:#fbe9e3; --rule:#8a6a12; --rule-bg:#f8efd2;
+  --serif:"Hiragino Mincho ProN","Yu Mincho","Noto Serif JP",serif;
+  --r:14px;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic",sans-serif;color:var(--ink);background:var(--paper);line-height:1.75;font-size:15px;-webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+a{color:inherit}
+.num{font-variant-numeric:tabular-nums;font-feature-settings:"tnum"}
+header.top{position:sticky;top:0;z-index:20;background:var(--navy);color:#fff;display:flex;align-items:center;gap:10px;padding:10px 16px;padding-top:calc(10px + env(safe-area-inset-top))}
+header.top .brand{font-weight:700;letter-spacing:.06em;font-size:14px;background:none;border:0;color:#fff;padding:0}
+header.top .brand small{display:block;font-weight:400;font-size:10px;letter-spacing:.2em;color:var(--gold)}
+header.top .who{margin-left:auto;font-size:12px;opacity:.85}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;z-index:20;background:#fff;border-top:1px solid var(--line);display:flex;padding-bottom:env(safe-area-inset-bottom)}
+nav.tabs a{flex:1;text-align:center;padding:10px 4px 9px;font-size:12px;text-decoration:none;color:var(--muted);border-top:2px solid transparent;margin-top:-1px}
+nav.tabs a.on{color:var(--navy);font-weight:700;border-top-color:var(--gold)}
+nav.tabs a b{display:inline-block;min-width:18px;padding:0 5px;margin-left:4px;border-radius:9px;background:var(--issue);color:#fff;font-size:11px;line-height:18px}
+main{max-width:560px;margin:0 auto;padding:16px 16px 96px}
+main.wide{max-width:1240px}
+h1{font-size:20px;line-height:1.45;margin:4px 0 12px;font-family:var(--serif);font-weight:700;text-wrap:balance}
+h2{font-size:13px;letter-spacing:.12em;color:var(--muted);margin:26px 0 10px;font-weight:700}
+h3{font-size:15px;margin:0 0 6px}
+p{margin:0 0 10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin:0 0 12px}
+.card.tap{display:block;text-decoration:none;width:100%;text-align:left}
+.card.tap:active{background:#faf8f3}
+.muted{color:var(--muted)} .small{font-size:12.5px} .right{text-align:right}
+.row{display:flex;gap:10px;align-items:center} .row.top{align-items:flex-start} .grow{flex:1;min-width:0}
+.pill{display:inline-block;font-size:11.5px;line-height:20px;padding:0 8px;border-radius:10px;background:#eef0f4;color:var(--navy);white-space:nowrap}
+.pill.gold{background:#f6edd6;color:#7a5d14}.pill.wait{background:#eef0f4;color:var(--muted)}.pill.new{background:var(--issue-bg);color:var(--issue)}.pill.ok{background:var(--good-bg);color:var(--good)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;border:1px solid var(--navy);background:var(--navy);color:#fff;border-radius:10px;padding:11px 18px;font-weight:700;text-decoration:none;font-size:14px}
+.btn.ghost{background:#fff;color:var(--navy)} .btn.sm{padding:6px 12px;font-size:12.5px;border-radius:8px} .btn.block{display:flex;width:100%}
+.btn:disabled{opacity:.45;cursor:default}
+.back{display:inline-block;font-size:13px;color:var(--muted);text-decoration:none;margin-bottom:8px}
+.hero{background:var(--navy);color:#fff;border-radius:var(--r);padding:18px;margin-bottom:12px}
+.hero .lbl{font-size:11px;letter-spacing:.14em;color:var(--gold)}
+.hero .big{font-size:40px;font-weight:700;line-height:1.1}
+.hero .big small{font-size:14px;font-weight:400;opacity:.8;margin-left:4px}
+.hero .stats{display:flex;gap:18px;margin-top:10px;font-size:12px;opacity:.9}
+.hero .stats b{font-size:17px;margin-right:2px}
+.band{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;border:2px solid var(--gold);color:var(--gold);font-weight:700;font-family:var(--serif);font-size:17px;flex:none}
+.band.dark{border-color:var(--navy);color:var(--navy)}
+.delta{font-size:12.5px;font-weight:700}.delta.up{color:var(--good)}.delta.down{color:var(--issue)}
+.essay{font-family:var(--serif);font-size:16px;line-height:2.05;white-space:pre-wrap;word-break:break-word}
+.essay mark{background:var(--issue-bg);color:inherit;border-bottom:2px solid var(--issue);padding:2px 0;cursor:pointer;border-radius:2px}
+.essay mark.good{background:var(--good-bg);border-color:var(--good)} .essay mark.rule{background:var(--rule-bg);border-color:var(--rule)}
+.essay mark sup,.cno{font-family:-apple-system,sans-serif;font-size:10.5px;font-weight:700;color:#fff;background:var(--issue);border-radius:8px;padding:0 5px;margin-left:2px;line-height:16px;display:inline-block;vertical-align:super}
+.essay mark.good sup,.cno.good{background:var(--good)} .essay mark.rule sup,.cno.rule{background:var(--rule)}
+.cno{vertical-align:baseline;margin:0 6px 0 0}
+.cmt{border-left:3px solid var(--issue);padding:8px 0 8px 12px;margin:0 0 12px}
+.cmt.good{border-color:var(--good)} .cmt.rule{border-color:var(--rule)} .cmt.hit{background:#fffbea}
+.cmt q{display:block;font-family:var(--serif);color:var(--muted);font-size:13px;quotes:"「" "」"}
+.cmt .fix{margin-top:6px;padding:8px 10px;background:#f7f8fa;border-radius:8px;font-family:var(--serif);font-size:14px}
+.cmt .fix::before{content:"直すなら";display:block;font-family:-apple-system,sans-serif;font-size:10.5px;letter-spacing:.1em;color:var(--muted)}
+.crit{padding:10px 0;border-bottom:1px solid var(--line)} .crit:last-child{border:0}
+.crit .hd{display:flex;align-items:baseline;gap:8px} .crit .hd b{flex:1}
+.meter{display:flex;gap:3px;margin:6px 0 6px} .meter i{flex:1;height:6px;border-radius:3px;background:#e9e6dd} .meter i.on{background:var(--navy)}
+.prio{counter-reset:p;padding:0;margin:0;list-style:none}
+.prio li{counter-increment:p;position:relative;padding:0 0 14px 34px} .prio li:last-child{padding-bottom:0}
+.prio li::before{content:counter(p);position:absolute;left:0;top:1px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+.prio .how{margin-top:6px;padding:8px 10px;background:#f6edd6;border-radius:8px;font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1px solid var(--line);background:#fff;border-radius:16px;padding:4px 12px;font-size:12.5px;white-space:nowrap}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.scroll{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin:0 -16px 8px;padding-left:16px;padding-right:16px;scrollbar-width:none}
+textarea,input[type=text],select{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:#fff;font-size:16px}
+textarea{resize:vertical;line-height:1.9}
+textarea.write{font-family:var(--serif);min-height:52vh}
+label.f{display:block;font-size:12px;color:var(--muted);margin:12px 0 4px;letter-spacing:.06em}
+.bar{position:sticky;bottom:calc(52px + env(safe-area-inset-bottom));background:var(--paper);padding:10px 0;display:flex;gap:10px;align-items:center;border-top:1px solid var(--line);z-index:5}
+.bar .cnt b{font-size:18px} .bar .cnt.over b{color:var(--issue)}
+.qa{padding:8px 12px;border-radius:12px;background:#f1f2f5;margin:0 40px 8px 0;font-size:14px}
+.qa.me{margin:0 0 8px 40px;background:#e8eef9}
+.qa small{display:block;color:var(--muted);font-size:11px}
+.fu{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;font-size:14px}
+.fu .st{flex:none;font-size:11.5px;border-radius:10px;padding:0 8px;line-height:20px;background:#eef0f4;color:var(--muted)}
+.fu .st.improved{background:var(--good-bg);color:var(--good)} .fu .st.worse{background:var(--issue-bg);color:var(--issue)}
+.hbar{display:grid;grid-template-columns:9.5em 1fr 2em;gap:8px;align-items:center;font-size:13px;margin-bottom:7px}
+.hbar .t{height:8px;background:#e9e6dd;border-radius:4px;position:relative}
+.hbar .t i{position:absolute;left:0;top:0;bottom:0;border-radius:4px;background:var(--navy)}
+.hbar .t u{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--gold)}
+svg text{font-family:inherit}
+.empty{text-align:center;color:var(--muted);padding:36px 12px}
+.gate{max-width:420px;margin:18vh auto 0;text-align:center;padding:0 24px}
+.toast{position:fixed;left:50%;bottom:86px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:9px 16px;border-radius:20px;font-size:13px;z-index:50;max-width:90vw}
+.pv{background:#fff7d6;border-bottom:1px solid #ecd98a;font-size:12px;padding:6px 12px;text-align:center}
+.pv a{margin:0 5px;text-decoration:underline;cursor:pointer}
+table.q{width:100%;border-collapse:collapse;font-size:13.5px}
+table.q th{font-size:11px;letter-spacing:.08em;color:var(--muted);text-align:left;font-weight:400;padding:6px 8px;border-bottom:1px solid var(--line)}
+table.q td{padding:10px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+table.q tr.tap{cursor:pointer} table.q tr.tap:hover{background:#faf8f3}
+.grade{display:grid;gap:16px}
+.lv{display:flex;gap:4px} .lv button{width:34px;height:30px;border:1px solid var(--line);background:#fff;border-radius:7px;font-weight:700;font-size:13px}
+.lv button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ed textarea{font-size:14px;line-height:1.7;padding:8px 10px}
+.ed .box{border:1px solid var(--line);border-radius:10px;padding:10px;margin-bottom:8px;background:#fcfbf8}
+.ed .x{border:0;background:none;color:var(--muted);font-size:12px;text-decoration:underline;padding:0}
+.stick{position:sticky;top:52px}
+@media(min-width:980px){
+  .grade{grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:start}
+}
+@media(max-width:700px){ table.q .hide-s{display:none} }
+</style>
+</head>
+<body>
+<div id="pv"></div>
+<header class="top">
+  <button class="brand" data-act="home"><small>THINKING</small><span id="brand">小論文ラボ</span></button>
+  <span class="who" id="who"></span>
+</header>
+<main id="app"><div class="empty">読み込んでいます…</div></main>
+<nav class="tabs" id="tabs" hidden></nav>
+
+<script>
+/* ===== 設定（セットアップ時に2か所だけ埋める）================================ */
+var LIFF_ID = "";   // LINE Developers で作った LIFF ID
+var GAS_URL = "";   // Apps Script をデプロイした Webアプリの URL（…/exec）
+/* ========================================================================= */
+
+var PREVIEW = /[?&]preview=1/.test(location.search);
+var S = { user: null, cfg: {}, rubric: [], tags: [], tasks: [], subs: [], all: null, students: [] };
+var $ = function (id) { return document.getElementById(id); };
+
+/* ---------- 小さな道具 ---------- */
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+function load(key) { try { return JSON.parse(localStorage.getItem(key) || "null"); } catch (e) { return null; } }
+function save(key, v) { try { if (v == null) localStorage.removeItem(key); else localStorage.setItem(key, JSON.stringify(v)); } catch (e) {} }
+function md(iso) { if (!iso) return ""; var d = new Date(iso); return (d.getMonth() + 1) + "/" + d.getDate(); }
+function ago(iso) {
+  var h = (Date.now() - new Date(iso).getTime()) / 3600000;
+  return h < 1 ? "1時間以内" : h < 24 ? Math.floor(h) + "時間前" : Math.floor(h / 24) + "日前";
+}
+function count(t) { return String(t || "").replace(/\s/g, "").length; }
+function taskOf(id) { return S.tasks.filter(function (t) { return t.id === id; })[0] || { id: id, title: "（削除された課題）", fac: "", uni: "", limit: 0, q: "", text: "" }; }
+function toast(msg) {
+  var el = document.createElement("div"); el.className = "toast"; el.textContent = msg; document.body.appendChild(el);
+  setTimeout(function () { el.remove(); }, 2600);
+}
+function isStaff() { return S.user && S.user.role === "staff"; }
+function byAt(a, b) { return a.at < b.at ? -1 : 1; }
+function done(subs) { return subs.filter(function (s) { return s.state === "done" && s.review; }).sort(byAt); }
+
+/** 観点ごとのレベルと学部の配点から総合点を出す（GAS の total_ と同じ計算。講師の画面ですぐ点が変わるように端末でも計算する） */
+function calcTotal(scores, fac) {
+  var sum = 0, ws = 0;
+  S.rubric.forEach(function (c) {
+    var w = c.w[fac] || c.w["既定"] || 0;
+    var s = (scores || []).filter(function (x) { return x.k === c.k; })[0];
+    sum += w * Math.max(1, Math.min(5, Number(s && s.lv) || 1)) / 5; ws += w;
+  });
+  var t = ws ? Math.round(sum * 100 / ws) : 0;
+  return { total: t, band: t >= 85 ? "S" : t >= 72 ? "A" : t >= 58 ? "B" : t >= 44 ? "C" : "D" };
+}
+
+/* ---------- 通信 ---------- */
+function api(action, body) {
+  if (PREVIEW) return window.MOCK_API(action, body);
+  var token = idToken();
+  if (!token) return Promise.reject(new Error("login"));
+  var payload = Object.assign({ action: action, token: token }, body || {});
+  // Content-Type を付けない（付けると CORS の事前確認が起きて GAS が失敗する）
+  return fetch(GAS_URL, { method: "POST", body: JSON.stringify(payload) }).then(function (r) { return r.json(); }).then(function (res) {
+    if (res.status === "unauthorized") { relogin(); throw new Error("login"); }
+    return res;
+  });
+}
+/** 期限切れのIDトークンを送らない（LINE内ブラウザは古いトークンを返すことがある） */
+function idToken() {
+  try {
+    var d = liff.getDecodedIDToken();
+    if (!d || d.exp * 1000 < Date.now() + 60000) { relogin(); return ""; }
+    return liff.getIDToken();
+  } catch (e) { return ""; }
+}
+function relogin() {
+  try { if (sessionStorage.getItem("sr.relogin")) return; sessionStorage.setItem("sr.relogin", "1"); } catch (e) {}
+  liff.logout(); liff.login({ redirectUri: location.href });
+}
+function loadScript(src) {
+  return new Promise(function (ok, ng) { var s = document.createElement("script"); s.src = src; s.onload = ok; s.onerror = ng; document.head.appendChild(s); });
+}
+
+/* ---------- 起動 ---------- */
+function start() {
+  if (PREVIEW) { loadScript("mock.js").then(boot); showPreviewBar(); return; }
+  if (!LIFF_ID || !GAS_URL) { gate("準備中", "小論文ラボの設定がまだ完了していません。"); return; }
+  loadScript("https://static.line-scdn.net/liff/edge/2/sdk.js")
+    .then(function () { return liff.init({ liffId: LIFF_ID }); })
+    .then(function () { if (!liff.isLoggedIn()) { liff.login({ redirectUri: location.href }); return; } return boot(); })
+    .catch(function () { gate("LINEから開いてください", "このページはLINEアプリの中で開くと使えます。"); });
+}
+function boot() {
+  return api("boot").then(function (res) {
+    if (res.status !== "ok") throw new Error(res.reason || "error");
+    try { sessionStorage.removeItem("sr.relogin"); } catch (e) {}
+    S.user = res.user; S.cfg = res.cfg; S.rubric = res.rubric; S.tags = res.tags; S.tasks = res.tasks; S.subs = res.subs;
+    $("brand").textContent = (S.cfg.title || "小論文ラボ").replace(/^THINKING\s*/, "");
+    $("who").textContent = S.user.name + (isStaff() ? "（講師）" : "");
+    return isStaff() ? loadQueue() : null;
+  }).then(route).catch(function (e) { if (e.message !== "login") gate("通信できませんでした", "電波の良い場所で、もう一度開いてください。"); });
+}
+function loadQueue() {
+  return api("queue").then(function (res) { if (res.status === "ok") { S.all = res.subs; S.students = res.students; } });
+}
+function gate(title, text) {
+  $("tabs").hidden = true;
+  $("app").className = "";
+  $("app").innerHTML = '<div class="gate"><h1>' + esc(title) + '</h1><p class="muted">' + esc(text) + "</p></div>";
+}
+function showPreviewBar() {
+  var r = (/[?&]role=(\w+)/.exec(location.search) || [])[1] || "student";
+  $("pv").innerHTML = '<div class="pv">プレビュー（仮のデータ）｜表示：'
+    + [["student", "生徒"], ["staff", "講師"], ["guest", "未登録"]].map(function (x) {
+      return x[0] === r ? "<b>" + x[1] + "</b>" : '<a href="?preview=1&role=' + x[0] + '">' + x[1] + "</a>";
+    }).join(" ") + '｜<a data-act="reset">最初の状態に戻す</a></div>';
+}
+
+/* ---------- 画面の切り替え ---------- */
+var VIEW = {};
+function route() {
+  var h = location.hash.replace(/^#\/?/, "").split("/");
+  var name = h[0] || (isStaff() ? "queue" : "home");
+  if (!VIEW[name]) name = isStaff() ? "queue" : "home";
+  stopTimer();
+  var wide = name === "grade" || name === "queue" || name === "students" || name === "student";
+  $("app").className = wide ? "wide" : "";
+  $("app").innerHTML = VIEW[name](decodeURIComponent(h[1] || ""), decodeURIComponent(h[2] || ""));
+  renderTabs(name);
+  if (AFTER[name]) AFTER[name](decodeURIComponent(h[1] || ""));
+  window.scrollTo(0, 0);
+}
+var AFTER = {};
+function renderTabs(name) {
+  var tabs = isStaff()
+    ? [["queue", "添削", (S.all || []).filter(function (s) { return s.raw !== "返却済"; }).length], ["students", "生徒"], ["tasks", "課題"]]
+    : [["home", "ホーム"], ["tasks", "課題"], ["subs", "提出", S.subs.filter(function (s) { return s.state === "done" && !s.seen; }).length], ["growth", "成長"]];
+  var group = { task: "tasks", write: "tasks", sub: "subs", grade: "queue", student: "students" }[name] || name;
+  $("tabs").hidden = false;
+  $("tabs").innerHTML = tabs.map(function (t) {
+    return '<a href="#/' + t[0] + '" class="' + (t[0] === group ? "on" : "") + '">' + t[1] + (t[2] ? "<b>" + t[2] + "</b>" : "") + "</a>";
+  }).join("");
+}
+window.addEventListener("hashchange", route);
+
+/* ======================================================================
+ * 生徒の画面
+ * ==================================================================== */
+
+VIEW.home = function () {
+  if (S.user.role === "guest") {
+    return '<h1>小論文ラボへようこそ</h1><div class="card"><p>答案を出すと、観点ごとの評価と、次に直すところが返ってきます。書き直して再提出すると、前回との違いも分かります。</p>'
+      + '<p class="muted small">提出には受講の登録が必要です。見本の課題は「課題」から読めます。</p>'
+      + '<a class="btn block" href="' + esc(S.cfg.lineUrl || "#") + '">公式LINEで問い合わせる</a></div>';
+  }
+  var d = done(S.subs), last = d[d.length - 1], prev = d[d.length - 2];
+  var waiting = S.subs.filter(function (s) { return s.state === "wait"; });
+  var html = "";
+  if (last) {
+    var diff = prev ? last.review.total - prev.review.total : null;
+    html += '<div class="hero"><div class="row"><div class="grow"><div class="lbl">最新の添削</div><div class="big num">' + last.review.total + "<small>点</small></div></div>"
+      + '<span class="band">' + last.review.band + "</span></div>"
+      + '<div class="stats"><span><b class="num">' + S.subs.length + "</b>本 提出</span><span><b class=\"num\">" + S.subs.filter(function (s) { return s.ver > 1; }).length + "</b>本 書き直し</span>"
+      + (diff != null ? "<span>前回より <b class=\"num\">" + (diff > 0 ? "+" : "") + diff + "</b>点</span>" : "") + "</div></div>";
+  } else {
+    html += '<div class="hero"><div class="lbl">小論文ラボ</div><p style="margin:6px 0 0">1本書いて出すと、観点ごとの評価と「次に直すこと」が返ってきます。</p></div>';
+  }
+
+  html += "<h2>次にやること</h2>";
+  var unseen = S.subs.filter(function (s) { return s.state === "done" && !s.seen; }).sort(byAt).pop();
+  var todo = "";
+  if (unseen) {
+    todo += '<a class="card tap" href="#/sub/' + unseen.id + '"><span class="pill new">返却</span> <b>添削が返ってきました</b><div class="muted small">' + esc(taskOf(unseen.task).title) + "・" + unseen.review.total + "点</div></a>";
+  }
+  var re = rewriteTarget();
+  if (re && (!unseen || unseen.id !== re.id)) {
+    todo += '<a class="card tap" href="#/write/' + re.task + '"><span class="pill gold">書き直し</span> <b>' + esc(taskOf(re.task).title) + '</b><div class="muted small">前回 ' + re.review.total + "点。最優先：" + esc((re.review.priorities[0] || {}).t || "") + "</div></a>";
+  }
+  if (waiting.length) todo += '<a class="card tap" href="#/subs"><span class="pill wait">添削中</span> <b>' + waiting.length + "本</b>を添削しています</a>";
+  var next = nextTask();
+  if (next) todo += '<a class="card tap" href="#/task/' + next.id + '"><span class="pill">新しい課題</span> <b>' + esc(next.title) + '</b><div class="muted small">' + esc(next.uni + " " + next.fac + "学部") + "・" + next.limit + "字</div></a>";
+  html += todo || '<div class="card muted">すべての課題に取り組みました。</div>';
+
+  if (last) {
+    var tags = tagCounts(d).slice(0, 3);
+    html += "<h2>いまの自分の課題</h2><div class=\"card\">"
+      + (last.review.next ? "<p><b>次の1本で意識すること</b><br>" + esc(last.review.next) + "</p>" : "")
+      + (tags.length ? '<p class="muted small" style="margin:0 0 6px">くり返し指摘されていること</p><div class="chips">' + tags.map(function (t) { return '<span class="chip">' + esc(t[0]) + " ×" + t[1] + "</span>"; }).join("") + "</div>" : "")
+      + "</div>";
+  }
+  return html;
+};
+
+/** 書き直すとよい提出：返却済みで、同じ課題の新しい版がまだなく、A 評価に届いていないもの（新しい順） */
+function rewriteTarget() {
+  var d = done(S.subs).reverse();
+  for (var i = 0; i < d.length; i++) {
+    var s = d[i];
+    var newer = S.subs.some(function (x) { return x.task === s.task && x.ver > s.ver; });
+    if (!newer && s.review.total < 72) return s;
+  }
+  return null;
+}
+function nextTask() {
+  var tried = {};
+  S.subs.forEach(function (s) { tried[s.task] = true; });
+  var open = S.tasks.filter(function (t) { return !tried[t.id]; });
+  return open.filter(function (t) { return t.fac === S.user.target; })[0] || open[0] || null;
+}
+function tagCounts(subs) {
+  var m = {};
+  subs.forEach(function (s) { (s.review.tags || []).forEach(function (t) { m[t] = (m[t] || 0) + 1; }); });
+  return Object.keys(m).map(function (k) { return [k, m[k]]; }).sort(function (a, b) { return b[1] - a[1]; });
+}
+
+var FAC = "";
+VIEW.tasks = function () {
+  var facs = S.tasks.map(function (t) { return t.fac; }).filter(function (f, i, a) { return a.indexOf(f) === i; });
+  if (FAC && facs.indexOf(FAC) < 0) FAC = "";
+  var list = S.tasks.filter(function (t) { return !FAC || t.fac === FAC; });
+  return "<h1>課題</h1>"
+    + '<div class="scroll"><button class="chip ' + (FAC ? "" : "on") + '" data-act="fac" data-v="">すべて</button>'
+    + facs.map(function (f) { return '<button class="chip ' + (FAC === f ? "on" : "") + '" data-act="fac" data-v="' + esc(f) + '">' + esc(f) + "</button>"; }).join("") + "</div>"
+    + (list.map(function (t) {
+      var mine = S.subs.filter(function (s) { return s.task === t.id; }).sort(byAt), last = mine[mine.length - 1];
+      var st = !last ? "" : last.state === "wait" ? '<span class="pill wait">添削中</span>' : '<span class="pill ok">' + last.review.total + "点</span>";
+      return '<a class="card tap" href="#/task/' + t.id + '"><div class="row top"><div class="grow"><div class="muted small">' + esc(t.uni + " " + t.fac + "学部・" + t.year) + (t.pub === false ? "・非公開" : "") + "</div><b>" + esc(t.title) + '</b><div class="muted small num">' + (t.limit ? t.limit + "字" : "") + (t.min ? "・" + t.min + "分" : "") + (mine.length > 1 ? "・" + mine.length + "回提出" : "") + "</div></div>" + st + "</div></a>";
+    }).join("") || '<div class="empty">課題がありません。</div>');
+};
+
+function taskBody(t) {
+  return '<div class="card"><h3>設問</h3><p>' + esc(t.q) + "</p>"
+    + (t.text ? '<h3 style="margin-top:14px">課題文</h3><div class="essay" style="font-size:15px">' + esc(t.text) + "</div>" : "")
+    + (t.pdf ? '<p style="margin-top:12px"><a class="btn ghost sm" target="_blank" rel="noopener" href="https://drive.google.com/file/d/' + esc(t.pdf) + '/view">課題文（PDF）を開く</a></p>' : "")
+    + "</div>";
+}
+
+VIEW.task = function (id) {
+  var t = taskOf(id);
+  var mine = S.subs.filter(function (s) { return s.task === id; }).sort(byAt);
+  var guest = S.user.role === "guest";
+  return '<a class="back" href="#/tasks">‹ 課題一覧</a><div class="muted small">' + esc(t.uni + " " + t.fac + "学部・" + t.year) + "</div><h1>" + esc(t.title) + "</h1>"
+    + '<p class="muted small num">' + (t.limit ? "字数 " + t.limit + "字以内" : "") + (t.min ? "　制限時間 " + t.min + "分" : "") + "</p>"
+    + taskBody(t)
+    + (isStaff() && t.aim ? '<div class="card"><h3>出題のねらい（講師・AI用。生徒には出ません）</h3><p>' + esc(t.aim) + "</p></div>" : "")
+    + (guest ? '<p class="muted small">提出には受講の登録が必要です。</p>' : '<a class="btn block" href="#/write/' + t.id + '">' + (mine.length ? "書き直して再提出する" : "答案を書く") + "</a>")
+    + (mine.length ? "<h2>この課題の提出</h2>" + mine.slice().reverse().map(subRow).join("") : "");
+};
+
+function subRow(s) {
+  var t = taskOf(s.task);
+  return '<a class="card tap" href="#/sub/' + s.id + '"><div class="row"><div class="grow"><b>' + esc(t.title) + '</b><div class="muted small num">' + md(s.at) + " 提出・" + s.ver + "回目・" + s.chars + "字</div></div>"
+    + (s.state === "wait" ? '<span class="pill wait">添削中</span>' : (s.seen ? "" : '<span class="pill new">返却</span> ') + '<b class="num">' + s.review.total + '</b><span class="band dark" style="width:28px;height:28px;font-size:14px">' + s.review.band + "</span>") + "</div></a>";
+}
+
+VIEW.subs = function () {
+  var list = S.subs.slice().sort(byAt).reverse();
+  return "<h1>提出した答案</h1>" + (list.map(subRow).join("") || '<div class="empty">まだ提出がありません。<br><a href="#/tasks">課題を選ぶ</a></div>');
+};
+
+/* ---------- 書く ---------- */
+var W = null, TICK = null;
+VIEW.write = function (id) {
+  var t = taskOf(id);
+  var d = load("sr.draft." + id) || {};
+  var prev = done(S.subs).filter(function (s) { return s.task === id; }).pop();
+  W = { task: id, sec: d.sec || 0, running: false, photos: [], mode: "text" };
+  return '<a class="back" href="#/task/' + id + '">‹ ' + esc(t.title) + "</a>"
+    + '<details class="card"' + (d.text ? "" : " open") + "><summary><b>設問と課題文</b></summary><div style=\"margin-top:10px\">" + taskBody(t).replace('class="card"', "") + "</div></details>"
+    + (prev ? '<details class="card"><summary><b>前回の添削（' + prev.review.total + "点）で直すこと</b></summary><ol class=\"prio\" style=\"margin-top:12px\">" + prev.review.priorities.map(function (p) { return "<li><b>" + esc(p.t) + '</b><div class="how">' + esc(p.how) + "</div></li>"; }).join("") + "</ol></details>" : "")
+    + '<div class="chips" style="margin-bottom:10px"><button class="chip on" data-act="mode" data-v="text">入力して提出</button><button class="chip" data-act="mode" data-v="photo">手書きの写真で提出</button></div>'
+    + '<div id="w-text"><textarea class="write" id="w-ta" placeholder="ここに答案を書きます。途中の内容はこの端末に自動で保存されます。">' + esc(d.text || "") + "</textarea></div>"
+    + '<div id="w-photo" hidden><div class="card"><p class="small muted">原稿用紙を1枚ずつ、真上から撮ってください（6枚まで）。AI が文字に起こし、講師が確認します。</p><input type="file" id="w-file" accept="image/*" multiple><div id="w-thumbs" class="chips" style="margin-top:10px"></div></div></div>'
+    + '<label class="f">講師に伝えたいこと（自信のないところ・聞きたいこと。任意）</label><textarea id="w-memo" rows="2">' + esc(d.memo || "") + "</textarea>"
+    + '<div class="bar"><div class="cnt grow" id="w-cnt"></div><button class="btn ghost sm" data-act="timer" id="w-timer">時間を計る</button><button class="btn" data-act="submit">提出する</button></div>';
+};
+AFTER.write = function () {
+  var ta = $("w-ta");
+  var onInput = function () { updateCount(); save("sr.draft." + W.task, { text: ta.value, memo: $("w-memo").value, sec: W.sec }); };
+  ta.addEventListener("input", onInput); $("w-memo").addEventListener("input", onInput);
+  $("w-file").addEventListener("change", function (e) { addPhotos(e.target.files); });
+  updateCount();
+};
+function updateCount() {
+  var t = taskOf(W.task), n = count($("w-ta").value), el = $("w-cnt");
+  var mm = Math.floor(W.sec / 60), ss = ("0" + (W.sec % 60)).slice(-2);
+  el.className = "cnt grow num" + (t.limit && n > t.limit ? " over" : "");
+  el.innerHTML = (W.mode === "text" ? "<b>" + n + "</b>" + (t.limit ? " / " + t.limit + "字" : "字") : "<b>" + W.photos.length + "</b>枚")
+    + (W.sec ? '<span class="muted small">　' + mm + ":" + ss + (t.min ? " / " + t.min + "分" : "") + "</span>" : "");
+}
+function stopTimer() { if (TICK) { clearInterval(TICK); TICK = null; } }
+function addPhotos(files) {
+  Array.prototype.slice.call(files, 0, 6 - W.photos.length).forEach(function (f) {
+    var img = new Image();
+    img.onload = function () {
+      // 長い辺を1600pxに縮めてから送る（そのままだと大きすぎて送れない）
+      var k = Math.min(1, 1600 / Math.max(img.width, img.height));
+      var c = document.createElement("canvas"); c.width = Math.round(img.width * k); c.height = Math.round(img.height * k);
+      c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+      W.photos.push(c.toDataURL("image/jpeg", 0.82));
+      $("w-thumbs").innerHTML = W.photos.map(function (p, i) { return '<img src="' + p + '" alt="原稿 ' + (i + 1) + '枚目" style="height:84px;border-radius:6px;border:1px solid var(--line)">'; }).join("");
+      updateCount(); URL.revokeObjectURL(img.src);
+    };
+    img.src = URL.createObjectURL(f);
+  });
+}
+
+/* ---------- 添削を読む ---------- */
+
+/** 本文に、行内コメントの引用箇所を印として入れる。引用が本文に見つからないコメントは印なしで一覧だけに出す */
+function markText(text, inline) {
+  var hits = [];
+  (inline || []).forEach(function (c, i) {
+    if (!c.q) return;
+    var from = 0, at;
+    while ((at = text.indexOf(c.q, from)) >= 0) {
+      var clash = hits.some(function (h) { return at < h.e && at + c.q.length > h.s; });
+      if (!clash) { hits.push({ s: at, e: at + c.q.length, i: i, kind: c.kind }); break; }
+      from = at + 1;
+    }
+  });
+  hits.sort(function (a, b) { return a.s - b.s; });
+  var out = "", pos = 0;
+  hits.forEach(function (h) {
+    out += esc(text.slice(pos, h.s)) + '<mark class="' + h.kind + '" data-act="cmt" data-i="' + h.i + '">' + esc(text.slice(h.s, h.e)) + "<sup>" + (h.i + 1) + "</sup></mark>";
+    pos = h.e;
+  });
+  return out + esc(text.slice(pos));
+}
+function meter(lv) { var s = ""; for (var i = 1; i <= 5; i++) s += '<i class="' + (i <= lv ? "on" : "") + '"></i>'; return '<div class="meter" role="img" aria-label="5段階の' + lv + '">' + s + "</div>"; }
+
+function reviewHtml(s, prev) {
+  var r = s.review, t = taskOf(s.task);
+  var diff = prev ? r.total - prev.review.total : null;
+  var html = '<div class="hero"><div class="row"><div class="grow"><div class="lbl">総合</div><div class="big num">' + r.total + "<small>/ 100点</small></div>"
+    + (diff != null ? '<div class="small" style="margin-top:4px">前回（' + md(prev.at) + "）" + prev.review.total + "点 → <b>" + (diff > 0 ? "+" : "") + diff + "点</b></div>" : "") + "</div>"
+    + '<span class="band">' + r.band + "</span></div></div>";
+  if (r.teacher) html += '<div class="card"><h3>講師から</h3><p style="margin:0">' + esc(r.teacher) + "</p></div>";
+  html += '<div class="card"><h3>総評</h3><p style="margin:0;white-space:pre-wrap">' + esc(r.summary) + "</p></div>";
+
+  if (r.priorities.length) {
+    html += "<h2>直せばいちばん伸びるところ</h2><div class=\"card\"><ol class=\"prio\">" + r.priorities.map(function (p) {
+      return "<li><b>" + esc(p.t) + '</b><div class="small muted">' + esc(p.why) + '</div><div class="how">' + esc(p.how) + "</div></li>";
+    }).join("") + "</ol></div>";
+  }
+  if ((r.followup || []).length) {
+    var lbl = { improved: "良くなった", same: "変わらず", worse: "後退" };
+    html += "<h2>前回までの指摘はどうなったか</h2><div class=\"card\">" + r.followup.map(function (f) {
+      return '<div class="fu"><span class="st ' + f.state + '">' + lbl[f.state] + "</span><div><b>" + esc(f.tag) + "</b>　" + esc(f.note) + "</div></div>";
+    }).join("") + "</div>";
+  }
+
+  html += "<h2>観点ごとの評価</h2><div class=\"card\">" + S.rubric.map(function (c) {
+    var x = r.scores.filter(function (y) { return y.k === c.k; })[0] || { lv: 1, why: "" };
+    var p = prev && (prev.review.scores.filter(function (y) { return y.k === c.k; })[0] || {}).lv;
+    var d = p ? x.lv - p : 0;
+    return '<div class="crit"><div class="hd"><b>' + esc(c.n) + '</b><span class="muted small num">配点' + (c.w[t.fac] || c.w["既定"]) + '</span><span class="num"><b>' + x.lv + "</b> / 5</span>"
+      + (d ? '<span class="delta ' + (d > 0 ? "up" : "down") + '">' + (d > 0 ? "↑" : "↓") + Math.abs(d) + "</span>" : "") + "</div>" + meter(x.lv)
+      + '<div class="small">' + esc(x.why) + "</div></div>";
+  }).join("") + "</div>";
+
+  html += "<h2>答案への書き込み</h2><div class=\"card\"><div class=\"essay\" id=\"essay\">" + markText(s.text, r.inline) + "</div></div>";
+  if (r.inline.length) {
+    html += '<div class="card" id="cmts">' + r.inline.map(function (c, i) {
+      return '<div class="cmt ' + c.kind + '" id="cmt-' + i + '"><span class="cno ' + c.kind + '">' + (i + 1) + "</span><b>" + { good: "良い", issue: "内容・論理", rule: "表記・決まり" }[c.kind] + "</b>"
+        + (c.q ? "<q>" + esc(c.q) + "</q>" : "") + "<div>" + esc(c.c) + "</div>" + (c.fix ? '<div class="fix">' + esc(c.fix) + "</div>" : "") + "</div>";
+    }).join("") + "</div>";
+  }
+  if (r.strengths.length) html += "<h2>良いところ（次も続ける）</h2><div class=\"card\"><ul style=\"margin:0;padding-left:1.2em\">" + r.strengths.map(function (x) { return "<li>" + esc(x) + "</li>"; }).join("") + "</ul></div>";
+  if (r.outline.length) {
+    html += "<h2>段落の役割</h2><div class=\"card\">" + r.outline.map(function (o, i) {
+      return '<div class="row top" style="margin-bottom:6px"><span class="pill num">' + (i + 1) + '</span><div class="grow"><b>' + esc(o.role) + '</b> <span class="muted small">' + esc(o.note) + "</span></div></div>";
+    }).join("") + "</div>";
+  }
+  if (r.rewrite) html += "<h2>書き直しの設計図</h2><div class=\"card\"><p style=\"margin:0;white-space:pre-wrap\">" + esc(r.rewrite) + "</p></div>";
+  if (r.next) html += '<div class="card" style="border-color:var(--gold)"><h3>次の1本で意識すること</h3><p style="margin:0">' + esc(r.next) + "</p></div>";
+  return html;
+}
+
+function qaHtml(s) {
+  var mine = isStaff() ? "講師" : "生徒";
+  return "<h2>質問</h2><div id=\"qa\">" + (s.qa || []).map(function (q) {
+    return '<div class="qa ' + (q.who === mine ? "me" : "") + '"><small>' + esc(q.name) + "・" + md(q.at) + "</small>" + esc(q.text) + "</div>";
+  }).join("") + '</div><div class="row top"><textarea id="qa-ta" rows="2" class="grow" placeholder="' + (isStaff() ? "生徒への返信" : "添削について聞きたいこと") + '"></textarea><button class="btn sm" data-act="ask" data-id="' + s.id + '">送る</button></div>';
+}
+
+VIEW.sub = function (id) {
+  var s = S.subs.filter(function (x) { return x.id === id; })[0];
+  if (!s) return '<div class="empty">提出が見つかりません。</div>';
+  var t = taskOf(s.task);
+  var prev = s.prev ? done(S.subs).filter(function (x) { return x.id === s.prev; })[0] : null;
+  var head = '<a class="back" href="#/subs">‹ 提出した答案</a><div class="muted small num">' + esc(t.uni + " " + t.fac + "学部") + "・" + md(s.at) + " 提出・" + s.ver + "回目・" + s.chars + "字" + (s.min ? "・" + s.min + "分" : "") + "</div><h1>" + esc(t.title) + "</h1>";
+  if (s.state === "wait") {
+    return head + '<div class="card"><span class="pill wait">添削中</span><p style="margin:8px 0 0">講師が確認してから返却します。返ってきたらホームに表示されます。</p></div>'
+      + "<h2>提出した答案</h2><div class=\"card\"><div class=\"essay\">" + esc(s.text || "（写真で提出しました）") + "</div></div>";
+  }
+  return head + reviewHtml(s, prev) + qaHtml(s)
+    + '<div style="margin-top:20px"><a class="btn block" href="#/write/' + s.task + '">この添削をふまえて書き直す</a>'
+    + '<p class="muted small" style="text-align:center;margin-top:8px">同じ課題を書き直すと、前回との違いが出ます。</p></div>';
+};
+AFTER.sub = function (id) {
+  var s = S.subs.filter(function (x) { return x.id === id; })[0];
+  if (s && s.state === "done" && !s.seen) { s.seen = true; api("seen", { sub: id }).catch(function () {}); renderTabs("sub"); }
+};
+
+/* ---------- 成長 ---------- */
+
+/** 総合点の推移（1本の折れ線。点は提出の順に等間隔。各点に課題名と点を出す） */
+function trendSvg(d) {
+  var w = 520, h = 190, l = 40, r = 22, t = 22, b = 26;
+  var x = function (i) { return d.length === 1 ? (l + (w - r)) / 2 : l + (w - l - r) * i / (d.length - 1); };
+  var y = function (v) { return t + (h - t - b) * (1 - v / 100); };
+  var grid = [0, 50, 100].map(function (v) {
+    return '<line x1="' + l + '" x2="' + (w - r) + '" y1="' + y(v) + '" y2="' + y(v) + '" stroke="#e6e2d8"/><text x="' + (l - 6) + '" y="' + (y(v) + 4) + '" text-anchor="end" font-size="11" fill="#6B7280">' + v + "</text>";
+  }).join("");
+  var pts = d.map(function (s, i) { return x(i) + "," + y(s.review.total); }).join(" ");
+  var dots = d.map(function (s, i) {
+    var last = i === d.length - 1;
+    return '<g><title>' + esc(md(s.at) + " " + taskOf(s.task).title + "（" + s.ver + "回目）" + s.review.total + "点") + '</title><circle cx="' + x(i) + '" cy="' + y(s.review.total) + '" r="12" fill="transparent"/>'
+      + '<circle cx="' + x(i) + '" cy="' + y(s.review.total) + '" r="' + (last ? 5 : 4) + '" fill="' + (s.ver > 1 ? "#C8A55A" : "#172642") + '" stroke="#fff" stroke-width="2"/>'
+      + '<text x="' + x(i) + '" y="' + (y(s.review.total) - 10) + '" text-anchor="middle" font-size="11.5" font-weight="700" fill="#1C2433">' + s.review.total + "</text>"
+      + '<text x="' + x(i) + '" y="' + (h - 8) + '" text-anchor="middle" font-size="10.5" fill="#6B7280">' + md(s.at) + "</text></g>";
+  }).join("");
+  return '<svg viewBox="0 0 ' + w + " " + h + '" width="100%" role="img" aria-label="総合点の推移">' + grid
+    + (d.length > 1 ? '<polyline points="' + pts + '" fill="none" stroke="#172642" stroke-width="2" stroke-linejoin="round"/>' : "") + dots + "</svg>"
+    + '<div class="muted small"><span style="color:#172642">●</span> 初回　<span style="color:#C8A55A">●</span> 書き直し</div>';
+}
+
+function growthHtml(subs) {
+  var d = done(subs);
+  if (!d.length) return '<div class="empty">添削が返ってくると、ここに推移が出ます。</div>';
+  var recent = d.slice(-3), early = d.slice(0, Math.max(0, d.length - 3));
+  var avg = function (list, k) {
+    if (!list.length) return null;
+    return list.reduce(function (a, s) { return a + ((s.review.scores.filter(function (x) { return x.k === k; })[0] || {}).lv || 0); }, 0) / list.length;
+  };
+  var html = "<h2>総合点の推移</h2><div class=\"card\">" + trendSvg(d) + "</div>";
+  html += "<h2>観点ごとの平均（直近3本）</h2><div class=\"card\">" + S.rubric.map(function (c) {
+    var a = avg(recent, c.k), e = avg(early, c.k);
+    return '<div class="hbar" title="' + esc(c.n) + " 直近 " + a.toFixed(1) + (e != null ? " ／ それ以前 " + e.toFixed(1) : "") + '"><span>' + esc(c.n) + '</span><span class="t"><i style="width:' + (a * 20) + '%"></i>' + (e != null ? '<u style="left:' + (e * 20) + '%"></u>' : "") + '</span><b class="num">' + a.toFixed(1) + "</b></div>";
+  }).join("") + (early.length ? '<div class="muted small"><span style="color:var(--gold)">┃</span> それ以前の平均</div>' : "") + "</div>";
+  var tags = tagCounts(d);
+  if (tags.length) {
+    var max = tags[0][1];
+    html += "<h2>くり返し指摘されていること</h2><div class=\"card\">" + tags.slice(0, 8).map(function (t) {
+      return '<div class="hbar"><span>' + esc(t[0]) + '</span><span class="t"><i style="width:' + (t[1] / max * 100) + '%"></i></span><b class="num">' + t[1] + "</b></div>";
+    }).join("") + '<div class="muted small">返却された ' + d.length + " 本のうち、指摘された回数</div></div>";
+  }
+  return html;
+}
+VIEW.growth = function () { return "<h1>成長</h1>" + growthHtml(S.subs); };
+
+/* ======================================================================
+ * 講師の画面
+ * ==================================================================== */
+
+var QF = "todo";
+VIEW.queue = function () {
+  if (!isStaff()) return VIEW.home();
+  var all = (S.all || []).slice().sort(byAt);
+  var list = QF === "todo" ? all.filter(function (s) { return s.raw !== "返却済"; }) : QF === "qa" ? all.filter(needsReply).reverse() : all.filter(function (s) { return s.raw === "返却済"; }).reverse();
+  var n = function (f) { return f === "todo" ? all.filter(function (s) { return s.raw !== "返却済"; }).length : f === "qa" ? all.filter(needsReply).length : ""; };
+  return "<h1>添削</h1><div class=\"chips\" style=\"margin-bottom:12px\">" + [["todo", "未返却"], ["qa", "質問に未返信"], ["done", "返却済み"]].map(function (f) {
+    return '<button class="chip ' + (QF === f[0] ? "on" : "") + '" data-act="qf" data-v="' + f[0] + '">' + f[1] + (n(f[0]) !== "" ? " " + n(f[0]) : "") + "</button>";
+  }).join("") + "</div>"
+    + (list.length ? '<div class="card" style="padding:4px 8px"><table class="q"><tr><th>生徒</th><th>課題</th><th class="hide-s">字数</th><th>提出</th><th>状態</th></tr>' + list.map(function (s) {
+      var t = taskOf(s.task);
+      var st = s.raw === "返却済" ? '<span class="pill ok num">' + (s.review ? s.review.total + "点" : "返却済") + "</span>" : s.raw === "AI下書き済" ? '<span class="pill gold">AI下書きあり</span>' : s.raw === "AIエラー" ? '<span class="pill new">AIエラー</span>' : '<span class="pill wait">AI待ち</span>';
+      return '<tr class="tap" data-act="open" data-id="' + s.id + '"><td><b>' + esc(s.name) + "</b></td><td>" + esc(t.title) + '<div class="muted small">' + esc(t.fac) + "・" + s.ver + '回目</div></td><td class="hide-s num">' + s.chars + (t.limit ? " / " + t.limit : "") + '</td><td class="num">' + md(s.at) + '<div class="muted small">' + ago(s.at) + "</div></td><td>" + st + "</td></tr>";
+    }).join("") + "</table></div>" : '<div class="empty">ありません。</div>');
+};
+function needsReply(s) { var q = s.qa || []; return q.length && q[q.length - 1].who === "生徒"; }
+
+var G = null;   // 編集中の添削
+function blankReview() {
+  return { scores: S.rubric.map(function (c) { return { k: c.k, lv: 3, why: "" }; }), summary: "", strengths: [], priorities: [], inline: [], outline: [], rewrite: "", tags: [], followup: [], next: "", teacher: "" };
+}
+VIEW.grade = function (id) {
+  var s = (S.all || []).filter(function (x) { return x.id === id; })[0];
+  if (!isStaff() || !s) return '<div class="empty">提出が見つかりません。</div>';
+  var t = taskOf(s.task);
+  if (!G || G.id !== id) G = { id: id, r: JSON.parse(JSON.stringify(s.review || s.draft || blankReview())), text: s.text, src: s.review ? "講師が保存した添削" : s.draft ? "AI の下書き" : "白紙" };
+  var hist = done((S.all || []).filter(function (x) { return x.uid === s.uid && x.id !== s.id; }));
+  var prev = hist.filter(function (x) { return x.id === s.prev; })[0];
+  var left = '<a class="back" href="#/queue">‹ 添削一覧</a><div class="muted small num">' + esc(t.uni + " " + t.fac + "学部") + "・" + md(s.at) + " 提出・" + s.ver + "回目" + (s.min ? "・" + s.min + "分" : "") + '</div><h1><a href="#/student/' + esc(s.uid) + '">' + esc(s.name) + "</a>｜" + esc(t.title) + "</h1>"
+    + '<details class="card"><summary><b>設問・課題文・出題のねらい</b></summary><div style="margin-top:10px">' + taskBody(t).replace('class="card"', "") + (t.aim ? "<h3>出題のねらい</h3><p>" + esc(t.aim) + "</p>" : "") + "</div></details>"
+    + (s.memo ? '<div class="card"><h3>生徒から</h3><p style="margin:0">' + esc(s.memo) + "</p></div>" : "")
+    + (hist.length ? '<details class="card"' + (prev ? " open" : "") + "><summary><b>これまでの添削（" + hist.length + "本）</b></summary><div style=\"margin-top:10px\">" + hist.slice(-4).reverse().map(function (x) {
+      return '<p class="small" style="margin-bottom:8px"><b class="num">' + md(x.at) + " " + esc(taskOf(x.task).title) + "（" + x.ver + "回目）" + x.review.total + "点</b>" + (x.id === s.prev ? ' <span class="pill gold">今回の前の版</span>' : "") + "<br>最優先：" + esc(x.review.priorities.map(function (p) { return p.t; }).join("／")) + '<br><span class="muted">弱点：' + esc((x.review.tags || []).join("、") || "なし") + "</span></p>";
+    }).join("") + "</div></details>" : "")
+    + '<div class="card"><div class="row" style="margin-bottom:8px"><h3 class="grow" style="margin:0">答案 <span class="muted small num">' + count(G.text) + (t.limit ? " / " + t.limit : "") + '字</span></h3><button class="btn ghost sm" data-act="pick">選んだ部分にコメント</button></div>'
+    + '<div class="essay" id="essay">' + markText(G.text, G.r.inline) + "</div>"
+    + ((s.photoUrls || []).length ? '<p class="small" style="margin-top:10px">原稿の写真：' + s.photoUrls.map(function (u, i) { return '<a target="_blank" rel="noopener" href="' + esc(u) + '">' + (i + 1) + "枚目</a>"; }).join("　") + "</p>" : "")
+    + "</div>" + (s.raw === "返却済" ? qaHtml(s) : "");
+  return '<div class="grade"><div>' + left + '</div><div class="ed" id="ed">' + editorHtml(s, t) + "</div></div>";
+};
+
+function editorHtml(s, t) {
+  var r = G.r, tot = calcTotal(r.scores, t.fac);
+  var ta = function (path, val, rows, ph) { return '<textarea rows="' + (rows || 2) + '" data-p="' + path + '" placeholder="' + (ph || "") + '">' + esc(val) + "</textarea>"; };
+  return '<div class="card stick" style="z-index:6"><div class="row"><div class="grow"><span class="muted small">総合（' + esc(t.fac) + '学部の配点）</span><div><b class="num" style="font-size:26px" id="g-total">' + tot.total + '</b> 点 <span class="band dark" id="g-band" style="width:28px;height:28px;font-size:14px">' + tot.band + "</span></div></div>"
+    + '<button class="btn ghost sm" data-act="ai" data-id="' + s.id + '">' + (s.draft ? "AIで作り直す" : "AIで下書き") + '</button><button class="btn ghost sm" data-act="saveR" data-id="' + s.id + '">保存</button><button class="btn sm" data-act="backR" data-id="' + s.id + '">' + (s.raw === "返却済" ? "直して再返却" : "返却する") + "</button></div>"
+    + '<div class="muted small">いま開いているのは：' + G.src + (s.aiNote ? "　AIメモ：" + esc(s.aiNote) : "") + "</div></div>"
+
+    + '<div class="card"><h3>観点ごとの評価</h3>' + S.rubric.map(function (c, i) {
+      var x = r.scores[i];
+      return '<div class="crit"><div class="hd"><b title="' + esc("5: " + c.lv5 + "\n3: " + c.lv3 + "\n1: " + c.lv1) + '">' + esc(c.n) + ' <span class="muted small num">配点' + (c.w[t.fac] || c.w["既定"]) + '</span></b><span class="lv">' + [1, 2, 3, 4, 5].map(function (n) { return '<button class="' + (x.lv === n ? "on" : "") + '" data-act="lv" data-i="' + i + '" data-v="' + n + '">' + n + "</button>"; }).join("") + "</span></div>"
+        + '<div class="muted small" style="margin:4px 0">' + esc(c["lv" + (x.lv >= 4 ? 5 : x.lv >= 2 ? 3 : 1)]) + "</div>" + ta("scores." + i + ".why", x.why, 2, "このレベルにした理由") + "</div>";
+    }).join("") + "</div>"
+
+    + '<div class="card"><h3>総評</h3>' + ta("summary", r.summary, 5) + '<label class="f">講師から一言（生徒の画面のいちばん上に出ます）</label>' + ta("teacher", r.teacher, 2) + "</div>"
+
+    + '<div class="card"><h3>直せばいちばん伸びるところ（3つまで）</h3>' + r.priorities.map(function (p, i) {
+      return '<div class="box"><input type="text" data-p="priorities.' + i + '.t" value="' + esc(p.t) + '" placeholder="見出し" style="font-size:14px;margin-bottom:6px">' + ta("priorities." + i + ".why", p.why, 2, "なぜ失点になるのか") + ta("priorities." + i + ".how", p.how, 3, "この答案のどこをどう直すのか") + '<button class="x" data-act="del" data-l="priorities" data-i="' + i + '">削除</button></div>';
+    }).join("") + (r.priorities.length < 3 ? '<button class="btn ghost sm" data-act="add" data-l="priorities">追加</button>' : "") + "</div>"
+
+    + '<div class="card"><h3>答案への書き込み</h3><p class="muted small">左の答案で文字をなぞって「選んだ部分にコメント」を押すと追加されます。</p>' + r.inline.map(function (c, i) {
+      return '<div class="box"><div class="row" style="margin-bottom:6px"><span class="cno ' + c.kind + '">' + (i + 1) + '</span><select data-p="inline.' + i + '.kind" style="width:auto;font-size:13px;padding:4px 8px"><option value="issue"' + (c.kind === "issue" ? " selected" : "") + '>内容・論理</option><option value="rule"' + (c.kind === "rule" ? " selected" : "") + '>表記・決まり</option><option value="good"' + (c.kind === "good" ? " selected" : "") + '>良い</option></select><span class="grow"></span><button class="x" data-act="del" data-l="inline" data-i="' + i + '">削除</button></div>'
+        + (c.q ? '<q class="small muted" style="font-family:var(--serif)">' + esc(c.q) + "</q>" : "") + ta("inline." + i + ".c", c.c, 2, "コメント") + ta("inline." + i + ".fix", c.fix, 2, "直すなら（任意）") + "</div>";
+    }).join("") + '<button class="btn ghost sm" data-act="add" data-l="inline">引用なしのコメントを追加</button></div>'
+
+    + '<div class="card"><h3>弱点タグ</h3><div class="chips">' + S.tags.map(function (g) { return '<button class="chip ' + (r.tags.indexOf(g) >= 0 ? "on" : "") + '" data-act="tag" data-v="' + esc(g) + '">' + esc(g) + "</button>"; }).join("") + "</div></div>"
+
+    + '<div class="card"><h3>良いところ（1行に1つ）</h3>' + ta("strengths", r.strengths.join("\n"), 3)
+    + '<label class="f">段落の役割（1行に1段落。「役割｜ひとこと」）</label>' + ta("outline", r.outline.map(function (o) { return o.role + (o.note ? "｜" + o.note : ""); }).join("\n"), 4)
+    + '<label class="f">書き直しの設計図</label>' + ta("rewrite", r.rewrite, 5)
+    + '<label class="f">次の1本で意識すること</label>' + ta("next", r.next, 2) + "</div>"
+
+    + (r.followup.length ? '<div class="card"><h3>前回までの指摘はどうなったか</h3>' + r.followup.map(function (f, i) {
+      return '<div class="box"><div class="row" style="margin-bottom:6px"><b class="grow">' + esc(f.tag) + '</b><select data-p="followup.' + i + '.state" style="width:auto;font-size:13px;padding:4px 8px">' + [["improved", "良くなった"], ["same", "変わらず"], ["worse", "後退"]].map(function (o) { return '<option value="' + o[0] + '"' + (f.state === o[0] ? " selected" : "") + ">" + o[1] + "</option>"; }).join("") + '</select><button class="x" data-act="del" data-l="followup" data-i="' + i + '">削除</button></div>' + ta("followup." + i + ".note", f.note, 2) + "</div>";
+    }).join("") + "</div>" : "");
+}
+
+/** 入力欄の内容を G.r に書き戻す（data-p="priorities.0.how" のような場所の名前で） */
+function onEdit(e) {
+  var p = e.target.getAttribute && e.target.getAttribute("data-p");
+  if (!p || !G) return;
+  var v = e.target.value;
+  if (p === "strengths") { G.r.strengths = v.split("\n").map(function (x) { return x.trim(); }).filter(String); return; }
+  if (p === "outline") { G.r.outline = v.split("\n").filter(function (x) { return x.trim(); }).map(function (x) { var a = x.split("｜"); return { role: a[0].trim(), note: (a[1] || "").trim() }; }); return; }
+  var path = p.split("."), o = G.r;
+  for (var i = 0; i < path.length - 1; i++) o = o[path[i]];
+  o[path[path.length - 1]] = v;
+  if (/\.kind$/.test(p)) redrawGrade();
+}
+document.addEventListener("input", onEdit);
+document.addEventListener("change", onEdit);
+function redrawGrade() {
+  var s = S.all.filter(function (x) { return x.id === G.id; })[0], y = window.scrollY;
+  $("ed").innerHTML = editorHtml(s, taskOf(s.task));
+  $("essay").innerHTML = markText(G.text, G.r.inline);
+  window.scrollTo(0, y);
+}
+function saveReview(id, back) {
+  if (back && !G.r.summary.trim()) { toast("総評が空です"); return; }
+  if (back && !confirm("この内容で生徒に返却します。よろしいですか？")) return;
+  api("saveReview", { sub: id, review: G.r, back: back }).then(function (res) {
+    if (res.status !== "ok") { toast(res.reason || "保存できませんでした"); return; }
+    return loadQueue().then(function () {
+      toast(back ? "返却しました" : "保存しました");
+      if (back) { G = null; location.hash = "#/queue"; } else { G.src = "講師が保存した添削"; redrawGrade(); }
+    });
+  }).catch(function () { toast("通信できませんでした"); });
+}
+
+VIEW.students = function () {
+  if (!isStaff()) return VIEW.home();
+  var rows = S.students.map(function (u) {
+    var subs = (S.all || []).filter(function (s) { return s.uid === u.uid; }), d = done(subs), last = d[d.length - 1];
+    return { u: u, n: subs.length, last: last, first: d[0], tags: tagCounts(d).slice(0, 2), at: subs.length ? subs.slice().sort(byAt).pop().at : "" };
+  }).filter(function (r) { return r.n; }).sort(function (a, b) { return a.at < b.at ? 1 : -1; });
+  return "<h1>生徒</h1>" + (rows.length ? '<div class="card" style="padding:4px 8px"><table class="q"><tr><th>生徒</th><th>提出</th><th>最新</th><th class="hide-s">初回から</th><th class="hide-s">くり返している弱点</th><th>最後の提出</th></tr>' + rows.map(function (r) {
+    var diff = r.last && r.first && r.last !== r.first ? r.last.review.total - r.first.review.total : null;
+    return '<tr class="tap" data-act="stu" data-id="' + esc(r.u.uid) + '"><td><b>' + esc(r.u.name) + '</b><div class="muted small">' + esc(r.u.target ? r.u.target + "学部志望" : "") + '</div></td><td class="num">' + r.n + '本</td><td class="num">' + (r.last ? r.last.review.total + "点" : "—") + '</td><td class="hide-s num">' + (diff == null ? "—" : '<span class="delta ' + (diff >= 0 ? "up" : "down") + '">' + (diff > 0 ? "+" : "") + diff + "</span>") + '</td><td class="hide-s small">' + esc(r.tags.map(function (t) { return t[0] + "×" + t[1]; }).join("、")) + '</td><td class="num">' + md(r.at) + "</td></tr>";
+  }).join("") + "</table></div>" : '<div class="empty">まだ提出がありません。</div>');
+};
+VIEW.student = function (uid) {
+  var u = S.students.filter(function (x) { return x.uid === uid; })[0];
+  if (!isStaff() || !u) return '<div class="empty">生徒が見つかりません。</div>';
+  var subs = (S.all || []).filter(function (s) { return s.uid === uid; }).sort(byAt).reverse();
+  return '<a class="back" href="#/students">‹ 生徒一覧</a><h1>' + esc(u.name) + ' <span class="muted small">' + esc(u.target ? u.target + "学部志望" : "") + "</span></h1>"
+    + '<div class="grade"><div>' + growthHtml(subs) + "</div><div><h2>講師メモ（生徒には見えません）</h2><div class=\"card\"><textarea id=\"note\" rows=\"4\">" + esc(u.note) + '</textarea><div class="right" style="margin-top:8px"><button class="btn sm" data-act="note" data-id="' + esc(uid) + '">保存</button></div></div>'
+    + "<h2>提出（" + subs.length + "本）</h2>" + subs.map(function (s) {
+      return '<a class="card tap" href="#/grade/' + s.id + '"><div class="row"><div class="grow"><b>' + esc(taskOf(s.task).title) + '</b><div class="muted small num">' + md(s.at) + "・" + s.ver + "回目・" + s.chars + "字</div></div>" + (s.raw === "返却済" && s.review ? '<b class="num">' + s.review.total + "点</b>" : '<span class="pill wait">未返却</span>') + "</div></a>";
+    }).join("") + "</div></div>";
+};
+
+/* ---------- 押したときの動き ---------- */
+var ACT = {
+  home: function () { location.hash = isStaff() ? "#/queue" : "#/home"; },
+  reset: function () { if (window.MOCK_RESET) window.MOCK_RESET(); },
+  fac: function (el) { FAC = el.getAttribute("data-v"); route(); },
+  qf: function (el) { QF = el.getAttribute("data-v"); route(); },
+  open: function (el) { location.hash = "#/grade/" + el.getAttribute("data-id"); },
+  stu: function (el) { location.hash = "#/student/" + encodeURIComponent(el.getAttribute("data-id")); },
+  cmt: function (el) {
+    var c = $("cmt-" + el.getAttribute("data-i"));
+    if (!c) return;
+    c.scrollIntoView({ behavior: "smooth", block: "center" });
+    c.classList.add("hit"); setTimeout(function () { c.classList.remove("hit"); }, 1600);
+  },
+  mode: function (el) {
+    W.mode = el.getAttribute("data-v");
+    Array.prototype.forEach.call(el.parentNode.children, function (b) { b.classList.toggle("on", b === el); });
+    $("w-text").hidden = W.mode !== "text"; $("w-photo").hidden = W.mode !== "photo";
+    updateCount();
+  },
+  timer: function (el) {
+    if (TICK) { stopTimer(); el.textContent = "再開"; return; }
+    el.textContent = "止める";
+    TICK = setInterval(function () { W.sec++; updateCount(); if (W.sec % 15 === 0) save("sr.draft." + W.task, { text: $("w-ta").value, memo: $("w-memo").value, sec: W.sec }); }, 1000);
+  },
+  submit: function (el) {
+    var t = taskOf(W.task), text = W.mode === "text" ? $("w-ta").value.trim() : "", n = count(text);
+    if (W.mode === "text" && n < 50) { toast("答案が短すぎます"); return; }
+    if (W.mode === "photo" && !W.photos.length) { toast("写真を選んでください"); return; }
+    var warn = W.mode === "text" && t.limit ? (n > t.limit ? "字数が上限を超えています（" + n + "字）。" : n < t.limit * 0.8 ? "字数が上限の8割に届いていません（" + n + " / " + t.limit + "字）。" : "") : "";
+    if (!confirm(warn + "この内容で提出します。提出後は直せません。")) return;
+    el.disabled = true; stopTimer();
+    api("submit", { task: W.task, text: text, photos: W.mode === "photo" ? W.photos : [], memo: $("w-memo").value, min: Math.round(W.sec / 60) }).then(function (res) {
+      if (res.status !== "ok") { toast(res.reason || "提出できませんでした"); el.disabled = false; return; }
+      save("sr.draft." + W.task, null);
+      return boot().then(function () { toast("提出しました"); location.hash = "#/sub/" + res.id; });
+    }).catch(function () { toast("通信できませんでした。もう一度お試しください"); el.disabled = false; });
+  },
+  ask: function (el) {
+    var id = el.getAttribute("data-id"), text = $("qa-ta").value.trim();
+    if (!text) return;
+    el.disabled = true;
+    api("ask", { sub: id, text: text }).then(function (res) {
+      if (res.status !== "ok") { toast(res.reason || "送れませんでした"); el.disabled = false; return; }
+      [S.subs, S.all || []].forEach(function (list) { var s = list.filter(function (x) { return x.id === id; })[0]; if (s) s.qa = (s.qa || []).concat([res.qa]); });
+      $("qa").insertAdjacentHTML("beforeend", '<div class="qa me"><small>' + esc(res.qa.name) + "・" + md(res.qa.at) + "</small>" + esc(res.qa.text) + "</div>");
+      $("qa-ta").value = ""; el.disabled = false;
+    }).catch(function () { toast("通信できませんでした"); el.disabled = false; });
+  },
+  lv: function (el) { G.r.scores[Number(el.getAttribute("data-i"))].lv = Number(el.getAttribute("data-v")); redrawGrade(); },
+  tag: function (el) { var v = el.getAttribute("data-v"), i = G.r.tags.indexOf(v); if (i >= 0) G.r.tags.splice(i, 1); else G.r.tags.push(v); el.classList.toggle("on"); },
+  add: function (el) {
+    var l = el.getAttribute("data-l");
+    G.r[l].push(l === "priorities" ? { t: "", why: "", how: "" } : { q: "", kind: "issue", c: "", fix: "" });
+    redrawGrade();
+  },
+  del: function (el) { G.r[el.getAttribute("data-l")].splice(Number(el.getAttribute("data-i")), 1); redrawGrade(); },
+  pick: function () {
+    var q = String(window.getSelection()).replace(/\d+$/, "").trim();
+    if (!q || q.indexOf("\n") >= 0 || G.text.indexOf(q) < 0) { toast("答案の中の、1つの段落の中の文字をなぞってから押してください"); return; }
+    G.r.inline.push({ q: q, kind: "issue", c: "", fix: "" });
+    window.getSelection().removeAllRanges(); redrawGrade();
+    var boxes = $("ed").querySelectorAll('[data-p="inline.' + (G.r.inline.length - 1) + '.c"]');
+    if (boxes[0]) boxes[0].focus();
+  },
+  saveR: function (el) { saveReview(el.getAttribute("data-id"), false); },
+  backR: function (el) { saveReview(el.getAttribute("data-id"), true); },
+  ai: function (el) {
+    if (!confirm("AI に下書きを作らせます。いま編集中の内容は下書きで置きかわります（1分ほどかかります）。")) return;
+    var id = el.getAttribute("data-id");
+    el.disabled = true; el.textContent = "作成中…";
+    api("aiDraft", { sub: id }).then(function (res) {
+      if (res.status !== "ok") { toast(res.reason || "作れませんでした"); el.disabled = false; el.textContent = "AIで下書き"; return; }
+      return loadQueue().then(function () { G = null; route(); toast("AI の下書きを読み込みました"); });
+    }).catch(function () { toast("通信できませんでした"); el.disabled = false; });
+  },
+  note: function (el) {
+    var uid = el.getAttribute("data-id"), text = $("note").value;
+    api("note", { uid: uid, text: text }).then(function (res) {
+      if (res.status === "ok") { S.students.filter(function (u) { return u.uid === uid; })[0].note = text; toast("保存しました"); } else toast(res.reason || "保存できませんでした");
+    });
+  }
+};
+document.addEventListener("click", function (e) {
+  var el = e.target.closest && e.target.closest("[data-act]");
+  if (el && ACT[el.getAttribute("data-act")]) ACT[el.getAttribute("data-act")](el, e);
+});
+
+start();
+</script>
+</body>
+</html>

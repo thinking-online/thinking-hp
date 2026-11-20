@@ -589,3 +589,29 @@
   from = "/test/*"
   to = "https://thinking-pdf-a4nxit.netlify.app/test/:splat"
   status = 200
+
+# ---------------------------------------------------------------------------
+# 小論文ポータル（THINKING 小論文ラボ）— /shoron/（LINEログインの会員限定・noindex）
+# 設計: shoron/開発ガイド.md
+# ---------------------------------------------------------------------------
+[[headers]]
+  for = "/shoron/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+[[headers]]
+  for = "/shoron/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+[[headers]]
+  for = "/shoron/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+[[redirects]]
+  from = "/shoron"
+  to = "/shoron/"
+  status = 301
+[[redirects]]
+  from = "/shoron/gas/*"
+  to = "/shoron/"
+  status = 404
+  force = true

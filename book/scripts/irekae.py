@@ -15,6 +15,12 @@ assert re.fullmatch(r"[0-9]{2}", A) and re.fullmatch(r"[0-9]{2}", B) and A != B 
 sys.path.insert(0, HERE)
 import v6 as F
 A6, B6 = F.NEW.get(A), F.NEW.get(B)   # 35個の版での番号（入れかえる前に調べておく）
+HOST = lambda k: k not in F.ABSORB and k not in F.TO_COLUMN   # 35個の版で、1つの項目として立っているか
+if not (HOST(A) and HOST(B)):
+    # 片方が、35個の版ではほかの項目にまとめられている（またはコラム）。その時、35個の版の番号は動かないので、
+    # 35個の版の番号で書いてある所（目次の言葉、言葉の入れかえ、コラムの置き場所、足しの文）は、直さない。
+    # かわりに、章の並び（GROUPS）の中の番号を、立っているほうの新しい番号に直す
+    A6 = B6 = None
 LOG = []
 
 
@@ -120,6 +126,8 @@ def sets(t):
 
 def v6py(t):
     t = sets(t)
+    if HOST(A) != HOST(B):   # 章の並びの中の番号（立っている項目の番号が変わる）
+        t = block(t, "GROUPS = [", "\n]", lambda s: sub(s, r'"(?P<n>[0-9]{2})"'))
     t = block(t, "ABSORB = {", "}", lambda s: sub(s, r'"(?P<n>[0-9]{2})"'))
     t = block(t, "TO_COLUMN = {", "}", lambda s: sub(s, r'"(?P<n>[0-9]{2})"'))
     if A6 and B6 and A6 != B6:   # 35個の版の番号で書いてある所（目次の言葉、言葉の入れかえ）

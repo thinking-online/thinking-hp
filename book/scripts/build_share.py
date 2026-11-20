@@ -270,20 +270,32 @@ footer{color:var(--sub);font-size:12.5px}
 
 
 def mokuji_html():
+    """入口のページの目次。1行の形（scripts/mokuji1.py）の言葉を使う。左が、やらないこと。矢印の先が、かわりにやること。"""
+    import mokuji1 as M1
     out = []
-    def item(no, t, o):
-        return "<li><b>%s</b>%s<span>→　%s</span></li>" % (no, esc(t), esc(o))
-    L = [item(kk, K.CH1_MOKUJI[kk][1], K.CH1_MOKUJI[kk][3]) for kk in sorted(K.CH1_MOKUJI)]
-    out.append('<details><summary>第1章　%s（01〜06番）</summary><ul class="moku">%s</ul></details>' % (esc(K.CH1_TITLE), "".join(L)))
-    for num, fuda, title, sub, groups in V.CHAPTERS:
+    for num, fuda, title, groups in M1.chapters():
         L = []
         ks = [nn for _, items in groups for nn in items]
         for name, items in groups:
             if name:
                 L.append('<li class="g">%s</li>' % esc(name))
-            L += [item(nn, V.ITEMS[nn]["t"], V.ITEMS[nn]["o"]) for nn in items]
+            L += ["<li><b>%s</b>%s<span>→　%s</span></li>" % (nn, esc(M1.pair(nn)[0]), esc(M1.pair(nn)[1])) for nn in items]
         out.append('<details><summary>第%d章　【%s】%s（%s〜%s番）</summary><ul class="moku">%s</ul></details>' % (num, esc(fuda), esc(title), ks[0], ks[-1], "".join(L)))
     return "".join(out)
+
+
+def mokuji_page_html():
+    """読むページ（巻頭ページ）に入れる目次。本の目次と同じ並びで、1行の形。"""
+    import mokuji1 as M1
+    L = ['<section class="toc"><h2>目次</h2>'] + ['<p class="line">%s</p>' % esc(l) for l in M1.MAE]
+    for num, fuda, title, groups in M1.chapters():
+        L.append('<p class="ch">第%d章　【%s】%s</p>' % (num, esc(fuda), esc(title)))
+        for name, items in groups:
+            if name:
+                L.append('<p class="grp2">■ %s</p>' % esc(name))
+            L += ['<div class="it"><b>%s</b><span><span class="t">%s</span><br><span class="xo">→　%s</span></span></div>' % (nn, esc(M1.pair(nn)[0]), esc(M1.pair(nn)[1])) for nn in items]
+    L += ['<p class="line">%s</p>' % esc(a % M1.N_ALL if "%d" in a else a) for a in M1.ATO]
+    return "".join(L) + "</section>"
 
 
 def index_inner(downloads):
@@ -382,8 +394,8 @@ PARTS = [  # (記号, 題, 中身の説明)
     ("column", "コラム候補", "章の間に入れるコラム"),
     ("owari", "おわりに", "おわりに、巻末のページ"),
 ]
-READY = {"kantou": "2026/11/20", "hajimeni": "2026/11/20", "ch1": "2026/11/20", "ch2": "2026/11/20", "ch3": "2026/11/20", "ch4": "2026/11/20", "ch5": "2026/11/20", "ch6": "2026/11/20"}   # 読める部分 → いつの時点か
-UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第6章を掲載しました。")]   # 新しいものを、下に足していく
+READY = {"kantou": "2026/11/20", "hajimeni": "2026/11/20", "ch1": "2026/11/20", "ch2": "2026/11/20", "ch3": "2026/11/20", "ch4": "2026/11/20"}   # 読める部分 → いつの時点か
+UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第4章を掲載しました。")]   # 新しいものを、下に足していく
 PART_CSS = """
 .qpage{text-align:left}
 .qpage .pr{font-size:14.5pt;font-weight:900;line-height:1.75;text-align:left;margin:0 !important}
@@ -394,6 +406,7 @@ figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
 .pintro{margin:6mm 0 0;padding:5mm 6mm;background:#f5f7fa;border-radius:8px}
 .pintro h4{margin-top:0}
 .st{grid-template-columns:20mm 1fr}
+.toc .grp2{font-size:9.5pt;font-weight:700;color:#555;margin:3mm 0 1mm}
 """
 
 
@@ -448,7 +461,7 @@ def part_bodies():
         if kind == "cover":
             continue
         if kind == "toc":
-            out["kantou"].append(("mokuji", "目次", BP.toc_html().replace('<p class="line">45を、1枚に</p>', '<p class="line">%dを、1枚に</p>' % n_all)))
+            out["kantou"].append(("mokuji", "目次", mokuji_page_html()))
         elif kind == "text":
             key = "kantou" if name.startswith("10秒") else "hajimeni" if name in ("はじめに", "この本の使い方") else "owari"
             out[key].append(("t%d" % len(out[key]), name.replace("巻末　", "巻末｜"), BP.text_html(md)))
@@ -532,7 +545,7 @@ def index_now(names):
 <p class="eyebrow">ご確認用</p>
 <h1>%s<small>（仮題）</small></h1>
 <p class="by">%s　／　%s 時点</p>
-<p class="lead">原稿を、できた所から、このページに置いていきます。今は、巻頭ページから第6章までを、お読みいただけます。第7章、コラム、おわりには、仕上げている途中です。11月中に、誤字の確認まで含めて、全体を仕上げます。</p>
+<p class="lead">原稿を、できた所から、このページに置いていきます。今は、巻頭ページから第4章までを、お読みいただけます。第5章から先と、コラム、おわりには、仕上げている途中です。11月中に、誤字の確認まで含めて、全体を仕上げます。</p>
 </header>
 
 <section id="genko">

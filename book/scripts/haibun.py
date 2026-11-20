@@ -14,7 +14,7 @@ import tate_model as M
 
 ROOT = os.path.dirname(HERE)
 MAE = os.path.join(ROOT, "manuscript", "本文", "v4", "詰める前")
-PILLAR = {"07", "21", "29", "34", "37", "39"}
+PILLAR = {"07", "21", "30", "35", "38", "40"}
 HEAD, OWARI, KOMA, R, W = 4, 11, 6, 16, 40
 
 
@@ -64,7 +64,7 @@ def warn(kk, b):
         if b.count(w) > old.count(w):
             out.append("増えた言葉：" + w)
     for m in re.finditer(r"(\d{2})番", b):
-        if not ("01" <= m.group(1) <= "45") or m.group(1) == kk:
+        if not ("01" <= m.group(1) <= "46") or m.group(1) == kk:
             out.append("番号がおかしい：" + m.group(0))
     if b.count("==") % 2:
         out.append("==が、対になっていない")

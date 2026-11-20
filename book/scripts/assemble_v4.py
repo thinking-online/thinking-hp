@@ -201,7 +201,7 @@ def all_items():
 def check():
     ng = 0
     ks = all_items()
-    if ks != ["%02d" % k for k in range(7, 46)]:
+    if ks != ["%02d" % k for k in range(7, 47)]:   # 2026-11-20：46個になった
         print("項目の並びが、07〜45になっていない"); ng += 1
     for kk in ks:
         ttl, steps, king = sheet(kk)

@@ -16,7 +16,7 @@
 `<年度フォルダ>/src/answer.pdf`・`ans-*.png`・`work/ref_key.md`（出版元の解説・全訳。著作物なので写さない）。全訳・解説はすべて自分のオリジナル。
 
 ## 書き方
-- 設問ごと：id, type, answer, answer_display, points（マーク "1【推定】"、整序・記述・抜き出し "3【推定】"）, checked（"参考解答・独立解答と一致"。確定解答のメモに例外があればそれに従う）, target, intent, evidence（loc＝第n段落第m文／発話n、英語は原則1文以内、ja、point）, steps（読む→気づく→絞る→確かめる）, choices（全選択肢に ja/ok/why、不正解には who）, miss_types（A 前後一文の手がかり／B 別の箇所・人物／C 向き・程度・数字／D 字面・連想／E 文の骨格・語数）。
+- 設問ごと：id, type, answer, answer_display, points（マーク "1【推定】"、整序・記述・抜き出し "3【推定】"）, checked（"市販の解答・THINKINGの解答と一致"。確定解答のメモに例外があればそれに従う）, target, intent, evidence（loc＝第n段落第m文／発話n、英語は原則1文以内、ja、point）, steps（読む→気づく→絞る→確かめる）, choices（全選択肢に ja/ok/why、不正解には who）, miss_types（A 前後一文の手がかり／B 別の箇所・人物／C 向き・程度・数字／D 字面・連想／E 文の骨格・語数）。
 - 整序・記述・抜き出しは answer/examples/ng（見本どおり）。不要語・加える語・解答用紙に印刷済みの語・空所の外の語を必ず明示。
 - 正誤判定は1文ずつ別の設問にし、choices は T と F の2つ。問題文の英語は1回だけ引用（英語の量の制限があるため、長い文は日本語訳＋決め手の語句だけでよい）。
 - 大問の頭：source（「〇〇, 20xx年m月d日の記事に基づく（大学の冊子の表記 “Adapted from …” による）」。会話文は「オリジナルの会話文（大学の冊子の表記 “Original text” による）」。書籍・報告書などはその表記に合わせる）, body_words（本文の概算語数）, lead, identity, identity_note, types, types_note, map_flow, map, map_note, core（構文が決め手の文だけ0〜2個）, questions_lead, questions, translation（段落・発話ごとに full＋gist）。

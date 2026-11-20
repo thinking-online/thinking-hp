@@ -80,17 +80,17 @@ for y,d in Y.items():
     b=b.replace('"total_points": "73【推定】"','"total_points": "%s"'%d['total'])
     # answer notes
     an_s=b.index('"answer_notes": ['); an_e=b.index('],',an_s)+2
-    notes=["※ 大学はこの年度の解答を公表していません。全%d設問の正解は、THINKING が解答を見ずに解いた答えと市販の解答を1問ずつ突き合わせて決めました。"%d['n']]
+    notes=["※ 大学はこの年度の解答を公表していません。全%d設問の正解は、市販の解答と、THINKINGで別に解いた答えを1問ずつ照合して決めました。"%d['n']]
     if d['notes_extra']: notes.append("※ "+d['notes_extra'])
     notes+=["※ 整序・記述の不要語・加える語・印刷済みの語は、各設問の解説で示しています。","※ 配点は大学が公表していないため、すべてTHINKINGの【推定】です（マーク各1点・記述各3点）。"]
     b=b[:an_s]+'"answer_notes": '+pprint.pformat(notes,width=200)+','+b[an_e:]
     # sources
     so_s=b.index('"sources": ['); so_e=b.index('"copyright"')
-    src=[{"name":"大学公表の解答例","status":"公表なし","note":"%d年度の解答は大学から公表されていない。THINKING の独立解答と市販の解答を照合して決定。%s"%(y,d['notes_extra'])},
+    src=[{"name":"大学公表の解答例","status":"公表なし","note":"%d年度の解答は大学から公表されていない。市販の解答と、THINKINGで別に解いた答えを照合して決定。%s"%(y,d['notes_extra'])},
          {"name":"配点","status":"【推定】","note":"大学非公表。マーク各1点・記述各3点としてTHINKINGが推定。"},
          {"name":"試験時間","status":"要確認","note":"90分。募集要項で確認してください。"}]
     b=b[:so_s]+'"sources": '+pprint.pformat(src,width=200,sort_dicts=False)+',\n    '+b[so_e:]
-    b=b.replace("大学はこの年度の解答を公表していません。正解は、THINKING の2人が別々に解いた答えと、市販の解答を突き合わせて決めました（大問IVは市販の解答にも載っていないため、2人の答えと本文の根拠で決めています）。","大学はこの年度の解答を公表していません。正解は、THINKING が解答を見ずに解いた答えと、市販の解答を突き合わせて決めました。")
+    b=b.replace("大学はこの年度の解答を公表していません。正解は、市販の解答と、THINKINGで別に解いた答えを照合して決めました（大問IVは市販の解答にも載っていないため、2人の答えと本文の根拠で決めています）。","大学はこの年度の解答を公表していません。正解は、市販の解答と、THINKINGで別に解いた答えを照合して決めました。")
     out=t+b
     yy=str(y)[2:]
     open(f'{S}/wsc{yy}/content/data/waseda-shogaku_{y}.py','w',encoding='utf-8').write(out)

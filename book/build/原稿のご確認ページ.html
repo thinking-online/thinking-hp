@@ -63,6 +63,8 @@ footer{color:var(--sub);font-size:12.5px}
 .parts .act{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
 .parts .wait{font-size:13px;font-weight:700;color:var(--sub);border:1px dashed var(--line);border-radius:8px;padding:6px 14px;white-space:nowrap}
 .parts li.off .nm{color:var(--sub)}
+.ver .wait{font-size:13px;font-weight:700;color:var(--sub);border:1px dashed var(--line);border-radius:8px;padding:6px 14px;white-space:nowrap}
+.ver .dt{font-size:12px;color:var(--sub);font-variant-numeric:tabular-nums}
 .log{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
 .log li{display:grid;grid-template-columns:6.4em 1fr;gap:10px;font-size:14px}
 .log b{font-variant-numeric:tabular-nums;color:var(--accent)}
@@ -80,9 +82,18 @@ html.open,html.open body{overflow:hidden}
 <p class="lead">原稿を、できた所から、このページに置いていきます。今は、巻頭ページから第4章までを、お読みいただけます。第5章から先と、コラム、おわりには、仕上げている途中です。11月中に、誤字の確認まで含めて、全体を仕上げます。</p>
 </header>
 
+<section id="mikata">
+<h2>見方は、2つあります</h2>
+<p class="note">イラスト付きの原稿をWordで保存するか、このページで文字だけを読むかを、お選びください。中身の文は、同じです。</p>
+<div class="two">
+<div class="ver"><h3>イラスト付きで見る（Word）</h3><p>図とイラストのラフ案が入った原稿です。Wordのファイルとして、保存できます。</p><div class="btns"><span class="wait">準備中</span></div></div>
+<div class="ver"><h3>文字だけで読む</h3><p>このページの中で、部分ごとに読めます。図とイラストは、入っていません。</p><div class="btns"><a class="btn" href="#genko">読む所を選ぶ</a></div></div>
+</div>
+</section>
+
 <section id="genko">
-<h2>原稿</h2>
-<p class="note">本の順番に並べています。「読む」を押すと、その部分が開きます。今は、文字だけを載せています。図とイラストは、入っていません。</p>
+<h2>文字だけで読む</h2>
+<p class="note">本の順番に並べています。「読む」を押すと、その部分が開きます。</p>
 <ul class="parts"><li><span class="nm">巻頭ページ</span><span class="ds">表紙・タイトルの案、「10秒だけ、付き合ってください」</span><span class="act"><a class="btn" href="kantou.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li><span class="nm">はじめに</span><span class="ds">はじめに、この本の使い方</span><span class="act"><a class="btn" href="hajimeni.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li><span class="nm">第1章　頭のいい人は、「ズレた努力」をしない。【最初に読む、6つの絶対法則】</span><span class="ds">01〜06番</span><span class="act"><a class="btn" href="ch1.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li><span class="nm">第2章　【インプット】頭のいい人は、「入れるだけ」で終わらない</span><span class="ds">07〜15番　理解編・暗記編</span><span class="act"><a class="btn" href="ch2.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li><span class="nm">第3章　【アウトプット】</span><span class="ds">16〜25番　問題の解き方編・復習の仕方編</span><span class="act"><a class="btn" href="ch3.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li><span class="nm">第4章　【計画】</span><span class="ds">26〜30番</span><span class="act"><a class="btn" href="ch4.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li class="off"><span class="nm">第5章　【集中】</span><span class="ds"></span><span class="act"><span class="wait">準備中</span></span></li><li class="off"><span class="nm">第6章　【モチベ】</span><span class="ds"></span><span class="act"><span class="wait">準備中</span></span></li><li class="off"><span class="nm">第7章　【アップデート】</span><span class="ds"></span><span class="act"><span class="wait">準備中</span></span></li><li class="off"><span class="nm">コラム候補</span><span class="ds">章の間に入れるコラム</span><span class="act"><span class="wait">準備中</span></span></li><li class="off"><span class="nm">おわりに</span><span class="ds">おわりに、巻末のページ</span><span class="act"><span class="wait">準備中</span></span></li></ul>
 </section>
 

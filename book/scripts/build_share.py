@@ -468,6 +468,10 @@ PARTS = [  # (記号, 題, 中身の説明)
 READY = {"kantou": "2026/11/20", "hajimeni": "2026/11/20", "ch1": "2026/11/20", "ch2": "2026/11/20", "ch3": "2026/11/20", "ch4": "2026/11/20"}   # 読める部分 → いつの時点か
 UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第4章と、書名・項目の言葉の案のページを掲載しました。")]
 # あわせて見てもらう資料（記号, 題, 説明, 作るスクリプト, できるファイル）。3つとも、今の項目の数に合わせて作り直す
+# イラスト付きの原稿（Word）。著者はGoogleドキュメントで書いている。共有のリンクが決まったら、ここに入れる（空の間は、「準備中」と出る）
+#   open … ブラウザで開くリンク（Googleドキュメントの共有リンク。または、ドライブに置いたWordファイルのリンク）
+#   save … Wordのファイルとして保存するリンク（Googleドキュメントなら https://docs.google.com/document/d/【ID】/export?format=docx）
+WORD = dict(open="", save="", date="2026/11/20")
 SHIRYO = [
     ("shomei", "書名の方向性　3案", "表紙の見本と、その書名にした時の中身を、3つの方向で比べます", "build_title3.py", "書名の方向性_3案.html"),
     ("kotoba", "やらない言葉の3パターン", "項目それぞれに、「やらない言葉」の案を3つずつ並べています", "build_sanpattern.py", "やらない言葉_3パターン.html"),
@@ -610,10 +614,25 @@ LIST_CSS = """
 .parts .act{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
 .parts .wait{font-size:13px;font-weight:700;color:var(--sub);border:1px dashed var(--line);border-radius:8px;padding:6px 14px;white-space:nowrap}
 .parts li.off .nm{color:var(--sub)}
+.ver .wait{font-size:13px;font-weight:700;color:var(--sub);border:1px dashed var(--line);border-radius:8px;padding:6px 14px;white-space:nowrap}
+.ver .dt{font-size:12px;color:var(--sub);font-variant-numeric:tabular-nums}
 .log{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
 .log li{display:grid;grid-template-columns:6.4em 1fr;gap:10px;font-size:14px}
 .log b{font-variant-numeric:tabular-nums;color:var(--accent)}
 """
+
+
+def word_buttons():
+    """イラスト付きの原稿（Word）のボタン。リンクがまだない間は、「準備中」。"""
+    ext = ' target="_blank" rel="noopener"'
+    L = []
+    if WORD["save"]:
+        L.append('<a class="btn" href="%s"%s>Wordで保存する</a>' % (html.escape(WORD["save"]), ext))
+    if WORD["open"]:
+        L.append('<a class="btn%s" href="%s"%s>ブラウザで開く</a>' % (" sub" if L else "", html.escape(WORD["open"]), ext))
+    if not L:
+        return '<div class="btns"><span class="wait">準備中</span></div>'
+    return '<div class="btns">%s</div><p class="dt">%s 時点</p>' % ("".join(L), WORD["date"])
 
 
 def index_now(names):
@@ -639,9 +658,18 @@ def index_now(names):
 <p class="lead">原稿を、できた所から、このページに置いていきます。今は、巻頭ページから第4章までを、お読みいただけます。第5章から先と、コラム、おわりには、仕上げている途中です。11月中に、誤字の確認まで含めて、全体を仕上げます。</p>
 </header>
 
+<section id="mikata">
+<h2>見方は、2つあります</h2>
+<p class="note">イラスト付きの原稿をWordで保存するか、このページで文字だけを読むかを、お選びください。中身の文は、同じです。</p>
+<div class="two">
+<div class="ver"><h3>イラスト付きで見る（Word）</h3><p>図とイラストのラフ案が入った原稿です。Wordのファイルとして、保存できます。</p>%s</div>
+<div class="ver"><h3>文字だけで読む</h3><p>このページの中で、部分ごとに読めます。図とイラストは、入っていません。</p><div class="btns"><a class="btn" href="#genko">読む所を選ぶ</a></div></div>
+</div>
+</section>
+
 <section id="genko">
-<h2>原稿</h2>
-<p class="note">本の順番に並べています。「読む」を押すと、その部分が開きます。今は、文字だけを載せています。図とイラストは、入っていません。</p>
+<h2>文字だけで読む</h2>
+<p class="note">本の順番に並べています。「読む」を押すと、その部分が開きます。</p>
 <ul class="parts">%s</ul>
 </section>
 
@@ -666,7 +694,7 @@ def index_now(names):
 
 <footer>このページは、ご確認用にお送りしているものです。</footer>
 </div>
-""" % (FONT, INDEX_CSS, LIST_CSS, esc(TITLE), esc(K.AUTHOR), max(READY.values()), "".join(rows), 6 + len(V.ITEMS),
+""" % (FONT, INDEX_CSS, LIST_CSS, esc(TITLE), esc(K.AUTHOR), max(READY.values()), word_buttons(), "".join(rows), 6 + len(V.ITEMS),
        "".join('<li><span class="nm">%s</span><span class="ds">%s</span><span class="act"><a class="btn" href="%s.html">見る</a></span></li>' % (esc(a), esc(b), k) for k, a, b, _, _ in SHIRYO),
        log, mokuji_html())
 

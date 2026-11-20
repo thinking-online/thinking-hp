@@ -2,9 +2,9 @@
 # 07〜45番の本文を、行で数える（1項目ずつ詰める時の道具）。
 #   python3 -I scripts/haibun.py 10      → 10番の、小見出しごとの行、ページ、3STEPとまとめ、気をつける所
 #   python3 -I scripts/haibun.py         → 全部の一覧（詰める前と、今）
-# 数え方：A5・縦書き・1行40字・1ページ16行。項目の頭3行＋本文＋終わり11行（文字の3STEP 5行、端的なまとめ 4行、前に1行ずつ空き）。
+# 数え方：A5・縦書き・1行40字・1ページ16行。項目の頭4行（題と、「かわりに」の行）＋本文＋終わり11行（文字の3STEP 5行、端的なまとめ 4行、前に1行ずつ空き）。
 # 本当のページは、組んで数える：python3 -I scripts/build_tate_book.py new --nopdf
-# 目安：柱の項目は6ページ（本文82行まで）、ほかは5ページ（本文66行まで）。
+# 目安：柱の項目は6ページ（本文81行まで）、ほかは5ページ（本文65行まで）。
 # 配分：問い（約12行）→ 理由（1つ。約10行）→ やり方（本文の半分以上。29行目までに始める）→ つまずく所（1〜2つ）。
 import math, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -15,7 +15,7 @@ import tate_model as M
 ROOT = os.path.dirname(HERE)
 MAE = os.path.join(ROOT, "manuscript", "本文", "v4", "詰める前")
 PILLAR = {"07", "09", "17", "19", "21", "29", "34", "37", "39"}
-HEAD, OWARI, KOMA, R, W = 3, 11, 6, 16, 40
+HEAD, OWARI, KOMA, R, W = 4, 11, 6, 16, 40
 
 
 def limit(kk):

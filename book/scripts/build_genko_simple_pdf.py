@@ -57,7 +57,7 @@ def body_html(lines, k):
             flush()
             t = m.group(2)
             skip = t in SKIP
-            if not skip and t not in ("本文", "章最初のページ"):
+            if not skip and t not in ("本文", "章最初のページ", "しないこと、すること"):
                 out.append('<p class="lab">%s</p>' % esc(t))
             continue
         if skip:
@@ -132,7 +132,7 @@ def main():
         xo = ""
         if k == "item":
             it = ITEMS[title[:2]]
-            xo = '<p class="xo">×　%s<br>○　%s</p>' % (esc(it["x"]), esc(it["o"]))
+            xo = ""   # 項目の頭は、台本の「しないこと、すること」の2行が、そのまま出る
         out.append('<section class="%s" id="s%d"><h1>%s</h1>%s%s</section>' % (k, i, esc(title), xo, body_html(rest.split("\n"), k)))
     out.append("</body></html>")
     os.makedirs(os.path.join(ROOT, "build"), exist_ok=True)

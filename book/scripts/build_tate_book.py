@@ -125,12 +125,12 @@ def md_vt(md, merge=True, hook=False):
 
 
 # ---------------------------------------------------------------- ブロック
-def head(no, pill, title, sub=None):
+def head(no, pill, title, sub=None, sublab="○"):
     n = len(title)
     size = "t25" if n <= 20 else "t22" if n <= 23 else "t19"
     return ('<div class="blk vhead%s"><div class="vlab">%s<span class="pill">%s</span></div><div class="vttl %s">%s</div>%s</div>'
             % (" vhead4" if sub else "", ('<b class="vno">%s</b>' % no) if no else "", vt(pill), size, vt(title),
-               ('<div class="vsub"><b>○</b>　%s</div>' % vt(sub)) if sub else ""))
+               ('<div class="vsub"><b>%s</b>　%s</div>' % (sublab, vt(sub))) if sub else ""))
 
 
 def ill(text):
@@ -211,7 +211,8 @@ def item_new(kk):
     it = V.ITEMS[kk]
     ttl, steps, king = B.sheet(kk)
     one, pts, dakara, toi = B.matome(kk)
-    return (head(kk, "頭のいい人が絶対やらないこと", it["t"]) + md_vt(B.body(kk), hook=True)
+    x, o = it.get("pair") or (it["t"], it["o"])
+    return (head(kk, "頭のいい人は、これをしない", x, o, "かわりに") + md_vt(B.body(kk), hook=True)
             + (koma_blk(B.koma(kk)) if KOMA_ON else "") + owari_blk(steps, king, one, dakara, toi) + hito_blk(kk))
 
 

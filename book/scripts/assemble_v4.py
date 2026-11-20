@@ -117,6 +117,16 @@ def matome(kk):
 # 項目の終わりの形。"moji"：文字の3STEP（見出しだけ）と、端的なまとめ（一言 → だから → 問い）。
 # "sheet"：前の形（STEPの声つきのシート、できた基準、まとめの3つ）。声と3つの文は、v4_data.py に残してある。
 OWARI = "moji"
+# 項目の頭の形。"pair"：頭のいい人は「×の題」をしない。かわりに「○」をする。の2行（2026-11-20、著者の指示）。
+# "shitsumon"：前の形（質問ページ。「頭のいい人が絶対やらないこと／「…」／じゃあ、何をするの？」）。
+ATAMA = "pair"
+
+
+def pair_lines(it):
+    """（しない, する）の2行。題や○の中の「」は、『』にする。v4_data の pair=(しない, する) があれば、それを使う。"""
+    x, o = it.get("pair") or (it["t"], it["o"])
+    q = lambda s: s.replace("「", "『").replace("」", "』")
+    return ["頭のいい人は、「%s」をしない。" % q(x), "かわりに、「%s」をする。" % q(o)]
 
 
 def item_md(kk):
@@ -124,8 +134,11 @@ def item_md(kk):
     c = koma(kk)
     ttl, steps, king = sheet(kk)
     one, pts, dakara, toi = matome(kk)
-    L = ["# %s　%s" % (kk, it["t"]), "", "## 質問ページ", "",
-         "頭のいい人が絶対やらないこと", "「%s」" % it["q"], "じゃあ、何をするの？", "", "## 本文", ""]
+    if ATAMA == "pair":
+        L = ["# %s　%s" % (kk, it["t"]), "", "## しないこと、すること", ""] + pair_lines(it) + ["", "## 本文", ""]
+    else:
+        L = ["# %s　%s" % (kk, it["t"]), "", "## 質問ページ", "",
+             "頭のいい人が絶対やらないこと", "「%s」" % it["q"], "じゃあ、何をするの？", "", "## 本文", ""]
     b = body(kk)
     b = re.sub(r"^### ", "#### ", b, flags=re.M)
     b = re.sub(r"^## ", "### ", b, flags=re.M)

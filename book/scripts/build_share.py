@@ -284,6 +284,77 @@ def mokuji_html():
     return "".join(out)
 
 
+MOKUJI_CSS = """
+/* 並べ方：上に題。その下に、本の順番で1列。1項目は1行で、左に「やらないこと」、右に「かわりにやること」。せまい画面では、右を下に回す */
+:root{--bg:#f3f5f9;--paper:#ffffff;--ink:#15181f;--sub:#566070;--line:#d9dee7;--accent:#15467e;--tint:#e8eff8;--ng:#6b7482;
+  --display:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;--body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#10141b;--paper:#181e28;--ink:#e9edf3;--sub:#a3adbb;--line:#2c3542;--accent:#8ab6ee;--tint:#1f2a3a;--ng:#9aa5b3;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#10141b;--paper:#181e28;--ink:#e9edf3;--sub:#a3adbb;--line:#2c3542;--accent:#8ab6ee;--tint:#1f2a3a;--ng:#9aa5b3;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.8;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-block:30px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.back{display:inline-block;margin:0 0 16px;font-size:14px;font-weight:700;color:var(--accent);text-decoration:none}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(26px,5.4vw,36px);line-height:1.4;margin:0 0 4px}
+.by{color:var(--sub);font-size:13.5px;margin:0 0 22px}
+.sheet{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:8px 24px 20px}
+.cols{display:grid;grid-template-columns:2.4em minmax(0,1fr) 1.6em minmax(0,1.15fr);gap:0 8px;position:sticky;top:env(safe-area-inset-top,0px);background:var(--paper);padding:12px 0 8px;border-bottom:2px solid var(--accent);font-size:12.5px;font-weight:700;z-index:2}
+.cols .x{grid-column:2;color:var(--ng)} .cols .o{grid-column:4;color:var(--accent)}
+.fm{margin:14px 0 0;padding:0;list-style:none;font-size:14.5px}
+.fm li{padding:5px 0;border-bottom:1px dashed var(--line)}
+.ch{margin:26px 0 2px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.ch .no{font-family:var(--display);font-weight:700;font-size:15px;color:var(--accent);white-space:nowrap}
+.ch .fd{font-size:12px;font-weight:700;color:var(--accent);background:var(--tint);border-radius:99px;padding:1px 12px;white-space:nowrap}
+.ch .tt{font-family:var(--display);font-weight:700;font-size:clamp(17px,3.6vw,20px);line-height:1.5;flex-basis:100%;text-wrap:balance}
+.grp{margin:12px 0 0;font-size:12.5px;font-weight:700;color:var(--sub)}
+.row{display:grid;grid-template-columns:2.4em minmax(0,1fr) 1.6em minmax(0,1.15fr);gap:0 8px;align-items:baseline;padding:7px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.6}
+.row .n{font-weight:900;color:var(--accent);font-variant-numeric:tabular-nums}
+.row .x{color:var(--ng)} .row .ar{color:var(--sub);text-align:center} .row .o{font-weight:700}
+footer{color:var(--sub);font-size:12.5px;margin-top:18px}
+@media (max-width:560px){
+  .sheet{padding:6px 14px 16px}
+  .cols{grid-template-columns:2.2em 1fr} .cols .o{grid-column:2}
+  .row{grid-template-columns:2.2em 1fr} .row .ar{grid-column:2;text-align:left;display:inline} .row .o{grid-column:2}
+  .row .ar{display:none} .row .o::before{content:"→　";font-weight:400;color:var(--sub)}
+}
+@media print{body{background:#fff}.sheet{border:0;padding:0}.cols{position:static}.back{display:none}}
+"""
+
+
+def mokuji_one_html(back=True):
+    """目次を1枚で見るページ（1行の形）。back=False は、単体のファイル用（一覧にもどる、を出さない）。"""
+    import mokuji1 as M1
+    L = []
+    for num, fuda, title, groups in M1.chapters():
+        L.append('<div class="ch"><span class="no">第%d章</span><span class="fd">%s</span><span class="tt">%s</span></div>' % (num, esc(fuda), esc(title)))
+        for name, items in groups:
+            if name:
+                L.append('<p class="grp">■ %s</p>' % esc(name))
+            L += ['<div class="row"><span class="n">%s</span><span class="x">%s</span><span class="ar">→</span><span class="o">%s</span></div>'
+                  % (nn, esc(M1.pair(nn)[0]), esc(M1.pair(nn)[1])) for nn in items]
+    fm = lambda xs: '<ul class="fm">%s</ul>' % "".join("<li>%s</li>" % esc(a % M1.N_ALL if "%d" in a else a) for a in xs)
+    return """<title>目次（%d項目）</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+%s
+<style>%s</style>
+<div class="wrap">
+%s
+<h1>目次</h1>
+<p class="by">%s<span>（仮題）</span>　／　%d項目・%d章　／　%s 時点</p>
+<div class="sheet">
+<div class="cols"><span class="x">×　頭のいい人が、絶対やらないこと</span><span class="o">○　かわりに、やっていること</span></div>
+%s
+%s
+<div style="height:10px"></div>
+%s
+</div>
+<footer>言葉は、今の原稿に合わせています。第1章、07・08番、第7章の言葉は、これから短くします。</footer>
+</div>
+""" % (M1.N_ALL, FONT, MOKUJI_CSS,
+       '<a class="back" href="./" onclick="if(document.referrer&&history.length>1){history.back();return false}">← 一覧にもどる</a>' if back else "",
+       esc(TITLE), M1.N_ALL, len(M1.chapters()), max(READY.values()), fm(M1.MAE), "".join(L), fm(M1.ATO))
+
+
 def mokuji_page_html():
     """読むページ（巻頭ページ）に入れる目次。本の目次と同じ並びで、1行の形。"""
     import mokuji1 as M1
@@ -589,6 +660,7 @@ def index_now(names):
 <section id="mokuji">
 <h2>目次（今の案）</h2>
 <p class="note">左が「頭のいい人が絶対やらないこと」、矢印の先が「かわりにやっていること」です。</p>
+<div class="btns" style="margin:0 0 12px"><a class="btn" href="mokuji.html">目次を、1枚で見る</a></div>
 %s
 </section>
 
@@ -597,6 +669,76 @@ def index_now(names):
 """ % (FONT, INDEX_CSS, LIST_CSS, esc(TITLE), esc(K.AUTHOR), max(READY.values()), "".join(rows), 6 + len(V.ITEMS),
        "".join('<li><span class="nm">%s</span><span class="ds">%s</span><span class="act"><a class="btn" href="%s.html">見る</a></span></li>' % (esc(a), esc(b), k) for k, a, b, _, _ in SHIRYO),
        log, mokuji_html())
+
+
+ONE_NAME = "原稿のご確認ページ.html"
+ONE_CSS = """
+#viewer{position:fixed;inset:0;background:#fff;z-index:50}
+#viewer iframe{display:block;width:100%;height:100%;border:0}
+html.open,html.open body{overflow:hidden}
+.nojs{margin:0 0 16px;padding:12px 14px;border:1px solid var(--line);border-radius:8px;font-size:14px}
+"""
+# 中のページに足す。ページの中のリンクを押したら、外側のページに「どのページを開くか」を伝える
+ONE_CHILD_JS = """<script>(function(){var P=%s;
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href");
+if(h.charAt(0)==="#"){var t=document.getElementById(h.slice(1));if(t){e.preventDefault();t.scrollIntoView()}return}
+if(/^[a-z]+:/i.test(h)){a.target="_blank";a.rel="noopener";return}
+var m=/^(?:\\.\\/)?([a-z0-9]*)(?:\\.html)?(?:#(.*))?$/.exec(h);if(!m)return;var n=m[1]||"index";if(P.indexOf(n)<0)return;
+e.preventDefault();e.stopPropagation();parent.postMessage({gokakunin:n,hash:m[2]||""},"*")},true);
+window.addEventListener("message",function(e){var d=e.data;if(d&&d.gokakuninHash){var t=document.getElementById(d.gokakuninHash);if(t)t.scrollIntoView()}});
+})();</script>"""
+# 外側（一覧）のページに足す。中のページは、画面いっぱいの枠（iframe）に出す。一覧は下に残るので、もどった時に、読んでいた場所のまま
+# 枠は、開くたびに新しく作る（同じ枠の中身を入れかえると、ブラウザの「戻る」の履歴に、余分な1回が入るため）
+ONE_JS = """<script>(function(){
+var D=JSON.parse(document.getElementById("pages").textContent),f=document.getElementById("viewer"),R=document.documentElement,cur="index",depth=0;
+function push(n){var u=n==="index"?location.pathname+location.search:"#"+n;try{history.pushState({p:n},"",u);return true}catch(e){try{history.pushState({p:n},"");return true}catch(e2){return false}}}
+function render(n,h){if(!D[n])n="index";cur=n;f.textContent="";if(n==="index"){f.hidden=true;R.classList.remove("open");return}
+var i=document.createElement("iframe");i.title="原稿";i.addEventListener("load",function(){try{if(h)i.contentWindow.postMessage({gokakuninHash:h},"*");i.contentWindow.focus()}catch(e){}});
+i.srcdoc=D[n];f.appendChild(i);f.hidden=false;R.classList.add("open")}
+function go(n,h){if(!D[n]&&n!=="index")return;
+if(n==="index"){if(depth>0){depth--;history.back();return}render("index");try{history.replaceState(null,"",location.pathname+location.search)}catch(e){}return}
+render(n,h);if(push(n))depth++}
+window.addEventListener("message",function(e){var d=e.data;if(d&&d.gokakunin)go(d.gokakunin,d.hash)});
+window.addEventListener("popstate",function(e){var n=(e.state&&e.state.p)||location.hash.slice(1)||"index";if(n==="index")depth=0;render(n,"")});
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest("a[href]");if(!a)return;
+var m=/^([a-z0-9]+)\\.html(?:#(.*))?$/.exec(a.getAttribute("href"));if(!m||!D[m[1]])return;e.preventDefault();go(m[1],m[2]||"")});
+var h0=location.hash.slice(1);if(h0&&D[h0])render(h0,"");
+})();</script>"""
+
+
+def one_file():
+    """ご確認ページを、1つのHTMLファイルにまとめる（2026-11-20、著者の指示）。site/ の全部のページと絵を、このファイルの中に入れる。
+    メールに添えたり、どこかに置いたりしても、この1つだけで、全部が読める。"""
+    import base64, json
+    names = sorted(fn[:-5] for fn in os.listdir(SITE) if fn.endswith(".html") and fn != "index.html")
+    mime = {".webp": "image/webp", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".svg": "image/svg+xml"}
+
+    def img(m):
+        with open(os.path.join(SITE, m.group(1)), "rb") as f:
+            return 'src="data:%s;base64,%s"' % (mime[os.path.splitext(m.group(1))[1]], base64.b64encode(f.read()).decode())
+    pages = {}
+    for n in names:
+        with open(os.path.join(SITE, n + ".html"), encoding="utf-8") as f:
+            doc = f.read()
+        doc = re.sub(r'src="(fig/[^"]+)"', img, doc)
+        doc = doc.replace(' onclick="if(document.referrer&&history.length>1){history.back();return false}"', "")
+        assert doc.count("</body>") == 1, n
+        pages[n] = doc.replace("</body>", ONE_CHILD_JS % json.dumps(names + ["index"]) + "</body>")
+    with open(os.path.join(OUT, "artifact", "index.html"), encoding="utf-8") as f:
+        inner = f.read()
+    head, body = inner.split('<div class="wrap">', 1)
+    assert "<style>" in head and "</style>" in head
+    head = head.replace("</style>", ONE_CSS + "</style>", 1)
+    doc = ('<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+           '<style>:root{color-scheme:light}body{margin:0}img{max-width:100%%}[hidden]{display:none!important}</style>%s</head><body>'
+           '<div class="wrap"><noscript><p class="nojs">このファイルは、ブラウザ（Chrome、Safari、Edge など）で開いてください。</p></noscript>%s'
+           '<div id="viewer" hidden></div>'
+           '<script type="application/json" id="pages">%s</script>%s</body></html>'
+           % (head, body, json.dumps(pages, ensure_ascii=False).replace("<", "\\u003c"), ONE_JS))
+    p = os.path.join(ROOT, "build", ONE_NAME)
+    with open(p, "w", encoding="utf-8") as f:
+        f.write(doc)
+    return p
 
 
 def main():
@@ -610,14 +752,21 @@ def main():
         if key in READY:
             write(key + ".html", part_page(key, names.get(key, (ttl, ds))[0], bodies[key]))
     shiryo_pages()
+    wrapdoc = lambda inner: ('<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+                             '<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>' + inner + "</body></html>")
+    write("mokuji.html", wrapdoc(mokuji_one_html()))
+    with open(os.path.join(ROOT, "build", "目次_最新.html"), "w", encoding="utf-8") as f:   # 単体で開けるファイル
+        f.write(wrapdoc(mokuji_one_html(back=False)))
     inner = index_now(names)
     write("index.html", '<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>' + inner + "</body></html>")
     with open(os.path.join(OUT, "artifact", "index.html"), "w", encoding="utf-8") as f:
         f.write(inner)
+    one = one_file()
     for root, _, fs in os.walk(OUT):
         for fn in sorted(fs):
             q = os.path.join(root, fn)
             print("%8.1fKB  %s" % (os.path.getsize(q) / 1024, os.path.relpath(q, OUT)))
+    print("%8.1fKB  %s（1つにまとめたファイル）" % (os.path.getsize(one) / 1024, os.path.relpath(one, ROOT)))
 
 
 def main_old():

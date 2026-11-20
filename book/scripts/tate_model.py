@@ -13,6 +13,7 @@ import assemble_v4 as B
 ROOT = os.path.dirname(HERE)
 HEAD, KOMA, SHEET, MATOME = 3, 6, 7, 7   # ブロックが使う行（項目の頭／2コマ／3STEPと基準／まとめ）
 PARA_MAX = 170                           # 1つの段落にまとめる長さの上限（字）
+ILL = 8                                  # 挿絵（［挿絵：…］の行）が使う行。半ページで数える
 
 
 def body_rows(md, W, merge=True, gap=0.0):
@@ -31,6 +32,8 @@ def body_rows(md, W, merge=True, gap=0.0):
             rows += max(1, math.ceil(len(s) / (W - 2))); continue
         if not s or s == "---":
             continue
+        if s.startswith("［挿絵"):
+            flush(); rows += ILL; first = False; continue
         if s.startswith("#"):
             flush(); rows += 1 if first else 2; first = False; continue
         first = False

@@ -80,6 +80,18 @@ def H(s):
 FIX = re.compile(r"^(・|×|○|→|↓|[①-⑨]|[0-9０-９]+[　 .．、])")
 
 
+def sashie(s):
+    """［挿絵：説明（assets/figures/ファイル名）］の行。半ページ（8行ぶん）の枠にする。絵のファイルがあれば、それを置く。
+    本当の置き方（ページの上半分に置く、など）は、デザインの人が決める。ここでは、ページを数えるための枠。"""
+    m = re.match(r"^［挿絵：(.*?)(?:（(assets/figures/[^）]+)）)?］$", s)
+    cap, path = (m.group(1), m.group(2)) if m else (s, None)
+    if path and os.path.exists(os.path.join(ROOT, path)):
+        inner = '<img src="../%s" alt="">' % html.escape(path)
+    else:
+        inner = ill(html.escape(cap))
+    return '<div class="blk vill">%s<p>挿絵：%s</p></div>' % (inner, html.escape(cap))
+
+
 def md_vt(md, merge=True, hook=False):
     """mdを、縦書きの帯に並べる要素にする。## は小見出し（2行ぶん）、### は小さい見出し、``` の中は1行ずつ置く。"""
     out, buf, code, first = [], [], False, True
@@ -97,6 +109,8 @@ def md_vt(md, merge=True, hook=False):
             continue
         if not s or s == "---":
             continue
+        if s.startswith("［挿絵"):
+            flush(); out.append(sashie(s)); first = False; continue
         m = re.match(r"^(#{2,4}) (.+)$", s)
         if m:
             flush()
@@ -385,6 +399,10 @@ body{margin:0;width:504px;position:relative}
 .ill{border:1.5px dashed #9aa0a8;background:#fff;border-radius:4px;position:relative;display:flex;align-items:center;justify-content:center;text-align:center;color:#666;font-size:10px;line-height:1.6}
 .ill span{position:absolute;top:4px;left:5px;background:#7a7f87;color:#fff;font-size:8.5px;border-radius:3px;padding:0 6px;line-height:1.6}
 /* 2コマ（6行ぶん） */
+.vill{writing-mode:horizontal-tb;width:208px;padding:0 6px;display:flex;flex-direction:column;justify-content:center;gap:6px;font-family:"Noto Sans CJK JP",sans-serif;text-align:center}
+.vill img{width:196px;height:auto;display:block}
+.vill .ill{width:196px;height:147px}
+.vill p{font-size:8.5px;line-height:1.5;color:#555;text-indent:0;margin:0}
 .vkoma{writing-mode:horizontal-tb;width:156px;padding:0 8px;display:flex;flex-direction:column;gap:8px;font-family:"Noto Sans CJK JP",sans-serif;line-height:1.5;text-align:center}
 .vkoma .k{flex:1;border-radius:8px;padding:6px 4px 8px;text-align:center;display:flex;flex-direction:column}
 .vkoma .x{background:#eceef2}.vkoma .o{background:#e3ecf7;border:1px solid #15467e}
@@ -474,7 +492,7 @@ function layoutV(src, name) {
       if (straddle(el)) {
         // 2コマは、ページをまたぐ時、うしろの段落のあとへ送ってみる（見出しと、その最初の段落のあいだには置かない）
         let moved = false;
-        if (el.classList.contains('vkoma')) {
+        if (el.classList.contains('vkoma') || el.classList.contains('vill')) {
           const home = el.nextElementSibling;
           let s = home;
           for (let t = 0; t < 10 && s; t++) {

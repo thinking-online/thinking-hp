@@ -52,73 +52,45 @@ summary{cursor:pointer;font-weight:700;padding:10px 0;color:var(--accent)}
 ul.ask{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:4px}
 ul.ask li{max-width:44em}
 footer{color:var(--sub);font-size:12.5px}
+
+.parts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.parts li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);min-width:0}
+.parts li:first-child{padding-top:4px}
+.parts li:last-child{border-bottom:0;padding-bottom:2px}
+.parts .nm{font-weight:900;font-size:16.5px;line-height:1.6;min-width:0}
+.parts .ds{grid-column:1;color:var(--sub);font-size:13px;line-height:1.6}
+.parts .dt{font-size:12px;color:var(--sub);font-variant-numeric:tabular-nums;white-space:nowrap}
+.parts .act{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.parts .wait{font-size:13px;font-weight:700;color:var(--sub);border:1px dashed var(--line);border-radius:8px;padding:6px 14px;white-space:nowrap}
+.parts li.off .nm{color:var(--sub)}
+.log{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.log li{display:grid;grid-template-columns:6.4em 1fr;gap:10px;font-size:14px}
+.log b{font-variant-numeric:tabular-nums;color:var(--accent)}
 </style>
 <div class="wrap">
 <header>
 <p class="eyebrow">ご確認用</p>
 <h1>頭のいい人が絶対やらない勉強法<small>（仮題）</small></h1>
-<p class="by">朝倉 徹大（受験の王様）　／　2026年11月20日</p>
-<p class="lead">原稿と、構成の案を、このページにまとめました。まずは、書いたものを全部入れた版（45個）をお出しします。ページ数が多いので、「このくらいまで減らしたい」などのご希望があれば、それに向けて調整を進めます。</p>
+<p class="by">朝倉 徹大（受験の王様）　／　2026/11/20 時点</p>
+<p class="lead">原稿を、できた所から、このページに置いていきます。今は、巻頭ページから第4章までを、お読みいただけます。第5章、コラム、おわりには、仕上げている途中です。11月中に、誤字の確認まで含めて、全体を仕上げます。</p>
 </header>
-<nav class="toc" aria-label="このページの中身"><a href="#daihon">台本</a><a href="#katachi">形の候補</a><a href="#title">タイトル案</a><a href="#mokuji">目次</a><a href="#rough">イラストのラフ案</a><a href="#soudan">ご相談したいこと</a></nav>
 
-<section id="daihon">
-<h2><span class="n">1</span>台本（原稿）</h2>
-<p class="note">まず全部書いた版が、45個の版です。項目を少なくした場合の例として、35個の版も用意しました。第1章（6つの絶対法則）、はじめに、おわりには、どちらも同じです。</p>
-<div class="two">
-<div class="ver"><h3>45個の版（全部入り）</h3>
-<div class="fig"><div><b>45個</b>第1章6 ＋ 39</div><div><b>390ページ</b>の見込み</div><div><b>約13万7千字</b></div></div>
-<p>今ある原稿を、全部入れた版です。1項目は、5〜9ページ。まずは、こちらをご覧ください。</p>
-<div class="btns"><a class="btn" href="daihon45.html">台本を読む</a><a class="btn sub" href="book45.html">本の形で見る（縦書き）</a><a class="btn sub" href="files/daihon45.docx">Word</a><a class="btn sub" href="files/daihon45_book.pdf">PDF（本の形）</a></div></div>
-<div class="ver"><h3>35個の版（少なくした場合の例）</h3>
-<div class="fig"><div><b>35個</b>第1章6 ＋ 29</div><div><b>327ページ</b>の見込み</div><div><b>約12万字</b></div></div>
-<p>中身が重なる項目を1つにまとめて、29個にした版です。1項目は5ページが基本で、柱になる9項目だけ、7〜9ページ。</p>
-<div class="btns"><a class="btn" href="daihon35.html">台本を読む</a><a class="btn sub" href="book35.html">本の形で見る（縦書き）</a><a class="btn sub" href="files/daihon35.docx">Word</a><a class="btn sub" href="files/daihon35_book.pdf">PDF（本の形）</a></div></div>
-</div>
-<p class="note" style="margin:14px 0 0">ページ数は、A5判・縦書き・1行40字・1ページ16行で、実際に文字を流して数えた目安です。イラストは、まだ入っていません。</p>
+<section id="genko">
+<h2>原稿</h2>
+<p class="note">本の順番に並べています。「読む」を押すと、その部分が開きます。各項目には、イラストのラフ案（2コマの言葉）も入れています。</p>
+<ul class="parts"><li><span class="nm">巻頭ページ</span><span class="ds">はじめにの前まで（巻頭ページ、目次）</span><span class="act"><a class="btn" href="kantou.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li><span class="nm">はじめに</span><span class="ds">はじめに、この本の使い方</span><span class="act"><a class="btn" href="hajimeni.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li><span class="nm">第1章　頭のいい人は、「ズレた努力」をしない</span><span class="ds">01〜06番　6つの絶対法則</span><span class="act"><a class="btn" href="ch1.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li><span class="nm">第2章　【インプット】頭のいい人は、「入れるだけ」で終わらない</span><span class="ds">07〜15番　理解編・暗記編</span><span class="act"><a class="btn" href="ch2.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li><span class="nm">第3章　【アウトプット】頭のいい人は、解けた問題を数えない</span><span class="ds">16〜25番　問題の解き方・復習の仕方</span><span class="act"><a class="btn" href="ch3.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li><span class="nm">第4章　【継続】頭のいい人は、やる気に頼らない</span><span class="ds">26〜40番　計画編・集中編・モチベ編</span><span class="act"><a class="btn" href="ch4.html">読む</a><span class="dt">2026/11/20 時点</span></span></li><li class="off"><span class="nm">第5章　【アップデート】頭のいい人は、1人で頑張らない</span><span class="ds">41〜46番</span><span class="act"><span class="wait">準備中</span></span></li><li class="off"><span class="nm">コラム候補</span><span class="ds">章の間に入れるコラム</span><span class="act"><span class="wait">準備中</span></span></li><li class="off"><span class="nm">最後に</span><span class="ds">おわりに、巻末</span><span class="act"><span class="wait">準備中</span></span></li></ul>
 </section>
 
-<section id="katachi">
-<h2><span class="n">2</span>形の候補</h2>
-<p class="note">項目の数と、1項目の形と長さで、本全体のページ数が変わります。ご希望のページ数に合わせて、調整できます。同じ項目を4つの形で組んだ見本も、用意しました。</p>
-<div class="tw"><table>
-<tr><th>版</th><th>項目の数</th><th>1項目のページ</th><th>全体</th></tr>
-<tr><td>45個・今の形（全部入り）</td><td>45</td><td>5〜9ページ</td><td class="num">390ページ</td></tr>
-<tr><td>35個・今の形</td><td>35</td><td>5ページが基本（柱は7〜9）</td><td class="num">327ページ</td></tr>
-<tr><td>45個・STEPを本文にする形</td><td>45</td><td>4ページか6ページ</td><td class="num">319ページ</td></tr>
-</table></div>
-<div class="btns" style="margin-top:14px"><a class="btn" href="katachi.html">4つの形の見本を見る</a></div>
-</section>
-
-<section id="title">
-<h2><span class="n">3</span>タイトル案</h2>
-<p class="note">今、考えている案です。</p>
-<ol class="titles"><li>頭のいい人が絶対やらない勉強法</li><li>パクったら頭が良くなった勉強法</li><li>頭がいい人vs伸びない人</li></ol>
+<section id="kiroku">
+<h2>更新の記録</h2>
+<p class="note">更新したら、ここに足していきます。</p>
+<ul class="log"><li><b>2026/11/20</b><span>巻頭ページ、はじめに、第1章〜第4章を掲載しました。</span></li></ul>
 </section>
 
 <section id="mokuji">
-<h2><span class="n">4</span>目次</h2>
-<p class="note">45個の版の目次です。左が「頭のいい人が絶対やらないこと」、矢印の先が「かわりにやっていること」です。</p>
-<details><summary>第1章　頭のいい人は、「ズレた努力」をしない（01〜06番）</summary><ul class="moku"><li><b>01</b>みんながやっているから、正しいと思う<span>→　みんながやっている。だから、一度疑う</span></li><li><b>02</b>覚えるために、何度も読む<span>→　閉じて、何も見ずに思い出す</span></li><li><b>03</b>「自分に合った勉強法」を探す<span>→　スラスラ進む時は、頭を使っていない</span></li><li><b>04</b>やみくもに、全部頑張る<span>→　結果 ＝ 戦略 × やり方 × 量。1つが0なら、0</span></li><li><b>05</b>まとめて、一気にやる<span>→　同じものを、別の日に、もう一度やる</span></li><li><b>06</b>基礎を固めてから、解こうとする<span>→　早く解いて、早く間違えて、早く直す</span></li></ul></details><details><summary>第2章　【インプット】頭のいい人は、「入れるだけ」で終わらない（07〜15番）</summary><ul class="moku"><li class="g">理解編</li><li><b>07</b>人に説明できないまま、次へ進む<span>→　キーワード3つで、30秒説明する</span></li><li><b>08</b>1ページ目から、順番に読む<span>→　先に目次と見出しを見て、全体をつかむ</span></li><li><b>09</b>授業を、聞く時間だと思っている<span>→　「終わったら、30秒で教える」と決めて聞く</span></li><li><b>10</b>文章を、目で追って「読んだ」ことにする<span>→　1段落ごとに、「何の話？」を一言で言う</span></li><li><b>11</b>キリのいいところまで、休まずやる<span>→　25分やって、1分言って、5分離れる</span></li><li class="g">暗記編</li><li><b>12</b>1個ずつ、完璧に覚えてから進む<span>→　10個を30秒で見て、何周もする</span></li><li><b>13</b>単語を、文字のまま覚える<span>→　絵や場面を、思い浮かべて覚える</span></li><li><b>14</b>黙って、じっと見つめて覚える<span>→　目を閉じて、声に出す</span></li><li><b>15</b>用語を、1つずつバラバラに覚える<span>→　前に覚えたものに、つなげる</span></li></ul></details><details><summary>第3章　【アウトプット】頭のいい人は、解けた問題を数えない（16〜24番）</summary><ul class="moku"><li class="g">問題の解き方</li><li><b>16</b>解説を読んで、「わかった」で終わる<span>→　閉じて、白紙に、最初から再現する</span></li><li><b>17</b>参考書を読み終えてから、問題集を開く<span>→　問題集と過去問を先に開いて、わからない所だけ調べる</span></li><li><b>18</b>正解した問題に、○をつけて終わる<span>→　ほかの選択肢が、なぜ違うかを言う</span></li><li><b>19</b>時間を測らずに、解けるまで解く<span>→　本番と同じ時間で、解けたか</span></li><li><b>20</b>「今日は数学の日」と決めて、1つだけやる<span>→　解く練習は、3種類を混ぜる</span></li><li class="g">復習の仕方</li><li><b>21</b>わからない問題を、わかるまで粘る<span>→　上限を先に決める。5秒か、3分か、10分か</span></li><li><b>22</b>ケアレスミスを、「次は気をつける」で終える<span>→　どの作業で落としたか、名前をつける</span></li><li><b>23</b>2周目も、最初から全部解く<span>→　○△×を記録して、△と×だけ回す</span></li><li><b>24</b>1冊が終わる前に、次の1冊を買う<span>→　「終わり」の条件を決めて、1冊をやり込む</span></li></ul></details><details><summary>第4章　【継続】頭のいい人は、やる気に頼らない（25〜39番）</summary><ul class="moku"><li class="g">計画編</li><li><b>25</b>明日の自分に期待して、計画を立てる<span>→　先週やった時間を見てから、決める</span></li><li><b>26</b>「何時間やるか」で、計画を立てる<span>→　「何を、どこまで」で決める</span></li><li><b>27</b>やる気が出た時に、目標を立てる<span>→　「○○したら、△△する」を1つだけ決める</span></li><li><b>28</b>「毎日2時間やる」と、決める<span>→　最低1分、最高2時間。ゼロの日だけ作らない</span></li><li><b>29</b>寝る時間を削って、勉強する<span>→　削るのは、睡眠ではなく、無駄な時間。スキマの3分を使う</span></li><li class="g">集中編</li><li><b>30</b>好きな音楽を聴きながら、勉強する<span>→　無音か、歌詞のない音にする</span></li><li><b>31</b>「スマホは触らない」と、心に決める<span>→　別の部屋に置く。視界から消す</span></li><li><b>32</b>早起きして、朝型になろうとする<span>→　頭が冴える時間に、一番重いものを置く</span></li><li><b>33</b>机を片づけてから、勉強を始める<span>→　片づける前に、1問だけ解く</span></li><li><b>34</b>出された宿題を、全部同じ本気でやる<span>→　先に、力を入れるものと、流すものを分ける</span></li><li class="g">モチベ編</li><li><b>35</b>合格体験記を読んで、やる気を出す<span>→　合格体験記を、先に自分で書く</span></li><li><b>36</b>失敗した自分を、厳しく責める<span>→　親友が同じ失敗をしたら、何と言うか</span></li><li><b>37</b>できる友達と比べて、落ち込む<span>→　比べる相手は、先週の自分</span></li><li><b>38</b>「自分はできる」と、言い聞かせる<span>→　できない、ではなく、まだできていない</span></li><li><b>39</b>不安や緊張を、頭の中で消そうとする<span>→　不安は紙に出す。緊張は、「ワクワクしている」と言いかえる</span></li></ul></details><details><summary>第5章　【アップデート】頭のいい人は、1人で頑張らない（40〜45番）</summary><ul class="moku"><li><b>40</b>全部、自分1人でやろうとする<span>→　途中で見せて、指摘をもらう</span></li><li><b>41</b>「ここ、全部わからないです」と質問する<span>→　わかった最後の1行を、指で押さえる</span></li><li><b>42</b>AIに、答えを教えてもらう<span>→　考えるのは自分。AIには、ヒントと反論をもらう</span></li><li><b>43</b>「AIに頼るのはズルだ」と、自力にこだわる<span>→　分析と問題づくりは、AIに任せる</span></li><li><b>44</b>勉強に使うものを、値段だけで決める<span>→　時間が短くなるものには、迷わず使う</span></li><li><b>45</b>合格を、ゴールにする<span>→　さっさと勝って、次の勝負へ。アップデートし続ける</span></li></ul></details>
-</section>
-
-<section id="rough">
-<h2><span class="n">5</span>イラストのラフ案</h2>
-<p class="note">各項目に置く2コマ（伸びない人／頭のいい人）の、言葉の一覧です。絵そのものは、まだありません。</p>
-<div class="btns"><a class="btn" href="rough.html">2コマの言葉の一覧を見る</a></div>
-</section>
-
-<section id="soudan">
-<h2><span class="n">6</span>ご相談したいこと</h2>
-<ul class="ask">
-<li>本の大きさ（A5判か、四六判か）</li>
-<li>縦書きか、横書きか</li>
-<li>総ページ数の目安</li>
-<li>色の数（1色、2色、フルカラー）</li>
-<li>イラスト（どなたにお願いするか、点数の目安）</li>
-<li>特典（本の中に、QRコードやLINEへの案内を入れてよいか）</li>
-<li>今後の進め方と、入稿の時期</li>
-</ul>
+<h2>目次（今の案）</h2>
+<p class="note">左が「頭のいい人が絶対やらないこと」、矢印の先が「かわりにやっていること」です。</p>
+<details><summary>第1章　頭のいい人は、「ズレた努力」をしない（01〜06番）</summary><ul class="moku"><li><b>01</b>みんながやっているから、正しいと思う<span>→　みんながやっている。だから、一度疑う</span></li><li><b>02</b>覚えるために、何度も読む<span>→　閉じて、何も見ずに思い出す</span></li><li><b>03</b>「自分に合った勉強法」を探す<span>→　スラスラ進む時は、頭を使っていない</span></li><li><b>04</b>やみくもに、全部頑張る<span>→　結果 ＝ 戦略 × やり方 × 量。1つが0なら、0</span></li><li><b>05</b>まとめて、一気にやる<span>→　同じものを、別の日に、もう一度やる</span></li><li><b>06</b>基礎を固めてから、解こうとする<span>→　早く解いて、早く間違えて、早く直す</span></li></ul></details><details><summary>第2章　【インプット】頭のいい人は、「入れるだけ」で終わらない（07〜15番）</summary><ul class="moku"><li class="g">理解編</li><li><b>07</b>人に説明できないまま、次へ進む<span>→　キーワード3つで、30秒説明する</span></li><li><b>08</b>1ページ目から、丁寧に読む<span>→　先に、全体像をさっとつかんでから、進む</span></li><li><b>09</b>キリのいいところまで、休まずやる<span>→　25分で区切って、1分で思い出す</span></li><li><b>10</b>教科書を、なんとなく読んで終わる<span>→　止まった文は、丸と矢印で、図式化する</span></li><li><b>11</b>教科書の言葉を、そのまま覚える<span>→　自分の知っていることに、つなげて言い直す</span></li><li class="g">暗記編</li><li><b>12</b>単語を、書いて覚える<span>→　書かずに、見て、思い出す回数を増やす</span></li><li><b>13</b>黙って、じっと見つめて覚える<span>→　目を閉じて、声に出す</span></li><li><b>14</b>単語を、赤シートだけで覚える<span>→　イメージとセットにしてから、思い出す</span></li><li><b>15</b>全部覚えてから、問題を解く<span>→　問題を解きながら、覚える</span></li></ul></details><details><summary>第3章　【アウトプット】頭のいい人は、解けた問題を数えない（16〜25番）</summary><ul class="moku"><li class="g">問題の解き方</li><li><b>16</b>解説を読んで、「わかった」で終わる<span>→　問題文だけを見て、白紙に、最初から再現する</span></li><li><b>17</b>力がついてから、過去問を解く<span>→　まず解いて、敵と、今の自分を知る</span></li><li><b>18</b>正解した問題に、○をつけて終わる<span>→　正解も、間違いの選択肢も、根拠を取る</span></li><li><b>19</b>時間を測らずに、解けるまで解く<span>→　時間内の点と、時間をかけた点の、2つを測る</span></li><li><b>20</b>同じ単元を、まとめて解く<span>→　解く練習は、単元を混ぜる</span></li><li class="g">復習の仕方</li><li><b>21</b>わからない問題を、わかるまで粘る<span>→　試すことがなくなったら、答えを見る。閉じて、もう1回解く</span></li><li><b>22</b>ケアレスミスを、「次は気をつける」で終える<span>→　白紙で確かめて、エラーに名前をつける</span></li><li><b>23</b>2周目も、最初から全部解く<span>→　○△×を記録して、△と×だけ回す。終わりの基準も決める</span></li><li><b>24</b>「わからない」で、終わりにする<span>→　どこまでわかって、どこからわからないかに、分ける</span></li><li><b>25</b>1冊が終わる前に、次の1冊を買う<span>→　基礎の1冊を、取り切るまで、やり込む</span></li></ul></details><details><summary>第4章　【継続】頭のいい人は、やる気に頼らない（26〜40番）</summary><ul class="moku"><li class="g">計画編</li><li><b>26</b>明日の自分に期待して、計画を立てる<span>→　計画の横に実績を書く。見積もりは、1.5倍にする</span></li><li><b>27</b>「何時間やるか」で、計画を立てる<span>→　時間ではなく、ノルマ（何を、どこまで）で決める</span></li><li><b>28</b>やる気が出た時に、目標を立てる<span>→　「○○したら、△△する」のif-thenプランで決める</span></li><li><b>29</b>「毎日2時間やる」と、決める<span>→　完璧に続けようとしない。MinとMaxを決めて、0の日だけ作らない</span></li><li><b>30</b>時間が足りない時、まず、増やそうとする<span>→　増やす前に、削る。使える時間の何％を使えたかを見る</span></li><li class="g">集中編</li><li><b>31</b>好きな音楽を聴きながら、勉強する<span>→　無音か、歌詞のない音にする</span></li><li><b>32</b>「スマホは触らない」と、心に決める<span>→　別の部屋に置く。視界から消す</span></li><li><b>33</b>早起きして、朝型になろうとする<span>→　頭が冴える時間に、一番重いものを置く</span></li><li><b>34</b>机を片づけてから、勉強を始める<span>→　片づける前に、1問だけ解く</span></li><li><b>35</b>出された宿題を、全部同じ本気でやる<span>→　先に、力を入れるものと、流すものを分ける</span></li><li class="g">モチベ編</li><li><b>36</b>合格体験記を読んで、やる気を出す<span>→　合格体験記を、先に自分で書く</span></li><li><b>37</b>失敗した自分を、厳しく責める<span>→　親友が同じ失敗をしたら、何と言うか</span></li><li><b>38</b>できる友達と比べて、落ち込む<span>→　比べる相手は、昨日までの自分。考えるのは、自分と、これから</span></li><li><b>39</b>「自分はできる」と、言い聞かせる<span>→　できない、ではなく、まだできていない</span></li><li><b>40</b>不安や緊張を、頭の中で消そうとする<span>→　不安は紙に出す。緊張は、「ワクワクしている」と言いかえる</span></li></ul></details><details><summary>第5章　【アップデート】頭のいい人は、1人で頑張らない（41〜46番）</summary><ul class="moku"><li><b>41</b>全部、自分1人でやろうとする<span>→　途中で見せて、指摘をもらう</span></li><li><b>42</b>「ここ、全部わからないです」と質問する<span>→　わかった最後の1行を、指で押さえる</span></li><li><b>43</b>AIに、答えを教えてもらう<span>→　考えるのは自分。AIには、ヒントと反論をもらう</span></li><li><b>44</b>「AIに頼るのはズルだ」と、自力にこだわる<span>→　分析と問題づくりは、AIに任せる</span></li><li><b>45</b>勉強に使うものを、値段だけで決める<span>→　時間が短くなるものには、迷わず使う</span></li><li><b>46</b>合格を、ゴールにする<span>→　さっさと勝って、次の勝負へ。アップデートし続ける</span></li></ul></details>
 </section>
 
 <footer>このページは、ご確認用にお送りしているものです。</footer>

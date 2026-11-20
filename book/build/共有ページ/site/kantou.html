@@ -1,0 +1,250 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>巻頭ページ</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&display=swap"><style>
+@page { size: A4; margin: 18mm 20mm 20mm; }
+* { box-sizing: border-box; }
+html { font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 10.5pt; line-height: 1.9; color: #16181d; }
+body { margin: 0; }
+h1, h2, h3, h4, p, ol, pre { margin: 0; }
+mark { background: linear-gradient(transparent 55%, #ffe37a 55%); color: inherit; }
+.cover { page-break-after: always; padding-top: 60mm; }
+.cover h1 { font-size: 24pt; line-height: 1.5; font-weight: 900; }
+.cover .sub { margin-top: 6mm; color: #555; font-size: 11pt; }
+.cover .note { margin-top: 18mm; border-top: 1px solid #c9ced8; padding-top: 6mm; font-size: 10pt; color: #333; }
+.cover .note p { margin-bottom: 2mm; }
+.toc { page-break-after: always; }
+.toc h2 { font-size: 15pt; margin-bottom: 5mm; }
+.toc .ch { font-weight: 700; margin-top: 4.5mm; }
+.toc .it { display: grid; grid-template-columns: 9mm 1fr; font-size: 9.5pt; line-height: 1.75; color: #333; }
+.toc .it b { font-variant-numeric: tabular-nums; color: #15467e; }
+.chdoor { page-break-before: always; page-break-after: always; padding-top: 55mm; }
+.chdoor .cno { font-size: 13pt; color: #15467e; font-weight: 700; letter-spacing: .08em; }
+.chdoor h1 { font-size: 22pt; line-height: 1.5; margin-top: 3mm; font-weight: 900; }
+.chdoor .fld { margin-top: 2mm; color: #555; }
+.chdoor .intro { margin-top: 14mm; border-top: 1px solid #c9ced8; padding-top: 7mm; }
+.chdoor .intro p { margin-bottom: 4mm; }
+.item { page-break-before: always; }
+.qpage { background: #15467e; color: #fff; border-radius: 4mm; padding: 9mm 10mm 10mm; margin-bottom: 8mm; text-align: center; position: relative; }
+.qpage p { text-align: center; margin: 0; }
+.qpage .no { text-align: left; font-size: 15pt; font-weight: 900; font-variant-numeric: tabular-nums; opacity: .9; line-height: 1.2; margin: -3mm 0 1mm -3mm; }
+.qpage .q1 { font-size: 11pt; letter-spacing: .04em; }
+.qpage .q2 { font-size: 20pt; font-weight: 900; line-height: 1.5; margin: 2mm 0 2mm !important; }
+.qpage .q3 { font-size: 12pt; font-weight: 700; }
+.tag { display: inline-block; font-size: 8.5pt; font-weight: 700; color: #15467e; border: 1px solid #15467e; border-radius: 99px; padding: 0 3.2mm; line-height: 1.7; margin: 7mm 0 3mm; }
+.item > .tag:first-of-type { margin-top: 0; }
+h3 { font-size: 12pt; font-weight: 900; line-height: 1.6; margin: 7mm 0 2.5mm; padding-left: 3mm; border-left: 1.4mm solid #15467e; break-after: avoid; }
+h4 { font-size: 10.5pt; font-weight: 700; margin: 4.5mm 0 1.5mm; break-after: avoid; }
+p { margin-bottom: 3mm; text-align: justify; }
+p.q { padding-left: 2em; font-weight: 700; }
+pre { font-family: inherit; font-size: 9.8pt; line-height: 1.8; white-space: pre-wrap; background: #f1f3f7; border-radius: 2mm; padding: 3mm 4.5mm; margin: 2mm 0 4mm; break-inside: avoid; }
+.koma { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; break-inside: avoid; }
+.koma .k { border-radius: 3mm; padding: 4mm 5mm 5mm; text-align: center; }
+.koma .x { background: #eceef2; }
+.koma .o { background: #e3ecf7; border: 1px solid #15467e; }
+.koma span { display: block; font-size: 9pt; color: #555; }
+.koma b { display: block; font-size: 15pt; font-weight: 900; line-height: 1.6; }
+.koma i { display: block; font-style: normal; font-size: 9.5pt; }
+.sheet { border: 1px solid #15467e; border-radius: 3mm; padding: 4mm 5mm 5mm; break-inside: avoid; }
+.sheet .sttl { font-size: 12.5pt; font-weight: 900; border-bottom: 1.5px solid #15467e; padding-bottom: 1.5mm; margin-bottom: 3mm; text-align: left; }
+.st { display: grid; grid-template-columns: 20mm 1fr; gap: 4mm; align-items: start; padding: 2.2mm 0; border-bottom: 1px solid #dfe3ea; }
+.st .lab { background: #15467e; color: #fff; border-radius: 99px; text-align: center; font-size: 8pt; font-weight: 700; line-height: 1.5; padding: .6mm 0 .8mm; }
+.st .lab b { font-size: 10.5pt; margin-left: 1mm; }
+.st .do { font-weight: 700; margin: 0 0 .8mm; text-align: left; }
+.st .say { display: inline-block; border: 1px solid #15467e; border-radius: 2.5mm; padding: 0 3mm; font-size: 9.8pt; margin: 0; }
+.st .nt { font-size: 8.8pt; color: #444; margin: 1mm 0 0; text-align: left; line-height: 1.6; }
+.king { display: grid; grid-template-columns: auto 1fr; gap: 4mm; align-items: center; background: #e3ecf7; border-radius: 2.5mm; padding: 2.5mm 4mm; margin-top: 3.5mm; }
+.king span { background: #15467e; color: #fff; border-radius: 99px; font-size: 8.5pt; font-weight: 700; padding: 0 3mm; white-space: nowrap; }
+.king p { margin: 0; font-weight: 700; text-align: left; }
+.matome { background: #f7f5ee; border-radius: 3mm; padding: 4.5mm 6mm; break-inside: avoid; }
+.matome .one { font-size: 12pt; font-weight: 900; line-height: 1.7; }
+.matome ol { margin: 2mm 0 3mm 1.6em; padding: 0; }
+.matome p { margin-bottom: 1mm; text-align: left; }
+
+/* 項目の最初の青い箱が、ページのいちばん上にぴったり付くと、前のページの下に細い線がにじむ。少しだけ下げる */
+.item { padding-top: 1mm; }
+/* 「まとめ」などの札だけが、ページの下に取り残されないようにする */
+.tag { display: block; width: fit-content; break-after: avoid; page-break-after: avoid; }
+/* まとめと、その下の一言を、同じページに置く */
+.mwrap { break-inside: avoid; page-break-inside: avoid; }
+.qpage .ttl { font-size: 11.5pt; font-weight: 700; margin: 0 0 4mm !important; padding-bottom: 3mm; border-bottom: 1px solid rgba(255,255,255,.45); text-align: left; }
+.grp { page-break-before: always; padding-top: 80mm; text-align: center; }
+.grp p { text-align: center; margin: 0; }
+.grp .g1 { font-size: 11pt; color: #555; }
+.grp .g2 { font-size: 22pt; font-weight: 900; color: #15467e; margin-top: 3mm; }
+.grp .g3 { margin-top: 10mm; font-size: 10pt; color: #333; line-height: 2.1; text-align: center; }
+.toc .grpname { font-size: 9.5pt; font-weight: 700; color: #15467e; margin: 3mm 0 1mm; }
+.toc .it { grid-template-columns: 9mm 1fr; margin-bottom: 1.2mm; }
+.toc .it .t { font-weight: 700; color: #16181d; }
+.toc .it .xo { color: #444; font-size: 9pt; line-height: 1.6; }
+.chdoor .intro h4 { font-size: 12.5pt; font-weight: 900; line-height: 1.6; margin: 0 0 4mm; }
+.chdoor { padding-top: 30mm; }
+.chdoor .sub { margin-top: 2mm; color: #555; }
+.new { display: inline-block; font-size: 8pt; font-weight: 700; color: #a4500a; border: 1px solid #a4500a; border-radius: 99px; padding: 0 2.6mm; line-height: 1.6; margin-left: 2mm; vertical-align: middle; }
+.qpage .new { color: #fff; border-color: #fff; }
+
+.cover .kari { display: inline-block; border: 1.5px solid #a4500a; color: #a4500a; font-weight: 700; border-radius: 99px; padding: 0 5mm; font-size: 10pt; margin-bottom: 8mm; }
+.cover .alt { margin-top: 6mm; color: #555; font-size: 10pt; line-height: 1.9; }
+.cover .au { margin-top: 10mm; font-size: 12pt; font-weight: 700; }
+.text { page-break-before: always; }
+.text > h1, .col > h1 { font-size: 17pt; font-weight: 900; line-height: 1.5; margin-bottom: 7mm; padding-bottom: 3mm; border-bottom: 1.5px solid #15467e; }
+.toc .line { font-size: 9.8pt; margin: 1mm 0; }
+.toc .colm { font-size: 9pt; color: #a4500a; margin: 0 0 1.2mm 9mm; }
+.col { page-break-before: always; background: #fbf7ee; border-radius: 4mm; padding: 9mm 10mm 8mm; }
+.col .ctag { display: inline-block; background: #a4500a; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 99px; padding: 0 3.5mm; line-height: 1.7; margin-bottom: 3mm; }
+.col > h1 { border-bottom-color: #a4500a; }
+.hito { margin-top: 7mm; border: 1.5px solid #16181d; border-radius: 4mm; padding: 4mm 6mm 5mm; break-inside: avoid; position: relative; }
+.hito span { display: inline-block; background: #16181d; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 99px; padding: 0 3.5mm; line-height: 1.7; }
+.hito p { margin: 2.5mm 0 0; font-size: 13pt; font-weight: 900; line-height: 1.7; text-align: left; }
+.hito i { display: block; font-style: normal; font-size: 8.5pt; color: #555; text-align: right; margin-top: 1mm; }
+.d1 { border: 1.5px solid #15467e; border-radius: 4mm; padding: 6mm 7mm 7mm; margin-bottom: 6mm; text-align: center; }
+.item > .qpage { margin-top: 2mm; }
+.d1 p { text-align: center; margin: 0; line-height: 1.8; }
+.d1 .dno { color: #15467e; font-weight: 900; font-size: 15pt; line-height: 1.3; text-align: left; margin: -2mm 0 1mm -2mm; }
+.d1 .big { font-size: 15pt; font-weight: 900; }
+.matome .raw { margin-bottom: 1mm; }
+
+/* 画面で読むための上書き */
+html{background:#eef0f4;color-scheme:light;font-size:11.4pt}
+body{background:#fff;max-width:820px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left,0px)) 90px;box-shadow:0 0 0 1px #dfe3ea}
+@media(min-width:900px){body{padding:0 58px 110px}}
+.bar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #dfe3ea;margin:0 -18px 18px;padding:9px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:9.5pt}
+@media(min-width:900px){.bar{margin:0 -58px 24px;padding:10px 58px}}
+.bar .back{color:#15467e;font-weight:700;text-decoration:none}
+.bar b{font-weight:700}
+.bar select{font:inherit;font-size:9.5pt;padding:3px 6px;border:1px solid #c9ced8;border-radius:6px;background:#fff;color:#16181d;max-width:100%}
+.top h1{font-size:19pt;line-height:1.5;font-weight:900;margin:8mm 0 2mm}
+.top p{color:#555;font-size:10pt;margin:0 0 2mm}
+.sec{scroll-margin-top:56px}
+.text,.item,.col,.toc{margin-top:22mm}
+.chdoor{margin-top:26mm;padding-top:10mm;border-top:3px solid #15467e}
+.grp{margin-top:18mm;padding-top:0;text-align:left;border-left:6px solid #15467e;padding-left:5mm}
+.grp p,.grp .g3{text-align:left}
+.cover{display:none}
+pre{overflow-x:auto}
+
+.qpage{text-align:left}
+.qpage .pr{font-size:14.5pt;font-weight:900;line-height:1.75;text-align:left;margin:0 !important}
+.qpage .px{opacity:.82}
+figure.fig{margin:8mm 0;padding:0;text-align:center}
+figure.fig img{max-width:100%;height:auto;border:1px solid #dfe3ea;border-radius:8px}
+figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
+.pintro{margin:6mm 0 0;padding:5mm 6mm;background:#f5f7fa;border-radius:8px}
+.pintro h4{margin-top:0}
+.st{grid-template-columns:20mm 1fr}
+</style></head><body><div class="bar"><a class="back" href="./" onclick="if(document.referrer&&history.length>1){history.back();return false}">← 一覧にもどる</a><b>巻頭ページ</b><select id="jump" aria-label="読みたい所へ飛ぶ"><option value="">読みたい所へ飛ぶ</option><option value="t0">10秒だけ、付き合ってください</option><option value="mokuji">目次</option></select></div><div class="top"><p>頭のいい人が絶対やらない勉強法<span style="font-weight:700">（仮題）</span>　／　朝倉 徹大（受験の王様）　／　2026/11/20 時点</p><p>黄色の線は、原稿のマーカーの印です。「イラストのラフ案（2コマ）」は、絵にする前の、言葉の案です。</p></div><div class="sec" id="t0"><section class="text"><h1>10秒だけ、付き合ってください</h1>
+<p>いきなりですが、<br>10秒だけ、付き合ってください。</p>
+<p>10秒で、次の11個の数字を覚えきってください。<br>1　4　9　1　6　2　5　3　6　4　9</p>
+<p>はい、終了。<br>…本を伏せて、言えますか？</p>
+<p>たぶん、ほとんどの人が6個目か、7個目で、怪しくなったはずです。</p>
+<p>安心してください。<br>まず、それが普通です。</p>
+<p>では、1つだけ、教えます。<br>見方を少し変えた上で、覚えてみてください。</p>
+<p>1×1　2×2　3×3　4×4　5×5　6×6　7×7<br>↓<br>1 / 4 / 9 / 16 / 25 / 36 / 49</p>
+<p>さて、どうでしょうか。<br>この法則を知ってしまうと、<br>もうさっきまでの「見方」「覚え方」には戻れませんよね。</p>
+<p>もう一度だけ見てみてください。<br>1　4　9　1　6　2　5　3　6　4　9<br>もう10秒もいりませんよね？</p>
+<p>さて、今、何が起きたのか。<br>さっきと、今で、あなたの“記憶力”は変わっていません。</p>
+<p>集中力だって、やる気だって、1分前と同じままです。<br>必死に覚えようとして、声に出すことも、<br>書いて覚えることもあなたはしていないはずです。</p>
+<p>そう、覚えるための、努力の量は、むしろ減ったはずです。<br>それなのに、覚えられたんです。</p>
+<p>変わったのは、数字の見方だけです。</p>
+<p>さて、「頭がいい」という言葉がありますよね？<br>この言葉は、たいてい、生まれつきのものとして使われます。</p>
+<p>「あの子は頭がいい。自分は頭が悪い……」<br>でも、さっきの11個の数字の問題、どうでしたか？</p>
+<p>あなたは、1分前よりも、確実に、正確に、多くを覚えられるようになったはず。<br>生まれつきのものは何一つ、1ミリも変わっていないのに。</p>
+<p>「やり方」を知る。<br>それだけで、同じ時間で頭に入る量が変わる。<br>変わるから、点数が伸びるんです。</p>
+<p>"頭がよくなる"って、こういうことです。</p>
+<p>でも、多くの生徒は、一番肝心なところを教わらないんです。<br>学校や塾でこんなことを言われたことがあると思います。</p>
+<p>「間違えた問題は、何度も復習しなさい」<br>「単語は、何度も繰り返しやりなさい」<br>「勉強計画を、ちゃんと立てなさい」<br>どれも正しいです。</p>
+<p>でも、復習って、どうやるんでしょうか。<br>繰り返すって、どういうふうに、何回繰り返すんでしょうか。<br>そもそも、計画って、どう立てるんでしょうか。</p>
+<p>”正しいこと”は言われているのに、<br>結局、何をどのようにやるのかは、1つも決まっていません。<br>だから、変わることができないんです。</p>
+<p>もっと詳しい本を開いてみても、同じです。</p>
+<p>「人に説明するつもりで、勉強しなさい」<br>よくこんなことが書いてありますよね。</p>
+<p>確かに、これは、本当に効果があります。研究でも確かめられていることです。</p>
+<p>でも、説明するつもりというのは、頭の中で何をすることなんですか？<br>声に出すんですか？　心の中でいいんですか？　説明の途中で止まったら、どうすればいいんですか？</p>
+<p>「忘れる前に復習しなさい。1日後、1週間後、1ヶ月後に……」<br>こんなことも書いてありますよね。これまた、”正しい”です。今回のアドバイスに関しては、具体的な数字まであって、いいですよね。</p>
+<p>でも、これを、1ヶ月だけでもいいのでやってみてください。（実際に、やろうとしてみたことがある人も多いはず）</p>
+<p>仮に、1日に5つ、新しいことをやるとします。<br>1つにつき、1日後、1週間後、1ヶ月後。3回、復習をしていきます。<br>1ヶ月経つと、1日にやるものが、新しい5つと、復習の15で、合わせて20になります。<br>1教科でこれだったら、5教科なら、100です。</p>
+<p>学校行事、部活、恋愛、定期テスト、模試。<br>やることが沢山ある僕たちに、全部はできると思いますか？できるわけがありません。</p>
+<p>だとしたら、どれを捨てますか？<br>どれを捨てるのか。そこから先は、たいてい書いてありません。<br>学校も、塾も、合格した先輩も、教えてくれません</p>
+<p>言っていることは”正しい”んです。<br>正しいのに、聞いても、結局、変わらない。</p>
+<p>「もっと具体的に教えてくれてもいいじゃないか（怒）」<br>と受験生時代、勉強が大嫌いで苦手だった僕は思っていました。</p>
+<p>なぜ、誰も教えてくれないのか？<br>理由は、1つです。<br>「見えない」からです。</p>
+<p>・頭のいい人が、問題を見た瞬間に何を考えているか。<br>・どこで手を止めて、何を書いていないか。<br>・覚えたあとに、何をして、何をやらないか。<br>これらは、全部、頭の中で起きています。</p>
+<p>偏差値70を超えている”あの子”も、学年1位を取る”あの子”も、<br>同じ部活で同じ条件なのに優秀な”あの子”も<br>みーんな、頭の中で何が起きているのか、<br>何をしているのかは、外からは、1ミリも見えません。</p>
+<p>試しに、クラスで一番点を取るあの子に聞いてみてください。<br>「どうやって勉強してるの？」</p>
+<p>たぶん、こう返ってきます。<br>「基礎を、ちゃんと固めただけだよ」<br>「問題文を、ちゃんと読んでるだけ」<br>「復習を、ちゃんとやってるだけ」</p>
+<p>さて、その"ちゃんと"の中身は、わかりますか？<br>何までできて、"ちゃんと"なのでしょうか。</p>
+<p>結局、その中身が、見えない。<br>見えないから、マネできない。<br>そうして、どんどん差が開くんです。<br>気づかないうちに...</p>
+<p>周りから見たら、同じように机の前に座って、"勉強"はしている。<br>でも、中身が、まったく違うんです。</p>
+<p>だから、あなたのせいじゃないんです。<br>”結果が出る正しいやり方”が見えなかっただけです。</p>
+<p>だからこそ、この本で、”結果が出る正しいやり方”を全部、見える化します。</p>
+<p>頭のいい人が、何をやっているのか。<br>そして、何を、絶対にやらないのか。<br>その瞬間、頭の中で、何を考えているのか。<br>45個。1つ残らず書きます。</p>
+<p>隠すところは、1つもありません。センスも才能も、いりません。</p>
+<p>さっきの11個の数字で、もう証明されています。<br>あなたの記憶力は1ミリも変わっていないのに、覚えられる量が変わりました。<br>勉強している中であなたが悩むであろう場面、壁にぶつかった時になどにどうすればいいのかを見える化していきます。</p>
+<p>書いてあることを、<br>徹底的にパクってください。</p>
+<p>過去、沢山の生徒たちの逆転劇を、一番近くで見てきました。<br>・10ヶ月で、全教科の偏差値が70を超えて、早稲田に合格。<br>・通信制高校に転校した後、1年で河合塾の模試で、全国1位。<br>・工場勤務から、早稲田の法学部を含めて、受験した法学部に全勝。<br>・偏差値50台の高校から、現役で国公立の医学部に合格。<br>・赤点常連の問題児だった中学3年生が、2ヶ月で学年1桁。<br>挙げ始めたら、キリがありません。勉強サポートの活動を通して、僕がずっと証明してきたこと。そして、これからも証明していくこと。</p>
+<p>「人は、誰だって、変われる。」</p>
+<p>準備はいいですか？<br>次は、あなたの番です。</p></section></div>
+<div class="sec" id="mokuji"><section class="toc"><h2>目次</h2>
+<p class="line">10秒だけ、付き合ってください</p>
+<p class="line">はじめに　「お前の勉強法、ぜーんぶ、ズレとる。」</p>
+<p class="line">この本の使い方</p>
+<p class="ch">第1章　頭のいい人は、「ズレた努力」をしない　【最初に読む、6つの絶対法則】</p>
+<div class="it"><b>01</b><span><span class="t">みんながやっているから、正しいと思う　［疑う］</span><br><span class="xo">×　みんなやってるし、これで合ってるはず<br>○　みんながやっている。だから、一度疑う</span></span></div>
+<div class="it"><b>02</b><span><span class="t">覚えるために、何度も読む　［思い出す］</span><br><span class="xo">×　読んだ。わかった。次いこう<br>○　閉じて、何も見ずに思い出す</span></span></div>
+<div class="it"><b>03</b><span><span class="t">「自分に合った勉強法」を探す　［負荷］</span><br><span class="xo">×　このやり方、自分に合ってる。スラスラ進む<br>○　スラスラ進む時は、頭を使っていない</span></span></div>
+<div class="it"><b>04</b><span><span class="t">やみくもに、全部頑張る　［戦略］</span><br><span class="xo">×　誰よりも長くやれば、結果は出る<br>○　結果 ＝ 戦略 × やり方 × 量。1つが0なら、0</span></span></div>
+<div class="it"><b>05</b><span><span class="t">まとめて、一気にやる　［分散］</span><br><span class="xo">×　テスト前に、まとめてやれば間に合う<br>○　同じものを、別の日に、もう一度やる</span></span></div>
+<div class="it"><b>06</b><span><span class="t">基礎を固めてから、解こうとする　［速度］</span><br><span class="xo">×　ちゃんと理解してから、問題を解こう<br>○　早く解いて、早く間違えて、早く直す</span></span></div><p class="colm">コラム　ダメなままでいることこそ、ダメだ</p>
+<p class="ch">第2章　【インプット】頭のいい人は、「入れるだけ」で終わらない</p>
+<p class="grpname">■ 理解編</p>
+<div class="it"><b>07</b><span><span class="t">人に説明できないまま、次へ進む</span><br><span class="xo">×　自分でわかっていれば、十分<br>○　キーワード3つで、30秒説明する</span></span></div>
+<div class="it"><b>08</b><span><span class="t">1ページ目から、丁寧に読む</span><br><span class="xo">×　最初から、丁寧に読んでいこう<br>○　先に、全体像をさっとつかんでから、進む</span></span></div>
+<div class="it"><b>09</b><span><span class="t">キリのいいところまで、休まずやる</span><br><span class="xo">×　キリがいいところまでやってから、休もう<br>○　25分で区切って、1分で思い出す</span></span></div><p class="colm">コラム　休憩の質は、目に入るもので変わる</p>
+<div class="it"><b>10</b><span><span class="t">教科書を、なんとなく読んで終わる</span><br><span class="xo">×　最後まで読んだ。次いこう<br>○　止まった文は、丸と矢印で、図式化する</span></span></div>
+<div class="it"><b>11</b><span><span class="t">教科書の言葉を、そのまま覚える</span><br><span class="xo">×　とにかく、このまま覚えよう<br>○　自分の知っていることに、つなげて言い直す</span></span></div>
+<p class="grpname">■ 暗記編</p>
+<div class="it"><b>12</b><span><span class="t">単語を、書いて覚える</span><br><span class="xo">×　書かないと、覚えられない<br>○　書かずに、見て、思い出す回数を増やす</span></span></div>
+<div class="it"><b>13</b><span><span class="t">黙って、じっと見つめて覚える</span><br><span class="xo">×　集中して見ていれば、頭に入る<br>○　目を閉じて、声に出す</span></span></div><p class="colm">コラム　おすすめの勉強場所は、どこですか</p>
+<div class="it"><b>14</b><span><span class="t">単語を、赤シートだけで覚える</span><br><span class="xo">×　英語と日本語を、そのまま暗記しよう<br>○　イメージとセットにしてから、思い出す</span></span></div>
+<div class="it"><b>15</b><span><span class="t">全部覚えてから、問題を解く</span><br><span class="xo">×　ちゃんと覚えてから、問題集をやろう<br>○　問題を解きながら、覚える</span></span></div>
+<p class="ch">第3章　【アウトプット】頭のいい人は、解けた問題を数えない</p>
+<p class="grpname">■ 問題の解き方</p>
+<div class="it"><b>16</b><span><span class="t">解説を読んで、「わかった」で終わる</span><br><span class="xo">×　なるほど、わかった。次<br>○　問題文だけを見て、白紙に、最初から再現する</span></span></div>
+<div class="it"><b>17</b><span><span class="t">力がついてから、過去問を解く</span><br><span class="xo">×　今解いても、どうせできない<br>○　まず解いて、敵と、今の自分を知る</span></span></div>
+<div class="it"><b>18</b><span><span class="t">正解した問題に、○をつけて終わる</span><br><span class="xo">×　合ってた。次<br>○　正解も、間違いの選択肢も、根拠を取る</span></span></div>
+<div class="it"><b>19</b><span><span class="t">時間を測らずに、解けるまで解く</span><br><span class="xo">×　時間が足りなかっただけ<br>○　時間内の点と、時間をかけた点の、2つを測る</span></span></div>
+<div class="it"><b>20</b><span><span class="t">同じ単元を、まとめて解く</span><br><span class="xo">×　今日は二次関数を完璧にする日<br>○　解く練習は、単元を混ぜる</span></span></div>
+<p class="grpname">■ 復習の仕方</p>
+<div class="it"><b>21</b><span><span class="t">わからない問題を、わかるまで粘る</span><br><span class="xo">×　わかるまで粘るのが、本当の勉強<br>○　試すことがなくなったら、答えを見る。閉じて、もう1回解く</span></span></div>
+<div class="it"><b>22</b><span><span class="t">ケアレスミスを、「次は気をつける」で終える</span><br><span class="xo">×　わかってたのに。もったいない<br>○　白紙で確かめて、エラーに名前をつける</span></span></div>
+<div class="it"><b>23</b><span><span class="t">2周目も、最初から全部解く</span><br><span class="xo">×　とりあえず、もう1周しよう<br>○　○△×を記録して、△と×だけ回す。終わりの基準も決める</span></span></div>
+<div class="it"><b>24</b><span><span class="t">「わからない」で、終わりにする</span><br><span class="xo">×　この問題、全部わからない<br>○　どこまでわかって、どこからわからないかに、分ける</span></span></div>
+<div class="it"><b>25</b><span><span class="t">1冊が終わる前に、次の1冊を買う</span><br><span class="xo">×　こっちの参考書のほうが、良さそう<br>○　基礎の1冊を、取り切るまで、やり込む</span></span></div><p class="colm">コラム　参考書を選ぶ時の、3つの基準</p>
+<p class="ch">第4章　【継続】頭のいい人は、やる気に頼らない</p>
+<p class="grpname">■ 計画編</p>
+<div class="it"><b>26</b><span><span class="t">明日の自分に期待して、計画を立てる</span><br><span class="xo">×　明日からは、1日5時間やる<br>○　計画の横に実績を書く。見積もりは、1.5倍にする</span></span></div>
+<div class="it"><b>27</b><span><span class="t">「何時間やるか」で、計画を立てる</span><br><span class="xo">×　今日は、3時間やろう<br>○　時間ではなく、ノルマ（何を、どこまで）で決める</span></span></div>
+<div class="it"><b>28</b><span><span class="t">やる気が出た時に、目標を立てる</span><br><span class="xo">×　よし、今日から毎日やるぞ！<br>○　「○○したら、△△する」のif-thenプランで決める</span></span></div><p class="colm">コラム　「でも」「だって」のあとに、一言だけ足す</p>
+<div class="it"><b>29</b><span><span class="t">「毎日2時間やる」と、決める</span><br><span class="xo">×　毎日2時間。1日も休まない<br>○　完璧に続けようとしない。MinとMaxを決めて、0の日だけ作らない</span></span></div>
+<div class="it"><b>30</b><span><span class="t">時間が足りない時、まず、増やそうとする</span><br><span class="xo">×　寝る時間を削って、勉強時間を増やそう<br>○　増やす前に、削る。使える時間の何％を使えたかを見る</span></span></div>
+<p class="grpname">■ 集中編</p>
+<div class="it"><b>31</b><span><span class="t">好きな音楽を聴きながら、勉強する</span><br><span class="xo">×　音楽があったほうが、集中できる<br>○　無音か、歌詞のない音にする</span></span></div>
+<div class="it"><b>32</b><span><span class="t">「スマホは触らない」と、心に決める</span><br><span class="xo">×　触らなければ、大丈夫<br>○　別の部屋に置く。視界から消す</span></span></div><p class="colm">コラム　「〜しちゃう」じゃない。自分で、選んでいる</p>
+<div class="it"><b>33</b><span><span class="t">早起きして、朝型になろうとする</span><br><span class="xo">×　朝5時に起きる人が、勝つ<br>○　頭が冴える時間に、一番重いものを置く</span></span></div><p class="colm">コラム　「みんなと同じ」の空気に、流されるな</p>
+<div class="it"><b>34</b><span><span class="t">机を片づけてから、勉強を始める</span><br><span class="xo">×　まず環境を整えてから、本気を出そう<br>○　片づける前に、1問だけ解く</span></span></div>
+<div class="it"><b>35</b><span><span class="t">出された宿題を、全部同じ本気でやる</span><br><span class="xo">×　出された以上、全部ちゃんとやらないと<br>○　先に、力を入れるものと、流すものを分ける</span></span></div>
+<p class="grpname">■ モチベ編</p>
+<div class="it"><b>36</b><span><span class="t">合格体験記を読んで、やる気を出す</span><br><span class="xo">×　受かった自分を想像すれば、頑張れる<br>○　合格体験記を、先に自分で書く</span></span></div><p class="colm">コラム　未来の自分から、手紙が届いたよ</p>
+<div class="it"><b>37</b><span><span class="t">失敗した自分を、厳しく責める</span><br><span class="xo">×　なんでこんなミスを。自分はダメだ<br>○　親友が同じ失敗をしたら、何と言うか</span></span></div>
+<div class="it"><b>38</b><span><span class="t">できる友達と比べて、落ち込む</span><br><span class="xo">×　あの子はもう8割。自分は何をやってるんだろう<br>○　比べる相手は、昨日までの自分。考えるのは、自分と、これから</span></span></div>
+<div class="it"><b>39</b><span><span class="t">「自分はできる」と、言い聞かせる</span><br><span class="xo">×　大丈夫、絶対できる。ポジティブにいこう<br>○　できない、ではなく、まだできていない</span></span></div>
+<div class="it"><b>40</b><span><span class="t">不安や緊張を、頭の中で消そうとする</span><br><span class="xo">×　落ち着け。考えるな、考えるな<br>○　不安は紙に出す。緊張は、「ワクワクしている」と言いかえる</span></span></div><p class="colm">コラム　冷笑に、負けるな</p>
+<p class="ch">第5章　【アップデート】頭のいい人は、1人で頑張らない</p>
+<div class="it"><b>41</b><span><span class="t">全部、自分1人でやろうとする</span><br><span class="xo">×　人に見せるのは、できるようになってから<br>○　途中で見せて、指摘をもらう</span></span></div><p class="colm">コラム　周りの5人の平均が、自分になる</p>
+<div class="it"><b>42</b><span><span class="t">「ここ、全部わからないです」と質問する</span><br><span class="xo">×　どこがわからないかも、わからない<br>○　わかった最後の1行を、指で押さえる</span></span></div><p class="colm">コラム　無駄なプライドが、邪魔をしていた</p>
+<div class="it"><b>43</b><span><span class="t">AIに、答えを教えてもらう</span><br><span class="xo">×　わからないから、AIに答えを聞こう<br>○　考えるのは自分。AIには、ヒントと反論をもらう</span></span></div>
+<div class="it"><b>44</b><span><span class="t">「AIに頼るのはズルだ」と、自力にこだわる</span><br><span class="xo">×　自分の力だけでやらないと、力がつかない<br>○　分析と問題づくりは、AIに任せる</span></span></div>
+<div class="it"><b>45</b><span><span class="t">勉強に使うものを、値段だけで決める</span><br><span class="xo">×　お金をかけなくても、できるはず<br>○　時間が短くなるものには、迷わず使う</span></span></div><p class="colm">コラム　僕が決断をする時に、自分に聞くこと</p>
+<div class="it"><b>46</b><span><span class="t">合格を、ゴールにする</span><br><span class="xo">×　受かったら、もう勉強しなくていい<br>○　さっさと勝って、次の勝負へ。アップデートし続ける</span></span></div>
+<p class="ch">巻末</p>
+<p class="line">46を、1枚に</p>
+<p class="line">6つの言葉で、初めての場面を解く</p>
+<p class="line">保護者の方へ</p>
+<p class="line">参考文献</p>
+<p class="ch">おわりに　笑わなかった人が、1人だけいました</p></section></div><script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>

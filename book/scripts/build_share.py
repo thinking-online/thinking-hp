@@ -3,6 +3,7 @@
 #   python3 -I scripts/build_share.py   → build/共有ページ/
 #     site/      そのままウェブサイトに置ける一式（index.html から始まる。Word・PDF もここに入る）
 #     artifact/  同じ入口のページを、Claude の Artifact 用にしたもの（index.html だけ。ほかのページは site/ のものを使う）
+# 2026-11-20：入口を、部分ごとに見る形に変えた（巻頭ページ／はじめに／第1章…。できた部分だけ読める）。下の説明は、前の形（main_old）のもの。
 # 入っているページ：
 #   index.html     入口（台本、形の候補、タイトル案、目次、イラストのラフ案、ご相談したいこと）
 #   daihon35.html  台本・35個の版（横書きで通して読む）
@@ -371,7 +372,214 @@ def index_inner(downloads):
        "".join("<li>%s</li>" % esc(t) for t in K.TITLES), mokuji_html())
 
 
+# ================================================================ 2026-11-20：部分ごとに見る形（著者の指示）
+# 入口のページに、本の順番で、部分を並べる（巻頭ページ／はじめに／第1章…／コラム候補／最後に）。
+# できた部分だけ、クリックで読める。まだの部分は、「準備中」と出す。更新したら、UPDATES に1行足して、READY に足す。
+PARTS = [  # (記号, 題, 中身の説明)
+    ("kantou", "巻頭ページ", "はじめにの前まで（巻頭ページ、目次）"),
+    ("hajimeni", "はじめに", "はじめに、この本の使い方"),
+    ("ch1", "第1章", ""), ("ch2", "第2章", ""), ("ch3", "第3章", ""), ("ch4", "第4章", ""), ("ch5", "第5章", ""),
+    ("column", "コラム候補", "章の間に入れるコラム"),
+    ("owari", "最後に", "おわりに、巻末"),
+]
+READY = {"kantou": "2026/11/20", "hajimeni": "2026/11/20", "ch1": "2026/11/20", "ch2": "2026/11/20", "ch3": "2026/11/20", "ch4": "2026/11/20"}   # 読める部分 → いつの時点か
+UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第4章を掲載しました。")]   # 新しいものを、下に足していく
+PART_CSS = """
+.qpage{text-align:left}
+.qpage .pr{font-size:14.5pt;font-weight:900;line-height:1.75;text-align:left;margin:0 !important}
+.qpage .px{opacity:.82}
+figure.fig{margin:8mm 0;padding:0;text-align:center}
+figure.fig img{max-width:100%;height:auto;border:1px solid #dfe3ea;border-radius:8px}
+figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
+.pintro{margin:6mm 0 0;padding:5mm 6mm;background:#f5f7fa;border-radius:8px}
+.pintro h4{margin-top:0}
+.st{grid-template-columns:20mm 1fr}
+"""
+
+
+def body_fig(md, kk):
+    """本文をHTMLに。挿絵の印（［挿絵：説明（assets/figures/…）］）は、絵にする。絵のファイルは site/fig/ に写す。"""
+    figs = []
+    def f(m):
+        src = os.path.join(ROOT, m.group(2))
+        if not os.path.exists(src):
+            return m.group(0)
+        os.makedirs(os.path.join(SITE, "fig"), exist_ok=True)
+        name = "%s_%d%s" % (kk, len(figs) + 1, os.path.splitext(src)[1])
+        shutil.copyfile(src, os.path.join(SITE, "fig", name))
+        figs.append('<figure class="fig"><img src="fig/%s" alt="%s"><figcaption>挿絵（ラフ）：%s</figcaption></figure>' % (name, esc(m.group(1)), esc(m.group(1))))
+        return "FIGFIGFIG%d" % (len(figs) - 1)
+    md = re.sub(r"(?m)^［挿絵：(.+?)（(assets/figures/[^）]+)）］$", f, md)
+    h = P3.body_html(md)
+    for n, fig in enumerate(figs):
+        h = h.replace("<p>FIGFIGFIG%d</p>" % n, fig)
+    return h
+
+
+def item_now(kk):
+    """今の項目の形（頭の2行 → 本文 → 2コマのラフ → 3STEP → まとめ）。"""
+    it = V.ITEMS[kk]
+    x, o = B.pair_lines(it)
+    c = B.koma(kk)
+    ttl, steps, king = B.sheet(kk)
+    one, pts, dakara, toi = B.matome(kk)
+    st = "".join('<div class="st"><div class="lab">STEP<b>0%d</b></div><div><p class="do">%s</p></div></div>' % (n, esc(h)) for n, (h, v, note) in enumerate(steps, 1))
+    return """<section class="item">
+<div class="qpage"><div class="no">%s</div><p class="ttl">%s</p><p class="pr px">%s</p><p class="pr po">%s</p></div>
+%s
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>%s</b><i>%s</i></div><div class="k o"><span>頭のいい人</span><b>%s</b><i>%s</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet">%s<div class="king"><span>「できた」の基準</span><p>%s</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">%s</p><p>%s</p><p>迷ったら、自分に聞きます。「%s」</p></div>
+%s</div></section>""" % (kk, esc(it["t"]), esc(x), esc(o), body_fig(B.body(kk), kk),
+                 esc(c[0][0]), esc(c[0][1]), esc(c[1][0]), esc(c[1][1]), st, esc(king), esc(one), esc(dakara), esc(toi), BP.hito_html(kk))
+
+
+def part_bodies():
+    """部分ごとの中身。{記号: (ページの題, [(id, 飛ぶ先の名前, html)])}"""
+    P4.kind = lambda kk: ""
+    n_all = 6 + len(V.ITEMS)
+    out = {k: [] for k, _, _ in PARTS}
+    names = {}
+    cur = None
+    for kind, name, md in Z.sections():
+        if kind == "cover":
+            continue
+        if kind == "toc":
+            out["kantou"].append(("mokuji", "目次", BP.toc_html().replace('<p class="line">45を、1枚に</p>', '<p class="line">%dを、1枚に</p>' % n_all)))
+        elif kind == "text":
+            key = "kantou" if name.startswith("10秒") else "hajimeni" if name in ("はじめに", "この本の使い方") else "owari"
+            out[key].append(("t%d" % len(out[key]), name.replace("巻末　", "巻末｜"), BP.text_html(md)))
+        elif kind == "door":
+            cur = "ch" + name[1]
+            if name == "第1章":
+                intro = P3.body_html(Z.to_md(Z.master(K.CH1_INTRO)))
+                h = ('<section class="chdoor"><div class="cno">第1章</div><h1>%s</h1><p class="fld">【%s】　01〜06番</p><div class="intro">%s</div></section>' % (esc(K.CH1_TITLE), esc(K.CH1_SUB), intro))
+                names[cur] = ("第1章　" + K.CH1_TITLE, "01〜06番　6つの絶対法則")
+            else:
+                num, fuda, title, sub, groups = [c for c in V.CHAPTERS if "第%d章" % c[0] == name][0]
+                ks = [kk for _, items in groups for kk in items]
+                h = ('<section class="chdoor"><div class="cno">第%d章</div><h1>%s</h1><p class="fld">【%s】　%s〜%s番</p>%s<div class="intro">%s</div></section>'
+                     % (num, esc(title), esc(fuda), ks[0], ks[-1], ('<p class="sub">%s</p>' % esc(sub)) if sub else "", P3.body_html(B.read_new("ch%d_導入" % num))))
+                gs = "・".join(g for g, _ in groups if g)
+                names[cur] = ("第%d章　【%s】%s" % (num, fuda, title), "%s〜%s番%s" % (ks[0], ks[-1], ("　" + gs) if gs else ""))
+            out[cur].append(("door", "章の導入", h))
+        elif kind == "group":
+            num, fuda, title, sub, groups = [c for c in V.CHAPTERS if any(g[0] == name for g in c[4])][0]
+            items = [g[1] for g in groups if g[0] == name][0]
+            lines = "<br>".join("%s　%s" % (kk, esc(V.ITEMS[kk]["t"])) for kk in items)
+            pi = B.part_intro(num, name)
+            out[cur].append(("g%d" % len(out[cur]), "■ " + name,
+                             '<section class="grp"><p class="g1">第%d章　【%s】</p><p class="g2">%s</p><p class="g3">%s</p></section>%s'
+                             % (num, esc(fuda), esc(name), lines, ('<div class="pintro">%s</div>' % P3.body_html(pi)) if pi else "")))
+        elif kind == "item1":
+            out[cur].append(("i" + name, "　%s　絶対法則%s　%s" % (name, name, K.CH1_MOKUJI[name][0]), BP.item1_html(name)))
+        elif kind == "item":
+            out[cur].append(("i" + name, "　%s　%s" % (name, V.ITEMS[name]["t"]), item_now(name)))
+        elif kind == "column":
+            src = [(s, nm) for k, s, nm in K.COLUMNS if (Z.column(s, nm) or ("",))[0] == name][0]
+            out["column"].append(("c%d" % len(out["column"]), name, BP.column_html(Z.column(*src))))
+    return out, names
+
+
+def part_page(key, title, secs):
+    opts = "".join('<option value="%s">%s</option>' % (sid, esc(label)) for sid, label, _ in secs)
+    body = "\n".join('<div class="sec" id="%s">%s</div>' % (sid, h) for sid, _, h in secs)
+    return ('<!doctype html><html lang="ja"><head>%s<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>%s</title>%s<style>%s%s</style></head><body>'
+            '<div class="bar">%s<b>%s</b><select id="jump" aria-label="読みたい所へ飛ぶ"><option value="">読みたい所へ飛ぶ</option>%s</select></div>'
+            '<div class="top"><p>%s<span style="font-weight:700">（仮題）</span>　／　%s　／　%s 時点</p>'
+            '<p>黄色の線は、原稿のマーカーの印です。「イラストのラフ案（2コマ）」は、絵にする前の、言葉の案です。</p></div>'
+            '%s<script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>'
+            % (HEAD, esc(title), FONT, READ_CSS, PART_CSS, BACK, esc(title), opts, esc(TITLE), esc(K.AUTHOR), READY[key], body))
+
+
+LIST_CSS = """
+.parts{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.parts li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line);min-width:0}
+.parts li:first-child{padding-top:4px}
+.parts li:last-child{border-bottom:0;padding-bottom:2px}
+.parts .nm{font-weight:900;font-size:16.5px;line-height:1.6;min-width:0}
+.parts .ds{grid-column:1;color:var(--sub);font-size:13px;line-height:1.6}
+.parts .dt{font-size:12px;color:var(--sub);font-variant-numeric:tabular-nums;white-space:nowrap}
+.parts .act{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.parts .wait{font-size:13px;font-weight:700;color:var(--sub);border:1px dashed var(--line);border-radius:8px;padding:6px 14px;white-space:nowrap}
+.parts li.off .nm{color:var(--sub)}
+.log{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.log li{display:grid;grid-template-columns:6.4em 1fr;gap:10px;font-size:14px}
+.log b{font-variant-numeric:tabular-nums;color:var(--accent)}
+"""
+
+
+def index_now(names):
+    rows = []
+    for key, ttl, ds in PARTS:
+        name, sub = names.get(key, (ttl, ds))
+        if key in READY:
+            rows.append('<li><span class="nm">%s</span><span class="ds">%s</span><span class="act"><a class="btn" href="%s.html">読む</a><span class="dt">%s 時点</span></span></li>'
+                        % (esc(name), esc(sub), key, READY[key]))
+        else:
+            rows.append('<li class="off"><span class="nm">%s</span><span class="ds">%s</span><span class="act"><span class="wait">準備中</span></span></li>' % (esc(name), esc(sub)))
+    log = "".join("<li><b>%s</b><span>%s</span></li>" % (d, esc(s)) for d, s in UPDATES)
+    return """<title>原稿のご確認ページ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+%s
+<style>%s%s</style>
+<div class="wrap">
+<header>
+<p class="eyebrow">ご確認用</p>
+<h1>%s<small>（仮題）</small></h1>
+<p class="by">%s　／　%s 時点</p>
+<p class="lead">原稿を、できた所から、このページに置いていきます。今は、巻頭ページから第4章までを、お読みいただけます。第5章、コラム、おわりには、仕上げている途中です。11月中に、誤字の確認まで含めて、全体を仕上げます。</p>
+</header>
+
+<section id="genko">
+<h2>原稿</h2>
+<p class="note">本の順番に並べています。「読む」を押すと、その部分が開きます。各項目には、イラストのラフ案（2コマの言葉）も入れています。</p>
+<ul class="parts">%s</ul>
+</section>
+
+<section id="kiroku">
+<h2>更新の記録</h2>
+<p class="note">更新したら、ここに足していきます。</p>
+<ul class="log">%s</ul>
+</section>
+
+<section id="mokuji">
+<h2>目次（今の案）</h2>
+<p class="note">左が「頭のいい人が絶対やらないこと」、矢印の先が「かわりにやっていること」です。</p>
+%s
+</section>
+
+<footer>このページは、ご確認用にお送りしているものです。</footer>
+</div>
+""" % (FONT, INDEX_CSS, LIST_CSS, esc(TITLE), esc(K.AUTHOR), max(READY.values()), "".join(rows), log, mokuji_html())
+
+
 def main():
+    """部分ごとに見る形で作る（2026-11-20）。前の形（45個・35個の2つの版を並べる入口）は、main_old()。"""
+    if os.path.isdir(SITE):
+        shutil.rmtree(SITE)
+    os.makedirs(SITE)
+    os.makedirs(os.path.join(OUT, "artifact"), exist_ok=True)
+    bodies, names = part_bodies()
+    for key, ttl, ds in PARTS:
+        if key in READY:
+            write(key + ".html", part_page(key, names.get(key, (ttl, ds))[0], bodies[key]))
+    inner = index_now(names)
+    write("index.html", '<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>' + inner + "</body></html>")
+    with open(os.path.join(OUT, "artifact", "index.html"), "w", encoding="utf-8") as f:
+        f.write(inner)
+    for root, _, fs in os.walk(OUT):
+        for fn in sorted(fs):
+            q = os.path.join(root, fn)
+            print("%8.1fKB  %s" % (os.path.getsize(q) / 1024, os.path.relpath(q, OUT)))
+
+
+def main_old():
+
     os.makedirs(os.path.join(SITE, "files"), exist_ok=True)
     os.makedirs(os.path.join(OUT, "artifact"), exist_ok=True)
     write("daihon35.html", reading("35"))

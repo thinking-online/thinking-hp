@@ -1,0 +1,535 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>第3章　【アウトプット】頭のいい人は、解けた問題を数えない</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&display=swap"><style>
+@page { size: A4; margin: 18mm 20mm 20mm; }
+* { box-sizing: border-box; }
+html { font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 10.5pt; line-height: 1.9; color: #16181d; }
+body { margin: 0; }
+h1, h2, h3, h4, p, ol, pre { margin: 0; }
+mark { background: linear-gradient(transparent 55%, #ffe37a 55%); color: inherit; }
+.cover { page-break-after: always; padding-top: 60mm; }
+.cover h1 { font-size: 24pt; line-height: 1.5; font-weight: 900; }
+.cover .sub { margin-top: 6mm; color: #555; font-size: 11pt; }
+.cover .note { margin-top: 18mm; border-top: 1px solid #c9ced8; padding-top: 6mm; font-size: 10pt; color: #333; }
+.cover .note p { margin-bottom: 2mm; }
+.toc { page-break-after: always; }
+.toc h2 { font-size: 15pt; margin-bottom: 5mm; }
+.toc .ch { font-weight: 700; margin-top: 4.5mm; }
+.toc .it { display: grid; grid-template-columns: 9mm 1fr; font-size: 9.5pt; line-height: 1.75; color: #333; }
+.toc .it b { font-variant-numeric: tabular-nums; color: #15467e; }
+.chdoor { page-break-before: always; page-break-after: always; padding-top: 55mm; }
+.chdoor .cno { font-size: 13pt; color: #15467e; font-weight: 700; letter-spacing: .08em; }
+.chdoor h1 { font-size: 22pt; line-height: 1.5; margin-top: 3mm; font-weight: 900; }
+.chdoor .fld { margin-top: 2mm; color: #555; }
+.chdoor .intro { margin-top: 14mm; border-top: 1px solid #c9ced8; padding-top: 7mm; }
+.chdoor .intro p { margin-bottom: 4mm; }
+.item { page-break-before: always; }
+.qpage { background: #15467e; color: #fff; border-radius: 4mm; padding: 9mm 10mm 10mm; margin-bottom: 8mm; text-align: center; position: relative; }
+.qpage p { text-align: center; margin: 0; }
+.qpage .no { text-align: left; font-size: 15pt; font-weight: 900; font-variant-numeric: tabular-nums; opacity: .9; line-height: 1.2; margin: -3mm 0 1mm -3mm; }
+.qpage .q1 { font-size: 11pt; letter-spacing: .04em; }
+.qpage .q2 { font-size: 20pt; font-weight: 900; line-height: 1.5; margin: 2mm 0 2mm !important; }
+.qpage .q3 { font-size: 12pt; font-weight: 700; }
+.tag { display: inline-block; font-size: 8.5pt; font-weight: 700; color: #15467e; border: 1px solid #15467e; border-radius: 99px; padding: 0 3.2mm; line-height: 1.7; margin: 7mm 0 3mm; }
+.item > .tag:first-of-type { margin-top: 0; }
+h3 { font-size: 12pt; font-weight: 900; line-height: 1.6; margin: 7mm 0 2.5mm; padding-left: 3mm; border-left: 1.4mm solid #15467e; break-after: avoid; }
+h4 { font-size: 10.5pt; font-weight: 700; margin: 4.5mm 0 1.5mm; break-after: avoid; }
+p { margin-bottom: 3mm; text-align: justify; }
+p.q { padding-left: 2em; font-weight: 700; }
+pre { font-family: inherit; font-size: 9.8pt; line-height: 1.8; white-space: pre-wrap; background: #f1f3f7; border-radius: 2mm; padding: 3mm 4.5mm; margin: 2mm 0 4mm; break-inside: avoid; }
+.koma { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; break-inside: avoid; }
+.koma .k { border-radius: 3mm; padding: 4mm 5mm 5mm; text-align: center; }
+.koma .x { background: #eceef2; }
+.koma .o { background: #e3ecf7; border: 1px solid #15467e; }
+.koma span { display: block; font-size: 9pt; color: #555; }
+.koma b { display: block; font-size: 15pt; font-weight: 900; line-height: 1.6; }
+.koma i { display: block; font-style: normal; font-size: 9.5pt; }
+.sheet { border: 1px solid #15467e; border-radius: 3mm; padding: 4mm 5mm 5mm; break-inside: avoid; }
+.sheet .sttl { font-size: 12.5pt; font-weight: 900; border-bottom: 1.5px solid #15467e; padding-bottom: 1.5mm; margin-bottom: 3mm; text-align: left; }
+.st { display: grid; grid-template-columns: 20mm 1fr; gap: 4mm; align-items: start; padding: 2.2mm 0; border-bottom: 1px solid #dfe3ea; }
+.st .lab { background: #15467e; color: #fff; border-radius: 99px; text-align: center; font-size: 8pt; font-weight: 700; line-height: 1.5; padding: .6mm 0 .8mm; }
+.st .lab b { font-size: 10.5pt; margin-left: 1mm; }
+.st .do { font-weight: 700; margin: 0 0 .8mm; text-align: left; }
+.st .say { display: inline-block; border: 1px solid #15467e; border-radius: 2.5mm; padding: 0 3mm; font-size: 9.8pt; margin: 0; }
+.st .nt { font-size: 8.8pt; color: #444; margin: 1mm 0 0; text-align: left; line-height: 1.6; }
+.king { display: grid; grid-template-columns: auto 1fr; gap: 4mm; align-items: center; background: #e3ecf7; border-radius: 2.5mm; padding: 2.5mm 4mm; margin-top: 3.5mm; }
+.king span { background: #15467e; color: #fff; border-radius: 99px; font-size: 8.5pt; font-weight: 700; padding: 0 3mm; white-space: nowrap; }
+.king p { margin: 0; font-weight: 700; text-align: left; }
+.matome { background: #f7f5ee; border-radius: 3mm; padding: 4.5mm 6mm; break-inside: avoid; }
+.matome .one { font-size: 12pt; font-weight: 900; line-height: 1.7; }
+.matome ol { margin: 2mm 0 3mm 1.6em; padding: 0; }
+.matome p { margin-bottom: 1mm; text-align: left; }
+
+/* 項目の最初の青い箱が、ページのいちばん上にぴったり付くと、前のページの下に細い線がにじむ。少しだけ下げる */
+.item { padding-top: 1mm; }
+/* 「まとめ」などの札だけが、ページの下に取り残されないようにする */
+.tag { display: block; width: fit-content; break-after: avoid; page-break-after: avoid; }
+/* まとめと、その下の一言を、同じページに置く */
+.mwrap { break-inside: avoid; page-break-inside: avoid; }
+.qpage .ttl { font-size: 11.5pt; font-weight: 700; margin: 0 0 4mm !important; padding-bottom: 3mm; border-bottom: 1px solid rgba(255,255,255,.45); text-align: left; }
+.grp { page-break-before: always; padding-top: 80mm; text-align: center; }
+.grp p { text-align: center; margin: 0; }
+.grp .g1 { font-size: 11pt; color: #555; }
+.grp .g2 { font-size: 22pt; font-weight: 900; color: #15467e; margin-top: 3mm; }
+.grp .g3 { margin-top: 10mm; font-size: 10pt; color: #333; line-height: 2.1; text-align: center; }
+.toc .grpname { font-size: 9.5pt; font-weight: 700; color: #15467e; margin: 3mm 0 1mm; }
+.toc .it { grid-template-columns: 9mm 1fr; margin-bottom: 1.2mm; }
+.toc .it .t { font-weight: 700; color: #16181d; }
+.toc .it .xo { color: #444; font-size: 9pt; line-height: 1.6; }
+.chdoor .intro h4 { font-size: 12.5pt; font-weight: 900; line-height: 1.6; margin: 0 0 4mm; }
+.chdoor { padding-top: 30mm; }
+.chdoor .sub { margin-top: 2mm; color: #555; }
+.new { display: inline-block; font-size: 8pt; font-weight: 700; color: #a4500a; border: 1px solid #a4500a; border-radius: 99px; padding: 0 2.6mm; line-height: 1.6; margin-left: 2mm; vertical-align: middle; }
+.qpage .new { color: #fff; border-color: #fff; }
+
+.cover .kari { display: inline-block; border: 1.5px solid #a4500a; color: #a4500a; font-weight: 700; border-radius: 99px; padding: 0 5mm; font-size: 10pt; margin-bottom: 8mm; }
+.cover .alt { margin-top: 6mm; color: #555; font-size: 10pt; line-height: 1.9; }
+.cover .au { margin-top: 10mm; font-size: 12pt; font-weight: 700; }
+.text { page-break-before: always; }
+.text > h1, .col > h1 { font-size: 17pt; font-weight: 900; line-height: 1.5; margin-bottom: 7mm; padding-bottom: 3mm; border-bottom: 1.5px solid #15467e; }
+.toc .line { font-size: 9.8pt; margin: 1mm 0; }
+.toc .colm { font-size: 9pt; color: #a4500a; margin: 0 0 1.2mm 9mm; }
+.col { page-break-before: always; background: #fbf7ee; border-radius: 4mm; padding: 9mm 10mm 8mm; }
+.col .ctag { display: inline-block; background: #a4500a; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 99px; padding: 0 3.5mm; line-height: 1.7; margin-bottom: 3mm; }
+.col > h1 { border-bottom-color: #a4500a; }
+.hito { margin-top: 7mm; border: 1.5px solid #16181d; border-radius: 4mm; padding: 4mm 6mm 5mm; break-inside: avoid; position: relative; }
+.hito span { display: inline-block; background: #16181d; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 99px; padding: 0 3.5mm; line-height: 1.7; }
+.hito p { margin: 2.5mm 0 0; font-size: 13pt; font-weight: 900; line-height: 1.7; text-align: left; }
+.hito i { display: block; font-style: normal; font-size: 8.5pt; color: #555; text-align: right; margin-top: 1mm; }
+.d1 { border: 1.5px solid #15467e; border-radius: 4mm; padding: 6mm 7mm 7mm; margin-bottom: 6mm; text-align: center; }
+.item > .qpage { margin-top: 2mm; }
+.d1 p { text-align: center; margin: 0; line-height: 1.8; }
+.d1 .dno { color: #15467e; font-weight: 900; font-size: 15pt; line-height: 1.3; text-align: left; margin: -2mm 0 1mm -2mm; }
+.d1 .big { font-size: 15pt; font-weight: 900; }
+.matome .raw { margin-bottom: 1mm; }
+
+/* 画面で読むための上書き */
+html{background:#eef0f4;color-scheme:light;font-size:11.4pt}
+body{background:#fff;max-width:820px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left,0px)) 90px;box-shadow:0 0 0 1px #dfe3ea}
+@media(min-width:900px){body{padding:0 58px 110px}}
+.bar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #dfe3ea;margin:0 -18px 18px;padding:9px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:9.5pt}
+@media(min-width:900px){.bar{margin:0 -58px 24px;padding:10px 58px}}
+.bar .back{color:#15467e;font-weight:700;text-decoration:none}
+.bar b{font-weight:700}
+.bar select{font:inherit;font-size:9.5pt;padding:3px 6px;border:1px solid #c9ced8;border-radius:6px;background:#fff;color:#16181d;max-width:100%}
+.top h1{font-size:19pt;line-height:1.5;font-weight:900;margin:8mm 0 2mm}
+.top p{color:#555;font-size:10pt;margin:0 0 2mm}
+.sec{scroll-margin-top:56px}
+.text,.item,.col,.toc{margin-top:22mm}
+.chdoor{margin-top:26mm;padding-top:10mm;border-top:3px solid #15467e}
+.grp{margin-top:18mm;padding-top:0;text-align:left;border-left:6px solid #15467e;padding-left:5mm}
+.grp p,.grp .g3{text-align:left}
+.cover{display:none}
+pre{overflow-x:auto}
+
+.qpage{text-align:left}
+.qpage .pr{font-size:14.5pt;font-weight:900;line-height:1.75;text-align:left;margin:0 !important}
+.qpage .px{opacity:.82}
+figure.fig{margin:8mm 0;padding:0;text-align:center}
+figure.fig img{max-width:100%;height:auto;border:1px solid #dfe3ea;border-radius:8px}
+figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
+.pintro{margin:6mm 0 0;padding:5mm 6mm;background:#f5f7fa;border-radius:8px}
+.pintro h4{margin-top:0}
+.st{grid-template-columns:20mm 1fr}
+</style></head><body><div class="bar"><a class="back" href="./" onclick="if(document.referrer&&history.length>1){history.back();return false}">← 一覧にもどる</a><b>第3章　【アウトプット】頭のいい人は、解けた問題を数えない</b><select id="jump" aria-label="読みたい所へ飛ぶ"><option value="">読みたい所へ飛ぶ</option><option value="door">章の導入</option><option value="g1">■ 問題の解き方</option><option value="i16">　16　解説を読んで、「わかった」で終わる</option><option value="i17">　17　力がついてから、過去問を解く</option><option value="i18">　18　正解した問題に、○をつけて終わる</option><option value="i19">　19　時間を測らずに、解けるまで解く</option><option value="i20">　20　同じ単元を、まとめて解く</option><option value="g7">■ 復習の仕方</option><option value="i21">　21　わからない問題を、わかるまで粘る</option><option value="i22">　22　ケアレスミスを、「次は気をつける」で終える</option><option value="i23">　23　2周目も、最初から全部解く</option><option value="i24">　24　「わからない」で、終わりにする</option><option value="i25">　25　1冊が終わる前に、次の1冊を買う</option></select></div><div class="top"><p>頭のいい人が絶対やらない勉強法<span style="font-weight:700">（仮題）</span>　／　朝倉 徹大（受験の王様）　／　2026/11/20 時点</p><p>黄色の線は、原稿のマーカーの印です。「イラストのラフ案（2コマ）」は、絵にする前の、言葉の案です。</p></div><div class="sec" id="door"><section class="chdoor"><div class="cno">第3章</div><h1>頭のいい人は、解けた問題を数えない</h1><p class="fld">【アウトプット】　16〜25番</p><p class="sub">頭の中の知識を取り出す</p><div class="intro"><h4>「薔薇」「醤油」「餃子」。読めますか？</h4>
+<p>……</p>
+<p>読めたと思います。ばら、しょうゆ、ぎょうざ。</p>
+<p>では、この本を閉じて、3つを、何も見ずに、書いてみてください。</p>
+<p>……</p>
+<p>書けなかった人が、ほとんどだと思います。</p>
+<p>何十回も、何百回も、見てきた字です。読めます。意味も、わかります。それでも、書けません。何も見ずに書く、ということを、1回も、していないからです。</p>
+<p><mark>「見ればわかる」と、「自分で出せる」は、別の力です。</mark>見た回数を、どれだけ増やしても、出せるようには、なりません。出す練習をしたものだけが、出せるようになります。</p>
+<p>勉強でも、同じことが起きています。教科書を読めば、わかる。解説を見れば、わかる。でも、テストの机の上には、教科書も、解説も、ありません。テストが聞いているのは、「見ればわかるか」では、ありません。「何も見ずに、出せるか」です。</p>
+<p>第2章で、頭に入れました。この章では、それを、取り出します。取り出す練習が、アウトプット。問題を解くことです。</p>
+<p>ただ、問題を解く目的を、まちがえている人が、多いです。○の数を数えて、「8割できた」と安心して、終わる。でも、○がついた問題は、解く前から、解けた問題です。解いても、点は、1点も増えていません。点が増えるのは、<mark>×だった問題を、○に変えた時だけ</mark>です。</p>
+<p>頭のいい人は、解けた問題を、数えません。問題を解くのは、「出せなかった所」を見つけるためです。そして、見つけた×を、1つずつ、○に変えていきます。</p>
+<p>この章では、そのやり方を、10個、書きます。</p>
+<p>前半の5つは、問題の解き方です。×を、正しく見つけるための解き方です。白紙に、再現する。力がつく前に、まず解く。全部の選択肢に、根拠を取る。時間を測る。単元を混ぜる。</p>
+<p>後半の5つは、復習の仕方です。見つけた×を、○に変えるためのやり方です。答えを見るタイミングを決める。ミスに、名前をつける。記録して、×だけをやる。「わからない」を、分解する。1冊を、やり込む。</p>
+<p>10個とも、やっていることは、同じです。解きっぱなしにしない。点が動くのは、この章です。</p></div></section></div>
+<div class="sec" id="g1"><section class="grp"><p class="g1">第3章　【アウトプット】</p><p class="g2">問題の解き方</p><p class="g3">16　解説を読んで、「わかった」で終わる<br>17　力がついてから、過去問を解く<br>18　正解した問題に、○をつけて終わる<br>19　時間を測らずに、解けるまで解く<br>20　同じ単元を、まとめて解く</p></section></div>
+<div class="sec" id="i16"><section class="item">
+<div class="qpage"><div class="no">16</div><p class="ttl">解説を読んで、「わかった」で終わる</p><p class="pr px">×　頭のいい人は「解説を読んで終わり」をしない。</p><p class="pr po">○　頭のいい人は「白紙再現テスト」をする。</p></div>
+<h3>1から100までを、全部足すと、いくつですか？</h3>
+<p>解き方を、書きます。</p>
+<pre>　　1と100を足すと、101。2と99を足しても、101。
+　　こういうペアが、50組できる。
+　　だから、101×50＝5050。</pre>
+<p>「なるほど」と、思いましたね。</p>
+<p>では、上の3行を手で隠して、解いてください。</p>
+<p class="q">1から40までを、全部足すと、いくつですか。</p>
+<p>……</p>
+<p>答えは、820です。（41×20）</p>
+<p>「ペアは、何組だっけ」。そこで、手が止まりませんでしたか。</p>
+<p>解き方を読んで、「なるほど」と思いました。それでも、数字が変わっただけで、止まります。</p>
+<p>問題集の解説を読んだあとにも、同じことが起きています。「なるほど、わかった。次」。赤ペンで答えを写して、次の問題へ進みます。1週間後。同じ問題が、小テストに出ました。最初の1行が、書けません。</p>
+<h3>「わかる」と「できる」は、別のものです</h3>
+<p>解説を読んで「わかった」時、頭の中で、やっていたことは、何でしょうか。解説に書いてある順番を、1行ずつ追って、「うん、そうなる」と、確かめただけです。</p>
+<pre>　　わかる　　解説の1行1行に、「うん、そうなる」と言える
+　　できる　　何も見ずに、最初の1行から、自分で書ける</pre>
+<p>さっきの問題で、一番むずかしいのは、101×50の計算では、ありません。「最初と最後を、組にして足す」と、思いつくことです。解説を読んだ時、それは、もう書いてありました。読んだ人は、計算を確かめただけで、解き方を、自分では、思いついていません。だから、数字が変わると、止まります。友達について行って着いた店に、次の日、1人で行けるとは、かぎりません。どこで曲がるかを、自分で考えていないからです。07番の、人に説明する時と同じです。見ながらできても、何も見ずに再現できなければ、まだ、自分のものでは、ありません。</p>
+<h3>本番で目の前にあるのは、問題文と、白紙だけです</h3>
+<p>模試でも、入試でも、目の前にあるのは、問題文と、白い解答用紙だけです。解説も、ノートも、ヒントも、ありません。だから、練習の最後は、本番と同じ状態で、確かめます。<mark>問題文だけを見て、白紙に、最初から最後まで、再現する。</mark>これを、「白紙再現テスト」と呼びます。再現できないものは、点になりません。</p>
+<h3>式だけでなく、「考え方」ごと、再現します</h3>
+<p>再現するのは、式の形では、ありません。「なぜ、そうするのか」という、考え方です。さっきの「1から40まで」なら、こうなります。</p>
+<pre>　　最初と最後を足す。どの組も、同じ数になる　→　1＋40＝41
+　　組の数は、全部の数の半分　　　　　　　　　→　40÷2＝20組
+　　同じ数が、20組ある　　　　　　　　　　　　→　41×20＝820</pre>
+<p>「ペアは、何組だっけ」で手が止まった人は、2行目の考え方が、抜けていました。<mark>手が止まった所が、本当は、わかっていなかった所です。</mark>そこだけ、解説を見て、閉じて、最初から、もう一度書きます。</p>
+<p>参考書の解説には、この「考え方」が、書いていないことがあります。式と、次の式の間で、何が起きているのか。数学が苦手な人は、この行間が追えなくなって、苦戦します。追えない時は、先生や友達、AIに、「この行から、次の行に、なぜなるのか」を聞いてください。</p>
+<p>解説を見ながら、ノートに書き写すのは、白紙再現テストでは、ありません。写している間は、手が動いているだけで、頭は、何も考えていません。</p>
+<h3>再現するのは、答えではなく、答えまでの道です</h3>
+<p>問題を解いたら、丸つけをします（丸つけのしかたは、18番に書きます）。○だった問題は、もう、やらなくて、かまいません。白紙再現テストをするのは、つまずいた問題です。解説で、「どう解いていくのか」を学んだら、その進め方を、自分で再現できるかを、確かめます。</p>
+<p>確かめるのは、最後の答えが合うかどうかでは、ありません。<mark>答えまでの道を、自分で、もう一度たどれるかどうか</mark>です。答えの数字だけを覚えても、数字が変われば、解けません。道を再現できれば、100までが、40までに変わっても、解けます。</p>
+<p>解説を閉じたすぐあとは、まだ、頭に解説が残っています。別の日に、もう一度、白紙から。そこで再現できたら、「できる」になっています。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>読んで終わり</b><i>なるほど、わかった。次</i></div><div class="k o"><span>頭のいい人</span><b>白紙再現テスト</b><i>問題文だけで、書ける？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">解説を読んだら、閉じて、問題文と白紙だけにする</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">考え方ごと、最初から書いて、止まった所に印</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">止まった所だけ見て、閉じて、最初からもう一度</p></div></div><div class="king"><span>「できた」の基準</span><p>問題文だけを見て、最初から最後まで、白紙に書けたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">解説を読んで「わかる」と、自分で「できる」の間には、段差がある。</p><p>だから、「わかった」で終わらない。問題文だけで、白紙に再現する。</p><p>迷ったら、自分に聞きます。「これ、白紙に書ける？」</p></div>
+</div></section></div>
+<div class="sec" id="i17"><section class="item">
+<div class="qpage"><div class="no">17</div><p class="ttl">力がついてから、過去問を解く</p><p class="pr px">×　頭のいい人は「力がついてから解く」をしない。</p><p class="pr po">○　頭のいい人は「まず解く」をする。</p></div>
+<h3>病院で、「なんとなく、全体的に、調子が悪いんです」と言ったら？</h3>
+<p>お医者さんは、薬を出しません。まず、検査をします。熱を測る。のどを見る。血を調べる。数字と事実がそろって、初めて、治し方が決まります。</p>
+<p>勉強の相談で、一番よく聞く言葉が、あります。「基礎が、できていないんです」。これは、「なんとなく、全体的に、調子が悪い」と、同じです。どの単元が、どのくらい、できていないのか。それがわからないと、何をやればいいかも、決まりません。</p>
+<h3>感覚の「できない」と、事実の「できない」は、別のものです</h3>
+<p>勉強ができる生徒は、あいまいに言いません。「確率は、今解いたら、正答率30％くらいです」。こう言います。数字で言えるのは、実際に、解いたからです。</p>
+<pre>　　×　「基礎が、できていないんです」
+　　○　「確率は、今解くと、正答率30％です」</pre>
+<p>過去問でも、同じです。「今解いても、どうせ、できないじゃないですか」。そう言って、後回しにする人が、多いです。でも、感覚で「できない」と思っているのと、実際に解いて「できなかった」のは、まったく違います。同じ正答率30％でも、中身は、まったく違うことがあります。大問1と2が満点で、残りが0点の30％なのか。全部が、まんべんなく30％なのか。解いた人だけが、それを知っています。だから、次にやることが、決まります。</p>
+<p>コーネル大学の研究者たちの実験では、テストの成績が低かった人ほど、自分の成績を、実際より高く見積もっていました。実力が足りていない時ほど、「自分は、できている」と思いやすい。「ダニング＝クルーガー効果」と呼ばれています。誰にでも、起きることです。自分の「できる」「できない」の感覚は、ずれます。<mark>だから、まず、解きます。</mark></p>
+<h3>基礎の問題集を1冊、まず解いて、仕分けます</h3>
+<p>新しい単元や、科目の勉強を始める時。おすすめは、応用ではなく、基礎だけの問題集を1冊、一度、全部解くことです。考えこまずに、解けなければ、×をつけて、次へ進みます。これは、覚えるためではありません。<mark>できるものと、できないものを、仕分ける作業</mark>です。終わったら、単元ごとに、数字にします。</p>
+<pre>　　単元　　　　　解いた数　　○の数　　正答率
+　　2次関数　　　　10問　　　　9問　　　90％　→　今は、やらない
+　　図形と計量　　　10問　　　　6問　　　60％　→　×の4問だけ
+　　確率　　　　　　10問　　　　3問　　　30％　→　ここから始める</pre>
+<p>僕の塾では、入ってきた生徒に、一番最初に、これをやってもらいます。何ができて、何ができないのかを、専用のシートで、見えるようにします。「基礎ができていない」が、「確率が30％」に変わった瞬間、やることは、決まります。</p>
+<h3>過去問も、最初に解きます。目的は、2つです</h3>
+<p>過去問を、力がついてからの、腕試しに取っておく人が、多いです。逆です。最初に、1年分、時間を測って、解きます。目的は、2つあります。</p>
+<pre>　　1　敵を知る　　　　どの分野が、どんな形で、どのくらいの量、出るのか
+　　2　今の自分を知る　どこが、どれだけ、できていないのか。感覚ではなく、事実で</pre>
+<p>過去問を、秋まで開かなかった人が、11月に、気づくことがあります。「この学部には、この分野が、一度も出ていない」。夏の2か月を、そこに使っていました。敵を知らないまま進むと、こうなります。</p>
+<p>点数は、気にしなくて、かまいません。0点でも、「何が出るか」と、「どこが0点か」は、手に入ります。定期テストなら、学校のワークと、去年の問題が、同じ役目をします。</p>
+<h3>「できない」を、早く知った人から、伸びます</h3>
+<p>×だらけの結果を見るのは、いやなものです。だから、多くの人が、「できない」を知るのを、先にのばします。でも、「できない」が、事実でわかった日から、やることが決まります。<mark>その日が早いほど、成長は、速くなります。</mark>多くの人が、ここに、気づいていません。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>力がついてから</b><i>今解いても、できないし</i></div><div class="k o"><span>頭のいい人</span><b>まず解く</b><i>何が、何％できる？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">基礎の問題集を1冊、まず解いて、○×に分ける</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">単元ごとの正答率を、紙に書き出す</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">過去問を1年分、時間を測って解いてみる</p></div></div><div class="king"><span>「できた」の基準</span><p>「〇〇は、正答率△％」と、数字で言えたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">感覚の「できない」では、何も決まらない。事実の「できない」で、やることが決まる。</p><p>だから、力がつくのを待たない。まず解いて、事実を知る。</p><p>迷ったら、自分に聞きます。「それ、解いて確かめた？」</p></div>
+<div class="hito"><span>王様の一言</span><p>「「いつか」なんて、来ない。完璧な準備なんて、来ない。」</p><i>受験の王様</i></div></div></section></div>
+<div class="sec" id="i18"><section class="item">
+<div class="qpage"><div class="no">18</div><p class="ttl">正解した問題に、○をつけて終わる</p><p class="pr px">×　頭のいい人は「○をつけて終わり」をしない。</p><p class="pr po">○　頭のいい人は「全部の選択肢の根拠取り」をする。</p></div>
+<h3>りんごについて、まちがっているものを、1つ選んでください</h3>
+<pre>　　ア　りんごは、バラ科の植物である
+　　イ　りんごの収穫量が、日本で一番多い都道府県は、青森県である
+　　ウ　りんごの収穫量が、日本で2番目に多い都道府県は、長野県である
+　　エ　青森県のりんごの収穫量は、日本全体の、約9割をしめる</pre>
+<p>……</p>
+<p>答えは、エです。青森県は、たしかに日本一です。でも、約6割。9割では、ありません。</p>
+<p>アを選んだ人も、多いと思います。りんごは、バラ科の植物です。桜や、いちごと、同じ仲間です。</p>
+<p>エを選んで、正解した人に、聞きます。アとウが「正しい」と、理由つきで、言えましたか。「なんとなく、エがあやしい」。それで当たった○は、<mark>次のテストでは、外れるかもしれない○</mark>です。</p>
+<h3>その○は、当たったのか、わかっていたのか</h3>
+<p>問題は、ただ解けばいい、というものでは、ありません。○には、2種類あります。</p>
+<pre>　　根拠があって選んだ○　　次も、取れる
+　　なんとなく選んだ○　　　次は、わからない</pre>
+<p>答え合わせの時、この2つは、同じ○に見えます。そして、なんとなくの○は、一番やっかいです。×なら、解説を読みます。○は、読みません。<mark>わかっていないのに、一度も見直されないまま、本番まで行きます。</mark></p>
+<h3>選ぶ前に、根拠を一言、書きます</h3>
+<p><mark>選ぶ前に、根拠を1つ決めます。</mark>「イだ。なぜなら、主語が複数だから」。問題番号の横に、一言で書いておきます。</p>
+<p>コロンビア大学の研究者たちの実験では、自信を持って答えて、間違いだった時ほど、正しい答えを、強く覚えていました。「え、違うの？」という驚きが、記憶を強くするからです。根拠を書いておけば、合っていた時は、その根拠が使えるとわかります。間違っていた時は、驚くので、強く残ります。どちらに転んでも、残ります。</p>
+<h3>選んだ1つだけでなく、選ばなかった3つにも、根拠を取ります</h3>
+<p>自分が選んだ選択肢だけでなく、選ばなかった選択肢にも、「なぜ正しいのか」「なぜ違うのか」の根拠を取る。<mark>これを、「根拠取り」と呼びます。</mark>最初のりんごの問題なら、こうなります。</p>
+<pre>　　選ぶ前の根拠　「青森県が一番なのは、知っている。でも、9割は多すぎる」
+　　ア　正しい。りんごは、バラ科。桜や、いちごと、同じ仲間
+　　イ　正しい。収穫量の日本一は、青森県
+　　ウ　正しい……と思う。でも、理由が、言えない
+　　エ　まちがい。約9割ではなく、約6割</pre>
+<p>根拠取りをすると、その問題だけでなく、次に、どう聞かれても、対応できるようになります。どんな聞かれ方をするのかを、問題を解きながら、学べるんです。4つとも言えたら、4問ぶんの勉強です。エを選んで○をつけて終わった人は、1問ぶん。しかも、当たっただけかもしれない1問ぶんです。</p>
+<p>選択肢は、適当に作られていません。間違いの選択肢には、<mark>多くの人が引っかかる所</mark>が、わざと使われています。さっきの「約9割」が、そうです。正しい選択肢は、そのまま、次のテストで聞かれる知識です。</p>
+<h3>言えなかった○は、△にします</h3>
+<p>さっきの見本では、ウの理由が言えませんでした。答えは合っていても、この問題は、○にしません。</p>
+<pre>　　○　選んだ理由も、選ばなかった理由も、言えた
+　　△　合っていたけれど、理由が言えなかった
+　　×　間違えた</pre>
+<p>△は、×と同じ扱いにします。次の日に、もう一度やる問題です。<mark>なぜ合っていたかまで言えて、初めて○です。</mark></p>
+<p>間違いの選択肢を、「正しい」と思った。正しい選択肢を、「違う」と思った。最初の問題で、アを選んだ人が、そうです。落ちこむ所では、ありません。勘違いしていた所が、はっきり見つかった、ということです。<mark>伸びしろが、一番大きいミスです。</mark></p>
+<h3>解説に、間違いの理由が書いていない時</h3>
+<p>問題集によっては、正解の説明しか載っていません。その時は、AIに聞いていいです。「自分は、こう考えて、アを選んだ。どこで勘違いしている？」。答えではなく、自分の考えのどこが違うのかを聞くと、自分の課題が、はっきりします。（AIの使い方は、43番に書きます）</p>
+<p>問題集を選ぶ時も、ここを見てください。間違いの選択肢について、1つずつ理由が書いてあるもの。それが、いい問題集です。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>○をつけて終わり</b><i>合ってた。次</i></div><div class="k o"><span>頭のいい人</span><b>根拠取り</b><i>残りの3つ、説明できる？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">選ぶ前に、根拠を一言、問題番号の横に書く</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">選ばなかった選択肢にも、根拠を声に出す</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">言えなかった問題は△にして、次の日にもう一度</p></div></div><div class="king"><span>「できた」の基準</span><p>全部の選択肢の理由を言えた問題だけを、○にできたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">○には、わかっていた○と、当たっただけの○がある。</p><p>だから、○で終わりにしない。全部の選択肢の、根拠を取る。</p><p>迷ったら、自分に聞きます。「残りの3つ、説明できる？」</p></div>
+</div></section></div>
+<div class="sec" id="i19"><section class="item">
+<div class="qpage"><div class="no">19</div><p class="ttl">時間を測らずに、解けるまで解く</p><p class="pr px">×　頭のいい人は「時間を測らずに解く」をしない。</p><p class="pr po">○　頭のいい人は「時間を測って解く」をする。</p></div>
+<h3>「時間が、足りなかった」。では、あと30分あったら、解けましたか？</h3>
+<p>テストや模試のあとに、よく聞く言葉です。「時間が、足りなかった」。「時間内に、解ききれませんでした」。</p>
+<p>では、聞きます。あと30分あったら、残りの問題は、全部、解けましたか。</p>
+<p>……</p>
+<p>「解けた」と言える人は、時間が足りなかった人です。「たぶん、解けなかった」という人は、時間では、ありません。足りなかったのは、実力です。</p>
+<h3>解けなかった理由は、2つあります。やることが、まったく違います</h3>
+<pre>　　実力が足りない　→　時間をかけても、解けない　→　解き方から、やり直す
+　　時間が足りない　→　時間をかければ、解ける　　→　時間内に解く練習をする</pre>
+<p>「時間内に、解ききれないんです」と相談に来る生徒は、多いです。でも、話を聞くと、時間以前に、そもそも、解けていないことが、ほとんどです。<mark>時間のせいにする前に、まず、実力です。</mark>時間がかかってもいいから、自分の力で、最後まで解ける。先に作るのは、その状態です。</p>
+<p>困るのは、時間を測らずに勉強していると、自分がどちらなのかが、わからないことです。だから、時間を測ります。それも、2つ、測ります。</p>
+<h3>「時間内」と「Max」の、2つを測ります</h3>
+<p>過去問や、模試の形の問題を解く時に、やります。まず、本番と同じ時間で、タイマーをかけて解きます。時間が来たら、解答用紙に、線を引きます。そのあとは、時間を気にせずに、解ける所まで、解きます。線より上が、「時間内」。全部合わせたものが、「Max」。丸つけをして、点を、2つ出します。</p>
+<pre>　　時間内40点・Max45点　→　時間をかけても、解けない。足りないのは、実力
+　　時間内40点・Max75点　→　時間をかければ、解ける。足りないのは、速さ</pre>
+<p>時間内の点は、同じ40点です。でも、やることは、逆になります。上の人が、速く解く練習をしても、点は増えません。下の人が、解き方を最初から覚え直すのは、遠回りです。<mark>2つを測って、初めて、次にやることが決まります。</mark></p>
+<h3>時間内にできて、完全クリアです</h3>
+<p>1問ずつの練習でも、同じ順番で、考えます。</p>
+<pre>　　×　時間をかけても、解けなかった　→　解き方から、やり直す
+　　△　時間をかければ、解けた　　　　→　時間内で、もう一度
+　　○　時間内に、解けた　　　　　　　→　完全クリア</pre>
+<p>16番の白紙再現テストも、最後は、時間内に再現できたら、完全クリアです。試しに、10秒で、「さ」で始まる食べ物を、5つ、言ってみてください。時間がいくらでもあれば、全員、言えます。それでも、10秒と言われると、止まります。<mark>知っていることと、時間内に出せることは、別の力です。</mark>テストで測られるのは、あとのほうです。</p>
+<p>本番の、1問あたりの時間も、計算しておきます。試験時間を、問題の数で割るだけです。60分で大問4つなら、1問15分。この数字を知らないと、△なのか、○なのかが、決められません。</p>
+<h3>全部の問題で、測る必要はありません</h3>
+<p>毎回タイマーを置くのは、しんどいです。週に1回、まとめて測る日を作るだけでも、違います。</p>
+<p>Maxで解いている時に、いくら考えても、わからない問題も、あると思います。その時、何分で答えを見るかは、21番に書きます。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>時間を測らない</b><i>時間が足りなかっただけ</i></div><div class="k o"><span>頭のいい人</span><b>2つを測る</b><i>足りないのは、実力？時間？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">本番と同じ時間で解いて、時間が来たら線を引く</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">時間を気にせず、解ける所まで解く</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">2つの点を比べて、実力か、時間かを決める</p></div></div><div class="king"><span>「できた」の基準</span><p>解けなかった理由を、「実力」か「時間」か、言えたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">解けなかった理由は、実力か、時間か。どちらかで、やることが変わる。</p><p>だから、時間を測らずに解かない。時間内と、Maxの、2つを測る。</p><p>迷ったら、自分に聞きます。「足りないのは、実力？　時間？」</p></div>
+</div></section></div>
+<div class="sec" id="i20"><section class="item">
+<div class="qpage"><div class="no">20</div><p class="ttl">同じ単元を、まとめて解く</p><p class="pr px">×　頭のいい人は「まとめて解く」をしない。</p><p class="pr po">○　頭のいい人は「混ぜて解く」をする。</p></div>
+<h3>次の8問を、解いてください</h3>
+<pre>　　1回目　　12＋7　　15＋8　　23＋9　　31＋6
+　　2回目　　12＋7　　15－8　　23×2　　36÷6</pre>
+<p>……</p>
+<p>2回目は、1問ごとに、「これは、何算だ？」と確かめたはずです。1回目は、確かめていません。全部、足し算だと、わかっているからです。</p>
+<p>同じ種類が続くと、「どの解き方を使うか」を、考えなくてすみます。でも、テストは、そこから始まります。</p>
+<p>こんな経験は、ありませんか。苦手な単元を、1日かけて、まとめてやった日のことです。例えば、二次関数。「今日は、二次関数を完璧にする日にしよう」。問題集の二次関数のページを、朝から30問、解きます。後半は、スラスラ解けます。夕方には、ほとんど○です。</p>
+<p>ところが、2週間後の模試で、二次関数の問題が出ると、手が止まります。そもそも、それが二次関数の問題だと、気づけません。</p>
+<h3>本番の問題用紙には、単元名が書いてありません</h3>
+<p>後半の15問がスラスラ解けたのは、力がついたからではありません。<mark>「さっきと同じやり方でいい」とわかっていたから</mark>です。スラスラ解けると、わかった気がします。絶対法則03で見た、あの感じです。</p>
+<p>問題集には「二次関数」と書いてあります。だから、どのやり方を使うかは、解く前から決まっています。本番の問題用紙には、書いてありません。<mark>「これは何の問題か」を、自分で見分けるところから始まります。</mark>まとめて練習した人は、見分ける練習を1回もしていません。</p>
+<p>部活でも、同じです。フリースローだけを100本打てば、その場では、入るようになります。でも、試合では、ドリブルのあとにも、パスのあとにも、シュートが来ます。次に何が来るかは、誰も教えてくれません。</p>
+<h3>新しく習う時はまとめて、解く練習は混ぜます</h3>
+<p>何度も聞かれてきた質問があります。「月曜は数学の日、と決めたほうがいいですか」。結論から言います。<mark>解く練習は、混ぜたほうがいい</mark>です。種類を混ぜて練習することを、「インターリーブ」と呼びます。A、B、Cの3種類の問題なら、こうなります。</p>
+<pre>　　まとめる　　　　AAA　BBB　CCC　→　解いている間は、スラスラ進む
+　　インターリーブ　ABC　BCA　CAB　→　1問ごとに、「どれだ？」と考える</pre>
+<pre>　　新しく習う時　　　→　まとめて。1つを終わらせてから、次へ
+　　解く練習をする時　→　混ぜる。前にやった単元と一緒に</pre>
+<p>新しく習う単元は、最初はまとめてやります。例題を読んで、解き方を知って、基本の同じ形を、5問だけ解く。ここで混ぜると、何をやっているのかわからなくなります。混ぜるのは、一度解けるようになったあとです。</p>
+<p>そのあとの練習は、3種類を混ぜます。今日の単元から3問、先週の単元から2問、先月の単元から2問。順番は、ばらばらにします。そして、解く前に、「何の問題か」を一言で言います。</p>
+<pre>　　1問目　「これは、二次関数の最大と最小」　今日の単元
+　　2問目　「これは、因数分解」　　　　　　　先月の単元
+　　3問目　「これは、一次不等式」　　　　　　先週の単元
+　　4問目　「これは、二次関数のグラフ」　　　今日の単元</pre>
+<p>1問ごとに、「これは、何の問題だ？」と確かめています。最初の8問の、2回目と同じです。</p>
+<h3>混ぜたほうが、あとで残ります</h3>
+<p>混ぜると、まとめて解く時のようには、スラスラ進みません。不安になると思います。</p>
+<p>サウス・フロリダ大学の研究者たちの実験です。数学の4種類の問題を、同じ種類をまとめて練習するグループと、種類を混ぜて練習するグループに分けました。練習中の正答率は、まとめたほうが高くなりました。ところが、あとでテストをすると、<mark>混ぜたほうが大きく上</mark>でした。中学生で確かめた実験でも、同じです。2週間後のテストで、混ぜて練習した内容は約7割、まとめて練習した内容は約4割でした。</p>
+<p>混ぜすぎも、効きません。9教科を10分ずつやると、どれも、やり始めたところで終わります。<mark>1回の勉強で、2つか3つ。</mark>それくらいがちょうどいいです。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>まとめて解く</b><i>今日は、二次関数の日</i></div><div class="k o"><span>頭のいい人</span><b>混ぜて解く</b><i>これは、何の問題だ？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">新しい単元は、基本を5問だけ、まとめて解く</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">そのあとの練習は、3種類を混ぜる</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">解く前に、「何の問題か」を一言で言う</p></div></div><div class="king"><span>「できた」の基準</span><p>混ぜた7問で、「何の問題か」を全部言えたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">同じ種類を続けて解くと、考えなくても手が動く。</p><p>だから、解く練習は、まとめない。単元を、混ぜる。</p><p>迷ったら、自分に聞きます。「これは、何の問題だ？」</p></div>
+</div></section></div>
+<div class="sec" id="g7"><section class="grp"><p class="g1">第3章　【アウトプット】</p><p class="g2">復習の仕方</p><p class="g3">21　わからない問題を、わかるまで粘る<br>22　ケアレスミスを、「次は気をつける」で終える<br>23　2周目も、最初から全部解く<br>24　「わからない」で、終わりにする<br>25　1冊が終わる前に、次の1冊を買う</p></section></div>
+<div class="sec" id="i21"><section class="item">
+<div class="qpage"><div class="no">21</div><p class="ttl">わからない問題を、わかるまで粘る</p><p class="pr px">×　頭のいい人は「わからなくても粘る」をしない。</p><p class="pr po">○　頭のいい人は「答えを見る」をする。</p></div>
+<h3>オーストラリアの首都は、どこですか？</h3>
+<p>5秒で、答えてください。</p>
+<p>……</p>
+<p>答えは、キャンベラです。</p>
+<p>出てこなかった人に、聞きます。あと30分考えたら、出たと思いますか。</p>
+<p>出ません。知らないものは、いくら考えても、出てこないからです。</p>
+<p>首都なら、誰も、30分は粘りません。ところが、勉強では、粘ります。こんな経験は、ありませんか。数学の問題。最初の1行が、書けません。「答えを見たら、負けだ」。そう思って、問題文をにらみ続けます。30分たちました。ノートは、白いままです。</p>
+<h3>知らないものは、粘っても、出てきません</h3>
+<p>解けなかったのは、考える力が足りないからでは、ありません。使う解き方を、まだ、知らなかったからです。首都と、同じです。30分粘っても、出てきません。</p>
+<p>粘っている間、同じ所を、ぐるぐる回っています。考えているつもりでも、進んでいません。<mark>手が止まったままの時間は、考えている時間ではなく、悩んでいる時間です。</mark></p>
+<p>では、すぐに見ればいいのか。それも、違います。0秒で見ると、頭を1回も使わないまま、終わります。「ああ、そうか」と思って、次の日には、忘れています。</p>
+<h3>2つの実験を合わせると、答えが出ます</h3>
+<p>ロンドンの大学の研究者たちの実験では、知らない言葉の意味を、まず自分で答えてみて、はずしてから正解を見たグループのほうが、最初から正解を見たグループより、あとのテストの成績がよくなりました。</p>
+<p>オーストラリアの大学の研究者たちの実験では、図形の問題を、自力で解き続けたグループより、解き方の見本を先に見たグループのほうが、成績がよくなりました。</p>
+<p>合わせると、こうなります。0秒で見るのは、もったいない。30分粘るのは、かけすぎ。<mark>少しだけ自分で考えて、粘らずに、答えを見る。</mark>それが、一番残ります。</p>
+<h3>基準は、1つです。「次に試すことが、まだあるか」</h3>
+<p>では、いつ見るのか。基準は、1つだけです。</p>
+<pre>　　次に試すことが、ある　→　続ける。手を動かす
+　　次に試すことが、ない　→　答えを見る</pre>
+<p>図を、かいてみる。わかっている数字を、書き出してみる。前に解いた、似た問題のやり方を、あてはめてみる。試すことがある間は、前に進んでいます。粘る価値が、あります。</p>
+<p>試すことが、なくなった。手が、止まった。問題文の同じ所を、また読んでいる。それが、見る合図です。そこから先は、何分かけても、変わりません。</p>
+<h3>時間は、目安として、先に決めておきます</h3>
+<p>手が止まっていることには、自分では、気づきにくいものです。だから、解く前に、目安の時間を、決めておきます。</p>
+<pre>　　単語や用語　　　　　　　　　→　5秒
+　　数学で、最初の1行が書けない　→　3分
+　　途中まで進んで、計算で詰まった→　10分</pre>
+<p>数字は、目安です。大事なのは、考え方です。<mark>知らなければ出ないものは、短く。手を動かせば進むものは、長く。</mark>単語は、知らなければ、出ません。だから、5秒です。計算は、やれば進みます。だから、長く取ります。自分に合う数字に、変えてかまいません。</p>
+<h3>答えを見たら、閉じて、もう1回解きます</h3>
+<p>答えを見るのは、負けでは、ありません。もったいないのは、見て、「なるほど」で終わることです。</p>
+<p>2つの実験には、同じ所が、1つあります。はずしてから見る実験では、はずしたあとに、正解を見せています。見本を先に見る実験では、見本のあとに、自分で解かせています。残るのは、<mark>見たあとに、自分で出した回数</mark>のほうです。</p>
+<pre>　　単語　出てこない　→　答えを見る　→　隠して、もう1回言う
+　　数学　手が止まった　→　解説を見る
+　　　　　→　閉じて、最初の1行から、もう1回解く（16番）</pre>
+<p>見た問題を、その場で、何も見ずに、もう1回解けたら、OKです。</p>
+<h3>1周目は、先に解答を見ていいです</h3>
+<p>見本を先に見たほうがよかったのは、<mark>その単元を初めてやる人</mark>の時です。できるようになった人では、逆です。自力で解いたほうが、伸びます。だから、やることが変わります。</p>
+<pre>　　1周目　見たことのない問題　→　先に解答を見て、閉じて再現する
+　　3周目　前にやった問題　　　→　先に自力で解く。試すことがある間は、粘る</pre>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>粘る</b><i>わかるまで、考えよう</i></div><div class="k o"><span>頭のいい人</span><b>答えを見る</b><i>試すこと、もうない</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">「次に試すことが、あるか」を、自分に聞く</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">なければ、答えを見る。目安の時間でも見る</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">見たら閉じて、最初から、もう1回解く</p></div></div><div class="king"><span>「できた」の基準</span><p>答えを見た問題を、その場で、閉じて解けたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">知らないものは、いくら粘っても、出てこない。</p><p>だから、わからないまま粘らない。試すことがなくなったら、答えを見る。</p><p>迷ったら、自分に聞きます。「試すこと、まだある？」</p></div>
+</div></section></div>
+<div class="sec" id="i22"><section class="item">
+<div class="qpage"><div class="no">22</div><p class="ttl">ケアレスミスを、「次は気をつける」で終える</p><p class="pr px">×　頭のいい人は「ケアレスミスと呼ぶ」をしない。</p><p class="pr po">○　頭のいい人は「ミスに名前をつける」をする。</p></div>
+<h3>「ケアレスミスでした」。その問題、今、何も見ずに解けますか？</h3>
+<p>こんな経験は、ありませんか。テストが、返ってきました。×の問題の答えを見て、「うわ、それか。うっかりしてた」。答案の横に、「ケアレスミス」と書いて、次の問題へ進みます。</p>
+<p>では、その問題を、今、何も見ずに、白紙に、最初から解けますか。</p>
+<p>……</p>
+<p>解けないなら、それは、ケアレスミスでは、ありません。足りなかったのは、実力です。</p>
+<h3>「ケアレスミス」は、一番危険な言葉です</h3>
+<p>ケアレスミスという言葉は、便利です。「本当は、わかっていた」ことに、できるからです。そして、この言葉を使った瞬間に、考えるのが、止まります。「次は、気をつけよう」。それで、終わりです。</p>
+<p>でも、「気をつける」と決めた人に、聞きます。次のテストで、具体的に、何をしますか。答えられないはずです。「気をつける」には、やることが、入っていないからです。</p>
+<p>忘れ物と、同じです。「次は、気をつける」と言った人は、また忘れます。「前の日の夜に、カバンに入れる」と決めた人は、忘れません。違いは、<mark>やることが、決まっているかどうか</mark>です。やることが決まっていなければ、次のテストでも、前と同じように解いて、同じ所で、同じミスをします。</p>
+<h3>まず、白紙に解けるかで、分けます</h3>
+<p>答えを見て、「わかっていたのに」と思った問題は、その場で、確かめます。答えを閉じて、何も見ずに、最初から、解き直します。16番の、白紙再現テストです。</p>
+<pre>　　白紙に、解けなかった　→　実力不足。解き方から、やり直す
+　　白紙に、すぐ解けた　　→　本当のミス。次の「名前をつける」へ進む</pre>
+<p>答えを見たあとの「わかっていた」は、あてになりません。答えを見れば、誰でも、わかった気になるからです。<mark>白紙に再現できない時点で、実力不足</mark>。そう決めてください。</p>
+<h3>本当のミスなら、「技術的なエラー」に、名前をつけます</h3>
+<p>白紙に、すぐ解けた。それなら、本当に、ミスです。その時は、何を、どうまちがえたのかを、具体的に言えるようにします。「ケアレスミス」とは、書きません。エラーの名前を、書きます。</p>
+<pre>　　「符号を落とした」　　　　　→　負の数で割ったあと、符号だけ見る
+　　「数字を写しまちがえた」　　→　問題文から式に写したら、1回だけ見比べる
+　　「聞かれていることが違った」→　答えを書く前に、問題文の最後の1文を見る</pre>
+<p>名前がつくと、やることが、決まります。右に書いたのは、どれも、テスト中に、10秒でできることです。「気をつける」が、「これをやる」に、変わります。</p>
+<h3>自分のくせを、つかみます</h3>
+<p>エラーの名前を、書きためていくと、気づくことがあります。同じ名前が、何度も、出てきます。そして、出てくる場面も、似ています。</p>
+<pre>　　いつ　　　時間が足りなくなって、焦った時。最後の大問
+　　どこで　　暗算した所。字が雑になった所。問題文の「ただし」</pre>
+<p>これが、自分のくせです。<mark>どんな時に、どのエラーが起きるのか。</mark>それを知っている人は、その場面が来た時に、手を止められます。同じ名前が3回出たら、手順を1つ、紙に書いて、テストの前に見ます。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>ケアレスミス</b><i>わかってたのに</i></div><div class="k o"><span>頭のいい人</span><b>名前をつける</b><i>何を、どうまちがえた？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">答えを閉じて、白紙に、最初から解き直す</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">解けたら、エラーに名前をつけて書く</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">同じ名前が3回出たら、手順を1つ足す</p></div></div><div class="king"><span>「できた」の基準</span><p>まちがえた理由を、「ケアレスミス」以外の言葉で言えたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">「ケアレスミス」と呼ぶと、そこで考えるのが止まる。</p><p>だから、「ケアレスミス」で片づけない。白紙で確かめて、名前をつける。</p><p>迷ったら、自分に聞きます。「これは、何ミス？」</p></div>
+<div class="hito"><span>王様の一言</span><p>「人生がゲームなら、ラスボスより、日々現れる「ま、いっか」が、一番の敵。」</p><i>受験の王様</i></div></div></section></div>
+<div class="sec" id="i23"><section class="item">
+<div class="qpage"><div class="no">23</div><p class="ttl">2周目も、最初から全部解く</p><p class="pr px">×　頭のいい人は「全部もう1周」をしない。</p><p class="pr po">○　頭のいい人は「記録して×だけやる」をする。</p></div>
+<h3>この1週間で、まちがえた問題は、どれでしたか？</h3>
+<p>学校のワークでも、問題集でも、小テストでも、かまいません。「何ページの、何番」で、3つ、答えてください。</p>
+<p>……</p>
+<p>答えられなかった人が、多いと思います。まちがえたことは覚えていても、どの問題だったかは、覚えていません。印がなければ、どれが解けなかったかは、わかりません。</p>
+<p>わからないと、テストの前に、こうなります。「とりあえず、1番から、もう1周しよう」。1番。解けました。2番も、解けました。どちらも、1周目に、解けた問題です。</p>
+<h3>解ける問題を、もう一度解いても、点は増えません</h3>
+<p>1周目で、200問のうち、120問が解けたとします。2周目に、1番から全部解くと、その120問を、もう一度、解くことになります。<mark>解く前から、解ける問題です。</mark></p>
+<pre>　　全部、もう1周　　　　200問。そのうち120問は、もう解ける
+　　解けなかった所だけ　　 80問。全部が、点が増える問題</pre>
+<h3>○△×を、問題番号の横に、記録します</h3>
+<p>記録は、3つの記号だけです。18番の根拠取りで決めた、○△×を、そのまま、問題番号の横に書きます。日付も、書いておきます。</p>
+<pre>　　12　　○ 6/3
+　　13　　× 6/3　　△ 6/10
+　　14　　△ 6/3　　○ 6/10</pre>
+<p>2周目は、△と×がついた問題だけを、解きます。○は、飛ばします。2周目で○になったら、3周目には、出てきません。周を重ねるたびに、やる量が、減っていきます。<mark>残っている問題は、全部、自分がまだ解けない問題</mark>です。問題集が、自分だけの弱点集に、変わっていきます。</p>
+<h3>「ここまでできたら、一回OK」を、先に決めます</h3>
+<p>記録していても、困ることがあります。「いつまで、この1冊を、回せばいいのか」。終わりが決まっていないと、不安で、いつまでも同じ本を回し続けるか、なんとなく、次の本に手を出すことになります。だから、始める前に、終わりの基準を、1行で決めます。</p>
+<pre>　　×　「この章を、ちゃんとできるようにする」　　　確かめられない
+　　○　「章末問題10問を、何も見ずに、8問正解」　　確かめられる</pre>
+<p>10割には、しません。たまたま落とした1問のために、もう1周することに、なるからです。基準をこえたら、一回、OKにして、先へ進みます。</p>
+<h3>過去問とセットで、定点観測をします</h3>
+<p>もう1つ、大事なことがあります。問題集だけを、ずっと回していても、「今、どこまで、できるようになったのか」は、わかりません。だから、問題集と、過去問を、セットで使います。</p>
+<p>問題集の区切りごとに、過去問を、1年分、解きます。17番と同じように、点と、単元ごとの正答率を、記録します。そして、前に解いた時の記録と、比べます。同じ物差しで、くり返し測る。これが、定点観測です。</p>
+<p>「まだ、できていない気がする」。この感覚は、あてになりません。<mark>どれだけ伸びて、どれだけ足りないのかを、事実で知る。</mark>足りない所が見えたら、問題集の、その単元の△と×に、戻ります。1冊をやり込むことと、過去問で測ること。この2つを、行ったり来たりします。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>全部もう1周</b><i>とりあえず、1番から</i></div><div class="k o"><span>頭のいい人</span><b>記録して×だけ</b><i>○は、もう解かない</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">解いたら、番号の横に、○△×と日付を書く</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">始める前に、終わりの基準を1行で決める</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">区切りごとに、過去問を解いて、前と比べる</p></div></div><div class="king"><span>「できた」の基準</span><p>△と×だった問題を、何も見ずに、○にできたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">解ける問題をもう一度解いても、点は増えない。</p><p>だから、全部はやり直さない。記録して、△と×だけ回す。</p><p>迷ったら、自分に聞きます。「これ、○だった？」</p></div>
+<div class="hito"><span>王様の一言</span><p>「一番認めたくないことを認めたら、あっという間に成長する。」</p><i>受験の王様</i></div></div></section></div>
+<div class="sec" id="i24"><section class="item">
+<div class="qpage"><div class="no">24</div><p class="ttl">「わからない」で、終わりにする</p><p class="pr px">×　頭のいい人は「わからないで終わる」をしない。</p><p class="pr po">○　頭のいい人は「分解して分析する」をする。</p></div>
+<h3>筆箱が、ありません。最初に、何を考えますか？</h3>
+<p>……</p>
+<p>「最後に使ったのは、どこだっけ」。こう考えたはずです。</p>
+<pre>　　1時間目　教室　　　あった
+　　2時間目　理科室　　あった
+　　――――――――――――――
+　　3時間目　教室　　　ない</pre>
+<p>それなら、探す場所は、理科室と、帰りの廊下だけです。「あった」と「ない」の間に線を引くと、探す場所が、決まります。「全部わからない」と言って、学校じゅうを、1階から探す人は、いません。</p>
+<p>ところが、勉強になると、こう言います。「この問題、全部わかりません」。</p>
+<h3>「全部わからない」は、禁止です</h3>
+<p>「この問題、わかりません」。「全部、わからないです」。この言い方を、今日から、禁止にしてください。「全部」と言った瞬間に、探す場所が、問題の全部になるからです。もう一度、最初から全部やるしか、なくなります。</p>
+<p>でも、全部がわからない問題は、めったに、ありません。途中までは、わかっています。どこかの1か所で、止まっているだけです。</p>
+<pre>　　×　「この問題、全部わかりません」
+　　○　「ここまでは、わかります。ここから、わかりません」</pre>
+<p>どこまで、わかっているのか。どこから、わからなくなるのか。<mark>この2つに分けることが、分解です。</mark></p>
+<h3>「わかる」と「わからない」の間に、線を引きます</h3>
+<p>やることは、筆箱の時と、同じです。「どこまでは、あった？」を、「どこまでは、わかる？」に変えるだけです。解説を、上から、1行ずつ読みます。わかる行に、✓をつけます。✓がつかない最初の行。その上に、線を引きます。</p>
+<pre>　　1行目　✓
+　　2行目　✓
+　　3行目　✓
+　　――――――――　ここに、線を引く
+　　4行目　？　　ここから、わからない
+　　5行目</pre>
+<p>線より上は、もう、わかっている所です。やり直さなくて、かまいません。<mark>やるのは、線のすぐ下の、1行だけです。</mark>「全部わからない問題」が、「4行目がわからない問題」に、変わります。質問する時も、調べる時も、その1行だけを、聞けばいいのです。</p>
+<p>数学だけの話では、ありません。どの科目でも、線は引けます。</p>
+<pre>　　数学　式を立てる所までは、わかる　｜　その次の1行が、わからない
+　　英語　単語の意味は、全部わかる　　｜　文の意味が、つながらない
+　　国語　本文の内容は、わかる　　　　｜　答えの選び方が、わからない</pre>
+<p>1行目から✓がつかない時は、問題文に、線を引きます。「言葉の意味は、わかる」「何を聞かれているかは、わかる」「最初に何をすればいいかが、わからない」。線は、どこかに、引けます。</p>
+<h3>科目も、分解します</h3>
+<p>「数学が、苦手です」。これも、「全部わからない」と、同じ言い方です。数学の全部が、同じだけ苦手な人は、いません。単元ごと、大問ごとに、分けて見ます。</p>
+<pre>　　×　「数学が、苦手です」
+　　○　「計算は9割。図形は3割。文章題は、式を立てる所で止まる」</pre>
+<p>模試の成績表には、大問ごと、分野ごとの点が、のっています。合計の点や、偏差値だけを見て、しまっていませんか。見るのは、そこでは、ありません。17番で作った、単元ごとの正答率の表も、同じ役目をします。</p>
+<h3>みんな、ここを、見ようとしません</h3>
+<p>できなかった所を、細かく見るのは、いやな作業です。だから、多くの人が、サボります。点数だけを見て、「次は頑張ろう」で、終わりにします。</p>
+<p>でも、ここを見ないと、戦略は、立てられません。何が、どのくらい、できていないのか。それがわかって、初めて、何から、どの順番でやるかが、決まります。<mark>分解は、復習の中で、一番大事な作業です。</mark></p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>全部わからない</b><i>この問題、全部ムリ</i></div><div class="k o"><span>頭のいい人</span><b>分解する</b><i>どこまでは、わかる？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">解説を上から1行ずつ読んで、わかる行に✓</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">✓がつかない最初の行の上に、線を引く</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">科目も、単元や大問ごとの正答率に分ける</p></div></div><div class="king"><span>「できた」の基準</span><p>「ここまではわかる。ここからわからない」と言えたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">「全部わからない」と言うと、直す所がなくなる。</p><p>だから、「わからない」で終わらない。どこまでわかって、どこからわからないかに、分ける。</p><p>迷ったら、自分に聞きます。「どこまでは、わかる？」</p></div>
+</div></section></div>
+<div class="sec" id="i25"><section class="item">
+<div class="qpage"><div class="no">25</div><p class="ttl">1冊が終わる前に、次の1冊を買う</p><p class="pr px">×　頭のいい人は「次の1冊を買う」をしない。</p><p class="pr po">○　頭のいい人は「1冊をやり込む」をする。</p></div>
+<h3>本棚を、見てください。最後のページまでやった問題集は、何冊ありますか？</h3>
+<p>……</p>
+<p>では、途中で止まっている本は、何冊ありますか。</p>
+<p>……</p>
+<p>途中の本のほうが多かった人は、めずらしくありません。今の問題集が、3分の1くらい進んだ所で、本屋に行く。「これ1冊で、完成」。友達も、「あの本がいい」と言っている。「こっちのほうが、良さそう」。新しい1冊を買って、1ページ目から、始めます。半年後、本棚には、3分の1だけやった問題集が、4冊、並んでいます。</p>
+<h3>途中までの4冊は、最後までやった1冊に、勝てません</h3>
+<p>どの問題集も、最初は、基本から始まります。</p>
+<pre>　　4冊を、3分の1ずつ　→　同じ基本を4回。後ろの3分の2は、1回も見ていない
+　　1冊を、最後まで　　→　基本から、終わりまで、1回通った</pre>
+<p>やった量は、ほとんど同じです。でも、上のやり方では、テストに出る範囲の、後ろの3分の2が、空いたままです。</p>
+<p>新しい本が良く見えるのには、理由があります。今の本の「しんどい所」は、もう知っています。新しい本の「しんどい所」は、まだ知りません。それだけの違いです。<mark>色々な本に、浮気をしない。</mark>まず、1冊です。</p>
+<h3>まず、基礎の1冊だけを、取り切ります</h3>
+<p>その1冊は、基礎の問題集で、かまいません。そして、進め方にも、順番があります。</p>
+<pre>　　×　単元1の基礎→応用　→　単元2の基礎→応用　→　……
+　　○　全部の単元の基礎を、先に取り切る　→　そのあとで、応用</pre>
+<p>1つの単元を、応用まで完璧にしてから、次の単元へ進む。真面目な人ほど、こうします。でも、これだと、後ろの単元が、基礎も手つかずのまま、残ります。先に、全部の単元で、基礎の問題を、取り切れる状態にします。</p>
+<h3>取るべき所を落とさないだけで、成績は伸びます</h3>
+<p>数字で、見てみます。例えば、100点のテストが、基礎の問題60点、応用の問題30点、難問10点で、できているとします。</p>
+<pre>　　今　　　　　　　　基礎36＋応用9＋難問0　　＝　45点
+　　難問を全部解ける　基礎36＋応用9＋難問10　＝　55点（＋10点）
+　　基礎を取り切る　　基礎60＋応用9＋難問0　　＝　69点（＋24点）</pre>
+<p>難問を、全部解けるようになっても、増えるのは、10点です。基礎を取り切れば、24点、増えます。しかも、基礎のほうが、ずっと短い時間で、できるようになります。<mark>一番伸びるのは、基礎です。</mark></p>
+<p>絶対法則04で見た通り、入試は、満点を取る勝負では、ありません。合格最低点が65点なら、基礎の60点を取り切って、あと5点で、届きます。難問は、0点でも、合格です。</p>
+<p>僕の塾に、偏差値40から始めて、70を超えた生徒がいます。その生徒に、最初にやってもらったのは、基礎の問題だけです。本当に、それだけでした。（終わりの基準の決め方は、23番に書きました）</p>
+<h3>本を変えていいのは、重すぎる時だけです</h3>
+<p>「合わない本でも、最後までやらないといけませんか」。そんなことは、ありません。10問のうち、ほとんど全部で手が止まるなら、今の自分には、重すぎます。その時は、変えます。10問のうち、2問から4問で止まるなら、合っています。しんどくても、続けます。「あの本のほうが、良さそう」は、変える理由に、なりません。（途中で本を変える時の考え方は、第5章で、くわしく書きます）</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>次の1冊を買う</b><i>こっちのほうが、良さそう</i></div><div class="k o"><span>頭のいい人</span><b>1冊をやり込む</b><i>まず、基礎を取り切る</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">今やる1冊を、基礎の問題集に決める</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">全部の単元の基礎を、先に取り切る</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">取り切るまで、ほかの本は開かない</p></div></div><div class="king"><span>「できた」の基準</span><p>基礎の1冊を、最後のページまで、やり切れたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">途中までの4冊は、最後までやった1冊に勝てない。</p><p>だから、次の1冊を買わない。基礎の1冊を、取り切る。</p><p>迷ったら、自分に聞きます。「この1冊、取り切った？」</p></div>
+</div></section></div><script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>

@@ -1,0 +1,238 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>はじめに</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&display=swap"><style>
+@page { size: A4; margin: 18mm 20mm 20mm; }
+* { box-sizing: border-box; }
+html { font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 10.5pt; line-height: 1.9; color: #16181d; }
+body { margin: 0; }
+h1, h2, h3, h4, p, ol, pre { margin: 0; }
+mark { background: linear-gradient(transparent 55%, #ffe37a 55%); color: inherit; }
+.cover { page-break-after: always; padding-top: 60mm; }
+.cover h1 { font-size: 24pt; line-height: 1.5; font-weight: 900; }
+.cover .sub { margin-top: 6mm; color: #555; font-size: 11pt; }
+.cover .note { margin-top: 18mm; border-top: 1px solid #c9ced8; padding-top: 6mm; font-size: 10pt; color: #333; }
+.cover .note p { margin-bottom: 2mm; }
+.toc { page-break-after: always; }
+.toc h2 { font-size: 15pt; margin-bottom: 5mm; }
+.toc .ch { font-weight: 700; margin-top: 4.5mm; }
+.toc .it { display: grid; grid-template-columns: 9mm 1fr; font-size: 9.5pt; line-height: 1.75; color: #333; }
+.toc .it b { font-variant-numeric: tabular-nums; color: #15467e; }
+.chdoor { page-break-before: always; page-break-after: always; padding-top: 55mm; }
+.chdoor .cno { font-size: 13pt; color: #15467e; font-weight: 700; letter-spacing: .08em; }
+.chdoor h1 { font-size: 22pt; line-height: 1.5; margin-top: 3mm; font-weight: 900; }
+.chdoor .fld { margin-top: 2mm; color: #555; }
+.chdoor .intro { margin-top: 14mm; border-top: 1px solid #c9ced8; padding-top: 7mm; }
+.chdoor .intro p { margin-bottom: 4mm; }
+.item { page-break-before: always; }
+.qpage { background: #15467e; color: #fff; border-radius: 4mm; padding: 9mm 10mm 10mm; margin-bottom: 8mm; text-align: center; position: relative; }
+.qpage p { text-align: center; margin: 0; }
+.qpage .no { text-align: left; font-size: 15pt; font-weight: 900; font-variant-numeric: tabular-nums; opacity: .9; line-height: 1.2; margin: -3mm 0 1mm -3mm; }
+.qpage .q1 { font-size: 11pt; letter-spacing: .04em; }
+.qpage .q2 { font-size: 20pt; font-weight: 900; line-height: 1.5; margin: 2mm 0 2mm !important; }
+.qpage .q3 { font-size: 12pt; font-weight: 700; }
+.tag { display: inline-block; font-size: 8.5pt; font-weight: 700; color: #15467e; border: 1px solid #15467e; border-radius: 99px; padding: 0 3.2mm; line-height: 1.7; margin: 7mm 0 3mm; }
+.item > .tag:first-of-type { margin-top: 0; }
+h3 { font-size: 12pt; font-weight: 900; line-height: 1.6; margin: 7mm 0 2.5mm; padding-left: 3mm; border-left: 1.4mm solid #15467e; break-after: avoid; }
+h4 { font-size: 10.5pt; font-weight: 700; margin: 4.5mm 0 1.5mm; break-after: avoid; }
+p { margin-bottom: 3mm; text-align: justify; }
+p.q { padding-left: 2em; font-weight: 700; }
+pre { font-family: inherit; font-size: 9.8pt; line-height: 1.8; white-space: pre-wrap; background: #f1f3f7; border-radius: 2mm; padding: 3mm 4.5mm; margin: 2mm 0 4mm; break-inside: avoid; }
+.koma { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; break-inside: avoid; }
+.koma .k { border-radius: 3mm; padding: 4mm 5mm 5mm; text-align: center; }
+.koma .x { background: #eceef2; }
+.koma .o { background: #e3ecf7; border: 1px solid #15467e; }
+.koma span { display: block; font-size: 9pt; color: #555; }
+.koma b { display: block; font-size: 15pt; font-weight: 900; line-height: 1.6; }
+.koma i { display: block; font-style: normal; font-size: 9.5pt; }
+.sheet { border: 1px solid #15467e; border-radius: 3mm; padding: 4mm 5mm 5mm; break-inside: avoid; }
+.sheet .sttl { font-size: 12.5pt; font-weight: 900; border-bottom: 1.5px solid #15467e; padding-bottom: 1.5mm; margin-bottom: 3mm; text-align: left; }
+.st { display: grid; grid-template-columns: 20mm 1fr; gap: 4mm; align-items: start; padding: 2.2mm 0; border-bottom: 1px solid #dfe3ea; }
+.st .lab { background: #15467e; color: #fff; border-radius: 99px; text-align: center; font-size: 8pt; font-weight: 700; line-height: 1.5; padding: .6mm 0 .8mm; }
+.st .lab b { font-size: 10.5pt; margin-left: 1mm; }
+.st .do { font-weight: 700; margin: 0 0 .8mm; text-align: left; }
+.st .say { display: inline-block; border: 1px solid #15467e; border-radius: 2.5mm; padding: 0 3mm; font-size: 9.8pt; margin: 0; }
+.st .nt { font-size: 8.8pt; color: #444; margin: 1mm 0 0; text-align: left; line-height: 1.6; }
+.king { display: grid; grid-template-columns: auto 1fr; gap: 4mm; align-items: center; background: #e3ecf7; border-radius: 2.5mm; padding: 2.5mm 4mm; margin-top: 3.5mm; }
+.king span { background: #15467e; color: #fff; border-radius: 99px; font-size: 8.5pt; font-weight: 700; padding: 0 3mm; white-space: nowrap; }
+.king p { margin: 0; font-weight: 700; text-align: left; }
+.matome { background: #f7f5ee; border-radius: 3mm; padding: 4.5mm 6mm; break-inside: avoid; }
+.matome .one { font-size: 12pt; font-weight: 900; line-height: 1.7; }
+.matome ol { margin: 2mm 0 3mm 1.6em; padding: 0; }
+.matome p { margin-bottom: 1mm; text-align: left; }
+
+/* 項目の最初の青い箱が、ページのいちばん上にぴったり付くと、前のページの下に細い線がにじむ。少しだけ下げる */
+.item { padding-top: 1mm; }
+/* 「まとめ」などの札だけが、ページの下に取り残されないようにする */
+.tag { display: block; width: fit-content; break-after: avoid; page-break-after: avoid; }
+/* まとめと、その下の一言を、同じページに置く */
+.mwrap { break-inside: avoid; page-break-inside: avoid; }
+.qpage .ttl { font-size: 11.5pt; font-weight: 700; margin: 0 0 4mm !important; padding-bottom: 3mm; border-bottom: 1px solid rgba(255,255,255,.45); text-align: left; }
+.grp { page-break-before: always; padding-top: 80mm; text-align: center; }
+.grp p { text-align: center; margin: 0; }
+.grp .g1 { font-size: 11pt; color: #555; }
+.grp .g2 { font-size: 22pt; font-weight: 900; color: #15467e; margin-top: 3mm; }
+.grp .g3 { margin-top: 10mm; font-size: 10pt; color: #333; line-height: 2.1; text-align: center; }
+.toc .grpname { font-size: 9.5pt; font-weight: 700; color: #15467e; margin: 3mm 0 1mm; }
+.toc .it { grid-template-columns: 9mm 1fr; margin-bottom: 1.2mm; }
+.toc .it .t { font-weight: 700; color: #16181d; }
+.toc .it .xo { color: #444; font-size: 9pt; line-height: 1.6; }
+.chdoor .intro h4 { font-size: 12.5pt; font-weight: 900; line-height: 1.6; margin: 0 0 4mm; }
+.chdoor { padding-top: 30mm; }
+.chdoor .sub { margin-top: 2mm; color: #555; }
+.new { display: inline-block; font-size: 8pt; font-weight: 700; color: #a4500a; border: 1px solid #a4500a; border-radius: 99px; padding: 0 2.6mm; line-height: 1.6; margin-left: 2mm; vertical-align: middle; }
+.qpage .new { color: #fff; border-color: #fff; }
+
+.cover .kari { display: inline-block; border: 1.5px solid #a4500a; color: #a4500a; font-weight: 700; border-radius: 99px; padding: 0 5mm; font-size: 10pt; margin-bottom: 8mm; }
+.cover .alt { margin-top: 6mm; color: #555; font-size: 10pt; line-height: 1.9; }
+.cover .au { margin-top: 10mm; font-size: 12pt; font-weight: 700; }
+.text { page-break-before: always; }
+.text > h1, .col > h1 { font-size: 17pt; font-weight: 900; line-height: 1.5; margin-bottom: 7mm; padding-bottom: 3mm; border-bottom: 1.5px solid #15467e; }
+.toc .line { font-size: 9.8pt; margin: 1mm 0; }
+.toc .colm { font-size: 9pt; color: #a4500a; margin: 0 0 1.2mm 9mm; }
+.col { page-break-before: always; background: #fbf7ee; border-radius: 4mm; padding: 9mm 10mm 8mm; }
+.col .ctag { display: inline-block; background: #a4500a; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 99px; padding: 0 3.5mm; line-height: 1.7; margin-bottom: 3mm; }
+.col > h1 { border-bottom-color: #a4500a; }
+.hito { margin-top: 7mm; border: 1.5px solid #16181d; border-radius: 4mm; padding: 4mm 6mm 5mm; break-inside: avoid; position: relative; }
+.hito span { display: inline-block; background: #16181d; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 99px; padding: 0 3.5mm; line-height: 1.7; }
+.hito p { margin: 2.5mm 0 0; font-size: 13pt; font-weight: 900; line-height: 1.7; text-align: left; }
+.hito i { display: block; font-style: normal; font-size: 8.5pt; color: #555; text-align: right; margin-top: 1mm; }
+.d1 { border: 1.5px solid #15467e; border-radius: 4mm; padding: 6mm 7mm 7mm; margin-bottom: 6mm; text-align: center; }
+.item > .qpage { margin-top: 2mm; }
+.d1 p { text-align: center; margin: 0; line-height: 1.8; }
+.d1 .dno { color: #15467e; font-weight: 900; font-size: 15pt; line-height: 1.3; text-align: left; margin: -2mm 0 1mm -2mm; }
+.d1 .big { font-size: 15pt; font-weight: 900; }
+.matome .raw { margin-bottom: 1mm; }
+
+/* 画面で読むための上書き */
+html{background:#eef0f4;color-scheme:light;font-size:11.4pt}
+body{background:#fff;max-width:820px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left,0px)) 90px;box-shadow:0 0 0 1px #dfe3ea}
+@media(min-width:900px){body{padding:0 58px 110px}}
+.bar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #dfe3ea;margin:0 -18px 18px;padding:9px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:9.5pt}
+@media(min-width:900px){.bar{margin:0 -58px 24px;padding:10px 58px}}
+.bar .back{color:#15467e;font-weight:700;text-decoration:none}
+.bar b{font-weight:700}
+.bar select{font:inherit;font-size:9.5pt;padding:3px 6px;border:1px solid #c9ced8;border-radius:6px;background:#fff;color:#16181d;max-width:100%}
+.top h1{font-size:19pt;line-height:1.5;font-weight:900;margin:8mm 0 2mm}
+.top p{color:#555;font-size:10pt;margin:0 0 2mm}
+.sec{scroll-margin-top:56px}
+.text,.item,.col,.toc{margin-top:22mm}
+.chdoor{margin-top:26mm;padding-top:10mm;border-top:3px solid #15467e}
+.grp{margin-top:18mm;padding-top:0;text-align:left;border-left:6px solid #15467e;padding-left:5mm}
+.grp p,.grp .g3{text-align:left}
+.cover{display:none}
+pre{overflow-x:auto}
+
+.qpage{text-align:left}
+.qpage .pr{font-size:14.5pt;font-weight:900;line-height:1.75;text-align:left;margin:0 !important}
+.qpage .px{opacity:.82}
+figure.fig{margin:8mm 0;padding:0;text-align:center}
+figure.fig img{max-width:100%;height:auto;border:1px solid #dfe3ea;border-radius:8px}
+figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
+.pintro{margin:6mm 0 0;padding:5mm 6mm;background:#f5f7fa;border-radius:8px}
+.pintro h4{margin-top:0}
+.st{grid-template-columns:20mm 1fr}
+</style></head><body><div class="bar"><a class="back" href="./" onclick="if(document.referrer&&history.length>1){history.back();return false}">← 一覧にもどる</a><b>はじめに</b><select id="jump" aria-label="読みたい所へ飛ぶ"><option value="">読みたい所へ飛ぶ</option><option value="t0">はじめに</option><option value="t1">この本の使い方</option></select></div><div class="top"><p>頭のいい人が絶対やらない勉強法<span style="font-weight:700">（仮題）</span>　／　朝倉 徹大（受験の王様）　／　2026/11/20 時点</p><p>黄色の線は、原稿のマーカーの印です。「イラストのラフ案（2コマ）」は、絵にする前の、言葉の案です。</p></div><div class="sec" id="t0"><section class="text"><h1>はじめに　「お前の勉強法、ぜーんぶ、ズレとる。」</h1>
+<p>「お前の勉強法、ぜーんぶ、ズレとる。<br>偏差値70を安定して超えていないなら、<br>つべこべ言わず、俺の言うことを聞け。」</p>
+<p>浪人が始まった日に、恩師に言われた言葉です。<br>僕はなにも、言い返せませんでした。</p>
+<p>その数週間前、大学受験で「地獄」を見ていたからです。<br>勉強時間は、誰よりも長かった。それなのに、最低偏差値は42。受けた大学と学部、10個。全部、不合格。そう、全落ちです。</p>
+<p>自己紹介が遅れました。朝倉 徹大(てった)と言います。早稲田大学に合格した後、今は、学部別・逆算個別戦略塾THINKINGの塾長をしながら、SNSでは「受験の王様」というアカウントを運用しています。嬉しいことに、Instagramでは9万人以上、公式LINEでは4万人以上の人に登録してもらっています（執筆時点）。英語講座も含めて、これまで2000人以上の生徒を見てきました。<br>でも、今の状態からは想像できないほど、遠い場所からのスタートでした。</p>
+<p>口だけ野郎の、ダサい男でした<br>高校には、サッカーを本気でやるために入りました。<br>部員は100人以上。本気で全国大会を目指していました。嬉しいことに、高校2年生の時から、上級生にまじって試合にスタメンで出させてもらっていましたし、3年生になったら、副キャプテンと副部長になることができました。そうです。僕は、高校生活をサッカーに捧げていました。（文化祭も体育祭も恋愛も、ぜーんぶ本気でやっていました。勉強を除いて……）</p>
+<p>ただ、高3の夏「サッカーで全国大会に出場」という、夢は破れました。全国大会への切符は、取れなかったんです。</p>
+<p>大ピンチ到来です。部活を引退した瞬間、サッカーという「威張れるもの」がなくなった僕には、何も残っていませんでした。</p>
+<p>僕という人間は「サッカーがなくなったら空っぽ」だったんです。勉強があまりにも苦手だったので、赤点を取ったり、クラス最下位を取ったりしていたこともあり、仲のいい友達からは「お前の脳みそピーマンか！（笑）」と言われていました（ピーマンは中身がスッカスカなのでピーマンです笑）</p>
+<p>「どうしよう...？」そう真剣に人生を考えた時に、残っていたのは勉強でした。そこで僕は決めます。ここで、変わると。</p>
+<p>「どうせ受験を頑張るなら、私立トップの早稲田か慶應っしょ。」そう思って、志望校は早稲田にしていました。</p>
+<p>「そこからは淡々と勉強をし続けて、日に日に成績があがっていき、模試でもA判定、過去問でも高得点を取れるようになりました。ど底辺状態から奇跡の大逆転合格を果たすことができました...！！」とは、なりませんでした。</p>
+<p>口だけです。全然やらない。当たり前に、模試はずっとE判定。</p>
+<p>「定期テストは、受験に関係ない」<br>→受験科目ですら、赤点ギリギリ<br>「問題形式、ぜんぜん違うしな」<br>→模試の偏差値は、40台</p>
+<p>やらない言い訳探しの偏差値は80でした。言い訳だけは、うまい。でも、行動はしない。口だけ野郎の、ダサい男でした。</p>
+<p>「努力の天才」と呼ばれて、全部落ちました。<br>そんな僕のことを見て思ったのかわかりませんが、高校で一番尊敬していた友達が、ある時、こんなことを僕に言いました。（この人は、高校には首席で入学。現役で大阪大学に進学しています。）</p>
+<p>「結局、受験は、覚悟の差だよな。<br>みんな受かりたいっていうけど、ほとんどの人が、本気でやらん。」</p>
+<p>ブッ刺さりました。<br>サッカー部では、トレーニングで手を抜く部員を怒るくらい、本気で結果のことだけを考えてやっていました。</p>
+<p>「口だけでやっていない奴が、一番ダサいぞ。」<br>そう言っていた僕が、部活を引退したら、口だけの奴になっていたんです。</p>
+<p>「このままじゃ、ダサい人間のままで終わる。変わらないとダメだ。変わる。」<br>そこから、覚悟を決めました。部活を正式に引退してからは、1日13時間以上。年末には「2日で30時間を超えないと年を越せません」という企画を、友達と一緒に勝手にやっていました。</p>
+<p>勉強時間を記録するアプリ（studyplus）で、友達と時間を見せ合っていたので、周りからはこう言われていました。</p>
+<p>「マジで、努力の天才だよな」<br>「頑張ってるの見て、ほんと刺激もらうわ」<br>嬉しかったです。自分でも、”努力”はしていると、思っていました。</p>
+<p>結果は、全落ちでした。<br>誰よりもやったのに、1つも受からなかった。</p>
+<p>そこで言われたのが、最初の言葉です。<br>「お前の勉強法、ぜーんぶ、ズレとる」</p>
+<p>量が足りなかったんじゃない。<br>やり方が、全部ズレていた。</p>
+<p>だからこそ、浪人の1年は、1からやり直しました。中学英語から、本当に基礎の基礎からです。しかも選択科目は、現役の時の日本史と数学から、世界史に変えました。ゼロからのスタートで、最初の模試は、もちろん40台です。<br>そして、ただ量をやるのをやめました。どう勉強するべきなのかを調べて、プロに徹底的にアドバイスをもらって、勉強法そのものを勉強しました。<br>（あなたは、何冊も読まなくて大丈夫です。この1冊に、全部入れましたので。）</p>
+<p>10ヶ月後。<br>全科目で偏差値70を超えて、早稲田大学に合格しました。<br>ゼロから始めた世界史も余裕で合格点以上を取ることができました。</p>
+<p>「でも、それができたのって、もともと頭がよかったからですよね？」<br>これ、何百回も言われてきました。<br>ただ、はっきり言って、センスも才能も、ありませんでした</p>
+<p>もし、もともと頭がよかったら、10個も落ちません（笑）<br>受験費用だけで35万円もドブに捨ててしまってるんです……（親には頭が上がりません……）</p>
+<p>ただ、これは口で言っても伝わらないな、と思いました。だったら、証明するしかない。</p>
+<p>「人は、誰だって、変われる。」<br>この一言を証明するために、予備校のアルバイトから始めました。個別担当の生徒がバンバン点数を伸ばして結果を出し、1年で、飛び級でエリアのリーダーになりました。大学2年になる前には、個人でもサポートを始めて、生徒を1人ずつ徹底的に見るようになりました。これまで指導してきた生徒は、北海道から沖縄まで。47都道府県、制覇しています。ベトナムのインターナショナルスクールに通い、ベトナムに住んでいる生徒もオンラインで指導をしていました。</p>
+<p>その結果、起きたことです。</p>
+<p>・高校で不登校になり、通信制へ<br>→全統模試で全国1位。早稲田大学に現役合格</p>
+<p>・3日坊主で、勉強が大嫌いだった中学生<br>→毎日机に向かうようになって、学年トップ</p>
+<p>・高校を出て、工場で働いていた<br>→早稲田を含めて、受けた法学部に全勝</p>
+<p>・現役で全落ち。理系から浪人で文転しゼロからスタート<br>→早慶ダブル合格。</p>
+<p>・偏差値50台で、バイトをしながら受験<br>→早慶全勝</p>
+<p>僕は、学部別・逆算戦略の個別サポート塾「THINKING」を代表として運営し、その塾生だけではなく、短期間集中で基礎の基礎からやり直す英語の個別指導もしています。指導が終わったあとにもらう手書きのメッセージは、今では1000枚を超えました。</p>
+<p>写真貼り付け(https://assaaa-blog.com/post_lp/tsakansou/ )</p>
+<p>（本当に、みんなありがとう。自慢の生徒です）</p>
+<p>受験の先まで効く、一生モノの武器です<br>話は、受験で終わりません。</p>
+<p>受験期間に「結果の出し方」を身につけた生徒たちは、大学に入ったあとも止まりませんでした。在学中に公認会計士試験に一発合格。英検1級。大学1年でIELTS7.0。宅建合格。学費免除の特待生。</p>
+<p>「勉強ができるようになる」というのは、学び方を知る、ということです。<br>学び方を知っていれば、この先、叶えたい目標が出てきた時に、叶える力があります。そして「自分で変えた」という経験は、早ければ早いほど、あとの人生に何倍にもなって効いてきます。</p>
+<p>本書は、目の前の定期テストや模試のために、読んでもらって構いません。<br>でも、手に入るのは、その先までずっと使える「一生モノの武器」です。<br>「勉強して結果を出す力」は誰にも盗むことができません。</p>
+<p>そんなこんなで、僕が直接関わる生徒だけではなく、Instagramなどを見てくれている生徒たちにも、同じように結果を出してほしい。そのために、活動を始めてからずっと、1人ずつ、頭の中で何を考えているのかを、聞いてきました。</p>
+<h3>【わかったこと】伸びる子は、「やっていないこと」が同じでした。</h3>
+<p>「今、何を考えた？」<br>「そこで、なんで手が止まった？」<br>「それ、覚えたって、どうやって確かめた？」<br>そうしたら、伸びる子に、同じものが見つかったんです。</p>
+<p>やっていることだけじゃ、ありませんでした。やっていないこと、でした。</p>
+<p>僕自身、誰よりも勉強ができなくて苦しんだ人間です。人より多く努力して、その努力を全部無駄にした経験があります。だから、これだけは先に言わせてください。</p>
+<p>努力に、酔ってはいけない。<br>If I play, I play to win.</p>
+<p>やるからには、勝ちにいく。そして勝負に勝つためには、まず、負けないことです。負ける原因になっていることを、先にやめる。これが、結果を出す上では必須だと確信しました。</p>
+<h3>【質問】バケツに、穴が空いています。あなたは、どうしますか？</h3>
+<p>バケツに、穴が空いているとします。水を入れても、下から漏れていきます。<br>あなたなら、どうしますか？</p>
+<p>穴を、ふさぎますよね。当たり前です。<br>でも、勉強でこれをやってる人は、ほとんどいません。</p>
+<p>点が出ない時、ほとんどの人は、もっと長くやる。もっと早く起きる。もっと量を増やす。<br>「もっと！もっと！」と量を増やすんです。選択肢B（水をもっと注ぐ）を、多くの人が選んでしまう。</p>
+<p>穴が空いたまま、水を増やしているんです。<br>×　点が出ない → もっと長く。もっと早く。もっと量を。<br>○　点が出ない → 先に、穴をふさぐ。</p>
+<p>現役の時の僕が、まさにそれでした。<br>だから、順番があります。</p>
+<p>① やってはいけないことを、避ける（=穴をふさぐ）<br>② 正しいやり方を、知る（=水の入れ方を覚える）<br>③ そのやり方を、徹底的にパクる（=そのうえで、沢山注ぐ）<br>この順番を守ってくれたら、受験は変わります。<br>いえ、人生も変わります。</p>
+<p>この本に書いてあること<br>「頭のいい人が、何をやっているのか。そして、何を、絶対にやらないのか。その瞬間、頭の中で、何を考えているのか。」<br>これこそ、僕自身が、勉強が苦手で、いくら勉強しても伸びなかった時に、一番知りたかったことです。</p>
+<p>この本は、それを全部、見える形にしたものです。</p>
+<p>第1章<br>頭のいい人の、絶対法則6<br>どの章よりも大事な、土台です。ここだけは、飛ばさないでください</p>
+<p>第2章〜第5章<br>「インプット、アウトプット、継続、アップデート」の場面ごとの、39個</p>
+<p>45個、全部こうなっています。</p>
+<p>×頭のいい人が、絶対にやらないこと<br>○かわりに、何をどうやるか<br>読んだら、そのままやってください。それだけで、いいです。<br>そしてぜひ嬉しい報告をしてください。<br>「パクっただけで、伸びました！」と。</p>
+<p>僕が10ヶ月かけて、恩師に叩きこまれたこと。そのあと、2000人以上の頭の中を聞いて、見つけたこと。全部、書きました。</p>
+<p>では、第1章から。<br>始めていきましょう。</p></section></div>
+<div class="sec" id="t1"><section class="text"><h1>この本の使い方</h1>
+<p>※注意※<br>第1章だけは、最初に読んでください。<br>全部のもとになっている、6つの絶対法則です。<br>前から1つ1つ見ていくのがオススメですが、第2章から先の39個は、順番に読まなくてもいいです。今困っていることから、開いてください。</p>
+<h3>悩みから、探す索引</h3>
+<pre>何から手をつければいいか、わからない　　　　　　04　17　35
+授業を聞いても、残らない　　　　　　　　　　　　09　16
+教科書を読んでも、頭に入らない　　　　　　　　　08　10
+覚えても、すぐ忘れる　　　　　　　　　　　　　　02　05　12
+単語が、覚えられない　　　　　　　　　　　　　　12　14　13
+覚えたのに、テストで出てこない　　　　　　　　　02　11　19
+解説を読んでも、できるようにならない　　　　　　16　21
+同じミスを、繰り返す　　　　　　　　　　　　　　22　23
+初めて見る問題で、手が止まる　　　　　　　　　　20　21
+テストで、時間が足りない　　　　　　　　　　　　19
+問題集が終わらない。何周すればいいか、わからない　23　25
+宿題や提出物が、多すぎる　　　　　　　　　　　　35
+計画が、守れない　　　　　　　　　　　　　　　　26　27　28　29
+部活で、時間がない　　　　　　　　　　　　　　　30
+机に向かうまでが、長い　　　　　　　　　　　　　28　34
+集中が、続かない　　　　　　　　　　　　　　　　09　31　32
+朝、起きられない。昼、眠い　　　　　　　　　　　33
+やる気が、出ない　　　　　　　　　　　　　　　　06　28　36
+点が下がって、落ちこんでいる　　　　　　　　　　37　38　39
+不安で、手につかない。本番で、緊張する　　　　　40
+効果的なAIの使い方がわからない　　　　　　　　　43　44
+質問のしかたが、わからない　　　　　　　　　　　41　42</pre>
+<p>巻頭ページで、「誰も教えてくれない」と書いたことがあります。答えは、ここにあります。</p>
+<pre>復習は、どうやるのか　　　　　　　　　　　　　　05　23
+単語は、どういう形で、何回繰り返すのか　　　　　12
+計画は、どう立てるのか　　　　　　　　　　　　　26　27
+「説明するつもりで」とは、何をすることか　　　　07
+「1日後、1週間後、1ヶ月後」が続かない時　　　　 05　12
+「ちゃんと」の中身は、何なのか　　　　　　　　　10　22　25</pre>
+<h3>45個とも、同じ順番で書いてあります</h3>
+<pre>質問ページ　　　　　　　　　　頭のいい人が、絶対にやらないこと
+本文　　　　　　　　　　　　　なぜ、それだと伸びないのか。かわりに、何をするのか
+頭のいい人と伸びない人の違い　同じ場面で、2人が考えていること
+今日からできる3STEP　　　　　手順を3つ。「できた」の基準つき
+まとめ　　　　　　　　　　　　一言と、自分への問い</pre>
+<p>読むだけで終わらせないでください。各項目にある「今日からできる3STEP」の、STEP01を、今日やる。それが、この本の使い方です。</p>
+<p>45個を全部やろうとしなくていいです。全部やろうとすると、全部が途中で終わります。（理由は、04番に書きました）</p>
+<p>ところどころに、「王様の一言」と、コラムがあります。やり方ではなく、気持ちの話です。しんどい日は、そこだけ読んでも、かまいません。</p></section></div><script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>

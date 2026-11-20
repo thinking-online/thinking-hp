@@ -1,0 +1,471 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>第2章　【インプット】頭のいい人は、「入れるだけ」で終わらない</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&display=swap"><style>
+@page { size: A4; margin: 18mm 20mm 20mm; }
+* { box-sizing: border-box; }
+html { font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 10.5pt; line-height: 1.9; color: #16181d; }
+body { margin: 0; }
+h1, h2, h3, h4, p, ol, pre { margin: 0; }
+mark { background: linear-gradient(transparent 55%, #ffe37a 55%); color: inherit; }
+.cover { page-break-after: always; padding-top: 60mm; }
+.cover h1 { font-size: 24pt; line-height: 1.5; font-weight: 900; }
+.cover .sub { margin-top: 6mm; color: #555; font-size: 11pt; }
+.cover .note { margin-top: 18mm; border-top: 1px solid #c9ced8; padding-top: 6mm; font-size: 10pt; color: #333; }
+.cover .note p { margin-bottom: 2mm; }
+.toc { page-break-after: always; }
+.toc h2 { font-size: 15pt; margin-bottom: 5mm; }
+.toc .ch { font-weight: 700; margin-top: 4.5mm; }
+.toc .it { display: grid; grid-template-columns: 9mm 1fr; font-size: 9.5pt; line-height: 1.75; color: #333; }
+.toc .it b { font-variant-numeric: tabular-nums; color: #15467e; }
+.chdoor { page-break-before: always; page-break-after: always; padding-top: 55mm; }
+.chdoor .cno { font-size: 13pt; color: #15467e; font-weight: 700; letter-spacing: .08em; }
+.chdoor h1 { font-size: 22pt; line-height: 1.5; margin-top: 3mm; font-weight: 900; }
+.chdoor .fld { margin-top: 2mm; color: #555; }
+.chdoor .intro { margin-top: 14mm; border-top: 1px solid #c9ced8; padding-top: 7mm; }
+.chdoor .intro p { margin-bottom: 4mm; }
+.item { page-break-before: always; }
+.qpage { background: #15467e; color: #fff; border-radius: 4mm; padding: 9mm 10mm 10mm; margin-bottom: 8mm; text-align: center; position: relative; }
+.qpage p { text-align: center; margin: 0; }
+.qpage .no { text-align: left; font-size: 15pt; font-weight: 900; font-variant-numeric: tabular-nums; opacity: .9; line-height: 1.2; margin: -3mm 0 1mm -3mm; }
+.qpage .q1 { font-size: 11pt; letter-spacing: .04em; }
+.qpage .q2 { font-size: 20pt; font-weight: 900; line-height: 1.5; margin: 2mm 0 2mm !important; }
+.qpage .q3 { font-size: 12pt; font-weight: 700; }
+.tag { display: inline-block; font-size: 8.5pt; font-weight: 700; color: #15467e; border: 1px solid #15467e; border-radius: 99px; padding: 0 3.2mm; line-height: 1.7; margin: 7mm 0 3mm; }
+.item > .tag:first-of-type { margin-top: 0; }
+h3 { font-size: 12pt; font-weight: 900; line-height: 1.6; margin: 7mm 0 2.5mm; padding-left: 3mm; border-left: 1.4mm solid #15467e; break-after: avoid; }
+h4 { font-size: 10.5pt; font-weight: 700; margin: 4.5mm 0 1.5mm; break-after: avoid; }
+p { margin-bottom: 3mm; text-align: justify; }
+p.q { padding-left: 2em; font-weight: 700; }
+pre { font-family: inherit; font-size: 9.8pt; line-height: 1.8; white-space: pre-wrap; background: #f1f3f7; border-radius: 2mm; padding: 3mm 4.5mm; margin: 2mm 0 4mm; break-inside: avoid; }
+.koma { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; break-inside: avoid; }
+.koma .k { border-radius: 3mm; padding: 4mm 5mm 5mm; text-align: center; }
+.koma .x { background: #eceef2; }
+.koma .o { background: #e3ecf7; border: 1px solid #15467e; }
+.koma span { display: block; font-size: 9pt; color: #555; }
+.koma b { display: block; font-size: 15pt; font-weight: 900; line-height: 1.6; }
+.koma i { display: block; font-style: normal; font-size: 9.5pt; }
+.sheet { border: 1px solid #15467e; border-radius: 3mm; padding: 4mm 5mm 5mm; break-inside: avoid; }
+.sheet .sttl { font-size: 12.5pt; font-weight: 900; border-bottom: 1.5px solid #15467e; padding-bottom: 1.5mm; margin-bottom: 3mm; text-align: left; }
+.st { display: grid; grid-template-columns: 20mm 1fr; gap: 4mm; align-items: start; padding: 2.2mm 0; border-bottom: 1px solid #dfe3ea; }
+.st .lab { background: #15467e; color: #fff; border-radius: 99px; text-align: center; font-size: 8pt; font-weight: 700; line-height: 1.5; padding: .6mm 0 .8mm; }
+.st .lab b { font-size: 10.5pt; margin-left: 1mm; }
+.st .do { font-weight: 700; margin: 0 0 .8mm; text-align: left; }
+.st .say { display: inline-block; border: 1px solid #15467e; border-radius: 2.5mm; padding: 0 3mm; font-size: 9.8pt; margin: 0; }
+.st .nt { font-size: 8.8pt; color: #444; margin: 1mm 0 0; text-align: left; line-height: 1.6; }
+.king { display: grid; grid-template-columns: auto 1fr; gap: 4mm; align-items: center; background: #e3ecf7; border-radius: 2.5mm; padding: 2.5mm 4mm; margin-top: 3.5mm; }
+.king span { background: #15467e; color: #fff; border-radius: 99px; font-size: 8.5pt; font-weight: 700; padding: 0 3mm; white-space: nowrap; }
+.king p { margin: 0; font-weight: 700; text-align: left; }
+.matome { background: #f7f5ee; border-radius: 3mm; padding: 4.5mm 6mm; break-inside: avoid; }
+.matome .one { font-size: 12pt; font-weight: 900; line-height: 1.7; }
+.matome ol { margin: 2mm 0 3mm 1.6em; padding: 0; }
+.matome p { margin-bottom: 1mm; text-align: left; }
+
+/* 項目の最初の青い箱が、ページのいちばん上にぴったり付くと、前のページの下に細い線がにじむ。少しだけ下げる */
+.item { padding-top: 1mm; }
+/* 「まとめ」などの札だけが、ページの下に取り残されないようにする */
+.tag { display: block; width: fit-content; break-after: avoid; page-break-after: avoid; }
+/* まとめと、その下の一言を、同じページに置く */
+.mwrap { break-inside: avoid; page-break-inside: avoid; }
+.qpage .ttl { font-size: 11.5pt; font-weight: 700; margin: 0 0 4mm !important; padding-bottom: 3mm; border-bottom: 1px solid rgba(255,255,255,.45); text-align: left; }
+.grp { page-break-before: always; padding-top: 80mm; text-align: center; }
+.grp p { text-align: center; margin: 0; }
+.grp .g1 { font-size: 11pt; color: #555; }
+.grp .g2 { font-size: 22pt; font-weight: 900; color: #15467e; margin-top: 3mm; }
+.grp .g3 { margin-top: 10mm; font-size: 10pt; color: #333; line-height: 2.1; text-align: center; }
+.toc .grpname { font-size: 9.5pt; font-weight: 700; color: #15467e; margin: 3mm 0 1mm; }
+.toc .it { grid-template-columns: 9mm 1fr; margin-bottom: 1.2mm; }
+.toc .it .t { font-weight: 700; color: #16181d; }
+.toc .it .xo { color: #444; font-size: 9pt; line-height: 1.6; }
+.chdoor .intro h4 { font-size: 12.5pt; font-weight: 900; line-height: 1.6; margin: 0 0 4mm; }
+.chdoor { padding-top: 30mm; }
+.chdoor .sub { margin-top: 2mm; color: #555; }
+.new { display: inline-block; font-size: 8pt; font-weight: 700; color: #a4500a; border: 1px solid #a4500a; border-radius: 99px; padding: 0 2.6mm; line-height: 1.6; margin-left: 2mm; vertical-align: middle; }
+.qpage .new { color: #fff; border-color: #fff; }
+
+.cover .kari { display: inline-block; border: 1.5px solid #a4500a; color: #a4500a; font-weight: 700; border-radius: 99px; padding: 0 5mm; font-size: 10pt; margin-bottom: 8mm; }
+.cover .alt { margin-top: 6mm; color: #555; font-size: 10pt; line-height: 1.9; }
+.cover .au { margin-top: 10mm; font-size: 12pt; font-weight: 700; }
+.text { page-break-before: always; }
+.text > h1, .col > h1 { font-size: 17pt; font-weight: 900; line-height: 1.5; margin-bottom: 7mm; padding-bottom: 3mm; border-bottom: 1.5px solid #15467e; }
+.toc .line { font-size: 9.8pt; margin: 1mm 0; }
+.toc .colm { font-size: 9pt; color: #a4500a; margin: 0 0 1.2mm 9mm; }
+.col { page-break-before: always; background: #fbf7ee; border-radius: 4mm; padding: 9mm 10mm 8mm; }
+.col .ctag { display: inline-block; background: #a4500a; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 99px; padding: 0 3.5mm; line-height: 1.7; margin-bottom: 3mm; }
+.col > h1 { border-bottom-color: #a4500a; }
+.hito { margin-top: 7mm; border: 1.5px solid #16181d; border-radius: 4mm; padding: 4mm 6mm 5mm; break-inside: avoid; position: relative; }
+.hito span { display: inline-block; background: #16181d; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 99px; padding: 0 3.5mm; line-height: 1.7; }
+.hito p { margin: 2.5mm 0 0; font-size: 13pt; font-weight: 900; line-height: 1.7; text-align: left; }
+.hito i { display: block; font-style: normal; font-size: 8.5pt; color: #555; text-align: right; margin-top: 1mm; }
+.d1 { border: 1.5px solid #15467e; border-radius: 4mm; padding: 6mm 7mm 7mm; margin-bottom: 6mm; text-align: center; }
+.item > .qpage { margin-top: 2mm; }
+.d1 p { text-align: center; margin: 0; line-height: 1.8; }
+.d1 .dno { color: #15467e; font-weight: 900; font-size: 15pt; line-height: 1.3; text-align: left; margin: -2mm 0 1mm -2mm; }
+.d1 .big { font-size: 15pt; font-weight: 900; }
+.matome .raw { margin-bottom: 1mm; }
+
+/* 画面で読むための上書き */
+html{background:#eef0f4;color-scheme:light;font-size:11.4pt}
+body{background:#fff;max-width:820px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left,0px)) 90px;box-shadow:0 0 0 1px #dfe3ea}
+@media(min-width:900px){body{padding:0 58px 110px}}
+.bar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #dfe3ea;margin:0 -18px 18px;padding:9px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:9.5pt}
+@media(min-width:900px){.bar{margin:0 -58px 24px;padding:10px 58px}}
+.bar .back{color:#15467e;font-weight:700;text-decoration:none}
+.bar b{font-weight:700}
+.bar select{font:inherit;font-size:9.5pt;padding:3px 6px;border:1px solid #c9ced8;border-radius:6px;background:#fff;color:#16181d;max-width:100%}
+.top h1{font-size:19pt;line-height:1.5;font-weight:900;margin:8mm 0 2mm}
+.top p{color:#555;font-size:10pt;margin:0 0 2mm}
+.sec{scroll-margin-top:56px}
+.text,.item,.col,.toc{margin-top:22mm}
+.chdoor{margin-top:26mm;padding-top:10mm;border-top:3px solid #15467e}
+.grp{margin-top:18mm;padding-top:0;text-align:left;border-left:6px solid #15467e;padding-left:5mm}
+.grp p,.grp .g3{text-align:left}
+.cover{display:none}
+pre{overflow-x:auto}
+
+.qpage{text-align:left}
+.qpage .pr{font-size:14.5pt;font-weight:900;line-height:1.75;text-align:left;margin:0 !important}
+.qpage .px{opacity:.82}
+figure.fig{margin:8mm 0;padding:0;text-align:center}
+figure.fig img{max-width:100%;height:auto;border:1px solid #dfe3ea;border-radius:8px}
+figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
+.pintro{margin:6mm 0 0;padding:5mm 6mm;background:#f5f7fa;border-radius:8px}
+.pintro h4{margin-top:0}
+.st{grid-template-columns:20mm 1fr}
+</style></head><body><div class="bar"><a class="back" href="./" onclick="if(document.referrer&&history.length>1){history.back();return false}">← 一覧にもどる</a><b>第2章　【インプット】頭のいい人は、「入れるだけ」で終わらない</b><select id="jump" aria-label="読みたい所へ飛ぶ"><option value="">読みたい所へ飛ぶ</option><option value="door">章の導入</option><option value="g1">■ 理解編</option><option value="i07">　07　人に説明できないまま、次へ進む</option><option value="i08">　08　1ページ目から、丁寧に読む</option><option value="i09">　09　キリのいいところまで、休まずやる</option><option value="i10">　10　教科書を、なんとなく読んで終わる</option><option value="i11">　11　教科書の言葉を、そのまま覚える</option><option value="g7">■ 暗記編</option><option value="i12">　12　単語を、書いて覚える</option><option value="i13">　13　黙って、じっと見つめて覚える</option><option value="i14">　14　単語を、赤シートだけで覚える</option><option value="i15">　15　全部覚えてから、問題を解く</option></select></div><div class="top"><p>頭のいい人が絶対やらない勉強法<span style="font-weight:700">（仮題）</span>　／　朝倉 徹大（受験の王様）　／　2026/11/20 時点</p><p>黄色の線は、原稿のマーカーの印です。「イラストのラフ案（2コマ）」は、絵にする前の、言葉の案です。</p></div><div class="sec" id="door"><section class="chdoor"><div class="cno">第2章</div><h1>頭のいい人は、「入れるだけ」で終わらない</h1><p class="fld">【インプット】　07〜15番</p><p class="sub">頭の中に知識を入れる</p><div class="intro"><h4>「あとで見よう」と保存したもの。本当に、見返しましたか？</h4>
+<p>スマホの中を、思い浮かべてください。「あとで見よう」と撮ったスクリーンショット。保存した動画。ブックマークした投稿。全部で、いくつあるでしょうか。</p>
+<p>では、その中で、あとで本当に見返したものは、いくつありますか。</p>
+<p>……</p>
+<p>ほとんど、ないはずです。スマホがない人は、ファイルにはさんだままのプリントを、思い出してください。同じです。</p>
+<p>保存した瞬間に、手に入れた気がします。でも、<mark>保存しただけのものは、自分のものには、なっていません。</mark></p>
+<p>勉強でも、同じことが起きています。授業を、聞いた。教科書を、読んだ。ノートを、きれいに取った。どれも、保存です。頭の中には、まだ、入っていません。それなのに、「やった」という気持ちだけが、残ります。</p>
+<p>頭のいい人は、「入れるだけ」で、終わりません。入れながら、もう、使っています。人に説明するつもりで、読む。途中で止めて、思い出す。自分の知っていることに、つなげる。インプットの質は、どれだけ見たか、どれだけ聞いたかでは、決まりません。<mark>入れる時に、どれだけ頭を使ったか</mark>で、決まります。</p>
+<p>この章では、そのやり方を、9つ、書きます。</p>
+<p>前半の5つは、わかるための入れ方（理解編）です。人に教えるつもりで、入れる。先に、全体をつかむ。区切って、思い出す。止まった文は、図にする。知っていることに、つなげる。</p>
+<p>後半の4つは、覚えるための入れ方（暗記編）です。書かずに、見て思い出す。目を閉じて、声に出す。イメージとセットにする。問題を解きながら、覚える。</p>
+<p>9つとも、やっていることは、同じです。入れっぱなしにしない。第3章では、頭に入れたものを、取り出して、点に変えていきます。でも、入っていないものは、取り出せません。だから、先に、入れ方です。</p></div></section></div>
+<div class="sec" id="g1"><section class="grp"><p class="g1">第2章　【インプット】</p><p class="g2">理解編</p><p class="g3">07　人に説明できないまま、次へ進む<br>08　1ページ目から、丁寧に読む<br>09　キリのいいところまで、休まずやる<br>10　教科書を、なんとなく読んで終わる<br>11　教科書の言葉を、そのまま覚える</p></section></div>
+<div class="sec" id="i07"><section class="item">
+<div class="qpage"><div class="no">07</div><p class="ttl">人に説明できないまま、次へ進む</p><p class="pr px">×　頭のいい人は「人に説明できないまま、次へ進む」をしない。</p><p class="pr po">○　頭のいい人は「キーワード3つで、30秒説明する」をする。</p></div>
+<h3>消しゴムは、なぜ、鉛筆の字を消せるのか。説明できますか？</h3>
+<p>小学生の頃から、毎日のように使っている、消しゴム。知らない人は、いませんよね。</p>
+<p>では、ここで質問です。消しゴムでこすると、どうして、鉛筆の字が消えるのか。小学生に教えるつもりで、30秒、説明してみてください。</p>
+<p>……</p>
+<p>「えーと、こすると、摩擦で……」。こんな感じで止まった人が、多いと思います。</p>
+<p>消しゴムで字が消せること自体を、知らなかったわけでは、ありません。何千回も使っているので、「知っている」つもりでした。ただ、なぜ消せるのかを説明しようとして初めて、言葉にならないことに気づきます。（答えは、このあと、出てきます）</p>
+<p>勉強でも、同じことが起きています。授業で「わかった」と思ったのに、友達に「今日、何やったの？」と聞かれると、言葉になりません。</p>
+<h3>説明できないものは、まだ「知っている」だけです</h3>
+<p>頭のいい人は、「わかった」を3つに分けています。</p>
+<pre>　　知っている　　聞いたことがある。見れば思い出す
+　　わかっている　何も見ずに、自分の言葉で説明できる
+　　使える　　　　テストで、形を変えて出されても解ける</pre>
+<p>授業を聞いて「わかった」と思った時、ほとんどの場合は、1段目です。テストで点になるのは、3段目だけです。そして、2段目を通らずに、3段目には行けません。僕は、生徒に、何度も言っています。</p>
+<p class="q"><mark>人に説明できない　＝　まだ、わかっていない</mark></p>
+<h3>「教えるつもりで勉強しなさい」で、終わらせません</h3>
+<p>「人に説明するつもりで、勉強しなさい」。学校でも、本でも、よく言われます。同じ文章を、2つのグループに読んでもらった実験があります。片方には「あとでテストをします」、もう片方には「あとで、この内容を人に教えてもらいます」と伝えます。実際には、どちらも、誰にも教えません。結果は、<mark>教えるつもりで読んだグループのほうが、よく覚えていました。</mark>「教えるつもり」になるだけで、頭への入り方が変わるんです。</p>
+<p>ただ、「教えるつもり」と言われても、何をすればいいのかが、わからない人も多いと思います。頭のいい人の「教えるつもり」と、勉強が苦手な人の「教えるつもり」は、頭の中でやっていることが違います。見えない所で、差がついているんです。それを、目に見える形にして、誰でも練習できるようにしたのが、型です。僕が、生徒にやってもらっているやり方で、<mark>「KW言語化勉強法」</mark>と呼んでいます。KWは、キーワードです。</p>
+<pre>　　結局、【　　　　　　　　　　】の話。
+　　キーワードは、【　　　】【　　　】【　　　】。</pre>
+<p><mark>意識するのは、「あとで、この型のメモを見ながら、人に説明する」です。</mark>型は、入れる前に、ノートのすみに書いておきます。空いている枠があると、授業を聞いている間も、教科書を読んでいる間も、「結局、何の話だろう」「大事な言葉は、どれだろう」と、探しながら入れることになります。</p>
+<h3>実際に、消しゴムで練習します</h3>
+<p>次の文章を、あとで説明するつもりで、読んでください。読みながら、型を埋めます。</p>
+<pre>　　【消しゴムで、鉛筆の字が消えるしくみ】
+　　鉛筆のしんは、黒鉛という黒い粉と、ねん土を固めたものです。
+　　字を書くと、しんがけずれて、黒い粉が、紙の表面にのります。
+　　粉は、紙にしみこまず、表面にくっついているだけです。
+　　消しゴムでこすると、粉は、紙から消しゴムのほうへ移ります。
+　　粉がついた消しゴムの表面は、消しかすになって、はがれます。
+　　結局、【なぜ、消しゴムで鉛筆の字が消せるのか】の話。
+　　キーワードは、【黒い粉】【消しゴムにくっつく】
+　　　　　　　　【消しかすになって、はがれる】。</pre>
+<p>読み終わったら、文章を閉じて、型だけを見ながら、30秒で説明します。「鉛筆の字は、黒い粉が、紙にのっているだけ。こすると、粉が、消しゴムにくっつく。その部分が、消しかすになって、はがれる。だから、消える」。<mark>最初は止まった説明が、今は、言えます。</mark>ここまで説明できると、ボールペンの字が、消しゴムで消えない理由も、わかりそうですよね。インクは、粉とちがって、紙にしみこむからです。</p>
+<p>キーワードは、3つが基本です。増えてもいいですが、多くても5つまでにしてください。学校の教科でも、やり方は同じです。</p>
+<h3>声に出して説明するだけで、効果が増します</h3>
+<p>声に出すのか、心の中でいいのか。声に出せるなら、出してください。心の中だと、止まったことを、自分でごまかせるからです。声に出して読んだ言葉のほうが、黙って読んだ言葉より、よく覚えていた、という実験もあります。「プロダクション効果」と呼ばれています（13番で、くわしく書きます）。<mark>家など、声を出せる場所で勉強する時は、声に出すのが、一番いいです。</mark></p>
+<p>途中で止まったら、止まった所だけ開いて見て、閉じて、少し前から、もう一度言います。見開き2ページを、全部説明しようとしないでください。教科書の小見出し1つぶん。授業なら、黒板1枚ぶん。小さく区切って、できる量から、1つずつ、型を埋めます。</p>
+<p>相手は、ぬいぐるみでも、壁でも、スマホの録音でも、AIでもいいです。AIには、答えをもらうのではなく、自分の説明を、直してもらいます。（AIの使い方は、43番に書きます）</p>
+<p>僕の塾生には、型のメモだけを書いたノートを持ち歩いて、移動時間に、それを見て思い出している人もいます。キーワードを見て、説明をもう一度言うだけなので、電車の中でもできます。この使い方も、おすすめです。</p>
+<p>このやり方なら、絶対法則02の「思い出す」と、絶対法則03の「負荷」を、同時にやることになります。だから、続けるほど、成果が上がっていきます。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>わかったつもり</b><i>説明は、できないけど</i></div><div class="k o"><span>頭のいい人</span><b>30秒で説明</b><i>結局、何の話？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">あとで説明するつもりで、型を埋めながら入れる</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">声を出せる場所なら、声に出して、30秒説明する</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">止まった所だけ確かめて、もう一度説明する</p></div></div><div class="king"><span>「できた」の基準</span><p>型のメモだけを見て、30秒、説明できたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">説明できないものは、まだ「知っている」だけ。</p><p>だから、説明できないまま、次へ進まない。型を埋めて、説明する。</p><p>迷ったら、自分に聞きます。「結局、何の話？」</p></div>
+</div></section></div>
+<div class="sec" id="i08"><section class="item">
+<div class="qpage"><div class="no">08</div><p class="ttl">1ページ目から、丁寧に読む</p><p class="pr px">×　頭のいい人は「1ページ目から、丁寧に読む」をしない。</p><p class="pr po">○　頭のいい人は「先に、全体像をさっとつかんでから、進む」をする。</p></div>
+<h3>次の文を、読んでください。何の話か、わかりますか？</h3>
+<pre>　　まず、人数を数えます。
+　　同じ量になるように、1つずつ、分けていきます。
+　　最初に多く入れすぎると、最後に、足りなくなります。
+　　全員に行きわたったら、残りを、ほしい人で分けます。
+　　終わったら、決まった場所に、戻します。</pre>
+<p>……</p>
+<p>何の話か、わからなかったと思います。知らない言葉は、1つもないのに、です。</p>
+<p>題は、「給食当番」です。</p>
+<p>もう一度、読んでみてください。同じ文が、今度は、すっと入ってきます。</p>
+<p><mark>先に全体を知っていると、同じ文が、読めるようになります。</mark>知らないまま読むと、1行1行は読めても、何の話なのかが、つかめません。</p>
+<p>アメリカの、ニューヨーク州立大学の研究者たちが、同じ形の実験をしています。何の話かわかりにくい文章を、聞いてもらいます。先に、何の話かを知らされたグループは、内容がよくわかり、あとで、よく思い出せました。聞き終わってから知らされたグループは、どちらも、ずっと低いままでした。全体を知るのは、「あと」ではなく、「先」です。</p>
+<h3>いきなり細かい所から入れると、全部が、同じ大事さに見えます</h3>
+<p>新しい参考書を買った時にも、同じことが起きています。日本史の、300ページある1冊。「1ページ目から、丁寧に読んでいこう」。1か月たちました。まだ、平安時代です。縄文時代は、もう、ほとんど忘れています。そして、この本が、全部でどんな話なのかは、まだ知りません。</p>
+<p>全体を知らないまま読むと、<mark>今読んでいる所が、全体のどこなのかが、わかりません。</mark>どこが大事なのかも、わかりません。だから、全部が同じ大事さに見えて、細かい所まで、全部を丁寧に入れることになります。</p>
+<pre>　　×　1ページ目から、細かい所まで、丁寧に入れていく
+　　○　先に、幹になる所をさっとつかんでから、細かい所に進む</pre>
+<h3>最初の最初は、入門の教材か、短い動画か、AIを使います</h3>
+<p>「先に全体をつかむ」と言われても、目次をながめて、自分で全体像をつかむのは、難しいです。勉強が得意な人でも、難しい。だから、最初の最初は、要点をまとめてくれているものを使います。今は、参考書のレベルも、本当に上がっています。無料で見られる動画も、たくさんあります。そして、なんなら、一番強いのは、AIです。</p>
+<pre>　　教材なら　要点だけをまとめた、入門レベルのものを、さっとやる
+　　動画なら　短い解説動画を、さっと1本だけ見る
+　　AIなら　　「この単元の要点だけ、教えて」と送る</pre>
+<p>AIは、知りたい単元の要点を、数秒で、まとめてくれます。（AIの使い方と、気をつける所は、43番に書きます）</p>
+<p>教科を丸ごとでなくて、いいです。これから習う単元だけで、十分です。例えば、江戸時代。教科書では、何十ページもあります。でも、幹は、これだけです。</p>
+<pre>　　はじまり　徳川家康が、江戸に幕府を開いた
+　　まんなか　約260年、大きな戦いのない時代が続いた
+　　おわり　　黒船が来て、国を開き、幕府が終わった</pre>
+<p>このくらいで、いいんです。細かい所は、全部、この3行のどこかに入ります。参勤交代も、鎖国も、「まんなか」の話。幕府が、長く続くためのしくみです。ペリーは、「おわり」の話です。<mark>幹を知っていると、細かい所も、「これは、あの話だ」とわかります。</mark></p>
+<h3>【再喝】いきなり完璧を目指すな。</h3>
+<p>この時に、大事なことが、1つあります。<mark>最初の段階から、完璧を目指さないことです。</mark>入門の教材を、すみずみまで覚えようとしない。動画を見ながら、全部をノートに写そうとしない。目的は、要点、つまり幹を、つかむことだけです。「だいたい、こういう話か」と、言えたら、終わりです。絶対法則06で書いた通り、1回目から完璧にする必要は、ありません。</p>
+<p>わからない所が残るのは、気持ち悪いと思います。その気持ちは、まともです。でも、そのままで大丈夫です。細かい所を習う時に、もう一度、出てきます。その時には、幹があるので、前より、わかるようになっています。</p>
+<p>幹をつかんだら、ここからが、本番です。授業を受ける。教科書を読む。問題を解く。細かい所は、ここで入れていきます。1冊でも、単元でも、同じです。<mark>いきなり細かい所からではなく、まず、幹をつかむ。</mark>細かい所は、そのあとです。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>1ページ目から</b><i>最初から、丁寧に読もう</i></div><div class="k o"><span>頭のいい人</span><b>先に全体を見る</b><i>まず、全体像をつかもう</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">入門の教材か、短い動画か、AIで、要点を見る</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">完璧は目指さず、幹だけをつかむ</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">幹を頭に置いて、細かい所に進む</p></div></div><div class="king"><span>「できた」の基準</span><p>やる前に、「だいたい、こういう話」と言えたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">全体を知らないと、今やっている所が、どこなのかがわからない。</p><p>だから、1ページ目から丁寧に読まない。先に、幹をつかんでから、進む。</p><p>迷ったら、自分に聞きます。「これ、全体のどこ？」</p></div>
+</div></section></div>
+<div class="sec" id="i09"><section class="item">
+<div class="qpage"><div class="no">09</div><p class="ttl">キリのいいところまで、休まずやる</p><p class="pr px">×　頭のいい人は「キリのいい所まで」をしない。</p><p class="pr po">○　頭のいい人は「区切って思い出す」をする。</p></div>
+<h3>「むかしむかし、あるところに、おじいさんと……」</h3>
+<p>続きを、頭の中で、言いましたね。「おばあさんが、いました」。頼まれていないのに、最後まで言ったはずです。桃太郎の、最初の文です。</p>
+<p>途中で止まったものを、人の頭は、放っておけません。続きが、気になるようにできています。</p>
+<p>勉強中に、「キリのいい所までやってから、休もう」と思うのも、同じ力が働いています。途中で止めるのが、気持ち悪い。だから、あと3問、あと1ページ、と続けます。気づくと、1時間半、座りっぱなしです。</p>
+<h3>「あとでやろう」は、やらないまま、進みます</h3>
+<p>07番で、人に教えるつもりで入れて、30秒で説明する、と書きました。でも、いつ、説明するのか。授業中も、家で勉強している時も、そのタイミングは、誰も決めてくれません。「ちょうどいい所で」「ここまで進んだら」と思っていると、その時は、来ません。負荷をかけずに、そのまま進むほうが、楽だからです。決めておかないと、やらないまま、終わります。そういうものです。</p>
+<p>もう1つ、理由があります。人は、ずっと集中し続けることが、できません。座っているし、手も動いている。だから、やれていると思います。でも、「集中できている感じ」と、実際の集中は、別です。<mark>集中は、切れてから休むのでは、遅いんです。</mark>（集中の話は、第4章の集中編で、くわしく書きます）</p>
+<pre>　　×　キリのいい所まで進めて、あとで、まとめて思い出す
+　　○　時間で区切って、そのたびに、思い出す</pre>
+<h3>25分やって、1分で思い出して、5分離れます</h3>
+<p>区切りは、キリではなく、時間で決めます。「25分やって、5分休む」やり方は、「ポモドーロ・テクニック」という名前で、聞いたことがある人も、いるかもしれません。僕が、生徒にやってもらっているのは、それを少しアレンジしたものです。<mark>「25:1:5勉強法」</mark>と呼んでいます。</p>
+<p>大事なのは、1分です。本を閉じて、「結局、今の25分は、何の話だった？」と、思い出します。「一次関数の話。傾きと、切片」。このくらいで、いいんです。25分やって、そのまま休むと、入れただけで終わります。<mark>1分で、思い出してから休む。</mark>これを4回やれば、2時間で、4回、思い出しています。絶対法則02の「思い出す」が、区切るたびに、入ります。</p>
+<p>授業の時は、タイマーも、休憩も、使えません。だから、時間を決めて、区切ります。例えば、15分たったら、キーワードを1つメモするか、ここまでの話を、さっと思い出す。そして、チャイムが鳴ったら、教科書をしまう前に、1分。これが、授業の区切りです。</p>
+<h3>タイマーが鳴ったら、キリが悪くても、止めます</h3>
+<p>タイマーが鳴った時、問題の途中だったら、どうするか。途中で、止めてください。最初の「むかしむかし」と同じで、人は、途中で止まったことが、気になります。心理学では、「ツァイガルニク効果」と呼ばれています。とくに、途中で止めた作業を、続けたくなることは、多くの実験で確かめられています。この力を、味方にします。</p>
+<pre>　　キリのいい所で止める　→　次は「新しい1問目」から。始めるのが、重い
+　　キリの悪い所で止める　→　次は「さっきの続き」から。始めるのが、軽い</pre>
+<h3>休憩の5分は、何をするべきか？</h3>
+<p>休憩で、スマホを見ると、頭は休まりません。新しい文字と映像が、どんどん入ってくるからです。立つ。水を飲む。窓の外を見る。<mark>何も入れない5分</mark>にするのが、一番おすすめです。自然にふれるだけでも、効果があります。緑のある景色を40秒見ただけで、そのあとの作業のミスが少なかった、という実験もあります。</p>
+<p>25分は、目安です。大事なのは、25という数字ではありません。<mark>切れる前に、時間で、自分から区切ること</mark>です。集中の波は、時間帯によっても、変わります。頭がよく回る時間は長めに、疲れてくる時間は短めに。自分に一番合う区切り方を、試しながら、見つけていってください。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>キリのいい所まで</b><i>あと少し。休むのはあと</i></div><div class="k o"><span>頭のいい人</span><b>25分で止める</b><i>途中でも、一旦ここまで</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">タイマーを25分にかけてから、始める</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">鳴ったら途中でも止めて、やったことを1分、言う</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">5分離れて、止めた所の続きから始める</p></div></div><div class="king"><span>「できた」の基準</span><p>「25分・1分・5分」を、1日に2回やれたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">キリのいい所まで、と決めると、休む時も、思い出す時も、来ない。</p><p>だから、キリのいい所まで続けない。25分で区切って、1分で思い出す。</p><p>迷ったら、自分に聞きます。「タイマー、かけた？」</p></div>
+</div></section></div>
+<div class="sec" id="i10"><section class="item">
+<div class="qpage"><div class="no">10</div><p class="ttl">教科書を、なんとなく読んで終わる</p><p class="pr px">×　頭のいい人は「なんとなく読む」をしない。</p><p class="pr po">○　頭のいい人は「図にして読む」をする。</p></div>
+<h3>次の文を読んで、1問だけ、答えてください</h3>
+<p class="q">アミラーゼという酵素はグルコースがつながってできたデンプンを分解するが、同じグルコースからできていても、形が違うセルロースは分解できない。</p>
+<p class="q">問　セルロースは（　　　）と形が違う。<br>①デンプン　②アミラーゼ　③グルコース　④酵素</p>
+<p>……</p>
+<p>答えは、①のデンプンです。③のグルコースを選んだ人は、いませんか。全国の中学生と高校生が受けた、読む力のテストの問題です。まちがえた人が多かった問題で、大人でも、グルコースを選ぶ人がいます。（新井紀子さんの本『AI vs. 教科書が読めない子どもたち』で、紹介されています）</p>
+<p>知らない言葉は、ありました。でも、答えは、文の中に、全部、書いてあります。目も、最後の「。」まで、動きました。それでも、まちがえます。教科書や参考書を読んでいる時にも、同じことが、起きています。</p>
+<h3>なんとなく読むと、1つ1つの理解が、甘くなります</h3>
+<p>多くの人は、教材を、なんとなく読んで、終わっています。目が最後の行まで行くと、「読めた」と感じるからです。でも、絶対法則01で見た通り、「やった感じ」と、「頭に残った」は、別のものです。</p>
+<p>さっきの文で、グルコースを選んだ人も、文字は、全部、見ています。「グルコース」も、「形が違う」も、目に入っていました。入っていなかったのは、<mark>言葉と言葉の、つながり</mark>です。何が、何を、どうするのか。何と、何を、比べているのか。なんとなく読むと、近くにある言葉どうしを、頭の中で、くっつけてしまいます。</p>
+<p>1文の理解が甘いまま、次の文に進む。次も、甘いまま進む。それが、1ページ、1章と、積み重なります。「読んだはずなのに、問題が解けない」は、ここから始まっています。</p>
+<pre>　　×　目で追って、読めたことにする
+　　○　止まった文は、図にして、確かめる</pre>
+<h3>インプット中に、止まった文は、丸と矢印で、図式化</h3>
+<p>読んでいて、「ん？」と止まった文。2回読んでも、入ってこない文。そこで、ペンを持って、図にします。図式化です。<mark>出てくる言葉を、丸で囲む。「何が、何を、どうする」を、矢印でつなぐ。</mark>やることは、これだけです。さっきの文で、やってみます。</p>
+<figure class="fig"><img src="fig/10_1.webp" alt="アミラーゼの文を、丸と矢印で図式化したもの"><figcaption>挿絵（ラフ）：アミラーゼの文を、丸と矢印で図式化したもの</figcaption></figure>
+<p>まず、出てくる言葉を、書き出します。アミラーゼ、デンプン、セルロース、グルコースの4つです。次に、矢印でつなぎます。アミラーゼは、デンプンを分解できる。セルロースは、分解できない。アミラーゼから矢印を2本引いて、✓と×をつけます。デンプンも、セルロースも、グルコースからできている。グルコースから、両方に矢印を引きます。残った言葉は、「形が違う」だけです。入る場所は、デンプンとセルロースの間しか、ありません。だから、答えはデンプンです。</p>
+<p><mark>文のままだと迷った所が、図にすると、一目でわかります。</mark>アミラーゼが何なのか、知らなくても、かけます。図にするのは、言葉の意味ではなく、言葉と言葉の、つながりだからです。</p>
+<p>絵は、きれいにかいてありますが、自分でかく時は、丸と、矢印と、言葉だけで十分です。ノートのすみに、30秒。全部の文を、図にする必要もありません。止まった文だけです。</p>
+<h3>図式化できない所が、まだ、わかっていない所です</h3>
+<p>図にしようとして、手が止まることがあります。矢印を、どこから、どこへ引くのか。<mark>手が止まった所が、まだ、わかっていない所です。</mark>読むだけでは気づけなかった所が、図にすると、見つかります。逆に、図にできたなら、その文は、わかっています。</p>
+<p>中学生が、理科の文章を読んだ実験でも、図をかきながら読んだグループは、読むだけのグループより、テストの点が高く、図を正確にかけた人ほど、点が高い傾向がありました。</p>
+<h3>自分で図式化できない時は、AIに、手伝ってもらいます</h3>
+<p>どうしても図にできない文は、AIに見せて、「この文を、丸と矢印の図にして」と頼んでください。ただし、見て「なるほど」で、終わりにしません。見るだけより、自分でかいたほうが、頭に残ります。図を閉じて、自分の手で、もう一度かく。かけたら、わかった、です。（AIの使い方と、気をつける所は、43番に書きます）</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>なんとなく読む</b><i>最後まで読んだ。次</i></div><div class="k o"><span>頭のいい人</span><b>図にして読む</b><i>何が、何を、どうする？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">読んでいて、止まった文に、印をつける</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">出てくる言葉を丸で囲み、矢印でつなぐ</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">かけない所は、読み直すか、AIの図を見てかき直す</p></div></div><div class="king"><span>「できた」の基準</span><p>止まった文を1つ、自分の手で、図にできたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">目が最後まで動いても、読めたことにはならない。</p><p>だから、なんとなく読んで終わらない。止まった文は、図にする。</p><p>迷ったら、自分に聞きます。「この文、図にできる？」</p></div>
+</div></section></div>
+<div class="sec" id="i11"><section class="item">
+<div class="qpage"><div class="no">11</div><p class="ttl">教科書の言葉を、そのまま覚える</p><p class="pr px">×　頭のいい人は「そのまま覚える」をしない。</p><p class="pr po">○　頭のいい人は「知ってることにつなげる」をする。</p></div>
+<h3>フランス語を、3つ、覚えてください</h3>
+<pre>　　croissant（クロワッサン）　＝　三日月
+　　chou（シュー）　　　　　　＝　キャベツ
+　　encore（アンコール）　　　＝　もう一度</pre>
+<p>……</p>
+<p>もう、覚えましたよね。フランス語を、1回も習ったことがないのに、3つとも、10秒もかからなかったはずです。三日月の形をしたパン、クロワッサン。キャベツみたいな形の、シュークリーム。ライブの最後の、「アンコール！」。どれも、もう知っているものに、つながったからです。では、あと2つ。</p>
+<pre>　　oiseau（オワゾー）　＝　鳥
+　　livre（リーヴル）　　＝　本</pre>
+<p>こちらは、明日には、たぶん、忘れています。同じフランス語です。違いは、1つだけ。<mark>もう知っているものに、つながったかどうか</mark>です。</p>
+<h3>覚えられるかは、どれだけ深く考えたかでも、決まります</h3>
+<p>新しい言葉を、そのまま、何回もくり返す。心理学では、「維持リハーサル」と呼ばれます。もう知っていることとつなげて、意味を考える。こちらは、「精緻化リハーサル」です。名前はむずかしいですが、やることは、さっきの「クロワッサン」と同じです。長く残るのは、こちらです。</p>
+<p>トロント大学の研究者たちの実験があります。単語を1つずつ見せて、単語ごとに、質問を変えます。「大文字で書いてある？」と、見た目を聞く。「この文に入る？」と、意味を聞く。あとでテストをすると、意味を考えた単語のほうが、ずっとよく覚えられていました。覚えようとしたかどうかより、<mark>どれだけ深く考えたか</mark>で、残る量が決まったんです。</p>
+<p>教科書の言葉を、そのまま覚えようとするのは、「オワゾー」を覚えるのと、同じです。</p>
+<pre>　　×　教科書の言葉を、そのまま、くり返して覚える
+　　○　自分の知っていることに、つなげて、言い直す</pre>
+<h3>「これって、つまりは？」で、知っていることに、つなげます</h3>
+<p>新しい言葉が出てきたら、自分に聞きます。<mark>「これって、つまりは？」</mark>。そして、自分の知っている場面に、置きかえます。例えば、歴史で、「領事裁判権」という言葉が出てきたとします。教科書には、こう書いてあります。</p>
+<p class="q">外国人が日本で罪を犯しても、日本の法律では裁けず、その国の領事が、その国の法律で裁く権利。</p>
+<p>漢字が並んで、入ってきません。そこで、「領事裁判権って、つまりは？」。置きかえる場面は、学校でも、部活でも、家でも、かまいません。</p>
+<p class="q">学校でいうと、他校の生徒が、うちの学校で問題を起こしても、うちの先生は叱れない。その子の学校の先生が、その学校の決まりで、どうするかを決める。</p>
+<p class="q">部活でいうと、うちのグラウンドの試合なのに、相手チームの反則だけは、相手チームの監督が判定する。</p>
+<p class="q">家でいうと、遊びに来た友達が、うちの物を壊しても、うちの親は叱れない。友達の親が、友達の家のルールで、どうするかを決める。</p>
+<p>ずるい。そう感じたはずです。自分の場所で起きたことなのに、自分たちの決まりで裁けない。その「ずるい」が、この言葉の中身です。しかも、つなげると、その先まで、わかります。</p>
+<p>相手チームの監督が、自分のチームの反則を判定したら、どうなるか。甘くなります。明治時代に、本当に、そうなりました。イギリスの船が、和歌山県の沖で沈みます。イギリス人の船長たちはボートで助かり、日本人の乗客は、全員、亡くなりました（ノルマントン号事件）。裁いたのは、イギリスの領事。船長は、はじめ、無罪になります。日本中が怒り、「この決まりをなくせ」という声が、大きくなりました。教科書の先のページ、「条約改正」への流れまで、ちゃんと理解できるようになるんです。</p>
+<p>言葉だけを丸暗記していたら、こうは、なりません。<mark>頭のいい人は、理解を深めるために、この「考える負荷」を、見えない所で、かけています。</mark></p>
+<p>つなげる先は、身の回りの場面でも、好きなことでも、前に習ったことでも、かまいません。思いつかない時は、先生や友達、AIに、「〇〇でいうと？」と聞いてください。聞いたたとえは、最後に、自分の言葉で言い直します。</p>
+<h3>自分の言葉で説明できたら、「わかった」です</h3>
+<p>07番で、人に教えるつもりで入れて、30秒で説明する、と書きました。その時、教科書の言葉を、そのまま言えるだけでは、足りません。「つまり、どういうこと？」と聞かれて、止まるなら、まだ、写しただけです。</p>
+<pre>　　×　「外国人を、その国の領事が、その国の法律で裁く権利」
+　　○　「日本で起きたのに、日本は裁けない。他校の生徒を叱れないのと同じ」</pre>
+<p>×は、教科書の言葉です。○は、自分の言葉です。知っていることにつなげて、自分の言葉で、言い直せる。<mark>そこまで持っていけるかどうかが、鍵です。</mark></p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>そのまま覚える</b><i>とにかく、くり返そう</i></div><div class="k o"><span>頭のいい人</span><b>つなげる</b><i>これって、つまりは？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">新しい言葉が出たら、「つまりは？」と聞く</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">知っているものか、好きなもので、言い直す</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">教科書を閉じて、自分の言葉で説明する</p></div></div><div class="king"><span>「できた」の基準</span><p>今日習ったことを1つ、自分のたとえで説明できたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">そのまま入れた言葉は、すぐ消える。つながった言葉は、残る。</p><p>だから、そのまま覚えない。自分の知っていることに、つなげる。</p><p>迷ったら、自分に聞きます。「これって、つまりは？」</p></div>
+</div></section></div>
+<div class="sec" id="g7"><section class="grp"><p class="g1">第2章　【インプット】</p><p class="g2">暗記編</p><p class="g3">12　単語を、書いて覚える<br>13　黙って、じっと見つめて覚える<br>14　単語を、赤シートだけで覚える<br>15　全部覚えてから、問題を解く</p></section></div>
+<div class="sec" id="i12"><section class="item">
+<div class="qpage"><div class="no">12</div><p class="ttl">単語を、書いて覚える</p><p class="pr px">×　頭のいい人は「書いて覚える」をしない。</p><p class="pr po">○　頭のいい人は「見て思い出す」をする。</p></div>
+<h3>好きな曲の歌詞を、ノートに書いて、覚えましたか？</h3>
+<p>好きな曲を、1つ、思い浮かべてください。サビを、頭の中で、歌えますか。</p>
+<p>……</p>
+<p>歌えたはずです。1曲まるごと歌える人も、いると思います。でも、その歌詞を、ノートに10回書いて覚えた人は、いないはずです。</p>
+<p>やったことは、2つだけです。何回も、聴いた。そして、歌詞を見ずに、何回も、口ずさんだ。それも、1日でまとめてではなく、何日も、くり返しました。<mark>1回も書いていないのに、覚えています。</mark></p>
+<p>ところが、英単語になると、急に、ノートに10回、書き始めます。</p>
+<h3>残るのは、書いた回数ではなく、思い出した回数です</h3>
+<p>「書かないと、覚えられない」。そう言う人は、多いです。書くと、ノートが、びっしり埋まります。手も、疲れます。「やった感じ」が、一番出るやり方です。でも、「やった感じ」と、「頭に残った」は、別のものです。</p>
+<p>10回書く時、1回目は、単語帳を見て、書きます。2回目からは、すぐ上の、自分の字を見て、書きます。答えは、ずっと目の前にあります。10回書いて、思い出した回数は、0回です。長く残るのは、何も見ずに、思い出そうとしたものでした（絶対法則02）。しかも、書くのは、時間がかかります。1語を10回書くと、1分ほどです。</p>
+<pre>　　10回書く　　　　　→　30分で、30語。思い出した回数は、0回
+　　見て、思い出す　　→　30分で、100語。1語を、3回以上、思い出す</pre>
+<p>何回も書くことが、効く場合もあります。見たことのない形を、覚える時です。ただ、言葉を覚える時には、書いても、差が出なかった、という実験もあります。<mark>時間は、書くことではなく、思い出すことに使います。</mark></p>
+<h3>そもそも、その単語は、テストで、どう出ますか？</h3>
+<p>覚え方を決める前に、考えることがあります。<mark>テストで、どう聞かれるのか</mark>です。</p>
+<pre>　　長文の中で、意味がわかればいい　→　書かない。見て、意味を思い出す
+　　意味を、選ぶか、答える　　　　　→　書かない。見て、意味を思い出す
+　　つづりや漢字を、書かせる　　　　→　書く。ただし、見ないで書く</pre>
+<p>自分が受けるテストを、見てください。入試の長文なら、上の2つです。必死に10回書いて、つづりまで完璧にしても、聞かれるのが意味だけなら、その時間は、点になりません。まず、「このテストを突破するのに、一番速いやり方は何か」を考える。勉強は、そこから始めます。</p>
+<p>書かせるテストの時も、見ながら10回は、書きません。見ないで書けば、それは、「思い出す」になります。書けなかった所だけ、見て、もう一度、見ないで書きます。</p>
+<h3>書かずに、見て、思い出す。やり方は、自由です</h3>
+<p>単語帳でも、アプリでも、赤シートでも、手で隠しても、かまいません。守ることは、3つだけです。</p>
+<pre>　　1　見たら、隠して、思い出す（見ながら、写さない）
+　　2　1語に、時間をかけない。出なければ、すぐ答えを見て、次へ
+　　3　何周も回す。そして、別の日にも回す</pre>
+<p>最初は、ほとんど出てきません。それで、いいんです。覚えられないのは、思い出した回数が、まだ、圧倒的に足りていないだけです。「えーと……」と探してから答えを見ると、ただ見た時より、残ります。<mark>まずは、何度も、何度も、回します。</mark></p>
+<p>回数が足りていないうちに、付箋を貼ったり、印をつけたりするのは、効率がよくありません。全部が、印だらけになるからです。僕が印をつけていたのは、「100回やっても、まだ覚えられないな」と感じた単語くらいでした。印は、それくらい回したあとで、十分です。</p>
+<p>例えば、10個を、1語3秒で、3周。これで、2分ほどです。100語でも、20分。書く人が、30語を書いている間に、100語を、3回ずつ、思い出せます。数字は、目安です。自分に合う形に、変えてください。</p>
+<p>歌詞も、1日で覚えたわけでは、ありませんでした。絶対法則05で見た通り、同じ回数なら、間をあけたほうが、長く残ります。<mark>書かずに、思い出す回数を増やして、日を分ける。</mark>覚えるためにやることは、これだけです。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>書いて覚える</b><i>書かないと、覚えられない</i></div><div class="k o"><span>頭のいい人</span><b>見て思い出す</b><i>隠して、言えるかな</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">テストでの出方を見て、書くかどうかを決める</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">見たら、隠して、思い出す。何度も、何周も回す</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">別の日にも回す。印は、何度も出ない単語だけ</p></div></div><div class="king"><span>「できた」の基準</span><p>きのう回した10個を、今日、何も見ずに言えたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">残るのは、書いた回数ではなく、思い出した回数。</p><p>だから、書いて覚えない。見て、思い出す回数を増やす。</p><p>迷ったら、自分に聞きます。「今、思い出した？　写した？」</p></div>
+</div></section></div>
+<div class="sec" id="i13"><section class="item">
+<div class="qpage"><div class="no">13</div><p class="ttl">黙って、じっと見つめて覚える</p><p class="pr px">×　頭のいい人は「黙って見つめる」をしない。</p><p class="pr po">○　頭のいい人は「目を閉じて声に出す」をする。</p></div>
+<h3>きのうの授業を、1時間目から、順番に、言えますか？</h3>
+<p>きのうが休みだった人は、最後に学校へ行った日で、かまいません。1時間目、2時間目……と、頭の中で、言ってみてください。</p>
+<p>……</p>
+<p>言えたと思います。では、思い出している間、目は、どこを見ていましたか。この本から目を離して、上か、遠くを見たはずです。目を閉じた人も、いると思います。テスト中に、答えを思い出そうとして、天井を見上げるのも、同じです。</p>
+<p>人は、何かを思い出そうとする時、目の前のものから、目を離します。目に入ってくるものが、じゃまになるからです。ところが、覚える時は、逆のことをします。教科書を開いて、黙って、じっと見つめる。<mark>見つめている間、頭は、思い出していません。</mark></p>
+<h3>目を閉じるだけで、思い出しやすくなります</h3>
+<p>イギリスの研究者たちの実験です。映像を見てもらったあとで、内容を質問します。目を閉じて答えたグループは、目を開けたまま答えたグループより、正しく思い出せた数が多く、まちがいは、増えませんでした。「アイクロージャー効果」と呼ばれています。目を閉じると、目から入ってくるものが、止まります。そのぶん、頭を、思い出すことに使えます。</p>
+<h3>声に出すと、残りやすくなり、ごまかせなくなります</h3>
+<p>カナダのウォータールー大学の研究者たちの実験です。単語のリストを、半分は声に出して読み、半分は黙って読んでもらうと、声に出した単語のほうが、よく覚えていました。07番で名前を出した、「プロダクション効果」です。黙って読む時に使うのは、目だけです。声に出すと、口と耳も使います。そして、声は、出てこなければ、止まります。頭の中で言うのと違って、<mark>ごまかせません。</mark></p>
+<h3>本を閉じて、目を閉じて、声に出します</h3>
+<pre>　　×　教材を開いたまま、黙って、見つめる
+　　○　教材を閉じて、目も閉じて、声に出す</pre>
+<p>覚えたい所を読んだら、本を閉じます。目を閉じて、書いてあったことを、声に出します。声が止まったら、止まった所だけ開いて見て、もう一度、目を閉じて言います。歴史の、江戸時代の改革なら、こうなります。</p>
+<pre>　　読む　　　　　享保は吉宗、寛政は松平定信、天保は水野忠邦
+　　閉じて、言う　「享保は吉宗。寛政は松平定信。天保は……」
+　　そこだけ見る　天保は、水野忠邦
+　　もう一度言う　「享保は吉宗。寛政は松平定信。天保は水野忠邦」</pre>
+<p>電車や図書館では、口だけ動かします。声ほどではありませんが、黙って眺めるよりは、残ります。</p>
+<h3>これまでのやり方と、組み合わせます</h3>
+<p>目を閉じる。声に出す。この2つは、これまでのやり方に、そのまま足せます。07番の、人に教えるつもりの30秒説明。09番の、25分のあとの1分。どちらも、<mark>目を閉じて、声に出して</mark>やります。12番の単語は、目は開けたまま、意味を、声に出します。思い出しやすくなり、ごまかしも、きかなくなります。組み合わせると、最高の勉強法になります。</p>
+<p>僕の塾では、生徒が、オンラインの自習室で、一緒に自習をしています。手元を映しながら勉強するので、サボれません。ある日、その画面に、目を閉じて、ぶつぶつ言っている生徒が、同時に、何人も映っていました。初めて見たコーチは、びっくりしていました（笑）。でも、あれが、頭に残る勉強をしている人の姿です。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>黙って見つめる</b><i>集中して見ていれば、入る</i></div><div class="k o"><span>頭のいい人</span><b>声に出す</b><i>目を閉じて、言える？</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">覚えたい所を読んだら、本を閉じる</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">目を閉じて、書いてあったことを声に出す</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">止まった所だけ見て、もう一度、目を閉じて言う</p></div></div><div class="king"><span>「できた」の基準</span><p>目を閉じたまま、止まらずに最後まで言えたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">見つめている間、頭は、思い出していない。</p><p>だから、黙って見つめない。目を閉じて、声に出す。</p><p>迷ったら、自分に聞きます。「目を閉じて、言える？」</p></div>
+</div></section></div>
+<div class="sec" id="i14"><section class="item">
+<div class="qpage"><div class="no">14</div><p class="ttl">単語を、赤シートだけで覚える</p><p class="pr px">×　頭のいい人は「赤シートだけで覚える」をしない。</p><p class="pr po">○　頭のいい人は「イメージセットで覚える」をする。</p></div>
+<h3>「りんご」と聞いて、今、頭に浮かんだのは、どちらですか？</h3>
+<pre>　　ア　「り・ん・ご」という、3つの文字
+　　イ　赤くて丸い、あの果物</pre>
+<p>……</p>
+<p>ほとんどの人は、イだと思います。<mark>知っている言葉は、文字ではなく、絵や場面で、頭に入っています。</mark>では、単語帳の単語は、どうでしょうか。</p>
+<p class="q">abandon　捨てる</p>
+<p>赤シートで隠して、「アバンダン、捨てる」。何周も、くり返します。テストで、abandon が出ました。「見たことはある。なんだっけ」。文字は、覚えています。意味が、出てきません。</p>
+<h3>赤シートだけだと、記号を丸暗記しているのと同じです</h3>
+<p>赤シートで、何度もくり返す。それ自体は、正しいやり方です。12番で書いた通り、日を分けて、何回も思い出せば、残ります。ただ、「abandon ＝ 捨てる」と、文字と文字をくっつけるだけだと、意味のない記号を、丸暗記しているのと同じです。頭の中に、何の絵も浮かんでいません。だから、はがれやすいんです。</p>
+<pre>　　×　赤シートだけで、文字と文字を、くり返す
+　　○　先に、イメージとセットにしてから、赤シートで思い出す</pre>
+<h3>意味を読んだら、3秒、絵か場面を思い浮かべます</h3>
+<p>やることは、1つです。意味を読んだら、3秒だけ、絵か場面を思い浮かべます。英単語でも、古文単語でも、同じです。</p>
+<pre>　　abandon　捨てる　→　雨の中、段ボールの子犬が、置いていかれる場面
+　　おどろく　はっと気づく、目を覚ます　→　夜中、物音で、はっと目が覚める
+　　ながむ　　ぼんやり物思いにふける　→　授業中、窓の外を、ぼーっと見ている</pre>
+<p>うまい絵でなくて、いいです。自分が出てくる場面は、とくに残ります。「おどろく」は、赤シートだけだと、2つの訳を、別々に覚えることになります。場面にすると、1つの絵から、2つとも出てきます。</p>
+<p>スタンフォード大学の研究者たちの実験でも、外国語の単語を、頭の中の絵と結びつけて覚えたグループは、自由に覚えたグループより、覚えた数が多い、という結果でした。<mark>イメージとセットにする。これだけで、定着が変わります。</mark></p>
+<h3>古文単語300語を、全部、イメージにしました</h3>
+<p>僕は、受験に必要な古文単語300語を、全部、イメージで解説した動画を、YouTubeで公開しています。うれしいことに、公開から10か月たたないうちに、5.7万回、再生されました。「古文単語の小テストで苦しんでいたのに、毎回、満点が取れるようになった」「模試や過去問でも、単語が使えるようになった」。そんな報告を、実際にもらっています。自分でイメージが作れない時は、人が作ったイメージを借りて、かまいません。</p>
+<h3>どうしても覚えられない単語は、1日1回、会話で使います</h3>
+<p>イメージにしても、まだ出てこない単語には、縛りをかけます。<mark>1日1回、ふだんの会話の中で、使う。</mark></p>
+<pre>　　友達に　「今日の小テスト、いとわろし」（わろし＝よくない）
+　　部活で　「今日の走りこみ、reluctant だわ」（気が進まない）</pre>
+<p>笑われても、かまいません。使った場面ごと、頭に残ります。11番で書いた通り、深く考えたものは、残ります。イメージとセットで入れて、12番のやり方で、日を分けて、何回も思い出す。これで、単語は、どんどん定着していきます。</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>赤シートだけ</b><i>アバンダン、捨てる……</i></div><div class="k o"><span>頭のいい人</span><b>イメージとセット</b><i>置いていかれる子犬だ</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">意味を読んだら、3秒、絵か場面を思い浮かべる</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">赤シートで隠して、絵を思い出してから言う</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">出てこない単語は、1日1回、会話で使う</p></div></div><div class="king"><span>「できた」の基準</span><p>印がついた単語を、絵から、何も見ずに言えたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">文字と文字をくっつけただけの単語は、はがれやすい。</p><p>だから、赤シートだけで覚えない。イメージとセットで覚える。</p><p>迷ったら、自分に聞きます。「この単語、絵が浮かぶ？」</p></div>
+</div></section></div>
+<div class="sec" id="i15"><section class="item">
+<div class="qpage"><div class="no">15</div><p class="ttl">全部覚えてから、問題を解く</p><p class="pr px">×　頭のいい人は「覚えてから解く」をしない。</p><p class="pr po">○　頭のいい人は「解きながら覚える」をする。</p></div>
+<h3>クイズ番組の答えは、なぜ、次の日も覚えているのでしょうか？</h3>
+<p>テレビや動画で、クイズを見ている時。「えー、何だっけ」と考えて、わからない。答えが出て、「あー、それか」。その答えは、次の日も、覚えています。</p>
+<p>同じ内容を、本で読んだだけなら、どうでしょうか。たぶん、次の日には、忘れています。違いは、1つです。<mark>答えを知る前に、問題があったかどうか</mark>です。</p>
+<p>ところが、勉強では、問題を、あと回しにします。「教科書を、ちゃんと覚えてから、問題集をやろう」。覚えきるまで、問題は、開きません。</p>
+<pre>　　×　教科書を、覚えきってから、問題を解く
+　　○　ざっと読む　→　すぐ解く　→　×だった所だけ、教科書に戻る</pre>
+<h3>問題は、ゴールに一番近く、いやでも思い出させてくれます</h3>
+<p>問題を解きながら覚えたほうがいい理由は、2つあります。</p>
+<p>1つ目は、戦略です。最後に点になるのは、問題が解けるかどうかです。そして、問題は、「どこを、どんな形で聞かれるか」を、そのまま見せてくれます。<mark>ゴールに一番近い所から、始めます。</mark></p>
+<p>2つ目は、思い出すことです。絶対法則02で見た通り、残るのは、思い出そうとしたものです。でも、自分で「思い出そう」と決めるのは、面倒です。問題を前にすると、いやでも、思い出そうとします。<mark>問題は、「思い出す」を、半分、強制してくれる道具です。</mark>問題を解くこと自体が、覚える方法になる。これを、「テスト効果」と呼びます。</p>
+<p>「まだ覚えていないのに、解いても意味がない」。そう思うはずです。カリフォルニア大学アーバイン校の研究者たちの実験では、文章を読む前に、先に問題を解いたグループは、ほとんど答えられなかったのに、あとのテストでは、読む時間を長くもらったグループより、点が高い、という結果でした。</p>
+<h3>世界史を、ゼロから10か月で仕上げた時に、やったこと</h3>
+<p>僕は、浪人の時、選択科目を、世界史に変えました。ゼロからのスタートです。それでも、10か月後には、早稲田大学の入試でも、世界史で圧勝できるようになっていました。やったことは、「覚えてから解く」の、逆です。</p>
+<pre>　　1　その範囲を、ざっと読む（1回だけ。覚えようとしない）
+　　2　すぐ、その範囲の問題を解く（解けなくていい）
+　　3　答えと解説を見て、聞かれた所だけ、教科書に戻る
+　　4　別の日に、まちがえた問題を、もう一度解く</pre>
+<p>例えば、こうなります。</p>
+<pre>　　問題　　「1789年に、フランスで起きたことは？」　→　出てこない
+　　答え　　フランス革命　→　教科書の、その段落だけ読む
+　　次の日　同じ問題　→　「フランス革命」</pre>
+<p>最初は、10問のうち、2問しか合いません。それで、いいんです。クイズ番組で、答えが出てこないのと、同じです。「こう聞かれるのか」と知ってから読む教科書は、ただ読んだ時と、入り方が、まったく違います。</p>
+<h3>問題集は、力試しではなく、覚える道具です</h3>
+<p>「問題集は、覚えてから、力試しに使いたい」。そう思う人は、多いです。でも、初めて解いて○だった問題からは、何も増えません。×だった問題が、覚えるべき所を、教えてくれます。</p>
+<p>問題を解きながら進めると、「思い出す」を、強制的にできます。しかも、問題集がもとになっているので、ゴールへの、一番の近道になります。<mark>覚えるためにも、点を取るためにも、問題集をベースに勉強する。</mark>それができる人が、強いんです。</p>
+<p>だから、受験勉強では、過去問を、どれだけうまく使えるかが、合否に直結します。（過去問の使い方は、17番に書きます）</p>
+<div class="tag">イラストのラフ案（2コマ）</div>
+<div class="koma"><div class="k x"><span>伸びない人</span><b>覚えてから解く</b><i>まだ覚えてないから、あとで</i></div><div class="k o"><span>頭のいい人</span><b>解きながら覚える</b><i>先に、解いてみよう</i></div></div>
+<div class="tag">今日からできる3STEP</div>
+<div class="sheet"><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">範囲をざっと読んだら、すぐ問題を解く</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">答えと解説を見て、聞かれた所だけ読む</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">別の日に、まちがえた問題を、もう一度解く</p></div></div><div class="king"><span>「できた」の基準</span><p>きのうまちがえた問題を、今日、解けたらOK！</p></div></div>
+<div class="mwrap"><div class="tag">まとめ</div>
+<div class="matome"><p class="one">問題は、覚えたかを試すものではなく、覚えるための道具。</p><p>だから、覚えてから解かない。解きながら、覚える。</p><p>迷ったら、自分に聞きます。「先に、解いてみた？」</p></div>
+</div></section></div><script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>

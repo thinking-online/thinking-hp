@@ -348,7 +348,7 @@ def mokuji_one_html(back=True):
 <div style="height:10px"></div>
 %s
 </div>
-<footer>言葉は、今の原稿に合わせています。第1章、07・08番、第7章の言葉は、これから短くします。</footer>
+<footer>言葉は、今の原稿に合わせています。第1章と、第5章から先の言葉は、仮のものです。</footer>
 </div>
 """ % (M1.N_ALL, FONT, MOKUJI_CSS,
        '<a class="back" href="./" onclick="if(document.referrer&&history.length>1){history.back();return false}">← 一覧にもどる</a>' if back else "",
@@ -641,7 +641,7 @@ def index_now(names):
 
 <section id="genko">
 <h2>原稿</h2>
-<p class="note">本の順番に並べています。「読む」を押すと、その部分が開きます。各項目には、イラストのラフ案（2コマの言葉）も入れています。</p>
+<p class="note">本の順番に並べています。「読む」を押すと、その部分が開きます。今は、文字だけを載せています。図とイラストは、入っていません。</p>
 <ul class="parts">%s</ul>
 </section>
 
@@ -741,8 +741,8 @@ def one_file():
     return p
 
 
-def main():
-    """部分ごとに見る形で作る（2026-11-20）。前の形（45個・35個の2つの版を並べる入口）は、main_old()。"""
+def main_design():
+    """こちらで組んだ項目の形（頭の2行、2コマのラフ、3STEP、まとめの枠つき）で作る。2026-11-20 の途中まで、これを出していた。今は main()（文字だけの形）。"""
     if os.path.isdir(SITE):
         shutil.rmtree(SITE)
     os.makedirs(SITE)
@@ -756,6 +756,160 @@ def main():
                              '<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>' + inner + "</body></html>")
     write("mokuji.html", wrapdoc(mokuji_one_html()))
     with open(os.path.join(ROOT, "build", "目次_最新.html"), "w", encoding="utf-8") as f:   # 単体で開けるファイル
+        f.write(wrapdoc(mokuji_one_html(back=False)))
+    inner = index_now(names)
+    write("index.html", '<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>' + inner + "</body></html>")
+    with open(os.path.join(OUT, "artifact", "index.html"), "w", encoding="utf-8") as f:
+        f.write(inner)
+    one = one_file()
+    for root, _, fs in os.walk(OUT):
+        for fn in sorted(fs):
+            q = os.path.join(root, fn)
+            print("%8.1fKB  %s" % (os.path.getsize(q) / 1024, os.path.relpath(q, OUT)))
+    print("%8.1fKB  %s（1つにまとめたファイル）" % (os.path.getsize(one) / 1024, os.path.relpath(one, ROOT)))
+
+
+# ---------------------------------------------------------------- 文字だけの形（著者の手元の原稿を、そのまま出す）
+TEXT_CSS = """
+/* 並べ方：上に、もどる行と「飛ぶ」の箱。その下に、原稿の文字を、1列で、上から順に。枠や絵は入れない */
+:root{--bg:#eef0f4;--paper:#ffffff;--ink:#16181d;--sub:#566070;--line:#dfe3ea;--accent:#15467e;--tint:#f2f5fa;color-scheme:light;
+  --display:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;--body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:2;max-width:780px;margin:0 auto;
+  padding-block:0 110px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));box-shadow:0 0 0 1px var(--line);overflow-wrap:anywhere}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line);margin:0 -18px;padding:9px 18px;display:flex;gap:6px 14px;align-items:center;flex-wrap:wrap;font-size:13px;line-height:1.6}
+@media(min-width:860px){body{padding-left:56px;padding-right:56px}.bar{margin:0 -56px;padding:10px 56px}}
+.bar .back{color:var(--accent);font-weight:700;text-decoration:none;white-space:nowrap}
+.bar b{font-weight:700;min-width:0}
+.bar select{font:inherit;font-size:13px;padding:4px 6px;border:1px solid #c9ced8;border-radius:6px;background:#fff;color:var(--ink);max-width:100%}
+.bar .back:focus-visible,.bar select:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.top{margin:24px 0 0}
+.top p{color:var(--sub);font-size:13px;line-height:1.7;margin:0 0 4px;white-space:normal}
+.sec{scroll-margin-top:70px}
+h1.part{font-family:var(--display);font-weight:700;font-size:clamp(21px,4.6vw,27px);line-height:1.6;margin:52px 0 20px;padding-top:20px;border-top:3px solid var(--accent);text-wrap:balance}
+p.grp{margin:64px 0 0;padding:6px 14px;background:var(--tint);border-left:5px solid var(--accent);font-weight:900;font-size:15px}
+.ihead{margin:64px 0 24px;padding-top:18px;border-top:1px solid var(--line)}
+.ihead .no{display:block;font-family:var(--display);font-weight:700;font-size:30px;line-height:1.2;color:var(--accent);font-variant-numeric:tabular-nums}
+.ihead p{margin:6px 0 0;font-weight:900;font-size:clamp(16.5px,3.8vw,19px);line-height:1.7}
+.ihead .hx{color:var(--sub)}
+h3{font-size:17px;font-weight:900;line-height:1.7;margin:40px 0 10px;padding-left:12px;border-left:4px solid var(--accent)}
+p{margin:0 0 18px;white-space:pre-wrap}
+p.tab{white-space:pre;overflow-x:auto;overflow-wrap:normal;padding-bottom:4px}
+p.lab{margin:36px 0 8px;font-size:13px;font-weight:900;color:var(--accent);letter-spacing:.06em}
+p.lab.s{margin-top:16px;color:var(--sub)}
+a{color:var(--accent)}
+"""
+# 原稿の中の、印（しるし）の行。文字は変えずに、小さな見出しの見た目にする
+TEXT_LAB = {"章最初のページ", "導入文", "質問ページ", "本文", "頭のいい人と伸びない人の違い", "今日からできる3STEP", "まとめ", "参考イメージ"}
+TEXT_LAB_S = {"伸びない人", "頭のいい人", "できた基準", "「できた」の基準"}
+# 印（⚫︎や■）のない見出しの行。原稿で、見出しとわかっているものだけ（見つからなければ、ふつうの行として出る）
+TEXT_HEAD = {"口だけ野郎の、ダサい男でした", "「努力の天才」と呼ばれて、全部落ちました。", "受験の先まで効く、一生モノの武器です", "この本に書いてあること", "悩みから、探す索引",
+             "「あとで見よう」と保存したもの。本当に、見返しましたか？", "何度も読むと、頭に入った感じがするのは、なぜか"}
+
+
+def text_html(lines):
+    """原稿の行を、そのままHTMLに。空の行で、段落を分ける。⚫︎と■で始まる行は、見出し。文字は、足さないし、削らない（行の頭の ⚫︎ ■ の印だけ、見出しの形に置きかえる）。"""
+    out, para = [], []
+    link = lambda t: re.sub(r"(https?://[^\s<）)]+)", r'<a href="\1" target="_blank" rel="noopener">\1</a>', t)
+
+    def flush():
+        if para:
+            # 全角の空白で、たてにそろえてある行（表の形）は、折り返さずに、横に送れるようにする
+            tab = len(para) >= 2 and max(len(x) for x in para) <= 60 and sum(1 for x in para if re.search(r"\S\u3000{2,}\S", x)) * 2 >= len(para)
+            out.append("<p%s>%s</p>" % (' class="tab"' if tab else "", link(esc("\n".join(para)))))
+            del para[:]
+    for raw in lines:
+        s = raw.rstrip()
+        key = s.strip().strip("　")
+        m = re.match(r"^(?:[⚫●]︎?|■)\s*(.+)$", s)
+        if not key:
+            flush()
+        elif m or key in TEXT_HEAD or re.match(r"^【(?!絶対法則)[^】]{1,8}】.{4,40}$", key):
+            flush()
+            out.append("<h3>%s</h3>" % esc(m.group(1).strip() if m else key))
+        elif key in TEXT_LAB or key in TEXT_LAB_S or re.match(r"^STEP0\d$", key):
+            flush()
+            out.append('<p class="lab%s">%s</p>' % ("" if key in TEXT_LAB else " s", esc(key)))
+        else:
+            para.append(s)
+    flush()
+    return "\n".join(out)
+
+
+def text_chapter_name(s):
+    """章の題。原稿で「頭のいい人は、」の先がまだ空いている章は、札（【…】）までを出す。"""
+    rest = re.sub(r"^第\d*章[\s　]*", "", s["head"])
+    rest = re.sub(r"頭のいい人は、$", "", rest).strip()
+    return "第%d章　%s" % (s["num"], rest)
+
+
+def text_bodies():
+    """著者の手元の原稿から、部分ごとの中身を作る。{記号: [(id, 飛ぶ先の名前, html)]} と、一覧に出す名前。"""
+    import author_doc as AD
+    out = {k: [] for k, _, _ in PARTS}
+    names = {}
+    h1 = lambda t: '<h1 class="part">%s</h1>' % esc(t)
+    for s in AD.parse():
+        k = s["kind"]
+        if k in ("title", "kantou", "mokuji", "hajimeni", "tsukaikata"):
+            if not any(x.strip() for x in s["lines"]):
+                continue                     # 中身がまだない所（目次）は、出さない
+            key = "kantou" if k in ("title", "kantou", "mokuji") else "hajimeni"
+            out[key].append((k, s["head"], h1(s["head"]) + text_html(s["lines"])))
+            continue
+        key, name, its = "ch%d" % s["num"], text_chapter_name(s), AD.items(s)
+        groups = [u[1] for u in s["units"] if u[0] == "group"]
+        if not its:
+            names[key] = (name, "")
+            continue
+        names[key] = (name, "%s〜%s番%s" % (its[0][1], its[-1][1], ("　" + "・".join(groups)) if groups else ""))
+        out[key].append(("door", "章の導入", h1(name) + text_html(s["intro"])))
+        for u in s["units"]:
+            if u[0] == "group":
+                out[key].append(("g%d" % len(out[key]), "■ " + u[1], '<p class="grp">%s</p>' % esc(u[1])))
+            elif u[0] == "item":
+                no, head, body = u[1], u[2], u[3]
+                if len(head) == 1:           # 第1章（01【絶対法則】疑う）
+                    hh = '<p>%s</p>' % esc(head[0])
+                    label = "　%s　%s" % (no, head[0])
+                else:
+                    hh = '<p class="hx">%s</p><p class="ho">%s</p>' % (esc(head[0]), esc(head[1]))
+                    x, o = AD.heads().get(no, ("", ""))
+                    label = "　%s　「%s」→「%s」" % (no, x, o)
+                out[key].append(("i" + no, label, '<div class="ihead"><span class="no">%s</span>%s</div>%s' % (no, hh, text_html(body))))
+    names["kantou"] = ("巻頭ページ", "表紙・タイトルの案、「10秒だけ、付き合ってください」")
+    names["hajimeni"] = ("はじめに", "はじめに、この本の使い方")
+    return out, names
+
+
+def text_part_page(key, title, secs):
+    opts = "".join('<option value="%s">%s</option>' % (sid, esc(label)) for sid, label, _ in secs)
+    body = "\n".join('<div class="sec" id="%s">%s</div>' % (sid, h) for sid, _, h in secs)
+    return ('<!doctype html><html lang="ja"><head>%s<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>%s</title>%s<style>%s</style></head><body>'
+            '<div class="bar">%s<b>%s</b><select id="jump" aria-label="読みたい所へ飛ぶ"><option value="">読みたい所へ飛ぶ</option>%s</select></div>'
+            '<div class="top"><p>%s（仮題）　／　%s　／　%s 時点</p><p>原稿の文字だけを、載せています。図とイラストは、入っていません。</p></div>'
+            '%s<script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>'
+            % (HEAD, esc(title), FONT, TEXT_CSS, BACK, esc(title), opts, esc(TITLE), esc(K.AUTHOR), READY[key], body))
+
+
+def main():
+    """文字だけの形で作る（2026-11-20、著者の指示）。中身は、著者の手元の原稿（manuscript/著者の最新原稿/）を、そのまま出す。
+    こちらで組んだ項目の形（2コマのラフ、3STEPの枠つき）は main_design()。その前の形は main_old()。"""
+    if os.path.isdir(SITE):
+        shutil.rmtree(SITE)
+    os.makedirs(SITE)
+    os.makedirs(os.path.join(OUT, "artifact"), exist_ok=True)
+    bodies, names = text_bodies()
+    assert {k for k, v in bodies.items() if v} == set(READY), sorted(k for k, v in bodies.items() if v)   # 読める部分が変わったら、READY を直す
+    for key, ttl, ds in PARTS:
+        if key in READY:
+            write(key + ".html", text_part_page(key, names.get(key, (ttl, ds))[0], bodies[key]))
+    shiryo_pages()
+    wrapdoc = lambda inner: ('<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+                             '<style>:root{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style></head><body>' + inner + "</body></html>")
+    write("mokuji.html", wrapdoc(mokuji_one_html()))
+    with open(os.path.join(ROOT, "build", "目次_最新.html"), "w", encoding="utf-8") as f:
         f.write(wrapdoc(mokuji_one_html(back=False)))
     inner = index_now(names)
     write("index.html", '<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>' + inner + "</body></html>")
@@ -794,4 +948,4 @@ def main_old():
 
 
 if __name__ == "__main__":
-    main()
+    main_design() if "design" in sys.argv[1:] else main()

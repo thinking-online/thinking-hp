@@ -10,6 +10,8 @@ ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 import v4_data as V
 import book_data as K
+import author_doc as AD
+AUTHOR = AD.heads()   # 著者の手元の原稿の、頭の2行の言葉（2026-11-20 から、これが一番新しい）
 
 MAE = ["10秒だけ、付き合ってください", "はじめに　「お前の勉強法、ぜーんぶ、ズレとる。」", "この本の使い方"]
 ATO = ["巻末　%dを、1枚に", "巻末　6つの言葉で、初めての場面を解く", "巻末　保護者の方へ", "巻末　参考文献", "おわりに　笑わなかった人が、1人だけいました"]
@@ -35,7 +37,9 @@ W = 16   # ×の言葉の幅（全角の字の数。これより短い言葉は�
 
 
 def pair(kk):
-    """（やらないこと, かわりにやること）。頭の2行がある項目は、その言葉。"""
+    """（やらないこと, かわりにやること）。著者の手元の原稿に頭の2行がある項目は、その言葉。なければ、こちらの原稿の頭の2行。それもなければ、仮の言葉。"""
+    if kk in AUTHOR:
+        return AUTHOR[kk]
     if kk in V.ITEMS and V.ITEMS[kk].get("pair"):
         return V.ITEMS[kk]["pair"]
     return KARI[kk]

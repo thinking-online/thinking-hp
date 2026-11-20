@@ -1,351 +1,326 @@
-<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>第1章　頭のいい人は、「ズレた努力」をしない</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&display=swap"><style>
-@page { size: A4; margin: 18mm 20mm 20mm; }
-* { box-sizing: border-box; }
-html { font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif; font-size: 10.5pt; line-height: 1.9; color: #16181d; }
-body { margin: 0; }
-h1, h2, h3, h4, p, ol, pre { margin: 0; }
-mark { background: linear-gradient(transparent 55%, #ffe37a 55%); color: inherit; }
-.cover { page-break-after: always; padding-top: 60mm; }
-.cover h1 { font-size: 24pt; line-height: 1.5; font-weight: 900; }
-.cover .sub { margin-top: 6mm; color: #555; font-size: 11pt; }
-.cover .note { margin-top: 18mm; border-top: 1px solid #c9ced8; padding-top: 6mm; font-size: 10pt; color: #333; }
-.cover .note p { margin-bottom: 2mm; }
-.toc { page-break-after: always; }
-.toc h2 { font-size: 15pt; margin-bottom: 5mm; }
-.toc .ch { font-weight: 700; margin-top: 4.5mm; }
-.toc .it { display: grid; grid-template-columns: 9mm 1fr; font-size: 9.5pt; line-height: 1.75; color: #333; }
-.toc .it b { font-variant-numeric: tabular-nums; color: #15467e; }
-.chdoor { page-break-before: always; page-break-after: always; padding-top: 55mm; }
-.chdoor .cno { font-size: 13pt; color: #15467e; font-weight: 700; letter-spacing: .08em; }
-.chdoor h1 { font-size: 22pt; line-height: 1.5; margin-top: 3mm; font-weight: 900; }
-.chdoor .fld { margin-top: 2mm; color: #555; }
-.chdoor .intro { margin-top: 14mm; border-top: 1px solid #c9ced8; padding-top: 7mm; }
-.chdoor .intro p { margin-bottom: 4mm; }
-.item { page-break-before: always; }
-.qpage { background: #15467e; color: #fff; border-radius: 4mm; padding: 9mm 10mm 10mm; margin-bottom: 8mm; text-align: center; position: relative; }
-.qpage p { text-align: center; margin: 0; }
-.qpage .no { text-align: left; font-size: 15pt; font-weight: 900; font-variant-numeric: tabular-nums; opacity: .9; line-height: 1.2; margin: -3mm 0 1mm -3mm; }
-.qpage .q1 { font-size: 11pt; letter-spacing: .04em; }
-.qpage .q2 { font-size: 20pt; font-weight: 900; line-height: 1.5; margin: 2mm 0 2mm !important; }
-.qpage .q3 { font-size: 12pt; font-weight: 700; }
-.tag { display: inline-block; font-size: 8.5pt; font-weight: 700; color: #15467e; border: 1px solid #15467e; border-radius: 99px; padding: 0 3.2mm; line-height: 1.7; margin: 7mm 0 3mm; }
-.item > .tag:first-of-type { margin-top: 0; }
-h3 { font-size: 12pt; font-weight: 900; line-height: 1.6; margin: 7mm 0 2.5mm; padding-left: 3mm; border-left: 1.4mm solid #15467e; break-after: avoid; }
-h4 { font-size: 10.5pt; font-weight: 700; margin: 4.5mm 0 1.5mm; break-after: avoid; }
-p { margin-bottom: 3mm; text-align: justify; }
-p.q { padding-left: 2em; font-weight: 700; }
-pre { font-family: inherit; font-size: 9.8pt; line-height: 1.8; white-space: pre-wrap; background: #f1f3f7; border-radius: 2mm; padding: 3mm 4.5mm; margin: 2mm 0 4mm; break-inside: avoid; }
-.koma { display: grid; grid-template-columns: 1fr 1fr; gap: 4mm; break-inside: avoid; }
-.koma .k { border-radius: 3mm; padding: 4mm 5mm 5mm; text-align: center; }
-.koma .x { background: #eceef2; }
-.koma .o { background: #e3ecf7; border: 1px solid #15467e; }
-.koma span { display: block; font-size: 9pt; color: #555; }
-.koma b { display: block; font-size: 15pt; font-weight: 900; line-height: 1.6; }
-.koma i { display: block; font-style: normal; font-size: 9.5pt; }
-.sheet { border: 1px solid #15467e; border-radius: 3mm; padding: 4mm 5mm 5mm; break-inside: avoid; }
-.sheet .sttl { font-size: 12.5pt; font-weight: 900; border-bottom: 1.5px solid #15467e; padding-bottom: 1.5mm; margin-bottom: 3mm; text-align: left; }
-.st { display: grid; grid-template-columns: 20mm 1fr; gap: 4mm; align-items: start; padding: 2.2mm 0; border-bottom: 1px solid #dfe3ea; }
-.st .lab { background: #15467e; color: #fff; border-radius: 99px; text-align: center; font-size: 8pt; font-weight: 700; line-height: 1.5; padding: .6mm 0 .8mm; }
-.st .lab b { font-size: 10.5pt; margin-left: 1mm; }
-.st .do { font-weight: 700; margin: 0 0 .8mm; text-align: left; }
-.st .say { display: inline-block; border: 1px solid #15467e; border-radius: 2.5mm; padding: 0 3mm; font-size: 9.8pt; margin: 0; }
-.st .nt { font-size: 8.8pt; color: #444; margin: 1mm 0 0; text-align: left; line-height: 1.6; }
-.king { display: grid; grid-template-columns: auto 1fr; gap: 4mm; align-items: center; background: #e3ecf7; border-radius: 2.5mm; padding: 2.5mm 4mm; margin-top: 3.5mm; }
-.king span { background: #15467e; color: #fff; border-radius: 99px; font-size: 8.5pt; font-weight: 700; padding: 0 3mm; white-space: nowrap; }
-.king p { margin: 0; font-weight: 700; text-align: left; }
-.matome { background: #f7f5ee; border-radius: 3mm; padding: 4.5mm 6mm; break-inside: avoid; }
-.matome .one { font-size: 12pt; font-weight: 900; line-height: 1.7; }
-.matome ol { margin: 2mm 0 3mm 1.6em; padding: 0; }
-.matome p { margin-bottom: 1mm; text-align: left; }
-
-/* 項目の最初の青い箱が、ページのいちばん上にぴったり付くと、前のページの下に細い線がにじむ。少しだけ下げる */
-.item { padding-top: 1mm; }
-/* 「まとめ」などの札だけが、ページの下に取り残されないようにする */
-.tag { display: block; width: fit-content; break-after: avoid; page-break-after: avoid; }
-/* まとめと、その下の一言を、同じページに置く */
-.mwrap { break-inside: avoid; page-break-inside: avoid; }
-.qpage .ttl { font-size: 11.5pt; font-weight: 700; margin: 0 0 4mm !important; padding-bottom: 3mm; border-bottom: 1px solid rgba(255,255,255,.45); text-align: left; }
-.grp { page-break-before: always; padding-top: 80mm; text-align: center; }
-.grp p { text-align: center; margin: 0; }
-.grp .g1 { font-size: 11pt; color: #555; }
-.grp .g2 { font-size: 22pt; font-weight: 900; color: #15467e; margin-top: 3mm; }
-.grp .g3 { margin-top: 10mm; font-size: 10pt; color: #333; line-height: 2.1; text-align: center; }
-.toc .grpname { font-size: 9.5pt; font-weight: 700; color: #15467e; margin: 3mm 0 1mm; }
-.toc .it { grid-template-columns: 9mm 1fr; margin-bottom: 1.2mm; }
-.toc .it .t { font-weight: 700; color: #16181d; }
-.toc .it .xo { color: #444; font-size: 9pt; line-height: 1.6; }
-.chdoor .intro h4 { font-size: 12.5pt; font-weight: 900; line-height: 1.6; margin: 0 0 4mm; }
-.chdoor { padding-top: 30mm; }
-.chdoor .sub { margin-top: 2mm; color: #555; }
-.new { display: inline-block; font-size: 8pt; font-weight: 700; color: #a4500a; border: 1px solid #a4500a; border-radius: 99px; padding: 0 2.6mm; line-height: 1.6; margin-left: 2mm; vertical-align: middle; }
-.qpage .new { color: #fff; border-color: #fff; }
-
-.cover .kari { display: inline-block; border: 1.5px solid #a4500a; color: #a4500a; font-weight: 700; border-radius: 99px; padding: 0 5mm; font-size: 10pt; margin-bottom: 8mm; }
-.cover .alt { margin-top: 6mm; color: #555; font-size: 10pt; line-height: 1.9; }
-.cover .au { margin-top: 10mm; font-size: 12pt; font-weight: 700; }
-.text { page-break-before: always; }
-.text > h1, .col > h1 { font-size: 17pt; font-weight: 900; line-height: 1.5; margin-bottom: 7mm; padding-bottom: 3mm; border-bottom: 1.5px solid #15467e; }
-.toc .line { font-size: 9.8pt; margin: 1mm 0; }
-.toc .colm { font-size: 9pt; color: #a4500a; margin: 0 0 1.2mm 9mm; }
-.col { page-break-before: always; background: #fbf7ee; border-radius: 4mm; padding: 9mm 10mm 8mm; }
-.col .ctag { display: inline-block; background: #a4500a; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 99px; padding: 0 3.5mm; line-height: 1.7; margin-bottom: 3mm; }
-.col > h1 { border-bottom-color: #a4500a; }
-.hito { margin-top: 7mm; border: 1.5px solid #16181d; border-radius: 4mm; padding: 4mm 6mm 5mm; break-inside: avoid; position: relative; }
-.hito span { display: inline-block; background: #16181d; color: #fff; font-size: 8.5pt; font-weight: 700; border-radius: 99px; padding: 0 3.5mm; line-height: 1.7; }
-.hito p { margin: 2.5mm 0 0; font-size: 13pt; font-weight: 900; line-height: 1.7; text-align: left; }
-.hito i { display: block; font-style: normal; font-size: 8.5pt; color: #555; text-align: right; margin-top: 1mm; }
-.d1 { border: 1.5px solid #15467e; border-radius: 4mm; padding: 6mm 7mm 7mm; margin-bottom: 6mm; text-align: center; }
-.item > .qpage { margin-top: 2mm; }
-.d1 p { text-align: center; margin: 0; line-height: 1.8; }
-.d1 .dno { color: #15467e; font-weight: 900; font-size: 15pt; line-height: 1.3; text-align: left; margin: -2mm 0 1mm -2mm; }
-.d1 .big { font-size: 15pt; font-weight: 900; }
-.matome .raw { margin-bottom: 1mm; }
-
-/* 画面で読むための上書き */
-html{background:#eef0f4;color-scheme:light;font-size:11.4pt}
-body{background:#fff;max-width:820px;margin:0 auto;padding:0 max(18px,env(safe-area-inset-left,0px)) 90px;box-shadow:0 0 0 1px #dfe3ea}
-@media(min-width:900px){body{padding:0 58px 110px}}
-.bar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #dfe3ea;margin:0 -18px 18px;padding:9px 18px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;font-size:9.5pt}
-@media(min-width:900px){.bar{margin:0 -58px 24px;padding:10px 58px}}
-.bar .back{color:#15467e;font-weight:700;text-decoration:none}
-.bar b{font-weight:700}
-.bar select{font:inherit;font-size:9.5pt;padding:3px 6px;border:1px solid #c9ced8;border-radius:6px;background:#fff;color:#16181d;max-width:100%}
-.top h1{font-size:19pt;line-height:1.5;font-weight:900;margin:8mm 0 2mm}
-.top p{color:#555;font-size:10pt;margin:0 0 2mm}
-.sec{scroll-margin-top:56px}
-.text,.item,.col,.toc{margin-top:22mm}
-.chdoor{margin-top:26mm;padding-top:10mm;border-top:3px solid #15467e}
-.grp{margin-top:18mm;padding-top:0;text-align:left;border-left:6px solid #15467e;padding-left:5mm}
-.grp p,.grp .g3{text-align:left}
-.cover{display:none}
-pre{overflow-x:auto}
-
-.qpage{text-align:left}
-.qpage .pr{font-size:14.5pt;font-weight:900;line-height:1.75;text-align:left;margin:0 !important}
-.qpage .px{opacity:.82}
-figure.fig{margin:8mm 0;padding:0;text-align:center}
-figure.fig img{max-width:100%;height:auto;border:1px solid #dfe3ea;border-radius:8px}
-figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
-.pintro{margin:6mm 0 0;padding:5mm 6mm;background:#f5f7fa;border-radius:8px}
-.pintro h4{margin-top:0}
-.st{grid-template-columns:20mm 1fr}
-.toc .grp2{font-size:9.5pt;font-weight:700;color:#555;margin:3mm 0 1mm}
-</style></head><body><div class="bar"><a class="back" href="./" onclick="if(document.referrer&&history.length>1){history.back();return false}">← 一覧にもどる</a><b>第1章　頭のいい人は、「ズレた努力」をしない</b><select id="jump" aria-label="読みたい所へ飛ぶ"><option value="">読みたい所へ飛ぶ</option><option value="door">章の導入</option><option value="i01">　01　絶対法則01　疑う</option><option value="i02">　02　絶対法則02　思い出す</option><option value="i03">　03　絶対法則03　負荷</option><option value="i04">　04　絶対法則04　戦略</option><option value="i05">　05　絶対法則05　分散</option><option value="i06">　06　絶対法則06　速度</option></select></div><div class="top"><p>頭のいい人が絶対やらない勉強法<span style="font-weight:700">（仮題）</span>　／　朝倉 徹大（受験の王様）　／　2026/11/20 時点</p><p>黄色の線は、原稿のマーカーの印です。「イラストのラフ案（2コマ）」は、絵にする前の、言葉の案です。</p></div><div class="sec" id="door"><section class="chdoor"><div class="cno">第1章</div><h1>頭のいい人は、「ズレた努力」をしない</h1><p class="fld">【最初に読む、6つの絶対法則】　01〜06番</p><div class="intro"><p>「お前の勉強法、ぜーんぶ、ズレとる。」<br>はじめにで書いた、恩師の言葉です。</p>
-<p>僕は、誰よりも長く勉強していました。<br>それでも、受けた10個、全部落ちました。一度、大失敗しました。</p>
-<p>時間は、足りていました。<br>頑張りも、足りていました。<br>ズレていたのは、やり方です。</p>
-<p>やり方がズレていると、どれだけ頑張っても、結果は出ません。<br>やり方が合っていれば、頑張りは、結果につながります。</p>
-<p>では、合っているやり方とは、何なのか。</p>
-<p>恩師に、10ヶ月かけて叩きこまれたこと。<br>そのあと、2000人以上の生徒を見て、確かめたこと。</p>
-<p>まとめると、6つでした。</p>
-<p>教科が変わっても、学年が変わっても、この6つは変わりません。<br>だから、「絶対法則」と呼びます。</p>
-<p>絶対法則01　疑う<br>絶対法則02　思い出す<br>絶対法則03　負荷<br>絶対法則04　戦略<br>絶対法則05　分散<br>絶対法則06　速度</p>
-<p>頭のいい人は、特別なのではありません。<br>やり方が、この6つからズレていないだけです。</p>
-<p>第2章からは、場面ごとのやり方を書きました。<br>授業の受け方も、単語の覚え方も、計画の立て方も、もとは、この6つです。</p>
-<p>だから、まず、この6つをつかんでください。</p></div></section></div>
-<div class="sec" id="i01"><section class="item">
-<div class="tag">章最初のページ</div>
-<div class="d1"><p class="dno">01</p><p>絶対法則01</p><p>疑う</p><p>みんなと同じ、で安心しない</p><p class="big">自分の当たり前を、一度疑う</p></div>
-<div class="tag">導入文</div>
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>第1章　頭のいい人は、「ズレた努力」をしない。【最初に読む、6つの絶対法則】</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@500;700&display=swap"><style>
+/* 並べ方：上に、もどる行と「飛ぶ」の箱。その下に、原稿の文字を、1列で、上から順に。枠や絵は入れない */
+:root{--bg:#eef0f4;--paper:#ffffff;--ink:#16181d;--sub:#566070;--line:#dfe3ea;--accent:#15467e;--tint:#f2f5fa;color-scheme:light;
+  --display:"Noto Serif JP","Hiragino Mincho ProN","Yu Mincho",serif;--body:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-size:16px;line-height:2;max-width:780px;margin:0 auto;
+  padding-block:0 110px;padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px));box-shadow:0 0 0 1px var(--line);overflow-wrap:anywhere}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--line);margin:0 -18px;padding:9px 18px;display:flex;gap:6px 14px;align-items:center;flex-wrap:wrap;font-size:13px;line-height:1.6}
+@media(min-width:860px){body{padding-left:56px;padding-right:56px}.bar{margin:0 -56px;padding:10px 56px}}
+.bar .back{color:var(--accent);font-weight:700;text-decoration:none;white-space:nowrap}
+.bar b{font-weight:700;min-width:0}
+.bar select{font:inherit;font-size:13px;padding:4px 6px;border:1px solid #c9ced8;border-radius:6px;background:#fff;color:var(--ink);max-width:100%}
+.bar .back:focus-visible,.bar select:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.top{margin:24px 0 0}
+.top p{color:var(--sub);font-size:13px;line-height:1.7;margin:0 0 4px;white-space:normal}
+.sec{scroll-margin-top:70px}
+h1.part{font-family:var(--display);font-weight:700;font-size:clamp(21px,4.6vw,27px);line-height:1.6;margin:52px 0 20px;padding-top:20px;border-top:3px solid var(--accent);text-wrap:balance}
+p.grp{margin:64px 0 0;padding:6px 14px;background:var(--tint);border-left:5px solid var(--accent);font-weight:900;font-size:15px}
+.ihead{margin:64px 0 24px;padding-top:18px;border-top:1px solid var(--line)}
+.ihead .no{display:block;font-family:var(--display);font-weight:700;font-size:30px;line-height:1.2;color:var(--accent);font-variant-numeric:tabular-nums}
+.ihead p{margin:6px 0 0;font-weight:900;font-size:clamp(16.5px,3.8vw,19px);line-height:1.7}
+.ihead .hx{color:var(--sub)}
+h3{font-size:17px;font-weight:900;line-height:1.7;margin:40px 0 10px;padding-left:12px;border-left:4px solid var(--accent)}
+p{margin:0 0 18px;white-space:pre-wrap}
+p.tab{white-space:pre;overflow-x:auto;overflow-wrap:normal;padding-bottom:4px}
+p.lab{margin:36px 0 8px;font-size:13px;font-weight:900;color:var(--accent);letter-spacing:.06em}
+p.lab.s{margin-top:16px;color:var(--sub)}
+a{color:var(--accent)}
+</style></head><body><div class="bar"><a class="back" href="./" onclick="if(document.referrer&&history.length>1){history.back();return false}">← 一覧にもどる</a><b>第1章　頭のいい人は、「ズレた努力」をしない。【最初に読む、6つの絶対法則】</b><select id="jump" aria-label="読みたい所へ飛ぶ"><option value="">読みたい所へ飛ぶ</option><option value="door">章の導入</option><option value="i01">　01　【絶対法則】疑う</option><option value="i02">　02　【絶対法則】思い出す</option><option value="i03">　03　【絶対法則】負荷</option><option value="i04">　04　【絶対法則】戦略</option><option value="i05">　05　【絶対法則】分散</option><option value="i06">　06　【絶対法則】速度</option></select></div><div class="top"><p>頭のいい人が絶対やらない勉強法（仮題）　／　朝倉 徹大（受験の王様）　／　2026/11/20 時点</p><p>原稿の文字だけを、載せています。図とイラストは、入っていません。</p></div><div class="sec" id="door"><h1 class="part">第1章　頭のいい人は、「ズレた努力」をしない。【最初に読む、6つの絶対法則】</h1><p>「お前の勉強法、ぜーんぶ、ズレとる。」
+はじめにで書いた、恩師の言葉です。</p>
+<p>僕は、誰よりも長く勉強していました。それでも、受けた10個、全部落ちました。一度、大失敗しました。時間は、足りていました。頑張りも、足りていました。ズレていたのは、やり方です。</p>
+<p>やり方がズレていると、どれだけ頑張っても、結果は出ません。やり方が合っていれば、頑張りは、結果につながります。では、合っているやり方とは、何なのか。</p>
+<p>恩師に、10ヶ月かけて叩きこまれたこと。そのあと、2000人以上の生徒を見て、確かめたこと。まとめると、6つでした。</p>
+<p>教科が変わっても、学年が変わっても、この6つは変わりません。だから、「絶対法則」と呼びます。</p>
+<p>絶対法則01　疑う
+絶対法則02　思い出す
+絶対法則03　負荷
+絶対法則04　戦略
+絶対法則05　分散
+絶対法則06　速度</p>
+<p>頭のいい人は、特別なのではありません。やり方が、この6つからズレていないだけです。</p>
+<p>第2章からは、場面ごとのやり方を書きました。
+授業の受け方も、単語の覚え方も、計画の立て方も、もとは、この6つです。</p>
+<p>だから、まず、この6つをつかんでください。</p></div>
+<div class="sec" id="i01"><div class="ihead"><span class="no">01</span><p>【絶対法則】疑う</p></div><p class="lab">章最初のページ</p>
+<p class="lab">導入文</p>
 <p>「自分のやり方は、間違っている」</p>
 <p>そう思いながら勉強している人は、ほとんどいません。みんな、「これで合っている」と思って、やっています。</p>
 <p>でも、あなたが普段やっていること、当たり前だと思っていることが、実は違っていた。その前提から間違っていたとしたら、どうでしょうか。</p>
 <p>結果を出し続ける人は、まず、「自分の当たり前」を疑います。そのうえで、本当に正しいやり方は何かを、確かめていきます。</p>
-<p>① やってはいけないことを、避ける<br>② 正しいやり方を、知る<br>③ そのやり方を、徹底的にパクる</p>
+<p>① やってはいけないことを、避ける
+② 正しいやり方を、知る
+③ そのやり方を、徹底的にパクる</p>
 <p>「はじめに」でも書いた通り、結果を出すために守るべきなのは、この順番です。①を飛ばして③から始めると、間違ったやり方のまま、量だけが増えていきます。</p>
 <p>頭のいい人の絶対法則、1つ目。「疑う」を、具体的に見ていきましょう。</p>
-<div class="tag">質問ページ</div>
-<div class="qpage"><p class="q1">頭のいい人が絶対やらないこと</p><p class="q2">「みんなと同じ勉強法」</p><p class="q3">じゃあ、何をするの？</p></div>
-<div class="tag">本文</div>
+<p class="lab">質問ページ</p>
+<p class="lab">本文</p>
 <p>あなたがやっている勉強法、本当に結果が出ますか？</p>
-<p>まず、1つ聞かせてください。<br>次の4つの中に、あなたがやっているものはありますか？</p>
-<p>◻︎参考書や教科書を、何度も読み返す<br>◻︎覚える時に、教材に蛍光ペンなどで線を引く<br>◻︎学んだことを、ノートなどにまとめる<br>◻︎好きな音楽を聴きながら、勉強する</p>
+<p>まず、1つ聞かせてください。次の4つの中に、あなたがやっているものはありますか？</p>
+<p>◻︎参考書や教科書を、何度も読み返す
+◻︎覚える時に、教材に蛍光ペンなどで線を引く
+◻︎学んだことを、ノートなどにまとめる
+◻︎好きな音楽を聴きながら、勉強する</p>
 <p>どうでしょうか。1つはやったことがあるって人が多いと思います。「毎日のようにやってる勉強です」っていう人もいると思います。</p>
-<p>単刀直入に言います。<br>この4つ、科学的には効果が低いとされています。</p>
-<p>「いや、ほんまかいな。」「嘘つけ。みんなやってるわ。」<br>「先生におすすめされた勉強法だよ。」「先輩もやっていたって言ってたよ。」</p>
-<p>そんな声が聞こえてきそうなので、上の3つを、1つずつ説明していきます。（音楽は、31番で説明します）</p>
+<p>単刀直入に言います。
+この4つ、科学的には効果が低いとされています。</p>
+<p>「いや、ほんまかいな。」「嘘つけ。みんなやってるわ。」
+「先生におすすめされた勉強法だよ。」「先輩もやっていたって言ってたよ。」</p>
+<p>そんな声が聞こえてきそうなので、上の3つを、1つずつ説明していきます。（音楽は、35番で説明します）</p>
 <h3>1つ目　何度も読み返す</h3>
-<p>「何度も教科書を読みなさい」<br>「繰り返し読まないからダメなんだ」<br>言われたことがある人、多いですよね。</p>
+<p>「何度も教科書を読みなさい」
+「繰り返し読まないからダメなんだ」
+言われたことがある人、多いですよね。</p>
 <p>実際、アメリカの名門大学の学生に、普段の勉強法を聞いた調査では、84パーセントが「読み返し」を挙げていました。半分以上が、それを1位に挙げています。教科書を何度も読み返すのは、世界で一番やられている勉強法の1つです。</p>
 <h3>【悲報】読む回数を増やしても、途中から点は増えません</h3>
 <p>高校生と大学生155人に、同じ文章を何度も読ませて、そのあと穴埋め問題を解かせた実験があります。</p>
-<p>1回読んだ人よりも2回読んだ人のほうが、点が高かった<br>2回読んだ人と4回読んだ人は、ほとんど変わらなかった<br>2回目までは、点が上がっています。でも、そこから先は、上がりません。</p>
+<p>1回読んだ人よりも2回読んだ人のほうが、点が高かった
+2回読んだ人と4回読んだ人は、ほとんど変わらなかった
+2回目までは、点が上がっています。でも、そこから先は、上がりません。</p>
 <p>1回しか読まないよりは、2回読んだほうがいい。それは、間違いありません。でも、そこから先は、上がりません。</p>
 <p>4回読んだ人と2回読んだ人の点が同じ、ということは、3回目と4回目に使った時間は、丸ごと消えているということです。</p>
-<p>何度も読むと、頭に入った感じがするのは、なぜか</p>
-<p>ここが、一番大事なところです。<br>理由は、はっきりしています。2回目は、スラスラ読めるからです。</p>
-<p>1回目より楽に、速く、引っかからずに読める。その感じを、人は「わかった」と受け取ります。でも、スラスラ読めるようになったのは、文章に慣れただけです。覚えて使えるようになったからではありません。</p>
-<p>スラスラ読める。でも、本を閉じたら、言えない。<br>この取り違えを、専門用語で「流暢性（りゅうちょうせい）の錯覚」と言います。（覚えなくてOKです）</p>
-<p>単語帳をぱらぱらめくって、見覚えのある単語が並んでいるのを見て、なんとなく覚えた気になる。授業のノートを見返して、見覚えがあるから、理解できていると思う。</p>
+<h3>何度も読むと、頭に入った感じがするのは、なぜか</h3>
+<p>ここが、一番大事なところです。理由は、はっきりしています。2回目は、スラスラ読めるからです。1回目より楽に、速く、引っかからずに読める。その感じを、人は「わかった」と受け取ります。でも、スラスラ読めるようになったのは、文章に慣れただけです。覚えて使えるようになったからではありません。</p>
+<p>スラスラ読める。でも、本を閉じたら、言えない。この取り違えを、専門用語で「流暢性（りゅうちょうせい）の錯覚」と言います。（覚えなくてOKです）単語帳をぱらぱらめくって、見覚えのある単語が並んでいるのを見て、なんとなく覚えた気になる。授業のノートを見返して、見覚えがあるから、理解できていると思う。</p>
 <p>全部これです。頭は、自分がどれだけ覚えたかを、実際より多く感じてしまいます。</p>
-<p>読み返すこと自体が、悪いわけじゃありません。<br>読み返すだけで、終わるのが悪いんです。</p>
-<p>3回目を読む時間があるなら、その時間で、もっと点につながることができます。同じ時間を使うのに、わざわざ効果の低いほうを選ぶ理由は、ありません。</p>
+<p>読み返すこと自体が、悪いわけじゃありません。読み返すだけで、終わるのが悪いんです。3回目を読む時間があるなら、その時間で、もっと点につながることができます。同じ時間を使うのに、わざわざ効果の低いほうを選ぶ理由は、ありません。</p>
 <p>その時間で、何をするのか。次の絶対法則02で、すぐに説明します。</p>
 <p>「覚えた気がする」と「テストで答えられる」は、別のことです。この本では、このあと、「覚えた気がする」で終わらせずに、テストで答えられるところまで持っていくやり方を、いくつも紹介していきます。</p>
-<h4>2つ目　ノートにまとめる</h4>
+<h3>2つ目　ノートにまとめる</h3>
 <p>教科書や参考書の内容を、色ペンを使ってきれいにまとめたことがある人もいるかと思います。ただ、これをやっているのに結果が出ていない生徒を、僕は、受験の王様として、本当に沢山見てきました。時間はすごくかかるのに、結果が出ないその代表が、これです。</p>
-<p>「まとめノートを作って、成績が伸びたことがありますよ」<br>そう言われることも、何度もありました。たしかに、伸びることはあります。時間がいくらでもあるなら、やってもいいです。</p>
+<p>「まとめノートを作って、成績が伸びたことがありますよ」
+そう言われることも、何度もありました。たしかに、伸びることはあります。時間がいくらでもあるなら、やってもいいです。</p>
 <p>でも、時間は限られています。かけた時間のわりに、点が増えない。それが、まとめノートです。</p>
 <p>理由は、2つあります。</p>
 <p>1つ目。ほとんどの場合、教科書を写すだけの『作業』になります。</p>
 <p>2つ目。写すだけで終わらせない、本当の「まとめ・要約」は、とても難しい作業です。教科書の中から、どこが大事で、どこが大事ではないかを、自分で選ぶ。選んだものを、自分の言葉で、短く言い直す。勉強が苦手な人にとっては、かなり難しいことです。</p>
 <p>まとめて書くことで得られるものより、そこで失う時間のほうが、はるかに大きいんです。</p>
-<h4>3つ目　マーカーと下線を引く</h4>
+<h3>3つ目　マーカーと下線を引く</h3>
 <p>教科書に蛍光ペンで印をつける。これも、やったことありますよね。</p>
 <p>結論から言います。覚えたいことを頭に入れるためには、使えません。</p>
-<p>大事なところに印をつけると、安心しますよね。印をつけた時点で、脳が満足しちゃうんです。でも、やったのは、大事なところに印をつけることだけです。中身は1つも頭に入っていません。</p>
+<p>大事なところに印をつけると、安心しますよね。ただ、印をつけた時点で、脳が満足しちゃうんです。この作業の中でやったのは、大事なところに印をつけることだけです。中身は1つも頭に入っていません。</p>
 <p>実際に、歴史の教科書を使った実験があります。下線を引きながら読むグループと、引かずに読むグループで、1週間後にテストをしました。</p>
 <p>テストの問題は、2種類ありました。</p>
-<p>1つは、教科書の1か所を見れば、答えられる問題です。<br>たとえば、「条約が結ばれたのは、何年ですか」みたいな問題のイメージです。</p>
-<p>もう1つは、教科書の何か所かをつなげないと、答えられない問題です。<br>たとえば、「貿易が始まって、なぜ、人々の生活は苦しくなったのですか」みたいな問題のイメージです。</p>
-<p>1つ目の問題では、差がありませんでした。<br>ところが、2つ目の問題では、下線を引いた人のほうが、なんと、点が低くなりました。<br>線が引いてあるところだけに目が行って、文章全体のつながりが見えなくなっていた、ということです。</p>
-<p>この結果からわかるのは、英語の長文や現代文みたいに、文と文の関係を読む科目では、「マーカーで線を引く勉強」は、やらないほうがまし、ということになります。</p>
-<p>参考イメージ（見出しとかの部分はなくてもいいかも？）</p>
+<p>1つは、教科書の1か所を見れば、答えられる問題です。たとえば、「条約が結ばれたのは、何年ですか」みたいな問題のイメージです。もう1つは、教科書の何か所かをつなげないと、答えられない問題です。たとえば、「貿易が始まって、なぜ、人々の生活は苦しくなったのですか」みたいな問題のイメージです。</p>
+<p>1つ目の問題では、差がありませんでした。ところが、2つ目の問題では、下線を引いた人のほうが、なんと、点が低くなりました。線が引いてあるところだけに目が行って、文章全体のつながりが見えなくなっていた、ということです。この結果からわかるのは、英語の長文や現代文みたいに、文と文の関係を読む科目では、「マーカーで線を引く勉強」は、むしろやらないほうがまし、ということになります。</p>
+<p class="lab">参考イメージ</p>
 <h3>「みんながやっている勉強法」≠「結果が出る正しい勉強法」</h3>
-<p>ここまでで何を伝えたいかというと、多くの人がやっているから、それが一番結果が出る、とは限らないってことです。勉強には、こういうものが、正直、沢山あります。</p>
-<p>せっかく頑張ったのに、結果が出ない。<br>こんなに悲しいことは、ありません。</p>
-<p>だからこそ、まず、自分の当たり前を、一度疑って欲しいんです。</p>
-<p>「でも、先輩はそれで受かったって言ってました」<br>ここまで読んで、そう思った人もいると思います。</p>
-<p>学校の先生。合格した部活の先輩。昔、受験をした親。みんな、自分のやり方で勝ってます。だから、そのやり方を教えてくれる。全部、善意です。</p>
-<p>ただ、昔からこういう言葉があります。</p>
-<p>勝ちに不思議の勝ちあり、負けに不思議の負けなし。</p>
+<p>ここまでで何を伝えたいかというと、多くの人がやっているから、それが一番結果が出る、とは限らないということです。勉強には、みんながやっているのに、効果が低いやり方が、正直、沢山あります。</p>
+<p>せっかく頑張ったのに、結果が出ない。こんなに悲しいことは、ありません。だからこそ、まず、自分の当たり前を、一度疑って欲しいんです。</p>
+<p>「でも、先輩はそれで受かったって言ってました」
+ここまで読んで、そう思った人もいると思います。学校の先生。合格した部活の先輩。昔、受験をした親。みんな、自分のやり方で勝ってます。だから、そのやり方を教えてくれる。全部、善意です。</p>
+<p>ただ、昔からこういう言葉があります。
+勝ちに不思議の勝ちあり、負けに不思議の負けなし。</p>
 <p>勝つ時には、運やタイミングが混じることがある。だから、なぜ勝てたのか、本人にもわからないことがある。でも、負ける時には、必ず原因がある。たまたま負けた、ってことは起きないんです。</p>
 <p>先輩が受かったのは、本当です。</p>
-<p>でも、そのやり方のおかげで受かったのかどうかは、本人にもわかりません。その年の倍率。たまたま出た問題。もともと得意だった教科。全部、混ざってます。</p>
-<p>ただ、1つだけ、確かなことがあります。<br>やってはいけないことをやったら、誰がやっても結果は出ません。</p>
-<p>倍率にも、環境にも、関係ありません。</p>
+<p>でも、そのやり方のおかげで受かったのかどうかは、本人にもわかりません。その年の倍率。たまたま出た問題。もともと得意だった教科。全部、混ざってます。何が成功に直接一番寄与しているかは特定がなかなかできません。</p>
+<p>ただ、1つだけ、確かなことがあります。
+やってはいけないことをやったら、誰がやっても結果は出ません。
+倍率にも、環境にも、関係ありません。</p>
 <p>だからこの本は、誰か1人の勝ち方じゃなくて、全員に共通する「やってはいけないこと」から書いてあります。</p>
-<p>補足として説明しておきますが、「疑う」ということは、悪いことではありません。「疑う」と聞くと、自分を否定するみたいで、嫌な感じがするかもしれません。</p>
-<p>ただ、違います。「疑う」のは、今のやり方の中から、直す場所を見つけるためです。直す場所が見つかれば、やり方は、前より良くなります。</p>
+<p>また、補足として説明しておきますが、「疑う」ということは、悪いことではありません。「疑う」と聞くと、自分を否定するみたいで、嫌な感じがする人もいるかもしれません。ただ、違います。「疑う」のは、今のやり方の中から、直す場所を見つけるためです。直す場所が見つかれば、やり方は、前より良くなります。</p>
 <p>自分が今、当たり前にやっていることを、一度、「疑う」が大事になります。</p>
 <p>結果を出し続ける人は、これを1回で終わらせません。自分のやり方を、何度も疑って、何度も直してアップデートをし続けている人たちなのです。</p>
-<div class="tag">頭のいい人と伸びない人の違い</div>
-<div class="koma"><div class="k x"><span>伸びない人</span><b>みんなと同じ</b><i>先輩も、これで受かったし…</i></div><div class="k o"><span>頭のいい人</span><b>まず、疑う</b><i>これで、点は上がるの...？</i></div></div>
-<div class="tag">今日からできる3STEP</div>
-<div class="sheet"><p class="sttl">頭のいい人の『疑い方』3STEP</p><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">最初の4つのうち、一番よくやっているものを1つ選ぶ</p><p class="say">「自分は、何度も読み返すやつだな」</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">そのやり方のページを、今日のうちに読む</p><p class="say">「読み返しは02番か。今、読もう」</p><p class="nt">※何度も読み返す→02 線を引く/ノートにまとめる→16 音楽を聴きながら勉強→31</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">書いてあるやり方を、1週間やってみる</p><p class="say">「1週間後の小テストで、変化をみてみよう」</p></div></div><div class="king"><span>「できた」の基準</span><p>選んだ1つを1週間続けて、前と比べられたらOK！</p></div></div>
-<div class="mwrap"><div class="tag">まとめ</div>
-<div class="matome"><p class="one">「みんながやっている」と「結果が出る」は、別のこと。</p><ol><li>読み返す、まとめる、線を引く。みんながやっている3つは、実は効果が低い</li><li>先輩が受かった理由は、本人にもわからない</li><li>やってはいけないことをやると、誰がやっても結果は出ない</li></ol><p class="raw">みんながやっているから正しい、とは限らない。</p><p class="raw">だから、自分の当たり前を、一度疑う。</p><p class="raw">疑うのは、直す場所を見つけるため。</p><p class="raw">迷ったら、自分に聞きます。「これで、点は上がる？」</p></div>
-</div></section></div>
-<div class="sec" id="i02"><section class="item">
-<div class="tag">章最初のページ</div>
-<div class="d1"><p class="dno">02</p><p>思い出す</p><p class="big">覚える訓練ではなく、思い出す訓練をする</p></div>
-<div class="tag">導入文</div>
+<p class="lab">頭のいい人と伸びない人の違い</p>
+<p class="lab s">伸びない人</p>
+<p>みんなと同じ
+先輩も、これで受かったし…</p>
+<p class="lab s">頭のいい人</p>
+<p>まず、疑う
+これで、点は上がるの...？</p>
+<p class="lab">今日からできる3STEP</p>
+<p>※この型のイメージに合わせて文字を入れていけるようにするイメージ</p>
+<p class="lab s">STEP01</p>
+<p>最初の4つのうち、一番よくやっているものを1つ選ぶ
+「自分は、何度も読み返すやつだな」</p>
+<p class="lab s">STEP02</p>
+<p>そのやり方のページを、今日のうちに読む
+「読み返しは02番か。今、読もう」
+※何度も読み返す→02 線を引く/ノートにまとめる→13 音楽を聴きながら勉強→35</p>
+<p class="lab s">STEP03</p>
+<p>書いてあるやり方を、1週間やってみる
+「1週間後の小テストで、変化をみてみよう」</p>
+<p class="lab s">できた基準</p>
+<p>選んだ1つを1週間続けて、前と比べられたらOK！</p>
+<p class="lab">まとめ</p>
+<p>「みんながやっている」と「結果が出る」は、別のこと。</p>
+<p>・読み返す、まとめる、線を引く。みんながやっている3つは、実は効果が低い
+・先輩が受かった理由は、本人にもわからない
+・やってはいけないことをやると、誰がやっても結果は出ない</p>
+<p>みんながやっているから正しい、とは限らない。だから、自分の当たり前を、一度疑う。疑うのは、直す場所を見つけるため。</p></div>
+<div class="sec" id="i02"><div class="ihead"><span class="no">02</span><p>【絶対法則】思い出す</p></div><p class="lab">章最初のページ</p>
+<p>思い出す
+覚える訓練ではなく、思い出す訓練をする</p>
+<p class="lab">導入文</p>
 <p>5時間、勉強した日の夜。ふと、思います。</p>
-<p>「今日って、何を勉強したっけ」<br>…出てこない。</p>
+<p>「今日って、何を勉強したっけ」
+…出てこない。</p>
 <p>テストの日も、同じです。沢山やったはずなのに、解けない。</p>
 <p>勉強時間は、足りていました。ちゃんと、追い込めていました。でも、頭に、残っていなかったんです。</p>
 <p>では、結果を出している人は、何が違うのか。</p>
-<p>・声に出して覚える人<br>・白紙に書き出す人<br>・人に説明する人<br>・歩きながら、頭の中で言う人</p>
+<p>・声に出して覚える人
+・白紙に書き出す人
+・人に説明する人
+・歩きながら、頭の中で言う人</p>
 <p>先生や、合格した先輩に聞くと、やり方は、ばらばらに見えます。でも、全員が、同じことをやっています。</p>
 <p>何も見ずに、思い出す。</p>
 <p>僕が2000人以上の生徒を見てきて、結果を出した人に共通していたことです。そして、科学的にも、効果が高いと確かめられている方法です。「アクティブリコール」と呼ばれています。</p>
 <p>頭のいい人の絶対法則、2つ目。「思い出す」を、具体的に見ていきましょう。</p>
-<div class="tag">質問ページ</div>
-<div class="qpage"><p class="q1">頭のいい人が絶対やらない</p><p class="q2">「何度も読む」</p><p class="q3">じゃあ、何をするの？</p></div>
-<div class="tag">本文</div>
+<p class="lab">質問ページ</p>
+<p>頭のいい人が絶対やらない
+「何度も読む」
+じゃあ、何をするの？</p>
+<p class="lab">本文</p>
 <h3>信号機の赤は、右と左、どっちですか？</h3>
-<p>道路の上に、横に並んでいる信号機を、思い浮かべてください。<br>赤は、右ですか。左ですか。</p>
-<p>…<br>答えは、右です。左から、青、黄、赤の順に並んでいます。</p>
-<p>迷った人、多いと思います。<br>信号機を見たことがない人は、いませんよね？生まれてから今日まで、何百回も見てきたはずです。ただ、それでも、出てこない。</p>
-<p>理由は、1つです。<br>見た回数は多くても、「思い出そう」としたことが、一度もないからです。<br>教科書も、同じです。何度読んでも、思い出そうとしなければ、信号機と同じことが起きます。</p>
-<p>そして、テストの日、教科書は開けません。自分の頭から、思い出すしかありません。</p>
+<p>道路の上に、横に並んでいる信号機を、思い浮かべてください。赤は、右ですか。左ですか。…答えは、右です。左から、青、黄、赤の順に並んでいます。</p>
+<p>迷った人、多いと思います。信号機を見たことがない人は、いませんよね？生まれてから今日まで、何百回も見てきたはずです。ただ、それでも、出てこない。理由は、1つです。見た回数は多くても、「思い出そう」としたことが、一度もないからです。教科書も、同じです。何度読んでも、思い出そうとしなければ、信号機と同じことが起きます。</p>
+<p>そして、テストの日、教科書を開きながらはできません。自分の頭から、思い出すしかありません。</p>
 <h3>どっちが、勉強していると思いますか？</h3>
 <p>同じ参考書を使っている、2人がいます。</p>
-<p>A　1週間で、100ページ進んだ<br>B　1週間で、300ページ進んだ<br>ほとんどの人が、Bと答えます。同じ1週間で、3倍進んでいるからです。</p>
+<p>A　1週間で、100ページ進んだ
+B　1週間で、300ページ進んだ
+ほとんどの人が、Bと答えます。同じ1週間で、3倍進んでいるからです。</p>
 <p>意地悪な答えですが、僕の答えは「これだけでは、わからない」です。</p>
-<p>そもそも、”勉強”を分解すると、2つあります。<br>入れる　　　　　　　　読む、聞く、覚える<br>思い出して取り出す　　何も見ずに、言う、書く、解く</p>
+<p class="tab">そもそも、”勉強”を分解すると、2つあります。
+入れる　　　　　　　　読む、聞く、覚える
+思い出して取り出す　　何も見ずに、言う、書く、解く</p>
 <p>テスト本番に点になるのは、2つ目ができるようになった分だけです。だからこそ、300ページ読んでも、教科書を閉じたら何も言えないなら、点にはなりません。100ページでも、閉じて言えるなら、それは点になります。</p>
 <p>「勉強した」の意味を、今日から、こっちに変えてください。「どれだけ読んだか」「どれだけ覚えたか」「どれだけ時間やったか」のインプット第一主義では、点数を伸ばすことは厳しいです。</p>
-<p>だからこそ、頭に入れておいて欲しいことが1つ。<br>”勉強”において大事なことは、<br>どれだけ読んだか、ではない。<br>どれだけ思い出せるようになったか。</p>
+<p>だからこそ、頭に入れておいて欲しいことが1つ。”勉強”において大事なことは、どれだけ読んだか、ではない。どれだけ思い出せるようになったか。</p>
 <h3>【研究結果】同じ時間の勉強でも、1週間後に残る量が変わる</h3>
 <p>実際に、実験で確かめられています。ワシントン大学の実験です。学生に同じ文章を勉強してもらって、2つのグループに分けました。</p>
-<p>① 4回、繰り返して読む<br>② 1回読んで、あとの3回は、何も見ずに思い出して書く</p>
+<p>① 4回、繰り返して読む
+② 1回読んで、あとの3回は、何も見ずに思い出して書く</p>
 <p>勉強した直後のテストでは、1のグループのほうが、点が高くなりました。</p>
 <p>ところが、1週間後にもう一度テストをすると、逆になります。2のグループのほうが、大きく上でした。</p>
 <p>使った時間は、同じです。差がついたのは、読んだ回数ではなく、思い出した回数です。</p>
 <p>01番で、「3回目と4回目に使った時間は、丸ごと消えている」と書きました。その時間を、思い出すことに使えばいいんです。</p>
 <h3>入れる2、思い出す8。それでも、多すぎません</h3>
 <p>勉強は、2つの力でできています。</p>
-<p>入れる力　　　読む、聞く、覚える<br>思い出す力　　何も見ずに、言う、書く、解く</p>
+<p class="tab">入れる力　　　読む、聞く、覚える
+思い出す力　　何も見ずに、言う、書く、解く</p>
 <p>ほとんどの人は、勉強時間のほとんどを、「入れる」に使っています。読む。聞く。ノートを見返す。勉強が苦手な生徒ほど、中身を聞いてみると多くの場合が「入れる(=インプット)」の比重が高いです。</p>
-<p>テストで点を取りたいなら、逆にします。<br>入れる2：思い出す8</p>
+<p>テストで点を取りたいなら、逆にします。
+入れる2：思い出す8</p>
 <p>多すぎる、と思うかもしれません。でも、さっきの実験を思い出してください。1週間後に勝ったグループは、「1回読んで、3回思い出す」でした。読むのは、4回のうち、1回だけです。</p>
 <p>1時間勉強するなら、入れるのは12分。残りの48分は、本を閉じて、思い出します。</p>
 <p>最初は、きついはずです。まずは半分ずつからで、いいです。そこから少しずつ、思い出すほうを増やしていってください。</p>
 <h3>なぜ、みんな「読む」ほうを選ぶのか</h3>
 <p>何度も読む。ノートにまとめる。やっている時は、気持ちがいいんです。スラスラ進むし、ページも進みます。</p>
 <p>思い出すほうは、逆です。</p>
-<p>「え、全然覚えてないやん」<br>できていない自分を、毎回、見ることになります。頭も、すごく使います。きついです。</p>
+<p>「え、全然覚えてないやん」
+できていない自分を、毎回、見ることになります。頭も、すごく使います。きついです。</p>
 <p>だから、ほとんどの人が、読むほうを選びます。</p>
 <p>でも、最後の試験で勝つのは、きついほうを毎日やってきた人です。</p>
 <p>なぜ、きついほうが効くのか。次の絶対法則03で、説明します。</p>
 <h3>机に座っている時だけが、勉強ではありません</h3>
 <p>思い出すのに、教科書もノートも要りません。勉強というとどうしても「椅子に座り、机でやるもの」だという考えの生徒も多いですが、それだけが勉強ではありません。</p>
-<p>・歯をみがきながら、30秒。さっきやったことを、思い出す<br>・授業が終わったら、休み時間に入る前に、1分。今日の話を、何も見ずに思い出す<br>・問題集の解説を読んだら、閉じて、今読んだ解き方を、もう一度書く</p>
+<p>・歯をみがきながら、30秒。さっきやったことを、思い出す
+・授業が終わったら、休み時間に入る前に、1分。今日の話を、何も見ずに思い出す
+・問題集の解説を読んだら、閉じて、今読んだ解き方を、もう一度書く</p>
 <p>どれも、立派な勉強です。</p>
-<h4>1分前に読んだこと、思い出せますか？</h4>
-<p>では、早速、今、やってみてください。<br>本を、閉じます。指をはさんで、閉じるだけでいいです。</p>
-<p>この項目で、ここまでに読んできたことを、さっと思い出してください。いくつ、言えますか？</p>
-<p>…<br>どうでしたか。</p>
-<p>1分前まで読んでいた内容です。難しい話でもありません。それでも、いざ思い出そうとすると、出てこない。01の項目に関しては、もっと出てこなかったかもしれません。</p>
+<h3>1分前に読んだこと、思い出せますか？</h3>
+<p>では、早速、今、やってみてください。本を、閉じます。指をはさんで、閉じるだけでいいです。この項目で、ここまでに読んできたことを、さっと思い出してください。いくつ、言えますか？</p>
+<p>…どうでしたか。1分前まで読んでいた内容です。難しい話でもありません。それでも、いざ思い出そうとすると、出てこない。01の項目に関しては、もっと出てこなかったかもしれません。</p>
 <p>5時間勉強した日の夜と、同じことが、今、起きました。「読んだ」と「思い出せる」は、別のことなんです。</p>
 <p>答え合わせです。</p>
-<p>絶対法則01　疑う<br>1　読み返す、まとめる、線を引く。みんながやっている3つは、効果が低い<br>2　先輩が受かった理由は、本人にもわからない<br>3　やってはいけないことをやると、誰がやっても結果は出ない</p>
-<p>絶対法則02　思い出す<br>1　信号機の赤は、右か、左か<br>2　100ページ進んだ人と、300ページ進んだ人<br>3　4回読む人と、1回読んで3回思い出す人<br>4　読むのは気持ちいい。思い出すのは、きつい<br>5　歯みがきの30秒。授業のあとの1分</p>
+<p>絶対法則01　疑う
+1　読み返す、まとめる、線を引く。みんながやっている3つは、効果が低い
+2　先輩が受かった理由は、本人にもわからない
+3　やってはいけないことをやると、誰がやっても結果は出ない</p>
+<p>絶対法則02　思い出す
+1　信号機の赤は、右か、左か
+2　100ページ進んだ人と、300ページ進んだ人
+3　4回読む人と、1回読んで3回思い出す人
+4　読むのは気持ちいい。思い出すのは、きつい
+5　歯みがきの30秒。授業のあとの1分</p>
 <p>出てこなかったものだけ、そのページに戻って、見てください。「あー、そうだった。そうだった」となるはずです。</p>
 <h3>頭のいい人は、「思い出す」回数を、とにかく増やしています</h3>
 <p>ここまでが、2つ目の絶対法則です。</p>
 <p>この先、本書では、頭のいい人のやり方を、場面ごとに見ていきます。授業の受け方。ノートの取り方。単語の覚え方。間違えた問題の直し方などなど。</p>
 <p>やっていることは、ばらばらに見えます。でも、よく見ると、ほとんどが同じことをしています。</p>
-<p>どうやって、「思い出す」回数を増やすか。<br>授業中に、思い出す　　　　　　　　　　　　15<br>ノートを閉じて、思い出す　　　　　　　　　15　16<br>間をあけて、もう一度思い出す　　　　　　　05　12<br>答えを見たあとに、閉じて、思い出す　　　　21</p>
-<p>頭のいい人は、特別な方法を、45個も知っているわけではありません。「思い出す」を、あらゆる場面でやっているだけなんです。</p>
-<p>だから、45個を全部は覚えられなくても、「思い出す」だけは、絶対に頭に叩き込んでほしいのです。</p>
-<div class="tag">頭のいい人と伸びない人の違い</div>
-<div class="koma"><div class="k x"><span>伸びない人</span><b>何度も読む</b><i>読んだ。わかった。次！</i></div><div class="k o"><span>頭のいい人</span><b>閉じて思い出す</b><i>今、何も見ずに言える？</i></div></div>
-<div class="tag">今日からできる3STEP</div>
-<div class="sheet"><p class="sttl">頭のいい人の『思い出し方』3STEP</p><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">1ページ読んだら、本を閉じる</p><p class="say">「読み返したい。でも、閉じる」</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">3秒待って、書いてあったことを3つ、声に出す</p><p class="say">「1つ目は……えーと」</p><p class="nt">※3つ出なくても、1つでいいです。頭の中で言うのは、なし</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">出なかった1か所だけ見て、また閉じて言う</p><p class="say">「ここか。もう1回、見ないで再テスト」</p></div></div><div class="king"><span>「できた」の基準</span><p>次の日、同じ内容を開く前に思い出せたらOK！</p></div></div>
-<div class="mwrap"><div class="tag">まとめ</div>
-<div class="matome"><p class="one">「どれだけ読んだか」ではなく、「どれだけ思い出せるか」で決まる。</p><ol><li>何度見ても、思い出そうとしなければ、頭に残らない</li><li>4回読むより、1回読んで3回思い出すほうが、1週間後に残る</li><li>「思い出す」回数を増やすと、成績は伸びていく</li></ol><p class="raw">だから、読んだら、閉じる。目安は、入れる2、思い出す8。</p><p class="raw">迷ったら、「今、何も見ずに言える？」と自分に問いかけるべし！</p></div>
-</div></section></div>
-<div class="sec" id="i03"><section class="item">
-<div class="tag">章最初のページ</div>
-<div class="d1"><p class="dno">03</p><p>絶対法則03　負荷</p><p class="big">スラスラ進むやり方を、選ばない</p></div>
-<div class="tag">導入文</div>
-<p>「自分に合った勉強法が、見つからなくて……」<br>「どうやったら、自分に合った勉強法って、見つかりますか」<br>これまで、沢山の生徒から、聞かれてきました。</p>
+<p class="tab">どうやって、「思い出す」回数を増やすか。
+授業中に、思い出す　　　　　　　　　　　　07
+ノートを閉じて、思い出す　　　　　　　　　08　13
+間をあけて、もう一度思い出す　　　　　　　05　16
+答えを見たあとに、閉じて、思い出す　　　　18</p>
+<p>頭のいい人は、特別な方法を、50個も知っているわけではありません。「思い出す」を、あらゆる場面でやっているだけなんです。</p>
+<p>だから、50個を全部は覚えられなくても、「思い出す」だけは、絶対に頭に叩き込んでほしいのです。</p>
+<p class="lab">頭のいい人と伸びない人の違い</p>
+<p class="lab s">伸びない人</p>
+<p>何度も読む
+読んだ。わかった。次！</p>
+<p class="lab s">頭のいい人</p>
+<p>閉じて思い出す
+今、何も見ずに言える？</p>
+<p class="lab">今日からできる3STEP</p>
+<p class="lab s">STEP01</p>
+<p>1ページ読んだら、本を閉じる
+「読み返したい。でも、閉じる」</p>
+<p class="lab s">STEP02</p>
+<p>3秒待って、書いてあったことを3つ、声に出す
+「1つ目は……えーと」
+※3つ出なくても、1つでいいです。頭の中で言うのは、なし</p>
+<p class="lab s">STEP03</p>
+<p>出なかった1か所だけ見て、また閉じて言う
+「ここか。もう1回、見ないで再テスト」</p>
+<p class="lab s">できた基準</p>
+<p>次の日、同じ内容を開く前に思い出せたらOK！</p>
+<p class="lab">まとめ</p>
+<p>「どれだけ読んだか」ではなく、「どれだけ思い出せるか」で決まる。</p>
+<p>①何度見ても、思い出そうとしなければ、頭に残らない
+②4回読むより、1回読んで3回思い出すほうが、1週間後に残る
+③「思い出す」回数を増やすと、成績は伸びていく</p>
+<p>だから、読んだら、閉じる。目安は、入れる2、思い出す8。迷ったら、「今、何も見ずに言える？」と自分に問いかけるべし！</p></div>
+<div class="sec" id="i03"><div class="ihead"><span class="no">03</span><p>【絶対法則】負荷</p></div><p class="lab">章最初のページ</p>
+<p>絶対法則03　負荷
+スラスラ進むやり方を、選ばない</p>
+<p class="lab">導入文</p>
+<p>「自分に合った勉強法が、見つからなくて……」
+「どうやったら、自分に合った勉強法って、見つかりますか」
+これまで、沢山の生徒から、聞かれてきました。</p>
 <p>ただ、この「自分に合った勉強法」というものは、とても危険です。</p>
 <p>今の自分に合った勉強を、どれだけ続けても、脳力（頭の力のことです）は、鍛えられないからです。</p>
 <p>実は、調査でも、結果が出ています。自分のタイプに合った方法で勉強しても、成績は変わりませんでした。（あとで、紹介します）</p>
-<p>大事なのは、自分に合うかどうかでは、ありません。<br>脳力を鍛えるために、絶対に必要なものが、1つあります。</p>
-<p>「負荷」です。<br>少しきついことを、やる。そういう意味です。</p>
+<p>大事なのは、自分に合うかどうかでは、ありません。脳力を鍛えるために、絶対に必要なものが、1つあります。「負荷」です。少しきついことを、やる。そういう意味です。</p>
 <p>頭のいい人の絶対法則、3つ目。「負荷」を、具体的に見ていきましょう。</p>
-<div class="tag">質問ページ</div>
-<div class="qpage"><p class="q1">頭のいい人が絶対やらないこと</p><p class="q2">「自分に合った勉強法」</p><p class="q3">じゃあ、何をするの？</p></div>
-<div class="tag">本文</div>
+<p class="lab">質問ページ</p>
+<p>頭のいい人が絶対やらないこと
+「自分に合った勉強法」
+じゃあ、何をするの？</p>
+<p class="lab">本文</p>
 <h3>自分の名前を、逆から言えますか？</h3>
-<p>まず、自分の名前を、声に出して言ってみてください。<br>一瞬で、言えたはずです。</p>
-<p>次に、同じ名前を、フルネームで、逆から言ってみてください。</p>
-<p>…<br>僕の名前の「あさくら　てった」なら、「たって　らくさあ」です。</p>
+<p>まず、自分の名前を、声に出して言ってみてください。一瞬で、言えたはずです。次に、同じ名前を、フルネームで、逆から言ってみてください。</p>
+<p>…
+僕の名前の「あさくら　てった」なら、「たって　らくさあ」です。</p>
 <p>考える時、「うーん」と、少し止まりませんでしたか？中には、途中でわからなくなって、最初からやり直した人も、いると思います。</p>
 <p>スラスラ言えた人は、昔、遊びで練習したことがある人だと思います。その場合は、仲のいい友達の名前で、やってみてください。</p>
 <p>よく知っている名前です。知らない文字は、1つもありません。それでも、逆から言おうとした時だけ、頭を使いました。</p>
 <p>「うーん」と止まって、頭を使っている。この状態が、「負荷」です。</p>
 <p>自分の名前を口にだす時は、負荷が0でした。ただ、逆から名前を言う時は、負荷がかかりました。同じ名前でも、やり方を変えただけで、負荷は変わります。</p>
 <p>勉強でも、同じことが起きます。</p>
-<p>教科書を読む　　　→　スラスラ進む。負荷は、ほぼ0<br>閉じて、思い出す　→　「うーん」と止まる。負荷がかかる</p>
+<p class="tab">教科書を読む　　　→　スラスラ進む。負荷は、ほぼ0
+閉じて、思い出す　→　「うーん」と止まる。負荷がかかる</p>
 <p>同じ教科書の、同じページです。違うのは、負荷があるかどうかだけです。</p>
 <p>では、負荷があるかどうかで、何が変わるのか。</p>
 <h3>30分で10問、全部まる。新しくできるようになったことは、0個です</h3>
 <p>数学の問題集を、30分やったとします。10問、全部○でした。</p>
-<p>「よしよし、調子いい。このやり方、自分に合ってるな」<br>この瞬間、気持ちいいですよね。</p>
+<p>「よしよし、調子いい。このやり方、自分に合ってるな」
+この瞬間、気持ちいいですよね。</p>
 <p>でも、この30分で、新しくできるようになったことは、0個です。10問とも、始める前から解けた問題だったからです。</p>
 <p>筋トレで、考えてみてください。</p>
 <p>1キロのダンベルを100回上げても、筋肉はつきません。筋肉がつくのは、「重い」と感じる重さを、上げた時だけです。</p>
 <p>頭も、同じです。</p>
-<p>スラスラ解ける<br>→もう、できること。何回やっても、できることは増えない</p>
-<p>うーん、と止まる<br>→まだ、できないこと。できることが増えるのは、こっちだけ</p>
-<p>「うーん」と止まっている時間こそ、勉強です。<br>手は、止まっています。でも、その時、頭は、しっかり使われています。</p>
+<p>スラスラ解ける
+→もう、できること。何回やっても、できることは増えない</p>
+<p>うーん、と止まる
+→まだ、できないこと。できることが増えるのは、こっちだけ</p>
+<p>「うーん」と止まっている時間こそ、勉強です。手は、止まっています。でも、その時、頭は、しっかり使われています。</p>
 <p>絶対法則02で、「なぜ、きついほうが効くのか。次の絶対法則03で、説明します」と書きました。その答えが、「負荷」です。「何も見ずに思い出す」には、負荷がかかります。「繰り返し読む」には、ほとんど、かかりません。だから、1週間後に、差がついたというわけです。</p>
 <h3>成長とは、「楽にできる範囲」が、広がること</h3>
-<p>「このやり方、自分に合ってる」<br>そう感じるのは、どんな時でしょうか。</p>
+<p>「このやり方、自分に合ってる」
+そう感じるのは、どんな時でしょうか。</p>
 <p>スラスラ進む時。疲れない時。続けやすい時。つまり、今の自分が、楽にできる時です。</p>
 <p>慣れていて、不安がなくて、楽にできる。今の自分にとって、そういう範囲のことを、「コンフォートゾーン」と呼びます。居心地のいい場所、という意味です。（名前は、覚えなくてOKです）</p>
 <p>成長とは、この範囲が、広がることです。</p>
@@ -357,12 +332,15 @@ figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
 <h3>「変わりたい」のに、変われない。意志が弱いからでは、ありません</h3>
 <p>「変わりたいです」「今度こそ、本気でやります」相談に来る生徒は、みんな、そう言ってくれます。その気持ちは、嘘ではなく、本物です。</p>
 <p>それでも、新しいやり方を始めて3日たつと、元のやり方に戻っている。そういうことが、本当によく起きます。(僕は3日坊主どころか、1日坊主でした笑)</p>
-<p>これはなぜか？結論、意志が弱いからでは、ありません。<br>人間には、「変わりたい」という気持ちとは別に、「今のままでいたい」という反応が、もともと備わっているからです。</p>
-<p>身近な所で、確かめてみてください。<br>・席が自由な時も、いつも同じあたりに座る<br>・アプリの見た目が変わると、「前のほうがよかった」と思う<br>・髪型を変えるつもりで切りに行ったのに、「いつもと同じで」と言ってしまう<br>当てはまるものが、あったと思います。</p>
-<p>理由は、2つあります。<br>1つ目。いつもと同じことは、安全だとわかっています。昨日もやって、何も困らなかったからです。いつもと違うことは、安全かどうか、まだわかりません。</p>
-<p>2つ目。いつもと同じことは、考えなくても、できます。いつもと違うことは、1つ1つ、考えないとできません。考えるのは、疲れます。</p>
+<p>これはなぜか？結論、意志が弱いからでは、ありません。人間には、「変わりたい」という気持ちとは別に、「今のままでいたい」という反応が、もともと備わっているからです。身近な所で、確かめてみてください。
+・席が自由な時も、いつも同じあたりに座る
+・アプリの見た目が変わると、「前のほうがよかった」と思う
+・髪型を変えるつもりで切りに行ったのに、「いつもと同じで」と言ってしまう
+当てはまるものが、あったと思います。</p>
+<p>理由は、2つあります。1つ目。いつもと同じことは、安全だとわかっています。昨日もやって、何も困らなかったからです。いつもと違うことは、安全かどうか、まだわかりません。2つ目。いつもと同じことは、考えなくても、できます。いつもと違うことは、1つ1つ、考えないとできません。考えるのは、疲れます。</p>
 <p>だから人間は、考える前に、「いつもと同じ」のほうを選びます。意志とは関係のない、本能のようなものです。</p>
-<p>「変わりたい」　　　　→　頭で考えて、出てくる気持ち<br>「今のままでいたい」　→　考える前に、出てくる反応</p>
+<p class="tab">「変わりたい」　　　　→　頭で考えて、出てくる気持ち
+「今のままでいたい」　→　考える前に、出てくる反応</p>
 <p>2つとも、本物です。ただ、先に出てくるのは、「今のままでいたい」のほうです。だから、何も決めずにいると、人は、元のやり方に戻ります。</p>
 <h3>楽だから続いたやり方を、人は「自分に合っている」と呼びます</h3>
 <p>勉強のやり方でも、人は、いつもと同じほうを選びます。</p>
@@ -370,74 +348,119 @@ figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
 <p>本を閉じて、「なんだっけ」と思い出す。わかったと思ったら、何も見ずに、白紙で解いてみる。どれも、やっている最中は、しんどいです。</p>
 <p>一方で、線を引くのは、楽です。読み返すのも、楽です。しかも、昨日までやってきた、いつものやり方です。</p>
 <p>だから、何も考えずに選ぶと、いつもの、楽なやり方のほうが、残ります。そして、残ったやり方を、人はこう呼びます。</p>
-<p>「自分に合ったやり方」<br>探しているつもりで、いつもの、楽なほうを選んでいる。しかも、本人には、そう見えません。</p>
+<p>「自分に合ったやり方」
+探しているつもりで、いつもの、楽なほうを選んでいる。しかも、本人には、そう見えません。</p>
 <p>僕も、そうでした。高校3年の時、誰よりも長く勉強して、10個受けて、全部落ちました。あの頃のノートは、きれいです。蛍光ペンでたくさん線が引いてあって、要点がまとまっていて、同じ単語が何十回も書いてあります。ただ、全部、絶対法則01で見た「効果が低い」やり方でやっていた結果です。</p>
 <p>自分には、合っていました。やりやすくて、続けられて、終わった時に「やった」という感じがありました。</p>
 <p>足りなかったのは、量ではありません。負荷でした。</p>
-<p>「やってみたけど、自分には合わなかった」<br>そう言う人も、沢山います。でも、多くの場合、合わなかったのでは、ありません。疲れただけです。疲れるのは、効いている合図であるけど、大体そこで勝手にやめてしまうんですよね。</p>
+<p>「やってみたけど、自分には合わなかった」
+そう言う人も、沢山います。でも、多くの場合、合わなかったのでは、ありません。疲れただけです。疲れるのは、効いている合図であるけど、大体そこで勝手にやめてしまうんですよね。</p>
 <h3>【研究結果】「自分のタイプ」に合わせて勉強しても、成績は変わらなかった</h3>
 <p>「いやいや、だとしても、自分に合った勉強法は、あるでしょ！」そう言いたい人も、多いと思います。</p>
 <p>「自分は、目で見て覚えるタイプ」「自分は、耳で聞いて覚えるタイプ」。こういうタイプ診断も、よく見かけますよね。タイプが違うなら、タイプに合ったやり方があるはずだ。そう考えるのは、自然です。</p>
-<p>でも、この考えを否定する実験が、あります。<br>インディアナ大学で、学生400人以上に、タイプ診断を受けてもらいました。そして、普段の勉強法と、授業の成績を比べました。タイプに合わせて勉強している学生は、成績がいいのか。それを確かめるためです。</p>
-<p>結果は、3つです。<br>①ほとんどの学生は、診断で出たタイプに合った勉強を、していなかった<br>②診断の通りに勉強していた学生の成績は、ほかの学生と、変わらなかった<br>③タイプと成績の間にも、関係はなかった</p>
+<p>でも、この考えを否定する実験が、あります。インディアナ大学で、学生400人以上に、タイプ診断を受けてもらいました。そして、普段の勉強法と、授業の成績を比べました。タイプに合わせて勉強している学生は、成績がいいのか。それを確かめるためです。結果は、3つです。
+①ほとんどの学生は、診断で出たタイプに合った勉強を、していなかった
+②診断の通りに勉強していた学生の成績は、ほかの学生と、変わらなかった
+③タイプと成績の間にも、関係はなかった</p>
 <p>「タイプに合わせて学ぶ、という考えは、教える側も、学ぶ側も、捨てるべきだ」と、結論は、はっきりしています。</p>
 <p>「自分は〇〇タイプだから、このやり方は向いていない」。そう思っていた人は、その考えを、手放してください。(このような思い込みが成長を妨げてしまっていることが勉強法以外にも多くあります。)</p>
-<p>「見るほうが好き」「聞くほうが好き」。そういう好みは、たしかにあります。でも、<br>「やりやすい」と感じることと、身につくことは、別です。</p>
-<p>だから、選ぶ基準を、入れかえてください。<br>×　自分に合うかどうかで、選ぶ<br>○　結果が出るかどうかで、選ぶ<br>結果が出るかどうかは、その場ではわかりません。その場でわかる目印が、「うーん」です。</p>
+<p>「見るほうが好き」「聞くほうが好き」。そういう好みは、たしかにあります。でも、
+「やりやすい」と感じることと、身につくことは、別です。</p>
+<p>だから、選ぶ基準を、入れかえてください。
+×　自分に合うかどうかで、選ぶ
+○　結果が出るかどうかで、選ぶ
+結果が出るかどうかは、その場ではわかりません。その場でわかる目印が、「うーん」です。</p>
 <h3>AIに答えを聞くだけだと、負荷は0になります</h3>
 <p>わからない問題で、手が止まる。勉強は、ここからです。</p>
-<p>その瞬間に、問題をAIに入れて、答えを写す。楽です。速いです。ただ、頭には、少しも負荷がかかっていません。AIが悪いのでは、ありません。自分の頭にかかるはずだった負荷を、全部AIに渡してしまう使い方が、まずいんです。（負荷を残したままAIを効果的に使うやり方は、43番と44番に書きました）</p>
+<p>その瞬間に、問題をAIに入れて、答えを写す。楽です。速いです。ただ、頭には、少しも負荷がかかっていません。AIが悪いのでは、ありません。自分の頭にかかるはずだった負荷を、全部AIに渡してしまう使い方が、まずいんです。（負荷を残したままAIを効果的に使うやり方は、48番と49番に書きました）</p>
 <h3>きつすぎても、伸びません。目安は、10問のうち、2問から4問です</h3>
 <p>「なるほど。そしたらとにかく難しい問題をやって負荷をかけたらいいですね！」となってしまう人もいるかもしれません。ただ、負荷は、きつければきついほどいい、というわけでは、ありません。</p>
 <p>10問やって、10問とも、手も足も出ない。解説を読んでも、わからない。これでは、何時間やっても、できることは増えません。</p>
 <p>伸びるのは、コンフォートゾーンから、「少しだけ」はみ出した所です。遠くまではみ出すと、伸びません。</p>
-<p>・楽にできる　　10問のうち、0〜1問で手が止まる　→　伸びない。1つ上のレベルへ<br>・少しきつい　　10問のうち、2〜4問で手が止まる　→　ここで、伸びる<br>・きつすぎる　　10問のうち、8問以上で手が止まる　→　伸びないし、続かない。1つ下のレベルへ</p>
+<p class="tab">・楽にできる　　10問のうち、0〜1問で手が止まる　→　伸びない。1つ上のレベルへ
+・少しきつい　　10問のうち、2〜4問で手が止まる　→　ここで、伸びる
+・きつすぎる　　10問のうち、8問以上で手が止まる　→　伸びないし、続かない。1つ下のレベルへ</p>
 <p>目安は、10問のうち、2問から4問で、手が止まることです。僕が2000人以上の生徒を見てきた中での、目安です。</p>
 <p>5問から7問で止まるなら、少し重めです。解説を読んでわかるなら、そのまま続けます。読んでもわからないなら、1つ下のレベルにします。</p>
-<p>「どのくらい考えてもいいんですか？」と質問もされますが、止まる時間にも、目安があります。単語や用語が出てこない時は、5秒。知らないものは、いくら考えても、出てこないからです。数学で、何をすればいいかわからない時は、3分。それを超えたら、答えを見ます。（くわしくは、21番に書きました）</p>
+<p>「どのくらい考えてもいいんですか？」と質問もされますが、止まる時間にも、目安があります。単語や用語が出てこない時は、5秒。知らないものは、いくら考えても、出てこないからです。数学で、何をすればいいかわからない時は、3分。それを超えたら、答えを見ます。（くわしくは、18番に書きました）</p>
 <h3>【最後にチェックリスト】スラスラ進む勉強、やっていませんか？</h3>
 <p>気づかないうちに、スラスラ進む勉強をやってしまっていることが多いです。まずはこの勉強法をしてしまっていないかを確認してみてください。1つでもチェックが入る場合は、次のページの3STEPの指示に従って進めてください。</p>
-<p>◻︎単語や用語を、見つめて覚えている　　　　→　13<br>◻︎「わかった」と思ったら、すぐ次へ進む　　→　07<br>◻︎同じ種類の問題を、続けて解いている　　　→　20<br>◻︎正解したら、そこで終わりにしている　　　→　18<br>◻︎わからない問題を、AIに聞いて写している　→　43</p>
+<p class="tab">◻︎単語や用語を、見つめて覚えている　　　　→　12
+◻︎「わかった」と思ったら、すぐ次へ進む　　→　15
+◻︎同じ種類の問題を、続けて解いている　　　→　17
+◻︎正解したら、そこで終わりにしている　　　→　19
+◻︎わからない問題を、AIに聞いて写している　→　48</p>
 <p>印がついたものが、負荷のかかっていない勉強です。</p>
-<div class="tag">頭のいい人と伸びない人の違い</div>
-<div class="koma"><div class="k x"><span>伸びない人</span><b>自分に合う勉強</b><i>スラスラ進む。調子いい！</i></div><div class="k o"><span>頭のいい人</span><b>少しきつい勉強</b><i>手が止まる。これでいい</i></div></div>
-<div class="tag">今日からできる3STEP</div>
-<div class="sheet"><p class="sttl">頭のいい人の『負荷のかけ方』3STEP</p><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">チェックの5つからやっているものを1つ選ぶ</p><p class="say">「これ、手が止まらないな」</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">選んだもののページを、今日のうちに読む</p><p class="say">「かわりに、何をする？」</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">書いてあるやり方で、今日、10分だけやる</p><p class="say">「いつもより負荷かかってる！」</p></div></div><div class="king"><span>「できた」の基準</span><p>10分の中で、1回でも「うーん」と頭を使えたらOK！</p></div></div>
-<div class="mwrap"><div class="tag">まとめ</div>
-<div class="matome"><p class="one">「うーん」と止まっている時間こそ、脳に負荷がかかり、成績が伸びる時間。</p><ol><li>スラスラ進む勉強は、何時間やっても、できることが増えない</li><li>「自分に合う」と感じるのは、今の自分が、楽にできる時</li><li>きつすぎても、伸びない。目安は、10問のうち、2問から4問で手が止まること</li></ol><p class="raw">だから、楽なほうではなく、少しきついほうを選ぶ。</p><p class="raw">「今、うーんってなってる？」かを定期的に自分に問うべし。</p></div>
-</div></section></div>
-<div class="sec" id="i04"><section class="item">
-<div class="tag">章最初のページ</div>
-<div class="d1"><p class="dno">04</p><p>絶対法則04</p><p>戦略</p><p>やみくもにやらない</p><p class="big">やらないことを先に決める</p></div>
-<div class="tag">導入文</div>
-<p>「努力は、裏切らない」<br>そう言われて、育ってきたと思います。</p>
+<p class="lab">頭のいい人と伸びない人の違い</p>
+<p class="lab s">伸びない人</p>
+<p>自分に合う勉強
+スラスラ進む。調子いい！</p>
+<p class="lab s">頭のいい人</p>
+<p>少しきつい勉強
+手が止まる。これでいい</p>
+<p class="lab">今日からできる3STEP</p>
+<p class="lab s">STEP01</p>
+<p>チェックの5つから
+やっているものを1つ選ぶ
+「これ、手が止まらないな」</p>
+<p class="lab s">STEP02</p>
+<p>選んだもののページを、
+今日のうちに読む
+「かわりに、何をする？」</p>
+<p class="lab s">STEP03</p>
+<p>書いてあるやり方で、
+今日、10分だけやる
+「いつもより負荷かかってる！」</p>
+<p class="lab s">できた基準</p>
+<p>10分の中で、1回でも「うーん」と頭を使えたらOK！</p>
+<p class="lab">まとめ</p>
+<p>「うーん」と止まっている時間こそ、脳に負荷がかかり、成績が伸びる時間。</p>
+<p>①スラスラ進む勉強は、何時間やっても、できることが増えない
+②「自分に合う」と感じるのは、今の自分が、楽にできる時
+③きつすぎても、伸びない。目安は、10問のうち、2問から4問で手が止まること</p>
+<p>だから、楽なほうではなく、少しきついほうを選ぶ。「今、うーんってなってる？」かを定期的に自分に問うべし。</p></div>
+<div class="sec" id="i04"><div class="ihead"><span class="no">04</span><p>【絶対法則】戦略</p></div><p>絶対法則04
+戦略
+やみくもにやらない
+やらないことを先に決める</p>
+<p class="lab">導入文</p>
+<p>「努力は、裏切らない」
+そう言われて、育ってきたと思います。</p>
 <p>僕も、信じていました。高校3年の時、1日13時間以上、勉強しました。周りからは、「努力の天才」と呼ばれていました。</p>
 <p>しかし、結果は、全落ちです。受けた10個、全部、落ちました。</p>
 <p>だから、はっきり言います。</p>
-<p>努力は、裏切ります。<br>正しく言い直すと、向きがずれた間違った努力は、どれだけ積んでも、裏切ります。</p>
-<p>「毎日勉強頑張ってやってるのに、成績が上がらないんです...」<br>相談で、一番多い言葉です。聞くたびに、昔の自分を見ている気持ちになります。</p>
-<p>成績が上がらない理由は、1つでは、ありません。時間が足りない人もいます。頑張りが足りない人もいます。ただ、時間も、頑張りも足りているのに、上がらない人がいます。その人に足りないのは、頑張る前に、「どこに向かって頑張るか」を決めることです。これを、「戦略」と呼びます。<br>戦略がないまま頑張ると、頑張った時間が、点につながりません。せっかくの努力が、無駄になってしまいます。</p>
+<p>努力は、裏切ります。正しく言い直すと、向きがずれた間違った努力は、どれだけ積んでも、裏切ります。</p>
+<p>「毎日勉強頑張ってやってるのに、成績が上がらないんです...」
+相談で、一番多い言葉です。聞くたびに、昔の自分を見ている気持ちになります。</p>
+<p>成績が上がらない理由は、1つでは、ありません。時間が足りない人もいます。頑張りが足りない人もいます。ただ、時間も、頑張りも足りているのに、上がらない人がいます。その人に足りないのは、頑張る前に、「どこに向かって頑張るか」を決めることです。これを、「戦略」と呼びます。戦略がないまま頑張ると、頑張った時間が、点につながりません。せっかくの努力が、無駄になってしまいます。</p>
 <p>頭のいい人の絶対法則、4つ目。「戦略」を、具体的に見ていきましょう。</p>
-<div class="tag">質問ページ</div>
-<div class="qpage"><p class="q1">頭のいい人が絶対やらないこと</p><p class="q2">「やみくもに全部頑張る」</p><p class="q3">じゃあ、何をするの？</p></div>
-<div class="tag">本文</div>
+<p class="lab">質問ページ</p>
+<p>頭のいい人が絶対やらないこと
+「やみくもに全部頑張る」
+じゃあ、何をするの？</p>
+<p class="lab">本文</p>
 <h3>修学旅行の自由行動。あなたは、どう行き先を決めますか？</h3>
 <p>修学旅行の、班別の自由行動を、思い浮かべてください。場所は、京都。時間は、3時間としましょう。</p>
 <p>あなたの班は、どうしますか。</p>
-<p>…<br>ほとんどの班が、同じことをします。<br>①行きたい所を、出し合う<br>②3時間では京都全部は回れないので、行かない所を決める<br>③回る順番と、1か所に使う時間を決める</p>
+<p>…ほとんどの班が、同じことをします。
+①行きたい所を、出し合う
+②3時間では京都全部は回れないので、行かない所を決める
+③回る順番と、1か所に使う時間を決める</p>
 <p>「駅に近いお寺から順に、全部1つずつ回ろうよ！」とでも言ったら、班長に引っ叩かれます(笑)全部は回れないと、わかっているからです。</p>
-<p>メインの清水寺は、必ず押さえたいところです。京都には、「広隆寺」というお寺もあります。聞いたことがない人も、多いかもしれません。でも、京都で一番古いと言われるお寺で、国宝の仏像もあります。そりゃ、行けるなら、行ったほうがいいです。でも、全部は行けません。だから、今回は、諦めます。</p>
+<p>メインの清水寺は、必ず押さえたいところですよね。京都には、「広隆寺」というお寺もあります。聞いたことがない人も、多いかもしれません。でも、京都で一番古いと言われるお寺で、国宝の仏像もあります。そりゃ、行けるなら、行ったほうがいいです。でも、全部は行けません。だから、今回は、諦めます。</p>
 <p>『行き先を決める。行かない所を決める。順番を決める。』この3つが、「戦略」です。旅行なら、誰でも、当たり前にやっています。</p>
-<p>ところが、勉強になると、ほとんどの人が、やりません。<br>「範囲、広っ。とりあえず、ワークの1ページ目からやるか」<br>「どこが出るかわかんないし、全部やっとこ」<br>「まあ、とりあえずワーク1周だけしておこう...」</p>
+<p>ところが、勉強になると、ほとんどの人が、やりません。
+「範囲、広っ。とりあえず、ワークの1ページ目からやるか」
+「どこが出るかわかんないし、全部やっとこ」
+「まあ、とりあえずワーク1周だけしておこう...」</p>
 <p>でも、これって旅行でいうなら、行き先も、行かない所も決めずに、駅に近い順に、全部回ろうとしている状態と同じですよね？</p>
 <h3>受験は、ゴールが決まっている勝負です</h3>
 <p>修学旅行には、行き先がありました。では、勉強の行き先は、どこでしょうか。</p>
-<p>次の定期テスト。模試。高校入試。大学入試などなど...。<br>いつ、何が、どんな形で出るのか。何点取れば、勝ちなのか。勉強のゴールは、最初から決まっています。</p>
-<p>この本では、そのゴールのことを、「敵」と呼びます。倒す相手、という意味です。</p>
+<p>次の定期テスト。模試。高校入試。大学入試などなど...。いつ、何が、どんな形で出るのか。何点取れば、勝ちなのか。勉強のゴールは、最初から決まっています。この本では、そのゴールのことを、「敵」と呼びます。倒す相手、という意味です。</p>
 <p>ゴールが決まっている勝負では、ゴールに一番早く着ける道が、正しい道です。努力は、多ければ多いほどいい、というわけでは、ありません。ゴールにまっすぐ向かっていない努力は、ただの寄り道です。最速で結果を出す、という点では、無駄な努力になります。その寄り道が、最初に書いた、「裏切る努力」です。</p>
-<p>たとえば、こういうことです。<br>サッカーの試合で、勝ちたい。だから毎日、リフティングを練習して、1000回できるようになりました。試合では、1点も取れませんでした。</p>
-<p>努力は、本物です。リフティングも、うまくなりました。でも、試合で点を取るのに必要だったのは、シュートの練習でした。</p>
-<p>もう1つ、あります。<br>好きな人が、できました。「マメに連絡する人が、モテる」と聞いて、毎日、朝と夜にLINEを送りました。1週間後。既読が、つかなくなりました...その人は、LINEが苦手でした。頑張った分だけ、気持ちが遠ざかっていきました...</p>
+<p>たとえば、こういうことです。サッカーの試合で、勝ちたい。だから毎日、リフティングを練習して、1000回できるようになりました。試合では、1点も取れませんでした。努力は、本物です。リフティングも、うまくなりました。でも、試合で点を取るのに必要だったのは、シュートの練習でした。</p>
+<p>もう1つ、あります。
+好きな人が、できました。「マメに連絡する人が、モテる」と聞いて、毎日、朝と夜にLINEを送りました。1週間後。既読が、つかなくなりました...その人は、LINEが苦手でした。頑張った分だけ、気持ちが遠ざかっていきました...</p>
 <p>どちらも、「相手」を知らないまま、頑張ってしまった結果です。</p>
 <p>そして勉強でも、同じことが、本当によく起きています。出ない所を、完璧にする。配点が小さい所に、一番時間を使う。志望校の入試にない科目を、毎日やる。</p>
 <p>つまり、大事なことは、「努力の量より先に、努力の向き」だってことです。</p>
@@ -446,44 +469,66 @@ figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
 <p>だから、受験で戦略を身につけておくと、この先、ずっと使える武器になります。受験は、ゴールがはっきり決まっているので、練習には、ちょうどいいんです。</p>
 <p>では、勉強の結果は、何で決まるのか。式にすると、こうなります。</p>
 <h3>結果 ＝ 戦略 × やり方 × 量</h3>
-<p>戦略　　どこをやるか<br>やり方　どうやるか<br>量　　　どれだけやるか</p>
+<p class="tab">戦略　　どこをやるか
+やり方　どうやるか
+量　　　どれだけやるか</p>
 <p>足し算では、ありません。掛け算です。だから、どれか1つが0だと、ほかが満点でも、結果は0になります。</p>
-<p>戦略が0　　出ない所を、完璧にした<br>やり方が0　出る所を、教科書を見ながらやった。一度も、閉じて思い出していない<br>量が0　　　やり方の本を読んで、「なるほど」と思って、終わった</p>
-<p>最初に書いた、現役の時の僕を、この式に入れてみます。<br>戦略0 × やり方0 × 量100（1日13時間）＝ 全落ち</p>
+<p class="tab">戦略が0　　出ない所を、完璧にした
+やり方が0　出る所を、教科書を見ながらやった。一度も、閉じて思い出していない
+量が0　　　やり方の本を読んで、「なるほど」と思って、終わった</p>
+<p>最初に書いた、現役の時の僕を、この式に入れてみます。
+戦略0 × やり方0 × 量100（1日13時間）＝ 全落ち</p>
 <p>量だけなら、誰にも負けていませんでした。ただ、あの頃の僕が見ていたのは、点ではなく、頑張っている自分でした。「裏切る努力」を、1日13時間、積んでいたんです。</p>
 <p>逆も、同じです。戦略が満点でも、量が0なら、0です。戦略は、量を減らすためのものではありません。</p>
 <p>では、戦略は、何から始めればいいのか。結論、「ゴールを、正しく知ることから」です。</p>
 <h3>受験のゴールは、満点ではありません</h3>
-<p>受験のゴールを、正確に言うと、こうなります。<br>合格最低点を、0.001点でも上回る</p>
+<p>受験のゴールを、正確に言うと、こうなります。
+合格最低点を、0.001点でも上回る</p>
 <p>合格最低点とは、合格した人の中で、一番低かった点です。大学入試では、小数点の差で、合格と不合格が分かれることもあります。満点で受かった人も、合格最低点ぎりぎりで受かった人も、同じ合格です。4月には、同じ入学式に並んでいます。</p>
 <p>つまり、合格最低点が、100点のうち65点なら、35点は、落としていいんです。定期テストも、同じです。「次は80点」と決めたなら、80点を超えれば、クリアです。全部できるようになる必要は、ありません。必要な点を、確実に取る。それが、ゴールです。</p>
 <h3>ゴールを早く知って、ゴールに必要なもので練習する</h3>
 <p>では、必要な点は、何点なのか。どこで、取ればいいのか。答えは、敵によって違います。</p>
-<p>大学入試　　同じ大学でも、学部が違うだけで、配点も、問題の形も変わることがある<br>高校入試　　目指す高校が変わると、出る問題も変わることがある<br>定期テスト　範囲表と、問題を作る先生で決まる</p>
+<p class="tab">大学入試　　同じ大学でも、学部が違うだけで、配点も、問題の形も変わることがある
+高校入試　　目指す高校が変わると、出る問題も変わることがある
+定期テスト　範囲表と、問題を作る先生で決まる</p>
 <p>英語が200点、国語が100点の学部なら、英語は、国語の2倍の重みです。同じ1点でも、敵によって、重みが違います。教材も、同じです。みんなが使っている問題集だから、自分にも必要、とは限りません。必要かどうかは、敵で決まります。</p>
 <p>だから、敵を知るのは、早いほどいいんです。知るのが遅れた分だけ、寄り道が増えます。</p>
 <p>だからこそ、僕たちの塾では、最初に、敵を徹底的に調べます。過去問を開いて、合格最低点と、配点と、問題の形を見る。そして、ゴールから考えて、今やることを決めます。これを、「逆算」と言います。</p>
 <p>逆算は、ふだん、誰でもやっていることですが、「逆算って何？」となる人のために、さっと説明をします。</p>
-<p>10時に、駅で待ち合わせ<br>→電車で20分。駅まで歩いて10分。準備に30分<br>→だから、9時に起きる</p>
-<p>勉強も、同じです。<br>去年の合格最低点は、65%。だから、英語は70%を取る<br>そのために、長文で落とせるのは、2問まで。<br>そのために、今月は、長文を毎日1つ読む</p>
+<p>10時に、駅で待ち合わせ
+→電車で20分。駅まで歩いて10分。準備に30分
+→だから、9時に起きる</p>
+<p>勉強も、同じです。
+去年の合格最低点は、65%。だから、英語は70%を取る
+そのために、長文で落とせるのは、2問まで。
+そのために、今月は、長文を毎日1つ読む</p>
 <p>ゴールから決めるので、やることが、はっきりします。そして、同時に、もう1つ、はっきりするものがあります。やらなくていいことです。</p>
 <h3>「やったほうがいいこと」は、無限にあります</h3>
 <p>単語帳を、もう1冊。友達が使っている問題集。SNSで話題の参考書。どれも、やれるものなら、やったほうがいいです。時間が、無限にあるなら。</p>
 <p>でも、時間は、限られています。</p>
 <p>たとえば、テストまで、あと3日。範囲は、ワーク60ページ。1日にできるのは、10ページだとします。</p>
 <p>3日で、30ページ。どう頑張っても、半分しか終わりません。ここで、2人に分かれます。</p>
-<p>Aさん<br>「全部やろう」と、1ページ目から順に進める<br>→30ページ目で、テストの日。後ろの30ページは、1問もやっていない</p>
-<p>Bさん<br>最初に、点になる30ページを選ぶ。残りは、やらないと決める<br>→選んだ30ページをやり切って、テストの日</p>
+<p>Aさん
+「全部やろう」と、1ページ目から順に進める
+→30ページ目で、テストの日。後ろの30ページは、1問もやっていない</p>
+<p>Bさん
+最初に、点になる30ページを選ぶ。残りは、やらないと決める
+→選んだ30ページをやり切って、テストの日</p>
 <p>2人とも、やったのは、30ページです。やらなかったのも、30ページです。でも、中身が、まるで違います。</p>
 <p>Aさんがやったのは、前にあった30ページです。点になる所も、なりにくい所も、混ざっています。そして、後ろの30ページにあった、点になる所は、1問もやっていません。一方で、Bさんがやったのは、点になる30ページです。やらなかったのは、点になりにくい30ページです。</p>
 <p>量は、同じです。でも、点が伸びるのは、Bさんです。全部やろうとすると、Aさんになります。だから、全部やるのは、あきらめてください。</p>
 <h3>先に、「やらないといけないこと」。「やったほうがいいこと」は、そのあと</h3>
 <p>修学旅行を、思い出してください。先に決めたのは、絶対に外せない清水寺でした。行けるなら行きたい広隆寺のことを考えたのは、そのあとです。</p>
-<p>勉強も、同じ順番にします。<br>①「やらないと、ゴールに届かないこと」<br>②時間が余ったら、「やったほうがいいこと」</p>
-<p>僕が伝えたいのは、「やったほうがいいことを、やるな」という話ではありません。順番の話です。</p>
-<p>大事なのは、こういう考え方です。<br>「あれもこれも、少しずつ、ではなく、大事なことを、最後まで。」<br>10個に手をつけて、10個とも途中で終わる。それより、3個を選んで、3個とも最後までやり切る。点になるのは、3個をやり切ったほうです。</p>
+<p>勉強も、同じ順番にします。
+①「やらないと、ゴールに届かないこと」
+②時間が余ったら、「やったほうがいいこと」</p>
+<p>僕た伝えたいのは、「やったほうがいいことを、やるな」という話ではありません。順番の話です。</p>
+<p>大事なのは、こういう考え方です。
+「あれもこれも、少しずつ、ではなく、大事なことを、最後まで。」
+10個に手をつけて、10個とも途中で終わる。それより、3個を選んで、3個とも最後までやり切る。点になるのは、3個をやり切ったほうです。</p>
 <p>そのために要るのは、2つです。</p>
-<p>見極める　　本当に大事なものを、選ぶ<br>捨てる　　　それ以外は、勇気を出して、今はやらない</p>
+<p class="tab">見極める　　本当に大事なものを、選ぶ
+捨てる　　　それ以外は、勇気を出して、今はやらない</p>
 <h3>「捨てた所が出たら、どうするんですか？」</h3>
 <p>結論、出ることもあります。でも、それでいいんです。合格最低点を、0.001点でも上回れば、合格です。捨てた所で数点落としても、やると決めた所を取り切っていれば、ゴールには届きます。</p>
 <p>それに、この質問をしてくれる生徒に、「やると決めた所は、もう全部できる？」と聞き返すと、たいてい、「まだです」と返ってきます。</p>
@@ -493,223 +538,275 @@ figure.fig figcaption{font-size:9pt;color:#555;margin-top:2mm}
 <p>部活の試合。ゲーム。好きな人に、振り向いてもらうこと。この先、あなたが本気でかなえたくなる目標。どれにも、「何をしたら勝ちなのか」があります。それを先に知って、そこから、やることを決める人が、勝ちます。</p>
 <p>受験は、ゴールがはっきり決まっているので、戦略の練習には、ちょうどいいんです。受験で身につけておくと、この先、ずっと使えます。</p>
 <p>この本の中でも、場面ごとの戦略が、このあと出てきます。</p>
-<p>学校の宿題と提出物を、どう分けるか　　35<br>計画を、どう立てるか　　　　　　　　　26<br>参考書を、続けるか、やめるか　　　　　25<br>過去問を、いつ開くか　　　　　　　　　17</p>
+<p class="tab">学校の宿題と提出物を、どう分けるか　　10
+計画を、どう立てるか　　　　　　　　　30
+参考書を、続けるか、やめるか　　　　　32
+過去問を、いつ開くか　　　　　　　　　34
+本番で、どの問題から解くか　　　　　　47</p>
 <p>形は違いますが、もとは、この絶対法則04です。</p>
 <p>どこをやるかが、決まりました。次は、いつやるか、です。次の絶対法則05で、説明します。</p>
-<div class="tag">頭のいい人と伸びない人の違い</div>
-<div class="koma"><div class="k x"><span>伸びない人</span><b>全部頑張る</b><i>長くやれば、伸びるはず</i></div><div class="k o"><span>頭のいい人</span><b>ゴールから決める</b><i>これ、ゴールに必要？</i></div></div>
-<div class="tag">今日からできる3STEP</div>
-<div class="sheet"><p class="sttl">頭のいい人の『戦略の立て方』3STEP</p><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">ゴールを、1行で書く</p><p class="say">「次の期末、数学で80点」</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">やることを全部書いて、番号をつける</p><p class="say">「一番点になるのは、どれ？」</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">上の3つだけやる。他は、一旦やらない。</p><p class="say">「まず、この3つをやり切る」</p></div></div><div class="king"><span>「できた」の基準</span><p>ゴールと、やる3つと、やらないことが、紙1枚に書けたらOK！</p></div></div>
-<div class="mwrap"><div class="tag">まとめ</div>
-<div class="matome"><p class="one">結果 ＝ 戦略 × やり方 × 量。戦略が0なら、どれだけ頑張っても、0。</p><ol><li>戦略とは、ゴールから後ろ向きに考えて、やることと、やらないことを決めること</li><li>受験のゴールは、満点ではない。合格最低点を、0.001点でも上回ること</li><li>先に、「やらないと届かないこと」。「やったほうがいいこと」は、そのあと</li></ol><p class="raw">だから、始める前に、ゴールを見る。迷ったら、自分に「これ、ゴールに必要かな？」と</p><p class="raw">聞く習慣を持ちましょう。</p></div>
-</div></section></div>
-<div class="sec" id="i05"><section class="item">
-<div class="tag">章最初のページ</div>
-<div class="d1"><p class="dno">05</p><p>絶対法則05　分散</p><p class="big">まとめてやらない。分けて、繰り返す</p></div>
-<div class="tag">導入文</div>
-<p>「一夜漬けは、やめなさい」</p>
-<p>何度も、言われてきたと思います。</p>
+<p class="lab">頭のいい人と伸びない人の違い</p>
+<p class="lab s">伸びない人</p>
+<p>全部頑張る
+やれば、伸びるはず</p>
+<p class="lab s">頭のいい人</p>
+<p>ゴールから決める
+これ、ゴールに必要？</p>
+<p class="lab">今日からできる3STEP</p>
+<p>頭のいい人の『戦略の立て方』3STEP</p>
+<p class="lab s">STEP01</p>
+<p>ゴールを、1行で書く
+「次の期末、数学で80点」</p>
+<p class="lab s">STEP02</p>
+<p>やることを全部書いて、番号をつける
+「一番点になるのは、どれ？」</p>
+<p class="lab s">STEP03</p>
+<p>上の3つだけやる。他は、一旦やらない。
+「まず、この3つをやり切る」</p>
+<p class="lab s">できた基準</p>
+<p>ゴールと、やる3つと、やらないことが、紙1枚に書けたらOK！</p>
+<p class="lab">まとめ</p>
+<p>結果 ＝ 戦略 × やり方 × 量。戦略が0なら、どれだけ頑張っても、0。
+①戦略とは、ゴールから後ろ向きに考えて、やることと、やらないことを決めること
+②受験のゴールは、満点ではない。合格最低点を、0.001点でも上回ること
+③先に、「やらないと届かないこと」。「やったほうがいいこと」は、そのあと</p>
+<p>だから、始める前に、ゴールを見る。迷ったら、自分に「これ、ゴールに必要かな？」と
+聞く習慣を持ちましょう。</p></div>
+<div class="sec" id="i05"><div class="ihead"><span class="no">05</span><p>【絶対法則】分散</p></div><p class="lab">章最初のページ</p>
+<p>絶対法則05　分散
+まとめてやらない。分けて、繰り返す</p>
+<p class="lab">導入文</p>
+<p>「一夜漬けは、やめなさい」
+何度も、言われてきたと思います。</p>
 <p>でも、やめられませんよね。</p>
-<p>やりたくて、やっているわけでは、ありません。部活がある。提出物がある。ほかの教科の小テストもある。気づいたら、テストは明日です。もう、一気に詰めこむしか、ありません。</p>
-<p>しかも、やっかいなことに、<mark>一夜漬けは、効きます。</mark></p>
-<p>前の日に3時間、必死に詰めこむ。次の日のテストは、そこそこ取れます。「なんとかなった」。だから、次のテストの前の日も、同じことが起きます。</p>
-<p class="q">追い込まれる　→　一夜漬け　→　なんとかなる　→　また、追い込まれる</p>
-<p>問題は、そのあとです。</p>
-<p>「定期テストは、取れるんです。でも、模試になると、全然取れなくて」</p>
-<p>本当によく聞く相談です。1ヶ月後の模試に、同じ単語が出ます。……出てこない。あんなに、やったのに。</p>
-<p>サボったわけでは、ありません。3時間、ちゃんとやっています。</p>
-<p>時間は、増やしません。変えるのは、<mark>同じ3時間を、1日にまとめるか、何日かに分けるか</mark>です。それだけで、1ヶ月後に残る量が、変わります。</p>
+<p>やりたくて、やっているわけでは、ありません。部活がある。提出物がある。他の教科の小テストもある。気づいたら、テストは明日です。もう、一気に詰めこむしか、ありません。</p>
+<p>しかも、やっかいなことに、一夜漬けは、効きます。</p>
+<p>前の日に3時間、必死に詰めこむ。次の日のテストは、”そこそこ”取れます。「なんとかなった」。だから、次のテストの前の日も、同じことが起きます。</p>
+<p>追い込まれる→一夜漬け→なんとかなる→また、追い込まれる</p>
+<p>しかし、問題は、そのあとです。
+「定期テストは、取れるんです。でも、模試になると、全然取れなくて...」</p>
+<p>本当によく相談されます。1ヶ月後の模試で、同じ単語が出ます。…出てこない。あんなに、やったのに。サボったわけでは、ありません。ちゃんとやっています。</p>
+<p>時間は、増やしません。変えるのは、同じ3時間を、1日にまとめるか、何日かに分けるかです。それだけで、1ヶ月後に残る量が、変わります。</p>
 <p>分けて、間をあけて、繰り返す。これを、「分散」と呼びます。</p>
 <p>絶対法則04で、「どこをやるか」を決めました。次は、「いつやるか」です。</p>
 <p>頭のいい人の絶対法則、5つ目。「分散」を、具体的に見ていきましょう。</p>
-<div class="tag">質問ページ</div>
-<div class="qpage"><p class="q1">頭のいい人が絶対やらないこと</p><p class="q2">「まとめて一気にやる」</p><p class="q3">じゃあ、何をするの？</p></div>
-<div class="tag">本文</div>
+<p class="lab">質問ページ</p>
+<p>頭のいい人が絶対やらないこと
+「まとめて一気にやる」
+じゃあ、何をするの？</p>
+<p class="lab">本文</p>
 <h3>腹筋300回。1日でやりますか。30日に分けますか</h3>
-<p>1つ、聞かせてください。</p>
-<pre>　　A　今日1日で、腹筋を300回やる
-　　B　1日10回を、30日続ける</pre>
-<p>1ヶ月後、腹筋がついているのは、どっちでしょうか。</p>
-<p>……</p>
-<p>Bですよね。迷わなかったと思います。Aは、次の日、筋肉痛で動けなくなるだけです（笑）</p>
-<p>合計は、どちらも300回です。違うのは、まとめたか、分けたか。それだけです。</p>
-<p>体のことなら、誰でも、分けたほうがいいと知っています。</p>
-<p>ところが、勉強になると、ほとんどの人が、Aをやります。テストの前の日に、3時間。英単語を100個、一気に。</p>
-<p>自分の頭で、確かめてみてください。</p>
-<p>前回の定期テストの前の日に、必死で覚えたこと。今、3つ、言えますか。</p>
-<p>定期テストがない人は、次のどれかでも、いいです。</p>
-<pre>　　模試や検定の前の日に、詰めこんだこと。3つ、言えますか
-　　1日でまとめて見た、授業の動画。中身を、3つ、言えますか
-　　一気に見たドラマの、3話目。何が起きたか、言えますか</pre>
-<p>……</p>
-<p>出てこなかった人が、多いと思います。</p>
-<p>では、7×8は。</p>
-<p>……</p>
-<p>56です。一瞬で、出たはずです。</p>
+<p>1つ、聞かせてください。
+A　今日1日で、腹筋を300回やる
+B　1日10回を、30日続ける
+1ヶ月後、腹筋がついているのは、どっちでしょうか。</p>
+<p>…Bですよね。迷わなかったと思います。Aは、次の日、筋肉痛で動けなくなるだけで（笑）合計は、どちらも300回です。違うのは、まとめたか、分けたか。それだけです。体のことなら、誰でも、分けたほうがいいと知っています。ところが、勉強になると、ほとんどの人が、Aをやります。テストの前の日に、3時間。英単語を100個、一気に。</p>
+<p>自分の頭で、確かめてみてください。
+・前回の定期テストの前の日に、必死で覚えたこと。今、3つ、言えますか。</p>
+<p>定期テストがない人は、次のどれかでも、いいです。
+・模試や検定の前の日に、詰めこんだこと。3つ、言えますか
+・1日でまとめて見た、授業の動画。中身を、3つ、言えますか
+・一気に見たドラマの、3話目。何が起きたか、言えますか</p>
+<p>…出てこなかった人が、多いと思います。では、7×8は？…56です。一瞬で、出たはずです。</p>
 <p>九九を覚えたのは、小学2年生。何年も前です。それなのに、ついこの前、一気に入れたものが消えて、九九は残っています。</p>
-<p>「あれだけやったんだから、当たり前でしょ」。そう思った人。その通りです。たくさん、言いました。</p>
-<p>ただ、まとめては、言っていません。2の段から始めて、毎日、少しずつ。学校で言って、家でも言って、何週間もかけました。同じ回数を、一晩でやった人は、いません。</p>
-<p>もし、同じ回数を、一晩でまとめてやっていたら、どうだったでしょうか。腹筋のAと、同じです。</p>
-<p class="q"><mark>間をあけて、何度も思い出したものは、長く残ります。</mark></p>
-<h3>【研究結果】同じ2回でも、間をあけると、結果が変わった</h3>
+<p>「あれだけやったんだから、当たり前でしょ」。そう思った人。九九の覚え方を、思い出してください。九九を、一晩で覚えた人は、いません。2の段から始めて、毎日、少しずつ。学校で言って、家でも言って、何週間もかけました。</p>
+<p>もし九九を、テストの前の晩に一気に詰めこんでいただけなら、今、7×8は、一瞬では出てこなかったはずです。</p>
+<p>つまり、ここで伝えたいことが「間をあけて、何度も思い出したものは、長く残る」ということです。</p>
+<h3>【研究結果】続けて2回より、間をあけて2回</h3>
 <p>腹筋も、九九も、たまたまでは、ありません。アメリカの大学の研究者たちが、実験で確かめています。</p>
-<p>大学生に文章を読んでもらって、3つのグループに分けました。実験は2つで、参加したのは、合わせて400人以上です。</p>
-<pre>　　①　1回だけ読む
-　　②　2回、続けて読む
-　　③　1回読んで、1週間あけてから、もう1回読む</pre>
-<p>テストは、読んだ直後と、2日後の、2通りでやりました。</p>
-<pre>　　直後のテスト　　①より点が高かったのは、②だけ。③は、①とほとんど変わらなかった
-　　2日後のテスト　①より点が高かったのは、③だけ。②は、①とほとんど変わらなくなった</pre>
+<p>大学生400人以上に、同じ文章を読んでもらって、3つのグループに分けました。</p>
+<p>①1回だけ読む
+②2回、続けて読む
+③1回読んで、1週間あけてから、もう1回読む
+テストは、読んだ直後と、2日後の、2通りでやりました。</p>
+<p>直後のテスト
+①より点が高かったのは、②だけ。
+③は、①とほとんど変わらなかった</p>
+<p>2日後のテスト
+①より点が高かったのは、③だけ。
+②は、①とほとんど変わらなくなった</p>
 <p>結果が、ひっくり返っています。</p>
-<p>②と③は、どちらも2回読んでいます。読んだ回数は、同じです。違うのは、続けたか、あけたか。それだけです。</p>
-<p>同じ量の勉強でも、まとめるより、間をあけたほうが、長く残る。専門用語で、「分散効果」と言います。（名前は、覚えなくてOKです）</p>
+<p>②と③は、どちらも2回読んでいます。使った時間は、同じです。違うのは、続けたか、あけたか。それだけです。</p>
+<p>同じ時間でも、まとめるより、間をあけたほうが、長く残る。専門用語で、「分散効果」と言います。（名前は、覚えなくてOKです）</p>
 <p>この実験だけの話では、ありません。記憶の研究では、100年以上前から、何度も確かめられてきたことです。</p>
-<h3>まとめてやると、すぐあとのテストには、効きます</h3>
-<p>さっきの実験でも、直後のテストで点が上がったのは、続けて読んだ②だけでした。まとめてやると、すぐあとのテストには、本当に効きます。「なんとかなった」は、気のせいでは、ありません。</p>
-<p>でも、長くは、持ちません。</p>
+<h3>まとめてやると、「効いた気」がします</h3>
+<p>さっきの実験でも、直後のテストで点が上がったのは、続けて読んだ②だけでした。まとめてやると、その日のうちは、本当に効きます。「なんとかなった」は、気のせいでは、ありません。でも、長くは、持ちません。</p>
 <p>入試は、覚えた次の日には、ありません。3ヶ月後、1年後、3年後です。前の日に詰めこんだ単語は、そこまで持ちません。</p>
-<pre>　　まとめてやる　→　すぐあとは残る。でも、長くは持たない。また1から覚え直す
-　　分けてやる　　→　1回ごとの手ごたえは小さい。でも、消えにくい</pre>
-<p><mark>まとめてやる人は、同じものを、何度も1から覚え直しています。</mark></p>
+<p>まとめてやる
+→その日は残る。でも、長くは持たない。また1から覚え直す</p>
+<p>分けてやる
+→1回ごとの手ごたえは小さい。でも、消えにくい</p>
+<p>まとめてやる人は、同じものを、何度も1から覚え直しています。</p>
 <h3>同じ3時間を、3日に分けるだけです</h3>
 <p>やることは、増やしません。分けるだけです。腹筋の300回を、30日に分けたのと、同じです。</p>
-<pre>　　×　前の日に、3時間　　　　　合計3時間
-　　○　1時間を、3日に分ける　　合計3時間</pre>
-<p>範囲を3つに切って、1日ずつやる、という意味では、ありません。同じ所を、3日に分けて、3回やります。</p>
-<p>分けると、2回目にやる時は、少し忘れています。閉じて思い出そうとすると、「うーん」となります。</p>
-<p>気づきましたか。絶対法則02の「思い出す」に、絶対法則03の「負荷」が、かかっています。</p>
-<p>まとめてやると、まだ覚えているうちに次をやるので、スラスラ出てきます。負荷が、かかりません。分けてやると、毎回、少し忘れた所から始まるので、「うーん」となります。</p>
-<p class="q"><mark>分けると、「思い出す」に、ちょうどいい負荷がかかります。</mark></p>
+<p>×　前の日に、3時間→合計3時間
+○　1時間を、3日に分ける→合計3時間</p>
+<p>分けると、2回目にやる時は、少し忘れています。忘れかけたものを、「うーん」と思い出すことになります。気づきましたか？絶対法則02の「思い出す」と、絶対法則03の「負荷」が、両方入っています。</p>
+<p>まとめてやると、まだ覚えているうちに次をやるので、スラスラ進みます。負荷が、かかりません。分けてやると、毎回、少し忘れた所から始まるので、「うーん」となります。</p>
+<p>分けるだけで、「思い出す」と「負荷」が、勝手に入ります。</p>
 <h3>テストの範囲は、授業を受けた日に、もう決まっています</h3>
-<p>3時間を、3日に分ける。それだけでも、変わります。もう1つ、できることがあります。最初にやる日を、もっと前に持ってくることです。</p>
-<p>「2週間前から、本気を出す」。そう決めている人も、多いと思います。</p>
-<p>でも、範囲表に書いてあるのは、新しい情報では、ありません。この1ヶ月か2ヶ月、授業でやった所です。範囲は、授業を受けたその日に、もう決まっていました。</p>
-<p>2週間前に始めると、1ヶ月前に習ったことは、かなり忘れています。テスト勉強のつもりで、最初から覚え直すことになります。前の日に始める人は、授業で聞いたきりのことを、前の日に、初めて自分で思い出すことになります。</p>
-<p class="q"><mark>前の日に追い込まれるのは、前の日が、「1回目」になっているからです。</mark></p>
-<p>だから、「1回目」を、前に持ってきます。</p>
-<p>授業があった日の夜に、15分だけ。その日やった所を、閉じて、思い出しておく。これが、「1回目」です。</p>
-<p>時間を足すのが目的では、ありません。テストの前にやるはずだった分を、先に、少しずつやっておくだけです。そのぶん、テストの前は、軽くなります。</p>
+<p>「2週間前から、本気を出す」。そう決めている人も、多いと思います。でも、範囲表に書いてあるのは、新しい情報では、ありません。この1ヶ月か2ヶ月、授業でやった所です。範囲は、授業を受けたその日に、もう決まっていました。</p>
+<p>2週間前に始めると、1ヶ月前に習ったことは、かなり忘れています。テスト勉強のつもりで、最初から覚え直すことになります。</p>
+<p>だからこそ、ポイントは「授業があった日の夜に、15分だけ、その日やった所を、閉じて、思い出しておく」なのです。</p>
+<p>学校の授業でなくても、同じです。動画の授業でも、自分で進めた参考書でも、新しくやった日の夜が、「1回目」です。</p>
+<p>これを続けた人にとって、テストの前の日は、「3回目」か「4回目」です。まとめてやる人にとっては、「1回目」です。</p>
+<p>前の日に追い込まれるのは、前の日が、「1回目」になっているからです。</p>
+<p>だから、「1回目」を、前に持ってきます。授業があった日の夜に、15分だけ。その日やった所を、閉じて、思い出しておく。これが、「1回目」です。</p>
+<p>時間を足すのが目的では、ありません。テストの前にやるはずだった分を、先に、少しずつやっておくだけです。その分、テストの前は、軽くなります。</p>
 <p>学校の授業でなくても、同じです。動画の授業でも、自分で進めた参考書でも、新しくやった日の夜が、「1回目」です。</p>
 <h3>「2回目は、何日あければいいですか？」</h3>
-<p>よく聞かれます。答えは、「1日以上あけば、あとは、だいたいで、いい」です。次の日でも、3日後でも、週末でも、分けた効果は、あります。</p>
+<p>よく聞かれます。答えは、まずは「1日以上あけば、あとは、だいたいで、いい」です。次の日でも、3日後でも、週末でも、分けた効果は、あります。</p>
 <p>損をするのは、同じ日に続けてやる時です。あけるのが、少し長すぎるくらいなら、損は、ほとんどありません。</p>
 <p>「1日後、1週間後、1ヶ月後に復習する」。そういう表を、見たことがあると思います。巻頭ページで計算した通り、あの表を、覚えたもの全部で守ろうとすると、1日にやる量が、どんどん増えていきます。ほとんどの人は、続きません。完璧な表を守ろうとして、3日でやめてしまったら、もったいないです。</p>
 <p>絶対法則04を、思い出してください。先に、「やらないといけないこと」。「やったほうがいいこと」は、そのあと、でした。</p>
 <p>分散も、同じです。</p>
-<pre>　　やらないといけないこと　　2回目は、別の日にやる
-　　やったほうがいいこと　　　3回目、4回目と、間をあけて重ねる</pre>
-<p class="q"><mark>まず、「2回目は、別の日にやる」。これだけは、守ってください。</mark></p>
-<p>余裕があれば、3回目、4回目を足します。置く場所は、週末と、テストの1週間前です。そこまでやっておくと、テストの前の日は、確認するだけで終わります。もう、追い込まれません。</p>
+<p>・やらないといけないこと
+＝2回目は、別の日にやる
+・やったほうがいいこと
+＝3回目、4回目と、間をあけて重ねる</p>
+<p>まず、「2回目は、別の日にやる」これだけは、守ってください。余裕があれば、3回目、4回目を足します。置く場所は、週末と、テストの1週間前です。そこまでやっておくと、テストの前の日は、確認するだけで終わります。もう、追い込まれません。</p>
 <h3>「1日の中では、どうすればいいですか？」</h3>
-<p>ここまでは、日をまたぐ話でした。</p>
-<p>1日の中にも、まとめてやらないための、やり方があります。くわしくは、このあとの項目に書きました。</p>
-<pre>　　25分で、区切る　　　　　　　09
-　　すきまの3分を使う　　　　　30
-　　同じ種類を続けず、混ぜる　　20</pre>
-<p>ただ、1日の中でどれだけうまくやっても、その日だけで終わりにしたら、長くは残りません。</p>
-<p>だから、絶対法則05で決めることは、1つだけです。</p>
-<p class="q"><mark>同じものを、別の日に、もう一度やる。</mark></p>
-<p>別の日にやる時のやり方は、12番に書きました。</p>
+<p>ここまでは、日をまたぐ話でした。1日の中にも、まとめてやらないための、やり方があります。くわしくは、このあとの項目に書きました。</p>
+<p class="tab">25分で、区切る　　　　　　　37
+すきまの3分を使う　　　　　31
+同じ種類を続けず、混ぜる　　17</p>
+<p>ただ、1日の中でどれだけうまくやっても、その日だけで終わりにしたら、長くは残りません。だから、絶対法則05で決めることは、1つだけです。</p>
+<p>同じものを、別の日に、もう一度やる。別の日にやる時のやり方は、16番に書きました。</p>
 <p>何度もやるので、1回目を完璧にする必要は、ありません。次の絶対法則06で、説明します。</p>
-<div class="tag">頭のいい人と伸びない人の違い</div>
-<div class="koma"><div class="k x"><span>伸びない人</span><b>まとめて一気に</b><i>前の日に、なんとかする</i></div><div class="k o"><span>頭のいい人</span><b>分けて繰り返す</b><i>今日はここまで。また明日</i></div></div>
-<div class="tag">今日からできる3STEP</div>
-<div class="sheet"><p class="sttl">頭のいい人の『分け方』3STEP</p><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">今日やった所を、夜15分、閉じて言う</p><p class="say">「今日が、1回目」</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">2回目をやる日を、決めて書く</p><p class="say">「次は、土曜にやろう」</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">決めた日に、言えなかった所だけやる</p><p class="say">「2回目は、すぐ終わるな」</p></div></div><div class="king"><span>「できた」の基準</span><p>同じ内容を、別の日にもう一度、閉じて言えたらOK！</p></div></div>
-<div class="mwrap"><div class="tag">まとめ</div>
-<div class="matome"><p class="one">同じ時間でも、まとめるか、分けるかで、残る量が変わる。</p><ol><li>まとめてやると、すぐあとには効く。でも、長くは持たない</li><li>同じ2回でも、間をあけたほうが、あとまで残る</li><li>追い込まれるのは、前の日が「1回目」だから。習った日を、1回目にする</li></ol><p class="raw">だから、時間は増やさない。分ける。2回目は、別の日にやる。</p><p class="raw">迷ったら、自分に聞きます。「これ、次は、いつやる？」</p></div>
-</div></section></div>
-<div class="sec" id="i06"><section class="item">
-<div class="tag">章最初のページ</div>
-<div class="d1"><p class="dno">06</p><p>絶対法則06　速度</p><p class="big">失敗を避けない。早く解いて、早く直す</p></div>
-<div class="tag">導入文</div>
-<p>「基礎が、大事」</p>
-<p>「ちゃんと理解してから、次に進みなさい」</p>
-<p>何度も、言われてきたと思います。どちらも、正しいです。</p>
+<p class="lab">頭のいい人と伸びない人の違い</p>
+<p class="lab s">伸びない人</p>
+<p>まとめて一気に
+前の日に、なんとかする</p>
+<p class="lab s">頭のいい人</p>
+<p>分けて繰り返す
+今日はここまで。また明日</p>
+<p class="lab">今日からできる3STEP</p>
+<p class="lab s">STEP01</p>
+<p>今日やった所を、夜15分、閉じて言う
+「今日が、1回目」</p>
+<p class="lab s">STEP02</p>
+<p>2回目をやる日を、決めて書く
+「次は、土曜にやろう」</p>
+<p class="lab s">STEP03</p>
+<p>決めた日に、言えなかった所だけやる
+「2回目は、すぐ終わるな」</p>
+<p class="lab s">できた基準</p>
+<p>同じ内容を、別の日にもう一度、閉じて言えたらOK！</p>
+<p class="lab">まとめ</p>
+<p>同じ時間でも、まとめるか、分けるかで、残る量が変わる。</p>
+<p>①まとめてやると、すぐあとには効く。でも、長くは持たない
+②同じ2回でも、間をあけたほうが、あとまで残る
+③追い込まれるのは、前の日が「1回目」だから。習った日を、1回目にする</p>
+<p>だから、時間は増やさない。分ける。2回目は、別の日にやる。
+迷ったら、自分に聞きます。「これ、次は、いつやる？」</p></div>
+<div class="sec" id="i06"><div class="ihead"><span class="no">06</span><p>【絶対法則】速度</p></div><p class="lab">章最初のページ</p>
+<p class="lab">導入文</p>
+<p>「基礎が、大事」
+「ちゃんと理解してから、次に進みなさい」
+何度も、言われてきたと思います。どちらも、正しいです。</p>
 <p>だから、真面目な人ほど、こうなります。</p>
-<p>「まだ基礎が完璧じゃないので、問題を解くのは、まだ……」</p>
-<p>「過去問は、もう少し力がついてから……」</p>
-<p>文法書を、第1章から、丁寧に読む。ノートに、まとめる。解説の動画も、見る。</p>
-<p>3週間たちました。まだ、第2章です。ノートは、きれいに埋まっています。でも、問題は、1問も解いていません。</p>
-<p>サボっているわけでは、ありません。たくさん、入れました。ただ、<mark>点は、まだ1点も動いていません。</mark></p>
-<p>結果が出ない人ほど、解くのを後回しにします。結果を出す人は、逆です。早く解いて、早く間違えて、早く直します。</p>
-<p>この「解く → 間違える → 直す」を、どれだけ早く始めて、何回やるか。それを、「速度」と呼びます。問題を速く解く、という意味では、ありません。</p>
+<p>「まだ基礎が完璧じゃないので、問題を解くのは、まだ……」
+「過去問は、もう少し力がついてから……」
+文法書を、第1章から、丁寧に読む。ノートにまとめる。解説の動画も、見る。</p>
+<p>3週間が経ちました。まだ、第2章です。ノートは、きれいに埋まっています。でも、問題は、1問も解いていません。</p>
+<p>サボっているわけでは、ありません。たくさん、入れました。ただ、点は、まだ1点も動いていません。</p>
+<p>結果が出ない人ほど、解くのを後回しにします。逆に、結果を出す人は、逆のことをします。早く解いて、早く間違えて、早く直します。この「解く→間違える→直す」を、どれだけ早く始めて、何回やるか。それを、「速度」と呼びます。問題を速く解く、という意味では、ありません。</p>
 <p>頭のいい人の絶対法則、6つ目。「速度」を、具体的に見ていきましょう。</p>
-<div class="tag">質問ページ</div>
-<div class="qpage"><p class="q1">頭のいい人が絶対やらないこと</p><p class="q2">「基礎を固めてから…」</p><p class="q3">じゃあ、何をするの？</p></div>
-<div class="tag">本文</div>
-<h3>新しいゲームを始める時、説明を、全部読みますか？</h3>
-<p>新しいゲームを始める時のことを、思い出してください。</p>
-<p>説明を、最初から最後まで全部読んで、完璧に理解してから、始めますか。</p>
-<p>……</p>
-<p>ほとんどの人が、読みません。ボタンの使い方のような、最低限のことだけ確かめたら、もう始めたはずです。</p>
-<p>やってみる。負ける。「あ、こうすればいいのか」と、やり方を変える。また、やる。</p>
-<p>この繰り返しで、気づいたら、うまくなっています。</p>
-<p>やってみると、どこで負けたのかが、はっきりします。直す所がはっきりするので、自分から、どんどん直せます。</p>
-<p>ゲームは、何度でも失敗できます。そして、<mark>攻略のコツは、早く失敗すること</mark>です。</p>
-<p>ゲームなら、誰でも、こうやっています。ところが、勉強になると、急に変わります。</p>
-<p class="q">「ちゃんと理解してから、問題を解こう」<br>「基礎を固めてから、過去問を開こう」</p>
-<p>うまくなる順番は、ゲームも、勉強も、同じです。</p>
-<p class="q"><mark>やってみる　→　間違える　→　直す</mark></p>
-<p>うまくなるのは、「直す」の所です。そして、やってみないと、直す所が見つかりません。</p>
+<p class="lab">質問ページ</p>
+<p>頭のいい人が絶対やらないこと
+「基礎を固めてから...」
+じゃあ、何をするの？</p>
+<p class="lab">本文</p>
+<h3>新しいゲームを始める時、説明を全部読みますか？</h3>
+<p>新しいゲームを始める時のことを、思い出してください。説明書を、最初から最後まで全部読んで、完璧に理解してから、始めますか。…ほとんどの人が、読みません。ボタンの使い方のような、最低限のことだけ確かめたら、もう始めたはずです。</p>
+<p>やってみる。負ける。「あ、こうすればいいのか」と、やり方を変える。また、やってみる。この繰り返しで、気づいたら、うまくなっています。やってみると、どこで負けたのかが、はっきりします。直す所がはっきりするので、自分から、どんどん直せます。</p>
+<p>ゲームは、何度でも失敗できます。そして、攻略のコツは、早く失敗することです。ゲームなら、誰でも、こうやっています。</p>
+<p>ところが、勉強になると、急に変わります。
+「ちゃんと理解してから、問題を解こう」
+「基礎を固めてから、過去問を開こう」
+うまくなる順番は、ゲームも、勉強も、同じです。</p>
+<p>やってみる→間違える→直す
+うまくなるのは、「直す」の所です。そして、やってみないと、直す所が見つかりません。</p>
 <h3>解かないうちは、どこがわかっていないかが、わかりません</h3>
-<p>読んでいるだけでは、自分がどこをわかっていないのかが、わかりません。わからないので、全部を、もう1回読みます。それでも不安なので、もう1回読みます。</p>
-<p>絶対法則01で見た通り、3回目からは、読んでも、点はほとんど増えません。</p>
-<p>わかっていない所は、解いて、×がついた時に、初めて見つかります。</p>
-<p class="q"><mark>わかってから、解く。ではなく、解いてから、わかる。</mark></p>
-<h3>読む所を、先に決めます。そこまで来たら、自分を試します</h3>
-<p>だから、決まりは、1つです。</p>
-<p class="q"><mark>読む所を、先に決める。そこまで読んだら、わかっていなくても、自分を試す。</mark></p>
-<p>試し方は、2つです。</p>
-<pre>　　問題がある時（問題集、参考書）　例題を1つ読んだら、すぐ、下の問題を解く
-　　問題がない時（教科書、動画）　　見出し1つ分読んだら、閉じて、何も見ずに言う</pre>
+<p>読んでいるだけでは、自分がどこをわかっていないのかが、わかりません。わからないので、全部を、もう1回読みます。それでも不安なので、もう1回読みます。(こんな経験ありますよね...？)</p>
+<p>ただ、絶対法則01で見た通り、3回目からは、読んでも、点はほとんど増えません。</p>
+<p>わかっていない所は、解いて、×がついた時に、初めて見つかります。「わかってから、解く。ではなく、解いてから、わかる。』が結果を出すためには必須なんです。</p>
+<h3>読む所を、先に決めます。そこまで来たら、自分を試せ。</h3>
+<p>だから、決まりは、1つです。読む所を、先に決める。そこまで読んだら、わかっていなくても、自分を試す。試し方は、2つです。</p>
+<p>・問題がある時（問題集、参考書）
+例題を出てきたら、そこまでの知識を使って一回解け。
+・問題がない時（教科書、動画）
+見出し1つ分読んだら、閉じて、何も見ずに言え。</p>
 <p>2つ目は、絶対法則02の「思い出す」です。解くのも、思い出すのも、やっていることは同じです。自分の頭から出てくるかを、確かめています。</p>
-<p>「わかったら、試す」にすると、いつまでも試せません。絶対法則01で見た通り、「わかった」という感じは、当てにならないからです。だから、わかったかどうかでは、決めません。読む量で、決めます。</p>
+<p>「わかったら、試す」にすると、いつまでも試せません。絶対法則01で見た通り、自分の中の「わかった」という感じは、当てにならないからです。だから、わかったかどうかでは、決めません。読む量で、決めてください。</p>
 <p>気持ちの目安は、6割です。「半分よりは、わかったかな」くらいで、十分です。10割を、待たないでください。</p>
 <p>絶対法則05で書いた通り、同じ所は、このあと何度もやります。1回目から完璧にする必要は、ありません。</p>
 <p>試すと、×がつきます。言えなかった所も、×です。×がついた所が、わかっていなかった所です。そこだけ戻って、読み直します。</p>
-<pre>　　わかってから試す　→　全部を何回も読む。どこが弱いかは、最後までわからない
-　　先に試して、直す　→　×がついた所だけを読み直す。弱い所から、埋まる</pre>
-<p>ほとんどできなかった時は、読む所に戻れば、いいだけです。それも、試したから、わかったことです。</p>
+<p>わかってから試す
+→全部を何回も読む。どこが弱いかは、最後までわからない</p>
+<p>先に試して、直す
+→×がついた所だけを読み直す。弱い所から、埋まる</p>
+<p>ほとんどできなかった時は、読む所に戻れば、いいだけです。それも、試したからこそ、わかったことです。</p>
 <h3>×は、失敗ではありません。次にやる所の、目印です</h3>
-<p>×がつくのが、こわい。その気持ちは、わかります。解かなければ、「できていない自分」を、見なくてすみます。読んでいる時や、計画を立てている時は、絶対法則03で書いた「楽にできる範囲」の中に、いられます。だから、人は、解くのを後回しにします。</p>
+<p>×がつくのが、こわい。その気持ちは、わかります。</p>
 <p>でも、×が1つもつかない勉強は、もうできることを、確認しているだけです。絶対法則03で見た通り、それでは、できることは増えません。</p>
 <p>×がついた所が、「うーん」となる所です。伸びるのは、そこです。</p>
 <p>本番のテストで間違えたら、点を失います。練習で間違えても、何も失いません。今の小テストで0点を取っても、人生は、何も変わりません。だから、今が、一番試せます。</p>
-<p>できていないこと自体は、何も悪くありません。悪いのは、できないままで、いることです。</p>
-<h3>完璧にこだわるなら、途中ではなく、最後の結果に</h3>
-<p>「雑にやれ」という話では、ありません。「完璧主義を捨てろ」という話でも、ありません。こだわる場所を、変えるだけです。</p>
-<pre>　　×　途中で、完璧にこだわる　　　間違えないように進む。1回目から、きれいにやろうとする
-　　○　最後に勝つことに、こだわる　さっさと失敗して、さっさと直して、最後に勝ち切る</pre>
+<p>できていないこと自体は、何も悪くありません。悪いのは、できないままでいることです。</p>
+<h3>完璧にこだわるなら、途中ではなく、最後の結果に。</h3>
+<p>「雑にやれ」という話では、ありません。「完璧主義を捨てろ」という話でもありません。こだわる場所を、変えろということです。</p>
+<p>×　途中で、完璧にこだわる
+間違えないように進む。1回目から、きれいにやろうとする</p>
+<p>○　最後に勝つことに、こだわる
+さっさと失敗して、さっさと直して、最後に勝ち切る</p>
 <p>途中で×が何個ついても、最後のテストで取れれば、勝ちです。途中がどれだけきれいでも、最後に取れなければ、負けです。</p>
 <p>「はじめに」で、「やるからには、勝ちにいく」と書きました。こだわるのは、そこです。</p>
 <p>だから、早くするのは、解き始めることだけです。×は、○になるまで、ちゃんと直します。解き始めるのは、早く。直すのは、最後まで。この2つで、1セットです。</p>
 <h3>意志では、変わりません。先に、仕組みを作ります</h3>
 <p>ここまで読んで、「よし、明日から、すぐ解こう」と思った人も、いると思います。</p>
 <p>ただ、絶対法則03で書いた通り、人には、「今のままでいたい」という反応が、もともとあります。間違えたくない。×を見たくない。その気持ちは、誰にでもあります。意志の力で、毎回それに勝つのは、難しいです。</p>
-<p>だから、意志には、頼りません。<mark>いやでも解くことになる仕組みを、先に作ります。</mark></p>
-<pre>　　読むのをやめるページに、先に、ふせんを貼っておく
-　　解く日を、先に、カレンダーに書いておく
-　　友達と、「金曜に、問題を出し合おう」と約束する</pre>
+<p>だから、意志には、頼りません。いやでも解くことになる仕組みを、先に作ります。</p>
+<p>・読むのをやめるページに、先に、ふせんを貼っておく
+・解く日を、先に、カレンダーに書いておく
+・友達と、「金曜に、問題を出し合おう」と約束する</p>
 <p>1つ目が、このあとの3STEPです。</p>
 <h3>6つの絶対法則が、そろいました</h3>
 <p>「早く始める」は、このあとの項目にも出てきます。</p>
-<pre>　　読む前に、問題を1問だけ見ておく　17
-　　考える時間を、先に決める　　　　　21
-　　過去問は、最初に開く　　　　　　　17
-　　片づける前に、1問解く　　　　　　34</pre>
+<p class="tab">・読む前に、問題を1問だけ見ておく　11
+・考える時間を、先に決める　　　　　18
+・過去問は、最初に開く　　　　　　　34
+・片づける前に、1問解く　　　　　　40</p>
 <p>形は違いますが、もとは、この絶対法則06です。</p>
 <p>これで、6つの絶対法則が、全部そろいました。迷った時は、この6つを、自分に聞いてください。</p>
-<pre>　　01　疑う　　　　これで、点は上がる？
-　　02　思い出す　　今、何も見ずに言える？
-　　03　負荷　　　　今、うーんってなってる？
-　　04　戦略　　　　これ、ゴールに必要？
-　　05　分散　　　　これ、次は、いつやる？
-　　06　速度　　　　もう、解いてみた？</pre>
+<p class="tab">01　疑う　　　　これで、点は上がる？
+02　思い出す　　今、何も見ずに言える？
+03　負荷　　　　今、うーんってなってる？
+04　戦略　　　　これ、ゴールに必要？
+05　分散　　　　これ、次は、いつやる？
+06　速度　　　　もう、解いてみた？</p>
 <p>第2章からは、この6つを、場面ごとに使っていきます。</p>
-<div class="tag">頭のいい人と伸びない人の違い</div>
-<div class="koma"><div class="k x"><span>伸びない人</span><b>失敗を避ける</b><i>間違えたくない。まだ解かない</i></div><div class="k o"><span>頭のいい人</span><b>先に失敗する</b><i>早く間違えて、早く直そう</i></div></div>
-<div class="tag">今日からできる3STEP</div>
-<div class="sheet"><p class="sttl">頭のいい人の『進み方』3STEP</p><div class="st"><div class="lab">STEP<b>01</b></div><div><p class="do">読むのをやめるページに、ふせんを貼る</p><p class="say">「ここまで読んだら、解く」</p></div></div><div class="st"><div class="lab">STEP<b>02</b></div><div><p class="do">ふせんまで読んだら、5問解く</p><p class="say">「6割でいい。もう解こう」</p></div></div><div class="st"><div class="lab">STEP<b>03</b></div><div><p class="do">×の所だけ読んで、もう一度解く</p><p class="say">「ここだけ読んで、もう1回」</p></div></div><div class="king"><span>「できた」の基準</span><p>×だった問題を、何も見ずに、○にできたらOK！</p></div></div>
-<div class="mwrap"><div class="tag">まとめ</div>
-<div class="matome"><p class="one">さっさと失敗して、さっさと直す。伸びるのは、直した時。</p><ol><li>解かないうちは、楽。でも、どこがわかっていないかは、解くまで、わからない</li><li>読む所を先に決めて、そこまで来たら、解く。問題がなければ、閉じて言う</li><li>こだわるのは、途中の完璧ではなく、最後に勝つこと</li></ol><p class="raw">だから、失敗を避けない。意志に頼らず、解くしかない仕組みを、先に作る。</p><p class="raw">迷ったら、自分に聞きます。「もう、解いてみた？」</p></div>
-</div></section></div><script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>
+<p class="lab">頭のいい人と伸びない人の違い</p>
+<p class="lab s">伸びない人</p>
+<p>失敗を避ける
+間違えたくない。まだ解かない</p>
+<p class="lab s">頭のいい人</p>
+<p>先に失敗する
+早く間違えて、早く直そう</p>
+<p class="lab">今日からできる3STEP</p>
+<p class="lab s">STEP01</p>
+<p>読むのをやめるページに、ふせんを貼る
+「ここまで読んだら、解く」</p>
+<p class="lab s">STEP02</p>
+<p>ふせんまで読んだら、5問解く
+「6割でいい。もう解こう」</p>
+<p class="lab s">STEP03</p>
+<p>×の所だけ読んで、もう一度解く
+「ここだけ読んで、もう1回」</p>
+<p class="lab s">できた基準</p>
+<p>×だった問題を、何も見ずに、○にできたらOK！</p>
+<p class="lab">まとめ</p>
+<p>さっさと失敗して、さっさと直す。伸びるのは、直した時。</p>
+<p>①解かないうちは、楽。でも、どこがわかっていないかは、解くまで、わからない
+②読む所を先に決めて、そこまで来たら、解く。問題がなければ、閉じて言う
+③こだわるのは、途中の完璧ではなく、最後に勝つこと</p>
+<p>だから、失敗を避けない。意志に頼らず、解くしかない仕組みを、先に作る。迷ったら、自分に聞きます。「もう、解いてみた？」</p></div><script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>

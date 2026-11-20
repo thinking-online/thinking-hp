@@ -63,6 +63,9 @@ CAND = {
  "45": ["値段で選ぶ", "安さで決める", "タダにこだわる"],
  "46": ["合格がゴール", "受かったら終わり", "合格で燃えつきる"],
 }
+# 著者の手元の原稿（manuscript/著者の最新原稿/）に頭の2行がある項目は、その言葉をAにする。前のAは、別の案として残す
+for _no, (_x, _o) in M1.AUTHOR.items():
+    CAND[_no] = ([_x] + [c for c in CAND[_no] if c.replace("|", "") != _x])[:3]
 YARANAI = {no: c[0].replace("|", "") for no, c in CAND.items()}
 MARU = {
  "01": "まず、疑う", "02": "閉じて思い出す", "03": "止まる問題を選ぶ", "04": "先に、狙いを決める", "05": "小分け勉強", "06": "6割スタート",
@@ -71,9 +74,9 @@ MARU = {
 }
 KUCHI = {"01": "これで、点は上がるの？", "02": "今、閉じて出せる？", "03": "止まる問題は、どれ？", "04": "これ、出るの？", "05": "今日はここまで。明日もう1回", "06": "6割わかった。もう解こう"}
 for _no, _it in V.ITEMS.items():
-    if _it.get("pair"):
-        assert YARANAI[_no] == _it["pair"][0], (_no, YARANAI[_no], _it["pair"][0])   # Aは、今の原稿の言葉と同じ
-        MARU[_no] = _it["pair"][1]
+    if _no in M1.AUTHOR or _it.get("pair"):
+        assert YARANAI[_no] == M1.pair(_no)[0], (_no, YARANAI[_no], M1.pair(_no)[0])   # Aは、今の原稿の言葉と同じ
+        MARU[_no] = M1.pair(_no)[1]
     KUCHI[_no] = B.matome(_no)[3]
 
 

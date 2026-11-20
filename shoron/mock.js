@@ -1,6 +1,6 @@
 /* 小論文ポータル プレビュー用の仮データと仮のAPI（?preview=1 のときだけ読み込む）。
  * 本番の GAS（gas/Code.gs）と同じ形で返す。データはこのタブの中だけに保存され、タブを閉じると消える。
- * 課題はすべて塾のオリジナル。AI の下書きは決まった文を返すだけの見本で、本物の添削ではない。 */
+ * 生徒が送った問題という設定の文章は、すべて塾のオリジナル。AI の下書きは決まった文を返すだけの見本で、本物の添削ではない。 */
 (function () {
   var CRIT = [["q", "設問への応答"], ["read", "課題文・資料の読解"], ["logic", "論理構成"], ["evid", "論証・具体性"], ["orig", "独自性・考察"], ["expr", "表現・表記"]];
   var W = { "既定": [20, 20, 20, 15, 15, 10], "文": [20, 25, 15, 15, 15, 10], "法": [20, 25, 20, 15, 10, 10], "経済": [20, 20, 20, 20, 10, 10], "商": [20, 20, 25, 15, 10, 10], "総合政策": [20, 15, 15, 15, 25, 10], "環境情報": [20, 15, 15, 15, 25, 10] };
@@ -195,7 +195,7 @@
   }, "総合政策");
 
   function seed() {
-    return {
+    var db = {
       users: [
         { uid: "U-hikari", name: "佐藤 ひかり", target: "法", note: "型は身についている。課題は設問の読み取りと字数。" },
         { uid: "U-ao", name: "田中 蒼", target: "総合政策", note: "" },
@@ -211,9 +211,18 @@
         { id: "S-0006", at: days(0, 7), raw: "提出済", name: "山本 結衣", uid: "U-yui", task: "T001", ver: 1, min: 30, text: E6, memo: "初めて書きました。", prev: "", back: "", seen: false, draft: null, review: null, teacher: "", qa: [] }
       ]
     };
+    // 生徒が送った問題を、提出そのものに持たせる（本番と同じ形）
+    db.subs.forEach(function (s) {
+      var t = task(s.task);
+      s.uni = t.uni; s.fac = t.fac; s.year = ""; s.title = t.title; s.limit = t.limit; s.probFiles = 0;
+      s.q = t.q + (t.text ? "\n\n【課題文】\n" + t.text : "");
+      s.root = s.prev || s.id;
+      delete s.task; delete s.min;
+    });
+    return db;
   }
 
-  var KEY = "sr.mock.v1";
+  var KEY = "sr.mock.v2";
   var DB;
   try { DB = JSON.parse(sessionStorage.getItem(KEY) || "null"); } catch (e) { DB = null; }
   if (!DB) DB = seed();
@@ -227,9 +236,9 @@
     return { uid: "U-hikari", name: "佐藤 ひかり", role: "student", target: "法" };
   }
   function pub(s, staff) {
-    var o = { id: s.id, at: s.at, state: s.raw === "返却済" ? "done" : "wait", name: s.name, task: s.task, ver: s.ver, chars: count(s.text), min: s.min, text: s.text, memo: s.memo, prev: s.prev, back: s.back, seen: s.seen, qa: s.qa, photos: 0 };
+    var o = { id: s.id, at: s.at, state: s.raw === "返却済" ? "done" : "wait", name: s.name, uni: s.uni, fac: s.fac, year: s.year, title: s.title, q: s.q, limit: s.limit, probFiles: s.probFiles || 0, ver: s.ver, chars: count(s.text), text: s.text, memo: s.memo, root: s.root, prev: s.prev, back: s.back, seen: s.seen, qa: s.qa, photos: s.photos || 0 };
     if (s.raw === "返却済") o.review = s.review;
-    if (staff) { o.uid = s.uid; o.raw = s.raw; o.draft = s.draft; o.review = s.review; o.photoUrls = []; o.aiNote = ""; o.teacher = s.teacher; }
+    if (staff) { o.uid = s.uid; o.raw = s.raw; o.draft = s.draft; o.review = s.review; o.probUrls = []; o.photoUrls = []; o.aiNote = ""; o.teacher = s.teacher; }
     return JSON.parse(JSON.stringify(o));
   }
   function find(id) { return DB.subs.filter(function (s) { return s.id === id; })[0]; }
@@ -237,7 +246,7 @@
 
   /** 見本の下書き。字数と段落の数だけを見て決まった文を返す（本物の添削ではない） */
   function fakeDraft(s) {
-    var t = task(s.task), n = count(s.text), ratio = t.limit ? n / t.limit : 1;
+    var t = { limit: s.limit, fac: s.fac }, n = count(s.text), ratio = t.limit ? n / t.limit : 1;
     var paras = s.text.split(/\n+/).filter(String);
     var base = ratio >= 0.9 ? 4 : ratio >= 0.6 ? 3 : 2;
     var first = (paras[0] || "").split("。")[0];
@@ -246,7 +255,7 @@
         CRIT.map(function () { return "（プレビュー用の見本です。本番ではここに、答案のどこを見てこのレベルにしたかが入ります）"; })),
       summary: "これはプレビュー用の見本の下書きです。本番では、AI が課題文・出題のねらい・観点・この生徒のこれまでの添削を読んだうえで下書きを作り、講師が直してから返却します。",
       strengths: ["（見本）段落が " + paras.length + " つに分かれています。"],
-      priorities: ratio < 0.9 ? [{ t: "字数を上限の9割まで書く", why: "いまは " + n + " 字で、上限 " + t.limit + " 字の " + Math.round(ratio * 100) + "% です。", how: "書きはじめる前に、段落ごとの字数を割りふってください。" }] : [],
+      priorities: t.limit && ratio < 0.9 ? [{ t: "字数を上限の9割まで書く", why: "いまは " + n + " 字で、上限 " + t.limit + " 字の " + Math.round(ratio * 100) + "% です。", how: "書きはじめる前に、段落ごとの字数を割りふってください。" }] : [],
       inline: first.length >= 6 ? [{ q: first, kind: "issue", c: "（見本）書き出しの一文です。本番では、問題のある箇所と良い箇所にそれぞれコメントが付きます。", fix: "" }] : [],
       outline: paras.map(function (p, i) { return { role: i === 0 ? "書き出し" : i === paras.length - 1 ? "結論" : "展開", note: "" }; }),
       rewrite: "（見本）段落ごとに何を書くかの設計図が入ります。",
@@ -259,16 +268,23 @@
       var u = me(), staff = u.role === "staff";
       return {
         status: "ok", user: u, cfg: { title: "THINKING 小論文ラボ", lineUrl: "https://lin.ee/yJ8MFVb", dailyLimit: 3 }, rubric: RUBRIC, tags: TAGS,
-        tasks: TASKS.filter(function (t) { return u.role !== "guest" || t.sample; }).map(function (t) { var c = JSON.parse(JSON.stringify(t)); if (!staff) delete c.aim; return c; }),
+        facs: ["文", "法", "経済", "商", "総合政策", "環境情報"],
         subs: DB.subs.filter(function (s) { return s.uid === u.uid; }).map(function (s) { return pub(s, staff); })
       };
     },
     submit: function (b) {
-      var u = me(), t = task(b.task);
-      var same = DB.subs.filter(function (s) { return s.uid === u.uid && s.task === b.task; });
-      var s = { id: "S-" + ("000" + (DB.subs.length + 1)).slice(-4), at: new Date().toISOString(), raw: "AI下書き済", name: u.name, uid: u.uid, task: b.task, ver: same.length + 1, min: b.min || 0,
-        text: b.text || "（写真で提出。本番では AI が文字に起こします）", memo: b.memo || "", prev: same.length ? same[same.length - 1].id : "", back: "", seen: false, draft: null, review: null, teacher: "", qa: [] };
+      var u = me(), mine = DB.subs.filter(function (s) { return s.uid === u.uid; });
+      var base = b.root ? mine.filter(function (s) { return s.id === b.root; })[0] : null;
+      var same = base ? mine.filter(function (s) { return s.root === base.root; }) : [];
+      var id = "S-" + ("000" + (DB.subs.length + 1)).slice(-4);
+      var p = base || { uni: b.uni || "", fac: b.fac || "", year: b.year || "", title: "", q: b.q || "", limit: Number(b.limit) || 0, probFiles: (b.probFiles || []).length, root: id };
+      var photo = !b.text;
+      var s = { id: id, at: new Date().toISOString(), raw: "AI下書き済", name: u.name, uid: u.uid, ver: same.length + 1,
+        uni: p.uni, fac: p.fac, year: p.year, title: p.title || "送られた問題（本番では AI が題名を付けます）", q: p.q, limit: p.limit, probFiles: p.probFiles || 0, root: p.root,
+        text: b.text || "（写真で送られた答案。本番では AI が文字に起こした本文がここに入ります）", photos: (b.photos || []).length,
+        memo: b.memo || "", prev: same.length ? same[same.length - 1].id : "", back: "", seen: false, draft: null, review: null, teacher: "", qa: [] };
       s.draft = fakeDraft(s);
+      if (photo) { s.draft.inline = []; }
       DB.subs.push(s); persist();
       return { status: "ok", id: s.id };
     },
@@ -281,8 +297,8 @@
     seen: function (b) { var s = find(b.sub); if (s) { s.seen = true; persist(); } return { status: "ok" }; },
     queue: function () { return { status: "ok", subs: DB.subs.map(function (s) { return pub(s, true); }), students: JSON.parse(JSON.stringify(DB.users)) }; },
     saveReview: function (b) {
-      var s = find(b.sub), t = task(s.task);
-      s.review = fin(JSON.parse(JSON.stringify(b.review)), t.fac);
+      var s = find(b.sub);
+      s.review = fin(JSON.parse(JSON.stringify(b.review)), s.fac);
       s.teacher = me().name;
       if (b.text) s.text = b.text;
       if (b.back) { s.raw = "返却済"; s.back = new Date().toISOString(); s.seen = false; }

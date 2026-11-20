@@ -39,6 +39,7 @@ def fixnum(t, where, tables=False):
                 raise SystemExit("%s: なくなった項目を指している: %s" % (where, l.strip()))
             return k2 + "番"
         l = re.sub(r"(?<![0-9])([0-9]{2})番", f, l)
+        l = re.sub(r"([0-9]{2})番(?:と|、|・|や)\1番", r"\1番", l)   # まとめた結果、同じ番号が2つ並んだ所は、1つにする
         if tables:
             arrow = re.search(r"→[　 ]*[0-9]{2}(?=[ 　]|$)", l)
             if arrow:

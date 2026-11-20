@@ -5,8 +5,8 @@
 # ①やらない系　②パクる系　③二項対立系。キャッチ「早慶合格・学年1位・試験一発合格！」は共通（著者の案）。
 import io, html, re, sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from words_v2 import PAKURU, KUCHI
-from build_katachi import WORDS as YARANAI
+import words46 as W46   # 2026-11-20：今の46項目の言葉
+YARANAI, PAKURU, KUCHI, N = W46.YARANAI, W46.MARU, W46.KUCHI, W46.N
 
 def E(s):
     return re.sub(r"(?<![0-9])([0-9]{2,3})(?![0-9])", r'<span class="tcy">\1</span>', html.escape(s))
@@ -21,10 +21,10 @@ def cover(kind):
         body = ('<span class="ttl t1"><span class="a">頭のいい人が</span><span class="b">絶対やらない</span><span class="c">勉強法</span></span>')
     elif kind == 2:
         body = ('<span class="ttl t2"><span class="a">パクったら</span><span class="b">頭が良くなった</span>'
-                '<span class="c"><b>50</b>の勉強法</span></span>')
+                '<span class="c"><b>%d</b>の勉強法</span></span>' % N)
     else:
         body = ('<span class="ttl t3"><span class="up">頭がいい人</span><span class="to">と</span><span class="dn">伸びない人</span>'
-                '<span class="sub">勉強法　50の違い</span></span>')
+                '<span class="sub">勉強法　%dの違い</span></span>' % N)
     return f'<span class="cv k{kind}">{hook}{body}{foot}</span>'
 
 def ksize(n):
@@ -54,16 +54,16 @@ def page_taihi(no):
             f'<span class="p ng"><span class="hd"><b>×</b>伸びない人</span><span class="wd" style="font-size:{psize(len(x))}cqw">{E(x)}</span></span>'
             f'</span></span>')
 
-SAMPLES = ["02", "26"]
+SAMPLES = ["02", "22"]
 DIRS = [
  (1, "やらない系", "頭のいい人が絶対やらない勉強法", page_yaranai,
   lambda no: f'頭のいい人が絶対にやらない<b>「{html.escape(YARANAI[no])}」</b>',
-  ["「え、それダメなの？」という引っかかりで、手に取らせる", "今の原稿は、50項目とも×（やらないこと）が見出し。そのまま合う"],
+  ["「え、それダメなの？」という引っかかりで、手に取らせる", "今の原稿は、%d項目とも「しない」と「する」の対が見出し。「しない」の言葉が、そのまま入る" % N],
   ["何が手に入るのかが、書名だけでは見えにくい。帯やサブタイトルで補う"]),
- (2, "パクる系", "パクったら頭が良くなった50の勉強法", page_pakuru,
+ (2, "パクる系", "パクったら頭が良くなった%dの勉強法" % N, page_pakuru,
   lambda no: f'パクったら頭がよくなった<b>「{html.escape(PAKURU[no])}」</b>',
-  ["手に入るものが、書名ですぐわかる。「50」という数も入る", "巻頭の「徹底的にパクってください」と、同じ言葉でつながる"],
-  ["項目の見出しを、×から○（やること）に付けかえる必要がある", "「パクる」という言葉を、保護者や先生がどう受け取るか"]),
+  ["手に入るものが、書名ですぐわかる。「%d」という数も入る" % N, "巻頭の「徹底的にパクってください」と、同じ言葉でつながる"],
+  ["項目の見出しは、「する」の言葉を前に出す形に、付けかえる", "「パクる」という言葉を、保護者や先生がどう受け取るか"]),
  (3, "二項対立系", "頭がいい人と伸びない人", page_taihi,
   lambda no: f'<span class="xo">×</span>{html.escape(YARANAI[no])}　→　<span class="xo o">○</span><b>{html.escape(PAKURU[no])}</b>',
   ["全項目が×と○の対になっている、という中身をそのまま言っている", "表紙・目次・1ページ目・頭の中まで、同じ形でそろう"],
@@ -199,7 +199,7 @@ doc = f"""<title>書名の方向性3案</title>
 <div class="rowwrap"><div class="covers">{covers}</div></div>
 
 <h2>その書名にした時の、中身</h2>
-<p class="h2sub">同じ2項目（02番と26番）を、それぞれの方向で組んだ場合。</p>
+<p class="h2sub">同じ2項目（02番と22番）を、それぞれの方向で組んだ場合。</p>
 <div class="cols">{inside}</div>
 <p class="foot">『頭のいい人が絶対にやらないこと』（仮）　書名の検討用。項目の言葉は、どれも仮のものです。</p>
 </div>

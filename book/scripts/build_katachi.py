@@ -6,29 +6,13 @@
 # 入れる言葉（WORDS）は仮のもの。著者が決めたら、ここを直す。
 import io, html, sys, os
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import plan_v2 as plan
-
-WORDS = {
- "01": "みんなと同じ勉強", "02": "読み返し", "03": "スラスラ進む勉強", "04": "がむしゃら勉強", "05": "一夜漬け", "06": "完璧主義",
- "07": "聞くだけ授業", "08": "板書の丸写し", "09": "小テストのやりっぱなし", "10": "全部に全力",
- "11": "覚えてから解く", "12": "にらめっこ暗記", "13": "まとめノート作り", "14": "1個ずつ暗記", "15": "わかったつもり", "16": "イチからやり直し",
- "17": "1教科ぶっ通し", "18": "わかるまで粘る", "19": "○つけて終わり", "20": "問題文の読み飛ばし", "21": "時間無制限の演習",
- "22": "頭の中だけで考える", "23": "なんとなく○", "24": "ただの解き直し", "25": "1問ずつ直し", "26": "次は気をつける", "27": "『わかった』の放置",
- "28": "やる気まかせの目標", "29": "毎日2時間宣言", "30": "明日の自分まかせ", "31": "時間ができたら勉強", "32": "意地の完走",
- "33": "やる気チャージ", "34": "過去問の温存",
- "35": "ながら勉強", "36": "スマホ我慢", "37": "キリのいいところまで", "38": "無理やり朝型", "39": "徹夜", "40": "まず片づけ",
- "41": "自己暗示", "42": "ひとり反省会", "43": "点数くらべ", "44": "考えないようにする", "45": "前日に新しい問題集",
- "46": "落ち着け、落ち着け", "47": "1番から順番に",
- "48": "AIに丸投げ", "49": "自力しばり", "50": "全部わかりません",
-}
-# 型2で「〜をやらない」と続けた時、つながりが引っかかるもの（下読みの印象）
-ROUGH = {"06", "09", "10", "11", "15", "16", "18", "19", "22", "23", "26", "27", "28", "30", "37", "38", "44", "46", "47", "50"}
-
+import words46 as W46
+# 2026-11-20：今の46項目に合わせた。入れる言葉は scripts/words46.py（今の原稿の「しない」の言葉）
+WORDS = W46.YARANAI
+MARU = W46.MARU
+ITEMS = W46.ITEMS      # no -> (章の番号, 章の札, ×, ○)
+N = W46.N
 E = html.escape
-ITEMS = {}      # no -> (章の副題, ×, ○)
-for ch_no, ch_title, ch_sub, items in plan.CHAPTERS:
-    for no, law, title, x, o, src in items:
-        ITEMS[no] = (ch_no, ch_sub, x, o)
 
 def ksize(w):
     n = len(w)
@@ -42,11 +26,11 @@ def page(kind, no, w):
     else:
         pad = max(0, (len(w) + 2) * k * 1.0 - 7 * 6.2 - 2)
         body = (f'<div class="decl"><div class="lead l2">頭のいい人は、</div>{kw}'
-                f'<div class="tail" style="padding-top:{pad:.1f}cqw">を、やらない。</div></div>')
+                f'<div class="tail" style="padding-top:{pad:.1f}cqw">を、しない。</div></div>')
     return (f'<div class="pg"><div class="no"><span>法則</span><b>{no}</b></div>{body}'
             f'<div class="then"><i></i>じゃあ、何をする？</div></div>')
 
-SAMPLES = [("02", "名詞がそのまま入る言葉"), ("15", "「やる」と続けにくい言葉"), ("26", "口ぐせ（セリフ）を入れる場合")]
+SAMPLES = [("02", "名詞がそのまま入る言葉"), ("07", "「する」と続けにくい言葉"), ("22", "動きの言葉を入れる場合")]
 
 def sample_row(kind):
     cells = "".join(f'<figure>{page(kind, no, WORDS[no])}<figcaption>{E(cap)}</figcaption></figure>' for no, cap in SAMPLES)
@@ -59,7 +43,7 @@ def toc(kind):
     for no in ["07", "08", "09", "10"]:
         _, _, x, o = ITEMS[no]
         w = E(WORDS[no])
-        line = f'「{w}」' if kind == 1 else f'<span class="fx">頭のいい人は</span>「{w}」<span class="fx">をやらない</span>'
+        line = f'「{w}」' if kind == 1 else f'<span class="fx">頭のいい人は</span>「{w}」<span class="fx">をしない</span>'
         out.append(f'<div class="ti"><div class="tl"><b>{no}</b><span>{line}</span></div>'
                    f'<div class="tx">×　{E(x)}</div><div class="to">○　{E(o)}</div></div>')
     return "".join(out)
@@ -72,10 +56,9 @@ def table():
             cur = ch_no
             rows.append(f'<div class="chrow">{E(ch_no)}　{E(ch_sub)}</div>')
         w = E(WORDS[no])
-        rough = '<span class="rough" title="つながりが引っかかる">△</span>' if no in ROUGH else ''
         rows.append(f'<div class="r"><div class="n">{no}</div>'
                     f'<div class="c c1"><span class="fx">頭のいい人が絶対にやらない</span><b>「{w}」</b></div>'
-                    f'<div class="c c2"><span class="fx">頭のいい人は</span><b>「{w}」</b><span class="fx">をやらない</span>{rough}</div></div>')
+                    f'<div class="c c2"><span class="fx">頭のいい人は</span><b>「{w}」</b><span class="fx">をしない</span><br><span class="fx">頭のいい人は</span><b>「{E(MARU[no])}」</b><span class="fx">をする</span></div></div>')
     return "".join(rows)
 
 CSS = """
@@ -172,27 +155,26 @@ figcaption { font-size:12.5px; color:var(--muted); margin-top:6px; line-height:1
 }
 """
 
-n_rough = len(ROUGH)
 doc = f"""<title>項目タイトルの型くらべ</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Noto+Serif+JP:wght@700;900&display=swap">
 <style>{CSS}</style>
 <div class="wrap">
 <h1>項目タイトルの型　2案</h1>
-<p class="lede">50項目それぞれの1ページ目と目次に出す言い方を、どちらの型にするかを決めるための比較です。同じ言葉を、同じ並びで、2つの型に入れました。「」の中に入れる言葉は、まだ仮のものです。</p>
+<p class="lede">{N}項目それぞれの1ページ目と目次に出す言い方を、どちらの型にするかを比べるためのページです。同じ言葉を、同じ並びで、2つの型に入れました。今の原稿は、型2で書いています。</p>
 
 <div class="types">
   <div class="type"><span class="badge">型1</span><div class="frame">頭のいい人が絶対にやらない<em>「◯◯」</em></div>
     <p>名詞で終わる形。書名『頭のいい人が絶対にやらないこと』の「こと」が、項目ごとに入れかわります。</p></div>
-  <div class="type"><span class="badge">型2</span><div class="frame">頭のいい人は<em>「◯◯」</em>をやらない</div>
-    <p>文で言い切る形。もともとの案です。</p></div>
+  <div class="type"><span class="badge">型2</span><div class="frame">頭のいい人は<em>「◯◯」</em>をしない</div>
+    <p>文で言い切る形。今の原稿は、この形です。すぐ下に、「頭のいい人は「△△」をする」の行が続きます。</p></div>
 </div>
 
 <h2>1ページ目の見え方</h2>
 <p class="h2sub">各項目の最初のページ（四六判・縦書き）に、大きく置いた場合。言葉の種類がちがう3つで並べました。</p>
 <div class="pair">
   <div class="block"><div class="blockhead"><span class="badge">型1</span><span class="nm">頭のいい人が絶対にやらない「◯◯」</span></div><div class="rowwrap">{sample_row(1)}</div></div>
-  <div class="block"><div class="blockhead"><span class="badge">型2</span><span class="nm">頭のいい人は「◯◯」をやらない</span></div><div class="rowwrap">{sample_row(2)}</div></div>
+  <div class="block"><div class="blockhead"><span class="badge">型2</span><span class="nm">頭のいい人は「◯◯」をしない</span></div><div class="rowwrap">{sample_row(2)}</div></div>
 </div>
 
 <h2>目次での見え方</h2>
@@ -202,18 +184,18 @@ doc = f"""<title>項目タイトルの型くらべ</title>
   <div class="toc"><span class="badge">型2</span>{toc(2)}</div>
 </div>
 
-<h2>50項目を、2つの型で読む</h2>
-<p class="legend">△は、型2で「〜をやらない」と続けた時に、言葉のつながりが引っかかるもの（下読みでの印象。50本のうち{n_rough}本）。</p>
+<h2>{N}項目を、2つの型で読む</h2>
+<p class="legend">型2の2行目（「〜をする」）は、今の原稿に入っている言葉です。第1章、07・08番、第7章の言葉は、まだ仮のものです。</p>
 <div class="list"><div class="listhead"><div></div><div>型1</div><div>型2</div></div>{table()}</div>
 
 <h2>比べる時の見どころ</h2>
 <div class="pts">
-  <div class="pt"><b>言葉のつながり</b><span>型2は、「完璧主義」「わかったつもり」やセリフの時に、「をやらない」が続きにくい。型1は、名詞でもセリフでも入る。</span></div>
+  <div class="pt"><b>言葉のつながり</b><span>型1は、名詞でもセリフでも入る。型2は、動きの言葉（「〜する」）がそのまま入り、「する」の行と対になる。</span></div>
   <div class="pt"><b>書名との関係</b><span>型1は、書名と同じ形のくり返しになる。型2は、文で言い切るぶん、1つ1つが強く聞こえる。</span></div>
-  <div class="pt"><b>目次の読みやすさ</b><span>型1は、見出しを1回出せば、あとは言葉だけを並べられる。型2は、1行ごとに同じ前後がつく。</span></div>
+  <div class="pt"><b>目次の読みやすさ</b><span>型1は、見出しを1回出せば、あとは言葉だけを並べられる。型2は、「しない → する」を1行で並べられる（今の目次は、この形）。</span></div>
 </div>
 <p class="foot">『頭のいい人が絶対にやらないこと』（仮）　項目タイトルの検討用</p>
 </div>
 """
 io.open("build/タイトルの型_2案.html", "w", encoding="utf-8").write(doc)
-print("ok　△", n_rough, "本")
+print("ok", N, "項目")

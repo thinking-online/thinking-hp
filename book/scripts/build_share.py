@@ -395,7 +395,26 @@ PARTS = [  # (記号, 題, 中身の説明)
     ("owari", "おわりに", "おわりに、巻末のページ"),
 ]
 READY = {"kantou": "2026/11/20", "hajimeni": "2026/11/20", "ch1": "2026/11/20", "ch2": "2026/11/20", "ch3": "2026/11/20", "ch4": "2026/11/20"}   # 読める部分 → いつの時点か
-UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第4章を掲載しました。")]   # 新しいものを、下に足していく
+UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第4章と、書名・項目の言葉の案のページを掲載しました。")]
+# あわせて見てもらう資料（記号, 題, 説明, 作るスクリプト, できるファイル）。3つとも、今の項目の数に合わせて作り直す
+SHIRYO = [
+    ("shomei", "書名の方向性　3案", "表紙の見本と、その書名にした時の中身を、3つの方向で比べます", "build_title3.py", "書名の方向性_3案.html"),
+    ("kotoba", "やらない言葉の3パターン", "項目それぞれに、「やらない言葉」の案を3つずつ並べています", "build_sanpattern.py", "やらない言葉_3パターン.html"),
+    ("kata", "項目タイトルの型　2案", "1ページ目と目次での見え方を、2つの型で比べます", "build_katachi.py", "タイトルの型_2案.html"),
+]
+
+
+def shiryo_pages():
+    """3つの資料を作り直して、ご確認ページの中のページにする（一覧にもどる、の行を足す）。"""
+    for key, ttl, ds, script, out in SHIRYO:
+        subprocess.check_call([sys.executable, "-I", os.path.join(HERE, script)], cwd=ROOT, stdout=subprocess.DEVNULL)
+        with open(os.path.join(ROOT, "build", out), encoding="utf-8") as f:
+            doc = f.read()
+        back = '<p style="margin:0 0 18px;font-size:14px;font-weight:700"><a href="./" style="color:var(--accent);text-decoration:none" onclick="if(document.referrer&&history.length>1){history.back();return false}">← 一覧にもどる</a></p>'
+        assert doc.count('<div class="wrap">') == 1, out
+        doc = doc.replace('<div class="wrap">', '<div class="wrap">' + back)
+        write(key + ".html", '<!doctype html><html lang="ja"><head>%s<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">'
+              '<style>:root{color-scheme:light}body{margin:0}img{max-width:100%%}[hidden]{display:none!important}</style></head><body>%s</body></html>' % (HEAD, doc))   # 新しいものを、下に足していく
 PART_CSS = """
 .qpage{text-align:left}
 .qpage .pr{font-size:14.5pt;font-weight:900;line-height:1.75;text-align:left;margin:0 !important}
@@ -453,6 +472,7 @@ def item_now(kk):
 def part_bodies():
     """部分ごとの中身。{記号: (ページの題, [(id, 飛ぶ先の名前, html)])}"""
     P4.kind = lambda kk: ""
+    BP.hito_html = lambda kk: ""     # 王様の一言は、いったん出さない（2026-11-20、著者の指示）。第1章の項目にも効く
     n_all = 6 + len(V.ITEMS)
     out = {k: [] for k, _, _ in PARTS}
     names = {}
@@ -554,6 +574,12 @@ def index_now(names):
 <ul class="parts">%s</ul>
 </section>
 
+<section id="shiryo">
+<h2>書名と、項目の言葉の案</h2>
+<p class="note">書名の方向と、項目に入れる言葉を比べるためのページです。今の項目の数（%d）に合わせています。言葉は、どれも仮のものです。</p>
+<ul class="parts">%s</ul>
+</section>
+
 <section id="kiroku">
 <h2>更新の記録</h2>
 <p class="note">更新したら、ここに足していきます。</p>
@@ -568,7 +594,9 @@ def index_now(names):
 
 <footer>このページは、ご確認用にお送りしているものです。</footer>
 </div>
-""" % (FONT, INDEX_CSS, LIST_CSS, esc(TITLE), esc(K.AUTHOR), max(READY.values()), "".join(rows), log, mokuji_html())
+""" % (FONT, INDEX_CSS, LIST_CSS, esc(TITLE), esc(K.AUTHOR), max(READY.values()), "".join(rows), 6 + len(V.ITEMS),
+       "".join('<li><span class="nm">%s</span><span class="ds">%s</span><span class="act"><a class="btn" href="%s.html">見る</a></span></li>' % (esc(a), esc(b), k) for k, a, b, _, _ in SHIRYO),
+       log, mokuji_html())
 
 
 def main():
@@ -581,6 +609,7 @@ def main():
     for key, ttl, ds in PARTS:
         if key in READY:
             write(key + ".html", part_page(key, names.get(key, (ttl, ds))[0], bodies[key]))
+    shiryo_pages()
     inner = index_now(names)
     write("index.html", '<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>' + inner + "</body></html>")
     with open(os.path.join(OUT, "artifact", "index.html"), "w", encoding="utf-8") as f:

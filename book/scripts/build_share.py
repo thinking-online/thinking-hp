@@ -7,7 +7,7 @@
 #   index.html     入口（台本、形の候補、タイトル案、目次、イラストのラフ案、ご相談したいこと）
 #   daihon35.html  台本・35個の版（横書きで通して読む）
 #   daihon45.html  台本・45個の版（同じ）
-#   book35.html    35個の版を、本の形（A5・縦書き）で見る
+#   book45.html / book35.html   本の形（A5・縦書き）で見る
 #   katachi.html   同じ項目を、4つの形で組んだ見本
 #   rough.html     イラストのラフ案（2コマの言葉の一覧）
 # どのページにも、検索に出ないようにする印（noindex）を入れている。
@@ -125,17 +125,19 @@ def reading(mode):
 
 
 # ---------------------------------------------------------------- 本の形（縦書き）で見るページ
-def book35():
-    subprocess.check_call([sys.executable, "-I", os.path.join(HERE, "build_tate_book.py"), "s35", "--html"])
-    t = open(os.path.join(ROOT, "build", "本の形_35個の版.html"), encoding="utf-8").read()
+def book(mode):
+    arg, name = {"35": ("s35", "本の形_35個の版"), "45": ("max", "本の形_マックス版")}[mode]
+    subprocess.check_call([sys.executable, "-I", os.path.join(HERE, "build_tate_book.py"), arg, "--html"])
+    t = open(os.path.join(ROOT, "build", name + ".html"), encoding="utf-8").read()
     extra = ('<meta name="robots" content="noindex,nofollow,noarchive"><meta name="viewport" content="width=560">' + FONT + '<style>'
              'html{background:#e8e6e1}body{margin:0 auto !important;padding:46px 0 60px}'
              '.page{margin:0 auto 14px;box-shadow:0 1px 4px rgba(0,0,0,.18)}'
              '.topbar{position:fixed;top:0;left:0;right:0;z-index:9;background:#fff;border-bottom:1px solid #d5d8de;padding:8px 14px;font:700 13px "Noto Sans JP",sans-serif;display:flex;gap:14px;align-items:center}'
              '.topbar a{color:#15467e;text-decoration:none}.topbar span{font-weight:400;color:#555;font-size:12px}'
              '@media print{.topbar{display:none}body{padding:0}.page{margin:0;box-shadow:none}}</style>')
-    t = t.replace("<title>本の形_35個の版</title>", "<title>本の形で見る　35個の版</title>" + extra)
-    t = t.replace("<body>", '<body><div class="topbar">%s<span>35個の版を、A5・縦書きで組んだ形です（全%dページ）。右から左へ読みます。点線の枠は、イラストが入る場所です。</span></div>' % (BACK, FACTS["35"]["pages"]), 1)
+    assert "<title>%s</title>" % name in t
+    t = t.replace("<title>%s</title>" % name, "<title>本の形で見る　%s個の版</title>" % mode + extra)
+    t = t.replace("<body>", '<body><div class="topbar">%s<span>%s個の版を、A5・縦書きで組んだ形です（全%dページ）。右から左へ読みます。点線の枠は、イラストが入る場所です。</span></div>' % (BACK, mode, FACTS[mode]["pages"]), 1)
     assert "topbar" in t and "noindex" in t
     return t
 
@@ -195,20 +197,20 @@ def rough():
                 % (no, esc(title), esc(c[0][0].strip()), esc(c[0][1].strip()), esc(c[1][0].strip()), esc(c[1][1].strip())))
     out = ['<h2>第1章　%s</h2>' % esc(K.CH1_TITLE), '<div class="tw"><table><tr><th>番号</th><th>項目</th><th>伸びない人のコマ</th><th>頭のいい人のコマ</th></tr>']
     for kk in sorted(K.CH1_MOKUJI):
-        c = Z.ch1_koma(A6.ch1_item(kk))
+        c = Z.ch1_koma(Z.ch1_item(kk))
         out.append(row(kk, "絶対法則%s　%s" % (kk, K.CH1_MOKUJI[kk][0]), c))
     out.append("</table></div>")
-    for num, fuda, title, sub, groups in A6.V6.CHAPTERS:
+    for num, fuda, title, sub, groups in V.CHAPTERS:
         out.append('<h2>第%d章　【%s】%s</h2>' % (num, esc(fuda), esc(title)))
         out.append('<div class="tw"><table><tr><th>番号</th><th>項目</th><th>伸びない人のコマ</th><th>頭のいい人のコマ</th></tr>')
         for _, items in groups:
             for nn in items:
-                out.append(row(nn, A6.V6.ITEMS[nn]["t"], A6.B6.koma(nn)))
+                out.append(row(nn, V.ITEMS[nn]["t"], B.koma(nn)))
         out.append("</table></div>")
     return ('<!doctype html><html lang="ja"><head>%s<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>イラストのラフ案</title>%s<style>%s</style></head><body>'
             '<div class="bar">%s</div><h1>イラストのラフ案（2コマの言葉）</h1>'
             '<p class="lead">各項目に、「頭のいい人と伸びない人の違い」の2コマを置く想定です。同じ場面で、2人が考えていることを、並べます。</p>'
-            '<p class="lead">絵そのものは、まだありません。下の表は、コマに入れる言葉です（大きい言葉と、その下の小さい言葉）。番号は、35個の版のものです。</p>%s</body></html>'
+            '<p class="lead">絵そのものは、まだありません。下の表は、コマに入れる言葉です（大きい言葉と、その下の小さい言葉）。番号は、45個の版のものです。</p>%s</body></html>'
             % (HEAD, FONT, PAGE_CSS, BACK, "\n".join(out)))
 
 
@@ -272,13 +274,13 @@ def mokuji_html():
         return "<li><b>%s</b>%s<span>→　%s</span></li>" % (no, esc(t), esc(o))
     L = [item(kk, K.CH1_MOKUJI[kk][1], K.CH1_MOKUJI[kk][3]) for kk in sorted(K.CH1_MOKUJI)]
     out.append('<details><summary>第1章　%s（01〜06番）</summary><ul class="moku">%s</ul></details>' % (esc(K.CH1_TITLE), "".join(L)))
-    for num, fuda, title, sub, groups in A6.V6.CHAPTERS:
+    for num, fuda, title, sub, groups in V.CHAPTERS:
         L = []
         ks = [nn for _, items in groups for nn in items]
         for name, items in groups:
             if name:
                 L.append('<li class="g">%s</li>' % esc(name))
-            L += [item(nn, A6.V6.ITEMS[nn]["t"], A6.V6.ITEMS[nn]["o"]) for nn in items]
+            L += [item(nn, V.ITEMS[nn]["t"], V.ITEMS[nn]["o"]) for nn in items]
         out.append('<details><summary>第%d章　【%s】%s（%s〜%s番）</summary><ul class="moku">%s</ul></details>' % (num, esc(fuda), esc(title), ks[0], ks[-1], "".join(L)))
     return "".join(out)
 
@@ -298,33 +300,33 @@ def index_inner(downloads):
 <p class="eyebrow">ご確認用</p>
 <h1>%s<small>（仮題）</small></h1>
 <p class="by">%s　／　%s</p>
-<p class="lead">原稿と、構成の案を、このページにまとめました。上から順に開いていただくと、全体が見られます。</p>
+<p class="lead">原稿と、構成の案を、このページにまとめました。まずは、書いたものを全部入れた版（45個）をお出しします。ページ数が多いので、「このくらいまで減らしたい」などのご希望があれば、それに向けて調整を進めます。</p>
 </header>
 <nav class="toc" aria-label="このページの中身"><a href="#daihon">台本</a><a href="#katachi">形の候補</a><a href="#title">タイトル案</a><a href="#mokuji">目次</a><a href="#rough">イラストのラフ案</a><a href="#soudan">ご相談したいこと</a></nav>
 
 <section id="daihon">
 <h2><span class="n">1</span>台本（原稿）</h2>
-<p class="note">項目の数がちがう、2つの版があります。第1章（6つの絶対法則）、はじめに、おわりには、どちらも同じです。</p>
+<p class="note">まず全部書いた版が、45個の版です。項目を少なくした場合の例として、35個の版も用意しました。第1章（6つの絶対法則）、はじめに、おわりには、どちらも同じです。</p>
 <div class="two">
-<div class="ver"><h3>35個の版</h3>
-<div class="fig"><div><b>%d個</b>第1章6 ＋ 29</div><div><b>%dページ</b>の見込み</div><div><b>%s</b></div></div>
-<p>1項目は、5ページが基本です。柱になる9項目だけ、7〜9ページ。中身が重なる項目は、1つにまとめました。</p>
-<div class="btns"><a class="btn" href="daihon35.html">台本を読む</a><a class="btn sub" href="book35.html">本の形で見る（縦書き）</a>%s</div></div>
-<div class="ver"><h3>45個の版</h3>
+<div class="ver"><h3>45個の版（全部入り）</h3>
 <div class="fig"><div><b>%d個</b>第1章6 ＋ 39</div><div><b>%dページ</b>の見込み</div><div><b>%s</b></div></div>
-<p>今ある原稿を、全部入れた版です。1項目は、5〜9ページ。</p>
-<div class="btns"><a class="btn" href="daihon45.html">台本を読む</a>%s</div></div>
+<p>今ある原稿を、全部入れた版です。1項目は、5〜9ページ。まずは、こちらをご覧ください。</p>
+<div class="btns"><a class="btn" href="daihon45.html">台本を読む</a><a class="btn sub" href="book45.html">本の形で見る（縦書き）</a>%s</div></div>
+<div class="ver"><h3>35個の版（少なくした場合の例）</h3>
+<div class="fig"><div><b>%d個</b>第1章6 ＋ 29</div><div><b>%dページ</b>の見込み</div><div><b>%s</b></div></div>
+<p>中身が重なる項目を1つにまとめて、29個にした版です。1項目は5ページが基本で、柱になる9項目だけ、7〜9ページ。</p>
+<div class="btns"><a class="btn" href="daihon35.html">台本を読む</a><a class="btn sub" href="book35.html">本の形で見る（縦書き）</a>%s</div></div>
 </div>
 <p class="note" style="margin:14px 0 0">ページ数は、A5判・縦書き・1行40字・1ページ16行で、実際に文字を流して数えた目安です。イラストは、まだ入っていません。</p>%s
 </section>
 
 <section id="katachi">
 <h2><span class="n">2</span>形の候補</h2>
-<p class="note">1項目の形と長さで、本全体のページ数が大きく変わります。同じ項目を4つの形で組んだ見本を、用意しました。</p>
+<p class="note">項目の数と、1項目の形と長さで、本全体のページ数が変わります。ご希望のページ数に合わせて、調整できます。同じ項目を4つの形で組んだ見本も、用意しました。</p>
 <div class="tw"><table>
 <tr><th>版</th><th>項目の数</th><th>1項目のページ</th><th>全体</th></tr>
+<tr><td>45個・今の形（全部入り）</td><td>45</td><td>5〜9ページ</td><td class="num">%dページ</td></tr>
 <tr><td>35個・今の形</td><td>35</td><td>5ページが基本（柱は7〜9）</td><td class="num">%dページ</td></tr>
-<tr><td>45個・今の形</td><td>45</td><td>5〜9ページ</td><td class="num">%dページ</td></tr>
 <tr><td>45個・STEPを本文にする形</td><td>45</td><td>4ページか6ページ</td><td class="num">%dページ</td></tr>
 </table></div>
 <div class="btns" style="margin-top:14px"><a class="btn" href="katachi.html">4つの形の見本を見る</a></div>
@@ -338,7 +340,7 @@ def index_inner(downloads):
 
 <section id="mokuji">
 <h2><span class="n">4</span>目次</h2>
-<p class="note">35個の版の目次です。左が「頭のいい人が絶対やらないこと」、矢印の先が「かわりにやっていること」です。</p>
+<p class="note">45個の版の目次です。左が「頭のいい人が絶対やらないこと」、矢印の先が「かわりにやっていること」です。</p>
 %s
 </section>
 
@@ -364,8 +366,8 @@ def index_inner(downloads):
 <footer>このページは、ご確認用にお送りしているものです。</footer>
 </div>
 """ % (FONT, INDEX_CSS, esc(TITLE), esc(K.AUTHOR), DATE,
-       f35["items"], f35["pages"], f35["chars"], dl35, f45["items"], f45["pages"], f45["chars"], dl45, dlnote,
-       f35["pages"], f45["pages"], FACTS["step"]["pages"],
+       f45["items"], f45["pages"], f45["chars"], dl45, f35["items"], f35["pages"], f35["chars"], dl35, dlnote,
+       f45["pages"], f35["pages"], FACTS["step"]["pages"],
        "".join("<li>%s</li>" % esc(t) for t in K.TITLES), mokuji_html())
 
 
@@ -374,7 +376,8 @@ def main():
     os.makedirs(os.path.join(OUT, "artifact"), exist_ok=True)
     write("daihon35.html", reading("35"))
     write("daihon45.html", reading("45"))
-    write("book35.html", book35())
+    write("book45.html", book("45"))
+    write("book35.html", book("35"))
     write("katachi.html", katachi())
     write("rough.html", rough())
     write("index.html", '<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>'

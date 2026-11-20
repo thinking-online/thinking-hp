@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # 45個の版の、2つの項目の番号を入れかえる（著者が、項目の順番を変えた時に使う）。
 #   python3 -I scripts/irekae.py 09 11     → 09番と11番を入れかえる
-# 直す所：本文のファイル名（本文/v4/NN.md、詰める前、直しメモ、NN_足し）、本文の中の「NN番」、
+# 直す所：本文のファイル名（本文/v4/NN.md、詰める前、直しメモ、NN_足し、35個の版の 本文/v6/足し）、本文の中の「NN番」、
 #   「この本の使い方」の索引の番号、scripts の中の番号（v4_data の項目・前の番号との対応、book_data のコラムと一言、
 #   v4_hooks、柱の項目、35個の版の決まり）。
 # 直さない所：docs の記録、詰める前の文の中身、直しメモの中身（前の番号のまま残る）。
@@ -71,6 +71,18 @@ names = [n for n in os.listdir(V4) if n.endswith(".md")]
 for n in sorted(names):
     edit(os.path.join(V4, n), lambda t: sub(t, REF))
 d6 = os.path.join(ROOT, "manuscript", "本文", "v6", "足し")
+# 35個の版の、足しの文（35個の版の番号で置いてある）。まとめ先の項目が動いたら、ファイル名も入れかえる
+if A6 and B6 and A6 != B6:
+    pa, pb = os.path.join(d6, A6 + ".md"), os.path.join(d6, B6 + ".md")
+    ea, eb = os.path.exists(pa), os.path.exists(pb)
+    if ea:
+        os.rename(pa, pa + ".tmp")
+    if eb:
+        os.rename(pb, pa)
+    if ea:
+        os.rename(pa + ".tmp", pb)
+    if ea or eb:
+        LOG.append("ファイル名：v6/足し/%s.md ⇔ %s.md" % (A6, B6))
 for n in sorted(os.listdir(d6)) if os.path.isdir(d6) else []:
     edit(os.path.join(d6, n), lambda t: sub(t, REF))
 

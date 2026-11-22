@@ -941,7 +941,11 @@ def main():
     os.makedirs(SITE)
     os.makedirs(os.path.join(OUT, "artifact"), exist_ok=True)
     bodies, names = text_bodies()
-    assert {k for k, v in bodies.items() if v} == set(READY), sorted(k for k, v in bodies.items() if v)   # 読める部分が変わったら、READY を直す
+    have = {k for k, v in bodies.items() if v}
+    assert set(READY) <= have, sorted(set(READY) - have)          # READY にあるのに、原稿に中身がない
+    hold = sorted(have - set(READY))                              # 原稿に中身はあるが、まだ出さない部分（READY に足すと、出る）
+    if hold:
+        print("まだ出していない部分（準備中のまま）: " + " ".join(hold))
     for key, ttl, ds in PARTS:
         if key in READY:
             write(key + ".html", text_part_page(key, names.get(key, (ttl, ds))[0], bodies[key]))

@@ -104,7 +104,7 @@ def sheet(kk):
     it = V.ITEMS[kk]
     if "sheet" in it:
         ttl, steps, king = it["sheet"]
-        return ttl, [(h, v, None) for h, v in steps], king
+        return ttl, [(st[0], st[1], st[2] if len(st) > 2 else None) for st in steps], king
     o = it["old"]
     steps, king = D.SHEET[o]
     notes = getattr(D, "SHEET_NOTE", {})

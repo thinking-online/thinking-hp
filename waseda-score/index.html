@@ -80,6 +80,22 @@ th:first-child,td:first-child{text-align:left}
 thead th{border-top:0;color:var(--muted);font-weight:500;font-size:12px}
 td small{color:var(--muted)}
 .up{color:var(--ok)} .down{color:var(--ng)}
+.tag{display:inline-block;font-size:10px;font-weight:700;padding:1px 7px;border-radius:999px;margin-left:8px;vertical-align:2px;
+  border:1px solid var(--rule);color:var(--muted)}
+.tag.measured{border-color:var(--ok);color:var(--ok)}
+.guide{margin:0 0 14px;padding:10px 12px;border-radius:10px;background:var(--gold-soft);font-size:13px;font-variant-numeric:tabular-nums}
+.guide b{font-size:15px}
+.guide small{color:var(--muted)}
+.one .label{margin:0;font-size:13px;color:var(--muted)}
+.one .big{margin-top:2px}
+.one .sub{margin:6px 0 0;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.need{margin-top:18px;padding-top:14px;border-top:1px solid var(--rule)}
+.need h3{margin:0 0 2px;font-size:14px}
+.need .hint{margin:0 0 8px;font-size:12px;color:var(--muted)}
+.need ul{list-style:none;margin:0;padding:0;font-variant-numeric:tabular-nums}
+.need li{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 12px;padding:7px 0;border-top:1px solid var(--rule);font-size:14px}
+.need li:first-child{border-top:0}
+.need li span:last-child{color:var(--muted);font-size:13px}
 details{font-size:13px;color:var(--muted)}
 details+details{margin-top:8px}
 summary{cursor:pointer;color:var(--ink);font-weight:500}
@@ -121,7 +137,13 @@ details p{margin:8px 0 0}
 
   <section class="card" aria-labelledby="h-result" aria-live="polite">
     <h2 id="h-result"><span class="n">RESULT</span>調整後の推定 <span class="badge" id="unverified" hidden>データ確認中</span></h2>
-    <p class="empty" id="empty">全科目の素点を入力すると、ここに結果が表示されます。</p>
+    <p class="guide" id="guide"></p>
+    <p class="empty" id="empty">素点を入力すると、ここに結果が表示されます。2科目まで入れると、残り1科目で必要な点数がわかります。</p>
+    <div class="one" id="one" hidden>
+      <p class="label" id="one-label"></p>
+      <div class="big"><span class="num" id="one-num"></span><span class="of" id="one-of"></span></div>
+      <p class="sub" id="one-sub"></p>
+    </div>
     <div id="result" hidden>
       <p class="verdict" id="verdict"><i></i><span></span></p>
       <div class="big">
@@ -142,6 +164,11 @@ details p{margin:8px 0 0}
         <thead><tr><th>科目</th><th>素点</th><th class="hide-s">受験者平均</th><th>平均との差</th><th>調整後（推定）</th></tr></thead>
         <tbody id="tbody"></tbody>
       </table>
+      <div class="need">
+        <h3>合格最低点に届く点数</h3>
+        <p class="hint">他の科目が入力どおりだった場合に、その科目で必要な素点です。</p>
+        <ul id="need"></ul>
+      </div>
     </div>
   </section>
 
@@ -149,11 +176,13 @@ details p{margin:8px 0 0}
     <details>
       <summary>計算方法</summary>
       <p class="formula">調整後 ＝ 満点の半分 ＋ 係数 ×（素点 − 受験者平均点）</p>
-      <p>早稲田大学は得点調整の計算式を公表していません。このツールでは、受験者平均点を取った人がその科目の満点の半分になると仮定し、係数を <span id="k-mid"></span> として推定値を出しています。係数は得点のばらつき（標準偏差）で変わるため、<span id="k-range"></span> の範囲で計算した「推定の幅」もあわせて表示しています。各科目は 0 点〜満点の範囲に収めています。</p>
+      <p>早稲田大学は得点調整の計算式を公表していません。「推定」と表示している科目は、受験者平均点を取った人が満点の半分になると仮定し、係数を <span id="k-mid"></span> として計算しています。これは受験指導で広く使われている目安の式で、係数そのものは仮定です。そのため係数を <span id="k-range"></span> の範囲で動かした「推定の幅」をあわせて表示しています。</p>
+      <p>「実測」と表示している科目は、その年度に受験した人の自己採点と成績開示の得点を照らし合わせて求めた換算式を使っています。推定より幅が狭くなります。</p>
     </details>
     <details>
       <summary>結果の見方</summary>
       <p>合格最低点は、大学が公表している調整後の点数です。推定の幅がすべて最低点を上回れば「上回る見込み」、幅が最低点をまたぐ場合は「ボーダー付近」、幅がすべて下回れば「届いていない」と表示します。平均点より低い科目は、調整後に素点よりも大きく下がることがあります。</p>
+      <p>「素点合計の目安」は、全科目を受験者平均点から同じ得点率だけ上乗せしたときに、合格最低点に届く素点の合計です。</p>
     </details>
     <details>
       <summary>データの出典</summary>
@@ -161,11 +190,11 @@ details p{margin:8px 0 0}
     </details>
   </section>
 
-  <p class="foot">このツールは THINKING 独自の推定による学習の目安です。早稲田大学による公式の得点・合否判定ではありません。</p>
+  <p class="foot">このツールの結果は学習の目安です。早稲田大学による公式の得点・合否判定ではありません。</p>
 </main>
 
-<script src="data.js?v=20261123"></script>
-<script src="calc.js?v=20261123"></script>
+<script src="data.js?v=20261124"></script>
+<script src="calc.js?v=20261124"></script>
 <script>
 (function () {
   "use strict";
@@ -217,6 +246,11 @@ details p{margin:8px 0 0}
       var name = document.createElement("div");
       name.className = "name";
       name.textContent = isElective ? "選択科目" : s.name;
+      var m = Calc.model(s, DATA.coefficient);
+      var tag = document.createElement("span");
+      tag.className = "tag " + m.source;
+      tag.textContent = m.source === "measured" ? "実測 " + m.n + "件" : "推定";
+      name.appendChild(tag);
       left.appendChild(name);
       if (isElective) {
         var sel = document.createElement("select");
@@ -269,12 +303,47 @@ details p{margin:8px 0 0}
     below: "合格最低点に届いていない"
   };
 
+  function ceil1(n) { return (Math.ceil(n * 10 - 1e-6) / 10).toFixed(1); }
+
   function renderResult() {
     var r = row(), list = subjects();
     $("unverified").hidden = r.verified === true;
+
+    var line = Calc.borderline(list, r, DATA.coefficient);
+    $("guide").innerHTML = "";
+    if (line.mid != null) {
+      var g = $("guide");
+      g.append(r.year + "年度の素点合計の目安 ");
+      var strong = document.createElement("b");
+      strong.textContent = "約" + Math.round(line.mid) + "点";
+      g.append(strong, " / " + r.total + "点（" + Math.round(line.mid / r.total * 100) + "%）");
+      if (line.easy != null && line.safe != null) {
+        var sm = document.createElement("small");
+        sm.textContent = "　幅 " + Math.round(line.easy) + "〜" + Math.round(line.safe) + "点";
+        g.append(sm);
+      }
+    }
+    $("guide").hidden = line.mid == null;
+
     var entries = list.map(function (s) { return { subject: s, raw: parse(state.raw[s.name], s) }; });
-    var ready = entries.every(function (e) { return typeof e.raw === "number"; });
-    $("empty").hidden = ready; $("result").hidden = !ready;
+    var invalid = entries.some(function (e) { return e.raw === "invalid"; });
+    var missing = entries.filter(function (e) { return e.raw === null; });
+    var ready = !invalid && missing.length === 0;
+    var one = !invalid && missing.length === 1;
+    $("empty").hidden = ready || one; $("result").hidden = !ready; $("one").hidden = !one;
+
+    if (one) {
+      var idx = entries.indexOf(missing[0]), sub = missing[0].subject;
+      var need = Calc.required(entries, idx, r, DATA.coefficient);
+      $("one-label").textContent = "残りの「" + sub.name + "」で必要な点数";
+      $("one-num").textContent = need.mid == null ? "届きません" : ceil1(need.mid) + "点以上";
+      $("one-of").textContent = need.mid == null ? "" : "/ " + sub.max + "点";
+      $("one-sub").textContent = need.mid == null
+        ? "満点でも合格最低点 " + fmt(r.minimum) + " 点に届きません。他の科目の上積みが必要です。"
+        : need.safe == null
+          ? "余裕を見る場合（推定の幅の下側）は、満点でも足りません。"
+          : "余裕を見るなら " + ceil1(need.safe) + " 点以上（推定の幅の下側でも届く点数）";
+    }
     if (!ready) return;
 
     var res = Calc.evaluate(entries, r, DATA.coefficient);
@@ -322,6 +391,24 @@ details p{margin:8px 0 0}
         tr.appendChild(td);
       });
       tbody.appendChild(tr);
+    });
+
+    var ul = $("need");
+    ul.innerHTML = "";
+    entries.forEach(function (e, i) {
+      var need = Calc.required(entries, i, r, DATA.coefficient);
+      var li = document.createElement("li");
+      var a = document.createElement("span"), b = document.createElement("span");
+      if (need.mid == null) {
+        a.textContent = e.subject.name + "　満点でも届かない";
+        b.textContent = "他の科目の上積みが必要";
+      } else {
+        var gap = Number(ceil1(need.mid)) - e.raw;
+        a.textContent = e.subject.name + "　" + ceil1(need.mid) + "点以上";
+        b.textContent = gap > 0 ? "いまより +" + fmt(gap) + " 点" : gap < 0 ? fmt(-gap) + " 点の余裕" : "ちょうど";
+      }
+      li.append(a, b);
+      ul.appendChild(li);
     });
   }
 

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>得点調整の照合（スタッフ用）— THINKING</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@600;700&display=swap">
+<style>
+:root{
+  --bg:#f6f3ec; --paper:#fffdf8; --rule:#e2dccd; --ink:#1f1b14; --muted:#6f6858;
+  --gold:#9a7a3a; --gold-soft:#efe5cf; --ok:#1f7a55; --ng:#b3392f; --grid:#ebe5d6;
+  --serif:"Shippori Mincho","Noto Serif JP","Hiragino Mincho ProN",serif;
+  --sans:"Noto Sans JP","Hiragino Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#14120e; --paper:#1d1a14; --rule:#383225; --ink:#efe9da; --muted:#a39a85;
+  --gold:#d6b672; --gold-soft:#2c2617; --ok:#5fcf9f; --ng:#ff8177; --grid:#2a251a; color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;
+  padding:env(safe-area-inset-top,0) max(16px,env(safe-area-inset-right,0)) env(safe-area-inset-bottom,0) max(16px,env(safe-area-inset-left,0))}
+.wrap{max-width:720px;margin:0 auto;padding-block:28px 48px;display:flex;flex-direction:column;gap:18px}
+.brand{font-size:11px;letter-spacing:.24em;color:var(--gold);font-weight:700}
+h1{font-family:var(--serif);font-size:24px;line-height:1.35;margin:6px 0 8px}
+.lead{margin:0;color:var(--muted);font-size:14px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:18px}
+.card h2{font-family:var(--serif);font-size:17px;margin:0 0 12px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);min-width:0}
+select,input,textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:10px;padding:8px 10px;width:100%;min-width:0}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+button{font:inherit;font-size:13px;border:1px solid var(--rule);background:transparent;color:var(--ink);padding:7px 14px;border-radius:999px;cursor:pointer}
+button.primary{background:var(--gold);border-color:var(--gold);color:var(--paper);font-weight:700}
+.note{font-size:12px;color:var(--muted);margin:0 0 12px}
+.pairs{display:flex;flex-direction:column;gap:8px}
+.pair{display:grid;grid-template-columns:28px 1fr 1fr 36px;gap:8px;align-items:center;font-variant-numeric:tabular-nums}
+.pair .no{font-size:12px;color:var(--muted);text-align:right}
+.pair input{text-align:right}
+.pair button{padding:4px 0;border-radius:8px;color:var(--muted)}
+.pairhead{font-size:12px;color:var(--muted)}
+.actions{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 14px}
+.stat{border:1px solid var(--rule);border-radius:10px;padding:10px 12px;min-width:0}
+.stat dt{font-size:12px;color:var(--muted)}
+.stat dd{margin:0;font-family:var(--serif);font-size:24px;font-variant-numeric:tabular-nums;line-height:1.3}
+.stat small{display:block;font-family:var(--sans);font-size:11px;color:var(--muted)}
+.msg{margin:0;color:var(--muted);font-size:14px}
+.warn{color:var(--ng);font-size:13px;margin:0 0 10px}
+svg{width:100%;height:auto;display:block}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12px;color:var(--muted);margin:6px 0 14px}
+.legend i{display:inline-block;vertical-align:middle;margin-right:5px}
+textarea{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;height:64px;resize:vertical}
+@media (max-width:560px){.grid4{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <span class="brand">THINKING STAFF</span>
+    <h1>得点調整の照合</h1>
+    <p class="lead">受験した本人の「自己採点の素点」と「成績開示の得点」を入れると、その年度・科目の換算式を求めます。出てきた値をデータに貼ると、シミュレーターの表示が「推定」から「実測」に変わります。</p>
+  </header>
+
+  <section class="card">
+    <h2>対象を選ぶ</h2>
+    <div class="grid4">
+      <label class="f">学部<select id="faculty"></select></label>
+      <label class="f">入試方式<select id="method"></select></label>
+      <label class="f">年度<select id="year"></select></label>
+      <label class="f">科目<select id="subject"></select></label>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>素点と開示得点を入力</h2>
+    <p class="note">1人につき1行です。名前は入力しません。入力内容はこの端末のブラウザにだけ保存され、どこにも送信されません。素点の違う人が2人以上いると計算できます。</p>
+    <div class="pair pairhead"><span></span><span>自己採点の素点</span><span>成績開示の得点</span><span></span></div>
+    <div class="pairs" id="pairs"></div>
+    <div class="actions">
+      <button type="button" id="add">行を追加</button>
+      <button type="button" id="reset">この科目の入力を消す</button>
+    </div>
+  </section>
+
+  <section class="card" aria-live="polite">
+    <h2>換算式</h2>
+    <p class="msg" id="msg"></p>
+    <div id="out" hidden>
+      <p class="warn" id="warn" hidden></p>
+      <dl class="stats">
+        <div class="stat"><dt>係数（素点1点あたり）</dt><dd id="s-b"></dd><small id="s-b-note"></small></div>
+        <div class="stat"><dt>平均点の人の調整後</dt><dd id="s-c"></dd><small id="s-c-note"></small></div>
+        <div class="stat"><dt>当てはまりの誤差</dt><dd id="s-e"></dd><small id="s-e-note"></small></div>
+      </dl>
+      <svg id="plot" viewBox="0 0 640 360" role="img" aria-label="素点と開示得点の散布図"></svg>
+      <p class="legend">
+        <span><i style="width:10px;height:10px;border-radius:50%;background:var(--gold)"></i>入力した組</span>
+        <span><i style="width:18px;height:2px;background:var(--ok)"></i>求めた換算式</span>
+        <span><i style="width:18px;height:0;border-top:2px dashed var(--muted)"></i>現在の推定式</span>
+      </p>
+      <label class="f">データに貼る値（data.js の該当科目に足す）
+        <textarea id="snippet" readonly></textarea>
+      </label>
+      <div class="actions"><button type="button" class="primary" id="copy">コピー</button></div>
+    </div>
+  </section>
+</main>
+
+<script src="../data.js?v=20261124"></script>
+<script src="../calc.js?v=20261124"></script>
+<script>
+(function () {
+  "use strict";
+  var DATA = window.WASEDA_SCORE_DATA, Calc = window.WasedaScoreCalc;
+  var $ = function (id) { return document.getElementById(id); };
+  var elF = $("faculty"), elM = $("method"), elY = $("year"), elS = $("subject");
+  var rows = [];   // [{raw:"", adjusted:""}]
+
+  function fill(select, items, keep) {
+    var prev = select.value;
+    select.innerHTML = "";
+    items.forEach(function (it) {
+      var o = document.createElement("option"); o.value = it.value; o.textContent = it.label; select.appendChild(o);
+    });
+    if (keep && items.some(function (i) { return String(i.value) === prev; })) select.value = prev;
+  }
+  function faculty() { return DATA.faculties.find(function (f) { return f.key === elF.value; }); }
+  function method() { return faculty().methods.find(function (m) { return m.key === elM.value; }); }
+  function row() { return method().rows.find(function (r) { return String(r.year) === elY.value; }); }
+  function subject() {
+    var r = row();
+    return r.required.concat(r.electives).find(function (s) { return s.name === elS.value; });
+  }
+  function key() { return "waseda-calibrate:" + [elF.value, elM.value, elY.value, elS.value].join("/"); }
+
+  function load() {
+    rows = [];
+    try { rows = JSON.parse(localStorage.getItem(key()) || "[]"); } catch (e) {}
+    if (!Array.isArray(rows)) rows = [];
+    while (rows.length < 3) rows.push({ raw: "", adjusted: "" });
+  }
+  function save() {
+    try { localStorage.setItem(key(), JSON.stringify(rows.filter(function (p) { return p.raw !== "" || p.adjusted !== ""; }))); } catch (e) {}
+  }
+
+  function pickers(level) {
+    if (level <= 0) fill(elF, DATA.faculties.map(function (f) { return { value: f.key, label: f.name }; }));
+    if (level <= 1) fill(elM, faculty().methods.map(function (m) { return { value: m.key, label: m.name }; }), true);
+    if (level <= 2) fill(elY, method().rows.map(function (r) { return { value: r.year, label: r.year + "年度" }; }), true);
+    var r = row();
+    fill(elS, r.required.concat(r.electives).map(function (s) { return { value: s.name, label: s.name + "（" + s.max + "点）" }; }), true);
+    load(); renderPairs(); renderOut();
+  }
+
+  function renderPairs() {
+    var box = $("pairs"), max = subject().max;
+    box.innerHTML = "";
+    rows.forEach(function (p, i) {
+      var div = document.createElement("div"); div.className = "pair";
+      var no = document.createElement("span"); no.className = "no"; no.textContent = i + 1;
+      div.appendChild(no);
+      ["raw", "adjusted"].forEach(function (field) {
+        var input = document.createElement("input");
+        input.type = "number"; input.inputMode = "decimal"; input.min = 0; input.max = max; input.step = "any";
+        input.value = p[field];
+        input.setAttribute("aria-label", (i + 1) + "人目の" + (field === "raw" ? "自己採点の素点" : "成績開示の得点"));
+        input.addEventListener("input", function () { p[field] = input.value; save(); renderOut(); });
+        div.appendChild(input);
+      });
+      var del = document.createElement("button");
+      del.type = "button"; del.textContent = "×"; del.setAttribute("aria-label", (i + 1) + "行目を削除");
+      del.addEventListener("click", function () { rows.splice(i, 1); if (rows.length < 2) rows.push({ raw: "", adjusted: "" }); save(); renderPairs(); renderOut(); });
+      div.appendChild(del);
+      box.appendChild(div);
+    });
+  }
+
+  function num(text, max) {
+    if (text === "" || text == null) return NaN;
+    var v = Number(text);
+    return Number.isFinite(v) && v >= 0 && v <= max ? v : NaN;
+  }
+  function f1(n) { return (Math.round(n * 10) / 10).toFixed(1); }
+  function r4(n) { return Number(n.toFixed(4)); }
+
+  function renderOut() {
+    var s = subject(), max = s.max;
+    var pairs = rows.map(function (p) { return { raw: num(p.raw, max), adjusted: num(p.adjusted, max) }; })
+      .filter(function (p) { return Number.isFinite(p.raw) && Number.isFinite(p.adjusted); });
+    var fit = Calc.fitLine(pairs, max);
+    $("out").hidden = !fit; $("msg").hidden = !!fit;
+    if (!fit) {
+      $("msg").textContent = pairs.length < 2
+        ? "素点と開示得点の組を2人分以上入れると、換算式が出ます。"
+        : "この組では計算できません。素点が全員同じか、開示得点が0点・満点に張り付いている組しかありません。";
+      return;
+    }
+    var k = DATA.coefficient.mid, half = max / 2, atAvg = fit.a + fit.b * s.average;
+    $("s-b").textContent = fit.b.toFixed(3);
+    $("s-b-note").textContent = "現在の推定は " + k;
+    $("s-c").textContent = f1(atAvg) + "点";
+    $("s-c-note").textContent = "現在の推定は " + f1(half) + " 点（満点の半分）";
+    $("s-e").textContent = fit.n > 2 ? "±" + f1(fit.rmse) + "点" : "—";
+    $("s-e-note").textContent = fit.n + " 人分" + (fit.n > 2 ? "" : "（3人以上で誤差が出ます）");
+
+    var warn = [];
+    if (fit.n < 4) warn.push("人数が少ないため参考値です。4人以上あると安定します。");
+    if (fit.b < 0.6 || fit.b > 2.2) warn.push("係数が通常の範囲（0.6〜2.2）から外れています。入力の取り違えがないか確認してください。");
+    if (fit.n > 2 && fit.rmse > 3) warn.push("誤差が大きめです。記述の自己採点がずれている組が混ざっている可能性があります。");
+    $("warn").hidden = !warn.length; $("warn").textContent = warn.join(" ");
+
+    $("snippet").value = "fit: { a: " + r4(fit.a) + ", b: " + r4(fit.b) + ", rmse: " + r4(fit.rmse) + ", n: " + fit.n + " }";
+    plot(pairs, fit, s, k);
+  }
+
+  function plot(pairs, fit, s, k) {
+    var svg = $("plot"), W = 640, H = 360, L = 48, R = 16, T = 14, B = 40, max = s.max;
+    var x = function (v) { return L + v / max * (W - L - R); };
+    var y = function (v) { return H - B - v / max * (H - T - B); };
+    var el = function (name, attrs, text) {
+      var n = document.createElementNS("http://www.w3.org/2000/svg", name);
+      for (var a in attrs) n.setAttribute(a, attrs[a]);
+      if (text != null) n.textContent = text;
+      svg.appendChild(n); return n;
+    };
+    svg.innerHTML = "";
+    var step = max <= 60 ? 10 : 20;
+    for (var v = 0; v <= max; v += step) {
+      el("line", { x1: x(v), y1: y(0), x2: x(v), y2: y(max), stroke: "var(--grid)" });
+      el("line", { x1: x(0), y1: y(v), x2: x(max), y2: y(v), stroke: "var(--grid)" });
+      el("text", { x: x(v), y: H - B + 16, "text-anchor": "middle", "font-size": 11, fill: "var(--muted)" }, v);
+      el("text", { x: L - 8, y: y(v) + 4, "text-anchor": "end", "font-size": 11, fill: "var(--muted)" }, v);
+    }
+    el("text", { x: (L + W - R) / 2, y: H - 6, "text-anchor": "middle", "font-size": 12, fill: "var(--muted)" }, "自己採点の素点");
+    el("text", { x: 12, y: (T + H - B) / 2, "text-anchor": "middle", "font-size": 12, fill: "var(--muted)", transform: "rotate(-90 12 " + (T + H - B) / 2 + ")" }, "成績開示の得点");
+    var clip = function (v) { return Math.min(max, Math.max(0, v)); };
+    var path = function (fn, attrs) {
+      var d = "";
+      for (var i = 0; i <= 80; i++) { var px = max * i / 80; d += (i ? "L" : "M") + x(px).toFixed(1) + " " + y(clip(fn(px))).toFixed(1); }
+      attrs.d = d; attrs.fill = "none"; el("path", attrs);
+    };
+    path(function (v) { return max / 2 + k * (v - s.average); }, { stroke: "var(--muted)", "stroke-width": 2, "stroke-dasharray": "6 5" });
+    path(function (v) { return fit.a + fit.b * v; }, { stroke: "var(--ok)", "stroke-width": 2.5 });
+    pairs.forEach(function (p) {
+      el("circle", { cx: x(p.raw), cy: y(p.adjusted), r: 5, fill: "var(--gold)", stroke: "var(--paper)", "stroke-width": 2 });
+    });
+  }
+
+  elF.addEventListener("change", function () { pickers(1); });
+  elM.addEventListener("change", function () { pickers(2); });
+  elY.addEventListener("change", function () { pickers(3); });
+  elS.addEventListener("change", function () { load(); renderPairs(); renderOut(); });
+  $("add").addEventListener("click", function () { rows.push({ raw: "", adjusted: "" }); renderPairs(); });
+  $("reset").addEventListener("click", function () {
+    try { localStorage.removeItem(key()); } catch (e) {}
+    load(); renderPairs(); renderOut();
+  });
+  $("copy").addEventListener("click", function () {
+    var t = $("snippet"), btn = $("copy");
+    var done = function () { btn.textContent = "コピーしました"; setTimeout(function () { btn.textContent = "コピー"; }, 1600); };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t.value).then(done, function () { t.select(); });
+    else t.select();
+  });
+
+  pickers(0);
+})();
+</script>
+</body>
+</html>

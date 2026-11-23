@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<!-- 試作中。データを公式PDFと照合して公開するときに noindex を外す -->
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>早稲田 得点調整シミュレーター — THINKING</title>
+<meta name="description" content="早稲田大学の過去問を自己採点した素点から、得点調整（成績標準化）後の得点を推定し、合格最低点との差を確認できるシミュレーターです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Shippori+Mincho:wght@600;700&display=swap">
+<style>
+:root{
+  --bg:#f6f3ec; --paper:#fffdf8; --rule:#e2dccd; --ink:#1f1b14; --muted:#6f6858;
+  --gold:#9a7a3a; --gold-soft:#efe5cf; --ok:#1f7a55; --warn:#a8690a; --ng:#b3392f;
+  --band:rgba(154,122,58,.28);
+  --serif:"Shippori Mincho","Noto Serif JP","Hiragino Mincho ProN",serif;
+  --sans:"Noto Sans JP","Hiragino Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#14120e; --paper:#1d1a14; --rule:#383225; --ink:#efe9da; --muted:#a39a85;
+  --gold:#d6b672; --gold-soft:#2c2617; --ok:#5fcf9f; --warn:#f0b34a; --ng:#ff8177;
+  --band:rgba(214,182,114,.32); color-scheme:dark}}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.7;
+  padding:env(safe-area-inset-top,0) max(16px,env(safe-area-inset-right,0)) env(safe-area-inset-bottom,0) max(16px,env(safe-area-inset-left,0));
+  -webkit-tap-highlight-color:transparent}
+.wrap{max-width:640px;margin:0 auto;padding-block:28px 48px;display:flex;flex-direction:column;gap:18px}
+.brand{font-size:11px;letter-spacing:.24em;color:var(--gold);font-weight:700;text-decoration:none}
+h1{font-family:var(--serif);font-size:26px;line-height:1.35;margin:6px 0 8px;font-weight:700}
+.lead{margin:0;color:var(--muted);font-size:14px}
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:14px;padding:18px}
+.card h2{font-family:var(--serif);font-size:17px;margin:0 0 12px;display:flex;align-items:baseline;gap:10px}
+.card h2 .n{font-family:var(--sans);font-size:11px;letter-spacing:.14em;color:var(--gold);font-weight:700}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);min-width:0}
+select,input[type=number]{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--rule);
+  border-radius:10px;padding:9px 10px;width:100%;min-width:0}
+select:focus-visible,input:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.badge{display:inline-block;font-size:11px;padding:2px 9px;border-radius:999px;background:var(--gold-soft);color:var(--gold);font-weight:700}
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:minmax(0,1fr) 128px;gap:12px;align-items:center;padding:12px 0;border-top:1px solid var(--rule)}
+.row:first-child{border-top:0;padding-top:0}
+.row .name{font-weight:700}
+.row .meta{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.row select{margin-top:6px;max-width:190px}
+.score{display:flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums}
+.score input{text-align:right}
+.score span{font-size:12px;color:var(--muted);white-space:nowrap}
+.err{grid-column:1/-1;margin:0;font-size:12px;color:var(--ng)}
+.tools{display:flex;justify-content:flex-end;margin-top:8px}
+button{font:inherit;font-size:13px;border:1px solid var(--rule);background:transparent;color:var(--muted);padding:6px 12px;border-radius:999px;cursor:pointer}
+
+.empty{margin:0;color:var(--muted);font-size:14px}
+.verdict{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;margin:0 0 10px}
+.verdict i{width:10px;height:10px;border-radius:50%;flex:none}
+.verdict.above{color:var(--ok)} .verdict.border{color:var(--warn)} .verdict.below{color:var(--ng)}
+.verdict i{background:currentColor}
+.big{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;font-variant-numeric:tabular-nums}
+.big .num{font-family:var(--serif);font-size:44px;line-height:1.1;font-weight:700}
+.big .of{color:var(--muted);font-size:14px}
+.big .diff{font-weight:700;font-size:15px}
+.range{margin:4px 0 0;font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{position:relative;height:46px;margin:18px 0 6px}
+.bar .track{position:absolute;left:0;right:0;top:20px;height:10px;border-radius:5px;background:var(--gold-soft)}
+.bar .span{position:absolute;top:17px;height:16px;border-radius:8px;background:var(--band);min-width:4px}
+.bar .dot{position:absolute;top:16px;width:18px;height:18px;margin-left:-9px;border-radius:50%;background:var(--gold);border:3px solid var(--paper)}
+.bar .line{position:absolute;top:8px;height:34px;width:2px;margin-left:-1px;background:var(--ink)}
+.bar .cap{position:absolute;top:-10px;font-size:11px;white-space:nowrap;transform:translateX(-50%);color:var(--ink)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:12px;color:var(--muted);margin:0 0 14px}
+.legend b{display:inline-block;vertical-align:middle;margin-right:5px}
+.legend .l-dot{width:10px;height:10px;border-radius:50%;background:var(--gold)}
+.legend .l-span{width:18px;height:8px;border-radius:4px;background:var(--band)}
+.legend .l-line{width:2px;height:12px;background:var(--ink)}
+table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+th,td{padding:8px 4px;border-top:1px solid var(--rule);text-align:right;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+thead th{border-top:0;color:var(--muted);font-weight:500;font-size:12px}
+td small{color:var(--muted)}
+.up{color:var(--ok)} .down{color:var(--ng)}
+details{font-size:13px;color:var(--muted)}
+details+details{margin-top:8px}
+summary{cursor:pointer;color:var(--ink);font-weight:500}
+details p{margin:8px 0 0}
+.formula{font-family:var(--serif);color:var(--ink);font-size:15px}
+.foot{font-size:12px;color:var(--muted);margin:0}
+.foot a{color:inherit}
+@media (max-width:480px){
+  h1{font-size:22px}
+  .grid3{grid-template-columns:1fr}
+  .row{grid-template-columns:minmax(0,1fr) 112px}
+  .big .num{font-size:38px}
+  .hide-s{display:none}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+  <header>
+    <a class="brand" href="/">THINKING</a>
+    <h1>早稲田 得点調整シミュレーター</h1>
+    <p class="lead">過去問を自己採点した素点を入れると、得点調整（成績標準化）後の得点を推定し、合格最低点との差を表示します。</p>
+  </header>
+
+  <section class="card" aria-labelledby="h-pick">
+    <h2 id="h-pick"><span class="n">STEP 1</span>解いた過去問を選ぶ</h2>
+    <div class="grid3">
+      <label class="f">学部<select id="faculty"></select></label>
+      <label class="f">入試方式<select id="method"></select></label>
+      <label class="f">年度<select id="year"></select></label>
+    </div>
+  </section>
+
+  <section class="card" aria-labelledby="h-input">
+    <h2 id="h-input"><span class="n">STEP 2</span>自己採点の素点を入力</h2>
+    <div class="rows" id="rows"></div>
+    <div class="tools"><button type="button" id="clear">入力をクリア</button></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-result" aria-live="polite">
+    <h2 id="h-result"><span class="n">RESULT</span>調整後の推定 <span class="badge" id="unverified" hidden>データ確認中</span></h2>
+    <p class="empty" id="empty">全科目の素点を入力すると、ここに結果が表示されます。</p>
+    <div id="result" hidden>
+      <p class="verdict" id="verdict"><i></i><span></span></p>
+      <div class="big">
+        <span class="num" id="mid"></span>
+        <span class="of" id="of"></span>
+        <span class="diff" id="diff"></span>
+      </div>
+      <p class="range" id="range"></p>
+      <div class="bar" id="bar" role="img">
+        <div class="track"></div><div class="span"></div><div class="line"></div><div class="cap"></div><div class="dot"></div>
+      </div>
+      <p class="legend">
+        <span><b class="l-dot"></b>推定値</span>
+        <span><b class="l-span"></b>推定の幅</span>
+        <span><b class="l-line"></b>合格最低点</span>
+      </p>
+      <table>
+        <thead><tr><th>科目</th><th>素点</th><th class="hide-s">受験者平均</th><th>平均との差</th><th>調整後（推定）</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="card">
+    <details>
+      <summary>計算方法</summary>
+      <p class="formula">調整後 ＝ 満点の半分 ＋ 係数 ×（素点 − 受験者平均点）</p>
+      <p>早稲田大学は得点調整の計算式を公表していません。このツールでは、受験者平均点を取った人がその科目の満点の半分になると仮定し、係数を <span id="k-mid"></span> として推定値を出しています。係数は得点のばらつき（標準偏差）で変わるため、<span id="k-range"></span> の範囲で計算した「推定の幅」もあわせて表示しています。各科目は 0 点〜満点の範囲に収めています。</p>
+    </details>
+    <details>
+      <summary>結果の見方</summary>
+      <p>合格最低点は、大学が公表している調整後の点数です。推定の幅がすべて最低点を上回れば「上回る見込み」、幅が最低点をまたぐ場合は「ボーダー付近」、幅がすべて下回れば「届いていない」と表示します。平均点より低い科目は、調整後に素点よりも大きく下がることがあります。</p>
+    </details>
+    <details>
+      <summary>データの出典</summary>
+      <p>受験者平均点・合格最低点・配点は、早稲田大学が公表する各年度の「一般選抜 学部別得点状況」に基づきます。現在は商学部（地歴・公民型）の直近3年分に対応しています。</p>
+    </details>
+  </section>
+
+  <p class="foot">このツールは THINKING 独自の推定による学習の目安です。早稲田大学による公式の得点・合否判定ではありません。</p>
+</main>
+
+<script src="data.js?v=20261123"></script>
+<script src="calc.js?v=20261123"></script>
+<script>
+(function () {
+  "use strict";
+  var DATA = window.WASEDA_SCORE_DATA, Calc = window.WasedaScoreCalc;
+  var $ = function (id) { return document.getElementById(id); };
+  var elFaculty = $("faculty"), elMethod = $("method"), elYear = $("year"), elRows = $("rows");
+  var state = { elective: null, raw: {} };   // raw: 科目名 → 入力文字列
+
+  function fmt(n) { return (Math.round(n * 10) / 10).toFixed(1); }
+  function signed(n) { return (n >= 0 ? "+" : "−") + fmt(Math.abs(n)); }
+  function fill(select, items, value) {
+    select.innerHTML = "";
+    items.forEach(function (item) {
+      var o = document.createElement("option");
+      o.value = item.value; o.textContent = item.label;
+      select.appendChild(o);
+    });
+    if (value != null && items.some(function (i) { return String(i.value) === String(value); })) select.value = value;
+  }
+  function faculty() { return DATA.faculties.find(function (f) { return f.key === elFaculty.value; }); }
+  function method() { return faculty().methods.find(function (m) { return m.key === elMethod.value; }); }
+  function row() { return method().rows.find(function (r) { return String(r.year) === elYear.value; }); }
+
+  function subjects() {
+    var r = row(), list = r.required.slice();
+    if (r.electives.length) {
+      var e = r.electives.find(function (x) { return x.name === state.elective; }) || r.electives[0];
+      state.elective = e.name;
+      list.push(e);
+    }
+    return list;
+  }
+
+  function renderPickers(level) {
+    if (level <= 0) fill(elFaculty, DATA.faculties.map(function (f) { return { value: f.key, label: f.name }; }));
+    if (level <= 1) fill(elMethod, faculty().methods.map(function (m) { return { value: m.key, label: m.name }; }), elMethod.value);
+    fill(elYear, method().rows.map(function (r) { return { value: r.year, label: r.year + "年度" }; }), elYear.value);
+    renderRows();
+  }
+
+  function renderRows() {
+    var r = row();
+    elRows.innerHTML = "";
+    subjects().forEach(function (s) {
+      var isElective = r.electives.indexOf(s) >= 0;
+      var div = document.createElement("div");
+      div.className = "row";
+      var left = document.createElement("div");
+      var name = document.createElement("div");
+      name.className = "name";
+      name.textContent = isElective ? "選択科目" : s.name;
+      left.appendChild(name);
+      if (isElective) {
+        var sel = document.createElement("select");
+        sel.setAttribute("aria-label", "選択科目");
+        fill(sel, r.electives.map(function (e) { return { value: e.name, label: e.name }; }), s.name);
+        sel.addEventListener("change", function () { state.elective = sel.value; renderRows(); });
+        left.appendChild(sel);
+      }
+      var meta = document.createElement("div");
+      meta.className = "meta";
+      meta.textContent = "受験者平均 " + fmt(s.average) + " 点";
+      left.appendChild(meta);
+
+      var score = document.createElement("div");
+      score.className = "score";
+      var input = document.createElement("input");
+      input.type = "number"; input.inputMode = "decimal"; input.min = 0; input.max = s.max; input.step = "any";
+      input.setAttribute("aria-label", s.name + "の素点（" + s.max + "点満点）");
+      input.value = state.raw[s.name] || "";
+      var unit = document.createElement("span");
+      unit.textContent = "/ " + s.max + "点";
+      score.appendChild(input); score.appendChild(unit);
+
+      var err = document.createElement("p");
+      err.className = "err"; err.hidden = true;
+      input.addEventListener("input", function () {
+        state.raw[s.name] = input.value;
+        var v = parse(input.value, s);
+        err.hidden = v !== "invalid";
+        err.textContent = "0〜" + s.max + " の範囲で入力してください。";
+        renderResult();
+      });
+      div.appendChild(left); div.appendChild(score); div.appendChild(err);
+      elRows.appendChild(div);
+      if (parse(input.value, s) === "invalid") { err.hidden = false; err.textContent = "0〜" + s.max + " の範囲で入力してください。"; }
+    });
+    renderResult();
+  }
+
+  // 空 → null、範囲外や数値でない → "invalid"
+  function parse(text, s) {
+    if (text == null || String(text).trim() === "") return null;
+    var v = Number(text);
+    return Number.isFinite(v) && v >= 0 && v <= s.max ? v : "invalid";
+  }
+
+  var VERDICT = {
+    above: "合格最低点を上回る見込み",
+    border: "ボーダー付近（推定の幅が最低点をまたぐ）",
+    below: "合格最低点に届いていない"
+  };
+
+  function renderResult() {
+    var r = row(), list = subjects();
+    $("unverified").hidden = r.verified === true;
+    var entries = list.map(function (s) { return { subject: s, raw: parse(state.raw[s.name], s) }; });
+    var ready = entries.every(function (e) { return typeof e.raw === "number"; });
+    $("empty").hidden = ready; $("result").hidden = !ready;
+    if (!ready) return;
+
+    var res = Calc.evaluate(entries, r, DATA.coefficient);
+    var v = $("verdict");
+    v.className = "verdict " + res.verdict;
+    v.lastElementChild.textContent = VERDICT[res.verdict];
+    $("mid").textContent = fmt(res.mid);
+    $("of").textContent = "/ " + r.total + "点（素点合計 " + fmt(res.rawTotal) + "）";
+    var diff = $("diff");
+    diff.textContent = "合格最低点 " + fmt(r.minimum) + " との差 " + signed(res.diff);
+    diff.className = "diff " + (res.diff >= 0 ? "up" : "down");
+    $("range").textContent = "推定の幅 " + fmt(res.low) + " 〜 " + fmt(res.high) + " 点";
+
+    var pct = function (n) { return Math.max(0, Math.min(100, n / r.total * 100)) + "%"; };
+    var bar = $("bar");
+    bar.querySelector(".span").style.left = pct(res.low);
+    bar.querySelector(".span").style.width = Math.max(0, (res.high - res.low) / r.total * 100) + "%";
+    bar.querySelector(".dot").style.left = pct(res.mid);
+    bar.querySelector(".line").style.left = pct(r.minimum);
+    var cap = bar.querySelector(".cap");
+    cap.style.left = pct(r.minimum);
+    cap.textContent = "最低点 " + fmt(r.minimum);
+    bar.setAttribute("aria-label", "推定値 " + fmt(res.mid) + " 点、推定の幅 " + fmt(res.low) + "〜" + fmt(res.high) + " 点、合格最低点 " + fmt(r.minimum) + " 点");
+
+    var tbody = $("tbody");
+    tbody.innerHTML = "";
+    res.subjects.forEach(function (s) {
+      var tr = document.createElement("tr");
+      var gap = s.raw - s.average;
+      [
+        [s.name, ""],
+        [fmt(s.raw), ""],
+        [fmt(s.average), "hide-s"],
+        [signed(gap), gap >= 0 ? "up" : "down"],
+        [fmt(s.mid), ""]
+      ].forEach(function (cell, i) {
+        var td = document.createElement("td");
+        td.textContent = cell[0];
+        if (cell[1]) td.className = cell[1];
+        if (i === 4 && fmt(s.low) !== fmt(s.high)) {
+          var small = document.createElement("small");
+          small.textContent = " (" + fmt(s.low) + "〜" + fmt(s.high) + ")";
+          td.appendChild(small);
+        }
+        tr.appendChild(td);
+      });
+      tbody.appendChild(tr);
+    });
+  }
+
+  elFaculty.addEventListener("change", function () { renderPickers(1); });
+  elMethod.addEventListener("change", function () { renderPickers(2); });
+  elYear.addEventListener("change", renderRows);
+  $("clear").addEventListener("click", function () { state.raw = {}; renderRows(); });
+
+  $("k-mid").textContent = DATA.coefficient.mid;
+  $("k-range").textContent = DATA.coefficient.low.toFixed(1) + "〜" + DATA.coefficient.high.toFixed(1);
+  renderPickers(0);
+})();
+</script>
+</body>
+</html>

@@ -9,7 +9,8 @@ set -euo pipefail
 NAME=genko-p9zz2u
 MSG=${1:-ご確認ページを更新}
 ROOT=$(git rev-parse --show-toplevel)
-SRC="$ROOT/book/build/共有ページ/site"
+# ふつうは、作り直した一式（site/）を、そのまま置く。一部のページだけを入れかえたい時は、置くもの一式を別の所に用意して、SHARE_SRC で渡す
+SRC="${SHARE_SRC:-$ROOT/book/build/共有ページ/site}"
 test -f "$SRC/index.html"
 WT=$(mktemp -d)
 git -C "$ROOT" fetch -q origin main

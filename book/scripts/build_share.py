@@ -466,7 +466,27 @@ PARTS = [  # (記号, 題, 中身の説明)
     ("owari", "おわりに", "おわりに、巻末のページ"),
 ]
 READY = {"kantou": "2026/11/20", "hajimeni": "2026/11/20", "ch1": "2026/11/20", "ch2": "2026/11/20", "ch3": "2026/11/20", "ch4": "2026/11/20"}   # 読める部分 → いつの時点か
-UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第4章と、書名・項目の言葉の案のページを掲載しました。")]
+UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第4章と、書名・項目の言葉の案のページを掲載しました。"),
+           ("2026/11/26", "巻頭ページに、参考イメージ（絵と組んだ時の見え方）を足しました。")]
+# 巻頭ページの参考イメージ（2026-11-26、著者「杉浦さんに共有している巻頭ページの所に、参考イメージとして、このPDFを見られるようにしたい」）
+# 著者が作った、絵と組み方のラフ（PDF。1ページが、見開き1つ）。巻頭ページの文のあとに、見開きごとの画像で出す。PDFそのものも、開けるようにする
+KANTOU_PDF = os.path.join(ROOT, "assets", "巻頭_参考イメージ", "巻頭ページ_参考イメージ_20261126.pdf")
+KANTOU_PDF_NAME = "kantou_image.pdf"
+
+
+def kantou_image_html():
+    """参考イメージのPDFを、見開きごとの画像（site/fig/kantou-NN.jpg）にして、巻頭ページに入れるHTMLを返す。"""
+    fig = os.path.join(SITE, "fig")
+    os.makedirs(fig, exist_ok=True)
+    subprocess.check_call(["pdftoppm", "-r", "160", "-jpeg", "-jpegopt", "quality=80", KANTOU_PDF, os.path.join(fig, "kantou")])
+    files = sorted(f for f in os.listdir(fig) if re.match(r"kantou-\d+\.jpg$", f))
+    assert files, "参考イメージの画像が、できていない"
+    shutil.copyfile(KANTOU_PDF, os.path.join(SITE, KANTOU_PDF_NAME))
+    figs = "".join('<figure class="mi"><img src="fig/%s" alt="巻頭ページの参考イメージ　見開き%d（%d〜%dページ）" loading="lazy" width="1600" height="1184"><figcaption>見開き%d（%d〜%dページ）</figcaption></figure>'
+                   % (f, i, 2 * i - 1, 2 * i, i, 2 * i - 1, 2 * i) for i, f in enumerate(files, 1))
+    return ('<h1 class="part">参考イメージ（巻頭ページを、絵と組んだ時の見え方）</h1>'
+            '<p>上の「10秒だけ、付き合ってください」を、絵と組んだ時のイメージです（ラフ。見開き%d枚、%dページ）。右のページから、左へ読みます。</p>'
+            '<p class="pdfl"><a href="%s" target="_blank" rel="noopener">PDFで開く</a></p>%s' % (len(files), 2 * len(files), KANTOU_PDF_NAME, figs))
 # あわせて見てもらう資料（記号, 題, 説明, 作るスクリプト, できるファイル）。3つとも、今の項目の数に合わせて作り直す
 # イラスト付きの原稿（Word）。著者が、Googleドキュメントを、部分ごとに分けて作っている（2026-11-20 に、フォルダのリンクをもらった）。
 #   フォルダ：【書籍】頭のいい人がやらないこと（https://drive.google.com/drive/folders/1N8TWbTzo9H6CAg3ZUDKFDWUn4DgA2_Ls）
@@ -755,6 +775,7 @@ def one_file():
         with open(os.path.join(SITE, n + ".html"), encoding="utf-8") as f:
             doc = f.read()
         doc = re.sub(r'src="(fig/[^"]+)"', img, doc)
+        doc = re.sub(r'<p class="pdfl">.*?</p>', "", doc)
         doc = doc.replace(' onclick="if(document.referrer&&history.length>1){history.back();return false}"', "")
         assert doc.count("</body>") == 1, n
         pages[n] = doc.replace("</body>", ONE_CHILD_JS % json.dumps(names + ["index"]) + "</body>")
@@ -833,6 +854,10 @@ p.tab{white-space:pre;overflow-x:auto;overflow-wrap:normal;padding-bottom:4px}
 p.lab{margin:36px 0 8px;font-size:13px;font-weight:900;color:var(--accent);letter-spacing:.06em}
 p.lab.s{margin-top:16px;color:var(--sub)}
 a{color:var(--accent)}
+figure.mi{margin:0 0 26px}
+figure.mi img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:4px;background:#fff}
+figure.mi figcaption{font-size:12.5px;color:var(--sub);line-height:1.6;margin-top:4px}
+p.pdfl{font-size:14px;margin:0 0 22px}
 """
 # 原稿の中の、印（しるし）の行。文字は変えずに、小さな見出しの見た目にする
 TEXT_LAB = {"章最初のページ", "導入文", "質問ページ", "本文", "頭のいい人と伸びない人の違い", "今日からできる3STEP", "まとめ", "参考イメージ"}
@@ -917,6 +942,9 @@ def text_bodies():
                     x, o = AD.heads().get(no, ("", ""))
                     label = "　%s　「%s」→「%s」" % (no, x, o)
                 out[key].append(("i" + no, label, '<div class="ihead"><span class="no">%s</span>%s</div>%s' % (no, hh, text_html(body))))
+    if os.path.exists(KANTOU_PDF):
+        at = next((i for i, x in enumerate(out["kantou"]) if x[0] == "kantou"), len(out["kantou"]) - 1) + 1
+        out["kantou"].insert(at, ("image", "参考イメージ（絵と組んだ時の見え方）", kantou_image_html()))
     names["kantou"] = ("巻頭ページ", "表紙・タイトルの案、「10秒だけ、付き合ってください」")
     names["hajimeni"] = ("はじめに", "はじめに、この本の使い方")
     return out, names
@@ -927,10 +955,11 @@ def text_part_page(key, title, secs):
     body = "\n".join('<div class="sec" id="%s">%s</div>' % (sid, h) for sid, _, h in secs)
     return ('<!doctype html><html lang="ja"><head>%s<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>%s</title>%s<style>%s</style></head><body>'
             '<div class="bar">%s<b>%s</b><select id="jump" aria-label="読みたい所へ飛ぶ"><option value="">読みたい所へ飛ぶ</option>%s</select></div>'
-            '<div class="top"><p>%s（仮題）　／　%s　／　%s 時点</p><p>原稿の文字だけを、載せています。図とイラストは、入っていません。%s</p></div>'
+            '<div class="top"><p>%s（仮題）　／　%s　／　%s 時点</p><p>原稿の文字だけを、載せています。図とイラストは、入っていません。%s</p>%s</div>'
             '%s<script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>'
             % (HEAD, esc(title), FONT, TEXT_CSS, BACK, esc(title), opts, esc(TITLE), esc(K.AUTHOR), READY[key],
-               ('イラスト付きの原稿は、<a href="%s"%s>Wordで保存する</a>か、<a href="%s"%s>ブラウザで開く</a>と、見られます。' % (word_save(key), EXT, word_open(key), EXT)) if key in WORD else "", body))
+               ('イラスト付きの原稿は、<a href="%s"%s>Wordで保存する</a>か、<a href="%s"%s>ブラウザで開く</a>と、見られます。' % (word_save(key), EXT, word_open(key), EXT)) if key in WORD else "",
+               '<p><a href="#image">巻頭ページの参考イメージ（絵と組んだ時の見え方）は、こちら</a></p>' if any(sid == "image" for sid, _, _ in secs) else "", body))
 
 
 def main():

@@ -499,7 +499,7 @@ PARTS = [  # (記号, 題, 中身の説明)
 READY = {k: "2026/11/26" for k in ("kantou", "hajimeni", "ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7")}   # 読める部分 → いつの時点か
 UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第4章と、書名・項目の言葉の案のページを掲載しました。"),
            ("2026/11/26", "巻頭ページに、参考イメージ（絵と組んだ時の見え方）を足しました。"),
-           ("2026/11/26", "第5章〜第7章を掲載しました。巻頭ページから第4章も、最新の原稿に入れかえました。イラスト付き（Word）は、最新の原稿に合わせて、準備中です。")]
+           ("2026/11/26", "第5章〜第7章を掲載しました。巻頭ページから第4章も、最新の原稿に入れかえました。イラスト付き（Word）は、巻頭ページから第4章までが、11月20日時点のものです。第5章から先は、準備中です。")]
 # 巻頭ページの参考イメージ（2026-11-26、著者「杉浦さんに共有している巻頭ページの所に、参考イメージとして、このPDFを見られるようにしたい」）
 # 著者が作った、絵と組み方のラフ（PDF。1ページが、見開き1つ）。巻頭ページの文のあとに、見開きごとの画像で出す。PDFそのものも、開けるようにする
 KANTOU_PDF = os.path.join(ROOT, "assets", "巻頭_参考イメージ", "巻頭ページ_参考イメージ_20261126.pdf")
@@ -533,7 +533,9 @@ WORD = {
     "ch3": "1xfI8P2bQ8yFsHo9tJBjaF9tZUPg7LzFiYIsvdhIrcG0",
     "ch4": "1ycIBuBl6ouBsSb22_Mezvxlvt8iipOz0WIwDrhvMJDo",
 }
-WORD_READY = False   # 2026-11-26、著者「イラスト付きのやつは、準備中という感じにして」。Wordのほうが、最新の原稿に追いついたら True にする
+# 2026-11-26、著者「イラスト付きは、1〜30番までは、前のドキュメントでやっていたから、見せていい」
+#   → Wordがある部分（巻頭ページ〜第4章。11月20日時点の文）は、リンクを出す。Wordがまだない部分（第5章から先）は、「準備中」と出す
+WORD_DATE = "11月20日"
 EXT = ' target="_blank" rel="noopener"'
 word_save = lambda key: "https://docs.google.com/document/d/%s/export?format=docx" % WORD[key]   # 押すと、Wordのファイルとして保存される
 word_open = lambda key: "https://docs.google.com/document/d/%s/edit?usp=sharing" % WORD[key]      # ブラウザで、Googleドキュメントとして開く
@@ -713,8 +715,8 @@ def index_now(names):
     for key, ttl, ds in PARTS:
         name, sub = names.get(key, (ttl, ds))
         if key in READY:
-            w = ('<a class="btn sub" href="%s"%s>イラスト付き（Word）</a>' % (word_save(key), EXT)) if key in WORD and WORD_READY else "" if WORD_READY else '<span class="wait">イラスト付き：準備中</span>'
-            o = ('<a class="lk" href="%s"%s>ブラウザで開く</a>　／　' % (word_open(key), EXT)) if key in WORD and WORD_READY else ""
+            w = ('<a class="btn sub" href="%s"%s>イラスト付き（Word）</a>' % (word_save(key), EXT)) if key in WORD else '<span class="wait">イラスト付き：準備中</span>'
+            o = ('<a class="lk" href="%s"%s>ブラウザで開く</a>　／　' % (word_open(key), EXT)) if key in WORD else ""
             r = (KANTOU_BTN if key == "kantou" and os.path.exists(KANTOU_PDF) else "")   # 2026-11-26、著者「参考イメージを押したら、PDFが開く形がいい」
             rows.append('<li><span class="nm">%s</span><span class="ds">%s</span><span class="act"><span class="bb">%s<a class="btn" href="%s.html">文字だけで読む</a>%s</span><span class="dt">%s%s 時点</span></span></li>'
                         % (esc(name), esc(sub), w, key, r, o, READY[key]))
@@ -738,7 +740,7 @@ def index_now(names):
 <h2>原稿</h2>
 <p class="note">本の順番に並べています。</p>
 <ul class="how"><li><b>文字だけで読む</b><span>このページの中で、文だけを読めます。図とイラストは、入っていません。</span></li>
-<li><b>イラスト付き</b><span>図とイラストのラフ案が入った原稿です。今、最新の原稿に合わせて、準備しています。</span></li>
+<li><b>イラスト付き（Word）</b><span>図とイラストのラフ案が入った原稿を、Wordのファイルとして保存します。「ブラウザで開く」を押すと、保存せずに、そのまま見られます。巻頭ページから第4章までが、あります（文は、11月20日時点のものです）。第5章から先は、準備中です。</span></li>
 <li><b>参考イメージ（PDF）</b><span>巻頭ページを、絵と組んだ時の見え方です（ラフ）。</span></li></ul>
 <ul class="parts">%s</ul>
 </section>
@@ -1003,7 +1005,7 @@ def text_part_page(key, title, secs):
             '<div class="top"><p>%s（仮題）　／　%s　／　%s 時点</p><p>原稿の文字だけを、載せています。図とイラストは、入っていません。%s</p>%s</div>'
             '%s<script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>'
             % (HEAD, esc(title), FONT, TEXT_CSS, BACK, esc(title), opts, esc(TITLE), esc(K.AUTHOR), READY[key],
-               ('イラスト付きの原稿は、<a href="%s"%s>Wordで保存する</a>か、<a href="%s"%s>ブラウザで開く</a>と、見られます。' % (word_save(key), EXT, word_open(key), EXT)) if key in WORD and WORD_READY else "" if WORD_READY else "イラスト付きの原稿は、準備中です。",
+               ('イラスト付きの原稿（%s時点の文です）は、<a href="%s"%s>Wordで保存する</a>か、<a href="%s"%s>ブラウザで開く</a>と、見られます。' % (WORD_DATE, word_save(key), EXT, word_open(key), EXT)) if key in WORD else "イラスト付きの原稿は、準備中です。",
                '<p><a href="#image">巻頭ページの参考イメージ（絵と組んだ時の見え方）は、こちら</a></p>' if any(sid == "image" for sid, _, _ in secs) else "", body))
 
 

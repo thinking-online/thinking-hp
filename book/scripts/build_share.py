@@ -536,6 +536,8 @@ WORD = {
 # 2026-11-26、著者「イラスト付きは、1〜30番までは、前のドキュメントでやっていたから、見せていい」
 #   → Wordがある部分（巻頭ページ〜第4章。11月20日時点の文）は、リンクを出す。Wordがまだない部分（第5章から先）は、「準備中」と出す
 WORD_DATE = "11月20日"
+# 2026-11-26、著者「巻頭ページの、イラスト付きWordのボタンは、『Word』だけの表記にしてほしい」（巻頭ページは、絵の見え方を、参考イメージのほうで見せているため）
+WORD_LABEL = {"kantou": "Word"}
 EXT = ' target="_blank" rel="noopener"'
 word_save = lambda key: "https://docs.google.com/document/d/%s/export?format=docx" % WORD[key]   # 押すと、Wordのファイルとして保存される
 word_open = lambda key: "https://docs.google.com/document/d/%s/edit?usp=sharing" % WORD[key]      # ブラウザで、Googleドキュメントとして開く
@@ -715,7 +717,7 @@ def index_now(names):
     for key, ttl, ds in PARTS:
         name, sub = names.get(key, (ttl, ds))
         if key in READY:
-            w = ('<a class="btn sub" href="%s"%s>イラスト付き（Word）</a>' % (word_save(key), EXT)) if key in WORD else '<span class="wait">イラスト付き：準備中</span>'
+            w = ('<a class="btn sub" href="%s"%s>%s</a>' % (word_save(key), EXT, WORD_LABEL.get(key, "イラスト付き（Word）"))) if key in WORD else '<span class="wait">イラスト付き：準備中</span>'
             o = ('<a class="lk" href="%s"%s>ブラウザで開く</a>　／　' % (word_open(key), EXT)) if key in WORD else ""
             r = (KANTOU_BTN if key == "kantou" and os.path.exists(KANTOU_PDF) else "")   # 2026-11-26、著者「参考イメージを押したら、PDFが開く形がいい」
             rows.append('<li><span class="nm">%s</span><span class="ds">%s</span><span class="act"><span class="bb">%s<a class="btn" href="%s.html">文字だけで読む</a>%s</span><span class="dt">%s%s 時点</span></span></li>'
@@ -1005,7 +1007,7 @@ def text_part_page(key, title, secs):
             '<div class="top"><p>%s（仮題）　／　%s　／　%s 時点</p><p>原稿の文字だけを、載せています。図とイラストは、入っていません。%s</p>%s</div>'
             '%s<script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>'
             % (HEAD, esc(title), FONT, TEXT_CSS, BACK, esc(title), opts, esc(TITLE), esc(K.AUTHOR), READY[key],
-               ('イラスト付きの原稿（%s時点の文です）は、<a href="%s"%s>Wordで保存する</a>か、<a href="%s"%s>ブラウザで開く</a>と、見られます。' % (WORD_DATE, word_save(key), EXT, word_open(key), EXT)) if key in WORD else "イラスト付きの原稿は、準備中です。",
+               ('%sの原稿（%s時点の文です）は、<a href="%s"%s>Wordで保存する</a>か、<a href="%s"%s>ブラウザで開く</a>と、見られます。' % ("Word" if key in WORD_LABEL else "イラスト付き", WORD_DATE, word_save(key), EXT, word_open(key), EXT)) if key in WORD else "イラスト付きの原稿は、準備中です。",
                '<p><a href="#image">巻頭ページの参考イメージ（絵と組んだ時の見え方）は、こちら</a></p>' if any(sid == "image" for sid, _, _ in secs) else "", body))
 
 

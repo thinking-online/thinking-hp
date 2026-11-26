@@ -269,11 +269,40 @@ footer{color:var(--sub);font-size:12.5px}
 """
 
 
+def moku_chapters():
+    """目次の章と項目。第1章は、今までと同じ。第2章から先は、著者の手元の原稿の並びから作る（2026-11-26 から。原稿が45項目になったため）。
+    [(章の番号, 札, 題, [(小見出し, [項目の番号])])]"""
+    import mokuji1 as M1
+    import author_doc as AD
+    out = [M1.chapters()[0]]
+    for s in AD.parse():
+        if s["kind"] != "chapter" or s["num"] == 1:
+            continue
+        m = re.match(r"^第\d*章[\s　]*【(.+?)】(.*)$", s["head"])
+        fuda, title = m.group(1), re.sub(r"頭のいい人は、$", "", m.group(2)).strip()
+        groups, cur = [], None
+        for u in s["units"]:
+            if u[0] == "group":
+                cur = (u[1], [])
+                groups.append(cur)
+            elif u[0] == "item":
+                if cur is None:
+                    cur = (None, [])
+                    groups.append(cur)
+                cur[1].append(u[1])
+        out.append((s["num"], fuda, title, groups))
+    return out
+
+
+def moku_n():
+    return sum(len(items) for _, _, _, groups in moku_chapters() for _, items in groups)
+
+
 def mokuji_html():
     """入口のページの目次。1行の形（scripts/mokuji1.py）の言葉を使う。左が、やらないこと。矢印の先が、かわりにやること。"""
     import mokuji1 as M1
     out = []
-    for num, fuda, title, groups in M1.chapters():
+    for num, fuda, title, groups in moku_chapters():
         L = []
         ks = [nn for _, items in groups for nn in items]
         for name, items in groups:
@@ -324,14 +353,15 @@ def mokuji_one_html(back=True):
     """目次を1枚で見るページ（1行の形）。back=False は、単体のファイル用（一覧にもどる、を出さない）。"""
     import mokuji1 as M1
     L = []
-    for num, fuda, title, groups in M1.chapters():
+    N = moku_n()
+    for num, fuda, title, groups in moku_chapters():
         L.append('<div class="ch"><span class="no">第%d章</span><span class="fd">%s</span><span class="tt">%s</span></div>' % (num, esc(fuda), esc(title)))
         for name, items in groups:
             if name:
                 L.append('<p class="grp">■ %s</p>' % esc(name))
             L += ['<div class="row"><span class="n">%s</span><span class="x">%s</span><span class="ar">→</span><span class="o">%s</span></div>'
                   % (nn, esc(M1.pair(nn)[0]), esc(M1.pair(nn)[1])) for nn in items]
-    fm = lambda xs: '<ul class="fm">%s</ul>' % "".join("<li>%s</li>" % esc(a % M1.N_ALL if "%d" in a else a) for a in xs)
+    fm = lambda xs: '<ul class="fm">%s</ul>' % "".join("<li>%s</li>" % esc(a % N if "%d" in a else a) for a in xs)
     return """<title>目次（%d項目）</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="robots" content="noindex,nofollow,noarchive">
@@ -348,11 +378,11 @@ def mokuji_one_html(back=True):
 <div style="height:10px"></div>
 %s
 </div>
-<footer>言葉は、今の原稿に合わせています。第1章と、第5章から先の言葉は、仮のものです。</footer>
+<footer>言葉は、今の原稿に合わせています。第1章の言葉は、仮のものです。</footer>
 </div>
-""" % (M1.N_ALL, FONT, MOKUJI_CSS,
+""" % (N, FONT, MOKUJI_CSS,
        '<a class="back" href="./" onclick="if(document.referrer&&history.length>1){history.back();return false}">← 一覧にもどる</a>' if back else "",
-       esc(TITLE), M1.N_ALL, len(M1.chapters()), max(READY.values()), fm(M1.MAE), "".join(L), fm(M1.ATO))
+       esc(TITLE), N, len(moku_chapters()), max(READY.values()), fm(M1.MAE), "".join(L), fm(M1.ATO))
 
 
 def mokuji_page_html():
@@ -465,9 +495,11 @@ PARTS = [  # (記号, 題, 中身の説明)
     ("column", "コラム候補", "章の間に入れるコラム"),
     ("owari", "おわりに", "おわりに、巻末のページ"),
 ]
-READY = {"kantou": "2026/11/20", "hajimeni": "2026/11/20", "ch1": "2026/11/20", "ch2": "2026/11/20", "ch3": "2026/11/20", "ch4": "2026/11/20"}   # 読める部分 → いつの時点か
+# 2026-11-26：著者が、巻頭から第7章（45番）までの最新の原稿を貼った。「文字だけで読む」を、第7章まで、この原稿に入れかえた
+READY = {k: "2026/11/26" for k in ("kantou", "hajimeni", "ch1", "ch2", "ch3", "ch4", "ch5", "ch6", "ch7")}   # 読める部分 → いつの時点か
 UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第4章と、書名・項目の言葉の案のページを掲載しました。"),
-           ("2026/11/26", "巻頭ページに、参考イメージ（絵と組んだ時の見え方）を足しました。")]
+           ("2026/11/26", "巻頭ページに、参考イメージ（絵と組んだ時の見え方）を足しました。"),
+           ("2026/11/26", "第5章〜第7章を掲載しました。巻頭ページから第4章も、最新の原稿に入れかえました。イラスト付き（Word）は、最新の原稿に合わせて、準備中です。")]
 # 巻頭ページの参考イメージ（2026-11-26、著者「杉浦さんに共有している巻頭ページの所に、参考イメージとして、このPDFを見られるようにしたい」）
 # 著者が作った、絵と組み方のラフ（PDF。1ページが、見開き1つ）。巻頭ページの文のあとに、見開きごとの画像で出す。PDFそのものも、開けるようにする
 KANTOU_PDF = os.path.join(ROOT, "assets", "巻頭_参考イメージ", "巻頭ページ_参考イメージ_20261126.pdf")
@@ -501,6 +533,7 @@ WORD = {
     "ch3": "1xfI8P2bQ8yFsHo9tJBjaF9tZUPg7LzFiYIsvdhIrcG0",
     "ch4": "1ycIBuBl6ouBsSb22_Mezvxlvt8iipOz0WIwDrhvMJDo",
 }
+WORD_READY = False   # 2026-11-26、著者「イラスト付きのやつは、準備中という感じにして」。Wordのほうが、最新の原稿に追いついたら True にする
 EXT = ' target="_blank" rel="noopener"'
 word_save = lambda key: "https://docs.google.com/document/d/%s/export?format=docx" % WORD[key]   # 押すと、Wordのファイルとして保存される
 word_open = lambda key: "https://docs.google.com/document/d/%s/edit?usp=sharing" % WORD[key]      # ブラウザで、Googleドキュメントとして開く
@@ -511,9 +544,17 @@ SHIRYO = [
 ]
 
 
+# 3つの資料の、置いてあるものの写し（2026-11-21 に置いたもの）。ここにファイルがある間は、作り直さずに、これを使う
+SHIRYO_FIXED = os.path.join(ROOT, "assets", "ご確認ページ_資料_固定")
+
+
 def shiryo_pages():
     """3つの資料を作り直して、ご確認ページの中のページにする（一覧にもどる、の行を足す）。"""
     for key, ttl, ds, script, out in SHIRYO:
+        fixed = os.path.join(SHIRYO_FIXED, key + ".html")
+        if os.path.exists(fixed):
+            shutil.copyfile(fixed, os.path.join(SITE, key + ".html"))
+            continue
         subprocess.check_call([sys.executable, "-I", os.path.join(HERE, script)], cwd=ROOT, stdout=subprocess.DEVNULL)
         with open(os.path.join(ROOT, "build", out), encoding="utf-8") as f:
             doc = f.read()
@@ -672,8 +713,8 @@ def index_now(names):
     for key, ttl, ds in PARTS:
         name, sub = names.get(key, (ttl, ds))
         if key in READY:
-            w = ('<a class="btn sub" href="%s"%s>イラスト付き（Word）</a>' % (word_save(key), EXT)) if key in WORD else ""
-            o = ('<a class="lk" href="%s"%s>ブラウザで開く</a>　／　' % (word_open(key), EXT)) if key in WORD else ""
+            w = ('<a class="btn sub" href="%s"%s>イラスト付き（Word）</a>' % (word_save(key), EXT)) if key in WORD and WORD_READY else "" if WORD_READY else '<span class="wait">イラスト付き：準備中</span>'
+            o = ('<a class="lk" href="%s"%s>ブラウザで開く</a>　／　' % (word_open(key), EXT)) if key in WORD and WORD_READY else ""
             r = (KANTOU_BTN if key == "kantou" and os.path.exists(KANTOU_PDF) else "")   # 2026-11-26、著者「参考イメージを押したら、PDFが開く形がいい」
             rows.append('<li><span class="nm">%s</span><span class="ds">%s</span><span class="act"><span class="bb">%s<a class="btn" href="%s.html">文字だけで読む</a>%s</span><span class="dt">%s%s 時点</span></span></li>'
                         % (esc(name), esc(sub), w, key, r, o, READY[key]))
@@ -690,20 +731,21 @@ def index_now(names):
 <p class="eyebrow">ご確認用</p>
 <h1>%s<small>（仮題）</small></h1>
 <p class="by">%s　／　%s 時点</p>
-<p class="lead">原稿を、できた所から、このページに置いていきます。今は、巻頭ページから第4章までを、お読みいただけます。第5章から先と、コラム、おわりには、仕上げている途中です。11月中に、誤字の確認まで含めて、全体を仕上げます。</p>
+<p class="lead">原稿を、できた所から、このページに置いていきます。今は、巻頭ページから第7章までを、お読みいただけます。コラムと、おわりには、仕上げている途中です。11月中に、誤字の確認まで含めて、全体を仕上げます。</p>
 </header>
 
 <section id="genko">
 <h2>原稿</h2>
-<p class="note">本の順番に並べています。部分ごとに、見方を2つ用意しました。</p>
-<ul class="how"><li><b>イラスト付き（Word）</b><span>図とイラストのラフ案が入った原稿を、Wordのファイルとして保存します。「ブラウザで開く」を押すと、保存せずに、そのまま見られます。</span></li>
-<li><b>文字だけで読む</b><span>このページの中で、文だけを読めます。図とイラストは、入っていません。</span></li></ul>
+<p class="note">本の順番に並べています。</p>
+<ul class="how"><li><b>文字だけで読む</b><span>このページの中で、文だけを読めます。図とイラストは、入っていません。</span></li>
+<li><b>イラスト付き</b><span>図とイラストのラフ案が入った原稿です。今、最新の原稿に合わせて、準備しています。</span></li>
+<li><b>参考イメージ（PDF）</b><span>巻頭ページを、絵と組んだ時の見え方です（ラフ）。</span></li></ul>
 <ul class="parts">%s</ul>
 </section>
 
 <section id="shiryo">
 <h2>書名と、項目の言葉の案</h2>
-<p class="note">書名の方向と、項目に入れる言葉を比べるためのページです。今の項目の数（%d）に合わせています。言葉は、どれも仮のものです。</p>
+<p class="note">書名の方向と、項目に入れる言葉を比べるためのページです。11月20日の時点の項目で、作っています。言葉は、どれも仮のものです。</p>
 <ul class="parts">%s</ul>
 </section>
 
@@ -722,7 +764,7 @@ def index_now(names):
 
 <footer>このページは、ご確認用にお送りしているものです。</footer>
 </div>
-""" % (FONT, INDEX_CSS, LIST_CSS, esc(TITLE), esc(K.AUTHOR), max(READY.values()), "".join(rows), 6 + len(V.ITEMS),
+""" % (FONT, INDEX_CSS, LIST_CSS, esc(TITLE), esc(K.AUTHOR), max(READY.values()), "".join(rows),
        "".join('<li><span class="nm">%s</span><span class="ds">%s</span><span class="act"><a class="btn" href="%s.html">見る</a></span></li>' % (esc(a), esc(b), k) for k, a, b, _, _ in SHIRYO),
        log, mokuji_html())
 
@@ -961,7 +1003,7 @@ def text_part_page(key, title, secs):
             '<div class="top"><p>%s（仮題）　／　%s　／　%s 時点</p><p>原稿の文字だけを、載せています。図とイラストは、入っていません。%s</p>%s</div>'
             '%s<script>document.getElementById("jump").addEventListener("change",function(){if(this.value){document.getElementById(this.value).scrollIntoView();this.value=""}});</script></body></html>'
             % (HEAD, esc(title), FONT, TEXT_CSS, BACK, esc(title), opts, esc(TITLE), esc(K.AUTHOR), READY[key],
-               ('イラスト付きの原稿は、<a href="%s"%s>Wordで保存する</a>か、<a href="%s"%s>ブラウザで開く</a>と、見られます。' % (word_save(key), EXT, word_open(key), EXT)) if key in WORD else "",
+               ('イラスト付きの原稿は、<a href="%s"%s>Wordで保存する</a>か、<a href="%s"%s>ブラウザで開く</a>と、見られます。' % (word_save(key), EXT, word_open(key), EXT)) if key in WORD and WORD_READY else "" if WORD_READY else "イラスト付きの原稿は、準備中です。",
                '<p><a href="#image">巻頭ページの参考イメージ（絵と組んだ時の見え方）は、こちら</a></p>' if any(sid == "image" for sid, _, _ in secs) else "", body))
 
 

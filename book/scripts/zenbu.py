@@ -74,50 +74,30 @@ def master():
     return os.path.basename(f), open(f, encoding="utf-8").read().split("\n")
 
 def build_secs():
+    """2026-11-26 から：著者の手元の原稿が、巻頭から第7章（45番）まで全部入った形になったので、そこまでは、原稿のまま出す。
+    コラムと、おわりには、原稿にまだないので、今、本に入っているものを足す。"""
     name, L = master()
-    idx = lambda pat, a=0: next(i for i in range(a, len(L)) if re.match(pat, L[i]))
+    idx = lambda pat: next(i for i in range(len(L)) if re.match(pat, L[i]))
     secs = []   # (id, 目次に出す名前, 段, 本文, 注)
     cut = [("kantou", "表紙・巻頭ページ", r"⚫︎表紙"), ("hajimeni", "はじめに", r"⚫︎はじめに"), ("tsukaikata", "この本の使い方", r"⚫︎この本の使い方"),
            ("ch1", "第1章　6つの絶対法則（01〜06番）", r"⚫︎第1章"), ("ch2", "第2章【インプット】（07〜15番）", r"⚫︎第2章"), ("ch3", "第3章【アウトプット】（16〜25番）", r"⚫︎第3章"),
-           ("ch4", "第4章【計画】（26〜30番）", r"⚫︎第4章"), ("ch5", "第5章【集中】（31〜35番）", r"⚫︎第5章"), ("end", "", r"⚫︎第6章")]
-    pos = [idx(p) for _, _, p in cut]
-    for (sid, ttl, _), a, b in zip(cut[:-1], pos[:-1], pos[1:]):
-        body = L[a:b]
-        note = "著者の手元の原稿（%s）のまま" % name
-        if sid == "ch4":   # 27番は、差しかえの文を使う
-            i27 = next(i for i, s in enumerate(body) if s.startswith("27 ×")); i28 = next(i for i, s in enumerate(body) if s.startswith("28 ×"))
-            r27 = rd("manuscript", "著者の最新原稿", "差しかえ", "27.txt").rstrip("\n")
-            r27 = re.sub(r"\A27　.*\n\n×　(.+)\n○　(.+?)。?\n", lambda m: "27 × %s\n→○ %s\n" % (m.group(1), m.group(2)), r27)   # 頭の2行を、ほかの項目と同じ形に
-            body = body[:i27] + r27.split("\n") + ["", ""] + body[i28:]
-            note += "。27番は、差しかえの文"
-        if sid == "ch5":   # 導入は、作業用の文。空のひな形は、外す
-            i31 = next(i for i, s in enumerate(body) if s.startswith("31 ×"))
-            body = [body[0], ""] + md_to_doc(rd("manuscript", "本文", "v4", "ch5_導入.md")).split("\n") + ["", ""] + body[i31:]
-            j = next((i for i, s in enumerate(body) if s.startswith("35 × 頭のいい人は「」")), None)
-            if j is not None:
-                del body[j:j + 3]
-            note += "。導入は、こちらの作業用の文"
-        secs.append((sid, ttl, 0, "\n".join(body).strip("\n"), note))
-    ch6 = ["⚫︎第6章【モチベ】頭のいい人は、「気持ち」で止まらない（題は仮）", "", md_to_doc(rd("manuscript", "本文", "v4", "ch6_導入.md")), ""]
-    for no in ["36", "37", "38", "39", "40"]:
-        ch6 += ["", item_v4(no), ""]
-    secs.append(("ch6", "第6章【モチベ】（36〜40番）", 0, "\n".join(ch6).strip("\n"), "こちらの作業用の文（著者と1つずつ詰めたもの）"))
-    ch7 = ["⚫︎第7章【アップデート】頭のいい人は、（題は、まだ）", "", md_to_doc(rd(DRAFT, "ch7_導入.md")), ""]
-    for no in ["41", "42", "43", "44", "45"]:
-        ch7 += ["", item_draft(no), ""]
-    secs.append(("ch7", "第7章【アップデート】（41〜45番）", 0, "\n".join(ch7).strip("\n"), "下書き。本には、まだ入れていない（本の中は、前の41〜46番のまま）"))
+           ("ch4", "第4章【計画】（26〜30番）", r"⚫︎第4章"), ("ch5", "第5章【集中】（31〜35番）", r"⚫︎第5章"), ("ch6", "第6章【モチベ】（36〜40番）", r"⚫︎第6章"),
+           ("ch7", "第7章【アップデート】（41〜45番）", r"⚫︎第7章")]
+    pos = [idx(p) for _, _, p in cut] + [len(L)]
+    for (sid, ttl, _), a, b in zip(cut, pos[:-1], pos[1:]):
+        secs.append((sid, ttl, 0, "\n".join(L[a:b]).strip("\n"), "著者の手元の原稿（%s）のまま" % name))
     col = []
     for after, ver, fn in K.COLUMNS:
-        col += [md_to_doc(rd("manuscript", "本文", ver, fn + ".md")).replace("⚫︎コラム", "⚫︎コラム", 1), "（置き場：%s番のあと）" % after, "", ""]
-    secs.append(("column", "コラム（12本）", 0, "\n".join(col).strip("\n"), "今、本に入っているもの。第7章を5つにしたあとの置き場は、まだ決めていない"))
+        col += [md_to_doc(rd("manuscript", "本文", ver, fn + ".md")), "（置き場：%s番のあと。前の並びの番号）" % after, "", ""]
+    secs.append(("column", "コラム（12本）", 0, "\n".join(col).strip("\n"), "今、本に入っているもの。原稿が45項目になったあとの置き場は、まだ決めていない"))
     secs.append(("owarini", "おわりに", 0, md_to_doc(rd("manuscript", "本文", "v2", "91_おわりに.md")), "11月15日の下書きのまま。まだ、今の本に合わせていない"))
     return secs
 
-HEAD = lambda sid, line: re.match(r"\s?(\d\d)( × 頭のいい人は「.+」|【絶対法則】)", line) or (sid == "column" and re.match(r"⚫︎コラム　(.+)", line))
+HEAD = lambda sid, line: re.match(r"\s?(\d\d)(\s*× 頭のいい人は「.+」|【絶対法則】)", line) or (sid == "column" and re.match(r"⚫︎コラム　(.+)", line))
 def label(t):
     if t.startswith("⚫︎コラム"):
         return t.replace("⚫︎コラム　", "")
-    return re.sub(r"^(\d\d) × 頭のいい人は「(.+?)」.*$", r"\1　\2", t)
+    return re.sub(r"^(\d\d)\s*× 頭のいい人は「(.+?)」.*$", r"\1　\2", t)
 
 def main(dst, pdf=False):
     secs = build_secs()
@@ -286,6 +266,6 @@ def make_pdf(secs, dst, n):
     assert "@@" not in "".join(pp2), "印が残っている"
     print("PDF：", dst, "／", total, "ページ ／ 目次に入れた見出し", len(pages))
 
-DATE = "2026年11月24日"
+DATE = "2026年11月26日"
 if __name__ == "__main__":
     main(sys.argv[1], "--pdf" in sys.argv[2:])

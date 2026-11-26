@@ -75,7 +75,7 @@ def heads():
     for sid, ttl, _, text, note in Z.build_secs():
         L = text.split("\n")
         for i, line in enumerate(L):
-            m = re.match(r"\s?(\d\d) × 頭のいい人は「(.+?)」", line)
+            m = re.match(r"\s?(\d\d)\s*× 頭のいい人は「(.+?)」", line)
             if m and m.group(1) not in out:
                 o = re.match(r"→○ 頭のいい人は「(.+?)」", L[i + 1].strip())
                 out[m.group(1)] = (m.group(2), o.group(1) if o else "")

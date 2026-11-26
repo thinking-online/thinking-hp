@@ -472,6 +472,7 @@ UPDATES = [("2026/11/20", "巻頭ページ、はじめに、第1章〜第4章と
 # 著者が作った、絵と組み方のラフ（PDF。1ページが、見開き1つ）。巻頭ページの文のあとに、見開きごとの画像で出す。PDFそのものも、開けるようにする
 KANTOU_PDF = os.path.join(ROOT, "assets", "巻頭_参考イメージ", "巻頭ページ_参考イメージ_20261126.pdf")
 KANTOU_PDF_NAME = "kantou_image.pdf"
+KANTOU_BTN = '<a class="btn sub pdfb" href="%s" target="_blank" rel="noopener">参考イメージ（PDF）</a>' % KANTOU_PDF_NAME
 
 
 def kantou_image_html():
@@ -673,8 +674,9 @@ def index_now(names):
         if key in READY:
             w = ('<a class="btn sub" href="%s"%s>イラスト付き（Word）</a>' % (word_save(key), EXT)) if key in WORD else ""
             o = ('<a class="lk" href="%s"%s>ブラウザで開く</a>　／　' % (word_open(key), EXT)) if key in WORD else ""
-            rows.append('<li><span class="nm">%s</span><span class="ds">%s</span><span class="act"><span class="bb">%s<a class="btn" href="%s.html">文字だけで読む</a></span><span class="dt">%s%s 時点</span></span></li>'
-                        % (esc(name), esc(sub), w, key, o, READY[key]))
+            r = (KANTOU_BTN if key == "kantou" and os.path.exists(KANTOU_PDF) else "")   # 2026-11-26、著者「参考イメージを押したら、PDFが開く形がいい」
+            rows.append('<li><span class="nm">%s</span><span class="ds">%s</span><span class="act"><span class="bb">%s<a class="btn" href="%s.html">文字だけで読む</a>%s</span><span class="dt">%s%s 時点</span></span></li>'
+                        % (esc(name), esc(sub), w, key, r, o, READY[key]))
         else:
             rows.append('<li class="off"><span class="nm">%s</span><span class="ds">%s</span><span class="act"><span class="wait">準備中</span></span></li>' % (esc(name), esc(sub)))
     log = "".join("<li><b>%s</b><span>%s</span></li>" % (d, esc(s)) for d, s in UPDATES)
@@ -781,6 +783,7 @@ def one_file():
         pages[n] = doc.replace("</body>", ONE_CHILD_JS % json.dumps(names + ["index"]) + "</body>")
     with open(os.path.join(OUT, "artifact", "index.html"), encoding="utf-8") as f:
         inner = f.read()
+    inner = inner.replace(KANTOU_BTN, "")      # 1つにまとめたファイルでは、PDFを開けない（参考イメージは、巻頭ページの中にある）
     head, body = inner.split('<div class="wrap">', 1)
     assert "<style>" in head and "</style>" in head
     head = head.replace("</style>", ONE_CSS + "</style>", 1)

@@ -112,6 +112,15 @@ body{margin:0;background:#d9dde4;font-family:"Noto Sans CJK JP",sans-serif;color
 .b .foot small{display:block;font-size:10.5px;font-weight:700;color:%(navy)s;letter-spacing:.14em;margin:0 0 4px}
 .b .foot p{margin:0;font-size:13.6px;line-height:1.65;font-weight:700}
 .b .kc{left:44px;bottom:46px;width:94px;height:94px;border:2.5px solid %(navy)s}
+/* ページの下の一言 */
+.hito{position:absolute;left:50px;right:50px;bottom:36px;border-top:1px solid rgba(23,70,127,.35);padding-top:7px;text-align:center;font-size:10.2px;font-weight:700;color:%(navy)s;letter-spacing:.06em;white-space:nowrap}
+.hito .crown{width:13px;height:10px;margin-right:6px}
+.d .plain .bars{bottom:86px}
+.zoom{margin:26px auto 0;width:1016px;background:#fff;border-radius:10px;padding:18px 28px 22px;filter:drop-shadow(0 4px 10px rgba(20,30,50,.15))}
+.zoom small{display:block;font-size:12px;color:#5b606b;margin:0 0 10px}
+.zoom .row{display:flex;gap:28px}
+.zoom .row div{flex:1;border-top:2px solid rgba(23,70,127,.35);padding-top:12px;text-align:center;font-size:21px;font-weight:700;color:%(navy)s;letter-spacing:.06em;white-space:nowrap}
+.zoom .row .crown{width:26px;height:20px;margin-right:10px}
 /* 案C */
 .c1{background:%(navy)s;color:#fff}
 .c1 .pill{position:absolute;top:34px;left:50%%;transform:translateX(-50%%);border:1.5px solid rgba(255,255,255,.75);color:#fff}
@@ -157,8 +166,17 @@ def build(K):
 <div class="sp"><div class="pg c1">%s<div class="name">%s</div><div class="big"><div>%s</div></div><div class="kc"><img src="%s" alt=""></div><span class="no r" style="color:#bcd3ef">%d</span></div>
 <div class="pg c2"><div class="tx">%s</div><span class="no l">%d</span></div></div></div>""" % (
         pill("09"), tate(tc), big, K[13], 220, body(pc), 221)
-    return '<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>コラムのページの案</title><style>%s</style></head><body>%s%s%s</body></html>' % (
-        CSS % dict(navy=NAVY, tint=TINT), A, B, C)
+    # 一言は、どれも、今の原稿にある著者の言葉を、そのまま（はじめに、41番）
+    h1, h2 = "努力に、酔ってはいけない。", "配慮はしても、遠慮はするな。"
+    hito = lambda t: '<div class="hito">%s%s</div>' % (CROWN, e(t))
+    pg = lambda no, side, t: plain(no, side).replace('<span class="tag">', hito(t) + '<span class="tag">').replace("ふつうのページ（本文）", "ふつうのページ")
+    D = """<div class="sheet d" id="d"><div class="cap"><b>ページの下の一言</b><span>ふつうのページの下に、1行だけ</span></div>
+<p class="sub">ページの数は、増えません。下の余白に、細い線を1本引いて、その下に、一言を、横書きで置きます。王冠の印をつけて、「王様の言葉」だとわかるようにします。入るのは、25字くらいまでです。</p>
+<div class="sp">%s%s</div>
+<div class="zoom"><small>下の所を、大きくしたもの</small><div class="row"><div>%s%s</div><div>%s%s</div></div></div></div>""" % (
+        pg(52, "r", h1), pg(53, "l", h2), CROWN, e(h2), CROWN, e(h1))
+    return '<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>コラムのページの案</title><style>%s</style></head><body>%s%s%s%s</body></html>' % (
+        CSS % dict(navy=NAVY, tint=TINT), A, B, C, D)
 
 
 SHOT = """
@@ -168,11 +186,13 @@ const { chromium } = require('playwright');
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1180, height: 1000 }, deviceScaleFactor: 2 });
   await p.goto('file://' + f); await p.waitForTimeout(600);
-  for (const id of ['a', 'b', 'c']) {
+  const only = process.argv[4];
+  const names = { a: 'コラムの案_A', b: 'コラムの案_B', c: 'コラムの案_C', d: 'ページの下の一言' };
+  for (const id of Object.keys(names).filter(k => !only || k === only)) {
     const el = await p.$('#' + id);
     const over = await el.evaluate(n => [...n.querySelectorAll('.tx')].map(t => [t.scrollWidth, t.clientWidth, t.scrollHeight, t.clientHeight]));
     console.log(id, JSON.stringify(over));
-    await el.screenshot({ path: out + '/コラムの案_' + id.toUpperCase() + '.png' });
+    await el.screenshot({ path: out + '/' + names[id] + '.png' });
   }
   await b.close();
 })();
